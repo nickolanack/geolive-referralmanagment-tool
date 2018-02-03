@@ -1,7 +1,7 @@
 <?php
  
  $layerGroups=array('community', 'townships', 'mining', 'forestry', 'boundary', 'crowdsource', 'user');
-    foreach($layerGroups as $groupName){
+    foreach($layerGroups as $i=>$groupName){
         
         GetWidget('plugin.Maps.Legend')->setParameters(array(
             'showToggle'=>true,
@@ -9,7 +9,7 @@
             
             
             
-                element.addClass("'.$groupName.'");
+                element.addClass("'.$groupName.($i>3?' bottom-align':'').'");
                 LegendHelper.addLegend(legend);
                 element.addEvent("click", function(e){
                     if(e.target==element){
