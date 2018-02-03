@@ -1,0 +1,9 @@
+{
+    "type": "FieldValue",
+    "config": {
+        "loadAsync": false,
+        "fieldLabelScript": "return \"Submitted\";",
+        "fieldValueScript": "return item.getSubmitDate();",
+        "formatElementScript": "el.addClass('date-submitted')"
+    }
+}

@@ -1,0 +1,193 @@
+<?php
+$config=new core\Configuration('iconset');
+
+ ?>
+
+
+.layers {
+        display: inline-block;
+    position: absolute;
+    left: 90px;
+    width: 140px;
+    background: white;
+    border-radius: 3px;
+    top: -2px;
+    border: 1px solid;
+    padding: 5px 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+.bottom-align .layers {
+    top: inherit;
+    bottom: -2px;
+}
+
+.layer-group:before{
+    content: "";
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+<?php foreach(['community', 'townships', 'mining', 'forestry', 'boundary', 'crowdsource'] as $group){?>
+.layer-group.<?php echo $group; ?>:before{
+   background-image:url("<?php echo UrlFrom($config->getParameter($group)[0])."?tint=".$config->getParameter($group."Tint","rgb(0,0,0)"); ?>");
+}
+
+.layer-group.<?php echo $group; ?>{
+   background-color: <?php echo $config->getParameter($group."Color","rgb(255,255,255)");?>;
+}
+.layer-group.<?php echo $group; ?> .layers {
+   border-color: <?php echo $config->getParameter($group."Color","rgb(255,255,255)");?>;
+}
+
+<?php } ?>
+
+.layer-group {
+    min-width: 64px;
+    min-height: 64px;
+    background-color: turquoise;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.minimized>.layers {
+    display: none;
+}
+<?php
+$config=new core\Configuration('documentTypes');
+?>
+.upload-btns span.document{
+    background-image: url("<?php echo UrlFrom($config->getParameter('document')[0])."?tint=".$config->getParameter("documentTint","rgb(0,0,0)"); ?>");
+}
+
+.add-permits .upload-btns span.document{
+    background-image: url("<?php echo UrlFrom($config->getParameter('permit')[0])."?tint=".$config->getParameter("permitTint","rgb(0,0,0)"); ?>");
+}
+
+.add-agreements .upload-btns span.document{
+    background-image: url("<?php echo UrlFrom($config->getParameter('agreement')[0])."?tint=".$config->getParameter("agreementTint","rgb(0,0,0)"); ?>");
+}
+
+.add-spatial .upload-btns span.document, .add-spatial .upload-btns span.layer.noIcon{
+    background-image: url("<?php echo UrlFrom($config->getParameter('spatial')[0])."?tint=".$config->getParameter("spatialTint","rgb(0,0,0)"); ?>");
+}
+span.flag{
+       background-image: url("<?php echo UrlFrom($config->getParameter('flag')[0])."?tint=".$config->getParameter("flagTint","rgb(0,0,0)"); ?>");
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+span.flag.checked{
+       background-image: url("<?php echo UrlFrom($config->getParameter('flag')[0])."?tint=".$config->getParameter("flagTintActive","rgb(0,0,0)"); ?>");
+}
+
+.spatial-preview{
+       background-image: url("<?php echo UrlFrom($config->getParameter('map')[0])."?tint=".$config->getParameter("mapTint","rgb(0,0,0)"); ?>");
+}
+
+
+.proposal-documents>li>a {
+  background-image: url("<?php echo UrlFrom($config->getParameter('document')[0])."?tint=".$config->getParameter("documentTint","rgb(0,0,0)"); ?>");
+}
+.proposal-documents>li.spatial-doc>a {
+  background-image: url("<?php echo UrlFrom($config->getParameter('spatial')[0])."?tint=".$config->getParameter("spatialTint","rgb(0,0,0)"); ?>");
+}
+
+.proposal-documents>li.permit-doc>a {
+  background-image: url("<?php echo UrlFrom($config->getParameter('permit')[0])."?tint=".$config->getParameter("permitTint","rgb(0,0,0)"); ?>");
+}
+
+.proposal-documents>li.agreement-doc>a {
+  background-image: url("<?php echo UrlFrom($config->getParameter('agreement')[0])."?tint=".$config->getParameter("agreementTint","rgb(0,0,0)"); ?>");
+}
+
+<?php 
+ foreach(['low', 'medium', 'high'] as $word){
+?>
+ .TagCloudSelection>span.word-<?php echo $word; ?>:hover {
+    background-color: <?php echo $config->getParameter($word."Hover","rgb(0,0,0)"); ?>;
+}
+
+.TagCloudSelection>span.word-<?php echo $word; ?>.selected {
+    background-color: <?php echo $config->getParameter($word."Selected","rgb(0,0,0)"); ?>;
+}
+
+
+<?php
+}
+?>
+
+
+
+
+
+@media (max-height: 700px) {
+	.map-legend{
+		margin: 3px 6px;
+	}
+
+	.layer-group {
+		min-width: 40px;
+   		min-height: 40px;
+	}
+
+	.layer-group.minimized {
+		width: 40px;
+	}
+
+	.layer-group:before{
+		width: 40px;
+    	height: 40px;
+	}
+	.toggle-btn {
+	    left: 36px;
+	    top: -7px;
+	}
+}
+
+
+@media (max-height: 500px) {
+	.map-legend{
+		display:inline-block;
+		margin: -1px 6px;
+	}
+
+	.layer-group {
+		min-width: 32px;
+   		min-height: 32px;
+	}
+
+	.layer-group.minimized {
+		width: 32px;
+	}
+	.layer-group:before{
+		width: 32px;
+    	height: 32px;
+	}
+	.toggle-btn {
+	    left: 30px;
+    	top: 6px;
+	}
+
+}
+
+@media (max-height: 200px) {
+	.map-legend{
+		display:none;
+
+	}
+}
+
+
+.ui-template-info-window .t-btn {
+    padding: 2px 5px;
+    font-size: 9px;
+    text-transform: capitalize;
+    margin: 2px;
+}
+
+.ifw-bkg-arrow {
+    background-color: #6A7CE9;
+}

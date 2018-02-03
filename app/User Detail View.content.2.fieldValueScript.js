@@ -1,0 +1,1 @@
+return AppClient.options.metadata.email;

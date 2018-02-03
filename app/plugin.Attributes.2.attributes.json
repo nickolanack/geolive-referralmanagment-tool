@@ -1,0 +1,1530 @@
+[
+    {
+        "id": "1",
+        "name": "userAttributes",
+        "description": "",
+        "label": "",
+        "suffix": "_3744",
+        "metadata": {
+            "title": "userAttributes",
+            "readAccess": "public",
+            "appliesTo": [
+                "user"
+            ],
+            "id": "1",
+            "suffix": "_3744",
+            "description": "",
+            "fields": [
+                {
+                    "visibility": "public",
+                    "tableId": "1",
+                    "tableName": "userAttributes",
+                    "tableSuffix": "_3744",
+                    "title": "isProponent",
+                    "label": "Is Proponent",
+                    "description": "",
+                    "fieldType": "boolean",
+                    "color": "#FFFFFF",
+                    "searchability": "special",
+                    "editability": "special",
+                    "fieldBooleanOptions": {
+                        "trueIcon": false,
+                        "falseIcon": false,
+                        "hideFalse": true,
+                        "trueLabel": "",
+                        "falseLabel": "",
+                        "useFieldIcon": false
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "1",
+                    "tableName": "userAttributes",
+                    "tableSuffix": "_3744",
+                    "title": "isTribalCouncil",
+                    "label": "Tribal Council Member",
+                    "description": "",
+                    "fieldType": "boolean",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldBooleanOptions": {
+                        "trueIcon": false,
+                        "falseIcon": false,
+                        "hideFalse": true,
+                        "trueLabel": "",
+                        "falseLabel": "",
+                        "useFieldIcon": false
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "1",
+                    "tableName": "userAttributes",
+                    "tableSuffix": "_3744",
+                    "title": "isChiefCouncil",
+                    "label": "Chief and Council Member",
+                    "description": "",
+                    "fieldType": "boolean",
+                    "color": "rgb(NaN, NaN, NaN)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldBooleanOptions": {
+                        "trueIcon": false,
+                        "falseIcon": false,
+                        "hideFalse": true,
+                        "trueLabel": "",
+                        "falseLabel": "",
+                        "useFieldIcon": false
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "1",
+                    "tableName": "userAttributes",
+                    "tableSuffix": "_3744",
+                    "title": "isCommunityMember",
+                    "label": "Community Member",
+                    "description": "",
+                    "fieldType": "boolean",
+                    "color": "rgb(NaN, NaN, NaN)",
+                    "searchability": "special",
+                    "editability": "special",
+                    "fieldBooleanOptions": {
+                        "trueIcon": false,
+                        "falseIcon": false,
+                        "hideFalse": true,
+                        "trueLabel": "",
+                        "falseLabel": "",
+                        "useFieldIcon": false
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "1",
+                    "tableName": "userAttributes",
+                    "tableSuffix": "_3744",
+                    "title": "isLandsDepartment",
+                    "label": "Lands Department Staff",
+                    "description": "",
+                    "fieldType": "boolean",
+                    "color": "rgb(NaN, NaN, NaN)",
+                    "searchability": "special",
+                    "editability": "special",
+                    "fieldBooleanOptions": {
+                        "trueIcon": false,
+                        "falseIcon": false,
+                        "hideFalse": true,
+                        "trueLabel": "",
+                        "falseLabel": "",
+                        "useFieldIcon": false
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "1",
+                    "tableName": "userAttributes",
+                    "tableSuffix": "_3744",
+                    "title": "isLandsDepartmentManager",
+                    "label": "Lands Department Manager",
+                    "description": "",
+                    "fieldType": "boolean",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldBooleanOptions": {
+                        "trueIcon": false,
+                        "falseIcon": false,
+                        "hideFalse": true,
+                        "trueLabel": "",
+                        "falseLabel": "",
+                        "useFieldIcon": false
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "1",
+                    "tableName": "userAttributes",
+                    "tableSuffix": "_3744",
+                    "title": "memberCode",
+                    "label": "Community Member Code",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "#FFFFFF",
+                    "searchability": "special",
+                    "editability": "special",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "1",
+                    "tableName": "userAttributes",
+                    "tableSuffix": "_3744",
+                    "title": "approved",
+                    "label": "Approved",
+                    "description": "",
+                    "fieldType": "boolean",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldBooleanOptions": {
+                        "trueIcon": false,
+                        "falseIcon": false,
+                        "hideFalse": true,
+                        "trueLabel": "",
+                        "falseLabel": "",
+                        "useFieldIcon": false
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "1",
+                    "tableName": "userAttributes",
+                    "tableSuffix": "_3744",
+                    "title": "profileIcon",
+                    "label": "Profile Picture",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "1",
+                    "tableName": "userAttributes",
+                    "tableSuffix": "_3744",
+                    "title": "firstName",
+                    "label": "First Name",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "1",
+                    "tableName": "userAttributes",
+                    "tableSuffix": "_3744",
+                    "title": "lastName",
+                    "label": "Last Name",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "1",
+                    "tableName": "userAttributes",
+                    "tableSuffix": "_3744",
+                    "title": "phone",
+                    "label": "Phone",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "1",
+                    "tableName": "userAttributes",
+                    "tableSuffix": "_3744",
+                    "title": "bio",
+                    "label": "Bio",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                }
+            ]
+        }
+    },
+    {
+        "id": "2",
+        "name": "emailerAttributes",
+        "description": "",
+        "label": "",
+        "suffix": "_5220",
+        "metadata": {
+            "title": "emailerAttributes",
+            "readAccess": "public",
+            "appliesTo": [
+                "marker"
+            ],
+            "id": "2",
+            "suffix": "_5220",
+            "description": "",
+            "fields": [
+                {
+                    "visibility": "public",
+                    "tableId": "2",
+                    "tableName": "emailerAttributes",
+                    "tableSuffix": "_5220",
+                    "title": "name",
+                    "label": "Comunity Member's Name",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "#FFFFFF",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "2",
+                    "tableName": "emailerAttributes",
+                    "tableSuffix": "_5220",
+                    "title": "email",
+                    "label": "Community Members Email Address",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "#FFFFFF",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                }
+            ]
+        }
+    },
+    {
+        "id": "3",
+        "name": "featureAttributes",
+        "description": "",
+        "label": "",
+        "suffix": "_6533",
+        "metadata": {
+            "title": "featureAttributes",
+            "readAccess": "public",
+            "appliesTo": [
+                "mapitem"
+            ],
+            "id": "3",
+            "suffix": "_6533",
+            "description": "",
+            "fields": [
+                {
+                    "visibility": "public",
+                    "tableId": "3",
+                    "tableName": "featureAttributes",
+                    "tableSuffix": "_6533",
+                    "title": "activityCode",
+                    "label": "Activity Code",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "3",
+                    "tableName": "featureAttributes",
+                    "tableSuffix": "_6533",
+                    "title": "activity",
+                    "label": "Activity",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "3",
+                    "tableName": "featureAttributes",
+                    "tableSuffix": "_6533",
+                    "title": "year",
+                    "label": "Year",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                }
+            ]
+        }
+    },
+    {
+        "id": "4",
+        "name": "proponentAttributes",
+        "description": "",
+        "label": "",
+        "suffix": "_1623",
+        "metadata": {
+            "title": "proponentAttributes",
+            "readAccess": "public",
+            "appliesTo": [
+                "user"
+            ],
+            "id": "4",
+            "suffix": "_1623",
+            "description": "",
+            "fields": [
+                {
+                    "visibility": "public",
+                    "tableId": "4",
+                    "tableName": "proponentAttributes",
+                    "tableSuffix": "_1623",
+                    "title": "companyName",
+                    "label": "Company Name",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "#FFFFFF",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "4",
+                    "tableName": "proponentAttributes",
+                    "tableSuffix": "_1623",
+                    "title": "companyType",
+                    "label": "Company Type",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "#FFFFFF",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "4",
+                    "tableName": "proponentAttributes",
+                    "tableSuffix": "_1623",
+                    "title": "companyAddress",
+                    "label": "Company Address",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "#FFFFFF",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "4",
+                    "tableName": "proponentAttributes",
+                    "tableSuffix": "_1623",
+                    "title": "companyWebsite",
+                    "label": "Company Website",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "#FFFFFF",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "4",
+                    "tableName": "proponentAttributes",
+                    "tableSuffix": "_1623",
+                    "title": "contactName",
+                    "label": "Contact Name",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "#FFFFFF",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "4",
+                    "tableName": "proponentAttributes",
+                    "tableSuffix": "_1623",
+                    "title": "contactNumber",
+                    "label": "Contact Number",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "#FFFFFF",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                }
+            ]
+        }
+    },
+    {
+        "id": "5",
+        "name": "proposalAttributes",
+        "description": "",
+        "label": "",
+        "suffix": "_9189",
+        "metadata": {
+            "title": "proposalAttributes",
+            "readAccess": "public",
+            "appliesTo": [
+                "proposal"
+            ],
+            "id": "5",
+            "suffix": "_9189",
+            "description": "",
+            "fields": [
+                {
+                    "visibility": "public",
+                    "tableId": "5",
+                    "tableName": "proposalAttributes",
+                    "tableSuffix": "_9189",
+                    "title": "title",
+                    "label": "Title",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(NaN, NaN, NaN)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "5",
+                    "tableName": "proposalAttributes",
+                    "tableSuffix": "_9189",
+                    "title": "description",
+                    "label": "Description",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "5",
+                    "tableName": "proposalAttributes",
+                    "tableSuffix": "_9189",
+                    "title": "spatialFeatures",
+                    "label": "Spatial Features",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "5",
+                    "tableName": "proposalAttributes",
+                    "tableSuffix": "_9189",
+                    "title": "documents",
+                    "label": "Documents",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(NaN, NaN, NaN)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "5",
+                    "tableName": "proposalAttributes",
+                    "tableSuffix": "_9189",
+                    "title": "status",
+                    "label": "Status",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "5",
+                    "tableName": "proposalAttributes",
+                    "tableSuffix": "_9189",
+                    "title": "company",
+                    "label": "Company",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "5",
+                    "tableName": "proposalAttributes",
+                    "tableSuffix": "_9189",
+                    "title": "submissionDate",
+                    "label": "Submission Date",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(NaN, NaN, NaN)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "5",
+                    "tableName": "proposalAttributes",
+                    "tableSuffix": "_9189",
+                    "title": "expiryDate",
+                    "label": "Expiry Date",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "5",
+                    "tableName": "proposalAttributes",
+                    "tableSuffix": "_9189",
+                    "title": "commentDeadlineDate",
+                    "label": "Comment Deadline",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "5",
+                    "tableName": "proposalAttributes",
+                    "tableSuffix": "_9189",
+                    "title": "priority",
+                    "label": "Priority",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(NaN, NaN, NaN)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "options",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "5",
+                    "tableName": "proposalAttributes",
+                    "tableSuffix": "_9189",
+                    "title": "projectLetters",
+                    "label": "Project Letters",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(NaN, NaN, NaN)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "5",
+                    "tableName": "proposalAttributes",
+                    "tableSuffix": "_9189",
+                    "title": "permits",
+                    "label": "Permits",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "5",
+                    "tableName": "proposalAttributes",
+                    "tableSuffix": "_9189",
+                    "title": "permitIssueDate",
+                    "label": "Permit Issued Date",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "5",
+                    "tableName": "proposalAttributes",
+                    "tableSuffix": "_9189",
+                    "title": "permitExpireDate",
+                    "label": "Permit Expiry Date",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(NaN, NaN, NaN)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "5",
+                    "tableName": "proposalAttributes",
+                    "tableSuffix": "_9189",
+                    "title": "comments",
+                    "label": "Comments",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "5",
+                    "tableName": "proposalAttributes",
+                    "tableSuffix": "_9189",
+                    "title": "agreements",
+                    "label": "Agreements",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(NaN, NaN, NaN)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "5",
+                    "tableName": "proposalAttributes",
+                    "tableSuffix": "_9189",
+                    "title": "flagged",
+                    "label": "Flagged",
+                    "description": "",
+                    "fieldType": "boolean",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldBooleanOptions": {
+                        "trueIcon": false,
+                        "falseIcon": false,
+                        "hideFalse": true,
+                        "trueLabel": "",
+                        "falseLabel": "",
+                        "useFieldIcon": false
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "5",
+                    "tableName": "proposalAttributes",
+                    "tableSuffix": "_9189",
+                    "title": "type",
+                    "label": "Type",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "5",
+                    "tableName": "proposalAttributes",
+                    "tableSuffix": "_9189",
+                    "title": "teamMembers",
+                    "label": "Team Members",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": true
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "5",
+                    "tableName": "proposalAttributes",
+                    "tableSuffix": "_9189",
+                    "title": "starUsers",
+                    "label": "Star Users",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(NaN, NaN, NaN)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": true
+                }
+            ]
+        }
+    },
+    {
+        "id": "6",
+        "name": "taskAttributes",
+        "description": "",
+        "label": "",
+        "suffix": "_4178",
+        "metadata": {
+            "title": "taskAttributes",
+            "readAccess": "public",
+            "appliesTo": [
+                "task"
+            ],
+            "id": "6",
+            "suffix": "_4178",
+            "description": "",
+            "fields": [
+                {
+                    "visibility": "public",
+                    "tableId": "6",
+                    "tableName": "taskAttributes",
+                    "tableSuffix": "_4178",
+                    "title": "isPriority",
+                    "label": "Priority",
+                    "description": "",
+                    "fieldType": "boolean",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldBooleanOptions": {
+                        "trueIcon": false,
+                        "falseIcon": false,
+                        "hideFalse": true,
+                        "trueLabel": "",
+                        "falseLabel": "",
+                        "useFieldIcon": false
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "6",
+                    "tableName": "taskAttributes",
+                    "tableSuffix": "_4178",
+                    "title": "starUsers",
+                    "label": "Star Users",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": true
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "6",
+                    "tableName": "taskAttributes",
+                    "tableSuffix": "_4178",
+                    "title": "attachements",
+                    "label": "Attachements",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                }
+            ]
+        }
+    }
+]

@@ -1,0 +1,7 @@
+{
+    "type": "WizardScriptElement",
+    "config": {
+        "script": "\n\nreturn new ModuleArray([\n    new ElementModule(\"label\",{html:\"Tasks Completed\"}),\n    new ElementModule(\"div\",{html:item.getPercentComplete()+\"%\", \"class\":\"percent-complete-value\"}),\n    new ProgressBarModule({value:function(){ return item.getPercentComplete(); },\"class\":\"percent-complete\"})\n],{\"class\":\"progress\"});",
+        "identifier": "customScriptElement"
+    }
+}

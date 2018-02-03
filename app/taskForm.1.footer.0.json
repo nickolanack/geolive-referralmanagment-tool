@@ -1,0 +1,14 @@
+{
+    "type": "WizardButtons",
+    "config": {
+        "className": "WizardFooter",
+        "reduceOpacity": false,
+        "onCompleteScript": "defaultBehaviorFn();",
+        "labelForCancel": "Cancel",
+        "labelForSubmit": "Save",
+        "labelForNext": "next",
+        "labelForPrevious": "previous",
+        "showCancel": true,
+        "showBack": true
+    }
+}

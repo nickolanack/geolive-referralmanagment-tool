@@ -1,0 +1,6 @@
+{
+    "type": "WizardScriptElement",
+    "config": {
+        "script": "console.log(item);\nreturn '<span style=\"'+\n    'text-align: left; '+\n    'font-weight: 100; '+\n    'display: block;'+\n'\"><span style=\"font-size:20px\">Project Proposal Status: Proposal '+item.getId()+'<\/span>'+\n'<p>Here you can see the status of a proposal<\/p><br><\/span>';"
+    }
+}

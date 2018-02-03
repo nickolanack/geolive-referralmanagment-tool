@@ -1,0 +1,7 @@
+{
+    "type": "WizardScriptElement",
+    "config": {
+        "script": "return new Element('div',{\"class\":\"panel-toggle\", events:{click:function(){\n    var me=this;\n    var node=function(n){\n        if(!n){\n            n=me;\n        }\n        if(n.parentNode.hasClass('ui-view')){\n            return n.parentNode;\n        }\n        return node(n.parentNode);\n    }\n    \n    var target=node();\n    if(target.hasClass(\"closed\")){\n        target.removeClass(\"closed\");\n        me.removeClass(\"closed\");\n    }else{\n        target.addClass(\"closed\");\n        me.addClass(\"closed\");\n    }\n    \n    \n    \n}}});",
+        "identifier": "customScriptElement"
+    }
+}

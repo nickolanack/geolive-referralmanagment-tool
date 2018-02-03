@@ -1,0 +1,18 @@
+{
+    "type": "UIView",
+    "config": {
+        "className": "task-item inset-item",
+        "viewType": "view",
+        "namedView": "singleTaskListItemDetail",
+        "showInlineEdit": false,
+        "namedFormView": "defaultFormView",
+        "showDeleteButton": false,
+        "deleteItemScript": "",
+        "formatModuleScript": "",
+        "resolveItemScript": "",
+        "itemButtonsScript": "return [];",
+        "namedViewScript": "return namedView",
+        "filterModulesScript": "return list",
+        "formOptions": "{}"
+    }
+}

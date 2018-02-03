@@ -1,0 +1,1 @@
+return new ElementModule('div',{"class":"application-logo",html:"CUB Dashboard "+(new Date()).getFullYear()})

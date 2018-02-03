@@ -1,0 +1,7 @@
+{
+    "type": "WizardScriptElement",
+    "config": {
+        "script": "return function(viewer, element, parentModule){\n    var div = new Element('div',{\"class\":\"section-title\"});\n    div.appendChild(new Element(\"span\",{\"html\":\"Tasks\"}));\n    element.appendChild(div);\n}",
+        "identifier": "customScriptElement"
+    }
+}

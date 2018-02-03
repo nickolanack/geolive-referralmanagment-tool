@@ -1,0 +1,218 @@
+<?php 
+$config=GetWidget('dashboardConfig');
+$menuIconDefault=$config->getParameter('defaultMenuIcon')[0];
+foreach($config->getParameters() as $key=>$value){
+    foreach(array('main', 'people', 'accounting','community', 'configuration') as $section){
+        if(strpos($key, $section.'-')===0){
+            $icon=$menuIconDefault;
+            if(!empty($value)){
+                $icon=$value[0];
+            }
+            ?>
+            li.menu-<?php echo $key; ?>:before{
+                background-image:url("<?php echo UrlFrom($icon); ?>?tint=<?php echo $config->getParameter("menuIconColor", "rgb(180,180,180)"); ?>");
+            }
+            li.menu-<?php echo $key; ?>.active:before{
+                background-image:url("<?php echo UrlFrom($icon); ?>?tint=<?php echo $config->getParameter("menuIconTint"); ?>");
+            }
+            
+            <?php
+        }
+    }
+}
+
+        $applicationLogo=$config->getParameter('applicationLogo', array());
+        if(empty($applicationLogo)){
+            $applicationLogo=$menuIconDefault;
+        }else{
+            $applicationLogo=$applicationLogo[0];
+        }
+    ?>
+ .application-logo {
+
+    background-image:url("<?php echo UrlFrom($applicationLogo); ?>");
+}  
+
+
+.attachment-indicator {
+    <?php 
+        $attachmentIcon=$config->getParameter('attachmentIcon', array());
+        if(empty($attachmentIcon)){
+            $attachmentIcon=$attachmentIcon;
+        }else{
+            $attachmentIcon=$attachmentIcon[0];
+        }
+    ?>
+    background-image:url("<?php echo UrlFrom($attachmentIcon); ?>?tint=<?php echo $config->getParameter("attachmentTint", "rgb(180,180,180)"); ?>");
+}
+
+
+.synopsis-item {
+    background-image:url("<?php echo UrlFrom($menuIconDefault); ?>?tint=rgb(180,180,180)");
+}
+
+
+<?php 
+        $starredIcon=$config->getParameter('starIcon', array());
+        if(empty($starredIcon)){
+            $starredIcon=$menuIconDefault;
+        }else{
+            $starredIcon=$starredIcon[0];
+        }
+    ?>
+ .starred-indicator {
+
+    background-image:url("<?php echo UrlFrom($starredIcon); ?>?tint=rgb(180,180,180)");
+}   
+.starred-indicator.starred {
+
+    background-image:url("<?php echo UrlFrom($starredIcon); ?>?tint=<?php echo $config->getParameter("starTint", "rgb(180,180,180)"); ?>");
+}
+
+
+.starred-tasks {
+    background-image:url("<?php echo UrlFrom($starredIcon); ?>?tint=<?php echo $config->getParameter("starTint", "rgb(180,180,180)"); ?>");
+    border-color:<?php echo $config->getParameter("starTint", "rgb(180,180,180)"); ?>;
+    
+}
+
+
+
+
+
+<?php 
+        $priorityIcon=$config->getParameter('priorityIcon', array());
+        if(empty($priorityIcon)){
+            $priorityIcon=$menuIconDefault;
+        }else{
+            $priorityIcon=$priorityIcon[0];
+        }
+    ?>
+ .priority-indicator {
+
+    background-image:url("<?php echo UrlFrom($priorityIcon); ?>?tint=rgb(180,180,180)");
+}   
+.priority-indicator.priority {
+
+    background-image:url("<?php echo UrlFrom($priorityIcon); ?>?tint=<?php echo $config->getParameter("priorityTint", "rgb(180,180,180)"); ?>");
+}
+
+.priority-tasks {
+    background-image:url("<?php echo UrlFrom($priorityIcon); ?>?tint=<?php echo $config->getParameter("priorityTint", "rgb(180,180,180)"); ?>");
+    border-color:<?php echo $config->getParameter("priorityTint", "rgb(180,180,180)"); ?>;
+    
+}
+
+
+
+<?php 
+        $overdueIcon=$config->getParameter('overdueIcon', array());
+        if(empty($overdueIcon)){
+            $overdueIcon=$menuIconDefault;
+        }else{
+            $overdueIcon=$overdueIcon[0];
+        }
+    ?>
+
+
+
+.overdue-tasks {
+    background-image:url("<?php echo UrlFrom($overdueIcon); ?>?tint=<?php echo $config->getParameter("overdueTint", "rgb(180,180,180)"); ?>");
+    border-color:<?php echo $config->getParameter("overdueTint", "rgb(180,180,180)"); ?>;
+    
+}
+
+
+<?php 
+        $remainingIcon=$config->getParameter('remainingIcon', array());
+        if(empty($remainingIcon)){
+            $remainingIcon=$menuIconDefault;
+        }else{
+            $remainingIcon=$remainingIcon[0];
+        }
+    ?>
+
+
+
+.remaining-tasks {
+    background-image:url("<?php echo UrlFrom($remainingIcon); ?>?tint=<?php echo $config->getParameter("remainingTint", "rgb(180,180,180)"); ?>");
+    border-color:<?php echo $config->getParameter("remainingTint", "rgb(180,180,180)"); ?>;
+    
+}
+
+
+
+
+<?php 
+
+foreach(GetPlugin("ReferralManagement")->getRoleIcons() as $role=>$icon){
+    ?>
+    .role-<?php echo $role; ?>{
+        background-image:url('<?php echo UrlFrom($icon); ?>?grayscale');
+        filter: grayscale(100);
+    }
+    
+    .role-<?php echo $role; ?>.active{
+        background-image:url('<?php echo UrlFrom($icon); ?>');
+        filter: grayscale(0);
+    }
+ <?php   
+}
+
+
+foreach(['image', 'document', 'layer', 'audio', 'video'] as $mime){
+    $mediaIcon=$config->getParameter($mime.'UploadIcon', array());
+        if(empty($mediaIcon)){
+            $mediaIcon=$menuIconDefault;
+        }else{
+            $mediaIcon=$mediaIcon[0];
+        }
+    ?>
+        span.<?php echo $mime?>.noIcon {
+            background-image:url("<?php echo UrlFrom($mediaIcon); ?>?tint=<?php echo $config->getParameter("uploadTint", "rgb(180,180,180)"); ?>");
+        }
+    <?php
+    
+    
+}
+
+
+
+foreach(['prev', 'next'] as $nav){
+    $navIcon=$config->getParameter($nav.'NavIcon', array());
+        if(empty($navIcon)){
+            $navIcon=$menuIconDefault;
+        }else{
+            $navIcon=$navIcon[0];
+        }
+    ?>
+       .<?php echo $nav; ?>-btn {
+            background-image:url("<?php echo UrlFrom($navIcon); ?>?tint=<?php echo $config->getParameter("uploadTint", "rgb(180,180,180)"); ?>");
+        }
+    <?php
+    
+    
+}
+
+
+
+$backgroundImage=$config->getParameter('backgroundImage', array());
+        if(!empty($backgroundImage)){
+          
+            $backgroundImage=$backgroundImage[0];
+            ?>
+
+            .ui-view.dashboard-main:after {
+                background-image: url("<?php echo UrlFrom($backgroundImage); ?>");
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                content: "";
+                top: 0;
+                left: 0;
+                opacity: 0.2;
+                pointer-events: none;
+            }
+            <?php
+        }
+?>

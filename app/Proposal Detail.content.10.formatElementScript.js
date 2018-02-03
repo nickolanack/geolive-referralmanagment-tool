@@ -1,0 +1,1 @@
+el.addClass('item-priority priority-'+item.getPriority())

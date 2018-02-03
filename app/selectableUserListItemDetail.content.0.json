@@ -1,0 +1,17 @@
+{
+    "type": "UIView",
+    "config": {
+        "className": "inline",
+        "viewType": "view",
+        "namedView": "singleUserListItemDetail",
+        "showInlineEdit": false,
+        "namedFormView": "defaultFormView",
+        "showDeleteButton": false,
+        "deleteItemScript": "",
+        "formatModuleScript": "",
+        "resolveItemScript": "",
+        "itemButtonsScript": "return [];",
+        "namedViewScript": "return namedView",
+        "filterModulesScript": "\nvar mods=list.content;\nmods.splice(3,1); \/\/remove 3rd module\nlist.content=mods;\nreturn list"
+    }
+}

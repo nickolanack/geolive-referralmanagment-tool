@@ -1,0 +1,21 @@
+{
+    "type": "UIListView",
+    "config": {
+        "listClassName": "ui-view w-full inset-shading",
+        "className": "",
+        "viewType": "view",
+        "namedView": "settingsListItemDetail",
+        "showInlineEdit": false,
+        "namedFormView": "defaultFormView",
+        "showDeleteButton": false,
+        "deleteItemScript": "",
+        "getItemListScript": "return [\n        {\n            label:\"User Roles\",\n            link:CoreContentUrlRoot+\"&option=com_geolive&controller=plugins&view=plugin&format=raw&plugin=UserInterface&pluginView=widget.form&widget=rolesicons\"\n\n        },\n        {\n            label:\"Task Types\",\n            link:CoreContentUrlRoot+\"&option=com_geolive&controller=plugins&view=plugin&format=raw&plugin=UserInterface&pluginView=widget.form&widget=194\"\n            \n        },{\n            label:\"UI Configuration\",\n            link:CoreContentUrlRoot+\"&option=com_geolive&controller=plugins&view=plugin&format=raw&plugin=UserInterface&pluginView=widget.form&widget=dashboardConfig\"\n\n        },\n        {\n            label:\"Layer Sets\",\n            link:CoreContentUrlRoot+\"&option=com_geolive&controller=plugins&view=plugin&format=raw&plugin=UserInterface&pluginView=widget.form&widget=113\"\n\n        },\n        {\n            label:\"Layer Groups\",\n            link:CoreContentUrlRoot+\"&option=com_geolive&controller=plugins&view=plugin&format=raw&plugin=UserInterface&pluginView=widget.form&widget=layerGroups\"\n\n        },\n        {\n            label:\"Tile Rendering Options\",\n            link:CoreContentUrlRoot+\"&option=com_geolive&controller=plugins&view=plugin&format=raw&plugin=UserInterface&pluginView=widget.form&widget=cluster-config\"\n\n        },\n        {\n            label:\"Marker Icons\",\n            link:CoreContentUrlRoot+\"&option=com_geolive&controller=plugins&view=plugin&format=raw&plugin=UserInterface&pluginView=widget.form&widget=mobile-app-markers\"\n\n        },\n        {\n            label:\"Mobile App Config\",\n            link:CoreContentUrlRoot+\"&option=com_geolive&controller=plugins&view=plugin&format=raw&plugin=UserInterface&pluginView=widget.form&widget=mobile-app-config\"\n\n        },\n        {\n            label:\"File Options\",\n            link:CoreContentUrlRoot+\"&option=com_geolive&controller=plugins&view=plugin&format=raw&plugin=UserInterface&pluginView=widget.form&widget=documentTypes\"\n        }\n        \n        \n    ];",
+        "formatItemListScript": "return list;",
+        "formatListItemModuleScript": "",
+        "formatModuleScript": "",
+        "itemButtonsScript": "return [];",
+        "emptyNamedView": "emptyListView",
+        "namedViewScript": "return namedView",
+        "filterModulesScript": "return list"
+    }
+}

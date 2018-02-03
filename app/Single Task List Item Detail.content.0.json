@@ -1,0 +1,7 @@
+{
+    "type": "WizardScriptElement",
+    "config": {
+        "script": "if(item.getItem().getType()===\"user\"){\n    return new FormattedTextModule({\n                showImages:true,\n                imageheight:20,\n                imageWidth:20,\n                \"text\":function(c){ c(\"<img src='<?php echo HtmlDocument()->website().'\/'.GetWidget('dashboardConfig')->getParameter('defaultUserImage')[0]; ?>?thumb=250x250'\/>\"); }\n            });\n}        \nreturn null;",
+        "identifier": "customScriptElement"
+    }
+}

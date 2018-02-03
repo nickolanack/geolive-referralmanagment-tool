@@ -1,0 +1,6 @@
+{
+    "type": "WizardScriptElement",
+    "config": {
+        "script": "return null;\nvar ReserveQuery = new Class({\n            Extends: AjaxControlQuery,\n            initialize: function() {\n                this.parent(CoreAjaxUrlRoot, 'get_reserve_metadata', {\n                    plugin: 'ReferralManagement',\n                    id:item.getId()\n                });\n            }\n        });\n\nvar ReserveModule=new Class({\nExtends:Module,\nprocess:function(){\n\n  var me=this;\n   (new ReserveQuery()).addEvent('success',function(response){\n\n      if(response.result.thumbnail){\n          me.node.appendChild(new Asset.image(response.result.thumbnail,{\n             styles:{\nwidth:response.result.thumbnailWidth+\"px\",height:response.result.thumbnailHeight+\"px\"\n               }\n          }))\n      }\n\n       me.fireEvent('load');\n   }).execute();\n\n\n}\n\n});\n\n\nreturn new ReserveModule(application, {});"
+    }
+}

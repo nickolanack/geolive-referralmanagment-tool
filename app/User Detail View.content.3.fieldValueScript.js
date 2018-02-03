@@ -1,0 +1,1 @@
+return <?php echo json_encode(implode(", ",GetPlugin("ReferralManagement")->getUserRoles()));?>;

@@ -1,0 +1,18 @@
+{
+    "type": "UIView",
+    "config": {
+        "className": "dashboard-main",
+        "viewType": "view",
+        "namedView": "dashboardContent",
+        "showInlineEdit": false,
+        "namedFormView": "defaultFormView",
+        "showDeleteButton": false,
+        "deleteItemScript": "",
+        "formatModuleScript": "",
+        "resolveItemScript": "",
+        "itemButtonsScript": "return [];",
+        "namedViewScript": "<?php \n\nif(GetClient()->isGuest()){\n    ?>\n    return \"guestDashboard\";\n    <?php  \n    return;\n}\n\n    $firelight=GetPlugin('ReferralManagement');\n    if((!GetClient()->isAdmin())&&count(array_intersect($firelight->teamMemberRoles(), ($roles=$firelight->getUserRoles())))==0){\n        \n        if(count(array_intersect($firelight->communityMemberRoles(),$roles))>0){\n            ?>\n            return \"communityMemberDashboard\";\n            <?php\n            return;\n        }\n        \n        ?>\n        return \"nonMemberDashboard\";\n        <?php\n        return;\n    }\n    \n\n  \n\n?>\nreturn namedView;\n",
+        "filterModulesScript": "return list",
+        "formOptions": "{}"
+    }
+}

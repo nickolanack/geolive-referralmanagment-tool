@@ -1,0 +1,1 @@
+application.setNamedValue("projectDetailView", module);

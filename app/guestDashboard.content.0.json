@@ -1,0 +1,17 @@
+{
+    "type": "UIView",
+    "config": {
+        "className": "login-form",
+        "viewType": "form",
+        "namedView": "defaultView",
+        "showInlineEdit": false,
+        "namedFormView": "LoginWizard",
+        "showDeleteButton": false,
+        "deleteItemScript": "",
+        "formatModuleScript": "",
+        "resolveItemScript": "",
+        "itemButtonsScript": "return [];",
+        "namedViewScript": "return namedView",
+        "filterModulesScript": "return list"
+    }
+}

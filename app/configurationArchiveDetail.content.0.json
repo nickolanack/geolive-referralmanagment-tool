@@ -1,0 +1,21 @@
+{
+    "type": "UIListView",
+    "config": {
+        "listClassName": "",
+        "className": "",
+        "viewType": "view",
+        "namedView": "singleArchivedProjectListItemDetail",
+        "showInlineEdit": false,
+        "namedFormView": "defaultFormView",
+        "showDeleteButton": false,
+        "deleteItemScript": "",
+        "getItemListScript": "return ProjectTeam.CurrentTeam().getArchivedProjects();",
+        "formatItemListScript": "return list;",
+        "formatListItemModuleScript": "",
+        "formatModuleScript": "",
+        "itemButtonsScript": "return [];",
+        "emptyNamedView": "emptyListView",
+        "namedViewScript": "return namedView",
+        "filterModulesScript": "return list"
+    }
+}

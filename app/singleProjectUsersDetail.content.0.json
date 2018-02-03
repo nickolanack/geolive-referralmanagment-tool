@@ -1,0 +1,20 @@
+{
+    "type": "UIListView",
+    "config": {
+        "listClassName": "",
+        "className": "user-item",
+        "viewType": "view",
+        "namedView": "singleUserListItemDetail",
+        "showInlineEdit": false,
+        "namedFormView": "defaultFormView",
+        "showDeleteButton": false,
+        "deleteItemScript": "",
+        "getItemListScript": "return item.getUsers();",
+        "formatItemListScript": "return list;",
+        "formatListItemModuleScript": "",
+        "formatModuleScript": "",
+        "itemButtonsScript": "return [];",
+        "emptyNamedView": "emptyListView",
+        "namedViewScript": "return namedView"
+    }
+}

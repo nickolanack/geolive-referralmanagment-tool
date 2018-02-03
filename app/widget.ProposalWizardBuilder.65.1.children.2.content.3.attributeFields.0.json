@@ -1,0 +1,32 @@
+{
+    "visibility": "public",
+    "tableId": "5",
+    "tableName": "proposalAttributes",
+    "tableSuffix": "_9189",
+    "title": "permitExpireDate",
+    "label": "Permit Expiry Date",
+    "description": "",
+    "fieldType": "text",
+    "color": "rgb(NaN, NaN, NaN)",
+    "searchability": "public",
+    "editability": "registered",
+    "fieldTextOptions": {
+        "textType": "input",
+        "inputOptions": {
+            "buildAutocomplete": false,
+            "requireModeration": false,
+            "limitMaxChars": 0,
+            "limitMaxWords": 0,
+            "allowHtml": false,
+            "allowMedia": true,
+            "allowLinks": true
+        },
+        "listOptions": {
+            "takeSugesstions": true,
+            "buildTree": false,
+            "iconize": false,
+            "colorize": false
+        }
+    },
+    "allowMultiple": false
+}
