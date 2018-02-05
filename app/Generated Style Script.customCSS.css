@@ -139,6 +139,15 @@ span.flag.checked{
     background-color: aqua;
 }
 
+.bottom-align>.toggle-btn {
+    top: unset;
+    bottom: -4px;
+}
+
+.bottom-align.minimized>.toggle-btn {
+    top: -4px;
+}
+
 
 @media screen and (max-height: 700px),  screen and (max-width: 767px), {
 	.layer-group{
