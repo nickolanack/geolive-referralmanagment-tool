@@ -7,6 +7,7 @@
             'showToggle'=>true,
             'formatLegendScript'=>'
             
+                //(function(element, legend){
             
             
                 element.addClass("'.$groupName.($i>3?' bottom-align':'').'");
@@ -21,6 +22,51 @@
                 legend.addEvent("toggle",function(){
                     p.hide();
                 });
+                var checkState=function(){
+                   
+                   if(legend.countVisibleLayers()==0){
+                       element.removeClass("active");
+                   }else{
+                        element.addClass("active");
+                   }
+                   
+                    if(legend.countVisibleLayers()==legend.countLayers()){
+                       element.addClass("all");
+                   }else{
+                       element.removeClass("all")
+                   }
+                   
+                    
+                };
+                checkState();
+                legend.addEvent("renderLayer", checkState);
+                legend.addEvent("change",checkState);
+                
+                element.appendChild(new Element("span", {
+                    "class":"indicator-switch",
+                    "events":{
+                        "click":function(){
+                           var layers=legend.getLayers();
+                         
+                               if(legend.countVisibleLayers()>0){
+                              
+                                layers.forEach(function(layer){
+                                   layer.hide();
+                               });
+                              
+                              
+                                return;     
+                               }
+                         
+                           
+                           layers.forEach(function(layer){
+                               layer.show();
+                           });
+                          
+                           
+                        }
+                    }
+                }));
             
             
             ',
