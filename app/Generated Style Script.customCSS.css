@@ -5,7 +5,7 @@ $config=new core\Configuration('iconset');
 
 
 .layers {
-        display: inline-block;
+    display: inline-block;
     position: absolute;
     left: 90px;
     width: 140px;
@@ -19,6 +19,10 @@ $config=new core\Configuration('iconset');
 .bottom-align .layers {
     top: inherit;
     bottom: -2px;
+}
+
+.layer-group.empty{
+    display:none;
 }
 
 .layer-group:before{
@@ -120,20 +124,30 @@ span.flag.checked{
 ?>
 
 
+.layer-group>.indicator-switch {
+    position: absolute;
+    bottom: -6px;
+    left: 52px;
+    z-index: 8;
+}
+
+.layer-group.active>.indicator-switch {
+    background-color: white;
+}
+
+.layer-group.active.all>.indicator-switch {
+    background-color: aqua;
+}
 
 
-
-@media (max-height: 700px) {
-	.map-legend{
+@media screen and (max-height: 700px),  screen and (max-width: 767px), {
+	.layer-group{
 		margin: 3px 6px;
-	}
-
-	.layer-group {
 		min-width: 40px;
    		min-height: 40px;
 	}
 
-	.layer-group.minimized {
+	.map-legend .layer-group.minimized {
 		width: 40px;
 	}
 
@@ -148,18 +162,15 @@ span.flag.checked{
 }
 
 
-@media (max-height: 500px) {
-	.map-legend{
-		display:inline-block;
-		margin: -1px 6px;
-	}
+@media screen and (max-height: 500px),  screen and (max-width: 567px), {
+	.layer-group{
 
-	.layer-group {
+		margin: -1px 6px;
 		min-width: 32px;
    		min-height: 32px;
 	}
 
-	.layer-group.minimized {
+	.map-legend .layer-group.minimized {
 		width: 32px;
 	}
 	.layer-group:before{
@@ -173,12 +184,6 @@ span.flag.checked{
 
 }
 
-@media (max-height: 200px) {
-	.map-legend{
-		display:none;
-
-	}
-}
 
 
 .ui-template-info-window .t-btn {
