@@ -1,0 +1,26 @@
+{
+	"proposal":[
+		{
+	 		"name": "id",
+	 		"type": "id"
+	 	}, {
+	 		"name": "user",
+	 		"type": "int",
+	 		"comment": "the user that created the proposal"
+	 	}, {
+	 		"name": "metadata",
+	 		"type": "json",
+	 		"comment": "any aditional json encoded parameters"
+	 	}, {
+	 		"name": "createdDate",
+	 		"type": "date"
+	 	}, {
+	 		"name": "modifiedDate",
+	 		"type": "date"
+	 	}, {
+	 		"name": "status",
+	 		"type": "label",
+	 		"comment": "determines the state of the proposal ie: approved pending etc"
+	 	}
+	]
+}

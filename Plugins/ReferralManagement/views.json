@@ -1,0 +1,97 @@
+{
+    "form": [],
+
+    "userroles":[],
+
+
+
+
+
+
+
+
+
+    "proponent.contact.form": {
+        "modalOptions": {
+            "width": 600,
+            "height": 500
+        },
+        "access": "registered"
+    },
+    "proponent.payment": {
+        "modalOptions": {
+            "width": 900,
+            "height": 350
+        },
+        "access": "registered"
+    },
+    "proponent.status": {
+        "modalOptions": {
+            "width": 900,
+            "height": 350
+        },
+        "access": "registered"
+    },
+    "proposal.form": {
+        "modalOptions": {
+            "width": 900,
+            "height": 500
+        },
+        "access": "registered"
+    },
+    "proposal.status": {
+        "modalOptions": {
+            "width": 900,
+            "height": 500
+        },
+        "access": "registered"
+    },
+    "proposal.workflow.form": {
+        "modalOptions": {
+            "width": 900,
+            "height": 500
+        },
+        "access": "registered"
+    },
+    "proposal.workflow.report": {
+        "modalOptions": {
+            "width": 900,
+            "height": 500
+        },
+        "access": "registered"
+    },
+    "selfidentify.form": {
+        "modalOptions": {
+            "width": 600,
+            "height": 350
+        },
+        "access": "registered"
+    },
+    "test.views": {
+        "modalOptions": {
+            "width": 900,
+            "height": 350
+        }
+    },
+    "workflowtasks.list": {
+        "modalOptions": {
+            "width": 900,
+            "height": 350
+        },
+        "access": "registered"
+    },
+    "browser.layers": {
+        "modalOptions": {
+            "width": 900,
+            "height": 350
+        },
+        "access": "registered"
+    },
+    "select.layer": {
+        "modalOptions": {
+            "width": 900,
+            "height": 350
+        },
+        "access": "registered"
+    }
+}

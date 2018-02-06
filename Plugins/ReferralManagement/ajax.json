@@ -1,0 +1,104 @@
+{
+    "list_proposals": [],
+    "save_proposal": [],
+    "save_task": [],
+    "delete_task": {
+        "validate": {
+            "checkKeys": [
+                "id"
+            ]
+        }
+    },
+    "get_users_tasks": [],
+    "delete_proposal": {
+        "validate": {
+            "checkKeys": [
+                "id"
+            ]
+        }
+    },
+    "get_proposal": [],
+    "get_reserve_metadata": {
+        "validate": {
+            "checkKeys": [
+                "id"
+            ]
+        }
+    },
+    "export_proposals": {
+        "return": "file"
+    },
+    "set_proposal_status": {
+        "validate": {
+            "checkKeys": [
+                "id",
+                "status"
+            ]
+        }
+    },
+    "create_default_tasks":[],
+    "default_task_templates":[],
+    "generate_report":[],
+
+    "list_team_members": {
+        "validate": {
+            "checkKeys": [
+                "team"
+            ]
+        }
+    },
+    "list_users": {
+        "validate": {
+            "checkKeys": [
+                "team"
+            ]
+        }
+    },
+    "list_devices": {
+        "validate": {
+            "checkKeys": [
+                "team"
+            ]
+        }
+    },
+    "add_proposal_user": {
+        "validate": {
+            "checkKeys": [
+               "user",
+               "proposal"
+            ]
+        }
+    },
+    "remove_proposal_user": {
+        "validate": {
+            "checkKeys": [
+                "user",
+                "proposal"
+            ]
+        }
+    },
+    "set_user_role": {
+        "validate": {
+            "checkKeys": [
+                "user",
+                "role"
+            ]
+        }
+    },
+    "set_starred_task": {
+        "validate": {
+            "checkKeys": [
+                "task",
+                "starred"
+            ]
+        }
+    },
+    "set_priority_task": {
+        "validate": {
+            "checkKeys": [
+                "task",
+                "priority"
+            ]
+        }
+    }
+}
