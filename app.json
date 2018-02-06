@@ -1,0 +1,32 @@
+{
+	"variables":{
+		"SystemParametersPlugin_pluginPaths":[
+			"{core}\/..\/php-core-map\/Plugins",
+			"{core}\/..\/geolive-referralmanagment-tool\/Plugins"
+		],
+		"SystemParametersPlugin_widgetPaths":[
+			"{core}\/..\/php-core-map\/Widgets"
+		],
+		"SystemParametersPlugin_modulePaths":[
+			"{core}\/..\/php-core-map\/Modules"
+		],
+		"UserInterfacePlugin_defaultRoute":{
+		    "view": "plugin",
+		    "plugin": "UserInterface",
+		    "pluginView": "widget",
+		    "widget": "dashboard"
+		},
+		"SentryIOPlugin_enabled":false,
+		"PusherMessagesPlugin_channelPrefix":"dev.kubernates.local."
+	},
+	"alias":{
+		"components\/com_geolive\/users_files":"https:\/\/wabun.geolive.ca\/components\/com_geolive\/users_files"
+	},
+	"plugins":{
+		"Firelight":"ReferralManagement"
+	},
+	"db-type":"hybrid-sqlite-mysqli",
+	"db":"dashboard.db",
+	"db-prefix":"z78ge_",
+	"admin-pass-hash":"XXXXXXXXXXXX"
+}
