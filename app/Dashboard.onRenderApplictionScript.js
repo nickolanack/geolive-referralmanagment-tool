@@ -19,7 +19,7 @@ GetWidget('emptyListView')->display($targetInstance);
 
 if(GetClient()->isGuest()){
    GetWidget('guestDashboard')->display($targetInstance); 
-   GetWidget(73)->display($targetInstance); //login wizard from map
+   GetWidget('loginForm')->display($targetInstance); //login wizard from map
    return;
 }
 
