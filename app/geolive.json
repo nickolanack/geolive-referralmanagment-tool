@@ -15,15 +15,6 @@
         "instance": "VersionManager",
         "parameters": {}
     },
-    "plugin.23": {
-        "name": "Upgrade",
-        "instance": "Upgrade",
-        "parameters": {
-            "releaseServer": "http:\/\/release.geolive.ca",
-            "releasePackage": "master",
-            "autoUpdate": false
-        }
-    },
     "plugin.5": {
         "name": "Data Types",
         "instance": "Data",
@@ -71,18 +62,6 @@
         "instance": "Discussions",
         "parameters": {}
     },
-    "plugin.15": {
-        "name": "External Content",
-        "instance": "ExternalContent",
-        "parameters": {
-            "youtube-api-key": "XXXX-XXXX"
-        }
-    },
-    "plugin.46": {
-        "name": "Referral Management",
-        "instance": "ReferralManagement",
-        "parameters": {}
-    },
     "plugin.11": {
         "name": "Filesystem",
         "instance": "Filesystem",
@@ -126,13 +105,11 @@
             "userProfileImageScript": "return $defaultImage;"
         }
     },
-    "plugin.43": {
-        "name": "Single SignOn Plugin",
-        "instance": "SingleSignOn",
+    "plugin.15": {
+        "name": "External Content",
+        "instance": "ExternalContent",
         "parameters": {
-            "facebookAppId": "1789459508031974",
-            "facebookAppSecret": "XXXX-XXXX",
-            "googleAuthClientId": ""
+            "youtube-api-key": "XXXX-XXXX"
         }
     },
     "plugin.17": {
@@ -149,6 +126,15 @@
         "name": "Integration Testing",
         "instance": "UnitTest",
         "parameters": {}
+    },
+    "plugin.23": {
+        "name": "Upgrade",
+        "instance": "Upgrade",
+        "parameters": {
+            "releaseServer": "http:\/\/release.geolive.ca",
+            "releasePackage": "master",
+            "autoUpdate": false
+        }
     },
     "plugin.24": {
         "name": "User Interface",
@@ -209,23 +195,6 @@
         "instance": "Deploy",
         "parameters": "_Deploy.json"
     },
-    "plugin.36": {
-        "name": "Email Moderate",
-        "instance": "EmailModerate",
-        "parameters": {
-            "moderator": [
-                "nickblackwell82@gmail.com",
-                ""
-            ],
-            "enableEmails": false,
-            "fromEmailName": "Geolive Notifications",
-            "fromEmail": "admin@geolive.ca",
-            "siteUrl": "https:\/\/firelight.geolive.ca",
-            "siteName": "Firelight",
-            "formatEmailScript": "return $message;",
-            "formatVariablesScript": "return $variables;"
-        }
-    },
     "plugin.37": {
         "name": "Email",
         "instance": "Email",
@@ -263,6 +232,15 @@
         "instance": "Links",
         "parameters": {}
     },
+    "plugin.43": {
+        "name": "Single SignOn Plugin",
+        "instance": "SingleSignOn",
+        "parameters": {
+            "facebookAppId": "1789459508031974",
+            "facebookAppSecret": "XXXX-XXXX",
+            "googleAuthClientId": ""
+        }
+    },
     "plugin.44": {
         "name": "Tasks",
         "instance": "Tasks",
@@ -279,506 +257,243 @@
             "applicationSettings": []
         }
     },
-    "widget.69": {
-        "name": "Javascript",
-        "instance": "CustomBehaviorScript",
-        "parameters": {
-            "customScript": "Cluster Icon Style.customScript.js",
-            "widgetTitle": "Cluster Icon Style",
-            "readAccess": "public",
-            "target": "map.3"
-        }
+    "plugin.46": {
+        "name": "Referral Management",
+        "instance": "ReferralManagement",
+        "parameters": {}
     },
-    "widget.70": {
-        "name": "Attribute Cloud",
-        "instance": "AttributesCloud",
+    "widget.33": {
+        "name": "Attr Search Bar",
+        "instance": "AttributesSearch",
         "parameters": {
-            "tabLabel": "Year",
-            "className": "",
+            "position": "TOP_CENTER",
+            "barWidth": 699,
+            "locationSearch": true,
+            "showFilterBuilder": true,
+            "hoverTheme": false,
+            "themeLabel": "Theme",
+            "showCloud": true,
+            "cloudTable": "",
+            "cloudField": "",
+            "mapitemSearchLabel": "Placemarks",
+            "locationSearchLabel": "Locations",
             "showDemoTags": false,
             "demoTagsMinimum": 10,
             "cloudResults": 30,
-            "tabColor": "rgb(100, 149, 237)",
-            "fontColor": "black",
-            "showItemCount": true,
-            "scaleItemsWithCount": true,
-            "scaleItemsMax": 25,
-            "scaleItemsMin": 12,
-            "hideEmptyPredefinedValues": true,
-            "showValuesOutsidePredefined": true,
-            "attributeSelection": [
-                "widget.AttributesCloud.70.attributeSelection.0.json"
-            ],
-            "cloudMetadata": [],
-            "formatCloudScript": "",
-            "formatTagScript": "widget.AttributesCloud.70.formatTagScript.js",
-            "formatTabButtonScript": "",
-            "onSelectionChangedScript": "defaultBehaviorFn();",
-            "sendNotifications": false,
-            "widgetTitle": "",
-            "readAccess": "community-member",
-            "target": ""
-        }
-    },
-    "widget.71": {
-        "name": "Attr CSV Export",
-        "instance": "AttributesCSVExport",
-        "parameters": {
-            "downloadImage": [],
-            "uploadImage": [],
-            "controlColor": "rgb(159, 0, 159)",
-            "exportMetadata": {
-                "fields": {
-                    "item id": "mapitem.id",
-                    "item owner id": "mapitem.uid",
-                    "item owner name": {
-                        "field": "mapitem.uid",
-                        "formatter": "useridtoname"
-                    },
-                    "item owner email": {
-                        "field": "mapitem.uid",
-                        "formatter": "useridtoemail"
-                    },
-                    "layer id": "layer.id",
-                    "layer title": "layer.name",
-                    "title": "mapitem.name",
-                    "coordinates": {
-                        "field": "mapitem.coordinates",
-                        "formatter": "coordinates"
-                    },
-                    "description": {
-                        "field": "mapitem.description",
-                        "formatter": "htmltoplaintext"
-                    },
-                    "image count": {
-                        "field": "mapitem.description",
-                        "formatter": "countimages"
-                    },
-                    "url": {
-                        "field": "mapitem.id",
-                        "formatter": "idtourl"
-                    },
-                    "created date": "mapitem.creationDate",
-                    "last modification date": "mapitem.modificationDate",
-                    "last editor": {
-                        "field": "mapitem.id",
-                        "formatter": "itemeditors"
-                    },
-                    "edit count": {
-                        "field": "mapitem.id",
-                        "formatter": "itemeditcount"
-                    },
-                    "read access": "mapitem.readAccess",
-                    "item views": "mapitem.views",
-                    "Comunity Member's Name": {
-                        "field": "attributes.2.name",
-                        "formatter": "attributes.text"
-                    },
-                    "Community Members Email Address": {
-                        "field": "attributes.2.email",
-                        "formatter": "attributes.text"
-                    },
-                    "Activity Code": {
-                        "field": "attributes.3.activityCode",
-                        "formatter": "attributes.text"
-                    },
-                    "Activity": {
-                        "field": "attributes.3.activity",
-                        "formatter": "attributes.text"
-                    },
-                    "Year": {
-                        "field": "attributes.3.year",
-                        "formatter": "attributes.text"
-                    }
-                },
-                "order": {
-                    "layer id": "ASC",
-                    "item id": "ASC"
-                }
-            },
-            "showImport": false,
-            "tileIcon": [],
-            "exportEncoding": "ISO-8859-1",
-            "importEncoding": "ISO-8859-1",
-            "showImportEncoding": false,
-            "filename": "Geolive Export DATE[Y-m-d (H.i.s)]",
-            "widgetTitle": "",
-            "readAccess": "special",
-            "position": "RIGHT_CENTER"
-        }
-    },
-    "widget.74": {
-        "name": "Custom Control Script",
-        "instance": "CustomControlScript",
-        "parameters": {
-            "customScript": "User Type Control.customScript.js",
-            "widgetTitle": "User Type Control",
-            "readAccess": "registered",
-            "position": "TOP_RIGHT",
-            "target": ""
-        }
-    },
-    "widget.76": {
-        "name": "Javascript",
-        "instance": "CustomBehaviorScript",
-        "parameters": {
-            "customScript": "Needs User Role.customScript.js",
-            "widgetTitle": "Needs User Role",
-            "readAccess": "no-role"
-        }
-    },
-    "widget.78": {
-        "name": "Cluster Behavior",
-        "instance": "ClusterBehaviors",
-        "parameters": {}
-    },
-    "widget.68": {
-        "name": "Attribute Wizard Builder",
-        "instance": "AttributeWizardBuilder",
-        "parameters": {
-            "templateName": "ProposalStatusTemplate",
-            "metadata": {
-                "class": "DescisionNode",
-                "_diagramState": {
-                    "x": -18,
-                    "y": 143
-                },
-                "children": [
-                    "Proposal Status.metadata.children.0.json",
-                    {
-                        "title": "New Empty Step",
-                        "class": "AttributesTableNode",
-                        "fields": [
-                            "Proposal Status.metadata.children.1.fields.0.json"
-                        ],
-                        "_diagramState": {
-                            "x": 238,
-                            "y": 350
-                        },
-                        "children": [
-                            "Proposal Status.metadata.children.1.children.0.json"
-                        ],
-                        "builderMetadata": {
-                            "positions": {
-                                "title": {
-                                    "modules": [
-                                        "Proposal Status.metadata.children.1.builderMetadata.positions.title.modules.0.json"
-                                    ]
-                                },
-                                "content": {
-                                    "modules": [
-                                        "Proposal Status.metadata.children.1.builderMetadata.positions.content.modules.0.json",
-                                        {
-                                            "type": "WizardIconizedScriptSelect",
-                                            "config": {
-                                                "icons": [
-                                                    "components\/com_geolive\/users_files\/user_files_680\/Uploads\/mqn_[G]_6Zc_8fs_[ImAgE].png",
-                                                    "components\/com_geolive\/users_files\/user_files_680\/Uploads\/bPw_oqc_FQ2_[G]_[ImAgE].png",
-                                                    "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[ImAgE]_iqc_XTt_[G]_LDt.png"
-                                                ],
-                                                "iconsetMetadata": {
-                                                    "onSelectScripts": {
-                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/rCV_[G]_cpZ_2EG_[ImAgE].png": "",
-                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/mqn_[G]_6Zc_8fs_[ImAgE].png": "",
-                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/bPw_oqc_FQ2_[G]_[ImAgE].png": "",
-                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[ImAgE]_iqc_XTt_[G]_LDt.png": ""
-                                                    },
-                                                    "onSubmitScripts": {
-                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/rCV_[G]_cpZ_2EG_[ImAgE].png": "",
-                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/mqn_[G]_6Zc_8fs_[ImAgE].png": "",
-                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/bPw_oqc_FQ2_[G]_[ImAgE].png": "",
-                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[ImAgE]_iqc_XTt_[G]_LDt.png": ""
-                                                    },
-                                                    "onRenderScripts": {
-                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/rCV_[G]_cpZ_2EG_[ImAgE].png": "",
-                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/mqn_[G]_6Zc_8fs_[ImAgE].png": "asset.parentNode.setAttribute('data-label','Submitted and Pending');",
-                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/bPw_oqc_FQ2_[G]_[ImAgE].png": "asset.parentNode.setAttribute('data-label','Under Lands Department Review');",
-                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[ImAgE]_iqc_XTt_[G]_LDt.png": "asset.parentNode.setAttribute('data-label','Approved');"
-                                                    }
-                                                },
-                                                "initSelectedScript": "return 0;",
-                                                "className": "prop-status",
-                                                "requireSelection": true
-                                            }
-                                        }
-                                    ]
-                                },
-                                "footer": {
-                                    "modules": []
-                                },
-                                "menu": {
-                                    "modules": []
-                                }
-                            },
-                            "positionList": [
-                                "title",
-                                "content",
-                                "footer",
-                                "menu"
-                            ]
-                        }
-                    }
-                ]
-            },
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "widgetTitle": "Proposal Status",
+            "searchColor": "rgb(232, 133, 36)",
+            "searchTintColor": "rgb(0,0,0)",
+            "clearColor": "#3a6ccf",
+            "clearTintColor": "rgb(0,0,0)",
+            "placeholderText": "Search Location, Items, Attributes...",
+            "searchUsers": false,
+            "widgetTitle": "search bar",
             "readAccess": "public"
         }
     },
-    "widget.67": {
-        "name": "Attribute Wizard Builder",
-        "instance": "AttributeWizardBuilder",
+    "widget.34": {
+        "name": "Google Controls",
+        "instance": "GoogleControl",
         "parameters": {
-            "templateName": "ProcessProposalTemplate",
-            "metadata": {
-                "class": "DescisionNode",
-                "_diagramState": {
-                    "x": 55,
-                    "y": 130
-                },
-                "children": [
-                    "Process Proposal.metadata.children.0.json",
-                    {
-                        "title": "New Empty Step",
-                        "class": "AttributesTableNode",
-                        "fields": [
-                            "Process Proposal.metadata.children.1.fields.0.json"
-                        ],
-                        "_diagramState": {
-                            "x": 352,
-                            "y": 212
-                        },
-                        "children": [
-                            "Process Proposal.metadata.children.1.children.0.json"
-                        ],
-                        "builderMetadata": {
-                            "positions": {
-                                "title": {
-                                    "modules": [
-                                        "Process Proposal.metadata.children.1.builderMetadata.positions.title.modules.0.json"
-                                    ]
-                                },
-                                "content": {
-                                    "modules": [
-                                        "Process Proposal.metadata.children.1.builderMetadata.positions.content.modules.0.json"
-                                    ]
-                                },
-                                "footer": {
-                                    "modules": [
-                                        "Process Proposal.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
-                                    ]
-                                },
-                                "menu": {
-                                    "modules": []
-                                }
-                            },
-                            "positionList": [
-                                "title",
-                                "content",
-                                "footer",
-                                "menu"
-                            ]
-                        }
-                    }
-                ]
-            },
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "widgetTitle": "Process Proposal",
-            "readAccess": "public"
-        }
-    },
-    "widget.72": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
-        "parameters": {
-            "metadata": {
-                "class": "DescisionNode",
-                "_diagramState": {
-                    "x": -143,
-                    "y": 206
-                },
-                "children": [
-                    "User Roles.metadata.children.0.json",
-                    {
-                        "title": "New Empty Step",
-                        "class": "AttributesTableNode",
-                        "fields": [
-                            "User Roles.metadata.children.1.fields.0.json"
-                        ],
-                        "_diagramState": {
-                            "x": 207,
-                            "y": 251
-                        },
-                        "children": [
-                            "User Roles.metadata.children.1.children.0.json"
-                        ],
-                        "builderMetadata": {
-                            "positions": {
-                                "title": {
-                                    "modules": [
-                                        "User Roles.metadata.children.1.builderMetadata.positions.title.modules.0.json"
-                                    ]
-                                },
-                                "content": {
-                                    "modules": [
-                                        "User Roles.metadata.children.1.builderMetadata.positions.content.modules.0.json",
-                                        {
-                                            "type": "WizardIconizedScriptSelect",
-                                            "config": {
-                                                "icons": [
-                                                    "components\/com_geolive\/users_files\/user_files_680\/Uploads\/83J_dwW_[G]_bdd_[ImAgE].png",
-                                                    "components\/com_geolive\/users_files\/user_files_680\/Uploads\/AfX_[ImAgE]_sq7_Pi8_[G].png",
-                                                    "components\/com_geolive\/users_files\/user_files_680\/Uploads\/DLD_HPQ_[G]_[ImAgE]_nK3.png"
-                                                ],
-                                                "iconsetMetadata": {
-                                                    "onSelectScripts": {
-                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/83J_dwW_[G]_bdd_[ImAgE].png": "(new SaveAttributeItemValuesQuery(GeoliveClient.getId(), 'user', 'userAttributes', {isCommunityMember:true, isProponent:false, isLandsDepartment:false})).addEvent('success',function(){\n\/\/window.location.reload();\n}).execute();\n\n",
-                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/AfX_[ImAgE]_sq7_Pi8_[G].png": "(new SaveAttributeItemValuesQuery(GeoliveClient.getId(), 'user', 'userAttributes', {isCommunityMember:false, isProponent:true, isLandsDepartment:false})).addEvent('success',function(){\n\/\/window.location.reload();\n}).execute();\n\n",
-                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/DLD_HPQ_[G]_[ImAgE]_nK3.png": "(new SaveAttributeItemValuesQuery(GeoliveClient.getId(), 'user', 'userAttributes', {isCommunityMember:false, isProponent:false, isLandsDepartment:true})).addEvent('success',function(){\n\/\/window.location.reload();\n}).execute();\n\n"
-                                                    },
-                                                    "onSubmitScripts": {
-                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/83J_dwW_[G]_bdd_[ImAgE].png": "",
-                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/AfX_[ImAgE]_sq7_Pi8_[G].png": "",
-                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/DLD_HPQ_[G]_[ImAgE]_nK3.png": ""
-                                                    },
-                                                    "onRenderScripts": {
-                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/83J_dwW_[G]_bdd_[ImAgE].png": "asset.parentNode.setAttribute('data-label','Community Member');",
-                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/AfX_[ImAgE]_sq7_Pi8_[G].png": "asset.parentNode.setAttribute('data-label','Proponent');",
-                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/DLD_HPQ_[G]_[ImAgE]_nK3.png": "asset.parentNode.setAttribute('data-label','Lands Department');"
-                                                    }
-                                                },
-                                                "initSelectedScript": "User Roles.metadata.children.1.builderMetadata.positions.content.modules.1.config.initSelectedScript.js",
-                                                "className": "",
-                                                "requireSelection": true,
-                                                "allowMultipleSelection": false,
-                                                "allowEmptySelection": false,
-                                                "initializationScript": "",
-                                                "onSelectScript": "",
-                                                "onDeselectScript": "",
-                                                "onRenderSelectableScript": "",
-                                                "onSubmitWizardWithSelectedScript": "",
-                                                "exposeIconset": false,
-                                                "iconsetName": "Some-Iconset-Name"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "footer": {
-                                    "modules": []
-                                },
-                                "menu": {
-                                    "modules": []
-                                }
-                            },
-                            "positionList": [
-                                "title",
-                                "content",
-                                "footer",
-                                "menu"
-                            ],
-                            "_diagramState": {
-                                "minimized": false
-                            }
-                        }
-                    }
-                ]
-            },
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "templateName": "UserTemplate",
-            "widgetTitle": "User Roles",
+            "showStreetControl": false,
+            "streetControlPosition": "LEFT_TOP",
+            "showPanControl": true,
+            "panControlPosition": "RIGHT_BOTTOM",
+            "showZoomControl": true,
+            "zoomControl": "SMALL",
+            "zoomControlPosition": "RIGHT_BOTTOM",
+            "showMapTypeControl": true,
+            "mapType": "HORIZONTAL_BAR",
+            "mapTypePosition": "LEFT_TOP",
+            "showMapScaleControl": true,
+            "mapScaleType": "DEFAULT",
+            "mapScalePosition": "BOTTOM_RIGHT",
+            "showMapOverviewControl": false,
+            "mapOverviewControlOpened": false,
+            "widgetTitle": "",
             "readAccess": "public",
-            "requireTarget": true,
-            "target": ""
+            "target": "forTheMap"
         }
     },
-    "widget.73": {
-        "name": "Login Wizard Builder",
-        "instance": "LoginWizardBuilder",
+    "widget.35": {
+        "name": "Tile Buttons",
+        "instance": "TileButtons",
+        "parameters": {
+            "sections": [
+                "fullscreen",
+                "home",
+                ""
+            ],
+            "controlColor": "rgb(232, 133, 36)",
+            "discussionTag": false,
+            "iconSetReferenceName": "",
+            "markerSearch": true,
+            "tileIcon": [],
+            "groupIcon": [],
+            "position": "RIGHT_CENTER",
+            "offsetX": 100,
+            "offsetY": 100,
+            "tilePadding": 0,
+            "direction": "auto",
+            "markerSize": 41,
+            "tileSize": 50,
+            "showToolTips": true,
+            "fullscreenTip": false,
+            "homeTip": false,
+            "markerTip": false,
+            "loginTip": false,
+            "logoutTip": false,
+            "profileTip": false,
+            "markerIconset": [],
+            "layerMap": [],
+            "tipMap": [],
+            "filterLayerMappedIcons": true,
+            "iconsetMetadata": [],
+            "widgetTitle": "",
+            "readAccess": "public",
+            "subControlColor": "rgb(100, 149, 237)",
+            "guestLoginDrag": true,
+            "onDragEndScript": "defaultBehaviorFn();",
+            "useTipIconsetLayerTitle": false,
+            "formatTipScript": "",
+            "showLogoutProfile": false,
+            "displayMapSave": "1",
+            "onDisplayTileScript": "",
+            "onProfileClickScript": "",
+            "target": "map.3"
+        }
+    },
+    "widget.36": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "",
+            "target": "",
+            "templateName": "default",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": [
+                            "widget.DetailView.36.metadata.positions.title.modules.0.json"
+                        ]
+                    },
+                    "content": {
+                        "modules": [
+                            "widget.DetailView.36.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": [
+                            "widget.DetailView.36.metadata.positions.footer.modules.0.json"
+                        ]
+                    },
+                    "menu": {
+                        "modules": [
+                            "widget.DetailView.36.metadata.positions.menu.modules.0.json",
+                            {
+                                "type": "MenuController"
+                            }
+                        ]
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ]
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.38": {
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
             "metadata": {
-                "class": "DecisionNode",
+                "class": "DescisionNode",
                 "_diagramState": {
-                    "x": -146,
-                    "y": 226
+                    "x": -262,
+                    "y": 282
                 },
                 "children": [
-                    "loginForm.metadata.children.0.json",
+                    "changed the label.metadata.children.0.json",
                     {
-                        "title": "New Empty Step",
+                        "title": "Community Member Data",
                         "class": "AttributesTableNode",
                         "fields": [
-                            "loginForm.metadata.children.1.fields.0.json"
+                            "changed the label.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": -206,
-                            "y": 361
+                            "x": 138,
+                            "y": 294
                         },
                         "children": [
-                            "loginForm.metadata.children.1.children.0.json",
+                            "changed the label.metadata.children.1.children.0.json",
                             {
-                                "class": "InsertNode",
-                                "_diagramState": {
-                                    "x": -246,
-                                    "y": 562
-                                }
-                            },
-                            {
-                                "title": "Register",
+                                "title": "Item Details",
                                 "class": "AttributesTableNode",
                                 "fields": [
-                                    "loginForm.metadata.children.1.children.2.fields.0.json"
+                                    "changed the label.metadata.children.1.children.1.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 230,
-                                    "y": 379
+                                    "x": 699,
+                                    "y": 261
                                 },
                                 "children": [
-                                    "loginForm.metadata.children.1.children.2.children.0.json",
-                                    {
-                                        "class": "InsertNode",
-                                        "_diagramState": {
-                                            "x": 190,
-                                            "y": 545
-                                        }
-                                    }
+                                    "changed the label.metadata.children.1.children.1.children.0.json"
                                 ],
                                 "builderMetadata": {
                                     "positions": {
                                         "title": {
                                             "modules": [
-                                                "loginForm.metadata.children.1.children.2.builderMetadata.positions.title.modules.0.json"
+                                                "changed the label.metadata.children.1.children.1.builderMetadata.positions.title.modules.0.json"
                                             ]
                                         },
                                         "content": {
                                             "modules": [
-                                                "loginForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.0.json",
+                                                "changed the label.metadata.children.1.children.1.builderMetadata.positions.content.modules.0.json",
                                                 {
-                                                    "type": "WizardRegistration",
+                                                    "type": "WizardTitleField",
                                                     "config": {
-                                                        "className": "registration-left",
-                                                        "onSuccessfulRegistrationScript": "loginForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.1.config.onSuccessfulRegistrationScript.js",
-                                                        "formatRegistrationFieldsScript": "return fields;",
-                                                        "showCancel": false,
-                                                        "labelForCancel": "cancel",
-                                                        "labelForSubmit": "Register",
-                                                        "showName": true,
-                                                        "showUsername": true,
-                                                        "showReenterPassword": true
+                                                        "label": "Title",
+                                                        "message": "the title for this map item",
+                                                        "className": "",
+                                                        "maxChars": 0,
+                                                        "textFormatScript": ""
+                                                    }
+                                                },
+                                                {
+                                                    "type": "WizardDescriptionField",
+                                                    "config": {
+                                                        "label": "Description",
+                                                        "message": "the description for this map item",
+                                                        "lines": 5,
+                                                        "mandatory": true,
+                                                        "showAudios": true,
+                                                        "showImages": true,
+                                                        "showDocuments": false,
+                                                        "showVideos": true,
+                                                        "className": "",
+                                                        "maxChars": 0,
+                                                        "showExpandInput": "no",
+                                                        "toolbarPosition": "bottom",
+                                                        "textFormatScript": ""
+                                                    }
+                                                },
+                                                {
+                                                    "type": "WizardScriptElement",
+                                                    "config": {
+                                                        "script": ""
                                                     }
                                                 }
                                             ]
                                         },
                                         "footer": {
-                                            "modules": []
+                                            "modules": [
+                                                "changed the label.metadata.children.1.children.1.builderMetadata.positions.footer.modules.0.json"
+                                            ]
                                         },
                                         "menu": {
                                             "modules": []
@@ -789,10 +504,7 @@
                                         "content",
                                         "footer",
                                         "menu"
-                                    ],
-                                    "_diagramState": {
-                                        "minimized": false
-                                    }
+                                    ]
                                 }
                             }
                         ],
@@ -800,53 +512,56 @@
                             "positions": {
                                 "title": {
                                     "modules": [
-                                        "loginForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                        "changed the label.metadata.children.1.builderMetadata.positions.title.modules.0.json"
                                     ]
                                 },
                                 "content": {
                                     "modules": [
-                                        "loginForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        "changed the label.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
-                                            "type": "plugin.SingleSignOn.FacebookLogin",
+                                            "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
-                                                "reloadOnSuccess": true,
-                                                "reloadUrl": ""
-                                            }
-                                        },
-                                        {
-                                            "type": "WizardLogin",
-                                            "config": {
+                                                "attributeFields": [
+                                                    "changed the label.metadata.children.1.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
+                                                ],
                                                 "className": "",
-                                                "showCancel": false,
-                                                "labelForCancel": "cancel",
-                                                "labelForSubmit": "Login",
-                                                "labelForUsername": "XXXX-XXXX",
-                                                "labelForPassword": "XXXX-XXXX",
-                                                "onLoginFailedScript": "",
-                                                "reloadOnSuccess": true,
-                                                "reloadUrl": ""
+                                                "label": "Community Member",
+                                                "message": "community member's name",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)"
                                             }
                                         },
                                         {
-                                            "type": "InlineHtml",
+                                            "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
+                                                "attributeFields": [
+                                                    "changed the label.metadata.children.1.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
+                                                ],
                                                 "className": "",
-                                                "text": "<br\/><br\/><span style=\"text-align: left; font-weight: 100; display: block;\"><span style=\"font-size:20px\">\nDont have an account?<\/span>\n<br\/><br\/><\/span>",
-                                                "template": "",
-                                                "templateVariablesScript": ""
-                                            }
-                                        },
-                                        {
-                                            "type": "WizardScriptElement",
-                                            "config": {
-                                                "script": "loginForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.script.js",
-                                                "identifier": "customScriptElement"
+                                                "label": "Community Members Email",
+                                                "message": "community members's email address",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)"
                                             }
                                         }
                                     ]
                                 },
                                 "footer": {
-                                    "modules": []
+                                    "modules": [
+                                        "changed the label.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
                                 },
                                 "menu": {
                                     "modules": []
@@ -857,26 +572,118 @@
                                 "content",
                                 "footer",
                                 "menu"
-                            ],
-                            "_diagramState": {
-                                "minimized": false
-                            }
+                            ]
                         }
                     }
                 ]
             },
-            "beforeSubmitScript": "",
             "onCreateScript": "",
             "onUpdateScript": "",
             "onSaveScript": "",
-            "templateName": "LoginWizard",
-            "widgetTitle": "loginForm",
+            "widgetTitle": "changed the label",
             "readAccess": "public",
-            "reloadOnSuccess": true,
-            "reloadUrl": "",
-            "requireTarget": true,
-            "target": "loginForm",
-            "onLoadScript": ""
+            "beforeSubmitScript": ""
+        }
+    },
+    "widget.46": {
+        "name": "Attribute Cloud",
+        "instance": "AttributesCloud",
+        "parameters": {
+            "tabLabel": "Resources",
+            "className": "",
+            "cloudTable": "featureAttributes",
+            "cloudField": "activityCode",
+            "showDemoTags": false,
+            "demoTagsMinimum": 10,
+            "cloudResults": 30,
+            "tabColor": "rgb(0, 165, 131)",
+            "fontColor": "rgb(0,0,0)",
+            "showItemCount": true,
+            "scaleItemsWithCount": true,
+            "scaleItemsMax": 25,
+            "scaleItemsMin": 12,
+            "hideEmptyPredefinedValues": true,
+            "showValuesOutsidePredefined": false,
+            "cloudMetadata": [],
+            "attributeSelection": [
+                "widget.AttributesCloud.46.attributeSelection.0.json"
+            ],
+            "widgetTitle": "",
+            "readAccess": "community-member",
+            "formatCloudScript": "",
+            "formatTagScript": "",
+            "formatTabButtonScript": "",
+            "onSelectionChangedScript": "defaultBehaviorFn();",
+            "sendNotifications": false,
+            "target": ""
+        }
+    },
+    "widget.49": {
+        "name": "Attribute Cloud",
+        "instance": "AttributesCloud",
+        "parameters": {
+            "tabLabel": "(code temporary)",
+            "className": "",
+            "cloudTable": "featureAttributes",
+            "cloudField": "activityCode",
+            "showDemoTags": false,
+            "demoTagsMinimum": 10,
+            "cloudResults": 30,
+            "tabColor": "rgb(100, 149, 237)",
+            "fontColor": "rgb(0, 0, 0)",
+            "showItemCount": true,
+            "scaleItemsWithCount": true,
+            "scaleItemsMax": 25,
+            "scaleItemsMin": 12,
+            "hideEmptyPredefinedValues": true,
+            "showValuesOutsidePredefined": true,
+            "cloudMetadata": [],
+            "attributeSelection": [
+                "widget.AttributesCloud.49.attributeSelection.0.json"
+            ],
+            "widgetTitle": "",
+            "readAccess": "special",
+            "formatCloudScript": "",
+            "formatTagScript": "",
+            "formatTabButtonScript": "",
+            "onSelectionChangedScript": "defaultBehaviorFn();",
+            "sendNotifications": false,
+            "target": ""
+        }
+    },
+    "widget.50": {
+        "name": "Map Layers Widget",
+        "instance": "Layers",
+        "parameters": {}
+    },
+    "widget.51": {
+        "name": "Search Engine Optimization Helper",
+        "instance": "SearchEngineOptimizationHelper",
+        "parameters": {}
+    },
+    "widget.52": {
+        "name": "No Javascript Helper",
+        "instance": "NoJavascriptHelper",
+        "parameters": {}
+    },
+    "widget.53": {
+        "name": "Login Behavior",
+        "instance": "LoginWizard",
+        "parameters": {}
+    },
+    "widget.54": {
+        "name": "Session Behavior",
+        "instance": "Session",
+        "parameters": {}
+    },
+    "widget.62": {
+        "name": "Javascript",
+        "instance": "CustomBehaviorScript",
+        "parameters": {
+            "customScript": "Always Login.customScript.js",
+            "widgetTitle": "Always Login",
+            "readAccess": "guest",
+            "target": ""
         }
     },
     "widget.63": {
@@ -1349,78 +1156,15 @@
             "onLoadScript": ""
         }
     },
-    "widget.54": {
-        "name": "Session Behavior",
-        "instance": "Session",
-        "parameters": {}
-    },
-    "widget.62": {
-        "name": "Javascript",
-        "instance": "CustomBehaviorScript",
-        "parameters": {
-            "customScript": "Always Login.customScript.js",
-            "widgetTitle": "Always Login",
-            "readAccess": "guest",
-            "target": ""
-        }
-    },
-    "widget.50": {
-        "name": "Map Layers Widget",
-        "instance": "Layers",
-        "parameters": {}
-    },
-    "widget.51": {
-        "name": "Search Engine Optimization Helper",
-        "instance": "SearchEngineOptimizationHelper",
-        "parameters": {}
-    },
-    "widget.52": {
-        "name": "No Javascript Helper",
-        "instance": "NoJavascriptHelper",
-        "parameters": {}
-    },
-    "widget.53": {
-        "name": "Login Behavior",
-        "instance": "LoginWizard",
-        "parameters": {}
-    },
-    "widget.49": {
-        "name": "Attribute Cloud",
-        "instance": "AttributesCloud",
-        "parameters": {
-            "tabLabel": "(code temporary)",
-            "className": "",
-            "cloudTable": "featureAttributes",
-            "cloudField": "activityCode",
-            "showDemoTags": false,
-            "demoTagsMinimum": 10,
-            "cloudResults": 30,
-            "tabColor": "rgb(100, 149, 237)",
-            "fontColor": "rgb(0, 0, 0)",
-            "showItemCount": true,
-            "scaleItemsWithCount": true,
-            "scaleItemsMax": 25,
-            "scaleItemsMin": 12,
-            "hideEmptyPredefinedValues": true,
-            "showValuesOutsidePredefined": true,
-            "cloudMetadata": [],
-            "attributeSelection": [
-                "widget.AttributesCloud.49.attributeSelection.0.json"
-            ],
-            "widgetTitle": "",
-            "readAccess": "special",
-            "formatCloudScript": "",
-            "formatTagScript": "",
-            "formatTabButtonScript": "",
-            "onSelectionChangedScript": "defaultBehaviorFn();",
-            "sendNotifications": false,
-            "target": ""
-        }
-    },
     "widget.66": {
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "",
+            "target": "",
+            "templateName": "reserves",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -1452,360 +1196,50 @@
                     "menu"
                 ]
             },
-            "widgetTitle": "",
-            "readAccess": "public",
-            "templateName": "reserves"
-        }
-    },
-    "widget.33": {
-        "name": "Attr Search Bar",
-        "instance": "AttributesSearch",
-        "parameters": {
-            "position": "TOP_CENTER",
-            "barWidth": 699,
-            "locationSearch": true,
-            "showFilterBuilder": true,
-            "hoverTheme": false,
-            "themeLabel": "Theme",
-            "showCloud": true,
-            "cloudTable": "",
-            "cloudField": "",
-            "mapitemSearchLabel": "Placemarks",
-            "locationSearchLabel": "Locations",
-            "showDemoTags": false,
-            "demoTagsMinimum": 10,
-            "cloudResults": 30,
-            "searchColor": "rgb(232, 133, 36)",
-            "searchTintColor": "rgb(0,0,0)",
-            "clearColor": "#3a6ccf",
-            "clearTintColor": "rgb(0,0,0)",
-            "placeholderText": "Search Location, Items, Attributes...",
-            "searchUsers": false,
-            "widgetTitle": "search bar",
             "readAccess": "public"
         }
     },
-    "widget.34": {
-        "name": "Google Controls",
-        "instance": "GoogleControl",
+    "widget.67": {
+        "name": "Attribute Wizard Builder",
+        "instance": "AttributeWizardBuilder",
         "parameters": {
-            "showStreetControl": false,
-            "streetControlPosition": "LEFT_TOP",
-            "showPanControl": true,
-            "panControlPosition": "RIGHT_BOTTOM",
-            "showZoomControl": true,
-            "zoomControl": "SMALL",
-            "zoomControlPosition": "RIGHT_BOTTOM",
-            "showMapTypeControl": true,
-            "mapType": "HORIZONTAL_BAR",
-            "mapTypePosition": "LEFT_TOP",
-            "showMapScaleControl": true,
-            "mapScaleType": "DEFAULT",
-            "mapScalePosition": "BOTTOM_RIGHT",
-            "showMapOverviewControl": false,
-            "mapOverviewControlOpened": false,
-            "widgetTitle": "",
-            "readAccess": "public",
-            "target": "map.3"
-        }
-    },
-    "widget.35": {
-        "name": "Tile Buttons",
-        "instance": "TileButtons",
-        "parameters": {
-            "sections": [
-                "fullscreen",
-                "home",
-                ""
-            ],
-            "controlColor": "rgb(232, 133, 36)",
-            "discussionTag": false,
-            "iconSetReferenceName": "",
-            "markerSearch": true,
-            "tileIcon": [],
-            "groupIcon": [],
-            "position": "RIGHT_CENTER",
-            "offsetX": 100,
-            "offsetY": 100,
-            "tilePadding": 0,
-            "direction": "auto",
-            "markerSize": 41,
-            "tileSize": 50,
-            "showToolTips": true,
-            "fullscreenTip": false,
-            "homeTip": false,
-            "markerTip": false,
-            "loginTip": false,
-            "logoutTip": false,
-            "profileTip": false,
-            "markerIconset": [],
-            "layerMap": [],
-            "tipMap": [],
-            "filterLayerMappedIcons": true,
-            "iconsetMetadata": [],
-            "widgetTitle": "",
-            "readAccess": "public",
-            "subControlColor": "rgb(100, 149, 237)",
-            "guestLoginDrag": true,
-            "onDragEndScript": "defaultBehaviorFn();",
-            "useTipIconsetLayerTitle": false,
-            "formatTipScript": "",
-            "showLogoutProfile": false,
-            "displayMapSave": "1",
-            "onDisplayTileScript": "",
-            "onProfileClickScript": "",
-            "target": "map.3"
-        }
-    },
-    "widget.126": {
-        "name": "Detail View",
-        "instance": "DetailView",
-        "parameters": {
-            "metadata": {
-                "positions": {
-                    "title": {
-                        "modules": []
-                    },
-                    "content": {
-                        "modules": [
-                            "UserDetail.metadata.positions.content.modules.0.json",
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return AppClient.getName();",
-                                    "formatElementScript": ""
-                                }
-                            },
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "UserDetail.metadata.positions.content.modules.2.config.fieldValueScript.js",
-                                    "formatElementScript": ""
-                                }
-                            }
-                        ]
-                    },
-                    "footer": {
-                        "modules": []
-                    },
-                    "menu": {
-                        "modules": []
-                    }
-                },
-                "positionList": [
-                    "title",
-                    "content",
-                    "footer",
-                    "menu"
-                ],
-                "_diagramState": []
-            },
-            "templateName": "UserDetail",
-            "widgetTitle": "UserDetail",
-            "target": "map.3",
-            "readAccess": "public"
-        }
-    },
-    "widget.36": {
-        "name": "Detail View",
-        "instance": "DetailView",
-        "parameters": {
-            "metadata": {
-                "positions": {
-                    "title": {
-                        "modules": [
-                            "widget.DetailView.36.metadata.positions.title.modules.0.json"
-                        ]
-                    },
-                    "content": {
-                        "modules": [
-                            "widget.DetailView.36.metadata.positions.content.modules.0.json"
-                        ]
-                    },
-                    "footer": {
-                        "modules": [
-                            "widget.DetailView.36.metadata.positions.footer.modules.0.json"
-                        ]
-                    },
-                    "menu": {
-                        "modules": [
-                            "widget.DetailView.36.metadata.positions.menu.modules.0.json",
-                            {
-                                "type": "MenuController"
-                            }
-                        ]
-                    }
-                },
-                "positionList": [
-                    "title",
-                    "content",
-                    "footer",
-                    "menu"
-                ]
-            },
-            "widgetTitle": "",
-            "readAccess": "public",
-            "templateName": "default"
-        }
-    },
-    "widget.38": {
-        "name": "Generic Wizard",
-        "instance": "WizardBuilder",
-        "parameters": {
+            "templateName": "ProcessProposalTemplate",
             "metadata": {
                 "class": "DescisionNode",
                 "_diagramState": {
-                    "x": -262,
-                    "y": 282
+                    "x": 55,
+                    "y": 130
                 },
                 "children": [
-                    "changed the label.metadata.children.0.json",
+                    "Process Proposal.metadata.children.0.json",
                     {
-                        "title": "Community Member Data",
+                        "title": "New Empty Step",
                         "class": "AttributesTableNode",
                         "fields": [
-                            "changed the label.metadata.children.1.fields.0.json"
+                            "Process Proposal.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 138,
-                            "y": 294
+                            "x": 352,
+                            "y": 212
                         },
                         "children": [
-                            "changed the label.metadata.children.1.children.0.json",
-                            {
-                                "title": "Item Details",
-                                "class": "AttributesTableNode",
-                                "fields": [
-                                    "changed the label.metadata.children.1.children.1.fields.0.json"
-                                ],
-                                "_diagramState": {
-                                    "x": 699,
-                                    "y": 261
-                                },
-                                "children": [
-                                    "changed the label.metadata.children.1.children.1.children.0.json"
-                                ],
-                                "builderMetadata": {
-                                    "positions": {
-                                        "title": {
-                                            "modules": [
-                                                "changed the label.metadata.children.1.children.1.builderMetadata.positions.title.modules.0.json"
-                                            ]
-                                        },
-                                        "content": {
-                                            "modules": [
-                                                "changed the label.metadata.children.1.children.1.builderMetadata.positions.content.modules.0.json",
-                                                {
-                                                    "type": "WizardTitleField",
-                                                    "config": {
-                                                        "label": "Title",
-                                                        "message": "the title for this map item",
-                                                        "className": "",
-                                                        "maxChars": 0,
-                                                        "textFormatScript": ""
-                                                    }
-                                                },
-                                                {
-                                                    "type": "WizardDescriptionField",
-                                                    "config": {
-                                                        "label": "Description",
-                                                        "message": "the description for this map item",
-                                                        "lines": 5,
-                                                        "mandatory": true,
-                                                        "showAudios": true,
-                                                        "showImages": true,
-                                                        "showDocuments": false,
-                                                        "showVideos": true,
-                                                        "className": "",
-                                                        "maxChars": 0,
-                                                        "showExpandInput": "no",
-                                                        "toolbarPosition": "bottom",
-                                                        "textFormatScript": ""
-                                                    }
-                                                },
-                                                {
-                                                    "type": "WizardScriptElement",
-                                                    "config": {
-                                                        "script": ""
-                                                    }
-                                                }
-                                            ]
-                                        },
-                                        "footer": {
-                                            "modules": [
-                                                "changed the label.metadata.children.1.children.1.builderMetadata.positions.footer.modules.0.json"
-                                            ]
-                                        },
-                                        "menu": {
-                                            "modules": []
-                                        }
-                                    },
-                                    "positionList": [
-                                        "title",
-                                        "content",
-                                        "footer",
-                                        "menu"
-                                    ]
-                                }
-                            }
+                            "Process Proposal.metadata.children.1.children.0.json"
                         ],
                         "builderMetadata": {
                             "positions": {
                                 "title": {
                                     "modules": [
-                                        "changed the label.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                        "Process Proposal.metadata.children.1.builderMetadata.positions.title.modules.0.json"
                                     ]
                                 },
                                 "content": {
                                     "modules": [
-                                        "changed the label.metadata.children.1.builderMetadata.positions.content.modules.0.json",
-                                        {
-                                            "type": "plugin.Attributes.WizardTextAttribute",
-                                            "config": {
-                                                "attributeFields": [
-                                                    "changed the label.metadata.children.1.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
-                                                ],
-                                                "className": "",
-                                                "label": "Community Member",
-                                                "message": "community member's name",
-                                                "lines": 1,
-                                                "maxChars": 0,
-                                                "mandatory": false,
-                                                "multiEntry": false,
-                                                "muliTemplate": "lines",
-                                                "multiMessage": "",
-                                                "formatter": "none",
-                                                "iconTint": "rgb(100, 149, 237)"
-                                            }
-                                        },
-                                        {
-                                            "type": "plugin.Attributes.WizardTextAttribute",
-                                            "config": {
-                                                "attributeFields": [
-                                                    "changed the label.metadata.children.1.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
-                                                ],
-                                                "className": "",
-                                                "label": "Community Members Email",
-                                                "message": "community members's email address",
-                                                "lines": 1,
-                                                "maxChars": 0,
-                                                "mandatory": false,
-                                                "multiEntry": false,
-                                                "muliTemplate": "lines",
-                                                "multiMessage": "",
-                                                "formatter": "none",
-                                                "iconTint": "rgb(100, 149, 237)"
-                                            }
-                                        }
+                                        "Process Proposal.metadata.children.1.builderMetadata.positions.content.modules.0.json"
                                     ]
                                 },
                                 "footer": {
                                     "modules": [
-                                        "changed the label.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                        "Process Proposal.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
                                     ]
                                 },
                                 "menu": {
@@ -1822,13 +1256,548 @@
                     }
                 ]
             },
+            "beforeSubmitScript": "",
             "onCreateScript": "",
             "onUpdateScript": "",
             "onSaveScript": "",
-            "widgetTitle": "changed the label",
-            "readAccess": "public",
-            "beforeSubmitScript": ""
+            "widgetTitle": "Process Proposal",
+            "readAccess": "public"
         }
+    },
+    "widget.68": {
+        "name": "Attribute Wizard Builder",
+        "instance": "AttributeWizardBuilder",
+        "parameters": {
+            "templateName": "ProposalStatusTemplate",
+            "metadata": {
+                "class": "DescisionNode",
+                "_diagramState": {
+                    "x": -18,
+                    "y": 143
+                },
+                "children": [
+                    "Proposal Status.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "Proposal Status.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 238,
+                            "y": 350
+                        },
+                        "children": [
+                            "Proposal Status.metadata.children.1.children.0.json"
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "Proposal Status.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "Proposal Status.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "WizardIconizedScriptSelect",
+                                            "config": {
+                                                "icons": [
+                                                    "components\/com_geolive\/users_files\/user_files_680\/Uploads\/mqn_[G]_6Zc_8fs_[ImAgE].png",
+                                                    "components\/com_geolive\/users_files\/user_files_680\/Uploads\/bPw_oqc_FQ2_[G]_[ImAgE].png",
+                                                    "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[ImAgE]_iqc_XTt_[G]_LDt.png"
+                                                ],
+                                                "iconsetMetadata": {
+                                                    "onSelectScripts": {
+                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/rCV_[G]_cpZ_2EG_[ImAgE].png": "",
+                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/mqn_[G]_6Zc_8fs_[ImAgE].png": "",
+                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/bPw_oqc_FQ2_[G]_[ImAgE].png": "",
+                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[ImAgE]_iqc_XTt_[G]_LDt.png": ""
+                                                    },
+                                                    "onSubmitScripts": {
+                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/rCV_[G]_cpZ_2EG_[ImAgE].png": "",
+                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/mqn_[G]_6Zc_8fs_[ImAgE].png": "",
+                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/bPw_oqc_FQ2_[G]_[ImAgE].png": "",
+                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[ImAgE]_iqc_XTt_[G]_LDt.png": ""
+                                                    },
+                                                    "onRenderScripts": {
+                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/rCV_[G]_cpZ_2EG_[ImAgE].png": "",
+                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/mqn_[G]_6Zc_8fs_[ImAgE].png": "asset.parentNode.setAttribute('data-label','Submitted and Pending');",
+                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/bPw_oqc_FQ2_[G]_[ImAgE].png": "asset.parentNode.setAttribute('data-label','Under Lands Department Review');",
+                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[ImAgE]_iqc_XTt_[G]_LDt.png": "asset.parentNode.setAttribute('data-label','Approved');"
+                                                    }
+                                                },
+                                                "initSelectedScript": "return 0;",
+                                                "className": "prop-status",
+                                                "requireSelection": true
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": []
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "widgetTitle": "Proposal Status",
+            "readAccess": "public"
+        }
+    },
+    "widget.69": {
+        "name": "Javascript",
+        "instance": "CustomBehaviorScript",
+        "parameters": {
+            "customScript": "Cluster Icon Style.customScript.js",
+            "widgetTitle": "Cluster Icon Style",
+            "readAccess": "public",
+            "target": "map.3"
+        }
+    },
+    "widget.70": {
+        "name": "Attribute Cloud",
+        "instance": "AttributesCloud",
+        "parameters": {
+            "tabLabel": "Year",
+            "className": "",
+            "showDemoTags": false,
+            "demoTagsMinimum": 10,
+            "cloudResults": 30,
+            "tabColor": "rgb(100, 149, 237)",
+            "fontColor": "black",
+            "showItemCount": true,
+            "scaleItemsWithCount": true,
+            "scaleItemsMax": 25,
+            "scaleItemsMin": 12,
+            "hideEmptyPredefinedValues": true,
+            "showValuesOutsidePredefined": true,
+            "attributeSelection": [
+                "widget.AttributesCloud.70.attributeSelection.0.json"
+            ],
+            "cloudMetadata": [],
+            "formatCloudScript": "",
+            "formatTagScript": "widget.AttributesCloud.70.formatTagScript.js",
+            "formatTabButtonScript": "",
+            "onSelectionChangedScript": "defaultBehaviorFn();",
+            "sendNotifications": false,
+            "widgetTitle": "",
+            "readAccess": "community-member",
+            "target": ""
+        }
+    },
+    "widget.71": {
+        "name": "Attr CSV Export",
+        "instance": "AttributesCSVExport",
+        "parameters": {
+            "downloadImage": [],
+            "uploadImage": [],
+            "controlColor": "rgb(159, 0, 159)",
+            "exportMetadata": {
+                "fields": {
+                    "item id": "mapitem.id",
+                    "item owner id": "mapitem.uid",
+                    "item owner name": {
+                        "field": "mapitem.uid",
+                        "formatter": "useridtoname"
+                    },
+                    "item owner email": {
+                        "field": "mapitem.uid",
+                        "formatter": "useridtoemail"
+                    },
+                    "layer id": "layer.id",
+                    "layer title": "layer.name",
+                    "title": "mapitem.name",
+                    "coordinates": {
+                        "field": "mapitem.coordinates",
+                        "formatter": "coordinates"
+                    },
+                    "description": {
+                        "field": "mapitem.description",
+                        "formatter": "htmltoplaintext"
+                    },
+                    "image count": {
+                        "field": "mapitem.description",
+                        "formatter": "countimages"
+                    },
+                    "url": {
+                        "field": "mapitem.id",
+                        "formatter": "idtourl"
+                    },
+                    "created date": "mapitem.creationDate",
+                    "last modification date": "mapitem.modificationDate",
+                    "last editor": {
+                        "field": "mapitem.id",
+                        "formatter": "itemeditors"
+                    },
+                    "edit count": {
+                        "field": "mapitem.id",
+                        "formatter": "itemeditcount"
+                    },
+                    "read access": "mapitem.readAccess",
+                    "item views": "mapitem.views",
+                    "Comunity Member's Name": {
+                        "field": "attributes.2.name",
+                        "formatter": "attributes.text"
+                    },
+                    "Community Members Email Address": {
+                        "field": "attributes.2.email",
+                        "formatter": "attributes.text"
+                    },
+                    "Activity Code": {
+                        "field": "attributes.3.activityCode",
+                        "formatter": "attributes.text"
+                    },
+                    "Activity": {
+                        "field": "attributes.3.activity",
+                        "formatter": "attributes.text"
+                    },
+                    "Year": {
+                        "field": "attributes.3.year",
+                        "formatter": "attributes.text"
+                    }
+                },
+                "order": {
+                    "layer id": "ASC",
+                    "item id": "ASC"
+                }
+            },
+            "showImport": false,
+            "tileIcon": [],
+            "exportEncoding": "ISO-8859-1",
+            "importEncoding": "ISO-8859-1",
+            "showImportEncoding": false,
+            "filename": "Geolive Export DATE[Y-m-d (H.i.s)]",
+            "widgetTitle": "",
+            "readAccess": "special",
+            "position": "RIGHT_CENTER"
+        }
+    },
+    "widget.72": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "metadata": {
+                "class": "DescisionNode",
+                "_diagramState": {
+                    "x": -143,
+                    "y": 206
+                },
+                "children": [
+                    "User Roles.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "User Roles.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 207,
+                            "y": 251
+                        },
+                        "children": [
+                            "User Roles.metadata.children.1.children.0.json"
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "User Roles.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "User Roles.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "WizardIconizedScriptSelect",
+                                            "config": {
+                                                "icons": [
+                                                    "components\/com_geolive\/users_files\/user_files_680\/Uploads\/83J_dwW_[G]_bdd_[ImAgE].png",
+                                                    "components\/com_geolive\/users_files\/user_files_680\/Uploads\/AfX_[ImAgE]_sq7_Pi8_[G].png",
+                                                    "components\/com_geolive\/users_files\/user_files_680\/Uploads\/DLD_HPQ_[G]_[ImAgE]_nK3.png"
+                                                ],
+                                                "iconsetMetadata": {
+                                                    "onSelectScripts": {
+                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/83J_dwW_[G]_bdd_[ImAgE].png": "(new SaveAttributeItemValuesQuery(GeoliveClient.getId(), 'user', 'userAttributes', {isCommunityMember:true, isProponent:false, isLandsDepartment:false})).addEvent('success',function(){\n\/\/window.location.reload();\n}).execute();\n\n",
+                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/AfX_[ImAgE]_sq7_Pi8_[G].png": "(new SaveAttributeItemValuesQuery(GeoliveClient.getId(), 'user', 'userAttributes', {isCommunityMember:false, isProponent:true, isLandsDepartment:false})).addEvent('success',function(){\n\/\/window.location.reload();\n}).execute();\n\n",
+                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/DLD_HPQ_[G]_[ImAgE]_nK3.png": "(new SaveAttributeItemValuesQuery(GeoliveClient.getId(), 'user', 'userAttributes', {isCommunityMember:false, isProponent:false, isLandsDepartment:true})).addEvent('success',function(){\n\/\/window.location.reload();\n}).execute();\n\n"
+                                                    },
+                                                    "onSubmitScripts": {
+                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/83J_dwW_[G]_bdd_[ImAgE].png": "",
+                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/AfX_[ImAgE]_sq7_Pi8_[G].png": "",
+                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/DLD_HPQ_[G]_[ImAgE]_nK3.png": ""
+                                                    },
+                                                    "onRenderScripts": {
+                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/83J_dwW_[G]_bdd_[ImAgE].png": "asset.parentNode.setAttribute('data-label','Community Member');",
+                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/AfX_[ImAgE]_sq7_Pi8_[G].png": "asset.parentNode.setAttribute('data-label','Proponent');",
+                                                        "components\/com_geolive\/users_files\/user_files_680\/Uploads\/DLD_HPQ_[G]_[ImAgE]_nK3.png": "asset.parentNode.setAttribute('data-label','Lands Department');"
+                                                    }
+                                                },
+                                                "initSelectedScript": "User Roles.metadata.children.1.builderMetadata.positions.content.modules.1.config.initSelectedScript.js",
+                                                "className": "",
+                                                "requireSelection": true,
+                                                "allowMultipleSelection": false,
+                                                "allowEmptySelection": false,
+                                                "initializationScript": "",
+                                                "onSelectScript": "",
+                                                "onDeselectScript": "",
+                                                "onRenderSelectableScript": "",
+                                                "onSubmitWizardWithSelectedScript": "",
+                                                "exposeIconset": false,
+                                                "iconsetName": "Some-Iconset-Name"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": []
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "templateName": "UserTemplate",
+            "widgetTitle": "User Roles",
+            "readAccess": "public",
+            "requireTarget": true,
+            "target": ""
+        }
+    },
+    "widget.73": {
+        "name": "Login Wizard Builder",
+        "instance": "LoginWizardBuilder",
+        "parameters": {
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -146,
+                    "y": 226
+                },
+                "children": [
+                    "loginForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "loginForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": -206,
+                            "y": 361
+                        },
+                        "children": [
+                            "loginForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": -246,
+                                    "y": 562
+                                }
+                            },
+                            {
+                                "title": "Register",
+                                "class": "AttributesTableNode",
+                                "fields": [
+                                    "loginForm.metadata.children.1.children.2.fields.0.json"
+                                ],
+                                "_diagramState": {
+                                    "x": 230,
+                                    "y": 379
+                                },
+                                "children": [
+                                    "loginForm.metadata.children.1.children.2.children.0.json",
+                                    {
+                                        "class": "InsertNode",
+                                        "_diagramState": {
+                                            "x": 190,
+                                            "y": 545
+                                        }
+                                    }
+                                ],
+                                "builderMetadata": {
+                                    "positions": {
+                                        "title": {
+                                            "modules": [
+                                                "loginForm.metadata.children.1.children.2.builderMetadata.positions.title.modules.0.json"
+                                            ]
+                                        },
+                                        "content": {
+                                            "modules": [
+                                                "loginForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.0.json",
+                                                {
+                                                    "type": "WizardRegistration",
+                                                    "config": {
+                                                        "className": "registration-left",
+                                                        "onSuccessfulRegistrationScript": "loginForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.1.config.onSuccessfulRegistrationScript.js",
+                                                        "formatRegistrationFieldsScript": "return fields;",
+                                                        "showCancel": false,
+                                                        "labelForCancel": "cancel",
+                                                        "labelForSubmit": "Register",
+                                                        "showName": true,
+                                                        "showUsername": true,
+                                                        "showReenterPassword": true
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "footer": {
+                                            "modules": []
+                                        },
+                                        "menu": {
+                                            "modules": []
+                                        }
+                                    },
+                                    "positionList": [
+                                        "title",
+                                        "content",
+                                        "footer",
+                                        "menu"
+                                    ],
+                                    "_diagramState": {
+                                        "minimized": false
+                                    }
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "loginForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "loginForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "plugin.SingleSignOn.FacebookLogin",
+                                            "config": {
+                                                "reloadOnSuccess": true,
+                                                "reloadUrl": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "WizardLogin",
+                                            "config": {
+                                                "className": "",
+                                                "showCancel": false,
+                                                "labelForCancel": "cancel",
+                                                "labelForSubmit": "Login",
+                                                "labelForUsername": "XXXX-XXXX",
+                                                "labelForPassword": "XXXX-XXXX",
+                                                "onLoginFailedScript": "",
+                                                "reloadOnSuccess": true,
+                                                "reloadUrl": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "InlineHtml",
+                                            "config": {
+                                                "className": "",
+                                                "text": "<br\/><br\/><span style=\"text-align: left; font-weight: 100; display: block;\"><span style=\"font-size:20px\">\nDont have an account?<\/span>\n<br\/><br\/><\/span>",
+                                                "template": "",
+                                                "templateVariablesScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "WizardScriptElement",
+                                            "config": {
+                                                "script": "loginForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.script.js",
+                                                "identifier": "customScriptElement"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": []
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "templateName": "LoginWizard",
+            "widgetTitle": "loginForm",
+            "readAccess": "public",
+            "reloadOnSuccess": true,
+            "reloadUrl": "",
+            "requireTarget": true,
+            "target": "loginForm",
+            "onLoadScript": ""
+        }
+    },
+    "widget.74": {
+        "name": "Custom Control Script",
+        "instance": "CustomControlScript",
+        "parameters": {
+            "customScript": "User Type Control.customScript.js",
+            "widgetTitle": "User Type Control",
+            "readAccess": "registered",
+            "position": "TOP_RIGHT",
+            "target": ""
+        }
+    },
+    "widget.76": {
+        "name": "Javascript",
+        "instance": "CustomBehaviorScript",
+        "parameters": {
+            "customScript": "Needs User Role.customScript.js",
+            "widgetTitle": "Needs User Role",
+            "readAccess": "no-role"
+        }
+    },
+    "widget.78": {
+        "name": "Cluster Behavior",
+        "instance": "ClusterBehaviors",
+        "parameters": {}
     },
     "widget.113": {
         "name": "Configuration",
@@ -2049,174 +2018,6 @@
             "widgetTitle": "Generated Style Script",
             "target": "map.3",
             "readAccess": "public"
-        }
-    },
-    "widget.141": {
-        "name": "Detail View",
-        "instance": "DetailView",
-        "parameters": {
-            "metadata": {
-                "positions": {
-                    "title": {
-                        "modules": []
-                    },
-                    "content": {
-                        "modules": [
-                            "Proposal Detail.metadata.positions.content.modules.0.json",
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "fieldLabelScript": "return \"Deadline\";",
-                                    "fieldValueScript": "return item.getDeadlineDate();",
-                                    "formatElementScript": "el.addClass('date-deadline');"
-                                }
-                            },
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "fieldLabelScript": "return \"Expires\";",
-                                    "fieldValueScript": "return item.getExpiryDate();",
-                                    "formatElementScript": ""
-                                }
-                            },
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "fieldLabelScript": "return \"Company Name\";",
-                                    "fieldValueScript": "return item.getCompanyName();",
-                                    "formatElementScript": ""
-                                }
-                            },
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "fieldLabelScript": "return \"Project Submitter\";",
-                                    "fieldValueScript": "Proposal Detail.metadata.positions.content.modules.4.config.fieldValueScript.js",
-                                    "formatElementScript": ""
-                                }
-                            },
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "script": "Proposal Detail.metadata.positions.content.modules.5.config.script.js",
-                                    "identifier": "customScriptElement"
-                                }
-                            },
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "script": "Proposal Detail.metadata.positions.content.modules.6.config.script.js",
-                                    "identifier": "customScriptElement"
-                                }
-                            },
-                            {
-                                "type": "plugin.ReferralManagement.SpatialPreview"
-                            },
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "script": "",
-                                    "identifier": "customScriptElement"
-                                }
-                            },
-                            {
-                                "type": "plugin.ReferralManagement.ListDocuments"
-                            },
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "fieldLabelScript": "return \"Priority\";",
-                                    "fieldValueScript": "return item.getPriority();",
-                                    "formatElementScript": "Proposal Detail.metadata.positions.content.modules.10.config.formatElementScript.js"
-                                }
-                            },
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "script": "Proposal Detail.metadata.positions.content.modules.11.config.script.js",
-                                    "identifier": "customScriptElement"
-                                }
-                            }
-                        ]
-                    },
-                    "footer": {
-                        "modules": []
-                    },
-                    "menu": {
-                        "modules": []
-                    }
-                },
-                "positionList": [
-                    "title",
-                    "content",
-                    "footer",
-                    "menu"
-                ],
-                "_diagramState": []
-            },
-            "templateName": "ProposalDetail",
-            "widgetTitle": "Proposal Detail",
-            "target": "map.3",
-            "readAccess": "public",
-            "requireTarget": true
-        }
-    },
-    "widget.140": {
-        "name": "Search Bar Tab",
-        "instance": "SearchBarTab",
-        "parameters": {
-            "tabColor": "rgb(134, 187, 0)",
-            "fontColor": "rgba(0,0,0)",
-            "showIcon": true,
-            "icon": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[G]_xVL_sLr_Tgq_[ImAgE].png"
-            ],
-            "iconActive": [],
-            "tabName": "SearchBarTab",
-            "widgetTitle": "Add Proposal",
-            "target": "",
-            "readAccess": "lands-department",
-            "position": "RIGHT_CENTER",
-            "onClickEventScript": "Add Proposal.onClickEventScript.js",
-            "showOverlay": false
-        }
-    },
-    "widget.46": {
-        "name": "Attribute Cloud",
-        "instance": "AttributesCloud",
-        "parameters": {
-            "tabLabel": "Resources",
-            "className": "",
-            "cloudTable": "featureAttributes",
-            "cloudField": "activityCode",
-            "showDemoTags": false,
-            "demoTagsMinimum": 10,
-            "cloudResults": 30,
-            "tabColor": "rgb(0, 165, 131)",
-            "fontColor": "rgb(0,0,0)",
-            "showItemCount": true,
-            "scaleItemsWithCount": true,
-            "scaleItemsMax": 25,
-            "scaleItemsMin": 12,
-            "hideEmptyPredefinedValues": true,
-            "showValuesOutsidePredefined": false,
-            "cloudMetadata": [],
-            "attributeSelection": [
-                "widget.AttributesCloud.46.attributeSelection.0.json"
-            ],
-            "widgetTitle": "",
-            "readAccess": "community-member",
-            "formatCloudScript": "",
-            "formatTagScript": "",
-            "formatTabButtonScript": "",
-            "onSelectionChangedScript": "defaultBehaviorFn();",
-            "sendNotifications": false,
-            "target": ""
         }
     },
     "widget.116": {
@@ -2581,6 +2382,90 @@
             "user role tint": "rgb(0,0,0)"
         }
     },
+    "widget.126": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "UserDetail",
+            "target": "map.3",
+            "templateName": "UserDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "UserDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return AppClient.getName();",
+                                    "formatElementScript": ""
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "UserDetail.metadata.positions.content.modules.2.config.fieldValueScript.js",
+                                    "formatElementScript": ""
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.129": {
+        "name": "Search Bar Tab View",
+        "instance": "SearchBarTabOverlayView",
+        "parameters": {
+            "tabColor": "rgb(0, 177, 230)",
+            "fontColor": "rgb(0,0,0)",
+            "tabName": "SearchBarTab",
+            "showIcon": true,
+            "icon": [
+                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[ImAgE]_SiH_MOM_DjE_[G].png"
+            ],
+            "iconActive": [],
+            "customScript": "",
+            "className": "",
+            "viewType": "view",
+            "namedView": "ShareView",
+            "showInlineEdit": false,
+            "namedFormView": "defaultView",
+            "showDeleteButton": false,
+            "deleteItemScript": "defaultBehaviorFn()",
+            "formatModuleScript": "",
+            "resolveItemScript": "",
+            "itemButtonsScript": "return [];",
+            "widgetTitle": "Share",
+            "target": "",
+            "readAccess": "lands-department",
+            "position": "RIGHT_CENTER"
+        }
+    },
     "widget.131": {
         "name": "Template",
         "instance": "Template",
@@ -2809,6 +2694,250 @@
             "highSelected": "rgb(163, 2, 2)",
             "mediumHover": "rgb(167, 167, 0)",
             "mediumSelected": "rgb(206, 206, 0)"
+        }
+    },
+    "widget.135": {
+        "name": "Search Bar Tab View",
+        "instance": "SearchBarTabOverlayView",
+        "parameters": {
+            "tabColor": "rgb(159, 151, 151)",
+            "fontColor": "rgb(5, 5, 5)",
+            "showIcon": true,
+            "icon": [
+                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/7YB_wHp_[ImAgE]_BVE_[G].png"
+            ],
+            "iconActive": [],
+            "customScript": "",
+            "className": "",
+            "viewType": "view",
+            "namedView": "ProposalsListView",
+            "showInlineEdit": false,
+            "namedFormView": "defaultView",
+            "showDeleteButton": false,
+            "deleteItemScript": "defaultBehaviorFn()",
+            "formatModuleScript": "",
+            "resolveItemScript": "",
+            "itemButtonsScript": "return [];",
+            "widgetTitle": "Proposals Overlay",
+            "target": "",
+            "readAccess": "lands-department",
+            "position": "RIGHT_CENTER",
+            "tabName": "Proposals"
+        }
+    },
+    "widget.136": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "Proposals List View",
+            "target": "map.3",
+            "templateName": "ProposalsListView",
+            "requireTarget": false,
+            "onRenderApplictionScript": "",
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "Proposals List View.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "plugin.ReferralManagement.Proposals",
+                                "config": {
+                                    "className": "proposal-list-view",
+                                    "viewType": "view",
+                                    "namedView": "ProposalDetail",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "",
+                                    "itemButtonsScript": "return [];"
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.137": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "module-proposals-list-text.contentTemplate.html",
+            "widgetTitle": "module.proposals-list.text",
+            "comments": "",
+            "target": "module.proposals-list.text",
+            "readAccess": "public"
+        }
+    },
+    "widget.140": {
+        "name": "Search Bar Tab",
+        "instance": "SearchBarTab",
+        "parameters": {
+            "tabColor": "rgb(134, 187, 0)",
+            "fontColor": "rgba(0,0,0)",
+            "showIcon": true,
+            "icon": [
+                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[G]_xVL_sLr_Tgq_[ImAgE].png"
+            ],
+            "iconActive": [],
+            "tabName": "SearchBarTab",
+            "widgetTitle": "Add Proposal",
+            "target": "",
+            "readAccess": "lands-department",
+            "position": "RIGHT_CENTER",
+            "onClickEventScript": "Add Proposal.onClickEventScript.js",
+            "showOverlay": false
+        }
+    },
+    "widget.141": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "Proposal Detail",
+            "target": "map.3",
+            "templateName": "ProposalDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "Proposal Detail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Deadline\";",
+                                    "fieldValueScript": "return item.getDeadlineDate();",
+                                    "formatElementScript": "el.addClass('date-deadline');"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Expires\";",
+                                    "fieldValueScript": "return item.getExpiryDate();",
+                                    "formatElementScript": ""
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Company Name\";",
+                                    "fieldValueScript": "return item.getCompanyName();",
+                                    "formatElementScript": ""
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Project Submitter\";",
+                                    "fieldValueScript": "Proposal Detail.metadata.positions.content.modules.4.config.fieldValueScript.js",
+                                    "formatElementScript": ""
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "script": "Proposal Detail.metadata.positions.content.modules.5.config.script.js",
+                                    "identifier": "customScriptElement"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "script": "Proposal Detail.metadata.positions.content.modules.6.config.script.js",
+                                    "identifier": "customScriptElement"
+                                }
+                            },
+                            {
+                                "type": "plugin.ReferralManagement.SpatialPreview"
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "script": "",
+                                    "identifier": "customScriptElement"
+                                }
+                            },
+                            {
+                                "type": "plugin.ReferralManagement.ListDocuments"
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Priority\";",
+                                    "fieldValueScript": "return item.getPriority();",
+                                    "formatElementScript": "Proposal Detail.metadata.positions.content.modules.10.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "script": "Proposal Detail.metadata.positions.content.modules.11.config.script.js",
+                                    "identifier": "customScriptElement"
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.142": {
+        "name": "Custom Tile Control Script",
+        "instance": "CustomTileControlScript",
+        "parameters": {
+            "customScript": "widget.CustomTileControlScript.142.customScript.js",
+            "tileIcon": [
+                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/7qx_[ImAgE]_[G]_5sS_Itd.png"
+            ],
+            "hoverTip": "",
+            "className": "proposal-tile",
+            "widgetTitle": "",
+            "target": "map.3",
+            "readAccess": "public",
+            "position": "TOP_RIGHT"
         }
     },
     "widget.143": {
@@ -3255,142 +3384,6 @@
             "environment-layer": "113"
         }
     },
-    "widget.135": {
-        "name": "Search Bar Tab View",
-        "instance": "SearchBarTabOverlayView",
-        "parameters": {
-            "tabColor": "rgb(159, 151, 151)",
-            "fontColor": "rgb(5, 5, 5)",
-            "showIcon": true,
-            "icon": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/7YB_wHp_[ImAgE]_BVE_[G].png"
-            ],
-            "iconActive": [],
-            "customScript": "",
-            "className": "",
-            "viewType": "view",
-            "namedView": "ProposalsListView",
-            "showInlineEdit": false,
-            "namedFormView": "defaultView",
-            "showDeleteButton": false,
-            "deleteItemScript": "defaultBehaviorFn()",
-            "formatModuleScript": "",
-            "resolveItemScript": "",
-            "itemButtonsScript": "return [];",
-            "widgetTitle": "Proposals Overlay",
-            "target": "",
-            "readAccess": "lands-department",
-            "position": "RIGHT_CENTER",
-            "tabName": "Proposals"
-        }
-    },
-    "widget.136": {
-        "name": "Detail View",
-        "instance": "DetailView",
-        "parameters": {
-            "metadata": {
-                "positions": {
-                    "title": {
-                        "modules": []
-                    },
-                    "content": {
-                        "modules": [
-                            "Proposals List View.metadata.positions.content.modules.0.json",
-                            {
-                                "type": "plugin.ReferralManagement.Proposals",
-                                "config": {
-                                    "className": "proposal-list-view",
-                                    "viewType": "view",
-                                    "namedView": "ProposalDetail",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "",
-                                    "itemButtonsScript": "return [];"
-                                }
-                            }
-                        ]
-                    },
-                    "footer": {
-                        "modules": []
-                    },
-                    "menu": {
-                        "modules": []
-                    }
-                },
-                "positionList": [
-                    "title",
-                    "content",
-                    "footer",
-                    "menu"
-                ],
-                "_diagramState": []
-            },
-            "templateName": "ProposalsListView",
-            "widgetTitle": "Proposals List View",
-            "target": "map.3",
-            "readAccess": "public",
-            "requireTarget": false
-        }
-    },
-    "widget.137": {
-        "name": "Template",
-        "instance": "Template",
-        "parameters": {
-            "contentTemplate": "module-proposals-list-text.contentTemplate.html",
-            "widgetTitle": "module.proposals-list.text",
-            "comments": "",
-            "target": "module.proposals-list.text",
-            "readAccess": "public"
-        }
-    },
-    "widget.129": {
-        "name": "Search Bar Tab View",
-        "instance": "SearchBarTabOverlayView",
-        "parameters": {
-            "tabColor": "rgb(0, 177, 230)",
-            "fontColor": "rgb(0,0,0)",
-            "tabName": "SearchBarTab",
-            "showIcon": true,
-            "icon": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[ImAgE]_SiH_MOM_DjE_[G].png"
-            ],
-            "iconActive": [],
-            "customScript": "",
-            "className": "",
-            "viewType": "view",
-            "namedView": "ShareView",
-            "showInlineEdit": false,
-            "namedFormView": "defaultView",
-            "showDeleteButton": false,
-            "deleteItemScript": "defaultBehaviorFn()",
-            "formatModuleScript": "",
-            "resolveItemScript": "",
-            "itemButtonsScript": "return [];",
-            "widgetTitle": "Share",
-            "target": "",
-            "readAccess": "lands-department",
-            "position": "RIGHT_CENTER"
-        }
-    },
-    "widget.142": {
-        "name": "Custom Tile Control Script",
-        "instance": "CustomTileControlScript",
-        "parameters": {
-            "customScript": "widget.CustomTileControlScript.142.customScript.js",
-            "tileIcon": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/7qx_[ImAgE]_[G]_5sS_Itd.png"
-            ],
-            "hoverTip": "",
-            "className": "proposal-tile",
-            "widgetTitle": "",
-            "target": "map.3",
-            "readAccess": "public",
-            "position": "TOP_RIGHT"
-        }
-    },
     "widget.145": {
         "name": "Discussion",
         "instance": "Discussion",
@@ -3407,6 +3400,7 @@
             "resolveItemScript": "return item;",
             "initialPostsScript": "return null;",
             "namedView": "defaultPostDetail",
+            "reverseOrder": false,
             "readAccess": "public"
         }
     },
@@ -3422,6 +3416,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "Dashboard",
+            "target": "dashboard",
+            "templateName": "dashboard",
+            "requireTarget": false,
+            "onRenderApplictionScript": "Dashboard.onRenderApplictionScript.js",
             "metadata": {
                 "positions": {
                     "title": {
@@ -3447,18 +3446,18 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "dashboard",
-            "requireTarget": false,
-            "widgetTitle": "Dashboard",
-            "target": "dashboard",
-            "readAccess": "public",
-            "onRenderApplictionScript": "Dashboard.onRenderApplictionScript.js"
+            "readAccess": "public"
         }
     },
     "widget.148": {
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "Left Panel",
+            "target": "leftPanel",
+            "templateName": "leftPanel",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -3527,18 +3526,18 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "leftPanel",
-            "requireTarget": true,
-            "widgetTitle": "Left Panel",
-            "target": "leftPanel",
-            "readAccess": "public",
-            "onRenderApplictionScript": ""
+            "readAccess": "public"
         }
     },
     "widget.149": {
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "Main Panel",
+            "target": "mainPanel",
+            "templateName": "mainPanel",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -3564,12 +3563,7 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "mainPanel",
-            "requireTarget": true,
-            "widgetTitle": "Main Panel",
-            "target": "mainPanel",
-            "readAccess": "public",
-            "onRenderApplictionScript": ""
+            "readAccess": "public"
         }
     },
     "widget.150": {
@@ -3586,6 +3580,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "Dashboard Content",
+            "target": "dashboardContent",
+            "templateName": "dashboardContent",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -3628,11 +3627,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "dashboardContent",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "Dashboard Content",
-            "target": "dashboardContent",
             "readAccess": "public"
         }
     },
@@ -3640,6 +3634,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "User Detail View",
+            "target": "userDetailView",
+            "templateName": "userDetailView",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -3692,11 +3691,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "userDetailView",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "User Detail View",
-            "target": "userDetailView",
             "readAccess": "public"
         }
     },
@@ -4199,6 +4193,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "Navigation Menu",
+            "target": "navigationMenu",
+            "templateName": "navigationMenu",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -4224,11 +4223,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "navigationMenu",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "Navigation Menu",
-            "target": "navigationMenu",
             "readAccess": "public"
         }
     },
@@ -4236,6 +4230,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "Main Dashboard Detail",
+            "target": "mainDashboardDetail",
+            "templateName": "mainDashboardDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -4333,11 +4332,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "mainDashboardDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "Main Dashboard Detail",
-            "target": "mainDashboardDetail",
             "readAccess": "public"
         }
     },
@@ -4345,6 +4339,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "Main Activity Detail",
+            "target": "mainActivityDetail",
+            "templateName": "mainActivityDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -4385,11 +4384,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "mainActivityDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "Main Activity Detail",
-            "target": "mainActivityDetail",
             "readAccess": "public"
         }
     },
@@ -4397,6 +4391,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "Main Projects Detail",
+            "target": "mainProjectsDetail",
+            "templateName": "mainProjectsDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -4437,11 +4436,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "mainProjectsDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "Main Projects Detail",
-            "target": "mainProjectsDetail",
             "readAccess": "public"
         }
     },
@@ -4449,6 +4443,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "Main Tasks Detail",
+            "target": "mainTasksDetail",
+            "templateName": "mainTasksDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -4489,11 +4488,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "mainTasksDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "Main Tasks Detail",
-            "target": "mainTasksDetail",
             "readAccess": "public"
         }
     },
@@ -4501,6 +4495,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "Main Calendar Detail",
+            "target": "mainCalendarDetail",
+            "templateName": "mainCalendarDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -4526,11 +4525,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "mainCalendarDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "Main Calendar Detail",
-            "target": "mainCalendarDetail",
             "readAccess": "public"
         }
     },
@@ -4538,6 +4532,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "People Projects Detail",
+            "target": "peopleProjectsDetail",
+            "templateName": "peopleProjectsDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -4584,11 +4583,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "peopleProjectsDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "People Projects Detail",
-            "target": "peopleProjectsDetail",
             "readAccess": "public"
         }
     },
@@ -4596,6 +4590,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "People Clients Detail",
+            "target": "peopleClientsDetail",
+            "templateName": "peopleClientsDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -4642,11 +4641,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "peopleClientsDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "People Clients Detail",
-            "target": "peopleClientsDetail",
             "readAccess": "public"
         }
     },
@@ -4654,6 +4648,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "People Users Detail",
+            "target": "peopleUsersDetail",
+            "templateName": "peopleUsersDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -4760,11 +4759,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "peopleUsersDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "People Users Detail",
-            "target": "peopleUsersDetail",
             "readAccess": "public"
         }
     },
@@ -4772,6 +4766,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "Accounting Documents Detail",
+            "target": "accountingDocumentsDetail",
+            "templateName": "accountingDocumentsDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -4797,11 +4796,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "accountingDocumentsDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "Accounting Documents Detail",
-            "target": "accountingDocumentsDetail",
             "readAccess": "public"
         }
     },
@@ -4809,6 +4803,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "Accounting Timesheet Detail",
+            "target": "accountingTimesheetDetail",
+            "templateName": "accountingTimesheetDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -4834,11 +4833,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "accountingTimesheetDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "Accounting Timesheet Detail",
-            "target": "accountingTimesheetDetail",
             "readAccess": "public"
         }
     },
@@ -4846,6 +4840,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "Accounting Reports Detail",
+            "target": "accountingReportsDetail",
+            "templateName": "accountingReportsDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -4871,11 +4870,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "accountingReportsDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "Accounting Reports Detail",
-            "target": "accountingReportsDetail",
             "readAccess": "public"
         }
     },
@@ -4893,6 +4887,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "Tasks Progress Detail",
+            "target": "tasksProgressDetail",
+            "templateName": "tasksProgressDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -4936,11 +4935,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "tasksProgressDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "Tasks Progress Detail",
-            "target": "tasksProgressDetail",
             "readAccess": "public"
         }
     },
@@ -4948,6 +4942,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "Time Overview Detail",
+            "target": "timeOverviewDetail",
+            "templateName": "timeOverviewDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -4980,11 +4979,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "timeOverviewDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "Time Overview Detail",
-            "target": "timeOverviewDetail",
             "readAccess": "public"
         }
     },
@@ -4992,6 +4986,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "Projects Overview Detail",
+            "target": "projectsOverviewDetail",
+            "templateName": "projectsOverviewDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -5052,11 +5051,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "projectsOverviewDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "Projects Overview Detail",
-            "target": "projectsOverviewDetail",
             "readAccess": "public"
         }
     },
@@ -5064,6 +5058,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "Tasks Overview List Detail",
+            "target": "tasksOverviewListDetail",
+            "templateName": "tasksOverviewListDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -5124,11 +5123,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "tasksOverviewListDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "Tasks Overview List Detail",
-            "target": "tasksOverviewListDetail",
             "readAccess": "public"
         }
     },
@@ -5136,6 +5130,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "Calendar Overview Detail",
+            "target": "calendarOverviewDetail",
+            "templateName": "calendarOverviewDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -5182,11 +5181,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "calendarOverviewDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "Calendar Overview Detail",
-            "target": "calendarOverviewDetail",
             "readAccess": "public"
         }
     },
@@ -5194,6 +5188,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "Activity Feed Detail",
+            "target": "activityFeedDetail",
+            "templateName": "activityFeedDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -5219,11 +5218,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "activityFeedDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "Activity Feed Detail",
-            "target": "activityFeedDetail",
             "readAccess": "public"
         }
     },
@@ -5231,6 +5225,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "Single Project Detail",
+            "target": "singleProjectDetail",
+            "templateName": "singleProjectDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "Single Project Detail.onRenderApplictionScript.js",
             "metadata": {
                 "positions": {
                     "title": {
@@ -5273,11 +5272,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "singleProjectDetail",
-            "onRenderApplictionScript": "Single Project Detail.onRenderApplictionScript.js",
-            "requireTarget": true,
-            "widgetTitle": "Single Project Detail",
-            "target": "singleProjectDetail",
             "readAccess": "public"
         }
     },
@@ -5285,6 +5279,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "Single Project List Item Detail",
+            "target": "singleProjectListItemDetail",
+            "templateName": "singleProjectListItemDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -5333,11 +5332,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "singleProjectListItemDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "Single Project List Item Detail",
-            "target": "singleProjectListItemDetail",
             "readAccess": "public"
         }
     },
@@ -5345,6 +5339,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "Single Task List Item Detail",
+            "target": "singleTaskListItemDetail",
+            "templateName": "singleTaskListItemDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "Single Task List Item Detail.onRenderApplictionScript.js",
             "metadata": {
                 "positions": {
                     "title": {
@@ -5430,11 +5429,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "singleTaskListItemDetail",
-            "onRenderApplictionScript": "Single Task List Item Detail.onRenderApplictionScript.js",
-            "requireTarget": true,
-            "widgetTitle": "Single Task List Item Detail",
-            "target": "singleTaskListItemDetail",
             "readAccess": "public"
         }
     },
@@ -5442,6 +5436,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "singleProjectOverviewDetail",
+            "target": "singleProjectOverviewDetail",
+            "templateName": "singleProjectOverviewDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -5600,11 +5599,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "singleProjectOverviewDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "singleProjectOverviewDetail",
-            "target": "singleProjectOverviewDetail",
             "readAccess": "public"
         }
     },
@@ -5612,6 +5606,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "singleProjectTasksDetail",
+            "target": "singleProjectTasksDetail",
+            "templateName": "singleProjectTasksDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -5672,11 +5671,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "singleProjectTasksDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "singleProjectTasksDetail",
-            "target": "singleProjectTasksDetail",
             "readAccess": "public"
         }
     },
@@ -5684,6 +5678,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "singleProjectFilesDetail",
+            "target": "singleProjectFilesDetail",
+            "templateName": "singleProjectFilesDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -5820,11 +5819,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "singleProjectFilesDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "singleProjectFilesDetail",
-            "target": "singleProjectFilesDetail",
             "readAccess": "public"
         }
     },
@@ -5832,6 +5826,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "singleProjectDiscussionDetail",
+            "target": "singleProjectDiscussionDetail",
+            "templateName": "singleProjectDiscussionDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -5872,11 +5871,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "singleProjectDiscussionDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "singleProjectDiscussionDetail",
-            "target": "singleProjectDiscussionDetail",
             "readAccess": "public"
         }
     },
@@ -5884,6 +5878,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "singleProjectUsersDetail",
+            "target": "singleProjectUsersDetail",
+            "templateName": "singleProjectUsersDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -5916,11 +5915,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "singleProjectUsersDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "singleProjectUsersDetail",
-            "target": "singleProjectUsersDetail",
             "readAccess": "public"
         }
     },
@@ -5928,6 +5922,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "singleProjectTimesheetsDetail",
+            "target": "singleProjectTimesheetsDetail",
+            "templateName": "singleProjectTimesheetsDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positionList": [
                     "title",
@@ -5956,11 +5955,6 @@
                     }
                 }
             },
-            "templateName": "singleProjectTimesheetsDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "singleProjectTimesheetsDetail",
-            "target": "singleProjectTimesheetsDetail",
             "readAccess": "public"
         }
     },
@@ -6180,6 +6174,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "communityCulturalDetail",
+            "target": "communityCulturalDetail",
+            "templateName": "communityCulturalDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -6205,11 +6204,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "communityCulturalDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "communityCulturalDetail",
-            "target": "communityCulturalDetail",
             "readAccess": "public"
         }
     },
@@ -6217,6 +6211,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "communityTransportationDetail",
+            "target": "communityTransportationDetail",
+            "templateName": "communityTransportationDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -6242,11 +6241,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "communityTransportationDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "communityTransportationDetail",
-            "target": "communityTransportationDetail",
             "readAccess": "public"
         }
     },
@@ -6254,6 +6248,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "communityHabitationDetail",
+            "target": "communityHabitationDetail",
+            "templateName": "communityHabitationDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -6279,11 +6278,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "communityHabitationDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "communityHabitationDetail",
-            "target": "communityHabitationDetail",
             "readAccess": "public"
         }
     },
@@ -6291,6 +6285,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "communityEnvironmentalDetail",
+            "target": "communityEnvironmentalDetail",
+            "templateName": "communityEnvironmentalDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -6316,11 +6315,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "communityEnvironmentalDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "communityEnvironmentalDetail",
-            "target": "communityEnvironmentalDetail",
             "readAccess": "public"
         }
     },
@@ -6328,6 +6322,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "communitySubsistenceDetail",
+            "target": "communitySubsistenceDetail",
+            "templateName": "communitySubsistenceDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -6353,11 +6352,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "communitySubsistenceDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "communitySubsistenceDetail",
-            "target": "communitySubsistenceDetail",
             "readAccess": "public"
         }
     },
@@ -6365,6 +6359,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "layerItemListViewDetail",
+            "target": "layerItemListViewDetail",
+            "templateName": "layerItemListViewDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -6423,11 +6422,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "layerItemListViewDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "layerItemListViewDetail",
-            "target": "layerItemListViewDetail",
             "readAccess": "public"
         }
     },
@@ -6649,6 +6643,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "projectPriorityTasksDetail",
+            "target": "projectPriorityTasksDetail",
+            "templateName": "projectPriorityTasksDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -6709,11 +6708,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "projectPriorityTasksDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "projectPriorityTasksDetail",
-            "target": "projectPriorityTasksDetail",
             "readAccess": "public"
         }
     },
@@ -6916,6 +6910,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "calendarEventDetail",
+            "target": "calendarEventDetail",
+            "templateName": "calendarEventDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -6941,11 +6940,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "calendarEventDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "calendarEventDetail",
-            "target": "calendarEventDetail",
             "readAccess": "public"
         }
     },
@@ -6953,6 +6947,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "defaultPostDetail",
+            "target": "defaultPostDetail",
+            "templateName": "defaultPostDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -7034,11 +7033,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "defaultPostDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "defaultPostDetail",
-            "target": "defaultPostDetail",
             "readAccess": "public"
         }
     },
@@ -7046,6 +7040,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "singleProjectMapDetail",
+            "target": "singleProjectMapDetail",
+            "templateName": "singleProjectMapDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -7089,11 +7088,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "singleProjectMapDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "singleProjectMapDetail",
-            "target": "singleProjectMapDetail",
             "readAccess": "public"
         }
     },
@@ -7101,6 +7095,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "singleTeamListItemDetail",
+            "target": "singleTeamListItemDetail",
+            "templateName": "singleTeamListItemDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -7126,11 +7125,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "singleTeamListItemDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "singleTeamListItemDetail",
-            "target": "singleTeamListItemDetail",
             "readAccess": "public"
         }
     },
@@ -7138,6 +7132,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "singleFileListItemDetail",
+            "target": "singleFileListItemDetail",
+            "templateName": "singleFileListItemDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -7172,11 +7171,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "singleFileListItemDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "singleFileListItemDetail",
-            "target": "singleFileListItemDetail",
             "readAccess": "public"
         }
     },
@@ -7184,6 +7178,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "singleUserListItemDetail",
+            "target": "singleUserListItemDetail",
+            "templateName": "singleUserListItemDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -7234,11 +7233,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "singleUserListItemDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "singleUserListItemDetail",
-            "target": "singleUserListItemDetail",
             "readAccess": "public"
         }
     },
@@ -7322,6 +7316,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "selectableUserListItemDetail",
+            "target": "selectableUserListItemDetail",
+            "templateName": "selectableUserListItemDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -7354,11 +7353,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "selectableUserListItemDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "selectableUserListItemDetail",
-            "target": "selectableUserListItemDetail",
             "readAccess": "public"
         }
     },
@@ -7463,6 +7457,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "configurationSettingsDetail",
+            "target": "configurationSettingsDetail",
+            "templateName": "configurationSettingsDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -7488,11 +7487,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "configurationSettingsDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "configurationSettingsDetail",
-            "target": "configurationSettingsDetail",
             "readAccess": "public"
         }
     },
@@ -7500,6 +7494,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "singleTaskWithFilesDetail",
+            "target": "singleTaskWithFilesDetail",
+            "templateName": "singleTaskWithFilesDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -7546,11 +7545,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "singleTaskWithFilesDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "singleTaskWithFilesDetail",
-            "target": "singleTaskWithFilesDetail",
             "readAccess": "public"
         }
     },
@@ -7593,6 +7587,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "singleClientDetailView",
+            "target": "singleClientDetailView",
+            "templateName": "singleClientDetailView",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -7627,11 +7626,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "singleClientDetailView",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "singleClientDetailView",
-            "target": "singleClientDetailView",
             "readAccess": "public"
         }
     },
@@ -7639,6 +7633,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "singleProjectPeopleListItemDetail",
+            "target": "singleProjectPeopleListItemDetail",
+            "templateName": "singleProjectPeopleListItemDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -7681,11 +7680,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "singleProjectPeopleListItemDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "singleProjectPeopleListItemDetail",
-            "target": "singleProjectPeopleListItemDetail",
             "readAccess": "public"
         }
     },
@@ -7693,6 +7687,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "singeProjectUserIconsDetail",
+            "target": "singeProjectUserIconsDetail",
+            "templateName": "singeProjectUserIconsDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -7718,11 +7717,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "singeProjectUserIconsDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "singeProjectUserIconsDetail",
-            "target": "singeProjectUserIconsDetail",
             "readAccess": "public"
         }
     },
@@ -7730,6 +7724,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "synopsisProgressDetail",
+            "target": "synopsisProgressDetail",
+            "templateName": "synopsisProgressDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -7783,11 +7782,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "synopsisProgressDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "synopsisProgressDetail",
-            "target": "synopsisProgressDetail",
             "readAccess": "public"
         }
     },
@@ -7795,6 +7789,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "configurationArchiveDetail",
+            "target": "configurationArchiveDetail",
+            "templateName": "configurationArchiveDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -7820,11 +7819,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "configurationArchiveDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "configurationArchiveDetail",
-            "target": "configurationArchiveDetail",
             "readAccess": "public"
         }
     },
@@ -7832,6 +7826,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "singleArchivedProjectListItemDetail",
+            "target": "singleArchivedProjectListItemDetail",
+            "templateName": "singleArchivedProjectListItemDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -7874,11 +7873,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "singleArchivedProjectListItemDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "singleArchivedProjectListItemDetail",
-            "target": "singleArchivedProjectListItemDetail",
             "readAccess": "public"
         }
     },
@@ -7886,6 +7880,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "singleProjectEditButtonsDetail",
+            "target": "singleProjectEditButtonsDetail",
+            "templateName": "singleProjectEditButtonsDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -7932,11 +7931,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "singleProjectEditButtonsDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "singleProjectEditButtonsDetail",
-            "target": "singleProjectEditButtonsDetail",
             "readAccess": "public"
         }
     },
@@ -7944,6 +7938,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "guestDashboard",
+            "target": "guestDashboard",
+            "templateName": "guestDashboard",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -7969,11 +7968,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "guestDashboard",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "guestDashboard",
-            "target": "guestDashboard",
             "readAccess": "public"
         }
     },
@@ -7981,6 +7975,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "communityMemberDashboard",
+            "target": "communityMemberDashboard",
+            "templateName": "communityMemberDashboard",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -8024,11 +8023,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "communityMemberDashboard",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "communityMemberDashboard",
-            "target": "communityMemberDashboard",
             "readAccess": "public"
         }
     },
@@ -8036,6 +8030,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "nonMemberDashboard",
+            "target": "nonMemberDashboard",
+            "templateName": "nonMemberDashboard",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -8061,11 +8060,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "nonMemberDashboard",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "nonMemberDashboard",
-            "target": "nonMemberDashboard",
             "readAccess": "public"
         }
     },
@@ -8073,6 +8067,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "mainMapDetail",
+            "target": "mainMapDetail",
+            "templateName": "mainMapDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -8116,11 +8115,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "mainMapDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "mainMapDetail",
-            "target": "mainMapDetail",
             "readAccess": "public"
         }
     },
@@ -8174,6 +8168,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "emptyListView",
+            "target": "emptyListView",
+            "templateName": "emptyListView",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -8199,11 +8198,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "emptyListView",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "emptyListView",
-            "target": "emptyListView",
             "readAccess": "public"
         }
     },
@@ -8211,6 +8205,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "settingsListItemDetail",
+            "target": "settingsListItemDetail",
+            "templateName": "settingsListItemDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -8236,11 +8235,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "settingsListItemDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "settingsListItemDetail",
-            "target": "settingsListItemDetail",
             "readAccess": "public"
         }
     },
@@ -8262,6 +8256,7 @@
             "widgetTitle": "googlemap",
             "target": "googlemap",
             "templateName": "googlemap",
+            "loadWidgetsWithTarget": "forTheMap",
             "readAccess": "public"
         }
     },
