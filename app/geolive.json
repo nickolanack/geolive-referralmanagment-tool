@@ -1800,7 +1800,14 @@
     "widget.78": {
         "name": "Cluster Behavior",
         "instance": "ClusterBehaviors",
-        "parameters": {}
+        "parameters": {
+            "spreadClusters": true,
+            "spreadClustersWithAnimation": true,
+            "widgetTitle": "Cluster Animations",
+            "target": "forTheMap",
+            "readAccess": "public",
+            "position": "RIGHT_CENTER"
+        }
     },
     "widget.113": {
         "name": "Configuration",
