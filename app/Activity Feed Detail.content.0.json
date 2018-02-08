@@ -7,9 +7,9 @@
         "inlineEditing": true,
         "inlineReply": false,
         "emptyMessage": "There are no events to display",
-        "channel": "default",
+        "channel": "wabun",
         "resolveItemScript": "return new MockDataTypeItem({type:\"widget\", id:145});",
-        "initialPostsScript": "return <?php \n\n $posts=($plugin=GetPlugin('Discussions'))->getPostsForItem(145, 'widget', 'default');\n echo json_encode($posts, JSON_PRETTY_PRINT);\n\n\n?>;",
+        "initialPostsScript": "return <?php \n\n $posts=($plugin=GetPlugin('Discussions'))->getPostsForItem(145, 'widget', 'wabun');\n echo json_encode($posts, JSON_PRETTY_PRINT);\n\n\n?>;",
         "namedView": "defaultPostDetail",
         "reverseOrder": true
     }
