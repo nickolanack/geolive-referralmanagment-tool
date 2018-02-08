@@ -1482,9 +1482,13 @@
             "importEncoding": "ISO-8859-1",
             "showImportEncoding": false,
             "filename": "Geolive Export DATE[Y-m-d (H.i.s)]",
-            "widgetTitle": "",
+            "widgetTitle": "Export",
             "readAccess": "special",
-            "position": "RIGHT_CENTER"
+            "position": "RIGHT_CENTER",
+            "tileHoverTip": "Download CSV File",
+            "filterRowScript": "return true;",
+            "filterFieldsScript": "return true;",
+            "target": "forTheMap"
         }
     },
     "widget.72": {
