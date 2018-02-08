@@ -287,7 +287,9 @@
             "placeholderText": "Search Location, Items, Attributes...",
             "searchUsers": false,
             "widgetTitle": "search bar",
-            "readAccess": "public"
+            "readAccess": "public",
+            "alwaysShowClear": true,
+            "target": "forTheMap"
         }
     },
     "widget.34": {
