@@ -1,5 +1,8 @@
 <?php
  
+ 
+ IncludeJS('{plugins}/ReferralManagement/js/LegendHelper.js');
+ 
  $layerGroups=array('community', 'townships', 'mining', 'forestry', 'boundary', 'crowdsource', 'user');
     foreach($layerGroups as $i=>$groupName){
         
