@@ -423,42 +423,42 @@
                     "y": 282
                 },
                 "children": [
-                    "changed the label.metadata.children.0.json",
+                    "Marker Wizard.metadata.children.0.json",
                     {
                         "title": "Community Member Data",
                         "class": "AttributesTableNode",
                         "fields": [
-                            "changed the label.metadata.children.1.fields.0.json"
+                            "Marker Wizard.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
                             "x": 138,
                             "y": 294
                         },
                         "children": [
-                            "changed the label.metadata.children.1.children.0.json",
+                            "Marker Wizard.metadata.children.1.children.0.json",
                             {
                                 "title": "Item Details",
                                 "class": "AttributesTableNode",
                                 "fields": [
-                                    "changed the label.metadata.children.1.children.1.fields.0.json"
+                                    "Marker Wizard.metadata.children.1.children.1.fields.0.json"
                                 ],
                                 "_diagramState": {
                                     "x": 699,
                                     "y": 261
                                 },
                                 "children": [
-                                    "changed the label.metadata.children.1.children.1.children.0.json"
+                                    "Marker Wizard.metadata.children.1.children.1.children.0.json"
                                 ],
                                 "builderMetadata": {
                                     "positions": {
                                         "title": {
                                             "modules": [
-                                                "changed the label.metadata.children.1.children.1.builderMetadata.positions.title.modules.0.json"
+                                                "Marker Wizard.metadata.children.1.children.1.builderMetadata.positions.title.modules.0.json"
                                             ]
                                         },
                                         "content": {
                                             "modules": [
-                                                "changed the label.metadata.children.1.children.1.builderMetadata.positions.content.modules.0.json",
+                                                "Marker Wizard.metadata.children.1.children.1.builderMetadata.positions.content.modules.0.json",
                                                 {
                                                     "type": "WizardTitleField",
                                                     "config": {
@@ -497,7 +497,7 @@
                                         },
                                         "footer": {
                                             "modules": [
-                                                "changed the label.metadata.children.1.children.1.builderMetadata.positions.footer.modules.0.json"
+                                                "Marker Wizard.metadata.children.1.children.1.builderMetadata.positions.footer.modules.0.json"
                                             ]
                                         },
                                         "menu": {
@@ -517,17 +517,17 @@
                             "positions": {
                                 "title": {
                                     "modules": [
-                                        "changed the label.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                        "Marker Wizard.metadata.children.1.builderMetadata.positions.title.modules.0.json"
                                     ]
                                 },
                                 "content": {
                                     "modules": [
-                                        "changed the label.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        "Marker Wizard.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
                                             "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "changed the label.metadata.children.1.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
+                                                    "Marker Wizard.metadata.children.1.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
                                                 "label": "Community Member",
@@ -546,7 +546,7 @@
                                             "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "changed the label.metadata.children.1.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
+                                                    "Marker Wizard.metadata.children.1.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
                                                 "label": "Community Members Email",
@@ -565,7 +565,7 @@
                                 },
                                 "footer": {
                                     "modules": [
-                                        "changed the label.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                        "Marker Wizard.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
                                     ]
                                 },
                                 "menu": {
@@ -585,9 +585,13 @@
             "onCreateScript": "",
             "onUpdateScript": "",
             "onSaveScript": "",
-            "widgetTitle": "changed the label",
+            "widgetTitle": "Marker Wizard",
             "readAccess": "public",
-            "beforeSubmitScript": ""
+            "beforeSubmitScript": "",
+            "onLoadScript": "",
+            "requireTarget": true,
+            "templateName": "MapItemTemplate",
+            "target": "forTheMap"
         }
     },
     "widget.46": {
