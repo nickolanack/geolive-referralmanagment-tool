@@ -66,7 +66,7 @@ GetWidget('configurationSettingsDetail')->display($targetInstance);
 GetWidget('singleTeamListItemDetail')->display($targetInstance);
 GetWidget('singleFileListItemDetail')->display($targetInstance);
 
-GetWidget(65)->display($targetInstance); //proposal wizard from map
+GetWidget('proposalForm')->display($targetInstance); //proposal wizard from map
 
 GetWidget('taskForm')->display($targetInstance); //proposal wizard
 GetWidget('taskDefaultItems')->display($targetInstance);
