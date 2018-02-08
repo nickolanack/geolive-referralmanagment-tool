@@ -371,8 +371,8 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "",
-            "target": "",
+            "widgetTitle": "Infowindow",
+            "target": "forTheMap",
             "templateName": "default",
             "requireTarget": true,
             "onRenderApplictionScript": "",
@@ -380,22 +380,22 @@
                 "positions": {
                     "title": {
                         "modules": [
-                            "widget.DetailView.36.metadata.positions.title.modules.0.json"
+                            "Infowindow.metadata.positions.title.modules.0.json"
                         ]
                     },
                     "content": {
                         "modules": [
-                            "widget.DetailView.36.metadata.positions.content.modules.0.json"
+                            "Infowindow.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
                         "modules": [
-                            "widget.DetailView.36.metadata.positions.footer.modules.0.json"
+                            "Infowindow.metadata.positions.footer.modules.0.json"
                         ]
                     },
                     "menu": {
                         "modules": [
-                            "widget.DetailView.36.metadata.positions.menu.modules.0.json",
+                            "Infowindow.metadata.positions.menu.modules.0.json",
                             {
                                 "type": "MenuController"
                             }
