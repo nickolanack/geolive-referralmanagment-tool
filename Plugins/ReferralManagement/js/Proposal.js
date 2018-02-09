@@ -398,7 +398,29 @@ var Proposal = (function() {
 			if (!me._getTasks) {
 			
 				me._getTasks= me.data.tasks.map(function(data){
-					return new TaskItem(me, data);
+					var task = new TaskItem(me, data);
+
+					var changeListener=function(){
+						me.fireEvent('taskChanged', [task]);
+						me.fireEvent('change');
+					}
+					var removeListener=function(){
+
+						me._getTasks.splice(me._getTasks.indexOf(task),1);
+						task.removeEvent('change', changeListener);
+						task.removeEvent('remove', removeListener);
+
+						me.fireEvent('taskRemoved', [task]);
+						me.fireEvent('change');
+
+
+					}
+
+					task.addEvent('change', changeListener);
+					task.addEvent('remove', removeListener);
+
+
+					return task;
 				});
 
 			}

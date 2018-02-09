@@ -147,6 +147,7 @@ var TaskItem = (function() {
 				if(callback){
 					callback(r);
 				}
+				me.fireEvent('change');
 			}).execute();
 				
 		},
@@ -167,6 +168,7 @@ var TaskItem = (function() {
 				if(callback){
 					callback(true);
 				}
+				me.fireEvent('change');
 				me.fireEvent("save");
 			}).execute();
 			//throw 'Failed to save proposal';
@@ -217,6 +219,7 @@ var TaskItem = (function() {
 			(new SetStarredTaskQuery(me.getId(), starred)).addEvent('success',function(r){
 				if(callback){
 					callback(r);
+					me.fireEvent('change');
 				}
 			}).execute();
 

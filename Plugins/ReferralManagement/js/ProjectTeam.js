@@ -104,9 +104,14 @@ var ProjectTeam=(function(){
 
 
 				me._proposals=resp.results.map(function(result){
-					return new Proposal(result.id, Object.append({
+					var proposal = new Proposal(result.id, Object.append({
 						sync:true
 					},result));
+
+					
+
+
+					return proposal;
 				});
 
 				me._isLoaded=true;
