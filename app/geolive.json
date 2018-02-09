@@ -35,23 +35,19 @@
             "JSCacheObfuscationEnabled": false,
             "phase": "production",
             "ExternalizeWidgetScripts": true,
-            "showFrontEndEditButtons": true,
+            "showFrontEndEditButtons": false,
             "ForceHTTPS": false,
             "allowProxiesFrom": [
                 "*",
                 ""
             ],
             "pluginPaths": [
-                "\/Users\/nblackwe\/Desktop\/git-nick\/php-core-app\/..\/php-core-map\/Plugins",
-                "\/Users\/nblackwe\/Desktop\/git-nick\/php-core-app\/..\/geolive-referralmanagment-tool\/Plugins",
                 ""
             ],
             "widgetPaths": [
-                "\/Users\/nblackwe\/Desktop\/git-nick\/php-core-app\/..\/php-core-map\/Widgets",
                 ""
             ],
             "modulePaths": [
-                "\/Users\/nblackwe\/Desktop\/git-nick\/php-core-app\/..\/php-core-map\/Modules",
                 ""
             ],
             "sandboxDomains": [
