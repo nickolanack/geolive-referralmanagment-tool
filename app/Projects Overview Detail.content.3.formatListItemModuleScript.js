@@ -14,6 +14,6 @@ childView.addEvent('load',function(){
 })
 
 
-child.addEvent("change",function(){
+childView.addWeakEvent(child, "change", function(){
     childView.redraw();
 })
