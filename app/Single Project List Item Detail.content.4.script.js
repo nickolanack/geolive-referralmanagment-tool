@@ -1,0 +1,22 @@
+return new OptionListModule({
+    functions:[
+        {
+            "label":"one",
+            "fn":function(){
+                alert(1);
+            }
+        },
+        {
+            "label":"two",
+            "fn":function(){
+                alert(1);
+            }
+        },
+        {
+            "label":"three",
+            "fn":function(){
+                alert(1);
+            }
+        },
+    ]
+})
