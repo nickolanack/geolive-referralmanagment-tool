@@ -1,19 +1,19 @@
 return new OptionListModule({
     functions:[
         {
-            "label":"one",
+            "label":"Report",
             "fn":function(){
                 alert(1);
             }
         },
         {
-            "label":"two",
+            "label":"Archive",
             "fn":function(){
                 alert(1);
             }
         },
         {
-            "label":"three",
+            "label":"Edit",
             "fn":function(){
                 alert(1);
             }
