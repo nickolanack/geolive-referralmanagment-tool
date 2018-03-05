@@ -35,19 +35,23 @@
             "JSCacheObfuscationEnabled": false,
             "phase": "production",
             "ExternalizeWidgetScripts": true,
-            "showFrontEndEditButtons": false,
+            "showFrontEndEditButtons": true,
             "ForceHTTPS": false,
             "allowProxiesFrom": [
                 "*",
                 ""
             ],
             "pluginPaths": [
+                "\/Users\/nblackwe\/Desktop\/git-nick\/php-core-app\/..\/php-core-map\/Plugins",
+                "\/Users\/nblackwe\/Desktop\/git-nick\/php-core-app\/..\/geolive-referralmanagment-tool\/Plugins",
                 ""
             ],
             "widgetPaths": [
+                "\/Users\/nblackwe\/Desktop\/git-nick\/php-core-app\/..\/php-core-map\/Widgets",
                 ""
             ],
             "modulePaths": [
+                "\/Users\/nblackwe\/Desktop\/git-nick\/php-core-app\/..\/php-core-map\/Modules",
                 ""
             ],
             "sandboxDomains": [
@@ -81,8 +85,9 @@
         "parameters": {
             "enableLayerSyncronization": false,
             "onlyShowMarkersInIconset": false,
-            "tileCachePath": "\/srv\/www\/vhosts\/production\/wabun.s54.ok.ubc.ca\/http\/..\/tiles",
             "googleMapsServerApiKey": "",
+            "googleMapsVersion": "",
+            "tileCachePath": "\/srv\/www\/vhosts\/production\/wabun.s54.ok.ubc.ca\/http\/..\/tiles",
             "layerDisplayFilterScript": "",
             "formatMapitemScript": "plugin.Maps.12.formatMapitemScript.js"
         }
@@ -5133,18 +5138,23 @@
                                     "className": "",
                                     "viewType": "view",
                                     "namedView": "calendarEventDetail",
+                                    "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
                                     "getItemListScript": "return item",
                                     "formatItemListScript": "Calendar Overview Detail.metadata.positions.content.modules.1.config.formatItemListScript.js",
                                     "formatListItemModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "itemButtonsScript": "return [];",
                                     "emptyNamedView": "emptyListView",
-                                    "namedViewScript": "return namedView",
-                                    "filterModulesScript": "return list"
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": ""
                                 }
                             }
                         ]

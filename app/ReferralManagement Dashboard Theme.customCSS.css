@@ -845,66 +845,6 @@ ul.item-tags li {
 
 
 
-.inline-btn.optionlist:before {
-    content: ":";
-}
-
-.inline-btn.optionlist {
-    font-size: 11px;
-    line-height: 13px;
-    position: relative;
-    border: none;
-    background-color: #2E303A;
-    width: 100px;
-    padding: 5px 10px;
-}
-
-.inline-btn.optionlist ul {
-    position: absolute;
-    display: none;
-    left: -40px;
-    top: calc( 100% + -5px );
-    margin: 0;
-    padding: 0;
-    width: 100px;
-    z-index: 1;
-    background-color: #2E303A;
-    border-radius: 2px;
-    list-style:none;
-    text-align:left;
-    line-height: 13px;
-}
-
-.inline-btn.optionlist {
-    position: absolute;
-    right: 0;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    top: calc( 50% - 15px );
-    width: 20px;
-    height: 30px;
-    line-height: 30px;
-}
-
-.inline-btn.optionlist:hover ul {
-    display: inline-block;
-}
-.inline-btn.optionlist li {
-    list-style: none;
-    padding: 5px 10px;
-    border: 1px solid #2E303A;
-}
-
-.inline-btn.optionlist li:hover {
-    background-color: #333746;
-}
-
-
-
-
-
-
 
 span.image.noIcon, span.video.noIcon, span.document.noIcon, span.audio.noIcon, span.layer.noIcon {
     background-color: #6A7CE9;

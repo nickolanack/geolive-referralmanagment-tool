@@ -39,6 +39,6 @@ childView.addEvent('load:once',function(){
 })
 
 
-childView.addWeakEvent(child, 'remove', function(){
+child.addEvent('remove', function(){
     childView.remove();
 });
