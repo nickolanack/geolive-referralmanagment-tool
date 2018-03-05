@@ -6660,13 +6660,6 @@
                                 }
                             },
                             {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "script": "projectPriorityTasksDetail.metadata.positions.content.modules.2.config.script.js",
-                                    "identifier": "customScriptElement"
-                                }
-                            },
-                            {
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "project-tasks",
@@ -6686,7 +6679,7 @@
                                     "insertAtTop": false,
                                     "getItemListScript": "return item.getTasks();",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "projectPriorityTasksDetail.metadata.positions.content.modules.3.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "projectPriorityTasksDetail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
                                     "sortItemsScript": ""
