@@ -9,7 +9,7 @@ return function(viewer, element, parentModule){
     
 
     (new ListSortModule(function(){
-        return viewer.getChildView('content', 1);
+        return viewer.getChildView('content', 2);
     }, {
         sorters:[
             {
@@ -43,7 +43,7 @@ return function(viewer, element, parentModule){
     
   
     (new ListFilterModule(function(){
-        return viewer.getChildView('content', 1)
+        return viewer.getChildView('content', 2)
     }, {
         filters:[{
             label:"complete",

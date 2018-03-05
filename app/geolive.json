@@ -4995,13 +4995,6 @@
                                 }
                             },
                             {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "script": "",
-                                    "identifier": "customScriptElement"
-                                }
-                            },
-                            {
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "projects-list",
@@ -5014,14 +5007,14 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
-                                    "formatModuleScript": "Projects Overview Detail.metadata.positions.content.modules.3.config.formatModuleScript.js",
+                                    "formatModuleScript": "Projects Overview Detail.metadata.positions.content.modules.2.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
-                                    "getItemListScript": "Projects Overview Detail.metadata.positions.content.modules.3.config.getItemListScript.js",
+                                    "getItemListScript": "Projects Overview Detail.metadata.positions.content.modules.2.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "Projects Overview Detail.metadata.positions.content.modules.3.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "Projects Overview Detail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
                                     "sortItemsScript": ""
