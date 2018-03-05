@@ -1054,6 +1054,26 @@ button.primary-btn.warn {
 }
 
 
+
+.inline-btn.optionlist {
+    position: absolute;
+    right: 0;
+    width: 1px;
+    top: calc( 50% - 12px );
+    margin: 0 5px;
+}
+
+.inline-btn.optionlist:before {
+    content: ":";
+}
+
+.inline-btn.optionlist ul {
+    width: 100px;
+    position: absolute;
+    right: 0;
+    left: unset;
+}
+
 .hasFilter>ul>.clear-filter {
     display: list-item;
     background-color: rgba(106, 233, 191, 0.2);}
