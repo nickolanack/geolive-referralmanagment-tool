@@ -5145,7 +5145,7 @@
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
-                                    "getItemListScript": "return item",
+                                    "getItemListScript": "return [];",
                                     "formatItemListScript": "Calendar Overview Detail.metadata.positions.content.modules.1.config.formatItemListScript.js",
                                     "formatListItemModuleScript": "",
                                     "emptyNamedView": "emptyListView",
