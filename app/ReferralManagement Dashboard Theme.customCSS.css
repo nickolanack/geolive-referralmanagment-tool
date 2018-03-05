@@ -1026,7 +1026,7 @@ button.primary-btn.warn {
 }
 
 
-.inline-btn.sort ul:before {
+.inline-btn.sort ul:before, .inline-btn.optionlist ul:before {
     position: absolute;
     content: "";
     top: -6px;
@@ -1038,9 +1038,6 @@ button.primary-btn.warn {
     background-color: #333746;
 }
 
-.inline-btn.sort {
-    position: relative;
-}
 
 .inline-btn.sort:hover ul, .inline-btn.optionlist:hover ul {
     display: inline-block;
