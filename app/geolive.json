@@ -6673,18 +6673,23 @@
                                     "className": "task-item",
                                     "viewType": "view",
                                     "namedView": "singleTaskListItemDetail",
+                                    "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
                                     "getItemListScript": "return item.getTasks();",
                                     "formatItemListScript": "return list;",
                                     "formatListItemModuleScript": "projectPriorityTasksDetail.metadata.positions.content.modules.3.config.formatListItemModuleScript.js",
-                                    "formatModuleScript": "",
-                                    "itemButtonsScript": "return [];",
                                     "emptyNamedView": "emptyListView",
-                                    "namedViewScript": "return namedView",
-                                    "filterModulesScript": "return list"
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": ""
                                 }
                             }
                         ]
