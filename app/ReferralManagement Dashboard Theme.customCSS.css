@@ -992,7 +992,7 @@ button.primary-btn.warn {
 }
 
 
-.inline-btn.sort ul {
+.inline-btn.sort ul, .inline-btn.optionlist ul {
     position: absolute;
     display: none;
     left: 0;
@@ -1004,7 +1004,7 @@ button.primary-btn.warn {
     background-color: #2E303A;
     border-radius: 2px;
 }
-.inline-btn.sort li {
+.inline-btn.sort li, .inline-btn.optionlist li {
     list-style: none;
     padding: 5px 10px;
     border: 1px solid #2E303A;
@@ -1034,7 +1034,7 @@ button.primary-btn.warn {
     width: 100%;
 }
 
-.inline-btn.sort li:hover {
+.inline-btn.sort li:hover, .inline-btn.optionlist li:hover {
     background-color: #333746;
 }
 
@@ -1042,11 +1042,11 @@ button.primary-btn.warn {
     position: relative;
 }
 
-.inline-btn.sort:hover ul {
+.inline-btn.sort:hover ul, .inline-btn.optionlist:hover ul {
     display: inline-block;
 }
 
-.inline-btn.sort {
+.inline-btn.sort, .inline-btn.optionlist {
     font-size: 11px;
     line-height: 13px;
     position: relative;
