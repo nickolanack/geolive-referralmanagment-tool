@@ -1,7 +1,7 @@
 {
     "type": "WizardScriptElement",
     "config": {
-        "script": "return new Element('button',{\"html\":\"Edit\", \"class\":\"primary-btn\", \"events\":{\"click\":function(){\n    \n    \n    \n            var formName=\"ProposalTemplate\";\n\n\t\t\tvar wizardTemplate = application.getDisplayController().getWizardTemplate(formName);\n\t\t\tif ((typeof wizardTemplate) != 'function') {\n\n\t\t\t\tif(window.console&&console.warn){\n\t\t\t\t\tconsole.warn('Expected named wizardTemplate: '+formName+', to exist');\n\t\t\t\t}\n\n\t\t\t}\n\t\t\tvar modalFormViewController =  new PushBoxModuleViewer(application, {});\n\t\t\tvar wizard = wizardTemplate(item, {});\n            wizard.buildAndShow(modalFormViewController, {template:\"form\"}); \n\t\t\t\n    \n    \n    \n}}})",
+        "script": "\nreturn new ModalFormButtonModule(application, item, {\n         \n            label: \"Edit\",\n            formOptions: {template:\"form\"},\n            formName: \"ProposalTemplate\",\n            \"class\": \"primary-btn\"\n\n    \n});\n",
         "identifier": "customScriptElement"
     }
 }
