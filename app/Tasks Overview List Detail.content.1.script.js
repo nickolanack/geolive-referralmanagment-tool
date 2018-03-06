@@ -86,6 +86,6 @@ return function(viewer, element, parentModule){
 
     application.setNamedValue('taskListFilter', sort);
     
-    return new ModuleArray([filter, sort]);
+    return new ModuleArray([filter, sort],{"class":"filter-btns"});
     
 }
