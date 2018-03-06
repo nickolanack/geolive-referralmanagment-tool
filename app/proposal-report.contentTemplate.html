@@ -19,7 +19,7 @@
 {% for task in tasks %}
         <h3>{{ task.name }}</h3>
         {% for image in task.computed.images %}
-                <img src="{{image}}" style="max-height:200px; max-width:200px;" />
+                <img src="{{image}}" style="max-height:200px; max-width:200px; margin:10px;" />
         {% endfor %}
         <p>{{ task.description }}</p>
 {% endfor %}
