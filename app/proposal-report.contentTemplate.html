@@ -3,7 +3,7 @@
 <h3>{{attributes.type}}</h3>
 <h4>Created By <a href="mailto:{{userdetails.email}}">{{userdetails.name}} | {{userdetails.email}}</a></h4>
 <h4>Created {{createdDate| date}}. Last Updated {{modifiedDate| date}}</h4>
-<span>timezone info: </span>
+<span>timezone info: {{timezone}}</span>
 {% for image in computed.images %}
         <img src="{{image}}" />
 {% endfor %}
