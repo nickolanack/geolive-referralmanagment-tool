@@ -16,12 +16,13 @@ return new Element('button',{"html":item.isArchived()?"Unarchive":"Archive", "cl
     
                                 if(item.isArchived()){
                                     item.unarchive(function(){
-                                        controller.redisplay();
+                                        //controller.redisplay();
                                     });
                                     
                                 }else{
                                     item.archive(function(){
-                                        controller.navigateTo("Dashboard","Main"); 
+                                        //controller.navigateTo("Dashboard","Main"); 
+                                        
                                     });
                                    
 
