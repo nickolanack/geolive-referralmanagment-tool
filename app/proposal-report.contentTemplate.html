@@ -6,9 +6,9 @@
         <img src="{{image}}" />
 {% endfor %}
 
-
+<h3>Tasks</h3>
 <ul>
-<h3>Tasks overview</h3>
+<h3>Summary</h3>
 {% for task in tasks %}
         <li>{{ task.name }} {% if task.complete %}<span style="color:green;">complete</span>{% else %}<span style="color:red;">incomplete</span>{% endif %}</li>
 {% endfor %}
@@ -24,3 +24,14 @@
         <p>{{ task.description }}</p>
 {% endfor %}
 
+
+<ul>
+<h3>References</h3>
+
+
+<h3>Files</h3>
+{% for file in computed.files %}
+        <li>{{ file }}</li>
+{% endfor %}
+    
+</ul>
