@@ -5,9 +5,13 @@
 <h4>Created {{createdDate| date}}. Last Updated {{modifiedDate| date}}</h4>
 <span>timezone info: {{timezone}}</span>
 {% for image in computed.images %}
-        <img src="{{image}}" />
+        <img src="{{image}}" max-height:400px; max-width:400px; margin:10px; />
 {% endfor %}
-
+<h2>Team</h2>
+{% for member in attributes.teamMembers %}
+        <img src="{{member.icon}}" max-height:100px; max-width:100px; margin:10px; />
+        <label>{{member.name}}<\label>
+{% endfor %}
 <h2>Tasks</h2>
 <ul>
 <h3>Summary</h3>
