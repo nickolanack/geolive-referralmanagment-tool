@@ -1,7 +1,7 @@
 return function(viewer, element, parentModule){
 
 
-    (new ListSortModule(function(){
+   var filter=(new ListSortModule(function(){
         return viewer.getChildView('content', 2);
     }, {
         sorters:[{
@@ -42,11 +42,11 @@ return function(viewer, element, parentModule){
         }],
         applySort:"priority",
         applySortInvert:true
-    })).load(null, element, null);
+    }));
     
     
-     var module;
-    (module=new ListFilterModule(function(){
+
+     var sort=(new ListFilterModule(function(){
         return viewer.getChildView('content', 2);
     }, {
         filters:[{
@@ -75,15 +75,17 @@ return function(viewer, element, parentModule){
         }],
         applyFilter:"complete",
         applyFilterInvert:true
-    })).load(null, element, null);
+    }));
     
     
     viewer.addEvent("load:once",function(){
-        setTimeout(function(){ module.applyFilter("complete", true); }, 1000);
+        setTimeout(function(){ sort.applyFilter("complete", true); }, 1000);
     });
 
 
 
-    application.setNamedValue('taskListFilter', module);
+    application.setNamedValue('taskListFilter', sort);
+    
+    return new ModuleArray([filter, sort]);
     
 }
