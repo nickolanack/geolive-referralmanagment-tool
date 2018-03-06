@@ -992,6 +992,12 @@ button.primary-btn.warn {
 }
 
 
+span.filter-btns {
+    position: absolute;
+    right: 0;
+    top: 14px;
+}
+
 .inline-btn.sort ul, .inline-btn.optionlist ul {
     position: absolute;
     display: none;
