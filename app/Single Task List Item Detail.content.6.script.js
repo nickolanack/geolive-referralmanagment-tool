@@ -31,4 +31,4 @@
             })
     }))
    
-   return mods;
+   return ModuleArray(mods,{"async":true});
