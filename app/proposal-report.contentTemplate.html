@@ -10,8 +10,12 @@
 <h2>Team</h2>
 <div>
 {% for member in attributes.teamMembers %}
-        <div style="float:left; background-color:rgba(0,0,0,0.2); padding:10px; width:200px;" ><div style="float:left; background-color:white;"><img src="{{member.icon}}"  style="max-height:100px; max-width:100px; margin:10px;" />
-        <label>{{member.name}}</label></div></div>
+        <div style="float:left; background-color:rgba(0,0,0,0.2); padding:10px; width:100px;" >
+            <div style="display:inline-block; background-color:white;">
+                <img src="{{member.icon}}"  style="max-height:100px; max-width:100px; margin:10px;" />
+                <label>{{member.name}}</label>
+            </div>
+        </div>
 {% endfor %}
 </div>
 <h2>Tasks</h2>
@@ -27,9 +31,11 @@
 {% for task in tasks %}
         <h3>{{ task.name }}</h3>
         <h4>Created {{task.createdDate| date}}. Last Updated {{task.modifiedDate| date}}. {% if task.complete %}<span style="color:green;">Completed on {{task.completedDate | date}}</span>{% endif %}</h4>
+        <div>
         {% for image in task.computed.images %}
-                <div><img src="{{image}}" style="max-height:200px; max-width:200px; margin:10px;" /></div>
+                <img src="{{image}}" style="max-height:200px; max-width:200px; margin:10px;" />
         {% endfor %}
+        </div>
         <p>{{ task.description }}</p>
 {% endfor %}
 
