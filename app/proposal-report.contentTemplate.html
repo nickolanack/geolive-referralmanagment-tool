@@ -10,8 +10,8 @@
 <h2>Team</h2>
 <div>
 {% for member in attributes.teamMembers %}
-        <div style="float:left;" ><img src="{{member.icon}}"  style="max-height:100px; max-width:100px; margin:10px;" /></div>
-        <label>{{member.name}}</label>
+        <div style="float:left; background-color:rgba(0,0,0,0.2);" ><div><div style=" background-color:white;"><img src="{{member.icon}}"  style="max-height:100px; max-width:100px; margin:10px;" /></div>
+        <label>{{member.name}}</label></div></div>
 {% endfor %}
 </div>
 <h2>Tasks</h2>
