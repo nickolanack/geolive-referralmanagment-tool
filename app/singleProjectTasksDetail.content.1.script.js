@@ -4,7 +4,7 @@ return function(viewer, element, parentModule){
     element.appendChild(div);
     
     (new ListSortModule(function(){
-        return viewer.getChildView('content', 1);
+        return viewer.getChildView('content', 2);
     }, {
         sorters:[{
             label:"name",
@@ -50,7 +50,7 @@ return function(viewer, element, parentModule){
     
       var module;
     (module=new ListFilterModule(function(){
-        return viewer.getChildView('content', 1);
+        return viewer.getChildView('content', 2);
     }, {
         filters:[{
             label:"complete",
