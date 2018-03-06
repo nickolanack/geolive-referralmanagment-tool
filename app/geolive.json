@@ -5623,31 +5623,29 @@
                                 }
                             },
                             {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "script": "singleProjectTasksDetail.metadata.positions.content.modules.2.config.script.js",
-                                    "identifier": "customScriptElement"
-                                }
-                            },
-                            {
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "",
                                     "className": "task-item",
                                     "viewType": "view",
                                     "namedView": "singleTaskListItemDetail",
+                                    "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
                                     "getItemListScript": "return item.getTasks();",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "singleProjectTasksDetail.metadata.positions.content.modules.3.config.formatListItemModuleScript.js",
-                                    "formatModuleScript": "",
-                                    "itemButtonsScript": "return [];",
+                                    "formatListItemModuleScript": "singleProjectTasksDetail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
-                                    "namedViewScript": "return namedView",
-                                    "filterModulesScript": "return list"
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": ""
                                 }
                             }
                         ]

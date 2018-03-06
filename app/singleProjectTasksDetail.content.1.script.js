@@ -1,8 +1,9 @@
 return function(viewer, element, parentModule){
+    
     var div=new Element('div',{style:"display: inline-table; width: 100%;"});
     element.appendChild(div);
-    var module;
-    (module=new ListSortModule(function(){
+    
+    (new ListSortModule(function(){
         return viewer.getChildView('content', 1);
     }, {
         sorters:[{
@@ -44,5 +45,44 @@ return function(viewer, element, parentModule){
         applySort:"priority",
         applySortInvert:true
     })).load(null, element.lastChild, null);
+    
+    
+    
+      var module;
+    (module=new ListFilterModule(function(){
+        return viewer.getChildView('content', 1);
+    }, {
+        filters:[{
+            label:"complete",
+            filterFn:function(a){
+                    return a.isComplete();
+            }
+        },
+        {
+            label:"overdue",
+            filterFn:function(a){
+                    return a.isOverdue();
+            }
+        },
+        {
+            label:"starred",
+            filterFn:function(a){
+                    return a.isStarred();
+            }
+        },
+        {
+            label:"priority",
+            filterFn:function(a){
+                    return a.isPriorityTask();
+            }
+        }],
+
+    })).load(null, div, null);
+    
+
+
+
+
+    application.setNamedValue('taskListFilter', module);
     
 }
