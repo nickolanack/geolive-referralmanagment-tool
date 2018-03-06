@@ -7021,18 +7021,23 @@
                                     "className": "feed-sub-item",
                                     "viewType": "view",
                                     "namedView": "defaultView",
+                                    "namedViewScript": "defaultPostDetail.metadata.positions.content.modules.3.config.namedViewScript.js",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
                                     "getItemListScript": "defaultPostDetail.metadata.positions.content.modules.3.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
                                     "formatListItemModuleScript": "defaultPostDetail.metadata.positions.content.modules.3.config.formatListItemModuleScript.js",
-                                    "formatModuleScript": "",
-                                    "itemButtonsScript": "return [];",
                                     "emptyNamedView": "emptyListView",
-                                    "namedViewScript": "defaultPostDetail.metadata.positions.content.modules.3.config.namedViewScript.js",
-                                    "filterModulesScript": "return list"
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": ""
                                 }
                             }
                         ]
