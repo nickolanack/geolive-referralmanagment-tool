@@ -2,7 +2,7 @@
 
 <h2>Created By {{userdetails.name}}</h2>
 
-{% for image in attributes.computed.images %}
+{% for image in computed.images %}
         <img src="{{image}}" />
 {% endfor %}
 
@@ -18,7 +18,7 @@
 
 {% for task in tasks %}
         <h3>{{ task.name }}</h3>
-        {% for image in task.attributes.computed.images %}
+        {% for image in task.computed.images %}
                 <img src="{{image}}" />
         {% endfor %}
         <p>{{ task.description }}</p>
