@@ -3,19 +3,42 @@ return new OptionListModule({
         {
             "label":"Edit",
             "fn":function(){
-                alert(1);
+                application.getDisplayController().displayPopoverForm(
+    				"ProposalTemplate", 
+    				item, 
+    				application,
+    				{template:"form"}
+			    );
             }
         },
         {
             "label":"Report",
             "fn":function(){
-                alert(1);
+                    var exportQuery=new AjaxControlQuery(CoreAjaxUrlRoot, 'generate_report', {
+		                "plugin": "ReferralManagement",
+		                "proposal":item.getId()
+		                });
+    				//exportQuery.execute(); //for testing.
+    				window.open(exportQuery.getUrl(true),'Download'); 
             }
         },
         {
             "label":"Archive",
             "fn":function(){
-                alert(1);
+                                var controller=application.getNamedValue('navigationController');
+    
+                                if(item.isArchived()){
+                                    item.unarchive(function(){
+                                        controller.redisplay();
+                                    });
+                                    
+                                }else{
+                                    item.archive(function(){
+                                        controller.navigateTo("Dashboard","Main"); 
+                                    });
+                                   
+
+                                }
             }
         },
     ]
