@@ -8,9 +8,19 @@
 
 
 <ul>
-<label>Tasks</label>
+<label>Tasks overview</label>
 {% for task in tasks %}
         <li>{{ task.name }} {% if task.complete %}<span style="color:green;">complete</span>{% else %}<span style="color:red;">incomplete</span>{% endif %}</li>
 {% endfor %}
     
 </ul>
+
+
+{% for task in tasks %}
+        <h3>{{ task.name }}</h3>
+        {% for image in task.attributes.computed.images %}
+                <img src="{{image}}" />
+        {% endfor %}
+        <p>{{ task.name }}</p>
+{% endfor %}
+
