@@ -9,7 +9,7 @@
 {% endfor %}
 <h2>Team</h2>
 {% for member in attributes.teamMembers %}
-        <img src="{{member.icon}}"  style="max-height:100px; max-width:100px; margin:10px;" />
+        <div><img src="{{member.icon}}"  style="max-height:100px; max-width:100px; margin:10px;" /></div>
         <label>{{member.name}}</label>
 {% endfor %}
 <h2>Tasks</h2>
