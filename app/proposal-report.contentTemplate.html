@@ -8,10 +8,12 @@
         <div><img src="{{image}}"  style="max-height:400px; max-width:400px; margin:20px;" /></div>
 {% endfor %}
 <h2>Team</h2>
+<div>
 {% for member in attributes.teamMembers %}
-        <div><img src="{{member.icon}}"  style="max-height:100px; max-width:100px; margin:10px;" /></div>
+        <div style="float:left;" ><img src="{{member.icon}}"  style="max-height:100px; max-width:100px; margin:10px;" /></div>
         <label>{{member.name}}</label>
 {% endfor %}
+</div>
 <h2>Tasks</h2>
 <ul>
 <h3>Summary</h3>
