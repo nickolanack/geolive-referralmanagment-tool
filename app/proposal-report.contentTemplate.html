@@ -5,7 +5,7 @@
 <h4>Created {{createdDate| date}}. Last Updated {{modifiedDate| date}}</h4>
 <span>timezone info: {{timezone}}</span>
 {% for image in computed.images %}
-        <img src="{{image}}"  style="max-height:400px; max-width:400px; margin:40px;" />
+        <div><img src="{{image}}"  style="max-height:400px; max-width:400px; margin:20px;" /></div>
 {% endfor %}
 <h2>Team</h2>
 {% for member in attributes.teamMembers %}
@@ -26,7 +26,7 @@
         <h3>{{ task.name }}</h3>
         <h4>Created {{task.createdDate| date}}. Last Updated {{task.modifiedDate| date}}. {% if task.complete %}<span style="color:green;">Completed on {{task.completedDate | date}}</span>{% endif %}</h4>
         {% for image in task.computed.images %}
-                <img src="{{image}}" style="max-height:200px; max-width:200px; margin:10px;" />
+                <div><img src="{{image}}" style="max-height:200px; max-width:200px; margin:10px;" /></div>
         {% endfor %}
         <p>{{ task.description }}</p>
 {% endfor %}
