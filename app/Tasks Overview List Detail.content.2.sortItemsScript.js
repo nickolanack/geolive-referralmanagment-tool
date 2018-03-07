@@ -1,1 +1,1 @@
-return ReferralManagementDashboard.initialSortFn.apply(null, arguments);
+return ReferralManagementDashboard.currentSortFn.apply(null, arguments);

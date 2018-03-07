@@ -1,1 +1,1 @@
-return ReferralManagementDashboard.initialFilterFn.apply(null, arguments);
+return ReferralManagementDashboard.currentFilterFn.apply(null, arguments);
