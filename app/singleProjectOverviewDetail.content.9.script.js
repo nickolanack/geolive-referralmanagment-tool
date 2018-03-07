@@ -5,7 +5,7 @@ var data=[
 
     
     
-    ]
+    ];
     var i=0;
     
     var today=new Date();
@@ -122,7 +122,7 @@ return new ModuleArray([
         callback(data);
         
         
-    }});
+    }})
 
     
     
