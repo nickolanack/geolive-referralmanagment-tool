@@ -117,7 +117,12 @@ return new ModuleArray([
     
     
     
-    new BarChartModule({data:data })
+    new BarChartModule({data:function(callback){
+        
+        callback(data);
+        
+        
+    }});
 
     
     

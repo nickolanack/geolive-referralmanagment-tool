@@ -5516,16 +5516,17 @@
                                     "className": "inline-list-item first-item tasks-list-item-icon",
                                     "viewType": "view",
                                     "namedView": "projectPriorityTasksDetail",
+                                    "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "",
-                                    "itemButtonsScript": "return [];",
-                                    "namedViewScript": "return namedView",
                                     "filterModulesScript": "return list",
-                                    "formOptions": "{}"
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false
                                 }
                             },
                             {
@@ -5534,16 +5535,17 @@
                                     "className": "",
                                     "viewType": "view",
                                     "namedView": "singeProjectUserIconsDetail",
+                                    "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "",
-                                    "itemButtonsScript": "return [];",
-                                    "namedViewScript": "return namedView",
                                     "filterModulesScript": "return list",
-                                    "formOptions": "{}"
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false
                                 }
                             },
                             {
@@ -5566,16 +5568,17 @@
                                     "className": "",
                                     "viewType": "view",
                                     "namedView": "singleProjectEditButtonsDetail",
+                                    "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "",
-                                    "itemButtonsScript": "return [];",
-                                    "namedViewScript": "return namedView",
                                     "filterModulesScript": "return list",
-                                    "formOptions": "{}"
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false
                                 }
                             }
                         ]
