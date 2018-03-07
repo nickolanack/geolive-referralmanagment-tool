@@ -1,4 +1,4 @@
 //console.log([module, item]);
-item.addEvent("change",function(){
+module.addWeakEvent(item, "change",function(){
     module.redraw();
 })
