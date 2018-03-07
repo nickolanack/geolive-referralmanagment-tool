@@ -215,4 +215,26 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
             }
             <?php
         }
+        
+        
+        
+        
+        $optionsMenuIcon=$config->getParameter('optionsMenuIcon', array());
+        if(!empty($optionsMenuIcon)){
+          
+            $optionsMenuIcon=$optionsMenuIcon[0];
+            ?>
+
+            .inline-btn.optionlist {
+                background-image: url("<?php echo UrlFrom($optionsMenuIcon); ?>");
+            }
+            <?php
+        }
+        
+        
+        
+        
+        
+        
+        
 ?>
