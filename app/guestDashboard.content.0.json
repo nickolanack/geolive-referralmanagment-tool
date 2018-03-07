@@ -4,14 +4,16 @@
         "className": "login-form",
         "viewType": "form",
         "namedView": "defaultView",
+        "namedViewScript": "return namedView",
         "showInlineEdit": false,
         "namedFormView": "LoginWizard",
+        "formOptions": "{}",
         "showDeleteButton": false,
         "deleteItemScript": "",
         "formatModuleScript": "",
         "resolveItemScript": "",
+        "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",
-        "namedViewScript": "return namedView",
-        "filterModulesScript": "return list"
+        "insertAtTop": false
     }
 }

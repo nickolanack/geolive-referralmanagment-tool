@@ -7977,7 +7977,26 @@
                     },
                     "content": {
                         "modules": [
-                            "guestDashboard.metadata.positions.content.modules.0.json"
+                            "guestDashboard.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "googleMap",
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false
+                                }
+                            }
                         ]
                     },
                     "footer": {
