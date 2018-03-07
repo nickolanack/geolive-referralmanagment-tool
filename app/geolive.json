@@ -3788,6 +3788,15 @@
                 },
                 {
                     "type": "images",
+                    "name": "optionsMenuIcon",
+                    "default": [],
+                    "label": "optionsMenuIcon",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
                     "name": "main-dashboard",
                     "default": [],
                     "label": "dashboard",
@@ -4174,7 +4183,8 @@
             ],
             "nextNavIcon": [
                 "components\/com_geolive\/users_files\/user_files_680\/Uploads\/vD0_[G]_J9p_b7m_[ImAgE].png"
-            ]
+            ],
+            "optionsMenuIcon": []
         }
     },
     "widget.154": {
