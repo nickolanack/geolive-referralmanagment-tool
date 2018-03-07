@@ -1,3 +1,5 @@
+/*Project Filters*/
+
 return function(viewer, element, parentModule){
     
     var div=element.appendChild(new Element('div',{
