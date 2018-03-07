@@ -7,6 +7,14 @@
     margin-top: 50px;
     padding:0 50px;
 }
+.ui-view.public-map
+    height: 600px;
+    overflow: hidden;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
 
 .ui-view.login-form span.WizardFooter {
     height: 60px;
