@@ -403,7 +403,7 @@ span.inline-list-item {
 
 
 .percent-complete {
-    width: 50%;
+    width: calc( 50% - 20px );
     display: inline-block;
     background-color: gray;
     border-radius: 4px;
@@ -414,6 +414,7 @@ span.inline-list-item {
     float: right;
     position: relative;
     top: -25px;
+    margin-right: 20px;
 }
 
 .percent-complete>div {
