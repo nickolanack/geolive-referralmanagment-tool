@@ -3,6 +3,6 @@ module.addWeakEvent(item, "change",function(){
     module.redraw(); //automatically stops spinning
 })
 
-module.addWeakEvent(item, "saving ",function(){
+module.addWeakEvent(item, "saving",function(){
     module.startSpinner();
 })
