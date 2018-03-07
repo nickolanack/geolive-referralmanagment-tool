@@ -5,8 +5,8 @@ return function(viewer, element, parentModule){
         return viewer.getChildView('content', 2);
     }, {
         sorters:ReferralManagementDashboard.taskSorters(),
-        applySort:"priority",
-        applySortInvert:true
+        currentSort:"priority",
+        currentSortInvert:true
     }));
     
     
@@ -19,10 +19,7 @@ return function(viewer, element, parentModule){
         currentFilterInvert:true
     }));
     
-    
-    viewer.addEvent("load:once",function(){
-        setTimeout(function(){ sort.applyFilter("complete", true); }, 1000);
-    });
+
 
 
 
