@@ -122,7 +122,12 @@ h2 {
     padding: 7px 10px;
 }
 
-
+.project-tasks.ui-list-view .ui-view:last-child{
+    border-bottom: none;
+}
+.project-tasks.ui-list-view .ui-view:first-child{
+    border-top:none;
+}
 
 .ui-list-view .ui-view.inset-item{
      border-top:none;
