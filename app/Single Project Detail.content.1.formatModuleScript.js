@@ -4,5 +4,5 @@ module.addWeakEvent(item, "change",function(){
 })
 
 module.addWeakEvent(item, "saving ",function(){
-    module.spin();
+    module.startSpinner();
 })
