@@ -125,6 +125,9 @@ h2 {
 .project-detail .FormattedTextModule.content, .project-detail .inline-list-item{
     padding: 24px;
 }
+.project-detail .project-title {
+    padding-left: 24px;
+}
 
 .project-tasks.ui-list-view .ui-view:last-child{
     border-bottom: none;
