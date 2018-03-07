@@ -33,7 +33,9 @@ childView.addEvent('load:once',function(){
             //     childView.redraw();
             // })
     })
-    
+    childView.addWeakEvent(child, "saving", function(){
+        childView.startSpinner();
+    })
     childView.addWeakEvent(child, "change", function(){
         childView.redraw();
     })
