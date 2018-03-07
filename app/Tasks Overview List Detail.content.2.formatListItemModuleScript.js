@@ -29,16 +29,18 @@ childView.addEvent('load:once',function(){
         
         
         
-            wizard.addEvent("complete",function(){
-                childView.redraw();
-            })
-        
-        
+            // wizard.addEvent("complete",function(){
+            //     childView.redraw();
+            // })
+    })
+    
+    childView.addWeakEvent(child, "change", function(){
+        childView.redraw();
     })
     
 })
 
 
-child.addEvent('remove', function(){
+childView.addWeakEvent(child, 'remove', function(){
     childView.remove();
 });
