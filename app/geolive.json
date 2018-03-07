@@ -5495,7 +5495,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getCompanyName();",
-                                    "formatElementScript": ""
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.5.config.formatElementScript.js"
                                 }
                             },
                             {
