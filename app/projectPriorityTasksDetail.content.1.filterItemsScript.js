@@ -1,1 +1,1 @@
-return ReferralManagementDashboard.taskFilterIncomplete.call(null, arguments);
+return ReferralManagementDashboard.taskFilterIncomplete.apply(null, arguments);
