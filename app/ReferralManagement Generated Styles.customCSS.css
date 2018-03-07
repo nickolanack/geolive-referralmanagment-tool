@@ -225,8 +225,15 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
             $optionsMenuIcon=$optionsMenuIcon[0];
             ?>
 
-            .inline-btn.optionlist {
+            .inline-btn.optionlist:before {
                 background-image: url("<?php echo UrlFrom($optionsMenuIcon); ?>");
+                display: inline-block;
+                width: 6px;
+                height: 25px;
+                background-size: auto 100%;
+                background-position: center;
+                content: "";
+                background-repeat: no-repeat;
             }
             <?php
         }
