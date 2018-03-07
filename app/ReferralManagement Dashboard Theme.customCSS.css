@@ -1072,9 +1072,11 @@ span.filter-btns {
 .inline-btn.optionlist {
     position: absolute;
     right: 0;
-    width: 1px;
+    width: 6px;
     top: calc( 50% - 12px );
     margin: 0 5px;
+    padding: 0px 6px;
+    text-align: center;
 }
 
 .inline-btn.optionlist:before {
