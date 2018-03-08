@@ -1282,13 +1282,13 @@ button.t-btn {
     font-size: 12px;
 }
 
- .user-profile-icon {
-
+ .user-profile-icon, div.user-profile-icon.content {
     border-radius: 100%;
     overflow: hidden;
     display: inline-block;
     height: 50px;
     width: 50px;
+    padding:0;
 }
 
 .ui-post-view .user-profile-icon {
