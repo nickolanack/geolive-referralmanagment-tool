@@ -2,7 +2,8 @@ return new OptionListModule({
     functions:[
         {
             "label":"Edit",
-            "fn":function(){
+            "fn":function(e){
+                e.stop();
                 application.getDisplayController().displayPopoverForm(
     				"ProposalTemplate", 
     				item, 
@@ -13,7 +14,8 @@ return new OptionListModule({
         },
         {
             "label":"Report",
-            "fn":function(){
+            "fn":function(e){
+                    e.stop();
                     var exportQuery=new AjaxControlQuery(CoreAjaxUrlRoot, 'generate_report', {
 		                "plugin": "ReferralManagement",
 		                "proposal":item.getId()
@@ -24,7 +26,8 @@ return new OptionListModule({
         },
         {
             "label":"Archive",
-            "fn":function(){
+            "fn":function(e){
+                    e.stop();
                                 var controller=application.getNamedValue('navigationController');
     
                                 if(item.isArchived()){
