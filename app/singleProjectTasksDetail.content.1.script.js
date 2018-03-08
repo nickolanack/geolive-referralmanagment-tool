@@ -6,44 +6,9 @@ return function(viewer, element, parentModule){
     (new ListSortModule(function(){
         return viewer.getChildView('content', 2);
     }, {
-        sorters:[{
-            label:"name",
-            sortFn:function(a, b){
-                    return (a.getName()>b.getName()?1:-1);
-            }
-        },
-        {
-            label:"date",
-            sortFn:function(a, b){
-                    return (a.getDueDate()>b.getDueDate()?1:-1);
-            }
-        },
-        {
-            label:"priority",
-            sortFn:function(a, b){
-                    if(a.isPriorityTask()){
-                        return 1;
-                    }
-                    if(b.isPriorityTask()){
-                        return -1;
-                    }
-                    return 0;
-            }
-        },
-        {
-            label:"complete",
-            sortFn:function(a, b){
-                    if(a.isComplete()){
-                        return -1;
-                    }
-                    if(b.isComplete()){
-                        return 1;
-                    }
-                    return 0;
-            }
-        }],
-        applySort:"priority",
-        applySortInvert:true
+        sorters:ReferralManagementDashboard.taskSorters,
+        currentSort:"priority",
+        currentSortInvert:true
     })).load(null, element.lastChild, null);
     
     
@@ -52,31 +17,9 @@ return function(viewer, element, parentModule){
     (module=new ListFilterModule(function(){
         return viewer.getChildView('content', 2);
     }, {
-        filters:[{
-            label:"complete",
-            filterFn:function(a){
-                    return a.isComplete();
-            }
-        },
-        {
-            label:"overdue",
-            filterFn:function(a){
-                    return a.isOverdue();
-            }
-        },
-        {
-            label:"starred",
-            filterFn:function(a){
-                    return a.isStarred();
-            }
-        },
-        {
-            label:"priority",
-            filterFn:function(a){
-                    return a.isPriorityTask();
-            }
-        }],
-
+        filters:ReferralManagementDashboard.taskFilters,
+        currentFilter:"complete",
+        currentSortInvert:true
     })).load(null, div, null);
     
 
