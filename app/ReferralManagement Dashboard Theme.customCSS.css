@@ -158,6 +158,11 @@ h2 {
     float: left;
 }
 
+.multiple_ImageContainer>span {
+    margin: 9px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
 .task-icon .single_ImageContainer {
     margin:0;
 }
