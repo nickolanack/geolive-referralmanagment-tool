@@ -18,8 +18,7 @@ return function(viewer, element, parentModule){
         return viewer.getChildView('content', 2);
     }, {
         filters:ReferralManagementDashboard.taskFilters(),
-        currentFilter:"complete",
-        currentSortInvert:true
+
     })).load(null, div, null);
     
 

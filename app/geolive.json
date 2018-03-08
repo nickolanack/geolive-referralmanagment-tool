@@ -5661,7 +5661,7 @@
                                     "formatItemListScript": "return list;",
                                     "formatListItemModuleScript": "singleProjectTasksDetail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
-                                    "filterItemsScript": "singleProjectTasksDetail.metadata.positions.content.modules.2.config.filterItemsScript.js",
+                                    "filterItemsScript": "return true;",
                                     "sortItemsScript": "singleProjectTasksDetail.metadata.positions.content.modules.2.config.sortItemsScript.js"
                                 }
                             }
