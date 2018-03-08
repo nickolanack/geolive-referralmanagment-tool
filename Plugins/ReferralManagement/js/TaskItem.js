@@ -154,6 +154,7 @@ var TaskItem = (function() {
 
 		save: function(callback) {
 			var me=this;
+			me.fireEvent("saving");
 			(new SaveTaskQuery(Object.append(me.data, {
 				itemId:me.getItem().getId(),
 				itemType:me.getItem().getType()

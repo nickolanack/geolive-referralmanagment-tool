@@ -264,22 +264,61 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
     protected function generateReport($task, $json)
     {
+
+        include_once __DIR__.'/lib/Report.php';
+        (new \ReferralManagement\Report($json->proposal))
+            ->generateReport('proposal.report', 'Hello World')
+            ->renderPdf();
+        exit();
+        
+    }
+
+    protected function downloadFiles($task, $json)
+    {
+
+
+        include_once __DIR__.'/lib/ComputedData.php';
+        $parser=new \ReferralManagement\ComputedData();
+
+        $localPath=function($u){
+            if(HtmlDocument()->isLocalFileUrl($u)){
+                return PathFrom($u);
+            }
+
+            return $u;
+        };
         
         $data=$this->getPlugin()->getProposalData($json->proposal);
-        $text=(new \core\Template('proposal.report', 'Hello World'))->render($data);
 
+        $zip = new ZipArchive();
+        $filename = tempnam(__DIR__, '_zip');
 
-        // instantiate and use the dompdf class
-        $dompdf = new Dompdf\Dompdf();
-        $dompdf->set_option('defaultFont', 'Courier');
-        $dompdf->loadHtml($text);
-        // (Optional) Setup the paper size and orientation
-        $dompdf->setPaper('A4');
-        // Render the HTML as PDF
-        $dompdf->render();
-        // Output the generated PDF to Browser
-        $dompdf->stream($data['attributes']['company'].'-'.$data['attributes']['title'].'-'.date('Y-m-d_H-i-s').'.pdf');
-        exit();
+        if ($zip->open($filename, ZipArchive::CREATE)!==TRUE) {
+            exit("cannot open <".$filename.">\n");
+        }
+
+        foreach(array_map($localPath, $parser->parseProposalFiles($data)) as $url){
+            $zip->addFromString(basename($url), file_get_contents($url));
+        }
+
+        foreach($data['tasks'] as $task){
+             foreach(array_map($localPath, $parser->parseTaskFiles($task)) as $url){
+                $zip->addFromString(basename($url), file_get_contents($url));
+            }
+        }
+
+        $zip->close();
+        $content=file_get_contents($filename);
+        unlink($filename);
+
+        $title=$data['attributes']['title'];
+
+        header("Content-Type: application/zip");
+        header("Content-Length: " . mb_strlen($content, "8bit"));
+        header("Content-Disposition: attachment; filename=\"".$title."-attachments-".time().".zip\"");
+        exit($content);
+
+        return array('files'=>$data['files'], 'proposal'=>$data);
 
     }
 

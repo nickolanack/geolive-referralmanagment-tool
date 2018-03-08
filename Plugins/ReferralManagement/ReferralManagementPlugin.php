@@ -114,13 +114,34 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
         $results=$database->getAllProposals($filter);
 
 
+        $filter=function($item){
+            return true;
+        };
+
+        if(!Auth('memberof', 'lands-department-manager', 'group')){
+
+            $clientId=GetClient()->getUserId();
+            $filter=function($item)use($clientId){
+
+                if($item['user']==$clientId){
+                    return true;
+                }
+
+                if(in_array($clientId, $item['attributes']['teamMemberIds'])){
+                    return true;
+                }
+
+                return false;
+
+            };
+        }
 
 
-        return array_map(function ($result) {
+        return array_values(array_filter(array_map(function ($result) {
 
               return $this->formatProposalResult($result);
 
-        }, $results);
+        }, $results), $filter));
 
 
     }
@@ -173,6 +194,9 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
                 $computed['urgency']='medium';
             }
 
+
+            
+
             $proposal['computed']=$computed;
             $proposal['tasks']=array_map(function($result){
                 return $this->formatTaskResult($result);
@@ -203,7 +227,11 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
     public function getProposalData($id){
 
         $database = $this->getDatabase();
-        return $this->formatProposalResult($database->getProposal($id)[0]);
+        $result=$database->getProposal($id);
+        if(!$result){
+            throw new Exception('No record for proposal: '.$id);
+        }
+        return $this->formatProposalResult($result[0]);
 
     }
 
@@ -525,6 +553,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
        return $taskIds;
 
     }
+
 
 
     protected function parseDueDateString($date, $proposal){

@@ -109,6 +109,16 @@ var ProjectTeam=(function(){
 					},result));
 
 					
+					proposal.addEvent("addTask", function(){
+						me.fireEvent("tasksChanged");
+					});
+					proposal.addEvent("taskRemoved", function(){
+						me.fireEvent("tasksChanged");
+					});
+					proposal.addEvent("taskChanged", function(){
+						me.fireEvent("tasksChanged");
+					});
+
 
 
 					return proposal;
@@ -180,6 +190,10 @@ var ProjectTeam=(function(){
 
 			me._proposals.push(p);
 			me.fireEvent('addProject',[p]);
+
+			if(p.hasTasks()){
+				me.fireEvent('tasksChanged');
+			}
 
 
 		},
@@ -417,7 +431,6 @@ var ProjectTeam=(function(){
 	    	me._proposals.splice(i,1);
 	    	me.fireEvent("removeProject",[p]);
 
-
 	    }
 
 
@@ -441,6 +454,176 @@ ProjectTeam.CurrentTeam=function(){
 
 window.ReferralManagementDashboard={
 
+
+	currentProjectFilterFn:function(a){
+ 			return !a.isComplete();
+	},
+	currentProjectSortFn:function(a, b){
+		 return -(a.getPriorityNumber()>b.getPriorityNumber()?1:-1);
+	},
+	projectFilters:function(){
+
+		return [{
+            label:"complete",
+            filterFn:function(a){
+                    return a.isComplete();
+            }
+        },
+        {
+            label:"high priority",
+            name:"high",
+            filterFn:function(a){
+                    return a.isHighPriority();
+            }
+        }];
+
+	},
+	projectSorters:function(){
+
+		return [
+            {
+            label:"priority",
+            sortFn:function(a, b){
+                    return (a.getPriorityNumber()>b.getPriorityNumber()?1:-1);
+            }
+        },{
+            label:"name",
+            sortFn:function(a, b){
+                    return (a.getName()>b.getName()?1:-1);
+            }
+        },
+        {
+            label:"client",
+            sortFn:function(a, b){
+                    return (a.getCompanyName()>b.getCompanyName()?1:-1);
+            }
+        },
+        {
+            label:"deadline",
+            sortFn:function(a, b){
+                    return (a.getSubmitDate()>b.getSubmitDate()?1:-1);
+            }
+        }];
+
+
+	},
+
+
+
+	currentTaskFilterFn:function(a){
+		return !a.isComplete();
+	},
+	currentTaskSortFn:function(a, b){
+		if(a.isPriorityTask()){
+            return -1;
+        }
+        if(b.isPriorityTask()){
+            return 1;
+        }
+        return 0;
+	},
+	taskFilterIncomplete:function(a){
+			return !a.isComplete();
+	},
+	taskSortPriority:function(a, b){
+
+
+
+		if(a.isPriorityTask()&&!a.isComplete()){
+            return -1;
+        }
+        if(b.isPriorityTask()&&!b.isComplete()){
+            return 1;
+        }
+
+
+        if(a.isComplete()!==b.isComplete()){
+        	if(!a.isComplete()){
+        		return -1;
+        	}
+        	return 1;
+        }
+
+
+        if(a.isPriorityTask()!==b.isPriorityTask()){
+        	if(a.isPriorityTask()){
+        		return -1;
+        	}
+        	return 1;
+        }
+
+
+
+        return (a.getDueDate()>b.getDueDate()?1:-1);
+	},
+	taskFilters:function(){
+
+		return [{
+            label:"complete",
+            filterFn:function(a){
+                return a.isComplete();
+            }
+        },
+        {
+            label:"overdue",
+            filterFn:function(a){
+                return a.isOverdue();
+            }
+        },
+        {
+            label:"starred",
+            filterFn:function(a){
+                return a.isStarred();
+            }
+        },
+        {
+            label:"priority",
+            filterFn:function(a){
+                return a.isPriorityTask();
+            }
+        }];
+
+
+
+
+	},
+
+
+
+	taskSorters:function(){
+
+		return [{
+            label:"name",
+            sortFn:function(a, b){
+                    return (a.getName()>b.getName()?1:-1);
+            }
+        },
+        {
+            label:"date",
+            sortFn:function(a, b){
+                    return (a.getDueDate()>b.getDueDate()?1:-1);
+            }
+        },
+        {
+            label:"priority",
+            sortFn:function(a, b){
+                   return - ReferralManagementDashboard.taskSortPriority(a,b);
+            }
+        },
+        {
+            label:"complete",
+            sortFn:function(a, b){
+                    if(a.isComplete()){
+                        return -1;
+                    }
+                    if(b.isComplete()){
+                        return 1;
+                    }
+                    return 0;
+            }
+        }];
+
+	},
 
 	taskHighlightMouseEvents:function(tasks){
                 return {

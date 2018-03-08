@@ -477,6 +477,7 @@ var Proposal = (function() {
 		save: function(callback) {
 
 			var me = this;
+			me.fireEvent("saving");
 
 			(new SaveProposalQuery({
 				id: me._id,
@@ -619,7 +620,6 @@ var Proposal = (function() {
 
 
 			return [];
-
 		},
 
 		getAdditionalDocuments: function() {
