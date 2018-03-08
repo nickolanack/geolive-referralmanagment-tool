@@ -6,7 +6,7 @@
 
 
 
-return new BarChartModule({data:function(callback){
+var chart= new BarChartModule({data:function(callback){
     
     //TODO: get team data
     
@@ -116,6 +116,14 @@ return new BarChartModule({data:function(callback){
     
     
 }});
+
+ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+    chart.addWeakEvent(team, "tasksChanged",function(){
+        chart.redraw();
+    });
+});
+
+return chart;
 
 
 
