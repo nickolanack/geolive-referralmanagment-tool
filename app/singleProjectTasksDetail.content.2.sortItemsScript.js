@@ -1,0 +1,1 @@
+return ReferralManagementDashboard.currentTaskSortFn.apply(null, arguments);
