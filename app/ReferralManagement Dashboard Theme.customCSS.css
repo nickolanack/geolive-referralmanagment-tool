@@ -223,6 +223,10 @@ span.inline-list-item {
     border-radius: 100%;
 }
 
+.ImageModule {
+    display: inline-block;
+}
+
 .user-detail .single_ImageContainer {
     display: inline-flex;
     position: relative;
