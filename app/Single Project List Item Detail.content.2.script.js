@@ -1,4 +1,1 @@
-function foo(items) {
-    var x = "All this is syntax highlighted";
-    return x;
-}
+return new ProgressBarModule({value:function(){ return item.getPercentComplete(); },"class":"percent-complete"});
