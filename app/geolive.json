@@ -4105,6 +4105,12 @@
                     "label": "overdueTint"
                 },
                 {
+                    "type": "boolean",
+                    "name": "showFileThumbnails",
+                    "default": true,
+                    "label": "showFileThumbnails"
+                },
+                {
                     "type": "images",
                     "name": "remainingIcon",
                     "default": [],
@@ -4186,7 +4192,8 @@
             ],
             "optionsMenuIcon": [
                 "users_files\/user_files_1\/Uploads\/y2w_bSz_[G]_[ImAgE]_W67.png"
-            ]
+            ],
+            "showFileThumbnails": true
         }
     },
     "widget.154": {
