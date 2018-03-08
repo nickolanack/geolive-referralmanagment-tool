@@ -3,8 +3,9 @@ var module=new ElementModule("div",{
         html:'You have ~ tasks remaining.'
     });
     
-ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+var compute=function(team){
     
+    module.getElement().removeEvents();
     var tasks=[];
     var total=0;
     var update=function(){
@@ -31,15 +32,18 @@ ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
             }
         });
     
-});
+};
 
+
+ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+    compute(team);
+    module.addWeakEvent(team, "tasksChanged",function(){
+        compute(team);
+    })
+    
+});
 
 
 return new ModuleArray([
     module
-
-    
-    
-    
-   
 ],{"class":"inline-list-item synopsis-item remaining-tasks"});

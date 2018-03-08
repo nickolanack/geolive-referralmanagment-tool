@@ -2,11 +2,12 @@ var module=new ElementModule("div",{
         html:'You have ~ overdue task.'
     });
     
-ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+var compute=function(team){
+    module.getElement().removeEvents();
     var tasks=team.getTasks().filter(function(t){return t.isOverdue();  });
     var l=tasks.length;
     module.getElement().innerHTML='You have '+l+' overdue task'+(l==1?"":"s")+'.';
-     module.getElement().addEvents(ReferralManagementDashboard.taskHighlightMouseEvents(tasks))
+    module.getElement().addEvents(ReferralManagementDashboard.taskHighlightMouseEvents(tasks))
      
      
      module.getElement().addEvent('click',function(){
@@ -19,6 +20,14 @@ ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
             }
         });
      
+};
+
+
+ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+   compute(team);
+    module.addWeakEvent(team, "tasksChanged",function(){
+        compute(team);
+    })
 });
 
 
