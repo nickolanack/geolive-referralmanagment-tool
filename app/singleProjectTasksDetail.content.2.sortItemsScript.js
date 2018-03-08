@@ -1,1 +1,1 @@
-return ReferralManagementDashboard.currentTaskSortFn.apply(null, arguments);
+return ReferralManagementDashboard.taskSortPriority.apply(null, arguments);
