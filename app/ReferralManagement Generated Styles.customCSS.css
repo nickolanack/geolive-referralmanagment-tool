@@ -189,6 +189,9 @@ foreach(['prev', 'next'] as $nav){
        .<?php echo $nav; ?>-btn {
             background-image:url("<?php echo UrlFrom($navIcon); ?>?tint=<?php echo $config->getParameter("uploadTint", "rgb(180,180,180)"); ?>");
         }
+        .<?php echo $nav; ?>-btn:hover {
+            background-image:url("<?php echo UrlFrom($navIcon); ?>?tint=<?php echo $config->getParameter("menuIconTint"); ?>");
+        }
     <?php
     
     
