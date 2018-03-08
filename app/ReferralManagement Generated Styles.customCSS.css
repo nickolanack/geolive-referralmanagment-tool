@@ -244,9 +244,11 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
         
         
         if(!$config->getParameter("showFileThumbnails")){
+            ?>
             .image.attachment-thumb{
                 display:none;
             }
+            <?php
         }
         
         
