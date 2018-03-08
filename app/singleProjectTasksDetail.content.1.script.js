@@ -6,7 +6,7 @@ return function(viewer, element, parentModule){
     (new ListSortModule(function(){
         return viewer.getChildView('content', 2);
     }, {
-        sorters:ReferralManagementDashboard.taskSorters,
+        sorters:ReferralManagementDashboard.taskSorters(),
         currentSort:"priority",
         currentSortInvert:true
     })).load(null, element.lastChild, null);
@@ -17,7 +17,7 @@ return function(viewer, element, parentModule){
     (module=new ListFilterModule(function(){
         return viewer.getChildView('content', 2);
     }, {
-        filters:ReferralManagementDashboard.taskFilters,
+        filters:ReferralManagementDashboard.taskFilters(),
         currentFilter:"complete",
         currentSortInvert:true
     })).load(null, div, null);
