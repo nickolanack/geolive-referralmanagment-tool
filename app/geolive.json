@@ -42,12 +42,16 @@
                 ""
             ],
             "pluginPaths": [
+                "\/Users\/nblackwe\/Desktop\/git-nick\/php-core-app\/..\/php-core-map\/Plugins",
+                "\/Users\/nblackwe\/Desktop\/git-nick\/php-core-app\/..\/geolive-referralmanagment-tool\/Plugins",
                 ""
             ],
             "widgetPaths": [
+                "\/Users\/nblackwe\/Desktop\/git-nick\/php-core-app\/..\/php-core-map\/Widgets",
                 ""
             ],
             "modulePaths": [
+                "\/Users\/nblackwe\/Desktop\/git-nick\/php-core-app\/..\/php-core-map\/Modules",
                 ""
             ],
             "sandboxDomains": [
@@ -81,9 +85,9 @@
         "parameters": {
             "enableLayerSyncronization": false,
             "onlyShowMarkersInIconset": false,
-            "googleMapsServerApiKey": "",
+            "googleMapsServerApiKey": "XXXX-XXXX",
             "googleMapsVersion": "",
-            "tileCachePath": "\/srv\/www\/vhosts\/production\/wabun.s54.ok.ubc.ca\/http\/..\/tiles",
+            "tileCachePath": "{site}\/..\/tiles",
             "layerDisplayFilterScript": "",
             "formatMapitemScript": "plugin.Maps.12.formatMapitemScript.js"
         }
@@ -4181,7 +4185,7 @@
                 "components\/com_geolive\/users_files\/user_files_680\/Uploads\/vD0_[G]_J9p_b7m_[ImAgE].png"
             ],
             "optionsMenuIcon": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/ImA_9Kb_eif_[G]_[ImAgE].png"
+                "users_files\/user_files_1\/Uploads\/y2w_bSz_[G]_[ImAgE]_W67.png"
             ]
         }
     },
