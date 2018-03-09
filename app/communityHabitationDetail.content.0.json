@@ -1,19 +1,19 @@
 {
-    "type": "UIListView",
+    "type": "UIView",
     "config": {
-        "listClassName": "",
         "className": "",
         "viewType": "view",
-        "namedView": "layerItemListViewDetail",
+        "namedView": "googlemap",
+        "namedViewScript": "return namedView",
         "showInlineEdit": false,
-        "namedFormView": "defaultFormView",
+        "namedFormView": "defaultView",
+        "formOptions": "{}",
         "showDeleteButton": false,
-        "deleteItemScript": "",
-        "getItemListScript": "var PlacemarkListQuery = new Class({\n            Extends: AjaxControlQuery,\n            initialize: function() {\n                this.parent(CoreAjaxUrlRoot, 'layer_display', {\n                    plugin: 'Maps',\n                    layerId:114,\n                    format:\"json\"\n                });\n            }\n        });\n\n        \n      (new PlacemarkListQuery()).addEvent('success',function(resp){\n            callback(resp.items);\n       }).execute();\n     \n       \nreturn null;\n       ",
-        "formatItemListScript": "return list;",
-        "formatListItemModuleScript": "",
+        "deleteItemScript": "defaultBehaviorFn()",
         "formatModuleScript": "",
+        "resolveItemScript": "return item",
+        "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",
-        "emptyNamedView": "emptyListView"
+        "insertAtTop": false
     }
 }
