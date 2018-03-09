@@ -1305,6 +1305,13 @@ button.t-btn {
     left: -20px;
 }
 
+.ui-post-view .feed-sub-item .user-profile-icon {
+    position: relative;
+    left: 0;
+    float: left;
+    margin-right: 12px;
+}
+
 .activity-feed:before {
     content: "";
     position: absolute;
