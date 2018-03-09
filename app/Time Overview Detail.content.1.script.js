@@ -107,7 +107,7 @@ var chart= new BarChartModule({data:function(callback){
     
     data[0]["class"]="trans";
    // data[data.length-1]["class"]="active";
-    callback(data);
+    callback(ReferralManagementDashboard.projectActivityChartData(team));
     
         
     })
