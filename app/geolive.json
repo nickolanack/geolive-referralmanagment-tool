@@ -4675,78 +4675,23 @@
                                     "className": "user-item",
                                     "viewType": "view",
                                     "namedView": "singleUserListItemDetail",
+                                    "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
                                     "getItemListScript": "People Users Detail.metadata.positions.content.modules.1.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
                                     "formatListItemModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "itemButtonsScript": "return [];",
                                     "emptyNamedView": "emptyListView",
-                                    "namedViewScript": "return namedView",
-                                    "filterModulesScript": "return list"
-                                }
-                            },
-                            {
-                                "type": "InlineHtml",
-                                "config": {
-                                    "className": "",
-                                    "text": "Community Members &amp; Unassigned Users",
-                                    "template": "",
-                                    "templateVariablesScript": ""
-                                }
-                            },
-                            {
-                                "type": "UIListView",
-                                "config": {
-                                    "listClassName": "",
-                                    "className": "user-item",
-                                    "viewType": "view",
-                                    "namedView": "singleUserListItemDetail",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "getItemListScript": "People Users Detail.metadata.positions.content.modules.3.config.getItemListScript.js",
-                                    "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "itemButtonsScript": "return [];",
-                                    "emptyNamedView": "emptyListView",
-                                    "namedViewScript": "return namedView",
-                                    "filterModulesScript": "return list"
-                                }
-                            },
-                            {
-                                "type": "InlineHtml",
-                                "config": {
-                                    "className": "",
-                                    "text": "Mobile App Devices",
-                                    "template": "",
-                                    "templateVariablesScript": ""
-                                }
-                            },
-                            {
-                                "type": "UIListView",
-                                "config": {
-                                    "listClassName": "",
-                                    "className": "user-item",
-                                    "viewType": "view",
-                                    "namedView": "singleUserListItemDetail",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "getItemListScript": "People Users Detail.metadata.positions.content.modules.5.config.getItemListScript.js",
-                                    "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "itemButtonsScript": "return [];",
-                                    "emptyNamedView": "emptyListView",
-                                    "namedViewScript": "return namedView",
-                                    "filterModulesScript": "return list"
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": ""
                                 }
                             }
                         ]
