@@ -80,6 +80,7 @@ foreach($config->getParameters() as $key=>$value){
 
 
 
+
 <?php 
         $priorityIcon=$config->getParameter('priorityIcon', array());
         if(empty($priorityIcon)){
@@ -141,7 +142,18 @@ foreach($config->getParameters() as $key=>$value){
 }
 
 
-
+.segment.overdue{
+    background-image:url("<?php echo UrlFrom($overdueIcon); ?>?tint=rgba(0,0,0)";
+}
+.segment.complete{
+     background-image:url("<?php echo UrlFrom($remainingIcon); ?>?tint=rgba(0,0,0)";
+}
+.segment.created{
+     background-image:url("<?php echo UrlFrom($remainingIcon); ?>?tint=rgba(0,0,0)";
+}
+.segment.duedate{
+     background-image:url("<?php echo UrlFrom($remainingIcon); ?>?tint=rgba(0,0,0)";
+}
 
 <?php 
 
