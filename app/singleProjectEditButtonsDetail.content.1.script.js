@@ -16,7 +16,7 @@ return new Element('button',{"html":item.isArchived()?"Unarchive":"Archive", "cl
     
                                 if(item.isArchived()){
                                     item.unarchive(function(){
-                                        controller.redisplay();
+                                        controller.navigateTo("Archive","Configuration"); 
                                     });
                                     
                                 }else{
