@@ -532,6 +532,10 @@ span.inline-list-item {
     background-color: rgba(106, 233, 191, 1);
 }
 
+.segment.completed {
+    background-color: #6A7CE9;
+}
+
 .segment.created {
     background-color: mediumseagreen;
 }
