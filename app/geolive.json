@@ -8340,32 +8340,125 @@
             "requireTarget": true,
             "onRenderApplictionScript": "",
             "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "communityUsersDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIListView",
+                                "config": {
+                                    "listClassName": "",
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "defaultView",
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "getItemListScript": "return item;",
+                                    "formatItemListScript": "return list;",
+                                    "formatListItemModuleScript": "return item;",
+                                    "emptyNamedView": "emptyListView",
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": ""
+                                }
+                            },
+                            {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "",
+                                    "text": "",
+                                    "template": "",
+                                    "templateVariablesScript": ""
+                                }
+                            },
+                            {
+                                "type": "UIListView",
+                                "config": {
+                                    "listClassName": "",
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "defaultView",
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "getItemListScript": "return item;",
+                                    "formatItemListScript": "return list;",
+                                    "formatListItemModuleScript": "return item;",
+                                    "emptyNamedView": "emptyListView",
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": ""
+                                }
+                            },
+                            {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "",
+                                    "text": "",
+                                    "template": "",
+                                    "templateVariablesScript": ""
+                                }
+                            },
+                            {
+                                "type": "UIListView",
+                                "config": {
+                                    "listClassName": "",
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "defaultView",
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "getItemListScript": "return item;",
+                                    "formatItemListScript": "return list;",
+                                    "formatListItemModuleScript": "return item;",
+                                    "emptyNamedView": "emptyListView",
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": ""
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
                 "positionList": [
                     "title",
                     "content",
                     "footer",
                     "menu"
                 ],
-                "positions": {
-                    "title": {
-                        "modules": [
-                            "communityUsersDetail.metadata.positions.title.modules.0.json"
-                        ]
-                    },
-                    "content": {
-                        "modules": [
-                            "communityUsersDetail.metadata.positions.content.modules.0.json"
-                        ]
-                    },
-                    "footer": {
-                        "modules": [
-                            "communityUsersDetail.metadata.positions.footer.modules.0.json"
-                        ]
-                    },
-                    "menu": {
-                        "modules": []
-                    }
-                }
+                "_diagramState": []
             },
             "readAccess": "public"
         }
