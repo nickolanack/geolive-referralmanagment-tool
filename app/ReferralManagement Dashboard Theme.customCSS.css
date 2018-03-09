@@ -346,6 +346,13 @@ span.inline-list-item {
     border-radius: 20px;
     font-size: 12px;
 }
+
+
+.navigation-menu li.has-new-items:after {
+    background-color: crimson;
+    color: black;
+}
+
 .navigation-menu li.menu-main-tasks:after {
     content: attr(data-counter-complete);
 }
