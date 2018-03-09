@@ -42,12 +42,16 @@
                 ""
             ],
             "pluginPaths": [
+                "\/Users\/nblackwe\/Desktop\/git-nick\/php-core-app\/..\/php-core-map\/Plugins",
+                "\/Users\/nblackwe\/Desktop\/git-nick\/php-core-app\/..\/geolive-referralmanagment-tool\/Plugins",
                 ""
             ],
             "widgetPaths": [
+                "\/Users\/nblackwe\/Desktop\/git-nick\/php-core-app\/..\/php-core-map\/Widgets",
                 ""
             ],
             "modulePaths": [
+                "\/Users\/nblackwe\/Desktop\/git-nick\/php-core-app\/..\/php-core-map\/Modules",
                 ""
             ],
             "sandboxDomains": [
@@ -81,9 +85,9 @@
         "parameters": {
             "enableLayerSyncronization": false,
             "onlyShowMarkersInIconset": false,
-            "googleMapsServerApiKey": "",
+            "googleMapsServerApiKey": "XXXX-XXXX",
             "googleMapsVersion": "",
-            "tileCachePath": "\/srv\/www\/vhosts\/production\/wabun.s54.ok.ubc.ca\/http\/..\/tiles",
+            "tileCachePath": "{site}\/..\/tiles",
             "layerDisplayFilterScript": "",
             "formatMapitemScript": "plugin.Maps.12.formatMapitemScript.js"
         }

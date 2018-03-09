@@ -14,6 +14,10 @@ if(item.getMetadata().items){
        if(type=='ReferralManagement.proposal'){
            return ProjectTeam.CurrentTeam().getProposal(i.id);
        }
+       if(type=='User'){
+           return ProjectTeam.CurrentTeam().getUser(i.id);
+       }
+       
        
        return i;
    })
