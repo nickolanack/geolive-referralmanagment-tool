@@ -1540,9 +1540,9 @@ span.remove-btn:after {
 .ui-list-view.map-panel-right {
     width: 20%;
     float: right;
- 
+    height: 100%;
+    overflow-y: scroll;
 }
-
 
 .no-media span.noIcon, .only-image span.noIcon, .only-doc span.noIcon {
     display: none;
