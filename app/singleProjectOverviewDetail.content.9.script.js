@@ -15,7 +15,7 @@ return new ModuleArray([
     
     new BarChartModule({data:function(callback){
         var data=ReferralManagementDashboard.projectActivityChartData(item)
-        callback();
+        callback(data);
         
         var actions=0;
         data.forEach(function(d){
