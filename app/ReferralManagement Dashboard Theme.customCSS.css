@@ -1532,7 +1532,16 @@ span.remove-btn:after {
 }
 
 
+.ui-view.map-main-left {
+    width: 80%;
+    float: left;
+}
 
+.ui-list-view.map-panel-right {
+    width: 20%;
+    float: right;
+ 
+}
 
 
 .no-media span.noIcon, .only-image span.noIcon, .only-doc span.noIcon {
