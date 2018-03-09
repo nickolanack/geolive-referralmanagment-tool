@@ -152,7 +152,7 @@ foreach($config->getParameters() as $key=>$value){
      background-image:url("<?php echo UrlFrom($starredIcon); ?>?tint=rgba(50,50,50)");
 }
 .segment.duedate{
-     background-image:url("<?php echo UrlFrom($remainingIcon); ?>?tint=rgba(50,50,50)");
+     background-image:url("<?php echo UrlFrom($overdueIcon); ?>?tint=rgba(50,50,50)");
 }
 
 <?php 
