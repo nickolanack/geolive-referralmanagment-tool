@@ -60,6 +60,8 @@ GetWidget('communityHabitationDetail')->display($targetInstance);
 GetWidget('communityEnvironmentalDetail')->display($targetInstance);
 GetWidget('communitySubsistenceDetail')->display($targetInstance);
 
+GetWidget('communityUsersDetail')->display($targetInstance);
+
 GetWidget('configurationArchiveDetail')->display($targetInstance);
 GetWidget('configurationSettingsDetail')->display($targetInstance);
 
