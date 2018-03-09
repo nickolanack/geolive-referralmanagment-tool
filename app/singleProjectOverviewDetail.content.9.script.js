@@ -19,7 +19,7 @@ return new ModuleArray([
         
         var actions=0;
         data.forEach(function(d){
-            actions+=d.segments.length;
+            actions+=d.value;
         });
         activityLabel.getElement().innerHTML=actions+' action'+(actions==1?' has':'s have')+' been recorded recently.';
         
