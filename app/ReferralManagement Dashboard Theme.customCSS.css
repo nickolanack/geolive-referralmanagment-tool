@@ -521,6 +521,12 @@ span.inline-list-item {
     left: 0;
     width: 100%;
     border-top: 1px solid #6AE9BF;
+    
+
+    background-size: 16px auto;
+    background-position: center;
+    background-repeat: no-repeat;
+
 
 }
 .bar.active.hasSegments .segment{
