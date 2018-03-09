@@ -1394,6 +1394,11 @@ ul.user-roles>li {
     position:relative;
 }
 
+ul.user-roles>li.active {
+    width: 40px;
+    height: 40px;
+}
+
 li.selectable:after {
     content: "";
     border-bottom: 2px solid cornflowerblue;
