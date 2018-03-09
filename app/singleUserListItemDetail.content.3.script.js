@@ -91,6 +91,8 @@ var addRole=function(r){
     if(item.getRoles().indexOf(r)>=0||(r=='none'&&item.getRoles().length==0)){
         foundActive=true
         roleEl.addClass("active");
+        el.setAttribute("data-user-role", r);
+        el.setAttribute("data-user-role-label", r);
     }
     
     if(!isEditor){
