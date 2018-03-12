@@ -151,7 +151,7 @@ foreach($config->getParameters() as $key=>$value){
 .segment.created{
      background-image:url("<?php echo UrlFrom($starredIcon); ?>?tint=rgba(106, 124, 233)");
 }
-.segment.duedate{
+.segment.duedate, .segment.complete{
      background-image:url("<?php echo UrlFrom($overdueIcon); ?>?tint=rgba(60, 179, 113)");
 }
 
