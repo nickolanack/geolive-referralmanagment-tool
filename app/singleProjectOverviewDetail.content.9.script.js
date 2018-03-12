@@ -6,10 +6,10 @@
 
 var activityLabel=new ElementModule("div");
 var chart=new BarChartModule({data:function(callback){
-        ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+        //ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
             
             var data=ReferralManagementDashboard.projectActivityChartData(item)
-            ReferralManagementDashboard.addChartNavigation(chart, data, team);
+            ReferralManagementDashboard.addChartNavigation(chart, data, item);
             callback(data);
             
             var actions=0;
@@ -18,8 +18,8 @@ var chart=new BarChartModule({data:function(callback){
             });
             activityLabel.getElement().innerHTML=actions+' action'+(actions==1?' has':'s have')+' been recorded recently.';
              
-        });
-        
+       // });
+       // 
     }})
 
 return new ModuleArray([
