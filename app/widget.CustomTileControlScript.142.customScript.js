@@ -1,3 +1,8 @@
+<?php 
+ IncludeJS(GetPlugin('RefferalManagement')->getPath().'/js/SpatialDocumentPreview.js')
+
+?>
+
 SpatialDocumentPreview.setClearTile(tile, control);
 SpatialDocumentPreview.setMap(map);
 
