@@ -963,7 +963,11 @@ span.image.noIcon, span.video.noIcon, span.document.noIcon, span.audio.noIcon, s
     position: relative;
 }
 
-
+span.layer.noIcon {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+}
 
 
 
