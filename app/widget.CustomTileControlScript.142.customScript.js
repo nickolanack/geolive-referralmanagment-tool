@@ -13,9 +13,9 @@ tile.addEvent('click',function(){
     
     
 });
-
-if(window.parent.GetSpatialFiles){
-    var files = window.parent.GetSpatialFiles();
+var getFiles=window.GetSpatialFiles||window.parent.GetSpatialFiles
+if(getFiles){
+    var files = getFiles();
     if(files.length){
         SpatialDocumentPreview.show(files);
     }
