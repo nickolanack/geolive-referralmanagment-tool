@@ -561,13 +561,18 @@ span.inline-list-item {
     background-color: rgba(237, 200, 76, 0.7);
 }
 
-.bar-chart .bar>label {
+.bar-chart .bar>label, .bar:after{
     position: absolute;
     bottom: -22px;
     width: 100%;
     text-align: center;
     color: gray;
     font-size: 10px;
+}
+
+.bar:after {
+    content: attr(data-dayofweek);
+    bottom: -35px;
 }
 
 .bar-chart .bar.active>label {
