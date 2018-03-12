@@ -21,12 +21,20 @@ var chart= new BarChartModule({data:function(callback){
        var nav= chart.getElement().appendChild(new Element('span', {"class":"nav"}));
        nav.appendChild(new Element('button',{"class":"prev-btn", events:{
            click:function(){
-               console.log(data[0])
+               console.log(data[0]);
+               data=ReferralManagementDashboard.projectActivityChartData(team, application, {
+                   endAt:parseInt(data[data.length-1].day)
+               });
+               chart.redraw(data);
            }
        }}));
        nav.appendChild(new Element('button',{"class":"next-btn", events:{
            click:function(){
                console.log(data[data.length-1]);
+               data=ReferralManagementDashboard.projectActivityChartData(team, application, {
+                   startAt:parseInt(data[data.length-1].day)
+               });
+               chart.redraw(data);
            }
        }}));
     });
