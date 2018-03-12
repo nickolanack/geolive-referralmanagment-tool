@@ -23,7 +23,7 @@ var chart= new BarChartModule({data:function(callback){
                click:function(){
                    console.log(data[0]);
                    data=ReferralManagementDashboard.projectActivityChartData(team, application, {
-                       endAt:data[data.length-1].day
+                       endAt:data[0].day
                    });
                    chart.redraw(data);
                }
