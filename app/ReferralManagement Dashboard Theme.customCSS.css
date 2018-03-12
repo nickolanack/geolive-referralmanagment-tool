@@ -561,7 +561,7 @@ span.inline-list-item {
     background-color: rgba(237, 200, 76, 0.7);
 }
 
-.bar-chart .bar>label, .bar:after{
+.bar-chart .bar>label, .bar:after, .bar:before{
     position: absolute;
     bottom: -22px;
     width: 100%;
@@ -573,6 +573,12 @@ span.inline-list-item {
 .bar:after {
     content: attr(data-dayofweek);
     bottom: -35px;
+}
+
+.bar:before {
+    content: attr(data-today);
+    bottom: -50px;
+    color: #EDC84C;
 }
 
 .bar-chart .bar.active>label {
