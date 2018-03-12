@@ -14,10 +14,10 @@ var chart= new BarChartModule({data:function(callback){
         data=ReferralManagementDashboard.projectActivityChartData(team, application);
         
     
-        callback(data);
+        
     
    
-       // chart.addEvent('load', function(){
+        chart.addEvent('load', function(){
            var nav= chart.getElement().appendChild(new Element('span', {"class":"nav"}));
            nav.appendChild(new Element('button',{"class":"prev-btn", events:{
                click:function(){
@@ -37,7 +37,9 @@ var chart= new BarChartModule({data:function(callback){
                    chart.redraw(data);
                }
            }}));
-       // });
+        });
+        
+        callback(data);
         
         
     
