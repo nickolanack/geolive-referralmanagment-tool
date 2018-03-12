@@ -9,7 +9,7 @@ var replacementMap=function(str){
     return str.replace('days', 'd').replace('day', 'd').replace('hours', 'h').replace('hour', 'h');
     
 }
-
+valueEl.addClass('duedate');
 valueEl.setAttribute('data-due-date', item.hasDueDate()?replacementMap(moment(item.getDueDate()).fromNow()):"No Date");
 valueEl.appendChild(new Element('input', {type:"date" ,events:{change:function(){
     console.log(this.value);
