@@ -1,5 +1,6 @@
 <?php 
  IncludeJS(GetPlugin('ReferralManagement')->getPath().'/js/SpatialDocumentPreview.js');
+ IncludeJS(GetPlugin('ReferralManagement')->getPath().'/js/ProposalLayer.js');
 
 ?>
 
