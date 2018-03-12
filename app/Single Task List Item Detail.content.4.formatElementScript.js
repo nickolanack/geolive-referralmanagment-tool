@@ -18,7 +18,7 @@ var input=valueEl.appendChild(new Element('input', {
 }}}));
 
 valueEl.addEvent('click',function(e){
-    e.stop();
+    //e.stop();
     valueEl.addClass('editing');
     input.focus();
     input.addEvent('blur',function(){
