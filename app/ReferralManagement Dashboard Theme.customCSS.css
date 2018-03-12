@@ -576,7 +576,7 @@ span.inline-list-item {
 }
 
 .bar:before {
-    content: attr(data-today);
+    content: attr(data-theday);
     bottom: -50px;
     color: #EDC84C;
 }
