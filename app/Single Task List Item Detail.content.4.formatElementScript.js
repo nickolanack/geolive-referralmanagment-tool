@@ -13,9 +13,6 @@ valueEl.addClass('duedate');
 valueEl.setAttribute('data-due-date', item.hasDueDate()?replacementMap(moment(item.getDueDate()).fromNow()):"No Date");
 var input=valueEl.appendChild(new Element('input', {
     value:item.getDueDate(),
-    styles:{
-        display:"none";
-    }
     type:"date" ,events:{change:function(){
     console.log(this.value);
 }}}));
