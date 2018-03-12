@@ -583,12 +583,13 @@ span.inline-list-item {
     background-color: rgba(106, 233, 191, 0.5);
 }
 
+.bar.trans {
+    opacity: 0.1;
+}
 
-
-
-
-
-
+.bar.trans-1 {
+    opacity: 0.5;
+}
 
 
 
