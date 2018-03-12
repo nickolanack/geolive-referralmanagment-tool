@@ -13,9 +13,6 @@ var chart= new BarChartModule({data:function(callback){
         var data=ReferralManagementDashboard.projectActivityChartData(team, application);
         ReferralManagementDashboard.addChartNavigation(chart, data, team, application);
         callback(data);
-        
-        
-    
     });
     
 }});
