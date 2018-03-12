@@ -838,6 +838,9 @@ span.field-value.duedate>input {
 span.field-value.duedate.editing>input {
     display:none;
 }
+span.field-value.duedate.editing {
+    font-size: 0;
+}
 
 ul.item-tags li {
     list-style: none;
@@ -1634,6 +1637,10 @@ img.static-map {
     }
     .ui-view.dashboard-main{
         font-size: 14px;
+    }
+    
+    .due-date.editing .field-value:after {
+       font-size:0;
     }
   
     
