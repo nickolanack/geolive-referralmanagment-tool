@@ -11,7 +11,22 @@ var replacementMap=function(str){
 }
 valueEl.addClass('duedate');
 valueEl.setAttribute('data-due-date', item.hasDueDate()?replacementMap(moment(item.getDueDate()).fromNow()):"No Date");
-valueEl.appendChild(new Element('input', {type:"date" ,events:{change:function(){
+var input=valueEl.appendChild(new Element('input', {
+    value:item.getDueDate(),
+    styles:{
+        display:"none";
+    }
+    type:"date" ,events:{change:function(){
     console.log(this.value);
-}}}))
+}}}));
+
+valueEl.addEvent('click',function(e){
+    e.stop();
+    valueEl.addClass('editing');
+    input.focus();
+    input.addEvent('blur',function(){
+        valueEl.removeClass('editing');
+    })
+});
+
 
