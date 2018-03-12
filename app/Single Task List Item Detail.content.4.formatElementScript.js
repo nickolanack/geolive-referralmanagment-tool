@@ -17,7 +17,7 @@ var input=valueEl.appendChild(new Element('input', {
     console.log(this.value);
 }}}));
 
-input.value=value:item.getDueDate();
+input.value=item.getDueDate();
 
 valueEl.addEvent('click',function(e){
     e.stopPropagation();
