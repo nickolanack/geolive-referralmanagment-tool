@@ -15,6 +15,8 @@ var input=valueEl.appendChild(new Element('input', {
     
     type:"date" ,events:{change:function(){
     console.log(this.value);
+    item.setDueDateDay(this.value);
+    
 }}}));
 
 input.value=item.getDueDate().split(' ').shift();
