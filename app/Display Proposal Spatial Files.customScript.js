@@ -1,5 +1,5 @@
 <?php 
- //IncludeJS(GetPlugin('RefferalManagement')->getPath().'/js/SpatialDocumentPreview.js');
+ IncludeJS(GetPlugin('ReferralManagement')->getPath().'/js/SpatialDocumentPreview.js');
 
 ?>
 
