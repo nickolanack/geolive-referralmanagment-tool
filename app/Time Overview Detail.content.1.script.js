@@ -17,7 +17,11 @@ var chart= new BarChartModule({data:function(callback){
     });
     
    
-    
+    chart.runOnceOnLoad(function(){
+       var nav= chart.getElement().appendChild(new Element('span', {"class":"nav"}));
+       nav.appendChild(new Element('button',{"class":"prev-btn"}));
+       nav.appendChild(new Element('button',{"class":"next-btn"}));
+    });
     
 }});
 
