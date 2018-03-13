@@ -2,7 +2,7 @@ $set=GetWidget('mobile-app-markers')->getIconsetData();
 $config=GetWidget('mobile-app-config');
 
 
-$type= $feature->style;
+$type= $feature->marker->style;
 
 if(!in_array($type, $set->names)){
     Emit('onSaveFeatureCustomScriptNotValid', array('does not contain styleType:'.$type, $feature, $set));
