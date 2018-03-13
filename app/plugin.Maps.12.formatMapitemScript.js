@@ -1,5 +1,5 @@
 $set=GetWidget('mobile-app-markers')->getIconsetData();
-
+$config=GetWidget('mobile-app-config');
 
 
 $type= $feature->style;
@@ -12,6 +12,7 @@ if(!in_array($type, $set->names)){
 $index=array_search($type, $set->names);
 if($index!==false){
     $url=$set->icons[$index];
+    
     $feature->marker->style=$url."?thumb=48x48";
     Emit('onSaveFeatureCustomScript', array($url, $feature)); 
 }
