@@ -1,7 +1,7 @@
 {
     "type": "FormattedText",
     "config": {
-        "textValueScript": "return \"<img src='<?php \n\nGetPlugin('Attributes');\n$attribs=(new attributes\\Record('userAttributes'))->getValues(Core::Client()->getUserId(), 'user');\nif($attribs[\"profileIcon\"]){\n    echo HtmlDocument()->parseImageUrls($attribs[\"profileIcon\"])[0];\n}else{\n    echo HtmlDocument()->website().'\/'.GetWidget('dashboardConfig')->getParameter('defaultUserImage')[0]; \n    \n}\n\n?>?thumb=250x250'\/>\";\n\n\n",
+        "textValueScript": "return \"<img src='<?php \n    echo GetPlugin('ReferralManagement')->getUsersAvatar(); ?>?thumb=250x250'\/>\";\n\n\n",
         "className": "",
         "imageWidth": 170,
         "imageHeight": 170,
