@@ -1,9 +1,13 @@
 
 
 $parameters['client']=GetClient()->getUserMetadata();
-$parameters['client']['role-icon']=GetPlugin('ReferralManagement')->getUserRoleIcon();
-$parameters['client']['user-icon']=GetPlugin('ReferralManagement')->getUserRoleLabel();
-$parameters['client']['create']=GetPlugin('ReferralManagement')->canCreateCommunityContent();
-$parameters['client']['community']=GetPlugin('ReferralManagement')->getCommunity();
+
+$ref=GetPlugin('ReferralManagement');
+
+$parameters['client']['role-icon']=->getUserRoleIcon();
+$parameters['client']['user-icon']=$ref->getUserRoleLabel();
+$parameters['client']['create']=$ref->canCreateCommunityContent();
+$parameters['client']['community']=$ref->getCommunity();
+$parameters['client']['avatar']=$ref->getUsersAvatar();
 
 return $parameters;
