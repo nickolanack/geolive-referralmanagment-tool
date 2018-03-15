@@ -2995,6 +2995,21 @@
                     "default": "Timeline",
                     "label": "folder-label"
                 },
+                "profile": {
+                    "type": "images",
+                    "name": "profile",
+                    "default": [],
+                    "label": "Profile",
+                    "maxHeight": 92,
+                    "maxWidth": 92,
+                    "limit": 1
+                },
+                "profile-label": {
+                    "type": "text",
+                    "name": "profile-label",
+                    "default": "Timeline",
+                    "label": "profile-label"
+                },
                 "downloads": {
                     "type": "images",
                     "name": "downloads",
@@ -3370,7 +3385,9 @@
             "cultural-layer": "116",
             "habitation-layer": "114",
             "environment-layer": "113",
-            "formatOutputScript": "TUS Crowdsource app config.formatOutputScript.js"
+            "formatOutputScript": "TUS Crowdsource app config.formatOutputScript.js",
+            "profile": [],
+            "profile-label": "Timeline"
         }
     },
     "widget.145": {
