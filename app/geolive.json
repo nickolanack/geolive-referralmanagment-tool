@@ -42,16 +42,12 @@
                 ""
             ],
             "pluginPaths": [
-                "\/Users\/nblackwe\/Desktop\/git-nick\/php-core-app\/..\/php-core-map\/Plugins",
-                "\/Users\/nblackwe\/Desktop\/git-nick\/php-core-app\/..\/geolive-referralmanagment-tool\/Plugins",
                 ""
             ],
             "widgetPaths": [
-                "\/Users\/nblackwe\/Desktop\/git-nick\/php-core-app\/..\/php-core-map\/Widgets",
                 ""
             ],
             "modulePaths": [
-                "\/Users\/nblackwe\/Desktop\/git-nick\/php-core-app\/..\/php-core-map\/Modules",
                 ""
             ],
             "sandboxDomains": [
@@ -85,9 +81,9 @@
         "parameters": {
             "enableLayerSyncronization": false,
             "onlyShowMarkersInIconset": false,
-            "googleMapsServerApiKey": "XXXX-XXXX",
+            "googleMapsServerApiKey": "",
             "googleMapsVersion": "",
-            "tileCachePath": "{site}\/..\/tiles",
+            "tileCachePath": "\/srv\/www\/vhosts\/production\/wabun.s54.ok.ubc.ca\/http\/..\/tiles",
             "layerDisplayFilterScript": "",
             "formatMapitemScript": "plugin.Maps.12.formatMapitemScript.js"
         }
@@ -8536,19 +8532,19 @@
             "metadata": {
                 "title": "userAttributes",
                 "_tableDiagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 0,
+                    "y": 0
                 },
                 "_diagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 0,
+                    "y": 0
                 },
                 "appliesTo": [
                     "user"
                 ],
                 "_typeDiagramState": {
-                    "x": 100,
-                    "y": 300
+                    "x": 0,
+                    "y": 0
                 },
                 "readAccess": "public",
                 "maxEntries": 1,

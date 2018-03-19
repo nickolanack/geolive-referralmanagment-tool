@@ -13,7 +13,9 @@ GetPlugin('Attributes');
 (new attributes\Record('userAttributes'))
     ->setValues($client, 'user', array(
         'profileIcon'=>'<img src="'.$profileImageHtml[0].'" />',
-        'firstName'=>$json->name
+        'firstName'=>$json->name,
+        'phone'=>$json->number,
+        'email'=>$json->email
     ));
     
    
