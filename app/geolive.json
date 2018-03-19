@@ -10529,5 +10529,15 @@
             },
             "target": "taskAttributes"
         }
+    },
+    "widget.236": {
+        "name": "Ajax Method",
+        "instance": "AjaxMethod",
+        "parameters": {
+            "target": "none",
+            "customScript": "widget.AjaxMethod.236.customScript.js",
+            "widgetTitle": "",
+            "readAccess": "public"
+        }
     }
 }
