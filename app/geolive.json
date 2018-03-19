@@ -10534,9 +10534,9 @@
         "name": "Ajax Method",
         "instance": "AjaxMethod",
         "parameters": {
-            "target": "none",
-            "customScript": "widget.AjaxMethod.236.customScript.js",
-            "widgetTitle": "",
+            "target": "saveProfile",
+            "customScript": "saveProfile.customScript.js",
+            "widgetTitle": "saveProfile",
             "readAccess": "public"
         }
     }
