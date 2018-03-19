@@ -23,5 +23,5 @@ GetPlugin('Attributes');
 
  return array(
             "text"=>"Your profile has been updated",
-            "parameters"=>GetPlugin('ReferralManagement')->getUsersMetadata()
+            "parameters"=>array('client'=>GetPlugin('ReferralManagement')->getUsersMetadata())
         );
