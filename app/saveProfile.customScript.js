@@ -10,10 +10,10 @@ if(empty($profileImageHtml)){
 }
 
 GetPlugin('Attributes');
-(new attributes\Record('deviceUserAttributes'))
+(new attributes\Record('userAttributes'))
     ->setValues($client, 'user', array(
-        'profileImage'=>$profileImageHtml,
-        'profileName'=>$json->name
+        'profileIcon'=>$profileImageHtml,
+        'firstName'=>$json->name
     ));
     
    
@@ -25,7 +25,7 @@ $parameters['account-authorized']=false;
 $parameters['account-profile-image']=GetWidget('mobile-app-config')->getParameter('profile-image');
 if($client['id']>0){
     GetPlugin('Attributes');
-    $attributes=(new attributes\Record('deviceUserAttributes'))->getValues($client['id'],'user');
+    $attributes=(new attributes\Record('userAttributes'))->getValues($client['id'],'user');
     $parameters['client']['attributes']= $attributes;
     
     if(!empty($attributes['authEmail'])&&$attributes['authEmail']===$attributes['authorizedEmail']){
