@@ -3,6 +3,6 @@
 
 
 
-$parameters['client']=GetPlugin('ReferralManagement')->getUsersMetadata()
+$parameters['client']=GetPlugin('ReferralManagement')->getUsersMetadata();
 
 return $parameters;
