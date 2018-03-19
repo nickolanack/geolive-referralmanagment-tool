@@ -12,7 +12,7 @@ if(empty($profileImageHtml)){
 GetPlugin('Attributes');
 (new attributes\Record('userAttributes'))
     ->setValues($client, 'user', array(
-        'profileIcon'=>$profileImageHtml,
+        'profileIcon'=>'<img src="'.$profileImageHtml.'" />',
         'firstName'=>$json->name
     ));
     
