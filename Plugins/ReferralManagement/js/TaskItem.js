@@ -24,6 +24,19 @@ var TaskItem = (function() {
     	});
 
 
+
+	 var SetDueDateTaskQuery = new Class({
+    		Extends: AjaxControlQuery,
+    		initialize: function(task, duedate) {
+    
+    			this.parent(CoreAjaxUrlRoot, "set_duedate_task", {
+    				plugin: "ReferralManagement",
+    				task: task,
+    				date: duedate
+    			});
+    		}
+    	});
+
 	 var SetPriorityTaskQuery = new Class({
     		Extends: AjaxControlQuery,
     		initialize: function(task, priority) {
@@ -75,6 +88,12 @@ var TaskItem = (function() {
 				me.data=Object.append(me.data||{},data);
 				me._id=me.data.id;
 			}
+
+
+			if(me.data.attributes&&typeof me.data.attributes.starUsers!=='object'){
+				me.data.attributes.starUsers=[];
+			}
+
 		},
 
 		/**
@@ -141,16 +160,19 @@ var TaskItem = (function() {
 
 			var me=this;
 			me.data.attributes.isPriority=!!priority;
-
+			me.fireEvent('change');
 
 			(new SetPriorityTaskQuery(me.getId(), priority)).addEvent('success',function(r){
 				if(callback){
 					callback(r);
 				}
-				me.fireEvent('change');
+				
 			}).execute();
 				
 		},
+
+
+		
 
 		save: function(callback) {
 			var me=this;
@@ -187,6 +209,33 @@ var TaskItem = (function() {
 			var me=this;
 			return me.data.dueDate||"00-00-00 00:00:00";
 		},
+
+
+		setDueDateDay:function(ymd, callback){
+			
+
+			var me=this;
+			me.data.dueDate=ymd+" "+(me.getDueDate().split(' ').pop());
+
+			me.fireEvent('change');
+			(new SetDueDateTaskQuery(me.getId(), me.data.dueDate)).addEvent('success',function(r){
+				if(callback){
+					callback(r);
+				}
+				
+			}).execute();
+				
+		},
+
+
+		getCreatedDate:function(){
+			var me=this;
+			return me.data.createdDate||"00-00-00 00:00:00";
+		},
+		getCompletedDate:function(){
+			var me=this;
+			return me.data.completedDate||"00-00-00 00:00:00";
+		},
 		setDueDate:function(dueDate){
 			var me=this;
 			me.data.dueDate=dueDate;
@@ -217,11 +266,14 @@ var TaskItem = (function() {
 		setStarred:function(starred, callback){
 
 			var me=this;
+
+
+
 			(new SetStarredTaskQuery(me.getId(), starred)).addEvent('success',function(r){
 				if(callback){
 					callback(r);
-					me.fireEvent('change');
 				}
+				
 			}).execute();
 
 			if(starred!==me.isStarred()){
@@ -234,6 +286,7 @@ var TaskItem = (function() {
 					var index=me.data.attributes.starUsers.indexOf(parseInt(AppClient.getId()));
 					me.data.attributes.starUsers.splice(index, 1);
 				}
+				me.fireEvent('change');
 			}
 
 		},

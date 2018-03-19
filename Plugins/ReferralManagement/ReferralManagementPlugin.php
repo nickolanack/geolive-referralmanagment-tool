@@ -30,6 +30,16 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		);
 	}
 
+
+    public function postToActivityFeeds($message, $data=array()){
+
+        $discussion=GetPlugin('Discussions');
+        $discussion->post($discussion->getDiscussionForItem(145, 'widget', 'wabun')->id, $message, $data);
+        $discussion->post($discussion->getDiscussionForItem(GetClient()->getUserId(), 'user', 'wabun')->id, $message, $data);
+
+
+    }
+
 	protected function task_UpLoadLayer() {
 		Core::Files();
 		Core::LoadPlugin('Maps');
@@ -91,7 +101,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
         $discussionId=$discussion->getDiscussionForItem(145, 'widget', 'wabun')->id;
         if($params->discussion!==$discussionId){
 
-            $discussion->post($discussionId, 'User commented in project discussion');
+            $this->postToActivityFeeds(GetClient()->getUsername().' commented in project discussion');
             Emit('onMirrorPost', $params);
         }
        
@@ -388,6 +398,150 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
     	return 'none';
 
+    }
+    public function canCreateCommunityContent($id=-1){
+
+       return $this->getUserRoleLabel($id)!=='none';
+
+    }
+
+
+
+    public function getUsersMetadata(){
+
+
+        $metadata=GetClient()->getUserMetadata();
+
+        //$ref=GetPlugin('ReferralManagement');
+
+        $metadata['role-icon']=$this->getUserRoleIcon();
+        $metadata['user-icon']=$this->getUserRoleLabel();
+        $metadata['can-create']=$this->canCreateCommunityContent();
+        $metadata['community']=$this->getCommunity();
+        $metadata['avatar']=$this->getUsersAvatar();
+        $metadata['name']=$this->getUsersName();
+        $metadata['number']=$this->getUsersNumber();
+        $metadata['email']=$this->getUsersEmail();
+
+
+        return $metadata;
+
+    }
+
+
+
+    public function getUsersAvatar($id=-1, $default=null){
+
+        if($id<1){
+            $id=Core::Client()->getUserId();
+        }
+
+    
+
+            GetPlugin('Attributes');
+            $attribs=(new attributes\Record('userAttributes'))->getValues($id, 'user');
+            if($attribs["profileIcon"]){
+                return HtmlDocument()->parseImageUrls($attribs["profileIcon"])[0];
+            }
+
+            if($default){
+                return $default;
+            }
+            return UrlFrom(GetWidget('dashboardConfig')->getParameter('defaultUserImage')[0]); 
+            
+            
+
+    
+
+
+
+    }
+
+
+    public function getUsersName($id=-1, $default=null){
+
+        if($id<1){
+            $id=Core::Client()->getUserId();
+        }
+
+    
+
+        GetPlugin('Attributes');
+        $attribs=(new attributes\Record('userAttributes'))->getValues($id, 'user');
+        if($attribs["firstName"]){
+            return $attribs["firstName"];
+        }
+
+        if($default){
+            return $default;
+        }
+           
+        return Core::Client()->getRealName();
+        
+    
+
+
+
+    }
+
+    public function getUsersEmail($id=-1, $default=null){
+
+        if($id<1){
+            $id=Core::Client()->getUserId();
+        }
+
+    
+
+        GetPlugin('Attributes');
+        $attribs=(new attributes\Record('userAttributes'))->getValues($id, 'user');
+        if($attribs["email"]){
+            return $attribs["email"];
+        }
+
+        if($default){
+            return $default;
+        }
+           
+        return Core::Client()->getEmail();
+        
+    
+
+
+
+    }
+
+
+
+    public function getUsersNumber($id=-1, $default=null){
+
+        if($id<1){
+            $id=Core::Client()->getUserId();
+        }
+
+    
+
+        GetPlugin('Attributes');
+        $attribs=(new attributes\Record('userAttributes'))->getValues($id, 'user');
+        if($attribs["phone"]){
+            return $attribs["phone"];
+        }
+
+        if($default){
+            return $default;
+        }
+           
+        return '';
+        
+
+
+    }
+
+
+    public function getTeam($id=-1){
+       return 'wabun';
+    }
+    public function getCommunity($id=-1){
+       return $this->getTeam($id);
     }
     public function getGroupAttributes(){
         return array(

@@ -101,5 +101,13 @@
                 "priority"
             ]
         }
+    },
+    "set_duedate_task": {
+        "validate": {
+            "checkKeys": [
+                "task",
+                "date"
+            ]
+        }
     }
 }

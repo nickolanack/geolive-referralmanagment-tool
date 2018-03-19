@@ -48,6 +48,8 @@ var SpatialDocumentPreview = (function() {
 
 				});
 
+				me._map.getLayerManager().addLayer(layer);
+
 				return layer;
 
 			});

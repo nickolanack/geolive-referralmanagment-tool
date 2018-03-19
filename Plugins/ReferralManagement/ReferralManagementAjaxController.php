@@ -41,8 +41,13 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
                 'status' => 'active',
             ));
 
-            $discussion=GetPlugin('Discussions');
-            $discussion->post($discussion->getDiscussionForItem(145, 'widget', 'wabun')->id, 'User updated proposal');
+            $this->getPlugin()->postToActivityFeeds(GetClient()->getUsername().' updated proposal', array(
+                    "items"=>array(
+                        array(
+                            "type"=>"ReferralManagement.proposal",
+                            "id"=>$json->id
+                        )
+                    )));
 
             GetPlugin('Attributes');
             if(key_exists('attributes', $json)){
@@ -65,8 +70,13 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
                 'status' => 'active',
             )))) {
 
-                $discussion=GetPlugin('Discussions');
-                $discussion->post($discussion->getDiscussionForItem(145, 'widget', 'wabun')->id, 'User created proposal');
+                 $this->getPlugin()->postToActivityFeeds(GetClient()->getUsername().' created proposal', array(
+                    "items"=>array(
+                        array(
+                            "type"=>"ReferralManagement.proposal",
+                            "id"=>$id
+                        )
+                    )));
 
                 GetPlugin('Attributes');
                 if(key_exists('attributes', $json)){
@@ -95,8 +105,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
             if(GetPlugin('Tasks')->deleteTask($json->id)){
 
-                $discussion=GetPlugin('Discussions');
-                $discussion->post($discussion->getDiscussionForItem(145, 'widget', 'wabun')->id, 'User deleted task for proposal');
+                 $this->getPlugin()->postToActivityFeeds(GetClient()->getUsername().' deleted task for proposal');
 
                 return true;
             }
@@ -120,8 +129,14 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
                 "complete"=>$json->complete
             ))){
 
-                $discussion=GetPlugin('Discussions');
-                $discussion->post($discussion->getDiscussionForItem(145, 'widget', 'wabun')->id, 'User updated task for proposal');
+                $this->getPlugin()->postToActivityFeeds(GetClient()->getUsername().' updated task for proposal', array(
+                    "items"=>array(
+                        array(
+                            "type"=>"Tasks.task",
+                            "id"=>$json->id
+                        )
+                    ))
+                );
 
                 return array('id'=>$id, 'data'=>$this->getPlugin()->formatTaskResult(GetPlugin('Tasks')->getDatabase()->getTask($id)[0]));
             }
@@ -135,8 +150,13 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
         ))){
 
 
-             $discussion=GetPlugin('Discussions');
-             $discussion->post($discussion->getDiscussionForItem(145, 'widget', 'wabun')->id, 'User created task for proposal');
+            $this->getPlugin()->postToActivityFeeds(GetClient()->getUsername().' created task for proposal', array(
+                    "items"=>array(
+                        array(
+                            "type"=>"Tasks.task",
+                            "id"=>$id
+                        )
+                    )));
 
 
             return array('id'=>$id, 'data'=>$this->getPlugin()->formatTaskResult(GetPlugin('Tasks')->getDatabase()->getTask($id)[0]));
@@ -153,8 +173,15 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
     protected function createDefaultTasks($task, $json){
         $taskIds=$this->getPlugin()->createDefaultProposalTasks($json->proposal);
 
-        $discussion=GetPlugin('Discussions');
-        $discussion->post($discussion->getDiscussionForItem(145, 'widget', 'wabun')->id, 'User created default tasks for proposal');
+        $this->getPlugin()->postToActivityFeeds(GetClient()->getUsername().' created default tasks for proposal', array(
+                    "items"=>array_map(function($id){
+                        return array(
+                            "type"=>"Tasks.task",
+                            "id"=>$id
+                        );
+                    },
+                    $taskIds
+                )));
 
         return array("tasks"=>$taskIds, 'tasksData'=>array_map(function($id){
             return $this->getPlugin()->formatTaskResult(GetPlugin('Tasks')->getDatabase()->getTask($id)[0]);
@@ -205,8 +232,13 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
             ));
 
 
-            $discussion=GetPlugin('Discussions');
-            $discussion->post($discussion->getDiscussionForItem(145, 'widget', 'wabun')->id, 'User '.($json->status=='archived'?'archived':'un-archived').' proposal');
+             $this->getPlugin()->postToActivityFeeds(GetClient()->getUsername().' '.($json->status=='archived'?'archived':'un-archived').' proposal', array(
+                    "items"=>array(
+                        array(
+                            "type"=>"ReferralManagement.proposal",
+                            "id"=>$json->id
+                        )
+                    )));
 
             Core::Broadcast('proposals', 'update', array());
             return array('id' => (int) $json->id);
@@ -245,8 +277,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
         if ($database->deleteProposal((int) $json->id)) {
 
-            $discussion=GetPlugin('Discussions');
-            $discussion->post($discussion->getDiscussionForItem(145, 'widget', 'wabun')->id, 'User deleted proposal');
+             $this->getPlugin()->postToActivityFeeds(GetClient()->getUsername().' deleted proposal');
 
              Emit('onDeleteProposal', $data);
              Core::Broadcast('proposals', 'update', array());
@@ -484,8 +515,13 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
         'starUsers'=>$starUsers
        ));
 
-       $discussion=GetPlugin('Discussions');
-       $discussion->post($discussion->getDiscussionForItem(145, 'widget', 'wabun')->id, 'User '.($json->starred?'':'un-').'starred task');
+        $this->getPlugin()->postToActivityFeeds(GetClient()->getUsername().' '.($json->starred?'':'un-').'starred task', array(
+                    "items"=>array(
+                        array(
+                            "type"=>"Tasks.task",
+                            "id"=>$json->task
+                        )
+                    )));
 
 
        return true;
@@ -493,7 +529,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 
      protected function setPriorityTask($task, $json){
-        if (!Auth('write', $json->task, 'ReferralManagement.proposal')) {
+        if (!Auth('write', $json->task, 'Tasks.task')) {
             return $this->setError('No access or does not exist');
         }
 
@@ -507,11 +543,49 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
        ));
 
 
-       $discussion=GetPlugin('Discussions');
-       $discussion->post($discussion->getDiscussionForItem(145, 'widget', 'wabun')->id, 'User '.($json->priority?'':'de-').'prioritized task');
+        $this->getPlugin()->postToActivityFeeds(GetClient()->getUsername().' '.($json->priority?'':'de-').'prioritized task', array(
+                    "items"=>array(
+                        array(
+                            "type"=>"Tasks.task",
+                            "id"=>$json->task
+                        )
+                    )));
 
        return true;
      }
+     protected function setDuedateTask($task, $json){
+        if (!Auth('write', $json->task, 'Tasks.task')) {
+            return $this->setError('No access or does not exist');
+        }
+
+
+        
+        $id=(int)$json->task;
+        if($id>0){
+            if(GetPlugin('Tasks')->updateTask($id, array(
+                "dueDate"=>$json->date,
+            ))){
+
+                $this->getPlugin()->postToActivityFeeds(GetClient()->getUsername().' modified tasks due date', array(
+                    "items"=>array(
+                        array(
+                            "type"=>"Tasks.task",
+                            "id"=>$json->task
+                        )
+                    )));
+
+                return true;
+
+            }
+        }
+  
+
+
+        
+
+       
+     }
+
 
      protected function setUserRole($task, $json){
 
@@ -570,6 +644,15 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
         GetPlugin('Attributes');
 
          (new attributes\Record('userAttributes'))->setValues($json->user, 'user', $values);
+
+
+         $this->getPlugin()->postToActivityFeeds(GetClient()->getUsername().' updated users role', array(
+                    "items"=>array(
+                        array(
+                            "type"=>"User",
+                            "id"=>$json->user
+                        )
+                    )));
 
          return $values;
 

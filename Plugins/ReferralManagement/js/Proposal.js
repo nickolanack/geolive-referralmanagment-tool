@@ -764,15 +764,22 @@ var Proposal = (function() {
 	    	return events;
 	    },
 
-	    getEvents:function(range){
+	    getEvents:function(range, dateFn){
 
 	    	var me=this;
 	    	var events=[];
 
 	    	me.getTasks().forEach(function(t){
 	    	
-	    		if(t.hasDueDate()){
-	    			var date=t.getDueDate().split(' ')[0];
+	    		var date=false;
+	    		if(dateFn){
+	    			date=dateFn(t);
+	    		}else{
+	    			date=t.hasDueDate()?t.getDueDate():false;
+	    		}
+
+	    		if(date){
+	    			date=date.split(' ')[0];
 
 	    			if(range){
 	    				// filter range items, but past items that are not complete
