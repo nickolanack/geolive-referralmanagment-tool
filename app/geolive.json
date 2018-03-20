@@ -393,12 +393,7 @@
                         ]
                     },
                     "menu": {
-                        "modules": [
-                            "Infowindow.metadata.positions.menu.modules.0.json",
-                            {
-                                "type": "MenuController"
-                            }
-                        ]
+                        "modules": []
                     }
                 },
                 "positionList": [
@@ -406,7 +401,8 @@
                     "content",
                     "footer",
                     "menu"
-                ]
+                ],
+                "_diagramState": []
             },
             "readAccess": "public"
         }

@@ -5,6 +5,9 @@
         "dragConfirmMessage": "save new position",
         "dragConfirm": false,
         "geocodeMove": true,
-        "templateName": "MapItemTemplate"
+        "templateName": "MapItemTemplate",
+        "showEdit": true,
+        "showMove": true,
+        "showDelete": true
     }
 }
