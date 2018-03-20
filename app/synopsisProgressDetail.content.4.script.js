@@ -3,6 +3,11 @@ var module=new ElementModule("div",{
         html:'You have ~ tasks remaining.'
     });
     
+new UIPopover(module.getElement(),{
+    description:'Remaining Tasks<br/><span style="color:cornflowerblue;">click to filter</span>',
+    anchor:UIPopover.AnchorAuto()
+});
+    
 var compute=function(team){
     
     module.getElement().removeEvents();

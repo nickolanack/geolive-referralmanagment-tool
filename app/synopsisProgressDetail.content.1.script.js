@@ -4,6 +4,11 @@ var module=new ElementModule("div",{
         html:'You have ~ priority tasks.'
     });
     
+new UIPopover(module.getElement(),{
+    description:'Priority Tasks<br/><span style="color:cornflowerblue;">click to filter</span>',
+    anchor:UIPopover.AnchorAuto()
+});
+
 var compute=function(team){
 
     module.getElement().removeEvents();
