@@ -1,11 +1,29 @@
-var files=item.getStarredDocuments();
-var count=files.length;
+/*Activity Chart*/
+
+
+
+
+
+var activityLabel=new ElementModule("div");
+var chart=new BarChartModule({data:function(callback){
+        //ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+            
+            var data=ReferralManagementDashboard.projectActivityChartData(item)
+            ReferralManagementDashboard.addChartNavigation(chart, data, item);
+            callback(data);
+            
+            var actions=0;
+            data.forEach(function(d){
+                actions+=d.value;
+            });
+            activityLabel.getElement().innerHTML=actions+' action'+(actions==1?' has':'s have')+' been recorded recently.';
+             
+       // });
+       // 
+    }})
+
 return new ModuleArray([
-    new ElementModule("label",{html:"Files"}),
-    new ElementModule("div",{
-        html:count+' file'+(count==1?' has':'s have')+' been favorited.'
-    })
-    
-    
-   
-],{"class":"inline-list-item files-list-item-icon"});
+    new ElementModule("label",{html:"Project Activity"}),
+    activityLabel,
+    chart
+],{"class":"inline-list-item timesheets-list-item-icon"});

@@ -5426,10 +5426,22 @@
                         "modules": [
                             "singleProjectOverviewDetail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "WizardScriptElement",
+                                "type": "UIView",
                                 "config": {
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.1.config.script.js",
-                                    "identifier": "customScriptElement"
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "singleProjectEditButtonsDetail",
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false
                                 }
                             },
                             {
@@ -5447,12 +5459,19 @@
                                 }
                             },
                             {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.4.config.script.js",
+                                    "identifier": "customScriptElement"
+                                }
+                            },
+                            {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getName();",
-                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.4.config.formatElementScript.js"
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.5.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -5461,13 +5480,13 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getCompanyName();",
-                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.5.config.formatElementScript.js"
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.6.config.formatElementScript.js"
                                 }
                             },
                             {
                                 "type": "FormattedText",
                                 "config": {
-                                    "textValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.6.config.textValueScript.js",
+                                    "textValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.7.config.textValueScript.js",
                                     "className": "project-description",
                                     "imageWidth": 300,
                                     "imageHeight": 240,
@@ -5531,34 +5550,15 @@
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.9.config.script.js",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.script.js",
                                     "identifier": "customScriptElement"
                                 }
                             },
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.script.js",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.11.config.script.js",
                                     "identifier": "customScriptElement"
-                                }
-                            },
-                            {
-                                "type": "UIView",
-                                "config": {
-                                    "className": "",
-                                    "viewType": "view",
-                                    "namedView": "singleProjectEditButtonsDetail",
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false
                                 }
                             }
                         ]
