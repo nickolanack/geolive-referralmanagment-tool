@@ -3,13 +3,16 @@ var module=new ElementModule("div",{
         html:'You have ~ starred task.'
     });
 
-new UIPopover(module.getElement(),{
-    description:'Starred Tasks<br/><span style="color:cornflowerblue;">click to filter</span>',
-    anchor:UIPopover.AnchorAuto()
-});
+
 
 var compute=function(team){
     module.getElement().removeEvents();
+    
+    new UIPopover(module.getElement(),{
+        description:'Starred Tasks<br/><span style="color:cornflowerblue;">click to filter</span>',
+        anchor:UIPopover.AnchorAuto()
+    });
+    
     var tasks=team.getTasks().filter(function(t){return t.isStarred()&&(!t.isComplete());  });
     var l=tasks.length;
     module.getElement().innerHTML='You have '+l+' starred task'+(l==1?"":"s")+'.';
