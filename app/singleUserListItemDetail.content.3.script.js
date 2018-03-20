@@ -96,16 +96,18 @@ var addRole=function(r){
     }
     
     
-    
-    
+    var label=r.split('-').join(' ').capitalize();
+    var popover=function(text){
+         new UIPopover(roleEl,
+           {
+            description:text,
+            anchor:UIPopover.AnchorAuto()
+           }); 
+    }
     
     if(!isEditor){
         
-        new UIPopover(roleEl,
-           {
-            description:r,
-            anchor:UIPopover.AnchorAuto()
-           }); 
+       popover(label);
         
         return;
     }
@@ -122,20 +124,12 @@ var addRole=function(r){
             });
         });
         
-        
-        new UIPopover(roleEl,
-           {
-            description:r+'<br/><span style="color:cornflowerblue;">click to set users role</span>',
-            anchor:UIPopover.AnchorAuto()
-           }); 
+        popover(label+'<br/><span style="color:cornflowerblue;">click to set users role</span>');
+     
         
     }else{
         
-        new UIPopover(roleEl,
-           {
-            description:r,
-            anchor:UIPopover.AnchorAuto()
-           }); 
+       popover(label);
         
     }
 }
