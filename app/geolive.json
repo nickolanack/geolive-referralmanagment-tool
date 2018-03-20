@@ -2357,13 +2357,14 @@
             "target": "rolesicons",
             "readAccess": "public",
             "none": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/oFs_X4a_[ImAgE]_[G]_QI0.png"
+                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/Mu0_vyJ_fT1_[G]_[ImAgE].png"
             ],
             "admin": [
                 "components\/com_geolive\/users_files\/user_files_680\/Uploads\/nZ_[G]_[ImAgE]_Ypd_3JD.png"
             ],
             "formatParametersScript": "return $parameters;",
-            "user role tint": "rgb(0,0,0)"
+            "user role tint": "rgb(0,0,0)",
+            "formatOutputScript": "return $parameters;"
         }
     },
     "widget.126": {
