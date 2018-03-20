@@ -1593,16 +1593,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 110,
-                            "y": 239
+                            "x": 120,
+                            "y": 249
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 70,
-                                    "y": 452
+                                    "x": 80,
+                                    "y": 462
                                 }
                             },
                             {
@@ -1612,16 +1612,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 640,
-                                    "y": 417
+                                    "x": 650,
+                                    "y": 427
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 600,
-                                            "y": 583
+                                            "x": 610,
+                                            "y": 593
                                         }
                                     }
                                 ],
@@ -1681,6 +1681,15 @@
                                     "modules": [
                                         "loginForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
+                                            "type": "InlineHtml",
+                                            "config": {
+                                                "className": "",
+                                                "text": "<div class=\"application-logo\"><\/div><span style=\"text-align: left; font-weight: 100; display: block;\"><span style=\"font-size:20px\">\nLogin to access your project dashboard<\/span>\n<p><\/p><br><\/span>",
+                                                "template": "",
+                                                "templateVariablesScript": ""
+                                            }
+                                        },
+                                        {
                                             "type": "plugin.SingleSignOn.FacebookLogin",
                                             "config": {
                                                 "reloadOnSuccess": true,
@@ -1708,13 +1717,6 @@
                                                 "text": "<br\/><br\/><span style=\"text-align: left; font-weight: 100; display: block;\"><span style=\"font-size:20px\">\nDont have an account?<\/span>\n<br\/><br\/><\/span>",
                                                 "template": "",
                                                 "templateVariablesScript": ""
-                                            }
-                                        },
-                                        {
-                                            "type": "WizardScriptElement",
-                                            "config": {
-                                                "script": "loginForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.script.js",
-                                                "identifier": "customScriptElement"
                                             }
                                         },
                                         {

@@ -1,9 +1,7 @@
 {
-    "type": "InlineHtml",
+    "type": "WizardScriptElement",
     "config": {
-        "className": "",
-        "text": "<div class=\"application-logo\"><\/div><span style=\"text-align: left; font-weight: 100; display: block;\"><span style=\"font-size:20px\">\nLogin to access your project dashboard<\/span>\n<p><\/p><br><\/span>",
-        "template": "",
-        "templateVariablesScript": ""
+        "script": "var map=new Element('button',{\n    html:'View Map',\n    style:\"\",\n    \"class\":\"primary-btn\"\n    \n});\nreturn map;",
+        "identifier": "customScriptElement"
     }
 }
