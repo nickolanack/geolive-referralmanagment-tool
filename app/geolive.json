@@ -1581,8 +1581,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -146,
-                    "y": 226
+                    "x": -65,
+                    "y": 480
                 },
                 "children": [
                     "loginForm.metadata.children.0.json",
@@ -1593,16 +1593,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": -206,
-                            "y": 361
+                            "x": 154,
+                            "y": 344
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": -246,
-                                    "y": 562
+                                    "x": 114,
+                                    "y": 557
                                 }
                             },
                             {
@@ -1612,16 +1612,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 230,
-                                    "y": 379
+                                    "x": 610,
+                                    "y": 387
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 190,
-                                            "y": 545
+                                            "x": 570,
+                                            "y": 553
                                         }
                                     }
                                 ],
@@ -1714,6 +1714,13 @@
                                             "type": "WizardScriptElement",
                                             "config": {
                                                 "script": "loginForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.script.js",
+                                                "identifier": "customScriptElement"
+                                            }
+                                        },
+                                        {
+                                            "type": "WizardScriptElement",
+                                            "config": {
+                                                "script": "loginForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.script.js",
                                                 "identifier": "customScriptElement"
                                             }
                                         }
