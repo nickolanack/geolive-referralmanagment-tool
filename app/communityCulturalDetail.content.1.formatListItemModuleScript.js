@@ -3,7 +3,7 @@ childView.getElement().addEvent('click', function(){
     
     if(window.GeoliveMapInstances&&window.GeoliveMapInstances.length){
         
-        GeoliveSearch.SearchAndOpenMapItem(GeoliveMapInstances[0], child.id, child.lid);
+        GeoliveSearch.SearchAndOpenMapItem(GeoliveMapInstances[0], child.id, child.layerId);
 
     }
 })
