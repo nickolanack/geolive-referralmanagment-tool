@@ -95,6 +95,14 @@ var addRole=function(r){
         el.setAttribute("data-user-role-label", r);
     }
     
+    
+    new UIPopover(roleEl,
+                              {
+                                  description:r,
+                                  anchor:UIPopover.AnchorAuto()
+                              }); 
+    
+    
     if(!isEditor){
         return;
     }
