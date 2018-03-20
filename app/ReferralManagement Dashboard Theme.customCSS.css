@@ -21,6 +21,14 @@
 }
 
 
+.field-value-module.editable:after {
+    content: " edit";
+    font-style: italic;
+    color: cornflowerblue;
+    cursor: pointer;
+}
+
+
 .login-form .application-logo {
     height: 200px;
     background-size: auto 100%;
