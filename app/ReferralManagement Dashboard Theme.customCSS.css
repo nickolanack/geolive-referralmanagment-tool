@@ -1570,6 +1570,10 @@ span.remove-btn:after {
     cursor:pointer;
 }
 
+.synopsis-item>div {
+    display: inline-block;
+}
+
 
 .task-item.highlight{
     background-color: rgba(2552,255,255, 0.1);
