@@ -96,14 +96,17 @@ var addRole=function(r){
     }
     
     
-    new UIPopover(roleEl,
-                              {
-                                  description:r,
-                                  anchor:UIPopover.AnchorAuto()
-                              }); 
+    
     
     
     if(!isEditor){
+        
+        new UIPopover(roleEl,
+           {
+            description:r,
+            anchor:UIPopover.AnchorAuto()
+           }); 
+        
         return;
     }
     
@@ -118,6 +121,22 @@ var addRole=function(r){
                 roleEl.addClass("active");
             });
         });
+        
+        
+        new UIPopover(roleEl,
+           {
+            description:r+'<br/><span style="color:cornflowerblue;">click to set users role</span>',
+            anchor:UIPopover.AnchorAuto()
+           }); 
+        
+    }else{
+        
+        new UIPopover(roleEl,
+           {
+            description:r,
+            anchor:UIPopover.AnchorAuto()
+           }); 
+        
     }
 }
 
