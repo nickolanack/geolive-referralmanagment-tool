@@ -1642,9 +1642,21 @@ img.static-map {
     color: #E96A6A;
 }
 
+/*
+*/
+
+.bar-chart .bar:before, .bar-chart .bar>label, .bar:after, .bar:before, .segment, .bar-chart .y-label {
+    display:none;
+}
+.bar-chart:hover .bar:before, .bar-chart:hover .bar>label, .bar-chart:hover .bar:after, .bar-chart:hover .bar:before, .bar-chart:hover .segment, .bar-chart:hover .y-label{
+    display:inline-block;
+}
 
 
 
+
+
+/*Responsive*/
 
 @media screen and (max-width: 1450px) {
     
