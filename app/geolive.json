@@ -5426,22 +5426,10 @@
                         "modules": [
                             "singleProjectOverviewDetail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "UIView",
+                                "type": "WizardScriptElement",
                                 "config": {
-                                    "className": "",
-                                    "viewType": "view",
-                                    "namedView": "singleProjectEditButtonsDetail",
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.1.config.script.js",
+                                    "identifier": "customScriptElement"
                                 }
                             },
                             {
@@ -5459,10 +5447,22 @@
                                 }
                             },
                             {
-                                "type": "WizardScriptElement",
+                                "type": "UIView",
                                 "config": {
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.4.config.script.js",
-                                    "identifier": "customScriptElement"
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "singleProjectEditButtonsDetail",
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false
                                 }
                             },
                             {
