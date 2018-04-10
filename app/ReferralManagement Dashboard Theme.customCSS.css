@@ -80,6 +80,33 @@
     min-height: 30px;
 }
 
+
+
+body.dragover .droppable.drop-letters, .droppable.drop-permits, .droppable.drop-agreements, .droppable.drop-documents {
+    width: calc( 25% - 15px );
+    margin: 5px;
+    min-height: 40px;
+    display: inline-block;
+}
+
+body.dragover .droppable.drop-letters:after {
+   content:"Drop Letters Here";
+}
+
+body.dragover .droppable.drop-permits:after {
+   content:"Drop Permits Here";
+}
+
+body.dragover .droppable.drop-agreements:after {
+   content:"Drop Agreements Here";
+}
+
+body.dragover .droppable.drop-documents:after {
+   content:"Drop Additional Documents Here";
+}
+
+
+
 .small.cpanel_button {
     background-color: rgba(255,255,255,0.8);
 }
