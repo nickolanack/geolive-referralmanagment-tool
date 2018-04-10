@@ -441,6 +441,15 @@ span.inline-list-item {
 .navigation-menu .active>button, .inline-navigation-menu .active>button {
     color: #6AE9BF;
 }
+
+.ui-navigation-menu button {
+    cursor: pointer;
+}
+
+.navigation-menu button:hover, .inline-navigation-menu button:hover {
+    color: white;
+}
+
 .inline-navigation-menu>ul>label {
     display: none;
 }
