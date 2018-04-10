@@ -7,7 +7,8 @@ new AjaxFileUploader(module.getElement(),{
             console.log(type);
             
             item.addLetter(fileinfo);
-        }
+        },
+        addElement:true
     })
     
     
@@ -18,7 +19,8 @@ new AjaxFileUploader(module.getElement(),{
             console.log(type);
             
             item.addPermit(fileinfo);
-        }
+        },
+        addElement:true
     })
     
     
@@ -30,7 +32,8 @@ new AjaxFileUploader(module.getElement(),{
             console.log(type);
             
             item.addAdditionalDocument(fileinfo);
-        }
+        },
+        addElement:true
     })
     
     
@@ -41,5 +44,6 @@ new AjaxFileUploader(module.getElement(),{
             console.log(type);
             
             item.addAgreement(fileinfo);
-        }
+        },
+        addElement:true
     })
