@@ -4,6 +4,6 @@ new AjaxFileUploader(module.getElement(),{
             console.log(fileinfo);
             console.log(type);
             
-            item.addAttachment(fileInfo);
+            item.addAttachment(fileinfo);
         }
     })
