@@ -695,16 +695,16 @@
                             "widget.ProposalWizardBuilder.65.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 5,
-                            "y": 293
+                            "x": 15,
+                            "y": 303
                         },
                         "children": [
                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": -35,
-                                    "y": 531
+                                    "x": -25,
+                                    "y": 541
                                 }
                             },
                             {
@@ -714,16 +714,16 @@
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 497,
-                                    "y": 280
+                                    "x": 507,
+                                    "y": 290
                                 },
                                 "children": [
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 457,
-                                            "y": 493
+                                            "x": 467,
+                                            "y": 503
                                         }
                                     },
                                     {
@@ -733,16 +733,16 @@
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 882,
-                                            "y": 297
+                                            "x": 892,
+                                            "y": 307
                                         },
                                         "children": [
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 842,
-                                                    "y": 463
+                                                    "x": 852,
+                                                    "y": 473
                                                 }
                                             }
                                         ],
@@ -820,12 +820,12 @@
                                                         "label": "{field.label}",
                                                         "message": "add a description",
                                                         "lines": 3,
-                                                        "mandatory": false,
+                                                        "mandatory": true,
                                                         "showAudios": true,
                                                         "showImages": true,
                                                         "showDocuments": true,
                                                         "showVideos": true,
-                                                        "className": "no-text add-permits width-2",
+                                                        "className": "no-text add-permits width-2 doc-only",
                                                         "maxChars": 0,
                                                         "showExpandInput": true,
                                                         "toolbarPosition": "bottom",
@@ -899,12 +899,12 @@
                                                         "label": "Additional Documents",
                                                         "message": "add a description",
                                                         "lines": 3,
-                                                        "mandatory": false,
+                                                        "mandatory": true,
                                                         "showAudios": true,
                                                         "showImages": true,
                                                         "showDocuments": true,
                                                         "showVideos": true,
-                                                        "className": "no-text width-2",
+                                                        "className": "no-text width-2 doc-only",
                                                         "maxChars": 0,
                                                         "showExpandInput": true,
                                                         "toolbarPosition": "bottom",
@@ -973,15 +973,16 @@
                                                 "attributeFields": [
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
                                                 ],
+                                                "tags": "[\"Forestry\", \"Mining\", \"Energy\", \"Roads\"]",
                                                 "className": "",
-                                                "label": "{field.label}",
                                                 "showLabel": false,
                                                 "showAddWord": false,
+                                                "label": "{field.label}",
                                                 "fontColor": "rgb(255, 255, 255)",
                                                 "hoverColor": "rgb(106, 233, 191)",
                                                 "selectedColor": "rgb(106, 124, 233)",
                                                 "shuffleTags": false,
-                                                "tags": "[\"Forestry\", \"Mining\", \"Energy\", \"Roads\"]"
+                                                "getItemTagsScript": "return defaultTags;"
                                             }
                                         },
                                         {
@@ -1078,15 +1079,16 @@
                                                 "attributeFields": [
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.7.config.attributeFields.0.json"
                                                 ],
+                                                "tags": "[\"low\", \"medium\", \"high\"]",
                                                 "className": "",
-                                                "label": "{field.label}",
                                                 "showLabel": false,
                                                 "showAddWord": false,
+                                                "label": "{field.label}",
                                                 "fontColor": "rgb(255, 255, 255)",
                                                 "hoverColor": "rgb(106, 233, 191)",
                                                 "selectedColor": "rgb(106, 124, 233)",
                                                 "shuffleTags": false,
-                                                "tags": "[\"low\", \"medium\", \"high\"]"
+                                                "getItemTagsScript": "return defaultTags;"
                                             }
                                         }
                                     ]
