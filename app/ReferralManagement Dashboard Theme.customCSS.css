@@ -1044,6 +1044,14 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {
     margin:0;
 }
 
+
+
+.only-docs .audio.noIcon, .only-docs .video.noIcon, .only-docs .image.noIcon {
+    display: none;
+}
+
+
+
 .WizardTitle li, .TagCloudSelection>span {
     list-style: none;
     padding: 10px 20px;
