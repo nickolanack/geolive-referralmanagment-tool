@@ -1614,6 +1614,10 @@ span.remove-btn:after {
     cursor:pointer;
 }
 
+.synopsis-item:hover .counter {
+    color: #6AE9BF;
+}
+
 .synopsis-item>div {
     display: inline-block;
 }
