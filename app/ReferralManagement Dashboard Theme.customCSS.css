@@ -111,6 +111,38 @@ body.dragover .droppable.drop-attachments:after {
 
 
 
+.file-list .file-item {
+    display: inline-block;
+    width: 102px;
+    overflow: hidden;
+    position: relative;
+    cursor:pointer;
+     
+}
+.file-list .file-item .file-container {
+    border:1px solid white;
+    
+}
+.file-list .file-item:hover .file-container {
+    box-shadow:0 0 8px rgba(0,0,0,0.7);
+    border:1px solid #6d8dda;
+    
+}
+
+.file-list .file-item .field-value-module {
+    position: absolute;
+    bottom: 7px;
+    left: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100px;
+    overflow: hidden;
+    background: white;
+    color: black;
+    font-size: 10px;
+}
+
+
 .small.cpanel_button {
     background-color: rgba(255,255,255,0.8);
 }
