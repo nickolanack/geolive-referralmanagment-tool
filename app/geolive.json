@@ -4491,14 +4491,19 @@
                                 "config": {
                                     "className": "",
                                     "viewType": "view",
-                                    "namedView": "tasksOverviewListDetail",
+                                    "namedView": "tasksListDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "",
-                                    "itemButtonsScript": "return [];"
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false
                                 }
                             }
                         ]
