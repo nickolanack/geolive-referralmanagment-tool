@@ -20,8 +20,7 @@ if(item.getMetadata().items){
            }catch(e){
                 
                 return new MockDataTypeItem({
-                    
-                    
+                    type:"user"
                 })
                
            }
