@@ -15,7 +15,16 @@ if(item.getMetadata().items){
            return ProjectTeam.CurrentTeam().getProposal(i.id);
        }
        if(type=='User'){
-           return ProjectTeam.CurrentTeam().getUser(i.id);
+           try{
+               return ProjectTeam.CurrentTeam().getUser(i.id);
+           }catch(e){
+                
+                return MockDataTypeItem({
+                    
+                    
+                })
+               
+           }
        }
        
        
