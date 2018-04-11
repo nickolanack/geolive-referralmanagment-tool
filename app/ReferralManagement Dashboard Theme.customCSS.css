@@ -82,7 +82,7 @@
 
 
 
-body.dragover .droppable.drop-letters, .droppable.drop-permits, .droppable.drop-agreements, .droppable.drop-documents {
+body.dragover .droppable.drop-letters, .droppable.drop-permits, .droppable.drop-agreements, .droppable.drop-documents, .droppable.drop-attachments {
     width: calc( 25% - 15px );
     margin: 5px;
     min-height: 40px;
@@ -103,6 +103,10 @@ body.dragover .droppable.drop-agreements:after {
 
 body.dragover .droppable.drop-documents:after {
    content:"Drop Additional Documents Here";
+}
+
+body.dragover .droppable.drop-attachments:after {
+   content:"Drop Additional Files Here";
 }
 
 
