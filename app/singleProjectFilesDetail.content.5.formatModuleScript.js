@@ -5,5 +5,7 @@ new AjaxFileUploader(module.getElement(),{
             console.log(type);
             
             item.addAttachment(fileinfo);
-        }
+        },
+        addElement:true,
+        dragareaClassName:'drop-attachments'
     })
