@@ -4,15 +4,17 @@
         "className": "task-item inset-item",
         "viewType": "view",
         "namedView": "singleTaskListItemDetail",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
         "showInlineEdit": false,
         "namedFormView": "defaultFormView",
+        "formOptions": "{}",
         "showDeleteButton": false,
         "deleteItemScript": "",
         "formatModuleScript": "",
         "resolveItemScript": "",
-        "itemButtonsScript": "return [];",
-        "namedViewScript": "return namedView",
         "filterModulesScript": "return list",
-        "formOptions": "{}"
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false
     }
 }
