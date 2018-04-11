@@ -81,9 +81,9 @@
         "parameters": {
             "enableLayerSyncronization": false,
             "onlyShowMarkersInIconset": false,
-            "googleMapsServerApiKey": "",
+            "googleMapsServerApiKey": "XXXX-XXXX",
             "googleMapsVersion": "",
-            "tileCachePath": "\/srv\/www\/vhosts\/production\/wabun.s54.ok.ubc.ca\/http\/..\/tiles",
+            "tileCachePath": "{site}\/..\/tiles",
             "layerDisplayFilterScript": "",
             "formatMapitemScript": "plugin.Maps.12.formatMapitemScript.js"
         }
