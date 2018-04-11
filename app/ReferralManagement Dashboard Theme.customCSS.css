@@ -114,6 +114,7 @@ body.dragover .droppable.drop-attachments:after {
 .file-list .file-item {
     display: inline-block;
     width: 102px;
+    height: 108px;
     overflow: hidden;
     position: relative;
     cursor:pointer;
@@ -121,6 +122,7 @@ body.dragover .droppable.drop-attachments:after {
 }
 .file-list .file-item .file-container {
     border:1px solid white;
+    height: 107px;
     
 }
 .file-list .file-item:hover .file-container {
@@ -136,6 +138,7 @@ body.dragover .droppable.drop-attachments:after {
     white-space: nowrap;
     text-overflow: ellipsis;
     width: 100px;
+    
     overflow: hidden;
     background: white;
     color: black;
