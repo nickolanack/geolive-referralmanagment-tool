@@ -1,0 +1,7 @@
+{
+    "type": "WizardScriptElement",
+    "config": {
+        "script": "\n    var mod = new ElementModule('div',{\"class\":\"section-title\"});\n    mod.getElement().appendChild(new Element(\"span\",{\"html\":\"Tasks\"}));\n    return mod;",
+        "identifier": "customScriptElement"
+    }
+}
