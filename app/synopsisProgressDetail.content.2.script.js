@@ -15,7 +15,7 @@ var compute=function(team){
     
     var tasks=team.getTasks().filter(function(t){return t.isStarred()&&(!t.isComplete());  });
     var l=tasks.length;
-    module.getElement().innerHTML='You have '+l+' starred task'+(l==1?"":"s")+'.';
+    module.getElement().innerHTML='You have <span class="counter">'+l+'</span> starred task'+(l==1?"":"s")+'.';
     module.getElement().addEvents(ReferralManagementDashboard.taskHighlightMouseEvents(tasks))
      
      

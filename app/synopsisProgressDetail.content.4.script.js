@@ -21,7 +21,7 @@ var compute=function(team){
             total++;
             return !t.isComplete();  });
         var l=tasks.length;
-        module.getElement().innerHTML='You have '+l+' task'+(l==1?"":"s")+' remaining.';
+        module.getElement().innerHTML='You have <span class="counter">'+l+'</span> task'+(l==1?"":"s")+' remaining.';
     };
     update();
     team.addEvent("taskChange", update);

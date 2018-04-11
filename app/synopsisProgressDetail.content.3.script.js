@@ -14,7 +14,7 @@ var compute=function(team){
     
     var tasks=team.getTasks().filter(function(t){return t.isOverdue();  });
     var l=tasks.length;
-    module.getElement().innerHTML='You have '+l+' overdue task'+(l==1?"":"s")+'.';
+    module.getElement().innerHTML='You have <span class="counter">'+l+'</span> overdue task'+(l==1?"":"s")+'.';
     module.getElement().addEvents(ReferralManagementDashboard.taskHighlightMouseEvents(tasks))
      
      
