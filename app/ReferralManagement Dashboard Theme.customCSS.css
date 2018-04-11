@@ -82,7 +82,11 @@
 
 
 
-body.dragover .droppable.drop-letters, .droppable.drop-permits, .droppable.drop-agreements, .droppable.drop-documents, .droppable.drop-attachments {
+body.dragover .droppable.drop-letters, 
+body.dragover .droppable.drop-permits, 
+body.dragover .droppable.drop-agreements, 
+body.dragover .droppable.drop-documents, 
+body.dragover .droppable.drop-attachments {
     width: calc( 25% - 15px );
     margin: 5px;
     min-height: 40px;
