@@ -3,13 +3,18 @@
     "config": {
         "className": "inset-menu-shading left-panel",
         "viewType": "view",
-        "namedView": "projectsOverviewDetail",
+        "namedView": "projectsListDetail",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
         "showInlineEdit": false,
         "namedFormView": "defaultFormView",
+        "formOptions": "{}",
         "showDeleteButton": false,
         "deleteItemScript": "",
         "formatModuleScript": "console.log([\"projects menu list\", module, item]);",
         "resolveItemScript": "",
-        "itemButtonsScript": "return [];"
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false
     }
 }
