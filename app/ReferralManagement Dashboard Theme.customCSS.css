@@ -1008,7 +1008,10 @@ ul.item-tags li {
 }
 
 
-.inline-btn, .nav>.next-btn, .nav>.prev-btn, span.image.noIcon, span.video.noIcon, span.document.noIcon, span.audio.noIcon, span.layer.noIcon {
+.inline-btn, .nav>.next-btn, .nav>.prev-btn, 
+span.image.noIcon, span.video.noIcon, 
+span.document.noIcon, span.audio.noIcon, 
+span.layer.noIcon, .uilist-pageination button {
     border: 1px solid gray;
     background-color: transparent;
     color: white;
