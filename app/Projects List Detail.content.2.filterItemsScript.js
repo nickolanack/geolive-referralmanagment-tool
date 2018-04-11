@@ -1,0 +1,1 @@
+return ReferralManagementDashboard.currentProjectFilterFn.apply(null, arguments);
