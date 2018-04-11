@@ -19,7 +19,7 @@ if(item.getMetadata().items){
                return ProjectTeam.CurrentTeam().getUser(i.id);
            }catch(e){
                 
-                return MockDataTypeItem({
+                return new MockDataTypeItem({
                     
                     
                 })
