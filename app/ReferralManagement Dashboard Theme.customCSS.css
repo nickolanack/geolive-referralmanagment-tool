@@ -131,7 +131,8 @@ body.dragover .droppable.drop-spatial:after {
 }
 .file-list .file-item .file-container {
     background-color: white;
-    height: 107px;
+    height: 108px;
+    width: 100px;
     
 }
 .file-list .file-item:hover .file-container {
