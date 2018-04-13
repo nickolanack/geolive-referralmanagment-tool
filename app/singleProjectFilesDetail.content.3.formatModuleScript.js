@@ -4,9 +4,9 @@ new AjaxFileUploader(module.getElement(),{
             console.log(fileinfo);
             console.log(type);
             
-            item.addPermit(fileinfo);
+            item.addSpatial(fileinfo);
             module.redraw();
         },
         addElement:true,
-        dragareaClassName:'drop-permits'
+        dragareaClassName:'drop-spatial'
     })
