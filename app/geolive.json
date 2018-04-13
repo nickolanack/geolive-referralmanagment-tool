@@ -7672,7 +7672,7 @@
                             {
                                 "type": "UIListView",
                                 "config": {
-                                    "listClassName": "",
+                                    "listClassName": "file-list",
                                     "className": "inset-item file-item",
                                     "viewType": "view",
                                     "namedView": "singleFileListItemDetail",
@@ -7693,7 +7693,8 @@
                                     "formatListItemModuleScript": "",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
-                                    "sortItemsScript": ""
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
                                 }
                             }
                         ]
