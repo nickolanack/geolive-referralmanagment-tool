@@ -86,7 +86,8 @@ body.dragover .droppable.drop-letters,
 body.dragover .droppable.drop-permits, 
 body.dragover .droppable.drop-agreements, 
 body.dragover .droppable.drop-documents, 
-body.dragover .droppable.drop-attachments {
+body.dragover .droppable.drop-attachments,
+body.dragover .droppable.drop-spatial{
     width: calc( 25% - 15px );
     margin: 5px;
     min-height: 40px;
@@ -112,6 +113,10 @@ body.dragover .droppable.drop-documents:after {
 body.dragover .droppable.drop-attachments:after {
    content:"Drop Additional Files Here";
 }
+body.dragover .droppable.drop-spatial:after {
+   content:"Drop Spatial Files Here";
+}
+
 
 
 
