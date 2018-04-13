@@ -1,5 +1,9 @@
 var file=item.file||item.id||item;
 
+if(file.html){
+    file=Proposal.ParseHtmlUrls(file.html)[0];
+}
+
 (new AjaxControlQuery(CoreAjaxUrlRoot, 'file_metadata', {
 				'file': file,
 				'show': ['iconsetDetails']
