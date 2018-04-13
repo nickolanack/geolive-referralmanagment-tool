@@ -5710,7 +5710,8 @@
                                     "formatListItemModuleScript": "",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
-                                    "sortItemsScript": ""
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
                                 }
                             },
                             {
@@ -5736,7 +5737,7 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
-                                    "formatModuleScript": "",
+                                    "formatModuleScript": "singleProjectFilesDetail.metadata.positions.content.modules.3.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
@@ -5746,7 +5747,8 @@
                                     "formatListItemModuleScript": "",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
-                                    "sortItemsScript": ""
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
                                 }
                             },
                             {
@@ -5782,7 +5784,8 @@
                                     "formatListItemModuleScript": "",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
-                                    "sortItemsScript": ""
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
                                 }
                             },
                             {
@@ -5818,7 +5821,8 @@
                                     "formatListItemModuleScript": "",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
-                                    "sortItemsScript": ""
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
                                 }
                             },
                             {
