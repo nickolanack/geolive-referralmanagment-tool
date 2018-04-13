@@ -7537,16 +7537,16 @@
                             "filesListForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 198,
-                            "y": 330
+                            "x": 208,
+                            "y": 340
                         },
                         "children": [
                             "filesListForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 158,
-                                    "y": 496
+                                    "x": 168,
+                                    "y": 506
                                 }
                             }
                         ],
@@ -7563,22 +7563,29 @@
                                         {
                                             "type": "UIListView",
                                             "config": {
-                                                "listClassName": "",
-                                                "className": "",
+                                                "listClassName": "file-list",
+                                                "className": "file-item",
                                                 "viewType": "view",
                                                 "namedView": "singleFileListItemDetail",
+                                                "shouldRender": true,
+                                                "namedViewScript": "return namedView",
                                                 "showInlineEdit": false,
                                                 "namedFormView": "defaultFormView",
+                                                "formOptions": "{}",
                                                 "showDeleteButton": false,
                                                 "deleteItemScript": "",
+                                                "formatModuleScript": "",
+                                                "resolveItemScript": "return item",
+                                                "filterModulesScript": "return list",
+                                                "itemButtonsScript": "return [];",
+                                                "insertAtTop": false,
                                                 "getItemListScript": "return item.getFiles();",
                                                 "formatItemListScript": "return list;",
                                                 "formatListItemModuleScript": "",
-                                                "formatModuleScript": "",
-                                                "itemButtonsScript": "return [];",
                                                 "emptyNamedView": "emptyListView",
-                                                "namedViewScript": "return namedView",
-                                                "filterModulesScript": "return list"
+                                                "filterItemsScript": "return true;",
+                                                "sortItemsScript": "",
+                                                "maxItems": "-1"
                                             }
                                         }
                                     ]
