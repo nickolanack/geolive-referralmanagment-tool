@@ -7680,7 +7680,7 @@
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "file-list",
-                                    "className": "inset-item file-item",
+                                    "className": "inset-item file-item droppable-hide",
                                     "viewType": "view",
                                     "namedView": "singleFileListItemDetail",
                                     "shouldRender": true,
