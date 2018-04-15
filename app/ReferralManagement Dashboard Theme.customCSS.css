@@ -118,6 +118,10 @@ body.dragover .droppable.drop-spatial:after {
 }
 
 
+body.dragover .droppable.invalid-type{
+    display:none;
+}
+
 
 
 .file-list .file-item {
