@@ -122,6 +122,10 @@ body.dragover .droppable.invalid-type{
     display:none;
 }
 
+.file-item.droppable-hide {
+    display: none;
+}
+
 
 
 .file-list .file-item {
