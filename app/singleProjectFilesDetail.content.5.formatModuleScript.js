@@ -1,5 +1,5 @@
 new AjaxFileUploader(module.getElement(),{
-        types:["document"],
+        types:["document", "image", "audio", "video"],
         selectFile:function(fileinfo, type){
             console.log(fileinfo);
             console.log(type);
