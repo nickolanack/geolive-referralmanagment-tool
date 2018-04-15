@@ -449,6 +449,10 @@ span.inline-list-item {
     color: black;
 }
 
+.navigation-menu li.menu-main-projects:after {
+    content: attr(data-counter-complete);
+}
+
 .navigation-menu li.menu-main-tasks:after {
     content: attr(data-counter-complete);
 }
