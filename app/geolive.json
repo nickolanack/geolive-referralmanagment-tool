@@ -5690,7 +5690,7 @@
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "file-list",
-                                    "className": "file-item",
+                                    "className": "file-item droppable-hide",
                                     "viewType": "view",
                                     "namedView": "singleFileListItemDetail",
                                     "shouldRender": true,
@@ -5727,7 +5727,7 @@
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "file-list",
-                                    "className": "file-item",
+                                    "className": "file-item droppable-hide",
                                     "viewType": "view",
                                     "namedView": "singleFileListItemDetail",
                                     "shouldRender": true,
@@ -5764,7 +5764,7 @@
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "file-list",
-                                    "className": "file-item",
+                                    "className": "file-item droppable-hide",
                                     "viewType": "view",
                                     "namedView": "singleFileListItemDetail",
                                     "shouldRender": true,
