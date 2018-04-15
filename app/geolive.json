@@ -7537,16 +7537,16 @@
                             "filesListForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 218,
-                            "y": 350
+                            "x": 228,
+                            "y": 360
                         },
                         "children": [
                             "filesListForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 178,
-                                    "y": 516
+                                    "x": 188,
+                                    "y": 526
                                 }
                             }
                         ],
@@ -7564,7 +7564,7 @@
                                             "type": "UIListView",
                                             "config": {
                                                 "listClassName": "file-list",
-                                                "className": "file-item",
+                                                "className": "file-item droppable-hide",
                                                 "viewType": "view",
                                                 "namedView": "singleFileListItemDetail",
                                                 "shouldRender": true,
