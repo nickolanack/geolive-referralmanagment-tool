@@ -13,7 +13,7 @@ if(current){
         });
         
        (new ProposalListQuery()).addEvent('success',function(resp){
-           if(response.results.length==0){
+           if(resp.results.length==0){
                callback(null);
                return;
            }
