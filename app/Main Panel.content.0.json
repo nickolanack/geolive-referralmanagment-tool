@@ -4,12 +4,17 @@
         "className": "",
         "viewType": "view",
         "namedView": "mainDashboardDetail",
+        "shouldRender": true,
+        "namedViewScript": "\/\/return namedView\n\nvar controller=viewControllerApp.getNamedValue('navigationController');\nreturn controller.getTemplateNameForView(controller.getCurrentView());",
         "showInlineEdit": false,
         "namedFormView": "defaultFormView",
+        "formOptions": "{}",
         "showDeleteButton": false,
         "deleteItemScript": "",
         "formatModuleScript": "",
         "resolveItemScript": "",
-        "itemButtonsScript": "return [];"
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false
     }
 }
