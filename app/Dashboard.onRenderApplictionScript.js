@@ -77,5 +77,6 @@ GetWidget('userSelectionForm')->display($targetInstance);
 GetWidget('selectableUserListItemDetail')->display($targetInstance);
 
 GetWidget('filesListForm')->display($targetInstance);
+GetWidget('emptyTasksList')->display($targetInstance);
 
 GetWidget('defaultPostDetail')->display($targetInstance);
