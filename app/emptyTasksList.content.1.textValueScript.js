@@ -1,1 +1,1 @@
-return "<p>Manage your proposals through tasks. blurb... </p>"
+return "<p>Manage your proposals through tasks. blurb... </p><p>You currently have no tasks, to get started, create a project. </p>"
