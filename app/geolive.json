@@ -6531,6 +6531,7 @@
                                     "className": "inset-shading",
                                     "viewType": "view",
                                     "namedView": "layerItemListViewDetail",
+                                    "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
@@ -6544,10 +6545,11 @@
                                     "insertAtTop": false,
                                     "getItemListScript": "communitySubsistenceDetail.metadata.positions.content.modules.1.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "",
+                                    "formatListItemModuleScript": "communitySubsistenceDetail.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
-                                    "sortItemsScript": ""
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
                                 }
                             }
                         ]
