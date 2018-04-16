@@ -4,5 +4,7 @@ ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
     proposals.forEach(function(prop){
         tasks=tasks.concat(prop.getTasks());
     })
-    callback(tasks.length==0?"You currently have no tasks, to get started, create a project. Watch this video https://www.youtube.com/watch?v=1IkY0_qONRk");
+    callback(tasks.length==0?
+        "You currently have no tasks, to get started, create a project. Watch this video https://www.youtube.com/watch?v=1IkY0_qONRk":
+        "");
  })
