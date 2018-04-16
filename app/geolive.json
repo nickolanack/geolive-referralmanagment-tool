@@ -10919,9 +10919,16 @@
                         "modules": [
                             "emptyProjectOverviewDetail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "script": "emptyProjectOverviewDetail.metadata.positions.content.modules.1.config.script.js",
+                                    "identifier": "customScriptElement"
+                                }
+                            },
+                            {
                                 "type": "FormattedText",
                                 "config": {
-                                    "textValueScript": "emptyProjectOverviewDetail.metadata.positions.content.modules.1.config.textValueScript.js",
+                                    "textValueScript": "emptyProjectOverviewDetail.metadata.positions.content.modules.2.config.textValueScript.js",
                                     "className": "section-help",
                                     "imageWidth": 300,
                                     "imageHeight": 240,
@@ -10947,7 +10954,7 @@
                             {
                                 "type": "FormattedText",
                                 "config": {
-                                    "textValueScript": "emptyProjectOverviewDetail.metadata.positions.content.modules.2.config.textValueScript.js",
+                                    "textValueScript": "emptyProjectOverviewDetail.metadata.positions.content.modules.3.config.textValueScript.js",
                                     "className": "section-help",
                                     "imageWidth": 300,
                                     "imageHeight": 240,

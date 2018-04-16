@@ -1,2 +1,1 @@
-return "Watch this video https://www.youtube.com/watch?v=1IkY0_qONRk";
- 
+return "<p>You currently do not have any projects. Create a project</p>"
