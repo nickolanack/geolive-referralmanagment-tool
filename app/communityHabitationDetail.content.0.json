@@ -4,6 +4,7 @@
         "className": "map-main-left",
         "viewType": "view",
         "namedView": "googlemap",
+        "shouldRender": true,
         "namedViewScript": "return namedView",
         "showInlineEdit": false,
         "namedFormView": "defaultView",
