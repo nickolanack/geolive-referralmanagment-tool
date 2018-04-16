@@ -401,6 +401,14 @@ var Proposal = (function() {
 			me.fireEvent('addTask',[task]);
 			me.fireEvent('change');
 		},
+		hasTasks:function(){
+			var me=this;
+			if(me.data&&me.data.tasks&&me.data.tasks.length){
+				return true;
+			}
+			return false;
+		},
+
 		getTasks() {
 
 			var me = this;

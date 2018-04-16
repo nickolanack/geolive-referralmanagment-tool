@@ -11,6 +11,11 @@ class ProposalDataType extends core\PluginDataType {
         if (Core::Client()->isAdmin()){
             return true;
         }
+
+        if(Auth('memberof', 'lands-department', 'group')){
+            return true;
+        }
+
         
         return false;
     }
