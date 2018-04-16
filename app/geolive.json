@@ -5229,6 +5229,7 @@
                                     "className": "project-detail",
                                     "viewType": "view",
                                     "namedView": "singleProjectOverviewDetail",
+                                    "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
