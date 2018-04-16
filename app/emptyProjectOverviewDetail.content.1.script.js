@@ -1,4 +1,4 @@
-return new Element("button",{"data-lbl":"New Project", "style":"background-color: mediumseagreen;", "class":"primary-btn", "events":{"click":function(){
+return new Element("button",{"html":"New Project", "style":"background-color: mediumseagreen;", "class":"primary-btn", "events":{"click":function(){
     
    
             var formName="ProposalTemplate";
