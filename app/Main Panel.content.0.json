@@ -5,7 +5,7 @@
         "viewType": "view",
         "namedView": "mainDashboardDetail",
         "shouldRender": true,
-        "namedViewScript": "\/\/return namedView\n\nvar controller=viewControllerApp.getNamedValue('navigationController');\nreturn controller.getTemplateNameForView(controller.getCurrentView());",
+        "namedViewScript": "\/\/return namedView\n\nviewControllerApp.getNamedValue('navigationController', function(controller){\n    callback(controller.getTemplateNameForView(controller.getCurrentView()));\n});\n",
         "showInlineEdit": false,
         "namedFormView": "defaultFormView",
         "formOptions": "{}",
