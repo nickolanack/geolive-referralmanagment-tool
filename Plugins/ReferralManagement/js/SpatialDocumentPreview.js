@@ -95,7 +95,9 @@ var SpatialDocumentPreview = (function() {
 				layers = [];
 
 				clear = function() {};
-				callback();
+				if(callback){
+					callback();
+				}
 			}
 
 

@@ -109,5 +109,12 @@
                 "date"
             ]
         }
+    },
+    "add_document": {
+        "validate": {
+            "checkKeys": [
+                "id", "type", "documentType", "documentHtml"
+            ]
+        }
     }
 }

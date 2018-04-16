@@ -1,6 +1,15 @@
 var TaskItem = (function() {
 
 
+	var AddDocumentQuery = new Class({
+		Extends: AjaxControlQuery,
+		initialize: function(data) {
+			this.parent(CoreAjaxUrlRoot, 'add_document', Object.append({
+				plugin: 'ReferralManagement'
+			}, (data || {})));
+		}
+	});
+
 	var SaveTaskQuery = new Class({
 		Extends: AjaxControlQuery,
 		initialize: function(data) {
@@ -309,6 +318,21 @@ var TaskItem = (function() {
 			}
 
 			return [];
+		},
+
+
+		addAttachment:function(info){
+			var me=this;
+			if (me.data && me.data.attributes&&info.html) {
+				me.data.attributes.attachements=(me.data.attributes.attachements||"")+info.html;
+
+				(new AddDocumentQuery({
+					 "id": me.getId(),
+                	 "type": me.getType(),
+                	 "documentType":'attachements',
+                	 "documentHtml":info.html
+				})).execute();
+			}
 		},
 		getTags:function(){
 			var me=this;

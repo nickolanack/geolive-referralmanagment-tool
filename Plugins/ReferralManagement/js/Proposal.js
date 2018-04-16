@@ -10,6 +10,15 @@ var Proposal = (function() {
 	});
 
 
+	var AddDocumentQuery = new Class({
+		Extends: AjaxControlQuery,
+		initialize: function(data) {
+			this.parent(CoreAjaxUrlRoot, 'add_document', Object.append({
+				plugin: 'ReferralManagement'
+			}, (data || {})));
+		}
+	});
+
 
 	var FlagProposalQuery = new Class({
 		Extends: AjaxControlQuery,
@@ -121,7 +130,7 @@ var Proposal = (function() {
     });
 
 
-	return new Class({
+	var Proposal  = new Class({
 		Extends: DataTypeObject,
 		Implements: [Events],
 		initialize: function(id, data) {
@@ -561,6 +570,11 @@ var Proposal = (function() {
 			var me=this;
 			return me.getProjectLetterDocuments().concat(me.getPermitDocuments()).concat(me.getAdditionalDocuments()).concat(me.getAgreementDocuments());
 		},
+
+
+
+		
+
 		getFiles:function(){
 
 		
@@ -597,9 +611,9 @@ var Proposal = (function() {
 			var me = this;
 
 			if (me.data && me.data.attributes.spatialFeatures) {
-				return JSTextUtilities.ParseLinks(me.data.attributes.spatialFeatures).map(function(o) {
-					return o.url;
-				});
+
+				return Proposal.ParseHtmlUrls(me.data.attributes.spatialFeatures);
+
 			}
 
 
@@ -612,9 +626,9 @@ var Proposal = (function() {
 
 			if (me.data && me.data.attributes.description) {
 				var text=me.data.attributes.description;
-				return ([]).concat(JSTextUtilities.ParseVideos(text)).concat(JSTextUtilities.ParseImages(text)).concat(JSTextUtilities.ParseAudios(text)).concat(JSTextUtilities.ParseLinks(text)).map(function(o) {
-					return o.url;
-				});
+
+				return Proposal.ParseHtmlUrls(me.data.attributes.description);
+				
 			}
 
 
@@ -626,9 +640,9 @@ var Proposal = (function() {
 			var me = this;
 
 			if (me.data && me.data.attributes.documents) {
-				return JSTextUtilities.ParseLinks(me.data.attributes.documents).map(function(o) {
-					return o.url;
-				});
+
+				return Proposal.ParseHtmlUrls(me.data.attributes.documents);
+
 			}
 
 
@@ -640,9 +654,9 @@ var Proposal = (function() {
 			var me = this;
 
 			if (me.data && me.data.attributes.agreements) {
-				return JSTextUtilities.ParseLinks(me.data.attributes.agreements).map(function(o) {
-					return o.url;
-				});
+
+				return Proposal.ParseHtmlUrls(me.data.attributes.agreements);
+				
 			}
 
 
@@ -654,9 +668,9 @@ var Proposal = (function() {
 			var me = this;
 
 			if (me.data && me.data.attributes.projectLetters) {
-				return JSTextUtilities.ParseLinks(me.data.attributes.projectLetters).map(function(o) {
-					return o.url;
-				});
+				
+				return Proposal.ParseHtmlUrls(me.data.attributes.projectLetters);
+				
 			}
 
 
@@ -668,15 +682,98 @@ var Proposal = (function() {
 			var me = this;
 
 			if (me.data && me.data.attributes.permits) {
-				return JSTextUtilities.ParseLinks(me.data.attributes.permits).map(function(o) {
-					return o.url;
-				});
+
+				return Proposal.ParseHtmlUrls(me.data.attributes.permits);
+			
 			}
 
 
 
 			return [];
 
+		},
+
+
+		addLetter:function(info){
+			var me=this;
+			if (me.data && me.data.attributes&&info.html) {
+				me.data.attributes.projectLetters=(me.data.attributes.projectLetters||"")+info.html;
+
+
+				(new AddDocumentQuery({
+					 "id": me.getId(),
+                	 "type": me.getType(),
+                	 "documentType":'projectLetters',
+                	 "documentHtml":info.html
+				})).execute();
+
+			}
+		},
+		addPermit:function(info){
+			var me=this;
+			if (me.data && me.data.attributes&&info.html) {
+				me.data.attributes.permits=(me.data.attributes.permits||"")+info.html;
+
+				(new AddDocumentQuery({
+					 "id": me.getId(),
+                	 "type": me.getType(),
+                	 "documentType":'permits',
+                	 "documentHtml":info.html
+				})).execute();
+			}
+		},
+		addAgreement:function(info){
+			var me=this;
+			if (me.data && me.data.attributes&&info.html) {
+				me.data.attributes.agreements=(me.data.attributes.agreements||"")+info.html;
+
+				(new AddDocumentQuery({
+					 "id": me.getId(),
+                	 "type": me.getType(),
+                	 "documentType":'agreements',
+                	 "documentHtml":info.html
+				})).execute();
+			}
+		},
+		addAdditionalDocument:function(info){
+			var me=this;
+			if (me.data && me.data.attributes&&info.html) {
+				me.data.attributes.documents=(me.data.attributes.documents||"")+info.html;
+
+				(new AddDocumentQuery({
+					 "id": me.getId(),
+                	 "type": me.getType(),
+                	 "documentType":'documents',
+                	 "documentHtml":info.html
+				})).execute();
+			}
+		},
+
+		addAttachment:function(info){
+			var me=this;
+			if (me.data && me.data.attributes&&info.html) {
+				me.data.attributes.description=(me.data.attributes.description||"")+info.html;
+
+				(new AddDocumentQuery({
+					 "id": me.getId(),
+                	 "type": me.getType(),
+                	 "documentType":'description',
+                	 "documentHtml":info.html
+				})).execute();
+			}
+		},
+		addSpatial:function(info){
+			var me=this;
+			if (me.data && me.data.attributes&&info.html) {
+				me.data.attributes.spatialFeatures=(me.data.attributes.spatialFeatures||"")+info.html;
+
+				(new AddDocumentQuery({
+					 "id": me.getId(),
+                	 "type": me.getType(),
+                	 "documentType":'spatialFeatures',
+                	 "documentHtml":info.html
+				})).execute();
+			}
 		},
 
 		isFlagged: function() {
@@ -844,4 +941,19 @@ var Proposal = (function() {
 
 
 	});
+
+
+	Proposal.ParseHtmlUrls=function(text){
+		return ([]).concat(JSTextUtilities.ParseVideos(text))
+			.concat(JSTextUtilities.ParseImages(text))
+			.concat(JSTextUtilities.ParseAudios(text))
+			.concat(JSTextUtilities.ParseLinks(text))
+			.map(function(o) {
+					return o.url;
+				});
+	}
+
+	
+	return Proposal;
+
 })();

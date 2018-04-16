@@ -168,6 +168,12 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
             $attributes=AttributesRecord::Get($proposal['id'], 'ReferralManagement.proposal', AttributesTable::GetMetadata('proposalAttributes'));
 
             $teamMembers=$attributes['teamMembers'];
+
+            if(is_object($teamMembers)){
+                $teamMembers=array_values(get_object_vars($teamMembers));
+            }
+
+
             if(!is_array($teamMembers)){
                 $teamMembers=array();
             }

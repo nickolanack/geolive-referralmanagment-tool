@@ -44,7 +44,11 @@ class Report{
                 return 'data:image/' . $type . ';base64,' . base64_encode(file_get_contents($p));
             }
 
-            throw new Exception('support remote?');
+            //$type = pathinfo($p, PATHINFO_EXTENSION);
+            // return 'data:image/' . $type . ';base64,' . base64_encode(file_get_contents($p));
+            
+
+            throw new \Exception('support remote?');
 
         };
 

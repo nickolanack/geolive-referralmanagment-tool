@@ -21,6 +21,80 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
     }
 
+
+    protected function addDocument($task, $json){
+
+        if(!Auth('extend', $json->id, $json->type)){
+            return $this->setError('No access or does not exist');
+        }
+
+        if(!in_array($json->type, array('ReferralManagement.proposal', 'Tasks.task'))){
+            return $this->setError('Invalid item type');
+
+        }
+
+        $table='proposalAttributes';
+        $typeName='proposal';
+        $fields=array(
+            'projectLetters'=>'a project letter', 
+            'permits'=>'a permit', 
+            'agreements'=>'an agreement', 
+            'documents'=>'a document', 
+            'description'=>'an attachment',
+            'spatialFeatures'=>'a spatial document'
+        );
+
+        if($json->type=='Tasks.task'){
+
+            $table='taskAttributes';
+            $typeName='task';
+            $fields=array(
+                'attachements'=>'an attachment', 
+            );
+        }
+
+
+
+
+        if(!key_exists($json->documentType, $fields)){
+              return $this->setError('Invalid field: '.$json->documentType);
+        }
+
+        GetPlugin('Attributes');
+
+
+
+        $current= (new attributes\Record($table))->getValues($json->id, $json->type);
+        if(key_exists($json->documentType, $current)){
+             
+             (new attributes\Record($table))->setValues($json->id, $json->type, array(
+                $json->documentType=>$current[$json->documentType].$json->documentHtml
+             ));
+
+
+             $this->getPlugin()->postToActivityFeeds(GetClient()->getUsername().' added '.$fields[$json->documentType].' to a '.$typeName, array(
+                    "items"=>array(
+                        array(
+                            "type"=>$json->type,
+                            "id"=>$json->id
+                        ),
+                        array(
+                            "type"=>"File",
+                            "html"=>$json->documentHtml
+                        )
+                    ))
+                );
+
+
+             return array(
+                'new'=>(new attributes\Record($table))->getValues($json->id, $json->type)[$json->documentType]
+             );
+        
+        }
+
+
+    }
+
     protected function saveProposal($task, $json)
     {
 
@@ -446,7 +520,12 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
         $attributes=(new attributes\Record('proposalAttributes'))->getValues($json->proposal, 'ReferralManagement.proposal');
 
         $teamMembers=$attributes['teamMembers'];
-        if(empty($teamMembers)){
+
+        if(is_object($teamMembers)){
+                $teamMembers=array_values(get_object_vars($teamMembers));
+            }
+
+        if(!is_array($teamMembers)){
             $teamMembers=array();
         }
         $teamMembers[]=$json->user;
