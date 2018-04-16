@@ -587,7 +587,33 @@ span.inline-list-item {
 
 
 
+/* youtube */
 
+img.youtubelogo {
+    position: absolute;
+    left: calc( 50% - 10px );
+    top: calc( 50% - 10px );
+}
+
+
+.external.youtube {
+    position: relative;
+    display: inline-block;
+}
+
+.external.youtube .title, .external.youtube .author, .external.youtube .views {
+    position: absolute;
+    top: 0px;
+    left: calc( 100% + 10px);
+    white-space: nowrap;
+}
+
+.external.youtube .views{
+    top: 15px;
+}
+.external.youtube .author{
+    top: 30px;
+}
 
 
 
