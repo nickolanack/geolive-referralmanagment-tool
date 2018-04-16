@@ -1,3 +1,5 @@
+HtmlDocument()->META(HtmlDocument()->website(), 'base');
+
 IncludeJSBlock('
 
 
