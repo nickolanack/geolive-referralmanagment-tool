@@ -2,7 +2,7 @@
     "type": "FormattedText",
     "config": {
         "textValueScript": "ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){\n    var proposals=team.getProposals();\n    var tasks=[];\n    proposals.forEach(function(prop){\n        tasks=tasks.concat(prop.getTasks());\n    })\n    callback(tasks.length==0?\n        \"You currently have no tasks, to get started, create a project. Watch this video https:\/\/www.youtube.com\/watch?v=1IkY0_qONRk\":\n        \"\");\n })",
-        "className": "",
+        "className": "section-help",
         "imageWidth": 300,
         "imageHeight": 240,
         "multiImageWidth": 100,
