@@ -1,8 +1,8 @@
-var div=new ElementModule('div', {"style":""});
+var div=new ElementModule('div', {"style":" display: block; margin: 50px; height: 40px;"});
 
 
 
-div.appendChild(new Element("button",{"html":"New Project", "style":"background-color: mediumseagreen;", "class":"primary-btn", "events":{"click":function(){
+div.appendChild(new Element("button",{"html":"New Project", "style":"background-color: mediumseagreen; float:left;", "class":"primary-btn", "events":{"click":function(){
     
    
             var formName="ProposalTemplate";
