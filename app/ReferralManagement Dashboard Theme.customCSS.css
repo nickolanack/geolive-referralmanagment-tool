@@ -1074,7 +1074,17 @@ span.layer.noIcon, .uilist-pageination button {
 .uilist-pageination {
     height: 18px;
     margin: 10px;
+    text-align:right;
+}
 
+.uilist-pageination:before {
+    content: attr(data-list-count);
+    color: #6AE9BF;
+    font-size: 12px;
+    line-height: 20px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
 }
 
 .uilist-pageination button{
