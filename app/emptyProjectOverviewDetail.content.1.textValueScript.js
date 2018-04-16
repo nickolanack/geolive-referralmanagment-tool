@@ -1,0 +1,1 @@
+return "<p>You currently do not have any projects. Create a project</p>"
