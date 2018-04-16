@@ -1,4 +1,8 @@
-return new Element("button",{"html":"New Project", "style":"background-color: mediumseagreen;", "class":"primary-btn", "events":{"click":function(){
+var div=new ElementModule('div', {"style":""});
+
+
+
+div.appendChild(new Element("button",{"html":"New Project", "style":"background-color: mediumseagreen;", "class":"primary-btn", "events":{"click":function(){
     
    
             var formName="ProposalTemplate";
@@ -29,4 +33,6 @@ return new Element("button",{"html":"New Project", "style":"background-color: me
     
     
     
-}}})
+}}}));
+
+return div;
