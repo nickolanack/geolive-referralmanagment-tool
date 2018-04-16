@@ -13,6 +13,10 @@ if(current){
         });
         
        (new ProposalListQuery()).addEvent('success',function(resp){
+           if(response.results.length==0){
+               callback(null);
+               return;
+           }
            callback(new Proposal(resp.results[0].id, resp.results[0]));
        }).execute();
        
