@@ -1,10 +1,2 @@
-ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
-    var proposals=team.getProposals();
-    var tasks=[];
-    proposals.forEach(function(prop){
-        tasks=tasks.concat(prop.getTasks());
-    })
-    callback(tasks.length==0?
-        "Watch this video https://www.youtube.com/watch?v=1IkY0_qONRk":
-        "");
- })
+
+        return "Help videos: https://www.youtube.com/watch?v=1IkY0_qONRk"
