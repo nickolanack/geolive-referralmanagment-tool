@@ -2963,6 +2963,12 @@
                     "maxWidth": 128,
                     "limit": 1
                 },
+                "create-marker-color": {
+                    "type": "color",
+                    "name": "create-marker-color",
+                    "default": "rgb(0,0,0)",
+                    "label": "create-marker-color"
+                },
                 "create-marker-label": {
                     "type": "text",
                     "name": "create-marker-label",
@@ -2977,6 +2983,12 @@
                     "maxHeight": 92,
                     "maxWidth": 92,
                     "limit": 1
+                },
+                "map-color": {
+                    "type": "color",
+                    "name": "map-color",
+                    "default": "rgb(0,0,0)",
+                    "label": "map-color"
                 },
                 "map-label": {
                     "type": "text",
@@ -2993,6 +3005,12 @@
                     "maxWidth": 92,
                     "limit": 1
                 },
+                "folder-color": {
+                    "type": "color",
+                    "name": "folder-color",
+                    "default": "rgb(0,0,0)",
+                    "label": "folder-color"
+                },
                 "folder-label": {
                     "type": "text",
                     "name": "folder-label",
@@ -3008,6 +3026,12 @@
                     "maxWidth": 92,
                     "limit": 1
                 },
+                "profile-color": {
+                    "type": "color",
+                    "name": "profile-color",
+                    "default": "rgb(0,0,0)",
+                    "label": "profile-color"
+                },
                 "profile-label": {
                     "type": "text",
                     "name": "profile-label",
@@ -3022,6 +3046,12 @@
                     "maxHeight": 92,
                     "maxWidth": 92,
                     "limit": 1
+                },
+                "downloads-color": {
+                    "type": "color",
+                    "name": "downloads-color",
+                    "default": "rgb(0,0,0)",
+                    "label": "downloads-color"
                 },
                 "downloads-label": {
                     "type": "text",
@@ -3387,7 +3417,12 @@
             "profile": [
                 "components\/com_geolive\/users_files\/user_files_680\/Uploads\/L55_ynv_[ImAgE]_[G]_G60.png"
             ],
-            "profile-label": "Your Profile"
+            "profile-label": "Your Profile",
+            "create-marker-color": "rgb(0,0,0)",
+            "map-color": "rgb(0,0,0)",
+            "folder-color": "rgb(0,0,0)",
+            "profile-color": "rgb(0,0,0)",
+            "downloads-color": "rgb(0,0,0)"
         }
     },
     "widget.145": {
