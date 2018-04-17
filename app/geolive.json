@@ -3155,6 +3155,15 @@
                     "default": "rgb(0,0,0)",
                     "label": "about-color"
                 },
+                "share": {
+                    "type": "images",
+                    "name": "share",
+                    "default": [],
+                    "label": "Share",
+                    "maxHeight": 64,
+                    "maxWidth": 64,
+                    "limit": 1
+                },
                 "includes": {
                     "type": "input.array",
                     "name": "includes",
@@ -3436,7 +3445,8 @@
             "profile-color": "rgb(0, 143, 143)",
             "downloads-color": "rgb(187, 13, 13)",
             "survey-color": "rgb(0,0,0)",
-            "about-color": "rgb(0,0,0)"
+            "about-color": "rgb(0,0,0)",
+            "share": []
         }
     },
     "widget.145": {
