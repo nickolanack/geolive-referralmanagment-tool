@@ -127,9 +127,22 @@ body.dragover .file-item.droppable-hide {
     display: none;
 }
 
+.file-list .droppable {
+    display: inline-block;
+    background: rgba(0,0,0,0.1);
+    vertical-align: top;
+    margin: 7px 10px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 2px;
+    color: slategray;
+}
 
+.file-list .droppable:after {
+    content: "Add";
+}
 
-.file-list .file-item {
+.file-list .file-item, .file-list .droppable {
     display: inline-block;
     width: 102px;
     height: 108px;
