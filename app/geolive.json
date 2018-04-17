@@ -11012,7 +11012,7 @@
         "instance": "LoginWizard",
         "parameters": {
             "target": "forTheMap",
-            "defineLoginScript": "return defaultLoginFn;",
+            "defineLoginScript": "Custom Login Behaviour.defineLoginScript.js",
             "defineLogoutScript": "return defaultLogoutFn;",
             "filterLoginModulesScript": "return modules;",
             "widgetTitle": "Custom Login Behaviour",
