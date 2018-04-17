@@ -11006,5 +11006,18 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.241": {
+        "name": "Login Behavior",
+        "instance": "LoginWizard",
+        "parameters": {
+            "target": "forTheMap",
+            "defineLoginScript": "return defaultLoginFn;",
+            "defineLogoutScript": "return defaultLogoutFn;",
+            "filterLoginModulesScript": "return modules;",
+            "widgetTitle": "Custom Login Behaviour",
+            "readAccess": "guest",
+            "position": "RIGHT_CENTER"
+        }
     }
 }
