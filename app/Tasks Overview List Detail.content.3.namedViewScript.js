@@ -7,6 +7,7 @@
     })
     if(tasks.length==0){
         callback(namedView);
+        return;
     }
     callback('emptyListView');
  })
