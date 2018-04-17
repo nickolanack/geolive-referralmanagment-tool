@@ -3134,6 +3134,12 @@
                     "maxWidth": 64,
                     "limit": 1
                 },
+                "survey-color": {
+                    "type": "color",
+                    "name": "survey-color",
+                    "default": "rgb(0,0,0)",
+                    "label": "survey-color"
+                },
                 "about": {
                     "type": "images",
                     "name": "about",
@@ -3142,6 +3148,12 @@
                     "maxHeight": 64,
                     "maxWidth": 64,
                     "limit": 1
+                },
+                "about-color": {
+                    "type": "color",
+                    "name": "about-color",
+                    "default": "rgb(0,0,0)",
+                    "label": "about-color"
                 },
                 "includes": {
                     "type": "input.array",
@@ -3422,7 +3434,9 @@
             "map-color": "rgb(0,0,0)",
             "folder-color": "rgb(0,0,0)",
             "profile-color": "rgb(0,0,0)",
-            "downloads-color": "rgb(0,0,0)"
+            "downloads-color": "rgb(0,0,0)",
+            "survey-color": "rgb(0,0,0)",
+            "about-color": "rgb(0,0,0)"
         }
     },
     "widget.145": {
