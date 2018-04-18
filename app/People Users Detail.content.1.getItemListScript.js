@@ -1,1 +1,5 @@
-return ProjectTeam.CurrentTeam().getUsers();
+ProjectTeam.CurrentTeam(function(team){
+    
+    callback(team.getUsers());
+    
+})
