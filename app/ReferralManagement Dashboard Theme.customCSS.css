@@ -1809,6 +1809,11 @@ img.static-map {
 .spatial-file-tile.add>.tileButton {
     background-color: mediumseagreen;
 }
+
+.tileOptionContainer.spatial-file-tile {
+    display: inline-block;
+}
+
 .spatial-file-tile.add>.tileButton:after {
     content: "+";
     color: white;
