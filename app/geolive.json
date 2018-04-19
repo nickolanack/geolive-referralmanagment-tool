@@ -79,9 +79,9 @@
         "name": "Maps",
         "instance": "Maps",
         "parameters": {
-            "enableLayerSyncronization": false,
+            "enableLayerSyncronization": true,
             "onlyShowMarkersInIconset": false,
-            "googleMapsServerApiKey": "XXXX-XXXX",
+            "googleMapsServerApiKey": "",
             "googleMapsVersion": "",
             "tileCachePath": "{front}\/..\/tiles",
             "layerDisplayFilterScript": "",
@@ -4764,7 +4764,6 @@
                                     "className": "user-item",
                                     "viewType": "view",
                                     "namedView": "singleUserListItemDetail",
-                                    "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
@@ -4781,8 +4780,7 @@
                                     "formatListItemModuleScript": "",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
-                                    "sortItemsScript": "",
-                                    "maxItems": "-1"
+                                    "sortItemsScript": ""
                                 }
                             }
                         ]
