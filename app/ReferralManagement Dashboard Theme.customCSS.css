@@ -1806,7 +1806,7 @@ img.static-map {
 
 .spatial-file-tile.add>.tileButton {
     background-color: mediumseagreen;
-    background-image:url("{assets}/Map Item Icons/xsm_plus.png");
+    background-image:url(<?php echo json_encode(UrlFrom("{assets}/Map Item Icons/xsm_plus.png"));?>);
 }
 
 
