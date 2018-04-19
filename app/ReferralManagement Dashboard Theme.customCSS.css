@@ -1804,6 +1804,11 @@ img.static-map {
 
 
 
+.spatial-file-tile.add>.tileButton {
+    background-color: mediumseagreen;
+    background-image:url("{assets}/Map Item Icons/xsm_plus.png");
+}
+
 
 .ui-view[data-view="emptyListView"] {
     display: none;
