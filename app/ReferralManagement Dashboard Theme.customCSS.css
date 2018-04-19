@@ -1806,7 +1806,12 @@ img.static-map {
 
 .spatial-file-tile.add>.tileButton {
     background-color: mediumseagreen;
-    background-image:url(<?php echo json_encode(UrlFrom("{assets}/Map Item Icons/xsm_plus.png"));?>);
+}
+.spatial-file-tile.add>.tileButton:after {
+    content: "+";
+    color: white;
+    font-size: 25px;
+    line-height: 25px;
 }
 
 
