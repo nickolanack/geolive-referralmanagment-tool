@@ -4002,6 +4002,15 @@
                 },
                 {
                     "type": "images",
+                    "name": "community-users",
+                    "default": [],
+                    "label": "community-users",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
                     "name": "accounting-documents",
                     "default": [],
                     "label": "documents",
@@ -4272,7 +4281,8 @@
             "optionsMenuIcon": [
                 "components\/com_geolive\/users_files\/user_files_680\/Uploads\/ImA_9Kb_eif_[G]_[ImAgE].png"
             ],
-            "showFileThumbnails": false
+            "showFileThumbnails": false,
+            "community-users": []
         }
     },
     "widget.154": {
