@@ -1803,7 +1803,9 @@ img.static-map {
 }
 
 
-
+.proposal-tile {
+    margin-top: 4px;
+}
 .spatial-file-tile.add>.tileButton {
     background-color: mediumseagreen;
 }
