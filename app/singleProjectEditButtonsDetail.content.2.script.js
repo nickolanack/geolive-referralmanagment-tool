@@ -1,3 +1,5 @@
+/*Delete*/
+
 if(!item.isArchived()){
     return null;
 }
