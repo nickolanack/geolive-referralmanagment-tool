@@ -7552,16 +7552,16 @@
                             "userSelectionForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 188,
-                            "y": 320
+                            "x": 198,
+                            "y": 330
                         },
                         "children": [
                             "userSelectionForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 148,
-                                    "y": 486
+                                    "x": 158,
+                                    "y": 506
                                 }
                             }
                         ],
@@ -7602,6 +7602,12 @@
                                             }
                                         },
                                         {
+                                            "type": "Search",
+                                            "config": {
+                                                "getAggregatorsScript": ""
+                                            }
+                                        },
+                                        {
                                             "type": "UIListView",
                                             "config": {
                                                 "listClassName": "",
@@ -7620,13 +7626,13 @@
                                                 "filterModulesScript": "return list",
                                                 "itemButtonsScript": "return [];",
                                                 "insertAtTop": false,
-                                                "getItemListScript": "userSelectionForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.getItemListScript.js",
+                                                "getItemListScript": "userSelectionForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.getItemListScript.js",
                                                 "formatItemListScript": "return list;",
                                                 "formatListItemModuleScript": "",
                                                 "emptyNamedView": "emptyListView",
                                                 "filterItemsScript": "return true;",
                                                 "sortItemsScript": "",
-                                                "maxItems": "-1"
+                                                "maxItems": "10"
                                             }
                                         }
                                     ]
