@@ -8286,7 +8286,23 @@
                                 }
                             },
                             {
-                                "type": "EmbedCode"
+                                "type": "ShareLinks",
+                                "config": {
+                                    "googleIcon": [],
+                                    "facebookIcon": [],
+                                    "twitterIcon": [],
+                                    "className": "",
+                                    "label": "",
+                                    "fbid": "",
+                                    "twitVia": "",
+                                    "hashtag": "",
+                                    "siteTitle": "Some Site Name",
+                                    "siteURL": "{website}",
+                                    "siteDescription": "s-icon",
+                                    "formatClass": "s-icon",
+                                    "getTitleScript": "",
+                                    "getUrlScript": ""
+                                }
                             }
                         ]
                     },
