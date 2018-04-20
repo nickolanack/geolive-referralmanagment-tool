@@ -8286,22 +8286,10 @@
                                 }
                             },
                             {
-                                "type": "ShareLinks",
+                                "type": "WizardScriptElement",
                                 "config": {
-                                    "googleIcon": [],
-                                    "facebookIcon": [],
-                                    "twitterIcon": [],
-                                    "className": "",
-                                    "label": "",
-                                    "fbid": "",
-                                    "twitVia": "",
-                                    "hashtag": "",
-                                    "siteTitle": "Some Site Name",
-                                    "siteURL": "{website}",
-                                    "siteDescription": "s-icon",
-                                    "formatClass": "s-icon",
-                                    "getTitleScript": "",
-                                    "getUrlScript": ""
+                                    "script": "singleProjectEditButtonsDetail.metadata.positions.content.modules.4.config.script.js",
+                                    "identifier": "customScriptElement"
                                 }
                             }
                         ]
