@@ -1,20 +1,9 @@
 {
-    "type": "UIListView",
+    "type": "InlineHtml",
     "config": {
-        "listClassName": "",
-        "className": "user-item",
-        "viewType": "view",
-        "namedView": "selectableUserListItemDetail",
-        "showInlineEdit": false,
-        "namedFormView": "defaultFormView",
-        "showDeleteButton": false,
-        "deleteItemScript": "",
-        "getItemListScript": "return ProjectTeam.CurrentTeam().getUsers();",
-        "formatItemListScript": "return list;",
-        "formatListItemModuleScript": "",
-        "formatModuleScript": "",
-        "itemButtonsScript": "return [];",
-        "emptyNamedView": "emptyListView",
-        "namedViewScript": "return namedView"
+        "className": "section-title",
+        "text": "Team Selection",
+        "template": "",
+        "templateVariablesScript": ""
     }
 }
