@@ -3345,6 +3345,15 @@
                     "maxWidth": 128,
                     "limit": 1
                 },
+                "add-image-library": {
+                    "type": "images",
+                    "name": "add-image-library",
+                    "default": [],
+                    "label": "Add Image Library",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
                 "record-audio": {
                     "type": "images",
                     "name": "record-audio",
@@ -3525,7 +3534,8 @@
             ],
             "remove-media": [
                 "components\/com_geolive\/users_files\/user_files_680\/Uploads\/zIG_[ImAgE]_[G]_GZR_PVg.png"
-            ]
+            ],
+            "add-image-library": []
         }
     },
     "widget.145": {
