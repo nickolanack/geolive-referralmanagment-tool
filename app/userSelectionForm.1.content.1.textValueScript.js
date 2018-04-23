@@ -1,1 +1,0 @@
-return "<p>You can add members to the team. team members can have specific roles and responsibilities within a project</p>"

@@ -3317,6 +3317,60 @@
                     "name": "environment-layer",
                     "default": "112",
                     "label": "environment-layer"
+                },
+                "add-audio": {
+                    "type": "images",
+                    "name": "add-audio",
+                    "default": [],
+                    "label": "Add Audio",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                "add-video": {
+                    "type": "images",
+                    "name": "add-video",
+                    "default": [],
+                    "label": "Add Video",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                "add-image": {
+                    "type": "images",
+                    "name": "add-image",
+                    "default": [],
+                    "label": "Add Image",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                "record-audio": {
+                    "type": "images",
+                    "name": "record-audio",
+                    "default": [],
+                    "label": "Record Audio",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                "preview-audio": {
+                    "type": "images",
+                    "name": "preview-audio",
+                    "default": [],
+                    "label": "Preview Audio",
+                    "maxHeight": 92,
+                    "maxWidth": 92,
+                    "limit": 1
+                },
+                "remove-media": {
+                    "type": "images",
+                    "name": "remove-media",
+                    "default": [],
+                    "label": "Remove Media",
+                    "maxHeight": 92,
+                    "maxWidth": 92,
+                    "limit": 1
                 }
             },
             "hello": "World",
@@ -3453,7 +3507,13 @@
             "about-color": "rgb(0,0,0)",
             "share": [
                 "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[G]_V0F_zJh_kwi_[ImAgE].png"
-            ]
+            ],
+            "add-audio": [],
+            "add-video": [],
+            "add-image": [],
+            "record-audio": [],
+            "preview-audio": [],
+            "remove-media": []
         }
     },
     "widget.145": {
@@ -7540,8 +7600,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 117,
-                    "y": 170
+                    "x": -18,
+                    "y": 171
                 },
                 "children": [
                     "userSelectionForm.metadata.children.0.json",
@@ -7552,16 +7612,16 @@
                             "userSelectionForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 198,
-                            "y": 330
+                            "x": 168,
+                            "y": 300
                         },
                         "children": [
                             "userSelectionForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 158,
-                                    "y": 506
+                                    "x": 128,
+                                    "y": 466
                                 }
                             }
                         ],
@@ -7574,67 +7634,7 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "userSelectionForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
-                                        {
-                                            "type": "FormattedText",
-                                            "config": {
-                                                "textValueScript": "userSelectionForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.textValueScript.js",
-                                                "className": "section-help",
-                                                "imageWidth": 300,
-                                                "imageHeight": 240,
-                                                "multiImageWidth": 100,
-                                                "multiImageHeight": 75,
-                                                "portraitImageWidth": 75,
-                                                "portraitImageHeight": 100,
-                                                "autoArrange": true,
-                                                "oneLine": true,
-                                                "maxChars": 0,
-                                                "maxWidth": 0,
-                                                "showAudios": true,
-                                                "showVideos": true,
-                                                "showDocuments": true,
-                                                "showImages": true,
-                                                "showLinks": true,
-                                                "showExternalContent": true,
-                                                "embedPortrait": true,
-                                                "preferLocalContent": true,
-                                                "portraitClip": true
-                                            }
-                                        },
-                                        {
-                                            "type": "Search",
-                                            "config": {
-                                                "getAggregatorsScript": ""
-                                            }
-                                        },
-                                        {
-                                            "type": "UIListView",
-                                            "config": {
-                                                "listClassName": "",
-                                                "className": "user-item",
-                                                "viewType": "view",
-                                                "namedView": "selectableUserListItemDetail",
-                                                "shouldRender": true,
-                                                "namedViewScript": "return namedView",
-                                                "showInlineEdit": false,
-                                                "namedFormView": "defaultFormView",
-                                                "formOptions": "{}",
-                                                "showDeleteButton": false,
-                                                "deleteItemScript": "",
-                                                "formatModuleScript": "",
-                                                "resolveItemScript": "return item",
-                                                "filterModulesScript": "return list",
-                                                "itemButtonsScript": "return [];",
-                                                "insertAtTop": false,
-                                                "getItemListScript": "userSelectionForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.getItemListScript.js",
-                                                "formatItemListScript": "return list;",
-                                                "formatListItemModuleScript": "",
-                                                "emptyNamedView": "emptyListView",
-                                                "filterItemsScript": "return true;",
-                                                "sortItemsScript": "",
-                                                "maxItems": "10"
-                                            }
-                                        }
+                                        "userSelectionForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
                                     ]
                                 },
                                 "footer": {
@@ -8282,13 +8282,6 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "script": "singleProjectEditButtonsDetail.metadata.positions.content.modules.3.config.script.js",
-                                    "identifier": "customScriptElement"
-                                }
-                            },
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "script": "singleProjectEditButtonsDetail.metadata.positions.content.modules.4.config.script.js",
                                     "identifier": "customScriptElement"
                                 }
                             }

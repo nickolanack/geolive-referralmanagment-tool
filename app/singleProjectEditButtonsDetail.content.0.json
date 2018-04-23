@@ -1,7 +1,7 @@
 {
     "type": "WizardScriptElement",
     "config": {
-        "script": "\/*Edit*\/\n\n\nreturn new ModalFormButtonModule(application, item, {\n         \n            label: \"Edit\",\n            formOptions: {template:\"form\"},\n            formName: \"ProposalTemplate\",\n            \"class\": \"primary-btn\"\n\n    \n});\n",
+        "script": "\nreturn new ModalFormButtonModule(application, item, {\n         \n            label: \"Edit\",\n            formOptions: {template:\"form\"},\n            formName: \"ProposalTemplate\",\n            \"class\": \"primary-btn\"\n\n    \n});\n",
         "identifier": "customScriptElement"
     }
 }

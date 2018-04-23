@@ -1,4 +1,5 @@
-/*(Un)Archive*/
+
+
 
 
 return new Element('button',{"html":item.isArchived()?"Unarchive":"Archive", "class":"primary-btn"+(item.isArchived()?"":" warn"), "events":{"click":function(){

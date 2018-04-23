@@ -1,5 +1,3 @@
-/*Report*/
-
 if(item.isArchived()){
     return null;
 }
