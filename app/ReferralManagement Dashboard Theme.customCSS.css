@@ -1789,6 +1789,20 @@ img.static-map {
         margin: 5px;
 }
 
+.default-cluster-labels {
+    font-size: 0;
+}
+
+.default-cluster-labels:after {
+    content: attr(data-number);
+    font-size: 18px;
+    position: absolute;
+    left: -5px;
+    top: -9px;
+    color: black;
+}
+
+
 .marker-item {
     display: inline-block;
     height: 100px;
