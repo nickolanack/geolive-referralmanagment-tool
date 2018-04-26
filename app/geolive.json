@@ -8708,6 +8708,7 @@
                                     "className": "user-item",
                                     "viewType": "view",
                                     "namedView": "singleUserListItemDetail",
+                                    "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
@@ -8724,7 +8725,8 @@
                                     "formatListItemModuleScript": "",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
-                                    "sortItemsScript": ""
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
                                 }
                             },
                             {
@@ -8743,6 +8745,7 @@
                                     "className": "user-item",
                                     "viewType": "view",
                                     "namedView": "singleUserListItemDetail",
+                                    "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
@@ -8759,7 +8762,8 @@
                                     "formatListItemModuleScript": "",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
-                                    "sortItemsScript": ""
+                                    "sortItemsScript": "return a.getId()-b.getId();",
+                                    "maxItems": "15"
                                 }
                             }
                         ]
