@@ -8762,7 +8762,7 @@
                                     "formatListItemModuleScript": "",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
-                                    "sortItemsScript": "return a.getId()-b.getId();",
+                                    "sortItemsScript": "return b.getId()-a.getId();",
                                     "maxItems": "15"
                                 }
                             }
