@@ -4115,6 +4115,15 @@
                 },
                 {
                     "type": "images",
+                    "name": "community-mobile",
+                    "default": [],
+                    "label": "community-mobile",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
                     "name": "accounting-documents",
                     "default": [],
                     "label": "documents",
@@ -4388,7 +4397,8 @@
             "showFileThumbnails": false,
             "community-users": [
                 "components\/com_geolive\/users_files\/user_files_680\/Uploads\/fLV_5RF_[ImAgE]_4Jz_[G].png"
-            ]
+            ],
+            "community-mobile": []
         }
     },
     "widget.154": {
