@@ -25,19 +25,28 @@ var loginProposal =  proposal.appendChild(new Element('label', {
     html:'Are you a proponent', 'class':'login-button-text', 
     style:"text-align:left; color: #EDC84C",
     events:{
-        click:function(){
-            //goto next step
-            wizard.displayNext();
-        }
+        
 }}));
+
 //login.appendChild(new Element('br'));
-loginProposal.appendChild(new Element('button',{
+var proposalButton=loginProposal.appendChild(new Element('button',{
     
     html:'Submit a Proposal',
     style:"background-color:#EDC84C;",
     "class":"primary-btn"
     
 }));
+
+new UIModalFormButton(proposalButton, application, new GuestProposal(), {
+
+            formOptions: {template:"form"},
+            formName: "ProposalTemplate",
+  
+});
+
+
+
+
 
 
 
