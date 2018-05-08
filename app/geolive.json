@@ -274,7 +274,9 @@
     "plugin.46": {
         "name": "Referral Management",
         "instance": "ReferralManagement",
-        "parameters": {}
+        "parameters": {
+            "customFormCss": ""
+        }
     },
     "plugin.47": {
         "name": "Embed Code Links",
@@ -11291,6 +11293,33 @@
             "contentTemplate": "activate-proposal-email-body.contentTemplate.html",
             "widgetTitle": "activate.proposal.email.body",
             "target": "activate.proposal.email.body"
+        }
+    },
+    "widget.246": {
+        "name": "Article",
+        "instance": "Article",
+        "parameters": {
+            "articleTitle": "You did it! Thanks.",
+            "articleHtml": "",
+            "target": "Links.action-view.Article.onCreateGuestProposal"
+        }
+    },
+    "widget.247": {
+        "name": "Article",
+        "instance": "Article",
+        "parameters": {
+            "articleTitle": "That link is expired or invalid",
+            "articleHtml": "",
+            "target": "Links.action-view.Article.error"
+        }
+    },
+    "widget.248": {
+        "name": "Article",
+        "instance": "Article",
+        "parameters": {
+            "articleTitle": "You did it! Thanks.",
+            "articleHtml": "",
+            "target": "Links.action-view.Article.onActivateEmailForGuestProposal"
         }
     }
 }
