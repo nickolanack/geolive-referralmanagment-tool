@@ -1,6 +1,6 @@
 
-
-var login= new Element('label', {
+var login=new Element('div')
+var loginLabel = login.appendChild(new Element('label', {
     html:'Register to create an account', 'class':'login-button-text', 
     style:"text-align:left; color: mediumseagreen",
     events:{
@@ -8,17 +8,17 @@ var login= new Element('label', {
             //goto next step
             wizard.displayNext();
         }
-}});
+}}));
 //login.appendChild(new Element('br'));
-login.appendChild(new Element('button',{
+loginLabel.appendChild(new Element('button',{
     html:'Register',
     style:"background-color:mediumseagreen;",
     "class":"primary-btn"
     
 }));
 
-
-var proposal= new Element('label', {
+var proposal=new Element('div')
+var loginProposal =  proposal.appendChild(new Element('label', {
     html:'Are you a proponent', 'class':'login-button-text', 
     style:"text-align:left; color: mediumseagreen",
     events:{
@@ -26,10 +26,10 @@ var proposal= new Element('label', {
             //goto next step
             wizard.displayNext();
         }
-}});
+}}));
 //login.appendChild(new Element('br'));
-proposal.appendChild(new Element('button',{
-    html:'Sumbit Proposal',
+loginProposal.appendChild(new Element('button',{
+    html:'Submit a Proposal',
     style:"background-color:mediumseagreen;",
     "class":"primary-btn"
     
