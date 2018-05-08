@@ -8755,43 +8755,6 @@
                                     "sortItemsScript": "",
                                     "maxItems": "-1"
                                 }
-                            },
-                            {
-                                "type": "InlineHtml",
-                                "config": {
-                                    "className": "",
-                                    "text": "Mobile App Devices",
-                                    "template": "",
-                                    "templateVariablesScript": ""
-                                }
-                            },
-                            {
-                                "type": "UIListView",
-                                "config": {
-                                    "listClassName": "",
-                                    "className": "user-item",
-                                    "viewType": "view",
-                                    "namedView": "singleUserListItemDetail",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "return item",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "getItemListScript": "communityUsersDetail.metadata.positions.content.modules.3.config.getItemListScript.js",
-                                    "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "",
-                                    "emptyNamedView": "emptyListView",
-                                    "filterItemsScript": "return true;",
-                                    "sortItemsScript": "return b.getId()-a.getId();",
-                                    "maxItems": "15"
-                                }
                             }
                         ]
                     },
@@ -11371,43 +11334,6 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "getItemListScript": "communityMobileDetail.metadata.positions.content.modules.1.config.getItemListScript.js",
-                                    "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "",
-                                    "emptyNamedView": "emptyListView",
-                                    "filterItemsScript": "return true;",
-                                    "sortItemsScript": "",
-                                    "maxItems": "-1"
-                                }
-                            },
-                            {
-                                "type": "InlineHtml",
-                                "config": {
-                                    "className": "",
-                                    "text": "Mobile App Devices",
-                                    "template": "",
-                                    "templateVariablesScript": ""
-                                }
-                            },
-                            {
-                                "type": "UIListView",
-                                "config": {
-                                    "listClassName": "",
-                                    "className": "user-item",
-                                    "viewType": "view",
-                                    "namedView": "singleUserListItemDetail",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "return item",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "getItemListScript": "communityMobileDetail.metadata.positions.content.modules.3.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
                                     "formatListItemModuleScript": "",
                                     "emptyNamedView": "emptyListView",
