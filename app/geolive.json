@@ -1596,16 +1596,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 29,
-                            "y": 199
+                            "x": 39,
+                            "y": 209
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": -11,
-                                    "y": 412
+                                    "x": -1,
+                                    "y": 422
                                 }
                             },
                             {
@@ -1615,62 +1615,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 448,
-                                    "y": 100
+                                    "x": 458,
+                                    "y": 110
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 408,
-                                            "y": 266
-                                        }
-                                    },
-                                    {
-                                        "title": "New Empty Step",
-                                        "class": "AttributesTableNode",
-                                        "fields": [
-                                            "loginForm.metadata.children.1.children.2.children.2.fields.0.json"
-                                        ],
-                                        "_diagramState": {
-                                            "x": 952,
-                                            "y": 142
-                                        },
-                                        "children": [
-                                            "loginForm.metadata.children.1.children.2.children.2.children.0.json",
-                                            {
-                                                "class": "InsertNode",
-                                                "_diagramState": {
-                                                    "x": 912,
-                                                    "y": 168
-                                                }
-                                            }
-                                        ],
-                                        "builderMetadata": {
-                                            "positions": {
-                                                "title": {
-                                                    "modules": []
-                                                },
-                                                "content": {
-                                                    "modules": []
-                                                },
-                                                "footer": {
-                                                    "modules": []
-                                                },
-                                                "menu": {
-                                                    "modules": []
-                                                }
-                                            },
-                                            "positionList": [
-                                                "title",
-                                                "content",
-                                                "footer",
-                                                "menu"
-                                            ],
-                                            "_diagramState": {
-                                                "minimized": true
-                                            }
+                                            "x": 418,
+                                            "y": 276
                                         }
                                     }
                                 ],
