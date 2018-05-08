@@ -45,7 +45,7 @@ var proposalButton=loginProposal.appendChild(new Element('button',{
 })).addEvent('complete', function(prop){
     
     application.getDisplayController().displayPopoverForm(
-				'validateEmailForm', 
+				'emailVerificationForm', 
 				prop, 
 				application,
 				{template:"form"}
