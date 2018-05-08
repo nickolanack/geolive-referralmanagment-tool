@@ -32,6 +32,7 @@ var loginProposal =  proposal.appendChild(new Element('label', {
 }}));
 //login.appendChild(new Element('br'));
 loginProposal.appendChild(new Element('button',{
+    
     html:'Submit a Proposal',
     style:"background-color:#EDC84C;",
     "class":"primary-btn"
