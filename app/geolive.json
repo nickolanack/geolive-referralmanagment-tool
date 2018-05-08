@@ -199,7 +199,20 @@
     "plugin.37": {
         "name": "Email",
         "instance": "Email",
-        "parameters": {}
+        "parameters": {
+            "useSmtp": true,
+            "smtpHost": "smtp.gmail.com",
+            "username": "XXXX-XXXX",
+            "password": "XXXX-XXXX",
+            "port": "587",
+            "useMailgun": false,
+            "domain": "",
+            "apiKey": "",
+            "fromEmail": "geolivemap.ca+rmt@gmail.com",
+            "fromEmailName": "The Referral Management Tool",
+            "recieveMail": false,
+            "recieveMailSecretToken": "XXXX-XXXX"
+        }
     },
     "plugin.38": {
         "name": "Monolog Plugin",
@@ -11260,6 +11273,24 @@
             "templateName": "emailVerificationForm",
             "widgetTitle": "emailVerificationForm",
             "readAccess": "public"
+        }
+    },
+    "widget.244": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "activate-proposal-email-subject.contentTemplate.html",
+            "widgetTitle": "activate.proposal.email.subject",
+            "target": "activate.proposal.email.subject"
+        }
+    },
+    "widget.245": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "activate-proposal-email-body.contentTemplate.html",
+            "widgetTitle": "activate.proposal.email.body",
+            "target": "activate.proposal.email.body"
         }
     }
 }
