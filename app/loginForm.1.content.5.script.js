@@ -1,3 +1,5 @@
+
+
 var login= new Element('label', {
     html:'Register to create an account', 'class':'login-button-text', 
     style:"text-align:left; color: mediumseagreen",
@@ -14,4 +16,25 @@ login.appendChild(new Element('button',{
     "class":"primary-btn"
     
 }));
-return login;
+
+
+var proposal= new Element('label', {
+    html:'Are you a proponent', 'class':'login-button-text', 
+    style:"text-align:left; color: mediumseagreen",
+    events:{
+        click:function(){
+            //goto next step
+            wizard.displayNext();
+        }
+}});
+//login.appendChild(new Element('br'));
+proposal.appendChild(new Element('button',{
+    html:'Sumbit Proposal',
+    style:"background-color:mediumseagreen;",
+    "class":"primary-btn"
+    
+}));
+
+
+
+return [login, proposal];
