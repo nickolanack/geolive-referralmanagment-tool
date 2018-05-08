@@ -23,7 +23,7 @@ registrationLabel.appendChild(new Element('button',{
 var proposal=new Element('div')
 var loginProposal =  proposal.appendChild(new Element('label', {
     html:'Are you a proponent', 'class':'login-button-text', 
-    style:"text-align:left; color: mediumseagreen",
+    style:"text-align:left; color: #EDC84C",
     events:{
         click:function(){
             //goto next step
@@ -33,7 +33,7 @@ var loginProposal =  proposal.appendChild(new Element('label', {
 //login.appendChild(new Element('br'));
 loginProposal.appendChild(new Element('button',{
     html:'Submit a Proposal',
-    style:"background-color:mediumseagreen;",
+    style:"background-color:#EDC84C;",
     "class":"primary-btn"
     
 }));
