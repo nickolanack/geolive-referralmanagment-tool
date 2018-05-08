@@ -1596,16 +1596,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 19,
-                            "y": 189
+                            "x": 29,
+                            "y": 199
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": -21,
-                                    "y": 402
+                                    "x": -11,
+                                    "y": 412
                                 }
                             },
                             {
@@ -1615,16 +1615,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 438,
-                                    "y": 90
+                                    "x": 448,
+                                    "y": 100
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 398,
-                                            "y": 256
+                                            "x": 408,
+                                            "y": 266
                                         }
                                     },
                                     {
@@ -1634,16 +1634,16 @@
                                             "loginForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 942,
-                                            "y": 132
+                                            "x": 952,
+                                            "y": 142
                                         },
                                         "children": [
                                             "loginForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 902,
-                                                    "y": 158
+                                                    "x": 912,
+                                                    "y": 168
                                                 }
                                             }
                                         ],
@@ -1690,7 +1690,7 @@
                                                         "className": "registration-left",
                                                         "onSuccessfulRegistrationScript": "loginForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.1.config.onSuccessfulRegistrationScript.js",
                                                         "formatRegistrationFieldsScript": "return fields;",
-                                                        "showCancel": true,
+                                                        "showCancel": false,
                                                         "labelForCancel": "cancel",
                                                         "labelForSubmit": "Register",
                                                         "showName": true,
