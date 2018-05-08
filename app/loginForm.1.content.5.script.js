@@ -1,6 +1,9 @@
+/* Register and Proposal Form */
 
-var login=new Element('div')
-var loginLabel = login.appendChild(new Element('label', {
+
+
+var registration=new Element('div')
+var registrationLabel = registration.appendChild(new Element('label', {
     html:'Register to create an account', 'class':'login-button-text', 
     style:"text-align:left; color: mediumseagreen",
     events:{
@@ -10,7 +13,7 @@ var loginLabel = login.appendChild(new Element('label', {
         }
 }}));
 //login.appendChild(new Element('br'));
-loginLabel.appendChild(new Element('button',{
+registrationLabel.appendChild(new Element('button',{
     html:'Register',
     style:"background-color:mediumseagreen;",
     "class":"primary-btn"
@@ -37,4 +40,4 @@ loginProposal.appendChild(new Element('button',{
 
 
 
-return [login, proposal];
+return [registration, proposal];
