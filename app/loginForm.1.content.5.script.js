@@ -44,10 +44,10 @@ var proposalButton=loginProposal.appendChild(new Element('button',{
   
 })).addEvent('complete', function(prop){
     
-    me.application.getDisplayController().displayPopoverForm(
+    application.getDisplayController().displayPopoverForm(
 				'validateEmailForm', 
 				prop, 
-				me.application,
+				application,
 				{template:"form"}
 			);
     
