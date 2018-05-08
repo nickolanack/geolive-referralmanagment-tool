@@ -19,14 +19,16 @@ GetWidget('firelightGeneratedStyles')->display($targetInstance);
 
 GetWidget('emptyListView')->display($targetInstance);
 
+$firelight=GetPlugin('ReferralManagement');
+$firelight->includeScripts();
+
 if(GetClient()->isGuest()){
    GetWidget('guestDashboard')->display($targetInstance); 
    GetWidget('loginForm')->display($targetInstance); //login wizard from map
    return;
 }
 
-$firelight=GetPlugin('ReferralManagement');
-$firelight->includeScripts();
+
 if((!GetClient()->isAdmin())&&count(array_intersect($firelight->teamMemberRoles(), ($roles=$firelight->getUserRoles())))==0){
     
     if(count(array_intersect($firelight->communityMemberRoles(),$roles))>0){
