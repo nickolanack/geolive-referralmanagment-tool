@@ -29,6 +29,9 @@ GetWidget('proposalForm')->display($targetInstance); //proposal wizard from map
 if(GetClient()->isGuest()){
    GetWidget('guestDashboard')->display($targetInstance); 
    GetWidget('loginForm')->display($targetInstance); //login wizard from map
+   
+   GetWidget('emailVerificationForm')->display($targetInstance);
+   
    return;
 }
 
