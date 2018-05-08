@@ -36,17 +36,17 @@ var proposalButton=loginProposal.appendChild(new Element('button',{
     "class":"primary-btn"
     
 }));
-
-(new UIModalFormButton(proposalButton, application, new GuestProposal(), {
+var proposalObj= new GuestProposal(-1, {});
+(new UIModalFormButton(proposalButton, application, proposalObj, {
 
             formOptions: {template:"form"},
             formName: "ProposalTemplate",
   
-})).addEvent('complete', function(prop){
+})).addEvent('complete', function(){
     
     application.getDisplayController().displayPopoverForm(
 				'emailVerificationForm', 
-				prop, 
+				proposalObj, 
 				application,
 				{template:"form"}
 			);
