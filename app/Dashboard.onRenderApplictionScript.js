@@ -22,6 +22,10 @@ GetWidget('emptyListView')->display($targetInstance);
 $firelight=GetPlugin('ReferralManagement');
 $firelight->includeScripts();
 
+
+GetWidget('proposalForm')->display($targetInstance); //proposal wizard from map
+
+
 if(GetClient()->isGuest()){
    GetWidget('guestDashboard')->display($targetInstance); 
    GetWidget('loginForm')->display($targetInstance); //login wizard from map
@@ -72,7 +76,7 @@ GetWidget('configurationSettingsDetail')->display($targetInstance);
 GetWidget('singleTeamListItemDetail')->display($targetInstance);
 GetWidget('singleFileListItemDetail')->display($targetInstance);
 
-GetWidget('proposalForm')->display($targetInstance); //proposal wizard from map
+
 
 GetWidget('taskForm')->display($targetInstance); //proposal wizard
 GetWidget('taskDefaultItems')->display($targetInstance);
