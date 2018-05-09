@@ -1,1 +1,1 @@
-callback("<p>Manage your proposals through tasks. this will be a quickstart help guide with videos section... </p><p>Placeholder help videos...</p>");
+callback("<p>When users log in for the first time there roll must be approved by a lands department member or manager. This page will show all the users who have not yet been approved</p>");
