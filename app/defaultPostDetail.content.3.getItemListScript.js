@@ -16,7 +16,7 @@ if(item.getMetadata().items){
        }
        if(type=='User'){
            try{
-               return ProjectTeam.CurrentTeam().getUser(i.id);
+               return ProjectTeam.CurrentTeam().getUserOrDevice(i.id);
            }catch(e){
                 
                 return new MockDataTypeItem({
