@@ -8734,7 +8734,7 @@
                                 "type": "FormattedText",
                                 "config": {
                                     "textValueScript": "communityUsersDetail.metadata.positions.content.modules.1.config.textValueScript.js",
-                                    "className": "",
+                                    "className": "section-help",
                                     "imageWidth": 300,
                                     "imageHeight": 240,
                                     "multiImageWidth": 100,
@@ -8760,7 +8760,7 @@
                                 "type": "FormattedText",
                                 "config": {
                                     "textValueScript": "communityUsersDetail.metadata.positions.content.modules.2.config.textValueScript.js",
-                                    "className": "",
+                                    "className": "section-help",
                                     "imageWidth": 300,
                                     "imageHeight": 240,
                                     "multiImageWidth": 100,
@@ -8786,7 +8786,7 @@
                                 "type": "InlineHtml",
                                 "config": {
                                     "className": "",
-                                    "text": "",
+                                    "text": "Community Members &amp; Unassigned Users",
                                     "template": "",
                                     "templateVariablesScript": ""
                                 }
@@ -8795,28 +8795,28 @@
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "",
-                                    "className": "",
+                                    "className": "user-item",
                                     "viewType": "view",
-                                    "namedView": "defaultView",
+                                    "namedView": "singleUserListItemDetail",
                                     "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
-                                    "namedFormView": "defaultView",
+                                    "namedFormView": "defaultFormView",
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
-                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "deleteItemScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
-                                    "getItemListScript": "return item;",
+                                    "getItemListScript": "communityUsersDetail.metadata.positions.content.modules.4.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "return item;",
+                                    "formatListItemModuleScript": "",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
                                     "sortItemsScript": "",
-                                    "maxItems": "-1"
+                                    "maxItems": "15"
                                 }
                             }
                         ]
