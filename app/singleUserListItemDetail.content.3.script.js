@@ -82,7 +82,7 @@ var addRole=function(r){
         addEmpty=true;
         roleEl.addClass('selectable');
         roleEl.addEvent('click',function(){
-            item.setRole((r, function(){
+            item.setRole(r, function(){
                 els.forEach(function(e){
                     e.removeClass("active");
                 })
