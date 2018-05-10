@@ -3643,16 +3643,18 @@
                                     "className": "user-detail",
                                     "viewType": "view",
                                     "namedView": "userDetailView",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
-                                    "formatModuleScript": "",
+                                    "formatModuleScript": "Left Panel.metadata.positions.content.modules.1.config.formatModuleScript.js",
                                     "resolveItemScript": "",
-                                    "itemButtonsScript": "return [];",
-                                    "namedViewScript": "return namedView",
                                     "filterModulesScript": "return list",
-                                    "formOptions": "{}"
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false
                                 }
                             },
                             {
@@ -3661,16 +3663,18 @@
                                     "className": "navigation-menu",
                                     "viewType": "view",
                                     "namedView": "navigationMenu",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "",
-                                    "itemButtonsScript": "return [];",
-                                    "namedViewScript": "return namedView",
                                     "filterModulesScript": "return list",
-                                    "formOptions": "{}"
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false
                                 }
                             },
                             {
