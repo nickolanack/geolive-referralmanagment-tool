@@ -6,7 +6,7 @@ ProjectTeam.CurrentTeam().getAllUsers(function(users){
             return true;
         }
         return false;
-    })};
+    }));
         
     
 });
