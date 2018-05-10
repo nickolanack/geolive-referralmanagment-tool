@@ -60,9 +60,9 @@ var foundActive=false;
 var module=new ElementModule('ul',{"class":"user-roles"});
 
 if(item.getId()==AppClient.getId()){
-    module.addEvent("load:once",function(){
+    module.runOnceOnLoad(function(){
         module.viewer.getUIView().getElement().addClass('this-is-me');
-    })
+    });
 }
 
 var el=module.getElement();
