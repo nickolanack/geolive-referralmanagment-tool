@@ -7620,7 +7620,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleUserListItemDetail.metadata.positions.content.modules.2.config.fieldValueScript.js",
+                                    "fieldValueScript": "return item.getEmail()",
                                     "formatElementScript": ""
                                 }
                             },

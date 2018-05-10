@@ -1,1 +1,0 @@
-return item.options.metadata.email
