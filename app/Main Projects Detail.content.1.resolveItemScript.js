@@ -1,24 +1,15 @@
-var current=application.getNamedValue("currentProject");    
-if(current){
-    return current;
-}
 
- var ProposalListQuery = new Class({
-            Extends: AjaxControlQuery,
-            initialize: function() {
-                this.parent(CoreAjaxUrlRoot, 'list_proposals', {
-                    plugin: 'ReferralManagement'
-                });
-            }
-        });
-        
-       (new ProposalListQuery()).addEvent('success',function(resp){
-           if(resp.results.length==0){
-               callback(null);
-               return;
-           }
-           callback(new Proposal(resp.results[0].id, resp.results[0]));
-       }).execute();
-       
-       return null;
+ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+    var current=application.getNamedValue("currentProject");    
+    if(current){
+        callback(current);
+    }
+    
+    var projects=team.getProjects();
+    if(projects.length){
+        callback(projects[0]);
+    }
+    callback([]);
+})
+
        
