@@ -1,7 +1,10 @@
+ProjectTeam.CurrentTeam.runOnceOnLoad(function(team){
+    
+    
+    
+        if(team.getProjects().length==0){
+            callback('emptyProjectOverviewDetail');
+        }
 
-var current=application.getNamedValue("currentProject");
-            if(!current){
-                return 'emptyProjectOverviewDetail';
-            }
-
-return namedView
+    return callback(namedView);
+})
