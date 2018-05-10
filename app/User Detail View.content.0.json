@@ -1,7 +1,7 @@
 {
     "type": "FormattedText",
     "config": {
-        "textValueScript": "return \"<img src='<?php \n    echo GetPlugin('ReferralManagement')->getUsersAvatar(); ?>?thumb=250x250'\/>\";\n\n\n",
+        "textValueScript": "var defaultIcon=<?php \n    echo json_encode(GetWidget('dashboardConfig')->getParameter('defaultUserImage')[0]); \n?>;\n\nif(item.getId()<=0){\n    return '<img src=\"'+defaultIcon+'\" \/>';\n}\n\nvar icon=item.getProfileIcon();\nif(icon){\n    return '<img src=\"'+icon+'\" \/>';\n}\nreturn '<img src=\"'+defaultIcon+'\" \/>';",
         "className": "",
         "imageWidth": 170,
         "imageHeight": 170,
