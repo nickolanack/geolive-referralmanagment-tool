@@ -1,11 +1,10 @@
  
  ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
-     var proposals=team.getProposals();
+     var projects=team.getProjects();
      if(!application.getNamedValue("currentProject")){
-        application.setNamedValue("currentProject", proposals[0]);
+        application.setNamedValue("currentProject", projects[0]);
     }
-    callback(proposals)
+    callback(projects)
  })
 
-       return null;
        
