@@ -8817,7 +8817,7 @@
                                     "insertAtTop": false,
                                     "getItemListScript": "communityUsersDetail.metadata.positions.content.modules.4.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "",
+                                    "formatListItemModuleScript": "communityUsersDetail.metadata.positions.content.modules.4.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
                                     "sortItemsScript": "",
