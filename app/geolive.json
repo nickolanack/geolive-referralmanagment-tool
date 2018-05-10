@@ -3827,7 +3827,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "User Detail View.metadata.positions.content.modules.1.config.fieldValueScript.js",
+                                    "fieldValueScript": "return item.getName()",
                                     "formatElementScript": "User Detail View.metadata.positions.content.modules.1.config.formatElementScript.js"
                                 }
                             },
@@ -3836,7 +3836,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "User Detail View.metadata.positions.content.modules.2.config.fieldValueScript.js",
+                                    "fieldValueScript": "return item.getEmail()",
                                     "formatElementScript": ""
                                 }
                             },
