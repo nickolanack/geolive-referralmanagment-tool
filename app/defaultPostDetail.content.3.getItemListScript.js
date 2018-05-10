@@ -19,7 +19,7 @@ ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
                try{
                    return team.getUserOrDevice(i.id);
                }catch(e){
-                    
+                    console.error(e);
                     return new MockDataTypeItem({
                         type:"user"
                     })
