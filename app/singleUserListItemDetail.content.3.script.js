@@ -7,40 +7,6 @@ var rolesEditList=<?php
 
 ?>;
 
-var selectRole=function(el, role, callback){
-    
-    <?php 
-    if(!empty($editList)){
-        
-     ?>
-     
-        var SetUserRoleQuery = new Class({
-    		Extends: AjaxControlQuery,
-    		initialize: function(user, role) {
-    
-    			this.parent(CoreAjaxUrlRoot, "set_user_role", {
-    				plugin: "ReferralManagement",
-    				user: user,
-    				role: role
-    			});
-    		}
-    	});     
-     
-     
-        (new SetUserRoleQuery(item.getId(), role)).addEvent('success',function(){
-            if(callback){
-                callback();
-            }
-        }).execute();
-     
-     
-     <?php   
-
-    }
-    ?>
-    
-    
-}
 
 var roles=<?php
 
@@ -116,7 +82,7 @@ var addRole=function(r){
         addEmpty=true;
         roleEl.addClass('selectable');
         roleEl.addEvent('click',function(){
-            selectRole(roleEl, r, function(){
+            item.setRole((r, function(){
                 els.forEach(function(e){
                     e.removeClass("active");
                 })
