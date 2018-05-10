@@ -1645,6 +1645,41 @@ ul.user-roles {
 }
 
 
+
+ul.user-roles{
+    height:50px;
+}
+ul.user-roles li{
+    opacity: 0;
+    filter: grayscale(1);
+  
+}
+
+ul.user-roles:hover li{
+    opacity: 1;
+    
+}
+ul.user-roles li.selectable{
+    cursor:pointer;
+}
+ul.user-roles li.selectable:after {
+    display: none;
+}
+ul.user-roles:hover li.selectable:after {
+    display: inline-block;
+}
+
+ul.user-roles>li.active {
+    opacity: 1;
+    float:right;
+}
+
+ul.user-roles:hover>li.active {
+    opacity: 1;
+    float:none;
+}
+
+
 .user-item .user-profile-icon {
     vertical-align: middle;
     margin-right: 10px;
