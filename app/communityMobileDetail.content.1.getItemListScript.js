@@ -1,1 +1,1 @@
-return ProjectTeam.CurrentTeam().getDevices();
+ProjectTeam.CurrentTeam().getDevices(callback);
