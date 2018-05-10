@@ -1,0 +1,1 @@
+return ReferralManagementDashboard.currentTeamMemberSortfn.apply(null, arguments);
