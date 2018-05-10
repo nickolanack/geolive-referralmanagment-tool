@@ -1,4 +1,4 @@
-ProjectTeam.CurrentTeam.runOnceOnLoad(function(team){
+ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
     
     
     
