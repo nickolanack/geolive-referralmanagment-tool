@@ -1,7 +1,7 @@
 {
     "type": "FormattedText",
     "config": {
-        "textValueScript": "\nvar defaultIcon=<?php \n    echo json_encode(GetWidget('dashboardConfig')->getParameter('defaultUserImage')[0]); \n?>;\n\nif(item.getId()<=0){\n    return '<img src=\"'+defaultIcon+'\" \/>';\n}\n\n(new GetAttributeItemValueQuery(item.getId(), AppClient.getType(), \"userAttributes\",\"profileIcon\")).addEvent(\"success\",function(result){\n    if(!result.value){\n        callback('<img src=\"'+defaultIcon+'\" \/>');\n        return;\n    }\n    callback(result.value);\n    \n}).execute();",
+        "textValueScript": "\nvar defaultIcon=<?php \n    echo json_encode(GetWidget('dashboardConfig')->getParameter('defaultUserImage')[0]); \n?>;\n\nif(item.getId()<=0){\n    return '<img src=\"'+defaultIcon+'\" \/>';\n}\n\nvar icon=item.getProfileIcon();\nif(icon){\n    return '<img src=\"'+icon+'\" \/>';\n}\nreturn '<img src=\"'+defaultIcon+'\" \/>';\n\n\n\/\/ (new GetAttributeItemValueQuery(item.getId(), AppClient.getType(), \"userAttributes\",\"profileIcon\")).addEvent(\"success\",function(result){\n\/\/     if(!result.value){\n\/\/         callback('<img src=\"'+defaultIcon+'\" \/>');\n\/\/         return;\n\/\/     }\n\/\/     callback(result.value);\n    \n\/\/ }).execute();",
         "className": "user-profile-icon",
         "imageWidth": 50,
         "imageHeight": 50,
