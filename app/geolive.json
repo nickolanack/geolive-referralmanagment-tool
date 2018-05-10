@@ -11403,7 +11403,7 @@
                                     "insertAtTop": false,
                                     "getItemListScript": "communityMobileDetail.metadata.positions.content.modules.1.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "",
+                                    "formatListItemModuleScript": "communityMobileDetail.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
                                     "sortItemsScript": "return b.getId()-a.getId();",
