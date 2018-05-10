@@ -4910,7 +4910,7 @@
                                     "insertAtTop": false,
                                     "getItemListScript": "People Users Detail.metadata.positions.content.modules.1.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "",
+                                    "formatListItemModuleScript": "People Users Detail.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
                                     "sortItemsScript": "People Users Detail.metadata.positions.content.modules.1.config.sortItemsScript.js",
