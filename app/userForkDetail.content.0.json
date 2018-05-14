@@ -12,7 +12,7 @@
         "showDeleteButton": false,
         "deleteItemScript": "defaultBehaviorFn()",
         "formatModuleScript": "",
-        "resolveItemScript": "return item",
+        "resolveItemScript": "return new (function(){\n    \n    var Dashboard=new Class({\n        Extends:DataTypeObject,\n        save:function(callback){\n                \n            callback(false);\n            \n        }\n    })\n    \n    return Dashboard;\n})();",
         "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",
         "insertAtTop": false
