@@ -32,7 +32,7 @@ if(GetClient()->isGuest()){
    
    GetWidget('emailVerificationForm')->display($targetInstance);
    GetWidget('userAboutDetail')->display($targetInstance);
-
+   GetWidget('userForkDetail')->display($targetInstance);
    
    
    return;
