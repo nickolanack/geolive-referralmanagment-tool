@@ -9,6 +9,23 @@
         z-index: 1;
 }
 
+.public-menu ul {
+    display: inline-block;
+    white-space: nowrap;
+    float: right;
+}
+
+.public-menu ul>label{
+    display:none;
+}
+
+.public-menu li{
+    list-style:none;   
+    display:inline-block;
+    
+}
+
+
 
 .ui-view.public-map {
     position: fixed;
