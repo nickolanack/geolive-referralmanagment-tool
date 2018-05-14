@@ -1,0 +1,1 @@
+wizardDataSet.isMulti=object.value
