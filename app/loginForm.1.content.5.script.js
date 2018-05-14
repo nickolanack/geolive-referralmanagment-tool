@@ -2,7 +2,7 @@
 
 
 
-var registration=new Element('div')
+var registration=new Element('div', {"style":"margin-top: 20px; height: 50px;"})
 var registrationLabel = registration.appendChild(new Element('label', {
     html:'Register to create an account', 'class':'login-button-text', 
     style:"text-align:left; color: mediumseagreen",
@@ -20,7 +20,7 @@ registrationLabel.appendChild(new Element('button',{
     
 }));
 
-var proposal=new Element('div')
+var proposal=new Element('div', {"style":"margin-top: 20px; height: 50px;"})
 var loginProposal =  proposal.appendChild(new Element('label', {
     html:'Are you a proponent', 'class':'login-button-text', 
     style:"text-align:left; color: #EDC84C",
