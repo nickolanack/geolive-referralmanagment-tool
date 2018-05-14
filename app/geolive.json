@@ -11565,16 +11565,16 @@
                             "createDashboardForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 188,
-                            "y": 320
+                            "x": 198,
+                            "y": 330
                         },
                         "children": [
                             "createDashboardForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 148,
-                                    "y": 486
+                                    "x": 158,
+                                    "y": 496
                                 }
                             },
                             {
@@ -11584,16 +11584,16 @@
                                     "createDashboardForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 730,
-                                    "y": 201
+                                    "x": 740,
+                                    "y": 211
                                 },
                                 "children": [
                                     "createDashboardForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 690,
-                                            "y": 367
+                                            "x": 700,
+                                            "y": 377
                                         }
                                     }
                                 ],
@@ -11647,7 +11647,16 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "createDashboardForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                        "createDashboardForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "InlineHtml",
+                                            "config": {
+                                                "className": "",
+                                                "text": "",
+                                                "template": "",
+                                                "templateVariablesScript": ""
+                                            }
+                                        }
                                     ]
                                 },
                                 "footer": {
