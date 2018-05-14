@@ -1,12 +1,12 @@
 {
     "type": "WizardButtons",
     "config": {
-        "className": "WizardFooter",
+        "className": "WizardFooter form-nav",
         "reduceOpacity": false,
         "onCompleteScript": "defaultBehaviorFn();",
         "labelForCancel": "cancel",
         "labelForSubmit": "submit",
-        "labelForNext": "Get Started",
+        "labelForNext": "next",
         "labelForPrevious": "previous",
         "showCancel": true,
         "showBack": true
