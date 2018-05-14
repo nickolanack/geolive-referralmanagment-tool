@@ -1,19 +1,7 @@
 {
-    "type": "UIView",
+    "type": "WizardScriptElement",
     "config": {
-        "className": "login-form",
-        "viewType": "form",
-        "namedView": "defaultView",
-        "namedViewScript": "return namedView",
-        "showInlineEdit": false,
-        "namedFormView": "LoginWizard",
-        "formOptions": "{}",
-        "showDeleteButton": false,
-        "deleteItemScript": "",
-        "formatModuleScript": "",
-        "resolveItemScript": "",
-        "filterModulesScript": "return list",
-        "itemButtonsScript": "return [];",
-        "insertAtTop": false
+        "script": "return new NavigationMenuModule({\n    \"User\":[\n        {\n            \"name\":\"Login\"\n            \n        }, {\n            \"name\":\"Map\",\n            \"html\":\"View Map\",\n            \"events\":{\n                \"click\":function(){\n                    \n                    $$('.public-map').setStyle('opacity',1);\n                    $$('.public-map').setStyle('pointer-events','auto');\n                    $$('.login-form').setStyle('display','none');\n                    \n                }\n            }\n            \n            \n        }, {\n            \"name\":\"About\"\n            \n        }\n    ]\n},{\n        targetUIView:function(button, section, viewer){\n            return  viewer.getApplication().getChildView('content',0).getChildView('content',1);\n        },\n        templateView:function(button, section){\n            return button.view||(section.toLowerCase()+(button.name||button.html)+\"Detail\");\n        },\n        buttonClass:function(button, section){\n            return button[\"class\"]||(\"menu-\"+section.toLowerCase()+\"-\"+(button.name||button.html).toLowerCase())\n        },\n        sectionClass:function(section){\n            return \"menu-\"+section.toLowerCase()\n        },\n        \/\/ formatSectionLabel:function(section, labelEl){\n        \/\/     if(section==='People'){\n        \/\/         return 'Team';\n        \/\/     }\n        \/\/ },\n        initialView:{view:\"Login\", section:\"User\"}\n    });\n",
+        "identifier": "customScriptElement"
     }
 }

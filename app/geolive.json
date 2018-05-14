@@ -8383,9 +8383,30 @@
                             {
                                 "type": "UIView",
                                 "config": {
+                                    "className": "login-form",
+                                    "viewType": "form",
+                                    "namedView": "defaultView",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "LoginWizard",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
                                     "className": "public-map",
                                     "viewType": "view",
                                     "namedView": "googlemap",
+                                    "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultView",
