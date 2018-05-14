@@ -11545,42 +11545,72 @@
                             "createDashboardForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 128,
-                            "y": 260
+                            "x": 138,
+                            "y": 270
                         },
                         "children": [
-                            "createDashboardForm.metadata.children.1.children.0.json"
+                            "createDashboardForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 98,
+                                    "y": 436
+                                }
+                            },
+                            {
+                                "title": "New Empty Step",
+                                "class": "AttributesTableNode",
+                                "fields": [
+                                    "createDashboardForm.metadata.children.1.children.2.fields.0.json"
+                                ],
+                                "_diagramState": {
+                                    "x": 694,
+                                    "y": 336
+                                },
+                                "children": [
+                                    "createDashboardForm.metadata.children.1.children.2.children.0.json",
+                                    {
+                                        "class": "InsertNode",
+                                        "_diagramState": {
+                                            "x": 654,
+                                            "y": 502
+                                        }
+                                    }
+                                ],
+                                "builderMetadata": {
+                                    "positions": {
+                                        "title": {
+                                            "modules": []
+                                        },
+                                        "content": {
+                                            "modules": []
+                                        },
+                                        "footer": {
+                                            "modules": []
+                                        },
+                                        "menu": {
+                                            "modules": []
+                                        }
+                                    },
+                                    "positionList": [
+                                        "title",
+                                        "content",
+                                        "footer",
+                                        "menu"
+                                    ],
+                                    "_diagramState": {
+                                        "minimized": false
+                                    }
+                                }
+                            }
                         ],
                         "builderMetadata": {
                             "positions": {
                                 "title": {
-                                    "modules": [
-                                        "createDashboardForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
-                                    ]
+                                    "modules": []
                                 },
                                 "content": {
-                                    "modules": [
-                                        "createDashboardForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
-                                        {
-                                            "type": "WizardDescriptionField",
-                                            "config": {
-                                                "label": "Description",
-                                                "message": "add a description",
-                                                "lines": 3,
-                                                "mandatory": false,
-                                                "showAudios": true,
-                                                "showImages": true,
-                                                "showDocuments": true,
-                                                "showVideos": true,
-                                                "className": "",
-                                                "maxChars": 0,
-                                                "showExpandInput": true,
-                                                "toolbarPosition": "bottom",
-                                                "textFormatScript": "",
-                                                "mediaIconTint": "rgb(100, 149, 237)"
-                                            }
-                                        }
-                                    ]
+                                    "modules": []
                                 },
                                 "footer": {
                                     "modules": [
@@ -11596,7 +11626,10 @@
                                 "content",
                                 "footer",
                                 "menu"
-                            ]
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
                         }
                     }
                 ]

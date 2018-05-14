@@ -6,8 +6,9 @@
         "onCompleteScript": "defaultBehaviorFn();",
         "labelForCancel": "cancel",
         "labelForSubmit": "submit",
-        "labelForNext": "next",
+        "labelForNext": "Get Started",
         "labelForPrevious": "previous",
-        "showCancel": true
+        "showCancel": false,
+        "showBack": false
     }
 }
