@@ -2,7 +2,7 @@
     "type": "FormTextField",
     "config": {
         "className": "",
-        "label": "Some Field",
+        "label": "Community or Group Name",
         "placeholder": "add value",
         "lines": 1,
         "maxChars": 0,
@@ -13,7 +13,7 @@
         "formatter": "none",
         "onRenderTextFieldScript": "",
         "formatValueScript": "",
-        "getValueScript": " return \"Hello World\"; ",
+        "getValueScript": " return \"\"; ",
         "updateValueScript": " object.value=value ",
         "submitValueScript": "",
         "validateValueScript": " return defaultValidationFn() "
