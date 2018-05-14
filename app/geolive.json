@@ -11515,7 +11515,7 @@
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "createDashboardForm",
-                                    "formOptions": "{}",
+                                    "formOptions": "{template:\"form\"}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "defaultBehaviorFn()",
                                     "formatModuleScript": "",
