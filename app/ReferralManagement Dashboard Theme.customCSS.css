@@ -27,6 +27,17 @@
     
 }
 
+.public-menu li.primary-btn button{
+    border: 1px solid transparent;
+}
+
+.public-menu li.primary-btn.active button {
+    background-color: transparent;
+    border: 1px solid white;
+    
+}
+
+
 
 
 .ui-view.public-map {
