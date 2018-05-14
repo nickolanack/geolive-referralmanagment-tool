@@ -11504,27 +11504,7 @@
                     },
                     "content": {
                         "modules": [
-                            "userForkDetail.metadata.positions.content.modules.0.json",
-                            {
-                                "type": "UIView",
-                                "config": {
-                                    "className": "",
-                                    "viewType": "form",
-                                    "namedView": "createDashboardForm",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "createDashboardForm",
-                                    "formOptions": "{template:\"form\"}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "defaultBehaviorFn()",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "return item",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false
-                                }
-                            }
+                            "userForkDetail.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {

@@ -1,9 +1,20 @@
 {
-    "type": "InlineHtml",
+    "type": "UIView",
     "config": {
         "className": "",
-        "text": "<p>\nCreate your own private dashboard for managing referrals for your Community and Lands Department members. \n<\/p>\n\n<p>\nCreate and organize your teams roles and responsibilites. <br\/>\nInvite community members to share spatial knowlege and values securly with decisions makers.<br\/>\nManage the entire referral process from start to finish\n<\/p>",
-        "template": "",
-        "templateVariablesScript": ""
+        "viewType": "form",
+        "namedView": "createDashboardForm",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
+        "showInlineEdit": false,
+        "namedFormView": "createDashboardForm",
+        "formOptions": "{template:\"form\"}",
+        "showDeleteButton": false,
+        "deleteItemScript": "defaultBehaviorFn()",
+        "formatModuleScript": "",
+        "resolveItemScript": "return item",
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false
     }
 }
