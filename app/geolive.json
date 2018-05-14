@@ -11565,16 +11565,16 @@
                             "createDashboardForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 138,
-                            "y": 270
+                            "x": 148,
+                            "y": 280
                         },
                         "children": [
                             "createDashboardForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 98,
-                                    "y": 436
+                                    "x": 108,
+                                    "y": 446
                                 }
                             },
                             {
@@ -11584,16 +11584,16 @@
                                     "createDashboardForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 694,
-                                    "y": 336
+                                    "x": 704,
+                                    "y": 346
                                 },
                                 "children": [
                                     "createDashboardForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 654,
-                                            "y": 502
+                                            "x": 664,
+                                            "y": 512
                                         }
                                     }
                                 ],
@@ -11630,7 +11630,9 @@
                                     "modules": []
                                 },
                                 "content": {
-                                    "modules": []
+                                    "modules": [
+                                        "createDashboardForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                    ]
                                 },
                                 "footer": {
                                     "modules": [
