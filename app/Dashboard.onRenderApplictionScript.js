@@ -31,6 +31,9 @@ if(GetClient()->isGuest()){
    GetWidget('loginForm')->display($targetInstance); //login wizard from map
    
    GetWidget('emailVerificationForm')->display($targetInstance);
+   GetWidget('userAboutDetail')->display($targetInstance);
+
+   
    
    return;
 }
