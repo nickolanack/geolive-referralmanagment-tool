@@ -1,7 +1,7 @@
 {
     "type": "WizardScriptElement",
     "config": {
-        "script": "\nreturn new NavigationMenuModule({\n    \"User\":{\n        \"Login\":{},\n        \"Map\":{},\n        \"About\":{}\n    }\n});\n\n\n\nvar map=new Element('button',{\n    html:'View Map',\n    style:\"    float: right; background-color: crimson; position: relative; top: 50px; left: 0;\", \"class\":\"primary-btn\",\n    events:{click:function(){\n        $$('.public-map').setStyle('opacity',1);\n        $$('.public-map').setStyle('pointer-events','auto');\n        $$('.login-form').setStyle('display','none');\n    }}\n});\nreturn map;",
+        "script": "\nreturn new NavigationMenuModule({\n    \"User\":[\n        {\"name\":\"Login\"},\n        {\"name\":\"Map\"},\n        {\"name\":\"About\"}\n    ]\n});\n\n\n\nvar map=new Element('button',{\n    html:'View Map',\n    style:\"    float: right; background-color: crimson; position: relative; top: 50px; left: 0;\", \"class\":\"primary-btn\",\n    events:{click:function(){\n        $$('.public-map').setStyle('opacity',1);\n        $$('.public-map').setStyle('pointer-events','auto');\n        $$('.login-form').setStyle('display','none');\n    }}\n});\nreturn map;",
         "identifier": "customScriptElement"
     }
 }
