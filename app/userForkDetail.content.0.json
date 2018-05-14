@@ -12,7 +12,7 @@
         "showDeleteButton": false,
         "deleteItemScript": "defaultBehaviorFn()",
         "formatModuleScript": "",
-        "resolveItemScript": "return new ((function(){\n    \n    var Dashboard=new Class({\n        Extends:DataTypeObject,\n        save:function(callback){\n                \n            (new AjaxControlQuery(CoreAjaxUrlRoot, 'create_dashboard', {\n\t\t\t\tplugin: 'ReferralManagement'\n\t\t\t})).addEvent('success',function(){\n\t\t\t    callback(true);\n\t\t\t}).execute();\n\t\t}\n\t});\n            \n      \n    \n    return Dashboard;\n})())();",
+        "resolveItemScript": "return new ((function(){\n    \n    var Dashboard=new Class({\n        Extends:DataTypeObject,\n        initialize:function(){\n            this.data={};\n        },\n        save:function(callback){\n            var me=this;\n            (new AjaxControlQuery(CoreAjaxUrlRoot, 'create_dashboard', {\n\t\t\t\tplugin: 'ReferralManagement',\n\t\t\t\tdata:me.data\n\t\t\t})).addEvent('success',function(){\n\t\t\t    callback(true);\n\t\t\t}).execute();\n\t\t},\n\t\tsetName:function(n){\n\t\t    this.data.name=n;\n\t\t},\n\t\tsetEmail:function(e){\n\t\t    this.data.email=e;\n\t\t},\n\t\tsetDashboard:function(n){\n\t\t    this.data.dashboard=n;\n\t\t}\n\t\tsetIsMulti:function(m){\n\t\t    this.data.multi=m;\n\t\t}\n\t});\n            \n      \n    \n    return Dashboard;\n})())();",
         "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",
         "insertAtTop": false
