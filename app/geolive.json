@@ -11498,17 +11498,9 @@
             "requireTarget": true,
             "onRenderApplictionScript": "",
             "metadata": {
-                "positionList": [
-                    "title",
-                    "content",
-                    "footer",
-                    "menu"
-                ],
                 "positions": {
                     "title": {
-                        "modules": [
-                            "userForkDetail.metadata.positions.title.modules.0.json"
-                        ]
+                        "modules": []
                     },
                     "content": {
                         "modules": [
@@ -11516,14 +11508,19 @@
                         ]
                     },
                     "footer": {
-                        "modules": [
-                            "userForkDetail.metadata.positions.footer.modules.0.json"
-                        ]
+                        "modules": []
                     },
                     "menu": {
                         "modules": []
                     }
-                }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
             },
             "readAccess": "public"
         }
