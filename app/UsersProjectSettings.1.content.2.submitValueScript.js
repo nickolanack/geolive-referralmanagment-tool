@@ -1,1 +1,1 @@
-wizardDataSet.canAssignTasks=object.value;
+wizardDataSet.canAddTasks=object.value

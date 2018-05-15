@@ -11732,16 +11732,16 @@
                             "UsersProjectSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 228,
-                            "y": 127
+                            "x": 238,
+                            "y": 137
                         },
                         "children": [
                             "UsersProjectSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 188,
-                                    "y": 293
+                                    "x": 198,
+                                    "y": 313
                                 }
                             }
                         ],
@@ -11771,11 +11771,23 @@
                                             "type": "FormBooleanField",
                                             "config": {
                                                 "className": "",
-                                                "label": "Can Assign Tasks",
+                                                "label": "Can Add Tasks",
                                                 "mandatory": false,
                                                 "getValueScript": "",
                                                 "updateValueScript": "",
                                                 "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
+                                                "validateValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "FormBooleanField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Can Assign Tasks",
+                                                "mandatory": false,
+                                                "getValueScript": "",
+                                                "updateValueScript": "",
+                                                "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
                                                 "validateValueScript": ""
                                             }
                                         }
