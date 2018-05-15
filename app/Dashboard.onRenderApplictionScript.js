@@ -66,6 +66,8 @@ GetWidget('peopleProjectsDetail')->display($targetInstance);
 GetWidget('peopleClientsDetail')->display($targetInstance);
 GetWidget('peopleUsersDetail')->display($targetInstance);
 
+GetWidget('UsersProjectSettings')->display($targetInstance);
+
 
 // GetWidget('accountingDocumentsDetail')->display($targetInstance);
 // GetWidget('accountingTimesheetDetail')->display($targetInstance);
