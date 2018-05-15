@@ -3,4 +3,4 @@
       
    }
    
- 
+ el.addClass('editable');
