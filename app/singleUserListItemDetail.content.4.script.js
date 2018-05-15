@@ -1,4 +1,4 @@
-if((item.isTeamMember&&item.isTeamMember())){
+if((item.isProjectMember&&item.isProjectMember())){
     return null;
 }
 
