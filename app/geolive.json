@@ -11720,8 +11720,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 65,
-                    "y": 411
+                    "x": 64,
+                    "y": 386
                 },
                 "children": [
                     "UsersProjectSettings.metadata.children.0.json",
@@ -11732,16 +11732,16 @@
                             "UsersProjectSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 218,
-                            "y": 117
+                            "x": 228,
+                            "y": 127
                         },
                         "children": [
                             "UsersProjectSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 178,
-                                    "y": 283
+                                    "x": 188,
+                                    "y": 293
                                 }
                             }
                         ],
@@ -11764,6 +11764,18 @@
                                                 "getValueScript": "",
                                                 "updateValueScript": "",
                                                 "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
+                                                "validateValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "FormBooleanField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Can Assign Tasks",
+                                                "mandatory": false,
+                                                "getValueScript": "",
+                                                "updateValueScript": "",
+                                                "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
                                                 "validateValueScript": ""
                                             }
                                         }
