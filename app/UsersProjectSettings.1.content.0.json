@@ -1,10 +1,12 @@
 {
-    "type": "WizardTitleField",
+    "type": "FormBooleanField",
     "config": {
-        "label": "Title",
-        "message": "add a title",
         "className": "",
-        "maxChars": 0,
-        "textFormatScript": ""
+        "label": "Receive Notifications",
+        "mandatory": false,
+        "getValueScript": "",
+        "updateValueScript": "",
+        "submitValueScript": "wizardDataSet.receiveNotifications=object.value;",
+        "validateValueScript": ""
     }
 }
