@@ -1,6 +1,16 @@
-if(!(item.isTeamMember||item.isTeamMember())){
-    return null;
-}
-
-
-return new ElementModule('div',{'html':'options'});
+return new OptionListModule({
+    functions:[
+        {
+            "label":"User Settings",
+            "fn":function(e){
+                e.stop();
+                application.getDisplayController().displayPopoverForm(
+    				"ProposalTemplate", 
+    				item, 
+    				application,
+    				{template:"form"}
+			    );
+            }
+        }
+    ]
+})
