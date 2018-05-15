@@ -1,4 +1,6 @@
-
+if((item.isTeamMember&&item.isTeamMember())){
+    return null;
+}
 
 
 var rolesEditList=<?php
