@@ -1735,6 +1735,10 @@ ul.user-roles:hover>li.active {
     background-color: rgba(255,255,255,0.1);
 }
 
+.user-item .inline-btn.optionlist {
+    position: relative;
+}
+
 .icon-list-view>.ui-view {
     display: inline-block;
     margin-right: 10px;
