@@ -11781,16 +11781,16 @@
                             "UsersProjectSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 308,
-                            "y": 207
+                            "x": 318,
+                            "y": 217
                         },
                         "children": [
                             "UsersProjectSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 268,
-                                    "y": 420
+                                    "x": 278,
+                                    "y": 443
                                 }
                             }
                         ],
@@ -11833,7 +11833,8 @@
                                                 "getValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.2.config.getValueScript.js",
                                                 "updateValueScript": "object.value=value",
                                                 "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
-                                                "validateValueScript": ""
+                                                "validateValueScript": "",
+                                                "formatElementScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.2.config.formatElementScript.js"
                                             }
                                         },
                                         {
@@ -11845,7 +11846,8 @@
                                                 "getValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.3.config.getValueScript.js",
                                                 "updateValueScript": "object.value=value",
                                                 "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
-                                                "validateValueScript": ""
+                                                "validateValueScript": "",
+                                                "formatElementScript": ""
                                             }
                                         },
                                         {
@@ -11857,7 +11859,8 @@
                                                 "getValueScript": "return item.canAddTasks();",
                                                 "updateValueScript": "object.value=value",
                                                 "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.4.config.submitValueScript.js",
-                                                "validateValueScript": ""
+                                                "validateValueScript": "",
+                                                "formatElementScript": ""
                                             }
                                         },
                                         {
@@ -11869,7 +11872,8 @@
                                                 "getValueScript": "return item.canAssignTasks();",
                                                 "updateValueScript": "object.value=value",
                                                 "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.5.config.submitValueScript.js",
-                                                "validateValueScript": ""
+                                                "validateValueScript": "",
+                                                "formatElementScript": ""
                                             }
                                         },
                                         {
@@ -11881,7 +11885,8 @@
                                                 "getValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.6.config.getValueScript.js",
                                                 "updateValueScript": "object.value=value",
                                                 "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.6.config.submitValueScript.js",
-                                                "validateValueScript": ""
+                                                "validateValueScript": "",
+                                                "formatElementScript": ""
                                             }
                                         }
                                     ]
