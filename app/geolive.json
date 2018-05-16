@@ -11735,16 +11735,16 @@
                             "UsersProjectSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 268,
-                            "y": 167
+                            "x": 278,
+                            "y": 177
                         },
                         "children": [
                             "UsersProjectSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 228,
-                                    "y": 368
+                                    "x": 238,
+                                    "y": 378
                                 }
                             }
                         ],
@@ -11776,7 +11776,7 @@
                                                 "className": "",
                                                 "label": "Can Add Tasks",
                                                 "mandatory": false,
-                                                "getValueScript": "",
+                                                "getValueScript": "return item.canAddTasks();",
                                                 "updateValueScript": "",
                                                 "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
                                                 "validateValueScript": ""
@@ -11788,7 +11788,7 @@
                                                 "className": "",
                                                 "label": "Can Assign Tasks",
                                                 "mandatory": false,
-                                                "getValueScript": "",
+                                                "getValueScript": "return item.canAssignTasks();",
                                                 "updateValueScript": "",
                                                 "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
                                                 "validateValueScript": ""
@@ -11800,7 +11800,7 @@
                                                 "className": "",
                                                 "label": "Can Moderate Project Team",
                                                 "mandatory": false,
-                                                "getValueScript": "",
+                                                "getValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.4.config.getValueScript.js",
                                                 "updateValueScript": "",
                                                 "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.4.config.submitValueScript.js",
                                                 "validateValueScript": ""
