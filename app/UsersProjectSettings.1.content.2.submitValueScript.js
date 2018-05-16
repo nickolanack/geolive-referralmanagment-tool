@@ -1,1 +1,1 @@
-wizardDataSet.canAddTasks=object.value
+wizardDataSet.canAddTeamMembers=object.value;

@@ -1,1 +1,1 @@
-return item.canAddTeamMembers();
+return item.receiveNotifications();

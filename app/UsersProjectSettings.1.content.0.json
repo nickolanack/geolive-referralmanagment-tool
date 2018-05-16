@@ -1,12 +1,20 @@
 {
-    "type": "FormBooleanField",
+    "type": "UIView",
     "config": {
         "className": "",
-        "label": "Receives notifications",
-        "mandatory": false,
-        "getValueScript": "return item.receiveNotifications();",
-        "updateValueScript": "object.value=value",
-        "submitValueScript": "wizardDataSet.receiveNotifications=object.value;",
-        "validateValueScript": ""
+        "viewType": "view",
+        "namedView": "singleProjectListItemDetail",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
+        "showInlineEdit": false,
+        "namedFormView": "defaultView",
+        "formOptions": "{}",
+        "showDeleteButton": false,
+        "deleteItemScript": "defaultBehaviorFn()",
+        "formatModuleScript": "",
+        "resolveItemScript": "return item.getProject();",
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false
     }
 }
