@@ -76,6 +76,13 @@
     margin-right:7px
 }
 
+label.boolean-field p {
+    display: inline-block;
+    margin-left: 10px;
+    font-style: italic;
+    color: #637594;
+}
+
 
 .field-value-module.editable:after {
     content: " edit";
