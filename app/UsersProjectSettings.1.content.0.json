@@ -5,7 +5,7 @@
         "label": "Receives notifications",
         "mandatory": false,
         "getValueScript": "return item.receiveNotifications();",
-        "updateValueScript": "",
+        "updateValueScript": "object.value=value",
         "submitValueScript": "wizardDataSet.receiveNotifications=object.value;",
         "validateValueScript": ""
     }
