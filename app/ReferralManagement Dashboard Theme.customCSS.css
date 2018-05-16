@@ -242,6 +242,17 @@ h2 {
     color: white;
 }
 
+
+.ui-view.form-embedded-item {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.ui-view.form-embedded-item .optionlist{
+    display:none;
+}
+
 .ui-view.dashboard-main {
     position: absolute;
     width: 100%;
