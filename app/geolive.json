@@ -11735,16 +11735,16 @@
                             "UsersProjectSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 248,
-                            "y": 147
+                            "x": 258,
+                            "y": 157
                         },
                         "children": [
                             "UsersProjectSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 208,
-                                    "y": 335
+                                    "x": 218,
+                                    "y": 345
                                 }
                             }
                         ],
@@ -11791,6 +11791,18 @@
                                                 "getValueScript": "",
                                                 "updateValueScript": "",
                                                 "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
+                                                "validateValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "FormBooleanField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Can Moderate Project Team",
+                                                "mandatory": false,
+                                                "getValueScript": "",
+                                                "updateValueScript": "",
+                                                "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.4.config.submitValueScript.js",
                                                 "validateValueScript": ""
                                             }
                                         }
