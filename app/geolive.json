@@ -11735,16 +11735,16 @@
                             "UsersProjectSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 298,
-                            "y": 197
+                            "x": 308,
+                            "y": 207
                         },
                         "children": [
                             "UsersProjectSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 258,
-                                    "y": 398
+                                    "x": 268,
+                                    "y": 420
                                 }
                             }
                         ],
@@ -11759,22 +11759,30 @@
                                     "modules": [
                                         "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
-                                            "type": "FormBooleanField",
+                                            "type": "UIView",
                                             "config": {
-                                                "className": "",
-                                                "label": "Receives notifications",
-                                                "mandatory": false,
-                                                "getValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.1.config.getValueScript.js",
-                                                "updateValueScript": "object.value=value",
-                                                "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
-                                                "validateValueScript": ""
+                                                "className": "form-embedded-item",
+                                                "viewType": "view",
+                                                "namedView": "singleProjectListItemDetail",
+                                                "shouldRender": true,
+                                                "namedViewScript": "return namedView",
+                                                "showInlineEdit": false,
+                                                "namedFormView": "defaultView",
+                                                "formOptions": "{}",
+                                                "showDeleteButton": false,
+                                                "deleteItemScript": "defaultBehaviorFn()",
+                                                "formatModuleScript": "",
+                                                "resolveItemScript": "return item.getProject();",
+                                                "filterModulesScript": "return list",
+                                                "itemButtonsScript": "return [];",
+                                                "insertAtTop": false
                                             }
                                         },
                                         {
                                             "type": "FormBooleanField",
                                             "config": {
                                                 "className": "",
-                                                "label": "Can add team members",
+                                                "label": "Receives notifications",
                                                 "mandatory": false,
                                                 "getValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.2.config.getValueScript.js",
                                                 "updateValueScript": "object.value=value",
@@ -11786,11 +11794,23 @@
                                             "type": "FormBooleanField",
                                             "config": {
                                                 "className": "",
+                                                "label": "Can add team members",
+                                                "mandatory": false,
+                                                "getValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.3.config.getValueScript.js",
+                                                "updateValueScript": "object.value=value",
+                                                "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
+                                                "validateValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "FormBooleanField",
+                                            "config": {
+                                                "className": "",
                                                 "label": "Can Add Tasks",
                                                 "mandatory": false,
                                                 "getValueScript": "return item.canAddTasks();",
                                                 "updateValueScript": "object.value=value",
-                                                "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
+                                                "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.4.config.submitValueScript.js",
                                                 "validateValueScript": ""
                                             }
                                         },
@@ -11802,7 +11822,7 @@
                                                 "mandatory": false,
                                                 "getValueScript": "return item.canAssignTasks();",
                                                 "updateValueScript": "object.value=value",
-                                                "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.4.config.submitValueScript.js",
+                                                "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.5.config.submitValueScript.js",
                                                 "validateValueScript": ""
                                             }
                                         },
@@ -11812,9 +11832,9 @@
                                                 "className": "",
                                                 "label": "Can Moderate Project Team",
                                                 "mandatory": false,
-                                                "getValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.5.config.getValueScript.js",
+                                                "getValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.6.config.getValueScript.js",
                                                 "updateValueScript": "object.value=value",
-                                                "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.5.config.submitValueScript.js",
+                                                "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.6.config.submitValueScript.js",
                                                 "validateValueScript": ""
                                             }
                                         }

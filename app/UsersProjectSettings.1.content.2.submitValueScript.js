@@ -1,1 +1,1 @@
-wizardDataSet.canAddTeamMembers=object.value;
+wizardDataSet.receiveNotifications=object.value;

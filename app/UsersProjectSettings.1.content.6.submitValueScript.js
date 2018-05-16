@@ -1,0 +1,1 @@
+wizardDataSet.canSetTeamMembersRoles=object.value;

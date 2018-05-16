@@ -1,9 +1,9 @@
 {
     "type": "UIView",
     "config": {
-        "className": "",
+        "className": "form-embedded-item",
         "viewType": "view",
-        "namedView": "singleProjectListItemDetail",
+        "namedView": "singleUserListItemDetail",
         "shouldRender": true,
         "namedViewScript": "return namedView",
         "showInlineEdit": false,
@@ -12,7 +12,7 @@
         "showDeleteButton": false,
         "deleteItemScript": "defaultBehaviorFn()",
         "formatModuleScript": "",
-        "resolveItemScript": "return item.getProject();",
+        "resolveItemScript": "return item",
         "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",
         "insertAtTop": false
