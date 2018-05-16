@@ -10810,12 +10810,12 @@
             "metadata": {
                 "title": "taskAttributes",
                 "_tableDiagramState": {
-                    "x": 326,
-                    "y": 286
+                    "x": 321,
+                    "y": 261
                 },
                 "_diagramState": {
-                    "x": 326,
-                    "y": 286
+                    "x": 321,
+                    "y": 261
                 },
                 "appliesTo": [
                     "task"
@@ -10917,10 +10917,56 @@
                             "limitMinValue": "",
                             "limitMaxValue": ""
                         }
+                    },
+                    {
+                        "icon": [],
+                        "fieldBooleanOptions": {
+                            "trueIcon": [],
+                            "falseIcon": [],
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false
+                        },
+                        "was": "",
+                        "title": "assignedTo",
+                        "label": "Assigned To",
+                        "description": "",
+                        "color": "rgb(undefined, undefined, undefined)",
+                        "visibility": "public",
+                        "editability": "registered",
+                        "searchability": "public",
+                        "allowMultiple": true,
+                        "fieldType": "text",
+                        "fieldTextOptions": {
+                            "textType": "input",
+                            "inputOptions": {
+                                "buildAutocomplete": false,
+                                "requireModeration": false,
+                                "limitMaxChars": 0,
+                                "limitMaxWords": 0,
+                                "allowHtml": false,
+                                "allowMedia": true,
+                                "allowLinks": true
+                            },
+                            "listOptions": {
+                                "takeSugesstions": true,
+                                "buildTree": false,
+                                "iconize": false,
+                                "colorize": false
+                            }
+                        },
+                        "fieldNumberOptions": {
+                            "precision": 0,
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
+                        }
                     }
                 ]
             },
-            "target": "taskAttributes"
+            "target": "taskAttributes",
+            "readAccess": "public",
+            "position": ""
         }
     },
     "widget.236": {
