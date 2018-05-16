@@ -11781,16 +11781,16 @@
                             "UsersProjectSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 348,
-                            "y": 247
+                            "x": 358,
+                            "y": 257
                         },
                         "children": [
                             "UsersProjectSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 308,
-                                    "y": 473
+                                    "x": 318,
+                                    "y": 483
                                 }
                             }
                         ],
@@ -11886,7 +11886,7 @@
                                                 "updateValueScript": "object.value=value",
                                                 "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.6.config.submitValueScript.js",
                                                 "validateValueScript": "",
-                                                "formatElementScript": ""
+                                                "formatElementScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.6.config.formatElementScript.js"
                                             }
                                         }
                                     ]
