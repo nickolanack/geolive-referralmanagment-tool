@@ -11735,16 +11735,16 @@
                             "UsersProjectSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 258,
-                            "y": 157
+                            "x": 268,
+                            "y": 167
                         },
                         "children": [
                             "UsersProjectSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 218,
-                                    "y": 345
+                                    "x": 228,
+                                    "y": 368
                                 }
                             }
                         ],
@@ -11764,7 +11764,7 @@
                                                 "className": "",
                                                 "label": "Can add team members",
                                                 "mandatory": false,
-                                                "getValueScript": "",
+                                                "getValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.1.config.getValueScript.js",
                                                 "updateValueScript": "",
                                                 "submitValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
                                                 "validateValueScript": ""

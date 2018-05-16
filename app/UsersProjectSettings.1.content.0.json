@@ -2,9 +2,9 @@
     "type": "FormBooleanField",
     "config": {
         "className": "",
-        "label": "Receive Notifications",
+        "label": "Receives notifications",
         "mandatory": false,
-        "getValueScript": "",
+        "getValueScript": "return item.receiveNotifications();",
         "updateValueScript": "",
         "submitValueScript": "wizardDataSet.receiveNotifications=object.value;",
         "validateValueScript": ""
