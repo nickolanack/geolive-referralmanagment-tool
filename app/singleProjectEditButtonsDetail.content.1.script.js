@@ -1,4 +1,4 @@
-
+//archive/unarchive
 
 
 
@@ -21,7 +21,10 @@ return new Element('button',{"html":item.isArchived()?"Unarchive":"Archive", "cl
                                     
                                 }else{
                                     item.archive(function(){
-                                        //controller.navigateTo("Dashboard","Main"); 
+                                        if(application.getNamedValue("currentProject")===item){
+                                            controller.navigateTo("Dashboard","Main");   
+                                        }
+                                        
                                         
                                     });
                                    
