@@ -11974,7 +11974,7 @@
         "name": "Generic Wizard",
         "instance": "WizardBuilder",
         "parameters": {
-            "target": "none",
+            "target": "shareLink",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -11982,19 +11982,19 @@
                     "y": 347
                 },
                 "children": [
-                    "widget.WizardBuilder.255.metadata.children.0.json",
+                    "shareLink.metadata.children.0.json",
                     {
                         "title": "New Empty Step",
                         "class": "AttributesTableNode",
                         "fields": [
-                            "widget.WizardBuilder.255.metadata.children.1.fields.0.json"
+                            "shareLink.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
                             "x": 221,
                             "y": 220
                         },
                         "children": [
-                            "widget.WizardBuilder.255.metadata.children.1.children.0.json",
+                            "shareLink.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
@@ -12010,7 +12010,7 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "widget.WizardBuilder.255.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        "shareLink.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
                                             "type": "WizardScriptElement",
                                             "config": {
@@ -12046,8 +12046,8 @@
             "onSaveScript": "",
             "onLoadScript": "",
             "requireTarget": true,
-            "templateName": "MapItemTemplate",
-            "widgetTitle": "",
+            "templateName": "shareLink",
+            "widgetTitle": "shareLink",
             "readAccess": "public"
         }
     }
