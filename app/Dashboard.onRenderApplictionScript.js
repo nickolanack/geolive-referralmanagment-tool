@@ -98,7 +98,7 @@ GetWidget('userSelectionForm')->display($targetInstance);
 GetWidget('selectableUserListItemDetail')->display($targetInstance);
 
 GetWidget('filesListForm')->display($targetInstance);
-
+GetWidget('shareLink')->display($targetInstance);
 
 
 GetWidget('emptyProjectOverviewDetail')->display($targetInstance);
