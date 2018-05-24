@@ -5,4 +5,7 @@
 
 
         var token="abcdefg";
-        return new ElementModule('div', {html:application.getNamedValue('projectMenuController').getUrl()+'/pt'+token});
+        return new ElementModule('p', {
+            html:application.getNamedValue('projectMenuController').getUrl()+'/pt'+token,
+            style:"color:mediumseagreen;"
+        });
