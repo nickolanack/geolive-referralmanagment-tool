@@ -288,13 +288,12 @@
         "instance": "KeenIO",
         "parameters": {
             "enabled": true,
-            "projectId": "5b07008dc9e77c00013987ec",
-            "writeKey": "XXXX-XXXX",
+            "projectId": "",
+            "writeKey": "",
             "ignoreEvents": [
                 "onManipulateMap",
                 "onDisplayView",
-                "onDisplayMap",
-                ""
+                "onDisplayMap"
             ]
         }
     },
@@ -11985,7 +11984,7 @@
             "readAccess": "public"
         }
     },
-    "widget.255": {
+    "widget.256": {
         "name": "Generic Wizard",
         "instance": "WizardBuilder",
         "parameters": {
