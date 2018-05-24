@@ -11969,5 +11969,86 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.255": {
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
+        "parameters": {
+            "target": "none",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": 54,
+                    "y": 347
+                },
+                "children": [
+                    "widget.WizardBuilder.255.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "widget.WizardBuilder.255.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 221,
+                            "y": 220
+                        },
+                        "children": [
+                            "widget.WizardBuilder.255.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 181,
+                                    "y": 386
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": []
+                                },
+                                "content": {
+                                    "modules": [
+                                        "widget.WizardBuilder.255.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "WizardScriptElement",
+                                            "config": {
+                                                "script": "",
+                                                "identifier": "customScriptElement"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": []
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "requireTarget": true,
+            "templateName": "MapItemTemplate",
+            "widgetTitle": "",
+            "readAccess": "public"
+        }
     }
 }
