@@ -283,6 +283,20 @@
         "instance": "EmbedCodeLinks",
         "parameters": {}
     },
+    "plugin.48": {
+        "name": "Keen I O",
+        "instance": "KeenIO",
+        "parameters": {
+            "enabled": true,
+            "projectId": "",
+            "writeKey": "",
+            "ignoreEvents": [
+                "onManipulateMap",
+                "onDisplayView",
+                "onDisplayMap"
+            ]
+        }
+    },
     "widget.33": {
         "name": "Attr Search Bar",
         "instance": "AttributesSearch",
