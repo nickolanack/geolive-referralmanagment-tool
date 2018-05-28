@@ -1,5 +1,1 @@
-ProjectTeam.CurrentTeam().getDevices(function(devices){
-    callback(devices.filter(function(d){
-        return d.isActivated();
-    }))
-});
+ProjectTeam.CurrentTeam().getActivatedDevices(callback)
