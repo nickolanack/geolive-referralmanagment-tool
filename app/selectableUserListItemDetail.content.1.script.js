@@ -1,3 +1,4 @@
+console.log("Item is: "+(item===project?"same":"diff"))
 var project=application.getNamedValue("currentProject");
 var setLabelAndStyle=function(btn){
     
