@@ -1,5 +1,5 @@
 
-var userCollection=application.getNamedValue("currentProject");
+var userCollection=item;//application.getNamedValue("currentProject");
 
 console.log("Item is: "+(item===userCollection?"same":"diff"))
 
