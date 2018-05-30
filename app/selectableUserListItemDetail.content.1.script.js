@@ -1,11 +1,11 @@
 
-var project=application.getNamedValue("currentProject");
+var userCollection=application.getNamedValue("currentProject");
 
-console.log("Item is: "+(item===project?"same":"diff"))
+console.log("Item is: "+(item===userCollection?"same":"diff"))
 
 var setLabelAndStyle=function(btn){
     
-    if(project.hasUser(item)){
+    if(userCollection.hasUser(item)){
          btn.innerHTML= "Remove"
          btn.addClass("error");
         
@@ -19,10 +19,10 @@ var setLabelAndStyle=function(btn){
 }
 var button = new ElementModule('button', {"class":"primary-btn", html:"Add", events:{click:function(){
     
-  if(project.hasUser(item)){
-      project.removeUser(item);
+  if(userCollection.hasUser(item)){
+      userCollection.removeUser(item);
   }else{
-      project.addUser(item);
+      userCollection.addUser(item);
   }
     
   
