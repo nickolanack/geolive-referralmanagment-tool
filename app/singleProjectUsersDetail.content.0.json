@@ -5,16 +5,24 @@
         "className": "user-item",
         "viewType": "view",
         "namedView": "singleUserListItemDetail",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
         "showInlineEdit": false,
         "namedFormView": "defaultFormView",
+        "formOptions": "{}",
         "showDeleteButton": false,
         "deleteItemScript": "",
+        "formatModuleScript": "",
+        "resolveItemScript": "return item;",
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false,
         "getItemListScript": "return item.getUsers();",
         "formatItemListScript": "return list;",
         "formatListItemModuleScript": "",
-        "formatModuleScript": "",
-        "itemButtonsScript": "return [];",
         "emptyNamedView": "emptyListView",
-        "namedViewScript": "return namedView"
+        "filterItemsScript": "return true;",
+        "sortItemsScript": "",
+        "maxItems": "-1"
     }
 }
