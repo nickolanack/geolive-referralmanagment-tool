@@ -6257,8 +6257,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -10,
-                    "y": 352
+                    "x": -130,
+                    "y": 558
                 },
                 "children": [
                     "taskForm.metadata.children.0.json",
@@ -6269,16 +6269,16 @@
                             "taskForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 143,
-                            "y": 140
+                            "x": 122,
+                            "y": 110
                         },
                         "children": [
                             "taskForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 103,
-                                    "y": 378
+                                    "x": 82,
+                                    "y": 361
                                 }
                             }
                         ],
@@ -6293,9 +6293,37 @@
                                     "modules": [
                                         "taskForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
+                                            "type": "UIListView",
+                                            "config": {
+                                                "listClassName": "",
+                                                "className": "",
+                                                "viewType": "view",
+                                                "namedView": "singleUserTeamCollectionIconsDetail",
+                                                "shouldRender": true,
+                                                "namedViewScript": "return namedView",
+                                                "showInlineEdit": false,
+                                                "namedFormView": "defaultView",
+                                                "formOptions": "{}",
+                                                "showDeleteButton": false,
+                                                "deleteItemScript": "defaultBehaviorFn()",
+                                                "formatModuleScript": "",
+                                                "resolveItemScript": "return item",
+                                                "filterModulesScript": "return list",
+                                                "itemButtonsScript": "return [];",
+                                                "insertAtTop": false,
+                                                "getItemListScript": "return item.getUsers();",
+                                                "formatItemListScript": "return list;",
+                                                "formatListItemModuleScript": "return item;",
+                                                "emptyNamedView": "emptyListView",
+                                                "filterItemsScript": "return true;",
+                                                "sortItemsScript": "",
+                                                "maxItems": "-1"
+                                            }
+                                        },
+                                        {
                                             "type": "WizardScriptElement",
                                             "config": {
-                                                "script": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.script.js",
+                                                "script": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.script.js",
                                                 "identifier": "customScriptElement"
                                             }
                                         },
@@ -6356,7 +6384,7 @@
                                                 "formatter": "date",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.getValueScript.js",
+                                                "getValueScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.getValueScript.js",
                                                 "updateValueScript": "return {\"dueDate\":value}",
                                                 "submitValueScript": "",
                                                 "validateValueScript": ""
@@ -6377,8 +6405,8 @@
                                                 "formatter": "time",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.getValueScript.js",
-                                                "updateValueScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.updateValueScript.js",
+                                                "getValueScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.getValueScript.js",
+                                                "updateValueScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.updateValueScript.js",
                                                 "submitValueScript": "",
                                                 "validateValueScript": ""
                                             }
@@ -6387,7 +6415,7 @@
                                             "type": "plugin.Attributes.WizardBooleanAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "taskForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
+                                                    "taskForm.metadata.children.1.builderMetadata.positions.content.modules.7.config.attributeFields.0.json"
                                                 ],
                                                 "presentationImagesTrueImage": [],
                                                 "presentationImagesFalseImage": [],
@@ -6416,7 +6444,7 @@
                                             "type": "plugin.Attributes.WizardDescriptionAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "taskForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
+                                                    "taskForm.metadata.children.1.builderMetadata.positions.content.modules.9.config.attributeFields.0.json"
                                                 ],
                                                 "label": "{field.label}",
                                                 "message": "add a description",
