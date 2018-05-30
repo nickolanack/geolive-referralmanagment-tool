@@ -6257,8 +6257,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -130,
-                    "y": 558
+                    "x": 35,
+                    "y": 589
                 },
                 "children": [
                     "taskForm.metadata.children.0.json",
@@ -6269,16 +6269,16 @@
                             "taskForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 132,
-                            "y": 120
+                            "x": 166,
+                            "y": 94
                         },
                         "children": [
                             "taskForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 92,
-                                    "y": 383
+                                    "x": 126,
+                                    "y": 357
                                 }
                             }
                         ],
