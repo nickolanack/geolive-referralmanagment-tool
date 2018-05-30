@@ -1,5 +1,8 @@
-console.log("Item is: "+(item===project?"same":"diff"))
+
 var project=application.getNamedValue("currentProject");
+
+console.log("Item is: "+(item===project?"same":"diff"))
+
 var setLabelAndStyle=function(btn){
     
     if(project.hasUser(item)){
