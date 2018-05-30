@@ -8144,9 +8144,9 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "singeProjectUserIconsDetail",
-            "target": "singeProjectUserIconsDetail",
-            "templateName": "singeProjectUserIconsDetail",
+            "widgetTitle": "singleUserTeamCollectionIconsDetail",
+            "target": "singleUserTeamCollectionIconsDetail",
+            "templateName": "singleUserTeamCollectionIconsDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
             "metadata": {
@@ -8156,7 +8156,7 @@
                     },
                     "content": {
                         "modules": [
-                            "singeProjectUserIconsDetail.metadata.positions.content.modules.0.json"
+                            "singleUserTeamCollectionIconsDetail.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
