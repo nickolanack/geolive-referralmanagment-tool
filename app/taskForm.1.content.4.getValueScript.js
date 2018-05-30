@@ -1,1 +1,1 @@
-return item.getDueDate().split(" ")[1]
+return item.getDueDate().split(" ")[0];

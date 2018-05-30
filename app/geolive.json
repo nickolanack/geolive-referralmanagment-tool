@@ -6269,16 +6269,16 @@
                             "taskForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 366,
-                            "y": 357
+                            "x": 143,
+                            "y": 140
                         },
                         "children": [
                             "taskForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 326,
-                                    "y": 595
+                                    "x": 103,
+                                    "y": 378
                                 }
                             }
                         ],
@@ -6292,6 +6292,13 @@
                                 "content": {
                                     "modules": [
                                         "taskForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "WizardScriptElement",
+                                            "config": {
+                                                "script": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.script.js",
+                                                "identifier": "customScriptElement"
+                                            }
+                                        },
                                         {
                                             "type": "FormTextField",
                                             "config": {
@@ -6349,7 +6356,7 @@
                                                 "formatter": "date",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.getValueScript.js",
+                                                "getValueScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.getValueScript.js",
                                                 "updateValueScript": "return {\"dueDate\":value}",
                                                 "submitValueScript": "",
                                                 "validateValueScript": ""
@@ -6370,8 +6377,8 @@
                                                 "formatter": "time",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.getValueScript.js",
-                                                "updateValueScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.updateValueScript.js",
+                                                "getValueScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.getValueScript.js",
+                                                "updateValueScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.updateValueScript.js",
                                                 "submitValueScript": "",
                                                 "validateValueScript": ""
                                             }
@@ -6380,7 +6387,7 @@
                                             "type": "plugin.Attributes.WizardBooleanAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "taskForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.attributeFields.0.json"
+                                                    "taskForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
                                                 ],
                                                 "presentationImagesTrueImage": [],
                                                 "presentationImagesFalseImage": [],
@@ -6401,14 +6408,15 @@
                                                 "getValueScript": "return item.isComplete()",
                                                 "updateValueScript": "return {\"complete\":value}",
                                                 "submitValueScript": "",
-                                                "validateValueScript": ""
+                                                "validateValueScript": "",
+                                                "formatElementScript": ""
                                             }
                                         },
                                         {
                                             "type": "plugin.Attributes.WizardDescriptionAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "taskForm.metadata.children.1.builderMetadata.positions.content.modules.7.config.attributeFields.0.json"
+                                                    "taskForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
                                                 ],
                                                 "label": "{field.label}",
                                                 "message": "add a description",
