@@ -12,7 +12,7 @@
         "showDeleteButton": false,
         "deleteItemScript": "",
         "formatModuleScript": "",
-        "resolveItemScript": "",
+        "resolveItemScript": "return item;",
         "filterModulesScript": "\nvar mods=list.content;\nmods.splice(3,1); \/\/remove 3rd module\nlist.content=mods;\nreturn list",
         "itemButtonsScript": "return [];",
         "insertAtTop": false
