@@ -10855,12 +10855,12 @@
             "metadata": {
                 "title": "taskAttributes",
                 "_tableDiagramState": {
-                    "x": 321,
-                    "y": 261
+                    "x": 322,
+                    "y": 275
                 },
                 "_diagramState": {
-                    "x": 321,
-                    "y": 261
+                    "x": 322,
+                    "y": 275
                 },
                 "appliesTo": [
                     "task"
@@ -10976,6 +10976,50 @@
                         "was": "",
                         "title": "assignedTo",
                         "label": "Assigned To",
+                        "description": "",
+                        "color": "rgb(undefined, undefined, undefined)",
+                        "visibility": "public",
+                        "editability": "registered",
+                        "searchability": "public",
+                        "allowMultiple": true,
+                        "fieldType": "text",
+                        "fieldTextOptions": {
+                            "textType": "input",
+                            "inputOptions": {
+                                "buildAutocomplete": false,
+                                "requireModeration": false,
+                                "limitMaxChars": 0,
+                                "limitMaxWords": 0,
+                                "allowHtml": false,
+                                "allowMedia": true,
+                                "allowLinks": true
+                            },
+                            "listOptions": {
+                                "takeSugesstions": true,
+                                "buildTree": false,
+                                "iconize": false,
+                                "colorize": false
+                            }
+                        },
+                        "fieldNumberOptions": {
+                            "precision": 0,
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
+                        }
+                    },
+                    {
+                        "icon": [],
+                        "fieldBooleanOptions": {
+                            "trueIcon": [],
+                            "falseIcon": [],
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false
+                        },
+                        "was": "",
+                        "title": "teamMembers",
+                        "label": "Team Members",
                         "description": "",
                         "color": "rgb(undefined, undefined, undefined)",
                         "visibility": "public",
