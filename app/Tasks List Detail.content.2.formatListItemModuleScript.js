@@ -37,7 +37,14 @@ childView.addEvent('load:once',function(){
         childView.startSpinner();
     })
     childView.addWeakEvent(child, "change", function(){
-        childView.redraw();
+        if(listModule.applyFilterToItem(child)){
+             childView.redraw();
+             return;
+        }
+        
+        //no longer passes filter
+        childView.remove();
+       
     })
     
 })
