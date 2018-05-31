@@ -1,5 +1,8 @@
 //share btn
 
+if(item.isArchived()){
+    return null;
+}
 
 
 
