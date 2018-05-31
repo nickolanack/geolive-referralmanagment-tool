@@ -22,7 +22,7 @@ var DeleteProposalQuery = new Class({
 
                                 (new DeleteProposalQuery(item.getId())).addEvent('success', function() {
                             
-                                ProjectTeam.CurrentTeam().removeProposal(item);
+                                ProjectTeam.CurrentTeam().removeProject(item);
                                 application.getNamedValue('navigationController').navigateTo("Dashboard","Main");
                                     
                                 }).execute();
