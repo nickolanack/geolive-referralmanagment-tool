@@ -28,24 +28,25 @@ childView.addEvent('load:once',function(){
             wizard.buildAndShow(modalFormViewController, {template:"form"}); 
         
         
-        
+            //These events are not necessary becuase page is reloaded on all events
+            
             // wizard.addEvent("complete",function(){
             //     childView.redraw();
             // })
     })
-    childView.addWeakEvent(child, "saving", function(){
-        childView.startSpinner();
-    })
-    childView.addWeakEvent(child, "change", function(){
-        if(listModule.applyFilterToItem(child)){
-             childView.redraw();
-             return;
-        }
+    // childView.addWeakEvent(child, "saving", function(){
+    //     childView.startSpinner();
+    // })
+    // childView.addWeakEvent(child, "change", function(){
+    //     if(listModule.applyFilterToItem(child)){
+    //          childView.redraw();
+    //          return;
+    //     }
         
-        //no longer passes filter
-        childView.remove();
+    //     //no longer passes filter
+    //     childView.remove();
        
-    })
+    // })
     
 })
 
