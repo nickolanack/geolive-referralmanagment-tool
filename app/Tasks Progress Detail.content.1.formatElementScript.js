@@ -11,7 +11,7 @@ ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
                     }
                   
                    setCounter();
-                   team.addEvent('addProposal', setCounter);
-                   team.addEvent('removeProposal', setCounter);
+                   team.addEvent('addProject', setCounter);
+                   team.addEvent('removeProject', setCounter);
                   
               });
