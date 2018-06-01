@@ -302,6 +302,11 @@ h2 {
     padding: 7px 10px;
 }
 
+
+.ui-list-view.no-sub-list-style .ui-view, .inline-list-item .ui-view {
+   border:none;
+}
+
 .project-detail .FormattedTextModule.project-description, .project-detail .inline-list-item{
     padding: 24px;
 }
