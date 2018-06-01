@@ -3,10 +3,10 @@
       
    }
    
- el.addClass('editable');
- 
- 
-el.addEvent("click",function(){
+
+var edit=el.appendChild(new Element('span'));
+edit.addClass('editable');
+edit.addEvent("click",function(){
         
         
         var formName="taskForm";
