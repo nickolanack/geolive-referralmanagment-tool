@@ -528,6 +528,18 @@ span.inline-list-item {
 }
 
 
+.collapsable-menu li {
+    display: none;
+}
+
+.collapsable-menu  li.active {
+    display: block;
+}
+
+.collapsable-menu .expand li {
+    display: block;
+}
+
 .navigation-menu li.has-new-items:after {
     background-color: crimson;
     color: black;
