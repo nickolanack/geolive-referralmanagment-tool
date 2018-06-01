@@ -8287,9 +8287,9 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "configurationArchiveDetail",
-            "target": "configurationArchiveDetail",
-            "templateName": "configurationArchiveDetail",
+            "widgetTitle": "archiveListView",
+            "target": "archiveListView",
+            "templateName": "archiveListView",
             "requireTarget": true,
             "onRenderApplictionScript": "",
             "metadata": {
@@ -8299,7 +8299,7 @@
                     },
                     "content": {
                         "modules": [
-                            "configurationArchiveDetail.metadata.positions.content.modules.0.json"
+                            "archiveListView.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
