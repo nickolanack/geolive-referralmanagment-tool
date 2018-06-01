@@ -15,7 +15,10 @@ var compute=function(team){
         anchor:UIPopover.AnchorAuto()
     });
     
-    var tasks=team.getTasks().filter(function(t){return t.isPriorityTask()&&(!t.isComplete());  });
+    var tasks=team.getTasks().filter(function(t){
+        return t.isPriorityTask();//&&(!t.isComplete()); 
+        
+    });
     var l=tasks.length;
     module.getElement().innerHTML='You have <span class="counter">'+l+'</span> priority task'+(l==1?"":"s")+'.';
     module.getElement().addEvents(ReferralManagementDashboard.taskHighlightMouseEvents(tasks));
