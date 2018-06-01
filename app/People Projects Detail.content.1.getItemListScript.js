@@ -1,1 +1,1 @@
-return ProjectTeam.CurrentTeam().getProposals();
+return ProjectTeam.CurrentTeam().getProjects();

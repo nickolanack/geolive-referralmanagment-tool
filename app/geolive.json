@@ -4795,18 +4795,25 @@
                                     "className": "",
                                     "viewType": "view",
                                     "namedView": "singleProjectPeopleListItemDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
                                     "getItemListScript": "People Projects Detail.metadata.positions.content.modules.1.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
                                     "formatListItemModuleScript": "People Projects Detail.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
-                                    "formatModuleScript": "",
-                                    "itemButtonsScript": "return [];",
                                     "emptyNamedView": "emptyListView",
-                                    "namedViewScript": "return namedView",
-                                    "filterModulesScript": "return list"
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
                                 }
                             }
                         ]
