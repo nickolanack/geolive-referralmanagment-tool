@@ -5680,23 +5680,10 @@
                                 }
                             },
                             {
-                                "type": "UIView",
+                                "type": "WizardScriptElement",
                                 "config": {
-                                    "className": "",
-                                    "viewType": "view",
-                                    "namedView": "singleUserTeamCollectionIconsDetail",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "defaultBehaviorFn()",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "return item",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false
+                                    "script": "Single Task List Item Detail.metadata.positions.content.modules.9.config.script.js",
+                                    "identifier": "customScriptElement"
                                 }
                             }
                         ]
