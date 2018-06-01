@@ -7144,6 +7144,7 @@
                                     "className": "task-item",
                                     "viewType": "view",
                                     "namedView": "singleTaskListItemDetail",
+                                    "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
@@ -7160,7 +7161,8 @@
                                     "formatListItemModuleScript": "projectPriorityTasksDetail.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "projectPriorityTasksDetail.metadata.positions.content.modules.1.config.filterItemsScript.js",
-                                    "sortItemsScript": "projectPriorityTasksDetail.metadata.positions.content.modules.1.config.sortItemsScript.js"
+                                    "sortItemsScript": "projectPriorityTasksDetail.metadata.positions.content.modules.1.config.sortItemsScript.js",
+                                    "maxItems": "-1"
                                 }
                             }
                         ]
