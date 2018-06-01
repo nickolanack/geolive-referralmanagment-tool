@@ -1120,7 +1120,7 @@ ul.item-tags li {
 }
 
 .inline-btn.filter:after {
-    content: "show all";
+    content: "showing all";
 }
 .inline-btn.filter.hasFilter:after {
     content: attr(data-filter-lbl);
