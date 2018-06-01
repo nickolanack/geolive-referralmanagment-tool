@@ -12172,5 +12172,45 @@
             "widgetTitle": "shareLink",
             "readAccess": "public"
         }
+    },
+    "widget.257": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "configurationArchiveDetail",
+            "target": "configurationArchiveDetail",
+            "templateName": "configurationArchiveDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
+            "metadata": {
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "positions": {
+                    "title": {
+                        "modules": [
+                            "configurationArchiveDetail.metadata.positions.title.modules.0.json"
+                        ]
+                    },
+                    "content": {
+                        "modules": [
+                            "configurationArchiveDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": [
+                            "configurationArchiveDetail.metadata.positions.footer.modules.0.json"
+                        ]
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                }
+            },
+            "readAccess": "public"
+        }
     }
 }
