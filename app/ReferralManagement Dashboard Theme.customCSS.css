@@ -1118,7 +1118,11 @@ ul.item-tags li {
     margin-left:5px;
     text-decoration:underline
 }
+
 .inline-btn.filter:after {
+    content: "show all";
+}
+.inline-btn.filter.hasFilter:after {
     content: attr(data-filter-lbl);
     margin-left:5px;
     text-decoration:underline
