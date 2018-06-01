@@ -84,7 +84,7 @@ label.boolean-field p {
 }
 
 
-.field-value-module.editable:after {
+.field-value-module.editable:after, .field-value-module .editable:after{
     content: " edit";
     font-style: italic;
     color: #637594;
