@@ -1,21 +1,9 @@
 {
-    "type": "FormTextField",
+    "type": "InlineHtml",
     "config": {
         "className": "",
-        "label": "Validate Your Email Address",
-        "placeholder": "your@email.address",
-        "lines": 1,
-        "maxChars": 0,
-        "mandatory": false,
-        "multiEntry": false,
-        "muliTemplate": "lines",
-        "multiMessage": "add another value",
-        "formatter": "none",
-        "onRenderTextFieldScript": "",
-        "formatValueScript": "",
-        "getValueScript": " return \"\"; ",
-        "updateValueScript": " object.value=value ",
-        "submitValueScript": "wizardDataSet.email=object.value;",
-        "validateValueScript": " return defaultValidationFn() "
+        "text": "<p>Before we can process your proposal we need to verify your email address. Please enter your email address below and press submit.<\/p>",
+        "template": "",
+        "templateVariablesScript": ""
     }
 }

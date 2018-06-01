@@ -11432,16 +11432,16 @@
                             "emailVerificationForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 203,
-                            "y": 206
+                            "x": 213,
+                            "y": 216
                         },
                         "children": [
                             "emailVerificationForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 163,
-                                    "y": 372
+                                    "x": 173,
+                                    "y": 382
                                 }
                             }
                         ],
@@ -11452,7 +11452,28 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "emailVerificationForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                        "emailVerificationForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Your Email Address",
+                                                "placeholder": "your@email.address",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return \"\"; ",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "emailVerificationForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        }
                                     ]
                                 },
                                 "footer": {
