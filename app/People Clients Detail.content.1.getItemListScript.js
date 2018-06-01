@@ -1,1 +1,4 @@
-return ProjectTeam.CurrentTeam().getClients();
+ProjectTeam.CurrentTeam(function(team){
+    
+    callback(team.getClients());
+});
