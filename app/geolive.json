@@ -12235,9 +12235,11 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "Subject",
+            "contentTemplate": "You've be assigned a task",
             "widgetTitle": "email.onAddTeamMemberToTask.subject",
-            "target": "email.onAddTeamMemberToTask.subject"
+            "target": "email.onAddTeamMemberToTask.subject",
+            "comments": "",
+            "readAccess": "public"
         }
     },
     "widget.261": {
