@@ -275,6 +275,7 @@
         "name": "Referral Management",
         "instance": "ReferralManagement",
         "parameters": {
+            "enableEmailNotifications": true,
             "customFormCss": ""
         }
     },
