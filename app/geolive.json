@@ -12210,5 +12210,79 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.258": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "email-onRemoveTeamMemberFromTask-subject.contentTemplate.html",
+            "widgetTitle": "email.onRemoveTeamMemberFromTask.subject",
+            "target": "email.onRemoveTeamMemberFromTask.subject",
+            "comments": "",
+            "readAccess": "public"
+        }
+    },
+    "widget.259": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Message Content",
+            "widgetTitle": "email.onRemoveTeamMemberFromTask.content",
+            "target": "email.onRemoveTeamMemberFromTask.content"
+        }
+    },
+    "widget.260": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Subject",
+            "widgetTitle": "email.onAddTeamMemberToTask.subject",
+            "target": "email.onAddTeamMemberToTask.subject"
+        }
+    },
+    "widget.261": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Message Content",
+            "widgetTitle": "email.onAddTeamMemberToTask.content",
+            "target": "email.onAddTeamMemberToTask.content"
+        }
+    },
+    "widget.262": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Subject",
+            "widgetTitle": "email.onRemoveTeamMemberFromProject.subject",
+            "target": "email.onRemoveTeamMemberFromProject.subject"
+        }
+    },
+    "widget.263": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Message Content",
+            "widgetTitle": "email.onRemoveTeamMemberFromProject.content",
+            "target": "email.onRemoveTeamMemberFromProject.content"
+        }
+    },
+    "widget.264": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Subject",
+            "widgetTitle": "email.onAddTeamMemberToProject.subject",
+            "target": "email.onAddTeamMemberToProject.subject"
+        }
+    },
+    "widget.265": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Message Content",
+            "widgetTitle": "email.onAddTeamMemberToProject.content",
+            "target": "email.onAddTeamMemberToProject.content"
+        }
     }
 }
