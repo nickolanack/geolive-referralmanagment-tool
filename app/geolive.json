@@ -186,11 +186,6 @@
         "instance": "Language",
         "parameters": {}
     },
-    "plugin.34": {
-        "name": "Slack Monitor",
-        "instance": "SlackMonitor",
-        "parameters": "_SlackMonitor.json"
-    },
     "plugin.35": {
         "name": "Deploy",
         "instance": "Deploy",
@@ -12071,7 +12066,9 @@
                         "modules": []
                     },
                     "content": {
-                        "modules": []
+                        "modules": [
+                            "UserChat.metadata.positions.content.modules.0.json"
+                        ]
                     },
                     "footer": {
                         "modules": []
