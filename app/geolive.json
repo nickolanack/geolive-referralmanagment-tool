@@ -1,9 +1,19 @@
 {
+    "plugin.1": {
+        "name": "Activity Monitor",
+        "instance": "ActivityMonitor",
+        "parameters": {}
+    },
     "plugin.2": {
         "name": "Attributes",
         "instance": "Attributes",
         "parameters": {},
         "attributes": "plugin.Attributes.2.attributes.json"
+    },
+    "plugin.3": {
+        "name": "Version Manager",
+        "instance": "VersionManager",
+        "parameters": {}
     },
     "plugin.5": {
         "name": "Data Types",
@@ -175,6 +185,11 @@
         "name": "Language",
         "instance": "Language",
         "parameters": {}
+    },
+    "plugin.34": {
+        "name": "Slack Monitor",
+        "instance": "SlackMonitor",
+        "parameters": "_SlackMonitor.json"
     },
     "plugin.35": {
         "name": "Deploy",
@@ -12056,9 +12071,7 @@
                         "modules": []
                     },
                     "content": {
-                        "modules": [
-                            "UserChat.metadata.positions.content.modules.0.json"
-                        ]
+                        "modules": []
                     },
                     "footer": {
                         "modules": []
