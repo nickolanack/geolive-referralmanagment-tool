@@ -16,7 +16,7 @@ list.content.push((new ModalFormButtonModule(application, listItem,{
             template:"form"
         },
         hideText:true,
-        "class":"inline-btn add primary-btn"
+        "class":"edit-btn"
     })).addEvent("show",function(){
         
     }))
