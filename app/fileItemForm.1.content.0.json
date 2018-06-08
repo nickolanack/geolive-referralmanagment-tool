@@ -1,4 +1,21 @@
 {
     "type": "FormTextField",
-    "config": {}
+    "config": {
+        "className": "",
+        "label": "Some Field",
+        "placeholder": "add value",
+        "lines": 1,
+        "maxChars": 0,
+        "mandatory": false,
+        "multiEntry": false,
+        "muliTemplate": "lines",
+        "multiMessage": "add another value",
+        "formatter": "none",
+        "onRenderTextFieldScript": "",
+        "formatValueScript": "",
+        "getValueScript": " (new AjaxControlQuery(CoreAjaxUrlRoot, 'file_metadata', {\n\t\t\t\t'file': item.getFile(),\n\t\t\t\t'show': ['iconsetDetails']\n\t\t\t})).addEvent('onSuccess', function(response) {\n\t\t\t    callback(response.metadata.name);\n\t\t\t}).execute();",
+        "updateValueScript": " object.value=value ",
+        "submitValueScript": "",
+        "validateValueScript": " return defaultValidationFn() "
+    }
 }
