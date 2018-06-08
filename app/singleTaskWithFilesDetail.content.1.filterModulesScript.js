@@ -9,7 +9,7 @@ list.content.push(new ElementModule('button',{
         alert("don't");
     }}
 }))
-list.content.push((new ModalFormButtonModule(application, task,{
+list.content.push((new ModalFormButtonModule(application, listItem,{
         label:"Edit",
         formName:"fileForm",
         formOptions:{
