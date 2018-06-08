@@ -12273,5 +12273,25 @@
             "widgetTitle": "email.onAddTeamMemberToProject.content",
             "target": "email.onAddTeamMemberToProject.content"
         }
+    },
+    "widget.266": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "{user} Updated Project",
+            "widgetTitle": "email.onProjectUpdate.subject",
+            "target": "email.onProjectUpdate.subject",
+            "comments": "",
+            "readAccess": "public"
+        }
+    },
+    "widget.267": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Message Content",
+            "widgetTitle": "email.onProjectUpdate.content",
+            "target": "email.onProjectUpdate.content"
+        }
     }
 }
