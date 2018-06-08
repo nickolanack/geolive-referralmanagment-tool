@@ -1,5 +1,6 @@
 
-list.content.push(new Element('button',{
+list.content.push(new ElementModule('button',{
+    "class":"remove-btn",
     events:{click:function(){
         if(confirm("Are you sure")){
             alert("do");
