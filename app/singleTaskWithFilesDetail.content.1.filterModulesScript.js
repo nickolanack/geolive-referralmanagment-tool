@@ -8,7 +8,7 @@ list.content.push(new ElementModule('button',{
 				'show': ['iconsetDetails']
 			})).addEvent('onSuccess', function(response) {
 			    
-			    
+			    item.removeAttachment(response.metadata);
 			   
 			}).execute();
            
