@@ -11,7 +11,7 @@ list.content.push(new ElementModule('button',{
 }))
 list.content.push((new ModalFormButtonModule(application, listItem,{
         label:"Edit",
-        formName:"fileForm",
+        formName:"fileItemForm",
         formOptions:{
             template:"form"
         },
