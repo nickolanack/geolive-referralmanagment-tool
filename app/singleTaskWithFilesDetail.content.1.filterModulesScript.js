@@ -3,15 +3,7 @@ list.content.push(new ElementModule('button',{
     "class":"remove-btn",
     events:{click:function(){
         if(confirm("Are you sure you want to remove this file")){
-            (new AjaxControlQuery(CoreAjaxUrlRoot, 'file_metadata', {
-				'file': listItem,
-				'show': ['iconsetDetails']
-			})).addEvent('onSuccess', function(response) {
-			    
-			    item.removeAttachment(response.metadata);
-			   
-			}).execute();
-           
+            item.removeAttachment(listItem);
         };
     }}
 }))
