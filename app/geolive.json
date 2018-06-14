@@ -261,6 +261,7 @@
         "instance": "ReferralManagement",
         "parameters": {
             "enableEmailNotifications": true,
+            "queueEmailDelay": "5",
             "customFormCss": ""
         }
     },
