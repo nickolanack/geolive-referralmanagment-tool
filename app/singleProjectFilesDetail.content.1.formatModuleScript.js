@@ -10,6 +10,7 @@ new AjaxFileUploader(module.getElement(),{
             module.redraw();
         },
         addElement:true,
+        addInput:true,
         dragareaClassName:'drop-letters'
     })
     
@@ -24,6 +25,7 @@ new AjaxFileUploader(module.getElement(),{
             module.redraw();
         },
         addElement:true,
+        addInput:true,
         dragareaClassName:'drop-permits'
     })
     
@@ -42,6 +44,7 @@ new AjaxFileUploader(module.getElement(),{
             module.redraw();
         },
         addElement:true,
+        addInput:true,
         dragareaClassName:'drop-agreements'
     })
     
@@ -56,5 +59,6 @@ new AjaxFileUploader(module.getElement(),{
             module.redraw();
         },
         addElement:true,
+        addInput:true,
         dragareaClassName:'drop-documents'
     })
