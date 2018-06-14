@@ -261,7 +261,7 @@
         "instance": "ReferralManagement",
         "parameters": {
             "enableEmailNotifications": true,
-            "queueEmailDelay": "5",
+            "queueEmailDelay": "30",
             "customFormCss": ""
         }
     },
@@ -277,8 +277,11 @@
             "enabled": true,
             "projectId": "5b07008dc9e77c00013987ec",
             "writeKey": "XXXX-XXXX",
-            "readKey": "XXXX-XXXX",
+            "readKey": "",
             "ignoreEvents": [
+                "onManipulateMap",
+                "onDisplayView",
+                "onDisplayMap",
                 ""
             ]
         }
@@ -8789,6 +8792,9 @@
             "target": "googlemap",
             "templateName": "googlemap",
             "loadWidgetsWithTarget": "forTheMap",
+            "mapOptions": {
+                "userHistory": true
+            },
             "readAccess": "public"
         }
     },
@@ -12387,43 +12393,6 @@
             "contentTemplate": "Message Content",
             "widgetTitle": "email.onTaskUpdate.content",
             "target": "email.onTaskUpdate.content"
-        }
-    },
-    "widget.271": {
-        "name": "Detail View",
-        "instance": "DetailView",
-        "parameters": {
-            "widgetTitle": "mapStatistics",
-            "target": "mapStatistics",
-            "templateName": "mapStatistics",
-            "requireTarget": false,
-            "onRenderApplictionScript": "",
-            "metadata": {
-                "positions": {
-                    "title": {
-                        "modules": []
-                    },
-                    "content": {
-                        "modules": [
-                            "mapStatistics.metadata.positions.content.modules.0.json"
-                        ]
-                    },
-                    "footer": {
-                        "modules": []
-                    },
-                    "menu": {
-                        "modules": []
-                    }
-                },
-                "positionList": [
-                    "title",
-                    "content",
-                    "footer",
-                    "menu"
-                ],
-                "_diagramState": []
-            },
-            "readAccess": "public"
         }
     }
 }
