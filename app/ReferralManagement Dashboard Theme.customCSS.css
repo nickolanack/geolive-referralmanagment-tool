@@ -236,27 +236,6 @@ body.dragover .file-item.droppable-hide {
     font-size: 10px;
 }
 
-.file-item .remove-btn, .file-item .edit-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: crimson;
-    height: 20px;
-    width: 20px;
-    text-align: center;
-    border-radius: 100%;
-    padding: 0;
-    margin: 0;
-    border: none;
-    cursor: pointer;
-}
-
-.file-item .edit-btn {
-    background: mediumseagreen;
-    right: 40px;
-}
-
-
 
 .small.cpanel_button {
     background-color: rgba(255,255,255,0.8);

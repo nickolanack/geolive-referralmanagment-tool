@@ -276,6 +276,7 @@
             "enabled": true,
             "projectId": "5b07008dc9e77c00013987ec",
             "writeKey": "XXXX-XXXX",
+            "readKey": "",
             "ignoreEvents": [
                 "onManipulateMap",
                 "onDisplayView",
@@ -690,11 +691,13 @@
         "name": "Flexible Height Widget",
         "instance": "FlexibleHeight",
         "parameters": {
-            "offset": 46,
-            "customScript": "",
             "widgetTitle": "Fit Screen",
-            "readAccess": "public",
-            "target": "forTheMap"
+            "target": "forTheMap",
+            "offset": 46,
+            "maxHeight": "1000",
+            "minHeight": "400",
+            "customScript": "",
+            "readAccess": "public"
         }
     },
     "widget.65": {
@@ -7997,7 +8000,7 @@
                                     "deleteItemScript": "",
                                     "formatModuleScript": "singleTaskWithFilesDetail.metadata.positions.content.modules.1.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
-                                    "filterModulesScript": "singleTaskWithFilesDetail.metadata.positions.content.modules.1.config.filterModulesScript.js",
+                                    "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "getItemListScript": "return item.getFiles();",
@@ -12056,7 +12059,9 @@
                         "modules": []
                     },
                     "content": {
-                        "modules": []
+                        "modules": [
+                            "UserChat.metadata.positions.content.modules.0.json"
+                        ]
                     },
                     "footer": {
                         "modules": []
@@ -12278,11 +12283,9 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "{user} Updated Project",
+            "contentTemplate": "Subject",
             "widgetTitle": "email.onProjectUpdate.subject",
-            "target": "email.onProjectUpdate.subject",
-            "comments": "",
-            "readAccess": "public"
+            "target": "email.onProjectUpdate.subject"
         }
     },
     "widget.267": {
@@ -12292,82 +12295,6 @@
             "contentTemplate": "Message Content",
             "widgetTitle": "email.onProjectUpdate.content",
             "target": "email.onProjectUpdate.content"
-        }
-    },
-    "widget.268": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
-        "parameters": {
-            "target": "fileItemForm",
-            "metadata": {
-                "class": "DecisionNode",
-                "_diagramState": {
-                    "x": 59,
-                    "y": 182
-                },
-                "children": [
-                    "fileItemForm.metadata.children.0.json",
-                    {
-                        "title": "New Empty Step",
-                        "class": "AttributesTableNode",
-                        "fields": [
-                            "fileItemForm.metadata.children.1.fields.0.json"
-                        ],
-                        "_diagramState": {
-                            "x": 305,
-                            "y": 168
-                        },
-                        "children": [
-                            "fileItemForm.metadata.children.1.children.0.json",
-                            {
-                                "class": "InsertNode",
-                                "_diagramState": {
-                                    "x": 265,
-                                    "y": 334
-                                }
-                            }
-                        ],
-                        "builderMetadata": {
-                            "positions": {
-                                "title": {
-                                    "modules": []
-                                },
-                                "content": {
-                                    "modules": [
-                                        "fileItemForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
-                                    ]
-                                },
-                                "footer": {
-                                    "modules": [
-                                        "fileItemForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
-                                    ]
-                                },
-                                "menu": {
-                                    "modules": []
-                                }
-                            },
-                            "positionList": [
-                                "title",
-                                "content",
-                                "footer",
-                                "menu"
-                            ],
-                            "_diagramState": {
-                                "minimized": false
-                            }
-                        }
-                    }
-                ]
-            },
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
-            "requireTarget": true,
-            "templateName": "fileItemForm",
-            "widgetTitle": "fileItemForm",
-            "readAccess": "public"
         }
     }
 }
