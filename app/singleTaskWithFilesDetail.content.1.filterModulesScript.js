@@ -1,22 +1,6 @@
 
-list.content.push(new ElementModule('button',{
-    "class":"remove-btn",
-    events:{click:function(){
-        if(confirm("Are you sure you want to remove this file")){
-            item.removeAttachment(listItem);
-        };
-    }}
-}))
-list.content.push((new ModalFormButtonModule(application, new MockDataTypeItem({file:listItem}),{
-        label:"Edit",
-        formName:"fileItemForm",
-        formOptions:{
-            template:"form"
-        },
-        hideText:true,
-        "class":"edit-btn"
-    })).addEvent("show",function(){
-        
-    }))
+list.content=list.content.concat(ReferralManagementDashboard.fileEditButtons(item, application, listItem))
+
+
 
 return list
