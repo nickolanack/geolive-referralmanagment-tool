@@ -8,5 +8,6 @@ new AjaxFileUploader(module.getElement(),{
             module.redraw();
         },
         addElement:true,
+        addInput:true,
         dragareaClassName:'drop-spatial'
     })
