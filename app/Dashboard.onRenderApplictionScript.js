@@ -104,6 +104,10 @@ GetWidget('shareLink')->display($targetInstance);
 GetWidget('emptyProjectOverviewDetail')->display($targetInstance);
 GetWidget('emptyTasksList')->display($targetInstance);
 
+GetWidget('fileItemForm')->display($targetInstance);
+
+
+
 
 
 

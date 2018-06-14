@@ -8000,7 +8000,7 @@
                                     "deleteItemScript": "",
                                     "formatModuleScript": "singleTaskWithFilesDetail.metadata.positions.content.modules.1.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
-                                    "filterModulesScript": "return list",
+                                    "filterModulesScript": "singleTaskWithFilesDetail.metadata.positions.content.modules.1.config.filterModulesScript.js",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "getItemListScript": "return item.getFiles();",
@@ -12059,9 +12059,7 @@
                         "modules": []
                     },
                     "content": {
-                        "modules": [
-                            "UserChat.metadata.positions.content.modules.0.json"
-                        ]
+                        "modules": []
                     },
                     "footer": {
                         "modules": []
@@ -12283,9 +12281,11 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "Subject",
+            "contentTemplate": "{user} Updated Project",
             "widgetTitle": "email.onProjectUpdate.subject",
-            "target": "email.onProjectUpdate.subject"
+            "target": "email.onProjectUpdate.subject",
+            "comments": "",
+            "readAccess": "public"
         }
     },
     "widget.267": {
@@ -12295,6 +12295,140 @@
             "contentTemplate": "Message Content",
             "widgetTitle": "email.onProjectUpdate.content",
             "target": "email.onProjectUpdate.content"
+        }
+    },
+    "widget.268": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "target": "fileItemForm",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": 59,
+                    "y": 182
+                },
+                "children": [
+                    "fileItemForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "fileItemForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 305,
+                            "y": 168
+                        },
+                        "children": [
+                            "fileItemForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 265,
+                                    "y": 334
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": []
+                                },
+                                "content": {
+                                    "modules": [
+                                        "fileItemForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "fileItemForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "requireTarget": true,
+            "templateName": "fileItemForm",
+            "widgetTitle": "fileItemForm",
+            "readAccess": "public"
+        }
+    },
+    "widget.269": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Subject",
+            "widgetTitle": "email.onTaskUpdate.subject",
+            "target": "email.onTaskUpdate.subject"
+        }
+    },
+    "widget.270": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Message Content",
+            "widgetTitle": "email.onTaskUpdate.content",
+            "target": "email.onTaskUpdate.content"
+        }
+    },
+    "widget.271": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "mapStatistics",
+            "target": "mapStatistics",
+            "templateName": "mapStatistics",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
+            "metadata": {
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "positions": {
+                    "title": {
+                        "modules": [
+                            "mapStatistics.metadata.positions.title.modules.0.json"
+                        ]
+                    },
+                    "content": {
+                        "modules": [
+                            "mapStatistics.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": [
+                            "mapStatistics.metadata.positions.footer.modules.0.json"
+                        ]
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                }
+            },
+            "readAccess": "public"
         }
     }
 }
