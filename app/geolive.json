@@ -7843,16 +7843,16 @@
                             "filesListForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 228,
-                            "y": 360
+                            "x": 238,
+                            "y": 370
                         },
                         "children": [
                             "filesListForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 188,
-                                    "y": 526
+                                    "x": 198,
+                                    "y": 536
                                 }
                             }
                         ],
@@ -7882,7 +7882,7 @@
                                                 "deleteItemScript": "",
                                                 "formatModuleScript": "filesListForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.formatModuleScript.js",
                                                 "resolveItemScript": "return item",
-                                                "filterModulesScript": "return list",
+                                                "filterModulesScript": "filesListForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.filterModulesScript.js",
                                                 "itemButtonsScript": "return [];",
                                                 "insertAtTop": false,
                                                 "getItemListScript": "return item.getFiles();",
