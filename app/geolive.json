@@ -12391,9 +12391,11 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "Message Content",
+            "contentTemplate": "email-onTaskUpdate-content.contentTemplate.html",
             "widgetTitle": "email.onTaskUpdate.content",
-            "target": "email.onTaskUpdate.content"
+            "target": "email.onTaskUpdate.content",
+            "comments": "",
+            "readAccess": "public"
         }
     },
     "widget.271": {
