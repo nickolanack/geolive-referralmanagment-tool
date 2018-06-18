@@ -12295,9 +12295,11 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "Message Content",
+            "contentTemplate": "email-onProjectUpdate-content.contentTemplate.html",
             "widgetTitle": "email.onProjectUpdate.content",
-            "target": "email.onProjectUpdate.content"
+            "target": "email.onProjectUpdate.content",
+            "comments": "",
+            "readAccess": "public"
         }
     },
     "widget.268": {
