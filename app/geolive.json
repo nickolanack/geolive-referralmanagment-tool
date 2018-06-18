@@ -12277,9 +12277,11 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "Message Content",
+            "contentTemplate": "email-onAddTeamMemberToProject-content.contentTemplate.html",
             "widgetTitle": "email.onAddTeamMemberToProject.content",
-            "target": "email.onAddTeamMemberToProject.content"
+            "target": "email.onAddTeamMemberToProject.content",
+            "comments": "",
+            "readAccess": "public"
         }
     },
     "widget.266": {
