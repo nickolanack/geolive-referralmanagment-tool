@@ -12255,9 +12255,11 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "Message Content",
+            "contentTemplate": "email-onRemoveTeamMemberFromProject-content.contentTemplate.html",
             "widgetTitle": "email.onRemoveTeamMemberFromProject.content",
-            "target": "email.onRemoveTeamMemberFromProject.content"
+            "target": "email.onRemoveTeamMemberFromProject.content",
+            "comments": "",
+            "readAccess": "public"
         }
     },
     "widget.264": {
