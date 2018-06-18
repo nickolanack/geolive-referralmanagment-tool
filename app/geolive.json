@@ -12380,9 +12380,11 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "Subject",
+            "contentTemplate": "email-onTaskUpdate-subject.contentTemplate.html",
             "widgetTitle": "email.onTaskUpdate.subject",
-            "target": "email.onTaskUpdate.subject"
+            "target": "email.onTaskUpdate.subject",
+            "comments": "",
+            "readAccess": "public"
         }
     },
     "widget.270": {
