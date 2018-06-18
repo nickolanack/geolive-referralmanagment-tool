@@ -12284,7 +12284,7 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "{user} Updated Project",
+            "contentTemplate": "email-onProjectUpdate-subject.contentTemplate.html",
             "widgetTitle": "email.onProjectUpdate.subject",
             "target": "email.onProjectUpdate.subject",
             "comments": "",
