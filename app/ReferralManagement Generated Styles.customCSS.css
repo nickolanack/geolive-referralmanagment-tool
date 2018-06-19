@@ -1,3 +1,17 @@
+.file-item .edit-btn {
+    background-image: url("<?php echo UrlFrom("{assets}/Control Panel Icons/close.png"); ?>");
+}
+
+
+.file-item .remove-btn {
+    background-image: url("<?php echo UrlFrom("{assets}/Control Panel Icons/close.png"); ?>");
+}
+
+
+
+
+
+
 <?php 
 $config=GetWidget('dashboardConfig');
 $menuIconDefault=$config->getParameter('defaultMenuIcon')[0];
