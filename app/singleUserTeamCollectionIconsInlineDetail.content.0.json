@@ -1,13 +1,7 @@
 {
-    "type": "DefaultDescription",
+    "type": "WizardScriptElement",
     "config": {
-        "className": "",
-        "imageWidth": 300,
-        "imageHeight": 240,
-        "multiImageWidth": 100,
-        "multiImageHeight": 75,
-        "autoArrange": true,
-        "oneLine": true,
-        "maxChars": 0
+        "script": "\n\nvar label=\"Project Team\";\nvar subText=\"working on this project\";\n\nif(item.getType()===\"Tasks.task\"){\n    label=\"Assigned Users\";\n    subText=\"assigned to this task\";\n    \n}\n\nreturn new UIListViewModule(application, item ,{\n                getItemList:function(){\n                    return item.getUsers();\n                },\n                formatItemList:function(l){return l;},\n                detailViewOptions:{\n                    namedView:\"singleUserListItemDetail\",\n                    filterModules:function(list, child){ \n                        var module= list.content[0];\n                        module.addEvent(\"load:once\",function(){\n                            setTimeout(function(){\n                          new UIPopover(module.getElement(),\n                              {\n                                  title:child.getName(),\n                                  anchor:UIPopover.AnchorAuto()\n                              }); \n                            }, 200);\n\n                        });\n                        \n                        \n                        return {\"content\":[module]}; \/*only return the icon*\/ }\n                  },\n\t            \tclassName: \"icon-list-view \",\n                    emptyNamedView:\"emptyListView\"\n\t            });",
+        "identifier": "customScriptElement"
     }
 }
