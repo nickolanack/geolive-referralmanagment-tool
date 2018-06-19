@@ -5630,19 +5630,32 @@
                                 }
                             },
                             {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "inline-icon-list-view",
+                                    "viewType": "view",
+                                    "namedView": "singleUserTeamCollectionIconsInlineDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false
+                                }
+                            },
+                            {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "Single Task List Item Detail.metadata.positions.content.modules.4.config.fieldValueScript.js",
-                                    "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.4.config.formatElementScript.js"
-                                }
-                            },
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "script": "Single Task List Item Detail.metadata.positions.content.modules.5.config.script.js",
-                                    "identifier": "customScriptElement"
+                                    "fieldValueScript": "Single Task List Item Detail.metadata.positions.content.modules.5.config.fieldValueScript.js",
+                                    "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.5.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -5667,23 +5680,10 @@
                                 }
                             },
                             {
-                                "type": "UIView",
+                                "type": "WizardScriptElement",
                                 "config": {
-                                    "className": "inline-icon-list-view",
-                                    "viewType": "view",
-                                    "namedView": "singleUserTeamCollectionIconsInlineDetail",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultView",
-                                    "formOptions": "\"{}\"",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "defaultBehaviorFn()",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "return item",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false
+                                    "script": "Single Task List Item Detail.metadata.positions.content.modules.9.config.script.js",
+                                    "identifier": "customScriptElement"
                                 }
                             }
                         ]
