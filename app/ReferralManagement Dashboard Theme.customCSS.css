@@ -1820,6 +1820,10 @@ ul.user-roles:hover>li.active {
 }
 
 
+.task-item .inline-icon-list-view {
+    display: inline-block;
+}
+
 ul.inline-filter {
     display: block;
     width: 100%;
