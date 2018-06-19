@@ -1,7 +1,7 @@
 {
     "type": "WizardScriptElement",
     "config": {
-        "script": "\n\n\n\nreturn new UIListViewModule(application, item ,{\n                getItemList:function(){\n                    return item.getUsers();\n                },\n                formatItemList:function(l){return l;},\n                detailViewOptions:{\n                    namedView:\"singleUserSmallIconDetail\",\n\t            \tclassName: \"icon-list-view \",\n                    emptyNamedView:\"emptyListView\"\n\t            }});",
+        "script": "\n\n\n\nreturn new UIListViewModule(application, item ,{\n                getItemList:function(callback){\n                    callback(item.getUsers());\n                },\n                formatItemList:function(l){return l;},\n                detailViewOptions:{\n                    namedView:\"singleUserSmallIconDetail\",\n\t            \tclassName: \"icon-list-view \",\n                    emptyNamedView:\"emptyListView\"\n\t            }});",
         "identifier": "customScriptElement"
     }
 }
