@@ -1830,6 +1830,12 @@ ul.user-roles:hover>li.active {
     overflow: hidden;
 }
 
+.inline-icon-list-view .user-profile-icon, div.user-profile-icon.content {
+    height: 20px;
+    width: 20px;
+    margin: 0 5px;
+}
+
 ul.inline-filter {
     display: block;
     width: 100%;
