@@ -5607,29 +5607,6 @@
                         "modules": [
                             "Single Task List Item Detail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return item.getName();",
-                                    "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.1.config.formatElementScript.js"
-                                }
-                            },
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "script": "Single Task List Item Detail.metadata.positions.content.modules.2.config.script.js",
-                                    "identifier": "customScriptElement"
-                                }
-                            },
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "script": "Single Task List Item Detail.metadata.positions.content.modules.3.config.script.js",
-                                    "identifier": "customScriptElement"
-                                }
-                            },
-                            {
                                 "type": "UIView",
                                 "config": {
                                     "className": "inline-icon-list-view",
@@ -5647,6 +5624,29 @@
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return item.getName();",
+                                    "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.2.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "script": "Single Task List Item Detail.metadata.positions.content.modules.3.config.script.js",
+                                    "identifier": "customScriptElement"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "script": "Single Task List Item Detail.metadata.positions.content.modules.4.config.script.js",
+                                    "identifier": "customScriptElement"
                                 }
                             },
                             {
