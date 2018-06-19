@@ -106,6 +106,8 @@ GetWidget('emptyTasksList')->display($targetInstance);
 
 GetWidget('fileItemForm')->display($targetInstance);
 
+GetWidget('singleUserTeamCollectionIconsInlineDetail')->display($targetInstance);
+
 
 
 
