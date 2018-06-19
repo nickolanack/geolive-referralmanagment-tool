@@ -249,6 +249,9 @@ body.dragover .file-item.droppable-hide {
     margin: 0;
     border: none;
     cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 75%;
 }
 
 .file-item .edit-btn {
