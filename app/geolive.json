@@ -12577,16 +12577,16 @@
                             "landsDepartmentMemberForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 138,
-                            "y": 270
+                            "x": 148,
+                            "y": 280
                         },
                         "children": [
                             "landsDepartmentMemberForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 98,
-                                    "y": 436
+                                    "x": 108,
+                                    "y": 446
                                 }
                             }
                         ],
@@ -12597,7 +12597,20 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "landsDepartmentMemberForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                        "landsDepartmentMemberForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "FormBooleanField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Dark Mode",
+                                                "mandatory": false,
+                                                "getValueScript": "return true;",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": "",
+                                                "formatElementScript": ""
+                                            }
+                                        }
                                     ]
                                 },
                                 "footer": {
