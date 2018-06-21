@@ -468,22 +468,22 @@ span.inline-list-item {
     padding: 4px;
 }
 .ui-view.inset-shading>div {
-    background-color: #f0f0f0;
+    background-color: #333746;
     display: inline-block;
     width: 100%;
     height: 100%;
-
+    border-radius: 4px;
 }
 
 .ui-view.inset-menu-shading {
     display: block;
 }
 .ui-view.inset-menu-shading>div {
-    background-color: #333746;
+    background-color: #f0f0f0;
     display: inline-block;
     width: 100%;
     height: 100%;
-    border-radius: 4px;
+   
 }
 
 .dark .ui-view.inset-menu-shading>div{
