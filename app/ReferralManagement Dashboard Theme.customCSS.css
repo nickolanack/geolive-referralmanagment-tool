@@ -1160,7 +1160,7 @@ ul.item-tags li {
 
 .project-detail span.progress {
     display: inline-block;
-    width: 33%
+    width: 33%;
     width: 33.33%; /*calc( 100% / 3);*/
     padding: 10px;
     box-sizing: border-box;
