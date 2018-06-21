@@ -653,6 +653,9 @@ span.inline-list-item {
 }
 
 .navigation-menu button:hover, .inline-navigation-menu button:hover {
+    color: black;
+}
+.dark .navigation-menu button:hover, .dark .inline-navigation-menu button:hover {
     color: white;
 }
 
