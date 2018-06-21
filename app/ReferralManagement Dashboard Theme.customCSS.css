@@ -1163,8 +1163,11 @@ ul.item-tags li {
     width: 33%; /*calc( 100% / 3);*/
     padding: 10px;
     box-sizing: border-box;
-    background-color: #2E303A;
+    background-color: white;
     margin: 20px 0;
+}
+.dark .project-detail span.progress{
+     background-color: #2E303A;
 }
 
 .project-detail .percent-complete {
