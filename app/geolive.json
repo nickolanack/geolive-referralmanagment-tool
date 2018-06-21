@@ -7211,16 +7211,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 214,
-                            "y": 77
+                            "x": 224,
+                            "y": 87
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 174,
-                                    "y": 303
+                                    "x": 184,
+                                    "y": 325
                                 }
                             }
                         ],
@@ -7356,7 +7356,7 @@
                                             "config": {
                                                 "className": "",
                                                 "viewType": "form",
-                                                "namedView": "landsDepartmentForm",
+                                                "namedView": "landsDepartmentMemberForm",
                                                 "shouldRender": true,
                                                 "namedViewScript": "return namedView",
                                                 "showInlineEdit": false,
