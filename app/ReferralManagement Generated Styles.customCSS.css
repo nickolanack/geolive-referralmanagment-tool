@@ -194,7 +194,7 @@ foreach(['image', 'document', 'layer', 'audio', 'video'] as $mime){
             $mediaIcon=$mediaIcon[0];
         }
     ?>
-        span.<?php echo $mime?>.noIcon {
+        .upload-btns span.<?php echo $mime?>.noIcon {
             background-image:url("<?php echo UrlFrom($mediaIcon); ?>?tint=<?php echo $config->getParameter("uploadTint", "rgb(180,180,180)"); ?>");
         }
     <?php
