@@ -365,6 +365,14 @@ h2 {
     background-color: rgba(106, 233, 191, 0.1);
 }
 
+.project-type-missing-tasks-hint {
+    float: right;
+    color: #c6af4f;
+    width: 200px;
+    font-size: 12px;
+    font-style: italic;
+}
+
 
 .task-discussion span.field-label {
     font-size: 0;
