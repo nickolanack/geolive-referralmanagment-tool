@@ -5639,7 +5639,12 @@
                             },
                             {
                                 "type": "FieldValue",
-                                "config": []
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Comments\";",
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": "el.addClass(\"discussion\");"
+                                }
                             },
                             {
                                 "type": "WizardScriptElement",

@@ -5,7 +5,7 @@
    
    
    if(item.getDescription()&&item.getDescription()!==""){
-     el.addClass('width-description');
+     el.addClass('with-description');
    }
 
 var edit=el.appendChild(new Element('span'));
