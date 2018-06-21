@@ -1842,7 +1842,7 @@ ul.user-roles:hover>li.active {
     vertical-align: middle;
     border:none;
 }
-.ui-list-view .ui-view:first-child{
+.ui-view.inline-icon-list-view:first-child{
     border:none;
 }
 
