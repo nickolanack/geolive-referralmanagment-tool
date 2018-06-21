@@ -1829,10 +1829,10 @@ ul.user-roles:hover>li.active {
     max-height: 20px;
     overflow: hidden;
     vertical-align: middle;
-    border-none;
+    border:none;
 }
 .ui-list-view .ui-view:first-child{
-    border-none;
+    border:none;
 }
 
 .inline-icon-list-view div.user-profile-icon.content {
