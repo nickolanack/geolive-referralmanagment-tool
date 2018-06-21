@@ -108,6 +108,8 @@ GetWidget('fileItemForm')->display($targetInstance);
 
 GetWidget('singleUserSmallIconDetail')->display($targetInstance);
 
+GetWidget('landsDepartmentMemberForm')->display($targetInstance);
+
 
 
 
