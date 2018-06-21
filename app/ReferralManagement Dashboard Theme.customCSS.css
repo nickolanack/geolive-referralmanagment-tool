@@ -291,7 +291,7 @@ h2 {
     top: 0;
     left: 0;
     background-color: white;
-    color: white;
+    color:black;
     font-size: 16px;
     line-height: 22px;
     font-weight: 100;
@@ -301,6 +301,7 @@ h2 {
 }
 .ui-view.dashboard-main.dark {
     background-color: #2E303A;
+    color: white;
 }
 
 .ui-list-view.ui-view>.ui-view {
