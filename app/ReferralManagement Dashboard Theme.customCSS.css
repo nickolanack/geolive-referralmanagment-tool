@@ -290,7 +290,7 @@ h2 {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: #2E303A;
+    background-color: white;
     color: white;
     font-size: 16px;
     line-height: 22px;
@@ -298,6 +298,9 @@ h2 {
     
     overflow: hidden;
     overflow-y: auto;
+}
+.ui-view.dashboard-main.dark {
+    background-color: #2E303A;
 }
 
 .ui-list-view.ui-view>.ui-view {
