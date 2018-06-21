@@ -612,9 +612,13 @@ span.inline-list-item {
 }
 
 .navigation-menu label {
-    color: white;
+
     text-transform: uppercase;
     font-size: 1.1em;
+}
+
+.dark .navigation-menu label{
+     color: white;
 }
 
 .navigation-menu li:before {
