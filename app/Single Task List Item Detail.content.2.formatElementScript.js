@@ -3,6 +3,10 @@
       
    }
    
+   
+   if(item.getDescription()&&item.getDescription()!==""){
+     el.addClass('width-description');
+   }
 
 var edit=el.appendChild(new Element('span'));
 edit.addClass('editable');

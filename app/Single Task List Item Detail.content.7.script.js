@@ -1,34 +1,34 @@
- if(!item.hasAttachments()){
-    return null;
-     
- }
-     var mod=new ElementModule('div', {"class":"attachment-indicator", 
-        events:{click:function(e){
-            e.stop();
-            (new UIModalFormButton(
-                mod.getElement(), 
-                application, item, 
-                {
-                    formName:"filesListForm", 
-                    formOptions:{template:"form"}
-                    
-                }
-            )).show();
-        }}
+return function(viewer, element, parentModule){
     
-    });
     
-   var mods= [mod];
    
-    mods=mods.concat(item.getFiles().map(function(f){
-        return new ImageModule({
-                className:"attachment-thumb",
-                textQuery: function(callback) {
-                    callback(f);
-                },
-                width: 16,
-                height: 16
-            })
-    }))
+    element.addClass(item.isComplete()?"complete":"not-complete");
+ 
+    
+    
+    var el=element.appendChild(new Element('div', {"class":"completion-indicator", 
+    events:{click:function(e){
+        e.stop();
+        
    
-   return new ModuleArray(mods,{"async":true});
+       item.setComplete(!item.isComplete());
+       item.save();
+       
+       if(item.isComplete()){
+           element.removeClass('not-complete');
+           element.addClass('complete');
+       }else{
+           element.addClass('not-complete');
+           element.removeClass('complete');
+          
+       }
+       
+ 
+        
+        
+        
+    }}}));
+    
+    
+    
+}

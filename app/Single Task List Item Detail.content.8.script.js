@@ -1,56 +1,34 @@
-var tags=item.getTags();
-if(tags.length){
-    
-    var classMap=function(type){
-        if(type=="ReferralManagement.proposal"){
-            return "menu-main-projects";
-        }
-        
-        if(type=="ReferralManagement.client"){
-            return "menu-people-clients";
-        }
-        
-        return "";
-    }
-    
-    var ul=new ElementModule('ul', {"class":"item-tags"});
-    tags.forEach(function(t){
-        ul.appendChild(new Element('li',{html:t.getName(), 
-            "class":classMap(t.getType()),
-            events:{click:function(e){
-                e.stop();
-                
-                
-                
-                
-                
-                
-                //var application=childView.getApplication()
-        var controller=application.getNamedValue('navigationController');
-        var view=controller.getCurrentView();
-        console.log(view);
-        
-            
-        
-       
-                
-                
-                
-                
-                
-                if(t.getType()==='ReferralManagement.proposal'){
-                    application.setNamedValue("currentProject", t);
-                    controller.navigateTo("Projects", "Main");
+ if(!item.hasAttachments()){
+    return null;
+     
+ }
+     var mod=new ElementModule('div', {"class":"attachment-indicator", 
+        events:{click:function(e){
+            e.stop();
+            (new UIModalFormButton(
+                mod.getElement(), 
+                application, item, 
+                {
+                    formName:"filesListForm", 
+                    formOptions:{template:"form"}
+                    
                 }
-                if(t.getType()==='ReferralManagement.client'){
-                    application.setNamedValue("currentClient", t);
-                    controller.navigateTo("Clients", "People");
-                }
-            }}
-            
-        }));
+            )).show();
+        }}
+    
     });
-    return ul;
-}
-
-return null;
+    
+   var mods= [mod];
+   
+    mods=mods.concat(item.getFiles().map(function(f){
+        return new ImageModule({
+                className:"attachment-thumb",
+                textQuery: function(callback) {
+                    callback(f);
+                },
+                width: 16,
+                height: 16
+            })
+    }))
+   
+   return new ModuleArray(mods,{"async":true});

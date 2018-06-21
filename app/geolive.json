@@ -5638,11 +5638,8 @@
                                 }
                             },
                             {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "script": "Single Task List Item Detail.metadata.positions.content.modules.3.config.script.js",
-                                    "identifier": "customScriptElement"
-                                }
+                                "type": "FieldValue",
+                                "config": []
                             },
                             {
                                 "type": "WizardScriptElement",
@@ -5652,19 +5649,19 @@
                                 }
                             },
                             {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "script": "Single Task List Item Detail.metadata.positions.content.modules.5.config.script.js",
+                                    "identifier": "customScriptElement"
+                                }
+                            },
+                            {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "Single Task List Item Detail.metadata.positions.content.modules.5.config.fieldValueScript.js",
-                                    "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.5.config.formatElementScript.js"
-                                }
-                            },
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "script": "Single Task List Item Detail.metadata.positions.content.modules.6.config.script.js",
-                                    "identifier": "customScriptElement"
+                                    "fieldValueScript": "Single Task List Item Detail.metadata.positions.content.modules.6.config.fieldValueScript.js",
+                                    "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.6.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -5685,6 +5682,13 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "script": "Single Task List Item Detail.metadata.positions.content.modules.9.config.script.js",
+                                    "identifier": "customScriptElement"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "script": "Single Task List Item Detail.metadata.positions.content.modules.10.config.script.js",
                                     "identifier": "customScriptElement"
                                 }
                             }
