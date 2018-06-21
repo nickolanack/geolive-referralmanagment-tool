@@ -486,6 +486,10 @@ span.inline-list-item {
     border-radius: 4px;
 }
 
+.dark .ui-view.inset-menu-shading>div{
+    background-color: #333746;
+}
+
 
 .ui-view.w-30 {
     width: calc( 33.3% - 10px);
