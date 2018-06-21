@@ -366,6 +366,10 @@ h2 {
 }
 
 
+.task-discussion span.field-label {
+    font-size: 0;
+}
+
 .task-item .task-icon {
     display: inline-block;
     float: left;
