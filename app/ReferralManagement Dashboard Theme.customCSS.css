@@ -1828,6 +1828,11 @@ ul.user-roles:hover>li.active {
     padding: 0;
     max-height: 20px;
     overflow: hidden;
+    vertical-align: middle;
+    border-none;
+}
+.ui-list-view .ui-view:first-child{
+    border-none;
 }
 
 .inline-icon-list-view div.user-profile-icon.content {
