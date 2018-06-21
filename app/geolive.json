@@ -717,16 +717,16 @@
                             "widget.ProposalWizardBuilder.65.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 25,
-                            "y": 313
+                            "x": 35,
+                            "y": 323
                         },
                         "children": [
                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": -15,
-                                    "y": 551
+                                    "x": -5,
+                                    "y": 561
                                 }
                             },
                             {
@@ -736,16 +736,16 @@
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 517,
-                                    "y": 300
+                                    "x": 527,
+                                    "y": 310
                                 },
                                 "children": [
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 477,
-                                            "y": 513
+                                            "x": 487,
+                                            "y": 523
                                         }
                                     },
                                     {
@@ -755,16 +755,16 @@
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 902,
-                                            "y": 317
+                                            "x": 912,
+                                            "y": 327
                                         },
                                         "children": [
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 862,
-                                                    "y": 483
+                                                    "x": 872,
+                                                    "y": 493
                                                 }
                                             }
                                         ],
@@ -995,7 +995,6 @@
                                                 "attributeFields": [
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
                                                 ],
-                                                "tags": "[\"Forestry\", \"Mining\", \"Energy\", \"Roads\"]",
                                                 "className": "",
                                                 "showLabel": false,
                                                 "showAddWord": false,
@@ -1005,6 +1004,7 @@
                                                 "hoverColor": "rgb(106, 233, 191)",
                                                 "selectedColor": "rgb(106, 124, 233)",
                                                 "shuffleTags": false,
+                                                "tags": "[\"Forestry\", \"Mining\", \"Energy\", \"Roads\"]",
                                                 "getItemTagsScript": "return defaultTags;"
                                             }
                                         },
@@ -1102,7 +1102,6 @@
                                                 "attributeFields": [
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.7.config.attributeFields.0.json"
                                                 ],
-                                                "tags": "[\"low\", \"medium\", \"high\"]",
                                                 "className": "",
                                                 "showLabel": false,
                                                 "showAddWord": false,
@@ -1112,6 +1111,7 @@
                                                 "hoverColor": "rgb(106, 233, 191)",
                                                 "selectedColor": "rgb(106, 124, 233)",
                                                 "shuffleTags": false,
+                                                "tags": "[\"low\", \"medium\", \"high\"]",
                                                 "getItemTagsScript": "return defaultTags;"
                                             }
                                         }
