@@ -1777,13 +1777,13 @@ button.inline-btn.add:hover{
     display: none;
 }
 
-.uitext-container.mandatory-field>.text-input {
+.uitext-container.mandatory-field>.text-input.invalid {
     border-color: rgb(237, 200, 76);
 }
 
 .uitext-container.mandatory-field:before {
     content: "* required";
-    color: rgb(237, 200, 76);
+    color: mediumseagreen;
     float: right;
     font-size: 12px;
     font-style: italic;
