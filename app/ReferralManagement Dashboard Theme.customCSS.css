@@ -1778,11 +1778,18 @@ button.inline-btn.add:hover{
 }
 
 .mandatory-field>.text-input {
-    border-color: mediumseagreen;
+    border-color: rgb(237, 200, 76);
 }
 
-.mandatory-field:after {
-
+.mandatory-field:before {
+    content: "* required";
+    color: rgb(237, 200, 76);
+    float: right;
+    font-size: 12px;
+    font-style: italic;
+    position: relative;
+    top: 5px;
+    right: 5px;
 }
 
 ul.user-roles>li {
