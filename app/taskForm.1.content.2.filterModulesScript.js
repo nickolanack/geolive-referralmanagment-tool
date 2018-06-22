@@ -1,5 +1,5 @@
 
-list.title.push((new ModalFormButtonModule(application, item,{
+list.content=([(new ModalFormButtonModule(application, item,{
         label:"Assign To",
         formName:"userSelectionForm",
         formOptions:{
@@ -7,6 +7,6 @@ list.title.push((new ModalFormButtonModule(application, item,{
         },
         //hideText:true,
         "class":"primary-btn"
-    })))
+    }))]).concat(list.content)
 
 return list
