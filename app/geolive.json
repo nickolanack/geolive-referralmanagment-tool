@@ -6303,16 +6303,16 @@
                             "taskForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 166,
-                            "y": 94
+                            "x": 176,
+                            "y": 104
                         },
                         "children": [
                             "taskForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 126,
-                                    "y": 357
+                                    "x": 136,
+                                    "y": 367
                                 }
                             }
                         ],
@@ -6326,6 +6326,13 @@
                                 "content": {
                                     "modules": [
                                         "taskForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "WizardScriptElement",
+                                            "config": {
+                                                "script": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.script.js",
+                                                "identifier": "customScriptElement"
+                                            }
+                                        },
                                         {
                                             "type": "UIView",
                                             "config": {
@@ -6344,13 +6351,6 @@
                                                 "filterModulesScript": "return list",
                                                 "itemButtonsScript": "return [];",
                                                 "insertAtTop": false
-                                            }
-                                        },
-                                        {
-                                            "type": "WizardScriptElement",
-                                            "config": {
-                                                "script": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.script.js",
-                                                "identifier": "customScriptElement"
                                             }
                                         },
                                         {
@@ -6443,14 +6443,14 @@
                                                 "attributeFields": [
                                                     "taskForm.metadata.children.1.builderMetadata.positions.content.modules.7.config.attributeFields.0.json"
                                                 ],
-                                                "presentationImagesTrueImage": [],
-                                                "presentationImagesFalseImage": [],
                                                 "className": "",
                                                 "label": "Make this task a priority",
                                                 "showLabel": false,
                                                 "presentationStyle": "checkbox",
                                                 "presentationRadioTrueLabel": "Yes",
-                                                "presentationRadioFalseLabel": "No"
+                                                "presentationRadioFalseLabel": "No",
+                                                "presentationImagesTrueImage": [],
+                                                "presentationImagesFalseImage": []
                                             }
                                         },
                                         {
