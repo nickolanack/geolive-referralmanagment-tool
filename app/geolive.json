@@ -6291,8 +6291,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 35,
-                    "y": 589
+                    "x": 44,
+                    "y": 564
                 },
                 "children": [
                     "taskForm.metadata.children.0.json",
@@ -6303,16 +6303,16 @@
                             "taskForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 176,
-                            "y": 104
+                            "x": 186,
+                            "y": 114
                         },
                         "children": [
                             "taskForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 136,
-                                    "y": 367
+                                    "x": 146,
+                                    "y": 377
                                 }
                             }
                         ],
@@ -6329,7 +6329,7 @@
                                         {
                                             "type": "WizardScriptElement",
                                             "config": {
-                                                "script": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.script.js",
+                                                "script": "return null;",
                                                 "identifier": "customScriptElement"
                                             }
                                         },
@@ -6348,7 +6348,7 @@
                                                 "deleteItemScript": "defaultBehaviorFn()",
                                                 "formatModuleScript": "",
                                                 "resolveItemScript": "return item",
-                                                "filterModulesScript": "return list",
+                                                "filterModulesScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.filterModulesScript.js",
                                                 "itemButtonsScript": "return [];",
                                                 "insertAtTop": false
                                             }

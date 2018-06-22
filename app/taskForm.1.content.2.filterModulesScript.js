@@ -1,4 +1,5 @@
-return (new ModalFormButtonModule(application, item,{
+
+list.title.push((new ModalFormButtonModule(application, item,{
         label:"Assign To",
         formName:"userSelectionForm",
         formOptions:{
@@ -6,4 +7,6 @@ return (new ModalFormButtonModule(application, item,{
         },
         //hideText:true,
         "class":"primary-btn"
-    }))
+    })))
+
+return list
