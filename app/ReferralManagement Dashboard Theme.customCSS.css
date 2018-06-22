@@ -139,7 +139,14 @@ label.boolean-field p {
     min-height: 30px;
 }
 
-
+.template-footer {
+    position: absolute;
+    bottom: -54px;
+    width: 100%;
+    right: 0;
+    background-color: #2E303A;
+    border-radius: 0 0 3px 3px;
+}
 
 body.dragover .droppable.drop-letters, 
 body.dragover .droppable.drop-permits, 
