@@ -717,16 +717,16 @@
                             "widget.ProposalWizardBuilder.65.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 45,
-                            "y": 333
+                            "x": 55,
+                            "y": 343
                         },
                         "children": [
                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 5,
-                                    "y": 571
+                                    "x": 15,
+                                    "y": 581
                                 }
                             },
                             {
@@ -736,16 +736,16 @@
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 537,
-                                    "y": 320
+                                    "x": 547,
+                                    "y": 330
                                 },
                                 "children": [
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 497,
-                                            "y": 533
+                                            "x": 507,
+                                            "y": 543
                                         }
                                     },
                                     {
@@ -755,16 +755,16 @@
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 922,
-                                            "y": 337
+                                            "x": 932,
+                                            "y": 347
                                         },
                                         "children": [
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 882,
-                                                    "y": 503
+                                                    "x": 892,
+                                                    "y": 513
                                                 }
                                             }
                                         ],
@@ -975,10 +975,10 @@
                                                 ],
                                                 "className": "",
                                                 "label": "{field.label}",
-                                                "message": "",
+                                                "message": "add a company name",
                                                 "lines": 1,
                                                 "maxChars": 0,
-                                                "mandatory": false,
+                                                "mandatory": true,
                                                 "multiEntry": false,
                                                 "autocomplete": true,
                                                 "muliTemplate": "lines",
