@@ -1777,6 +1777,14 @@ button.inline-btn.add:hover{
     display: none;
 }
 
+.mandatory-field>.text-input {
+    border-color: mediumseagreen;
+}
+
+.mandatory-field:after {
+
+}
+
 ul.user-roles>li {
     display: inline-block;
     width: 20px;
