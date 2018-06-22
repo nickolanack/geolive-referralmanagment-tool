@@ -1,5 +1,4 @@
-
-list.content=([(new ModalFormButtonModule(application, item,{
+var insert=(new ModalFormButtonModule(application, item,{
         label:"Assign To",
         formName:"userSelectionForm",
         formOptions:{
@@ -7,6 +6,7 @@ list.content=([(new ModalFormButtonModule(application, item,{
         },
         //hideText:true,
         "class":"primary-btn"
-    }))]).concat(list.content)
+    }));
+list.content.push(insert)
 
 return list
