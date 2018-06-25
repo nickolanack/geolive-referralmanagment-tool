@@ -7715,7 +7715,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return item.getName();",
+                                    "fieldValueScript": "singleUserListItemDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
                                     "formatElementScript": "singleUserListItemDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
                                 }
                             },
