@@ -1083,6 +1083,10 @@ img.youtubelogo {
     vertical-align: middle;
 }
 
+.task-item--1 .completion-indicator {
+    display: none;
+}
+
 .complete>.completion-indicator {
     background-color: white;
 }
