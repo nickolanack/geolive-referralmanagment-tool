@@ -1833,6 +1833,11 @@ ul.user-roles {
 ul.user-roles{
     height:50px;
 }
+
+.ui-template-form ul.user-roles {
+    display: none;
+}
+
 ul.user-roles li{
     opacity: 0;
     filter: grayscale(1);
