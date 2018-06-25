@@ -46,7 +46,7 @@ IncludeJSBlock('
     window.addEvent("load",function(){
         
         setInterval(function(){
-            
+            var number = Math.random() + "";
             (new AjaxControlQuery(CoreContentUrlRoot+"&format=ajax", "echo", {
 				random: number
 			})).addEvent("success", function(result) {
