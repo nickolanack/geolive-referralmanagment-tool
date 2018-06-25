@@ -41,6 +41,25 @@ if(GetClient()->isGuest()){
    return;
 }
 
+IncludeJSBlock('
+    
+    window.addEvent("load",function(){
+        
+        setInterval(function(){
+            
+            (new AjaxControlQuery(CoreContentUrlRoot+"&format=ajax", 'echo', {
+				random: number
+			})).addEvent('success', function(result) {
+				
+			}).execute();
+            
+        },5*3600)
+        
+    });
+
+
+');
+
 
 if((!GetClient()->isAdmin())&&count(array_intersect($firelight->teamMemberRoles(), ($roles=$firelight->getUserRoles())))==0){
     
