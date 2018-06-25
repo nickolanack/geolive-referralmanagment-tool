@@ -2079,6 +2079,10 @@ img.static-map {
 
 .percent-complete-value {
     font-size: 12px;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .percent-complete-value span.overdue {
     color: #E96A6A;
