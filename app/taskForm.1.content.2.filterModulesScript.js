@@ -1,3 +1,7 @@
+if(item.getId()<=0){
+    return list;
+}
+
 var insert=(new ModalFormButtonModule(application, item,{
         label:"Assign To",
         formName:"userSelectionForm",
