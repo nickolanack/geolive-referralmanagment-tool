@@ -1,6 +1,6 @@
 
 if(!item.getName){
-    return '{empty name}';
+    return '{missing getName()}';
 }
 
 return item.getName();

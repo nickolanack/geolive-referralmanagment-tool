@@ -7724,7 +7724,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return item.getEmail()",
+                                    "fieldValueScript": "singleUserListItemDetail.metadata.positions.content.modules.2.config.fieldValueScript.js",
                                     "formatElementScript": ""
                                 }
                             },
