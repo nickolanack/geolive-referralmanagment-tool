@@ -395,6 +395,7 @@
             "templateName": "default",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -1160,6 +1161,7 @@
             "templateName": "reserves",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -2405,6 +2407,7 @@
             "templateName": "UserDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -2750,6 +2753,7 @@
             "templateName": "ProposalsListView",
             "requireTarget": false,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -2833,6 +2837,7 @@
             "templateName": "ProposalDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -3596,6 +3601,7 @@
             "templateName": "dashboard",
             "requireTarget": false,
             "onRenderApplictionScript": "Dashboard.onRenderApplictionScript.js",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -3633,6 +3639,7 @@
             "templateName": "leftPanel",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -3717,6 +3724,7 @@
             "templateName": "mainPanel",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -3764,6 +3772,7 @@
             "templateName": "dashboardContent",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -3818,6 +3827,7 @@
             "templateName": "userDetailView",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -4420,6 +4430,7 @@
             "templateName": "navigationMenu",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -4457,6 +4468,7 @@
             "templateName": "mainDashboardDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -4566,6 +4578,7 @@
             "templateName": "mainActivityDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -4618,6 +4631,7 @@
             "templateName": "mainProjectsDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -4675,6 +4689,7 @@
             "templateName": "mainTasksDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -4732,6 +4747,7 @@
             "templateName": "mainCalendarDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -4769,6 +4785,7 @@
             "templateName": "peopleProjectsDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -4834,6 +4851,7 @@
             "templateName": "peopleClientsDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -4899,6 +4917,7 @@
             "templateName": "peopleUsersDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -4964,6 +4983,7 @@
             "templateName": "accountingDocumentsDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -5001,6 +5021,7 @@
             "templateName": "accountingTimesheetDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -5038,6 +5059,7 @@
             "templateName": "accountingReportsDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -5085,6 +5107,7 @@
             "templateName": "tasksProgressDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -5140,6 +5163,7 @@
             "templateName": "timeOverviewDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -5184,6 +5208,7 @@
             "templateName": "projectsOverviewDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -5282,6 +5307,7 @@
             "templateName": "tasksOverviewListDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -5374,6 +5400,7 @@
             "templateName": "calendarOverviewDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -5439,6 +5466,7 @@
             "templateName": "activityFeedDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -5476,6 +5504,7 @@
             "templateName": "singleProjectDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "Single Project Detail.onRenderApplictionScript.js",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -5533,6 +5562,7 @@
             "templateName": "singleProjectListItemDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -5600,6 +5630,7 @@
             "templateName": "singleTaskListItemDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "Single Task List Item Detail.onRenderApplictionScript.js",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -5726,6 +5757,7 @@
             "templateName": "singleProjectOverviewDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": true,
             "metadata": {
                 "positions": {
                     "title": {
@@ -5902,6 +5934,7 @@
             "templateName": "singleProjectTasksDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -5974,6 +6007,7 @@
             "templateName": "singleProjectFilesDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -6157,6 +6191,7 @@
             "templateName": "singleProjectDiscussionDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -6209,6 +6244,7 @@
             "templateName": "singleProjectUsersDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -6253,6 +6289,7 @@
             "templateName": "singleProjectTimesheetsDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positionList": [
                     "title",
@@ -6533,6 +6570,7 @@
             "templateName": "communityCulturalDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -6598,6 +6636,7 @@
             "templateName": "communityTransportationDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -6663,6 +6702,7 @@
             "templateName": "communityHabitationDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -6728,6 +6768,7 @@
             "templateName": "communityEnvironmentalDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -6793,6 +6834,7 @@
             "templateName": "communitySubsistenceDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -6858,6 +6900,7 @@
             "templateName": "layerItemListViewDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -7147,6 +7190,7 @@
             "templateName": "projectPriorityTasksDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -7427,6 +7471,7 @@
             "templateName": "calendarEventDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -7464,6 +7509,7 @@
             "templateName": "defaultPostDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -7564,6 +7610,7 @@
             "templateName": "singleProjectMapDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -7619,6 +7666,7 @@
             "templateName": "singleTeamListItemDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -7656,6 +7704,7 @@
             "templateName": "singleFileListItemDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -7702,6 +7751,7 @@
             "templateName": "singleUserListItemDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -7849,6 +7899,7 @@
             "templateName": "selectableUserListItemDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -7992,6 +8043,7 @@
             "templateName": "configurationSettingsDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -8029,6 +8081,7 @@
             "templateName": "singleTaskWithFilesDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -8129,6 +8182,7 @@
             "templateName": "singleClientDetailView",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -8175,6 +8229,7 @@
             "templateName": "singleProjectPeopleListItemDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -8232,6 +8287,7 @@
             "templateName": "singleUserTeamCollectionIconsDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -8269,6 +8325,7 @@
             "templateName": "synopsisProgressDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -8334,6 +8391,7 @@
             "templateName": "archiveListView",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -8371,6 +8429,7 @@
             "templateName": "singleArchivedProjectListItemDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -8425,6 +8484,7 @@
             "templateName": "singleProjectEditButtonsDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -8490,6 +8550,7 @@
             "templateName": "guestDashboard",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -8567,6 +8628,7 @@
             "templateName": "communityMemberDashboard",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -8622,6 +8684,7 @@
             "templateName": "nonMemberDashboard",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -8659,6 +8722,7 @@
             "templateName": "mainMapDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -8760,6 +8824,7 @@
             "templateName": "emptyListView",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -8797,6 +8862,7 @@
             "templateName": "settingsListItemDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -8869,6 +8935,7 @@
             "templateName": "communityUsersDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -11143,6 +11210,7 @@
             "templateName": "projectsListDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -11215,6 +11283,7 @@
             "templateName": "emptyTasksList",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -11304,6 +11373,7 @@
             "templateName": "tasksListDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -11376,6 +11446,7 @@
             "templateName": "emptyProjectOverviewDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -11627,6 +11698,7 @@
             "templateName": "communityMobileDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -11692,6 +11764,7 @@
             "templateName": "userAboutDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -11729,6 +11802,7 @@
             "templateName": "userForkDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -12109,6 +12183,7 @@
             "templateName": "UserChat",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -12225,6 +12300,7 @@
             "templateName": "configurationArchiveDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -12466,6 +12542,7 @@
             "templateName": "mapStatistics",
             "requireTarget": false,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -12503,6 +12580,7 @@
             "templateName": "singleUserTeamCollectionIconsInlineDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -12540,6 +12618,7 @@
             "templateName": "singleUserSmallIconDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
