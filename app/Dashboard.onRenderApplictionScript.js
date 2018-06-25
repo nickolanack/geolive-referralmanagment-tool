@@ -49,7 +49,7 @@ IncludeJSBlock('
             
             (new AjaxControlQuery(CoreContentUrlRoot+"&format=ajax", "echo", {
 				random: number
-			})).addEvent('success', function(result) {
+			})).addEvent("success", function(result) {
 				
 			}).execute();
             
