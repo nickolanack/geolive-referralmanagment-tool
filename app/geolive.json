@@ -8652,16 +8652,18 @@
                                     "className": "login-form",
                                     "viewType": "form",
                                     "namedView": "userProfileForm",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "userProfileForm",
+                                    "formOptions": "{template:\"form\"}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "formatModuleScript": "communityMemberDashboard.metadata.positions.content.modules.1.config.formatModuleScript.js",
                                     "resolveItemScript": "return AppClient;",
-                                    "itemButtonsScript": "return [];",
-                                    "namedViewScript": "return namedView",
                                     "filterModulesScript": "\nreturn list",
-                                    "formOptions": "{template:\"form\"}"
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false
                                 }
                             }
                         ]
