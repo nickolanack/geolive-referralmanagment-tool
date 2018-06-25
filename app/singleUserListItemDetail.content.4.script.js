@@ -2,6 +2,13 @@ if((item.isProjectMember&&item.isProjectMember())){
     return null;
 }
 
+if(!item.isDevice){
+    if(window.console){
+        console.warn('Not a ReferralManagementUser');
+    }
+    return null;
+}
+
 
 var rolesEditList=<?php
     $editList=GetPlugin('ReferralManagement')->getRolesUserCanEdit();
