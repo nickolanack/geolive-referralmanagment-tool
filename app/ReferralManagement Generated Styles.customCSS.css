@@ -47,8 +47,6 @@ foreach($config->getParameters() as $key=>$value){
     background-image:url("<?php echo UrlFrom($applicationLogo); ?>");
 }  
 
-
-.attachment-indicator {
     <?php 
         $attachmentIcon=$config->getParameter('attachmentIcon', array());
         if(empty($attachmentIcon)){
@@ -57,7 +55,19 @@ foreach($config->getParameters() as $key=>$value){
             $attachmentIcon=$attachmentIcon[0];
         }
     ?>
+    
+.attachment-indicator {
     background-image:url("<?php echo UrlFrom($attachmentIcon); ?>?tint=<?php echo $config->getParameter("attachmentTint", "rgb(180,180,180)"); ?>");
+}
+
+
+.discussion button.upload-button {
+    height: 37px;
+    font-size: 0;
+    background-image: url("<?php echo UrlFrom($attachmentIcon); ?>?tint=<?php echo $config->getParameter("attachmentTint", "rgb(180,180,180)"); ?>");
+    background-size: auto 28px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 
