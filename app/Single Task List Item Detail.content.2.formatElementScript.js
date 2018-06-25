@@ -7,10 +7,15 @@
    if(item.getDescription()&&item.getDescription()!==""){
      el.addClass('with-description');
    }
-
-var edit=el.appendChild(new Element('span'));
-edit.addClass('editable');
-edit.addEvent("click",function(){
+    
+    var edit=el.appendChild(new Element('span'));
+    
+    if(item.getId()<=0){
+        return;
+    }
+    
+    edit.addClass('editable');
+    edit.addEvent("click",function(){
         
         
         var formName="taskForm";
