@@ -68,6 +68,7 @@ foreach($config->getParameters() as $key=>$value){
     background-size: auto 28px;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
 }
 
 
