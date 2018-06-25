@@ -6349,16 +6349,16 @@
                             "taskForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 266,
-                            "y": 194
+                            "x": 276,
+                            "y": 204
                         },
                         "children": [
                             "taskForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 226,
-                                    "y": 457
+                                    "x": 236,
+                                    "y": 467
                                 }
                             }
                         ],
@@ -6393,7 +6393,7 @@
                                                 "formOptions": "{}",
                                                 "showDeleteButton": false,
                                                 "deleteItemScript": "defaultBehaviorFn()",
-                                                "formatModuleScript": "",
+                                                "formatModuleScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.formatModuleScript.js",
                                                 "resolveItemScript": "return item",
                                                 "filterModulesScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.filterModulesScript.js",
                                                 "itemButtonsScript": "return [];",
