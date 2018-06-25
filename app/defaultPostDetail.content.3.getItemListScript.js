@@ -21,7 +21,9 @@ ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
                }catch(e){
                     console.error(e);
                     return new MockDataTypeItem({
-                        type:"user"
+                        type:"user",
+                        name:"user no longer exists",
+                        email:''
                     })
                    
                }
