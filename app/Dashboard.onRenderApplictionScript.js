@@ -44,10 +44,10 @@ if(GetClient()->isGuest()){
 IncludeJSBlock('
     
     window.addEvent("load",function(){
-        
+        var mins=1;
         setInterval(function(){
             var number = Math.random() + "";
-            var mins=1;
+           
             (new AjaxControlQuery(CoreContentUrlRoot+"&format=ajax", "echo", {
 				random: number
 			})).addEvent("success", function(result) {
