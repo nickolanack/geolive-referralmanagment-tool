@@ -71,7 +71,7 @@ foreach($config->getParameters() as $key=>$value){
     position: relative;
 }
 
-.field-value-module.with-description .field-value:after {
+.field-value-module.with-description .editable:before{
     content: "";
      background-image: url("<?php echo UrlFrom("{assets}/Control Panel Icons/text.png"); ?>?tint=rgb(180,180,180)");
     width: 20px;
@@ -80,6 +80,7 @@ foreach($config->getParameters() as $key=>$value){
     display: inline-block;
     background-repeat: no-repeat;
     background-position: center;
+    vertical-align:middle;
 }
 
 
