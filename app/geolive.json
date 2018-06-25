@@ -6349,16 +6349,16 @@
                             "taskForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 206,
-                            "y": 134
+                            "x": 216,
+                            "y": 144
                         },
                         "children": [
                             "taskForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 166,
-                                    "y": 397
+                                    "x": 176,
+                                    "y": 407
                                 }
                             }
                         ],
@@ -6375,8 +6375,9 @@
                                         {
                                             "type": "WizardScriptElement",
                                             "config": {
+                                                "name": "My Custom Script",
                                                 "script": "return null;",
-                                                "identifier": "customScriptElement"
+                                                "description": "Info about my custom script"
                                             }
                                         },
                                         {
@@ -6404,7 +6405,7 @@
                                             "config": {
                                                 "className": "",
                                                 "label": "Name",
-                                                "placeholder": "add value",
+                                                "placeholder": "add text",
                                                 "lines": 1,
                                                 "maxChars": 0,
                                                 "mandatory": false,
@@ -6425,7 +6426,7 @@
                                             "config": {
                                                 "className": "",
                                                 "label": "Description",
-                                                "placeholder": "add value",
+                                                "placeholder": "add text",
                                                 "lines": 1,
                                                 "maxChars": 0,
                                                 "mandatory": false,
