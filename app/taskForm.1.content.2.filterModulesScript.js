@@ -1,4 +1,4 @@
-if(item.getId()<=0&&item.getAvailableUsers()>0){
+if(item.getId()<=0&&item.getAvailableUsers().length>0){
     return list;
 }
 
