@@ -71,15 +71,17 @@ foreach($config->getParameters() as $key=>$value){
     position: relative;
 }
 
-
 .field-value-module.with-description .field-value:after {
-    content: " ... ";
-    color: #cbb453;
-    background-image: url("<?php echo UrlFrom("{assets}/Control Panel Icons/text.png"); ?>?tint=rgb(180,180,180)");
+    content: "";
+     background-image: url("<?php echo UrlFrom("{assets}/Control Panel Icons/text.png"); ?>?tint=rgb(180,180,180)");
     width: 20px;
-    height: 20px;
+    height: 14px;
     background-size: auto 100%;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
 }
+
 
 
 .synopsis-item {
