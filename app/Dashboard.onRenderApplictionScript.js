@@ -47,13 +47,14 @@ IncludeJSBlock('
         
         setInterval(function(){
             var number = Math.random() + "";
+            var mins=1;
             (new AjaxControlQuery(CoreContentUrlRoot+"&format=ajax", "echo", {
 				random: number
 			})).addEvent("success", function(result) {
 				
 			}).execute();
             
-        },5*3600)
+        },mins*60*1000);
         
     });
 
