@@ -1,0 +1,1 @@
+Only visible in team member list for current project
