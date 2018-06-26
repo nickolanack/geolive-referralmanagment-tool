@@ -3,7 +3,7 @@ return new ElementModule('button',{
     "class":"public-user-chat",
     events:{click:function(){
         
-        var chat=$$(".users-public-chat");
+        var chat=$$(".users-public-chat")[0];
         if(chat.hasClass('enabled')){
             chat.removeClass('enabled');
             return;
