@@ -3626,6 +3626,7 @@
             "initialPostsScript": "return null;",
             "namedView": "defaultPostDetail",
             "reverseOrder": false,
+            "className": "",
             "readAccess": "public"
         }
     },
@@ -8709,11 +8710,12 @@
                                     "inlineReply": true,
                                     "inlineReplyNamedForm": "",
                                     "emptyMessage": "There are no entries",
-                                    "channel": "default",
+                                    "channel": "public",
                                     "resolveItemScript": "return AppClient;",
                                     "initialPostsScript": "return null;",
                                     "namedView": "defaultPostDetail",
-                                    "reverseOrder": false
+                                    "reverseOrder": false,
+                                    "className": "users-public-chat"
                                 }
                             }
                         ]
