@@ -260,7 +260,7 @@
         "name": "Referral Management",
         "instance": "ReferralManagement",
         "parameters": {
-            "enableEmailNotifications": true,
+            "enableEmailNotifications": false,
             "queueEmailDelay": "5",
             "customFormCss": ""
         }
