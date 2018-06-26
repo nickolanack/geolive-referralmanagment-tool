@@ -64,6 +64,9 @@ IncludeJSBlock('
 
 if((!GetClient()->isAdmin())&&count(array_intersect($firelight->teamMemberRoles(), ($roles=$firelight->getUserRoles())))==0){
     
+    
+    GetWidget('defaultPostDetail')->display($targetInstance);
+    
     if(count(array_intersect($firelight->communityMemberRoles(),$roles))>0){
         GetWidget('communityMemberDashboard')->display($targetInstance); 
         return;
