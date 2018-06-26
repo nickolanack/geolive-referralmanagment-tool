@@ -719,16 +719,16 @@
                             "widget.ProposalWizardBuilder.65.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 55,
-                            "y": 343
+                            "x": 65,
+                            "y": 353
                         },
                         "children": [
                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 15,
-                                    "y": 581
+                                    "x": 25,
+                                    "y": 591
                                 }
                             },
                             {
@@ -738,16 +738,16 @@
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 547,
-                                    "y": 330
+                                    "x": 557,
+                                    "y": 340
                                 },
                                 "children": [
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 507,
-                                            "y": 543
+                                            "x": 517,
+                                            "y": 553
                                         }
                                     },
                                     {
@@ -757,16 +757,16 @@
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 932,
-                                            "y": 347
+                                            "x": 942,
+                                            "y": 357
                                         },
                                         "children": [
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 892,
-                                                    "y": 513
+                                                    "x": 902,
+                                                    "y": 523
                                                 }
                                             }
                                         ],
@@ -800,6 +800,26 @@
                                                                 "iconTint": "rgb(100, 149, 237)",
                                                                 "onRenderTextFieldScript": "",
                                                                 "formatValueScript": ""
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "UIView",
+                                                            "config": {
+                                                                "className": "",
+                                                                "viewType": "view",
+                                                                "namedView": "singleUserTeamCollectionIconsDetail",
+                                                                "shouldRender": true,
+                                                                "namedViewScript": "return namedView",
+                                                                "showInlineEdit": false,
+                                                                "namedFormView": "defaultView",
+                                                                "formOptions": "\"{}\"",
+                                                                "showDeleteButton": false,
+                                                                "deleteItemScript": "defaultBehaviorFn()",
+                                                                "formatModuleScript": "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.2.config.formatModuleScript.js",
+                                                                "resolveItemScript": "return item",
+                                                                "filterModulesScript": "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.2.config.filterModulesScript.js",
+                                                                "itemButtonsScript": "return [];",
+                                                                "insertAtTop": false
                                                             }
                                                         }
                                                     ]
