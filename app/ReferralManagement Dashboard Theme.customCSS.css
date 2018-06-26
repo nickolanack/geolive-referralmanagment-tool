@@ -50,6 +50,26 @@ button.public-user-chat {
     right: 30px;
 }
 
+.discussion-module.users-public-chat {
+    height: 0px;
+    transition: height 0.5s;
+    pointer-events: none;
+    width: 500px;
+    background: white;
+    z-index: 99;
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    overflow: hidden;
+    transition-timing-function: ease;
+    border-radius: 3px;
+}
+.discussion-module.users-public-chat.enabled {
+    transition: height 1s;
+    height: 361px;
+    pointer-events: auto;
+}
+
 
 .funders-logos>div, .communities-logos>div {
     width: 200px;
