@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "if(item.getId()>0)){\n    return '<h2>Edit Proposal: '+item.getName()+'<h2>';\n}\nreturn '<h2>Create A New Proposal<h2>';",
+        "script": "if(item.getId()>0){\n    return '<h2>Edit Proposal: '+item.getName()+'<h2>';\n}\nreturn '<h2>Create A New Proposal<h2>';",
         "description": "Info about my custom script"
     }
 }
