@@ -278,6 +278,7 @@ body.dragover .file-item.droppable-hide {
     background-color: white;
     height: 108px;
     width: 100px;
+    border:1px solid transparent;
     
 }
 .file-list .file-item:hover .file-container {
