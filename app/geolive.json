@@ -8710,7 +8710,7 @@
                                     "inlineReplyNamedForm": "",
                                     "emptyMessage": "There are no entries",
                                     "channel": "default",
-                                    "resolveItemScript": "return item;",
+                                    "resolveItemScript": "return AppClient;",
                                     "initialPostsScript": "return null;",
                                     "namedView": "defaultPostDetail",
                                     "reverseOrder": false
