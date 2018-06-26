@@ -3,7 +3,7 @@ if(item.getAvailableUsers().length<=0){
 }
 
 var insert=(new ModalFormButtonModule(application, item,{
-        label:"Assign To",
+        label:"Add Team Member",
         formName:"userSelectionForm",
         formOptions:{
             template:"form"
