@@ -8698,6 +8698,23 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false
                                 }
+                            },
+                            {
+                                "type": "plugin.Discussions.Discussion",
+                                "config": {
+                                    "width": 300,
+                                    "constrainHeight": true,
+                                    "height": 200,
+                                    "inlineEditing": true,
+                                    "inlineReply": true,
+                                    "inlineReplyNamedForm": "",
+                                    "emptyMessage": "There are no entries",
+                                    "channel": "default",
+                                    "resolveItemScript": "return item;",
+                                    "initialPostsScript": "return null;",
+                                    "namedView": "defaultPostDetail",
+                                    "reverseOrder": false
+                                }
                             }
                         ]
                     },
