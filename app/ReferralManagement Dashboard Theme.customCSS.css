@@ -244,6 +244,25 @@ body.dragover .file-item.droppable-hide {
     font-size: 12px;
 }
 
+.file-list .droppable.drop-spatial:after {
+    content: " Spatial";
+    font-size: 12px;
+    color:#c7ae4b;
+}
+.file-list .droppable.drop-attachments:after {
+    content: " Attachments";
+    font-size: 12px;
+    color:#c7ae4b;
+}
+
+
+.file-list .droppable.drop-spatial:before, .file-list .droppable.drop-attachments:before {
+    content: "Add";
+    font-size: 12px;
+}
+
+
+
 
 
 .file-list .file-item, .file-list .droppable {
