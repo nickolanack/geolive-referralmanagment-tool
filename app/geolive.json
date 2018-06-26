@@ -8671,6 +8671,15 @@
                         "modules": [
                             "communityMemberDashboard.metadata.positions.content.modules.0.json",
                             {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "user-form ",
+                                    "text": "<div class=\"application-logo\"><h2>Welcome to <span class=\"project-name\">The Referral Management Tool <span class=\"acronym\">(RMT)<\/span><\/span><\/h2>\n<p>Your account is pending approval from a lands department member.<\/p>\n<p>Please fill out your profile below. This will greatly help us to you and create a new user account.<\/p><\/div>",
+                                    "template": "",
+                                    "templateVariablesScript": ""
+                                }
+                            },
+                            {
                                 "type": "UIView",
                                 "config": {
                                     "className": "login-form",
@@ -8683,19 +8692,11 @@
                                     "formOptions": "{template:\"form\"}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
-                                    "formatModuleScript": "communityMemberDashboard.metadata.positions.content.modules.1.config.formatModuleScript.js",
+                                    "formatModuleScript": "communityMemberDashboard.metadata.positions.content.modules.2.config.formatModuleScript.js",
                                     "resolveItemScript": "return AppClient;",
                                     "filterModulesScript": "\nreturn list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false
-                                }
-                            },
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "communityMemberDashboard.metadata.positions.content.modules.2.config.script.js",
-                                    "description": "Info about my custom script"
                                 }
                             }
                         ]

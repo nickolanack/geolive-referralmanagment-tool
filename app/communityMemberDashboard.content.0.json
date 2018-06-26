@@ -1,9 +1,8 @@
 {
-    "type": "InlineHtml",
+    "type": "WizardScriptElement",
     "config": {
-        "className": "user-form ",
-        "text": "<div class=\"application-logo\"><h2>Welcome to <span class=\"project-name\">The Referral Management Tool <span class=\"acronym\">(RMT)<\/span><\/span><\/h2>\n<p>Your account is pending approval from a lands department member.<\/p>\n<p>Please fill out your profile below. This will greatly help us to you and create a new user account.<\/p><\/div>",
-        "template": "",
-        "templateVariablesScript": ""
+        "name": "My Custom Script",
+        "script": "var proposal=new Element('div', {\"style\":\"margin-top: 20px; height: 50px;\"})\nvar loginProposal =  proposal.appendChild(new Element('label', {\n    html:'Are you a proponent', 'class':'login-button-text', \n    style:\"text-align:left; color: #EDC84C\",\n    events:{\n        \n}}));\n\n\/\/login.appendChild(new Element('br'));\nvar proposalButton=loginProposal.appendChild(new Element('button',{\n    \n    html:'Submit a Proposal',\n    style:\"background-color:#EDC84C;\",\n    \"class\":\"primary-btn\"\n    \n}));\nvar proposalObj= new GuestProposal(-1, {});\n(new UIModalFormButton(proposalButton, application, proposalObj, {\n\n            formOptions: {template:\"form\"},\n            formName: \"ProposalTemplate\",\n  \n})).addEvent('complete', function(){\n    \n    application.getDisplayController().displayPopoverForm(\n\t\t\t\t'emailVerificationForm', \n\t\t\t\tproposalObj, \n\t\t\t\tapplication,\n\t\t\t\t{template:\"form\"}\n\t\t\t);\n    \n})\n\n\n\n\n\n\n\nreturn [proposal];",
+        "description": "Info about my custom script"
     }
 }
