@@ -12243,23 +12243,25 @@
                             "shareLink.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 377,
-                            "y": 173
+                            "x": 387,
+                            "y": 183
                         },
                         "children": [
                             "shareLink.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 337,
-                                    "y": 339
+                                    "x": 347,
+                                    "y": 349
                                 }
                             }
                         ],
                         "builderMetadata": {
                             "positions": {
                                 "title": {
-                                    "modules": []
+                                    "modules": [
+                                        "shareLink.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
                                 },
                                 "content": {
                                     "modules": [
@@ -12267,8 +12269,9 @@
                                         {
                                             "type": "WizardScriptElement",
                                             "config": {
+                                                "name": "My Custom Script",
                                                 "script": "shareLink.metadata.children.1.builderMetadata.positions.content.modules.1.config.script.js",
-                                                "identifier": "customScriptElement"
+                                                "description": "Info about my custom script"
                                             }
                                         }
                                     ]
