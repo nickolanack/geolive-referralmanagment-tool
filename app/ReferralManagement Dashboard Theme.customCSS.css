@@ -215,6 +215,37 @@ body.dragover .file-item.droppable-hide {
     content: "Add";
 }
 
+.file-list .droppable.drop-letters:after {
+    content: " Letters";
+    font-size: 12px;
+    color:#c7ae4b;
+}
+.file-list .droppable.drop-permits:after {
+    content: " Permits";
+    font-size: 12px;
+    color:#c7ae4b;
+}
+.file-list .droppable.drop-agreements:after {
+    content: " Agreements";
+    font-size: 12px;
+    color:#c7ae4b;
+}
+.file-list .droppable.drop-documents:after {
+    content: " Documents";
+    font-size: 12px;
+    color:#c7ae4b;
+}
+
+.file-list .droppable.drop-letters:before, 
+.file-list .droppable.drop-permits:before, 
+.file-list .droppable.drop-agreements:before, 
+.file-list .droppable.drop-documents:before {
+    content: "Add";
+    font-size: 12px;
+}
+
+
+
 .file-list .file-item, .file-list .droppable {
     display: inline-block;
     width: 102px;
