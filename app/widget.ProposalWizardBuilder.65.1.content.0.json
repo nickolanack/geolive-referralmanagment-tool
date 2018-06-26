@@ -1,53 +1,8 @@
 {
-    "type": "plugin.Attributes.WizardTextAttribute",
+    "type": "WizardScriptElement",
     "config": {
-        "attributeFields": [
-            {
-                "visibility": "public",
-                "tableId": "5",
-                "tableName": "proposalAttributes",
-                "tableSuffix": "_9189",
-                "title": "title",
-                "label": "Title",
-                "description": "",
-                "fieldType": "text",
-                "color": "rgb(NaN, NaN, NaN)",
-                "searchability": "public",
-                "editability": "registered",
-                "fieldTextOptions": {
-                    "textType": "input",
-                    "inputOptions": {
-                        "buildAutocomplete": false,
-                        "requireModeration": false,
-                        "limitMaxChars": 0,
-                        "limitMaxWords": 0,
-                        "allowHtml": false,
-                        "allowMedia": true,
-                        "allowLinks": true
-                    },
-                    "listOptions": {
-                        "takeSugesstions": true,
-                        "buildTree": false,
-                        "iconize": false,
-                        "colorize": false
-                    }
-                },
-                "allowMultiple": false
-            }
-        ],
-        "className": "",
-        "label": "Project Title",
-        "message": "add a title for your proposal",
-        "lines": 1,
-        "maxChars": 0,
-        "mandatory": true,
-        "multiEntry": false,
-        "autocomplete": true,
-        "muliTemplate": "lines",
-        "multiMessage": "",
-        "formatter": "none",
-        "iconTint": "rgb(100, 149, 237)",
-        "onRenderTextFieldScript": "",
-        "formatValueScript": ""
+        "name": "My Custom Script",
+        "script": "if(item.getId(0<=0)){\n    \n    return '<h2>Edit Proposal: '+item.getName()+'<h2>';\n}\nreturn '<h2>Create A New Proposal<h2>';",
+        "description": "Info about my custom script"
     }
 }
