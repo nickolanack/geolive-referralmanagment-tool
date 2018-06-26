@@ -389,10 +389,10 @@ h2 {
 }
 
 .project-type-missing-tasks-hint {
-    background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/tree.png"); ?>?tint=rgb(198, 175, 79)");
     background-repeat: no-repeat;
     background-position: left center;
-    padding-left: 50px;
+    padding-left: 35px;
+    background-size: 24px;
 }
 
 
