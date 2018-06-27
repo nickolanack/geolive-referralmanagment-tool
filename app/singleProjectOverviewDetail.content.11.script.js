@@ -8,4 +8,4 @@ return new ModuleArray([
     
     
    
-],{"class":"inline-list-item files-list-item-icon"});
+],{"class":"inline-list-item files-list-item-icon favourited-files"});
