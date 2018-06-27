@@ -2430,6 +2430,16 @@ img.static-map {
 }
 
 
+
+@media only screen and (max-height: 700px) {
+    .bar-chart {
+        height:100px
+    }
+
+}
+
+
+
 .panel-toggle {
     position: absolute;
     right: 0;
