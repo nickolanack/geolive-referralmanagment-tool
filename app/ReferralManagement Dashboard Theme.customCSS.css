@@ -2287,6 +2287,11 @@ img.static-map {
     }
 }
 
+.ui-view.left-panel.closed .application-logo {
+        font-size: 0;
+        background-position: center;
+    }
+
 @media screen and (max-width: 1000px){
     
     .left-panel .application-logo {
