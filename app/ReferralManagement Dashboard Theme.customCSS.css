@@ -1274,6 +1274,10 @@ ul.item-tags li {
     color: gray;
     vertical-align: top;
     float: right;
+    
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .item-title>.field-value {
