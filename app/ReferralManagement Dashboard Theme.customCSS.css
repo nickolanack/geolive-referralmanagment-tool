@@ -2240,6 +2240,11 @@ img.static-map {
 @media screen and (max-width: 1250px) {
     
     
+    .left-panel .application-logo {
+        font-size: 0;
+        background-position: center;
+    }
+
     
     .ui-view.left-panel {
 
@@ -2437,6 +2442,7 @@ img.static-map {
     }
 
 }
+
 
 
 
