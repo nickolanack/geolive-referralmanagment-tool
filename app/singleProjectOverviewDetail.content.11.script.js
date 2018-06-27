@@ -1,3 +1,5 @@
+return null;
+
 var files=item.getStarredDocuments();
 var count=files.length;
 return new ModuleArray([
