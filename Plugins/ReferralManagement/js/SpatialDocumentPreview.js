@@ -16,37 +16,56 @@ var SpatialDocumentPreview = (function() {
 			var clear;
 			var layers = [];
 
-			if(!me._clearTile){
-
-				clear=me._enterProposalWithTile(layers, callback);
-			}else{
-				clear=me._enterProposalWithClear(layers, callback);
-			}
-
-			var zoomToBounds=function(){
-
-				var bounds;
-				layers.forEach(function(l){
-
-					MapFactory.ZoomFit(l.getMap(), l.getBounds());
-
-				});	
-
-			};
 			
 
+			var bounds=null;
+			var extendBounds=function(b){
+				if(!bounds){
+					bounds=b;
+				}else{
 
-			layers=urls.map(function(url) {
+					bounds.north=Math.max(bounds.north, b.north);
+					bounds.south=Math.min(bounds.south, b.south);
+					bounds.east=Math.max(bounds.east, b.east);
+					bounds.west=Math.min(bounds.west, b.west);
 
-				layer= new ProposalLayer(map, {
+				}
+
+				map.fitBounds(bounds);
+
+
+
+			}
+
+			var offset=40;
+			layers=urls.map(function(url, i) {
+
+				var layer= new ProposalLayer(map, {
 					url: url
 				});
+				layer.addEvent('load:once',function(){
+					(new AjaxControlQuery(CoreAjaxUrlRoot, 'file_metadata', {
+			            'file': url
+			        })).addEvent('success',function(response){
+						var b = layer.getBounds();
+						extendBounds(b);
 
-				layer.runOnceOnLoad(function(){
 
-					zoomToBounds();
+						new UIMapSubTileButton(me._mapTile, {
+		                    containerClassName: 'spatial-file-tile',
+		                    buttonClassName: '',
+		                    image: (response.metadata.image||response.metadata.mimeIcon||response.metadata.mediaTypeIcon)+"&size=48",
+		                    
+		                }).addEvent('click',function(){
+		                	map.fitBounds(b);
+		                }).getElement().setStyle('right', i*offset+40)
 
-				});
+
+			        }).execute();
+				})
+
+				
+				
 
 				me._map.getLayerManager().addLayer(layer);
 
@@ -55,19 +74,26 @@ var SpatialDocumentPreview = (function() {
 			});
 
 			
-
+			new UIMapSubTileButton(me._mapTile, {
+                    containerClassName: 'spatial-file-tile add',
+                    buttonClassName: '',
+                    //image: response.metadata.image||response.metadata.mimeIcon||response.metadata.mediaTypeIcon,
+                    
+            }).addEvent('click',function(){
+                	
+			}).getElement().setStyle('right', layers.length*offset+40);
 
 			return clear;
 		},
 		_enterProposalWithControl:function(control){
 			var me = this;
 			var map = me._map;
-			map.setMode('proposal', {
-				disablesControls: true, //tell geolive to disable all controls
-				control: control, //tell geolive that this control is taking control, also don't disable this one
-				suppressEvents: true, //tell geolive to stop responding to normal events (marker click etc)
-				fadesContent: true //make content semi-transparent.
-			});
+			// map.setMode('proposal', {
+			// 	disablesControls: true, //tell geolive to disable all controls
+			// 	control: control, //tell geolive that this control is taking control, also don't disable this one
+			// 	suppressEvents: true, //tell geolive to stop responding to normal events (marker click etc)
+			// 	fadesContent: true //make content semi-transparent.
+			// });
 
 		},
 		_enterProposalWithClear:function(layers, callback){
@@ -75,9 +101,9 @@ var SpatialDocumentPreview = (function() {
 			var me = this;
 			var map = me._map;
 
-			var clearTile=me._clearTile;
+			var clearTile=me._mapTile;
 			clearTile.enable();
-			var clearControl=me._clearControl;
+			var clearControl=me._mapTileControl;
 
 			me._enterProposalWithControl(clearControl);
 
@@ -86,7 +112,7 @@ var SpatialDocumentPreview = (function() {
 
 
 				clearTile.disable();
-				map.clearMode('proposal');
+				//map.clearMode('proposal');
 
 				Array.each(layers, function(layer) {
 					layer.hide();
@@ -136,7 +162,7 @@ var SpatialDocumentPreview = (function() {
 
 
 				subTile.remove();
-				map.clearMode('proposal');
+				//map.clearMode('proposal');
 
 				Array.each(layers, function(layer) {
 					layer.hide();
@@ -169,11 +195,15 @@ var SpatialDocumentPreview = (function() {
 			me._control = control;
 
 		},
-		setClearTile: function(tile, control) {
+		setClearTile:function(tile, control){
+			var me = this;
+			me.setTile(tile, control);
+		},
+		setTile: function(tile, control) {
 
 			var me = this;
-			me._clearTile = tile;
-			me._clearControl = control;
+			me._mapTile = tile;
+			me._mapTileControl = control;
 		}
 
 	});

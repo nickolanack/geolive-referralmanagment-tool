@@ -9,9 +9,9 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 	use core\AjaxControllerProviderTrait;
 	use core\DatabaseProviderTrait;
 	use core\PluginDataTypeProviderTrait;
-    use core\EventListenerTrait;
+	use core\EventListenerTrait;
 
-    use core\TemplateRenderer;
+	use core\TemplateRenderer;
 
 	public function savePlugin() {
 		$this->setParameterFromRequest('customFormCss', '');
@@ -30,15 +30,57 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		);
 	}
 
+	public function broadcastProjectUpdate($id) {
 
-    public function postToActivityFeeds($message, $data=array()){
+		Broadcast('proposal.' . $id, 'update', array(
+			'user' => GetClient()->getUserId(),
+			'updated' => array($this->getProposalData($id)),
+		));
 
-        $discussion=GetPlugin('Discussions');
-        $discussion->post($discussion->getDiscussionForItem(145, 'widget', 'wabun')->id, $message, $data);
-        $discussion->post($discussion->getDiscussionForItem(GetClient()->getUserId(), 'user', 'wabun')->id, $message, $data);
+	}
 
+	public function queueEmailProjectUpdate($id, $data=array()) {
 
-    }
+		ScheduleEvent('onTriggerProjectUpdateEmailNotification', array(
+
+			'user' => GetClient()->getUserId(),
+			'project' => $this->getProposalData($id),
+            'info'=>$data
+
+		), intval($this->getParameter("queueEmailDelay")));
+
+	}
+
+	public function queueEmailTaskUpdate($id, $data=array()) {
+
+		ScheduleEvent('onTriggerTaskUpdateEmailNotification', array(
+
+			'user' => GetClient()->getUserId(),
+			'task' => $this->formatTaskResult(GetPlugin('Tasks')->getTask($id)),
+            'info'=>$data
+
+		), intval($this->getParameter("queueEmailDelay")));
+
+	}
+
+	public function broadcastTaskUpdate($id) {
+
+		$task = GetPlugin('Tasks')->getTask($id);
+		//throw new Exception(print_r($task, true));
+		Broadcast('proposal.' . $task->itemId, 'update', array(
+			'user' => GetClient()->getUserId(),
+			'updated' => array($this->getProposalData($task->itemId)),
+		));
+
+	}
+
+	public function postToActivityFeeds($message, $data = array()) {
+
+		$discussion = GetPlugin('Discussions');
+		$discussion->post($discussion->getDiscussionForItem(145, 'widget', 'wabun')->id, $message, $data);
+		$discussion->post($discussion->getDiscussionForItem(GetClient()->getUserId(), 'user', 'wabun')->id, $message, $data);
+
+	}
 
 	protected function task_UpLoadLayer() {
 		Core::Files();
@@ -77,742 +119,1155 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		return false;
 	}
 
+	public function includeScripts() {
 
-    public function includeScripts(){
+		IncludeJS(__DIR__ . '/js/ReferralManagementUser.js');
+		IncludeJS(__DIR__ . '/js/UserTeamCollection.js');
+		IncludeJS(__DIR__ . '/js/Proposal.js');
+		IncludeJS(__DIR__ . '/js/ProjectTeam.js');
+		IncludeJS(__DIR__ . '/js/ProjectCalendar.js');
+		IncludeJS(__DIR__ . '/js/TaskItem.js');
+	}
 
-        IncludeJS(__DIR__.'/js/Proposal.js');
-        IncludeJS(__DIR__.'/js/ProjectTeam.js');
-        IncludeJS(__DIR__.'/js/TaskItem.js');
-    }
+	protected function onCreateProposal($params) {
 
-    protected function onCreateProposal($params){
+		$this->createDefaultProposalTasks($params->id);
 
+	}
 
-        $this->createDefaultProposalTasks($params->id);
+	protected function onActivateEmailForGuestProposal($params) {
 
-    }
+		if (key_exists('validationData', $params) && key_exists('token', $params->validationData)) {
+			$data = ($links = GetPlugin('Links'))->peekDataToken($params->validationData->token)->data;
 
-    protected function onPost($params){
+			$database = $this->getDatabase();
 
-       
+			if (($id = (int) $database->createProposal(array(
+				'user' => Core::Client()->getUserId(),
+				'metadata' => json_encode(array("email" => $params->validationData->email)),
+				'createdDate' => ($now = date('Y-m-d H:i:s')),
+				'modifiedDate' => $now,
+				'status' => 'active',
+			)))) {
 
+				$this->postToActivityFeeds($params->validationData->email . ' created proposal as a guest', array(
+					"items" => array(
+						array(
+							"type" => "ReferralManagement.proposal",
+							"id" => $id,
+						),
+					)));
 
-        $discussion=GetPlugin('Discussions');
-        $discussionId=$discussion->getDiscussionForItem(145, 'widget', 'wabun')->id;
-        if($params->discussion!==$discussionId){
+				GetPlugin('Attributes');
+				if (key_exists('attributes', $data->proposalData)) {
+					foreach ($data->proposalData->attributes as $table => $fields) {
+						(new attributes\Record($table))->setValues($id, 'ReferralManagement.proposal', $fields);
+					}
+				}
 
-            $this->postToActivityFeeds(GetClient()->getUsername().' commented in project discussion');
-            Emit('onMirrorPost', $params);
-        }
-       
-       
+				Emit('onCreateProposalForGuest', array(
+					'params' => $params,
+					'proposalData' => $data,
+				));
 
-    }
+				Emit('onCreateProposal', array('id' => $id));
 
+			}
 
-    public function listProposalData(){
+		}
 
+	}
 
-         $filter=array('user'=>Core::Client()->getUserId());
-        if(Auth('memberof', 'lands-department', 'group')){
-            $filter=array();
-        }
+	protected function onPost($params) {
 
+		// $discussion=GetPlugin('Discussions');
+		// $discussionId=$discussion->getDiscussionForItem(145, 'widget', 'wabun')->id;
+		// if($params->discussion!==$discussionId){
 
+		//     $this->postToActivityFeeds(GetClient()->getUsername().' commented in project discussion');
+		//     Emit('onMirrorPost', $params);
+		// }
 
-        $database = $this->getDatabase();
-        $results=$database->getAllProposals($filter);
+	}
 
+	public function listProposalData() {
 
-        $filter=function($item){
-            return true;
-        };
+		$filter = array('user' => Core::Client()->getUserId());
+		if (Auth('memberof', 'lands-department', 'group')) {
+			$filter = array();
+		}
 
-        if(!Auth('memberof', 'lands-department-manager', 'group')){
+		$database = $this->getDatabase();
+		$results = $database->getAllProposals($filter);
 
-            $clientId=GetClient()->getUserId();
-            $filter=function($item)use($clientId){
+		$filter = function ($item) {
+			return true;
+		};
 
-                if($item['user']==$clientId){
-                    return true;
-                }
+		if (!Auth('memberof', 'lands-department-manager', 'group')) {
 
-                if(in_array($clientId, $item['attributes']['teamMemberIds'])){
-                    return true;
-                }
+			$clientId = GetClient()->getUserId();
+			$filter = function ($item) use ($clientId) {
 
-                return false;
+				if ($item['user'] == $clientId) {
+					return true;
+				}
 
-            };
-        }
+				if (in_array($clientId, $item['attributes']['teamMemberIds'])) {
+					return true;
+				}
 
+				return false;
 
-        return array_values(array_filter(array_map(function ($result) {
+			};
+		}
 
-              return $this->formatProposalResult($result);
+		return array_values(array_filter(array_map(function ($result) {
 
-        }, $results), $filter));
+			return $this->formatProjectResult($result);
 
+		}, $results), $filter));
 
-    }
+	}
 
-    protected function formatProposalResult($result){
+	protected function availableProjectPermissions() {
 
-            $proposal = get_object_vars($result);
+		return array(
+			'adds-tasks',
+			'assigns-tasks',
+			'adds-members',
+			'sets-roles',
+			'recieves-notifications',
+		);
+	}
 
-            //if ((int) $array['user'] !== Core::Client()->getUserId()) {
-            $proposal['userdetails'] = Core::Client()->userMetadataFor((int) $proposal['user']);
-            //}
+	public function defaultProjectPermissionsForUser($user, $project) {
 
-            Core::LoadPlugin('Attributes');
-            $attributes=AttributesRecord::Get($proposal['id'], 'ReferralManagement.proposal', AttributesTable::GetMetadata('proposalAttributes'));
+		if (is_numeric($user)) {
+			$user = $this->formatUser(GetClient()->userMetadataFor($user));
+		}
 
-            $teamMembers=$attributes['teamMembers'];
+		
 
-            if(is_object($teamMembers)){
-                $teamMembers=array_values(get_object_vars($teamMembers));
-            }
+		if (is_numeric($project)) {
+			$project = $this->getProposalData($project);
+		}
 
+		if ($user['id'] == $project->user) {
+			return $this->availableProjectPermissions();
+		}
 
-            if(!is_array($teamMembers)){
-                $teamMembers=array();
-            }
+		if (in_array('lands-department', $roles = $this->getRolesUserCanEdit($user['id']))) {
+			return array_merge($this->availableProjectPermissions());
+		}
 
+		return array(
+			'adds-tasks',
+			'recieves-notifications',
+		);
 
-            $attributes['teamMemberIds']=$teamMembers;
+	}
 
-            $attributes['teamMembers']=array_map(function($member){
-                return $this->formatUser(GetClient()->userMetadataFor($member));
-            },$teamMembers);
+	protected function usersProjectPermissions() {
+		return $this->availableProjectPermissions();
+	}
 
-            //if(empty($teamMembers)){
-               // $attributes['teamMembers']=$this->getDefaultTeamMembers();
-            //}
+	public function getTeamMembersForProject($project, $attributes = null) {
 
+		$pid = $project;
 
-            
+		if (!is_numeric($project)) {
+			$pid = $project->id;
 
+		}
 
+		$teamMembers = $attributes;
+		if (!$teamMembers) {
+			GetPlugin('Attributes');
+			$attributes = (new attributes\Record('proposalAttributes'))->getValues($pid, 'ReferralManagement.proposal');
+			$teamMembers = $attributes['teamMembers'];
+		}
 
-            $proposal['attributes'] =$attributes;
-            $time=strtotime($attributes['commentDeadlineDate']);
-            $days=($time-time())/(3600*24);
-            $computed=array();
-            $computed['commentDeadlineTime']=$time;
-            $computed['commentDeadlineDays']=$days;
+		if (is_object($teamMembers)) {
+			$teamMembers = array_values(get_object_vars($teamMembers));
+		}
 
-            $computed['urgency']='normal';
-                
-            if($days<=2){
-                $computed['urgency']='high';
-            }
-            if($days<=7){
-                $computed['urgency']='medium';
-            }
+		if (!is_array($teamMembers)) {
+			$teamMembers = array();
+		}
+		$migrated = false;
+		$teamMembers = array_map(function ($item) use (&$migrated, $pid) {
+			if (is_numeric($item)) {
+				$migrated = true;
+				return (object) array('id' => $item, 'permissions' => $this->defaultProjectPermissionsForUser($item, $project));
+			}
+			return json_decode($item);
 
+		}, $teamMembers);
 
-            
+		if ($migrated) {
+			//$this->setTeamMembersForProject($pid, $teamMembers);
+		}
 
-            $proposal['computed']=$computed;
-            $proposal['tasks']=array_map(function($result){
-                return $this->formatTaskResult($result);
-            }, GetPlugin('Tasks')->getItemsTasks($proposal['id'], "ReferralManagement.proposal"));
+		return $teamMembers;
+	}
 
-            return $proposal;
+	public function getTeamMembersForTask($task, $attributes = null) {
 
-    }
+		$tid = $task;
 
-    public function formatTaskResult($result){
+		if (!is_numeric($task)) {
+			$tid = $task->id;
 
+		}
 
-        Core::LoadPlugin('Attributes');
-        $task = get_object_vars($result);
-        $attributes=AttributesRecord::Get($task['id'], 'Tasks.task', AttributesTable::GetMetadata('taskAttributes'));
-        $task['attributes']=$attributes;
+		$teamMembers = $attributes;
+		if (!$teamMembers) {
+			GetPlugin('Attributes');
+			$attributes = (new attributes\Record('taskAttributes'))->getValues($tid, 'Tasks.task');
+			$teamMembers = $attributes['teamMembers'];
+		}
 
+		if (is_object($teamMembers)) {
+			$teamMembers = array_values(get_object_vars($teamMembers));
+		}
 
-        $starred=  $task['attributes']['starUsers'];
-        if(is_object($starred)){
-            $task['attributes']['starUsers']=array_values(get_object_vars($starred));
-        }
+		if (!is_array($teamMembers)) {
+			$teamMembers = array();
+		}
+		$migrated = false;
+		$teamMembers = array_map(function ($item) use (&$migrated, $tid) {
+			if (is_numeric($item)) {
+				$migrated = true;
+				return (object) array('id' => $item);
+			}
+			return json_decode($item);
 
-        $task['complete']=!!$task['complete'];
-        return $task;
-    }
+		}, $teamMembers);
 
-    public function getProposalData($id){
+		if ($migrated) {
+			//$this->setTeamMembersForProject($tid, $teamMembers);
+		}
 
-        $database = $this->getDatabase();
-        $result=$database->getProposal($id);
-        if(!$result){
-            throw new Exception('No record for proposal: '.$id);
-        }
-        return $this->formatProposalResult($result[0]);
+		return $teamMembers;
+	}
 
-    }
+	public function setTeamMembersForProject($pid, $teamMembers) {
 
+		GetPlugin('Attributes');
+		(new attributes\Record('proposalAttributes'))->setValues($pid, 'ReferralManagement.proposal', array(
+			'teamMembers' => array_map(function ($item) {
+				if (is_numeric($item)) {
+					return $item;
+				}
+				return json_encode($item);
+			}, $teamMembers),
+		));
 
+		Emit('onSetTeamMembersForProject', array(
+			'project' => $pid,
+			'team' => $teamMembers,
+		));
 
-    public function isUserInGroup($group){
+		$this->broadcastProjectUpdate($pid);
+		$this->queueEmailProjectUpdate($pid);
+	}
 
-        if(Core::Client()->isGuest()){
-           return false;
-        }
+	public function setTeamMembersForTask($tid, $teamMembers) {
 
-        if(Core::Client()->isAdmin()){
-            if(in_array($group, array('tribal-council', 'chief-council', 'lands-department', 'lands-department-manager', 'community-member'))){
-                //return true;
-            }
-        }
+		GetPlugin('Attributes');
+		(new attributes\Record('taskAttributes'))->setValues($tid, 'Tasks.task', array(
+			'teamMembers' => array_map(function ($item) {
+				if (is_numeric($item)) {
+					return $item;
+				}
+				return json_encode($item);
+			}, $teamMembers),
+		));
 
-        $map=$this->getGroupAttributes();
+		Emit('onSetTeamMembersForTask', array(
+			'task' => $tid,
+			'team' => $teamMembers,
+		));
 
 
-        $map['proponent']='isProponent';
+		$this->broadcastTaskUpdate($tid);
+		
+	}
 
+	public function addTeamMemberToProject($user, $project) {
 
-        GetPlugin('Attributes');
-        $attributeMap=array();
-        $attribs=(new attributes\Record('userAttributes'))->getValues(Core::Client()->getUserId(), 'user');
+		$teamMembers = $this->getTeamMembersForProject($project);
 
-        //AttributesRecord::GetFields(Core::Client()->getUserId(), 'user', array_values($map), 'userAttributes');
+		$member = (object) array('id' => $user, 'permissions' => $this->defaultProjectPermissionsForUser($user, $project));
+		$teamMembers[] = $member;
+		$teamMembers = $this->_uniqueIds($teamMembers);
 
-        
-        // if($group=='lands-department'){
-        //     if($attribs[$map['lands-department-manager']]===true||$attribs[$map['lands-department-manager']]==="true"){
-        //         return true;
-        //     }
-        // }
+		Emit('onAddTeamMemberToProject', array(
+			'project' => $project,
+			'member' => $member,
+		));
 
+		$this->setTeamMembersForProject($project, $teamMembers);
+		
 
-        if(key_exists($group, $map)&&key_exists($map[$group], $attribs)){
-            return $attribs[$map[$group]]===true||$attribs[$map[$group]]==="true";
-        }
+		return $teamMembers;
 
-        return false;
+	}
 
+	protected function onTriggerProjectUpdateEmailNotification($args) {
 
-    }
 
 
 
 
-    public function getUserRoleIcon($id=-1){
+		$teamMembers = $this->getTeamMembersForProject($args->project->id);
+	
 
-        if($id<1){
-            $id=Core::Client()->getUserId();
-        }
 
-    	$map=$this->getGroupAttributes();
+		if(empty($teamMembers)){
+			Emit('onEmptyTeamMembersTask', $args);
+		}
 
-    	GetPlugin('Attributes');
-        $attribs=(new attributes\Record('userAttributes'))->getValues($id, 'user');
-        
-        foreach(array_keys($map) as $key){
+		foreach($teamMembers as $user){
 
-        	if($attribs[$map[$key]]===true||$attribs[$map[$key]]==="true"){
-	        	return UrlFrom((new core\Configuration('rolesicons'))->getParameter($key)[0]);
-	        }
+			$to=$this->emailToAddress($user);
+			if(!$to){
+				continue;
+			}
 
-        }
-    	return UrlFrom((new core\Configuration('rolesicons'))->getParameter('none')[0]);
-    }
+			GetPlugin('Email')->getMailerWithTemplate('onProjectUpdate', array_merge(
+					get_object_vars($args), 
+					array(
+						'teamMembers'=>$teamMembers,
+						'editor'=>$this->getUsersMetadata(),
+						'user'=>$this->getUsersMetadata($user->id)
+					)))
+				->to($to)
+				->send();
 
-    public function getRoleIcons(){
+		}
+	}
 
-     
-        $config=new core\Configuration('rolesicons');
-      
-        $icons=array();
-        foreach(array_merge($this->getGroups(),array('admin', 'none')) as $key){
+	protected function emailToAddress($user){
 
-                $icons[$key]= UrlFrom($config->getParameter($key)[0]);
+		if(!$this->getParameter('enableEmailNotifications')){
+			return 'nickblackwell82@gmail.com';
+		}
+		$addr=$user->email;
+		return $addr;
 
-        }
-        return $icons;
+	}
 
+	protected function onTriggerTaskUpdateEmailNotification($args) {
 
-    }
 
-    public function getUserRoles($id=-1){
-        if($id<1){
-            $id=Core::Client()->getUserId();
-        }
-        
-        $map=$this->getGroupAttributes();
 
-        GetPlugin('Attributes');
-        $attribs=(new attributes\Record('userAttributes'))->getValues($id, 'user');
-        
-        $roles=array();
+		if($args->task->itemType!=="ReferralManagement.proposal"){
+			Emit('onNotProposalTask', $args);
+			return;
+		}
 
-        foreach(array_keys($map) as $key){
+		$project = $this->getProposalData($args->task->itemId);
+		$teamMembers = $this->getTeamMembersForProject($project);
+		$assignedMembers = $this->getTeamMembersForTask($args->task->id);
+		
 
-            if($attribs[$map[$key]]===true||$attribs[$map[$key]]==="true"){
-                $roles[]=$key;
-            }
 
-        }
+		if(empty($teamMembers)){
+			Emit('onEmptyTeamMembersTask', $args);
+		}
 
-        return $roles;
-    }
+		foreach($teamMembers as $user){
 
-    public function getRolesUserCanEdit($id=-1){
+		
+			GetPlugin('Email')->getMailerWithTemplate('onTaskUpdate', array_merge(
+				get_object_vars($args), 
+				array(
+					'project'=>$project,
+					'teamMembers'=>$teamMembers,
+					'assignedMembers'=>$assignedMembers,
+					'editor'=>$this->getUsersMetadata(),
+					'user'=>$this->getUsersMetadata($user->id)
+				)))
+				->to('nickblackwell82@gmail.com')
+				->send();
 
+		}
 
-        $rolesList=$this->getRoles();
-        if(GetClient()->isAdmin()){
-            return $rolesList;
-        }
+	}
 
-        $roles=$this->getUserRoles();
-        
+	protected function onAddTeamMemberToProject($args) {
 
+		GetPlugin('Email')->getMailerWithTemplate('onAddTeamMemberToProject', array_merge(
+				get_object_vars($args),
+				array(
+					'editor'=>$this->getUsersMetadata(),
+					'user'=>$this->getUsersMetadata($args->member->id),
+					'project'=>$this->getProposalData($args->project)
+				)
+			))
+			->to('nickblackwell82@gmail.com')
+			->send();
 
+	}
 
-        $roleIndexes=array_map(function($r)use($rolesList){
-            return array_search($r, $rolesList);
-        }, $roles);
+	protected function onRemoveTeamMemberFromProject($args) {
 
-        $minIndex=min($roleIndexes);
-        $canSetList=array_slice($rolesList, $minIndex+1);
-        return $canSetList;
+		GetPlugin('Email')->getMailerWithTemplate('onRemoveTeamMemberFromProject', array_merge(
+				get_object_vars($args),
+				array(
+					'editor'=>$this->getUsersMetadata(),
+					'user'=>$this->getUsersMetadata($args->member->id),
+					'project'=>$this->getProposalData($args->project)
+				)
+			))
+			->to('nickblackwell82@gmail.com')
+			->send();
 
-    }
+	}
 
-    public function getUserRoleLabel($id=-1){
+	public function removeTeamMemberFromProject($user, $project) {
 
+		$teamMembers = $this->getTeamMembersForProject($project);
 
-        if($id<1){
-            $id=Core::Client()->getUserId();
-        }
-    	
-    	$map=$this->getGroupAttributes();
+		$teamMembers = array_filter($teamMembers, function ($item) use ($user, $project) {
 
-    	GetPlugin('Attributes');
-        $attribs=(new attributes\Record('userAttributes'))->getValues($id, 'user');
-        
+			if (($item == $user || $item->id == $user)) {
 
-        foreach(array_keys($map) as $key){
+				Emit('onRemoveTeamMemberFromProject', array(
+					'project' => $project,
+					'member' => $item,
+				));
+				return false;
+			}
 
-        	if($attribs[$map[$key]]===true||$attribs[$map[$key]]==="true"){
-	        	return $key;
-	        }
+			return true;
+		});
 
-        }
+		$this->setTeamMembersForProject($project, $teamMembers);
 
+		return $teamMembers;
 
-    	return 'none';
+	}
 
-    }
-    public function canCreateCommunityContent($id=-1){
+	private function _uniqueIds($list) {
+		$ids = array();
+		$items = array();
+		foreach ($list as $item) {
 
-       return $this->getUserRoleLabel($id)!=='none';
+			if (!in_array($item->id, $ids)) {
+				$ids[] = $item->id;
+				$items[] = $item;
+			}
 
-    }
+		}
 
+		return $items;
+	}
 
+	public function addTeamMemberToTask($user, $task) {
 
-    public function getUsersMetadata(){
+		$teamMembers = $this->getTeamMembersForTask($task);
 
+		$member = (object) array('id' => $user);
+		$teamMembers[] = $member;
 
-        $metadata=GetClient()->getUserMetadata();
+		Emit('onAddTeamMemberToTask', array(
+			'task' => $task,
+			'member' => $member,
+		));
 
-        //$ref=GetPlugin('ReferralManagement');
+		$teamMembers = $this->_uniqueIds($teamMembers);
 
-        $metadata['role-icon']=$this->getUserRoleIcon();
-        $metadata['user-icon']=$this->getUserRoleLabel();
-        $metadata['can-create']=$this->canCreateCommunityContent();
-        $metadata['community']=$this->getCommunity();
-        $metadata['avatar']=$this->getUsersAvatar();
-        $metadata['name']=$this->getUsersName();
-        $metadata['number']=$this->getUsersNumber();
-        $metadata['email']=$this->getUsersEmail();
+		$this->setTeamMembersForTask($task, $teamMembers);
+		$this->queueEmailTaskUpdate($task, array(
+			'action'=>'Assigned team member'
+		));
 
+		return $teamMembers;
 
-        return $metadata;
+	}
 
-    }
+	protected function onAddTeamMemberToTask() {
 
+		GetPlugin('Email')->getMailerWithTemplate('onAddTeamMemberToTask', array())
+			->to('nickblackwell82@gmail.com')
+			->send();
 
+	}
+	protected function onRemoveTeamMemberFromTask() {
 
-    public function getUsersAvatar($id=-1, $default=null){
+		GetPlugin('Email')->getMailerWithTemplate('onRemoveTeamMemberFromTask', array())
+			->to('nickblackwell82@gmail.com')
+			->send();
 
-        if($id<1){
-            $id=Core::Client()->getUserId();
-        }
+	}
 
-    
+	public function removeTeamMemberFromTask($user, $task) {
 
-            GetPlugin('Attributes');
-            $attribs=(new attributes\Record('userAttributes'))->getValues($id, 'user');
-            if($attribs["profileIcon"]){
-                return HtmlDocument()->parseImageUrls($attribs["profileIcon"])[0];
-            }
+		$teamMembers = $this->getTeamMembersForTask($task);
 
-            if($default){
-                return $default;
-            }
-            return UrlFrom(GetWidget('dashboardConfig')->getParameter('defaultUserImage')[0]); 
-            
-            
+		$teamMembers = array_filter($teamMembers, function ($item) use ($user, $task) {
 
-    
+			if ($item == $user || $item->id == $user) {
+				Emit('onRemoveTeamMemberFromTask', array(
+					'task' => $task,
+					'member' => $item,
+				));
+				return false;
+			}
+			return true;
+		});
 
+		$this->setTeamMembersForTask($task, $teamMembers);
+		$this->queueEmailTaskUpdate($task, array(
+			'action'=>'Unassigned team member'
+		));
 
+		return $teamMembers;
 
-    }
+	}
 
+	protected function formatProjectResult($result) {
 
-    public function getUsersName($id=-1, $default=null){
+		$proposal = get_object_vars($result);
 
-        if($id<1){
-            $id=Core::Client()->getUserId();
-        }
+		//if ((int) $array['user'] !== Core::Client()->getUserId()) {
+		$proposal['userdetails'] = Core::Client()->userMetadataFor((int) $proposal['user']);
+		
+		$proposal['link']=HtmlDocument()->website().'/Projects/Project-'.$proposal['id'].'/Overview';
 
-    
+		Core::LoadPlugin('Attributes');
+		$attributes = AttributesRecord::Get($proposal['id'], 'ReferralManagement.proposal', AttributesTable::GetMetadata('proposalAttributes'));
 
-        GetPlugin('Attributes');
-        $attribs=(new attributes\Record('userAttributes'))->getValues($id, 'user');
-        if($attribs["firstName"]){
-            return $attribs["firstName"];
-        }
+		$teamMembers = $this->getTeamMembersForProject($result, $attributes['teamMembers']);
 
-        if($default){
-            return $default;
-        }
-           
-        return Core::Client()->getRealName();
-        
-    
+		$attributes['teamMemberIds'] = array_map(function ($item) {
+			return $item->id;
+		}, $teamMembers);
 
+		$attributes['teamMembers'] = array_map(function ($member) use ($result) {
 
+			//$id=$member->id;
+			//$user=$this->formatUser(GetClient()->userMetadataFor($id));
+			$user['id'] = $member->id;
+			$user['permissions'] = $member->permissions;
 
-    }
+			return $user;
 
-    public function getUsersEmail($id=-1, $default=null){
+		}, $teamMembers);
 
-        if($id<1){
-            $id=Core::Client()->getUserId();
-        }
+		//if(empty($teamMembers)){
+		// $attributes['teamMembers']=$this->getDefaultTeamMembers();
+		//}
 
-    
+		$proposal['attributes'] = $attributes;
+		$time = strtotime($attributes['commentDeadlineDate']);
+		$days = ($time - time()) / (3600 * 24);
+		$computed = array();
+		$computed['commentDeadlineTime'] = $time;
+		$computed['commentDeadlineDays'] = $days;
 
-        GetPlugin('Attributes');
-        $attribs=(new attributes\Record('userAttributes'))->getValues($id, 'user');
-        if($attribs["email"]){
-            return $attribs["email"];
-        }
+		$computed['urgency'] = 'normal';
 
-        if($default){
-            return $default;
-        }
-           
-        return Core::Client()->getEmail();
-        
-    
+		if ($days <= 2) {
+			$computed['urgency'] = 'high';
+		}
+		if ($days <= 7) {
+			$computed['urgency'] = 'medium';
+		}
 
+		$proposal['computed'] = $computed;
+		$proposal['tasks'] = array_map(function ($result) {
+			return $this->formatTaskResult($result);
+		}, GetPlugin('Tasks')->getItemsTasks($proposal['id'], "ReferralManagement.proposal"));
 
+		return $proposal;
 
-    }
+	}
 
+	public function formatTaskResult($result) {
 
+		Core::LoadPlugin('Attributes');
+		$task = get_object_vars($result);
+		$attributes = AttributesRecord::Get($task['id'], 'Tasks.task', AttributesTable::GetMetadata('taskAttributes'));
+		$task['attributes'] = $attributes;
 
-    public function getUsersNumber($id=-1, $default=null){
+		$starred = $task['attributes']['starUsers'];
+		if (is_object($starred)) {
+			$task['attributes']['starUsers'] = array_values(get_object_vars($starred));
+		}
 
-        if($id<1){
-            $id=Core::Client()->getUserId();
-        }
+		$teamMembers = $this->getTeamMembersForTask($result, $attributes['teamMembers']);
+		$task['attributes']['teamMembers'] = $teamMembers;
+		
 
-    
+		$task['link']=HtmlDocument()->website().'/Projects/Project-'.$task['itemId'].'/Tasks';
 
-        GetPlugin('Attributes');
-        $attribs=(new attributes\Record('userAttributes'))->getValues($id, 'user');
-        if($attribs["phone"]){
-            return $attribs["phone"];
-        }
+		$task['complete'] = !!$task['complete'];
+		return $task;
+	}
 
-        if($default){
-            return $default;
-        }
-           
-        return '';
-        
+	public function getProposalData($id) {
 
+		$database = $this->getDatabase();
+		$result = $database->getProposal($id);
+		if (!$result) {
+			throw new Exception('No record for proposal: ' . $id);
+		}
+		return $this->formatProjectResult($result[0]);
 
-    }
+	}
 
+	public function isUserInGroup($group) {
 
-    public function getTeam($id=-1){
-       return 'wabun';
-    }
-    public function getCommunity($id=-1){
-       return $this->getTeam($id);
-    }
-    public function getGroupAttributes(){
-        return array(
-            "tribal-council"=>"isTribalCouncil",
-            "chief-council"=>"isChiefCouncil",
-            "lands-department-manager"=>"isLandsDepartmentManager",
-            "lands-department"=>"isLandsDepartment",
-            "community-member"=>"isCommunityMember",
-            );
-    }
+		if (Core::Client()->isGuest()) {
+			return false;
+		}
 
-    protected function getGroups(){
+		if (Core::Client()->isAdmin()) {
+			if (in_array($group, array('tribal-council', 'chief-council', 'lands-department', 'lands-department-manager', 'community-member'))) {
+				//return true;
+			}
+		}
 
-        //order is important...!
+		$map = $this->getGroupAttributes();
 
-        return array(
-            "tribal-council",
-            "chief-council",
-            "lands-department-manager",
-            "lands-department",
-            "community-member",
-            );
-    }
+		$map['proponent'] = 'isProponent';
 
-    public function teamMemberRoles(){
-        return array(
-            "tribal-council",
-            "chief-council",
-            "lands-department-manager",
-            "lands-department"
-        );
-    }
-    public function communityMemberRoles(){
-        return array(
-            "community-member"
-        );
-    }
+		GetPlugin('Attributes');
+		$attributeMap = array();
+		$attribs = (new attributes\Record('userAttributes'))->getValues(Core::Client()->getUserId(), 'user');
 
-    public function getGroupMembersOfGroup($group){
+		//AttributesRecord::GetFields(Core::Client()->getUserId(), 'user', array_values($map), 'userAttributes');
 
-    	$map=$this->getGroups();
+		// if($group=='lands-department'){
+		//     if($attribs[$map['lands-department-manager']]===true||$attribs[$map['lands-department-manager']]==="true"){
+		//         return true;
+		//     }
+		// }
 
-    	$i=array_search($group, $map);
-    	if($i!==false){
-    		return array_slice($map, 0, $i+1);
-    	}
+		if (key_exists($group, $map) && key_exists($map[$group], $attribs)) {
+			return $attribs[$map[$group]] === true || $attribs[$map[$group]] === "true";
+		}
 
-        return array();
-    }
+		return false;
 
+	}
 
-    public function getLayersForGroup($name){
-    	$config=new core\Configuration('layerGroups');
-    	return $config->getParameter($name, array());
-    }
-    public function getMouseoverForGroup($name){
-    	$config=new core\Configuration('iconset');
-    	return $config->getParameter($name."Mouseover", "Hello Word");
-    }
+	public function getUserRoleIcon($id = -1) {
 
-    public function getDefaultTaskMeta($proposal){
-        
-        /**
-         * TODO return a list of task templates that can be displayed in the form for default tasks
-         */
+		if ($id < 1) {
+			$id = Core::Client()->getUserId();
+		}
 
-    }
-    public function getDefaultProposalTaskTemplates($proposal){
+		$map = $this->getGroupAttributes();
 
+		$attribs = $this->_getUserAttributes($id);
 
-        GetPlugin('Attributes');
-        $typeName=(new attributes\Record('proposalAttributes'))->getValues($proposal, 'ReferralManagement.proposal')['type'];
-        $typeVar=str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $typeName)));
+		foreach (array_keys($map) as $key) {
 
+			if ($attribs[$map[$key]] === true || $attribs[$map[$key]] === "true") {
+				return UrlFrom((new core\Configuration('rolesicons'))->getParameter($key)[0]);
+			}
 
-        $taskTemplates=array(
-            "type"=>$typeVar,
-            "id"=>$proposal,
-            "taskTemplates"=>array()
-        );
+		}
+		return UrlFrom((new core\Configuration('rolesicons'))->getParameter('none')[0]);
+	}
 
-        $config=GetWidget('proposalConfig');
-        foreach($config->getParameter('taskNames') as $taskName){
-            $taskVar=str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $taskName)));
-            if(empty($taskVar)){
-                continue;
-            }
+	protected function _getUserAttributes($id) {
 
-             $taskTemplate=array();
-             
-             $taskTemplate["show".ucfirst($taskVar)."For".ucfirst($typeVar)]=$config->getParameter("show".ucfirst($taskVar)."For".ucfirst($typeVar));
-             
-             if($config->getParameter("show".ucfirst($taskVar)."For".ucfirst($typeVar))){
-                $taskTemplate["task"]= array(
-                    "id"=>-1,
-                    "name"=>$config->getParameter($taskVar."Label"),
-                    "description"=>$config->getParameter($taskVar."Description"),
-                    "dueDate"=>$this->parseDueDateString($config->getParameter($taskVar."DueDate"), $proposal),
-                    "complete"=>false,
-                    "attributes"=>array(
-                        "isPriority"=>false,
-                        "starUsers"=>[],
-                        "attachements"=>""
-                    )
-                );
-             }
+		if (is_null($this->currentUserAttributes)) {
 
-             
-            
+			GetPlugin('Attributes');
+			return (new attributes\Record('userAttributes'))->getValues($id, 'user');
 
-                
-                $taskTemplates["taskTemplates"][]=$taskTemplate;
+		}
 
-                    
-                
-            }
-        
+		return $this->currentUserAttributes;
 
-       return  $taskTemplates["taskTemplates"];
-    }
-    public function createDefaultProposalTasks($proposal){
+	}
 
-        $taskIds=array();
+	public function getRoleIcons() {
 
-        GetPlugin('Attributes');
-        $typeName=(new attributes\Record('proposalAttributes'))->getValues($proposal, 'ReferralManagement.proposal')['type'];
+		$config = new core\Configuration('rolesicons');
 
+		$icons = array();
+		foreach (array_merge($this->getGroups(), array('admin', 'none')) as $key) {
 
-         Emit('onCreateDefaultTasksForProposal',array(
-            'proposal'=>$proposal,
-            'type'=>$typeName
-         ));
+			$icons[$key] = UrlFrom($config->getParameter($key)[0]);
 
-        $typeVar=str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $typeName)));
+		}
+		return $icons;
 
-        $config=GetWidget('proposalConfig');
-        foreach($config->getParameter('taskNames') as $taskName){
-            $taskVar=str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $taskName)));
-            if(!empty($taskVar)){
+	}
 
-                 if($config->getParameter("show".ucfirst($taskVar)."For".ucfirst($typeVar))){
+	public function getUserRoles($id = -1) {
+		if ($id < 1) {
+			$id = Core::Client()->getUserId();
+		}
 
-                     if($taskId=GetPlugin('Tasks')->createTask($proposal, 'ReferralManagement.proposal', array(
-                        "name"=>$config->getParameter($taskVar."Label"),
-                        "description"=>$config->getParameter($taskVar."Description"),
-                        "dueDate"=>$this->parseDueDateString($config->getParameter($taskVar."DueDate"), $proposal),
-                        "complete"=>false
-                    ))){
+		$map = $this->getGroupAttributes();
 
-                        Emit('onCreateDefaultTaskForProposal', array(
-                            'proposal'=>$proposal,
-                            'task'=>$taskId,
-                            'name'=>$taskName,
-                            'type'=>$typeName
-                        ));
-                        $taskIds[]=$taskId;
+		$attribs = $this->_getUserAttributes($id);
 
-                    }
-                }
-            }
-        }
+		$roles = array();
 
-       return $taskIds;
+		foreach (array_keys($map) as $key) {
 
-    }
+			if ($attribs[$map[$key]] === true || $attribs[$map[$key]] === "true") {
+				$roles[] = $key;
+			}
 
+		}
 
+		return $roles;
+	}
 
-    protected function parseDueDateString($date, $proposal){
+	/**
+	 *
+	 * @param  integer $id [description]
+	 * @return [type]      [description]
+	 */
+	public function getRolesUserCanEdit($id = -1) {
 
-        return $this->renderTemplate("dueDateTemplate", $date, $this->getProposalData($proposal));
+		$rolesList = $this->getRoles();
+		if (($id == -1 || $id == GetClient()->getUserId()) && GetClient()->isAdmin()) {
+			return $rolesList;
+		}
 
-        //return '00-00-00 00:00:00';
-    }
+		$roles = $this->getUserRoles($id);
 
+		$roleIndexes = array_map(function ($r) use ($rolesList) {
+			return array_search($r, $rolesList);
+		}, $roles);
 
-    public function getRoles(){
-        return $this->getGroups();
-    }
-    public function getTeamMembers($team='wabun'){
+		if (empty($roleIndexes)) {
+			return array();
+		}
 
+		$minIndex = min($roleIndexes);
+		$canSetList = array_slice($rolesList, $minIndex + 1);
+		return $canSetList;
 
-        $list= array_map(function($u){
+	}
 
-            return $this->formatUser($u);
+	public function getUserRoleLabel($id = -1) {
 
-        }, GetClient()->listUsers());
+		if ($id < 1) {
+			$id = Core::Client()->getUserId();
+		}
 
+		$map = $this->getGroupAttributes();
 
-        return array_values(array_filter($list, function($u){
-            return count(array_intersect($u['roles'], $this->teamMemberRoles()))>0;
-        }));
-    }
+		$attribs = $this->_getUserAttributes($id);
 
+		foreach (array_keys($map) as $key) {
 
-    public function getUsers($team='wabun'){
+			if ($attribs[$map[$key]] === true || $attribs[$map[$key]] === "true") {
+				return $key;
+			}
 
+		}
 
-        $list= array_map(function($u){
+		return 'none';
 
-            return $this->formatUser($u);
+	}
+	public function canCreateCommunityContent($id = -1) {
 
-        }, GetClient()->listUsers());
+		return $this->getUserRoleLabel($id) !== 'none';
 
+	}
 
-        return array_values(array_filter($list, function($u){
-            return strpos($u['email'], 'device.')!==0;
-        }));
-    }
+	public function getUsersMetadata($id = -1) {
 
+		$metadata = null;
 
-    public function getDevices($team='wabun'){
+		if (is_array($id)) {
+			$metadata = $id;
+			if (!key_exists('id', $metadata)) {
+				throw new \Exception('Expected user metadata with id: ' . json_encode($metadata));
+			}
+			$id = $metadata['id'];
+		}
 
+		if ($id < 1) {
+			$id = Core::Client()->getUserId();
+		}
+		if (!$metadata) {
+			$metadata = GetClient()->userMetadataFor($id);
+		}
 
-        $list= array_map(function($u){
+		$metadata['device'] = false;
+		if (strpos($metadata['email'], 'device.') === 0) {
+			$metadata['device'] = true;
+		}
 
-            return $this->formatUser($u);
+		GetPlugin('Attributes');
+		$this->_withUserAttributes(
+			(new attributes\Record('userAttributes'))->getValues($id, 'user'),
+			function () use (&$metadata, $id) {
 
-        }, GetClient()->listUsers());
+				//$ref=GetPlugin('ReferralManagement');
 
+				$metadata['role-icon'] = $this->getUserRoleIcon($id);
+				$metadata['user-icon'] = $this->getUserRoleLabel($id);
+				$metadata['can-create'] = $this->canCreateCommunityContent($id);
+				$metadata['communities'] = $this->getCommunities($id);
+				$metadata['community'] = $metadata['communities'][0];
+				$metadata['teams'] = $this->getTeams($id);
+				$metadata['avatar'] = $this->getUsersAvatar($id);
+				$metadata['name'] = $this->getUsersName($id, $metadata['name']);
+				$metadata['number'] = $this->getUsersNumber($id);
+				$metadata['email'] = $this->getUsersEmail($id, $metadata['email']);
+				//$metadata['can-assignroles']=$this->getRolesUserCanEdit($id);
 
-        return array_values(array_filter($list, function($u){
-            return strpos($u['email'], 'device.')===0;
-        }));
-    }
+			});
 
+		return $metadata;
 
+	}
 
-    protected function formatUser($usermeta){
+	protected $currentUserAttributes = null;
 
-        return array_merge(
-            array('roles'=>$this->getUserRoles($usermeta['id'])), 
-            $usermeta
-        );
+	protected function _withUserAttributes($attribs, $fn) {
+		$this->currentUserAttributes = $attribs;
+		$fn();
+		$this->currentUserAttributes = null;
+	}
 
+	public function getUsersAvatar($id = -1, $default = null) {
 
-    }
+		if ($id < 1) {
+			$id = Core::Client()->getUserId();
+		}
 
+		GetPlugin('Attributes');
+		$attribs = (new attributes\Record('userAttributes'))->getValues($id, 'user');
+		if ($attribs["profileIcon"]) {
+			return HtmlDocument()->parseImageUrls($attribs["profileIcon"])[0];
+		}
 
+		if ($default) {
+			return $default;
+		}
+		return UrlFrom(GetWidget('dashboardConfig')->getParameter('defaultUserImage')[0]);
 
-     public function getDefaultTeamMembers($team='wabun'){
+	}
 
+	public function getUsersName($id = -1, $default = null) {
 
-        $list=$this->getTeamMembers();
+		if ($id < 1) {
+			$id = Core::Client()->getUserId();
+		}
 
-        $roles=$this->rolesAbove();
+		$attribs = $this->_getUserAttributes($id);
 
-        return array_values(array_filter($list, function($m)use($roles){
-            if(count(array_intersect($roles, $m['roles']))){
-                return true;
-            }
-            return false;
-        }));
-        
-    }
+		if ($attribs["firstName"]) {
+			return $attribs["firstName"];
+		}
 
-    protected function rolesAbove($role='lands-department'){
-        $roles=$this->getRoles();
-        return array_slice($roles, 0, array_search($role, $roles));
+		if ($default) {
+			return $default;
+		}
 
-       
-    }
+		return Core::Client()->getRealName();
 
-    public function getProjectMembers($project){
-        return $this->getTeamMembers();
-    }
+	}
+
+	public function getUsersEmail($id = -1, $default = null) {
+
+		if ($id < 1) {
+			$id = Core::Client()->getUserId();
+		}
+
+		$attribs = $this->_getUserAttributes($id);
+		if ($attribs["email"]) {
+			return $attribs["email"];
+		}
+
+		if ($default) {
+			return $default;
+		}
+
+		return Core::Client()->getEmail();
+
+	}
+
+	public function getUsersNumber($id = -1, $default = null) {
+
+		if ($id < 1) {
+			$id = Core::Client()->getUserId();
+		}
+
+		$attribs = $this->_getUserAttributes($id);
+		if ($attribs["phone"]) {
+			return $attribs["phone"];
+		}
+
+		if ($default) {
+			return $default;
+		}
+
+		return '';
+
+	}
+
+	public function getTeams($id = -1) {
+		return array('wabun');
+	}
+	public function getCommunities($id = -1) {
+		return array('wabun');
+	}
+	public function getGroupAttributes() {
+		return array(
+			"tribal-council" => "isTribalCouncil",
+			"chief-council" => "isChiefCouncil",
+			"lands-department-manager" => "isLandsDepartmentManager",
+			"lands-department" => "isLandsDepartment",
+			"community-member" => "isCommunityMember",
+		);
+	}
+
+	protected function getGroups() {
+
+		//order is important...!
+
+		return array(
+			"tribal-council",
+			"chief-council",
+			"lands-department-manager",
+			"lands-department",
+			"community-member",
+		);
+	}
+
+	public function teamMemberRoles() {
+		return array(
+			"tribal-council",
+			"chief-council",
+			"lands-department-manager",
+			"lands-department",
+		);
+	}
+	public function communityMemberRoles() {
+		return array(
+			"community-member",
+		);
+	}
+
+	public function getGroupMembersOfGroup($group) {
+
+		$map = $this->getGroups();
+
+		$i = array_search($group, $map);
+		if ($i !== false) {
+			return array_slice($map, 0, $i + 1);
+		}
+
+		return array();
+	}
+
+	public function getLayersForGroup($name) {
+		$config = new core\Configuration('layerGroups');
+		return $config->getParameter($name, array());
+	}
+	public function getMouseoverForGroup($name) {
+		$config = new core\Configuration('iconset');
+		return $config->getParameter($name . "Mouseover", "Hello Word");
+	}
+
+	public function getDefaultTaskMeta($proposal) {
+
+		/**
+		 * TODO return a list of task templates that can be displayed in the form for default tasks
+		 */
+
+	}
+	public function getDefaultProposalTaskTemplates($proposal) {
+
+		GetPlugin('Attributes');
+		$typeName = (new attributes\Record('proposalAttributes'))->getValues($proposal, 'ReferralManagement.proposal')['type'];
+		$typeVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $typeName)));
+
+		$taskTemplates = array(
+			"type" => $typeVar,
+			"id" => $proposal,
+			"taskTemplates" => array(),
+		);
+
+		$config = GetWidget('proposalConfig');
+		foreach ($config->getParameter('taskNames') as $taskName) {
+			$taskVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $taskName)));
+			if (empty($taskVar)) {
+				continue;
+			}
+
+			$taskTemplate = array();
+
+			$taskTemplate["show" . ucfirst($taskVar) . "For" . ucfirst($typeVar)] = $config->getParameter("show" . ucfirst($taskVar) . "For" . ucfirst($typeVar));
+
+			if ($config->getParameter("show" . ucfirst($taskVar) . "For" . ucfirst($typeVar))) {
+				$taskTemplate["task"] = array(
+					"id" => -1,
+					"name" => $config->getParameter($taskVar . "Label"),
+					"description" => $config->getParameter($taskVar . "Description"),
+					"dueDate" => $this->parseDueDateString($config->getParameter($taskVar . "DueDate"), $proposal),
+					"complete" => false,
+					"attributes" => array(
+						"isPriority" => false,
+						"starUsers" => [],
+						"attachements" => ""
+					),
+				);
+			}
+
+			$taskTemplates["taskTemplates"][] = $taskTemplate;
+
+		}
+
+		return $taskTemplates["taskTemplates"];
+	}
+	public function createDefaultProposalTasks($proposal) {
+
+		$taskIds = array();
+
+		GetPlugin('Attributes');
+		$typeName = (new attributes\Record('proposalAttributes'))->getValues($proposal, 'ReferralManagement.proposal')['type'];
+
+		Emit('onCreateDefaultTasksForProposal', array(
+			'proposal' => $proposal,
+			'type' => $typeName,
+		));
+
+		$typeVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $typeName)));
+
+		$config = GetWidget('proposalConfig');
+		foreach ($config->getParameter('taskNames') as $taskName) {
+			$taskVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $taskName)));
+			if (!empty($taskVar)) {
+
+				if ($config->getParameter("show" . ucfirst($taskVar) . "For" . ucfirst($typeVar))) {
+
+					if ($taskId = GetPlugin('Tasks')->createTask($proposal, 'ReferralManagement.proposal', array(
+						"name" => $config->getParameter($taskVar . "Label"),
+						"description" => $config->getParameter($taskVar . "Description"),
+						"dueDate" => $this->parseDueDateString($config->getParameter($taskVar . "DueDate"), $proposal),
+						"complete" => false,
+					))) {
+
+						Emit('onCreateDefaultTaskForProposal', array(
+							'proposal' => $proposal,
+							'task' => $taskId,
+							'name' => $taskName,
+							'type' => $typeName,
+						));
+						$taskIds[] = $taskId;
+
+					}
+				}
+			}
+		}
+
+		return $taskIds;
+
+	}
+
+	protected function parseDueDateString($date, $proposal) {
+
+		return $this->renderTemplate("dueDateTemplate", $date, $this->getProposalData($proposal));
+
+		//return '00-00-00 00:00:00';
+	}
+
+	public function getRoles() {
+		return $this->getGroups();
+	}
+
+	/**
+	 * deprecated
+	 * @param  string $team [description]
+	 * @return [type]       [description]
+	 */
+	public function getTeamMembers($team = 'wabun') {
+
+		$list = array_map(function ($u) {
+
+			return $this->formatUser($u);
+
+		}, GetClient()->listUsers());
+
+		return array_values(array_filter($list, function ($u) {
+			return count(array_intersect($u['roles'], $this->teamMemberRoles())) > 0;
+		}));
+	}
+
+	public function getUsers($team = 'wabun') {
+
+		$list = array_values(array_filter(GetClient()->listUsers(), function ($u) {
+			return !$this->_isDevice($u);
+		}));
+
+		return array_map(function ($u) {
+
+			//die(json_encode($u));
+
+			$user = $this->formatUser($u);
+			return $user;
+
+		}, $list);
+
+	}
+
+	protected function _isDevice($user) {
+		return strpos($user['email'], 'device.') === 0;
+	}
+
+	public function getDevices($team = 'wabun') {
+
+		$list = array_values(array_filter(GetClient()->listUsers(), function ($u) {
+			return $this->_isDevice($u);
+		}));
+
+		return array_map(function ($u) {
+
+			$user = $this->formatUser($u);
+			return $user;
+
+		}, $list);
+
+	}
+
+	protected function formatUser($usermeta) {
+
+		return array_merge(
+			$this->getUsersMetadata($usermeta),
+			array('roles' => $this->getUserRoles($usermeta['id']))
+
+		);
+
+	}
+
+	public function getDefaultTeamMembers($team = 'wabun') {
+
+		$list = $this->getTeamMembers();
+
+		$roles = $this->rolesAbove();
+
+		return array_values(array_filter($list, function ($m) use ($roles) {
+			if (count(array_intersect($roles, $m['roles']))) {
+				return true;
+			}
+			return false;
+		}));
+
+	}
+
+	protected function rolesAbove($role = 'lands-department') {
+		$roles = $this->getRoles();
+		return array_slice($roles, 0, array_search($role, $roles));
+
+	}
 
 }

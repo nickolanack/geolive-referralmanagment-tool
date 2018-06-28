@@ -1,6 +1,9 @@
 {
-    "list_proposals": [],
+    "create_dashboard": [],
+    "list_projects": [],
     "save_proposal": [],
+    "save_team_member_permissions": [],
+    "save_guest_proposal": [],
     "save_task": [],
     "delete_task": {
         "validate": {
@@ -62,19 +65,21 @@
             ]
         }
     },
-    "add_proposal_user": {
+    "add_item_user": {
         "validate": {
             "checkKeys": [
                "user",
-               "proposal"
+               "item",
+               "type"
             ]
         }
     },
-    "remove_proposal_user": {
+    "remove_item_user": {
         "validate": {
             "checkKeys": [
                 "user",
-                "proposal"
+                "item",
+                "type"
             ]
         }
     },
@@ -111,6 +116,13 @@
         }
     },
     "add_document": {
+        "validate": {
+            "checkKeys": [
+                "id", "type", "documentType", "documentHtml"
+            ]
+        }
+    },
+    "remove_document": {
         "validate": {
             "checkKeys": [
                 "id", "type", "documentType", "documentHtml"

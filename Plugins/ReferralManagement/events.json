@@ -1,1 +1,11 @@
-["onCreateProposal", "onPost"]
+[
+	"onCreateProposal", 
+	"onPost", 
+	"onActivateEmailForGuestProposal", 
+	"onAddTeamMemberToProject", 
+	"onRemoveTeamMemberFromProject", 
+	"onAddTeamMemberToTask", 
+	"onRemoveTeamMemberFromTask", 
+	"onTriggerProjectUpdateEmailNotification",
+	"onTriggerTaskUpdateEmailNotification"
+]

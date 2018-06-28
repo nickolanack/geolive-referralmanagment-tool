@@ -19,6 +19,15 @@ var Proposal = (function() {
 		}
 	});
 
+	var RemoveDocumentQuery = new Class({
+		Extends: AjaxControlQuery,
+		initialize: function(data) {
+			this.parent(CoreAjaxUrlRoot, 'remove_document', Object.append({
+				plugin: 'ReferralManagement'
+			}, (data || {})));
+		}
+	});
+
 
 	var FlagProposalQuery = new Class({
 		Extends: AjaxControlQuery,
@@ -51,88 +60,13 @@ var Proposal = (function() {
 
 
 
-	var AddProposalUserQuery = new Class({
-		Extends: AjaxControlQuery,
-		initialize: function(proposal, user) {
-
-			this.parent(CoreAjaxUrlRoot, "add_proposal_user", {
-				plugin: "ReferralManagement",
-				user: user,
-				proposal: proposal
-			});
-		}
-	});
-
-	var RemoveProposalUserQuery = new Class({
-		Extends: AjaxControlQuery,
-		initialize: function(proposal, user) {
-
-			this.parent(CoreAjaxUrlRoot, "remove_proposal_user", {
-				plugin: "ReferralManagement",
-				user: user,
-				proposal: proposal
-			});
-		}
-	});
 
 
-
-
-	var TeamMember = new Class({
-        Extends: CoreUser,
-        getEmail:function(){
-        	var me=this;
-        	return me.options.metadata.email;
-        },
-        getRoles:function(){
-        	var me=this;
-        	return me.options.metadata.roles;
-        },
-        save:function(callback){
-        	var me=this;
-        	AppClient.authorize('write', {
-                id: me.getId(),
-                type: me.getType()
-            }, function(access) {
-                //check access, bool.
-                if (access) {
-                    callback(true);
-                }
-            });
-        },
-        isDevice:function(){
-        	return false;
-        },
-        isAdmin:function(){
-        	return false;
-        }
-    });
-
-    var ProjectClient=new Class({
-    	Extends: DataTypeObject,
-		Implements: [Events],
-		initialize: function(id, data) {
-			var me=this;
-
-			me.type='ReferralManagement.client';
-			me._id=id;
-
-			me.data=data;
-		},
-		getName:function(){
-			var me=this;
-			return me.data.name;
-		},
-		getDescription:function(){
-			var me=this;
-			return 'Some description';
-		}
-    });
 
 
 	var Proposal  = new Class({
 		Extends: DataTypeObject,
-		Implements: [Events],
+		Implements: [Events, UserTeamCollection],
 		initialize: function(id, data) {
 			var me = this;
 			me.type = "ReferralManagement.proposal";
@@ -143,9 +77,31 @@ var Proposal = (function() {
 			me._team=[];
 			if (data) {
 				me._setData(data);
+			}else{
+				data={};
 			}
 
+			if(data.sync){
+				AjaxControlQuery.Subscribe({
+					"channel":'proposal.'+me.getId(),
+					"event":"update"
+				}, function(update){
 
+
+					console.log('Recieved Update Message');
+					console.log(update);
+
+					if(update.updated){
+						update.updated.forEach(function(data){
+							
+							me._setData(data);
+							
+						});
+					}
+
+
+				});
+			}
 			
 
 
@@ -162,24 +118,89 @@ var Proposal = (function() {
 			me.data = data;
 
 		
-			if(me.data&&me.data.attributes){
-			me._team=[];
-			if(me.data.attributes.teamMembers){
-			me._team=me.data.attributes.teamMembers.map(function(user){
-					return new TeamMember({
-			
-				        userType:"user",
-				        id:user.id,
-				        metadata:user
-				       
-				    });
-				});
-			}
-			}
+			me._updateUserTeamCollection(data)
+			me._updateTasks(data);
 
 			if(change){
 				me.fireEvent('change');
 			}
+
+		},
+
+		_updateTasks:function(data){
+			var me=this;
+
+			var tasksArray=data.tasks||[];
+
+			if(!me._getTasks){
+
+				//Initialize tasks on load.
+
+				var tasks= tasksArray.map(function(taskData){
+						
+					var task = new TaskItem(me, taskData);
+					me._addTaskListeners(task);
+
+
+					return task;
+				});
+				me._getTasks=tasks;
+				return;
+			}
+
+			var ids=tasksArray.map(function(taskData){
+				return taskData.id;
+			});
+
+			var existingIds=[];
+			me.getTasks().forEach(function(task){
+				if(ids.indexOf(task.getId())<0){
+					TaskItem.RemoveTask(task);
+					return
+				}
+					
+				existingIds.push(task.getId());
+				
+			})
+			
+			tasksArray.forEach(function(taskData){
+				if(!me.hasTask(taskData.id)){
+					me.addTask(new TaskItem(me, taskData));
+					return;
+				}
+				var task=me.getTask(taskData.id)
+				//if(taskData.modifiedDate>task.getModifiedDate()){
+					task.setData(taskData);
+				//}
+				
+
+			});
+
+
+
+		},
+		_addTaskListeners:function(t){
+
+			var me=this;
+			var changeListener=function(){
+				me.fireEvent('taskChanged', [t]);
+				me.fireEvent('change');
+			}
+			var removeListener=function(){
+
+				me._getTasks.splice(me._getTasks.indexOf(t),1);
+				t.removeEvent('change', changeListener);
+				t.removeEvent('remove', removeListener);
+
+				me.fireEvent('taskRemoved', [t]);
+				me.fireEvent('change');
+
+
+			}
+
+			t.addEvent('change', changeListener);
+			t.addEvent('remove', removeListener);
+
 
 		},
 		isComplete:function(){
@@ -225,13 +246,7 @@ var Proposal = (function() {
 			var me=this;
 			return new ProjectClient(-1, {name:me.getCompanyName()});
 		},
-		/**
-		 * Alias
-		 */
-		getClient:function(){
-			var me=this;
-			return me.getCompany();
-		},
+		
 		getPercentBudgetComplete: function() {
 
 			/* Deprecated */
@@ -250,10 +265,6 @@ var Proposal = (function() {
 		isOnSchedule: function() {
 			var me = this;
 			return (me.getPercentComplete() >= me.getPercentTimeComplete());
-		},
-		getUsers: function() {
-			var me = this;
-			return [AppClient];
 		},
 		getTotalUserHoursThisMonth: function() {
 			var me=this;
@@ -394,10 +405,12 @@ var Proposal = (function() {
 		},
 		addTask:function(task){
 			var me=this;
-			if (!me._getTasks) {
-				me._getTasks=[];
+			if(me.hasTask(task.getId())){
+				return;
 			}
+
 			me._getTasks.push(task);
+			me._addTaskListeners(task);
 			me.fireEvent('addTask',[task]);
 			me.fireEvent('change');
 		},
@@ -413,69 +426,31 @@ var Proposal = (function() {
 
 			var me = this;
 			if (!me._getTasks) {
+
+				me._updateTasks(me.data);
 			
-				me._getTasks= me.data.tasks.map(function(data){
-					var task = new TaskItem(me, data);
-
-					var changeListener=function(){
-						me.fireEvent('taskChanged', [task]);
-						me.fireEvent('change');
-					}
-					var removeListener=function(){
-
-						me._getTasks.splice(me._getTasks.indexOf(task),1);
-						task.removeEvent('change', changeListener);
-						task.removeEvent('remove', removeListener);
-
-						me.fireEvent('taskRemoved', [task]);
-						me.fireEvent('change');
-
-
-					}
-
-					task.addEvent('change', changeListener);
-					task.addEvent('remove', removeListener);
-
-
-					return task;
-				});
-
 			}
-			return me._getTasks;
-
-			// if (!me._getTasks) {
-			// 	me._getTasks = ([{
-			// 		name: "Contact proponent",
-			// 	}, {
-			// 		name: "Review project description",
-			// 	}, {
-			// 		name: "Lands staff meeting",
-			// 	}, {
-			// 		name: "Comments due",
-			// 	}, {
-			// 		name: "Meeting with propenent",
-			// 	}, {
-			// 		name: "Review Project description comments",
-			// 	}, {
-			// 		name: "Check standards for monitoring",
-			// 	}, {
-			// 		name: "Site visit with proponent",
-			// 	}, {
-			// 		name: "Upload project files to server",
-			// 	}, {
-			// 		name: "Working group meeting",
-			// 	}, {
-			// 		name: "File management",
-			// 	}, {
-			// 		name: "Update agreement document",
-			// 	}]).map(function(data) {
-			// 		return new TaskItem(me, data);
-			// 	});
-			// }
-
-
-			//return me._getTasks;
-
+			return me._getTasks.slice(0);	
+		},
+		hasTask:function(id){
+			var me=this;
+			var tasks=me.getTasks();
+			for(var i=0;i<tasks.length; i++){
+				if(tasks[i].getId()===id){
+					return true
+				}
+			}
+			return false;
+		},
+		getTask:function(id){
+			var me=this;
+			var tasks=me.getTasks();
+			for(var i=0;i<tasks.length; i++){
+				if(tasks[i].getId()===id){
+					return tasks[i];
+				}
+			}
+			return null;
 		},
 		getName: function() {
 			var me = this;
@@ -499,7 +474,8 @@ var Proposal = (function() {
 			(new SaveProposalQuery({
 				id: me._id,
 				metadata: {},
-				attributes:me._attributes||{}
+				attributes:me._attributes||{},
+				team:(me._team||[]).map(function(t){return t.getId()})
 			})).addEvent('success', function(result) {
 
 				if (result.success && result.id) {
@@ -770,6 +746,54 @@ var Proposal = (function() {
 				})).execute();
 			}
 		},
+
+		_getFiles:function(string){
+			var me=this;
+			if(string){
+
+				var images=JSTextUtilities.ParseImages(string);
+				var videos=JSTextUtilities.ParseVideos(string);
+				var audios=JSTextUtilities.ParseAudios(string);
+				var links=JSTextUtilities.ParseLinks(string);
+
+				return images.concat(videos).concat(audios).concat(links);
+			}
+
+			return [];
+		},
+
+		removeAttachment:function(url){
+			var me=this;
+
+			(['description', 'documents', 'agreements','permits','projectLetters', 'spatialFeatures']).forEach(function(type){
+
+				if (me.data && me.data.attributes&&url&&me.data.attributes[type].indexOf(url)>=0) {
+
+					var filtered=me._getFiles(me.data.attributes[type]).filter(function(fileInfo){
+						return fileInfo.url==url;
+					});
+
+					if(filtered.length&&filtered[0].html){
+						(new RemoveDocumentQuery({
+							 "id": me.getId(),
+		                	 "type": me.getType(),
+		                	 "documentType":type,
+		                	 "documentHtml":filtered[0].html,
+						})).execute();
+					}
+				}
+
+
+
+			});
+			
+
+
+
+
+		},
+
+
 		addSpatial:function(info){
 			var me=this;
 			if (me.data && me.data.attributes&&info.html) {
@@ -819,6 +843,8 @@ var Proposal = (function() {
 					callback();
 				}
 
+				me.fireEvent("archived");
+
 			}).execute();
 
 			me.data.status="archived";
@@ -831,6 +857,8 @@ var Proposal = (function() {
 				if(callback){
 					callback();
 				}
+
+				me.fireEvent("unarchived");
 
 			}).execute();
 
@@ -907,44 +935,27 @@ var Proposal = (function() {
 
 	  		return events;
 	    },
-
-	    
-	    getUsers:function(){
+	    getClient:function(){
 	    	var me=this;
+	    	for(var i=0; i<me._team.length; i++){
+	    		if(me._team[i].getId()==AppClient.getId()){
+	    			return me._team[i];
+	    		}
+	    	}
+
+	    	return null;
+	    },
+	    getUsers:function(callback){
+	    	var me=this;
+
+	    	if(!me._team){
+	    		me._team=[];
+	    	}
 	    	return me._team.slice(0);
-	    },
-	    hasUser:function(user){
-	    	var me=this;
-	    	for(var i=0;i<me._team.length;i++){
-	    		if(user.getId()===me._team[i].getId()){
-	    			return true;
-	    		}
-	    	}
-	    	return false;
-	    },
-	    _indexOfUser:function(user){
-	    	var me=this;
-	    	for(var i=0;i<me._team.length;i++){
-	    		if(user.getId()===me._team[i].getId()){
-	    			return i;
-	    		}
-	    	}
-	    	return -1;
-	    },
-	    addUser:function(user){
-	    	var me=this;
-	    	if(!me.hasUser(user)){
-	    		me._team.push(user);
 
-	    		(new AddProposalUserQuery(me.getId(), user.getId())).execute();
-	    	}
 	    },
-	    removeUser:function(user){
-	    	var me=this;
-	    	if(me.hasUser(user)){
-	    		me._team.splice(me._indexOfUser(user),1);
-	    		(new RemoveProposalUserQuery(me.getId(), user.getId())).execute();
-	    	}
+	    getAvailableUsers:function(){
+	    	return ProjectTeam.CurrentTeam().getUsers();
 	    }
 
 
@@ -952,6 +963,11 @@ var Proposal = (function() {
 
 
 	Proposal.ParseHtmlUrls=function(text){
+
+		if((!text)||text==""){
+			return [];
+		}
+
 		return ([]).concat(JSTextUtilities.ParseVideos(text))
 			.concat(JSTextUtilities.ParseImages(text))
 			.concat(JSTextUtilities.ParseAudios(text))
@@ -965,3 +981,81 @@ var Proposal = (function() {
 	return Proposal;
 
 })();
+
+
+
+var GuestProposal=(function(){
+
+
+	var SaveProposalQuery = new Class({
+		Extends: AjaxControlQuery,
+		initialize: function(data) {
+			this.parent(CoreAjaxUrlRoot, 'save_guest_proposal', Object.append({
+				plugin: 'ReferralManagement'
+			}, (data || {})));
+		}
+	});
+
+
+	var GuestProposal  = new Class({
+		Extends: Proposal,
+		save: function(callback) {
+
+			var me = this;
+			me.fireEvent("saving");
+
+			if(!me.hasEmail()){
+				(new SaveProposalQuery({
+					id: me._id,
+					metadata: {},
+					attributes:me._attributes||{}
+				})).addEvent('success', function(result) {
+
+					if (result.success&&result.token) {
+						me.data.token=result.token;
+						callback(true);
+						me.fireEvent("save");
+
+					} else {
+						throw 'Failed to save proposal';
+					}
+				}).execute();
+
+				return;
+			}
+
+			(new SaveProposalQuery({
+				id: me._id,
+				email:me.data.email,
+				token:me.data.token
+			})).addEvent('success', function(result) {
+
+				if (result.success) {
+					
+					callback(true);
+					me.fireEvent("save");
+
+				} else {
+					throw 'Failed to save proposal';
+				}
+			}).execute();
+
+		},
+		setEmail:function(e){
+			var me=this;
+			me.data.email=e;
+		},
+		hasEmail:function(){
+			var me=this;
+			return (me.data&&me.data.email);
+		}
+
+
+	});
+
+
+	return GuestProposal;
+
+
+})();
+

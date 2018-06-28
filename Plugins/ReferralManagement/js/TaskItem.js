@@ -9,6 +9,14 @@ var TaskItem = (function() {
 			}, (data || {})));
 		}
 	});
+	var RemoveDocumentQuery = new Class({
+		Extends: AjaxControlQuery,
+		initialize: function(data) {
+			this.parent(CoreAjaxUrlRoot, 'remove_document', Object.append({
+				plugin: 'ReferralManagement'
+			}, (data || {})));
+		}
+	});
 
 	var SaveTaskQuery = new Class({
 		Extends: AjaxControlQuery,
@@ -31,8 +39,6 @@ var TaskItem = (function() {
     			});
     		}
     	});
-
-
 
 	 var SetDueDateTaskQuery = new Class({
     		Extends: AjaxControlQuery,
@@ -61,7 +67,7 @@ var TaskItem = (function() {
 	
 	var TaskItem = new Class({
 		Extends: DataTypeObject,
-		Implements:[Events],
+		Implements:[Events, UserTeamCollection],
 		initialize: function(item, data) {
 			var me = this;
 			me.type = "Tasks.task";
@@ -83,6 +89,21 @@ var TaskItem = (function() {
 			}
 
 		},
+		setData:function(data){
+			var me=this;
+
+			if(JSON.stringify(data)!==JSON.stringify(me.data)){
+				me._setData(data);
+				me.fireEvent('change');
+			}
+
+			
+		},
+
+		setAttributes:function(attributes){
+			var me=this;
+			me._attributes=attributes;
+		},
 
 		_setData:function(data){
 
@@ -98,6 +119,9 @@ var TaskItem = (function() {
 				me._id=me.data.id;
 			}
 
+
+
+			me._updateUserTeamCollection(data)
 
 			if(me.data.attributes&&typeof me.data.attributes.starUsers!=='object'){
 				me.data.attributes.starUsers=[];
@@ -164,6 +188,7 @@ var TaskItem = (function() {
 			return false;
 		},
 
+
 		setPriority:function(priority, callback){
 			
 
@@ -188,7 +213,9 @@ var TaskItem = (function() {
 			me.fireEvent("saving");
 			(new SaveTaskQuery(Object.append(me.data, {
 				itemId:me.getItem().getId(),
-				itemType:me.getItem().getType()
+				itemType:me.getItem().getType(),
+				attributes:me._attributes||{},
+				team:(me._team||[]).map(function(t){return t.getId()})
 			}))).addEvent('success',function(r){
 				me._id=r.id;
 				me.data.id=r.id;
@@ -219,6 +246,10 @@ var TaskItem = (function() {
 			return me.data.dueDate||"00-00-00 00:00:00";
 		},
 
+		getModifiedDate:function(){
+			var me=this;
+			return me.data.modifiedDate||"00-00-00 00:00:00";
+		},
 
 		setDueDateDay:function(ymd, callback){
 			
@@ -271,6 +302,22 @@ var TaskItem = (function() {
 			}
 			return false;
 		},
+		hasOtherStars:function(){
+			var me=this;
+			return me.otherStars.length>0;
+		},
+		otherStars:function(){
+			var me=this;
+			if(me.data.attributes&&me.data.attributes.starUsers){
+				return me.data.attributes.starUsers.filter(function(user){
+					if(user==parseInt(AppClient.getId())){
+						return false;
+					}
+					return true;
+				})
+			}
+			return [];
+		},
 
 		setStarred:function(starred, callback){
 
@@ -303,7 +350,7 @@ var TaskItem = (function() {
 			var me=this;
 			return me.getFiles().length>0;
 		},
-		getFiles:function(){
+		_getFiles:function(){
 			var me=this;
 			if(me.data.attributes&&me.data.attributes.attachements){
 
@@ -312,12 +359,18 @@ var TaskItem = (function() {
 				var audios=JSTextUtilities.ParseAudios(me.data.attributes.attachements);
 				var links=JSTextUtilities.ParseLinks(me.data.attributes.attachements);
 
-				return images.concat(videos).concat(audios).concat(links).map(function(o) {
-					return o.url;
-				});
+				return images.concat(videos).concat(audios).concat(links);
 			}
 
 			return [];
+		},
+		getFiles:function(){
+			var me=this;
+
+			return me._getFiles().map(function(o) {
+				return o.url;
+			});
+			
 		},
 
 
@@ -330,8 +383,29 @@ var TaskItem = (function() {
 					 "id": me.getId(),
                 	 "type": me.getType(),
                 	 "documentType":'attachements',
-                	 "documentHtml":info.html
+                	 "documentHtml":info.html,
 				})).execute();
+			}
+		},
+
+		removeAttachment:function(url){
+			var me=this;
+			if (me.data && me.data.attributes&&url&&me.data.attributes.attachements.indexOf(url)>=0) {
+
+				var filtered=me._getFiles().filter(function(fileInfo){
+					return fileInfo.url==url;
+				});
+
+				if(filtered.length&&filtered[0].html){
+					(new RemoveDocumentQuery({
+						 "id": me.getId(),
+	                	 "type": me.getType(),
+	                	 "documentType":'attachements',
+	                	 "documentHtml":filtered[0].html,
+					})).execute();
+				}
+				
+				
 			}
 		},
 		getTags:function(){
@@ -344,38 +418,25 @@ var TaskItem = (function() {
 
 
 
-		// addWeakEvent:function(eventName, fn){
+		getUsers:function(){
+	    	var me=this;
 
-		// 	var me=this;
-		// 	console.log('Adding Weak Task Event: '+me.getId()+' '+eventName);
+	    	if(!me._team){
+	    		me._team=[];
+	    	}
+	    	return me._team.slice(0);
 
-
-			
-		// 	var checkRef=function(){
-		// 		return true;
-		// 	}
-		// 	var weakEventFunction=function(){
-		// 		if(checkRef()){
-
-		// 			console.log('Executing Weak Task Event: '+me.getId()+' '+eventName);
-
-		// 			fn.apply(this, arguments);
-		// 			return;
-		// 		}
-		// 		me.removeEvent(eventName, weakEventFunction);
-				
-		// 	}
-
-		// 	me.addEvent(eventName, weakEventFunction)
-
-
-		// }
-
-		
+	    },
+	    getAvailableUsers:function(){
+	    	var me=this;
+	    	return me.getItem().getUsers();
+	    }
 
 	});
 
-
+	TaskItem.RemoveTask=function(task){
+		task.fireEvent('remove');
+	};
 
 	TaskItem.DeleteTask=function(task, callback){
 
@@ -393,7 +454,7 @@ var TaskItem = (function() {
 
 		(new DeleteTaskQuery(task.getId())).addEvent('success',function(){
 
-			task.fireEvent('remove');
+			TaskItem.RemoveTask(task);
 
 			if(callback){
 				callback();

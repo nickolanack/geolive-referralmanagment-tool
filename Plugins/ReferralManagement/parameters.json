@@ -1,0 +1,16 @@
+[
+
+ {
+ 	"name":"enableEmailNotifications",
+ 	"label":"Enable Email Notifications",
+ 	"type":"boolean",
+ 	"default":false
+ },
+ {
+ 	"name":"queueEmailDelay",
+ 	"label":"Queue Email Delay",
+ 	"type":"input",
+ 	"default":"30"
+ }
+
+]
