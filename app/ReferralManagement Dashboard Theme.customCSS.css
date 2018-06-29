@@ -2027,6 +2027,10 @@ ul.user-roles:hover>li.active {
     margin: 0 5px;
 }
 
+.inline-icon-list-view div.user-profile-icon.content .resizedImage {
+    pointer-events: none;
+}
+
 ul.inline-filter {
     display: block;
     width: 100%;
