@@ -1221,6 +1221,15 @@ img.youtubelogo {
     background-size: 100%;
 }
 
+.starred-indicator.other-stars:after {
+    content: attr(data-other-stars);
+    position: relative;
+    bottom: -2px;
+    right: -14px;
+    font-size: 8px;
+    color: #60ceae;
+}
+
 
 ul.item-tags {
     display: inline-block;
