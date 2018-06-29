@@ -22,7 +22,7 @@ var mod= new ElementModule('div', {"class":"starred-indicator "+(item.isStarred(
 if(item.hasOtherStars()){
     var n=item.otherStars().length;
     mod.getElement().setAttribute('data-other-stars', n)
-    new UIPopover(module.getElement(),{
+    new UIPopover(mod.getElement(),{
         description:n+' other user'+(n==1?"":"s")+' starred this task',
         anchor:UIPopover.AnchorAuto()
     });
