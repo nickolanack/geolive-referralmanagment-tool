@@ -2027,7 +2027,7 @@ ul.user-roles:hover>li.active {
     margin: 0 5px;
 }
 
-.inline-icon-list-view div.user-profile-icon.content .resizedImage {
+.inline-icon-list-view div.user-profile-icon.content .resizedImage, .inline-list-item.users-list-item-icon  .resizedImage {
     pointer-events: none;
 }
 
