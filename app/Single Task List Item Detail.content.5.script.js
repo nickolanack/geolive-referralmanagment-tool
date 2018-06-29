@@ -1,3 +1,4 @@
+/*Stars*/
 var mod= new ElementModule('div', {"class":"starred-indicator "+(item.isStarred()?"starred ":"")+(item.hasOtherStars()?"other-stars ":""), 
     events:{click:function(e){
         e.stop();
@@ -19,7 +20,7 @@ var mod= new ElementModule('div', {"class":"starred-indicator "+(item.isStarred(
 });
 
 if(item.hasOtherStars()){
-    item.getElement().setAttribute('data-other-stars', item.otherStars().length)
+    mod.getElement().setAttribute('data-other-stars', item.otherStars().length)
 }
 
 return mod;
