@@ -1,4 +1,6 @@
-new AjaxFileUploader(module.getElement(),{
+
+module.addEvent('load',function(){
+    new AjaxFileUploader(module.getElement(),{
         types:["document", "video", "image", "audio"],
         selectFile:function(fileinfo, type){
             console.log(fileinfo);
@@ -10,7 +12,10 @@ new AjaxFileUploader(module.getElement(),{
         addElement:true,
         addInput:true,
         dragareaClassName:'drop-attachments'
-    })
+    });
+})
+
+
     
     
     
