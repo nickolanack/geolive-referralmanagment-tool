@@ -11,3 +11,11 @@ new AjaxFileUploader(module.getElement(),{
         addInput:true,
         dragareaClassName:'drop-attachments'
     })
+    
+    
+    
+module.addWeakEvent(item, 'change', function(){
+    
+    module.redraw();
+    
+})
