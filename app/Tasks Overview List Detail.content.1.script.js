@@ -1,6 +1,14 @@
 return function(viewer, element, parentModule){
 
 
+     var reset=new ElementModule('button',{
+         events:{click:function(){
+             
+             alert('reset filter and sort');
+             
+         }}
+     })
+
    var filter=(new ListSortModule(function(){
         return viewer.getChildView('content', 2);
     }, {
@@ -25,6 +33,6 @@ return function(viewer, element, parentModule){
 
     application.setNamedValue('taskListFilter', sort);
     
-    return new ModuleArray([filter, sort],{"class":"filter-btns"});
+    return new ModuleArray([reset, filter, sort],{"class":"filter-btns"});
     
 }
