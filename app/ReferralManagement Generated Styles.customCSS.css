@@ -12,6 +12,10 @@
     background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/tree.png"); ?>?tint=rgb(198, 175, 79)");
 }
 
+button.btn-reset-list {
+    background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/reset.png"); ?>?tint=rgb(198, 175, 79)");
+}
+
 
 
 <?php 
