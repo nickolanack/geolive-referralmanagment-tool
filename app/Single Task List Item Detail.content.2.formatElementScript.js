@@ -15,6 +15,14 @@
        posts.addClass('posts');
        el.addClass('withPosts');
        posts.setAttribute('data-posts',item.numberOfPosts());
+       posts.addEvent('click',function(){
+           application.getDisplayController().displayPopoverForm(
+				"taskDetailPopover", 
+				item, 
+				application,
+				{}
+			);
+       })
    }
     
     var edit=el.appendChild(new Element('span'));
