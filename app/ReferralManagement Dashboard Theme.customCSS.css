@@ -1335,7 +1335,7 @@ ul.item-tags li {
     text-decoration:underline
 }
 
-.hasFilter>span.clear-filter {
+.hasFilter>span.clear-filter, .hasOrder>span.reset-sort{
     position: absolute;
     width: 12px;
     height: 12px;
@@ -1344,6 +1344,9 @@ ul.item-tags li {
     top: 6px;
     background-image: url("https://wabun.geolive.ca/administrator/components/com_geolive/library/pushbox/ic_clear_black_18dp.png?tint=rgb(255,0,0)");
     background-size: 100%;
+}
+.hasOrder>span.reset-sort{
+    background-image: url(<?php echo UrlFrom("{assets}/Control Panel Icons/reset.png")?>);
 }
 
 .inline-btn.filter {
