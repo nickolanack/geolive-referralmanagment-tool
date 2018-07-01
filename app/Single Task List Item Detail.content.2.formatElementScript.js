@@ -35,8 +35,8 @@
         
     })
     
-    labelEl.addClass('clickable-task');
-    labelEl.addEvent('click',function(){
+    valueEl.addClass('clickable-task');
+    valueEl.addEvent('click',function(){
         
         
         application.getDisplayController().displayPopoverForm(
