@@ -37,6 +37,19 @@ return function(viewer, element, parentModule){
              
     //      }}
     //  })
+    
+    var search=new ElementModule('button',{
+         "class":"btn-search-list",
+         events:{click:function(){
+             
+             if(element.parentNode.hasClass('enable-search')){
+                 element.parentNode.removeClass('enable-search');
+             }else{
+                 element.parentNode.addClass('enable-search');
+             }
+             
+         }}
+     })
 
 
     application.setNamedValue('taskListFilter', sort);
