@@ -3,7 +3,7 @@
     "config": {
         "loadAsync": false,
         "fieldLabelScript": "return \"\";",
-        "fieldValueScript": "return item.getName()",
+        "fieldValueScript": "return \"<h2>\"+item.getName()+\"<\/h2>\"",
         "formatElementScript": ""
     }
 }
