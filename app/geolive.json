@@ -5366,10 +5366,14 @@
                         "modules": [
                             "Tasks Overview List Detail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "Search",
+                                "config": []
+                            },
+                            {
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "Tasks Overview List Detail.metadata.positions.content.modules.1.config.script.js",
+                                    "script": "Tasks Overview List Detail.metadata.positions.content.modules.2.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             },
@@ -5392,12 +5396,12 @@
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
-                                    "getItemListScript": "Tasks Overview List Detail.metadata.positions.content.modules.2.config.getItemListScript.js",
+                                    "getItemListScript": "Tasks Overview List Detail.metadata.positions.content.modules.3.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "Tasks Overview List Detail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "Tasks Overview List Detail.metadata.positions.content.modules.3.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyTasksList",
-                                    "filterItemsScript": "Tasks Overview List Detail.metadata.positions.content.modules.2.config.filterItemsScript.js",
-                                    "sortItemsScript": "Tasks Overview List Detail.metadata.positions.content.modules.2.config.sortItemsScript.js",
+                                    "filterItemsScript": "Tasks Overview List Detail.metadata.positions.content.modules.3.config.filterItemsScript.js",
+                                    "sortItemsScript": "Tasks Overview List Detail.metadata.positions.content.modules.3.config.sortItemsScript.js",
                                     "maxItems": "15"
                                 }
                             },
@@ -5408,7 +5412,7 @@
                                     "viewType": "view",
                                     "namedView": "emptyTasksList",
                                     "shouldRender": true,
-                                    "namedViewScript": "Tasks Overview List Detail.metadata.positions.content.modules.3.config.namedViewScript.js",
+                                    "namedViewScript": "Tasks Overview List Detail.metadata.positions.content.modules.4.config.namedViewScript.js",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultView",
                                     "formOptions": "{}",
