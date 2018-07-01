@@ -26,6 +26,19 @@ button.btn-reset-list {
 }
 
 
+button.btn-reset-list {
+    background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/search.png"); ?>?tint=rgb(106, 233, 191)");
+
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+    background-color: transparent;
+    border: none;
+    background-size: 100%;
+    
+}
+
 
 <?php 
 $config=GetWidget('dashboardConfig');
