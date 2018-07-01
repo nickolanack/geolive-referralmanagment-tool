@@ -42,6 +42,7 @@
         application.getDisplayController().displayPopoverForm(
 				"taskDetailPopover", 
 				item, 
-				application
+				application,
+				{}
 			);
     })
