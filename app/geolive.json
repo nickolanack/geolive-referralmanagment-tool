@@ -5367,7 +5367,10 @@
                             "Tasks Overview List Detail.metadata.positions.content.modules.0.json",
                             {
                                 "type": "Search",
-                                "config": []
+                                "config": {
+                                    "getAggregatorsScript": "",
+                                    "placeholder": "search items"
+                                }
                             },
                             {
                                 "type": "WizardScriptElement",
