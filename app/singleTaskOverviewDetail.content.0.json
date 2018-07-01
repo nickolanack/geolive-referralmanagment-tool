@@ -4,6 +4,6 @@
         "loadAsync": false,
         "fieldLabelScript": "return \"\";",
         "fieldValueScript": "return item.getName()",
-        "formatElementScript": "valueEl.addClass('item-title')"
+        "formatElementScript": "el.addClass('item-title')"
     }
 }
