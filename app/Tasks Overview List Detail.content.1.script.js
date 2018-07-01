@@ -13,7 +13,7 @@ return function(viewer, element, parentModule){
     
     
 
-     var sort=(new ListFilterModule(function(){
+    var sort=(new ListFilterModule(function(){
         return viewer.getChildView('content', 2);
     }, {
         filters:ReferralManagementDashboard.taskFilters(),
@@ -22,15 +22,15 @@ return function(viewer, element, parentModule){
     }));
     
 
-    var reset=new ElementModule('button',{
-         "class":"btn-reset-list",
-         events:{click:function(){
+    // var reset=new ElementModule('button',{
+    //      "class":"btn-reset-list",
+    //      events:{click:function(){
              
-             filter.reset();
-             sort.reset();
+    //          filter.reset();
+    //          sort.reset();
              
-         }}
-     })
+    //      }}
+    //  })
 
 
     application.setNamedValue('taskListFilter', sort);
