@@ -16,9 +16,11 @@ return function(viewer, element, parentModule){
     var sort=(new ListFilterModule(function(){
         return viewer.getChildView('content', 2);
     }, {
-        filters:ReferralManagementDashboard.taskFilters(),
-        currentFilter:"complete",
-        currentFilterInvert:true,
+        filters:ReferralManagementDashboard.taskFilters().filter(function(f){
+            return f.label!=='complete';
+        }),
+        //currentFilter:"complete",
+        //currentFilterInvert:true,
         showClear:false,
         showReset:true
     }));
