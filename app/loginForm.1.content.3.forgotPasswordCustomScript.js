@@ -1,4 +1,4 @@
-me.application.getDisplayController().displayPopoverForm(
+application.getDisplayController().displayPopoverForm(
 				'forgotPasswordForm', 
 				item, 
 				application,
