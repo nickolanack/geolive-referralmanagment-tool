@@ -34,3 +34,13 @@
             wizard.buildAndShow(modalFormViewController, {template:"form"}); 
         
     })
+    
+    labelEl.addEvent('click',function(){
+        
+        
+        application.getDisplayController().displayPopoverForm(
+				"taskDetailPopover", 
+				item, 
+				application
+			);
+    })
