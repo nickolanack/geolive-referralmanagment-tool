@@ -86,7 +86,7 @@ foreach($config->getParameters() as $key=>$value){
     position: relative;
 }
 
-.field-value-module.with-description .editable:before{
+.field-value-module.with-description .field-value:after{
     content: "";
      background-image: url("<?php echo UrlFrom("{assets}/Control Panel Icons/text.png"); ?>?tint=rgb(180,180,180)");
     width: 20px;
