@@ -1,14 +1,7 @@
 return function(viewer, element, parentModule){
 
 
-     var reset=new ElementModule('button',{
-         "class":"btn-reset-list",
-         events:{click:function(){
-             
-             alert('reset filter and sort');
-             
-         }}
-     })
+     
 
    var filter=(new ListSortModule(function(){
         return viewer.getChildView('content', 2);
@@ -29,7 +22,15 @@ return function(viewer, element, parentModule){
     }));
     
 
-
+    var reset=new ElementModule('button',{
+         "class":"btn-reset-list",
+         events:{click:function(){
+             
+             filter.reset();
+             sort.reset();
+             
+         }}
+     })
 
 
     application.setNamedValue('taskListFilter', sort);
