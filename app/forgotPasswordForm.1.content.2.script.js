@@ -6,6 +6,7 @@ var link=new ElementModule('label',{
         
 link.getElement().appendChild(new Element('button',{
     "class":"btn WizardButton",
+    "style":"background-color:mediumseagrean;",
     html:'Send Link'
 }))
         
