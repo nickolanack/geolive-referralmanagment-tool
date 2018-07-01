@@ -59,7 +59,7 @@ button.public-user-chat {
     right: 30px;
 }
 
-.posts:before {
+.withPosts .posts:before {
     content: attr(data-posts);
     background-color: crimson;
     width: 14px;
