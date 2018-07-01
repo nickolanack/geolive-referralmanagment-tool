@@ -1845,6 +1845,17 @@ button.t-btn {
 }
 
 
+.inline-task-discussion .discussion .posts {
+    min-height:100px;
+}
+
+.activity-feed.discussion .posts.empty:after{
+    line-height: 100px;
+    font-size: 12px;
+    font-weight: 100;
+    font-style:italic;
+}
+
 
 .timestamp .field-value {
     color: #6A7CE9;
