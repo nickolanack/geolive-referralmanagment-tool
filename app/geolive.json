@@ -1658,16 +1658,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 317,
-                            "y": 361
+                            "x": 327,
+                            "y": 371
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 277,
-                                    "y": 574
+                                    "x": 287,
+                                    "y": 584
                                 }
                             },
                             {
@@ -1677,16 +1677,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 776,
-                                    "y": 361
+                                    "x": 786,
+                                    "y": 371
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 736,
-                                            "y": 527
+                                            "x": 746,
+                                            "y": 537
                                         }
                                     }
                                 ],
@@ -1765,14 +1765,16 @@
                                             "type": "WizardLogin",
                                             "config": {
                                                 "className": "",
-                                                "showCancel": false,
-                                                "labelForCancel": "cancel",
-                                                "labelForSubmit": "Login",
+                                                "showCancel": true,
                                                 "labelForUsername": "XXXX-XXXX",
                                                 "labelForPassword": "XXXX-XXXX",
+                                                "labelForCancel": "cancel",
+                                                "labelForSubmit": "Login",
                                                 "onLoginFailedScript": "",
                                                 "reloadOnSuccess": true,
-                                                "reloadUrl": ""
+                                                "reloadUrl": "",
+                                                "showForgotPassword": false,
+                                                "forgotPasswordCustomScript": "XXXX-XXXX"
                                             }
                                         },
                                         {
