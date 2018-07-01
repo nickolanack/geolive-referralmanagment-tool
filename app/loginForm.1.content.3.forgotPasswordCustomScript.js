@@ -1,7 +1,7 @@
 me.application.getDisplayController().displayPopoverForm(
 				'forgotPasswordForm', 
-				me.item, 
-				me.application,
+				item, 
+				application,
 				{
 				    template:"form"
 				}
