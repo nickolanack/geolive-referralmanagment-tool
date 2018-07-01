@@ -6,7 +6,9 @@ return function(viewer, element, parentModule){
    var filter=(new ListSortModule(function(){
         return viewer.getChildView('content', 2);
     }, {
-        sorters:ReferralManagementDashboard.taskSorters(),
+        sorters:ReferralManagementDashboard.taskSorters().filter(function(f){
+            return f.label!=='complete';
+        }),
         currentSort:"priority",
         currentSortInvert:true
     }));
