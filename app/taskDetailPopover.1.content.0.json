@@ -1,10 +1,20 @@
 {
-    "type": "WizardTitleField",
+    "type": "UIView",
     "config": {
-        "label": "Title",
-        "message": "add a title",
         "className": "",
-        "maxChars": 0,
-        "textFormatScript": ""
+        "viewType": "view",
+        "namedView": "singleTaskOverviewDetail",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
+        "showInlineEdit": false,
+        "namedFormView": "defaultView",
+        "formOptions": "\"{}\"",
+        "showDeleteButton": false,
+        "deleteItemScript": "defaultBehaviorFn()",
+        "formatModuleScript": "",
+        "resolveItemScript": "return item",
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false
     }
 }
