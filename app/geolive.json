@@ -12842,16 +12842,16 @@
                             "forgotPasswordForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 138,
-                            "y": 270
+                            "x": 148,
+                            "y": 280
                         },
                         "children": [
                             "forgotPasswordForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 98,
-                                    "y": 436
+                                    "x": 108,
+                                    "y": 446
                                 }
                             }
                         ],
@@ -12864,7 +12864,32 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "forgotPasswordForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                        "forgotPasswordForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Email or Username",
+                                                "placeholder": "add your email or username",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return \"Hello World\"; ",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
+                                        {
+                                            "type": "WizardScriptElement",
+                                            "config": []
+                                        }
                                     ]
                                 },
                                 "footer": {
