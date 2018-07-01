@@ -1,3 +1,4 @@
+ el.addClass('task-title');
  if(item.isComplete()){
        el.addClass('complete');
       
