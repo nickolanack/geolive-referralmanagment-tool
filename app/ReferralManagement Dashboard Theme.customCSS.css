@@ -1164,7 +1164,15 @@ img.youtubelogo {
 
 
 
-
+.task-title .field-value {
+    max-width: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    line-height: 16px;
+    vertical-align: middle;
+}
 
 
 
