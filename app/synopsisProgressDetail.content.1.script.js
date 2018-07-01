@@ -15,7 +15,7 @@ var compute=function(team){
         anchor:UIPopover.AnchorAuto()
     });
     
-    var tasks=team.getTasks().filter(function(t){
+    var tasks=team.getIncompleteTasks().filter(function(t){
         return t.isPriorityTask();//&&(!t.isComplete()); 
         
     });
