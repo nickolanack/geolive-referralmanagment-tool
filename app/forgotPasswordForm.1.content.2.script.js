@@ -17,7 +17,7 @@ var setPwd=new ElementModule('label',{
         
 setPwd.getElement().appendChild(new Element('button',{
         "class":"btn WizardButton",
-        html:'Change Password'
+        html:'Change'
     }))
         
 return [link,setPwd]
