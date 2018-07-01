@@ -35,7 +35,7 @@ var compute=function(team){
             var filter=application.getNamedValue("taskListFilter");
             if(filter){
             
-                filter.applyFilter("complete", true)
+                filter.applyFilter(null, false)
             
             }
         });
