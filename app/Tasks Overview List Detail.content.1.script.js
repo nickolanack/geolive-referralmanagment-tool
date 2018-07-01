@@ -19,7 +19,8 @@ return function(viewer, element, parentModule){
         filters:ReferralManagementDashboard.taskFilters(),
         currentFilter:"complete",
         currentFilterInvert:true,
-        showClear:false
+        showClear:false,
+        showReset:true
     }));
     
 
