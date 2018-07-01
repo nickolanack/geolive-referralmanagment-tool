@@ -13013,5 +13013,46 @@
             "widgetTitle": "taskDetailPopover",
             "readAccess": "public"
         }
+    },
+    "widget.277": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "singleTaskOverviewDetail",
+            "target": "singleTaskOverviewDetail",
+            "templateName": "singleTaskOverviewDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
+            "notifyViewer": true,
+            "metadata": {
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "positions": {
+                    "title": {
+                        "modules": [
+                            "singleTaskOverviewDetail.metadata.positions.title.modules.0.json"
+                        ]
+                    },
+                    "content": {
+                        "modules": [
+                            "singleTaskOverviewDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": [
+                            "singleTaskOverviewDetail.metadata.positions.footer.modules.0.json"
+                        ]
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                }
+            },
+            "readAccess": "public"
+        }
     }
 }
