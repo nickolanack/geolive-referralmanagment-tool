@@ -37,6 +37,11 @@
     
 }
 
+label.label-block {
+    display: block;
+    line-height: 60px;
+}
+
 .help-text {
     color: cadetblue;
     font-size: 12px;
