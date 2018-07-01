@@ -10,7 +10,8 @@ link.getElement().appendChild(new Element('button',{
     html:'Send Link',
     events:{click:function(){
         (new AjaxControlQuery(CoreAjaxUrlRoot, 'send_magic_link', {
-		  'plugin': "Users"
+		  'plugin': "Users",
+		  'data':wizard.getData()
 		})).execute(); 
     }}
 }))
@@ -25,7 +26,8 @@ setPwd.getElement().appendChild(new Element('button',{
         html:'Reset',
         events:{click:function(){
             (new AjaxControlQuery(CoreAjaxUrlRoot, 'send_password_reset', {
-    		  'plugin': "Users"
+    		  'plugin': "Users",
+    		  'data':wizard.getData()
     		})).execute(); 
         }}
     }))
