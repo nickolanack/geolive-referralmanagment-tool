@@ -8,6 +8,13 @@
    if(item.getDescription()&&item.getDescription()!==""){
      el.addClass('with-description');
    }
+   
+   
+   if(item.hasPosts()){
+       var posts=el.appendChild(new Element('span'));
+       posts.addClass('posts');
+       posts.setAttribute('data-posts',item.numberOfPosts());
+   }
     
     var edit=el.appendChild(new Element('span'));
     
