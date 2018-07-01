@@ -12,7 +12,7 @@ link.getElement().appendChild(new Element('button',{
         
 var setPwd=new ElementModule('label',{
         "class":"label-block",
-        html:"Send me a magic login link"
+        html:"Send me a link to change my password"
     });    
         
 setPwd.getElement().appendChild(new Element('button',{
