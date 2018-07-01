@@ -35,6 +35,7 @@
         
     })
     
+    labelEl.addClass('clickable-task');
     labelEl.addEvent('click',function(){
         
         
