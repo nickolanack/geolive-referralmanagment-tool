@@ -135,6 +135,7 @@ GetWidget('singleUserSmallIconDetail')->display($targetInstance);
 GetWidget('landsDepartmentMemberForm')->display($targetInstance);
 
 GetWidget('taskDetailPopover')->display($targetInstance);
+GetWidget('singleTaskOverviewDetail')->display($targetInstance);
 
 
 
