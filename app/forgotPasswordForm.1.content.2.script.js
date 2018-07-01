@@ -7,17 +7,27 @@ var link=new ElementModule('label',{
 link.getElement().appendChild(new Element('button',{
     "class":"btn WizardButton",
     "style":"background-color:mediumseagrean;",
-    html:'Send Link'
+    html:'Send Link',
+    events:{click:function(){
+        (new AjaxControlQuery(CoreAjaxUrlRoot, 'send_magic_link', {
+		  'plugin': "Users"
+		})).execute(); 
+    }}
 }))
         
 var setPwd=new ElementModule('label',{
         "class":"label-block",
-        html:"Send me a link to change my password"
+        html:"Send me a link to reset my password"
     });    
         
 setPwd.getElement().appendChild(new Element('button',{
         "class":"btn WizardButton",
-        html:'Change'
+        html:'Reset',
+        events:{click:function(){
+            (new AjaxControlQuery(CoreAjaxUrlRoot, 'send_password_reset', {
+    		  'plugin': "Users"
+    		})).execute(); 
+        }}
     }))
         
 return [link,setPwd]
