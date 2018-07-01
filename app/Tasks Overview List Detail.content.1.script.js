@@ -21,8 +21,8 @@ return function(viewer, element, parentModule){
         }),
         //currentFilter:"complete",
         //currentFilterInvert:true,
-        showClear:false,
-        showReset:true
+        //showClear:false,
+        //showReset:true
     }));
     
 
