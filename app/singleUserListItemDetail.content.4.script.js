@@ -43,27 +43,21 @@ if(item.getId()==AppClient.getId()){
 var el=module.getElement();
 
 var itemRoles=item.getRoles();
-var isEditor=false;
-if(itemRoles.length&&rolesEditList.indexOf(itemRoles[0])>=0&&(!item.isAdmin())){
-    isEditor=true;
-}
-
-<?php
-    if(GetClient()->isAdmin()){
-        ?>
-        isEditor=true;
-        <?php
-        
-    }
-
-?>;
 
 var els=[];
+
+var userItemIsA=function(r){
+    return item.getRoles().indexOf(r)>=0||(r=='none'&&item.getRoles().length==0)
+}
+
+var clientCanEditUserRole=function(r){
+    return rolesEditList.indexOf(r)>=0||(r=='none'&&rolesEditList.length)
+}
 
 var addRole=function(r){
     var roleEl=el.appendChild(new Element('li',{"class":"role-"+r}));
     els.push(roleEl);
-    if(item.getRoles().indexOf(r)>=0||(r=='none'&&item.getRoles().length==0)){
+    if(userItemIsA(r)){
         foundActive=true
         roleEl.addClass("active");
         el.setAttribute("data-user-role", r);
@@ -80,14 +74,9 @@ var addRole=function(r){
            }); 
     }
     
-    if(!isEditor){
-        
-       popover(label);
-        
-        return;
-    }
+   
     
-    if(rolesEditList.indexOf(r)>=0||(r=='none'&&rolesEditList.length)){
+    if(clientCanEditUserRole(r)){
         addEmpty=true;
         roleEl.addClass('selectable');
         roleEl.addEvent('click',function(){
