@@ -13072,11 +13072,12 @@
                                 }
                             },
                             {
-                                "type": "UIView",
+                                "type": "UIListView",
                                 "config": {
-                                    "className": "",
+                                    "listClassName": "file-list",
+                                    "className": "inset-item file-item droppable-hide",
                                     "viewType": "view",
-                                    "namedView": "singleTaskWithFilesDetail",
+                                    "namedView": "singleFileListItemDetail",
                                     "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
@@ -13084,11 +13085,18 @@
                                     "formOptions": "\"{}\"",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "defaultBehaviorFn()",
-                                    "formatModuleScript": "",
+                                    "formatModuleScript": "singleTaskOverviewDetail.metadata.positions.content.modules.3.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
-                                    "filterModulesScript": "return list",
+                                    "filterModulesScript": "singleTaskOverviewDetail.metadata.positions.content.modules.3.config.filterModulesScript.js",
                                     "itemButtonsScript": "return [];",
-                                    "insertAtTop": false
+                                    "insertAtTop": false,
+                                    "getItemListScript": "return item.getFiles();",
+                                    "formatItemListScript": "return list;",
+                                    "formatListItemModuleScript": "return item;",
+                                    "emptyNamedView": "emptyListView",
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
                                 }
                             }
                         ]
