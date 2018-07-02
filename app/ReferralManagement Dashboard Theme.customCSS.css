@@ -2562,8 +2562,9 @@ img.static-map {
     height: 0;
     border-top: 7px solid transparent;
     border-bottom: 7px solid transparent;
-    border-left: 10px solid #7294e3;
+    border-left: 10px solid #ceb250;
     border-right: none;
+    left: 25px;
 }
 
 .panel-toggle:after {
