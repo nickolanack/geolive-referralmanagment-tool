@@ -11,6 +11,8 @@ var ProjectCalendar = (function() {
 			var me=this;
 			var activeDayEl = null;
 
+			application.setNamedValue('calendar', me);
+
 			var setSelectedDay = function(day, el) {
 
 				application.setNamedValue("selectedDay", day);
@@ -37,7 +39,7 @@ var ProjectCalendar = (function() {
 			}
 
 
-			application.setNamedValue("calendar", this);
+			//application.setNamedValue("calendar", this);
 
 			this.parent({
 				data: function(range, callback) {
@@ -57,7 +59,7 @@ var ProjectCalendar = (function() {
 
 						//var view = controller.getCurrentView()
 						//if (view.view !== "Calendar") {
-							controller.navigateTo("Calendar", "Main");
+							//controller.navigateTo("Calendar", "Main");
 							//return;
 						//}
 

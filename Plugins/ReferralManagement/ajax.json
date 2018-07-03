@@ -1,6 +1,9 @@
 {
     "create_dashboard": [],
-    "list_projects": [],
+    "list_projects": {
+        "profile":true,
+        "count":"results"
+    },
     "save_proposal": [],
     "save_team_member_permissions": [],
     "save_guest_proposal": [],
@@ -63,7 +66,8 @@
             "checkKeys": [
                 "team"
             ]
-        }
+        },
+        "profile":true
     },
     "add_item_user": {
         "validate": {

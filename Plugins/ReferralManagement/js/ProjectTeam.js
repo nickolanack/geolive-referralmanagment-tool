@@ -298,6 +298,14 @@ var ProjectTeam = (function() {
 			});
 			return tasks;
 		},
+		getIncompleteTasks: function() {
+			var me = this;
+			var tasks = [];
+			me.getProjects().forEach(function(p) {
+				tasks = tasks.concat(p.getTasks());
+			});
+			return tasks.filter(function(t){return !t.isComplete()});
+		},
 		/**
 		 * returns an object indexed by yyyy-mm-dd containing event name, or names ie: string or array<string>
 		 */
@@ -641,10 +649,10 @@ window.ReferralManagementDashboard = {
 
 		var renderList = function() {
 
-			var listView = viewer.getChildView('content', 1);
-			if (listView) {
-				listView.redraw();
-			}
+			// var listView = viewer.getChildView('content', 1);
+			// if (listView) {
+			// 	listView.redraw();
+			// }
 		};
 
 		calendar.addEvent("selectDay", function(day, el) {
@@ -771,6 +779,11 @@ window.ReferralManagementDashboard = {
 				return a.isComplete();
 			}
 		}, {
+			label: "assigned to you",
+			filterFn: function(a) {
+				return a.isAssignedToClient();
+			}
+		},{
 			label: "overdue",
 			filterFn: function(a) {
 				return a.isOverdue();

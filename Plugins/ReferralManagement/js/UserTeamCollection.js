@@ -31,6 +31,10 @@ var UserTeamCollection = (function(){
 
 
 	var UserTeamCollection=new Class({
+
+		addUserListLabel:function(){
+			return 'Add Project Team Member';
+		},
 		getUsers:function(){
 	    	throw 'Must be implemented';
 	    },
@@ -41,7 +45,7 @@ var UserTeamCollection = (function(){
 	    	var me=this;
 	    	var team=me.getUsers();
 	    	for(var i=0;i<team.length;i++){
-	    		if(user.getId()===team[i].getId()){
+	    		if(user.getId()+""===team[i].getId()+""){
 	    			return true;
 	    		}
 	    	}
@@ -51,14 +55,12 @@ var UserTeamCollection = (function(){
 	    	var me=this;
 	    	var team=me.getUsers();
 	    	for(var i=0;i<team.length;i++){
-	    		if(user.getId()===team[i].getId()){
+	    		if(user.getId()+""===team[i].getId()+""){
 	    			return i;
 	    		}
 	    	}
 	    	return -1;
 	    },
-	   
-
 	    addUser:function(user){
 	    	var me=this;
 	    	if(!me.hasUser(user)){

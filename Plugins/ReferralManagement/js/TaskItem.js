@@ -103,6 +103,7 @@ var TaskItem = (function() {
 		setAttributes:function(attributes){
 			var me=this;
 			me._attributes=attributes;
+
 		},
 
 		_setData:function(data){
@@ -304,7 +305,7 @@ var TaskItem = (function() {
 		},
 		hasOtherStars:function(){
 			var me=this;
-			return me.otherStars.length>0;
+			return me.otherStars().length>0;
 		},
 		otherStars:function(){
 			var me=this;
@@ -317,6 +318,15 @@ var TaskItem = (function() {
 				})
 			}
 			return [];
+		},
+
+		hasPosts:function(){
+			var me=this;
+			return me.numberOfPosts()>0;
+		},
+		numberOfPosts:function(){
+			var me=this;
+			return parseInt(me.data.discussion.posts);
 		},
 
 		setStarred:function(starred, callback){
@@ -415,8 +425,17 @@ var TaskItem = (function() {
 			}
 			return [];
 		},
-
-
+		addUserListLabel:function(){
+			return 'Assign To Member';
+		},
+		isAssigned:function(){
+			var me=this;
+			return me.getUsers().length>0
+		},
+		isAssignedToClient:function(){
+			var me=this;
+			return me.hasUser(AppClient);
+		},
 
 		getUsers:function(){
 	    	var me=this;

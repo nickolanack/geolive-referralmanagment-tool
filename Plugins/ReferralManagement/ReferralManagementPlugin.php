@@ -190,7 +190,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	}
 
-	public function listProposalData() {
+	public function getProjectList() {
 
 		$filter = array('user' => Core::Client()->getUserId());
 		if (Auth('memberof', 'lands-department', 'group')) {
@@ -224,8 +224,12 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 		return array_values(array_filter(array_map(function ($result) {
 
-			return $this->formatProjectResult($result);
-
+			$project=$this->analyze('formatProjectResult.'.$result->id, function()use($result){
+				return $this->formatProjectResult($result);
+			});
+			$project['profileData']=$this->getLastAnalysis();
+			return $project;
+			
 		}, $results), $filter));
 
 	}
@@ -253,7 +257,11 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 			$project = $this->getProposalData($project);
 		}
 
-		if ($user['id'] == $project->user) {
+		if(is_object($project)){
+			$project=get_object_vars($project);
+		}
+
+		if ($user['id'] == $project['user']) {
 			return $this->availableProjectPermissions();
 		}
 
@@ -277,7 +285,12 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		$pid = $project;
 
 		if (!is_numeric($project)) {
-			$pid = $project->id;
+
+			if(is_object($project)){
+				$project=get_object_vars($project);
+			}
+
+			$pid = $project['id'];
 
 		}
 
@@ -589,16 +602,28 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	}
 
-	protected function onAddTeamMemberToTask() {
+	protected function onAddTeamMemberToTask($args) {
 
-		GetPlugin('Email')->getMailerWithTemplate('onAddTeamMemberToTask', array())
+		GetPlugin('Email')->getMailerWithTemplate('onAddTeamMemberToTask', array_merge(
+				get_object_vars($args),
+				array(
+					'editor'=>$this->getUsersMetadata(),
+					'user'=>$this->getUsersMetadata($args->member->id)
+				)
+			))
 			->to('nickblackwell82@gmail.com')
 			->send();
 
 	}
-	protected function onRemoveTeamMemberFromTask() {
+	protected function onRemoveTeamMemberFromTask($args) {
 
-		GetPlugin('Email')->getMailerWithTemplate('onRemoveTeamMemberFromTask', array())
+		GetPlugin('Email')->getMailerWithTemplate('onRemoveTeamMemberFromTask', array_merge(
+				get_object_vars($args),
+				array(
+					'editor'=>$this->getUsersMetadata(),
+					'user'=>$this->getUsersMetadata($args->member->id)
+				)
+			))
 			->to('nickblackwell82@gmail.com')
 			->send();
 
@@ -637,6 +662,8 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		$proposal['userdetails'] = Core::Client()->userMetadataFor((int) $proposal['user']);
 		
 		$proposal['link']=HtmlDocument()->website().'/Projects/Project-'.$proposal['id'].'/Overview';
+
+		$proposal['discussion']=GetPlugin('Discussions')->getDiscussionForItem($proposal['id'],'ReferralManagement.proposal');
 
 		Core::LoadPlugin('Attributes');
 		$attributes = AttributesRecord::Get($proposal['id'], 'ReferralManagement.proposal', AttributesTable::GetMetadata('proposalAttributes'));
@@ -693,6 +720,9 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		$task = get_object_vars($result);
 		$attributes = AttributesRecord::Get($task['id'], 'Tasks.task', AttributesTable::GetMetadata('taskAttributes'));
 		$task['attributes'] = $attributes;
+
+		$task['discussion']=GetPlugin('Discussions')->getDiscussionForItem($task['id'],'Tasks.task');
+
 
 		$starred = $task['attributes']['starUsers'];
 		if (is_object($starred)) {
@@ -846,7 +876,6 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		if (empty($roleIndexes)) {
 			return array();
 		}
-
 		$minIndex = min($roleIndexes);
 		$canSetList = array_slice($rolesList, $minIndex + 1);
 		return $canSetList;

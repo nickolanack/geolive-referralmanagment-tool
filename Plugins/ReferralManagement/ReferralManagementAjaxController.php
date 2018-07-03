@@ -66,7 +66,9 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
     protected function listProjects($task, $json)
     {
 
-        $response=array('results'=>$this->getPlugin()->listProposalData());
+        
+        $response=array('results'=>$this->getPlugin()->getProjectList());
+
 
         $userCanSubscribe = Core::Client()->isAdmin();
         if ($userCanSubscribe) {
@@ -505,6 +507,11 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
             GetPlugin('Attributes');
                 if(key_exists('attributes', $json)){
                     foreach($json->attributes as $table=>$fields){
+
+                        if($table=='taskAttributes'){
+                            $fields->createdBy=GetClient()->getUserId();
+                        }
+
                         (new attributes\Record($table))->setValues($id, 'Tasks.task', $fields);
                     }
                 }
@@ -953,6 +960,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
         }
        
      }
+
 
 
      protected function setUserRole($task, $json){
