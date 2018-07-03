@@ -382,6 +382,11 @@ body.dragover .file-item.droppable-hide {
     display:none;
 }
 
+.file-item .document.with-mediaTypeIcon {
+    width: 100px;
+    height: 100px;
+}
+
 
 
 .small.cpanel_button {
