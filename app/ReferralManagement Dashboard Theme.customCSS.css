@@ -1870,6 +1870,17 @@ button.t-btn {
     min-height:100px;
 }
 
+
+.task-detail-view .task-title, .task-detail-view .item-tags, .task-detail-view .attachment-indicator {
+    display: none;
+}
+
+.task-detail-view{
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+}
+
 .activity-feed.discussion .posts.empty:after{
     line-height: 100px;
     font-size: 12px;
