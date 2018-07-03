@@ -2108,6 +2108,25 @@ ul.user-roles:hover>li.active {
     display: inline-block;
 }
 
+
+.ui-view.inline-icon-list-view.unassigned, .ui-view.inline-icon-list-view.unassigned:first-child {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #6175d0;
+    border-radius: 100%;
+    padding: 0;
+    margin: 1px 5px;
+    text-align: center;
+    line-height: 17px;
+    color: #6175d0;
+    border-top-width: 1px;
+}
+
+.ui-view.inline-icon-list-view.unassigned:after {
+    content: "?";
+    font-size: 10px;
+}
+
 .ui-view.inline-icon-list-view, .ui-view.inline-icon-list-view .ui-view {
     padding: 0;
     max-height: 20px;
