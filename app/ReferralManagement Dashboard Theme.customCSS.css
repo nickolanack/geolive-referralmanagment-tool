@@ -359,7 +359,7 @@ body.dragover .file-item.droppable-hide {
 }
 
 
-.file-item .remove-btn, .file-item .edit-btn, span.document:after {
+.file-item .remove-btn, .file-item .edit-btn, .file-item .document:after {
     position: absolute;
     top: 10px;
     right: 15px;
