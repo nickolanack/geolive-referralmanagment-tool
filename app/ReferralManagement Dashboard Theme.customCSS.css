@@ -377,11 +377,17 @@ body.dragover .file-item.droppable-hide {
     background-size: 75%;
 }
 
-span.document:after {
-    top:auto;
+.file-item .document:after {
+    top: auto;
     bottom: 30px;
-    background: mediumseagreen;
-    content:"";
+    background: none;
+    content: "";
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0;
+    width: 30px;
+    height: 30px;
 }
 
 
