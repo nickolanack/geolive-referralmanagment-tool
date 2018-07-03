@@ -1483,12 +1483,12 @@
                     "searchability": "public",
                     "editability": "registered",
                     "fieldBooleanOptions": {
-                        "trueIcon": false,
-                        "falseIcon": false,
                         "hideFalse": true,
                         "trueLabel": "",
                         "falseLabel": "",
-                        "useFieldIcon": false
+                        "useFieldIcon": false,
+                        "trueIcon": false,
+                        "falseIcon": false
                     },
                     "allowMultiple": false
                 },
@@ -1619,6 +1619,70 @@
                         }
                     },
                     "allowMultiple": true
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "6",
+                    "tableName": "taskAttributes",
+                    "tableSuffix": "_4178",
+                    "title": "createdBy",
+                    "label": "Created By",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "6",
+                    "tableName": "taskAttributes",
+                    "tableSuffix": "_4178",
+                    "title": "completedBy",
+                    "label": "Completed By",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
                 }
             ]
         }

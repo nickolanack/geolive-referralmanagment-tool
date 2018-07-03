@@ -11079,12 +11079,12 @@
             "metadata": {
                 "title": "taskAttributes",
                 "_tableDiagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 348,
+                    "y": 182
                 },
                 "_diagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 348,
+                    "y": 182
                 },
                 "appliesTo": [
                     "task"
@@ -11100,19 +11100,11 @@
                 "fields": [
                     "taskAttributes.metadata.fields.0.json",
                     {
-                        "icon": [],
-                        "fieldBooleanOptions": {
-                            "trueIcon": [],
-                            "falseIcon": [],
-                            "hideFalse": true,
-                            "trueLabel": "",
-                            "falseLabel": "",
-                            "useFieldIcon": false
-                        },
                         "was": "",
                         "title": "starUsers",
                         "label": "Star Users",
                         "description": "",
+                        "icon": [],
                         "color": "rgb(undefined, undefined, undefined)",
                         "visibility": "public",
                         "editability": "registered",
@@ -11141,22 +11133,22 @@
                             "precision": 0,
                             "limitMinValue": "",
                             "limitMaxValue": ""
-                        }
-                    },
-                    {
-                        "icon": [],
+                        },
                         "fieldBooleanOptions": {
-                            "trueIcon": [],
-                            "falseIcon": [],
                             "hideFalse": true,
                             "trueLabel": "",
                             "falseLabel": "",
-                            "useFieldIcon": false
-                        },
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
                         "was": "",
                         "title": "attachements",
                         "label": "Attachements",
                         "description": "",
+                        "icon": [],
                         "color": "rgb(undefined, undefined, undefined)",
                         "visibility": "public",
                         "editability": "registered",
@@ -11185,22 +11177,22 @@
                             "precision": 0,
                             "limitMinValue": "",
                             "limitMaxValue": ""
-                        }
-                    },
-                    {
-                        "icon": [],
+                        },
                         "fieldBooleanOptions": {
-                            "trueIcon": [],
-                            "falseIcon": [],
                             "hideFalse": true,
                             "trueLabel": "",
                             "falseLabel": "",
-                            "useFieldIcon": false
-                        },
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
                         "was": "",
                         "title": "assignedTo",
                         "label": "Assigned To",
                         "description": "",
+                        "icon": [],
                         "color": "rgb(undefined, undefined, undefined)",
                         "visibility": "public",
                         "editability": "registered",
@@ -11229,22 +11221,22 @@
                             "precision": 0,
                             "limitMinValue": "",
                             "limitMaxValue": ""
-                        }
-                    },
-                    {
-                        "icon": [],
+                        },
                         "fieldBooleanOptions": {
-                            "trueIcon": [],
-                            "falseIcon": [],
                             "hideFalse": true,
                             "trueLabel": "",
                             "falseLabel": "",
-                            "useFieldIcon": false
-                        },
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
                         "was": "",
                         "title": "teamMembers",
                         "label": "Team Members",
                         "description": "",
+                        "icon": [],
                         "color": "rgb(undefined, undefined, undefined)",
                         "visibility": "public",
                         "editability": "registered",
@@ -11273,6 +11265,102 @@
                             "precision": 0,
                             "limitMinValue": "",
                             "limitMaxValue": ""
+                        },
+                        "fieldBooleanOptions": {
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
+                        "was": "",
+                        "title": "createdBy",
+                        "label": "Created By",
+                        "description": "",
+                        "icon": [],
+                        "color": "rgb(undefined, undefined, undefined)",
+                        "visibility": "public",
+                        "editability": "registered",
+                        "searchability": "public",
+                        "allowMultiple": false,
+                        "fieldType": "text",
+                        "fieldTextOptions": {
+                            "textType": "input",
+                            "inputOptions": {
+                                "buildAutocomplete": false,
+                                "requireModeration": false,
+                                "limitMaxChars": 0,
+                                "limitMaxWords": 0,
+                                "allowHtml": false,
+                                "allowMedia": true,
+                                "allowLinks": true
+                            },
+                            "listOptions": {
+                                "takeSugesstions": true,
+                                "buildTree": false,
+                                "iconize": false,
+                                "colorize": false
+                            }
+                        },
+                        "fieldNumberOptions": {
+                            "precision": 0,
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
+                        },
+                        "fieldBooleanOptions": {
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
+                        "was": "",
+                        "title": "completedBy",
+                        "label": "Completed By",
+                        "description": "",
+                        "icon": [],
+                        "color": "rgb(undefined, undefined, undefined)",
+                        "visibility": "public",
+                        "editability": "registered",
+                        "searchability": "public",
+                        "allowMultiple": false,
+                        "fieldType": "text",
+                        "fieldTextOptions": {
+                            "textType": "input",
+                            "inputOptions": {
+                                "buildAutocomplete": false,
+                                "requireModeration": false,
+                                "limitMaxChars": 0,
+                                "limitMaxWords": 0,
+                                "allowHtml": false,
+                                "allowMedia": true,
+                                "allowLinks": true
+                            },
+                            "listOptions": {
+                                "takeSugesstions": true,
+                                "buildTree": false,
+                                "iconize": false,
+                                "colorize": false
+                            }
+                        },
+                        "fieldNumberOptions": {
+                            "precision": 0,
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
+                        },
+                        "fieldBooleanOptions": {
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
                         }
                     }
                 ]
