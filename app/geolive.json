@@ -13122,7 +13122,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "singleTaskOverviewDetail.metadata.positions.content.modules.1.config.fieldLabelScript.js",
                                     "fieldValueScript": "return item.getName()",
-                                    "formatElementScript": "el.addClass('item-title')"
+                                    "formatElementScript": "singleTaskOverviewDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
                                 }
                             },
                             {
