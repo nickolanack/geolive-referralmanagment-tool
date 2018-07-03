@@ -13072,6 +13072,15 @@
                                 }
                             },
                             {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "",
+                                    "text": "<h3>Attachments<\/h3>",
+                                    "template": "",
+                                    "templateVariablesScript": ""
+                                }
+                            },
+                            {
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "file-list",
@@ -13085,9 +13094,9 @@
                                     "formOptions": "\"{}\"",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "defaultBehaviorFn()",
-                                    "formatModuleScript": "singleTaskOverviewDetail.metadata.positions.content.modules.3.config.formatModuleScript.js",
+                                    "formatModuleScript": "singleTaskOverviewDetail.metadata.positions.content.modules.4.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
-                                    "filterModulesScript": "singleTaskOverviewDetail.metadata.positions.content.modules.3.config.filterModulesScript.js",
+                                    "filterModulesScript": "singleTaskOverviewDetail.metadata.positions.content.modules.4.config.filterModulesScript.js",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "getItemListScript": "return item.getFiles();",
