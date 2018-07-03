@@ -1,0 +1,1 @@
+return item.isComplete()?"Complete":"Incomplete";
