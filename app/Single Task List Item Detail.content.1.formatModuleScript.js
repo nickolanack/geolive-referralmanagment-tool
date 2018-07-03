@@ -9,3 +9,6 @@
        
     }));
 
+    if(!item.isAssigned()){
+        module.getElement().addClass('unassigned');
+    }
