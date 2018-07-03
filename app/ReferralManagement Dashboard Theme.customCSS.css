@@ -378,7 +378,7 @@ body.dragover .file-item.droppable-hide {
 }
 
 span.document:after {
-    top:none;
+    top:auto;
     bottom: 30px;
     background: mediumseagreen;
     content:"";
