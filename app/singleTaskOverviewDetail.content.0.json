@@ -4,6 +4,6 @@
         "loadAsync": false,
         "fieldLabelScript": "return \"#task-\"+item.getId()",
         "fieldValueScript": "return \"\";",
-        "formatElementScript": ""
+        "formatElementScript": "el.addClass('task-id');"
     }
 }
