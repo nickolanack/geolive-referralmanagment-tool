@@ -13117,6 +13117,15 @@
                         "modules": [
                             "singleTaskOverviewDetail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "singleTaskOverviewDetail.metadata.positions.content.modules.1.config.fieldLabelScript.js",
+                                    "fieldValueScript": "return item.getName()",
+                                    "formatElementScript": "singleTaskOverviewDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
+                                }
+                            },
+                            {
                                 "type": "UIView",
                                 "config": {
                                     "className": "task-detail-view",
@@ -13139,7 +13148,7 @@
                             {
                                 "type": "FormattedText",
                                 "config": {
-                                    "textValueScript": "singleTaskOverviewDetail.metadata.positions.content.modules.2.config.textValueScript.js",
+                                    "textValueScript": "singleTaskOverviewDetail.metadata.positions.content.modules.3.config.textValueScript.js",
                                     "className": "",
                                     "imageWidth": 300,
                                     "imageHeight": 240,
@@ -13212,9 +13221,9 @@
                                     "formOptions": "\"{}\"",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "defaultBehaviorFn()",
-                                    "formatModuleScript": "singleTaskOverviewDetail.metadata.positions.content.modules.6.config.formatModuleScript.js",
+                                    "formatModuleScript": "singleTaskOverviewDetail.metadata.positions.content.modules.7.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
-                                    "filterModulesScript": "singleTaskOverviewDetail.metadata.positions.content.modules.6.config.filterModulesScript.js",
+                                    "filterModulesScript": "singleTaskOverviewDetail.metadata.positions.content.modules.7.config.filterModulesScript.js",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "getItemListScript": "return item.getFiles();",

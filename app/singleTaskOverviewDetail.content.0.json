@@ -2,8 +2,8 @@
     "type": "FieldValue",
     "config": {
         "loadAsync": false,
-        "fieldLabelScript": "return item.isComplete()?\"Complete\":(item.isOverdue()?\"Overdue\":\"Incomplete\");",
-        "fieldValueScript": "return item.getName()",
-        "formatElementScript": "el.addClass('item-title')\n\nel.addClass(item.isComplete()?\"complete\":(item.isOverdue()?\"overdue\":\"incomplete\"));"
+        "fieldLabelScript": "return \"#\"+item.getId()",
+        "fieldValueScript": "return \"\";",
+        "formatElementScript": ""
     }
 }
