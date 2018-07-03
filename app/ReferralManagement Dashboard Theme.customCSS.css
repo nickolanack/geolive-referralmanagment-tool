@@ -59,7 +59,7 @@ button.public-user-chat {
     right: 30px;
 }
 
-.withPosts .posts:before, li.menu-project-discussion:after {
+.withPosts .posts:before, li.menu-project-discussion.withPosts:after {
     content: attr(data-posts);
     background-color: crimson;
     width: 14px;
@@ -74,7 +74,7 @@ button.public-user-chat {
     margin: 0 5px;
 }
 
-li.menu-project-discussion:after {
+li.menu-project-discussion.withPosts:after {
     content: attr(data-counter);
     position: relative;
 }
