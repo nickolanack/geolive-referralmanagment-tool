@@ -13117,12 +13117,23 @@
                         "modules": [
                             "singleTaskOverviewDetail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "FieldValue",
+                                "type": "UIView",
                                 "config": {
-                                    "loadAsync": false,
-                                    "fieldLabelScript": "singleTaskOverviewDetail.metadata.positions.content.modules.1.config.fieldLabelScript.js",
-                                    "fieldValueScript": "return item.getName()",
-                                    "formatElementScript": "singleTaskOverviewDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
+                                    "className": "task-detail-view",
+                                    "viewType": "view",
+                                    "namedView": "singleTaskListItemDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false
                                 }
                             },
                             {
