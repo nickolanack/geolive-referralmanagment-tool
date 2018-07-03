@@ -2,7 +2,7 @@
     "type": "FieldValue",
     "config": {
         "loadAsync": false,
-        "fieldLabelScript": "return \"#\"+item.getId()",
+        "fieldLabelScript": "return \"#task-\"+item.getId()",
         "fieldValueScript": "return \"\";",
         "formatElementScript": ""
     }
