@@ -13029,6 +13029,15 @@
                         "modules": [
                             "singleTaskOverviewDetail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return item.getName()",
+                                    "formatElementScript": "el.addClass('item-title')"
+                                }
+                            },
+                            {
                                 "type": "DefaultDescription",
                                 "config": {
                                     "className": "",
@@ -13051,6 +13060,15 @@
                                     "embedPortrait": true,
                                     "preferLocalContent": true,
                                     "portraitClip": true
+                                }
+                            },
+                            {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "",
+                                    "text": "<h3>Comments<\/h3>",
+                                    "template": "",
+                                    "templateVariablesScript": ""
                                 }
                             },
                             {
@@ -13094,9 +13112,9 @@
                                     "formOptions": "\"{}\"",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "defaultBehaviorFn()",
-                                    "formatModuleScript": "singleTaskOverviewDetail.metadata.positions.content.modules.4.config.formatModuleScript.js",
+                                    "formatModuleScript": "singleTaskOverviewDetail.metadata.positions.content.modules.6.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
-                                    "filterModulesScript": "singleTaskOverviewDetail.metadata.positions.content.modules.4.config.filterModulesScript.js",
+                                    "filterModulesScript": "singleTaskOverviewDetail.metadata.positions.content.modules.6.config.filterModulesScript.js",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "getItemListScript": "return item.getFiles();",
