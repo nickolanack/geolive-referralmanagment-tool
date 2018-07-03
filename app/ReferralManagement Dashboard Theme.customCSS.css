@@ -1193,6 +1193,25 @@ img.youtubelogo {
 }
 
 
+.item-title.overdue .field-label,
+.item-title.complete .field-label,
+.item-title.incomplete .field-label {
+    font-size:1.3em;
+    font-weight:100;
+    padding-right:10px;
+}
+.item-title.overdue .field-label {
+  color: #e96a6a;
+}
+.item-title.complete .field-label {
+ 
+    color:mediumseagreen;
+}
+.item-title.incomplete .field-label {
+    
+    color:#EDC84C
+}
+
 
 .task-title .field-value {
     max-width: 450px;
