@@ -1,6 +1,6 @@
 
 
-if(AppClient.getUserType()=="admin"||item.getId()==AppClient.getId()){
+if(AppClient.getUserType()=="admin"){
     new UIModalFormButton(el, application, item, {"formName":"userProfileForm", "formOptions":{template:"form"}});
     el.addClass('editable');
     
