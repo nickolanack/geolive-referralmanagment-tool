@@ -1881,6 +1881,20 @@ button.t-btn {
     width: 100%;
 }
 
+.task-detail-view .float-right.due-date {
+    float: right;
+}
+.task-detail-view .task-discussion {
+   display:none;
+}
+
+
+.task-detail-view .icon-list-view:before{
+    content:"Assigned To";
+    float:left;
+    margin-right:5px
+}
+
 .activity-feed.discussion .posts.empty:after{
     line-height: 100px;
     font-size: 12px;
