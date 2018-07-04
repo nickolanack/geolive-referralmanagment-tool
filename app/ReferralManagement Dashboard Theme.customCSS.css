@@ -1817,7 +1817,7 @@ span.filter-btns {
 }
 
 .day.today:after {
-    background: #6A7CE9;
+    background: mediumseagreen;
     position: absolute;
     content: "";
     width: 50px;
@@ -1835,7 +1835,7 @@ span.filter-btns {
     background-color: #6A7CE9;
 }
 .day.today.active:after{
-    border:1px solid #6A7CE9;
+    border:1px solid mediumseagreen;
     background: transparent;
 }
 
