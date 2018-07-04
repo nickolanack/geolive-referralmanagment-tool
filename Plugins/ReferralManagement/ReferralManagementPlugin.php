@@ -189,14 +189,44 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		//     $this->postToActivityFeeds(GetClient()->getUsername().' commented in project discussion');
 		//     Emit('onMirrorPost', $params);
 		// }
+		
+		//Emit("onParseForMention", array('text'=>$params->text));
+
+		if(preg_match_all( '/@[0-9]+/' , $params->text, $matches)>0){
+
+			//Emit("onDetectedMention", array('matches'=>array_values(array_unique($matches[0]))));
+
+			foreach(array_values(array_unique($matches[0])) as $mention){
+				$uid=intval(substr($mention, 1));
+				
+				if(GetClient()->userExists($uid)){
+					Emit("onUserMention", array_merge(
+						array('mention'=>$uid),
+						get_object_vars($params)
+					));
+				}
+
+			}                    
+
+		}
+
+		
+	}
+	public function getActiveProjectList(){
+
+		return $this->getProjectList(array('status'=>array('value'=>'archived', 'comparator'=>'!=')));
 
 	}
+	public function getArchivedProjectList(){
 
-	public function getProjectList() {
+		return $this->getProjectList(array('status'=>'archived'));
 
-		$filter = array('user' => Core::Client()->getUserId());
-		if (Auth('memberof', 'lands-department', 'group')) {
-			$filter = array();
+	}
+	public function getProjectList($filter=array()) {
+
+		
+		if (!Auth('memberof', 'lands-department', 'group')) {
+			$filter['user'] = Core::Client()->getUserId();
 		}
 
 		$database = $this->getDatabase();

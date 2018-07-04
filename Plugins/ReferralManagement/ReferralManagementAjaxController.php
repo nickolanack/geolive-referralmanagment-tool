@@ -67,7 +67,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
     {
 
         
-        $response=array('results'=>$this->getPlugin()->getProjectList());
+        $response=array('results'=>$this->getPlugin()->getActiveProjectList());
 
 
         $userCanSubscribe = Core::Client()->isAdmin();
@@ -78,6 +78,16 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
             );
         }
 
+        return $response;
+
+    }
+
+
+    protected function listArchivedProjects($task, $json)
+    {
+
+        
+        $response=array('results'=>$this->getPlugin()->getArchivedProjectList());
         return $response;
 
     }

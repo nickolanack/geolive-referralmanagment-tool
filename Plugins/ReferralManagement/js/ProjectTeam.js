@@ -10,6 +10,14 @@ var ProjectTeam = (function() {
 		}
 	});
 
+	var ArchiveListQuery = new Class({
+		Extends: AjaxControlQuery,
+		initialize: function(options) {
+			this.parent(CoreAjaxUrlRoot, 'list_archived_projects', Object.append({
+				plugin: 'ReferralManagement'
+			}, options));
+		}
+	});
 
 	var TeamListQuery = new Class({
 		Extends: AjaxControlQuery,
@@ -95,6 +103,22 @@ var ProjectTeam = (function() {
 
 					return p;
 				});
+
+
+				(new ArchiveListQuery()).addEvent('success', function(resp) {
+
+
+					me._projects = me._projects.concat(resp.results.map(function(result) {
+						var p = new Proposal(result.id, Object.append({
+							sync: true,
+						}, result));
+
+						me._addProjectListeners(p)
+
+						return p;
+					}));
+				}).execute();
+
 
 				if (resp.subscription) {
 					AjaxControlQuery.Subscribe(resp.subscription, function(update) {
