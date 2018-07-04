@@ -1,3 +1,4 @@
+ el.addClass('task-title');
  if(item.isComplete()){
        el.addClass('complete');
       
@@ -6,6 +7,22 @@
    
    if(item.getDescription()&&item.getDescription()!==""){
      el.addClass('with-description');
+   }
+   
+   
+   if(item.hasPosts()){
+       var posts=el.appendChild(new Element('span'));
+       posts.addClass('posts');
+       el.addClass('withPosts');
+       posts.setAttribute('data-posts',item.numberOfPosts());
+       posts.addEvent('click',function(){
+           application.getDisplayController().displayPopoverForm(
+				"taskDetailPopover", 
+				item, 
+				application,
+				{}
+			);
+       })
    }
     
     var edit=el.appendChild(new Element('span'));
@@ -32,4 +49,16 @@
 			var wizard = wizardTemplate(item, {});
             wizard.buildAndShow(modalFormViewController, {template:"form"}); 
         
+    })
+    
+    valueEl.addClass('clickable-task');
+    valueEl.addEvent('click',function(){
+        
+        
+        application.getDisplayController().displayPopoverForm(
+				"taskDetailPopover", 
+				item, 
+				application,
+				{}
+			);
     })

@@ -10,43 +10,19 @@ if(child.getItem().getType()==="user"){
 }
 
 childView.addEvent('load:once',function(){
-//     childView.getElement().addEvent("click",function(){
+    childView.addWeakEvent(child, "saving", function(){
+        childView.startSpinner();
+    });
+    childView.addWeakEvent(child, "change", function(){
+        if(listModule.applyFilterToItem(child)){
+             childView.redraw();
+             return;
+        }
         
-        
-//         var formName="taskForm";
-
-// 			var wizardTemplate = application.getDisplayController().getWizardTemplate(formName);
-// 			if ((typeof wizardTemplate) != 'function') {
-
-// 				if(window.console&&console.warn){
-// 					console.warn('Expected named wizardTemplate: '+formName+', to exist');
-// 				}
-
-// 			}
-// 			var modalFormViewController =  new PushBoxModuleViewer(application, {});
-// 			var wizard = wizardTemplate(child, {});
-//             wizard.buildAndShow(modalFormViewController, {template:"form"}); 
-        
-        
-//             //These events are not necessary becuase page is reloaded on all events
-            
-//             // wizard.addEvent("complete",function(){
-//             //     childView.redraw();
-//             // })
-//     })
-    // childView.addWeakEvent(child, "saving", function(){
-    //     childView.startSpinner();
-    // })
-    // childView.addWeakEvent(child, "change", function(){
-    //     if(listModule.applyFilterToItem(child)){
-    //          childView.redraw();
-    //          return;
-    //     }
-        
-    //     //no longer passes filter
-    //     childView.remove();
+        //no longer passes filter
+        childView.remove();
        
-    // })
+    });
     
 })
 

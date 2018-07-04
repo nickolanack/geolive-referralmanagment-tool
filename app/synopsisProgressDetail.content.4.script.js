@@ -17,7 +17,7 @@ var compute=function(team){
     var tasks=[];
     var total=0;
     var update=function(){
-        tasks=team.getTasks().filter(function(t){ 
+        tasks=team.getIncompleteTasks().filter(function(t){ 
             total++;
             return !t.isComplete();  });
         var l=tasks.length;
@@ -35,7 +35,7 @@ var compute=function(team){
             var filter=application.getNamedValue("taskListFilter");
             if(filter){
             
-                filter.applyFilter("complete", true)
+                filter.clear();
             
             }
         });

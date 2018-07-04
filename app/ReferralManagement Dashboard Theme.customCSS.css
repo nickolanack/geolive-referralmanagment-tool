@@ -37,6 +37,15 @@
     
 }
 
+label.label-block {
+    display: block;
+    line-height: 60px;
+}
+
+.help-text {
+    color: cadetblue;
+    font-size: 12px;
+}
 
 button.public-user-chat {
     font-size: 0;
@@ -48,6 +57,26 @@ button.public-user-chat {
     position: fixed;
     bottom: 10px;
     right: 30px;
+}
+
+.withPosts .posts:before, li.menu-project-discussion.withPosts:after {
+    content: attr(data-posts);
+    background-color: crimson;
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 14PX;
+    font-size: 10px;
+    color: black;
+    text-align: center;
+    border-radius: 100%;
+    margin: 0 5px;
+}
+
+li.menu-project-discussion.withPosts:after {
+    content: attr(data-counter);
+    position: relative;
 }
 
 .discussion-module.users-public-chat {
@@ -334,7 +363,8 @@ body.dragover .file-item.droppable-hide {
     font-size: 10px;
 }
 
-.file-item .remove-btn, .file-item .edit-btn {
+
+.file-item .remove-btn, .file-item .edit-btn, .file-item .document:after {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -352,10 +382,29 @@ body.dragover .file-item.droppable-hide {
     background-size: 75%;
 }
 
+.file-item .document:after {
+    top: auto;
+    bottom: 30px;
+    background: none;
+    content: "";
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0;
+    width: 30px;
+    height: 30px;
+}
+
+
 .file-item .edit-btn {
     background: mediumseagreen;
     right: 40px;
     display:none;
+}
+
+.file-item .document.with-mediaTypeIcon {
+    width: 100px;
+    height: 100px;
 }
 
 
@@ -855,6 +904,13 @@ span.inline-list-item {
     text-overflow: ellipsis;
 }
 
+.module-wizard .field-value-module.item-title {
+    width: 100%;
+    overflow: visible;
+    white-space: initial;
+    margin-bottom:10px;
+}
+
 .section-help>* {
     padding: 0 20px 20px 20px;
     display: block;
@@ -1163,10 +1219,47 @@ img.youtubelogo {
 }
 
 
+.item-title.overdue .field-label,
+.item-title.complete .field-label,
+.item-title.incomplete .field-label {
+    font-size:1.3em;
+    font-weight:100;
+    padding-right:10px;
+}
+.item-title.overdue .field-label {
+  color: #e96a6a;
+}
+.item-title.complete .field-label {
+ 
+    color:mediumseagreen;
+}
+.item-title.incomplete .field-label {
+    
+    color:#EDC84C
+}
 
 
+.task-title .field-value {
+    max-width: 450px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    line-height: 16px;
+    vertical-align: middle;
+}
 
 
+@media screen and (max-width: 1450px){
+    .task-title .field-value {
+        max-width: 300px;
+    }
+}
+@media screen and (max-width: 1250px){
+    .task-title .field-value {
+        max-width: 220px;
+    }
+}
 
 
 
@@ -1219,6 +1312,15 @@ img.youtubelogo {
     float: left;
     margin: 2px;
     background-size: 100%;
+}
+
+.starred-indicator.other-stars:after {
+    content: attr(data-other-stars);
+    position: relative;
+    bottom: -2px;
+    right: -14px;
+    font-size: 8px;
+    color: #60ceae;
 }
 
 
@@ -1326,7 +1428,7 @@ ul.item-tags li {
     text-decoration:underline
 }
 
-.hasFilter>span.clear-filter {
+.hasFilter>span.clear-filter, .hasOrder>span.reset-sort{
     position: absolute;
     width: 12px;
     height: 12px;
@@ -1335,6 +1437,9 @@ ul.item-tags li {
     top: 6px;
     background-image: url("https://wabun.geolive.ca/administrator/components/com_geolive/library/pushbox/ic_clear_black_18dp.png?tint=rgb(255,0,0)");
     background-size: 100%;
+}
+.hasOrder>span.reset-sort{
+    background-image: url(<?php echo UrlFrom("{assets}/Control Panel Icons/reset.png")?>);
 }
 
 .inline-btn.filter {
@@ -1472,6 +1577,13 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {
     font-weight: 100;
     float: right;
     margin: 10px;
+    cursor:pointer;
+}
+
+.btn.forgot-pwd {
+    background-color: rgba(0,0,0,0.1);
+    color: #697ce9;
+    font-style: italic;
 }
 
 .uitext-container{
@@ -1799,6 +1911,42 @@ button.t-btn {
 }
 
 
+.inline-task-discussion .discussion .posts {
+    min-height:100px;
+}
+
+
+.task-detail-view .task-title, .task-detail-view .item-tags, .task-detail-view .attachment-indicator {
+    display: none;
+}
+
+.task-detail-view{
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+}
+
+.task-detail-view .float-right.due-date {
+    float: right;
+}
+.task-detail-view .task-discussion {
+   display:none;
+}
+
+
+.task-detail-view .icon-list-view:before{
+    content:"Assigned To";
+    float:left;
+    margin-right:5px
+}
+
+.activity-feed.discussion .posts.empty:after{
+    line-height: 100px;
+    font-size: 12px;
+    font-weight: 100;
+    font-style:italic;
+}
+
 
 .timestamp .field-value {
     color: #6A7CE9;
@@ -1878,6 +2026,10 @@ button.inline-btn.add:hover{
     top: 0;
 }
 
+
+span.SearchModule.search-container {
+    display: none;
+}
 
 
 .no-text .text-input {
@@ -2001,6 +2153,25 @@ ul.user-roles:hover>li.active {
     display: inline-block;
 }
 
+
+.ui-view.inline-icon-list-view.unassigned, .ui-view.inline-icon-list-view.unassigned:first-child {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #6175d0;
+    border-radius: 100%;
+    padding: 0;
+    margin: 1px 5px;
+    text-align: center;
+    line-height: 17px;
+    color: #6175d0;
+    border-top-width: 1px;
+}
+
+.ui-view.inline-icon-list-view.unassigned:after {
+    content: "?";
+    font-size: 10px;
+}
+
 .ui-view.inline-icon-list-view, .ui-view.inline-icon-list-view .ui-view {
     padding: 0;
     max-height: 20px;
@@ -2016,6 +2187,10 @@ ul.user-roles:hover>li.active {
     height: 20px;
     width: 20px;
     margin: 0 5px;
+}
+
+.inline-icon-list-view div.user-profile-icon.content .resizedImage, .inline-list-item.users-list-item-icon  .resizedImage {
+    pointer-events: none;
 }
 
 ul.inline-filter {
@@ -2476,8 +2651,9 @@ img.static-map {
     height: 0;
     border-top: 7px solid transparent;
     border-bottom: 7px solid transparent;
-    border-left: 10px solid #7294e3;
+    border-left: 10px solid #ceb250;
     border-right: none;
+    left: 25px;
 }
 
 .panel-toggle:after {

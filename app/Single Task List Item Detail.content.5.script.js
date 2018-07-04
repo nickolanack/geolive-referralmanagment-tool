@@ -1,3 +1,4 @@
+/*Stars*/
 var mod= new ElementModule('div', {"class":"starred-indicator "+(item.isStarred()?"starred ":"")+(item.hasOtherStars()?"other-stars ":""), 
     events:{click:function(e){
         e.stop();
@@ -19,7 +20,12 @@ var mod= new ElementModule('div', {"class":"starred-indicator "+(item.isStarred(
 });
 
 if(item.hasOtherStars()){
-    item.getElement().setAttribute('data-other-stars', item.otherStars().length)
+    var n=item.otherStars().length;
+    mod.getElement().setAttribute('data-other-stars', n)
+    new UIPopover(mod.getElement(),{
+        description:n+' other user'+(n==1?"":"s")+' starred this task',
+        anchor:UIPopover.AnchorAuto()
+    });
 }
 
 return mod;

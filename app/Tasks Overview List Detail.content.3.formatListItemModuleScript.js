@@ -15,7 +15,7 @@ childView.addEvent('load:once',function(){
         childView.startSpinner();
     })
     childView.addWeakEvent(child, "change", function(){
-        if(listModule.applyFilterToItem(child)){
+        if(listModule.applyFilterToItem(child)&&(!child.isComplete())){
              childView.redraw();
              return;
         }

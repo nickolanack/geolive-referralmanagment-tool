@@ -1658,16 +1658,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 317,
-                            "y": 361
+                            "x": 367,
+                            "y": 411
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 277,
-                                    "y": 574
+                                    "x": 327,
+                                    "y": 624
                                 }
                             },
                             {
@@ -1677,16 +1677,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 776,
-                                    "y": 361
+                                    "x": 826,
+                                    "y": 411
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 736,
-                                            "y": 527
+                                            "x": 786,
+                                            "y": 577
                                         }
                                     }
                                 ],
@@ -1765,14 +1765,16 @@
                                             "type": "WizardLogin",
                                             "config": {
                                                 "className": "",
-                                                "showCancel": false,
-                                                "labelForCancel": "cancel",
-                                                "labelForSubmit": "Login",
+                                                "showCancel": true,
                                                 "labelForUsername": "XXXX-XXXX",
                                                 "labelForPassword": "XXXX-XXXX",
+                                                "labelForCancel": "cancel",
+                                                "labelForSubmit": "Login",
                                                 "onLoginFailedScript": "",
                                                 "reloadOnSuccess": true,
-                                                "reloadUrl": ""
+                                                "reloadUrl": "",
+                                                "showForgotPassword": true,
+                                                "forgotPasswordCustomScript": "XXXX-XXXX"
                                             }
                                         },
                                         {
@@ -5221,8 +5223,9 @@
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
+                                    "name": "My Custom Script",
                                     "script": "Time Overview Detail.metadata.positions.content.modules.1.config.script.js",
-                                    "identifier": "customScriptElement"
+                                    "description": "Info about my custom script"
                                 }
                             }
                         ]
@@ -5363,10 +5366,18 @@
                         "modules": [
                             "Tasks Overview List Detail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "Search",
+                                "config": {
+                                    "getAggregatorsScript": "",
+                                    "placeholder": "search items"
+                                }
+                            },
+                            {
                                 "type": "WizardScriptElement",
                                 "config": {
-                                    "script": "Tasks Overview List Detail.metadata.positions.content.modules.1.config.script.js",
-                                    "identifier": "customScriptElement"
+                                    "name": "My Custom Script",
+                                    "script": "Tasks Overview List Detail.metadata.positions.content.modules.2.config.script.js",
+                                    "description": "Info about my custom script"
                                 }
                             },
                             {
@@ -5388,12 +5399,12 @@
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
-                                    "getItemListScript": "Tasks Overview List Detail.metadata.positions.content.modules.2.config.getItemListScript.js",
+                                    "getItemListScript": "Tasks Overview List Detail.metadata.positions.content.modules.3.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "Tasks Overview List Detail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "Tasks Overview List Detail.metadata.positions.content.modules.3.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyTasksList",
-                                    "filterItemsScript": "Tasks Overview List Detail.metadata.positions.content.modules.2.config.filterItemsScript.js",
-                                    "sortItemsScript": "Tasks Overview List Detail.metadata.positions.content.modules.2.config.sortItemsScript.js",
+                                    "filterItemsScript": "Tasks Overview List Detail.metadata.positions.content.modules.3.config.filterItemsScript.js",
+                                    "sortItemsScript": "Tasks Overview List Detail.metadata.positions.content.modules.3.config.sortItemsScript.js",
                                     "maxItems": "15"
                                 }
                             },
@@ -5404,7 +5415,7 @@
                                     "viewType": "view",
                                     "namedView": "emptyTasksList",
                                     "shouldRender": true,
-                                    "namedViewScript": "Tasks Overview List Detail.metadata.positions.content.modules.3.config.namedViewScript.js",
+                                    "namedViewScript": "Tasks Overview List Detail.metadata.positions.content.modules.4.config.namedViewScript.js",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultView",
                                     "formOptions": "{}",
@@ -5469,7 +5480,7 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
-                                    "formatModuleScript": "",
+                                    "formatModuleScript": "Calendar Overview Detail.metadata.positions.content.modules.1.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
@@ -5698,7 +5709,7 @@
                                     "formOptions": "\"{}\"",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "defaultBehaviorFn()",
-                                    "formatModuleScript": "",
+                                    "formatModuleScript": "Single Task List Item Detail.metadata.positions.content.modules.1.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
@@ -7986,16 +7997,16 @@
                             "filesListForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 353,
-                            "y": 413
+                            "x": 393,
+                            "y": 453
                         },
                         "children": [
                             "filesListForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 313,
-                                    "y": 579
+                                    "x": 353,
+                                    "y": 619
                                 }
                             }
                         ],
@@ -8376,29 +8387,33 @@
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
+                                    "name": "My Custom Script",
                                     "script": "synopsisProgressDetail.metadata.positions.content.modules.1.config.script.js",
-                                    "identifier": "customScriptElement"
+                                    "description": "Info about my custom script"
                                 }
                             },
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
+                                    "name": "My Custom Script",
                                     "script": "synopsisProgressDetail.metadata.positions.content.modules.2.config.script.js",
-                                    "identifier": "customScriptElement"
+                                    "description": "Info about my custom script"
                                 }
                             },
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
+                                    "name": "My Custom Script",
                                     "script": "synopsisProgressDetail.metadata.positions.content.modules.3.config.script.js",
-                                    "identifier": "customScriptElement"
+                                    "description": "Info about my custom script"
                                 }
                             },
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
+                                    "name": "My Custom Script",
                                     "script": "synopsisProgressDetail.metadata.positions.content.modules.4.config.script.js",
-                                    "identifier": "customScriptElement"
+                                    "description": "Info about my custom script"
                                 }
                             }
                         ]
@@ -11064,12 +11079,12 @@
             "metadata": {
                 "title": "taskAttributes",
                 "_tableDiagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 348,
+                    "y": 182
                 },
                 "_diagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 348,
+                    "y": 182
                 },
                 "appliesTo": [
                     "task"
@@ -11085,19 +11100,11 @@
                 "fields": [
                     "taskAttributes.metadata.fields.0.json",
                     {
-                        "icon": [],
-                        "fieldBooleanOptions": {
-                            "trueIcon": [],
-                            "falseIcon": [],
-                            "hideFalse": true,
-                            "trueLabel": "",
-                            "falseLabel": "",
-                            "useFieldIcon": false
-                        },
                         "was": "",
                         "title": "starUsers",
                         "label": "Star Users",
                         "description": "",
+                        "icon": [],
                         "color": "rgb(undefined, undefined, undefined)",
                         "visibility": "public",
                         "editability": "registered",
@@ -11126,22 +11133,22 @@
                             "precision": 0,
                             "limitMinValue": "",
                             "limitMaxValue": ""
-                        }
-                    },
-                    {
-                        "icon": [],
+                        },
                         "fieldBooleanOptions": {
-                            "trueIcon": [],
-                            "falseIcon": [],
                             "hideFalse": true,
                             "trueLabel": "",
                             "falseLabel": "",
-                            "useFieldIcon": false
-                        },
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
                         "was": "",
                         "title": "attachements",
                         "label": "Attachements",
                         "description": "",
+                        "icon": [],
                         "color": "rgb(undefined, undefined, undefined)",
                         "visibility": "public",
                         "editability": "registered",
@@ -11170,22 +11177,22 @@
                             "precision": 0,
                             "limitMinValue": "",
                             "limitMaxValue": ""
-                        }
-                    },
-                    {
-                        "icon": [],
+                        },
                         "fieldBooleanOptions": {
-                            "trueIcon": [],
-                            "falseIcon": [],
                             "hideFalse": true,
                             "trueLabel": "",
                             "falseLabel": "",
-                            "useFieldIcon": false
-                        },
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
                         "was": "",
                         "title": "assignedTo",
                         "label": "Assigned To",
                         "description": "",
+                        "icon": [],
                         "color": "rgb(undefined, undefined, undefined)",
                         "visibility": "public",
                         "editability": "registered",
@@ -11214,22 +11221,22 @@
                             "precision": 0,
                             "limitMinValue": "",
                             "limitMaxValue": ""
-                        }
-                    },
-                    {
-                        "icon": [],
+                        },
                         "fieldBooleanOptions": {
-                            "trueIcon": [],
-                            "falseIcon": [],
                             "hideFalse": true,
                             "trueLabel": "",
                             "falseLabel": "",
-                            "useFieldIcon": false
-                        },
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
                         "was": "",
                         "title": "teamMembers",
                         "label": "Team Members",
                         "description": "",
+                        "icon": [],
                         "color": "rgb(undefined, undefined, undefined)",
                         "visibility": "public",
                         "editability": "registered",
@@ -11258,6 +11265,102 @@
                             "precision": 0,
                             "limitMinValue": "",
                             "limitMaxValue": ""
+                        },
+                        "fieldBooleanOptions": {
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
+                        "was": "",
+                        "title": "createdBy",
+                        "label": "Created By",
+                        "description": "",
+                        "icon": [],
+                        "color": "rgb(undefined, undefined, undefined)",
+                        "visibility": "public",
+                        "editability": "registered",
+                        "searchability": "public",
+                        "allowMultiple": false,
+                        "fieldType": "text",
+                        "fieldTextOptions": {
+                            "textType": "input",
+                            "inputOptions": {
+                                "buildAutocomplete": false,
+                                "requireModeration": false,
+                                "limitMaxChars": 0,
+                                "limitMaxWords": 0,
+                                "allowHtml": false,
+                                "allowMedia": true,
+                                "allowLinks": true
+                            },
+                            "listOptions": {
+                                "takeSugesstions": true,
+                                "buildTree": false,
+                                "iconize": false,
+                                "colorize": false
+                            }
+                        },
+                        "fieldNumberOptions": {
+                            "precision": 0,
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
+                        },
+                        "fieldBooleanOptions": {
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
+                        "was": "",
+                        "title": "completedBy",
+                        "label": "Completed By",
+                        "description": "",
+                        "icon": [],
+                        "color": "rgb(undefined, undefined, undefined)",
+                        "visibility": "public",
+                        "editability": "registered",
+                        "searchability": "public",
+                        "allowMultiple": false,
+                        "fieldType": "text",
+                        "fieldTextOptions": {
+                            "textType": "input",
+                            "inputOptions": {
+                                "buildAutocomplete": false,
+                                "requireModeration": false,
+                                "limitMaxChars": 0,
+                                "limitMaxWords": 0,
+                                "allowHtml": false,
+                                "allowMedia": true,
+                                "allowLinks": true
+                            },
+                            "listOptions": {
+                                "takeSugesstions": true,
+                                "buildTree": false,
+                                "iconize": false,
+                                "colorize": false
+                            }
+                        },
+                        "fieldNumberOptions": {
+                            "precision": 0,
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
+                        },
+                        "fieldBooleanOptions": {
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
                         }
                     }
                 ]
@@ -11461,8 +11564,9 @@
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
+                                    "name": "My Custom Script",
                                     "script": "Tasks List Detail.metadata.positions.content.modules.1.config.script.js",
-                                    "identifier": "customScriptElement"
+                                    "description": "Info about my custom script"
                                 }
                             },
                             {
@@ -12432,7 +12536,7 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "You've be assigned a task",
+            "contentTemplate": "email-onAddTeamMemberToTask-subject.contentTemplate.html",
             "widgetTitle": "email.onAddTeamMemberToTask.subject",
             "target": "email.onAddTeamMemberToTask.subject",
             "comments": "",
@@ -12810,6 +12914,344 @@
             "requireTarget": true,
             "templateName": "landsDepartmentMemberForm",
             "widgetTitle": "landsDepartmentMemberForm",
+            "readAccess": "public"
+        }
+    },
+    "widget.275": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "target": "forgotPasswordForm",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": 53,
+                    "y": 172
+                },
+                "children": [
+                    "forgotPasswordForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "forgotPasswordForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 268,
+                            "y": 400
+                        },
+                        "children": [
+                            "forgotPasswordForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 228,
+                                    "y": 576
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "forgotPasswordForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "forgotPasswordForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Email or Username",
+                                                "placeholder": "add your email or username",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return \"\"; ",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "forgotPasswordForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
+                                        {
+                                            "type": "WizardScriptElement",
+                                            "config": {
+                                                "name": "My Custom Script",
+                                                "script": "forgotPasswordForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.script.js",
+                                                "description": "Info about my custom script"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": []
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "requireTarget": true,
+            "templateName": "forgotPasswordForm",
+            "widgetTitle": "forgotPasswordForm",
+            "readAccess": "public"
+        }
+    },
+    "widget.276": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "target": "taskDetailPopover",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -18,
+                    "y": 171
+                },
+                "children": [
+                    "taskDetailPopover.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "taskDetailPopover.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 158,
+                            "y": 290
+                        },
+                        "children": [
+                            "taskDetailPopover.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 118,
+                                    "y": 456
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "taskDetailPopover.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "taskDetailPopover.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": []
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "requireTarget": true,
+            "templateName": "taskDetailPopover",
+            "widgetTitle": "taskDetailPopover",
+            "readAccess": "public"
+        }
+    },
+    "widget.277": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "singleTaskOverviewDetail",
+            "target": "singleTaskOverviewDetail",
+            "templateName": "singleTaskOverviewDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
+            "notifyViewer": true,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "singleTaskOverviewDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "singleTaskOverviewDetail.metadata.positions.content.modules.1.config.fieldLabelScript.js",
+                                    "fieldValueScript": "return item.getName()",
+                                    "formatElementScript": "singleTaskOverviewDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "task-detail-view",
+                                    "viewType": "view",
+                                    "namedView": "singleTaskListItemDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false
+                                }
+                            },
+                            {
+                                "type": "FormattedText",
+                                "config": {
+                                    "textValueScript": "singleTaskOverviewDetail.metadata.positions.content.modules.3.config.textValueScript.js",
+                                    "className": "",
+                                    "imageWidth": 300,
+                                    "imageHeight": 240,
+                                    "multiImageWidth": 100,
+                                    "multiImageHeight": 75,
+                                    "portraitImageWidth": 75,
+                                    "portraitImageHeight": 100,
+                                    "autoArrange": true,
+                                    "oneLine": true,
+                                    "maxChars": 0,
+                                    "maxWidth": 0,
+                                    "showAudios": true,
+                                    "showVideos": true,
+                                    "showDocuments": true,
+                                    "showImages": true,
+                                    "showLinks": true,
+                                    "showExternalContent": true,
+                                    "embedPortrait": true,
+                                    "preferLocalContent": true,
+                                    "portraitClip": true
+                                }
+                            },
+                            {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "",
+                                    "text": "<h3>Comments<\/h3>",
+                                    "template": "",
+                                    "templateVariablesScript": ""
+                                }
+                            },
+                            {
+                                "type": "plugin.Discussions.Discussion",
+                                "config": {
+                                    "width": 0,
+                                    "constrainHeight": false,
+                                    "height": 200,
+                                    "inlineEditing": true,
+                                    "inlineReply": true,
+                                    "inlineReplyNamedForm": "",
+                                    "emptyMessage": "There are no entries",
+                                    "channel": "default",
+                                    "resolveItemScript": "return item;",
+                                    "initialPostsScript": "return null;",
+                                    "namedView": "defaultPostDetail",
+                                    "reverseOrder": false,
+                                    "className": "inline-task-discussion"
+                                }
+                            },
+                            {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "",
+                                    "text": "<h3>Attachments<\/h3>",
+                                    "template": "",
+                                    "templateVariablesScript": ""
+                                }
+                            },
+                            {
+                                "type": "UIListView",
+                                "config": {
+                                    "listClassName": "file-list",
+                                    "className": "inset-item file-item droppable-hide",
+                                    "viewType": "view",
+                                    "namedView": "singleFileListItemDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "formatModuleScript": "singleTaskOverviewDetail.metadata.positions.content.modules.7.config.formatModuleScript.js",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "singleTaskOverviewDetail.metadata.positions.content.modules.7.config.filterModulesScript.js",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "getItemListScript": "return item.getFiles();",
+                                    "formatItemListScript": "return list;",
+                                    "formatListItemModuleScript": "return item;",
+                                    "emptyNamedView": "emptyListView",
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
             "readAccess": "public"
         }
     }

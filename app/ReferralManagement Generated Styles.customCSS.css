@@ -12,6 +12,37 @@
     background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/tree.png"); ?>?tint=rgb(198, 175, 79)");
 }
 
+button.btn-reset-list {
+    background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/reset.png"); ?>?tint=rgb(106, 233, 191)");
+
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+    background-color: transparent;
+    border: none;
+    background-size: 100%;
+    
+}
+
+
+.file-item span.document:after {
+    background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/download.png"); ?>?tint=rgb(127, 161, 255)");
+}
+
+
+button.btn-search-list {
+    background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/search.png"); ?>?tint=rgb(106, 233, 191)");
+
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+    background-color: transparent;
+    border: none;
+    background-size: 100%;
+    
+}
 
 
 <?php 
@@ -73,7 +104,7 @@ foreach($config->getParameters() as $key=>$value){
     position: relative;
 }
 
-.field-value-module.with-description .editable:before{
+.field-value-module.with-description .field-value:after{
     content: "";
      background-image: url("<?php echo UrlFrom("{assets}/Control Panel Icons/text.png"); ?>?tint=rgb(180,180,180)");
     width: 20px;
