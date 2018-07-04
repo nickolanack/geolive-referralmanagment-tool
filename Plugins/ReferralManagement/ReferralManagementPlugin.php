@@ -138,7 +138,9 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 	protected function onActivateEmailForGuestProposal($params) {
 
 		if (key_exists('validationData', $params) && key_exists('token', $params->validationData)) {
-			$data = ($links = GetPlugin('Links'))->peekDataToken($params->validationData->token)->data;
+			$links = GetPlugin('Links');
+			$tokenInfo=$links->peekDataToken($params->validationData->token);
+			$data = $tokenInfo->data;
 
 			$database = $this->getDatabase();
 
