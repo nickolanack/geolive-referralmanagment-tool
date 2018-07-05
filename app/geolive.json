@@ -13275,16 +13275,16 @@
                             "communityUploadForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 199,
-                            "y": 243
+                            "x": 209,
+                            "y": 253
                         },
                         "children": [
                             "communityUploadForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 159,
-                                    "y": 419
+                                    "x": 169,
+                                    "y": 429
                                 }
                             }
                         ],
@@ -13299,21 +13299,10 @@
                                     "modules": [
                                         "communityUploadForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
-                                            "type": "plugin.ReferralManagement.WizardLayerField",
-                                            "config": {
-                                                "attributeFields": [],
-                                                "label": "Spatial Features",
-                                                "message": "add a description",
-                                                "mandatory": false,
-                                                "className": "",
-                                                "toolbarPosition": "bottom"
-                                            }
-                                        },
-                                        {
                                             "type": "WizardScriptElement",
                                             "config": {
                                                 "name": "My Custom Script",
-                                                "script": "communityUploadForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.script.js",
+                                                "script": "communityUploadForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.script.js",
                                                 "description": "Info about my custom script"
                                             }
                                         }
