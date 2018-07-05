@@ -72,20 +72,26 @@
                 }));
                 
                 var formName="'.$groupName.'UploadForm";
-                if(application.getDisplayController().hasNamedFormView(formName)){
+                setTimeout(function(){
                     
-                   
-                    var button=element.appendChild(new Element("button",{"class":"grp-layer-upload"}));
-                    new UIModalFormButton(
-                        button, 
-                        application, application, 
-                        {
-                            formName:formName, 
-                            formOptions:{template:"form"}
-                            
-                        }
-                    )
-                }
+                    
+                
+                    if(application.getDisplayController().hasNamedFormView(formName)){
+                        
+                      
+                        var button=element.appendChild(new Element("button",{"class":"grp-layer-upload"}));
+                        new UIModalFormButton(
+                            button, 
+                            application, application, 
+                            {
+                                formName:formName, 
+                                formOptions:{template:"form"}
+                                
+                            }
+                        )
+                    }
+                
+                }, 1000);
             
             
             ',
