@@ -210,3 +210,23 @@ span.flag.checked{
 .CustomTile.top-right.proposal-tile {
     width: 0;
 }
+
+
+button.grp-layer-upload:before {
+    content: "+";
+}
+button.grp-layer-upload:after  {
+    content: "Add TUS data";
+    position:absolute;
+    left: 27px;
+    white-space: nowrap;
+    font-size: 10px;
+}
+
+
+button.grp-layer-upload {
+    background: #c4b338;
+    border: none;
+    border-radius: 3px;
+    position: relative;
+}
