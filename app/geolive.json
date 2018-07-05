@@ -13263,8 +13263,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 83,
-                    "y": 177
+                    "x": 115,
+                    "y": 168
                 },
                 "children": [
                     "communityUploadForm.metadata.children.0.json",
@@ -13275,15 +13275,15 @@
                             "communityUploadForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 209,
-                            "y": 253
+                            "x": 219,
+                            "y": 263
                         },
                         "children": [
                             "communityUploadForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 169,
+                                    "x": 179,
                                     "y": 429
                                 }
                             }
@@ -13299,10 +13299,30 @@
                                     "modules": [
                                         "communityUploadForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
+                                            "type": "WizardDescriptionField",
+                                            "config": {
+                                                "label": "TUS Data (kml)",
+                                                "message": "add a description",
+                                                "lines": 3,
+                                                "mandatory": false,
+                                                "showAudios": true,
+                                                "showImages": true,
+                                                "showDocuments": true,
+                                                "showVideos": true,
+                                                "className": "no-text only-docs",
+                                                "maxChars": 0,
+                                                "showExpandInput": true,
+                                                "toolbarPosition": "bottom",
+                                                "textFormatScript": "",
+                                                "mediaIconTint": "rgb(100, 149, 237)",
+                                                "onRenderModuleFn": ""
+                                            }
+                                        },
+                                        {
                                             "type": "WizardScriptElement",
                                             "config": {
                                                 "name": "My Custom Script",
-                                                "script": "communityUploadForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.script.js",
+                                                "script": "communityUploadForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.script.js",
                                                 "description": "Info about my custom script"
                                             }
                                         }
