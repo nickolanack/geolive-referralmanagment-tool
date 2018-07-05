@@ -78,11 +78,23 @@
                 
                     if(application.getDisplayController().hasNamedFormView(formName)){
                         
+                        
+                        var GroupUpload=new Class({
+                            Extends: DataTypeObject,
+	                    	Implements:[Events],
+	                    	getDescription:function(){return "";},
+	                    	setDescription:function(d){
+	                    	    console.log(d);
+	                    	}
+	                    	save:function(cb){
+	                    	       cb(true);
+	                    	}
+                        });
                       
                         var button=legend.element.appendChild(new Element("button",{"class":"grp-layer-upload"}));
                         new UIModalFormButton(
                             button, 
-                            application, application, 
+                            application, new GroupUpload(), 
                             {
                                 formName:formName, 
                                 formOptions:{template:"form"}
