@@ -85,8 +85,20 @@
 	                    	getDescription:function(){return "";},
 	                    	setDescription:function(d){
 	                    	    console.log(d);
+	                    	    var me=this;
+	                    	    me.file=Proposal.ParseHtmlUrls(d);
 	                    	},
 	                    	save:function(cb){
+	                    	    
+	                    	    var me=this;
+	                    	    var AddDocumentQuery = new Class({
+                            		Extends: AjaxControlQuery,
+                            		initialize: function(data) {
+                            			this.parent(CoreAjaxUrlRoot, 'upload_tus', Object.append({
+                            				plugin: 'ReferralManagement'
+                            			}, (data || {me.file||null})));
+                            		}
+                            	});
 	                    	       cb(true);
 	                    	}
                         });
