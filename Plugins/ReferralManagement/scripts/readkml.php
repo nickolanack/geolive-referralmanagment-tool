@@ -161,9 +161,9 @@ foreach ($document->getMarkerNodes() as $markerNode) {
         echo "Found: " . print_r($feature, true) . "\n";
     }
     $feature->setIcon('components/com_geolive/users_files/user_files_680/Uploads/[ImAgE]_wBJ_4IB_[G]_DLI.png');
-    MapController::StoreMapFeature($feature);
+    //MapController::StoreMapFeature($feature);
 
-    setAttributes($feature, $tableMetadata);
+    //setAttributes($feature, $tableMetadata);
 
 }
 

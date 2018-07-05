@@ -4,6 +4,225 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 {
     use core\PluginMemberTrait;
 
+    protected function uploadTus($task, $json){
+
+        GetPlugin('Attributes');
+        GetPlugin('Maps');
+
+        $tableMetadata = AttributesTable::GetMetadata('featureAttributes');
+
+
+
+function getLayer($item){
+
+
+    //69 Cultural
+    //68 Subsistance
+    //66 Habitation
+    //67 Evironmental
+    //58 Transportation
+
+    $name = $item->getName();
+    $activityCode = substr($name, 0, 2);
+    $layerMap = array(
+        'BE' => 69,
+        'JF' => 69,
+        'MO' => 69,
+        'OF' => 69,
+        'MD' => 69,
+        'TX' => 69,
+        'PK' => 69,
+        'WA' => 69,
+        'BU' => 69,
+        'DR' => 69,
+        'PR' => 69,
+        'MP' => 69,
+        'SP' => 69,
+        'WR' => 69,
+        'TR' => 69,
+
+    );
+
+    
+    $layer=69;
+    if (key_exists($activityCode, $layerMap)) {
+        $layer = $layerMap[$activityCode];
+
+    }
+
+    return $layer;
+
+
+
+}
+
+function setAttributes($item, $tableMetadata)
+{
+
+    $name = $item->getName();
+    $activityCode = substr($name, 0, 2);
+    $activityMap = array(
+        'BE' => 'Berries',
+        'JF' => 'Jack Fish',
+        'MO' => 'Moose',
+        'OF' => 'Fish',
+        'MD' => 'Mule Deer',
+        'TX' => 'Camp Site',
+        'PK' => 'Pickerel',
+        'WA' => 'Water Source',
+        'BU' => 'Burial Site',
+        'DR' => 'Drying Rack Site',
+        'PR' => 'Game Processing Site',
+        'MP' => 'Medicine',
+        'SP' => 'Sweat Lodge',
+        'WR' => 'Water Route',
+        'TR' => 'Trail Route',
+
+    );
+
+    $attributes = array('activityCode' => $activityCode);
+
+    if (key_exists($activityCode, $activityMap)) {
+        $attributes['activity'] = $activityMap[$activityCode];
+
+    }
+    $description = $item->getDescription();
+    $yr = explode(' ', trim($description));
+    $yr = str_replace('.', '', array_pop($yr));
+    if (strlen($yr) == 4 && is_numeric($yr)) {
+        $attributes['year'] = $yr . '-01-01';
+    }
+
+    echo 'featureAttributes=>' . print_r($attributes, true);
+
+    AttributesRecord::Set($item->getId(), $item->getType(), $attributes, $tableMetadata);
+}
+
+include_once MapsPlugin::Path() . DS . 'lib' . DS . 'KmlDocument.php';
+include_once MapsPlugin::Path() . DS . 'lib' . DS . 'SpatialFile.php';
+
+$document = SpatialFile::Open(PathFrom($json->data[0]));
+$features=array();
+
+foreach ($document->getPolygonNodes() as $polyNode) {
+
+    $style = KmlDocument::GetPolygonStyle($polyNode, array(
+        // default values
+        'lineColor' => 'ff000000',
+        'width' => 1,
+        'polyColor' => '7f000000',
+        'outline' => true,
+    ));
+    $coordinates = KmlDocument::GetPolygonCoordinates($polyNode);
+
+    $name = KmlDocument::GetNodeName($polyNode, 'Unknown');
+    $description = KmlDocument::GetNodeDescription($polyNode, '');
+
+    $feature = MapController::GetFeatureWithName($name);
+
+    if (!$feature) {
+        $feature = new Polygon();
+        $feature->setName($name);
+        $feature->setDescription($description);
+        $feature->setPath($coordinates);
+
+        $feature->setLayerId(getLayer($feature));
+
+        $feature->setLineColor($style['lineColor']);
+        $feature->setLineWidth($style['width']);
+        $feature->setPolyColor($style['polyColor']);
+        $feature->setOutline($style['outline']);
+        
+
+        //echo "Created: " . print_r($feature, true) . "\n";
+
+    } else {
+
+        //echo "Found: " . print_r($feature, true) . "\n";
+    }
+    $features[]=$feature;
+
+}
+
+foreach ($document->getLineNodes() as $lineNode) {
+
+    $style = KmlDocument::GetLineStyle($lineNode, array(
+        // default values
+        'lineColor' => 'ff000000',
+        'width' => 1,
+    ));
+    $coordinates = KmlDocument::GetLineCoordinates($lineNode);
+    $name = KmlDocument::GetNodeName($lineNode, 'Unknown');
+    $description = KmlDocument::GetNodeDescription($lineNode, '');
+
+    $feature = MapController::GetFeatureWithName($name);
+
+
+
+
+    if (!$feature) {
+        $feature = new Line();
+        $feature->setName($name);
+        $feature->setDescription($description);
+        $feature->setPath($coordinates);
+
+        $feature->setLayerId(getLayer($feature));
+
+        $feature->setLineColor($style['lineColor']);
+        $feature->setLineWidth($style['width']);
+        
+
+    } else {
+
+    }
+
+    $features[]=$feature;
+
+}
+
+foreach ($document->getMarkerNodes() as $markerNode) {
+
+    $coordinates = KmlDocument::GetMarkerCoordinates($markerNode);
+    $icon = KmlDocument::GetMarkerIcon($markerNode, 'DEFAULT');
+
+    $name = KmlDocument::GetNodeName($markerNode, 'Unknown');
+    $description = KmlDocument::GetNodeDescription($markerNode, '');
+    $coordinates = KMLDocument::GetMarkerCoordinates($markerNode);
+
+    $feature = MapController::GetFeatureWithName($name);
+
+    if (!$feature) {
+        $feature = new Marker();
+        $feature->setName($name);
+        $feature->setDescription($description);
+        $feature->setCoordinates($coordinates[0], $coordinates[1]);
+
+        $feature->setLayerId(getLayer($feature));
+
+        //echo "Created: " . print_r($feature, true) . "\n";
+
+    } else {
+
+        //echo "Found: " . print_r($feature, true) . "\n";
+    }
+    $feature->setIcon('components/com_geolive/users_files/user_files_680/Uploads/[ImAgE]_wBJ_4IB_[G]_DLI.png');
+    $features[]=$feature;
+
+    
+
+}
+    foreach($features as $feature){
+        if($feature->getId()<=0){
+            //MapController::StoreMapFeature($feature);
+        }
+       //setAttributes($feature, $tableMetadata);
+    }
+    
+
+        return array('features'=>array_map(function($f){return $f->getMetadata();}, $features));
+
+    }
+
 
     protected function saveTeamMemberPermissions($task, $json){
 
