@@ -99,7 +99,9 @@
                             			}, {data:me.file||null}));
                             		}
                             	});
-	                    	       cb(true);
+	                    	    (new AddDocumentQuery).addEvent("success", function(){
+	                    	        cb(true)
+	                    	    }).execute();
 	                    	}
                         });
                       
