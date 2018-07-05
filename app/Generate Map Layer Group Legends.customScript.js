@@ -94,8 +94,8 @@
 	                    	    var AddDocumentQuery = new Class({
                             		Extends: AjaxControlQuery,
                             		initialize: function(data) {
-                            			this.parent(CoreAjaxUrlRoot, 'upload_tus', Object.append({
-                            				plugin: 'ReferralManagement'
+                            			this.parent(CoreAjaxUrlRoot, "upload_tus", Object.append({
+                            				plugin: "ReferralManagement"
                             			}, (data || {me.file||null})));
                             		}
                             	});
