@@ -71,7 +71,7 @@
                     }
                 }));
                 
-                '.Auth('memberof', 'lands-department-manager', 'group')?'
+                '.(Auth('memberof', 'lands-department-manager', 'group')?'
                 
                 var formName="'.$groupName.'UploadForm";
                 setTimeout(function(){
@@ -123,7 +123,7 @@
             
                 
                 
-            ':'',
+            ':''),
             
             
             'shouldShowLayerScript'=>'
