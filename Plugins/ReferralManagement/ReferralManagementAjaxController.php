@@ -16,34 +16,12 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 function getLayer($item){
 
 
-    //69 Cultural
-    //68 Subsistance
-    //66 Habitation
-    //67 Evironmental
-    //58 Transportation
 
     $name = $item->getName();
     $activityCode = substr($name, 0, 2);
-    $layerMap = array(
-        'BE' => 69,
-        'JF' => 69,
-        'MO' => 69,
-        'OF' => 69,
-        'MD' => 69,
-        'TX' => 69,
-        'PK' => 69,
-        'WA' => 69,
-        'BU' => 69,
-        'DR' => 69,
-        'PR' => 69,
-        'MP' => 69,
-        'SP' => 69,
-        'WR' => 69,
-        'TR' => 69,
+    $layerMap = get_object_vars(json_decode(file_get_contents(__DIR__.'/layerCodes.json')));
 
-    );
 
-    
     $layer=69;
     if (key_exists($activityCode, $layerMap)) {
         $layer = $layerMap[$activityCode];
@@ -61,24 +39,26 @@ function setAttributes($item, $tableMetadata)
 
     $name = $item->getName();
     $activityCode = substr($name, 0, 2);
-    $activityMap = array(
-        'BE' => 'Berries',
-        'JF' => 'Jack Fish',
-        'MO' => 'Moose',
-        'OF' => 'Fish',
-        'MD' => 'Mule Deer',
-        'TX' => 'Camp Site',
-        'PK' => 'Pickerel',
-        'WA' => 'Water Source',
-        'BU' => 'Burial Site',
-        'DR' => 'Drying Rack Site',
-        'PR' => 'Game Processing Site',
-        'MP' => 'Medicine',
-        'SP' => 'Sweat Lodge',
-        'WR' => 'Water Route',
-        'TR' => 'Trail Route',
 
-    );
+     $activityMap = get_object_vars(json_decode(file_get_contents(__DIR__.'/attributeCodes.json')));
+    // $activityMap = array(
+    //     'BE' => 'Berries',
+    //     'JF' => 'Jack Fish',
+    //     'MO' => 'Moose',
+    //     'OF' => 'Fish',
+    //     'MD' => 'Mule Deer',
+    //     'TX' => 'Camp Site',
+    //     'PK' => 'Pickerel',
+    //     'WA' => 'Water Source',
+    //     'BU' => 'Burial Site',
+    //     'DR' => 'Drying Rack Site',
+    //     'PR' => 'Game Processing Site',
+    //     'MP' => 'Medicine',
+    //     'SP' => 'Sweat Lodge',
+    //     'WR' => 'Water Route',
+    //     'TR' => 'Trail Route',
+
+    // );
 
     $attributes = array('activityCode' => $activityCode);
 
@@ -113,7 +93,12 @@ foreach ($document->getPolygonNodes() as $polyNode) {
         'polyColor' => '7f000000',
         'outline' => true,
     ));
-    $coordinates = KmlDocument::GetPolygonCoordinates($polyNode);
+    try{
+        $coordinates = KmlDocument::GetPolygonCoordinates($polyNode);
+    }catch(Exception $e){
+        continue;
+    }
+    
 
     $name = KmlDocument::GetNodeName($polyNode, 'Unknown');
     $description = KmlDocument::GetNodeDescription($polyNode, '');
@@ -213,9 +198,9 @@ foreach ($document->getMarkerNodes() as $markerNode) {
 }
     foreach($features as $feature){
         if($feature->getId()<=0){
-            //MapController::StoreMapFeature($feature);
+            MapController::StoreMapFeature($feature);
         }
-       //setAttributes($feature, $tableMetadata);
+       setAttributes($feature, $tableMetadata);
     }
     
 
