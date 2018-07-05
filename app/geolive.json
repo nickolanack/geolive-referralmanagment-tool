@@ -13263,8 +13263,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -18,
-                    "y": 171
+                    "x": 21,
+                    "y": 178
                 },
                 "children": [
                     "communityUploadForm.metadata.children.0.json",
@@ -13275,16 +13275,16 @@
                             "communityUploadForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 138,
-                            "y": 270
+                            "x": 189,
+                            "y": 233
                         },
                         "children": [
                             "communityUploadForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 98,
-                                    "y": 436
+                                    "x": 149,
+                                    "y": 409
                                 }
                             }
                         ],
@@ -13299,12 +13299,14 @@
                                     "modules": [
                                         "communityUploadForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
-                                            "type": "InlineHtml",
+                                            "type": "plugin.ReferralManagement.WizardLayerField",
                                             "config": {
+                                                "attributeFields": [],
+                                                "label": "Spatial Features",
+                                                "message": "add a description",
+                                                "mandatory": false,
                                                 "className": "",
-                                                "text": "<h2>Upload TUS Data<\/h2>",
-                                                "template": "",
-                                                "templateVariablesScript": ""
+                                                "toolbarPosition": "bottom"
                                             }
                                         },
                                         {
