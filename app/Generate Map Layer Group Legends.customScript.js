@@ -71,13 +71,16 @@
                     }
                 }));
                 
-                if(application.getDisplayController().hasNamedFormView(groupName+"UploadForm")){
+                var formName="'.$groupName.'UploadForm";
+                if(application.getDisplayController().hasNamedFormView(formName)){
+                    
+                   
                     var button=element.appendChild(new Element("button",{"class":"grp-layer-upload"}));
                     new UIModalFormButton(
                         button, 
                         application, application, 
                         {
-                            formName:groupName+"UploadForm", 
+                            formName:formName, 
                             formOptions:{template:"form"}
                             
                         }
