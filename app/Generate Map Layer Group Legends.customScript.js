@@ -93,10 +93,10 @@
 	                    	    var me=this;
 	                    	    var AddDocumentQuery = new Class({
                             		Extends: AjaxControlQuery,
-                            		initialize: function(data) {
+                            		initialize: function() {
                             			this.parent(CoreAjaxUrlRoot, "upload_tus", Object.append({
                             				plugin: "ReferralManagement"
-                            			}, (data || {me.file||null})));
+                            			}, {data:me.file||null}));
                             		}
                             	});
 	                    	       cb(true);
