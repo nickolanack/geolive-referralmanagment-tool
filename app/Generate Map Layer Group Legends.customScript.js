@@ -79,7 +79,7 @@
                     if(application.getDisplayController().hasNamedFormView(formName)){
                         
                       
-                        var button=element.appendChild(new Element("button",{"class":"grp-layer-upload"}));
+                        var button=legend.element.appendChild(new Element("button",{"class":"grp-layer-upload"}));
                         new UIModalFormButton(
                             button, 
                             application, application, 
