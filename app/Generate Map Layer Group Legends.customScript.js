@@ -85,7 +85,7 @@
 	                    	getDescription:function(){return "";},
 	                    	setDescription:function(d){
 	                    	    console.log(d);
-	                    	}
+	                    	},
 	                    	save:function(cb){
 	                    	       cb(true);
 	                    	}
