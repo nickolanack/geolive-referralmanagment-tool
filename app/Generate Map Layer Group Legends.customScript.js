@@ -70,7 +70,7 @@
                         }
                     }
                 }));
-                
+                '.((!Auth('memberof', 'lands-department', 'group'))?.'
                 var formName="'.$groupName.'UploadForm";
                 setTimeout(function(){
                     
@@ -119,7 +119,8 @@
                 
                 }, 1000);
             
-            
+                ':'').'
+                
             ',
             
             
