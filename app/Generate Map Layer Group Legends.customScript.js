@@ -70,6 +70,19 @@
                         }
                     }
                 }));
+                
+                if(application.getDisplayController().hasNamedFormView(groupName+"UploadForm")){
+                    var button=element.appendChild(new Element('button',{"class":"grp-layer-upload"}));
+                    new UIModalFormButton(
+                        button, 
+                        application, application, 
+                        {
+                            formName:groupName+"UploadForm", 
+                            formOptions:{template:"form"}
+                            
+                        }
+                    )
+                }
             
             
             ',
