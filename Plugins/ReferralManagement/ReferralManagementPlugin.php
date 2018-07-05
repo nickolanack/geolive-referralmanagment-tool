@@ -26,7 +26,10 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 	 */
 	public function getTaskMap() {
 		return array(
-			'layer.upload' => 'task_UploadLayer',
+			'layer.upload' => array(
+				'access' => 'public',
+				'method'=>'task_UploadLayer'
+			)
 		);
 	}
 
@@ -104,7 +107,11 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 			// but is intended to be able to open shape files as well.
 			SpatialFile::Save(SpatialFile::Open($path), $kmlDoc);
 
-			$this->setParameter('layer', $path);
+			Emit('onUploadSpatialFile',array(
+				'path'=>$kmlDoc
+			));
+
+			$this->setParameter('layer', $kmlDoc);
 			return true;
 
 		} else {
