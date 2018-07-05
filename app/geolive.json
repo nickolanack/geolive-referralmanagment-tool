@@ -13275,16 +13275,16 @@
                             "communityUploadForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 219,
-                            "y": 263
+                            "x": 229,
+                            "y": 273
                         },
                         "children": [
                             "communityUploadForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 179,
-                                    "y": 429
+                                    "x": 189,
+                                    "y": 449
                                 }
                             }
                         ],
@@ -13316,14 +13316,6 @@
                                                 "textFormatScript": "",
                                                 "mediaIconTint": "rgb(100, 149, 237)",
                                                 "onRenderModuleFn": ""
-                                            }
-                                        },
-                                        {
-                                            "type": "WizardScriptElement",
-                                            "config": {
-                                                "name": "My Custom Script",
-                                                "script": "communityUploadForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.script.js",
-                                                "description": "Info about my custom script"
                                             }
                                         }
                                     ]
