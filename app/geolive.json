@@ -13358,9 +13358,11 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "Here is your magic login link",
+            "contentTemplate": "email-MagicLoginLink-subject.contentTemplate.html",
             "widgetTitle": "email.MagicLoginLink.subject",
-            "target": "email.MagicLoginLink.subject"
+            "target": "email.MagicLoginLink.subject",
+            "comments": "",
+            "readAccess": "public"
         }
     },
     "widget.280": {
