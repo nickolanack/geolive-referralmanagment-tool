@@ -1658,16 +1658,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 367,
-                            "y": 411
+                            "x": 377,
+                            "y": 421
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 327,
-                                    "y": 624
+                                    "x": 337,
+                                    "y": 634
                                 }
                             },
                             {
@@ -1677,16 +1677,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 826,
-                                    "y": 411
+                                    "x": 836,
+                                    "y": 421
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 786,
-                                            "y": 577
+                                            "x": 796,
+                                            "y": 587
                                         }
                                     }
                                 ],
@@ -1773,7 +1773,7 @@
                                                 "onLoginFailedScript": "",
                                                 "reloadOnSuccess": true,
                                                 "reloadUrl": "",
-                                                "showForgotPassword": true,
+                                                "showForgotPassword": false,
                                                 "forgotPasswordCustomScript": "XXXX-XXXX"
                                             }
                                         },
