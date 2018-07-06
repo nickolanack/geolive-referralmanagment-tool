@@ -13352,5 +13352,32 @@
             "widgetTitle": "communityUploadForm",
             "readAccess": "public"
         }
+    },
+    "widget.279": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Here is your magic login link",
+            "widgetTitle": "email.MagicLoginLink.subject",
+            "target": "email.MagicLoginLink.subject"
+        }
+    },
+    "widget.280": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "email-MagicLoginLink-content.contentTemplate.html",
+            "widgetTitle": "email.MagicLoginLink.content",
+            "target": "email.MagicLoginLink.content"
+        }
+    },
+    "widget.281": {
+        "name": "Article",
+        "instance": "Article",
+        "parameters": {
+            "articleTitle": "You did it! Thanks.",
+            "articleHtml": "",
+            "target": "Links.action-view.Article.onActivateMagicEmailLink"
+        }
     }
 }
