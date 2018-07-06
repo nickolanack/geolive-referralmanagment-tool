@@ -93,7 +93,8 @@
             ],
             "customUserScript": "plugin.Users.13.customUserScript.js",
             "customGroupMemberOfGroupScript": "plugin.Users.13.customGroupMemberOfGroupScript.js",
-            "userProfileImageScript": "return $defaultImage;"
+            "userProfileImageScript": "return $defaultImage;",
+            "magicLinkUrl": "magic-link"
         }
     },
     "plugin.15": {
@@ -1658,16 +1659,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 367,
-                            "y": 411
+                            "x": 417,
+                            "y": 461
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 327,
-                                    "y": 624
+                                    "x": 377,
+                                    "y": 674
                                 }
                             },
                             {
@@ -1677,16 +1678,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 826,
-                                    "y": 411
+                                    "x": 876,
+                                    "y": 461
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 786,
-                                            "y": 577
+                                            "x": 836,
+                                            "y": 627
                                         }
                                     }
                                 ],
@@ -12937,16 +12938,16 @@
                             "forgotPasswordForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 268,
-                            "y": 400
+                            "x": 298,
+                            "y": 430
                         },
                         "children": [
                             "forgotPasswordForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 228,
-                                    "y": 576
+                                    "x": 258,
+                                    "y": 606
                                 }
                             }
                         ],
@@ -12964,8 +12965,8 @@
                                             "type": "FormTextField",
                                             "config": {
                                                 "className": "",
-                                                "label": "Email or Username",
-                                                "placeholder": "add your email or username",
+                                                "label": "Email Address",
+                                                "placeholder": "add your email address",
                                                 "lines": 1,
                                                 "maxChars": 0,
                                                 "mandatory": false,
@@ -12978,7 +12979,7 @@
                                                 "getValueScript": " return \"\"; ",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "forgotPasswordForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
-                                                "validateValueScript": " return defaultValidationFn() "
+                                                "validateValueScript": "forgotPasswordForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.validateValueScript.js"
                                             }
                                         },
                                         {
@@ -13351,6 +13352,35 @@
             "templateName": "communityUploadForm",
             "widgetTitle": "communityUploadForm",
             "readAccess": "public"
+        }
+    },
+    "widget.279": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "email-MagicLoginLink-subject.contentTemplate.html",
+            "widgetTitle": "email.MagicLoginLink.subject",
+            "target": "email.MagicLoginLink.subject",
+            "comments": "",
+            "readAccess": "public"
+        }
+    },
+    "widget.280": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "email-MagicLoginLink-content.contentTemplate.html",
+            "widgetTitle": "email.MagicLoginLink.content",
+            "target": "email.MagicLoginLink.content"
+        }
+    },
+    "widget.281": {
+        "name": "Article",
+        "instance": "Article",
+        "parameters": {
+            "articleTitle": "You did it! Thanks.",
+            "articleHtml": "",
+            "target": "Links.action-view.Article.onActivateMagicEmailLink"
         }
     }
 }

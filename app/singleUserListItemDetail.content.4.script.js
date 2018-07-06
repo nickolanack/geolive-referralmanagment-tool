@@ -17,12 +17,18 @@ var rolesEditList=<?php
 ?>;
 
 
-var roles=<?php
+
+
+var allRoles=<?php
 
    echo json_encode(GetPlugin('ReferralManagement')->getRoles());
 
 ?>;
 
+var itemsMinRoleIndex=Math.min.apply(null,item.getRoles().map(function(r){return allRoles.indexOf(r)}));
+var clientsMinEditRoleIndex=Math.min.apply(null,rolesEditList.map(function(r){return allRoles.indexOf(r)}));
+
+var roles=allRoles.slice(0)
 
 
 if(item.isDevice()){
@@ -51,7 +57,7 @@ var userItemIsA=function(r){
 }
 
 var clientCanEditUserRole=function(r){
-    return rolesEditList.indexOf(r)>=0||(r=='none'&&rolesEditList.length)
+    return ((rolesEditList.indexOf(r)>=0&&clientsMinEditRoleIndex<=itemsMinRoleIndex)||(r=='none'&&rolesEditList.length));
 }
 
 var addRole=function(r){
