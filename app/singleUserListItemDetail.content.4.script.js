@@ -17,12 +17,18 @@ var rolesEditList=<?php
 ?>;
 
 
-var roles=<?php
+
+
+var allRoles=<?php
 
    echo json_encode(GetPlugin('ReferralManagement')->getRoles());
 
 ?>;
 
+var itemsMinRoleIndex=Math.min(item.getRoles().map(function(r){return allRoles.indexOf(r)}));
+var clientsMinEditRoleIndex=Math.min(rolesEditList.map(function(r){return allRoles.indexOf(r)}));
+
+var roles=allRoles.slice(0)
 
 
 if(item.isDevice()){
