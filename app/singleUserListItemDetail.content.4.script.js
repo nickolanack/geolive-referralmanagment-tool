@@ -25,8 +25,8 @@ var allRoles=<?php
 
 ?>;
 
-var itemsMinRoleIndex=Math.min(item.getRoles().map(function(r){return allRoles.indexOf(r)}));
-var clientsMinEditRoleIndex=Math.min(rolesEditList.map(function(r){return allRoles.indexOf(r)}));
+var itemsMinRoleIndex=Math.min.apply(null,item.getRoles().map(function(r){return allRoles.indexOf(r)}));
+var clientsMinEditRoleIndex=Math.min.apply(null,rolesEditList.map(function(r){return allRoles.indexOf(r)}));
 
 var roles=allRoles.slice(0)
 
