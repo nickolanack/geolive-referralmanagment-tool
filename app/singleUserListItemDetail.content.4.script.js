@@ -57,7 +57,7 @@ var userItemIsA=function(r){
 }
 
 var clientCanEditUserRole=function(r){
-    return ((rolesEditList.indexOf(r)>=0&&clientsMinEditRoleIndex<itemsMinRoleIndex)||(r=='none'&&rolesEditList.length));
+    return ((rolesEditList.indexOf(r)>=0&&clientsMinEditRoleIndex<=itemsMinRoleIndex)||(r=='none'&&rolesEditList.length));
 }
 
 var addRole=function(r){
