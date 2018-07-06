@@ -121,7 +121,11 @@ var ReferralManagementUser = new Class({
 	            }
 
 	        }).execute();
+
      		me.options.metadata.roles=[role];
+     		if(role=="none"){
+				me.options.metadata.roles=[];
+	        }
 	        me.fireEvent('update');
 
 

@@ -101,10 +101,6 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 			$kmlDoc = substr($path, 0, strrpos($path, '.')) . '.kml';
 
-			// SpatialFile is a utility that opens any spatial and
-			// returns a KmlDocument, which is essentially a DomDocument
-			// wrapper class. currently it only supports kml, and kmz,
-			// but is intended to be able to open shape files as well.
 			SpatialFile::Save(SpatialFile::Open($path), $kmlDoc);
 
 			Emit('onUploadSpatialFile',array(
@@ -989,7 +985,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 				$metadata['name'] = $this->getUsersName($id, $metadata['name']);
 				$metadata['number'] = $this->getUsersNumber($id);
 				$metadata['email'] = $this->getUsersEmail($id, $metadata['email']);
-				//$metadata['can-assignroles']=$this->getRolesUserCanEdit($id);
+				$metadata['can-assignroles']=$this->getRolesUserCanEdit($id);
 
 			});
 

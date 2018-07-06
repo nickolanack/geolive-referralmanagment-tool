@@ -1192,31 +1192,26 @@ foreach ($document->getMarkerNodes() as $markerNode) {
             */
 
 
-           $roles=$this->getPlugin()->getUserRoles();
-           $rolesList=$this->getPlugin()->getRoles();
+           $userRoles=$this->getPlugin()->getUserRoles($json->user);
+           $canSetList=$this->getPlugin()->getRolesUserCanEdit();
 
-            $roleIndexes=array_map(function($r)use($rolesList){
-                return array_search($r, $rolesList);
-            }, $roles);
-
-            $minIndex=min($roleIndexes);
-            $canSetList=array_slice($roles, $minIndex+1);
-
-            $targetUserRoles=$this->getPlugin()->getUserRoles($json->user);
-            $targetRoleIndexes=array_map(function($r)use($rolesList){
-                return array_search($r, $rolesList);
-            }, $targetUserRoles);
-
-            $minTargetIndex=min($targetRoleIndexes);
-
-            if($minIndex>=$minTargetIndex){
-                return $this->setError('Cannot set user with role greator than or equal to your role');
-            }
+           if(!empty($canSetList)){
+            $canSetList[]="none";
+           }else{
+                 return $this->setError('User does not have permission to set any roles');
+           }
 
 
-            if(!in_array($json->role, $canSetList)){
-                return $this->setError('Cannot set role: '.$json->role.'. you must choose one of: '.implode(', ', $canSetList));
-            }
+           if(!in_array($json->role, $canSetList)){
+                return $this->setError('User cannot apply role: '.$json->role.' not in: '.json_encode($canSetList));
+           }
+
+
+
+           if(empty(array_intersect($userRoles, $canSetList))&&!empty($userRoles)){
+                return $this->setError('Target user: '.json_encode($userRoles).' is not in role that is editable by user: '.json_encode($canSetList));
+           }
+            
 
         }
 
