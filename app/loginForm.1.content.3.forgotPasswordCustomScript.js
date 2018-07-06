@@ -3,13 +3,16 @@ var LoginItem=new Class({
     Extends:DataTypeObject,
     Implements:Events,
     setSendMagicLink:function(){
+        var me=this;
         me._task="send_magic_link";
     },
     setSendReset:function(){
-         me._task="send_magic_link";
+        var me=this;
+        me._task="send_reset";
         
     },
     setEmail:function(e){
+        var me=this;
         me._email=e;
     },
     save:function(cb){
