@@ -12937,16 +12937,16 @@
                             "forgotPasswordForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 278,
-                            "y": 410
+                            "x": 288,
+                            "y": 420
                         },
                         "children": [
                             "forgotPasswordForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 238,
-                                    "y": 586
+                                    "x": 248,
+                                    "y": 596
                                 }
                             }
                         ],
@@ -12978,7 +12978,7 @@
                                                 "getValueScript": " return \"\"; ",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "forgotPasswordForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
-                                                "validateValueScript": " return defaultValidationFn() "
+                                                "validateValueScript": "forgotPasswordForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.validateValueScript.js"
                                             }
                                         },
                                         {
