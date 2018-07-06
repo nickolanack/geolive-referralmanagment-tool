@@ -93,7 +93,8 @@
             ],
             "customUserScript": "plugin.Users.13.customUserScript.js",
             "customGroupMemberOfGroupScript": "plugin.Users.13.customGroupMemberOfGroupScript.js",
-            "userProfileImageScript": "return $defaultImage;"
+            "userProfileImageScript": "return $defaultImage;",
+            "magicLinkUrl": "magic-link"
         }
     },
     "plugin.15": {
