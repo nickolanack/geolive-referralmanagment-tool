@@ -1,6 +1,6 @@
 
 var LoginItem=new Class({
-    Extends:DataTypeItem,
+    Extends:DataTypeObject,
     Implements:Events,
     setSendMagicLink:function(){
         me._task="send_magic_link";
