@@ -9,10 +9,8 @@ link.getElement().appendChild(new Element('button',{
     "style":"background-color:mediumseagrean;",
     html:'Send Link',
     events:{click:function(){
-        (new AjaxControlQuery(CoreAjaxUrlRoot, 'send_magic_link', {
-		  'plugin': "Users",
-		  'data':wizard.getData()
-		})).execute(); 
+        item.setSendMagicLink();
+        wizard.complete()
     }}
 }))
         
@@ -25,10 +23,8 @@ setPwd.getElement().appendChild(new Element('button',{
         "class":"btn WizardButton",
         html:'Reset',
         events:{click:function(){
-            (new AjaxControlQuery(CoreAjaxUrlRoot, 'send_password_reset', {
-    		  'plugin': "Users",
-    		  'data':wizard.getData()
-    		})).execute(); 
+            item.setSendReset();
+            wizard.complete();
         }}
     }))
         
