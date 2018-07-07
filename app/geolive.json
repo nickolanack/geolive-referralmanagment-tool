@@ -13316,8 +13316,20 @@
             "target": "tus-markers",
             "exposeIconset": true,
             "iconsetName": "tus-markers",
-            "icons": [],
-            "iconsetMetadata": [],
+            "icons": [
+                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/kx9_w7t_[ImAgE]_[G]_4DW.png",
+                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[G]_[ImAgE]_h2K_9A7_a7K.png"
+            ],
+            "iconsetMetadata": {
+                "iconName": {
+                    "components\/com_geolive\/users_files\/user_files_681\/Uploads\/kx9_w7t_[ImAgE]_[G]_4DW.png": "Culture",
+                    "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[G]_[ImAgE]_h2K_9A7_a7K.png": "Environment"
+                },
+                "iconMetadata": {
+                    "components\/com_geolive\/users_files\/user_files_681\/Uploads\/kx9_w7t_[ImAgE]_[G]_4DW.png": "",
+                    "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[G]_[ImAgE]_h2K_9A7_a7K.png": ""
+                }
+            },
             "widgetTitle": "tus-markers",
             "readAccess": "public",
             "position": ""
