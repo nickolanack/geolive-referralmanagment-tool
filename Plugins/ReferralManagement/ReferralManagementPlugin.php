@@ -347,7 +347,9 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		$teamMembers = array_map(function ($item) use (&$migrated, $pid) {
 			if (is_numeric($item)) {
 				$migrated = true;
-				return (object) array('id' => $item, 'permissions' => $this->defaultProjectPermissionsForUser($item, $project));
+				return (object) array(
+					'id' => $item, 
+					'permissions' => $this->defaultProjectPermissionsForUser($item, $project));
 			}
 			return json_decode($item);
 
@@ -479,7 +481,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 		foreach($teamMembers as $user){
 
-			$to=$this->emailToAddress($user);
+			$to=$this->emailToAddress($user, "recieves-notifications");
 			if(!$to){
 				continue;
 			}
@@ -497,12 +499,32 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		}
 	}
 
-	protected function emailToAddress($user){
+	protected function emailToAddress($user, $permissionName=''){
+
+
+		$shouldSend=false;
+		if(empty($permissionName)){
+			$shouldSend=true;
+		}
+
+		if(!empty($permissionName)){
+			if(in_array($permissionName, $user->permissions)){
+				$shouldSend=true;
+			}
+		}
+
+
+		Emit("onCheckEmailPermission", array_merge(get_object_vars($user), array(
+			'shouldSend'=>$shouldSend,
+			'permission'=>$permissionName
+		)));
 
 		if(!$this->getParameter('enableEmailNotifications')){
 			return 'nickblackwell82@gmail.com';
 		}
-		$addr=$user->email;
+
+
+		$addr=$this->getUsersEmail($user->id);
 		return $addr;
 
 	}
@@ -519,7 +541,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		$project = $this->getProposalData($args->task->itemId);
 		$teamMembers = $this->getTeamMembersForProject($project);
 		$assignedMembers = $this->getTeamMembersForTask($args->task->id);
-		
+
 
 
 		if(empty($teamMembers)){
@@ -528,7 +550,12 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 		foreach($teamMembers as $user){
 
-		
+
+			$to=$this->emailToAddress($user, "recieves-notifications");
+			if(!$to){
+				continue;
+			}
+
 			GetPlugin('Email')->getMailerWithTemplate('onTaskUpdate', array_merge(
 				get_object_vars($args), 
 				array(
