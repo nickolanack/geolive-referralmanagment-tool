@@ -13308,5 +13308,19 @@
             "articleHtml": "",
             "target": "Links.action-view.Article.onActivateMagicEmailLink"
         }
+    },
+    "widget.282": {
+        "name": "Named Iconset",
+        "instance": "NamedIconset",
+        "parameters": {
+            "target": "tus-markers",
+            "exposeIconset": true,
+            "iconsetName": "tus-markers",
+            "icons": [],
+            "iconsetMetadata": [],
+            "widgetTitle": "tus-markers",
+            "readAccess": "public",
+            "position": ""
+        }
     }
 }
