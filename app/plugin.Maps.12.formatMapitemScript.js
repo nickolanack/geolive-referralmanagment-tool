@@ -12,7 +12,7 @@ if(!in_array($type, $set->names)){
 $index=array_search($type, $set->names);
 if($index!==false){
     $url=$set->icons[$index];
-    $feature->marker->style=$url."?thumb=48x48";
+    $feature->marker->style=$url."?thumb=64x64";
     Emit('onSaveFeatureCustomScript', array('url'=>$url, 'feature'=>$feature)); 
 }
 
