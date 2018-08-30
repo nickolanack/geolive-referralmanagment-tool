@@ -4402,6 +4402,15 @@
                     "name": "remainingTint",
                     "default": "rgb(180,180,180)",
                     "label": "remainingTint"
+                },
+                {
+                    "type": "images",
+                    "name": "surveyMenuIcon",
+                    "default": [],
+                    "label": "surveyMenuIcon",
+                    "maxHeight": 256,
+                    "maxWidth": 256,
+                    "limit": 1
                 }
             ],
             "hello": "World",
@@ -4477,7 +4486,8 @@
             ],
             "community-mobile": [
                 "components\/com_geolive\/users_files\/user_files_680\/Uploads\/nob_2A_[G]_ZED_[ImAgE].png"
-            ]
+            ],
+            "surveyMenuIcon": []
         }
     },
     "widget.154": {
