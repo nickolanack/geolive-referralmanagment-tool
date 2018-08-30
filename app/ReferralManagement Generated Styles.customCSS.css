@@ -328,6 +328,23 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
         }
         
         
+         $surveyMenyIcon=$config->getParameter('surveyMenuIcon', array());
+        if(!empty($surveyMenyIcon)){
+          
+            $surveyMenyIcon=$surveyMenyIcon[0];
+            ?>
+
+            .survey-link:before {
+                background-image: url("<?php echo UrlFrom($surveyMenyIcon); ?>?tint=<?php echo $config->getParameter("menuIconColor", "rgb(180,180,180)"); ?>");
+               
+            }
+            .survey-link:hover:before {
+                background-image: url("<?php echo UrlFrom($surveyMenyIcon); ?>?tint=<?php echo $config->getParameter("menuIconTint"); ?>");
+            }
+            <?php
+        }
+        
+        
         
         if(!$config->getParameter("showFileThumbnails")){
             ?>
