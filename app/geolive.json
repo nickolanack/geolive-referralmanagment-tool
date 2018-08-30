@@ -3740,8 +3740,18 @@
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
+                                    "name": "My Custom Script",
                                     "script": "Left Panel.metadata.positions.content.modules.3.config.script.js",
-                                    "identifier": "customScriptElement"
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "",
+                                    "text": "<a href=\"https:\/\/goo.gl\/forms\/MVY1ES1X5gARvxgF2\">Survey<\/a>",
+                                    "template": "",
+                                    "templateVariablesScript": ""
                                 }
                             }
                         ]

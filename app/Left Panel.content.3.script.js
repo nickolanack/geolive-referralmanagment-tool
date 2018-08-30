@@ -1,1 +1,1 @@
-return new ElementModule('div',{"class":"application-logo",html:"CUB Dashboard "+(new Date()).getFullYear()})
+return new ElementModule('div',{"class":"application-logo",html:"Gatherer Dashboard "+(new Date()).getFullYear()+""})
