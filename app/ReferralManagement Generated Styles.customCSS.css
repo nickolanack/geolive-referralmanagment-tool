@@ -333,10 +333,22 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
           
             $surveyMenuIcon=$surveyMenuIcon[0];
             ?>
+            
+            .survey-link{
+                
+                text-align: left;
+                font-size: 10px;
+            }
 
             .survey-link:before {
                 background-image: url("<?php echo UrlFrom($surveyMenuIcon); ?>?tint=<?php echo $config->getParameter("menuIconColor", "rgb(180,180,180)"); ?>");
                 content:"";
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background-size: 100%;
+                margin: 5px;
+                vertical-align: middle;
             }
             .survey-link:hover:before {
                 background-image: url("<?php echo UrlFrom($surveyMenuIcon); ?>?tint=<?php echo $config->getParameter("menuIconTint"); ?>");
