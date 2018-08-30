@@ -336,7 +336,7 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
 
             .survey-link:before {
                 background-image: url("<?php echo UrlFrom($surveyMenuIcon); ?>?tint=<?php echo $config->getParameter("menuIconColor", "rgb(180,180,180)"); ?>");
-               
+                content:"";
             }
             .survey-link:hover:before {
                 background-image: url("<?php echo UrlFrom($surveyMenuIcon); ?>?tint=<?php echo $config->getParameter("menuIconTint"); ?>");
