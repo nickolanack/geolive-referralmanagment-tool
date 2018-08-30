@@ -328,18 +328,18 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
         }
         
         
-         $surveyMenyIcon=$config->getParameter('surveyMenuIcon', array());
-        if(!empty($surveyMenyIcon)){
+         $surveyMenuIcon=$config->getParameter('surveyMenuIcon', array());
+        if(!empty($surveyMenuIcon)){
           
-            $surveyMenyIcon=$surveyMenyIcon[0];
+            $surveyMenuIcon=$surveyMenuIcon[0];
             ?>
 
             .survey-link:before {
-                background-image: url("<?php echo UrlFrom($surveyMenyIcon); ?>?tint=<?php echo $config->getParameter("menuIconColor", "rgb(180,180,180)"); ?>");
+                background-image: url("<?php echo UrlFrom($surveyMenuIcon); ?>?tint=<?php echo $config->getParameter("menuIconColor", "rgb(180,180,180)"); ?>");
                
             }
             .survey-link:hover:before {
-                background-image: url("<?php echo UrlFrom($surveyMenyIcon); ?>?tint=<?php echo $config->getParameter("menuIconTint"); ?>");
+                background-image: url("<?php echo UrlFrom($surveyMenuIcon); ?>?tint=<?php echo $config->getParameter("menuIconTint"); ?>");
             }
             <?php
         }
