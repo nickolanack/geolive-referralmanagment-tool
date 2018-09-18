@@ -204,6 +204,7 @@
         "name": "Monolog Plugin",
         "instance": "Monolog",
         "parameters": {
+            "enabled": true,
             "logPath": "{front}\/..\/logs",
             "logToSentry": false
         }
@@ -396,6 +397,7 @@
             "target": "forTheMap",
             "templateName": "default",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -434,6 +436,16 @@
         "name": "Generic Wizard",
         "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "Marker Wizard",
+            "target": "forTheMap",
+            "templateName": "MapItemTemplate",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DescisionNode",
                 "_diagramState": {
@@ -600,16 +612,7 @@
                     }
                 ]
             },
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "widgetTitle": "Marker Wizard",
-            "readAccess": "public",
-            "beforeSubmitScript": "",
-            "onLoadScript": "",
-            "requireTarget": true,
-            "templateName": "MapItemTemplate",
-            "target": "forTheMap"
+            "readAccess": "public"
         }
     },
     "widget.46": {
@@ -1204,6 +1207,7 @@
             "target": "",
             "templateName": "reserves",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -2453,6 +2457,7 @@
             "target": "map.3",
             "templateName": "UserDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -2799,6 +2804,7 @@
             "target": "map.3",
             "templateName": "ProposalsListView",
             "requireTarget": false,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -2883,6 +2889,7 @@
             "target": "map.3",
             "templateName": "ProposalDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -3649,6 +3656,7 @@
             "target": "dashboard",
             "templateName": "dashboard",
             "requireTarget": false,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "Dashboard.onRenderApplictionScript.js",
             "notifyViewer": false,
             "metadata": {
@@ -3687,6 +3695,7 @@
             "target": "leftPanel",
             "templateName": "leftPanel",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -3782,6 +3791,7 @@
             "target": "mainPanel",
             "templateName": "mainPanel",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -3830,6 +3840,7 @@
             "target": "dashboardContent",
             "templateName": "dashboardContent",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -3885,6 +3896,7 @@
             "target": "userDetailView",
             "templateName": "userDetailView",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -4500,6 +4512,7 @@
             "target": "navigationMenu",
             "templateName": "navigationMenu",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -4538,6 +4551,7 @@
             "target": "mainDashboardDetail",
             "templateName": "mainDashboardDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -4648,6 +4662,7 @@
             "target": "mainActivityDetail",
             "templateName": "mainActivityDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -4701,6 +4716,7 @@
             "target": "mainProjectsDetail",
             "templateName": "mainProjectsDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -4759,6 +4775,7 @@
             "target": "mainTasksDetail",
             "templateName": "mainTasksDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -4817,6 +4834,7 @@
             "target": "mainCalendarDetail",
             "templateName": "mainCalendarDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -4855,6 +4873,7 @@
             "target": "peopleProjectsDetail",
             "templateName": "peopleProjectsDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -4921,6 +4940,7 @@
             "target": "peopleClientsDetail",
             "templateName": "peopleClientsDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -4987,6 +5007,7 @@
             "target": "peopleUsersDetail",
             "templateName": "peopleUsersDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -5053,6 +5074,7 @@
             "target": "accountingDocumentsDetail",
             "templateName": "accountingDocumentsDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -5091,6 +5113,7 @@
             "target": "accountingTimesheetDetail",
             "templateName": "accountingTimesheetDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -5129,6 +5152,7 @@
             "target": "accountingReportsDetail",
             "templateName": "accountingReportsDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -5177,6 +5201,7 @@
             "target": "tasksProgressDetail",
             "templateName": "tasksProgressDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -5233,6 +5258,7 @@
             "target": "timeOverviewDetail",
             "templateName": "timeOverviewDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -5279,6 +5305,7 @@
             "target": "projectsOverviewDetail",
             "templateName": "projectsOverviewDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -5378,6 +5405,7 @@
             "target": "tasksOverviewListDetail",
             "templateName": "tasksOverviewListDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -5479,6 +5507,7 @@
             "target": "calendarOverviewDetail",
             "templateName": "calendarOverviewDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -5545,6 +5574,7 @@
             "target": "activityFeedDetail",
             "templateName": "activityFeedDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -5583,6 +5613,7 @@
             "target": "singleProjectDetail",
             "templateName": "singleProjectDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "Single Project Detail.onRenderApplictionScript.js",
             "notifyViewer": false,
             "metadata": {
@@ -5641,6 +5672,7 @@
             "target": "singleProjectListItemDetail",
             "templateName": "singleProjectListItemDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -5709,6 +5741,7 @@
             "target": "singleTaskListItemDetail",
             "templateName": "singleTaskListItemDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "Single Task List Item Detail.onRenderApplictionScript.js",
             "notifyViewer": false,
             "metadata": {
@@ -5842,6 +5875,7 @@
             "target": "singleProjectOverviewDetail",
             "templateName": "singleProjectOverviewDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": true,
             "metadata": {
@@ -6024,6 +6058,7 @@
             "target": "singleProjectTasksDetail",
             "templateName": "singleProjectTasksDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -6097,6 +6132,7 @@
             "target": "singleProjectFilesDetail",
             "templateName": "singleProjectFilesDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -6281,6 +6317,7 @@
             "target": "singleProjectDiscussionDetail",
             "templateName": "singleProjectDiscussionDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -6334,6 +6371,7 @@
             "target": "singleProjectUsersDetail",
             "templateName": "singleProjectUsersDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -6379,6 +6417,7 @@
             "target": "singleProjectTimesheetsDetail",
             "templateName": "singleProjectTimesheetsDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -6661,6 +6700,7 @@
             "target": "communityCulturalDetail",
             "templateName": "communityCulturalDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -6727,6 +6767,7 @@
             "target": "communityTransportationDetail",
             "templateName": "communityTransportationDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -6793,6 +6834,7 @@
             "target": "communityHabitationDetail",
             "templateName": "communityHabitationDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -6859,6 +6901,7 @@
             "target": "communityEnvironmentalDetail",
             "templateName": "communityEnvironmentalDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -6925,6 +6968,7 @@
             "target": "communitySubsistenceDetail",
             "templateName": "communitySubsistenceDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -6991,6 +7035,7 @@
             "target": "layerItemListViewDetail",
             "templateName": "layerItemListViewDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -7281,6 +7326,7 @@
             "target": "projectPriorityTasksDetail",
             "templateName": "projectPriorityTasksDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -7543,6 +7589,7 @@
             "target": "calendarEventDetail",
             "templateName": "calendarEventDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -7581,6 +7628,7 @@
             "target": "defaultPostDetail",
             "templateName": "defaultPostDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -7682,6 +7730,7 @@
             "target": "singleProjectMapDetail",
             "templateName": "singleProjectMapDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -7738,6 +7787,7 @@
             "target": "singleTeamListItemDetail",
             "templateName": "singleTeamListItemDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -7776,6 +7826,7 @@
             "target": "singleFileListItemDetail",
             "templateName": "singleFileListItemDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -7823,6 +7874,7 @@
             "target": "singleUserListItemDetail",
             "templateName": "singleUserListItemDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -7971,6 +8023,7 @@
             "target": "selectableUserListItemDetail",
             "templateName": "selectableUserListItemDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -8115,6 +8168,7 @@
             "target": "configurationSettingsDetail",
             "templateName": "configurationSettingsDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -8153,6 +8207,7 @@
             "target": "singleTaskWithFilesDetail",
             "templateName": "singleTaskWithFilesDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -8254,6 +8309,7 @@
             "target": "singleClientDetailView",
             "templateName": "singleClientDetailView",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -8301,6 +8357,7 @@
             "target": "singleProjectPeopleListItemDetail",
             "templateName": "singleProjectPeopleListItemDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -8359,6 +8416,7 @@
             "target": "singleUserTeamCollectionIconsDetail",
             "templateName": "singleUserTeamCollectionIconsDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -8397,6 +8455,7 @@
             "target": "synopsisProgressDetail",
             "templateName": "synopsisProgressDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -8467,6 +8526,7 @@
             "target": "archiveListView",
             "templateName": "archiveListView",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -8505,6 +8565,7 @@
             "target": "singleArchivedProjectListItemDetail",
             "templateName": "singleArchivedProjectListItemDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -8560,6 +8621,7 @@
             "target": "singleProjectEditButtonsDetail",
             "templateName": "singleProjectEditButtonsDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -8626,6 +8688,7 @@
             "target": "guestDashboard",
             "templateName": "guestDashboard",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -8704,6 +8767,7 @@
             "target": "communityMemberDashboard",
             "templateName": "communityMemberDashboard",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -8797,6 +8861,7 @@
             "target": "nonMemberDashboard",
             "templateName": "nonMemberDashboard",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -8835,6 +8900,7 @@
             "target": "mainMapDetail",
             "templateName": "mainMapDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -8937,6 +9003,7 @@
             "target": "emptyListView",
             "templateName": "emptyListView",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -8975,6 +9042,7 @@
             "target": "settingsListItemDetail",
             "templateName": "settingsListItemDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -9021,6 +9089,7 @@
         "instance": "GoogleMap",
         "parameters": {
             "widgetTitle": "googlemap",
+            "loadMapId": "{default}",
             "target": "googlemap",
             "templateName": "googlemap",
             "loadWidgetsWithTarget": "forTheMap",
@@ -9048,6 +9117,7 @@
             "target": "communityUsersDetail",
             "templateName": "communityUsersDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -11386,6 +11456,7 @@
             "target": "projectsListDetail",
             "templateName": "projectsListDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -11459,6 +11530,7 @@
             "target": "emptyTasksList",
             "templateName": "emptyTasksList",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -11524,6 +11596,7 @@
             "target": "tasksListDetail",
             "templateName": "tasksListDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -11598,6 +11671,7 @@
             "target": "emptyProjectOverviewDetail",
             "templateName": "emptyProjectOverviewDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -11680,7 +11754,16 @@
         "name": "Generic Wizard",
         "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "emailVerificationForm",
             "target": "emailVerificationForm",
+            "templateName": "emailVerificationForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -11762,14 +11845,6 @@
                     }
                 ]
             },
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
-            "requireTarget": true,
-            "templateName": "emailVerificationForm",
-            "widgetTitle": "emailVerificationForm",
             "readAccess": "public"
         }
     },
@@ -11826,6 +11901,7 @@
             "target": "communityMobileDetail",
             "templateName": "communityMobileDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -11892,6 +11968,7 @@
             "target": "userAboutDetail",
             "templateName": "userAboutDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -11930,6 +12007,7 @@
             "target": "userForkDetail",
             "templateName": "userForkDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -11964,7 +12042,16 @@
         "name": "Generic Wizard",
         "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "createDashboardForm",
             "target": "createDashboardForm",
+            "templateName": "createDashboardForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -12129,14 +12216,6 @@
                     }
                 ]
             },
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
-            "requireTarget": true,
-            "templateName": "createDashboardForm",
-            "widgetTitle": "createDashboardForm",
             "readAccess": "public"
         }
     },
@@ -12144,7 +12223,16 @@
         "name": "Generic Wizard",
         "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "UsersProjectSettings",
             "target": "UsersProjectSettings",
+            "templateName": "UsersProjectSettings",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -12292,14 +12380,6 @@
                     }
                 ]
             },
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
-            "requireTarget": true,
-            "templateName": "UsersProjectSettings",
-            "widgetTitle": "UsersProjectSettings",
             "readAccess": "public"
         }
     },
@@ -12311,6 +12391,7 @@
             "target": "UserChat",
             "templateName": "UserChat",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -12343,7 +12424,16 @@
         "name": "Generic Wizard",
         "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "shareLink",
             "target": "shareLink",
+            "templateName": "shareLink",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -12412,14 +12502,6 @@
                     }
                 ]
             },
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
-            "requireTarget": true,
-            "templateName": "shareLink",
-            "widgetTitle": "shareLink",
             "readAccess": "public"
         }
     },
@@ -12431,6 +12513,7 @@
             "target": "configurationArchiveDetail",
             "templateName": "configurationArchiveDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -12673,6 +12756,7 @@
             "target": "mapStatistics",
             "templateName": "mapStatistics",
             "requireTarget": false,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -12711,6 +12795,7 @@
             "target": "singleUserTeamCollectionIconsInlineDetail",
             "templateName": "singleUserTeamCollectionIconsInlineDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -12749,6 +12834,7 @@
             "target": "singleUserSmallIconDetail",
             "templateName": "singleUserSmallIconDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -13055,6 +13141,7 @@
             "target": "singleTaskOverviewDetail",
             "templateName": "singleTaskOverviewDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": true,
             "metadata": {
@@ -13364,6 +13451,15 @@
             "widgetTitle": "tus-markers",
             "readAccess": "public",
             "position": ""
+        }
+    },
+    "widget.283": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Error",
+            "widgetTitle": "site.error.html",
+            "target": "site.error.html"
         }
     }
 }
