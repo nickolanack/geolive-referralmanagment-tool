@@ -90,6 +90,8 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	}
 
+
+
 	protected function addDocument($json) {
 
 		if (!Auth('extend', $json->id, $json->type)) {
@@ -101,50 +103,18 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		}
 
-		$table = 'proposalAttributes';
-		$typeName = 'proposal';
-		$fields = array(
-			'projectLetters' => 'a project letter',
-			'permits' => 'a permit',
-			'agreements' => 'an agreement',
-			'documents' => 'a document',
-			'description' => 'an attachment',
-			'spatialFeatures' => 'a spatial document',
-		);
+		try{
 
-		if ($json->type == 'Tasks.task') {
-
-			$table = 'taskAttributes';
-			$typeName = 'task';
-			$fields = array(
-				'attachements' => 'an attachment',
+			include_once __DIR__.'/lib/Attachments.php';
+			
+			return array(
+				'new' =>(new \ReferralManagement\Attachments())->add($json->id, $json->type, $json)
 			);
+
+		}catch($e){
+			return $this->setError($e->getMessage());
 		}
-
-		if (!key_exists($json->documentType, $fields)) {
-			return $this->setError('Invalid field: ' . $json->documentType);
-		}
-
-		GetPlugin('Attributes');
-
-		$current = (new attributes\Record($table))->getValues($json->id, $json->type);
-		if (!key_exists($json->documentType, $current)) {
-			return $this->setError('Invalid field for type: ' . $json->documentType . ': ' . $json->type);
-		}
-
-		(new attributes\Record($table))->setValues($json->id, $json->type, array(
-			$json->documentType => $current[$json->documentType] . $json->documentHtml,
-		));
-
 		
-		
-		$this->getPlugin()->notifier()->onAddDocument($json);
-
-		
-
-		return array(
-			'new' => (new attributes\Record($table))->getValues($json->id, $json->type)[$json->documentType],
-		);
 
 	}
 
@@ -159,52 +129,17 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		}
 
-		$table = 'proposalAttributes';
-		$typeName = 'proposal';
-		$fields = array(
-			'projectLetters' => 'a project letter',
-			'permits' => 'a permit',
-			'agreements' => 'an agreement',
-			'documents' => 'a document',
-			'description' => 'an attachment',
-			'spatialFeatures' => 'a spatial document',
-		);
+		try{
 
-		if ($json->type == 'Tasks.task') {
-
-			$table = 'taskAttributes';
-			$typeName = 'task';
-			$fields = array(
-				'attachements' => 'an attachment',
+			include_once __DIR__.'/lib/Attachments.php';
+			
+			return array(
+				'new' => (new \ReferralManagement\Attachments())->remove($json->id, $json->type, $json)
 			);
+
+		}catch($e){
+			return $this->setError($e->getMessage());
 		}
-
-		if (!key_exists($json->documentType, $fields)) {
-			return $this->setError('Invalid field: ' . $json->documentType);
-		}
-
-		GetPlugin('Attributes');
-
-		$current = (new attributes\Record($table))->getValues($json->id, $json->type);
-		if (!key_exists($json->documentType, $current)) {
-			return $this->setError('Invalid field for type: ' . $json->documentType . ': ' . $json->type);
-		}
-
-		if (strpos($current[$json->documentType], $json->documentHtml) === false) {
-			return $this->setError('Does not contain html: ' . $json->documentHtml);
-		}
-
-		(new attributes\Record($table))->setValues($json->id, $json->type, array(
-			$json->documentType => str_replace($json->documentHtml, '', $current[$json->documentType]),
-		));
-
-
-		$this->getPlugin()->notifier()->onRemoveDocument($json);
-
-
-		return array(
-			'new' => (new attributes\Record($table))->getValues($json->id, $json->type)[$json->documentType],
-		);
 
 	}
 
