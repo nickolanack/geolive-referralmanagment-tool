@@ -41,17 +41,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		$this->getPlugin()->setTeamMembersForProject($json->project, $teamMembers);
 
-		$this->getPlugin()->postToActivityFeeds(GetClient()->getUsername() . ' updated users project permissions', array(
-			"items" => array(
-				array(
-					"type" => "ReferralManagement.proposal",
-					"id" => $json->project,
-				),
-				array(
-					"type" => "User",
-					"id" => $json->id,
-				),
-			)));
+		$this->getPlugin()->notifier()->onUpdateProjectPermissions($json);
 
 		Emit('onSaveMemberPermissions', array(
 			'json' => $json,
@@ -146,18 +136,8 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		));
 
 		$action = GetClient()->getUsername() . ' added ' . $fields[$json->documentType] . ' to a ' . $typeName;
-		$this->getPlugin()->postToActivityFeeds($action, array(
-			"items" => array(
-				array(
-					"type" => $json->type,
-					"id" => $json->id,
-				),
-				array(
-					"type" => "File",
-					"html" => $json->documentHtml,
-				),
-			))
-		);
+		
+		$this->getPlugin()->notifier()->onAddDocument($json);
 
 		if ($json->type == 'ReferralManagement.proposal') {
 			$this->getPlugin()->broadcastProjectUpdate($json->id);
@@ -229,18 +209,9 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			$json->documentType => str_replace($json->documentHtml, '', $current[$json->documentType]),
 		));
 
-		$this->getPlugin()->postToActivityFeeds(GetClient()->getUsername() . ' removed ' . $fields[$json->documentType] . ' from a ' . $typeName, array(
-			"items" => array(
-				array(
-					"type" => $json->type,
-					"id" => $json->id,
-				),
-				array(
-					"type" => "File",
-					"html" => $json->documentHtml,
-				),
-			))
-		);
+
+		$this->getPlugin()->notifier()->onRemoveDocument($json);
+
 
 		if ($json->type == 'ReferralManagement.proposal') {
 			$this->getPlugin()->broadcastProjectUpdate($json->id);
@@ -327,13 +298,10 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				'status' => 'active',
 			));
 
-			$this->getPlugin()->postToActivityFeeds(GetClient()->getUsername() . ' updated proposal', array(
-				"items" => array(
-					array(
-						"type" => "ReferralManagement.proposal",
-						"id" => $json->id,
-					),
-				)));
+
+			$this->notifier()->onUpdateProposal($json);
+
+			
 
 			GetPlugin('Attributes');
 			if (key_exists('attributes', $json)) {
@@ -361,13 +329,9 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				'status' => 'active',
 			)))) {
 
-				$this->getPlugin()->postToActivityFeeds(GetClient()->getUsername() . ' created proposal', array(
-					"items" => array(
-						array(
-							"type" => "ReferralManagement.proposal",
-							"id" => $id,
-						),
-					)));
+
+				$this->getPlugin()->notifier()->onCreateProposal($id, $json);
+
 
 				GetPlugin('Attributes');
 				if (key_exists('attributes', $json)) {
@@ -410,7 +374,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 			if (GetPlugin('Tasks')->deleteTask($json->id)) {
 
-				$this->getPlugin()->postToActivityFeeds(GetClient()->getUsername() . ' deleted task for proposal');
+				$this->getPlugin()->notifier()->onDeleteTask($json);
 
 				return true;
 			}
@@ -431,14 +395,9 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				"complete" => $json->complete,
 			))) {
 
-				$this->getPlugin()->postToActivityFeeds(GetClient()->getUsername() . ' updated task for proposal', array(
-					"items" => array(
-						array(
-							"type" => "Tasks.task",
-							"id" => $json->id,
-						),
-					))
-				);
+
+				$this->getPlugin()->notifier()->onUpdateTask($json);
+				
 
 				GetPlugin('Attributes');
 				if (key_exists('attributes', $json)) {
@@ -463,13 +422,9 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			"complete" => $json->complete,
 		))) {
 
-			$this->getPlugin()->postToActivityFeeds(GetClient()->getUsername() . ' created task for proposal', array(
-				"items" => array(
-					array(
-						"type" => "Tasks.task",
-						"id" => $id,
-					),
-				)));
+
+			$this->getPlugin()->notifier()->onCreateTask($id, $json);
+		
 
 			GetPlugin('Attributes');
 			if (key_exists('attributes', $json)) {
@@ -510,15 +465,9 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 	protected function createDefaultTasks($json) {
 		$taskIds = $this->getPlugin()->createDefaultProposalTasks($json->proposal);
 
-		$this->getPlugin()->postToActivityFeeds(GetClient()->getUsername() . ' created default tasks for proposal', array(
-			"items" => array_map(function ($id) {
-				return array(
-					"type" => "Tasks.task",
-					"id" => $id,
-				);
-			},
-				$taskIds
-			)));
+
+		$this->getPlugin()->notifier()->onCreateDefaultTasks($taskIds, $json);
+		
 
 		return array("tasks" => $taskIds, 'tasksData' => array_map(function ($id) {
 			return $this->getPlugin()->getTaskData($id);
@@ -566,13 +515,10 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			));
 
 			$action = GetClient()->getUsername() . ' ' . ($json->status == 'archived' ? 'archived' : 'un-archived') . ' proposal';
-			$this->getPlugin()->postToActivityFeeds($action, array(
-				"items" => array(
-					array(
-						"type" => "ReferralManagement.proposal",
-						"id" => $json->id,
-					),
-				)));
+			
+
+			$this->getPlugin()->notifier()->onUpdateProposalStatus($json);
+
 
 			$this->getPlugin()->broadcastProjectUpdate($json->id);
 			$this->getPlugin()->queueEmailProjectUpdate($json->id, array(
@@ -608,9 +554,10 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		if ($database->deleteProposal((int) $json->id)) {
 
-			$this->getPlugin()->postToActivityFeeds(GetClient()->getUsername() . ' deleted proposal');
+			$this->getPlugin()->notifier()->onDeleteProposal($json);
 
 			Emit('onDeleteProposal', $data);
+
 			Broadcast('proposals', 'update', array(
 				'user' => GetClient()->getUserId(),
 				'deleted' => array($json->id),
@@ -821,13 +768,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			'starUsers' => $starUsers,
 		));
 
-		$this->getPlugin()->postToActivityFeeds(GetClient()->getUsername() . ' ' . ($json->starred ? '' : 'un-') . 'starred task', array(
-			"items" => array(
-				array(
-					"type" => "Tasks.task",
-					"id" => $json->task,
-				),
-			)));
+		$this->getPlugin()->notifier()->updateTaskStar($json);
 
 		return true;
 	}
@@ -843,13 +784,8 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			'isPriority' => $json->priority,
 		));
 
-		$this->getPlugin()->postToActivityFeeds(GetClient()->getUsername() . ' ' . ($json->priority ? '' : 'de-') . 'prioritized task', array(
-			"items" => array(
-				array(
-					"type" => "Tasks.task",
-					"id" => $json->task,
-				),
-			)));
+
+		$this->getPlugin()->notifier()->onUpdateTaskPriority($json);
 
 		return true;
 	}
@@ -869,13 +805,9 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 					"action" => "Changed the due data",
 				));
 
-				$this->getPlugin()->postToActivityFeeds(GetClient()->getUsername() . ' modified tasks due date', array(
-					"items" => array(
-						array(
-							"type" => "Tasks.task",
-							"id" => $json->task,
-						),
-					)));
+				$this->getPlugin()->notifier()->onUpdateTaskDate($json);
+
+	
 
 				return true;
 
@@ -931,13 +863,10 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		(new attributes\Record('userAttributes'))->setValues($json->user, 'user', $values);
 
-		$this->getPlugin()->postToActivityFeeds(GetClient()->getUsername() . ' updated users role', array(
-			"items" => array(
-				array(
-					"type" => "User",
-					"id" => $json->user,
-				),
-			)));
+
+		$this->getPlugin()->notifier()->onUpdateUserRole($json);
+
+		
 
 		$clientMeta = GetPlugin('ReferralManagement')->getUsersMetadata($json->user);
 

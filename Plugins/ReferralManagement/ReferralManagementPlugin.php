@@ -171,13 +171,17 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	}
 
-	public function postToActivityFeeds($message, $data = array()) {
 
-		$discussion = GetPlugin('Discussions');
-		$discussion->post($discussion->getDiscussionForItem(145, 'widget', 'wabun')->id, $message, $data);
-		$discussion->post($discussion->getDiscussionForItem(GetClient()->getUserId(), 'user', 'wabun')->id, $message, $data);
-
+	/**
+	 * returns activity feed object for submitting activity actions
+	 * 
+	 * @return \ReferralManagement\ActivityFeed
+	 */
+	public function notifier(){
+		include_once __DIR__.'/Notifications';
+		return (new \ReferralManagement\Notifications());
 	}
+
 
 	protected function task_UpLoadLayer() {
 		Core::Files();
@@ -249,13 +253,9 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 				'status' => 'active',
 			)))) {
 
-				$this->postToActivityFeeds($params->validationData->email . ' created proposal as a guest', array(
-					"items" => array(
-						array(
-							"type" => "ReferralManagement.proposal",
-							"id" => $id,
-						),
-					)));
+
+				$this->notifier()->onGuestProposal($id, $params);
+				
 
 				GetPlugin('Attributes');
 				if (key_exists('attributes', $data->proposalData)) {
@@ -392,89 +392,16 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	public function getTeamMembersForProject($project, $attributes = null) {
 
-		$pid = $project;
 
-		if (!is_numeric($project)) {
-
-			if(is_object($project)){
-				$project=get_object_vars($project);
-			}
-
-			$pid = $project['id'];
-
-		}
-
-		$teamMembers = $attributes;
-		if (!$teamMembers) {
-			GetPlugin('Attributes');
-			$attributes = (new attributes\Record('proposalAttributes'))->getValues($pid, 'ReferralManagement.proposal');
-			$teamMembers = $attributes['teamMembers'];
-		}
-
-		if (is_object($teamMembers)) {
-			$teamMembers = array_values(get_object_vars($teamMembers));
-		}
-
-		if (!is_array($teamMembers)) {
-			$teamMembers = array();
-		}
-		$migrated = false;
-		$teamMembers = array_map(function ($item) use (&$migrated, $pid) {
-			if (is_numeric($item)) {
-				$migrated = true;
-				return (object) array(
-					'id' => $item, 
-					'permissions' => $this->defaultProjectPermissionsForUser($item, $project));
-			}
-			return json_decode($item);
-
-		}, $teamMembers);
-
-		if ($migrated) {
-			//$this->setTeamMembersForProject($pid, $teamMembers);
-		}
-
-		return $teamMembers;
+		include_once __DIR__.'/Teams.php';
+		(new \ReferralManagement\Teams())->listMembersOfProject($project, $attributes);
 	}
 
 	public function getTeamMembersForTask($task, $attributes = null) {
 
-		$tid = $task;
+		include_once __DIR__.'/Teams.php';
+		(new \ReferralManagement\Teams())->listMembersOfTask($task, $attributes);
 
-		if (!is_numeric($task)) {
-			$tid = $task->id;
-
-		}
-
-		$teamMembers = $attributes;
-		if (!$teamMembers) {
-			GetPlugin('Attributes');
-			$attributes = (new attributes\Record('taskAttributes'))->getValues($tid, 'Tasks.task');
-			$teamMembers = $attributes['teamMembers'];
-		}
-
-		if (is_object($teamMembers)) {
-			$teamMembers = array_values(get_object_vars($teamMembers));
-		}
-
-		if (!is_array($teamMembers)) {
-			$teamMembers = array();
-		}
-		$migrated = false;
-		$teamMembers = array_map(function ($item) use (&$migrated, $tid) {
-			if (is_numeric($item)) {
-				$migrated = true;
-				return (object) array('id' => $item);
-			}
-			return json_decode($item);
-
-		}, $teamMembers);
-
-		if ($migrated) {
-			//$this->setTeamMembersForProject($tid, $teamMembers);
-		}
-
-		return $teamMembers;
 	}
 
 	public function setTeamMembersForProject($pid, $teamMembers) {
@@ -1287,6 +1214,8 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		return array_values(array_filter($list, function ($u) {
 			return count(array_intersect($u['roles'], $this->teamMemberRoles())) > 0;
 		}));
+
+
 	}
 
 	public function getUsers($team = 'wabun') {
