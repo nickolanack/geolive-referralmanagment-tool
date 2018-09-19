@@ -15,8 +15,8 @@ class ComputedData {
 
 		}
 
-		return array_map(function ($f) {
-			return UrlFrom($f);
+		return array_map(function ($file) {
+			return UrlFrom($file);
 		}, $files);
 
 	}
@@ -42,8 +42,8 @@ class ComputedData {
 
 		}
 
-		return array_map(function ($f) {
-			return UrlFrom($f);
+		return array_map(function ($file) {
+			return UrlFrom($file);
 		}, $files);
 
 	}
@@ -59,8 +59,8 @@ class ComputedData {
 
 		}
 
-		return array_map(function ($f) {
-			return UrlFrom($f);
+		return array_map(function ($file) {
+			return UrlFrom($file);
 		}, $files);
 
 	}
@@ -83,8 +83,8 @@ class ComputedData {
 
 		}
 
-		return array_map(function ($f) {
-			return UrlFrom($f);
+		return array_map(function ($file) {
+			return UrlFrom($file);
 		}, $files);
 
 	}
