@@ -20,7 +20,7 @@
             "CSSInlineObfuscationEnabled": false,
             "PHPDebugEnabled": true,
             "JSDebugEnabled": false,
-            "CachingEnabled": true,
+            "CachingEnabled": false,
             "PrettyPrintJson": true,
             "JSCacheObfuscationEnabled": false,
             "phase": "production",
@@ -13460,6 +13460,51 @@
             "contentTemplate": "Error",
             "widgetTitle": "site.error.html",
             "target": "site.error.html"
+        }
+    },
+    "widget.284": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: update.task",
+            "widgetTitle": "activityfeed.update.task.text",
+            "target": "activityfeed.update.task.text"
+        }
+    },
+    "widget.285": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: create.proposal",
+            "widgetTitle": "activityfeed.create.proposal.text",
+            "target": "activityfeed.create.proposal.text"
+        }
+    },
+    "widget.286": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: update.proposal",
+            "widgetTitle": "activityfeed.update.proposal.text",
+            "target": "activityfeed.update.proposal.text"
+        }
+    },
+    "widget.287": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: create.task",
+            "widgetTitle": "activityfeed.create.task.text",
+            "target": "activityfeed.create.task.text"
+        }
+    },
+    "widget.288": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: delete.task",
+            "widgetTitle": "activityfeed.delete.task.text",
+            "target": "activityfeed.delete.task.text"
         }
     }
 }
