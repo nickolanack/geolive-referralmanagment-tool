@@ -7,6 +7,9 @@ class TeamDataType extends core\PluginDataType {
         'extend'
     );
 
+     /**
+     * @SuppressWarnings("unused")
+     */
     public function authorize($task, $item) {
         if (Core::Client()->isAdmin()){
             return true;

@@ -1,5 +1,5 @@
 <?php
-Core::DataAccess();
+Authorizer();
 
 class ReferralManagementPlugin extends Plugin implements core\ViewController, core\WidgetProvider, core\PluginDataTypeProvider, core\ModuleProvider, core\TaskProvider, core\AjaxControllerProvider, core\DatabaseProvider, core\EventListener {
 	protected $description = 'ReferralManagement specific views, etc.';
