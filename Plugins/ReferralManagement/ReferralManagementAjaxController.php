@@ -9,12 +9,11 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			return $this->setError('Empty data set');
 		}
 
-		$taskIndentifier=($longTaskProgress=new \core\LongTaskProgress())->getIdentifier();
+		$longTaskProgress=new \core\LongTaskProgress());
 		Emit('onTriggerImportTusFile', array(
 			'data'=>$json->data,
 			'taskIndentifier'=>$longTaskProgress->getIdentifier()
 		));
-
 
 		return array(
 			'subscription' => $longTaskProgress->getSubscription()

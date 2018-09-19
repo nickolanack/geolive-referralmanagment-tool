@@ -32,7 +32,7 @@ class Project{
 	}
 
 
-	protected function formatProjectResult() {
+	protected function formatProjectResult($result) {
 
 		$proposal = get_object_vars($result);
 
@@ -43,7 +43,7 @@ class Project{
 
 		$proposal['discussion']=GetPlugin('Discussions')->getDiscussionForItem($proposal['id'],'ReferralManagement.proposal');
 
-		Core::LoadPlugin('Attributes');
+		GetPlugin('Attributes');
 		$attributes = (new \attributes\Record('proposalAttributes'))
 			->getValues($proposal['id'], 'ReferralManagement.proposal');
 

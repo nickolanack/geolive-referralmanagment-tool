@@ -383,14 +383,14 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 	public function getTeamMembersForProject($project, $attributes = null) {
 
 
-		include_once __DIR__.'/Teams.php';
-		(new \ReferralManagement\Teams())->listMembersOfProject($project, $attributes);
+		include_once __DIR__.'/lib/Teams.php';
+		return (new \ReferralManagement\Teams())->listMembersOfProject($project, $attributes);
 	}
 
 	public function getTeamMembersForTask($task, $attributes = null) {
 
-		include_once __DIR__.'/Teams.php';
-		(new \ReferralManagement\Teams())->listMembersOfTask($task, $attributes);
+		include_once __DIR__.'/lib/Teams.php';
+		return (new \ReferralManagement\Teams())->listMembersOfTask($task, $attributes);
 
 	}
 
@@ -705,7 +705,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 		$this->setTeamMembersForTask($task, $teamMembers);
 
-		$this->notifier()->onRemoveTeamMemberFromTask($user, $task)
+		$this->notifier()->onRemoveTeamMemberFromTask($user, $task);
 
 		
 

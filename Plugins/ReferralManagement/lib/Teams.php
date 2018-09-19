@@ -21,7 +21,7 @@ class Teams{
 		$teamMembers = $attributes;
 		if (!$teamMembers) {
 			GetPlugin('Attributes');
-			$attributes = (new attributes\Record('proposalAttributes'))->getValues($pid, 'ReferralManagement.proposal');
+			$attributes = (new \attributes\Record('proposalAttributes'))->getValues($pid, 'ReferralManagement.proposal');
 			$teamMembers = $attributes['teamMembers'];
 		}
 
@@ -52,7 +52,7 @@ class Teams{
 
 
 	}
-	public function listMembersOfTask(){
+	public function listMembersOfTask($task, $attributes=null){
 
 		
 		$tid = $task;
@@ -65,7 +65,7 @@ class Teams{
 		$teamMembers = $attributes;
 		if (!$teamMembers) {
 			GetPlugin('Attributes');
-			$attributes = (new attributes\Record('taskAttributes'))->getValues($tid, 'Tasks.task');
+			$attributes = (new \attributes\Record('taskAttributes'))->getValues($tid, 'Tasks.task');
 			$teamMembers = $attributes['teamMembers'];
 		}
 
