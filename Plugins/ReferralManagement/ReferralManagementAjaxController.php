@@ -57,10 +57,12 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	protected function createDashboard($json) {
 
-		GetPlugin('Email')->getMailer()
-			->mail('Request to Create Dashboard', json_encode($json, JSON_PRETTY_PRINT))
-			->to('nickblackwell82@gmail.com')
-			->send();
+
+		include_once __DIR__.'/lib/Deployment.php';
+		(new \ReferralManagement\Deployment())
+			->fromParameters($json)
+			->respondToEmailRequest()
+			->deployToElasticBeanstalk();
 
 		return true;
 
