@@ -13497,5 +13497,14 @@
             "widgetTitle": "activityfeed.create.task.text",
             "target": "activityfeed.create.task.text"
         }
+    },
+    "widget.288": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: delete.task",
+            "widgetTitle": "activityfeed.delete.task.text",
+            "target": "activityfeed.delete.task.text"
+        }
     }
 }
