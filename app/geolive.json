@@ -13461,5 +13461,14 @@
             "widgetTitle": "site.error.html",
             "target": "site.error.html"
         }
+    },
+    "widget.284": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: update.task",
+            "widgetTitle": "activityfeed.update.task.text",
+            "target": "activityfeed.update.task.text"
+        }
     }
 }
