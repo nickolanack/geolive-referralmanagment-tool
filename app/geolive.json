@@ -13479,5 +13479,14 @@
             "widgetTitle": "activityfeed.create.proposal.text",
             "target": "activityfeed.create.proposal.text"
         }
+    },
+    "widget.286": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: update.proposal",
+            "widgetTitle": "activityfeed.update.proposal.text",
+            "target": "activityfeed.update.proposal.text"
+        }
     }
 }
