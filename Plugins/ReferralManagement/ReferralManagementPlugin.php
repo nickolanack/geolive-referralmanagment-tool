@@ -279,34 +279,10 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	protected function onPost($params) {
 
-		// $discussion=GetPlugin('Discussions');
-		// $discussionId=$discussion->getDiscussionForItem(145, 'widget', 'wabun')->id;
-		// if($params->discussion!==$discussionId){
+		include_once __DIR__.'/CommentBot.php';
 
-		//     $this->postToActivityFeeds(GetClient()->getUsername().' commented in project discussion');
-		//     Emit('onMirrorPost', $params);
-		// }
-		
-		//Emit("onParseForMention", array('text'=>$params->text));
-
-		if(preg_match_all( '/@[0-9]+/' , $params->text, $matches)>0){
-
-			//Emit("onDetectedMention", array('matches'=>array_values(array_unique($matches[0]))));
-
-			foreach(array_values(array_unique($matches[0])) as $mention){
-				$uid=intval(substr($mention, 1));
-				
-				if(GetClient()->userExists($uid)){
-					Emit("onUserMention", array_merge(
-						array('mention'=>$uid),
-						get_object_vars($params)
-					));
-				}
-
-			}                    
-
-		}
-
+		(new CommentBot())
+			->scanPostForEventTriggers($params);
 		
 	}
 	public function getActiveProjectList(){
