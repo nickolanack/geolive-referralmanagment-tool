@@ -87,7 +87,7 @@ class Project{
 		$proposal['computed'] = $computed;
 		$proposal['tasks'] = array_map(function ($result) {
 
-			return (new \ReferralManagement\Task())->fromRecord($result)->toArray()
+			return (new \ReferralManagement\Task())->fromRecord($result)->toArray();
 
 		}, GetPlugin('Tasks')->getItemsTasks($proposal['id'], "ReferralManagement.proposal"));
 
