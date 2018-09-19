@@ -9,7 +9,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			return $this->setError('Empty data set');
 		}
 
-		$longTaskProgress=new \core\LongTaskProgress());
+		$longTaskProgress=new \core\LongTaskProgress();
 		Emit('onTriggerImportTusFile', array(
 			'data'=>$json->data,
 			'taskIndentifier'=>$longTaskProgress->getIdentifier()
@@ -106,12 +106,12 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		try{
 
 			include_once __DIR__.'/lib/Attachments.php';
-			
+
 			return array(
 				'new' =>(new \ReferralManagement\Attachments())->add($json->id, $json->type, $json)
 			);
 
-		}catch($e){
+		}catch(Exception $e){
 			return $this->setError($e->getMessage());
 		}
 		
@@ -137,7 +137,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				'new' => (new \ReferralManagement\Attachments())->remove($json->id, $json->type, $json)
 			);
 
-		}catch($e){
+		}catch(Exception $e){
 			return $this->setError($e->getMessage());
 		}
 
@@ -209,7 +209,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			));
 
 
-			$this->notifier()->onUpdateProposal($json);
+			$this->getPlugin()->notifier()->onUpdateProposal($json);
 
 			
 
@@ -225,45 +225,45 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 			return array('id' => $id, 'data' => $this->getPlugin()->getProposalData($id));
 
-		} else {
+		} 
 
-			if (($id = (int) $database->createProposal(array(
-				'user' => Core::Client()->getUserId(),
-				'metadata' => '{}',
-				'createdDate' => ($now = date('Y-m-d H:i:s')),
-				'modifiedDate' => $now,
-				'status' => 'active',
-			)))) {
-
-
-				$this->getPlugin()->notifier()->onCreateProposal($id, $json);
+		if (($id = (int) $database->createProposal(array(
+			'user' => Core::Client()->getUserId(),
+			'metadata' => '{}',
+			'createdDate' => ($now = date('Y-m-d H:i:s')),
+			'modifiedDate' => $now,
+			'status' => 'active',
+		)))) {
 
 
-				GetPlugin('Attributes');
-				if (key_exists('attributes', $json)) {
-					foreach ($json->attributes as $table => $fields) {
-						(new attributes\Record($table))->setValues($id, 'ReferralManagement.proposal', $fields);
-					}
+			$this->getPlugin()->notifier()->onCreateProposal($id, $json);
+
+
+			GetPlugin('Attributes');
+			if (key_exists('attributes', $json)) {
+				foreach ($json->attributes as $table => $fields) {
+					(new attributes\Record($table))->setValues($id, 'ReferralManagement.proposal', $fields);
 				}
+			}
 
-				if (key_exists('team', $json)) {
-					foreach ($json->team as $uid) {
-						$this->getPlugin()->addTeamMemberToProject($uid, $id);
-					}
-
+			if (key_exists('team', $json)) {
+				foreach ($json->team as $uid) {
+					$this->getPlugin()->addTeamMemberToProject($uid, $id);
 				}
-
-				Broadcast('proposals', 'update', array(
-					'user' => GetClient()->getUserId(),
-					'created' => array($this->getPlugin()->getProposalData($id)),
-				));
-				Emit('onCreateProposal', array('id' => $id));
-
-
-				return array('id' => $id, 'data' => $this->getPlugin()->getProposalData($id));
 
 			}
+
+			Broadcast('proposals', 'update', array(
+				'user' => GetClient()->getUserId(),
+				'created' => array($this->getPlugin()->getProposalData($id)),
+			));
+			Emit('onCreateProposal', array('id' => $id));
+
+
+			return array('id' => $id, 'data' => $this->getPlugin()->getProposalData($id));
+
 		}
+		
 
 		return $this->setError('Failed to create proposal');
 

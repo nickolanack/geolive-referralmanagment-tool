@@ -128,38 +128,13 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		);
 	}
 
-	public function broadcastProjectUpdate($id) {
+	
 
-		Broadcast('proposal.' . $id, 'update', array(
-			'user' => GetClient()->getUserId(),
-			'updated' => array($this->getProposalData($id)),
-		));
 
-	}
-
-	public function queueEmailProjectUpdate($id, $data=array()) {
-
-		ScheduleEvent('onTriggerProjectUpdateEmailNotification', array(
-
-			'user' => GetClient()->getUserId(),
-			'project' => $this->getProposalData($id),
-            'info'=>$data
-
-		), intval($this->getParameter("queueEmailDelay")));
-
-	}
 
 	
 
-	public function broadcastTaskUpdate($id) {
-
-
-		Broadcast('proposal.' . (new \ReferralManagement\Task())->fromId($id)->getItemId(), 'update', array(
-			'user' => GetClient()->getUserId(),
-			'updated' => array($this->getProposalData($task->itemId)),
-		));
-
-	}
+	
 
 
 	/**
@@ -168,7 +143,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 	 * @return \ReferralManagement\ActivityFeed
 	 */
 	public function notifier(){
-		include_once __DIR__.'/Notifications';
+		include_once __DIR__.'/lib/Notifications.php';
 		return (new \ReferralManagement\Notifications());
 	}
 

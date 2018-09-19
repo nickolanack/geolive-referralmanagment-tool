@@ -85,8 +85,8 @@ class Notifications {
 			$json
 		);
 
-		$this->getPlugin()->broadcastProjectUpdate($json->id);
-		$this->getPlugin()->queueEmailProjectUpdate($json->id, array(
+		$this->broadcastProjectUpdate($json->id);
+		$this->queueEmailProjectUpdate($json->id, array(
 			'action' => $action,
 		));
 
@@ -102,10 +102,10 @@ class Notifications {
 		));
 
 	}
-	public function onRemoveTeamMemberFromTask($user, $project){
+	public function onRemoveTeamMemberFromProject($user, $project){
 
-		$this->getPlugin()->broadcastProjectUpdate($project);
-		$this->getPlugin()->queueEmailProjectUpdate($project,array(
+		$this->broadcastProjectUpdate($project);
+		$this->queueEmailProjectUpdate($project,array(
 			'action'=>'Assigned team member'
 		));
 
@@ -136,14 +136,14 @@ class Notifications {
 
 
 		if ($json->type == 'ReferralManagement.proposal') {
-			$this->getPlugin()->broadcastProjectUpdate($json->id);
-			$this->getPlugin()->queueEmailProjectUpdate($json->id, array(
+			$this->broadcastProjectUpdate($json->id);
+			$this->queueEmailProjectUpdate($json->id, array(
 				'action' => $action,
 			));
 		}
 
 		if ($json->type == 'Tasks.task') {
-			$this->getPlugin()->broadcastTaskUpdate($json->id);
+			$this->broadcastTaskUpdate($json->id);
 			$this->queueEmailTaskUpdate($json->id, array(
 				'action' => $action,
 			));
@@ -176,15 +176,15 @@ class Notifications {
 
 
 		if ($json->type == 'ReferralManagement.proposal') {
-			$this->getPlugin()->broadcastProjectUpdate($json->id);
-			$this->getPlugin()->queueEmailProjectUpdate($json->id, array(
+			$this->broadcastProjectUpdate($json->id);
+			$this->queueEmailProjectUpdate($json->id, array(
 				"action" => "Removed a file",
 			));
 		}
 
 		if ($json->type == 'Tasks.task') {
-			$this->getPlugin()->broadcastTaskUpdate($json->id);
-			$this->getPlugin()->queueEmailTaskUpdate($json->id, array(
+			$this->broadcastTaskUpdate($json->id);
+			$this->queueEmailTaskUpdate($json->id, array(
 				"action" => "Removed a file",
 			));
 		}
@@ -216,8 +216,8 @@ class Notifications {
 			$json
 		);
 
-		$this->getPlugin()->broadcastProjectUpdate($json->id);
-		$this->getPlugin()->queueEmailProjectUpdate($json->id, array(
+		$this->broadcastProjectUpdate($json->id);
+		$this->queueEmailProjectUpdate($json->id, array(
 			"action" => "Updated Proposal",
 		));
 	}
@@ -233,7 +233,7 @@ class Notifications {
 			$json
 		);
 
-		$this->getPlugin()->queueEmailProjectUpdate($id, array(
+		$this->queueEmailProjectUpdate($id, array(
 			"action" => "Created Proposal",
 		));
 	}
@@ -260,10 +260,10 @@ class Notifications {
 			$json
 		);
 
-		$this->getPlugin()->broadcastTaskUpdate($json->id);
-				$this->queueEmailTaskUpdate($json->id, array(
-					"action" => "Updated Task Details",
-				));
+		$this->broadcastTaskUpdate($json->id);
+		$this->queueEmailTaskUpdate($json->id, array(
+			"action" => "Updated Task Details",
+		));
 	}
 
 	public function onUpdateTaskStar($json) {
@@ -289,8 +289,8 @@ class Notifications {
 			$json
 		);
 
-		$this->getPlugin()->broadcastTaskUpdate($json->task);
-		$this->getPlugin()->queueEmailTaskUpdate($json->task, array(
+		$this->broadcastTaskUpdate($json->task);
+		$this->queueEmailTaskUpdate($json->task, array(
 			"action" => "Changed the due date",
 		));
 	}
@@ -317,8 +317,8 @@ class Notifications {
 			$json
 		);
 
-		$this->getPlugin()->broadcastTaskUpdate($id);
-		$this->getPlugin()->queueEmailTaskUpdate($id, array(
+		$this->broadcastTaskUpdate($id);
+		$this->queueEmailTaskUpdate($id, array(
 			"action" => "Created Task",
 		));
 	}
@@ -342,23 +342,55 @@ class Notifications {
 
 	public function onAddTeamMemberToTask($user, $task){
 
-		$this->getPlugin()->queueEmailTaskUpdate($task, array(
+		$this->queueEmailTaskUpdate($task, array(
 			'action'=>'Assigned team member'
 		));
 
-		$this->getPlugin()->broadcastTaskUpdate($task);
+		$this->broadcastTaskUpdate($task);
 
 	}
 	public function onRemoveTeamMemberFromTask($user, $task){
 
-		$this->getPlugin()->queueEmailTaskUpdate($task, array(
+		$this->queueEmailTaskUpdate($task, array(
 			'action'=>'Unassigned team member'
 		));
 
-		$this->getPlugin()->broadcastTaskUpdate($task);
+		$this->broadcastTaskUpdate($task);
 
 	}
 
+	private function broadcastProjectUpdate($id) {
+
+		Broadcast('proposal.' . $id, 'update', array(
+			'user' => GetClient()->getUserId(),
+			'updated' =>array((new \ReferralManagement\Project())->fromId($id)->toArray()),
+		));
+
+	}
+
+	private function broadcastTaskUpdate($id) {
+
+		$proposal=(new \ReferralManagement\Task())->fromId($id)->getItemId();
+
+		Broadcast('proposal.' .$proposal , 'update', array(
+			'user' => GetClient()->getUserId(),
+			'updated' => array((new \ReferralManagement\Project())->fromId($proposal)->toArray()),
+		));
+
+	}
+
+
+	private function queueEmailProjectUpdate($id, $data=array()) {
+
+		ScheduleEvent('onTriggerProjectUpdateEmailNotification', array(
+
+			'user' => GetClient()->getUserId(),
+			'project' => (new \ReferralManagement\Project())->fromId($id)->toArray(),
+            'info'=>$data
+
+		), intval(GetPlugin('ReferralManagement')->getParameter("queueEmailDelay")));
+
+	}
 
 	private function queueEmailTaskUpdate($id, $data=array()) {
 
