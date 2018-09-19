@@ -149,17 +149,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	}
 
-	public function queueEmailTaskUpdate($id, $data=array()) {
-
-		ScheduleEvent('onTriggerTaskUpdateEmailNotification', array(
-
-			'user' => GetClient()->getUserId(),
-			'task' => (new \ReferralManagement\Task())->fromId($id)->toArray(),
-            'info'=>$data
-
-		), intval($this->getParameter("queueEmailDelay")));
-
-	}
+	
 
 	public function broadcastTaskUpdate($id) {
 
@@ -404,28 +394,9 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	}
 
-	public function setTeamMembersForProject($pid, $teamMembers) {
+	
 
-		GetPlugin('Attributes');
-		(new attributes\Record('proposalAttributes'))->setValues($pid, 'ReferralManagement.proposal', array(
-			'teamMembers' => array_map(function ($item) {
-				if (is_numeric($item)) {
-					return $item;
-				}
-				return json_encode($item);
-			}, $teamMembers),
-		));
-
-		Emit('onSetTeamMembersForProject', array(
-			'project' => $pid,
-			'team' => $teamMembers,
-		));
-
-		$this->broadcastProjectUpdate($pid);
-		$this->queueEmailProjectUpdate($pid);
-	}
-
-	public function setTeamMembersForTask($tid, $teamMembers) {
+	private function setTeamMembersForTask($tid, $teamMembers) {
 
 		GetPlugin('Attributes');
 		(new attributes\Record('taskAttributes'))->setValues($tid, 'Tasks.task', array(
@@ -441,31 +412,10 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 			'task' => $tid,
 			'team' => $teamMembers,
 		));
-
-
-		$this->broadcastTaskUpdate($tid);
 		
 	}
 
-	public function addTeamMemberToProject($user, $project) {
-
-		$teamMembers = $this->getTeamMembersForProject($project);
-
-		$member = (object) array('id' => $user, 'permissions' => $this->defaultProjectPermissionsForUser($user, $project));
-		$teamMembers[] = $member;
-		$teamMembers = $this->_uniqueIds($teamMembers);
-
-		Emit('onAddTeamMemberToProject', array(
-			'project' => $project,
-			'member' => $member,
-		));
-
-		$this->setTeamMembersForProject($project, $teamMembers);
-		
-
-		return $teamMembers;
-
-	}
+	
 
 	protected function onTriggerProjectUpdateEmailNotification($args) {
 
@@ -574,6 +524,30 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	}
 
+	public function addTeamMemberToProject($user, $project) {
+
+		$teamMembers = $this->getTeamMembersForProject($project);
+
+		$member = (object) array('id' => $user, 'permissions' => $this->defaultProjectPermissionsForUser($user, $project));
+		$teamMembers[] = $member;
+		$teamMembers = $this->_uniqueIds($teamMembers);
+
+		Emit('onAddTeamMemberToProject', array(
+			'project' => $project,
+			'member' => $member,
+		));
+
+		$this->setTeamMembersForProject($project, $teamMembers);
+
+
+		$this->notifier()->onAddTeamMemberToProject($user, $project);
+		
+		
+
+		return $teamMembers;
+
+	}
+
 	protected function onAddTeamMemberToProject($args) {
 
 		GetPlugin('Email')->getMailerWithTemplate('onAddTeamMemberToProject', array_merge(
@@ -623,9 +597,30 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		});
 
 		$this->setTeamMembersForProject($project, $teamMembers);
+		$this->notifier()->onRemoveTeamMemberFromProject($user, $project);
 
 		return $teamMembers;
 
+	}
+
+	public function setTeamMembersForProject($pid, $teamMembers) {
+
+		GetPlugin('Attributes');
+		(new attributes\Record('proposalAttributes'))->setValues($pid, 'ReferralManagement.proposal', array(
+			'teamMembers' => array_map(function ($item) {
+				if (is_numeric($item)) {
+					return $item;
+				}
+				return json_encode($item);
+			}, $teamMembers),
+		));
+
+		Emit('onSetTeamMembersForProject', array(
+			'project' => $pid,
+			'team' => $teamMembers,
+		));
+
+		
 	}
 
 	private function _uniqueIds($list) {
@@ -658,9 +653,8 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		$teamMembers = $this->_uniqueIds($teamMembers);
 
 		$this->setTeamMembersForTask($task, $teamMembers);
-		$this->queueEmailTaskUpdate($task, array(
-			'action'=>'Assigned team member'
-		));
+		
+		$this->notifier()->onAddTeamMemberToTask($user, $task);
 
 		return $teamMembers;
 
@@ -710,9 +704,10 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		});
 
 		$this->setTeamMembersForTask($task, $teamMembers);
-		$this->queueEmailTaskUpdate($task, array(
-			'action'=>'Unassigned team member'
-		));
+
+		$this->notifier()->onRemoveTeamMemberFromTask($user, $task)
+
+		
 
 		return $teamMembers;
 

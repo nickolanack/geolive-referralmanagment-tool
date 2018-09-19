@@ -85,7 +85,32 @@ class Notifications {
 			$json
 		);
 
+		$this->getPlugin()->broadcastProjectUpdate($json->id);
+		$this->getPlugin()->queueEmailProjectUpdate($json->id, array(
+			'action' => $action,
+		));
+
 	}
+
+
+	public function onAddTeamMemberToProject($user, $project){
+
+
+		$this->broadcastProjectUpdate($project);
+		$this->queueEmailProjectUpdate($project,array(
+			'action'=>'Assigned team member'
+		));
+
+	}
+	public function onRemoveTeamMemberFromTask($user, $project){
+
+		$this->getPlugin()->broadcastProjectUpdate($project);
+		$this->getPlugin()->queueEmailProjectUpdate($project,array(
+			'action'=>'Assigned team member'
+		));
+
+	}
+
 
 
 	public function onAddDocument($json) {
@@ -107,6 +132,27 @@ class Notifications {
 			$json
 		);
 
+		$action = GetClient()->getUsername() . ' added ' . $fields[$json->documentType] . ' to a ' . $typeName;
+
+
+		if ($json->type == 'ReferralManagement.proposal') {
+			$this->getPlugin()->broadcastProjectUpdate($json->id);
+			$this->getPlugin()->queueEmailProjectUpdate($json->id, array(
+				'action' => $action,
+			));
+		}
+
+		if ($json->type == 'Tasks.task') {
+			$this->getPlugin()->broadcastTaskUpdate($json->id);
+			$this->queueEmailTaskUpdate($json->id, array(
+				'action' => $action,
+			));
+		}
+
+	}
+
+	protected function getPlugin(){
+		return GetPlugin('ReferralManagement');
 	}
 
 	public function onRemoveDocument($json) {
@@ -127,6 +173,21 @@ class Notifications {
 			)),
 			$json
 		);
+
+
+		if ($json->type == 'ReferralManagement.proposal') {
+			$this->getPlugin()->broadcastProjectUpdate($json->id);
+			$this->getPlugin()->queueEmailProjectUpdate($json->id, array(
+				"action" => "Removed a file",
+			));
+		}
+
+		if ($json->type == 'Tasks.task') {
+			$this->getPlugin()->broadcastTaskUpdate($json->id);
+			$this->getPlugin()->queueEmailTaskUpdate($json->id, array(
+				"action" => "Removed a file",
+			));
+		}
 
 	}
 
@@ -154,6 +215,11 @@ class Notifications {
 			)),
 			$json
 		);
+
+		$this->getPlugin()->broadcastProjectUpdate($json->id);
+		$this->getPlugin()->queueEmailProjectUpdate($json->id, array(
+			"action" => "Updated Proposal",
+		));
 	}
 
 	public function onCreateProposal($id, $json) {
@@ -166,6 +232,10 @@ class Notifications {
 			)),
 			$json
 		);
+
+		$this->getPlugin()->queueEmailProjectUpdate($id, array(
+			"action" => "Created Proposal",
+		));
 	}
 
 	public function onDeleteTask($json) {
@@ -189,6 +259,11 @@ class Notifications {
 			)),
 			$json
 		);
+
+		$this->getPlugin()->broadcastTaskUpdate($json->id);
+				$this->queueEmailTaskUpdate($json->id, array(
+					"action" => "Updated Task Details",
+				));
 	}
 
 	public function onUpdateTaskStar($json) {
@@ -213,6 +288,11 @@ class Notifications {
 			)),
 			$json
 		);
+
+		$this->getPlugin()->broadcastTaskUpdate($json->task);
+		$this->getPlugin()->queueEmailTaskUpdate($json->task, array(
+			"action" => "Changed the due date",
+		));
 	}
 
 	public function onUpdateTaskPriority($json) {
@@ -236,6 +316,11 @@ class Notifications {
 			)),
 			$json
 		);
+
+		$this->getPlugin()->broadcastTaskUpdate($id);
+		$this->getPlugin()->queueEmailTaskUpdate($id, array(
+			"action" => "Created Task",
+		));
 	}
 
 	public function onCreateDefaultTasks($ids, $json) {
@@ -254,4 +339,37 @@ class Notifications {
 		);
 
 	}
+
+	public function onAddTeamMemberToTask($user, $task){
+
+		$this->getPlugin()->queueEmailTaskUpdate($task, array(
+			'action'=>'Assigned team member'
+		));
+
+		$this->getPlugin()->broadcastTaskUpdate($task);
+
+	}
+	public function onRemoveTeamMemberFromTask($user, $task){
+
+		$this->getPlugin()->queueEmailTaskUpdate($task, array(
+			'action'=>'Unassigned team member'
+		));
+
+		$this->getPlugin()->broadcastTaskUpdate($task);
+
+	}
+
+
+	private function queueEmailTaskUpdate($id, $data=array()) {
+
+		ScheduleEvent('onTriggerTaskUpdateEmailNotification', array(
+
+			'user' => GetClient()->getUserId(),
+			'task' => (new \ReferralManagement\Task())->fromId($id)->toArray(),
+            'info'=>$data
+
+		), intval(GetPlugin('ReferralManagement')->getParameter("queueEmailDelay")));
+
+	}
+
 }

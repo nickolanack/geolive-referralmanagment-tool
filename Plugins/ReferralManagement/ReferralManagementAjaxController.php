@@ -40,7 +40,6 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		}, $teamMembers);
 
 		$this->getPlugin()->setTeamMembersForProject($json->project, $teamMembers);
-
 		$this->getPlugin()->notifier()->onUpdateProjectPermissions($json);
 
 		Emit('onSaveMemberPermissions', array(
@@ -59,6 +58,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 
 		include_once __DIR__.'/lib/Deployment.php';
+
 		(new \ReferralManagement\Deployment())
 			->fromParameters($json)
 			->respondToEmailRequest()
@@ -137,23 +137,11 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			$json->documentType => $current[$json->documentType] . $json->documentHtml,
 		));
 
-		$action = GetClient()->getUsername() . ' added ' . $fields[$json->documentType] . ' to a ' . $typeName;
+		
 		
 		$this->getPlugin()->notifier()->onAddDocument($json);
 
-		if ($json->type == 'ReferralManagement.proposal') {
-			$this->getPlugin()->broadcastProjectUpdate($json->id);
-			$this->getPlugin()->queueEmailProjectUpdate($json->id, array(
-				'action' => $action,
-			));
-		}
-
-		if ($json->type == 'Tasks.task') {
-			$this->getPlugin()->broadcastTaskUpdate($json->id);
-			$this->getPlugin()->queueEmailTaskUpdate($json->id, array(
-				'action' => $action,
-			));
-		}
+		
 
 		return array(
 			'new' => (new attributes\Record($table))->getValues($json->id, $json->type)[$json->documentType],
@@ -214,20 +202,6 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		$this->getPlugin()->notifier()->onRemoveDocument($json);
 
-
-		if ($json->type == 'ReferralManagement.proposal') {
-			$this->getPlugin()->broadcastProjectUpdate($json->id);
-			$this->getPlugin()->queueEmailProjectUpdate($json->id, array(
-				"action" => "Removed a file",
-			));
-		}
-
-		if ($json->type == 'Tasks.task') {
-			$this->getPlugin()->broadcastTaskUpdate($json->id);
-			$this->getPlugin()->queueEmailTaskUpdate($json->id, array(
-				"action" => "Removed a file",
-			));
-		}
 
 		return array(
 			'new' => (new attributes\Record($table))->getValues($json->id, $json->type)[$json->documentType],
@@ -312,10 +286,6 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				}
 			}
 
-			$this->getPlugin()->broadcastProjectUpdate($id);
-			$this->getPlugin()->queueEmailProjectUpdate($id, array(
-				"action" => "Updated Proposal",
-			));
 
 			Emit('onUpdateProposal', array('id' => $id));
 
@@ -355,9 +325,6 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				));
 				Emit('onCreateProposal', array('id' => $id));
 
-				$this->getPlugin()->queueEmailProjectUpdate($id, array(
-					"action" => "Created Proposal",
-				));
 
 				return array('id' => $id, 'data' => $this->getPlugin()->getProposalData($id));
 
@@ -408,11 +375,6 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 					}
 				}
 
-				$this->getPlugin()->broadcastTaskUpdate($id);
-				$this->getPlugin()->queueEmailTaskUpdate($id, array(
-					"action" => "Updated Task Details",
-				));
-
 				return array('id' => $id, 'data' => $this->getPlugin()->getTaskData($id));
 			}
 		}
@@ -447,14 +409,9 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 			}
 
-			$this->getPlugin()->broadcastTaskUpdate($id);
-			$this->getPlugin()->queueEmailTaskUpdate($id, array(
-				"action" => "Created Task",
-			));
-
+			
 			return array('id' => $id, 'data' => $this->getPlugin()->getTaskData($id));
 				
-
 		}
 
 		return $this->setError('Failed to create task');
@@ -522,10 +479,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			$this->getPlugin()->notifier()->onUpdateProposalStatus($json);
 
 
-			$this->getPlugin()->broadcastProjectUpdate($json->id);
-			$this->getPlugin()->queueEmailProjectUpdate($json->id, array(
-				'action' => $action,
-			));
+			
 
 			return array('id' => (int) $json->id);
 
@@ -802,10 +756,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				"dueDate" => $json->date,
 			))) {
 
-				$this->getPlugin()->broadcastTaskUpdate($id);
-				$this->getPlugin()->queueEmailTaskUpdate($id, array(
-					"action" => "Changed the due data",
-				));
+				
 
 				$this->getPlugin()->notifier()->onUpdateTaskDate($json);
 
