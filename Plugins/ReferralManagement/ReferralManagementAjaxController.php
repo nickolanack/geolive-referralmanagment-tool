@@ -900,11 +900,10 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			$userRoles = $this->getPlugin()->getUserRoles($json->user);
 			$canSetList = $this->getPlugin()->getRolesUserCanEdit();
 
-			if (!empty($canSetList)) {
-				$canSetList[] = "none";
-			} else {
+			if (empty($canSetList)) {
 				return $this->setError('User does not have permission to set any roles');
 			}
+			$canSetList[] = "none";
 
 			if (!in_array($json->role, $canSetList)) {
 				return $this->setError('User cannot apply role: ' . $json->role . ' not in: ' . json_encode($canSetList));
@@ -920,9 +919,11 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		foreach ($this->getPlugin()->getGroupAttributes() as $role => $field) {
 			if ($role === $json->role) {
 				$values[$field] = true;
-			} else {
-				$values[$field] = false;
+				continue;
 			}
+				
+			$values[$field] = false;
+			
 		}
 
 		GetPlugin('Attributes');
@@ -951,10 +952,10 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		if ($clientMeta['can-create']) {
 			Emit('onAuthorizeCommunityMemberDevice', $clientMeta);
-		} else {
-			Emit('onDeauthorizeCommunityMemberDevice', $clientMeta);
-		}
-
+			return $values;
+		} 
+			
+		Emit('onDeauthorizeCommunityMemberDevice', $clientMeta);
 		return $values;
 
 	}
