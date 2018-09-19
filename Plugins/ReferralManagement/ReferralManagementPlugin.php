@@ -1,6 +1,9 @@
 <?php
 Authorizer();
 
+include_once __DIR__.'/lib/Project.php';
+include_once __DIR__.'/lib/Task.php';
+
 class ReferralManagementPlugin extends Plugin implements core\ViewController, core\WidgetProvider, core\PluginDataTypeProvider, core\ModuleProvider, core\TaskProvider, core\AjaxControllerProvider, core\DatabaseProvider, core\EventListener {
 	protected $description = 'ReferralManagement specific views, etc.';
 
@@ -24,6 +27,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		include_once GetPath('{plugins}/Maps/lib/KmlDocument.php');
 		include_once GetPath('{plugins}/Maps/lib/SpatialFile.php');
 		include_once __DIR__.'/lib/TusImport.php';
+
 
 		$taskIndentifier=$params->taskIndentifier;
 		$longTaskProgress=new \core\LongTaskProgress($taskIndentifier);
@@ -150,7 +154,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		ScheduleEvent('onTriggerTaskUpdateEmailNotification', array(
 
 			'user' => GetClient()->getUserId(),
-			'task' => $this->formatTaskResult(GetPlugin('Tasks')->getTask($id)),
+			'task' => (new \ReferralManagement\Task())->fromId($id)->toArray()
             'info'=>$data
 
 		), intval($this->getParameter("queueEmailDelay")));
@@ -159,9 +163,8 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	public function broadcastTaskUpdate($id) {
 
-		$task = GetPlugin('Tasks')->getTask($id);
-		//throw new Exception(print_r($task, true));
-		Broadcast('proposal.' . $task->itemId, 'update', array(
+
+		Broadcast('proposal.' . (new \ReferralManagement\Task())->fromId($id)->getItemId(), 'update', array(
 			'user' => GetClient()->getUserId(),
 			'updated' => array($this->getProposalData($task->itemId)),
 		));
@@ -318,6 +321,8 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 	}
 	public function getProjectList($filter=array()) {
 
+
+
 		
 		if (!Auth('memberof', 'lands-department', 'group')) {
 			$filter['user'] = Core::Client()->getUserId();
@@ -351,7 +356,10 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		return array_values(array_filter(array_map(function ($result) {
 
 			$project=$this->analyze('formatProjectResult.'.$result->id, function()use($result){
-				return $this->formatProjectResult($result);
+
+				return (new \ReferralManagement\Project())
+					->fromRecord($result)
+					->toArray();
 			});
 			$project['profileData']=$this->getLastAnalysis();
 			return $project;
@@ -807,100 +815,20 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	}
 
-	protected function formatProjectResult($result) {
+	
+	public function getTaskData($id) {
 
-		$proposal = get_object_vars($result);
-
-		//if ((int) $array['user'] !== Core::Client()->getUserId()) {
-		$proposal['userdetails'] = Core::Client()->userMetadataFor((int) $proposal['user']);
-		
-		$proposal['link']=HtmlDocument()->website().'/Projects/Project-'.$proposal['id'].'/Overview';
-
-		$proposal['discussion']=GetPlugin('Discussions')->getDiscussionForItem($proposal['id'],'ReferralManagement.proposal');
-
-		Core::LoadPlugin('Attributes');
-		$attributes = AttributesRecord::Get($proposal['id'], 'ReferralManagement.proposal', AttributesTable::GetMetadata('proposalAttributes'));
-
-		$teamMembers = $this->getTeamMembersForProject($result, $attributes['teamMembers']);
-
-		$attributes['teamMemberIds'] = array_map(function ($item) {
-			return $item->id;
-		}, $teamMembers);
-
-		$attributes['teamMembers'] = array_map(function ($member) use ($result) {
-
-			//$id=$member->id;
-			//$user=$this->formatUser(GetClient()->userMetadataFor($id));
-			$user['id'] = $member->id;
-			$user['permissions'] = $member->permissions;
-
-			return $user;
-
-		}, $teamMembers);
-
-		//if(empty($teamMembers)){
-		// $attributes['teamMembers']=$this->getDefaultTeamMembers();
-		//}
-
-		$proposal['attributes'] = $attributes;
-		$time = strtotime($attributes['commentDeadlineDate']);
-		$days = ($time - time()) / (3600 * 24);
-		$computed = array();
-		$computed['commentDeadlineTime'] = $time;
-		$computed['commentDeadlineDays'] = $days;
-
-		$computed['urgency'] = 'normal';
-
-		if ($days <= 2) {
-			$computed['urgency'] = 'high';
-		}
-		if ($days <= 7) {
-			$computed['urgency'] = 'medium';
-		}
-
-		$proposal['computed'] = $computed;
-		$proposal['tasks'] = array_map(function ($result) {
-			return $this->formatTaskResult($result);
-		}, GetPlugin('Tasks')->getItemsTasks($proposal['id'], "ReferralManagement.proposal"));
-
-		return $proposal;
-
+		return (new \ReferralManagement\Task())
+			->fromId($id)
+			->toArray();
 	}
-
-	public function formatTaskResult($result) {
-
-		Core::LoadPlugin('Attributes');
-		$task = get_object_vars($result);
-		$attributes = AttributesRecord::Get($task['id'], 'Tasks.task', AttributesTable::GetMetadata('taskAttributes'));
-		$task['attributes'] = $attributes;
-
-		$task['discussion']=GetPlugin('Discussions')->getDiscussionForItem($task['id'],'Tasks.task');
-
-
-		$starred = $task['attributes']['starUsers'];
-		if (is_object($starred)) {
-			$task['attributes']['starUsers'] = array_values(get_object_vars($starred));
-		}
-
-		$teamMembers = $this->getTeamMembersForTask($result, $attributes['teamMembers']);
-		$task['attributes']['teamMembers'] = $teamMembers;
-		
-
-		$task['link']=HtmlDocument()->website().'/Projects/Project-'.$task['itemId'].'/Tasks';
-
-		$task['complete'] = !!$task['complete'];
-		return $task;
-	}
+	
 
 	public function getProposalData($id) {
 
-		$database = $this->getDatabase();
-		$result = $database->getProposal($id);
-		if (!$result) {
-			throw new Exception('No record for proposal: ' . $id);
-		}
-		return $this->formatProjectResult($result[0]);
-
+		return (new \ReferralManagement\Project())
+			->fromId($id)
+			->toArray();
 	}
 
 	public function isUserInGroup($group) {

@@ -452,7 +452,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 					"action" => "Updated Task Details",
 				));
 
-				return array('id' => $id, 'data' => $this->getPlugin()->formatTaskResult(GetPlugin('Tasks')->getDatabase()->getTask($id)[0]));
+				return array('id' => $id, 'data' => $this->getPlugin()->getTaskData($id));
 			}
 		}
 
@@ -495,7 +495,8 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				"action" => "Created Task",
 			));
 
-			return array('id' => $id, 'data' => $this->getPlugin()->formatTaskResult(GetPlugin('Tasks')->getDatabase()->getTask($id)[0]));
+			return array('id' => $id, 'data' => $this->getPlugin()->getTaskData($id));
+				
 
 		}
 
@@ -520,7 +521,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			)));
 
 		return array("tasks" => $taskIds, 'tasksData' => array_map(function ($id) {
-			return $this->getPlugin()->formatTaskResult(GetPlugin('Tasks')->getDatabase()->getTask($id)[0]);
+			return $this->getPlugin()->getTaskData($id);
 		}, $taskIds));
 	}
 
