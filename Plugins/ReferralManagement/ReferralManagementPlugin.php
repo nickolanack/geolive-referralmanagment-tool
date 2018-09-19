@@ -154,7 +154,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		ScheduleEvent('onTriggerTaskUpdateEmailNotification', array(
 
 			'user' => GetClient()->getUserId(),
-			'task' => (new \ReferralManagement\Task())->fromId($id)->toArray()
+			'task' => (new \ReferralManagement\Task())->fromId($id)->toArray(),
             'info'=>$data
 
 		), intval($this->getParameter("queueEmailDelay")));
