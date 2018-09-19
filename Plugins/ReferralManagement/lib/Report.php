@@ -20,32 +20,32 @@ class Report{
 	}
 
 
-	public function generateReport($templateName, $defaultTemplateString){
+	public function generateReport($templateName, $defaultContent){
 
 
 		$parser=new ComputedData();
-		$template=new \core\Template($templateName, $defaultTemplateString);
+		$template=new \core\Template($templateName, $defaultContent);
 
 
 		$data=$this->getPlugin()->getProposalData($this->proposal);
 
-        $localPath=function($u){
-            if(HtmlDocument()->isLocalFileUrl($u)){
-                return PathFrom($u);
+        $localPath=function($url){
+            if(HtmlDocument()->isLocalFileUrl($url)){
+                return PathFrom($url);
             }
 
-            return $u;
+            return $url;
         };
-        $base64=function($u)use($localPath){
+        $base64=function($url)use($localPath){
 
-            $p=$localPath($u);
-            if(file_exists($p)){
-                $type = pathinfo($p, PATHINFO_EXTENSION);
-                return 'data:image/' . $type . ';base64,' . base64_encode(file_get_contents($p));
+            $path=$localPath($url);
+            if(file_exists($path)){
+                $type = pathinfo($path, PATHINFO_EXTENSION);
+                return 'data:image/' . $type . ';base64,' . base64_encode(file_get_contents($path));
             }
 
-            //$type = pathinfo($p, PATHINFO_EXTENSION);
-            // return 'data:image/' . $type . ';base64,' . base64_encode(file_get_contents($p));
+            //$type = pathinfo($path, PATHINFO_EXTENSION);
+            // return 'data:image/' . $type . ';base64,' . base64_encode(file_get_contents($path));
             
 
             throw new \Exception('support remote?');
@@ -72,14 +72,14 @@ class Report{
         //$data['computed']['files']=array_map($localPath, $data['computed']['files']);
         $data['computed']['images']=array_map($base64, $data['computed']['images']);
 
-         $data['tasks']=array_map(function($t)use($localPath, $base64, $parser){
+         $data['tasks']=array_map(function($task)use($localPath, $base64, $parser){
 
-            $t['computed']['files']=$parser->parseTaskFiles($t);
-            $t['computed']['images']=$parser->parseTaskImages($t);
+            $task['computed']['files']=$parser->parseTaskFiles($task);
+            $task['computed']['images']=$parser->parseTaskImages($task);
 
-            //$t['computed']['files']=array_map($localPath, $t['computed']['files']);
-            $t['computed']['images']=array_map($base64, $t['computed']['images']);
-            return $t;
+            //$task['computed']['files']=array_map($localPath, $task['computed']['files']);
+            $task['computed']['images']=array_map($base64, $task['computed']['images']);
+            return $task;
 
          }, $data['tasks']);
 
