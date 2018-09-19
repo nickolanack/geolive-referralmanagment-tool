@@ -67,7 +67,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	}
 
-	protected function listProjects($json) {
+	protected function listProjects(/*$json*/) {
 
 		$response = array('results' => $this->getPlugin()->getActiveProjectList());
 
@@ -83,7 +83,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	}
 
-	protected function listArchivedProjects($json) {
+	protected function listArchivedProjects(/*$json*/) {
 
 		$response = array('results' => $this->getPlugin()->getArchivedProjectList());
 		return $response;
