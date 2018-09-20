@@ -440,7 +440,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	protected function getReserveMetadata($json) {
 
-		Core::LoadPlugin('Maps');
+		GetPlugin('Maps');
 		$marker = MapController::LoadMapItem($json->id);
 
 		$str = $marker->getDescription();
@@ -492,7 +492,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	}
 
-	protected function exportProposals($json) {
+	protected function exportProposals(/*$json*/) {
 		GetPlugin('Attributes');
 		(new attributes\CSVExport())
 
@@ -567,10 +567,11 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		if (empty($starUsers)) {
 			$starUsers = array();
 		}
+
+		$starUsers = array_diff($starUsers, array(GetClient()->getUserId()));
+		
 		if ($json->starred) {
 			$starUsers = array_merge($starUsers, array(GetClient()->getUserId()));
-		} else {
-			$starUsers = array_diff($starUsers, array(GetClient()->getUserId()));
 		}
 
 		$starUsers = array_values(array_unique($starUsers));
@@ -604,9 +605,9 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			return $this->setError('No access or does not exist');
 		}
 
-		$id = (int) $json->task;
-		if ($id > 0) {
-			if (GetPlugin('Tasks')->updateTask($id, array(
+		$taskId = (int) $json->task;
+		if ($taskId > 0) {
+			if (GetPlugin('Tasks')->updateTask($taskId, array(
 				"dueDate" => $json->date,
 			))) {
 
@@ -615,7 +616,11 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				return true;
 
 			}
+
+			return $this->setError('Unable to update task date');
 		}
+
+		return $this->setError('Invalid task');
 
 	}
 
@@ -643,6 +648,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		$values = array();
 		foreach ($this->getPlugin()->getGroupAttributes() as $role => $field) {
+
 			if ($role === $json->role) {
 				$values[$field] = true;
 				continue;
