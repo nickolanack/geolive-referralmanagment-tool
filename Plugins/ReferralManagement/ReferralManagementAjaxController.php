@@ -190,84 +190,45 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 	}
 
 
+	
 
 	protected function saveProposal($json) {
 
-		/* @var $database ReferralManagementDatabase */
-		$database = $this->getPlugin()->getDatabase();
+		
 
 		if (key_exists('id', $json) && (int) $json->id > 0) {
 
 			if (!Auth('write', $json->id, 'ReferralManagement.proposal')) {
 				return $this->setError('No access or does not exist');
 			}
-			$proposalId = (int) $json->id;
-			$database->updateProposal(array(
-				'id' => $proposalId,
-				'user' => Core::Client()->getUserId(),
-				'metadata' => '{}',
-				'modifiedDate' => date('Y-m-d H:i:s'),
-				'status' => 'active',
-			));
 
-
-			$this->getPlugin()->notifier()->onUpdateProposal($json);
-
-			
-
-			GetPlugin('Attributes');
-			if (key_exists('attributes', $json)) {
-				foreach ($json->attributes as $table => $fields) {
-					(new attributes\Record($table))->setValues($proposalId, 'ReferralManagement.proposal', $fields);
-				}
+			try{
+		
+				return array(
+					'id' => $json->id, 
+					'data' => (new \ReferralManagement\Project())->updateFromJson($json)->toArray()
+				);
+		
+			}catch(Exception $e){
+				return $this->setError($e->getMessage());
 			}
-
-
-			Emit('onUpdateProposal', array('id' => $proposalId));
-
-			return array('id' => $proposalId, 'data' => $this->getPlugin()->getProposalData($proposalId));
+		
+			
 
 		} 
 
-		if (($proposalId = (int) $database->createProposal(array(
-			'user' => Core::Client()->getUserId(),
-			'metadata' => '{}',
-			'createdDate' => ($now = date('Y-m-d H:i:s')),
-			'modifiedDate' => $now,
-			'status' => 'active',
-		)))) {
-
-
-			$this->getPlugin()->notifier()->onCreateProposal($proposalId, $json);
-
-
-			GetPlugin('Attributes');
-			if (key_exists('attributes', $json)) {
-				foreach ($json->attributes as $table => $fields) {
-					(new attributes\Record($table))->setValues($proposalId, 'ReferralManagement.proposal', $fields);
-				}
-			}
-
-			if (key_exists('team', $json)) {
-				foreach ($json->team as $uid) {
-					$this->getPlugin()->addTeamMemberToProject($uid, $proposalId);
-				}
-
-			}
-
-			Broadcast('proposals', 'update', array(
-				'user' => GetClient()->getUserId(),
-				'created' => array($this->getPlugin()->getProposalData($proposalId)),
-			));
-			Emit('onCreateProposal', array('id' => $proposalId));
-
-
-			return array('id' => $proposalId, 'data' => $this->getPlugin()->getProposalData($proposalId));
-
-		}
+		try{
 		
+			$data=(new \ReferralManagement\Project())->createFromJson($json)->toArray();
+			return array(
+				'id' => $data['id'], 
+				'data' => $data
+			);
+	
+		}catch(Exception $e){
+			return $this->setError($e->getMessage());
+		}
 
-		return $this->setError('Failed to create proposal');
 
 	}
 

@@ -97,4 +97,90 @@ class Project{
 
 
 
+
+    private function createFromJson($json){
+
+        /* @var $database ReferralManagementDatabase */
+        $database = $this->getPlugin()->getDatabase();
+
+        if (($proposalId = (int) $database->createProposal(array(
+            'user' => Core::Client()->getUserId(),
+            'metadata' => '{}',
+            'createdDate' => ($now = date('Y-m-d H:i:s')),
+            'modifiedDate' => $now,
+            'status' => 'active',
+        )))) {
+
+
+            $this->getPlugin()->notifier()->onCreateProposal($proposalId, $json);
+
+
+            GetPlugin('Attributes');
+            if (key_exists('attributes', $json)) {
+                foreach ($json->attributes as $table => $fields) {
+                    (new attributes\Record($table))->setValues($proposalId, 'ReferralManagement.proposal', $fields);
+                }
+            }
+
+            if (key_exists('team', $json)) {
+                foreach ($json->team as $uid) {
+                    $this->getPlugin()->addTeamMemberToProject($uid, $proposalId);
+                }
+
+            }
+
+            Broadcast('proposals', 'update', array(
+                'user' => GetClient()->getUserId(),
+                'created' => array($this->getPlugin()->getProposalData($proposalId)),
+            ));
+            Emit('onCreateProposal', array('id' => $proposalId));
+
+
+            return $this->fromId($proposalId);
+
+        }
+        
+
+        throw new \Exception('Failed to create proposal');
+
+
+    }
+
+    private function updateFromJson($json){
+
+
+    	$proposalId=(int) $json->id;
+
+        /* @var $database ReferralManagementDatabase */
+        $database = $this->getPlugin()->getDatabase();
+
+        $database->updateProposal(array(
+                'id' => $proposalId,
+                'user' => Core::Client()->getUserId(),
+                'metadata' => '{}',
+                'modifiedDate' => date('Y-m-d H:i:s'),
+                'status' => 'active',
+            ));
+
+
+            $this->getPlugin()->notifier()->onUpdateProposal($json);
+
+            
+
+            GetPlugin('Attributes');
+            if (key_exists('attributes', $json)) {
+                foreach ($json->attributes as $table => $fields) {
+                    (new attributes\Record($table))->setValues($proposalId, 'ReferralManagement.proposal', $fields);
+                }
+            }
+
+
+            Emit('onUpdateProposal', array('id' => $proposalId));
+
+            return array('id' => $proposalId, 'data' => $this->getPlugin()->getProposalData($proposalId));
+
+
+    }
+
+
 }
