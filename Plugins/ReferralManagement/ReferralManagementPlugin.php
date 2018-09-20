@@ -149,10 +149,10 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 
 	protected function task_UpLoadLayer() {
-		Core::Files();
-		Core::LoadPlugin('Maps');
+		GetUserFiles();
+		GetPlugin('Maps');
 
-		if (($path = FileSharesUploader::UploadFile(
+		if (($path = GetUserFiles()->getUploader()->uploadFile(
 			array(
 				'kml',
 				'kmz',
@@ -173,16 +173,14 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 			$this->setParameter('layer', $kmlDoc);
 			return true;
 
-		} else {
+		} 
 
-			return $this->setTaskError(
-				array(
-					'Upload Failed',
-					FileSharesUploader::lastError(),
-				));
-		}
-
-		return false;
+		return $this->setTaskError(
+			array(
+				'Upload Failed',
+				GetUserFiles()->getUploader()->lastError(),
+			));
+		
 	}
 
 	public function includeScripts() {
