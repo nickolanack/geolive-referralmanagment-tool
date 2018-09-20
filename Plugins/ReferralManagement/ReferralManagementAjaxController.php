@@ -189,6 +189,8 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	}
 
+
+
 	protected function saveProposal($json) {
 
 		/* @var $database ReferralManagementDatabase */
@@ -199,9 +201,9 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			if (!Auth('write', $json->id, 'ReferralManagement.proposal')) {
 				return $this->setError('No access or does not exist');
 			}
-			$id = (int) $json->id;
+			$proposalId = (int) $json->id;
 			$database->updateProposal(array(
-				'id' => $id,
+				'id' => $proposalId,
 				'user' => Core::Client()->getUserId(),
 				'metadata' => '{}',
 				'modifiedDate' => date('Y-m-d H:i:s'),
@@ -216,18 +218,18 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			GetPlugin('Attributes');
 			if (key_exists('attributes', $json)) {
 				foreach ($json->attributes as $table => $fields) {
-					(new attributes\Record($table))->setValues($id, 'ReferralManagement.proposal', $fields);
+					(new attributes\Record($table))->setValues($proposalId, 'ReferralManagement.proposal', $fields);
 				}
 			}
 
 
-			Emit('onUpdateProposal', array('id' => $id));
+			Emit('onUpdateProposal', array('id' => $proposalId));
 
-			return array('id' => $id, 'data' => $this->getPlugin()->getProposalData($id));
+			return array('id' => $proposalId, 'data' => $this->getPlugin()->getProposalData($proposalId));
 
 		} 
 
-		if (($id = (int) $database->createProposal(array(
+		if (($proposalId = (int) $database->createProposal(array(
 			'user' => Core::Client()->getUserId(),
 			'metadata' => '{}',
 			'createdDate' => ($now = date('Y-m-d H:i:s')),
@@ -236,31 +238,31 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		)))) {
 
 
-			$this->getPlugin()->notifier()->onCreateProposal($id, $json);
+			$this->getPlugin()->notifier()->onCreateProposal($proposalId, $json);
 
 
 			GetPlugin('Attributes');
 			if (key_exists('attributes', $json)) {
 				foreach ($json->attributes as $table => $fields) {
-					(new attributes\Record($table))->setValues($id, 'ReferralManagement.proposal', $fields);
+					(new attributes\Record($table))->setValues($proposalId, 'ReferralManagement.proposal', $fields);
 				}
 			}
 
 			if (key_exists('team', $json)) {
 				foreach ($json->team as $uid) {
-					$this->getPlugin()->addTeamMemberToProject($uid, $id);
+					$this->getPlugin()->addTeamMemberToProject($uid, $proposalId);
 				}
 
 			}
 
 			Broadcast('proposals', 'update', array(
 				'user' => GetClient()->getUserId(),
-				'created' => array($this->getPlugin()->getProposalData($id)),
+				'created' => array($this->getPlugin()->getProposalData($proposalId)),
 			));
-			Emit('onCreateProposal', array('id' => $id));
+			Emit('onCreateProposal', array('id' => $proposalId));
 
 
-			return array('id' => $id, 'data' => $this->getPlugin()->getProposalData($id));
+			return array('id' => $proposalId, 'data' => $this->getPlugin()->getProposalData($proposalId));
 
 		}
 		
@@ -291,9 +293,9 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	protected function saveTask($json) {
 
-		$id = (int) $json->id;
-		if ($id > 0) {
-			if (GetPlugin('Tasks')->updateTask($id, array(
+		$taskId = (int) $json->id;
+		if ($taskId > 0) {
+			if (GetPlugin('Tasks')->updateTask($taskId, array(
 				"name" => $json->name,
 				"description" => $json->description,
 				"dueDate" => $json->dueDate,
@@ -305,15 +307,15 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				GetPlugin('Attributes');
 				if (key_exists('attributes', $json)) {
 					foreach ($json->attributes as $table => $fields) {
-						(new attributes\Record($table))->setValues($id, 'Tasks.task', $fields);
+						(new attributes\Record($table))->setValues($taskId, 'Tasks.task', $fields);
 					}
 				}
 
-				return array('id' => $id, 'data' => $this->getPlugin()->getTaskData($id));
+				return array('id' => $taskId, 'data' => $this->getPlugin()->getTaskData($taskId));
 			}
 		}
 
-		if ($id = GetPlugin('Tasks')->createTask($json->itemId, $json->itemType, array(
+		if ($taskId = GetPlugin('Tasks')->createTask($json->itemId, $json->itemType, array(
 			"name" => $json->name,
 			"description" => $json->description,
 			"dueDate" => $json->dueDate,
@@ -321,7 +323,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		))) {
 
 
-			$this->getPlugin()->notifier()->onCreateTask($id, $json);
+			$this->getPlugin()->notifier()->onCreateTask($taskId, $json);
 		
 
 			GetPlugin('Attributes');
@@ -332,18 +334,18 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 						$fields->createdBy = GetClient()->getUserId();
 					}
 
-					(new attributes\Record($table))->setValues($id, 'Tasks.task', $fields);
+					(new attributes\Record($table))->setValues($taskId, 'Tasks.task', $fields);
 				}
 			}
 
 			if (key_exists('team', $json)) {
 				foreach ($json->team as $uid) {
-					$this->getPlugin()->addTeamMemberToTask($uid, $id);
+					$this->getPlugin()->addTeamMemberToTask($uid, $taskId);
 				}
 
 			}
 
-			return array('id' => $id, 'data' => $this->getPlugin()->getTaskData($id));
+			return array('id' => $taskId, 'data' => $this->getPlugin()->getTaskData($taskId));
 				
 		}
 
@@ -384,7 +386,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		);
 	}
 
-	protected function getUsersTasks($json) {
+	protected function getUsersTasks(/*$json*/) {
 
 		return array('results' => GetPlugin('Tasks')->getItemsTasks(GetClient()->getUserId(), "user"));
 
@@ -406,7 +408,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				'status' => $json->status,
 			));
 
-			$action = GetClient()->getUsername() . ' ' . ($json->status == 'archived' ? 'archived' : 'un-archived') . ' proposal';
+			
 			
 
 			$this->getPlugin()->notifier()->onUpdateProposalStatus($json);

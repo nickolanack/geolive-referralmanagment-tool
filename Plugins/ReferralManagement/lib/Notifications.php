@@ -102,6 +102,8 @@ class Notifications {
 			$json
 		);
 
+		$action = GetClient()->getUsername() . ' ' . ($json->status == 'archived' ? 'archived' : 'un-archived') . ' proposal';
+
 		$this->broadcastProjectUpdate($json->id);
 		$this->queueEmailProjectUpdate($json->id, array(
 			'action' => $action,
