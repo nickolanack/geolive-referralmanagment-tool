@@ -13533,5 +13533,14 @@
             "widgetTitle": "activityfeed.update.task.star.text",
             "target": "activityfeed.update.task.star.text"
         }
+    },
+    "widget.292": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: update.task.date",
+            "widgetTitle": "activityfeed.update.task.date.text",
+            "target": "activityfeed.update.task.date.text"
+        }
     }
 }
