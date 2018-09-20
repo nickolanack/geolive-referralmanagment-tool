@@ -273,7 +273,9 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		if ((int) $json->id > 0) {
 
-			//TODO auth write task!
+			if (!Auth('write', $json->id, 'ReferralManagement.proposal')) {
+				return $this->setError('No access or does not exist');
+			}
 
 			if (GetPlugin('Tasks')->deleteTask($json->id)) {
 
@@ -298,10 +300,8 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				"complete" => $json->complete,
 			))) {
 
-
 				$this->getPlugin()->notifier()->onUpdateTask($json);
 				
-
 				GetPlugin('Attributes');
 				if (key_exists('attributes', $json)) {
 					foreach ($json->attributes as $table => $fields) {
@@ -343,7 +343,6 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 			}
 
-			
 			return array('id' => $id, 'data' => $this->getPlugin()->getTaskData($id));
 				
 		}
