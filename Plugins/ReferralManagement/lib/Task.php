@@ -52,4 +52,72 @@ class Task{
 		return $task;
 	}
 
+
+
+	public function createFromJson($json) {
+
+
+		if ($taskId = GetPlugin('Tasks')->createTask($json->itemId, $json->itemType, array(
+			"name" => $json->name,
+			"description" => $json->description,
+			"dueDate" => $json->dueDate,
+			"complete" => $json->complete,
+		))) {
+
+			GetPlugin('ReferralManagement')->notifier()->onCreateTask($taskId, $json);
+
+			GetPlugin('Attributes');
+			if (key_exists('attributes', $json)) {
+				foreach ($json->attributes as $table => $fields) {
+
+					if ($table == 'taskAttributes') {
+						$fields->createdBy = GetClient()->getUserId();
+					}
+
+					(new \attributes\Record($table))->setValues($taskId, 'Tasks.task', $fields);
+				}
+			}
+
+			if (key_exists('team', $json)) {
+				foreach ($json->team as $uid) {
+					GetPlugin('ReferralManagement')->addTeamMemberToTask($uid, $taskId);
+				}
+
+			}
+
+			return $this->fromId($taskId);
+
+		}
+
+		throw new \Exception('Failed to create task');
+		
+
+	}
+
+	public function updateFromJson($json) {
+
+		$taskId = (int) $json->id;
+			
+		GetPlugin('Tasks')->updateTask($taskId, array(
+			"name" => $json->name,
+			"description" => $json->description,
+			"dueDate" => $json->dueDate,
+			"complete" => $json->complete,
+		)); 
+
+
+
+		GetPlugin('ReferralManagement')->notifier()->onUpdateTask($json);
+
+		GetPlugin('Attributes');
+		if (key_exists('attributes', $json)) {
+			foreach ($json->attributes as $table => $fields) {
+				(new \attributes\Record($table))->setValues($taskId, 'Tasks.task', $fields);
+			}
+		}
+
+		return $this->fromId($taskId);
+	
+	}
+
 }

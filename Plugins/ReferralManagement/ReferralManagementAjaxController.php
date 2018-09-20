@@ -5,21 +5,19 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	protected function uploadTus($json) {
 
-		if(count($json->data)==0){
+		if (count($json->data) == 0) {
 			return $this->setError('Empty data set');
 		}
 
-		$longTaskProgress=new \core\LongTaskProgress();
+		$longTaskProgress = new \core\LongTaskProgress();
 		Emit('onTriggerImportTusFile', array(
-			'data'=>$json->data,
-			'taskIndentifier'=>$longTaskProgress->getIdentifier()
+			'data' => $json->data,
+			'taskIndentifier' => $longTaskProgress->getIdentifier(),
 		));
 
 		return array(
-			'subscription' => $longTaskProgress->getSubscription()
+			'subscription' => $longTaskProgress->getSubscription(),
 		);
-
-		
 
 	}
 
@@ -55,8 +53,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	protected function createDashboard($json) {
 
-
-		include_once __DIR__.'/lib/Deployment.php';
+		include_once __DIR__ . '/lib/Deployment.php';
 
 		(new \ReferralManagement\Deployment())
 			->fromParameters($json)
@@ -67,7 +64,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	}
 
-	protected function listProjects(/*$json*/) {
+	protected function listProjects( /*$json*/) {
 
 		$response = array('results' => $this->getPlugin()->getActiveProjectList());
 
@@ -83,14 +80,12 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	}
 
-	protected function listArchivedProjects(/*$json*/) {
+	protected function listArchivedProjects( /*$json*/) {
 
 		$response = array('results' => $this->getPlugin()->getArchivedProjectList());
 		return $response;
 
 	}
-
-
 
 	protected function addDocument($json) {
 
@@ -103,18 +98,17 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		}
 
-		try{
+		try {
 
-			include_once __DIR__.'/lib/Attachments.php';
+			include_once __DIR__ . '/lib/Attachments.php';
 
 			return array(
-				'new' =>(new \ReferralManagement\Attachments())->add($json->id, $json->type, $json)
+				'new' => (new \ReferralManagement\Attachments())->add($json->id, $json->type, $json),
 			);
 
-		}catch(Exception $e){
+		} catch (Exception $e) {
 			return $this->setError($e->getMessage());
 		}
-		
 
 	}
 
@@ -129,15 +123,15 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		}
 
-		try{
+		try {
 
-			include_once __DIR__.'/lib/Attachments.php';
-			
+			include_once __DIR__ . '/lib/Attachments.php';
+
 			return array(
-				'new' => (new \ReferralManagement\Attachments())->remove($json->id, $json->type, $json)
+				'new' => (new \ReferralManagement\Attachments())->remove($json->id, $json->type, $json),
 			);
 
-		}catch(Exception $e){
+		} catch (Exception $e) {
 			return $this->setError($e->getMessage());
 		}
 
@@ -189,12 +183,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	}
 
-
-	
-
 	protected function saveProposal($json) {
-
-		
 
 		if (key_exists('id', $json) && (int) $json->id > 0) {
 
@@ -202,33 +191,30 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				return $this->setError('No access or does not exist');
 			}
 
-			try{
-		
+			try {
+
 				return array(
-					'id' => $json->id, 
-					'data' => (new \ReferralManagement\Project())->updateFromJson($json)->toArray()
+					'id' => $json->id,
+					'data' => (new \ReferralManagement\Project())->updateFromJson($json)->toArray(),
 				);
-		
-			}catch(Exception $e){
+
+			} catch (Exception $e) {
 				return $this->setError($e->getMessage());
 			}
-		
-			
 
-		} 
-
-		try{
-		
-			$data=(new \ReferralManagement\Project())->createFromJson($json)->toArray();
-			return array(
-				'id' => $data['id'], 
-				'data' => $data
-			);
-	
-		}catch(Exception $e){
-			return $this->setError($e->getMessage());
 		}
 
+		try {
+
+			$data = (new \ReferralManagement\Project())->createFromJson($json)->toArray();
+			return array(
+				'id' => $data['id'],
+				'data' => $data,
+			);
+
+		} catch (Exception $e) {
+			return $this->setError($e->getMessage());
+		}
 
 	}
 
@@ -254,63 +240,42 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	protected function saveTask($json) {
 
-		$taskId = (int) $json->id;
-		if ($taskId > 0) {
-			if (GetPlugin('Tasks')->updateTask($taskId, array(
-				"name" => $json->name,
-				"description" => $json->description,
-				"dueDate" => $json->dueDate,
-				"complete" => $json->complete,
-			))) {
-
-				$this->getPlugin()->notifier()->onUpdateTask($json);
-				
-				GetPlugin('Attributes');
-				if (key_exists('attributes', $json)) {
-					foreach ($json->attributes as $table => $fields) {
-						(new attributes\Record($table))->setValues($taskId, 'Tasks.task', $fields);
-					}
-				}
-
-				return array('id' => $taskId, 'data' => $this->getPlugin()->getTaskData($taskId));
-			}
-		}
-
-		if ($taskId = GetPlugin('Tasks')->createTask($json->itemId, $json->itemType, array(
-			"name" => $json->name,
-			"description" => $json->description,
-			"dueDate" => $json->dueDate,
-			"complete" => $json->complete,
-		))) {
-
-
-			$this->getPlugin()->notifier()->onCreateTask($taskId, $json);
 		
+		if (key_exists('id', $json)&& (int) $json->id > 0) {
 
-			GetPlugin('Attributes');
-			if (key_exists('attributes', $json)) {
-				foreach ($json->attributes as $table => $fields) {
 
-					if ($table == 'taskAttributes') {
-						$fields->createdBy = GetClient()->getUserId();
-					}
-
-					(new attributes\Record($table))->setValues($taskId, 'Tasks.task', $fields);
-				}
+			if (!Auth('write', $json->id, 'Tasks.task')) {
+				return $this->setError('No access or does not exist');
 			}
 
-			if (key_exists('team', $json)) {
-				foreach ($json->team as $uid) {
-					$this->getPlugin()->addTeamMemberToTask($uid, $taskId);
-				}
+			try {
 
+				return array(
+					'id' => $json->id,
+					'data' => (new \ReferralManagement\Task())->updateFromJson($json)->toArray(),
+				);
+
+			} catch (Exception $e) {
+				return $this->setError($e->getMessage());
 			}
 
-			return array('id' => $taskId, 'data' => $this->getPlugin()->getTaskData($taskId));
-				
 		}
 
-		return $this->setError('Failed to create task');
+		try {
+
+			if (!Auth('write', $json->itemId, $json->itemType)) {
+				return $this->setError('No access or does not exist');
+			}
+
+			$data = (new \ReferralManagement\Task())->createFromJson($json)->toArray();
+			return array(
+				'id' => $data['id'],
+				'data' => $data,
+			);
+
+		} catch (Exception $e) {
+			return $this->setError($e->getMessage());
+		}
 
 	}
 
@@ -320,9 +285,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 	protected function createDefaultTasks($json) {
 		$taskIds = $this->getPlugin()->createDefaultProposalTasks($json->proposal);
 
-
 		$this->getPlugin()->notifier()->onCreateDefaultTasks($taskIds, $json);
-		
 
 		return array("tasks" => $taskIds, 'tasksData' => array_map(function ($id) {
 			return $this->getPlugin()->getTaskData($id);
@@ -347,7 +310,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		);
 	}
 
-	protected function getUsersTasks(/*$json*/) {
+	protected function getUsersTasks( /*$json*/) {
 
 		return array('results' => GetPlugin('Tasks')->getItemsTasks(GetClient()->getUserId(), "user"));
 
@@ -369,13 +332,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				'status' => $json->status,
 			));
 
-			
-			
-
 			$this->getPlugin()->notifier()->onUpdateProposalStatus($json);
-
-
-			
 
 			return array('id' => (int) $json->id);
 
@@ -620,7 +577,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			'starUsers' => $starUsers,
 		));
 
-		$this->getPlugin()->notifier()->updateTaskStar($json);
+		$this->getPlugin()->notifier()->onUpdateTaskStar($json);
 
 		return true;
 	}
@@ -635,7 +592,6 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		(new attributes\Record('taskAttributes'))->setValues($json->task, 'Tasks.task', array(
 			'isPriority' => $json->priority,
 		));
-
 
 		$this->getPlugin()->notifier()->onUpdateTaskPriority($json);
 
@@ -652,11 +608,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				"dueDate" => $json->date,
 			))) {
 
-				
-
 				$this->getPlugin()->notifier()->onUpdateTaskDate($json);
-
-	
 
 				return true;
 
@@ -693,21 +645,17 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				$values[$field] = true;
 				continue;
 			}
-				
+
 			$values[$field] = false;
-			
+
 		}
 
 		GetPlugin('Attributes');
 
 		(new attributes\Record('userAttributes'))->setValues($json->user, 'user', $values);
 
-
 		$this->getPlugin()->notifier()->onUpdateUserRole($json);
 
-		
-
-		
 		return $values;
 
 	}
