@@ -287,8 +287,8 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		$this->getPlugin()->notifier()->onCreateDefaultTasks($taskIds, $json);
 
-		return array("tasks" => $taskIds, 'tasksData' => array_map(function ($id) {
-			return $this->getPlugin()->getTaskData($id);
+		return array("tasks" => $taskIds, 'tasksData' => array_map(function ($taskId) {
+			return $this->getPlugin()->getTaskData($taskId);
 		}, $taskIds));
 	}
 
@@ -375,7 +375,9 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		}
 
 	}
-	protected function getProposal($json) {
+	protected function getProposal(/*$json*/) {
+
+		return $this->setError('Not implemented');
 
 	}
 
@@ -394,12 +396,12 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		include_once __DIR__ . '/lib/ComputedData.php';
 		$parser = new \ReferralManagement\ComputedData();
 
-		$localPath = function ($u) {
-			if (HtmlDocument()->isLocalFileUrl($u)) {
-				return PathFrom($u);
+		$localPath = function ($url) {
+			if (HtmlDocument()->isLocalFileUrl($url)) {
+				return PathFrom($url);
 			}
 
-			return $u;
+			return $url;
 		};
 
 		$data = $this->getPlugin()->getProposalData($json->proposal);
