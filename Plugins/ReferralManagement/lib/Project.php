@@ -112,6 +112,7 @@ class Project {
 			}
 
 			if (key_exists('team', $json)) {
+				
 				foreach ($json->team as $uid) {
 					GetPlugin('ReferralManagement')->addTeamMemberToProject($uid, $proposalId);
 				}

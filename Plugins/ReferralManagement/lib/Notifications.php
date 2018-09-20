@@ -147,6 +147,21 @@ class Notifications {
 			$json
 		);
 
+		$fields = array(
+			'projectLetters' => 'a project letter',
+			'permits' => 'a permit',
+			'agreements' => 'an agreement',
+			'documents' => 'a document',
+			'description' => 'an attachment',
+			'spatialFeatures' => 'a spatial document',
+		);
+
+		if ($typeName == 'task') {
+			$fields = array(
+				'attachements' => 'an attachment',
+			);
+		}
+
 		$action = GetClient()->getUsername() . ' added ' . $fields[$json->documentType] . ' to a ' . $typeName;
 
 		if ($json->type == 'ReferralManagement.proposal') {

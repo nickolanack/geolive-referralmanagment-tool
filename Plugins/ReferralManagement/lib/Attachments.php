@@ -4,7 +4,7 @@ namespace ReferralManagement;
 
 class Attachments{
 
-	public function add($id, $type, $document){
+	public function add($itemId, $itemType, $document){
 
 
 		$table = 'proposalAttributes';
@@ -18,7 +18,7 @@ class Attachments{
 			'spatialFeatures' => 'a spatial document',
 		);
 
-		if ($type == 'Tasks.task') {
+		if ($itemType == 'Tasks.task') {
 
 			$table = 'taskAttributes';
 			$fields = array(
@@ -32,23 +32,23 @@ class Attachments{
 
 		GetPlugin('Attributes');
 
-		$current = (new \attributes\Record($table))->getValues($id, $type);
+		$current = (new \attributes\Record($table))->getValues($itemId, $itemType);
 		if (!key_exists($document->documentType, $current)) {
-			throw new \Exception('Invalid field for type: ' . $document->documentType . ': ' . $type);
+			throw new \Exception('Invalid field for type: ' . $document->documentType . ': ' . $itemType);
 		}
 
-		(new \attributes\Record($table))->setValues($id, $type, array(
+		(new \attributes\Record($table))->setValues($itemId, $itemType, array(
 			$document->documentType => $current[$document->documentType] . $document->documentHtml,
 		));
 
 		GetPlugin('ReferralManagement')->notifier()->onAddDocument($document);
 
-		return (new \attributes\Record($table))->getValues($id, $type)[$document->documentType];
+		return (new \attributes\Record($table))->getValues($itemId, $itemType)[$document->documentType];
 
 	}	
 
 
-	public function remove($id, $type, $document){
+	public function remove($itemId, $itemType, $document){
 
 		$table = 'proposalAttributes';
 		$fields = array(
@@ -60,7 +60,7 @@ class Attachments{
 			'spatialFeatures' => 'a spatial document',
 		);
 
-		if ($type == 'Tasks.task') {
+		if ($itemType == 'Tasks.task') {
 
 			$table = 'taskAttributes';
 			$fields = array(
@@ -69,27 +69,27 @@ class Attachments{
 		}
 
 		if (!key_exists($document->documentType, $fields)) {
-			return $this->setError('Invalid field: ' . $document->documentType);
+			throw new \Exception('Invalid field: ' . $document->documentType);
 		}
 
 		GetPlugin('Attributes');
 
-		$current = (new attributes\Record($table))->getValues($id, $type);
+		$current = (new \attributes\Record($table))->getValues($itemId, $itemType);
 		if (!key_exists($document->documentType, $current)) {
-			return $this->setError('Invalid field for type: ' . $document->documentType . ': ' . $type);
+			throw new \Exception('Invalid field for type: ' . $document->documentType . ': ' . $itemType);
 		}
 
 		if (strpos($current[$document->documentType], $document->documentHtml) === false) {
-			return $this->setError('Does not contain html: ' . $document->documentHtml);
+			throw new \Exception('Does not contain html: ' . $document->documentHtml);
 		}
 
-		(new attributes\Record($table))->setValues($id, $type, array(
+		(new \attributes\Record($table))->setValues($itemId, $itemType, array(
 			$document->documentType => str_replace($document->documentHtml, '', $current[$document->documentType]),
 		));
 
 		GetPlugin('ReferralManagement')->notifier()->onRemoveDocument($document);
 
-		return (new attributes\Record($table))->getValues($id, $type)[$document->documentType];
+		return (new \attributes\Record($table))->getValues($itemId, $itemType)[$document->documentType];
 
 	}
 
