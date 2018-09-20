@@ -13515,5 +13515,14 @@
             "widgetTitle": "activityfeed.update.proposal.status.text",
             "target": "activityfeed.update.proposal.status.text"
         }
+    },
+    "widget.290": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: update.task.priority",
+            "widgetTitle": "activityfeed.update.task.priority.text",
+            "target": "activityfeed.update.task.priority.text"
+        }
     }
 }
