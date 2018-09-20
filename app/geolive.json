@@ -13506,5 +13506,41 @@
             "widgetTitle": "activityfeed.delete.task.text",
             "target": "activityfeed.delete.task.text"
         }
+    },
+    "widget.289": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: update.proposal.status",
+            "widgetTitle": "activityfeed.update.proposal.status.text",
+            "target": "activityfeed.update.proposal.status.text"
+        }
+    },
+    "widget.290": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: update.task.priority",
+            "widgetTitle": "activityfeed.update.task.priority.text",
+            "target": "activityfeed.update.task.priority.text"
+        }
+    },
+    "widget.291": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: update.task.star",
+            "widgetTitle": "activityfeed.update.task.star.text",
+            "target": "activityfeed.update.task.star.text"
+        }
+    },
+    "widget.292": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: update.task.date",
+            "widgetTitle": "activityfeed.update.task.date.text",
+            "target": "activityfeed.update.task.date.text"
+        }
     }
 }
