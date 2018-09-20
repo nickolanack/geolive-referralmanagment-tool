@@ -18,9 +18,9 @@ Scaffold('browser.layers',
             $theUser = false;
             
             if ($userId != $clientId && Core::Client()->isAdmin()) {
-                $theUser = Core::Files()->getFileSharesManager()->getUsersShare($userId);
+                $theUser = Core::Files()->getFileManager()->getUsersShare($userId);
             } else {
-                $theUser = Core::Files()->getFileSharesManager()->getCurrentUserShare();
+                $theUser = Core::Files()->getFileManager()->getCurrentUserShare();
             }
             
             /* @var $filesystem FilesystemPlugin */
