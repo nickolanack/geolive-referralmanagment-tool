@@ -13524,5 +13524,14 @@
             "widgetTitle": "activityfeed.update.task.priority.text",
             "target": "activityfeed.update.task.priority.text"
         }
+    },
+    "widget.291": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: update.task.star",
+            "widgetTitle": "activityfeed.update.task.star.text",
+            "target": "activityfeed.update.task.star.text"
+        }
     }
 }
