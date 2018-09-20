@@ -706,16 +706,6 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		if (!GetClient()->isAdmin()) {
 
-			/*
-
-				                "tribal-council",
-				                "chief-council",
-				                "lands-department",
-				                "lands-department-manager",
-				                "community-member",
-
-			*/
-
 			$userRoles = $this->getPlugin()->getUserRoles($json->user);
 			$canSetList = $this->getPlugin()->getRolesUserCanEdit();
 
@@ -754,24 +744,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		
 
-		$clientMeta = GetPlugin('ReferralManagement')->getUsersMetadata($json->user);
-
-		GetPlugin('Apps')
-			->notifyUsersDevices(
-				$json->user,
-				array(
-					"data" => array('client' => $clientMeta),
-					"parameters" => array('client' => $clientMeta),
-					"text" => $clientMeta['can-create'] ? "Your account has been authorized. You can now add community content" : "You account is not authorized",
-				)
-			);
-
-		if ($clientMeta['can-create']) {
-			Emit('onAuthorizeCommunityMemberDevice', $clientMeta);
-			return $values;
-		} 
-			
-		Emit('onDeauthorizeCommunityMemberDevice', $clientMeta);
+		
 		return $values;
 
 	}

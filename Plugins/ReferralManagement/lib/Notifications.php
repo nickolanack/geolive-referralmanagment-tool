@@ -4,14 +4,14 @@ namespace ReferralManagement;
 
 class Notifications {
 
-	public function post($message, $data) {
+	private function post($message, $data) {
 		$discussion = GetPlugin('Discussions');
 		$discussion->post($discussion->getDiscussionForItem(145, 'widget', 'wabun')->id, $message, $data);
 		$discussion->post($discussion->getDiscussionForItem(GetClient()->getUserId(), 'user', 'wabun')->id, $message, $data);
 		return $this;
 	}
 
-	public function on($event, $postData, $params = array()) {
+	private function on($event, $postData, $params = array()) {
 
 		$variablesObject = array(
 			'postData' => $postData,
@@ -28,7 +28,7 @@ class Notifications {
 
 	}
 
-	public function onUpdateUserRole($json){
+	public function onUpdateUserRole($json) {
 		$this->on('update.user.role', array(
 			"items" => array(
 				array(
@@ -38,6 +38,25 @@ class Notifications {
 			)),
 			$json
 		);
+
+		$clientMeta = GetPlugin('ReferralManagement')->getUsersMetadata($json->user);
+
+		GetPlugin('Apps')
+			->notifyUsersDevices(
+				$json->user,
+				array(
+					"data" => array('client' => $clientMeta),
+					"parameters" => array('client' => $clientMeta),
+					"text" => $clientMeta['can-create'] ? "Your account has been authorized. You can now add community content" : "You account is not authorized",
+				)
+			);
+
+		if ($clientMeta['can-create']) {
+			Emit('onAuthorizeCommunityMemberDevice', $clientMeta);
+			return;
+		}
+
+		Emit('onDeauthorizeCommunityMemberDevice', $clientMeta);
 	}
 
 	public function onGuestProposal($id, $params) {
@@ -71,9 +90,7 @@ class Notifications {
 
 	}
 
-
 	public function onUpdateProposalStatus($json) {
-
 
 		$this->on('update.proposal.status', array(
 			"items" => array(
@@ -92,26 +109,22 @@ class Notifications {
 
 	}
 
-
-	public function onAddTeamMemberToProject($user, $project){
-
+	public function onAddTeamMemberToProject($user, $project) {
 
 		$this->broadcastProjectUpdate($project);
-		$this->queueEmailProjectUpdate($project,array(
-			'action'=>'Assigned team member'
+		$this->queueEmailProjectUpdate($project, array(
+			'action' => 'Assigned team member',
 		));
 
 	}
-	public function onRemoveTeamMemberFromProject($user, $project){
+	public function onRemoveTeamMemberFromProject($user, $project) {
 
 		$this->broadcastProjectUpdate($project);
-		$this->queueEmailProjectUpdate($project,array(
-			'action'=>'Assigned team member'
+		$this->queueEmailProjectUpdate($project, array(
+			'action' => 'Assigned team member',
 		));
 
 	}
-
-
 
 	public function onAddDocument($json) {
 
@@ -134,7 +147,6 @@ class Notifications {
 
 		$action = GetClient()->getUsername() . ' added ' . $fields[$json->documentType] . ' to a ' . $typeName;
 
-
 		if ($json->type == 'ReferralManagement.proposal') {
 			$this->broadcastProjectUpdate($json->id);
 			$this->queueEmailProjectUpdate($json->id, array(
@@ -151,7 +163,7 @@ class Notifications {
 
 	}
 
-	protected function getPlugin(){
+	protected function getPlugin() {
 		return GetPlugin('ReferralManagement');
 	}
 
@@ -174,7 +186,6 @@ class Notifications {
 			$json
 		);
 
-
 		if ($json->type == 'ReferralManagement.proposal') {
 			$this->broadcastProjectUpdate($json->id);
 			$this->queueEmailProjectUpdate($json->id, array(
@@ -190,7 +201,6 @@ class Notifications {
 		}
 
 	}
-
 
 	public function onDeleteProposal($json) {
 		$this->on('delete.proposal', array(
@@ -325,7 +335,6 @@ class Notifications {
 
 	public function onCreateDefaultTasks($ids, $json) {
 
-
 		$this->on('create.default.tasks', array(
 			"items" => array_map(function ($id) {
 				return array(
@@ -340,19 +349,19 @@ class Notifications {
 
 	}
 
-	public function onAddTeamMemberToTask($user, $task){
+	public function onAddTeamMemberToTask($user, $task) {
 
 		$this->queueEmailTaskUpdate($task, array(
-			'action'=>'Assigned team member'
+			'action' => 'Assigned team member',
 		));
 
 		$this->broadcastTaskUpdate($task);
 
 	}
-	public function onRemoveTeamMemberFromTask($user, $task){
+	public function onRemoveTeamMemberFromTask($user, $task) {
 
 		$this->queueEmailTaskUpdate($task, array(
-			'action'=>'Unassigned team member'
+			'action' => 'Unassigned team member',
 		));
 
 		$this->broadcastTaskUpdate($task);
@@ -363,42 +372,41 @@ class Notifications {
 
 		Broadcast('proposal.' . $id, 'update', array(
 			'user' => GetClient()->getUserId(),
-			'updated' =>array((new \ReferralManagement\Project())->fromId($id)->toArray()),
+			'updated' => array((new \ReferralManagement\Project())->fromId($id)->toArray()),
 		));
 
 	}
 
 	private function broadcastTaskUpdate($id) {
 
-		$proposal=(new \ReferralManagement\Task())->fromId($id)->getItemId();
+		$proposal = (new \ReferralManagement\Task())->fromId($id)->getItemId();
 
-		Broadcast('proposal.' .$proposal , 'update', array(
+		Broadcast('proposal.' . $proposal, 'update', array(
 			'user' => GetClient()->getUserId(),
 			'updated' => array((new \ReferralManagement\Project())->fromId($proposal)->toArray()),
 		));
 
 	}
 
-
-	private function queueEmailProjectUpdate($id, $data=array()) {
+	private function queueEmailProjectUpdate($id, $data = array()) {
 
 		ScheduleEvent('onTriggerProjectUpdateEmailNotification', array(
 
 			'user' => GetClient()->getUserId(),
 			'project' => (new \ReferralManagement\Project())->fromId($id)->toArray(),
-            'info'=>$data
+			'info' => $data,
 
 		), intval(GetPlugin('ReferralManagement')->getParameter("queueEmailDelay")));
 
 	}
 
-	private function queueEmailTaskUpdate($id, $data=array()) {
+	private function queueEmailTaskUpdate($id, $data = array()) {
 
 		ScheduleEvent('onTriggerTaskUpdateEmailNotification', array(
 
 			'user' => GetClient()->getUserId(),
 			'task' => (new \ReferralManagement\Task())->fromId($id)->toArray(),
-            'info'=>$data
+			'info' => $data,
 
 		), intval(GetPlugin('ReferralManagement')->getParameter("queueEmailDelay")));
 
