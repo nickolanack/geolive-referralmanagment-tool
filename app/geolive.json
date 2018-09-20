@@ -13506,5 +13506,14 @@
             "widgetTitle": "activityfeed.delete.task.text",
             "target": "activityfeed.delete.task.text"
         }
+    },
+    "widget.289": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: update.proposal.status",
+            "widgetTitle": "activityfeed.update.proposal.status.text",
+            "target": "activityfeed.update.proposal.status.text"
+        }
     }
 }
