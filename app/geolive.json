@@ -13542,5 +13542,23 @@
             "widgetTitle": "activityfeed.update.task.date.text",
             "target": "activityfeed.update.task.date.text"
         }
+    },
+    "widget.293": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: add.task.attachements",
+            "widgetTitle": "activityfeed.add.task.attachements.text",
+            "target": "activityfeed.add.task.attachements.text"
+        }
+    },
+    "widget.294": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "activityfeed-remove-task-attachements-text.contentTemplate.html",
+            "widgetTitle": "activityfeed.remove.task.attachements.text",
+            "target": "activityfeed.remove.task.attachements.text"
+        }
     }
 }
