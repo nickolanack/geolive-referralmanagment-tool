@@ -1596,6 +1596,15 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {
     display: none;
 }
 
+.uitext-container.no-text {
+    background: rgba(0,0,0,0.1);
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 2px;
+    
+}
 
 
 .WizardTitle li, .TagCloudSelection>span {
