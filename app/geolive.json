@@ -13574,7 +13574,14 @@
         "name": "Custom Tile Control Script",
         "instance": "CustomTileControlScript",
         "parameters": {
-            "target": "none"
+            "target": "forTheMap",
+            "customScript": "Heat Map Tile.customScript.js",
+            "tileIcon": [],
+            "hoverTip": "",
+            "className": "",
+            "widgetTitle": "Heat Map Tile",
+            "readAccess": "public",
+            "position": "RIGHT_CENTER"
         }
     }
 }
