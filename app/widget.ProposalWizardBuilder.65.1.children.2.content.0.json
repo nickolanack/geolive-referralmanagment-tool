@@ -1,5 +1,5 @@
 {
-    "type": "plugin.Attributes.WizardDescriptionAttribute",
+    "type": "plugin.Attributes.WizardTagCloud",
     "config": {
         "attributeFields": [
             {
@@ -7,11 +7,11 @@
                 "tableId": "5",
                 "tableName": "proposalAttributes",
                 "tableSuffix": "_9189",
-                "title": "projectLetters",
-                "label": "Project Letters",
+                "title": "firstNationsInvolved",
+                "label": "First Nations Involved",
                 "description": "",
                 "fieldType": "text",
-                "color": "rgb(NaN, NaN, NaN)",
+                "color": "rgb(undefined, undefined, undefined)",
                 "searchability": "public",
                 "editability": "registered",
                 "fieldTextOptions": {
@@ -35,19 +35,17 @@
                 "allowMultiple": false
             }
         ],
+        "className": "",
+        "showLabel": false,
+        "showAddWord": false,
         "label": "{field.label}",
-        "message": "add a description",
-        "lines": 3,
-        "mandatory": false,
-        "showAudios": true,
-        "showImages": true,
-        "showDocuments": true,
-        "showVideos": true,
-        "className": "no-text width-2 only-docs",
-        "maxChars": 0,
-        "showExpandInput": true,
-        "toolbarPosition": "bottom",
-        "textFormatScript": "",
-        "onRenderModuleFn": ""
+        "addWordPlaceholder": "add a keyword",
+        "fontColor": "rgb(0, 0, 0)",
+        "hoverColor": "rgb(143, 188, 143)",
+        "selectedColor": "rgb(143, 188, 143)",
+        "shuffleTags": false,
+        "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
+        "getItemTagsScript": "return defaultTags;",
+        "formatModule": ""
     }
 }
