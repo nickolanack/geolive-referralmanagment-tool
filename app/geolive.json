@@ -723,16 +723,16 @@
                             "widget.ProposalWizardBuilder.65.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 107,
-                            "y": 164
+                            "x": 117,
+                            "y": 174
                         },
                         "children": [
                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 67,
-                                    "y": 190
+                                    "x": 77,
+                                    "y": 200
                                 }
                             },
                             {
@@ -742,16 +742,16 @@
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 249,
-                                    "y": 335
+                                    "x": 259,
+                                    "y": 345
                                 },
                                 "children": [
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 209,
-                                            "y": 361
+                                            "x": 219,
+                                            "y": 371
                                         }
                                     },
                                     {
@@ -761,16 +761,16 @@
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 468,
-                                            "y": 153
+                                            "x": 478,
+                                            "y": 163
                                         },
                                         "children": [
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 428,
-                                                    "y": 179
+                                                    "x": 438,
+                                                    "y": 389
                                                 }
                                             },
                                             {
@@ -780,16 +780,16 @@
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.fields.0.json"
                                                 ],
                                                 "_diagramState": {
-                                                    "x": 615,
-                                                    "y": 340
+                                                    "x": 1017,
+                                                    "y": 297
                                                 },
                                                 "children": [
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.0.json",
                                                     {
                                                         "class": "InsertNode",
                                                         "_diagramState": {
-                                                            "x": 575,
-                                                            "y": 528
+                                                            "x": 977,
+                                                            "y": 485
                                                         }
                                                     }
                                                 ],
@@ -804,25 +804,25 @@
                                                             "modules": [
                                                                 "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.builderMetadata.positions.content.modules.0.json",
                                                                 {
-                                                                    "type": "plugin.Attributes.WizardDescriptionAttribute",
+                                                                    "type": "plugin.Attributes.WizardTextAttribute",
                                                                     "config": {
                                                                         "attributeFields": [
                                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
                                                                         ],
-                                                                        "label": "{field.label}",
-                                                                        "message": "add a description",
-                                                                        "lines": 3,
-                                                                        "mandatory": false,
-                                                                        "showAudios": false,
-                                                                        "showImages": false,
-                                                                        "showDocuments": false,
-                                                                        "showVideos": false,
                                                                         "className": "",
+                                                                        "label": "{field.label}",
+                                                                        "message": "",
+                                                                        "lines": 2,
                                                                         "maxChars": 0,
-                                                                        "showExpandInput": true,
-                                                                        "toolbarPosition": "bottom",
-                                                                        "textFormatScript": "",
-                                                                        "onRenderModuleFn": ""
+                                                                        "mandatory": false,
+                                                                        "multiEntry": false,
+                                                                        "autocomplete": true,
+                                                                        "muliTemplate": "lines",
+                                                                        "multiMessage": "",
+                                                                        "formatter": "none",
+                                                                        "iconTint": "rgb(100, 149, 237)",
+                                                                        "onRenderTextFieldScript": "",
+                                                                        "formatValueScript": ""
                                                                     }
                                                                 },
                                                                 {
@@ -846,25 +846,25 @@
                                                                     }
                                                                 },
                                                                 {
-                                                                    "type": "plugin.Attributes.WizardDescriptionAttribute",
+                                                                    "type": "plugin.Attributes.WizardTextAttribute",
                                                                     "config": {
                                                                         "attributeFields": [
                                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
                                                                         ],
-                                                                        "label": "{field.label}",
-                                                                        "message": "add a description",
-                                                                        "lines": 3,
-                                                                        "mandatory": false,
-                                                                        "showAudios": false,
-                                                                        "showImages": false,
-                                                                        "showDocuments": false,
-                                                                        "showVideos": false,
                                                                         "className": "",
+                                                                        "label": "{field.label}",
+                                                                        "message": "",
+                                                                        "lines": 2,
                                                                         "maxChars": 0,
-                                                                        "showExpandInput": true,
-                                                                        "toolbarPosition": "bottom",
-                                                                        "textFormatScript": "",
-                                                                        "onRenderModuleFn": ""
+                                                                        "mandatory": false,
+                                                                        "multiEntry": false,
+                                                                        "autocomplete": true,
+                                                                        "muliTemplate": "lines",
+                                                                        "multiMessage": "",
+                                                                        "formatter": "none",
+                                                                        "iconTint": "rgb(100, 149, 237)",
+                                                                        "onRenderTextFieldScript": "",
+                                                                        "formatValueScript": ""
                                                                     }
                                                                 }
                                                             ]
@@ -1050,7 +1050,7 @@
                                                 "menu"
                                             ],
                                             "_diagramState": {
-                                                "minimized": true
+                                                "minimized": false
                                             }
                                         }
                                     }

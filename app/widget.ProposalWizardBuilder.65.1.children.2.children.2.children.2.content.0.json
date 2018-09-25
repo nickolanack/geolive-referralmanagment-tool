@@ -1,5 +1,5 @@
 {
-    "type": "plugin.Attributes.WizardDescriptionAttribute",
+    "type": "plugin.Attributes.WizardTextAttribute",
     "config": {
         "attributeFields": [
             {
@@ -35,19 +35,19 @@
                 "allowMultiple": false
             }
         ],
-        "label": "{field.label}",
-        "message": "add a description",
-        "lines": 3,
-        "mandatory": false,
-        "showAudios": false,
-        "showImages": false,
-        "showDocuments": false,
-        "showVideos": false,
         "className": "",
+        "label": "{field.label}",
+        "message": "",
+        "lines": 2,
         "maxChars": 0,
-        "showExpandInput": true,
-        "toolbarPosition": "bottom",
-        "textFormatScript": "",
-        "onRenderModuleFn": ""
+        "mandatory": false,
+        "multiEntry": false,
+        "autocomplete": true,
+        "muliTemplate": "lines",
+        "multiMessage": "",
+        "formatter": "none",
+        "iconTint": "rgb(100, 149, 237)",
+        "onRenderTextFieldScript": "",
+        "formatValueScript": ""
     }
 }
