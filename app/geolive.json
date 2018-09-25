@@ -711,8 +711,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 15,
-                    "y": 657
+                    "x": 47,
+                    "y": 651
                 },
                 "children": [
                     "widget.ProposalWizardBuilder.65.metadata.children.0.json",
@@ -723,16 +723,16 @@
                             "widget.ProposalWizardBuilder.65.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 114,
-                            "y": 301
+                            "x": 124,
+                            "y": 311
                         },
                         "children": [
                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 74,
-                                    "y": 552
+                                    "x": 84,
+                                    "y": 562
                                 }
                             },
                             {
@@ -742,16 +742,16 @@
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 578,
-                                    "y": 218
+                                    "x": 588,
+                                    "y": 228
                                 },
                                 "children": [
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 538,
-                                            "y": 431
+                                            "x": 548,
+                                            "y": 441
                                         }
                                     },
                                     {
@@ -761,16 +761,16 @@
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1080,
-                                            "y": 430
+                                            "x": 1090,
+                                            "y": 440
                                         },
                                         "children": [
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1040,
-                                                    "y": 668
+                                                    "x": 1050,
+                                                    "y": 678
                                                 }
                                             }
                                         ],
@@ -873,32 +873,10 @@
                                                             }
                                                         },
                                                         {
-                                                            "type": "plugin.Attributes.WizardDescriptionAttribute",
-                                                            "config": {
-                                                                "attributeFields": [
-                                                                    "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.5.config.attributeFields.0.json"
-                                                                ],
-                                                                "label": "{field.label}",
-                                                                "message": "add a description",
-                                                                "lines": 3,
-                                                                "mandatory": false,
-                                                                "showAudios": true,
-                                                                "showImages": true,
-                                                                "showDocuments": true,
-                                                                "showVideos": true,
-                                                                "className": "no-text add-agreements only-docs",
-                                                                "maxChars": 0,
-                                                                "showExpandInput": true,
-                                                                "toolbarPosition": "bottom",
-                                                                "textFormatScript": "",
-                                                                "onRenderModuleFn": ""
-                                                            }
-                                                        },
-                                                        {
                                                             "type": "plugin.Attributes.WizardTextAttribute",
                                                             "config": {
                                                                 "attributeFields": [
-                                                                    "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
+                                                                    "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.5.config.attributeFields.0.json"
                                                                 ],
                                                                 "className": "",
                                                                 "label": "{field.label}",
@@ -930,9 +908,9 @@
                                                                 "showDeleteButton": false,
                                                                 "deleteItemScript": "defaultBehaviorFn()",
                                                                 "initModuleScript": "",
-                                                                "formatModuleScript": "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.7.config.formatModuleScript.js",
+                                                                "formatModuleScript": "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.6.config.formatModuleScript.js",
                                                                 "resolveItemScript": "return item",
-                                                                "filterModulesScript": "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.7.config.filterModulesScript.js",
+                                                                "filterModulesScript": "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.6.config.filterModulesScript.js",
                                                                 "itemButtonsScript": "return [];",
                                                                 "insertAtTop": false,
                                                                 "targetName": ""
@@ -1065,6 +1043,28 @@
                                                         "showDocuments": true,
                                                         "showVideos": true,
                                                         "className": "no-text width-2 only-docs",
+                                                        "maxChars": 0,
+                                                        "showExpandInput": true,
+                                                        "toolbarPosition": "bottom",
+                                                        "textFormatScript": "",
+                                                        "onRenderModuleFn": ""
+                                                    }
+                                                },
+                                                {
+                                                    "type": "plugin.Attributes.WizardDescriptionAttribute",
+                                                    "config": {
+                                                        "attributeFields": [
+                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
+                                                        ],
+                                                        "label": "{field.label}",
+                                                        "message": "add a description",
+                                                        "lines": 3,
+                                                        "mandatory": true,
+                                                        "showAudios": true,
+                                                        "showImages": true,
+                                                        "showDocuments": true,
+                                                        "showVideos": true,
+                                                        "className": "no-text add-agreements only-docs",
                                                         "maxChars": 0,
                                                         "showExpandInput": true,
                                                         "toolbarPosition": "bottom",
