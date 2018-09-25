@@ -17,11 +17,11 @@ var TaskTemplateItem=new Class({
 
 (new AjaxControlQuery(CoreAjaxUrlRoot, 'default_task_templates', {
 		                    "plugin": "ReferralManagement",
-		                    "proposal":application.getNamedValue("currentProject").getId()
+		                    "proposal":viewControllerApp.getNamedValue("currentProject").getId()
 		                })).addEvent('success', function(resp){
 		                    
 		                    callback(resp.taskTemplates.map(function(data){
-		                        return new TaskTemplateItem(application.getNamedValue("currentProject"), data.task);
+		                        return new TaskTemplateItem(viewControllerApp.getNamedValue("currentProject"), data.task);
 		                    }));
 		                    
 		                }).execute();

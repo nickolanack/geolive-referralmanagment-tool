@@ -7368,16 +7368,16 @@
                             "taskDefaultItems.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 218,
-                            "y": 350
+                            "x": 228,
+                            "y": 360
                         },
                         "children": [
                             "taskDefaultItems.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 178,
-                                    "y": 516
+                                    "x": 188,
+                                    "y": 526
                                 }
                             }
                         ],
@@ -7398,23 +7398,27 @@
                                                 "className": "task-item",
                                                 "viewType": "view",
                                                 "namedView": "singleTaskListItemDetail",
+                                                "shouldRender": true,
                                                 "namedViewScript": "return namedView",
                                                 "showInlineEdit": false,
                                                 "namedFormView": "defaultFormView",
                                                 "formOptions": "{}",
                                                 "showDeleteButton": false,
                                                 "deleteItemScript": "",
+                                                "initModuleScript": "",
                                                 "formatModuleScript": "",
                                                 "resolveItemScript": "return item",
                                                 "filterModulesScript": "return list",
                                                 "itemButtonsScript": "return [];",
                                                 "insertAtTop": false,
+                                                "targetName": "",
                                                 "getItemListScript": "taskDefaultItems.metadata.children.1.builderMetadata.positions.content.modules.1.config.getItemListScript.js",
                                                 "formatItemListScript": "return list;",
                                                 "formatListItemModuleScript": "",
                                                 "emptyNamedView": "emptyListView",
                                                 "filterItemsScript": "return true;",
-                                                "sortItemsScript": ""
+                                                "sortItemsScript": "",
+                                                "maxItems": "-1"
                                             }
                                         }
                                     ]
@@ -7450,7 +7454,8 @@
             "templateName": "taskDefaultItems",
             "widgetTitle": "taskDefaultItems",
             "target": "taskDefaultItems",
-            "readAccess": "public"
+            "readAccess": "public",
+            "resolveItemScript": "return item;"
         }
     },
     "widget.196": {
