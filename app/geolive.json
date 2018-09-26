@@ -289,7 +289,12 @@
     "plugin.49": {
         "name": "Text To Speech",
         "instance": "TextToSpeech",
-        "parameters": {}
+        "parameters": {
+            "region": "us-west-2",
+            "version": "latest",
+            "key": "XXXX-XXXX",
+            "secret": "XXXX-XXXX"
+        }
     },
     "widget.33": {
         "name": "Attr Search Bar",
