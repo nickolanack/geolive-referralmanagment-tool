@@ -326,6 +326,9 @@ var TaskItem = (function() {
 		},
 		numberOfPosts:function(){
 			var me=this;
+			if(!(me.data&&me.data.discussion)){
+				return 0;
+			}
 			return parseInt(me.data.discussion.posts);
 		},
 

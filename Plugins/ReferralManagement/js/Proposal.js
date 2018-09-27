@@ -977,6 +977,21 @@ var Proposal = (function() {
 				});
 	}
 
+
+	Proposal.ListTeams=function(){
+		return ['wabun'];
+	}
+
+	Proposal.ListTerritories=function(){
+
+		return ["Beaverhouse", "Brunswick House", "Chapleau Ojibway", "Flying Post", "Matachewan", "Mattagami"];
+	}
+	Proposal.ListOutcomes=function(){
+
+
+		return ["Accepted", "Denied", "Declined", "Refuse", "Insufficient"];
+	}
+
 	
 	return Proposal;
 

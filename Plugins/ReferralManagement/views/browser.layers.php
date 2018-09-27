@@ -3,7 +3,7 @@
 
 $vars = Scaffold('browser.selectimagescript', array(
     'type' => 'document'
-), Core::Files()->getScaffoldsPath());
+), GetUserFiles()->getScaffoldsPath());
 
 Core::LoadPlugin('Maps');
 Scaffold('browser.layers',
@@ -18,9 +18,9 @@ Scaffold('browser.layers',
             $theUser = false;
             
             if ($userId != $clientId && Core::Client()->isAdmin()) {
-                $theUser = Core::Files()->getFileManager()->getUsersShare($userId);
+                $theUser = GetUserFiles()->getFileManager()->getUsersShare($userId);
             } else {
-                $theUser = Core::Files()->getFileManager()->getCurrentUserShare();
+                $theUser = GetUserFiles()->getFileManager()->getCurrentUserShare();
             }
             
             /* @var $filesystem FilesystemPlugin */
