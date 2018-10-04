@@ -27,12 +27,13 @@ if(key_exists('community', $json)){
 (new attributes\Record('userAttributes'))
     ->setValues($client, 'user', $fields);
     
-   
-Emit("onUpdateMobileProfile", $fields);
+$newMetadata=$refferal->getUsersMetadata();
+
+Emit("onUpdateMobileProfile", array('fields'=>$fields, 'profile'=>$newMetadata));
 
 
 
  return array(
             "text"=>"Your profile has been updated",
-            "parameters"=>array('client'=>$refferal->getUsersMetadata())
+            "parameters"=>array('client'=>$$newMetadata)
         );
