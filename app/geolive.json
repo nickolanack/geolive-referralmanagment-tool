@@ -7700,16 +7700,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 264,
-                            "y": 127
+                            "x": 274,
+                            "y": 137
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 224,
-                                    "y": 353
+                                    "x": 234,
+                                    "y": 363
                                 }
                             }
                         ],
@@ -7840,6 +7840,30 @@
                                                 "textFormatScript": "",
                                                 "onRenderModuleFn": ""
                                             }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTagCloud",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.7.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "showLabel": false,
+                                                "showAddWord": false,
+                                                "label": "{field.label}",
+                                                "addWordPlaceholder": "add a keyword",
+                                                "fontColor": "rgb(0, 0, 0)",
+                                                "hoverColor": "rgb(143, 188, 143)",
+                                                "selectedColor": "rgb(143, 188, 143)",
+                                                "shuffleTags": false,
+                                                "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
+                                                "getItemTagsScript": "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.7.config.getItemTagsScript.js",
+                                                "formatModule": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardBooleanAttribute",
+                                            "config": []
                                         }
                                     ]
                                 },
@@ -7874,7 +7898,8 @@
             "templateName": "userProfileForm",
             "widgetTitle": "userProfileForm",
             "target": "userProfileForm",
-            "readAccess": "public"
+            "readAccess": "public",
+            "resolveItemScript": "return item;"
         }
     },
     "widget.199": {
