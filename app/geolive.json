@@ -14541,5 +14541,14 @@
             "readAccess": "public",
             "position": "RIGHT_CENTER"
         }
+    },
+    "widget.297": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: update.user.role",
+            "widgetTitle": "activityfeed.update.user.role.text",
+            "target": "activityfeed.update.user.role.text"
+        }
     }
 }
