@@ -21,7 +21,7 @@ $fields=array(
     );
     
 if(key_exists('community', $json)){
-    $fields['community']=$refferal->listCommunities()[(int)$json->'community']
+    $fields['community']=$refferal->listCommunities()[(int)$json->community];
 }
 
 (new attributes\Record('userAttributes'))
