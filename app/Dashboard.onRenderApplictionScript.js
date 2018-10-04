@@ -86,7 +86,7 @@ GetWidget('mainCalendarDetail')->display($targetInstance);
 GetWidget('mainMapDetail')->display($targetInstance);
 
 
-GetWidget('peopleProjectsDetail')->display($targetInstance);
+GetWidget('peopleProjectMembersDetail')->display($targetInstance);
 GetWidget('peopleClientsDetail')->display($targetInstance);
 GetWidget('peopleUsersDetail')->display($targetInstance);
 
