@@ -23,6 +23,9 @@ $fields=array(
 if(key_exists('community', $json)){
     $fields['community']=$refferal->listCommunities()[(int)$json->community];
 }
+if(key_exists('status', $json)){
+    $fields['registeredStatus']=!!$json->status;
+}
 
 (new attributes\Record('userAttributes'))
     ->setValues($client, 'user', $fields);
