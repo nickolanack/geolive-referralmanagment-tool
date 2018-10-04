@@ -3,30 +3,20 @@
     "tableId": "1",
     "tableName": "userAttributes",
     "tableSuffix": "_3744",
-    "title": "bio",
-    "label": "Bio",
+    "title": "registeredStatus",
+    "label": "Registered Status",
     "description": "",
-    "fieldType": "text",
+    "fieldType": "boolean",
     "color": "rgb(undefined, undefined, undefined)",
     "searchability": "public",
     "editability": "registered",
-    "fieldTextOptions": {
-        "textType": "input",
-        "inputOptions": {
-            "buildAutocomplete": false,
-            "requireModeration": false,
-            "limitMaxChars": 0,
-            "limitMaxWords": 0,
-            "allowHtml": false,
-            "allowMedia": true,
-            "allowLinks": true
-        },
-        "listOptions": {
-            "takeSugesstions": true,
-            "buildTree": false,
-            "iconize": false,
-            "colorize": false
-        }
+    "fieldBooleanOptions": {
+        "hideFalse": true,
+        "trueLabel": "",
+        "falseLabel": "",
+        "useFieldIcon": false,
+        "trueIcon": false,
+        "falseIcon": false
     },
     "allowMultiple": false
 }
