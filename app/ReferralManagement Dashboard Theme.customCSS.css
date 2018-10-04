@@ -1619,6 +1619,18 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {
     background-color: #6A7CE9;
     border-color: #6A7CE9;
 }
+
+
+.tag-cloud>span.tag-el {
+    background-color: white;border: none;border-radius: 2px;
+    
+}
+
+.tag-cloud>span.tag-el.selected {
+    background-color: #6A7CE9;
+    color:white;
+}
+
 .WizardTitle{
     text-align:right;
 }
