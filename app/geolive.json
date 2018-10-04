@@ -4389,9 +4389,9 @@
                 },
                 {
                     "type": "images",
-                    "name": "people-projects",
+                    "name": "people-projectmembers",
                     "default": [],
-                    "label": "projects (people)",
+                    "label": "project members (people)",
                     "maxHeight": 128,
                     "maxWidth": 128,
                     "limit": 1
@@ -4767,7 +4767,8 @@
             ],
             "surveyMenuIcon": [
                 "components\/com_geolive\/users_files\/user_files_681\/Uploads\/7YB_wHp_[ImAgE]_BVE_[G].png"
-            ]
+            ],
+            "people-projectmembers": []
         }
     },
     "widget.154": {
