@@ -7700,16 +7700,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 284,
-                            "y": 147
+                            "x": 294,
+                            "y": 157
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 244,
-                                    "y": 398
+                                    "x": 254,
+                                    "y": 408
                                 }
                             }
                         ],
@@ -7864,7 +7864,9 @@
                                         {
                                             "type": "plugin.Attributes.WizardBooleanAttribute",
                                             "config": {
-                                                "attributeFields": [],
+                                                "attributeFields": [
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
+                                                ],
                                                 "className": "",
                                                 "label": "",
                                                 "showLabel": false,
