@@ -10,13 +10,22 @@ if(empty($profileImageHtml)){
 }
 
 GetPlugin('Attributes');
-(new attributes\Record('userAttributes'))
-    ->setValues($client, 'user', array(
+
+$refferal=GetPlugin('ReferralManagement');
+
+$fields=array(
         'profileIcon'=>'<img src="'.$profileImageHtml[0].'" />',
         'firstName'=>$json->name,
         'phone'=>$json->number,
         'email'=>$json->email
-    ));
+    );
+    
+if(key_exists('community', $json)){
+    $fields['community']=$refferal->listCommunities()[(int)$json->'community']
+}
+
+(new attributes\Record('userAttributes'))
+    ->setValues($client, 'user', $fields);
     
    
 
@@ -25,5 +34,5 @@ GetPlugin('Attributes');
 
  return array(
             "text"=>"Your profile has been updated",
-            "parameters"=>array('client'=>GetPlugin('ReferralManagement')->getUsersMetadata())
+            "parameters"=>array('client'=>$refferal->getUsersMetadata())
         );
