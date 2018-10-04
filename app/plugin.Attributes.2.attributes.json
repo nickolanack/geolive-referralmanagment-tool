@@ -28,12 +28,12 @@
                     "searchability": "special",
                     "editability": "special",
                     "fieldBooleanOptions": {
-                        "trueIcon": false,
-                        "falseIcon": false,
                         "hideFalse": true,
                         "trueLabel": "",
                         "falseLabel": "",
-                        "useFieldIcon": false
+                        "useFieldIcon": false,
+                        "trueIcon": false,
+                        "falseIcon": false
                     },
                     "allowMultiple": false
                 },
@@ -50,12 +50,12 @@
                     "searchability": "public",
                     "editability": "registered",
                     "fieldBooleanOptions": {
-                        "trueIcon": false,
-                        "falseIcon": false,
                         "hideFalse": true,
                         "trueLabel": "",
                         "falseLabel": "",
-                        "useFieldIcon": false
+                        "useFieldIcon": false,
+                        "trueIcon": false,
+                        "falseIcon": false
                     },
                     "allowMultiple": false
                 },
@@ -72,12 +72,12 @@
                     "searchability": "public",
                     "editability": "registered",
                     "fieldBooleanOptions": {
-                        "trueIcon": false,
-                        "falseIcon": false,
                         "hideFalse": true,
                         "trueLabel": "",
                         "falseLabel": "",
-                        "useFieldIcon": false
+                        "useFieldIcon": false,
+                        "trueIcon": false,
+                        "falseIcon": false
                     },
                     "allowMultiple": false
                 },
@@ -94,12 +94,12 @@
                     "searchability": "special",
                     "editability": "special",
                     "fieldBooleanOptions": {
-                        "trueIcon": false,
-                        "falseIcon": false,
                         "hideFalse": true,
                         "trueLabel": "",
                         "falseLabel": "",
-                        "useFieldIcon": false
+                        "useFieldIcon": false,
+                        "trueIcon": false,
+                        "falseIcon": false
                     },
                     "allowMultiple": false
                 },
@@ -116,12 +116,12 @@
                     "searchability": "special",
                     "editability": "special",
                     "fieldBooleanOptions": {
-                        "trueIcon": false,
-                        "falseIcon": false,
                         "hideFalse": true,
                         "trueLabel": "",
                         "falseLabel": "",
-                        "useFieldIcon": false
+                        "useFieldIcon": false,
+                        "trueIcon": false,
+                        "falseIcon": false
                     },
                     "allowMultiple": false
                 },
@@ -138,12 +138,12 @@
                     "searchability": "public",
                     "editability": "registered",
                     "fieldBooleanOptions": {
-                        "trueIcon": false,
-                        "falseIcon": false,
                         "hideFalse": true,
                         "trueLabel": "",
                         "falseLabel": "",
-                        "useFieldIcon": false
+                        "useFieldIcon": false,
+                        "trueIcon": false,
+                        "falseIcon": false
                     },
                     "allowMultiple": false
                 },
@@ -192,12 +192,12 @@
                     "searchability": "public",
                     "editability": "registered",
                     "fieldBooleanOptions": {
-                        "trueIcon": false,
-                        "falseIcon": false,
                         "hideFalse": true,
                         "trueLabel": "",
                         "falseLabel": "",
-                        "useFieldIcon": false
+                        "useFieldIcon": false,
+                        "trueIcon": false,
+                        "falseIcon": false
                     },
                     "allowMultiple": false
                 },
@@ -368,6 +368,38 @@
                     "tableSuffix": "_3744",
                     "title": "email",
                     "label": "Email",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "1",
+                    "tableName": "userAttributes",
+                    "tableSuffix": "_3744",
+                    "title": "community",
+                    "label": "Community",
                     "description": "",
                     "fieldType": "text",
                     "color": "rgb(undefined, undefined, undefined)",
