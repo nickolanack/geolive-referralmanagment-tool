@@ -7973,11 +7973,19 @@
                         "modules": [
                             "defaultPostDetail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "defaultPostDetail.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "defaultPostDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
+                                    "fieldValueScript": "defaultPostDetail.metadata.positions.content.modules.2.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('timestamp');"
                                 }
                             },
@@ -7985,6 +7993,7 @@
                                 "type": "FormattedText",
                                 "config": {
                                     "textValueScript": "return item.getText();",
+                                    "formatModuleScript": "",
                                     "className": "",
                                     "imageWidth": 300,
                                     "imageHeight": 240,
@@ -8015,20 +8024,22 @@
                                     "viewType": "view",
                                     "namedView": "defaultView",
                                     "shouldRender": true,
-                                    "namedViewScript": "defaultPostDetail.metadata.positions.content.modules.3.config.namedViewScript.js",
+                                    "namedViewScript": "defaultPostDetail.metadata.positions.content.modules.4.config.namedViewScript.js",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
-                                    "getItemListScript": "defaultPostDetail.metadata.positions.content.modules.3.config.getItemListScript.js",
+                                    "targetName": "",
+                                    "getItemListScript": "defaultPostDetail.metadata.positions.content.modules.4.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "defaultPostDetail.metadata.positions.content.modules.3.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "defaultPostDetail.metadata.positions.content.modules.4.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
                                     "sortItemsScript": "",

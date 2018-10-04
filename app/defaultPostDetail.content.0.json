@@ -2,6 +2,7 @@
     "type": "FormattedText",
     "config": {
         "textValueScript": "\nvar defaultIcon=<?php \n    echo json_encode(UrlFrom(GetWidget('dashboardConfig')->getParameter('defaultUserImage')[0])); \n?>;\n\n\n\n(new GetAttributeItemValueQuery(item.getUserId(), AppClient.getType(), \"userAttributes\",\"profileIcon\")).addEvent(\"success\",function(result){\n    if(!result.value){\n        callback('<img src=\"'+defaultIcon+'\" \/>');\n        return;\n    }\n    callback(result.value);\n    \n}).execute();",
+        "formatModuleScript": "",
         "className": "user-profile-icon",
         "imageWidth": 50,
         "imageHeight": 50,
