@@ -35,5 +35,5 @@ Emit("onUpdateMobileProfile", array('fields'=>$fields, 'profile'=>$newMetadata))
 
  return array(
             "text"=>"Your profile has been updated",
-            "parameters"=>array('client'=>$$newMetadata)
+            "parameters"=>array('client'=>$newMetadata)
         );
