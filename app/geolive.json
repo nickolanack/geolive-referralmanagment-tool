@@ -5136,8 +5136,8 @@
         "instance": "DetailView",
         "parameters": {
             "widgetTitle": "People Projects Detail",
-            "target": "peopleProjectsDetail",
-            "templateName": "peopleProjectsDetail",
+            "target": "peopleProjectMembersDetail",
+            "templateName": "peopleProjectMembersDetail",
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
