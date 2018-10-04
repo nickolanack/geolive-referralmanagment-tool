@@ -7688,8 +7688,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 31,
-                    "y": 198
+                    "x": 102,
+                    "y": 216
                 },
                 "children": [
                     "userProfileForm.metadata.children.0.json",
@@ -7700,16 +7700,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 294,
-                            "y": 157
+                            "x": 304,
+                            "y": 167
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 254,
-                                    "y": 408
+                                    "x": 264,
+                                    "y": 418
                                 }
                             }
                         ],
@@ -7868,7 +7868,7 @@
                                                     "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
-                                                "label": "",
+                                                "label": "Registered Status?",
                                                 "showLabel": false,
                                                 "presentationStyle": "radio",
                                                 "presentationRadioTrueLabel": "Yes",
