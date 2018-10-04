@@ -28,7 +28,7 @@ if(key_exists('community', $json)){
     ->setValues($client, 'user', $fields);
     
    
-
+Emit("onUpdateMobileProfile", $fields);
 
 
 
