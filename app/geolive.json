@@ -3724,6 +3724,33 @@
                     "maxHeight": 92,
                     "maxWidth": 92,
                     "limit": 1
+                },
+                "concerns": {
+                    "type": "images",
+                    "name": "concerns",
+                    "default": [],
+                    "label": "Concerns",
+                    "maxHeight": 64,
+                    "maxWidth": 64,
+                    "limit": 1
+                },
+                "concerns-color": {
+                    "type": "color",
+                    "name": "concerns-color",
+                    "default": "rgb(0,0,0)",
+                    "label": "concerns-color"
+                },
+                "concerns-color-active": {
+                    "type": "color",
+                    "name": "concerns-color-active",
+                    "default": "rgb(0,0,0)",
+                    "label": "concerns-color-active"
+                },
+                "concerns-layer": {
+                    "type": "text",
+                    "name": "concerns-layer",
+                    "default": "112",
+                    "label": "concerns-layer"
                 }
             },
             "hello": "World",
@@ -3881,7 +3908,11 @@
             ],
             "add-image-library": [
                 "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[ImAgE]_[G]_MfV_kcW_K0y.png"
-            ]
+            ],
+            "concerns": [],
+            "concerns-color": "rgb(0,0,0)",
+            "concerns-color-active": "rgb(0,0,0)",
+            "concerns-layer": "112"
         }
     },
     "widget.145": {
