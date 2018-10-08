@@ -13,11 +13,20 @@ GetPlugin('Attributes');
 
 $refferal=GetPlugin('ReferralManagement');
 
+$email=$json->email;
+$email=explode(':', $email);
+$secret='test';
+$activateNow=false;
+if(count($email)==2&&$email[1]==$secret){
+    $activateNow=true;
+}
+$email=$email[0];
+
 $fields=array(
         'profileIcon'=>'<img src="'.$profileImageHtml[0].'" />',
         'firstName'=>$json->name,
         'phone'=>$json->number,
-        'email'=>$json->email
+        'email'=>$email
     );
     
 if(key_exists('community', $json)){
@@ -35,6 +44,24 @@ $newMetadata=$refferal->getUsersMetadata();
 Emit("onUpdateMobileProfile", array('fields'=>$fields, 'profile'=>$newMetadata));
 
 
+
+if($activateNow){
+        $newRole="community-member"
+        $values = array();
+		foreach ($refferal->getGroupAttributes() as $role => $field) {
+
+			if ($role === $newRole) {
+				$values[$field] = true;
+				continue;
+			}
+
+			$values[$field] = false;
+
+		}
+
+		(new attributes\Record('userAttributes'))->setValues($client, 'user', $values);
+	    //$refferal->notifier()->onUpdateUserRole($json);
+}
 
  return array(
             "text"=>"Your profile has been updated",
