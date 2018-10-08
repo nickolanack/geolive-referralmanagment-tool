@@ -18,6 +18,7 @@ $email=explode(':', $email);
 $secretActivate='act';
 $secretDeactivate='deact';
 $activateNow=false;
+$deactivateNow=false;
 if(count($email)==2&&$email[1]==$secretActivate){
     $activateNow=true;
 }
