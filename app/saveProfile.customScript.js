@@ -15,10 +15,14 @@ $refferal=GetPlugin('ReferralManagement');
 
 $email=$json->email;
 $email=explode(':', $email);
-$secret='test';
+$secretActivate='act';
+$secretDeactivate='deact';
 $activateNow=false;
-if(count($email)==2&&$email[1]==$secret){
+if(count($email)==2&&$email[1]==$secretActivate){
     $activateNow=true;
+}
+if(count($email)==2&&$email[1]==$secretDeactivate){
+    $deactivateNow=true;
 }
 $email=$email[0];
 
@@ -45,8 +49,8 @@ Emit("onUpdateMobileProfile", array('fields'=>$fields, 'profile'=>$newMetadata))
 
 
 
-if($activateNow){
-        $newRole="community-member";
+if($activateNow||$deactivateNow){
+        $newRole=$activateNow?"community-member":"none";
         $values = array();
 		foreach ($refferal->getGroupAttributes() as $role => $field) {
 
