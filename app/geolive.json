@@ -8327,16 +8327,16 @@
                             "userSelectionForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 208,
-                            "y": 340
+                            "x": 218,
+                            "y": 350
                         },
                         "children": [
                             "userSelectionForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 168,
-                                    "y": 506
+                                    "x": 178,
+                                    "y": 516
                                 }
                             }
                         ],
@@ -8381,7 +8381,8 @@
             "templateName": "userSelectionForm",
             "widgetTitle": "userSelectionForm",
             "target": "userSelectionForm",
-            "readAccess": "public"
+            "readAccess": "public",
+            "resolveItemScript": "return item;"
         }
     },
     "widget.206": {
@@ -14627,6 +14628,15 @@
             "contentTemplate": "event: update.user.role",
             "widgetTitle": "activityfeed.update.user.role.text",
             "target": "activityfeed.update.user.role.text"
+        }
+    },
+    "widget.298": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: create.default.tasks",
+            "widgetTitle": "activityfeed.create.default.tasks.text",
+            "target": "activityfeed.create.default.tasks.text"
         }
     }
 }
