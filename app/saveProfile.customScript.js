@@ -46,7 +46,7 @@ Emit("onUpdateMobileProfile", array('fields'=>$fields, 'profile'=>$newMetadata))
 
 
 if($activateNow){
-        $newRole="community-member"
+        $newRole="community-member";
         $values = array();
 		foreach ($refferal->getGroupAttributes() as $role => $field) {
 
