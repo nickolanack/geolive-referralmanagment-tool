@@ -9,14 +9,10 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			return $this->setError('Empty data set');
 		}
 
-		$longTaskProgress = new \core\LongTaskProgress();
-		Emit('onTriggerImportTusFile', array(
-			'data' => $json->data,
-			'taskIndentifier' => $longTaskProgress->getIdentifier(),
-		));
-
 		return array(
-			'subscription' => $longTaskProgress->getSubscription(),
+			'subscription' => (new \core\LongTaskProgress())
+				->emit('onTriggerImportTusFile', array('data' => $json->data))
+				->getSubscription(),
 		);
 
 	}
@@ -80,12 +76,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	}
 
-	protected function listArchivedProjects( /*$json*/) {
-
-		$response = array('results' => $this->getPlugin()->getArchivedProjectList());
-		return $response;
-
-	}
+	
 
 	protected function addDocument($json) {
 
@@ -299,15 +290,50 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 	}
 
 	protected function listUsers($json) {
+
+		$cacheName="ReferralManagement.userList.json";
+		$cacheData = HtmlDocument()->getCachedPage($cacheName);
+		if (!empty($cacheData)) {
+			$users=json_decode($cacheData);
+		}else{
+			$users=$this->getPlugin()->getUsers($json->team);
+			HtmlDocument()->setCachedPage($cacheName, json_encode($users));
+		}
+
+
 		return array(
-			"results" => $this->getPlugin()->getUsers($json->team),
+			'subscription' => (new \core\LongTaskProgress())
+				->emit('onTriggerUpdateUserList', array('team' => $json->team))
+				->getSubscription(),
+			"results" =>$users,
 		);
 	}
 
 	protected function listDevices($json) {
+
+
+		$cacheName="ReferralManagement.deviceList.json";
+		$cacheData = HtmlDocument()->getCachedPage($cacheName);
+		if (!empty($cacheData)) {
+			$devices=json_decode($cacheData);
+		}else{
+			$devices=$this->getPlugin()->getDevices($json->team);
+			HtmlDocument()->setCachedPage($cacheName, json_encode($devices));
+		}
+	
 		return array(
-			"results" => $this->getPlugin()->getDevices($json->team),
+			'subscription' => (new \core\LongTaskProgress())
+				->emit('onTriggerUpdateDevicesList', array('team' => $json->team))
+				->getSubscription(),
+			"results" => $devices
 		);
+	}
+
+	protected function listArchivedProjects( /*$json*/) {
+
+		$response = array('results' => $this->getPlugin()->getArchivedProjectList());
+		return $response;
+
 	}
 
 	protected function getUsersTasks( /*$json*/) {

@@ -8,6 +8,10 @@ var ReferralManagementUser = new Class({
 			var me = this;
 			return me.options.metadata.email;
 		},
+		getUserId:function(){
+			var me=this;
+			return me.options.metadata.id;
+		},
 		getName:function(){
 			var me=this;
 			return me.options.metadata.name;

@@ -17,6 +17,25 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 	use core\TemplateRenderer;
 
 
+	protected function onTriggerUpdateUserList($params){
+
+		$cacheName="ReferralManagement.userList.json";
+		$cacheData = HtmlDocument()->getCachedPage($cacheName);
+
+		$users=$this->getUsers($params->team);
+		HtmlDocument()->setCachedPage($cacheName, json_encode($users));
+
+	}
+	protected function onTriggerUpdateDevicesList($params){
+
+		$cacheName="ReferralManagement.deviceList.json";
+		$cacheData = HtmlDocument()->getCachedPage($cacheName);
+
+		$devices=$this->getDevices($params->team);
+		HtmlDocument()->setCachedPage($cacheName, json_encode($devices));
+
+
+	}
 
 	protected function onTriggerImportTusFile($params){
 
@@ -185,6 +204,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	public function includeScripts() {
 
+		IncludeJS(__DIR__ . '/js/Dashboard.js');
 		IncludeJS(__DIR__ . '/js/ReferralManagementUser.js');
 		IncludeJS(__DIR__ . '/js/UserTeamCollection.js');
 		IncludeJS(__DIR__ . '/js/Proposal.js');
@@ -242,9 +262,9 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	protected function onPost($params) {
 
-		include_once __DIR__.'/CommentBot.php';
+		include_once __DIR__.'/lib/CommentBot.php';
 
-		(new CommentBot())
+		(new \ReferralManagement\CommentBot())
 			->scanPostForEventTriggers($params);
 		
 	}
@@ -888,15 +908,29 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		GetPlugin('Attributes');
 		$this->_withUserAttributes(
 			(new attributes\Record('userAttributes'))->getValues($id, 'user'),
-			function () use (&$metadata, $id) {
+			function ($attributes) use (&$metadata, $id) {
 
-				//$ref=GetPlugin('ReferralManagement');
+				// $ref=GetPlugin('ReferralManagement');
+				//
+				
+
+				if(!in_array($attributes['community'], $this->listCommunities())){
+					$metadata['community']=$this->listCommunities()[0];
+				}else{
+					$metadata['community']=$attributes['community'];
+				}
+
+				$metadata['status']=!!$attributes['registeredStatus'];
+
+				$metadata['communityId'] =array_search($metadata['community'], $this->listCommunities());
+				
 
 				$metadata['role-icon'] = $this->getUserRoleIcon($id);
 				$metadata['user-icon'] = $this->getUserRoleLabel($id);
 				$metadata['can-create'] = $this->canCreateCommunityContent($id);
 				$metadata['communities'] = $this->getCommunities($id);
-				$metadata['community'] = $metadata['communities'][0];
+				// $metadata['community'] = $metadata['communities'][0];
+				// $metadata['communityId'] = 0;
 				$metadata['teams'] = $this->getTeams($id);
 				$metadata['avatar'] = $this->getUsersAvatar($id);
 				$metadata['name'] = $this->getUsersName($id, $metadata['name']);
@@ -914,7 +948,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	protected function _withUserAttributes($attribs, $fn) {
 		$this->currentUserAttributes = $attribs;
-		$fn();
+		$fn($attribs);
 		$this->currentUserAttributes = null;
 	}
 
@@ -995,11 +1029,18 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	}
 
+	public function listTeams() {
+		return array("wabun", "beaverhouse", "brunswick house", "chapleau ojibway", "flying post", "matachewan", "mattagami");
+	}
+	public function listCommunities() {
+		return array("wabun", "beaverhouse", "brunswick house", "chapleau ojibway", "flying post", "matachewan", "mattagami");
+	}
+
 	public function getTeams($id = -1) {
-		return array('wabun');
+		return array("wabun");
 	}
 	public function getCommunities($id = -1) {
-		return array('wabun');
+		return array("wabun");
 	}
 	public function getGroupAttributes() {
 		return array(
