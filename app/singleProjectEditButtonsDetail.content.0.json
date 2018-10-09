@@ -1,7 +1,8 @@
 {
     "type": "WizardScriptElement",
     "config": {
-        "script": "if(item.isArchived()){\n    return null;\n}\nreturn new ModalFormButtonModule(application, item, {\n         \n            label: \"Edit\",\n            formOptions: {template:\"form\"},\n            formName: \"ProposalTemplate\",\n            \"class\": \"primary-btn\"\n\n    \n});\n",
-        "identifier": "customScriptElement"
+        "name": "My Custom Script",
+        "script": "if(item.isArchived()){\n    return null;\n}\nreturn new ModalFormButtonModule(application, item, {\n         \n            label: \"Add Files\",\n            formOptions: {template:\"form\"},\n            formName: \"ProposalTemplate\",\n            \"class\": \"primary-btn\"\n\n    \n});\n",
+        "description": "Info about my custom script"
     }
 }
