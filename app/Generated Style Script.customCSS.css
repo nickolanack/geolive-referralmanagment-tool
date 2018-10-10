@@ -10,6 +10,9 @@ $config=new core\Configuration('iconset');
     min-width: 200px;
     font-size: 15px;
 }
+.iw-content {
+    color: black;
+}
 
 
 .layers {
