@@ -14644,5 +14644,23 @@
             "widgetTitle": "activityfeed.create.default.tasks.text",
             "target": "activityfeed.create.default.tasks.text"
         }
+    },
+    "widget.299": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "activityfeed-add-proposal-projectLetters-text.contentTemplate.html",
+            "widgetTitle": "activityfeed.add.proposal.projectLetters.text",
+            "target": "activityfeed.add.proposal.projectLetters.text"
+        }
+    },
+    "widget.300": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "activityfeed-remove-proposal-projectLetters-text.contentTemplate.html",
+            "widgetTitle": "activityfeed.remove.proposal.projectLetters.text",
+            "target": "activityfeed.remove.proposal.projectLetters.text"
+        }
     }
 }

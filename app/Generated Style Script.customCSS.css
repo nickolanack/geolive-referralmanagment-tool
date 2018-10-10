@@ -3,6 +3,14 @@ $config=new core\Configuration('iconset');
 
  ?>
 
+.iw-title {
+    color: black;
+    padding: 2px;
+    margin-bottom: 10px;
+    min-width: 200px;
+    font-size: 15px;
+}
+
 
 .layers {
     display: inline-block;
