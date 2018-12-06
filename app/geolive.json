@@ -62,7 +62,14 @@
             "uploadViewInlineCss": "",
             "uploadViewPageScript": "",
             "enableFileAttributes": false,
-            "fileAttributesTableName": "filesystemAttributes"
+            "fileAttributesTableName": "filesystemAttributes",
+            "useS3Storage": false,
+            "bucket": "",
+            "folder": "",
+            "region": "us-west-2",
+            "version": "latest",
+            "key": "",
+            "secret": ""
         }
     },
     "plugin.12": {
@@ -215,7 +222,7 @@
         "parameters": {
             "clientSecretUrl": "XXXX-XXXX",
             "clientPublicUrl": "https:\/\/c09fa0b2d21146beadbbba9f59dc6710@sentry.io\/168882",
-            "enabled": true
+            "enabled": false
         }
     },
     "plugin.40": {
@@ -3931,6 +3938,7 @@
             "inlineReplyNamedForm": "",
             "emptyMessage": "There are no entries",
             "channel": "default",
+            "resolveChannelScript": "return defaultChannel;",
             "resolveItemScript": "return item;",
             "initialPostsScript": "return null;",
             "namedView": "defaultPostDetail",
