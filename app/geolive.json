@@ -2094,14 +2094,15 @@
             "onCreateScript": "",
             "onUpdateScript": "",
             "onSaveScript": "",
-            "templateName": "LoginWizard",
+            "templateName": "loginForm",
             "widgetTitle": "loginForm",
             "readAccess": "public",
             "reloadOnSuccess": true,
             "reloadUrl": "",
             "requireTarget": true,
             "target": "loginForm",
-            "onLoadScript": ""
+            "onLoadScript": "",
+            "resolveItemScript": "return item;"
         }
     },
     "widget.74": {
