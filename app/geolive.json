@@ -9092,19 +9092,21 @@
                                 "config": {
                                     "className": "login-form",
                                     "viewType": "form",
-                                    "namedView": "defaultView",
+                                    "namedView": "loginForm",
                                     "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
-                                    "namedFormView": "LoginWizard",
+                                    "namedFormView": "loginForm",
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
-                                    "insertAtTop": false
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             },
                             {
@@ -9120,11 +9122,13 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
-                                    "insertAtTop": false
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             }
                         ]
