@@ -47,7 +47,7 @@ Scaffold('browser.layers',
 <a class="document-clickable" href=""
 	onclick="return <?php
                         echo $vars['select']?>('<?php
-                        echo Core::HTML()->urlToRelative(UrlFrom($file));
+                        echo RelativeUrlFrom(UrlFrom($file));
                         ?>');"><?php
                         
                         if ($i == 0) {
