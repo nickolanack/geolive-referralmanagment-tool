@@ -5,7 +5,7 @@
  */
 //check is user is a proponent!
 Core::LoadPlugin('Attributes');
-$attribs=AttributesRecord::GetFields(Core::Client()->getUserId(), 'user', 'isCommunityMember', 'userAttributes');
+$attribs=AttributesRecord::GetFields(GetClient()->getUserId(), 'user', 'isCommunityMember', 'userAttributes');
 
 // if($attribs['isCommunityMember']==='true'){
         ?>
@@ -35,7 +35,7 @@ $attribs=AttributesRecord::GetFields(Core::Client()->getUserId(), 'user', 'isCom
 
 
 
-    if(Core::Client()->isGuest()){
+    if(GetClient()->isGuest()){
         ?>
         MapFactory.LoginWizard(map);
         <?php
@@ -86,7 +86,7 @@ $attribs=AttributesRecord::GetFields(Core::Client()->getUserId(), 'user', 'isCom
  */
 //check is user is a proponent!
 Core::LoadPlugin('Attributes');
-$attribs=AttributesRecord::GetFields(Core::Client()->getUserId(), 'user', 'isProponent', 'userAttributes');
+$attribs=AttributesRecord::GetFields(GetClient()->getUserId(), 'user', 'isProponent', 'userAttributes');
 
  //if($attribs['isProponent']==='true'){
         ?>
@@ -114,7 +114,7 @@ $attribs=AttributesRecord::GetFields(Core::Client()->getUserId(), 'user', 'isPro
    
    <?php 
 
-    if(Core::Client()->isGuest()){
+    if(GetClient()->isGuest()){
         ?>
         MapFactory.LoginWizard(map);
         <?php
@@ -155,7 +155,7 @@ $attribs=AttributesRecord::GetFields(Core::Client()->getUserId(), 'user', 'isPro
 
 //check if user is a proponent!
 Core::LoadPlugin('Attributes');
-$attribs=AttributesRecord::GetFields(Core::Client()->getUserId(), 'user', 'isLandsDepartment', 'userAttributes');
+$attribs=AttributesRecord::GetFields(GetClient()->getUserId(), 'user', 'isLandsDepartment', 'userAttributes');
 
  //if($attribs['isLandsDepartment']==='true'){
     ?>
@@ -182,7 +182,7 @@ $attribs=AttributesRecord::GetFields(Core::Client()->getUserId(), 'user', 'isLan
 
 
 
-    if(Core::Client()->isGuest()){
+    if(GetClient()->isGuest()){
         ?>
         MapFactory.LoginWizard(map);
         <?php
@@ -220,9 +220,9 @@ $attribs=AttributesRecord::GetFields(Core::Client()->getUserId(), 'user', 'isLan
  * Register User Group
  */
 //check is user is a proponent!
-if(!Core::Client()->isGuest()){
+if(!GetClient()->isGuest()){
     Core::LoadPlugin('Attributes');
-    $attribs=AttributesRecord::GetFields(Core::Client()->getUserId(), 'user', array('isLandsDepartment', 'isCommunityMember', 'isProponent'), 'userAttributes');
+    $attribs=AttributesRecord::GetFields(GetClient()->getUserId(), 'user', array('isLandsDepartment', 'isCommunityMember', 'isProponent'), 'userAttributes');
 
     if($attribs['isLandsDepartment']!=='true'&&
              $attribs['isCommunityMember']!=='true'&&
@@ -264,7 +264,7 @@ setTimeout(function(){
         // die(print_r($module,true));
         if ($module) {
             echo $module->display("map", "map.getNamedValue('EmailerTab')", 'tab', (object) array(
-                    'showAdminControls'=>Core::Client()->isAdmin()
+                    'showAdminControls'=>GetClient()->isAdmin()
                 )) . ";";
             ?>
                     module.load(null, tab.content, null);

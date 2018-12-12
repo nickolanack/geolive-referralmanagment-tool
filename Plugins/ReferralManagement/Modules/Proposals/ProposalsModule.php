@@ -51,7 +51,7 @@ class ProposalsModule extends Module implements core\PluginMember {
 
 
             return new ProposalsModule('.$map.', Object.append(Object.append({
-                user:' . Core::Client()->getUserId() .',
+                user:' . GetClient()->getUserId() .',
                 onDisplayElement:function(element, proposal){
 
 

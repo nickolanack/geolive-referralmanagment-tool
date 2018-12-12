@@ -229,7 +229,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 			$database = $this->getDatabase();
 
 			if (($id = (int) $database->createProposal(array(
-				'user' => Core::Client()->getUserId(),
+				'user' => GetClient()->getUserId(),
 				'metadata' => json_encode(array("email" => $params->validationData->email)),
 				'createdDate' => ($now = date('Y-m-d H:i:s')),
 				'modifiedDate' => $now,
@@ -284,7 +284,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 		
 		if (!Auth('memberof', 'lands-department', 'group')) {
-			$filter['user'] = Core::Client()->getUserId();
+			$filter['user'] = GetClient()->getUserId();
 		}
 
 		$database = $this->getDatabase();
@@ -724,11 +724,11 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	public function isUserInGroup($group) {
 
-		if (Core::Client()->isGuest()) {
+		if (GetClient()->isGuest()) {
 			return false;
 		}
 
-		if (Core::Client()->isAdmin()) {
+		if (GetClient()->isAdmin()) {
 			if (in_array($group, array('tribal-council', 'chief-council', 'lands-department', 'lands-department-manager', 'community-member'))) {
 				//return true;
 			}
@@ -740,9 +740,9 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 		GetPlugin('Attributes');
 		$attributeMap = array();
-		$attribs = (new attributes\Record('userAttributes'))->getValues(Core::Client()->getUserId(), 'user');
+		$attribs = (new attributes\Record('userAttributes'))->getValues(GetClient()->getUserId(), 'user');
 
-		//AttributesRecord::GetFields(Core::Client()->getUserId(), 'user', array_values($map), 'userAttributes');
+		//AttributesRecord::GetFields(GetClient()->getUserId(), 'user', array_values($map), 'userAttributes');
 
 		// if($group=='lands-department'){
 		//     if($attribs[$map['lands-department-manager']]===true||$attribs[$map['lands-department-manager']]==="true"){
@@ -761,7 +761,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 	public function getUserRoleIcon($id = -1) {
 
 		if ($id < 1) {
-			$id = Core::Client()->getUserId();
+			$id = GetClient()->getUserId();
 		}
 
 		$map = $this->getGroupAttributes();
@@ -807,7 +807,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	public function getUserRoles($id = -1) {
 		if ($id < 1) {
-			$id = Core::Client()->getUserId();
+			$id = GetClient()->getUserId();
 		}
 
 		$map = $this->getGroupAttributes();
@@ -857,7 +857,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 	public function getUserRoleLabel($id = -1) {
 
 		if ($id < 1) {
-			$id = Core::Client()->getUserId();
+			$id = GetClient()->getUserId();
 		}
 
 		$map = $this->getGroupAttributes();
@@ -894,7 +894,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		}
 
 		if ($id < 1) {
-			$id = Core::Client()->getUserId();
+			$id = GetClient()->getUserId();
 		}
 		if (!$metadata) {
 			$metadata = GetClient()->userMetadataFor($id);
@@ -955,7 +955,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 	public function getUsersAvatar($id = -1, $default = null) {
 
 		if ($id < 1) {
-			$id = Core::Client()->getUserId();
+			$id = GetClient()->getUserId();
 		}
 
 		GetPlugin('Attributes');
@@ -974,7 +974,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 	public function getUsersName($id = -1, $default = null) {
 
 		if ($id < 1) {
-			$id = Core::Client()->getUserId();
+			$id = GetClient()->getUserId();
 		}
 
 		$attribs = $this->_getUserAttributes($id);
@@ -987,14 +987,14 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 			return $default;
 		}
 
-		return Core::Client()->getRealName();
+		return GetClient()->getRealName();
 
 	}
 
 	public function getUsersEmail($id = -1, $default = null) {
 
 		if ($id < 1) {
-			$id = Core::Client()->getUserId();
+			$id = GetClient()->getUserId();
 		}
 
 		$attribs = $this->_getUserAttributes($id);
@@ -1006,14 +1006,14 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 			return $default;
 		}
 
-		return Core::Client()->getEmail();
+		return GetClient()->getEmail();
 
 	}
 
 	public function getUsersNumber($id = -1, $default = null) {
 
 		if ($id < 1) {
-			$id = Core::Client()->getUserId();
+			$id = GetClient()->getUserId();
 		}
 
 		$attribs = $this->_getUserAttributes($id);

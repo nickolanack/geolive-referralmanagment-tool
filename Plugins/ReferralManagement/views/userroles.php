@@ -58,7 +58,7 @@ HtmlBlock('page',
                 array(
                     
                    // 'listTitle' => 'Active Widgets',
-                    'list' => Core::Client()->listUsers(),
+                    'list' => GetClient()->listUsers(),
   
                     'maxSelections' => 1,
                     'emptyMessage' => 'There are no users.',

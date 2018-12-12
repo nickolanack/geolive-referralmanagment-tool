@@ -64,7 +64,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		$response = array('results' => $this->getPlugin()->getActiveProjectList());
 
-		$userCanSubscribe = Core::Client()->isAdmin();
+		$userCanSubscribe = GetClient()->isAdmin();
 		if ($userCanSubscribe) {
 			$response['subscription'] = array(
 				'channel' => 'proposals',

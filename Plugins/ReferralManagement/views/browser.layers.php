@@ -12,12 +12,12 @@ Scaffold('browser.layers',
 
 		'user-section' => function () use($vars) {
             
-            $clientId = Core::Client()->getUserId();
+            $clientId = GetClient()->getUserId();
             $userId = (int) UrlVar('user', $clientId);
             
             $theUser = false;
             
-            if ($userId != $clientId && Core::Client()->isAdmin()) {
+            if ($userId != $clientId && GetClient()->isAdmin()) {
                 $theUser = GetUserFiles()->getFileManager()->getUsersShare($userId);
             } else {
                 $theUser = GetUserFiles()->getFileManager()->getCurrentUserShare();
@@ -39,7 +39,7 @@ Scaffold('browser.layers',
                 array(
                     'files' => $filteredFiles,
                     'type' => 'Document',
-                    'legend' => 'Spatial Files: ' . Core::Client()->userMetadataFor($theUser->getId())['name'],
+                    'legend' => 'Spatial Files: ' . GetClient()->userMetadataFor($theUser->getId())['name'],
                     
                     'fileCallback' => function ($file, $i) use(&$fileAuth, &$vars) {
                         
