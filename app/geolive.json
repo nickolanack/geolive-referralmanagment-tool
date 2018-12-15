@@ -14675,5 +14675,14 @@
             "widgetTitle": "activityfeed.remove.proposal.projectLetters.text",
             "target": "activityfeed.remove.proposal.projectLetters.text"
         }
+    },
+    "widget.301": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "activityfeed-remove-proposal-description-text.contentTemplate.html",
+            "widgetTitle": "activityfeed.remove.proposal.description.text",
+            "target": "activityfeed.remove.proposal.description.text"
+        }
     }
 }
