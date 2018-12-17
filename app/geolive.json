@@ -2354,9 +2354,10 @@
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
-            "customCSS": "Generated Style Script.customCSS.css",
+            "cacheable": false,
             "widgetTitle": "Generated Style Script",
             "target": "forTheMap",
+            "customCSS": "Generated Style Script.customCSS.css",
             "readAccess": "public"
         }
     },
@@ -4136,9 +4137,10 @@
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
-            "customCSS": "ReferralManagement Dashboard Theme.customCSS.css",
+            "cacheable": false,
             "widgetTitle": "ReferralManagement Dashboard Theme",
             "target": "firelightDashboardTheme",
+            "customCSS": "ReferralManagement Dashboard Theme.customCSS.css",
             "readAccess": "public"
         }
     },
@@ -5502,9 +5504,10 @@
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
-            "customCSS": "ReferralManagement Generated Styles.customCSS.css",
+            "cacheable": true,
             "widgetTitle": "ReferralManagement Generated Styles",
             "target": "firelightGeneratedStyles",
+            "customCSS": "ReferralManagement Generated Styles.customCSS.css",
             "readAccess": "public"
         }
     },
