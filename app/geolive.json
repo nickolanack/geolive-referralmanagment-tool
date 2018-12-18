@@ -2354,7 +2354,7 @@
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
-            "cacheable": false,
+            "cacheable": true,
             "widgetTitle": "Generated Style Script",
             "target": "forTheMap",
             "customCSS": "Generated Style Script.customCSS.css",
