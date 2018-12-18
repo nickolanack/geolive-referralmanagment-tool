@@ -9,11 +9,11 @@
 
 
 .project-type-missing-tasks-hint {
-    background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/tree.png"); ?>?tint=rgb(198, 175, 79)");
+    background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/tree.png?tint=rgb(198, 175, 79)"); ?>");
 }
 
 button.btn-reset-list {
-    background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/reset.png"); ?>?tint=rgb(106, 233, 191)");
+    background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/reset.png?tint=rgb(106, 233, 191)"); ?>");
 
     width: 20px;
     height: 20px;
