@@ -69,7 +69,9 @@
             "region": "us-west-2",
             "version": "latest",
             "key": "XXXX-XXXX",
-            "secret": "XXXX-XXXX"
+            "secret": "XXXX-XXXX",
+            "useCloudFront": true,
+            "cloudFrontDomain": "https:\/\/dyl2vw577xcfk.cloudfront.net\/"
         }
     },
     "plugin.12": {
@@ -222,7 +224,7 @@
         "parameters": {
             "clientSecretUrl": "XXXX-XXXX",
             "clientPublicUrl": "https:\/\/c09fa0b2d21146beadbbba9f59dc6710@sentry.io\/168882",
-            "enabled": false
+            "enabled": true
         }
     },
     "plugin.40": {
@@ -2352,9 +2354,10 @@
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
-            "customCSS": "Generated Style Script.customCSS.css",
+            "cacheable": true,
             "widgetTitle": "Generated Style Script",
             "target": "forTheMap",
+            "customCSS": "Generated Style Script.customCSS.css",
             "readAccess": "public"
         }
     },
@@ -4134,9 +4137,10 @@
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
-            "customCSS": "ReferralManagement Dashboard Theme.customCSS.css",
+            "cacheable": false,
             "widgetTitle": "ReferralManagement Dashboard Theme",
             "target": "firelightDashboardTheme",
+            "customCSS": "ReferralManagement Dashboard Theme.customCSS.css",
             "readAccess": "public"
         }
     },
@@ -5500,9 +5504,10 @@
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
-            "customCSS": "ReferralManagement Generated Styles.customCSS.css",
+            "cacheable": true,
             "widgetTitle": "ReferralManagement Generated Styles",
             "target": "firelightGeneratedStyles",
+            "customCSS": "ReferralManagement Generated Styles.customCSS.css",
             "readAccess": "public"
         }
     },
@@ -14674,6 +14679,15 @@
             "contentTemplate": "activityfeed-remove-proposal-projectLetters-text.contentTemplate.html",
             "widgetTitle": "activityfeed.remove.proposal.projectLetters.text",
             "target": "activityfeed.remove.proposal.projectLetters.text"
+        }
+    },
+    "widget.301": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "activityfeed-remove-proposal-description-text.contentTemplate.html",
+            "widgetTitle": "activityfeed.remove.proposal.description.text",
+            "target": "activityfeed.remove.proposal.description.text"
         }
     }
 }
