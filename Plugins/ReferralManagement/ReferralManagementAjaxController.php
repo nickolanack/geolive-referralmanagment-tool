@@ -423,7 +423,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		$parser = new \ReferralManagement\ComputedData();
 
 		$localPath = function ($url) {
-			if (HtmlDocument()->isLocalFileUrl($url)) {
+			if ((new \core\html\Path())->isHostedLocally($url)) {
 				return PathFrom($url);
 			}
 

@@ -16,7 +16,7 @@ $config['datasource'] = function () use ($configDBFile, $defaultDatasource) {
 	$domain = explode(':', HtmlDocument()->getDomain());
 	$domain = $domain[0];
 
-	error_log($domain);
+	error_log('core-app-config:'.$domain);
 
 	if ($domain !== 'wabun.geolive.ca') {
 
