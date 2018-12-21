@@ -14701,5 +14701,14 @@
             "widgetTitle": "activityfeed.add.proposal.spatialFeatures.text",
             "target": "activityfeed.add.proposal.spatialFeatures.text"
         }
+    },
+    "widget.303": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "activityfeed-remove-proposal-spatialFeatures-text.contentTemplate.html",
+            "widgetTitle": "activityfeed.remove.proposal.spatialFeatures.text",
+            "target": "activityfeed.remove.proposal.spatialFeatures.text"
+        }
     }
 }
