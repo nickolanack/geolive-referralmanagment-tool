@@ -4138,8 +4138,8 @@
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
-            "cacheable": false,
-            "link": false,
+            "cacheable": true,
+            "link": true,
             "widgetTitle": "ReferralManagement Dashboard Theme",
             "target": "firelightDashboardTheme",
             "customCSS": "ReferralManagement Dashboard Theme.customCSS.css",
