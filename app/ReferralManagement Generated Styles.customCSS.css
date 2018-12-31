@@ -289,7 +289,7 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
             ?>
 
             .ui-view.dashboard-main:after {
-                background-image: url("<?php echo UrlFrom($backgroundImage); ?>");
+                background-image: url("<?php echo UrlFrom($backgroundImage."?thumb=>200x>200"); ?>");
                 position: fixed;
                 width: 100%;
                 height: 100%;
