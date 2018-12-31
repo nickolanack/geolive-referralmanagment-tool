@@ -298,6 +298,7 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
                 left: 0;
                 opacity: 0.2;
                 pointer-events: none;
+                    background-size: cover;
             }
             <?php
         }
