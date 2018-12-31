@@ -1,8 +1,8 @@
 {
     "type": "InlineHtml",
     "config": {
-        "className": "login-form application-logo",
-        "text": "Loading Dashboard",
+        "className": "application-logo",
+        "text": "<div style=\"    height: 200px;\n    background-size: auto 100%;\n    background-position: center;\n    background-repeat: no-repeat;\n    margin-bottom: 50px;\n    display: inline-block;\n    width: 100%;\n    line-height: 30;\n    position: relative;\n    top: 100px;\n    text-align: center;\">Loading Dashboard<\/div>",
         "template": "",
         "templateVariablesScript": ""
     }
