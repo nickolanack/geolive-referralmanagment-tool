@@ -224,7 +224,8 @@
         "parameters": {
             "clientSecretUrl": "XXXX-XXXX",
             "clientPublicUrl": "https:\/\/c09fa0b2d21146beadbbba9f59dc6710@sentry.io\/168882",
-            "enabled": true
+            "enabled": true,
+            "enabledFrontEnd": false
         }
     },
     "plugin.40": {
@@ -14729,7 +14730,15 @@
                     },
                     "content": {
                         "modules": [
-                            "dashboardLoader.metadata.positions.content.modules.0.json"
+                            "dashboardLoader.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "dashboardLoader.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            }
                         ]
                     },
                     "footer": {
