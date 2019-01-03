@@ -9507,7 +9507,9 @@
             "customScript": "Generate Map Layer Group Legends.customScript.js",
             "widgetTitle": "Generate Map Layer Group Legends",
             "target": "forTheMap",
-            "readAccess": "public"
+            "readAccess": "public",
+            "language": "html\/text",
+            "returnsValue": false
         }
     },
     "widget.229": {
