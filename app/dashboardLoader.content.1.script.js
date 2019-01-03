@@ -1,3 +1,3 @@
 return function(){
-    return "Hello world";
+    applicatoin.getChildView('content',0).redraw({"namedView":"dashboard"})
 }
