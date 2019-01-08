@@ -63,7 +63,7 @@
             "uploadViewPageScript": "",
             "enableFileAttributes": false,
             "fileAttributesTableName": "filesystemAttributes",
-            "useS3Storage": true,
+            "useS3Storage": false,
             "bucket": "nickolanackbucket",
             "folder": "wabun",
             "region": "us-west-2",
