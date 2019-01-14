@@ -201,6 +201,8 @@
         "name": "Email",
         "instance": "Email",
         "parameters": {
+            "fromEmail": "geolivemap.ca+rmt@gmail.com",
+            "fromEmailName": "The Referral Management Tool",
             "useSmtp": true,
             "smtpHost": "smtp.gmail.com",
             "username": "XXXX-XXXX",
@@ -209,8 +211,9 @@
             "useMailgun": false,
             "domain": "",
             "apiKey": "",
-            "fromEmail": "geolivemap.ca+rmt@gmail.com",
-            "fromEmailName": "The Referral Management Tool",
+            "validateSenderDomain": false,
+            "useGlobalMailTemplate": true,
+            "globalTemplate": "DefaultMailerTemplate",
             "recieveMail": false,
             "recieveMailSecretToken": "XXXX-XXXX"
         }
