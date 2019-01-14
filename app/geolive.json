@@ -14905,5 +14905,14 @@
             "widgetTitle": "email.VerifyEmailLink.content",
             "target": "email.VerifyEmailLink.content"
         }
+    },
+    "widget.312": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "{{message|raw}}",
+            "widgetTitle": "email.DefaultMailerTemplate.subject",
+            "target": "email.DefaultMailerTemplate.subject"
+        }
     }
 }
