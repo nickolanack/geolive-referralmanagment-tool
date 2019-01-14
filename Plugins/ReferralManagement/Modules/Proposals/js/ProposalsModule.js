@@ -26,7 +26,7 @@ var ProposalsModule = new Class({
 
         me.fireEvent('load');
 
-        var ProposalListQuery = new Class({
+        var ProjectListQuery = new Class({
             Extends: AjaxControlQuery,
             initialize: function() {
                 this.parent(CoreAjaxUrlRoot, 'list_proposals', {
@@ -102,7 +102,7 @@ var ProposalsModule = new Class({
         var ProposalsList = new Class({
             Extends: MarkerAggregator,
             _getRequest: function(filters) {
-                return (new ProposalListQuery()).addEvent('onSuccess', function(r) {
+                return (new ProjectListQuery()).addEvent('onSuccess', function(r) {
                     if (r.success && r.results.length) {
                         label.innerHTML = 'There ' + (r.results.length == 1 ? "is" : "are") + ' ' + (r.results.length) + ' application' + (r.results.length == 1 ? "" : "s");
                     } else {

@@ -20,6 +20,10 @@ var ReferralManagementUser = new Class({
 			var me = this;
 			return me.options.metadata.roles;
 		},
+		getRolesUserCanAssign: function() {
+			var me = this;
+			return me.options.metadata['can-assignroles'];
+		},
 		isTeamMember:function(){
 			var me=this;
 			var roles=me.getRoles();
@@ -35,7 +39,34 @@ var ReferralManagementUser = new Class({
 
 			return false;
 		},
+		isCommunityMember:function(){
+			var me=this;
+			var roles=me.getRoles();
 
+			if(roles.length){
+				return ([
+					"community-member"
+            	]).indexOf(roles[0])>=0;
+			}
+
+			return false;
+		},
+		isUnassigned:function(){
+			var me=this;
+			var roles=me.getRoles();
+			
+			if(roles.length){
+				return ([
+					"tribal-council",
+		            "chief-council",
+		            "lands-department-manager",
+		            "lands-department",
+					"community-member"
+            	]).indexOf(roles[0])==-1;
+			}
+
+			return true;
+		},
 		isTeamManager:function(){
 			var me=this;
 			var roles=me.getRoles();
@@ -56,6 +87,15 @@ var ReferralManagementUser = new Class({
 			var me=this;
 			return me.options.metadata['role-icon'];
 		},
+		setData:function(data){
+			var me=this;
+			var json=JSON.stringify(me.options.metadata);
+			me.options.metadata=data;
+			if(json!==JSON.stringify(data)){
+				me.fireEvent('update');
+			}
+			return me;
+		},
 		save: function(callback) {
 			var me = this;
 			AppClient.authorize('write', {
@@ -70,6 +110,7 @@ var ReferralManagementUser = new Class({
 					callback(false);
 				}
 			});
+			return me;
 		},
 		getProfileIcon:function(){
 			var me=this;

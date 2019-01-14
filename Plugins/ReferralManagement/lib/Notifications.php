@@ -366,6 +366,14 @@ class Notifications {
 
 	}
 
+	public function onTeamUserListChanged($team, $data=array()){
+		Broadcast('userlist', 'update', array_merge($data, array('team'=>$team)));
+	}
+	public function onTeamDeviceListChanged($team, $data=array()){
+		Broadcast('devicelist', 'update', array_merge($data, array('team'=>$team)));
+	}
+
+
 	public function onAddTeamMemberToTask($user, $task) {
 
 		$this->queueEmailTaskUpdate($task, array(
@@ -387,21 +395,25 @@ class Notifications {
 
 	private function broadcastProjectUpdate($id) {
 
+
+		Broadcast('proposals', 'update', array(
+			'updated'=>array($id)
+		));
+
 		Broadcast('proposal.' . $id, 'update', array(
 			'user' => GetClient()->getUserId(),
 			'updated' => array((new \ReferralManagement\Project())->fromId($id)->toArray()),
 		));
+
+
 
 	}
 
 	private function broadcastTaskUpdate($id) {
 
 		$proposal = (new \ReferralManagement\Task())->fromId($id)->getItemId();
-
-		Broadcast('proposal.' . $proposal, 'update', array(
-			'user' => GetClient()->getUserId(),
-			'updated' => array((new \ReferralManagement\Project())->fromId($proposal)->toArray()),
-		));
+		$this->broadcastProjectUpdate($proposal);
+		
 
 	}
 

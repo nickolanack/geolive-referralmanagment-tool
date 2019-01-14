@@ -17,13 +17,34 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 	use core\TemplateRenderer;
 
 
+	protected function onUpdateAttributeRecord($params){
+
+		if($params->itemType==="user"){
+			(new \core\LongTaskProgress())
+				->emit('onTriggerUpdateUserList', array('team' => 1));
+			(new \core\LongTaskProgress())
+			->emit('onTriggerUpdateDeviceList', array('team' => 1));
+			return;
+		}
+
+		error_log($params->itemType);
+
+	}
+
 	protected function onTriggerUpdateUserList($params){
 
 		$cacheName="ReferralManagement.userList.json";
 		$cacheData = HtmlDocument()->getCachedPage($cacheName);
 
 		$users=$this->getUsers($params->team);
-		HtmlDocument()->setCachedPage($cacheName, json_encode($users));
+
+		$newData=json_encode($users);
+		HtmlDocument()->setCachedPage($cacheName, $newData);
+		if($newData!=$cacheData){
+			$this->notifier()->onTeamUserListChanged($params->team);
+		}
+
+		
 
 	}
 	protected function onTriggerUpdateDevicesList($params){
@@ -32,9 +53,26 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		$cacheData = HtmlDocument()->getCachedPage($cacheName);
 
 		$devices=$this->getDevices($params->team);
-		HtmlDocument()->setCachedPage($cacheName, json_encode($devices));
 
+		$newData=json_encode($devices);
+		HtmlDocument()->setCachedPage($cacheName, $newData);
+		if($newData!=$cacheData){
+			$this->notifier()->onTeamDeviceListChanged($params->team);
+		}
 
+	}
+
+	protected function onCreateUser($params){
+		foreach($this->getTeams() as $team){
+			(new \core\LongTaskProgress())
+				->emit('onTriggerUpdateUserList', array('team' => $team));
+		}
+	}
+	protected function onDeleteUser($params){
+		foreach($this->getTeams() as $team){
+			(new \core\LongTaskProgress())
+				->emit('onTriggerUpdateUserList', array('team' => $team));
+		}
 	}
 
 	protected function onTriggerImportTusFile($params){
@@ -836,7 +874,10 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 		$rolesList = $this->getRoles();
 		if (($id == -1 || $id == GetClient()->getUserId()) && GetClient()->isAdmin()) {
-			return $rolesList;
+
+
+
+			//return $rolesList;
 		}
 
 		$roles = $this->getUserRoles($id);
@@ -934,6 +975,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 				$metadata['teams'] = $this->getTeams($id);
 				$metadata['avatar'] = $this->getUsersAvatar($id);
 				$metadata['name'] = $this->getUsersName($id, $metadata['name']);
+				$metadata['lastName'] = $this->getUsersLastName($id, '');
 				$metadata['number'] = $this->getUsersNumber($id);
 				$metadata['email'] = $this->getUsersEmail($id, $metadata['email']);
 				$metadata['can-assignroles']=$this->getRolesUserCanEdit($id);
@@ -988,6 +1030,26 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		}
 
 		return GetClient()->getRealName();
+
+	}
+
+	public function getUsersLastName($id = -1, $default = null) {
+
+		if ($id < 1) {
+			$id = GetClient()->getUserId();
+		}
+
+		$attribs = $this->_getUserAttributes($id);
+
+		if ($attribs["lastName"]) {
+			return $attribs["lastName"];
+		}
+
+		if ($default) {
+			return $default;
+		}
+
+		return '';
 
 	}
 

@@ -64,13 +64,21 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		$response = array('results' => $this->getPlugin()->getActiveProjectList());
 
-		$userCanSubscribe = GetClient()->isAdmin();
-		if ($userCanSubscribe) {
+		//$userCanSubscribe = GetClient()->isAdmin();
+		//if ($userCanSubscribe) {
 			$response['subscription'] = array(
 				'channel' => 'proposals',
 				'event' => 'update',
 			);
-		}
+		//}
+
+		return $response;
+
+	}
+
+	protected function getProject($json) {
+
+		$response = array('results' => $this->getPlugin()->getProjectList(array('id'=>$json->project)));
 
 		return $response;
 
@@ -301,10 +309,14 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		}
 
 
+		(new \core\LongTaskProgress())->emit('onTriggerUpdateUserList', array('team' => $json->team));
+
+
 		return array(
-			'subscription' => (new \core\LongTaskProgress())
-				->emit('onTriggerUpdateUserList', array('team' => $json->team))
-				->getSubscription(),
+			'subscription' => array(
+				'channel' => 'userlist',
+				'event' => 'update',
+			),
 			"results" =>$users,
 		);
 	}
@@ -320,11 +332,14 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			$devices=$this->getPlugin()->getDevices($json->team);
 			HtmlDocument()->setCachedPage($cacheName, json_encode($devices));
 		}
+
+		(new \core\LongTaskProgress())->emit('onTriggerUpdateDevicesList', array('team' => $json->team));
 	
 		return array(
-			'subscription' => (new \core\LongTaskProgress())
-				->emit('onTriggerUpdateDevicesList', array('team' => $json->team))
-				->getSubscription(),
+			'subscription' =>array(
+				'channel' => 'devicelist',
+				'event' => 'update',
+			),
 			"results" => $devices
 		);
 	}
@@ -401,11 +416,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		}
 
 	}
-	protected function getProposal(/*$json*/) {
-
-		return $this->setError('Not implemented');
-
-	}
+	
 
 	protected function generateReport($json) {
 
@@ -669,6 +680,9 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			if (empty(array_intersect($userRoles, $canSetList)) && !empty($userRoles)) {
 				return $this->setError('Target user: ' . json_encode($userRoles) . ' is not in role that is editable by user: ' . json_encode($canSetList));
 			}
+
+			(new \core\LongTaskProgress())->emit('onTriggerUpdateDevicesList', array('team' => 1));
+			(new \core\LongTaskProgress())->emit('onTriggerUpdateUserList', array('team' => 1));
 
 		}
 
