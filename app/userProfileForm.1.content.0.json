@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "return ReferralManagementDashboard.createProfileButtons(item);",
+        "script": "\nif(item.getId()+\"\"!==AppClient.getId()+\"\"){\n    return null;\n}\n\nvar d=new ElementModule('div',{\n    styles:{\n        \"display\": \"inline-table\",\n        \"width\": \"100%\",\n        \"border-bottom\": \"1px dotted #6A7CE9\"\n    }\n});\nvar b=new Element('button',{\"class\":\"primary-btn warn\", \"html\":\"Log Out\", events:{\"click\":function(){\n    AppClient.logout();\n}}});\nd.appendChild(b);\n\n\nreturn d;",
         "description": "Info about my custom script"
     }
 }

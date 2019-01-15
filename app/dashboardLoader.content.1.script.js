@@ -1,6 +1,5 @@
 return function(){
-    setTimeout(function(){
-         ReferralManagementDashboard.loadUserDashboardView(application);
-    }, 1000);
-   
+    ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+        application.getChildView('content',0).redraw({"namedView":"dashboardContent"})
+    });
 }
