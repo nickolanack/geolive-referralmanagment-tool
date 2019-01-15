@@ -14773,9 +14773,20 @@
         "name": "Icon Set",
         "instance": "IconSet",
         "parameters": {
-            "markerIconset": [],
-            "iconsetMetadata": [],
-            "target": "none"
+            "markerIconset": [
+                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/8UH_7cI_[G]_[ImAgE]_2f6.png"
+            ],
+            "iconsetMetadata": {
+                "layerMap": {
+                    "components\/com_geolive\/users_files\/user_files_680\/Uploads\/8UH_7cI_[G]_[ImAgE]_2f6.png": null
+                },
+                "renderSettings": []
+            },
+            "target": "none",
+            "layerMap": [],
+            "tipMap": [],
+            "widgetTitle": "",
+            "readAccess": "public"
         }
     }
 }
