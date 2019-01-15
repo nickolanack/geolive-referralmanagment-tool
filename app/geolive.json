@@ -57,15 +57,15 @@
         "instance": "Filesystem",
         "parameters": {
             "enableFileMetadataCache": true,
-            "showDropboxImagePicker": false,
+            "showDropboxImagePicker": true,
             "dropbox-app-key": "",
             "uploadViewInlineCss": "",
             "uploadViewPageScript": "",
             "enableFileAttributes": false,
             "fileAttributesTableName": "filesystemAttributes",
-            "useS3Storage": false,
+            "useS3Storage": true,
             "bucket": "nickolanackbucket",
-            "folder": "wabun",
+            "folder": "wabun.geoforms.ca",
             "region": "us-west-2",
             "version": "latest",
             "key": "XXXX-XXXX",
@@ -98,7 +98,8 @@
                 "no-role",
                 "lands-department-manager",
                 "tribal-council",
-                "chief-council"
+                "chief-council",
+                ""
             ],
             "customUserScript": "plugin.Users.13.customUserScript.js",
             "customGroupMemberOfGroupScript": "plugin.Users.13.customGroupMemberOfGroupScript.js",
@@ -106,9 +107,9 @@
             "userProfileImageScript": "return $defaultImage;",
             "validateEmail": true,
             "magicLinkUrl": "magic-link",
-            "useRecaptcha": false,
-            "recaptchaKey": false,
-            "recaptchaSecret": false
+            "useRecaptcha": true,
+            "recaptchaKey": "XXXX-XXXX",
+            "recaptchaSecret": "XXXX-XXXX"
         }
     },
     "plugin.15": {
@@ -211,7 +212,7 @@
             "domain": "",
             "apiKey": "",
             "validateSenderDomain": false,
-            "useGlobalMailTemplate": false,
+            "useGlobalMailTemplate": true,
             "globalTemplate": "DefaultMailerTemplate",
             "recieveMail": false,
             "recieveMailSecretToken": "XXXX-XXXX"
@@ -232,7 +233,7 @@
         "parameters": {
             "clientSecretUrl": "XXXX-XXXX",
             "clientPublicUrl": "https:\/\/c09fa0b2d21146beadbbba9f59dc6710@sentry.io\/168882",
-            "enabled": true,
+            "enabled": false,
             "enabledFrontEnd": false
         }
     },
@@ -255,7 +256,7 @@
         "name": "Single SignOn Plugin",
         "instance": "SingleSignOn",
         "parameters": {
-            "facebookAppId": "1789459508031974",
+            "facebookAppId": "229016718021508",
             "facebookAppSecret": "XXXX-XXXX",
             "googleAuthClientId": ""
         }
@@ -2324,19 +2325,19 @@
                 }
             },
             "townships": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[G]_DCm_[ImAgE]_ltp_eVk.png"
+                "webresources\/config-113\/925f4.[G]_DCm_[ImAgE]_ltp_eVk.png"
             ],
             "mining": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[ImAgE]_Dzb_5cE_2my_[G].png"
+                "webresources\/config-113\/7c7d3.[ImAgE]_Dzb_5cE_2my_[G].png"
             ],
             "forestry": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[ImAgE]_Mdb_[G]_Dy8_hTg.png"
+                "webresources\/config-113\/64d63.[ImAgE]_Mdb_[G]_Dy8_hTg.png"
             ],
             "community": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[G]_3ic_dQv_fcv_[ImAgE].png"
+                "webresources\/config-113\/ab9ba.[G]_3ic_dQv_fcv_[ImAgE].png"
             ],
             "boundary": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/aDB_6U0_[G]_v15_[ImAgE].png"
+                "webresources\/config-113\/30cb8.aDB_6U0_[G]_v15_[ImAgE].png"
             ],
             "widgetTitle": "Group Layer Iconset",
             "target": "iconset",
@@ -2357,11 +2358,13 @@
             "communityMouseover": "<span style=\"font-size:20px\">Community Data<\/span><\/br>These map layers contain information provided by the community about Culture, Environment, Habitat, Subsistence and Transportation.",
             "boundaryMouseover": "<span style=\"font-size:20px\">Boundary Data<\/span><\/br>These map layers display information about the location of the boundaries between the five different First Nations that make up the Wabun Tribal Council.",
             "crowdsource": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[G]_tY7_o8O_[ImAgE]_Clx.png"
+                "webresources\/config-113\/184ba.[G]_tY7_o8O_[ImAgE]_Clx.png"
             ],
             "crowdsourceMouseover": "<span style=\"font-size:20px\">Community Crowdsourced Data<\/span> <\/br>These map layers contain photographs taken by community members in the territory. These present information about Culture, Environment, Habitat, Subsistence and Transportation.",
             "crowdsourceTint": "rgb(0,0,0)",
-            "crowdsourceColor": "rgb(180, 53, 53)"
+            "crowdsourceColor": "rgb(180, 53, 53)",
+            "formatParametersScript": "return $parameters;",
+            "formatOutputScript": "return $parameters;"
         }
     },
     "widget.115": {
@@ -2713,28 +2716,28 @@
             "userRoleTint": "rgb(0,0,0)",
             "userRoleColor": "rgb(0,0,0)",
             "chief-council": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/oos_[ImAgE]_[G]_271_QMT.png"
+                "webresources\/config-123\/c66dc.oos_[ImAgE]_[G]_271_QMT.png"
             ],
             "tribal-council": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[ImAgE]_[G]_IUY_Dfn_8j5.png"
+                "webresources\/config-123\/36adb.[ImAgE]_[G]_IUY_Dfn_8j5.png"
             ],
             "lands-department": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[G]_05J_[ImAgE]_saW_pkR.png"
+                "webresources\/config-123\/b6ebf.[G]_05J_[ImAgE]_saW_pkR.png"
             ],
             "lands-department-manager": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[G]_e8v_sp7_pry_[ImAgE].png"
+                "webresources\/config-123\/90a51.[G]_e8v_sp7_pry_[ImAgE].png"
             ],
             "community-member": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[G]_[ImAgE]_YkP_mvQ_BmV.png"
+                "webresources\/config-123\/127a7.[G]_[ImAgE]_YkP_mvQ_BmV.png"
             ],
             "widgetTitle": "User Roles Iconset",
             "target": "rolesicons",
             "readAccess": "public",
             "none": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/Mu0_vyJ_fT1_[G]_[ImAgE].png"
+                "webresources\/config-123\/253e2.Mu0_vyJ_fT1_[G]_[ImAgE].png"
             ],
             "admin": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/nZ_[G]_[ImAgE]_Ypd_3JD.png"
+                "webresources\/config-123\/a37c7.nZ_[G]_[ImAgE]_Ypd_3JD.png"
             ],
             "formatParametersScript": "return $parameters;",
             "user role tint": "rgb(0,0,0)",
@@ -3016,35 +3019,35 @@
                 }
             },
             "permit": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/Toh_KCW_[ImAgE]_b7H_[G].png"
+                "webresources\/config-134\/b0ab2.Toh_KCW_[ImAgE]_b7H_[G].png"
             ],
             "permitTint": "rgb(255, 255, 255)",
             "agreement": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/IGt_rEw_N6h_[ImAgE]_[G].png"
+                "webresources\/config-134\/9c527.IGt_rEw_N6h_[ImAgE]_[G].png"
             ],
             "agreementTint": "rgb(255, 255, 255)",
             "document": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/kxf_[ImAgE]_YB_[G]_q2t.png"
+                "webresources\/config-134\/3fdef.kxf_[ImAgE]_YB_[G]_q2t.png"
             ],
             "documentTint": "rgb(255, 255, 255)",
             "spatial": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[ImAgE]_vOb_tnQ_[G]_d4c.png"
+                "webresources\/config-134\/b40cb.[ImAgE]_vOb_tnQ_[G]_d4c.png"
             ],
             "spatialTint": "rgb(255, 255, 255)",
             "widgetTitle": "Proposal Item Icons",
             "target": "documentTypes",
             "readAccess": "public",
             "flag": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/dt_12m_[G]_[ImAgE]_FrO.png"
+                "webresources\/config-134\/91302.dt_12m_[G]_[ImAgE]_FrO.png"
             ],
             "flagTint": "rgb(136, 136, 136)",
             "flagTintActive": "rgb(170, 31, 31)",
             "map": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/999_[G]_zWR_RD7_[ImAgE].png"
+                "webresources\/config-134\/36a21.999_[G]_zWR_RD7_[ImAgE].png"
             ],
             "mapTint": "rgb(0,0,0)",
             "share": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[G]_oFZ_DDq_[ImAgE]_jaI.png"
+                "webresources\/config-134\/e511b.[G]_oFZ_DDq_[ImAgE]_jaI.png"
             ],
             "shareTint": "rgb(0, 0, 0)",
             "lowHover": "rgb(0, 175, 170)",
@@ -3784,7 +3787,7 @@
             "target": "mobile-app-config",
             "readAccess": "public",
             "appLogo": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/5Sf_GLa_[ImAgE]_[G]_8gZ.png"
+                "webresources\/config-143\/4a8f4.5Sf_GLa_[ImAgE]_[G]_8gZ.png"
             ],
             "water": [
                 "components\/com_geolive\/users_files\/user_files_680\/Uploads\/4MP_[G]_Hjy_UB1_[ImAgE].png"
@@ -3807,28 +3810,28 @@
             "other": [],
             "create-report": [],
             "map": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[G]_epL_[ImAgE]_Qp7_c2d.png"
+                "webresources\/config-143\/0620f.[G]_epL_[ImAgE]_Qp7_c2d.png"
             ],
             "folder": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/aQr_[ImAgE]_Eg4_[G]_8Ke.png"
+                "webresources\/config-143\/b5a98.aQr_[ImAgE]_Eg4_[G]_8Ke.png"
             ],
             "downloads": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/pPu_prn_Oqr_[G]_[ImAgE].png"
+                "webresources\/config-143\/0aa3d.pPu_prn_Oqr_[G]_[ImAgE].png"
             ],
             "cultural": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/lxJ_[G]_g3S_[ImAgE]_NFo.png"
+                "webresources\/config-143\/f4b56.lxJ_[G]_g3S_[ImAgE]_NFo.png"
             ],
             "environmental": [
                 "components\/com_geolive\/users_files\/user_files_681\/Uploads\/eCX_JfG_[G]_[ImAgE]_EOB.png"
             ],
             "habitation": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/dnx_7oB_wBK_[G]_[ImAgE].png"
+                "webresources\/config-143\/771f9.dnx_7oB_wBK_[G]_[ImAgE].png"
             ],
             "subsistence": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/CT4_[G]_a5A_aOy_[ImAgE].png"
+                "webresources\/config-143\/061bd.CT4_[G]_a5A_aOy_[ImAgE].png"
             ],
             "transportation": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[ImAgE]_gXh_7ig_[G]_zkc.png"
+                "webresources\/config-143\/925d3.[ImAgE]_gXh_7ig_[G]_zkc.png"
             ],
             "moose": [],
             "deer": [
@@ -3852,7 +3855,7 @@
             "formatParametersScript": "TUS Crowdsource app config.formatParametersScript.js",
             "splashScreenDuration": "1",
             "create-marker": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[G]_Bh0_twK_[ImAgE]_eXt.png"
+                "webresources\/config-143\/34d82.[G]_Bh0_twK_[ImAgE]_eXt.png"
             ],
             "create-marker-label": "Create Marker",
             "map-label": "Map",
@@ -3871,10 +3874,10 @@
             "dialog-submitform-title": "Form Submited",
             "app-style": "app-style.content",
             "survey": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/RU7_nCt_[ImAgE]_[G]_xV2.png"
+                "webresources\/config-143\/a7442.RU7_nCt_[ImAgE]_[G]_xV2.png"
             ],
             "about": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[ImAgE]_[G]_FlI_AsA_Fj7.png"
+                "webresources\/config-143\/6f29c.[ImAgE]_[G]_FlI_AsA_Fj7.png"
             ],
             "includes": [
                 "mobile-app-markers",
@@ -3890,7 +3893,7 @@
             "habitation-color": "rgb(0,0,0)",
             "habitation-color-active": "rgb(0,0,0)",
             "environment": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/EfR_V6A_[G]_r3m_[ImAgE].png"
+                "webresources\/config-143\/7c04d.EfR_V6A_[G]_r3m_[ImAgE].png"
             ],
             "environment-color": "rgb(0,0,0)",
             "environment-color-active": "rgb(0,0,0)",
@@ -3901,7 +3904,7 @@
             "environment-layer": "115",
             "formatOutputScript": "TUS Crowdsource app config.formatOutputScript.js",
             "profile": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/vpu_[ImAgE]_B7T_[G]_JRX.png"
+                "webresources\/config-143\/874c2.vpu_[ImAgE]_B7T_[G]_JRX.png"
             ],
             "profile-label": "Your Profile",
             "create-marker-color": "rgb(0, 93, 93)",
@@ -3912,31 +3915,31 @@
             "survey-color": "rgb(0,0,0)",
             "about-color": "rgb(0,0,0)",
             "share": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[G]_V0F_zJh_kwi_[ImAgE].png"
+                "webresources\/config-143\/440e7.[G]_V0F_zJh_kwi_[ImAgE].png"
             ],
             "add-audio": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[ImAgE]_ADd_[G]_P48_zaw.png"
+                "webresources\/config-143\/bb789.[ImAgE]_ADd_[G]_P48_zaw.png"
             ],
             "add-video": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/pyv_fUE_6zF_[G]_[ImAgE].png"
+                "webresources\/config-143\/57e27.pyv_fUE_6zF_[G]_[ImAgE].png"
             ],
             "add-image": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[ImAgE]_0K0_[G]_0LW_0nl.png"
+                "webresources\/config-143\/ab263.[ImAgE]_0K0_[G]_0LW_0nl.png"
             ],
             "record-audio": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[ImAgE]_K1d_uUd_[G]_Lpi.png"
+                "webresources\/config-143\/1f5b1.[ImAgE]_K1d_uUd_[G]_Lpi.png"
             ],
             "preview-audio": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[G]_[ImAgE]_LNi_ly8_KMs.png"
+                "webresources\/config-143\/b42e0.[G]_[ImAgE]_LNi_ly8_KMs.png"
             ],
             "remove-media": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/zIG_[ImAgE]_[G]_GZR_PVg.png"
+                "webresources\/config-143\/d9be7.zIG_[ImAgE]_[G]_GZR_PVg.png"
             ],
             "add-image-library": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[ImAgE]_[G]_MfV_kcW_K0y.png"
+                "webresources\/config-143\/6c4d5.[ImAgE]_[G]_MfV_kcW_K0y.png"
             ],
             "concerns": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[ImAgE]_NKG_[G]_0BD_Ofi.png"
+                "webresources\/config-143\/ac5f6.[ImAgE]_NKG_[G]_0BD_Ofi.png"
             ],
             "concerns-color": "rgb(0,0,0)",
             "concerns-color-active": "rgb(0,0,0)",
@@ -4287,67 +4290,67 @@
         "instance": "Configuration",
         "parameters": {
             "defaultUserImage": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/EPG_[G]_[ImAgE]_w98_Phj.png"
+                "webresources\/config-153\/75cbe.EPG_[G]_[ImAgE]_w98_Phj.png"
             ],
             "defaultMenuIcon": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/C7M_IcJ_[G]_[ImAgE]_qlx.png"
+                "webresources\/config-153\/5f6a0.C7M_IcJ_[G]_[ImAgE]_qlx.png"
             ],
             "menuIconTint": "rgb(106, 233, 191)",
             "main-dashboard": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[G]_[ImAgE]_U3O_uOW_JJG.png"
+                "webresources\/config-153\/8f3f1.[G]_[ImAgE]_U3O_uOW_JJG.png"
             ],
             "main-activity": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/VN7_[G]_h5t_b1b_[ImAgE].png"
+                "webresources\/config-153\/dac8c.VN7_[G]_h5t_b1b_[ImAgE].png"
             ],
             "main-projects": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[G]_TSD_1fK_87Y_[ImAgE].png"
+                "webresources\/config-153\/dcde2.[G]_TSD_1fK_87Y_[ImAgE].png"
             ],
             "main-tasks": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/RU7_nCt_[ImAgE]_[G]_xV2.png"
+                "webresources\/config-153\/a7442.RU7_nCt_[ImAgE]_[G]_xV2.png"
             ],
             "main-calendar": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/7Q4_[ImAgE]_[G]_8Ih_OA.png"
+                "webresources\/config-153\/6cac3.7Q4_[ImAgE]_[G]_8Ih_OA.png"
             ],
             "people-projects": [
                 "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[G]_MMr_[ImAgE]_38t_cHE.png"
             ],
             "people-clients": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/Dm5_bST_Dyg_[G]_[ImAgE].png"
+                "webresources\/config-153\/a584d.Dm5_bST_Dyg_[G]_[ImAgE].png"
             ],
             "people-users": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/iJ9_[ImAgE]_yXE_[G]_zOY.png"
+                "webresources\/config-153\/39afd.iJ9_[ImAgE]_yXE_[G]_zOY.png"
             ],
             "community-cultural": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/Jqg_[ImAgE]_YWQ_[G]_ksy.png"
+                "webresources\/config-153\/48db6.Jqg_[ImAgE]_YWQ_[G]_ksy.png"
             ],
             "community-transportation": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[ImAgE]_LzE_[G]_3z_dpx.png"
+                "webresources\/config-153\/4be92.[ImAgE]_LzE_[G]_3z_dpx.png"
             ],
             "community-habitation": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[ImAgE]_J2C_[G]_edQ_aBE.png"
+                "webresources\/config-153\/08503.[ImAgE]_J2C_[G]_edQ_aBE.png"
             ],
             "community-environmental": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[G]_s9m_uSw_[ImAgE]_DZg.png"
+                "webresources\/config-153\/8cdfb.[G]_s9m_uSw_[ImAgE]_DZg.png"
             ],
             "community-subsistence": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[G]_Xge_[ImAgE]_nNi_fjn.png"
+                "webresources\/config-153\/f7bcc.[G]_Xge_[ImAgE]_nNi_fjn.png"
             ],
             "accounting-documents": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/gie_[ImAgE]_i3O_VZj_[G].png"
+                "webresources\/config-153\/c5ece.gie_[ImAgE]_i3O_VZj_[G].png"
             ],
             "accounting-timesheet": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/3a5_MHY_Z52_[G]_[ImAgE].png"
+                "webresources\/config-153\/3874a.3a5_MHY_Z52_[G]_[ImAgE].png"
             ],
             "accounting-reports": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/Bds_[G]_[ImAgE]_7oY_kRG.png"
+                "webresources\/config-153\/2ce38.Bds_[G]_[ImAgE]_7oY_kRG.png"
             ],
             "attachmentTint": "rgb(106, 233, 191)",
             "attachmentIcon": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[ImAgE]_YtL_KY_[G]_4BK.png"
+                "webresources\/config-153\/27377.[ImAgE]_YtL_KY_[G]_4BK.png"
             ],
             "starTint": "rgb(237, 200, 76)",
             "starIcon": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[G]_LuM_[ImAgE]_5yw_t1C.png"
+                "webresources\/config-153\/f91aa.[G]_LuM_[ImAgE]_5yw_t1C.png"
             ],
             "contentTemplate": "",
             "comments": "",
@@ -4764,74 +4767,74 @@
             "formatParametersScript": "return $parameters;",
             "priorityTint": "rgb(255, 0, 0)",
             "priorityIcon": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/FeZ_[ImAgE]_Iku_YGO_[G].png"
+                "webresources\/config-153\/8ceae.FeZ_[ImAgE]_Iku_YGO_[G].png"
             ],
             "uploadTint": "rgb(255, 255, 255)",
             "imageUploadIcon": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/DF6_[G]_Q2i_[ImAgE]_mA8.png"
+                "webresources\/config-153\/8aee3.DF6_[G]_Q2i_[ImAgE]_mA8.png"
             ],
             "audioUploadIcon": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/kX8_[ImAgE]_PAX_[G]_wfn.png"
+                "webresources\/config-153\/b4b5e.kX8_[ImAgE]_PAX_[G]_wfn.png"
             ],
             "videoUploadIcon": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[G]_[ImAgE]_T2h_0cB_FIh.png"
+                "webresources\/config-153\/289dd.[G]_[ImAgE]_T2h_0cB_FIh.png"
             ],
             "documentUploadIcon": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/8my_9Uz_[G]_[ImAgE]_HrL.png"
+                "webresources\/config-153\/7257a.8my_9Uz_[G]_[ImAgE]_HrL.png"
             ],
             "layerUploadIcon": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/zw_[ImAgE]_xnI_[G]_GNZ.png"
+                "webresources\/config-153\/d4a8d.zw_[ImAgE]_xnI_[G]_GNZ.png"
             ],
             "configuration-settings": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/E6U_[G]_QJT_HkJ_[ImAgE].png"
+                "webresources\/config-153\/3613b.E6U_[G]_QJT_HkJ_[ImAgE].png"
             ],
             "overdueIcon": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/Z19_AVl_[G]_zcl_[ImAgE].png"
+                "webresources\/config-153\/64d12.Z19_AVl_[G]_zcl_[ImAgE].png"
             ],
             "remainingIcon": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/8Ai_b2z_xGz_[G]_[ImAgE].png"
+                "webresources\/config-153\/21fed.8Ai_b2z_xGz_[G]_[ImAgE].png"
             ],
             "overdueTint": "rgb(233, 106, 106)",
             "remainingTint": "rgb(180,180,180)",
             "configuration-archive": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[G]_m3o_LN2_N63_[ImAgE].png"
+                "webresources\/config-153\/ed4ac.[G]_m3o_LN2_N63_[ImAgE].png"
             ],
             "applicationLogo": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[ImAgE]_[G]_RPw_mJJ_iKQ.png"
+                "uploads-wabun.geoforms.ca\/user_files_1\/Uploads\/[ImAgE]_3AT_[G]_1vT_kaK.png"
             ],
             "formatOutputScript": "return $parameters;",
             "main-map": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[ImAgE]_HcO_[G]_sSm_8ws.png"
+                "webresources\/config-153\/7a1c5.[ImAgE]_HcO_[G]_sSm_8ws.png"
             ],
             "backgroundImage": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[ImAgE]_odW_mPg_bMr_[G].jpeg"
+                "webresources\/config-153\/dc82d.[ImAgE]_odW_mPg_bMr_[G].jpeg"
             ],
             "configuration-export": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/[G]_rAx_yYH_U0p_[ImAgE].png"
+                "webresources\/config-153\/ebb6f.[G]_rAx_yYH_U0p_[ImAgE].png"
             ],
             "leftNavigation": [],
             "rightNavigation": [],
             "prevNavIcon": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/z7b_[G]_[ImAgE]_h6A_mxB.png"
+                "webresources\/config-153\/f81fe.z7b_[G]_[ImAgE]_h6A_mxB.png"
             ],
             "nextNavIcon": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/vD0_[G]_J9p_b7m_[ImAgE].png"
+                "webresources\/config-153\/821c0.vD0_[G]_J9p_b7m_[ImAgE].png"
             ],
             "optionsMenuIcon": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/ImA_9Kb_eif_[G]_[ImAgE].png"
+                "webresources\/config-153\/bbd71.ImA_9Kb_eif_[G]_[ImAgE].png"
             ],
             "showFileThumbnails": false,
             "community-users": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/fLV_5RF_[ImAgE]_4Jz_[G].png"
+                "webresources\/config-153\/8738e.fLV_5RF_[ImAgE]_4Jz_[G].png"
             ],
             "community-mobile": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/nob_2A_[G]_ZED_[ImAgE].png"
+                "webresources\/config-153\/ede53.nob_2A_[G]_ZED_[ImAgE].png"
             ],
             "surveyMenuIcon": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/7YB_wHp_[ImAgE]_BVE_[G].png"
+                "webresources\/config-153\/66182.7YB_wHp_[ImAgE]_BVE_[G].png"
             ],
             "people-projectmembers": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[G]_MMr_[ImAgE]_38t_cHE.png"
+                "webresources\/config-153\/1c51d.[G]_MMr_[ImAgE]_38t_cHE.png"
             ]
         }
     },
@@ -5365,11 +5368,13 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
+                                    "targetName": "",
                                     "getItemListScript": "People Users Detail.metadata.positions.content.modules.1.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
                                     "formatListItemModuleScript": "People Users Detail.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
@@ -5654,8 +5659,9 @@
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
+                                    "name": "My Custom Script",
                                     "script": "Projects Overview Detail.metadata.positions.content.modules.1.config.script.js",
-                                    "identifier": "customScriptElement"
+                                    "description": "Info about my custom script"
                                 }
                             },
                             {
@@ -5672,11 +5678,13 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "initModuleScript": "",
                                     "formatModuleScript": "Projects Overview Detail.metadata.positions.content.modules.2.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
+                                    "targetName": "",
                                     "getItemListScript": "Projects Overview Detail.metadata.positions.content.modules.2.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
                                     "formatListItemModuleScript": "Projects Overview Detail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
@@ -5690,6 +5698,7 @@
                                 "type": "FormattedText",
                                 "config": {
                                     "textValueScript": "Projects Overview Detail.metadata.positions.content.modules.3.config.textValueScript.js",
+                                    "formatModuleScript": "",
                                     "className": "section-help",
                                     "imageWidth": 300,
                                     "imageHeight": 240,
@@ -6258,11 +6267,13 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
-                                    "insertAtTop": false
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             },
                             {
@@ -6287,6 +6298,7 @@
                                 "type": "FormattedText",
                                 "config": {
                                     "textValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.7.config.textValueScript.js",
+                                    "formatModuleScript": "",
                                     "className": "project-description",
                                     "imageWidth": 300,
                                     "imageHeight": 240,
@@ -6310,6 +6322,15 @@
                                 }
                             },
                             {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.8.config.fieldValueScript.js",
+                                    "formatElementScript": "el.addClass('created-by');"
+                                }
+                            },
+                            {
                                 "type": "UIView",
                                 "config": {
                                     "className": "inline-list-item first-item tasks-list-item-icon",
@@ -6322,11 +6343,13 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
-                                    "insertAtTop": false
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             },
                             {
@@ -6342,19 +6365,13 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
-                                    "insertAtTop": false
-                                }
-                            },
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.script.js",
-                                    "description": "Info about my custom script"
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             },
                             {
@@ -6362,6 +6379,14 @@
                                 "config": {
                                     "name": "My Custom Script",
                                     "script": "singleProjectOverviewDetail.metadata.positions.content.modules.11.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.12.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
@@ -7764,16 +7789,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 324,
-                            "y": 187
+                            "x": 354,
+                            "y": 217
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 284,
-                                    "y": 438
+                                    "x": 314,
+                                    "y": 468
                                 }
                             }
                         ],
@@ -9594,11 +9619,13 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
+                                    "targetName": "",
                                     "getItemListScript": "communityUsersDetail.metadata.positions.content.modules.3.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
                                     "formatListItemModuleScript": "communityUsersDetail.metadata.positions.content.modules.3.config.formatListItemModuleScript.js",
@@ -9636,19 +9663,19 @@
             "metadata": {
                 "title": "userAttributes",
                 "_tableDiagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 0,
+                    "y": 0
                 },
                 "_diagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 0,
+                    "y": 0
                 },
                 "appliesTo": [
                     "user"
                 ],
                 "_typeDiagramState": {
-                    "x": 100,
-                    "y": 300
+                    "x": 0,
+                    "y": 0
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -10331,19 +10358,19 @@
             "metadata": {
                 "title": "emailerAttributes",
                 "_tableDiagramState": {
-                    "x": 316,
-                    "y": 269
+                    "x": 0,
+                    "y": 0
                 },
                 "_diagramState": {
-                    "x": 316,
-                    "y": 269
+                    "x": 0,
+                    "y": 0
                 },
                 "appliesTo": [
                     "marker"
                 ],
                 "_typeDiagramState": {
-                    "x": 100,
-                    "y": 300
+                    "x": 0,
+                    "y": 0
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -10352,19 +10379,11 @@
                 "fields": [
                     "emailerAttributes.metadata.fields.0.json",
                     {
-                        "icon": [],
-                        "fieldBooleanOptions": {
-                            "trueIcon": [],
-                            "falseIcon": [],
-                            "hideFalse": true,
-                            "trueLabel": "",
-                            "falseLabel": "",
-                            "useFieldIcon": false
-                        },
                         "was": "",
                         "title": "email",
                         "label": "Community Members Email Address",
                         "description": "",
+                        "icon": [],
                         "color": "#FFFFFF",
                         "visibility": "public",
                         "editability": "registered",
@@ -10393,11 +10412,21 @@
                             "precision": 0,
                             "limitMinValue": 0,
                             "limitMaxValue": 0
+                        },
+                        "fieldBooleanOptions": {
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
                         }
                     }
                 ]
             },
-            "target": "emailerAttributes"
+            "target": "emailerAttributes",
+            "readAccess": "public",
+            "position": ""
         }
     },
     "widget.232": {
@@ -10408,19 +10437,19 @@
             "metadata": {
                 "title": "featureAttributes",
                 "_tableDiagramState": {
-                    "x": 316,
-                    "y": 269
+                    "x": 0,
+                    "y": 0
                 },
                 "_diagramState": {
-                    "x": 316,
-                    "y": 269
+                    "x": 0,
+                    "y": 0
                 },
                 "appliesTo": [
                     "mapitem"
                 ],
                 "_typeDiagramState": {
-                    "x": 93,
-                    "y": 377
+                    "x": 0,
+                    "y": 0
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -10429,19 +10458,11 @@
                 "fields": [
                     "featureAttributes.metadata.fields.0.json",
                     {
-                        "icon": [],
-                        "fieldBooleanOptions": {
-                            "trueIcon": [],
-                            "falseIcon": [],
-                            "hideFalse": true,
-                            "trueLabel": "",
-                            "falseLabel": "",
-                            "useFieldIcon": false
-                        },
                         "was": "",
                         "title": "activity",
                         "label": "Activity",
                         "description": "",
+                        "icon": [],
                         "color": "rgb(undefined, undefined, undefined)",
                         "visibility": "public",
                         "editability": "registered",
@@ -10470,22 +10491,22 @@
                             "precision": 0,
                             "limitMinValue": "",
                             "limitMaxValue": ""
-                        }
-                    },
-                    {
-                        "icon": [],
+                        },
                         "fieldBooleanOptions": {
-                            "trueIcon": [],
-                            "falseIcon": [],
                             "hideFalse": true,
                             "trueLabel": "",
                             "falseLabel": "",
-                            "useFieldIcon": false
-                        },
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
                         "was": "",
                         "title": "year",
                         "label": "Year",
                         "description": "",
+                        "icon": [],
                         "color": "rgb(undefined, undefined, undefined)",
                         "visibility": "public",
                         "editability": "registered",
@@ -10514,11 +10535,21 @@
                             "precision": 0,
                             "limitMinValue": "",
                             "limitMaxValue": ""
+                        },
+                        "fieldBooleanOptions": {
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
                         }
                     }
                 ]
             },
-            "target": "featureAttributes"
+            "target": "featureAttributes",
+            "readAccess": "public",
+            "position": ""
         }
     },
     "widget.233": {
@@ -10529,19 +10560,19 @@
             "metadata": {
                 "title": "proponentAttributes",
                 "_tableDiagramState": {
-                    "x": 318,
-                    "y": 259
+                    "x": 0,
+                    "y": 0
                 },
                 "_diagramState": {
-                    "x": 318,
-                    "y": 259
+                    "x": 0,
+                    "y": 0
                 },
                 "appliesTo": [
                     "user"
                 ],
                 "_typeDiagramState": {
-                    "x": 100,
-                    "y": 300
+                    "x": 0,
+                    "y": 0
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -10550,19 +10581,11 @@
                 "fields": [
                     "proponentAttributes.metadata.fields.0.json",
                     {
-                        "icon": [],
-                        "fieldBooleanOptions": {
-                            "trueIcon": [],
-                            "falseIcon": [],
-                            "hideFalse": true,
-                            "trueLabel": "",
-                            "falseLabel": "",
-                            "useFieldIcon": false
-                        },
                         "was": "",
                         "title": "companyType",
                         "label": "Company Type",
                         "description": "",
+                        "icon": [],
                         "color": "#FFFFFF",
                         "visibility": "public",
                         "editability": "registered",
@@ -10591,22 +10614,22 @@
                             "precision": 0,
                             "limitMinValue": 0,
                             "limitMaxValue": 0
-                        }
-                    },
-                    {
-                        "icon": [],
+                        },
                         "fieldBooleanOptions": {
-                            "trueIcon": [],
-                            "falseIcon": [],
                             "hideFalse": true,
                             "trueLabel": "",
                             "falseLabel": "",
-                            "useFieldIcon": false
-                        },
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
                         "was": "",
                         "title": "companyAddress",
                         "label": "Company Address",
                         "description": "",
+                        "icon": [],
                         "color": "#FFFFFF",
                         "visibility": "public",
                         "editability": "registered",
@@ -10635,22 +10658,22 @@
                             "precision": 0,
                             "limitMinValue": 0,
                             "limitMaxValue": 0
-                        }
-                    },
-                    {
-                        "icon": [],
+                        },
                         "fieldBooleanOptions": {
-                            "trueIcon": [],
-                            "falseIcon": [],
                             "hideFalse": true,
                             "trueLabel": "",
                             "falseLabel": "",
-                            "useFieldIcon": false
-                        },
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
                         "was": "",
                         "title": "companyWebsite",
                         "label": "Company Website",
                         "description": "",
+                        "icon": [],
                         "color": "#FFFFFF",
                         "visibility": "public",
                         "editability": "registered",
@@ -10679,22 +10702,22 @@
                             "precision": 0,
                             "limitMinValue": 0,
                             "limitMaxValue": 0
-                        }
-                    },
-                    {
-                        "icon": [],
+                        },
                         "fieldBooleanOptions": {
-                            "trueIcon": [],
-                            "falseIcon": [],
                             "hideFalse": true,
                             "trueLabel": "",
                             "falseLabel": "",
-                            "useFieldIcon": false
-                        },
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
                         "was": "",
                         "title": "contactName",
                         "label": "Contact Name",
                         "description": "",
+                        "icon": [],
                         "color": "#FFFFFF",
                         "visibility": "public",
                         "editability": "registered",
@@ -10723,22 +10746,22 @@
                             "precision": 0,
                             "limitMinValue": 0,
                             "limitMaxValue": 0
-                        }
-                    },
-                    {
-                        "icon": [],
+                        },
                         "fieldBooleanOptions": {
-                            "trueIcon": [],
-                            "falseIcon": [],
                             "hideFalse": true,
                             "trueLabel": "",
                             "falseLabel": "",
-                            "useFieldIcon": false
-                        },
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
                         "was": "",
                         "title": "contactNumber",
                         "label": "Contact Number",
                         "description": "",
+                        "icon": [],
                         "color": "#FFFFFF",
                         "visibility": "public",
                         "editability": "registered",
@@ -10767,11 +10790,21 @@
                             "precision": 0,
                             "limitMinValue": 0,
                             "limitMaxValue": 0
+                        },
+                        "fieldBooleanOptions": {
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
                         }
                     }
                 ]
             },
-            "target": "proponentAttributes"
+            "target": "proponentAttributes",
+            "readAccess": "public",
+            "position": ""
         }
     },
     "widget.234": {
@@ -10782,19 +10815,19 @@
             "metadata": {
                 "title": "proposalAttributes",
                 "_tableDiagramState": {
-                    "x": 333,
-                    "y": 215
+                    "x": 0,
+                    "y": 0
                 },
                 "_diagramState": {
-                    "x": 333,
-                    "y": 215
+                    "x": 0,
+                    "y": 0
                 },
                 "appliesTo": [
                     "proposal"
                 ],
                 "_typeDiagramState": {
-                    "x": 100,
-                    "y": 300
+                    "x": 0,
+                    "y": 0
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -12225,19 +12258,19 @@
             "metadata": {
                 "title": "taskAttributes",
                 "_tableDiagramState": {
-                    "x": 348,
-                    "y": 182
+                    "x": 0,
+                    "y": 0
                 },
                 "_diagramState": {
-                    "x": 348,
-                    "y": 182
+                    "x": 0,
+                    "y": 0
                 },
                 "appliesTo": [
                     "task"
                 ],
                 "_typeDiagramState": {
-                    "x": 100,
-                    "y": 300
+                    "x": 0,
+                    "y": 0
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -12548,8 +12581,9 @@
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
+                                    "name": "My Custom Script",
                                     "script": "Projects List Detail.metadata.positions.content.modules.1.config.script.js",
-                                    "identifier": "customScriptElement"
+                                    "description": "Info about my custom script"
                                 }
                             },
                             {
@@ -12566,11 +12600,13 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "initModuleScript": "",
                                     "formatModuleScript": "Projects List Detail.metadata.positions.content.modules.2.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
+                                    "targetName": "",
                                     "getItemListScript": "Projects List Detail.metadata.positions.content.modules.2.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
                                     "formatListItemModuleScript": "Projects List Detail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
@@ -14774,23 +14810,115 @@
             "readAccess": "public"
         }
     },
-    "widget.305": {
-        "name": "Icon Set",
-        "instance": "IconSet",
+    "widget.306": {
+        "name": "Detail View",
+        "instance": "DetailView",
         "parameters": {
-            "markerIconset": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/8UH_7cI_[G]_[ImAgE]_2f6.png"
-            ],
-            "iconsetMetadata": {
-                "layerMap": {
-                    "components\/com_geolive\/users_files\/user_files_680\/Uploads\/8UH_7cI_[G]_[ImAgE]_2f6.png": 69
+            "widgetTitle": "install",
+            "target": "install",
+            "templateName": "install",
+            "requireTarget": false,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "install.onRenderApplictionScript.js",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "install.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": [
+                            "install.metadata.positions.footer.modules.0.json"
+                        ]
+                    },
+                    "menu": {
+                        "modules": []
+                    }
                 },
-                "renderSettings": []
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
             },
-            "target": "none",
-            "layerMap": [],
-            "tipMap": [],
-            "widgetTitle": "",
+            "readAccess": "public"
+        }
+    },
+    "widget.309": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "installContent",
+            "target": "installContent",
+            "templateName": "installContent",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "positions": {
+                    "title": {
+                        "modules": [
+                            "installContent.metadata.positions.title.modules.0.json"
+                        ]
+                    },
+                    "content": {
+                        "modules": [
+                            "installContent.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": [
+                            "installContent.metadata.positions.footer.modules.0.json"
+                        ]
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                }
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.310": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Here is your magic login link",
+            "widgetTitle": "email.VerifyEmailLink.subject",
+            "target": "email.VerifyEmailLink.subject"
+        }
+    },
+    "widget.311": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "email-VerifyEmailLink-content.contentTemplate.html",
+            "widgetTitle": "email.VerifyEmailLink.content",
+            "target": "email.VerifyEmailLink.content"
+        }
+    },
+    "widget.312": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "email-DefaultMailerTemplate-subject.contentTemplate.html",
+            "widgetTitle": "email.DefaultMailerTemplate.subject",
+            "target": "email.DefaultMailerTemplate.subject",
+            "comments": "",
             "readAccess": "public"
         }
     }
