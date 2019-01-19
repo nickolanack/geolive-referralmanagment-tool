@@ -1,9 +1,17 @@
 {
+    "icon": [],
+    "fieldBooleanOptions": {
+        "trueIcon": [],
+        "falseIcon": [],
+        "hideFalse": true,
+        "trueLabel": "",
+        "falseLabel": "",
+        "useFieldIcon": false
+    },
     "was": "",
     "title": "companyName",
     "label": "Company Name",
     "description": "",
-    "icon": [],
     "color": "#FFFFFF",
     "visibility": "public",
     "editability": "registered",
@@ -32,13 +40,5 @@
         "precision": 0,
         "limitMinValue": 0,
         "limitMaxValue": 0
-    },
-    "fieldBooleanOptions": {
-        "hideFalse": true,
-        "trueLabel": "",
-        "falseLabel": "",
-        "useFieldIcon": false,
-        "trueIcon": [],
-        "falseIcon": []
     }
 }

@@ -1,1 +1,3 @@
-  ReferralManagementDashboard.addWeakUpdateEvents(child, childView, function(u){ return u.isTeamMember(); });
+  childView.addWeakEvent(child, 'update', function(){
+        childView.redraw();
+    })
