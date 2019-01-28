@@ -1078,7 +1078,12 @@ var ReferralManagementDashboard = {
 		if(ProjectTeam.CurrentTeam().hasUser((item.getUserId||item.getId).bind(item)())){
 
 			var icon=ProjectTeam.CurrentTeam().getUser((item.getUserId||item.getId).bind(item)()).getProfileIcon();
-			span.setStyle("background-image", "url("+icon+"?thumb=>170x>170)");
+			
+			if(icon.indexOf('Uploads')>0){
+				icon=icon+"?thumb=>170x>170";
+			}
+
+			span.setStyle("background-image", "url("+icon+")");
 			return div;
 
 		}

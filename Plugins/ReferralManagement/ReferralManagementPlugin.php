@@ -27,7 +27,8 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		$icon='<img src="'.$photoUrl.'" />';
 		(new \attributes\Record('userAttributes'))->setValues($params->user, "user", array(
 			"profileIcon"=>'<img src="'.$photoUrl.'" />',
-			"firstName"=>$params->fbuser->name
+			"firstName"=>$params->fbuser->first_name,
+			"lastName"=>$params->fbuser->last_name
 		));
 
 	}
