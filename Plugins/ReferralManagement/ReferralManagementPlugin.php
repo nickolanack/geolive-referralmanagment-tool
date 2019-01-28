@@ -18,6 +18,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 
 
+
 	protected function onFacebookRegister($params){
 
 		$photoUrl='https://graph.facebook.com/'.$params->fbuser->id.'/picture?type=large';
@@ -31,13 +32,35 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	}
 
+	protected function onUpdateAttributeRecord($params){
+
+		if($params->itemType==="user"){
+			(new \core\LongTaskProgress())
+				->emit('onTriggerUpdateUserList', array('team' => 1));
+			(new \core\LongTaskProgress())
+			->emit('onTriggerUpdateDeviceList', array('team' => 1));
+			return;
+		}
+
+		error_log($params->itemType);
+
+
+	}
+
 	protected function onTriggerUpdateUserList($params){
 
 		$cacheName="ReferralManagement.userList.json";
 		$cacheData = HtmlDocument()->getCachedPage($cacheName);
 
 		$users=$this->getUsers($params->team);
-		HtmlDocument()->setCachedPage($cacheName, json_encode($users));
+
+		$newData=json_encode($users);
+		HtmlDocument()->setCachedPage($cacheName, $newData);
+		if($newData!=$cacheData){
+			$this->notifier()->onTeamUserListChanged($params->team);
+		}
+
+		
 
 	}
 	protected function onTriggerUpdateDevicesList($params){
@@ -46,9 +69,26 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		$cacheData = HtmlDocument()->getCachedPage($cacheName);
 
 		$devices=$this->getDevices($params->team);
-		HtmlDocument()->setCachedPage($cacheName, json_encode($devices));
 
+		$newData=json_encode($devices);
+		HtmlDocument()->setCachedPage($cacheName, $newData);
+		if($newData!=$cacheData){
+			$this->notifier()->onTeamDeviceListChanged($params->team);
+		}
 
+	}
+
+	protected function onCreateUser($params){
+		foreach($this->getTeams() as $team){
+			(new \core\LongTaskProgress())
+				->emit('onTriggerUpdateUserList', array('team' => $team));
+		}
+	}
+	protected function onDeleteUser($params){
+		foreach($this->getTeams() as $team){
+			(new \core\LongTaskProgress())
+				->emit('onTriggerUpdateUserList', array('team' => $team));
+		}
 	}
 
 	protected function onTriggerImportTusFile($params){
@@ -243,7 +283,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 			$database = $this->getDatabase();
 
 			if (($id = (int) $database->createProposal(array(
-				'user' => Core::Client()->getUserId(),
+				'user' => GetClient()->getUserId(),
 				'metadata' => json_encode(array("email" => $params->validationData->email)),
 				'createdDate' => ($now = date('Y-m-d H:i:s')),
 				'modifiedDate' => $now,
@@ -298,7 +338,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 		
 		if (!Auth('memberof', 'lands-department', 'group')) {
-			$filter['user'] = Core::Client()->getUserId();
+			$filter['user'] = GetClient()->getUserId();
 		}
 
 		$database = $this->getDatabase();
@@ -738,11 +778,11 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	public function isUserInGroup($group) {
 
-		if (Core::Client()->isGuest()) {
+		if (GetClient()->isGuest()) {
 			return false;
 		}
 
-		if (Core::Client()->isAdmin()) {
+		if (GetClient()->isAdmin()) {
 			if (in_array($group, array('tribal-council', 'chief-council', 'lands-department', 'lands-department-manager', 'community-member'))) {
 				//return true;
 			}
@@ -754,9 +794,9 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 		GetPlugin('Attributes');
 		$attributeMap = array();
-		$attribs = (new attributes\Record('userAttributes'))->getValues(Core::Client()->getUserId(), 'user');
+		$attribs = (new attributes\Record('userAttributes'))->getValues(GetClient()->getUserId(), 'user');
 
-		//AttributesRecord::GetFields(Core::Client()->getUserId(), 'user', array_values($map), 'userAttributes');
+		//AttributesRecord::GetFields(GetClient()->getUserId(), 'user', array_values($map), 'userAttributes');
 
 		// if($group=='lands-department'){
 		//     if($attribs[$map['lands-department-manager']]===true||$attribs[$map['lands-department-manager']]==="true"){
@@ -775,7 +815,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 	public function getUserRoleIcon($id = -1) {
 
 		if ($id < 1) {
-			$id = Core::Client()->getUserId();
+			$id = GetClient()->getUserId();
 		}
 
 		$map = $this->getGroupAttributes();
@@ -821,7 +861,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	public function getUserRoles($id = -1) {
 		if ($id < 1) {
-			$id = Core::Client()->getUserId();
+			$id = GetClient()->getUserId();
 		}
 
 		$map = $this->getGroupAttributes();
@@ -850,7 +890,10 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 		$rolesList = $this->getRoles();
 		if (($id == -1 || $id == GetClient()->getUserId()) && GetClient()->isAdmin()) {
-			return $rolesList;
+
+
+
+			//return $rolesList;
 		}
 
 		$roles = $this->getUserRoles($id);
@@ -871,7 +914,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 	public function getUserRoleLabel($id = -1) {
 
 		if ($id < 1) {
-			$id = Core::Client()->getUserId();
+			$id = GetClient()->getUserId();
 		}
 
 		$map = $this->getGroupAttributes();
@@ -908,7 +951,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		}
 
 		if ($id < 1) {
-			$id = Core::Client()->getUserId();
+			$id = GetClient()->getUserId();
 		}
 		if (!$metadata) {
 			$metadata = GetClient()->userMetadataFor($id);
@@ -948,6 +991,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 				$metadata['teams'] = $this->getTeams($id);
 				$metadata['avatar'] = $this->getUsersAvatar($id);
 				$metadata['name'] = $this->getUsersName($id, $metadata['name']);
+				$metadata['lastName'] = $this->getUsersLastName($id, '');
 				$metadata['number'] = $this->getUsersNumber($id);
 				$metadata['email'] = $this->getUsersEmail($id, $metadata['email']);
 				$metadata['can-assignroles']=$this->getRolesUserCanEdit($id);
@@ -969,7 +1013,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 	public function getUsersAvatar($id = -1, $default = null) {
 
 		if ($id < 1) {
-			$id = Core::Client()->getUserId();
+			$id = GetClient()->getUserId();
 		}
 
 		GetPlugin('Attributes');
@@ -988,7 +1032,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 	public function getUsersName($id = -1, $default = null) {
 
 		if ($id < 1) {
-			$id = Core::Client()->getUserId();
+			$id = GetClient()->getUserId();
 		}
 
 		$attribs = $this->_getUserAttributes($id);
@@ -1001,14 +1045,34 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 			return $default;
 		}
 
-		return Core::Client()->getRealName();
+		return GetClient()->getRealName();
+
+	}
+
+	public function getUsersLastName($id = -1, $default = null) {
+
+		if ($id < 1) {
+			$id = GetClient()->getUserId();
+		}
+
+		$attribs = $this->_getUserAttributes($id);
+
+		if ($attribs["lastName"]) {
+			return $attribs["lastName"];
+		}
+
+		if ($default) {
+			return $default;
+		}
+
+		return '';
 
 	}
 
 	public function getUsersEmail($id = -1, $default = null) {
 
 		if ($id < 1) {
-			$id = Core::Client()->getUserId();
+			$id = GetClient()->getUserId();
 		}
 
 		$attribs = $this->_getUserAttributes($id);
@@ -1020,14 +1084,14 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 			return $default;
 		}
 
-		return Core::Client()->getEmail();
+		return GetClient()->getEmail();
 
 	}
 
 	public function getUsersNumber($id = -1, $default = null) {
 
 		if ($id < 1) {
-			$id = Core::Client()->getUserId();
+			$id = GetClient()->getUserId();
 		}
 
 		$attribs = $this->_getUserAttributes($id);

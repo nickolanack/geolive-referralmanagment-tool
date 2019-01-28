@@ -9,11 +9,11 @@
 
 
 .project-type-missing-tasks-hint {
-    background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/tree.png"); ?>?tint=rgb(198, 175, 79)");
+    background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/tree.png?tint=rgb(198, 175, 79)"); ?>");
 }
 
 button.btn-reset-list {
-    background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/reset.png"); ?>?tint=rgb(106, 233, 191)");
+    background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/reset.png?tint=rgb(106, 233, 191)"); ?>");
 
     width: 20px;
     height: 20px;
@@ -27,12 +27,12 @@ button.btn-reset-list {
 
 
 .file-item span.document:after {
-    background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/download.png"); ?>?tint=rgb(127, 161, 255)");
+    background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/download.png?tint=rgb(127, 161, 255)"); ?>");
 }
 
 
 button.btn-search-list {
-    background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/search.png"); ?>?tint=rgb(106, 233, 191)");
+    background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/search.png?tint=rgb(106, 233, 191)"); ?>");
 
     width: 20px;
     height: 20px;
@@ -57,10 +57,10 @@ foreach($config->getParameters() as $key=>$value){
             }
             ?>
             li.menu-<?php echo $key; ?>:before{
-                background-image:url("<?php echo UrlFrom($icon); ?>?tint=<?php echo $config->getParameter("menuIconColor", "rgb(180,180,180)"); ?>");
+                background-image:url("<?php echo UrlFrom($icon."?thumb=>20x>20&tint=".$config->getParameter("menuIconColor", "rgb(180,180,180)")); ?>");
             }
             li.menu-<?php echo $key; ?>.active:before{
-                background-image:url("<?php echo UrlFrom($icon); ?>?tint=<?php echo $config->getParameter("menuIconTint"); ?>");
+                background-image:url("<?php echo UrlFrom($icon."?thumb=>20x>20&tint=".$config->getParameter("menuIconTint")); ?>");
             }
             
             <?php
@@ -77,7 +77,7 @@ foreach($config->getParameters() as $key=>$value){
     ?>
  .application-logo {
 
-    background-image:url("<?php echo UrlFrom($applicationLogo); ?>");
+    background-image:url("<?php echo UrlFrom($applicationLogo."?thumb=>200x>200"); ?>");
 }  
 
     <?php 
@@ -90,14 +90,14 @@ foreach($config->getParameters() as $key=>$value){
     ?>
     
 .attachment-indicator {
-    background-image:url("<?php echo UrlFrom($attachmentIcon); ?>?tint=<?php echo $config->getParameter("attachmentTint", "rgb(180,180,180)"); ?>");
+    background-image:url("<?php echo UrlFrom($attachmentIcon."?tint=".$config->getParameter("attachmentTint", "rgb(180,180,180)")); ?>");
 }
 
 
 .discussion button.upload-button {
     height: 37px;
     font-size: 0;
-    background-image: url("<?php echo UrlFrom($attachmentIcon); ?>?tint=<?php echo $config->getParameter("attachmentTint", "rgb(180,180,180)"); ?>");
+    background-image: url("<?php echo UrlFrom($attachmentIcon."?tint=".$config->getParameter("attachmentTint", "rgb(180,180,180)")); ?>");
     background-size: auto 28px;
     background-repeat: no-repeat;
     background-position: center;
@@ -106,7 +106,7 @@ foreach($config->getParameters() as $key=>$value){
 
 .field-value-module.with-description .field-value:after{
     content: "";
-     background-image: url("<?php echo UrlFrom("{assets}/Control Panel Icons/text.png"); ?>?tint=rgb(180,180,180)");
+     background-image: url("<?php echo UrlFrom("{assets}/Control Panel Icons/text.png?tint=rgb(180,180,180)"); ?>");
     width: 20px;
     height: 14px;
     background-size: auto 100%;
@@ -119,7 +119,7 @@ foreach($config->getParameters() as $key=>$value){
 
 
 .synopsis-item {
-    background-image:url("<?php echo UrlFrom($menuIconDefault); ?>?tint=rgb(180,180,180)");
+    background-image:url("<?php echo UrlFrom($menuIconDefault."?tint=rgb(180,180,180)"); ?>");
 }
 
 
@@ -133,16 +133,16 @@ foreach($config->getParameters() as $key=>$value){
     ?>
  .starred-indicator {
 
-    background-image:url("<?php echo UrlFrom($starredIcon); ?>?tint=rgb(180,180,180)");
+    background-image:url("<?php echo UrlFrom($starredIcon."?tint=rgb(180,180,180)"); ?>");
 }   
 .starred-indicator.starred {
 
-    background-image:url("<?php echo UrlFrom($starredIcon); ?>?tint=<?php echo $config->getParameter("starTint", "rgb(180,180,180)"); ?>");
+    background-image:url("<?php echo UrlFrom($starredIcon."?tint=".$config->getParameter("starTint", "rgb(180,180,180)")); ?>");
 }
 
 
 .starred-tasks {
-    background-image:url("<?php echo UrlFrom($starredIcon); ?>?tint=<?php echo $config->getParameter("starTint", "rgb(180,180,180)"); ?>");
+    background-image:url("<?php echo UrlFrom($starredIcon."?tint=".$config->getParameter("starTint", "rgb(180,180,180)")); ?>");
     border-color:<?php echo $config->getParameter("starTint", "rgb(180,180,180)"); ?>;
     
 }
@@ -162,15 +162,15 @@ foreach($config->getParameters() as $key=>$value){
     ?>
  .priority-indicator {
 
-    background-image:url("<?php echo UrlFrom($priorityIcon); ?>?tint=rgb(180,180,180)");
+    background-image:url("<?php echo UrlFrom($priorityIcon."?tint=rgb(180,180,180)"); ?>");
 }   
 .priority-indicator.priority {
 
-    background-image:url("<?php echo UrlFrom($priorityIcon); ?>?tint=<?php echo $config->getParameter("priorityTint", "rgb(180,180,180)"); ?>");
+    background-image:url("<?php echo UrlFrom($priorityIcon."?tint=".$config->getParameter("priorityTint", "rgb(180,180,180)")); ?>");
 }
 
 .priority-tasks {
-    background-image:url("<?php echo UrlFrom($priorityIcon); ?>?tint=<?php echo $config->getParameter("priorityTint", "rgb(180,180,180)"); ?>");
+    background-image:url("<?php echo UrlFrom($priorityIcon."?tint=".$config->getParameter("priorityTint", "rgb(180,180,180)")); ?>");
     border-color:<?php echo $config->getParameter("priorityTint", "rgb(180,180,180)"); ?>;
     
 }
@@ -189,7 +189,7 @@ foreach($config->getParameters() as $key=>$value){
 
 
 .overdue-tasks {
-    background-image:url("<?php echo UrlFrom($overdueIcon); ?>?tint=<?php echo $config->getParameter("overdueTint", "rgb(180,180,180)"); ?>");
+    background-image:url("<?php echo UrlFrom($overdueIcon."?tint=".$config->getParameter("overdueTint", "rgb(180,180,180)")); ?>");
     border-color:<?php echo $config->getParameter("overdueTint", "rgb(180,180,180)"); ?>;
     
 }
@@ -207,23 +207,23 @@ foreach($config->getParameters() as $key=>$value){
 
 
 .remaining-tasks {
-    background-image:url("<?php echo UrlFrom($remainingIcon); ?>?tint=<?php echo $config->getParameter("remainingTint", "rgb(180,180,180)"); ?>");
+    background-image:url("<?php echo UrlFrom($remainingIcon."?tint=".$config->getParameter("remainingTint", "rgb(180,180,180)")); ?>");
     border-color:<?php echo $config->getParameter("remainingTint", "rgb(180,180,180)"); ?>;
     
 }
 
 
 .segment.overdue{
-    background-image:url("<?php echo UrlFrom($overdueIcon); ?>?tint=rgba(50,50,50)");
+    background-image:url("<?php echo UrlFrom($overdueIcon."?tint=rgba(50,50,50)"); ?>");
 }
 .segment.completed{
-     background-image:url("<?php echo UrlFrom($remainingIcon); ?>?tint=rgba(60, 179, 113)");
+     background-image:url("<?php echo UrlFrom($remainingIcon."?tint=rgba(60, 179, 113)"); ?>");
 }
 .segment.created{
-     background-image:url("<?php echo UrlFrom($starredIcon); ?>?tint=rgba(106, 124, 233)");
+     background-image:url("<?php echo UrlFrom($starredIcon."?tint=rgba(106, 124, 233)"); ?>");
 }
 .segment.duedate, .segment.complete{
-     background-image:url("<?php echo UrlFrom($overdueIcon); ?>?tint=rgba(60, 179, 113)");
+     background-image:url("<?php echo UrlFrom($overdueIcon."?tint=rgba(60, 179, 113)"); ?>");
 }
 
 <?php 
@@ -252,7 +252,7 @@ foreach(['image', 'document', 'layer', 'audio', 'video'] as $mime){
         }
     ?>
         .upload-btns span.<?php echo $mime?>.noIcon {
-            background-image:url("<?php echo UrlFrom($mediaIcon); ?>?tint=<?php echo $config->getParameter("uploadTint", "rgb(180,180,180)"); ?>");
+            background-image:url("<?php echo UrlFrom($mediaIcon."?tint=".$config->getParameter("uploadTint", "rgb(180,180,180)")); ?>");
         }
     <?php
     
@@ -270,10 +270,10 @@ foreach(['prev', 'next'] as $nav){
         }
     ?>
        .<?php echo $nav; ?>-btn {
-            background-image:url("<?php echo UrlFrom($navIcon); ?>?tint=<?php echo $config->getParameter("uploadTint", "rgb(180,180,180)"); ?>");
+            background-image:url("<?php echo UrlFrom($navIcon."?tint=".$config->getParameter("uploadTint", "rgb(180,180,180)")); ?>");
         }
         .<?php echo $nav; ?>-btn:hover {
-            background-image:url("<?php echo UrlFrom($navIcon); ?>?tint=<?php echo $config->getParameter("menuIconTint"); ?>");
+            background-image:url("<?php echo UrlFrom($navIcon."?tint=".$config->getParameter("menuIconTint")); ?>");
         }
     <?php
     
@@ -289,7 +289,7 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
             ?>
 
             .ui-view.dashboard-main:after {
-                background-image: url("<?php echo UrlFrom($backgroundImage); ?>");
+                background-image: url("<?php echo UrlFrom($backgroundImage."?thumb=>200x>200"); ?>");
                 position: fixed;
                 width: 100%;
                 height: 100%;
@@ -298,6 +298,8 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
                 left: 0;
                 opacity: 0.2;
                 pointer-events: none;
+                background-size: cover;
+                filter: blur(10px);
             }
             <?php
         }
@@ -312,7 +314,7 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
             ?>
 
             .inline-btn.optionlist:before {
-                background-image: url("<?php echo UrlFrom($optionsMenuIcon); ?>?tint=<?php echo $config->getParameter("menuIconColor", "rgb(180,180,180)"); ?>");
+                background-image: url("<?php echo UrlFrom($optionsMenuIcon."?tint=".$config->getParameter("menuIconColor", "rgb(180,180,180)")); ?>");
                 display: inline-block;
                 width: 6px;
                 height: 25px;
@@ -322,7 +324,7 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
                 background-repeat: no-repeat;
             }
             .inline-btn.optionlist:hover:before {
-             background-image: url("<?php echo UrlFrom($optionsMenuIcon); ?>?tint=<?php echo $config->getParameter("menuIconTint"); ?>");
+             background-image: url("<?php echo UrlFrom($optionsMenuIcon."?tint=".$config->getParameter("menuIconTint")); ?>");
             }
             <?php
         }
@@ -341,7 +343,7 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
             }
 
             .survey-link:before {
-                background-image: url("<?php echo UrlFrom($surveyMenuIcon); ?>?tint=<?php echo $config->getParameter("menuIconColor", "rgb(180,180,180)"); ?>");
+                background-image: url("<?php echo UrlFrom($surveyMenuIcon."?tint=".$config->getParameter("menuIconColor", "rgb(180,180,180)")); ?>");
                 content:"";
                 display: inline-block;
                 width: 20px;
@@ -351,7 +353,7 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
                 vertical-align: middle;
             }
             .survey-link:hover:before {
-                background-image: url("<?php echo UrlFrom($surveyMenuIcon); ?>?tint=<?php echo $config->getParameter("menuIconTint"); ?>");
+                background-image: url("<?php echo UrlFrom($surveyMenuIcon."?tint=".$config->getParameter("menuIconTint")); ?>");
             }
             <?php
         }

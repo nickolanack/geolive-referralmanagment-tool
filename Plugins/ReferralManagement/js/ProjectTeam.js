@@ -1,12 +1,22 @@
 
 var ProjectTeam = (function() {
 
-	var ProposalListQuery = new Class({
+	var ProjectListQuery = new Class({
 		Extends: AjaxControlQuery,
 		initialize: function(options) {
 			this.parent(CoreAjaxUrlRoot, 'list_projects', Object.append({
 				plugin: 'ReferralManagement'
 			}, options));
+		}
+	});
+
+	var ProjectQuery = new Class({
+		Extends: AjaxControlQuery,
+		initialize: function(projectId) {
+			this.parent(CoreAjaxUrlRoot, 'get_project', {
+				plugin: 'ReferralManagement',
+				project:projectId
+			});
 		}
 	});
 
@@ -52,7 +62,7 @@ var ProjectTeam = (function() {
 
 
 
-	return new Class({
+	var ProjectTeam = new Class({
 		Extends: DataTypeObject,
 		Implements: [Events],
 		initialize: function() {
@@ -69,17 +79,11 @@ var ProjectTeam = (function() {
 			})
 			me._loadDevices();
 
-			
-
-			//(new TeamListQuery(me.getId())).addEvent('success', function(resp) {
-
-			me.getAllUsers(function(list) {
-				me._team = list.filter(function(user) {
-					return user.isTeamMember();
-				});
-
-				me.fireEvent('loadTeam');
+			me.addEvent('userListChanged',function(){
+				me._updateTeamList();
 			})
+
+			me._updateTeamList();
 
 
 
@@ -87,36 +91,116 @@ var ProjectTeam = (function() {
 
 
 		},
+		_updateTeamList:function(){
+			var me=this;
+			me.getAllUsers(function(list) {
+				me._team = list.filter(function(user) {
+					return user.isTeamMember();
+				});
+			})
+		},
+		_addProject:function(data){
+
+			var me=this;
+			if(!me._projects){
+				me._projects=[];
+			}
+
+			var p = new Proposal(data.id, Object.append({
+				sync: true,
+			}, data));
+
+			me._addProjectListeners(p);
+			me._projects.push(p);
+			return p;
+
+		},
+		_updateProject:function(data){
+
+			var me=this;
+
+			if(data.id){
+				try {
+
+					var project = me.getProject(data.id);
+					project._setData(data);
+
+				} catch (e) {
+					var p=me._addProject(data);
+					me.fireEvent('addProject', [p]);
+					if (p.hasTasks()) {
+						me.fireEvent('tasksChanged');
+					}
+				}
+
+				return;
+			}
+
+
+			var id=parseInt(data);		
+			me._updateProjectWithId(id);	
+
+			
+
+		},
+
+		_updateProjectWithId:function(id){
+
+			var me=this;
+			try {
+
+				var project = me.getProject(id);
+				(new ProjectQuery(id)).addEvent("success", function(resp){
+					
+					if(resp.results.length==0){
+						me.removeProject(project);
+						NotificationBubble.Make("", "A project has been removed");
+					}
+
+					resp.results.forEach(function(result) {
+						project._setData(result);
+					});
+
+
+
+				}).execute();
+
+
+			} catch (e) {
+				
+
+				(new ProjectQuery(id)).addEvent("success", function(resp){
+					resp.results.forEach(function(result) {
+						var p=me._addProject(result);
+						me.fireEvent('addProject', [p]);
+						if (p.hasTasks()) {
+							me.fireEvent('tasksChanged');
+						}
+
+					});
+
+					NotificationBubble.Make("", "A new project has been added");
+
+				}).execute();
+
+			}
+
+		},
+
 		_loadProjects:function(){
 			var me=this;
-			(new ProposalListQuery()).addEvent('success', function(resp) {
+			(new ProjectListQuery()).addEvent('success', function(resp) {
 
-
-				me._projects = resp.results.map(function(result) {
-					var p = new Proposal(result.id, Object.append({
-						sync: true,
-					}, result));
-
-					me._addProjectListeners(p)
-
-
-
-					return p;
+				me._projects = [];
+				resp.results.forEach(function(result) {
+					me._addProject(result);
 				});
 
 
 				(new ArchiveListQuery()).addEvent('success', function(resp) {
-
-
-					me._projects = me._projects.concat(resp.results.map(function(result) {
-						var p = new Proposal(result.id, Object.append({
-							sync: true,
-						}, result));
-
-						me._addProjectListeners(p)
-
-						return p;
-					}));
+					resp.results.forEach(function(result) {
+						me._addProject(result);
+					});
 				}).execute();
 
 
@@ -127,14 +211,8 @@ var ProjectTeam = (function() {
 
 						if (update.updated) {
 							update.updated.forEach(function(data) {
-								try {
-									var project = me.getProject(data.id);
-									project._setData(data);
-								} catch (e) {
-									console.log('hidden edit');
-								}
-
-							})
+								me._updateProject(data);
+							});
 						}
 
 						if (update.created) {
@@ -168,26 +246,94 @@ var ProjectTeam = (function() {
 			}).execute();
 
 		},
+		_updateDeviceList:function(res){
+			var me=this;
+			(new DeviceListQuery(me.getId())).addEvent('success', function(resp) {
+
+				resp.results.forEach(function(user) {
+						try{ 
+							me.getDevice(user.id).setData(user);
+						}catch(e){
+							me._addDevice(user);	
+							me.fireEvent('deviceListChanged')
+						}
+				});
+
+			}).execute();
+
+		},
+		_updateUserList:function(res){
+			var me=this;
+			(new UserListQuery(me.getId())).addEvent('success', function(resp) {
+
+				resp.results.forEach(function(user) {
+					try{
+						me.getUser(user.id).setData(user);
+					}catch(e){
+						me._addUser(user);	
+						me.fireEvent('userListChanged')
+					}
+				});
+			}).execute();
+		},
+		_addDevice:function(data){
+
+			var me=this;
+			if(!me._devices){
+				me._devices=[];
+			}
+
+			me._devices.push((new Device({
+
+					userType: "user",
+					id: data.id,
+					metadata: data
+
+				})).addEvent('update', function() {
+					me.fireEvent('deviceListChanged')
+				})
+			);
+
+		},
 		_loadDevices:function(){
 			var me=this;
 			(new DeviceListQuery(me.getId())).addEvent('success', function(resp) {
 
-				me._devices = resp.results.map(function(user) {
-					return new Device({
 
-						userType: "user",
-						id: user.id,
-						metadata: user
-
-					}).addEvent('update', function() {
-						me.fireEvent('deviceListChanged')
-					});
+				me._devices=[];
+				resp.results.forEach(function(user) {
+					me._addDevice(data); 
 				});
+
+				if (resp.subscription) {
+                    AjaxControlQuery.Subscribe(resp.subscription, function(result) {
+                       me._updateDeviceList(result);
+                    });
+                }
+
 
 				me.fireEvent('loadDevices');
 
 			}).execute();
 
+		},
+		_addUser:function(data){
+			var me=this;
+			if(!me._users){
+				me._users=[];
+			}
+
+			me._users.push(
+				(new ReferralManagementUser({
+
+					userType: "user",
+					id: data.id,
+					metadata: data
+
+				})).addEvent('update', function() {
+					me.fireEvent('userListChanged')
+				})
+			);
 		},
 		_loadUsers:function(callback){
 
@@ -196,17 +342,16 @@ var ProjectTeam = (function() {
 
 			(new UserListQuery(me.getId())).addEvent('success', function(resp) {
 
-				me._users = resp.results.map(function(user) {
-					return new ReferralManagementUser({
-
-						userType: "user",
-						id: user.id,
-						metadata: user
-
-					}).addEvent('update', function() {
-						me.fireEvent('deviceListChanged')
-					})
+				me._users=[];
+				resp.results.forEach(function(data) {
+					me._addUser(data);
 				});
+
+				if (resp.subscription) {
+                    AjaxControlQuery.Subscribe(resp.subscription, function(result) {
+                       me._updateUserList(result);
+                    });
+                }
 
 				me.fireEvent('loadUsers');
 				callback();
@@ -480,11 +625,68 @@ var ProjectTeam = (function() {
 			}
 			if (callback) {
 				callback(me.getDevices());
+				return null;
 			}
 
 			return me._devices.slice(0);
 		},
+		getCommunityMembersAndUnassigned:function(callback){
 
+			var me=this;
+
+
+			if (!me._users) {
+				if (callback) {
+					me.getAllUsers(function(){
+					    callback(me.getCommunityMembersAndUnassigned());
+					});
+
+					return null;
+
+			 	}
+			 	throw 'CommunityMembers list has not been loaded yet. hint: add callback arg to this call';
+
+			}
+
+			if(callback){
+				callback(me.getCommunityMembersAndUnassigned());
+			}
+
+			return me.getAllUsers().filter(function(u){
+		    	return u.isCommunityMember()||u.isUnassigned();
+		    });
+
+
+		},
+
+		getCommunityMembers:function(callback){
+
+			var me=this;
+
+
+			if (!me._users) {
+				if (callback) {
+					me.getAllUsers(function(){
+					    callback(me.getCommunityMembers());
+					});
+
+					return null;
+
+			 	}
+			 	throw 'CommunityMembers list has not been loaded yet. hint: add callback arg to this call';
+
+			}
+
+			if(callback){
+				callback(me.getCommunityMembers());
+			}
+
+			return me.getAllUsers().filter(function(u){
+		    	return u.isCommunityMember();
+		    });
+
+
+		},
 
 		getAllUsers: function(callback) {
 			var me = this;
@@ -544,6 +746,27 @@ var ProjectTeam = (function() {
 			}
 			throw 'Invalid user: ' + id;
 		},
+		getDevice: function(id, callback) {
+
+
+
+			var me = this;
+
+			if (callback) {
+				me.Devices(function() {
+					callback(me.getDevice(id));
+				})
+				return;
+			}
+
+			var users = me.getDevices();
+			for (var i = 0; i < users.length; i++) {
+				if (users[i].getId() + "" == id + "") {
+					return users[i];
+				}
+			}
+			throw 'Invalid device: ' + id;
+		},
 
 
 		getUserOrDevice: function(id) {
@@ -602,6 +825,9 @@ var ProjectTeam = (function() {
 
 
 		removeProject: function(p) {
+
+			var me=this;
+			
 			if (!(p instanceof Proposal)) {
 				throw 'Must be a Proposal';
 			}
@@ -621,15 +847,38 @@ var ProjectTeam = (function() {
 
 	});
 
+	ProjectTeam.GetAllRoles=function(){
+		return ["tribal-council",
+				"chief-council",
+				"lands-department-manager",
+				"lands-department",
+				"community-member"];
+	}
+
+	ProjectTeam.GetRolesUserCanAssign=function(){
+
+		if(AppClient.getUserType()=="admin"){
+			return ProjectTeam.GetAllRoles();
+		}
+		var user=ProjectTeam.CurrentTeam().getUser(AppClient.getId());
+		return user.getRolesUserCanAssign();          
+
+	}
+
+	ProjectTeam.CurrentTeam = function() {
+		if (!ProjectTeam._currentTeam) {
+			ProjectTeam._currentTeam = new ProjectTeam();
+		}
+		return ProjectTeam._currentTeam;
+	}
+
+	return ProjectTeam;
+
 
 
 })();
 
 
-ProjectTeam.CurrentTeam = function() {
-	if (!ProjectTeam._currentTeam) {
-		ProjectTeam._currentTeam = new ProjectTeam();
-	}
-	return ProjectTeam._currentTeam;
-}
+
+
 

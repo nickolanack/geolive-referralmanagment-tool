@@ -6,7 +6,7 @@
  $layerGroups=array('community', 'townships', 'mining', 'forestry', 'boundary', 'crowdsource', 'user');
     foreach($layerGroups as $i=>$groupName){
         
-        GetWidget('plugin.Maps.Legend')->setParameters(array(
+        GetWidget('plugin.Maps.Legend')->setScriptName('widget_'.$groupName)->setParameters(array(
             'showToggle'=>true,
             'formatLegendScript'=>'
             

@@ -26,7 +26,9 @@ $firelight->includeScripts();
 GetWidget('proposalForm')->display($targetInstance); //proposal wizard from map
 
 
-if(GetClient()->isGuest()){
+GetWidget('dashboardLoader')->display($targetInstance); //proposal wizard from map
+
+//if(GetClient()->isGuest()){
    GetWidget('guestDashboard')->display($targetInstance); 
    GetWidget('loginForm')->display($targetInstance); //login wizard from map
    GetWidget('forgotPasswordForm')->display($targetInstance); //login wizard from map
@@ -39,8 +41,8 @@ if(GetClient()->isGuest()){
    
    
    
-   return;
-}
+   //return;
+//}
 
 IncludeJSBlock('
     
@@ -63,20 +65,20 @@ IncludeJSBlock('
 ');
 
 
-if((!GetClient()->isAdmin())&&count(array_intersect($firelight->teamMemberRoles(), ($roles=$firelight->getUserRoles())))==0){
+//if((!GetClient()->isAdmin())&&count(array_intersect($firelight->teamMemberRoles(), ($roles=$firelight->getUserRoles())))==0){
     
     
     GetWidget('defaultPostDetail')->display($targetInstance);
     
-    if(count(array_intersect($firelight->communityMemberRoles(),$roles))>0){
+    //if(count(array_intersect($firelight->communityMemberRoles(),$roles))>0){
         GetWidget('communityMemberDashboard')->display($targetInstance); 
-        return;
-    }
+        //return;
+    //}
     
     
     GetWidget('nonMemberDashboard')->display($targetInstance); 
-    return;
-}
+    //return;
+//}
 
 
 GetWidget('mainActivityDetail')->display($targetInstance);

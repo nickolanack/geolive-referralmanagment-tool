@@ -215,6 +215,7 @@ var Proposal = (function() {
 			return me.getPercentTasksComplete();
 
 		},
+		
 		getPercentTasksComplete: function() {
 
 
@@ -547,6 +548,12 @@ var Proposal = (function() {
 			var me = this;
 			return me.data.userdetails.name + " " + me.data.userdetails.email;
 			//return 'ddd';
+
+		},
+		getProjectSubmitterId:function(){
+
+			var me=this;
+			return me.data.userdetails.id;
 
 		},
 

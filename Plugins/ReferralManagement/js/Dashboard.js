@@ -1,6 +1,174 @@
 var ReferralManagementDashboard = {
 
 
+	getCreatedByString:function(item){
+
+
+		var name=item.getProjectSubmitter();
+		return name;
+
+		return "unknown";
+
+	},
+
+	loadUserDashboardView:function(application){
+
+		var currentView='dashboardLoader';
+		var loadView=function(view){
+
+			if(currentView==view){
+				return;
+			}
+
+			if(currentView!='dashboardLoader'){
+				view='dashboardLoader';
+			}
+
+			
+			currentView=view;
+			application.getChildView('content',0).redraw({"namedView":view});
+			
+		}
+
+		var checkUserRole=function(team){
+
+				if(AppClient.getUserType()=="admin"){
+					loadView("dashboardContent");
+					return;
+				}
+			     
+		        try{
+		            var user=team.getUser(AppClient.getId());
+		            if(user.isTeamMember()){
+		            	loadView("dashboardContent");
+		            	return;
+		            }
+
+		            if(user.isCommunityMember()){
+
+		            	loadView("communityMemberDashboard")
+		            	return;
+		            }
+
+		        }catch(e){
+		            
+		        }
+		        return loadView('nonMemberDashboard');
+
+		}
+		ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+			checkUserRole(team);
+			team.addEvent('userListChanged:once', function(){
+				checkUserRole(team);
+			});
+		})
+
+
+	},
+	createRoleEditModules:function(item){
+		if((item.isProjectMember&&item.isProjectMember())){
+		    return null;
+		}
+
+		if(!item.isDevice){
+		    if(window.console){
+		        console.warn('Not a ReferralManagementUser');
+		    }
+		    return null;
+		}
+
+
+		var rolesEditList=ProjectTeam.GetRolesUserCanAssign();
+		var allRoles=ProjectTeam.GetAllRoles();
+
+		var itemsMinRoleIndex=Math.min.apply(null,item.getRoles().map(function(r){return allRoles.indexOf(r)}));
+		var clientsMinEditRoleIndex=Math.min.apply(null,rolesEditList.map(function(r){return allRoles.indexOf(r)}));
+
+		var roles=allRoles.slice(0)
+
+
+		if(item.isDevice()){
+		    roles=[roles.pop()];
+		}
+
+		var addEmpty=false;
+		var foundActive=false;
+
+		var module=new ElementModule('ul',{"class":"user-roles"});
+
+		if(item.getId()==AppClient.getId()){
+		    module.runOnceOnLoad(function(){
+		        module.viewer.getUIView().getElement().addClass('this-is-me');
+		    });
+		}
+
+		var el=module.getElement();
+
+		var itemRoles=item.getRoles();
+
+		var els=[];
+
+		var userItemIsA=function(r){
+		    return item.getRoles().indexOf(r)>=0||(r=='none'&&item.getRoles().length==0)
+		}
+
+		var clientCanEditUserRole=function(r){
+		    return ((rolesEditList.indexOf(r)>=0&&clientsMinEditRoleIndex<=itemsMinRoleIndex)||(r=='none'&&rolesEditList.length));
+		}
+
+		var addRole=function(r){
+		    var roleEl=el.appendChild(new Element('li',{"class":"role-"+r}));
+		    els.push(roleEl);
+		    if(userItemIsA(r)){
+		        foundActive=true
+		        roleEl.addClass("active");
+		        el.setAttribute("data-user-role", r);
+		        el.setAttribute("data-user-role-label", r);
+		    }
+		    
+		    
+		    var label=r.split('-').join(' ').capitalize();
+		    var popover=function(text){
+		         new UIPopover(roleEl,
+		           {
+		            description:text,
+		            anchor:UIPopover.AnchorAuto()
+		           }); 
+		    }
+		    
+		   
+		    
+		    if(clientCanEditUserRole(r)){
+		        addEmpty=true;
+		        roleEl.addClass('selectable');
+		        roleEl.addEvent('click',function(){
+		            item.setRole(r, function(){
+		                els.forEach(function(e){
+		                    e.removeClass("active");
+		                })
+		                roleEl.addClass("active");
+		            });
+		        });
+		        
+		        popover(label+'<br/><span style="color:cornflowerblue;">click to set users role</span>');
+		     
+		        
+		    }else{
+		        
+		       popover(label);
+		        
+		    }
+		}
+
+		roles.forEach(addRole);
+		if(addEmpty){
+		    addRole('none');
+		}
+
+		return module;
+
+	},
+
 	fileEditButtons: function(item, application, listItem) {
 
 
@@ -693,6 +861,7 @@ var ReferralManagementDashboard = {
 						}
 
 						setCounter();
+						navigationController.addWeakEvent(team, 'userListChanged', setCounter);
 						navigationController.addWeakEvent(team, 'addUser', setCounter);
 						navigationController.addWeakEvent(team, 'assignUser', setCounter);
 						navigationController.addWeakEvent(team, 'removeUser', setCounter);
@@ -741,6 +910,7 @@ var ReferralManagementDashboard = {
 						}
 
 						setCounter();
+						navigationController.addWeakEvent(team, 'userListChanged', setCounter);
 						navigationController.addWeakEvent(team, 'addUser', setCounter);
 						navigationController.addWeakEvent(team, 'assignUser', setCounter);
 						navigationController.addWeakEvent(team, 'removeUser', setCounter);
@@ -789,6 +959,7 @@ var ReferralManagementDashboard = {
 						}
 
 						setCounter();
+						navigationController.addWeakEvent(team, 'deviceListChanged', setCounter);
 						navigationController.addWeakEvent(team, 'addUser', setCounter);
 						navigationController.addWeakEvent(team, 'assignUser', setCounter);
 						navigationController.addWeakEvent(team, 'removeUser', setCounter);
@@ -926,8 +1097,141 @@ var ReferralManagementDashboard = {
 		return div;
 
 
-	}
+	},
 
+
+	addWeakUpdateEvents:function(child, childView, listFilterFn){
+
+		childView.addWeakEvent(child, 'update', function(){
+        	if((!listFilterFn)||listFilterFn(child)){
+				childView.redraw();
+				return;
+			}
+
+			
+			childView.getElement().addClass('removing');
+			setTimeout(function(){
+				childView.remove();
+			}, 1000);
+    	});
+
+	},
+
+	addProjectItemWeakUpdateEvents:function(child, childView, application, listFilterFn){
+
+		childView.runOnceOnLoad(function(){
+
+		    childView.getElement().addEvent('click',function(){
+		       
+		        var controller=application.getNamedValue('navigationController');
+		        application.setNamedValue("currentProject", child);
+		        controller.navigateTo("Projects", "Main");
+
+		    });
+		    
+		    
+		     var current=application.getNamedValue("currentProject");
+		     if(current&&current.getId()==child.getId()){
+		         childView.getElement().addClass("active-project");
+		     }
+
+		});
+
+
+		childView.addWeakEvent(child, "change",function(){
+
+			if((!listFilterFn)||listFilterFn(child)){
+				childView.redraw();
+				return;
+			}
+
+			
+			childView.getElement().addClass('removing');
+			setTimeout(function(){
+				childView.remove();
+			}, 1000);
+		    			
+		});
+
+	},
+
+	addProjectListModuleWeakEvents:function(module){
+		module.addWeakEvent(ProjectTeam.CurrentTeam(), 'addProject', function(p){
+		    module.addItem(p); 
+		});
+
+		module.addWeakEvent(ProjectTeam.CurrentTeam(), 'removeProject', function(p){
+		   module.getModules().forEach(function(m){
+		    	m.getItem(function(item){
+		    		if(item===p){
+		    			m.getElement().addClass('removing');
+		    			setTimeout(function(){
+		    				m.remove();
+		    			},1000)
+		    			
+		    		}
+		    	})
+		   });
+		});
+	},
+
+
+	createProfileButtons:function(item){
+
+		var items=[];
+
+		var itemIsCurrentClient=item.getId()+""==AppClient.getId()+"";
+
+		if(itemIsCurrentClient){
+		    
+		    items.push(
+		        new Element('button',{"class":"primary-btn warn", "html":"Log Out", events:{"click":function(){
+		            AppClient.logout();
+		        }}})
+		    );
+		    
+		}
+
+		if((!itemIsCurrentClient)&&AppClient.getUserType()==="admin"/*&&item.getUserType()==="admin"*/){
+		    items.push(
+		        new Element('button',{"class":"primary-btn error", "html":"Delete", events:{"click":function(){
+		            if (confirm("Are you sure you want to delete this user")) {
+						
+		            	(new AjaxControlQuery(CoreAjaxUrlRoot, "delete_user", {
+						  'plugin': "Users",
+						  'user':item.getId()
+						})).addEvent('success',function(){
+						    
+						}).execute(); 
+
+					};
+		        }}})
+		    );
+		}
+
+
+
+		if(items.length==0){
+		    return null;
+		}
+
+
+		var d=new ElementModule('div',{
+		        styles:{
+		            "display": "inline-table",
+		            "width": "100%",
+		            "border-bottom": "1px dotted #6A7CE9"
+		        }
+		    });
+		    
+		items.forEach(function(b){
+		    d.appendChild(b);
+		});  
+
+		return d;
+
+
+	}
 
 
 

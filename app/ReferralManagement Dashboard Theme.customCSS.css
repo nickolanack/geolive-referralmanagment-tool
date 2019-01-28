@@ -1,5 +1,17 @@
 /*Login*/
 
+
+div#g-recaptcha {
+    margin: 20px 2px;
+}
+
+.registration-field.uitext-container {
+    width: calc( 50% - 10px );
+    display: inline-block;
+    margin-right: 10px;
+}
+
+
 .ui-view.login-form {
     max-width: 450px;
     margin: auto;
@@ -181,6 +193,22 @@ label.boolean-field p {
 }
 
 /*Interface*/
+
+
+.created-by>span.field-value {
+    display: block;
+    text-align: right;
+    font-size: 13px;
+    font-style: italic;
+    color: #6ad2b4;
+    margin-right: 10px;
+}
+
+.created-by>span.field-value:before {
+    content: "Submitted by ";
+        color: white;
+    
+}
 
 
 .left-panel .application-logo {
@@ -1388,6 +1416,11 @@ ul.item-tags li {
 
 .ui-view.active-project {
     background-color: rgba(255,255,255,0.1);
+}
+
+.ui-view.removing {
+    filter: blur(2px);
+    opacity: 0.5;
 }
 
 .project-detail span.progress {

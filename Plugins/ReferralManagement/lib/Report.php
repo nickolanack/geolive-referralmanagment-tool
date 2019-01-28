@@ -30,7 +30,7 @@ class Report{
 		$data=$this->getPlugin()->getProposalData($this->proposal);
 
         $localPath=function($url){
-            if(HtmlDocument()->isLocalFileUrl($url)){
+            if((new \core\html\Path())->isHostedLocally($url)){
                 return PathFrom($url);
             }
 
