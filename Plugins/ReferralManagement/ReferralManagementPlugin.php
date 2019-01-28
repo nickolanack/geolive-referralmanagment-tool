@@ -17,6 +17,20 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 	use core\TemplateRenderer;
 
 
+
+	protected function onFacebookRegister($params){
+
+		$photoUrl='https://graph.facebook.com/'.$params->fbuser->id.'/picture?type=large';
+		error_log($photoUrl);
+		GetPlugin('Attributes');
+		$icon='<img src="'.$photoUrl.'" />';
+		(new \attributes\Record('userAttributes'))->setValues($params->user, "user", array(
+			"profileIcon"=>'<img src="'.$photoUrl.'" />',
+			"firstName"=>$params->fbuser->name
+		));
+
+	}
+
 	protected function onTriggerUpdateUserList($params){
 
 		$cacheName="ReferralManagement.userList.json";
