@@ -10868,19 +10868,19 @@
             "metadata": {
                 "title": "proposalAttributes",
                 "_tableDiagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 322,
+                    "y": 275
                 },
                 "_diagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 322,
+                    "y": 275
                 },
                 "appliesTo": [
                     "proposal"
                 ],
                 "_typeDiagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 100,
+                    "y": 300
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -11950,11 +11950,11 @@
                         "label": "First Nations Involved",
                         "description": "",
                         "icon": [],
-                        "color": "rgb(undefined, undefined, undefined)",
+                        "color": "rgb(NaN, NaN, NaN)",
                         "visibility": "public",
                         "editability": "registered",
                         "searchability": "public",
-                        "allowMultiple": false,
+                        "allowMultiple": true,
                         "fieldType": "text",
                         "fieldTextOptions": {
                             "textType": "input",
