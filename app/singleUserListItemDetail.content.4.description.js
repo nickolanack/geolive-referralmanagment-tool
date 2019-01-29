@@ -1,1 +1,1 @@
-Sets the users role using icon selection menu list
+Only visible in team member list for current project

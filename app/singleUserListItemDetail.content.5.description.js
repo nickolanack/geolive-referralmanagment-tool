@@ -1,0 +1,1 @@
+Sets the users role using icon selection menu list
