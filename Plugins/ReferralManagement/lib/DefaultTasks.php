@@ -1,0 +1,109 @@
+<?php
+
+
+namespace ReferralManagement;
+
+class DefaultTasks{
+
+
+	public function createTasksForProposal($proposal){
+
+		$taskIds = array();
+
+		GetPlugin('Attributes');
+		$typeName = (new \attributes\Record('proposalAttributes'))->getValues($proposal, 'ReferralManagement.proposal')['type'];
+
+		Emit('onCreateDefaultTasksForProposal', array(
+			'proposal' => $proposal,
+			'type' => $typeName,
+		));
+
+		$typeVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $typeName)));
+
+		$config = GetWidget('proposalConfig');
+		foreach ($config->getParameter('taskNames') as $taskName) {
+			$taskVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $taskName)));
+			if (!empty($taskVar)) {
+
+				if ($config->getParameter("show" . ucfirst($taskVar) . "For" . ucfirst($typeVar))) {
+
+					if ($taskId = GetPlugin('Tasks')->createTask($proposal, 'ReferralManagement.proposal', array(
+						"name" => $config->getParameter($taskVar . "Label"),
+						"description" => $config->getParameter($taskVar . "Description"),
+						"dueDate" => $this->parseDueDateString($config->getParameter($taskVar . "DueDate"), $proposal),
+						"complete" => false,
+					))) {
+
+						Emit('onCreateDefaultTaskForProposal', array(
+							'proposal' => $proposal,
+							'task' => $taskId,
+							'name' => $taskName,
+							'type' => $typeName,
+						));
+						$taskIds[] = $taskId;
+
+					}
+				}
+			}
+		}
+
+		return $taskIds;
+
+
+	}
+
+
+	protected function parseDueDateString($date, $proposal) {
+		return $this->renderTemplate("dueDateTemplate", $date, GetPlugin('ReferralManagement')->getProposalData($proposal));
+	}
+
+
+
+	public function getTemplatesForProposal($proposal) {
+
+		GetPlugin('Attributes');
+		$typeName = (new \attributes\Record('proposalAttributes'))->getValues($proposal, 'ReferralManagement.proposal')['type'];
+		$typeVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $typeName)));
+
+		$taskTemplates = array(
+			"type" => $typeVar,
+			"id" => $proposal,
+			"taskTemplates" => array(),
+		);
+
+		$config = GetWidget('proposalConfig');
+		foreach ($config->getParameter('taskNames') as $taskName) {
+			$taskVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $taskName)));
+			if (empty($taskVar)) {
+				continue;
+			}
+
+			$taskTemplate = array();
+
+			$taskTemplate["show" . ucfirst($taskVar) . "For" . ucfirst($typeVar)] = $config->getParameter("show" . ucfirst($taskVar) . "For" . ucfirst($typeVar));
+
+			if ($config->getParameter("show" . ucfirst($taskVar) . "For" . ucfirst($typeVar))) {
+				$taskTemplate["task"] = array(
+					"id" => -1,
+					"name" => $config->getParameter($taskVar . "Label"),
+					"description" => $config->getParameter($taskVar . "Description"),
+					"dueDate" => $this->parseDueDateString($config->getParameter($taskVar . "DueDate"), $proposal),
+					"complete" => false,
+					"attributes" => array(
+						"isPriority" => false,
+						"starUsers" => [],
+						"attachements" => ""
+					),
+				);
+			}
+
+			$taskTemplates["taskTemplates"][] = $taskTemplate;
+
+		}
+
+		return $taskTemplates["taskTemplates"];
+	}
+
+
+
+}

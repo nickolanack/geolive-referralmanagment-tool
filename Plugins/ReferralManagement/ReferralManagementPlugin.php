@@ -3,8 +3,20 @@ Authorizer();
 
 include_once __DIR__.'/lib/Project.php';
 include_once __DIR__.'/lib/Task.php';
+include_once __DIR__.'/lib/UserRoles.php';
 
-class ReferralManagementPlugin extends Plugin implements core\ViewController, core\WidgetProvider, core\PluginDataTypeProvider, core\ModuleProvider, core\TaskProvider, core\AjaxControllerProvider, core\DatabaseProvider, core\EventListener {
+class ReferralManagementPlugin extends Plugin implements 
+	core\ViewController, 
+	core\WidgetProvider, 
+	core\PluginDataTypeProvider, 
+	core\ModuleProvider, 
+	core\TaskProvider, 
+	core\AjaxControllerProvider, 
+	core\DatabaseProvider, 
+	core\EventListener {
+
+
+
 	protected $description = 'ReferralManagement specific views, etc.';
 
 	use core\WidgetProviderTrait;
@@ -53,7 +65,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		$cacheName="ReferralManagement.userList.json";
 		$cacheData = HtmlDocument()->getCachedPage($cacheName);
 
-		$users=$this->getUsers($params->team);
+		$users=$this->listAllUsersMetadata();
 
 		$newData=json_encode($users);
 		HtmlDocument()->setCachedPage($cacheName, $newData);
@@ -69,7 +81,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		$cacheName="ReferralManagement.deviceList.json";
 		$cacheData = HtmlDocument()->getCachedPage($cacheName);
 
-		$devices=$this->getDevices($params->team);
+		$devices=$this->listAllDevicesMetadata();
 
 		$newData=json_encode($devices);
 		HtmlDocument()->setCachedPage($cacheName, $newData);
@@ -80,13 +92,13 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 	}
 
 	protected function onCreateUser($params){
-		foreach($this->getTeams() as $team){
+		foreach($this->listTeams() as $team){
 			(new \core\LongTaskProgress())
 				->emit('onTriggerUpdateUserList', array('team' => $team));
 		}
 	}
 	protected function onDeleteUser($params){
-		foreach($this->getTeams() as $team){
+		foreach($this->listTeams() as $team){
 			(new \core\LongTaskProgress())
 				->emit('onTriggerUpdateUserList', array('team' => $team));
 		}
@@ -94,98 +106,9 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	protected function onTriggerImportTusFile($params){
 
-
-		GetPlugin('Maps');
-		GetPlugin('Attributes');
-
-		include_once GetPath('{plugins}/Maps/lib/KmlDocument.php');
-		include_once GetPath('{plugins}/Maps/lib/SpatialFile.php');
-		include_once __DIR__.'/lib/TusImport.php';
-
-
-		$taskIndentifier=$params->taskIndentifier;
-		$longTaskProgress=new \core\LongTaskProgress($taskIndentifier);
-
-		$longTaskProgress->setActivity('Importing TUS From Kml');
-
-		set_time_limit(300);
-		$features=($importer=new TusImport($longTaskProgress))->fromKml(SpatialFile::Open(PathFrom($params->data[0])));
-		//$tableMetadata = AttributesTable::GetMetadata('featureAttributes');
-
-
-
-		$codeCounter=0;
-		$longTaskProgress->setTaskActivityHandler(function()use($features, &$codeCounter){
-			return array('total'=>count($features), 'progress'=>$codeCounter);
-		}, 'coding');
-	
-		foreach ($features as $feature) {
-
-
-			$feature->setLayerId($importer->parseLayer($feature));
-			if($feature instanceof Marker){
-				$feature->setIcon($importer->parseIcon($feature));
-			}
-			if($feature instanceof Line){
-				
-			}
-			if($feature instanceof Polygon){
-				
-			}
-	
-			$codeCounter++;
-			$longTaskProgress->check();
-
-			
-		}
-
-		$savingCounter=0;
-		$longTaskProgress->setTaskActivityHandler(function()use($features, &$savingCounter){
-			return array('total'=>count($features), 'progress'=>$savingCounter);
-		}, 'saving');
-
-		foreach ($features as $feature) {
-
-			//$existingFeature = MapController::GetFeatureWithName($feature->getName());
-			//if($existingFeature){
-
-
-			//}
-			if ($feature->getId() <= 0) {
-				//MapController::StoreMapFeature($feature);
-			}
-
-			$savingCounter++;
-			$longTaskProgress->check();
-
-		}
-
+		include_once __DIR__.'/lib/TusImportTask.php';
+		return (new \ReferralManagement\TusImportTask())->import($params);
 		
-
-		$attributesCounter=0;
-		$longTaskProgress->setTaskActivityHandler(function()use($features, &$attributesCounter){
-			return array('total'=>count($features), 'progress'=>$attributesCounter);
-		}, 'attributes');
-		foreach ($features as $feature) {
-			
-			$attributes=$importer->parseAttributes($feature);
-			//AttributesRecord::Set($feature->getId(), $feature->getType(), $attributes, $tableMetadata);
-		
-			$attributesCounter++;
-			$longTaskProgress->check();
-		}
-
-
-
-
-		return $longTaskProgress->complete();
-
-	}
-
-	public function savePlugin() {
-		$this->setParameterFromRequest('customFormCss', '');
-
-		return parent::savePlugin();
 	}
 
 	/**
@@ -201,12 +124,6 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 			)
 		);
 	}
-
-	
-
-
-
-	
 
 	
 
@@ -777,60 +694,66 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 			->toArray();
 	}
 
-	public function isUserInGroup($group) {
-
-		if (GetClient()->isGuest()) {
-			return false;
-		}
-
-		if (GetClient()->isAdmin()) {
-			if (in_array($group, array('tribal-council', 'chief-council', 'lands-department', 'lands-department-manager', 'community-member'))) {
-				//return true;
-			}
-		}
-
-		$map = $this->getGroupAttributes();
-
-		$map['proponent'] = 'isProponent';
-
-		GetPlugin('Attributes');
-		$attributeMap = array();
-		$attribs = (new attributes\Record('userAttributes'))->getValues(GetClient()->getUserId(), 'user');
-
-		//AttributesRecord::GetFields(GetClient()->getUserId(), 'user', array_values($map), 'userAttributes');
-
-		// if($group=='lands-department'){
-		//     if($attribs[$map['lands-department-manager']]===true||$attribs[$map['lands-department-manager']]==="true"){
-		//         return true;
-		//     }
-		// }
-
-		if (key_exists($group, $map) && key_exists($map[$group], $attribs)) {
-			return $attribs[$map[$group]] === true || $attribs[$map[$group]] === "true";
-		}
-
-		return false;
-
+	public function isUserInGroup($role) {
+		return (new \ReferralManagement\UserRoles())->userHasRole($role);
 	}
 
 	public function getUserRoleIcon($id = -1) {
+		return (new \ReferralManagement\UserRoles())->getUserRoleIcon($id);
+	}
 
-		if ($id < 1) {
-			$id = GetClient()->getUserId();
-		}
+	public function getRoleIcons() {
+		return (new \ReferralManagement\UserRoles())->listRoleIcons();
+	}
 
-		$map = $this->getGroupAttributes();
+	
 
-		$attribs = $this->_getUserAttributes($id);
+	public function getUserRoles($id = -1) {
+		return (new \ReferralManagement\UserRoles())->getUsersRoles($id);
+	}
 
-		foreach (array_keys($map) as $key) {
+	
+	public function getRolesUserCanEdit($id = -1) {
+		return (new \ReferralManagement\UserRoles())->getRolesUserCanEdit($id);
+	}
 
-			if ($attribs[$map[$key]] === true || $attribs[$map[$key]] === "true") {
-				return UrlFrom((new core\Configuration('rolesicons'))->getParameter($key)[0]);
-			}
 
-		}
-		return UrlFrom((new core\Configuration('rolesicons'))->getParameter('none')[0]);
+	public function getUserRoleLabel($id = -1) {
+		return (new \ReferralManagement\UserRoles())->getUsersRoleLabel($id);
+	}
+
+	public function getGroupAttributes() {
+		return (new \ReferralManagement\UserRoles())->listRoleAttributes();
+	}
+
+	public function getRoles() {
+		return (new \ReferralManagement\UserRoles())->listRoles();
+	}
+
+	protected function getGroups() {
+		return (new \ReferralManagement\UserRoles())->listRoles();
+	}
+
+	public function teamMemberRoles() {
+		return (new \ReferralManagement\UserRoles())->listTeamRoles();
+	}
+
+	public function communityMemberRoles() {
+		return (new \ReferralManagement\UserRoles())->listCommunityRoles();
+	}
+
+	
+
+
+
+
+
+
+
+
+
+	public function getUserAttributes($userId){
+		return $this->_getUserAttributes($userId);
 	}
 
 	protected function _getUserAttributes($id) {
@@ -845,98 +768,11 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 		return $this->currentUserAttributes;
 
 	}
+	
 
-	public function getRoleIcons() {
-
-		$config = new core\Configuration('rolesicons');
-
-		$icons = array();
-		foreach (array_merge($this->getGroups(), array('admin', 'none')) as $key) {
-
-			$icons[$key] = UrlFrom($config->getParameter($key)[0]);
-
-		}
-		return $icons;
-
-	}
-
-	public function getUserRoles($id = -1) {
-		if ($id < 1) {
-			$id = GetClient()->getUserId();
-		}
-
-		$map = $this->getGroupAttributes();
-
-		$attribs = $this->_getUserAttributes($id);
-
-		$roles = array();
-
-		foreach (array_keys($map) as $key) {
-
-			if ($attribs[$map[$key]] === true || $attribs[$map[$key]] === "true") {
-				$roles[] = $key;
-			}
-
-		}
-
-		return $roles;
-	}
-
-	/**
-	 *
-	 * @param  integer $id [description]
-	 * @return [type]      [description]
-	 */
-	public function getRolesUserCanEdit($id = -1) {
-
-		$rolesList = $this->getRoles();
-		if (($id == -1 || $id == GetClient()->getUserId()) && GetClient()->isAdmin()) {
-
-
-
-			//return $rolesList;
-		}
-
-		$roles = $this->getUserRoles($id);
-
-		$roleIndexes = array_map(function ($r) use ($rolesList) {
-			return array_search($r, $rolesList);
-		}, $roles);
-
-		if (empty($roleIndexes)) {
-			return array();
-		}
-		$minIndex = min($roleIndexes);
-		$canSetList = array_slice($rolesList, $minIndex + 1);
-		return $canSetList;
-
-	}
-
-	public function getUserRoleLabel($id = -1) {
-
-		if ($id < 1) {
-			$id = GetClient()->getUserId();
-		}
-
-		$map = $this->getGroupAttributes();
-
-		$attribs = $this->_getUserAttributes($id);
-
-		foreach (array_keys($map) as $key) {
-
-			if ($attribs[$map[$key]] === true || $attribs[$map[$key]] === "true") {
-				return $key;
-			}
-
-		}
-
-		return 'none';
-
-	}
+	
 	public function canCreateCommunityContent($id = -1) {
-
 		return $this->getUserRoleLabel($id) !== 'none';
-
 	}
 
 	public function getUsersMetadata($id = -1) {
@@ -973,7 +809,7 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 				
 
 				if(!in_array($attributes['community'], $this->listCommunities())){
-					$metadata['community']=$this->listCommunities()[0];
+					$metadata['community']='none';
 				}else{
 					$metadata['community']=$attributes['community'];
 				}
@@ -1001,6 +837,19 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 		return $metadata;
 
+	}
+
+
+	/**
+	 * return true if current user should see this user
+	 */
+	public function shouldShowUser($userMetadata){
+		return true;
+	}
+
+
+	public function shouldShowDevice($deviceMetadata){
+		return true;
 	}
 
 	protected $currentUserAttributes = null;
@@ -1116,51 +965,28 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 	}
 
 	public function getTeams($id = -1) {
-		return array("wabun");
+		return $this->getCommunities($id);
 	}
+
 	public function getCommunities($id = -1) {
-		return array("wabun");
-	}
-	public function getGroupAttributes() {
-		return array(
-			"tribal-council" => "isTribalCouncil",
-			"chief-council" => "isChiefCouncil",
-			"lands-department-manager" => "isLandsDepartmentManager",
-			"lands-department" => "isLandsDepartment",
-			"community-member" => "isCommunityMember",
-		);
-	}
 
-	protected function getGroups() {
+		if ($id < 1) {
+			$id = GetClient()->getUserId();
+		}
+		$attribs = $this->_getUserAttributes($id);
+		$communities=array();
 
-		//order is important...!
+		if(in_array($attribs['community'], $this->listCommunities())){
+			$communities[]=$attribs['community'];
+		}
 
-		return array(
-			"tribal-council",
-			"chief-council",
-			"lands-department-manager",
-			"lands-department",
-			"community-member",
-		);
+		return $communities;
 	}
-
-	public function teamMemberRoles() {
-		return array(
-			"tribal-council",
-			"chief-council",
-			"lands-department-manager",
-			"lands-department",
-		);
-	}
-	public function communityMemberRoles() {
-		return array(
-			"community-member",
-		);
-	}
+	
 
 	public function getGroupMembersOfGroup($group) {
 
-		$map = $this->getGroups();
+		$map = $this->getRoles();
 
 		$i = array_search($group, $map);
 		if ($i !== false) {
@@ -1176,137 +1002,20 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 	}
 	public function getMouseoverForGroup($name) {
 		$config = new core\Configuration('iconset');
-		return $config->getParameter($name . "Mouseover", "Hello Word");
+		return $config->getParameter($name . "Mouseover", "{configuration.iconset.".$name . "Mouseover}");
 	}
 
-	public function getDefaultTaskMeta($proposal) {
-
-		/**
-		 * TODO return a list of task templates that can be displayed in the form for default tasks
-		 */
-
-	}
 	public function getDefaultProposalTaskTemplates($proposal) {
-
-		GetPlugin('Attributes');
-		$typeName = (new attributes\Record('proposalAttributes'))->getValues($proposal, 'ReferralManagement.proposal')['type'];
-		$typeVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $typeName)));
-
-		$taskTemplates = array(
-			"type" => $typeVar,
-			"id" => $proposal,
-			"taskTemplates" => array(),
-		);
-
-		$config = GetWidget('proposalConfig');
-		foreach ($config->getParameter('taskNames') as $taskName) {
-			$taskVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $taskName)));
-			if (empty($taskVar)) {
-				continue;
-			}
-
-			$taskTemplate = array();
-
-			$taskTemplate["show" . ucfirst($taskVar) . "For" . ucfirst($typeVar)] = $config->getParameter("show" . ucfirst($taskVar) . "For" . ucfirst($typeVar));
-
-			if ($config->getParameter("show" . ucfirst($taskVar) . "For" . ucfirst($typeVar))) {
-				$taskTemplate["task"] = array(
-					"id" => -1,
-					"name" => $config->getParameter($taskVar . "Label"),
-					"description" => $config->getParameter($taskVar . "Description"),
-					"dueDate" => $this->parseDueDateString($config->getParameter($taskVar . "DueDate"), $proposal),
-					"complete" => false,
-					"attributes" => array(
-						"isPriority" => false,
-						"starUsers" => [],
-						"attachements" => ""
-					),
-				);
-			}
-
-			$taskTemplates["taskTemplates"][] = $taskTemplate;
-
-		}
-
-		return $taskTemplates["taskTemplates"];
+		include_once __DIR__.'/lib/DefaultTasks.php';
+		return (new \ReferralManagement\DefaultTasks())->getTemplatesForProposal($proposal);
 	}
 	public function createDefaultProposalTasks($proposal) {
-
-		$taskIds = array();
-
-		GetPlugin('Attributes');
-		$typeName = (new attributes\Record('proposalAttributes'))->getValues($proposal, 'ReferralManagement.proposal')['type'];
-
-		Emit('onCreateDefaultTasksForProposal', array(
-			'proposal' => $proposal,
-			'type' => $typeName,
-		));
-
-		$typeVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $typeName)));
-
-		$config = GetWidget('proposalConfig');
-		foreach ($config->getParameter('taskNames') as $taskName) {
-			$taskVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $taskName)));
-			if (!empty($taskVar)) {
-
-				if ($config->getParameter("show" . ucfirst($taskVar) . "For" . ucfirst($typeVar))) {
-
-					if ($taskId = GetPlugin('Tasks')->createTask($proposal, 'ReferralManagement.proposal', array(
-						"name" => $config->getParameter($taskVar . "Label"),
-						"description" => $config->getParameter($taskVar . "Description"),
-						"dueDate" => $this->parseDueDateString($config->getParameter($taskVar . "DueDate"), $proposal),
-						"complete" => false,
-					))) {
-
-						Emit('onCreateDefaultTaskForProposal', array(
-							'proposal' => $proposal,
-							'task' => $taskId,
-							'name' => $taskName,
-							'type' => $typeName,
-						));
-						$taskIds[] = $taskId;
-
-					}
-				}
-			}
-		}
-
-		return $taskIds;
-
+		include_once __DIR__.'/lib/DefaultTasks.php';
+		return (new \ReferralManagement\DefaultTasks())->createTasksForProposal($proposal);
 	}
 
-	protected function parseDueDateString($date, $proposal) {
 
-		return $this->renderTemplate("dueDateTemplate", $date, $this->getProposalData($proposal));
-
-		//return '00-00-00 00:00:00';
-	}
-
-	public function getRoles() {
-		return $this->getGroups();
-	}
-
-	/**
-	 * deprecated
-	 * @param  string $team [description]
-	 * @return [type]       [description]
-	 */
-	public function getTeamMembers($team = 'wabun') {
-
-		$list = array_map(function ($u) {
-
-			return $this->formatUser($u);
-
-		}, GetClient()->listUsers());
-
-		return array_values(array_filter($list, function ($u) {
-			return count(array_intersect($u['roles'], $this->teamMemberRoles())) > 0;
-		}));
-
-
-	}
-
-	public function getUsers($team = 'wabun') {
+	public function listAllUsersMetadata() {
 
 		$list = array_values(array_filter(GetClient()->listUsers(), function ($u) {
 			return !$this->_isDevice($u);
@@ -1323,11 +1032,9 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	}
 
-	protected function _isDevice($user) {
-		return strpos($user['email'], 'device.') === 0;
-	}
+	
 
-	public function getDevices($team = 'wabun') {
+	public function listAllDevicesMetadata() {
 
 		$list = array_values(array_filter(GetClient()->listUsers(), function ($u) {
 			return $this->_isDevice($u);
@@ -1342,6 +1049,11 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	}
 
+
+	protected function _isDevice($user) {
+		return strpos($user['email'], 'device.') === 0;
+	}
+
 	protected function formatUser($usermeta) {
 
 		return array_merge(
@@ -1352,25 +1064,5 @@ class ReferralManagementPlugin extends Plugin implements core\ViewController, co
 
 	}
 
-	public function getDefaultTeamMembers($team = 'wabun') {
-
-		$list = $this->getTeamMembers();
-
-		$roles = $this->rolesAbove();
-
-		return array_values(array_filter($list, function ($m) use ($roles) {
-			if (count(array_intersect($roles, $m['roles']))) {
-				return true;
-			}
-			return false;
-		}));
-
-	}
-
-	protected function rolesAbove($role = 'lands-department') {
-		$roles = $this->getRoles();
-		return array_slice($roles, 0, array_search($role, $roles));
-
-	}
 
 }

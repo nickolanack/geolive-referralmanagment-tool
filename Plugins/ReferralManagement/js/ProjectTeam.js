@@ -29,16 +29,6 @@ var ProjectTeam = (function() {
 		}
 	});
 
-	var TeamListQuery = new Class({
-		Extends: AjaxControlQuery,
-		initialize: function(team) {
-			this.parent(CoreAjaxUrlRoot, 'list_team_members', {
-				plugin: 'ReferralManagement',
-				team: team
-			});
-		}
-	});
-
 
 	var UserListQuery = new Class({
 		Extends: AjaxControlQuery,

@@ -51,6 +51,10 @@ var ReferralManagementUser = new Class({
 
 			return false;
 		},
+		getCommunity:function(){
+			var me=this;
+			return me.options.metadata.community;
+		},
 		isUnassigned:function(){
 			var me=this;
 			var roles=me.getRoles();

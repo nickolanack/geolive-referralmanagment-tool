@@ -58,9 +58,6 @@ class Project {
 
 		}, $teamMembers);
 
-		//if(empty($teamMembers)){
-		// $attributes['teamMembers']=$this->getDefaultTeamMembers();
-		//}
 
 		$proposal['attributes'] = $attributes;
 		$time = strtotime($attributes['commentDeadlineDate']);

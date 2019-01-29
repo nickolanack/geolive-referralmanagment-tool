@@ -291,11 +291,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		}, $taskIds));
 	}
 
-	protected function listTeamMembers($json) {
-		return array(
-			"results" => $this->getPlugin()->getTeamMembers($json->team),
-		);
-	}
+
 
 	protected function listUsers($json) {
 
@@ -304,12 +300,16 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		if (!empty($cacheData)) {
 			$users=json_decode($cacheData);
 		}else{
-			$users=$this->getPlugin()->getUsers($json->team);
+			$users=$this->getPlugin()->listAllUsersMetadata();
 			HtmlDocument()->setCachedPage($cacheName, json_encode($users));
 		}
 
+		$users=array_values(array_filter($users, function($user){
+			return $this->getPlugin()->shouldShowUser($user);
+		}));
 
-		(new \core\LongTaskProgress())->emit('onTriggerUpdateUserList', array('team' => $json->team));
+
+		(new \core\LongTaskProgress())->emit('onTriggerUpdateUserList', array());
 
 
 		return array(
@@ -329,11 +329,15 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		if (!empty($cacheData)) {
 			$devices=json_decode($cacheData);
 		}else{
-			$devices=$this->getPlugin()->getDevices($json->team);
+			$devices=$this->getPlugin()->listAllDevicesMetadata();
 			HtmlDocument()->setCachedPage($cacheName, json_encode($devices));
 		}
 
-		(new \core\LongTaskProgress())->emit('onTriggerUpdateDevicesList', array('team' => $json->team));
+		$devices=array_values(array_filter($devices, function($device){
+			return $this->getPlugin()->shouldShowDevice($device);
+		}));
+
+		(new \core\LongTaskProgress())->emit('onTriggerUpdateDevicesList', array());
 	
 		return array(
 			'subscription' =>array(

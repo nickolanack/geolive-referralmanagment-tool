@@ -52,13 +52,7 @@
     "generate_report":[],
     "download_files":[],
 
-    "list_team_members": {
-        "validate": {
-            "checkKeys": [
-                "team"
-            ]
-        }
-    },
+
     "list_users": {
         "validate": {
             "checkKeys": [
