@@ -8329,19 +8329,28 @@
                                 }
                             },
                             {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return item.getCommunity()",
+                                    "formatElementScript": "el.addClass('user-community');"
+                                }
+                            },
+                            {
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "Project Permssions",
-                                    "script": "singleUserListItemDetail.metadata.positions.content.modules.3.config.script.js",
-                                    "description": "singleUserListItemDetail.metadata.positions.content.modules.3.config.description.js"
+                                    "script": "singleUserListItemDetail.metadata.positions.content.modules.4.config.script.js",
+                                    "description": "singleUserListItemDetail.metadata.positions.content.modules.4.config.description.js"
                                 }
                             },
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "User Role Iconselect",
-                                    "script": "singleUserListItemDetail.metadata.positions.content.modules.4.config.script.js",
-                                    "description": "singleUserListItemDetail.metadata.positions.content.modules.4.config.description.js"
+                                    "script": "singleUserListItemDetail.metadata.positions.content.modules.5.config.script.js",
+                                    "description": "singleUserListItemDetail.metadata.positions.content.modules.5.config.description.js"
                                 }
                             }
                         ]
