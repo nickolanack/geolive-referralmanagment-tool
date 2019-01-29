@@ -38,6 +38,22 @@ class UserRoles{
 		);
 	}
 
+
+	public function listCouncilRoles() {
+		return array(
+			"tribal-council",
+			"chief-council"
+		);
+	}
+
+	public function listManagerRoles() {
+		return array(
+			"tribal-council",
+			"chief-council",
+			"lands-department-manager"
+		);
+	}
+
 	public function listCommunityRoles() {
 		return array(
 			"community-member",
@@ -45,17 +61,14 @@ class UserRoles{
 	}
 
 
+	public function userHasAnyOfRoles($rolesList, $userId=-1){
+		return count(array_intersect($rolesList, $this->getUsersRoles($userId)))>0;
+	}
 
 	public function userHasRole($role) {
 
 		if (GetClient()->isGuest()) {
 			return false;
-		}
-
-		if (GetClient()->isAdmin()) {
-			if (in_array($role, array('tribal-council', 'chief-council', 'lands-department', 'lands-department-manager', 'community-member'))) {
-				//return true;
-			}
 		}
 
 		$map = $this->listRoleAttributes();
@@ -157,7 +170,7 @@ class UserRoles{
 
 	public function listRoleIcons() {
 
-		$config = new core\Configuration('rolesicons');
+		$config = new \core\Configuration('rolesicons');
 
 		$icons = array();
 		foreach (array_merge($this->listRoles(), array('admin', 'none')) as $key) {
@@ -183,11 +196,11 @@ class UserRoles{
 		foreach (array_keys($map) as $key) {
 
 			if ($attribs[$map[$key]] === true || $attribs[$map[$key]] === "true") {
-				return UrlFrom((new core\Configuration('rolesicons'))->getParameter($key)[0]);
+				return UrlFrom((new \core\Configuration('rolesicons'))->getParameter($key)[0]);
 			}
 
 		}
-		return UrlFrom((new core\Configuration('rolesicons'))->getParameter('none')[0]);
+		return UrlFrom((new \core\Configuration('rolesicons'))->getParameter('none')[0]);
 	}
 
 

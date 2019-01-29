@@ -841,15 +841,58 @@ class ReferralManagementPlugin extends Plugin implements
 
 
 	/**
-	 * return true if current user should see this user
+	 * return a closure
 	 */
-	public function shouldShowUser($userMetadata){
-		return true;
+	public function shouldShowUserFilter(){
+
+		$roles=(new \ReferralManagement\UserRoles());
+		$managerRoles=$roles->listManagerRoles();
+		if(GetClient()->isAdmin()){
+
+			//show all users;
+			return function(&$userMetadata){
+				$userMetadata->visibleBecuase="You are admin";
+				return true;
+			};
+
+		}
+		if($roles->userHasAnyOfRoles($managerRoles)){
+
+			//show all users;
+			return function(&$userMetadata){
+				$userMetadata->visibleBecuase="You are manager";
+				return true;
+			};
+
+		}
+
+		$clientMetadata=$this->getUsersMetadata(GetClient()->getUserId());
+		$groupCommunity=$this->communityCollective();
+		
+		if(!$roles->userHasAnyOfRoles($roles->listManagerRoles())){
+
+			//non managers can only see 'wabun users and thier own community users'
+
+			return function($userMetadata)use ($clientMetadata, $groupCommunity){
+
+				$result = $userMetadata->community===$groupCommunity||$userMetadata->community===$clientMetadata['community'];
+				$userMetadata->visibleBecuase=$result?"same community":"different community";
+				return $result;
+			};
+
+		}
+
+
+		return function($userMetadata)use ($clientMetadata, $managerRoles, $groupCommunity){
+			$result =  count(array_intersect($managerRoles, $userMetadata->roles))>0||$userMetadata->community===$groupCommunity||$userMetadata->community===$clientMetadata['community'];
+			$userMetadata->visibleBecuase=$result?"same community or manager":"different community not manager";
+			return $result;
+		};
 	}
 
 
-	public function shouldShowDevice($deviceMetadata){
-		return true;
+	public function shouldShowDeviceFilter(){
+		return $this->shouldShowUserFilter();
 	}
 
 	protected $currentUserAttributes = null;
@@ -963,6 +1006,17 @@ class ReferralManagementPlugin extends Plugin implements
 	public function listCommunities() {
 		return array("wabun", "beaverhouse", "brunswick house", "chapleau ojibway", "flying post", "matachewan", "mattagami");
 	}
+
+
+	public function rootTeam() {
+		return $this->communityCollective();
+	}
+	public function communityCollective() {
+		return "wabun";
+	}
+
+
+
 
 	public function getTeams($id = -1) {
 		return $this->getCommunities($id);

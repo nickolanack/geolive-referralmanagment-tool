@@ -304,9 +304,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			HtmlDocument()->setCachedPage($cacheName, json_encode($users));
 		}
 
-		$users=array_values(array_filter($users, function($user){
-			return $this->getPlugin()->shouldShowUser($user);
-		}));
+		$users=array_values(array_filter($users, $this->getPlugin()->shouldShowUserFilter()));
 
 
 		(new \core\LongTaskProgress())->emit('onTriggerUpdateUserList', array());
@@ -333,9 +331,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			HtmlDocument()->setCachedPage($cacheName, json_encode($devices));
 		}
 
-		$devices=array_values(array_filter($devices, function($device){
-			return $this->getPlugin()->shouldShowDevice($device);
-		}));
+		$devices=array_values(array_filter($devices, $this->getPlugin()->shouldShowDeviceFilter()));
 
 		(new \core\LongTaskProgress())->emit('onTriggerUpdateDevicesList', array());
 	
