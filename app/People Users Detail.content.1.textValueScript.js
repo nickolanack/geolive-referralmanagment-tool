@@ -2,6 +2,6 @@ callback(
     "<p>Teams are created around a communities Lands Department. "+
     "Lands Department managers can approve new Lands Department members, "+
     "(as well approving regular community users and mobile app users). "+
-    "`Wabun` Lands department members are visible to all communities"+"</p>"+
-    "<p>You can collaborate on Projects and Tasks with people in your team. "+
+    "`Wabun` Lands department members are visible to all communities"+
+    "<br/>You can collaborate on Projects and Tasks with people in your team. "+
     "Lands Department managers can share projects accross communities</p>"+ReferralManagementDashboard.getUsersTeamMembersDescription());
