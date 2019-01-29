@@ -9663,19 +9663,19 @@
             "metadata": {
                 "title": "userAttributes",
                 "_tableDiagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 322,
+                    "y": 275
                 },
                 "_diagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 322,
+                    "y": 275
                 },
                 "appliesTo": [
                     "user"
                 ],
                 "_typeDiagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 100,
+                    "y": 300
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -10311,6 +10311,50 @@
                         "searchability": "public",
                         "allowMultiple": false,
                         "fieldType": "boolean",
+                        "fieldTextOptions": {
+                            "textType": "input",
+                            "inputOptions": {
+                                "buildAutocomplete": false,
+                                "requireModeration": false,
+                                "limitMaxChars": 0,
+                                "limitMaxWords": 0,
+                                "allowHtml": false,
+                                "allowMedia": true,
+                                "allowLinks": true
+                            },
+                            "listOptions": {
+                                "takeSugesstions": true,
+                                "buildTree": false,
+                                "iconize": false,
+                                "colorize": false
+                            }
+                        },
+                        "fieldNumberOptions": {
+                            "precision": 0,
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
+                        },
+                        "fieldBooleanOptions": {
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
+                        "was": "",
+                        "title": "approvedCommunity",
+                        "label": "Approved Community",
+                        "description": "",
+                        "icon": [],
+                        "color": "rgb(undefined, undefined, undefined)",
+                        "visibility": "public",
+                        "editability": "registered",
+                        "searchability": "public",
+                        "allowMultiple": false,
+                        "fieldType": "text",
                         "fieldTextOptions": {
                             "textType": "input",
                             "inputOptions": {
