@@ -3736,7 +3736,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "User Detail View.metadata.positions.content.modules.4.config.fieldValueScript.js",
-                                    "formatElementScript": ""
+                                    "formatElementScript": "el.addClass('user-community');"
                                 }
                             }
                         ]
