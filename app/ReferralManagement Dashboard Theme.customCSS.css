@@ -696,6 +696,11 @@ span.inline-list-item {
 .ui-view.inset-menu-shading {
     display: block;
 }
+
+.inset-menu-shading.left-panel{
+    width:100%;
+}
+
 .ui-view.inset-menu-shading>div {
     background-color: #f0f0f0;
     display: inline-block;
