@@ -3,6 +3,7 @@ Authorizer();
 
 include_once __DIR__.'/lib/Project.php';
 include_once __DIR__.'/lib/Task.php';
+include_once __DIR__.'/lib/User.php';
 include_once __DIR__.'/lib/UserRoles.php';
 
 class ReferralManagementPlugin extends Plugin implements 
@@ -102,6 +103,10 @@ class ReferralManagementPlugin extends Plugin implements
 			(new \core\LongTaskProgress())
 				->emit('onTriggerUpdateUserList', array('team' => $team));
 		}
+	}
+
+	protected function listTeams($fn) {
+		return (new \ReferralManagement\User())->listTeams();
 	}
 
 	protected function onTriggerImportTusFile($params){
@@ -253,36 +258,16 @@ class ReferralManagementPlugin extends Plugin implements
 	public function getProjectList($filter=array()) {
 
 
-
-		
-		if (!Auth('memberof', 'lands-department', 'group')) {
-			$filter['user'] = GetClient()->getUserId();
+		if(!Auth('memberof', 'lands-department', 'group')){
+			return array();
 		}
+
 
 		$database = $this->getDatabase();
 		$results = $database->getAllProposals($filter);
 
-		$filter = function ($item) {
-			return true;
-		};
 
-		if (!Auth('memberof', 'lands-department-manager', 'group')) {
-
-			$clientId = GetClient()->getUserId();
-			$filter = function ($item) use ($clientId) {
-
-				if ($item['user'] == $clientId) {
-					return true;
-				}
-
-				if (in_array($clientId, $item['attributes']['teamMemberIds'])) {
-					return true;
-				}
-
-				return false;
-
-			};
-		}
+		
 
 		return array_values(array_filter(array_map(function ($result) {
 
@@ -293,11 +278,17 @@ class ReferralManagementPlugin extends Plugin implements
 					->toArray();
 			});
 			$project['profileData']=$this->getLastAnalysis();
+			$project['visible']=$this->shouldShowProjectFilter()($project);
+
 			return $project;
 			
-		}, $results), $filter));
+		}, $results), function($project){return $project['visible'];}));
 
 	}
+
+
+
+
 
 	protected function availableProjectPermissions() {
 
@@ -313,7 +304,7 @@ class ReferralManagementPlugin extends Plugin implements
 	public function defaultProjectPermissionsForUser($user, $project) {
 
 		if (is_numeric($user)) {
-			$user = $this->formatUser(GetClient()->userMetadataFor($user));
+			$user = $this->getUsersMetadata(GetClient()->userMetadataFor($user));
 		}
 
 		
@@ -441,7 +432,7 @@ class ReferralManagementPlugin extends Plugin implements
 		}
 
 
-		$addr=$this->getUsersEmail($user->id);
+		$addr=(new \ReferralManagement\User())->getEmail($user->id);
 		return $addr;
 
 	}
@@ -694,33 +685,45 @@ class ReferralManagementPlugin extends Plugin implements
 			->toArray();
 	}
 
+
+	/**
+	 * Used in custom user auth 
+	 */
 	public function isUserInGroup($role) {
 		return (new \ReferralManagement\UserRoles())->userHasRole($role);
 	}
 
-	public function getUserRoleIcon($id = -1) {
-		return (new \ReferralManagement\UserRoles())->getUserRoleIcon($id);
+	public function getGroupMembersOfGroup($group) {
+
+		$map = (new \ReferralManagement\UserRoles())->listRoles();
+
+		$i = array_search($group, $map);
+		if ($i !== false) {
+			return array_slice($map, 0, $i + 1);
+		}
+
+		return array();
 	}
 
+
+	/**
+	 * used in custom style script
+	 */
 	public function getRoleIcons() {
 		return (new \ReferralManagement\UserRoles())->listRoleIcons();
 	}
 
-	
 
 	public function getUserRoles($id = -1) {
 		return (new \ReferralManagement\UserRoles())->getUsersRoles($id);
 	}
 
-	
 	public function getRolesUserCanEdit($id = -1) {
 		return (new \ReferralManagement\UserRoles())->getRolesUserCanEdit($id);
 	}
 
 
-	public function getUserRoleLabel($id = -1) {
-		return (new \ReferralManagement\UserRoles())->getUsersRoleLabel($id);
-	}
+
 
 	public function getGroupAttributes() {
 		return (new \ReferralManagement\UserRoles())->listRoleAttributes();
@@ -730,113 +733,14 @@ class ReferralManagementPlugin extends Plugin implements
 		return (new \ReferralManagement\UserRoles())->listRoles();
 	}
 
-	protected function getGroups() {
-		return (new \ReferralManagement\UserRoles())->listRoles();
-	}
-
-	public function teamMemberRoles() {
-		return (new \ReferralManagement\UserRoles())->listTeamRoles();
-	}
-
-	public function communityMemberRoles() {
-		return (new \ReferralManagement\UserRoles())->listCommunityRoles();
-	}
-
-	
-
-
-
-
-
-
-
-
 
 	public function getUserAttributes($userId){
-		return $this->_getUserAttributes($userId);
+		return (new \ReferralManagement\User())->getAttributes($userId);
 	}
-
-	protected function _getUserAttributes($id) {
-
-		if (is_null($this->currentUserAttributes)) {
-
-			GetPlugin('Attributes');
-			return (new attributes\Record('userAttributes'))->getValues($id, 'user');
-
-		}
-
-		return $this->currentUserAttributes;
-
-	}
-	
 
 	
-	public function canCreateCommunityContent($id = -1) {
-		return $this->getUserRoleLabel($id) !== 'none';
-	}
-
 	public function getUsersMetadata($id = -1) {
-
-		$metadata = null;
-
-		if (is_array($id)) {
-			$metadata = $id;
-			if (!key_exists('id', $metadata)) {
-				throw new \Exception('Expected user metadata with id: ' . json_encode($metadata));
-			}
-			$id = $metadata['id'];
-		}
-
-		if ($id < 1) {
-			$id = GetClient()->getUserId();
-		}
-		if (!$metadata) {
-			$metadata = GetClient()->userMetadataFor($id);
-		}
-
-		$metadata['device'] = false;
-		if (strpos($metadata['email'], 'device.') === 0) {
-			$metadata['device'] = true;
-		}
-
-		GetPlugin('Attributes');
-		$this->_withUserAttributes(
-			(new attributes\Record('userAttributes'))->getValues($id, 'user'),
-			function ($attributes) use (&$metadata, $id) {
-
-				// $ref=GetPlugin('ReferralManagement');
-				//
-				
-
-				if(!in_array($attributes['community'], $this->listCommunities())){
-					$metadata['community']='none';
-				}else{
-					$metadata['community']=$attributes['community'];
-				}
-
-				$metadata['status']=!!$attributes['registeredStatus'];
-
-				$metadata['communityId'] =array_search($metadata['community'], $this->listCommunities());
-				
-
-				$metadata['role-icon'] = $this->getUserRoleIcon($id);
-				$metadata['user-icon'] = $this->getUserRoleLabel($id);
-				$metadata['can-create'] = $this->canCreateCommunityContent($id);
-				$metadata['communities'] = $this->getCommunities($id);
-				// $metadata['community'] = $metadata['communities'][0];
-				// $metadata['communityId'] = 0;
-				$metadata['teams'] = $this->getTeams($id);
-				$metadata['avatar'] = $this->getUsersAvatar($id);
-				$metadata['name'] = $this->getUsersName($id, $metadata['name']);
-				$metadata['lastName'] = $this->getUsersLastName($id, '');
-				$metadata['number'] = $this->getUsersNumber($id);
-				$metadata['email'] = $this->getUsersEmail($id, $metadata['email']);
-				$metadata['can-assignroles']=$this->getRolesUserCanEdit($id);
-
-			});
-
-		return $metadata;
-
+		return (new \ReferralManagement\User())->getMetadata($id);
 	}
 
 
@@ -856,18 +760,13 @@ class ReferralManagementPlugin extends Plugin implements
 			};
 
 		}
-		if($roles->userHasAnyOfRoles($managerRoles)){
 
-			//show all users;
-			return function(&$userMetadata){
-				$userMetadata->visibleBecuase="You are manager";
-				return true;
-			};
-
-		}
 
 		$clientMetadata=$this->getUsersMetadata(GetClient()->getUserId());
 		$groupCommunity=$this->communityCollective();
+
+
+	
 		
 		if(!$roles->userHasAnyOfRoles($roles->listManagerRoles())){
 
@@ -875,19 +774,97 @@ class ReferralManagementPlugin extends Plugin implements
 
 			return function($userMetadata)use ($clientMetadata, $groupCommunity){
 
-				$result = $userMetadata->community===$groupCommunity||$userMetadata->community===$clientMetadata['community'];
-				$userMetadata->visibleBecuase=$result?"same community":"different community";
-				return $result;
+				if($userMetadata->community===$groupCommunity||$userMetadata->community===$clientMetadata['community']){
+					$userMetadata->visibleBecuase="same community";
+					return true;
+				}
+				
+				return false;
 			};
 
 		}
 
 
 		return function($userMetadata)use ($clientMetadata, $managerRoles, $groupCommunity){
-			$result =  count(array_intersect($managerRoles, $userMetadata->roles))>0||$userMetadata->community===$groupCommunity||$userMetadata->community===$clientMetadata['community'];
-			$userMetadata->visibleBecuase=$result?"same community or manager":"different community not manager";
-			return $result;
+			
+			if($userMetadata->community===$groupCommunity||$userMetadata->community===$clientMetadata['community']){
+				$userMetadata->visibleBecuase="Same community";
+				return true;
+			}
+
+			if(count(array_intersect($managerRoles, $userMetadata->roles))>0){
+				$userMetadata->visibleBecuase="You are both managers";
+				return true;
+			}
+			
+			return false;
 		};
+	}
+
+
+	public function shouldShowProjectFilter(){
+
+
+			$clientId = GetClient()->getUserId();
+
+
+			if (!Auth('memberof', 'lands-department-manager', 'group')) {
+
+			
+				return function (&$item) use ($clientId) {
+
+					if ($item['user'] == $clientId) {
+						$item['visibleBecuase']="You created";
+						return true;
+					}
+
+					if (in_array($clientId, $item['attributes']['teamMemberIds'])) {
+						$item['visibleBecuase']="You are a team member";
+						return true;
+					}
+
+					return false;
+
+				};
+			}
+
+
+
+			$clientMetadata=$this->getUsersMetadata(GetClient()->getUserId());
+			//$groupCommunity=$this->communityCollective();
+
+
+			/**
+			 * Lands Dept Managers+
+			 */
+
+
+			return function (&$item) use ($clientId, $clientMetadata){
+
+				if(in_array(strtolower($clientMetadata['community']), array_map(function($community){return strtolower($community);}, $item['attributes']['firstNationsInvolved']))){
+					$item['visibleBecuase']="Your community is involved";
+					return true;
+				}
+
+				if ($item['user'] == $clientId) {
+					$item['visibleBecuase']="You created";
+					return true;
+				}
+
+				if (in_array($clientId, $item['attributes']['teamMemberIds'])) {
+					$item['visibleBecuase']="You are a team member";
+					return true;
+				}
+
+
+
+				return false;
+			};
+
+		
+
+		return $filter;
+
 	}
 
 
@@ -895,160 +872,26 @@ class ReferralManagementPlugin extends Plugin implements
 		return $this->shouldShowUserFilter();
 	}
 
-	protected $currentUserAttributes = null;
-
-	protected function _withUserAttributes($attribs, $fn) {
-		$this->currentUserAttributes = $attribs;
-		$fn($attribs);
-		$this->currentUserAttributes = null;
-	}
-
-	public function getUsersAvatar($id = -1, $default = null) {
-
-		if ($id < 1) {
-			$id = GetClient()->getUserId();
-		}
-
-		GetPlugin('Attributes');
-		$attribs = (new attributes\Record('userAttributes'))->getValues($id, 'user');
-		if ($attribs["profileIcon"]) {
-			return HtmlDocument()->parseImageUrls($attribs["profileIcon"])[0];
-		}
-
-		if ($default) {
-			return $default;
-		}
-		return UrlFrom(GetWidget('dashboardConfig')->getParameter('defaultUserImage')[0]);
-
-	}
-
-	public function getUsersName($id = -1, $default = null) {
-
-		if ($id < 1) {
-			$id = GetClient()->getUserId();
-		}
-
-		$attribs = $this->_getUserAttributes($id);
-
-		if ($attribs["firstName"]) {
-			return $attribs["firstName"];
-		}
-
-		if ($default) {
-			return $default;
-		}
-
-		return GetClient()->getRealName();
-
-	}
-
-	public function getUsersLastName($id = -1, $default = null) {
-
-		if ($id < 1) {
-			$id = GetClient()->getUserId();
-		}
-
-		$attribs = $this->_getUserAttributes($id);
-
-		if ($attribs["lastName"]) {
-			return $attribs["lastName"];
-		}
-
-		if ($default) {
-			return $default;
-		}
-
-		return '';
-
-	}
-
-	public function getUsersEmail($id = -1, $default = null) {
-
-		if ($id < 1) {
-			$id = GetClient()->getUserId();
-		}
-
-		$attribs = $this->_getUserAttributes($id);
-		if ($attribs["email"]) {
-			return $attribs["email"];
-		}
-
-		if ($default) {
-			return $default;
-		}
-
-		return GetClient()->getEmail();
-
-	}
-
-	public function getUsersNumber($id = -1, $default = null) {
-
-		if ($id < 1) {
-			$id = GetClient()->getUserId();
-		}
-
-		$attribs = $this->_getUserAttributes($id);
-		if ($attribs["phone"]) {
-			return $attribs["phone"];
-		}
-
-		if ($default) {
-			return $default;
-		}
-
-		return '';
-
-	}
-
-	public function listTeams() {
-		return array("wabun", "beaverhouse", "brunswick house", "chapleau ojibway", "flying post", "matachewan", "mattagami");
-	}
-	public function listCommunities() {
-		return array("wabun", "beaverhouse", "brunswick house", "chapleau ojibway", "flying post", "matachewan", "mattagami");
-	}
-
-
-	public function rootTeam() {
-		return $this->communityCollective();
-	}
-	public function communityCollective() {
-		return "wabun";
-	}
-
-
-
-
-	public function getTeams($id = -1) {
-		return $this->getCommunities($id);
-	}
-
-	public function getCommunities($id = -1) {
-
-		if ($id < 1) {
-			$id = GetClient()->getUserId();
-		}
-		$attribs = $this->_getUserAttributes($id);
-		$communities=array();
-
-		if(in_array($attribs['community'], $this->listCommunities())){
-			$communities[]=$attribs['community'];
-		}
-
-		return $communities;
-	}
 	
 
-	public function getGroupMembersOfGroup($group) {
 
-		$map = $this->getRoles();
 
-		$i = array_search($group, $map);
-		if ($i !== false) {
-			return array_slice($map, 0, $i + 1);
-		}
 
-		return array();
+	
+	public function listCommunities() {
+		return (new \ReferralManagement\User())->listCommunities();
 	}
+	public function communityCollective() {
+		return (new \ReferralManagement\User())->communityCollective();
+	}
+
+
+
+
+	
+	
+
+	
 
 	public function getLayersForGroup($name) {
 		$config = new core\Configuration('layerGroups');
@@ -1079,7 +922,7 @@ class ReferralManagementPlugin extends Plugin implements
 
 			//die(json_encode($u));
 
-			$user = $this->formatUser($u);
+			$user = $this->getUsersMetadata($u);
 			return $user;
 
 		}, $list);
@@ -1091,12 +934,13 @@ class ReferralManagementPlugin extends Plugin implements
 	public function listAllDevicesMetadata() {
 
 		$list = array_values(array_filter(GetClient()->listUsers(), function ($u) {
+			//prefilter
 			return $this->_isDevice($u);
 		}));
 
 		return array_map(function ($u) {
 
-			$user = $this->formatUser($u);
+			$user = $this->getUsersMetadata($u);
 			return $user;
 
 		}, $list);
@@ -1107,16 +951,5 @@ class ReferralManagementPlugin extends Plugin implements
 	protected function _isDevice($user) {
 		return strpos($user['email'], 'device.') === 0;
 	}
-
-	protected function formatUser($usermeta) {
-
-		return array_merge(
-			$this->getUsersMetadata($usermeta),
-			array('roles' => $this->getUserRoles($usermeta['id']))
-
-		);
-
-	}
-
 
 }

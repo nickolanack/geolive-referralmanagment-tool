@@ -71,6 +71,14 @@ var ReferralManagementUser = new Class({
 
 			return true;
 		},
+		getRole:function(){
+			var me=this;
+			if(me.isUnassigned()){
+				return 'none';
+			}
+
+			return me.getRoles()[0];
+		},
 		isTeamManager:function(){
 			var me=this;
 			var roles=me.getRoles();

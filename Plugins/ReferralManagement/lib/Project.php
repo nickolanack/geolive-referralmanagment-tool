@@ -33,6 +33,8 @@ class Project {
 		$proposal = get_object_vars($result);
 
 		$proposal['userdetails'] = GetClient()->userMetadataFor((int) $proposal['user']);
+		$proposal['community']='wabun';
+		//$proposal['']
 
 		$proposal['link'] = HtmlDocument()->website() . '/Projects/Project-' . $proposal['id'] . '/Overview';
 
@@ -139,7 +141,7 @@ class Project {
 
 		$database->updateProposal(array(
 			'id' => $proposalId,
-			'user' => GetClient()->getUserId(),
+			//'user' => GetClient()->getUserId(),
 			'metadata' => '{}',
 			'modifiedDate' => date('Y-m-d H:i:s'),
 			'status' => 'active',

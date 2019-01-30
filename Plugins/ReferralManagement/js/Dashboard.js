@@ -11,6 +11,10 @@ var ReferralManagementDashboard = {
 
 	},
 
+
+
+
+
 	loadUserDashboardView:function(application){
 
 		var currentView='dashboardLoader';
@@ -1234,6 +1238,39 @@ var ReferralManagementDashboard = {
 		});  
 
 		return d;
+
+
+	},
+
+
+	getUsersTeamMembersDescription:function(){
+
+		var text="<span class=\"section-title\">My Community And User Roles</span><br/>"
+		if(AppClient.getUserType()==="admin"){
+			text=text+"You are a Site Administrator so you can see all Lands Department members from all communities (and set user roles). The following description of your role would apply if you were a regular user. <br/>"
+		}
+
+
+		var user=ProjectTeam.CurrentTeam().getUser(AppClient.getId());
+		 
+		if(user.isTeamManager()){
+			text=text+"You are a Lands Department Manager. "+
+			"You can see the lands department members in your community, `"+user.getCommunity()+"` and `wabun`, as well as Lands Department Managers accross communities. "+
+			"<br/>You can share individual projects with other communities by adding a Lands Department manager from another community to a specific project, (There are other ways to collaborate)."+
+			"<br/> You can asign users to the following roles: "+
+			(user.getRolesUserCanAssign().map(function(r){ return '`'+(r.replace('-',' ').capitalize())+'`'; }).join(', '))+'. As long as they are in your community, and have a lower role than `'+(user.getRole().replace('-',' ').capitalize())+'`';
+		}else{
+			text=text+"You are a Lands Department Member. "+
+			"You can see other lands department members in your own community, `"+user.getCommunity()+"` and `wabun`. ";
+		}
+
+			
+		return  "<p class=\"hint\">"+text+"</p>";
+	},
+
+	getUsersCommunityMembersDescription:function(){
+
+		return "<p>You can approve new site users.</p>"
 
 
 	}
