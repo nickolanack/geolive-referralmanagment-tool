@@ -1,22 +1,20 @@
 <?php
 Authorizer();
 
-include_once __DIR__.'/lib/Project.php';
-include_once __DIR__.'/lib/Task.php';
-include_once __DIR__.'/lib/User.php';
-include_once __DIR__.'/lib/UserRoles.php';
+include_once __DIR__ . '/lib/Project.php';
+include_once __DIR__ . '/lib/Task.php';
+include_once __DIR__ . '/lib/User.php';
+include_once __DIR__ . '/lib/UserRoles.php';
 
-class ReferralManagementPlugin extends Plugin implements 
-	core\ViewController, 
-	core\WidgetProvider, 
-	core\PluginDataTypeProvider, 
-	core\ModuleProvider, 
-	core\TaskProvider, 
-	core\AjaxControllerProvider, 
-	core\DatabaseProvider, 
-	core\EventListener {
-
-
+class ReferralManagementPlugin extends Plugin implements
+core\ViewController,
+core\WidgetProvider,
+core\PluginDataTypeProvider,
+core\ModuleProvider,
+core\TaskProvider,
+core\AjaxControllerProvider,
+core\DatabaseProvider,
+core\EventListener {
 
 	protected $description = 'ReferralManagement specific views, etc.';
 
@@ -29,77 +27,71 @@ class ReferralManagementPlugin extends Plugin implements
 
 	use core\TemplateRenderer;
 
+	protected function onFacebookRegister($params) {
 
-
-
-	protected function onFacebookRegister($params){
-
-		$photoUrl='https://graph.facebook.com/'.$params->fbuser->id.'/picture?type=large';
+		$photoUrl = 'https://graph.facebook.com/' . $params->fbuser->id . '/picture?type=large';
 		error_log($photoUrl);
 		GetPlugin('Attributes');
-		$icon='<img src="'.$photoUrl.'" />';
+		$icon = '<img src="' . $photoUrl . '" />';
 		(new \attributes\Record('userAttributes'))->setValues($params->user, "user", array(
-			"profileIcon"=>'<img src="'.$photoUrl.'" />',
-			"firstName"=>$params->fbuser->first_name,
-			"lastName"=>$params->fbuser->last_name
+			"profileIcon" => '<img src="' . $photoUrl . '" />',
+			"firstName" => $params->fbuser->first_name,
+			"lastName" => $params->fbuser->last_name,
 		));
 
 	}
 
-	protected function onUpdateAttributeRecord($params){
+	protected function onUpdateAttributeRecord($params) {
 
-		if($params->itemType==="user"){
+		if ($params->itemType === "user") {
 			(new \core\LongTaskProgress())
 				->emit('onTriggerUpdateUserList', array('team' => 1));
 			(new \core\LongTaskProgress())
-			->emit('onTriggerUpdateDeviceList', array('team' => 1));
+				->emit('onTriggerUpdateDeviceList', array('team' => 1));
 			return;
 		}
 
 		error_log($params->itemType);
 
-
 	}
 
-	protected function onTriggerUpdateUserList($params){
+	protected function onTriggerUpdateUserList($params) {
 
-		$cacheName="ReferralManagement.userList.json";
+		$cacheName = "ReferralManagement.userList.json";
 		$cacheData = HtmlDocument()->getCachedPage($cacheName);
 
-		$users=$this->listAllUsersMetadata();
+		$users = $this->listAllUsersMetadata();
 
-		$newData=json_encode($users);
+		$newData = json_encode($users);
 		HtmlDocument()->setCachedPage($cacheName, $newData);
-		if($newData!=$cacheData){
+		if ($newData != $cacheData) {
 			$this->notifier()->onTeamUserListChanged($params->team);
 		}
 
-		
-
 	}
-	protected function onTriggerUpdateDevicesList($params){
+	protected function onTriggerUpdateDevicesList($params) {
 
-		$cacheName="ReferralManagement.deviceList.json";
+		$cacheName = "ReferralManagement.deviceList.json";
 		$cacheData = HtmlDocument()->getCachedPage($cacheName);
 
-		$devices=$this->listAllDevicesMetadata();
+		$devices = $this->listAllDevicesMetadata();
 
-		$newData=json_encode($devices);
+		$newData = json_encode($devices);
 		HtmlDocument()->setCachedPage($cacheName, $newData);
-		if($newData!=$cacheData){
+		if ($newData != $cacheData) {
 			$this->notifier()->onTeamDeviceListChanged($params->team);
 		}
 
 	}
 
-	protected function onCreateUser($params){
-		foreach($this->listTeams() as $team){
+	protected function onCreateUser($params) {
+		foreach ($this->listTeams() as $team) {
 			(new \core\LongTaskProgress())
 				->emit('onTriggerUpdateUserList', array('team' => $team));
 		}
 	}
-	protected function onDeleteUser($params){
-		foreach($this->listTeams() as $team){
+	protected function onDeleteUser($params) {
+		foreach ($this->listTeams() as $team) {
 			(new \core\LongTaskProgress())
 				->emit('onTriggerUpdateUserList', array('team' => $team));
 		}
@@ -109,11 +101,11 @@ class ReferralManagementPlugin extends Plugin implements
 		return (new \ReferralManagement\User())->listTeams();
 	}
 
-	protected function onTriggerImportTusFile($params){
+	protected function onTriggerImportTusFile($params) {
 
-		include_once __DIR__.'/lib/TusImportTask.php';
+		include_once __DIR__ . '/lib/TusImportTask.php';
 		return (new \ReferralManagement\TusImportTask())->import($params);
-		
+
 	}
 
 	/**
@@ -125,26 +117,22 @@ class ReferralManagementPlugin extends Plugin implements
 		return array(
 			'layer.upload' => array(
 				'access' => 'public',
-				'method'=>'task_UploadLayer'
-			)
+				'method' => 'task_UploadLayer',
+			),
 		);
 	}
 
-	
-
-
 	/**
 	 * returns activity feed object for submitting activity actions
-	 * 
+	 *
 	 * @return \ReferralManagement\ActivityFeed
 	 */
-	public function notifier(){
-		include_once __DIR__.'/lib/Notifications.php';
+	public function notifier() {
+		include_once __DIR__ . '/lib/Notifications.php';
 		return (new \ReferralManagement\Notifications());
 	}
 
-
-	protected function task_UpLoadLayer() {
+	protected function taskUploadlayer() {
 		GetUserFiles();
 		GetPlugin('Maps');
 
@@ -162,21 +150,21 @@ class ReferralManagementPlugin extends Plugin implements
 
 			SpatialFile::Save(SpatialFile::Open($path), $kmlDoc);
 
-			Emit('onUploadSpatialFile',array(
-				'path'=>$kmlDoc
+			Emit('onUploadSpatialFile', array(
+				'path' => $kmlDoc,
 			));
 
 			$this->setParameter('layer', $kmlDoc);
 			return true;
 
-		} 
+		}
 
 		return $this->setTaskError(
 			array(
 				'Upload Failed',
 				GetUserFiles()->getUploader()->lastError(),
 			));
-		
+
 	}
 
 	public function includeScripts() {
@@ -200,7 +188,7 @@ class ReferralManagementPlugin extends Plugin implements
 
 		if (key_exists('validationData', $params) && key_exists('token', $params->validationData)) {
 			$links = GetPlugin('Links');
-			$tokenInfo=$links->peekDataToken($params->validationData->token);
+			$tokenInfo = $links->peekDataToken($params->validationData->token);
 			$data = $tokenInfo->data;
 
 			$database = $this->getDatabase();
@@ -213,9 +201,7 @@ class ReferralManagementPlugin extends Plugin implements
 				'status' => 'active',
 			)))) {
 
-
 				$this->notifier()->onGuestProposal($id, $params);
-				
 
 				GetPlugin('Attributes');
 				if (key_exists('attributes', $data->proposalData)) {
@@ -239,56 +225,47 @@ class ReferralManagementPlugin extends Plugin implements
 
 	protected function onPost($params) {
 
-		include_once __DIR__.'/lib/CommentBot.php';
+		include_once __DIR__ . '/lib/CommentBot.php';
 
 		(new \ReferralManagement\CommentBot())
 			->scanPostForEventTriggers($params);
-		
-	}
-	public function getActiveProjectList(){
-
-		return $this->getProjectList(array('status'=>array('value'=>'archived', 'comparator'=>'!=')));
 
 	}
-	public function getArchivedProjectList(){
+	public function getActiveProjectList() {
 
-		return $this->getProjectList(array('status'=>'archived'));
+		return $this->getProjectList(array('status' => array('value' => 'archived', 'comparator' => '!=')));
 
 	}
-	public function getProjectList($filter=array()) {
+	public function getArchivedProjectList() {
 
+		return $this->getProjectList(array('status' => 'archived'));
 
-		if(!Auth('memberof', 'lands-department', 'group')){
+	}
+	public function getProjectList($filter = array()) {
+
+		if (!Auth('memberof', 'lands-department', 'group')) {
 			return array();
 		}
-
 
 		$database = $this->getDatabase();
 		$results = $database->getAllProposals($filter);
 
-
-		
-
 		return array_values(array_filter(array_map(function ($result) {
 
-			$project=$this->analyze('formatProjectResult.'.$result->id, function()use($result){
+			$project = $this->analyze('formatProjectResult.' . $result->id, function () use ($result) {
 
 				return (new \ReferralManagement\Project())
 					->fromRecord($result)
 					->toArray();
 			});
-			$project['profileData']=$this->getLastAnalysis();
-			$project['visible']=$this->shouldShowProjectFilter()($project);
+			$project['profileData'] = $this->getLastAnalysis();
+			$project['visible'] = $this->shouldShowProjectFilter()($project);
 
 			return $project;
-			
-		}, $results), function($project){return $project['visible'];}));
+
+		}, $results), function ($project) {return $project['visible'];}));
 
 	}
-
-
-
-
 
 	protected function availableProjectPermissions() {
 
@@ -307,14 +284,12 @@ class ReferralManagementPlugin extends Plugin implements
 			$user = $this->getUsersMetadata(GetClient()->userMetadataFor($user));
 		}
 
-		
-
 		if (is_numeric($project)) {
 			$project = $this->getProposalData($project);
 		}
 
-		if(is_object($project)){
-			$project=get_object_vars($project);
+		if (is_object($project)) {
+			$project = get_object_vars($project);
 		}
 
 		if ($user['id'] == $project['user']) {
@@ -338,19 +313,16 @@ class ReferralManagementPlugin extends Plugin implements
 
 	public function getTeamMembersForProject($project, $attributes = null) {
 
-
-		include_once __DIR__.'/lib/Teams.php';
+		include_once __DIR__ . '/lib/Teams.php';
 		return (new \ReferralManagement\Teams())->listMembersOfProject($project, $attributes);
 	}
 
 	public function getTeamMembersForTask($task, $attributes = null) {
 
-		include_once __DIR__.'/lib/Teams.php';
+		include_once __DIR__ . '/lib/Teams.php';
 		return (new \ReferralManagement\Teams())->listMembersOfTask($task, $attributes);
 
 	}
-
-	
 
 	private function setTeamMembersForTask($tid, $teamMembers) {
 
@@ -368,80 +340,67 @@ class ReferralManagementPlugin extends Plugin implements
 			'task' => $tid,
 			'team' => $teamMembers,
 		));
-		
-	}
 
-	
+	}
 
 	protected function onTriggerProjectUpdateEmailNotification($args) {
 
-
-
-
-
 		$teamMembers = $this->getTeamMembersForProject($args->project->id);
-	
 
-
-		if(empty($teamMembers)){
+		if (empty($teamMembers)) {
 			Emit('onEmptyTeamMembersTask', $args);
 		}
 
-		foreach($teamMembers as $user){
+		foreach ($teamMembers as $user) {
 
-			$to=$this->emailToAddress($user, "recieves-notifications");
-			if(!$to){
+			$to = $this->emailToAddress($user, "recieves-notifications");
+			if (!$to) {
 				continue;
 			}
 
 			GetPlugin('Email')->getMailerWithTemplate('onProjectUpdate', array_merge(
-					get_object_vars($args), 
-					array(
-						'teamMembers'=>$teamMembers,
-						'editor'=>$this->getUsersMetadata(),
-						'user'=>$this->getUsersMetadata($user->id)
-					)))
+				get_object_vars($args),
+				array(
+					'teamMembers' => $teamMembers,
+					'editor' => $this->getUsersMetadata(),
+					'user' => $this->getUsersMetadata($user->id),
+				)))
 				->to($to)
 				->send();
 
 		}
 	}
 
-	protected function emailToAddress($user, $permissionName=''){
+	protected function emailToAddress($user, $permissionName = '') {
 
-
-		$shouldSend=false;
-		if(empty($permissionName)){
-			$shouldSend=true;
+		$shouldSend = false;
+		if (empty($permissionName)) {
+			$shouldSend = true;
 		}
 
-		if(!empty($permissionName)){
-			if(in_array($permissionName, $user->permissions)){
-				$shouldSend=true;
+		if (!empty($permissionName)) {
+			if (in_array($permissionName, $user->permissions)) {
+				$shouldSend = true;
 			}
 		}
 
-
 		Emit("onCheckEmailPermission", array_merge(get_object_vars($user), array(
-			'shouldSend'=>$shouldSend,
-			'permission'=>$permissionName
+			'shouldSend' => $shouldSend,
+			'permission' => $permissionName,
 		)));
 
-		if(!$this->getParameter('enableEmailNotifications')){
+		if (!$this->getParameter('enableEmailNotifications')) {
 			return 'nickblackwell82@gmail.com';
 		}
 
-
-		$addr=(new \ReferralManagement\User())->getEmail($user->id);
+		$addr = (new \ReferralManagement\User())->getEmail($user->id);
 		return $addr;
 
 	}
 
 	protected function onTriggerTaskUpdateEmailNotification($args) {
 
-
-
-		if($args->task->itemType!=="ReferralManagement.proposal"){
+		if ($args->task->itemType !== "ReferralManagement.proposal") {
 			Emit('onNotProposalTask', $args);
 			return;
 		}
@@ -450,28 +409,25 @@ class ReferralManagementPlugin extends Plugin implements
 		$teamMembers = $this->getTeamMembersForProject($project);
 		$assignedMembers = $this->getTeamMembersForTask($args->task->id);
 
-
-
-		if(empty($teamMembers)){
+		if (empty($teamMembers)) {
 			Emit('onEmptyTeamMembersTask', $args);
 		}
 
-		foreach($teamMembers as $user){
+		foreach ($teamMembers as $user) {
 
-
-			$to=$this->emailToAddress($user, "recieves-notifications");
-			if(!$to){
+			$to = $this->emailToAddress($user, "recieves-notifications");
+			if (!$to) {
 				continue;
 			}
 
 			GetPlugin('Email')->getMailerWithTemplate('onTaskUpdate', array_merge(
-				get_object_vars($args), 
+				get_object_vars($args),
 				array(
-					'project'=>$project,
-					'teamMembers'=>$teamMembers,
-					'assignedMembers'=>$assignedMembers,
-					'editor'=>$this->getUsersMetadata(),
-					'user'=>$this->getUsersMetadata($user->id)
+					'project' => $project,
+					'teamMembers' => $teamMembers,
+					'assignedMembers' => $assignedMembers,
+					'editor' => $this->getUsersMetadata(),
+					'user' => $this->getUsersMetadata($user->id),
 				)))
 				->to('nickblackwell82@gmail.com')
 				->send();
@@ -495,10 +451,7 @@ class ReferralManagementPlugin extends Plugin implements
 
 		$this->setTeamMembersForProject($project, $teamMembers);
 
-
 		$this->notifier()->onAddTeamMemberToProject($user, $project);
-		
-		
 
 		return $teamMembers;
 
@@ -507,13 +460,13 @@ class ReferralManagementPlugin extends Plugin implements
 	protected function onAddTeamMemberToProject($args) {
 
 		GetPlugin('Email')->getMailerWithTemplate('onAddTeamMemberToProject', array_merge(
-				get_object_vars($args),
-				array(
-					'editor'=>$this->getUsersMetadata(),
-					'user'=>$this->getUsersMetadata($args->member->id),
-					'project'=>$this->getProposalData($args->project)
-				)
-			))
+			get_object_vars($args),
+			array(
+				'editor' => $this->getUsersMetadata(),
+				'user' => $this->getUsersMetadata($args->member->id),
+				'project' => $this->getProposalData($args->project),
+			)
+		))
 			->to('nickblackwell82@gmail.com')
 			->send();
 
@@ -522,13 +475,13 @@ class ReferralManagementPlugin extends Plugin implements
 	protected function onRemoveTeamMemberFromProject($args) {
 
 		GetPlugin('Email')->getMailerWithTemplate('onRemoveTeamMemberFromProject', array_merge(
-				get_object_vars($args),
-				array(
-					'editor'=>$this->getUsersMetadata(),
-					'user'=>$this->getUsersMetadata($args->member->id),
-					'project'=>$this->getProposalData($args->project)
-				)
-			))
+			get_object_vars($args),
+			array(
+				'editor' => $this->getUsersMetadata(),
+				'user' => $this->getUsersMetadata($args->member->id),
+				'project' => $this->getProposalData($args->project),
+			)
+		))
 			->to('nickblackwell82@gmail.com')
 			->send();
 
@@ -576,7 +529,6 @@ class ReferralManagementPlugin extends Plugin implements
 			'team' => $teamMembers,
 		));
 
-		
 	}
 
 	private function _uniqueIds($list) {
@@ -609,7 +561,7 @@ class ReferralManagementPlugin extends Plugin implements
 		$teamMembers = $this->_uniqueIds($teamMembers);
 
 		$this->setTeamMembersForTask($task, $teamMembers);
-		
+
 		$this->notifier()->onAddTeamMemberToTask($user, $task);
 
 		return $teamMembers;
@@ -619,12 +571,12 @@ class ReferralManagementPlugin extends Plugin implements
 	protected function onAddTeamMemberToTask($args) {
 
 		GetPlugin('Email')->getMailerWithTemplate('onAddTeamMemberToTask', array_merge(
-				get_object_vars($args),
-				array(
-					'editor'=>$this->getUsersMetadata(),
-					'user'=>$this->getUsersMetadata($args->member->id)
-				)
-			))
+			get_object_vars($args),
+			array(
+				'editor' => $this->getUsersMetadata(),
+				'user' => $this->getUsersMetadata($args->member->id),
+			)
+		))
 			->to('nickblackwell82@gmail.com')
 			->send();
 
@@ -632,12 +584,12 @@ class ReferralManagementPlugin extends Plugin implements
 	protected function onRemoveTeamMemberFromTask($args) {
 
 		GetPlugin('Email')->getMailerWithTemplate('onRemoveTeamMemberFromTask', array_merge(
-				get_object_vars($args),
-				array(
-					'editor'=>$this->getUsersMetadata(),
-					'user'=>$this->getUsersMetadata($args->member->id)
-				)
-			))
+			get_object_vars($args),
+			array(
+				'editor' => $this->getUsersMetadata(),
+				'user' => $this->getUsersMetadata($args->member->id),
+			)
+		))
 			->to('nickblackwell82@gmail.com')
 			->send();
 
@@ -663,20 +615,16 @@ class ReferralManagementPlugin extends Plugin implements
 
 		$this->notifier()->onRemoveTeamMemberFromTask($user, $task);
 
-		
-
 		return $teamMembers;
 
 	}
 
-	
 	public function getTaskData($id) {
 
 		return (new \ReferralManagement\Task())
 			->fromId($id)
 			->toArray();
 	}
-	
 
 	public function getProposalData($id) {
 
@@ -685,9 +633,8 @@ class ReferralManagementPlugin extends Plugin implements
 			->toArray();
 	}
 
-
 	/**
-	 * Used in custom user auth 
+	 * Used in custom user auth
 	 */
 	public function isUserInGroup($role) {
 		return (new \ReferralManagement\UserRoles())->userHasRole($role);
@@ -705,14 +652,12 @@ class ReferralManagementPlugin extends Plugin implements
 		return array();
 	}
 
-
 	/**
 	 * used in custom style script
 	 */
 	public function getRoleIcons() {
 		return (new \ReferralManagement\UserRoles())->listRoleIcons();
 	}
-
 
 	public function getUserRoles($id = -1) {
 		return (new \ReferralManagement\UserRoles())->getUsersRoles($id);
@@ -722,9 +667,6 @@ class ReferralManagementPlugin extends Plugin implements
 		return (new \ReferralManagement\UserRoles())->getRolesUserCanEdit($id);
 	}
 
-
-
-
 	public function getGroupAttributes() {
 		return (new \ReferralManagement\UserRoles())->listRoleAttributes();
 	}
@@ -733,151 +675,124 @@ class ReferralManagementPlugin extends Plugin implements
 		return (new \ReferralManagement\UserRoles())->listRoles();
 	}
 
-
-	public function getUserAttributes($userId){
+	public function getUserAttributes($userId) {
 		return (new \ReferralManagement\User())->getAttributes($userId);
 	}
 
-	
 	public function getUsersMetadata($id = -1) {
 		return (new \ReferralManagement\User())->getMetadata($id);
 	}
 
-
 	/**
 	 * return a closure
 	 */
-	public function shouldShowUserFilter(){
+	public function shouldShowUserFilter() {
 
-		$roles=(new \ReferralManagement\UserRoles());
-		$managerRoles=$roles->listManagerRoles();
-		if(GetClient()->isAdmin()){
+		$roles = (new \ReferralManagement\UserRoles());
+		$managerRoles = $roles->listManagerRoles();
+		if (GetClient()->isAdmin()) {
 
 			//show all users;
-			return function(&$userMetadata){
-				$userMetadata->visibleBecuase="You are admin";
+			return function (&$userMetadata) {
+				$userMetadata->visibleBecuase = "You are admin";
 				return true;
 			};
 
 		}
 
+		$clientMetadata = $this->getUsersMetadata(GetClient()->getUserId());
+		$groupCommunity = $this->communityCollective();
 
-		$clientMetadata=$this->getUsersMetadata(GetClient()->getUserId());
-		$groupCommunity=$this->communityCollective();
-
-
-	
-		
-		if(!$roles->userHasAnyOfRoles($roles->listManagerRoles())){
+		if (!$roles->userHasAnyOfRoles($roles->listManagerRoles())) {
 
 			//non managers can only see 'wabun users and thier own community users'
 
-			return function($userMetadata)use ($clientMetadata, $groupCommunity){
+			return function ($userMetadata) use ($clientMetadata, $groupCommunity) {
 
-				if($userMetadata->community===$groupCommunity||$userMetadata->community===$clientMetadata['community']){
-					$userMetadata->visibleBecuase="same community";
+				if ($userMetadata->community === $groupCommunity || $userMetadata->community === $clientMetadata['community']) {
+					$userMetadata->visibleBecuase = "same community";
 					return true;
 				}
-				
+
 				return false;
 			};
 
 		}
 
+		return function ($userMetadata) use ($clientMetadata, $managerRoles, $groupCommunity) {
 
-		return function($userMetadata)use ($clientMetadata, $managerRoles, $groupCommunity){
-			
-			if($userMetadata->community===$groupCommunity||$userMetadata->community===$clientMetadata['community']){
-				$userMetadata->visibleBecuase="Same community";
+			if ($userMetadata->community === $groupCommunity || $userMetadata->community === $clientMetadata['community']) {
+				$userMetadata->visibleBecuase = "Same community";
 				return true;
 			}
 
-			if(count(array_intersect($managerRoles, $userMetadata->roles))>0){
-				$userMetadata->visibleBecuase="You are both managers";
+			if (count(array_intersect($managerRoles, $userMetadata->roles)) > 0) {
+				$userMetadata->visibleBecuase = "You are both managers";
 				return true;
 			}
-			
+
 			return false;
 		};
 	}
 
+	public function shouldShowProjectFilter() {
 
-	public function shouldShowProjectFilter(){
+		$clientId = GetClient()->getUserId();
 
+		if (!Auth('memberof', 'lands-department-manager', 'group')) {
 
-			$clientId = GetClient()->getUserId();
-
-
-			if (!Auth('memberof', 'lands-department-manager', 'group')) {
-
-			
-				return function (&$item) use ($clientId) {
-
-					if ($item['user'] == $clientId) {
-						$item['visibleBecuase']="You created";
-						return true;
-					}
-
-					if (in_array($clientId, $item['attributes']['teamMemberIds'])) {
-						$item['visibleBecuase']="You are a team member";
-						return true;
-					}
-
-					return false;
-
-				};
-			}
-
-
-
-			$clientMetadata=$this->getUsersMetadata(GetClient()->getUserId());
-			//$groupCommunity=$this->communityCollective();
-
-
-			/**
-			 * Lands Dept Managers+
-			 */
-
-
-			return function (&$item) use ($clientId, $clientMetadata){
-
-				if(in_array(strtolower($clientMetadata['community']), array_map(function($community){return strtolower($community);}, $item['attributes']['firstNationsInvolved']))){
-					$item['visibleBecuase']="Your community is involved";
-					return true;
-				}
+			return function (&$item) use ($clientId) {
 
 				if ($item['user'] == $clientId) {
-					$item['visibleBecuase']="You created";
+					$item['visibleBecuase'] = "You created";
 					return true;
 				}
 
 				if (in_array($clientId, $item['attributes']['teamMemberIds'])) {
-					$item['visibleBecuase']="You are a team member";
+					$item['visibleBecuase'] = "You are a team member";
 					return true;
 				}
 
-
-
 				return false;
-			};
 
-		
+			};
+		}
+
+		$clientMetadata = $this->getUsersMetadata(GetClient()->getUserId());
+		//$groupCommunity=$this->communityCollective();
+
+		/**
+		 * Lands Dept Managers+
+		 */
+
+		return function (&$item) use ($clientId, $clientMetadata) {
+
+			if (in_array(strtolower($clientMetadata['community']), array_map(function ($community) {return strtolower($community);}, $item['attributes']['firstNationsInvolved']))) {
+				$item['visibleBecuase'] = "Your community is involved";
+				return true;
+			}
+
+			if ($item['user'] == $clientId) {
+				$item['visibleBecuase'] = "You created";
+				return true;
+			}
+
+			if (in_array($clientId, $item['attributes']['teamMemberIds'])) {
+				$item['visibleBecuase'] = "You are a team member";
+				return true;
+			}
+
+			return false;
+		};
 
 		return $filter;
 
 	}
 
-
-	public function shouldShowDeviceFilter(){
+	public function shouldShowDeviceFilter() {
 		return $this->shouldShowUserFilter();
 	}
 
-	
-
-
-
-
-	
 	public function listCommunities() {
 		return (new \ReferralManagement\User())->listCommunities();
 	}
@@ -885,32 +800,23 @@ class ReferralManagementPlugin extends Plugin implements
 		return (new \ReferralManagement\User())->communityCollective();
 	}
 
-
-
-
-	
-	
-
-	
-
 	public function getLayersForGroup($name) {
 		$config = new core\Configuration('layerGroups');
 		return $config->getParameter($name, array());
 	}
 	public function getMouseoverForGroup($name) {
 		$config = new core\Configuration('iconset');
-		return $config->getParameter($name . "Mouseover", "{configuration.iconset.".$name . "Mouseover}");
+		return $config->getParameter($name . "Mouseover", "{configuration.iconset." . $name . "Mouseover}");
 	}
 
 	public function getDefaultProposalTaskTemplates($proposal) {
-		include_once __DIR__.'/lib/DefaultTasks.php';
+		include_once __DIR__ . '/lib/DefaultTasks.php';
 		return (new \ReferralManagement\DefaultTasks())->getTemplatesForProposal($proposal);
 	}
 	public function createDefaultProposalTasks($proposal) {
-		include_once __DIR__.'/lib/DefaultTasks.php';
+		include_once __DIR__ . '/lib/DefaultTasks.php';
 		return (new \ReferralManagement\DefaultTasks())->createTasksForProposal($proposal);
 	}
-
 
 	public function listAllUsersMetadata() {
 
@@ -929,8 +835,6 @@ class ReferralManagementPlugin extends Plugin implements
 
 	}
 
-	
-
 	public function listAllDevicesMetadata() {
 
 		$list = array_values(array_filter(GetClient()->listUsers(), function ($u) {
@@ -946,7 +850,6 @@ class ReferralManagementPlugin extends Plugin implements
 		}, $list);
 
 	}
-
 
 	protected function _isDevice($user) {
 		return strpos($user['email'], 'device.') === 0;
