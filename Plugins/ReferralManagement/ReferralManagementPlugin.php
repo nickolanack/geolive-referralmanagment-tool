@@ -263,7 +263,7 @@ core\EventListener {
 
 			return $project;
 
-		}, $results), function ($project) {return $project['visible'];}));
+		}, $results), function ($project) {return !!$project['visible'];}));
 
 	}
 
@@ -767,7 +767,21 @@ core\EventListener {
 
 		return function (&$item) use ($clientId, $clientMetadata) {
 
-			if (in_array(strtolower($clientMetadata['community']), array_map(function ($community) {return strtolower($community);}, $item['attributes']['firstNationsInvolved']))) {
+			$nationsInvolved=$item['attributes']['firstNationsInvolved'];
+			if(empty($nationsInvolved)){
+				$nationsInvolved=array();
+			}
+
+			$nationsInvolved=array_map(function ($community) {return strtolower($community);}, $nationsInvolved);
+			
+			if(!in_array('wabun', $nationsInvolved)){
+				$nationsInvolved[]='wabun';
+			}
+
+
+
+			if (in_array(strtolower($clientMetadata['community']), $nationsInvolved)) {
+				error_log("Your community is involved ".$item['id']);
 				$item['visibleBecuase'] = "Your community is involved";
 				return true;
 			}
@@ -785,7 +799,6 @@ core\EventListener {
 			return false;
 		};
 
-		return $filter;
 
 	}
 
