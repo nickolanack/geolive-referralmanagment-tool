@@ -1,1 +1,5 @@
-return <?php echo json_encode(implode(", ",GetPlugin("ReferralManagement")->getUserRoles()));?>;
+
+
+var user=ProjectTeam.CurrentTeam(function(team){
+   callback(team.getUser(AppClient.getId()).getRole());
+});
