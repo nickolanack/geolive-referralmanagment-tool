@@ -95,14 +95,14 @@ class UserRoles{
 
 	}
 
-	public function getUsersRoles($id = -1) {
-		if ($id < 1) {
-			$id = GetClient()->getUserId();
+	public function getUsersRoles($userId = -1) {
+		if ($userId < 1) {
+			$userId = GetClient()->getUserId();
 		}
 
 		$map = $this->listRoleAttributes();
 
-		$attribs = GetPlugin('ReferralManagement')->getUserAttributes($id);
+		$attribs = GetPlugin('ReferralManagement')->getUserAttributes($userId);
 
 		$roles = array();
 
@@ -118,15 +118,15 @@ class UserRoles{
 	}
 
 
-	public function getUsersRoleLabel($id = -1) {
+	public function getUsersRoleLabel($userId = -1) {
 
-		if ($id < 1) {
-			$id = GetClient()->getUserId();
+		if ($userId < 1) {
+			$userId = GetClient()->getUserId();
 		}
 
 		$map = $this->listRoleAttributes();
 
-		$attribs = GetPlugin('ReferralManagement')->getUserAttributes($id);
+		$attribs = GetPlugin('ReferralManagement')->getUserAttributes($userId);
 
 		foreach (array_keys($map) as $key) {
 
@@ -142,17 +142,17 @@ class UserRoles{
 
 
 
-	public function getRolesUserCanEdit($id = -1) {
+	public function getRolesUserCanEdit($userId = -1) {
 
 		$rolesList = $this->listRoles();
-		if (($id == -1 || $id == GetClient()->getUserId()) && GetClient()->isAdmin()) {
+		if (($userId == -1 || $userId == GetClient()->getUserId()) && GetClient()->isAdmin()) {
 
 
 
 			//return $rolesList;
 		}
 
-		$roles = $this->getUsersRoles($id);
+		$roles = $this->getUsersRoles($userId);
 
 		$roleIndexes = array_map(function ($r) use ($rolesList) {
 			return array_search($r, $rolesList);
@@ -183,15 +183,15 @@ class UserRoles{
 	}
 
 
-	public function getUserRoleIcon($id = -1) {
+	public function getUserRoleIcon($userId = -1) {
 
-		if ($id < 1) {
-			$id = GetClient()->getUserId();
+		if ($userId < 1) {
+			$userId = GetClient()->getUserId();
 		}
 
 		$map = $this->listRoleAttributes();
 
-		$attribs = GetPlugin('ReferralManagement')->getUserAttributes($id);
+		$attribs = GetPlugin('ReferralManagement')->getUserAttributes($userId);
 
 		foreach (array_keys($map) as $key) {
 
