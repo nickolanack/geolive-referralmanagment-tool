@@ -75,17 +75,9 @@ class UserRoles{
 
 		$map['proponent'] = 'isProponent';
 
-		GetPlugin('Attributes');
-		$attributeMap = array();
 		$attribs = GetPlugin('ReferralManagement')->getUserAttributes(GetClient()->getUserId());
 
-		//AttributesRecord::GetFields(GetClient()->getUserId(), 'user', array_values($map), 'userAttributes');
-
-		// if($role=='lands-department'){
-		//     if($attribs[$map['lands-department-manager']]===true||$attribs[$map['lands-department-manager']]==="true"){
-		//         return true;
-		//     }
-		// }
+	
 
 		if (key_exists($role, $map) && key_exists($map[$role], $attribs)) {
 			return $attribs[$map[$role]] === true || $attribs[$map[$role]] === "true";
@@ -154,8 +146,8 @@ class UserRoles{
 
 		$roles = $this->getUsersRoles($userId);
 
-		$roleIndexes = array_map(function ($r) use ($rolesList) {
-			return array_search($r, $rolesList);
+		$roleIndexes = array_map(function ($role) use ($rolesList) {
+			return array_search($role, $rolesList);
 		}, $roles);
 
 		if (empty($roleIndexes)) {

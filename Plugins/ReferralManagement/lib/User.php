@@ -4,7 +4,7 @@ namespace ReferralManagement;
 
 class User {
 
-	protected $currentUserAttributes = null;
+	protected $cachedUserAttribs = null;
 
 	public function getMetadata($userId = -1) {
 
@@ -35,12 +35,9 @@ class User {
 			(new \attributes\Record('userAttributes'))->getValues($userId, 'user'),
 			function ($attributes) use (&$metadata, $userId) {
 
-				// $ref=GetPlugin('ReferralManagement');
-				//
-
-				if (!in_array($attributes['community'], $this->listCommunities())) {
-					$metadata['community'] = 'none';
-				} else {
+			
+				$metadata['community'] = 'none';
+				if (in_array($attributes['community'], $this->listCommunities())) {
 					$metadata['community'] = $attributes['community'];
 				}
 
@@ -133,10 +130,10 @@ class User {
 		return "wabun";
 	}
 
-	protected function _withUserAttributes($attribs, $fn) {
-		$this->currentUserAttributes = $attribs;
-		$fn($attribs);
-		$this->currentUserAttributes = null;
+	protected function _withUserAttributes($attribs, $callbackFn) {
+		$this->cachedUserAttribs = $attribs;
+		$callbackFn($attribs);
+		$this->cachedUserAttribs = null;
 	}
 
 	protected function getUserRoleIcon($userId = -1) {
@@ -226,14 +223,14 @@ class User {
 
 	protected function _getUserAttributes($userId) {
 
-		if (is_null($this->currentUserAttributes)) {
+		if (is_null($this->cachedUserAttribs)) {
 
 			GetPlugin('Attributes');
 			return (new \attributes\Record('userAttributes'))->getValues($userId, 'user');
 
 		}
 
-		return $this->currentUserAttributes;
+		return $this->cachedUserAttribs;
 
 	}
 
