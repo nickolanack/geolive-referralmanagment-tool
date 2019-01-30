@@ -2438,63 +2438,6 @@
             "formatOutputScript": "return $parameters;"
         }
     },
-    "widget.126": {
-        "name": "Detail View",
-        "instance": "DetailView",
-        "parameters": {
-            "widgetTitle": "UserDetail",
-            "target": "map.3",
-            "templateName": "UserDetail",
-            "requireTarget": true,
-            "resolveItemScript": "return item",
-            "onRenderApplictionScript": "",
-            "notifyViewer": false,
-            "metadata": {
-                "positions": {
-                    "title": {
-                        "modules": []
-                    },
-                    "content": {
-                        "modules": [
-                            "UserDetail.metadata.positions.content.modules.0.json",
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return AppClient.getName();",
-                                    "formatElementScript": ""
-                                }
-                            },
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "UserDetail.metadata.positions.content.modules.2.config.fieldValueScript.js",
-                                    "formatElementScript": ""
-                                }
-                            }
-                        ]
-                    },
-                    "footer": {
-                        "modules": []
-                    },
-                    "menu": {
-                        "modules": []
-                    }
-                },
-                "positionList": [
-                    "title",
-                    "content",
-                    "footer",
-                    "menu"
-                ],
-                "_diagramState": []
-            },
-            "readAccess": "public"
-        }
-    },
     "widget.129": {
         "name": "Search Bar Tab View",
         "instance": "SearchBarTabOverlayView",
