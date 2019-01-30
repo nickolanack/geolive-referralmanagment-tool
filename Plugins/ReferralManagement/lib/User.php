@@ -35,7 +35,6 @@ class User {
 			(new \attributes\Record('userAttributes'))->getValues($userId, 'user'),
 			function ($attributes) use (&$metadata, $userId) {
 
-			
 				$metadata['community'] = 'none';
 				if (in_array($attributes['community'], $this->listCommunities())) {
 					$metadata['community'] = $attributes['community'];

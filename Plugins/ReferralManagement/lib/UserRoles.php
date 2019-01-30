@@ -2,7 +2,7 @@
 
 namespace ReferralManagement;
 
-class UserRoles{
+class UserRoles {
 
 	public function listRoleAttributes() {
 		return array(
@@ -13,7 +13,6 @@ class UserRoles{
 			"community-member" => "isCommunityMember",
 		);
 	}
-
 
 	public function listRoles() {
 
@@ -28,7 +27,6 @@ class UserRoles{
 		);
 	}
 
-
 	public function listTeamRoles() {
 		return array(
 			"tribal-council",
@@ -38,11 +36,10 @@ class UserRoles{
 		);
 	}
 
-
 	public function listCouncilRoles() {
 		return array(
 			"tribal-council",
-			"chief-council"
+			"chief-council",
 		);
 	}
 
@@ -50,7 +47,7 @@ class UserRoles{
 		return array(
 			"tribal-council",
 			"chief-council",
-			"lands-department-manager"
+			"lands-department-manager",
 		);
 	}
 
@@ -60,9 +57,8 @@ class UserRoles{
 		);
 	}
 
-
-	public function userHasAnyOfRoles($rolesList, $userId=-1){
-		return count(array_intersect($rolesList, $this->getUsersRoles($userId)))>0;
+	public function userHasAnyOfRoles($rolesList, $userId = -1) {
+		return count(array_intersect($rolesList, $this->getUsersRoles($userId))) > 0;
 	}
 
 	public function userHasRole($role) {
@@ -76,8 +72,6 @@ class UserRoles{
 		$map['proponent'] = 'isProponent';
 
 		$attribs = GetPlugin('ReferralManagement')->getUserAttributes(GetClient()->getUserId());
-
-	
 
 		if (key_exists($role, $map) && key_exists($map[$role], $attribs)) {
 			return $attribs[$map[$role]] === true || $attribs[$map[$role]] === "true";
@@ -109,7 +103,6 @@ class UserRoles{
 		return $roles;
 	}
 
-
 	public function getUsersRoleLabel($userId = -1) {
 
 		if ($userId < 1) {
@@ -132,14 +125,10 @@ class UserRoles{
 
 	}
 
-
-
 	public function getRolesUserCanEdit($userId = -1) {
 
 		$rolesList = $this->listRoles();
 		if (($userId == -1 || $userId == GetClient()->getUserId()) && GetClient()->isAdmin()) {
-
-
 
 			//return $rolesList;
 		}
@@ -159,7 +148,6 @@ class UserRoles{
 
 	}
 
-
 	public function listRoleIcons() {
 
 		$config = new \core\Configuration('rolesicons');
@@ -173,7 +161,6 @@ class UserRoles{
 		return $icons;
 
 	}
-
 
 	public function getUserRoleIcon($userId = -1) {
 
@@ -194,12 +181,5 @@ class UserRoles{
 		}
 		return UrlFrom((new \core\Configuration('rolesicons'))->getParameter('none')[0]);
 	}
-
-
-
-
-
-
-
 
 }
