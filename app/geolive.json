@@ -3729,6 +3729,15 @@
                                     "fieldValueScript": "User Detail View.metadata.positions.content.modules.3.config.fieldValueScript.js",
                                     "formatElementScript": ""
                                 }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "User Detail View.metadata.positions.content.modules.4.config.fieldValueScript.js",
+                                    "formatElementScript": ""
+                                }
                             }
                         ]
                     },
