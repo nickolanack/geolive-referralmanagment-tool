@@ -1,5 +1,6 @@
 
 
 ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
-   callback(team.getUser(AppClient.getId()).getRole());
+   var value=team.getUser(AppClient.getId()).getRole();
+   callback(value);
 });
