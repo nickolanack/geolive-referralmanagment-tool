@@ -14460,9 +14460,11 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "Here is your magic login link",
+            "contentTemplate": "email-VerifyEmailLink-subject.contentTemplate.html",
             "widgetTitle": "email.VerifyEmailLink.subject",
-            "target": "email.VerifyEmailLink.subject"
+            "target": "email.VerifyEmailLink.subject",
+            "comments": "",
+            "readAccess": "public"
         }
     },
     "widget.311": {
