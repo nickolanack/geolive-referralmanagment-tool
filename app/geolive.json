@@ -14473,7 +14473,9 @@
         "parameters": {
             "contentTemplate": "email-VerifyEmailLink-content.contentTemplate.html",
             "widgetTitle": "email.VerifyEmailLink.content",
-            "target": "email.VerifyEmailLink.content"
+            "target": "email.VerifyEmailLink.content",
+            "comments": "",
+            "readAccess": "public"
         }
     },
     "widget.312": {
