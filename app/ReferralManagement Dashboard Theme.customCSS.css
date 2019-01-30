@@ -2123,6 +2123,21 @@ span.SearchModule.search-container {
     right: 5px;
 }
 
+.tag-cloud>span.tag-el {
+
+    border: none;
+    border-radius: 2px;
+    color: white;
+    font-weight: 100;
+    background-color:rgba(0,0,0,0.2)
+}
+.tag-cloud>span.tag-el:hover {
+  background-color: #4b58a7;
+}
+.tag-cloud>span.tag-el.selected {
+    background-color: #6A7CE9; 
+}
+
 ul.user-roles>li {
     display: inline-block;
     width: 20px;
