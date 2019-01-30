@@ -1485,51 +1485,6 @@
             "resolveItemScript": "return item;"
         }
     },
-    "widget.66": {
-        "name": "Detail View",
-        "instance": "DetailView",
-        "parameters": {
-            "widgetTitle": "",
-            "target": "",
-            "templateName": "reserves",
-            "requireTarget": true,
-            "resolveItemScript": "return item",
-            "onRenderApplictionScript": "",
-            "notifyViewer": false,
-            "metadata": {
-                "positions": {
-                    "title": {
-                        "modules": [
-                            "widget.DetailView.66.metadata.positions.title.modules.0.json"
-                        ]
-                    },
-                    "content": {
-                        "modules": [
-                            "widget.DetailView.66.metadata.positions.content.modules.0.json"
-                        ]
-                    },
-                    "footer": {
-                        "modules": []
-                    },
-                    "menu": {
-                        "modules": [
-                            "widget.DetailView.66.metadata.positions.menu.modules.0.json",
-                            {
-                                "type": "MenuController"
-                            }
-                        ]
-                    }
-                },
-                "positionList": [
-                    "title",
-                    "content",
-                    "footer",
-                    "menu"
-                ]
-            },
-            "readAccess": "public"
-        }
-    },
     "widget.67": {
         "name": "Attribute Wizard Builder",
         "instance": "AttributeWizardBuilder",
