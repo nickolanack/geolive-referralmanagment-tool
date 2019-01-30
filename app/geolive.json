@@ -3725,7 +3725,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "return \"Role \";",
+                                    "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "User Detail View.metadata.positions.content.modules.3.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-role');"
                                 }
