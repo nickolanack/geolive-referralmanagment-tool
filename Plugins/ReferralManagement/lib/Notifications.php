@@ -59,13 +59,13 @@ class Notifications {
 		Emit('onDeauthorizeCommunityMemberDevice', $clientMeta);
 	}
 
-	public function onGuestProposal($id, $params) {
+	public function onGuestProposal($projectId, $params) {
 
 		$this->on('guest.proposal', array(
 			"items" => array(
 				array(
 					"type" => "ReferralManagement.proposal",
-					"id" => $id,
+					"id" => $projectId,
 				),
 			), $params)
 		);
@@ -249,18 +249,18 @@ class Notifications {
 		));
 	}
 
-	public function onCreateProposal($id, $json) {
+	public function onCreateProposal($projectId, $json) {
 		$this->on('create.proposal', array(
 			"items" => array(
 				array(
 					"type" => "ReferralManagement.proposal",
-					"id" => $id,
+					"id" => $projectId,
 				),
 			)),
 			$json
 		);
 
-		$this->queueEmailProjectUpdate($id, array(
+		$this->queueEmailProjectUpdate($projectId, array(
 			"action" => "Created Proposal",
 		));
 	}
@@ -333,34 +333,37 @@ class Notifications {
 			$json
 		);
 	}
-	public function onCreateTask($id, $json) {
+	public function onCreateTask($taskId, $json) {
 		$this->on('create.task', array(
 			"items" => array(
 				array(
 					"type" => "Tasks.task",
-					"id" => $id,
+					"id" => $taskId,
 				),
 			)),
 			$json
 		);
 
-		$this->broadcastTaskUpdate($id);
-		$this->queueEmailTaskUpdate($id, array(
+		$this->broadcastTaskUpdate($taskId);
+		$this->queueEmailTaskUpdate($taskId, array(
 			"action" => "Created Task",
 		));
 	}
 
-	public function onCreateDefaultTasks($ids, $json) {
+	public function onCreateDefaultTasks($taskIdList, $json) {
 
-		$this->on('create.default.tasks', array(
-			"items" => array_map(function ($id) {
-				return array(
-					"type" => "Tasks.task",
-					"id" => $id,
-				);
-			},
-				$ids
-			)),
+		$this->on('create.default.tasks', 
+			array(
+				"items" => array_map(
+					function ($taskId) {
+						return array(
+							"type" => "Tasks.task",
+							"id" => $taskId,
+						);
+					},
+					$taskIdList
+				)
+			),
 			$json
 		);
 
@@ -393,48 +396,48 @@ class Notifications {
 
 	}
 
-	private function broadcastProjectUpdate($id) {
+	private function broadcastProjectUpdate($projectId) {
 
 
 		Broadcast('proposals', 'update', array(
-			'updated'=>array($id)
+			'updated'=>array($projectId)
 		));
 
-		Broadcast('proposal.' . $id, 'update', array(
+		Broadcast('proposal.' . $projectId, 'update', array(
 			'user' => GetClient()->getUserId(),
-			'updated' => array((new \ReferralManagement\Project())->fromId($id)->toArray()),
+			'updated' => array((new \ReferralManagement\Project())->fromId($projectId)->toArray()),
 		));
 
 
 
 	}
 
-	private function broadcastTaskUpdate($id) {
+	private function broadcastTaskUpdate($taskId) {
 
-		$proposal = (new \ReferralManagement\Task())->fromId($id)->getItemId();
+		$proposal = (new \ReferralManagement\Task())->fromId($taskId)->getItemId();
 		$this->broadcastProjectUpdate($proposal);
 		
 
 	}
 
-	private function queueEmailProjectUpdate($id, $data = array()) {
+	private function queueEmailProjectUpdate($projectId, $data = array()) {
 
 		ScheduleEvent('onTriggerProjectUpdateEmailNotification', array(
 
 			'user' => GetClient()->getUserId(),
-			'project' => (new \ReferralManagement\Project())->fromId($id)->toArray(),
+			'project' => (new \ReferralManagement\Project())->fromId($projectId)->toArray(),
 			'info' => $data,
 
 		), intval(GetPlugin('ReferralManagement')->getParameter("queueEmailDelay")));
 
 	}
 
-	private function queueEmailTaskUpdate($id, $data = array()) {
+	private function queueEmailTaskUpdate($taskId, $data = array()) {
 
 		ScheduleEvent('onTriggerTaskUpdateEmailNotification', array(
 
 			'user' => GetClient()->getUserId(),
-			'task' => (new \ReferralManagement\Task())->fromId($id)->toArray(),
+			'task' => (new \ReferralManagement\Task())->fromId($taskId)->toArray(),
 			'info' => $data,
 
 		), intval(GetPlugin('ReferralManagement')->getParameter("queueEmailDelay")));
