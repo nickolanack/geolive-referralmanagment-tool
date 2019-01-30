@@ -1672,15 +1672,6 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {
 }
 
 
-.tag-cloud>span.tag-el {
-    background-color: white;border: none;border-radius: 2px;
-    
-}
-
-.tag-cloud>span.tag-el.selected {
-    background-color: #6A7CE9;
-    color:white;
-}
 
 .WizardTitle{
     text-align:right;
@@ -2123,7 +2114,7 @@ span.SearchModule.search-container {
     right: 5px;
 }
 
-.tag-cloud>span.tag-el {
+.TagCloudModule .tag-cloud>span.tag-el {
 
     border: none;
     border-radius: 2px;
@@ -2131,10 +2122,10 @@ span.SearchModule.search-container {
     font-weight: 100;
     background-color:rgba(0,0,0,0.2)
 }
-.tag-cloud>span.tag-el:hover {
+.TagCloudModule .tag-cloud>span.tag-el:hover {
   background-color: #4b58a7;
 }
-.tag-cloud>span.tag-el.selected {
+.TagCloudModule .tag-cloud>span.tag-el.selected {
     background-color: #6A7CE9; 
 }
 
