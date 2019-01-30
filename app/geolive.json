@@ -2728,60 +2728,6 @@
             "tabName": "Proposals"
         }
     },
-    "widget.136": {
-        "name": "Detail View",
-        "instance": "DetailView",
-        "parameters": {
-            "widgetTitle": "Proposals List View",
-            "target": "map.3",
-            "templateName": "ProposalsListView",
-            "requireTarget": false,
-            "resolveItemScript": "return item",
-            "onRenderApplictionScript": "",
-            "notifyViewer": false,
-            "metadata": {
-                "positions": {
-                    "title": {
-                        "modules": []
-                    },
-                    "content": {
-                        "modules": [
-                            "Proposals List View.metadata.positions.content.modules.0.json",
-                            {
-                                "type": "plugin.ReferralManagement.Proposals",
-                                "config": {
-                                    "className": "proposal-list-view",
-                                    "viewType": "view",
-                                    "namedView": "ProposalDetail",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "",
-                                    "itemButtonsScript": "return [];"
-                                }
-                            }
-                        ]
-                    },
-                    "footer": {
-                        "modules": []
-                    },
-                    "menu": {
-                        "modules": []
-                    }
-                },
-                "positionList": [
-                    "title",
-                    "content",
-                    "footer",
-                    "menu"
-                ],
-                "_diagramState": []
-            },
-            "readAccess": "public"
-        }
-    },
     "widget.137": {
         "name": "Template",
         "instance": "Template",
