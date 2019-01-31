@@ -14,6 +14,18 @@ var UserTeamCollection = (function(){
 		}
 	});
 
+
+	var TeamUserQuery = new Class({
+		Extends: AjaxControlQuery,
+		initialize: function(userid) {
+
+			this.parent(CoreAjaxUrlRoot, "get_user", {
+				plugin: "ReferralManagement",
+				id: userid,
+			});
+		}
+	});
+
 	var RemoveItemUserQuery = new Class({
 		Extends: AjaxControlQuery,
 		initialize: function(item, type, user) {
@@ -106,6 +118,19 @@ var UserTeamCollection = (function(){
 					    
 					    if(ProjectTeam.CurrentTeam().hasUser(user.id)){
 							member.setUser(ProjectTeam.CurrentTeam().getUser(user.id));
+						}else{
+
+							member.setMissingUser();
+							(new TeamUserQuery(user.id)).addEvent('success',function(resp){
+
+								if(resp.result){
+									member.setUser({options:{metadata:resp.result}});
+								}
+								//console.log(resp);
+
+							}).execute();
+
+							
 						}
 
 						member.setProject(me);

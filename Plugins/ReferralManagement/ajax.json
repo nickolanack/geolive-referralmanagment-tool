@@ -55,8 +55,13 @@
 
     "list_users": {
         "validate": {
+            "checkKeys": []
+        }
+    },
+    "get_user": {
+        "validate": {
             "checkKeys": [
-                "team"
+                "id"
             ]
         }
     },

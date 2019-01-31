@@ -54,6 +54,7 @@ class DefaultTasks{
 
 
 	protected function parseDueDateString($date, $proposal) {
+		return $date;
 		return $this->renderTemplate("dueDateTemplate", $date, GetPlugin('ReferralManagement')->getProposalData($proposal));
 	}
 

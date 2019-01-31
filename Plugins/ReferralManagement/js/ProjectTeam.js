@@ -256,6 +256,10 @@ var ProjectTeam = (function() {
 			var me=this;
 			(new UserListQuery(me.getId())).addEvent('success', function(resp) {
 
+				// if(resp.communities){
+				// 	me._communities==resp.communities;
+				// }
+
 				resp.results.forEach(function(user) {
 					try{
 						me.getUser(user.id).setData(user);
@@ -620,6 +624,29 @@ var ProjectTeam = (function() {
 
 			return me._devices.slice(0);
 		},
+
+		listCommunities:function(){
+			var me=this;
+
+			if (!me._communities) {
+				if (callback) {
+					me.runOnceOnLoad(function(){
+					    callback(me.getCommunities());
+					});
+
+					return null;
+
+			 	}
+			 	throw 'Community list has not been loaded yet. hint: add callback arg to this call';
+			}
+
+			if(callback){
+				callback(me._communities);
+			}
+
+			return me._communities;
+		},
+
 		getCommunityMembersAndUnassigned:function(callback){
 
 			var me=this;
@@ -837,12 +864,26 @@ var ProjectTeam = (function() {
 
 	});
 
+	ProjectTeam.GetAllCommunities=function(){
+		return [
+			"wabun", 
+			"beaverhouse", 
+			"brunswick house", 
+			"chapleau ojibway", 
+			"flying post", 
+			"matachewan", 
+			"mattagami"
+		];
+	}
+
 	ProjectTeam.GetAllRoles=function(){
-		return ["tribal-council",
-				"chief-council",
-				"lands-department-manager",
-				"lands-department",
-				"community-member"];
+		return [
+			"tribal-council",
+			"chief-council",
+			"lands-department-manager",
+			"lands-department",
+			"community-member"
+		];
 	}
 
 	ProjectTeam.GetRolesUserCanAssign=function(){

@@ -292,6 +292,17 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 	}
 
 
+	protected function getUser($json) {
+
+		$users=$this->getPlugin()->listAllUsersMetadata(array('id'=>$json->id));
+
+		return array(
+			
+			"result" =>$users[0] 
+		);
+
+
+	}
 
 	protected function listUsers($json) {
 
@@ -315,7 +326,8 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				'channel' => 'userlist',
 				'event' => 'update',
 			),
-			"results" =>$users,
+			"results" =>$users //,
+			//"communities"=>$this->getPlugin()->listCommunities()
 		);
 	}
 

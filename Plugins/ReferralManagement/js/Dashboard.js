@@ -1242,6 +1242,28 @@ var ReferralManagementDashboard = {
 
 	},
 
+	limitUserCommunityValues:function(module){
+
+		//modify tag cloud 
+
+		var user=ProjectTeam.CurrentTeam().getUser(AppClient.getId());
+		if(user.isUnassigned()||AppClient.getUserType()=="admin"){
+			return;
+		}
+
+		module.runOnceOnLoad(function(){
+			var cloud=module.getCloud();
+
+			cloud.getElement().addClass('community locked');
+
+			cloud.getWords().map(function(word){
+				return cloud.getWordElement(word);
+			}).forEach(function(el){
+				el.removeEvents('click');
+				
+			});
+		});
+	},
 
 	getUsersTeamMembersDescription:function(){
 

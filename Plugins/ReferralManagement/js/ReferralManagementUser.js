@@ -14,6 +14,9 @@ var ReferralManagementUser = new Class({
 		},
 		getName:function(){
 			var me=this;
+			if(!me.options.metadata.name){
+				throw 'user does not have name metadata'
+			}
 			return me.options.metadata.name;
 		},
 		getRoles: function() {
@@ -53,6 +56,9 @@ var ReferralManagementUser = new Class({
 		},
 		getCommunity:function(){
 			var me=this;
+			if(!me.options.metadata.name){
+				throw 'user does not have name metadata'
+			}
 			return me.options.metadata.community;
 		},
 		isUnassigned:function(){
@@ -219,7 +225,14 @@ var ReferralManagementUser = new Class({
         	me._u=u;
         	me.options.metadata=Object.append(me.options.metadata, u.options.metadata);
         },
-
+        setMissingUser:function(){
+        	var me=this;
+        	me.options.metadata=Object.append({
+        		name:"missing or deleted user",
+        		community:"unknown",
+        		email:''
+        	}, me.options.metadata);
+        },
   		save: function(callback) {
 			var me = this;
 
