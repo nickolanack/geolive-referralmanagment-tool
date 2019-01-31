@@ -2138,6 +2138,27 @@ span.SearchModule.search-container {
     background-color: #6A7CE9; 
 }
 
+
+.tag-cloud.locked {
+    border: 1px solid #ceb250;
+    border-radius: 2px;
+    padding: 5px;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.tag-cloud.community.locked:before {
+    content: "*your community can no longer be changed";
+    display: inline-block;
+    float: right;
+    font-size: 12px;
+    font-style: italic;
+    position: absolute;
+    bottom: -22px;
+    right: 5px;
+    color: #ceb250;
+}
+
 ul.user-roles>li {
     display: inline-block;
     width: 20px;
