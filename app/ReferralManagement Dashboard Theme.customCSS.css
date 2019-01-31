@@ -2042,6 +2042,10 @@ button.t-btn {
     margin-right: 12px;
 }
 
+.ui-post-view .user-roles {
+    display: none;
+}
+
 .activity-feed:before {
     content: "";
     position: absolute;
