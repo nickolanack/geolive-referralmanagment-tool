@@ -2153,10 +2153,17 @@ span.SearchModule.search-container {
     float: right;
     font-size: 12px;
     font-style: italic;
-    position: absolute;
-    bottom: -22px;
-    right: 5px;
+    position: relative;
     color: #ceb250;
+    line-height: 30px;
+}
+
+.TagCloudModule .tag-cloud.locked>span.tag-el {
+    display: none;
+}
+
+.TagCloudModule .tag-cloud.locked>span.tag-el.selected {
+    display: inline-block;
 }
 
 ul.user-roles>li {
