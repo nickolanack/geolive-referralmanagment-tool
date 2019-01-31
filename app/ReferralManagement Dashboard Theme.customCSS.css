@@ -2130,6 +2130,10 @@ span.SearchModule.search-container {
 .TagCloudModule .tag-cloud>span.tag-el:hover {
   background-color: #4b58a7;
 }
+.TagCloudModule .tag-cloud>span.tag-el.locked {
+    background-color:rgba(0,0,0,0.2);
+    cursor:default;
+}
 .TagCloudModule .tag-cloud>span.tag-el.selected {
     background-color: #6A7CE9; 
 }
