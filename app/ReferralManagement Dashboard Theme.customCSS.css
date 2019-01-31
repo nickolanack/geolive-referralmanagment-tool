@@ -2459,8 +2459,10 @@ img.static-map {
     margin-top: 4px;
 }
 .spatial-file-tile.add>.tileButton {
+    display: none;
     background-color: mediumseagreen;
 }
+
 
 .tileOptionContainer.spatial-file-tile {
     display: inline-block;
