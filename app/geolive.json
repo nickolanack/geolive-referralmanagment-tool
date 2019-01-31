@@ -3556,7 +3556,7 @@
                                 "type": "InlineHtml",
                                 "config": {
                                     "className": "survey-link",
-                                    "text": "<a href=\"https:\/\/goo.gl\/forms\/MVY1ES1X5gARvxgF2\">Survey<\/a>\n<a href=\"https:\/\/wabuntc.slack.com\">Slack Chat<\/a>",
+                                    "text": "<a class=\"survey-form\" href=\"https:\/\/goo.gl\/forms\/MVY1ES1X5gARvxgF2\">Survey<\/a>\n<a class=\"slack-link\" href=\"https:\/\/wabuntc.slack.com\">Slack Chat<\/a>",
                                     "template": "",
                                     "templateVariablesScript": ""
                                 }
