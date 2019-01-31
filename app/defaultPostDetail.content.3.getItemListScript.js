@@ -31,7 +31,7 @@ ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
            
            
            return i;
-       })
+       }).filter(function(postItem){ return !!postItem; });
        callback(postItems);
        
        return;
