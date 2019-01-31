@@ -1,1 +1,1 @@
-return <?php echo json_encode(GetPlugin("ReferralManagement")->listCommunities()); ?>;
+return ProjectTeam.GetAllCommunities();

@@ -295,7 +295,7 @@
         "name": "Keen I O",
         "instance": "KeenIO",
         "parameters": {
-            "enabled": true,
+            "enabled": false,
             "projectId": "5b22d68ac9e77c00012dfb07",
             "writeKey": "XXXX-XXXX",
             "readKey": "XXXX-XXXX",
@@ -7299,16 +7299,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 354,
-                            "y": 217
+                            "x": 374,
+                            "y": 237
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 314,
-                                    "y": 468
+                                    "x": 334,
+                                    "y": 488
                                 }
                             }
                         ],
@@ -7413,7 +7413,7 @@
                                                 "shuffleTags": false,
                                                 "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
                                                 "getItemTagsScript": "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.getItemTagsScript.js",
-                                                "formatModule": ""
+                                                "formatModule": "ReferralManagementDashboard.limitUserCommunityValues(module);"
                                             }
                                         },
                                         {

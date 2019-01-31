@@ -2,7 +2,7 @@
 ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
     
     if(item.getMetadata().items){
-      callback(item.getMetadata().items.map(function(i){
+      var postItems=item.getMetadata().items.map(function(i){
            
            var type=i.type;
            
@@ -31,7 +31,10 @@ ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
            
            
            return i;
-       }))
+       }).filter(function(postItem){ return !!postItem; });
+       callback(postItems);
+       
+       return;
     }
 
 callback([]);
