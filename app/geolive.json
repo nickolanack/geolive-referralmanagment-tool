@@ -12360,17 +12360,9 @@
                         "modules": [
                             "emptyProjectOverviewDetail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "emptyProjectOverviewDetail.metadata.positions.content.modules.1.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
                                 "type": "FormattedText",
                                 "config": {
-                                    "textValueScript": "emptyProjectOverviewDetail.metadata.positions.content.modules.2.config.textValueScript.js",
+                                    "textValueScript": "emptyProjectOverviewDetail.metadata.positions.content.modules.1.config.textValueScript.js",
                                     "formatModuleScript": "",
                                     "className": "section-help",
                                     "imageWidth": 300,
@@ -12392,6 +12384,14 @@
                                     "embedPortrait": true,
                                     "preferLocalContent": true,
                                     "portraitClip": true
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "emptyProjectOverviewDetail.metadata.positions.content.modules.2.config.script.js",
+                                    "description": "Info about my custom script"
                                 }
                             }
                         ]
