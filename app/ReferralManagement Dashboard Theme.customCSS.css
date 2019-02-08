@@ -73,7 +73,7 @@ button.public-user-chat {
 
 .withPosts .posts:before, li.menu-project-discussion.withPosts:after {
     content: attr(data-posts);
-    background-color: crimson;
+    background-color: rgba(255,255,255,0.1);
     min-width: 8px;
     height: 14px;
     display: inline-block;
