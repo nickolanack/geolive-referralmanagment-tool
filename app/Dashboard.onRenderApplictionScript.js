@@ -130,7 +130,7 @@ GetWidget('taskDetailPopover')->display($targetInstance);
 GetWidget('singleTaskOverviewDetail')->display($targetInstance);
 
 
-
+GetWidget('dialogForm')->display($targetInstance);
 
 
 
