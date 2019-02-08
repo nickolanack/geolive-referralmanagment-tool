@@ -74,16 +74,20 @@ button.public-user-chat {
 .withPosts .posts:before, li.menu-project-discussion.withPosts:after {
     content: attr(data-posts);
     background-color: crimson;
-    width: 14px;
+    min-width: 8px;
     height: 14px;
     display: inline-block;
     vertical-align: middle;
-    line-height: 14PX;
+    line-height: 14px;
     font-size: 10px;
     color: black;
     text-align: center;
-    border-radius: 100%;
+    border-radius: 10px;
     margin: 0 5px;
+    padding: 0 3px;
+}
+.withPosts.newPosts .posts:before, li.menu-project-discussion.withPosts.newPosts:after {
+    background-color: crimson;
 }
 
 li.menu-project-discussion.withPosts:after {
