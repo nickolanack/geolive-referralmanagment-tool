@@ -9,7 +9,7 @@ tile.addEvent("click:once",function(){
 var shouldShare=true;
 var sharedHeatmap=null;
 
-Array.each(layers, function(layer){
+layers.forEach(function(layer){
 
 	if(shouldShare&&!sharedHeatmap){
 	    sharedHeatmap=new HeatmapRenderer(layer);

@@ -317,17 +317,22 @@ var ProjectTeam = (function() {
 				me._users=[];
 			}
 
-			me._users.push(
-				(new ReferralManagementUser({
+			
+			var user=(new ReferralManagementUser({
 
-					userType: "user",
-					id: data.id,
-					metadata: data
+				userType: "user",
+				id: data.id,
+				metadata: data
 
-				})).addEvent('update', function() {
-					me.fireEvent('userListChanged')
-				})
-			);
+			})).addEvent('update', function() {
+				me.fireEvent('userListChanged')
+			})
+
+			if(data.id+""===AppClient.getId()+""){
+				me._currentClient=user;
+			}
+
+			me._users.push(user);
 		},
 		_loadUsers:function(callback){
 
@@ -337,15 +342,46 @@ var ProjectTeam = (function() {
 			(new UserListQuery(me.getId())).addEvent('success', function(resp) {
 
 				me._users=[];
+				var currentUser;
 				resp.results.forEach(function(data) {
 					me._addUser(data);
 				});
+
+
+
+
 
 				if (resp.subscription) {
                     AjaxControlQuery.Subscribe(resp.subscription, function(result) {
                        me._updateUserList(result);
                     });
                 }
+
+
+                if(!me._currentClient){
+					var ClientUserQuery = new Class({
+						Extends: AjaxControlQuery,
+						initialize: function() {
+
+							this.parent(CoreAjaxUrlRoot, "get_user", {
+								plugin: "ReferralManagement",
+								id: AppClient.getId(),
+							});
+						}
+					});
+
+					(new ClientUserQuery()).addEvent('success', function(resp){
+
+						me._addUser(resp.result);
+
+						me.fireEvent('loadUsers');
+						callback();
+
+					}).execute()
+
+
+					return;
+				}
 
 				me.fireEvent('loadUsers');
 				callback();

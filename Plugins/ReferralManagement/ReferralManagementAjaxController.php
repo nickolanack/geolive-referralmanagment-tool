@@ -294,11 +294,11 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	protected function getUser($json) {
 
-		$users=$this->getPlugin()->listAllUsersMetadata(array('id'=>$json->id));
+		$user=$this->getPlugin()->getUsersMetadata($json->id);
 
 		return array(
 			
-			"result" =>$users[0] 
+			"result" =>$user
 		);
 
 

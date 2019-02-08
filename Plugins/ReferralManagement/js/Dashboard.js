@@ -713,7 +713,7 @@ var ReferralManagementDashboard = {
 
 	createNavigationMenu: function(application) {
 
-		var navigationController=new NavigationMenuModule({
+		var navigationController=new NavigationMenuModule(Object.append({
 			"Main": [{
 					html: "Dashboard",
 				}, {
@@ -996,7 +996,9 @@ var ReferralManagementDashboard = {
 					html: "Subsistence"
 				}
 
-			],
+			]
+
+		},(AppClient.getUserType()=="admin"?{
 			"Configuration": [{
 				html: "Archive"
 			}, {
@@ -1015,9 +1017,7 @@ var ReferralManagementDashboard = {
 					}
 
 				}
-			}]
-
-		}, {
+			}]}:{})), {
 			"class": "collapsable-menu",
 			targetUIView: function(button, section, viewer) {
 				return viewer.getApplication().getChildView('content', 0).getChildView('content', 1);
@@ -1263,6 +1263,21 @@ var ReferralManagementDashboard = {
 				
 			});
 		});
+	},
+
+	getEmptyProjectsListDescription:function(){
+
+
+		return "<p>There are no active projects. To get started, create a new project!</p>";
+
+
+	},
+	getEmptyTasksListDescription:function(){
+
+
+		return "<p>Tasks are created within projects. To get started, create or select a project and add some tasks.</p>";
+
+
 	},
 
 	getUsersTeamMembersDescription:function(){
