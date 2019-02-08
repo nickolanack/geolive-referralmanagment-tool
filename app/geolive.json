@@ -7533,7 +7533,7 @@
             "beforeSubmitScript": "",
             "onCreateScript": "",
             "onUpdateScript": "",
-            "onSaveScript": "",
+            "onSaveScript": "userProfileForm.onSaveScript.js",
             "onLoadScript": "",
             "requireTarget": true,
             "templateName": "userProfileForm",
