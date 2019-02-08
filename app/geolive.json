@@ -4232,6 +4232,24 @@
                     "maxHeight": 128,
                     "maxWidth": 128,
                     "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "slackMenuIcon",
+                    "default": [],
+                    "label": "slackMenuIcon",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "discussionIllustration",
+                    "default": [],
+                    "label": "discussionIllustration",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
                 }
             ],
             "hello": "World",
@@ -4313,7 +4331,9 @@
             ],
             "people-projectmembers": [
                 "webresources\/config-153\/1c51d.[G]_MMr_[ImAgE]_38t_cHE.png"
-            ]
+            ],
+            "slackMenuIcon": [],
+            "discussionIllustration": []
         }
     },
     "widget.154": {
