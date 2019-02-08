@@ -1,10 +1,9 @@
 {
-    "type": "WizardTitleField",
+    "type": "FieldValue",
     "config": {
-        "label": "Title",
-        "message": "add a title",
-        "className": "",
-        "maxChars": 0,
-        "textFormatScript": ""
+        "loadAsync": false,
+        "fieldLabelScript": "return \"\";",
+        "fieldValueScript": "return item.getName();",
+        "formatElementScript": ""
     }
 }
