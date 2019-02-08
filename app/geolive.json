@@ -3513,11 +3513,13 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "initModuleScript": "",
                                     "formatModuleScript": "Left Panel.metadata.positions.content.modules.1.config.formatModuleScript.js",
                                     "resolveItemScript": "Left Panel.metadata.positions.content.modules.1.config.resolveItemScript.js",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
-                                    "insertAtTop": false
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             },
                             {
@@ -3533,11 +3535,13 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
-                                    "insertAtTop": false
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             },
                             {
@@ -3552,7 +3556,7 @@
                                 "type": "InlineHtml",
                                 "config": {
                                     "className": "survey-link",
-                                    "text": "<a href=\"https:\/\/goo.gl\/forms\/MVY1ES1X5gARvxgF2\">Survey<\/a>",
+                                    "text": "<a class=\"survey-form\" href=\"https:\/\/goo.gl\/forms\/MVY1ES1X5gARvxgF2\">Survey<\/a>\n<a class=\"slack-link\" href=\"https:\/\/wabuntc.slack.com\">Slack Chat<\/a>",
                                     "template": "",
                                     "templateVariablesScript": ""
                                 }
@@ -12360,17 +12364,9 @@
                         "modules": [
                             "emptyProjectOverviewDetail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "emptyProjectOverviewDetail.metadata.positions.content.modules.1.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
                                 "type": "FormattedText",
                                 "config": {
-                                    "textValueScript": "emptyProjectOverviewDetail.metadata.positions.content.modules.2.config.textValueScript.js",
+                                    "textValueScript": "emptyProjectOverviewDetail.metadata.positions.content.modules.1.config.textValueScript.js",
                                     "formatModuleScript": "",
                                     "className": "section-help",
                                     "imageWidth": 300,
@@ -12392,6 +12388,14 @@
                                     "embedPortrait": true,
                                     "preferLocalContent": true,
                                     "portraitClip": true
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "emptyProjectOverviewDetail.metadata.positions.content.modules.2.config.script.js",
+                                    "description": "Info about my custom script"
                                 }
                             }
                         ]
