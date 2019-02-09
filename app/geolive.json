@@ -5887,7 +5887,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.fieldValueScript.js",
-                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.formatElementScript.js"
+                                    "formatElementScript": "el.addClass('created-by')"
                                 }
                             },
                             {
