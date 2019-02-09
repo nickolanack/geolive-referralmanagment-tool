@@ -5837,9 +5837,18 @@
                                 }
                             },
                             {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.7.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.7.config.formatElementScript.js"
+                                }
+                            },
+                            {
                                 "type": "FormattedText",
                                 "config": {
-                                    "textValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.7.config.textValueScript.js",
+                                    "textValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.8.config.textValueScript.js",
                                     "formatModuleScript": "",
                                     "className": "project-description",
                                     "imageWidth": 300,
@@ -5868,8 +5877,8 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.8.config.fieldValueScript.js",
-                                    "formatElementScript": ""
+                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.9.config.fieldValueScript.js",
+                                    "formatElementScript": "el.addClass('project-dates');"
                                 }
                             },
                             {
@@ -5877,8 +5886,8 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.9.config.fieldValueScript.js",
-                                    "formatElementScript": "el.addClass('created-by');"
+                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -5929,7 +5938,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.12.config.script.js",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.13.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             },
@@ -5937,7 +5946,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.13.config.script.js",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.14.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
