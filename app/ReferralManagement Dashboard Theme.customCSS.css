@@ -180,6 +180,19 @@ label.boolean-field p {
 }
 
 
+.field-value-module.project-dates {
+    color: gray;
+    font-size: 12px;
+    width: calc( 50% - 30px );
+    display: inline-block;
+}
+
+.field-value-module.created-by {
+    width: 50%;
+    display: inline-block;
+}
+
+
 .login-form .application-logo {
     height: 200px;
     background-size: auto 100%;
