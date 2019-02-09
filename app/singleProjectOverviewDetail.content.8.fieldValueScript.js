@@ -1,1 +1,1 @@
-return ReferralManagementDashboard.getCreatedByString(item);
+return ReferralManagementDashboard.getDatesString(item);
