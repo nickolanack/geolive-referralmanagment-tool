@@ -71,7 +71,7 @@ button.public-user-chat {
     right: 30px;
 }
 
-.withPosts .posts:before, li.menu-project-discussion.withPosts:after {
+.withPosts .posts:before {
     content: attr(data-posts);
     background-color: rgba(255,255,255,0.1);
     min-width: 8px;
@@ -86,7 +86,7 @@ button.public-user-chat {
     margin: 0 5px;
     padding: 0 3px;
 }
-.withPosts.newPosts .posts:before, li.menu-project-discussion.withPosts.newPosts:after {
+.withPosts.newPosts .posts:before {
     background-color: crimson;
 }
 
