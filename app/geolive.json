@@ -5878,7 +5878,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.9.config.fieldValueScript.js",
-                                    "formatElementScript": "el.addClass('project-dates');"
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.9.config.formatElementScript.js"
                                 }
                             },
                             {
