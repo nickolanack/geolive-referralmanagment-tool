@@ -951,6 +951,12 @@ span.inline-list-item {
     text-overflow: ellipsis;
 }
 
+.field-value-module.item-title {
+    background-repeat: no-repeat;
+    background-position: 6px 5px;
+    background-size: 11px;
+}
+
 .module-wizard .field-value-module.item-title {
     width: 100%;
     overflow: visible;
