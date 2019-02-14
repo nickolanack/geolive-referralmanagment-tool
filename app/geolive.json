@@ -7351,16 +7351,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 444,
-                            "y": 307
+                            "x": 454,
+                            "y": 317
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 404,
-                                    "y": 558
+                                    "x": 414,
+                                    "y": 568
                                 }
                             }
                         ],
@@ -7476,7 +7476,7 @@
                                                 ],
                                                 "className": "optional",
                                                 "label": "Phone ",
-                                                "message": "(555) 555-5555",
+                                                "message": "555 555-5555",
                                                 "lines": 1,
                                                 "maxChars": 0,
                                                 "mandatory": false,
