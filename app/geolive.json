@@ -7351,16 +7351,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 394,
-                            "y": 257
+                            "x": 404,
+                            "y": 267
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 354,
-                                    "y": 508
+                                    "x": 364,
+                                    "y": 518
                                 }
                             }
                         ],
@@ -7475,8 +7475,8 @@
                                                     "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
-                                                "label": "Registered Status?",
-                                                "showLabel": false,
+                                                "label": "Registered status?",
+                                                "showLabel": true,
                                                 "presentationStyle": "radio",
                                                 "presentationRadioTrueLabel": "Yes",
                                                 "presentationRadioFalseLabel": "No",
