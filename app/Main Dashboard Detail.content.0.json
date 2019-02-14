@@ -4,15 +4,19 @@
         "className": "inset-shading w-30",
         "viewType": "view",
         "namedView": "synopsisProgressDetail",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
         "showInlineEdit": false,
         "namedFormView": "defaultFormView",
+        "formOptions": "{}",
         "showDeleteButton": false,
         "deleteItemScript": "",
+        "initModuleScript": "",
         "formatModuleScript": "",
         "resolveItemScript": "",
-        "itemButtonsScript": "return [];",
-        "namedViewScript": "return namedView",
         "filterModulesScript": "return list",
-        "formOptions": "{}"
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false,
+        "targetName": ""
     }
 }
