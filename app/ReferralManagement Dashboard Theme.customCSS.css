@@ -751,6 +751,11 @@ span.inline-list-item {
 }
 
 .ui-view.h-60>div{
+    
+}
+
+.ui-view.h-60 {
+    height: 60%;
     min-height: 500px;
 }
 
