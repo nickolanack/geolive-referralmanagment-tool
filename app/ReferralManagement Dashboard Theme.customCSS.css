@@ -256,6 +256,10 @@ label.boolean-field p {
     min-height: 30px;
 }
 
+.no-media .ToolbarBottom, .no-media .ToolbarBottom>.droppable {
+    display: none;
+}
+
 .pb-w .template-footer {
     position: absolute;
     bottom: -54px;
