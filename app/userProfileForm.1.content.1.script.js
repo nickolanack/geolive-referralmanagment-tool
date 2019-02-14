@@ -1,1 +1,1 @@
-return new ElementModule('h2',{html:"Edit Your Profile"});
+return new ElementModule('h2',{html:"Edit your profile"});
