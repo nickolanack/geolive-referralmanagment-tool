@@ -1691,6 +1691,10 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {
     
 }
 
+.uitext-container, .TagCloudModule .tag-cloud {
+    margin-bottom: 15px;
+}
+
 
 .WizardTitle li, .TagCloudSelection>span {
     list-style: none;
