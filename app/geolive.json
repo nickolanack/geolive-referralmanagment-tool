@@ -7351,16 +7351,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 404,
-                            "y": 267
+                            "x": 414,
+                            "y": 277
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 364,
-                                    "y": 518
+                                    "x": 374,
+                                    "y": 528
                                 }
                             }
                         ],
@@ -7490,8 +7490,8 @@
                                                 "attributeFields": [
                                                     "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.7.config.attributeFields.0.json"
                                                 ],
-                                                "className": "",
-                                                "label": "Phone (optional)",
+                                                "className": "optional",
+                                                "label": "Phone ",
                                                 "message": "",
                                                 "lines": 1,
                                                 "maxChars": 0,
@@ -7512,15 +7512,15 @@
                                                 "attributeFields": [
                                                     "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
                                                 ],
-                                                "label": "Bio (optional)",
-                                                "message": "add a description",
+                                                "label": "Bio",
+                                                "message": "add a short bio",
                                                 "lines": 3,
-                                                "mandatory": false,
+                                                "mandatory": true,
                                                 "showAudios": true,
                                                 "showImages": true,
                                                 "showDocuments": true,
                                                 "showVideos": true,
-                                                "className": "no-media",
+                                                "className": "no-media optional",
                                                 "maxChars": 0,
                                                 "showExpandInput": true,
                                                 "toolbarPosition": "bottom",
