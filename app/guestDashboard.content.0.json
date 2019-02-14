@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "return ReferralManagementDashboard.createGuestDashboardNavigationController(viewer);\n",
+        "script": "return ReferralManagementDashboard.createGuestDashboardNavigationController();\n",
         "description": "Info about my custom script"
     }
 }
