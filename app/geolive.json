@@ -7351,16 +7351,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 414,
-                            "y": 277
+                            "x": 424,
+                            "y": 287
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 374,
-                                    "y": 528
+                                    "x": 384,
+                                    "y": 538
                                 }
                             }
                         ],
@@ -7515,7 +7515,7 @@
                                                 "label": "Bio",
                                                 "message": "add a short bio",
                                                 "lines": 3,
-                                                "mandatory": true,
+                                                "mandatory": false,
                                                 "showAudios": true,
                                                 "showImages": true,
                                                 "showDocuments": true,
