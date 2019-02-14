@@ -2145,6 +2145,16 @@ span.SearchModule.search-container {
     top: 5px;
     right: 5px;
 }
+.uitext-container.optional:before {
+    content: "* Optional";
+    color: mediumseagreen;
+    float: right;
+    font-size: 12px;
+    font-style: italic;
+    position: relative;
+    top: 5px;
+    right: 5px;
+}
 
 .TagCloudModule .tag-cloud>span.tag-el {
 
