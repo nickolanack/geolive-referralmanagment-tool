@@ -82,7 +82,7 @@ var Proposal = (function() {
 			}
 
 			if(data.sync){
-				AjaxControlQuery.Subscribe({
+				var sub=AjaxControlQuery.Subscribe({
 					"channel":'proposal.'+me.getId(),
 					"event":"update"
 				}, function(update){
@@ -100,6 +100,10 @@ var Proposal = (function() {
 					}
 
 
+				});
+
+				me.addEvent('destroy',function(){
+					AjaxControlQuery.Unsubscribe(sub);
 				});
 			}
 			
@@ -202,6 +206,10 @@ var Proposal = (function() {
 			t.addEvent('remove', removeListener);
 
 
+		},
+		destroy:function(){
+			var me=this;
+			me.fireEvent('destroy')
 		},
 		isComplete:function(){
 			var me=this;
@@ -325,11 +333,8 @@ var Proposal = (function() {
 				//            label:day.getDate(),
 				//            value:(day.getDay()==0||day.getDay()==6)?0:Math.min(8,(Math.random()*16))+(Math.random()*8)
 				//         }
-
 				//         return d;
-
 				//     })())
-
 				// }
 
 				data[0]["class"] = "trans";
@@ -562,8 +567,44 @@ var Proposal = (function() {
 			return me.getProjectLetterDocuments().concat(me.getPermitDocuments()).concat(me.getAdditionalDocuments()).concat(me.getAgreementDocuments());
 		},
 
+		getCommunitiesInvolved:function(){
 
+			var me=this;
 
+			if (me.data && me.data.attributes.firstNationsInvolved) {
+				return me.data.attributes.firstNationsInvolved;
+
+			}
+
+			return [];
+		},
+
+		hasPosts:function(){
+			var me=this;
+			return me.numberOfPosts()>0;
+		},
+		numberOfPosts:function(){
+			var me=this;
+			if(!(me.data&&me.data.discussion)){
+				return 0;
+			}
+			return parseInt(me.data.discussion.posts);
+		},
+		numberOfNewPosts:function(){
+			var me=this;
+			if(!(me.data&&me.data.discussion)){
+				return 0;
+			}
+			return parseInt(me.data.discussion.new);
+		},
+
+		getDiscussionSubscription:function(){
+			var me=this;
+			return {
+                "channel":"discussion."+me.data.discussion.id,
+                "event":"post"     
+			}
+		},
 		
 
 		getFiles:function(){

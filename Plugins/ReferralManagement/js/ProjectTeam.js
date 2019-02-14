@@ -894,6 +894,7 @@ var ProjectTeam = (function() {
 
 			me._projects.splice(i, 1);
 			me.fireEvent("removeProject", [p]);
+			p.destroy();
 
 		}
 

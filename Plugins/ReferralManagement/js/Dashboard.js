@@ -1,172 +1,284 @@
 var ReferralManagementDashboard = {
 
 
-	getCreatedByString:function(item){
+	getCreatedByString: function(item) {
 
 
-		var name=item.getProjectSubmitter();
+		var name = item.getProjectSubmitter();
 		return name;
 
 		return "unknown";
 
 	},
 
+	getCommunitiesString: function(item) {
+
+		var communities=item.getCommunitiesInvolved();
+
+		if(communities.length==0){
+			return 'no communities have been selected';
+		}
+	
+		return communities.join(', ');
+
+	},
+
+	getDatesString: function(item) {
+
+		var dates={
+			"submit":item.getSubmitDate(),
+			"expiry":item.getExpiryDate(),
+			"deadline":item.getDeadlineDate()
+		};
+
+		
+
+		return Object.keys(dates).map(function(k){
+			return k+": "+dates[k];
+			//return '<span data-type="'+k+'">'+dates[k]+'</span>';
+		}).join(', ');
+
+	},
+
+	onSaveProfile:function(item, application){
+
+		var user = ProjectTeam.CurrentTeam().getUser(item.getId());
+
+		if(user.getId()==AppClient.getId()&&user.isUnassigned()){
+
+			(new UIModalDialog(application, "Your profile has been saved. An administrator must approve your account.", {
+				"formName": "dialogForm",
+				"formOptions": {
+					"template": "form",
+					"className": "alert-view"
+				}
+			})).show();
+		}
+
+	},
+
+	addItemDiscussionInfo: function(el, item, application) {
+
+
+		var newPosts=0;
+		var totalPosts=0;
 
 
 
+		
 
-	loadUserDashboardView:function(application){
+		var postCounter=null;
 
-		var currentView='dashboardLoader';
-		var loadView=function(view){
+		var addEl=function(){
+			postCounter = el.appendChild(new Element('span'));
+			postCounter.addClass('posts');
+			el.addClass('withPosts');
 
-			if(currentView==view){
+			if(item instanceof TaskItem){
+				postCounter.addEvent('click', function() {
+					application.getDisplayController().displayPopoverForm(
+						"taskDetailPopover",
+						item,
+						application, {}
+					);
+				})
+			}
+		}
+
+		var updateCounter=function(){
+
+			if(!postCounter){
+				addEl();
+			}
+			
+			postCounter.setAttribute('data-posts', totalPosts);
+
+			if (newPosts > 0) {
+				el.addClass('newPosts');
+				postCounter.setAttribute('data-posts', newPosts + '/' + item.numberOfPosts());
+			}else{
+				el.removeClass('newPosts');
+			}
+		};
+
+		if (item.hasPosts()) {
+			newPosts = item.numberOfNewPosts();
+			totalPosts = item.numberOfPosts();
+			updateCounter();
+		}
+
+
+		//AjaxControlQuery.WeakSubscribe(el, ...)
+		AjaxControlQuery.WeakSubscribe(el, item.getDiscussionSubscription(), function(){
+			newPosts++;
+			totalPosts++;
+			updateCounter();
+		});
+
+	},
+
+
+	loadUserDashboardView: function(application) {
+
+		var currentView = 'dashboardLoader';
+		var loadView = function(view) {
+
+			if (currentView == view) {
 				return;
 			}
 
-			if(currentView!='dashboardLoader'){
-				view='dashboardLoader';
+			if (currentView != 'dashboardLoader') {
+				view = 'dashboardLoader';
 			}
 
-			
-			currentView=view;
-			application.getChildView('content',0).redraw({"namedView":view});
-			
+
+			currentView = view;
+			application.getChildView('content', 0).redraw({
+				"namedView": view
+			});
+
 		}
 
-		var checkUserRole=function(team){
+		var checkUserRole = function(team) {
 
-				if(AppClient.getUserType()=="admin"){
+			if (AppClient.getUserType() == "admin") {
+				loadView("dashboardContent");
+				return;
+			}
+
+			try {
+				var user = team.getUser(AppClient.getId());
+				if (user.isTeamMember()) {
 					loadView("dashboardContent");
 					return;
 				}
-			     
-		        try{
-		            var user=team.getUser(AppClient.getId());
-		            if(user.isTeamMember()){
-		            	loadView("dashboardContent");
-		            	return;
-		            }
 
-		            if(user.isCommunityMember()){
+				if (user.isCommunityMember()) {
 
-		            	loadView("communityMemberDashboard")
-		            	return;
-		            }
+					loadView("communityMemberDashboard")
+					return;
+				}
 
-		        }catch(e){
-		            
-		        }
-		        return loadView('nonMemberDashboard');
+			} catch (e) {
+
+			}
+			return loadView('nonMemberDashboard');
 
 		}
-		ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+		ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
 			checkUserRole(team);
-			team.addEvent('userListChanged:once', function(){
+			team.addEvent('userListChanged:once', function() {
 				checkUserRole(team);
 			});
 		})
 
 
 	},
-	createRoleEditModules:function(item){
-		if((item.isProjectMember&&item.isProjectMember())){
-		    return null;
+	createRoleEditModules: function(item) {
+		if ((item.isProjectMember && item.isProjectMember())) {
+			return null;
 		}
 
-		if(!item.isDevice){
-		    if(window.console){
-		        console.warn('Not a ReferralManagementUser');
-		    }
-		    return null;
+		if (!item.isDevice) {
+			if (window.console) {
+				console.warn('Not a ReferralManagementUser');
+			}
+			return null;
 		}
 
 
-		var rolesEditList=ProjectTeam.GetRolesUserCanAssign();
-		var allRoles=ProjectTeam.GetAllRoles();
+		var rolesEditList = ProjectTeam.GetRolesUserCanAssign();
+		var allRoles = ProjectTeam.GetAllRoles();
 
-		var itemsMinRoleIndex=Math.min.apply(null,item.getRoles().map(function(r){return allRoles.indexOf(r)}));
-		var clientsMinEditRoleIndex=Math.min.apply(null,rolesEditList.map(function(r){return allRoles.indexOf(r)}));
+		var itemsMinRoleIndex = Math.min.apply(null, item.getRoles().map(function(r) {
+			return allRoles.indexOf(r)
+		}));
+		var clientsMinEditRoleIndex = Math.min.apply(null, rolesEditList.map(function(r) {
+			return allRoles.indexOf(r)
+		}));
 
-		var roles=allRoles.slice(0)
+		var roles = allRoles.slice(0)
 
 
-		if(item.isDevice()){
-		    roles=[roles.pop()];
+		if (item.isDevice()) {
+			roles = [roles.pop()];
 		}
 
-		var addEmpty=false;
-		var foundActive=false;
+		var addEmpty = false;
+		var foundActive = false;
 
-		var module=new ElementModule('ul',{"class":"user-roles"});
+		var module = new ElementModule('ul', {
+			"class": "user-roles"
+		});
 
-		if(item.getId()==AppClient.getId()){
-		    module.runOnceOnLoad(function(){
-		        module.viewer.getUIView().getElement().addClass('this-is-me');
-		    });
+		if (item.getId() == AppClient.getId()) {
+			module.runOnceOnLoad(function() {
+				module.viewer.getUIView().getElement().addClass('this-is-me');
+			});
 		}
 
-		var el=module.getElement();
+		var el = module.getElement();
 
-		var itemRoles=item.getRoles();
+		var itemRoles = item.getRoles();
 
-		var els=[];
+		var els = [];
 
-		var userItemIsA=function(r){
-		    return item.getRoles().indexOf(r)>=0||(r=='none'&&item.getRoles().length==0)
+		var userItemIsA = function(r) {
+			return item.getRoles().indexOf(r) >= 0 || (r == 'none' && item.getRoles().length == 0)
 		}
 
-		var clientCanEditUserRole=function(r){
-		    return ((rolesEditList.indexOf(r)>=0&&clientsMinEditRoleIndex<=itemsMinRoleIndex)||(r=='none'&&rolesEditList.length));
+		var clientCanEditUserRole = function(r) {
+			return ((rolesEditList.indexOf(r) >= 0 && clientsMinEditRoleIndex <= itemsMinRoleIndex) || (r == 'none' && rolesEditList.length));
 		}
 
-		var addRole=function(r){
-		    var roleEl=el.appendChild(new Element('li',{"class":"role-"+r}));
-		    els.push(roleEl);
-		    if(userItemIsA(r)){
-		        foundActive=true
-		        roleEl.addClass("active");
-		        el.setAttribute("data-user-role", r);
-		        el.setAttribute("data-user-role-label", r);
-		    }
-		    
-		    
-		    var label=r.split('-').join(' ').capitalize();
-		    var popover=function(text){
-		         new UIPopover(roleEl,
-		           {
-		            description:text,
-		            anchor:UIPopover.AnchorAuto()
-		           }); 
-		    }
-		    
-		   
-		    
-		    if(clientCanEditUserRole(r)){
-		        addEmpty=true;
-		        roleEl.addClass('selectable');
-		        roleEl.addEvent('click',function(){
-		            item.setRole(r, function(){
-		                els.forEach(function(e){
-		                    e.removeClass("active");
-		                })
-		                roleEl.addClass("active");
-		            });
-		        });
-		        
-		        popover(label+'<br/><span style="color:cornflowerblue;">click to set users role</span>');
-		     
-		        
-		    }else{
-		        
-		       popover(label);
-		        
-		    }
+		var addRole = function(r) {
+			var roleEl = el.appendChild(new Element('li', {
+				"class": "role-" + r
+			}));
+			els.push(roleEl);
+			if (userItemIsA(r)) {
+				foundActive = true
+				roleEl.addClass("active");
+				el.setAttribute("data-user-role", r);
+				el.setAttribute("data-user-role-label", r);
+			}
+
+
+			var label = r.split('-').join(' ').capitalize();
+			var popover = function(text) {
+				new UIPopover(roleEl, {
+					description: text,
+					anchor: UIPopover.AnchorAuto()
+				});
+			}
+
+
+
+			if (clientCanEditUserRole(r)) {
+				addEmpty = true;
+				roleEl.addClass('selectable');
+				roleEl.addEvent('click', function() {
+					item.setRole(r, function() {
+						els.forEach(function(e) {
+							e.removeClass("active");
+						})
+						roleEl.addClass("active");
+					});
+				});
+
+				popover(label + '<br/><span style="color:cornflowerblue;">click to set users role</span>');
+
+
+			} else {
+
+				popover(label);
+
+			}
 		}
 
 		roles.forEach(addRole);
-		if(addEmpty){
-		    addRole('none');
+		if (addEmpty) {
+			addRole('none');
 		}
 
 		return module;
@@ -713,7 +825,7 @@ var ReferralManagementDashboard = {
 
 	createNavigationMenu: function(application) {
 
-		var navigationController=new NavigationMenuModule(Object.append({
+		var navigationController = new NavigationMenuModule(Object.append({
 			"Main": [{
 					html: "Dashboard",
 				}, {
@@ -998,7 +1110,7 @@ var ReferralManagementDashboard = {
 
 			]
 
-		},(AppClient.getUserType()=="admin"?{
+		}, (AppClient.getUserType() == "admin" ? {
 			"Configuration": [{
 				html: "Archive"
 			}, {
@@ -1017,7 +1129,8 @@ var ReferralManagementDashboard = {
 					}
 
 				}
-			}]}:{})), {
+			}]
+		} : {})), {
 			"class": "collapsable-menu",
 			targetUIView: function(button, section, viewer) {
 				return viewer.getApplication().getChildView('content', 0).getChildView('content', 1);
@@ -1047,7 +1160,7 @@ var ReferralManagementDashboard = {
 		return navigationController;
 
 	},
-	createUserIcon(item, defaultIcon){
+	createUserIcon(item, defaultIcon) {
 
 
 		/*
@@ -1065,42 +1178,44 @@ var ReferralManagementDashboard = {
 		 */
 
 
-		var div= new ElementModule('div',{"class":"content user-profile-icon"});
-		var span=new Element('span');
+		var div = new ElementModule('div', {
+			"class": "content user-profile-icon"
+		});
+		var span = new Element('span');
 		div.appendChild(span);
 
 		span.setStyles({
 
 			position: "relative",
-	    	display: "inline-block",
-	    	width: "50px",
-	    	height: "50px",
-	    	"background-size": "cover",
-	       	"background-image": "url("+defaultIcon+")"
-	    });
+			display: "inline-block",
+			width: "50px",
+			height: "50px",
+			"background-size": "cover",
+			"background-image": "url(" + defaultIcon + ")"
+		});
 
-		if(ProjectTeam.CurrentTeam().hasUser((item.getUserId||item.getId).bind(item)())){
+		if (ProjectTeam.CurrentTeam().hasUser((item.getUserId || item.getId).bind(item)())) {
 
-			var icon=ProjectTeam.CurrentTeam().getUser((item.getUserId||item.getId).bind(item)()).getProfileIcon();
-			
-			if(icon.indexOf('Uploads')>0){
-				icon=icon+"?thumb=>170x>170";
+			var icon = ProjectTeam.CurrentTeam().getUser((item.getUserId || item.getId).bind(item)()).getProfileIcon();
+
+			if (icon.indexOf('Uploads') > 0) {
+				icon = icon + "?thumb=>170x>170";
 			}
 
-			span.setStyle("background-image", "url("+icon+")");
+			span.setStyle("background-image", "url(" + icon + ")");
 			return div;
 
 		}
 
-		(new GetAttributeItemValueQuery(item.getUserId(), AppClient.getType(), "userAttributes", "profileIcon")).addEvent("success",function(result){
-		    
-			
-		    if(result.value){
-		    	var urls=Proposal.ParseHtmlUrls(result.value);
-		    	span.setStyle("background-image", "url("+urls[0]+")");
-		    }
-	
-		    
+		(new GetAttributeItemValueQuery(item.getUserId(), AppClient.getType(), "userAttributes", "profileIcon")).addEvent("success", function(result) {
+
+
+			if (result.value) {
+				var urls = Proposal.ParseHtmlUrls(result.value);
+				span.setStyle("background-image", "url(" + urls[0] + ")");
+			}
+
+
 		}).execute();
 
 		return div;
@@ -1109,209 +1224,222 @@ var ReferralManagementDashboard = {
 	},
 
 
-	addWeakUpdateEvents:function(child, childView, listFilterFn){
+	addWeakUpdateEvents: function(child, childView, listFilterFn) {
 
-		childView.addWeakEvent(child, 'update', function(){
-        	if((!listFilterFn)||listFilterFn(child)){
+		childView.addWeakEvent(child, 'update', function() {
+			if ((!listFilterFn) || listFilterFn(child)) {
 				childView.redraw();
 				return;
 			}
 
-			
+
 			childView.getElement().addClass('removing');
-			setTimeout(function(){
+			setTimeout(function() {
 				childView.remove();
 			}, 1000);
-    	});
+		});
 
 	},
 
-	addProjectItemWeakUpdateEvents:function(child, childView, application, listFilterFn){
+	addProjectItemWeakUpdateEvents: function(child, childView, application, listFilterFn) {
 
-		childView.runOnceOnLoad(function(){
+		childView.runOnceOnLoad(function() {
 
-		    childView.getElement().addEvent('click',function(){
-		       
-		        var controller=application.getNamedValue('navigationController');
-		        application.setNamedValue("currentProject", child);
-		        controller.navigateTo("Projects", "Main");
+			childView.getElement().addEvent('click', function() {
 
-		    });
-		    
-		    
-		     var current=application.getNamedValue("currentProject");
-		     if(current&&current.getId()==child.getId()){
-		         childView.getElement().addClass("active-project");
-		     }
+				var controller = application.getNamedValue('navigationController');
+				application.setNamedValue("currentProject", child);
+				controller.navigateTo("Projects", "Main");
+
+			});
+
+
+			var current = application.getNamedValue("currentProject");
+			if (current && current.getId() == child.getId()) {
+				childView.getElement().addClass("active-project");
+			}
 
 		});
 
 
-		childView.addWeakEvent(child, "change",function(){
+		childView.addWeakEvent(child, "change", function() {
 
-			if((!listFilterFn)||listFilterFn(child)){
+			if ((!listFilterFn) || listFilterFn(child)) {
 				childView.redraw();
 				return;
 			}
 
-			
+
 			childView.getElement().addClass('removing');
-			setTimeout(function(){
+			setTimeout(function() {
 				childView.remove();
 			}, 1000);
-		    			
+
 		});
 
 	},
 
-	addProjectListModuleWeakEvents:function(module){
-		module.addWeakEvent(ProjectTeam.CurrentTeam(), 'addProject', function(p){
-		    module.addItem(p); 
+	addProjectListModuleWeakEvents: function(module) {
+		module.addWeakEvent(ProjectTeam.CurrentTeam(), 'addProject', function(p) {
+			module.addItem(p);
 		});
 
-		module.addWeakEvent(ProjectTeam.CurrentTeam(), 'removeProject', function(p){
-		   module.getModules().forEach(function(m){
-		    	m.getItem(function(item){
-		    		if(item===p){
-		    			m.getElement().addClass('removing');
-		    			setTimeout(function(){
-		    				m.remove();
-		    			},1000)
-		    			
-		    		}
-		    	})
-		   });
+		module.addWeakEvent(ProjectTeam.CurrentTeam(), 'removeProject', function(p) {
+			module.getModules().forEach(function(m) {
+				m.getItem(function(item) {
+					if (item === p) {
+						m.getElement().addClass('removing');
+						setTimeout(function() {
+							m.remove();
+						}, 1000)
+
+					}
+				})
+			});
 		});
 	},
 
 
-	createProfileButtons:function(item){
+	createProfileButtons: function(item) {
 
-		var items=[];
+		var items = [];
 
-		var itemIsCurrentClient=item.getId()+""==AppClient.getId()+"";
+		var itemIsCurrentClient = item.getId() + "" == AppClient.getId() + "";
 
-		if(itemIsCurrentClient){
-		    
-		    items.push(
-		        new Element('button',{"class":"primary-btn warn", "html":"Log Out", events:{"click":function(){
-		            AppClient.logout();
-		        }}})
-		    );
-		    
+		if (itemIsCurrentClient) {
+
+			items.push(
+				new Element('button', {
+					"class": "primary-btn warn",
+					"html": "Log Out",
+					events: {
+						"click": function() {
+							AppClient.logout();
+						}
+					}
+				})
+			);
+
 		}
 
-		if((!itemIsCurrentClient)&&AppClient.getUserType()==="admin"/*&&item.getUserType()==="admin"*/){
-		    items.push(
-		        new Element('button',{"class":"primary-btn error", "html":"Delete", events:{"click":function(){
-		            if (confirm("Are you sure you want to delete this user")) {
-						
-		            	(new AjaxControlQuery(CoreAjaxUrlRoot, "delete_user", {
-						  'plugin': "Users",
-						  'user':item.getId()
-						})).addEvent('success',function(){
-						    
-						}).execute(); 
+		if ((!itemIsCurrentClient) && AppClient.getUserType() === "admin" /*&&item.getUserType()==="admin"*/ ) {
+			items.push(
+				new Element('button', {
+					"class": "primary-btn error",
+					"html": "Delete",
+					events: {
+						"click": function() {
+							if (confirm("Are you sure you want to delete this user")) {
 
-					};
-		        }}})
-		    );
+								(new AjaxControlQuery(CoreAjaxUrlRoot, "delete_user", {
+									'plugin': "Users",
+									'user': item.getId()
+								})).addEvent('success', function() {
+
+								}).execute();
+
+							};
+						}
+					}
+				})
+			);
 		}
 
 
 
-		if(items.length==0){
-		    return null;
+		if (items.length == 0) {
+			return null;
 		}
 
 
-		var d=new ElementModule('div',{
-		        styles:{
-		            "display": "inline-table",
-		            "width": "100%",
-		            "border-bottom": "1px dotted #6A7CE9"
-		        }
-		    });
-		    
-		items.forEach(function(b){
-		    d.appendChild(b);
-		});  
+		var d = new ElementModule('div', {
+			styles: {
+				"display": "inline-table",
+				"width": "100%",
+				"border-bottom": "1px dotted #6A7CE9"
+			}
+		});
+
+		items.forEach(function(b) {
+			d.appendChild(b);
+		});
 
 		return d;
 
 
 	},
 
-	limitUserCommunityValues:function(module){
+	limitUserCommunityValues: function(module) {
 
 		//modify tag cloud 
 
-		var user=ProjectTeam.CurrentTeam().getUser(AppClient.getId());
-		if(user.isUnassigned()||AppClient.getUserType()=="admin"){
+		var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
+		if (user.isUnassigned() || AppClient.getUserType() == "admin") {
 			return;
 		}
 
-		module.runOnceOnLoad(function(){
-			var cloud=module.getCloud();
+		module.runOnceOnLoad(function() {
+			var cloud = module.getCloud();
 
 			cloud.getElement().addClass('community locked');
 
-			cloud.getWords().map(function(word){
+			cloud.getWords().map(function(word) {
 				return cloud.getWordElement(word);
-			}).forEach(function(el){
+			}).forEach(function(el) {
 				el.removeEvents('click');
-				
+
 			});
 		});
 	},
 
-	getEmptyProjectsListDescription:function(){
+	getEmptyProjectsListDescription: function() {
 
 
-		return "<p>There are no active projects. To get started, create a new project!</p>";
-
-
-	},
-	getEmptyTasksListDescription:function(){
-
-
-		return "<p>Tasks are created within projects. To get started, create or select a project and add some tasks.</p>";
+		return "<p><span class=\"section-title\">Get Started With Projects</span><br/>There are no active projects. To get started, create a new project!</p>";
 
 
 	},
+	getEmptyTasksListDescription: function() {
 
-	getUsersTeamMembersDescription:function(){
 
-		var text="<span class=\"section-title\">My Community And User Roles</span><br/>"
-		if(AppClient.getUserType()==="admin"){
-			text=text+"You are a Site Administrator so you can see all Lands Department members from all communities (and set user roles). The following description of your role would apply if you were a regular user. <br/>"
+		return "<p><span class=\"section-title\">Get Started With Tasks</span><br/>Tasks are created within projects. To get started, create or select a project and add some tasks.</p>";
+
+
+	},
+
+	getUsersTeamMembersDescription: function() {
+
+		var text = "<span class=\"section-title\">My Community And User Roles</span><br/>"
+		if (AppClient.getUserType() === "admin") {
+			text = text + "You are a Site Administrator so you can see all Lands Department members from all communities (and set user roles). The following description of your role would apply if you were a regular user. <br/>"
 		}
 
 
-		var user=ProjectTeam.CurrentTeam().getUser(AppClient.getId());
-		 
-		if(user.isTeamManager()){
-			text=text+"You are a Lands Department Manager. "+
-			"You can see the lands department members in your community, `"+user.getCommunity()+"` and `wabun`, as well as Lands Department Managers accross communities. "+
-			"<br/>You can share individual projects with other communities by adding a Lands Department manager from another community to a specific project, (There are other ways to collaborate)."+
-			"<br/> You can asign users to the following roles: "+
-			(user.getRolesUserCanAssign().map(function(r){ return '`'+(r.replace('-',' ').capitalize())+'`'; }).join(', '))+'. As long as they are in your community, and have a lower role than `'+(user.getRole().replace('-',' ').capitalize())+'`';
-		}else{
-			text=text+"You are a Lands Department Member. "+
-			"You can see other lands department members in your own community, `"+user.getCommunity()+"` and `wabun`. ";
+		var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
+
+		if (user.isTeamManager()) {
+			text = text + "You are a Lands Department Manager. " +
+				"You can see the lands department members in your community, `" + user.getCommunity() + "` and `wabun`, as well as Lands Department Managers accross communities. " +
+				"<br/>You can share individual projects with other communities by adding a Lands Department manager from another community to a specific project, (There are other ways to collaborate)." +
+				"<br/> You can asign users to the following roles: " +
+				(user.getRolesUserCanAssign().map(function(r) {
+					return '`' + (r.replace('-', ' ').capitalize()) + '`';
+				}).join(', ')) + '. As long as they are in your community, and have a lower role than `' + (user.getRole().replace('-', ' ').capitalize()) + '`';
+		} else {
+			text = text + "You are a Lands Department Member. " +
+				"You can see other lands department members in your own community, `" + user.getCommunity() + "` and `wabun`. ";
 		}
 
-			
-		return  "<p class=\"hint\">"+text+"</p>";
+
+		return "<p class=\"hint\">" + text + "</p>";
 	},
 
-	getUsersCommunityMembersDescription:function(){
+	getUsersCommunityMembersDescription: function() {
 
 		return "<p>You can approve new site users.</p>"
 
 
 	}
-
 
 
 
