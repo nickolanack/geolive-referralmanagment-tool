@@ -2147,9 +2147,9 @@ span.SearchModule.search-container {
 }
 .uitext-container.optional:before {
     content: "* Optional";
-    color: mediumseagreen;
+    color: #637594;
     float: right;
-    font-size: 12px;
+    font-size: 10px;
     font-style: italic;
     position: relative;
     top: 5px;
