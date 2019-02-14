@@ -8789,15 +8789,6 @@
                         "modules": [
                             "communityMemberDashboard.metadata.positions.content.modules.0.json",
                             {
-                                "type": "InlineHtml",
-                                "config": {
-                                    "className": "user-form ",
-                                    "text": "<div class=\"application-welcome\"><h2>Welcome<\/h2>\n<p>Your account is pending approval from a community lands department member.<\/p>\n<p>Please fill out your profile information below. This will help us to identify you and create a new user account.<\/p><\/div>",
-                                    "template": "",
-                                    "templateVariablesScript": ""
-                                }
-                            },
-                            {
                                 "type": "UIView",
                                 "config": {
                                     "className": "login-form",
@@ -8811,7 +8802,7 @@
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "initModuleScript": "",
-                                    "formatModuleScript": "communityMemberDashboard.metadata.positions.content.modules.2.config.formatModuleScript.js",
+                                    "formatModuleScript": "communityMemberDashboard.metadata.positions.content.modules.1.config.formatModuleScript.js",
                                     "resolveItemScript": "return AppClient;",
                                     "filterModulesScript": "\nreturn list",
                                     "itemButtonsScript": "return [];",
@@ -8823,27 +8814,8 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "communityMemberDashboard.metadata.positions.content.modules.3.config.script.js",
+                                    "script": "communityMemberDashboard.metadata.positions.content.modules.2.config.script.js",
                                     "description": "Info about my custom script"
-                                }
-                            },
-                            {
-                                "type": "plugin.Discussions.Discussion",
-                                "config": {
-                                    "width": 0,
-                                    "constrainHeight": true,
-                                    "height": 200,
-                                    "inlineEditing": true,
-                                    "inlineReply": true,
-                                    "inlineReplyNamedForm": "",
-                                    "emptyMessage": "There are no entries",
-                                    "channel": "public",
-                                    "resolveChannelScript": "return defaultChannel;",
-                                    "resolveItemScript": "return AppClient;",
-                                    "initialPostsScript": "return null;",
-                                    "namedView": "defaultPostDetail",
-                                    "reverseOrder": false,
-                                    "className": "users-public-chat"
                                 }
                             }
                         ]
