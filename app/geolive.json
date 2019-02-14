@@ -1652,16 +1652,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 349,
-                            "y": 252
+                            "x": 359,
+                            "y": 262
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 309,
-                                    "y": 465
+                                    "x": 319,
+                                    "y": 475
                                 }
                             },
                             {
@@ -1671,16 +1671,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 926,
-                                    "y": 511
+                                    "x": 936,
+                                    "y": 521
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 886,
-                                            "y": 677
+                                            "x": 896,
+                                            "y": 687
                                         }
                                     }
                                 ],
@@ -1745,7 +1745,7 @@
                                             "type": "InlineHtml",
                                             "config": {
                                                 "className": "",
-                                                "text": "<div class=\"application-logo\"><\/div><span style=\"text-align: left; font-weight: 100; display: block;\"><span style=\"font-size:20px\">\nLogin to access your project dashboard<\/span>\n<p><\/p><br><\/span>",
+                                                "text": "<div class=\"application-logo\"><\/div><span style=\"text-align: left; font-weight: 100; display: block;\"><span style=\"font-size:20px\">\nLogin to your project dashboard<\/span>\n<p><\/p><br><\/span>",
                                                 "template": "",
                                                 "templateVariablesScript": ""
                                             }
