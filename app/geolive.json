@@ -7351,16 +7351,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 424,
-                            "y": 287
+                            "x": 434,
+                            "y": 297
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 384,
-                                    "y": 538
+                                    "x": 394,
+                                    "y": 548
                                 }
                             }
                         ],
@@ -7469,26 +7469,10 @@
                                             }
                                         },
                                         {
-                                            "type": "plugin.Attributes.WizardBooleanAttribute",
-                                            "config": {
-                                                "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
-                                                ],
-                                                "className": "",
-                                                "label": "Registered status?",
-                                                "showLabel": true,
-                                                "presentationStyle": "radio",
-                                                "presentationRadioTrueLabel": "Yes",
-                                                "presentationRadioFalseLabel": "No",
-                                                "presentationImagesTrueImage": [],
-                                                "presentationImagesFalseImage": []
-                                            }
-                                        },
-                                        {
                                             "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.7.config.attributeFields.0.json"
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
                                                 ],
                                                 "className": "optional",
                                                 "label": "Phone ",
@@ -7510,7 +7494,7 @@
                                             "type": "plugin.Attributes.WizardDescriptionAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.7.config.attributeFields.0.json"
                                                 ],
                                                 "label": "Bio",
                                                 "message": "add a short bio",
@@ -7526,6 +7510,22 @@
                                                 "toolbarPosition": "bottom",
                                                 "textFormatScript": "",
                                                 "onRenderModuleFn": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardBooleanAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "label": "Registered status?",
+                                                "showLabel": true,
+                                                "presentationStyle": "radio",
+                                                "presentationRadioTrueLabel": "Yes",
+                                                "presentationRadioFalseLabel": "No",
+                                                "presentationImagesTrueImage": [],
+                                                "presentationImagesFalseImage": []
                                             }
                                         }
                                     ]
