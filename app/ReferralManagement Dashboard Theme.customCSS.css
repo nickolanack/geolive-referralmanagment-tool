@@ -749,6 +749,11 @@ span.inline-list-item {
     display: inline-block;
     vertical-align: top;
 }
+
+.ui-view.h-60>div{
+    min-height: 500px;
+}
+
 .ui-view.w-30-60 {
     width: calc( 33.3% - 10px);
     height:60%;
