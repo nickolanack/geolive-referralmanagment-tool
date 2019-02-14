@@ -71,7 +71,7 @@ button.public-user-chat {
     right: 30px;
 }
 
-.withPosts .posts:before, li.menu-project-discussion.withPosts:after {
+.withPosts .posts:before {
     content: attr(data-posts);
     background-color: rgba(255,255,255,0.1);
     min-width: 8px;
@@ -86,7 +86,7 @@ button.public-user-chat {
     margin: 0 5px;
     padding: 0 3px;
 }
-.withPosts.newPosts .posts:before, li.menu-project-discussion.withPosts.newPosts:after {
+.withPosts.newPosts .posts:before {
     background-color: crimson;
 }
 
@@ -177,6 +177,19 @@ label.boolean-field p {
 .field-value-module.user-role {
     color: #7fa1ff;
     font-style: italic;
+}
+
+
+.field-value-module.project-dates {
+    color: gray;
+    font-size: 12px;
+    width: calc( 50% - 30px );
+    display: inline-block;
+}
+
+.field-value-module.created-by {
+    width: 50%;
+    display: inline-block;
 }
 
 
@@ -949,6 +962,12 @@ span.inline-list-item {
      white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.field-value-module.item-title {
+    background-repeat: no-repeat;
+    background-position: 6px 5px;
+    background-size: 11px;
 }
 
 .module-wizard .field-value-module.item-title {
