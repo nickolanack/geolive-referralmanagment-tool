@@ -1,1 +1,1 @@
-ReferralManagementDashboard.createLoginFormButtons(application, wizard);
+return ReferralManagementDashboard.createLoginFormButtons(application, wizard);
