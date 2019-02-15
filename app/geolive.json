@@ -6080,8 +6080,9 @@
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
+                                    "name": "My Custom Script",
                                     "script": "singleProjectTasksDetail.metadata.positions.content.modules.1.config.script.js",
-                                    "identifier": "customScriptElement"
+                                    "description": "Info about my custom script"
                                 }
                             },
                             {
@@ -6098,11 +6099,13 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
+                                    "targetName": "",
                                     "getItemListScript": "return item.getTasks();",
                                     "formatItemListScript": "return list;",
                                     "formatListItemModuleScript": "singleProjectTasksDetail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
