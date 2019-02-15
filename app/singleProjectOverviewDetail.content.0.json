@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "\n\nreturn new ModuleArray([\n    new ElementModule(\"label\",{html:\"Tasks Completed\"}),\n    new ElementModule(\"div\",{html:item.getPercentComplete()+\"%\", \"class\":\"percent-complete-value\"}),\n    new ProgressBarModule({value:function(){ return item.getPercentComplete(); },\"class\":\"percent-complete\"})\n],{\"class\":\"progress\"});",
+        "script": "\n\nreturn new ModuleArray([\n    new ElementModule(\"label\",{html:\"Tasks completed\"}),\n    new ElementModule(\"div\",{html:item.getPercentComplete()+\"%\", \"class\":\"percent-complete-value\"}),\n    new ProgressBarModule({value:function(){ return item.getPercentComplete(); },\"class\":\"percent-complete\"})\n],{\"class\":\"progress\"});",
         "description": "Info about my custom script"
     }
 }

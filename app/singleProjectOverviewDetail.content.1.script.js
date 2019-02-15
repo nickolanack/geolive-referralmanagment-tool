@@ -16,7 +16,7 @@ if(u==0&&o==0){
 }
 
 return new ModuleArray([
-    new ElementModule("label",{html:"Remaining Tasks"}),
+    new ElementModule("label",{html:"Remaining tasks"}),
     new ElementModule("div",{html:str, "class":"percent-complete-value"}),
     new ProgressBarModule({value:function(){ return 100-item.getPercentComplete(); },"class":"percent-complete"})
 ],{"class":"progress"});
