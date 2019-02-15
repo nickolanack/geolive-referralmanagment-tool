@@ -746,8 +746,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 41,
-                    "y": 503
+                    "x": 32,
+                    "y": 447
                 },
                 "children": [
                     "widget.ProposalWizardBuilder.65.metadata.children.0.json",
@@ -758,16 +758,16 @@
                             "widget.ProposalWizardBuilder.65.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 146,
-                            "y": 215
+                            "x": 78,
+                            "y": 88
                         },
                         "children": [
                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 106,
-                                    "y": 241
+                                    "x": 38,
+                                    "y": 347
                                 }
                             },
                             {
@@ -777,16 +777,16 @@
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 311,
-                                    "y": 362
+                                    "x": 321,
+                                    "y": 372
                                 },
                                 "children": [
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 271,
-                                            "y": 584
+                                            "x": 281,
+                                            "y": 595
                                         }
                                     },
                                     {
@@ -796,16 +796,16 @@
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 706,
-                                            "y": 146
+                                            "x": 716,
+                                            "y": 156
                                         },
                                         "children": [
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 666,
-                                                    "y": 368
+                                                    "x": 676,
+                                                    "y": 379
                                                 }
                                             },
                                             {
@@ -815,16 +815,16 @@
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.fields.0.json"
                                                 ],
                                                 "_diagramState": {
-                                                    "x": 1256,
-                                                    "y": 537
+                                                    "x": 1266,
+                                                    "y": 547
                                                 },
                                                 "children": [
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.0.json",
                                                     {
                                                         "class": "InsertNode",
                                                         "_diagramState": {
-                                                            "x": 1216,
-                                                            "y": 724
+                                                            "x": 1226,
+                                                            "y": 734
                                                         }
                                                     }
                                                 ],
@@ -861,10 +861,32 @@
                                                                     }
                                                                 },
                                                                 {
-                                                                    "type": "plugin.Attributes.WizardTagCloud",
+                                                                    "type": "plugin.Attributes.WizardTextAttribute",
                                                                     "config": {
                                                                         "attributeFields": [
                                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
+                                                                        ],
+                                                                        "className": "",
+                                                                        "label": "{field.label}",
+                                                                        "message": "",
+                                                                        "lines": 3,
+                                                                        "maxChars": 0,
+                                                                        "mandatory": false,
+                                                                        "multiEntry": false,
+                                                                        "autocomplete": true,
+                                                                        "muliTemplate": "lines",
+                                                                        "multiMessage": "",
+                                                                        "formatter": "none",
+                                                                        "iconTint": "rgb(100, 149, 237)",
+                                                                        "onRenderTextFieldScript": "",
+                                                                        "formatValueScript": ""
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "plugin.Attributes.WizardTagCloud",
+                                                                    "config": {
+                                                                        "attributeFields": [
+                                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
                                                                         ],
                                                                         "className": "",
                                                                         "showLabel": false,
@@ -876,7 +898,7 @@
                                                                         "selectedColor": "rgb(143, 188, 143)",
                                                                         "shuffleTags": false,
                                                                         "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
-                                                                        "getItemTagsScript": "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.builderMetadata.positions.content.modules.2.config.getItemTagsScript.js",
+                                                                        "getItemTagsScript": "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.builderMetadata.positions.content.modules.3.config.getItemTagsScript.js",
                                                                         "formatModule": ""
                                                                     }
                                                                 },
@@ -884,7 +906,7 @@
                                                                     "type": "plugin.Attributes.WizardTextAttribute",
                                                                     "config": {
                                                                         "attributeFields": [
-                                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
+                                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
                                                                         ],
                                                                         "className": "",
                                                                         "label": "{field.label}",
@@ -942,7 +964,7 @@
                                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
                                                                 ],
                                                                 "className": "width-2",
-                                                                "label": "Contact email",
+                                                                "label": "Contact name",
                                                                 "message": "",
                                                                 "lines": 1,
                                                                 "maxChars": 0,
@@ -962,6 +984,28 @@
                                                             "config": {
                                                                 "attributeFields": [
                                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
+                                                                ],
+                                                                "className": "width-2",
+                                                                "label": "Contact email",
+                                                                "message": "",
+                                                                "lines": 1,
+                                                                "maxChars": 0,
+                                                                "mandatory": false,
+                                                                "multiEntry": false,
+                                                                "autocomplete": true,
+                                                                "muliTemplate": "lines",
+                                                                "multiMessage": "",
+                                                                "formatter": "none",
+                                                                "iconTint": "rgb(100, 149, 237)",
+                                                                "onRenderTextFieldScript": "",
+                                                                "formatValueScript": ""
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                                            "config": {
+                                                                "attributeFields": [
+                                                                    "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
                                                                 ],
                                                                 "className": "",
                                                                 "label": "Contact address",
@@ -983,7 +1027,7 @@
                                                             "type": "plugin.Attributes.WizardTextAttribute",
                                                             "config": {
                                                                 "attributeFields": [
-                                                                    "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
+                                                                    "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
                                                                 ],
                                                                 "className": "width-2",
                                                                 "label": "Contact phone",
@@ -1005,7 +1049,7 @@
                                                             "type": "plugin.Attributes.WizardTextAttribute",
                                                             "config": {
                                                                 "attributeFields": [
-                                                                    "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
+                                                                    "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.5.config.attributeFields.0.json"
                                                                 ],
                                                                 "className": "width-2",
                                                                 "label": "Contact fax",
@@ -1027,7 +1071,7 @@
                                                             "type": "plugin.Attributes.WizardTextAttribute",
                                                             "config": {
                                                                 "attributeFields": [
-                                                                    "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.5.config.attributeFields.0.json"
+                                                                    "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
                                                                 ],
                                                                 "className": "",
                                                                 "label": "{field.label}",
@@ -1059,9 +1103,9 @@
                                                                 "showDeleteButton": false,
                                                                 "deleteItemScript": "defaultBehaviorFn()",
                                                                 "initModuleScript": "",
-                                                                "formatModuleScript": "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.6.config.formatModuleScript.js",
+                                                                "formatModuleScript": "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.7.config.formatModuleScript.js",
                                                                 "resolveItemScript": "return item",
-                                                                "filterModulesScript": "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.6.config.filterModulesScript.js",
+                                                                "filterModulesScript": "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.7.config.filterModulesScript.js",
                                                                 "itemButtonsScript": "return [];",
                                                                 "insertAtTop": false,
                                                                 "targetName": ""
@@ -1106,6 +1150,28 @@
                                                         "attributeFields": [
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
                                                         ],
+                                                        "label": "Project letters",
+                                                        "message": "add a description",
+                                                        "lines": 3,
+                                                        "mandatory": false,
+                                                        "showAudios": true,
+                                                        "showImages": true,
+                                                        "showDocuments": true,
+                                                        "showVideos": true,
+                                                        "className": "no-text width-2 only-docs",
+                                                        "maxChars": 0,
+                                                        "showExpandInput": true,
+                                                        "toolbarPosition": "bottom",
+                                                        "textFormatScript": "",
+                                                        "onRenderModuleFn": ""
+                                                    }
+                                                },
+                                                {
+                                                    "type": "plugin.Attributes.WizardDescriptionAttribute",
+                                                    "config": {
+                                                        "attributeFields": [
+                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
+                                                        ],
                                                         "label": "{field.label}",
                                                         "message": "add a description",
                                                         "lines": 3,
@@ -1126,7 +1192,7 @@
                                                     "type": "plugin.Attributes.WizardTextAttribute",
                                                     "config": {
                                                         "attributeFields": [
-                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
+                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
                                                         ],
                                                         "className": "width-2",
                                                         "label": "Permit Issued date",
@@ -1148,7 +1214,7 @@
                                                     "type": "plugin.Attributes.WizardTextAttribute",
                                                     "config": {
                                                         "attributeFields": [
-                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
+                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
                                                         ],
                                                         "className": "width-2",
                                                         "label": "Permit expiry date",
@@ -1170,7 +1236,7 @@
                                                     "type": "plugin.Attributes.WizardDescriptionAttribute",
                                                     "config": {
                                                         "attributeFields": [
-                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
+                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.5.config.attributeFields.0.json"
                                                         ],
                                                         "label": "Agreements",
                                                         "message": "add a description",
@@ -1192,7 +1258,7 @@
                                                     "type": "plugin.Attributes.WizardDescriptionAttribute",
                                                     "config": {
                                                         "attributeFields": [
-                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.5.config.attributeFields.0.json"
+                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
                                                         ],
                                                         "label": "Other documents",
                                                         "message": "add a description",
@@ -1214,7 +1280,7 @@
                                                     "type": "plugin.ReferralManagement.WizardLayerField",
                                                     "config": {
                                                         "attributeFields": [
-                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
+                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.7.config.attributeFields.0.json"
                                                         ],
                                                         "label": "Spatial files",
                                                         "message": "add a description",
@@ -1466,7 +1532,7 @@
                                 "menu"
                             ],
                             "_diagramState": {
-                                "minimized": true
+                                "minimized": false
                             }
                         }
                     }
