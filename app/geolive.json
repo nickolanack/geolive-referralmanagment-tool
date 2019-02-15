@@ -746,7 +746,7 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 42,
+                    "x": 41,
                     "y": 503
                 },
                 "children": [
@@ -758,16 +758,16 @@
                             "widget.ProposalWizardBuilder.65.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 239,
-                            "y": 261
+                            "x": 106,
+                            "y": 175
                         },
                         "children": [
                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 199,
-                                    "y": 524
+                                    "x": 65,
+                                    "y": 201
                                 }
                             },
                             {
@@ -777,16 +777,16 @@
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 658,
-                                    "y": 281
+                                    "x": 271,
+                                    "y": 322
                                 },
                                 "children": [
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 618,
-                                            "y": 507
+                                            "x": 230,
+                                            "y": 546
                                         }
                                     },
                                     {
@@ -796,16 +796,16 @@
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 956,
-                                            "y": 280
+                                            "x": 566,
+                                            "y": 151
                                         },
                                         "children": [
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 916,
-                                                    "y": 306
+                                                    "x": 525,
+                                                    "y": 375
                                                 }
                                             },
                                             {
@@ -815,16 +815,16 @@
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.fields.0.json"
                                                 ],
                                                 "_diagramState": {
-                                                    "x": 1207,
-                                                    "y": 487
+                                                    "x": 1216,
+                                                    "y": 497
                                                 },
                                                 "children": [
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.0.json",
                                                     {
                                                         "class": "InsertNode",
                                                         "_diagramState": {
-                                                            "x": 1167,
-                                                            "y": 675
+                                                            "x": 1175,
+                                                            "y": 684
                                                         }
                                                     }
                                                 ],
@@ -1085,7 +1085,7 @@
                                                 "menu"
                                             ],
                                             "_diagramState": {
-                                                "minimized": true
+                                                "minimized": false
                                             }
                                         }
                                     }
@@ -1219,7 +1219,7 @@
                                                         "label": "Spatial features",
                                                         "message": "add a description",
                                                         "mandatory": false,
-                                                        "className": "",
+                                                        "className": "no-text",
                                                         "toolbarPosition": "bottom"
                                                     }
                                                 }
@@ -1466,7 +1466,7 @@
                                 "menu"
                             ],
                             "_diagramState": {
-                                "minimized": false
+                                "minimized": true
                             }
                         }
                     }
