@@ -758,16 +758,16 @@
                             "widget.ProposalWizardBuilder.65.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 147,
-                            "y": 204
+                            "x": 157,
+                            "y": 214
                         },
                         "children": [
                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 107,
-                                    "y": 467
+                                    "x": 117,
+                                    "y": 477
                                 }
                             },
                             {
@@ -777,16 +777,16 @@
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 688,
-                                    "y": 349
+                                    "x": 698,
+                                    "y": 359
                                 },
                                 "children": [
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 648,
-                                            "y": 375
+                                            "x": 658,
+                                            "y": 385
                                         }
                                     },
                                     {
@@ -796,16 +796,16 @@
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 796,
-                                            "y": 120
+                                            "x": 806,
+                                            "y": 130
                                         },
                                         "children": [
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 756,
-                                                    "y": 146
+                                                    "x": 766,
+                                                    "y": 156
                                                 }
                                             },
                                             {
@@ -815,16 +815,16 @@
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.fields.0.json"
                                                 ],
                                                 "_diagramState": {
-                                                    "x": 1047,
-                                                    "y": 327
+                                                    "x": 1057,
+                                                    "y": 337
                                                 },
                                                 "children": [
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.0.json",
                                                     {
                                                         "class": "InsertNode",
                                                         "_diagramState": {
-                                                            "x": 1007,
-                                                            "y": 515
+                                                            "x": 1017,
+                                                            "y": 525
                                                         }
                                                     }
                                                 ],
@@ -1285,11 +1285,11 @@
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
-                                                "label": "{field.label}",
+                                                "label": "Company submitting proposal",
                                                 "message": "add a company name",
                                                 "lines": 1,
                                                 "maxChars": 0,
-                                                "mandatory": true,
+                                                "mandatory": false,
                                                 "multiEntry": false,
                                                 "autocomplete": true,
                                                 "muliTemplate": "lines",
@@ -1309,7 +1309,7 @@
                                                 "className": "",
                                                 "showLabel": false,
                                                 "showAddWord": false,
-                                                "label": "{field.label}",
+                                                "label": "Type of activity",
                                                 "addWordPlaceholder": "add a keyword",
                                                 "fontColor": "rgb(255, 255, 255)",
                                                 "hoverColor": "rgb(106, 233, 191)",
