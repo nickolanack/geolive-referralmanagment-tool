@@ -14659,5 +14659,14 @@
             "widgetTitle": "activityfeed.remove.proposal.permits.text",
             "target": "activityfeed.remove.proposal.permits.text"
         }
+    },
+    "widget.315": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: add.proposal.permits",
+            "widgetTitle": "activityfeed.add.proposal.permits.text",
+            "target": "activityfeed.add.proposal.permits.text"
+        }
     }
 }
