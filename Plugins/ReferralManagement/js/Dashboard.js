@@ -120,6 +120,8 @@ var ReferralManagementDashboard = {
 
 	loadUserDashboardView: function(application) {
 
+		//return;
+
 		var currentView = 'dashboardLoader';
 		var loadView = function(view) {
 
@@ -1311,7 +1313,7 @@ var ReferralManagementDashboard = {
 			items.push(
 				new Element('button', {
 					"class": "primary-btn warn",
-					"html": "Log Out",
+					"html": "Log out",
 					events: {
 						"click": function() {
 							AppClient.logout();
@@ -1395,21 +1397,21 @@ var ReferralManagementDashboard = {
 	getEmptyProjectsListDescription: function() {
 
 
-		return "<p><span class=\"section-title\">Get Started With Projects</span><br/>There are no active projects. To get started, create a new project!</p>";
+		return "<p><span class=\"section-title\">Get started with managing projects</span><br/>You currently have no active projects. To get started, click on the new project button!</p>";
 
 
 	},
 	getEmptyTasksListDescription: function() {
 
 
-		return "<p><span class=\"section-title\">Get Started With Tasks</span><br/>Tasks are created within projects. To get started, create or select a project and add some tasks.</p>";
+		return "<p><span class=\"section-title\">Get started with tasks</span><br/>Tasks are associated with specific projects. To get started, create or select a project and add some tasks related to it.</p>";
 
 
 	},
 
 	getUsersTeamMembersDescription: function() {
 
-		var text = "<span class=\"section-title\">My Community And User Roles</span><br/>"
+		var text = "<span class=\"section-title\">My community and user roles</span><br/>"
 		if (AppClient.getUserType() === "admin") {
 			text = text + "You are a Site Administrator so you can see all Lands Department members from all communities (and set user roles). The following description of your role would apply if you were a regular user. <br/>"
 		}
@@ -1438,6 +1440,142 @@ var ReferralManagementDashboard = {
 
 		return "<p>You can approve new site users.</p>"
 
+
+	},
+
+
+
+	createGuestDashboardNavigationController:function(){
+		return new NavigationMenuModule({
+		    "User":[
+		        {
+		            "name":"Login",
+		            "viewOptions":{
+		                "viewType":"form"
+		            },
+		            "class":"primary-btn"
+		            
+		        }, {
+		            "name":"Map",
+		            "html":"View map",
+		            "events":{
+		                "click":function(){
+		                    
+		                    $$('.public-map').setStyle('opacity',1);
+		                    $$('.public-map').setStyle('pointer-events','auto');
+		                    $$('.login-form').setStyle('display','none');
+		                    $$('.public-menu').setStyle('display','none');
+		                    
+		                }
+		            },
+		            "class":"primary-btn",
+		            "style":"background-color: crimson;"
+		            
+		            
+		        }, {
+		            "name":"About",
+		            "viewOptions":{
+		                "viewType":"view"
+		            },
+		            "class":"primary-btn"
+		            
+		        }
+		        // , {
+		        //     "name":"Fork",
+		        //     "html":"New Dashboard",
+		        //     "viewOptions":{
+		        //         "viewType":"view"
+		        //     },
+		        //     "class":"primary-btn"
+		            
+		        // }
+		    ]
+		},{
+		        targetUIView:function(button, section, viewer){
+		            return  viewer.getApplication().getChildView('content',0).getChildView('content',1);
+		        },
+		        templateView:function(button, section){
+		            return button.view||(section.toLowerCase()+(button.name||button.html)+"Detail");
+		        },
+		        buttonClass:function(button, section){
+		            return button["class"]||("menu-"+section.toLowerCase()+"-"+(button.name||button.html).toLowerCase())
+		        },
+		        sectionClass:function(section){
+		            return "menu-"+section.toLowerCase()
+		        },
+		        // formatSectionLabel:function(section, labelEl){
+		        //     if(section==='People'){
+		        //         return 'Team';
+		        //     }
+		        // },
+		        initialView:{view:"Login", section:"User"},
+		        "class":"public-menu"
+		    });
+
+
+	},
+
+
+	createLoginFormButtons:function(application, wizard){
+
+
+		/* Register and Proposal Form */
+
+
+
+			var registration=new Element('div', {"style":"margin-top: 20px; height: 50px;"})
+			var registrationLabel = registration.appendChild(new Element('label', {
+			    html:'Register as a new user', 'class':'login-button-text', 
+			    style:"text-align:left; color: mediumseagreen; line-height: 55px;",
+			    events:{
+			        click:function(){
+			            //goto next step
+			            wizard.displayNext();
+			        }
+			}}));
+			//login.appendChild(new Element('br'));
+			registrationLabel.appendChild(new Element('button',{
+			    html:'Register',
+			    style:"background-color:mediumseagreen;",
+			    "class":"primary-btn"
+			    
+			}));
+
+			var proposal=new Element('div', {"style":"margin-top: 20px; height: 50px;"})
+			var loginProposal =  proposal.appendChild(new Element('label', {
+			    html:'Are you a proponent?', 'class':'login-button-text', 
+			    style:"text-align:left; color: #EDC84C; line-height: 55px;",
+			    events:{
+			        
+			}}));
+
+			//login.appendChild(new Element('br'));
+			var proposalButton=loginProposal.appendChild(new Element('button',{
+			    
+			    html:'Submit a proposal',
+			    style:"background-color:#EDC84C;",
+			    "class":"primary-btn"
+			    
+			}));
+			var proposalObj= new GuestProposal(-1, {});
+			(new UIModalFormButton(proposalButton, application, proposalObj, {
+
+			            formOptions: {template:"form"},
+			            formName: "ProposalTemplate",
+			  
+			})).addEvent('complete', function(){
+			    
+			    application.getDisplayController().displayPopoverForm(
+							'emailVerificationForm', 
+							proposalObj, 
+							application,
+							{template:"form"}
+						);
+			    
+			})
+
+
+			return [registration, proposal]; 
 
 	}
 

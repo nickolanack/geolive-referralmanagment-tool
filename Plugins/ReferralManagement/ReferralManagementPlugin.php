@@ -117,7 +117,7 @@ core\EventListener {
 		return array(
 			'layer.upload' => array(
 				'access' => 'public',
-				'method' => 'task_UploadLayer',
+				'method' => 'taskUploadlayer',
 			),
 		);
 	}
