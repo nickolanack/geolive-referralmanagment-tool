@@ -14650,5 +14650,14 @@
             "onLoadScript": "",
             "readAccess": "public"
         }
+    },
+    "widget.314": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: remove.proposal.permits",
+            "widgetTitle": "activityfeed.remove.proposal.permits.text",
+            "target": "activityfeed.remove.proposal.permits.text"
+        }
     }
 }
