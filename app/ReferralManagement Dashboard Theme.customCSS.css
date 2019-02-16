@@ -659,6 +659,7 @@ span.inline-list-item {
 .user-detail .single_ImageContainer .resizedImage {
     border-radius: 100%;
     overflow: hidden;
+    background-color: white;
 }
 
 .user-detail .single_ImageContainer .resizedImage:before {
