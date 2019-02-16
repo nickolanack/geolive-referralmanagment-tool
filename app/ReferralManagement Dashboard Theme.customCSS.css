@@ -684,15 +684,15 @@ span.inline-list-item {
 .user-detail .single_ImageContainer:after {
     position: absolute;
     content: "";
-    width: calc( 100% + 8px );
-    height: calc( 100% + 8px );
-    border: 1px solid;
-    left: -4px;
-    top: -4px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid;
+    left: 0;
+    top: 0;
     border-radius: 100%;
-    border-color: rgba(255,255,255,0.5);
+    border-color: white;
     box-sizing: border-box;
-    box-shadow:0 0 1px 1px black;
+    box-shadow: 0 0 1px 1px black;
 }
 
 .dark .user-detail .single_ImageContainer:after{
