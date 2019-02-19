@@ -700,6 +700,10 @@ span.inline-list-item {
     box-shadow:none;
 }
 
+ .user-detail .user-email {
+        display: none;
+    }
+
 
 .ui-view.inset-shading {
     padding: 4px;
@@ -2680,9 +2684,7 @@ img.static-map {
         display:none;
     }
     
-    .user-detail .user-email {
-        display: none;
-    }
+   
     
     .navigation-menu label{
     font-size: 0;
