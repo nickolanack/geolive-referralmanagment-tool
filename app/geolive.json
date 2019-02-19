@@ -3790,7 +3790,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getEmail()",
-                                    "formatElementScript": ""
+                                    "formatElementScript": "el.addClass('user-email');"
                                 }
                             },
                             {
