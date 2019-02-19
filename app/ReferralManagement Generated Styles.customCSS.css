@@ -364,6 +364,20 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
         }
         
         
+        $slackMenuIcon=$config->getParameter('slackMenuIcon', array());
+        if(!empty($slackMenuIcon)){
+          
+            $slackMenuIcon=$slackMenuIcon[0];
+            ?>
+            
+            .survey-link a.slack-link:before {
+                background-image: url("<?php echo UrlFrom($slackMenuIcon); ?>");
+            }
+            
+            <?php
+        }
+        
+        
         
         if(!$config->getParameter("showFileThumbnails")){
             ?>
