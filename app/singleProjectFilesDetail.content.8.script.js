@@ -1,6 +1,6 @@
 
 return new Element('button',{
-    "html":"Download", 
+    "html":"Download project files", 
     "style":"background-color: mediumseagreen;", 
     "class":"primary-btn", 
     "events":{"click":function(){
