@@ -2679,6 +2679,11 @@ img.static-map {
     .user-detail .field-value{
         display:none;
     }
+    
+    .user-detail .user-email {
+        display: none;
+    }
+    
     .navigation-menu label{
     font-size: 0;
     width: 90px;
