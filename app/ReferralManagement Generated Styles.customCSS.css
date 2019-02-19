@@ -371,7 +371,7 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
             ?>
             
             .survey-link a.slack-link:before {
-                background-image: url("<?php echo UrlFrom($slackMenuIcon); ?>");
+                background-image: url("<?php echo UrlFrom($slackMenuIcon."?thumb=x>100y>100"); ?>");
             }
             
             <?php
