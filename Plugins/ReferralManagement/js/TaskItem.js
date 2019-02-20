@@ -341,6 +341,11 @@ var TaskItem = (function() {
 
 		getDiscussionSubscription:function(){
 			var me=this;
+
+			if(!(me.data&&me.data.discussion)){
+				return false;
+			}
+
 			return {
                 "channel":"discussion."+me.data.discussion.id,
                 "event":"post"     

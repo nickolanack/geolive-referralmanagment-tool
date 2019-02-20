@@ -13,38 +13,38 @@ var ReferralManagementDashboard = {
 
 	getCommunitiesString: function(item) {
 
-		var communities=item.getCommunitiesInvolved();
+		var communities = item.getCommunitiesInvolved();
 
-		if(communities.length==0){
+		if (communities.length == 0) {
 			return 'no communities have been selected';
 		}
-	
+
 		return communities.join(', ');
 
 	},
 
 	getDatesString: function(item) {
 
-		var dates={
-			"submit":item.getSubmitDate(),
-			"expiry":item.getExpiryDate(),
-			"deadline":item.getDeadlineDate()
+		var dates = {
+			"submit": item.getSubmitDate(),
+			"expiry": item.getExpiryDate(),
+			"deadline": item.getDeadlineDate()
 		};
 
-		
 
-		return Object.keys(dates).map(function(k){
-			return k+": "+dates[k];
+
+		return Object.keys(dates).map(function(k) {
+			return k + ": " + dates[k];
 			//return '<span data-type="'+k+'">'+dates[k]+'</span>';
 		}).join(', ');
 
 	},
 
-	onSaveProfile:function(item, application){
+	onSaveProfile: function(item, application) {
 
 		var user = ProjectTeam.CurrentTeam().getUser(item.getId());
 
-		if(user.getId()==AppClient.getId()&&user.isUnassigned()){
+		if (user.getId() == AppClient.getId() && user.isUnassigned()) {
 
 			(new UIModalDialog(application, "Your profile has been saved. An administrator must approve your account.", {
 				"formName": "dialogForm",
@@ -60,21 +60,19 @@ var ReferralManagementDashboard = {
 	addItemDiscussionInfo: function(el, item, application) {
 
 
-		var newPosts=0;
-		var totalPosts=0;
+		var newPosts = 0;
+		var totalPosts = 0;
 
 
 
-		
+		var postCounter = null;
 
-		var postCounter=null;
-
-		var addEl=function(){
+		var addEl = function() {
 			postCounter = el.appendChild(new Element('span'));
 			postCounter.addClass('posts');
 			el.addClass('withPosts');
 
-			if(item instanceof TaskItem){
+			if (item instanceof TaskItem) {
 				postCounter.addEvent('click', function() {
 					application.getDisplayController().displayPopoverForm(
 						"taskDetailPopover",
@@ -85,18 +83,18 @@ var ReferralManagementDashboard = {
 			}
 		}
 
-		var updateCounter=function(){
+		var updateCounter = function() {
 
-			if(!postCounter){
+			if (!postCounter) {
 				addEl();
 			}
-			
+
 			postCounter.setAttribute('data-posts', totalPosts);
 
 			if (newPosts > 0) {
 				el.addClass('newPosts');
 				postCounter.setAttribute('data-posts', newPosts + '/' + item.numberOfPosts());
-			}else{
+			} else {
 				el.removeClass('newPosts');
 			}
 		};
@@ -109,7 +107,11 @@ var ReferralManagementDashboard = {
 
 
 		//AjaxControlQuery.WeakSubscribe(el, ...)
-		AjaxControlQuery.WeakSubscribe(el, item.getDiscussionSubscription(), function(){
+		var subscription = item.getDiscussionSubscription();
+		if (!subscription) {
+			return;
+		}
+		AjaxControlQuery.WeakSubscribe(el, subscription, function() {
 			newPosts++;
 			totalPosts++;
 			updateCounter();
@@ -287,36 +289,7 @@ var ReferralManagementDashboard = {
 
 	},
 
-	fileEditButtons: function(item, application, listItem) {
-
-
-		return [new ElementModule('button', {
-				"class": "remove-btn",
-				events: {
-					click: function() {
-						if (confirm("Are you sure you want to remove this file")) {
-							item.removeAttachment(listItem);
-						};
-					}
-				}
-			}),
-			(new ModalFormButtonModule(application, new MockDataTypeItem({
-				file: listItem
-			}), {
-				label: "Edit",
-				formName: "fileItemForm",
-				formOptions: {
-					template: "form"
-				},
-				hideText: true,
-				"class": "edit-btn"
-			})).addEvent("show", function() {
-
-			})
-		];
-
-
-	},
+	
 
 
 	renderCalendar: function(viewer, element, parentModule) {
@@ -1301,8 +1274,19 @@ var ReferralManagementDashboard = {
 		});
 	},
 
-
+	addLogoutBtn: function() {
+		return new Element('button', {
+			"class": "primary-btn warn",
+			"html": "Log out",
+			events: {
+				"click": function() {
+					AppClient.logout();
+				}
+			}
+		});
+	},
 	createProfileButtons: function(item) {
+		var me = this;
 
 		var items = [];
 
@@ -1311,15 +1295,7 @@ var ReferralManagementDashboard = {
 		if (itemIsCurrentClient) {
 
 			items.push(
-				new Element('button', {
-					"class": "primary-btn warn",
-					"html": "Log out",
-					events: {
-						"click": function() {
-							AppClient.logout();
-						}
-					}
-				})
+				me.addLogoutBtn()
 			);
 
 		}
@@ -1445,137 +1421,291 @@ var ReferralManagementDashboard = {
 
 
 
-	createGuestDashboardNavigationController:function(){
+	createGuestDashboardNavigationController: function() {
 		return new NavigationMenuModule({
-		    "User":[
-		        {
-		            "name":"Login",
-		            "viewOptions":{
-		                "viewType":"form"
-		            },
-		            "class":"primary-btn"
-		            
-		        }, {
-		            "name":"Map",
-		            "html":"View map",
-		            "events":{
-		                "click":function(){
-		                    
-		                    $$('.public-map').setStyle('opacity',1);
-		                    $$('.public-map').setStyle('pointer-events','auto');
-		                    $$('.login-form').setStyle('display','none');
-		                    $$('.public-menu').setStyle('display','none');
-		                    
-		                }
-		            },
-		            "class":"primary-btn",
-		            "style":"background-color: crimson;"
-		            
-		            
-		        }, {
-		            "name":"About",
-		            "viewOptions":{
-		                "viewType":"view"
-		            },
-		            "class":"primary-btn"
-		            
-		        }
-		        // , {
-		        //     "name":"Fork",
-		        //     "html":"New Dashboard",
-		        //     "viewOptions":{
-		        //         "viewType":"view"
-		        //     },
-		        //     "class":"primary-btn"
-		            
-		        // }
-		    ]
-		},{
-		        targetUIView:function(button, section, viewer){
-		            return  viewer.getApplication().getChildView('content',0).getChildView('content',1);
-		        },
-		        templateView:function(button, section){
-		            return button.view||(section.toLowerCase()+(button.name||button.html)+"Detail");
-		        },
-		        buttonClass:function(button, section){
-		            return button["class"]||("menu-"+section.toLowerCase()+"-"+(button.name||button.html).toLowerCase())
-		        },
-		        sectionClass:function(section){
-		            return "menu-"+section.toLowerCase()
-		        },
-		        // formatSectionLabel:function(section, labelEl){
-		        //     if(section==='People'){
-		        //         return 'Team';
-		        //     }
-		        // },
-		        initialView:{view:"Login", section:"User"},
-		        "class":"public-menu"
-		    });
+			"User": [{
+					"name": "Login",
+					"viewOptions": {
+						"viewType": "form"
+					},
+					"class": "primary-btn"
+
+				}, {
+					"name": "Map",
+					"html": "View map",
+					"events": {
+						"click": function() {
+
+							$$('.public-map').setStyle('opacity', 1);
+							$$('.public-map').setStyle('pointer-events', 'auto');
+							$$('.login-form').setStyle('display', 'none');
+							$$('.public-menu').setStyle('display', 'none');
+
+						}
+					},
+					"class": "primary-btn",
+					"style": "background-color: crimson;"
+
+
+				}, {
+					"name": "About",
+					"viewOptions": {
+						"viewType": "view"
+					},
+					"class": "primary-btn"
+
+				}
+				// , {
+				//     "name":"Fork",
+				//     "html":"New Dashboard",
+				//     "viewOptions":{
+				//         "viewType":"view"
+				//     },
+				//     "class":"primary-btn"
+
+				// }
+			]
+		}, {
+			targetUIView: function(button, section, viewer) {
+				return viewer.getApplication().getChildView('content', 0).getChildView('content', 1);
+			},
+			templateView: function(button, section) {
+				return button.view || (section.toLowerCase() + (button.name || button.html) + "Detail");
+			},
+			buttonClass: function(button, section) {
+				return button["class"] || ("menu-" + section.toLowerCase() + "-" + (button.name || button.html).toLowerCase())
+			},
+			sectionClass: function(section) {
+				return "menu-" + section.toLowerCase()
+			},
+			// formatSectionLabel:function(section, labelEl){
+			//     if(section==='People'){
+			//         return 'Team';
+			//     }
+			// },
+			initialView: {
+				view: "Login",
+				section: "User"
+			},
+			"class": "public-menu"
+		});
 
 
 	},
 
 
-	createLoginFormButtons:function(application, wizard){
+	createLoginFormButtons: function(application, wizard) {
 
 
 		/* Register and Proposal Form */
 
 
 
-			var registration=new Element('div', {"style":"margin-top: 20px; height: 50px;"})
-			var registrationLabel = registration.appendChild(new Element('label', {
-			    html:'Register as a new user', 'class':'login-button-text', 
-			    style:"text-align:left; color: mediumseagreen; line-height: 55px;",
-			    events:{
-			        click:function(){
-			            //goto next step
-			            wizard.displayNext();
-			        }
-			}}));
-			//login.appendChild(new Element('br'));
-			registrationLabel.appendChild(new Element('button',{
-			    html:'Register',
-			    style:"background-color:mediumseagreen;",
-			    "class":"primary-btn"
-			    
-			}));
+		var registration = new Element('div', {
+			"style": "margin-top: 20px; height: 50px;"
+		})
+		var registrationLabel = registration.appendChild(new Element('label', {
+			html: 'Register as a new user',
+			'class': 'login-button-text',
+			style: "text-align:left; color: mediumseagreen; line-height: 55px;",
+			events: {
+				click: function() {
+					//goto next step
+					wizard.displayNext();
+				}
+			}
+		}));
+		//login.appendChild(new Element('br'));
+		registrationLabel.appendChild(new Element('button', {
+			html: 'Register',
+			style: "background-color:mediumseagreen;",
+			"class": "primary-btn"
 
-			var proposal=new Element('div', {"style":"margin-top: 20px; height: 50px;"})
-			var loginProposal =  proposal.appendChild(new Element('label', {
-			    html:'Are you a proponent?', 'class':'login-button-text', 
-			    style:"text-align:left; color: #EDC84C; line-height: 55px;",
-			    events:{
-			        
-			}}));
+		}));
 
-			//login.appendChild(new Element('br'));
-			var proposalButton=loginProposal.appendChild(new Element('button',{
-			    
-			    html:'Submit a proposal',
-			    style:"background-color:#EDC84C;",
-			    "class":"primary-btn"
-			    
-			}));
-			var proposalObj= new GuestProposal(-1, {});
-			(new UIModalFormButton(proposalButton, application, proposalObj, {
+		var proposal = new Element('div', {
+			"style": "margin-top: 20px; height: 50px;"
+		})
+		var loginProposal = proposal.appendChild(new Element('label', {
+			html: 'Are you a proponent?',
+			'class': 'login-button-text',
+			style: "text-align:left; color: #EDC84C; line-height: 55px;",
+			events: {
 
-			            formOptions: {template:"form"},
-			            formName: "ProposalTemplate",
-			  
-			})).addEvent('complete', function(){
-			    
-			    application.getDisplayController().displayPopoverForm(
-							'emailVerificationForm', 
-							proposalObj, 
-							application,
-							{template:"form"}
-						);
-			    
+			}
+		}));
+
+		//login.appendChild(new Element('br'));
+		var proposalButton = loginProposal.appendChild(new Element('button', {
+
+			html: 'Submit a proposal',
+			style: "background-color:#EDC84C;",
+			"class": "primary-btn"
+
+		}));
+		var proposalObj = new GuestProposal(-1, {});
+		(new UIModalFormButton(proposalButton, application, proposalObj, {
+
+			formOptions: {
+				template: "form"
+			},
+			formName: "ProposalTemplate",
+
+		})).addEvent('complete', function() {
+
+			application.getDisplayController().displayPopoverForm(
+				'emailVerificationForm',
+				proposalObj,
+				application, {
+					template: "form"
+				}
+			);
+
+		})
+
+
+		return [registration, proposal];
+
+	},
+
+	getFileModule: function(file, typeName) {
+
+		/*File*/
+
+
+		/*
+		 figure out file type and render module
+		*/
+
+		//var file = item;
+		if (typeof file !== "string") {
+
+			//just to support passing object with id or file param. instead of a plain file path.
+
+			if (typeof file.id == "string") {
+				file = file.id;
+			}
+			if (typeof file.file == "string") {
+				file = file.file;
+			}
+			if (typeof file.html == "string") {
+				var urls = Proposal.ParseHtmlUrls(file.html);
+				if (urls.length) {
+					file = urls[0];
+				}
+
+
+			}
+		}
+
+		if (typeof file == "string") {
+			var mod = new ElementModule('div', {
+				"class": "file-container"
+			});
+			var container = mod.getElement();
+
+			var type = JSTextUtilities.ParseUrlMime(file);
+			if (type) {
+				type = type.split('/')[0];
+
+			} else {
+				type = 'document';
+			}
+
+			if(!typeName){
+				typeName=type;
+			}
+
+			if ((['audio', 'video', 'image', 'document']).indexOf(type) >= 0) {
+
+				if (type == 'audio') {
+					(new AudioModule({
+						textQuery: function(callback) {
+							callback(file);
+						},
+						"class":typeName
+					})).load(null, container, null);
+				}
+				if (type == 'video') {
+					(new VideoModule({
+						textQuery: function(callback) {
+							callback(file);
+						},
+						"class":typeName,
+						width: 100,
+						height: 100
+					})).load(null, container, null);
+				}
+				if (type == 'image') {
+					(new ImageModule({
+						textQuery: function(callback) {
+							callback(file);
+						},
+						"class":typeName,
+						width: 100,
+						height: 100
+					})).load(null, container, null);
+				}
+				if (type == 'document') {
+					(new DocumentModule({
+						textQuery: function(callback) {
+							callback(file);
+						},
+						"class":typeName,
+						width: 100,
+						height: 100
+					})).load(null, container, null);
+				}
+
+				return mod;
+			}
+
+
+
+		}
+
+
+
+		return null;
+
+
+	},
+	fileEditButtons: function(item, application, listItem) {
+
+
+		return [new ElementModule('button', {
+				"class": "remove-btn",
+				events: {
+					click: function() {
+						if (confirm("Are you sure you want to remove this file")) {
+							item.removeAttachment(listItem);
+						};
+					}
+				}
+			}),
+			new ElementModule('button', {
+				"class": "download-btn",
+				events: {
+					click: function() {
+						window.open(listItem, 'Download');
+					}
+				}
+			}),
+			(new ModalFormButtonModule(application, new MockDataTypeItem({
+				file: listItem
+			}), {
+				label: "Edit",
+				formName: "fileItemForm",
+				formOptions: {
+					template: "form"
+				},
+				hideText: true,
+				"class": "edit-btn"
+			})).addEvent("show", function() {
+
 			})
+		];
 
-
-			return [registration, proposal]; 
 
 	}
 
