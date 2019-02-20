@@ -1766,6 +1766,15 @@ span.filter-btns {
     top: 14px;
 }
 
+span.filter-btns.left-justified {
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+    left: 0;
+    margin-top: 0;
+    top: 0px;
+}
+
 .inline-btn.sort ul, .inline-btn.optionlist ul {
     position: absolute;
     display: none;
