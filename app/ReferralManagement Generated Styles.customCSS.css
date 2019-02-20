@@ -104,6 +104,7 @@ foreach($config->getParameters() as $key=>$value){
     background-image:url("<?php echo UrlFrom($applicationLogo."?thumb=>200x>200"); ?>");
 }  
 
+<?php
 
 $gatherLogo=$config->getParameter('gatherLogo', array());
         if(empty($gatherLogo)){
