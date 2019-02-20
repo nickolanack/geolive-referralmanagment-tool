@@ -1783,6 +1783,11 @@ span.filter-btns {
     cursor: pointer;
 }
 
+.inline-btn.filter{
+    color: #2E303A;
+    background-color: #EDC84C;
+}
+
 .inline-btn.sort.hasFilter li, .inline-btn.sort.hasOrder li {
     color: white;
 }
