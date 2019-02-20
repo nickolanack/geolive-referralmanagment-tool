@@ -245,6 +245,24 @@ foreach(GetPlugin("ReferralManagement")->getRoleIcons() as $role=>$icon){
 }
 
 
+foreach(['remove', 'edit', 'download'] as $fileFn){
+    $editIcon=$config->getParameter('file'.ucfirst($fileFn).'BtnIcon', array());
+        if(!empty($editIcon)){
+         
+            $editIcon=$editIcon[0];
+        
+        ?>
+            .file-item .btn-<?php echo $fileFn?>:after {
+                background-image:url("<?php echo UrlFrom($mediaIcon."?thumb=x>100y>100"); ?>");
+            }
+        
+    }
+    <?php
+    
+    
+}
+
+
 foreach(['image', 'document', 'layer', 'audio', 'video'] as $mime){
     $mediaIcon=$config->getParameter($mime.'UploadIcon', array());
         if(empty($mediaIcon)){
