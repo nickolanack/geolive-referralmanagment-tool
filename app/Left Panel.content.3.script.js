@@ -1,1 +1,1 @@
-return new ElementModule('div',{"class":"application-logo",html:"Gatherer Dashboard "+(new Date()).getFullYear()+""})
+return new ElementModule('div',{"class":"application-logo",html:"Gather Referrals Management Tool "+(new Date()).getFullYear()+""})
