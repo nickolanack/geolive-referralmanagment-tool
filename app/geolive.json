@@ -4272,6 +4272,33 @@
                 },
                 {
                     "type": "images",
+                    "name": "fileRemoveBtnIcon",
+                    "default": [],
+                    "label": "fileRemoveBtnIcon",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "fileEditBtnIcon",
+                    "default": [],
+                    "label": "fileEditBtnIcon",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "fileDownloadBtnIcon",
+                    "default": [],
+                    "label": "fileDownloadBtnIcon",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
                     "name": "surveyMenuIcon",
                     "default": [],
                     "label": "surveyMenuIcon",
@@ -4381,7 +4408,10 @@
             ],
             "discussionIllustration": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/sjS_l9m_%5BG%5D_%5BImAgE%5D_Fyi.png"
-            ]
+            ],
+            "fileRemoveBtnIcon": [],
+            "fileEditBtnIcon": [],
+            "fileDownloadBtnIcon": []
         }
     },
     "widget.154": {
