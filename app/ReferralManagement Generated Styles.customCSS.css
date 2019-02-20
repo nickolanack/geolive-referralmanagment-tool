@@ -52,12 +52,12 @@ foreach(['remove', 'edit', 'download'] as $fileFn){
             $editIcon=$editIcon[0];
         
         ?>
-            .file-item .<?php echo $fileFn?>-btn:after {
-                background-image:url("<?php echo UrlFrom($editIcon."?thumb=x>100y>100"); ?>");
+            .file-item .<?php echo $fileFn; ?>-btn:after {
+                background-image:url("<?php echo UrlFrom($editIcon.'?thumb=x>100y>100'); ?>");
             }
-        
+       <?php  
     }
-    <?php
+   
     
     
 }
