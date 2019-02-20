@@ -3891,6 +3891,15 @@
                 },
                 {
                     "type": "images",
+                    "name": "gatherLogo",
+                    "default": [],
+                    "label": "gatherLogo",
+                    "maxHeight": 256,
+                    "maxWidth": 256,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
                     "name": "defaultUserImage",
                     "default": [],
                     "label": "defaultUserImage",
@@ -4415,7 +4424,8 @@
             "fileEditBtnIcon": [],
             "fileDownloadBtnIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/PZR_XRl_%5BImAgE%5D_%5BG%5D_xBM.png"
-            ]
+            ],
+            "gatherLogo": []
         }
     },
     "widget.154": {
