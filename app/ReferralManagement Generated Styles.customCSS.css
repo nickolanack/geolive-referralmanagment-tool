@@ -26,9 +26,6 @@ button.btn-reset-list {
 }
 
 
-.file-item span.document:after {
-    background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/download.png?tint=rgb(127, 161, 255)"); ?>");
-}
 
 
 button.btn-search-list {
