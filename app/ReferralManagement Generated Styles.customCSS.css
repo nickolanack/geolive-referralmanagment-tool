@@ -104,6 +104,20 @@ foreach($config->getParameters() as $key=>$value){
     background-image:url("<?php echo UrlFrom($applicationLogo."?thumb=>200x>200"); ?>");
 }  
 
+
+$gatherLogo=$config->getParameter('gatherLogo', array());
+        if(empty($gatherLogo)){
+            $gatherLogo=$menuIconDefault;
+        }else{
+            $gatherLogo=$gatherLogo[0];
+        }
+    ?>
+ .gather-logo {
+
+    background-image:url("<?php echo UrlFrom($gatherLogo."?thumb=>200x>200"); ?>");
+}  
+
+
     <?php 
         $attachmentIcon=$config->getParameter('attachmentIcon', array());
         if(empty($attachmentIcon)){
