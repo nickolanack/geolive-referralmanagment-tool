@@ -44,6 +44,27 @@ button.btn-search-list {
 
 <?php 
 $config=GetWidget('dashboardConfig');
+
+foreach(['remove', 'edit', 'download'] as $fileFn){
+    $editIcon=$config->getParameter('file'.ucfirst($fileFn).'BtnIcon', array());
+        if(!empty($editIcon)){
+         
+            $editIcon=$editIcon[0];
+        
+        ?>
+            .file-item .<?php echo $fileFn?>-btn:after {
+                background-image:url("<?php echo UrlFrom($editIcon."?thumb=x>100y>100"); ?>");
+            }
+        
+    }
+    <?php
+    
+    
+}
+
+
+
+
 $menuIconDefault=$config->getParameter('defaultMenuIcon')[0];
 foreach($config->getParameters() as $key=>$value){
     foreach(array('main', 'people', 'accounting','community', 'configuration') as $section){
@@ -245,22 +266,6 @@ foreach(GetPlugin("ReferralManagement")->getRoleIcons() as $role=>$icon){
 }
 
 
-foreach(['remove', 'edit', 'download'] as $fileFn){
-    $editIcon=$config->getParameter('file'.ucfirst($fileFn).'BtnIcon', array());
-        if(!empty($editIcon)){
-         
-            $editIcon=$editIcon[0];
-        
-        ?>
-            .file-item .<?php echo $fileFn?>-btn:after {
-                background-image:url("<?php echo UrlFrom($editIcon."?thumb=x>100y>100"); ?>");
-            }
-        
-    }
-    <?php
-    
-    
-}
 
 
 foreach(['image', 'document', 'layer', 'audio', 'video'] as $mime){
