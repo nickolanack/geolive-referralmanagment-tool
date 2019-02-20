@@ -253,7 +253,7 @@ foreach(['remove', 'edit', 'download'] as $fileFn){
         
         ?>
             .file-item .<?php echo $fileFn?>-btn:after {
-                background-image:url("<?php echo UrlFrom($mediaIcon."?thumb=x>100y>100"); ?>");
+                background-image:url("<?php echo UrlFrom($editIcon."?thumb=x>100y>100"); ?>");
             }
         
     }
