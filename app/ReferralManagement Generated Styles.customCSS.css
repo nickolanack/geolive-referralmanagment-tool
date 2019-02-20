@@ -44,7 +44,7 @@ button.btn-search-list {
 
 <?php 
 $config=GetWidget('dashboardConfig');
-
+$offset=10;
 foreach(['remove', 'edit', 'download'] as $fileFn){
     $editIcon=$config->getParameter('file'.ucfirst($fileFn).'BtnIcon', array());
         if(!empty($editIcon)){
@@ -53,6 +53,7 @@ foreach(['remove', 'edit', 'download'] as $fileFn){
         
         ?>
             .file-item .<?php echo $fileFn; ?>-btn {
+                top:<?php echo $offset; $offset+=30px;?>px;
                 background-image:url("<?php echo UrlFrom($editIcon.'?thumb=x>100y>100'); ?>");
             }
        <?php  
