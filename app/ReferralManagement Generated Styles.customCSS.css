@@ -53,7 +53,7 @@ foreach(['remove', 'edit', 'download'] as $fileFn){
         
         ?>
             .file-item .<?php echo $fileFn; ?>-btn {
-                top:<?php echo $offset; $offset+=30px;?>px;
+                top:<?php echo $offset; $offset+=30;?>px;
                 background-image:url("<?php echo UrlFrom($editIcon.'?thumb=x>100y>100'); ?>");
             }
        <?php  
