@@ -603,6 +603,14 @@ span.inline-list-item {
     width: 100%;
 }
 
+button.inline-logout {
+    font-style: italic;
+    color: #637594;
+    cursor: pointer;
+    font-size: 16px;
+    background: none;
+    border: none;
+}
 
 .ui-view.dashboard-main>div>div, .ui-view.main-panel>div>div {
     display: inline-table;
