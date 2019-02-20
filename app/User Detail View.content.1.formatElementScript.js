@@ -2,4 +2,8 @@
 new UIModalFormButton(el.parentNode, application, item, {"formName":"userProfileForm", "formOptions":{template:"form"}});
 el.addClass('editable');
 
-el.appendChild(new Element('button', {"class":"inline-logout","html":"logout", "events":{"click":function(){AppClient.logout();}}}));
+el.appendChild(new Element('button', {"class":"inline-logout","html":"logout", "events":{"click":function(e){
+    e.stop();
+    AppClient.logout();
+    
+}}}));
