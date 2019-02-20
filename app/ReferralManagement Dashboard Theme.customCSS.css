@@ -1783,10 +1783,7 @@ span.filter-btns {
     cursor: pointer;
 }
 
-.inline-btn.filter{
-    color: #2E303A;
-    background-color: #EDC84C;
-}
+
 
 .inline-btn.sort.hasFilter li, .inline-btn.sort.hasOrder li {
     color: white;
@@ -1824,7 +1821,10 @@ span.filter-btns {
     padding: 5px 10px;
 }
 
-
+.inline-btn.filter{
+    color: #2E303A;
+    background-color: #EDC84C;
+}
 
 .inline-btn.optionlist {
     position: absolute;
