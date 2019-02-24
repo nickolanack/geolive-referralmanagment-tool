@@ -1,0 +1,1 @@
+return item.getTasks().filter(function(t){return t.hasAttachments();});
