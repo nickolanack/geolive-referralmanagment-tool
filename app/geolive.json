@@ -14699,5 +14699,18 @@
             "widgetTitle": "activityfeed.add.proposal.permits.text",
             "target": "activityfeed.add.proposal.permits.text"
         }
+    },
+    "widget.316": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "",
+            "target": "none",
+            "templateName": "{target}",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "notifyViewer": false
+        }
     }
 }
