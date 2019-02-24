@@ -14712,32 +14712,61 @@
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "singleFilesSectionDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIListView",
+                                "config": []
+                            },
+                            {
+                                "type": "InlineHtml",
+                                "config": []
+                            },
+                            {
+                                "type": "UIListView",
+                                "config": []
+                            },
+                            {
+                                "type": "InlineHtml",
+                                "config": []
+                            },
+                            {
+                                "type": "UIListView",
+                                "config": []
+                            },
+                            {
+                                "type": "InlineHtml",
+                                "config": []
+                            },
+                            {
+                                "type": "UIListView",
+                                "config": []
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": []
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
                 "positionList": [
                     "title",
                     "content",
                     "footer",
                     "menu"
                 ],
-                "positions": {
-                    "title": {
-                        "modules": [
-                            "singleFilesSectionDetail.metadata.positions.title.modules.0.json"
-                        ]
-                    },
-                    "content": {
-                        "modules": [
-                            "singleFilesSectionDetail.metadata.positions.content.modules.0.json"
-                        ]
-                    },
-                    "footer": {
-                        "modules": [
-                            "singleFilesSectionDetail.metadata.positions.footer.modules.0.json"
-                        ]
-                    },
-                    "menu": {
-                        "modules": []
-                    }
-                }
+                "_diagramState": []
             },
             "readAccess": "public"
         }
