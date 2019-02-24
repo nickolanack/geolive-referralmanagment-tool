@@ -1,9 +1,8 @@
 {
-    "type": "InlineHtml",
+    "type": "WizardScriptElement",
     "config": {
-        "className": "section-title",
-        "text": "Documents",
-        "template": "",
-        "templateVariablesScript": ""
+        "name": "My Custom Script",
+        "script": "return new Element('span',{\"class\":\"section-title\", html:item.label;});",
+        "description": "Info about my custom script"
     }
 }

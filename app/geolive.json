@@ -14749,7 +14749,7 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
-                                    "getItemListScript": "return item.getDocuments();",
+                                    "getItemListScript": "return item.getItems();",
                                     "formatItemListScript": "return list;",
                                     "formatListItemModuleScript": "",
                                     "emptyNamedView": "emptyListView",
