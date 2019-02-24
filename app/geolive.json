@@ -6177,6 +6177,15 @@
                         "modules": [
                             "singleProjectFilesDetail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "section-title",
+                                    "text": "Documents",
+                                    "template": "",
+                                    "templateVariablesScript": ""
+                                }
+                            },
+                            {
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "file-list",
@@ -6191,9 +6200,9 @@
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "initModuleScript": "",
-                                    "formatModuleScript": "singleProjectFilesDetail.metadata.positions.content.modules.1.config.formatModuleScript.js",
+                                    "formatModuleScript": "singleProjectFilesDetail.metadata.positions.content.modules.2.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
-                                    "filterModulesScript": "singleProjectFilesDetail.metadata.positions.content.modules.1.config.filterModulesScript.js",
+                                    "filterModulesScript": "singleProjectFilesDetail.metadata.positions.content.modules.2.config.filterModulesScript.js",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
@@ -6230,13 +6239,13 @@
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "initModuleScript": "",
-                                    "formatModuleScript": "singleProjectFilesDetail.metadata.positions.content.modules.3.config.formatModuleScript.js",
+                                    "formatModuleScript": "singleProjectFilesDetail.metadata.positions.content.modules.4.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
-                                    "filterModulesScript": "singleProjectFilesDetail.metadata.positions.content.modules.3.config.filterModulesScript.js",
+                                    "filterModulesScript": "singleProjectFilesDetail.metadata.positions.content.modules.4.config.filterModulesScript.js",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
-                                    "getItemListScript": "singleProjectFilesDetail.metadata.positions.content.modules.3.config.getItemListScript.js",
+                                    "getItemListScript": "singleProjectFilesDetail.metadata.positions.content.modules.4.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
                                     "formatListItemModuleScript": "",
                                     "emptyNamedView": "emptyListView",
@@ -6269,9 +6278,9 @@
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "initModuleScript": "",
-                                    "formatModuleScript": "singleProjectFilesDetail.metadata.positions.content.modules.5.config.formatModuleScript.js",
+                                    "formatModuleScript": "singleProjectFilesDetail.metadata.positions.content.modules.6.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
-                                    "filterModulesScript": "singleProjectFilesDetail.metadata.positions.content.modules.5.config.filterModulesScript.js",
+                                    "filterModulesScript": "singleProjectFilesDetail.metadata.positions.content.modules.6.config.filterModulesScript.js",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
@@ -6314,7 +6323,7 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
-                                    "getItemListScript": "singleProjectFilesDetail.metadata.positions.content.modules.7.config.getItemListScript.js",
+                                    "getItemListScript": "singleProjectFilesDetail.metadata.positions.content.modules.8.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
                                     "formatListItemModuleScript": "",
                                     "emptyNamedView": "emptyListView",
@@ -6327,7 +6336,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectFilesDetail.metadata.positions.content.modules.8.config.script.js",
+                                    "script": "singleProjectFilesDetail.metadata.positions.content.modules.9.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
