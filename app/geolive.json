@@ -14704,9 +14704,9 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "singleFilesSection",
-            "target": "singleFilesSection",
-            "templateName": "singleFilesSection",
+            "widgetTitle": "singleFilesSectionDetail",
+            "target": "singleFilesSectionDetail",
+            "templateName": "singleFilesSectionDetail",
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
@@ -14721,17 +14721,17 @@
                 "positions": {
                     "title": {
                         "modules": [
-                            "singleFilesSection.metadata.positions.title.modules.0.json"
+                            "singleFilesSectionDetail.metadata.positions.title.modules.0.json"
                         ]
                     },
                     "content": {
                         "modules": [
-                            "singleFilesSection.metadata.positions.content.modules.0.json"
+                            "singleFilesSectionDetail.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
                         "modules": [
-                            "singleFilesSection.metadata.positions.footer.modules.0.json"
+                            "singleFilesSectionDetail.metadata.positions.footer.modules.0.json"
                         ]
                     },
                     "menu": {
