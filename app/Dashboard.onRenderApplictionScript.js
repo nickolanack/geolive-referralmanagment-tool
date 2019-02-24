@@ -104,6 +104,7 @@ GetWidget('configurationSettingsDetail')->display($targetInstance);
 
 GetWidget('singleTeamListItemDetail')->display($targetInstance);
 GetWidget('singleFileListItemDetail')->display($targetInstance);
+GetWidget('singleFilesSectionDetail')->display($targetInstance);
 
 
 
