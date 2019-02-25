@@ -14587,7 +14587,7 @@
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "initModuleScript": "",
-                                    "formatModuleScript": "item.appendUploaders(module)",
+                                    "formatModuleScript": "item.formatModule(module)",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "singleFilesSectionDetail.metadata.positions.content.modules.1.config.filterModulesScript.js",
                                     "itemButtonsScript": "return [];",
