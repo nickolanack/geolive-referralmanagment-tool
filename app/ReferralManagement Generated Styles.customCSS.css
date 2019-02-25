@@ -48,13 +48,11 @@ $offset=10;
 foreach(['remove', 'edit', 'download'] as $fileFn){
     $editIcon=$config->getParameter('file'.ucfirst($fileFn).'BtnIcon', array());
         if(!empty($editIcon)){
-         
-            $editIcon=$editIcon[0];
-        
+
         ?>
             .file-item .<?php echo $fileFn; ?>-btn {
                 top:<?php echo $offset; $offset+=30;?>px;
-                background-image:url("<?php echo UrlFrom($editIcon.'?thumb=x>100y>100'); ?>");
+                background-image:url("<?php echo UrlFrom($editIcon[0].'?thumb=x>100y>100'); ?>");
             }
        <?php  
     }
@@ -69,7 +67,7 @@ $addIcon=$config->getParameter('fileUploadBtnIcon', array());
 
         ?>
         .file-list .droppable:after {
-            background-image:url("<?php echo UrlFrom($addIcon.'?thumb=x>100y>100'); ?>");
+            background-image:url("<?php echo UrlFrom($addIcon[0].'?thumb=x>100y>100'); ?>");
         }
         <?php
 
