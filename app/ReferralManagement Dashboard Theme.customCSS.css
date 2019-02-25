@@ -339,6 +339,23 @@ body.dragover .file-item.droppable-hide {
 }
 
 .file-list .droppable:after {
+    line-height: 135px;
+}
+
+.file-list .droppable .add-btn {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    cursor: none;
+    top: 30%;
+    left: calc( 50% - 10px );
+    z-index: 1;
+    background-size: 100%;
+}
+
+
+
+.file-list .droppable:after {
     content: "Add";
 }
 
