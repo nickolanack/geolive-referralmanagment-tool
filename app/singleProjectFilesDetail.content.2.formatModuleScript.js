@@ -1,1 +1,0 @@
-ReferralManagementDashboard.appendFileUploaders(module)

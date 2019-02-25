@@ -6180,123 +6180,6 @@
                                 "type": "InlineHtml",
                                 "config": {
                                     "className": "section-title",
-                                    "text": "Documents",
-                                    "template": "",
-                                    "templateVariablesScript": ""
-                                }
-                            },
-                            {
-                                "type": "UIListView",
-                                "config": {
-                                    "listClassName": "file-list",
-                                    "className": "file-item droppable-hide",
-                                    "viewType": "view",
-                                    "namedView": "singleFileListItemDetail",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "singleProjectFilesDetail.metadata.positions.content.modules.2.config.formatModuleScript.js",
-                                    "resolveItemScript": "return item",
-                                    "filterModulesScript": "singleProjectFilesDetail.metadata.positions.content.modules.2.config.filterModulesScript.js",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": "",
-                                    "getItemListScript": "return item.getDocuments();",
-                                    "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "",
-                                    "emptyNamedView": "emptyListView",
-                                    "filterItemsScript": "return true;",
-                                    "sortItemsScript": "",
-                                    "maxItems": "-1"
-                                }
-                            },
-                            {
-                                "type": "InlineHtml",
-                                "config": {
-                                    "className": "section-title",
-                                    "text": "Spatial Files",
-                                    "template": "",
-                                    "templateVariablesScript": ""
-                                }
-                            },
-                            {
-                                "type": "UIListView",
-                                "config": {
-                                    "listClassName": "file-list",
-                                    "className": "file-item droppable-hide",
-                                    "viewType": "view",
-                                    "namedView": "singleFileListItemDetail",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "singleProjectFilesDetail.metadata.positions.content.modules.4.config.formatModuleScript.js",
-                                    "resolveItemScript": "return item",
-                                    "filterModulesScript": "singleProjectFilesDetail.metadata.positions.content.modules.4.config.filterModulesScript.js",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": "",
-                                    "getItemListScript": "singleProjectFilesDetail.metadata.positions.content.modules.4.config.getItemListScript.js",
-                                    "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "",
-                                    "emptyNamedView": "emptyListView",
-                                    "filterItemsScript": "return true;",
-                                    "sortItemsScript": "",
-                                    "maxItems": "-1"
-                                }
-                            },
-                            {
-                                "type": "InlineHtml",
-                                "config": {
-                                    "className": "section-title",
-                                    "text": "Attachments\n",
-                                    "template": "",
-                                    "templateVariablesScript": ""
-                                }
-                            },
-                            {
-                                "type": "UIListView",
-                                "config": {
-                                    "listClassName": "file-list",
-                                    "className": "file-item droppable-hide",
-                                    "viewType": "view",
-                                    "namedView": "singleFileListItemDetail",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "singleProjectFilesDetail.metadata.positions.content.modules.6.config.formatModuleScript.js",
-                                    "resolveItemScript": "return item",
-                                    "filterModulesScript": "singleProjectFilesDetail.metadata.positions.content.modules.6.config.filterModulesScript.js",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": "",
-                                    "getItemListScript": "return item.getAttachments();",
-                                    "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "",
-                                    "emptyNamedView": "emptyListView",
-                                    "filterItemsScript": "return true;",
-                                    "sortItemsScript": "",
-                                    "maxItems": "-1"
-                                }
-                            },
-                            {
-                                "type": "InlineHtml",
-                                "config": {
-                                    "className": "section-title",
                                     "text": "Tasks With Attachments",
                                     "template": "",
                                     "templateVariablesScript": ""
@@ -6323,7 +6206,7 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
-                                    "getItemListScript": "singleProjectFilesDetail.metadata.positions.content.modules.8.config.getItemListScript.js",
+                                    "getItemListScript": "singleProjectFilesDetail.metadata.positions.content.modules.2.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
                                     "formatListItemModuleScript": "",
                                     "emptyNamedView": "emptyListView",
@@ -6336,7 +6219,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectFilesDetail.metadata.positions.content.modules.9.config.script.js",
+                                    "script": "singleProjectFilesDetail.metadata.positions.content.modules.3.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
