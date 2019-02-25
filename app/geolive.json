@@ -8059,16 +8059,16 @@
                             "filesListForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 393,
-                            "y": 453
+                            "x": 403,
+                            "y": 463
                         },
                         "children": [
                             "filesListForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 353,
-                                    "y": 619
+                                    "x": 363,
+                                    "y": 629
                                 }
                             }
                         ],
@@ -8096,11 +8096,13 @@
                                                 "formOptions": "{}",
                                                 "showDeleteButton": false,
                                                 "deleteItemScript": "",
+                                                "initModuleScript": "",
                                                 "formatModuleScript": "filesListForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.formatModuleScript.js",
                                                 "resolveItemScript": "return item",
                                                 "filterModulesScript": "filesListForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.filterModulesScript.js",
                                                 "itemButtonsScript": "return [];",
                                                 "insertAtTop": false,
+                                                "targetName": "",
                                                 "getItemListScript": "return item.getFiles();",
                                                 "formatItemListScript": "return list;",
                                                 "formatListItemModuleScript": "",
@@ -8143,7 +8145,8 @@
             "templateName": "filesListForm",
             "widgetTitle": "filesListForm",
             "target": "filesListForm",
-            "readAccess": "public"
+            "readAccess": "public",
+            "resolveItemScript": "return item;"
         }
     },
     "widget.209": {

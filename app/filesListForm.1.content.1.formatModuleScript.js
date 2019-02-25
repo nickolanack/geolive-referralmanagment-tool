@@ -1,6 +1,6 @@
 
 //module.addEvent('load',function(){
-    new AjaxFileUploader(module.getElement(),{
+    (new AjaxFileUploader(module.getElement(),{
         types:["document", "video", "image", "audio"],
         selectFile:function(fileinfo, type){
             console.log(fileinfo);
@@ -12,7 +12,7 @@
         addElement:true,
         addInput:true,
         dragareaClassName:'drop-attachments'
-    });
+    })).getDragArea().appendChild(new Element('span', {"class":"add-btn"}));
 //})
 
 
