@@ -351,6 +351,7 @@ body.dragover .file-item.droppable-hide {
     left: calc( 50% - 10px );
     z-index: 1;
     background-size: 100%;
+        pointer-events: none;
 }
 
 
