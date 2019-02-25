@@ -64,6 +64,17 @@ foreach(['remove', 'edit', 'download'] as $fileFn){
 }
 
 
+$addIcon=$config->getParameter('fileUploadBtnIcon', array());
+    if(!empty($addIcon)){
+
+        ?>
+        .file-list .droppable:after {
+            background-image:url("<?php echo UrlFrom($addIcon.'?thumb=x>100y>100'); ?>");
+        }
+        <?php
+
+    }
+
 
 
 $menuIconDefault=$config->getParameter('defaultMenuIcon')[0];
