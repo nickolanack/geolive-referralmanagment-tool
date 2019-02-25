@@ -8189,9 +8189,9 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "singleTaskWithFilesDetail",
-            "target": "singleTaskWithFilesDetail",
-            "templateName": "singleTaskWithFilesDetail",
+            "widgetTitle": "deprecatedsingleTaskWithFilesDetail",
+            "target": "deprecatedsingleTaskWithFilesDetail",
+            "templateName": "deprecatedsingleTaskWithFilesDetail",
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
@@ -8203,7 +8203,7 @@
                     },
                     "content": {
                         "modules": [
-                            "singleTaskWithFilesDetail.metadata.positions.content.modules.0.json",
+                            "deprecatedsingleTaskWithFilesDetail.metadata.positions.content.modules.0.json",
                             {
                                 "type": "UIListView",
                                 "config": {
@@ -8218,9 +8218,9 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
-                                    "formatModuleScript": "singleTaskWithFilesDetail.metadata.positions.content.modules.1.config.formatModuleScript.js",
+                                    "formatModuleScript": "deprecatedsingleTaskWithFilesDetail.metadata.positions.content.modules.1.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
-                                    "filterModulesScript": "singleTaskWithFilesDetail.metadata.positions.content.modules.1.config.filterModulesScript.js",
+                                    "filterModulesScript": "deprecatedsingleTaskWithFilesDetail.metadata.positions.content.modules.1.config.filterModulesScript.js",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "getItemListScript": "return item.getFiles();",
