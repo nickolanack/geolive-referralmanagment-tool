@@ -6177,49 +6177,10 @@
                         "modules": [
                             "singleProjectFilesDetail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "InlineHtml",
-                                "config": {
-                                    "className": "section-title",
-                                    "text": "Tasks With Attachments",
-                                    "template": "",
-                                    "templateVariablesScript": ""
-                                }
-                            },
-                            {
-                                "type": "UIListView",
-                                "config": {
-                                    "listClassName": "file-list",
-                                    "className": "",
-                                    "viewType": "view",
-                                    "namedView": "singleTaskWithFilesDetail",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "return item",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": "",
-                                    "getItemListScript": "singleProjectFilesDetail.metadata.positions.content.modules.2.config.getItemListScript.js",
-                                    "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "",
-                                    "emptyNamedView": "emptyListView",
-                                    "filterItemsScript": "return true;",
-                                    "sortItemsScript": "",
-                                    "maxItems": "-1"
-                                }
-                            },
-                            {
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectFilesDetail.metadata.positions.content.modules.3.config.script.js",
+                                    "script": "singleProjectFilesDetail.metadata.positions.content.modules.1.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
