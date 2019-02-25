@@ -13766,17 +13766,20 @@
                                     "formOptions": "\"{}\"",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
-                                    "insertAtTop": false
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             },
                             {
                                 "type": "FormattedText",
                                 "config": {
                                     "textValueScript": "singleTaskOverviewDetail.metadata.positions.content.modules.3.config.textValueScript.js",
+                                    "formatModuleScript": "",
                                     "className": "",
                                     "imageWidth": 300,
                                     "imageHeight": 240,
@@ -13819,6 +13822,7 @@
                                     "inlineReplyNamedForm": "",
                                     "emptyMessage": "There are no entries",
                                     "channel": "default",
+                                    "resolveChannelScript": "return defaultChannel;",
                                     "resolveItemScript": "return item;",
                                     "initialPostsScript": "return null;",
                                     "namedView": "defaultPostDetail",
@@ -13849,11 +13853,13 @@
                                     "formOptions": "\"{}\"",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
                                     "formatModuleScript": "singleTaskOverviewDetail.metadata.positions.content.modules.7.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "singleTaskOverviewDetail.metadata.positions.content.modules.7.config.filterModulesScript.js",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
+                                    "targetName": "",
                                     "getItemListScript": "return item.getFiles();",
                                     "formatItemListScript": "return list;",
                                     "formatListItemModuleScript": "return item;",

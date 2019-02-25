@@ -1,4 +1,4 @@
-new AjaxFileUploader(module.getElement(),{
+(new AjaxFileUploader(module.getElement(),{
         types:["document", "video", "image", "audio"],
         selectFile:function(fileinfo, type){
             console.log(fileinfo);
@@ -10,4 +10,4 @@ new AjaxFileUploader(module.getElement(),{
         addElement:true,
         addInput:true,
         dragareaClassName:'drop-attachments'
-    })
+    })).getDragArea().appendChild(new Element('span', {"class":"add-btn"}));
