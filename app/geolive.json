@@ -4308,6 +4308,15 @@
                 },
                 {
                     "type": "images",
+                    "name": "fileUploadBtnIcon",
+                    "default": [],
+                    "label": "fileUploadBtnIcon",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
                     "name": "surveyMenuIcon",
                     "default": [],
                     "label": "surveyMenuIcon",
@@ -4427,7 +4436,8 @@
             ],
             "gatherLogo": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/MXD_jeC_XXY_%5BImAgE%5D_%5BG%5D.png"
-            ]
+            ],
+            "fileUploadBtnIcon": []
         }
     },
     "widget.154": {
