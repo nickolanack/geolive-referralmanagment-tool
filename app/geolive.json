@@ -14575,5 +14575,14 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.317": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: add.proposal.agreements",
+            "widgetTitle": "activityfeed.add.proposal.agreements.text",
+            "target": "activityfeed.add.proposal.agreements.text"
+        }
     }
 }
