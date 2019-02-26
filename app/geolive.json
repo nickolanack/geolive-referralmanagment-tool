@@ -2568,6 +2568,21 @@
                     "default": "rgb(0,0,0)",
                     "label": "permit tint"
                 },
+                "letter": {
+                    "type": "images",
+                    "name": "letter",
+                    "default": [],
+                    "label": "letter",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                "letterTint": {
+                    "type": "color",
+                    "name": "letterTint",
+                    "default": "rgb(0,0,0)",
+                    "label": "letter tint"
+                },
                 "agreement": {
                     "type": "images",
                     "name": "agreement",
@@ -2742,7 +2757,9 @@
             "mediumHover": "rgb(167, 167, 0)",
             "mediumSelected": "rgb(206, 206, 0)",
             "formatParametersScript": "return $parameters;",
-            "formatOutputScript": "return $parameters;"
+            "formatOutputScript": "return $parameters;",
+            "letter": [],
+            "letterTint": "rgb(0,0,0)"
         }
     },
     "widget.135": {
