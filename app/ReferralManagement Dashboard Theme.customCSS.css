@@ -154,6 +154,12 @@ li.menu-project-discussion.withPosts:after {
     margin-right:7px
 }
 
+
+.WizardButton.btn.cancel {
+    float: left;
+    background-color: crimson;
+}
+
 label.boolean-field p {
     display: inline-block;
     margin-left: 10px;
