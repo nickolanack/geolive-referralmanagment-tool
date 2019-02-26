@@ -418,6 +418,9 @@ body.dragover .file-item.droppable-hide {
     background-repeat: no-repeat;
 }
 
+.with-mediaTypeIcon img {
+    display: none;
+}
 
 .file-item button {
     height: 20px;
