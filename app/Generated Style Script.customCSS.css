@@ -72,18 +72,32 @@ $config=new core\Configuration('iconset');
 }
 <?php
 $config=new core\Configuration('documentTypes');
+
+
+
 ?>
+
 .upload-btns span.document{
     background-image: url("<?php echo UrlFrom($config->getParameter('document')[0])."?tint=".$config->getParameter("documentTint","rgb(0,0,0)"); ?>");
 }
 
-.add-permits .upload-btns span.document{
-    background-image: url("<?php echo UrlFrom($config->getParameter('permit')[0])."?tint=".$config->getParameter("permitTint","rgb(0,0,0)"); ?>");
+<?php 
+
+foreach(array("permit", "agreement", "letter", "document", "spatial", "other") as $type){
+    
+   ?>
+   
+    .add-<?php echo $type;?>s .upload-btns span.document{
+        background-image: url("<?php echo UrlFrom($config->getParameter($type)[0])."?tint=".$config->getParameter($type."Tint","rgb(0,0,0)"); ?>");
+    }
+   
+   <?php 
+    
 }
 
-.add-agreements .upload-btns span.document{
-    background-image: url("<?php echo UrlFrom($config->getParameter('agreement')[0])."?tint=".$config->getParameter("agreementTint","rgb(0,0,0)"); ?>");
-}
+
+
+?>
 
 .add-spatial .upload-btns span.document, .add-spatial .upload-btns span.layer.noIcon{
     background-image: url("<?php echo UrlFrom($config->getParameter('spatial')[0])."?tint=".$config->getParameter("spatialTint","rgb(0,0,0)"); ?>");
