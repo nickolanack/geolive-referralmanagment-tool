@@ -412,6 +412,12 @@ body.dragover .file-item.droppable-hide {
     font-size: 12px;
 }
 
+.file-container {
+    background-size: 60%;
+    background-position: center 13px;
+    background-repeat: no-repeat;
+}
+
 
 .file-item button {
     height: 20px;
