@@ -2702,11 +2702,11 @@
                 }
             },
             "permit": [
-                "webresources\/config-134\/b0ab2.Toh_KCW_[ImAgE]_b7H_[G].png"
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_lus_Srm_wJ2_%5BG%5D.png"
             ],
             "permitTint": "rgb(255, 255, 255)",
             "agreement": [
-                "webresources\/config-134\/9c527.IGt_rEw_N6h_[ImAgE]_[G].png"
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/%5BG%5D_%5BImAgE%5D_A6F_M9f_z4z.png"
             ],
             "agreementTint": "rgb(255, 255, 255)",
             "document": [
@@ -2714,7 +2714,7 @@
             ],
             "documentTint": "rgb(255, 255, 255)",
             "spatial": [
-                "webresources\/config-134\/b40cb.[ImAgE]_vOb_tnQ_[G]_d4c.png"
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/Bpe_%5BG%5D_Lzf_7aH_%5BImAgE%5D.png"
             ],
             "spatialTint": "rgb(255, 255, 255)",
             "widgetTitle": "Proposal Item Icons",
@@ -14583,6 +14583,15 @@
             "contentTemplate": "event: add.proposal.agreements",
             "widgetTitle": "activityfeed.add.proposal.agreements.text",
             "target": "activityfeed.add.proposal.agreements.text"
+        }
+    },
+    "widget.318": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: add.proposal.documents",
+            "widgetTitle": "activityfeed.add.proposal.documents.text",
+            "target": "activityfeed.add.proposal.documents.text"
         }
     }
 }
