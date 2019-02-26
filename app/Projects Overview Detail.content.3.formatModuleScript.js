@@ -1,5 +1,5 @@
 
-ProjectTeam.CurrentTeam.runOnceOnLoad(function(team){
+ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
     
     module.addWeakEvent(team, 'addProject', function(){
         var el=module.getElement();
