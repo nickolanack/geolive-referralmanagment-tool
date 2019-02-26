@@ -23,7 +23,7 @@ var chart=new BarChartModule({data:function(callback){
     }})
 
 return new ModuleArray([
-    new ElementModule("label",{html:"Project Activity"}),
+    new ElementModule("label",{html:"Project activity"}),
     activityLabel,
     chart
 ],{"class":"inline-list-item timesheets-list-item-icon"});
