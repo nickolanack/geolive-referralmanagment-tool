@@ -90,6 +90,11 @@ foreach(array("permit", "agreement", "letter", "document", "spatial", "other") a
     .add-<?php echo $type;?>s .upload-btns span.document{
         background-image: url("<?php echo UrlFrom($config->getParameter($type)[0])."?tint=".$config->getParameter($type."Tint","rgb(0,0,0)"); ?>");
     }
+    
+    .file-list.<?php echo $type;?>s .file-container{
+        background-image: url("<?php echo UrlFrom($config->getParameter($type)[0])."?tint=".$config->getParameter($type."Tint","rgb(0,0,0)"); ?>");
+
+    }
    
    <?php 
     
