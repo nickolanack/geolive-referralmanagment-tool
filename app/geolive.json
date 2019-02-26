@@ -2628,6 +2628,21 @@
                     "default": "rgb(0,0,0)",
                     "label": "spatial tint"
                 },
+                "other": {
+                    "type": "images",
+                    "name": "other",
+                    "default": [],
+                    "label": "other",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                "otherTint": {
+                    "type": "color",
+                    "name": "otherTint",
+                    "default": "rgb(0,0,0)",
+                    "label": "other tint"
+                },
                 "flag": {
                     "type": "images",
                     "name": "flag",
@@ -2759,7 +2774,9 @@
             "formatParametersScript": "return $parameters;",
             "formatOutputScript": "return $parameters;",
             "letter": [],
-            "letterTint": "rgb(0,0,0)"
+            "letterTint": "rgb(0,0,0)",
+            "other": [],
+            "otherTint": "rgb(0,0,0)"
         }
     },
     "widget.135": {
