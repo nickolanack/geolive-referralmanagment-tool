@@ -2350,6 +2350,25 @@ ul.user-roles:hover>li.active {
     margin-right: 10px;
 }
 
+.user-item .is-online:after, .user-item .is-offline:after, .user-item .is-unknown:after {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    bottom: 9px;
+    left: 7px;
+    background: limegreen;
+    border-radius: 100%;
+    box-shadow:0 0 2px black
+}
+.user-item .is-offline:after{
+    background: crimson;
+}
+.user-item .is-unknown:after {
+    background: grey;
+}
+
+
 
 .user-item .field-value-module {
     margin-right: 10px;
