@@ -14706,7 +14706,17 @@
         "name": "Article",
         "instance": "Article",
         "parameters": {
-            "target": "none"
+            "target": "privacy",
+            "className": "",
+            "articleHtml": "",
+            "articleCSS": "",
+            "articleScript": "",
+            "articleTitle": "Privacy Policy",
+            "templateVariablesScript": "",
+            "afterHeader": "<hr\/>",
+            "images": [],
+            "widgetTitle": "privacy",
+            "readAccess": "public"
         }
     }
 }
