@@ -62,6 +62,23 @@ foreach(['remove', 'edit', 'download'] as $fileFn){
 }
 
 
+
+foreach(['apple', 'google'] as $mobile){
+    $appIcon=$config->getParameter($mobile.'AppIcon', array());
+        if(!empty($appIcon)){
+
+        ?>
+            .<?php echo mobile; ?-app-link{
+                
+                background-image:url("<?php echo UrlFrom($appIcon[0].'?thumb=x>200y>100'); ?>");
+            }
+       <?php  
+    }
+   
+    
+    
+}
+
 $addIcon=$config->getParameter('fileUploadBtnIcon', array());
     if(!empty($addIcon)){
 
