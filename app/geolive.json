@@ -14689,7 +14689,17 @@
         "name": "Article",
         "instance": "Article",
         "parameters": {
-            "target": "none"
+            "target": "terms",
+            "className": "",
+            "articleHtml": "",
+            "articleCSS": "",
+            "articleScript": "",
+            "articleTitle": "Terms of Use",
+            "templateVariablesScript": "",
+            "afterHeader": "<hr\/>",
+            "images": [],
+            "widgetTitle": "terms",
+            "readAccess": "public"
         }
     },
     "widget.320": {
