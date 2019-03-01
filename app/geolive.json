@@ -4373,6 +4373,24 @@
                 },
                 {
                     "type": "images",
+                    "name": "googleAppIcon",
+                    "default": [],
+                    "label": "googleAppIcon",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "appleAppIcon",
+                    "default": [],
+                    "label": "appleAppIcon",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
                     "name": "discussionIllustration",
                     "default": [],
                     "label": "discussionIllustration",
@@ -4477,7 +4495,9 @@
             ],
             "fileUploadBtnIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_%5BG%5D_yv_Xj5_vwP.png"
-            ]
+            ],
+            "googleAppIcon": [],
+            "appleAppIcon": []
         }
     },
     "widget.154": {
