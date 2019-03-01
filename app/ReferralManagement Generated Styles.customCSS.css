@@ -68,7 +68,7 @@ foreach(['apple', 'google'] as $mobile){
         if(!empty($appIcon)){
 
         ?>
-            .<?php echo mobile; ?-app-link{
+            .<?php echo mobile; ?>-app-link{
                 
                 background-image:url("<?php echo UrlFrom($appIcon[0].'?thumb=x>200y>100'); ?>");
             }
