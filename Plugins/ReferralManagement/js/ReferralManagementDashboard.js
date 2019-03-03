@@ -141,7 +141,13 @@ var ReferralManagementDashboard = {
 				"namedView": view
 			});
 
+
+
+
 		}
+
+
+		
 
 		var checkUserRole = function(team) {
 
@@ -154,6 +160,7 @@ var ReferralManagementDashboard = {
 				var user = team.getUser(AppClient.getId());
 				if (user.isTeamMember()) {
 					loadView("dashboardContent");
+					
 					return;
 				}
 
@@ -275,7 +282,7 @@ var ReferralManagementDashboard = {
 
 			} else {
 
-				popover(label);
+				popover(label+ '<br/><span style="color:#ceb250;">you do not have permission<br/>to set users role</span>');
 
 			}
 		}
@@ -289,7 +296,6 @@ var ReferralManagementDashboard = {
 
 	},
 
-	
 
 
 	renderCalendar: function(viewer, element, parentModule) {
@@ -1154,7 +1160,7 @@ var ReferralManagementDashboard = {
 
 
 		var div = new ElementModule('div', {
-			"class": "content user-profile-icon"
+			"class": "content user-profile-icon for-user-"+((item.getUserId || item.getId).bind(item)())
 		});
 		var span = new Element('span');
 		div.appendChild(span);
@@ -1168,6 +1174,38 @@ var ReferralManagementDashboard = {
 			"background-size": "cover",
 			"background-image": "url(" + defaultIcon + ")"
 		});
+
+
+
+		var setItemOnlineStatus=function(){
+			var el=div.getElement().parentNode;
+			el.removeClass('is-online');
+			el.removeClass('is-offline');
+			el.removeClass('is-unknown');
+
+			if(!item.showsOnline()){
+				el.addClass('is-unknown');
+				return;
+			}
+
+			if(item.isOnline()){
+				el.addClass('is-online');
+				return;
+			}
+
+			el.addClass('is-offline');
+			
+
+
+
+		}
+		//setItemOnlineStatus();
+
+		div.runOnceOnLoad(function(){
+			div.addWeakEvent(item, 'onlineStatusChanged', setItemOnlineStatus);
+			setItemOnlineStatus();
+		});
+
 
 		if (ProjectTeam.CurrentTeam().hasUser((item.getUserId || item.getId).bind(item)())) {
 
@@ -1192,6 +1230,11 @@ var ReferralManagementDashboard = {
 
 
 		}).execute();
+
+
+		
+		
+
 
 		return div;
 
@@ -1420,6 +1463,24 @@ var ReferralManagementDashboard = {
 	},
 
 
+	getUsersMobileDevicesDescription: function() {
+
+
+
+		var title='';
+
+		
+		var text='You can download the Wabun Community App for your mobile phone on the '+
+		'<a class="apple-app-link" href="https://testflight.apple.com/join/dGJFXTKB" >Apple Store</a> and on '+
+		'<a class="google-app-link" href="https://play.google.com/store/apps/details?id=org.wabun.com">Google Play</a>.<br/> '+
+		'Mobile users will appear below when they have added a valid email address and self identified thier community';
+
+		return "<p class=\"\">" + title+text + "</p>";
+
+	},
+
+
+
 
 	createGuestDashboardNavigationController: function() {
 		return new NavigationMenuModule({
@@ -1568,6 +1629,197 @@ var ReferralManagementDashboard = {
 
 	},
 
+
+	
+
+	getProjectFileSections:function(project){
+
+		var sections= [
+			{
+				label:"Letters",
+				formatModule:function(module){
+
+					module.getElement().addClass('letters');
+
+					(new AjaxFileUploader(module.getElement(), {
+						types: ["document"],
+						selectFile: function(fileinfo, type) {
+							console.log(fileinfo);
+							console.log(type);
+
+							project.addLetter(fileinfo);
+							module.redraw();
+						},
+						addElement: true,
+						addInput: true,
+						dragareaClassName: 'drop-letters'
+					})).getDragArea().appendChild(new Element('span', {"class":"add-btn"}));
+				},
+				getItems:function(){
+					return project.getProjectLetterDocuments();
+				}
+			},
+			{
+				label:"Permits",
+				formatModule:function(module){
+
+					module.getElement().addClass('permits');
+
+					(new AjaxFileUploader(module.getElement(), {
+						types: ["document"],
+						selectFile: function(fileinfo, type) {
+							console.log(fileinfo);
+							console.log(type);
+
+							project.addPermit(fileinfo);
+							module.redraw();
+						},
+						addElement: true,
+						addInput: true,
+						dragareaClassName: 'drop-permits'
+					})).getDragArea().appendChild(new Element('span', {"class":"add-btn"}));
+				},
+				getItems:function(){
+					return project.getPermitDocuments();
+				}
+			},
+			{
+				label:"Agreements",
+				formatModule:function(module){
+
+					module.getElement().addClass('agreements');
+
+					(new AjaxFileUploader(module.getElement(), {
+						types: ["document"],
+						selectFile: function(fileinfo, type) {
+							console.log(fileinfo);
+							console.log(type);
+
+							project.addAgreement(fileinfo);
+							module.redraw();
+						},
+						addElement: true,
+						addInput: true,
+						dragareaClassName: 'drop-agreements'
+					})).getDragArea().appendChild(new Element('span', {"class":"add-btn"}));
+
+				},
+				getItems:function(){
+					return project.getAgreementDocuments();
+				}
+			},
+			{
+				label:"Documents",
+				formatModule:function(module){
+
+					module.getElement().addClass('documents');
+
+					(new AjaxFileUploader(module.getElement(), {
+						types: ["document"],
+						selectFile: function(fileinfo, type) {
+							console.log(fileinfo);
+							console.log(type);
+
+							project.addAdditionalDocument(fileinfo);
+							module.redraw();
+						},
+						addElement: true,
+						addInput: true,
+						dragareaClassName: 'drop-documents'
+					})).getDragArea().appendChild(new Element('span', {"class":"add-btn"}));
+				},
+				getItems:function(){
+					return project.getAdditionalDocuments();
+				}
+			},
+			{
+				label:"Spatial",
+				formatModule:function(module){
+
+					module.getElement().addClass('spatial');
+					module.getElement().addEvent('click',function(e){
+						e.stop();
+
+						//module.application.getNamedValue('projectMenuController').navigateTo("Map", "Project");
+
+					});
+
+					(new AjaxFileUploader(module.getElement(),{
+				        types:["document"],
+				        selectFile:function(fileinfo, type){
+				            console.log(fileinfo);
+				            console.log(type);
+				            
+				            project.addSpatial(fileinfo);
+				            module.redraw();
+				        },
+				        addElement:true,
+				        addInput:true,
+				        dragareaClassName:'drop-spatial'
+				    })).getDragArea().appendChild(new Element('span', {"class":"add-btn"}));
+				},
+				getItems:function(){
+					return project.getSpatialDocuments();
+				}
+			},
+			{
+				label:"Other documents",
+				formatModule:function(module){
+
+					module.getElement().addClass('other-documents');
+
+					(new AjaxFileUploader(module.getElement(),{
+				        types:["document", "image", "audio", "video"],
+				        selectFile:function(fileinfo, type){
+				            console.log(fileinfo);
+				            console.log(type);
+				            
+				            project.addAttachment(fileinfo);
+				            module.redraw();
+				        },
+				        addElement:true,
+				        addInput:true,
+				        dragareaClassName:'drop-documents'
+				    })).getDragArea().appendChild(new Element('span', {"class":"add-btn"}));
+				},
+				getItems:function(){
+					return project.getAttachments();
+				}
+			}
+
+
+
+
+
+
+
+
+		];
+
+		var taskFiles=project.getTasks().filter(function(t){return t.hasAttachments();});
+		if(taskFiles.length){
+			sections.push({
+					label:"Attachments from tasks",
+					formatModule:function(module){
+						
+					},
+					getItems:function(){
+						var files=[];
+						project.getTasks().filter(function(t){return t.hasAttachments();}).forEach(function(task){
+							files=files.concat(task.getFiles());
+						})
+
+						return files;
+					}
+				});
+		}
+
+
+		return sections;
+
+
+	},
+
 	getFileModule: function(file, typeName) {
 
 		/*File*/
@@ -1612,8 +1864,8 @@ var ReferralManagementDashboard = {
 				type = 'document';
 			}
 
-			if(!typeName){
-				typeName=type;
+			if (!typeName) {
+				typeName = type;
 			}
 
 			if ((['audio', 'video', 'image', 'document']).indexOf(type) >= 0) {
@@ -1623,7 +1875,7 @@ var ReferralManagementDashboard = {
 						textQuery: function(callback) {
 							callback(file);
 						},
-						"class":typeName
+						"class": typeName
 					})).load(null, container, null);
 				}
 				if (type == 'video') {
@@ -1631,7 +1883,7 @@ var ReferralManagementDashboard = {
 						textQuery: function(callback) {
 							callback(file);
 						},
-						"class":typeName,
+						"class": typeName,
 						width: 100,
 						height: 100
 					})).load(null, container, null);
@@ -1641,7 +1893,7 @@ var ReferralManagementDashboard = {
 						textQuery: function(callback) {
 							callback(file);
 						},
-						"class":typeName,
+						"class": typeName,
 						width: 100,
 						height: 100
 					})).load(null, container, null);
@@ -1651,9 +1903,10 @@ var ReferralManagementDashboard = {
 						textQuery: function(callback) {
 							callback(file);
 						},
-						"class":typeName,
+						"class": typeName,
 						width: 100,
-						height: 100
+						height: 100,
+						download: false,
 					})).load(null, container, null);
 				}
 
@@ -1686,7 +1939,8 @@ var ReferralManagementDashboard = {
 			new ElementModule('button', {
 				"class": "download-btn",
 				events: {
-					click: function() {
+					click: function(e) {
+
 						window.open(listItem, 'Download');
 					}
 				}

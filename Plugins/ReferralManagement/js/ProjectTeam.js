@@ -42,13 +42,34 @@ var ProjectTeam = (function() {
 
 	var DeviceListQuery = new Class({
 		Extends: AjaxControlQuery,
-		initialize: function(team) {
+		initialize: function() {
 			this.parent(CoreAjaxUrlRoot, 'list_devices', {
 				plugin: 'ReferralManagement',
-				team: team
 			});
 		}
 	});
+
+
+	var DevicesOnlineQuery = new Class({
+		Extends: AjaxControlQuery,
+		initialize: function() {
+			this.parent(CoreAjaxUrlRoot, 'devices_online', {
+				plugin: 'ReferralManagement'
+			});
+		}
+	});
+
+
+	var UsersOnlineQuery = new Class({
+		Extends: AjaxControlQuery,
+		initialize: function() {
+			this.parent(CoreAjaxUrlRoot, 'users_online', {
+				plugin: 'ReferralManagement'
+			});
+		}
+	});
+
+
 
 
 
@@ -291,12 +312,12 @@ var ProjectTeam = (function() {
 		},
 		_loadDevices:function(){
 			var me=this;
-			(new DeviceListQuery(me.getId())).addEvent('success', function(resp) {
+			(new DeviceListQuery()).addEvent('success', function(resp) {
 
 
 				me._devices=[];
 				resp.results.forEach(function(user) {
-					me._addDevice(data); 
+					me._addDevice(user); 
 				});
 
 				if (resp.subscription) {
@@ -306,10 +327,34 @@ var ProjectTeam = (function() {
                 }
 
 
+                setInterval(me._updateDevicesOnlineAsync.bind(me), 60000);
+                me._updateDevicesOnlineAsync();
+                
+
 				me.fireEvent('loadDevices');
 
 			}).execute();
 
+		},
+		_updateDevicesOnlineAsync:function(){
+			var me=this;
+			(new DevicesOnlineQuery()).addEvent('success', function(resp) {
+
+            	resp.results.forEach(function(device){
+            		me.getDevice(device.id).setOnline(device.online);
+            	});
+
+            }).execute();
+		},
+		_updateUsersOnlineAsync:function(){
+			var me=this;
+			(new UsersOnlineQuery()).addEvent('success', function(resp) {
+
+            	resp.results.forEach(function(user){
+            		me.getUser(user.id).setOnline(user.online);
+            	});
+
+            }).execute();
 		},
 		_addUser:function(data){
 			var me=this;
@@ -330,6 +375,16 @@ var ProjectTeam = (function() {
 
 			if(data.id+""===AppClient.getId()+""){
 				me._currentClient=user;
+
+				AjaxControlQuery.Subscribe({
+					"channel": "user."+AppClient.getId(),
+					"event": "notifications",
+				}, function(message){
+
+
+
+				});
+
 			}
 
 			me._users.push(user);
@@ -377,6 +432,10 @@ var ProjectTeam = (function() {
 						me.fireEvent('loadUsers');
 						callback();
 
+						setInterval(me._updateUsersOnlineAsync.bind(me), 60000);
+               			me._updateUsersOnlineAsync();
+						
+
 					}).execute()
 
 
@@ -385,6 +444,9 @@ var ProjectTeam = (function() {
 
 				me.fireEvent('loadUsers');
 				callback();
+
+				setInterval(me._updateUsersOnlineAsync.bind(me), 60000);
+               	me._updateUsersOnlineAsync();
 
 			}).execute();
 

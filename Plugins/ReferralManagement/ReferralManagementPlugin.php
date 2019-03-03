@@ -55,6 +55,29 @@ core\EventListener {
 
 	}
 
+
+
+	public function getClientsUserList(){
+
+		$cacheName="ReferralManagement.userList.json";
+		$cacheData = HtmlDocument()->getCachedPage($cacheName);
+		if (!empty($cacheData)) {
+			$users=json_decode($cacheData);
+		}else{
+			$users=$this->listAllUsersMetadata();
+			HtmlDocument()->setCachedPage($cacheName, json_encode($users));
+		}
+
+
+		$users=array_values(array_filter($users, $this->shouldShowUserFilter()));
+
+		//TODO: throttle this
+		(new \core\LongTaskProgress())->emit('onTriggerUpdateUserList', array());
+
+		return $users;
+
+	}
+
 	protected function onTriggerUpdateUserList($params) {
 
 		$cacheName = "ReferralManagement.userList.json";
@@ -69,6 +92,27 @@ core\EventListener {
 		}
 
 	}
+
+
+	public function getClientsDeviceList(){
+
+		$cacheName="ReferralManagement.deviceList.json";
+		$cacheData = HtmlDocument()->getCachedPage($cacheName);
+		if (!empty($cacheData)) {
+			$devices=json_decode($cacheData);
+		}else{
+			$devices=$this->listAllDevicesMetadata();
+			HtmlDocument()->setCachedPage($cacheName, json_encode($devices));
+		}
+
+		$devices=array_values(array_filter($devices, $this->shouldShowDeviceFilter()));
+
+		//TODO: throttle this
+		(new \core\LongTaskProgress())->emit('onTriggerUpdateDevicesList', array());
+
+		return $devices;
+	}
+
 	protected function onTriggerUpdateDevicesList($params) {
 
 		$cacheName = "ReferralManagement.deviceList.json";
@@ -169,7 +213,7 @@ core\EventListener {
 
 	public function includeScripts() {
 
-		IncludeJS(__DIR__ . '/js/Dashboard.js');
+		IncludeJS(__DIR__ . '/js/ReferralManagementDashboard.js');
 		IncludeJS(__DIR__ . '/js/ReferralManagementUser.js');
 		IncludeJS(__DIR__ . '/js/UserTeamCollection.js');
 		IncludeJS(__DIR__ . '/js/Proposal.js');
@@ -857,7 +901,10 @@ core\EventListener {
 
 		return array_map(function ($u) {
 
+
 			$user = $this->getUsersMetadata($u);
+
+			$user['devices']=GetPlugin('Apps')->getUsersDeviceIds($u['id']);
 			return $user;
 
 		}, $list);

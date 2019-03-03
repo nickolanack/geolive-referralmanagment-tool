@@ -54,9 +54,7 @@
 
 
     "list_users": {
-        "validate": {
-            "checkKeys": []
-        }
+        "profile":true
     },
     "get_user": {
         "validate": {
@@ -66,11 +64,6 @@
         }
     },
     "list_devices": {
-        "validate": {
-            "checkKeys": [
-                "team"
-            ]
-        },
         "profile":true
     },
     "add_item_user": {
@@ -135,6 +128,14 @@
             "checkKeys": [
                 "id", "type", "documentType", "documentHtml"
             ]
+        }
+    },
+    "users_online": {
+        "validate": {
+        }
+    },
+    "devices_online": {
+        "validate": {
         }
     }
 }

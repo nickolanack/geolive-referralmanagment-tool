@@ -19,6 +19,23 @@ var ReferralManagementUser = new Class({
 			}
 			return me.options.metadata.name;
 		},
+		setOnline:function(online){
+			var me=this;
+			var changed=online!==me._online;
+			me._online=!!online;
+			if(changed){
+				me.fireEvent('onlineStatusChanged',[online]);
+			}
+			return me;
+		},
+		isOnline:function(){
+			var me=this;
+			return !!me._online;
+		},
+		showsOnline:function(){
+			var me=this;
+			return !(typeof me._online=="undefined");
+		},
 		getRoles: function() {
 			var me = this;
 			return me.options.metadata.roles;

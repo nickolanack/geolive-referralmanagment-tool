@@ -306,53 +306,24 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	protected function listUsers($json) {
 
-		$cacheName="ReferralManagement.userList.json";
-		$cacheData = HtmlDocument()->getCachedPage($cacheName);
-		if (!empty($cacheData)) {
-			$users=json_decode($cacheData);
-		}else{
-			$users=$this->getPlugin()->listAllUsersMetadata();
-			HtmlDocument()->setCachedPage($cacheName, json_encode($users));
-		}
-
-		$users=array_values(array_filter($users, $this->getPlugin()->shouldShowUserFilter()));
-
-
-		(new \core\LongTaskProgress())->emit('onTriggerUpdateUserList', array());
-
-
 		return array(
 			'subscription' => array(
 				'channel' => 'userlist',
 				'event' => 'update',
 			),
-			"results" =>$users //,
+			"results" =>$this->getPlugin()->getClientsUserList() //,
 			//"communities"=>$this->getPlugin()->listCommunities()
 		);
 	}
 
-	protected function listDevices($json) {
+	protected function listDevices() {
 
-
-		$cacheName="ReferralManagement.deviceList.json";
-		$cacheData = HtmlDocument()->getCachedPage($cacheName);
-		if (!empty($cacheData)) {
-			$devices=json_decode($cacheData);
-		}else{
-			$devices=$this->getPlugin()->listAllDevicesMetadata();
-			HtmlDocument()->setCachedPage($cacheName, json_encode($devices));
-		}
-
-		$devices=array_values(array_filter($devices, $this->getPlugin()->shouldShowDeviceFilter()));
-
-		(new \core\LongTaskProgress())->emit('onTriggerUpdateDevicesList', array());
-	
 		return array(
 			'subscription' =>array(
 				'channel' => 'devicelist',
 				'event' => 'update',
 			),
-			"results" => $devices
+			"results" => $this->getPlugin()->getClientsDeviceList()
 		);
 	}
 
@@ -718,6 +689,41 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		return $values;
 
+	}
+
+
+	protected function usersOnline(){
+
+		return array('results'=>array_map(function($user){
+
+			return array(
+				'id'=>(int) $user->id,
+				'online'=>GetClient()->isOnline($user->id)
+			);
+			
+		}, $this->getPlugin()->getClientsUserList()));
+		
+	}
+
+
+	protected function devicesOnline(){
+
+		return array('results'=>array_map(function($device){
+
+			$online=false;
+			foreach ($device->devices as $deviceId) {
+				$online=$online||GetPlugin('Apps')->isOnline($deviceId);
+			}
+
+
+			return array(
+				'id'=>(int) $device->id,
+				'devices'=>$device->devices,
+				'online'=>$online
+			);
+			
+		}, $this->getPlugin()->getClientsDeviceList()));
+		
 	}
 
 }

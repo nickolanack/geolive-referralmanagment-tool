@@ -705,8 +705,6 @@ var Proposal = (function() {
 				
 			}
 
-
-
 			return [];
 
 		},
