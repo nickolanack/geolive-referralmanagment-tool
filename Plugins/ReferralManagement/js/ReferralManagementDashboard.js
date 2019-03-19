@@ -208,12 +208,8 @@ var ReferralManagementDashboard = {
 			return allRoles.indexOf(r)
 		}));
 
-		var roles = allRoles.slice(0)
-
-
-		if (item.isDevice()) {
-			roles = [roles.pop()];
-		}
+		var communitiesUserCanEdit=ProjectTeam.GetCommunitiesUserCanEdit();
+		var itemsCommunity=item.getCommunity();
 
 		var addEmpty = false;
 		var foundActive = false;
@@ -242,6 +238,14 @@ var ReferralManagementDashboard = {
 			return ((rolesEditList.indexOf(r) >= 0 && clientsMinEditRoleIndex <= itemsMinRoleIndex) || (r == 'none' && rolesEditList.length));
 		}
 
+		var clientCanEditUserCommunity = function() {
+			return (communitiesUserCanEdit.indexOf(itemsCommunity) >= 0);
+		}
+
+
+
+
+
 		var addRole = function(r) {
 			var roleEl = el.appendChild(new Element('li', {
 				"class": "role-" + r
@@ -264,27 +268,42 @@ var ReferralManagementDashboard = {
 			}
 
 
-
-			if (clientCanEditUserRole(r)) {
-				addEmpty = true;
-				roleEl.addClass('selectable');
-				roleEl.addEvent('click', function() {
-					item.setRole(r, function() {
-						els.forEach(function(e) {
-							e.removeClass("active");
-						})
-						roleEl.addClass("active");
-					});
-				});
-
-				popover(label + '<br/><span style="color:cornflowerblue;">click to set users role</span>');
-
-
-			} else {
-
-				popover(label+ '<br/><span style="color:#ceb250;">you do not have permission<br/>to set users role</span>');
-
+			if(!clientCanEditUserCommunity()){
+				popover(label+ '<br/><span style="color:#ceb250;">you do not have permission<br/>to set user roles for this community</span>');
+				return;
 			}
+
+
+
+			if (!clientCanEditUserRole(r)) {
+				popover(label+ '<br/><span style="color:#ceb250;">you do not have permission<br/>to set users role</span>');
+				return;
+			}
+
+	
+
+			
+			addEmpty = true;
+			roleEl.addClass('selectable');
+			roleEl.addEvent('click', function() {
+				item.setRole(r, function() {
+					els.forEach(function(e) {
+						e.removeClass("active");
+					})
+					roleEl.addClass("active");
+				});
+			});
+
+			popover(label + '<br/><span style="color:cornflowerblue;">click to set users role</span>');
+
+
+			
+		}
+
+
+		var roles = ProjectTeam.GetAllRoles().slice(0);
+		if (item.isDevice()) {
+			roles = [roles.pop()];
 		}
 
 		roles.forEach(addRole);

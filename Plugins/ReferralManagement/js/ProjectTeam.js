@@ -985,6 +985,20 @@ var ProjectTeam = (function() {
 		];
 	}
 
+	ProjectTeam.GetCommunitiesUserCanEdit=function(){
+
+
+		var user=ProjectTeam.CurrentTeam().getUser(AppClient.getId());
+
+		var community=user.getCommunity();
+
+		if(community==="wabun"){
+			return ProjectTeam.GetAllCommunities();
+		}
+
+		return [community];
+	}
+
 	ProjectTeam.GetRolesUserCanAssign=function(){
 
 		if(AppClient.getUserType()=="admin"){

@@ -30,7 +30,7 @@ core\EventListener {
 	protected function onFacebookRegister($params) {
 
 		$photoUrl = 'https://graph.facebook.com/' . $params->fbuser->id . '/picture?type=large';
-		error_log($photoUrl);
+		//error_log($photoUrl);
 		GetPlugin('Attributes');
 		$icon = '<img src="' . $photoUrl . '" />';
 		(new \attributes\Record('userAttributes'))->setValues($params->user, "user", array(
@@ -51,7 +51,7 @@ core\EventListener {
 			return;
 		}
 
-		error_log($params->itemType);
+		//error_log($params->itemType);
 
 	}
 
@@ -753,7 +753,12 @@ core\EventListener {
 
 			return function ($userMetadata) use ($clientMetadata, $groupCommunity) {
 
-				if ($userMetadata->community === $groupCommunity || $userMetadata->community === $clientMetadata['community']) {
+				if ($clientMetadata['community'] === $groupCommunity ) {
+					$userMetadata->visibleBecuase = "your wabun";
+					return true;
+				}
+
+				if (/*$userMetadata->community === $groupCommunity ||*/ $userMetadata->community === $clientMetadata['community']) {
 					$userMetadata->visibleBecuase = "same community";
 					return true;
 				}
@@ -765,7 +770,19 @@ core\EventListener {
 
 		return function ($userMetadata) use ($clientMetadata, $managerRoles, $groupCommunity) {
 
-			if ($userMetadata->community === $groupCommunity || $userMetadata->community === $clientMetadata['community']) {
+
+			if ($clientMetadata['community'] === $groupCommunity ) {
+				$userMetadata->visibleBecuase = "your admin wabun";
+				return true;
+			}
+
+			// 
+			// if ($userMetadata->community === $groupCommunity) {
+			// 	$userMetadata->visibleBecuase = "they're wabun";
+			// 	return true;
+			// }
+
+			if ($userMetadata->community === $clientMetadata['community']) {
 				$userMetadata->visibleBecuase = "Same community";
 				return true;
 			}
@@ -825,7 +842,7 @@ core\EventListener {
 
 
 			if (in_array(strtolower($clientMetadata['community']), $nationsInvolved)) {
-				error_log("Your community is involved ".$item['id']);
+				//error_log("Your community is involved ".$item['id']);
 				$item['visibleBecuase'] = "Your community is involved";
 				return true;
 			}
