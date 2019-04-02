@@ -1,5 +1,8 @@
 <?php
 
+@deprecated
+
+
 $dir = __DIR__;
 while ((!file_exists($dir . DIRECTORY_SEPARATOR . 'core.php') && (!empty($dir)))) {
     $dir = dirname($dir);
@@ -87,7 +90,7 @@ foreach ($document->getPolygonNodes() as $polyNode) {
         $feature->setPath($coordinates);
 
         $feature->setLayerId(69);
-        MapController::StoreMapFeature($feature);
+        (new \spatial\FeatureLoader())->save($feature);
 
         echo "Created: " . print_r($feature, true) . "\n";
 
@@ -120,7 +123,7 @@ foreach ($document->getLineNodes() as $lineNode) {
         $feature->setPath($coordinates);
 
         $feature->setLayerId(69);
-        MapController::StoreMapFeature($feature);
+        (new \spatial\FeatureLoader())->save($feature);
 
         echo "Created: " . print_r($feature, true) . "\n";
 
@@ -152,7 +155,7 @@ foreach ($document->getMarkerNodes() as $markerNode) {
         $feature->setCoordinates($coordinates[0], $coordinates[1]);
 
         $feature->setLayerId(69);
-        MapController::StoreMapFeature($feature);
+        (new \spatial\FeatureLoader())->save($feature);
 
         echo "Created: " . print_r($feature, true) . "\n";
 
@@ -161,9 +164,9 @@ foreach ($document->getMarkerNodes() as $markerNode) {
         echo "Found: " . print_r($feature, true) . "\n";
     }
     $feature->setIcon('components/com_geolive/users_files/user_files_680/Uploads/[ImAgE]_wBJ_4IB_[G]_DLI.png');
-    //MapController::StoreMapFeature($feature);
+    //  (new \spatial\FeatureLoader())->save($feature);
 
-    //setAttributes($feature, $tableMetadata);
+    //  setAttributes($feature, $tableMetadata);
 
 }
 

@@ -66,7 +66,7 @@ class TusImportTask{
 
 			//}
 			if ($feature->getId() <= 0) {
-				//MapController::StoreMapFeature($feature);
+				//(new \spatial\FeatureLoader())->save($feature);
 			}
 
 			$savingCounter++;
