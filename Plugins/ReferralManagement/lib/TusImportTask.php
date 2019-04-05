@@ -60,7 +60,7 @@ class TusImportTask{
 
 		foreach ($features as $feature) {
 
-			//$existingFeature = MapController::GetFeatureWithName($feature->getName());
+			//$existingFeature = (new \spatial\FeatureLoader())->fromName(($feature->getName());
 			//if($existingFeature){
 
 

@@ -461,7 +461,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 	protected function getReserveMetadata($json) {
 
 		GetPlugin('Maps');
-		$marker = MapController::LoadMapItem($json->id);
+		$marker =(new \spatial\FeatureLoader())->fromId($json->id);
 
 		$str = $marker->getDescription();
 

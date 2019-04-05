@@ -40,7 +40,7 @@ class TUSImport {
 			$name = KmlDocument::GetNodeName($polyNode, 'Unknown');
 			$description = KmlDocument::GetNodeDescription($polyNode, '');
 
-			$feature = MapController::GetFeatureWithName($name);
+			//$feature = (new \spatial\FeatureLoader())->fromName($name);
 
 			$feature = new Polygon();
 			$feature->setName($name);

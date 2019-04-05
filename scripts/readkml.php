@@ -81,8 +81,13 @@ foreach ($document->getPolygonNodes() as $polyNode) {
     $name = KmlDocument::GetNodeName($polyNode);
     $description = KmlDocument::GetNodeDescription($polyNode);
 
-    $feature = MapController::GetFeatureWithName($name);
-
+    $feature=false;
+    try{
+        $feature = (new \spatial\FeatureLoader())->fromName($name);
+        echo "Found: " . print_r($feature, true) . "\n";
+    }catch(\Exception $e){
+        //does not exist
+    }
     if (!$feature) {
         $feature = new Polygon();
         $feature->setName($name);
@@ -94,10 +99,8 @@ foreach ($document->getPolygonNodes() as $polyNode) {
 
         echo "Created: " . print_r($feature, true) . "\n";
 
-    } else {
+    } 
 
-        echo "Found: " . print_r($feature, true) . "\n";
-    }
     setAttributes($feature, $tableMetadata);
     //print_r(array_merge($style, array('coordinates' => $coordinates)));
 
@@ -114,7 +117,13 @@ foreach ($document->getLineNodes() as $lineNode) {
     $name = KmlDocument::GetNodeName($lineNode);
     $description = KmlDocument::GetNodeDescription($lineNode);
 
-    $feature = MapController::GetFeatureWithName($name);
+    $feature=false;
+    try{
+        $feature = (new \spatial\FeatureLoader())->fromName($name);
+         echo "Found: " . print_r($feature, true) . "\n";
+    }catch(\Exception $e){
+        //does not exist
+    }
 
     if (!$feature) {
         $feature = new Line();
@@ -127,9 +136,6 @@ foreach ($document->getLineNodes() as $lineNode) {
 
         echo "Created: " . print_r($feature, true) . "\n";
 
-    } else {
-
-        echo "Found: " . print_r($feature, true) . "\n";
     }
 
     setAttributes($feature, $tableMetadata);
@@ -146,7 +152,14 @@ foreach ($document->getMarkerNodes() as $markerNode) {
     $description = KmlDocument::GetNodeDescription($markerNode);
     $coordinates = KMLDocument::GetMarkerCoordinates($markerNode);
 
-    $feature = MapController::GetFeatureWithName($name);
+
+    $feature=false;
+    try{
+        $feature = (new \spatial\FeatureLoader())->fromName($name);
+        echo "Found: " . print_r($feature, true) . "\n";
+    }catch(\Exception $e){
+        //does not exist
+    }
 
     if (!$feature) {
         $feature = new Marker();
@@ -158,11 +171,8 @@ foreach ($document->getMarkerNodes() as $markerNode) {
         (new \spatial\FeatureLoader())->save($feature);
 
         echo "Created: " . print_r($feature, true) . "\n";
-
-    } else {
-
-        echo "Found: " . print_r($feature, true) . "\n";
     }
+    
     $feature->setIcon('components/com_geolive/users_files/user_files_680/Uploads/[ImAgE]_wBJ_4IB_[G]_DLI.png');
     //  (new \spatial\FeatureLoader())->save($feature);
 
