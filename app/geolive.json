@@ -14718,5 +14718,14 @@
             "widgetTitle": "privacy",
             "readAccess": "public"
         }
+    },
+    "widget.321": {
+        "name": "Article",
+        "instance": "Article",
+        "parameters": {
+            "articleTitle": "You did it! Thanks.",
+            "articleHtml": "",
+            "target": "Links.action-view.Article.onVerifyEmailLink"
+        }
     }
 }
