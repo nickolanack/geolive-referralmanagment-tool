@@ -183,9 +183,9 @@
         "events": []
     },
     "plugin.32": {
-        "name": "Pusher Message Server",
-        "instance": "PusherMessages",
-        "parameters": "_PusherMessages.json"
+        "name": "Message Subscription Server",
+        "instance": "MessageSystem",
+        "parameters": "_MessageSystem.json"
     },
     "plugin.33": {
         "name": "Language",
@@ -233,7 +233,7 @@
         "parameters": {
             "clientSecretUrl": "XXXX-XXXX",
             "clientPublicUrl": "https:\/\/c09fa0b2d21146beadbbba9f59dc6710@sentry.io\/168882",
-            "enabled": false,
+            "enabled": true,
             "enabledFrontEnd": false
         }
     },
@@ -296,6 +296,8 @@
         "instance": "KeenIO",
         "parameters": {
             "enabled": false,
+            "exportData": true,
+            "exportDataPath": "{front}\/..\/export",
             "projectId": "5b22d68ac9e77c00012dfb07",
             "writeKey": "XXXX-XXXX",
             "readKey": "XXXX-XXXX",
@@ -2847,16 +2849,17 @@
         "name": "Custom Tile Control Script",
         "instance": "CustomTileControlScript",
         "parameters": {
-            "customScript": "Display Proposal Spatial Files.customScript.js",
-            "tileIcon": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/7qx_[ImAgE]_[G]_5sS_Itd.png"
-            ],
-            "hoverTip": "",
-            "className": "proposal-tile",
             "widgetTitle": "Display Proposal Spatial Files",
             "target": "forTheMap",
             "readAccess": "public",
-            "position": "TOP_RIGHT"
+            "position": "TOP_RIGHT",
+            "customScript": "Display Proposal Spatial Files.customScript.js",
+            "hoverTip": "",
+            "className": "proposal-tile",
+            "tileIcon": [
+                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/7qx_[ImAgE]_[G]_5sS_Itd.png"
+            ],
+            "subTileIcons": []
         }
     },
     "widget.143": {
@@ -14263,16 +14266,17 @@
         "name": "Custom Tile Control Script",
         "instance": "CustomTileControlScript",
         "parameters": {
+            "widgetTitle": "Heat Map Tile",
             "target": "forTheMap",
+            "readAccess": "public",
+            "position": "RIGHT_CENTER",
             "customScript": "Heat Map Tile.customScript.js",
+            "hoverTip": "",
+            "className": "",
             "tileIcon": [
                 "components\/com_geolive\/users_files\/user_files_680\/Uploads\/E6a_[ImAgE]_Wy0_[G]_UUb.png"
             ],
-            "hoverTip": "",
-            "className": "",
-            "widgetTitle": "Heat Map Tile",
-            "readAccess": "public",
-            "position": "RIGHT_CENTER"
+            "subTileIcons": []
         }
     },
     "widget.297": {
