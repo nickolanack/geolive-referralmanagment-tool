@@ -8,6 +8,7 @@
         
         GetWidget('plugin.Maps.Legend')->setScriptName('widget_'.$groupName)->setParameters(array(
             'showToggle'=>true,
+            "readAccess"=>"registered",
             'formatLegendScript'=>'
             
                 //(function(element, legend){
