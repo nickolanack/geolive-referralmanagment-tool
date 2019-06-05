@@ -2434,6 +2434,10 @@ ul.user-roles:hover>li.active {
     pointer-events: none;
 }
 
+.is-offline .user-profile-icon {
+    filter: grayscale(1);
+}
+
 ul.inline-filter {
     display: block;
     width: 100%;
