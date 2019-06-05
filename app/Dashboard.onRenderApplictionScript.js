@@ -129,6 +129,7 @@ GetWidget('landsDepartmentMemberForm')->display($targetInstance);
 
 GetWidget('taskDetailPopover')->display($targetInstance);
 GetWidget('singleTaskOverviewDetail')->display($targetInstance);
+GetWidget('userInviteForm')->display($targetInstance);
 
 
 GetWidget('dialogForm')->display($targetInstance);
