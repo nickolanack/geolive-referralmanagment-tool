@@ -14756,5 +14756,12 @@
             "articleHtml": "",
             "target": "Links.action-view.Article.onVerifyEmailLink"
         }
+    },
+    "widget.322": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "target": "none"
+        }
     }
 }
