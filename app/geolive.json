@@ -12642,6 +12642,14 @@
                                     "sortItemsScript": "return b.getId()-a.getId();",
                                     "maxItems": "15"
                                 }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "communityMobileDetail.metadata.positions.content.modules.3.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
                             }
                         ]
                     },
