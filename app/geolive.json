@@ -5105,6 +5105,14 @@
                                     "sortItemsScript": "People Users Detail.metadata.positions.content.modules.3.config.sortItemsScript.js",
                                     "maxItems": "15"
                                 }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "People Users Detail.metadata.positions.content.modules.4.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
                             }
                         ]
                     },
