@@ -13,9 +13,9 @@
         "formatter": "none",
         "onRenderTextFieldScript": "",
         "formatValueScript": "",
-        "getValueScript": " return \"Hello World\"; ",
+        "getValueScript": " return \"\"; ",
         "updateValueScript": " object.value=value ",
-        "submitValueScript": "",
+        "submitValueScript": "wizardDataset.name=object.value;",
         "validateValueScript": " return defaultValidationFn() "
     }
 }
