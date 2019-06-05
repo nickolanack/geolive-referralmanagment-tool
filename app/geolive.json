@@ -9169,6 +9169,14 @@
                                     "sortItemsScript": "",
                                     "maxItems": "15"
                                 }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "communityUsersDetail.metadata.positions.content.modules.4.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
                             }
                         ]
                     },
