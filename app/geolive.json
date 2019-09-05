@@ -184,8 +184,8 @@
     },
     "plugin.32": {
         "name": "Pusher Message Server",
-        "instance": "PusherMessages",
-        "parameters": "_PusherMessages.json"
+        "instance": "MessageSystem",
+        "parameters": "_MessageSystem.json"
     },
     "plugin.33": {
         "name": "Language",

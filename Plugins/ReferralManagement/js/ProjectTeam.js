@@ -378,7 +378,7 @@ var ProjectTeam = (function() {
 
 				AjaxControlQuery.Subscribe({
 					"channel": "user."+AppClient.getId(),
-					"event": "notifications",
+					"event": "notification",
 				}, function(message){
 
 

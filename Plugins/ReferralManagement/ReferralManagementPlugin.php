@@ -24,8 +24,8 @@ core\EventListener {
 	use core\DatabaseProviderTrait;
 	use core\PluginDataTypeProviderTrait;
 	use core\EventListenerTrait;
-
 	use core\TemplateRenderer;
+	
 
 	protected function onFacebookRegister($params) {
 
@@ -291,6 +291,12 @@ core\EventListener {
 			return array();
 		}
 
+		return $this->getAllProjectsList($filter);
+
+	}
+
+	protected function getAllProjectsList($filter = array()){
+
 		$database = $this->getDatabase();
 		$results = $database->getAllProposals($filter);
 
@@ -308,7 +314,6 @@ core\EventListener {
 			return $project;
 
 		}, $results), function ($project) {return !!$project['visible'];}));
-
 	}
 
 	protected function availableProjectPermissions() {

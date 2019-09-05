@@ -11,6 +11,13 @@
  	"label":"Queue Email Delay",
  	"type":"input",
  	"default":"30"
+ },
+ {
+ 	"name":"exportSecret",
+ 	"label":"Export Secret",
+ 	"type":"input",
+ 	"default":""
+
  }
 
 ]

@@ -3,7 +3,7 @@
 /**
  * @package    Discussion Plugin
  * @subpackage Plugins
- * @license    GNU/GPL
+ * @license    MIT
  * @author	Nicholas Blackwell
  * @version	1.0
  *

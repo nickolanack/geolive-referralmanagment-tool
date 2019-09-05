@@ -4,7 +4,7 @@
  * @package    Geolive - Extensions
  * @subpackage Modules
  * @author	Nicholas Blackwell
- * @license Geolive (Extensions) by Nicholas Blackwell is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
+ 
  */
 class ListDocumentsModule extends Module implements core\PluginMember {
     

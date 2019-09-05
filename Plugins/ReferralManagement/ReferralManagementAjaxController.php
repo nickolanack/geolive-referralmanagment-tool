@@ -512,24 +512,28 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	}
 
-	protected function exportProposals(/*$json*/) {
-		GetPlugin('Attributes');
-		(new attributes\CSVExport())
+	protected function exportProposals($json) {
 
-			->addTableDefinition('proposal', $this->getPlugin()->getDatabase()->getTableName('proposal'))
-			->addFields(array(
-				'id' => 'proposal.id',
-				'uid' => 'proposal.user',
-				'created' => 'proposal.createdDate',
-				'modified' => 'proposal.modifiedDate',
-				'status' => 'proposal.status',
-			))
-			->addAllFieldsFromTable('proposalAttributes')
-			->printCsv();
 
+		include_once __DIR__.'/lib/Export.php';
+		$export=(new \ReferralManagement\Export());
+
+		if(key_exists('secret', $json)&&$json->secret===$this->getPlugin()->getParameter('exportSecret')){
+			$export->showAllProposals();
+		}
+
+		$export->exportProposals();
+
+		if(key_exists('format',$json)&&$json->format=='json'){
+			return $export->toArrayResult();
+		}
+
+		$export->printCsv();
 		exit();
 
 	}
+
+
 
 	protected function addItemUser($json) {
 
@@ -694,32 +698,50 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	protected function usersOnline(){
 
-		return array('results'=>array_map(function($user){
 
-			return array(
-				'id'=>(int) $user->id,
-				'online'=>GetClient()->isOnline($user->id)
-			);
-			
-		}, $this->getPlugin()->getClientsUserList()));
+		return array(
+			'results'=>GetClient()->isOnlineGroup(array_map(function($user){
+				return $user->id;
+			}, $this->getPlugin()->getClientsUserList()))
+		);
 		
 	}
 
 
 	protected function devicesOnline(){
 
-		return array('results'=>array_map(function($device){
-
-			$online=false;
-			foreach ($device->devices as $deviceId) {
-				$online=$online||GetPlugin('Apps')->isOnline($deviceId);
+		$deviceIds=array();
+		foreach($this->getPlugin()->getClientsDeviceList() as $user){
+			foreach($user->devices as $deviceId){
+				$deviceIds[]=$deviceId;
 			}
+		}
 
+		$devicesOnlineStatus=GetPlugin('Apps')->isOnlineGroup($deviceIds);
+
+
+
+
+		return array(
+			'extra'=>$devicesOnlineStatus,
+
+			'results'=>array_map(function($device)use($devicesOnlineStatus){
+
+			
+
+
+			$anyOnline=false;
+			foreach ($devicesOnlineStatus as $deviceStatus) {
+				if($deviceStatus->online&&in_array($deviceStatus->id, $device->devices)){
+					$anyOnline=true;
+					break;
+				}
+			}
 
 			return array(
 				'id'=>(int) $device->id,
 				'devices'=>$device->devices,
-				'online'=>$online
+				'online'=>$anyOnline
 			);
 			
 		}, $this->getPlugin()->getClientsDeviceList()));
