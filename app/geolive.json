@@ -84,7 +84,8 @@
             "googleMapsVersion": "",
             "tileCachePath": "{front}\/..\/tiles",
             "layerDisplayFilterScript": "",
-            "formatMapitemScript": "plugin.Maps.12.formatMapitemScript.js"
+            "formatMapitemScript": "plugin.Maps.12.formatMapitemScript.js",
+            "featureUrlScript": ""
         }
     },
     "plugin.13": {
@@ -151,7 +152,10 @@
                 "view": "plugin",
                 "plugin": "UserInterface",
                 "pluginView": "front"
-            }
+            },
+            "routes": [
+                "plugin.UserInterface.24.routes.0.json"
+            ]
         }
     },
     "plugin.28": {
@@ -4447,7 +4451,7 @@
                 "webresources\/config-153\/ed4ac.[G]_m3o_LN2_N63_[ImAgE].png"
             ],
             "applicationLogo": [
-                "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/CRA_zKL_%5BG%5D_%5BImAgE%5D_MnU.png"
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/MXD_jeC_XXY_%5BImAgE%5D_%5BG%5D.png"
             ],
             "formatOutputScript": "return $parameters;",
             "main-map": [
@@ -9206,19 +9210,19 @@
             "metadata": {
                 "title": "userAttributes",
                 "_tableDiagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 0,
+                    "y": 0
                 },
                 "_diagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 0,
+                    "y": 0
                 },
                 "appliesTo": [
                     "user"
                 ],
                 "_typeDiagramState": {
-                    "x": 100,
-                    "y": 300
+                    "x": 0,
+                    "y": 0
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -10402,19 +10406,19 @@
             "metadata": {
                 "title": "proposalAttributes",
                 "_tableDiagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 0,
+                    "y": 0
                 },
                 "_diagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 0,
+                    "y": 0
                 },
                 "appliesTo": [
                     "proposal"
                 ],
                 "_typeDiagramState": {
-                    "x": 100,
-                    "y": 300
+                    "x": 0,
+                    "y": 0
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -14174,9 +14178,11 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "Error",
+            "contentTemplate": "site-error-html.contentTemplate.html",
             "widgetTitle": "site.error.html",
-            "target": "site.error.html"
+            "target": "site.error.html",
+            "comments": "",
+            "readAccess": "public"
         }
     },
     "widget.284": {
