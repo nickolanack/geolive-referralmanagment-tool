@@ -220,7 +220,7 @@ core\EventListener {
 				var Community={
 
 					collective:<?php echo json_encode($this->$this->communityCollective()); ?>,
-					teams:[<?php echo json_encode($this->$this->communityCollective()); ?],
+					teams:[<?php echo json_encode($this->$this->communityCollective()); ?>],
 					territories:[<?php echo json_encode($this->$this->listTerritories()); ?],
 					communities:<?php echo json_encode($this->$this->listCommunities()); ?>
 
