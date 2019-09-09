@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * This is only used for local testing
+ */
+
+
 $configDBFile = __DIR__ . '/rmt-config.db';
 
 $config['configsource'] = function () use ($configDBFile) {

@@ -120,10 +120,13 @@ class User {
 	}
 
 	public function listTeams() {
-		return array("wabun", "beaverhouse", "brunswick house", "chapleau ojibway", "flying post", "matachewan", "mattagami");
+		return array($this->communityCollective(), "beaverhouse", "brunswick house", "chapleau ojibway", "flying post", "matachewan", "mattagami");
 	}
 	public function listCommunities() {
-		return array("wabun", "beaverhouse", "brunswick house", "chapleau ojibway", "flying post", "matachewan", "mattagami");
+		return array($this->communityCollective(), "beaverhouse", "brunswick house", "chapleau ojibway", "flying post", "matachewan", "mattagami");
+	}
+	public function listTerritories() {
+		return array("beaverhouse", "brunswick house", "chapleau ojibway", "flying post", "matachewan", "mattagami");
 	}
 	public function communityCollective() {
 		return "wabun";

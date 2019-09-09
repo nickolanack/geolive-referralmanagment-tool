@@ -213,6 +213,23 @@ core\EventListener {
 
 	public function includeScripts() {
 
+
+		IncludeJSBlock(function(){
+			?><script type="text/javascript">
+				
+				var Community={
+
+					collective:<?php echo json_encode($this->$this->communityCollective()); ?>,
+					teams:[<?php echo json_encode($this->$this->communityCollective()); ?],
+					territories:[<?php echo json_encode($this->$this->listTerritories()); ?],
+					communities:<?php echo json_encode($this->$this->listCommunities()); ?>
+
+				}
+
+
+			</script><?php
+		});
+
 		IncludeJS(__DIR__ . '/js/ReferralManagementDashboard.js');
 		IncludeJS(__DIR__ . '/js/ReferralManagementUser.js');
 		IncludeJS(__DIR__ . '/js/UserTeamCollection.js');
@@ -754,12 +771,12 @@ core\EventListener {
 
 		if (!$roles->userHasAnyOfRoles($roles->listManagerRoles())) {
 
-			//non managers can only see 'wabun users and thier own community users'
+			//non managers can only see 'collective/groupCommunity' users (ie wabun) and thier own community users'
 
 			return function ($userMetadata) use ($clientMetadata, $groupCommunity) {
 
 				if ($clientMetadata['community'] === $groupCommunity ) {
-					$userMetadata->visibleBecuase = "your wabun";
+					$userMetadata->visibleBecuase = "your ".$groupCommunity;
 					return true;
 				}
 
@@ -777,7 +794,7 @@ core\EventListener {
 
 
 			if ($clientMetadata['community'] === $groupCommunity ) {
-				$userMetadata->visibleBecuase = "your admin wabun";
+				$userMetadata->visibleBecuase = "your admin/".$groupCommunity;
 				return true;
 			}
 
@@ -840,8 +857,9 @@ core\EventListener {
 
 			$nationsInvolved=array_map(function ($community) {return strtolower($community);}, $nationsInvolved);
 			
-			if(!in_array('wabun', $nationsInvolved)){
-				$nationsInvolved[]='wabun';
+			$collective=$this->communityCollective();
+			if(!in_array($collective, $nationsInvolved)){
+				$nationsInvolved[]=$collective;
 			}
 
 
@@ -877,6 +895,9 @@ core\EventListener {
 	}
 	public function communityCollective() {
 		return (new \ReferralManagement\User())->communityCollective();
+	}
+	public function listTerritories() {
+		return (new \ReferralManagement\User())->listTerritories();
 	}
 
 	public function getLayersForGroup($name) {
