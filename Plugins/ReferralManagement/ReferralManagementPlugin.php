@@ -226,7 +226,7 @@ core\EventListener {
 					?>,
 					collective:<?php echo json_encode($this->communityCollective()); ?>,
 					teams:[<?php echo json_encode($this->communityCollective()); ?>],
-					territories:[<?php echo json_encode($this->listTerritories()); ?>],
+					territories:<?php echo json_encode($this->listTerritories()); ?>,
 					communities:<?php echo json_encode($this->listCommunities()); ?>
 
 				}
