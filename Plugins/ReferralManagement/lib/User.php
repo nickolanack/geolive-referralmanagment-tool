@@ -120,16 +120,24 @@ class User {
 	}
 
 	public function listTeams() {
-		return array($this->communityCollective(), "beaverhouse", "brunswick house", "chapleau ojibway", "flying post", "matachewan", "mattagami");
+		return $this->listCommunities();
 	}
 	public function listCommunities() {
-		return array($this->communityCollective(), "beaverhouse", "brunswick house", "chapleau ojibway", "flying post", "matachewan", "mattagami");
+		return array_merge(array($this->communityCollective()), $this->listTerritories());
 	}
 	public function listTerritories() {
-		return array("beaverhouse", "brunswick house", "chapleau ojibway", "flying post", "matachewan", "mattagami");
+		return GetWidget('communityConfiguration')->getParameter("communities");
 	}
 	public function communityCollective() {
-		return "wabun";
+
+		$collective = GetWidget('communityConfiguration')->getParameter("collective");
+
+		if($collective=="{subdomain}"){
+			$domain=HtmlDocument()->getDomain();
+			$collective=substr($domain, 0, strpos($domain, '.'));
+		}
+
+		return $collective;
 	}
 
 	protected function _withUserAttributes($attribs, $callbackFn) {
