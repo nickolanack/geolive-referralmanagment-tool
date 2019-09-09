@@ -1,0 +1,21 @@
+{
+    "type": "FormTextField",
+    "config": {
+        "className": "",
+        "label": "Users name",
+        "placeholder": "add name",
+        "lines": 1,
+        "maxChars": 0,
+        "mandatory": false,
+        "multiEntry": false,
+        "muliTemplate": "lines",
+        "multiMessage": "add another value",
+        "formatter": "none",
+        "onRenderTextFieldScript": "",
+        "formatValueScript": "",
+        "getValueScript": " return \"\"; ",
+        "updateValueScript": " object.value=value ",
+        "submitValueScript": "wizardDataset.name=object.value;",
+        "validateValueScript": " return defaultValidationFn() "
+    }
+}

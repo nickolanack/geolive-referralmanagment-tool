@@ -84,7 +84,8 @@
             "googleMapsVersion": "",
             "tileCachePath": "{front}\/..\/tiles",
             "layerDisplayFilterScript": "",
-            "formatMapitemScript": "plugin.Maps.12.formatMapitemScript.js"
+            "formatMapitemScript": "plugin.Maps.12.formatMapitemScript.js",
+            "featureUrlScript": ""
         }
     },
     "plugin.13": {
@@ -151,7 +152,10 @@
                 "view": "plugin",
                 "plugin": "UserInterface",
                 "pluginView": "front"
-            }
+            },
+            "routes": [
+                "plugin.UserInterface.24.routes.0.json"
+            ]
         }
     },
     "plugin.28": {
@@ -183,7 +187,7 @@
         "events": []
     },
     "plugin.32": {
-        "name": "Pusher Message Server",
+        "name": "Message Subscription Server",
         "instance": "MessageSystem",
         "parameters": "_MessageSystem.json"
     },
@@ -283,6 +287,7 @@
         "parameters": {
             "enableEmailNotifications": false,
             "queueEmailDelay": "5",
+            "exportSecret": "XXXX-XXXX",
             "customFormCss": ""
         }
     },
@@ -296,6 +301,8 @@
         "instance": "KeenIO",
         "parameters": {
             "enabled": false,
+            "exportData": true,
+            "exportDataPath": "{front}\/..\/export",
             "projectId": "5b22d68ac9e77c00012dfb07",
             "writeKey": "XXXX-XXXX",
             "readKey": "XXXX-XXXX",
@@ -2847,16 +2854,17 @@
         "name": "Custom Tile Control Script",
         "instance": "CustomTileControlScript",
         "parameters": {
-            "customScript": "Display Proposal Spatial Files.customScript.js",
-            "tileIcon": [
-                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/7qx_[ImAgE]_[G]_5sS_Itd.png"
-            ],
-            "hoverTip": "",
-            "className": "proposal-tile",
             "widgetTitle": "Display Proposal Spatial Files",
             "target": "forTheMap",
             "readAccess": "public",
-            "position": "TOP_RIGHT"
+            "position": "TOP_RIGHT",
+            "customScript": "Display Proposal Spatial Files.customScript.js",
+            "hoverTip": "",
+            "className": "proposal-tile",
+            "tileIcon": [
+                "components\/com_geolive\/users_files\/user_files_680\/Uploads\/7qx_[ImAgE]_[G]_5sS_Itd.png"
+            ],
+            "subTileIcons": []
         }
     },
     "widget.143": {
@@ -4443,7 +4451,7 @@
                 "webresources\/config-153\/ed4ac.[G]_m3o_LN2_N63_[ImAgE].png"
             ],
             "applicationLogo": [
-                "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/CRA_zKL_%5BG%5D_%5BImAgE%5D_MnU.png"
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/MXD_jeC_XXY_%5BImAgE%5D_%5BG%5D.png"
             ],
             "formatOutputScript": "return $parameters;",
             "main-map": [
@@ -5100,6 +5108,14 @@
                                     "filterItemsScript": "return true;",
                                     "sortItemsScript": "People Users Detail.metadata.positions.content.modules.3.config.sortItemsScript.js",
                                     "maxItems": "15"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "People Users Detail.metadata.positions.content.modules.4.config.script.js",
+                                    "description": "Info about my custom script"
                                 }
                             }
                         ]
@@ -9157,6 +9173,14 @@
                                     "sortItemsScript": "",
                                     "maxItems": "15"
                                 }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "communityUsersDetail.metadata.positions.content.modules.4.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
                             }
                         ]
                     },
@@ -9186,19 +9210,19 @@
             "metadata": {
                 "title": "userAttributes",
                 "_tableDiagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 0,
+                    "y": 0
                 },
                 "_diagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 0,
+                    "y": 0
                 },
                 "appliesTo": [
                     "user"
                 ],
                 "_typeDiagramState": {
-                    "x": 100,
-                    "y": 300
+                    "x": 0,
+                    "y": 0
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -10382,19 +10406,19 @@
             "metadata": {
                 "title": "proposalAttributes",
                 "_tableDiagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 0,
+                    "y": 0
                 },
                 "_diagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 0,
+                    "y": 0
                 },
                 "appliesTo": [
                     "proposal"
                 ],
                 "_typeDiagramState": {
-                    "x": 100,
-                    "y": 300
+                    "x": 0,
+                    "y": 0
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -12622,6 +12646,14 @@
                                     "sortItemsScript": "return b.getId()-a.getId();",
                                     "maxItems": "15"
                                 }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "communityMobileDetail.metadata.positions.content.modules.3.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
                             }
                         ]
                     },
@@ -14146,9 +14178,11 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "Error",
+            "contentTemplate": "site-error-html.contentTemplate.html",
             "widgetTitle": "site.error.html",
-            "target": "site.error.html"
+            "target": "site.error.html",
+            "comments": "",
+            "readAccess": "public"
         }
     },
     "widget.284": {
@@ -14263,16 +14297,17 @@
         "name": "Custom Tile Control Script",
         "instance": "CustomTileControlScript",
         "parameters": {
+            "widgetTitle": "Heat Map Tile",
             "target": "forTheMap",
+            "readAccess": "public",
+            "position": "RIGHT_CENTER",
             "customScript": "Heat Map Tile.customScript.js",
+            "hoverTip": "",
+            "className": "",
             "tileIcon": [
                 "components\/com_geolive\/users_files\/user_files_680\/Uploads\/E6a_[ImAgE]_Wy0_[G]_UUb.png"
             ],
-            "hoverTip": "",
-            "className": "",
-            "widgetTitle": "Heat Map Tile",
-            "readAccess": "public",
-            "position": "RIGHT_CENTER"
+            "subTileIcons": []
         }
     },
     "widget.297": {
@@ -14716,6 +14751,115 @@
             "afterHeader": "<hr\/>",
             "images": [],
             "widgetTitle": "privacy",
+            "readAccess": "public"
+        }
+    },
+    "widget.321": {
+        "name": "Article",
+        "instance": "Article",
+        "parameters": {
+            "articleTitle": "You did it! Thanks.",
+            "articleHtml": "",
+            "target": "Links.action-view.Article.onVerifyEmailLink"
+        }
+    },
+    "widget.322": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "target": "userInviteForm",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -18,
+                    "y": 171
+                },
+                "children": [
+                    "userInviteForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "userInviteForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 158,
+                            "y": 290
+                        },
+                        "children": [
+                            "userInviteForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 118,
+                                    "y": 456
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "userInviteForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "userInviteForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Users email address",
+                                                "placeholder": "add email",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return \"\"; ",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "userInviteForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "userInviteForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "widgetTitle": "userInviteForm",
+            "templateName": "userInviteForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "readAccess": "public"
         }
     }
