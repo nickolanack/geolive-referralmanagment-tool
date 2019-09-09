@@ -33,7 +33,7 @@ class Project {
 		$proposal = get_object_vars($result);
 
 		$proposal['userdetails'] = GetClient()->userMetadataFor((int) $proposal['user']);
-		$proposal['community']='wabun';
+		$proposal['community']=GetPlugin('ReferralManagement')->communityCollective();
 		//$proposal['']
 
 		$proposal['link'] = HtmlDocument()->website() . '/Projects/Project-' . $proposal['id'] . '/Overview';

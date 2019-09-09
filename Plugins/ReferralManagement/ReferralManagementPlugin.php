@@ -218,7 +218,12 @@ core\EventListener {
 			?><script type="text/javascript">
 				
 				var Community={
+					domain:<?php 
 
+					$domain=HtmlDocument()->getDomain()
+					echo json_encode(substr($domain, 0, strpos($domain, '.')));
+
+					?>,
 					collective:<?php echo json_encode($this->communityCollective()); ?>,
 					teams:[<?php echo json_encode($this->communityCollective()); ?>],
 					territories:[<?php echo json_encode($this->listTerritories()); ?>],

@@ -964,15 +964,7 @@ var ProjectTeam = (function() {
 	});
 
 	ProjectTeam.GetAllCommunities=function(){
-		return [
-			"wabun", 
-			"beaverhouse", 
-			"brunswick house", 
-			"chapleau ojibway", 
-			"flying post", 
-			"matachewan", 
-			"mattagami"
-		];
+		return Community.communities;
 	}
 
 	ProjectTeam.GetAllRoles=function(){
@@ -992,7 +984,7 @@ var ProjectTeam = (function() {
 
 		var community=user.getCommunity();
 
-		if(community==="wabun"){
+		if(community===Community.collective){
 			return ProjectTeam.GetAllCommunities();
 		}
 

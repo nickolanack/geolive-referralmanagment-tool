@@ -1025,12 +1025,12 @@ var Proposal = (function() {
 
 
 	Proposal.ListTeams=function(){
-		return ['wabun'];
+		return Community.teams;
 	}
 
 	Proposal.ListTerritories=function(){
 
-		return ["Beaverhouse", "Brunswick House", "Chapleau Ojibway", "Flying Post", "Matachewan", "Mattagami"];
+		return Community.territories.map(function(name){return String.capitalize.call(null, name)});
 	}
 	Proposal.ListOutcomes=function(){
 
