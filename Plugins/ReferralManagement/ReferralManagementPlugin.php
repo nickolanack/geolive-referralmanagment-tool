@@ -221,7 +221,7 @@ core\EventListener {
 					domain:<?php 
 
 					$domain=HtmlDocument()->getDomain();
-					echo json_encode(substr($domain, 0, strpos($domain, '.'));
+					echo json_encode(substr($domain, 0, strpos($domain, '.')));
 
 					?>,
 					collective:<?php echo json_encode($this->communityCollective()); ?>,
