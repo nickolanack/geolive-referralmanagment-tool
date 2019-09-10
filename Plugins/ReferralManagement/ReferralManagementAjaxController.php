@@ -750,8 +750,22 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 
 	protected function getServerConfig($json){
+
+		if(!key_exists('server', $json)){	
+			return $this->setError('Invalid server');
+		}
+
+		$server=$json->server;
+		$controller=\rmt\DomainController::SharedInstance();
+		if(!$controller){
+			return $this->setError("No controller exists");
+		}
+
+
+
+
 		return array(
-			'json'=>$json
+			'info'=>$controller->getDomainInfo($server);
 		);
 	}
 
