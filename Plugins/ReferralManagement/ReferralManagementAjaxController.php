@@ -765,7 +765,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 
 		return array(
-			'info'=>$controller->getDomainInfo($server);
+			'info'=>$controller->getDomainInfo($server)
 		);
 	}
 
