@@ -748,4 +748,11 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		
 	}
 
+
+	protected getServerConfig($json){
+		return array(
+			'json'=>$json
+		);
+	}
+
 }
