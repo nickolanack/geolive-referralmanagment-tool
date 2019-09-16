@@ -59,6 +59,8 @@ core\EventListener {
 
 	public function getClientsUserList(){
 
+		error_log("write cache: ".\GetPath('{cache}'));
+
 		$cacheName="ReferralManagement.userList.json";
 		$cacheData = HtmlDocument()->getCachedPage($cacheName);
 		if (!empty($cacheData)) {
@@ -67,7 +69,7 @@ core\EventListener {
 			$users=$this->listAllUsersMetadata();
 
 			HtmlDocument()->setCachedPage($cacheName, json_encode($users));
-			error_log("write cache: ".HtmlDocument()->getCachedPageFile($cacheName));
+
 		}
 
 
