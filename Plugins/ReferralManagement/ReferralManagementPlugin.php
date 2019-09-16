@@ -67,7 +67,7 @@ core\EventListener {
 			$users=$this->listAllUsersMetadata();
 
 			HtmlDocument()->setCachedPage($cacheName, json_encode($users));
-			error_log("write cache: ".HtmlDocument()->getCachedPageFile($cacheName))
+			error_log("write cache: ".HtmlDocument()->getCachedPageFile($cacheName));
 		}
 
 
