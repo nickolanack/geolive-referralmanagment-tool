@@ -94,6 +94,7 @@ core\EventListener {
 		if ($newData != $cacheData) {
 			$this->notifier()->onTeamUserListChanged($params->team);
 		}
+		Emit('onUpdateUserList', array());
 
 	}
 
@@ -130,6 +131,8 @@ core\EventListener {
 			$this->notifier()->onTeamDeviceListChanged($params->team);
 		}
 
+		Emit('onUpdateDevicesList', array());
+
 	}
 
 	protected function onCreateUser($params) {
@@ -151,8 +154,13 @@ core\EventListener {
 
 	protected function onTriggerImportTusFile($params) {
 
+
+		Emit('onImportTusFile', array());
+
 		include_once __DIR__ . '/lib/TusImportTask.php';
 		return (new \ReferralManagement\TusImportTask())->import($params);
+
+
 
 	}
 
