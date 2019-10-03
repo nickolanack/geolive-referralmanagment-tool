@@ -14973,7 +14973,20 @@
         "name": "Measurement Tool",
         "instance": "MeasurementTool",
         "parameters": {
-            "target": "none"
+            "target": "forTheMap",
+            "controlColor": "rgb(48,84,107)",
+            "tileIcon": [],
+            "strokeColor": "rgb(0,0,0)",
+            "strokeWidth": "1.5",
+            "startColor": "rgb(77, 144, 254)",
+            "vertexColor": "rgb(255,255,255)",
+            "endColor": "rgb(77, 144, 254)",
+            "formatPopover": "",
+            "formatDistance": "",
+            "formatHeading": "",
+            "widgetTitle": "",
+            "readAccess": "public",
+            "position": "RIGHT_CENTER"
         }
     }
 }
