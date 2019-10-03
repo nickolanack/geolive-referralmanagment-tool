@@ -14350,7 +14350,7 @@
         "instance": "CustomTileControlScript",
         "parameters": {
             "widgetTitle": "Heat Map Tile",
-            "target": "forTheMap",
+            "target": "forTheMap-disabled",
             "readAccess": "public",
             "position": "RIGHT_CENTER",
             "customScript": "Heat Map Tile.customScript.js",
