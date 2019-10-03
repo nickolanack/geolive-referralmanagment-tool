@@ -135,7 +135,7 @@ li.menu-project-discussion.withPosts:after {
     width: 100%;
     height: 100%;
     z-index: 0;
-    opacity: 0.1;
+    opacity: 0;
     pointer-events: none;
 }
 
@@ -538,6 +538,9 @@ h2 {
 
 .ui-view.dashboard-main a{
     color:white;
+}
+.ui-view.dashboard-main a.formatted_link {
+    color: #6ad2b4;
 }
 
 .ui-view>div{
@@ -2718,6 +2721,12 @@ img.static-map {
         background-position: center;
     }
 
+
+.left-panel.closed .application-logo, .left-panel.closed .survey-link {
+    display:none;
+}
+
+
 @media screen and (max-width: 1000px){
     
     .left-panel .application-logo {
@@ -2964,3 +2973,44 @@ img.static-map {
     .ui-view.left-panel.closed .navigation-menu li:after{
         display:none;
     }
+    
+    
+    .ui-view.left-panel.closed .navigation-menu label:after {
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 10px solid #ceb250;
+    border-right: none;
+    left: -9px;
+    top:12px;
+    content:"";
+    position:relative;
+
+    }
+
+
+   .ui-view.left-panel.closed .ui-navigation-menu>.expand>label:after {
+    top:0px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 7px solid #ceb250;
+    }
+    
+    .uitext-container.disabled:after {
+    content: "* disabled";
+    color: mediumseagreen;
+    float: right;
+    font-size: 12px;
+    font-style: italic;
+    position: relative;
+    top: 5px;
+    right: 5px;
+}
+
+.uitext-container.disabled {
+    opacity: 0.3;
+}
+    
+    
+    

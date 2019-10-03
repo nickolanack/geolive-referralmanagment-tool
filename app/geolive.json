@@ -117,7 +117,8 @@
         "name": "External Content",
         "instance": "ExternalContent",
         "parameters": {
-            "youtube-api-key": "XXXX-XXXX"
+            "youtube-api-key": "XXXX-XXXX",
+            "thumbnailUrls": false
         }
     },
     "plugin.17": {
@@ -226,7 +227,7 @@
         "name": "Monolog Plugin",
         "instance": "Monolog",
         "parameters": {
-            "enabled": true,
+            "enabled": false,
             "logPath": "{front}\/..\/logs",
             "logToSentry": false
         }
@@ -765,16 +766,16 @@
                             "widget.ProposalWizardBuilder.65.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 88,
-                            "y": 98
+                            "x": 158,
+                            "y": 168
                         },
                         "children": [
                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 48,
-                                    "y": 361
+                                    "x": 118,
+                                    "y": 431
                                 }
                             },
                             {
@@ -784,16 +785,16 @@
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 331,
-                                    "y": 382
+                                    "x": 790,
+                                    "y": 374
                                 },
                                 "children": [
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 291,
-                                            "y": 620
+                                            "x": 750,
+                                            "y": 612
                                         }
                                     },
                                     {
@@ -803,16 +804,16 @@
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 726,
-                                            "y": 166
+                                            "x": 1147,
+                                            "y": 191
                                         },
                                         "children": [
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 686,
-                                                    "y": 404
+                                                    "x": 1107,
+                                                    "y": 417
                                                 }
                                             },
                                             {
@@ -822,16 +823,16 @@
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.fields.0.json"
                                                 ],
                                                 "_diagramState": {
-                                                    "x": 1276,
-                                                    "y": 557
+                                                    "x": 1346,
+                                                    "y": 627
                                                 },
                                                 "children": [
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.0.json",
                                                     {
                                                         "class": "InsertNode",
                                                         "_diagramState": {
-                                                            "x": 1236,
-                                                            "y": 758
+                                                            "x": 1306,
+                                                            "y": 828
                                                         }
                                                     }
                                                 ],
@@ -858,13 +859,14 @@
                                                                         "maxChars": 0,
                                                                         "mandatory": false,
                                                                         "multiEntry": false,
-                                                                        "autocomplete": true,
                                                                         "muliTemplate": "lines",
                                                                         "multiMessage": "",
                                                                         "formatter": "none",
                                                                         "iconTint": "rgb(100, 149, 237)",
+                                                                        "autocomplete": true,
+                                                                        "inputOptions": [],
                                                                         "onRenderTextFieldScript": "",
-                                                                        "formatValueScript": ""
+                                                                        "formatdefaultScript": ""
                                                                     }
                                                                 },
                                                                 {
@@ -880,13 +882,14 @@
                                                                         "maxChars": 0,
                                                                         "mandatory": false,
                                                                         "multiEntry": false,
-                                                                        "autocomplete": true,
                                                                         "muliTemplate": "lines",
                                                                         "multiMessage": "",
                                                                         "formatter": "none",
                                                                         "iconTint": "rgb(100, 149, 237)",
+                                                                        "autocomplete": true,
+                                                                        "inputOptions": [],
                                                                         "onRenderTextFieldScript": "",
-                                                                        "formatValueScript": ""
+                                                                        "formatdefaultScript": ""
                                                                     }
                                                                 },
                                                                 {
@@ -922,13 +925,14 @@
                                                                         "maxChars": 0,
                                                                         "mandatory": false,
                                                                         "multiEntry": false,
-                                                                        "autocomplete": true,
                                                                         "muliTemplate": "lines",
                                                                         "multiMessage": "",
                                                                         "formatter": "none",
                                                                         "iconTint": "rgb(100, 149, 237)",
+                                                                        "autocomplete": true,
+                                                                        "inputOptions": [],
                                                                         "onRenderTextFieldScript": "",
-                                                                        "formatValueScript": ""
+                                                                        "formatdefaultScript": ""
                                                                     }
                                                                 }
                                                             ]
@@ -977,13 +981,14 @@
                                                                 "maxChars": 0,
                                                                 "mandatory": false,
                                                                 "multiEntry": false,
-                                                                "autocomplete": true,
                                                                 "muliTemplate": "lines",
                                                                 "multiMessage": "",
                                                                 "formatter": "none",
                                                                 "iconTint": "rgb(100, 149, 237)",
+                                                                "autocomplete": true,
+                                                                "inputOptions": [],
                                                                 "onRenderTextFieldScript": "",
-                                                                "formatValueScript": ""
+                                                                "formatdefaultScript": ""
                                                             }
                                                         },
                                                         {
@@ -999,13 +1004,14 @@
                                                                 "maxChars": 0,
                                                                 "mandatory": false,
                                                                 "multiEntry": false,
-                                                                "autocomplete": true,
                                                                 "muliTemplate": "lines",
                                                                 "multiMessage": "",
                                                                 "formatter": "none",
                                                                 "iconTint": "rgb(100, 149, 237)",
+                                                                "autocomplete": true,
+                                                                "inputOptions": [],
                                                                 "onRenderTextFieldScript": "",
-                                                                "formatValueScript": ""
+                                                                "formatdefaultScript": ""
                                                             }
                                                         },
                                                         {
@@ -1021,13 +1027,14 @@
                                                                 "maxChars": 0,
                                                                 "mandatory": false,
                                                                 "multiEntry": false,
-                                                                "autocomplete": true,
                                                                 "muliTemplate": "lines",
                                                                 "multiMessage": "",
                                                                 "formatter": "none",
                                                                 "iconTint": "rgb(100, 149, 237)",
+                                                                "autocomplete": true,
+                                                                "inputOptions": [],
                                                                 "onRenderTextFieldScript": "",
-                                                                "formatValueScript": ""
+                                                                "formatdefaultScript": ""
                                                             }
                                                         },
                                                         {
@@ -1043,13 +1050,14 @@
                                                                 "maxChars": 0,
                                                                 "mandatory": false,
                                                                 "multiEntry": false,
-                                                                "autocomplete": true,
                                                                 "muliTemplate": "lines",
                                                                 "multiMessage": "",
                                                                 "formatter": "none",
                                                                 "iconTint": "rgb(100, 149, 237)",
+                                                                "autocomplete": true,
+                                                                "inputOptions": [],
                                                                 "onRenderTextFieldScript": "",
-                                                                "formatValueScript": ""
+                                                                "formatdefaultScript": ""
                                                             }
                                                         },
                                                         {
@@ -1065,13 +1073,14 @@
                                                                 "maxChars": 0,
                                                                 "mandatory": false,
                                                                 "multiEntry": false,
-                                                                "autocomplete": true,
                                                                 "muliTemplate": "lines",
                                                                 "multiMessage": "",
                                                                 "formatter": "none",
                                                                 "iconTint": "rgb(100, 149, 237)",
+                                                                "autocomplete": true,
+                                                                "inputOptions": [],
                                                                 "onRenderTextFieldScript": "",
-                                                                "formatValueScript": ""
+                                                                "formatdefaultScript": ""
                                                             }
                                                         },
                                                         {
@@ -1087,13 +1096,14 @@
                                                                 "maxChars": 0,
                                                                 "mandatory": false,
                                                                 "multiEntry": false,
-                                                                "autocomplete": true,
                                                                 "muliTemplate": "lines",
                                                                 "multiMessage": "",
                                                                 "formatter": "none",
                                                                 "iconTint": "rgb(100, 149, 237)",
+                                                                "autocomplete": true,
+                                                                "inputOptions": [],
                                                                 "onRenderTextFieldScript": "",
-                                                                "formatValueScript": ""
+                                                                "formatdefaultScript": ""
                                                             }
                                                         }
                                                     ]
@@ -1186,13 +1196,14 @@
                                                         "maxChars": 0,
                                                         "mandatory": false,
                                                         "multiEntry": false,
-                                                        "autocomplete": true,
                                                         "muliTemplate": "lines",
                                                         "multiMessage": "",
                                                         "formatter": "date",
                                                         "iconTint": "rgb(100, 149, 237)",
+                                                        "autocomplete": true,
+                                                        "inputOptions": [],
                                                         "onRenderTextFieldScript": "",
-                                                        "formatValueScript": ""
+                                                        "formatdefaultScript": ""
                                                     }
                                                 },
                                                 {
@@ -1208,13 +1219,14 @@
                                                         "maxChars": 0,
                                                         "mandatory": false,
                                                         "multiEntry": false,
-                                                        "autocomplete": true,
                                                         "muliTemplate": "lines",
                                                         "multiMessage": "",
                                                         "formatter": "date",
                                                         "iconTint": "rgb(100, 149, 237)",
+                                                        "autocomplete": true,
+                                                        "inputOptions": [],
                                                         "onRenderTextFieldScript": "",
-                                                        "formatValueScript": ""
+                                                        "formatdefaultScript": ""
                                                     }
                                                 },
                                                 {
@@ -1320,13 +1332,14 @@
                                                 "maxChars": 0,
                                                 "mandatory": true,
                                                 "multiEntry": false,
-                                                "autocomplete": true,
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "",
                                                 "formatter": "none",
                                                 "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": [],
                                                 "onRenderTextFieldScript": "",
-                                                "formatValueScript": ""
+                                                "formatdefaultScript": ""
                                             }
                                         },
                                         {
@@ -1342,13 +1355,14 @@
                                                 "maxChars": 0,
                                                 "mandatory": false,
                                                 "multiEntry": false,
-                                                "autocomplete": true,
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "",
                                                 "formatter": "none",
                                                 "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": [],
                                                 "onRenderTextFieldScript": "",
-                                                "formatValueScript": ""
+                                                "formatdefaultScript": ""
                                             }
                                         },
                                         {
@@ -1406,13 +1420,14 @@
                                                 "maxChars": 0,
                                                 "mandatory": false,
                                                 "multiEntry": false,
-                                                "autocomplete": true,
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "",
                                                 "formatter": "date",
                                                 "iconTint": "rgb(100, 149, 237)",
-                                                "onRenderTextFieldScript": "",
-                                                "formatValueScript": ""
+                                                "autocomplete": true,
+                                                "inputOptions": "{}",
+                                                "onRenderTextFieldScript": "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.5.config.onRenderTextFieldScript.js",
+                                                "formatdefaultScript": ""
                                             }
                                         },
                                         {
@@ -1428,13 +1443,14 @@
                                                 "maxChars": 0,
                                                 "mandatory": false,
                                                 "multiEntry": false,
-                                                "autocomplete": true,
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "",
                                                 "formatter": "date",
                                                 "iconTint": "rgb(100, 149, 237)",
-                                                "onRenderTextFieldScript": "",
-                                                "formatValueScript": ""
+                                                "autocomplete": true,
+                                                "inputOptions": "{}",
+                                                "onRenderTextFieldScript": "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.6.config.onRenderTextFieldScript.js",
+                                                "formatdefaultScript": ""
                                             }
                                         },
                                         {
@@ -1450,13 +1466,14 @@
                                                 "maxChars": 0,
                                                 "mandatory": false,
                                                 "multiEntry": false,
-                                                "autocomplete": true,
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "",
                                                 "formatter": "date",
                                                 "iconTint": "rgb(100, 149, 237)",
-                                                "onRenderTextFieldScript": "",
-                                                "formatValueScript": ""
+                                                "autocomplete": true,
+                                                "inputOptions": "{}",
+                                                "onRenderTextFieldScript": "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.7.config.onRenderTextFieldScript.js",
+                                                "formatdefaultScript": ""
                                             }
                                         },
                                         {
@@ -1496,7 +1513,7 @@
                                                 "shuffleTags": false,
                                                 "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
                                                 "getItemTagsScript": "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.9.config.getItemTagsScript.js",
-                                                "formatModule": ""
+                                                "formatModule": "module.runOnceOnLoad(function(){\nvar cats= Proposal.ListTerritories();\nif(cats.length==0){\n    module.getCloud().getElement().parentNode.setStyle(\"display\",\"none\");\n}\n});\n"
                                             }
                                         }
                                     ]
@@ -3311,6 +3328,15 @@
                     "maxWidth": 92,
                     "limit": 1
                 },
+                "scan-barcode": {
+                    "type": "images",
+                    "name": "scan-barcode",
+                    "default": [],
+                    "label": "Scan Barcode",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
                 "concerns": {
                     "type": "images",
                     "name": "concerns",
@@ -3500,7 +3526,10 @@
             ],
             "concerns-color": "rgb(0,0,0)",
             "concerns-color-active": "rgb(0,0,0)",
-            "concerns-layer": "112"
+            "concerns-layer": "112",
+            "scan-barcode": [
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/gather.geoforms.ca\/1\/Uploads\/XJI_Rg0_%5BG%5D_%5BImAgE%5D_9sl.png"
+            ]
         }
     },
     "widget.145": {
@@ -3645,12 +3674,11 @@
                                 }
                             },
                             {
-                                "type": "InlineHtml",
+                                "type": "WizardScriptElement",
                                 "config": {
-                                    "className": "survey-link",
-                                    "text": "<a class=\"survey-form\" href=\"https:\/\/goo.gl\/forms\/MVY1ES1X5gARvxgF2\">Survey<\/a>\n<a class=\"slack-link\" href=\"https:\/\/wabuntc.slack.com\">Slack Chat<\/a>",
-                                    "template": "",
-                                    "templateVariablesScript": ""
+                                    "name": "My Custom Script",
+                                    "script": "Left Panel.metadata.positions.content.modules.4.config.script.js",
+                                    "description": "Info about my custom script"
                                 }
                             }
                         ]
@@ -4311,6 +4339,12 @@
                     "label": "showFileThumbnails"
                 },
                 {
+                    "type": "boolean",
+                    "name": "showUsersRoles",
+                    "default": true,
+                    "label": "showUsersRoles"
+                },
+                {
                     "type": "images",
                     "name": "remainingIcon",
                     "default": [],
@@ -4369,6 +4403,12 @@
                     "maxHeight": 128,
                     "maxWidth": 128,
                     "limit": 1
+                },
+                {
+                    "type": "text",
+                    "label": "slackUrl",
+                    "name": "slackUrl",
+                    "default": "https:\/\/gather-ngx4616.slack.com"
                 },
                 {
                     "type": "images",
@@ -4509,7 +4549,9 @@
             ],
             "appleAppIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/Lx7_R7S_3Xr_%5BG%5D_%5BImAgE%5D.png"
-            ]
+            ],
+            "slackUrl": "https:\/\/gather-ngx4616.slack.com",
+            "showUsersRoles": false
         }
     },
     "widget.154": {
@@ -8019,16 +8061,16 @@
                             "userSelectionForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 268,
-                            "y": 400
+                            "x": 288,
+                            "y": 420
                         },
                         "children": [
                             "userSelectionForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 228,
-                                    "y": 566
+                                    "x": 248,
+                                    "y": 586
                                 }
                             }
                         ],
@@ -8041,7 +8083,15 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "userSelectionForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                        "userSelectionForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "WizardScriptElement",
+                                            "config": {
+                                                "name": "My Custom Script",
+                                                "script": "userSelectionForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.script.js",
+                                                "description": "Info about my custom script"
+                                            }
+                                        }
                                     ]
                                 },
                                 "footer": {
@@ -9210,19 +9260,19 @@
             "metadata": {
                 "title": "userAttributes",
                 "_tableDiagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 439,
+                    "y": 326
                 },
                 "_diagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 439,
+                    "y": 326
                 },
                 "appliesTo": [
                     "user"
                 ],
                 "_typeDiagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 100,
+                    "y": 300
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -12541,7 +12591,9 @@
         "parameters": {
             "contentTemplate": "activate-proposal-email-body.contentTemplate.html",
             "widgetTitle": "activate.proposal.email.body",
-            "target": "activate.proposal.email.body"
+            "target": "activate.proposal.email.body",
+            "comments": "",
+            "readAccess": "public"
         }
     },
     "widget.246": {
@@ -14861,6 +14913,67 @@
             "onSaveScript": "",
             "onLoadScript": "",
             "readAccess": "public"
+        }
+    },
+    "widget.323": {
+        "name": "Configuration",
+        "instance": "Configuration",
+        "parameters": {
+            "target": "communityConfiguration",
+            "contentTemplate": "",
+            "comments": "",
+            "formatParametersScript": "return $parameters;",
+            "formatOutputScript": "return $parameters;",
+            "parameters": [
+                "communityConfiguration.parameters.0.json",
+                {
+                    "type": "json",
+                    "name": "communities",
+                    "default": [],
+                    "label": "Community List"
+                }
+            ],
+            "collective": "{subdomain}",
+            "communities": [
+                "communityA",
+                "communityB"
+            ],
+            "widgetTitle": "communityConfiguration",
+            "readAccess": "public"
+        }
+    },
+    "widget.324": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: guest.proposal",
+            "widgetTitle": "activityfeed.guest.proposal.text",
+            "target": "activityfeed.guest.proposal.text"
+        }
+    },
+    "widget.325": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "event: delete.proposal",
+            "widgetTitle": "activityfeed.delete.proposal.text",
+            "target": "activityfeed.delete.proposal.text"
+        }
+    },
+    "widget.326": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "activityfeed-update-proposal-permissions-text.contentTemplate.html",
+            "widgetTitle": "activityfeed.update.proposal.permissions.text",
+            "target": "activityfeed.update.proposal.permissions.text"
+        }
+    },
+    "widget.327": {
+        "name": "Measurement Tool",
+        "instance": "MeasurementTool",
+        "parameters": {
+            "target": "none"
         }
     }
 }
