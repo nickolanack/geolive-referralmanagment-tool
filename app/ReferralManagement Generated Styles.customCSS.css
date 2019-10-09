@@ -68,7 +68,7 @@ foreach(['apple', 'google'] as $mobile){
         if(!empty($appIcon)){
 
         ?>
-            .<?php echo mobile; ?>-app-link{
+            .<?php echo $mobile; ?>-app-link{
                 
                 background-image:url("<?php echo UrlFrom($appIcon[0].'?thumb=x>200y>100'); ?>");
             }
@@ -439,8 +439,21 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
             <?php
         }
         
+         if(!$config->getParameter("showUsersRoles")){
+            ?>
         
-        
+            .user-detail .user-role, .user-detail .user-community{
+                display:none;
+            }
+            <?php
+        }else{
+            ?>
+            .user-detail .user-role, .user-detail .user-community{
+               
+            }
+            <?php
+        }
+                
         if(!$config->getParameter("showFileThumbnails")){
             ?>
             .image.attachment-thumb{
