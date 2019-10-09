@@ -1676,6 +1676,9 @@ var ReferralManagementDashboard = {
 				},
 				getItems:function(){
 					return project.getProjectLetterDocuments();
+				},
+				removeAttachment:function(file){
+					return project.removeAttachment(file);
 				}
 			},
 			{
@@ -1700,6 +1703,9 @@ var ReferralManagementDashboard = {
 				},
 				getItems:function(){
 					return project.getPermitDocuments();
+				},
+				removeAttachment:function(file){
+					return project.removeAttachment(file);
 				}
 			},
 			{
@@ -1725,6 +1731,9 @@ var ReferralManagementDashboard = {
 				},
 				getItems:function(){
 					return project.getAgreementDocuments();
+				},
+				removeAttachment:function(file){
+					return project.removeAttachment(file);
 				}
 			},
 			{
@@ -1749,6 +1758,9 @@ var ReferralManagementDashboard = {
 				},
 				getItems:function(){
 					return project.getAdditionalDocuments();
+				},
+				removeAttachment:function(file){
+					return project.removeAttachment(file);
 				}
 			},
 			{
@@ -1779,6 +1791,9 @@ var ReferralManagementDashboard = {
 				},
 				getItems:function(){
 					return project.getSpatialDocuments();
+				},
+				removeAttachment:function(file){
+					return project.removeAttachment(file);
 				}
 			},
 			{
@@ -1803,7 +1818,11 @@ var ReferralManagementDashboard = {
 				},
 				getItems:function(){
 					return project.getAttachments();
+				},
+				removeAttachment:function(file){
+					return project.removeAttachment(file);
 				}
+
 			}
 
 
@@ -1829,6 +1848,9 @@ var ReferralManagementDashboard = {
 						})
 
 						return files;
+					},
+					removeAttachment:function(file){
+						throw 'remove from task';
 					}
 				});
 		}
