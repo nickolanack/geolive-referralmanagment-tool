@@ -202,7 +202,7 @@ core\EventListener {
 
 			include_once MapsPlugin::Path() . DS . 'lib' . DS . 'SpatialFile.php';
 
-			$kmlDoc = substr($path, 0, strrpos($path, '.')) . '.kml';
+			$kmlDoc = substr($path, 0, strrpos($path, '.')) . '[DoCuMeNt].kml';
 
 			SpatialFile::Save(SpatialFile::Open($path), $kmlDoc);
 
