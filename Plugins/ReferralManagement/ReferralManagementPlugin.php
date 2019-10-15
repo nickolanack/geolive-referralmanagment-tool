@@ -210,7 +210,7 @@ core\EventListener {
 			$kmlDoc = substr($path, 0, strrpos($path, '.')) . $type.'.kml';
 			file_put_contents($kmlDoc.'.info.json', json_encode(array(
 				'source'=>basename($path)
-			));
+			)));
 
 			SpatialFile::Save(SpatialFile::Open($path), $kmlDoc);
 
