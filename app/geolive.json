@@ -15018,11 +15018,18 @@
                             "resetPasswordForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 128,
-                            "y": 260
+                            "x": 140,
+                            "y": 202
                         },
                         "children": [
-                            "resetPasswordForm.metadata.children.1.children.0.json"
+                            "resetPasswordForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 100,
+                                    "y": 368
+                                }
+                            }
                         ],
                         "builderMetadata": {
                             "positions": {
@@ -15033,32 +15040,11 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "resetPasswordForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
-                                        {
-                                            "type": "WizardDescriptionField",
-                                            "config": {
-                                                "label": "Description",
-                                                "message": "add a description",
-                                                "lines": 3,
-                                                "mandatory": false,
-                                                "showAudios": true,
-                                                "showImages": true,
-                                                "showDocuments": true,
-                                                "showVideos": true,
-                                                "className": "",
-                                                "maxChars": 0,
-                                                "showExpandInput": true,
-                                                "toolbarPosition": "bottom",
-                                                "textFormatScript": "",
-                                                "mediaIconTint": "rgb(100, 149, 237)"
-                                            }
-                                        }
+                                        "resetPasswordForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
                                     ]
                                 },
                                 "footer": {
-                                    "modules": [
-                                        "resetPasswordForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
-                                    ]
+                                    "modules": []
                                 },
                                 "menu": {
                                     "modules": []
@@ -15069,7 +15055,10 @@
                                 "content",
                                 "footer",
                                 "menu"
-                            ]
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
                         }
                     }
                 ]
