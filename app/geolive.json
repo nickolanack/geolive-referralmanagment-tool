@@ -15065,7 +15065,7 @@
             },
             "widgetTitle": "resetPasswordForm",
             "templateName": "resetPasswordForm",
-            "requireTarget": true,
+            "requireTarget": false,
             "resolveItemScript": "return item;",
             "beforeSubmitScript": "",
             "onCreateScript": "",
