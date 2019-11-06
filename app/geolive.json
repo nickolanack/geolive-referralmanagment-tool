@@ -9260,19 +9260,19 @@
             "metadata": {
                 "title": "userAttributes",
                 "_tableDiagramState": {
-                    "x": 439,
-                    "y": 326
+                    "x": 0,
+                    "y": 0
                 },
                 "_diagramState": {
-                    "x": 439,
-                    "y": 326
+                    "x": 0,
+                    "y": 0
                 },
                 "appliesTo": [
                     "user"
                 ],
                 "_typeDiagramState": {
-                    "x": 100,
-                    "y": 300
+                    "x": 0,
+                    "y": 0
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -14987,6 +14987,22 @@
             "widgetTitle": "",
             "readAccess": "public",
             "position": "RIGHT_CENTER"
+        }
+    },
+    "widget.328": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "activityfeed-remove-proposal-documents-text.contentTemplate.html",
+            "widgetTitle": "activityfeed.remove.proposal.documents.text",
+            "target": "activityfeed.remove.proposal.documents.text"
+        }
+    },
+    "widget.329": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "target": "none"
         }
     }
 }
