@@ -19,6 +19,15 @@ application.getNamedValue("Search",function(search){
                     coordinates=coordinates.coordinates;
                 }
                 if(coordinates.length&&typeof coordinates[0]!="number"){
+                    if(coordinates.length>1){
+                        application.fitBounds({
+                            north:result.boundNWLat,
+                            south:result.boundSELat,
+                            east:result.boundSELng,
+                            west:result.boundNWLng
+                        })
+                        return;
+                    }
                     coordinates=coordinates[0];
                 }
                
