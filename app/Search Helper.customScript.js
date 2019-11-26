@@ -22,7 +22,7 @@ application.getNamedValue("Search",function(search){
                     coordinates=coordinates[0];
                 }
                
-               application.setCenter(coordinates);
+               application.setCenter(coordinates[0], coordinates[1]);
            }
            
            
