@@ -22,7 +22,9 @@ application.getNamedValue("Search",function(search){
                     coordinates=coordinates[0];
                 }
                
-               application.setCenter(coordinates[0], coordinates[1]);
+               application.setCenter(coordinates[0], coordinates[1], function(){
+                   application.setZoom(Math.max(13, application.getZoom()));
+               });
            }
            
            
