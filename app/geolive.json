@@ -15080,7 +15080,10 @@
         "name": "Javascript",
         "instance": "CustomBehaviorScript",
         "parameters": {
-            "target": "none"
+            "target": "forTheMap",
+            "customScript": "",
+            "widgetTitle": "",
+            "readAccess": "public"
         }
     }
 }
