@@ -743,6 +743,7 @@
             "offset": 46,
             "maxHeight": "1000",
             "minHeight": "400",
+            "offsetScript": "",
             "customScript": "",
             "readAccess": "public"
         }
@@ -15073,6 +15074,13 @@
             "onSaveScript": "",
             "onLoadScript": "",
             "readAccess": "public"
+        }
+    },
+    "widget.330": {
+        "name": "Javascript",
+        "instance": "CustomBehaviorScript",
+        "parameters": {
+            "target": "none"
         }
     }
 }
