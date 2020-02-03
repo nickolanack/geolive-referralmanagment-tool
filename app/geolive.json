@@ -393,18 +393,25 @@
             "controlColor": "rgb(232, 133, 36)",
             "subControlColor": "rgb(100, 149, 237)",
             "tileIcon": [],
-            "displayMapSave": "1",
-            "tileSize": 50,
-            "markerSize": 41,
-            "markerIconset": [],
-            "iconsetMetadata": [],
+            "displayMapSave": true,
+            "tileSize": "50",
+            "markerSize": "41",
+            "markerIconset": [
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/LGb_[ImAgE]_FkE_[G]_aQl.png"
+            ],
+            "iconsetMetadata": {
+                "layerMap": {
+                    "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/LGb_[ImAgE]_FkE_[G]_aQl.png": null
+                },
+                "renderSettings": []
+            },
             "groupIcon": [],
             "showToolTips": true,
             "useTipIconsetLayerTitle": false,
             "showLogoutProfile": false,
             "formatTipScript": "",
             "guestLoginDrag": true,
-            "onDragEndScript": "defaultBehaviorFn();",
+            "onDragEndScript": "\/\/defaultBehaviorFn();",
             "onDisplayTileScript": "",
             "onProfileClickScript": "",
             "sections": [
