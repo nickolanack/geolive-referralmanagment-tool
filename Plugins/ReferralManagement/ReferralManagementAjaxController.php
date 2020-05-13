@@ -17,6 +17,8 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	}
 
+	
+
 	protected function saveTeamMemberPermissions($json) {
 
 		//$projectData=$this->getPlugin()->getProposal($json->project);
@@ -82,6 +84,24 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		return $response;
 
+	}
+
+
+	protected function getProjectLayers($json){
+
+		/**
+		 * TODO: Projects will have additional editable layers
+		 */
+		
+
+	}
+
+	protected function getCommunityLayers($json){
+
+		/**
+		 * TODO: Communities will have additional private layers
+		 */
+		
 	}
 
 	

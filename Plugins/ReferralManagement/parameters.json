@@ -18,6 +18,18 @@
  	"type":"input",
  	"default":""
 
+ },
+ {
+ 	"name":"enableTasks",
+ 	"label":"Enable Tasks",
+ 	"type":"boolean",
+ 	"default":true
+ },
+ {
+ 	"name":"enableProposals",
+ 	"label":"Enable Proposals",
+ 	"type":"boolean",
+ 	"default":true
  }
 
 ]
