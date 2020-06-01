@@ -17,7 +17,10 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	}
 
-	
+	protected function getDashboardConfig($json) {
+
+		return array('parameters'=>GetWidget('dashboardConfig')->getConfigurationValues());
+	}
 
 	protected function saveTeamMemberPermissions($json) {
 
