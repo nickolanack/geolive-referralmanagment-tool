@@ -5,16 +5,18 @@
         "viewType": "view",
         "namedView": "mainDashboardDetail",
         "shouldRender": true,
-        "namedViewScript": "\/\/return namedView\n\nviewControllerApp.getNamedValue('navigationController', function(controller){\n    var view=controller.getTemplateNameForView(controller.getCurrentView());\n    callback(view);\n});\n",
+        "namedViewScript": "\/\/return namedView\n\nReferralManagementDashboard.getView(viewControllerApp,callback);\n",
         "showInlineEdit": false,
         "namedFormView": "defaultFormView",
         "formOptions": "{}",
         "showDeleteButton": false,
         "deleteItemScript": "",
+        "initModuleScript": "",
         "formatModuleScript": "",
         "resolveItemScript": "",
         "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",
-        "insertAtTop": false
+        "insertAtTop": false,
+        "targetName": ""
     }
 }

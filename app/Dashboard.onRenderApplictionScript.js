@@ -73,6 +73,8 @@ IncludeJSBlock('
     GetWidget('nonMemberDashboard')->display($targetInstance); 
 
 
+//GetWidget('mainDashboardRecentDetail')->display($targetInstance);
+
 GetWidget('mainActivityDetail')->display($targetInstance);
 GetWidget('mainProjectsDetail')->display($targetInstance);
 GetWidget('mainTasksDetail')->display($targetInstance);
@@ -85,8 +87,6 @@ GetWidget('peopleClientsDetail')->display($targetInstance);
 GetWidget('peopleUsersDetail')->display($targetInstance);
 
 GetWidget('UsersProjectSettings')->display($targetInstance);
-
-
 
 
 GetWidget('communityCulturalDetail')->display($targetInstance);

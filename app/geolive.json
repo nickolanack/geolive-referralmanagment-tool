@@ -452,6 +452,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -3607,6 +3608,7 @@
             "requireTarget": false,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "Dashboard.onRenderApplictionScript.js",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -3646,6 +3648,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -3745,6 +3748,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -3796,6 +3800,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -3852,6 +3857,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -4479,6 +4485,48 @@
                     "maxHeight": 128,
                     "maxWidth": 128,
                     "limit": 1
+                },
+                {
+                    "type": "boolean",
+                    "name": "simplifiedMenu",
+                    "default": false,
+                    "label": "simplifiedMenu"
+                },
+                {
+                    "type": "boolean",
+                    "name": "enableTasks",
+                    "default": true,
+                    "label": "enableTasks"
+                },
+                {
+                    "type": "boolean",
+                    "name": "enableProposals",
+                    "default": true,
+                    "label": "enableProposals"
+                },
+                {
+                    "type": "boolean",
+                    "name": "enableCalendar",
+                    "default": true,
+                    "label": "enableCalendar"
+                },
+                {
+                    "type": "boolean",
+                    "name": "enableActivity",
+                    "default": true,
+                    "label": "enableActivity"
+                },
+                {
+                    "type": "boolean",
+                    "name": "enableMap",
+                    "default": true,
+                    "label": "enableMap"
+                },
+                {
+                    "type": "boolean",
+                    "name": "showRecentProjectsDetail",
+                    "default": false,
+                    "label": "showRecentProjectsDetail"
                 }
             ],
             "hello": "World",
@@ -4585,7 +4633,14 @@
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/Lx7_R7S_3Xr_%5BG%5D_%5BImAgE%5D.png"
             ],
             "slackUrl": "https:\/\/gather-ngx4616.slack.com",
-            "showUsersRoles": false
+            "showUsersRoles": false,
+            "enableTasks": false,
+            "enableProposals": false,
+            "enableCalendar": false,
+            "showRecentProjectsDetail": false,
+            "enableActivity": true,
+            "enableMap": false,
+            "simplifiedMenu": false
         }
     },
     "widget.154": {
@@ -4598,6 +4653,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -4637,6 +4693,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "Main Dashboard Detail.formatModulesScript.js",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -4733,6 +4790,72 @@
                                     "insertAtTop": false,
                                     "targetName": ""
                                 }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "inset-shading w-30-60",
+                                    "viewType": "view",
+                                    "namedView": "placeholderDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "inset-shading w-30-60",
+                                    "viewType": "view",
+                                    "namedView": "placeholderDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "inset-shading w-30-60",
+                                    "viewType": "view",
+                                    "namedView": "placeholderDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
                             }
                         ]
                     },
@@ -4764,6 +4887,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -4818,6 +4942,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "Main Projects Detail.formatModulesScript.js",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -4840,11 +4965,13 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "initModuleScript": "",
                                     "formatModuleScript": "Main Projects Detail.metadata.positions.content.modules.1.config.formatModuleScript.js",
                                     "resolveItemScript": "Main Projects Detail.metadata.positions.content.modules.1.config.resolveItemScript.js",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
-                                    "insertAtTop": false
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             }
                         ]
@@ -4877,6 +5004,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -4936,6 +5064,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -4975,6 +5104,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -5044,6 +5174,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -5111,6 +5242,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -5224,6 +5356,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -5263,6 +5396,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -5302,6 +5436,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -5353,6 +5488,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -5410,6 +5546,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -5457,6 +5594,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -5561,6 +5699,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -5667,6 +5806,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -5734,6 +5874,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -5773,6 +5914,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "Single Project Detail.onRenderApplictionScript.js",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -5834,6 +5976,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -5903,6 +6046,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "Single Task List Item Detail.onRenderApplictionScript.js",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -6039,6 +6183,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": true,
             "metadata": {
                 "positions": {
@@ -6256,6 +6401,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -6333,6 +6479,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -6380,6 +6527,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -6434,6 +6582,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -6480,6 +6629,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positionList": [
@@ -6763,6 +6913,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -6830,6 +6981,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -6897,6 +7049,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -6964,6 +7117,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -7031,6 +7185,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -7098,6 +7253,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -7414,6 +7570,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -7716,6 +7873,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -7755,6 +7913,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -7860,6 +8019,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -7917,6 +8077,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -7956,6 +8117,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -8004,6 +8166,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -8173,6 +8336,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -8321,6 +8485,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -8398,6 +8563,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -8446,6 +8612,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -8505,6 +8672,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -8544,6 +8712,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -8615,6 +8784,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -8654,6 +8824,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -8710,6 +8881,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -8781,6 +8953,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -8864,6 +9037,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -8925,6 +9099,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -8964,6 +9139,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -9067,6 +9243,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -9106,6 +9283,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -9183,6 +9361,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -12288,6 +12467,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -12365,6 +12545,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -12404,6 +12585,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -12479,6 +12661,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -12711,6 +12894,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -12815,6 +12999,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -12854,6 +13039,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -13238,6 +13424,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -13360,6 +13547,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -13603,6 +13791,7 @@
             "requireTarget": false,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -13642,6 +13831,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -13681,6 +13871,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -13988,6 +14179,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": true,
             "metadata": {
                 "positions": {
@@ -14513,6 +14705,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -14560,6 +14753,7 @@
             "requireTarget": false,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "install.onRenderApplictionScript.js",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -14601,6 +14795,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positionList": [
@@ -14773,6 +14968,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
+            "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -15160,6 +15356,56 @@
             "target": "forTheMap",
             "customScript": "Search Helper.customScript.js",
             "widgetTitle": "Search Helper",
+            "readAccess": "public"
+        }
+    },
+    "widget.331": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "placeholderDetail",
+            "target": "placeholderDetail",
+            "templateName": "placeholderDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "placeholderDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "",
+                                    "text": "Description",
+                                    "template": "",
+                                    "templateVariablesScript": "",
+                                    "formatTextScript": ""
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
             "readAccess": "public"
         }
     }
