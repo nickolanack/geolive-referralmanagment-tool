@@ -3608,7 +3608,7 @@
             "requireTarget": false,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "Dashboard.onRenderApplictionScript.js",
-            "formatModulesScript": "",
+            "formatModulesScript": "Dashboard.formatModulesScript.js",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -4011,6 +4011,18 @@
                     "maxHeight": 256,
                     "maxWidth": 256,
                     "limit": 1
+                },
+                {
+                    "type": "input",
+                    "name": "gatherLabel",
+                    "default": "Gather Referrals Tool",
+                    "label": "gatherLabel"
+                },
+                {
+                    "type": "boolean",
+                    "name": "darkMode",
+                    "default": true,
+                    "label": "darkMode"
                 },
                 {
                     "type": "images",
@@ -4573,7 +4585,7 @@
                 "webresources\/config-153\/ed4ac.[G]_m3o_LN2_N63_[ImAgE].png"
             ],
             "applicationLogo": [
-                "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/MXD_jeC_XXY_%5BImAgE%5D_%5BG%5D.png"
+                "https:\/\/gct3.gather.geoforms.ca\/gct3.png"
             ],
             "formatOutputScript": "return $parameters;",
             "main-map": [
@@ -4621,7 +4633,7 @@
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/PZR_XRl_%5BImAgE%5D_%5BG%5D_xBM.png"
             ],
             "gatherLogo": [
-                "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/MXD_jeC_XXY_%5BImAgE%5D_%5BG%5D.png"
+                "https:\/\/gct3.gather.geoforms.ca\/gct3.png"
             ],
             "fileUploadBtnIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_%5BG%5D_yv_Xj5_vwP.png"
@@ -4640,7 +4652,9 @@
             "showRecentProjectsDetail": false,
             "enableActivity": true,
             "enableMap": false,
-            "simplifiedMenu": false
+            "simplifiedMenu": false,
+            "gatherLabel": "GCT3 GIS Document Portal",
+            "darkMode": true
         }
     },
     "widget.154": {
