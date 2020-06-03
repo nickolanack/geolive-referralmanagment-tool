@@ -535,8 +535,10 @@ h2 {
 .ui-list-view.ui-view>.ui-view {
     height: initial;
 }
-
 .ui-view.dashboard-main a{
+    color:black;
+}
+.ui-view.dashboard-main.dark a{
     color:white;
 }
 .ui-view.dashboard-main a.formatted_link {
@@ -883,10 +885,14 @@ button.inline-logout {
 .navigation-menu button, .inline-navigation-menu button {
     border: none;
     background-color: transparent;
-    color: gray;
+    color: black;
     padding: 0;
     font-size: 16px;
     font-weight: 100;
+}
+
+.dark .navigation-menu button, .dark .inline-navigation-menu button{
+    color: gray;
 }
 
 .navigation-menu label {
