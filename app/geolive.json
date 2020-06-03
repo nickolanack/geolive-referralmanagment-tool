@@ -3813,18 +3813,45 @@
                             {
                                 "type": "UIView",
                                 "config": {
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "mainSearchDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
                                     "className": "main-panel",
                                     "viewType": "view",
                                     "namedView": "mainPanel",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "",
+                                    "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
-                                    "namedViewScript": "return namedView",
-                                    "filterModulesScript": "return list"
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             }
                         ]
@@ -4551,6 +4578,12 @@
                     "name": "showRecentProjectsDetail",
                     "default": false,
                     "label": "showRecentProjectsDetail"
+                },
+                {
+                    "type": "boolean",
+                    "name": "showSearchMenu",
+                    "default": false,
+                    "label": "showSearchMenu"
                 }
             ],
             "hello": "World",
@@ -4668,7 +4701,8 @@
             "gatherLabel": "Gather Referrals Tool",
             "darkMode": true,
             "loadingLabel": "Loading your referral dashboard",
-            "surveyUrl": "https:\/\/goo.gl\/forms\/MVY1ES1X5gARvxgF2"
+            "surveyUrl": "https:\/\/goo.gl\/forms\/MVY1ES1X5gARvxgF2",
+            "showSearchMenu": false
         }
     },
     "widget.154": {
@@ -4822,9 +4856,9 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "inset-shading w-30-60",
+                                    "className": "w-30-60",
                                     "viewType": "view",
-                                    "namedView": "placeholderDetail",
+                                    "namedView": "recentDetail",
                                     "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
@@ -4844,9 +4878,9 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "inset-shading w-30-60",
+                                    "className": "w-30-60",
                                     "viewType": "view",
-                                    "namedView": "placeholderDetail",
+                                    "namedView": "recentDetail",
                                     "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
@@ -4866,9 +4900,9 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "inset-shading w-30-60",
+                                    "className": "w-30-60",
                                     "viewType": "view",
-                                    "namedView": "placeholderDetail",
+                                    "namedView": "recentDetail",
                                     "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
@@ -15391,9 +15425,9 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "placeholderDetail",
-            "target": "placeholderDetail",
-            "templateName": "placeholderDetail",
+            "widgetTitle": "recentDetail",
+            "target": "recentDetail",
+            "templateName": "recentDetail",
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
@@ -15406,14 +15440,14 @@
                     },
                     "content": {
                         "modules": [
-                            "placeholderDetail.metadata.positions.content.modules.0.json",
+                            "recentDetail.metadata.positions.content.modules.0.json",
                             {
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "projects-list",
-                                    "className": "",
+                                    "className": "inset-shading no-line",
                                     "viewType": "view",
-                                    "namedView": "singleProjectListItemDetail",
+                                    "namedView": "recentItemDetail",
                                     "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
@@ -15428,7 +15462,7 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
-                                    "getItemListScript": "placeholderDetail.metadata.positions.content.modules.1.config.getItemListScript.js",
+                                    "getItemListScript": "recentDetail.metadata.positions.content.modules.1.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
                                     "formatListItemModuleScript": "return item;",
                                     "emptyNamedView": "emptyListView",
@@ -15453,6 +15487,93 @@
                     "menu"
                 ],
                 "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.332": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "recentItemDetail",
+            "target": "recentItemDetail",
+            "templateName": "recentItemDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "recentItemDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FieldValue",
+                                "config": []
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.333": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "mainSearchDetail",
+            "target": "mainSearchDetail",
+            "templateName": "mainSearchDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "positions": {
+                    "title": {
+                        "modules": [
+                            "mainSearchDetail.metadata.positions.title.modules.0.json"
+                        ]
+                    },
+                    "content": {
+                        "modules": [
+                            "mainSearchDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": [
+                            "mainSearchDetail.metadata.positions.footer.modules.0.json"
+                        ]
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                }
             },
             "readAccess": "public"
         }

@@ -1,1 +1,1 @@
-return new MockDataTypeItem({"label":"Recent activity", "filter":function(){}});
+return RecentItems.RecentActivity;

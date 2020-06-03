@@ -563,6 +563,10 @@ h2 {
     padding: 7px 10px;
 }
 
+.ui-list-view .ui-view.no-line, .inline-list-item.no-line {
+    border-bottom: none;
+    border-top: none;
+}
 
 .ui-list-view.no-sub-list-style .ui-view .ui-view, .no-sub-list-style .ui-list-view .ui-view .ui-view {
    border:none;
