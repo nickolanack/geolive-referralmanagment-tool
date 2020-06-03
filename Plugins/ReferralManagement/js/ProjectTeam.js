@@ -968,13 +968,7 @@ var ProjectTeam = (function() {
 	}
 
 	ProjectTeam.GetAllRoles=function(){
-		return [
-			"tribal-council",
-			"chief-council",
-			"lands-department-manager",
-			"lands-department",
-			"community-member"
-		];
+		return ReferralManagementUser.GetMainRoles();
 	}
 
 	ProjectTeam.GetCommunitiesUserCanEdit=function(){

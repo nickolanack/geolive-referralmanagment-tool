@@ -22,6 +22,18 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		return array('parameters'=>GetWidget('dashboardConfig')->getConfigurationValues());
 	}
 
+	protected function getUserRoles($json) {
+
+		include_once __DIR__ . '/lib/UserRoles.php';
+
+		return array(
+			'roles'=>(new \ReferralManagement\UserRoles())->listRoles(),
+			'icons'=>(new \ReferralManagement\UserRoles())->listRoleIcons()
+		);
+	}
+
+	
+
 	protected function saveTeamMemberPermissions($json) {
 
 		//$projectData=$this->getPlugin()->getProposal($json->project);
