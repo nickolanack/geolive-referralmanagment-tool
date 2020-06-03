@@ -164,14 +164,14 @@ label.boolean-field p {
     display: inline-block;
     margin-left: 10px;
     font-style: italic;
-    color: #637594;
+    color: #6A7CE9;
 }
 
 
 .field-value-module.editable:after, .field-value-module .editable:after{
     content: " edit";
     font-style: italic;
-    color: #637594;
+    color: #6A7CE9;
     cursor: pointer;
 }
 
@@ -643,7 +643,7 @@ span.inline-list-item {
 
 button.inline-logout {
     font-style: italic;
-    color: #637594;
+    color: #6A7CE9;
     cursor: pointer;
     font-size: 16px;
     background: none;
