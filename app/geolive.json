@@ -4454,6 +4454,12 @@
                     "limit": 1
                 },
                 {
+                    "type": "text",
+                    "label": "surveyUrl",
+                    "name": "surveyUrl",
+                    "default": "https:\/\/gather-ngx4616.slack.com"
+                },
+                {
                     "type": "images",
                     "name": "surveyMenuIcon",
                     "default": [],
@@ -4591,7 +4597,7 @@
                 "webresources\/config-153\/ed4ac.[G]_m3o_LN2_N63_[ImAgE].png"
             ],
             "applicationLogo": [
-                "uploads-wabun.geoforms.ca\/user_files_1\/Uploads\/[ImAgE]_3AT_[G]_1vT_kaK.png"
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/CRA_zKL_[G]_[ImAgE]_MnU-%3Ethumb:%3E200x%3E150.png"
             ],
             "formatOutputScript": "return $parameters;",
             "main-map": [
@@ -4650,7 +4656,7 @@
             "appleAppIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/Lx7_R7S_3Xr_%5BG%5D_%5BImAgE%5D.png"
             ],
-            "slackUrl": "https:\/\/gather-ngx4616.slack.com",
+            "slackUrl": "https:\/\/wabuntc.slack.com",
             "showUsersRoles": false,
             "enableTasks": true,
             "enableProposals": true,
@@ -4661,7 +4667,8 @@
             "simplifiedMenu": false,
             "gatherLabel": "Gather Referrals Tool",
             "darkMode": true,
-            "loadingLabel": "Loading your referral dashboard"
+            "loadingLabel": "Loading your referral dashboard",
+            "surveyUrl": "https:\/\/gather-ngx4616.slack.com"
         }
     },
     "widget.154": {
