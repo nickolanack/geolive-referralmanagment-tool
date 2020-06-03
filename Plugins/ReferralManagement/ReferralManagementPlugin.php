@@ -264,6 +264,7 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/ProjectTeam.js');
 		IncludeJS(__DIR__ . '/js/ProjectCalendar.js');
 		IncludeJS(__DIR__ . '/js/TaskItem.js');
+		IncludeJS(__DIR__ . '/js/RecentItems.js');
 	}
 
 	protected function onCreateProposal($params) {
