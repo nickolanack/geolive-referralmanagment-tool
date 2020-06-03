@@ -3748,7 +3748,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
-            "formatModulesScript": "",
+            "formatModulesScript": "Main Panel.formatModulesScript.js",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -3757,7 +3757,29 @@
                     },
                     "content": {
                         "modules": [
-                            "Main Panel.metadata.positions.content.modules.0.json"
+                            "Main Panel.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "main-content-area",
+                                    "viewType": "view",
+                                    "namedView": "mainDashboardDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "Main Panel.metadata.positions.content.modules.1.config.namedViewScript.js",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            }
                         ]
                     },
                     "footer": {
@@ -3810,28 +3832,6 @@
                     "content": {
                         "modules": [
                             "Dashboard Content.metadata.positions.content.modules.0.json",
-                            {
-                                "type": "UIView",
-                                "config": {
-                                    "className": "",
-                                    "viewType": "view",
-                                    "namedView": "mainSearchDetail",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultView",
-                                    "formOptions": "\"{}\"",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "defaultBehaviorFn()",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "return item",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": ""
-                                }
-                            },
                             {
                                 "type": "UIView",
                                 "config": {
@@ -15548,17 +15548,9 @@
             "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
-                "positionList": [
-                    "title",
-                    "content",
-                    "footer",
-                    "menu"
-                ],
                 "positions": {
                     "title": {
-                        "modules": [
-                            "mainSearchDetail.metadata.positions.title.modules.0.json"
-                        ]
+                        "modules": []
                     },
                     "content": {
                         "modules": [
@@ -15566,14 +15558,19 @@
                         ]
                     },
                     "footer": {
-                        "modules": [
-                            "mainSearchDetail.metadata.positions.footer.modules.0.json"
-                        ]
+                        "modules": []
                     },
                     "menu": {
                         "modules": []
                     }
-                }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
             },
             "readAccess": "public"
         }
