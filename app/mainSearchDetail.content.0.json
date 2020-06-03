@@ -1,4 +1,7 @@
 {
     "type": "Search",
-    "config": {}
+    "config": {
+        "getAggregatorsScript": "",
+        "placeholder": "search items"
+    }
 }
