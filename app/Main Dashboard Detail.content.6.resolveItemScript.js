@@ -1,0 +1,1 @@
+return new MockDataTypeItem({"label":"Recent user activity", "filter":function(){}});
