@@ -1,7 +1,7 @@
 {
     "type": "UIView",
     "config": {
-        "className": "dashboard-main dark",
+        "className": "dashboard-main",
         "viewType": "view",
         "namedView": "dashboardContent",
         "shouldRender": true,
@@ -11,7 +11,7 @@
         "formOptions": "{}",
         "showDeleteButton": false,
         "deleteItemScript": "",
-        "initModuleScript": "",
+        "initModuleScript": "module.getElement().addClass('test')",
         "formatModuleScript": "",
         "resolveItemScript": "",
         "filterModulesScript": "return list",
