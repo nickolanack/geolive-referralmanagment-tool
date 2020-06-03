@@ -650,6 +650,10 @@ button.inline-logout {
     border: none;
 }
 
+.dark button.inline-logout, .dark label.boolean-field p, .dark .field-value-module.editable:after, .dark .field-value-module .editable:after{
+    color: #637594;
+}
+
 .ui-view.dashboard-main>div>div, .ui-view.main-panel>div>div {
     display: inline-table;
     height: 100%;
