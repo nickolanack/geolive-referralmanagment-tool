@@ -1,1 +1,1 @@
-return new MockDataTypeItem({"label":"Test", "filter":function(){}});
+return new MockDataTypeItem({"label":"Recent user activity", "filter":function(){}});

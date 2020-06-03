@@ -1,10 +1,8 @@
 {
-    "type": "InlineHtml",
+    "type": "WizardScriptElement",
     "config": {
-        "className": "",
-        "text": "<div class=\"section-title\"><span>Recent project activity<\/span><\/div>",
-        "template": "",
-        "templateVariablesScript": "",
-        "formatTextScript": ""
+        "name": "My Custom Script",
+        "script": "return '<div class=\"section-title\"><span>'+item.getLabel()+'<\/span><\/div>'",
+        "description": "Info about my custom script"
     }
 }
