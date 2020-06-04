@@ -1,7 +1,8 @@
 {
-    "type": "Search",
+    "type": "WizardScriptElement",
     "config": {
-        "getAggregatorsScript": "",
-        "placeholder": "search items"
+        "name": "My Custom Script",
+        "script": "return new Element(\"button\",{\"html\":\"New project\", \"style\":\"background-color: mediumseagreen; float:left;\", \"class\":\"primary-btn\", \"events\":{\"click\":function(){\n    \n   \n            var formName=\"ProposalTemplate\";\n\n\t\t\tvar wizardTemplate = application.getDisplayController().getWizardTemplate(formName);\n\t\t\tif ((typeof wizardTemplate) != 'function') {\n\n\t\t\t\tif(window.console&&console.warn){\n\t\t\t\t\tconsole.warn('Expected named wizardTemplate: '+formName+', to exist');\n\t\t\t\t}\n\n\t\t\t}\n\t\t\tvar modalFormViewController =  new PushBoxModuleViewer(application, {});\n\t\t\tvar newItem=new Proposal();\n\t\t\tvar wizard = wizardTemplate(newItem, {});\n            wizard.buildAndShow(modalFormViewController, {template:\"form\"}); \n\t\t\t\n\t\t\t\n\t\t\tnewItem.addEvent(\"save:once\",function(){\n\t\t\t    ProjectTeam.CurrentTeam().addProject(newItem);\n\t\t\t    var controller=application.getNamedValue('navigationController');\n                application.setNamedValue(\"currentProject\", newItem);\n                controller.navigateTo(\"Projects\", \"Main\");\n\t\t\t})\n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n}}});",
+        "description": "Info about my custom script"
     }
 }

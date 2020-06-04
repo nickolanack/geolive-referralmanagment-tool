@@ -15554,7 +15554,14 @@
                     },
                     "content": {
                         "modules": [
-                            "mainSearchDetail.metadata.positions.content.modules.0.json"
+                            "mainSearchDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "Search",
+                                "config": {
+                                    "getAggregatorsScript": "",
+                                    "placeholder": "search items"
+                                }
+                            }
                         ]
                     },
                     "footer": {
