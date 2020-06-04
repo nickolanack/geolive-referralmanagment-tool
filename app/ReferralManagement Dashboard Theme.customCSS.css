@@ -2946,11 +2946,11 @@ img.static-map {
         min-width: 50px;
     }
     
-    .ui-view.left-panel.closed .user-detail .FormattedTextModule{
+    .closed .user-detail .FormattedTextModule{
         height:75px
      }
 
-    .ui-view.left-panel.closed .user-detail .single_ImageContainer{
+    .closed .user-detail .single_ImageContainer{
         transform: scale(0.2);
         margin: -58px;
         margin-top: -35px;
