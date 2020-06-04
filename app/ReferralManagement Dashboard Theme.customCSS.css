@@ -1677,15 +1677,20 @@ span.layer.noIcon {
     font-size: 12px;
 }
 
+
 .text-input, .discussion-textbox {
-    background-color: #2E303A;
-    border: 1px solid #4e4e4e;
+    border: 1px solid gray;
     border-radius: 3px;
     font-size: 12px;
     font-weight: 100;
-    color:white;
     position: relative;
     z-index: 1;
+}
+.dark .text-input, .dark .discussion-textbox {
+    background-color: #2E303A;
+    border: 1px solid #4e4e4e;
+    color: white;
+    border: 1px solid #4e4e4e;
 }
 
 .ui-template-form .text-input:focus{
