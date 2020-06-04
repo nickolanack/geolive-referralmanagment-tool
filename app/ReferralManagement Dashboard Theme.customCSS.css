@@ -1700,9 +1700,12 @@ span.layer.noIcon {
 
 .label.top-left, .checkboxStyle {
     font-size: 13px;
-    color: white;
     font-weight: 100;
     line-height: 24px;
+}
+
+.dark .label.top-left, .dark .checkboxStyle {
+    color: white;
 }
 
 .pb-c:after {
