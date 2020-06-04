@@ -1,3 +1,3 @@
 if(DashboardConfig.getValue('showSearchMenu')){
-    list.content.splice(1,0);
+    list.content.splice(1,1);
 }
