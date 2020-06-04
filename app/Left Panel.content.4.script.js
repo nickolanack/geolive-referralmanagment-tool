@@ -1,2 +1,1 @@
-return new Element('div',{'class':"survey-link",html:'<a class="survey-form" href="<?php echo GetWidget('dashboardConfig')->getParameter('surveyUrl'); ?>">Survey</a>'+
-'<a class="slack-link" href="<?php echo GetWidget('dashboardConfig')->getParameter('slackUrl'); ?>">Slack Chat</a>'});
+return new ElementModule('div',{"class":"application-logo gather-logo",html:"<?php echo GetWidget('dashboardConfig')->getParameter('gatherLabel'); ?> "+(new Date()).getFullYear()+""})
