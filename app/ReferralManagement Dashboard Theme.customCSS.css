@@ -3093,7 +3093,33 @@ img.static-map {
 }
 
 
+.search-panel .user-detail>div>div>* {
+    display: inline-block;
+    vertical-align: middle;
+}
 
+
+
+.search-panel .ui-view.user-detail {
+    max-width: 400px;
+    display: inline-block;
+    margin: 6px;
+    float: right;
+    line-height: 20px;
+    text-align: left;
+}
+
+.search-panel .user-detail div.FormattedTextModule {
+    float: left;
+    height: 34px;
+    margin: 4px;
+    margin-right: 10px;
+}
+
+.search-panel .user-detail div.FormattedTextModule>div {
+    margin-top: -30px;
+    margin: -68px;
+}
     
     
     
