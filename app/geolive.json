@@ -3648,7 +3648,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
-            "formatModulesScript": "",
+            "formatModulesScript": "Left Panel.formatModulesScript.js",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
