@@ -15577,7 +15577,7 @@
                                     "deleteItemScript": "defaultBehaviorFn()",
                                     "initModuleScript": "",
                                     "formatModuleScript": "",
-                                    "resolveItemScript": "return item",
+                                    "resolveItemScript": "mainSearchDetail.metadata.positions.content.modules.2.config.resolveItemScript.js",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
