@@ -3,7 +3,7 @@ HtmlDocument()->META(HtmlDocument()->website(), 'base');
 IncludeJSBlock('
 
 
-TemplateModule.SetTemplate(\'form\',\'<div><div data-template="title" class="template-title"></div><div data-template="content" class="template-content"></div><div data-template="footer" class="template-footer"></div></div>\');
+TemplateModule.SetTemplate(\'form\',\'<div class="dark"><div data-template="title" class="template-title"></div><div data-template="content" class="template-content"></div><div data-template="footer" class="template-footer"></div></div>\');
 TemplateModule.SetTemplate(\'default\',\'<div data-template="content" class="template-content"></div>\');
 
 
