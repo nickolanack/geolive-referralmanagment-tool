@@ -3028,3 +3028,35 @@ img.static-map {
     
     
     
+    
+.search-panel span.SearchModule.search-container {
+    display: inline;
+}
+
+.search-panel span.search-bar-btn.left.search {
+    left: 0;
+    background-color: white;
+    border-right-width: 0;
+    box-shadow: none;
+    border-color: gray;
+    float: none;
+    top: 6px;
+    border: none;
+    position: absolute;
+}
+
+.search-panel input.search-input {
+    margin-left: 0;
+    border-color: gray;
+    box-shadow:none;
+    font-weight:300;
+    font-size: 16px;
+    text-indent: 50px;
+}
+    
+    
+    
+    
+    
+    
+    
