@@ -504,8 +504,7 @@ body.dragover .file-item.droppable-hide {
 span.warn {
     color: #E96A6A;
 }
-
-h2 {
+.dark h2 {
     color: white;
 }
 
@@ -1744,6 +1743,14 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {
     margin: 10px;
     cursor:pointer;
 }
+.WizardTitle li{
+    color:black;
+}
+.dark .WizardTitle li{
+    color:white;
+}
+
+button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {}
 
 .btn.forgot-pwd {
     background-color: rgba(0,0,0,0.1);
