@@ -227,6 +227,13 @@ var ReferralManagementUser = (function() {
 		return MainRoles.slice(0);
 	};
 
+
+	return ReferralManagementUser;
+
+})();
+
+
+
 	var TeamMember = new Class({
 		Extends: ReferralManagementUser,
 		isProjectMember: function() {
@@ -402,7 +409,3 @@ var ReferralManagementUser = (function() {
 			return 'Some description';
 		}
 	});
-
-	return ReferralManagementUser;
-
-})()

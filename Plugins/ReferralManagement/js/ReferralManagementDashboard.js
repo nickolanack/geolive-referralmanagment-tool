@@ -351,6 +351,7 @@ var ReferralManagementDashboard = {
 			// if (listView) {
 			// 	listView.redraw();
 			// }
+			
 		};
 
 		calendar.addEvent("selectDay", function(day, el) {

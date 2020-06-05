@@ -7,7 +7,8 @@ var MainNavigationMenu = new Class({
 		this.parent(null, {
 			"class": "collapsable-menu",
 			targetUIView: function(button, section, viewer) {
-				return viewer.getApplication().getChildView('content', 0).getChildView('content', 1);
+
+				return viewer.getApplication().getChildView('content', 0).getChildView('content', 1).getChildView('content', DashboardConfig.getValue('showSearchMenu')?1:0);
 			},
 			templateView: function(button, section) {
 				return button.template || button.view || (section.toLowerCase() + (button.name || button.html) + "Detail");
