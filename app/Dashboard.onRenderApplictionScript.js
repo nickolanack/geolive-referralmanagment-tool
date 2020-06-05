@@ -60,8 +60,12 @@ IncludeJSBlock('
     });
 
 
-    '.$targetInstance->getJSObjectName().'.runOnceOnLoad(function(){
-        
+    '.$targetInstance->getJSObjectName().'.runOnceOnLoad(function(app){
+        app.getDisplayController().setOptions({
+            popoverOptions:{
+                className:"testtest"
+            }
+        })
     });
 
 ');
