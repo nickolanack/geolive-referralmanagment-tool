@@ -281,8 +281,12 @@ label.boolean-field p {
     bottom: -54px;
     width: 100%;
     right: 0;
-    background-color: #2E303A;
+    background-color: whitesmoke;
     border-radius: 0 0 3px 3px;
+}
+
+.dark .pb-w .template-footer{
+    background-color: #2E303A;
 }
 
 .WizardButton.btn.cancel {
