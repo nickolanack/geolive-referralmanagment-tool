@@ -1671,10 +1671,13 @@ span.layer.noIcon {
 
 
 .pb-c.pb-c-append {
-    background-color: #333746;
-    color:white;
     line-height: 19px;
     font-size: 12px;
+}
+
+.dark.pb-c.pb-c-append {
+    background-color: #333746;
+    color:white;
 }
 
 
@@ -1713,7 +1716,7 @@ span.layer.noIcon {
     color: white;
 }
 
-.pb-c:after {
+.dark.pb-c:after {
     background-color: #2E303A;
 }
 
