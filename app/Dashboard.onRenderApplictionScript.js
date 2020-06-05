@@ -60,6 +60,10 @@ IncludeJSBlock('
     });
 
 
+    '.$targetIntsance->getJSObjectName().'.runOnceOnLoad(function(){
+        
+    });
+
 ');
 
 
