@@ -63,7 +63,7 @@ IncludeJSBlock('
     '.$targetInstance->getJSObjectName().'.runOnceOnLoad(function(app){
         app.getDisplayController().setOptions({
             popoverOptions:{
-                className:"testtest"
+                parentClassName:"testtest"
             }
         })
     });
