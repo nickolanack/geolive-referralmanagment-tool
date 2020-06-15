@@ -182,9 +182,11 @@ var MainNavigationMenu = new Class({
 				}, {
 					html: "Archive",
 					template: "configurationArchiveDetail"
-				}, {
-					html: "Trash"
-				}],
+				}, 
+				// {
+				// 	html: "Trash"
+				// }
+				],
 				"People": [{
 					html: "Projects",
 					name: "ProjectMembers",
