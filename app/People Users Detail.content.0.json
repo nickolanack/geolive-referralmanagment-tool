@@ -3,7 +3,8 @@
     "config": {
         "className": "section-title",
         "text": "Your Team Members",
-        "template": "",
-        "templateVariablesScript": ""
+        "template": "html.peopleUsersDetailTitle",
+        "templateVariablesScript": "{}",
+        "formatTextScript": ""
     }
 }

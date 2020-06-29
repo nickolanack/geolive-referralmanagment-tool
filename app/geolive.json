@@ -108,7 +108,7 @@
             "userProfileImageScript": "return $defaultImage;",
             "validateEmail": true,
             "magicLinkUrl": "magic-link",
-            "useRecaptcha": true,
+            "useRecaptcha": false,
             "recaptchaKey": "XXXX-XXXX",
             "recaptchaSecret": "XXXX-XXXX"
         }
@@ -5355,7 +5355,8 @@
                                     "className": "",
                                     "text": "Team Members",
                                     "template": "",
-                                    "templateVariablesScript": ""
+                                    "templateVariablesScript": "",
+                                    "formatTextScript": ""
                                 }
                             },
                             {
@@ -15521,7 +15522,12 @@
                             "recentItemDetail.metadata.positions.content.modules.0.json",
                             {
                                 "type": "FieldValue",
-                                "config": []
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return item.getCreationDate();",
+                                    "formatElementScript": ""
+                                }
                             }
                         ]
                     },
@@ -15610,6 +15616,426 @@
                 "_diagramState": []
             },
             "readAccess": "public"
+        }
+    },
+    "widget.334": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "module-html-communityDashboardPending-text.contentTemplate.html",
+            "widgetTitle": "module.html-communityDashboardPending.text",
+            "target": "module.html-communityDashboardPending.text"
+        }
+    },
+    "widget.335": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "tagsDetail",
+            "target": "tagsDetail",
+            "templateName": "tagsDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "positions": {
+                    "title": {
+                        "modules": [
+                            "tagsDetail.metadata.positions.title.modules.0.json"
+                        ]
+                    },
+                    "content": {
+                        "modules": [
+                            "tagsDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": [
+                            "tagsDetail.metadata.positions.footer.modules.0.json"
+                        ]
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                }
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.336": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "departmentsDetail",
+            "target": "departmentsDetail",
+            "templateName": "departmentsDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "positions": {
+                    "title": {
+                        "modules": [
+                            "departmentsDetail.metadata.positions.title.modules.0.json"
+                        ]
+                    },
+                    "content": {
+                        "modules": [
+                            "departmentsDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": [
+                            "departmentsDetail.metadata.positions.footer.modules.0.json"
+                        ]
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                }
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.337": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -154,
+                    "y": 820
+                },
+                "children": [
+                    "documentProjectForm.metadata.children.0.json",
+                    {
+                        "title": "Intro",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "documentProjectForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 97,
+                            "y": 421
+                        },
+                        "children": [
+                            "documentProjectForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 57,
+                                    "y": 622
+                                }
+                            },
+                            {
+                                "title": "Documents",
+                                "class": "AttributesTableNode",
+                                "fields": [
+                                    "documentProjectForm.metadata.children.1.children.2.fields.0.json"
+                                ],
+                                "_diagramState": {
+                                    "x": 660,
+                                    "y": 273
+                                },
+                                "children": [
+                                    "documentProjectForm.metadata.children.1.children.2.children.0.json",
+                                    {
+                                        "class": "InsertNode",
+                                        "_diagramState": {
+                                            "x": 620,
+                                            "y": 449
+                                        }
+                                    }
+                                ],
+                                "builderMetadata": {
+                                    "positions": {
+                                        "title": {
+                                            "modules": [
+                                                "documentProjectForm.metadata.children.1.children.2.builderMetadata.positions.title.modules.0.json"
+                                            ]
+                                        },
+                                        "content": {
+                                            "modules": [
+                                                "documentProjectForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.0.json",
+                                                {
+                                                    "type": "plugin.Attributes.WizardDescriptionAttribute",
+                                                    "config": {
+                                                        "attributeFields": [
+                                                            "documentProjectForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
+                                                        ],
+                                                        "label": "Other documents",
+                                                        "message": "add a description",
+                                                        "lines": 3,
+                                                        "mandatory": false,
+                                                        "showAudios": true,
+                                                        "showImages": true,
+                                                        "showDocuments": true,
+                                                        "showVideos": true,
+                                                        "className": "no-text width-2 only-docs",
+                                                        "maxChars": 0,
+                                                        "showExpandInput": true,
+                                                        "toolbarPosition": "bottom",
+                                                        "textFormatScript": "",
+                                                        "onRenderModuleFn": ""
+                                                    }
+                                                },
+                                                {
+                                                    "type": "plugin.ReferralManagement.WizardLayerField",
+                                                    "config": {
+                                                        "attributeFields": [
+                                                            "documentProjectForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
+                                                        ],
+                                                        "label": "Spatial files",
+                                                        "message": "add a description",
+                                                        "mandatory": false,
+                                                        "className": "no-text",
+                                                        "toolbarPosition": "bottom"
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "footer": {
+                                            "modules": [
+                                                "documentProjectForm.metadata.children.1.children.2.builderMetadata.positions.footer.modules.0.json"
+                                            ]
+                                        },
+                                        "menu": {
+                                            "modules": []
+                                        }
+                                    },
+                                    "positionList": [
+                                        "title",
+                                        "content",
+                                        "footer",
+                                        "menu"
+                                    ],
+                                    "_diagramState": {
+                                        "minimized": false
+                                    }
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "documentProjectForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "label": "Project title",
+                                                "message": "Add title for your project",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": true,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": [],
+                                                "onRenderTextFieldScript": "",
+                                                "formatdefaultScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "label": "Organization",
+                                                "message": "Add organization name",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": "{}",
+                                                "onRenderTextFieldScript": "",
+                                                "formatdefaultScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTagCloud",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "showLabel": false,
+                                                "showAddWord": false,
+                                                "label": "Project tags",
+                                                "addWordPlaceholder": "add a keyword",
+                                                "fontColor": "rgb(255, 255, 255)",
+                                                "hoverColor": "rgb(106, 233, 191)",
+                                                "selectedColor": "rgb(106, 124, 233)",
+                                                "shuffleTags": false,
+                                                "tags": "[\"Forestry\", \"Mining\", \"Energy\", \"Roads\"]",
+                                                "getItemTagsScript": "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.getItemTagsScript.js",
+                                                "formatModule": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardDescriptionAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
+                                                ],
+                                                "label": "Project description",
+                                                "message": "Here you can add a short description of the proposed project for your own reference",
+                                                "lines": 4,
+                                                "mandatory": true,
+                                                "showAudios": true,
+                                                "showImages": true,
+                                                "showDocuments": true,
+                                                "showVideos": true,
+                                                "className": "no-media hidden",
+                                                "maxChars": 0,
+                                                "showExpandInput": true,
+                                                "toolbarPosition": "bottom",
+                                                "textFormatScript": "",
+                                                "onRenderModuleFn": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "documentProjectForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "widgetTitle": "documentProjectForm",
+            "readAccess": "public",
+            "templateName": "documentProjectForm",
+            "requireTarget": true,
+            "target": "documentProjectForm",
+            "onLoadScript": "",
+            "resolveItemScript": "return item;"
+        }
+    },
+    "widget.338": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "usersCombinedDetail",
+            "target": "usersCombinedDetail",
+            "templateName": "usersCombinedDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "usersCombinedDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "communityUsersDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.339": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Your Team Members",
+            "widgetTitle": "module.html-peopleUsersDetailTitle.text",
+            "target": "module.html-peopleUsersDetailTitle.text"
         }
     }
 }
