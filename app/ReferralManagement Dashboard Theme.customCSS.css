@@ -281,8 +281,12 @@ label.boolean-field p {
     bottom: -54px;
     width: 100%;
     right: 0;
-    background-color: #2E303A;
+    background-color: whitesmoke;
     border-radius: 0 0 3px 3px;
+}
+
+.dark .pb-w .template-footer{
+    background-color: #2E303A;
 }
 
 .WizardButton.btn.cancel {
@@ -500,8 +504,7 @@ body.dragover .file-item.droppable-hide {
 span.warn {
     color: #E96A6A;
 }
-
-h2 {
+.dark h2 {
     color: white;
 }
 
@@ -1671,10 +1674,13 @@ span.layer.noIcon {
 
 
 .pb-c.pb-c-append {
-    background-color: #333746;
-    color:white;
     line-height: 19px;
     font-size: 12px;
+}
+
+.dark.pb-c.pb-c-append {
+    background-color: #333746;
+    color:white;
 }
 
 
@@ -1713,7 +1719,7 @@ span.layer.noIcon {
     color: white;
 }
 
-.pb-c:after {
+.dark.pb-c:after {
     background-color: #2E303A;
 }
 
@@ -1737,6 +1743,14 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {
     margin: 10px;
     cursor:pointer;
 }
+.WizardTitle li{
+    color:black;
+}
+.dark .WizardTitle li{
+    color:white;
+}
+
+button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {}
 
 .btn.forgot-pwd {
     background-color: rgba(0,0,0,0.1);
