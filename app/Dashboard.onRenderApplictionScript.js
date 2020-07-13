@@ -24,7 +24,7 @@ $firelight->includeScripts();
 
 
 GetWidget('proposalForm')->display($targetInstance); //proposal wizard from map
-
+GetWidget('documentProjectForm')->display($targetInstance); //proposal wizard from map
 
 GetWidget('dashboardLoader')->display($targetInstance); //proposal wizard from map
 
@@ -79,6 +79,13 @@ IncludeJSBlock('
 
     
     GetWidget('nonMemberDashboard')->display($targetInstance); 
+
+
+
+
+GetWidget('departmentsDetail')->display($targetInstance);
+GetWidget('tagsDetail')->display($targetInstance);
+GetWidget('usersCombinedDetail')->display($targetInstance);
 
 
 //GetWidget('mainDashboardRecentDetail')->display($targetInstance);

@@ -1,4 +1,9 @@
 {
     "type": "FieldValue",
-    "config": {}
+    "config": {
+        "loadAsync": false,
+        "fieldLabelScript": "return '';",
+        "fieldValueScript": "return  item.getName();",
+        "formatElementScript": ""
+    }
 }

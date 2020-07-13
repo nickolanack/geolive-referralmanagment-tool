@@ -108,7 +108,7 @@
             "userProfileImageScript": "return $defaultImage;",
             "validateEmail": true,
             "magicLinkUrl": "magic-link",
-            "useRecaptcha": true,
+            "useRecaptcha": false,
             "recaptchaKey": "XXXX-XXXX",
             "recaptchaSecret": "XXXX-XXXX"
         }
@@ -4592,6 +4592,18 @@
                     "name": "showSearchMenu",
                     "default": false,
                     "label": "showSearchMenu"
+                },
+                {
+                    "type": "json",
+                    "label": "roleLabels",
+                    "name": "roleLabels",
+                    "default": []
+                },
+                {
+                    "type": "json",
+                    "label": "disabledRoles",
+                    "name": "disabledRoles",
+                    "default": []
                 }
             ],
             "hello": "World",
@@ -4637,9 +4649,7 @@
             "configuration-archive": [
                 "webresources\/config-153\/ed4ac.[G]_m3o_LN2_N63_[ImAgE].png"
             ],
-            "applicationLogo": [
-                "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/CRA_zKL_[G]_[ImAgE]_MnU-%3Ethumb:%3E200x%3E150.png"
-            ],
+            "applicationLogo": [],
             "formatOutputScript": "return $parameters;",
             "main-map": [
                 "webresources\/config-153\/7a1c5.[ImAgE]_HcO_[G]_sSm_8ws.png"
@@ -4685,9 +4695,7 @@
             "fileDownloadBtnIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/PZR_XRl_%5BImAgE%5D_%5BG%5D_xBM.png"
             ],
-            "gatherLogo": [
-                "uploads-wabun.geoforms.ca\/user_files_1\/Uploads\/[ImAgE]_3AT_[G]_1vT_kaK.png"
-            ],
+            "gatherLogo": [],
             "fileUploadBtnIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_%5BG%5D_yv_Xj5_vwP.png"
             ],
@@ -4697,7 +4705,7 @@
             "appleAppIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/Lx7_R7S_3Xr_%5BG%5D_%5BImAgE%5D.png"
             ],
-            "slackUrl": "https:\/\/wabuntc.slack.com",
+            "slackUrl": "https:\/\/gct3portal.slack.com",
             "showUsersRoles": false,
             "enableTasks": true,
             "enableProposals": true,
@@ -4706,11 +4714,13 @@
             "enableActivity": true,
             "enableMap": true,
             "simplifiedMenu": false,
-            "gatherLabel": "Gather Referrals Tool",
+            "gatherLabel": "Wabun Referral Management ",
             "darkMode": true,
-            "loadingLabel": "Loading your referral dashboard",
-            "surveyUrl": "https:\/\/goo.gl\/forms\/MVY1ES1X5gARvxgF2",
-            "showSearchMenu": false
+            "loadingLabel": "Loading your Wabun Referral Management Portal",
+            "surveyUrl": "https:\/\/docs.google.com\/forms\/d\/e\/1FAIpQLSfq7MQRMB4TDe959R5ER6NKsAf2Q7rTtEOEgfFDJ3JQ3gNxng\/viewform?usp=sf_link",
+            "showSearchMenu": false,
+            "roleLabels": [],
+            "disabledRoles": []
         }
     },
     "widget.154": {
@@ -5355,7 +5365,8 @@
                                     "className": "",
                                     "text": "Team Members",
                                     "template": "",
-                                    "templateVariablesScript": ""
+                                    "templateVariablesScript": "",
+                                    "formatTextScript": ""
                                 }
                             },
                             {
@@ -9474,7 +9485,8 @@
                                     "className": "",
                                     "text": "Community Members &amp; Unassigned Users",
                                     "template": "",
-                                    "templateVariablesScript": ""
+                                    "templateVariablesScript": "",
+                                    "formatTextScript": ""
                                 }
                             },
                             {
@@ -15521,7 +15533,12 @@
                             "recentItemDetail.metadata.positions.content.modules.0.json",
                             {
                                 "type": "FieldValue",
-                                "config": []
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return item.getCreationDate();",
+                                    "formatElementScript": ""
+                                }
                             }
                         ]
                     },
@@ -15609,6 +15626,439 @@
                 ],
                 "_diagramState": []
             },
+            "readAccess": "public"
+        }
+    },
+    "widget.334": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "module-html-communityDashboardPending-text.contentTemplate.html",
+            "widgetTitle": "module.html-communityDashboardPending.text",
+            "target": "module.html-communityDashboardPending.text"
+        }
+    },
+    "widget.335": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "tagsDetail",
+            "target": "tagsDetail",
+            "templateName": "tagsDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "positions": {
+                    "title": {
+                        "modules": [
+                            "tagsDetail.metadata.positions.title.modules.0.json"
+                        ]
+                    },
+                    "content": {
+                        "modules": [
+                            "tagsDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": [
+                            "tagsDetail.metadata.positions.footer.modules.0.json"
+                        ]
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                }
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.336": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "departmentsDetail",
+            "target": "departmentsDetail",
+            "templateName": "departmentsDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "positions": {
+                    "title": {
+                        "modules": [
+                            "departmentsDetail.metadata.positions.title.modules.0.json"
+                        ]
+                    },
+                    "content": {
+                        "modules": [
+                            "departmentsDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": [
+                            "departmentsDetail.metadata.positions.footer.modules.0.json"
+                        ]
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                }
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.337": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -154,
+                    "y": 820
+                },
+                "children": [
+                    "documentProjectForm.metadata.children.0.json",
+                    {
+                        "title": "Intro",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "documentProjectForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 97,
+                            "y": 421
+                        },
+                        "children": [
+                            "documentProjectForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 57,
+                                    "y": 622
+                                }
+                            },
+                            {
+                                "title": "Documents",
+                                "class": "AttributesTableNode",
+                                "fields": [
+                                    "documentProjectForm.metadata.children.1.children.2.fields.0.json"
+                                ],
+                                "_diagramState": {
+                                    "x": 660,
+                                    "y": 273
+                                },
+                                "children": [
+                                    "documentProjectForm.metadata.children.1.children.2.children.0.json",
+                                    {
+                                        "class": "InsertNode",
+                                        "_diagramState": {
+                                            "x": 620,
+                                            "y": 449
+                                        }
+                                    }
+                                ],
+                                "builderMetadata": {
+                                    "positions": {
+                                        "title": {
+                                            "modules": [
+                                                "documentProjectForm.metadata.children.1.children.2.builderMetadata.positions.title.modules.0.json"
+                                            ]
+                                        },
+                                        "content": {
+                                            "modules": [
+                                                "documentProjectForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.0.json",
+                                                {
+                                                    "type": "plugin.Attributes.WizardDescriptionAttribute",
+                                                    "config": {
+                                                        "attributeFields": [
+                                                            "documentProjectForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
+                                                        ],
+                                                        "label": "Other documents",
+                                                        "message": "add a description",
+                                                        "lines": 3,
+                                                        "mandatory": false,
+                                                        "showAudios": true,
+                                                        "showImages": true,
+                                                        "showDocuments": true,
+                                                        "showVideos": true,
+                                                        "className": "no-text width-2 only-docs",
+                                                        "maxChars": 0,
+                                                        "showExpandInput": true,
+                                                        "toolbarPosition": "bottom",
+                                                        "textFormatScript": "",
+                                                        "onRenderModuleFn": ""
+                                                    }
+                                                },
+                                                {
+                                                    "type": "plugin.ReferralManagement.WizardLayerField",
+                                                    "config": {
+                                                        "attributeFields": [
+                                                            "documentProjectForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
+                                                        ],
+                                                        "label": "Spatial files",
+                                                        "message": "add a description",
+                                                        "mandatory": false,
+                                                        "className": "no-text",
+                                                        "toolbarPosition": "bottom"
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "footer": {
+                                            "modules": [
+                                                "documentProjectForm.metadata.children.1.children.2.builderMetadata.positions.footer.modules.0.json"
+                                            ]
+                                        },
+                                        "menu": {
+                                            "modules": []
+                                        }
+                                    },
+                                    "positionList": [
+                                        "title",
+                                        "content",
+                                        "footer",
+                                        "menu"
+                                    ],
+                                    "_diagramState": {
+                                        "minimized": false
+                                    }
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "documentProjectForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "label": "Project title",
+                                                "message": "Add title for your project",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": true,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": [],
+                                                "onRenderTextFieldScript": "",
+                                                "formatdefaultScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "label": "Organization",
+                                                "message": "Add organization name",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": "{}",
+                                                "onRenderTextFieldScript": "",
+                                                "formatdefaultScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTagCloud",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "showLabel": false,
+                                                "showAddWord": false,
+                                                "label": "Project tags",
+                                                "addWordPlaceholder": "add a keyword",
+                                                "fontColor": "rgb(255, 255, 255)",
+                                                "hoverColor": "rgb(106, 233, 191)",
+                                                "selectedColor": "rgb(106, 124, 233)",
+                                                "shuffleTags": false,
+                                                "tags": "[\"Forestry\", \"Mining\", \"Energy\", \"Roads\"]",
+                                                "getItemTagsScript": "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.getItemTagsScript.js",
+                                                "formatModule": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardDescriptionAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
+                                                ],
+                                                "label": "Project description",
+                                                "message": "Here you can add a short description of the proposed project for your own reference",
+                                                "lines": 4,
+                                                "mandatory": true,
+                                                "showAudios": true,
+                                                "showImages": true,
+                                                "showDocuments": true,
+                                                "showVideos": true,
+                                                "className": "no-media hidden",
+                                                "maxChars": 0,
+                                                "showExpandInput": true,
+                                                "toolbarPosition": "bottom",
+                                                "textFormatScript": "",
+                                                "onRenderModuleFn": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "documentProjectForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "widgetTitle": "documentProjectForm",
+            "readAccess": "public",
+            "templateName": "documentProjectForm",
+            "requireTarget": true,
+            "target": "documentProjectForm",
+            "onLoadScript": "",
+            "resolveItemScript": "return item;"
+        }
+    },
+    "widget.338": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "usersCombinedDetail",
+            "target": "usersCombinedDetail",
+            "templateName": "usersCombinedDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "usersCombinedDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "communityUsersDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.340": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "module-html-peopleUsersDetail-text.contentTemplate.html",
+            "widgetTitle": "module.html-peopleUsersDetail.text",
+            "target": "module.html-peopleUsersDetail.text",
+            "comments": "",
+            "readAccess": "public"
+        }
+    },
+    "widget.341": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "module-html-communityUsersDetail-text.contentTemplate.html",
+            "widgetTitle": "module.html-communityUsersDetail.text",
+            "target": "module.html-communityUsersDetail.text",
+            "comments": "",
             "readAccess": "public"
         }
     }

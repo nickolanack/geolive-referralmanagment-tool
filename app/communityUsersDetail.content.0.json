@@ -1,9 +1,10 @@
 {
     "type": "InlineHtml",
     "config": {
-        "className": "section-title",
+        "className": "",
         "text": "Manage Community Users And Add Team Members",
-        "template": "",
-        "templateVariablesScript": ""
+        "template": "html.communityUsersDetail",
+        "templateVariablesScript": "{}",
+        "formatTextScript": ""
     }
 }

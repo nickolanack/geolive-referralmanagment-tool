@@ -1,9 +1,10 @@
 {
     "type": "InlineHtml",
     "config": {
-        "className": "section-title",
-        "text": "Your Team Members",
-        "template": "",
-        "templateVariablesScript": ""
+        "className": "",
+        "text": "edit template",
+        "template": "html.peopleUsersDetail",
+        "templateVariablesScript": "{}",
+        "formatTextScript": ""
     }
 }

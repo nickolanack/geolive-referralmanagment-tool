@@ -1,0 +1,8 @@
+{
+    "type": "WizardScriptElement",
+    "config": {
+        "name": "My Custom Script",
+        "script": "if(item.getId()>0){\n    return '<h2>Edit project: <span>'+item.getName()+'<\/span><h2>';\n}\n\nif(AppClient.getUserType()==\"guest\"){\n    return '<h2>Create new project: <span>as a proponent<\/span><h2>';\n}\n\n\nreturn '<h2>Create new project<h2>';",
+        "description": "Info about my custom script"
+    }
+}
