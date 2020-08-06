@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Referral Management System uses project tag (type) to automatically add some tasks to the project
+ */
+
 
 namespace ReferralManagement;
 

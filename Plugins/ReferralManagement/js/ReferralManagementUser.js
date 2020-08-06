@@ -53,6 +53,11 @@ var ReferralManagementUser = (function() {
 			var me = this;
 			return me.options.metadata.roles;
 		},
+		getBio: function(){
+
+			var me = this;
+			return me.options.metadata.bio; 
+		},
 		getRolesUserCanAssign: function() {
 			var me = this;
 			return me.options.metadata['can-assignroles'];

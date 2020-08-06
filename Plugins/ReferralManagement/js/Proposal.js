@@ -388,6 +388,8 @@ var Proposal = (function() {
 			var today=(new Date()).valueOf();
 			return Math.max(0, Math.round((end-today)/(1000*3600*24)));
 		},
+
+
 		getPercentTimeComplete: function() {
 			var me = this;
 
@@ -497,7 +499,18 @@ var Proposal = (function() {
 			}).execute();
 
 		},
+		getCreationDate: function() {
+			var me = this;
+			return me.data.createdDate;
+			//return 'ddd';
 
+		},
+		getModificationDate: function() {
+			var me = this;
+			return me.data.modifiedDate;
+			//return 'ddd';
+
+		},
 		getSubmitDate: function() {
 			var me = this;
 			return me.data.attributes.submissionDate;
@@ -546,6 +559,12 @@ var Proposal = (function() {
 		getClientName: function() {
 			var me = this;
 			return me.data.attributes.company;
+			//return 'ddd';
+
+		},
+		getProjectUsername: function() {
+			var me = this;
+			return me.data.userdetails.name;
 			//return 'ddd';
 
 		},

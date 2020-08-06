@@ -600,6 +600,17 @@ var ProjectTeam = (function() {
 			});
 			return events;
 		},
+		hasProject: function(id){
+			var me=this;
+			var prop = me.getAllProjects();
+			for (var i = 0; i < prop.length; i++) {
+				if (prop[i].getId() + "" === id + "") {
+					return true;
+				}
+			}
+			return false;
+
+		},
 		getProject: function(id, callback) {
 
 			var me = this;

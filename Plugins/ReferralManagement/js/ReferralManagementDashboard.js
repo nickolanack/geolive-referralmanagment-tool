@@ -1,3 +1,55 @@
+var ProjectTag =new Class({
+			Extends:MockDataTypeItem,
+			initialize:function(options){
+				this.parent(options);
+
+				this.setName=function(n){
+					options.name=n
+				}
+				this.setDescription=function(d){
+					options.description=d
+				}
+				this.setColor=function(c){
+					options.color=c
+				}
+			},
+			save:function(callback){
+
+				var i=ReferralManagementDashboard._tags.indexOf(this);
+				if(i<0){
+					ReferralManagementDashboard._tags.push(this);
+				}
+
+				callback(true);
+			}
+		});
+
+var ProjectDepartment =new Class({
+			Extends:MockDataTypeItem,
+			initialize:function(options){
+				this.parent(options);
+
+				this.setName=function(n){
+					options.name=n
+				}
+				this.setDescription=function(d){
+					options.description=d
+				}
+				
+			},
+			save:function(callback){
+
+				var i=ReferralManagementDashboard._departments.indexOf(this);
+				if(i<0){
+					ReferralManagementDashboard._departments.push(this);
+				}
+
+				callback(true);
+			}
+		});
+
+
+
 var ReferralManagementDashboard = {
 
 
@@ -22,6 +74,130 @@ var ReferralManagementDashboard = {
 		});
 
 	},
+
+
+	getProjectTags:function(callback){
+
+		var tags=[];//"Forestry", "Mining", "Energy", "Roads"];
+		tags=tags.concat(ReferralManagementDashboard._tags.map(function(t){ return t.getName(); }))
+		if(callback){
+			callback(tags);
+		}
+
+		return tags;
+	},
+
+	_tags:[
+		new ProjectTag({
+			name:"Forestry",
+			id:-1,
+			color:"#88ed88",
+			description:"",
+			category:"industry"
+		}),
+		new ProjectTag({
+			name:"Mining",
+			id:-1,
+			color:"#f1ee40",
+			description:"",
+			category:"industry"
+		}),
+		new ProjectTag({
+			name:"Energy",
+			id:-1,
+			color:"#6ab1ff",
+			description:"",
+			category:"industry"
+		}),
+		new ProjectTag({
+			name:"Roads",
+			id:-1,
+			color:"#c8c8c8",
+			description:"",
+			category:"industry"
+		})
+
+	],
+	getNewProjectTag:function(category){
+
+		
+		var newTag=new ProjectTag({
+		    name:"",
+		    description:"",
+		    type:"Project.tag",
+		    id:-1,
+		    color:"#ffffff",
+		    category:category
+		})
+
+		return newTag;
+
+	},
+
+
+
+	getProjectTagsData:function(category){
+
+
+		var colors={
+				"forestry":"#88ed88",
+				"mining":"#f1ee40",
+				"energy":"#6ab1ff",
+				"roads":"#c8c8c8"
+			};
+			//["Forestry", "Mining", "Energy", "Roads"]
+		return ([]).map(function(a){
+
+			return new MockDataTypeItem({
+				name:a,
+				id:-1,
+				color:colors[a.toLowerCase()],
+				description:"",
+				category:"industry"
+
+			})
+			
+
+
+		}).concat(ReferralManagementDashboard._tags).filter(function(item){
+
+			if(category&&category!=""){
+				return item.getCategory()==category;
+			}
+			return true;
+		})
+		
+	},
+
+	getNewDepartment:function(category){
+
+		
+		var newTag=new ProjectDepartment({
+		    name:"",
+		    description:"",
+		    type:"Project.department",
+		    id:-1
+		});
+
+		return newTag;
+
+	},
+
+	getProjectDepartments:function(category){
+
+
+		return ReferralManagementDashboard._departments.slice(0);
+		
+	},
+
+	_departments:[
+		new ProjectDepartment({
+			name:"Land Department",
+			id:-1,
+			
+			description:""
+		})
+	],
 
 	getCreatedByString: function(item) {
 
@@ -269,6 +445,13 @@ var ReferralManagementDashboard = {
 
 
 		var addRole = function(r) {
+
+
+			var disabed=DashboardConfig.getValue('disabledRoles');
+			if(disabed&&disabed.indexOf(r)>=0){
+				return;
+			}
+
 			var roleEl = el.appendChild(new Element('li', {
 				"class": "role-" + r
 			}));
@@ -281,7 +464,7 @@ var ReferralManagementDashboard = {
 			}
 
 
-			var label = r.split('-').join(' ').capitalize();
+			var label = ReferralManagementDashboard.getLabelForUserRole(r);
 			var popover = function(text) {
 				new UIPopover(roleEl, {
 					description: text,
@@ -623,7 +806,10 @@ var ReferralManagementDashboard = {
 
 
 	},
+
+
 	projectActivityChartData: function(item, application, options) {
+
 
 
 		options = Object.append({}, options);
@@ -657,140 +843,157 @@ var ReferralManagementDashboard = {
 
 
 				var range = [day, next];
+				var itemEventSegments={
+					
+				};
 
-				var events = item.getEvents(range);
+				if(item instanceof Proposal){
 
-				var dueDateCompleteItems = events.filter(function(ev) {
-					return ev.item.isComplete();
-				});
-				var dueDateIncompleteItems = events.filter(function(ev) {
-					return !ev.item.isComplete();
-				});
+					var dueDateCompleteItems=[];
+					var dueDateIncompleteItems=[];
+					var creationItems=[];
+					var completionItems=[];
 
-				var creationItems = item.getEvents(range, function(ev) {
-					return ev.getCreatedDate();
-				});
-				var completionItems = item.getEvents(range, function(ev) {
-					if (ev.isComplete()) {
-						return ev.getCompletedDate();
+					var events = item.getEvents(range);
+
+					dueDateCompleteItems = events.filter(function(ev) {
+						return ev.item.isComplete();
+					});
+					 dueDateIncompleteItems = events.filter(function(ev) {
+						return !ev.item.isComplete();
+					});
+
+					creationItems = item.getEvents(range, function(ev) {
+						return ev.getCreatedDate();
+					});
+					completionItems = item.getEvents(range, function(ev) {
+						if (ev.isComplete()) {
+							return ev.getCompletedDate();
+						}
+						return false;
+					});
+
+
+					var segments = [];
+
+					var itemMap = function(e) {
+						return e.item;
 					}
-					return false;
-				});
 
 
-				var segments = [];
+					var countOf = function(list) {
+						return list.length + ' task' + (list.length == 1 ? '' : 's');
+					}
+					var isAre = function(list) {
+						return list.length == 1 ? "is" : "are";
+					}
 
-				var itemMap = function(e) {
-					return e.item;
-				}
-
-
-				var countOf = function(list) {
-					return list.length + ' task' + (list.length == 1 ? '' : 's');
-				}
-				var isAre = function(list) {
-					return list.length == 1 ? "is" : "are";
-				}
-
-				var hint = application ? '<br/><span style="color:#6AE9BF; font-style:italic;">click to filter</span>' : '';
+					var hint = application ? '<br/><span style="color:#6AE9BF; font-style:italic;">click to filter</span>' : '';
 
 
-				var todayIsOverdue = day.valueOf() < today.valueOf();
-				var timeStr = moment(day).calendar().split(' at ').shift();
-				if (timeStr.indexOf('/') >= 0) {
-					timeStr = moment(day).fromNow();
-				}
+					var todayIsOverdue = day.valueOf() < today.valueOf();
+					var timeStr = moment(day).calendar().split(' at ').shift();
+					if (timeStr.indexOf('/') >= 0) {
+						timeStr = moment(day).fromNow();
+					}
 
-				var eventsForList = function(list) {
-					return Object.append(
-						ReferralManagementDashboard.taskHighlightMouseEvents(list),
-						(application ? {
-							click: function() {
+					var eventsForList = function(list) {
+						return Object.append(
+							ReferralManagementDashboard.taskHighlightMouseEvents(list),
+							(application ? {
+								click: function() {
 
-								var filter = application.getNamedValue("taskListFilter");
-								if (filter) {
+									var filter = application.getNamedValue("taskListFilter");
+									if (filter) {
 
-									filter.applyFilter({
-										name: timeStr,
-										filterFn: function(a) {
-											return list.indexOf(a) >= 0;
-										}
-									}, false);
+										filter.applyFilter({
+											name: timeStr,
+											filterFn: function(a) {
+												return list.indexOf(a) >= 0;
+											}
+										}, false);
+
+									}
+
 
 								}
+							} : {})
+						);
+					}
 
-
+					if (dueDateCompleteItems.length) {
+						segments.push({
+							value: dueDateCompleteItems.length,
+							userItems: dueDateCompleteItems,
+							"class": "complete",
+							"events": eventsForList(dueDateCompleteItems.map(itemMap)),
+							"mouseover": {
+								"description": countOf(dueDateCompleteItems) + " " + isAre(dueDateCompleteItems) + " already complete" + hint
 							}
-						} : {})
-					);
+						});
+					}
+
+
+
+					if (dueDateIncompleteItems.length) {
+						segments.push({
+							value: dueDateIncompleteItems.length,
+							userItems: dueDateIncompleteItems,
+							"class": todayIsOverdue ? "overdue" : "duedate",
+							"events": eventsForList(dueDateIncompleteItems.map(itemMap)),
+							"mouseover": {
+								"description": countOf(dueDateIncompleteItems) + " " + (todayIsOverdue ? "went overdue" : isAre(dueDateIncompleteItems) + " due") + " " + timeStr + hint
+							}
+
+						});
+					}
+
+
+
+					if (creationItems.length) {
+						segments.push({
+							value: creationItems.length,
+							userItems: creationItems,
+							"class": "created",
+							"events": eventsForList(creationItems.map(itemMap)),
+							"mouseover": {
+								"description": "created " + countOf(creationItems) + " " + timeStr + hint
+							}
+						});
+					}
+
+
+					if (completionItems.length) {
+						segments.push({
+
+							value: completionItems.length,
+
+							userItems: completionItems,
+							"class": "completed",
+							"events": eventsForList(completionItems.map(itemMap)),
+							"mouseover": {
+								"description": "completed " + countOf(completionItems) + " " + timeStr + hint
+							}
+						});
+					}
+
+					var itemEventSegments={
+						value: dueDateIncompleteItems.length + dueDateCompleteItems.length + creationItems.length + completionItems.length,
+						segments: segments
+					}
+
 				}
 
-				if (dueDateCompleteItems.length) {
-					segments.push({
-						value: dueDateCompleteItems.length,
-						userItems: dueDateCompleteItems,
-						"class": "complete",
-						"events": eventsForList(dueDateCompleteItems.map(itemMap)),
-						"mouseover": {
-							"description": countOf(dueDateCompleteItems) + " " + isAre(dueDateCompleteItems) + " already complete" + hint
-						}
-					});
-				}
-
-
-
-				if (dueDateIncompleteItems.length) {
-					segments.push({
-						value: dueDateIncompleteItems.length,
-						userItems: dueDateIncompleteItems,
-						"class": todayIsOverdue ? "overdue" : "duedate",
-						"events": eventsForList(dueDateIncompleteItems.map(itemMap)),
-						"mouseover": {
-							"description": countOf(dueDateIncompleteItems) + " " + (todayIsOverdue ? "went overdue" : isAre(dueDateIncompleteItems) + " due") + " " + timeStr + hint
-						}
-
-					});
-				}
-
-
-
-				if (creationItems.length) {
-					segments.push({
-						value: creationItems.length,
-						userItems: creationItems,
-						"class": "created",
-						"events": eventsForList(creationItems.map(itemMap)),
-						"mouseover": {
-							"description": "created " + countOf(creationItems) + " " + timeStr + hint
-						}
-					});
-				}
-
-
-				if (completionItems.length) {
-					segments.push({
-
-						value: completionItems.length,
-
-						userItems: completionItems,
-						"class": "completed",
-						"events": eventsForList(completionItems.map(itemMap)),
-						"mouseover": {
-							"description": "completed " + countOf(completionItems) + " " + timeStr + hint
-						}
-					});
-				}
-
-
-				var d = {
+				var d = Object.extend({
 					attributes: {
 						dayofweek: (['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'])[day.getDay()]
 					},
 					day: day,
 					label: day.getDate(),
-					value: dueDateIncompleteItems.length + dueDateCompleteItems.length + creationItems.length + completionItems.length,
-					segments: segments
-				}
+					value:0,
+					segments:[]
+					
+				},itemEventSegments);
 
 				if (todayStr == day.toISOString().split('T')[0]) {
 					d.class = "active";
@@ -880,8 +1083,14 @@ var ReferralManagementDashboard = {
 			width: "50px",
 			height: "50px",
 			"background-size": "cover",
-			"background-image": "url(" + defaultIcon + ")"
+			
 		});
+
+		if(defaultIcon){
+			span.setStyles({
+				"background-image": "url(" + defaultIcon + ")"
+			});
+		}
 
 
 
@@ -891,12 +1100,22 @@ var ReferralManagementDashboard = {
 			el.removeClass('is-offline');
 			el.removeClass('is-unknown');
 
-			if(!item.showsOnline()){
+			var user=item;
+
+			if(!(item instanceof ReferralManagementUser)){
+				if (ProjectTeam.CurrentTeam().hasUser((item.getUserId || item.getId).bind(item)())) {
+					user = ProjectTeam.CurrentTeam().getUser((item.getUserId || item.getId).bind(item)())
+				}else{
+					return;
+				}
+			}
+
+			if(!user.showsOnline()){
 				el.addClass('is-unknown');
 				return;
 			}
 
-			if(item.isOnline()){
+			if(user.isOnline()){
 				el.addClass('is-online');
 				return;
 			}
@@ -975,7 +1194,16 @@ var ReferralManagementDashboard = {
 
 				var controller = application.getNamedValue('navigationController');
 				application.setNamedValue("currentProject", child);
-				controller.navigateTo("Projects", "Main");
+
+				DashboardConfig.getValue('showSplitProjectDetail',function(split){
+					if(split){
+						controller.navigateTo("Projects", "Main");
+						return;
+					}
+					controller.navigateTo("Project", "Main");
+				})
+
+				
 
 			});
 
@@ -1121,6 +1349,16 @@ var ReferralManagementDashboard = {
 		});
 	},
 
+	getLabelForManager:function(){
+		return ReferralManagementDashboard.getLabelForUserRole('lands-department-manager');
+	},
+	getLabelForMember:function(){
+		return ReferralManagementDashboard.getLabelForUserRole('lands-department');
+	},
+	getLabelForCommunityMember:function(){
+		return 'Community Member';
+	},
+
 	getEmptyProjectsListDescription: function() {
 
 
@@ -1136,26 +1374,44 @@ var ReferralManagementDashboard = {
 
 	},
 
+	getLabelForUserRole: function(role) {
+
+
+		var roleLables={
+
+		};
+
+		roleLables=DashboardConfig.getValue('roleLabels');
+
+		if(roleLables[role]){
+			return roleLables[role];
+		}
+
+		return '' + (role.replace('-', ' ').capitalize()) + '';
+	},
+
+
+
 	getUsersTeamMembersDescription: function() {
 
 		var text = "<span class=\"section-title\">My community and user roles</span><br/>"
 		if (AppClient.getUserType() === "admin") {
-			text = text + "You are a Site Administrator so you can see all Lands Department members from all communities (and set user roles). The following description of your role would apply if you were a regular user. <br/>"
+			text = text + "You are a Site Administrator so you can see all "+ReferralManagementDashboard.getLabelForMember()+"s from all communities (and set user roles). The following description of your role would apply if you were a regular user. <br/>"
 		}
 
 
 		var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
 
 		if (user.isTeamManager()) {
-			text = text + "You are a Lands Department Manager. " +
-				"You can see the lands department members in your community, `" + user.getCommunity() + "` and `wabun`, as well as Lands Department Managers accross communities. " +
-				"<br/>You can share individual projects with other communities by adding a Lands Department manager from another community to a specific project, (There are other ways to collaborate)." +
+			text = text + "You are a "+ReferralManagementDashboard.getLabelForManager()+". " +
+				"You can see the "+ReferralManagementDashboard.getLabelForMember()+"s in your community, `" + user.getCommunity() + "` and `wabun`, as well as "+ReferralManagementDashboard.getLabelForManager()+"s accross communities. " +
+				"<br/>You can share individual projects with other communities by adding a "+ReferralManagementDashboard.getLabelForManager()+" from another community to a specific project, (There are other ways to collaborate)." +
 				"<br/> You can asign users to the following roles: " +
 				(user.getRolesUserCanAssign().map(function(r) {
-					return '`' + (r.replace('-', ' ').capitalize()) + '`';
-				}).join(', ')) + '. As long as they are in your community, and have a lower role than `' + (user.getRole().replace('-', ' ').capitalize()) + '`';
+					return '`' + ReferralManagementDashboard.getLabelForUserRole(r) + '`';
+				}).join(', ')) + '. As long as they are in your community, and have a lower role than `' + ReferralManagementDashboard.getLabelForUserRole(user.getRole()) + '`';
 		} else {
-			text = text + "You are a Lands Department Member. " +
+			text = text + "You are a "+ReferralManagementDashboard.getLabelForMember()+". " +
 				"You can see other lands department members in your own community, `" + user.getCommunity() + "` and `wabun`. ";
 		}
 
@@ -1345,6 +1601,7 @@ var ReferralManagementDashboard = {
 		var sections= [
 			{
 				label:"Letters",
+				"parentClassName":"files-letters",
 				formatModule:function(module){
 
 					module.getElement().addClass('letters');
@@ -1372,6 +1629,7 @@ var ReferralManagementDashboard = {
 			},
 			{
 				label:"Permits",
+				"parentClassName":"files-permits",
 				formatModule:function(module){
 
 					module.getElement().addClass('permits');
@@ -1399,6 +1657,7 @@ var ReferralManagementDashboard = {
 			},
 			{
 				label:"Agreements",
+				"parentClassName":"files-agreements",
 				formatModule:function(module){
 
 					module.getElement().addClass('agreements');
@@ -1427,6 +1686,7 @@ var ReferralManagementDashboard = {
 			},
 			{
 				label:"Documents",
+				"parentClassName":"files-documents",
 				formatModule:function(module){
 
 					module.getElement().addClass('documents');
@@ -1454,6 +1714,7 @@ var ReferralManagementDashboard = {
 			},
 			{
 				label:"Spatial",
+				"parentClassName":"files-spatial",
 				formatModule:function(module){
 
 					module.getElement().addClass('spatial');
@@ -1487,6 +1748,7 @@ var ReferralManagementDashboard = {
 			},
 			{
 				label:"Other documents",
+				"parentClassName":"files-other",
 				formatModule:function(module){
 
 					module.getElement().addClass('other-documents');
@@ -1527,6 +1789,7 @@ var ReferralManagementDashboard = {
 		if(taskFiles.length){
 			sections.push({
 					label:"Attachments from tasks",
+					"parentClassName":"files-tasks",
 					formatModule:function(module){
 						
 					},

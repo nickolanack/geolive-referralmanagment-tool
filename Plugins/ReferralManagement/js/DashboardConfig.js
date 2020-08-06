@@ -33,7 +33,21 @@ var DashboardConfig=(function(){
 				me.getValue(name, callback);
 			});
 			
-		}
+		},
+
+
+		runOnceOnLoad: function(fn) {
+			var me = this;
+
+			if (me._ready) {
+				fn(me, me._config);
+			} else {
+				me.addEvent('setConfig:once', function() {
+					fn(me, me._config);
+				});
+			}
+
+		},
 
 	});
 

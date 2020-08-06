@@ -36,10 +36,13 @@ class User {
 			function ($attributes) use (&$metadata, $userId) {
 
 				$metadata['community'] = 'none';
-				if (in_array($attributes['community'], $this->listCommunities())) {
+				if (in_array(strtolower($attributes['community']), $this->listCommunities())) {
 					$metadata['community'] = $attributes['community'];
 				}
 
+				//$metadata['-community'] = $attributes['community'];
+				//$metadata['-communityList'] = $this->listCommunities();
+				
 				$metadata['status'] = !!$attributes['registeredStatus'];
 
 				$metadata['communityId'] = array_search($metadata['community'], $this->listCommunities());
@@ -59,6 +62,7 @@ class User {
 				$metadata['can-assignroles'] = $this->getRolesUserCanEdit($userId);
 
 				$metadata['roles'] = $this->getUserRoles($userId);
+				$metadata['bio'] = $this->getUsersBio($userId);
 
 			});
 
@@ -167,6 +171,27 @@ class User {
 		}
 
 		return GetClient()->getRealName();
+
+	}
+
+
+	protected function getUsersBio($userId = -1, $default = null) {
+
+		if ($userId < 1) {
+			$userId = GetClient()->getUserId();
+		}
+
+		$attribs = $this->_getUserAttributes($userId);
+
+		if ($attribs["bio"]) {
+			return $attribs["bio"];
+		}
+
+		if ($default) {
+			return $default;
+		}
+
+		return '';
 
 	}
 

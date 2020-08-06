@@ -48,10 +48,7 @@ var MainNavigationMenu = new Class({
 
 		var navigationController = this;
 
-		var configQuery = new AjaxControlQuery(CoreAjaxUrlRoot, 'get_dashboard_config', {
-			'plugin': "ReferralManagement"
-		});
-		configQuery.addEvent('success', function(config) {
+		DashboardConfig.runOnceOnLoad(function(dashConfig, config) {
 
 
 
@@ -67,9 +64,20 @@ var MainNavigationMenu = new Class({
 								var l = team.getProjects().length;
 
 								li.setAttribute('data-counter', l);
-								li.setAttribute('data-counter-complete', team.getProjects().filter(function(p) {
-									return p.isComplete();
-								}).length + '/' + l)
+
+
+								DashboardConfig.getValue("enableTasks", function(enabled){
+									if(!enabled){
+										return;
+									}
+									li.setAttribute('data-counter-complete', team.getProjects().filter(function(p) {
+										return p.isComplete();
+									}).length + '/' + l)
+
+									li.addClass('has-progress')
+								})
+
+								
 								if (l > 0) {
 									li.addClass('has-items')
 								} else {
@@ -127,14 +135,70 @@ var MainNavigationMenu = new Class({
 						return 'Projects/Project-' + current.getId()
 					}
 				}, {
+					html: "Project",
+					"class":"hidden",
+					template: "documentProjectDetail",
+					events:{
+						// click:function(){
+						// 	navigationController.navigateTo('Project','Main');
+							
+						// },
+						navigate:function(){
+							navigationController.setActive('Projects','Main');
+						}
+					},
+					urlComponent: function(stub, segments) {
+
+						var current = application.getNamedValue("currentProject");
+
+
+						if (segments && segments.length && segments[0].indexOf('Project-') === 0) {
+
+							if (current) {
+
+								if ('Project-' + current.getId() !== segments[0]) {
+									console.warn('should set current');
+									try {
+										var team = ProjectTeam.CurrentTeam()
+										current = team.getProject(parseInt(segments[0].split('-').pop()));
+										application.setNamedValue("currentProject", current);
+									} catch (e) {
+										console.error(e);
+									}
+								}
+								return 'Project/' + segments.join('/');
+							}
+
+							ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+
+								current = team.getProject(parseInt(segments[0].split('-').pop()));
+								application.setNamedValue("currentProject", current);
+								navigationController.navigateTo('Project', 'Main', {
+									segments: segments
+								});
+
+							});
+
+						}
+
+						if (!current) {
+							return stub;
+						}
+
+						return 'Projects/Project-' + current.getId()
+					}
+				}, {
 					html: "Users",
-					template: "communityUsersDetail"
+					template: "usersCombinedDetail"
+				},{
+					html: "User",
+					template: "userProfileDetail"
 				}, {
 					html: "Department",
-					template: "communityUsersDetail"
+					template: "departmentsDetail"
 				}, {
 					html: "Tags",
-					template: "communityUsersDetail"
+					template: "tagsDetail"
 				}, {
 					html: "Tasks",
 					formatEl: function(li) {
@@ -384,6 +448,9 @@ var MainNavigationMenu = new Class({
 					if (item.html == "Users") {
 						return false;
 					}
+					if (item.html == "Project") {
+						return false;
+					}
 					if (item.html == "Department") {
 						return false;
 					}
@@ -454,9 +521,6 @@ var MainNavigationMenu = new Class({
 
 
 		});
-
-
-		configQuery.execute();
 
 
 	}

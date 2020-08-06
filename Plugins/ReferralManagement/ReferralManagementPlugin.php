@@ -258,6 +258,7 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/DashboardConfig.js');
 		IncludeJS(__DIR__ . '/js/ReferralManagementDashboard.js');
 		IncludeJS(__DIR__ . '/js/MainNavigationMenu.js');
+		IncludeJS(__DIR__ . '/js/ProjectNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/ReferralManagementUser.js');
 		IncludeJS(__DIR__ . '/js/UserTeamCollection.js');
 		IncludeJS(__DIR__ . '/js/Proposal.js');
