@@ -804,4 +804,91 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		);
 	}
 
+
+	protected function listDepartments($json){
+
+		
+
+		return array(
+			'departments'=>array_map(function($department){
+
+
+				return $department;
+			}, $this->getPlugin()->getDatabase()->getDepartments())
+		);
+	}
+
+	protected function listTags($json){
+
+		
+
+		return array(
+			'tags'=>array_map(function($category){
+
+				$category->metadata=json_decode($category->metadata);
+
+				$category->category=$category->type;
+				$category->color="#eeeeee";
+				if(key_exists('color', $category->metadata)){
+					$category->color=$category->metadata->color;
+				}
+
+				unset($category->metadata);
+				unset($category->type);
+
+				return $category;
+			}, $this->getPlugin()->getDatabase()->getCategorys())
+		);
+	}
+
+
+	protected function saveTag($json){
+
+		$updateData=array(
+			'name'=>$json->name,
+			'description'=>$json->description,
+			'type'=>$json->category,
+			'metadata'=>json_encode(array('color'=>$json->color))
+		);
+
+
+		if(key_exists('id',$json)){
+
+			$updateData['id']=$json->id;
+			$this->getPlugin()->getDatabase()->updateCategory($updateData);
+			return array('tag'=>$updateData);
+		}
+
+
+		$updateData['id']=$this->getPlugin()->getDatabase()->createCategory($updateData);
+		return array('tag'=>$updateData);
+
+
+	}
+
+	protected function saveDepartment($json){
+
+		$updateData=array(
+			'name'=>$json->name,
+			'description'=>$json->description,
+			'metadata'=>json_encode((object)array())
+		);
+
+
+		if(key_exists('id',$json)){
+
+			$updateData['id']=$json->id;
+			$this->getPlugin()->getDatabase()->updateDepartment($updateData);
+			return array('department'=>$updateData);
+		}
+
+
+		$updateData['id']=$this->getPlugin()->getDatabase()->createDepartment($updateData);
+		return array('department'=>$updateData);
+
+
+	}
+
+
+
 }

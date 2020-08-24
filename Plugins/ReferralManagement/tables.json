@@ -1,26 +1,60 @@
 {
-	"proposal":[
-		{
-	 		"name": "id",
-	 		"type": "id"
-	 	}, {
-	 		"name": "user",
-	 		"type": "int",
-	 		"comment": "the user that created the proposal"
-	 	}, {
-	 		"name": "metadata",
-	 		"type": "json",
-	 		"comment": "any aditional json encoded parameters"
-	 	}, {
-	 		"name": "createdDate",
-	 		"type": "date"
-	 	}, {
-	 		"name": "modifiedDate",
-	 		"type": "date"
-	 	}, {
-	 		"name": "status",
-	 		"type": "label",
-	 		"comment": "determines the state of the proposal ie: approved pending etc"
-	 	}
-	]
+	"proposal": [{
+		"name": "id",
+		"type": "id"
+	}, {
+		"name": "user",
+		"type": "int",
+		"comment": "the user that created the proposal"
+	}, {
+		"name": "metadata",
+		"type": "json",
+		"comment": "any aditional json encoded parameters"
+	}, {
+		"name": "createdDate",
+		"type": "date"
+	}, {
+		"name": "modifiedDate",
+		"type": "date"
+	}, {
+		"name": "status",
+		"type": "label",
+		"comment": "determines the state of the proposal ie: approved pending etc"
+	}],
+	"department": [{
+		"name": "id",
+		"type": "id"
+	}, {
+		"name": "name",
+		"type": "label",
+		"comment": "department name. limited html"
+	}, {
+		"name": "description",
+		"type": "text",
+		"comment": "department description. limited html but long length"
+	}, {
+		"name": "metadata",
+		"type": "json",
+		"comment": "any aditional json encoded parameters"
+	}],
+	"category": [{
+		"name": "id",
+		"type": "id"
+	}, {
+		"name": "name",
+		"type": "label",
+		"comment": "category name. limited html"
+	}, {
+		"name": "description",
+		"type": "text",
+		"comment": "category description. limited html but long length"
+	}, {
+		"name": "type",
+		"type": "label",
+		"comment": "category type"
+	}, {
+		"name": "metadata",
+		"type": "json",
+		"comment": "any aditional json encoded parameters"
+	}]
 }

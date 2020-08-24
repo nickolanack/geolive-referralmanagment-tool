@@ -25,6 +25,23 @@ core\EventListener {
 	use core\PluginDataTypeProviderTrait;
 	use core\EventListenerTrait;
 	use core\TemplateRenderer;
+
+
+
+	protected function onCreateProposal($params) {
+
+		$this->createDefaultProposalTasks($params->id);
+
+		$this->onUpdateProposal($params)
+
+	}
+	
+	protected function onUpdateProposal($params){
+
+
+		Emit('onTriggerVersionControlProject', $data);
+
+	}
 	
 
 	protected function onFacebookRegister($params) {
@@ -257,8 +274,11 @@ core\EventListener {
 
 		IncludeJS(__DIR__ . '/js/DashboardConfig.js');
 		IncludeJS(__DIR__ . '/js/ReferralManagementDashboard.js');
+		IncludeJS(__DIR__ . '/js/OrganizationalUnit.js');
+		IncludeJS(__DIR__ . '/js/ItemCategory.js');
 		IncludeJS(__DIR__ . '/js/MainNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/ProjectNavigationMenu.js');
+		IncludeJS(__DIR__ . '/js/ProfileNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/ReferralManagementUser.js');
 		IncludeJS(__DIR__ . '/js/UserTeamCollection.js');
 		IncludeJS(__DIR__ . '/js/Proposal.js');
@@ -266,13 +286,10 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/ProjectCalendar.js');
 		IncludeJS(__DIR__ . '/js/TaskItem.js');
 		IncludeJS(__DIR__ . '/js/RecentItems.js');
+		IncludeJS(__DIR__ . '/js/ProjectMap.js');
 	}
 
-	protected function onCreateProposal($params) {
-
-		$this->createDefaultProposalTasks($params->id);
-
-	}
+	
 
 	protected function onActivateEmailForGuestProposal($params) {
 

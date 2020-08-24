@@ -41,6 +41,8 @@ var RecentItems = (function() {
 
 		},
 
+
+
 		formatEventText:function(text, data){
 
 
@@ -113,7 +115,17 @@ var RecentItems = (function() {
 
 	});
 
+	RecentItems.colorizeEl=function(el, type){
+		ReferralManagementDashboard.getProjectTagsData().filter(function(tag){
+				if(tag.getName().toLowerCase()==type.toLowerCase()){
+					el.setStyles({
+					"background-color":tag.getColor()
+					});
+				}
+			});
 
+
+	};
 
 	RecentItems.colorizeItemEl=function(item, view){
 
@@ -180,6 +192,7 @@ var RecentItems = (function() {
 							modules.push(mod);
 						}
 					}
+
 				});
 			}
 
@@ -198,11 +211,65 @@ var RecentItems = (function() {
 
 		}
 
+
+
+		if(item instanceof Proposal){
+
+
+
+
+			var userId=item.getProjectSubmitterId();
+			var mod=ReferralManagementDashboard.createUserIcon(new MockEventDataTypeItem({userId:userId}));
+			if(mod){
+				mod.load(null, element, null);
+			}
+					
+		}
+
 	};
 
-	RecentItems.handleClickForItem=function(item){
+	RecentItems.addInteractionEventsForItem=function(item, view, application){
+		if(item instanceof MockEventDataTypeItem){
 
-		
+
+			view.runOnceOnLoad(function() {
+
+				view.getElement().addEvent('click', function() {
+
+					var controller = application.getNamedValue('navigationController');
+					//application.setNamedValue("currentUser", item);
+
+
+					var data=item.getData();
+					var users=[];
+					if(data.metadata.items&&data.metadata.items.length){
+						data.metadata.items.forEach(function(dataItem){
+							if(dataItem.type=="User"){
+								users.push(dataItem.id);
+							}
+						});
+					}
+
+					if(users.length==0){
+						application.setNamedValue("currentUser", AppClient.getId());
+					}else{
+						application.setNamedValue("currentUser", users.shift());
+					}
+
+
+					
+					controller.navigateTo("User", "Main");
+				
+
+				
+				});
+
+			});
+
+			return;
+		}
+		ReferralManagementDashboard.addProjectItemWeakUpdateEvents(item, view, application, function(p){ return !p.isArchived(); });
+
 	};
 
 

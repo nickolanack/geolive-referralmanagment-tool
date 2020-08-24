@@ -2,134 +2,133 @@
 
 namespace ReferralManagement;
 
-include_once __DIR__.'/ComputedData.php';
+include_once __DIR__ . '/ComputedData.php';
 
-
-class Report{
+class Report {
 
 	private $proposal;
 	private $title;
 	private $text;
 
-	public function __construct($proposal){
-		$this->proposal=$proposal;
+	public function __construct($proposal) {
+		$this->proposal = $proposal;
 	}
 
-	protected function getPlugin(){
+	protected function getPlugin() {
 		return GetPlugin('ReferralManagement');
 	}
 
+	public function generateReport($templateName, $defaultContent) {
 
-	public function generateReport($templateName, $defaultContent){
+		$parser = new ComputedData();
+		$template = new \core\Template($templateName, $defaultContent);
 
+		$data = $this->getPlugin()->getProposalData($this->proposal);
 
-		$parser=new ComputedData();
-		$template=new \core\Template($templateName, $defaultContent);
+		$localPath = function ($url) {
+			if ((new \core\html\Path())->isHostedLocally($url)) {
+				return PathFrom($url);
+			}
 
+			return $url;
+		};
+		$base64 = function ($url) use ($localPath) {
 
-		$data=$this->getPlugin()->getProposalData($this->proposal);
+			$path = $localPath($url);
+			if (file_exists($path)) {
+				$type = pathinfo($path, PATHINFO_EXTENSION);
+				return 'data:image/' . $type . ';base64,' . base64_encode(file_get_contents($path));
+			}
 
-        $localPath=function($url){
-            if((new \core\html\Path())->isHostedLocally($url)){
-                return PathFrom($url);
-            }
+			//$type = pathinfo($path, PATHINFO_EXTENSION);
+			// return 'data:image/' . $type . ';base64,' . base64_encode(file_get_contents($path));
 
-            return $url;
-        };
-        $base64=function($url)use($localPath){
+			$filename = tempnam(__DIR__, '-ext-img-');
+			try {
+				file_put_contents($file, file_get_contents($path));
+				$type = pathinfo($path, PATHINFO_EXTENSION);
+				$str = 'data:image/' . $type . ';base64,' . base64_encode(file_get_contents($path));
+				unlink($filename);
+				return $str;
+			} catch (\Exception $e) {
 
-            $path=$localPath($url);
-            if(file_exists($path)){
-                $type = pathinfo($path, PATHINFO_EXTENSION);
-                return 'data:image/' . $type . ';base64,' . base64_encode(file_get_contents($path));
-            }
+				if (file_exists($filename)) {
+					unlink($filename);
+				}
+				throw $e;
+			}
 
-            //$type = pathinfo($path, PATHINFO_EXTENSION);
-            // return 'data:image/' . $type . ';base64,' . base64_encode(file_get_contents($path));
-            
+			throw new \Exception('support remote?: ' . $path);
 
-            throw new \Exception('support remote?');
+		};
 
-        };
+		$data['timezone'] = ini_get('date.timezone');
 
-        $data['timezone']=ini_get('date.timezone');
+		if (empty($data['userdetails']['name'])) {
+			$data['userdetails']['name'] = '{name}';
+		}
+		if (empty($data['userdetails']['username'])) {
+			$data['userdetails']['username'] = '{username}';
+		}
+		if (empty($data['userdetails']['email'])) {
+			$data['userdetails']['email'] = '{email}';
+		}
 
-        if(empty($data['userdetails']['name'])){
-            $data['userdetails']['name']='{name}';
-        }
-        if(empty($data['userdetails']['username'])){
-             $data['userdetails']['username']='{username}';
-        }
-        if(empty($data['userdetails']['email'])){
-             $data['userdetails']['email']='{email}';
-        }
+		$data['computed']['files'] = $parser->parseProposalFiles($data);
+		$data['computed']['images'] = $parser->parseProposalImages($data);
+		$data['computed']['spatial'] = $parser->parseProposalSpatial($data);
 
+		//$data['computed']['files']=array_map($localPath, $data['computed']['files']);
+		$data['computed']['images'] = array_map($base64, $data['computed']['images']);
 
-        $data['computed']['files']=$parser->parseProposalFiles($data);
-        $data['computed']['images']=$parser->parseProposalImages($data);
-        $data['computed']['spatial']=$parser->parseProposalSpatial($data);
+		$data['tasks'] = array_map(function ($task) use ($localPath, $base64, $parser) {
 
-        //$data['computed']['files']=array_map($localPath, $data['computed']['files']);
-        $data['computed']['images']=array_map($base64, $data['computed']['images']);
+			$task['computed']['files'] = $parser->parseTaskFiles($task);
+			$task['computed']['images'] = $parser->parseTaskImages($task);
 
-         $data['tasks']=array_map(function($task)use($localPath, $base64, $parser){
+			//$task['computed']['files']=array_map($localPath, $task['computed']['files']);
+			$task['computed']['images'] = array_map($base64, $task['computed']['images']);
+			return $task;
 
-            $task['computed']['files']=$parser->parseTaskFiles($task);
-            $task['computed']['images']=$parser->parseTaskImages($task);
+		}, $data['tasks']);
 
-            //$task['computed']['files']=array_map($localPath, $task['computed']['files']);
-            $task['computed']['images']=array_map($base64, $task['computed']['images']);
-            return $task;
+		$data['attributes']['teamMembers'] = array_map(function ($teamMember) use ($base64, $parser) {
 
-         }, $data['tasks']);
+			$icon = $parser->parseUserIcon($teamMember);
 
+			if (!empty($icon)) {
+				$teamMember['icon'] = $base64($icon);
+			}
 
-        $data['attributes']['teamMembers']=array_map(function($teamMember)use($base64, $parser){
+			return $teamMember;
 
-             
-        	$icon=$parser->parseUserIcon($teamMember);
+		}, $data['attributes']['teamMembers']);
 
-             if(!empty($icon)){
-                $teamMember['icon']= $base64($icon);
-             }
+		$data['config'] = GetWidget('dashboardConfig')->getConfigurationValues();
 
-            return $teamMember;
+		//die(json_encode($data, JSON_PRETTY_PRINT));
 
+		$this->title = $data['attributes']['company'] . '-' . $data['attributes']['title'];
+		$this->text = $template->render($data);
 
-        }, $data['attributes']['teamMembers']);
-
-
-        //die(json_encode($data, JSON_PRETTY_PRINT));
-        
-        $this->title=$data['attributes']['company'].'-'.$data['attributes']['title'];
-        $this->text=$template->render($data);
-
-        
-        return $this;
+		return $this;
 	}
 
-
-	public function renderPdf(){
+	public function renderPdf() {
 
 		//die($text);
 
-        // instantiate and use the dompdf class
-        $dompdf = new \Dompdf\Dompdf();
-        $dompdf->set_option('defaultFont', 'Helvetica');
-        $dompdf->loadHtml($this->text);
-        // (Optional) Setup the paper size and orientation
-        $dompdf->setPaper('A4');
-        // Render the HTML as PDF
-        $dompdf->render();
-        // Output the generated PDF to Browser
-        $dompdf->stream($this->title.'-'.date('Y-m-d_H-i-s').'.pdf');
-
-
+		// instantiate and use the dompdf class
+		$dompdf = new \Dompdf\Dompdf();
+		$dompdf->set_option('defaultFont', 'Helvetica');
+		$dompdf->loadHtml($this->text);
+		// (Optional) Setup the paper size and orientation
+		$dompdf->setPaper('A4');
+		// Render the HTML as PDF
+		$dompdf->render();
+		// Output the generated PDF to Browser
+		$dompdf->stream($this->title . '-' . date('Y-m-d_H-i-s') . '.pdf');
 
 	}
-
-
-
-
 
 }

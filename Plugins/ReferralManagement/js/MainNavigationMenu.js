@@ -192,7 +192,14 @@ var MainNavigationMenu = new Class({
 					template: "usersCombinedDetail"
 				},{
 					html: "User",
-					template: "userProfileDetail"
+					class:"hidden",
+					template: "userProfileDetail",
+					events:{
+						
+						navigate:function(){
+							navigationController.setActive('Users','Main');
+						}
+					},
 				}, {
 					html: "Department",
 					template: "departmentsDetail"

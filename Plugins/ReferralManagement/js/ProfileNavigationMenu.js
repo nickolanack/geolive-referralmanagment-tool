@@ -1,6 +1,6 @@
 /*Project Menu*/
 
-var ProjectNavigationMenu = new Class({
+var ProfileNavigationMenu = new Class({
 	Extends: NavigationMenuModule,
 	initialize: function(item, application) {
 
@@ -10,7 +10,7 @@ var ProjectNavigationMenu = new Class({
 				return viewer.getChildView('content', 1);
 			},
 			templateView: function(button, section) {
-				return button.view || ("single" + section + (button.name || button.html) + "Detail");
+				return button.template || button.view || ("single" + section + (button.name || button.html) + "Detail");
 			},
 			buttonClass: function(button, section) {
 				return button["class"] || ("menu-" + section.toLowerCase() + "-" + button.html.toLowerCase());
@@ -18,9 +18,9 @@ var ProjectNavigationMenu = new Class({
 			parentMenu: application.getNamedValue('navigationController'),
 			initialView: {
 				view: "Overview",
-				section: "Project"
+				section: "User"
 			},
-			menuId: "projectMenu"
+			menuId: "userMenu"
 		});
 
 		this.application=application;
@@ -45,46 +45,15 @@ var ProjectNavigationMenu = new Class({
 
 
 			me.menu = {
-				"Project": [{
+				"User": [{
 						html: "Overview",
+						template:"userProfileDetailOverview"
 					}, {
-						html: "Tasks",
-					}, {
-						html: "Files",
-					}, {
-						html: "Discussion",
-						formatEl: function(li) {
-
-							ReferralManagementDashboard.addItemDiscussionInfo(li, item, application);
-
-						}
-					}, {
-						html: "Team",
-						name: "Users"
-					},
-					// {
-					//   html:"Timesheets"
-					// }
-					{
-						html: "Map",
-						formatEl: function(li) {
-
-							ReferralManagementDashboard.addItemSpatialInfo(li, item, application);
-
-						}
+						html: "Projects",
+						template:"userProfileDetailProjects"
 					}
 				]
 			};
-
-
-
-			me.menu.Project = me.menu.Project.filter(function(item) {
-
-				if (item.html == "Tasks" && !config.parameters.enableTasks) {
-					return false;
-				}
-				return true;
-			});
 
 
 			me.process();
