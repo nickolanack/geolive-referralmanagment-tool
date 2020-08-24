@@ -40,7 +40,7 @@ GetWidget('dashboardLoader')->display($targetInstance); //proposal wizard from m
 
    
    
-
+$dashConfig=GetWidget('dashboardConfig');
 
 IncludeJSBlock('
     
@@ -63,7 +63,8 @@ IncludeJSBlock('
     '.$targetInstance->getJSObjectName().'.runOnceOnLoad(function(app){
         app.getDisplayController().setOptions({
             popoverOptions:{
-                parentClassName:"'.(GetWidget('dashboardConfig')->getParameter('darkMode')?' dark':'').'"
+                parentClassName:"'.($dashConfig->getParameter('darkMode')?' dark':'').' '.
+                $dashConfig->getParameter('pageClassNames').'"
             }
         })
     });
@@ -83,9 +84,18 @@ IncludeJSBlock('
 
 
 
+GetWidget('singleProjectListItemTableDetail')->display($targetInstance);
 GetWidget('departmentsDetail')->display($targetInstance);
+GetWidget('departmentForm')->display($targetInstance);
 GetWidget('tagsDetail')->display($targetInstance);
+GetWidget('tagForm')->display($targetInstance);
+
+GetWidget('userProfileDetail')->display($targetInstance);
+
+GetWidget('userProfileDetailProjects')->display($targetInstance);
+
 GetWidget('usersCombinedDetail')->display($targetInstance);
+GetWidget('documentProjectDetail')->display($targetInstance);
 
 
 //GetWidget('mainDashboardRecentDetail')->display($targetInstance);

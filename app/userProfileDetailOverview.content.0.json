@@ -1,0 +1,22 @@
+{
+    "type": "UIView",
+    "config": {
+        "className": "user-detail just-pic",
+        "viewType": "view",
+        "namedView": "userDetailView",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
+        "showInlineEdit": false,
+        "namedFormView": "defaultView",
+        "formOptions": "\"{}\"",
+        "showDeleteButton": false,
+        "deleteItemScript": "defaultBehaviorFn()",
+        "initModuleScript": "",
+        "formatModuleScript": "module.getElement().setStyle('float','left');",
+        "resolveItemScript": "return item",
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false,
+        "targetName": ""
+    }
+}

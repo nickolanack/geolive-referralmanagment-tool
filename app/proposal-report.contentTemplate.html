@@ -21,28 +21,33 @@
 </div>
 <div></div>
 
-<h2>Tasks</h2>
-<ul>
-<h3>Summary</h3>
-{% for task in tasks %}
-        <li>{{ task.name }} {% if task.complete %}<span style="color:green;">Completed on {{task.completedDate | date}}</span>{% else %}<span style="color:red;">Incomplete</span>{% endif %}</li>
-{% endfor %}
+{% if config.enableTasks %}
+
+    <h2>Tasks</h2>
+    <ul>
+    <h3>Summary</h3>
+    {% for task in tasks %}
+            <li>{{ task.name }} {% if task.complete %}<span style="color:green;">Completed on {{task.completedDate | date}}</span>{% else %}<span style="color:red;">Incomplete</span>{% endif %}</li>
+    {% endfor %}
     
-</ul>
+    
+      
+    </ul>
+    
+    
+    
+    {% for task in tasks %}
+            <h3>{{ task.name }}</h3>
+            <h4>Created {{task.createdDate| date}}. Last Updated {{task.modifiedDate| date}}. {% if task.complete %}<span style="color:green;">Completed on {{task.completedDate | date}}</span>{% endif %}</h4>
+            <div>
+            {% for image in task.computed.images %}
+                    <img src="{{image}}" style="max-height:200px; max-width:200px; margin:10px;" />
+            {% endfor %}
+            </div>
+            <p>{{ task.description }}</p>
+    {% endfor %}
 
-
-
-{% for task in tasks %}
-        <h3>{{ task.name }}</h3>
-        <h4>Created {{task.createdDate| date}}. Last Updated {{task.modifiedDate| date}}. {% if task.complete %}<span style="color:green;">Completed on {{task.completedDate | date}}</span>{% endif %}</h4>
-        <div>
-        {% for image in task.computed.images %}
-                <img src="{{image}}" style="max-height:200px; max-width:200px; margin:10px;" />
-        {% endfor %}
-        </div>
-        <p>{{ task.description }}</p>
-{% endfor %}
-
+{% endif %}  
 
 <ul>
 <h2>References</h2>

@@ -414,7 +414,7 @@
             "showLogoutProfile": false,
             "formatTipScript": "",
             "guestLoginDrag": true,
-            "onDragEndScript": "\/\/defaultBehaviorFn();",
+            "onDragEndScript": "widget.TileButtons.35.onDragEndScript.js",
             "onDisplayTileScript": "",
             "onProfileClickScript": "",
             "sections": [
@@ -4118,6 +4118,42 @@
                 },
                 {
                     "type": "images",
+                    "name": "main-department",
+                    "default": [],
+                    "label": "department",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "main-users",
+                    "default": [],
+                    "label": "users",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "main-tags",
+                    "default": [],
+                    "label": "tags",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "main-archive",
+                    "default": [],
+                    "label": "archive (main)",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
                     "name": "main-projects",
                     "default": [],
                     "label": "projects",
@@ -4583,15 +4619,33 @@
                 },
                 {
                     "type": "boolean",
+                    "name": "enableUserProfiles",
+                    "default": false,
+                    "label": "enableUserProfiles"
+                },
+                {
+                    "type": "boolean",
                     "name": "showRecentProjectsDetail",
                     "default": false,
                     "label": "showRecentProjectsDetail"
                 },
                 {
                     "type": "boolean",
+                    "name": "showSplitProjectDetail",
+                    "default": true,
+                    "label": "showSplitProjectDetail"
+                },
+                {
+                    "type": "boolean",
                     "name": "showSearchMenu",
                     "default": false,
                     "label": "showSearchMenu"
+                },
+                {
+                    "type": "boolean",
+                    "name": "showProjecReports",
+                    "default": true,
+                    "label": "showProjecReports"
                 },
                 {
                     "type": "json",
@@ -4604,6 +4658,24 @@
                     "label": "disabledRoles",
                     "name": "disabledRoles",
                     "default": []
+                },
+                {
+                    "type": "text",
+                    "label": "projectListItemView",
+                    "name": "projectListItemView",
+                    "default": "singleProjectListItemDetail"
+                },
+                {
+                    "type": "text",
+                    "label": "projectForm",
+                    "name": "projectForm",
+                    "default": "ProposalTemplate"
+                },
+                {
+                    "type": "text",
+                    "label": "pageClassNames",
+                    "name": "pageClassNames",
+                    "default": ""
                 }
             ],
             "hello": "World",
@@ -4714,13 +4786,32 @@
             "enableActivity": true,
             "enableMap": true,
             "simplifiedMenu": false,
-            "gatherLabel": "Wabun Referral Management ",
+            "gatherLabel": "Gather ",
             "darkMode": true,
-            "loadingLabel": "Loading your Wabun Referral Management Portal",
+            "loadingLabel": "Loading Gather",
             "surveyUrl": "https:\/\/docs.google.com\/forms\/d\/e\/1FAIpQLSfq7MQRMB4TDe959R5ER6NKsAf2Q7rTtEOEgfFDJ3JQ3gNxng\/viewform?usp=sf_link",
             "showSearchMenu": false,
             "roleLabels": [],
-            "disabledRoles": []
+            "disabledRoles": [],
+            "projectListItemView": "singleProjectListItemDetail",
+            "pageClassNames": "",
+            "showSplitProjectDetail": true,
+            "showProjecReports": true,
+            "projectForm": "ProposalTemplate",
+            "enableUserProfiles": false,
+            "main-departments": [],
+            "main-tags": [
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/J3w_FbH_%5BImAgE%5D_5cD_%5BG%5D.png"
+            ],
+            "main-department": [
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/dNS_n0a_%5BImAgE%5D_MPE_%5BG%5D.png"
+            ],
+            "main-users": [
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BG%5D_%5BImAgE%5D_iyc_utG_ej7.png"
+            ],
+            "main-archive": [
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_g15_%5BG%5D_JZ9_fkt.png"
+            ]
         }
     },
     "widget.154": {
@@ -5993,7 +6084,7 @@
             "target": "singleProjectDetail",
             "templateName": "singleProjectDetail",
             "requireTarget": true,
-            "resolveItemScript": "return item",
+            "resolveItemScript": "Single Project Detail.resolveItemScript.js",
             "onRenderApplictionScript": "Single Project Detail.onRenderApplictionScript.js",
             "formatModulesScript": "",
             "notifyViewer": false,
@@ -6398,7 +6489,7 @@
                                     "className": "inline-list-item first-item tasks-list-item-icon",
                                     "viewType": "view",
                                     "namedView": "projectPriorityTasksDetail",
-                                    "shouldRender": true,
+                                    "shouldRender": false,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
@@ -6406,7 +6497,7 @@
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "initModuleScript": "",
-                                    "formatModuleScript": "",
+                                    "formatModuleScript": "singleProjectOverviewDetail.metadata.positions.content.modules.11.config.formatModuleScript.js",
                                     "resolveItemScript": "",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
@@ -8016,7 +8107,7 @@
                             {
                                 "type": "FormattedText",
                                 "config": {
-                                    "textValueScript": "return item.getText();",
+                                    "textValueScript": "defaultPostDetail.metadata.positions.content.modules.2.config.textValueScript.js",
                                     "formatModuleScript": "",
                                     "className": "",
                                     "imageWidth": 300,
@@ -8116,16 +8207,20 @@
                                     "className": "",
                                     "viewType": "view",
                                     "namedView": "googlemap",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
-                                    "formatModuleScript": "",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "console.log(module, item);",
                                     "resolveItemScript": "",
-                                    "itemButtonsScript": "return [];",
-                                    "namedViewScript": "return namedView",
                                     "filterModulesScript": "return list",
-                                    "formOptions": "{}"
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             }
                         ]
@@ -12575,7 +12670,7 @@
                                     "viewType": "view",
                                     "namedView": "singleProjectListItemDetail",
                                     "shouldRender": true,
-                                    "namedViewScript": "return namedView",
+                                    "namedViewScript": "Projects List Detail.metadata.positions.content.modules.2.config.namedViewScript.js",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
                                     "formOptions": "{}",
@@ -15465,7 +15560,7 @@
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "projects-list",
-                                    "className": "inset-shading no-line recent-item",
+                                    "className": "x-inset-shading no-line recent-item",
                                     "viewType": "view",
                                     "namedView": "recentItemDetail",
                                     "shouldRender": true,
@@ -15531,6 +15626,15 @@
                     "content": {
                         "modules": [
                             "recentItemDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return '';",
+                                    "fieldValueScript": "return  item.getName();",
+                                    "formatElementScript": ""
+                                }
+                            },
                             {
                                 "type": "FieldValue",
                                 "config": {
@@ -15651,32 +15755,163 @@
             "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "tagsDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIListView",
+                                "config": {
+                                    "listClassName": "",
+                                    "className": "x-inset-shading no-line recent-item tag-item",
+                                    "viewType": "view",
+                                    "namedView": "tagDetailView",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": "",
+                                    "getItemListScript": "tagsDetail.metadata.positions.content.modules.1.config.getItemListScript.js",
+                                    "formatItemListScript": "return list;",
+                                    "formatListItemModuleScript": "tagsDetail.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
+                                    "emptyNamedView": "emptyListView",
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "tagsDetail.metadata.positions.content.modules.2.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "",
+                                    "text": "\n<div class=\"section-title\" style=\"margin-top:50px;\"><span>Industry Tags:<\/span><\/div>",
+                                    "template": "",
+                                    "templateVariablesScript": "",
+                                    "formatTextScript": ""
+                                }
+                            },
+                            {
+                                "type": "UIListView",
+                                "config": {
+                                    "listClassName": "",
+                                    "className": "x-inset-shading no-line recent-item tag-item",
+                                    "viewType": "view",
+                                    "namedView": "tagDetailView",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": "",
+                                    "getItemListScript": "tagsDetail.metadata.positions.content.modules.4.config.getItemListScript.js",
+                                    "formatItemListScript": "return list;",
+                                    "formatListItemModuleScript": "tagsDetail.metadata.positions.content.modules.4.config.formatListItemModuleScript.js",
+                                    "emptyNamedView": "emptyListView",
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "tagsDetail.metadata.positions.content.modules.5.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "",
+                                    "text": "<div class=\"section-title\" style=\"margin-top:50px;\"><span>Theme Tags:<\/span><\/div>",
+                                    "template": "",
+                                    "templateVariablesScript": "",
+                                    "formatTextScript": ""
+                                }
+                            },
+                            {
+                                "type": "UIListView",
+                                "config": {
+                                    "listClassName": "",
+                                    "className": "x-inset-shading no-line recent-item tag-item",
+                                    "viewType": "view",
+                                    "namedView": "tagDetailView",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": "",
+                                    "getItemListScript": "tagsDetail.metadata.positions.content.modules.7.config.getItemListScript.js",
+                                    "formatItemListScript": "return list;",
+                                    "formatListItemModuleScript": "tagsDetail.metadata.positions.content.modules.7.config.formatListItemModuleScript.js",
+                                    "emptyNamedView": "emptyListView",
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "tagsDetail.metadata.positions.content.modules.8.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
                 "positionList": [
                     "title",
                     "content",
                     "footer",
                     "menu"
                 ],
-                "positions": {
-                    "title": {
-                        "modules": [
-                            "tagsDetail.metadata.positions.title.modules.0.json"
-                        ]
-                    },
-                    "content": {
-                        "modules": [
-                            "tagsDetail.metadata.positions.content.modules.0.json"
-                        ]
-                    },
-                    "footer": {
-                        "modules": [
-                            "tagsDetail.metadata.positions.footer.modules.0.json"
-                        ]
-                    },
-                    "menu": {
-                        "modules": []
-                    }
-                }
+                "_diagramState": []
             },
             "readAccess": "public"
         }
@@ -15694,32 +15929,67 @@
             "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "departmentsDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIListView",
+                                "config": {
+                                    "listClassName": "",
+                                    "className": "x-inset-shading no-line recent-item tag-item",
+                                    "viewType": "view",
+                                    "namedView": "departmentDetailView",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": "",
+                                    "getItemListScript": "departmentsDetail.metadata.positions.content.modules.1.config.getItemListScript.js",
+                                    "formatItemListScript": "return list;",
+                                    "formatListItemModuleScript": "return item;",
+                                    "emptyNamedView": "emptyListView",
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "departmentsDetail.metadata.positions.content.modules.2.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
                 "positionList": [
                     "title",
                     "content",
                     "footer",
                     "menu"
                 ],
-                "positions": {
-                    "title": {
-                        "modules": [
-                            "departmentsDetail.metadata.positions.title.modules.0.json"
-                        ]
-                    },
-                    "content": {
-                        "modules": [
-                            "departmentsDetail.metadata.positions.content.modules.0.json"
-                        ]
-                    },
-                    "footer": {
-                        "modules": [
-                            "departmentsDetail.metadata.positions.footer.modules.0.json"
-                        ]
-                    },
-                    "menu": {
-                        "modules": []
-                    }
-                }
+                "_diagramState": []
             },
             "readAccess": "public"
         }
@@ -15731,8 +16001,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -154,
-                    "y": 820
+                    "x": -95,
+                    "y": 786
                 },
                 "children": [
                     "documentProjectForm.metadata.children.0.json",
@@ -15743,16 +16013,16 @@
                             "documentProjectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 97,
-                            "y": 421
+                            "x": 144,
+                            "y": 252
                         },
                         "children": [
                             "documentProjectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 57,
-                                    "y": 622
+                                    "x": 104,
+                                    "y": 465
                                 }
                             },
                             {
@@ -15762,16 +16032,176 @@
                                     "documentProjectForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 660,
-                                    "y": 273
+                                    "x": 693,
+                                    "y": 181
                                 },
                                 "children": [
                                     "documentProjectForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 620,
-                                            "y": 449
+                                            "x": 653,
+                                            "y": 357
+                                        }
+                                    },
+                                    {
+                                        "title": "New Empty Step",
+                                        "class": "AttributesTableNode",
+                                        "fields": [
+                                            "documentProjectForm.metadata.children.1.children.2.children.2.fields.0.json"
+                                        ],
+                                        "_diagramState": {
+                                            "x": 571,
+                                            "y": 693
+                                        },
+                                        "children": [
+                                            "documentProjectForm.metadata.children.1.children.2.children.2.children.0.json",
+                                            {
+                                                "class": "InsertNode",
+                                                "_diagramState": {
+                                                    "x": 531,
+                                                    "y": 956
+                                                }
+                                            }
+                                        ],
+                                        "builderMetadata": {
+                                            "positions": {
+                                                "title": {
+                                                    "modules": [
+                                                        "documentProjectForm.metadata.children.1.children.2.children.2.builderMetadata.positions.title.modules.0.json"
+                                                    ]
+                                                },
+                                                "content": {
+                                                    "modules": [
+                                                        "documentProjectForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.0.json",
+                                                        {
+                                                            "type": "InlineHtml",
+                                                            "config": {
+                                                                "className": "",
+                                                                "text": "Who created the documents contained in this project?",
+                                                                "template": "",
+                                                                "templateVariablesScript": "",
+                                                                "formatTextScript": ""
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "FormBooleanField",
+                                                            "config": {
+                                                                "className": "",
+                                                                "label": "Government",
+                                                                "mandatory": false,
+                                                                "getValueScript": "",
+                                                                "updateValueScript": " object.value=value ",
+                                                                "submitValueScript": "",
+                                                                "validateValueScript": "",
+                                                                "formatElementScript": ""
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "FormBooleanField",
+                                                            "config": {
+                                                                "className": "",
+                                                                "label": "Business",
+                                                                "mandatory": false,
+                                                                "getValueScript": "",
+                                                                "updateValueScript": " object.value=value ",
+                                                                "submitValueScript": "",
+                                                                "validateValueScript": "",
+                                                                "formatElementScript": ""
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "FormBooleanField",
+                                                            "config": {
+                                                                "className": "",
+                                                                "label": "Individual",
+                                                                "mandatory": false,
+                                                                "getValueScript": "",
+                                                                "updateValueScript": " object.value=value ",
+                                                                "submitValueScript": "",
+                                                                "validateValueScript": "",
+                                                                "formatElementScript": ""
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "FormBooleanField",
+                                                            "config": {
+                                                                "className": "",
+                                                                "label": "Community",
+                                                                "mandatory": false,
+                                                                "getValueScript": "",
+                                                                "updateValueScript": " object.value=value ",
+                                                                "submitValueScript": "",
+                                                                "validateValueScript": "",
+                                                                "formatElementScript": ""
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "InlineHtml",
+                                                            "config": {
+                                                                "className": "",
+                                                                "text": "Do any of the project documents contain sensitive material?",
+                                                                "template": "",
+                                                                "templateVariablesScript": "",
+                                                                "formatTextScript": ""
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "FormBooleanField",
+                                                            "config": {
+                                                                "className": "",
+                                                                "label": "Some Field",
+                                                                "mandatory": false,
+                                                                "getValueScript": "",
+                                                                "updateValueScript": " object.value=value ",
+                                                                "submitValueScript": "",
+                                                                "validateValueScript": "",
+                                                                "formatElementScript": ""
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "InlineHtml",
+                                                            "config": {
+                                                                "className": "",
+                                                                "text": "Who has permission to access this project",
+                                                                "template": "",
+                                                                "templateVariablesScript": "",
+                                                                "formatTextScript": ""
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "FormBooleanField",
+                                                            "config": {
+                                                                "className": "",
+                                                                "label": "Some Field",
+                                                                "mandatory": false,
+                                                                "getValueScript": "",
+                                                                "updateValueScript": " object.value=value ",
+                                                                "submitValueScript": "",
+                                                                "validateValueScript": "",
+                                                                "formatElementScript": ""
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "footer": {
+                                                    "modules": [
+                                                        "documentProjectForm.metadata.children.1.children.2.children.2.builderMetadata.positions.footer.modules.0.json"
+                                                    ]
+                                                },
+                                                "menu": {
+                                                    "modules": []
+                                                }
+                                            },
+                                            "positionList": [
+                                                "title",
+                                                "content",
+                                                "footer",
+                                                "menu"
+                                            ],
+                                            "_diagramState": {
+                                                "minimized": false
+                                            }
                                         }
                                     }
                                 ],
@@ -15900,10 +16330,31 @@
                                             }
                                         },
                                         {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Department",
+                                                "placeholder": "add value",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "onRenderTextFieldScript": "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.onRenderTextFieldScript.js",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return \"\"; ",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
+                                        {
                                             "type": "plugin.Attributes.WizardTagCloud",
                                             "config": {
                                                 "attributeFields": [
-                                                    "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
+                                                    "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
                                                 "showLabel": false,
@@ -15915,7 +16366,7 @@
                                                 "selectedColor": "rgb(106, 124, 233)",
                                                 "shuffleTags": false,
                                                 "tags": "[\"Forestry\", \"Mining\", \"Energy\", \"Roads\"]",
-                                                "getItemTagsScript": "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.getItemTagsScript.js",
+                                                "getItemTagsScript": "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.getItemTagsScript.js",
                                                 "formatModule": ""
                                             }
                                         },
@@ -15923,7 +16374,7 @@
                                             "type": "plugin.Attributes.WizardDescriptionAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
+                                                    "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.attributeFields.0.json"
                                                 ],
                                                 "label": "Project description",
                                                 "message": "Here you can add a short description of the proposed project for your own reference",
@@ -16059,6 +16510,917 @@
             "widgetTitle": "module.html-communityUsersDetail.text",
             "target": "module.html-communityUsersDetail.text",
             "comments": "",
+            "readAccess": "public"
+        }
+    },
+    "widget.342": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "singleProjectListItemTableDetail",
+            "target": "singleProjectListItemTableDetail",
+            "templateName": "singleProjectListItemTableDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "singleProjectListItemTableDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
+                                    "formatElementScript": "el.addClass(\"inline\");"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return item.getCreationDate()",
+                                    "formatElementScript": "el.addClass(\"inline\");"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return item.getProjectType();",
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.3.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.4.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.4.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Approval\";",
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": "el.addClass(\"inline\");"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Ownership\";",
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": "el.addClass(\"inline\");"
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.343": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "documentProjectDetail",
+            "target": "documentProjectDetail",
+            "templateName": "documentProjectDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "documentProjectDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.344": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "tagDetailView",
+            "target": "tagDetailView",
+            "templateName": "tagDetailView",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "tagDetailView.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Tag Value: \";",
+                                    "fieldValueScript": "return item.getName();",
+                                    "formatElementScript": ""
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return item.getDescription();",
+                                    "formatElementScript": ""
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.345": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "target": "tagForm",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -18,
+                    "y": 171
+                },
+                "children": [
+                    "tagForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "tagForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 167,
+                            "y": 256
+                        },
+                        "children": [
+                            "tagForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 127,
+                                    "y": 432
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "tagForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "tagForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "WizardDescriptionField",
+                                            "config": {
+                                                "label": "Description",
+                                                "message": "add a description",
+                                                "lines": 3,
+                                                "mandatory": false,
+                                                "showAudios": true,
+                                                "showImages": true,
+                                                "showDocuments": true,
+                                                "showVideos": true,
+                                                "className": "no-media",
+                                                "maxChars": 0,
+                                                "showExpandInput": true,
+                                                "toolbarPosition": "bottom",
+                                                "textFormatScript": "",
+                                                "mediaIconTint": "rgb(100, 149, 237)",
+                                                "onRenderModuleFn": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Color",
+                                                "placeholder": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "color",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return item.getColor();",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "tagForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "tagForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "widgetTitle": "tagForm",
+            "templateName": "tagForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "readAccess": "public"
+        }
+    },
+    "widget.346": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "departmentDetailView",
+            "target": "departmentDetailView",
+            "templateName": "departmentDetailView",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "departmentDetailView.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Department: \";",
+                                    "fieldValueScript": "return item.getName()",
+                                    "formatElementScript": ""
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return item.getDescription();",
+                                    "formatElementScript": ""
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.347": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "target": "departmentForm",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -18,
+                    "y": 171
+                },
+                "children": [
+                    "departmentForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "departmentForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 178,
+                            "y": 310
+                        },
+                        "children": [
+                            "departmentForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 138,
+                                    "y": 511
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "departmentForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "departmentForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "WizardDescriptionField",
+                                            "config": {
+                                                "label": "Description",
+                                                "message": "add a description",
+                                                "lines": 3,
+                                                "mandatory": false,
+                                                "showAudios": true,
+                                                "showImages": true,
+                                                "showDocuments": true,
+                                                "showVideos": true,
+                                                "className": "no-media",
+                                                "maxChars": 0,
+                                                "showExpandInput": true,
+                                                "toolbarPosition": "bottom",
+                                                "textFormatScript": "",
+                                                "mediaIconTint": "rgb(100, 149, 237)",
+                                                "onRenderModuleFn": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Contact Name",
+                                                "placeholder": "add contact",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return \"\"; ",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Position",
+                                                "placeholder": "add contact position",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return \"\"; ",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Community",
+                                                "placeholder": "set Community",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return \"\"; ",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "departmentForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "widgetTitle": "departmentForm",
+            "templateName": "departmentForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "readAccess": "public"
+        }
+    },
+    "widget.348": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "userProfileDetailOverview",
+            "target": "userProfileDetailOverview",
+            "templateName": "userProfileDetailOverview",
+            "requireTarget": true,
+            "resolveItemScript": "userProfileDetailOverview.resolveItemScript.js",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "userProfileDetailOverview.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "userProfileDetailOverview.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "userProfileDetailOverview.metadata.positions.content.modules.2.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "userProfileDetailOverview.metadata.positions.content.modules.3.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "userProfileDetailOverview.metadata.positions.content.modules.4.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return item.getName();",
+                                    "formatElementScript": "userProfileDetailOverview.metadata.positions.content.modules.5.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Role: \";",
+                                    "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.6.config.fieldValueScript.js",
+                                    "formatElementScript": "el.addClass('user-role');"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Community\/Group: \"",
+                                    "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.7.config.fieldValueScript.js",
+                                    "formatElementScript": "el.addClass('user-community');"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Position: \";",
+                                    "fieldValueScript": "return \"--\";",
+                                    "formatElementScript": ""
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Department: \";",
+                                    "fieldValueScript": "return \"--\";",
+                                    "formatElementScript": ""
+                                }
+                            },
+                            {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "",
+                                    "text": "Contact Details:",
+                                    "template": "",
+                                    "templateVariablesScript": "",
+                                    "formatTextScript": ""
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Telephone: \";",
+                                    "fieldValueScript": "return \"Field Value Script\";",
+                                    "formatElementScript": ""
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Email: \";",
+                                    "fieldValueScript": "return item.getEmail();",
+                                    "formatElementScript": ""
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Address: \";",
+                                    "fieldValueScript": "return \"--\";",
+                                    "formatElementScript": ""
+                                }
+                            },
+                            {
+                                "type": "FormattedText",
+                                "config": {
+                                    "textValueScript": "userProfileDetailOverview.metadata.positions.content.modules.14.config.textValueScript.js",
+                                    "formatModuleScript": "",
+                                    "className": "project-description",
+                                    "imageWidth": 300,
+                                    "imageHeight": 240,
+                                    "multiImageWidth": 100,
+                                    "multiImageHeight": 75,
+                                    "portraitImageWidth": 75,
+                                    "portraitImageHeight": 100,
+                                    "autoArrange": true,
+                                    "oneLine": true,
+                                    "maxChars": 0,
+                                    "maxWidth": 0,
+                                    "showAudios": true,
+                                    "showVideos": true,
+                                    "showDocuments": true,
+                                    "showImages": true,
+                                    "showLinks": true,
+                                    "showExternalContent": true,
+                                    "embedPortrait": true,
+                                    "preferLocalContent": true,
+                                    "portraitClip": true
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "userProfileDetailOverview.metadata.positions.content.modules.15.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.349": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "userProfileDetail",
+            "target": "userProfileDetail",
+            "templateName": "userProfileDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "userProfileDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.350": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "userProfileDetailView",
+            "target": "userProfileDetailView",
+            "templateName": "userProfileDetailView",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "userProfileDetailView.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "userProfileDetailOverview",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.351": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "userProfileDetailProjects",
+            "target": "userProfileDetailProjects",
+            "templateName": "userProfileDetailProjects",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "userProfileDetailProjects.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "userProfileDetailProjects.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "UIListView",
+                                "config": {
+                                    "listClassName": "projects-list",
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "singleProjectListItemDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "userProfileDetailProjects.metadata.positions.content.modules.2.config.namedViewScript.js",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "userProfileDetailProjects.metadata.positions.content.modules.2.config.formatModuleScript.js",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": "",
+                                    "getItemListScript": "userProfileDetailProjects.metadata.positions.content.modules.2.config.getItemListScript.js",
+                                    "formatItemListScript": "return list;",
+                                    "formatListItemModuleScript": "userProfileDetailProjects.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
+                                    "emptyNamedView": "emptyListView",
+                                    "filterItemsScript": "userProfileDetailProjects.metadata.positions.content.modules.2.config.filterItemsScript.js",
+                                    "sortItemsScript": "userProfileDetailProjects.metadata.positions.content.modules.2.config.sortItemsScript.js",
+                                    "maxItems": "25"
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.352": {
+        "name": "Javascript",
+        "instance": "CustomBehaviorScript",
+        "parameters": {
+            "target": "forTheMap",
+            "customScript": "ProjectMap Behavior.customScript.js",
+            "widgetTitle": "ProjectMap Behavior",
             "readAccess": "public"
         }
     }

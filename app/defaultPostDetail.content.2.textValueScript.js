@@ -1,0 +1,1 @@
+return item.getText().replace('proposal', 'project')
