@@ -32,14 +32,22 @@ core\EventListener {
 
 		$this->createDefaultProposalTasks($params->id);
 
-		$this->onUpdateProposal($params)
+		$this->onUpdateProposal($params);
 
 	}
 	
 	protected function onUpdateProposal($params){
 
 
-		Emit('onTriggerVersionControlProject', $data);
+		Emit('onTriggerVersionControlProject', $params);
+
+	}
+
+	protected function onTriggerVersionControlProject($params){
+
+		sleep(5);
+		include_once __DIR__ . '/lib/VersionControl.php';
+		(new \ReferralManagement\VersionControl())->updateProject($params->id);
 
 	}
 	

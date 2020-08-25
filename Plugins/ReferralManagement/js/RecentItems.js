@@ -127,6 +127,23 @@ var RecentItems = (function() {
 
 	};
 
+
+	RecentItems.getType=function(item){
+
+		if(item instanceof Proposal){
+			var type=item.getProjectType();
+
+			if((!type)||type==""){
+				return "";
+			}
+			return type.toLowerCase();
+
+		}
+		return "";
+
+
+	}
+
 	RecentItems.colorizeItemEl=function(item, view){
 
 		if(item instanceof Proposal){
@@ -147,7 +164,7 @@ var RecentItems = (function() {
 
 			ReferralManagementDashboard.getProjectTagsData().filter(function(tag){
 				if(tag.getName().toLowerCase()==type){
-					view.getElement().setStyles({
+					(view.setStyles?view:view.getElement()).setStyles({
 					"background-color":tag.getColor()
 					});
 				}
@@ -160,7 +177,7 @@ var RecentItems = (function() {
 
 
 
-			view.getElement().setAttribute('data-project-type',type);
+			(view.setAttribute?view:view.getElement()).setAttribute('data-project-type',type);
 
 		}
 
@@ -170,7 +187,7 @@ var RecentItems = (function() {
 
 	};
 	RecentItems.setClassForItemEl=function(item, view){
-		view.getElement().addClass('some-color-'+Math.round(Math.random()*4));
+		//view.getElement().addClass('some-color-'+Math.round(Math.random()*4));
 	};
 
 	RecentItems.getIconForItem=function(item){
