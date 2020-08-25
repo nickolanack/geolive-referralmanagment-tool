@@ -39,6 +39,11 @@ div#g-recaptcha {
     
 }
 
+.navigation-menu li.hidden {
+    display: none;
+}
+
+
 .public-menu li.primary-btn button{
     border: 1px solid transparent;
 }
@@ -48,6 +53,42 @@ div#g-recaptcha {
     border: 1px solid white;
     
 }
+
+
+.ui-view.files-letters,
+.ui-view.files-permits,
+.ui-view.files-agreements,
+.ui-view.files-other{
+    display: none;
+}
+
+
+div.field-value-module.inline {
+    display: table-cell;
+    min-width: 250px;
+}
+
+
+.inline.withItems .field-value {
+    font-weight: bold;
+}
+
+.gct3 .project-list-btns {
+    display: none;
+}
+
+.gct3 .project-list-filters .filter {
+    display: none;
+}
+
+.gct3 .project-list-filters .sort {
+    float: left;
+    margin: 7px;
+    margin-bottom: 0;
+}
+
+
+
 
 label.label-block {
     display: block;
@@ -71,7 +112,7 @@ button.public-user-chat {
     right: 30px;
 }
 
-.withPosts .posts:before {
+.withPosts .posts:before, .withItemsIndicator.hasItems .items:before {
     content: attr(data-posts);
     background-color: rgba(255,255,255,0.1);
     min-width: 8px;
@@ -86,6 +127,11 @@ button.public-user-chat {
     margin: 0 5px;
     padding: 0 3px;
 }
+
+.withItemsIndicator.hasItems .items:before {
+    content: attr(data-items);
+}
+
 .withPosts.newPosts .posts:before {
     background-color: crimson;
 }
@@ -113,6 +159,10 @@ li.menu-project-discussion.withPosts:after {
     transition: height 1s;
     height: 361px;
     pointer-events: auto;
+}
+
+.feed-sub-item .progress-bar.percent-complete, .feed-sub-item .inline-btn.optionlist {
+    display: none;
 }
 
 
@@ -453,12 +503,22 @@ body.dragover .file-item.droppable-hide {
      
 }
 .file-list .file-item .file-container {
-    background-color: #33404d;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+.file-list .file-item .file-container {
+    
     height: 108px;
     width: 100px;
     border:1px solid transparent;
     
 }
+
+.dark .file-list .file-item .file-container {
+    background-color: #33404d;
+     box-shadow:none;
+}
+
+
 .file-list .file-item:hover .file-container {
     box-shadow:0 0 8px rgba(0,0,0,0.7);
     border: 1px solid #333746;
@@ -784,6 +844,11 @@ button.inline-logout {
    
 }
 
+.ui-view.inset-menu-shading.dark-only-shading>div {
+    background-color: transparent;
+}
+
+
 .dark .ui-view.inset-menu-shading>div{
     background-color: #333746;
 }
@@ -895,6 +960,10 @@ button.inline-logout {
 
 .navigation-menu li.menu-main-tasks:after {
     content: attr(data-counter-complete);
+}
+
+.menu-main li.hidden{
+    display: none;
 }
 
 .navigation-menu button, .inline-navigation-menu button {
@@ -1602,8 +1671,10 @@ ul.item-tags li {
 span.image.noIcon, span.video.noIcon, 
 span.document.noIcon, span.audio.noIcon, 
 span.layer.noIcon, .uilist-pageination button {
+    
     border: 1px solid gray;
     background-color: transparent;
+    
     color: white;
     float: right;
     vertical-align: top;
@@ -1620,7 +1691,7 @@ span.layer.noIcon, .uilist-pageination button {
 
 .uilist-pageination:before {
     content: attr(data-list-count);
-    color: #6AE9BF;
+   
     font-size: 12px;
     line-height: 20px;
     display: inline-block;
@@ -1628,8 +1699,22 @@ span.layer.noIcon, .uilist-pageination button {
     margin-right: 10px;
 }
 
+.dark .uilist-pageination:before{
+     color: #6AE9BF;
+}
+
 .uilist-pageination button{
     cursor:pointer;
+}
+
+.uilist-pageination button{
+    border: none;
+    background-color: #04a049;
+}
+
+.dark .uilist-pageination button{
+    border: 1px solid gray;
+    background-color: transparent;
 }
 
 
@@ -1743,6 +1828,12 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {
     margin: 10px;
     cursor:pointer;
 }
+
+.primary-btn.small {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
 .WizardTitle li{
     color:black;
 }
@@ -3089,31 +3180,52 @@ img.static-map {
 
 
 
-.ui-view.some-color-0>div {
-    background-color: #f2e3cf;
+.ui-view.some-color-0 {
+    background-color: rgba(242, 227, 207, 0.2);
 }
-.ui-view.some-color-1>div {
-    background-color: #bac9e4;
+.ui-view.some-color-1 {
+    background-color: rgba(186, 201, 228, .2);
 }
-.ui-view.some-color-2>div {
-    background-color: #effad7;
+.ui-view.some-color-2 {
+    background-color: rgba(239, 250, 215, .2);
 }
-.ui-view.some-color-3>div {
-    background-color: #ead7fa;
+.ui-view.some-color-3 {
+    background-color: rgba(234, 215, 250, .2);
 }
-.ui-view.some-color-4>div {
-    background-color: #fad7d7;
+.ui-view.some-color-4 {
+    background-color: rgba(250, 215, 215, .2);
 }
-.ui-view.some-color-5>div {
-    background-color: #d7dafa;
+.ui-view.some-color-5 {
+    background-color: rgba(215, 218, 250, .2);
 }
     
-.recent-item>div {
-    padding: 15px 10px;
-    box-sizing: border-box;
-    border: 1px solid rgba(0,0,0,0.3);
+.ui-view.recent-item {
+    margin: 8px;
+    border-radius: 3px;
+    min-height: 50px;
 }
 
+.recent-item .field-value-module.item-icon {
+    width: 50px;
+    height: 50px;
+    float: right;
+    background: rgba(0,0,0,0.1);
+    border-radius: 100%;
+}
+
+.recent-item .field-value-module {
+    width: calc( 100% - 100px );
+}
+
+
+.tag-item {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.tag-item span.field-label, .tag-item span.field-label {
+    font-weight: bold;
+    color: #444444;
+}
 
 .search-panel .user-detail>div>div>* {
     display: inline-block;
@@ -3141,6 +3253,11 @@ img.static-map {
 .search-panel .user-detail div.FormattedTextModule>div {
     margin-top: -30px;
     margin: -68px;
+}
+
+
+.user-detail.just-pic .field-value-module.editable {
+    display: none;
 }
     
     

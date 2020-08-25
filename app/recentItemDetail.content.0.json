@@ -2,8 +2,8 @@
     "type": "FieldValue",
     "config": {
         "loadAsync": false,
-        "fieldLabelScript": "return '';",
-        "fieldValueScript": "return  item.getName();",
-        "formatElementScript": ""
+        "fieldLabelScript": "return \"\";",
+        "fieldValueScript": "return \"\";",
+        "formatElementScript": "el.addClass('item-icon')\nRecentItems.setIconForItemEl(item, el);"
     }
 }

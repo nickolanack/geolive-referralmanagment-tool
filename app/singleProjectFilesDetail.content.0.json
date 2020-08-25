@@ -21,7 +21,7 @@
         "targetName": "",
         "getItemListScript": "return ReferralManagementDashboard.getProjectFileSections(item);",
         "formatItemListScript": "return list;",
-        "formatListItemModuleScript": "return item;",
+        "formatListItemModuleScript": "\nchildView.getElement().addClass(child.parentClassName)\nreturn item;",
         "emptyNamedView": "emptyListView",
         "filterItemsScript": "return true;",
         "sortItemsScript": "",

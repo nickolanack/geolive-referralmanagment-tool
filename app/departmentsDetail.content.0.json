@@ -1,13 +1,10 @@
 {
-    "type": "DefaultDescription",
+    "type": "InlineHtml",
     "config": {
         "className": "",
-        "imageWidth": 300,
-        "imageHeight": 240,
-        "multiImageWidth": 100,
-        "multiImageHeight": 75,
-        "autoArrange": true,
-        "oneLine": true,
-        "maxChars": 0
+        "text": "<div class=\"section-title\"><span>Departments:<\/span><\/div>",
+        "template": "",
+        "templateVariablesScript": "",
+        "formatTextScript": ""
     }
 }

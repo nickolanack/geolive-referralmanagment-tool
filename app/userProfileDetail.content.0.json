@@ -1,0 +1,22 @@
+{
+    "type": "UIView",
+    "config": {
+        "className": "profile-page",
+        "viewType": "view",
+        "namedView": "userProfileDetailView",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
+        "showInlineEdit": false,
+        "namedFormView": "defaultView",
+        "formOptions": "\"{}\"",
+        "showDeleteButton": false,
+        "deleteItemScript": "defaultBehaviorFn()",
+        "initModuleScript": "",
+        "formatModuleScript": "",
+        "resolveItemScript": "if(item instanceof GenericApp){\r\n    \r\n    var current = application.getNamedValue(\"currentUser\");\r\n\t\t\tif (current) {\r\n\t\t\t\t return ProjectTeam.CurrentTeam().getUser(current);\r\n\t\t\t}\r\n\r\n    return ProjectTeam.CurrentTeam().getUser(AppClient.getId());\r\n}\r\nreturn item",
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false,
+        "targetName": ""
+    }
+}

@@ -1,3 +1,6 @@
-childView.getElement().addClass('some-color-'+Math.round(Math.random()*4))
 
-return item;
+RecentItems.addInteractionEventsForItem(child, childView, application);
+
+RecentItems.setClassForItemEl(child, childView);
+RecentItems.colorizeItemEl(child, childView);
+//return item;

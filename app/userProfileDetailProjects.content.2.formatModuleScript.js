@@ -1,0 +1,2 @@
+
+ReferralManagementDashboard.addProjectListModuleWeakEvents(module);

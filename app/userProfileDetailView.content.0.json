@@ -1,0 +1,8 @@
+{
+    "type": "WizardScriptElement",
+    "config": {
+        "name": "My Custom Script",
+        "script": "\nvar profileMenuController=new ProfileNavigationMenu(item, application);\napplication.setNamedValue('profileMenuController', profileMenuController);\nreturn profileMenuController;",
+        "description": "Info about my custom script"
+    }
+}
