@@ -72,7 +72,11 @@ IncludeJSBlock('
 ');
 
 
-
+    if(strpos($dashConfig->getParameter('pageClassNames'), 'gct3')!==false){
+        
+         GetWidget('gct3Theme')->display($targetInstance);   
+        
+    }
     
     GetWidget('defaultPostDetail')->display($targetInstance);
     
@@ -98,7 +102,7 @@ GetWidget('usersCombinedDetail')->display($targetInstance);
 GetWidget('documentProjectDetail')->display($targetInstance);
 
 
-//GetWidget('mainDashboardRecentDetail')->display($targetInstance);
+//GetWidget('mainDashboardRecentDetail')->display($targetInstance)t;
 
 GetWidget('mainActivityDetail')->display($targetInstance);
 GetWidget('mainProjectsDetail')->display($targetInstance);
