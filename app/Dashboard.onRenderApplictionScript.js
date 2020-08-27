@@ -72,11 +72,19 @@ IncludeJSBlock('
 ');
 
 
+    if(strpos($dashConfig->getParameter('pageClassNames'), 'dark')!==false){
+        
+         GetWidget('darkTheme')->display($targetInstance);   
+        
+    }
+
     if(strpos($dashConfig->getParameter('pageClassNames'), 'gct3')!==false){
         
          GetWidget('gct3Theme')->display($targetInstance);   
         
     }
+    
+    
     
     GetWidget('defaultPostDetail')->display($targetInstance);
     
