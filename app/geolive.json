@@ -17703,9 +17703,10 @@
         "parameters": {
             "cacheable": false,
             "link": false,
-            "widgetTitle": "",
-            "target": "none",
-            "customCSS": ""
+            "widgetTitle": "darkTheme",
+            "target": "darkTheme",
+            "customCSS": "",
+            "readAccess": "public"
         }
     }
 }
