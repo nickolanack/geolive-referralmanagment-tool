@@ -61,7 +61,16 @@ foreach(['remove', 'edit', 'download'] as $fileFn){
     
 }
 
-
+if($config->getParameter('showSplitProjectDetail')){
+    ?>
+   
+   .ui-view.main-content-area>div>div{
+        display:inline-table;
+    }
+    
+    <?php
+    
+}
 
 foreach(['apple', 'google'] as $mobile){
     $appIcon=$config->getParameter($mobile.'AppIcon', array());
@@ -292,6 +301,10 @@ $gatherLogo=$config->getParameter('gatherLogo', array());
 }
 
 <?php 
+
+
+
+
 
 foreach(GetPlugin("ReferralManagement")->getRoleIcons() as $role=>$icon){
     ?>
