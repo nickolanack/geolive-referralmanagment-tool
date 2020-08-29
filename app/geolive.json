@@ -2172,6 +2172,7 @@
         "parameters": {
             "cacheable": true,
             "link": true,
+            "sass": false,
             "widgetTitle": "Generated Style Script",
             "target": "forTheMap",
             "customCSS": "Generated Style Script.customCSS.css",
@@ -3822,6 +3823,7 @@
         "parameters": {
             "cacheable": true,
             "link": true,
+            "sass": true,
             "widgetTitle": "ReferralManagement Dashboard Theme",
             "target": "firelightDashboardTheme",
             "customCSS": "ReferralManagement Dashboard Theme.customCSS.css",
@@ -5696,6 +5698,7 @@
         "parameters": {
             "cacheable": true,
             "link": true,
+            "sass": false,
             "widgetTitle": "ReferralManagement Generated Styles",
             "target": "firelightGeneratedStyles",
             "customCSS": "ReferralManagement Generated Styles.customCSS.css",
@@ -17609,6 +17612,7 @@
         "parameters": {
             "cacheable": true,
             "link": false,
+            "sass": false,
             "widgetTitle": "gct3Theme",
             "target": "gct3Theme",
             "customCSS": "gct3Theme.customCSS.css",
@@ -17703,6 +17707,7 @@
         "parameters": {
             "cacheable": true,
             "link": false,
+            "sass": false,
             "widgetTitle": "darkTheme",
             "target": "darkTheme",
             "customCSS": "darkTheme.customCSS.css",
