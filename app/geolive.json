@@ -2172,6 +2172,7 @@
         "parameters": {
             "cacheable": true,
             "link": true,
+            "sass": false,
             "widgetTitle": "Generated Style Script",
             "target": "forTheMap",
             "customCSS": "Generated Style Script.customCSS.css",
@@ -3689,6 +3690,14 @@
                                 }
                             },
                             {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "Left Panel.metadata.positions.content.modules.3.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
                                 "type": "UIView",
                                 "config": {
                                     "className": "navigation-menu",
@@ -3714,7 +3723,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "Left Panel.metadata.positions.content.modules.4.config.script.js",
+                                    "script": "Left Panel.metadata.positions.content.modules.5.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             },
@@ -3722,7 +3731,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "Left Panel.metadata.positions.content.modules.5.config.script.js",
+                                    "script": "Left Panel.metadata.positions.content.modules.6.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
@@ -3814,6 +3823,7 @@
         "parameters": {
             "cacheable": true,
             "link": true,
+            "sass": true,
             "widgetTitle": "ReferralManagement Dashboard Theme",
             "target": "firelightDashboardTheme",
             "customCSS": "ReferralManagement Dashboard Theme.customCSS.css",
@@ -4965,9 +4975,9 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "w-30-60",
+                                    "className": "section-padding",
                                     "viewType": "view",
-                                    "namedView": "recentDetail",
+                                    "namedView": "welcomeView",
                                     "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
@@ -4977,7 +4987,7 @@
                                     "deleteItemScript": "defaultBehaviorFn()",
                                     "initModuleScript": "",
                                     "formatModuleScript": "",
-                                    "resolveItemScript": "Main Dashboard Detail.metadata.positions.content.modules.5.config.resolveItemScript.js",
+                                    "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
@@ -4987,9 +4997,9 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "w-30-60",
+                                    "className": "section-padding",
                                     "viewType": "view",
-                                    "namedView": "recentDetail",
+                                    "namedView": "datasetsView",
                                     "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
@@ -4999,7 +5009,7 @@
                                     "deleteItemScript": "defaultBehaviorFn()",
                                     "initModuleScript": "",
                                     "formatModuleScript": "",
-                                    "resolveItemScript": "Main Dashboard Detail.metadata.positions.content.modules.6.config.resolveItemScript.js",
+                                    "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
@@ -5009,7 +5019,7 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "w-30-60",
+                                    "className": "section-padding",
                                     "viewType": "view",
                                     "namedView": "recentDetail",
                                     "shouldRender": true,
@@ -5022,6 +5032,50 @@
                                     "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "Main Dashboard Detail.metadata.positions.content.modules.7.config.resolveItemScript.js",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "section-padding",
+                                    "viewType": "view",
+                                    "namedView": "recentDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "Main Dashboard Detail.metadata.positions.content.modules.8.config.resolveItemScript.js",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "section-padding",
+                                    "viewType": "view",
+                                    "namedView": "recentDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "Main Dashboard Detail.metadata.positions.content.modules.9.config.resolveItemScript.js",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
@@ -5464,7 +5518,7 @@
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "",
-                                    "className": "user-item",
+                                    "className": "user-item section-module",
                                     "viewType": "view",
                                     "namedView": "singleUserListItemDetail",
                                     "shouldRender": true,
@@ -5644,6 +5698,7 @@
         "parameters": {
             "cacheable": true,
             "link": true,
+            "sass": false,
             "widgetTitle": "ReferralManagement Generated Styles",
             "target": "firelightGeneratedStyles",
             "customCSS": "ReferralManagement Generated Styles.customCSS.css",
@@ -9588,7 +9643,7 @@
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "",
-                                    "className": "user-item",
+                                    "className": "user-item section-module",
                                     "viewType": "view",
                                     "namedView": "singleUserListItemDetail",
                                     "shouldRender": true,
@@ -12663,32 +12718,40 @@
                                 }
                             },
                             {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "Projects List Detail.metadata.positions.content.modules.2.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
                                 "type": "UIListView",
                                 "config": {
-                                    "listClassName": "projects-list",
-                                    "className": "",
+                                    "listClassName": "projects-list section-padding",
+                                    "className": "section-module",
                                     "viewType": "view",
                                     "namedView": "singleProjectListItemDetail",
                                     "shouldRender": true,
-                                    "namedViewScript": "Projects List Detail.metadata.positions.content.modules.2.config.namedViewScript.js",
+                                    "namedViewScript": "Projects List Detail.metadata.positions.content.modules.3.config.namedViewScript.js",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "initModuleScript": "",
-                                    "formatModuleScript": "Projects List Detail.metadata.positions.content.modules.2.config.formatModuleScript.js",
+                                    "formatModuleScript": "Projects List Detail.metadata.positions.content.modules.3.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
-                                    "getItemListScript": "Projects List Detail.metadata.positions.content.modules.2.config.getItemListScript.js",
+                                    "getItemListScript": "Projects List Detail.metadata.positions.content.modules.3.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "Projects List Detail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "Projects List Detail.metadata.positions.content.modules.3.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
-                                    "filterItemsScript": "Projects List Detail.metadata.positions.content.modules.2.config.filterItemsScript.js",
-                                    "sortItemsScript": "Projects List Detail.metadata.positions.content.modules.2.config.sortItemsScript.js",
+                                    "filterItemsScript": "Projects List Detail.metadata.positions.content.modules.3.config.filterItemsScript.js",
+                                    "sortItemsScript": "Projects List Detail.metadata.positions.content.modules.3.config.sortItemsScript.js",
                                     "maxItems": "25"
                                 }
                             }
@@ -15560,7 +15623,7 @@
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "projects-list",
-                                    "className": "x-inset-shading no-line recent-item",
+                                    "className": "x-inset-shading no-line recent-item section-module",
                                     "viewType": "view",
                                     "namedView": "recentItemDetail",
                                     "shouldRender": true,
@@ -15642,6 +15705,15 @@
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getCreationDate();",
                                     "formatElementScript": ""
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "recentItemDetail.metadata.positions.content.modules.3.config.fieldValueScript.js",
+                                    "formatElementScript": "recentItemDetail.metadata.positions.content.modules.3.config.formatElementScript.js"
                                 }
                             }
                         ]
@@ -17421,6 +17493,224 @@
             "target": "forTheMap",
             "customScript": "ProjectMap Behavior.customScript.js",
             "widgetTitle": "ProjectMap Behavior",
+            "readAccess": "public"
+        }
+    },
+    "widget.353": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "welcomeView",
+            "target": "welcomeView",
+            "templateName": "welcomeView",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "welcomeView.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.354": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "datasetsView",
+            "target": "datasetsView",
+            "templateName": "datasetsView",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "datasetsView.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIListView",
+                                "config": {
+                                    "listClassName": "",
+                                    "className": "section-module w-30-60 dataset-item",
+                                    "viewType": "view",
+                                    "namedView": "datasetItemView",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": "",
+                                    "getItemListScript": "datasetsView.metadata.positions.content.modules.1.config.getItemListScript.js",
+                                    "formatItemListScript": "return list;",
+                                    "formatListItemModuleScript": "return item;",
+                                    "emptyNamedView": "emptyListView",
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.355": {
+        "name": "Stylesheet",
+        "instance": "CSS",
+        "parameters": {
+            "cacheable": true,
+            "link": false,
+            "sass": false,
+            "widgetTitle": "gct3Theme",
+            "target": "gct3Theme",
+            "customCSS": "gct3Theme.customCSS.css",
+            "readAccess": "public"
+        }
+    },
+    "widget.356": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "datasetItemView",
+            "target": "datasetItemView",
+            "templateName": "datasetItemView",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "datasetItemView.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "datasetItemView.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "DefaultDescription",
+                                "config": {
+                                    "className": "dataset-description",
+                                    "imageWidth": 300,
+                                    "imageHeight": 240,
+                                    "multiImageWidth": 100,
+                                    "multiImageHeight": 75,
+                                    "portraitImageWidth": 75,
+                                    "portraitImageHeight": 100,
+                                    "autoArrange": true,
+                                    "oneLine": true,
+                                    "maxChars": 0,
+                                    "maxWidth": 0,
+                                    "showAudios": true,
+                                    "showVideos": true,
+                                    "showImages": true,
+                                    "showDocuments": true,
+                                    "showLinks": true,
+                                    "showExternalContent": true,
+                                    "embedPortrait": true,
+                                    "preferLocalContent": true,
+                                    "portraitClip": true
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": "datasetItemView.metadata.positions.content.modules.3.config.formatElementScript.js"
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.357": {
+        "name": "Stylesheet",
+        "instance": "CSS",
+        "parameters": {
+            "cacheable": true,
+            "link": false,
+            "sass": false,
+            "widgetTitle": "darkTheme",
+            "target": "darkTheme",
+            "customCSS": "darkTheme.customCSS.css",
             "readAccess": "public"
         }
     }

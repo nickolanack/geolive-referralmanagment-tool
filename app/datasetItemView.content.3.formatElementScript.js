@@ -1,0 +1,1 @@
+el.addClass('item-icon left-icons')

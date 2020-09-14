@@ -1,0 +1,73 @@
+
+
+button.primary-btn.nav-new-btn {
+    float: none;
+    margin: 30px 49px;
+    width: 200px;
+    background-color: #ff0058;
+    height: 55px;
+    border-radius: 27.5px;
+    text-transform: capitalize;
+    transition: background-color 2.1s;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    line-height: 30px;
+    font-weight: 100;
+    font-size: 18px;
+    color: #2d2d2d;
+}
+
+button.primary-btn.nav-new-btn:before {
+    content: "+ ";
+    float: left;
+    font-size: 25px;
+}
+
+button.primary-btn.nav-new-btn:hover {
+    background-color: #dc004c;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 3px rgba(255,255,255,0.1);
+    
+}
+
+
+@media screen and (max-width: 1250px) {
+    button.primary-btn.nav-new-btn {
+        font-size:13px;
+        width:140px;
+        margin: 30px 20px;
+        padding: 10px 20px;
+    }
+    button.primary-btn.nav-new-btn:after {
+
+        font-size:15px;
+    }
+}
+
+
+@media screen and (max-width: 1000px){
+
+    button.primary-btn.nav-new-btn {
+        font-size:0;
+        width:55px;
+        margin: 30px 23px;
+        padding: 10px 20px;
+    }
+
+
+}
+
+
+.ui-view.left-panel.closed button.primary-btn.nav-new-btn{
+
+    width:30px;
+    height:30px;
+    margin:10px;
+    line-height:30px;
+    padding:0;
+    margin-top :50px;
+}
+
+.ui-view.left-panel.closed button.primary-btn.nav-new-btn:before{
+    content:"+";
+    float:none;
+}

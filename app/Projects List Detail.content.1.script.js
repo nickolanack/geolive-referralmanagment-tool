@@ -1,38 +1,38 @@
-/*Project Filters*/
+/*Projects Header*/
 
-return function(viewer, element, parentModule){
-    
-    var div=element.appendChild(new Element('div',{
-        
-        "class":"project-list-filters",
-        
-        styles:{
-            "display": "inline-table",
-            "width": "100%"
-        }
-    }));
-    
 
-    (new ListSortModule(function(){
-        return viewer.getChildView('content', 2);
-    }, {
-        sorters:ReferralManagementDashboard.projectSorters(),
-        currentSort:"priority",
-        currentSortInvert:true
-    })).load(null, div, null);
+var div = new Element('div',{"class":"section-title project-list-btns"});
+div.appendChild(new Element("span",{"html":"Projects"}));
+div.appendChild(new Element("button",{"data-lbl":"New project", "class":"inline-btn add primary-btn", "events":{"click":function(){
     
+   
+            var formName="ProposalTemplate";
 
+			var wizardTemplate = application.getDisplayController().getWizardTemplate(formName);
+			if ((typeof wizardTemplate) != 'function') {
+
+				if(window.console&&console.warn){
+					console.warn('Expected named wizardTemplate: '+formName+', to exist');
+				}
+
+			}
+			var modalFormViewController =  new PushBoxModuleViewer(application, {});
+			var newItem=new Proposal();
+			var wizard = wizardTemplate(newItem, {});
+            wizard.buildAndShow(modalFormViewController, {template:"form"}); 
+			
+			
+			newItem.addEvent("save:once",function(){
+			    ProjectTeam.CurrentTeam().addProject(newItem);
+			})
     
-  
-    (new ListFilterModule(function(){
-        return viewer.getChildView('content', 2)
-    }, {
-        filters:ReferralManagementDashboard.projectFilters(),
-        currentFilter:"complete",
-        currentFilterInvert:true
-    })).load(null, div, null);
     
 
-  
-
-}
+    
+    
+    
+    
+    
+    
+}}}));
+return div;
