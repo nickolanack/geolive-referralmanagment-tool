@@ -1429,25 +1429,36 @@ var ReferralManagementDashboard = (function() {
 				"class": "primary-btn"
 
 			}));
-			var proposalObj = new GuestProposal(-1, {});
-			(new UIModalFormButton(proposalButton, application, proposalObj, {
 
-				formOptions: {
-					template: "form"
-				},
-				formName: "ProposalTemplate",
 
-			})).addEvent('complete', function() {
+			DashboardConfig.getValue('enableProposals', function(enabled){
+				if(!enabled){
+					return;
+				}
 
-				application.getDisplayController().displayPopoverForm(
-					'emailVerificationForm',
-					proposalObj,
-					application, {
+				var proposalObj = new GuestProposal(-1, {});
+				(new UIModalFormButton(proposalButton, application, proposalObj, {
+
+					formOptions: {
 						template: "form"
-					}
-				);
+					},
+					formName: "ProposalTemplate",
 
-			})
+				})).addEvent('complete', function() {
+
+					application.getDisplayController().displayPopoverForm(
+						'emailVerificationForm',
+						proposalObj,
+						application, {
+							template: "form"
+						}
+					);
+
+				});
+
+			});
+
+			
 
 
 			return [registration, proposal];
