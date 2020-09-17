@@ -2804,6 +2804,10 @@ img.static-map {
         text-overflow: clip;
         overflow: hidden;
     }
+    
+    .left-panel .application-logo.big {
+        height: 100px;
+    }
 
     
     .ui-view.left-panel {
