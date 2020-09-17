@@ -1,4 +1,7 @@
+return ReferralManagementDashboard.getProjectTagsData('_root');
 
+
+/*
 var MockEventDataTypeItem=new Class({
 				Extends:MockDataTypeItem,
 				Implements:[Events]
@@ -6,6 +9,8 @@ var MockEventDataTypeItem=new Class({
 		});
 
 return [
+    
+            
     
                 new MockEventDataTypeItem({
 					name:"Water",
@@ -39,3 +44,4 @@ return [
     
     
     ]
+    */

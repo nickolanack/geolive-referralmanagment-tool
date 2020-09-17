@@ -38,7 +38,7 @@ GetWidget('dashboardLoader')->display($targetInstance); //proposal wizard from m
    GetWidget('userForkDetail')->display($targetInstance);
    GetWidget('createDashboardForm')->display($targetInstance);
 
-   
+    GetWidget('projectSearchResult')->display($targetInstance);
    
 $dashConfig=GetWidget('dashboardConfig');
 

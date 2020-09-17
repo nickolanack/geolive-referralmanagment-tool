@@ -6822,8 +6822,9 @@
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
+                                    "name": "My Custom Script",
                                     "script": "singleProjectUsersDetail.metadata.positions.content.modules.1.config.script.js",
-                                    "identifier": "customScriptElement"
+                                    "description": "Info about my custom script"
                                 }
                             }
                         ]
@@ -15759,7 +15760,7 @@
                             {
                                 "type": "Search",
                                 "config": {
-                                    "getAggregatorsScript": "",
+                                    "getAggregatorsScript": "mainSearchDetail.metadata.positions.content.modules.1.config.getAggregatorsScript.js",
                                     "placeholder": "Type to search..."
                                 }
                             },
@@ -15833,141 +15834,7 @@
                     },
                     "content": {
                         "modules": [
-                            "tagsDetail.metadata.positions.content.modules.0.json",
-                            {
-                                "type": "UIListView",
-                                "config": {
-                                    "listClassName": "",
-                                    "className": "x-inset-shading no-line recent-item tag-item",
-                                    "viewType": "view",
-                                    "namedView": "tagDetailView",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultView",
-                                    "formOptions": "\"{}\"",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "defaultBehaviorFn()",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "return item",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": "",
-                                    "getItemListScript": "tagsDetail.metadata.positions.content.modules.1.config.getItemListScript.js",
-                                    "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "tagsDetail.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
-                                    "emptyNamedView": "emptyListView",
-                                    "filterItemsScript": "return true;",
-                                    "sortItemsScript": "",
-                                    "maxItems": "-1"
-                                }
-                            },
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "tagsDetail.metadata.positions.content.modules.2.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
-                                "type": "InlineHtml",
-                                "config": {
-                                    "className": "",
-                                    "text": "\n<div class=\"section-title\" style=\"margin-top:50px;\"><span>Industry Tags:<\/span><\/div>",
-                                    "template": "",
-                                    "templateVariablesScript": "",
-                                    "formatTextScript": ""
-                                }
-                            },
-                            {
-                                "type": "UIListView",
-                                "config": {
-                                    "listClassName": "",
-                                    "className": "x-inset-shading no-line recent-item tag-item",
-                                    "viewType": "view",
-                                    "namedView": "tagDetailView",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "defaultBehaviorFn()",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "return item",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": "",
-                                    "getItemListScript": "tagsDetail.metadata.positions.content.modules.4.config.getItemListScript.js",
-                                    "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "tagsDetail.metadata.positions.content.modules.4.config.formatListItemModuleScript.js",
-                                    "emptyNamedView": "emptyListView",
-                                    "filterItemsScript": "return true;",
-                                    "sortItemsScript": "",
-                                    "maxItems": "-1"
-                                }
-                            },
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "tagsDetail.metadata.positions.content.modules.5.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
-                                "type": "InlineHtml",
-                                "config": {
-                                    "className": "",
-                                    "text": "<div class=\"section-title\" style=\"margin-top:50px;\"><span>Theme Tags:<\/span><\/div>",
-                                    "template": "",
-                                    "templateVariablesScript": "",
-                                    "formatTextScript": ""
-                                }
-                            },
-                            {
-                                "type": "UIListView",
-                                "config": {
-                                    "listClassName": "",
-                                    "className": "x-inset-shading no-line recent-item tag-item",
-                                    "viewType": "view",
-                                    "namedView": "tagDetailView",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "defaultBehaviorFn()",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "return item",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": "",
-                                    "getItemListScript": "tagsDetail.metadata.positions.content.modules.7.config.getItemListScript.js",
-                                    "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "tagsDetail.metadata.positions.content.modules.7.config.formatListItemModuleScript.js",
-                                    "emptyNamedView": "emptyListView",
-                                    "filterItemsScript": "return true;",
-                                    "sortItemsScript": "",
-                                    "maxItems": "-1"
-                                }
-                            },
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "tagsDetail.metadata.positions.content.modules.8.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            }
+                            "tagsDetail.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
@@ -16524,7 +16391,7 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "",
+                                    "className": "section-padding",
                                     "viewType": "view",
                                     "namedView": "communityUsersDetail",
                                     "shouldRender": true,
@@ -16785,7 +16652,7 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -18,
+                    "x": 84,
                     "y": 171
                 },
                 "children": [
@@ -16797,16 +16664,16 @@
                             "tagForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 167,
-                            "y": 256
+                            "x": 398,
+                            "y": 192
                         },
                         "children": [
                             "tagForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 127,
-                                    "y": 432
+                                    "x": 358,
+                                    "y": 368
                                 }
                             }
                         ],
@@ -16831,7 +16698,7 @@
                                                 "showImages": true,
                                                 "showDocuments": true,
                                                 "showVideos": true,
-                                                "className": "no-media",
+                                                "className": "only-image",
                                                 "maxChars": 0,
                                                 "showExpandInput": true,
                                                 "toolbarPosition": "bottom",
@@ -17579,7 +17446,7 @@
                                     "targetName": "",
                                     "getItemListScript": "datasetsView.metadata.positions.content.modules.1.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "return item;",
+                                    "formatListItemModuleScript": "datasetsView.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
                                     "sortItemsScript": "",
@@ -17611,8 +17478,8 @@
         "instance": "CSS",
         "parameters": {
             "cacheable": true,
-            "link": false,
-            "sass": false,
+            "link": true,
+            "sass": true,
             "widgetTitle": "gct3Theme",
             "target": "gct3Theme",
             "customCSS": "gct3Theme.customCSS.css",
@@ -17663,7 +17530,7 @@
                                     "maxWidth": 0,
                                     "showAudios": true,
                                     "showVideos": true,
-                                    "showImages": true,
+                                    "showImages": false,
                                     "showDocuments": true,
                                     "showLinks": true,
                                     "showExternalContent": true,
@@ -17711,6 +17578,124 @@
             "widgetTitle": "darkTheme",
             "target": "darkTheme",
             "customCSS": "darkTheme.customCSS.css",
+            "readAccess": "public"
+        }
+    },
+    "widget.358": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "tagsDetailItem",
+            "target": "tagsDetailItem",
+            "templateName": "tagsDetailItem",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "tagsDetailItem.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "tagsDetailItem.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "UIListView",
+                                "config": {
+                                    "listClassName": "",
+                                    "className": "x-inset-shading no-line recent-item tag-item",
+                                    "viewType": "view",
+                                    "namedView": "tagDetailView",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": "",
+                                    "getItemListScript": "tagsDetailItem.metadata.positions.content.modules.2.config.getItemListScript.js",
+                                    "formatItemListScript": "return list;",
+                                    "formatListItemModuleScript": "tagsDetailItem.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
+                                    "emptyNamedView": "emptyListView",
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.359": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "projectSearchResult",
+            "target": "projectSearchResult",
+            "templateName": "projectSearchResult",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "projectSearchResult.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
             "readAccess": "public"
         }
     }

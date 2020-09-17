@@ -1,10 +1,30 @@
 {
-    "type": "InlineHtml",
+    "type": "UIListView",
     "config": {
-        "className": "",
-        "text": "<div class=\"section-title\"><span>Category Tag:<\/span><\/div>",
-        "template": "",
-        "templateVariablesScript": "",
-        "formatTextScript": ""
+        "listClassName": "",
+        "className": "no-line section-module",
+        "viewType": "view",
+        "namedView": "tagsDetailItem",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
+        "showInlineEdit": false,
+        "namedFormView": "defaultView",
+        "formOptions": "\"{}\"",
+        "showDeleteButton": false,
+        "deleteItemScript": "defaultBehaviorFn()",
+        "initModuleScript": "",
+        "formatModuleScript": "",
+        "resolveItemScript": "return item",
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false,
+        "targetName": "",
+        "getItemListScript": "return ReferralManagementDashboard.getProjectTagsData('_root');",
+        "formatItemListScript": "return list;",
+        "formatListItemModuleScript": "return item;",
+        "emptyNamedView": "emptyListView",
+        "filterItemsScript": "return true;",
+        "sortItemsScript": "",
+        "maxItems": "-1"
     }
 }

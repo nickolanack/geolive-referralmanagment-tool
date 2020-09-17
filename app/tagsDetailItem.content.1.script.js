@@ -1,0 +1,1 @@
+return '<div class="section-title"><span>'+item.getCategory().capitalize()+' Tag:</span></div>';

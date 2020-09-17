@@ -1,0 +1,9 @@
+{
+    "type": "FieldValue",
+    "config": {
+        "loadAsync": false,
+        "fieldLabelScript": "return item.getId();",
+        "fieldValueScript": "return item.getName();",
+        "formatElementScript": ""
+    }
+}

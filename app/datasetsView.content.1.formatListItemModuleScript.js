@@ -1,0 +1,3 @@
+
+
+UIInteraction.addDatasetTypeEvents(childView, application);

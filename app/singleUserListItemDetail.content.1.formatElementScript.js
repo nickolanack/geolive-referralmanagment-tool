@@ -26,32 +26,7 @@ if(AppClient.getUserType()=="admin"){
 }
 
 
-DashboardConfig.getValue("enableUserProfiles",function(enabled){
-        
-
-        
-        if(enabled){
-            
-            el.addEvent('click',function(){
-                
-          
-                application.setNamedValue('currentUser', item.getId());
-                var controller = application.getNamedValue('navigationController');
-                controller.navigateTo("User", "Main");
-                
-            });
-            
-            if(el.previousSibling){
-            el.previousSibling.addEvent('click',function(){
-                
-          
-                application.setNamedValue('currentUser', item.getId());
-                var controller = application.getNamedValue('navigationController');
-                controller.navigateTo("User", "Main");
-                
-            });
-            }
-        }
-        
-        
-    })
+UIInteraction.addUserProfileClick(el, item);
+if(el.previousSibling){
+    UIInteraction.addUserProfileClick(el.previousSibling, item);
+}
