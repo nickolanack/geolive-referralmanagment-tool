@@ -79,30 +79,32 @@ $highlightBtnColor:#ff0258;
 
 
 
-ul.project li {
-    padding-bottom:10px;
-    margin-bottom:20px;
-}
-ul.project li button {
-    /* margin: 10px; */
-    /* margin-bottom: 30px; */
-    padding: 8px 25px;
-    background: rgba(0,0,0,0.1);
-    border-radius: 20px;
-}
-ul.project li.active  {
-    border-bottom: 3px solid $highlightBtnColor;
-}
-ul.project li.active button {
-    background-color: adjust-color($highlightBtnColor, $alpha:-0.3);
-}
+ul.project, ul.user{
+    li {
+        padding-bottom:10px;
+        margin-bottom:20px;
+    }
+    li button {
+        /* margin: 10px; */
+        /* margin-bottom: 30px; */
+        padding: 8px 25px;
+        background: rgba(0,0,0,0.1);
+        border-radius: 20px;
+    }
+    li.active  {
+        border-bottom: 3px solid $highlightBtnColor;
+    }
+    li.active button {
+        background-color: adjust-color($highlightBtnColor, $alpha:-0.3);
+    }
 
-ul.project li.active button {
-    color: white;
-}
+    li.active button {
+        color: white;
+    }
 
-ul.project li button:focus {
-    outline:none;
+    li button:focus {
+        outline:none;
+    }
 }
 
 
