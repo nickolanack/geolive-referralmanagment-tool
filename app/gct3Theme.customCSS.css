@@ -282,7 +282,8 @@ button.primary-btn.nav-new-btn:hover {
 }
 
 .navigation-menu ul label {
-    padding-left: 40px;
+    /*padding-left: 40px;*/
+    display:none;
   
 }
 
