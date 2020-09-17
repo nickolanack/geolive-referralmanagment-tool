@@ -39,8 +39,7 @@ if(tags.length){
                 
                 
                 if(t.getType()==='ReferralManagement.proposal'){
-                    application.setNamedValue("currentProject", t);
-                    controller.navigateTo("Projects", "Main");
+                    UIInteraction.navigateToProjectOverview(t);
                 }
                 if(t.getType()==='ReferralManagement.client'){
                     application.setNamedValue("currentClient", t);
