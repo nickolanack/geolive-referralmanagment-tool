@@ -1,13 +1,7 @@
 if(child.getType&&child.getType()=="ReferralManagement.proposal"){
-    childView.addEvent('load:once',function(){
-        childView.getElement().addEvent("click",function(){
-        
-        var controller=application.getNamedValue('navigationController');
-        application.setNamedValue("currentProject", child);
-        controller.navigateTo("Projects", "Main");
-        
-    });
-    })
+    
+    UIInteraction.addProjectOverviewClick(childView.getElement(), child);
+    
 }
 
 if(child.getType&&child.getType()=="Tasks.task"){
