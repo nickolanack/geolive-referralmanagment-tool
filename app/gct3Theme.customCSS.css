@@ -295,14 +295,14 @@ button.primary-btn.nav-new-btn:hover {
 }
 
 
-.left-panel.closed .navigation-menu ul li {
-     padding-left: 10px;
-}
-@media screen and (max-width: 1250px){
-    .navigation-menu ul li {
+.left-panel.closed .navigation-menu ul li .navigation-menu ul li {
         padding-left: 5px;
         margin: 12px 0;
         height: 20px;
+    }
+@media screen and (max-width: 1250px){
+    .navigation-menu ul li {
+        padding-left: 10px;
     }
 }
 
