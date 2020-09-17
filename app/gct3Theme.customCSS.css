@@ -286,11 +286,19 @@ button.primary-btn.nav-new-btn:hover {
   
 }
 
+
 .navigation-menu ul li {
     padding: 10px;
     padding-left: 40px;
     margin: 5px 0;
 }
+@media screen and (max-width: 1250px){
+    .navigation-menu ul li {
+        padding-left: 10px;
+  
+    }
+}
+
 
 .navigation-menu ul li.active {
     background-color: adjust-color($highlightBtnColor, $alpha:-0.3);
