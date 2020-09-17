@@ -23,10 +23,10 @@ div.appendChild(new Element("button",{"html":"New project", "style":"background-
 			
 			newItem.addEvent("save:once",function(){
 			    ProjectTeam.CurrentTeam().addProject(newItem);
-			    var controller=application.getNamedValue('navigationController');
-                application.setNamedValue("currentProject", newItem);
-                controller.navigateTo("Projects", "Main");
-			})
+			    
+			    UIInteraction.navigateToProjectOverview(newItem);
+			    
+			});
     
     
     
