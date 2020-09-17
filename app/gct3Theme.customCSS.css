@@ -300,6 +300,9 @@ button.primary-btn.nav-new-btn:hover {
         margin: 12px 0;
         height: 20px;
     }
+.ui-view.left-panel.closed .navigation-menu label{
+    display:none;
+}
 @media screen and (max-width: 1250px){
     .navigation-menu ul li {
         padding-left: 10px;
