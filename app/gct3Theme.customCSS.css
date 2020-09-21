@@ -41,6 +41,9 @@ $highlightBtnColor:#ff0258;
 .search-bar-content {
     width: unset;
 }
+.widget-33.geolive-top-bar .search-bar-content {
+    width: calc( 100% - 300px );
+}
 .section-title {
  
     font-size: 30px;
