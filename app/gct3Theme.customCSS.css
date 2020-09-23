@@ -70,17 +70,6 @@ $highlightBtnColor:#ff0258;
     background-color: #525252;
 }
 
-.navigation-menu .active>button {
-    color: white;
-}
-
-.navigation-menu button {
-    color: #bebebe;
-}
-
-.navigation-menu button {
-    color: #bebebe;
-}
 
 
 
@@ -281,45 +270,10 @@ button.primary-btn.nav-new-btn:hover {
 }
 
 
-
-.navigation-menu ul {
-    padding: 0;
-}
-
-.navigation-menu ul label {
-    /*padding-left: 40px;*/
-    display:none;
-  
-}
-
-
-.navigation-menu ul li {
-    padding: 10px;
-    padding-left: 40px;
-    margin: 5px 0;
-}
-
-
-.left-panel.closed .navigation-menu ul li {
-        padding-left: 5px;
-        margin: 12px 0;
-        height: 20px;
-    }
-.ui-view.left-panel.closed .navigation-menu label{
-    display:none;
-}
-@media screen and (max-width: 1250px){
-    .navigation-menu ul li {
-        padding-left: 10px;
-    }
-}
-
-
 .navigation-menu ul li.active {
     background-color: adjust-color($highlightBtnColor, $alpha:-0.3);
     border-right: 4px solid $highlightBtnColor;
 }
-
 
 @media screen and (max-width: 1250px) {
     button.primary-btn.nav-new-btn {
