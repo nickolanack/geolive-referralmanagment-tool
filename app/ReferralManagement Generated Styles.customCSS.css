@@ -49,7 +49,9 @@ $config=GetWidget('dashboardConfig');
 
 $useFontAwesome=$config->getParameter('useFontAwesome');
 if($useFontAwesome){
+    ?>
     @import url("/webresources/font-awesome-4.7.0/css/font-awesome.min.css");
+    <?php
 }
 
 
