@@ -27,6 +27,25 @@ var ItemCategory = (function() {
 			this.setColor = function(c) {
 				options.color = c
 			}
+
+
+		},
+		getDescriptionPlain:function(){
+
+			var images=JSTextUtilities.ParseImages(this.getDescription())
+			return JSTextUtilities.StripParseResults(this.getDescription(), images);
+		},
+
+		getIcon:function(){
+
+			var images=JSTextUtilities.ParseImages(this.getDescription()).map(function(o) {
+				return o.url;
+			});
+
+			if(images.length>0){
+				return images[0];
+			}
+			return null;
 		},
 		save: function(callback) {
 
@@ -148,7 +167,24 @@ var ProjectTagList = (function() {
 
 		},
 
+		getProjectsWithTag:function(category){
+			var tags=_tags.filter(function(tag){
+				return tag.getName().toLowerCase()==category.toLowerCase()||tag.getCategory().toLowerCase()==category.toLowerCase();
+			});
 
+			 return ProjectTeam.CurrentTeam().getProjects().filter(function(project){
+			 	var types=project.getProjectTypes();
+			 	for(var i=0;i<types.length;i++){
+			 		for(var j=0;j<tags.length;j++){
+			 			if(types[i].toLowerCase()==tags[j].getName().toLowerCase()){
+			 				return true;
+			 			}
+			 		}
+			 	}
+
+			 	return false;
+			 });
+		},
 
 		getProjectTagsData: function(category) {
 
@@ -158,6 +194,12 @@ var ProjectTagList = (function() {
 			}
 
 			return _tags.filter(function(item) {
+
+				if(category=='_root'){
+					return item.getCategory().toLowerCase()==item.getName().toLowerCase();
+				}
+
+
 
 				if (category && category != "") {
 					return item.getCategory() == category;

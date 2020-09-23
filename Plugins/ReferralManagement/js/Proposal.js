@@ -271,6 +271,11 @@ var Proposal = (function() {
 			var me=this;
 			return me.data.attributes.type||""
 		},
+
+		getProjectTypes:function(){
+			var me=this;
+			return [me.getProjectType()];
+		},
 		isOnSchedule: function() {
 			var me = this;
 			return (me.getPercentComplete() >= me.getPercentTimeComplete());

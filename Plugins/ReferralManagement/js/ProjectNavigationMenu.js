@@ -51,6 +51,11 @@ var ProjectNavigationMenu = new Class({
 						html: "Tasks",
 					}, {
 						html: "Files",
+						formatEl: function(li) {
+
+							ReferralManagementDashboard.addItemFilesInfo(li, item, application);
+
+						}
 					}, {
 						html: "Discussion",
 						formatEl: function(li) {
@@ -60,7 +65,12 @@ var ProjectNavigationMenu = new Class({
 						}
 					}, {
 						html: "Team",
-						name: "Users"
+						name: "Users",
+						formatEl: function(li) {
+
+							ReferralManagementDashboard.addItemUsersInfo(li, item, application);
+
+						}
 					},
 					// {
 					//   html:"Timesheets"

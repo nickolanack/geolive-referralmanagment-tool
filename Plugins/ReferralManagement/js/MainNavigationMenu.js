@@ -5,10 +5,41 @@ var MainNavigationMenu = new Class({
 		var navigationController = this;
 
 		this.parent(null, {
-			"class": "collapsable-menu",
-			targetUIView: function(button, section, viewer) {
 
-				return viewer.getApplication().getChildView('content', 0).getChildView('content', 1).getChildView('content', DashboardConfig.getValue('showSearchMenu')?1:0);
+			cloneStyle:{
+				left:0,
+				opacity:0.5
+			},
+			"class": "collapsable-menu",
+			targetUIView: function(button, section, viewer, callback) {
+
+				/**
+				 * TODO sometimes view is not rendered when this is called!
+				 */
+				
+				var getTarget=function(){
+					callback(viewer.getApplication().getChildView('content', 0).getChildView('content', 1).getChildView('content', DashboardConfig.getValue('showSearchMenu')?1:0));
+				}
+
+				try{
+					getTarget();
+					return;
+				}catch(e){
+					console.error(e);
+				}
+
+
+				var interval=setInterval(function(){
+
+					try{
+						getTarget();
+						clearInterval(interval);
+					}catch(e){
+						console.error(e);
+					}
+
+				}, 250);
+
 			},
 			templateView: function(button, section) {
 				return button.template || button.view || (section.toLowerCase() + (button.name || button.html) + "Detail");
@@ -57,6 +88,21 @@ var MainNavigationMenu = new Class({
 					html: "Dashboard",
 				}, {
 					html: "Projects",
+					events:{
+						click:function(){
+							DashboardConfig.getValue('showSplitProjectDetail', function(split) {
+
+								if(!split){
+									application.setNamedValue("currentProject", null);
+								}
+
+
+					 			navigationController.navigateTo('Projects','Main');
+							});
+
+						}
+						
+					},
 					formatEl: function(li) {
 						ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
 
@@ -140,7 +186,7 @@ var MainNavigationMenu = new Class({
 					template: "documentProjectDetail",
 					events:{
 						// click:function(){
-						// 	navigationController.navigateTo('Project','Main');
+						// 	navigationController.navigateTo('Projects','Main');
 							
 						// },
 						navigate:function(){

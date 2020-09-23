@@ -1,7 +1,7 @@
 var ReferralManagementDashboard = (function() {
 
 
-	var _application=null;
+	var _application = null;
 
 
 	return {
@@ -15,7 +15,7 @@ var ReferralManagementDashboard = (function() {
 
 		getView: function(app, callback) {
 
-			_application=app;
+			_application = app;
 
 			app.getNamedValue('navigationController', function(controller) {
 				var view = controller.getTemplateNameForView(controller.getCurrentView());
@@ -130,6 +130,67 @@ var ReferralManagementDashboard = (function() {
 
 		},
 
+		addItemFilesInfo: function(el, item, application) {
+
+			var fileCounter = null;
+
+			var addEl = function() {
+				fileCounter = el.appendChild(new Element('span'));
+				fileCounter.addClass('items');
+				el.addClass('withItemsIndicator');
+			}
+
+
+			var updateCounter = function() {
+
+				if (!fileCounter) {
+					addEl();
+				}
+
+				fileCounter.setAttribute('data-items', item.getFiles().length);
+				if (item.getFiles().length > 0) {
+					el.addClass("hasItems");
+					return;
+				}
+				el.removeClass("hasItems");
+			}
+
+
+			updateCounter();
+
+		},
+
+
+		addItemUsersInfo: function(el, item, application) {
+
+			var fileCounter = null;
+
+			var addEl = function() {
+				fileCounter = el.appendChild(new Element('span'));
+				fileCounter.addClass('items');
+				el.addClass('withItemsIndicator');
+			}
+
+
+			var updateCounter = function() {
+
+				if (!fileCounter) {
+					addEl();
+				}
+
+				fileCounter.setAttribute('data-items', item.getUsers().length);
+				if (item.getUsers().length > 0) {
+					el.addClass("hasItems");
+					return;
+				}
+				el.removeClass("hasItems");
+			}
+
+
+			updateCounter();
+
+		},
+
 		addItemDiscussionInfo: function(el, item, application) {
 
 			var newPosts = 0;
@@ -139,8 +200,8 @@ var ReferralManagementDashboard = (function() {
 
 			var addEl = function() {
 				postCounter = el.appendChild(new Element('span'));
-				postCounter.addClass('posts');
-				el.addClass('withPosts');
+				postCounter.addClass('posts items');
+				el.addClass('withPosts withItemsIndicator');
 
 				if (item instanceof TaskItem) {
 					postCounter.addEvent('click', function() {
@@ -160,12 +221,19 @@ var ReferralManagementDashboard = (function() {
 				}
 
 				postCounter.setAttribute('data-posts', totalPosts);
+				postCounter.setAttribute('data-items', totalPosts);
+
+				if (totalPosts > 0) {
+					el.addClass("hasItems");
+				}
 
 				if (newPosts > 0) {
 					el.addClass('newPosts');
+					el.addClass('new-items');
 					postCounter.setAttribute('data-posts', newPosts + '/' + item.numberOfPosts());
 				} else {
 					el.removeClass('newPosts');
+					el.removeClass('new-items');
 				}
 			};
 
@@ -436,9 +504,11 @@ var ReferralManagementDashboard = (function() {
 		currentProjectFilterFn: function(a) {
 			return !a.isComplete();
 		},
+
 		currentProjectSortFn: function(a, b) {
 			return -(a.getPriorityNumber() > b.getPriorityNumber() ? 1 : -1);
 		},
+
 		projectFilters: function() {
 
 			return [{
@@ -919,116 +989,9 @@ var ReferralManagementDashboard = (function() {
 			return (new MainNavigationMenu(application));
 		},
 		createUserIcon(item, defaultIcon) {
-
-
-			/*
-
-				Use the following in a Custom Module!		
-
-				var defaultIcon=<?php 
-				    echo json_encode(UrlFrom(GetWidget('dashboardConfig')->getParameter('defaultUserImage')[0])); 
-				?>;
-
-
-				return ReferralManagementDashboard.createUserIcon(item, defaultIcon);
-
-
-			 */
-
-
-			var div = new ElementModule('div', {
-				"class": "content user-profile-icon for-user-" + ((item.getUserId || item.getId).bind(item)())
-			});
-			var span = new Element('span');
-			div.appendChild(span);
-
-			span.setStyles({
-
-				position: "relative",
-				display: "inline-block",
-				width: "50px",
-				height: "50px",
-				"background-size": "cover",
-
-			});
-
-			if (defaultIcon) {
-				span.setStyles({
-					"background-image": "url(" + defaultIcon + ")"
-				});
-			}
-
-
-
-			var setItemOnlineStatus = function() {
-				var el = div.getElement().parentNode;
-				el.removeClass('is-online');
-				el.removeClass('is-offline');
-				el.removeClass('is-unknown');
-
-				var user = item;
-
-				if (!(item instanceof ReferralManagementUser)) {
-					if (ProjectTeam.CurrentTeam().hasUser((item.getUserId || item.getId).bind(item)())) {
-						user = ProjectTeam.CurrentTeam().getUser((item.getUserId || item.getId).bind(item)())
-					} else {
-						return;
-					}
-				}
-
-				if (!user.showsOnline()) {
-					el.addClass('is-unknown');
-					return;
-				}
-
-				if (user.isOnline()) {
-					el.addClass('is-online');
-					return;
-				}
-
-				el.addClass('is-offline');
-
-
-
-			}
-			//setItemOnlineStatus();
-
-			div.runOnceOnLoad(function() {
-				div.addWeakEvent(item, 'onlineStatusChanged', setItemOnlineStatus);
-				setItemOnlineStatus();
-			});
-
-
-			if (ProjectTeam.CurrentTeam().hasUser((item.getUserId || item.getId).bind(item)())) {
-
-				var icon = ProjectTeam.CurrentTeam().getUser((item.getUserId || item.getId).bind(item)()).getProfileIcon();
-
-				if (icon.indexOf('Uploads') > 0) {
-					icon = icon + "?thumb=>170x>170";
-				}
-
-				span.setStyle("background-image", "url(" + icon + ")");
-				return div;
-
-			}
-
-			(new GetAttributeItemValueQuery(item.getUserId(), AppClient.getType(), "userAttributes", "profileIcon")).addEvent("success", function(result) {
-
-
-				if (result.value) {
-					var urls = Proposal.ParseHtmlUrls(result.value);
-					span.setStyle("background-image", "url(" + urls[0] + ")");
-				}
-
-
-			}).execute();
-
-
-
-			return div;
-
-
+			return UserIcon.createUserAvatarModule(item, defaultIcon);
 		},
+
 
 
 		addWeakUpdateEvents: function(child, childView, listFilterFn) {
@@ -1048,34 +1011,20 @@ var ReferralManagementDashboard = (function() {
 
 		},
 
+
+
 		addProjectItemWeakUpdateEvents: function(child, childView, application, listFilterFn) {
 
-			childView.runOnceOnLoad(function() {
-
-				childView.getElement().addEvent('click', function() {
-
-					var controller = application.getNamedValue('navigationController');
-					application.setNamedValue("currentProject", child);
-
-					DashboardConfig.getValue('showSplitProjectDetail', function(split) {
-						if (split) {
-							controller.navigateTo("Projects", "Main");
-							return;
-						}
-						controller.navigateTo("Project", "Main");
-					})
+			
+			UIInteraction.addProjectOverviewClick(childView.getElement(), child);
 
 
+			var current = application.getNamedValue("currentProject");
+			if (current && current.getId() == child.getId()) {
+				childView.getElement().addClass("active-project");
+			}
 
-				});
-
-
-				var current = application.getNamedValue("currentProject");
-				if (current && current.getId() == child.getId()) {
-					childView.getElement().addClass("active-project");
-				}
-
-			});
+			
 
 
 			childView.addWeakEvent(child, "change", function() {
@@ -1412,29 +1361,32 @@ var ReferralManagementDashboard = (function() {
 			var proposal = new Element('div', {
 				"style": "margin-top: 20px; height: 50px;"
 			})
-			var loginProposal = proposal.appendChild(new Element('label', {
-				html: 'Are you a proponent?',
-				'class': 'login-button-text',
-				style: "text-align:left; color: #EDC84C; line-height: 55px;",
-				events: {
-
-				}
-			}));
-
-			//login.appendChild(new Element('br'));
-			var proposalButton = loginProposal.appendChild(new Element('button', {
-
-				html: 'Submit a proposal',
-				style: "background-color:#EDC84C;",
-				"class": "primary-btn"
-
-			}));
 
 
-			DashboardConfig.getValue('enableProposals', function(enabled){
-				if(!enabled){
+
+			DashboardConfig.getValue('enableProposals', function(enabled) {
+				if (!enabled) {
 					return;
 				}
+
+				var loginProposal = proposal.appendChild(new Element('label', {
+					html: 'Are you a proponent?',
+					'class': 'login-button-text',
+					style: "text-align:left; color: #EDC84C; line-height: 55px;",
+					events: {
+
+					}
+				}));
+
+				//login.appendChild(new Element('br'));
+				var proposalButton = loginProposal.appendChild(new Element('button', {
+
+					html: 'Submit a proposal',
+					style: "background-color:#EDC84C;",
+					"class": "primary-btn"
+
+				}));
+
 
 				var proposalObj = new GuestProposal(-1, {});
 				(new UIModalFormButton(proposalButton, application, proposalObj, {
@@ -1458,7 +1410,6 @@ var ReferralManagementDashboard = (function() {
 
 			});
 
-			
 
 
 			return [registration, proposal];

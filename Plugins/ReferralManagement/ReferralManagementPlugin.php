@@ -281,7 +281,9 @@ core\EventListener {
 		});
 
 		IncludeJS(__DIR__ . '/js/DashboardConfig.js');
+		IncludeJS(__DIR__ . '/js/DashboardPageLayout.js');
 		IncludeJS(__DIR__ . '/js/ReferralManagementDashboard.js');
+		IncludeJS(__DIR__ . '/js/UIInteraction.js');
 		IncludeJS(__DIR__ . '/js/OrganizationalUnit.js');
 		IncludeJS(__DIR__ . '/js/ItemCategory.js');
 		IncludeJS(__DIR__ . '/js/MainNavigationMenu.js');
@@ -295,6 +297,9 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/TaskItem.js');
 		IncludeJS(__DIR__ . '/js/RecentItems.js');
 		IncludeJS(__DIR__ . '/js/ProjectMap.js');
+		IncludeJS(__DIR__ . '/js/ProjectSearch.js');
+		IncludeJS(__DIR__ . '/js/PostContent.js');
+		IncludeJS(__DIR__ . '/js/UserIcon.js');
 	}
 
 	
@@ -346,14 +351,14 @@ core\EventListener {
 			->scanPostForEventTriggers($params);
 
 	}
-	public function getActiveProjectList() {
+	public function getActiveProjectList($filter=array()) {
 
-		return $this->getProjectList(array('status' => array('value' => 'archived', 'comparator' => '!=')));
+		return $this->getProjectList(array_merge($filter, array('status' => array('value' => 'archived', 'comparator' => '!='))));
 
 	}
-	public function getArchivedProjectList() {
+	public function getArchivedProjectList($filter=array()) {
 
-		return $this->getProjectList(array('status' => 'archived'));
+		return $this->getProjectList(array_merge($filter, array('status' => 'archived')));
 
 	}
 	public function getProjectList($filter = array()) {

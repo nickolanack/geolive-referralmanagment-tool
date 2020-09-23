@@ -249,39 +249,17 @@ var RecentItems = (function() {
 		if(item instanceof MockEventDataTypeItem){
 
 
-			view.runOnceOnLoad(function() {
-
-				view.getElement().addEvent('click', function() {
-
-					var controller = application.getNamedValue('navigationController');
-					//application.setNamedValue("currentUser", item);
-
-
-					var data=item.getData();
-					var users=[];
-					if(data.metadata.items&&data.metadata.items.length){
-						data.metadata.items.forEach(function(dataItem){
-							if(dataItem.type=="User"){
-								users.push(dataItem.id);
-							}
-						});
+			var data=item.getData();
+			var users=[];
+			if(data.metadata.items&&data.metadata.items.length){
+				data.metadata.items.forEach(function(dataItem){
+					if(dataItem.type=="User"){
+						users.push(dataItem.id);
 					}
-
-					if(users.length==0){
-						application.setNamedValue("currentUser", AppClient.getId());
-					}else{
-						application.setNamedValue("currentUser", users.shift());
-					}
-
-
-					
-					controller.navigateTo("User", "Main");
-				
-
-				
 				});
+			}
 
-			});
+			UIInteraction.addUserProfileClick(view.getElement(), users.length?users.shift():AppClient);
 
 			return;
 		}

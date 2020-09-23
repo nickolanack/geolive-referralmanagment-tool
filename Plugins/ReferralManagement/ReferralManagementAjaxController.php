@@ -93,6 +93,22 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	}
 
+
+	protected function projectSearch( $json) {
+
+
+		GetPlugin('Attributes');
+		return array('results'=>(new \attributes\RecordQuery('proposalAttributes'))->searchValues($json->search->name, 'title'));
+
+
+		$response = array('results' => $this->getPlugin()->getActiveProjectList(array(
+			'LIMIT'=>5
+		)));
+
+		return $response;
+
+	}
+
 	protected function getProject($json) {
 
 		$response = array('results' => $this->getPlugin()->getProjectList(array('id'=>$json->project)));
@@ -807,23 +823,20 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	protected function listDepartments($json){
 
-		
-
-		return array(
-			'departments'=>array_map(function($department){
+		$deps=array_map(function($department){
 
 
 				return $department;
-			}, $this->getPlugin()->getDatabase()->getDepartments())
+			}, $this->getPlugin()->getDatabase()->getDepartments());
+
+		return array(
+			'departments'=>$deps?$deps:array()
 		);
 	}
 
 	protected function listTags($json){
 
-		
-
-		return array(
-			'tags'=>array_map(function($category){
+		$tags=array_map(function($category){
 
 				$category->metadata=json_decode($category->metadata);
 
@@ -837,7 +850,10 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				unset($category->type);
 
 				return $category;
-			}, $this->getPlugin()->getDatabase()->getCategorys())
+			}, $this->getPlugin()->getDatabase()->getCategorys());
+
+		return array(
+			'tags'=>$tags?$tags:array()
 		);
 	}
 
