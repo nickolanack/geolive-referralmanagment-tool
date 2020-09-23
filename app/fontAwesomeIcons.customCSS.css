@@ -5,6 +5,7 @@
 .navigation-menu li:before {
     content: "\f1b2";
     font-family: FontAwesome;
+    font-size: 20px;
 }
 
 .navigation-menu li.active:before {
