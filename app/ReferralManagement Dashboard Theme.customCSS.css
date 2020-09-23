@@ -4,6 +4,7 @@ $tagBtnColor:#e1e1e1;
 
 
 $mainStyleColor:#efa82c;
+$highlightBtnColor:#efa82c;
 
 div#g-recaptcha {
     margin: 20px 2px;
@@ -3078,6 +3079,70 @@ img.static-map {
 
     }
 
+
+    /**Navigation Menu**/
+
+    .navigation-menu .active>button {
+        color: white;
+    }
+
+    .navigation-menu button {
+        color: #bebebe;
+    }
+
+    .navigation-menu button {
+        color: #bebebe;
+    }
+
+
+    .navigation-menu ul {
+        padding: 0;
+    }
+
+    .navigation-menu ul label {
+        /*padding-left: 40px;*/
+        display:none;
+      
+    }
+
+    .navigation-menu ul li {
+        padding: 10px;
+        padding-left: 40px;
+        margin: 5px 0;
+    }
+
+
+    .navigation-menu ul li.active {
+        background-color: adjust-color($highlightBtnColor, $alpha:-0.3);
+        border-right: 4px solid $highlightBtnColor;
+    }
+
+
+    @media screen and (max-width: 1250px){
+        .navigation-menu ul li {
+            padding-left: 10px;
+        }
+    }
+
+
+
+    .left-panel.closed .navigation-menu ul li {
+            padding-left: 5px;
+            margin: 12px 0;
+            height: 20px;
+        }
+    .ui-view.left-panel.closed .navigation-menu label{
+        display:none;
+    }
+
+
+
+
+
+
+
+
+/**Navigation Menu**/
 
    .ui-view.left-panel.closed .ui-navigation-menu>.expand>label:after {
     top:0px;
