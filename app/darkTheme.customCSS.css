@@ -3,97 +3,143 @@
 
 $darkThemeBG:black;
 $darkThemeInset:transparent;
+$tagBtnColor:#2E303A;
+
+.dark{
+    .pb-w .template-footer{
+        background-color: $darkThemeBG;
+    }
+
+    .file-list .file-item .file-container {
+        background-color: #33404d;
+         box-shadow:none;
+    }
+
+    h2 {
+        color: white;
+    }
+
+    .ui-view.dashboard-main {
+        background-color: $darkThemeBG;
+        color: white;
+    }
+
+    button.inline-logout, label.boolean-field p, .field-value-module.editable:after, .field-value-module .editable:after{
+        color: #637594;
+    }
+
+    .user-detail .single_ImageContainer:after{
+        box-shadow:none;
+    }
+
+    .ui-view.inset-shading>div {
+         background-color: $darkThemeInset;
+    }
+
+    .ui-view.inset-menu-shading>div{
+        background-color: $darkThemeInset;
+    }
+
+    .navigation-menu button, .inline-navigation-menu button{
+        color: gray;
+    }
+
+
+    .navigation-menu label{
+         color: white;
+    }
+
+    .navigation-menu button:hover, .inline-navigation-menu button:hover {
+        color: white;
+    }
+
+    .project-detail span.progress{
+         background-color: $darkThemeBG;
+    }
+
+    .uilist-pageination:before{
+         color: #6AE9BF;
+    }
+
+    .uilist-pageination button{
+        border: 1px solid gray;
+        background-color: transparent;
+    }
+
+    .text-input, .discussion-textbox {
+        background-color: $darkThemeBG;
+        border: 1px solid #4e4e4e;
+        color: white;
+        border: 1px solid #4e4e4e;
+    }
+
+    &.pb-c.pb-c-append {
+        background-color: $darkThemeInset;
+        color:white;
+    }
+
+
+    .label.top-left, .checkboxStyle {
+        color: white;
+    }
+
+    &.pb-c:after {
+        background-color: $darkThemeBG;
+    }
+
+    .WizardTitle li{
+        color:white;
+    }
+
+    &.ui-view.dashboard-main a{
+        color:white;
+    }
 
 
 
-.dark .pb-w .template-footer{
-    background-color: $darkThemeBG;
+
+    .ui-list-view .ui-view:first-child, .inline-list-item.first-item {
+        border-top-color: $tagBtnColor;
+    }
+
+    .ui-list-view .ui-view, .inline-list-item {
+        border-bottom-color: $tagBtnColor;
+    }
+
+    ul.item-tags li {
+        background-color: $tagBtnColor;
+    }
+
+    .inline-btn.sort ul, .inline-btn.optionlist ul {
+        background-color: $tagBtnColor;
+    }
+
+    .inline-btn.sort li, .inline-btn.optionlist li {
+        border-color:$tagBtnColor;
+        color:white;
+    }
+
+    .inline-btn.sort.hasFilter, .inline-btn.sort.hasOrder {
+        color: $tagBtnColor;
+    }
+
+    .inline-btn.sort, .inline-btn.optionlist { 
+        background-color: $tagBtnColor;
+    }
+
+    .inline-btn.filter{
+        color: $tagBtnColor;
+    }
+
+    .calendar .month {
+        background-color: $tagBtnColor;
+    }
+
+
 }
 
-.dark .file-list .file-item .file-container {
-    background-color: #33404d;
-     box-shadow:none;
-}
-
-.dark h2 {
-    color: white;
-}
-
-.ui-view.dashboard-main.dark {
-    background-color: $darkThemeBG;
-    color: white;
-}
-
-.dark button.inline-logout, .dark label.boolean-field p, .dark .field-value-module.editable:after, .dark .field-value-module .editable:after{
-    color: #637594;
-}
-
-.dark .user-detail .single_ImageContainer:after{
-    box-shadow:none;
-}
-
-.dark .ui-view.inset-shading>div {
-     background-color: $darkThemeInset;
-}
-
-.dark .ui-view.inset-menu-shading>div{
-    background-color: $darkThemeInset;
-}
-
-.dark .navigation-menu button, .dark .inline-navigation-menu button{
-    color: gray;
-}
 
 
-.dark .navigation-menu label{
-     color: white;
-}
-
-.dark .navigation-menu button:hover, .dark .inline-navigation-menu button:hover {
-    color: white;
-}
-
-.dark .project-detail span.progress{
-     background-color: $darkThemeBG;
-}
-
-.dark .uilist-pageination:before{
-     color: #6AE9BF;
-}
-
-.dark .uilist-pageination button{
-    border: 1px solid gray;
-    background-color: transparent;
-}
-
-.dark .text-input, .dark .discussion-textbox {
-    background-color: $darkThemeBG;
-    border: 1px solid #4e4e4e;
-    color: white;
-    border: 1px solid #4e4e4e;
-}
-
-.dark.pb-c.pb-c-append {
-    background-color: $darkThemeInset;
-    color:white;
-}
-
-
-.dark .label.top-left, .dark .checkboxStyle {
-    color: white;
-}
-
-.dark.pb-c:after {
-    background-color: $darkThemeBG;
-}
-
-.dark .WizardTitle li{
-    color:white;
-}
-
-.ui-view.dashboard-main.dark a{
-    color:white;
-}
 
 .ui-view.inset-menu-shading.dark-only-shading>div {
     background-color: transparent;
