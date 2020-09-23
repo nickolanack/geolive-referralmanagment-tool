@@ -2057,6 +2057,7 @@ span.filter-btns.left-justified {
     left: calc( 50% - 25px );
     top: calc( 50% - 25px );
     border-radius: 100%;
+    box-sizing: border-box;
 }
 
 
