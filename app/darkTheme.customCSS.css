@@ -130,7 +130,11 @@ $tagBtnColor:#2E303A;
     .inline-btn.filter{
         color: $tagBtnColor;
     }
-
+    
+    .dark .calendar .month {
+        background-color: transparent;
+    }
+ 
 
 }
 
