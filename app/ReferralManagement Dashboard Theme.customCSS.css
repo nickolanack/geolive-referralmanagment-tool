@@ -78,7 +78,7 @@ button.primary-btn.nav-new-btn{
         content:"+";
         float:none;
     }
-
+    font-size:0;
 }
 
 
@@ -1477,9 +1477,12 @@ img.youtubelogo {
     height: 16px;
     display: inline-block;
     border-radius: 100%;
-    float: left;
+   
     margin: 2px;
     background-size: 100%;
+
+    float: right;
+    margin-left: 10px;
 }
 
 .starred-indicator.other-stars:after {
