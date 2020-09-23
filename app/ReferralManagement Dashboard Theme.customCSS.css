@@ -3156,7 +3156,6 @@ img.static-map {
 
     .navigation-menu ul li {
         padding: 10px;
-        padding-left: 40px;
         margin: 5px 0;
     }
 
@@ -3242,10 +3241,7 @@ img.static-map {
         .navigation-menu button{
             font-size: 11px
         }
-
-        .ui-navigation-menu>ul{
-            padding-left: 20px;
-        }
+ 
     }
 
     @media screen and (max-width: 1000px){
@@ -3259,6 +3255,7 @@ img.static-map {
 
         .navigation-menu button{
           text-align: center;
+          width:70px;
         }
     }
 
