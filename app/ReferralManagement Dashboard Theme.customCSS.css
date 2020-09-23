@@ -1,6 +1,9 @@
 /*Login*/
 $themeInset:#f0f0f0;
 $tagBtnColor:#e1e1e1;
+$tag:#333746;
+
+$mainStyleColor:#efa82c;
 
 div#g-recaptcha {
     margin: 20px 2px;
@@ -1926,7 +1929,7 @@ span.filter-btns.left-justified {
 }
 
 .inline-btn.sort li:hover, .inline-btn.optionlist li:hover {
-    background-color: #333746;
+    background-color: darken(#333746, 10%);
 }
 
 
