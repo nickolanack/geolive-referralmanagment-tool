@@ -1,5 +1,6 @@
 /*Login*/
 
+$tagBtnColor:#e1e1e1;
 
 div#g-recaptcha {
     margin: 20px 2px;
@@ -610,11 +611,11 @@ span.warn {
 }
 
 .ui-list-view .ui-view:first-child, .inline-list-item.first-item {
-    border-top: 1px solid #2E303A;
+    border-top: 1px solid $tagBtnColor;
 }
 
 .ui-list-view .ui-view, .inline-list-item {
-    border-bottom: 1px solid #2E303A;
+    border-bottom: 1px solid $tagBtnColor;
     padding: 7px 10px;
 }
 
@@ -1549,7 +1550,7 @@ ul.item-tags li {
     font-size: 12px;
     display: inline-block;
     margin-right: 5px;
-    background-color: #2E303A;
+    background-color: $tagBtnColor;
     border-radius: 30px;
     position: relative;
     color: gray;
@@ -1888,19 +1889,19 @@ span.filter-btns.left-justified {
     padding: 0;
     width: 100%;
     z-index: 1;
-    background-color: #2E303A;
+    background-color: $tagBtnColor;
     border-radius: 2px;
 }
 .inline-btn.sort li, .inline-btn.optionlist li {
     list-style: none;
     padding: 5px 10px;
-    border: 1px solid #2E303A;
+    border: 1px solid $tagBtnColor;
     color:white;
 }
 
 
 .inline-btn.sort.hasFilter, .inline-btn.sort.hasOrder {
-    color: #2E303A;
+    color: $tagBtnColor;
     background-color: #EDC84C;
     cursor: pointer;
 }
@@ -1938,13 +1939,13 @@ span.filter-btns.left-justified {
     line-height: 13px;
     position: relative;
     border: none;
-    background-color: #2E303A;
+    background-color: $tagBtnColor;
     width: 100px;
     padding: 5px 10px;
 }
 
 .inline-btn.filter{
-    color: #2E303A;
+    color: $tagBtnColor;
     background-color: #EDC84C;
 }
 
@@ -1995,7 +1996,7 @@ span.filter-btns.left-justified {
 .calendar .month {
     width: 100%;
     min-height: 300px;
-    background-color: #2E303A;
+    background-color: $tagBtnColor;
     display: grid;
 }
 
