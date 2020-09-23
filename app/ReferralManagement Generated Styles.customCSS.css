@@ -54,22 +54,21 @@ if($useFontAwesome){
     <?php
 }
 
+if(!$useFontAwesome){
+    $offset=10;
+    foreach(['remove', 'edit', 'download'] as $fileFn){
+        $editIcon=$config->getParameter('file'.ucfirst($fileFn).'BtnIcon', array());
+            if(!empty($editIcon)){
 
-$offset=10;
-foreach(['remove', 'edit', 'download'] as $fileFn){
-    $editIcon=$config->getParameter('file'.ucfirst($fileFn).'BtnIcon', array());
-        if(!empty($editIcon)){
-
-        ?>
-            .file-item .<?php echo $fileFn; ?>-btn {
-                top:<?php echo $offset; $offset+=30;?>px;
-                background-image:url("<?php echo UrlFrom($editIcon[0].'?thumb=x>100y>100'); ?>");
-            }
-       <?php  
+            ?>
+                .file-item .<?php echo $fileFn; ?>-btn {
+                    top:<?php echo $offset; $offset+=30;?>px;
+                    background-image:url("<?php echo UrlFrom($editIcon[0].'?thumb=x>100y>100'); ?>");
+                }
+           <?php  
+        }
+     
     }
-   
-    
-    
 }
 
 if($config->getParameter('showSplitProjectDetail')){
@@ -101,7 +100,8 @@ foreach(['apple', 'google'] as $mobile){
     
 }
 
-$addIcon=$config->getParameter('fileUploadBtnIcon', array());
+if(!$useFontAwesome){
+    $addIcon=$config->getParameter('fileUploadBtnIcon', array());
     if(!empty($addIcon)){
 
         ?>
@@ -111,48 +111,64 @@ $addIcon=$config->getParameter('fileUploadBtnIcon', array());
         <?php
 
     }
+}
 
 
 
 $menuIconDefault=$config->getParameter('defaultMenuIcon')[0];
-foreach($config->getParameters() as $key=>$value){
-    foreach(array('main', 'people', 'accounting','community', 'configuration') as $section){
-        if(strpos($key, $section.'-')===0){
-            $icon=$menuIconDefault;
-            if(!empty($value)){
-                $icon=$value[0];
+
+
+
+
+if(!$useFontAwesome){
+    foreach($config->getParameters() as $key=>$value){
+        foreach(array('main', 'people', 'accounting','community', 'configuration') as $section){
+            if(strpos($key, $section.'-')===0){
+                $icon=$menuIconDefault;
+                if(!empty($value)){
+                    $icon=$value[0];
+                }
+                ?>
+                li.menu-<?php echo $key; ?>:before{
+                    background-image:url("<?php echo UrlFrom($icon."?thumb=>20x>20&tint=".$config->getParameter("menuIconColor", "rgb(180,180,180)")); ?>");
+                }
+                li.menu-<?php echo $key; ?>.active:before{
+                    background-image:url("<?php echo UrlFrom($icon."?thumb=>20x>20&tint=".$config->getParameter("menuIconTint")); ?>");
+                }
+                
+                
+                .label-<?php echo $key; ?>{
+                    background-image:url("<?php echo UrlFrom($icon."?thumb=>20x>20&tint=".$config->getParameter("menuIconColor", "rgb(180,180,180)")); ?>");
+                }
+                
+                <?php
             }
-            ?>
-            li.menu-<?php echo $key; ?>:before{
-                background-image:url("<?php echo UrlFrom($icon."?thumb=>20x>20&tint=".$config->getParameter("menuIconColor", "rgb(180,180,180)")); ?>");
-            }
-            li.menu-<?php echo $key; ?>.active:before{
-                background-image:url("<?php echo UrlFrom($icon."?thumb=>20x>20&tint=".$config->getParameter("menuIconTint")); ?>");
-            }
-            
-            
-            .label-<?php echo $key; ?>{
-                background-image:url("<?php echo UrlFrom($icon."?thumb=>20x>20&tint=".$config->getParameter("menuIconColor", "rgb(180,180,180)")); ?>");
-            }
-            
-            <?php
         }
     }
 }
 
-        $applicationLogo=$config->getParameter('applicationLogo', array());
-        if(empty($applicationLogo)){
-            $applicationLogo=$menuIconDefault;
-        }else{
-            $applicationLogo=$applicationLogo[0];
-        }
-    ?>
+
+
+
+$applicationLogo=$config->getParameter('applicationLogo', array());
+if(empty($applicationLogo)){
+    $applicationLogo=$menuIconDefault;
+}else{
+    $applicationLogo=$applicationLogo[0];
+}
+
+
+
+?>
  .application-logo {
 
     background-image:url("<?php echo UrlFrom($applicationLogo."?thumb=>200x>200"); ?>");
 }  
 
 <?php
+
+
+
 
 $gatherLogo=$config->getParameter('gatherLogo', array());
         if(empty($gatherLogo)){
@@ -167,33 +183,53 @@ $gatherLogo=$config->getParameter('gatherLogo', array());
 }  
 
 
-    <?php 
-        $attachmentIcon=$config->getParameter('attachmentIcon', array());
-        if(empty($attachmentIcon)){
-            $attachmentIcon=$attachmentIcon;
-        }else{
-            $attachmentIcon=$attachmentIcon[0];
-        }
+<?php 
+if(!$useFontAwesome){
+    $attachmentIcon=$config->getParameter('attachmentIcon', array());
+    if(empty($attachmentIcon)){
+        $attachmentIcon=$attachmentIcon;
+    }else{
+        $attachmentIcon=$attachmentIcon[0];
+    }
+
     ?>
     
-.attachment-indicator {
-    background-image:url("<?php echo UrlFrom($attachmentIcon."?tint=".$config->getParameter("attachmentTint", "rgb(180,180,180)")); ?>");
-}
+    .attachment-indicator {
+        background-image:url("<?php echo UrlFrom($attachmentIcon."?tint=".$config->getParameter("attachmentTint", "rgb(180,180,180)")); ?>");
+    }
 
+
+    .discussion button.upload-button {
+        background-image: url("<?php echo UrlFrom($attachmentIcon."?tint=".$config->getParameter("attachmentTint", "rgb(180,180,180)")); ?>");
+       
+    }
+
+<?php
+}
+?>
 
 .discussion button.upload-button {
-    height: 37px;
     font-size: 0;
-    background-image: url("<?php echo UrlFrom($attachmentIcon."?tint=".$config->getParameter("attachmentTint", "rgb(180,180,180)")); ?>");
+    height: 37px;
     background-size: auto 28px;
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
 }
 
+<?php 
+
+
+if(!$useFontAwesome){
+    ?>
+    .field-value-module.with-description .field-value:after{
+         background-image: url("<?php echo UrlFrom("{assets}/Control Panel Icons/text.png?tint=rgb(180,180,180)"); ?>");
+    }
+<?php 
+}
+?>
 .field-value-module.with-description .field-value:after{
     content: "";
-     background-image: url("<?php echo UrlFrom("{assets}/Control Panel Icons/text.png?tint=rgb(180,180,180)"); ?>");
     width: 20px;
     height: 14px;
     background-size: auto 100%;
@@ -205,12 +241,27 @@ $gatherLogo=$config->getParameter('gatherLogo', array());
 
 
 
+<?php
+
+
+
+if(!$useFontAwesome){
+    ?>
 .synopsis-item {
     background-image:url("<?php echo UrlFrom($menuIconDefault."?tint=rgb(180,180,180)"); ?>");
 }
+<?php 
+}
+?>
+
+
 
 
 <?php 
+
+
+if(!$useFontAwesome){
+    
         $starredIcon=$config->getParameter('starIcon', array());
         if(empty($starredIcon)){
             $starredIcon=$menuIconDefault;
@@ -234,89 +285,97 @@ $gatherLogo=$config->getParameter('gatherLogo', array());
     
 }
 
+<?php 
+}
+?>
 
 
 
 
 
 <?php 
-        $priorityIcon=$config->getParameter('priorityIcon', array());
-        if(empty($priorityIcon)){
-            $priorityIcon=$menuIconDefault;
-        }else{
-            $priorityIcon=$priorityIcon[0];
-        }
+
+
+if(!$useFontAwesome){
+
+
+    $priorityIcon=$config->getParameter('priorityIcon', array());
+    if(empty($priorityIcon)){
+        $priorityIcon=$menuIconDefault;
+    }else{
+        $priorityIcon=$priorityIcon[0];
+    }
+
+     $overdueIcon=$config->getParameter('overdueIcon', array());
+    if(empty($overdueIcon)){
+        $overdueIcon=$menuIconDefault;
+    }else{
+        $overdueIcon=$overdueIcon[0];
+    }
+
+
+    $remainingIcon=$config->getParameter('remainingIcon', array());
+    if(empty($remainingIcon)){
+        $remainingIcon=$menuIconDefault;
+    }else{
+        $remainingIcon=$remainingIcon[0];
+    }
+
+
+
     ?>
- .priority-indicator {
+    .priority-indicator {
 
-    background-image:url("<?php echo UrlFrom($priorityIcon."?tint=rgb(180,180,180)"); ?>");
-}   
-.priority-indicator.priority {
+        background-image:url("<?php echo UrlFrom($priorityIcon."?tint=rgb(180,180,180)"); ?>");
+    }   
+    .priority-indicator.priority {
 
-    background-image:url("<?php echo UrlFrom($priorityIcon."?tint=".$config->getParameter("priorityTint", "rgb(180,180,180)")); ?>");
+        background-image:url("<?php echo UrlFrom($priorityIcon."?tint=".$config->getParameter("priorityTint", "rgb(180,180,180)")); ?>");
+    }
+
+    .priority-tasks {
+        background-image:url("<?php echo UrlFrom($priorityIcon."?tint=".$config->getParameter("priorityTint", "rgb(180,180,180)")); ?>");
+        border-color:<?php echo $config->getParameter("priorityTint", "rgb(180,180,180)"); ?>;
+        
+    }
+
+
+
+    .overdue-tasks {
+        background-image:url("<?php echo UrlFrom($overdueIcon."?tint=".$config->getParameter("overdueTint", "rgb(180,180,180)")); ?>");
+        border-color:<?php echo $config->getParameter("overdueTint", "rgb(180,180,180)"); ?>;
+        
+    }
+
+
+    .remaining-tasks {
+        background-image:url("<?php echo UrlFrom($remainingIcon."?tint=".$config->getParameter("remainingTint", "rgb(180,180,180)")); ?>");
+        border-color:<?php echo $config->getParameter("remainingTint", "rgb(180,180,180)"); ?>;
+        
+    }
+
+
+    .segment.overdue{
+        background-image:url("<?php echo UrlFrom($overdueIcon."?tint=rgba(50,50,50)"); ?>");
+    }
+    .segment.completed{
+         background-image:url("<?php echo UrlFrom($remainingIcon."?tint=rgba(60, 179, 113)"); ?>");
+    }
+    .segment.created{
+         background-image:url("<?php echo UrlFrom($starredIcon."?tint=rgba(106, 124, 233)"); ?>");
+    }
+    .segment.duedate, .segment.complete{
+         background-image:url("<?php echo UrlFrom($overdueIcon."?tint=rgba(60, 179, 113)"); ?>");
+    }
+
+<?php 
 }
+?>
 
-.priority-tasks {
-    background-image:url("<?php echo UrlFrom($priorityIcon."?tint=".$config->getParameter("priorityTint", "rgb(180,180,180)")); ?>");
-    border-color:<?php echo $config->getParameter("priorityTint", "rgb(180,180,180)"); ?>;
-    
-}
 
 
 
 <?php 
-        $overdueIcon=$config->getParameter('overdueIcon', array());
-        if(empty($overdueIcon)){
-            $overdueIcon=$menuIconDefault;
-        }else{
-            $overdueIcon=$overdueIcon[0];
-        }
-    ?>
-
-
-
-.overdue-tasks {
-    background-image:url("<?php echo UrlFrom($overdueIcon."?tint=".$config->getParameter("overdueTint", "rgb(180,180,180)")); ?>");
-    border-color:<?php echo $config->getParameter("overdueTint", "rgb(180,180,180)"); ?>;
-    
-}
-
-
-<?php 
-        $remainingIcon=$config->getParameter('remainingIcon', array());
-        if(empty($remainingIcon)){
-            $remainingIcon=$menuIconDefault;
-        }else{
-            $remainingIcon=$remainingIcon[0];
-        }
-    ?>
-
-
-
-.remaining-tasks {
-    background-image:url("<?php echo UrlFrom($remainingIcon."?tint=".$config->getParameter("remainingTint", "rgb(180,180,180)")); ?>");
-    border-color:<?php echo $config->getParameter("remainingTint", "rgb(180,180,180)"); ?>;
-    
-}
-
-
-.segment.overdue{
-    background-image:url("<?php echo UrlFrom($overdueIcon."?tint=rgba(50,50,50)"); ?>");
-}
-.segment.completed{
-     background-image:url("<?php echo UrlFrom($remainingIcon."?tint=rgba(60, 179, 113)"); ?>");
-}
-.segment.created{
-     background-image:url("<?php echo UrlFrom($starredIcon."?tint=rgba(106, 124, 233)"); ?>");
-}
-.segment.duedate, .segment.complete{
-     background-image:url("<?php echo UrlFrom($overdueIcon."?tint=rgba(60, 179, 113)"); ?>");
-}
-
-<?php 
-
-
-
 
 
 foreach(GetPlugin("ReferralManagement")->getRoleIcons() as $role=>$icon){
