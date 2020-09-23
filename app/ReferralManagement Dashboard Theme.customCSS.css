@@ -3102,19 +3102,7 @@ img.static-map {
     }
 
 
-    @media screen and (max-width: 1000px){
-       .navigation-menu label{
-            font-size: 0;
-            width: 90px;
-            border-top: 1px solid rgba(0,0,0,0.3);
-            display: inline-block;
-
-        }
-
-        .navigation-menu button{
-          text-align: center;
-        }
-    }
+    
     
     .navigation-menu button{
         width: 100px;
@@ -3138,17 +3126,7 @@ img.static-map {
         padding: 0 3px;
     }
 
-    @media screen and (max-width: 1250px) {
-
-        .navigation-menu button{
-            font-size: 11px
-        }
-
-        .ui-navigation-menu>ul{
-            padding-left: 20px;
-        }
-    }
-
+    
 
     /**new**/
 
@@ -3252,11 +3230,39 @@ img.static-map {
     }
 
 
-@media screen and (max-width: 1250px){
+    @media screen and (max-width: 1250px){
         .navigation-menu ul li {
             padding-left: 10px;
         }
     }
+
+
+    @media screen and (max-width: 1250px) {
+
+        .navigation-menu button{
+            font-size: 11px
+        }
+
+        .ui-navigation-menu>ul{
+            padding-left: 20px;
+        }
+    }
+
+    @media screen and (max-width: 1000px){
+       .navigation-menu label{
+            font-size: 0;
+            width: 90px;
+            border-top: 1px solid rgba(0,0,0,0.3);
+            display: inline-block;
+
+        }
+
+        .navigation-menu button{
+          text-align: center;
+        }
+    }
+
+
 
 
 /**Navigation Menu**/
