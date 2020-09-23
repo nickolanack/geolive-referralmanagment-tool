@@ -19,7 +19,7 @@ $tagBtnColor:#2E303A;
         color: white;
     }
 
-    .ui-view.dashboard-main {
+    &.ui-view.dashboard-main {
         background-color: $darkThemeBG;
         color: white;
     }
