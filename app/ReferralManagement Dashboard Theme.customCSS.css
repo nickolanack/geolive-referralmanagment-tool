@@ -3108,11 +3108,17 @@ img.static-map {
             width: 90px;
             border-top: 1px solid rgba(0,0,0,0.3);
             display: inline-block;
+
+        }
+
+        .navigation-menu button{
+          text-align: center;
         }
     }
     
     .navigation-menu button{
-       width: 90px;
+        width: 100px;
+        text-align: left;
     }
     .ui-navigation-menu>ul{
         padding:0;
