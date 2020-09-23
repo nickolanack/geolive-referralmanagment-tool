@@ -3,6 +3,9 @@ var DashboardPageLayout=(function(){
 
 	var DashboardPageLayout=new Class({
 
+		layoutSection:function(page, modules){
+			return this.layoutPage(page, modules);
+		},
 		layoutPage:function(page, modules){
 
 
@@ -61,9 +64,6 @@ var DashboardPageLayout=(function(){
 	        
 	    }
 
-
-
-
 	    var items=content.slice(0,5);
 	    if(!DashboardConfig.getValue('showOverviewMetricsDetail')){
 	        items = items.slice(2);
@@ -75,7 +75,21 @@ var DashboardPageLayout=(function(){
 	    return items;
 
 
-	});
+	}).addLayout('leftPanel', function(content){
+
+		if(!DashboardConfig.getValue('showLeftPanelUser')){
+		     content.splice(1,1);
+		}else{
+		     content.splice(2,1);
+		}
+
+		if(!DashboardConfig.getValue('showLeftPanelPrimaryBtn')){
+		     content.splice(2,1);
+		}
+
+		return content;
+
+	})
 
 	return layout;
 
