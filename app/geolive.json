@@ -17710,12 +17710,13 @@
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
-            "cacheable": false,
-            "link": false,
-            "sass": false,
-            "widgetTitle": "",
-            "target": "none",
-            "customCSS": ""
+            "cacheable": true,
+            "link": true,
+            "sass": true,
+            "widgetTitle": "gatherTheme",
+            "target": "gatherTheme",
+            "customCSS": "",
+            "readAccess": "public"
         }
     }
 }
