@@ -1,1 +1,26 @@
 @import url("/webresources/font-awesome-4.7.0/css/font-awesome.min.css");
+
+
+.navigation-menu li:before {
+    content: "\f1b2";
+    font-family: FontAwesome;
+}
+
+.navigation-menu li.active:before {
+    color: white;
+}
+
+.navigation-menu li.menu-main-map:before {
+    content: "\f278";
+}
+.navigation-menu li.menu-main-projects:before {
+    content: "\f024";
+}
+
+.navigation-menu li.menu-main-tasks:before {
+    content: "\f0ae";
+}
+
+.navigation-menu li.menu-main-calendar:before {
+    content: "\f133";
+}
