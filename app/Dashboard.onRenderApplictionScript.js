@@ -85,6 +85,11 @@ IncludeJSBlock('
     }
     
     
+    if($dashConfig->getParameter('useFontAwesome')){
+        GetWidget('fontAwesomeIcons')->display($targetInstance);   
+    }
+    
+    
     
     GetWidget('defaultPostDetail')->display($targetInstance);
     
