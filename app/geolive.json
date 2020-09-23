@@ -4647,6 +4647,12 @@
                 },
                 {
                     "type": "boolean",
+                    "name": "useFontAwesome",
+                    "default": true,
+                    "label": "useFontAwesome"
+                },
+                {
+                    "type": "boolean",
                     "name": "showLeftPanelPrimaryBtn",
                     "default": false,
                     "label": "showLeftPanelPrimaryBtn"
@@ -4842,7 +4848,8 @@
             ],
             "showOverviewMetricsDetail": false,
             "showLeftPanelPrimaryBtn": false,
-            "showLeftPanelUser": true
+            "showLeftPanelUser": true,
+            "useFontAwesome": true
         }
     },
     "widget.154": {
