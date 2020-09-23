@@ -3201,12 +3201,13 @@ img.static-map {
         .ui-navigation-menu>ul>li{
             position:relative;
         }
-        .navigation-menu li:after{
+
+        li:after{
             display:none;
         }
         
         
-        .navigation-menu label:after {
+        label:after {
             width: 0;
             height: 0;
             border-top: 7px solid transparent;
@@ -3221,10 +3222,11 @@ img.static-map {
         }
 
         ul li {
-                padding-left: 5px;
-                margin: 12px 0;
-                height: 20px;
-            }
+            padding-left: 5px;
+            margin: 12px 0;
+            height: 20px;
+        }
+
         label{
             display:none;
         }
