@@ -4,7 +4,6 @@ $tagBtnColor:#e1e1e1;
 
 
 $mainStyleColor:#efa82c;
-$highlightBtnColor:#efa82c;
 
 div#g-recaptcha {
     margin: 20px 2px;
@@ -44,9 +43,6 @@ div#g-recaptcha {
     
 }
 
-.navigation-menu li.hidden {
-    display: none;
-}
 
 
 .public-menu li.primary-btn button{
@@ -892,29 +888,6 @@ button.inline-logout {
 
 
 
-
-
-.navigation-menu ul {
-    display: block;
-}
-
-.navigation-menu li, .inline-navigation-menu li{
-    list-style: none;
-    color: gray;
-    margin: 5px;
-}
-
-.navigation-menu li:after {
-    content: attr(data-counter);
-    float: right;
-    display: inline-block;
-    background-color: $tagBtnColor;
-    padding: 0px 8px;
-    border-radius: 20px;
-    font-size: 12px;
-}
-
-
 .collapsable-menu li {
     display: none;
 }
@@ -927,52 +900,11 @@ button.inline-logout {
     display: block;
 }
 
-.navigation-menu li.has-new-items:after {
-    background-color: crimson;
-    color: black;
-}
-
-.navigation-menu li.menu-main-projects:after {
-    content: attr(data-counter-complete);
-}
-
-.navigation-menu li.menu-main-tasks:after {
-    content: attr(data-counter-complete);
-}
-
 .menu-main li.hidden{
     display: none;
 }
 
-.navigation-menu button, .inline-navigation-menu button {
-    border: none;
-    background-color: transparent;
-    color: black;
-    padding: 0;
-    font-size: 16px;
-    font-weight: 100;
-}
 
-
-.navigation-menu label {
-
-    text-transform: uppercase;
-    font-size: 1.1em;
-}
-
-
-.navigation-menu li:before {
-    content: "";
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-size: 100%;
-    background-position: center;
-    vertical-align: top;
-    margin: 0 10px;
-    background-repeat: no-repeat;
-    
-}
 
 .item-tags li:before {
     content: "";
@@ -987,36 +919,6 @@ button.inline-logout {
     position: relative;
     left: -5px;
 }
-
-.navigation-menu .active>button, .inline-navigation-menu .active>button {
-    color: #6AE9BF;
-}
-
-.ui-navigation-menu button {
-    cursor: pointer;
-}
-
-.navigation-menu button:hover, .inline-navigation-menu button:hover {
-    color: black;
-}
-
-.inline-navigation-menu>ul>label {
-    display: none;
-}
-
-.inline-navigation-menu ul {
-    display: inline;
-    margin: 0;
-    padding: 0;
-}
-
-.inline-navigation-menu li {
-    display: inline-block;
-    margin: 8px 10px;
-}
-
-
-
 
 
 .percent-complete {
@@ -2769,14 +2671,6 @@ img.static-map {
         height: 135px;
     }
  
-    .navigation-menu button{
-        font-size:11px
-    }
-
-    .ui-navigation-menu>ul{
-        padding-left:20px;
-    }
-
     .ui-view.dashboard-main {
         font-size: 12px;
     }
@@ -2839,35 +2733,9 @@ img.static-map {
     }
     
    
+   
     
-    .navigation-menu label{
-    font-size: 0;
-    width: 90px;
-    border-top: 1px solid rgba(0,0,0,0.3);
-    display: inline-block;
-    }
-    
-    .navigation-menu button{
-       width: 90px;
-    }
-    .ui-navigation-menu>ul{
-        padding:0;
-        text-align:center;
-
-    }
-
-    .ui-navigation-menu>ul>li{
-        position:relative;
-    }
-    .navigation-menu li:after{
-        position:absolute;
-        right: 0px;
-        top: 4px;
-        font-size: 9px;
-        line-height: 14px;
-        padding: 0 3px;
-    }
-
+  
 }
 
 
@@ -3040,6 +2908,19 @@ img.static-map {
         display:none;
     }
     
+    
+
+
+    /**Navigation Menu**/
+
+
+
+    .navigation-menu li.hidden {
+        display: none;
+    }
+
+
+
     .ui-view.left-panel.closed .navigation-menu label{
         font-size: 0;
         width: 70px;
@@ -3066,21 +2947,160 @@ img.static-map {
     
     
     .ui-view.left-panel.closed .navigation-menu label:after {
-    width: 0;
-    height: 0;
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    border-left: 10px solid #ceb250;
-    border-right: none;
-    left: -9px;
-    top:12px;
-    content:"";
-    position:relative;
+        width: 0;
+        height: 0;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        border-left: 10px solid #ceb250;
+        border-right: none;
+        left: -9px;
+        top:12px;
+        content:"";
+        position:relative;
 
     }
 
 
-    /**Navigation Menu**/
+
+
+
+
+    .navigation-menu ul {
+        display: block;
+    }
+
+    .navigation-menu li, .inline-navigation-menu li{
+        list-style: none;
+        color: gray;
+        margin: 5px;
+    }
+
+    .navigation-menu li:after {
+        content: attr(data-counter);
+        float: right;
+        display: inline-block;
+        background-color: $tagBtnColor;
+        padding: 0px 8px;
+        border-radius: 20px;
+        font-size: 12px;
+    }
+
+
+    .navigation-menu li.has-new-items:after {
+        background-color: crimson;
+        color: black;
+    }
+
+    .navigation-menu li.menu-main-projects:after {
+        content: attr(data-counter-complete);
+    }
+
+    .navigation-menu li.menu-main-tasks:after {
+        content: attr(data-counter-complete);
+    }
+
+
+    .navigation-menu label {
+
+        text-transform: uppercase;
+        font-size: 1.1em;
+    }
+
+
+    .navigation-menu li:before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        background-size: 100%;
+        background-position: center;
+        vertical-align: top;
+        margin: 0 10px;
+        background-repeat: no-repeat;
+        
+    }
+
+
+
+    .navigation-menu button, .inline-navigation-menu button {
+        border: none;
+        background-color: transparent;
+        color: black;
+        padding: 0;
+        font-size: 16px;
+        font-weight: 100;
+    }
+
+
+    .navigation-menu .active>button, .inline-navigation-menu .active>button {
+        color: #6AE9BF;
+    }
+
+    .ui-navigation-menu button {
+        cursor: pointer;
+    }
+
+    .navigation-menu button:hover, .inline-navigation-menu button:hover {
+        color: black;
+    }
+
+    .inline-navigation-menu>ul>label {
+        display: none;
+    }
+
+    .inline-navigation-menu ul {
+        display: inline;
+        margin: 0;
+        padding: 0;
+    }
+
+    .inline-navigation-menu li {
+        display: inline-block;
+        margin: 8px 10px;
+    }
+
+
+
+   .navigation-menu label{
+        font-size: 0;
+        width: 90px;
+        border-top: 1px solid rgba(0,0,0,0.3);
+        display: inline-block;
+    }
+    
+    .navigation-menu button{
+       width: 90px;
+    }
+    .ui-navigation-menu>ul{
+        padding:0;
+        text-align:center;
+
+    }
+
+    .ui-navigation-menu>ul>li{
+        position:relative;
+    }
+    .navigation-menu li:after{
+        position:absolute;
+        right: 0px;
+        top: 4px;
+        font-size: 9px;
+        line-height: 14px;
+        padding: 0 3px;
+    }
+
+     .navigation-menu button{
+        font-size:11px
+    }
+
+    .ui-navigation-menu>ul{
+        padding-left:20px;
+    }
+
+
+
+    /**new**/
+
 
     .navigation-menu .active>button {
         color: white;
