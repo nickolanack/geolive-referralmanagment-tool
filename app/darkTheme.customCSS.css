@@ -1,5 +1,106 @@
 
 
+
+$darkThemeBG:black;
+$darkThemeInset:transparent;
+
+
+
+.dark .pb-w .template-footer{
+    background-color: $darkThemeBG;
+}
+
+.dark .file-list .file-item .file-container {
+    background-color: #33404d;
+     box-shadow:none;
+}
+
+.dark h2 {
+    color: white;
+}
+
+.ui-view.dashboard-main.dark {
+    background-color: $darkThemeBG;
+    color: white;
+}
+
+.dark button.inline-logout, .dark label.boolean-field p, .dark .field-value-module.editable:after, .dark .field-value-module .editable:after{
+    color: #637594;
+}
+
+.dark .user-detail .single_ImageContainer:after{
+    box-shadow:none;
+}
+
+.dark .ui-view.inset-shading>div {
+     background-color: $darkThemeInset;
+}
+
+.dark .ui-view.inset-menu-shading>div{
+    background-color: $darkThemeInset;
+}
+
+.dark .navigation-menu button, .dark .inline-navigation-menu button{
+    color: gray;
+}
+
+
+.dark .navigation-menu label{
+     color: white;
+}
+
+.dark .navigation-menu button:hover, .dark .inline-navigation-menu button:hover {
+    color: white;
+}
+
+.dark .project-detail span.progress{
+     background-color: $darkThemeBG;
+}
+
+.dark .uilist-pageination:before{
+     color: #6AE9BF;
+}
+
+.dark .uilist-pageination button{
+    border: 1px solid gray;
+    background-color: transparent;
+}
+
+.dark .text-input, .dark .discussion-textbox {
+    background-color: $darkThemeBG;
+    border: 1px solid #4e4e4e;
+    color: white;
+    border: 1px solid #4e4e4e;
+}
+
+.dark.pb-c.pb-c-append {
+    background-color: $darkThemeInset;
+    color:white;
+}
+
+
+.dark .label.top-left, .dark .checkboxStyle {
+    color: white;
+}
+
+.dark.pb-c:after {
+    background-color: $darkThemeBG;
+}
+
+.dark .WizardTitle li{
+    color:white;
+}
+
+.ui-view.dashboard-main.dark a{
+    color:white;
+}
+
+.ui-view.inset-menu-shading.dark-only-shading>div {
+    background-color: transparent;
+}
+
+
+
 button.primary-btn.nav-new-btn {
     float: none;
     margin: 30px 49px;

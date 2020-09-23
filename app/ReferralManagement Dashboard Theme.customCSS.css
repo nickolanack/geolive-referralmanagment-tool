@@ -335,9 +335,7 @@ label.boolean-field p {
     border-radius: 0 0 3px 3px;
 }
 
-.dark .pb-w .template-footer{
-    background-color: #2E303A;
-}
+
 
 .WizardButton.btn.cancel {
     display: none;
@@ -513,10 +511,6 @@ body.dragover .file-item.droppable-hide {
     
 }
 
-.dark .file-list .file-item .file-container {
-    background-color: #33404d;
-     box-shadow:none;
-}
 
 
 .file-list .file-item:hover .file-container {
@@ -564,9 +558,7 @@ body.dragover .file-item.droppable-hide {
 span.warn {
     color: #E96A6A;
 }
-.dark h2 {
-    color: white;
-}
+
 
 
 .ui-view.form-embedded-item {
@@ -594,10 +586,7 @@ span.warn {
     overflow: hidden;
     overflow-y: auto;
 }
-.ui-view.dashboard-main.dark {
-    background-color: #2E303A;
-    color: white;
-}
+
 
 .ui-list-view.ui-view>.ui-view {
     height: initial;
@@ -605,9 +594,7 @@ span.warn {
 .ui-view.dashboard-main a{
     color:black;
 }
-.ui-view.dashboard-main.dark a{
-    color:white;
-}
+
 .ui-view.dashboard-main a.formatted_link {
     color: #6ad2b4;
 }
@@ -722,9 +709,6 @@ button.inline-logout {
     border: none;
 }
 
-.dark button.inline-logout, .dark label.boolean-field p, .dark .field-value-module.editable:after, .dark .field-value-module .editable:after{
-    color: #637594;
-}
 
 .ui-view.dashboard-main>div>div, .ui-view.main-panel>div>div {
     display: inline-table;
@@ -806,9 +790,7 @@ button.inline-logout {
     box-shadow: 0 0 1px 1px black;
 }
 
-.dark .user-detail .single_ImageContainer:after{
-    box-shadow:none;
-}
+
 
  .user-detail .user-email {
         display: none;
@@ -825,9 +807,7 @@ button.inline-logout {
     height: 100%;
     border-radius: 4px;
 }
-.dark .ui-view.inset-shading>div {
-     background-color: #333746;
-}
+
 
 .ui-view.inset-menu-shading {
     display: block;
@@ -845,14 +825,6 @@ button.inline-logout {
    
 }
 
-.ui-view.inset-menu-shading.dark-only-shading>div {
-    background-color: transparent;
-}
-
-
-.dark .ui-view.inset-menu-shading>div{
-    background-color: #333746;
-}
 
 
 .ui-view.w-30 {
@@ -976,9 +948,6 @@ button.inline-logout {
     font-weight: 100;
 }
 
-.dark .navigation-menu button, .dark .inline-navigation-menu button{
-    color: gray;
-}
 
 .navigation-menu label {
 
@@ -986,9 +955,6 @@ button.inline-logout {
     font-size: 1.1em;
 }
 
-.dark .navigation-menu label{
-     color: white;
-}
 
 .navigation-menu li:before {
     content: "";
@@ -1027,9 +993,6 @@ button.inline-logout {
 
 .navigation-menu button:hover, .inline-navigation-menu button:hover {
     color: black;
-}
-.dark .navigation-menu button:hover, .dark .inline-navigation-menu button:hover {
-    color: white;
 }
 
 .inline-navigation-menu>ul>label {
@@ -1620,9 +1583,7 @@ ul.item-tags li {
     background-color: white;
     margin: 20px 0;
 }
-.dark .project-detail span.progress{
-     background-color: #2E303A;
-}
+
 
 .project-detail .percent-complete {
     width: 100%;
@@ -1700,9 +1661,7 @@ span.layer.noIcon, .uilist-pageination button {
     margin-right: 10px;
 }
 
-.dark .uilist-pageination:before{
-     color: #6AE9BF;
-}
+
 
 .uilist-pageination button{
     cursor:pointer;
@@ -1713,10 +1672,6 @@ span.layer.noIcon, .uilist-pageination button {
     background-color: #04a049;
 }
 
-.dark .uilist-pageination button{
-    border: 1px solid gray;
-    background-color: transparent;
-}
 
 
 
@@ -1764,10 +1719,6 @@ span.layer.noIcon {
     font-size: 12px;
 }
 
-.dark.pb-c.pb-c-append {
-    background-color: #333746;
-    color:white;
-}
 
 
 .text-input, .discussion-textbox {
@@ -1778,12 +1729,7 @@ span.layer.noIcon {
     position: relative;
     z-index: 1;
 }
-.dark .text-input, .dark .discussion-textbox {
-    background-color: #2E303A;
-    border: 1px solid #4e4e4e;
-    color: white;
-    border: 1px solid #4e4e4e;
-}
+
 
 .ui-template-form .text-input:focus{
     border-color:#6A7CE9;
@@ -1799,14 +1745,6 @@ span.layer.noIcon {
     font-size: 13px;
     font-weight: 100;
     line-height: 24px;
-}
-
-.dark .label.top-left, .dark .checkboxStyle {
-    color: white;
-}
-
-.dark.pb-c:after {
-    background-color: #2E303A;
 }
 
 a.pb-btn-close {
@@ -1838,9 +1776,7 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {
 .WizardTitle li{
     color:black;
 }
-.dark .WizardTitle li{
-    color:white;
-}
+
 
 button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {}
 

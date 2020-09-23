@@ -17573,8 +17573,8 @@
         "instance": "CSS",
         "parameters": {
             "cacheable": true,
-            "link": false,
-            "sass": false,
+            "link": true,
+            "sass": true,
             "widgetTitle": "darkTheme",
             "target": "darkTheme",
             "customCSS": "darkTheme.customCSS.css",
