@@ -1,6 +1,9 @@
 /*Login*/
-
+$themeInset:#f0f0f0;
 $tagBtnColor:#e1e1e1;
+
+
+$mainStyleColor:#efa82c;
 
 div#g-recaptcha {
     margin: 20px 2px;
@@ -516,7 +519,7 @@ body.dragover .file-item.droppable-hide {
 
 .file-list .file-item:hover .file-container {
     box-shadow:0 0 8px rgba(0,0,0,0.7);
-    border: 1px solid #333746;
+    border: 1px solid $tagBtnColor;
     
 }
 
@@ -802,7 +805,7 @@ button.inline-logout {
     padding: 4px;
 }
 .ui-view.inset-shading>div {
-    background-color: #f0f0f0;
+    background-color: $themeInset;
     display: inline-block;
     width: 100%;
     height: 100%;
@@ -819,7 +822,7 @@ button.inline-logout {
 }
 
 .ui-view.inset-menu-shading>div {
-    background-color: #f0f0f0;
+    background-color: $themeInset;
     display: inline-block;
     width: 100%;
     height: 100%;
@@ -904,7 +907,7 @@ button.inline-logout {
     content: attr(data-counter);
     float: right;
     display: inline-block;
-    background-color: #333746;
+    background-color: $tagBtnColor;
     padding: 0px 8px;
     border-radius: 20px;
     font-size: 12px;
@@ -1279,7 +1282,7 @@ img.youtubelogo {
 .donut-chart .chart-center {
   position: absolute;
   border-radius: 50%;
-  background:#333746;
+  background:$tagBtnColor;
 }
 
 
@@ -1926,7 +1929,7 @@ span.filter-btns.left-justified {
 }
 
 .inline-btn.sort li:hover, .inline-btn.optionlist li:hover {
-    background-color: #333746;
+    background-color: darken($tagBtnColor, 10%);
 }
 
 
@@ -1983,6 +1986,18 @@ span.filter-btns.left-justified {
     background-color: rgba(106, 233, 191, 0.5);
 }
 
+
+.nav>.next-btn, .nav>.prev-btn {
+    margin: 20px;
+    width: 28px;
+    height: 28px;
+}
+
+.nav>.prev-btn {
+    float: left;
+}
+
+
 .calendar .nav {
     text-align: center;
     line-height: 70px;
@@ -2031,15 +2046,6 @@ span.filter-btns.left-justified {
     cursor: pointer;
 }
 
-.nav>.next-btn, .nav>.prev-btn {
-    margin: 20px;
-    width: 28px;
-    height: 28px;
-}
-
-.nav>.prev-btn {
-    float: left;
-}
 
 .nav>.prev-btn, .nav>.next-btn {
     border: none;
@@ -2049,7 +2055,7 @@ span.filter-btns.left-justified {
 }
 
 .day.today:after {
-    background: mediumseagreen;
+    background: $themeInset;
     position: absolute;
     content: "";
     width: 50px;
@@ -2061,15 +2067,12 @@ span.filter-btns.left-justified {
 }
 
 
-.day.active {
-     background-color: rgba(106, 124, 233, 0.5);
-}
 .calendar .day.active:hover{
     background-color: #6A7CE9;
 }
 .day.today.active:after{
     border:1px solid mediumseagreen;
-    background: transparent;
+    background: $themeInset;
 }
 
 .day.next, .day.prev {
@@ -2229,7 +2232,7 @@ button.t-btn {
     left: -58px;
     height: 10px;
     border-radius: 100%;
-    border: 4px solid #333746;
+    border: 4px solid $tagBtnColor;
     top: 23px;
 }
 
