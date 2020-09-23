@@ -17705,5 +17705,17 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.362": {
+        "name": "Stylesheet",
+        "instance": "CSS",
+        "parameters": {
+            "cacheable": false,
+            "link": false,
+            "sass": false,
+            "widgetTitle": "",
+            "target": "none",
+            "customCSS": ""
+        }
     }
 }
