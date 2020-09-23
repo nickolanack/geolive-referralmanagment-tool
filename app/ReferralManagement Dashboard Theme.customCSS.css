@@ -1983,6 +1983,18 @@ span.filter-btns.left-justified {
     background-color: rgba(106, 233, 191, 0.5);
 }
 
+
+.nav>.next-btn, .nav>.prev-btn {
+    margin: 20px;
+    width: 28px;
+    height: 28px;
+}
+
+.nav>.prev-btn {
+    float: left;
+}
+
+
 .calendar .nav {
     text-align: center;
     line-height: 70px;
@@ -2031,15 +2043,6 @@ span.filter-btns.left-justified {
     cursor: pointer;
 }
 
-.nav>.next-btn, .nav>.prev-btn {
-    margin: 20px;
-    width: 28px;
-    height: 28px;
-}
-
-.nav>.prev-btn {
-    float: left;
-}
 
 .nav>.prev-btn, .nav>.next-btn {
     border: none;
@@ -2061,15 +2064,12 @@ span.filter-btns.left-justified {
 }
 
 
-.day.active {
-     background-color: rgba(106, 124, 233, 0.5);
-}
 .calendar .day.active:hover{
     background-color: #6A7CE9;
 }
 .day.today.active:after{
     border:1px solid mediumseagreen;
-    background: transparent;
+    background: $themeInset;
 }
 
 .day.next, .day.prev {
