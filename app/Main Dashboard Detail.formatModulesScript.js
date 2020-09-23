@@ -2,7 +2,7 @@
 //return function(callback){
 
 
-    list.content=DashboardPageLayout.layoutPage('mainDashboardDetail', list.content);
+    DashboardPageLayout.layoutPage('mainDashboardDetail', list);
 
     // if(DashboardConfig.getValue('showRecentProjectsDetail')){
     //     list.content=list.content.slice(5);
