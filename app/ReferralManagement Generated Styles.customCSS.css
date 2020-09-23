@@ -44,6 +44,15 @@ button.btn-search-list {
 
 <?php 
 $config=GetWidget('dashboardConfig');
+
+
+
+$useFontAwesome=$config->getParameter('useFontAwesome');
+if($useFontAwesome){
+    @import url("/webresources/font-awesome-4.7.0/css/font-awesome.min.css");
+}
+
+
 $offset=10;
 foreach(['remove', 'edit', 'download'] as $fileFn){
     $editIcon=$config->getParameter('file'.ucfirst($fileFn).'BtnIcon', array());
