@@ -3102,12 +3102,13 @@ img.static-map {
     }
 
 
-
-   .navigation-menu label{
-        font-size: 0;
-        width: 90px;
-        border-top: 1px solid rgba(0,0,0,0.3);
-        display: inline-block;
+    @media screen and (max-width: 1000px){
+       .navigation-menu label{
+            font-size: 0;
+            width: 90px;
+            border-top: 1px solid rgba(0,0,0,0.3);
+            display: inline-block;
+        }
     }
     
     .navigation-menu button{
@@ -3131,14 +3132,16 @@ img.static-map {
         padding: 0 3px;
     }
 
-     .navigation-menu button{
-        font-size:11px
-    }
+    @media screen and (max-width: 1250px) {
 
-    .ui-navigation-menu>ul{
-        padding-left:20px;
-    }
+        .navigation-menu button{
+            font-size: 11px
+        }
 
+        .ui-navigation-menu>ul{
+            padding-left: 20px;
+        }
+    }
 
 
     /**new**/
@@ -3235,11 +3238,11 @@ img.static-map {
 
 
 
-       .ui-view.left-panel.closed .ui-navigation-menu>.expand>label:after {
-    top:0px;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-bottom: 7px solid #ceb250;
+    .ui-view.left-panel.closed .ui-navigation-menu>.expand>label:after {
+        top:0px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 7px solid #ceb250;
     }
 
 
