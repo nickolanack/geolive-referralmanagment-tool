@@ -3093,86 +3093,80 @@ img.static-map {
     }
 
 
-    
-    
-    .navigation-menu button{
-        width: 100px;
-        text-align: left;
-    }
-    .ui-navigation-menu>ul{
-        padding:0;
-        text-align:center;
-
-    }
-
-    .ui-navigation-menu>ul>li{
-        position:relative;
-    }
-
-
-    .navigation-menu li:after {
-        content: attr(data-counter);
-        float: right;
-        display: inline-block;
-        background-color: $tagBtnColor;
-        padding: 0px 8px;
-        border-radius: 20px;
-        font-size: 12px;
-    }
-
-
-    .navigation-menu li:after{
-        position:absolute;
-        right: 0px;
-        top: 4px;
-        padding: 0px 8px;
-        border-radius: 20px;
-        font-size: 12px;
-    }
+   
 
      
 
     
 
     /**new**/
+    .navigation-menu{
 
 
-    .navigation-menu .active>button {
-        color: white;
-    }
 
-    .navigation-menu button {
-        color: #bebebe;
-    }
-
-    .navigation-menu button {
-        color: #bebebe;
-    }
-
-
-    .navigation-menu ul {
-        padding: 0;
-    }
-
-    .navigation-menu ul label {
-        /*padding-left: 40px;*/
-        display:none;
-      
-    }
-
-    .navigation-menu ul li {
-        padding: 10px;
-        margin: 5px 0;
-    }
-
-
-    .navigation-menu ul li.active {
-        background-color: adjust-color($highlightBtnColor, $alpha:-0.3);
-        border-right: 4px solid $highlightBtnColor;
-    }
 
 
     
+        button{
+            width: 100px;
+            text-align: left;
+            color: #bebebe;
+        }
+
+
+        .ui-navigation-menu>ul{
+            padding:0;
+            text-align:center;
+
+            li{
+                position:relative;
+            }
+
+        }
+
+
+        ul {
+            padding: 0;
+
+            label {
+                /*padding-left: 40px;*/
+                display:none;
+              
+            }
+
+            li {
+                padding: 10px;
+                margin: 5px 0;
+
+                &.active {
+                    background-color: adjust-color($highlightBtnColor, $alpha:-0.3);
+                    border-right: 4px solid $highlightBtnColor;
+
+                    &>button {
+                        color: white;
+                    }
+                }
+
+                &:after {
+
+                    content: attr(data-counter);
+                    display: inline-block;
+                    background-color: $tagBtnColor;
+                 
+                    position:absolute;
+                    right: 0px;
+                    top: 4px;
+                    padding: 0px 8px;
+                    border-radius: 20px;
+                    font-size: 12px;
+                }
+
+            }
+
+
+        }
+
+    }
 
     
 
@@ -3286,7 +3280,7 @@ img.static-map {
 
 
     
-    .uitext-container.disabled:after {
+.uitext-container.disabled:after {
     content: "* disabled";
     color: mediumseagreen;
     float: right;
