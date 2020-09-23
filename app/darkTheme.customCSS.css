@@ -4,8 +4,10 @@
 $darkThemeBG:#030310;
 $darkThemeInset:#030310;
 $tagBtnColor:#2E303A;
-
 $fontColor:#e0e0e2;
+
+
+$mainStyleColor:#efa82c;
 
 .dark{
     .pb-w .template-footer{
@@ -136,7 +138,23 @@ $fontColor:#e0e0e2;
     .calendar .month {
         background-color: transparent;
     }
+
+
+    .navigation-menu li:after {
+        background-color: $tagBtnColor;
+    }
  
+    .donut-chart .chart-center {
+        background-color: $tagBtnColor;
+    }
+
+    .inline-btn.sort li:hover, .inline-btn.optionlist li:hover {
+        background-color: darken($tagBtnColor, 10%);
+    }
+
+    .ui-post-view:after {
+        border-color:$tagBtnColor;
+    }
 
 }
 
