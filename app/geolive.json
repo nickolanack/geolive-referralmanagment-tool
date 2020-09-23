@@ -4641,6 +4641,12 @@
                 },
                 {
                     "type": "boolean",
+                    "name": "showLeftPanelUser",
+                    "default": true,
+                    "label": "showLeftPanelUser"
+                },
+                {
+                    "type": "boolean",
                     "name": "showLeftPanelPrimaryBtn",
                     "default": false,
                     "label": "showLeftPanelPrimaryBtn"
@@ -4835,7 +4841,8 @@
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_g15_%5BG%5D_JZ9_fkt.png"
             ],
             "showOverviewMetricsDetail": false,
-            "showLeftPanelPrimaryBtn": false
+            "showLeftPanelPrimaryBtn": false,
+            "showLeftPanelUser": true
         }
     },
     "widget.154": {
