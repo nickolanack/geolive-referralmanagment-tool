@@ -3002,65 +3002,18 @@ img.static-map {
 
 
 
-    .navigation-menu li.hidden {
-        display: none;
-    }
+    
 
 
 
+    .inline-navigation-menu li{
+            list-style: none;
+            color: gray;
+            margin: 5px;
+        }
 
 
-
-
-    .navigation-menu ul {
-        display: block;
-    }
-
-    .navigation-menu li, .inline-navigation-menu li{
-        list-style: none;
-        color: gray;
-        margin: 5px;
-    }
-
-   
-
-    .navigation-menu li.has-new-items:after {
-        background-color: crimson;
-        color: black;
-    }
-
-    .navigation-menu li.menu-main-projects:after {
-        content: attr(data-counter-complete);
-    }
-
-    .navigation-menu li.menu-main-tasks:after {
-        content: attr(data-counter-complete);
-    }
-
-
-    .navigation-menu label {
-
-        text-transform: uppercase;
-        font-size: 1.1em;
-    }
-
-
-    .navigation-menu li:before {
-        content: "";
-        width: 20px;
-        height: 20px;
-        display: inline-block;
-        background-size: 100%;
-        background-position: center;
-        vertical-align: top;
-        margin: 0 10px;
-        background-repeat: no-repeat;
-        
-    }
-
-
-
-    .navigation-menu button, .inline-navigation-menu button {
+    .inline-navigation-menu button {
         border: none;
         background-color: transparent;
         color: black;
@@ -3068,17 +3021,9 @@ img.static-map {
         font-size: 16px;
         font-weight: 100;
     }
+    
 
-
-    .navigation-menu .active>button, .inline-navigation-menu .active>button {
-        color: #6AE9BF;
-    }
-
-    .ui-navigation-menu button {
-        cursor: pointer;
-    }
-
-    .navigation-menu button:hover, .inline-navigation-menu button:hover {
+    .inline-navigation-menu button:hover {
         color: black;
     }
 
@@ -3106,11 +3051,6 @@ img.static-map {
 
     /**new**/
     .navigation-menu{
-
-
-
-
-
     
         button{
             width: 100px;
@@ -3127,20 +3067,71 @@ img.static-map {
                 position:relative;
             }
 
+            button {
+                cursor: pointer;
+            }
+
         }
 
 
         ul {
+
+            display: block;
             padding: 0;
 
             label {
-                
+
+                text-transform: uppercase;
+                font-size: 1.1em;
+                width: 130px;
+                text-align: left;
+                display: inline-block;
               
             }
 
             li {
+
+                list-style: none;
+                color: gray;
+                margin: 5px;
+
                 padding: 10px;
                 margin: 5px 0;
+
+
+                &.hidden {
+                    display: none;
+                }
+
+                &.has-new-items:after {
+                    background-color: crimson;
+                    color: black;
+                }
+
+                &.menu-main-projects:after {
+                    content: attr(data-counter-complete);
+                }
+
+                &.menu-main-tasks:after {
+                    content: attr(data-counter-complete);
+                }
+
+                &:before {
+                    content: "";
+                    width: 20px;
+                    height: 20px;
+                    display: inline-block;
+                    background-size: 100%;
+                    background-position: center;
+                    vertical-align: top;
+                    margin: 0 10px;
+                    background-repeat: no-repeat;
+                    
+                }
+
+                :hover {
+                    color: black;
+                }
 
                 &.active {
                     background-color: adjust-color($highlightBtnColor, $alpha:-0.3);
@@ -3167,8 +3158,16 @@ img.static-map {
 
             }
 
+            button{
 
-        }
+                border: none;
+                background-color: transparent;
+                color: black;
+                padding: 0;
+                font-size: 16px;
+                font-weight: 100;
+
+            }
 
     }
 
