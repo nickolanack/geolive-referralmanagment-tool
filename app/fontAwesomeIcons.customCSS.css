@@ -83,7 +83,7 @@
 }
 
 .complete>.completion-indicator:before{
-    content: "\f058";
+    content: "\f0c6";
     font-family: FontAwesome;
     color: mediumseagreen;
     position: absolute;
@@ -91,3 +91,17 @@
     top: -3px;
     font-size: 24px;
 }
+
+
+
+
+.attachment-indicator:before{
+    content: "\f10c";
+    font-family: FontAwesome;
+    position: absolute;
+    left: -3px;
+    top: -3px;
+    font-size: 20px;
+    color: gray;
+}
+
