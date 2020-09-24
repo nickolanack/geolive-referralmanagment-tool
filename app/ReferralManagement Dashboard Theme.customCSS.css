@@ -1435,23 +1435,22 @@ img.youtubelogo {
 
 
 .completion-indicator {
-    width: 7px;
-    height: 7px;
+    width: 10px;
+    height: 10px;
     display: inline-block;
-    border: 1px solid white;
-    border-radius: 100%;
     float: left;
     margin: 6px;
+    position: relative;
     vertical-align: middle;
+    background-color: transparent;
+    margin-right: 15px;
 }
 
 .task-item--1 .completion-indicator {
     display: none;
 }
 
-.complete>.completion-indicator {
-    background-color: white;
-}
+
 .complete>.field-value-module {
     text-decoration: line-through;
     opacity: 0.6;
