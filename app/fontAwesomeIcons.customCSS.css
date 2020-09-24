@@ -76,7 +76,7 @@
     content: "\f10c";
     font-family: FontAwesome;
 }
-.complete.completion-indicator:after{
+.complete>.completion-indicator:after{
     content: "\f024";
     font-family: FontAwesome;
     color: mediumseagreen;
