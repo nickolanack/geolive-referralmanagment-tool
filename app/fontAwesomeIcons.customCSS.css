@@ -70,3 +70,14 @@
     color: crimson;
     
 }
+
+
+.completion-indicator:before{
+    content: "\f024";
+    font-family: FontAwesome;
+}
+.complete.completion-indicator:after{
+    content: "\f024";
+    font-family: FontAwesome;
+    color: mediumseagreen;
+}
