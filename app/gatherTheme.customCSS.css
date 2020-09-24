@@ -44,3 +44,12 @@ $highlightBtnColor:#efa82c;
 }
 
 
+.left-panel .user-detail .editable{
+    &:after {
+        display: none;
+    }
+    &.inline-logout {
+        display: none;
+    }
+    
+}
