@@ -46,3 +46,15 @@
 
 
 
+.starred-indicator:after {
+    content: "\f006";
+    font-family: FontAwesome;
+    
+}
+.starred.starred-indicator:after {
+    content: "\f005";
+    font-family: FontAwesome;
+    color: #edc84c;
+    
+}
+
