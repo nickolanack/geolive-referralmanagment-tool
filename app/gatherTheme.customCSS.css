@@ -22,14 +22,20 @@ $highlightBtnColor:#efa82c;
                 width: 20px;
                 height: 20px;
             }
-            &.default-icon>span{
-                background-color:white;
-            }
+            
         }
     }
     
     
     
+}
+
+
+.user-profile-icon {
+    
+    &.default-icon>span{
+        background-color:white;
+    }
 }
 
 .navigation-menu ul li.active {
