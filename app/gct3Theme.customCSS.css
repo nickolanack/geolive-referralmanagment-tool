@@ -275,6 +275,10 @@ button.primary-btn.nav-new-btn:hover {
     border-right: 4px solid $highlightBtnColor;
 }
 
+.navigation-menu ul label {
+    display: none;
+}
+
 @media screen and (max-width: 1250px) {
     button.primary-btn.nav-new-btn {
         font-size:13px;
