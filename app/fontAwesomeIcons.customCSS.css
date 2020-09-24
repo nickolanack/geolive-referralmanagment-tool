@@ -46,15 +46,27 @@
 
 
 
-.starred-indicator:after {
+.starred-indicator:before {
     content: "\f006";
     font-family: FontAwesome;
     
 }
-.starred.starred-indicator:after {
+.starred.starred-indicator:before {
     content: "\f005";
     font-family: FontAwesome;
     color: #edc84c;
     
 }
 
+
+.priority-indicator:before {
+    content: "\f024";
+    font-family: FontAwesome;
+    
+}
+.priority.priority-indicator:before {
+    content: "\f024";
+    font-family: FontAwesome;
+    color: #crimson;
+    
+}
