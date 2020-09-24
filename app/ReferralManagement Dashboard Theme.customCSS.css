@@ -1460,11 +1460,10 @@ img.youtubelogo {
 .attachment-indicator, .attachment-thumb {
     width: 16px;
     height: 16px;
-    display: inline-block;
-    border-radius: 100%;
-    float: left;
+    float: right;
     margin: 2px;
-    background-size: 100%;
+    position: relative;
+    margin-right: 10px;
 }
 
 .task-item.compact .attachment-thumb {
