@@ -5,4 +5,21 @@
 [data-view="singleTaskListItemDetail"]{
     line-height: 30px;
     height: 30px;
+    
+    
+    
+    .user-profile-icon > span {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .ui-view.inline-icon-list-view {
+        margin-right: 7px;
+    }
+    
+    
 }
+
+
+
+
