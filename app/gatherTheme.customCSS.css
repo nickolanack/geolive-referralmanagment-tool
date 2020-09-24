@@ -8,14 +8,23 @@
     
     
     
-    .user-profile-icon > span {
-        width: 20px;
-        height: 20px;
-    }
+    
     
     .ui-view.inline-icon-list-view {
         margin-right: 7px;
+        
+        
+        .user-profile-icon {
+            &> span {
+                width: 20px;
+                height: 20px;
+            }
+            &.default-icon>span{
+                background-color:white;
+            }
+        }
     }
+    
     
     
 }
