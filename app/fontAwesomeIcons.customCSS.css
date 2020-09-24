@@ -75,9 +75,19 @@
 .completion-indicator:before{
     content: "\f10c";
     font-family: FontAwesome;
+    position: absolute;
+    left: -3px;
+    top: -3px;
+    font-size: 20px;
+    color: gray;
 }
-.complete>.completion-indicator:after{
-    content: "\f00c";
+
+.complete>.completion-indicator:before{
+    content: "\f058";
     font-family: FontAwesome;
     color: mediumseagreen;
+    position: absolute;
+    left: -5px;
+    top: -3px;
+    font-size: 24px;
 }
