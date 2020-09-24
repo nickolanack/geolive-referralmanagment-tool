@@ -57,3 +57,8 @@ $highlightBtnColor:#efa82c;
 .user-name {
     font-weight: 400;
 }
+
+.user-detail .user-role {
+    display: block;
+    color: gray;
+}
