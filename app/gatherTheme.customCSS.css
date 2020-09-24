@@ -1,3 +1,6 @@
+$highlightBtnColor:#efa82c;
+
+
 .priority-indicator{
     display:none;
 }
@@ -29,6 +32,9 @@
     
 }
 
-
+.navigation-menu ul li.active {
+    background-color: adjust-color($highlightBtnColor, $alpha:-0.3);
+    border-right: 4px solid $highlightBtnColor;
+}
 
 
