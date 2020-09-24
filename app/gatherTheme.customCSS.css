@@ -44,12 +44,18 @@ $highlightBtnColor:#efa82c;
 }
 
 
-.left-panel .user-detail .editable{
-    &:after {
-        display: none;
+.left-panel .user-detail{ 
+    .editable{
+        &:after {
+            display: none;
+        }
+        .inline-logout {
+            display: none;
+        }
     }
-    .inline-logout {
-        display: none;
+    
+    .single_ImageContainer {
+        margin-bottom: 10px;
     }
     
 }
@@ -62,3 +68,4 @@ $highlightBtnColor:#efa82c;
     display: block;
     color: gray;
 }
+
