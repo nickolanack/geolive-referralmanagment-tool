@@ -44,6 +44,11 @@ $highlightBtnColor:#efa82c;
 }
 
 
+.progress-bar.percent-complete>div {
+    min-width: 4px;
+}
+
+
 .inline-navigation-menu li.active {
     border-bottom: 4px solid $highlightBtnColor;
 }
