@@ -127,6 +127,12 @@ button.inline-btn.add, button.primary-btn {
 [data-view="projectsOverviewDetail"] .inline-btn.sort{
     display:none;
 }
+
+[data-view="projectsOverviewDetail"] button.inline-btn.add.primary-btn {
+    margin-top:0;
+}
+
+
 [data-view="tasksOverviewListDetail"] .inline-btn.sort.filter {
     display: none;
 }
