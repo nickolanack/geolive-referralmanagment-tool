@@ -78,3 +78,9 @@ $highlightBtnColor:#efa82c;
 .navigation-menu ul button:focus {
     outline: none;
 }
+
+
+button.inline-btn.add, button.primary-btn {
+    background-color: $highlightBtnColor;
+    border-radius: 100px;
+}
