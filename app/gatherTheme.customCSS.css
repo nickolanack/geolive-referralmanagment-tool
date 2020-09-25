@@ -31,6 +31,15 @@ $highlightBtnColor:#efa82c;
 }
 
 
+.inline-navigation-menu li.active {
+    border-bottom: 4px solid $highlightBtnColor;
+}
+
+.inline-navigation-menu li{
+    padding-bottom: 10px;
+}
+
+
 .user-profile-icon {
     
     &.default-icon>span{
