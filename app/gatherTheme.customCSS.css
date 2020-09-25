@@ -88,6 +88,19 @@ $highlightBtnColor:#efa82c;
         display: none;
     }
 }
+
+.navigation-menu .menu-people li{
+    &.menu-people-projectmembers{
+         display: none;
+    }
+    &.menu-people-users{
+         display: none;
+    }
+    &.menu-community-users{
+         display: none;
+    }
+}
+
 .navigation-menu ul button:focus {
     outline: none;
 }
