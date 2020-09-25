@@ -68,6 +68,8 @@
 
 .inline-navigation-menu li.menu-user-configuration:before {
     content: "\f013";
+    font-family: FontAwesome;
+    font-size: 20px;
 }
 
 
