@@ -71,10 +71,14 @@ $highlightBtnColor:#efa82c;
 
 
 
-.navigation-menu li.menu-main-users {
-    display: none;
+.navigation-menu li{
+    &.menu-main-users {
+        display: none;
+    }
+    &.menu-main-projects {
+        display: none;
+    }
 }
-
 .navigation-menu ul button:focus {
     outline: none;
 }
