@@ -435,5 +435,21 @@ button.primary-btn.nav-new-btn:hover {
 
 
 
+.navigation-menu .menu-main li{
+
+    &.menu-main-reports {
+        display: none;
+    }
+    &.menu-main-timetracking {
+        display: none;
+    }
+     &.menu-main-documents {
+        display: none;
+    }
+    &.menu-main-reports {
+        display: none;
+    }
+}
+
 
 
