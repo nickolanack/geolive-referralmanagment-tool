@@ -396,3 +396,36 @@ button.primary-btn.nav-new-btn:hover {
     background-color:#d7d7d7;
 }
 
+
+
+.search-container{
+    .field-value-module{
+        button.inline-logout {
+            display: none;
+        }
+        
+        &.editable.user-name:after {
+            display: none;
+        }
+        
+        &.user-email {
+            display: none;
+        }
+        
+        &.user-role {
+            display: none;
+        }
+        
+        &.user-community {
+            display: none;
+        }
+    
+    }
+}
+
+
+
+
+
+
+
