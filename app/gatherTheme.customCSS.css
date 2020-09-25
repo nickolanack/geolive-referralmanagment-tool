@@ -62,6 +62,10 @@ $highlightBtnColor:#efa82c;
 
 .inline-navigation-menu li.menu-user-configuration {
     float: right;
+    margin-right:10px;
+    button {
+        font-size: 0;
+    }
 }
 
 
