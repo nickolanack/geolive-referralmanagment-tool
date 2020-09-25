@@ -130,32 +130,40 @@ button.inline-btn.add, button.primary-btn {
     background-color: $highlightBtnColor;
     border-radius: 100px;
 }
-
-[data-view="projectsOverviewDetail"] .inline-btn.sort{
-    display:none;
+[data-view="projectsOverviewDetail"]{
+    display:block;
+    margin-bottom:50px;
+    
+    .inline-btn.sort{
+        display:none;
+    }
+    
+    button.inline-btn.add.primary-btn {
+        margin-top:0;
+    }
 }
 
-[data-view="projectsOverviewDetail"] button.inline-btn.add.primary-btn {
-    margin-top:0;
-}
 
-
-[data-view="tasksOverviewListDetail"] .inline-btn.sort.filter {
-    display: none;
-}
-
-
-[data-view="tasksOverviewListDetail"] .inline-btn.sort.hasOrder {
-    background-color: $highlightBtnColor;
-    color: white;
-    border-radius: 100px;
-    padding: 10px 30px;
-    font-size: 14px;
-    font-weight: 400;
-}
-
-[data-view="tasksOverviewListDetail"] span.filter-btns {
-    float: right;
+[data-view="tasksOverviewListDetail"]{
+    display:block;
+    margin-bottom:50px;
+    .inline-btn.sort.filter {
+        display: none;
+    }
+    
+    
+    .inline-btn.sort.hasOrder {
+        background-color: $highlightBtnColor;
+        color: white;
+        border-radius: 100px;
+        padding: 10px 30px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    
+    span.filter-btns {
+        float: right;
+    }
 }
 
 
