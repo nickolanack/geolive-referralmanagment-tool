@@ -84,3 +84,7 @@ button.inline-btn.add, button.primary-btn {
     background-color: $highlightBtnColor;
     border-radius: 100px;
 }
+
+[data-view="projectsOverviewDetail"] .inline-btn.sort{
+    display:none;
+}
