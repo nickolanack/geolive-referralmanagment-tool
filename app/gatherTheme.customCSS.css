@@ -78,6 +78,12 @@ $highlightBtnColor:#efa82c;
     &.menu-main-projects {
         display: none;
     }
+    &.menu-main-tracking {
+        display: none;
+    }
+     &.menu-main-documents {
+        display: none;
+    }
 }
 .navigation-menu ul button:focus {
     outline: none;
