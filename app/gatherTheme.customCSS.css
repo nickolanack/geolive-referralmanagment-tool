@@ -133,7 +133,7 @@ button.inline-btn.add, button.primary-btn {
 
 
 [data-view="tasksOverviewListDetail"] .inline-btn.sort.hasOrder {
-    background-color: #efa82c;
+    background-color: $highlightBtnColor;
     color: white;
     border-radius: 100px;
     padding: 10px 30px;
