@@ -399,7 +399,14 @@ button.primary-btn.nav-new-btn:hover {
 
 
 .search-panel .user-detail{
+    
+
     .field-value-module{
+        
+        &.user-name {
+            line-height: 45px;
+        }
+        
         button.inline-logout {
             display: none;
         }
