@@ -17066,20 +17066,12 @@
                                 }
                             },
                             {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "userProfileDetailOverview.metadata.positions.content.modules.4.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getName();",
-                                    "formatElementScript": "userProfileDetailOverview.metadata.positions.content.modules.5.config.formatElementScript.js"
+                                    "formatElementScript": "userProfileDetailOverview.metadata.positions.content.modules.4.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -17087,7 +17079,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Role: \";",
-                                    "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.6.config.fieldValueScript.js",
+                                    "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.5.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-role');"
                                 }
                             },
@@ -17096,7 +17088,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Community\/Group: \"",
-                                    "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.7.config.fieldValueScript.js",
+                                    "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.6.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-community');"
                                 }
                             },
@@ -17158,7 +17150,7 @@
                             {
                                 "type": "FormattedText",
                                 "config": {
-                                    "textValueScript": "userProfileDetailOverview.metadata.positions.content.modules.14.config.textValueScript.js",
+                                    "textValueScript": "userProfileDetailOverview.metadata.positions.content.modules.13.config.textValueScript.js",
                                     "formatModuleScript": "",
                                     "className": "project-description",
                                     "imageWidth": 300,
@@ -17186,7 +17178,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "userProfileDetailOverview.metadata.positions.content.modules.15.config.script.js",
+                                    "script": "userProfileDetailOverview.metadata.positions.content.modules.14.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
