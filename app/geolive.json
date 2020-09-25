@@ -5965,10 +5965,11 @@
                         "modules": [
                             "Tasks Overview List Detail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "Search",
+                                "type": "WizardScriptElement",
                                 "config": {
-                                    "getAggregatorsScript": "Tasks Overview List Detail.metadata.positions.content.modules.1.config.getAggregatorsScript.js",
-                                    "placeholder": "search items"
+                                    "name": "My Custom Script",
+                                    "script": "Tasks Overview List Detail.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
                                 }
                             },
                             {
