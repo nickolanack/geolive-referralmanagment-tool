@@ -84,6 +84,9 @@ $highlightBtnColor:#efa82c;
      &.menu-main-documents {
         display: none;
     }
+    &.menu-main-reports {
+        display: none;
+    }
 }
 .navigation-menu ul button:focus {
     outline: none;
