@@ -101,6 +101,10 @@ $highlightBtnColor:#efa82c;
     }
 }
 
+.navigation-menu ul.menu-community, .navigation-menu ul.menu-configuration {
+    display: none;
+}
+
 .navigation-menu ul button:focus {
     outline: none;
 }
