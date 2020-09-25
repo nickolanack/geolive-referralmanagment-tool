@@ -132,3 +132,17 @@ button.inline-btn.add, button.primary-btn {
 }
 
 
+[data-view="tasksOverviewListDetail"] .inline-btn.sort.hasOrder {
+    background-color: #efa82c;
+    color: white;
+    border-radius: 100px;
+    padding: 10px 30px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+[data-view="tasksOverviewListDetail"] span.filter-btns {
+    float: right;
+}
+
+
