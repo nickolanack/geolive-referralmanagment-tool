@@ -44,9 +44,14 @@ $highlightBtnColor:#efa82c;
     background: transparent;
 }
 
-.day.today.active:after {
+.day.today:after {
     background-color: $highlightBtnColor;
     border-color: transparent;
+}
+
+.day.today {
+    color: white;
+    font-weight: 400;
 }
 
 [data-view="singleProjectListItemDetail"]{
