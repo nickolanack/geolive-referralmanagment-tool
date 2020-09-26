@@ -6561,7 +6561,7 @@
                                     "className": "inline-list-item first-item tasks-list-item-icon",
                                     "viewType": "view",
                                     "namedView": "projectPriorityTasksDetail",
-                                    "shouldRender": false,
+                                    "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
