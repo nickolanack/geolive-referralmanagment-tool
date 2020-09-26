@@ -113,7 +113,7 @@ $mainStyleColor:#efa82c;
     ul.item-tags li {
         background-color: $tagBtnColor;
         &:hover {
-            background-color: darken($tagBtnColor, 10%);
+            background-color: lighten($tagBtnColor, 10%);
         }
     }
 
