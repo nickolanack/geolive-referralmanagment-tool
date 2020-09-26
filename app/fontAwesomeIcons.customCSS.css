@@ -78,12 +78,23 @@
     font-family: FontAwesome;
     
 }
+.starred-indicator:hover:before {
+    content: "\f005";
+    font-family: FontAwesome;
+}
+
 .starred.starred-indicator:before {
     content: "\f005";
     font-family: FontAwesome;
     color: #edc84c;
     
 }
+.starred.starred-indicator:hover:before {
+    content: "\f006";
+}
+
+
+
 
 
 .priority-indicator:before {
