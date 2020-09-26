@@ -1551,6 +1551,11 @@ ul.item-tags li {
     max-width: 100px;
     overflow: hidden;
     text-overflow: ellipsis;
+    
+    &:hover{
+        background-color: darken($tagBtnColor, 10%);
+    }
+    
 }
 
 .item-title>.field-value {
