@@ -17778,14 +17778,43 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "",
-            "target": "none",
-            "templateName": "{target}",
+            "widgetTitle": "mainTimeTrackingDetail",
+            "target": "mainTimeTrackingDetail",
+            "templateName": "mainTimeTrackingDetail",
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "formatModulesScript": "",
-            "notifyViewer": false
+            "notifyViewer": false,
+            "metadata": {
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "positions": {
+                    "title": {
+                        "modules": [
+                            "mainTimeTrackingDetail.metadata.positions.title.modules.0.json"
+                        ]
+                    },
+                    "content": {
+                        "modules": [
+                            "mainTimeTrackingDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": [
+                            "mainTimeTrackingDetail.metadata.positions.footer.modules.0.json"
+                        ]
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                }
+            },
+            "readAccess": "public"
         }
     },
     "widget.366": {
