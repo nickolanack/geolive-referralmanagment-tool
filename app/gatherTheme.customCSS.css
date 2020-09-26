@@ -44,6 +44,11 @@ $highlightBtnColor:#efa82c;
     background: transparent;
 }
 
+.day.today.active:after {
+    background-color: $highlightBtnColor;
+    border-color: transparent;
+}
+
 [data-view="singleProjectListItemDetail"]{
     .inline-btn.optionlist {
         display:none;
