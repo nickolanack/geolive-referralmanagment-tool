@@ -126,6 +126,8 @@ GetWidget('mainMapDetail')->display($targetInstance);
 GetWidget('mainDocumentsDetail')->display($targetInstance);
 GetWidget('mainTimeTrackingDetail')->display($targetInstance);
 GetWidget('mainReportsDetail')->display($targetInstance);
+GetWidget('mainMessagesDetail')->display($targetInstance);
+
 
 
 
