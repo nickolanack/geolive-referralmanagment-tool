@@ -54,6 +54,9 @@ $highlightBtnColor:#efa82c;
 
 .inline-navigation-menu li.active {
     border-bottom: 4px solid $highlightBtnColor;
+    button {
+        color: white;
+    }
 }
 
 .inline-navigation-menu li{
