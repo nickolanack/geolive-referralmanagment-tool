@@ -1,1 +1,3 @@
-return (new SettingsNavigationMenu(application));
+return new ModuleArray([new SettingsNavigationMenu(application)], {
+    "class":"navigation-menu settings-menu"
+});
