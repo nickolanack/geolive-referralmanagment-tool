@@ -160,6 +160,12 @@ $highlightBtnColor:#efa82c;
 .navigation-menu ul.menu-community, .navigation-menu ul.menu-configuration {
     display: none;
 }
+.settings-menu ul.menu-configuration {
+    display: block;
+    label{
+        display:none;
+    }
+}
 
 .navigation-menu ul button:focus {
     outline: none;
