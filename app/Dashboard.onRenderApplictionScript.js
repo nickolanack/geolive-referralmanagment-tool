@@ -123,6 +123,11 @@ GetWidget('mainTasksDetail')->display($targetInstance);
 GetWidget('mainCalendarDetail')->display($targetInstance);
 GetWidget('mainMapDetail')->display($targetInstance);
 
+GetWidget('mainDocumentsDetail')->display($targetInstance);
+GetWidget('mainTimeTrackingDetail')->display($targetInstance);
+GetWidget('mainReportsDetail')->display($targetInstance);
+
+
 
 GetWidget('peopleProjectMembersDetail')->display($targetInstance);
 GetWidget('peopleClientsDetail')->display($targetInstance);
