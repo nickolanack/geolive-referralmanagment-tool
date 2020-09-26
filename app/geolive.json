@@ -17738,6 +17738,49 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "mainDocumentsDetail",
+            "target": "mainDocumentsDetail",
+            "templateName": "mainDocumentsDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "positions": {
+                    "title": {
+                        "modules": [
+                            "mainDocumentsDetail.metadata.positions.title.modules.0.json"
+                        ]
+                    },
+                    "content": {
+                        "modules": [
+                            "mainDocumentsDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": [
+                            "mainDocumentsDetail.metadata.positions.footer.modules.0.json"
+                        ]
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                }
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.365": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
             "widgetTitle": "",
             "target": "none",
             "templateName": "{target}",
@@ -17748,7 +17791,7 @@
             "notifyViewer": false
         }
     },
-    "widget.365": {
+    "widget.366": {
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
