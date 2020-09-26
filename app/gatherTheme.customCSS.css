@@ -40,6 +40,10 @@ $highlightBtnColor:#efa82c;
     
 }
 
+.ui-view.inset-shading > div, .calendar .month {
+    background: transparent;
+}
+
 [data-view="singleProjectListItemDetail"]{
     .inline-btn.optionlist {
         display:none;
