@@ -248,7 +248,9 @@
     "plugin.40": {
         "name": "Events",
         "instance": "Events",
-        "parameters": {}
+        "parameters": {
+            "logPath": "{front}\/..\/logs"
+        }
     },
     "plugin.41": {
         "name": "Search Plugin",
