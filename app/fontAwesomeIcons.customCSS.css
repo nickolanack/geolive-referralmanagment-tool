@@ -65,6 +65,10 @@
     content: "\f2bb";
 }
 
+.menu-configuration li:before{
+    content: "\f013";
+}
+
 
 .inline-navigation-menu li.menu-user-configuration:before {
     content: "\f013";
