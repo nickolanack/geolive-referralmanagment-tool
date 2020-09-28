@@ -1,5 +1,5 @@
 var enabled= DashboardConfig.getValue('enableTasks');
     
     if(enabled){
-      module.render();
+      module.draw();
     }

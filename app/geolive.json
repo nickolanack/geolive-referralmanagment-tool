@@ -248,7 +248,9 @@
     "plugin.40": {
         "name": "Events",
         "instance": "Events",
-        "parameters": {}
+        "parameters": {
+            "logPath": "{front}\/..\/logs"
+        }
     },
     "plugin.41": {
         "name": "Search Plugin",
@@ -3734,6 +3736,14 @@
                                     "script": "Left Panel.metadata.positions.content.modules.6.config.script.js",
                                     "description": "Info about my custom script"
                                 }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "Left Panel.metadata.positions.content.modules.7.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
                             }
                         ]
                     },
@@ -3824,9 +3834,9 @@
             "cacheable": true,
             "link": true,
             "sass": true,
-            "widgetTitle": "ReferralManagement Dashboard Theme",
-            "target": "firelightDashboardTheme",
-            "customCSS": "ReferralManagement Dashboard Theme.customCSS.css",
+            "widgetTitle": "Default Dashboard Theme",
+            "target": "sharedDashboardTheme",
+            "customCSS": "Default Dashboard Theme.customCSS.css",
             "readAccess": "public"
         }
     },
@@ -5266,27 +5276,7 @@
                     },
                     "content": {
                         "modules": [
-                            "Main Tasks Detail.metadata.positions.content.modules.0.json",
-                            {
-                                "type": "UIView",
-                                "config": {
-                                    "className": "",
-                                    "viewType": "view",
-                                    "namedView": "tasksListDetail",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false
-                                }
-                            }
+                            "Main Tasks Detail.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
@@ -5727,9 +5717,9 @@
             "cacheable": true,
             "link": true,
             "sass": false,
-            "widgetTitle": "ReferralManagement Generated Styles",
-            "target": "firelightGeneratedStyles",
-            "customCSS": "ReferralManagement Generated Styles.customCSS.css",
+            "widgetTitle": "sharedGeneratedStyles",
+            "target": "sharedGeneratedStyles",
+            "customCSS": "sharedGeneratedStyles.customCSS.css",
             "readAccess": "public"
         }
     },
@@ -5868,6 +5858,14 @@
                                 }
                             },
                             {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "Projects Overview Detail.metadata.positions.content.modules.2.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "projects-list",
@@ -5882,26 +5880,26 @@
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "initModuleScript": "",
-                                    "formatModuleScript": "Projects Overview Detail.metadata.positions.content.modules.2.config.formatModuleScript.js",
+                                    "formatModuleScript": "Projects Overview Detail.metadata.positions.content.modules.3.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
-                                    "getItemListScript": "Projects Overview Detail.metadata.positions.content.modules.2.config.getItemListScript.js",
+                                    "getItemListScript": "Projects Overview Detail.metadata.positions.content.modules.3.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "Projects Overview Detail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "Projects Overview Detail.metadata.positions.content.modules.3.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
-                                    "filterItemsScript": "Projects Overview Detail.metadata.positions.content.modules.2.config.filterItemsScript.js",
-                                    "sortItemsScript": "Projects Overview Detail.metadata.positions.content.modules.2.config.sortItemsScript.js",
+                                    "filterItemsScript": "Projects Overview Detail.metadata.positions.content.modules.3.config.filterItemsScript.js",
+                                    "sortItemsScript": "Projects Overview Detail.metadata.positions.content.modules.3.config.sortItemsScript.js",
                                     "maxItems": "3"
                                 }
                             },
                             {
                                 "type": "FormattedText",
                                 "config": {
-                                    "textValueScript": "Projects Overview Detail.metadata.positions.content.modules.3.config.textValueScript.js",
-                                    "formatModuleScript": "Projects Overview Detail.metadata.positions.content.modules.3.config.formatModuleScript.js",
+                                    "textValueScript": "Projects Overview Detail.metadata.positions.content.modules.4.config.textValueScript.js",
+                                    "formatModuleScript": "Projects Overview Detail.metadata.positions.content.modules.4.config.formatModuleScript.js",
                                     "className": "section-help",
                                     "imageWidth": 300,
                                     "imageHeight": 240,
@@ -5965,10 +5963,11 @@
                         "modules": [
                             "Tasks Overview List Detail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "Search",
+                                "type": "WizardScriptElement",
                                 "config": {
-                                    "getAggregatorsScript": "Tasks Overview List Detail.metadata.positions.content.modules.1.config.getAggregatorsScript.js",
-                                    "placeholder": "search items"
+                                    "name": "My Custom Script",
+                                    "script": "Tasks Overview List Detail.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
                                 }
                             },
                             {
@@ -6572,7 +6571,7 @@
                                     "className": "inline-list-item first-item tasks-list-item-icon",
                                     "viewType": "view",
                                     "namedView": "projectPriorityTasksDetail",
-                                    "shouldRender": false,
+                                    "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
@@ -17022,7 +17021,7 @@
             "requireTarget": true,
             "resolveItemScript": "userProfileDetailOverview.resolveItemScript.js",
             "onRenderApplictionScript": "",
-            "formatModulesScript": "",
+            "formatModulesScript": "userProfileDetailOverview.formatModulesScript.js",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -17057,20 +17056,12 @@
                                 }
                             },
                             {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "userProfileDetailOverview.metadata.positions.content.modules.4.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getName();",
-                                    "formatElementScript": "userProfileDetailOverview.metadata.positions.content.modules.5.config.formatElementScript.js"
+                                    "formatElementScript": "userProfileDetailOverview.metadata.positions.content.modules.4.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -17078,7 +17069,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Role: \";",
-                                    "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.6.config.fieldValueScript.js",
+                                    "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.5.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-role');"
                                 }
                             },
@@ -17087,7 +17078,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Community\/Group: \"",
-                                    "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.7.config.fieldValueScript.js",
+                                    "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.6.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-community');"
                                 }
                             },
@@ -17149,7 +17140,7 @@
                             {
                                 "type": "FormattedText",
                                 "config": {
-                                    "textValueScript": "userProfileDetailOverview.metadata.positions.content.modules.14.config.textValueScript.js",
+                                    "textValueScript": "userProfileDetailOverview.metadata.positions.content.modules.13.config.textValueScript.js",
                                     "formatModuleScript": "",
                                     "className": "project-description",
                                     "imageWidth": 300,
@@ -17177,7 +17168,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "userProfileDetailOverview.metadata.positions.content.modules.15.config.script.js",
+                                    "script": "userProfileDetailOverview.metadata.positions.content.modules.14.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
@@ -17736,7 +17727,180 @@
             "sass": true,
             "widgetTitle": "gatherTheme",
             "target": "gatherTheme",
-            "customCSS": "",
+            "customCSS": "gatherTheme.customCSS.css",
+            "readAccess": "public"
+        }
+    },
+    "widget.363": {
+        "name": "Stylesheet",
+        "instance": "CSS",
+        "parameters": {
+            "cacheable": true,
+            "link": true,
+            "sass": true,
+            "widgetTitle": "fontAwesomeIcons",
+            "target": "fontAwesomeIcons",
+            "customCSS": "fontAwesomeIcons.customCSS.css",
+            "readAccess": "public"
+        }
+    },
+    "widget.364": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "mainDocumentsDetail",
+            "target": "mainDocumentsDetail",
+            "templateName": "mainDocumentsDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "mainDocumentsDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.365": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "mainTimeTrackingDetail",
+            "target": "mainTimeTrackingDetail",
+            "templateName": "mainTimeTrackingDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "mainTimeTrackingDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.366": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "mainReportsDetail",
+            "target": "mainReportsDetail",
+            "templateName": "mainReportsDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "mainReportsDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.367": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "mainMessagesDetail",
+            "target": "mainMessagesDetail",
+            "templateName": "mainMessagesDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "mainMessagesDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
             "readAccess": "public"
         }
     }

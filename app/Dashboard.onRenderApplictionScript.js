@@ -14,8 +14,8 @@ TemplateModule.SetTemplate(\'default\',\'<div data-template="content" class="tem
  */
 
 
-GetWidget('firelightDashboardTheme')->display($targetInstance);
-GetWidget('firelightGeneratedStyles')->display($targetInstance);
+GetWidget('sharedDashboardTheme')->display($targetInstance);
+GetWidget('sharedGeneratedStyles')->display($targetInstance);
 
 GetWidget('emptyListView')->display($targetInstance);
 
@@ -85,6 +85,11 @@ IncludeJSBlock('
     }
     
     
+    if($dashConfig->getParameter('useFontAwesome')){
+        GetWidget('fontAwesomeIcons')->display($targetInstance);   
+    }
+    
+    
     
     GetWidget('defaultPostDetail')->display($targetInstance);
     
@@ -117,6 +122,13 @@ GetWidget('mainProjectsDetail')->display($targetInstance);
 GetWidget('mainTasksDetail')->display($targetInstance);
 GetWidget('mainCalendarDetail')->display($targetInstance);
 GetWidget('mainMapDetail')->display($targetInstance);
+
+GetWidget('mainDocumentsDetail')->display($targetInstance);
+GetWidget('mainTimeTrackingDetail')->display($targetInstance);
+GetWidget('mainReportsDetail')->display($targetInstance);
+GetWidget('mainMessagesDetail')->display($targetInstance);
+
+
 
 
 GetWidget('peopleProjectMembersDetail')->display($targetInstance);

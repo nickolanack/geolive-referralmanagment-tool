@@ -1,4 +1,7 @@
 ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
-   var value=ReferralManagementDashboard.getLabelForUserRole(item.getRole());
+   var value=item.getCommunity();
+   if(value=="none"){
+       value="no community selected";
+   }
    callback(value);
 });

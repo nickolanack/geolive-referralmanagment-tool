@@ -1,0 +1,145 @@
+@charset "utf-8";
+@import url("/webresources/font-awesome-4.7.0/css/font-awesome.min.css");
+
+
+.navigation-menu li:before {
+    content: "\f1b2";
+    font-family: FontAwesome;
+    font-size: 20px;
+}
+
+.navigation-menu li.active:before {
+    color: white;
+}
+
+.navigation-menu li.menu-main-map:before {
+    content: "\f278";
+}
+.navigation-menu li.menu-main-projects:before {
+    content: "\f024";
+}
+
+.navigation-menu li.menu-main-tasks:before {
+    content: "\f0ae";
+}
+
+.navigation-menu li.menu-main-calendar:before {
+    content: "\f133";
+}
+
+.navigation-menu li.menu-main-department:before{
+    content: "\f0e8";
+    
+}
+.navigation-menu li.menu-main-users:before{
+    content: "\f0c0";
+    
+}
+
+
+.navigation-menu li.menu-main-tags:before{
+    content: "\f02c";
+}
+.navigation-menu li.menu-main-archive:before{
+    content: "\f187";
+}
+.navigation-menu li.menu-main-messages:before{
+    content: "\f0e6";
+}
+.navigation-menu li.menu-main-documents:before{
+    content: "\f15c";
+}
+
+.navigation-menu li.menu-main-timetracking:before{
+    content: "\f017";
+}
+.navigation-menu li.menu-main-reports:before{
+    content: "\f080";
+}
+
+.navigation-menu li.menu-main-acivity:before{
+    content: "\f1da";
+}
+
+.navigation-menu li.menu-people-clients:before{
+    content: "\f2bb";
+}
+
+
+.inline-navigation-menu li.menu-user-configuration:before {
+    content: "\f013";
+    font-family: FontAwesome;
+    font-size: 20px;
+}
+
+
+.starred-indicator:before {
+    content: "\f006";
+    font-family: FontAwesome;
+    
+}
+.starred-indicator:hover:before {
+    content: "\f005";
+    font-family: FontAwesome;
+}
+
+.starred.starred-indicator:before {
+    content: "\f005";
+    font-family: FontAwesome;
+    color: #edc84c;
+    
+}
+.starred.starred-indicator:hover:before {
+    content: "\f006";
+}
+
+
+
+
+
+.priority-indicator:before {
+    content: "\f024";
+    font-family: FontAwesome;
+    
+}
+.priority.priority-indicator:before {
+    content: "\f024";
+    font-family: FontAwesome;
+    color: crimson;
+    
+}
+
+
+.completion-indicator:before{
+    content: "\f10c";
+    font-family: FontAwesome;
+    position: absolute;
+    left: -3px;
+    top: -5px;
+    font-size: 20px;
+    color: rgba(128, 128, 128, 0.5);
+}
+
+.complete>.completion-indicator:before{
+    content: "\f058";
+    font-family: FontAwesome;
+    color: mediumseagreen;
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    font-size: 24px;
+}
+
+
+
+
+.attachment-indicator:before{
+    content: "\f0c6";
+    font-family: FontAwesome;
+    position: absolute;
+    left: -3px;
+    top: -2px;
+    font-size: 20px;
+    color: gray;
+}
+

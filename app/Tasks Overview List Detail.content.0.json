@@ -1,8 +1,7 @@
 {
-    "type": "WizardScriptElement",
+    "type": "Search",
     "config": {
-        "name": "My Custom Script",
-        "script": "\n    var mod = new ElementModule('div',{\"class\":\"section-title\"});\n    mod.getElement().appendChild(new Element(\"span\",{\"html\":\"Incomplete tasks\"}));\n    return mod;",
-        "description": "Info about my custom script"
+        "getAggregatorsScript": "var search=new Element('button',{\n         \"class\":\"btn-search-list\",\n         events:{click:function(){\n             \n             if(element.parentNode.hasClass('enable-search')){\n                 element.parentNode.removeClass('enable-search');\n             }else{\n                 element.parentNode.addClass('enable-search');\n             }\n             \n         }}\n     })\n",
+        "placeholder": "search items"
     }
 }

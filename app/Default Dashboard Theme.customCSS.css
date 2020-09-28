@@ -5,7 +5,7 @@ $themeInset:#f0f0f0;
 $tagBtnColor:#e1e1e1;
 
 
-$mainStyleColor:#efa82c;
+$mainStyleColor:#525252;
 $highlightBtnColor:$mainStyleColor;
 
 
@@ -1435,23 +1435,22 @@ img.youtubelogo {
 
 
 .completion-indicator {
-    width: 7px;
-    height: 7px;
+    width: 10px;
+    height: 10px;
     display: inline-block;
-    border: 1px solid white;
-    border-radius: 100%;
     float: left;
     margin: 6px;
+    position: relative;
     vertical-align: middle;
+    background-color: transparent;
+    margin-right: 15px;
 }
 
 .task-item--1 .completion-indicator {
     display: none;
 }
 
-.complete>.completion-indicator {
-    background-color: white;
-}
+
 .complete>.field-value-module {
     text-decoration: line-through;
     opacity: 0.6;
@@ -1461,11 +1460,10 @@ img.youtubelogo {
 .attachment-indicator, .attachment-thumb {
     width: 16px;
     height: 16px;
-    display: inline-block;
-    border-radius: 100%;
-    float: left;
+    float: right;
     margin: 2px;
-    background-size: 100%;
+    position: relative;
+    margin-right: 10px;
 }
 
 .task-item.compact .attachment-thumb {
@@ -1553,6 +1551,11 @@ ul.item-tags li {
     max-width: 100px;
     overflow: hidden;
     text-overflow: ellipsis;
+    
+    &:hover{
+        background-color: darken($tagBtnColor, 10%);
+    }
+    
 }
 
 .item-title>.field-value {
@@ -2462,22 +2465,9 @@ ul.user-roles:hover>li.active {
 
 
 .ui-view.inline-icon-list-view.unassigned, .ui-view.inline-icon-list-view.unassigned:first-child {
-    width: 18px;
-    height: 18px;
-    border: 1px solid #6175d0;
-    border-radius: 100%;
-    padding: 0;
-    margin: 1px 5px;
-    text-align: center;
-    line-height: 17px;
-    color: #6175d0;
-    border-top-width: 1px;
+    display:none;
 }
 
-.ui-view.inline-icon-list-view.unassigned:after {
-    content: "?";
-    font-size: 10px;
-}
 
 .ui-view.inline-icon-list-view, .ui-view.inline-icon-list-view .ui-view {
     padding: 0;
@@ -2502,6 +2492,14 @@ ul.user-roles:hover>li.active {
 
 .is-offline .user-profile-icon {
     filter: grayscale(1);
+}
+
+.user-profile-icon>span {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
 }
 
 ul.inline-filter {
@@ -3000,9 +2998,6 @@ img.static-map {
 
     /**Navigation Menu**/
 
-
-
-    
 
 
 

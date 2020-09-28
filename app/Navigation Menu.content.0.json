@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "return ReferralManagementDashboard.createNavigationMenu(application);\n",
+        "script": "return (new MainNavigationMenu(application));",
         "description": "Info about my custom script"
     }
 }

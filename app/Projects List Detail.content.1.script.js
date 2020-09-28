@@ -1,8 +1,8 @@
 /*Projects Header*/
 
 
-var div = new Element('div',{"class":"section-title project-list-btns"});
-div.appendChild(new Element("span",{"html":"Projects"}));
+var div = new Element('div',{"class":"project-list-btns"});
+
 div.appendChild(new Element("button",{"data-lbl":"New project", "class":"inline-btn add primary-btn", "events":{"click":function(){
     
    

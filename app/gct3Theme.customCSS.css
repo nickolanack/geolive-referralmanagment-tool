@@ -275,6 +275,10 @@ button.primary-btn.nav-new-btn:hover {
     border-right: 4px solid $highlightBtnColor;
 }
 
+.navigation-menu ul label {
+    display: none;
+}
+
 @media screen and (max-width: 1250px) {
     button.primary-btn.nav-new-btn {
         font-size:13px;
@@ -340,10 +344,11 @@ button.primary-btn.nav-new-btn:hover {
 
 
 
-/*cancel icon highlight*/
+/*cancel icon highlight
 .navigation-menu li:before {
     filter: brightness(0);
 }
+*/
 
 
 
@@ -390,4 +395,61 @@ button.primary-btn.nav-new-btn:hover {
 .inline-btn.optionlist li:hover, .inline-btn.sort li:hover {
     background-color:#d7d7d7;
 }
+
+
+
+.search-panel .user-detail{
+    
+
+    .field-value-module{
+        
+        &.user-name {
+            line-height: 45px;
+            margin-right: 10px;
+        }
+        
+        button.inline-logout {
+            display: none;
+        }
+        
+        &.editable.user-name:after {
+            display: none;
+        }
+        
+        &.user-email {
+            display: none;
+        }
+        
+        &.user-role {
+            display: none;
+        }
+        
+        &.user-community {
+            display: none;
+        }
+    
+    }
+}
+
+
+
+
+
+.navigation-menu .menu-main li{
+
+    &.menu-main-reports {
+        display: none;
+    }
+    &.menu-main-timetracking {
+        display: none;
+    }
+     &.menu-main-documents {
+        display: none;
+    }
+    &.menu-main-messages {
+        display: none;
+    }
+}
+
+
 

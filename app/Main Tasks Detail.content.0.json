@@ -1,9 +1,22 @@
 {
-    "type": "InlineHtml",
+    "type": "UIView",
     "config": {
         "className": "",
-        "text": "Tasks Detail View",
-        "template": "",
-        "templateVariablesScript": ""
+        "viewType": "view",
+        "namedView": "tasksListDetail",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
+        "showInlineEdit": false,
+        "namedFormView": "defaultFormView",
+        "formOptions": "{}",
+        "showDeleteButton": false,
+        "deleteItemScript": "",
+        "initModuleScript": "",
+        "formatModuleScript": "",
+        "resolveItemScript": "",
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false,
+        "targetName": ""
     }
 }
