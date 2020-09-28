@@ -3430,14 +3430,16 @@ img.static-map {
     box-sizing: border-box;
 }
 
-.navigation-menu .ui-navigation-menu > ul li.menu-configuration-settings {
-   visibility:hidden;
-}
+.navigation-menu .ui-navigation-menu > ul li{
     
-.navigation-menu .ui-navigation-menu > ul li.menu-configuration-settings.bottom {
-   visibility:visible;
-}
-    
+    &.menu-configuration-settings, &.menu-configuration-fixedsettings {
+        visibility:hidden;
+        &.bottom {
+           visibility:visible;
+        }
+    }
+}  
+   
     
     
     
