@@ -3000,6 +3000,9 @@ img.static-map {
 
 
 
+    
+
+
 
     .inline-navigation-menu li{
             list-style: none;
@@ -3411,6 +3414,31 @@ img.static-map {
 .user-detail.just-pic .field-value-module.editable {
     display: none;
 }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+.navigation-menu .ui-navigation-menu > ul li.active.menu-configuration-fixedsettings {
+    position: fixed;
+    bottom: 0;
+    width: 300px;
+    box-sizing: border-box;
+}
+
+.navigation-menu .ui-navigation-menu > ul li.active.menu-configuration-settings {
+   
+}
+    
+    
+    
+    
+    
+    
     
     
     
