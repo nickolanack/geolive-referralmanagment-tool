@@ -3423,14 +3423,17 @@ img.static-map {
     
     
     
-.navigation-menu .ui-navigation-menu > ul li.menu-configuration-fixedsettings {
-    position: fixed;
-    bottom: 0;
-    width: 300px;
-    box-sizing: border-box;
-}
 
-.navigation-menu .ui-navigation-menu > ul li{
+
+.navigation-menu.settings-menu .ui-navigation-menu > ul li{
+    
+    &.menu-configuration-fixedsettings {
+        position: fixed;
+        bottom: 0;
+        width: 300px;
+        box-sizing: border-box;
+    }
+    
     
     &.menu-configuration-settings, &.menu-configuration-fixedsettings {
         visibility:hidden;
@@ -3441,7 +3444,10 @@ img.static-map {
 }  
    
     
-    
+span.navigation-menu.settings-menu {
+    margin-top: 50px;
+    display: block;
+}
     
     
     
