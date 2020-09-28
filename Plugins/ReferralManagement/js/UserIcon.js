@@ -27,20 +27,12 @@ var UserIcon=(function(){
 			var span = new Element('span');
 			div.appendChild(span);
 
-			span.setStyles({
-
-				position: "relative",
-				display: "inline-block",
-				width: "50px",
-				height: "50px",
-				"background-size": "cover",
-
-			});
 
 			if (defaultIcon) {
 				span.setStyles({
 					"background-image": "url(" + defaultIcon + ")"
 				});
+				div.getElement().addClass('default-icon');
 			}
 
 

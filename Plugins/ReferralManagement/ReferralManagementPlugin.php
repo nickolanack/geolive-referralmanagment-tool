@@ -145,6 +145,9 @@ core\EventListener {
 
 	protected function onTriggerUpdateDevicesList($params) {
 
+		return;
+
+
 		$cacheName = "ReferralManagement.deviceList.json";
 		$cacheData = HtmlDocument()->getCachedPage($cacheName);
 
@@ -819,7 +822,15 @@ core\EventListener {
 
 			//show all users;
 			return function (&$userMetadata) {
-				$userMetadata->visibleBecuase = "You are admin";
+
+				if(is_array($userMetadata)){
+					$userMetadata['visibleBecuase'] = "You are admin";
+				}
+
+				if(is_object($userMetadata)){
+					$userMetadata->visibleBecuase = "You are admin";
+				}
+				
 				return true;
 			};
 

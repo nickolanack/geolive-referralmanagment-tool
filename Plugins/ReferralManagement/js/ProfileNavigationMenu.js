@@ -51,6 +51,18 @@ var ProfileNavigationMenu = new Class({
 					}, {
 						html: "Projects",
 						template:"userProfileDetailProjects"
+					}, {
+						html: "Tasks",
+						template:"userProfileDetailTasks"
+					}, {
+						html: "Timesheet",
+						template:"userProfileDetailTimesheet"
+					}, {
+						html: "Activity",
+						template:"userProfileDetailActivity"
+					}, {
+						html: "Configuration",
+						template:"userProfileDetailConfiguration"
 					}
 				]
 			};

@@ -1,16 +1,14 @@
-var MainNavigationMenu = new Class({
+var MainNavigationMenuBase = new Class({
 	Extends: NavigationMenuModule,
-	initialize: function(application) {
+	initialize: function(menu, application) {
 
-		var navigationController = this;
-
-		this.parent(null, {
+		this.parent(menu, {
 
 			cloneStyle:{
 				left:0,
 				opacity:0.5
 			},
-			"class": "collapsable-menu",
+			"class": "-collapsable-menu-disabled",
 			targetUIView: function(button, section, viewer, callback) {
 
 				/**
@@ -65,6 +63,13 @@ var MainNavigationMenu = new Class({
 
 
 
+	}
+});
+
+var MainNavigationMenu = new Class({
+	Extends: MainNavigationMenuBase,
+	initialize: function(application) {
+		this.parent(null, application);
 	},
 
 	process: function() {
@@ -234,6 +239,15 @@ var MainNavigationMenu = new Class({
 						return 'Projects/Project-' + current.getId()
 					}
 				}, {
+					html: "Messages",
+					name: "Messages"
+				},{
+					html: "Documents",
+					name: "Documents"
+				},{
+					html: "Tracking",
+					name: "TimeTracking"
+				}, {
 					html: "Users",
 					template: "usersCombinedDetail"
 				},{
@@ -296,6 +310,9 @@ var MainNavigationMenu = new Class({
 					html: "Activity",
 				}, {
 					html: "Map",
+				},{
+					html: "Reports",
+					name: "Reports"
 				}, {
 					html: "Archive",
 					template: "configurationArchiveDetail"
@@ -304,13 +321,41 @@ var MainNavigationMenu = new Class({
 				// 	html: "Trash"
 				// }
 				],
+
+				"Referrals":[
+					{
+						html: "Projects",
+						alias: {"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true},
+					},
+					{
+						html: "Documents",
+						alias: {"section":"Main", "button":"Documents", "useClassNames":true, "mirrorActive":true},
+					},
+					{
+						html: "Tracking",
+						alias: {"section":"Main", "button":"TimeTracking", "useClassNames":true, "mirrorActive":true},
+					},
+					{
+						html: "Reports",
+						alias: {"section":"Main", "button":"Reports", "useClassNames":true, "mirrorActive":true},
+					}
+
+
+				],
+
 				"People": [{
 					html: "Projects",
 					name: "ProjectMembers",
 				}, {
-					html: "Clients",
-
-				}, {
+					html: "Proponents",
+					name: "Clients"
+				}, 
+				{
+					html: "Users",
+					name: "Members",
+					alias: {"section":"Main", "button":"Users", "useClassNames":true, "mirrorActive":true},
+				},
+				{
 					name: "Users",
 					html: "Team",
 					urlComponent: function() {
@@ -494,79 +539,7 @@ var MainNavigationMenu = new Class({
 				}]
 			} : {}))
 
-			me.menu.Main = me.menu.Main.filter(function(item) {
-
-
-				if (!config.parameters.simplifiedMenu) {
-					if (item.html == "Users") {
-						return false;
-					}
-					if (item.html == "Project") {
-						return false;
-					}
-					if (item.html == "Department") {
-						return false;
-					}
-					if (item.html == "Tags") {
-						return false;
-					}
-					if (item.html == "Archive") {
-						return false;
-					}
-					if (item.html == "Trash") {
-						return false;
-					}
-				}
-
-
-				if (item.html == "Tasks" && !config.parameters.enableTasks) {
-					return false;
-				}
-
-				if (item.html == "Projects" && !config.parameters.enableProposals) {
-					//return false;
-				}
-
-				if (item.html == "Calendar" && !config.parameters.enableCalendar) {
-					return false;
-				}
-
-
-				if (item.html == "Activity" && !config.parameters.enableActivity) {
-					return false;
-				}
-				if (item.html == "Map" && !config.parameters.enableMap) {
-					return false;
-				}
-
-				return true;
-
-			});
-
-
-			me.menu.People = me.menu.People.filter(function(item) {
-
-
-
-				if (item.html == "Clients" && !config.parameters.enableClients) {
-					return false;
-				}
-
-				if (item.html == "Mobile" && !config.parameters.enableMobile) {
-					return false;
-				}
-
-
-				return true;
-
-			});
-
-			if (config.parameters.simplifiedMenu) {
-				delete me.menu.People;
-				delete me.menu.Community;
-				delete me.menu.Configuration;
-			}
-
+			me.menu=DashboardPageLayout.layoutMenu('mainMenu', me.menu);
 
 			me.process();
 			application.setNamedValue('navigationController', me);
@@ -578,4 +551,20 @@ var MainNavigationMenu = new Class({
 
 	}
 
+});
+
+
+var SettingsNavigationMenu=new Class({
+	Extends: MainNavigationMenuBase,
+	initialize: function(application) {
+
+	
+		this.parent({
+			"Configuration": [{
+				html: "Settings",
+				alias: {"section":"Main", "button":"Settings", "useClassNames":true, "mirrorActive":true},
+			}]
+
+		}, application);
+	}
 });
