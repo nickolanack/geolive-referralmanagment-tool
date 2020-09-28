@@ -5,6 +5,12 @@ $highlightBtnColor:#efa82c;
 }
 
 
+.dark .uilist-pageination button {
+    background-color: #2e303a;
+    border: none;
+    color: gray;
+}
+
 .section-title {
     font-weight: 400;
     font-size: 25px;
