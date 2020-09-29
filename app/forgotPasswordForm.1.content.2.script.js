@@ -28,4 +28,4 @@ setPwd.getElement().appendChild(new Element('button',{
         }}
     }))
         
-return [link,setPwd]
+return [link/*,setPwd*/]
