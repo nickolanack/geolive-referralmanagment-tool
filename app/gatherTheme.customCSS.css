@@ -10,7 +10,17 @@ $highlightBtnColor:#efa82c;
 
 
     .ui-view.login-form:after {
-    content: "";background: #868686;position: fixed;width: 50%;height: 100%;right: 0;top: 0;z-index: -1;
+        content: "";
+        background: #e88224;
+        position: fixed;
+        width: 50%;
+        height: 100%;
+        right: 0;
+        top: 0;
+        z-index: -1;
+        background-image: url(https://dyl2vw577xcfk.cloudfront.net/wabun.geoforms.ca/1/Uploads/%5BImAgE%5D_KGR_%5BG%5D_BdY_wCX.jpeg);
+        background-size: cover;
+        background-blend-mode: luminosity;
     }
 
 .ui-view.login-form {
