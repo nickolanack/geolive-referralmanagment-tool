@@ -2223,6 +2223,12 @@
                     "name": "crowdsource",
                     "default": [],
                     "label": "Crowdsource Layers"
+                },
+                "other": {
+                    "type": "json",
+                    "name": "other",
+                    "default": [],
+                    "label": "Other Layers"
                 }
             },
             "layerGroups": {
@@ -2274,7 +2280,8 @@
             ],
             "formatParametersScript": "return $parameters;",
             "formatOutputScript": "return $parameters;",
-            "saveParametersAsData": true
+            "saveParametersAsData": true,
+            "other": []
         }
     },
     "widget.118": {
