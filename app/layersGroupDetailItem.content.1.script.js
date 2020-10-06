@@ -11,9 +11,9 @@ return [new ModalFormButtonModule(application, item, {
             "class": "primary-btn"
 
     
-}),new ModalFormButtonModule(application, ReferralManagementDashboard.getNewProjectTag(item.getCategory()), {
+}),new ModalFormButtonModule(application, LayerGroupItemList.getNewLayerGroupItem(item.getGroup()), {
          
-            label: "Add "+item.getCategory().capitalize()+" Tag",
+            label: "Add "+item.getGroup().capitalize()+" Tag",
             formOptions: {template:"form"},
             formName: "tagForm",
             "class": "primary-btn"
