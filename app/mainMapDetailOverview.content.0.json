@@ -1,4 +1,8 @@
 {
     "type": "WizardScriptElement",
-    "config": {}
+    "config": {
+        "name": "My Custom Script",
+        "script": "return (new MapNavigationMenu(application));",
+        "description": "Info about my custom script"
+    }
 }
