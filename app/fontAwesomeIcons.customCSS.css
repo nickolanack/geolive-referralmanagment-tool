@@ -12,6 +12,15 @@
     color: white;
 }
 
+.navigation-menu li.menu-main-dashboard:before {
+    content: "\f0e4";
+}
+
+.navigation-menu li.menu-main-activity:before {
+    content: "\f080";
+}
+
+
 .navigation-menu li.menu-main-map:before {
     content: "\f278";
 }
