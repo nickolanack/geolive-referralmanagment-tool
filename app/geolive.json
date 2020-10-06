@@ -18023,19 +18023,7 @@
                     },
                     "content": {
                         "modules": [
-                            "mainMapDetailOverview.metadata.positions.content.modules.0.json",
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "mainMapDetailOverview.metadata.positions.content.modules.1.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
-                                "type": "UIView",
-                                "config": []
-                            }
+                            "mainMapDetailOverview.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
