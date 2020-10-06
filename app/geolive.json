@@ -9417,21 +9417,33 @@
                         "modules": [
                             "mainMapDetail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "mainMapDetail.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
                                 "type": "UIView",
                                 "config": {
                                     "className": "",
                                     "viewType": "view",
                                     "namedView": "googlemap",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "",
-                                    "itemButtonsScript": "return [];",
-                                    "namedViewScript": "return namedView",
                                     "filterModulesScript": "return list",
-                                    "formOptions": "{}"
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             }
                         ]
