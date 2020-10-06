@@ -183,7 +183,7 @@ GetWidget('userInviteForm')->display($targetInstance);
 
 GetWidget('dialogForm')->display($targetInstance);
 
-
+GetWidget('layerGroupForm')->display($targetInstance);
 
 
 GetWidget('defaultPostDetail')->display($targetInstance);
