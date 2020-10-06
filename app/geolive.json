@@ -9417,19 +9417,11 @@
                         "modules": [
                             "mainMapDetail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "mainMapDetail.metadata.positions.content.modules.1.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
                                 "type": "UIView",
                                 "config": {
                                     "className": "",
                                     "viewType": "view",
-                                    "namedView": "googlemap",
+                                    "namedView": "mainMapDetailOverview",
                                     "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
@@ -18024,14 +18016,6 @@
                     "content": {
                         "modules": [
                             "mainMapDetailOverview.metadata.positions.content.modules.0.json",
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "mainMapDetailOverview.metadata.positions.content.modules.1.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
                             {
                                 "type": "UIView",
                                 "config": {
