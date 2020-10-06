@@ -1,6 +1,8 @@
 $highlightBtnColor:#efa82c;
 
-
+[data-view="leftPanel"] {
+    background-color: #222222;
+}
 
 .ui-view.login-form{
 
