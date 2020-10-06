@@ -1,0 +1,1 @@
+DashboardPageLayout.layoutPage('mainMap', list);

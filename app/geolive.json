@@ -9406,7 +9406,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
-            "formatModulesScript": "",
+            "formatModulesScript": "mainMapDetail.formatModulesScript.js",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
