@@ -49,7 +49,7 @@
 .navigation-menu li.menu-main-tags:before{
     content: "\f02c";
 }
-.navigation-menu li.menu-main-archive:before{
+.navigation-menu li.menu-main-archive:before, .navigation-menu li.menu-referrals-archive:before{
     content: "\f187";
 }
 .navigation-menu li.menu-main-messages:before{
