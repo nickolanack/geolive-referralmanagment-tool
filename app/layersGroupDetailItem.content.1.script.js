@@ -11,9 +11,9 @@ return [new ModalFormButtonModule(application, item, {
             "class": "primary-btn"
 
     
-}),new ModalFormButtonModule(application, LayerGroupItemList.getNewLayerGroupItem(item.getGroup()), {
+}),new ModalFormButtonModule(application, LayerGroupItemList.getNewLayerGroupItem(item.getName()), {
          
-            label: "Add "+item.getGroup().capitalize()+" Tag",
+            label: "Add "+item.getName().capitalize()+" ",
             formOptions: {template:"form"},
             formName: "tagForm",
             "class": "primary-btn"
