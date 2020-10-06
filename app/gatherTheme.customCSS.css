@@ -140,11 +140,13 @@ $highlightBtnColor:#efa82c;
     padding-bottom: 10px;
 }
 
-.inline-navigation-menu li.menu-user-configuration {
-    float: right;
-    margin-right:10px;
-    button {
-        font-size: 0;
+.inline-navigation-menu {
+    li.menu-user-configuration, li.menu-user-edit, li.menu-user-log, li.menu-user-log-out {
+        float: right;
+        margin-right:10px;
+        button {
+            font-size: 0;
+        }
     }
 }
 
