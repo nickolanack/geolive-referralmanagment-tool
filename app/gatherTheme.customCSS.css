@@ -144,6 +144,9 @@ $highlightBtnColor:#efa82c;
     li.menu-user-configuration, li.menu-user-edit, li.menu-user-log, li.menu-user-log-out {
         float: right;
         margin-right:10px;
+        
+    }
+    li.menu-user-configuration {
         button {
             font-size: 0;
         }
