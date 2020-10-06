@@ -1,4 +1,30 @@
 {
     "type": "UIListView",
-    "config": {}
+    "config": {
+        "listClassName": "",
+        "className": "no-line section-module",
+        "viewType": "view",
+        "namedView": "layersGroupDetailItem",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
+        "showInlineEdit": false,
+        "namedFormView": "defaultView",
+        "formOptions": "\"{}\"",
+        "showDeleteButton": false,
+        "deleteItemScript": "defaultBehaviorFn()",
+        "initModuleScript": "",
+        "formatModuleScript": "",
+        "resolveItemScript": "return item",
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false,
+        "targetName": "",
+        "getItemListScript": "return LayerGroupItemList.getGroups();",
+        "formatItemListScript": "return list;",
+        "formatListItemModuleScript": "return item;",
+        "emptyNamedView": "emptyListView",
+        "filterItemsScript": "return true;",
+        "sortItemsScript": "",
+        "maxItems": "-1"
+    }
 }
