@@ -2273,7 +2273,8 @@
                 119
             ],
             "formatParametersScript": "return $parameters;",
-            "formatOutputScript": "return $parameters;"
+            "formatOutputScript": "return $parameters;",
+            "saveParametersAsData": true
         }
     },
     "widget.118": {
