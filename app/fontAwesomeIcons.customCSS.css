@@ -74,6 +74,11 @@
     content: "\f2bb";
 }
 
+
+.navigation-menu menu-community-mobile:before{
+    content: "\f10b";
+}
+
 .menu-configuration li:before{
     content: "\f013";
 }
