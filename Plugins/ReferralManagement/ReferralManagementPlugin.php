@@ -70,9 +70,9 @@ core\EventListener {
 
 		if ($params->itemType === "user") {
 			(new \core\LongTaskProgress())
-				->emit('onTriggerUpdateUserList', array('team' => 1));
+				->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval'=>30));
 			(new \core\LongTaskProgress())
-				->emit('onTriggerUpdateDeviceList', array('team' => 1));
+				->throttle('onTriggerUpdateDeviceList', array('team' => 1), array('interval'=>30));
 			return;
 		}
 
@@ -101,7 +101,7 @@ core\EventListener {
 		$users=array_values(array_filter($users, $this->shouldShowUserFilter()));
 
 		//TODO: throttle this
-		(new \core\LongTaskProgress())->emit('onTriggerUpdateUserList', array());
+		(new \core\LongTaskProgress())->throttle('onTriggerUpdateUserList', array(), array('interval'=>30));
 
 		return $users;
 
@@ -138,7 +138,7 @@ core\EventListener {
 		$devices=array_values(array_filter($devices, $this->shouldShowDeviceFilter()));
 
 		//TODO: throttle this
-		(new \core\LongTaskProgress())->emit('onTriggerUpdateDevicesList', array());
+		(new \core\LongTaskProgress())->throttle('onTriggerUpdateDevicesList', array(), array('interval'=>30));
 
 		return $devices;
 	}
@@ -166,13 +166,13 @@ core\EventListener {
 	protected function onCreateUser($params) {
 		foreach ($this->listTeams() as $team) {
 			(new \core\LongTaskProgress())
-				->emit('onTriggerUpdateUserList', array('team' => $team));
+				->throttle('onTriggerUpdateUserList', array('team' => $team), array('interval'=>30));
 		}
 	}
 	protected function onDeleteUser($params) {
 		foreach ($this->listTeams() as $team) {
 			(new \core\LongTaskProgress())
-				->emit('onTriggerUpdateUserList', array('team' => $team));
+				->throttle('onTriggerUpdateUserList', array('team' => $team), array('interval'=>30));
 		}
 	}
 
@@ -292,6 +292,7 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/MainNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/ProjectNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/ProfileNavigationMenu.js');
+		IncludeJS(__DIR__ . '/js/MapNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/ReferralManagementUser.js');
 		IncludeJS(__DIR__ . '/js/UserTeamCollection.js');
 		IncludeJS(__DIR__ . '/js/Proposal.js');
@@ -303,6 +304,7 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/ProjectSearch.js');
 		IncludeJS(__DIR__ . '/js/PostContent.js');
 		IncludeJS(__DIR__ . '/js/UserIcon.js');
+		IncludeJS(__DIR__ . '/js/LayerGroup.js');
 	}
 
 	

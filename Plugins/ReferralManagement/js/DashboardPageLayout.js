@@ -3,6 +3,12 @@ var DashboardPageLayout=(function(){
 
 	var DashboardPageLayout=new Class({
 
+		getApplication:function(){
+
+			return ReferralManagementDashboard.getApplication();
+
+		},
+
 		layoutSection:function(name, modules){
 			return this.layoutPage(name, modules);
 		},
@@ -61,6 +67,107 @@ var DashboardPageLayout=(function(){
 			this._removeClassNames(items);
 
 			return new ModuleArray(items, {"class":"array-module ui-view w-30"});
+		},
+		applySectionFilter:function(buttons, filters){
+
+			var me=this;
+			filters.forEach(function(filterObj){
+
+				Object.keys(buttons).forEach(function(item){
+
+					var shouldFilter=false;
+
+					(["section"]).forEach(function(key){
+
+						shouldFilter=shouldFilter||(typeof filterObj[key]=="string"&&item===filterObj[key]);
+						shouldFilter=shouldFilter||(typeof filterObj[key]=="object"&&Object.prototype.toString.call(filterObj[key]) === "[object Array]"&&filterObj[key].indexOf(item)>=0);
+
+					});
+					
+					
+
+					if(shouldFilter&&!me._evalFilterObj(filterObj)){
+
+						if(buttons[item]){
+							delete buttons[item];
+						}
+						
+					}
+
+
+
+					return true;
+				});
+
+
+			});
+
+		},
+		_evalFilterObj(filterObj){
+
+			if(filterObj.condition){
+				var condition=filterObj.condition;
+				if(typeof condition=="function"){
+					condition=condition();
+				}
+				return !!condition;
+			}
+
+			if(typeof filterObj.config=="string"){
+				var config=filterObj.config;
+				if(config[0]=="!"){
+					config=config.substring(1);
+					return !DashboardConfig.getValue(config);
+				}
+				return DashboardConfig.getValue(config);
+			}
+
+			return false;
+
+		},
+		applyMenuFilter:function(buttons, definition){
+
+			var me=this;
+			Object.keys(definition).forEach(function(menu){
+
+			definition[menu].forEach(function(filterObj){
+
+				buttons[menu]=buttons[menu].filter(function(item){
+
+					var shouldFilter=false;
+
+					(["html", "name"]).forEach(function(key){
+
+						shouldFilter=shouldFilter||(typeof filterObj[key]=="string"&&item[key]===filterObj[key]);
+						shouldFilter=shouldFilter||(typeof filterObj[key]=="object"&&Object.prototype.toString.call(filterObj[key]) === "[object Array]"&&filterObj[key].indexOf(item[key])>=0);
+
+					});
+					
+					
+
+					if(shouldFilter){
+						var filterValue=me._evalFilterObj(filterObj);
+
+						if(filterValue===false&&filterObj.hide===true){
+
+							item.class=(item.class||"")+" hidden";
+							return true;
+						}
+
+						return filterValue;
+					}
+
+
+
+					return true;
+				});
+
+
+			});
+			
+
+		});
+
 		}
 
 
@@ -87,6 +194,14 @@ var DashboardPageLayout=(function(){
 	    return items;
 
 
+	}).addLayout('mainMap', function(content){
+
+		if(AppClient.getUserType()!="admin"){
+		     content.splice(0,1);
+		}
+
+		return content;
+
 	}).addLayout('leftPanel', function(content){
 
 		if(!DashboardConfig.getValue('showLeftPanelUser')){
@@ -108,90 +223,135 @@ var DashboardPageLayout=(function(){
 		}
 
 		return content;
+	}).addLayout('profileMenu',function(buttons){
+
+
+		layout.applyMenuFilter(buttons, {
+			"User":[
+				{
+					html:"Tasks",
+					config:"enableTasks"
+				},
+				{
+					html:"Log Out",
+					condition:function(){
+						var application =layout.getApplication();
+						var user=application.getNamedValue('currentUser');
+						var userId=user;
+						if(typeof user=="number"||typeof user=="string"){
+							userId=parseInt(user);
+						}else{
+							userId=parseInt((user.getUserId || user.getId).bind(user)());
+						}
+
+
+						if(AppClient.getId()===userId){
+							return true;
+						}
+						return false;
+					}
+				},
+				{
+					html:["Edit","Configuration"],
+					condition:function(){
+						var application =layout.getApplication();
+						var user=application.getNamedValue('currentUser');
+						var userId=user;
+						if(typeof user=="number"||typeof user=="string"){
+							userId=parseInt(user);
+						}else{
+							userId=parseInt((user.getUserId || user.getId).bind(user)());
+						}
+
+
+						if(AppClient.getUserType()=="admin"||AppClient.getId()===userId){
+							return true;
+						}
+						return false;
+					}
+				}
+
+			]
+		});
+
+		return buttons;
+
+
 	}).addLayout('mainMenu',function(buttons){
 
 
-		buttons.Main = buttons.Main.filter(function(item) {
+		layout.applyMenuFilter(buttons, {
 
-
-				if(!DashboardConfig.getValue('enableUserProfiles')){
-					if (item.html == "Users") {
-						return false;
+			"Main":[
+				{
+					html:"Users",
+					config:"enableUserProfiles"
+				},
+				{
+					html:["Project", "Department", "Tags", "Trash"],
+					config:"simplifiedMenu"
+				},
+				{
+					html:"Archive",
+					config:"simplifiedMenu",
+					hide:true //menu is still available just hidden
+				},
+				{
+					html:"Tasks",
+					config:"enableTasks"
+				},
+				// {
+				// 	html:"Projects",
+				// 	config:"enableProposals"
+				// }
+				{
+					html:"Calendar",
+					config:"enableCalendar"
+				},
+				{
+					html:"Activity",
+					config:"enableActivity"
+				},
+				{
+					html:"Map",
+					config:"enableMap"
+				},
+				{
+					html:['Messages'],
+					condition:function(){
+						return AppClient.getUserType()=="admin";
 					}
 				}
-
-
-				if (!DashboardConfig.getValue('simplifiedMenu')) {
-
-
-					if (item.html == "Project") {
-						return false;
-					}
-					if (item.html == "Department") {
-						return false;
-					}
-					if (item.html == "Tags") {
-						return false;
-					}
-					if (item.html == "Archive") {
-						return false;
-					}
-					if (item.html == "Trash") {
-						return false;
+			], 
+			"Referrals":[
+				{
+					html:['Documents', 'Tracking', 'Reports'],
+					condition:function(){
+						return AppClient.getUserType()=="admin";
 					}
 				}
-
-
-				if (item.html == "Tasks" && !DashboardConfig.getValue('enableTasks')) {
-					return false;
+			],
+			"People":[
+				{
+					html:"Clients",
+					config:"enableClients"
+				},
+				{
+					html:"Mobile",
+					config:"enableMobile"
 				}
+			
+			]
 
-				if (item.html == "Projects" && !DashboardConfig.getValue('enableProposals')) {
-					//return false;
-				}
+		});
 
-				if (item.html == "Calendar" && !DashboardConfig.getValue('enableCalendar')) {
-					return false;
-				}
+		layout.applySectionFilter(buttons, [{
+			section:['People', 'Community', 'Configuration', 'Referrals'],
+			config:"!simplifiedMenu"
+		}]);
+		
 
-
-				if (item.html == "Activity" && !DashboardConfig.getValue('enableActivity')) {
-					return false;
-				}
-				if (item.html == "Map" && !DashboardConfig.getValue('enableMap')) {
-					return false;
-				}
-
-				return true;
-
-			});
-
-
-			buttons.People =buttons.People.filter(function(item) {
-
-
-
-				if (item.html == "Clients" && !DashboardConfig.getValue('enableClients')) {
-					return false;
-				}
-
-				if (item.html == "Mobile" && !DashboardConfig.getValue('enableMobile')) {
-					return false;
-				}
-
-
-				return true;
-
-			});
-
-			if (DashboardConfig.getValue('simplifiedMenu')) {
-				delete buttons.People;
-				delete buttons.Community;
-				delete buttons.Configuration;
-				delete buttons.Referrals;
-			}
-
-			return buttons;
+		return buttons;
 
 	});
 

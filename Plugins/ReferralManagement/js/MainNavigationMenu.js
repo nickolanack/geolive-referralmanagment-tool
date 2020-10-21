@@ -316,7 +316,7 @@ var MainNavigationMenu = new Class({
 				}, {
 					html: "Archive",
 					template: "configurationArchiveDetail"
-				}, 
+				}
 				// {
 				// 	html: "Trash"
 				// }
@@ -338,6 +338,10 @@ var MainNavigationMenu = new Class({
 					{
 						html: "Reports",
 						alias: {"section":"Main", "button":"Reports", "useClassNames":true, "mirrorActive":true},
+					},
+					{
+						html: "Archive",
+						alias: {"section":"Main", "button":"Archive", "class":"menu-main-archive", "mirrorActive":true},
 					}
 
 
@@ -558,13 +562,71 @@ var SettingsNavigationMenu=new Class({
 	Extends: MainNavigationMenuBase,
 	initialize: function(application) {
 
-	
+		
 		this.parent({
 			"Configuration": [{
 				html: "Settings",
-				alias: {"section":"Main", "button":"Settings", "useClassNames":true, "mirrorActive":true},
+				alias: {"section":"Configuration", "button":"Settings", "mirrorActive":true, "menu":function(){
+					return application.getNamedValue('navigationController');
+				}},
+			},{
+				html: "Settings",
+				name:"FixedSettings",
+				alias: {"section":"Configuration", "button":"Settings", "mirrorActive":true, "menu":function(){
+					return application.getNamedValue('navigationController');
+				}},
 			}]
 
 		}, application);
+
+		this.options.activateFirstMenuItem=false;
+		this.options.manipulateHistory=false;
+	},
+	process: function() {
+
+		var me = this;
+		var parent=this.parent;
+		var application = this.application;
+		application.getNamedValue('navigationController', function(mainMenu){
+			mainMenu.runOnceOnLoad(function(){
+				MainNavigationMenuBase.prototype.process.call(me);
+
+				var updateSticky=function(){
+					var li0=me._buttons['Configuration']['Settings'];
+					var li1=me._buttons['Configuration']['FixedSettings'];
+
+					var p0=li0.getPosition();
+					var p1=li1.getPosition();
+					if(p0.y>p1.y){
+						if(li0.hasClass('bottom')){
+							return;
+						}
+						li0.addClass('bottom');
+						li1.removeClass('bottom');
+						return;
+					}
+
+
+					if(li1.hasClass('bottom')){
+						return;
+					}
+					li0.removeClass('bottom');
+					li1.addClass('bottom');
+
+				};
+				me.runOnceOnLoad(function(){
+					updateSticky();
+					setTimeout(updateSticky, 1000);
+				});
+
+				window.addEvent('resize', updateSticky);
+
+
+			});
+		});
+			
+		
+
 	}
+		
 });

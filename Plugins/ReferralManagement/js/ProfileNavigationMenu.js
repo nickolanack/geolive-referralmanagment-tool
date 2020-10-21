@@ -23,8 +23,8 @@ var ProfileNavigationMenu = new Class({
 			menuId: "userMenu"
 		});
 
-		this.application=application;
-		this.item=item;
+		this.application = application;
+		this.item = item;
 
 
 	},
@@ -32,7 +32,7 @@ var ProfileNavigationMenu = new Class({
 
 		var me = this;
 		var application = this.application;
-		var item=this.item;
+		var item = this.item;
 
 		if (me.menu) {
 			me.parent();
@@ -46,33 +46,52 @@ var ProfileNavigationMenu = new Class({
 
 			me.menu = {
 				"User": [{
-						html: "Overview",
-						template:"userProfileDetailOverview"
-					}, {
-						html: "Projects",
-						template:"userProfileDetailProjects"
-					}, {
-						html: "Tasks",
-						template:"userProfileDetailTasks"
-					}, {
-						html: "Timesheet",
-						template:"userProfileDetailTimesheet"
-					}, {
-						html: "Activity",
-						template:"userProfileDetailActivity"
-					}, {
-						html: "Configuration",
-						template:"userProfileDetailConfiguration"
+					html: "Overview",
+					template: "userProfileDetailOverview"
+				}, {
+					html: "Projects",
+					template: "userProfileDetailProjects"
+				}, {
+					html: "Tasks",
+					template: "userProfileDetailTasks"
+				}, {
+					html: "Timesheet",
+					template: "userProfileDetailTimesheet"
+				}, {
+					html: "Activity",
+					template: "userProfileDetailActivity"
+				}, {
+					html: "Configuration",
+					events: {
+						click: function() {
+							UIInteraction.addUserEditClick(application.getNamedValue('currentUser'));
+						}
 					}
-				]
+				}, {
+					html: "Edit",
+					events: {
+						click: function() {
+							UIInteraction.addUserEditClick(application.getNamedValue('currentUser'));
+						}
+					}
+				}, {
+					html: "Log Out",
+					events: {
+						click: function() {
+							AppClient.logout();
+						}
+					}
+				}]
 			};
 
+
+			me.menu = DashboardPageLayout.layoutMenu('profileMenu', me.menu);
 
 			me.process();
 
 		});
 
-		
+
 
 	}
 

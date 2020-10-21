@@ -60,28 +60,69 @@ var UIInteraction=(function(){
 
 
 		},
+
+		navigateToProfile:function(user){
+
+
+			var application = this._getApplication();
+			DashboardConfig.getValue("enableUserProfiles", function(enabled) {
+
+				if(!enabled){
+					return;
+				}
+
+				application.setNamedValue('currentUser', ((user.getUserId || user.getId).bind(user)()));
+				var controller = application.getNamedValue('navigationController');
+				controller.navigateTo("User", "Main");
+
+
+			});
+		},
+
+		addUserEditClick:function(user){
+
+			var userId=user;
+			if(typeof user=="number"||typeof user=="string"){
+				userId=parseInt(user);
+			}else{
+				userId=parseInt((user.getUserId || user.getId).bind(user)());
+			}
+
+			if(AppClient.getUserType()=="admin"||AppClient.getId()===userId){
+    		    
+    		    var application = this._getApplication();  
+			        
+	            (new UIModalDialog(application, user, {
+	                "formName":"userProfileForm", "formOptions":{template:"form"}})).show()
+	       
+			        
+			}
+
+
+
+		},
 		
 		addUserProfileClick: function(el, user) {
 
+			var me=this;
 			var application = this._getApplication();
 			DashboardConfig.getValue("enableUserProfiles", function(enabled) {
 
 
 
-				if (enabled) {
-
-					el.addClass('with-user-profile-click');
-					el.addEvent('click', function(e) {
-						e.stop();
-
-						application.setNamedValue('currentUser', ((user.getUserId || user.getId).bind(user)()));
-						var controller = application.getNamedValue('navigationController');
-						controller.navigateTo("User", "Main");
-
-
-					});
-
+				if (!enabled) {
+					return;
 				}
+
+				el.addClass('with-user-profile-click');
+				el.addEvent('click', function(e) {
+					e.stop();
+
+					me.navigateToProfile(user);
+
+				});
+
+				
 
 			});
 

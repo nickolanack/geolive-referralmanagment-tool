@@ -32,8 +32,13 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		);
 	}
 
-	
 
+	protected function listLayerItems($json){
+
+		return GetWidget('layerGroups')->getAjaxController()->executeTask('get_configuration', $json);
+
+	}
+	
 	protected function saveTeamMemberPermissions($json) {
 
 		//$projectData=$this->getPlugin()->getProposal($json->project);
@@ -719,8 +724,8 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				return $this->setError('Target user: ' . json_encode($userRoles) . ' is not in role that is editable by user: ' . json_encode($canSetList));
 			}
 
-			(new \core\LongTaskProgress())->emit('onTriggerUpdateDevicesList', array('team' => 1));
-			(new \core\LongTaskProgress())->emit('onTriggerUpdateUserList', array('team' => 1));
+			(new \core\LongTaskProgress())->throttle('onTriggerUpdateDevicesList', array('team' => 1),array('interval'=>30));
+			(new \core\LongTaskProgress())->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval'=>30));
 
 		}
 

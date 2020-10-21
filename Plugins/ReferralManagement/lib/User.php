@@ -35,9 +35,15 @@ class User {
 			(new \attributes\Record('userAttributes'))->getValues($userId, 'user'),
 			function ($attributes) use (&$metadata, $userId) {
 
+
+				$communities=$this->listCommunities();
 				$metadata['community'] = 'none';
-				if (in_array(strtolower($attributes['community']), $this->listCommunities())) {
+				if (in_array(strtolower($attributes['community']), $communities)) {
 					$metadata['community'] = $attributes['community'];
+				}
+
+				if(count($communities)==1&&$metadata['community']=='none'){
+					$metadata['community'] = $communities[0];
 				}
 
 				//$metadata['-community'] = $attributes['community'];

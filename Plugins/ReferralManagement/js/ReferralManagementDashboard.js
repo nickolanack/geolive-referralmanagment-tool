@@ -377,6 +377,10 @@ var ReferralManagementDashboard = (function() {
 				return (communitiesUserCanEdit.indexOf(itemsCommunity) >= 0);
 			}
 
+			var clientHasNoCommunity = function() {
+				return itemsCommunity.toLowerCase()==="none";
+			}
+
 
 
 			var addRole = function(r) {
@@ -407,6 +411,11 @@ var ReferralManagementDashboard = (function() {
 					});
 				}
 
+
+				if (clientHasNoCommunity()) {
+					popover(label + '<br/><span style="color:#ceb250;">users community must be set before<br/>thier user role can be changed</span>');
+					return;
+				}
 
 				if (!clientCanEditUserCommunity()) {
 					popover(label + '<br/><span style="color:#ceb250;">you do not have permission<br/>to set user roles for this community</span>');
