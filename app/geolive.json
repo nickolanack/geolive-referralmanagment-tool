@@ -4653,6 +4653,12 @@
                 },
                 {
                     "type": "boolean",
+                    "name": "enableMobile",
+                    "default": false,
+                    "label": "enableMobile"
+                },
+                {
+                    "type": "boolean",
                     "name": "showOverviewMetricsDetail",
                     "default": true,
                     "label": "showOverviewMetricsDetail"
@@ -4773,7 +4779,9 @@
             "configuration-archive": [
                 "webresources\/config-153\/ed4ac.[G]_m3o_LN2_N63_[ImAgE].png"
             ],
-            "applicationLogo": [],
+            "applicationLogo": [
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/CRA_zKL_[G]_[ImAgE]_MnU-%3Ethumb:%3E200x%3E150.png"
+            ],
             "formatOutputScript": "return $parameters;",
             "main-map": [
                 "webresources\/config-153\/7a1c5.[ImAgE]_HcO_[G]_sSm_8ws.png"
@@ -4819,7 +4827,9 @@
             "fileDownloadBtnIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/PZR_XRl_%5BImAgE%5D_%5BG%5D_xBM.png"
             ],
-            "gatherLogo": [],
+            "gatherLogo": [
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/CRA_zKL_[G]_[ImAgE]_MnU-%3Ethumb:%3E200x%3E150.png"
+            ],
             "fileUploadBtnIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_%5BG%5D_yv_Xj5_vwP.png"
             ],
@@ -4829,7 +4839,7 @@
             "appleAppIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/Lx7_R7S_3Xr_%5BG%5D_%5BImAgE%5D.png"
             ],
-            "slackUrl": "https:\/\/gct3portal.slack.com",
+            "slackUrl": "https:\/\/wabuntc.slack.com",
             "showUsersRoles": false,
             "enableTasks": true,
             "enableProposals": true,
@@ -4838,9 +4848,9 @@
             "enableActivity": true,
             "enableMap": true,
             "simplifiedMenu": false,
-            "gatherLabel": "Gather ",
+            "gatherLabel": "Wabun Referral Tool",
             "darkMode": true,
-            "loadingLabel": "Loading Gather",
+            "loadingLabel": "Loading your Wabun Referral Management Portal",
             "surveyUrl": "https:\/\/docs.google.com\/forms\/d\/e\/1FAIpQLSfq7MQRMB4TDe959R5ER6NKsAf2Q7rTtEOEgfFDJ3JQ3gNxng\/viewform?usp=sf_link",
             "showSearchMenu": false,
             "roleLabels": [],
@@ -4850,7 +4860,7 @@
             "showSplitProjectDetail": true,
             "showProjecReports": true,
             "projectForm": "ProposalTemplate",
-            "enableUserProfiles": false,
+            "enableUserProfiles": true,
             "main-departments": [],
             "main-tags": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/J3w_FbH_%5BImAgE%5D_5cD_%5BG%5D.png"
@@ -4867,7 +4877,9 @@
             "showOverviewMetricsDetail": false,
             "showLeftPanelPrimaryBtn": false,
             "showLeftPanelUser": true,
-            "useFontAwesome": true
+            "useFontAwesome": true,
+            "saveParametersAsData": false,
+            "enableMobile": true
         }
     },
     "widget.154": {
@@ -9406,7 +9418,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
-            "formatModulesScript": "",
+            "formatModulesScript": "mainMapDetail.formatModulesScript.js",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
@@ -9421,17 +9433,21 @@
                                 "config": {
                                     "className": "",
                                     "viewType": "view",
-                                    "namedView": "googlemap",
+                                    "namedView": "mainMapDetailOverview",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "",
-                                    "itemButtonsScript": "return [];",
-                                    "namedViewScript": "return namedView",
                                     "filterModulesScript": "return list",
-                                    "formOptions": "{}"
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             }
                         ]
@@ -17989,6 +18005,229 @@
             "onUpdateScript": "",
             "onSaveScript": "",
             "onLoadScript": "",
+            "readAccess": "public"
+        }
+    },
+    "widget.369": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "mainMapDetailOverview",
+            "target": "mainMapDetailOverview",
+            "templateName": "mainMapDetailOverview",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "mainMapDetailOverview.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "googlemap",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.370": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "mainMapDetailLayers",
+            "target": "mainMapDetailLayers",
+            "templateName": "mainMapDetailLayers",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "mainMapDetailLayers.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.371": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "layersGroupDetailItem",
+            "target": "layersGroupDetailItem",
+            "templateName": "layersGroupDetailItem",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "layersGroupDetailItem.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "layersGroupDetailItem.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "UIListView",
+                                "config": {
+                                    "listClassName": "",
+                                    "className": "x-inset-shading --no-line recent-item tag-item",
+                                    "viewType": "view",
+                                    "namedView": "layerDetailView",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": "",
+                                    "getItemListScript": "layersGroupDetailItem.metadata.positions.content.modules.2.config.getItemListScript.js",
+                                    "formatItemListScript": "return list;",
+                                    "formatListItemModuleScript": "",
+                                    "emptyNamedView": "emptyListView",
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.372": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "layerDetailView",
+            "target": "layerDetailView",
+            "templateName": "layerDetailView",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "positions": {
+                    "title": {
+                        "modules": [
+                            "layerDetailView.metadata.positions.title.modules.0.json"
+                        ]
+                    },
+                    "content": {
+                        "modules": [
+                            "layerDetailView.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": [
+                            "layerDetailView.metadata.positions.footer.modules.0.json"
+                        ]
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                }
+            },
             "readAccess": "public"
         }
     }

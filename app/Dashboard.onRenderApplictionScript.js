@@ -184,6 +184,8 @@ GetWidget('userInviteForm')->display($targetInstance);
 GetWidget('dialogForm')->display($targetInstance);
 
 GetWidget('layerGroupForm')->display($targetInstance);
+GetWidget('mainMapDetailLayers')->display($targetInstance);
+
 
 
 GetWidget('defaultPostDetail')->display($targetInstance);

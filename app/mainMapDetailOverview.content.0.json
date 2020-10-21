@@ -1,0 +1,8 @@
+{
+    "type": "WizardScriptElement",
+    "config": {
+        "name": "My Custom Script",
+        "script": "\n\n\n\nwindow.GetSpatialFiles=function(){\n    \n    \n    return [];\n    \n}\n\n\nreturn null;\n\nvar iframe=new ElementModule('iframe',{\n    \"src\":\"https:\/\/wabun.geolive.ca\/wabun-map\/embed\",\n    \"height\":\"100%\",\n    \"width\":\"100%\",\n    \"frameborder\":\"0\",\n    \"styles\":{\"min-height\":\"400px\"},\n    \"allowfullscreen\":true\n});\n\/\/return '<iframe src=\"https:\/\/wabun.geolive.ca\/wabun-map\/embed\" width=\"100%\" height=\"100%\" frameborder=\"0\" style=\"min-height:700px;\"><\/iframe>';\n\nvar setSize=function(){\n    var size=window.getSize();\n    iframe.getElement().setStyle('height',size.y+\"px\");\n    \n};\nwindow.addEvent('resize', setSize);\nsetSize();\n\nreturn iframe;\n\n\n\n\n\n",
+        "description": "Info about my custom script"
+    }
+}
