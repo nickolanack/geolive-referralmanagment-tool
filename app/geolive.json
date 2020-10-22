@@ -4722,6 +4722,12 @@
                 },
                 {
                     "type": "boolean",
+                    "name": "requireValidMobileEmail",
+                    "default": true,
+                    "label": "requireValidMobileEmail"
+                },
+                {
+                    "type": "boolean",
                     "name": "allowUnappovedMobileSubmissions",
                     "default": false,
                     "label": "allowUnappovedMobileSubmissions"
@@ -4964,7 +4970,8 @@
             "autoCreateDefaultTasks": false,
             "allowUnappovedMobileSubmissions": false,
             "autoApproveMobileCommunityOnce": false,
-            "autoApproveMobileCommunity": false
+            "autoApproveMobileCommunity": false,
+            "requireValidMobileEmail": true
         }
     },
     "widget.154": {
