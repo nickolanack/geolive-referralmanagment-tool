@@ -2,7 +2,7 @@
 @import url("/webresources/font-awesome-4.7.0/css/font-awesome.min.css");
 
 
-.navigation-menu li:before {
+.navigation-menu li:before, .info-button:before {
     content: "\f1b2";
     font-family: FontAwesome;
     font-size: 20px;
