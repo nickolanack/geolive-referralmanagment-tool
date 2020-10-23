@@ -8,6 +8,11 @@
     font-size: 20px;
 }
 
+
+.info-button:before {
+    content: "\f05a";
+}
+
 .navigation-menu li.active:before {
     color: white;
 }
