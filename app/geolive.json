@@ -2974,6 +2974,20 @@
                     "default": "Create Marker",
                     "label": "create-marker-label"
                 },
+                "create-marker-heading": {
+                    "type": "text",
+                    "name": "create-marker-heading",
+                    "default": "Share a community marker",
+                    "label": "create-marker-heading"
+                },
+                "create-marker-intro": {
+                    "type": "input.script",
+                    "name": "create-marker-intro",
+                    "default": "",
+                    "label": "create-marker-intro",
+                    "code-header": "<p>",
+                    "code-footer": "<\/p>"
+                },
                 "map": {
                     "type": "images",
                     "name": "map",
@@ -3423,7 +3437,7 @@
             "target": "mobile-app-config",
             "readAccess": "public",
             "appLogo": [
-                "uploads-wabun.geoforms.ca\/user_files_1\/Uploads\/MXD_jeC_XXY_[ImAgE]_[G].png"
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/CRA_zKL_[G]_[ImAgE]_MnU-%3Ethumb:%3E200x%3E150.png"
             ],
             "water": [
                 "components\/com_geolive\/users_files\/user_files_680\/Uploads\/4MP_[G]_Hjy_UB1_[ImAgE].png"
@@ -3632,7 +3646,9 @@
                         "TUS Crowdsource app config.layers.11.items.0.json"
                     ]
                 }
-            ]
+            ],
+            "create-marker-heading": "Share a community marker",
+            "create-marker-intro": ""
         }
     },
     "widget.145": {
