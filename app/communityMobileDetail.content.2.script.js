@@ -1,1 +1,1 @@
-MobileDeviceList.getMobileDeviceListInfo();
+return MobileDeviceList.getMobileDeviceListInfo();
