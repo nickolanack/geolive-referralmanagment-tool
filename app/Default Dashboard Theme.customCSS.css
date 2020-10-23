@@ -3042,7 +3042,18 @@ img.static-map {
     }
 
 
-   
+   .info-button:before {
+                  
+                    width: 20px;
+                    height: 20px;
+                    display: inline-block;
+                    background-size: 100%;
+                    background-position: center;
+                    vertical-align: top;
+                    margin: 0 10px;
+                    background-repeat: no-repeat;
+                    
+                }
 
      
 
