@@ -18351,7 +18351,7 @@
         "name": "Form View",
         "instance": "UserWizardBuilder",
         "parameters": {
-            "target": "taskForm",
+            "target": "defaultTaskForm",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -18359,30 +18359,30 @@
                     "y": 171
                 },
                 "children": [
-                    "taskForm.metadata.children.0.json",
+                    "defaultTaskForm.metadata.children.0.json",
                     {
                         "title": "New Empty Step",
                         "class": "AttributesTableNode",
                         "fields": [
-                            "taskForm.metadata.children.1.fields.0.json"
+                            "defaultTaskForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
                             "x": 128,
                             "y": 260
                         },
                         "children": [
-                            "taskForm.metadata.children.1.children.0.json"
+                            "defaultTaskForm.metadata.children.1.children.0.json"
                         ],
                         "builderMetadata": {
                             "positions": {
                                 "title": {
                                     "modules": [
-                                        "taskForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                        "defaultTaskForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
                                     ]
                                 },
                                 "content": {
                                     "modules": [
-                                        "taskForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        "defaultTaskForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
                                             "type": "WizardDescriptionField",
                                             "config": {
@@ -18406,7 +18406,7 @@
                                 },
                                 "footer": {
                                     "modules": [
-                                        "taskForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                        "defaultTaskForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
                                     ]
                                 },
                                 "menu": {
@@ -18423,8 +18423,8 @@
                     }
                 ]
             },
-            "widgetTitle": "taskForm",
-            "templateName": "taskForm",
+            "widgetTitle": "defaultTaskForm",
+            "templateName": "defaultTaskForm",
             "requireTarget": true,
             "resolveItemScript": "return item;",
             "beforeSubmitScript": "",

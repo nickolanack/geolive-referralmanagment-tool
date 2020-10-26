@@ -1,10 +1,8 @@
 {
-    "type": "WizardTitleField",
+    "type": "WizardScriptElement",
     "config": {
-        "label": "Title",
-        "message": "add a title",
-        "className": "",
-        "maxChars": 0,
-        "textFormatScript": ""
+        "name": "My Custom Script",
+        "script": "if(item.getId()<=0){\n    return null;\n}\n\nvar d=new ElementModule('div',{\n    styles:{\n        \"display\": \"inline-table\",\n        \"width\": \"100%\",\n        \"border-bottom\": \"1px dotted #6A7CE9\"\n    }\n});\nvar b=new Element('button',{\"class\":\"primary-btn error\", \"html\":\"Delete\", events:{\"click\":function(){\n  if(confirm(\"Are you sure you want to delete thist task?\")){\n      TaskItem.DeleteTask(item);\n      wizard.close();\n  }\n}}});\nd.appendChild(b);\n\n\nreturn d;",
+        "description": "Info about my custom script"
     }
 }

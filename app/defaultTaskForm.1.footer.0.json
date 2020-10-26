@@ -4,12 +4,10 @@
         "className": "WizardFooter",
         "reduceOpacity": false,
         "onCompleteScript": "defaultBehaviorFn();",
-        "showFinish": true,
-        "showCancel": true,
-        "showBack": true,
-        "labelForCancel": "Cancel",
-        "labelForSubmit": "Save",
+        "labelForCancel": "cancel",
+        "labelForSubmit": "submit",
         "labelForNext": "next",
-        "labelForPrevious": "previous"
+        "labelForPrevious": "previous",
+        "showCancel": true
     }
 }
