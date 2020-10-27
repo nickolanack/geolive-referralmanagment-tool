@@ -74,7 +74,7 @@ if(!$useFontAwesome){
 if($config->getParameter('showSplitProjectDetail')){
     ?>
    
-   .ui-view.main-content-area>div>div{
+   [data-view="splitProjectDetail"]>div>div{
         display:inline-table;
         width: 100%;
         height: 100%;
