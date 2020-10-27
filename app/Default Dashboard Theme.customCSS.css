@@ -1868,6 +1868,12 @@ span.filter-btns {
     top: 14px;
 }
 
+[data-view="singleProjectTasksDetail"]  span.filter-btns {
+    display: inline-table;
+    width: 100%;
+    position: inherit;
+}
+
 span.filter-btns.left-justified {
     display: inline-block;
     position: relative;
