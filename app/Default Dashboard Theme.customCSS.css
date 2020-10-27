@@ -1874,7 +1874,7 @@ span.filter-btns {
     position: inherit;
 }
 
-span.filter-btns.left-justified {
+[data-view="tasksOverviewListDetail"] span.filter-btns {
     display: inline-block;
     position: relative;
     margin: 10px;
