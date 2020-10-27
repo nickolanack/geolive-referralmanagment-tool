@@ -18469,7 +18469,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
-            "formatModulesScript": "",
+            "formatModulesScript": "splitProjectDetail.formatModulesScript.js",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
