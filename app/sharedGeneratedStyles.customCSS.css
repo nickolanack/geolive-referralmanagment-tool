@@ -80,9 +80,7 @@ if($config->getParameter('showSplitProjectDetail')){
         height: 100%;
     }
     
-    [data-view="splitProjectDetail"].ui-view.inset-menu-shading {
-        display: contents;
-    }
+    
     
     <?php
     
