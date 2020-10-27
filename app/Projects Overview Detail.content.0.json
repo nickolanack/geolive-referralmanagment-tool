@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "\/*Project Filters*\/\n\nreturn function(viewer, element, parentModule){\n    \n    var div=element.appendChild(new Element('div',{\n        styles:{\n            \"display\": \"inline-table\",\n            \"width\": \"100%\"\n        }\n    }));\n    \n\n    (new ListSortModule(function(){\n        return viewer.getChildView('content', 2);\n    }, {\n        sorters:ReferralManagementDashboard.projectSorters(),\n        currentSort:\"priority\",\n        currentSortInvert:true\n    })).load(null, div, null);\n    \n\n    \n  \n    (new ListFilterModule(function(){\n        return viewer.getChildView('content', 2)\n    }, {\n        filters:ReferralManagementDashboard.projectFilters(),\n        currentFilter:\"complete\",\n        currentFilterInvert:true\n    })).load(null, div, null);\n    \n\n  \n\n}",
+        "script": "return Proposal.ProjectSortMenuButtons(3)",
         "description": "Info about my custom script"
     }
 }
