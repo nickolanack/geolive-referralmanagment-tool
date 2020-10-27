@@ -1898,7 +1898,7 @@
                     "label": "Authorizer",
                     "description": "",
                     "fieldType": "text",
-                    "color": "rgb(undefined, undefined, undefined)",
+                    "color": "rgb(NaN, NaN, NaN)",
                     "searchability": "public",
                     "editability": "registered",
                     "fieldTextOptions": {
@@ -1980,11 +1980,11 @@
                     "tableId": "5",
                     "tableName": "proposalAttributes",
                     "tableSuffix": "_8359",
-                    "title": "Approved",
-                    "label": "approved",
+                    "title": "approved",
+                    "label": "Approved",
                     "description": "",
                     "fieldType": "boolean",
-                    "color": "rgb(undefined, undefined, undefined)",
+                    "color": "rgb(NaN, NaN, NaN)",
                     "searchability": "public",
                     "editability": "registered",
                     "fieldBooleanOptions": {
