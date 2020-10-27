@@ -5342,29 +5342,7 @@
                     },
                     "content": {
                         "modules": [
-                            "Main Projects Detail.metadata.positions.content.modules.0.json",
-                            {
-                                "type": "UIView",
-                                "config": {
-                                    "className": "main-panel inset-shading",
-                                    "viewType": "view",
-                                    "namedView": "singleProjectDetail",
-                                    "shouldRender": true,
-                                    "namedViewScript": "Main Projects Detail.metadata.positions.content.modules.1.config.namedViewScript.js",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "Main Projects Detail.metadata.positions.content.modules.1.config.formatModuleScript.js",
-                                    "resolveItemScript": "Main Projects Detail.metadata.positions.content.modules.1.config.resolveItemScript.js",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": ""
-                                }
-                            }
+                            "Main Projects Detail.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
@@ -18504,11 +18482,11 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "dark-only-shading inset-menu-shading left-panel",
+                                    "className": "main-panel inset-shading",
                                     "viewType": "view",
-                                    "namedView": "projectsListDetail",
+                                    "namedView": "singleProjectDetail",
                                     "shouldRender": true,
-                                    "namedViewScript": "return namedView",
+                                    "namedViewScript": "splitProjectDetail.metadata.positions.content.modules.1.config.namedViewScript.js",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
                                     "formOptions": "{}",
@@ -18516,7 +18494,7 @@
                                     "deleteItemScript": "",
                                     "initModuleScript": "",
                                     "formatModuleScript": "splitProjectDetail.metadata.positions.content.modules.1.config.formatModuleScript.js",
-                                    "resolveItemScript": "",
+                                    "resolveItemScript": "splitProjectDetail.metadata.positions.content.modules.1.config.resolveItemScript.js",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
