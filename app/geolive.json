@@ -18566,11 +18566,11 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "dark-only-shading inset-menu-shading left-panel",
+                                    "className": "main-panel inset-shading",
                                     "viewType": "view",
-                                    "namedView": "projectsListDetail",
+                                    "namedView": "singleProjectDetail",
                                     "shouldRender": true,
-                                    "namedViewScript": "return namedView",
+                                    "namedViewScript": "groupListsProjectDetail.metadata.positions.content.modules.1.config.namedViewScript.js",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
                                     "formOptions": "{}",
@@ -18578,7 +18578,7 @@
                                     "deleteItemScript": "",
                                     "initModuleScript": "",
                                     "formatModuleScript": "groupListsProjectDetail.metadata.positions.content.modules.1.config.formatModuleScript.js",
-                                    "resolveItemScript": "",
+                                    "resolveItemScript": "groupListsProjectDetail.metadata.positions.content.modules.1.config.resolveItemScript.js",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,

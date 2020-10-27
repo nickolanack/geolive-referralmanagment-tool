@@ -1,1 +1,1 @@
-console.log(["projects menu list", module, item]);
+application.setNamedValue("projectDetailView", module);
