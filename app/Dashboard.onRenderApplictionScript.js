@@ -112,7 +112,13 @@ GetWidget('userProfileDetail')->display($targetInstance);
 GetWidget('userProfileDetailProjects')->display($targetInstance);
 
 GetWidget('usersCombinedDetail')->display($targetInstance);
+
+GetWidget('splitProjectDetail')->display($targetInstance);
+GetWidget('groupListsProjectDetail')->display($targetInstance);
+
+
 GetWidget('documentProjectDetail')->display($targetInstance);
+
 
 
 //GetWidget('mainDashboardRecentDetail')->display($targetInstance)t;
