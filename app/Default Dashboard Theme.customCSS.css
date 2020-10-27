@@ -795,6 +795,10 @@ button.inline-logout {
     border: none;
 }
 
+[data-view="splitProjectDetail"].ui-view.inset-menu-shading {
+        display: contents;
+    }
+
 
 .ui-view.dashboard-main>div>div, .ui-view.main-panel>div>div {
     display: inline-table;
