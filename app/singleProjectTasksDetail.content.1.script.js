@@ -1,1 +1,1 @@
-return TaskItem.TaskListSortMenu(viewer, element, parentModule);
+return TaskItem.TaskListSortMenu();
