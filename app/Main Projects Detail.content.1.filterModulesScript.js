@@ -1,2 +1,2 @@
-return DashboardPageLayout.layoutPage(uiview, list);
+DashboardPageLayout.layoutPage(uiview, list, callback);
 //return list
