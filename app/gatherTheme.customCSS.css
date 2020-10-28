@@ -246,6 +246,13 @@ button.inline-btn.add, button.primary-btn {
     background-color: $highlightBtnColor;
     border-radius: 100px;
 }
+
+
+.inline-btn.sort,  .inline-btn.filter{
+    border-radius: 100px;
+    margin-right: 12px;
+}
+
 [data-view="projectsOverviewDetail"]{
     display:block;
     margin-bottom:50px;
