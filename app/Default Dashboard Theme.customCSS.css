@@ -931,6 +931,13 @@ button.inline-logout {
     display: inline-block;
     vertical-align: top;
 }
+.ui-view.w-50 {
+    width: calc( 50% - 12px );
+
+ 
+    display: inline-block;
+    vertical-align: top;
+}
 
 .ui-view.h-60>div{
     
