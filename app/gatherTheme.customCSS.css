@@ -77,6 +77,10 @@ $highlightBtnColor:#efa82c;
     display:none;
 }
 
+[data-view="groupListsProjectDetail"].ui-view.left-panel, [data-view="projectsListDetail"].ui-view.left-panel{
+    max-width: unset;
+}
+
 [data-view="singleTaskListItemDetail"]{
     line-height: 30px;
     height: 30px;
