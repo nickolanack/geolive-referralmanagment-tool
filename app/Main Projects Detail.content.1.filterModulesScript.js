@@ -1,2 +1,2 @@
-return DashboardPageLayout.layoutPage('splitProjectDetail', list);
+return DashboardPageLayout.layoutPage(uiview, list);
 //return list
