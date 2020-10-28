@@ -18562,7 +18562,29 @@
                     },
                     "content": {
                         "modules": [
-                            "groupListsProjectDetail.metadata.positions.content.modules.0.json"
+                            "groupListsProjectDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "dark-only-shading inset-menu-shading left-panel",
+                                    "viewType": "view",
+                                    "namedView": "projectsListDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "groupListsProjectDetail.metadata.positions.content.modules.1.config.formatModuleScript.js",
+                                    "resolveItemScript": "",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            }
                         ]
                     },
                     "footer": {
