@@ -1,2 +1,2 @@
 
-return DashboardPageLayout.layoutPage(viewModule /*'splitProjectDetail'*/, list);
+return DashboardPageLayout.layoutPage('splitProjectDetail', list);
