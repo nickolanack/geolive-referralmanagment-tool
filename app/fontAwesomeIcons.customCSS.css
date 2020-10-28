@@ -95,6 +95,23 @@
     font-size: 20px;
 }
 
+.inline-navigation-menu li.menu-layout-split:before {
+    content: "\f00b";
+    font-family: FontAwesome;
+    font-size: 20px;
+}
+
+.inline-navigation-menu li.menu-layout-list:before {
+    content: "\f039";
+    font-family: FontAwesome;
+    font-size: 20px;
+}
+.inline-navigation-menu li.menu-layout-fancy:before {
+    content: "\f009";
+    font-family: FontAwesome;
+    font-size: 20px;
+}
+
 
 .starred-indicator:before {
     content: "\f006";
