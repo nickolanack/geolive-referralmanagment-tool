@@ -1,0 +1,1 @@
+return DashboardPageLayout.layoutPage('mainProjectDetail', list);
