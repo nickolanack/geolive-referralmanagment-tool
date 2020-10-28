@@ -148,7 +148,7 @@ $highlightBtnColor:#efa82c;
         margin-right:10px;
         
     }
-    li.menu-user-configuration {
+    li.menu-user-configuration, li.menu-layout-split, li.menu-layout-list, li.menu-layout-fancy {
         button {
             font-size: 0;
         }
