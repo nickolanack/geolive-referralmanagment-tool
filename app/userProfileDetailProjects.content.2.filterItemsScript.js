@@ -1,2 +1,2 @@
-return (ReferralManagementDashboard.currentProjectFilterFn.apply(null, arguments)
+return (ProjectList.currentProjectFilterFn.apply(null, arguments)
 &&item.getProjectSubmitterId()+""==application.getNamedValue("currentUser")+"")
