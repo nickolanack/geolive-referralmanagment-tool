@@ -77,6 +77,10 @@ $highlightBtnColor:#efa82c;
     display:none;
 }
 
+.project-list-btns.header-hieght {
+    height: 60px;
+}
+
 [data-view="groupListsProjectDetail"].ui-view.left-panel, [data-view="projectsListDetail"].ui-view.left-panel{
     max-width: unset;
 }
