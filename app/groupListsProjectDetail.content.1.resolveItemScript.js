@@ -1,3 +1,4 @@
 return new ProjectList({
-    label:"Project list two"
+    label:"Implemented Projects",
+    showCreateBtn:false
 })
