@@ -1,10 +1,8 @@
 {
-    "type": "InlineHtml",
+    "type": "WizardScriptElement",
     "config": {
-        "className": "section-title section-padding",
-        "text": "Projects",
-        "template": "",
-        "templateVariablesScript": "",
-        "formatTextScript": ""
+        "name": "My Custom Script",
+        "script": "\n\n\nvar projectsLabel=\"Projects\";\n\nif(item instanceof ProjectList){\n    projectsLabel=item.getLabel();\n}\n\n\nreturn '<div class=\"section-title section-padding\" data-identifier=\"htmlLabel\"><span>'+projectsLabel+'<\/span><\/div>'",
+        "description": "Info about my custom script"
     }
 }
