@@ -1,3 +1,3 @@
 /*Project Filters*/
 
-return Proposal.ProjectSortMenuButtons(2);
+return ProjectList.SortMenuContent(2);
