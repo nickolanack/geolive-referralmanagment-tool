@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "return Proposal.ProjectSortMenuButtons(3)",
+        "script": "return ProjectList.SortMenuContent(3)",
         "description": "Info about my custom script"
     }
 }
