@@ -18584,6 +18584,28 @@
                                     "insertAtTop": false,
                                     "targetName": ""
                                 }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "dark-only-shading inset-menu-shading left-panel",
+                                    "viewType": "view",
+                                    "namedView": "projectsListDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "groupListsProjectDetail.metadata.positions.content.modules.2.config.formatModuleScript.js",
+                                    "resolveItemScript": "groupListsProjectDetail.metadata.positions.content.modules.2.config.resolveItemScript.js",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
                             }
                         ]
                     },

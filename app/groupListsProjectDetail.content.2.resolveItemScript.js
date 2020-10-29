@@ -1,4 +1,4 @@
 return new ProjectList({
-    label:"Projects pending approval",
+    label:"Implemented Projects",
     showCreateBtn:false
 })

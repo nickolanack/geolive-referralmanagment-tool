@@ -1,22 +1,8 @@
 {
-    "type": "UIView",
+    "type": "WizardScriptElement",
     "config": {
-        "className": "dark-only-shading inset-menu-shading left-panel",
-        "viewType": "view",
-        "namedView": "projectsListDetail",
-        "shouldRender": true,
-        "namedViewScript": "return namedView",
-        "showInlineEdit": false,
-        "namedFormView": "defaultFormView",
-        "formOptions": "{}",
-        "showDeleteButton": false,
-        "deleteItemScript": "",
-        "initModuleScript": "",
-        "formatModuleScript": "console.log([\"projects menu list\", module, item]);",
-        "resolveItemScript": "return new ProjectList({\n    label:\"Projects pending approval\",\n    showCreateBtn:false\n})",
-        "filterModulesScript": "return list",
-        "itemButtonsScript": "return [];",
-        "insertAtTop": false,
-        "targetName": ""
+        "name": "My Custom Script",
+        "script": "return ProjectList.HeaderMenuContent();",
+        "description": "Info about my custom script"
     }
 }
