@@ -1,1 +1,1 @@
-return ReferralManagementDashboard.currentProjectFilterFn.apply(null, arguments);
+return ProjectList.currentProjectFilterFn.apply(null, arguments);

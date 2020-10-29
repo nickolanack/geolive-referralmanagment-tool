@@ -1,1 +1,1 @@
-return ReferralManagementDashboard.currentProjectSortFn.apply(null, arguments);
+return ProjectList.currentProjectSortFn.apply(null, arguments);
