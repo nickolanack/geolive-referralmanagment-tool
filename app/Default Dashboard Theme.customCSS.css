@@ -2320,6 +2320,7 @@ span.SearchModule.search-container {
     font-weight: 100;
     background-color:rgba(0,0,0,0.2);
     text-transform: capitalize;
+    margin-bottom: 5px;
 }
 .TagCloudModule .tag-cloud>span.tag-el:hover {
   background-color: #4b58a7;
