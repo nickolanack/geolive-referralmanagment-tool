@@ -1918,6 +1918,17 @@ span.filter-btns {
     
 }
 
+.inline-btn.filter .span.locked{
+    float: left;
+    background: rgba(0,0,0,0.2);
+    padding: 4px 10px;
+    border-radius: 100px;
+    line-height: 8px;
+    margin: -2px;
+    margin-right: 10px;
+    height: 9px;
+}
+
 
 .inline-btn.sort.hasFilter, .inline-btn.sort.hasOrder {
     color: $tagBtnColor;
