@@ -781,16 +781,16 @@
                             "widget.ProposalWizardBuilder.65.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 178,
-                            "y": 188
+                            "x": 55,
+                            "y": 130
                         },
                         "children": [
                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 138,
-                                    "y": 451
+                                    "x": 15,
+                                    "y": 393
                                 }
                             },
                             {
@@ -800,16 +800,16 @@
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 638,
-                                    "y": 302
+                                    "x": 478,
+                                    "y": 131
                                 },
                                 "children": [
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 598,
-                                            "y": 553
+                                            "x": 438,
+                                            "y": 382
                                         }
                                     },
                                     {
@@ -819,16 +819,16 @@
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1167,
-                                            "y": 211
+                                            "x": 885,
+                                            "y": 139
                                         },
                                         "children": [
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1127,
-                                                    "y": 437
+                                                    "x": 845,
+                                                    "y": 365
                                                 }
                                             },
                                             {
@@ -838,16 +838,16 @@
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.fields.0.json"
                                                 ],
                                                 "_diagramState": {
-                                                    "x": 1366,
-                                                    "y": 647
+                                                    "x": 819,
+                                                    "y": 750
                                                 },
                                                 "children": [
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.0.json",
                                                     {
                                                         "class": "InsertNode",
                                                         "_diagramState": {
-                                                            "x": 1326,
-                                                            "y": 848
+                                                            "x": 779,
+                                                            "y": 951
                                                         }
                                                     }
                                                 ],
@@ -862,26 +862,19 @@
                                                             "modules": [
                                                                 "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.builderMetadata.positions.content.modules.0.json",
                                                                 {
-                                                                    "type": "plugin.Attributes.WizardTextAttribute",
+                                                                    "type": "plugin.Attributes.WizardBooleanAttribute",
                                                                     "config": {
                                                                         "attributeFields": [
                                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
                                                                         ],
                                                                         "className": "",
-                                                                        "label": "{field.label}",
-                                                                        "message": "",
-                                                                        "lines": 3,
-                                                                        "maxChars": 0,
-                                                                        "mandatory": false,
-                                                                        "multiEntry": false,
-                                                                        "muliTemplate": "lines",
-                                                                        "multiMessage": "",
-                                                                        "formatter": "none",
-                                                                        "iconTint": "rgb(100, 149, 237)",
-                                                                        "autocomplete": true,
-                                                                        "inputOptions": [],
-                                                                        "onRenderTextFieldScript": "",
-                                                                        "formatdefaultScript": ""
+                                                                        "label": "Project Status",
+                                                                        "showLabel": false,
+                                                                        "presentationStyle": "radio",
+                                                                        "presentationRadioTrueLabel": "Implemented",
+                                                                        "presentationRadioFalseLabel": "Pending",
+                                                                        "presentationImagesTrueImage": [],
+                                                                        "presentationImagesFalseImage": []
                                                                     }
                                                                 },
                                                                 {
@@ -908,10 +901,33 @@
                                                                     }
                                                                 },
                                                                 {
-                                                                    "type": "plugin.Attributes.WizardTagCloud",
+                                                                    "type": "plugin.Attributes.WizardTextAttribute",
                                                                     "config": {
                                                                         "attributeFields": [
                                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
+                                                                        ],
+                                                                        "className": "",
+                                                                        "label": "{field.label}",
+                                                                        "message": "",
+                                                                        "lines": 3,
+                                                                        "maxChars": 0,
+                                                                        "mandatory": false,
+                                                                        "multiEntry": false,
+                                                                        "muliTemplate": "lines",
+                                                                        "multiMessage": "",
+                                                                        "formatter": "none",
+                                                                        "iconTint": "rgb(100, 149, 237)",
+                                                                        "autocomplete": true,
+                                                                        "inputOptions": [],
+                                                                        "onRenderTextFieldScript": "",
+                                                                        "formatdefaultScript": ""
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "plugin.Attributes.WizardTagCloud",
+                                                                    "config": {
+                                                                        "attributeFields": [
+                                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
                                                                         ],
                                                                         "className": "",
                                                                         "showLabel": false,
@@ -923,7 +939,7 @@
                                                                         "selectedColor": "rgb(143, 188, 143)",
                                                                         "shuffleTags": false,
                                                                         "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
-                                                                        "getItemTagsScript": "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.builderMetadata.positions.content.modules.3.config.getItemTagsScript.js",
+                                                                        "getItemTagsScript": "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.builderMetadata.positions.content.modules.4.config.getItemTagsScript.js",
                                                                         "formatModule": ""
                                                                     }
                                                                 },
@@ -931,7 +947,7 @@
                                                                     "type": "plugin.Attributes.WizardTextAttribute",
                                                                     "config": {
                                                                         "attributeFields": [
-                                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
+                                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.builderMetadata.positions.content.modules.5.config.attributeFields.0.json"
                                                                         ],
                                                                         "className": "",
                                                                         "label": "{field.label}",
