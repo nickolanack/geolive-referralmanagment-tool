@@ -1913,6 +1913,11 @@ span.filter-btns {
     color:white;
 }
 
+.inline-btn.filter li.locked {
+    display:none;
+    
+}
+
 
 .inline-btn.sort.hasFilter, .inline-btn.sort.hasOrder {
     color: $tagBtnColor;
