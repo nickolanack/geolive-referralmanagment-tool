@@ -1,4 +1,5 @@
 return new ProjectList({
     label:"Projects pending approval",
-    showCreateBtn:false
+    showCreateBtn:false,
+    lockFilter:"!implmented"
 })
