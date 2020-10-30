@@ -1,3 +1,3 @@
 /*Project Filters*/
 
-return ProjectList.SortMenuContent();
+return ProjectList.SortMenuContent(item);
