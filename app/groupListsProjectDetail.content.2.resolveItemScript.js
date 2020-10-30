@@ -1,5 +1,5 @@
 return new ProjectList({
     label:"Implemented Projects",
     showCreateBtn:false,
-    lockFilter:"implmented"
+    lockFilter:"implemented"
 })
