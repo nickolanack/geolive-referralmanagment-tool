@@ -4724,6 +4724,12 @@
                 },
                 {
                     "type": "boolean",
+                    "name": "enablePending",
+                    "default": true,
+                    "label": "enablePending"
+                },
+                {
+                    "type": "boolean",
                     "name": "enableCalendar",
                     "default": true,
                     "label": "enableCalendar"
@@ -4899,7 +4905,7 @@
                 "webresources\/config-153\/ed4ac.[G]_m3o_LN2_N63_[ImAgE].png"
             ],
             "applicationLogo": [
-                "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/[G]_u9R_eXM_b1g_[ImAgE]-%3Ethumb:%3E200x%3E150.png"
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/tla-o-qui-aht.geoforms.ca\/1\/Uploads\/cx9_%5BImAgE%5D_YG9_hMA_%5BG%5D-%3Ethumb%3A%3E200x%3E150.png"
             ],
             "formatOutputScript": "return $parameters;",
             "main-map": [
@@ -4947,7 +4953,7 @@
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/PZR_XRl_%5BImAgE%5D_%5BG%5D_xBM.png"
             ],
             "gatherLogo": [
-                "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/[G]_u9R_eXM_b1g_[ImAgE]-%3Ethumb:%3E200x%3E150.png"
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/tla-o-qui-aht.geoforms.ca\/1\/Uploads\/%5BG%5D_%5BImAgE%5D_s_TK6_XUw-%3Ethumb%3A%3E200x%3E150.png"
             ],
             "fileUploadBtnIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_%5BG%5D_yv_Xj5_vwP.png"
@@ -4967,9 +4973,9 @@
             "enableActivity": true,
             "enableMap": true,
             "simplifiedMenu": false,
-            "gatherLabel": "Wabun Referral Tool",
+            "gatherLabel": "Tla-o-qui-aht Referral Tool",
             "darkMode": true,
-            "loadingLabel": "Loading your Wabun Referral Management Portal",
+            "loadingLabel": "Loading your Tla-o-qui-aht Referral Management Portal",
             "surveyUrl": "https:\/\/docs.google.com\/forms\/d\/e\/1FAIpQLSfq7MQRMB4TDe959R5ER6NKsAf2Q7rTtEOEgfFDJ3JQ3gNxng\/viewform?usp=sf_link",
             "showSearchMenu": false,
             "roleLabels": [],
@@ -5003,7 +5009,8 @@
             "allowUnappovedMobileSubmissions": false,
             "autoApproveMobileCommunityOnce": false,
             "autoApproveMobileCommunity": false,
-            "requireValidMobileEmail": true
+            "requireValidMobileEmail": true,
+            "enablePending": true
         }
     },
     "widget.154": {
