@@ -14478,16 +14478,16 @@
                             "forgotPasswordForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 318,
-                            "y": 450
+                            "x": 328,
+                            "y": 460
                         },
                         "children": [
                             "forgotPasswordForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 278,
-                                    "y": 626
+                                    "x": 288,
+                                    "y": 636
                                 }
                             }
                         ],
@@ -14514,7 +14514,7 @@
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "add another value",
                                                 "formatter": "none",
-                                                "onRenderTextFieldScript": "",
+                                                "onRenderTextFieldScript": "forgotPasswordForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.onRenderTextFieldScript.js",
                                                 "formatValueScript": "",
                                                 "getValueScript": " return \"\"; ",
                                                 "updateValueScript": " object.value=value ",
