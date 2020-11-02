@@ -9889,19 +9889,19 @@
             "metadata": {
                 "title": "userAttributes",
                 "_tableDiagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 0,
+                    "y": 0
                 },
                 "_diagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 0,
+                    "y": 0
                 },
                 "appliesTo": [
                     "user"
                 ],
                 "_typeDiagramState": {
-                    "x": 100,
-                    "y": 300
+                    "x": 0,
+                    "y": 0
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -11085,19 +11085,19 @@
             "metadata": {
                 "title": "proposalAttributes",
                 "_tableDiagramState": {
-                    "x": 316,
-                    "y": 264
+                    "x": 0,
+                    "y": 0
                 },
                 "_diagramState": {
-                    "x": 316,
-                    "y": 264
+                    "x": 0,
+                    "y": 0
                 },
                 "appliesTo": [
                     "proposal"
                 ],
                 "_typeDiagramState": {
-                    "x": 100,
-                    "y": 300
+                    "x": 0,
+                    "y": 0
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -12431,7 +12431,7 @@
                         "label": "Authorizer",
                         "description": "",
                         "icon": [],
-                        "color": "rgb(NaN, NaN, NaN)",
+                        "color": "rgb(undefined, undefined, undefined)",
                         "visibility": "public",
                         "editability": "registered",
                         "searchability": "public",
@@ -12525,50 +12525,6 @@
                         "searchability": "public",
                         "allowMultiple": false,
                         "fieldType": "text",
-                        "fieldTextOptions": {
-                            "textType": "input",
-                            "inputOptions": {
-                                "buildAutocomplete": false,
-                                "requireModeration": false,
-                                "limitMaxChars": 0,
-                                "limitMaxWords": 0,
-                                "allowHtml": false,
-                                "allowMedia": true,
-                                "allowLinks": true
-                            },
-                            "listOptions": {
-                                "takeSugesstions": true,
-                                "buildTree": false,
-                                "iconize": false,
-                                "colorize": false
-                            }
-                        },
-                        "fieldNumberOptions": {
-                            "precision": 0,
-                            "limitMinValue": "",
-                            "limitMaxValue": ""
-                        },
-                        "fieldBooleanOptions": {
-                            "hideFalse": true,
-                            "trueLabel": "",
-                            "falseLabel": "",
-                            "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
-                        }
-                    },
-                    {
-                        "was": "",
-                        "title": "approved",
-                        "label": "Approved",
-                        "description": "",
-                        "icon": [],
-                        "color": "rgb(NaN, NaN, NaN)",
-                        "visibility": "public",
-                        "editability": "registered",
-                        "searchability": "public",
-                        "allowMultiple": false,
-                        "fieldType": "boolean",
                         "fieldTextOptions": {
                             "textType": "input",
                             "inputOptions": {
