@@ -6,7 +6,7 @@ return [
         "style":"", 
         "class":"primary-btn selectable "+(item.isPending()?"selected":""), 
         "events":{"click":function(){
-            
+             item.setPending();
         }}
     }),
     new Element('button',{
@@ -14,7 +14,7 @@ return [
         "style":"", 
         "class":"primary-btn selectable "+(item.isImplemented()?"selected":""), 
         "events":{"click":function(){
-            
+            item.setImplemented();  
         }}
     })
     ];
