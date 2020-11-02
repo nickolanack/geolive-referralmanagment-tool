@@ -298,8 +298,8 @@ button.inline-btn.add, button.primary-btn {
 }
 
 
-.selectable{
-    &button.primary-btn {
+button.selectable{
+    &.primary-btn {
         border: 1px dashed mediumseagreen;
         background-color: transparent;
         
