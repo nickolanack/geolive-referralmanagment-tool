@@ -298,10 +298,17 @@ button.inline-btn.add, button.primary-btn {
 }
 
 
+[data-view="singleProjectEditButtonsDetail"] {
+    height: 58px;
+    display: block;
+    padding: 24px;
+}
+
 button.selectable{
     &.primary-btn {
         border: 1px dashed mediumseagreen;
         background-color: transparent;
+        float: left;
         
         &.selected {
             background-color: mediumseagreen;
