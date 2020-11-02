@@ -298,3 +298,19 @@ button.inline-btn.add, button.primary-btn {
 }
 
 
+.selectable{
+    &button.primary-btn {
+        border: 1px dashed mediumseagreen;
+        background-color: transparent;
+        
+        &.selected {
+            background-color: mediumseagreen;
+        }
+
+        
+    }
+    
+    
+}
+
+
