@@ -112,6 +112,13 @@
     font-size: 20px;
 }
 
+.inline-navigation-menu li.menu-layout-thumbs:before {
+    content: "\f009";
+    font-family: FontAwesome;
+    font-size: 20px;
+}
+
+
 
 .starred-indicator:before {
     content: "\f006";
