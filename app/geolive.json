@@ -71,7 +71,12 @@
             "key": "XXXX-XXXX",
             "secret": "XXXX-XXXX",
             "useCloudFront": true,
-            "cloudFrontDomain": "https:\/\/dyl2vw577xcfk.cloudfront.net\/"
+            "cloudFrontDomain": "https:\/\/dyl2vw577xcfk.cloudfront.net\/",
+            "mime-image": [],
+            "mime-audio": [],
+            "mime-document": [],
+            "mime-document-pdf": [],
+            "mime-video": []
         }
     },
     "plugin.12": {
