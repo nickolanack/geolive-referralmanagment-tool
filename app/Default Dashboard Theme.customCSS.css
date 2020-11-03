@@ -475,166 +475,171 @@ body.dragover .file-item.droppable-hide {
     display: none;
 }
 
-.file-list .droppable {
-    display: inline-block;
-    background: rgba(0,0,0,0.1);
-    vertical-align: top;
-    margin: 7px 10px;
-    text-align: center;
-    line-height: 100px;
-    border-radius: 2px;
-    color: slategray;
+.file-list{
+
+    .droppable {
+        display: inline-block;
+        background: rgba(0,0,0,0.1);
+        vertical-align: top;
+        margin: 7px 10px;
+        text-align: center;
+        line-height: 100px;
+        border-radius: 2px;
+        color: slategray;
+    }
+
+    .droppable:after {
+        line-height: 135px;
+    }
+
+    .droppable .add-btn {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        cursor: none;
+        top: 30%;
+        left: calc( 50% - 10px );
+        z-index: 1;
+        background-size: 100%;
+            pointer-events: none;
+    }
+
+
+
+    .droppable:after {
+        content: "Add";
+    }
+
+    .droppable.drop-letters:after {
+        content: " Letters";
+        font-size: 12px;
+        color:#c7ae4b;
+    }
+    .droppable.drop-permits:after {
+        content: " Permits";
+        font-size: 12px;
+        color:#c7ae4b;
+    }
+    .droppable.drop-agreements:after {
+        content: " Agreements";
+        font-size: 12px;
+        color:#c7ae4b;
+    }
+    .droppable.drop-documents:after {
+        content: " Documents";
+        font-size: 12px;
+        color:#c7ae4b;
+    }
+
+    .droppable.drop-letters:before, 
+    .droppable.drop-permits:before, 
+    .droppable.drop-agreements:before, 
+    .droppable.drop-documents:before {
+        content: "Add";
+        font-size: 12px;
+    }
+
+    .droppable.drop-spatial:after {
+        content: " Spatial";
+        font-size: 12px;
+        color:#c7ae4b;
+    }
+    .droppable.drop-attachments:after {
+        content: " Attachments";
+        font-size: 12px;
+        color:#c7ae4b;
+    }
+
+
+    .droppable.drop-spatial:before, .droppable.drop-attachments:before {
+        content: "Add";
+        font-size: 12px;
+    }
+
+    .file-container {
+        background-size: 60%;
+        background-position: center 13px;
+        background-repeat: no-repeat;
+    }
+
+    .file-container .with-mediaTypeIcon img {
+        display: none;
+    }
+
+    .file-item button {
+        height: 20px;
+        width: 20px;
+        background-size: 100%;
+        top: 10px;
+        position: absolute;
+        right: 14px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+
+    .file-item, .droppable {
+        display: inline-block;
+        width: 102px;
+        height: 108px;
+        overflow: hidden;
+        position: relative;
+        cursor:pointer;
+         
+    }
+    .file-item .file-container {
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+    .file-item .file-container {
+        
+        height: 108px;
+        width: 100px;
+        border:1px solid transparent;
+        
+    }
+
+
+
+    .file-item:hover .file-container {
+        box-shadow:0 0 8px rgba(0,0,0,0.7);
+        border: 1px solid $tagBtnColor;
+        
+    }
+
+    .file-item .field-value-module {
+        position: absolute;
+        bottom: 7px;
+        left: 10px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 100px;
+        
+        overflow: hidden;
+        background: white;
+        color: black;
+        font-size: 10px;
+        
+        text-indent: 10px;
+    }
+
+
+
+
+    .file-item .edit-btn {
+        background: mediumseagreen;
+        right: 40px;
+        display:none;
+    }
+
+
+
+
+    .file-item .document.with-mediaTypeIcon {
+        width: 100px;
+        height: 100px;
+    }
 }
-
-.file-list .droppable:after {
-    line-height: 135px;
-}
-
-.file-list .droppable .add-btn {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    cursor: none;
-    top: 30%;
-    left: calc( 50% - 10px );
-    z-index: 1;
-    background-size: 100%;
-        pointer-events: none;
-}
-
-
-
-.file-list .droppable:after {
-    content: "Add";
-}
-
-.file-list .droppable.drop-letters:after {
-    content: " Letters";
-    font-size: 12px;
-    color:#c7ae4b;
-}
-.file-list .droppable.drop-permits:after {
-    content: " Permits";
-    font-size: 12px;
-    color:#c7ae4b;
-}
-.file-list .droppable.drop-agreements:after {
-    content: " Agreements";
-    font-size: 12px;
-    color:#c7ae4b;
-}
-.file-list .droppable.drop-documents:after {
-    content: " Documents";
-    font-size: 12px;
-    color:#c7ae4b;
-}
-
-.file-list .droppable.drop-letters:before, 
-.file-list .droppable.drop-permits:before, 
-.file-list .droppable.drop-agreements:before, 
-.file-list .droppable.drop-documents:before {
-    content: "Add";
-    font-size: 12px;
-}
-
-.file-list .droppable.drop-spatial:after {
-    content: " Spatial";
-    font-size: 12px;
-    color:#c7ae4b;
-}
-.file-list .droppable.drop-attachments:after {
-    content: " Attachments";
-    font-size: 12px;
-    color:#c7ae4b;
-}
-
-
-.file-list .droppable.drop-spatial:before, .file-list .droppable.drop-attachments:before {
-    content: "Add";
-    font-size: 12px;
-}
-
-.file-container {
-    background-size: 60%;
-    background-position: center 13px;
-    background-repeat: no-repeat;
-}
-
-.file-container .with-mediaTypeIcon img {
-    display: none;
-}
-
-.file-item button {
-    height: 20px;
-    width: 20px;
-    background-size: 100%;
-    top: 10px;
-    position: absolute;
-    right: 14px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-
-.file-list .file-item, .file-list .droppable {
-    display: inline-block;
-    width: 102px;
-    height: 108px;
-    overflow: hidden;
-    position: relative;
-    cursor:pointer;
-     
-}
-.file-list .file-item .file-container {
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
-}
-.file-list .file-item .file-container {
-    
-    height: 108px;
-    width: 100px;
-    border:1px solid transparent;
-    
-}
-
-
-
-.file-list .file-item:hover .file-container {
-    box-shadow:0 0 8px rgba(0,0,0,0.7);
-    border: 1px solid $tagBtnColor;
-    
-}
-
-.file-list .file-item .field-value-module {
-    position: absolute;
-    bottom: 7px;
-    left: 10px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: 100px;
-    
-    overflow: hidden;
-    background: white;
-    color: black;
-    font-size: 10px;
-    
-    text-indent: 10px;
-}
-
-
-
-
-.file-item .edit-btn {
-    background: mediumseagreen;
-    right: 40px;
-    display:none;
-}
-
-.file-item .document.with-mediaTypeIcon {
-    width: 100px;
-    height: 100px;
-}
-
 
 
 .small.cpanel_button {
