@@ -669,7 +669,9 @@ body.dragover .file-item.droppable-hide {
         line-height: 50px;
         color: white;
         background-color: transparent;
-        width: 200px;
+        width: 400px;
+        color: #e0e0e2;
+        font-size: 1.1em;
     }
 }
 
