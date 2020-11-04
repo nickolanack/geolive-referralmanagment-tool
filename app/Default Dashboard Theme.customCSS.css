@@ -475,6 +475,9 @@ body.dragover .file-item.droppable-hide {
     display: none;
 }
 
+
+
+
 .file-list{
 
     .droppable {
@@ -639,6 +642,14 @@ body.dragover .file-item.droppable-hide {
         width: 100px;
         height: 100px;
     }
+}
+
+.layout-list .file-list .file-item {
+    display: block;
+    width: 100%;
+    background-color: #23232f;
+    margin: 5px 0;
+    height: 50px;
 }
 
 
