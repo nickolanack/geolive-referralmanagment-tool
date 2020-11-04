@@ -643,7 +643,9 @@ body.dragover .file-item.droppable-hide {
         height: 100px;
     }
 }
-.layout-list .file-list {
+
+
+.layout-list .file-list, .dark .layout-list .file-list {
      .file-item {
         display: block;
         width: auto;
