@@ -118,7 +118,7 @@
     font-size: 20px;
 }
 
-.file-list .file-item
+.file-list .file-item{
     button:after{
         content: "\f009";
         font-family: FontAwesome;
