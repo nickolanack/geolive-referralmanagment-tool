@@ -60,12 +60,12 @@ if($useFontAwesome){
         
 
             ?>
-                .file-item .<?php echo $fileFn; ?>-btn {
+               .file-list .file-item button.<?php echo $fileFn; ?>-btn {
                     top:<?php echo $offset; $offset+=30;?>px;
                 }
            <?php  
         
-     
+    
     }
 
 
