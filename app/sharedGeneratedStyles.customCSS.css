@@ -1,11 +1,3 @@
-.file-item .edit-btn {
-    background-image: url("<?php echo UrlFrom("{assets}/Map Item Icons/xsm_edit.png"); ?>");
-}
-
-
-.file-item .remove-btn {
-    background-image: url("<?php echo UrlFrom("{assets}/Control Panel Icons/close.png"); ?>");
-}
 
 
 .project-type-missing-tasks-hint {
