@@ -54,15 +54,28 @@ if($useFontAwesome){
     <?php
 }
 
-if(!$useFontAwesome){
+
     $offset=10;
+    foreach(['remove', 'edit', 'download'] as $fileFn){
+        
+
+            ?>
+                .file-item .<?php echo $fileFn; ?>-btn {
+                    top:<?php echo $offset; $offset+=30;?>px;
+                }
+           <?php  
+        
+     
+    }
+
+
+if(!$useFontAwesome){
     foreach(['remove', 'edit', 'download'] as $fileFn){
         $editIcon=$config->getParameter('file'.ucfirst($fileFn).'BtnIcon', array());
             if(!empty($editIcon)){
 
             ?>
                 .file-item .<?php echo $fileFn; ?>-btn {
-                    top:<?php echo $offset; $offset+=30;?>px;
                     background-image:url("<?php echo UrlFrom($editIcon[0].'?thumb=x>100y>100'); ?>");
                 }
            <?php  
