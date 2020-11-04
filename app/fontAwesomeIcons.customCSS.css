@@ -118,6 +118,25 @@
     font-size: 20px;
 }
 
+.file-list .file-item
+    button:after{
+        content: "\f009";
+        font-family: FontAwesome;
+        font-size: 20px;
+        
+    }
+    button.remove-btn:after{
+        content: "\f00d";
+    }
+    button.download-btn:after{
+        content: "\f0ed";
+    }
+    button.edit-btn:after{
+        content: "\f044";
+    }
+
+}
+
 
 
 .starred-indicator:before {
