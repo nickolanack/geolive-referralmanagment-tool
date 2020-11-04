@@ -643,13 +643,34 @@ body.dragover .file-item.droppable-hide {
         height: 100px;
     }
 }
-
-.layout-list .file-list .file-item {
-    display: block;
-    width: 100%;
-    background-color: #23232f;
-    margin: 5px 0;
-    height: 50px;
+.layout-list .file-list {
+     .file-item {
+        display: block;
+        width: 100%;
+        background-color: #23232f;
+        margin: 5px 0;
+        height: 50px;
+    }
+     .file-item .file-container, .file-item .file-container>span {
+        background-color: transparent;
+        height: 50px;
+        width: 50px;
+        float: left;
+        background-size: 100%;
+        background-position: center;
+    }
+    
+    
+    
+    .file-item .field-value-module {
+        position: relative;
+        top: 0;
+        left: 0;
+        line-height: 50px;
+        color: white;
+        background-color: transparent;
+        width: 200px;
+    }
 }
 
 
