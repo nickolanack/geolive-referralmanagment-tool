@@ -14232,16 +14232,16 @@
                             "fileItemForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 305,
-                            "y": 168
+                            "x": 315,
+                            "y": 178
                         },
                         "children": [
                             "fileItemForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 265,
-                                    "y": 334
+                                    "x": 275,
+                                    "y": 344
                                 }
                             }
                         ],
@@ -14285,7 +14285,8 @@
             "requireTarget": true,
             "templateName": "fileItemForm",
             "widgetTitle": "fileItemForm",
-            "readAccess": "public"
+            "readAccess": "public",
+            "resolveItemScript": "return item;"
         }
     },
     "widget.269": {

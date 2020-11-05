@@ -15,7 +15,7 @@
         "formatValueScript": "",
         "getValueScript": " (new AjaxControlQuery(CoreAjaxUrlRoot, 'file_metadata', {\n\t\t\t\t'file': item.getFile(),\n\t\t\t\t'show': ['iconsetDetails']\n\t\t\t})).addEvent('onSuccess', function(response) {\n\t\t\t    callback(response.metadata.name);\n\t\t\t}).execute();",
         "updateValueScript": " object.value=value ",
-        "submitValueScript": "",
+        "submitValueScript": "wizardDataSet.title=object.value",
         "validateValueScript": " return defaultValidationFn() "
     }
 }
