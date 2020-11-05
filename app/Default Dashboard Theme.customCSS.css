@@ -147,6 +147,16 @@ div#g-recaptcha {
     display: none;
 }
 
+body.dragover{
+    .ui-view.files-letters,
+    .ui-view.files-permits,
+    .ui-view.files-agreements,
+    .ui-view.files-other{
+        display: block;
+    }
+}
+
+
 
 div.field-value-module.inline {
     display: table-cell;
