@@ -123,10 +123,11 @@
         content: "\f009";
         font-family: FontAwesome;
         font-size: 20px;
-        
+        color:mediumseagrean;
     }
     button.remove-btn:after{
         content: "\f00d";
+        color:crimson;
     }
     button.download-btn:after{
         content: "\f0ed";
