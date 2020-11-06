@@ -687,6 +687,18 @@ body.dragover .file-item.droppable-hide {
         font-size: 1.1em;
     }
 }
+.layout-thumbs .file-list, .dark .layout-thumbs .file-list {
+    .file-container>span {
+        width: 100%;
+        height: 100%;
+        background-size:70%;
+        background-repeat:no-repeat;
+        background-position:center;
+    }
+    .file-container {
+       background-image: none;
+    }
+}
 
 
 .small.cpanel_button {
