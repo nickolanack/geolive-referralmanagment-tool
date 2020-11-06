@@ -6909,6 +6909,16 @@
                         "modules": [
                             "singleProjectFilesDetail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "pro-tip-hint",
+                                    "text": "You can drag and drop files into this space to add them to the project",
+                                    "template": "",
+                                    "templateVariablesScript": "",
+                                    "formatTextScript": ""
+                                }
+                            },
+                            {
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "layout-thumbs",
@@ -6929,9 +6939,9 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
-                                    "getItemListScript": "singleProjectFilesDetail.metadata.positions.content.modules.1.config.getItemListScript.js",
+                                    "getItemListScript": "singleProjectFilesDetail.metadata.positions.content.modules.2.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "singleProjectFilesDetail.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "singleProjectFilesDetail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
                                     "sortItemsScript": "",
@@ -6942,18 +6952,8 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectFilesDetail.metadata.positions.content.modules.2.config.script.js",
+                                    "script": "singleProjectFilesDetail.metadata.positions.content.modules.3.config.script.js",
                                     "description": "Info about my custom script"
-                                }
-                            },
-                            {
-                                "type": "InlineHtml",
-                                "config": {
-                                    "className": "",
-                                    "text": "You can drag and drop files into this space to add them to the project",
-                                    "template": "",
-                                    "templateVariablesScript": "",
-                                    "formatTextScript": ""
                                 }
                             }
                         ]
