@@ -6945,6 +6945,16 @@
                                     "script": "singleProjectFilesDetail.metadata.positions.content.modules.2.config.script.js",
                                     "description": "Info about my custom script"
                                 }
+                            },
+                            {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "",
+                                    "text": "You can drag and drop files into this space to add them to the project",
+                                    "template": "",
+                                    "templateVariablesScript": "",
+                                    "formatTextScript": ""
+                                }
                             }
                         ]
                     },
