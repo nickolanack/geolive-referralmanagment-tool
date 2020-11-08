@@ -143,6 +143,8 @@ GetWidget('peopleUsersDetail')->display($targetInstance);
 
 GetWidget('UsersProjectSettings')->display($targetInstance);
 
+GetWidget('importProjectsForm')->display($targetInstance);
+
 
 GetWidget('communityCulturalDetail')->display($targetInstance);
 GetWidget('communityTransportationDetail')->display($targetInstance);
