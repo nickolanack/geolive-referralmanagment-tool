@@ -1,7 +1,7 @@
 {
     "type": "WizardDescriptionField",
     "config": {
-        "label": "Description",
+        "label": "Add Csv File",
         "message": "add a description",
         "lines": 3,
         "mandatory": false,
@@ -9,7 +9,7 @@
         "showImages": true,
         "showDocuments": true,
         "showVideos": true,
-        "className": "",
+        "className": "only-docs",
         "maxChars": 0,
         "showExpandInput": true,
         "toolbarPosition": "bottom",
