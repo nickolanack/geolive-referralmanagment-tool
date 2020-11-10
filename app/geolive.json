@@ -18036,7 +18036,19 @@
                     },
                     "content": {
                         "modules": [
-                            "mainDocumentsDetail.metadata.positions.content.modules.0.json"
+                            "mainDocumentsDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "InlineHtml",
+                                "config": []
+                            },
+                            {
+                                "type": "UIListView",
+                                "config": []
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": []
+                            }
                         ]
                     },
                     "footer": {
