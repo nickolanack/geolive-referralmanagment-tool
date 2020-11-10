@@ -18039,15 +18039,51 @@
                             "mainDocumentsDetail.metadata.positions.content.modules.0.json",
                             {
                                 "type": "InlineHtml",
-                                "config": []
+                                "config": {
+                                    "className": "pro-tip-hint",
+                                    "text": "You can drag and drop files into this space to add them to the project",
+                                    "template": "",
+                                    "templateVariablesScript": "",
+                                    "formatTextScript": ""
+                                }
                             },
                             {
                                 "type": "UIListView",
-                                "config": []
+                                "config": {
+                                    "listClassName": "layout-thumbs",
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "singleFilesSectionDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": "",
+                                    "getItemListScript": "mainDocumentsDetail.metadata.positions.content.modules.2.config.getItemListScript.js",
+                                    "formatItemListScript": "return list;",
+                                    "formatListItemModuleScript": "mainDocumentsDetail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
+                                    "emptyNamedView": "emptyListView",
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
+                                }
                             },
                             {
                                 "type": "WizardScriptElement",
-                                "config": []
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "mainDocumentsDetail.metadata.positions.content.modules.3.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
                             }
                         ]
                     },
