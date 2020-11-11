@@ -1,1 +1,1 @@
-return ProjectFiles.getFileName(item);
+return ProjectFiles.getFileName(item, callback);
