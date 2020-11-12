@@ -15534,7 +15534,7 @@
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "initModuleScript": "",
-                                    "formatModuleScript": "item.formatModule(module)",
+                                    "formatModuleScript": "singleFilesSectionDetail.metadata.positions.content.modules.1.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "singleFilesSectionDetail.metadata.positions.content.modules.1.config.filterModulesScript.js",
                                     "itemButtonsScript": "return [];",
