@@ -178,7 +178,9 @@ $mainStyleColor:#efa82c;
     .section-title {
         background-color: rgba(255, 255, 255, 0.1);
     }
-
+ .filter-btns .sort{
+       margin-top: 7px;
+    }
 
     .ui-view.active-project {
         background-color: transparent;
@@ -191,9 +193,7 @@ $mainStyleColor:#efa82c;
         margin-top:100px;
     }
     
-    .filter-btns .sort{
-       margin-top: 7px;
-    }
+   
     
 }
 
