@@ -173,6 +173,17 @@ $mainStyleColor:#efa82c;
 }
 
 
+[data-view="tasksOverviewListDetail"] {
+
+    .section-title {
+        background-color: rgba(255, 255, 255, 0.1);
+        margin-top:100px;
+    }
+    
+    .filter-btns .sort{
+       margin-top: 7px;
+    }
+}
 
 
 
