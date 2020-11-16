@@ -1788,16 +1788,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 369,
-                            "y": 272
+                            "x": 379,
+                            "y": 282
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 329,
-                                    "y": 485
+                                    "x": 339,
+                                    "y": 495
                                 }
                             },
                             {
@@ -1807,16 +1807,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 946,
-                                    "y": 531
+                                    "x": 956,
+                                    "y": 541
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 906,
-                                            "y": 697
+                                            "x": 916,
+                                            "y": 707
                                         }
                                     }
                                 ],
@@ -1831,7 +1831,7 @@
                                             "modules": [
                                                 "loginForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.0.json",
                                                 {
-                                                    "type": "WizardRegistration",
+                                                    "type": "plugin.Users.Registration",
                                                     "config": {
                                                         "className": "registration-left",
                                                         "showCancel": false,
@@ -1883,18 +1883,12 @@
                                                 "className": "",
                                                 "text": "<div class=\"application-logo\"><\/div><span style=\"text-align: left; font-weight: 100; display: block;\"><span style=\"font-size:20px\">\nLogin to your project dashboard<\/span>\n<p><\/p><br><\/span>",
                                                 "template": "",
-                                                "templateVariablesScript": ""
+                                                "templateVariablesScript": "",
+                                                "formatTextScript": ""
                                             }
                                         },
                                         {
-                                            "type": "plugin.SingleSignOn.FacebookLogin",
-                                            "config": {
-                                                "reloadOnSuccess": true,
-                                                "reloadUrl": ""
-                                            }
-                                        },
-                                        {
-                                            "type": "WizardLogin",
+                                            "type": "plugin.Users.Login",
                                             "config": {
                                                 "className": "",
                                                 "showCancel": false,
@@ -1915,14 +1909,15 @@
                                                 "className": "",
                                                 "text": "<br\/><br\/><span style=\"text-align: left; font-weight: 100; display: block;    margin-top: 32px;\"><span style=\"font-size:20px; white-space:nowrap;\">\nDon't have an account?<\/span>\n<br\/><br\/><\/span>",
                                                 "template": "",
-                                                "templateVariablesScript": ""
+                                                "templateVariablesScript": "",
+                                                "formatTextScript": ""
                                             }
                                         },
                                         {
                                             "type": "WizardScriptElement",
                                             "config": {
                                                 "name": "My Custom Script",
-                                                "script": "loginForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.script.js",
+                                                "script": "loginForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.script.js",
                                                 "description": "Info about my custom script"
                                             }
                                         }
