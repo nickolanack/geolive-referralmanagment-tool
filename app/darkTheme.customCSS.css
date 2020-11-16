@@ -10,6 +10,12 @@ $fontColor:#e0e0e2;
 $mainStyleColor:#efa82c;
 
 .dark{
+    
+    
+    ::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+    
     .pb-w .template-footer{
         background-color: $darkThemeBG;
     }
