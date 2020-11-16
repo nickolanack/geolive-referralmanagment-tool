@@ -11,10 +11,20 @@ $mainStyleColor:#efa82c;
 
 .dark{
     
+    .WizardTitle li {
+        border-color: transparent;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    
+    .WizardTitle li.current{
+      background-color: #6A7CE9;
+     
+    }
+    
     
     ::-webkit-calendar-picker-indicator {
-    filter: invert(1);
-}
+        filter: invert(1);
+    }
     
     .pb-w .template-footer{
         background-color: $darkThemeBG;
