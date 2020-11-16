@@ -4174,6 +4174,15 @@
                     "limit": 1
                 },
                 {
+                    "type": "images",
+                    "name": "gatherIcon",
+                    "default": [],
+                    "label": "gatherIcon",
+                    "maxHeight": 256,
+                    "maxWidth": 256,
+                    "limit": 1
+                },
+                {
                     "type": "input",
                     "name": "gatherLabel",
                     "default": "Gather Referrals Tool",
@@ -5026,7 +5035,10 @@
             "autoApproveMobileCommunity": false,
             "requireValidMobileEmail": true,
             "enablePending": true,
-            "useFacebookLogin": false
+            "useFacebookLogin": false,
+            "gatherIcon": [
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_%5BG%5D_ldi_d9_9Cu-%3Ethumb%3A%3E200x%3E150.png"
+            ]
         }
     },
     "widget.154": {
