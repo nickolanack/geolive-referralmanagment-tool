@@ -2890,6 +2890,11 @@ img.static-map {
     display:none;
 }
 
+.left-panel{
+    .user-detail .inline-logout {
+        display: none;
+    }
+}
 
 @media screen and (max-width: 1000px){
     
