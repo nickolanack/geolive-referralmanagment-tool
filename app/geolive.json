@@ -1959,7 +1959,7 @@
             "reloadUrl": "",
             "requireTarget": true,
             "target": "loginForm",
-            "onLoadScript": "",
+            "onLoadScript": "console.error('hello');",
             "resolveItemScript": "return item;"
         }
     },
