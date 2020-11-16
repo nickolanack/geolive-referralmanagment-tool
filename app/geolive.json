@@ -795,16 +795,16 @@
                             "widget.ProposalWizardBuilder.65.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 95,
-                            "y": 170
+                            "x": 105,
+                            "y": 180
                         },
                         "children": [
                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 55,
-                                    "y": 433
+                                    "x": 65,
+                                    "y": 443
                                 }
                             },
                             {
@@ -814,16 +814,16 @@
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 518,
-                                    "y": 171
+                                    "x": 528,
+                                    "y": 181
                                 },
                                 "children": [
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 478,
-                                            "y": 422
+                                            "x": 488,
+                                            "y": 432
                                         }
                                     },
                                     {
@@ -833,16 +833,16 @@
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 925,
-                                            "y": 179
+                                            "x": 935,
+                                            "y": 189
                                         },
                                         "children": [
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 885,
-                                                    "y": 405
+                                                    "x": 895,
+                                                    "y": 415
                                                 }
                                             },
                                             {
@@ -852,16 +852,16 @@
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.fields.0.json"
                                                 ],
                                                 "_diagramState": {
-                                                    "x": 859,
-                                                    "y": 790
+                                                    "x": 869,
+                                                    "y": 800
                                                 },
                                                 "children": [
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.0.json",
                                                     {
                                                         "class": "InsertNode",
                                                         "_diagramState": {
-                                                            "x": 819,
-                                                            "y": 1003
+                                                            "x": 829,
+                                                            "y": 1013
                                                         }
                                                     }
                                                 ],
@@ -1234,7 +1234,30 @@
                                                         "attributeFields": [
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
                                                         ],
-                                                        "className": "width-2",
+                                                        "className": "width-3",
+                                                        "label": "Permit Number(s)",
+                                                        "message": "",
+                                                        "lines": 1,
+                                                        "maxChars": 0,
+                                                        "mandatory": false,
+                                                        "multiEntry": false,
+                                                        "muliTemplate": "lines",
+                                                        "multiMessage": "add more values",
+                                                        "formatter": "none",
+                                                        "iconTint": "rgb(100, 149, 237)",
+                                                        "autocomplete": true,
+                                                        "inputOptions": "{}",
+                                                        "onRenderTextFieldScript": "",
+                                                        "formatdefaultScript": ""
+                                                    }
+                                                },
+                                                {
+                                                    "type": "plugin.Attributes.WizardTextAttribute",
+                                                    "config": {
+                                                        "attributeFields": [
+                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
+                                                        ],
+                                                        "className": "width-3",
                                                         "label": "Permit Issued date",
                                                         "message": "",
                                                         "lines": 1,
@@ -1246,7 +1269,7 @@
                                                         "formatter": "date",
                                                         "iconTint": "rgb(100, 149, 237)",
                                                         "autocomplete": true,
-                                                        "inputOptions": [],
+                                                        "inputOptions": "{}",
                                                         "onRenderTextFieldScript": "",
                                                         "formatdefaultScript": ""
                                                     }
@@ -1255,9 +1278,9 @@
                                                     "type": "plugin.Attributes.WizardTextAttribute",
                                                     "config": {
                                                         "attributeFields": [
-                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
+                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.5.config.attributeFields.0.json"
                                                         ],
-                                                        "className": "width-2",
+                                                        "className": "width-3",
                                                         "label": "Permit expiry date",
                                                         "message": "",
                                                         "lines": 1,
@@ -1269,7 +1292,7 @@
                                                         "formatter": "date",
                                                         "iconTint": "rgb(100, 149, 237)",
                                                         "autocomplete": true,
-                                                        "inputOptions": [],
+                                                        "inputOptions": "{}",
                                                         "onRenderTextFieldScript": "",
                                                         "formatdefaultScript": ""
                                                     }
@@ -1278,7 +1301,7 @@
                                                     "type": "plugin.Attributes.WizardDescriptionAttribute",
                                                     "config": {
                                                         "attributeFields": [
-                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.5.config.attributeFields.0.json"
+                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
                                                         ],
                                                         "label": "Agreements",
                                                         "message": "add a description",
@@ -1300,7 +1323,7 @@
                                                     "type": "plugin.Attributes.WizardDescriptionAttribute",
                                                     "config": {
                                                         "attributeFields": [
-                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
+                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.7.config.attributeFields.0.json"
                                                         ],
                                                         "label": "Other documents",
                                                         "message": "add a description",
@@ -1322,36 +1345,13 @@
                                                     "type": "plugin.ReferralManagement.WizardLayerField",
                                                     "config": {
                                                         "attributeFields": [
-                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.7.config.attributeFields.0.json"
+                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
                                                         ],
                                                         "label": "Spatial files",
                                                         "message": "add a description",
                                                         "mandatory": false,
                                                         "className": "no-text",
                                                         "toolbarPosition": "bottom"
-                                                    }
-                                                },
-                                                {
-                                                    "type": "plugin.Attributes.WizardTextAttribute",
-                                                    "config": {
-                                                        "attributeFields": [
-                                                            "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
-                                                        ],
-                                                        "className": "width-2",
-                                                        "label": "Permit Number(s)",
-                                                        "message": "",
-                                                        "lines": 1,
-                                                        "maxChars": 0,
-                                                        "mandatory": false,
-                                                        "multiEntry": false,
-                                                        "muliTemplate": "lines",
-                                                        "multiMessage": "add more values",
-                                                        "formatter": "none",
-                                                        "iconTint": "rgb(100, 149, 237)",
-                                                        "autocomplete": true,
-                                                        "inputOptions": "{}",
-                                                        "onRenderTextFieldScript": "",
-                                                        "formatdefaultScript": ""
                                                     }
                                                 }
                                             ]
