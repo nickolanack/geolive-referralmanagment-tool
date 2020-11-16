@@ -178,7 +178,7 @@ $mainStyleColor:#efa82c;
     .section-title {
         background-color: rgba(255, 255, 255, 0.1);
     }
- .filter-btns .sort{
+ .filter-btns .sort, inline-btn.add{
        margin-top: 7px;
     }
 
