@@ -14990,7 +14990,9 @@
         "parameters": {
             "contentTemplate": "email-MagicLoginLink-content.contentTemplate.html",
             "widgetTitle": "email.MagicLoginLink.content",
-            "target": "email.MagicLoginLink.content"
+            "target": "email.MagicLoginLink.content",
+            "comments": "",
+            "readAccess": "public"
         }
     },
     "widget.281": {
