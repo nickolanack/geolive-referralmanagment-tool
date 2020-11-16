@@ -795,16 +795,16 @@
                             "widget.ProposalWizardBuilder.65.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 155,
-                            "y": 230
+                            "x": 165,
+                            "y": 240
                         },
                         "children": [
                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 115,
-                                    "y": 493
+                                    "x": 125,
+                                    "y": 503
                                 }
                             },
                             {
@@ -814,16 +814,16 @@
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 578,
-                                    "y": 231
+                                    "x": 588,
+                                    "y": 241
                                 },
                                 "children": [
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 538,
-                                            "y": 469
+                                            "x": 548,
+                                            "y": 479
                                         }
                                     },
                                     {
@@ -833,16 +833,16 @@
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 985,
-                                            "y": 239
+                                            "x": 995,
+                                            "y": 249
                                         },
                                         "children": [
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 945,
-                                                    "y": 465
+                                                    "x": 955,
+                                                    "y": 475
                                                 }
                                             },
                                             {
@@ -852,16 +852,16 @@
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.fields.0.json"
                                                 ],
                                                 "_diagramState": {
-                                                    "x": 1224,
-                                                    "y": 862
+                                                    "x": 1234,
+                                                    "y": 872
                                                 },
                                                 "children": [
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.0.json",
                                                     {
                                                         "class": "InsertNode",
                                                         "_diagramState": {
-                                                            "x": 1184,
-                                                            "y": 1075
+                                                            "x": 1194,
+                                                            "y": 1085
                                                         }
                                                     }
                                                 ],
@@ -1198,7 +1198,7 @@
                                                         "showImages": true,
                                                         "showDocuments": true,
                                                         "showVideos": true,
-                                                        "className": "no-text width-2 only-docs",
+                                                        "className": "no-text width-2 only-docs add-documents ",
                                                         "maxChars": 0,
                                                         "showExpandInput": true,
                                                         "toolbarPosition": "bottom",
@@ -1215,7 +1215,7 @@
                                                         "label": "Spatial files",
                                                         "message": "add a description",
                                                         "mandatory": false,
-                                                        "className": "no-text width-2",
+                                                        "className": "add-spatials no-text width-2",
                                                         "toolbarPosition": "bottom"
                                                     }
                                                 },
