@@ -196,6 +196,19 @@ $gatherLogo=$config->getParameter('gatherLogo', array());
 }  
 
 
+$gatherIcon=$config->getParameter('gatherIcon', array());
+        if(empty($gatherIcon)){
+            $gatherIcon=$gatherLogo;
+        }else{
+            $gatherIcon=$gatherIcon[0];
+        }
+    ?>
+ .gather-icon {
+
+    background-image:url("<?php echo UrlFrom($gatherIcon."?thumb=>200x>200"); ?>");
+} 
+
+
 <?php 
 if(!$useFontAwesome){
     $attachmentIcon=$config->getParameter('attachmentIcon', array());
