@@ -18023,7 +18023,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
-            "formatModulesScript": "",
+            "formatModulesScript": "mainDocumentsDetail.formatModulesScript.js",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
