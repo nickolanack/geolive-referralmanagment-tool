@@ -1,0 +1,1 @@
+DashboardPageLayout.layoutSection('singleProjectListItemTableDetail', list);

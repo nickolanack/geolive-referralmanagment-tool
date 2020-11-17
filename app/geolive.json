@@ -16758,7 +16758,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
-            "formatModulesScript": "",
+            "formatModulesScript": "singleProjectListItemTableDetail.formatModulesScript.js",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
