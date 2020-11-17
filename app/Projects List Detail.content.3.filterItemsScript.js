@@ -1,6 +1,6 @@
 
-if(item&&item.applyFilter){
-    return item.applyFilter.apply(null, arguments);
+if(listItem&&listItem.applyFilter){
+    return listItem.applyFilter.apply(null, arguments);
     
 }
 
