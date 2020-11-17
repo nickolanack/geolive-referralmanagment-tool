@@ -6892,7 +6892,7 @@
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
-            "formatModulesScript": "",
+            "formatModulesScript": "singleProjectFilesDetail.formatModulesScript.js",
             "notifyViewer": false,
             "metadata": {
                 "positions": {
