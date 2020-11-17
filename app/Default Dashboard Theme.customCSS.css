@@ -2355,7 +2355,7 @@ button.inline-btn.add:hover{
 }
 
 
-.ui-view.priority-high:before {
+.ui-view.priority-high:before, .ui-view.priority:before {
     width: 4px;
     height: 100%;
     background-color: crimson;
