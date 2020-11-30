@@ -384,7 +384,7 @@ var ReferralManagementUser = (function() {
 		isActivated: function() {
 			var me = this;
 
-			if ((!me.options.metadata.email) || me.options.metadata.email.indexOf('device.') === 0) {
+			if (DashboardConfig.getValue("requireValidMobileEmail")&&(!me.options.metadata.email) || me.options.metadata.email.indexOf('device.') === 0) {
 				return false;
 			}
 

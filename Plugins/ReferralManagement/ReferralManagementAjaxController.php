@@ -84,7 +84,11 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	protected function listProjects( /*$json*/) {
 
-		$response = array('results' => $this->getPlugin()->getActiveProjectList());
+		$response = array(
+			'results' => $this->getPlugin()->getActiveProjectList(),
+			'debug'=> $this->getPlugin()->cache()->getProjectsListCacheStatus(
+				array('status' => array('value' => 'archived', 'comparator' => '!='))),
+		);
 
 		//$userCanSubscribe = GetClient()->isAdmin();
 		//if ($userCanSubscribe) {
@@ -116,7 +120,11 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	protected function getProject($json) {
 
-		$response = array('results' => $this->getPlugin()->getProjectList(array('id'=>$json->project)));
+
+
+		$response = array('results' => GetPlugin('ReferralManagement')->listProjectsMetadata(array('id'=>$json->project)));
+
+			//$this->getPlugin()->getProjectList(array('id'=>$json->project)));
 
 		return $response;
 
@@ -379,13 +387,18 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				'channel' => 'devicelist',
 				'event' => 'update',
 			),
+			"debug"=>$this->getPlugin()->cache()->getDeviceListCacheStatus(),
 			"results" => $this->getPlugin()->getClientsDeviceList()
 		);
 	}
 
 	protected function listArchivedProjects( /*$json*/) {
 
-		$response = array('results' => $this->getPlugin()->getArchivedProjectList());
+		$response = array(
+			'results' => $this->getPlugin()->getArchivedProjectList(),
+			'debug'=> $this->getPlugin()->cache()->getProjectsListCacheStatus(
+				array('status' => 'archived'))
+		);
 		return $response;
 
 	}
@@ -847,7 +860,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 				$category->category=$category->type;
 				$category->color="#eeeeee";
-				if(key_exists('color', $category->metadata)){
+				if($category->metadata&&key_exists('color', $category->metadata)){
 					$category->color=$category->metadata->color;
 				}
 

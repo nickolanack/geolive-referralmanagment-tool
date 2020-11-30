@@ -93,6 +93,7 @@ var MainNavigationMenu = new Class({
 					html: "Dashboard",
 				}, {
 					html: "Projects",
+					template:"mainProjectsDetail",
 					events:{
 						click:function(){
 							DashboardConfig.getValue('showSplitProjectDetail', function(split) {
@@ -342,7 +343,23 @@ var MainNavigationMenu = new Class({
 					{
 						html: "Archive",
 						alias: {"section":"Main", "button":"Archive", "class":"menu-main-archive", "mirrorActive":true},
+					},
+					{
+						html: "Import",
+						events:{
+						
+							click:function(){
+								
+								(new UIModalDialog(application, new MockDataTypeItem({
+									description:''
+								}), {
+		                		"formName":"importProjectsForm", "formOptions":{template:"form"}})).show();
+
+
+							}
+						},
 					}
+
 
 
 				],

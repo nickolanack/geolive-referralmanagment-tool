@@ -15,7 +15,7 @@ var ProjectNavigationMenu = new Class({
 			buttonClass: function(button, section) {
 				return button["class"] || ("menu-" + section.toLowerCase() + "-" + button.html.toLowerCase());
 			},
-			parentMenu: application.getNamedValue('navigationController'),
+			parentMenu: application.getNamedValue('projectLayoutNavigationController')||application.getNamedValue('navigationController'),
 			initialView: {
 				view: "Overview",
 				section: "Project"
@@ -48,6 +48,14 @@ var ProjectNavigationMenu = new Class({
 				"Project": [{
 						html: "Overview",
 					}, {
+						html: "Team",
+						name: "Users",
+						formatEl: function(li) {
+
+							ReferralManagementDashboard.addItemUsersInfo(li, item, application);
+
+						}
+					}, {
 						html: "Tasks",
 					}, {
 						html: "Files",
@@ -63,15 +71,7 @@ var ProjectNavigationMenu = new Class({
 							ReferralManagementDashboard.addItemDiscussionInfo(li, item, application);
 
 						}
-					}, {
-						html: "Team",
-						name: "Users",
-						formatEl: function(li) {
-
-							ReferralManagementDashboard.addItemUsersInfo(li, item, application);
-
-						}
-					},
+					}, 
 					// {
 					//   html:"Timesheets"
 					// }

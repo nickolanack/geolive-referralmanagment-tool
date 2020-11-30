@@ -12,15 +12,51 @@ var DashboardPageLayout=(function(){
 		layoutSection:function(name, modules){
 			return this.layoutPage(name, modules);
 		},
-		layoutPage:function(name, modules){
+		layoutPage:function(name, modules, callback){
 
 
-			if(!(this._layouts&&this._layouts[name])){
+			var options={};
+			var me=this;
+
+			var layout=function(name){
+
+				if(typeof name!="string"){
+					throw "Not a string `name`:"+(typeof name);
+				}
+
+				if(!(me._layouts&&me._layouts[name])){
+					return modules;
+				}
+
+				var result=me._layouts[name](modules.content, options, function(content){
+
+					modules.content=content;
+					callback(modules);
+
+				});
+
+				if(typeof result!="undefined"&&callback){
+					modules.content=result;
+					callback(modules)
+					return;
+				}
+
+				modules.content=result;
 				return modules;
 			}
 
-			modules.content=this._layouts[name](modules.content);
-			return modules;
+
+
+
+			if(name instanceof UIViewModule&&callback){
+				options=Object.append(options, name.options);
+				name.getViewName(function(name){
+					layout(name);
+				});
+				return;
+			}
+
+			return layout(name);
 
 		},
 
@@ -61,6 +97,12 @@ var DashboardPageLayout=(function(){
 			this._removeClassNames(items);
 
 			return new ModuleArray(items, {"class":"array-module ui-view w-60"});
+		},
+		splitCol:function(items){
+
+			this._removeClassNames(items);
+
+			return new ModuleArray(items, {"class":"array-module ui-view w-50"});
 		},
 		secondaryCol:function(items){
 
@@ -202,6 +244,29 @@ var DashboardPageLayout=(function(){
 
 		return content;
 
+	}).addLayout('mainProjectDetail', function(content){
+
+
+		if(AppClient.getUserType()!="admin"){
+			content.shift();
+		}
+	    return content;
+
+	}).addLayout('splitProjectDetail', function(content, options, callback){
+
+		if(!DashboardConfig.getValue('showSplitProjectDetail')){
+	        content=content.slice(0,1);
+	        content[0].options.className=content[0].options.className.split(' ').slice(0,-1).join(' ');
+	        
+	    }
+	    callback(content);
+
+	}).addLayout('groupListsProjectDetail', function(content, options, callback){
+
+		if(options.layout&&options.layout=="fullwidth")
+	    callback(content.slice(0,1).concat(content.slice(1).map(function(item){
+	    	return layout.splitCol([item]);
+	    })));
 	}).addLayout('leftPanel', function(content){
 
 		if(!DashboardConfig.getValue('showLeftPanelUser')){
@@ -216,11 +281,28 @@ var DashboardPageLayout=(function(){
 
 		return content;
 
+	}).addLayout("singleProjectListItemTableDetail",function(content){
+
+		var map=['name', 'owner', 'date', 'tag', 'docs', 'approval', 'ownership'];
+		var remove=['approval', 'ownership'];
+
+		remove.reverse().forEach(function(field){
+			var i=map.indexOf(field);
+			content.splice(i, 1);
+
+		});
+		
+		return content;
 	}).addLayout("userProfileDetailOverview",function(content){
 
 		if(DashboardConfig.getValue('showLeftPanelUser')){
 		     content.splice(0,1);
 		}
+
+		return content;
+	}).addLayout("mainDocumentsDetail",function(content){
+
+		content.splice(0,1);
 
 		return content;
 	}).addLayout('profileMenu',function(buttons){
@@ -232,6 +314,14 @@ var DashboardPageLayout=(function(){
 					html:"Tasks",
 					config:"enableTasks"
 				},
+
+				{
+					html:['Timesheet', 'Activity'],
+					condition:function(){
+						return AppClient.getUserType()=="admin";
+					}
+				},
+
 				{
 					html:"Log Out",
 					condition:function(){
@@ -288,7 +378,7 @@ var DashboardPageLayout=(function(){
 					config:"enableUserProfiles"
 				},
 				{
-					html:["Project", "Department", "Tags", "Trash"],
+					html:["Department", "Tags", "Trash"],
 					config:"simplifiedMenu"
 				},
 				{
@@ -325,7 +415,7 @@ var DashboardPageLayout=(function(){
 			], 
 			"Referrals":[
 				{
-					html:['Documents', 'Tracking', 'Reports'],
+					html:['Tracking', 'Reports', 'Import'],
 					condition:function(){
 						return AppClient.getUserType()=="admin";
 					}

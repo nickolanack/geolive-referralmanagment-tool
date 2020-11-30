@@ -122,10 +122,18 @@ class User {
 	}
 
 	protected function canCreateCommunityContent($userId = -1) {
+
+
+
 		return $this->getUserRoleLabel($userId) !== 'none';
 	}
 
 	protected function getUserRoleLabel($userId = -1) {
+
+		if(GetWidget('dashboardConfig')->getParameter('allowUnappovedMobileSubmissions')===true){
+			return true;
+		}
+
 		return (new \ReferralManagement\UserRoles())->getUsersRoleLabel($userId);
 	}
 

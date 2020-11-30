@@ -50,13 +50,26 @@ var UITextFieldLayerList = function() {
     UITextField.AddMediaListParser.bind(me)(listEl, JSTextUtilities.ParseLinks, function(container, link, callback) {
 
 
-        (new ImageModule({
-                textQuery: function(callback) {
-                    callback(CoreContentUrlRoot + "&format=raw&controller=plugins&plugin=Maps&view=plugin&pluginView=kml.tile&kml=" + encodeURIComponent(link.url));
-                },
-                width: 64,
-                height: 64
-            })).addEvent('load', callback).load(null, container, null);
+
+        (new DocumentModule({
+            textQuery: function(callback) {
+                callback(link.url);
+            },
+            //"class": ,
+            width: 32,
+            height: 32,
+            download: false,
+            //setBackgroundImage: true
+        })).addEvent('load', callback).load(null, container, null);
+
+
+        // (new ImageModule({
+        //         textQuery: function(callback) {
+        //             callback(CoreContentUrlRoot + "&format=raw&controller=plugins&plugin=Maps&view=plugin&pluginView=kml.tile&kml=" + encodeURIComponent(link.url));
+        //         },
+        //         width: 32,
+        //         height: 32
+        //     })).addEvent('load', callback).load(null, container, null);
 
 
     }, {

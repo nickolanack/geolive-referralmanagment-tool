@@ -28,9 +28,24 @@ core\EventListener {
 
 
 
+	public function formatMobileConfig($parameters){
+
+
+		$parameters['client']=GetPlugin('ReferralManagement')->getUsersMetadata();
+		$parameters['communities']=GetPlugin('ReferralManagement')->listCommunities();
+
+		return $parameters;
+
+	}
+
 	protected function onCreateProposal($params) {
 
-		$this->createDefaultProposalTasks($params->id);
+		$config=GetWidget('dashboardConfig');
+		if($config->getParameter("autoCreateDefaultTasks", false)){
+			$this->createDefaultProposalTasks($params->id);
+		}
+
+		
 
 		$this->onUpdateProposal($params);
 
@@ -39,7 +54,7 @@ core\EventListener {
 	protected function onUpdateProposal($params){
 
 
-		Emit('onTriggerVersionControlProject', $params);
+		Throttle('onTriggerVersionControlProject', $params, array('interval'=>30), 60);
 
 	}
 
@@ -66,13 +81,31 @@ core\EventListener {
 
 	}
 
+
+	protected function onActivateMobileDevice($params){
+
+		$user=$params->account->uid;
+		$config=GetWidget('dashboardConfig');
+
+		if($config->getParameter('autoApproveMobileCommunity')||$config->getParameter('autoApproveMobileCommunityOnce')){
+
+			GetPlugin('Attributes');
+			(new attributes\Record('userAttributes'))->setValues($user, 'user', array(
+				"community-member"=>true,
+				"community"=>(new  \ReferralManagement\User())->communityCollective()
+			));
+			//$this->getPlugin()->notifier()->onUpdateUserRole($json);
+		}
+
+	}
+
 	protected function onUpdateAttributeRecord($params) {
 
 		if ($params->itemType === "user") {
 			(new \core\LongTaskProgress())
 				->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval'=>30));
 			(new \core\LongTaskProgress())
-				->throttle('onTriggerUpdateDeviceList', array('team' => 1), array('interval'=>30));
+				->throttle('onTriggerUpdateDevicesList', array('team' => 1), array('interval'=>30));
 			return;
 		}
 
@@ -83,83 +116,25 @@ core\EventListener {
 
 
 	public function getClientsUserList(){
-
-		//error_log("write cache: ".\GetPath('{cache}'));
-
-		$cacheName="ReferralManagement.userList.json";
-		$cacheData = HtmlDocument()->getCachedPage($cacheName);
-		if (!empty($cacheData)) {
-			$users=json_decode($cacheData);
-		}else{
-			$users=$this->listAllUsersMetadata();
-
-			HtmlDocument()->setCachedPage($cacheName, json_encode($users));
-
-		}
-
-
+		$users= $this->cache()->getUsersMetadataList();
 		$users=array_values(array_filter($users, $this->shouldShowUserFilter()));
-
-		//TODO: throttle this
-		(new \core\LongTaskProgress())->throttle('onTriggerUpdateUserList', array(), array('interval'=>30));
-
 		return $users;
-
 	}
 
 	protected function onTriggerUpdateUserList($params) {
-
-		$cacheName = "ReferralManagement.userList.json";
-		$cacheData = HtmlDocument()->getCachedPage($cacheName);
-
-		$users = $this->listAllUsersMetadata();
-
-		$newData = json_encode($users);
-		HtmlDocument()->setCachedPage($cacheName, $newData);
-		if ($newData != $cacheData) {
-			$this->notifier()->onTeamUserListChanged($params->team);
-		}
-		Emit('onUpdateUserList', array());
-
+		$this->cache()->cacheUsersMetadataList($params);
 	}
-
 
 	public function getClientsDeviceList(){
 
-		$cacheName="ReferralManagement.deviceList.json";
-		$cacheData = HtmlDocument()->getCachedPage($cacheName);
-		if (!empty($cacheData)) {
-			$devices=json_decode($cacheData);
-		}else{
-			$devices=$this->listAllDevicesMetadata();
-			HtmlDocument()->setCachedPage($cacheName, json_encode($devices));
-		}
-
-		$devices=array_values(array_filter($devices, $this->shouldShowDeviceFilter()));
-
-		//TODO: throttle this
-		(new \core\LongTaskProgress())->throttle('onTriggerUpdateDevicesList', array(), array('interval'=>30));
-
+		$devices= $this->cache()->getDevicesMetadataList();
+		$devices=array_values(array_filter($devices, $this->shouldShowUserFilter()));
 		return $devices;
 	}
 
 	protected function onTriggerUpdateDevicesList($params) {
 
-		return;
-
-
-		$cacheName = "ReferralManagement.deviceList.json";
-		$cacheData = HtmlDocument()->getCachedPage($cacheName);
-
-		$devices = $this->listAllDevicesMetadata();
-
-		$newData = json_encode($devices);
-		HtmlDocument()->setCachedPage($cacheName, $newData);
-		if ($newData != $cacheData) {
-			$this->notifier()->onTeamDeviceListChanged($params->team);
-		}
-
-		Emit('onUpdateDevicesList', array());
+		$this->cache()->cacheDevicesMetadataList($params);
 
 	}
 
@@ -169,6 +144,7 @@ core\EventListener {
 				->throttle('onTriggerUpdateUserList', array('team' => $team), array('interval'=>30));
 		}
 	}
+
 	protected function onDeleteUser($params) {
 		foreach ($this->listTeams() as $team) {
 			(new \core\LongTaskProgress())
@@ -176,7 +152,7 @@ core\EventListener {
 		}
 	}
 
-	protected function listTeams($fn) {
+	protected function listTeams($fn=null) {
 		return (new \ReferralManagement\User())->listTeams();
 	}
 
@@ -214,6 +190,10 @@ core\EventListener {
 	public function notifier() {
 		include_once __DIR__ . '/lib/Notifications.php';
 		return (new \ReferralManagement\Notifications());
+	}
+	public function cache() {
+		include_once __DIR__ . '/lib/ListItemCache.php';
+		return (new \ReferralManagement\ListItemCache());
 	}
 
 	protected function taskUploadlayer() {
@@ -290,14 +270,19 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/OrganizationalUnit.js');
 		IncludeJS(__DIR__ . '/js/ItemCategory.js');
 		IncludeJS(__DIR__ . '/js/MainNavigationMenu.js');
+		IncludeJS(__DIR__ . '/js/ProjectsOverviewNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/ProjectNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/ProfileNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/MapNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/ReferralManagementUser.js');
+		IncludeJS(__DIR__ . '/js/MobileDeviceList.js');
 		IncludeJS(__DIR__ . '/js/UserTeamCollection.js');
-		IncludeJS(__DIR__ . '/js/Proposal.js');
+		IncludeJS(__DIR__ . '/js/Project.js');
 		IncludeJS(__DIR__ . '/js/ProjectTeam.js');
 		IncludeJS(__DIR__ . '/js/ProjectCalendar.js');
+		IncludeJS(__DIR__ . '/js/ProjectActivityChart.js');
+		IncludeJS(__DIR__ . '/js/ProjectFilesNavigationMenu.js');
+		IncludeJS(__DIR__ . '/js/ProjectFiles.js');
 		IncludeJS(__DIR__ . '/js/TaskItem.js');
 		IncludeJS(__DIR__ . '/js/RecentItems.js');
 		IncludeJS(__DIR__ . '/js/ProjectMap.js');
@@ -372,16 +357,30 @@ core\EventListener {
 			return array();
 		}
 
-		return $this->getAllProjectsList($filter);
+		return array_values(array_filter(array_map(function ($project) {
+
+			$project->visible = $this->shouldShowProjectFilter()($project);
+			return $project;
+
+		}, $this->cache()->getProjectsMetadataList($filter)), function ($project) {return !!$project->visible;}));
 
 	}
 
-	protected function getAllProjectsList($filter = array()){
 
-		$database = $this->getDatabase();
+
+
+
+	protected function onTriggerUpdateProjectList($params){
+		$this->cache()->cacheProjectsMetadataList($params->filter);
+	}
+
+	public function listProjectsMetadata($filter){
+
+
+		$database = GetPlugin('ReferralManagement')->getDatabase();
 		$results = $database->getAllProposals($filter);
 
-		return array_values(array_filter(array_map(function ($result) {
+		return array_map(function ($result) {
 
 			$project = $this->analyze('formatProjectResult.' . $result->id, function () use ($result) {
 
@@ -390,11 +389,14 @@ core\EventListener {
 					->toArray();
 			});
 			$project['profileData'] = $this->getLastAnalysis();
-			$project['visible'] = $this->shouldShowProjectFilter()($project);
+			//$project['visible'] = $this->shouldShowProjectFilter()($project);
 
 			return $project;
 
-		}, $results), function ($project) {return !!$project['visible'];}));
+		}, $results);
+
+
+
 	}
 
 	protected function availableProjectPermissions() {
@@ -898,13 +900,13 @@ core\EventListener {
 
 			return function (&$item) use ($clientId) {
 
-				if ($item['user'] == $clientId) {
-					$item['visibleBecuase'] = "You created";
+				if ($item->user == $clientId) {
+					$item->visibleBecuase = "You created";
 					return true;
 				}
 
-				if (in_array($clientId, $item['attributes']['teamMemberIds'])) {
-					$item['visibleBecuase'] = "You are a team member";
+				if (in_array($clientId, $item->attributes->teamMemberIds)) {
+					$item->visibleBecuase = "You are a team member";
 					return true;
 				}
 
@@ -922,7 +924,9 @@ core\EventListener {
 
 		return function (&$item) use ($clientId, $clientMetadata) {
 
-			$nationsInvolved=$item['attributes']['firstNationsInvolved'];
+
+
+			$nationsInvolved=$item->attributes->firstNationsInvolved;
 			if(empty($nationsInvolved)){
 				$nationsInvolved=array();
 			}
@@ -938,17 +942,17 @@ core\EventListener {
 
 			if (in_array(strtolower($clientMetadata['community']), $nationsInvolved)) {
 				//error_log("Your community is involved ".$item['id']);
-				$item['visibleBecuase'] = "Your community is involved";
+				$item->visibleBecuase = "Your community is involved";
 				return true;
 			}
 
-			if ($item['user'] == $clientId) {
-				$item['visibleBecuase'] = "You created";
+			if ($item->user == $clientId) {
+				$item->visibleBecuase = "You created";
 				return true;
 			}
 
-			if (in_array($clientId, $item['attributes']['teamMemberIds'])) {
-				$item['visibleBecuase'] = "You are a team member";
+			if (in_array($clientId, $item->attributes->teamMemberIds)) {
+				$item->visibleBecuase = "You are a team member";
 				return true;
 			}
 

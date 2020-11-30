@@ -54,7 +54,7 @@ var SpatialDocumentPreview = (function() {
 						new UIMapSubTileButton(me._mapTile, {
 		                    containerClassName: 'spatial-file-tile',
 		                    buttonClassName: '',
-		                    image: (response.metadata.image||response.metadata.mimeIcon||response.metadata.mediaTypeIcon)+"&size=48",
+		                    image: (response.metadata.image||response.metadata.mimeIcon||response.metadata.mediaTypeIcon),
 		                    
 		                }).addEvent('click',function(){
 		                	map.fitBounds(b);
@@ -63,9 +63,6 @@ var SpatialDocumentPreview = (function() {
 
 			        }).execute();
 				})
-
-				
-				
 
 				me._map.getLayerManager().addLayer(layer);
 

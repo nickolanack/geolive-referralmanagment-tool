@@ -15,6 +15,7 @@ var ItemCategory = (function() {
 
 	ItemCategory = new Class({
 		Extends: MockDataTypeItem,
+		Implements:[Events],
 		initialize: function(options) {
 			this.parent(options);
 
@@ -145,10 +146,14 @@ var ProjectTagList = (function() {
 			}
 
 
-			var tags = []; //"Forestry", "Mining", "Energy", "Roads"];
+			var tags = []; //;
 			tags = tags.concat(_tags.map(function(t) {
 				return t.getName();
-			}))
+			}));
+
+			if(tags.length==0){
+				tags=["Forestry", "Mining", "Energy", "Roads"];
+			}
 			if (callback) {
 				callback(tags);
 			}
@@ -191,6 +196,8 @@ var ProjectTagList = (function() {
 				return false;
 			});
 		},
+
+
 
 		getProjectTagsData: function(category) {
 
@@ -238,7 +245,7 @@ var ProjectTagList = (function() {
 				if (type == "ReferralManagement.client") {
 					return "menu-people-clients";
 				}
-				return "";
+				return 'type-'+type.toLowerCase().split('.').join('-');
 			}
 
 			var ul = new ElementModule('ul', {
@@ -259,17 +266,20 @@ var ProjectTagList = (function() {
 						click: function(e) {
 							e.stop();
 
-
-
 							//var application=childView.getApplication()
 							var controller = application.getNamedValue('navigationController');
 							var view = controller.getCurrentView();
 							console.log(view);
 
+							if(typeof t.navigate=='function'){
+								t.navigate();
+								return;
+							}
 
 							if (t.getType() === 'ReferralManagement.proposal') {
 								UIInteraction.navigateToProjectOverview(t);
 							}
+
 							if (t.getType() === 'ReferralManagement.client') {
 								application.setNamedValue("currentClient", t);
 								controller.navigateTo("Clients", "People");
@@ -282,6 +292,39 @@ var ProjectTagList = (function() {
 
 
 			return ul;
+		},
+		formatTagCloudModule:function(mod){
+
+			var application = this._getApplication();
+			var me=this;
+
+			mod.runOnceOnLoad(function(){
+
+				var appendPlusBtn=function(){
+
+					mod.getCloud().getElement().appendChild(new Element('span',{
+						html:"+",
+						"class":"tag-el add-tag",
+						events:{
+							click:function(){
+
+								var newTag= me.getNewProjectTag('');
+								newTag.addEvent('update',function(){
+									mod.addValue(newTag.getName());
+									appendPlusBtn();
+								});
+
+								(new UIModalDialog(application, newTag, {
+		                		"formName":"tagForm", "formOptions":{template:"form"}})).show();
+
+							}
+						}
+					}));
+
+				};
+				appendPlusBtn();
+			
+			});
 		}
 
 
