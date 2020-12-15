@@ -8103,16 +8103,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 454,
-                            "y": 317
+                            "x": 464,
+                            "y": 327
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 414,
-                                    "y": 568
+                                    "x": 424,
+                                    "y": 578
                                 }
                             }
                         ],
@@ -8169,13 +8169,14 @@
                                                 "maxChars": 0,
                                                 "mandatory": false,
                                                 "multiEntry": false,
-                                                "autocomplete": true,
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "",
                                                 "formatter": "none",
                                                 "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": [],
                                                 "onRenderTextFieldScript": "",
-                                                "formatValueScript": "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.formatValueScript.js"
+                                                "formatdefaultScript": ""
                                             }
                                         },
                                         {
@@ -8191,13 +8192,14 @@
                                                 "maxChars": 0,
                                                 "mandatory": false,
                                                 "multiEntry": false,
-                                                "autocomplete": true,
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "",
                                                 "formatter": "none",
                                                 "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": [],
                                                 "onRenderTextFieldScript": "",
-                                                "formatValueScript": ""
+                                                "formatdefaultScript": ""
                                             }
                                         },
                                         {
@@ -8217,7 +8219,7 @@
                                                 "shuffleTags": false,
                                                 "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
                                                 "getItemTagsScript": "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.getItemTagsScript.js",
-                                                "formatModule": "ReferralManagementDashboard.limitUserCommunityValues(module);"
+                                                "formatModule": "ProjectTeam.FormatUserCommunityTagCloud(module);\n"
                                             }
                                         },
                                         {
@@ -8233,13 +8235,14 @@
                                                 "maxChars": 0,
                                                 "mandatory": false,
                                                 "multiEntry": false,
-                                                "autocomplete": true,
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "",
                                                 "formatter": "none",
                                                 "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": [],
                                                 "onRenderTextFieldScript": "",
-                                                "formatValueScript": ""
+                                                "formatdefaultScript": ""
                                             }
                                         },
                                         {
