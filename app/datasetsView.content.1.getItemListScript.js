@@ -1,4 +1,4 @@
-return ReferralManagementDashboard.getProjectTagsData('_root');
+return ProjectTagList.getProjectTagsData('_root');
 
 
 /*
