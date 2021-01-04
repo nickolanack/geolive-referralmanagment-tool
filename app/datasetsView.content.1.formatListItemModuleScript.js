@@ -1,3 +1,3 @@
 
 
-UIInteraction.addDatasetTypeEvents(childView, application);
+UIInteraction.addDatasetTypeEvents(child, childView, application);
