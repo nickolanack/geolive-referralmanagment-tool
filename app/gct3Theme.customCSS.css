@@ -433,7 +433,9 @@ button.primary-btn.nav-new-btn:hover {
 
 
 
-
+.inline-btn.sort.hasFilter li, .inline-btn.sort.hasOrder li {
+    color: black;
+}
 
 .navigation-menu .menu-main li{
 
