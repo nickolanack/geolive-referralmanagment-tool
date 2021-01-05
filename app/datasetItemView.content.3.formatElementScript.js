@@ -11,7 +11,8 @@ el.setAttribute('data-item-list',projects.map(function(p){
     if (ProjectTeam.CurrentTeam().hasUser(p.getProjectSubmitterId())){
         var icon=UserIcon.createUserAvatarModule(ProjectTeam.CurrentTeam().getUser(p.getProjectSubmitterId()));
         if(icon){
-            el.appendChild(icon);
+            //el.appendChild(icon);
+            icon.load(null, el, null);
         }
             
     }
