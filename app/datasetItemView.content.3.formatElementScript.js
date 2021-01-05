@@ -9,7 +9,11 @@ el.setAttribute('data-item-list',projects.map(function(p){
     
     console.error('avatar');
     if (ProjectTeam.CurrentTeam().hasUser(p.getProjectSubmitterId())){
-        el.appendChild(UserIcon.createUserAvatarModule(ProjectTeam.CurrentTeam().getUser(p.getProjectSubmitterId())));
+        var icon=UserIcon.createUserAvatarModule(ProjectTeam.CurrentTeam().getUser(p.getProjectSubmitterId()));
+        if(icon){
+            el.appendChild(icon);
+        }
+            
     }
     return p.getId();
     
