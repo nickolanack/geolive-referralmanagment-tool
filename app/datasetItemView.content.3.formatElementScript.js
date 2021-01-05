@@ -5,4 +5,16 @@ el.setAttribute('data-count-projects', projects.length);
 if(projects.length>0){
     el.addClass('hasItems');
 }
-el.setAttribute('data-item-list',projects.map(function(p){return p.getId();}).join('-'));
+el.setAttribute('data-item-list',projects.map(function(p){
+    
+    
+    
+    UserIcon.createUserAvatarModule(ProjectTeam.CurrentTeam().getUser(p.getId()));
+    
+    return p.getId();
+    
+    
+    
+}).join('-'));
+
+
