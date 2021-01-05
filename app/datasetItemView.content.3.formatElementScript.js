@@ -8,9 +8,9 @@ if(projects.length>0){
 el.setAttribute('data-item-list',projects.map(function(p){
     
     
-   // if (ProjectTeam.CurrentTeam().hasUser(p.getUserId())){
-       // UserIcon.createUserAvatarModule(ProjectTeam.CurrentTeam().getUser(p.getUserId()));
-   // }
+    if (ProjectTeam.CurrentTeam().hasUser(p.getProjectSubmitterId())){
+        UserIcon.createUserAvatarModule(ProjectTeam.CurrentTeam().getUser(p.getProjectSubmitterId()));
+    }
     return p.getId();
     
     
