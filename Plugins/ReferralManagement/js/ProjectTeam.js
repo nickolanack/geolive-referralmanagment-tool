@@ -740,7 +740,7 @@ var ProjectTeam = (function() {
 			if (!me._communities) {
 				if (callback) {
 					me.runOnceOnLoad(function(){
-					    callback(me.getCommunities());
+					    callback(me.listCommunities());
 					});
 
 					return null;
@@ -977,6 +977,32 @@ var ProjectTeam = (function() {
 	ProjectTeam.GetAllCommunities=function(){
 		return Community.communities;
 	}
+
+	ProjectTeam.LimitUserCommunityTagCloudValues= function(module) {
+
+		//modify tag cloud 
+
+		var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
+		if (user.isUnassigned() || AppClient.getUserType() == "admin") {
+			return;
+		}
+
+		module.runOnceOnLoad(function() {
+			var cloud = module.getCloud();
+
+			cloud.getElement().addClass('community locked');
+
+			cloud.getWords().map(function(word) {
+				return cloud.getWordElement(word);
+			}).forEach(function(el) {
+				el.removeEvents('click');
+			});
+		});
+	};
+	ProjectTeam.FormatUserCommunityTagCloud= function(module) {
+		ProjectTeam.LimitUserCommunityTagCloudValues(module);
+	};
+
 
 	ProjectTeam.GetAllRoles=function(){
 		return ReferralManagementUser.GetMainRoles();

@@ -10,7 +10,7 @@ var UIInteraction=(function(){
 			return ReferralManagementDashboard.getApplication();
 
 		},
-		addDatasetTypeEvents: function(childView, application) {
+		addDatasetTypeEvents: function(child, childView, application) {
 
 			var me=this;
 
@@ -23,11 +23,21 @@ var UIInteraction=(function(){
 				//application.setNamedValue("currentProject", null);
 
 				DashboardConfig.getValue('showSplitProjectDetail', function(split) {
-					controller.navigateTo("Projects", "Main");
+
+					(function(data){
+
+						//contoller.setNavigationData(data);
+
+					})(child)
+
+					//? not really using split var here
+					controller.navigateTo("Projects", "Main", {
+						filters:ProjectTagList.getProjectTagsData('_root').map(function(item){ return item.getName(); }),
+						filter:child.getName()
+					});
 				});
 
 			});
-
 
 		},
 

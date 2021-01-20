@@ -6,12 +6,28 @@ var ProjectList = (function() {
 
 		applyFilter:function(){
 
+
+			var application = ReferralManagementDashboard.getApplication();
+			var controller = application.getNamedValue('navigationController');
+			var opts=controller.getNavigationOptions();
+			if(opts.filter){
+				return (function(a){
+					return a.getProjectType()===opts.filter;
+				}).apply(null, arguments);
+				//return ([getFilter(opts.filter)]).concat(filters);
+			}
+			
+
 			if(this.getFilter){
 				var filter=this.getFilter();
 				if(!filter){
 					return true;
 				}
 			}
+
+
+			
+
 
 			return ProjectList.currentProjectFilterFn.apply(null, arguments);
 		}
@@ -38,6 +54,35 @@ var ProjectList = (function() {
 		}];
 
 	ProjectList.projectFilters = function() {
+
+		var application = ReferralManagementDashboard.getApplication();
+		var controller = application.getNamedValue('navigationController');
+		var opts=controller.getNavigationOptions();
+
+		var filterList=filters;
+		var getFilter=function(type){
+
+			return {
+					label: type,
+					name: type,
+					filterFn: function(a) {
+						return a.getProjectType()===type;
+					}
+				};
+			
+
+		}
+
+		if(opts.filter){
+			//return ([getFilter(opts.filter)]).concat(filters);
+		}
+
+		if(opts.filters){
+			return (opts.filters.map(getFilter)).concat(filters);
+		}
+
+
+
 		return filters;
 	};
 

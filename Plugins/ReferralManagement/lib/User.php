@@ -144,7 +144,10 @@ class User {
 		return array_merge(array($this->communityCollective()), $this->listTerritories());
 	}
 	public function listTerritories() {
-		return GetWidget('communityConfiguration')->getParameter("communities");
+		$communities= GetWidget('communityConfiguration')->getParameter("communities");
+		return array_map(function($community){
+			return $community;
+		}, $communities);
 	}
 	public function communityCollective() {
 
