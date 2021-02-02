@@ -23,6 +23,8 @@ $firelight=GetPlugin('ReferralManagement');
 $firelight->includeScripts();
 
 
+GetWidget('projectTypeSelectionForm')->display($targetInstance); //proposal wizard from map
+
 GetWidget('proposalForm')->display($targetInstance); //proposal wizard from map
 GetWidget('documentProjectForm')->display($targetInstance); //proposal wizard from map
 
