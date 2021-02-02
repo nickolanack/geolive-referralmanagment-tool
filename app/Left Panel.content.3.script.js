@@ -1,4 +1,15 @@
-return new Element("button",{"html":"New project", "style":"", "class":"primary-btn nav-new-btn", "events":{"click":function(){
+
+
+
+
+
+
+var label=DashboardConfig.getValue("leftPanelPrimaryBtnLabel","New project");
+
+
+
+
+return new Element("button",{"html":label, "style":"", "class":"primary-btn nav-new-btn", "events":{"click":function(){
     
    
             var formName=DashboardConfig.getValue("projectForm"); //"documentProjectForm";//"ProposalTemplate";
@@ -26,12 +37,6 @@ return new Element("button",{"html":"New project", "style":"", "class":"primary-
 			    ProjectTeam.CurrentTeam().addProject(newItem);
 			    UIInteraction.navigateToProjectOverview(newItem);
 			});
-    
-    
-    
-
-    
-    
     
     
     
