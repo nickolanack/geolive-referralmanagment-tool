@@ -75,6 +75,7 @@
             "renderSpatialThumbs": false,
             "mime-image": [],
             "mime-audio": [],
+            "mime-video": [],
             "mime-document": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/tla-o-qui-aht.geoforms.ca\/1\/Uploads\/xba_%5BG%5D_BJF_ZAB_%5BImAgE%5D.png"
             ],
@@ -86,8 +87,7 @@
             ],
             "mime-document-doc": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/tla-o-qui-aht.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_TOc_KS7_dxQ_%5BG%5D.png"
-            ],
-            "mime-video": []
+            ]
         }
     },
     "plugin.12": {
@@ -2291,7 +2291,7 @@
         }
     },
     "widget.118": {
-        "name": "Icon Set",
+        "name": "Marker Icon Set",
         "instance": "IconSet",
         "parameters": {
             "markerIconset": [

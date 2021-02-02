@@ -79,7 +79,8 @@ IncludeJSBlock('
     }
 
     if(strpos($dashConfig->getParameter('pageClassNames'), 'gct3')!==false){
-         GetWidget('gct3Theme')->display($targetInstance);   
+         GetWidget('gct3Theme')->display($targetInstance);  
+         GetWidget('purpleTheme')->display($targetInstance);   
     }else{
          GetWidget('gatherTheme')->display($targetInstance);   
     }
