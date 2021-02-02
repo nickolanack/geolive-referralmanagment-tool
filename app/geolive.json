@@ -18859,11 +18859,18 @@
                             "projectTypeSelectionForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 128,
-                            "y": 260
+                            "x": 206,
+                            "y": 246
                         },
                         "children": [
-                            "projectTypeSelectionForm.metadata.children.1.children.0.json"
+                            "projectTypeSelectionForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 166,
+                                    "y": 412
+                                }
+                            }
                         ],
                         "builderMetadata": {
                             "positions": {
@@ -18891,7 +18898,8 @@
                                                 "showExpandInput": true,
                                                 "toolbarPosition": "bottom",
                                                 "textFormatScript": "",
-                                                "mediaIconTint": "rgb(100, 149, 237)"
+                                                "mediaIconTint": "rgb(100, 149, 237)",
+                                                "onRenderModuleFn": ""
                                             }
                                         }
                                     ]
@@ -18910,7 +18918,10 @@
                                 "content",
                                 "footer",
                                 "menu"
-                            ]
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
                         }
                     }
                 ]
