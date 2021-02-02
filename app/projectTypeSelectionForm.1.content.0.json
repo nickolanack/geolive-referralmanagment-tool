@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": " var div=new Element('div');\n \n div.appendChild(new Element('button', {html:\"Create a Dataset\"}));\n div.appendChild(new Element('button', {html:\"Create a Collection\"}));\n \n \n \n return div;",
+        "script": " var div=new Element('div');\n \n div.appendChild(new Element('button', {html:\"Create a Dataset\", \"class\":\"primary-btn nav-new-btn inline\"}));\n div.appendChild(new Element('button', {html:\"Create a Collection\", \"class\":\"primary-btn nav-new-btn inline\"}));\n \n \n \n return div;",
         "description": "Info about my custom script"
     }
 }
