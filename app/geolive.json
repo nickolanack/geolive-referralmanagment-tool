@@ -18859,23 +18859,25 @@
                             "projectTypeSelectionForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 182,
-                            "y": 126
+                            "x": 311,
+                            "y": 112
                         },
                         "children": [
                             "projectTypeSelectionForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 142,
-                                    "y": 292
+                                    "x": 271,
+                                    "y": 278
                                 }
                             }
                         ],
                         "builderMetadata": {
                             "positions": {
                                 "title": {
-                                    "modules": []
+                                    "modules": [
+                                        "projectTypeSelectionForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
                                 },
                                 "content": {
                                     "modules": [
