@@ -4,7 +4,13 @@
 
 
 
-var label=DashboardConfig.getValue("leftPanelPrimaryBtnLabel","New project");
+var label="New project";
+
+DashboardConfig.getValue("leftPanelPrimaryBtnLabel",function(value){
+    if(value){
+        label=value;
+    }
+});
 
 
 
