@@ -186,7 +186,12 @@ var MainNavigationMenu = new Class({
 
 						return 'Projects/Project-' + current.getId()
 					}
-				}, {
+				}, 
+				{
+					html: "Datasets",
+					alias: {"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true},
+				},
+				{
 					html: "Project",
 					"class":"hidden",
 					template: "documentProjectDetail",

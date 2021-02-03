@@ -17,6 +17,8 @@ var DashboardConfig=(function(){
 		getValue:function(name, callback){
 
 			var me=this;
+
+
 			if(me._ready){
 				if(!callback){
 					return this._config.parameters[name];

@@ -266,6 +266,7 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/DashboardConfig.js');
 		IncludeJS(__DIR__ . '/js/DashboardPageLayout.js');
 		IncludeJS(__DIR__ . '/js/ReferralManagementDashboard.js');
+		IncludeJS(__DIR__ . '/js/UILeftPanel.js');
 		IncludeJS(__DIR__ . '/js/UIInteraction.js');
 		IncludeJS(__DIR__ . '/js/OrganizationalUnit.js');
 		IncludeJS(__DIR__ . '/js/ItemCategory.js');
