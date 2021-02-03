@@ -75,6 +75,7 @@
             "renderSpatialThumbs": false,
             "mime-image": [],
             "mime-audio": [],
+            "mime-video": [],
             "mime-document": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/tla-o-qui-aht.geoforms.ca\/1\/Uploads\/xba_%5BG%5D_BJF_ZAB_%5BImAgE%5D.png"
             ],
@@ -86,8 +87,7 @@
             ],
             "mime-document-doc": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/tla-o-qui-aht.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_TOc_KS7_dxQ_%5BG%5D.png"
-            ],
-            "mime-video": []
+            ]
         }
     },
     "plugin.12": {
@@ -2291,7 +2291,7 @@
         }
     },
     "widget.118": {
-        "name": "Icon Set",
+        "name": "Marker Icon Set",
         "instance": "IconSet",
         "parameters": {
             "markerIconset": [
@@ -4811,6 +4811,12 @@
                     "label": "showLeftPanelPrimaryBtn"
                 },
                 {
+                    "type": "text",
+                    "name": "leftPanelPrimaryBtnLabel",
+                    "default": "Add Project",
+                    "label": "leftPanelPrimaryBtnLabel"
+                },
+                {
                     "type": "boolean",
                     "name": "showRecentProjectsDetail",
                     "default": false,
@@ -5017,8 +5023,9 @@
             "enablePending": true,
             "useFacebookLogin": false,
             "gatherIcon": [
-                "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_%5BG%5D_ldi_d9_9Cu-%3Ethumb%3A%3E200x%3E150.png"
-            ]
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_r7F_lYW_6cm_%5BG%5D-%3Ethumb%3A%3E200x%3E150.png"
+            ],
+            "leftPanelPrimaryBtnLabel": "Add Project"
         }
     },
     "widget.154": {
@@ -18809,6 +18816,96 @@
             },
             "widgetTitle": "importProjectsForm",
             "templateName": "importProjectsForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "readAccess": "public"
+        }
+    },
+    "widget.377": {
+        "name": "Stylesheet",
+        "instance": "CSS",
+        "parameters": {
+            "cacheable": true,
+            "link": true,
+            "sass": true,
+            "widgetTitle": "purpleTheme",
+            "target": "purpleTheme",
+            "customCSS": "purpleTheme.customCSS.css",
+            "readAccess": "public"
+        }
+    },
+    "widget.378": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "target": "projectTypeSelectionForm",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": 3,
+                    "y": 291
+                },
+                "children": [
+                    "projectTypeSelectionForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "projectTypeSelectionForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 321,
+                            "y": 122
+                        },
+                        "children": [
+                            "projectTypeSelectionForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 281,
+                                    "y": 288
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "projectTypeSelectionForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "projectTypeSelectionForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": []
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "widgetTitle": "projectTypeSelectionForm",
+            "templateName": "projectTypeSelectionForm",
             "requireTarget": true,
             "resolveItemScript": "return item;",
             "beforeSubmitScript": "",

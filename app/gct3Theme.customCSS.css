@@ -460,3 +460,21 @@ button.primary-btn.nav-new-btn:hover {
     height: 30px;
 }
 
+
+
+.navigation-menu li.menu-main-datasets:before {
+    content: "\f1c0";
+}
+
+.navigation-menu li.menu-main-projects:before {
+    content: "\f1b3";
+}
+
+.projects-list .field-value-module {
+    font-size: 14px;
+    font-family: Arial;
+}
+
+
+
+
