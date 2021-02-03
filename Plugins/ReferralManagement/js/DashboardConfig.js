@@ -18,8 +18,18 @@ var DashboardConfig=(function(){
 
 			var me=this;
 
+			
+
 
 			if(me._ready){
+
+
+
+				if(typeof this._config.parameters[name]=="string"&&this._config.parameters[name].indexOf('{')===0){
+					var decoded=this._config.parameters[name].substring(1, this._config.parameters[name].length-1);
+					return this.getValue(decoded, callback);
+				}
+
 				if(!callback){
 					return this._config.parameters[name];
 				}

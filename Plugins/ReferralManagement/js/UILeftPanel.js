@@ -1,4 +1,4 @@
-var UILeftPanel = function() {
+var UILeftPanel = (function() {
 
 
 
@@ -6,55 +6,94 @@ var UILeftPanel = function() {
 
 		getPrimaryBtns: function(application) {
 
-			var label = "New project";
-
-			DashboardConfig.getValue("leftPanelPrimaryBtnLabel", function(value) {
-				if (value) {
-					label = value;
-				}
-			});
+			var buttons=[];
 
 
+			DashboardConfig.getValue("showLeftPanelPrimaryBtn", function(value) {
+				
+				var label = "New Project";
 
-			return new Element("button", {
-				"html": label,
-				"style": "",
-				"class": "primary-btn nav-new-btn",
-				"events": {
-					"click": function() {
-
-
-						var formName = DashboardConfig.getValue("projectForm"); //"documentProjectForm";//"ProposalTemplate";
-
-
-
-						// 			var wizardTemplate = application.getDisplayController().getWizardTemplate(formName);
-						// 			if ((typeof wizardTemplate) != 'function') {
-
-						// 				if(window.console&&console.warn){
-						// 					console.warn('Expected named wizardTemplate: '+formName+', to exist');
-						// 				}
-
-						// 			}
-						//	var modalFormViewController =  new PushBoxModuleViewer(application, {});
-						var newItem = new Proposal();
-						//var wizard = wizardTemplate(newItem, {});
-						//wizard.buildAndShow(modalFormViewController, {template:"form"}); 
-
-
-						application.getDisplayController().displayPopoverForm(formName, newItem, application, {
-							template: "form"
-						});
-
-						newItem.addEvent("save:once", function() {
-							ProjectTeam.CurrentTeam().addProject(newItem);
-							UIInteraction.navigateToProjectOverview(newItem);
-						});
-
+				DashboardConfig.getValue("leftPanelPrimaryBtnLabel", function(value) {
+					if (value) {
+						label = value;
 					}
+				});
+
+				
+
+
+				buttons.push(new Element("button", {
+					"html": label,
+					"style": "",
+					"class": "primary-btn nav-new-btn",
+					"events": {
+						"click": function() {
+
+
+							var formName = DashboardConfig.getValue("leftPanelPrimaryBtnForm"); //"documentProjectForm";//"ProposalTemplate";
+							var newItem = new Proposal();
+			
+							application.getDisplayController().displayPopoverForm(formName, newItem, application, {
+								template: "form"
+							});
+
+							newItem.addEvent("save:once", function() {
+								ProjectTeam.CurrentTeam().addProject(newItem);
+								UIInteraction.navigateToProjectOverview(newItem);
+							});
+
+						}
+					}
+				}));
+
+			});
+
+
+			DashboardConfig.getValue("showLeftPanelSecondaryBtn", function(value) {
+				if (value) {
+					
+
+					var label = "New Dataset";
+
+					DashboardConfig.getValue("leftPanelSecondaryBtnLabel", function(value) {
+						if (value) {
+							label = value;
+						}
+					});
+
+
+
+					buttons.push(new Element("button", {
+						"html": label,
+						"style": "",
+						"class": "primary-btn nav-new-btn",
+						"events": {
+							"click": function() {
+
+
+								var formName = DashboardConfig.getValue("leftPanelSecondaryBtnForm"); //"documentProjectForm";//"ProposalTemplate";
+								var newItem = new Proposal();
+				
+								application.getDisplayController().displayPopoverForm(formName, newItem, application, {
+									template: "form"
+								});
+
+								newItem.addEvent("save:once", function() {
+									ProjectTeam.CurrentTeam().addProject(newItem);
+									UIInteraction.navigateToProjectOverview(newItem);
+								});
+
+							}
+						}
+					}));
+
+
+
 				}
 			});
 
+
+			return buttons;
 
 		}
 
@@ -66,4 +105,4 @@ var UILeftPanel = function() {
 
 	return new UILeftPanel();
 
-}
+})();
