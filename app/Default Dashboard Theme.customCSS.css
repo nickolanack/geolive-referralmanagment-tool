@@ -29,6 +29,11 @@ button.primary-btn.nav-new-btn{
     font-size: 18px;
     color: #2d2d2d;
     
+    
+    &.btn-index-1 {
+        margin-top: 0;
+    }
+        
 
     &:before {
         content: "+ ";
