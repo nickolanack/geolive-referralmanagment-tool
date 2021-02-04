@@ -2422,6 +2422,13 @@ span.SearchModule.search-container {
 }
 
 
+.TagCloudModule .tag-cloud > span.tag-el.add-tag {
+    background-color: mediumseagreen;
+    vertical-align: bottom;
+    font-size: 22px;
+}
+
+
 .tag-cloud.locked {
     border: 1px solid #ceb250;
     border-radius: 2px;
