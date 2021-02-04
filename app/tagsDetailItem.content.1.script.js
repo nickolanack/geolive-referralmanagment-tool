@@ -1,7 +1,7 @@
 
 
 var type='Tag';
-if(item.isRootTage()){
+if(item.isRootTag()){
     type="Category";
 }
 
