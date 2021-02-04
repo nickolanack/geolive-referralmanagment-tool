@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "var div=new Element('div', {\"class\":\"section-title\"});\n\ndiv.appendChild(new Element('span',{html:\"Datasets\"}));\n",
+        "script": "var div=new Element('div', {\"class\":\"section-title\"});\ndiv.appendChild(new Element('span',{html:\"Datasets\"}));\nreturn div;",
         "description": "Info about my custom script"
     }
 }
