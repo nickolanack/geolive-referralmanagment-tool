@@ -1,10 +1,20 @@
 {
-    "type": "WizardTitleField",
+    "type": "WizardDescriptionField",
     "config": {
-        "label": "Title",
-        "message": "add a title",
+        "label": "Description",
+        "message": "add a description",
+        "lines": 3,
+        "mandatory": false,
+        "showAudios": true,
+        "showImages": true,
+        "showDocuments": true,
+        "showVideos": true,
         "className": "",
         "maxChars": 0,
-        "textFormatScript": ""
+        "showExpandInput": true,
+        "toolbarPosition": "bottom",
+        "textFormatScript": "",
+        "mediaIconTint": "rgb(100, 149, 237)",
+        "onRenderModuleFn": ""
     }
 }
