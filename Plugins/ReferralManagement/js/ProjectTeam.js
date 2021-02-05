@@ -1010,11 +1010,14 @@ var ProjectTeam = (function() {
 
 		//modify tag cloud 
 
-		module.runOnceOnLoad(function() {
+		//module.runOnceOnLoad(function() {
 			var cloud = module.getCloud();
+			cloud.setWordFormatter(function(word){
+				return word;
+			});
 			
 		
-		});
+		//});
 	};
 	ProjectTeam.FormatUserCommunityTagCloud= function(module) {
 		ProjectTeam.LimitUserCommunityTagCloudValues(module);
