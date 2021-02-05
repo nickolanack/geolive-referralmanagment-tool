@@ -27,6 +27,7 @@ GetWidget('projectTypeSelectionForm')->display($targetInstance); //proposal wiza
 
 GetWidget('proposalForm')->display($targetInstance); //proposal wizard from map
 GetWidget('documentProjectForm')->display($targetInstance); //proposal wizard from map
+GetWidget('documentForm')->display($targetInstance); //proposal wizard from map
 
 GetWidget('dashboardLoader')->display($targetInstance); //proposal wizard from map
 
