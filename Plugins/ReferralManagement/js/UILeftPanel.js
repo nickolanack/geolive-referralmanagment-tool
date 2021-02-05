@@ -25,7 +25,7 @@ var UILeftPanel = (function() {
 				buttons.push(new Element("button", {
 					"html": label,
 					"style": "",
-					"class": "primary-btn nav-new-btn",
+					"class": "primary-btn nav-new-btn btn-index-"+buttons.length,
 					"events": {
 						"click": function() {
 
@@ -66,7 +66,7 @@ var UILeftPanel = (function() {
 					buttons.push(new Element("button", {
 						"html": label,
 						"style": "",
-						"class": "primary-btn nav-new-btn",
+						"class": "primary-btn nav-new-btn btn-index-"+buttons.length,
 						"events": {
 							"click": function() {
 

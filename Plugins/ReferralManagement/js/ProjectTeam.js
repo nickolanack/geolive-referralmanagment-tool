@@ -997,10 +997,28 @@ var ProjectTeam = (function() {
 			}).forEach(function(el) {
 				el.removeEvents('click');
 			});
+
+
+
+
+
+
+		});
+	};
+
+	ProjectTeam.FormatTagCloudLanguageValues= function(module) {
+
+		//modify tag cloud 
+
+		module.runOnceOnLoad(function() {
+			var cloud = module.getCloud();
+			
+		
 		});
 	};
 	ProjectTeam.FormatUserCommunityTagCloud= function(module) {
 		ProjectTeam.LimitUserCommunityTagCloudValues(module);
+		ProjectTeam.FormatTagCloudLanguageValues(module);
 	};
 
 

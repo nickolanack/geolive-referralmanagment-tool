@@ -8,9 +8,9 @@ var ReferralManagementUser = (function() {
 	(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_user_roles', {
 		'plugin': "ReferralManagement"
 	}))
-		.addEvent('success', function(result) {
+	.addEvent('success', function(result) {
 			console.log(result);
-			MainRoles=result.roles;
+			MainRoles = result.roles;
 		})
 		.execute();
 
@@ -53,10 +53,10 @@ var ReferralManagementUser = (function() {
 			var me = this;
 			return me.options.metadata.roles;
 		},
-		getBio: function(){
+		getBio: function() {
 
 			var me = this;
-			return me.options.metadata.bio; 
+			return me.options.metadata.bio;
 		},
 		getRolesUserCanAssign: function() {
 			var me = this;
@@ -66,7 +66,7 @@ var ReferralManagementUser = (function() {
 			var me = this;
 			var roles = me.getRoles();
 
-			var allRoles=MainRoles.slice(0);
+			var allRoles = MainRoles.slice(0);
 			allRoles.pop();
 
 
@@ -121,7 +121,7 @@ var ReferralManagementUser = (function() {
 			var roles = me.getRoles();
 
 
-			var allRoles=MainRoles.slice(0);
+			var allRoles = MainRoles.slice(0);
 			allRoles.pop();
 			allRoles.pop();
 
@@ -228,7 +228,7 @@ var ReferralManagementUser = (function() {
 	});
 
 
-	ReferralManagementUser.GetMainRoles=function(){
+	ReferralManagementUser.GetMainRoles = function() {
 		return MainRoles.slice(0);
 	};
 
@@ -239,178 +239,181 @@ var ReferralManagementUser = (function() {
 
 
 
-	var TeamMember = new Class({
-		Extends: ReferralManagementUser,
-		isProjectMember: function() {
-			return true;
-		},
-		getProject: function() {
-			var me = this;
-			if (!me._p) {
-				throw 'No project set for team member';
-			}
-			return me._p;
-		},
-		setProject: function(p) {
-			var me = this;
-			me._p = p;
-		},
-
-		getUser: function() {
-			var me = this;
-			if (!me._u) {
-				throw 'No user set for team member';
-			}
-			return me._u;
-		},
-		setUser: function(u) {
-			var me = this;
-			me._u = u;
-			me.options.metadata = Object.append(me.options.metadata, u.options.metadata);
-		},
-		setMissingUser: function() {
-			var me = this;
-			me.options.metadata = Object.append({
-				name: "missing or deleted user",
-				community: "unknown",
-				email: ''
-			}, me.options.metadata);
-		},
-		save: function(callback) {
-			var me = this;
-
-
-			var SaveProjectTeamMemberPermissions = new Class({
-				Extends: AjaxControlQuery,
-				initialize: function(data) {
-					this.parent(CoreAjaxUrlRoot, 'save_team_member_permissions', Object.append({
-						plugin: 'ReferralManagement'
-					}, data));
-				}
-			});
-
-
-			(new SaveProjectTeamMemberPermissions({
-				id: me.getId(),
-				project: me.getProject().getId(),
-				permissions: me.options.metadata.permissions
-			})).addEvent('success', function(resp) {
-
-				if (resp.success) {
-
-					callback(true);
-					me.fireEvent('update');
-
-
-				} else {
-					callback(false);
-				}
-
-
-			}).execute();
-
-		},
-
-		setReceiveNotifications: function(bool) {
-			var me = this;
-			me._setPermission("recieves-notifications", bool);
-		},
-		_getPermission: function(n) {
-			var me = this;
-			return me.options.metadata.permissions.indexOf(n) >= 0;
-		},
-		_setPermission: function(n, bool) {
-			var me = this;
-			if (bool && me.options.metadata.permissions.indexOf(n) < 0) {
-				me.options.metadata.permissions.push(n);
-			}
-
-			if ((!bool)) {
-				var i = me.options.metadata.permissions.indexOf(n);
-				if (i >= 0) {
-					me.options.metadata.permissions.splice(i, 1);
-				}
-			}
-		},
-
-		setCanAddTeamMembers: function(bool) {
-			var me = this;
-			me._setPermission("adds-members", bool);
-		},
-		setCanAddTasks: function(bool) {
-			var me = this;
-			me._setPermission("adds-tasks", bool);
-		},
-		setCanAssignTasks: function(bool) {
-			var me = this;
-			me._setPermission("assigns-tasks", bool);
-		},
-		setCanSetTeamMembersRoles: function(bool) {
-			var me = this;
-			me._setPermission("sets-roles", bool);
-		},
-
-		receiveNotifications: function() {
-			var me = this;
-			return me._getPermission("recieves-notifications");
-		},
-		canAddTeamMembers: function() {
-			var me = this;
-			return me.isTeamManager() || me._getPermission("adds-members");
-		},
-		canAddTasks: function() {
-			var me = this;
-			return me.isTeamManager() || me._getPermission("adds-tasks");
-		},
-		canAssignTasks: function() {
-			var me = this;
-			return me.isTeamManager() || me._getPermission("assigns-tasks");
-		},
-		canSetTeamMembersRoles: function() {
-			var me = this;
-			return me.isTeamManager() || me._getPermission("sets-roles");
-		},
-
-
-
-	});
-
-
-	var Device = new Class({
-		Extends: ReferralManagementUser,
-		isDevice: function() {
-			return true;
-		},
-		isActivated: function() {
-			var me = this;
-
-			if (DashboardConfig.getValue("requireValidMobileEmail")&&(!me.options.metadata.email) || me.options.metadata.email.indexOf('device.') === 0) {
-				return false;
-			}
-
-			return true;
+var TeamMember = new Class({
+	Extends: ReferralManagementUser,
+	isProjectMember: function() {
+		return true;
+	},
+	getProject: function() {
+		var me = this;
+		if (!me._p) {
+			throw 'No project set for team member';
 		}
-	})
+		return me._p;
+	},
+	setProject: function(p) {
+		var me = this;
+		me._p = p;
+	},
 
-
-
-	var ProjectClient = new Class({
-		Extends: DataTypeObject,
-		Implements: [Events],
-		initialize: function(id, data) {
-			var me = this;
-
-			me.type = 'ReferralManagement.client';
-			me._id = id;
-
-			me.data = data;
-		},
-		getName: function() {
-			var me = this;
-			return me.data.name;
-		},
-		getDescription: function() {
-			var me = this;
-			return 'Some description';
+	getUser: function() {
+		var me = this;
+		if (!me._u) {
+			throw 'No user set for team member';
 		}
-	});
+		return me._u;
+	},
+	setUser: function(u) {
+		var me = this;
+		me._u = u;
+		me.options.metadata = Object.append(me.options.metadata, u.options.metadata);
+	},
+	setMissingUser: function() {
+		var me = this;
+		me.options.metadata = Object.append({
+			name: "missing or deleted user",
+			community: "unknown",
+			email: ''
+		}, me.options.metadata);
+	},
+	save: function(callback) {
+		var me = this;
+
+
+		var SaveProjectTeamMemberPermissions = new Class({
+			Extends: AjaxControlQuery,
+			initialize: function(data) {
+				this.parent(CoreAjaxUrlRoot, 'save_team_member_permissions', Object.append({
+					plugin: 'ReferralManagement'
+				}, data));
+			}
+		});
+
+
+		(new SaveProjectTeamMemberPermissions({
+			id: me.getId(),
+			project: me.getProject().getId(),
+			permissions: me.options.metadata.permissions
+		})).addEvent('success', function(resp) {
+
+			if (resp.success) {
+
+				callback(true);
+				me.fireEvent('update');
+
+
+			} else {
+				callback(false);
+			}
+
+
+		}).execute();
+
+	},
+
+	setReceiveNotifications: function(bool) {
+		var me = this;
+		me._setPermission("recieves-notifications", bool);
+	},
+	_getPermission: function(n) {
+		var me = this;
+		return me.options.metadata.permissions.indexOf(n) >= 0;
+	},
+	_setPermission: function(n, bool) {
+		var me = this;
+		if (bool && me.options.metadata.permissions.indexOf(n) < 0) {
+			me.options.metadata.permissions.push(n);
+		}
+
+		if ((!bool)) {
+			var i = me.options.metadata.permissions.indexOf(n);
+			if (i >= 0) {
+				me.options.metadata.permissions.splice(i, 1);
+			}
+		}
+	},
+
+	setCanAddTeamMembers: function(bool) {
+		var me = this;
+		me._setPermission("adds-members", bool);
+	},
+	setCanAddTasks: function(bool) {
+		var me = this;
+		me._setPermission("adds-tasks", bool);
+	},
+	setCanAssignTasks: function(bool) {
+		var me = this;
+		me._setPermission("assigns-tasks", bool);
+	},
+	setCanSetTeamMembersRoles: function(bool) {
+		var me = this;
+		me._setPermission("sets-roles", bool);
+	},
+
+	receiveNotifications: function() {
+		var me = this;
+		return me._getPermission("recieves-notifications");
+	},
+	canAddTeamMembers: function() {
+		var me = this;
+		return me.isTeamManager() || me._getPermission("adds-members");
+	},
+	canAddTasks: function() {
+		var me = this;
+		return me.isTeamManager() || me._getPermission("adds-tasks");
+	},
+	canAssignTasks: function() {
+		var me = this;
+		return me.isTeamManager() || me._getPermission("assigns-tasks");
+	},
+	canSetTeamMembersRoles: function() {
+		var me = this;
+		return me.isTeamManager() || me._getPermission("sets-roles");
+	},
+
+
+
+});
+
+
+var Device = new Class({
+	Extends: ReferralManagementUser,
+	isDevice: function() {
+		return true;
+	},
+	isActivated: function() {
+		var me = this;
+
+		if (DashboardConfig.getValue("requireValidMobileEmail") && (!me.options.metadata.email) || me.options.metadata.email.indexOf('device.') === 0) {
+			return false;
+		}
+
+		return true;
+	}
+})
+
+
+
+var ProjectClient = new Class({
+	Extends: DataTypeObject,
+	Implements: [Events],
+	initialize: function(id, data) {
+		var me = this;
+
+		me.type = 'ReferralManagement.client';
+		me._id = id;
+
+		me.data = data;
+	},
+	getName: function() {
+		var me = this;
+		return me.data.name;
+	},
+	getDescription: function() {
+		var me = this;
+		return 'Some description';
+	}
+});
+
+
+

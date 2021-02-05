@@ -192,6 +192,10 @@ var MainNavigationMenu = new Class({
 					alias: {"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true},
 				},
 				{
+					html: "Collections",
+					alias: {"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true},
+				},
+				{
 					html: "Project",
 					"class":"hidden",
 					template: "documentProjectDetail",

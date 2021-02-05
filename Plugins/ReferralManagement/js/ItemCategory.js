@@ -31,6 +31,10 @@ var ItemCategory = (function() {
 
 
 		},
+
+		isRootTag:function(){
+			return this.getCategory().toLowerCase() == this.getName().toLowerCase();
+		},
 		getDescriptionPlain: function() {
 
 			var images = JSTextUtilities.ParseImages(this.getDescription())
@@ -198,7 +202,6 @@ var ProjectTagList = (function() {
 		},
 
 
-
 		getProjectTagsData: function(category) {
 
 
@@ -209,7 +212,7 @@ var ProjectTagList = (function() {
 			return _tags.filter(function(item) {
 
 				if (category == '_root') {
-					return item.getCategory().toLowerCase() == item.getName().toLowerCase();
+					return item.isRootTag();
 				}
 
 
