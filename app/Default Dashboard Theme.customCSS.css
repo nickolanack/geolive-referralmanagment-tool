@@ -29,6 +29,11 @@ button.primary-btn.nav-new-btn{
     font-size: 18px;
     color: #2d2d2d;
     
+    
+    &.btn-index-1 {
+        margin-top: 0;
+    }
+        
 
     &:before {
         content: "+ ";
@@ -1923,7 +1928,7 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {}
     vertical-align: top;
 }
 button.primary-btn.error {
-    background-color: red;
+    background-color: crimson;
 }
 button.primary-btn.warn {
     background-color: #EDC84C;
@@ -2419,6 +2424,13 @@ span.SearchModule.search-container {
 }
 .TagCloudModule .tag-cloud>span.tag-el.selected {
     background-color: #6A7CE9; 
+}
+
+
+.TagCloudModule .tag-cloud > span.tag-el.add-tag {
+    background-color: mediumseagreen;
+    vertical-align: bottom;
+    font-size: 22px;
 }
 
 
