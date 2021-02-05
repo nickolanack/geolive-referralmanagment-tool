@@ -1380,6 +1380,14 @@ var Proposal = (function() {
 				})
 			});
 		});
+
+
+
+		listModule.addEvent('renderModule', function(){
+			console.log('render project');
+		});
+
+
 	}
 
 

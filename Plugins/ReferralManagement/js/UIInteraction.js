@@ -101,8 +101,11 @@ var UIInteraction=(function(){
 			if(AppClient.getUserType()=="admin"||AppClient.getId()===userId){
     		    
     		    var application = this._getApplication();  
+
+    		    
+
 			        
-	            (new UIModalDialog(application, user, {
+	            (new UIModalDialog(application, ProjectTeam.CurrentTeam().getUser(userId), {
 	                "formName":"userProfileForm", "formOptions":{template:"form"}})).show()
 	       
 			        

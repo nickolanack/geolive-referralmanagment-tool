@@ -733,12 +733,12 @@ var ReferralManagementDashboard = (function() {
 
 		//@ deprecated
 		addProjectItemWeakUpdateEvents: function(child, childView, application, listFilterFn) {
-			Proposal.AddListItemEvents(child, childView, application, listFilterFn);
+			Project.AddListItemEvents(child, childView, application, listFilterFn);
 		},
 
 		//@ deprecated
 		addProjectListModuleWeakEvents: function(module) {
-			Proposal.AddListEvents(module);
+			Project.AddListEvents(module);
 		},
 
 		addLogoutBtn: function() {
