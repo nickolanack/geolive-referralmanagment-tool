@@ -10,3 +10,12 @@
 button.primary-btn.nav-new-btn.btn-index-1 {
     background-color: cornflowerblue;
 }
+
+
+.tag-width span.field-value {
+    width: 120px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+}
