@@ -1011,9 +1011,24 @@ var ProjectTeam = (function() {
 		//modify tag cloud 
 
 		//module.runOnceOnLoad(function() {
+		//
+			/**
+			 * support simple language tags
+			 * ie: 
+			 * [ ..., 
+			 * 	"Wabigoon Lake|Waabigoniiw Saaga'iganiiw Anishinaabeg",
+			 * 	"Northwest Bay|Naicatchewenin", ...] 
+             *
+             * use the first word as the value, display the second
+             * 
+			 */
+			module.setValueFormatter(function(v){
+				return v.split('|').shift();
+			});
 			var cloud = module.getCloud();
+
 			cloud.setWordFormatter(function(word){
-				return word;
+				return word.split('|').pop();
 			});
 			
 		
