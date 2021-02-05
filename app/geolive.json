@@ -16812,7 +16812,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
-                                    "formatElementScript": "el.addClass(\"inline\");"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -16821,7 +16821,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getCreationDate()",
-                                    "formatElementScript": "el.addClass(\"inline\");"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -16848,7 +16848,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Approval\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "el.addClass(\"inline\");"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.5.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -16857,7 +16857,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Ownership\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "el.addClass(\"inline\");"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.6.config.formatElementScript.js"
                                 }
                             }
                         ]

@@ -4,6 +4,6 @@
         "loadAsync": false,
         "fieldLabelScript": "return \"\";",
         "fieldValueScript": "return item.getName();",
-        "formatElementScript": "el.addClass(\"inline\");"
+        "formatElementScript": "el.addClass(\"inline\");\nel.setAttribute(\"data-col\",\"name\");"
     }
 }
