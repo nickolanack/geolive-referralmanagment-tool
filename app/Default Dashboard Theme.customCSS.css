@@ -3584,7 +3584,16 @@ span.navigation-menu.settings-menu {
     display: block;
 }
     
-    
+.table-header .field-value-module>.field-value {
+    display: none;
+}
+.table-header .field-value-module:after {
+    content: attr(data-col);
+}
+
+.table-header {
+    margin: 10px;
+}
     
     
     
