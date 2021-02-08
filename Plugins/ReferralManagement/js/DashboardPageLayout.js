@@ -221,7 +221,7 @@ var DashboardPageLayout=(function(){
 
 		if(DashboardConfig.getValue('showRecentProjectsDetail')){
 
-	        return content.slice(5);
+	        return content.slice(5).slice(0,-2);
 	        
 	    }
 
@@ -283,7 +283,7 @@ var DashboardPageLayout=(function(){
 
 	}).addLayout("singleProjectListItemTableDetail",function(content){
 
-		var map=['name', 'owner', 'date', 'tag', 'docs', 'approval', 'ownership'];
+		var map=['name', 'owner', 'date', 'time', 'tag', 'docs', 'approval', 'ownership'];
 		var remove=['approval', 'ownership'];
 
 		remove.reverse().forEach(function(field){

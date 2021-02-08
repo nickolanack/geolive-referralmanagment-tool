@@ -1361,6 +1361,34 @@ var Proposal = (function() {
 	}
 
 
+	Proposal.addTableHeader=function(listModule){
+		listModule.addEvent('renderModule:once', function(module, index){
+
+			
+			module.runOnceOnLoad(function(){
+				module.getViewName(function(view){
+
+					if(view!=="singleProjectListItemTableDetail"){
+						return;
+					}
+
+					setTimeout(function(){
+
+						var el=module.getElement();
+						el.parentNode.insertBefore(new Element('div', {"class":"table-header",html:el.innerHTML}),el);
+					
+					}, 200);
+
+				});
+				
+			});
+				
+			//}
+
+			console.log('render project');
+		});
+	};
+
 	Proposal.AddListEvents = function(listModule) {
 
 		listModule.addWeakEvent(ProjectTeam.CurrentTeam(), 'addProject', function(p) {

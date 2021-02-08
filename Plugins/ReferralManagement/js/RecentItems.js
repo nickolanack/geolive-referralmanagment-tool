@@ -19,6 +19,8 @@ var RecentItems = (function() {
 			return this._label;
 		},
 
+		
+
 
 		setListData:function(data, filter){
 
@@ -269,7 +271,8 @@ var RecentItems = (function() {
 
 
 	RecentItems.RecentProjectActivity = new RecentItems({
-		label: "Recent projects activity"
+		label: "Recent activity",
+		showItems:10
 	});
 	RecentItems.RecentActivity = new RecentItems({
 		label: "Recent activity"

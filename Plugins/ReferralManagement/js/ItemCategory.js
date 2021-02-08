@@ -32,6 +32,10 @@ var ItemCategory = (function() {
 
 		},
 
+		getShortName:function(){
+			return this.getName();
+		},
+
 		isRootTag:function(){
 			return this.getCategory().toLowerCase() == this.getName().toLowerCase();
 		},
