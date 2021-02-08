@@ -16828,8 +16828,8 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "return \"Field Label Script\";",
-                                    "fieldValueScript": "return \"Field Value Script\";",
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.3.config.fieldValueScript.js",
                                     "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.3.config.formatElementScript.js"
                                 }
                             },
