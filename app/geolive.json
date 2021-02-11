@@ -19000,12 +19000,12 @@
             "metadata": {
                 "title": "datasetAttributes",
                 "_tableDiagramState": {
-                    "x": 330,
-                    "y": 235
+                    "x": 313,
+                    "y": 233
                 },
                 "_diagramState": {
-                    "x": 330,
-                    "y": 235
+                    "x": 313,
+                    "y": 233
                 },
                 "appliesTo": [
                     "marker"
@@ -19019,7 +19019,51 @@
                 "createAutomatically": 1,
                 "description": "",
                 "fields": [
-                    "widget.AttributesTable.381.metadata.fields.0.json"
+                    "widget.AttributesTable.381.metadata.fields.0.json",
+                    {
+                        "was": "",
+                        "title": "notes",
+                        "label": "Notes",
+                        "description": "",
+                        "icon": [],
+                        "color": "rgb(undefined, undefined, undefined)",
+                        "visibility": "public",
+                        "editability": "registered",
+                        "searchability": "public",
+                        "allowMultiple": false,
+                        "fieldType": "text",
+                        "fieldTextOptions": {
+                            "textType": "input",
+                            "inputOptions": {
+                                "buildAutocomplete": false,
+                                "requireModeration": false,
+                                "limitMaxChars": 0,
+                                "limitMaxWords": 0,
+                                "allowHtml": false,
+                                "allowMedia": true,
+                                "allowLinks": true
+                            },
+                            "listOptions": {
+                                "takeSugesstions": true,
+                                "buildTree": false,
+                                "iconize": false,
+                                "colorize": false
+                            }
+                        },
+                        "fieldNumberOptions": {
+                            "precision": 0,
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
+                        },
+                        "fieldBooleanOptions": {
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    }
                 ]
             },
             "target": "datasetAttributes",
