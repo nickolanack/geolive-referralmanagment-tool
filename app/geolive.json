@@ -18997,8 +18997,32 @@
         "instance": "AttributesTable",
         "parameters": {
             "widgetTitle": "",
-            "metadata": [],
-            "target": "none"
+            "metadata": {
+                "title": "attribute_4657",
+                "_tableDiagramState": {
+                    "x": 0,
+                    "y": 0
+                },
+                "_diagramState": {
+                    "x": 0,
+                    "y": 0
+                },
+                "appliesTo": [
+                    "marker"
+                ],
+                "_typeDiagramState": {
+                    "x": 0,
+                    "y": 0
+                },
+                "readAccess": "public",
+                "maxEntries": 1,
+                "createAutomatically": 1,
+                "description": "",
+                "fields": []
+            },
+            "target": "attribute_4657",
+            "readAccess": "public",
+            "position": ""
         }
     }
 }
