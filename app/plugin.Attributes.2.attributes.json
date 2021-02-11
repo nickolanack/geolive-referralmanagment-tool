@@ -2213,12 +2213,12 @@
     },
     {
         "id": "7",
-        "name": "attribute_4657",
+        "name": "datasetAttributes",
         "description": "",
         "label": "",
         "suffix": "_6314",
         "metadata": {
-            "title": "attribute_4657",
+            "title": "datasetAttributes",
             "readAccess": "public",
             "appliesTo": [
                 "marker"
@@ -2226,7 +2226,40 @@
             "id": "7",
             "suffix": "_6314",
             "description": "",
-            "fields": []
+            "fields": [
+                {
+                    "visibility": "public",
+                    "tableId": "7",
+                    "tableName": "datasetAttributes",
+                    "tableSuffix": "_6314",
+                    "title": "type",
+                    "label": "Type",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                }
+            ]
         }
     }
 ]

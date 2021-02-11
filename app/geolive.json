@@ -18998,29 +18998,31 @@
         "parameters": {
             "widgetTitle": "",
             "metadata": {
-                "title": "attribute_4657",
+                "title": "datasetAttributes",
                 "_tableDiagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 330,
+                    "y": 235
                 },
                 "_diagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 330,
+                    "y": 235
                 },
                 "appliesTo": [
                     "marker"
                 ],
                 "_typeDiagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 100,
+                    "y": 300
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
                 "createAutomatically": 1,
                 "description": "",
-                "fields": []
+                "fields": [
+                    "widget.AttributesTable.381.metadata.fields.0.json"
+                ]
             },
-            "target": "attribute_4657",
+            "target": "datasetAttributes",
             "readAccess": "public",
             "position": ""
         }
