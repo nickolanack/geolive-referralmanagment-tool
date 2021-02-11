@@ -18929,16 +18929,16 @@
                             "documentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 168,
-                            "y": 300
+                            "x": 178,
+                            "y": 310
                         },
                         "children": [
                             "documentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 128,
-                                    "y": 466
+                                    "x": 138,
+                                    "y": 523
                                 }
                             }
                         ],
@@ -19020,11 +19020,49 @@
                                         },
                                         {
                                             "type": "plugin.Attributes.WizardTextAttribute",
-                                            "config": []
+                                            "config": {
+                                                "attributeFields": [
+                                                    "documentForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "label": "",
+                                                "message": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add more values",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": "{}",
+                                                "onRenderTextFieldScript": "",
+                                                "formatdefaultScript": ""
+                                            }
                                         },
                                         {
                                             "type": "plugin.Attributes.WizardTextAttribute",
-                                            "config": []
+                                            "config": {
+                                                "attributeFields": [
+                                                    "documentForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "label": "",
+                                                "message": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add more values",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": "{}",
+                                                "onRenderTextFieldScript": "",
+                                                "formatdefaultScript": ""
+                                            }
                                         }
                                     ]
                                 },
