@@ -278,7 +278,10 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/ReferralManagementUser.js');
 		IncludeJS(__DIR__ . '/js/MobileDeviceList.js');
 		IncludeJS(__DIR__ . '/js/UserTeamCollection.js');
+		IncludeJS(__DIR__ . '/js/ProjectQueries.js');
 		IncludeJS(__DIR__ . '/js/Project.js');
+		IncludeJS(__DIR__ . '/js/Dataset.js');
+		IncludeJS(__DIR__ . '/js/ProjectList.js');
 		IncludeJS(__DIR__ . '/js/ProjectTeam.js');
 		IncludeJS(__DIR__ . '/js/ProjectCalendar.js');
 		IncludeJS(__DIR__ . '/js/ProjectActivityChart.js');

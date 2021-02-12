@@ -1,333 +1,13 @@
-var ProjectList = (function() {
 
 
-	var ProjectList = new Class({
-		Extends: MockDataTypeItem,
+var Project = (function() {
 
-		applyFilter:function(){
-
-
-			var application = ReferralManagementDashboard.getApplication();
-			var controller = application.getNamedValue('navigationController');
-			var opts=controller.getNavigationOptions();
-			if(opts.filter){
-				return (function(a){
-					return a.getProjectType()===opts.filter;
-				}).apply(null, arguments);
-				//return ([getFilter(opts.filter)]).concat(filters);
-			}
-			
-
-			if(this.getFilter){
-				var filter=this.getFilter();
-				if(!filter){
-					return true;
-				}
-			}
-
-
-			
-
-
-			return ProjectList.currentProjectFilterFn.apply(null, arguments);
-		}
-	});
-
-	var filters=[{
-			label: "complete",
-			filterFn: function(a) {
-				return a.isComplete();
-			}
-		}, {
-			label: "high priority",
-			name: "high",
-			filterFn: function(a) {
-				return a.isHighPriority();
-			}
-		}, {
-			label: "implemented",
-			labelInv: "pending",
-			name: "implemented",
-			filterFn: function(a) {
-				return a.isImplemented();
-			}
-		}];
-
-	ProjectList.projectFilters = function() {
-
-		var application = ReferralManagementDashboard.getApplication();
-		var controller = application.getNamedValue('navigationController');
-		var opts=controller.getNavigationOptions();
-
-		var filterList=filters;
-		var getFilter=function(type){
-
-			return {
-					label: type,
-					name: type,
-					filterFn: function(a) {
-						return a.getProjectType()===type;
-					}
-				};
-			
-
-		}
-
-		if(opts.filter){
-			//return ([getFilter(opts.filter)]).concat(filters);
-		}
-
-		if(opts.filters){
-			return (opts.filters.map(getFilter)).concat(filters);
-		}
-
-
-
-		return filters;
-	};
-
-	ProjectList.projectSorters = function() {
-
-		return [{
-			label: "priority",
-			sortFn: function(a, b) {
-				return (a.getPriorityNumber() > b.getPriorityNumber() ? 1 : -1);
-			}
-		}, {
-			label: "name",
-			sortFn: function(a, b) {
-				return (a.getName() > b.getName() ? 1 : -1);
-			}
-		}, {
-			label: "client",
-			sortFn: function(a, b) {
-				return (a.getCompanyName() > b.getCompanyName() ? 1 : -1);
-			}
-		}, {
-			label: "deadline",
-			sortFn: function(a, b) {
-				return (a.getSubmitDate() > b.getSubmitDate() ? 1 : -1);
-			}
-		}, {
-			label: "created",
-			sortFn: function(a, b) {
-				return (a.getCreationDate() > b.getCreationDate() ? 1 : -1);
-			}
-		}];
-
-
-	};
-
-
-
-	ProjectList.currentProjectFilterFn = function(a) {
-		return !a.isComplete();
-	};
-
-	ProjectList.currentProjectSortFn = function(a, b) {
-		return -(a.getPriorityNumber() > b.getPriorityNumber() ? 1 : -1);
-	};
-
-
-	ProjectList.HeaderMenuContent = function(item) {
-
-
-		if (item && item instanceof ProjectList && item.getShowCreateBtn && item.getShowCreateBtn() === false) {
-			return null;
-		}
-
-		var application = ReferralManagementDashboard.getApplication();
-
-		var div = new Element('div', {
-			"class": "project-list-btns"
-		});
-
-		div.appendChild(new Element("button", {
-			"data-lbl": "New project",
-			"class": "inline-btn add primary-btn",
-			"events": {
-				"click": function() {
-
-
-					var formName = "ProposalTemplate";
-
-					var wizardTemplate = application.getDisplayController().getWizardTemplate(formName);
-					if ((typeof wizardTemplate) != 'function') {
-
-						if (window.console && console.warn) {
-							console.warn('Expected named wizardTemplate: ' + formName + ', to exist');
-						}
-
-					}
-					var modalFormViewController = new PushBoxModuleViewer(application, {});
-					var newItem = new Proposal();
-
-
-					(new UIModalDialog(application, newItem, {
-	                "formName":formName, "formOptions":{template:"form"}})).show()
-
-
-					newItem.addEvent("save:once", function() {
-						ProjectTeam.CurrentTeam().addProject(newItem);
-					})
-
-
-
-				}
-			}
-		}));
-		return div;
-	};
-
-
-
-	ProjectList.SortMenuContent = function(index, item) {
-
-		if (index && index instanceof ProjectList) {
-			item = index;
-		}
-
-		var contentIndex = index;
-		if (typeof index != 'number') {
-			contentIndex = 3;
-		}
-
-
-
-		var application = ReferralManagementDashboard.getApplication();
-
-		return function(viewer, element, parentModule) {
-
-			var div = element.appendChild(new Element('div', {
-
-				"class": "project-list-filters section-indent",
-
-				styles: {
-					"display": "inline-table",
-					"width": "100%"
-				}
-			}));
-
-
-			(new ListSortModule(function() {
-				return viewer.findChildViews(function(v) {
-					return v instanceof UIListViewModule
-				}).pop();
-			}, {
-				sorters: ProjectList.projectSorters(),
-				currentSort: "priority",
-				currentSortInvert: true,
-				//applyfilter:true
-			})).load(null, div, null);
-
-
-			var filter=(item&&item.getFilter)?item.getFilter():"complete";
-			var invertFilter=(item&&item.getInvertFilter)?item.getInvertFilter():(filter=="complete"?true:false);
-
-			var filterModule = (new ListFilterModule(function() {
-				return viewer.findChildViews(function(v) {
-					return v instanceof UIListViewModule
-				}).pop();
-			}, {
-				filters: ProjectList.projectFilters(),
-				currentFilter: filter,
-				currentFilterInvert: invertFilter,
-				//applyfilter:true
-			})).load(null, div, null);
-
-			if (item && item.getLockFilter) {
-				filterModule.lockFilter(item.getLockFilter());
-				filterModule.runOnceOnLoad(function() {
-					setTimeout(function() {
-						filterModule.reset()
-					}, 100);
-				});
-			}
-
-		}
-	}
-
-
-	return ProjectList;
-
-})();
-
-var Proposal = (function() {
-
-	var SaveProposalQuery = new Class({
-		Extends: AjaxControlQuery,
-		initialize: function(data) {
-			this.parent(CoreAjaxUrlRoot, 'save_proposal', Object.append({
-				plugin: 'ReferralManagement'
-			}, (data || {})));
-		}
-	});
-
-
-	var AddDocumentQuery = new Class({
-		Extends: AjaxControlQuery,
-		initialize: function(data) {
-			this.parent(CoreAjaxUrlRoot, 'add_document', Object.append({
-				plugin: 'ReferralManagement'
-			}, (data || {})));
-		}
-	});
-
-	var RemoveDocumentQuery = new Class({
-		Extends: AjaxControlQuery,
-		initialize: function(data) {
-			this.parent(CoreAjaxUrlRoot, 'remove_document', Object.append({
-				plugin: 'ReferralManagement'
-			}, (data || {})));
-		}
-	});
-
-
-	var FlagProposalQuery = new Class({
-		Extends: AjaxControlQuery,
-		initialize: function(id, flagged) {
-
-			this.parent(CoreAjaxUrlRoot, "save_attribute_value_list", {
-				plugin: "Attributes",
-				itemId: id,
-				itemType: "ReferralManagement.proposal",
-				table: "proposalAttributes",
-				fieldValues: {
-					"flagged": flagged
-				}
-			});
-		}
-	});
-
-
-	var SetStatusProposalQuery = new Class({
-		Extends: AjaxControlQuery,
-		initialize: function(id, status) {
-
-			this.parent(CoreAjaxUrlRoot, "set_proposal_status", {
-				plugin: "ReferralManagement",
-				id: id,
-				status: status
-			});
-		}
-	});
-
-
-	var SetApprovedQuery = new Class({
-		Extends: AjaxControlQuery,
-		initialize: function(id, approved) {
-
-			this.parent(CoreAjaxUrlRoot, "save_attribute_value_list", {
-				plugin: "Attributes",
-				itemId: id,
-				itemType: "ReferralManagement.proposal",
-				table: "proposalAttributes",
-				fieldValues: {
-					"approved": approved
-				}
-			});
-		}
-	});
+	var SaveProposalQuery = ProjectQueries.SaveProposalQuery;
+	var AddDocumentQuery = ProjectQueries.AddDocumentQuery;
+	var RemoveDocumentQuery = ProjectQueries.RemoveDocumentQuery;
+	var FlagProposalQuery = ProjectQueries.FlagProposalQuery;
+	var SetStatusProposalQuery = ProjectQueries.SetStatusProposalQuery;
+	var SetApprovedQuery = ProjectQueries.SetApprovedQuery;
 
 
 
@@ -962,7 +642,7 @@ var Proposal = (function() {
 
 			if (me.data && me.data.attributes.spatialFeatures) {
 
-				return Proposal.ParseHtmlUrls(me.data.attributes.spatialFeatures);
+				return Project.ParseHtmlUrls(me.data.attributes.spatialFeatures);
 
 			}
 
@@ -977,7 +657,7 @@ var Proposal = (function() {
 			if (me.data && me.data.attributes.description) {
 				var text = me.data.attributes.description;
 
-				return Proposal.ParseHtmlUrls(me.data.attributes.description);
+				return Project.ParseHtmlUrls(me.data.attributes.description);
 
 			}
 
@@ -991,7 +671,7 @@ var Proposal = (function() {
 
 			if (me.data && me.data.attributes.documents) {
 
-				return Proposal.ParseHtmlUrls(me.data.attributes.documents);
+				return Project.ParseHtmlUrls(me.data.attributes.documents);
 
 			}
 
@@ -1005,7 +685,7 @@ var Proposal = (function() {
 
 			if (me.data && me.data.attributes.agreements) {
 
-				return Proposal.ParseHtmlUrls(me.data.attributes.agreements);
+				return Project.ParseHtmlUrls(me.data.attributes.agreements);
 
 			}
 
@@ -1019,7 +699,7 @@ var Proposal = (function() {
 
 			if (me.data && me.data.attributes.projectLetters) {
 
-				return Proposal.ParseHtmlUrls(me.data.attributes.projectLetters);
+				return Project.ParseHtmlUrls(me.data.attributes.projectLetters);
 
 			}
 
@@ -1031,7 +711,7 @@ var Proposal = (function() {
 
 			if (me.data && me.data.attributes.permits) {
 
-				return Proposal.ParseHtmlUrls(me.data.attributes.permits);
+				return Project.ParseHtmlUrls(me.data.attributes.permits);
 
 			}
 
@@ -1328,7 +1008,7 @@ var Proposal = (function() {
 	});
 
 
-	Proposal.ParseHtmlUrls = function(text) {
+	Project.ParseHtmlUrls = function(text) {
 
 		if ((!text) || text == "") {
 			return [];
@@ -1344,24 +1024,24 @@ var Proposal = (function() {
 	}
 
 
-	Proposal.ListTeams = function() {
+	Project.ListTeams = function() {
 		return Community.teams;
 	}
 
-	Proposal.ListTerritories = function() {
+	Project.ListTerritories = function() {
 
 		return Community.territories.map(function(name) {
 			return String.capitalize.call(null, name)
 		});
 	}
-	Proposal.ListOutcomes = function() {
+	Project.ListOutcomes = function() {
 
 
 		return ["Accepted", "Denied", "Declined", "Refuse", "Insufficient"];
 	}
 
 
-	Proposal.addTableHeader=function(listModule){
+	Project.addTableHeader=function(listModule){
 		listModule.addEvent('renderModule:once', function(module, index){
 
 			
@@ -1389,7 +1069,7 @@ var Proposal = (function() {
 		});
 	};
 
-	Proposal.AddListEvents = function(listModule) {
+	Project.AddListEvents = function(listModule) {
 
 		listModule.addWeakEvent(ProjectTeam.CurrentTeam(), 'addProject', function(p) {
 			listModule.addItem(p);
@@ -1419,7 +1099,7 @@ var Proposal = (function() {
 	}
 
 
-	Proposal.AddListItemEvents =function(child, childView, application, listFilterFn) {
+	Project.AddListItemEvents =function(child, childView, application, listFilterFn) {
 
 			
 			UIInteraction.addProjectOverviewClick(childView.getElement(), child);
@@ -1453,7 +1133,7 @@ var Proposal = (function() {
 
 
 
-	Proposal.PendingButtons = function(item) {
+	Project.PendingButtons = function(item) {
 
 
 		if (!DashboardConfig.getValue('enablePending')) {
@@ -1512,7 +1192,7 @@ var Proposal = (function() {
 })();
 
 
-var Project = Proposal;
+var Proposal = Project;
 
 
 var GuestProposal = (function() {
