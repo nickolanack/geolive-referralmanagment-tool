@@ -18930,7 +18930,7 @@
                         ],
                         "_diagramState": {
                             "x": 394,
-                            "y": 225
+                            "y": 226
                         },
                         "children": [
                             "documentForm.metadata.children.1.children.0.json",
@@ -18938,7 +18938,7 @@
                                 "class": "InsertNode",
                                 "_diagramState": {
                                     "x": 354,
-                                    "y": 463
+                                    "y": 464
                                 }
                             }
                         ],
@@ -18953,23 +18953,26 @@
                                     "modules": [
                                         "documentForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
-                                            "type": "WizardDescriptionField",
+                                            "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
-                                                "label": "Description",
-                                                "message": "add a description",
-                                                "lines": 3,
-                                                "mandatory": false,
-                                                "showAudios": true,
-                                                "showImages": true,
-                                                "showDocuments": true,
-                                                "showVideos": true,
+                                                "attributeFields": [
+                                                    "documentForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
+                                                ],
                                                 "className": "",
+                                                "label": "Description",
+                                                "message": "",
+                                                "lines": 1,
                                                 "maxChars": 0,
-                                                "showExpandInput": true,
-                                                "toolbarPosition": "bottom",
-                                                "textFormatScript": "",
-                                                "mediaIconTint": "rgb(100, 149, 237)",
-                                                "onRenderModuleFn": ""
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add more values",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": "{}",
+                                                "onRenderTextFieldScript": "",
+                                                "formatdefaultScript": ""
                                             }
                                         },
                                         {
