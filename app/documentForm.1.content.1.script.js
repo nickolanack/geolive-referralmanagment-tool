@@ -1,1 +1,1 @@
-return new Element('div',{html:"drop spatial file"});
+return new Element('div',{html:"Drag and drop spatial file here"});
