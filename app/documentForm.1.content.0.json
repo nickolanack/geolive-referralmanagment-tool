@@ -1,54 +1,10 @@
 {
-    "type": "plugin.Attributes.WizardTextAttribute",
+    "type": "InlineHtml",
     "config": {
-        "attributeFields": [
-            {
-                "visibility": "public",
-                "tableId": "5",
-                "tableName": "proposalAttributes",
-                "tableSuffix": "_3497",
-                "title": "title",
-                "label": "Title",
-                "description": "",
-                "fieldType": "text",
-                "color": "rgb(NaN, NaN, NaN)",
-                "searchability": "public",
-                "editability": "registered",
-                "fieldTextOptions": {
-                    "textType": "input",
-                    "inputOptions": {
-                        "buildAutocomplete": false,
-                        "requireModeration": false,
-                        "limitMaxChars": 0,
-                        "limitMaxWords": 0,
-                        "allowHtml": false,
-                        "allowMedia": true,
-                        "allowLinks": true
-                    },
-                    "listOptions": {
-                        "takeSugesstions": true,
-                        "buildTree": false,
-                        "iconize": false,
-                        "colorize": false
-                    }
-                },
-                "allowMultiple": false
-            }
-        ],
         "className": "",
-        "label": "Title",
-        "message": "",
-        "lines": 1,
-        "maxChars": 0,
-        "mandatory": false,
-        "multiEntry": false,
-        "muliTemplate": "lines",
-        "multiMessage": "add more values",
-        "formatter": "none",
-        "iconTint": "rgb(100, 149, 237)",
-        "autocomplete": true,
-        "inputOptions": "{}",
-        "onRenderTextFieldScript": "",
-        "formatdefaultScript": ""
+        "text": "Create a new Dataset",
+        "template": "",
+        "templateVariablesScript": "",
+        "formatTextScript": ""
     }
 }
