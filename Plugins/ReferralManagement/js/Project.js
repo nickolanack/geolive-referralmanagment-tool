@@ -1062,14 +1062,12 @@ var Project = (function() {
 							colEl.addEvent('click',function(){
 
 								var sort=colEl.getAttribute('data-col');
-								var viewer= listModule.getViewer();
-
-								var sort=viewer.findChildViews(function(v) {
-									return v instanceof ListSortModule
-								}).pop();
-
+								var sortModule= listModule.getSortObject();
+								sortModule.applySort(sort);
 								
-								
+
+
+
 
 							})
 						});
