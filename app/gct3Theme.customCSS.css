@@ -474,7 +474,18 @@ button.primary-btn.nav-new-btn:hover {
     content: "\f0dc";
     font-family: 'FontAwesome';
     margin-right: 5px;
+    color:gray;
 }
+
+.table-header .field-value-module.active:before {
+    content: "\f0dd";
+    color:cornflowerblue;
+}
+.table-header .field-value-module.active.asc:before {
+    content: "\f0de";
+}
+
+
 
 
 
