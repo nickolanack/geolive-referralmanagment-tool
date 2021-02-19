@@ -1055,7 +1055,17 @@ var Project = (function() {
 					setTimeout(function(){
 
 						var el=module.getElement();
-						el.parentNode.insertBefore(new Element('div', {"class":"table-header",html:el.innerHTML}),el);
+						var header=new Element('div', {"class":"table-header",html:el.innerHTML});
+						el.parentNode.insertBefore(header,el);
+
+						header.firstChild.firstChild.childNodes.forEach(function(colEl){
+							colEl.addEvent('click',function(){
+
+								//apply sort
+
+							})
+						});
+
 					
 					}, 200);
 
