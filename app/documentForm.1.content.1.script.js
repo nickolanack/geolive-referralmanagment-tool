@@ -1,1 +1,1 @@
-return new Element('div',{html:"Drag and drop spatial file here"});
+return new Element('div',{"class":"drag-area",html:"Drag and drop spatial file here"});
