@@ -1059,6 +1059,9 @@ var Project = (function() {
 						el.parentNode.insertBefore(header,el);
 
 						header.firstChild.firstChild.childNodes.forEach(function(colEl){
+
+							colEl.addClass('sortable');
+
 							colEl.addEvent('click',function(){
 
 								var sort=colEl.getAttribute('data-col');
