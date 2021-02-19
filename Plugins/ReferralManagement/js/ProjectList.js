@@ -218,7 +218,8 @@ var ProjectList = (function() {
 				currentSort: "priority",
 				currentSortInvert: true,
 				//applyfilter:true
-			})).load(null, div, null).runOnceOnLoad(function(){
+			})).load(null, div, null);
+			sortModule.runOnceOnLoad(function(){
 				sortModule.getListModule().setSortObject(sortModule);
 			});
 
@@ -235,7 +236,8 @@ var ProjectList = (function() {
 				currentFilter: filter,
 				currentFilterInvert: invertFilter,
 				//applyfilter:true
-			})).load(null, div, null).runOnceOnLoad(function(){
+			})).load(null, div, null);
+			filterModule.runOnceOnLoad(function(){
 
 				filterModule.getListModule().setFilterObject(filterModule);
 
