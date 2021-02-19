@@ -437,7 +437,16 @@ button.primary-btn.nav-new-btn:hover {
     color: black;
 }
 
+
+
 .navigation-menu .menu-main li{
+    
+    &.menu-main-projects {
+        display: none;
+        &.menu-main-datasets, &.menu-main-collections{
+            display:list-item;
+        }
+    }
 
     &.menu-main-reports {
         display: none;
