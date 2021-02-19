@@ -1,3 +1,4 @@
 var el=childView.getElement();
-var color=el.appendChild(new Element('span', {"class":"tag-color"}));
+var color=new Element('span', {"class":"tag-color"});
+el.appendChild(color);
 color.setStyle('background-color', child.getColor());
