@@ -2,22 +2,25 @@
 $highlightBtnColor:#ff0258;
 
 
-.ui-view.test.dashboard-main.gct3:after {
-    background-position: center;
-    background-image: url(https://dyl2vw577xcfk.cloudfront.net/gather.geoforms.ca/1/Uploads/%5BImAgE%5D_5ju_lgQ_%5BG%5D_cHZ.jpeg);
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.3;
-    background-size: cover;
-}
-ui-view.test.dashboard-main.gct3
+
+ui-view.test.dashboard-main.gct3{
     .ui-view.login-form {
         background-color: rgba(255,255,255,0.7);
         border-radius: 4px;
+    }
+    
+    .ui-view.login-form:after {
+        background-position: center;
+        background-image: url(https://dyl2vw577xcfk.cloudfront.net/gather.geoforms.ca/1/Uploads/%5BImAgE%5D_5ju_lgQ_%5BG%5D_cHZ.jpeg);
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background-size: cover;
+        pointer-events:none;
     }
 }
 
