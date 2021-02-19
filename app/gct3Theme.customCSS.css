@@ -485,6 +485,15 @@ button.primary-btn.nav-new-btn:hover {
     content: "\f0de";
 }
 
+.field-value-module.inline.sortable {
+    background-color: rgba(0,0,0,0.04);
+    margin: 0px;
+    display: inline-block;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 2px solid #f0f0f0;
+    border-radius: 6px;
+}
 
 
 
