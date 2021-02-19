@@ -11,7 +11,7 @@ var Project = (function() {
 
 
 
-	var Proposal = new Class({
+	var Project = new Class({
 		Extends: DataTypeObject,
 		Implements: [Events, UserTeamCollection],
 		initialize: function(id, data) {
@@ -1187,7 +1187,7 @@ var Project = (function() {
 	};
 
 
-	return Proposal;
+	return Project;
 
 })();
 
