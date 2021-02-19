@@ -470,6 +470,13 @@ button.primary-btn.nav-new-btn:hover {
 }
 
 
+.table-header .field-value-module:before {
+    content: "\f0dc";
+    font-family: 'FontAwesome';
+    margin-right: 5px;
+}
+
+
 
 .navigation-menu li.menu-main-projects.menu-main-datasets:before {
     content: "\f1c0";
