@@ -1061,7 +1061,15 @@ var Project = (function() {
 						header.firstChild.firstChild.childNodes.forEach(function(colEl){
 							colEl.addEvent('click',function(){
 
-								//apply sort
+								var sort=colEl.getAttribute('data-col');
+								var viewer= listModule.getViewer();
+
+								var sort=viewer.findChildViews(function(v) {
+									return v instanceof ListSortModule
+								}).pop();
+
+								
+								
 
 							})
 						});
