@@ -220,7 +220,12 @@ var ProjectList = (function() {
 				//applyfilter:true
 			})).load(null, div, null);
 			sortModule.runOnceOnLoad(function(){
-				sortModule.getListModule().setSortObject(sortModule);
+				/**
+				 * TODO remove this timeout, the need for it. or set sortModule to automatically setSortObject
+				 */
+				setTimeout(function(){
+					sortModule.getListModule().setSortObject(sortModule);
+				}, 100);
 			});
 
 
@@ -239,8 +244,9 @@ var ProjectList = (function() {
 			})).load(null, div, null);
 			filterModule.runOnceOnLoad(function(){
 
-				filterModule.getListModule().setFilterObject(filterModule);
-
+				setTimeout(function(){
+					filterModule.getListModule().setFilterObject(filterModule);
+				}, 500)
 			});
 
 			if (item && item.getLockFilter) {
