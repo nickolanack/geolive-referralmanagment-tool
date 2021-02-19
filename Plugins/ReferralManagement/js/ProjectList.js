@@ -209,7 +209,7 @@ var ProjectList = (function() {
 			}));
 
 
-			(new ListSortModule(function() {
+			var sortModule=(new ListSortModule(function() {
 				return viewer.findChildViews(function(v) {
 					return v instanceof UIListViewModule
 				}).pop();
@@ -218,7 +218,9 @@ var ProjectList = (function() {
 				currentSort: "priority",
 				currentSortInvert: true,
 				//applyfilter:true
-			})).load(null, div, null);
+			})).load(null, div, null).runOnceOnLoad(function(){
+				sortModule.getListModule().setSortObject(sortModule);
+			});
 
 
 			var filter=(item&&item.getFilter)?item.getFilter():"complete";
@@ -233,7 +235,11 @@ var ProjectList = (function() {
 				currentFilter: filter,
 				currentFilterInvert: invertFilter,
 				//applyfilter:true
-			})).load(null, div, null);
+			})).load(null, div, null).runOnceOnLoad(function(){
+
+				filterModule.getListModule().setFilterObject(filterModule);
+
+			});
 
 			if (item && item.getLockFilter) {
 				filterModule.lockFilter(item.getLockFilter());
