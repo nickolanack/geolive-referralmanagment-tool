@@ -16242,16 +16242,16 @@
                             "documentProjectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 164,
-                            "y": 272
+                            "x": 174,
+                            "y": 282
                         },
                         "children": [
                             "documentProjectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 124,
-                                    "y": 485
+                                    "x": 134,
+                                    "y": 495
                                 }
                             },
                             {
@@ -16261,16 +16261,16 @@
                                     "documentProjectForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 713,
-                                    "y": 201
+                                    "x": 723,
+                                    "y": 211
                                 },
                                 "children": [
                                     "documentProjectForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 673,
-                                            "y": 377
+                                            "x": 683,
+                                            "y": 387
                                         }
                                     },
                                     {
@@ -16280,16 +16280,16 @@
                                             "documentProjectForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 591,
-                                            "y": 713
+                                            "x": 601,
+                                            "y": 723
                                         },
                                         "children": [
                                             "documentProjectForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 551,
-                                                    "y": 976
+                                                    "x": 561,
+                                                    "y": 986
                                                 }
                                             }
                                         ],
@@ -16519,18 +16519,18 @@
                                                     "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
-                                                "label": "Project title",
+                                                "label": "Collection title",
                                                 "message": "Add title for your project",
                                                 "lines": 1,
                                                 "maxChars": 0,
-                                                "mandatory": true,
+                                                "mandatory": false,
                                                 "multiEntry": false,
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "",
                                                 "formatter": "none",
                                                 "iconTint": "rgb(100, 149, 237)",
                                                 "autocomplete": true,
-                                                "inputOptions": [],
+                                                "inputOptions": "{}",
                                                 "onRenderTextFieldScript": "",
                                                 "formatdefaultScript": ""
                                             }
@@ -16588,7 +16588,7 @@
                                                 "className": "",
                                                 "showLabel": false,
                                                 "showAddWord": false,
-                                                "label": "Project tags",
+                                                "label": "Collection tags",
                                                 "addWordPlaceholder": "add a keyword",
                                                 "fontColor": "rgb(255, 255, 255)",
                                                 "hoverColor": "rgb(106, 233, 191)",
@@ -16605,7 +16605,7 @@
                                                 "attributeFields": [
                                                     "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.attributeFields.0.json"
                                                 ],
-                                                "label": "Project description",
+                                                "label": "Collection description",
                                                 "message": "Here you can add a short description of the proposed project for your own reference",
                                                 "lines": 4,
                                                 "mandatory": true,
