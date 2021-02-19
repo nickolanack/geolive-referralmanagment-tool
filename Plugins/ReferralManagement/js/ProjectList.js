@@ -219,7 +219,7 @@ var ProjectList = (function() {
 				currentSortInvert: true,
 				//applyfilter:true
 			})).load(null, div, null);
-			sortModule.runOnceOnLoad(function(){
+			parentModule.runOnceOnLoad(function(){
 				/**
 				 * TODO remove this timeout, the need for it. or set sortModule to automatically setSortObject
 				 */
@@ -242,7 +242,7 @@ var ProjectList = (function() {
 				currentFilterInvert: invertFilter,
 				//applyfilter:true
 			})).load(null, div, null);
-			filterModule.runOnceOnLoad(function(){
+			parentModule.runOnceOnLoad(function(){
 
 				setTimeout(function(){
 					filterModule.getListModule().setFilterObject(filterModule);
