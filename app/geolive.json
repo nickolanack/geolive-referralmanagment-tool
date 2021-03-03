@@ -9738,7 +9738,9 @@
             "layer-58": "rgb(15, 80, 230)",
             "widgetTitle": "cluster-config",
             "target": "cluster-config",
-            "readAccess": "public"
+            "readAccess": "public",
+            "formatOutputScript": "return $parameters;",
+            "saveParametersAsData": false
         }
     },
     "widget.224": {
