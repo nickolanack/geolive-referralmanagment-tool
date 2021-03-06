@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "\nvar user=ProjectTeam.CurrentTeam().getUser(AppClient.getId());\n\nreturn '<div class=\"section-help section-welcome section-module\"><div class=\"section-title\"><span class=\"thin\">Welcome Back,<\/span> '+user.getName()+'<\/div>'+\n'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/div>';",
+        "script": "\nvar user=ProjectTeam.CurrentTeam().getUser(AppClient.getId());\n\nreturn `<div class=\"section-help section-welcome section-module\"><div class=\"section-title\">\n<span class=\"thin\">Welcome Back,<\/span> `+user.getName()+`<\/div>\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut \nlabore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco \nlaboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit \nin voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/div>`;",
         "description": "Info about my custom script"
     }
 }
