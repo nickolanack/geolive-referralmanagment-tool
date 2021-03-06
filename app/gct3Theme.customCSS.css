@@ -533,6 +533,34 @@ button.primary-btn.nav-new-btn:hover {
 }
 
 
+.section-welcome {
+    position: relative;
+    
+    
+    button.inline-edit:after {
+        content: "\f040";
+        font-family: 'FontAwesome';
+        font-size:20px;
+    }
+    
+    
+    button.inline-edit {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border: none;
+        border-radius: 100%;
+        font-size: 0;
+        padding: 0;
+    }
+
+
+}
+
+
+
 
 
 .navigation-menu li.menu-main-projects.menu-main-datasets:before {
