@@ -199,6 +199,7 @@ GetWidget('userInviteForm')->display($targetInstance);
 
 
 GetWidget('dialogForm')->display($targetInstance);
+GetWidget('textFieldForm')->display($targetInstance);
 
 GetWidget('layerGroupForm')->display($targetInstance);
 GetWidget('mainMapDetailLayers')->display($targetInstance);
