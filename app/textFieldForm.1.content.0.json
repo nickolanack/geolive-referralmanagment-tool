@@ -1,10 +1,21 @@
 {
-    "type": "WizardTitleField",
+    "type": "FormTextField",
     "config": {
-        "label": "Title",
-        "message": "add a title",
         "className": "",
+        "label": "Some Field",
+        "placeholder": "add value",
+        "lines": 1,
         "maxChars": 0,
-        "textFormatScript": ""
+        "mandatory": false,
+        "multiEntry": false,
+        "muliTemplate": "lines",
+        "multiMessage": "add another value",
+        "formatter": "none",
+        "onRenderTextFieldScript": "",
+        "formatValueScript": "",
+        "getValueScript": " return \"Hello World\"; ",
+        "updateValueScript": " object.value=value ",
+        "submitValueScript": "",
+        "validateValueScript": " return defaultValidationFn() "
     }
 }
