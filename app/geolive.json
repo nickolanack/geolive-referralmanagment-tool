@@ -19499,7 +19499,7 @@
             "comments": "",
             "formatParametersScript": "return $parameters;",
             "formatOutputScript": "return $parameters;",
-            "saveParametersAsData": false,
+            "saveParametersAsData": true,
             "parameters": [
                 "dashboardContent.parameters.0.json"
             ],
