@@ -19494,17 +19494,17 @@
         "name": "Configuration",
         "instance": "Configuration",
         "parameters": {
-            "target": "dashboardContent",
+            "target": "dashboardContentConfig",
             "contentTemplate": "",
             "comments": "",
             "formatParametersScript": "return $parameters;",
             "formatOutputScript": "return $parameters;",
             "saveParametersAsData": true,
             "parameters": [
-                "dashboardContent.parameters.0.json"
+                "dashboardContentConfig.parameters.0.json"
             ],
             "welcomeText": "World",
-            "widgetTitle": "dashboardContent",
+            "widgetTitle": "dashboardContentConfig",
             "readAccess": "public"
         }
     }
