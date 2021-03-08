@@ -66,9 +66,20 @@ a.pb-btn-close:after {
         border-radius: 20px;
     }
     
-    .WizardTitle li, .WizardTitle li.current {
+    .WizardTitle li.current {
         background-color: #ff0258;
         border: none;
+        border-radius: 21px;
+        padding: 10px 0;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        width: 41px;
+    }
+    
+    .WizardTitle li {
+        background-color: transparent;
+        border: 1px solid rgba(2552,255,255,0.5);
         border-radius: 21px;
         padding: 10px 0;
         color: white;
