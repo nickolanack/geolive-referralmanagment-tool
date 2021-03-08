@@ -86,6 +86,9 @@ IncludeJSBlock('
         
         GetWidget('documentProjectForm')->display($targetInstance); //proposal wizard from map
         GetWidget('documentForm')->display($targetInstance); //proposal wizard from map
+        GetWidget('mainNotificationsDetail')->display($targetInstance); //proposal wizard from map
+
+        
         
          GetWidget('gct3Theme')->display($targetInstance);  
          GetWidget('purpleTheme')->display($targetInstance);   
