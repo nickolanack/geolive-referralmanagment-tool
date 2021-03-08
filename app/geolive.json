@@ -19575,17 +19575,9 @@
             "formatModulesScript": "",
             "notifyViewer": false,
             "metadata": {
-                "positionList": [
-                    "title",
-                    "content",
-                    "footer",
-                    "menu"
-                ],
                 "positions": {
                     "title": {
-                        "modules": [
-                            "mainNotificationsDetail.metadata.positions.title.modules.0.json"
-                        ]
+                        "modules": []
                     },
                     "content": {
                         "modules": [
@@ -19593,14 +19585,19 @@
                         ]
                     },
                     "footer": {
-                        "modules": [
-                            "mainNotificationsDetail.metadata.positions.footer.modules.0.json"
-                        ]
+                        "modules": []
                     },
                     "menu": {
                         "modules": []
                     }
-                }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
             },
             "readAccess": "public"
         }
