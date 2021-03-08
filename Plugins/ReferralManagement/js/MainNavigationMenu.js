@@ -193,6 +193,7 @@ var MainNavigationMenu = new Class({
 					item:new ProjectList({
 						label:"Datasets",
 					    showCreateBtn:true,
+					    lockFilter:"!collection",
 					    filter:null,
 					    invertfilter:false
 					})
@@ -203,6 +204,7 @@ var MainNavigationMenu = new Class({
 					item:new ProjectList({
 						label:"Collections",
 					    showCreateBtn:true,
+					    lockFilter:"collection",
 					    filter:null,
 					    invertfilter:false
 					})

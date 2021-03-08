@@ -162,6 +162,12 @@ var Project = (function() {
 			var me = this;
 			return me.getPercentComplete() >= 100;
 		},
+		isDataset: function(){
+			return !this.isCollecion();
+		},
+		isCollecion:function(){
+			return (this.data.attributes&&this.data.attributes.isDatase===true);
+		},
 		getPercentComplete: function() {
 
 
