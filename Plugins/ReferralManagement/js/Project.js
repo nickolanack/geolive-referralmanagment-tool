@@ -165,7 +165,7 @@ var Project = (function() {
 		isDataset: function(){
 			return !this.isCollecion();
 		},
-		isCollecion:function(){
+		isCollection:function(){
 			return (this.data.attributes&&this.data.attributes.isDatase===true);
 		},
 		getPercentComplete: function() {
