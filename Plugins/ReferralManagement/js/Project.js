@@ -1070,10 +1070,21 @@ var Project = (function() {
 						return;
 					}
 
-					setTimeout(function(){
-
+					var counter=0;
+					var interval=setInterval(function(){
+						counter++;
 						var el=module.getElement();
 						var header=new Element('div', {"class":"table-header",html:el.innerHTML});
+
+						if(!el.parentNode){
+
+							if(counter>5){
+								clearInterval(interval);
+							}
+
+							return;
+						}
+						clearInterval(interval);
 						el.parentNode.insertBefore(header,el);
 
 						header.firstChild.firstChild.childNodes.forEach(function(colEl){
