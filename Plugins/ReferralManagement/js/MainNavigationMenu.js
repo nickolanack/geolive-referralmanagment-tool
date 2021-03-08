@@ -190,6 +190,12 @@ var MainNavigationMenu = new Class({
 				{
 					html: "Datasets",
 					alias: {"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true},
+					item:new ProjectList({
+						label:"Projects",
+					    showCreateBtn:true,
+					    filter:null,
+					    invertfilter:false
+					})
 				},
 				{
 					html: "Collections",
