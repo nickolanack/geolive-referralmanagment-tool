@@ -269,6 +269,11 @@ var MainNavigationMenu = new Class({
 					html: "Documents",
 					name: "Documents"
 				},{
+					html: "Notifications",
+					name: "Notifications",
+					class:"hidden"
+
+				},{
 					html: "Tracking",
 					name: "TimeTracking"
 				}, {

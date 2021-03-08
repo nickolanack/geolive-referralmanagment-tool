@@ -157,6 +157,18 @@ var Project = (function() {
 		destroy: function() {
 			var me = this;
 			me.fireEvent('destroy')
+
+
+
+
+
+
+
+
+
+
+
+			
 		},
 		isComplete: function() {
 			var me = this;
