@@ -4,12 +4,12 @@
 
 
 $dir = __DIR__;
-while ((!file_exists($dir . DIRECTORY_SEPARATOR . 'core.php') && (!empty($dir)))) {
+while ((!file_exists($dir . '/core.php') && (!empty($dir)))) {
     $dir = dirname($dir);
 }
 
-if (file_exists($dir . DIRECTORY_SEPARATOR . 'core.php')) {
-    include_once $dir . DIRECTORY_SEPARATOR . 'core.php';
+if (file_exists($dir . '/core.php')) {
+    include_once $dir . '/core.php';
 } else {
     throw new Exception('failed to find core.php');
 }
