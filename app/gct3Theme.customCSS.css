@@ -3,6 +3,10 @@ $highlightBtnColor:#ff0258;
 
 
 
+.inline-btn.sort, .inline-btn.optionlist {
+    width: unset;
+}
+
 button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {
     border-radius: 20px;
 }
