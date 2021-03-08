@@ -1,4 +1,4 @@
-return new Element('span',{
+return new ElementModule('span',{
     "class":"notifications",
     events:{click:function(){
         
