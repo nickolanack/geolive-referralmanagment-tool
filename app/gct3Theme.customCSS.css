@@ -1,7 +1,25 @@
 
 $highlightBtnColor:#ff0258;
 
+span.notifications {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: rgba(0,0,0,0.1);
+    position: relative;
+    top: 9px;
+    cursor: pointer;
+    border-radius: 100%;
+}
 
+span.notifications:after {
+    content: "\f075";
+    font-family: 'FontAwesome';
+    position: absolute;
+    left: 9px;
+    top: 5px;
+    color: #ff0258;
+}
 
 .dashboard-main.gct3{
     
