@@ -13,7 +13,7 @@
         "deleteItemScript": "",
         "initModuleScript": "",
         "formatModuleScript": "console.log([\"projects menu list\", module, item]);",
-        "resolveItemScript": "return new ProjectList({\n    label:\"Projects\",\n    showCreateBtn:true,\n    filter:null,\n    invertfilter:false\n})",
+        "resolveItemScript": "\nif(item instanceof ProjectList){\n    return item;\n}\n\n\nreturn new ProjectList({\n    label:\"Projects\",\n    showCreateBtn:true,\n    filter:null,\n    invertfilter:false\n})",
         "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
