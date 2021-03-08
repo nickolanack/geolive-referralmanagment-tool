@@ -163,10 +163,10 @@ var Project = (function() {
 			return me.getPercentComplete() >= 100;
 		},
 		isDataset: function(){
-			return !this.isCollecion();
+			return (this.data.attributes&&this.data.attributes.isDataset===true);
 		},
 		isCollection:function(){
-			return (this.data.attributes&&this.data.attributes.isDatase===true);
+			return !this.isDataset();
 		},
 		getPercentComplete: function() {
 
