@@ -182,10 +182,37 @@ var Project = (function() {
 		},
 
 		hasProject:function(item){
+			if(item instanceof Project){
+				item=item.getId();
+			}
+
+			return (this.data.attributes&&this.data.attributes.childProjects&&this.data.attributes.childProjects.indexOf(item)>=0);
+		},
+		addProject:function(item){
+
+			if(item instanceof Project){
+				item=item.getId();
+			}
+
+
+			if(this.data.attributes&&this.data.attributes.childProjects&&this.data.attributes.childProjects.indexOf(item)<0){
+				this.data.attributes.childProjects.push(item)
+			}
+		},
+		removeProject:function(item){
+
+			if(item instanceof Project){
+				item=item.getId();
+			}
+
+			if(this.data.attributes&&this.data.attributes.childProjects){
+				var i=this.data.attributes.childProjects.indexOf(item);
+				if(i>=0){
+					this.data.attributes.childProjects.slice(i,1);
+				}
+			}
 
 		},
-		addProject:function(){},
-		removeProject:function(){},
 		getPercentComplete: function() {
 
 
