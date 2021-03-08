@@ -1076,7 +1076,7 @@ var Project = (function() {
 						var el=module.getElement();
 						var header=new Element('div', {"class":"table-header",html:el.innerHTML});
 
-						if(!el.parentNode){
+						if(!(el.parentNode&&header.firstChild&&header.firstChild.firstChild)){
 
 							if(counter>5){
 								console.error('unable to inject header');
