@@ -19566,14 +19566,43 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "",
-            "target": "none",
-            "templateName": "{target}",
+            "widgetTitle": "mainNotificationsDetail",
+            "target": "mainNotificationsDetail",
+            "templateName": "mainNotificationsDetail",
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "formatModulesScript": "",
-            "notifyViewer": false
+            "notifyViewer": false,
+            "metadata": {
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "positions": {
+                    "title": {
+                        "modules": [
+                            "mainNotificationsDetail.metadata.positions.title.modules.0.json"
+                        ]
+                    },
+                    "content": {
+                        "modules": [
+                            "mainNotificationsDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": [
+                            "mainNotificationsDetail.metadata.positions.footer.modules.0.json"
+                        ]
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                }
+            },
+            "readAccess": "public"
         }
     }
 }
