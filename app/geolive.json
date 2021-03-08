@@ -15973,7 +15973,7 @@
                                     "deleteItemScript": "defaultBehaviorFn()",
                                     "initModuleScript": "recentDetail.metadata.positions.content.modules.1.config.initModuleScript.js",
                                     "formatModuleScript": "",
-                                    "resolveItemScript": "return item",
+                                    "resolveItemScript": "recentDetail.metadata.positions.content.modules.1.config.resolveItemScript.js",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
