@@ -1,7 +1,7 @@
 $parameters=array();
 
 GetPlugin('Maps');
-$layers= MapController::GetAllLayers();
+$layers= (new \spatial\LayerLoader())->getAllLayers();
 foreach($layers as $layer){
     if($layer->getParseBehavior()!='cluster'){
         continue;

@@ -26,8 +26,8 @@ $firelight->includeScripts();
 GetWidget('projectTypeSelectionForm')->display($targetInstance); //proposal wizard from map
 
 GetWidget('proposalForm')->display($targetInstance); //proposal wizard from map
-GetWidget('documentProjectForm')->display($targetInstance); //proposal wizard from map
-GetWidget('documentForm')->display($targetInstance); //proposal wizard from map
+
+
 
 GetWidget('dashboardLoader')->display($targetInstance); //proposal wizard from map
 
@@ -44,6 +44,7 @@ GetWidget('dashboardLoader')->display($targetInstance); //proposal wizard from m
     GetWidget('projectSearchResult')->display($targetInstance);
    
 $dashConfig=GetWidget('dashboardConfig');
+
 
 IncludeJSBlock('
     
@@ -82,6 +83,10 @@ IncludeJSBlock('
     }
 
     if(strpos($dashConfig->getParameter('pageClassNames'), 'gct3')!==false){
+        
+        GetWidget('documentProjectForm')->display($targetInstance); //proposal wizard from map
+        GetWidget('documentForm')->display($targetInstance); //proposal wizard from map
+        
          GetWidget('gct3Theme')->display($targetInstance);  
          GetWidget('purpleTheme')->display($targetInstance);   
     }else{
@@ -194,6 +199,7 @@ GetWidget('userInviteForm')->display($targetInstance);
 
 
 GetWidget('dialogForm')->display($targetInstance);
+GetWidget('textFieldForm')->display($targetInstance);
 
 GetWidget('layerGroupForm')->display($targetInstance);
 GetWidget('mainMapDetailLayers')->display($targetInstance);

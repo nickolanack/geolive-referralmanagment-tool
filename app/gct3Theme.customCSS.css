@@ -6,26 +6,36 @@ $highlightBtnColor:#ff0258;
 .dashboard-main.gct3{
     
     .login-form {
-        background-color: rgba(255,255,255,0.7);
-        border-radius: 4px;
-        z-index:1;
         position:relative;
     }
     
+    
+    
     .login-form:after {
-        background-position: center;
-        background-image: url(https://dyl2vw577xcfk.cloudfront.net/gather.geoforms.ca/1/Uploads/%5BImAgE%5D_5ju_lgQ_%5BG%5D_cHZ.jpeg);
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0.3;
-        background-size: cover;
-        pointer-events:none;
-        z-index:-1;
-    }
+          background-color: rgba(255, 255, 255, 0.7);
+          border-radius: 4px;
+          position: absolute;
+          content:"";
+          width:100%;
+          height:100%;
+          top: 0;
+          left: 0;
+          z-index: -1;
+         }
+        .login-form:before {
+          background-position: center;
+          background-image: url(https://dyl2vw577xcfk.cloudfront.net/gather.geoforms.ca/1/Uploads/%5BImAgE%5D_5ju_lgQ_%5BG%5D_cHZ.jpeg);
+          content: "";
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 0.3;
+          background-size: cover;
+          pointer-events: none;
+          z-index: -1; }
+    
 }
 
 
@@ -521,6 +531,36 @@ button.primary-btn.nav-new-btn:hover {
     border: 2px solid #f0f0f0;
     border-radius: 6px;
 }
+
+
+.section-welcome {
+    position: relative;
+    
+    
+    button.inline-edit:after {
+        content: "\f040";
+        font-family: 'FontAwesome';
+        font-size:20px;
+    }
+    
+    
+    button.inline-edit {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 100%;
+        font-size: 0;
+        padding: 0;
+        color: mediumseagreen;
+        cursor:pointer;
+    }
+
+
+}
+
 
 
 
