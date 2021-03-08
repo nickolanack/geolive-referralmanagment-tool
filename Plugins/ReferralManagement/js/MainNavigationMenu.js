@@ -271,7 +271,7 @@ var MainNavigationMenu = new Class({
 				},{
 					html: "Notifications",
 					name: "Notifications",
-					class:"hidden"
+					class:"--hidden"
 
 				},{
 					html: "Tracking",
