@@ -1,4 +1,4 @@
-return new Element('div',{
+return new Element('span',{
     "class":"notifications",
     events:{click:function(){
         
