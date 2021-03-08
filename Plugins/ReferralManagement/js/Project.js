@@ -1079,6 +1079,7 @@ var Project = (function() {
 						if(!el.parentNode){
 
 							if(counter>5){
+								console.error('unable to inject header');
 								clearInterval(interval);
 							}
 
