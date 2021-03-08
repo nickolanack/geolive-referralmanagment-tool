@@ -12,8 +12,17 @@ $highlightBtnColor:#ff0258;
 .dataset-select .ui-view [data-col="date"] {
     display: inherit;
 }
-
-
+a.pb-btn-close {
+    background-image:none;
+}
+a.pb-btn-close:after {
+    content: "\f00d";
+    font-family: 'FontAwesome';
+    color: white;
+    font-size: 19px;
+    position: relative;
+    left: -3px;
+}
 
 
 .pb-c.gct3 {
