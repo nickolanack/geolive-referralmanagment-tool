@@ -771,8 +771,8 @@
         "parameters": {
             "widgetTitle": "Fit Screen",
             "target": "forTheMap",
-            "offset": 46,
-            "maxHeight": "1000",
+            "offset": "100",
+            "maxHeight": "2000",
             "minHeight": "400",
             "offsetScript": "",
             "customScript": "",
@@ -8139,16 +8139,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 464,
-                            "y": 327
+                            "x": 484,
+                            "y": 347
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 424,
-                                    "y": 578
+                                    "x": 444,
+                                    "y": 598
                                 }
                             }
                         ],
@@ -11181,12 +11181,12 @@
             "metadata": {
                 "title": "proposalAttributes",
                 "_tableDiagramState": {
-                    "x": 319,
-                    "y": 257
+                    "x": 386,
+                    "y": 242
                 },
                 "_diagramState": {
-                    "x": 319,
-                    "y": 257
+                    "x": 386,
+                    "y": 242
                 },
                 "appliesTo": [
                     "proposal"
@@ -12665,6 +12665,50 @@
                         "searchability": "public",
                         "allowMultiple": false,
                         "fieldType": "boolean",
+                        "fieldTextOptions": {
+                            "textType": "input",
+                            "inputOptions": {
+                                "buildAutocomplete": false,
+                                "requireModeration": false,
+                                "limitMaxChars": 0,
+                                "limitMaxWords": 0,
+                                "allowHtml": false,
+                                "allowMedia": true,
+                                "allowLinks": true
+                            },
+                            "listOptions": {
+                                "takeSugesstions": true,
+                                "buildTree": false,
+                                "iconize": false,
+                                "colorize": false
+                            }
+                        },
+                        "fieldNumberOptions": {
+                            "precision": 0,
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
+                        },
+                        "fieldBooleanOptions": {
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
+                        "was": "",
+                        "title": "childProjects",
+                        "label": "Child Projects",
+                        "description": "",
+                        "icon": [],
+                        "color": "rgb(undefined, undefined, undefined)",
+                        "visibility": "public",
+                        "editability": "registered",
+                        "searchability": "public",
+                        "allowMultiple": false,
+                        "fieldType": "text",
                         "fieldTextOptions": {
                             "textType": "input",
                             "inputOptions": {
@@ -16297,16 +16341,16 @@
                             "documentProjectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 214,
-                            "y": 290
+                            "x": 224,
+                            "y": 300
                         },
                         "children": [
                             "documentProjectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 174,
-                                    "y": 503
+                                    "x": 184,
+                                    "y": 513
                                 }
                             },
                             {
@@ -16316,16 +16360,16 @@
                                     "documentProjectForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 763,
-                                    "y": 251
+                                    "x": 773,
+                                    "y": 261
                                 },
                                 "children": [
                                     "documentProjectForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 723,
-                                            "y": 417
+                                            "x": 733,
+                                            "y": 427
                                         }
                                     },
                                     {
@@ -16335,16 +16379,16 @@
                                             "documentProjectForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 641,
-                                            "y": 763
+                                            "x": 651,
+                                            "y": 773
                                         },
                                         "children": [
                                             "documentProjectForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 601,
-                                                    "y": 1026
+                                                    "x": 611,
+                                                    "y": 1036
                                                 }
                                             }
                                         ],
@@ -16599,6 +16643,7 @@
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "add another value",
                                                 "formatter": "none",
+                                                "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.onRenderTextFieldScript.js",
                                                 "formatValueScript": "",
                                                 "getValueScript": " return \"\"; ",
@@ -19589,7 +19634,29 @@
                     },
                     "content": {
                         "modules": [
-                            "mainNotificationsDetail.metadata.positions.content.modules.0.json"
+                            "mainNotificationsDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "activityFeedDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            }
                         ]
                     },
                     "footer": {
@@ -19607,6 +19674,85 @@
                 ],
                 "_diagramState": []
             },
+            "readAccess": "public"
+        }
+    },
+    "widget.385": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "target": "datasetSelectForm",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": 3,
+                    "y": 178
+                },
+                "children": [
+                    "datasetSelectForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "datasetSelectForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 282,
+                            "y": 249
+                        },
+                        "children": [
+                            "datasetSelectForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 242,
+                                    "y": 415
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "datasetSelectForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "datasetSelectForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "widgetTitle": "datasetSelectForm",
+            "templateName": "datasetSelectForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "readAccess": "public"
         }
     }

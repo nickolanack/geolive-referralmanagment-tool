@@ -1,6 +1,125 @@
 
 $highlightBtnColor:#ff0258;
 
+
+
+button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {
+    border-radius: 20px;
+}
+
+.dataset-select .ui-view .field-value-module {
+    display: none;
+}
+
+.dataset-select .ui-view [data-col="name"], 
+.dataset-select .ui-view [data-col="user"],
+.dataset-select .ui-view [data-col="date"] {
+    display: inline-block;
+    min-width: 150px;
+    height: 55px;
+    line-height: 55px;
+}
+a.pb-btn-close {
+    background-image:none;
+}
+a.pb-btn-close:after {
+    content: "\f00d";
+    font-family: 'FontAwesome';
+    color: white;
+    font-size: 19px;
+    position: relative;
+    left: -3px;
+}
+
+
+.pb-c.gct3 {
+    background-color: #0f1c4b;
+    color: white;
+
+
+    textarea.text-input {
+        background-color: #2d4392;
+        border-radius: 14px;
+        border-color: rgba(255,255,255,0.2);
+        color: white;
+        text-indent: 10px;
+    }
+    
+    .text-input::placeholder {
+        color: #b9b5b5;
+        font-style: italic;
+    }
+    
+    
+    h2 {
+        color: white;
+        font-weight: bold;
+        font-size: 25px;
+    }
+    
+    button.primary-btn.warn {
+        border-radius: 20px;
+    }
+    
+    button.WizardButton.btn {
+        background-color: #ff0258;
+        border-radius: 20px;
+    }
+    
+    .WizardTitle li, .WizardTitle li.current {
+        background-color: #ff0258;
+        border: none;
+        border-radius: 21px;
+        padding: 10px 0;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        width: 41px;
+    }
+    
+    
+    
+    .TagCloudModule .tag-cloud > span.tag-el {
+        border: 1px solid white;
+        border-radius: 28px;
+        font-weight: bold;
+    }
+    
+    .TagCloudModule .tag-cloud > span.tag-el.selected {
+        background-color: #ff0258;
+        border-color: #ff0258;
+    }
+    
+    .TagCloudModule .tag-cloud > span.tag-el.add-tag {
+        background-color: #ff0258;
+        opacity:0.7;
+        transform:scale(0.7)
+    
+    }
+    
+    .template-footer {
+        background-color: #0f1c4b;
+        min-height:60px;
+    }
+    
+    &:after {
+        background-color: #0f1c4b;
+    }
+
+
+    .template-footer {
+        padding: 0 40px;
+        box-sizing: border-box;
+        padding-bottom: 20px;
+    }
+    
+    .pb-modules-viewer {
+        padding-bottom: 30px;
+    }
+
+}
+
+
 span.notifications {
     display: inline-block;
     width: 35px;
@@ -19,6 +138,10 @@ span.notifications:after {
     left: 9px;
     top: 5px;
     color: #ff0258;
+}
+
+[data-view="mainProjectsDetail"]>div>div>.ui-navigation-menu {
+    display: none;
 }
 
 .dashboard-main.gct3{

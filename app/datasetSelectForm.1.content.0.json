@@ -1,0 +1,30 @@
+{
+    "type": "UIListView",
+    "config": {
+        "listClassName": "dataset-select",
+        "className": "",
+        "viewType": "view",
+        "namedView": "singleProjectListItemTableDetail",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
+        "showInlineEdit": false,
+        "namedFormView": "defaultView",
+        "formOptions": "\"{}\"",
+        "showDeleteButton": false,
+        "deleteItemScript": "defaultBehaviorFn()",
+        "initModuleScript": "",
+        "formatModuleScript": "",
+        "resolveItemScript": "return item",
+        "filterModulesScript": "\/\/var userCollection=item;\/\/application.getNamedValue(\"currentProject\");\n\n\/\/console.log(\"Item is: \"+(item===userCollection?\"same\":\"diff\"))\n\nvar setLabelAndStyle=function(btn){\n    \n    \/*\n    if(userCollection.hasUser(listItem)){\n         btn.innerHTML= \"Remove\"\n         btn.addClass(\"error\");\n        \n    }else{\n         btn.innerHTML=\"Add\"; \n         btn.removeClass(\"error\");\n        \n    }\n    *\/\n    \n   \n}\nvar button = new ElementModule('button', {\"class\":\"primary-btn\", html:\"Add\", events:{click:function(){\n    \n    \/*\n  if(userCollection.hasUser(listItem)){\n      userCollection.removeUser(listItem);\n  }else{\n      userCollection.addUser(listItem);\n  }\n    \n  \n    setLabelAndStyle(button.getElement());\n    *\/\n    \n}}});\n\n\/\/setLabelAndStyle(button.getElement());\n\n\nlist.content.push(button);\n\n\n\n\nreturn list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false,
+        "targetName": "",
+        "getItemListScript": "ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){\n    \n    callback(team.getProjects().filter(function(p){ return p.isDataset(); }));\n    \n});",
+        "formatItemListScript": "return list;",
+        "formatListItemModuleScript": "return item;",
+        "emptyNamedView": "emptyListView",
+        "filterItemsScript": "return true;",
+        "sortItemsScript": "",
+        "maxItems": "-1"
+    }
+}
