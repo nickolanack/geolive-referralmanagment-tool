@@ -16,7 +16,7 @@
         "formatValueScript": "",
         "getValueScript": " return item.getText();",
         "updateValueScript": " object.value=value ",
-        "submitValueScript": "",
+        "submitValueScript": "item.setText(object.value)",
         "validateValueScript": " return defaultValidationFn() "
     }
 }
