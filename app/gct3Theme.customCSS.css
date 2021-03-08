@@ -3,6 +3,10 @@ $highlightBtnColor:#ff0258;
 
 
 
+button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {
+    border-radius: 20px;
+}
+
 .dataset-select .ui-view .field-value-module {
     display: none;
 }
