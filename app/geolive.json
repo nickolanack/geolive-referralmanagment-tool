@@ -19653,16 +19653,16 @@
                             "datasetSelectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 262,
-                            "y": 229
+                            "x": 272,
+                            "y": 239
                         },
                         "children": [
                             "datasetSelectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 222,
-                                    "y": 395
+                                    "x": 232,
+                                    "y": 405
                                 }
                             }
                         ],
@@ -19679,7 +19679,9 @@
                                     ]
                                 },
                                 "footer": {
-                                    "modules": []
+                                    "modules": [
+                                        "datasetSelectForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
                                 },
                                 "menu": {
                                     "modules": []
