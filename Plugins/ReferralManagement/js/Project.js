@@ -180,6 +180,12 @@ var Project = (function() {
 		isCollection:function(){
 			return !this.isDataset();
 		},
+
+		hasProject:function(item){
+
+		},
+		addProject:function(){},
+		removeProject:function(){},
 		getPercentComplete: function() {
 
 
