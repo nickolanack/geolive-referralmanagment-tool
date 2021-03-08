@@ -54,7 +54,7 @@ var ProjectList = (function() {
 		},{
 			label: "collection",
 			labelInv: "dataset",
-			name: "implemented",
+			name: "collection",
 			filterFn: function(a) {
 				return a.isCollection();
 			}
