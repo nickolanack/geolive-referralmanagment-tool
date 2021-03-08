@@ -18949,16 +18949,16 @@
                             "documentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 504,
-                            "y": 336
+                            "x": 514,
+                            "y": 346
                         },
                         "children": [
                             "documentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 464,
-                                    "y": 599
+                                    "x": 474,
+                                    "y": 609
                                 }
                             }
                         ],
@@ -19162,6 +19162,16 @@
                                                 "inputOptions": "{}",
                                                 "onRenderTextFieldScript": "",
                                                 "formatdefaultScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardHiddenAttribute",
+                                            "config": {
+                                                "attributeFieldArray": [
+                                                    "documentForm.metadata.children.1.builderMetadata.positions.content.modules.10.config.attributeFieldArray.0.json"
+                                                ],
+                                                "value": "true",
+                                                "isJavascript": false
                                             }
                                         }
                                     ]
