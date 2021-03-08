@@ -21,6 +21,10 @@ span.notifications:after {
     color: #ff0258;
 }
 
+[data-view="mainProjectsDetail"]>div>div>.ui-navigation-menu {
+    display: none;
+}
+
 .dashboard-main.gct3{
     
     .login-form {
