@@ -186,7 +186,9 @@ var Project = (function() {
 				item=item.getId();
 			}
 
-			return (this.data.attributes&&this.data.attributes.childProjects&&this.data.attributes.childProjects.indexOf(item)>=0);
+			item=parseInt(item);
+
+			return (this.data&&this.data.attributes&&this.data.attributes.childProjects&&this.data.attributes.childProjects.indexOf(item)>=0);
 		},
 		addProject:function(item){
 
@@ -194,6 +196,11 @@ var Project = (function() {
 				item=item.getId();
 			}
 
+			item=parseInt(item);
+
+			if(!this.data){
+				return;
+			}
 
 			if(this.data.attributes&&this.data.attributes.childProjects&&this.data.attributes.childProjects.indexOf(item)<0){
 				this.data.attributes.childProjects.push(item)
@@ -205,7 +212,9 @@ var Project = (function() {
 				item=item.getId();
 			}
 
-			if(this.data.attributes&&this.data.attributes.childProjects){
+			item=parseInt(item);
+
+			if(this.data&&this.data.attributes&&this.data.attributes.childProjects){
 				var i=this.data.attributes.childProjects.indexOf(item);
 				if(i>=0){
 					this.data.attributes.childProjects.slice(i,1);
