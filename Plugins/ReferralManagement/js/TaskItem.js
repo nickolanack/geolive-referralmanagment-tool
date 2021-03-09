@@ -67,7 +67,7 @@ var TaskItem = (function() {
 
 	var TaskItem = new Class({
 		Extends: DataTypeObject,
-		Implements: [Events, ProjectUserCollection],
+		Implements: [Events, ItemUsersCollection],
 		initialize: function(item, data) {
 			var me = this;
 			me.type = "Tasks.task";
