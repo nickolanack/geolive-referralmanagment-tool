@@ -11,7 +11,7 @@ var Project = (function() {
 
 	var Project = new Class({
 		Extends: DataTypeObject,
-		Implements: [Events, ProjectUsersCollectin],
+		Implements: [Events, ItemUsersCollection, ItemProjectsCollection, ItemTasksCollection],
 		initialize: function(id, data) {
 			var me = this;
 			me.type = "ReferralManagement.proposal";
@@ -67,8 +67,9 @@ var Project = (function() {
 			me.data = data;
 
 
-			me._updateProjectUsersCollection(data)
-			me._updateTasks(data);
+			me._updateUsersCollection(data)
+			me._updateProjectsCollection(data);
+			me._updateTasksCollection(data);
 
 			if (change) {
 				me.fireEvent('change');
@@ -76,82 +77,8 @@ var Project = (function() {
 
 		},
 
-		_updateTasks: function(data) {
-			var me = this;
-
-			var tasksArray = data.tasks || [];
-
-			if (!me._getTasks) {
-
-				//Initialize tasks on load.
-
-				var tasks = tasksArray.map(function(taskData) {
-
-					var task = new TaskItem(me, taskData);
-					me._addTaskListeners(task);
-
-
-					return task;
-				});
-				me._getTasks = tasks;
-				return;
-			}
-
-			var ids = tasksArray.map(function(taskData) {
-				return taskData.id;
-			});
-
-			var existingIds = [];
-			me.getTasks().forEach(function(task) {
-				if (ids.indexOf(task.getId()) < 0) {
-					TaskItem.RemoveTask(task);
-					return
-				}
-
-				existingIds.push(task.getId());
-
-			})
-
-			tasksArray.forEach(function(taskData) {
-				if (!me.hasTask(taskData.id)) {
-					me.addTask(new TaskItem(me, taskData));
-					return;
-				}
-				var task = me.getTask(taskData.id)
-				//if(taskData.modifiedDate>task.getModifiedDate()){
-				task.setData(taskData);
-				//}
-
-
-			});
-
-
-
-		},
-		_addTaskListeners: function(t) {
-
-			var me = this;
-			var changeListener = function() {
-				me.fireEvent('taskChanged', [t]);
-				me.fireEvent('change');
-			}
-			var removeListener = function() {
-
-				me._getTasks.splice(me._getTasks.indexOf(t), 1);
-				t.removeEvent('change', changeListener);
-				t.removeEvent('remove', removeListener);
-
-				me.fireEvent('taskRemoved', [t]);
-				me.fireEvent('change');
-
-
-			}
-
-			t.addEvent('change', changeListener);
-			t.addEvent('remove', removeListener);
-
-
-		},
+		
+		
 		destroy: function() {
 			var me = this;
 			me.fireEvent('destroy')
@@ -170,78 +97,8 @@ var Project = (function() {
 			return !this.isDataset();
 		},
 
-		hasProject: function(item) {
-			if (item instanceof Project) {
-				item = item.getId();
-			}
-
-			item = parseInt(item);
-
-			return (this.data && this.data.attributes && this.data.attributes.childProjects && this.data.attributes.childProjects.indexOf(item) >= 0);
-		},
-		addProject: function(item) {
-
-			if (item instanceof Project) {
-				item = item.getId();
-			}
-
-			item = parseInt(item);
-
-			if (!this.data) {
-				return;
-			}
-
-			if (this.data.attributes && this.data.attributes.childProjects && this.data.attributes.childProjects.indexOf(item) < 0) {
-				this.data.attributes.childProjects.push(item)
-			}
-		},
-		removeProject: function(item) {
-
-			if (item instanceof Project) {
-				item = item.getId();
-			}
-
-			item = parseInt(item);
-
-			if (this.data && this.data.attributes && this.data.attributes.childProjects) {
-				var i = this.data.attributes.childProjects.indexOf(item);
-				if (i >= 0) {
-					this.data.attributes.childProjects.slice(i, 1);
-				}
-			}
-
-		},
-		getPercentComplete: function() {
-
-
-			var me = this;
-
-			return me.getPercentTasksComplete();
-
-		},
-
-		getPercentTasksComplete: function() {
-
-
-			var me = this;
-
-			var tasks = me.getTasks();
-			if (tasks.length == 0) {
-				return 0;
-			}
-
-			var complete = 0;
-			tasks.forEach(function(t) {
-				if (t.isComplete()) {
-					complete++;
-				}
-			});
-
-			return Math.round((complete / tasks.length) * 100);
-
-
-
-		},
+		
+		
 		getTags: function() {
 			var me = this;
 			return [me, me.getCompany()];
@@ -413,55 +270,6 @@ var Project = (function() {
 			}
 			return me._getPercentTimeComplete;
 
-		},
-		addTask: function(task) {
-			var me = this;
-			if (me.hasTask(task.getId())) {
-				return;
-			}
-
-			me._getTasks.push(task);
-			me._addTaskListeners(task);
-			me.fireEvent('addTask', [task]);
-			me.fireEvent('change');
-		},
-		hasTasks: function() {
-			var me = this;
-			if (me.data && me.data.tasks && me.data.tasks.length) {
-				return true;
-			}
-			return false;
-		},
-
-		getTasks() {
-
-			var me = this;
-			if (!me._getTasks) {
-
-				me._updateTasks(me.data);
-
-			}
-			return me._getTasks.slice(0);
-		},
-		hasTask: function(id) {
-			var me = this;
-			var tasks = me.getTasks();
-			for (var i = 0; i < tasks.length; i++) {
-				if (tasks[i].getId() === id) {
-					return true
-				}
-			}
-			return false;
-		},
-		getTask: function(id) {
-			var me = this;
-			var tasks = me.getTasks();
-			for (var i = 0; i < tasks.length; i++) {
-				if (tasks[i].getId() === id) {
-					return tasks[i];
-				}
-			}
-			return null;
 		},
 		getName: function() {
 			var me = this;

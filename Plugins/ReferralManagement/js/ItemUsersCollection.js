@@ -1,6 +1,12 @@
 var ItemUsersCollection = (function(){
 
 
+
+	/**
+	 * Implemented by Project, and TaskItem to support project and task teams
+	 */
+
+
 	var AddItemUserQuery = new Class({
 		Extends: AjaxControlQuery,
 		initialize: function(item, type, user) {
@@ -53,21 +59,19 @@ var ItemUsersCollection = (function(){
 	    getAvailableUsers:function(){
 	    	throw 'Must be implemented';
 	    },
+
+
+
+
+
 	    hasUser:function(user){
-	    	var me=this;
-	    	var team=me.getUsers();
-	    	for(var i=0;i<team.length;i++){
-	    		if(user.getId()+""===team[i].getId()+""){
-	    			return true;
-	    		}
-	    	}
-	    	return false;
+	    	return this._indexOfUser(user)>=0;
 	    },
 	    _indexOfUser:function(user){
 	    	var me=this;
-	    	var team=me.getUsers();
-	    	for(var i=0;i<team.length;i++){
-	    		if(user.getId()+""===team[i].getId()+""){
+	    	var list=me.getUsers();
+	    	for(var i=0;i<list.length;i++){
+	    		if(user.getId()+""===list[i].getId()+""){
 	    			return i;
 	    		}
 	    	}
@@ -98,7 +102,7 @@ var ItemUsersCollection = (function(){
 	    	}
 	    },
 
-	    _updateProjectUsersCollection:function(data){
+	    _updateUsersCollection:function(data){
 
 			var me=this;
 

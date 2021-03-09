@@ -145,7 +145,7 @@ var TaskItem = (function() {
 
 
 
-			this._updateProjectUsersCollection(data);
+			this._updateUsersCollection(data);
 
 		},
 
