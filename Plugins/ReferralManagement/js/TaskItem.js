@@ -67,7 +67,7 @@ var TaskItem = (function() {
 
 	var TaskItem = new Class({
 		Extends: DataTypeObject,
-		Implements: [Events, UserTeamCollection],
+		Implements: [Events, ProjectUserCollection],
 		initialize: function(item, data) {
 			var me = this;
 			me.type = "Tasks.task";
@@ -145,7 +145,7 @@ var TaskItem = (function() {
 
 
 
-			this._updateUserTeamCollection(data);
+			this._updateProjectUsersCollection(data);
 
 		},
 

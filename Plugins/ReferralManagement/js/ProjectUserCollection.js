@@ -1,4 +1,4 @@
-var UserTeamCollection = (function(){
+var ProjectUserCollection = (function(){
 
 
 	var AddItemUserQuery = new Class({
@@ -42,7 +42,7 @@ var UserTeamCollection = (function(){
 
 
 
-	var UserTeamCollection=new Class({
+	var ProjectUserCollection=new Class({
 
 		addUserListLabel:function(){
 			return 'Add Project Team Member';
@@ -98,7 +98,7 @@ var UserTeamCollection = (function(){
 	    	}
 	    },
 
-	    _updateUserTeamCollection:function(data){
+	    _updateProjectUsersCollection:function(data){
 
 			var me=this;
 
@@ -145,6 +145,6 @@ var UserTeamCollection = (function(){
 
 	});
 
-	return UserTeamCollection;
+	return ProjectUserCollection;
 
 })();

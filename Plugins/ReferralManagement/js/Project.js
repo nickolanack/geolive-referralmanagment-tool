@@ -11,7 +11,7 @@ var Project = (function() {
 
 	var Project = new Class({
 		Extends: DataTypeObject,
-		Implements: [Events, UserTeamCollection],
+		Implements: [Events, ProjectUsersCollectin],
 		initialize: function(id, data) {
 			var me = this;
 			me.type = "ReferralManagement.proposal";
@@ -67,7 +67,7 @@ var Project = (function() {
 			me.data = data;
 
 
-			me._updateUserTeamCollection(data)
+			me._updateProjectUsersCollection(data)
 			me._updateTasks(data);
 
 			if (change) {
