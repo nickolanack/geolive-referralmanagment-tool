@@ -101,7 +101,9 @@ var ItemUsersCollection = (function(){
 	    		me.fireEvent('change');
 	    	}
 	    },
+	    _initUsersCollection:function(){
 
+		},
 	    _updateUsersCollection:function(data){
 
 			var me=this;

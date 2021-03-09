@@ -112,7 +112,9 @@ var ItemProjectsCollection = (function(){
 	    		me.fireEvent('change');
 	    	}
 	    },
-
+	    _initProjectsCollection:function(){
+	    	this._projects=[];
+		},
 	    _updateProjectsCollection:function(data){
 
 			var me=this;

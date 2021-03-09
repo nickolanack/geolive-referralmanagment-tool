@@ -25,6 +25,13 @@ var Project = (function() {
 				me._id = id;
 			}
 			me._team = [];
+
+
+			this._initUsersCollection();
+			this._initProjectsCollection();
+			this._initTasksCollection();
+
+
 			if (data) {
 				me._setData(data);
 			} else {

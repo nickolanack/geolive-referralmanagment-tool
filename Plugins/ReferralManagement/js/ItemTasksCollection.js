@@ -107,6 +107,9 @@ var ItemTasksCollection = (function(){
 
 
 		},
+		_initTasksCollection:function(){
+
+		},
 		_updateTasksCollection: function(data) {
 			var me = this;
 
