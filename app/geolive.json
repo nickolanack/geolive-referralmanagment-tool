@@ -16341,16 +16341,16 @@
                             "documentProjectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 224,
-                            "y": 300
+                            "x": 254,
+                            "y": 330
                         },
                         "children": [
                             "documentProjectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 184,
-                                    "y": 513
+                                    "x": 214,
+                                    "y": 543
                                 }
                             },
                             {
@@ -16360,16 +16360,16 @@
                                     "documentProjectForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 773,
-                                    "y": 261
+                                    "x": 803,
+                                    "y": 291
                                 },
                                 "children": [
                                     "documentProjectForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 733,
-                                            "y": 427
+                                            "x": 763,
+                                            "y": 467
                                         }
                                     },
                                     {
@@ -16379,16 +16379,16 @@
                                             "documentProjectForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 651,
-                                            "y": 773
+                                            "x": 681,
+                                            "y": 803
                                         },
                                         "children": [
                                             "documentProjectForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 611,
-                                                    "y": 1036
+                                                    "x": 641,
+                                                    "y": 1066
                                                 }
                                             }
                                         ],
@@ -16544,10 +16544,40 @@
                                             "modules": [
                                                 "documentProjectForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.0.json",
                                                 {
+                                                    "type": "UIListView",
+                                                    "config": {
+                                                        "listClassName": "dataset-select",
+                                                        "className": "",
+                                                        "viewType": "view",
+                                                        "namedView": "singleProjectListItemTableDetail",
+                                                        "shouldRender": true,
+                                                        "namedViewScript": "return namedView",
+                                                        "showInlineEdit": false,
+                                                        "namedFormView": "defaultView",
+                                                        "formOptions": "\"{}\"",
+                                                        "showDeleteButton": false,
+                                                        "deleteItemScript": "defaultBehaviorFn()",
+                                                        "initModuleScript": "",
+                                                        "formatModuleScript": "Project.AddListEvents(module);",
+                                                        "resolveItemScript": "return item",
+                                                        "filterModulesScript": "return list",
+                                                        "itemButtonsScript": "return [];",
+                                                        "insertAtTop": false,
+                                                        "targetName": "",
+                                                        "getItemListScript": "documentProjectForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.1.config.getItemListScript.js",
+                                                        "formatItemListScript": "return list;",
+                                                        "formatListItemModuleScript": "return item;",
+                                                        "emptyNamedView": "emptyListView",
+                                                        "filterItemsScript": "return true;",
+                                                        "sortItemsScript": "",
+                                                        "maxItems": "-1"
+                                                    }
+                                                },
+                                                {
                                                     "type": "WizardScriptElement",
                                                     "config": {
                                                         "name": "My Custom Script",
-                                                        "script": "documentProjectForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.1.config.script.js",
+                                                        "script": "documentProjectForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.2.config.script.js",
                                                         "description": "Info about my custom script"
                                                     }
                                                 }
