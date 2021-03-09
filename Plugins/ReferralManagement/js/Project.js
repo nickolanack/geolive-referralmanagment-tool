@@ -1,5 +1,3 @@
-
-
 var Project = (function() {
 
 	var SaveProposalQuery = ProjectQueries.SaveProposalQuery;
@@ -160,64 +158,55 @@ var Project = (function() {
 
 
 
-
-
-
-
-
-
-
-
-			
 		},
 		isComplete: function() {
 			var me = this;
 			return me.getPercentComplete() >= 100;
 		},
-		isDataset: function(){
-			return (this.data.attributes&&(this.data.attributes.isDataset===true||this.data.attributes.isDataset==="true"));
+		isDataset: function() {
+			return (this.data.attributes && (this.data.attributes.isDataset === true || this.data.attributes.isDataset === "true"));
 		},
-		isCollection:function(){
+		isCollection: function() {
 			return !this.isDataset();
 		},
 
-		hasProject:function(item){
-			if(item instanceof Project){
-				item=item.getId();
+		hasProject: function(item) {
+			if (item instanceof Project) {
+				item = item.getId();
 			}
 
-			item=parseInt(item);
+			item = parseInt(item);
 
-			return (this.data&&this.data.attributes&&this.data.attributes.childProjects&&this.data.attributes.childProjects.indexOf(item)>=0);
+			return (this.data && this.data.attributes && this.data.attributes.childProjects && this.data.attributes.childProjects.indexOf(item) >= 0);
 		},
-		addProject:function(item){
+		addProject: function(item) {
 
-			if(item instanceof Project){
-				item=item.getId();
+			if (item instanceof Project) {
+				item = item.getId();
 			}
 
-			item=parseInt(item);
+			item = parseInt(item);
 
-			if(!this.data){
+			if (!this.data) {
 				return;
 			}
 
-			if(this.data.attributes&&this.data.attributes.childProjects&&this.data.attributes.childProjects.indexOf(item)<0){
+			if (this.data.attributes && this.data.attributes.childProjects && this.data.attributes.childProjects.indexOf(item) < 0) {
 				this.data.attributes.childProjects.push(item)
 			}
 		},
-		removeProject:function(item){
+		removeProject: function(item) {
 
-			if(item instanceof Project){
-				item=item.getId();
+			if (item instanceof Project) {
+				item = item.getId();
 			}
 
-			item=parseInt(item);
+			item = parseInt(item);
 
-			if(this.data&&this.data.attributes&&this.data.attributes.childProjects){
-				var i=this.data.attributes.childProjects.indexOf(item);
-				if(i>=0){
-					this.data.attributes.childProjects.slice(i,1);
+			if (this.data && this.data.attributes && this.data.attributes.childProjects) {
+				var i = this.data.attributes.childProjects.indexOf(item);
+				if (i >= 0) {
+					this.data.attributes.childProjects.slice(i, 1);
 				}
 			}
 
@@ -1101,26 +1090,29 @@ var Project = (function() {
 	}
 
 
-	Project.addTableHeader=function(listModule){
-		listModule.addEvent('renderModule:once', function(module, index){
+	Project.addTableHeader = function(listModule) {
+		listModule.addEvent('renderModule:once', function(module, index) {
 
-			
-			module.runOnceOnLoad(function(){
-				module.getViewName(function(view){
 
-					if(view!=="singleProjectListItemTableDetail"){
+			module.runOnceOnLoad(function() {
+				module.getViewName(function(view) {
+
+					if (view !== "singleProjectListItemTableDetail") {
 						return;
 					}
 
-					var counter=0;
-					var interval=setInterval(function(){
+					var counter = 0;
+					var interval = setInterval(function() {
 						counter++;
-						var el=module.getElement();
-						var header=new Element('div', {"class":"table-header",html:el.innerHTML});
+						var el = module.getElement();
+						var header = new Element('div', {
+							"class": "table-header",
+							html: el.innerHTML
+						});
 
-						if(!(el.parentNode&&header.firstChild&&header.firstChild.firstChild)){
+						if (!(el.parentNode && header.firstChild && header.firstChild.firstChild)) {
 
-							if(counter>5){
+							if (counter > 5) {
 								console.error('unable to inject header');
 								clearInterval(interval);
 							}
@@ -1128,32 +1120,30 @@ var Project = (function() {
 							return;
 						}
 						clearInterval(interval);
-						el.parentNode.insertBefore(header,el);
+						el.parentNode.insertBefore(header, el);
 
-						header.firstChild.firstChild.childNodes.forEach(function(colEl){
+						header.firstChild.firstChild.childNodes.forEach(function(colEl) {
 
 							colEl.addClass('sortable');
 
-							colEl.addEvent('click',function(){
+							colEl.addEvent('click', function() {
 
-								var sort=colEl.getAttribute('data-col');
-								var sortModule= listModule.getSortObject();
+								var sort = colEl.getAttribute('data-col');
+								var sortModule = listModule.getSortObject();
 								sortModule.applySort(sort);
-								
-
 
 
 
 							})
 						});
 
-					
+
 					}, 200);
 
 				});
-				
+
 			});
-				
+
 			//}
 
 			console.log('render project');
@@ -1182,7 +1172,7 @@ var Project = (function() {
 
 
 
-		listModule.addEvent('renderModule', function(){
+		listModule.addEvent('renderModule', function() {
 			console.log('render project');
 		});
 
@@ -1190,36 +1180,35 @@ var Project = (function() {
 	}
 
 
-	Project.AddListItemEvents =function(child, childView, application, listFilterFn) {
-
-			
-			UIInteraction.addProjectOverviewClick(childView.getElement(), child);
+	Project.AddListItemEvents = function(child, childView, application, listFilterFn) {
 
 
-			var current = application.getNamedValue("currentProject");
-			if (current && current.getId() == child.getId()) {
-				childView.getElement().addClass("active-project");
+		UIInteraction.addProjectOverviewClick(childView.getElement(), child);
+
+
+		var current = application.getNamedValue("currentProject");
+		if (current && current.getId() == child.getId()) {
+			childView.getElement().addClass("active-project");
+		}
+
+
+
+		childView.addWeakEvent(child, "change", function() {
+
+			if ((!listFilterFn) || listFilterFn(child)) {
+				childView.redraw();
+				return;
 			}
 
-			
+
+			childView.getElement().addClass('removing');
+			setTimeout(function() {
+				childView.remove();
+			}, 1000);
+
+		});
 
 
-			childView.addWeakEvent(child, "change", function() {
-
-				if ((!listFilterFn) || listFilterFn(child)) {
-					childView.redraw();
-					return;
-				}
-
-
-				childView.getElement().addClass('removing');
-				setTimeout(function() {
-					childView.remove();
-				}, 1000);
-
-			});
-
-		
 	};
 
 
@@ -1231,7 +1220,7 @@ var Project = (function() {
 			return null
 		}
 
-		if(item.isArchived()){
+		if (item.isArchived()) {
 			return null;
 		}
 
@@ -1246,7 +1235,7 @@ var Project = (function() {
 			}
 		});
 
-		
+
 
 		var implemented = new ElementModule('button', {
 			"html": "Implemented",
@@ -1259,16 +1248,15 @@ var Project = (function() {
 			}
 		});
 
-		pending.addWeakEvent(item, 'approved', function(){
+		pending.addWeakEvent(item, 'approved', function() {
 			pending.getElement().removeClass('selected');
 			implemented.getElement().addClass('selected')
 		});
 
-		pending.addWeakEvent(item, 'unapproved', function(){
+		pending.addWeakEvent(item, 'unapproved', function() {
 			implemented.getElement().removeClass('selected');
 			pending.getElement().addClass('selected');
 		});
-
 
 
 
@@ -1278,51 +1266,98 @@ var Project = (function() {
 	};
 
 
-	Project.FormatUserSelectionListModules=function(list, item, listItem){
+	Project.AddSelectionButton=function(has, add, remove){
 
-		var userCollection=item;//application.getNamedValue("currentProject");
+		var projectCollection = item; //application.getNamedValue("currentProject");
 
-		console.log("Item is: "+(item===userCollection?"same":"diff"))
+		//console.log("Item is: "+(item===userCollection?"same":"diff"))
 
-		var setLabelAndStyle=function(btn){
-		    
-		    if(userCollection.hasUser(listItem)){
-		         btn.innerHTML= "Remove"
-		         btn.addClass("error");
-		        
-		    }else{
-		         btn.innerHTML="Add"; 
-		         btn.removeClass("error");
-		        
-		    }
-		    
-		   
+		var setLabelAndStyle = function(btn) {
+
+
+			if (has()) {
+				btn.innerHTML = "Remove"
+				btn.addClass("error");
+
+			} else {
+				btn.innerHTML = "Add";
+				btn.removeClass("error");
+
+			}
+
+
+
 		}
-		var button = new ElementModule('button', {"class":"primary-btn", html:"Add", events:{click:function(){
-		    
-		  if(userCollection.hasUser(listItem)){
-		      userCollection.removeUser(listItem);
-		  }else{
-		      userCollection.addUser(listItem);
-		  }
-		    
-		  
-		    setLabelAndStyle(button.getElement());
-		    
-		}}});
+		var button = new ElementModule('button', {
+			"class": "primary-btn",
+			html: "Add",
+			events: {
+				click: function() {
+
+
+					if (has()) {
+						remove();
+					} else {
+						add();
+					}
+					setLabelAndStyle(button.getElement());
+
+
+				}
+			}
+		});
 
 		setLabelAndStyle(button.getElement());
 
 
-		list.content.push(button);
+		return button;
 
 
-
-
-		return list
 
 
 	}
+
+	Project.FormatProjectSelectionListModules = function(list, item, listItem) {
+
+
+		list.content.push(Project.AddSelectionBehavior(
+			function(){
+				return item.hasProject(listItem)
+			},
+			function(){
+				item.addProject(listItem)
+			},
+			function(){
+				item.removeProject(listItem)
+			}
+		));
+
+		return list;
+
+
+	};
+
+
+	Project.FormatUserSelectionListModules = function(list, item, listItem) {
+
+
+
+		list.content.push(Project.AddSelectionBehavior(
+			function(){
+				return item.hasUser(listItem)
+			},
+			function(){
+				item.addUser(listItem)
+			},
+			function(){
+				item.removeUser(listItem)
+			}
+		));
+
+		return list;
+
+
+	};
 
 
 	return Project;
