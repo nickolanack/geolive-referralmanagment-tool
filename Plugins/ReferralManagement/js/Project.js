@@ -1268,10 +1268,6 @@ var Project = (function() {
 
 	Project.AddSelectionButtonBehavior=function(has, add, remove){
 
-		var projectCollection = item; //application.getNamedValue("currentProject");
-
-		//console.log("Item is: "+(item===userCollection?"same":"diff"))
-
 		var setLabelAndStyle = function(btn) {
 
 
