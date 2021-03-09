@@ -1278,6 +1278,53 @@ var Project = (function() {
 	};
 
 
+	Project.FormatUserSelectionListModules=function(list, item){
+
+		var userCollection=item;//application.getNamedValue("currentProject");
+
+		console.log("Item is: "+(item===userCollection?"same":"diff"))
+
+		var setLabelAndStyle=function(btn){
+		    
+		    if(userCollection.hasUser(listItem)){
+		         btn.innerHTML= "Remove"
+		         btn.addClass("error");
+		        
+		    }else{
+		         btn.innerHTML="Add"; 
+		         btn.removeClass("error");
+		        
+		    }
+		    
+		   
+		}
+		var button = new ElementModule('button', {"class":"primary-btn", html:"Add", events:{click:function(){
+		    
+		  if(userCollection.hasUser(listItem)){
+		      userCollection.removeUser(listItem);
+		  }else{
+		      userCollection.addUser(listItem);
+		  }
+		    
+		  
+		    setLabelAndStyle(button.getElement());
+		    
+		}}});
+
+		setLabelAndStyle(button.getElement());
+
+
+		list.content.push(button);
+
+
+
+
+		return list
+
+
+	}
+
+
 	return Project;
 
 })();
