@@ -614,6 +614,9 @@ var ProjectTeam = (function() {
 		getProject: function(id, callback) {
 
 			var me = this;
+			if(id instanceof Project){
+				id=id.getId();
+			}
 
 			if (callback) {
 

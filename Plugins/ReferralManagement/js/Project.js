@@ -970,13 +970,17 @@ var Project = (function() {
 		});
 	};
 
-	Project.AddListEvents = function(listModule) {
+	Project.AddListEvents = function(listModule, target) {
 
-		listModule.addWeakEvent(ProjectTeam.CurrentTeam(), 'addProject', function(p) {
+		if(!target){
+			target=ProjectTeam.CurrentTeam();
+		}
+
+		listModule.addWeakEvent(target, 'addProject', function(p) {
 			listModule.addItem(p);
 		});
 
-		listModule.addWeakEvent(ProjectTeam.CurrentTeam(), 'removeProject', function(p) {
+		listModule.addWeakEvent(target, 'removeProject', function(p) {
 			listModule.getModules().forEach(function(m) {
 				m.getItem(function(item) {
 					if (item === p) {

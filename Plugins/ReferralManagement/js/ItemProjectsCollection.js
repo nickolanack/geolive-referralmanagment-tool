@@ -97,7 +97,7 @@ var ItemProjectsCollection = (function(){
 	    			(new AddItemProjectQuery(me.getId(), me.getType(), project)).execute();
 	    		}
 
-	    		
+	    		me.fireEvent('addProject', [ProjectTeam.CurrentTeam().getProject(project)]);
 	    		me.fireEvent('change');
 	    	}
 	    },
@@ -109,6 +109,7 @@ var ItemProjectsCollection = (function(){
 	    		if(me.getId()>0){
 	    			(new RemoveItemProjectQuery(me.getId(), me.getType(), project)).execute();
 	    		}
+	    		me.fireEvent('removeProject', [ProjectTeam.CurrentTeam().getProject(project)]);
 	    		me.fireEvent('change');
 	    	}
 	    },
