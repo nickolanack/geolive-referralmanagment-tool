@@ -16341,16 +16341,16 @@
                             "documentProjectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 254,
-                            "y": 330
+                            "x": 264,
+                            "y": 340
                         },
                         "children": [
                             "documentProjectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 214,
-                                    "y": 543
+                                    "x": 224,
+                                    "y": 553
                                 }
                             },
                             {
@@ -16360,16 +16360,16 @@
                                     "documentProjectForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 803,
-                                    "y": 291
+                                    "x": 813,
+                                    "y": 301
                                 },
                                 "children": [
                                     "documentProjectForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 763,
-                                            "y": 467
+                                            "x": 773,
+                                            "y": 477
                                         }
                                     },
                                     {
@@ -16379,16 +16379,16 @@
                                             "documentProjectForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 681,
-                                            "y": 803
+                                            "x": 691,
+                                            "y": 813
                                         },
                                         "children": [
                                             "documentProjectForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 641,
-                                                    "y": 1066
+                                                    "x": 651,
+                                                    "y": 1076
                                                 }
                                             }
                                         ],
@@ -16558,7 +16558,7 @@
                                                         "showDeleteButton": false,
                                                         "deleteItemScript": "defaultBehaviorFn()",
                                                         "initModuleScript": "",
-                                                        "formatModuleScript": "Project.AddListEvents(module);",
+                                                        "formatModuleScript": "documentProjectForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.1.config.formatModuleScript.js",
                                                         "resolveItemScript": "return item",
                                                         "filterModulesScript": "return list",
                                                         "itemButtonsScript": "return [];",
