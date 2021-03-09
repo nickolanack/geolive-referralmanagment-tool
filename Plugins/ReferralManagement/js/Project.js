@@ -1266,7 +1266,7 @@ var Project = (function() {
 	};
 
 
-	Project.AddSelectionButton=function(has, add, remove){
+	Project.AddSelectionButtonBehavior=function(has, add, remove){
 
 		var projectCollection = item; //application.getNamedValue("currentProject");
 
@@ -1320,7 +1320,7 @@ var Project = (function() {
 	Project.FormatProjectSelectionListModules = function(list, item, listItem) {
 
 
-		list.content.push(Project.AddSelectionBehavior(
+		list.content.push(Project.AddSelectionButtonBehavior(
 			function(){
 				return item.hasProject(listItem)
 			},
@@ -1342,7 +1342,7 @@ var Project = (function() {
 
 
 
-		list.content.push(Project.AddSelectionBehavior(
+		list.content.push(Project.AddSelectionButtonBehavior(
 			function(){
 				return item.hasUser(listItem)
 			},
