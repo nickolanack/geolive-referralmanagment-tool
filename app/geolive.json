@@ -16341,16 +16341,16 @@
                             "documentProjectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 244,
-                            "y": 320
+                            "x": 254,
+                            "y": 330
                         },
                         "children": [
                             "documentProjectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 204,
-                                    "y": 533
+                                    "x": 214,
+                                    "y": 543
                                 }
                             },
                             {
@@ -16360,16 +16360,16 @@
                                     "documentProjectForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 793,
-                                    "y": 281
+                                    "x": 803,
+                                    "y": 291
                                 },
                                 "children": [
                                     "documentProjectForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 753,
-                                            "y": 457
+                                            "x": 763,
+                                            "y": 467
                                         }
                                     },
                                     {
@@ -16379,16 +16379,16 @@
                                             "documentProjectForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 671,
-                                            "y": 793
+                                            "x": 681,
+                                            "y": 803
                                         },
                                         "children": [
                                             "documentProjectForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 631,
-                                                    "y": 1056
+                                                    "x": 641,
+                                                    "y": 1066
                                                 }
                                             }
                                         ],
@@ -16558,7 +16558,7 @@
                                                         "showDeleteButton": false,
                                                         "deleteItemScript": "defaultBehaviorFn()",
                                                         "initModuleScript": "",
-                                                        "formatModuleScript": "",
+                                                        "formatModuleScript": "Project.AddListEvents(module);",
                                                         "resolveItemScript": "return item",
                                                         "filterModulesScript": "return list",
                                                         "itemButtonsScript": "return [];",
