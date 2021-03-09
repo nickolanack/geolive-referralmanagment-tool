@@ -4,6 +4,10 @@ var ItemProjectsCollection = (function(){
 	/*
 	 * Implemented by Project, and TaskItem to support project and task teams
 	 */
+	
+	if(!window.ChildProject){
+		var ChildProject=new Class({});
+	}
 
 
 	var AddItemProjectQuery = new Class({
@@ -12,7 +16,7 @@ var ItemProjectsCollection = (function(){
 
 			this.parent(CoreAjaxUrlRoot, "add_item_project", {
 				plugin: "ReferralManagement",
-				project: project,
+				project: project instanceof ChildProject?project.getId():project,
 				item: item,
 				type: type
 			});
@@ -37,7 +41,7 @@ var ItemProjectsCollection = (function(){
 
 			this.parent(CoreAjaxUrlRoot, "remove_item_project", {
 				plugin: "ReferralManagement",
-				project: project,
+				project: project instanceof ChildProject?project.getId():project,
 				item: item,
 				type: type
 			});
@@ -71,21 +75,26 @@ var ItemProjectsCollection = (function(){
 	    _indexOfProject:function(project){
 	    	var me=this;
 	    	var list=me.getProjects();
+	    	
+	    	var id=project instanceof ChildProject?project.getId():project;
+	    	
 	    	for(var i=0;i<list.length;i++){
-	    		if(user.getId()+""===list[i].getId()+""){
+	    		var listId=list[i] instanceof ChildProject?list[i].getId():list[i];
+	    		if(id+""===listId+""){
 	    			return i;
 	    		}
 	    	}
 	    	return -1;
 	    },
 
-	    addProject:function(user){
+	    addProject:function(project){
 	    	var me=this;
-	    	if(!me.hasUser(user)){
-	    		me._projects.push(user);
+	    	if(!me.hasProject(project)){
+	    		var id=project instanceof ChildProject?project.getId():project;
+	    		me._projects.push(id);
 
 	    		if(me.getId()>0){
-	    			(new AddItemProjectQuery(me.getId(), me.getType(), user.getId())).execute();
+	    			(new AddItemProjectQuery(me.getId(), me.getType(), project)).execute();
 	    		}
 
 	    		
@@ -93,12 +102,12 @@ var ItemProjectsCollection = (function(){
 	    	}
 	    },
 
-	    removeProject:function(user){
+	    removeProject:function(project){
 	    	var me=this;
-	    	if(me.hasUser(user)){
-	    		me._projects.splice(me._indexOfUser(user),1);
+	    	if(me.hasProject(project)){
+	    		me._projects.splice(me._indexOfUser(project),1);
 	    		if(me.getId()>0){
-	    			(new RemoveItemProjectQuery(me.getId(), me.getType(), user.getId())).execute();
+	    			(new RemoveItemProjectQuery(me.getId(), me.getType(), project)).execute();
 	    		}
 	    		me.fireEvent('change');
 	    	}

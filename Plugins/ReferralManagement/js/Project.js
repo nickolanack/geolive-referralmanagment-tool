@@ -11,7 +11,12 @@ var Project = (function() {
 
 	var Project = new Class({
 		Extends: DataTypeObject,
-		Implements: [Events, ItemUsersCollection, ItemProjectsCollection, ItemTasksCollection],
+		Implements: [
+			Events, 
+			ItemUsersCollection, 
+			ItemProjectsCollection, 
+			ItemTasksCollection
+		],
 		initialize: function(id, data) {
 			var me = this;
 			me.type = "ReferralManagement.proposal";
