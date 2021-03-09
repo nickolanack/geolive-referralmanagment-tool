@@ -1,4 +1,4 @@
-var ProjectUserCollection = (function(){
+var ItemUsersCollection = (function(){
 
 
 	var AddItemUserQuery = new Class({
@@ -42,7 +42,7 @@ var ProjectUserCollection = (function(){
 
 
 
-	var ProjectUserCollection=new Class({
+	var ItemUsersCollection=new Class({
 
 		addUserListLabel:function(){
 			return 'Add Project Team Member';
@@ -145,6 +145,6 @@ var ProjectUserCollection = (function(){
 
 	});
 
-	return ProjectUserCollection;
+	return ItemUsersCollection;
 
 })();
