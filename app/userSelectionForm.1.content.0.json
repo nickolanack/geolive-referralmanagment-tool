@@ -15,7 +15,7 @@
         "initModuleScript": "",
         "formatModuleScript": "",
         "resolveItemScript": "return item",
-        "filterModulesScript": "\n\nreturn Project.FormatUserSelectionListModules(list, item);",
+        "filterModulesScript": "\n\nreturn Project.FormatUserSelectionListModules(list, item, listItem);",
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
         "targetName": "",
