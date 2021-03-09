@@ -1278,7 +1278,7 @@ var Project = (function() {
 	};
 
 
-	Project.FormatUserSelectionListModules=function(list, item){
+	Project.FormatUserSelectionListModules=function(list, item, listItem){
 
 		var userCollection=item;//application.getNamedValue("currentProject");
 
