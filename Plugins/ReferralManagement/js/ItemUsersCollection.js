@@ -107,7 +107,13 @@ var ItemUsersCollection = (function(){
 	    	}
 	    },
 	    _initUsersCollection:function(){
+	    	this._team = [];
 
+		},
+		_addUsersCollectionFormData:function(data){
+			data.team= (me._team || []).map(function(t) {
+				return t.getId()
+			});
 		},
 	    _updateUsersCollection:function(data){
 

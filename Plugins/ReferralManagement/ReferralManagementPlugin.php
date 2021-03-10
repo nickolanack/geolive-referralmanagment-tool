@@ -287,10 +287,18 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/ItemPending.js');
 		IncludeJS(__DIR__ . '/js/ItemArchive.js');
 		IncludeJS(__DIR__ . '/js/ItemDeadline.js');
+		IncludeJS(__DIR__ . '/js/ItemAttachments.js');
+		IncludeJS(__DIR__ . '/js/ItemFlags.js');
+		IncludeJS(__DIR__ . '/js/ItemEvents.js');
+		IncludeJS(__DIR__ . '/js/ItemStars.js');
+		IncludeJS(__DIR__ . '/js/ItemDiscussion.js');		
 		
 		IncludeJS(__DIR__ . '/js/Project.js');
+
 		IncludeJS(__DIR__ . '/js/GuestProject.js');
+
 		IncludeJS(__DIR__ . '/js/Dataset.js');
+
 		IncludeJS(__DIR__ . '/js/ProjectList.js');
 		IncludeJS(__DIR__ . '/js/ProjectTeam.js');
 		IncludeJS(__DIR__ . '/js/ProjectCalendar.js');

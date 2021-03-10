@@ -28,18 +28,7 @@ var TaskItem = (function() {
 	});
 
 
-	var SetStarredTaskQuery = new Class({
-		Extends: AjaxControlQuery,
-		initialize: function(task, starred) {
-
-			this.parent(CoreAjaxUrlRoot, "set_starred_task", {
-				plugin: "ReferralManagement",
-				task: task,
-				starred: starred
-			});
-		}
-	});
-
+	
 	var SetDueDateTaskQuery = new Class({
 		Extends: AjaxControlQuery,
 		initialize: function(task, duedate) {
@@ -67,14 +56,18 @@ var TaskItem = (function() {
 
 	var TaskItem = new Class({
 		Extends: DataTypeObject,
-		Implements: [Events, ItemUsersCollection],
+		Implements: [
+			Events, 
+			ItemUsersCollection,
+			ItemStars
+		],
 		initialize: function(item, data) {
 			var me = this;
 			me.type = "Tasks.task";
 
 			me._setItem(item);
 
-
+			this._initUsersCollection();
 
 			if (data) {
 				me._setData(data);
@@ -93,7 +86,7 @@ var TaskItem = (function() {
 			var me = this;
 
 			//fix any formatting issues that would otherwise appear to have changed the data
-			data =this._preformatData(data);
+			data =this._preformatStarsData(data);
 
 			var dataChanged=JSON.stringify(data) !== JSON.stringify(me.data);
 			
@@ -122,16 +115,10 @@ var TaskItem = (function() {
 			me._attributes = attributes;
 
 		},
-		_preformatData:function(data){
-
-			if (data&&data.attributes && typeof data.attributes.starUsers !== 'object') {
-				data.attributes.starUsers = [];
-			}
-			return data;
-		},
+		
 		_setData: function(data) {
 
-			data=this._preformatData(data);
+			data=this._preformatStarsData(data);
 
 
 			if (!this.data) {
@@ -230,14 +217,19 @@ var TaskItem = (function() {
 		save: function(callback) {
 			var me = this;
 			me.fireEvent("saving");
-			(new SaveTaskQuery(Object.append(me.data, {
+
+			var data={
 				itemId: me.getItem().getId(),
 				itemType: me.getItem().getType(),
 				attributes: me._attributes || {},
 				team: (me._team || []).map(function(t) {
 					return t.getId()
 				})
-			}))).addEvent('success', function(r) {
+			};
+
+			this._addUsersCollectionFormData(data);
+			
+			(new SaveTaskQuery(Object.append(me.data, data))).addEvent('success', function(r) {
 				me._id = r.id;
 				me.data.id = r.id;
 
@@ -316,30 +308,7 @@ var TaskItem = (function() {
 			var me = this;
 			return me.hasDueDate() && (!me.isComplete()) && (new Date(me.getDueDate()).valueOf() < (new Date()).valueOf());
 		},
-		isStarred: function() {
-			var me = this;
-			if (me.data.attributes && me.data.attributes.starUsers) {
-				return me.data.attributes.starUsers.indexOf(parseInt(AppClient.getId())) >= 0;
-			}
-			return false;
-		},
-		hasOtherStars: function() {
-			var me = this;
-			return me.otherStars().length > 0;
-		},
-		otherStars: function() {
-			var me = this;
-			if (me.data.attributes && me.data.attributes.starUsers) {
-				return me.data.attributes.starUsers.filter(function(user) {
-					if (user == parseInt(AppClient.getId())) {
-						return false;
-					}
-					return true;
-				})
-			}
-			return [];
-		},
-
+		
 		hasPosts: function() {
 			var me = this;
 			return me.numberOfPosts() > 0;
@@ -373,33 +342,7 @@ var TaskItem = (function() {
 		},
 
 
-		setStarred: function(starred, callback) {
-
-			var me = this;
-
-
-
-			(new SetStarredTaskQuery(me.getId(), starred)).addEvent('success', function(r) {
-				if (callback) {
-					callback(r);
-				}
-
-			}).execute();
-
-			if (starred !== me.isStarred()) {
-				if (starred) {
-
-					me.data.attributes.starUsers.push(parseInt(AppClient.getId()));
-
-				} else {
-
-					var index = me.data.attributes.starUsers.indexOf(parseInt(AppClient.getId()));
-					me.data.attributes.starUsers.splice(index, 1);
-				}
-				me.fireEvent('change');
-			}
-
-		},
+		
 		hasAttachments: function() {
 			var me = this;
 			return me.getFiles().length > 0;
@@ -481,15 +424,7 @@ var TaskItem = (function() {
 			return me.hasUser(AppClient);
 		},
 
-		getUsers: function() {
-			var me = this;
-
-			if (!me._team) {
-				me._team = [];
-			}
-			return me._team.slice(0);
-
-		},
+		
 		getAvailableUsers: function() {
 			var me = this;
 			return me.getItem().getUsers();

@@ -116,6 +116,12 @@ var ItemProjectsCollection = (function(){
 	    _initProjectsCollection:function(){
 	    	this._projects=[];
 		},
+		_addProjectsCollectionFormData:function(data){
+			data.projects= (me._projects || []).map(function(project) {
+				var id=project instanceof ChildProject?project.getId():project;
+				return id;
+			});
+		},
 	    _updateProjectsCollection:function(data){
 
 			var me=this;
