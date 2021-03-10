@@ -71,8 +71,7 @@ class WizardLayerFieldModule extends AttributeWizardModule {
                      (($mandatory) ? 'false' : '""') . ';
 
                     object.TextFieldModule =    new TextFieldModule({
-                        width:100,
-                        widthUnit:"%",
+                        lines:1,
                         allowEmpty:' .
                      ($mandatory ? 'true' : 'false') . ',
                         legend:' . json_encode($label) . ',
