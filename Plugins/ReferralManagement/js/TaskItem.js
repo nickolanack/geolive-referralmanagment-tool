@@ -59,7 +59,8 @@ var TaskItem = (function() {
 		Implements: [
 			Events, 
 			ItemUsersCollection,
-			ItemStars
+			ItemStars,
+			ItemDiscussion
 		],
 		initialize: function(item, data) {
 			var me = this;
@@ -308,40 +309,7 @@ var TaskItem = (function() {
 			var me = this;
 			return me.hasDueDate() && (!me.isComplete()) && (new Date(me.getDueDate()).valueOf() < (new Date()).valueOf());
 		},
-		
-		hasPosts: function() {
-			var me = this;
-			return me.numberOfPosts() > 0;
-		},
-		numberOfPosts: function() {
-			var me = this;
-			if (!(me.data && me.data.discussion)) {
-				return 0;
-			}
-			return parseInt(me.data.discussion.posts);
-		},
-		numberOfNewPosts: function() {
-			var me = this;
-			if (!(me.data && me.data.discussion)) {
-				return 0;
-			}
-			return parseInt(me.data.discussion.new);
-		},
-
-		getDiscussionSubscription: function() {
-			var me = this;
-
-			if (!(me.data && me.data.discussion)) {
-				return false;
-			}
-
-			return {
-				"channel": "discussion." + me.data.discussion.id,
-				"event": "post"
-			}
-		},
-
-
+	
 		
 		hasAttachments: function() {
 			var me = this;
