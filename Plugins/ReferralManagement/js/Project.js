@@ -689,12 +689,12 @@ var Project = (function() {
 
 
 	Project.FormatProjectSelectionListModules = function(list, item, listItem) {
-		return ItemUsersCollection.FormatProjectSelectionListModules(list, item, listItem);
+		return ItemProjectsCollection.FormatProjectSelectionListModules(list, item, listItem);
 	};
 
 
 	Project.FormatUserSelectionListModules = function(list, item, listItem) {
-		return ItemProjectsCollection.FormatUserSelectionListModules(list, item, listItem);
+		return ItemUsersCollection.FormatUserSelectionListModules(list, item, listItem);
 	};
 
 
