@@ -1,10 +1,8 @@
 {
-    "type": "WizardTitleField",
+    "type": "WizardScriptElement",
     "config": {
-        "label": "Title",
-        "message": "add a title",
-        "className": "",
-        "maxChars": 0,
-        "textFormatScript": ""
+        "name": "My Custom Script",
+        "script": "\nvar type='tag';\nif(item.isRootTag()){\n    type=\"category\";\n}\n\nif(item.getId()>0){\n    return '<h2>Edit '+type+':<\/h2>';\n}\n\nreturn '<h2>Create new '+type+':<\/h2>';",
+        "description": "Info about my custom script"
     }
 }

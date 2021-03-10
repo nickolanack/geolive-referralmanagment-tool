@@ -17071,16 +17071,16 @@
                             "tagForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 398,
-                            "y": 192
+                            "x": 438,
+                            "y": 232
                         },
                         "children": [
                             "tagForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 358,
-                                    "y": 368
+                                    "x": 398,
+                                    "y": 420
                                 }
                             }
                         ],
@@ -17094,6 +17094,16 @@
                                 "content": {
                                     "modules": [
                                         "tagForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "WizardTitleField",
+                                            "config": {
+                                                "label": "Title",
+                                                "message": "add a title",
+                                                "className": "",
+                                                "maxChars": 0,
+                                                "textFormatScript": ""
+                                            }
+                                        },
                                         {
                                             "type": "WizardDescriptionField",
                                             "config": {
@@ -17127,11 +17137,12 @@
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "add another value",
                                                 "formatter": "color",
+                                                "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
                                                 "getValueScript": " return item.getColor();",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "tagForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
+                                                "submitValueScript": "tagForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         }
