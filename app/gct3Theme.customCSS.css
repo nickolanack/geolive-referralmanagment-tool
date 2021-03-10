@@ -67,17 +67,23 @@ a.pb-btn-close:after {
     color: white;
 
 
-    textarea.text-input {
+    .text-input {
         background-color: #2d4392;
-        border-radius: 14px;
+        border-radius: 10px;
         border-color: rgba(255,255,255,0.2);
         color: white;
-        text-indent: 10px;
+        padding-left:10px;
+        padding-right:10px;
+    }
+    
+    .text-input.with-1-line {
+        height: 40px;
+        line-height: 40px;
+        border-radius: 20px;
     }
     
     .text-input::placeholder {
         color: #b9b5b5;
-        font-style: italic;
     }
     
     
