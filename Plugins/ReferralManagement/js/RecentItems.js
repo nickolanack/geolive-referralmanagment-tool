@@ -100,7 +100,7 @@ var RecentItems = (function() {
 			}
 
 			ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
-				var proposals = team.getProposals();
+				var proposals = team.getProjects();
 				if (!application.getNamedValue("currentProject")) {
 					application.setNamedValue("currentProject", proposals[0]);
 				}

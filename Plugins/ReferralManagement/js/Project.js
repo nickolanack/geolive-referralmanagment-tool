@@ -1084,7 +1084,7 @@ var Project = (function() {
 
 
 
-		return [pending, implemented];
+		return new ModuleArray([pending, implemented],{"class":"pending-status"});
 
 
 	};
