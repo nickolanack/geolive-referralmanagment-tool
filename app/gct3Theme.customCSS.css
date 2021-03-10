@@ -140,8 +140,11 @@ a.pb-btn-close:after {
     
     .TagCloudModule .tag-cloud > span.tag-el.add-tag {
         background-color: #ff0258;
-        opacity:0.7;
-        transform:scale(0.7)
+        opacity: 0.7;
+        transform: scale(0.7);
+        line-height: 20px;
+        vertical-align: top;
+        border-color: transparent;
     
     }
     
