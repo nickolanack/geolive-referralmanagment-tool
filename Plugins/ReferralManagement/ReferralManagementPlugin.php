@@ -277,6 +277,9 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/MapNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/ReferralManagementUser.js');
 		IncludeJS(__DIR__ . '/js/MobileDeviceList.js');
+
+		IncludeJS(__DIR__ . '/js/ProjectQueries.js');
+
 		IncludeJS(__DIR__ . '/js/ItemCollection.js');
 		IncludeJS(__DIR__ . '/js/ItemUsersCollection.js');
 		IncludeJS(__DIR__ . '/js/ItemProjectsCollection.js');
@@ -284,7 +287,7 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/ItemPending.js');
 		IncludeJS(__DIR__ . '/js/ItemArchive.js');
 		IncludeJS(__DIR__ . '/js/ItemDeadline.js');
-		IncludeJS(__DIR__ . '/js/ProjectQueries.js');
+		
 		IncludeJS(__DIR__ . '/js/Project.js');
 		IncludeJS(__DIR__ . '/js/GuestProject.js');
 		IncludeJS(__DIR__ . '/js/Dataset.js');
