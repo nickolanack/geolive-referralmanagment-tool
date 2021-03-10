@@ -1,7 +1,12 @@
 
 $highlightBtnColor:#ff0258;
 
-
+span.array-module.pending-status {
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 39px;
+    display: inline-block;
+    margin: 0 10px;
+}
 
 .inline-btn.sort, .inline-btn.optionlist {
     width: unset;
@@ -14,6 +19,8 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {
 .dataset-select .ui-view .field-value-module {
     display: none;
 }
+
+
 
 .dataset-select .ui-view [data-col="name"], 
 .dataset-select .ui-view [data-col="user"],
