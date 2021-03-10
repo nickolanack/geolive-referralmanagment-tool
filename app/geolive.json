@@ -17071,16 +17071,16 @@
                             "tagForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 408,
-                            "y": 202
+                            "x": 418,
+                            "y": 212
                         },
                         "children": [
                             "tagForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 368,
-                                    "y": 378
+                                    "x": 378,
+                                    "y": 388
                                 }
                             }
                         ],
@@ -17094,6 +17094,16 @@
                                 "content": {
                                     "modules": [
                                         "tagForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "WizardTitleField",
+                                            "config": {
+                                                "label": "Title",
+                                                "message": "add a title",
+                                                "className": "",
+                                                "maxChars": 0,
+                                                "textFormatScript": ""
+                                            }
+                                        },
                                         {
                                             "type": "WizardDescriptionField",
                                             "config": {
@@ -17132,7 +17142,7 @@
                                                 "formatValueScript": "",
                                                 "getValueScript": " return item.getColor();",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "tagForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
+                                                "submitValueScript": "tagForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         }
