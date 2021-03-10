@@ -52,14 +52,7 @@ var ItemTasksCollection = (function(){
 			}
 			return null;
 		},
-		getPercentComplete: function() {
-
-
-			var me = this;
-
-			return me.getPercentTasksComplete();
-
-		},
+		
 
 		getPercentTasksComplete: function() {
 

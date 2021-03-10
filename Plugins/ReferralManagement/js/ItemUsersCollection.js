@@ -53,14 +53,19 @@ var ItemUsersCollection = (function(){
 		addUserListLabel:function(){
 			return 'Add Project Team Member';
 		},
-		getUsers:function(){
-	    	throw 'Must be implemented';
-	    },
-	    getAvailableUsers:function(){
-	    	throw 'Must be implemented';
-	    },
+		
+		getUsers: function(callback) {
+			var me = this;
 
+			if (!me._team) {
+				me._team = [];
+			}
+			return me._team.slice(0);
 
+		},
+		getAvailableUsers: function() {
+			return ProjectTeam.CurrentTeam().getUsers();
+		},
 
 
 
@@ -150,6 +155,28 @@ var ItemUsersCollection = (function(){
 		},
 
 	});
+
+
+	ItemUsersCollection.FormatUserSelectionListModules = function(list, item, listItem) {
+
+
+
+		list.content.push(ItemCollection.AddSelectionButtonBehavior(
+			function(){
+				return item.hasUser(listItem)
+			},
+			function(){
+				item.addUser(listItem)
+			},
+			function(){
+				item.removeUser(listItem)
+			}
+		));
+
+		return list;
+
+
+	};
 
 	return ItemUsersCollection;
 

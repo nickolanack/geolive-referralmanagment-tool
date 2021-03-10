@@ -273,6 +273,134 @@ var ProjectList = (function() {
 	}
 
 
+	ProjectList.AddTableHeader = function(listModule) {
+		listModule.addEvent('renderModule:once', function(module, index) {
+
+
+			module.runOnceOnLoad(function() {
+				module.getViewName(function(view) {
+
+					if (view !== "singleProjectListItemTableDetail") {
+						return;
+					}
+
+					var counter = 0;
+					var interval = setInterval(function() {
+						counter++;
+						var el = module.getElement();
+						var header = new Element('div', {
+							"class": "table-header",
+							html: el.innerHTML
+						});
+
+						if (!(el.parentNode && header.firstChild && header.firstChild.firstChild)) {
+
+							if (counter > 5) {
+								console.error('unable to inject header');
+								clearInterval(interval);
+							}
+
+							return;
+						}
+						clearInterval(interval);
+						el.parentNode.insertBefore(header, el);
+
+						header.firstChild.firstChild.childNodes.forEach(function(colEl) {
+
+							colEl.addClass('sortable');
+
+							colEl.addEvent('click', function() {
+
+								var sort = colEl.getAttribute('data-col');
+								var sortModule = listModule.getSortObject();
+								sortModule.applySort(sort);
+
+
+
+							})
+						});
+
+
+					}, 200);
+
+				});
+
+			});
+
+			//}
+
+			console.log('render project');
+		});
+	};
+
+
+	ProjectList.AddListEvents = function(listModule, target) {
+
+		if(!target){
+			target=ProjectTeam.CurrentTeam();
+		}
+
+		listModule.addWeakEvent(target, 'addProject', function(p) {
+			listModule.addItem(p);
+		});
+
+		listModule.addWeakEvent(target, 'removeProject', function(p) {
+			listModule.getModules().forEach(function(m) {
+				m.getItem(function(item) {
+					if (item === p) {
+						m.getElement().addClass('removing');
+						setTimeout(function() {
+							m.remove();
+						}, 1000)
+
+					}
+				})
+			});
+		});
+
+
+
+		listModule.addEvent('renderModule', function() {
+			console.log('render project');
+		});
+
+
+	}
+
+
+	ProjectList.AddListItemEvents = function(child, childView, application, listFilterFn) {
+
+
+		UIInteraction.addProjectOverviewClick(childView.getElement(), child);
+
+
+		var current = application.getNamedValue("currentProject");
+		if (current && current.getId() == child.getId()) {
+			childView.getElement().addClass("active-project");
+		}
+
+
+
+		childView.addWeakEvent(child, "change", function() {
+
+			if ((!listFilterFn) || listFilterFn(child)) {
+				childView.redraw();
+				return;
+			}
+
+
+			childView.getElement().addClass('removing');
+			setTimeout(function() {
+				childView.remove();
+			}, 1000);
+
+		});
+
+
+	};
+
+
+
 	return ProjectList;
 
 })();

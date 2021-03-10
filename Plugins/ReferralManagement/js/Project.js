@@ -4,8 +4,6 @@ var Project = (function() {
 	var AddDocumentQuery = ProjectQueries.AddDocumentQuery;
 	var RemoveDocumentQuery = ProjectQueries.RemoveDocumentQuery;
 	var FlagProposalQuery = ProjectQueries.FlagProposalQuery;
-	var SetStatusProposalQuery = ProjectQueries.SetStatusProposalQuery;
-	var SetApprovedQuery = ProjectQueries.SetApprovedQuery;
 
 
 
@@ -15,7 +13,10 @@ var Project = (function() {
 			Events, 
 			ItemUsersCollection, 
 			ItemProjectsCollection, 
-			ItemTasksCollection
+			ItemTasksCollection,
+			ItemPending,
+			ItemArchive,
+			ItemDeadline
 		],
 		initialize: function(id, data) {
 			var me = this;
@@ -94,14 +95,8 @@ var Project = (function() {
 		destroy: function() {
 			var me = this;
 			me.fireEvent('destroy')
-
-
-
 		},
-		isComplete: function() {
-			var me = this;
-			return me.getPercentComplete() >= 100;
-		},
+		
 		isDataset: function() {
 			return (this.data.attributes && (this.data.attributes.isDataset === true || this.data.attributes.isDataset === "true"));
 		},
@@ -109,8 +104,6 @@ var Project = (function() {
 			return !this.isDataset();
 		},
 
-		
-		
 		getTags: function() {
 			var me = this;
 			return [me, me.getCompany()];
@@ -123,17 +116,6 @@ var Project = (function() {
 			});
 		},
 
-		getPercentBudgetComplete: function() {
-
-			/* Deprecated */
-
-			var me = this;
-			if (typeof me._getPercentBudgetComplete == "undefined") {
-				me._getPercentBudgetComplete = Math.round(Math.random() * 100);
-			}
-			return me._getPercentBudgetComplete;
-
-		},
 		getProjectType: function() {
 			var me = this;
 			return me.data.attributes.type || ""
@@ -143,146 +125,7 @@ var Project = (function() {
 			var me = this;
 			return [me.getProjectType()];
 		},
-		isOnSchedule: function() {
-			var me = this;
-			return (me.getPercentComplete() >= me.getPercentTimeComplete());
-		},
-		getTotalUserHoursThisMonth: function() {
-			var me = this;
-			var count = 0;
-			me.getUserHoursDataThisMonth().forEach(function(d) {
-				count = count + d.value;
-			});
-			return Math.round(count * 10) / 10;
-
-		},
-		getUserHoursDataThisMonth: function() {
-
-			var me = this;
-			if (typeof me._getUserHoursDataThisMonth == "undefined") {
-
-				var data = [
-
-
-
-				]
-				var today = (new Date()).getDate();
-				var i;
-				for (i = -today + 1; i <= 0; i++) {
-					data.push((function() {
-						var day = (new Date((new Date()).valueOf() + (i * 24 * 3600 * 1000)));
-						var d = {
-							label: day.getDate(),
-							value: (day.getDay() == 0 || day.getDay() == 6) ? 0 : Math.min(8, (Math.random() * 16)) + (Math.random() * 8)
-						}
-						return d;
-
-					})())
-				}
-
-				data[data.length - 1]["class"] = "active";
-				var day = (new Date((new Date()).valueOf() + (i * 24 * 3600 * 1000)));
-				while (day.getDate() > 1) {
-					data.push((function() {
-
-						var d = {
-							label: day.getDate(),
-							value: 0
-						}
-						return d;
-
-					})())
-					i++;
-					var day = (new Date((new Date()).valueOf() + (i * 24 * 3600 * 1000)));
-				}
-
-
-				// var day=today;
-				// while(day>1){
-				// 	data.push((function(){
-				//         var day=(new Date((new Date()).valueOf()+(i*24*3600*1000)));
-				//         var d={
-				//            label:day.getDate(),
-				//            value:(day.getDay()==0||day.getDay()==6)?0:Math.min(8,(Math.random()*16))+(Math.random()*8)
-				//         }
-				//         return d;
-				//     })())
-				// }
-
-				data[0]["class"] = "trans";
-				//data[data.length-1]["class"]="active";
-				//
-				//
-				me._getUserHoursDataThisMonth = data;
-			}
-			return me._getUserHoursDataThisMonth;
-
-		},
-		getUserHoursDataLast2Weeks: function() {
-
-			var data = [
-
-
-
-			]
-			for (var i = -13; i <= 0; i++) {
-				data.push((function() {
-					var day = (new Date((new Date()).valueOf() + (i * 24 * 3600 * 1000)));
-					var d = {
-						label: day.getDate(),
-						value: (day.getDay() == 0 || day.getDay() == 6) ? 0 : Math.min(8, (Math.random() * 16)) + (Math.random() * 8)
-					}
-
-
-					return d;
-
-				})())
-			}
-			data[0]["class"] = "trans";
-			data[data.length - 1]["class"] = "active";
-
-			return data;
-
-
-		},
-		hasDeadline: function() {
-			var me = this;
-			return !isNaN(new Date(me.getDeadlineDate()));
-		},
-		getDaysUntilDeadline: function() {
-			var me = this;
-
-			if (!me.hasDeadline()) {
-				return null;
-			}
-
-			var end = (new Date(me.getDeadlineDate())).valueOf();
-			var today = (new Date()).valueOf();
-			return Math.max(0, Math.round((end - today) / (1000 * 3600 * 24)));
-		},
-
-
-		getPercentTimeComplete: function() {
-			var me = this;
-
-
-			if (!me.hasDeadline()) {
-				return 0;
-			}
-
-			if (typeof me._getPercentTimeComplete == "undefined") {
-
-				var start = (new Date(me.data.createdDate)).valueOf();
-				var end = (new Date(me.getDeadlineDate())).valueOf();
-				var today = (new Date()).valueOf();
-
-				me._getPercentTimeComplete = Math.max(0, Math.min(Math.round((100 * (today - start)) / (end - start)), 100));
-
-				//me._getPercentTimeComplete = Math.round(Math.random() * 100);
-			}
-			return me._getPercentTimeComplete;
-
-		},
+		
 		getName: function() {
 			var me = this;
 			return me.data.attributes.title;
@@ -360,29 +203,7 @@ var Project = (function() {
 			//return 'ddd';
 
 		},
-		isImplemented: function() {
-			var me = this;
-			return me.data.attributes && (me.data.attributes.approved === true || me.data.attributes.approved === "true");
-		},
-		setPending: function() {
-
-			var me = this;
-
-			(new SetApprovedQuery(me.getId(), false)).execute();
-			me.data.attributes.approved = false;
-			me.fireEvent("unapproved");
-
-		},
-		setImplemented: function() {
-			var me = this;
-
-			(new SetApprovedQuery(me.getId(), true)).execute();
-			me.data.attributes.approved = true;
-			me.fireEvent("approved");
-		},
-		isPending: function() {
-			return !this.isImplemented();
-		},
+		
 		isHighPriority: function() {
 			var me = this;
 			return me.getPriority() == "high";
@@ -736,45 +557,7 @@ var Project = (function() {
 			me.fireEvent("unflagged");
 
 		},
-		isActive: function() {
-			var me = this;
-			return me.data.status === 'active';
-		},
-
-		isArchived: function() {
-			var me = this;
-			return !me.isActive();
-		},
-
-		archive: function(callback) {
-			var me = this;
-			(new SetStatusProposalQuery(me.getId(), 'archived')).addEvent('success', function() {
-
-				if (callback) {
-					callback();
-				}
-
-				me.fireEvent("archived");
-
-			}).execute();
-
-			me.data.status = "archived";
-		},
-
-		unarchive: function(callback) {
-			var me = this;
-			(new SetStatusProposalQuery(me.getId(), 'active')).addEvent('success', function() {
-
-				if (callback) {
-					callback();
-				}
-
-				me.fireEvent("unarchived");
-
-			}).execute();
-
-			me.data.status = "active";
-		},
+		
 		/**
 		 * returns an object indexed by yyyy-mm-dd containing event name, or names ie: string or array<string>
 		 */
@@ -859,18 +642,6 @@ var Project = (function() {
 			}
 
 			return null;
-		},
-		getUsers: function(callback) {
-			var me = this;
-
-			if (!me._team) {
-				me._team = [];
-			}
-			return me._team.slice(0);
-
-		},
-		getAvailableUsers: function() {
-			return ProjectTeam.CurrentTeam().getUsers();
 		}
 
 
@@ -904,279 +675,35 @@ var Project = (function() {
 		});
 	}
 	Project.ListOutcomes = function() {
-
-
 		return ["Accepted", "Denied", "Declined", "Refuse", "Insufficient"];
 	}
 
 
 	Project.addTableHeader = function(listModule) {
-		listModule.addEvent('renderModule:once', function(module, index) {
-
-
-			module.runOnceOnLoad(function() {
-				module.getViewName(function(view) {
-
-					if (view !== "singleProjectListItemTableDetail") {
-						return;
-					}
-
-					var counter = 0;
-					var interval = setInterval(function() {
-						counter++;
-						var el = module.getElement();
-						var header = new Element('div', {
-							"class": "table-header",
-							html: el.innerHTML
-						});
-
-						if (!(el.parentNode && header.firstChild && header.firstChild.firstChild)) {
-
-							if (counter > 5) {
-								console.error('unable to inject header');
-								clearInterval(interval);
-							}
-
-							return;
-						}
-						clearInterval(interval);
-						el.parentNode.insertBefore(header, el);
-
-						header.firstChild.firstChild.childNodes.forEach(function(colEl) {
-
-							colEl.addClass('sortable');
-
-							colEl.addEvent('click', function() {
-
-								var sort = colEl.getAttribute('data-col');
-								var sortModule = listModule.getSortObject();
-								sortModule.applySort(sort);
-
-
-
-							})
-						});
-
-
-					}, 200);
-
-				});
-
-			});
-
-			//}
-
-			console.log('render project');
-		});
+		ProjectList.AddTableHeader(listModule);
 	};
 
 	Project.AddListEvents = function(listModule, target) {
-
-		if(!target){
-			target=ProjectTeam.CurrentTeam();
-		}
-
-		listModule.addWeakEvent(target, 'addProject', function(p) {
-			listModule.addItem(p);
-		});
-
-		listModule.addWeakEvent(target, 'removeProject', function(p) {
-			listModule.getModules().forEach(function(m) {
-				m.getItem(function(item) {
-					if (item === p) {
-						m.getElement().addClass('removing');
-						setTimeout(function() {
-							m.remove();
-						}, 1000)
-
-					}
-				})
-			});
-		});
-
-
-
-		listModule.addEvent('renderModule', function() {
-			console.log('render project');
-		});
-
-
+		ProjectList.AddListEvents(listModule, target);
 	}
 
 
 	Project.AddListItemEvents = function(child, childView, application, listFilterFn) {
-
-
-		UIInteraction.addProjectOverviewClick(childView.getElement(), child);
-
-
-		var current = application.getNamedValue("currentProject");
-		if (current && current.getId() == child.getId()) {
-			childView.getElement().addClass("active-project");
-		}
-
-
-
-		childView.addWeakEvent(child, "change", function() {
-
-			if ((!listFilterFn) || listFilterFn(child)) {
-				childView.redraw();
-				return;
-			}
-
-
-			childView.getElement().addClass('removing');
-			setTimeout(function() {
-				childView.remove();
-			}, 1000);
-
-		});
-
-
+		ProjectList.AddListItemEvents(child, childView, application, listFilterFn);
 	};
-
-
 
 	Project.PendingButtons = function(item) {
-
-
-		if (!DashboardConfig.getValue('enablePending')) {
-			return null
-		}
-
-		if (item.isArchived()) {
-			return null;
-		}
-
-		var pending = new ElementModule('button', {
-			"html": "Pending",
-			"style": "",
-			"class": "primary-btn selectable " + (item.isPending() ? "selected" : ""),
-			"events": {
-				"click": function() {
-					item.setPending();
-				}
-			}
-		});
-
-
-
-		var implemented = new ElementModule('button', {
-			"html": "Implemented",
-			"style": "",
-			"class": "primary-btn selectable " + (item.isImplemented() ? "selected" : ""),
-			"events": {
-				"click": function() {
-					item.setImplemented();
-				}
-			}
-		});
-
-		pending.addWeakEvent(item, 'approved', function() {
-			pending.getElement().removeClass('selected');
-			implemented.getElement().addClass('selected')
-		});
-
-		pending.addWeakEvent(item, 'unapproved', function() {
-			implemented.getElement().removeClass('selected');
-			pending.getElement().addClass('selected');
-		});
-
-
-
-		return new ModuleArray([pending, implemented],{"class":"pending-status"});
-
-
+		return ItemPending.PendingButtons(item);
 	};
 
 
-	Project.AddSelectionButtonBehavior=function(has, add, remove){
-
-		var setLabelAndStyle = function(btn) {
-
-
-			if (has()) {
-				btn.innerHTML = "Remove"
-				btn.addClass("error");
-
-			} else {
-				btn.innerHTML = "Add";
-				btn.removeClass("error");
-
-			}
-
-
-
-		}
-		var button = new ElementModule('button', {
-			"class": "primary-btn",
-			html: "Add",
-			events: {
-				click: function() {
-
-
-					if (has()) {
-						remove();
-					} else {
-						add();
-					}
-					setLabelAndStyle(button.getElement());
-
-
-				}
-			}
-		});
-
-		setLabelAndStyle(button.getElement());
-
-
-		return button;
-
-
-
-
-	}
-
 	Project.FormatProjectSelectionListModules = function(list, item, listItem) {
-
-
-		list.content.push(Project.AddSelectionButtonBehavior(
-			function(){
-				return item.hasProject(listItem)
-			},
-			function(){
-				item.addProject(listItem)
-			},
-			function(){
-				item.removeProject(listItem)
-			}
-		));
-
-		return list;
-
-
+		return ItemUsersCollection.FormatProjectSelectionListModules(list, item, listItem);
 	};
 
 
 	Project.FormatUserSelectionListModules = function(list, item, listItem) {
-
-
-
-		list.content.push(Project.AddSelectionButtonBehavior(
-			function(){
-				return item.hasUser(listItem)
-			},
-			function(){
-				item.addUser(listItem)
-			},
-			function(){
-				item.removeUser(listItem)
-			}
-		));
-
-		return list;
-
-
+		return ItemProjectsCollection.FormatUserSelectionListModules(list, item, listItem);
 	};
 
 
@@ -1187,78 +714,3 @@ var Project = (function() {
 
 var Proposal = Project;
 
-
-var GuestProposal = (function() {
-
-
-	var SaveProposalQuery = new Class({
-		Extends: AjaxControlQuery,
-		initialize: function(data) {
-			this.parent(CoreAjaxUrlRoot, 'save_guest_proposal', Object.append({
-				plugin: 'ReferralManagement'
-			}, (data || {})));
-		}
-	});
-
-
-	var GuestProposal = new Class({
-		Extends: Proposal,
-		save: function(callback) {
-
-			var me = this;
-			me.fireEvent("saving");
-
-			if (!me.hasEmail()) {
-				(new SaveProposalQuery({
-					id: me._id,
-					metadata: {},
-					attributes: me._attributes || {}
-				})).addEvent('success', function(result) {
-
-					if (result.success && result.token) {
-						me.data.token = result.token;
-						callback(true);
-						me.fireEvent("save");
-
-					} else {
-						throw 'Failed to save proposal';
-					}
-				}).execute();
-
-				return;
-			}
-
-			(new SaveProposalQuery({
-				id: me._id,
-				email: me.data.email,
-				token: me.data.token
-			})).addEvent('success', function(result) {
-
-				if (result.success) {
-
-					callback(true);
-					me.fireEvent("save");
-
-				} else {
-					throw 'Failed to save proposal';
-				}
-			}).execute();
-
-		},
-		setEmail: function(e) {
-			var me = this;
-			me.data.email = e;
-		},
-		hasEmail: function() {
-			var me = this;
-			return (me.data && me.data.email);
-		}
-
-
-	});
-
-
-	return GuestProposal;
-
-
-})();

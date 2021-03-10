@@ -136,6 +136,26 @@ var ItemProjectsCollection = (function(){
 
 	});
 
+	ItemProjectsCollection.FormatProjectSelectionListModules = function(list, item, listItem) {
+
+
+		list.content.push(ItemCollection.AddSelectionButtonBehavior(
+			function(){
+				return item.hasProject(listItem)
+			},
+			function(){
+				item.addProject(listItem)
+			},
+			function(){
+				item.removeProject(listItem)
+			}
+		));
+
+		return list;
+
+
+	};
+
 	return ItemProjectsCollection;
 
 })();
