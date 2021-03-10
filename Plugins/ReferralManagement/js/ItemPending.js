@@ -1,7 +1,7 @@
 
 var ItemPending = (function(){
 
-	var SetApprovedQuery = SetApprovedQuery: new Class({
+	var SetApprovedQuery = new Class({
 		Extends: AjaxControlQuery,
 		initialize: function(id, approved) {
 
