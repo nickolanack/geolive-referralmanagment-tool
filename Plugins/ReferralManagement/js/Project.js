@@ -10,9 +10,9 @@ var Project = (function() {
 	var Project = new Class({
 		Extends: DataTypeObject,
 		Implements: [
-			Events, 
-			ItemUsersCollection, 
-			ItemProjectsCollection, 
+			Events,
+			ItemUsersCollection,
+			ItemProjectsCollection,
 			ItemTasksCollection,
 			ItemPending,
 			ItemArchive,
@@ -90,16 +90,17 @@ var Project = (function() {
 
 		},
 
-		
-		
+
+
 		destroy: function() {
 			var me = this;
 			me.fireEvent('destroy')
 		},
-		
+
 		isDataset: function() {
 			return (this.data.attributes && (this.data.attributes.isDataset === true || this.data.attributes.isDataset === "true"));
 		},
+
 		isCollection: function() {
 			return !this.isDataset();
 		},
@@ -109,6 +110,7 @@ var Project = (function() {
 			return [me, me.getCompany()];
 
 		},
+
 		getCompany: function() {
 			var me = this;
 			return new ProjectClient(-1, {
@@ -125,11 +127,12 @@ var Project = (function() {
 			var me = this;
 			return [me.getProjectType()];
 		},
-		
+
 		getName: function() {
 			var me = this;
 			return me.data.attributes.title;
 		},
+
 		getDescription() {
 			var me = this;
 			return me.data.attributes.description;
@@ -170,40 +173,32 @@ var Project = (function() {
 		getCreationDate: function() {
 			var me = this;
 			return me.data.createdDate;
-			//return 'ddd';
-
 		},
+
 		getModificationDate: function() {
 			var me = this;
 			return me.data.modifiedDate;
-			//return 'ddd';
-
 		},
+
 		getSubmitDate: function() {
 			var me = this;
 			return me.data.attributes.submissionDate;
-			//return 'ddd';
-
 		},
+
 		getDeadlineDate: function() {
 			var me = this;
 			return me.data.attributes.commentDeadlineDate;
-			//return 'ddd';
-
 		},
+
 		getExpiryDate: function() {
 			var me = this;
 			return me.data.attributes.expiryDate;
-			//return 'ddd';
-
 		},
 		getProjectName: function() {
 			var me = this;
 			return me.data.attributes.title;
-			//return 'ddd';
-
 		},
-		
+
 		isHighPriority: function() {
 			var me = this;
 			return me.getPriority() == "high";
@@ -211,38 +206,34 @@ var Project = (function() {
 		getPriority: function() {
 			var me = this;
 			return me.data.attributes.priority;
-			//return 'ddd';
-
 		},
+
 		getPriorityNumber: function() {
 			var me = this;
 			return (["low", "medium", "high"]).indexOf(me.data.attributes.priority);
 
 		},
+
 		getCompanyName: function() {
 			var me = this;
 			return me.data.attributes.company;
-			//return 'ddd';
-
 		},
+
 		getClientName: function() {
 			var me = this;
 			return me.data.attributes.company;
-			//return 'ddd';
-
 		},
+
 		getProjectUsername: function() {
 			var me = this;
 			return me.data.userdetails.name;
-			//return 'ddd';
-
 		},
+
 		getProjectSubmitter: function() {
 			var me = this;
 			return me.data.userdetails.name + " " + me.data.userdetails.email;
-			//return 'ddd';
-
 		},
+
 		getProjectSubmitterId: function() {
 
 			var me = this;
@@ -557,7 +548,7 @@ var Project = (function() {
 			me.fireEvent("unflagged");
 
 		},
-		
+
 		/**
 		 * returns an object indexed by yyyy-mm-dd containing event name, or names ie: string or array<string>
 		 */
@@ -713,4 +704,3 @@ var Project = (function() {
 
 
 var Proposal = Project;
-
