@@ -5,7 +5,26 @@ span.pending-status {
     background-color: rgba(0,0,0,0.1);
     border-radius: 39px;
     display: inline-block;
-    margin: 0 10px;
+    margin:4px;
+}
+.pending-status>button.primary-btn {
+    padding: 6px 18px;
+    /* margin: 14px 22px; */
+}
+
+
+.pending-status>button.primary-btn:first-child {
+    margin-left: 0;
+}
+
+button.primary-btn.selectable.selected {
+    background-color: mediumseagreen;
+    color: white;
+}
+
+button.primary-btn.selectable {
+    background-color: rgba(0,0,0,0.1);
+    color: #555555;
 }
 
 .inline-btn.sort, .inline-btn.optionlist {
