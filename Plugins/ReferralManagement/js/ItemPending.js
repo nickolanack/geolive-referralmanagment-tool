@@ -1,7 +1,22 @@
 
 var ItemPending = (function(){
 
-	var SetApprovedQuery = ProjectQueries.SetApprovedQuery;
+	var SetApprovedQuery = SetApprovedQuery: new Class({
+		Extends: AjaxControlQuery,
+		initialize: function(id, approved) {
+
+			this.parent(CoreAjaxUrlRoot, "save_attribute_value_list", {
+				plugin: "Attributes",
+				itemId: id,
+				itemType: "ReferralManagement.proposal",
+				table: "proposalAttributes",
+				fieldValues: {
+					"approved": approved
+				}
+			});
+		}
+	});
+
 
 
 
