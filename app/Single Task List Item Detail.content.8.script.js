@@ -1,1 +1,1 @@
-return ProjectTagList.createTagListModule(item);
+return ItemNavigationTagLinks.CreateNavigationTagListModule(item);
