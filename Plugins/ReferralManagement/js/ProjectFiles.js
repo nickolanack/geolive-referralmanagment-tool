@@ -685,7 +685,7 @@ var ProjectFiles = (function() {
 
 			return [
 
-			ProjectTagList.createTagListModule(listItem,[
+				ItemNavigationTagLinks.CreateNavigationTagListModule(listItem,[
 					"ReferralManagement.proposal", "permits", "letters", "agreements", "spatial"
 				]),
 

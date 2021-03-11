@@ -63,22 +63,6 @@ var NamedCategoryList = (function() {
 		},
 
 
-		getNewProjectTag: function(category) {
-
-
-			var newTag = new ProjectTag({
-				name: "",
-				description: "",
-				type: "Project.tag",
-				id: -1,
-				color: "#ffffff",
-				category: category
-			})
-
-			return newTag;
-
-		},
-
 		getProjectsWithTag: function(category) {
 			var tags = _tags.filter(function(tag) {
 				return tag.getName().toLowerCase() == category.toLowerCase() || tag.getCategory().toLowerCase() == category.toLowerCase();
@@ -133,21 +117,29 @@ var NamedCategoryList = (function() {
 
 
 		formatTagCloudModule:function(mod){
+			NamedCategoryList.FormatTagCloudSelectionModule(mod);
+		}
 
-			var application = this._getApplication();
-			var me=this;
 
+
+	});
+
+
+	NamedCategoryList.FormatTagCloudSelectionModule=function(mod){
+
+		var application = ReferralManagementDashboard.getApplication();
+		
 			mod.runOnceOnLoad(function(){
 
 				var appendPlusBtn=function(){
 
-					mod.getCloud().getElement().appendChild(new Element('span',{
+					mod.getCloud().getElement().appendChild(new Element('span', {
 						html:"+",
 						"class":"tag-el add-tag",
 						events:{
 							click:function(){
 
-								var newTag= me.getNewProjectTag('');
+								var newTag= NamedCategory.CreateNewCategory('');
 								newTag.addEvent('update',function(){
 									mod.addValue(newTag.getName());
 									appendPlusBtn();
@@ -164,11 +156,7 @@ var NamedCategoryList = (function() {
 				appendPlusBtn();
 			
 			});
-		}
-
-
-
-	});
+	}
 
 
 	return new NamedCategoryList();

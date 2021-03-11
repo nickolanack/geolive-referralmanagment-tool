@@ -95,6 +95,21 @@ var NamedCategory = (function() {
 	});
 
 
+	NamedCategory.CreateNewCategory=function(category){
+
+		var newTag = new NamedCategory({
+			name: "",
+			description: "",
+			type: "Project.tag",
+			id: -1,
+			color: "#ffffff",
+			category: category
+		});
+
+		return newTag;
+
+	};
+
 
 	NamedCategory.CreateCategoryButtons=function(application, item){
 
@@ -107,7 +122,7 @@ var NamedCategory = (function() {
             "class": "primary-btn"
 
     
-		}),new ModalFormButtonModule(application, ProjectTagList.getNewProjectTag(item.getCategory()), {
+		}),new ModalFormButtonModule(application, NamedCategory.CreateNewCategory(item.getCategory()), {
 		         
 		            label: "Add "+item.getCategory().capitalize()+" Tag",
 		            formOptions: {template:"form"},
