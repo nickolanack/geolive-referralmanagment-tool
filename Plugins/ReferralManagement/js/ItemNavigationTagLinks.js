@@ -10,7 +10,7 @@ var ItemNavigationTagLinks=(function(){
 
 
 
-	ItemNavigationTagLinks.CreateTagListModule=function(item, typesFilter){
+	ItemNavigationTagLinks.CreateNavigationTagListModule=function(item, typesFilter){
 
 
 
