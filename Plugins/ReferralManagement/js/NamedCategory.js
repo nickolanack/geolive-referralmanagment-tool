@@ -1,4 +1,4 @@
-var ItemCategory = (function() {
+var NamedCategory = (function() {
 
 
 
@@ -13,7 +13,7 @@ var ItemCategory = (function() {
 
 
 
-	ItemCategory = new Class({
+	NamedCategory = new Class({
 		Extends: MockDataTypeItem,
 		Implements:[Events],
 		initialize: function(options) {
@@ -96,12 +96,12 @@ var ItemCategory = (function() {
 
 
 
-	return ItemCategory;
+	return NamedCategory;
 
 })();
 
 var ProjectTag = new Class({
-	Extends: ItemCategory
+	Extends: NamedCategory
 });
 
 

@@ -269,7 +269,7 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/UILeftPanel.js');
 		IncludeJS(__DIR__ . '/js/UIInteraction.js');
 		IncludeJS(__DIR__ . '/js/OrganizationalUnit.js');
-		IncludeJS(__DIR__ . '/js/ItemCategory.js');
+		IncludeJS(__DIR__ . '/js/NamedCategory.js');
 		IncludeJS(__DIR__ . '/js/MainNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/ProjectsOverviewNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/ProjectNavigationMenu.js');
