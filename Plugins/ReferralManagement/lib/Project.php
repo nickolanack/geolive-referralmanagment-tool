@@ -61,7 +61,7 @@ class Project {
 		}, $teamMembers);
 
 
-		if(key_exists('childProjects',$attributes)&&$attributes['childProjects']{0}=='['){
+		if(key_exists('childProjects', $attributes)&&(!empty($attributes['childProjects']))&&$attributes['childProjects']{0}=='['){
 			$attributes['childProjects']=json_decode($attributes['childProjects']);
 		}else{
 			$attributes['childProjects']=array();

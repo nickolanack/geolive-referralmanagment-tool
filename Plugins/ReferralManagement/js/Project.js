@@ -19,7 +19,8 @@ var Project = (function() {
 			ItemEvents,
 			ItemDiscussion,
 			ItemContact,
-			ItemNavigationTagLinks
+			ItemNavigationTagLinks,
+			ItemCategories
 		],
 		initialize: function(id, data) {
 			var me = this;
@@ -112,16 +113,7 @@ var Project = (function() {
 		},
 
 
-		getProjectType: function() {
-			var me = this;
-			return me.data.attributes.type || ""
-		},
-
-		getProjectTypes: function() {
-			var me = this;
-			return [me.getProjectType()];
-		},
-
+		
 		getName: function() {
 			var me = this;
 			return me.data.attributes.title;

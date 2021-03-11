@@ -107,15 +107,6 @@ var NamedCategoryList = (function() {
 		},
 
 
-		createTagListModule: function(item, typesFilter) {
-			/**
-			 * @deprecated
-			 * this is not the same as tags
-			 */
-			return ItemNavigationTagLinks.CreateNavigationTagListModule(item, typesFilter);
-		},
-
-
 		formatTagCloudModule:function(mod){
 			NamedCategoryList.FormatTagCloudSelectionModule(mod);
 		}

@@ -15,40 +15,54 @@ class DefaultTasks{
 		$taskIds = array();
 
 		GetPlugin('Attributes');
-		$typeName = (new \attributes\Record('proposalAttributes'))->getValues($proposal, 'ReferralManagement.proposal')['type'];
+		$types = (new \attributes\Record('proposalAttributes'))->getValues($proposal, 'ReferralManagement.proposal')['type'];
 
-		Emit('onCreateDefaultTasksForProposal', array(
-			'proposal' => $proposal,
-			'type' => $typeName,
-		));
+		if(is_string($types)&&$types{0}=="["){
+			$types=json_decode($types)
+		}
 
-		$typeVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $typeName)));
+		if(!is_array($types)){
+			$types=array($types);
+		}
 
-		$config = GetWidget('proposalConfig');
-		foreach ($config->getParameter('taskNames') as $taskName) {
-			$taskVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $taskName)));
-			if (!empty($taskVar)) {
 
-				if ($config->getParameter("show" . ucfirst($taskVar) . "For" . ucfirst($typeVar))) {
+		foreach($types as $typeName){
 
-					if ($taskId = GetPlugin('Tasks')->createTask($proposal, 'ReferralManagement.proposal', array(
-						"name" => $config->getParameter($taskVar . "Label"),
-						"description" => $config->getParameter($taskVar . "Description"),
-						"dueDate" => $this->parseDueDateString($config->getParameter($taskVar . "DueDate"), $proposal),
-						"complete" => false,
-					))) {
 
-						Emit('onCreateDefaultTaskForProposal', array(
-							'proposal' => $proposal,
-							'task' => $taskId,
-							'name' => $taskName,
-							'type' => $typeName,
-						));
-						$taskIds[] = $taskId;
+			Emit('onCreateDefaultTasksForProposal', array(
+				'proposal' => $proposal,
+				'type' => $typeName,
+			));
 
+			$typeVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $typeName)));
+
+			$config = GetWidget('proposalConfig');
+			foreach ($config->getParameter('taskNames') as $taskName) {
+				$taskVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $taskName)));
+				if (!empty($taskVar)) {
+
+					if ($config->getParameter("show" . ucfirst($taskVar) . "For" . ucfirst($typeVar))) {
+
+						if ($taskId = GetPlugin('Tasks')->createTask($proposal, 'ReferralManagement.proposal', array(
+							"name" => $config->getParameter($taskVar . "Label"),
+							"description" => $config->getParameter($taskVar . "Description"),
+							"dueDate" => $this->parseDueDateString($config->getParameter($taskVar . "DueDate"), $proposal),
+							"complete" => false,
+						))) {
+
+							Emit('onCreateDefaultTaskForProposal', array(
+								'proposal' => $proposal,
+								'task' => $taskId,
+								'name' => $taskName,
+								'type' => $typeName,
+							));
+							$taskIds[] = $taskId;
+
+						}
 					}
 				}
 			}
+
 		}
 
 		return $taskIds;
