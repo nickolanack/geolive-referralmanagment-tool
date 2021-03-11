@@ -11189,19 +11189,19 @@
             "metadata": {
                 "title": "proposalAttributes",
                 "_tableDiagramState": {
-                    "x": 386,
-                    "y": 242
+                    "x": 326,
+                    "y": 230
                 },
                 "_diagramState": {
-                    "x": 386,
-                    "y": 242
+                    "x": 326,
+                    "y": 230
                 },
                 "appliesTo": [
                     "proposal"
                 ],
                 "_typeDiagramState": {
-                    "x": 100,
-                    "y": 300
+                    "x": 92,
+                    "y": 216
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -11919,11 +11919,11 @@
                         "label": "Type",
                         "description": "",
                         "icon": [],
-                        "color": "rgb(undefined, undefined, undefined)",
+                        "color": "rgb(NaN, NaN, NaN)",
                         "visibility": "public",
                         "editability": "registered",
                         "searchability": "public",
-                        "allowMultiple": false,
+                        "allowMultiple": true,
                         "fieldType": "text",
                         "fieldTextOptions": {
                             "textType": "input",
