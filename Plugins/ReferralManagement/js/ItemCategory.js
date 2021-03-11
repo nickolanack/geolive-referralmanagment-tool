@@ -231,75 +231,13 @@ var ProjectTagList = (function() {
 
 
 		createTagListModule: function(item, typesFilter) {
-
-			if(!typesFilter){
-				typesFilter=['ReferralManagement.proposal'];
-			}
-
-			var tags = item.getTags();
-
-			var application = this._getApplication();
-			if (tags.length == 0) {
-
-				return null;
-			}
-
-			var classMap = function(type) {
-				if (type == "ReferralManagement.proposal") {
-					return "menu-main-projects";
-				}
-
-				if (type == "ReferralManagement.client") {
-					return "menu-people-clients";
-				}
-				return 'type-'+type.toLowerCase().split('.').join('-');
-			}
-
-			var ul = new ElementModule('ul', {
-				"class": "item-tags"
-			});
-			tags.forEach(function(t) {
-
-
-				if (typesFilter.indexOf(t.getType())==-1){
-					return;
-				}
-
-
-				ul.appendChild(new Element('li', {
-					html: t.getName(),
-					"class": classMap(t.getType()),
-					events: {
-						click: function(e) {
-							e.stop();
-
-							//var application=childView.getApplication()
-							var controller = application.getNamedValue('navigationController');
-							var view = controller.getCurrentView();
-							console.log(view);
-
-							if(typeof t.navigate=='function'){
-								t.navigate();
-								return;
-							}
-
-							if (t.getType() === 'ReferralManagement.proposal') {
-								UIInteraction.navigateToProjectOverview(t);
-							}
-
-							if (t.getType() === 'ReferralManagement.client') {
-								application.setNamedValue("currentClient", t);
-								controller.navigateTo("Clients", "People");
-							}
-						}
-					}
-
-				}));
-			});
-
-
-			return ul;
+			/**
+			 * this is not the same as tags
+			 */
+			return ItemNavigationTagLinks.CreateTagListModule(item, typesFilter);
 		},
+
+
 		formatTagCloudModule:function(mod){
 
 			var application = this._getApplication();

@@ -373,12 +373,9 @@ var TaskItem = (function() {
 
 			}
 		},
-		getTags: function() {
+		getNavigationTags: function() {
 			var me = this;
-			if (me.getItem().getTags) {
-				return me.getItem().getTags();
-			}
-			return [];
+			return me.getItem().getNavigationTags?me.getItem().getNavigationTags():[];
 		},
 		addUserListLabel: function() {
 			return 'Assign To Member';

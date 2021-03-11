@@ -7,13 +7,16 @@ var ProjectFiles = (function() {
 
 	var ProjectFile=new Class({
 
+		Implements:[
+			ItemNavigationTagLinks
+		],
 		initialize:function(url, option){
 
 			this._url=url;
 			this._option=Object.append({}, option);
 
 		},
-		getTags:function(){
+		getNavigationTags:function(){
 
 			var tags=[new FileTag(this)];
 			if(this._option.project){

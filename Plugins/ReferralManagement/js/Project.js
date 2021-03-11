@@ -17,7 +17,9 @@ var Project = (function() {
 			ItemAttachments,
 			ItemFlags,
 			ItemEvents,
-			ItemDiscussion
+			ItemDiscussion,
+			ItemContact,
+			ItemTagLinks
 		],
 		initialize: function(id, data) {
 			var me = this;
@@ -104,18 +106,11 @@ var Project = (function() {
 			return !this.isDataset();
 		},
 
-		getTags: function() {
+		getNavigationTags: function() {
 			var me = this;
-			return [me, me.getCompany()];
-
+			return ([me]).concat(me.getContacts());
 		},
 
-		getCompany: function() {
-			var me = this;
-			return new ProjectClient(-1, {
-				name: me.getCompanyName()
-			});
-		},
 
 		getProjectType: function() {
 			var me = this;
@@ -216,15 +211,7 @@ var Project = (function() {
 
 		},
 
-		getCompanyName: function() {
-			var me = this;
-			return me.data.attributes.company;
-		},
-
-		getClientName: function() {
-			var me = this;
-			return me.data.attributes.company;
-		},
+		
 
 		getProjectUsername: function() {
 			var me = this;

@@ -292,6 +292,8 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/ItemEvents.js');
 		IncludeJS(__DIR__ . '/js/ItemStars.js');
 		IncludeJS(__DIR__ . '/js/ItemDiscussion.js');		
+		IncludeJS(__DIR__ . '/js/ItemContact.js');		
+		IncludeJS(__DIR__ . '/js/ItemNavigationTagLinks.js');	
 		
 		IncludeJS(__DIR__ . '/js/Project.js');
 
