@@ -19,7 +19,7 @@ var Project = (function() {
 			ItemEvents,
 			ItemDiscussion,
 			ItemContact,
-			ItemTagLinks
+			ItemNavigationTagLinks
 		],
 		initialize: function(id, data) {
 			var me = this;
