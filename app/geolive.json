@@ -19836,10 +19836,13 @@
         "name": "User Group",
         "instance": "UserGroup",
         "parameters": {
-            "userGroupName": "customGroup",
+            "userGroupName": "lands-department",
             "isMemberOfGroupScript": "return false;",
             "getGroupMembersScript": "return array('special');",
-            "target": "none"
+            "target": "usergroup.lands-department",
+            "widgetTitle": "",
+            "readAccess": "public",
+            "position": ""
         }
     },
     "widget.388": {
