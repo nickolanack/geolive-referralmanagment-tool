@@ -19864,7 +19864,7 @@
         "parameters": {
             "userGroupName": "no-role",
             "isMemberOfGroupScript": "widget.UserGroup.389.isMemberOfGroupScript.js",
-            "getGroupMembersScript": "return array('special');",
+            "getGroupMembersScript": "widget.UserGroup.389.getGroupMembersScript.js",
             "target": "usergroup.no-role",
             "widgetTitle": "",
             "readAccess": "public",
