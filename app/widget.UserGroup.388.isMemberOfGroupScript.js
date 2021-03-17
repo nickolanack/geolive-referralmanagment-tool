@@ -1,0 +1,1 @@
+return GetPlugin('ReferralManagement')->isUserInGroup('proponent');
