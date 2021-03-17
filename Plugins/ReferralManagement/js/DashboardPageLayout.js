@@ -167,6 +167,33 @@ var DashboardPageLayout=(function(){
 			return false;
 
 		},
+
+		applyMenuNames:function(buttons, labelsKey){
+
+
+			var labels=DashboardConfig.getValue('menuLabels');
+			
+
+			if(!(labels&&labels[labelsKey])){
+				return;
+			}
+
+			labels=labels[labelsKey];
+
+			Object.keys(definition).forEach(function(menu){
+				buttons[menu].forEach(function(menuItem){
+
+					var name=menuItem.name||menuItem.html;
+					if(typeof labels[menu+'.'+name]=="string"){
+						menuItem.name=name;
+						menuItem.html=labels[menu+'.'+name]
+					}
+
+
+				});
+			});
+
+		},
 		applyMenuFilter:function(buttons, definition){
 
 			var me=this;
@@ -378,6 +405,8 @@ var DashboardPageLayout=(function(){
 			}]
 
 		});
+
+		layout.applyMenuNames(buttons, 'project');
 
 		return buttons;
 
