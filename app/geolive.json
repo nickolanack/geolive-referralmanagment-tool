@@ -19851,7 +19851,7 @@
         "parameters": {
             "userGroupName": "proponent",
             "isMemberOfGroupScript": "return false;",
-            "getGroupMembersScript": "return array('special');",
+            "getGroupMembersScript": "widget.UserGroup.388.getGroupMembersScript.js",
             "target": "usergroup.proponent",
             "widgetTitle": "",
             "readAccess": "public",
