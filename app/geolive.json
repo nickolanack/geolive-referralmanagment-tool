@@ -19862,10 +19862,13 @@
         "name": "User Group",
         "instance": "UserGroup",
         "parameters": {
-            "userGroupName": "customGroup",
+            "userGroupName": "no-role",
             "isMemberOfGroupScript": "return false;",
             "getGroupMembersScript": "return array('special');",
-            "target": "none"
+            "target": "usergroup.no-role",
+            "widgetTitle": "",
+            "readAccess": "public",
+            "position": ""
         }
     },
     "widget.390": {
