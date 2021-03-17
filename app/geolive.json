@@ -19825,7 +19825,7 @@
         "parameters": {
             "userGroupName": "community-member",
             "isMemberOfGroupScript": "return false;",
-            "getGroupMembersScript": "return array('special');",
+            "getGroupMembersScript": "widget.UserGroup.386.getGroupMembersScript.js",
             "target": "usergroup.community-member",
             "widgetTitle": "",
             "readAccess": "public",
