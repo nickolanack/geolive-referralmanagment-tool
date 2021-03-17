@@ -4891,6 +4891,12 @@
                 },
                 {
                     "type": "text",
+                    "label": "datasetForm",
+                    "name": "datasetForm",
+                    "default": "{projectForm}"
+                },
+                {
+                    "type": "text",
                     "label": "pageClassNames",
                     "name": "pageClassNames",
                     "default": ""
@@ -5054,7 +5060,8 @@
             "leftPanelPrimaryBtnForm": "{projectForm}",
             "showLeftPanelSecondaryBtn": false,
             "leftPanelSecondaryBtnLabel": "Add Dataset",
-            "leftPanelSecondaryBtnForm": "{projectForm}"
+            "leftPanelSecondaryBtnForm": "{projectForm}",
+            "datasetForm": "{projectForm}"
         }
     },
     "widget.154": {
