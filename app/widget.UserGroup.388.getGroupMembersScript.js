@@ -1,0 +1,1 @@
+return GetPlugin('ReferralManagement')->getGroupMembersOfGroup('proponent');

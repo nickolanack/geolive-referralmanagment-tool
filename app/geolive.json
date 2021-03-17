@@ -13073,9 +13073,9 @@
         "name": "Ajax Method",
         "instance": "AjaxMethod",
         "parameters": {
+            "widgetTitle": "saveProfile",
             "target": "saveProfile",
             "customScript": "saveProfile.customScript.js",
-            "widgetTitle": "saveProfile",
             "readAccess": "public"
         }
     },
@@ -19817,6 +19817,97 @@
             "onSaveScript": "",
             "onLoadScript": "",
             "readAccess": "public"
+        }
+    },
+    "widget.386": {
+        "name": "User Group",
+        "instance": "UserGroup",
+        "parameters": {
+            "userGroupName": "community-member",
+            "isMemberOfGroupScript": "widget.UserGroup.386.isMemberOfGroupScript.js",
+            "getGroupMembersScript": "widget.UserGroup.386.getGroupMembersScript.js",
+            "target": "usergroup.community-member",
+            "widgetTitle": "",
+            "readAccess": "public",
+            "position": ""
+        }
+    },
+    "widget.387": {
+        "name": "User Group",
+        "instance": "UserGroup",
+        "parameters": {
+            "userGroupName": "lands-department",
+            "isMemberOfGroupScript": "widget.UserGroup.387.isMemberOfGroupScript.js",
+            "getGroupMembersScript": "widget.UserGroup.387.getGroupMembersScript.js",
+            "target": "usergroup.lands-department",
+            "widgetTitle": "",
+            "readAccess": "public",
+            "position": ""
+        }
+    },
+    "widget.388": {
+        "name": "User Group",
+        "instance": "UserGroup",
+        "parameters": {
+            "userGroupName": "proponent",
+            "isMemberOfGroupScript": "widget.UserGroup.388.isMemberOfGroupScript.js",
+            "getGroupMembersScript": "widget.UserGroup.388.getGroupMembersScript.js",
+            "target": "usergroup.proponent",
+            "widgetTitle": "",
+            "readAccess": "public",
+            "position": ""
+        }
+    },
+    "widget.389": {
+        "name": "User Group",
+        "instance": "UserGroup",
+        "parameters": {
+            "userGroupName": "no-role",
+            "isMemberOfGroupScript": "widget.UserGroup.389.isMemberOfGroupScript.js",
+            "getGroupMembersScript": "widget.UserGroup.389.getGroupMembersScript.js",
+            "target": "usergroup.no-role",
+            "widgetTitle": "",
+            "readAccess": "public",
+            "position": ""
+        }
+    },
+    "widget.390": {
+        "name": "User Group",
+        "instance": "UserGroup",
+        "parameters": {
+            "userGroupName": "lands-department-manager",
+            "isMemberOfGroupScript": "widget.UserGroup.390.isMemberOfGroupScript.js",
+            "getGroupMembersScript": "widget.UserGroup.390.getGroupMembersScript.js",
+            "target": "usergroup.lands-department-manager",
+            "widgetTitle": "",
+            "readAccess": "public",
+            "position": ""
+        }
+    },
+    "widget.391": {
+        "name": "User Group",
+        "instance": "UserGroup",
+        "parameters": {
+            "userGroupName": "tribal-council",
+            "isMemberOfGroupScript": "widget.UserGroup.391.isMemberOfGroupScript.js",
+            "getGroupMembersScript": "widget.UserGroup.391.getGroupMembersScript.js",
+            "target": "usergroup.tribal-council",
+            "widgetTitle": "",
+            "readAccess": "public",
+            "position": ""
+        }
+    },
+    "widget.392": {
+        "name": "User Group",
+        "instance": "UserGroup",
+        "parameters": {
+            "userGroupName": "chief-council",
+            "isMemberOfGroupScript": "widget.UserGroup.392.isMemberOfGroupScript.js",
+            "getGroupMembersScript": "widget.UserGroup.392.getGroupMembersScript.js",
+            "target": "usergroup.chief-council",
+            "widgetTitle": "",
+            "readAccess": "public",
+            "position": ""
         }
     }
 }
