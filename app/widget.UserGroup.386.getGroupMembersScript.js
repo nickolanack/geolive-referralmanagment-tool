@@ -1,1 +1,1 @@
-GetPlugin('ReferralManagement')->getGroupMembersOfGroup('community-member');
+return GetPlugin('ReferralManagement')->getGroupMembersOfGroup('community-member');
