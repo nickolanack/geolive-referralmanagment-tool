@@ -180,7 +180,7 @@ var DashboardPageLayout=(function(){
 
 			labels=labels[labelsKey];
 
-			Object.keys(definition).forEach(function(menu){
+			Object.keys(buttons).forEach(function(menu){
 				buttons[menu].forEach(function(menuItem){
 
 					var name=menuItem.name||menuItem.html;
