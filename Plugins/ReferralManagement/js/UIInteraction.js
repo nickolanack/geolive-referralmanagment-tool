@@ -31,7 +31,7 @@ var UIInteraction=(function(){
 					})(child)
 
 					//? not really using split var here
-					controller.navigateTo("Projects", "Main", {
+					controller.navigateTo("Datasets", "Main", {
 						filters:ProjectTagList.getProjectTagsData('_root').map(function(item){ return item.getName(); }),
 						filter:child.getName()
 					});
