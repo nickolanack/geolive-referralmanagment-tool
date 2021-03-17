@@ -168,26 +168,38 @@ var DashboardPageLayout=(function(){
 
 		},
 
-		applyMenuNames:function(buttons, labelsKey){
+		applyMenuOverrides:function(buttons, labelsKey){
 
 
 			var labels=DashboardConfig.getValue('menuLabels');
-			
+			var items=DashboardConfig.getValue('menuItems');
+		
 
-			if(!(labels&&labels[labelsKey])){
-				return;
+			if((labels&&labels[labelsKey])){
+				labels=labels[labelsKey];
 			}
 
-			labels=labels[labelsKey];
+			if((items&&items[labelsKey])){
+				items=items[labelsKey];
+			}
+
+
+			
 
 			Object.keys(buttons).forEach(function(menu){
 				buttons[menu].forEach(function(menuItem){
 
 					var name=menuItem.name||menuItem.html;
-					if(typeof labels[menu+'.'+name]=="string"){
+					if(labels&&typeof labels[menu+'.'+name]=="string"){
 						menuItem.name=name;
 						menuItem.html=labels[menu+'.'+name]
 					}
+
+					if(items&&typeof items[menu+'.'+name]!=="undefined"){
+						
+						menuItem.item=items[menu+'.'+name]
+					}
+
 
 
 				});
@@ -406,7 +418,7 @@ var DashboardPageLayout=(function(){
 
 		});
 
-		layout.applyMenuNames(buttons, 'project');
+		layout.applyMenuOverrides(buttons, 'project');
 
 		return buttons;
 
