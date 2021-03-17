@@ -13087,7 +13087,7 @@
             "target": "projectsListDetail",
             "templateName": "projectsListDetail",
             "requireTarget": true,
-            "resolveItemScript": "return item",
+            "resolveItemScript": "Projects List Detail.resolveItemScript.js",
             "onRenderApplictionScript": "",
             "formatModulesScript": "",
             "notifyViewer": false,
