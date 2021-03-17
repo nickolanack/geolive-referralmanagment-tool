@@ -19889,7 +19889,7 @@
         "instance": "UserGroup",
         "parameters": {
             "userGroupName": "tribal-council",
-            "isMemberOfGroupScript": "return false;",
+            "isMemberOfGroupScript": "widget.UserGroup.391.isMemberOfGroupScript.js",
             "getGroupMembersScript": "widget.UserGroup.391.getGroupMembersScript.js",
             "target": "usergroup.tribal-council",
             "widgetTitle": "",
