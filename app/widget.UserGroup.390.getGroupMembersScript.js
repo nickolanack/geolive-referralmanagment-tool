@@ -1,1 +1,1 @@
-GetPlugin('ReferralManagement')->getGroupMembersOfGroup('lands-department-manager');
+return GetPlugin('ReferralManagement')->getGroupMembersOfGroup('lands-department-manager');
