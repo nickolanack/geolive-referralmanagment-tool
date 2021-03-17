@@ -19849,10 +19849,13 @@
         "name": "User Group",
         "instance": "UserGroup",
         "parameters": {
-            "userGroupName": "customGroup",
+            "userGroupName": "proponent",
             "isMemberOfGroupScript": "return false;",
             "getGroupMembersScript": "return array('special');",
-            "target": "none"
+            "target": "usergroup.proponent",
+            "widgetTitle": "",
+            "readAccess": "public",
+            "position": ""
         }
     },
     "widget.389": {
