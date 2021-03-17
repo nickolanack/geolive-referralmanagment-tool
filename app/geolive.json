@@ -19877,7 +19877,7 @@
         "parameters": {
             "userGroupName": "lands-department-manager",
             "isMemberOfGroupScript": "return false;",
-            "getGroupMembersScript": "return array('special');",
+            "getGroupMembersScript": "widget.UserGroup.390.getGroupMembersScript.js",
             "target": "usergroup.lands-department-manager",
             "widgetTitle": "",
             "readAccess": "public",
