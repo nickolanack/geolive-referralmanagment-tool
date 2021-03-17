@@ -4878,6 +4878,12 @@
                     "default": []
                 },
                 {
+                    "type": "json",
+                    "label": "menuLabels",
+                    "name": "menuLabels",
+                    "default": []
+                },
+                {
                     "type": "text",
                     "label": "projectListItemView",
                     "name": "projectListItemView",
@@ -5061,7 +5067,8 @@
             "showLeftPanelSecondaryBtn": false,
             "leftPanelSecondaryBtnLabel": "Add Dataset",
             "leftPanelSecondaryBtnForm": "{projectForm}",
-            "datasetForm": "{projectForm}"
+            "datasetForm": "{projectForm}",
+            "menuLabels": []
         }
     },
     "widget.154": {
