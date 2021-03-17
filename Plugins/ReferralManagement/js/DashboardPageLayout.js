@@ -372,10 +372,10 @@ var DashboardPageLayout=(function(){
 
 		layout.applyMenuFilter(buttons, {
 
-			"Projects":{
+			"Projects":[{
 				html:"Tasks",
 				config:"enableTasks"
-			}
+			}]
 
 		});
 
