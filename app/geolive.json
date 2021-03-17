@@ -19890,7 +19890,7 @@
         "parameters": {
             "userGroupName": "tribal-council",
             "isMemberOfGroupScript": "return false;",
-            "getGroupMembersScript": "return array('special');",
+            "getGroupMembersScript": "widget.UserGroup.391.getGroupMembersScript.js",
             "target": "usergroup.tribal-council",
             "widgetTitle": "",
             "readAccess": "public",
