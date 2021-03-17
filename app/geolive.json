@@ -19823,10 +19823,13 @@
         "name": "User Group",
         "instance": "UserGroup",
         "parameters": {
-            "userGroupName": "customGroup",
+            "userGroupName": "community-member",
             "isMemberOfGroupScript": "return false;",
             "getGroupMembersScript": "return array('special');",
-            "target": "none"
+            "target": "usergroup.community-member",
+            "widgetTitle": "",
+            "readAccess": "public",
+            "position": ""
         }
     },
     "widget.387": {
