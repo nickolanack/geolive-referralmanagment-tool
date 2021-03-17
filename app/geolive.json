@@ -19902,7 +19902,7 @@
         "instance": "UserGroup",
         "parameters": {
             "userGroupName": "chief-council",
-            "isMemberOfGroupScript": "return false;",
+            "isMemberOfGroupScript": "widget.UserGroup.392.isMemberOfGroupScript.js",
             "getGroupMembersScript": "widget.UserGroup.392.getGroupMembersScript.js",
             "target": "usergroup.chief-council",
             "widgetTitle": "",
