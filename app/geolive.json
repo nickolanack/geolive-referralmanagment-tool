@@ -19863,7 +19863,7 @@
         "instance": "UserGroup",
         "parameters": {
             "userGroupName": "no-role",
-            "isMemberOfGroupScript": "return false;",
+            "isMemberOfGroupScript": "widget.UserGroup.389.isMemberOfGroupScript.js",
             "getGroupMembersScript": "return array('special');",
             "target": "usergroup.no-role",
             "widgetTitle": "",
