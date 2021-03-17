@@ -494,6 +494,8 @@ var DashboardPageLayout=(function(){
 			section:['People', 'Community', 'Configuration', 'Referrals'],
 			config:"!simplifiedMenu"
 		}]);
+
+		layout.applyMenuOverrides(buttons, 'main');
 		
 
 		return buttons;
