@@ -27,20 +27,6 @@ var ProjectNavigationMenu = new Class({
 		this.item=item;
 
 
-	},
-	process: function() {
-
-		var me = this;
-		var application = this.application;
-		var item=this.item;
-
-		if (me.menu) {
-			me.parent();
-			return;
-		}
-
-		var navigationController = this;
-
 		DashboardConfig.runOnceOnLoad(function(dashConfig, config) {
 
 
@@ -89,7 +75,6 @@ var ProjectNavigationMenu = new Class({
 
 			me.menu=DashboardPageLayout.layoutMenu('projectMenu', me.menu);
 
-
 			// me.menu.Project = me.menu.Project.filter(function(item) {
 
 			// 	if (item.html == "Tasks" && !config.parameters.enableTasks) {
@@ -97,13 +82,27 @@ var ProjectNavigationMenu = new Class({
 			// 	}
 			// 	return true;
 			// });
-
-
-			me.process();
-
 		});
+			
 
+	},
+	process: function() {
+
+		var me = this;
+		var application = this.application;
+		var item=this.item;
+
+		if (me.menu) {
+			me.parent();
+			return;
+		}
+
+		var navigationController = this;
+
+		DashboardConfig.runOnceOnLoad(function(dashConfig, config) {
+			me.process();
 		
+		});
 
 	}
 
