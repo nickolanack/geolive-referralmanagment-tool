@@ -19838,7 +19838,7 @@
         "parameters": {
             "userGroupName": "lands-department",
             "isMemberOfGroupScript": "return false;",
-            "getGroupMembersScript": "return array('special');",
+            "getGroupMembersScript": "widget.UserGroup.387.getGroupMembersScript.js",
             "target": "usergroup.lands-department",
             "widgetTitle": "",
             "readAccess": "public",
