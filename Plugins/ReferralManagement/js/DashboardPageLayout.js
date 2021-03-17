@@ -367,6 +367,18 @@ var DashboardPageLayout=(function(){
 		return buttons;
 
 
+	}).addLayout('projectMenu',function(buttons){
+
+
+		layout.applyMenuFilter(buttons, {
+
+			"Projects":{
+				html:"Tasks",
+				config:"enableTasks"
+			}
+
+		});
+
 	}).addLayout('mainMenu',function(buttons){
 
 

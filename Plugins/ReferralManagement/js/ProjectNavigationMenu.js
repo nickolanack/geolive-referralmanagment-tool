@@ -87,14 +87,16 @@ var ProjectNavigationMenu = new Class({
 			};
 
 
+			me.menu=DashboardPageLayout.layoutMenu('projectMenu', me.menu);
 
-			me.menu.Project = me.menu.Project.filter(function(item) {
 
-				if (item.html == "Tasks" && !config.parameters.enableTasks) {
-					return false;
-				}
-				return true;
-			});
+			// me.menu.Project = me.menu.Project.filter(function(item) {
+
+			// 	if (item.html == "Tasks" && !config.parameters.enableTasks) {
+			// 		return false;
+			// 	}
+			// 	return true;
+			// });
 
 
 			me.process();
