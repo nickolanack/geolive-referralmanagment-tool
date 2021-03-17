@@ -19824,7 +19824,7 @@
         "instance": "UserGroup",
         "parameters": {
             "userGroupName": "community-member",
-            "isMemberOfGroupScript": "return false;",
+            "isMemberOfGroupScript": "widget.UserGroup.386.isMemberOfGroupScript.js",
             "getGroupMembersScript": "widget.UserGroup.386.getGroupMembersScript.js",
             "target": "usergroup.community-member",
             "widgetTitle": "",
