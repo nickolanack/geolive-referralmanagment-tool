@@ -19876,7 +19876,7 @@
         "instance": "UserGroup",
         "parameters": {
             "userGroupName": "lands-department-manager",
-            "isMemberOfGroupScript": "return false;",
+            "isMemberOfGroupScript": "widget.UserGroup.390.isMemberOfGroupScript.js",
             "getGroupMembersScript": "widget.UserGroup.390.getGroupMembersScript.js",
             "target": "usergroup.lands-department-manager",
             "widgetTitle": "",
