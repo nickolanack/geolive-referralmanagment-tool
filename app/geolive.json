@@ -4730,7 +4730,7 @@
                 {
                     "type": "boolean",
                     "name": "enablePending",
-                    "default": true,
+                    "default": false,
                     "label": "enablePending"
                 },
                 {
@@ -4878,6 +4878,12 @@
                     "default": []
                 },
                 {
+                    "type": "json",
+                    "label": "menuLabels",
+                    "name": "menuLabels",
+                    "default": []
+                },
+                {
                     "type": "text",
                     "label": "projectListItemView",
                     "name": "projectListItemView",
@@ -4888,6 +4894,12 @@
                     "label": "projectForm",
                     "name": "projectForm",
                     "default": "ProposalTemplate"
+                },
+                {
+                    "type": "text",
+                    "label": "datasetForm",
+                    "name": "datasetForm",
+                    "default": "{projectForm}"
                 },
                 {
                     "type": "text",
@@ -5054,7 +5066,9 @@
             "leftPanelPrimaryBtnForm": "{projectForm}",
             "showLeftPanelSecondaryBtn": false,
             "leftPanelSecondaryBtnLabel": "Add Dataset",
-            "leftPanelSecondaryBtnForm": "{projectForm}"
+            "leftPanelSecondaryBtnForm": "{projectForm}",
+            "datasetForm": "{projectForm}",
+            "menuLabels": []
         }
     },
     "widget.154": {

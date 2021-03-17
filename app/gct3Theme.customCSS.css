@@ -1,6 +1,12 @@
 
 $highlightBtnColor:#ff0258;
 
+
+.left-panel .application-logo {
+    background-position: 25px;
+}
+
+
 span.pending-status {
     background-color: rgba(0,0,0,0.1);
     border-radius: 39px;
@@ -183,7 +189,7 @@ span.notifications {
 }
 
 span.notifications:after {
-    content: "\f075";
+    content: "\f0f3";
     font-family: 'FontAwesome';
     position: absolute;
     left: 9px;
