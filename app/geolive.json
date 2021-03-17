@@ -19875,10 +19875,13 @@
         "name": "User Group",
         "instance": "UserGroup",
         "parameters": {
-            "userGroupName": "customGroup",
+            "userGroupName": "lands-department-manager",
             "isMemberOfGroupScript": "return false;",
             "getGroupMembersScript": "return array('special');",
-            "target": "none"
+            "target": "usergroup.lands-department-manager",
+            "widgetTitle": "",
+            "readAccess": "public",
+            "position": ""
         }
     },
     "widget.391": {
