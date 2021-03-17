@@ -27,8 +27,8 @@ var ProjectNavigationMenu = new Class({
 		this.item=item;
 
 
+		var me=this;
 		DashboardConfig.runOnceOnLoad(function(dashConfig, config) {
-
 
 			me.menu = {
 				"Project": [{

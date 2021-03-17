@@ -379,6 +379,8 @@ var DashboardPageLayout=(function(){
 
 		});
 
+		return buttons;
+
 	}).addLayout('mainMenu',function(buttons){
 
 
