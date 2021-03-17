@@ -19858,5 +19858,35 @@
             "getGroupMembersScript": "return array('special');",
             "target": "none"
         }
+    },
+    "widget.390": {
+        "name": "User Group",
+        "instance": "UserGroup",
+        "parameters": {
+            "userGroupName": "customGroup",
+            "isMemberOfGroupScript": "return false;",
+            "getGroupMembersScript": "return array('special');",
+            "target": "none"
+        }
+    },
+    "widget.391": {
+        "name": "User Group",
+        "instance": "UserGroup",
+        "parameters": {
+            "userGroupName": "customGroup",
+            "isMemberOfGroupScript": "return false;",
+            "getGroupMembersScript": "return array('special');",
+            "target": "none"
+        }
+    },
+    "widget.392": {
+        "name": "User Group",
+        "instance": "UserGroup",
+        "parameters": {
+            "userGroupName": "customGroup",
+            "isMemberOfGroupScript": "return false;",
+            "getGroupMembersScript": "return array('special');",
+            "target": "none"
+        }
     }
 }
