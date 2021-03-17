@@ -13073,9 +13073,9 @@
         "name": "Ajax Method",
         "instance": "AjaxMethod",
         "parameters": {
+            "widgetTitle": "saveProfile",
             "target": "saveProfile",
             "customScript": "saveProfile.customScript.js",
-            "widgetTitle": "saveProfile",
             "readAccess": "public"
         }
     },
@@ -19817,6 +19817,46 @@
             "onSaveScript": "",
             "onLoadScript": "",
             "readAccess": "public"
+        }
+    },
+    "widget.386": {
+        "name": "User Group",
+        "instance": "UserGroup",
+        "parameters": {
+            "userGroupName": "customGroup",
+            "isMemberOfGroupScript": "return false;",
+            "getGroupMembersScript": "return array('special');",
+            "target": "none"
+        }
+    },
+    "widget.387": {
+        "name": "User Group",
+        "instance": "UserGroup",
+        "parameters": {
+            "userGroupName": "customGroup",
+            "isMemberOfGroupScript": "return false;",
+            "getGroupMembersScript": "return array('special');",
+            "target": "none"
+        }
+    },
+    "widget.388": {
+        "name": "User Group",
+        "instance": "UserGroup",
+        "parameters": {
+            "userGroupName": "customGroup",
+            "isMemberOfGroupScript": "return false;",
+            "getGroupMembersScript": "return array('special');",
+            "target": "none"
+        }
+    },
+    "widget.389": {
+        "name": "User Group",
+        "instance": "UserGroup",
+        "parameters": {
+            "userGroupName": "customGroup",
+            "isMemberOfGroupScript": "return false;",
+            "getGroupMembersScript": "return array('special');",
+            "target": "none"
         }
     }
 }
