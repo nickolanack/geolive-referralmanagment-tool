@@ -21,6 +21,19 @@ span.section-icon {
 }
 
 
+.inline-btn.sort, .inline-btn.sort.hasOrder {
+    color: black;
+}
+
+.inline-btn.sort.hasFilter, .inline-btn.sort.hasOrder {
+    padding-right: 20px;
+}
+
+.inline-btn.filter span.locked {
+    line-height: 9px;
+}
+
+
 span.pending-status {
     background-color: rgba(0,0,0,0.1);
     border-radius: 39px;
