@@ -21,7 +21,7 @@ var ItemNavigationTagLinks=(function(){
 
 			var tags = item.getNavigationTags();
 
-			var application = this._getApplication();
+			var application = ReferralManagementDashboard.getApplication();
 			if (tags.length == 0) {
 
 				return null;
