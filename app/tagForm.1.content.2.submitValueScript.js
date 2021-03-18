@@ -1,1 +1,1 @@
-wizardDataset.shortName=object.value;
+wizardDataSet.shortName=object.value;
