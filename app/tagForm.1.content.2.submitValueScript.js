@@ -1,0 +1,1 @@
+wizardDataset.shortName=object.value;
