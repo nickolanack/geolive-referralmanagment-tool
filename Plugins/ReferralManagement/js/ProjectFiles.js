@@ -600,6 +600,8 @@ var ProjectFiles = (function() {
 					type = 'document';
 				}
 
+				var typeName='unknown';
+				
 				if (!typeName) {
 					typeName = type;
 				}
