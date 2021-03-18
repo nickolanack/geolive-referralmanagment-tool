@@ -21,11 +21,11 @@ span.section-icon {
 }
 
 
-.inline-btn.sort, .inline-btn.sort.hasOrder {
+.inline-btn.sort, .inline-btn.sort.hasOrder, .inline-btn.sort.hasFilter {
     color: black;
 }
 
-.inline-btn.sort.hasFilter, .inline-btn.sort.hasOrder, .inline-btn.sort.hasFilter {
+.inline-btn.sort.hasFilter, .inline-btn.sort.hasOrder {
     padding-right: 20px;
 }
 
