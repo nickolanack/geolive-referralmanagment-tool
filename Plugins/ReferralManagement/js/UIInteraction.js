@@ -41,9 +41,7 @@ var UIInteraction=(function(){
 							"color":child.getColor(),
 			                "label":child.getName()+" Datasets",
 			                "showCreateBtn":true,
-			                "lockFilter":["!collection",child.getName()],
-			                "filter":child.getName(),
-			                "invertfilter":false
+			                "lockFilter":["!collection",child.getName()]
 			            })
 					});
 
