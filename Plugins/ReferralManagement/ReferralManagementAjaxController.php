@@ -867,6 +867,8 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 					$category->color=$category->metadata->color;
 				}
 
+				$category->shortName=$category->shortName||$category->name;
+
 				unset($category->metadata);
 				unset($category->type);
 
