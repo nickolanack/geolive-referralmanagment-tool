@@ -33,8 +33,21 @@ var UIInteraction=(function(){
 					//? not really using split var here
 					controller.navigateTo("Datasets", "Main", {
 						filters:ProjectTagList.getProjectTagsData('_root').map(function(item){ return item.getName(); }),
-						filter:child.getName()
+						filter:child.getName(),
+						item:new ProjectList({
+			                "label":child.getName()+" Datasets",
+			                "showCreateBtn":true,
+			                "lockFilter":"!collection",
+			                "filter":null,
+			                "invertfilter":false
+			            })
 					});
+
+
+
+					
+
+
 				});
 
 			});
