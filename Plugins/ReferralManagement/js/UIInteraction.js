@@ -37,6 +37,8 @@ var UIInteraction=(function(){
 						//filter:child.getName(),
 
 						item:new ProjectList({
+							"icon":child.getIcon(),
+							"color":child.getColor(),
 			                "label":child.getName()+" Datasets",
 			                "showCreateBtn":true,
 			                "lockFilter":"!collection",
