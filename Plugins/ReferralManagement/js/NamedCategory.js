@@ -71,6 +71,7 @@ var NamedCategory = (function() {
 			var args = {
 
 				name: this.getName(),
+				shortName:this.getShortName(),
 				description: this.getDescription(),
 				category: this.getCategory(),
 				color: this.getColor()
