@@ -372,6 +372,9 @@ var ProjectFiles = (function() {
 			var me=this;
 
 			var sections = [{
+				    getProject:function(){
+				    	return project;
+				    },
 					label: "Letters",
 					"parentClassName": "files-letters",
 					formatSectionModule: function(module) {
@@ -392,6 +395,9 @@ var ProjectFiles = (function() {
 						return project.removeAttachment(file);
 					}
 				}, {
+					getProject:function(){
+				    	return project;
+				    },
 					label: "Permits",
 					"parentClassName": "files-permits",
 					formatSectionModule: function(module) {
@@ -412,6 +418,9 @@ var ProjectFiles = (function() {
 						return project.removeAttachment(file);
 					}
 				}, {
+					getProject:function(){
+				    	return project;
+				    },
 					label: "Agreements",
 					"parentClassName": "files-agreements",
 					formatSectionModule: function(module) {
@@ -433,6 +442,9 @@ var ProjectFiles = (function() {
 						return project.removeAttachment(file);
 					}
 				}, {
+					getProject:function(){
+				    	return project;
+				    },
 					label: "Documents",
 					"parentClassName": "files-documents",
 					formatSectionModule: function(module) {
@@ -453,6 +465,9 @@ var ProjectFiles = (function() {
 						return project.removeAttachment(file);
 					}
 				}, {
+					getProject:function(){
+				    	return project;
+				    },
 					label: "Spatial",
 					"parentClassName": "files-spatial",
 					formatSectionModule: function(module) {
@@ -479,6 +494,9 @@ var ProjectFiles = (function() {
 						return project.removeAttachment(file);
 					}
 				}, {
+					getProject:function(){
+				    	return project;
+				    },
 					label: "Other documents",
 					"parentClassName": "files-other",
 					formatSectionModule: function(module) {
@@ -508,6 +526,9 @@ var ProjectFiles = (function() {
 			});
 			if (taskFiles.length) {
 				sections.push({
+					getProject:function(){
+				    	return project;
+				    },
 					label: "Attachments from tasks",
 					"parentClassName": "files-tasks",
 					formatSectionModule: function(module) {
@@ -688,8 +709,14 @@ var ProjectFiles = (function() {
 
 			return [
 
-				ItemNavigationTagLinks.CreateNavigationTagListModule(new ProjectFile(listItem.getUrl?listItem.getUrl():listItem, {type:"", project:item}),[
-					"ReferralManagement.proposal", "permits", "letters", "agreements", "spatial"
+				ItemNavigationTagLinks.CreateNavigationTagListModule(
+					new ProjectFile(
+						listItem.getUrl?listItem.getUrl():listItem, 
+						{
+							type:"", 
+							project:(item.getProject?item.getProject():item)
+						}),[
+							"ReferralManagement.proposal", "permits", "letters", "agreements", "spatial"
 				]),
 
 			new ElementModule('button', {
