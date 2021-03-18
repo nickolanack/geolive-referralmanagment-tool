@@ -867,7 +867,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 					$category->color=$category->metadata->color;
 				}
 
-				$category->shortName=$category->shortName||$category->name;
+				$category->shortName=$category->shortName?$category->shortName:$category->name;
 
 				unset($category->metadata);
 				unset($category->type);
@@ -885,7 +885,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		$updateData=array(
 			'name'=>$json->name,
-			'shoreName'=>$json->shortName||$json->name,
+			'shoreName'=>$json->shortName?$json->shortName:$json->name,
 			'description'=>$json->description,
 			'type'=>$json->category,
 			'metadata'=>json_encode(array('color'=>$json->color))
