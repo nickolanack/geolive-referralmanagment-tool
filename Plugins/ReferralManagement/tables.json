@@ -45,6 +45,10 @@
 		"name": "name",
 		"type": "label",
 		"comment": "category name. limited html"
+	},{
+		"name": "shortName",
+		"type": "label",
+		"comment": "category short name"
 	}, {
 		"name": "description",
 		"type": "text",

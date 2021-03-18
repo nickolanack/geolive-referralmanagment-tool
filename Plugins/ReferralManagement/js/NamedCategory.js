@@ -19,8 +19,15 @@ var NamedCategory = (function() {
 		initialize: function(options) {
 			this.parent(options);
 
+			options.shortName=options.shortName||options.name;
+
+			
+
 			this.setName = function(n) {
 				options.name = n
+			}
+			this.setShortName = function(n) {
+				options.shortName = n
 			}
 			this.setDescription = function(d) {
 				options.description = d
@@ -32,9 +39,7 @@ var NamedCategory = (function() {
 
 		},
 
-		getShortName:function(){
-			return this.getName();
-		},
+		
 
 		isRootTag:function(){
 			return this.getCategory().toLowerCase() == this.getName().toLowerCase();
