@@ -883,6 +883,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		$updateData=array(
 			'name'=>$json->name,
+			'shoreName'=>$json->shortName||$json->name,
 			'description'=>$json->description,
 			'type'=>$json->category,
 			'metadata'=>json_encode(array('color'=>$json->color))
