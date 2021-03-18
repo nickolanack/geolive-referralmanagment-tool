@@ -41,7 +41,7 @@ var UIInteraction=(function(){
 							"color":child.getColor(),
 			                "label":child.getName()+" Datasets",
 			                "showCreateBtn":true,
-			                "lockFilter":"!collection",
+			                "lockFilter":["!collection",child.getName()],
 			                "filter":child.getName(),
 			                "invertfilter":false
 			            })
@@ -128,8 +128,6 @@ var UIInteraction=(function(){
 			        
 			}
 
-
-
 		},
 		
 		addUserProfileClick: function(el, user) {
@@ -151,7 +149,6 @@ var UIInteraction=(function(){
 					me.navigateToProfile(user);
 
 				});
-
 				
 
 			});
