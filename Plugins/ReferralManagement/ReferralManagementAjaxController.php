@@ -612,7 +612,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		if ($json->type == "ReferralManagement.proposal") {
 			return array(
-				'team' => $this->getPlugin()->addProjectToProject($json->project, $json->item),
+				'childProjects' => $this->getPlugin()->addProjectToProject($json->project, $json->item),
 			);
 		}
 
@@ -628,7 +628,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		if ($json->type == "ReferralManagement.proposal") {
 			return array(
-				'team' => $this->getPlugin()->removeProjectFromProject($json->project, $json->item),
+				'childProjects' => $this->getPlugin()->removeProjectFromProject($json->project, $json->item),
 			);
 		}
 

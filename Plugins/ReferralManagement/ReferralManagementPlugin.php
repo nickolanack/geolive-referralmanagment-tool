@@ -606,7 +606,7 @@ core\EventListener {
 
 		GetPlugin('Attributes');
 		(new attributes\Record('proposalAttributes'))->setValues($pid, 'ReferralManagement.proposal', array(
-			'childProjects' =>$childProjects,
+			'childProjects' =>json_encode($childProjects),
 		));
 
 		Emit('onSetChildProjectsForProject', array(
