@@ -36,7 +36,7 @@ var ProjectList = (function() {
 				
 				var projects=this.getProjects();
 				if(typeof projects=="function"){
-					projects(callack)
+					projects(callback)
 					return;
 				}
 
