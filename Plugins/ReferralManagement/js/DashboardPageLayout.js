@@ -422,7 +422,7 @@ var DashboardPageLayout=(function(){
 
 					var application = ReferralManagementDashboard.getApplication();
 					var project=application.getNamedValue("currentProject");
-					return true;
+					return project.isCollection();
 				}
 			}
 
