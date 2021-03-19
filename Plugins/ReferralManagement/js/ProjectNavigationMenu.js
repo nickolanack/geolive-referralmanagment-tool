@@ -50,6 +50,21 @@ var ProjectNavigationMenu = new Class({
 							ReferralManagementDashboard.addItemFilesInfo(li, item, application);
 
 						}
+					},{
+						html: "Datasets",
+						view: "projectsListDetail",
+						item:new ProjectList({
+							"label":"Collection Datasets",
+			                "showCreateBtn":true,
+						}),
+						viewOptions:{
+			                
+						},
+						formatEl: function(li) {
+
+							//ReferralManagementDashboard.addItemFilesInfo(li, item, application);
+
+						}
 					}, {
 						html: "Discussion",
 						formatEl: function(li) {
