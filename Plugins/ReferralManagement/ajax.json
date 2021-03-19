@@ -96,6 +96,15 @@
     "remove_item_user": {
         "validate": {
             "checkKeys": [
+               "project",
+               "item",
+               "type"
+            ]
+        }
+    },
+    "remove_item_user": {
+        "validate": {
+            "checkKeys": [
                 "user",
                 "item",
                 "type"
