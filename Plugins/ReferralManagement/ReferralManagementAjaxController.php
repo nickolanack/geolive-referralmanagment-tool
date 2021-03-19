@@ -605,6 +605,37 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	}
 
+	protected function addItemProject($json){
+		if (!Auth('write', $json->item, $json->type)) {
+			return $this->setError('No access or does not exist');
+		}
+
+		if ($json->type == "ReferralManagement.proposal") {
+			return array(
+				'team' => $this->getPlugin()->addProjectToProject($json->project, $json->item),
+			);
+		}
+
+		
+
+		throw new Exception('Invalid type');
+	}
+
+	protected function removeItemProject($json){
+		if (!Auth('write', $json->item, $json->type)) {
+			return $this->setError('No access or does not exist');
+		}
+
+		if ($json->type == "ReferralManagement.proposal") {
+			return array(
+				'team' => $this->getPlugin()->removeProjectFromProject($json->project, $json->item),
+			);
+		}
+
+		
+
+		throw new Exception('Invalid type');
+	}
 
 
 	protected function addItemUser($json) {

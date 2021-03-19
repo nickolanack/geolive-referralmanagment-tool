@@ -595,6 +595,78 @@ core\EventListener {
 
 	}
 
+	public function getChildProjectsForProject($pid, $attributes = null) {
+
+		include_once __DIR__ . '/lib/Project.php';
+		return (new \ReferralManagement\Project())->fromId($pid)->toArray()['attributes']['childProjects'];
+	}
+
+	public function setChildProjectsForProject($pid, $childProjects) {
+
+
+		GetPlugin('Attributes');
+		(new attributes\Record('proposalAttributes'))->setValues($pid, 'ReferralManagement.proposal', array(
+			'childProjects' =>$childProjects,
+		));
+
+		Emit('onSetChildProjectsForProject', array(
+			'project' => $pid,
+			'childProjects' => $childProjects,
+		));
+
+	}
+
+
+
+	public function addProjectToProject($child, $project) {
+
+		$childProjects = $this->getChildProjectsForProject($project);
+
+		$childProjects[] = $child;
+		$childProjects = array_unique($childProjects);
+
+		Emit('onAddProjectToProject', array(
+			'project' => $project,
+			'child' => $child,
+		));
+
+		$this->setChildProjectsForProject($project, $childProjects);
+
+		//$this->notifier()->onAddTeamMemberToProject($user, $project);
+
+		return $childProjects;
+
+	}
+
+	public function removeProjectFromProject($child, $project) {
+
+		$childProjects = $this->getChildProjectsForProject($project);
+		
+
+		$childProjects = array_filter($childProjects, function ($item) use ($child, $project) {
+
+			if (($item == $child )) {
+
+				Emit('onRemoveTeamMemberFromProject', array(
+					'project' => $project,
+					'member' => $item,
+				));
+				return false;
+			}
+
+			return true;
+		});
+
+		$this->setChildProjectsForProject($project, $childProjects);
+		//$this->notifier()->onRemoveTeamMemberFromProject($user, $project);
+
+		return $childProjects;
+
+	}
+
+
+
+
 	public function addTeamMemberToProject($user, $project) {
 
 		$teamMembers = $this->getTeamMembersForProject($project);

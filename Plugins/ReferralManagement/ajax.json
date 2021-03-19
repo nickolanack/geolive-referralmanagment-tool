@@ -84,6 +84,15 @@
             ]
         }
     },
+    "add_item_project": {
+        "validate": {
+            "checkKeys": [
+               "project",
+               "item",
+               "type"
+            ]
+        }
+    },
     "remove_item_user": {
         "validate": {
             "checkKeys": [
