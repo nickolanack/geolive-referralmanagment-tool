@@ -81,6 +81,13 @@ var ItemProjectsCollection = (function(){
 	    	return (this._projects||[]).slice(0)
 	    },
 
+	    getProjectObjects:function(){
+
+	    	return this.getProjects().map(function(project){
+	    		ProjectTeam.CurrentTeam().getProject(project);
+	    	});
+
+	    },
 
 	    hasProject:function(project){
 	    	return this._indexOfProject(project)>=0;
