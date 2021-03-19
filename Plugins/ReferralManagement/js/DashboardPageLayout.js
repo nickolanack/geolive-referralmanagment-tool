@@ -414,7 +414,19 @@ var DashboardPageLayout=(function(){
 			"Project":[{
 				html:"Tasks",
 				config:"enableTasks"
-			}]
+			},
+
+			{
+				html:['Datasets'],
+				condition:function(){
+
+					var application = ReferralManagementDashboard.getApplication();
+					var project=application.getNamedValue("currentProject");
+					return true;
+				}
+			}
+
+			]
 
 		});
 
