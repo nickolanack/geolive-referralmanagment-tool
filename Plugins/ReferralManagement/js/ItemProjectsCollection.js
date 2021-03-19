@@ -84,7 +84,7 @@ var ItemProjectsCollection = (function(){
 	    getProjectObjects:function(){
 
 	    	return this.getProjects().map(function(project){
-	    		ProjectTeam.CurrentTeam().getProject(project);
+	    		return ProjectTeam.CurrentTeam().getProject(project);
 	    	});
 
 	    },
