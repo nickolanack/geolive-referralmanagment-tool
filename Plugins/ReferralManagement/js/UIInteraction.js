@@ -39,9 +39,9 @@ var UIInteraction=(function(){
 						item:new ProjectList({
 							"icon":child.getIcon(),
 							"color":child.getColor(),
-			                "label":child.getName()+" Datasets",
+			                "label":child.getName()+" Datasets & Collections",
 			                "showCreateBtn":true,
-			                "lockFilter":["!collection",child.getName()]
+			                "lockFilter":[/*"!collection", */ child.getName()]
 			            })
 					});
 
