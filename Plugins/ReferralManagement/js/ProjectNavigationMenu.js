@@ -57,7 +57,7 @@ var ProjectNavigationMenu = new Class({
 							"label":"Collection Datasets",
 			                "showCreateBtn":true,
 			                projects:function(callback){
-			                	callback(item.getProjects());
+			                	callback(item.getProjectObjects());
 			                }
 						}),
 						viewOptions:{
