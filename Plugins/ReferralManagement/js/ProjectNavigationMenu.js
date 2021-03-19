@@ -10,7 +10,7 @@ var ProjectNavigationMenu = new Class({
 				return viewer.getChildView('content', 1);
 			},
 			templateView: function(button, section) {
-				return button.view || ("single" + section + (button.name || button.html) + "Detail");
+				return button.template || ("single" + section + (button.name || button.html) + "Detail");
 			},
 			buttonClass: function(button, section) {
 				return button["class"] || ("menu-" + section.toLowerCase() + "-" + button.html.toLowerCase());
@@ -52,7 +52,7 @@ var ProjectNavigationMenu = new Class({
 						}
 					},{
 						html: "Datasets",
-						view: "projectsListDetail",
+						template: "projectsListDetail",
 						item:new ProjectList({
 							"label":"Collection Datasets",
 			                "showCreateBtn":true,
