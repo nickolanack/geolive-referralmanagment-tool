@@ -25,11 +25,36 @@ var ProjectList = (function() {
 				}
 			}
 
-
-			
-
-
 			return ProjectList.currentProjectFilterFn.apply(null, arguments);
+		},
+
+
+		getProjectList:function(callback){
+
+
+			if(this.getProjects){
+				
+				var projects=this.getProjects();
+				if(typeof projects=="function"){
+					projects(callack)
+					return;
+				}
+
+				callback(projects);
+				return;
+
+			}
+
+			ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+			     var projects=team.getProjects();
+			     if(!application.getNamedValue("currentProject")){
+			        application.setNamedValue("currentProject", projects[0]);
+			    }
+			    callback(projects)
+			});
+
+       
+
 		}
 	});
 
