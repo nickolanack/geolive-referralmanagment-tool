@@ -45,6 +45,9 @@ var ProjectList = (function() {
 
 			}
 
+
+			var application = ReferralManagementDashboard.getApplication();
+
 			ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
 			     var projects=team.getProjects();
 			     if(!application.getNamedValue("currentProject")){
