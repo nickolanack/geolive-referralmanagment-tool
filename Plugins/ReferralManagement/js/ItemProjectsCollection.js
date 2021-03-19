@@ -10,18 +10,31 @@ var ItemProjectsCollection = (function(){
 	}
 
 
+	var getProjectId=function(project){
+		if(project instanceof Project||project instanceof ChildProject){
+			return project.getId()
+		}
+
+		return project;
+	};
+
+
 	var AddItemProjectQuery = new Class({
 		Extends: AjaxControlQuery,
 		initialize: function(item, type, project) {
 
 			this.parent(CoreAjaxUrlRoot, "add_item_project", {
 				plugin: "ReferralManagement",
-				project: project instanceof ChildProject?project.getId():project,
+				project: getProjectId(project),
 				item: item,
 				type: type
 			});
 		}
 	});
+
+
+
+	
 
 
 	// var ProjectQuery = new Class({
@@ -41,7 +54,7 @@ var ItemProjectsCollection = (function(){
 
 			this.parent(CoreAjaxUrlRoot, "remove_item_project", {
 				plugin: "ReferralManagement",
-				project: project instanceof ChildProject?project.getId():project,
+				project: getProjectId(project),
 				item: item,
 				type: type
 			});
@@ -76,10 +89,10 @@ var ItemProjectsCollection = (function(){
 	    	var me=this;
 	    	var list=me.getProjects();
 	    	
-	    	var id=project instanceof ChildProject?project.getId():project;
+	    	var id=getProjectId(project);
 	    	
 	    	for(var i=0;i<list.length;i++){
-	    		var listId=list[i] instanceof ChildProject?list[i].getId():list[i];
+	    		var listId=getProjectId(list[i]);
 	    		if(id+""===listId+""){
 	    			return i;
 	    		}
@@ -90,7 +103,7 @@ var ItemProjectsCollection = (function(){
 	    addProject:function(project){
 	    	var me=this;
 	    	if(!me.hasProject(project)){
-	    		var id=project instanceof ChildProject?project.getId():project;
+	    		var id=getProjectId(project);
 	    		me._projects.push(id);
 
 	    		if(me.getId()>0){
@@ -118,7 +131,7 @@ var ItemProjectsCollection = (function(){
 		},
 		_addProjectsCollectionFormData:function(data){
 			data.projects= (me._projects || []).map(function(project) {
-				var id=project instanceof ChildProject?project.getId():project;
+				var id=getProjectId(project);
 				return id;
 			});
 		},
