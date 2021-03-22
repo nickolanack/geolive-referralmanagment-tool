@@ -258,7 +258,7 @@ span.notifications:after {
          <?php 
             $config=GetWidget('dashboardConfig');
             ?>
-                background-image: url(<?php echo $config['backgroundImage'][0];?>);
+                background-image: url('<?php echo $config["backgroundImage"][0];?>');
 
             <?php
           ?>
