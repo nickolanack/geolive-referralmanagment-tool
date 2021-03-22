@@ -249,7 +249,20 @@ span.notifications:after {
          }
         .login-form:before {
           background-position: center;
+          
+          
+          
+          
           background-image: url(https://dyl2vw577xcfk.cloudfront.net/gather.geoforms.ca/1/Uploads/%5BG%5D_Plu_%5BImAgE%5D_Z2G_XQ.jpeg);
+         
+         <?php 
+            $config=GetWidget('dashboardConfig');
+            ?>
+                background-image: url(<?php echo $config['backgroundImage'][0];?>);
+
+            <?php
+          ?>
+         
           content: "";
           position: fixed;
           top: 0;
