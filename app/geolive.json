@@ -17267,7 +17267,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "return item.getKind();",
+                                    "fieldLabelScript": "return item.getKind()+\": \";",
                                     "fieldValueScript": "return item.getName()",
                                     "formatElementScript": "",
                                     "identifier": ""
