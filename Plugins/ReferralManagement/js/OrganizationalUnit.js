@@ -94,7 +94,7 @@ var OrganizationalUnitList=(function(){
 	});
 
 	return OrganizationalUnitList;
-});
+})();
 
 
 
