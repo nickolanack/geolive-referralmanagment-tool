@@ -38,6 +38,10 @@ var OrganizationalUnit = (function() {
 
 		save: function(callback) {
 
+			if(!this.isEditable()){
+				throw 'Item should not be edited';
+			}
+
 			var i = ProjectDepartmentList.getProjectDepartments().indexOf(this);
 			if (i < 0) {
 				ProjectDepartmentList.addDepartment(this);
@@ -86,7 +90,7 @@ var OrganizationalUnit = (function() {
 
 						 callback(Community.territories.map(function(name) {
 							var name=String.capitalize.call(null, name.split('|').pop());
-							return new MockDataTypeItem({
+							return new OrganizationalUnit({
 								name:name,
 								description:"",
 								kind:me.getKind(),
