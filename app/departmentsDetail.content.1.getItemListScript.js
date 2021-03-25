@@ -1,1 +1,1 @@
-return ReferralManagementDashboard.getProjectDepartments();
+return OrganizationalUnit.DefaultList().getItems();
