@@ -85,15 +85,23 @@ var OrganizationalUnitList=(function(){
 
 		getFormBtn:function(){
 
+
 			return new ModalFormButtonModule(ReferralManagementDashboard.getApplication(), ProjectDepartmentList.getNewDepartment(), {
 	     
-	            label: "Add Department",
+	            label: "Add "+this.getKind(),
 	            formOptions: {template:"form"},
-	            formName: "departmentForm",
+	            formName: this.getForm(),
 	            "class": "primary-btn"
 
 	    
 			});
+		},
+		getForm:function(){
+			return "departmentForm";
+		},
+		getKind:function(){
+			var l=this.getLabel();
+			return l.substring(0, l.length-1);
 		},
 		getItems:function(callback){
 			callback(ProjectDepartmentList.getProjectDepartments());
