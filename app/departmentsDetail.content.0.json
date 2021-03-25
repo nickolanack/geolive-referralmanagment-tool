@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "return '<div class=\"section-title\"><span>'+DashboardConfig.getValue('departmentKind')+'s:<\/span><\/div>';",
+        "script": "return '<div class=\"section-title\"><span>'+OrganizationalUnit.DefaultList().getLabel()+':<\/span><\/div>';",
         "description": "Info about my custom script"
     }
 }
