@@ -40,7 +40,7 @@ var UIInteraction=(function(){
 							"icon":child.getIcon(),
 							"color":child.getColor(),
 			                "label":child.getName()+" Datasets & Collections",
-			                "showCreateBtn":true,
+			                "showCreateBtn":false,
 			                "lockFilter":[/*"!collection", */ child.getName()]
 			            })
 					});
