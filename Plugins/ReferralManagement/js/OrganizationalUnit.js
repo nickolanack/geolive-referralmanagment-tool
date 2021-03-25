@@ -31,6 +31,11 @@ var OrganizationalUnit = (function() {
 			return true;
 		},
 
+		getForm:function(){
+
+			return "departmentForm";
+		},
+
 		save: function(callback) {
 
 			var i = ProjectDepartmentList.getProjectDepartments().indexOf(this);
