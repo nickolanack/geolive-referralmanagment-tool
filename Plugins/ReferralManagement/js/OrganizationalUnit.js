@@ -95,8 +95,8 @@ var OrganizationalUnitList=(function(){
 	    
 			});
 		},
-		getItems:function(){
-			return ProjectDepartmentList.getProjectDepartments();
+		getItems:function(callback){
+			callback(ProjectDepartmentList.getProjectDepartments());
 		}
 	});
 
