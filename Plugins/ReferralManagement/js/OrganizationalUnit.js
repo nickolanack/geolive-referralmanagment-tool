@@ -68,26 +68,27 @@ var OrganizationalUnit = (function() {
 })();
 
 var ProjectDepartment = new Class({
-	Extends: OrganizationalUnit,
-	getFormBtn:function(){
-
-		return new ModalFormButtonModule(ReferralManagementDashboard.getApplication(), ReferralManagementDashboard.getNewDepartment(), {
-     
-            label: "Add Department",
-            formOptions: {template:"form"},
-            formName: "departmentForm",
-            "class": "primary-btn"
-
-    
-		});
-	}
+	Extends: OrganizationalUnit
 });
 
 
 var OrganizationalUnitList=(function(){
 
 	var OrganizationalUnitList=new Class({
-		Extends:MockDataTypeItem
+		Extends:MockDataTypeItem,
+		
+		getFormBtn:function(){
+
+			return new ModalFormButtonModule(ReferralManagementDashboard.getApplication(), ReferralManagementDashboard.getNewDepartment(), {
+	     
+	            label: "Add Department",
+	            formOptions: {template:"form"},
+	            formName: "departmentForm",
+	            "class": "primary-btn"
+
+	    
+			});
+		}
 	});
 
 	return OrganizationalUnitList;
