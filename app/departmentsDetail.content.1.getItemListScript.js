@@ -1,1 +1,1 @@
-return OrganizationalUnit.DefaultList().getItems();
+OrganizationalUnit.DefaultList().getItems(callback);
