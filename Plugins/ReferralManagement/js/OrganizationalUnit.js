@@ -23,6 +23,14 @@ var OrganizationalUnit = (function() {
 			}
 
 		},
+
+		isEditable:function(){
+			if(this._getEditable){
+				return this._getEditable();
+			}
+			return true;
+		},
+
 		save: function(callback) {
 
 			var i = ProjectDepartmentList.getProjectDepartments().indexOf(this);
@@ -73,7 +81,8 @@ var OrganizationalUnit = (function() {
 							return new MockDataTypeItem({
 								name:name,
 								description:"",
-								kind:me.getKind()
+								kind:me.getKind(),
+								editable:false
 							});
 						}));
 
