@@ -33,13 +33,6 @@ var ReferralManagementDashboard = (function() {
 			return ProjectTagList.getProjectTagsData(category);
 		},
 
-		getNewDepartment: function(category) {
-			return ProjectDepartmentList.getNewDepartment();
-		},
-
-		getProjectDepartments: function(category) {
-			return ProjectDepartmentList.getProjectDepartments();
-		},
 
 		getCreatedByString: function(item) {
 

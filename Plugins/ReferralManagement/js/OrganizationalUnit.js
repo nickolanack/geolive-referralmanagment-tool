@@ -57,8 +57,12 @@ var OrganizationalUnit = (function() {
 	});
 
 	OrganizationalUnit.DefaultList=function(){
+
+
+		var label=DashboardConfig.getValue('departmentKind')+'s';
+
 		var list= new OrganizationalUnitList({
-			label:"Department"
+			label:label
 		});
 
 		return list;
@@ -81,7 +85,7 @@ var OrganizationalUnitList=(function(){
 
 		getFormBtn:function(){
 
-			return new ModalFormButtonModule(ReferralManagementDashboard.getApplication(), ReferralManagementDashboard.getNewDepartment(), {
+			return new ModalFormButtonModule(ReferralManagementDashboard.getApplication(), ProjectDepartmentList.getNewDepartment(), {
 	     
 	            label: "Add Department",
 	            formOptions: {template:"form"},
@@ -90,6 +94,9 @@ var OrganizationalUnitList=(function(){
 
 	    
 			});
+		},
+		getItems:function(){
+			return ProjectDepartmentList.getProjectDepartments();
 		}
 	});
 
