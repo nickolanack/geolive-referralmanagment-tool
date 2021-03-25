@@ -4884,6 +4884,12 @@
                     "label": "useCommunitiesAsDepartments"
                 },
                 {
+                    "type": "text",
+                    "name": "departmentKind",
+                    "default": "Department",
+                    "label": "departmentKind"
+                },
+                {
                     "type": "json",
                     "label": "menuLabels",
                     "name": "menuLabels",
@@ -5083,7 +5089,8 @@
             "menuLabels": [],
             "menuItems": [],
             "useCommunitiesAsDepartmens": false,
-            "useCommunitiesAsDepartments": false
+            "useCommunitiesAsDepartments": false,
+            "departmentKind": "Department"
         }
     },
     "widget.154": {
