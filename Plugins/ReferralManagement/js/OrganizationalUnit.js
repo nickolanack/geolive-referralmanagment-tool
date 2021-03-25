@@ -68,14 +68,14 @@ var OrganizationalUnit = (function() {
 				DashboardConfig.getValue('useCommunitiesAsDepartments', function(useCommunities){
 					if(useCommunities){
 
-						return Community.territories.map(function(name) {
+						 callback(Community.territories.map(function(name) {
 							var name=String.capitalize.call(null, name.split('|').pop());
 							return new MockDataTypeItem({
 								name:name,
 								description:"",
 								kind:me.getKind()
 							});
-						});
+						}));
 
 						//ashboardConfig.getValue('')
 						return;
