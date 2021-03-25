@@ -167,6 +167,7 @@ var ProjectDepartmentList = (function() {
 		_departments=response.departments.map(function(itemData){
 			return new ProjectDepartment(Object.append({
 				"type": "Project.department",
+				"kind":"Department"
 			}, itemData));
 		});
 
@@ -182,6 +183,7 @@ var ProjectDepartmentList = (function() {
 				name: "",
 				description: "",
 				type: "Project.department",
+				kind:"Department",
 				id: -1
 			});
 
