@@ -4878,6 +4878,18 @@
                     "default": []
                 },
                 {
+                    "type": "boolean",
+                    "name": "useCommunitiesAsDepartments",
+                    "default": false,
+                    "label": "useCommunitiesAsDepartments"
+                },
+                {
+                    "type": "text",
+                    "name": "departmentKind",
+                    "default": "Department",
+                    "label": "departmentKind"
+                },
+                {
                     "type": "json",
                     "label": "menuLabels",
                     "name": "menuLabels",
@@ -5075,7 +5087,10 @@
             "leftPanelSecondaryBtnForm": "{projectForm}",
             "datasetForm": "{projectForm}",
             "menuLabels": [],
-            "menuItems": []
+            "menuItems": [],
+            "useCommunitiesAsDepartmens": false,
+            "useCommunitiesAsDepartments": false,
+            "departmentKind": "Department"
         }
     },
     "widget.154": {
