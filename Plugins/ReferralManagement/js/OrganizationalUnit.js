@@ -62,7 +62,29 @@ var OrganizationalUnit = (function() {
 		var label=DashboardConfig.getValue('departmentKind')+'s';
 
 		var list= new OrganizationalUnitList({
-			label:label
+			label:label,
+			items:function(callback){
+				var me=this;
+				DashboardConfig.getValue('useCommunitiesAsDepartments', function(useCommunities){
+					if(useCommunities){
+
+						return Community.territories.map(function(name) {
+							var name=String.capitalize.call(null, name.split('|').pop());
+							return new MockDataTypeItem({
+								name:name,
+								description:"",
+								kind:me.getKind()
+							});
+						});
+
+						//ashboardConfig.getValue('')
+						return;
+					}
+
+					callback(ProjectDepartmentList.getProjectDepartments())
+
+				});
+			}
 		});
 
 		return list;
@@ -104,7 +126,18 @@ var OrganizationalUnitList=(function(){
 			return l.substring(0, l.length-1);
 		},
 		getItems:function(callback){
-			callback(ProjectDepartmentList.getProjectDepartments());
+
+			if(this._getItems){
+				var result=this._getItems();
+				if(typeof result=='function'){
+					result(callback);
+					return;
+				}
+				callback(result);
+				return;
+			}
+
+			callback([]);
 		}
 	});
 
