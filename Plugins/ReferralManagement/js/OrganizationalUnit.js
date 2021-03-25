@@ -57,9 +57,11 @@ var OrganizationalUnit = (function() {
 	});
 
 	OrganizationalUnit.DefaultList=function(){
-		return new OrganizationalUnitList({
+		var list= new OrganizationalUnitList({
 			label:"Department"
 		});
+
+		return list;
 		
 	}
 
@@ -76,7 +78,7 @@ var OrganizationalUnitList=(function(){
 
 	var OrganizationalUnitList=new Class({
 		Extends:MockDataTypeItem,
-		
+
 		getFormBtn:function(){
 
 			return new ModalFormButtonModule(ReferralManagementDashboard.getApplication(), ReferralManagementDashboard.getNewDepartment(), {
