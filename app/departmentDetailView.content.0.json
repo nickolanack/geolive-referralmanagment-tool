@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "return new ModalFormButtonModule(application, item, {\n         \n            label: \"Edit\",\n            formOptions: {template:\"form\"},\n            formName: \"departmentForm\",\n            \"class\": \"primary-btn small\"\n\n    \n});\n",
+        "script": "\nif(!item.isEditable()){\n    return null;\n}\n\nreturn new ModalFormButtonModule(application, item, {\n         \n            label: \"Edit\",\n            formOptions: {template:\"form\"},\n            formName: item.getForm(),\n            \"class\": \"primary-btn small\"\n\n    \n});\n",
         "description": "Info about my custom script"
     }
 }
