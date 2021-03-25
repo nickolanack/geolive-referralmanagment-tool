@@ -4879,9 +4879,9 @@
                 },
                 {
                     "type": "boolean",
-                    "name": "useCommunitiesAsDepartmens",
+                    "name": "useCommunitiesAsDepartments",
                     "default": false,
-                    "label": "useCommunitiesAsDepartmens"
+                    "label": "useCommunitiesAsDepartments"
                 },
                 {
                     "type": "json",
@@ -5082,7 +5082,8 @@
             "datasetForm": "{projectForm}",
             "menuLabels": [],
             "menuItems": [],
-            "useCommunitiesAsDepartmens": false
+            "useCommunitiesAsDepartmens": false,
+            "useCommunitiesAsDepartments": false
         }
     },
     "widget.154": {
