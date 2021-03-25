@@ -124,6 +124,9 @@ var OrganizationalUnitList=(function(){
 
 		getFormBtn:function(){
 
+			if(!this.isEditable()){
+				return null;
+			}
 
 			return new ModalFormButtonModule(ReferralManagementDashboard.getApplication(), ProjectDepartmentList.getNewDepartment(), {
 	     
