@@ -1,10 +1,8 @@
 {
-    "type": "InlineHtml",
+    "type": "WizardScriptElement",
     "config": {
-        "className": "",
-        "text": "<div class=\"section-title\"><span>Departments:<\/span><\/div>",
-        "template": "",
-        "templateVariablesScript": "",
-        "formatTextScript": ""
+        "name": "My Custom Script",
+        "script": "return '<div class=\"section-title\"><span>'+DashboardConfig.getValue('departmentKind')+'s:<\/span><\/div>';",
+        "description": "Info about my custom script"
     }
 }
