@@ -4878,6 +4878,12 @@
                     "default": []
                 },
                 {
+                    "type": "boolean",
+                    "name": "useCommunitiesAsDepartmens",
+                    "default": false,
+                    "label": "useCommunitiesAsDepartmens"
+                },
+                {
                     "type": "json",
                     "label": "menuLabels",
                     "name": "menuLabels",
@@ -5075,7 +5081,8 @@
             "leftPanelSecondaryBtnForm": "{projectForm}",
             "datasetForm": "{projectForm}",
             "menuLabels": [],
-            "menuItems": []
+            "menuItems": [],
+            "useCommunitiesAsDepartmens": false
         }
     },
     "widget.154": {
