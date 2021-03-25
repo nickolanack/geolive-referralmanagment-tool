@@ -16309,16 +16309,6 @@
                         "modules": [
                             "departmentsDetail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "InlineHtml",
-                                "config": {
-                                    "className": "",
-                                    "text": "<div class=\"section-title\"><span>Departments:<\/span><\/div>",
-                                    "template": "",
-                                    "templateVariablesScript": "",
-                                    "formatTextScript": ""
-                                }
-                            },
-                            {
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "",
@@ -16339,7 +16329,7 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
-                                    "getItemListScript": "departmentsDetail.metadata.positions.content.modules.2.config.getItemListScript.js",
+                                    "getItemListScript": "departmentsDetail.metadata.positions.content.modules.1.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
                                     "formatListItemModuleScript": "return item;",
                                     "emptyNamedView": "emptyListView",
@@ -16352,7 +16342,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "departmentsDetail.metadata.positions.content.modules.3.config.script.js",
+                                    "script": "departmentsDetail.metadata.positions.content.modules.2.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
