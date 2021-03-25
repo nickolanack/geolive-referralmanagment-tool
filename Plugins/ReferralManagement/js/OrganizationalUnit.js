@@ -81,7 +81,7 @@ var OrganizationalUnit = (function() {
 		var list= new OrganizationalUnitList({
 			label:label,
 			editable:function(){
-				return DashboardConfig.getValue('useCommunitiesAsDepartments');
+				return !DashboardConfig.getValue('useCommunitiesAsDepartments');
 			},
 			items:function(callback){
 				var me=this;
