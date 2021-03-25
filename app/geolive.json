@@ -17267,9 +17267,10 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "return \"Department: \";",
+                                    "fieldLabelScript": "return item.getKind();",
                                     "fieldValueScript": "return item.getName()",
-                                    "formatElementScript": ""
+                                    "formatElementScript": "",
+                                    "identifier": ""
                                 }
                             },
                             {
@@ -17278,7 +17279,8 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getDescription();",
-                                    "formatElementScript": ""
+                                    "formatElementScript": "",
+                                    "identifier": ""
                                 }
                             }
                         ]
