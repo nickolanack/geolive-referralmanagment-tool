@@ -130,7 +130,7 @@ var OrganizationalUnitList=(function(){
 			if(this._getItems){
 				var result=this._getItems();
 				if(typeof result=='function'){
-					result(callback);
+					result.bind(this)(callback);
 					return;
 				}
 				callback(result);
