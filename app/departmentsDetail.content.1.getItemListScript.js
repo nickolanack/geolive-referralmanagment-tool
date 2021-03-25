@@ -1,1 +1,6 @@
-(item instanceof OrganizationalUnitList?item.getItems(callback):OrganizationalUnit.DefaultList().getItems(callback));
+if(item instanceof OrganizationalUnitList){
+    item.getItems(callback);
+    return;
+}
+
+OrganizationalUnit.DefaultList().getItems(callback);
