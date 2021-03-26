@@ -370,7 +370,11 @@ var ProjectList = (function() {
 
 
 	ProjectList.AddTableHeader = function(listModule) {
-		listModule.runOnceOnLoad( /*addEvent('renderModule:once', */function(module, index) {
+		listModule.runOnceOnLoad( /*addEvent('renderModule:once', */function() {
+			var index=0;
+			var module=listModule.getDetailViewAt(0);
+
+
 			module.runOnceOnLoad(function() {
 				module.getViewName(function(view) {
 
