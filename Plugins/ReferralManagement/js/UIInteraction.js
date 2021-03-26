@@ -50,6 +50,7 @@ var UIInteraction=(function(){
                     				"formName":"documentProjectForm"
                     			}
 			                ],
+			                "filter":null,
 			                "lockFilter":[/*"!collection", */ child.getName()]
 			            })
 					});
