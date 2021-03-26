@@ -190,13 +190,27 @@ var ProjectList = (function() {
 
 	var _generateBtn=function(options){
 
+
+		options=Object.append({
+			"label":"ProposalTemplate",
+	        "formName":"New project",
+	        "item":new Proposal(),
+	        "className":"inline-btn add primary-btn"
+		},options);
+
+
+		if(options.item){
+
+		}
+
 		var btn=new Element("button", {
 			"data-lbl": options.label,
-			"class": "inline-btn add primary-btn",
+			"class": options.item.className,
 			"events": {
 				"click": function() {
 
-					var newItem = new Proposal();
+					var newItem = options.item;
+
 					var application = ReferralManagementDashboard.getApplication();
 					(new UIModalDialog(application, newItem, {
 	                "formName":options.formName, "formOptions":{template:"form"}})).show()
@@ -233,8 +247,8 @@ var ProjectList = (function() {
 			}
 
 			buttons.push({
-				"label":formName,
-	             "formName":btnLabel
+				"label":btnLabel,
+	             "formName":formName
 			});
 		
 		}
