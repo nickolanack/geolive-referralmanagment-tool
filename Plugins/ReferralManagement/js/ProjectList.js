@@ -41,6 +41,14 @@ var ProjectList = (function() {
 			return "ProposalTemplate"
 		},
 
+		getCreateBtns:function(){
+
+			if(this._getCreateBtns){
+				return this._getCreateBtns();
+			}
+			return [];
+		},
+
 		getProjectList:function(callback){
 
 
@@ -180,49 +188,87 @@ var ProjectList = (function() {
 	};
 
 
+	var _generateBtn=function(options){
+
+		var btn=new Element("button", {
+			"data-lbl": options.label,
+			"class": "inline-btn add primary-btn",
+			"events": {
+				"click": function() {
+
+					var newItem = new Proposal();
+					var application = ReferralManagementDashboard.getApplication();
+					(new UIModalDialog(application, newItem, {
+	                "formName":options.formName, "formOptions":{template:"form"}})).show()
+
+					newItem.addEvent("save:once", function() {
+						ProjectTeam.CurrentTeam().addProject(newItem);
+					});
+
+				}
+			}
+		});
+
+		return btn;
+
+	}
+
+
+
+	ProjectList.GetButtonDefinitions = function(item) {
+
+		
+
+		var buttons=[];
+
+		
+		if ((!item) ||item.getShowCreateBtn && item.getShowCreateBtn() === true) {
+
+			var formName = "ProposalTemplate";
+			var btnLabel = "New project";
+
+			if (item && item instanceof ProjectList) {
+				formName=item.getFormName();
+				btnLabel=item.getAddButtonLabel();
+			}
+
+			buttons.push({
+				"label":formName,
+	             "formName":btnLabel
+			});
+		
+		}
+
+		
+		if (item && item instanceof ProjectList) {
+			buttons=buttons.concat(item.getCreateBtns());
+		}
+
+
+		return buttons;
+	}
+
 	ProjectList.HeaderMenuContent = function(item) {
 
 
-		if (item && item instanceof ProjectList && item.getShowCreateBtn && item.getShowCreateBtn() === false) {
+		
+
+		var buttons=ProjectList.GetButtonDefinitions(item);
+
+		if((!buttons)||buttons.length==0){
 			return null;
 		}
-
-		var application = ReferralManagementDashboard.getApplication();
 
 		var div = new Element('div', {
 			"class": "project-list-btns"
 		});
 
 
-		var formName = "ProposalTemplate";
-		var btnLabel = "New project";
+		buttons.forEach(function(btn){
+			div.appendChild(_generateBtn(btn));
+		})
 
-
-		if (item && item instanceof ProjectList) {
-			formName=item.getFormName();
-			btnLabel=item.getAddButtonLabel();
-		}
-
-		div.appendChild(new Element("button", {
-			"data-lbl": btnLabel,
-			"class": "inline-btn add primary-btn",
-			"events": {
-				"click": function() {
-
-					var newItem = new Proposal();
-
-					(new UIModalDialog(application, newItem, {
-	                "formName":formName, "formOptions":{template:"form"}})).show()
-
-					newItem.addEvent("save:once", function() {
-						ProjectTeam.CurrentTeam().addProject(newItem);
-					})
-
-
-
-				}
-			}
-		}));
+		
 		return div;
 	};
 

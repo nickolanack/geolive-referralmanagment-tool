@@ -41,6 +41,15 @@ var UIInteraction=(function(){
 							"color":child.getColor(),
 			                "label":child.getName()+" Datasets & Collections",
 			                "showCreateBtn":false,
+			                "createBtns":[{
+			                		"label":"Add Dataset",
+                    				"formName":"documentForm"
+                    			},
+                    			{
+			                		"label":"Add Collection",
+                    				"formName":"documentProjectForm"
+                    			}
+			                ],
 			                "lockFilter":[/*"!collection", */ child.getName()]
 			            })
 					});
