@@ -32,7 +32,6 @@ class ListItemCache {
 		return array(
 			'file' => $cacheFile,
 			'age' => (time() - filemtime($cacheFile)),
-
 		);
 	}
 

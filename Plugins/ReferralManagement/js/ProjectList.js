@@ -195,7 +195,7 @@ var ProjectList = (function() {
 			"label":"ProposalTemplate",
 	        "formName":"New project",
 	        "item":new Proposal(),
-	        "className":"inline-btn add primary-btn"
+	        "className":"add"
 		},options);
 
 
@@ -205,7 +205,7 @@ var ProjectList = (function() {
 
 		var btn=new Element("button", {
 			"data-lbl": options.label,
-			"class": options.className,
+			"class": "inline-btn primary-btn "+options.className,
 			"events": {
 				"click": function() {
 
@@ -370,9 +370,7 @@ var ProjectList = (function() {
 
 
 	ProjectList.AddTableHeader = function(listModule) {
-		listModule.addEvent('renderModule:once', function(module, index) {
-
-
+		listModule.runOnceOnLoad( /*addEvent('renderModule:once', */function(module, index) {
 			module.runOnceOnLoad(function() {
 				module.getViewName(function(view) {
 

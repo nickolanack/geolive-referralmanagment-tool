@@ -47,7 +47,8 @@ var UIInteraction=(function(){
                     			},
                     			{
 			                		"label":"Add Collection",
-                    				"formName":"documentProjectForm"
+                    				"formName":"documentProjectForm",
+                    				"className":"add collection"
                     			}
 			                ],
 			                "filter":null,
