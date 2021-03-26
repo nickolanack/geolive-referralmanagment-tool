@@ -393,7 +393,7 @@ var ProjectList = (function() {
 
 						if (!(el.parentNode && header.firstChild && header.firstChild.firstChild)) {
 
-							if (counter > 5) {
+							if (counter > 15) {
 								console.error('unable to inject header');
 								clearInterval(interval);
 							}
