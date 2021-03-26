@@ -205,7 +205,7 @@ var ProjectList = (function() {
 
 		var btn=new Element("button", {
 			"data-lbl": options.label,
-			"class": options.item.className,
+			"class": options.className,
 			"events": {
 				"click": function() {
 
