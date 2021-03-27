@@ -391,7 +391,9 @@ var ProjectList = (function() {
 							html: el.innerHTML
 						});
 
-						if (!(el.parentNode && header.firstChild && header.firstChild.firstChild)) {
+						var parentNode=listModule.getElement();
+
+						if (!(parentNode && header.firstChild && header.firstChild.firstChild)) {
 
 							if (counter > 15) {
 								console.error('unable to inject header');
@@ -401,7 +403,7 @@ var ProjectList = (function() {
 							return;
 						}
 						clearInterval(interval);
-						el.parentNode.insertBefore(header, el);
+						parentNode.insertBefore(header, el);
 
 						header.firstChild.firstChild.childNodes.forEach(function(colEl) {
 
