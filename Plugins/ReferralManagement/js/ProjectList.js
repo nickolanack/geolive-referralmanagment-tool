@@ -145,6 +145,10 @@ var ProjectList = (function() {
 		return filters;
 	};
 
+
+	ProjectList.HasSortFn=function(name){
+		return ProjectList.projectSorters().map(function(s){return s.label; }).indexOf(name)>=0;
+	};
 	ProjectList.projectSorters = function() {
 
 		return [{
@@ -171,6 +175,24 @@ var ProjectList = (function() {
 			label: "created",
 			sortFn: function(a, b) {
 				return (a.getCreationDate() > b.getCreationDate() ? 1 : -1);
+			}
+		},
+		{
+			label: "user",
+			sortFn: function(a, b) {
+				return (a.getProjectUsername() > b.getProjectUsername() ? 1 : -1);
+			}
+		},
+		{
+			label: "date",
+			sortFn: function(a, b) {
+				return (a.getCreationDate() > b.getCreationDate() ? 1 : -1);
+			}
+		},
+		{
+			label: "type",
+			sortFn: function(a, b) {
+				return (a.getProjectType() > b.getProjectType() ? 1 : -1);
 			}
 		}];
 
@@ -413,6 +435,11 @@ var ProjectList = (function() {
 						header.firstChild.firstChild.childNodes.forEach(function(colEl) {
 
 							colEl.addClass('sortable');
+
+							var sort=colEl.getAttribute('data-col');
+							if(!ProjectList.HasSortFn(sort)){
+								colEl.addClass('disabled');
+							}
 
 							colEl.addEvent('click', function() {
 
