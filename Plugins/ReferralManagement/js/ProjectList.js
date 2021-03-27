@@ -403,8 +403,9 @@ var ProjectList = (function() {
 							return;
 						}
 						clearInterval(interval);
-						if(el.parentNode===parentNode){
-							parentNode.insertBefore(header, el);
+
+						if(parentNode.firstChild){
+							parentNode.insertBefore(header, parentNode.firstChild);
 						}else{
 							parentNode.appendChild(header);
 						}
