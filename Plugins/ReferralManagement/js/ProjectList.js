@@ -488,9 +488,12 @@ var ProjectList = (function() {
 
 			module.runOnceOnLoad(function() {
 				_renderHeader(listModule, module);
-				listModule.addEvent('load', function(){
-					_renderHeader(listModule, module);
-				})
+				setTimeout(function(){
+					listModule.addEvent('load', function(){
+						_renderHeader(listModule, module);
+					})
+				}, 500);
+				
 			});
 
 			//}
