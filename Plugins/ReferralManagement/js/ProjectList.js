@@ -403,7 +403,11 @@ var ProjectList = (function() {
 							return;
 						}
 						clearInterval(interval);
-						parentNode.insertBefore(header, el);
+						if(el.parentNode===parentNode){
+							parentNode.insertBefore(header, el);
+						}else{
+							parentNode.appendChild(header);
+						}
 
 						header.firstChild.firstChild.childNodes.forEach(function(colEl) {
 
