@@ -391,14 +391,8 @@ var ProjectList = (function() {
 	}
 
 
-	ProjectList.AddTableHeader = function(listModule) {
-		listModule.runOnceOnLoad( /*addEvent('renderModule:once', */function() {
-			var index=0;
-			var module=listModule.getDetailViewAt(0);
-
-
-			module.runOnceOnLoad(function() {
-				module.getViewName(function(view) {
+	var _renderHeader=function(listModule, module){
+		module.getViewName(function(view) {
 
 					if (view !== "singleProjectListItemTableDetail") {
 						return;
@@ -439,6 +433,7 @@ var ProjectList = (function() {
 							var sort=colEl.getAttribute('data-col');
 							if(!ProjectList.HasSortFn(sort)){
 								colEl.addClass('disabled');
+								return;
 							}
 
 							colEl.addEvent('click', function() {
@@ -476,14 +471,26 @@ var ProjectList = (function() {
 
 
 
-							})
+							});
 						});
 
 
 					}, 200);
 
 				});
+	}
 
+	ProjectList.AddTableHeader = function(listModule) {
+		listModule.runOnceOnLoad( /*addEvent('renderModule:once', */function() {
+			var index=0;
+			var module=listModule.getDetailViewAt(0);
+
+
+			module.runOnceOnLoad(function() {
+				_renderHeader(listModule, module);
+				listModule.addEvent('load', function(){
+					_renderHeader(listModule, module);
+				})
 			});
 
 			//}
