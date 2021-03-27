@@ -418,6 +418,33 @@ var ProjectList = (function() {
 
 								var sort = colEl.getAttribute('data-col');
 								var sortModule = listModule.getSortObject();
+
+								if(!sortModule){
+
+
+									/**
+									 * Not going to render this temporary module, but it should still work
+									 */
+
+
+								   sortModule=(new ListSortModule(function() {
+										return listModule;
+									}, {
+										sorters: ProjectList.projectSorters()
+									}));
+
+								   listModule.setSortObject(sortModule);
+
+
+
+								   /**
+								    * 
+								    */
+
+
+
+								}
+
 								sortModule.applySort(sort);
 
 
