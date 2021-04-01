@@ -19111,16 +19111,16 @@
                             "documentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 121,
-                            "y": 188
+                            "x": 131,
+                            "y": 198
                         },
                         "children": [
                             "documentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 81,
-                                    "y": 476
+                                    "x": 91,
+                                    "y": 486
                                 }
                             },
                             {
@@ -19130,16 +19130,16 @@
                                     "documentForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 596,
-                                    "y": 204
+                                    "x": 606,
+                                    "y": 214
                                 },
                                 "children": [
                                     "documentForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 556,
-                                            "y": 380
+                                            "x": 566,
+                                            "y": 390
                                         }
                                     }
                                 ],
@@ -19178,7 +19178,7 @@
                                                         "className": "",
                                                         "showLabel": false,
                                                         "showAddWord": false,
-                                                        "label": "{field.label}",
+                                                        "label": "Add to base map layer",
                                                         "addWordPlaceholder": "add a keyword",
                                                         "fontColor": "rgb(0, 0, 0)",
                                                         "hoverColor": "rgb(143, 188, 143)",
