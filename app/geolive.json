@@ -19099,8 +19099,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 177,
-                    "y": 203
+                    "x": 5,
+                    "y": 191
                 },
                 "children": [
                     "documentForm.metadata.children.0.json",
@@ -19111,16 +19111,104 @@
                             "documentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 524,
-                            "y": 356
+                            "x": 121,
+                            "y": 188
                         },
                         "children": [
                             "documentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 484,
-                                    "y": 632
+                                    "x": 81,
+                                    "y": 476
+                                }
+                            },
+                            {
+                                "title": "New Empty Step",
+                                "class": "AttributesTableNode",
+                                "fields": [
+                                    "documentForm.metadata.children.1.children.2.fields.0.json"
+                                ],
+                                "_diagramState": {
+                                    "x": 596,
+                                    "y": 204
+                                },
+                                "children": [
+                                    "documentForm.metadata.children.1.children.2.children.0.json",
+                                    {
+                                        "class": "InsertNode",
+                                        "_diagramState": {
+                                            "x": 556,
+                                            "y": 380
+                                        }
+                                    }
+                                ],
+                                "builderMetadata": {
+                                    "positions": {
+                                        "title": {
+                                            "modules": [
+                                                "documentForm.metadata.children.1.children.2.builderMetadata.positions.title.modules.0.json"
+                                            ]
+                                        },
+                                        "content": {
+                                            "modules": [
+                                                "documentForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.0.json",
+                                                {
+                                                    "type": "plugin.Attributes.WizardTagCloud",
+                                                    "config": {
+                                                        "attributeFields": [],
+                                                        "className": "",
+                                                        "showLabel": false,
+                                                        "showAddWord": false,
+                                                        "label": "Dataset tags",
+                                                        "addWordPlaceholder": "add a keyword",
+                                                        "fontColor": "rgb(0, 0, 0)",
+                                                        "hoverColor": "rgb(143, 188, 143)",
+                                                        "selectedColor": "rgb(143, 188, 143)",
+                                                        "shuffleTags": false,
+                                                        "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
+                                                        "getItemTagsScript": "documentForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.1.config.getItemTagsScript.js",
+                                                        "formatModule": ""
+                                                    }
+                                                },
+                                                {
+                                                    "type": "plugin.Attributes.WizardTagCloud",
+                                                    "config": {
+                                                        "attributeFields": [],
+                                                        "className": "",
+                                                        "showLabel": false,
+                                                        "showAddWord": false,
+                                                        "label": "{field.label}",
+                                                        "addWordPlaceholder": "add a keyword",
+                                                        "fontColor": "rgb(0, 0, 0)",
+                                                        "hoverColor": "rgb(143, 188, 143)",
+                                                        "selectedColor": "rgb(143, 188, 143)",
+                                                        "shuffleTags": false,
+                                                        "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
+                                                        "getItemTagsScript": "return defaultTags;",
+                                                        "formatModule": ""
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "footer": {
+                                            "modules": [
+                                                "documentForm.metadata.children.1.children.2.builderMetadata.positions.footer.modules.0.json"
+                                            ]
+                                        },
+                                        "menu": {
+                                            "modules": []
+                                        }
+                                    },
+                                    "positionList": [
+                                        "title",
+                                        "content",
+                                        "footer",
+                                        "menu"
+                                    ],
+                                    "_diagramState": {
+                                        "minimized": false
+                                    }
                                 }
                             }
                         ],
