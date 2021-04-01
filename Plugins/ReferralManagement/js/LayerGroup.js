@@ -65,6 +65,8 @@ var LayerGroupItemList = (function() {
 
 
 	var _layerItems=false;
+	var _layerNames=false;
+
 
 	var LayerGroupItemListQuery = new Class({
 		Extends: AjaxControlQuery,
@@ -79,7 +81,11 @@ var LayerGroupItemList = (function() {
 
 	(new LayerGroupItemListQuery()).addEvent('success', function(response) {
 		_layerItems=[];
+		_layerNames=Object.keys(response.parameters);
 		Object.keys(response.parameters).map(function(group){
+
+
+
 			response.parameters[group].forEach(function(layer){
 				_layerItems.push(
 					new LayerGroupItem(Object.append({
@@ -116,7 +122,7 @@ var LayerGroupItemList = (function() {
 		},
 		getGroupNames:function(){
 
-			return LayerGroupItemList.getGroups().map(function(group){return group.getName();});
+			return _layerNames.slice(0);
 
 		},
 		getGroups:function(){
