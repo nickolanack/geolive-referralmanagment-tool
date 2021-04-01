@@ -19111,16 +19111,16 @@
                             "documentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 161,
-                            "y": 228
+                            "x": 171,
+                            "y": 238
                         },
                         "children": [
                             "documentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 121,
-                                    "y": 516
+                                    "x": 131,
+                                    "y": 526
                                 }
                             },
                             {
@@ -19130,16 +19130,16 @@
                                     "documentForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 636,
-                                    "y": 244
+                                    "x": 646,
+                                    "y": 254
                                 },
                                 "children": [
                                     "documentForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 596,
-                                            "y": 420
+                                            "x": 606,
+                                            "y": 430
                                         }
                                     }
                                 ],
@@ -19189,7 +19189,7 @@
                                                         "selectedColor": "rgb(143, 188, 143)",
                                                         "shuffleTags": false,
                                                         "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
-                                                        "getItemTagsScript": "return defaultTags;",
+                                                        "getItemTagsScript": "documentForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.2.config.getItemTagsScript.js",
                                                         "formatModule": ""
                                                     }
                                                 }
