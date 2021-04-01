@@ -76,7 +76,13 @@ var OrganizationalUnit = (function() {
 	OrganizationalUnit.DefaultList=function(){
 
 
-		var label=DashboardConfig.getValue('departmentKind')+'s';
+		var label=DashboardConfig.getValue('departmentKind');//+'s';
+
+
+		if(label.substring(label.length - 1)=='y'){
+			label=label.substring(0, label.length - 1)+'ie';
+		}
+		label=label+'s';
 
 		var list= new OrganizationalUnitList({
 			label:label,
