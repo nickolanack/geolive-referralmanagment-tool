@@ -78,7 +78,7 @@ var OrganizationalUnit = (function() {
 
 		var label=DashboardConfig.getValue('departmentKind');//+'s';
 
-
+		var kind=label;
 		if(label.substring(label.length - 1)=='y'){
 			label=label.substring(0, label.length - 1)+'ie';
 		}
@@ -86,6 +86,7 @@ var OrganizationalUnit = (function() {
 
 		var list= new OrganizationalUnitList({
 			label:label,
+			kind:kind,
 			editable:function(){
 				return !DashboardConfig.getValue('useCommunitiesAsDepartments');
 			},
@@ -163,6 +164,9 @@ var OrganizationalUnitList=(function(){
 			return true;
 		},
 		getKind:function(){
+			if(this._getKind){
+				return this._getKind(0);
+			}
 			var l=this.getLabel();
 			return l.substring(0, l.length-1);
 		},
