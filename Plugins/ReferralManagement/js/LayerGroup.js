@@ -54,7 +54,7 @@ var LayerGroupItem = (function() {
 		}
 	});
 
-	return OrganizationalUnit;
+	return LayerGroupItem;
 
 })();
 
@@ -114,7 +114,11 @@ var LayerGroupItemList = (function() {
 			return newTag;
 
 		},
+		getGroupNames:function(){
 
+			LayerGroupItemList.getGroups().map(function(group){return g.getName();};
+
+		},
 		getGroups:function(){
 
 			if(_layerItems===false){
