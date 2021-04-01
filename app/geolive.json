@@ -19111,16 +19111,16 @@
                             "documentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 141,
-                            "y": 208
+                            "x": 151,
+                            "y": 218
                         },
                         "children": [
                             "documentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 101,
-                                    "y": 496
+                                    "x": 111,
+                                    "y": 506
                                 }
                             },
                             {
@@ -19130,16 +19130,16 @@
                                     "documentForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 616,
-                                    "y": 224
+                                    "x": 626,
+                                    "y": 234
                                 },
                                 "children": [
                                     "documentForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 576,
-                                            "y": 400
+                                            "x": 586,
+                                            "y": 410
                                         }
                                     }
                                 ],
@@ -19156,7 +19156,9 @@
                                                 {
                                                     "type": "plugin.Attributes.WizardTagCloud",
                                                     "config": {
-                                                        "attributeFields": [],
+                                                        "attributeFields": [
+                                                            "documentForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
+                                                        ],
                                                         "className": "",
                                                         "showLabel": false,
                                                         "showAddWord": false,
