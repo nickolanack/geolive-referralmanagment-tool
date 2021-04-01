@@ -116,7 +116,7 @@ var LayerGroupItemList = (function() {
 		},
 		getGroupNames:function(){
 
-			LayerGroupItemList.getGroups().map(function(group){return group.getName();});
+			return LayerGroupItemList.getGroups().map(function(group){return group.getName();});
 
 		},
 		getGroups:function(){
