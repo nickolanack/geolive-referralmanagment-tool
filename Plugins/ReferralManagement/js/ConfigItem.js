@@ -81,7 +81,7 @@ var ConfigItem = (function() {
 
                     (new UIModalDialog(
                         ReferralManagementDashboard.getApplication(),
-                        config, {
+                        configValue, {
                             "formName": item.getForm(),
                             "formOptions": {
                                 template: "form"
