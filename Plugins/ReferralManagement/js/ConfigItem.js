@@ -1,88 +1,108 @@
-var ConfigItem=(function(){
+var ConfigItem = (function() {
 
-	var ConfigItem=new Class({});
-
-
-
-
-	ConfigItem.GetTextBlock=function(){
+    var ConfigItem = new Class({
+        Extends:MockDataTypeItem
+    });
 
 
-		var user=ProjectTeam.CurrentTeam().getUser(AppClient.getId());
+
+    ConfigItem.GetTextBlock = function(item) {
 
 
-var div=new Element('div', {
-    html:`<div class="section-title">
-    <span class="thin">Welcome Back,</span> `+user.getName()+`</div>`,
-    'class':"section-help section-welcome section-module"
-        
-}); 
+        if(!(item instanceof ConfigItem)){
+
+            var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
+            item=new ConfigItem({
+                "className": "section-help section-welcome section-module",
+                'heading':`<div class="section-title">
+                        <span class="thin">Welcome Back,</span> ` + user.getName() + `
+                    </div>`,
+                'param':'welcomeText',
+                'editLabel':'Edit welcome text',
+                'widget':"dashboardContentConfig",
+                'form':'textFieldForm'
+            });
+        }
 
 
-var content=new Element('span',{});
-div.appendChild(content)
-var text="";
-DashboardConfig.getValue("welcomeText", function(value){
-    content.innerHTML=value;
-    text=value;
-})
+      
 
-if(!(AppClient.getUserType()=="admin"||ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isTeamManager())){
-    return div;
-}
 
-div.appendChild(new Element('button',{
-    
-    html:"edit",
-    'class':'inline-edit',
-    events:{click:function(){
-        
-        
-        var config=(new MockDataTypeItem({
-            mutable:true,
-            label:'Edit welcome text',
-            text:text
-        }));
-    
-        config.addEvent('save', function(){
-        
-            content.innerHTML=config.getText();
-            text=config.getText();
-        
-            (new AjaxControlQuery(CoreAjaxUrlRoot, 'set_configuration_field', {
-    	        "widget": "dashboardContentConfig",
-    	        "field":{
-    	            "name":"welcomeText",
-    	            "value":config.getText()
-                }
-            })).execute();
-        
-        
+        var div = new Element('div', {
+            html: item.getHeading()
+            'class': item.getClassName()
+
         });
-        
-        
-        
-        
-        (new UIModalDialog(
-            application, 
-            config, 
-            {"formName":"textFieldForm", "formOptions":{template:"form"} }
-        )).show();
-		   
-    }}
-    
-}));
 
 
-		   
-		                		
-return div;		  
+        var content = new Element('span', {});
+        div.appendChild(content)
+        var text = "";
+        DashboardConfig.getValue(item.getParam(), function(value) {
+            content.innerHTML = value;
+            text = value;
+        })
+
+        if (!(AppClient.getUserType() == "admin" || ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isTeamManager())) {
+            return div;
+        }
+
+        div.appendChild(new Element('button', {
+
+            html: "edit",
+            'class': 'inline-edit',
+            events: {
+                click: function() {
 
 
-	}
+                    var configValue = (new MockDataTypeItem({
+                        mutable: true,
+                        label: item.getEditLabel(),
+                        text: text
+                    }));
+
+                    configValue.addEvent('save', function() {
+
+                        content.innerHTML = configValue.getText();
+                        text = configValue.getText();
+
+                        (new AjaxControlQuery(CoreAjaxUrlRoot, 'set_configuration_field', {
+                            "widget": item.getWidget(),
+                            "field": {
+                                "name": item.getParam(),
+                                "value": configValue.getText()
+                            }
+                        })).execute();
+
+
+                    });
 
 
 
-	return ConfigItem;
+                    (new UIModalDialog(
+                        application,
+                        config, {
+                            "formName": item.getForm(),
+                            "formOptions": {
+                                template: "form"
+                            }
+                        }
+                    )).show();
+
+                }
+            }
+
+        }));
+
+
+
+        return div;
+
+
+    }
+
+
+
+    return ConfigItem;
 
 })()
