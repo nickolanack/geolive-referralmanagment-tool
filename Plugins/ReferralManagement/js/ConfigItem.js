@@ -6,7 +6,7 @@ var ConfigItem = (function() {
 
 
 
-    ConfigItem.GetTextBlock = function(item) {
+    ConfigItem.GetTextBlockModule = function(item) {
 
 
         if(!(item instanceof ConfigItem)){
