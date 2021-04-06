@@ -80,7 +80,7 @@ var ConfigItem = (function() {
 
 
                     (new UIModalDialog(
-                        application,
+                        ReferralManagementDashboard.getApplication(),
                         config, {
                             "formName": item.getForm(),
                             "formOptions": {
