@@ -26,13 +26,10 @@ core\EventListener {
 	use core\EventListenerTrait;
 	use core\TemplateRenderer;
 
+	public function formatMobileConfig($parameters) {
 
-
-	public function formatMobileConfig($parameters){
-
-
-		$parameters['client']=GetPlugin('ReferralManagement')->getUsersMetadata();
-		$parameters['communities']=GetPlugin('ReferralManagement')->listCommunities();
+		$parameters['client'] = GetPlugin('ReferralManagement')->getUsersMetadata();
+		$parameters['communities'] = GetPlugin('ReferralManagement')->listCommunities();
 
 		return $parameters;
 
@@ -40,32 +37,28 @@ core\EventListener {
 
 	protected function onCreateProposal($params) {
 
-		$config=GetWidget('dashboardConfig');
-		if($config->getParameter("autoCreateDefaultTasks", false)){
+		$config = GetWidget('dashboardConfig');
+		if ($config->getParameter("autoCreateDefaultTasks", false)) {
 			$this->createDefaultProposalTasks($params->id);
 		}
-
-		
 
 		$this->onUpdateProposal($params);
 
 	}
-	
-	protected function onUpdateProposal($params){
 
+	protected function onUpdateProposal($params) {
 
-		Throttle('onTriggerVersionControlProject', $params, array('interval'=>30), 60);
+		Throttle('onTriggerVersionControlProject', $params, array('interval' => 30), 60);
 
 	}
 
-	protected function onTriggerVersionControlProject($params){
+	protected function onTriggerVersionControlProject($params) {
 
 		sleep(5);
 		include_once __DIR__ . '/lib/VersionControl.php';
 		(new \ReferralManagement\VersionControl())->updateProject($params->id);
 
 	}
-	
 
 	protected function onFacebookRegister($params) {
 
@@ -81,18 +74,17 @@ core\EventListener {
 
 	}
 
+	protected function onActivateMobileDevice($params) {
 
-	protected function onActivateMobileDevice($params){
+		$user = $params->account->uid;
+		$config = GetWidget('dashboardConfig');
 
-		$user=$params->account->uid;
-		$config=GetWidget('dashboardConfig');
-
-		if($config->getParameter('autoApproveMobileCommunity')||$config->getParameter('autoApproveMobileCommunityOnce')){
+		if ($config->getParameter('autoApproveMobileCommunity') || $config->getParameter('autoApproveMobileCommunityOnce')) {
 
 			GetPlugin('Attributes');
 			(new attributes\Record('userAttributes'))->setValues($user, 'user', array(
-				"community-member"=>true,
-				"community"=>(new  \ReferralManagement\User())->communityCollective()
+				"community-member" => true,
+				"community" => (new \ReferralManagement\User())->communityCollective(),
 			));
 			//$this->getPlugin()->notifier()->onUpdateUserRole($json);
 		}
@@ -103,9 +95,9 @@ core\EventListener {
 
 		if ($params->itemType === "user") {
 			(new \core\LongTaskProgress())
-				->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval'=>30));
+				->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval' => 30));
 			(new \core\LongTaskProgress())
-				->throttle('onTriggerUpdateDevicesList', array('team' => 1), array('interval'=>30));
+				->throttle('onTriggerUpdateDevicesList', array('team' => 1), array('interval' => 30));
 			return;
 		}
 
@@ -113,11 +105,9 @@ core\EventListener {
 
 	}
 
-
-
-	public function getClientsUserList(){
-		$users= $this->cache()->getUsersMetadataList();
-		$users=array_values(array_filter($users, $this->shouldShowUserFilter()));
+	public function getClientsUserList() {
+		$users = $this->cache()->getUsersMetadataList();
+		$users = array_values(array_filter($users, $this->shouldShowUserFilter()));
 		return $users;
 	}
 
@@ -125,10 +115,10 @@ core\EventListener {
 		$this->cache()->cacheUsersMetadataList($params);
 	}
 
-	public function getClientsDeviceList(){
+	public function getClientsDeviceList() {
 
-		$devices= $this->cache()->getDevicesMetadataList();
-		$devices=array_values(array_filter($devices, $this->shouldShowUserFilter()));
+		$devices = $this->cache()->getDevicesMetadataList();
+		$devices = array_values(array_filter($devices, $this->shouldShowUserFilter()));
 		return $devices;
 	}
 
@@ -141,30 +131,27 @@ core\EventListener {
 	protected function onCreateUser($params) {
 		foreach ($this->listTeams() as $team) {
 			(new \core\LongTaskProgress())
-				->throttle('onTriggerUpdateUserList', array('team' => $team), array('interval'=>30));
+				->throttle('onTriggerUpdateUserList', array('team' => $team), array('interval' => 30));
 		}
 	}
 
 	protected function onDeleteUser($params) {
 		foreach ($this->listTeams() as $team) {
 			(new \core\LongTaskProgress())
-				->throttle('onTriggerUpdateUserList', array('team' => $team), array('interval'=>30));
+				->throttle('onTriggerUpdateUserList', array('team' => $team), array('interval' => 30));
 		}
 	}
 
-	protected function listTeams($fn=null) {
+	protected function listTeams($fn = null) {
 		return (new \ReferralManagement\User())->listTeams();
 	}
 
 	protected function onTriggerImportTusFile($params) {
 
-
 		Emit('onImportTusFile', array());
 
 		include_once __DIR__ . '/lib/TusImportTask.php';
 		return (new \ReferralManagement\TusImportTask())->import($params);
-
-
 
 	}
 
@@ -210,14 +197,14 @@ core\EventListener {
 
 			include_once MapsPlugin::Path() . DS . 'lib' . DS . 'SpatialFile.php';
 
-			$type='[DoCuMeNt]';
-			if(strpos($path, $type)!==false){
-				$type="";
+			$type = '[DoCuMeNt]';
+			if (strpos($path, $type) !== false) {
+				$type = "";
 			}
 
-			$kmlDoc = substr($path, 0, strrpos($path, '.')) . $type.'.kml';
-			file_put_contents($kmlDoc.'.info.json', json_encode(array(
-				'source'=>basename($path)
+			$kmlDoc = substr($path, 0, strrpos($path, '.')) . $type . '.kml';
+			file_put_contents($kmlDoc . '.info.json', json_encode(array(
+				'source' => basename($path),
 			)));
 
 			SpatialFile::Save(SpatialFile::Open($path), $kmlDoc);
@@ -241,17 +228,16 @@ core\EventListener {
 
 	public function includeScripts() {
 
-
-		IncludeJSBlock(function(){
+		IncludeJSBlock(function () {
 			?><script type="text/javascript">
-				
+
 				var Community={
-					domain:<?php 
+					domain:<?php
 
-					$domain=HtmlDocument()->getDomain();
-					echo json_encode(substr($domain, 0, strpos($domain, '.')));
+			$domain = HtmlDocument()->getDomain();
+			echo json_encode(substr($domain, 0, strpos($domain, '.')));
 
-					?>,
+			?>,
 					collective:<?php echo json_encode($this->communityCollective()); ?>,
 					teams:[<?php echo json_encode($this->communityCollective()); ?>],
 					territories:<?php echo json_encode($this->listTerritories()); ?>,
@@ -261,7 +247,7 @@ core\EventListener {
 
 
 			</script><?php
-		});
+});
 
 		IncludeJS(__DIR__ . '/js/DashboardConfig.js');
 		IncludeJS(__DIR__ . '/js/DashboardPageLayout.js');
@@ -271,6 +257,8 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/OrganizationalUnit.js');
 		IncludeJS(__DIR__ . '/js/NamedCategory.js');
 		IncludeJS(__DIR__ . '/js/NamedCategoryList.js');
+
+		IncludeJS(__DIR__ . '/js/ConfigItem.js');
 
 		IncludeJS(__DIR__ . '/js/MainNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/ProjectsOverviewNavigationMenu.js');
@@ -293,11 +281,11 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/ItemFlags.js');
 		IncludeJS(__DIR__ . '/js/ItemEvents.js');
 		IncludeJS(__DIR__ . '/js/ItemStars.js');
-		IncludeJS(__DIR__ . '/js/ItemDiscussion.js');		
-		IncludeJS(__DIR__ . '/js/ItemContact.js');		
-		IncludeJS(__DIR__ . '/js/ItemNavigationTagLinks.js');	
-		IncludeJS(__DIR__ . '/js/ItemCategories.js');	
-		
+		IncludeJS(__DIR__ . '/js/ItemDiscussion.js');
+		IncludeJS(__DIR__ . '/js/ItemContact.js');
+		IncludeJS(__DIR__ . '/js/ItemNavigationTagLinks.js');
+		IncludeJS(__DIR__ . '/js/ItemCategories.js');
+
 		IncludeJS(__DIR__ . '/js/Project.js');
 
 		IncludeJS(__DIR__ . '/js/GuestProject.js');
@@ -318,8 +306,6 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/UserIcon.js');
 		IncludeJS(__DIR__ . '/js/LayerGroup.js');
 	}
-
-	
 
 	protected function onActivateEmailForGuestProposal($params) {
 
@@ -368,12 +354,12 @@ core\EventListener {
 			->scanPostForEventTriggers($params);
 
 	}
-	public function getActiveProjectList($filter=array()) {
+	public function getActiveProjectList($filter = array()) {
 
 		return $this->getProjectList(array_merge($filter, array('status' => array('value' => 'archived', 'comparator' => '!='))));
 
 	}
-	public function getArchivedProjectList($filter=array()) {
+	public function getArchivedProjectList($filter = array()) {
 
 		return $this->getProjectList(array_merge($filter, array('status' => 'archived')));
 
@@ -393,16 +379,11 @@ core\EventListener {
 
 	}
 
-
-
-
-
-	protected function onTriggerUpdateProjectList($params){
+	protected function onTriggerUpdateProjectList($params) {
 		$this->cache()->cacheProjectsMetadataList($params->filter);
 	}
 
-	public function listProjectsMetadata($filter){
-
+	public function listProjectsMetadata($filter) {
 
 		$database = GetPlugin('ReferralManagement')->getDatabase();
 		$results = $database->getAllProposals($filter);
@@ -421,8 +402,6 @@ core\EventListener {
 			return $project;
 
 		}, $results);
-
-
 
 	}
 
@@ -603,10 +582,9 @@ core\EventListener {
 
 	public function setChildProjectsForProject($pid, $childProjects) {
 
-
 		GetPlugin('Attributes');
 		(new attributes\Record('proposalAttributes'))->setValues($pid, 'ReferralManagement.proposal', array(
-			'childProjects' =>json_encode($childProjects),
+			'childProjects' => json_encode($childProjects),
 		));
 
 		Emit('onSetChildProjectsForProject', array(
@@ -615,8 +593,6 @@ core\EventListener {
 		));
 
 	}
-
-
 
 	public function addProjectToProject($child, $project) {
 
@@ -641,11 +617,10 @@ core\EventListener {
 	public function removeProjectFromProject($child, $project) {
 
 		$childProjects = $this->getChildProjectsForProject($project);
-		
 
 		$childProjects = array_filter($childProjects, function ($item) use ($child, $project) {
 
-			if (($item == $child )) {
+			if (($item == $child)) {
 
 				Emit('onRemoveTeamMemberFromProject', array(
 					'project' => $project,
@@ -663,9 +638,6 @@ core\EventListener {
 		return $childProjects;
 
 	}
-
-
-
 
 	public function addTeamMemberToProject($user, $project) {
 
@@ -926,14 +898,14 @@ core\EventListener {
 			//show all users;
 			return function (&$userMetadata) {
 
-				if(is_array($userMetadata)){
+				if (is_array($userMetadata)) {
 					$userMetadata['visibleBecuase'] = "You are admin";
 				}
 
-				if(is_object($userMetadata)){
+				if (is_object($userMetadata)) {
 					$userMetadata->visibleBecuase = "You are admin";
 				}
-				
+
 				return true;
 			};
 
@@ -948,12 +920,12 @@ core\EventListener {
 
 			return function ($userMetadata) use ($clientMetadata, $groupCommunity) {
 
-				if ($clientMetadata['community'] === $groupCommunity ) {
-					$userMetadata->visibleBecuase = "your ".$groupCommunity;
+				if ($clientMetadata['community'] === $groupCommunity) {
+					$userMetadata->visibleBecuase = "your " . $groupCommunity;
 					return true;
 				}
 
-				if (/*$userMetadata->community === $groupCommunity ||*/ $userMetadata->community === $clientMetadata['community']) {
+				if ( /*$userMetadata->community === $groupCommunity ||*/$userMetadata->community === $clientMetadata['community']) {
 					$userMetadata->visibleBecuase = "same community";
 					return true;
 				}
@@ -965,13 +937,12 @@ core\EventListener {
 
 		return function ($userMetadata) use ($clientMetadata, $managerRoles, $groupCommunity) {
 
-
-			if ($clientMetadata['community'] === $groupCommunity ) {
-				$userMetadata->visibleBecuase = "your admin/".$groupCommunity;
+			if ($clientMetadata['community'] === $groupCommunity) {
+				$userMetadata->visibleBecuase = "your admin/" . $groupCommunity;
 				return true;
 			}
 
-			// 
+			//
 			// if ($userMetadata->community === $groupCommunity) {
 			// 	$userMetadata->visibleBecuase = "they're wabun";
 			// 	return true;
@@ -1023,21 +994,17 @@ core\EventListener {
 
 		return function (&$item) use ($clientId, $clientMetadata) {
 
-
-
-			$nationsInvolved=$item->attributes->firstNationsInvolved;
-			if(empty($nationsInvolved)){
-				$nationsInvolved=array();
+			$nationsInvolved = $item->attributes->firstNationsInvolved;
+			if (empty($nationsInvolved)) {
+				$nationsInvolved = array();
 			}
 
-			$nationsInvolved=array_map(function ($community) {return strtolower($community);}, $nationsInvolved);
-			
-			$collective=$this->communityCollective();
-			if(!in_array($collective, $nationsInvolved)){
-				$nationsInvolved[]=$collective;
+			$nationsInvolved = array_map(function ($community) {return strtolower($community);}, $nationsInvolved);
+
+			$collective = $this->communityCollective();
+			if (!in_array($collective, $nationsInvolved)) {
+				$nationsInvolved[] = $collective;
 			}
-
-
 
 			if (in_array(strtolower($clientMetadata['community']), $nationsInvolved)) {
 				//error_log("Your community is involved ".$item['id']);
@@ -1057,7 +1024,6 @@ core\EventListener {
 
 			return false;
 		};
-
 
 	}
 
@@ -1119,10 +1085,9 @@ core\EventListener {
 
 		return array_map(function ($u) {
 
-
 			$user = $this->getUsersMetadata($u);
 
-			$user['devices']=GetPlugin('Apps')->getUsersDeviceIds($u['id']);
+			$user['devices'] = GetPlugin('Apps')->getUsersDeviceIds($u['id']);
 			return $user;
 
 		}, $list);
