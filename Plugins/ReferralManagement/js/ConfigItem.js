@@ -29,7 +29,7 @@ var ConfigItem = (function() {
 
 
         var div = new Element('div', {
-            html: item.getHeading()
+            html: item.getHeading(),
             'class': item.getClassName()
 
         });
