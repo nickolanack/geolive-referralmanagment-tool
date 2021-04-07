@@ -6,6 +6,8 @@ class ListItemCache {
 
 	public function cacheProjectsMetadataList($filter) {
 
+		Broadcast('cacheprojects', 'update', array('params' => $params));
+
 		$filterHash = md5(json_encode($filter));
 		$filter = json_decode(json_encode($filter), true); //decode as array!
 
@@ -61,6 +63,8 @@ class ListItemCache {
 
 	public function cacheUsersMetadataList($params) {
 
+		Broadcast('cacheusers', 'update', array('params' => $params));
+
 		$cacheName = "ReferralManagement.userList.json";
 		$cacheData = HtmlDocument()->getCachedPage($cacheName);
 
@@ -71,6 +75,7 @@ class ListItemCache {
 		if ($newData != $cacheData) {
 			$this->notifier()->onTeamUserListChanged($params->team);
 		}
+
 		Emit('onUpdateUserList', array());
 	}
 
