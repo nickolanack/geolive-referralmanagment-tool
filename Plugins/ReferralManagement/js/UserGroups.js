@@ -245,7 +245,9 @@ var UserGroups = (function() {
 
 	UserGroups.ClientRoleInformation = function() {
 
-		var text = "<span class=\"section-title\">My community and user roles</span><br/>"
+		var title = "<span class=\"section-title\">My community and user roles</span><br/>"
+
+		var text="";
 		if (AppClient.getUserType() === "admin") {
 			text = text + "You are a Site Administrator so you can see all " + ReferralManagementDashboard.getLabelForMember() + "s from all communities (and set user roles). The following description of your role would apply if you were a regular user. <br/>"
 		}
@@ -258,7 +260,7 @@ var UserGroups = (function() {
 
 			var usersCommunities = "`" + user.getCommunity()+"`";
 			if (user.getCommunity() != UserGroups.GetCollective()) {
-				usersCommunities += " and `wabun`";
+				usersCommunities += " and `"+UserGroups.GetCollective()+"`";
 			}
 
 
@@ -276,7 +278,18 @@ var UserGroups = (function() {
 		}
 
 
-		return "<p class=\"hint\">" + text + "</p>";
+
+		
+		var p=new Element('p',{
+			"class":"hint",
+			"html":title+text
+		});
+
+
+		return p;
+
+		//HtmlContent.MakeInfoButtonModule();
+		//return "<p class=\"hint\">" + title+text + "</p>";
 	};
 
 
