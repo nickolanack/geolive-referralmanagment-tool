@@ -67,6 +67,7 @@ class ListItemCache {
 			'params' => $params,
 			'client' => GetClient()->getUserName(),
 			'domain' => HtmlDocument()->getDomain(),
+			'caller' => get_class() . ' -> ' . __METHOD__,
 
 		));
 
