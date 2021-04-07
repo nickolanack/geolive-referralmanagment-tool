@@ -73,8 +73,8 @@ class ListItemCache {
 			'domain' => HtmlDocument()->getDomain(),
 			'caller' => get_class() . ' -> ' . __METHOD__,
 			'time' => time(),
-			'cache' => array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile)),
-			'status'=>'check'
+			'cache' => array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
+			'status' => 'check',
 		));
 
 		$users = GetPlugin('ReferralManagement')->listAllUsersMetadata();
@@ -91,8 +91,8 @@ class ListItemCache {
 				'domain' => HtmlDocument()->getDomain(),
 				'caller' => get_class() . ' -> ' . __METHOD__,
 				'time' => time(),
-				'cache' => array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile)),
-				'status'=>'write'
+				'cache' => array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
+				'status' => 'write',
 			));
 
 			return;
@@ -104,10 +104,9 @@ class ListItemCache {
 			'domain' => HtmlDocument()->getDomain(),
 			'caller' => get_class() . ' -> ' . __METHOD__,
 			'time' => time(),
-			'cache' => array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile)),
-			'status'=>'skip'
+			'cache' => array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
+			'status' => 'skip',
 		));
-
 
 	}
 
