@@ -352,7 +352,7 @@ class Notifications {
 
 	public function onCreateDefaultTasks($taskIdList, $json) {
 
-		$this->on('create.default.tasks', 
+		$this->on('create.default.tasks',
 			array(
 				"items" => array_map(
 					function ($taskId) {
@@ -362,25 +362,23 @@ class Notifications {
 						);
 					},
 					$taskIdList
-				)
+				),
 			),
 			$json
 		);
 
 	}
 
-
-	public function onProjectListChanged($data=array()){
-		Broadc, 'update', array_merge($data, array()));
+	public function onProjectListChanged($data = array()) {
+		Broadcast('projectlist', 'update', array_merge($data, array()));
 	}
 
-	public function onTeamUserListChanged($team, $data=array()){
-		Broadcast('userlist', 'update', array_merge($data, array('team'=>$team)));
+	public function onTeamUserListChanged($team, $data = array()) {
+		Broadcast('userlist', 'update', array_merge($data, array('team' => $team)));
 	}
-	public function onTeamDeviceListChanged($team, $data=array()){
-		Broadcast('devicelist', 'update', array_merge($data, array('team'=>$team)));
+	public function onTeamDeviceListChanged($team, $data = array()) {
+		Broadcast('devicelist', 'update', array_merge($data, array('team' => $team)));
 	}
-
 
 	public function onAddTeamMemberToTask($user, $task) {
 
@@ -403,9 +401,8 @@ class Notifications {
 
 	private function broadcastProjectUpdate($projectId) {
 
-
 		Broadcast('proposals', 'update', array(
-			'updated'=>array($projectId)
+			'updated' => array($projectId),
 		));
 
 		Broadcast('proposal.' . $projectId, 'update', array(
@@ -413,15 +410,12 @@ class Notifications {
 			'updated' => array((new \ReferralManagement\Project())->fromId($projectId)->toArray()),
 		));
 
-
-
 	}
 
 	private function broadcastTaskUpdate($taskId) {
 
 		$proposal = (new \ReferralManagement\Task())->fromId($taskId)->getItemId();
 		$this->broadcastProjectUpdate($proposal);
-		
 
 	}
 
