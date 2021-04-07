@@ -7,6 +7,7 @@ var AdminMonitor=(function(){
 
 			channels.forEach(function(channel){
 				AjaxControlQuery.Subscribe(channel, function(event){
+					console.log(channel);
 					console.log(event);
 				})
 			})
