@@ -72,7 +72,7 @@ var DashboardUser = (function() {
 			var roles = this.getRoles();
 	
 			if (roles.length) {
-				return (UserGroups.GetManagerRoles()).indexOf(roles[0]) >= 0;
+				return UserGroups.GetManagerRoles().indexOf(roles[0]) >= 0;
 			}
 
 			return false;
@@ -84,7 +84,7 @@ var DashboardUser = (function() {
 
 			if (roles.length) {
 
-				return (UserGroups.GetTeamMemberRoles()).indexOf(roles[0]) >= 0;
+				return UserGroups.GetTeamMemberRoles().indexOf(roles[0]) >= 0;
 			}
 
 			return false;
@@ -108,7 +108,7 @@ var DashboardUser = (function() {
 			var roles = this.getRoles();
 
 			if (roles.length) {
-				return (UserGroups.GetAllRoles().indexOf(roles[0]) == -1;
+				return UserGroups.GetAllRoles().indexOf(roles[0]) == -1;
 			}
 
 			return true;
