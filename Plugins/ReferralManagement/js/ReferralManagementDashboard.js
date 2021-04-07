@@ -655,39 +655,15 @@ var ReferralManagementDashboard = (function() {
 		},
 
 
-
+		/*
+		 * @deprecated
+		 */
 		getUsersTeamMembersDescription: function() {
-
-			var text = "<span class=\"section-title\">My community and user roles</span><br/>"
-			if (AppClient.getUserType() === "admin") {
-				text = text + "You are a Site Administrator so you can see all " + ReferralManagementDashboard.getLabelForMember() + "s from all communities (and set user roles). The following description of your role would apply if you were a regular user. <br/>"
-			}
-
-
-			var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
-
-			if (user.isTeamManager()) {
-				text = text + "You are a " + ReferralManagementDashboard.getLabelForManager() + ". " +
-					"You can see the " + ReferralManagementDashboard.getLabelForMember() + "s in your community, `" + user.getCommunity() + "` and `wabun`, as well as " + ReferralManagementDashboard.getLabelForManager() + "s accross communities. " +
-					"<br/>You can share individual projects with other communities by adding a " + ReferralManagementDashboard.getLabelForManager() + " from another community to a specific project, (There are other ways to collaborate)." +
-					"<br/> You can asign users to the following roles: " +
-					(user.getRolesUserCanAssign().map(function(r) {
-						return '`' + ReferralManagementDashboard.getLabelForUserRole(r) + '`';
-					}).join(', ')) + '. As long as they are in your community, and have a lower role than `' + ReferralManagementDashboard.getLabelForUserRole(user.getRole()) + '`';
-			} else {
-				text = text + "You are a " + ReferralManagementDashboard.getLabelForMember() + ". " +
-					"You can see other lands department members in your own community, `" + user.getCommunity() + "` and `wabun`. ";
-			}
-
-
-			return "<p class=\"hint\">" + text + "</p>";
+			return UserGroups.ClientRoleInformation();
 		},
 
 		getUsersCommunityMembersDescription: function() {
-
 			return "<p>You can approve new site users.</p>"
-
-
 		},
 
 
