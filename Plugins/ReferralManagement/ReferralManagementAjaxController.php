@@ -32,6 +32,16 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				'channel' => 'devicelist',
 				'event' => 'update',
 			),
+
+			array(
+				'channel' => 'cacheusers',
+				'event' => 'update',
+			),
+
+			array(
+				'channel' => 'cacheproject',
+				'event' => 'update',
+			),
 		),
 		);
 	}
