@@ -149,7 +149,7 @@ var UserGroups=(function(){
 			}
 
 			var clientCanEditUserRole = function(r) {
-				return ((rolesEditList.indexOf(r) >= 0 && clientsMinEditRoleIndex <= itemsMinRoleIndex) || (r == UserGroup.EmptyGroup() && rolesEditList.length));
+				return ((rolesEditList.indexOf(r) >= 0 && clientsMinEditRoleIndex <= itemsMinRoleIndex) || (r == UserGroups.EmptyGroup() && rolesEditList.length));
 			}
 
 			var clientCanEditUserCommunity = function() {
