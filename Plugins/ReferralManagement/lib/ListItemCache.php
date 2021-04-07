@@ -7,7 +7,7 @@ class ListItemCache {
 	public function cacheProjectsMetadataList($filter) {
 
 		$filterHash = md5(json_encode($filter));
-		$filter=json_decode(json_encode($filter),true); //decode as array!
+		$filter = json_decode(json_encode($filter), true); //decode as array!
 
 		$cacheName = 'ReferralManagement.projectList.' . $filterHash . '.json';
 		$cacheData = HtmlDocument()->getCachedPage($cacheName);

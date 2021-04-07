@@ -371,7 +371,7 @@ class Notifications {
 
 
 	public function onProjectListChanged($data=array()){
-		Broadcast('projectlist', 'update', array_merge($data, array()));
+		Broadc, 'update', array_merge($data, array()));
 	}
 
 	public function onTeamUserListChanged($team, $data=array()){

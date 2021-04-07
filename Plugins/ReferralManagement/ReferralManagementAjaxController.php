@@ -17,10 +17,28 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	}
 
+	protected function getAdminChannels($json) {
+
+		return array('channels' => array(
+			array(
+				'channel' => 'proposals',
+				'event' => 'update'
+			),
+			array(
+				'channel' => 'userList',
+				'event' => 'update'
+			),
+			array(
+				'channel' => 'devicelist',
+				'event' => 'update'
+			)
+		);
+	}
+
 	protected function getDashboardConfig($json) {
 
-		return array('parameters'=>array_merge(
-			GetWidget('dashboardConfig')->getConfigurationValues(), 
+		return array('parameters' => array_merge(
+			GetWidget('dashboardConfig')->getConfigurationValues(),
 			GetWidget('dashboardContentConfig')->getConfigurationValues()
 		));
 	}
@@ -30,18 +48,17 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		include_once __DIR__ . '/lib/UserRoles.php';
 
 		return array(
-			'roles'=>(new \ReferralManagement\UserRoles())->listRoles(),
-			'icons'=>(new \ReferralManagement\UserRoles())->listRoleIcons()
+			'roles' => (new \ReferralManagement\UserRoles())->listRoles(),
+			'icons' => (new \ReferralManagement\UserRoles())->listRoleIcons(),
 		);
 	}
 
-
-	protected function listLayerItems($json){
+	protected function listLayerItems($json) {
 
 		return GetWidget('layerGroups')->getAjaxController()->executeTask('get_configuration', $json);
 
 	}
-	
+
 	protected function saveTeamMemberPermissions($json) {
 
 		//$projectData=$this->getPlugin()->getProposal($json->project);
@@ -89,32 +106,29 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		$response = array(
 			'results' => $this->getPlugin()->getActiveProjectList(),
-			'debug'=> $this->getPlugin()->cache()->getProjectsListCacheStatus(
+			'debug' => $this->getPlugin()->cache()->getProjectsListCacheStatus(
 				array('status' => array('value' => 'archived', 'comparator' => '!='))),
 		);
 
 		//$userCanSubscribe = GetClient()->isAdmin();
 		//if ($userCanSubscribe) {
-			$response['subscription'] = array(
-				'channel' => 'proposals',
-				'event' => 'update',
-			);
+		$response['subscription'] = array(
+			'channel' => 'proposals',
+			'event' => 'update',
+		);
 		//}
 
 		return $response;
 
 	}
 
-
-	protected function projectSearch( $json) {
-
+	protected function projectSearch($json) {
 
 		GetPlugin('Attributes');
-		return array('results'=>(new \attributes\RecordQuery('proposalAttributes'))->searchValues($json->search->name, 'title'));
-
+		return array('results' => (new \attributes\RecordQuery('proposalAttributes'))->searchValues($json->search->name, 'title'));
 
 		$response = array('results' => $this->getPlugin()->getActiveProjectList(array(
-			'LIMIT'=>5
+			'LIMIT' => 5,
 		)));
 
 		return $response;
@@ -123,35 +137,29 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	protected function getProject($json) {
 
+		$response = array('results' => GetPlugin('ReferralManagement')->listProjectsMetadata(array('id' => $json->project)));
 
-
-		$response = array('results' => GetPlugin('ReferralManagement')->listProjectsMetadata(array('id'=>$json->project)));
-
-			//$this->getPlugin()->getProjectList(array('id'=>$json->project)));
+		//$this->getPlugin()->getProjectList(array('id'=>$json->project)));
 
 		return $response;
 
 	}
 
-
-	protected function getProjectLayers($json){
+	protected function getProjectLayers($json) {
 
 		/**
 		 * TODO: Projects will have additional editable layers
 		 */
-		
 
 	}
 
-	protected function getCommunityLayers($json){
+	protected function getCommunityLayers($json) {
 
 		/**
 		 * TODO: Communities will have additional private layers
 		 */
-		
-	}
 
-	
+	}
 
 	protected function addDocument($json) {
 
@@ -306,9 +314,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	protected function saveTask($json) {
 
-		
-		if (key_exists('id', $json)&& (int) $json->id > 0) {
-
+		if (key_exists('id', $json) && (int) $json->id > 0) {
 
 			if (!Auth('write', $json->id, 'Tasks.task')) {
 				return $this->setError('No access or does not exist');
@@ -358,16 +364,14 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		}, $taskIds));
 	}
 
-
 	protected function getUser($json) {
 
-		$user=$this->getPlugin()->getUsersMetadata($json->id);
+		$user = $this->getPlugin()->getUsersMetadata($json->id);
 
 		return array(
-			
-			"result" =>$user
-		);
 
+			"result" => $user,
+		);
 
 	}
 
@@ -378,7 +382,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				'channel' => 'userlist',
 				'event' => 'update',
 			),
-			"results" =>$this->getPlugin()->getClientsUserList() //,
+			"results" => $this->getPlugin()->getClientsUserList(), //,
 			//"communities"=>$this->getPlugin()->listCommunities()
 		);
 	}
@@ -386,12 +390,12 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 	protected function listDevices() {
 
 		return array(
-			'subscription' =>array(
+			'subscription' => array(
 				'channel' => 'devicelist',
 				'event' => 'update',
 			),
-			"debug"=>$this->getPlugin()->cache()->getDeviceListCacheStatus(),
-			"results" => $this->getPlugin()->getClientsDeviceList()
+			"debug" => $this->getPlugin()->cache()->getDeviceListCacheStatus(),
+			"results" => $this->getPlugin()->getClientsDeviceList(),
 		);
 	}
 
@@ -399,8 +403,8 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		$response = array(
 			'results' => $this->getPlugin()->getArchivedProjectList(),
-			'debug'=> $this->getPlugin()->cache()->getProjectsListCacheStatus(
-				array('status' => 'archived'))
+			'debug' => $this->getPlugin()->cache()->getProjectsListCacheStatus(
+				array('status' => 'archived')),
 		);
 		return $response;
 
@@ -471,7 +475,6 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		}
 
 	}
-	
 
 	protected function generateReport($json) {
 
@@ -533,7 +536,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 	protected function getReserveMetadata($json) {
 
 		GetPlugin('Maps');
-		$marker =(new \spatial\FeatureLoader())->fromId($json->id);
+		$marker = (new \spatial\FeatureLoader())->fromId($json->id);
 
 		$str = $marker->getDescription();
 
@@ -586,17 +589,16 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	protected function exportProposals($json) {
 
+		include_once __DIR__ . '/lib/Export.php';
+		$export = (new \ReferralManagement\Export());
 
-		include_once __DIR__.'/lib/Export.php';
-		$export=(new \ReferralManagement\Export());
-
-		if(key_exists('secret', $json)&&$json->secret===$this->getPlugin()->getParameter('exportSecret')){
+		if (key_exists('secret', $json) && $json->secret === $this->getPlugin()->getParameter('exportSecret')) {
 			$export->showAllProposals();
 		}
 
 		$export->exportProposals();
 
-		if(key_exists('format',$json)&&$json->format=='json'){
+		if (key_exists('format', $json) && $json->format == 'json') {
 			return $export->toArrayResult();
 		}
 
@@ -605,7 +607,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	}
 
-	protected function addItemProject($json){
+	protected function addItemProject($json) {
 		if (!Auth('write', $json->item, $json->type)) {
 			return $this->setError('No access or does not exist');
 		}
@@ -616,12 +618,10 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			);
 		}
 
-		
-
 		throw new Exception('Invalid type');
 	}
 
-	protected function removeItemProject($json){
+	protected function removeItemProject($json) {
 		if (!Auth('write', $json->item, $json->type)) {
 			return $this->setError('No access or does not exist');
 		}
@@ -632,11 +632,8 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			);
 		}
 
-		
-
 		throw new Exception('Invalid type');
 	}
-
 
 	protected function addItemUser($json) {
 
@@ -696,7 +693,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		}
 
 		$starUsers = array_diff($starUsers, array(GetClient()->getUserId()));
-		
+
 		if ($json->starred) {
 			$starUsers = array_merge($starUsers, array(GetClient()->getUserId()));
 		}
@@ -771,8 +768,8 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 				return $this->setError('Target user: ' . json_encode($userRoles) . ' is not in role that is editable by user: ' . json_encode($canSetList));
 			}
 
-			(new \core\LongTaskProgress())->throttle('onTriggerUpdateDevicesList', array('team' => 1),array('interval'=>30));
-			(new \core\LongTaskProgress())->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval'=>30));
+			(new \core\LongTaskProgress())->throttle('onTriggerUpdateDevicesList', array('team' => 1), array('interval' => 30));
+			(new \core\LongTaskProgress())->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval' => 30));
 
 		}
 
@@ -798,168 +795,144 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	}
 
-
-	protected function usersOnline(){
-
+	protected function usersOnline() {
 
 		return array(
-			'results'=>GetClient()->isOnlineGroup(array_map(function($user){
+			'results' => GetClient()->isOnlineGroup(array_map(function ($user) {
 				return $user->id;
-			}, $this->getPlugin()->getClientsUserList()))
+			}, $this->getPlugin()->getClientsUserList())),
 		);
-		
+
 	}
 
+	protected function devicesOnline() {
 
-	protected function devicesOnline(){
-
-		$deviceIds=array();
-		foreach($this->getPlugin()->getClientsDeviceList() as $user){
-			foreach($user->devices as $deviceId){
-				$deviceIds[]=$deviceId;
+		$deviceIds = array();
+		foreach ($this->getPlugin()->getClientsDeviceList() as $user) {
+			foreach ($user->devices as $deviceId) {
+				$deviceIds[] = $deviceId;
 			}
 		}
 
-		$devicesOnlineStatus=GetPlugin('Apps')->isOnlineGroup($deviceIds);
-
-
-
+		$devicesOnlineStatus = GetPlugin('Apps')->isOnlineGroup($deviceIds);
 
 		return array(
-			'extra'=>$devicesOnlineStatus,
+			'extra' => $devicesOnlineStatus,
 
-			'results'=>array_map(function($device)use($devicesOnlineStatus){
+			'results' => array_map(function ($device) use ($devicesOnlineStatus) {
 
-			
-
-
-			$anyOnline=false;
-			foreach ($devicesOnlineStatus as $deviceStatus) {
-				if($deviceStatus->online&&in_array($deviceStatus->id, $device->devices)){
-					$anyOnline=true;
-					break;
+				$anyOnline = false;
+				foreach ($devicesOnlineStatus as $deviceStatus) {
+					if ($deviceStatus->online && in_array($deviceStatus->id, $device->devices)) {
+						$anyOnline = true;
+						break;
+					}
 				}
-			}
 
-			return array(
-				'id'=>(int) $device->id,
-				'devices'=>$device->devices,
-				'online'=>$anyOnline
-			);
-			
-		}, $this->getPlugin()->getClientsDeviceList()));
-		
+				return array(
+					'id' => (int) $device->id,
+					'devices' => $device->devices,
+					'online' => $anyOnline,
+				);
+
+			}, $this->getPlugin()->getClientsDeviceList()));
+
 	}
 
+	protected function getServerConfig($json) {
 
-	protected function getServerConfig($json){
-
-		if(!key_exists('server', $json)){	
+		if (!key_exists('server', $json)) {
 			return $this->setError('Invalid server');
 		}
 
-		$server=$json->server;
-		$controller=\rmt\DomainController::SharedInstance();
-		if(!$controller){
+		$server = $json->server;
+		$controller = \rmt\DomainController::SharedInstance();
+		if (!$controller) {
 			return $this->setError("No controller exists");
 		}
 
-
-
-
 		return array(
-			'info'=>$controller->getDomainInfo($server)
+			'info' => $controller->getDomainInfo($server),
 		);
 	}
 
+	protected function listDepartments($json) {
 
-	protected function listDepartments($json){
+		$deps = array_map(function ($department) {
 
-		$deps=array_map(function($department){
-
-
-				return $department;
-			}, $this->getPlugin()->getDatabase()->getDepartments());
+			return $department;
+		}, $this->getPlugin()->getDatabase()->getDepartments());
 
 		return array(
-			'departments'=>$deps?$deps:array()
+			'departments' => $deps ? $deps : array(),
 		);
 	}
 
-	protected function listTags($json){
+	protected function listTags($json) {
 
-		$tags=array_map(function($category){
+		$tags = array_map(function ($category) {
 
-				$category->metadata=json_decode($category->metadata);
+			$category->metadata = json_decode($category->metadata);
 
-				$category->category=$category->type;
-				$category->color="#eeeeee";
-				if($category->metadata&&key_exists('color', $category->metadata)){
-					$category->color=$category->metadata->color;
-				}
+			$category->category = $category->type;
+			$category->color = "#eeeeee";
+			if ($category->metadata && key_exists('color', $category->metadata)) {
+				$category->color = $category->metadata->color;
+			}
 
-				$category->shortName=$category->shortName?$category->shortName:$category->name;
+			$category->shortName = $category->shortName ? $category->shortName : $category->name;
 
-				unset($category->metadata);
-				unset($category->type);
+			unset($category->metadata);
+			unset($category->type);
 
-				return $category;
-			}, $this->getPlugin()->getDatabase()->getCategorys());
+			return $category;
+		}, $this->getPlugin()->getDatabase()->getCategorys());
 
 		return array(
-			'tags'=>$tags?$tags:array()
+			'tags' => $tags ? $tags : array(),
 		);
 	}
 
+	protected function saveTag($json) {
 
-	protected function saveTag($json){
-
-		$updateData=array(
-			'name'=>$json->name,
-			'shortName'=>$json->shortName?$json->shortName:$json->name,
-			'description'=>$json->description,
-			'type'=>$json->category,
-			'metadata'=>json_encode(array('color'=>$json->color))
+		$updateData = array(
+			'name' => $json->name,
+			'shortName' => $json->shortName ? $json->shortName : $json->name,
+			'description' => $json->description,
+			'type' => $json->category,
+			'metadata' => json_encode(array('color' => $json->color)),
 		);
 
+		if (key_exists('id', $json)) {
 
-		if(key_exists('id',$json)){
-
-			$updateData['id']=$json->id;
+			$updateData['id'] = $json->id;
 			$this->getPlugin()->getDatabase()->updateCategory($updateData);
-			return array('tag'=>$updateData);
+			return array('tag' => $updateData);
 		}
 
-
-		$updateData['id']=$this->getPlugin()->getDatabase()->createCategory($updateData);
-		return array('tag'=>$updateData);
-
+		$updateData['id'] = $this->getPlugin()->getDatabase()->createCategory($updateData);
+		return array('tag' => $updateData);
 
 	}
 
-	protected function saveDepartment($json){
+	protected function saveDepartment($json) {
 
-		$updateData=array(
-			'name'=>$json->name,
-			'description'=>$json->description,
-			'metadata'=>json_encode((object)array())
+		$updateData = array(
+			'name' => $json->name,
+			'description' => $json->description,
+			'metadata' => json_encode((object) array()),
 		);
 
+		if (key_exists('id', $json)) {
 
-		if(key_exists('id',$json)){
-
-			$updateData['id']=$json->id;
+			$updateData['id'] = $json->id;
 			$this->getPlugin()->getDatabase()->updateDepartment($updateData);
-			return array('department'=>$updateData);
+			return array('department' => $updateData);
 		}
 
-
-		$updateData['id']=$this->getPlugin()->getDatabase()->createDepartment($updateData);
-		return array('department'=>$updateData);
-
+		$updateData['id'] = $this->getPlugin()->getDatabase()->createDepartment($updateData);
+		return array('department' => $updateData);
 
 	}
-
-
 
 }
