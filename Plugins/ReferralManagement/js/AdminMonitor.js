@@ -3,7 +3,15 @@ var AdminMonitor=(function(){
 
 	var AdminMonitor=new Class({
 
+		initialize:function(channels){
 
+			channels.forEach(function(channel){
+				AjaxControlQuery.Subscribe(channels, function(event){
+					console.log(event);
+				})
+			})
+
+		}
 
 
 
@@ -18,7 +26,7 @@ var AdminMonitor=(function(){
 		'plugin': "ReferralManagement"
 	}))
 	.addEvent('success', function(result) {
-			
+			new AdminMonitor(result.channels);
 	})
 	.execute();
 
