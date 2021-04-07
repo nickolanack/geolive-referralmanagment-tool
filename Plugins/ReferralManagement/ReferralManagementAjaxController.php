@@ -22,16 +22,17 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		return array('channels' => array(
 			array(
 				'channel' => 'proposals',
-				'event' => 'update'
+				'event' => 'update',
 			),
 			array(
 				'channel' => 'userList',
-				'event' => 'update'
+				'event' => 'update',
 			),
 			array(
 				'channel' => 'devicelist',
-				'event' => 'update'
-			)
+				'event' => 'update',
+			),
+		),
 		);
 	}
 
