@@ -63,16 +63,19 @@ class ListItemCache {
 
 	public function cacheUsersMetadataList($params) {
 
+		$cacheName = "ReferralManagement.userList.json";
+		$cacheFile = HtmlDocument()->getCachedPageFile($cacheName);
+		$cacheData = HtmlDocument()->getCachedPage($cacheName);
+
 		Broadcast('cacheusers', 'update', array(
 			'params' => $params,
 			'client' => GetClient()->getUserName(),
 			'domain' => HtmlDocument()->getDomain(),
 			'caller' => get_class() . ' -> ' . __METHOD__,
-
+			'time' => time(),
+			'cache' => array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile)),
+			'status'=>'check'
 		));
-
-		$cacheName = "ReferralManagement.userList.json";
-		$cacheData = HtmlDocument()->getCachedPage($cacheName);
 
 		$users = GetPlugin('ReferralManagement')->listAllUsersMetadata();
 
@@ -80,9 +83,32 @@ class ListItemCache {
 		HtmlDocument()->setCachedPage($cacheName, $newData);
 		if ($newData != $cacheData) {
 			$this->notifier()->onTeamUserListChanged($params->team);
+			Emit('onUpdateUserList', array());
+
+			Broadcast('cacheusers', 'update', array(
+				'params' => $params,
+				'client' => GetClient()->getUserName(),
+				'domain' => HtmlDocument()->getDomain(),
+				'caller' => get_class() . ' -> ' . __METHOD__,
+				'time' => time(),
+				'cache' => array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile)),
+				'status'=>'write'
+			));
+
+			return;
 		}
 
-		Emit('onUpdateUserList', array());
+		Broadcast('cacheusers', 'update', array(
+			'params' => $params,
+			'client' => GetClient()->getUserName(),
+			'domain' => HtmlDocument()->getDomain(),
+			'caller' => get_class() . ' -> ' . __METHOD__,
+			'time' => time(),
+			'cache' => array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile)),
+			'status'=>'skip'
+		));
+
+
 	}
 
 	public function getUsersMetadataList() {
@@ -117,9 +143,8 @@ class ListItemCache {
 		HtmlDocument()->setCachedPage($cacheName, $newData);
 		if ($newData != $cacheData) {
 			$this->notifier()->onTeamDeviceListChanged($params->team);
+			Emit('onUpdateDevicesList', array());
 		}
-
-		Emit('onUpdateDevicesList', array());
 
 	}
 
