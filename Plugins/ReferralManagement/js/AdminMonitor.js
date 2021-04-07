@@ -1,6 +1,13 @@
 var AdminMonitor=(function(){
 
 
+
+	var options={
+		autoClose:false,
+		className:"debug"
+	}
+
+
 	var AdminMonitor=new Class({
 
 		initialize:function(channels){
@@ -11,7 +18,7 @@ var AdminMonitor=(function(){
 					console.log(event);
 
 					if(event&&event.status&&event.status==="write"){
-						NotificationBubble.Make("", channel.channel+" : "+event.status);
+						NotificationBubble.Make("", channel.channel+" : "+event.status, options);
 					}
 				})
 			})
