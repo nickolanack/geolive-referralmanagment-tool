@@ -18,7 +18,20 @@ var UserGroups = (function() {
 
 
 	UserGroups.GetAllRoles = function() {
-		return MainRoles.slice(0);
+		return 
+
+
+		var disabed = DashboardConfig.getValue('disabledRoles');
+
+		return MainRoles.filter(function(r){
+
+			if (disabed && disabed.indexOf(r) >= 0) {
+				return false;
+			}
+			return true;
+
+		});
+		
 	};
 
 
