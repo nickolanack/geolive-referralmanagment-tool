@@ -4,7 +4,9 @@ var AdminMonitor=(function(){
 
 	var options={
 		autoClose:false,
-		className:"debug"
+		className:"debug",
+		from:"bottom-right",
+		to:"top"
 	}
 
 
@@ -18,7 +20,7 @@ var AdminMonitor=(function(){
 					console.log(event);
 
 					if(event&&event.status&&event.status==="write"){
-						NotificationBubble.Make("", channel.channel+" : "+event.status, options);
+						NotificationBubble.Make("", channel.channel+" : "+event.status+" "+(event.interval||"~")+"s", options);
 					}
 				})
 			})
