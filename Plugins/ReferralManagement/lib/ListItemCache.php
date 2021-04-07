@@ -67,12 +67,14 @@ class ListItemCache {
 		$cacheFile = HtmlDocument()->getCachedPageFile($cacheName);
 		$cacheData = HtmlDocument()->getCachedPage($cacheName);
 
+		$start = time();
+
 		Broadcast('cacheusers', 'update', array(
 			'params' => $params,
 			'client' => GetClient()->getUserName(),
 			'domain' => HtmlDocument()->getDomain(),
 			'caller' => get_class() . ' -> ' . __METHOD__,
-			'time' => time(),
+			'time' => $start,
 			'cache' => array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
 			'status' => 'check',
 		));
@@ -91,6 +93,7 @@ class ListItemCache {
 				'domain' => HtmlDocument()->getDomain(),
 				'caller' => get_class() . ' -> ' . __METHOD__,
 				'time' => time(),
+				'interval' => time() - $start,
 				'cache' => array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
 				'status' => 'write',
 			));
@@ -104,6 +107,7 @@ class ListItemCache {
 			'domain' => HtmlDocument()->getDomain(),
 			'caller' => get_class() . ' -> ' . __METHOD__,
 			'time' => time(),
+			'interval' => time() - $start,
 			'cache' => array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
 			'status' => 'skip',
 		));
