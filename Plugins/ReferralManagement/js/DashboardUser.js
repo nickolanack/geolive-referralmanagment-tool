@@ -47,7 +47,12 @@ var DashboardUser = (function() {
 		},
 		getRolesUserCanAssign: function() {
 			var me = this;
-			return me.options.metadata['can-assignroles'];
+
+			var allRoles=UserGroups.GetAllRoles();
+
+			return me.options.metadata['can-assignroles'].filter(function(r){
+				return allRoles.indexOf(r)>=0;
+			})
 		},
 		
 		
