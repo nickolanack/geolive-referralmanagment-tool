@@ -309,6 +309,11 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/PostContent.js');
 		IncludeJS(__DIR__ . '/js/UserIcon.js');
 		IncludeJS(__DIR__ . '/js/LayerGroup.js');
+
+		if (GetClient()->isAdmin()) {
+			IncludeJS(__DIR__ . '/js/AdminMonitor.js');
+		}
+
 	}
 
 	protected function onActivateEmailForGuestProposal($params) {
