@@ -3604,6 +3604,46 @@ span.navigation-menu.settings-menu {
 .table-header {
     margin: 10px;
 }
+
+
+
+.bubble.debug {
+    color: black;
+    background-color: crimson;
+    text-shadow: none;
+    font-weight: bold;
+    text-align: left;
+}
+
+.bubble .description:after {
+    content: "\f00d";
+    position: absolute;
+    right: 7px;
+    font-family: 'FontAwesome';
+    font-size: 20px;
+    top: 7px;
+    background-color: rgba(255,255,255,0.2);
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 100%;
+    line-height: 30px;
+}
+
+.bubble .description:after {
+    background-color: rgba(0,0,0,0.3);
+}
+
+
+
+
+
+
+
+
+
+
+
     
     
     
