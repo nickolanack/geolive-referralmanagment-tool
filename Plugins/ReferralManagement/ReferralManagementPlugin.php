@@ -258,6 +258,8 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/NamedCategory.js');
 		IncludeJS(__DIR__ . '/js/NamedCategoryList.js');
 
+		IncludeJS(__DIR__ . '/js/GuestNavigationMenu.js');
+
 		IncludeJS(__DIR__ . '/js/UserGroups.js');
 		IncludeJS(__DIR__ . '/js/ConfigItem.js');
 

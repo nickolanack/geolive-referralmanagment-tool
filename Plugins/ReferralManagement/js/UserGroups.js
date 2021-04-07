@@ -256,9 +256,9 @@ var UserGroups = (function() {
 		if (user.isTeamManager()) {
 
 
-			var usersCommunities = "`" + user.getCommunity();
+			var usersCommunities = "`" + user.getCommunity()+"`";
 			if (user.getCommunity() != UserGroups.GetCollective()) {
-				usersCommunities += "` and `wabun`";
+				usersCommunities += " and `wabun`";
 			}
 
 

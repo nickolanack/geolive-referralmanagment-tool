@@ -686,74 +686,7 @@ var ReferralManagementDashboard = (function() {
 
 
 		createGuestDashboardNavigationController: function() {
-			return new NavigationMenuModule({
-				"User": [{
-						"name": "Login",
-						"viewOptions": {
-							"viewType": "form"
-						},
-						"class": "primary-btn"
-
-					}, {
-						"name": "Map",
-						"html": "View map",
-						"events": {
-							"click": function() {
-
-								$$('.public-map').setStyle('opacity', 1);
-								$$('.public-map').setStyle('pointer-events', 'auto');
-								$$('.login-form').setStyle('display', 'none');
-								$$('.public-menu').setStyle('display', 'none');
-
-							}
-						},
-						"class": "primary-btn",
-						"style": "background-color: crimson;"
-
-
-					}, {
-						"name": "About",
-						"viewOptions": {
-							"viewType": "view"
-						},
-						"class": "primary-btn"
-
-					}
-					// , {
-					//     "name":"Fork",
-					//     "html":"New Dashboard",
-					//     "viewOptions":{
-					//         "viewType":"view"
-					//     },
-					//     "class":"primary-btn"
-
-					// }
-				]
-			}, {
-				targetUIView: function(button, section, viewer) {
-					return viewer.getApplication().getChildView('content', 0).getChildView('content', 1);
-				},
-				templateView: function(button, section) {
-					return button.view || (section.toLowerCase() + (button.name || button.html) + "Detail");
-				},
-				buttonClass: function(button, section) {
-					return button["class"] || ("menu-" + section.toLowerCase() + "-" + (button.name || button.html).toLowerCase())
-				},
-				sectionClass: function(section) {
-					return "menu-" + section.toLowerCase()
-				},
-				// formatSectionLabel:function(section, labelEl){
-				//     if(section==='People'){
-				//         return 'Team';
-				//     }
-				// },
-				initialView: {
-					view: "Login",
-					section: "User"
-				},
-				"class": "public-menu"
-			});
-
+			return new GuestNavigationMenu(ReferralManagementDashboard.getApplication());
 
 		},
 
