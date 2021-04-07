@@ -258,7 +258,7 @@ var UserGroups = (function() {
 
 	UserGroups.ClientRoleInformation = function() {
 
-		var title = "<span class=\"section-title\">My community and user roles</span><br/>"
+		var title = "<span class=\"section-title\">My community and user roles</span>"
 
 		var text="";
 		if (AppClient.getUserType() === "admin") {
