@@ -118,7 +118,35 @@ var ProjectCalendar = (function() {
 		}
 	});
 
-	
+	ProjectCalendar.RenderCalendar=function(viewer, element, parentModule) {
+
+			var application = viewer.getApplication();
+			var calendar = new ProjectCalendar(application, viewer);
+
+
+			var renderList = function() {
+
+				// var listView = viewer.getChildView('content', 1);
+				// if (listView) {
+				// 	listView.redraw();
+				// }
+
+			};
+
+			calendar.addEvent("selectDay", function(day, el) {
+				//renderList();
+			});
+
+			ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+				calendar.addWeakEvent(team, "tasksChanged", function() {
+					calendar.redraw();
+					renderList();
+				})
+			});
+
+			return calendar;
+
+		};
 
 	
 

@@ -250,179 +250,22 @@ var ReferralManagementDashboard = (function() {
 
 
 		},
+
+		
+		/*
+		 * @deprecated
+		 */
 		createRoleEditModules: function(item) {
-			if ((item.isProjectMember && item.isProjectMember())) {
-				return null;
-			}
-
-			if (!item.isDevice) {
-				if (window.console) {
-					console.warn('Not a ReferralManagementUser');
-				}
-				return null;
-			}
-
-
-			var rolesEditList = ProjectTeam.GetRolesUserCanAssign();
-			var allRoles = ProjectTeam.GetAllRoles();
-
-			var itemsMinRoleIndex = Math.min.apply(null, item.getRoles().map(function(r) {
-				return allRoles.indexOf(r)
-			}));
-			var clientsMinEditRoleIndex = Math.min.apply(null, rolesEditList.map(function(r) {
-				return allRoles.indexOf(r)
-			}));
-
-			var communitiesUserCanEdit = ProjectTeam.GetCommunitiesUserCanEdit();
-			var itemsCommunity = item.getCommunity();
-
-			var addEmpty = false;
-			var foundActive = false;
-
-			var module = new ElementModule('ul', {
-				"class": "user-roles"
-			});
-
-			if (item.getId() == AppClient.getId()) {
-				module.runOnceOnLoad(function() {
-					module.viewer.getUIView().getElement().addClass('this-is-me');
-				});
-			}
-
-			var el = module.getElement();
-
-			var itemRoles = item.getRoles();
-
-			var els = [];
-
-			var userItemIsA = function(r) {
-				return item.getRoles().indexOf(r) >= 0 || (r == 'none' && item.getRoles().length == 0)
-			}
-
-			var clientCanEditUserRole = function(r) {
-				return ((rolesEditList.indexOf(r) >= 0 && clientsMinEditRoleIndex <= itemsMinRoleIndex) || (r == 'none' && rolesEditList.length));
-			}
-
-			var clientCanEditUserCommunity = function() {
-				return (communitiesUserCanEdit.indexOf(itemsCommunity) >= 0);
-			}
-
-			var clientHasNoCommunity = function() {
-				return itemsCommunity.toLowerCase()==="none";
-			}
-
-
-
-			var addRole = function(r) {
-
-
-				var disabed = DashboardConfig.getValue('disabledRoles');
-				if (disabed && disabed.indexOf(r) >= 0) {
-					return;
-				}
-
-				var roleEl = el.appendChild(new Element('li', {
-					"class": "role-" + r
-				}));
-				els.push(roleEl);
-				if (userItemIsA(r)) {
-					foundActive = true
-					roleEl.addClass("active");
-					el.setAttribute("data-user-role", r);
-					el.setAttribute("data-user-role-label", r);
-				}
-
-
-				var label = ReferralManagementDashboard.getLabelForUserRole(r);
-				var popover = function(text) {
-					new UIPopover(roleEl, {
-						description: text,
-						anchor: UIPopover.AnchorAuto()
-					});
-				}
-
-
-				if (clientHasNoCommunity()) {
-					popover(label + '<br/><span style="color:#ceb250;">users community must be set before<br/>thier user role can be changed</span>');
-					return;
-				}
-
-				if (!clientCanEditUserCommunity()) {
-					popover(label + '<br/><span style="color:#ceb250;">you do not have permission<br/>to set user roles for this community</span>');
-					return;
-				}
-
-
-
-				if (!clientCanEditUserRole(r)) {
-					popover(label + '<br/><span style="color:#ceb250;">you do not have permission<br/>to set users role</span>');
-					return;
-				}
-
-
-
-				addEmpty = true;
-				roleEl.addClass('selectable');
-				roleEl.addEvent('click', function() {
-					item.setRole(r, function() {
-						els.forEach(function(e) {
-							e.removeClass("active");
-						})
-						roleEl.addClass("active");
-					});
-				});
-
-				popover(label + '<br/><span style="color:cornflowerblue;">click to set users role</span>');
-
-
-
-			}
-
-
-			var roles = ProjectTeam.GetAllRoles().slice(0);
-			if (item.isDevice()) {
-				roles = [roles.pop()];
-			}
-
-			roles.forEach(addRole);
-			if (addEmpty) {
-				addRole('none');
-			}
-
-			return module;
-
+			return UserGroups.GetRoleSelectionModules(item);
 		},
 
 
 
+		/*
+		 * @deprecated
+		 */
 		renderCalendar: function(viewer, element, parentModule) {
-
-			var application = viewer.getApplication();
-			var calendar = new ProjectCalendar(application, viewer);
-
-
-			var renderList = function() {
-
-				// var listView = viewer.getChildView('content', 1);
-				// if (listView) {
-				// 	listView.redraw();
-				// }
-
-			};
-
-			calendar.addEvent("selectDay", function(day, el) {
-				//renderList();
-			});
-
-			ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
-				calendar.addWeakEvent(team, "tasksChanged", function() {
-					calendar.redraw();
-					renderList();
-				})
-			});
-
-			return calendar;
-
+			return ProjectCalendar.RenderCalendar(viewer, element, parentModule);
 		},
 
 

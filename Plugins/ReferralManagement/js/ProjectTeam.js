@@ -363,7 +363,7 @@ var ProjectTeam = (function() {
 			}
 
 			
-			var user=(new ReferralManagementUser({
+			var user=(new DashboardUser({
 
 				userType: "user",
 				id: data.id,
@@ -977,8 +977,11 @@ var ProjectTeam = (function() {
 
 	});
 
+	/*
+	 * @deprecated
+	 */
 	ProjectTeam.GetAllCommunities=function(){
-		return Community.communities;
+		return UserGroups.AllGroups();
 	}
 
 	ProjectTeam.LimitUserCommunityTagCloudValues= function(module) {
@@ -1044,7 +1047,7 @@ var ProjectTeam = (function() {
 
 
 	ProjectTeam.GetAllRoles=function(){
-		return ReferralManagementUser.GetMainRoles();
+		return UserGroups.GetAllRoles();
 	}
 
 	ProjectTeam.GetCommunitiesUserCanEdit=function(){
@@ -1054,7 +1057,7 @@ var ProjectTeam = (function() {
 
 		var community=user.getCommunity();
 
-		if(community===Community.collective){
+		if(community===UserGroups.GetCollective()){
 			return ProjectTeam.GetAllCommunities();
 		}
 

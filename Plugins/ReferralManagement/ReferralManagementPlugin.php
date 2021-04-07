@@ -258,6 +258,7 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/NamedCategory.js');
 		IncludeJS(__DIR__ . '/js/NamedCategoryList.js');
 
+		IncludeJS(__DIR__ . '/js/UserGroups.js');
 		IncludeJS(__DIR__ . '/js/ConfigItem.js');
 
 		IncludeJS(__DIR__ . '/js/MainNavigationMenu.js');
@@ -265,7 +266,7 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/ProjectNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/ProfileNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/MapNavigationMenu.js');
-		IncludeJS(__DIR__ . '/js/ReferralManagementUser.js');
+		IncludeJS(__DIR__ . '/js/DashboardUser.js');
 		IncludeJS(__DIR__ . '/js/MobileDeviceList.js');
 
 		IncludeJS(__DIR__ . '/js/ProjectQueries.js');

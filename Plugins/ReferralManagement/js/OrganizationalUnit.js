@@ -95,8 +95,7 @@ var OrganizationalUnit = (function() {
 				DashboardConfig.getValue('useCommunitiesAsDepartments', function(useCommunities){
 					if(useCommunities){
 
-						 callback(Community.territories.map(function(name) {
-							var name=String.capitalize.call(null, name.split('|').pop());
+						 callback(UserGroups.GetSubgroupsLocalized().map(function(name) {
 							return new OrganizationalUnit({
 								name:name,
 								description:"",

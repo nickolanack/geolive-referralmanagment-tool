@@ -250,16 +250,23 @@ var Project = (function() {
 	}
 
 
+	/*
+	 * @deprecated
+	 */
 	Project.ListTeams = function() {
-		return Community.teams;
+		return UserGroups.GetTeams();
 	}
 
+	/*
+	 * @deprecated
+	 */
 	Project.ListTerritories = function() {
-
-		return Community.territories.map(function(name) {
-			return String.capitalize.call(null, name)
-		});
+		return UserGroups.GetSubgroups();
 	}
+
+
+
+
 	Project.ListOutcomes = function() {
 		return ["Accepted", "Denied", "Declined", "Refuse", "Insufficient"];
 	}

@@ -1,21 +1,8 @@
-var ReferralManagementUser = (function() {
+var DashboardUser = (function() {
 
 
 
-	var MainRoles;
-
-
-	(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_user_roles', {
-		'plugin': "ReferralManagement"
-	}))
-	.addEvent('success', function(result) {
-			console.log(result);
-			MainRoles = result.roles;
-		})
-		.execute();
-
-
-	var ReferralManagementUser = new Class({
+	var DashboardUser = new Class({
 		Extends: CoreUser,
 		getEmail: function() {
 			var me = this;
@@ -62,35 +49,8 @@ var ReferralManagementUser = (function() {
 			var me = this;
 			return me.options.metadata['can-assignroles'];
 		},
-		isTeamMember: function() {
-			var me = this;
-			var roles = me.getRoles();
-
-			var allRoles = MainRoles.slice(0);
-			allRoles.pop();
-
-
-			if (roles.length) {
-
-
-
-				return (allRoles).indexOf(roles[0]) >= 0;
-			}
-
-			return false;
-		},
-		isCommunityMember: function() {
-			var me = this;
-			var roles = me.getRoles();
-
-			if (roles.length) {
-				return ([
-					"community-member"
-				]).indexOf(roles[0]) >= 0;
-			}
-
-			return false;
-		},
+		
+		
 		getCommunity: function() {
 			var me = this;
 			if (!me.options.metadata.name) {
@@ -121,12 +81,37 @@ var ReferralManagementUser = (function() {
 			var roles = me.getRoles();
 
 
-			var allRoles = MainRoles.slice(0);
-			allRoles.pop();
-			allRoles.pop();
-
+			var allRoles = UserGroups.GetManagerRoles();
+	
 			if (roles.length) {
 				return (allRoles).indexOf(roles[0]) >= 0;
+			}
+
+			return false;
+		},
+
+		isTeamMember: function() {
+			var me = this;
+			var roles = me.getRoles();
+			var allRoles = UserGroups.GetTeamMemberRoles();
+
+
+			if (roles.length) {
+
+				return (allRoles).indexOf(roles[0]) >= 0;
+			}
+
+			return false;
+		},
+
+		isCommunityMember: function() {
+			var me = this;
+			var roles = me.getRoles();
+
+			if (roles.length) {
+				return ([
+					UserGroups.GetCommunityMemberRole()
+				]).indexOf(roles[0]) >= 0;
 			}
 
 			return false;
@@ -228,19 +213,15 @@ var ReferralManagementUser = (function() {
 	});
 
 
-	ReferralManagementUser.GetMainRoles = function() {
-		return MainRoles.slice(0);
-	};
 
-
-	return ReferralManagementUser;
+	return DashboardUser;
 
 })();
 
 
 
 var TeamMember = new Class({
-	Extends: ReferralManagementUser,
+	Extends: DashboardUser,
 	isProjectMember: function() {
 		return true;
 	},
@@ -377,7 +358,7 @@ var TeamMember = new Class({
 
 
 var Device = new Class({
-	Extends: ReferralManagementUser,
+	Extends: DashboardUser,
 	isDevice: function() {
 		return true;
 	},

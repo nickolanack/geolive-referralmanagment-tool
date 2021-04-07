@@ -45,7 +45,7 @@ var UserIcon=(function(){
 
 				var user = item;
 
-				if (!(item instanceof ReferralManagementUser)) {
+				if (!(item instanceof DashboardUser)) {
 					if (ProjectTeam.CurrentTeam().hasUser((item.getUserId || item.getId).bind(item)())) {
 						user = ProjectTeam.CurrentTeam().getUser((item.getUserId || item.getId).bind(item)())
 					} else {
