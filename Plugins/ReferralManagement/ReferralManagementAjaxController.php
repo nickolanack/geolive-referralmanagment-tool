@@ -39,7 +39,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			),
 
 			array(
-				'channel' => 'cacheproject',
+				'channel' => 'cacheprojects',
 				'event' => 'update',
 			),
 		),
