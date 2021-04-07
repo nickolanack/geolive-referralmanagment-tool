@@ -282,8 +282,12 @@ var UserGroups = (function() {
 		
 		var p=new Element('p',{
 			"class":"hint",
-			"html":title+text
+			"html":title
 		});
+
+		p.appendChild(HtmlContent.MakeInfoButtonModule({
+			description:text
+		}));
 
 
 		return p;
