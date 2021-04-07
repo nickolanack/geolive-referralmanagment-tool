@@ -63,7 +63,12 @@ class ListItemCache {
 
 	public function cacheUsersMetadataList($params) {
 
-		Broadcast('cacheusers', 'update', array('params' => $params));
+		Broadcast('cacheusers', 'update', array(
+			'params' => $params,
+			'client' => GetClient()->getUserName(),
+			'domain' => HtmlDocument()->getDomain(),
+
+		));
 
 		$cacheName = "ReferralManagement.userList.json";
 		$cacheData = HtmlDocument()->getCachedPage($cacheName);
