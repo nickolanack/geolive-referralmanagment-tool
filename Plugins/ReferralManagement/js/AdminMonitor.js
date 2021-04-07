@@ -1,4 +1,4 @@
-var AdminMonitor=function(){
+var AdminMonitor=(function(){
 
 
 	var AdminMonitor=new Class({
@@ -25,4 +25,4 @@ var AdminMonitor=function(){
 
 	return AdminMonitor;
 
-}
+})()
