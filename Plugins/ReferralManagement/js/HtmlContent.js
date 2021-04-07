@@ -16,7 +16,7 @@ var HtmlContent=(function(){
 			var container=new Element('div', "")
 
 			var info=new Element('div' , {"class":"info-button"});
-			new UIPopover(info, Object.append({anchor:UIPopover.AnchorAuto()}, options);
+			new UIPopover(info, Object.append({anchor:UIPopover.AnchorAuto()}, options));
 			container.appendChild(info);
 
 
