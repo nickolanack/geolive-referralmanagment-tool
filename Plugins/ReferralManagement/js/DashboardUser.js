@@ -58,16 +58,7 @@ var DashboardUser = (function() {
 			}
 			return me.options.metadata.community;
 		},
-		isUnassigned: function() {
-			var me = this;
-			var roles = me.getRoles();
-
-			if (roles.length) {
-				return (MainRoles).indexOf(roles[0]) == -1;
-			}
-
-			return true;
-		},
+		
 		getRole: function() {
 			var me = this;
 			if (me.isUnassigned()) {
@@ -77,36 +68,31 @@ var DashboardUser = (function() {
 			return me.getRoles()[0];
 		},
 		isTeamManager: function() {
-			var me = this;
-			var roles = me.getRoles();
-
-
-			var allRoles = UserGroups.GetManagerRoles();
+			
+			var roles = this.getRoles();
 	
 			if (roles.length) {
-				return (allRoles).indexOf(roles[0]) >= 0;
+				return (UserGroups.GetManagerRoles()).indexOf(roles[0]) >= 0;
 			}
 
 			return false;
 		},
 
 		isTeamMember: function() {
-			var me = this;
-			var roles = me.getRoles();
-			var allRoles = UserGroups.GetTeamMemberRoles();
-
+			
+			var roles = this.getRoles();
 
 			if (roles.length) {
 
-				return (allRoles).indexOf(roles[0]) >= 0;
+				return (UserGroups.GetTeamMemberRoles()).indexOf(roles[0]) >= 0;
 			}
 
 			return false;
 		},
 
 		isCommunityMember: function() {
-			var me = this;
-			var roles = me.getRoles();
+			
+			var roles = this.getRoles();
 
 			if (roles.length) {
 				return ([
@@ -115,6 +101,17 @@ var DashboardUser = (function() {
 			}
 
 			return false;
+		},
+
+		isUnassigned: function() {
+
+			var roles = this.getRoles();
+
+			if (roles.length) {
+				return (UserGroups.GetAllRoles().indexOf(roles[0]) == -1;
+			}
+
+			return true;
 		},
 
 		getIcon: function() {
