@@ -9,6 +9,10 @@ var AdminMonitor=(function(){
 				AjaxControlQuery.Subscribe(channel, function(event){
 					console.log(channel);
 					console.log(event);
+
+					if(event&&event.status&&event.status==="write"){
+						NotificationBubble.Make("", channel.channel+" : "+event.status);
+					}
 				})
 			})
 
