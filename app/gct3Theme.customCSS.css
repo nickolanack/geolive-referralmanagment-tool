@@ -526,7 +526,7 @@ button.primary-btn.nav-new-btn:before {
 }
 
 button.primary-btn.nav-new-btn:hover {
-    background-color: darken($highlightBtnColor, 10%) /*#dc004c;*/
+    background-color: darken($highlightBtnColor, 10%); /*#dc004c;*/
     transition: background-color 0.2s, box-shadow 0.2s;
     box-shadow: 0 0 3px rgba(255,255,255,0.1);
     
