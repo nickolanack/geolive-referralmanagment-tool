@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-$highlightBtnColor:#ff0258;
+$highlightBtnColor:#cd0101; /*#ff0258;*/
 
 
 .left-panel .application-logo {
@@ -132,12 +132,12 @@ a.pb-btn-close:after {
     }
     
     button.WizardButton.btn {
-        background-color: #ff0258;
+        background-color: $highlightBtnColor;
         border-radius: 20px;
     }
     
     .WizardTitle li.current {
-        background-color: #ff0258;
+        background-color: $highlightBtnColor;
         border: none;
         border-radius: 21px;
         padding: 10px 0;
@@ -168,12 +168,12 @@ a.pb-btn-close:after {
     }
     
     .TagCloudModule .tag-cloud > span.tag-el.selected {
-        background-color: #ff0258;
-        border-color: #ff0258;
+        background-color: $highlightBtnColor;
+        border-color: $highlightBtnColor;
     }
     
     .TagCloudModule .tag-cloud > span.tag-el.add-tag {
-        background-color: #ff0258;
+        background-color: $highlightBtnColor;
         opacity: 0.7;
         transform: scale(0.7);
         line-height: 20px;
@@ -222,7 +222,7 @@ span.notifications:after {
     position: absolute;
     left: 9px;
     top: 5px;
-    color: #ff0258;
+    color: $highlightBtnColor;
 }
 
 [data-view="mainProjectsDetail"]>div>div>.ui-navigation-menu {
@@ -526,7 +526,7 @@ button.primary-btn.nav-new-btn:before {
 }
 
 button.primary-btn.nav-new-btn:hover {
-    background-color: #dc004c;
+    background-color: darken($highlightBtnColor, 10%); /*#dc004c;*/
     transition: background-color 0.2s, box-shadow 0.2s;
     box-shadow: 0 0 3px rgba(255,255,255,0.1);
     
