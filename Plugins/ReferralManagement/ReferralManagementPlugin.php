@@ -9,7 +9,7 @@ include_once __DIR__ . '/lib/UserRoles.php';
 class ReferralManagementPlugin extends Plugin implements
 core\ViewController,
 core\WidgetProvider,
-core\PluginDataTypeProvider,
+core\DataTypeProvider,
 core\ModuleProvider,
 core\TaskProvider,
 core\AjaxControllerProvider,
@@ -22,7 +22,7 @@ core\EventListener {
 	use core\ModuleProviderTrait;
 	use core\AjaxControllerProviderTrait;
 	use core\DatabaseProviderTrait;
-	use core\PluginDataTypeProviderTrait;
+	use core\DataTypeProviderTrait;
 	use core\EventListenerTrait;
 	use core\TemplateRenderer;
 
