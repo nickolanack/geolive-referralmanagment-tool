@@ -16896,7 +16896,8 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.1.config.formatElementScript.js",
+                                    "identifier": ""
                                 }
                             },
                             {
@@ -16905,7 +16906,8 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getCreationDate()",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.2.config.formatElementScript.js",
+                                    "identifier": ""
                                 }
                             },
                             {
@@ -16914,7 +16916,8 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.3.config.fieldValueScript.js",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.3.config.formatElementScript.js"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.3.config.formatElementScript.js",
+                                    "identifier": ""
                                 }
                             },
                             {
@@ -16922,8 +16925,9 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return item.getProjectType();",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.4.config.formatElementScript.js"
+                                    "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.4.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.4.config.formatElementScript.js",
+                                    "identifier": ""
                                 }
                             },
                             {
@@ -16932,7 +16936,8 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.5.config.fieldValueScript.js",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.5.config.formatElementScript.js"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.5.config.formatElementScript.js",
+                                    "identifier": ""
                                 }
                             },
                             {
@@ -16941,7 +16946,8 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Approval\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.6.config.formatElementScript.js"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.6.config.formatElementScript.js",
+                                    "identifier": ""
                                 }
                             },
                             {
@@ -16950,7 +16956,8 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Ownership\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.7.config.formatElementScript.js"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.7.config.formatElementScript.js",
+                                    "identifier": ""
                                 }
                             }
                         ]
@@ -17984,13 +17991,14 @@
                                     "maxWidth": 0,
                                     "showAudios": true,
                                     "showVideos": true,
-                                    "showImages": false,
                                     "showDocuments": true,
+                                    "showImages": false,
                                     "showLinks": true,
                                     "showExternalContent": true,
                                     "embedPortrait": true,
                                     "preferLocalContent": true,
-                                    "portraitClip": true
+                                    "portraitClip": true,
+                                    "formatTextScript": "return text;"
                                 }
                             },
                             {
@@ -17999,7 +18007,8 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "datasetItemView.metadata.positions.content.modules.3.config.formatElementScript.js"
+                                    "formatElementScript": "datasetItemView.metadata.positions.content.modules.3.config.formatElementScript.js",
+                                    "identifier": ""
                                 }
                             }
                         ]
