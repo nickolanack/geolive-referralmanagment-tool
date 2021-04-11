@@ -16913,7 +16913,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "",
+                                    "identifier": "col-created",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getCreationDate()",
                                     "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
