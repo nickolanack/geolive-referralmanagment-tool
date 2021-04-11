@@ -1,56 +1,55 @@
-var DashboardPageLayout=(function(){
+var DashboardPageLayout = (function() {
 
 
-	var DashboardPageLayout=new Class({
+	var DashboardPageLayout = new Class({
 
-		getApplication:function(){
+		getApplication: function() {
 
 			return ReferralManagementDashboard.getApplication();
 
 		},
 
-		layoutSection:function(name, modules){
+		layoutSection: function(name, modules) {
 			return this.layoutPage(name, modules);
 		},
-		layoutPage:function(name, modules, callback){
+		layoutPage: function(name, modules, callback) {
 
 
-			var options={};
-			var me=this;
+			var options = {};
+			var me = this;
 
-			var layout=function(name){
+			var layout = function(name) {
 
-				if(typeof name!="string"){
-					throw "Not a string `name`:"+(typeof name);
+				if (typeof name != "string") {
+					throw "Not a string `name`:" + (typeof name);
 				}
 
-				if(!(me._layouts&&me._layouts[name])){
+				if (!(me._layouts && me._layouts[name])) {
 					return modules;
 				}
 
-				var result=me._layouts[name](modules.content, options, function(content){
+				var result = me._layouts[name](modules.content, options, function(content) {
 
-					modules.content=content;
+					modules.content = content;
 					callback(modules);
 
 				});
 
-				if(typeof result!="undefined"&&callback){
-					modules.content=result;
+				if (typeof result != "undefined" && callback) {
+					modules.content = result;
 					callback(modules)
 					return;
 				}
 
-				modules.content=result;
+				modules.content = result;
 				return modules;
 			}
 
 
 
-
-			if(name instanceof UIViewModule&&callback){
-				options=Object.append(options, name.options);
-				name.getViewName(function(name){
+			if (name instanceof UIViewModule && callback) {
+				options = Object.append(options, name.options);
+				name.getViewName(function(name) {
 					layout(name);
 				});
 				return;
@@ -60,20 +59,20 @@ var DashboardPageLayout=(function(){
 
 		},
 
-		addLayout:function(name, fn){
+		addLayout: function(name, fn) {
 
-			if(!this._layouts){
-				this._layouts={};
+			if (!this._layouts) {
+				this._layouts = {};
 			}
 
-			this._layouts[name]=fn;
+			this._layouts[name] = fn;
 			return this;
 		},
 
-		layoutMenu(name, buttons){
+		layoutMenu(name, buttons) {
 
-			
-			if(!(this._layouts&&this._layouts[name])){
+
+			if (!(this._layouts && this._layouts[name])) {
 				return modules;
 			}
 
@@ -82,58 +81,64 @@ var DashboardPageLayout=(function(){
 
 		},
 
-		_removeClassNames:function(items){
-			var me=this;
-			items.forEach(function(item){
-				item.options.className=item.options.className.replace(' w-', ' -w-');
+		_removeClassNames: function(items) {
+			var me = this;
+			items.forEach(function(item) {
+				item.options.className = item.options.className.replace(' w-', ' -w-');
 			});
-			
-		
+
+
 			//item.removeClass('w-30');
 		},
 
-		mainCol:function(items){
+		mainCol: function(items) {
 
 			this._removeClassNames(items);
 
-			return new ModuleArray(items, {"class":"array-module ui-view w-60"});
+			return new ModuleArray(items, {
+				"class": "array-module ui-view w-60"
+			});
 		},
-		splitCol:function(items){
+		splitCol: function(items) {
 
 			this._removeClassNames(items);
 
-			return new ModuleArray(items, {"class":"array-module ui-view w-50"});
+			return new ModuleArray(items, {
+				"class": "array-module ui-view w-50"
+			});
 		},
-		secondaryCol:function(items){
+		secondaryCol: function(items) {
 
 			this._removeClassNames(items);
 
-			return new ModuleArray(items, {"class":"array-module ui-view w-30"});
+			return new ModuleArray(items, {
+				"class": "array-module ui-view w-30"
+			});
 		},
-		applySectionFilter:function(buttons, filters){
+		applySectionFilter: function(buttons, filters) {
 
-			var me=this;
-			filters.forEach(function(filterObj){
+			var me = this;
+			filters.forEach(function(filterObj) {
 
-				Object.keys(buttons).forEach(function(item){
+				Object.keys(buttons).forEach(function(item) {
 
-					var shouldFilter=false;
+					var shouldFilter = false;
 
-					(["section"]).forEach(function(key){
+					(["section"]).forEach(function(key) {
 
-						shouldFilter=shouldFilter||(typeof filterObj[key]=="string"&&item===filterObj[key]);
-						shouldFilter=shouldFilter||(typeof filterObj[key]=="object"&&Object.prototype.toString.call(filterObj[key]) === "[object Array]"&&filterObj[key].indexOf(item)>=0);
+						shouldFilter = shouldFilter || (typeof filterObj[key] == "string" && item === filterObj[key]);
+						shouldFilter = shouldFilter || (typeof filterObj[key] == "object" && Object.prototype.toString.call(filterObj[key]) === "[object Array]" && filterObj[key].indexOf(item) >= 0);
 
 					});
-					
-					
 
-					if(shouldFilter&&!me._evalFilterObj(filterObj)){
 
-						if(buttons[item]){
+
+					if (shouldFilter && !me._evalFilterObj(filterObj)) {
+
+						if (buttons[item]) {
 							delete buttons[item];
 						}
-						
+
 					}
 
 
@@ -145,20 +150,20 @@ var DashboardPageLayout=(function(){
 			});
 
 		},
-		_evalFilterObj(filterObj){
+		_evalFilterObj(filterObj) {
 
-			if(filterObj.condition){
-				var condition=filterObj.condition;
-				if(typeof condition=="function"){
-					condition=condition();
+			if (filterObj.condition) {
+				var condition = filterObj.condition;
+				if (typeof condition == "function") {
+					condition = condition();
 				}
 				return !!condition;
 			}
 
-			if(typeof filterObj.config=="string"){
-				var config=filterObj.config;
-				if(config[0]=="!"){
-					config=config.substring(1);
+			if (typeof filterObj.config == "string") {
+				var config = filterObj.config;
+				if (config[0] == "!") {
+					config = config.substring(1);
 					return !DashboardConfig.getValue(config);
 				}
 				return DashboardConfig.getValue(config);
@@ -168,36 +173,35 @@ var DashboardPageLayout=(function(){
 
 		},
 
-		applyMenuOverrides:function(buttons, labelsKey){
+		applyMenuOverrides: function(buttons, labelsKey) {
 
 
-			var labels=DashboardConfig.getValue('menuLabels');
-			var items=DashboardConfig.getValue('menuItems');
-		
+			var labels = DashboardConfig.getValue('menuLabels');
+			var items = DashboardConfig.getValue('menuItems');
 
-			if((labels&&labels[labelsKey])){
-				labels=labels[labelsKey];
+
+			if ((labels && labels[labelsKey])) {
+				labels = labels[labelsKey];
 			}
 
-			if((items&&items[labelsKey])){
-				items=items[labelsKey];
+			if ((items && items[labelsKey])) {
+				items = items[labelsKey];
 			}
 
 
-			
 
-			Object.keys(buttons).forEach(function(menu){
-				buttons[menu].forEach(function(menuItem){
+			Object.keys(buttons).forEach(function(menu) {
+				buttons[menu].forEach(function(menuItem) {
 
-					var name=menuItem.name||menuItem.html;
-					if(labels&&typeof labels[menu+'.'+name]=="string"){
-						menuItem.name=name;
-						menuItem.html=labels[menu+'.'+name]
+					var name = menuItem.name || menuItem.html;
+					if (labels && typeof labels[menu + '.' + name] == "string") {
+						menuItem.name = name;
+						menuItem.html = labels[menu + '.' + name]
 					}
 
-					if(items&&typeof items[menu+'.'+name]!=="undefined"){
-						
-						menuItem.item=items[menu+'.'+name]
+					if (items && typeof items[menu + '.' + name] !== "undefined") {
+
+						menuItem.item = items[menu + '.' + name]
 					}
 
 
@@ -206,48 +210,48 @@ var DashboardPageLayout=(function(){
 			});
 
 		},
-		applyMenuFilter:function(buttons, definition){
+		applyMenuFilter: function(buttons, definition) {
 
-			var me=this;
-			Object.keys(definition).forEach(function(menu){
+			var me = this;
+			Object.keys(definition).forEach(function(menu) {
 
-			definition[menu].forEach(function(filterObj){
+				definition[menu].forEach(function(filterObj) {
 
-				buttons[menu]=buttons[menu].filter(function(item){
+					buttons[menu] = buttons[menu].filter(function(item) {
 
-					var shouldFilter=false;
+						var shouldFilter = false;
 
-					(["html", "name"]).forEach(function(key){
+						(["html", "name"]).forEach(function(key) {
 
-						shouldFilter=shouldFilter||(typeof filterObj[key]=="string"&&item[key]===filterObj[key]);
-						shouldFilter=shouldFilter||(typeof filterObj[key]=="object"&&Object.prototype.toString.call(filterObj[key]) === "[object Array]"&&filterObj[key].indexOf(item[key])>=0);
+							shouldFilter = shouldFilter || (typeof filterObj[key] == "string" && item[key] === filterObj[key]);
+							shouldFilter = shouldFilter || (typeof filterObj[key] == "object" && Object.prototype.toString.call(filterObj[key]) === "[object Array]" && filterObj[key].indexOf(item[key]) >= 0);
 
-					});
-					
-					
+						});
 
-					if(shouldFilter){
-						var filterValue=me._evalFilterObj(filterObj);
 
-						if(filterValue===false&&filterObj.hide===true){
 
-							item.class=(item.class||"")+" hidden";
-							return true;
+						if (shouldFilter) {
+							var filterValue = me._evalFilterObj(filterObj);
+
+							if (filterValue === false && filterObj.hide === true) {
+
+								item.class = (item.class || "") + " hidden";
+								return true;
+							}
+
+							return filterValue;
 						}
 
-						return filterValue;
-					}
 
 
+						return true;
+					});
 
-					return true;
+
 				});
 
 
 			});
-			
-
-		});
 
 		}
 
@@ -256,159 +260,162 @@ var DashboardPageLayout=(function(){
 
 
 
-	var layout= new DashboardPageLayout().addLayout('mainDashboardDetail', function(content){
+	var layout = new DashboardPageLayout().addLayout('mainDashboardDetail', function(content) {
 
-		if(DashboardConfig.getValue('showRecentProjectsDetail')){
+		if (DashboardConfig.getValue('showRecentProjectsDetail')) {
 
-			content=content.filter(function(m){
-				return m.getIdentifier()!=='synopsis';
+			content = content.filter(function(m) {
+				return m.getIdentifier() !== 'synopsis' && m.getIdentifier() !== 'overview-sections';
 			});
 
-			var firstRecentOnly=true;
-			content=content.filter(function(m){
-				if(firstRecentOnly&&m.getIdentifier()=='recent-detail'){
-					firstRecentOnly=false;
+			var firstRecentOnly = true;
+			content = content.filter(function(m) {
+				if (firstRecentOnly && m.getIdentifier() == 'recent-detail') {
+					firstRecentOnly = false;
 					return true;
 				}
-				return m.getIdentifier()!=='recent-detail';
+				return m.getIdentifier() !== 'recent-detail';
 			});
 
-	        return content; //content.slice(0,-2);
-	        
-	    }
+			return content; //content.slice(0,-2);
 
-	    var items=content.slice(0,5);
-	    if(!DashboardConfig.getValue('showOverviewMetricsDetail')){
-	        items = items.slice(2);
+		}
 
-	        return [layout.mainCol([items[0], items[1]]), layout.secondaryCol([items[2]])];
-	    }
-	    
+		var items = content.filter(function(m) {
+			return m.getIdentifier() === 'synopsis' || m.getIdentifier() === 'overview-sections';
+		});
+		if (!DashboardConfig.getValue('showOverviewMetricsDetail')) {
 
-	    return items;
+			items = items.filter(function(m) {
+				return m.getIdentifier() !== 'synopsis';
+			});
+
+			return [layout.mainCol([items[0], items[1]]), layout.secondaryCol([items[2]])];
+		}
 
 
-	}).addLayout('mainMap', function(content){
+		return items;
 
-		if(AppClient.getUserType()!="admin"){
-		     content.filter(function(m){
-		     	return m.getIdentifier()!="navigation-menu";
-		     });
+
+	}).addLayout('mainMap', function(content) {
+
+		if (AppClient.getUserType() != "admin") {
+			content.filter(function(m) {
+				return m.getIdentifier() != "navigation-menu";
+			});
 		}
 
 		return content;
 
-	}).addLayout('mainProjectDetail', function(content){
+	}).addLayout('mainProjectDetail', function(content) {
 
 
-		if(AppClient.getUserType()!="admin"){
+		if (AppClient.getUserType() != "admin") {
 			content.shift();
 		}
-	    return content;
+		return content;
 
-	}).addLayout('splitProjectDetail', function(content, options, callback){
+	}).addLayout('splitProjectDetail', function(content, options, callback) {
 
-		if(!DashboardConfig.getValue('showSplitProjectDetail')){
-	        content=content.slice(0,1);
-	        content[0].options.className=content[0].options.className.split(' ').slice(0,-1).join(' ');
-	        
-	    }
-	    callback(content);
+		if (!DashboardConfig.getValue('showSplitProjectDetail')) {
+			content = content.slice(0, 1);
+			content[0].options.className = content[0].options.className.split(' ').slice(0, -1).join(' ');
 
-	}).addLayout('groupListsProjectDetail', function(content, options, callback){
+		}
+		callback(content);
 
-		if(options.layout&&options.layout=="fullwidth")
-	    callback(content.slice(0,1).concat(content.slice(1).map(function(item){
-	    	return layout.splitCol([item]);
-	    })));
-	}).addLayout('leftPanel', function(content){
+	}).addLayout('groupListsProjectDetail', function(content, options, callback) {
 
-		if(!DashboardConfig.getValue('showLeftPanelUser')){
-		     content.splice(1,1);
-		}else{
-		     content.splice(2,1);
+		if (options.layout && options.layout == "fullwidth")
+			callback(content.slice(0, 1).concat(content.slice(1).map(function(item) {
+				return layout.splitCol([item]);
+			})));
+	}).addLayout('leftPanel', function(content) {
+
+		if (!DashboardConfig.getValue('showLeftPanelUser')) {
+			content.splice(1, 1);
+		} else {
+			content.splice(2, 1);
 		}
 
-		if(!DashboardConfig.getValue('showLeftPanelPrimaryBtn')){
-		     content.splice(2,1);
+		if (!DashboardConfig.getValue('showLeftPanelPrimaryBtn')) {
+			content.splice(2, 1);
 		}
 
 		return content;
 
-	}).addLayout("singleProjectListItemTableDetail",function(content){
+	}).addLayout("singleProjectListItemTableDetail", function(content) {
 
-		var map=['name', 'owner', 'date', 'time', 'tag', 'docs', 'approval', 'ownership'];
-		var remove=['approval', 'ownership'];
+		var map = ['name', 'owner', 'date', 'time', 'tag', 'docs', 'approval', 'ownership'];
+		var remove = ['approval', 'ownership'];
 
-		remove.reverse().forEach(function(field){
-			var i=map.indexOf(field);
+		remove.reverse().forEach(function(field) {
+			var i = map.indexOf(field);
 			content.splice(i, 1);
 
 		});
-		
-		return content;
-	}).addLayout("userProfileDetailOverview",function(content){
 
-		if(DashboardConfig.getValue('showLeftPanelUser')){
-		     content.splice(0,1);
+		return content;
+	}).addLayout("userProfileDetailOverview", function(content) {
+
+		if (DashboardConfig.getValue('showLeftPanelUser')) {
+			content.splice(0, 1);
 		}
 
 		return content;
-	}).addLayout("mainDocumentsDetail",function(content){
+	}).addLayout("mainDocumentsDetail", function(content) {
 
-		content.splice(0,1);
+		content.splice(0, 1);
 
 		return content;
-	}).addLayout('profileMenu',function(buttons){
+	}).addLayout('profileMenu', function(buttons) {
 
 
 		layout.applyMenuFilter(buttons, {
-			"User":[
-				{
-					html:"Tasks",
-					config:"enableTasks"
+			"User": [{
+					html: "Tasks",
+					config: "enableTasks"
 				},
 
 				{
-					html:['Timesheet', 'Activity'],
-					condition:function(){
-						return AppClient.getUserType()=="admin";
+					html: ['Timesheet', 'Activity'],
+					condition: function() {
+						return AppClient.getUserType() == "admin";
 					}
 				},
 
 				{
-					html:"Log Out",
-					condition:function(){
-						var application =layout.getApplication();
-						var user=application.getNamedValue('currentUser');
-						var userId=user;
-						if(typeof user=="number"||typeof user=="string"){
-							userId=parseInt(user);
-						}else{
-							userId=parseInt((user.getUserId || user.getId).bind(user)());
+					html: "Log Out",
+					condition: function() {
+						var application = layout.getApplication();
+						var user = application.getNamedValue('currentUser');
+						var userId = user;
+						if (typeof user == "number" || typeof user == "string") {
+							userId = parseInt(user);
+						} else {
+							userId = parseInt((user.getUserId || user.getId).bind(user)());
 						}
 
 
-						if(AppClient.getId()===userId){
+						if (AppClient.getId() === userId) {
 							return true;
 						}
 						return false;
 					}
-				},
-				{
-					html:["Edit","Configuration"],
-					condition:function(){
-						var application =layout.getApplication();
-						var user=application.getNamedValue('currentUser');
-						var userId=user;
-						if(typeof user=="number"||typeof user=="string"){
-							userId=parseInt(user);
-						}else{
-							userId=parseInt((user.getUserId || user.getId).bind(user)());
+				}, {
+					html: ["Edit", "Configuration"],
+					condition: function() {
+						var application = layout.getApplication();
+						var user = application.getNamedValue('currentUser');
+						var userId = user;
+						if (typeof user == "number" || typeof user == "string") {
+							userId = parseInt(user);
+						} else {
+							userId = parseInt((user.getUserId || user.getId).bind(user)());
 						}
 
 
-						if(AppClient.getUserType()=="admin"||AppClient.getId()===userId){
+						if (AppClient.getUserType() == "admin" || AppClient.getId() === userId) {
 							return true;
 						}
 						return false;
@@ -421,25 +428,25 @@ var DashboardPageLayout=(function(){
 		return buttons;
 
 
-	}).addLayout('projectMenu',function(buttons){
+	}).addLayout('projectMenu', function(buttons) {
 
 
 		layout.applyMenuFilter(buttons, {
 
-			"Project":[{
-				html:"Tasks",
-				config:"enableTasks"
-			},
+			"Project": [{
+					html: "Tasks",
+					config: "enableTasks"
+				},
 
-			{
-				html:['Datasets'],
-				condition:function(){
+				{
+					html: ['Datasets'],
+					condition: function() {
 
-					var application = ReferralManagementDashboard.getApplication();
-					var project=application.getNamedValue("currentProject");
-					return project.isCollection();
+						var application = ReferralManagementDashboard.getApplication();
+						var project = application.getNamedValue("currentProject");
+						return project.isCollection();
+					}
 				}
-			}
 
 			]
 
@@ -449,81 +456,70 @@ var DashboardPageLayout=(function(){
 
 		return buttons;
 
-	}).addLayout('mainMenu',function(buttons){
+	}).addLayout('mainMenu', function(buttons) {
 
 
 		layout.applyMenuFilter(buttons, {
 
-			"Main":[
-				{
-					html:"Users",
-					config:"enableUserProfiles"
-				},
-				{
-					html:["Department", "Tags", "Trash"],
-					config:"simplifiedMenu"
-				},
-				{
-					html:"Archive",
-					config:"simplifiedMenu",
-					hide:true //menu is still available just hidden
-				},
-				{
-					html:"Tasks",
-					config:"enableTasks"
+			"Main": [{
+					html: "Users",
+					config: "enableUserProfiles"
+				}, {
+					html: ["Department", "Tags", "Trash"],
+					config: "simplifiedMenu"
+				}, {
+					html: "Archive",
+					config: "simplifiedMenu",
+					hide: true //menu is still available just hidden
+				}, {
+					html: "Tasks",
+					config: "enableTasks"
 				},
 				// {
 				// 	html:"Projects",
 				// 	config:"enableProposals"
 				// }
 				{
-					html:"Calendar",
-					config:"enableCalendar"
-				},
-				{
-					html:"Activity",
-					config:"enableActivity"
-				},
-				{
-					html:"Map",
-					config:"enableMap"
-				},
-				{
-					html:['Messages'],
-					condition:function(){
-						return AppClient.getUserType()=="admin";
-					}
-				}
-			], 
-			"Referrals":[
-				{
-					html:['Tracking', 'Reports', 'Import'],
-					condition:function(){
-						return AppClient.getUserType()=="admin";
+					html: "Calendar",
+					config: "enableCalendar"
+				}, {
+					html: "Activity",
+					config: "enableActivity"
+				}, {
+					html: "Map",
+					config: "enableMap"
+				}, {
+					html: ['Messages'],
+					condition: function() {
+						return AppClient.getUserType() == "admin";
 					}
 				}
 			],
-			"People":[
-				{
-					html:"Clients",
-					config:"enableClients"
-				},
-				{
-					html:"Mobile",
-					config:"enableMobile"
+			"Referrals": [{
+				html: ['Tracking', 'Reports', 'Import'],
+				condition: function() {
+					return AppClient.getUserType() == "admin";
 				}
-			
+			}],
+			"People": [{
+					html: "Clients",
+					config: "enableClients"
+				}, {
+					html: "Mobile",
+					config: "enableMobile"
+				}
+
 			]
 
 		});
 
 		layout.applySectionFilter(buttons, [{
-			section:['People', 'Community', 'Configuration', 'Referrals'],
-			config:"!simplifiedMenu"
+			section: ['People', 'Community', 'Configuration', 'Referrals'],
+			config: "!simplifiedMenu"
 		}]);
 
 		layout.applyMenuOverrides(buttons, 'main');
-		
+
 
 		return buttons;
 
