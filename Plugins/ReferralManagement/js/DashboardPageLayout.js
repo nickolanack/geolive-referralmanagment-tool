@@ -266,7 +266,7 @@ var DashboardPageLayout=(function(){
 
 			var firstRecentOnly=true;
 			content=content.filter(function(m){
-				if(firstRecentOnly&&m.getIdentifier()!=='recent-detail'){
+				if(firstRecentOnly&&m.getIdentifier()=='recent-detail'){
 					firstRecentOnly=false;
 					return true;
 				}
