@@ -153,6 +153,38 @@ var NamedCategory = (function() {
 
 	};
 
+
+
+	NamedCategory.AddItemIcons=function(item, el){
+
+		el.addClass('item-icon left-icons');
+
+		var projects=ProjectTagList.getProjectsWithTag(item.getName());
+		el.setAttribute('data-count-projects', projects.length);
+		if(projects.length>0){
+		    el.addClass('hasItems');
+		}
+		el.setAttribute('data-item-list',projects.map(function(p){
+		    
+		    console.error('avatar');
+		    if (ProjectTeam.CurrentTeam().hasUser(p.getProjectSubmitterId())){
+		        var icon=UserIcon.createUserAvatarModule(ProjectTeam.CurrentTeam().getUser(p.getProjectSubmitterId()));
+		        if(icon){
+		            //el.appendChild(icon);
+		            icon.load(null, el, null);
+		        }
+		            
+		    }
+		    return p.getId();
+		    
+		    
+		    
+		}).join('-'));
+
+
+
+	};
+
 	NamedCategory.CreateCategoryLabel=function(application, item){
 
 		var type='Tag';
