@@ -352,11 +352,11 @@ var DashboardPageLayout = (function() {
 
 		var removeCols = ['col-apporval', 'col-ownership'];
 
-		content.filter(function(m){
+		return content.filter(function(m){
 			return removeCols.indexOf(m.getIdentifier())<0;
 		})
 
-		return content;
+		//return content;
 	}).addLayout("userProfileDetailOverview", function(content) {
 
 		if (DashboardConfig.getValue('showLeftPanelUser')) {
