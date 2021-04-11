@@ -2,9 +2,9 @@
     "type": "FieldValue",
     "config": {
         "loadAsync": false,
+        "identifier": "col-name",
         "fieldLabelScript": "return \"\";",
         "fieldValueScript": "return item.getName();",
-        "formatElementScript": "el.addClass(\"inline\");\nel.setAttribute(\"data-col\",\"name\");",
-        "identifier": ""
+        "formatElementScript": "el.addClass(\"inline\");\nel.setAttribute(\"data-col\",\"name\");"
     }
 }
