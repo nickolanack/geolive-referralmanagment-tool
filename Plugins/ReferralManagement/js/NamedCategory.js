@@ -155,6 +155,11 @@ var NamedCategory = (function() {
 
 
 	NamedCategory.GetShortName=function(category){
+
+		if((!category)||category==""){
+			return "";
+		}
+
 		return NamedCategoryList.getTag(category).getShortName();
 	}
 
