@@ -1,4 +1,4 @@
-levar DashboardPageLayout=(function(){
+var DashboardPageLayout=(function(){
 
 
 	var DashboardPageLayout=new Class({
