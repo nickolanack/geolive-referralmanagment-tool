@@ -5180,7 +5180,7 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "inset-shading w-30 project-list",
-                                    "identifier": "synopsis",
+                                    "identifier": "overview-sections",
                                     "viewType": "view",
                                     "namedView": "projectsOverviewDetail",
                                     "shouldRender": true,
@@ -5203,7 +5203,7 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "inset-shading w-60 h-60",
-                                    "identifier": "synopsis",
+                                    "identifier": "overview-sections",
                                     "viewType": "view",
                                     "namedView": "tasksOverviewListDetail",
                                     "shouldRender": true,
@@ -5226,7 +5226,7 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "inset-shading w-30-60",
-                                    "identifier": "synopsis",
+                                    "identifier": "overview-sections",
                                     "viewType": "view",
                                     "namedView": "calendarOverviewDetail",
                                     "shouldRender": true,
