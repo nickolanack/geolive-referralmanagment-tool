@@ -346,14 +346,15 @@ var DashboardPageLayout = (function() {
 
 	}).addLayout("singleProjectListItemTableDetail", function(content) {
 
-		var map = ['name', 'owner', 'date', 'time', 'tag', 'docs', 'approval', 'ownership'];
-		var remove = ['approval', 'ownership'];
+		//var map = ['name', 'owner', 'date', 'time', 'tag', 'docs', 'approval', 'ownership'];
 
-		remove.reverse().forEach(function(field) {
-			var i = map.indexOf(field);
-			content.splice(i, 1);
+		//var columnIds=['col-name', 'col-user', 'col-created', 'col-modified', 'col-type', 'col-apporval', 'col-ownership']
 
-		});
+		var removeCols = ['col-apporval', 'col-ownership'];
+
+		content.filter(function(m){
+			return removeCols.indexOf(m.getIdentifier())<0;
+		})
 
 		return content;
 	}).addLayout("userProfileDetailOverview", function(content) {
