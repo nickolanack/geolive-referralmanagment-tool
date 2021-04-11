@@ -350,7 +350,7 @@ var DashboardPageLayout = (function() {
 
 		//var columnIds=['col-name', 'col-user', 'col-created', 'col-modified', 'col-type', 'col-apporval', 'col-ownership']
 
-		var removeCols = ['col-apporval', 'col-ownership'];
+		var removeCols = ['col-approval', 'col-ownership'];
 
 		return content.filter(function(m){
 			return removeCols.indexOf(m.getIdentifier())<0;
