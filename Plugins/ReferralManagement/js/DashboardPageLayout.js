@@ -1,4 +1,4 @@
-var DashboardPageLayout=(function(){
+levar DashboardPageLayout=(function(){
 
 
 	var DashboardPageLayout=new Class({
@@ -260,7 +260,20 @@ var DashboardPageLayout=(function(){
 
 		if(DashboardConfig.getValue('showRecentProjectsDetail')){
 
-	        return content.slice(5).slice(0,-2);
+			content=content.filter(function(m){
+				return m.getIdentifier()!=='synopsis';
+			});
+
+			var firstRecentOnly=true;
+			content=content.filter(function(m){
+				if(firstRecentOnly&&m.getIdentifier()!=='recent-detail'){
+					firstRecentOnly=false;
+					return true;
+				}
+				return m.getIdentifier()!=='recent-detail';
+			});
+
+	        return content; //content.slice(0,-2);
 	        
 	    }
 
