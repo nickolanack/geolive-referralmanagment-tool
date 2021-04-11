@@ -291,7 +291,9 @@ var DashboardPageLayout=(function(){
 	}).addLayout('mainMap', function(content){
 
 		if(AppClient.getUserType()!="admin"){
-		     content.splice(0,1);
+		     content.filter(function(m){
+		     	return m.getIdentifier()!="navigation-menu";
+		     });
 		}
 
 		return content;
