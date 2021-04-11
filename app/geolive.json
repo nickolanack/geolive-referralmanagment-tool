@@ -17984,13 +17984,14 @@
                                     "maxWidth": 0,
                                     "showAudios": true,
                                     "showVideos": true,
-                                    "showImages": false,
                                     "showDocuments": true,
+                                    "showImages": false,
                                     "showLinks": true,
                                     "showExternalContent": true,
                                     "embedPortrait": true,
                                     "preferLocalContent": true,
-                                    "portraitClip": true
+                                    "portraitClip": true,
+                                    "formatTextScript": "return text;"
                                 }
                             },
                             {
@@ -17999,7 +18000,8 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "datasetItemView.metadata.positions.content.modules.3.config.formatElementScript.js"
+                                    "formatElementScript": "datasetItemView.metadata.positions.content.modules.3.config.formatElementScript.js",
+                                    "identifier": ""
                                 }
                             }
                         ]
