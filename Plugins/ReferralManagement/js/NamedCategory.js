@@ -154,6 +154,10 @@ var NamedCategory = (function() {
 	};
 
 
+	NamedCategory.GetShortName=function(category){
+		return NamedCategoryList.getTag(category).getShortName();
+	}
+
 
 	NamedCategory.AddItemIcons=function(item, el){
 

@@ -64,6 +64,11 @@ var NamedCategoryList = (function() {
 
 
 		getProjectsWithTag: function(category) {
+
+			/**
+			 * TODO this looks like it will only support first 2 levels (depth) of nested categories
+			 */
+
 			var tags = _tags.filter(function(tag) {
 				return tag.getName().toLowerCase() == category.toLowerCase() || tag.getCategory().toLowerCase() == category.toLowerCase();
 			});
@@ -80,6 +85,20 @@ var NamedCategoryList = (function() {
 
 				return false;
 			});
+		},
+
+
+		getTag:function(category){
+
+			var tags = _tags.filter(function(tag) {
+				return tag.getName().toLowerCase() == category.toLowerCase();
+			});
+
+			if(tags.length==0){
+				throw 'Invalid category/tag: '+category;
+			}
+
+			return tags[0];
 		},
 
 
