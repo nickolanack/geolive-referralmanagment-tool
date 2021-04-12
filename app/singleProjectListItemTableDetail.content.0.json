@@ -2,9 +2,9 @@
     "type": "FieldValue",
     "config": {
         "loadAsync": false,
-        "identifier": "col-name",
+        "identifier": "col-icon",
         "fieldLabelScript": "return \"\";",
-        "fieldValueScript": "return item.getName();",
-        "formatElementScript": "el.addClass(\"inline\");\nel.setAttribute(\"data-col\",\"name\");"
+        "fieldValueScript": "return \"\";",
+        "formatElementScript": "el.addClass(\"inline icon\");\n\/\/el.setAttribute(\"data-col\",\"name\");"
     }
 }

@@ -826,3 +826,15 @@ ul.user-roles li.active {
      background-size: 70%;
 }
 
+div.field-value-module.inline.icon {
+    width: 30px;
+}
+
+.table-header .field-value-module.icon:before {
+    visibility:hidden
+}
+
+.table-header .field-value-module.disabled:before{
+     visibility:hidden
+}
+

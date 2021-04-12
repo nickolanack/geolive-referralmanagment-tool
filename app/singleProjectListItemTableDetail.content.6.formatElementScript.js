@@ -1,2 +1,8 @@
 el.addClass("inline");
-el.setAttribute("data-col","approved");
+
+
+if(item.getDocuments().concat(item.getAttachments()).concat(item.getSpatialDocuments()).length>0){
+    el.addClass('withItems');
+}
+
+el.setAttribute("data-col","attachments");

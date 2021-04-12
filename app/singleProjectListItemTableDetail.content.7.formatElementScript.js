@@ -1,2 +1,2 @@
 el.addClass("inline");
-el.setAttribute("data-col","ownership");
+el.setAttribute("data-col","approved");
