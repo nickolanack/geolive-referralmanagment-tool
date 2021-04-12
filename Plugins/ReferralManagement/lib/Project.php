@@ -44,17 +44,11 @@ class Project {
 		$attributes = (new \attributes\Record('proposalAttributes'))
 			->getValues($proposal['id'], 'ReferralManagement.proposal');
 
-
-
-		if(key_exists('isDataset', $attributes)&&($attributes['isDataset']===true||$attributes['isDataset']==='true')){
+		if (key_exists('isDataset', $attributes) && ($attributes['isDataset'] === true || $attributes['isDataset'] === 'true')) {
 			$datasetAttributes = (new \attributes\Record('datasetAttributes'))
-			->getValues($proposal['id'], 'ReferralManagement.proposal');
-			$attributes['dataset']=$datasetAttributes
+				->getValues($proposal['id'], 'ReferralManagement.proposal');
+			$attributes['dataset'] = $datasetAttributes;
 		}
-
-		
-
-		
 
 		$teamMembers = GetPlugin('ReferralManagement')->getTeamMembersForProject($result, $attributes['teamMembers']);
 
