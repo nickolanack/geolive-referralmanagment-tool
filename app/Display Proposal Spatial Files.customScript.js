@@ -1,2 +1,2 @@
-SpatialDocumentPreview.InitMapLayers(map);
-SpatialDocumentPreview.InitMapTile(tile, control, map);
+SpatialProject.InitMapLayers(map);
+SpatialProject.InitMapTile(tile, control, map);
