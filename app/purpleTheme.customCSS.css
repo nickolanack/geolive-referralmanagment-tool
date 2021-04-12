@@ -19,6 +19,10 @@ $purple:#2e344b; /*#0f1c4b;*/
     }
 }
 
+.field-value-module.inline.icon:before {
+     color:$purple;
+}
+
 button.primary-btn.nav-new-btn.btn-index-1 {
     background-color: cornflowerblue;
 }
