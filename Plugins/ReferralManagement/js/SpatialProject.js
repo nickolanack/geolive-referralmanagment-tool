@@ -15,13 +15,18 @@ var SpatialProject=(function(){
 
 				var spatial=project.getSpatialDocuments();
 
+				spatial.forEach(function(url){
 
-				var layer = ProjectLayer.MakeProjectLayer(map, {
-					url: url,
-					group:project.getBaseMapLayerType()
+					var layer = ProjectLayer.MakeProjectLayer(map, {
+						url: url,
+						group:project.getBaseMapLayerType()
+					});
+
+					map.getLayerManager().addLayer(layer);
+
 				});
 
-				map.getLayerManager().addLayer(layer);
+				
 
 			});
 
