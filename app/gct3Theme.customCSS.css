@@ -812,6 +812,11 @@ button.primary-btn.nav-new-btn:hover {
 
 .is-basemap-layer [data-col="attachments"]:before{
     content: "\f278";
+
+    font-family: 'FontAwesome';
+    color: $highlightBtnColor;
+    margin-right: 5px;
+
 }
 
 
