@@ -509,7 +509,9 @@ var ReferralManagementDashboard = (function() {
 
 		//@ deprecated
 		addProjectItemWeakUpdateEvents: function(child, childView, application, listFilterFn) {
-			Project.AddListItemEvents(child, childView, application, listFilterFn);
+			//Project.AddListItemEvents(child, childView, application, listFilterFn);
+
+			ProjectList.AddListItemEvents(child, childView, application, listFilterFn);
 		},
 
 		//@ deprecated

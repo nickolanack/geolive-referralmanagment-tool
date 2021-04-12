@@ -548,6 +548,15 @@ var ProjectList = (function() {
 			childView.getElement().addClass("active-project");
 		}
 
+		if(child.isDataset&&child.isDataset()){
+			childView.getElement().addClass("is-dataset");
+			if(child.isBaseMapLayer()){
+				childView.getElement().addClass("is-basemap-layer");
+
+				childView.getElement().addClass("basemap-layer-"+child.getBaseMapLayerType());
+			}
+		}
+
 
 
 		childView.addWeakEvent(child, "change", function() {
