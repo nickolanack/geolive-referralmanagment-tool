@@ -103,6 +103,24 @@ var Project = (function() {
 			return (this.data.attributes && (this.data.attributes.isDataset === true || this.data.attributes.isDataset === "true"));
 		},
 
+		isBaseMapLayer: function() {
+			if(!this.isDataset()){
+				return false;
+			}
+
+
+			var layer=this.data.attributes.dataset.baseMapLayer;
+			if(layer&&layer!==""){
+				return true;
+			}
+		},
+		getBaseMapLayerType:function(){
+			if(!this.isBaseMapLayer()){
+				throw 'Not a basemap'
+			}
+			return this.data.attributes.dataset.baseMapLayer;
+		}
+
 		isCollection: function() {
 			return !this.isDataset();
 		},

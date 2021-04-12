@@ -11,6 +11,12 @@ var SpatialProject=(function(){
 			
 			var projects=team.getProjects().filter(function(p){ return p.isDataset()&&p.isBaseMapLayer(); });
 
+			projects.map(function(project){
+
+				var spatial=project.getSpatialDocuments();
+
+			});
+
 
 		});
 
