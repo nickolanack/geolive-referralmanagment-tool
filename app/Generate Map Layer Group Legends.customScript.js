@@ -130,7 +130,7 @@
             'shouldShowLayerScript'=>'
             
                 var layers='.json_encode(GetPlugin('ReferralManagement')->getLayersForGroup($groupName)).'
-                return layers.indexOf(id)>=0;
+                return layers.indexOf(id)>=0||layer.options.group==="'.$groupName.'";
             
             '
             
