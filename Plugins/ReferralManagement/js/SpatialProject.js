@@ -17,8 +17,14 @@ var SpatialProject=(function(){
 
 				spatial.forEach(function(url){
 
+
+					if(window.GetSpatialFiles().indexOf(url)>=0){
+						return;
+					}
+
 					var layer = ProjectLayer.MakeProjectLayer(map, {
 						url: url,
+						name:project.name;
 						group:project.getBaseMapLayerType()
 					});
 
