@@ -1,5 +1,9 @@
+
+
+$purple=#0f1c4b;
+
 .ui-view.left-panel {
-    background-color: #0f1c4b;
+    background-color: $purple;
     .navigation-menu ul{
         li,  button {
             color: #aeaeae;
@@ -22,14 +26,14 @@ button.primary-btn.nav-new-btn.btn-index-1 {
 
 
 .pb-c.gct3 {
-    background-color: #0f1c4b;
+    background-color: $purple;
     
     .template-footer {
-        background-color: #0f1c4b;
+        background-color: $purple;
     }
     
     &:after {
-        background-color: #0f1c4b;
+        background-color: $purple;
     }
 
 }
