@@ -119,7 +119,7 @@ var Project = (function() {
 				throw 'Not a basemap'
 			}
 			return this.data.attributes.dataset.baseMapLayer;
-		}
+		},
 
 		isCollection: function() {
 			return !this.isDataset();
