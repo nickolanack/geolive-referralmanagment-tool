@@ -46,7 +46,10 @@ $config=new core\Configuration('iconset');
     background-repeat: no-repeat;
 }
 <?php foreach(['community', 'townships', 'mining', 'forestry', 'boundary', 'crowdsource'] as $group){?>
-.layer-group.<?php echo $group; ?>:before{
+.layer-group.<?php echo $group; ?>:before,
+.basemap-layer-<?php echo $group; ?> .inline-icon:before 
+
+{
    background-image:url("<?php echo UrlFrom($config->getParameter($group)[0])."?tint=".$config->getParameter($group."Tint","rgb(0,0,0)"); ?>");
 }
 
