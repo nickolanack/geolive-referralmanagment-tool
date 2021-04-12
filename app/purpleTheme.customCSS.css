@@ -19,3 +19,17 @@ button.primary-btn.nav-new-btn.btn-index-1 {
     border-radius: 2px;
     cursor: pointer;
 }
+
+
+.pb-c.gct3 {
+    background-color: #0f1c4b;
+    
+    .template-footer {
+        background-color: #0f1c4b;
+    }
+    
+    &:after {
+        background-color: #0f1c4b;
+    }
+
+}
