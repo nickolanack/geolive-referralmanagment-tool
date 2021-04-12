@@ -10,7 +10,7 @@ var ProjectLayer = (function() {
 
 	ProjectLayer.MakeProjectLayer=function(map, options){
 
-		if(baseClass){
+		if(!baseClass){
 			if(!window.GeoliveLayer){
 				if(window.console&&console.warn){
 					console.warn('GeoliveLayer is not defined');
