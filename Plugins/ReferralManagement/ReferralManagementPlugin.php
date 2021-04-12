@@ -266,7 +266,7 @@ core\EventListener {
 
 		IncludeJS(__DIR__ . '/js/SpatialProject.js');
 		IncludeJS(__DIR__ . '/js/SpatialDocumentPreview.js');
-		IncludeJS(__DIR__ . '/js/ProposalLayer.js');
+		IncludeJS(__DIR__ . '/js/ProjectLayer.js');
 
 		IncludeJS(__DIR__ . '/js/MainNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/ProjectsOverviewNavigationMenu.js');

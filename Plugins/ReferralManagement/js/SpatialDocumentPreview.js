@@ -40,7 +40,7 @@ var SpatialDocumentPreview = (function() {
 			var offset = 40;
 			layers = urls.map(function(url, i) {
 
-				var layer = new ProposalLayer(map, {
+				var layer = ProjectLayer.MakeProjectLayer(map, {
 					url: url
 				});
 				layer.addEvent('load:once', function() {
