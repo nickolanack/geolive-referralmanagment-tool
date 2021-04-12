@@ -15,6 +15,12 @@ button.primary-btn.nav-new-btn.btn-index-1 {
     background-color: cornflowerblue;
 }
 
+button.primary-btn.nav-new-btn {
+    color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+
 
 .tag-width span.field-value {
     width: 120px;
