@@ -33,7 +33,7 @@ class Project {
 		$proposal = get_object_vars($result);
 
 		$proposal['userdetails'] = GetClient()->userMetadataFor((int) $proposal['user']);
-		$proposal['community']=GetPlugin('ReferralManagement')->communityCollective();
+		$proposal['community'] = GetPlugin('ReferralManagement')->communityCollective();
 		//$proposal['']
 
 		$proposal['link'] = HtmlDocument()->website() . '/Projects/Project-' . $proposal['id'] . '/Overview';
@@ -44,6 +44,18 @@ class Project {
 		$attributes = (new \attributes\Record('proposalAttributes'))
 			->getValues($proposal['id'], 'ReferralManagement.proposal');
 
+
+
+		if(key_exists('isDataset', $attributes)&&($attributes['isDataset']===true||$attributes['isDataset']==='true')){
+			$datasetAttributes = (new \attributes\Record('datasetAttributes'))
+			->getValues($proposal['id'], 'ReferralManagement.proposal');
+			$attributes['dataset']=$datasetAttributes
+		}
+
+		
+
+		
+
 		$teamMembers = GetPlugin('ReferralManagement')->getTeamMembersForProject($result, $attributes['teamMembers']);
 
 		$attributes['teamMemberIds'] = array_map(function ($item) {
@@ -52,7 +64,6 @@ class Project {
 
 		$attributes['teamMembers'] = array_map(function ($member) use ($result) {
 
-	
 			$user['id'] = $member->id;
 			$user['permissions'] = $member->permissions;
 
@@ -60,15 +71,11 @@ class Project {
 
 		}, $teamMembers);
 
-
-		if(key_exists('childProjects', $attributes)&&(!empty($attributes['childProjects']))&&$attributes['childProjects']{0}=='['){
-			$attributes['childProjects']=json_decode($attributes['childProjects']);
-		}else{
-			$attributes['childProjects']=array();
+		if (key_exists('childProjects', $attributes) && (!empty($attributes['childProjects'])) && $attributes['childProjects']{0} == '[') {
+			$attributes['childProjects'] = json_decode($attributes['childProjects']);
+		} else {
+			$attributes['childProjects'] = array();
 		}
-		
-
-
 
 		$proposal['attributes'] = $attributes;
 		$time = strtotime($attributes['commentDeadlineDate']);
@@ -120,7 +127,7 @@ class Project {
 			}
 
 			if (key_exists('team', $json)) {
-				
+
 				foreach ($json->team as $uid) {
 					GetPlugin('ReferralManagement')->addTeamMemberToProject($uid, $proposalId);
 				}
