@@ -264,6 +264,9 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/ConfigItem.js');
 		IncludeJS(__DIR__ . '/js/HtmlContent.js');
 
+		IncludeJS(__DIR__ . '/js/SpatialDocumentPreview.js');
+		IncludeJS(__DIR__ . '/js/ProposalLayer.js');
+
 		IncludeJS(__DIR__ . '/js/MainNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/ProjectsOverviewNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/ProjectNavigationMenu.js');
