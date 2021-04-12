@@ -799,12 +799,14 @@ button.primary-btn.nav-new-btn:hover {
 
 
 .field-value-module.inline.icon:before {
-    content: "\f1c0";
+    content: "\f1b3";
      font-family: 'FontAwesome';
+     
+     color:#565656;
 }
 
 .is-dataset .field-value-module.inline.icon:before {
-    content: "\f1b3";
+    content: "\f1c0";
 }
 
 
