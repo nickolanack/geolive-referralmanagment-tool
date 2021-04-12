@@ -1,3 +1,2 @@
-el.addClass("inline tag-width");
-RecentItems.colorizeEl(valueEl, item.getProjectType());
-el.setAttribute("data-col","type");
+el.addClass("inline");
+el.setAttribute("data-col","time");

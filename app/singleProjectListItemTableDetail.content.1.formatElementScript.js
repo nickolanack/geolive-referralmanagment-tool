@@ -1,2 +1,2 @@
 el.addClass("inline");
-el.setAttribute("data-col","user");
+el.setAttribute("data-col","name");

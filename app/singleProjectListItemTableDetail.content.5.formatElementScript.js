@@ -1,8 +1,3 @@
-el.addClass("inline");
-
-
-if(item.getDocuments().concat(item.getAttachments()).concat(item.getSpatialDocuments()).length>0){
-    el.addClass('withItems');
-}
-
-el.setAttribute("data-col","attachments");
+el.addClass("inline tag-width");
+RecentItems.colorizeEl(valueEl, item.getProjectType());
+el.setAttribute("data-col","type");

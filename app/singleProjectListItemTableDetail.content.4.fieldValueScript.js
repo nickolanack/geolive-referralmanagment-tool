@@ -1,1 +1,1 @@
-return NamedCategory.GetShortName(item.getProjectType());
+return item.getModificationDate()

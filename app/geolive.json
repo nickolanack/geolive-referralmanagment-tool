@@ -16902,10 +16902,20 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "col-name",
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return item.getName();",
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
                                     "identifier": "col-user",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
+                                    "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.2.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -16915,16 +16925,6 @@
                                     "identifier": "col-created",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getCreationDate()",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
-                                }
-                            },
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "identifier": "col-modified",
-                                    "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.3.config.fieldValueScript.js",
                                     "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.3.config.formatElementScript.js"
                                 }
                             },
@@ -16932,7 +16932,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "col-type",
+                                    "identifier": "col-modified",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.4.config.fieldValueScript.js",
                                     "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.4.config.formatElementScript.js"
@@ -16942,7 +16942,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "col-attachments",
+                                    "identifier": "col-type",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.5.config.fieldValueScript.js",
                                     "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.5.config.formatElementScript.js"
@@ -16952,10 +16952,20 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "col-attachments",
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.6.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.6.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
                                     "identifier": "col-approval",
                                     "fieldLabelScript": "return \"Approval\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.6.config.formatElementScript.js"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.7.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -16965,7 +16975,7 @@
                                     "identifier": "col-ownership",
                                     "fieldLabelScript": "return \"Ownership\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.7.config.formatElementScript.js"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.8.config.formatElementScript.js"
                                 }
                             }
                         ]
