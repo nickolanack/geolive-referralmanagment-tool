@@ -1,5 +1,9 @@
+
+
+$purple:#2e344b; /*#0f1c4b;*/
+
 .ui-view.left-panel {
-    background-color: #0f1c4b;
+    background-color: $purple;
     .navigation-menu ul{
         li,  button {
             color: #aeaeae;
@@ -11,6 +15,12 @@ button.primary-btn.nav-new-btn.btn-index-1 {
     background-color: cornflowerblue;
 }
 
+button.primary-btn.nav-new-btn {
+    color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+
 
 .tag-width span.field-value {
     width: 120px;
@@ -18,4 +28,18 @@ button.primary-btn.nav-new-btn.btn-index-1 {
     text-align: center;
     border-radius: 2px;
     cursor: pointer;
+}
+
+
+.pb-c.gct3 {
+    background-color: $purple;
+    
+    .template-footer {
+        background-color: $purple;
+    }
+    
+    &:after {
+        background-color: $purple;
+    }
+
 }
