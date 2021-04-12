@@ -15,6 +15,14 @@ var SpatialProject=(function(){
 
 				var spatial=project.getSpatialDocuments();
 
+
+				var layer = ProjectLayer.MakeProjectLayer(map, {
+					url: url,
+					group:project.getBaseMapLayerType()
+				});
+
+				map.getLayerManager().addLayer(layer);
+
 			});
 
 
