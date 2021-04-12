@@ -796,6 +796,20 @@ button.primary-btn.nav-new-btn:hover {
     content: "\f1b3";
 }
 
+
+
+
+
+.is-dataset .field-value-module.inline.icon:before {
+    content: "\f1b3";
+}
+
+.field-value-module.inline.icon:before {
+    content: "\f1c0";
+}
+
+
+
 .projects-list .field-value-module {
     font-size: 14px;
     font-family: Arial;
