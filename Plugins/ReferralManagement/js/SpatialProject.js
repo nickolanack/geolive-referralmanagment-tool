@@ -24,7 +24,7 @@ var SpatialProject=(function(){
 
 					var layer = ProjectLayer.MakeProjectLayer(map, {
 						url: url,
-						name:project.name;
+						name:project.getName();
 						group:project.getBaseMapLayerType()
 					});
 
