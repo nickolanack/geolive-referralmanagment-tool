@@ -105,6 +105,7 @@ var NamedCategory = (function() {
 
 		var newTag = new NamedCategory({
 			name: "",
+			shortName:"",
 			description: "",
 			type: "Project.tag",
 			id: -1,

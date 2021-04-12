@@ -16,18 +16,18 @@ var SpatialDocumentPreview = (function() {
 			var clear;
 			var layers = [];
 
-			
 
-			var bounds=null;
-			var extendBounds=function(b){
-				if(!bounds){
-					bounds=b;
-				}else{
 
-					bounds.north=Math.max(bounds.north, b.north);
-					bounds.south=Math.min(bounds.south, b.south);
-					bounds.east=Math.max(bounds.east, b.east);
-					bounds.west=Math.min(bounds.west, b.west);
+			var bounds = null;
+			var extendBounds = function(b) {
+				if (!bounds) {
+					bounds = b;
+				} else {
+
+					bounds.north = Math.max(bounds.north, b.north);
+					bounds.south = Math.min(bounds.south, b.south);
+					bounds.east = Math.max(bounds.east, b.east);
+					bounds.west = Math.min(bounds.west, b.west);
 
 				}
 
@@ -37,31 +37,31 @@ var SpatialDocumentPreview = (function() {
 
 			}
 
-			var offset=40;
-			layers=urls.map(function(url, i) {
+			var offset = 40;
+			layers = urls.map(function(url, i) {
 
-				var layer= new ProposalLayer(map, {
+				var layer = new ProposalLayer(map, {
 					url: url
 				});
-				layer.addEvent('load:once',function(){
+				layer.addEvent('load:once', function() {
 					(new AjaxControlQuery(CoreAjaxUrlRoot, 'file_metadata', {
-			            'file': url
-			        })).addEvent('success',function(response){
+						'file': url
+					})).addEvent('success', function(response) {
 						var b = layer.getBounds();
 						extendBounds(b);
 
 
 						new UIMapSubTileButton(me._mapTile, {
-		                    containerClassName: 'spatial-file-tile',
-		                    buttonClassName: '',
-		                    image: (response.metadata.image||response.metadata.mimeIcon||response.metadata.mediaTypeIcon),
-		                    
-		                }).addEvent('click',function(){
-		                	map.fitBounds(b);
-		                }).getElement().setStyle('right', i*offset+40)
+							containerClassName: 'spatial-file-tile',
+							buttonClassName: '',
+							image: (response.metadata.image || response.metadata.mimeIcon || response.metadata.mediaTypeIcon),
+
+						}).addEvent('click', function() {
+							map.fitBounds(b);
+						}).getElement().setStyle('right', i * offset + 40)
 
 
-			        }).execute();
+					}).execute();
 				})
 
 				me._map.getLayerManager().addLayer(layer);
@@ -70,19 +70,19 @@ var SpatialDocumentPreview = (function() {
 
 			});
 
-			
+
 			new UIMapSubTileButton(me._mapTile, {
-                    containerClassName: 'spatial-file-tile add',
-                    buttonClassName: '',
-                    //image: response.metadata.image||response.metadata.mimeIcon||response.metadata.mediaTypeIcon,
-                    
-            }).addEvent('click',function(){
-                	
-			}).getElement().setStyle('right', layers.length*offset+40);
+				containerClassName: 'spatial-file-tile add',
+				buttonClassName: '',
+				//image: response.metadata.image||response.metadata.mimeIcon||response.metadata.mediaTypeIcon,
+
+			}).addEvent('click', function() {
+
+			}).getElement().setStyle('right', layers.length * offset + 40);
 
 			return clear;
 		},
-		_enterProposalWithControl:function(control){
+		_enterProposalWithControl: function(control) {
 			var me = this;
 			var map = me._map;
 			// map.setMode('proposal', {
@@ -93,14 +93,14 @@ var SpatialDocumentPreview = (function() {
 			// });
 
 		},
-		_enterProposalWithClear:function(layers, callback){
+		_enterProposalWithClear: function(layers, callback) {
 
 			var me = this;
 			var map = me._map;
 
-			var clearTile=me._mapTile;
+			var clearTile = me._mapTile;
 			clearTile.enable();
-			var clearControl=me._mapTileControl;
+			var clearControl = me._mapTileControl;
 
 			me._enterProposalWithControl(clearControl);
 
@@ -118,7 +118,7 @@ var SpatialDocumentPreview = (function() {
 				layers = [];
 
 				clear = function() {};
-				if(callback){
+				if (callback) {
 					callback();
 				}
 			}
@@ -128,12 +128,14 @@ var SpatialDocumentPreview = (function() {
 				clear();
 			});
 
-			return function(){ clear(); };
+			return function() {
+				clear();
+			};
 
 
 
 		},
-		_enterProposalWithTile:function(layers, callback){
+		_enterProposalWithTile: function(layers, callback) {
 			var me = this;
 			var map = me._map;
 
@@ -150,8 +152,6 @@ var SpatialDocumentPreview = (function() {
 				toolTip: ['Resume Proposal', 'click to continue the current proposal'],
 				image: 'components/com_geolive/assets/Map%20Item%20Icons/sm_clipboard.png?tint=rgb(255,%20255,%20255)'
 			});
-
-
 
 
 
@@ -176,7 +176,9 @@ var SpatialDocumentPreview = (function() {
 				clear();
 			});
 
-			return function(){ clear(); };
+			return function() {
+				clear();
+			};
 		},
 
 		setMap: function(map) {
@@ -192,7 +194,7 @@ var SpatialDocumentPreview = (function() {
 			me._control = control;
 
 		},
-		setClearTile:function(tile, control){
+		setClearTile: function(tile, control) {
 			var me = this;
 			me.setTile(tile, control);
 		},
@@ -205,29 +207,29 @@ var SpatialDocumentPreview = (function() {
 
 	});
 
-	
-	SpatialDocumentPreview.InitMapLayers=function(map){
 
-		
-	}
+	SpatialDocumentPreview.InitMapLayers = function(map) {
 
 
-	SpatialDocumentPreview.InitMapTile=function(tile, control, map){
+	};
+
+
+	SpatialDocumentPreview.InitMapTile = function(tile, control, map) {
 
 		SpatialDocumentPreview.setTile(tile, control);
 		SpatialDocumentPreview.setMap(map);
 
 
-		var getFiles=window.GetSpatialFiles||window.parent.GetSpatialFiles
-		if(getFiles){
-		    var files = getFiles();
-		    if(files.length){
-		        SpatialDocumentPreview.show(files);
-		    }else{
-		        tile.disable();
-		    }
+		var getFiles = window.GetSpatialFiles || window.parent.GetSpatialFiles
+		if (getFiles) {
+			var files = getFiles();
+			if (files.length) {
+				SpatialDocumentPreview.show(files);
+			} else {
+				tile.disable();
+			}
 		}
-		
+
 	};
 
 
