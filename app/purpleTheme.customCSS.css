@@ -2,6 +2,10 @@
 
 $purple:#2e344b; /*#0f1c4b;*/
 
+.ui-view.test.dashboard-main.gct3[data-view="dashboardLoader"] {
+    background: $purple;
+}
+
 .ui-view.left-panel {
     background-color: $purple;
     .navigation-menu ul{
