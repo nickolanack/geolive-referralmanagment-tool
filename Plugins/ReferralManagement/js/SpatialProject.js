@@ -7,6 +7,13 @@ var SpatialProject=(function(){
 
 	SpatialProject.InitMapLayers = function(map) {
 
+		ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+			
+			var projects=team.getProjects().filter(function(p){ return p.isDataset()&&p.isBaseMapLayer(); });
+
+
+		});
+
 
 	};
 
