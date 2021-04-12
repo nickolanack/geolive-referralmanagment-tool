@@ -5,6 +5,6 @@
         "identifier": "col-icon",
         "fieldLabelScript": "return \"\";",
         "fieldValueScript": "return \"\";",
-        "formatElementScript": ""
+        "formatElementScript": "el.addClass(\"inline icon\");\n\/\/el.setAttribute(\"data-col\",\"name\");"
     }
 }
