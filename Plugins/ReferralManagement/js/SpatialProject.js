@@ -103,7 +103,8 @@ var SpatialProject = (function() {
 					url: url,
 					//project:item,
 					group:"project",
-					id: "project." + item.getId() + '.[' + i + ']'
+					id: "project." + item.getId() + '.[' + i + ']',
+					name:item.getName()
 				}
 			});
 		}
