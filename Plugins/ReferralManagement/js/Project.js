@@ -142,6 +142,22 @@ var Project = (function() {
 			return me.data.attributes.description;
 		},
 
+
+		getDocumentsRecursive:function(){
+
+			return this.getDocuments().concat([]);
+		},
+
+		getAttachmentsRecursive:function(){
+
+			return this.getAttachments().concat([]);
+		},
+
+		getSpatialDocumentsRecursive:function(){
+
+			return this.getSpatialDocuments().concat([]);
+		},
+
 		setAttributes: function(attributes) {
 			var me = this;
 			me._attributes = attributes;
