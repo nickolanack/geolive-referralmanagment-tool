@@ -9,7 +9,7 @@ var LayerGroupLegend=(function(){
 
 
 
-    LayerGroupLegend.FormatLegend=function(group, mouseover, element, legend, auth){
+    LayerGroupLegend.FormatLegend=function(group, mouseover, element, legend){
 
 
 
@@ -72,6 +72,10 @@ var LayerGroupLegend=(function(){
                         }
                     }
                 }));
+
+                if (!(AppClient.getUserType() == "admin" || ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isTeamManager())) {
+                    return div;
+                }
                 
                 if(auth){
                 
@@ -79,7 +83,7 @@ var LayerGroupLegend=(function(){
                     setTimeout(function(){
                         
                         
-                    
+                        var application=ReferralManagementDashboard.getApplication()
                         if(application.getDisplayController().hasNamedFormView(formName)){
                             
                             
