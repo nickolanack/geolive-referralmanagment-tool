@@ -1,6 +1,4 @@
-/*
- * Not Used
- */
+'use strict';
 
 var LayerGroupLegend = (function() {
 
