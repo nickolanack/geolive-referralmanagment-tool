@@ -148,14 +148,26 @@ var Project = (function() {
 			return this.getDocuments().concat([]);
 		},
 
+		getDocumentsChildren:function(){
+			return [];
+		}
+
 		getAttachmentsRecursive:function(){
 
 			return this.getAttachments().concat([]);
 		},
 
+		getAttachmentsChildren:function(){
+			return [];
+		},
+
 		getSpatialDocumentsRecursive:function(){
 
 			return this.getSpatialDocuments().concat([]);
+		},
+
+		getSpatialDocumentsChildren:function(){
+			return [];
 		},
 
 		setAttributes: function(attributes) {
