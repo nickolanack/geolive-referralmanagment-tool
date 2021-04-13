@@ -132,7 +132,7 @@ var LayerGroupLegend=(function(){
 
     LayerGroupLegend.ShouldShowLayerScript=function(group, lid, layer){
         
-        if(LayerGroupItemList.getLayerGroupItems(group).map(function(l){return l.getId();}).indexOf(lig)>=0){
+        if(LayerGroupItemList.getLayerGroupItems(group).map(function(l){return l.getId();}).indexOf(lid)>=0){
             return true;
         }
 
