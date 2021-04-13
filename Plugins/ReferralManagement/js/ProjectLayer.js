@@ -2,7 +2,7 @@ var ProjectLayer = (function() {
 
 
 
-	ProjectLayer=new Class({});
+	var ProjectLayer=new Class({});
 
 
 	var baseClass=false;
