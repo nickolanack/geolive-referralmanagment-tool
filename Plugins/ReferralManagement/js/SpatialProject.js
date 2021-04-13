@@ -102,6 +102,7 @@ var SpatialProject = (function() {
 				return {
 					url: url,
 					//project:item,
+					group:"project",
 					id: "project." + item.getId() + '.[' + i + ']'
 				}
 			});
