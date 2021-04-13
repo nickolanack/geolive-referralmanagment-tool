@@ -2130,6 +2130,33 @@
                     "name": "boundaryColor",
                     "default": "rgb(255,255,255)",
                     "label": "boundary color"
+                },
+                "project": {
+                    "type": "images",
+                    "name": "project",
+                    "default": [],
+                    "label": "project",
+                    "maxHeight": 256,
+                    "maxWidth": 256,
+                    "limit": 1
+                },
+                "projectMouseover": {
+                    "type": "text",
+                    "name": "projectMouseover",
+                    "default": "",
+                    "label": "projectMouseover"
+                },
+                "projectTint": {
+                    "type": "color",
+                    "name": "projectTint",
+                    "default": "rgb(0,0,0)",
+                    "label": "project tint"
+                },
+                "projectColor": {
+                    "type": "color",
+                    "name": "boundaryColor",
+                    "default": "rgb(255,255,255)",
+                    "label": "project color"
                 }
             },
             "townships": [
@@ -2172,7 +2199,11 @@
             "crowdsourceTint": "rgb(0,0,0)",
             "crowdsourceColor": "rgb(180, 53, 53)",
             "formatParametersScript": "return $parameters;",
-            "formatOutputScript": "return $parameters;"
+            "formatOutputScript": "return $parameters;",
+            "saveParametersAsData": false,
+            "project": [],
+            "projectMouseover": "",
+            "projectTint": "rgb(0,0,0)"
         }
     },
     "widget.115": {
