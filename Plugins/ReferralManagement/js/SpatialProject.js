@@ -17,7 +17,7 @@ var SpatialProject = (function() {
 
 				var spatial = project.getSpatialDocuments();
 
-				spatial.forEach(function(url) {
+				spatial.forEach(function(url, i) {
 
 
 					if (window.GetSpatialFiles().map(function(opt) {
