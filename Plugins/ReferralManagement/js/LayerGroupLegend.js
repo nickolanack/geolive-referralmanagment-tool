@@ -74,60 +74,59 @@ var LayerGroupLegend=(function(){
                 }));
 
                 if (!(AppClient.getUserType() == "admin" || ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isTeamManager())) {
-                    return div;
+                    return;
                 }
+               
                 
-                if(auth){
-                
-                    var formName=group+"UploadForm";
-                    setTimeout(function(){
-                        
-                        
-                        var application=ReferralManagementDashboard.getApplication()
-                        if(application.getDisplayController().hasNamedFormView(formName)){
-                            
-                            
-                            var GroupUpload=new Class({
-                                Extends: DataTypeObject,
-                                Implements:[Events],
-                                getDescription:function(){return "";},
-                                setDescription:function(d){
-                                    console.log(d);
-                                    var me=this;
-                                    me.file=Proposal.ParseHtmlUrls(d);
-                                },
-                                save:function(cb){
-                                    
-                                    var me=this;
-                                    var AddDocumentQuery = new Class({
-                                        Extends: AjaxControlQuery,
-                                        initialize: function() {
-                                            this.parent(CoreAjaxUrlRoot, "upload_tus", Object.append({
-                                                plugin: "ReferralManagement"
-                                            }, {data:me.file||null}));
-                                        }
-                                    });
-                                    (new AddDocumentQuery).addEvent("success", function(){
-                                        cb(true)
-                                    }).execute();
-                                }
-                            });
-                          
-                            var button=legend.element.appendChild(new Element("button",{"class":"grp-layer-upload"}));
-                            new UIModalFormButton(
-                                button, 
-                                application, new GroupUpload(), 
-                                {
-                                    formName:formName, 
-                                    formOptions:{template:"form"}
-                                    
-                                }
-                            )
-                        }
+                var formName=group+"UploadForm";
+                setTimeout(function(){
                     
-                    }, 1000);
+                    
+                    var application=ReferralManagementDashboard.getApplication()
+                    if(application.getDisplayController().hasNamedFormView(formName)){
+                        
+                        
+                        var GroupUpload=new Class({
+                            Extends: DataTypeObject,
+                            Implements:[Events],
+                            getDescription:function(){return "";},
+                            setDescription:function(d){
+                                console.log(d);
+                                var me=this;
+                                me.file=Proposal.ParseHtmlUrls(d);
+                            },
+                            save:function(cb){
+                                
+                                var me=this;
+                                var AddDocumentQuery = new Class({
+                                    Extends: AjaxControlQuery,
+                                    initialize: function() {
+                                        this.parent(CoreAjaxUrlRoot, "upload_tus", Object.append({
+                                            plugin: "ReferralManagement"
+                                        }, {data:me.file||null}));
+                                    }
+                                });
+                                (new AddDocumentQuery).addEvent("success", function(){
+                                    cb(true)
+                                }).execute();
+                            }
+                        });
+                      
+                        var button=legend.element.appendChild(new Element("button",{"class":"grp-layer-upload"}));
+                        new UIModalFormButton(
+                            button, 
+                            application, new GroupUpload(), 
+                            {
+                                formName:formName, 
+                                formOptions:{template:"form"}
+                                
+                            }
+                        )
+                    }
+                
+                }, 1000);
 
-            }
+            
 
 
 
