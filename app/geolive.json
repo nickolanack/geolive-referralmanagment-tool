@@ -2154,7 +2154,7 @@
                 },
                 "projectColor": {
                     "type": "color",
-                    "name": "boundaryColor",
+                    "name": "projectColor",
                     "default": "rgb(255,255,255)",
                     "label": "project color"
                 }
@@ -2203,7 +2203,8 @@
             "saveParametersAsData": false,
             "project": [],
             "projectMouseover": "",
-            "projectTint": "rgb(0,0,0)"
+            "projectTint": "rgb(0,0,0)",
+            "projectColor": "rgb(255,255,255)"
         }
     },
     "widget.115": {
