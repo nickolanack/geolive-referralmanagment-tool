@@ -20,7 +20,9 @@ var SpatialProject = (function() {
 				spatial.forEach(function(url) {
 
 
-					if (window.GetSpatialFiles().map(function(opt){ return opt.url }).indexOf(url) >= 0) {
+					if (window.GetSpatialFiles().map(function(opt) {
+							return opt.url
+						}).indexOf(url) >= 0) {
 						return;
 					}
 
@@ -29,7 +31,7 @@ var SpatialProject = (function() {
 						name: project.getName(),
 						group: project.getBaseMapLayerType(),
 						//project:item,
-						id:"project."+project.getId()+'.['+i+']'
+						id: "project." + project.getId() + '.[' + i + ']'
 					});
 
 					map.getLayerManager().addLayer(layer);
@@ -65,7 +67,7 @@ var SpatialProject = (function() {
 
 	};
 
-	SpatialProject.InitMainMap() {
+	SpatialProject.InitMainMap = function() {
 
 		window.GetSpatialFiles = function() {
 
@@ -77,7 +79,7 @@ var SpatialProject = (function() {
 
 		return null;
 
-	
+
 
 	}
 
@@ -96,11 +98,11 @@ var SpatialProject = (function() {
 				});
 			}
 
-			return spatial.map(function(url ,i){
+			return spatial.map(function(url, i) {
 				return {
-					url:url,
+					url: url,
 					//project:item,
-					id:"project."+item.getId()+'.['+i+']'
+					id: "project." + item.getId() + '.[' + i + ']'
 				}
 			});
 		}
