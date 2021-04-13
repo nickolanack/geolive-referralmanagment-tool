@@ -3,12 +3,27 @@
 var LayerGroupLegend = (function() {
 
 
-    var LayerGroupLegend = new Class()
+    var LayerGroupLegend = new Class({
+
+        initialize:function(legend){
 
 
 
-    LayerGroupLegend.FormatLegend = function(group, mouseover, element, legend) {
 
+
+        }
+
+
+
+    });
+
+
+
+    LayerGroupLegend.FormatLegend = function(group, mouseover, legend) {
+
+
+
+        var element=legend.getElement();
 
 
         element.addClass(group /*"'.$groupName.($i>3?' bottom-align':'').'"*/ );

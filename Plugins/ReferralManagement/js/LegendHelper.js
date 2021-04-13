@@ -9,7 +9,7 @@ var LegendHelper=(function(){
 
 
 
-		addLegend:function(legend){
+		addLegend:function(legend, map){
 			legends.push(legend);
 
 
