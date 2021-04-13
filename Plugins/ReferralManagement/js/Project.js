@@ -150,7 +150,7 @@ var Project = (function() {
 
 		getDocumentsChildren:function(){
 			return [];
-		}
+		},
 
 		getAttachmentsRecursive:function(){
 
