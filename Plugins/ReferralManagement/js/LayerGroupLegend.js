@@ -43,6 +43,8 @@ var LayerGroupLegend = (function() {
         });
         var checkState = function() {
 
+
+
             if (legend.countVisibleLayers() == 0) {
                 element.removeClass("active");
             } else {
