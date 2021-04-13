@@ -184,6 +184,10 @@ div.field-value-module.inline {
 .inline.withItems .field-value {
     font-weight: bold;
 }
+.inline.withChildItems .field-value {
+    font-style: italic;
+    color: #545454;
+}
 
 .gct3 .project-list-btns {
     /*display: none;*/
