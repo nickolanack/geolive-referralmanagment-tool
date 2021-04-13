@@ -27,6 +27,9 @@ var LegendHelper=(function(){
 			})
 
 
+		},
+		getLegends:function(){
+			return legends.slice(0);
 		}
 
 
