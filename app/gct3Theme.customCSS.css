@@ -810,15 +810,17 @@ button.primary-btn.nav-new-btn:hover {
 }
 
 
-.is-basemap-layer [data-col="attachments"]:before{
-    content: "\f278";
 
+
+.is-dataset [data-col="attachments"]:before {
+    content: "";
     font-family: 'FontAwesome';
-    color: $highlightBtnColor;
+    color: rgba(0,0,0,0.1);
     margin-right: 5px;
-
 }
-
+.is-basemap-layer [data-col="attachments"]:before {
+    color: limegreen;
+}
 
 
 
