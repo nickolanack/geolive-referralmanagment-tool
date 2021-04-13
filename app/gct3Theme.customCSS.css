@@ -405,6 +405,11 @@ ul.project, ul.user{
     margin: 10px;
 }
 
+.ui-list-view .ui-view.section-module[data-view="singleProjectListItemTableDetail"] {
+    margin-bottom: 0;
+    margin-top: 2px;
+}
+
 .section-welcome {
     padding-right: 30%;
 }
