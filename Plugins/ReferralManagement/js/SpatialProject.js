@@ -20,14 +20,16 @@ var SpatialProject = (function() {
 				spatial.forEach(function(url) {
 
 
-					if (window.GetSpatialFiles().indexOf(url) >= 0) {
+					if (window.GetSpatialFiles().map(function(opt){ return opt.url }).indexOf(url) >= 0) {
 						return;
 					}
 
 					var layer = ProjectLayer.MakeProjectLayer(map, {
 						url: url,
 						name: project.getName(),
-						group: project.getBaseMapLayerType()
+						group: project.getBaseMapLayerType(),
+						//project:item,
+						id:"project."+project.getId()+'.['+i+']'
 					});
 
 					map.getLayerManager().addLayer(layer);
@@ -75,33 +77,7 @@ var SpatialProject = (function() {
 
 		return null;
 
-		/*
-
-		var iframe=new ElementModule('iframe',{
-		    "src":"https://wabun.geolive.ca/wabun-map/embed",
-		    "height":"100%",
-		    "width":"100%",
-		    "frameborder":"0",
-		    "styles":{"min-height":"400px"},
-		    "allowfullscreen":true
-		});
-		//return '<iframe src="https://wabun.geolive.ca/wabun-map/embed" width="100%" height="100%" frameborder="0" style="min-height:700px;"></iframe>';
-
-		var setSize=function(){
-		    var size=window.getSize();
-		    iframe.getElement().setStyle('height',size.y+"px");
-		    
-		};
-		window.addEvent('resize', setSize);
-		setSize();
-
-		return iframe;
-
-
-
- 		*/
-
-
+	
 
 	}
 
@@ -120,39 +96,17 @@ var SpatialProject = (function() {
 				});
 			}
 
-			return spatial;
+			return spatial.map(function(url ,i){
+				return {
+					url:url,
+					//project:item,
+					id:"project."+item.getId()+'.['+i+']'
+				}
+			});
 		}
 
 		return null;
 
-		/*
-
-		var iframe = new ElementModule('iframe', {
-			"src": "https://wabun.geolive.ca/wabun-map/embed",
-			"height": "100%",
-			"width": "100%",
-			"frameborder": "0",
-			"styles": {
-				"min-height": "700px"
-			},
-			"allowfullscreen": true
-		});
-		//return '<iframe src="https://wabun.geolive.ca/wabun-map/embed" width="100%" height="100%" frameborder="0" style="min-height:700px;"></iframe>';
-
-
-
-		//return '<iframe src="https://wabun.geolive.ca/wabun-map/embed" width="100%" height="100%" frameborder="0" style="min-height:700px;"></iframe>';
-
-		var setSize = function() {
-			var size = window.getSize();
-			iframe.getElement().setStyle('height', size.y + "px");
-
-		};
-		window.addEvent('resize', setSize);
-		setSize();
-
-		return iframe;
-		*/
 	}
 
 	return SpatialProject;

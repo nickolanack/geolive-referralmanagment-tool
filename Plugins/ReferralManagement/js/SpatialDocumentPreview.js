@@ -38,14 +38,13 @@ var SpatialDocumentPreview = (function() {
 			}
 
 			var offset = 40;
-			layers = urls.map(function(url, i) {
+			layers = urls.map(function(layerOpts, i) {
 
-				var layer = ProjectLayer.MakeProjectLayer(map, {
-					url: url
-				});
+
+				var layer = ProjectLayer.MakeProjectLayer(map, layerOpts);
 				layer.addEvent('load:once', function() {
 					(new AjaxControlQuery(CoreAjaxUrlRoot, 'file_metadata', {
-						'file': url
+						'file': layerOpts.url
 					})).addEvent('success', function(response) {
 						var b = layer.getBounds();
 						extendBounds(b);
