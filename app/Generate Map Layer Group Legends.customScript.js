@@ -11,10 +11,9 @@
             "readAccess"=>"registered",
             'formatLegendScript'=>'
             
-                return LayerGroupLegend.FormatLegend(
+                LayerGroupLegend.FormatLegend(
                     "'.$groupName.'", 
                     '.json_encode(GetPlugin("ReferralManagement")->getMouseoverForGroup($groupName)).', 
-                    element, 
                     legend
                    
                 );
