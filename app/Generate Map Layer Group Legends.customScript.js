@@ -16,7 +16,7 @@
                     '.json_encode(GetPlugin("ReferralManagement")->getMouseoverForGroup($groupName)).', 
                     element, 
                     legend, 
-                    '.(Auth('memberof', 'lands-department-manager', 'group'))?"true":"false".'
+                    '.(Auth('memberof', 'lands-department-manager', 'group')?"true":"false").'
                 );
             
             ',
