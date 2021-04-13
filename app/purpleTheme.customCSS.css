@@ -2,6 +2,14 @@
 
 $purple:#2e344b; /*#0f1c4b;*/
 
+.ui-view.test.dashboard-main.gct3[data-view="dashboardLoader"] {
+    background: $purple;
+    .application-logo {
+        color: white;
+        font-weight: 500;
+    }
+}
+
 .ui-view.left-panel {
     background-color: $purple;
     .navigation-menu ul{
@@ -9,6 +17,10 @@ $purple:#2e344b; /*#0f1c4b;*/
             color: #aeaeae;
         }
     }
+}
+
+.field-value-module.inline.icon:before {
+     color:$purple;
 }
 
 button.primary-btn.nav-new-btn.btn-index-1 {

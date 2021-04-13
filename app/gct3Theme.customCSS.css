@@ -796,6 +796,32 @@ button.primary-btn.nav-new-btn:hover {
     content: "\f1b3";
 }
 
+
+
+.field-value-module.inline.icon:before {
+    content: "\f1b3";
+     font-family: 'FontAwesome';
+     
+     color:#565656;
+}
+
+.is-dataset .field-value-module.inline.icon:before {
+    content: "\f1c0";
+}
+
+
+.is-basemap-layer [data-col="attachments"]:before{
+    content: "\f278";
+
+    font-family: 'FontAwesome';
+    color: $highlightBtnColor;
+    margin-right: 5px;
+
+}
+
+
+
+
 .projects-list .field-value-module {
     font-size: 14px;
     font-family: Arial;
@@ -814,7 +840,7 @@ button.primary-btn.nav-new-btn:hover {
 
 
 ul.user-roles li {
-    background-color: rgb(46 53 76);
+    background-color: rgba(0,0,0,0.1);
     border-radius: 100%;
     padding: 2px;
     background-size: 45%;
