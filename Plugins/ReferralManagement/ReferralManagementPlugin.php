@@ -313,6 +313,7 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/PostContent.js');
 		IncludeJS(__DIR__ . '/js/UserIcon.js');
 		IncludeJS(__DIR__ . '/js/LayerGroup.js');
+		IncludeJS(__DIR__ . '/js/LayerGroupLegend.js');
 
 		if (GetClient()->isAdmin()) {
 			IncludeJS(__DIR__ . '/js/AdminMonitor.js');
