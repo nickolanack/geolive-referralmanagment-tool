@@ -145,29 +145,35 @@ var Project = (function() {
 
 		getDocumentsRecursive:function(){
 
-			return this.getDocuments().concat([]);
+			return this.getDocuments().concat(this.getDocumentsChildren());
 		},
 
 		getDocumentsChildren:function(){
-			return [];
+			return this.isCollection()?Array.prototype.concat.apply([], this.getProjectObjects().map(function(p){
+				return p.getDocumentsRecursive();
+			})):[];
 		},
 
 		getAttachmentsRecursive:function(){
 
-			return this.getAttachments().concat([]);
+			return this.getAttachments().concat(this.getAttachmentsChildren());
 		},
 
 		getAttachmentsChildren:function(){
-			return [];
+			return this.isCollection()?Array.prototype.concat.apply([], this.getProjectObjects().map(function(p){
+				return p.getAttachmentsRecursive();
+			})):[];
 		},
 
 		getSpatialDocumentsRecursive:function(){
 
-			return this.getSpatialDocuments().concat([]);
+			return this.getSpatialDocuments().concat(this.getSpatialDocumentsChildren());
 		},
 
 		getSpatialDocumentsChildren:function(){
-			return [];
+			return this.isCollection()?Array.prototype.concat.apply([], this.getProjectObjects().map(function(p){
+				return p.getSpatialDocumentsRecursive();
+			})):[];
 		},
 
 		setAttributes: function(attributes) {
