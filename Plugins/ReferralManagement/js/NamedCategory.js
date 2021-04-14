@@ -210,7 +210,7 @@ var NamedCategory = (function() {
 
 		el.setAttribute('data-count-users', counter);           
 		el.addClass('items-'+counter);
-		el.addClass('items-limit-'+Math.min(counter, max);
+		el.addClass('items-limit-'+Math.min(counter, max));
 		if(counter>max){
 			el.addClass('items-more-than-'+max);
 			el.addClass('items-more-than-max');
