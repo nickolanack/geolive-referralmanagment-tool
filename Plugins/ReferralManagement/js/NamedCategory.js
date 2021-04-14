@@ -175,7 +175,7 @@ var NamedCategory = (function() {
 		    el.addClass('hasItems');
 		}
 		var counter=0;
-		var max=1;
+		var max=5;
 
 		var cache=[];
 		
