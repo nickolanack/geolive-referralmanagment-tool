@@ -513,6 +513,7 @@ ul.project, ul.user{
     line-height: 32px;
     font-size: 11px;
     color: white;
+    box-shadow: 0 0 3px rgb(0 0 0 / 70%);
 }
 
 
@@ -522,7 +523,6 @@ ul.project, ul.user{
     left: 0px;
     width: 30px;
     height: 30px;
-    border: 1px solid rgba(255,255,255,0.4);
     box-sizing: border-box;
     box-shadow: 0 0 3px rgb(0 0 0 / 70%);
     
