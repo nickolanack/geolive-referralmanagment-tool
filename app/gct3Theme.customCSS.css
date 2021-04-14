@@ -515,10 +515,10 @@ ul.project, ul.user{
     &.items-limit-3, &.items-3:hover {
         width: calc( 20px + ( 34px * 3 ) );
     }
-    &.items-limit-3 {
+    &.items-limit-4, &.items-4:hover {
         width: calc( 20px + ( 34px * 4 ) );
     }
-    &.items-limit-3 {
+    &.items-limit-5, &.items-5:hover {
         width: calc( 20px + ( 34px * 5 ) );
     }
     
