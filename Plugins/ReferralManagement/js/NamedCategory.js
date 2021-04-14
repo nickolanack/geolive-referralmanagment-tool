@@ -188,7 +188,12 @@ var NamedCategory = (function() {
 
 			console.error('avatar');
 			var uid = p.getProjectSubmitterId();
-			var users = p.getUsers()
+
+			var users=[];
+			if(p.getUsers){
+				users = p.getUsers();
+			}
+			
 
 			([uid]).concat(users).forEach(function(userid) {
 
