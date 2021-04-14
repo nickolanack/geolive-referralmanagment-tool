@@ -174,6 +174,7 @@ var NamedCategory = (function() {
 		if(projects.length>0){
 		    el.addClass('hasItems');
 		}
+		var counter=0;
 		el.setAttribute('data-item-list',projects.map(function(p){
 		    
 		    console.error('avatar');
@@ -182,6 +183,7 @@ var NamedCategory = (function() {
 		        if(icon){
 		            //el.appendChild(icon);
 		            icon.load(null, el, null);
+		            el.setAttribute('data-count-users', ++counter);
 		        }
 		            
 		    }
