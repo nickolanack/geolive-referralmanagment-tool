@@ -506,13 +506,13 @@ ul.project, ul.user{
         background: rgba(0,0,0,0.1);
     }
 
-    &.items-limit-1 {
+    &.items-limit-1, .items-1:hover {
         width: calc( 20px + ( 34px * 1 ) );
     }
-    &.items-limit-2 {
+    &.items-limit-2, .items-2:hover {
         width: calc( 20px + ( 34px * 2 ) );
     }
-    &.items-limit-3 {
+    &.items-limit-3, .items-3:hover {
         width: calc( 20px + ( 34px * 3 ) );
     }
     &.items-limit-3 {
@@ -521,6 +521,10 @@ ul.project, ul.user{
     &.items-limit-3 {
         width: calc( 20px + ( 34px * 5 ) );
     }
+    
+    
+    
+    
 }
 
 .field-value-module.item-icon.left-icons.items-more-than-max:after {
