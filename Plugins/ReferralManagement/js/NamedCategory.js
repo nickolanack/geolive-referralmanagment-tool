@@ -209,7 +209,9 @@ var NamedCategory = (function() {
 					if (iconModule) {
 
 						//el.appendChild(icon);
-						iconModule.load(null, el, null);
+						var span=new Element('span');
+						el.appendChild(span);
+						iconModule.load(null, span, null);
 						counter++;
 						iconModule.getElement().addClass('index-' + counter);
 						if (counter > max) {
