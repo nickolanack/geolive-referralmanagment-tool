@@ -506,19 +506,19 @@ ul.project, ul.user{
         background: rgba(0,0,0,0.1);
     }
 
-    &.items-1 {
+    &.items-limit-1 {
         width: calc( 20px + ( 34px * 1 ) );
     }
-    &.items-2 {
+    &.items-limit-2 {
         width: calc( 20px + ( 34px * 2 ) );
     }
-    &.items-3 {
+    &.items-limit-3 {
         width: calc( 20px + ( 34px * 3 ) );
     }
-    &.items-3 {
+    &.items-limit-3 {
         width: calc( 20px + ( 34px * 4 ) );
     }
-    &.items-3 {
+    &.items-limit-3 {
         width: calc( 20px + ( 34px * 5 ) );
     }
 }
