@@ -502,8 +502,8 @@ ul.project, ul.user{
 
 }
 
-.field-value-module.item-icon.left-icons:after {
-    content: "+" attr(data-count-projects);
+.field-value-module.item-icon.left-icons.items-more-than-max:after {
+    content: "+" attr(data-count-users-overflow);
     position: absolute;
     right: -15px;
     top: -5px;
