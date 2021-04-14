@@ -184,6 +184,7 @@ var NamedCategory = (function() {
 		            //el.appendChild(icon);
 		            icon.load(null, el, null);
 		            el.setAttribute('data-count-users', ++counter);
+
 		        }
 		            
 		    }
@@ -193,6 +194,11 @@ var NamedCategory = (function() {
 		    
 		}).join('-'));
 
+		el.addClass('items-'+counter);
+		var max=5;
+		if(counter>5){
+			el.addClass('items-more-than-'+max);
+		}
 
 
 	};
