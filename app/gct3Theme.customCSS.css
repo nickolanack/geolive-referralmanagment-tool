@@ -506,15 +506,27 @@ ul.project, ul.user{
         background: rgba(0,0,0,0.1);
     }
 
+    &.items-1 {
+        width: calc( 20px + ( 34px * 1 ) );
+    }
     &.items-2 {
-        width: 50px;
+        width: calc( 20px + ( 34px * 2 ) );
+    }
+    &.items-3 {
+        width: calc( 20px + ( 34px * 3 ) );
+    }
+    &.items-3 {
+        width: calc( 20px + ( 34px * 4 ) );
+    }
+    &.items-3 {
+        width: calc( 20px + ( 34px * 5 ) );
     }
 }
 
 .field-value-module.item-icon.left-icons.items-more-than-max:after {
     content: "+" attr(data-count-users-overflow);
     position: absolute;
-    right: -15px;
+    right: calc( -20px + 5px );
     top: -5px;
     background: #7d7d7d;
     border-radius: 100%;
@@ -536,11 +548,17 @@ ul.project, ul.user{
     box-shadow: 0 0 3px rgb(0 0 0 / 70%);
     
     &.index-2 {
-        left: 15px;
+        left: 34px;
     }
     
     &.index-3 {
-        left: 30px;
+        left: calc( 34px * 2 );
+    }
+    &.index-4 {
+        left: calc( 34px * 3 );
+    }
+    &.index-5 {
+        left: calc( 34px * 4 );
     }
 }
 
