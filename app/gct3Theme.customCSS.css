@@ -578,6 +578,10 @@ ul.project, ul.user{
        .index-more-than-max{
             display:inline-block;
         }
+        
+        &:after{
+            display:none;
+        }
    }
 }
 
