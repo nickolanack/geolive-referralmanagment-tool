@@ -521,6 +521,21 @@ ul.project, ul.user{
     &.items-limit-5, &.items-5:hover {
         width: calc( 20px + ( 34px * 5 ) );
     }
+    &.items-limit-6, &.items-6:hover {
+        width: calc( 20px + ( 34px * 6 ) );
+    }
+    &.items-limit-7, &.items-7:hover {
+        width: calc( 20px + ( 34px * 7 ) );
+    }
+    &.items-limit-8, &.items-8:hover {
+        width: calc( 20px + ( 34px * 8 ) );
+    }
+    &.items-limit-9, &.items-9:hover {
+        width: calc( 20px + ( 34px * 9 ) );
+    }
+    &.items-limit-10, &.items-10:hover {
+        width: calc( 20px + ( 34px * 10 ) );
+    }
     
  
     
@@ -569,6 +584,21 @@ ul.project, ul.user{
     }
     &.index-5 {
         left: calc( 34px * 4 );
+    }
+    &.index-6 {
+        left: calc( 34px * 5 );
+    }
+    &.index-7 {
+        left: calc( 34px * 6 );
+    }
+    &.index-8 {
+        left: calc( 34px * 7 );
+    }
+    &.index-9 {
+        left: calc( 34px * 8 );
+    }
+    &.index-10 {
+        left: calc( 34px * 9 );
     }
 }
 .field-value-module.item-icon.left-icons{
