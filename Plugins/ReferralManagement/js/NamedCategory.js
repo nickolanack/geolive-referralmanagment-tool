@@ -175,7 +175,7 @@ var NamedCategory = (function() {
 		    el.addClass('hasItems');
 		}
 		var counter=0;
-		var max=5;
+		var max=1;
 
 		var cache=[];
 		
@@ -185,17 +185,17 @@ var NamedCategory = (function() {
 		    var userid=p.getProjectSubmitterId();
 		    if (ProjectTeam.CurrentTeam().hasUser(userid)&&cache.indexOf(userid)==-1){
 		    	cache.push(userid);
-		        var icon=UserIcon.createUserAvatarModule(ProjectTeam.CurrentTeam().getUser(userid));
+		        var iconModule=UserIcon.createUserAvatarModule(ProjectTeam.CurrentTeam().getUser(userid));
 
 
-		        if(icon){
+		        if(iconModule){
 		        	
 		            //el.appendChild(icon);
-		            icon.load(null, el, null);
+		            iconModule.load(null, el, null);
 		            counter++;
-		            icon.getElement().addClass('index-'+counter);
+		            iconModule.getElement().addClass('index-'+counter);
 		            if(counter>max){
-						icon.getElement().addClass('index-more-than-'+max);
+						iconModule.getElement().addClass('index-more-than-'+max);
 					}
 
 		        }
