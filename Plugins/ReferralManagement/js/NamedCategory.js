@@ -176,13 +176,18 @@ var NamedCategory = (function() {
 		}
 		var counter=0;
 		var max=5;
+
+		var cache=[];
 		
 		el.setAttribute('data-item-list',projects.map(function(p){
 		    
 		    console.error('avatar');
 		    if (ProjectTeam.CurrentTeam().hasUser(p.getProjectSubmitterId())){
 		        var icon=UserIcon.createUserAvatarModule(ProjectTeam.CurrentTeam().getUser(p.getProjectSubmitterId()));
-		        if(icon){
+
+
+		        if(icon&&cache.indexOf(icon)==-1){
+		        	cache.push(icon);
 		            //el.appendChild(icon);
 		            icon.load(null, el, null);
 		            counter++;
