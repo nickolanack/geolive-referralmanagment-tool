@@ -204,6 +204,8 @@ var NamedCategory = (function() {
 		el.addClass('items-'+counter);
 		if(counter>max){
 			el.addClass('items-more-than-'+max);
+			el.setAttribute('data-count-users-overflow', counter-max);
+			el.setAttribute('data-count-users', counter);
 		}
 
 
