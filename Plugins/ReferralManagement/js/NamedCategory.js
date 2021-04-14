@@ -175,6 +175,8 @@ var NamedCategory = (function() {
 		    el.addClass('hasItems');
 		}
 		var counter=0;
+		var max=5;
+		
 		el.setAttribute('data-item-list',projects.map(function(p){
 		    
 		    console.error('avatar');
@@ -183,7 +185,11 @@ var NamedCategory = (function() {
 		        if(icon){
 		            //el.appendChild(icon);
 		            icon.load(null, el, null);
-		            el.setAttribute('data-count-users', ++counter);
+		            counter++;
+		            icon.getElement().addClass('index-'+counter);
+		            if(counter>max){
+						icon.getElement().addClass('index-more-than-'+max);
+					}
 
 		        }
 		            
@@ -194,9 +200,9 @@ var NamedCategory = (function() {
 		    
 		}).join('-'));
 
+		el.setAttribute('data-count-users', counter);           
 		el.addClass('items-'+counter);
-		var max=5;
-		if(counter>5){
+		if(counter>max){
 			el.addClass('items-more-than-'+max);
 		}
 
