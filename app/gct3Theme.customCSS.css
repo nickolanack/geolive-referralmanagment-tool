@@ -484,17 +484,28 @@ ul.project, ul.user{
 }
 
 
+
+.field-value-module.item-icon.left-icons.hasItems.items-2 {
+    width: 50px;
+    background: transparent;
+}
+
+
 .field-value-module.item-icon.left-icons, .field-value-module.item-icon.left-icons:after {
     float: left;
     width: 30px;
     height: 30px;
     margin: 5px;
+    position: relative;
+    
+    
+
 }
 
 .field-value-module.item-icon.left-icons:after {
-        content:"+" attr(data-count-projects);
-    position: relative;
-    left: 6px;
+    content: "+" attr(data-count-projects);
+    position: absolute;
+    right: -15px;
     top: -5px;
     background: #7d7d7d;
     border-radius: 100%;
@@ -504,6 +515,25 @@ ul.project, ul.user{
     color: white;
 }
 
+
+
+.field-value-module.item-icon.left-icons .user-profile-icon {
+    position: absolute;
+    left: 0px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(255,255,255,0.4);
+    box-sizing: border-box;
+    box-shadow: 0 0 3px rgb(0 0 0 / 70%);
+    
+    &.index-2 {
+        left: 15px;
+    }
+    
+    &.index-3 {
+        left: 30px;
+    }
+}
 
 button.primary-btn.nav-new-btn {
     float: none;
@@ -727,12 +757,7 @@ button.primary-btn.nav-new-btn:hover {
     }
 }
 
-.field-value-module.item-icon.left-icons .user-profile-icon {
-    position: absolute;
-    left: 15px;
-    width: 30px;
-    height: 30px;
-}
+
 
 
 .table-header .field-value-module:before {
