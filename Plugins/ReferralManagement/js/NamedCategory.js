@@ -186,12 +186,14 @@ var NamedCategory = (function() {
 
 		el.setAttribute('data-item-list', projects.map(function(p) {
 
-			console.error('avatar');
+			//console.error('avatar');
 			var uid = p.getProjectSubmitterId();
 
 			var users=[];
 			if(p.getUsers){
-				users = p.getUsers();
+				users = p.getUsers().map(function(u){
+					return u.getId?u.getId():(u.id||u);
+				});
 			}
 			
 
