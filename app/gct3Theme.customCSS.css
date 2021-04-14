@@ -506,21 +506,25 @@ ul.project, ul.user{
         background: rgba(0,0,0,0.1);
     }
 
-    &.items-1 {
+    &.items-limit-1, &.items-1:hover {
         width: calc( 20px + ( 34px * 1 ) );
     }
-    &.items-2 {
+    &.items-limit-2, &.items-2:hover {
         width: calc( 20px + ( 34px * 2 ) );
     }
-    &.items-3 {
+    &.items-limit-3, &.items-3:hover {
         width: calc( 20px + ( 34px * 3 ) );
     }
-    &.items-3 {
+    &.items-limit-3 {
         width: calc( 20px + ( 34px * 4 ) );
     }
-    &.items-3 {
+    &.items-limit-3 {
         width: calc( 20px + ( 34px * 5 ) );
     }
+    
+ 
+    
+    
 }
 
 .field-value-module.item-icon.left-icons.items-more-than-max:after {
@@ -547,6 +551,12 @@ ul.project, ul.user{
     box-sizing: border-box;
     box-shadow: 0 0 3px rgb(0 0 0 / 70%);
     
+    
+    &.index-more-than-max{
+        display:none;
+    }
+    
+    
     &.index-2 {
         left: 34px;
     }
@@ -560,6 +570,19 @@ ul.project, ul.user{
     &.index-5 {
         left: calc( 34px * 4 );
     }
+}
+.field-value-module.item-icon.left-icons{
+
+ &:hover {
+       
+       .index-more-than-max{
+            display:inline-block;
+        }
+        
+        &:after{
+            display:none;
+        }
+   }
 }
 
 button.primary-btn.nav-new-btn {
