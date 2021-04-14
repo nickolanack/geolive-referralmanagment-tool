@@ -196,6 +196,7 @@ var NamedCategory = (function() {
 		            iconModule.getElement().addClass('index-'+counter);
 		            if(counter>max){
 						iconModule.getElement().addClass('index-more-than-'+max);
+						iconModule.getElement().addClass('index-more-than-max');
 					}
 
 		        }
