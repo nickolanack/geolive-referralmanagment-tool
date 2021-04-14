@@ -522,7 +522,7 @@ ul.project, ul.user{
         width: calc( 20px + ( 34px * 5 ) );
     }
     
-    
+ 
     
     
 }
@@ -556,6 +556,7 @@ ul.project, ul.user{
         display:none;
     }
     
+    
     &.index-2 {
         left: 34px;
     }
@@ -569,6 +570,15 @@ ul.project, ul.user{
     &.index-5 {
         left: calc( 34px * 4 );
     }
+}
+.field-value-module.item-icon.left-icons{
+
+ &:hover {
+       
+       .index-more-than-max{
+            display:inline-block;
+        }
+   }
 }
 
 button.primary-btn.nav-new-btn {
