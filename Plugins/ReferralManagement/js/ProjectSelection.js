@@ -4,6 +4,13 @@ var ProjectSelection=(function(){
 
 		handleSelection:function(checkbox){
 
+			if(checkbox.checked){
+
+				checkbox.checked=false;
+				return;
+			}
+
+			checkbox.checked=true;
 
 
 		},
