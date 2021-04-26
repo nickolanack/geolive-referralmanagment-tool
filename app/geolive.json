@@ -17851,6 +17851,7 @@
                                 "config": {
                                     "listClassName": "projects-list",
                                     "className": "section-module",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "singleProjectListItemDetail",
                                     "shouldRender": true,
@@ -17874,6 +17875,14 @@
                                     "filterItemsScript": "userProfileDetailProjects.metadata.positions.content.modules.2.config.filterItemsScript.js",
                                     "sortItemsScript": "userProfileDetailProjects.metadata.positions.content.modules.2.config.sortItemsScript.js",
                                     "maxItems": "25"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "userProfileDetailProjects.metadata.positions.content.modules.3.config.script.js",
+                                    "description": "Info about my custom script"
                                 }
                             }
                         ]
