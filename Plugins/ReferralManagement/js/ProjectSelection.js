@@ -27,7 +27,7 @@ var ProjectSelection = (function() {
 			if (index >= 0) {
 				selection.splice(index, 1);
 				this.fireEvent('unselect',[item.getId()]);
-				this.fireEvent('change',[item.slice(0)]);
+				this.fireEvent('change',[selection.slice(0)]);
 			}
 
 		},
