@@ -2,7 +2,7 @@ var ProjectSelection=(function(){
 
 	var ProjectSelectionClass=new Class({
 
-		var handleSelection:function(checkbox){
+		handleSelection:function(checkbox){
 
 
 
@@ -10,7 +10,7 @@ var ProjectSelection=(function(){
 		initSelection:function(item, checkbox){
 
 
-			
+
 		}
 
 	});
