@@ -35,6 +35,20 @@ var ProjectSelection = (function() {
 
 
 
+		},
+		getProjects:function(){
+
+			return selection.map(function(pid){
+				try{
+					return ProjectTeam.CurrentTeam().getProject(pid);
+				}catch(e){
+
+				}
+
+				return null
+			}).filter(function(p){
+				return !!p;
+			});
 		}
 
 	});
