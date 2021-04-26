@@ -2233,11 +2233,13 @@
             ],
             "projectMouseover": "<span style=\"font-size:20px\">Project Data<\/span><\/br>These map layers display spatial documents related to the current project.",
             "projectTint": "rgb(0,0,0)",
-            "projectColor": "rgb(255,255,255)",
-            "selection": [],
-            "selectionMouseover": "",
+            "projectColor": "rgb(176, 201, 201)",
+            "selection": [
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/hyS_sJ1_%5BG%5D_Aba_%5BImAgE%5D.png"
+            ],
+            "selectionMouseover": "<span style=\"font-size:20px\">Selection<\/span><\/br>These map layers have been selected.",
             "selectionTint": "rgb(0,0,0)",
-            "selectionColor": "rgb(255,255,255)"
+            "selectionColor": "rgb(214, 196, 214)"
         }
     },
     "widget.115": {
