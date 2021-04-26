@@ -1,5 +1,5 @@
-el.addClass("inline");
-el.setAttribute("data-col","selection");
+el.addClass("inline icon");
+el.setAttribute("data-col","");
 
 
 
