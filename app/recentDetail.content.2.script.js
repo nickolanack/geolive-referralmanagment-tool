@@ -14,4 +14,16 @@ new WeakEvent(btn, ProjectSelection, 'change', function(selection){
 })
 
 
+btn.addEvent('click', function(){
+    
+    
+    var application =ReferralManagementDashboard.getApplication();
+			
+				var controller = application.getNamedValue('navigationController');
+				controller.navigateTo("Map", "Main");
+    
+    
+})
+
+
 return btn;
