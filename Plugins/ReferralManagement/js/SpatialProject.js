@@ -30,7 +30,7 @@ var SpatialProject = (function() {
 						url: url,
 						name: project.getName(),
 						group: project.getBaseMapLayerType(),
-						
+
 						//project:item,
 						id: "project-" + project.getId() + '-' + i + ''
 					});
@@ -74,49 +74,57 @@ var SpatialProject = (function() {
 
 
 
-			var items= ProjectSelection.getProjects();
-			var spatial=[];
+			var items = ProjectSelection.getProjects();
+			var list = [];
 
-			items.forEach(function(item){
+			items.forEach(function(item) {
 
 
 
+				var spatial = [];
 				spatial = spatial.concat(item.getSpatialDocuments());
 
 				if (item.getProjectObjects) {
 					item.getProjectObjects().forEach(function(p) {
-						spatial = spatial.concat(p.getSpatialDocuments().map(function(url ,i){
-							return  {
+						spatial = spatial.concat(p.getSpatialDocuments().map(function(url, i) {
+							return {
 								url: url,
 								id: "project-" + p.getId() + '-' + i + '',
 								name: p.getName()
-							 }
+							}
 						}));
 					});
 				}
 
+
+
+				spatial = spatial.map(function(spatial, i) {
+
+					var url = spatial;
+					var options = {};
+					if (spatial.url) {
+						options = spatial;
+					}
+
+
+					return Object.append({
+						url: url,
+						//project:item,
+						group: "project",
+						id: "project-" + item.getId() + '-' + i + '',
+						name: item.getName()
+					}, options);
+
+
+
+				});
+
+
+				list=list.concat(spatial);
+
 			});
 
-			return spatial.map(function(spatial, i) {
-
-				var url=spatial;
-				var options={};
-				if(spatial.url){
-					options=spatial;
-				}
-
-
-				return Object.append({
-					url: url,
-					//project:item,
-					group:"project",
-					id: "project-" + item.getId() + '-' + i + '',
-					name:item.getName()
-				}, options);
-
-
-
-			});
+			return list;
 
 		}
 
@@ -138,31 +146,31 @@ var SpatialProject = (function() {
 
 			if (item.getProjectObjects) {
 				item.getProjectObjects().forEach(function(p) {
-					spatial = spatial.concat(p.getSpatialDocuments().map(function(url ,i){
-						return  {
+					spatial = spatial.concat(p.getSpatialDocuments().map(function(url, i) {
+						return {
 							url: url,
 							id: "project-" + p.getId() + '-' + i + '',
 							name: p.getName()
-						 }
+						}
 					}));
 				});
 			}
 
 			return spatial.map(function(spatial, i) {
 
-				var url=spatial;
-				var options={};
-				if(spatial.url){
-					options=spatial;
+				var url = spatial;
+				var options = {};
+				if (spatial.url) {
+					options = spatial;
 				}
 
 
 				return Object.append({
 					url: url,
 					//project:item,
-					group:"project",
+					group: "project",
 					id: "project-" + item.getId() + '-' + i + '',
-					name:item.getName()
+					name: item.getName()
 				}, options);
 
 
