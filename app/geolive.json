@@ -5492,6 +5492,7 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "dark-only-shading inset-menu-shading left-panel",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "splitProjectDetail",
                                     "shouldRender": true,
@@ -5508,6 +5509,14 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": ""
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "Main Projects Detail.metadata.positions.content.modules.2.config.script.js",
+                                    "description": "Info about my custom script"
                                 }
                             }
                         ]
