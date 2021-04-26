@@ -649,6 +649,21 @@ button.primary-btn.nav-new-btn:hover {
 }
 
 
+button.primary-btn.nav-new-btn.view-selection.inline {
+    display: none;
+    background-color: #268039;
+    float: right;
+}
+
+button.primary-btn.nav-new-btn.view-selection.inline.with-selection {
+    display: inline-block;
+}
+
+button.primary-btn.nav-new-btn.view-selection:before{
+    content: "\f278";
+}
+
+
 .navigation-menu ul li.active {
     background-color: adjust-color($highlightBtnColor, $alpha:-0.3);
     border-right: 4px solid $highlightBtnColor;
