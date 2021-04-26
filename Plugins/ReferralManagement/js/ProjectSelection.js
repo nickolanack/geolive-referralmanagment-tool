@@ -36,6 +36,9 @@ var ProjectSelection = (function() {
 
 
 		},
+		hasProject:function(item){
+			return selection.indexOf(item.getId())>=0;
+		},
 		getProjects:function(){
 
 			return selection.map(function(pid){
