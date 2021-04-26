@@ -16075,6 +16075,7 @@
                                 "config": {
                                     "listClassName": "projects-list",
                                     "className": "x-inset-shading no-line xx-recent-item section-module",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "singleProjectListItemTableDetail",
                                     "shouldRender": true,
@@ -16098,6 +16099,14 @@
                                     "filterItemsScript": "return true;",
                                     "sortItemsScript": "",
                                     "maxItems": "10"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "recentDetail.metadata.positions.content.modules.2.config.script.js",
+                                    "description": "Info about my custom script"
                                 }
                             }
                         ]
