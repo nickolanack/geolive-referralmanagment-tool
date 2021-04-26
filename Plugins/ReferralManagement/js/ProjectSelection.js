@@ -22,7 +22,7 @@ var ProjectSelection = (function() {
 
 			NotificationBubble.Make("", "Removed `" + project.getName() + "` to selection");
 			var index = selection.indexOf(project.getId());
-			if (index => = 0) {
+			if (index >= 0) {
 				selection.splice(index, 1);
 			}
 
