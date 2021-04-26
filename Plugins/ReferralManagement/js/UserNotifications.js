@@ -21,6 +21,7 @@ var UserNotifications=(function(){
 
 	}
 
+	return UserNotifications;
 
 
 })();
