@@ -12,22 +12,22 @@ var ProjectSelection = (function() {
 
 			if (checkbox.checked) {
 
-				NotificationBubble.Make("", "Added `" + project.getName() + "` to selection");
-				if (selection.indexOf(project.getId()) == -1) {
-					selection.push(project.getId());
-					this.fireEvent('select',[project.getId()])
+				NotificationBubble.Make("", "Added `" + item.getName() + "` to selection");
+				if (selection.indexOf(item.getId()) == -1) {
+					selection.push(item.getId());
+					this.fireEvent('select',[item.getId()])
 					this.fireEvent('change',[selection.slice(0)]);
 				}
 
 				return;
 			}
 
-			NotificationBubble.Make("", "Removed `" + project.getName() + "` to selection");
-			var index = selection.indexOf(project.getId());
+			NotificationBubble.Make("", "Removed `" + item.getName() + "` to selection");
+			var index = selection.indexOf(item.getId());
 			if (index >= 0) {
 				selection.splice(index, 1);
-				this.fireEvent('unselect',[project.getId()]);
-				this.fireEvent('change',[selection.slice(0)]);
+				this.fireEvent('unselect',[item.getId()]);
+				this.fireEvent('change',[item.slice(0)]);
 			}
 
 		},
