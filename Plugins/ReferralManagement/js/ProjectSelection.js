@@ -6,13 +6,13 @@ var ProjectSelection=(function(){
 
 			console.log('selection');
 
-			if(checkbox.checked){
+			// if(checkbox.checked){
 
-				checkbox.checked=false;
-				return;
-			}
+			// 	checkbox.checked=false;
+			// 	return;
+			// }
 
-			checkbox.checked=true;
+			// checkbox.checked=true;
 
 
 		},
