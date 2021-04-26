@@ -9936,7 +9936,8 @@
             "target": "forTheMap",
             "readAccess": "public",
             "language": "html\/text",
-            "returnsValue": false
+            "returnsValue": false,
+            "cacheable": false
         }
     },
     "widget.229": {
