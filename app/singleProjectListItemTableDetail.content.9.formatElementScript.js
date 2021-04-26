@@ -1,4 +1,4 @@
-el.addClass("inline checkbox");
+el.addClass("inline check");
 el.setAttribute("data-col","");
 
 
