@@ -201,8 +201,8 @@ var NamedCategory = (function() {
 
 
 
-				if (ProjectTeam.CurrentTeam().hasUser(userid) && cache.indexOf(userid) == -1) {
-					cache.push(userid);
+				if (ProjectTeam.CurrentTeam().hasUser(userid) && cache.indexOf(userid+"") == -1) {
+					cache.push(userid+"");
 					var iconModule = UserIcon.createUserAvatarModule(ProjectTeam.CurrentTeam().getUser(userid));
 
 
