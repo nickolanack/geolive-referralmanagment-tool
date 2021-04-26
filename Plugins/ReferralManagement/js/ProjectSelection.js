@@ -5,7 +5,7 @@ var ProjectSelection = (function() {
 
 
 	var ProjectSelectionClass = new Class({
-		Implements:[Events]
+		Implements:[Events],
 		handleSelection: function(item, checkbox) {
 
 			console.log('selection');
