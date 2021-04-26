@@ -2157,6 +2157,33 @@
                     "name": "projectColor",
                     "default": "rgb(255,255,255)",
                     "label": "project color"
+                },
+                "selection": {
+                    "type": "images",
+                    "name": "selection",
+                    "default": [],
+                    "label": "selection",
+                    "maxHeight": 256,
+                    "maxWidth": 256,
+                    "limit": 1
+                },
+                "selectionMouseover": {
+                    "type": "text",
+                    "name": "selectionMouseover",
+                    "default": "",
+                    "label": "selectionMouseover"
+                },
+                "selectionTint": {
+                    "type": "color",
+                    "name": "selectionTint",
+                    "default": "rgb(0,0,0)",
+                    "label": "selection tint"
+                },
+                "selectionColor": {
+                    "type": "color",
+                    "name": "selectionColor",
+                    "default": "rgb(255,255,255)",
+                    "label": "selection color"
                 }
             },
             "townships": [
@@ -2206,7 +2233,11 @@
             ],
             "projectMouseover": "<span style=\"font-size:20px\">Project Data<\/span><\/br>These map layers display spatial documents related to the current project.",
             "projectTint": "rgb(0,0,0)",
-            "projectColor": "rgb(255,255,255)"
+            "projectColor": "rgb(255,255,255)",
+            "selection": [],
+            "selectionMouseover": "",
+            "selectionTint": "rgb(0,0,0)",
+            "selectionColor": "rgb(255,255,255)"
         }
     },
     "widget.115": {
