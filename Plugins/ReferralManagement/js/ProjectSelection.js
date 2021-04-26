@@ -2,7 +2,7 @@ var ProjectSelection=(function(){
 
 	var ProjectSelectionClass=new Class({
 
-		handleSelection:function(checkbox){
+		handleSelection:function(item, checkbox){
 
 			if(checkbox.checked){
 
