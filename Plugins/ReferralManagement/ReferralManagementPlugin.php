@@ -261,6 +261,7 @@ core\EventListener {
 		IncludeJS(__DIR__ . '/js/GuestNavigationMenu.js');
 
 		IncludeJS(__DIR__ . '/js/ProjectSelection.js');
+		IncludeJS(__DIR__ . '/js/UserNotifications.js');
 
 		IncludeJS(__DIR__ . '/js/UserGroups.js');
 		IncludeJS(__DIR__ . '/js/ConfigItem.js');
