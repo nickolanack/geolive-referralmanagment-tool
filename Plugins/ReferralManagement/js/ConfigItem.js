@@ -6,7 +6,16 @@ var ConfigItem = (function() {
 
 
 
-    ConfigItem.GetTextBlockModule = function(item) {
+    ConfigItem.GetTextBlockModule = function(item , options) {
+
+        
+        if(!(item instanceof ConfigItem)&&(!options)&&item.userAuth){
+            options=item;
+        }
+
+        options=Object.append({
+            userAuth:false
+        }, options);
 
 
         if(!(item instanceof ConfigItem)){
@@ -66,7 +75,7 @@ var ConfigItem = (function() {
                         content.innerHTML = configValue.getText();
                         text = configValue.getText();
 
-                        (new AjaxControlQuery(CoreAjaxUrlRoot, 'set_configuration_field', {
+                        (new AjaxControlQuery(CoreAjaxUrlRoot, (options.userAuth?'user_':'')+'set_configuration_field', {
                             "widget": item.getWidget(),
                             "field": {
                                 "name": item.getParam(),
