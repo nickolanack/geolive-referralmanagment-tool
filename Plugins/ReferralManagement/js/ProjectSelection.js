@@ -4,6 +4,8 @@ var ProjectSelection=(function(){
 
 		handleSelection:function(item, checkbox){
 
+			console.log('selection');
+
 			if(checkbox.checked){
 
 				checkbox.checked=false;
