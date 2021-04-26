@@ -74,7 +74,7 @@ var SpatialProject = (function() {
 
 
 
-			var items= itemsProjectSelection.getProjects();
+			var items= ProjectSelection.getProjects();
 			var spatial=[];
 
 			items.forEach(function(item){
