@@ -5,7 +5,7 @@ var ProjectSelection = (function() {
 
 
 	var ProjectSelectionClass = new Class({
-
+		Implements:[Events]
 		handleSelection: function(item, checkbox) {
 
 			console.log('selection');
@@ -15,6 +15,8 @@ var ProjectSelection = (function() {
 				NotificationBubble.Make("", "Added `" + project.getName() + "` to selection");
 				if (selection.indexOf(project.getId()) == -1) {
 					selection.push(project.getId());
+					this.fireEvent('select',[project.getId()])
+					this.fireEvent('change',[selection.slice(0)]);
 				}
 
 				return;
@@ -24,6 +26,8 @@ var ProjectSelection = (function() {
 			var index = selection.indexOf(project.getId());
 			if (index >= 0) {
 				selection.splice(index, 1);
+				this.fireEvent('unselect',[project.getId()]);
+				this.fireEvent('change',[selection.slice(0)]);
 			}
 
 		},
