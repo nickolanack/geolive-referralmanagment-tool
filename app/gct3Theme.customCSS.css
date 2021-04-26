@@ -661,6 +661,9 @@ button.primary-btn.nav-new-btn.view-selection.inline.with-selection {
 
 button.primary-btn.nav-new-btn.view-selection:before{
     content: "\f278";
+    font-family: 'FontAwesome';
+    font-size: 15px;
+    margin-right: 5px;
 }
 
 
