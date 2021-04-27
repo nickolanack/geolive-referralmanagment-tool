@@ -3,7 +3,7 @@
  
  IncludeJS('{plugins}/ReferralManagement/js/LegendHelper.js');
  
- $layerGroups=array('project', 'community', 'townships', 'mining', 'forestry', 'boundary', 'crowdsource', 'user');
+ $layerGroups=array('project', 'selection', 'community', 'townships', 'mining', 'forestry', 'boundary', 'crowdsource', 'user');
     foreach($layerGroups as $i=>$groupName){
         
         GetWidget('plugin.Maps.Legend')->setScriptName('widget_'.$groupName)->setParameters(array(
