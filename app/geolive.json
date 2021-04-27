@@ -16296,6 +16296,14 @@
                                     "insertAtTop": false,
                                     "targetName": ""
                                 }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "mainSearchDetail.metadata.positions.content.modules.4.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
                             }
                         ]
                     },
