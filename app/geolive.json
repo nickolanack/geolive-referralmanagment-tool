@@ -16260,9 +16260,17 @@
                         "modules": [
                             "mainSearchDetail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "mainSearchDetail.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
                                 "type": "Search",
                                 "config": {
-                                    "getAggregatorsScript": "mainSearchDetail.metadata.positions.content.modules.1.config.getAggregatorsScript.js",
+                                    "getAggregatorsScript": "mainSearchDetail.metadata.positions.content.modules.2.config.getAggregatorsScript.js",
                                     "placeholder": "Type to search..."
                                 }
                             },
@@ -16270,7 +16278,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "mainSearchDetail.metadata.positions.content.modules.2.config.script.js",
+                                    "script": "mainSearchDetail.metadata.positions.content.modules.3.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             },
@@ -16290,19 +16298,11 @@
                                     "deleteItemScript": "defaultBehaviorFn()",
                                     "initModuleScript": "",
                                     "formatModuleScript": "",
-                                    "resolveItemScript": "mainSearchDetail.metadata.positions.content.modules.3.config.resolveItemScript.js",
+                                    "resolveItemScript": "mainSearchDetail.metadata.positions.content.modules.4.config.resolveItemScript.js",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": ""
-                                }
-                            },
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "mainSearchDetail.metadata.positions.content.modules.4.config.script.js",
-                                    "description": "Info about my custom script"
                                 }
                             }
                         ]
@@ -19995,7 +19995,8 @@
             ],
             "welcomeText": "World",
             "widgetTitle": "dashboardContentConfig",
-            "readAccess": "public"
+            "readAccess": "public",
+            "authUserAjaxScript": "XXXX-XXXX"
         }
     },
     "widget.384": {
