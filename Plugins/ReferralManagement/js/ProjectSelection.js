@@ -36,6 +36,9 @@ var ProjectSelection = (function() {
 
 
 		},
+		hasSelection:function(){
+			return selection.length>0;
+		},
 		hasProject:function(item){
 			return selection.indexOf(item.getId())>=0;
 		},
@@ -61,6 +64,11 @@ var ProjectSelection = (function() {
 	ProjectSelection.MakePreviewBtn=function(){
 
 		var btn= new Element('button', {html:"View selection", "class":"primary-btn nav-new-btn view-selection inline"});
+
+
+		if(ProjectSelection.hasSelection()){
+			btn.addClass('with-selection');
+		}
 
 		//add weak event
 
