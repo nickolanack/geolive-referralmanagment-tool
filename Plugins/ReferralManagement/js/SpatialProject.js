@@ -110,7 +110,7 @@ var SpatialProject = (function() {
 					return Object.append({
 						url: url,
 						//project:item,
-						group: "project",
+						group: "selection",
 						id: "project-" + item.getId() + '-' + i + '',
 						name: item.getName()
 					}, options);
