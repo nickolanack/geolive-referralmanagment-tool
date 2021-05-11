@@ -16471,16 +16471,16 @@
                             "documentProjectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 264,
-                            "y": 340
+                            "x": 146,
+                            "y": 275
                         },
                         "children": [
                             "documentProjectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 224,
-                                    "y": 553
+                                    "x": 106,
+                                    "y": 488
                                 }
                             },
                             {
@@ -16490,16 +16490,16 @@
                                     "documentProjectForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 813,
-                                    "y": 301
+                                    "x": 524,
+                                    "y": 226
                                 },
                                 "children": [
                                     "documentProjectForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 773,
-                                            "y": 477
+                                            "x": 484,
+                                            "y": 402
                                         }
                                     },
                                     {
@@ -16509,16 +16509,16 @@
                                             "documentProjectForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 691,
-                                            "y": 813
+                                            "x": 999,
+                                            "y": 261
                                         },
                                         "children": [
                                             "documentProjectForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 651,
-                                                    "y": 1076
+                                                    "x": 959,
+                                                    "y": 524
                                                 }
                                             }
                                         ],
@@ -16608,7 +16608,7 @@
                                                             "type": "FormBooleanField",
                                                             "config": {
                                                                 "className": "",
-                                                                "label": "Some Field",
+                                                                "label": "yes, this project contains sensitive data",
                                                                 "mandatory": false,
                                                                 "getValueScript": "",
                                                                 "updateValueScript": " object.value=value ",
@@ -16638,6 +16638,26 @@
                                                                 "submitValueScript": "",
                                                                 "validateValueScript": "",
                                                                 "formatElementScript": ""
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "plugin.Attributes.WizardTagCloud",
+                                                            "config": {
+                                                                "attributeFields": [
+                                                                    "documentProjectForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.10.config.attributeFields.0.json"
+                                                                ],
+                                                                "className": "",
+                                                                "showLabel": false,
+                                                                "showAddWord": false,
+                                                                "label": "Nations impacted by this proposal",
+                                                                "addWordPlaceholder": "add a keyword",
+                                                                "fontColor": "rgb(0, 0, 0)",
+                                                                "hoverColor": "rgb(143, 188, 143)",
+                                                                "selectedColor": "rgb(143, 188, 143)",
+                                                                "shuffleTags": false,
+                                                                "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
+                                                                "getItemTagsScript": "documentProjectForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.10.config.getItemTagsScript.js",
+                                                                "formatModule": "module.runOnceOnLoad(function(){\nvar cats= Proposal.ListTerritories();\nif(cats.length==0){\n    module.getCloud().getElement().parentNode.setStyle(\"display\",\"none\");\n}\n});\n"
                                                             }
                                                         }
                                                     ]
@@ -16678,6 +16698,7 @@
                                                     "config": {
                                                         "listClassName": "dataset-select",
                                                         "className": "",
+                                                        "identifier": "",
                                                         "viewType": "view",
                                                         "namedView": "singleProjectListItemTableDetail",
                                                         "shouldRender": true,
@@ -16764,7 +16785,7 @@
                                                 "autocomplete": true,
                                                 "inputOptions": "{}",
                                                 "onRenderTextFieldScript": "",
-                                                "formatdefaultScript": ""
+                                                "formatValueScript": ""
                                             }
                                         },
                                         {
@@ -16787,7 +16808,7 @@
                                                 "autocomplete": true,
                                                 "inputOptions": "{}",
                                                 "onRenderTextFieldScript": "",
-                                                "formatdefaultScript": ""
+                                                "formatValueScript": ""
                                             }
                                         },
                                         {
