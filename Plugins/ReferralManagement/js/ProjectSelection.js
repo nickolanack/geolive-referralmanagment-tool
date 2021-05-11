@@ -65,13 +65,44 @@ var ProjectSelection = (function() {
 
 		var application =ReferralManagementDashboard.getApplication();
 
-		return new ElementModule('span',{
+		var module= new ElementModule('span',{
 		    "class":"notifications selection",
 		    events:{click:function(){
 		        
 		        
 		    }}
-		})
+		});
+
+		var popoverContent=function(){
+
+			if(selection.length==0){
+				return 'no items in selection';
+			}
+
+			return selection.length+' item'+(selection.length==1?'':'s')+' selected';
+
+
+		};
+		var popover=new UIPopover(module.getElement(), {
+			content:popoverContent
+		});
+
+		ProjectSelection.addEvent('change', function(selection){
+
+
+			popover.setContent(popoverContent);
+		
+			module.getElement().setAttribute('data-count', selection.length);
+			if(selection.length>0){
+				module.getElement().addClass('has-selection');
+				return;
+			}
+			module.getElement().removeClass('has-selection');
+
+		});
+
+
+		return module;
 		
 		
 		
