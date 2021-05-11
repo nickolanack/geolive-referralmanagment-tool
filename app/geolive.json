@@ -7199,14 +7199,6 @@
                                 }
                             },
                             {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.2.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "",
@@ -7228,13 +7220,21 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
-                                    "getItemListScript": "singleProjectUsersDetail.metadata.positions.content.modules.3.config.getItemListScript.js",
+                                    "getItemListScript": "singleProjectUsersDetail.metadata.positions.content.modules.2.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
                                     "formatListItemModuleScript": "return item;",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
                                     "sortItemsScript": "",
                                     "maxItems": "-1"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.3.config.script.js",
+                                    "description": "Info about my custom script"
                                 }
                             }
                         ]
