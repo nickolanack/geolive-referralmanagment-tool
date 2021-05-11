@@ -73,6 +73,18 @@ var ProjectSelection = (function() {
 		    }}
 		});
 
+
+		module.getElement().appendChild(new Element('button', {
+			"html":"clear", "class":"primary-btn", "events":{"click":function(){
+
+			}}
+		}));
+		module.getElement().appendChild(new Element('button', {
+			"html":"New Collection", "class":"primary-btn", "events":{"click":function(){
+				
+			}}
+		}));
+
 		var popoverContent=function(){
 
 			if(selection.length==0){
