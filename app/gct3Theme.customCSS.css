@@ -40,6 +40,44 @@ $highlightBtnColor:#cd0101; /*#ff0258;*/
     }
 }
 
+[data-view="communityDetailView"] div[data-view="splitProjectDetail"].inset-menu-shading.left-panel {
+    max-width: calc( 50% - 20px );
+    display: inline-block;
+    vertical-align: top;
+    background-color: transparent;
+}
+
+[data-view="communityDetailView"] .section-title {
+    font-size: 17px;
+    margin: 0 10px;
+}
+
+[data-view="communityDetailView"] .field-value-module.inline[data-col="user"]{
+    display:none;
+}
+
+[data-view="communityDetailView"] .field-value-module.inline[data-col="date"]{
+    display:none;
+}
+
+[data-view="communityDetailView"] .field-value-module.inline[data-col="time"]{
+    display:none;
+}
+
+[data-view="communityDetailView"] .field-value-module.inline{
+   min-width:180px;
+   width:180px;
+}
+
+[data-view="communityDetailView"] .field-value-module.inline.icon{
+   min-width:30px;
+}
+
+[data-view="communityDetailView"] .field-value-module.inline.check{
+   min-width:30px;
+}
+
+
 /**/
 
 .left-panel .application-logo {

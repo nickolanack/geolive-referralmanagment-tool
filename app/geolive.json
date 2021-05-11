@@ -20305,7 +20305,30 @@
                     },
                     "content": {
                         "modules": [
-                            "communityDetailView.metadata.positions.content.modules.0.json"
+                            "communityDetailView.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "dark-only-shading inset-menu-shading left-panel",
+                                    "identifier": "",
+                                    "viewType": "view",
+                                    "namedView": "splitProjectDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "communityDetailView.metadata.positions.content.modules.1.config.resolveItemScript.js",
+                                    "filterModulesScript": "communityDetailView.metadata.positions.content.modules.1.config.filterModulesScript.js",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            }
                         ]
                     },
                     "footer": {
