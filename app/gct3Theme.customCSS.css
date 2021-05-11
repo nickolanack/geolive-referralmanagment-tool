@@ -29,7 +29,11 @@ $highlightBtnColor:#cd0101; /*#ff0258;*/
     margin-top:30px;
     display: block;
 }
-
+[data-view="departmentDetailView"]{
+    .project-list-filters.section-indent {
+        display:none;
+    }
+}
 
 /**/
 
