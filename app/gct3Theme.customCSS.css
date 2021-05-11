@@ -9,7 +9,28 @@ $highlightBtnColor:#cd0101; /*#ff0258;*/
     width: 100%;
 }
 
+
+
+/*communities access*/
+[data-view="singleProjectUsersDetail"]{
+    
+    .ui-list-view {
+        margin-bottom: 40px;
+    }
+    
+    button.form-btn.primary-btn {
+        position: relative;
+        top: -40px;
+    }
+}
+
+/**/
+
+
 /*communities list*/
+
+
+
 
 .field-value-module.expand-btn:after {
     content: "\0f107";
