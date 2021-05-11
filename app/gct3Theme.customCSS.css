@@ -213,6 +213,7 @@ span.notifications {
     border-radius: 100%;
 }
 
+
 span.notifications:after {
     content: "\f0f3";
     font-family: 'FontAwesome';
@@ -221,6 +222,15 @@ span.notifications:after {
     top: 5px;
     color: $highlightBtnColor;
 }
+
+span.notifications.selection:after {
+    content: "\0f041";
+    font-size: 20px;
+    left: 11px;
+    top: 7px;
+    color: rgba(0,0,0,0.3);
+}
+
 
 [data-view="mainProjectsDetail"]>div>div>.ui-navigation-menu {
     display: none;
