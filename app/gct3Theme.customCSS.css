@@ -230,6 +230,10 @@ span.notifications.selection:after {
     top: 7px;
     color: rgba(0,0,0,0.3);
 }
+span.notifications.selection.has-selection:after {
+    color: #76aaff;
+}
+
 
 
 [data-view="mainProjectsDetail"]>div>div>.ui-navigation-menu {
