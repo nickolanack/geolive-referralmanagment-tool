@@ -19345,16 +19345,16 @@
                             "documentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 191,
-                            "y": 258
+                            "x": 201,
+                            "y": 268
                         },
                         "children": [
                             "documentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 151,
-                                    "y": 546
+                                    "x": 161,
+                                    "y": 556
                                 }
                             },
                             {
@@ -19364,16 +19364,16 @@
                                     "documentForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 666,
-                                    "y": 274
+                                    "x": 676,
+                                    "y": 284
                                 },
                                 "children": [
                                     "documentForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 626,
-                                            "y": 450
+                                            "x": 636,
+                                            "y": 460
                                         }
                                     },
                                     {
@@ -19383,16 +19383,16 @@
                                             "documentForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 803,
-                                            "y": 826
+                                            "x": 813,
+                                            "y": 836
                                         },
                                         "children": [
                                             "documentForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 763,
-                                                    "y": 992
+                                                    "x": 773,
+                                                    "y": 1002
                                                 }
                                             }
                                         ],
@@ -19405,7 +19405,27 @@
                                                 },
                                                 "content": {
                                                     "modules": [
-                                                        "documentForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.0.json"
+                                                        "documentForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.0.json",
+                                                        {
+                                                            "type": "plugin.Attributes.WizardTagCloud",
+                                                            "config": {
+                                                                "attributeFields": [
+                                                                    "documentForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
+                                                                ],
+                                                                "className": "",
+                                                                "showLabel": false,
+                                                                "showAddWord": false,
+                                                                "label": "Nations impacted by this proposal",
+                                                                "addWordPlaceholder": "add a keyword",
+                                                                "fontColor": "rgb(0, 0, 0)",
+                                                                "hoverColor": "rgb(143, 188, 143)",
+                                                                "selectedColor": "rgb(143, 188, 143)",
+                                                                "shuffleTags": false,
+                                                                "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
+                                                                "getItemTagsScript": "documentForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.1.config.getItemTagsScript.js",
+                                                                "formatModule": "module.runOnceOnLoad(function(){\nvar cats= Proposal.ListTerritories();\nif(cats.length==0){\n    module.getCloud().getElement().parentNode.setStyle(\"display\",\"none\");\n}\n});\n"
+                                                            }
+                                                        }
                                                     ]
                                                 },
                                                 "footer": {
