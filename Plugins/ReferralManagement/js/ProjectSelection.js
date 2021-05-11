@@ -90,6 +90,10 @@ var ProjectSelection = (function() {
 				var formName = DashboardConfig.getValue("leftPanelSecondaryBtnForm"); //"documentProjectForm";//"ProposalTemplate";
 				var newItem = new Proposal();
 
+				selection.forEach(function(item){
+					newItem.addProject(item);
+				});
+
 				application.getDisplayController().displayPopoverForm(formName, newItem, application, {
 					template: "form"
 				});
