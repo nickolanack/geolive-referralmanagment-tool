@@ -87,7 +87,17 @@ var ProjectSelection = (function() {
 		}));
 		module.getElement().appendChild(new Element('button', {
 			"html":"New Collection", "class":"primary-btn", "events":{"click":function(){
-				
+				var formName = DashboardConfig.getValue("leftPanelSecondaryBtnForm"); //"documentProjectForm";//"ProposalTemplate";
+				var newItem = new Proposal();
+
+				application.getDisplayController().displayPopoverForm(formName, newItem, application, {
+					template: "form"
+				});
+
+				newItem.addEvent("save:once", function() {
+					ProjectTeam.CurrentTeam().addProject(newItem);
+					UIInteraction.navigateToProjectOverview(newItem);
+				});
 			}}
 		}));
 
