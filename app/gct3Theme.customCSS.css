@@ -9,6 +9,25 @@ $highlightBtnColor:#cd0101; /*#ff0258;*/
     width: 100%;
 }
 
+
+span.notifications.selection button {
+    position: absolute;
+    right: 121px;
+    white-space: nowrap;
+    top: -5px;
+    background: #7b889f;
+    padding: 5px 16px;
+    display: none;
+}
+
+span.notifications.selection button:first-child {
+    right: 50px;
+}
+
+span.notifications.selection.has-selection button {
+    display: inline-block;
+}
+
 .pb-c.gct3 .template-footer {
     z-index: 1;
 }
