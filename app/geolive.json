@@ -20305,7 +20305,38 @@
                     },
                     "content": {
                         "modules": [
-                            "communityDetailView.metadata.positions.content.modules.0.json"
+                            "communityDetailView.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIListView",
+                                "config": {
+                                    "listClassName": "",
+                                    "className": "",
+                                    "identifier": "",
+                                    "viewType": "view",
+                                    "namedView": "splitProjectDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "communityDetailView.metadata.positions.content.modules.1.config.resolveItemScript.js",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": "",
+                                    "getItemListScript": "return item;",
+                                    "formatItemListScript": "return list;",
+                                    "formatListItemModuleScript": "return item;",
+                                    "emptyNamedView": "emptyListView",
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
+                                }
+                            }
                         ]
                     },
                     "footer": {
