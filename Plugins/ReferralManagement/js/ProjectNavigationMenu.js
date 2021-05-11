@@ -111,7 +111,7 @@ var ProjectNavigationMenu = new Class({
 		var item=this.item;
 
 		if (me.menu) {
-			me.parent();
+			NavigationMenuModule.prototype.process.call(this);
 			return;
 		}
 

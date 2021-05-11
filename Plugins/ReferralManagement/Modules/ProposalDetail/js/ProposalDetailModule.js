@@ -2,7 +2,8 @@ var ProposalDetailModule = new Class({
 	Extends: Module,
 	initialize: function(proposal, options) {
 		var me = this;
-		me.parent(options);
+		Module.prototype.initialize.call(this, options);
+
 
 		me.proposal = proposal;
 	},

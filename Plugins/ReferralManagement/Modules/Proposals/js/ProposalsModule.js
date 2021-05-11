@@ -11,7 +11,7 @@ var ProposalsModule = new Class({
 
         var me = this;
         me.map = map;
-        me.parent(Object.append({
+        Module.prototype.initialize.call(this, Object.append({
             onDisplayElement:function(){}
         },options));
 

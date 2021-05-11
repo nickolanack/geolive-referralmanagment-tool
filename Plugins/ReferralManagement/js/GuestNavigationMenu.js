@@ -5,7 +5,7 @@ var GuestNavigationMenu = (function() {
 		Extends: NavigationMenuModule,
 		initialize: function(application) {
 
-			this.parent(null, {
+			NavigationMenuModule.prototype.initialize.call(this,null, {
 				targetUIView: function(button, section, viewer) {
 					return viewer.getApplication().getChildView('content', 0).getChildView('content', 1);
 				},
@@ -42,7 +42,7 @@ var GuestNavigationMenu = (function() {
 			//var item = this.item;
 
 			if (me.menu) {
-				me.parent();
+				NavigationMenuModule.prototype.process.call(this);
 				return;
 			}
 

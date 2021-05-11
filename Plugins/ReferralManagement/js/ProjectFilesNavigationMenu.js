@@ -27,7 +27,7 @@ var ProjectFilesNavigationMenu = new Class({
 		var application = this.application;
 	
 		if (me.menu) {
-			me.parent();
+			NavigationMenuModule.prototype.process.call(this);
 			return;
 		}
 

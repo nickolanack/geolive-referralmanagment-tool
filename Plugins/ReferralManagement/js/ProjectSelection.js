@@ -61,6 +61,23 @@ var ProjectSelection = (function() {
 	var ProjectSelection = new ProjectSelectionClass();
 
 
+	ProjectSelection.MakeSelectionIndicator=function(){
+
+		var application =ReferralManagementDashboard.getApplication();
+
+		return new ElementModule('span',{
+		    "class":"notifications selection",
+		    events:{click:function(){
+		        
+		        
+		    }}
+		})
+		
+		
+		
+	}
+
+
 	ProjectSelection.MakePreviewBtn=function(){
 
 		var btn= new Element('button', {html:"View selection", "class":"primary-btn nav-new-btn view-selection inline"});

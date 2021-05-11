@@ -69,7 +69,7 @@ var MainNavigationMenuBase = new Class({
 var MainNavigationMenu = new Class({
 	Extends: MainNavigationMenuBase,
 	initialize: function(application) {
-		this.parent(null, application);
+		MainNavigationMenuBase.prototype.initialize.call(this, null, application);
 	},
 
 	process: function() {
@@ -78,7 +78,7 @@ var MainNavigationMenu = new Class({
 		var application = this.application;
 
 		if (me.menu) {
-			me.parent();
+			MainNavigationMenuBase.prototype.process.call(this);
 			return;
 		}
 
