@@ -40,6 +40,19 @@ $highlightBtnColor:#cd0101; /*#ff0258;*/
     }
 }
 
+[data-view="communityDetailView"] div[data-view="splitProjectDetail"].inset-menu-shading.left-panel {
+    max-width: calc( 50% - 20px );
+    display: inline-block;
+    vertical-align: top;
+    background-color: transparent;
+}
+
+[data-view="communityDetailView"] .section-title {
+    font-size: 17px;
+    margin: 0 10px;
+}
+
+
 /**/
 
 .left-panel .application-logo {
