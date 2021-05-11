@@ -7199,14 +7199,10 @@
                                 }
                             },
                             {
-                                "type": "UIListView",
-                                "config": []
-                            },
-                            {
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.3.config.script.js",
+                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.2.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
