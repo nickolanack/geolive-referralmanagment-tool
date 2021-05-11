@@ -11,6 +11,7 @@ return new ProjectList({
 			 cb(projects.filter(function(p){
 			     
 			     //return true;
+			    
 			     try {
 					var user = team.getUser(p.getProjectSubmitterId());
 			     }catch(e){

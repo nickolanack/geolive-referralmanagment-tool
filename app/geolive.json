@@ -20307,9 +20307,8 @@
                         "modules": [
                             "communityDetailView.metadata.positions.content.modules.0.json",
                             {
-                                "type": "UIListView",
+                                "type": "UIView",
                                 "config": {
-                                    "listClassName": "",
                                     "className": "",
                                     "identifier": "",
                                     "viewType": "view",
@@ -20324,17 +20323,10 @@
                                     "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "communityDetailView.metadata.positions.content.modules.1.config.resolveItemScript.js",
-                                    "filterModulesScript": "return list",
+                                    "filterModulesScript": "communityDetailView.metadata.positions.content.modules.1.config.filterModulesScript.js",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
-                                    "targetName": "",
-                                    "getItemListScript": "return item;",
-                                    "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "return item;",
-                                    "emptyNamedView": "emptyListView",
-                                    "filterItemsScript": "return true;",
-                                    "sortItemsScript": "",
-                                    "maxItems": "-1"
+                                    "targetName": ""
                                 }
                             }
                         ]
