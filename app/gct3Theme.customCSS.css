@@ -24,6 +24,12 @@ $highlightBtnColor:#cd0101; /*#ff0258;*/
     }
 }
 
+[data-view="selectableUserListItemDetail"] button.primary-btn {
+    position:relative;
+    top:-60px
+
+}
+
 /**/
 
 
