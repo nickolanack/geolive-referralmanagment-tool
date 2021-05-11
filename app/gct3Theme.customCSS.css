@@ -227,7 +227,8 @@ span.notifications.selection:after {
     content: "\0f041";
     font-size: 20px;
     left: 11px;
-    top: 6px;
+    top: 7px;
+    color: rgba(0,0,0,0.3);
 }
 
 
