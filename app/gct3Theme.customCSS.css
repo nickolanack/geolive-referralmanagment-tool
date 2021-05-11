@@ -4,6 +4,11 @@ $highlightBtnColor:#cd0101; /*#ff0258;*/
 
 
 
+.project-list-filters.section-indent{
+    display: inline-table;
+    width: 100%;
+}
+
 /*communities list*/
 .field-value-module.expand-btn {
     display: inline-block;
