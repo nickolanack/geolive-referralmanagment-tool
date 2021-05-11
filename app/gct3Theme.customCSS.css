@@ -1134,4 +1134,8 @@ div.field-value-module.inline.icon, div.field-value-module.inline.check {
 .table-header .field-value-module.disabled:before{
      visibility:hidden
 }
+.table-header .field-value-module.check.disabled:before {
+    display: none;
+}
+
 
