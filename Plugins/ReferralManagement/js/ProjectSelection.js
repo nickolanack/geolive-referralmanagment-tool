@@ -31,6 +31,12 @@ var ProjectSelection = (function() {
 			}
 
 		},
+		clear:function(){
+			var sel=selection;
+			selection=[];
+			this.fireEvent('unselect',[sel]);
+			this.fireEvent('change',[selection.slice(0)]);
+		}
 		initSelection: function(item, checkbox) {
 
 
@@ -76,7 +82,7 @@ var ProjectSelection = (function() {
 
 		module.getElement().appendChild(new Element('button', {
 			"html":"clear", "class":"primary-btn", "events":{"click":function(){
-
+				ProjectSelection.clear();
 			}}
 		}));
 		module.getElement().appendChild(new Element('button', {
