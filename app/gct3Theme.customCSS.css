@@ -3,6 +3,36 @@
 $highlightBtnColor:#cd0101; /*#ff0258;*/
 
 
+
+/*communities list*/
+.field-value-module.expand-btn {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 9px;
+    cursor: pointer;
+    border-radius: 100%;
+    right: 9px;
+    z-index: 1;
+}
+[data-view="departmentDetailView"] .ui-view.inset-menu-shading > div {
+    
+}
+
+[data-view="departmentDetailView"] [data-view="communityDetailView"] {
+    display: none;
+}
+
+[data-view="departmentDetailView"] .expanded [data-view="communityDetailView"] {
+    margin-top:30px;
+    display: block;
+}
+
+
+/**/
+
 .left-panel .application-logo {
     background-position: 25px;
 }
@@ -230,6 +260,10 @@ span.notifications.selection:after {
     top: 7px;
     color: rgba(0,0,0,0.3);
 }
+span.notifications.selection.has-selection:after {
+    color: #76aaff;
+}
+
 
 
 [data-view="mainProjectsDetail"]>div>div>.ui-navigation-menu {
