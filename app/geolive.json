@@ -7191,10 +7191,88 @@
                         "modules": [
                             "singleProjectUsersDetail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "UIListView",
+                                "config": {
+                                    "listClassName": "",
+                                    "className": "user-item section-module",
+                                    "identifier": "",
+                                    "viewType": "view",
+                                    "namedView": "singleUserListItemDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item;",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": "",
+                                    "getItemListScript": "return item.getUsers();",
+                                    "formatItemListScript": "return list;",
+                                    "formatListItemModuleScript": "",
+                                    "emptyNamedView": "emptyListView",
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
+                                }
+                            },
+                            {
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.1.config.script.js",
+                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.2.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.3.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "UIListView",
+                                "config": {
+                                    "listClassName": "",
+                                    "className": "",
+                                    "identifier": "",
+                                    "viewType": "view",
+                                    "namedView": "departmentDetailView",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": "",
+                                    "getItemListScript": "singleProjectUsersDetail.metadata.positions.content.modules.4.config.getItemListScript.js",
+                                    "formatItemListScript": "return list;",
+                                    "formatListItemModuleScript": "return item;",
+                                    "emptyNamedView": "emptyListView",
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.5.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
@@ -16471,16 +16549,16 @@
                             "documentProjectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 146,
-                            "y": 275
+                            "x": 186,
+                            "y": 315
                         },
                         "children": [
                             "documentProjectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 106,
-                                    "y": 488
+                                    "x": 146,
+                                    "y": 528
                                 }
                             },
                             {
@@ -16490,16 +16568,16 @@
                                     "documentProjectForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 524,
-                                    "y": 226
+                                    "x": 564,
+                                    "y": 266
                                 },
                                 "children": [
                                     "documentProjectForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 484,
-                                            "y": 402
+                                            "x": 524,
+                                            "y": 442
                                         }
                                     },
                                     {
@@ -16509,16 +16587,16 @@
                                             "documentProjectForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 999,
-                                            "y": 261
+                                            "x": 1039,
+                                            "y": 301
                                         },
                                         "children": [
                                             "documentProjectForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 959,
-                                                    "y": 524
+                                                    "x": 999,
+                                                    "y": 552
                                                 }
                                             }
                                         ],
@@ -16618,46 +16696,23 @@
                                                             }
                                                         },
                                                         {
-                                                            "type": "InlineHtml",
-                                                            "config": {
-                                                                "className": "",
-                                                                "text": "Who has permission to access this project",
-                                                                "template": "",
-                                                                "templateVariablesScript": "",
-                                                                "formatTextScript": ""
-                                                            }
-                                                        },
-                                                        {
-                                                            "type": "FormBooleanField",
-                                                            "config": {
-                                                                "className": "",
-                                                                "label": "Some Field",
-                                                                "mandatory": false,
-                                                                "getValueScript": "",
-                                                                "updateValueScript": " object.value=value ",
-                                                                "submitValueScript": "",
-                                                                "validateValueScript": "",
-                                                                "formatElementScript": ""
-                                                            }
-                                                        },
-                                                        {
                                                             "type": "plugin.Attributes.WizardTagCloud",
                                                             "config": {
                                                                 "attributeFields": [
-                                                                    "documentProjectForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.10.config.attributeFields.0.json"
+                                                                    "documentProjectForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
                                                                 ],
                                                                 "className": "",
                                                                 "showLabel": false,
                                                                 "showAddWord": false,
-                                                                "label": "Nations impacted by this proposal",
+                                                                "label": "Nations impacted by this collection",
                                                                 "addWordPlaceholder": "add a keyword",
                                                                 "fontColor": "rgb(0, 0, 0)",
                                                                 "hoverColor": "rgb(143, 188, 143)",
                                                                 "selectedColor": "rgb(143, 188, 143)",
                                                                 "shuffleTags": false,
                                                                 "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
-                                                                "getItemTagsScript": "documentProjectForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.10.config.getItemTagsScript.js",
-                                                                "formatModule": "module.runOnceOnLoad(function(){\nvar cats= Proposal.ListTerritories();\nif(cats.length==0){\n    module.getCloud().getElement().parentNode.setStyle(\"display\",\"none\");\n}\n});\n"
+                                                                "getItemTagsScript": "documentProjectForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.8.config.getItemTagsScript.js",
+                                                                "formatModule": "ProjectTeam.FormatTagCloudLanguageValues(module);\nmodule.runOnceOnLoad(function(){\nvar cats= Proposal.ListTerritories();\nif(cats.length==0){\n    module.getCloud().getElement().parentNode.setStyle(\"display\",\"none\");\n}\n});\n"
                                                             }
                                                         }
                                                     ]
@@ -19290,16 +19345,16 @@
                             "documentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 181,
-                            "y": 248
+                            "x": 231,
+                            "y": 298
                         },
                         "children": [
                             "documentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 141,
-                                    "y": 536
+                                    "x": 191,
+                                    "y": 586
                                 }
                             },
                             {
@@ -19309,16 +19364,88 @@
                                     "documentForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 656,
-                                    "y": 264
+                                    "x": 706,
+                                    "y": 314
                                 },
                                 "children": [
                                     "documentForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 616,
-                                            "y": 440
+                                            "x": 666,
+                                            "y": 490
+                                        }
+                                    },
+                                    {
+                                        "title": "New Empty Step",
+                                        "class": "AttributesTableNode",
+                                        "fields": [
+                                            "documentForm.metadata.children.1.children.2.children.2.fields.0.json"
+                                        ],
+                                        "_diagramState": {
+                                            "x": 843,
+                                            "y": 866
+                                        },
+                                        "children": [
+                                            "documentForm.metadata.children.1.children.2.children.2.children.0.json",
+                                            {
+                                                "class": "InsertNode",
+                                                "_diagramState": {
+                                                    "x": 803,
+                                                    "y": 1032
+                                                }
+                                            }
+                                        ],
+                                        "builderMetadata": {
+                                            "positions": {
+                                                "title": {
+                                                    "modules": [
+                                                        "documentForm.metadata.children.1.children.2.children.2.builderMetadata.positions.title.modules.0.json"
+                                                    ]
+                                                },
+                                                "content": {
+                                                    "modules": [
+                                                        "documentForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.0.json",
+                                                        {
+                                                            "type": "plugin.Attributes.WizardTagCloud",
+                                                            "config": {
+                                                                "attributeFields": [
+                                                                    "documentForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
+                                                                ],
+                                                                "className": "",
+                                                                "showLabel": false,
+                                                                "showAddWord": false,
+                                                                "label": "Nations impacted by this dataset",
+                                                                "addWordPlaceholder": "add a keyword",
+                                                                "fontColor": "rgb(0, 0, 0)",
+                                                                "hoverColor": "rgb(143, 188, 143)",
+                                                                "selectedColor": "rgb(143, 188, 143)",
+                                                                "shuffleTags": false,
+                                                                "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
+                                                                "getItemTagsScript": "documentForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.1.config.getItemTagsScript.js",
+                                                                "formatModule": "ProjectTeam.FormatTagCloudLanguageValues(module);\nmodule.runOnceOnLoad(function(){\nvar cats= Proposal.ListTerritories();\nif(cats.length==0){\n    module.getCloud().getElement().parentNode.setStyle(\"display\",\"none\");\n}\n});\n"
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "footer": {
+                                                    "modules": [
+                                                        "documentForm.metadata.children.1.children.2.children.2.builderMetadata.positions.footer.modules.0.json"
+                                                    ]
+                                                },
+                                                "menu": {
+                                                    "modules": []
+                                                }
+                                            },
+                                            "positionList": [
+                                                "title",
+                                                "content",
+                                                "footer",
+                                                "menu"
+                                            ],
+                                            "_diagramState": {
+                                                "minimized": false
+                                            }
                                         }
                                     }
                                 ],
@@ -20346,6 +20473,95 @@
                 ],
                 "_diagramState": []
             },
+            "readAccess": "public"
+        }
+    },
+    "widget.394": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "target": "communitySelectionForm",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": 9,
+                    "y": 158
+                },
+                "children": [
+                    "communitySelectionForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "communitySelectionForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 168,
+                            "y": 300
+                        },
+                        "children": [
+                            "communitySelectionForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 128,
+                                    "y": 466
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "communitySelectionForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "communitySelectionForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "InlineHtml",
+                                            "config": {
+                                                "className": "",
+                                                "text": "<h2>Select Communities<\/h2>",
+                                                "template": "",
+                                                "templateVariablesScript": "",
+                                                "formatTextScript": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "communitySelectionForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "widgetTitle": "communitySelectionForm",
+            "templateName": "communitySelectionForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "readAccess": "public"
         }
     }

@@ -1,0 +1,1 @@
+return '<div class="section-title"><span>Communities:</span></div>';
