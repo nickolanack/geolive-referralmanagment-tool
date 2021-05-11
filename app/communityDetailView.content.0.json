@@ -1,7 +1,7 @@
 {
     "type": "UIView",
     "config": {
-        "className": "",
+        "className": "dark-only-shading inset-menu-shading left-panel",
         "identifier": "",
         "viewType": "view",
         "namedView": "splitProjectDetail",
@@ -15,7 +15,7 @@
         "initModuleScript": "",
         "formatModuleScript": "",
         "resolveItemScript": "return new ProjectList({\n\t\t\t\t\t\t\t\n\t\t\t                \"label\":\"Community Datasets & Collections\",\n\t\t\t                \"showCreateBtn\":false,\n\t\t\t                \"filter\":null,\n\t\t\t                \"--lockFilter\":[\/*\"!collection\", *\/ child.getName()]\n\t\t\t            })",
-        "filterModulesScript": "return list",
+        "filterModulesScript": "DashboardPageLayout.layoutPage(uiview, list, callback);\n",
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
         "targetName": ""
