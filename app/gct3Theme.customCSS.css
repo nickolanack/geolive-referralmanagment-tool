@@ -10,6 +10,24 @@ $highlightBtnColor:#cd0101; /*#ff0258;*/
 }
 
 /*communities list*/
+
+.field-value-module.expand-btn:after {
+    content: "\0f107";
+    position: absolute;
+    top: 7px;
+    left: 8px;
+    font-family: 'FontAwesome';
+    color: cornflowerblue;
+    font-size: 30px;
+ }
+
+.expanded .field-value-module.expand-btn:after {
+    content: "\0f106";
+    color:#cd0101;
+    top: 4px;
+}
+
+
 .field-value-module.expand-btn {
     display: inline-block;
     width: 35px;
