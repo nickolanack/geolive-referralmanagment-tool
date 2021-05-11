@@ -65,6 +65,13 @@ $highlightBtnColor:#cd0101; /*#ff0258;*/
     background-color: transparent;
 }
 
+@media screen and (max-width: 1900px){
+     [data-view="communityDetailView"] div[data-view="splitProjectDetail"].inset-menu-shading.left-panel {
+        max-width: unset;
+        
+    }
+}
+
 [data-view="communityDetailView"] .section-title {
     font-size: 17px;
     margin: 0 10px;
