@@ -178,6 +178,12 @@ var ProjectList = (function() {
 			}
 		},
 		{
+			label: "modified",
+			sortFn: function(a, b) {
+				return (a.getModificationDate() > b.getModificationDate() ? 1 : -1);
+			}
+		},
+		{
 			label: "user",
 			sortFn: function(a, b) {
 				return (a.getProjectUsername() > b.getProjectUsername() ? 1 : -1);
