@@ -19368,16 +19368,16 @@
                             "documentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 181,
-                            "y": 248
+                            "x": 191,
+                            "y": 258
                         },
                         "children": [
                             "documentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 141,
-                                    "y": 536
+                                    "x": 151,
+                                    "y": 546
                                 }
                             },
                             {
@@ -19387,16 +19387,68 @@
                                     "documentForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 656,
-                                    "y": 264
+                                    "x": 666,
+                                    "y": 274
                                 },
                                 "children": [
                                     "documentForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 616,
-                                            "y": 440
+                                            "x": 626,
+                                            "y": 450
+                                        }
+                                    },
+                                    {
+                                        "title": "New Empty Step",
+                                        "class": "AttributesTableNode",
+                                        "fields": [
+                                            "documentForm.metadata.children.1.children.2.children.2.fields.0.json"
+                                        ],
+                                        "_diagramState": {
+                                            "x": 803,
+                                            "y": 826
+                                        },
+                                        "children": [
+                                            "documentForm.metadata.children.1.children.2.children.2.children.0.json",
+                                            {
+                                                "class": "InsertNode",
+                                                "_diagramState": {
+                                                    "x": 763,
+                                                    "y": 992
+                                                }
+                                            }
+                                        ],
+                                        "builderMetadata": {
+                                            "positions": {
+                                                "title": {
+                                                    "modules": [
+                                                        "documentForm.metadata.children.1.children.2.children.2.builderMetadata.positions.title.modules.0.json"
+                                                    ]
+                                                },
+                                                "content": {
+                                                    "modules": [
+                                                        "documentForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.0.json"
+                                                    ]
+                                                },
+                                                "footer": {
+                                                    "modules": [
+                                                        "documentForm.metadata.children.1.children.2.children.2.builderMetadata.positions.footer.modules.0.json"
+                                                    ]
+                                                },
+                                                "menu": {
+                                                    "modules": []
+                                                }
+                                            },
+                                            "positionList": [
+                                                "title",
+                                                "content",
+                                                "footer",
+                                                "menu"
+                                            ],
+                                            "_diagramState": {
+                                                "minimized": false
+                                            }
                                         }
                                     }
                                 ],
