@@ -331,7 +331,7 @@ var ProjectList = (function() {
 
 				"class": "project-list-filters section-indent",
 
-				styles: {
+				__styles: {
 					"display": "inline-table",
 					"width": "100%"
 				}
