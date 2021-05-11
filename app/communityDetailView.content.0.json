@@ -14,7 +14,7 @@
         "deleteItemScript": "defaultBehaviorFn()",
         "initModuleScript": "",
         "formatModuleScript": "",
-        "resolveItemScript": "return item",
+        "resolveItemScript": "return new ProjectList({\n\t\t\t\t\t\t\t\n\t\t\t                \"label\":\"Community Datasets & Collections\",\n\t\t\t                \"showCreateBtn\":false,\n\t\t\t                \"filter\":null,\n\t\t\t                \"--lockFilter\":[\/*\"!collection\", *\/ child.getName()]\n\t\t\t            })",
         "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
