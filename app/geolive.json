@@ -7191,10 +7191,49 @@
                         "modules": [
                             "singleProjectUsersDetail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "UIListView",
+                                "config": {
+                                    "listClassName": "",
+                                    "className": "user-item section-module",
+                                    "identifier": "",
+                                    "viewType": "view",
+                                    "namedView": "singleUserListItemDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item;",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": "",
+                                    "getItemListScript": "return item.getUsers();",
+                                    "formatItemListScript": "return list;",
+                                    "formatListItemModuleScript": "",
+                                    "emptyNamedView": "emptyListView",
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
+                                }
+                            },
+                            {
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.1.config.script.js",
+                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.2.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.3.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             },
@@ -7220,7 +7259,7 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
-                                    "getItemListScript": "singleProjectUsersDetail.metadata.positions.content.modules.2.config.getItemListScript.js",
+                                    "getItemListScript": "singleProjectUsersDetail.metadata.positions.content.modules.4.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
                                     "formatListItemModuleScript": "return item;",
                                     "emptyNamedView": "emptyListView",
@@ -7233,7 +7272,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.3.config.script.js",
+                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.5.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }

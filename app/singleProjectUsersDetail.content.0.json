@@ -1,31 +1,8 @@
 {
-    "type": "UIListView",
+    "type": "WizardScriptElement",
     "config": {
-        "listClassName": "",
-        "className": "user-item section-module",
-        "identifier": "",
-        "viewType": "view",
-        "namedView": "singleUserListItemDetail",
-        "shouldRender": true,
-        "namedViewScript": "return namedView",
-        "showInlineEdit": false,
-        "namedFormView": "defaultFormView",
-        "formOptions": "{}",
-        "showDeleteButton": false,
-        "deleteItemScript": "",
-        "initModuleScript": "",
-        "formatModuleScript": "",
-        "resolveItemScript": "return item;",
-        "filterModulesScript": "return list",
-        "itemButtonsScript": "return [];",
-        "insertAtTop": false,
-        "targetName": "",
-        "getItemListScript": "return item.getUsers();",
-        "formatItemListScript": "return list;",
-        "formatListItemModuleScript": "",
-        "emptyNamedView": "emptyListView",
-        "filterItemsScript": "return true;",
-        "sortItemsScript": "",
-        "maxItems": "-1"
+        "name": "My Custom Script",
+        "script": "return '<div class=\"section-title\"><span>Users:<\/span><\/div>';",
+        "description": "Info about my custom script"
     }
 }
