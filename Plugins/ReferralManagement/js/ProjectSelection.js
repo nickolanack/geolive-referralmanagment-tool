@@ -36,7 +36,7 @@ var ProjectSelection = (function() {
 			selection=[];
 			this.fireEvent('unselect',[sel]);
 			this.fireEvent('change',[selection.slice(0)]);
-		}
+		},
 		initSelection: function(item, checkbox) {
 
 
