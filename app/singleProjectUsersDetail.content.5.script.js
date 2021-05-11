@@ -1,6 +1,6 @@
 return (new ModalFormButtonModule(application, item,{
         label:"Add Community",
-        formName:"--userSelectionForm",
+        formName:"communitySelectionForm",
         formOptions:{
             template:"form"
         },
