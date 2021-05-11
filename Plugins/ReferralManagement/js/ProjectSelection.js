@@ -84,7 +84,7 @@ var ProjectSelection = (function() {
 
 		};
 		var popover=new UIPopover(module.getElement(), {
-			text:popoverContent()
+			description:popoverContent()
 		});
 
 		ProjectSelection.addEvent('change', function(selection){

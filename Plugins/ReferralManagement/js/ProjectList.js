@@ -485,6 +485,10 @@ var ProjectList = (function() {
 			var index=0;
 			var module=listModule.getDetailViewAt(0);
 
+			if(!module){
+				console.error('empty project list')
+				return;
+			}
 
 			module.runOnceOnLoad(function() {
 				_renderHeader(listModule, module);
