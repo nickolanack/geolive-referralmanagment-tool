@@ -56,11 +56,11 @@ $highlightBtnColor:#cd0101; /*#ff0258;*/
     display:none;
 }
 
-[data-view="communityDetailView"] .field-value-module.inline[data-col="date"]{
+[data-view="communityDetailView"] .field-value-module.inline[data-col="created"]{
     display:none;
 }
 
-[data-view="communityDetailView"] .field-value-module.inline[data-col="time"]{
+[data-view="communityDetailView"] .field-value-module.inline[data-col="modified"]{
     display:none;
 }
 
