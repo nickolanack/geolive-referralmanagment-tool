@@ -84,13 +84,13 @@ var ProjectSelection = (function() {
 
 		};
 		var popover=new UIPopover(module.getElement(), {
-			content:popoverContent
+			text:popoverContent()
 		});
 
 		ProjectSelection.addEvent('change', function(selection){
 
 
-			popover.setContent(popoverContent);
+			popover.setText(popoverContent());
 		
 			module.getElement().setAttribute('data-count', selection.length);
 			if(selection.length>0){
