@@ -3,15 +3,14 @@ var DashboardLoader = (function() {
 
 	var DashboardLoaderClass = new Class_({
 
-		getApplication:function(){
-			return ReferralManagementDashboard.getApplication();
-		},
+	
 
-		loadUserDashboardView: function() {
+		loadUserDashboardView: function(application) {
 			
 
+			setTimeout(function(){
+
 			var currentView = 'dashboardLoader';
-			var application=this.getApplication();
 
 			var loadView = function(view) {
 
@@ -68,6 +67,8 @@ var DashboardLoader = (function() {
 				});
 			})
 		}
+
+	},1000);
 
 	});
 
