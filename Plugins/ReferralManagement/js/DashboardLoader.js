@@ -82,8 +82,7 @@ var DashboardLoader = (function() {
 			(new AjaxControlQuery(CoreAjaxUrlRoot, "generate_css", {
                 "widget": "userTheme",
                 "variables": {
-                    "color1": "white",
-                    "color2": "black"
+                    "color1": "#2e344b"
                 }
             })).addEvent('success',function(response){
 
