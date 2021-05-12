@@ -1929,6 +1929,11 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {}
 .WizardTitle{
     text-align:right;
 }
+.text-input {
+    box-sizing: border-box;
+}
+
+
 .width-2 {
     width: 47%;
     display: inline-block;
@@ -1936,7 +1941,7 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {}
     vertical-align: top;
 }
 .width-2-3rd {
-    width: 60%;
+    width: 64%;
     display: inline-block;
     margin-right: 3%;
     vertical-align: top;
