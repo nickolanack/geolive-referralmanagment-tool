@@ -20628,16 +20628,16 @@
                             "themeForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 348,
-                            "y": 480
+                            "x": 358,
+                            "y": 490
                         },
                         "children": [
                             "themeForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 308,
-                                    "y": 668
+                                    "x": 318,
+                                    "y": 691
                                 }
                             }
                         ],
@@ -20654,7 +20654,7 @@
                                         {
                                             "type": "FormTextField",
                                             "config": {
-                                                "className": "width-2-3rd",
+                                                "className": "width-2",
                                                 "label": "Theme",
                                                 "placeholder": "add value",
                                                 "lines": 6,
@@ -20676,7 +20676,7 @@
                                         {
                                             "type": "FormTextField",
                                             "config": {
-                                                "className": "readonly width-3",
+                                                "className": "readonly width-2",
                                                 "label": "Server Parameters",
                                                 "placeholder": "add value",
                                                 "lines": 6,
