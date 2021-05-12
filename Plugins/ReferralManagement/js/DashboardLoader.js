@@ -79,17 +79,21 @@ var DashboardLoader = (function() {
 		addTheme:function(){
 
 			var me=this;
+			
+			var variables={
+                "color1": "#2e344b"
+            }
+
+            variables.themeName="test-theme";
 
 			(new AjaxControlQuery(CoreAjaxUrlRoot, "generate_css", {
                 "widget": "userTheme",
-                "variables": {
-                	"themeName":"test-theme",
-                    "color1": "#2e344b"
-                }
+                "variables": variables
             })).addEvent('success',function(response){
 
 				if(me._theme){
-
+					me._theme.innerHTML=response.content;
+					return;
 				}
 
 
@@ -98,6 +102,7 @@ var DashboardLoader = (function() {
 				});
 
 				document.head.appendChild(theme);
+				docment.body.addClass(variables.themeName);
 
 
             }).execute();
