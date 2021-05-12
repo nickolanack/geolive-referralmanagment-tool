@@ -20628,16 +20628,16 @@
                             "themeForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 258,
-                            "y": 390
+                            "x": 268,
+                            "y": 400
                         },
                         "children": [
                             "themeForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 218,
-                                    "y": 556
+                                    "x": 228,
+                                    "y": 566
                                 }
                             }
                         ],
@@ -20668,6 +20668,28 @@
                                                 "onRenderTextFieldScript": "inputElement.disabled=true;",
                                                 "formatValueScript": "",
                                                 "getValueScript": "themeForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.getValueScript.js",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Server Sass",
+                                                "placeholder": "add value",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "beforeRenderModuleScript": "",
+                                                "onRenderTextFieldScript": "inputElement.disabled=true;",
+                                                "formatValueScript": "",
+                                                "getValueScript": "themeForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.getValueScript.js",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "",
                                                 "validateValueScript": " return defaultValidationFn() "
