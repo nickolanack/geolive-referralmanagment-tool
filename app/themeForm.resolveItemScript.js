@@ -7,6 +7,7 @@ var item= (new MockDataTypeItem({
 item.addEvent('save',function(){
     
         localStorage.setItem("myTheme", item.getContent());
+        DashboardLoader.updateTheme();
 });
 
 return item;
