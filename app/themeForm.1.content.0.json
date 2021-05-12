@@ -16,7 +16,7 @@
         "formatValueScript": "",
         "getValueScript": " var value= localStorage.getItem('myTheme');\n if(value&&value1=''){\n     return value;\n }\n \n return `{\n    \"color1Example\":\"black\"\n }`",
         "updateValueScript": " object.value=value ",
-        "submitValueScript": "",
+        "submitValueScript": "wizardDataSet.content=object.value",
         "validateValueScript": " return defaultValidationFn() "
     }
 }
