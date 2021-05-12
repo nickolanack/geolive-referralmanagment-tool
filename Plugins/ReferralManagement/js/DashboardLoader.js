@@ -2,6 +2,7 @@ var DashboardLoader = (function() {
 
 
 	var DashboardLoaderClass = new Class_({
+
 		getApplication:function(){
 			return ReferralManagementDashboard.getApplication();
 		},
@@ -76,4 +77,4 @@ var DashboardLoader = (function() {
 
 	return DashboardLoader;
 
-})():
+})();
