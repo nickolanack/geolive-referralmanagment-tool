@@ -132,6 +132,10 @@ var DashboardLoader = (function() {
 
 		},
 
+		getThemeName:function(){
+			return "test-theme";
+		}
+
 		addTheme:function(){
 
 			
