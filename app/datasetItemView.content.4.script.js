@@ -5,7 +5,7 @@ return new ModalFormButtonModule(application, item, {
 				template: "form"
 			},
 			formName: "tagForm",
-			"class": "primary-btn"
+			"class": "inline-edit",
 
 
 		})
