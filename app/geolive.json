@@ -20580,9 +20580,10 @@
             "cacheable": false,
             "link": false,
             "sass": false,
-            "widgetTitle": "",
-            "target": "none",
-            "customCSS": ""
+            "widgetTitle": "User Theme",
+            "target": "userTheme",
+            "customCSS": "",
+            "readAccess": "public"
         }
     }
 }
