@@ -73,13 +73,13 @@ var DashboardLoader = (function() {
 
 			}, 1000);
 		},
-		clearTheme:function(name){
+		clearTheme:function(){
 
 			if(this._theme){
 				document.head.removeChild(this._theme);
 				delete this._theme;
 				document.body.removeClass(name);
-				localStorage.removeItem('myTheme');
+		
 			}
 		},
 
@@ -90,10 +90,19 @@ var DashboardLoader = (function() {
 			
 			var variables=localStorage.getItem('myTheme');
 			
-			if(typeof variables=="string"&&variables.indexOf('{')){
-				variables=JSON.parse(variables);
+			if(typeof variables=="string"&&variables.indexOf('{')>=0){
+
+				try{
+					variables=JSON.parse(variables);
+				}catch(e){
+					clearTheme();
+				}
+
+
 			}else{
-				clearTheme("test-theme");
+				clearTheme();
+				localStorage.removeItem('myTheme');
+
 				return;
 			}
 
