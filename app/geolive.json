@@ -20628,16 +20628,16 @@
                             "themeForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 298,
-                            "y": 430
+                            "x": 308,
+                            "y": 440
                         },
                         "children": [
                             "themeForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 258,
-                                    "y": 606
+                                    "x": 268,
+                                    "y": 616
                                 }
                             }
                         ],
@@ -20654,7 +20654,7 @@
                                         {
                                             "type": "FormTextField",
                                             "config": {
-                                                "className": "",
+                                                "className": "readonly width-3",
                                                 "label": "Server Parameters",
                                                 "placeholder": "add value",
                                                 "lines": 6,
@@ -20676,7 +20676,7 @@
                                         {
                                             "type": "FormTextField",
                                             "config": {
-                                                "className": "",
+                                                "className": "readonly width-2",
                                                 "label": "Server Sass",
                                                 "placeholder": "add value",
                                                 "lines": 10,
@@ -20690,6 +20690,28 @@
                                                 "onRenderTextFieldScript": "inputElement.disabled=true;",
                                                 "formatValueScript": "",
                                                 "getValueScript": "themeForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.getValueScript.js",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "readonly width-2",
+                                                "label": "Some Field",
+                                                "placeholder": "add value",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "beforeRenderModuleScript": "",
+                                                "onRenderTextFieldScript": "inputElement.disabled=true;",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return \"Hello World\"; ",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "",
                                                 "validateValueScript": " return defaultValidationFn() "
