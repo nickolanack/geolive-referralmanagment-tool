@@ -1062,21 +1062,21 @@ button.primary-btn.nav-new-btn.view-selection:before{
 }
 
 
-.section-welcome {
-    position: relative;
+
+
+.section-welcome button.inline-edit, button.inline-edit{
+   
     
     
-    button.inline-edit:after {
+    &:after {
         content: "\f040";
         font-family: 'FontAwesome';
         font-size:20px;
     }
     
     
-    button.inline-edit {
-        position: absolute;
-        top: 20px;
-        right: 20px;
+    
+        
         width: 40px;
         height: 40px;
         border: none;
@@ -1085,9 +1085,18 @@ button.primary-btn.nav-new-btn.view-selection:before{
         padding: 0;
         color: mediumseagreen;
         cursor:pointer;
-    }
+}
 
+.section-welcome button.inline-edit{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
 
+.dataset-item button.form-btn.inline-edit {
+    float: right;
+    color: #c8c8c8;
+    background-color: #f7f7f7;
 }
 
 
