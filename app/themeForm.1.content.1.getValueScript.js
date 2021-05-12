@@ -1,6 +1,8 @@
-(new AjaxControlQuery(CoreAjaxUrlRoot, "get_sass_variables", {
-                "widget": "userTheme",
-            })).addEvent('success',function(response){
-                response.variables.themeName=DashboardLoader.getThemeName()
-                callback(JSON.stringify(response.variables, null, '   '));
-            }).execute();
+ var value= localStorage.getItem('myTheme');
+if(typeof value=="string"&&value.indexOf('{')>=0){
+     return value;
+ }
+ 
+ return `{
+    "color1Example":"black"
+ }`

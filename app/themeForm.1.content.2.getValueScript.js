@@ -1,5 +1,6 @@
-(new AjaxControlQuery(CoreAjaxUrlRoot, "get_content", {
+(new AjaxControlQuery(CoreAjaxUrlRoot, "get_sass_variables", {
                 "widget": "userTheme",
             })).addEvent('success',function(response){
-                callback(response.content)
+                response.variables.themeName=DashboardLoader.getThemeName()
+                callback(JSON.stringify(response.variables, null, '   '));
             }).execute();
