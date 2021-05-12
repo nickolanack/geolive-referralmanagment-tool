@@ -20628,16 +20628,16 @@
                             "themeForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 308,
-                            "y": 440
+                            "x": 318,
+                            "y": 450
                         },
                         "children": [
                             "themeForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 268,
-                                    "y": 616
+                                    "x": 278,
+                                    "y": 638
                                 }
                             }
                         ],
@@ -20711,7 +20711,7 @@
                                                 "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "inputElement.disabled=true;",
                                                 "formatValueScript": "",
-                                                "getValueScript": " return \"Hello World\"; ",
+                                                "getValueScript": "themeForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.getValueScript.js",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "",
                                                 "validateValueScript": " return defaultValidationFn() "
