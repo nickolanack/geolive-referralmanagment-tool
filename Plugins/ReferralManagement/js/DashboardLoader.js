@@ -102,7 +102,7 @@ var DashboardLoader = (function() {
 				});
 
 				document.head.appendChild(theme);
-				docment.body.addClass(variables.themeName);
+				document.body.addClass(variables.themeName);
 
 
             }).execute();
