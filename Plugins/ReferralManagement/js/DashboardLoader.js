@@ -95,12 +95,12 @@ var DashboardLoader = (function() {
 				try{
 					variables=JSON.parse(variables);
 				}catch(e){
-					clearTheme();
+					this.clearTheme();
 				}
 
 
 			}else{
-				clearTheme();
+				this.clearTheme();
 				localStorage.removeItem('myTheme');
 
 				return;
