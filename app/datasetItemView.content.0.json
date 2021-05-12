@@ -2,9 +2,9 @@
     "type": "FieldValue",
     "config": {
         "loadAsync": false,
+        "identifier": "",
         "fieldLabelScript": "return \"\";",
         "fieldValueScript": "return \"\";",
-        "formatElementScript": "el.addClass('item-icon')\n\/\/RecentItems.setIconForItemEl(item, el);\n\nvar url=item.getIcon();\nif(url){\n    el.setStyle('background-image', 'url('+url+')');\n    el.setStyle('background-color', item.getColor());\n}",
-        "identifier": ""
+        "formatElementScript": "el.addClass('item-icon')\n\/\/RecentItems.setIconForItemEl(item, el);\n\nvar url=item.getIcon();\nif(url){\n    el.setStyle('background-image', 'url('+url+')');\n    el.setStyle('background-color', item.getColor());\n}"
     }
 }
