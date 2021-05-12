@@ -1,6 +1,12 @@
-return new MockDataTypeItem({
+var item= (new MockDataTypeItem({
+    mutable:true,
     'content':"",
-    setContent:function(c){
-        localStorage.setItem("myTheme", c);
-    }
+    
+}))
+
+item.addEvent('save',function(){
+    
+        localStorage.setItem("myTheme", c.getContent());
 });
+
+return item;
