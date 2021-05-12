@@ -14,7 +14,7 @@
         "beforeRenderModuleScript": "",
         "onRenderTextFieldScript": "",
         "formatValueScript": "",
-        "getValueScript": " var value= localStorage.getItem('myTheme');\n if(value&&value!=''){\n     return value;\n }\n \n return `{\n    \"color1Example\":\"black\"\n }`",
+        "getValueScript": " var value= localStorage.getItem('myTheme');\nif(typeof variables==\"string\"&&variables.indexOf('{')>=0){\n     return value;\n }\n \n return `{\n    \"color1Example\":\"black\"\n }`",
         "updateValueScript": " object.value=value ",
         "submitValueScript": "wizardDataSet.content=object.value",
         "validateValueScript": " return defaultValidationFn() "
