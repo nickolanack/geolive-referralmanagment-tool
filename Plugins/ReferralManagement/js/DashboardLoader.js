@@ -123,6 +123,8 @@ var DashboardLoader = (function() {
 					html:response.content
 				});
 
+				me._theme=theme;
+
 				document.head.appendChild(theme);
 				document.body.addClass(variables.themeName);
 
