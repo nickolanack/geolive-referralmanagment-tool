@@ -1,4 +1,4 @@
-new ModalFormButtonModule(application, item, {
+return new ModalFormButtonModule(application, item, {
 
 			label: "Edit",
 			formOptions: {
