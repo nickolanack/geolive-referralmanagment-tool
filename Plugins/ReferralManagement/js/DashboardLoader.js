@@ -8,6 +8,9 @@ var DashboardLoader = (function() {
 		loadUserDashboardView: function(application) {
 
 
+			this.addTheme();
+
+
 			setTimeout(function() {
 
 				var currentView = 'dashboardLoader';
@@ -69,6 +72,22 @@ var DashboardLoader = (function() {
 
 
 			}, 1000);
+		},
+
+
+
+		addTheme:function(){
+
+
+			(new AjaxControlQuery(CoreAjaxUrlRoot, "generate_css", {
+                "widget": "userTheme",
+                "variables": {
+                    "color1": "white",
+                    "color2": "black"
+                }
+            })).execute();
+
+
 		}
 
 
