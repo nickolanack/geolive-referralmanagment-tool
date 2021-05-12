@@ -85,7 +85,17 @@ var DashboardLoader = (function() {
                     "color1": "white",
                     "color2": "black"
                 }
-            })).execute();
+            })).addEvent('success',function(response){
+
+
+				var theme=new Element('style',{
+					html:response.content;
+				});
+
+				document.head.appendChild(theme);
+
+
+            }).execute();
 
 
 		}
