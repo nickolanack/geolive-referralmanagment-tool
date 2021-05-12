@@ -75,8 +75,8 @@ var DashboardLoader = (function() {
 		},
 
 
+		updateTheme:function(){
 
-		addTheme:function(){
 
 			var me=this;
 			
@@ -106,6 +106,13 @@ var DashboardLoader = (function() {
 
 
             }).execute();
+
+
+		},
+		
+		addTheme:function(){
+
+			
 
 
 		}
