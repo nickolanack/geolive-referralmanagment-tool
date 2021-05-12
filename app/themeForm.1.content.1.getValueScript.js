@@ -2,4 +2,4 @@
                 "widget": "userTheme",
             })).addEvent('success',function(response){
                 callback(JSON.stringify(response.variables, null, '   '));
-            })
+            }).execute();
