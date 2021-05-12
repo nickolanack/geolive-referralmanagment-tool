@@ -20628,16 +20628,16 @@
                             "themeForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 218,
-                            "y": 350
+                            "x": 228,
+                            "y": 360
                         },
                         "children": [
                             "themeForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 178,
-                                    "y": 516
+                                    "x": 188,
+                                    "y": 526
                                 }
                             }
                         ],
@@ -20650,7 +20650,29 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "themeForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                        "themeForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Server Parameters",
+                                                "placeholder": "add value",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "beforeRenderModuleScript": "",
+                                                "onRenderTextFieldScript": "inputElement.disabled=true;",
+                                                "formatValueScript": "",
+                                                "getValueScript": "themeForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.getValueScript.js",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        }
                                     ]
                                 },
                                 "footer": {
