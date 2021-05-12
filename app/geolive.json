@@ -20610,19 +20610,19 @@
                     "y": 171
                 },
                 "children": [
-                    "widget.UserWizardBuilder.396.metadata.children.0.json",
+                    "themeForm.metadata.children.0.json",
                     {
                         "title": "New Empty Step",
                         "class": "AttributesTableNode",
                         "fields": [
-                            "widget.UserWizardBuilder.396.metadata.children.1.fields.0.json"
+                            "themeForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
                             "x": 138,
                             "y": 270
                         },
                         "children": [
-                            "widget.UserWizardBuilder.396.metadata.children.1.children.0.json",
+                            "themeForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
@@ -20638,12 +20638,12 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "widget.UserWizardBuilder.396.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                        "themeForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
                                     ]
                                 },
                                 "footer": {
                                     "modules": [
-                                        "widget.UserWizardBuilder.396.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                        "themeForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
                                     ]
                                 },
                                 "menu": {
@@ -20663,10 +20663,10 @@
                     }
                 ]
             },
-            "widgetTitle": "",
-            "templateName": "",
+            "widgetTitle": "themeForm",
+            "templateName": "themeForm",
             "requireTarget": true,
-            "resolveItemScript": "return item;",
+            "resolveItemScript": "themeForm.resolveItemScript.js",
             "beforeSubmitScript": "",
             "onCreateScript": "",
             "onUpdateScript": "",
