@@ -207,6 +207,7 @@ GetWidget('textFieldForm')->display($targetInstance);
 
 GetWidget('layerGroupForm')->display($targetInstance);
 GetWidget('mainMapDetailLayers')->display($targetInstance);
+GetWidget('themeForm')->display($targetInstance);
 
 
 

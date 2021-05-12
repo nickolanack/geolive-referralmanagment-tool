@@ -3819,6 +3819,7 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "user-detail",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "userDetailView",
                                     "shouldRender": true,
@@ -3857,6 +3858,7 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "navigation-menu",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "navigationMenu",
                                     "shouldRender": true,
@@ -3896,6 +3898,14 @@
                                 "config": {
                                     "name": "My Custom Script",
                                     "script": "Left Panel.metadata.positions.content.modules.7.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "Left Panel.metadata.positions.content.modules.8.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
@@ -20595,6 +20605,85 @@
                 "color1": "black",
                 "themeName": "userTheme"
             },
+            "readAccess": "public"
+        }
+    },
+    "widget.396": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "target": "themeForm",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -18,
+                    "y": 171
+                },
+                "children": [
+                    "themeForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "themeForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 198,
+                            "y": 330
+                        },
+                        "children": [
+                            "themeForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 158,
+                                    "y": 496
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "themeForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "themeForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "themeForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "widgetTitle": "themeForm",
+            "templateName": "themeForm",
+            "requireTarget": true,
+            "resolveItemScript": "themeForm.resolveItemScript.js",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "readAccess": "public"
         }
     }

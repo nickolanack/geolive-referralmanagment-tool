@@ -1,0 +1,22 @@
+{
+    "type": "FormTextField",
+    "config": {
+        "className": "",
+        "label": "Theme",
+        "placeholder": "add value",
+        "lines": 6,
+        "maxChars": 0,
+        "mandatory": false,
+        "multiEntry": false,
+        "muliTemplate": "lines",
+        "multiMessage": "add another value",
+        "formatter": "none",
+        "beforeRenderModuleScript": "",
+        "onRenderTextFieldScript": "",
+        "formatValueScript": "",
+        "getValueScript": " var value= localStorage.getItem('myTheme');\n if(value&&value!=''){\n     return value;\n }\n \n return `{\n    \"color1Example\":\"black\"\n }`",
+        "updateValueScript": " object.value=value ",
+        "submitValueScript": "wizardDataSet.content=object.value",
+        "validateValueScript": " return defaultValidationFn() "
+    }
+}
