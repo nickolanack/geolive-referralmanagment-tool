@@ -73,14 +73,28 @@ var DashboardLoader = (function() {
 
 			}, 1000);
 		},
+		clearTheme:function(name){
 
+			if(this._theme){
+				document.head.removeChild(this._theme);
+				delete this._theme;
+				document.body.removeClass(name);
+			}
+		};
 
 		updateTheme:function(){
 
 
 			var me=this;
 			
-			var variables=localStorage.getItem('myTheme')
+			var variables=localStorage.getItem('myTheme');
+			
+			if(variables&&variables!==""){
+				variables=JSON.parse(variables);
+			}else{
+				clearTheme("test-theme");
+				return;
+			}
 
             variables.themeName="test-theme";
 
