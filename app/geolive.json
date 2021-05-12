@@ -20628,16 +20628,16 @@
                             "themeForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 238,
-                            "y": 370
+                            "x": 248,
+                            "y": 380
                         },
                         "children": [
                             "themeForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 198,
-                                    "y": 536
+                                    "x": 208,
+                                    "y": 546
                                 }
                             }
                         ],
@@ -20657,7 +20657,7 @@
                                                 "className": "",
                                                 "label": "Server Parameters",
                                                 "placeholder": "add value",
-                                                "lines": 1,
+                                                "lines": 6,
                                                 "maxChars": 0,
                                                 "mandatory": false,
                                                 "multiEntry": false,
