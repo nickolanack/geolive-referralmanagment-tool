@@ -78,13 +78,19 @@ var DashboardLoader = (function() {
 
 		addTheme:function(){
 
+			var me=this;
 
 			(new AjaxControlQuery(CoreAjaxUrlRoot, "generate_css", {
                 "widget": "userTheme",
                 "variables": {
+                	"themeName":"test-theme",
                     "color1": "#2e344b"
                 }
             })).addEvent('success',function(response){
+
+				if(me._theme){
+
+				}
 
 
 				var theme=new Element('style',{
