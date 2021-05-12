@@ -20592,7 +20592,8 @@
             "target": "userTheme",
             "customCSS": "User Theme.customCSS.css",
             "sassParamters": {
-                "color1": "black"
+                "color1": "black",
+                "themeName": "userTheme"
             },
             "readAccess": "public"
         }

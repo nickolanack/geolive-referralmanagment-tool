@@ -1,3 +1,6 @@
-.ui-view.left-panel {
-    background-color: $color1;
+
+$themeName{
+    .ui-view.left-panel {
+        background-color: $color1;
+    }
 }
