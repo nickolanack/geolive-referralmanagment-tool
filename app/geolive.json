@@ -20591,7 +20591,9 @@
             "widgetTitle": "User Theme",
             "target": "userTheme",
             "customCSS": "User Theme.customCSS.css",
-            "sassParamters": [],
+            "sassParamters": {
+                "color1": "black"
+            },
             "readAccess": "public"
         }
     }
