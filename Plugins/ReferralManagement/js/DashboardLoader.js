@@ -80,9 +80,7 @@ var DashboardLoader = (function() {
 
 			var me=this;
 			
-			var variables={
-                "color1": "#2e344b"
-            }
+			var variables=localStorage.getItem('myTheme')
 
             variables.themeName="test-theme";
 
@@ -109,7 +107,7 @@ var DashboardLoader = (function() {
 
 
 		},
-		
+
 		addTheme:function(){
 
 			
