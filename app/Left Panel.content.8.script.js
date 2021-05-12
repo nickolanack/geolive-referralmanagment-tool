@@ -5,5 +5,9 @@ return (new ModalFormButtonModule(application, AppClient,{
             template:"form"
         },
         //hideText:true,
-        "class":"primary-btn"
+        "class":"primary-btn inline-edit theme-edit",
+        styles:{
+            position:"relative",
+            "z-index":1
+        }
     }));
