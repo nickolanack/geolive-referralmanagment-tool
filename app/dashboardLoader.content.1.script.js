@@ -1,6 +1,6 @@
 return function(){
     setTimeout(function(){
-         ReferralManagementDashboard.loadUserDashboardView(application);
+         DashboardLoader.loadUserDashboardView();
     }, 1000);
    
 }
