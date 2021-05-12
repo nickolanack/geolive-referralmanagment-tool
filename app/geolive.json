@@ -2252,6 +2252,7 @@
             "widgetTitle": "Generated Style Script",
             "target": "forTheMap",
             "customCSS": "Generated Style Script.customCSS.css",
+            "sassParamters": [],
             "readAccess": "public"
         }
     },
@@ -3990,6 +3991,7 @@
             "widgetTitle": "Default Dashboard Theme",
             "target": "sharedDashboardTheme",
             "customCSS": "Default Dashboard Theme.customCSS.css",
+            "sassParamters": [],
             "readAccess": "public"
         }
     },
@@ -6016,6 +6018,7 @@
             "widgetTitle": "sharedGeneratedStyles",
             "target": "sharedGeneratedStyles",
             "customCSS": "sharedGeneratedStyles.customCSS.css",
+            "sassParamters": [],
             "readAccess": "public"
         }
     },
@@ -18187,6 +18190,7 @@
             "widgetTitle": "gct3Theme",
             "target": "gct3Theme",
             "customCSS": "gct3Theme.customCSS.css",
+            "sassParamters": [],
             "readAccess": "public"
         }
     },
@@ -18292,6 +18296,7 @@
             "widgetTitle": "darkTheme",
             "target": "darkTheme",
             "customCSS": "darkTheme.customCSS.css",
+            "sassParamters": [],
             "readAccess": "public"
         }
     },
@@ -18423,6 +18428,7 @@
             "widgetTitle": "gatherTheme",
             "target": "gatherTheme",
             "customCSS": "gatherTheme.customCSS.css",
+            "sassParamters": [],
             "readAccess": "public"
         }
     },
@@ -18436,6 +18442,7 @@
             "widgetTitle": "fontAwesomeIcons",
             "target": "fontAwesomeIcons",
             "customCSS": "fontAwesomeIcons.customCSS.css",
+            "sassParamters": [],
             "readAccess": "public"
         }
     },
@@ -19253,6 +19260,7 @@
             "widgetTitle": "purpleTheme",
             "target": "purpleTheme",
             "customCSS": "purpleTheme.customCSS.css",
+            "sassParamters": [],
             "readAccess": "public"
         }
     },
@@ -20578,11 +20586,14 @@
         "instance": "CSS",
         "parameters": {
             "cacheable": false,
-            "link": false,
-            "sass": false,
+            "link": true,
+            "sass": true,
             "widgetTitle": "User Theme",
             "target": "userTheme",
-            "customCSS": "",
+            "customCSS": "User Theme.customCSS.css",
+            "sassParamters": {
+                "color1": "black"
+            },
             "readAccess": "public"
         }
     }
