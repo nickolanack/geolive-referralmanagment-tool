@@ -6,7 +6,7 @@ var item= (new MockDataTypeItem({
 
 item.addEvent('save',function(){
     
-        localStorage.setItem("myTheme", c.getContent());
+        localStorage.setItem("myTheme", item.getContent());
 });
 
 return item;
