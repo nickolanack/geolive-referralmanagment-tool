@@ -4,14 +4,14 @@ var DashboardLoader = (function() {
 	var DashboardLoaderClass = new Class_({
 		getApplication:function(){
 			return ReferralManagementDashboard.getApplication();
-		}
+		},
 
 		loadUserDashboardView: function() {
 			
 
 			var currentView = 'dashboardLoader';
 			var application=this.getApplication();
-			
+
 			var loadView = function(view) {
 
 				if (currentView == view) {
