@@ -79,6 +79,7 @@ var DashboardLoader = (function() {
 				document.head.removeChild(this._theme);
 				delete this._theme;
 				document.body.removeClass(name);
+				localStorage.removeItem('myTheme');
 			}
 		},
 
@@ -89,7 +90,7 @@ var DashboardLoader = (function() {
 			
 			var variables=localStorage.getItem('myTheme');
 			
-			if(variables&&variables!==""){
+			if(typeof variables=="string"&&variables.indexOf('{')){
 				variables=JSON.parse(variables);
 			}else{
 				clearTheme("test-theme");
