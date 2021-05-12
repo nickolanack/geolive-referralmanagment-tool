@@ -1063,8 +1063,7 @@ button.primary-btn.nav-new-btn.view-selection:before{
 
 
 .section-welcome {
-    position: relative;
-    
+
     
     button.inline-edit:after {
         content: "\f040";
@@ -1088,6 +1087,35 @@ button.primary-btn.nav-new-btn.view-selection:before{
     }
 
 
+}
+
+.section-welcome button.inline-edit, button.inline-edit{
+   
+    
+    
+    &:after {
+        content: "\f040";
+        font-family: 'FontAwesome';
+        font-size:20px;
+    }
+    
+    
+    
+        
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 100%;
+        font-size: 0;
+        padding: 0;
+        color: mediumseagreen;
+        cursor:pointer;
+}
+
+.section-welcome button.inline-edit{
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
 
