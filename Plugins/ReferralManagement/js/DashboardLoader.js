@@ -80,7 +80,7 @@ var DashboardLoader = (function() {
 				delete this._theme;
 				document.body.removeClass(name);
 			}
-		};
+		},
 
 		updateTheme:function(){
 
