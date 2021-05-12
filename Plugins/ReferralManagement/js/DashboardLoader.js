@@ -89,7 +89,7 @@ var DashboardLoader = (function() {
 
 
 				var theme=new Element('style',{
-					html:response.content;
+					html:response.content
 				});
 
 				document.head.appendChild(theme);
