@@ -1,6 +1,11 @@
 
 .#{$themeName}{
+    
+    .ui-view.dashboard-main{
+        color:$mainFontColor;
+    }
+    
     .ui-view.left-panel {
-        background-color: $color1;
+        background-color: $mainColorSidePanel;
     }
 }
