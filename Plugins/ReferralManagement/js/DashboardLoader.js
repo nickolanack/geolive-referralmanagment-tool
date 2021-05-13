@@ -126,7 +126,7 @@ var DashboardLoader = (function() {
 				me._theme=theme;
 
 				document.head.appendChild(theme);
-				document.body.addClass(variables.themeName);
+				document.body.addClass(variables.themeName); 
 
 
             }).execute();
