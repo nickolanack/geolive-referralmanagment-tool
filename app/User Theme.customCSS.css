@@ -11,7 +11,7 @@
         color:$mainFontSidePanelColor;
     }
     
-    .section-module, .ui-list-view .ui-view.section-module{
+    .section-module, .ui-list-view .ui-view.section-module, .ui-view.search-panel{
         background-color: $contentInsetColor;
     }
     
