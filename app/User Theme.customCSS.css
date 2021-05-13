@@ -3,6 +3,7 @@
     
     .ui-view.dashboard-main{
         color:$mainFontContentColor;
+        background-color:$mainColorContent;
     }
     
     .ui-view.left-panel {
