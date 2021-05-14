@@ -1644,9 +1644,19 @@
         }
     },
     "widget.72": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "User Roles",
+            "target": "",
+            "templateName": "UserTemplate",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DescisionNode",
                 "_diagramState": {
@@ -1739,15 +1749,7 @@
                     }
                 ]
             },
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "templateName": "UserTemplate",
-            "widgetTitle": "User Roles",
-            "readAccess": "public",
-            "requireTarget": true,
-            "target": ""
+            "readAccess": "public"
         }
     },
     "widget.73": {
@@ -7353,9 +7355,19 @@
         }
     },
     "widget.184": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "taskForm",
+            "target": "taskForm",
+            "templateName": "taskForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -7581,15 +7593,6 @@
                     }
                 ]
             },
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
-            "requireTarget": true,
-            "templateName": "taskForm",
-            "widgetTitle": "taskForm",
-            "target": "taskForm",
             "readAccess": "public"
         }
     },
@@ -8142,9 +8145,19 @@
         }
     },
     "widget.195": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "taskDefaultItems",
+            "target": "taskDefaultItems",
+            "templateName": "taskDefaultItems",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -8237,17 +8250,7 @@
                     }
                 ]
             },
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
-            "requireTarget": true,
-            "templateName": "taskDefaultItems",
-            "widgetTitle": "taskDefaultItems",
-            "target": "taskDefaultItems",
-            "readAccess": "public",
-            "resolveItemScript": "return item;"
+            "readAccess": "public"
         }
     },
     "widget.196": {
@@ -8321,9 +8324,19 @@
         }
     },
     "widget.197": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "userProfileForm",
+            "target": "userProfileForm",
+            "templateName": "userProfileForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "userProfileForm.onSaveScript.js",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -8543,17 +8556,7 @@
                     }
                 ]
             },
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "userProfileForm.onSaveScript.js",
-            "onLoadScript": "",
-            "requireTarget": true,
-            "templateName": "userProfileForm",
-            "widgetTitle": "userProfileForm",
-            "target": "userProfileForm",
-            "readAccess": "public",
-            "resolveItemScript": "return item;"
+            "readAccess": "public"
         }
     },
     "widget.199": {
@@ -8938,9 +8941,19 @@
         }
     },
     "widget.205": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "userSelectionForm",
+            "target": "userSelectionForm",
+            "templateName": "userSelectionForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -9011,17 +9024,7 @@
                     }
                 ]
             },
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
-            "requireTarget": true,
-            "templateName": "userSelectionForm",
-            "widgetTitle": "userSelectionForm",
-            "target": "userSelectionForm",
-            "readAccess": "public",
-            "resolveItemScript": "return item;"
+            "readAccess": "public"
         }
     },
     "widget.206": {
@@ -9065,9 +9068,19 @@
         }
     },
     "widget.208": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "filesListForm",
+            "target": "filesListForm",
+            "templateName": "filesListForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -9160,17 +9173,7 @@
                     }
                 ]
             },
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
-            "requireTarget": true,
-            "templateName": "filesListForm",
-            "widgetTitle": "filesListForm",
-            "target": "filesListForm",
-            "readAccess": "public",
-            "resolveItemScript": "return item;"
+            "readAccess": "public"
         }
     },
     "widget.209": {
@@ -14505,10 +14508,19 @@
         }
     },
     "widget.268": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "fileItemForm",
             "target": "fileItemForm",
+            "templateName": "fileItemForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -14569,16 +14581,7 @@
                     }
                 ]
             },
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
-            "requireTarget": true,
-            "templateName": "fileItemForm",
-            "widgetTitle": "fileItemForm",
-            "readAccess": "public",
-            "resolveItemScript": "return item;"
+            "readAccess": "public"
         }
     },
     "widget.269": {
@@ -14724,10 +14727,19 @@
         }
     },
     "widget.274": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "landsDepartmentMemberForm",
             "target": "landsDepartmentMemberForm",
+            "templateName": "landsDepartmentMemberForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -14799,22 +14811,23 @@
                     }
                 ]
             },
+            "readAccess": "public"
+        }
+    },
+    "widget.275": {
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
+        "parameters": {
+            "widgetTitle": "forgotPasswordForm",
+            "target": "forgotPasswordForm",
+            "templateName": "forgotPasswordForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
             "beforeSubmitScript": "",
             "onCreateScript": "",
             "onUpdateScript": "",
             "onSaveScript": "",
             "onLoadScript": "",
-            "requireTarget": true,
-            "templateName": "landsDepartmentMemberForm",
-            "widgetTitle": "landsDepartmentMemberForm",
-            "readAccess": "public"
-        }
-    },
-    "widget.275": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
-        "parameters": {
-            "target": "forgotPasswordForm",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -14904,23 +14917,23 @@
                     }
                 ]
             },
+            "readAccess": "public"
+        }
+    },
+    "widget.276": {
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
+        "parameters": {
+            "widgetTitle": "taskDetailPopover",
+            "target": "taskDetailPopover",
+            "templateName": "taskDetailPopover",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
             "beforeSubmitScript": "",
             "onCreateScript": "",
             "onUpdateScript": "",
             "onSaveScript": "",
             "onLoadScript": "",
-            "requireTarget": true,
-            "templateName": "forgotPasswordForm",
-            "widgetTitle": "forgotPasswordForm",
-            "readAccess": "public",
-            "resolveItemScript": "return item;"
-        }
-    },
-    "widget.276": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
-        "parameters": {
-            "target": "taskDetailPopover",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -14981,14 +14994,6 @@
                     }
                 ]
             },
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
-            "requireTarget": true,
-            "templateName": "taskDetailPopover",
-            "widgetTitle": "taskDetailPopover",
             "readAccess": "public"
         }
     },
@@ -15158,10 +15163,19 @@
         }
     },
     "widget.278": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "communityUploadForm",
             "target": "forTheMap",
+            "templateName": "communityUploadForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -15244,14 +15258,6 @@
                     }
                 ]
             },
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
-            "requireTarget": true,
-            "templateName": "communityUploadForm",
-            "widgetTitle": "communityUploadForm",
             "readAccess": "public"
         }
     },
@@ -15687,10 +15693,19 @@
         }
     },
     "widget.313": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "dialogForm",
             "target": "dialogForm",
+            "templateName": "dialogForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -15753,15 +15768,6 @@
                     }
                 ]
             },
-            "widgetTitle": "dialogForm",
-            "templateName": "dialogForm",
-            "requireTarget": true,
-            "resolveItemScript": "return item;",
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
             "readAccess": "public"
         }
     },
@@ -15915,10 +15921,19 @@
         }
     },
     "widget.322": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "userInviteForm",
             "target": "userInviteForm",
+            "templateName": "userInviteForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -16002,15 +16017,6 @@
                     }
                 ]
             },
-            "widgetTitle": "userInviteForm",
-            "templateName": "userInviteForm",
-            "requireTarget": true,
-            "resolveItemScript": "return item;",
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
             "readAccess": "public"
         }
     },
@@ -16098,10 +16104,19 @@
         }
     },
     "widget.329": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "resetPasswordForm",
             "target": "resetPasswordForm",
+            "templateName": "resetPasswordForm",
+            "requireTarget": false,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -16162,15 +16177,6 @@
                     }
                 ]
             },
-            "widgetTitle": "resetPasswordForm",
-            "templateName": "resetPasswordForm",
-            "requireTarget": false,
-            "resolveItemScript": "return item;",
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
             "readAccess": "public"
         }
     },
@@ -16544,9 +16550,19 @@
         }
     },
     "widget.337": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "documentProjectForm",
+            "target": "documentProjectForm",
+            "templateName": "documentProjectForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -16967,17 +16983,7 @@
                     }
                 ]
             },
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "widgetTitle": "documentProjectForm",
-            "readAccess": "public",
-            "templateName": "documentProjectForm",
-            "requireTarget": true,
-            "target": "documentProjectForm",
-            "onLoadScript": "",
-            "resolveItemScript": "return item;"
+            "readAccess": "public"
         }
     },
     "widget.338": {
@@ -17293,10 +17299,19 @@
         }
     },
     "widget.345": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "tagForm",
             "target": "tagForm",
+            "templateName": "tagForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -17433,15 +17448,6 @@
                     }
                 ]
             },
-            "widgetTitle": "tagForm",
-            "templateName": "tagForm",
-            "requireTarget": true,
-            "resolveItemScript": "return item;",
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
             "readAccess": "public"
         }
     },
@@ -17539,10 +17545,19 @@
         }
     },
     "widget.347": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "departmentForm",
             "target": "departmentForm",
+            "templateName": "departmentForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -17688,15 +17703,6 @@
                     }
                 ]
             },
-            "widgetTitle": "departmentForm",
-            "templateName": "departmentForm",
-            "requireTarget": true,
-            "resolveItemScript": "return item;",
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
             "readAccess": "public"
         }
     },
@@ -18647,10 +18653,19 @@
         }
     },
     "widget.368": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "layerGroupForm",
             "target": "layerGroupForm",
+            "templateName": "layerGroupForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -18713,15 +18728,6 @@
                     }
                 ]
             },
-            "widgetTitle": "layerGroupForm",
-            "templateName": "layerGroupForm",
-            "requireTarget": true,
-            "resolveItemScript": "return item;",
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
             "readAccess": "public"
         }
     },
@@ -18950,10 +18956,19 @@
         }
     },
     "widget.373": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "defaultTaskForm",
             "target": "defaultTaskForm",
+            "templateName": "defaultTaskForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -19025,15 +19040,6 @@
                     }
                 ]
             },
-            "widgetTitle": "defaultTaskForm",
-            "templateName": "defaultTaskForm",
-            "requireTarget": true,
-            "resolveItemScript": "return item;",
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
             "readAccess": "public"
         }
     },
@@ -19184,10 +19190,19 @@
         }
     },
     "widget.376": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "importProjectsForm",
             "target": "importProjectsForm",
+            "templateName": "importProjectsForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -19248,15 +19263,6 @@
                     }
                 ]
             },
-            "widgetTitle": "importProjectsForm",
-            "templateName": "importProjectsForm",
-            "requireTarget": true,
-            "resolveItemScript": "return item;",
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
             "readAccess": "public"
         }
     },
@@ -19275,10 +19281,19 @@
         }
     },
     "widget.378": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "projectTypeSelectionForm",
             "target": "projectTypeSelectionForm",
+            "templateName": "projectTypeSelectionForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -19339,8 +19354,16 @@
                     }
                 ]
             },
-            "widgetTitle": "projectTypeSelectionForm",
-            "templateName": "projectTypeSelectionForm",
+            "readAccess": "public"
+        }
+    },
+    "widget.379": {
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
+        "parameters": {
+            "widgetTitle": "documentForm",
+            "target": "documentForm",
+            "templateName": "documentForm",
             "requireTarget": true,
             "resolveItemScript": "return item;",
             "beforeSubmitScript": "",
@@ -19348,14 +19371,6 @@
             "onUpdateScript": "",
             "onSaveScript": "",
             "onLoadScript": "",
-            "readAccess": "public"
-        }
-    },
-    "widget.379": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
-        "parameters": {
-            "target": "documentForm",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -19797,15 +19812,6 @@
                     }
                 ]
             },
-            "widgetTitle": "documentForm",
-            "templateName": "documentForm",
-            "requireTarget": true,
-            "resolveItemScript": "return item;",
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
             "readAccess": "public"
         }
     },
@@ -20109,10 +20115,19 @@
         }
     },
     "widget.382": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "textFieldForm",
             "target": "textFieldForm",
+            "templateName": "textFieldForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -20175,15 +20190,6 @@
                     }
                 ]
             },
-            "widgetTitle": "textFieldForm",
-            "templateName": "textFieldForm",
-            "requireTarget": true,
-            "resolveItemScript": "return item;",
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
             "readAccess": "public"
         }
     },
@@ -20270,10 +20276,19 @@
         }
     },
     "widget.385": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "datasetSelectForm",
             "target": "datasetSelectForm",
+            "templateName": "datasetSelectForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -20336,15 +20351,6 @@
                     }
                 ]
             },
-            "widgetTitle": "datasetSelectForm",
-            "templateName": "datasetSelectForm",
-            "requireTarget": true,
-            "resolveItemScript": "return item;",
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
             "readAccess": "public"
         }
     },
@@ -20503,10 +20509,19 @@
         }
     },
     "widget.394": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "communitySelectionForm",
             "target": "communitySelectionForm",
+            "templateName": "communitySelectionForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -20579,15 +20594,6 @@
                     }
                 ]
             },
-            "widgetTitle": "communitySelectionForm",
-            "templateName": "communitySelectionForm",
-            "requireTarget": true,
-            "resolveItemScript": "return item;",
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
             "readAccess": "public"
         }
     },
@@ -20616,10 +20622,19 @@
         }
     },
     "widget.396": {
-        "name": "Form View",
-        "instance": "UserWizardBuilder",
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
         "parameters": {
+            "widgetTitle": "themeForm",
             "target": "themeForm",
+            "templateName": "themeForm",
+            "requireTarget": true,
+            "resolveItemScript": "themeForm.resolveItemScript.js",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
@@ -20770,15 +20785,6 @@
                     }
                 ]
             },
-            "widgetTitle": "themeForm",
-            "templateName": "themeForm",
-            "requireTarget": true,
-            "resolveItemScript": "themeForm.resolveItemScript.js",
-            "beforeSubmitScript": "",
-            "onCreateScript": "",
-            "onUpdateScript": "",
-            "onSaveScript": "",
-            "onLoadScript": "",
             "readAccess": "public"
         }
     }

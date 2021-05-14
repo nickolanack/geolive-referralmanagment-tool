@@ -6,7 +6,7 @@
         background-color:$mainColorContent;
     }
     
-    .ui-view.left-panel {
+    [data-view="leftPanel"].ui-view.left-panel {
         background-color: $mainColorSidePanel;
         color:$mainFontSidePanelColor;
     }
