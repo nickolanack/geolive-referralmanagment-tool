@@ -74,17 +74,19 @@ var UIInteraction = (function() {
 
 		navigateToProjectOverview: function(project) {
 
-			var application = this._getApplication();
-			var controller = application.getNamedValue('navigationController');
-			application.setNamedValue("currentProject", project);
+			// var application = this._getApplication();
+			// var controller = application.getNamedValue('navigationController');
+			// application.setNamedValue("currentProject", project);
 
-			DashboardConfig.getValue('showSplitProjectDetail', function(split) {
-				if (split) {
-					controller.navigateTo("Projects", "Main");
-					return;
-				}
-				controller.navigateTo("Project", "Main");
-			});
+			// DashboardConfig.getValue('showSplitProjectDetail', function(split) {
+			// 	if (split) {
+			// 		controller.navigateTo("Projects", "Main");
+			// 		return;
+			// 	}
+			// 	controller.navigateTo("Project", "Main");
+			// });
+
+			this.navigateToProjectSection(project, "Overview");
 
 		},
 
