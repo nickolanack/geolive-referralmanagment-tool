@@ -26,7 +26,7 @@ el.addEvent('click', function(e){
                     			}
 			                ],
 			                "filter":null,
-			                "lockFilter":[/*"!collection", */ item.getProjectType());]
+			                "lockFilter":[/*"!collection", */ item.getProjectType())]
 			            })
 					});
     
