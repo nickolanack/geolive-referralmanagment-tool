@@ -12,9 +12,9 @@ el.addEvent('click', function(e){
 						//filter:child.getName(),
 
 						item:new ProjectList({
-							"icon":child.getIcon(),
-							"color":child.getColor(),
-			                "label":child.getName()+" Datasets & Collections",
+							//"icon":item.getIcon(),
+							//"color":item.getColor(),
+			                "label":/*child.getName()+*/" Datasets & Collections",
 			                "showCreateBtn":false,
 			                "createBtns":[{
 			                		"label":"Add Dataset",
