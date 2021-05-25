@@ -11,11 +11,11 @@ el.addEvent('click', function(e){
     
     controller.navigateTo("Datasets", "Main", {
 						
-						filters:ProjectTagList.getProjectTagsData('_root').map(function(item){ 
-						    if(item.getName()==item.getProjectType()){
+						filters:ProjectTagList.getProjectTagsData('_root').map(function(cat){ 
+						    if(cat.getName()==item.getProjectType()){
 						        category=item;
 						    }
-						    return item.getName(); 
+						    return cat.getName(); 
 						    
 						}),
 						//filter:child.getName(),
