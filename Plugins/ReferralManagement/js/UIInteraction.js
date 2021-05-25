@@ -1,65 +1,72 @@
-var UIInteraction=(function(){
+var UIInteraction = (function() {
 
 
 	//TODO: moving all interaction event listeners/navigation here
 
-	var UIInteraction=new Class({
+	var UIInteraction = new Class({
 
-		_getApplication:function(){
+		_getApplication: function() {
 
 			return ReferralManagementDashboard.getApplication();
 
 		},
+		navigateToNamedCategoryType = function(typeName) {
+
+			var controller = me._getApplication().getNamedValue('navigationController');
+
+			var category = null;
+
+			controller.navigateTo("Datasets", "Main", {
+
+				filters: ProjectTagList.getProjectTagsData('_root').map(function(cat) {
+					if (cat.getName() == typeName) {
+						category = cat;
+					}
+					return cat.getName();
+
+				}),
+				//filter:child.getName(),
+
+				item: new ProjectList({
+					"icon": category.getIcon(),
+					"color": category.getColor(),
+					"label": category.getName() + " Datasets & Collections",
+					"showCreateBtn": false,
+					"createBtns": [{
+						"label": "Add Dataset",
+						"formName": "documentForm"
+					}, {
+						"label": "Add Collection",
+						"formName": "documentProjectForm",
+						"className": "add collection"
+					}],
+					"filter": null,
+					"lockFilter": [ /*"!collection", */ typeName]
+				})
+			});
+
+		},
 		addDatasetTypeEvents: function(child, childView, application) {
 
-			var me=this;
+			var me = this;
 
 
 			childView.getElement().addClass('with-projects-click');
 			childView.getElement().addEvent('click', function() {
 
 				var controller = me._getApplication().getNamedValue('navigationController');
-				
+
 				//application.setNamedValue("currentProject", null);
 
 				DashboardConfig.getValue('showSplitProjectDetail', function(split) {
 
-					(function(data){
+					(function(data) {
 
 						//contoller.setNavigationData(data);
 
 					})(child)
 
-					//? not really using split var here
-					controller.navigateTo("Datasets", "Main", {
-						
-						filters:ProjectTagList.getProjectTagsData('_root').map(function(item){ return item.getName(); }),
-						//filter:child.getName(),
-
-						item:new ProjectList({
-							"icon":child.getIcon(),
-							"color":child.getColor(),
-			                "label":child.getName()+" Datasets & Collections",
-			                "showCreateBtn":false,
-			                "createBtns":[{
-			                		"label":"Add Dataset",
-                    				"formName":"documentForm"
-                    			},
-                    			{
-			                		"label":"Add Collection",
-                    				"formName":"documentProjectForm",
-                    				"className":"add collection"
-                    			}
-			                ],
-			                "filter":null,
-			                "lockFilter":[/*"!collection", */ child.getName()]
-			            })
-					});
-
-
-
-					
-
+					me.navigateToNamedCategoryType(child.getName());
 
 				});
 
@@ -67,7 +74,7 @@ var UIInteraction=(function(){
 
 		},
 
-		navigateToProjectOverview:function(project){
+		navigateToProjectOverview: function(project) {
 
 			var application = this._getApplication();
 			var controller = application.getNamedValue('navigationController');
@@ -82,28 +89,28 @@ var UIInteraction=(function(){
 			});
 
 		},
-		addProjectOverviewClick:function(el, project){
+		addProjectOverviewClick: function(el, project) {
 
-			
-			var me=this;
+
+			var me = this;
 			el.addClass('with-project-detail-click');
 			el.addEvent('click', function(e) {
 
 				e.stop();
 				me.navigateToProjectOverview(project);
-				
+
 			});
 
 
 		},
 
-		navigateToProfile:function(user){
+		navigateToProfile: function(user) {
 
 
 			var application = this._getApplication();
 			DashboardConfig.getValue("enableUserProfiles", function(enabled) {
 
-				if(!enabled){
+				if (!enabled) {
 					return;
 				}
 
@@ -115,33 +122,36 @@ var UIInteraction=(function(){
 			});
 		},
 
-		addUserEditClick:function(user){
+		addUserEditClick: function(user) {
 
-			var userId=user;
-			if(typeof user=="number"||typeof user=="string"){
-				userId=parseInt(user);
-			}else{
-				userId=parseInt((user.getUserId || user.getId).bind(user)());
+			var userId = user;
+			if (typeof user == "number" || typeof user == "string") {
+				userId = parseInt(user);
+			} else {
+				userId = parseInt((user.getUserId || user.getId).bind(user)());
 			}
 
-			if(AppClient.getUserType()=="admin"||AppClient.getId()===userId){
-    		    
-    		    var application = this._getApplication();  
+			if (AppClient.getUserType() == "admin" || AppClient.getId() === userId) {
 
-    		    
+				var application = this._getApplication();
 
-			        
-	            (new UIModalDialog(application, ProjectTeam.CurrentTeam().getUser(userId), {
-	                "formName":"userProfileForm", "formOptions":{template:"form"}})).show()
-	       
-			        
+
+
+				(new UIModalDialog(application, ProjectTeam.CurrentTeam().getUser(userId), {
+					"formName": "userProfileForm",
+					"formOptions": {
+						template: "form"
+					}
+				})).show()
+
+
 			}
 
 		},
-		
+
 		addUserProfileClick: function(el, user) {
 
-			var me=this;
+			var me = this;
 			var application = this._getApplication();
 			DashboardConfig.getValue("enableUserProfiles", function(enabled) {
 
@@ -158,13 +168,11 @@ var UIInteraction=(function(){
 					me.navigateToProfile(user);
 
 				});
-				
+
 
 			});
 
 		},
-
-
 
 
 
