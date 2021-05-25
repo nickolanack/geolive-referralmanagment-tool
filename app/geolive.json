@@ -4235,6 +4235,15 @@
                 },
                 {
                     "type": "images",
+                    "name": "applicationLogoAlt",
+                    "default": [],
+                    "label": "applicationLogoAlt",
+                    "maxHeight": 256,
+                    "maxWidth": 256,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
                     "name": "gatherLogo",
                     "default": [],
                     "label": "gatherLogo",
@@ -5178,7 +5187,10 @@
             "menuItems": [],
             "useCommunitiesAsDepartmens": false,
             "useCommunitiesAsDepartments": false,
-            "departmentKind": "Department"
+            "departmentKind": "Department",
+            "enableUserAjaxWrite": false,
+            "authUserAjaxScript": "XXXX-XXXX",
+            "applicationLogoAlt": []
         }
     },
     "widget.154": {
