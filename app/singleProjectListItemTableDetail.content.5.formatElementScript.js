@@ -5,6 +5,7 @@ el.setAttribute("data-col","type");
 
 el.addEvent('click', function(e){
     e.stop();//Propagation()
+    var controller = application.getNamedValue('navigationController');
     controller.navigateTo("Datasets", "Main", {
 						
 						filters:ProjectTagList.getProjectTagsData('_root').map(function(item){ return item.getName(); }),
