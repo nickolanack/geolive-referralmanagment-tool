@@ -333,13 +333,26 @@ var DashboardPageLayout = (function() {
 	}).addLayout('leftPanel', function(content) {
 
 		if (!DashboardConfig.getValue('showLeftPanelUser')) {
-			content.splice(1, 1);
+
+			content=content.filter(function(item){
+				return (!(item&&item.getIdentifier))||item.getIdentifier()!=="user-profile";
+			});
+
+			//content.splice(1, 1);
 		} else {
-			content.splice(2, 1);
+
+			content=content.filter(function(item){
+				return (!(item&&item.getIdentifier))||item.getIdentifier()!=="application-logo";
+			});
+
+			//content.splice(2, 1);
 		}
 
 		if (!DashboardConfig.getValue('showLeftPanelPrimaryBtn')) {
-			content.splice(2, 1);
+			content=content.filter(function(item){
+				return (!(item&&item.getIdentifier))||item.getIdentifier()!=="primary-btns";
+			});
+			//content.splice(2, 1);
 		}
 
 		return content;
