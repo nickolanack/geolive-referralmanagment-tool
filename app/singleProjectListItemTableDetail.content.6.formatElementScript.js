@@ -10,3 +10,9 @@ if(item.getDocumentsChildren().concat(item.getAttachmentsChildren()).concat(item
 }
 
 el.setAttribute("data-col","attachments");
+
+el.addEvent('click', function(e){
+   e.stop();
+   UIInteraction.navigateToProjectSection(item ,"Map");
+    
+});
