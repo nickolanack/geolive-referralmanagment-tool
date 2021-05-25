@@ -12,7 +12,7 @@ var UIInteraction = (function() {
 		},
 		navigateToNamedCategoryType : function(typeName) {
 
-			var controller = me._getApplication().getNamedValue('navigationController');
+			var controller = this._getApplication().getNamedValue('navigationController');
 
 			var category = null;
 
@@ -54,11 +54,9 @@ var UIInteraction = (function() {
 			childView.getElement().addClass('with-projects-click');
 			childView.getElement().addEvent('click', function() {
 
-				var controller = me._getApplication().getNamedValue('navigationController');
-
 				//application.setNamedValue("currentProject", null);
 
-				DashboardConfig.getValue('showSplitProjectDetail', function(split) {
+				//DashboardConfig.getValue('showSplitProjectDetail', function(split) {
 
 					(function(data) {
 
@@ -68,7 +66,7 @@ var UIInteraction = (function() {
 
 					me.navigateToNamedCategoryType(child.getName());
 
-				});
+				//});
 
 			});
 
