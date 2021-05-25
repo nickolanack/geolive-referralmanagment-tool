@@ -6,15 +6,24 @@ el.setAttribute("data-col","type");
 el.addEvent('click', function(e){
     e.stop();//Propagation()
     var controller = application.getNamedValue('navigationController');
+    
+    var category=null;
+    
     controller.navigateTo("Datasets", "Main", {
 						
-						filters:ProjectTagList.getProjectTagsData('_root').map(function(item){ return item.getName(); }),
+						filters:ProjectTagList.getProjectTagsData('_root').map(function(item){ 
+						    if(item.getName()==item.getProjectType()){
+						        category=item;
+						    }
+						    return item.getName(); 
+						    
+						}),
 						//filter:child.getName(),
 
 						item:new ProjectList({
-							//"icon":item.getIcon(),
-							//"color":item.getColor(),
-			                "label":/*child.getName()+*/" Datasets & Collections",
+							"icon":category.getIcon(),
+							"color":category.getColor(),
+			                "label":category.getName()+" Datasets & Collections",
 			                "showCreateBtn":false,
 			                "createBtns":[{
 			                		"label":"Add Dataset",
