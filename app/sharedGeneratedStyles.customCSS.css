@@ -170,12 +170,24 @@ if(empty($applicationLogo)){
     $applicationLogo=$applicationLogo[0];
 }
 
+$altLog=$config->getParameter('applicationLogoAlt', array());
+if(empty($altLog)){
+    $altLog=$menuIconDefault;
+}else{
+    $altLog=$applicationLogo[0];
+}
+
 
 
 ?>
  .application-logo {
 
     background-image:url("<?php echo UrlFrom($applicationLogo."?thumb=>200x>200"); ?>");
+} 
+
+ .alt-logo {
+
+    background-image:url("<?php echo UrlFrom($altLog."?thumb=>200x>200"); ?>");
 }  
 
 <?php
