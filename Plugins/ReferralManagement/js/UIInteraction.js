@@ -10,7 +10,7 @@ var UIInteraction = (function() {
 			return ReferralManagementDashboard.getApplication();
 
 		},
-		navigateToNamedCategoryType : function(typeName) {
+		navigateToNamedCategoryType: function(typeName) {
 
 			var controller = this._getApplication().getNamedValue('navigationController');
 
@@ -58,13 +58,13 @@ var UIInteraction = (function() {
 
 				//DashboardConfig.getValue('showSplitProjectDetail', function(split) {
 
-					(function(data) {
+				(function(data) {
 
-						//contoller.setNavigationData(data);
+					//contoller.setNavigationData(data);
 
-					})(child)
+				})(child)
 
-					me.navigateToNamedCategoryType(child.getName());
+				me.navigateToNamedCategoryType(child.getName());
 
 				//});
 
@@ -96,10 +96,20 @@ var UIInteraction = (function() {
 
 			DashboardConfig.getValue('showSplitProjectDetail', function(split) {
 				if (split) {
-					controller.navigateTo("Projects", "Main");
+					controller.navigateTo("Projects", "Main", {
+						projectInitialView: {
+							view: section,
+							section: "Project"
+						}
+					});
 					return;
 				}
-				controller.navigateTo("Project", "Main");
+				controller.navigateTo("Project", "Main", {
+					projectInitialView: {
+						view: section,
+						section: "Project"
+					}
+				});
 			});
 
 		},

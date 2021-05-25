@@ -17,6 +17,13 @@ var ProjectNavigationMenu = new Class({
 			},
 			parentMenu: application.getNamedValue('projectLayoutNavigationController')||application.getNamedValue('navigationController'),
 			initialView: function(){
+
+				var opts=this.getParentMenu().getNavigationOptions()
+
+				if(opts.projectInitialView){
+					return opts.projectInitialView;
+				}
+
 				return {
 					view: "Overview",
 					section: "Project"
