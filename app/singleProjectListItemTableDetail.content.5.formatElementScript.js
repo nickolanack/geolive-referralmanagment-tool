@@ -13,7 +13,7 @@ el.addEvent('click', function(e){
 						
 						filters:ProjectTagList.getProjectTagsData('_root').map(function(cat){ 
 						    if(cat.getName()==item.getProjectType()){
-						        category=item;
+						        category=cat;
 						    }
 						    return cat.getName(); 
 						    
