@@ -18,7 +18,7 @@ var ProjectNavigationMenu = new Class({
 			parentMenu: application.getNamedValue('projectLayoutNavigationController')||application.getNamedValue('navigationController'),
 			initialView: function(){
 
-				var opts=this.getParentMenu().getNavigationOptions()
+				var opts=application.getNamedValue('navigationController').getNavigationOptions();
 
 				if(opts.projectInitialView){
 					return opts.projectInitialView;
