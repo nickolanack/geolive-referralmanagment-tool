@@ -10,7 +10,7 @@ var UIInteraction = (function() {
 			return ReferralManagementDashboard.getApplication();
 
 		},
-		navigateToNamedCategoryType = function(typeName) {
+		navigateToNamedCategoryType : function(typeName) {
 
 			var controller = me._getApplication().getNamedValue('navigationController');
 
