@@ -4963,6 +4963,12 @@
                     "label": "showProjecReports"
                 },
                 {
+                    "type": "boolean",
+                    "name": "showAltLogo",
+                    "default": false,
+                    "label": "showAltLogo"
+                },
+                {
                     "type": "json",
                     "label": "roleLabels",
                     "name": "roleLabels",
@@ -5190,7 +5196,8 @@
             "departmentKind": "Department",
             "enableUserAjaxWrite": false,
             "authUserAjaxScript": "XXXX-XXXX",
-            "applicationLogoAlt": []
+            "applicationLogoAlt": [],
+            "showAltLogo": false
         }
     },
     "widget.154": {
