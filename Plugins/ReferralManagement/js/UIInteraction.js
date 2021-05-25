@@ -87,6 +87,22 @@ var UIInteraction = (function() {
 			});
 
 		},
+
+		navigateToProjectSection: function(project, section) {
+
+			var application = this._getApplication();
+			var controller = application.getNamedValue('navigationController');
+			application.setNamedValue("currentProject", project);
+
+			DashboardConfig.getValue('showSplitProjectDetail', function(split) {
+				if (split) {
+					controller.navigateTo("Projects", "Main");
+					return;
+				}
+				controller.navigateTo("Project", "Main");
+			});
+
+		},
 		addProjectOverviewClick: function(el, project) {
 
 

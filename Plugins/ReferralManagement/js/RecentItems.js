@@ -265,7 +265,7 @@ var RecentItems = (function() {
 
 			return;
 		}
-		ReferralManagementDashboard.addProjectItemWeakUpdateEvents(item, view, application, function(p){ return !p.isArchived(); });
+		ProjectList.AddListItemEvents(item, view, application, function(p){ return !p.isArchived(); });
 
 	};
 

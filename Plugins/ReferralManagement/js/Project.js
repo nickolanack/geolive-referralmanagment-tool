@@ -332,10 +332,6 @@ var Project = (function() {
 	}
 
 
-	Project.AddListItemEvents = function(child, childView, application, listFilterFn) {
-		ProjectList.AddListItemEvents(child, childView, application, listFilterFn);
-	};
-
 	Project.PendingButtons = function(item) {
 		return ItemPending.PendingButtons(item);
 	};

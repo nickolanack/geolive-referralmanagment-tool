@@ -16,9 +16,12 @@ var ProjectNavigationMenu = new Class({
 				return button["class"] || ("menu-" + section.toLowerCase() + "-" + button.html.toLowerCase());
 			},
 			parentMenu: application.getNamedValue('projectLayoutNavigationController')||application.getNamedValue('navigationController'),
-			initialView: {
-				view: "Overview",
-				section: "Project"
+			initialView: function(){
+				return {
+					view: "Overview",
+					section: "Project"
+				}
+
 			},
 			menuId: "projectMenu"
 		});
