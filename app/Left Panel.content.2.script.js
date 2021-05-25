@@ -1,1 +1,1 @@
-return new ElementModule('div',{"class":"application-logo gather-logo big"})
+return new ElementModule('div',{"class":"application-logo gather-logo big", identifier:"application-logo"})
