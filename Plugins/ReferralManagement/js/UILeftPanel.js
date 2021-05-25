@@ -93,7 +93,7 @@ var UILeftPanel = (function() {
 			});
 
 
-			return buttons;
+			return new ModuleArray(buttons, {identifier:"primary-btns"});
 
 		}
 
