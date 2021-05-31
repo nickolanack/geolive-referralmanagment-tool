@@ -7,6 +7,7 @@ class User {
 	protected $cachedUserAttribs = null;
 
 	private static $_communityConfig = null;
+	private static $_dashboardConfig = null;
 
 	public function getMetadata($userId = -1) {
 
@@ -99,7 +100,7 @@ class User {
 		if ($default) {
 			return $default;
 		}
-		return UrlFrom(GetWidget('dashboardConfig')->getParameter('defaultUserImage')[0]);
+		return UrlFrom($this->getDashboardConfig()->getParameter('defaultUserImage')[0]);
 
 	}
 
@@ -129,7 +130,7 @@ class User {
 
 	protected function getUserRoleLabel($userId = -1) {
 
-		if (GetWidget('dashboardConfig')->getParameter('allowUnappovedMobileSubmissions') === true) {
+		if ($this->getDashboardConfig()->getParameter('allowUnappovedMobileSubmissions') === true) {
 			return true;
 		}
 
@@ -148,6 +149,13 @@ class User {
 			self::$_communityConfig = GetWidget('communityConfiguration');
 		}
 		return self::$_communityConfig;
+	}
+
+	protected function getDashboardConfig() {
+		if (!self::$_dashboardConfig) {
+			self::$_dashboardConfig = GetWidget('dashboardConfig');
+		}
+		return self::$_dashboardConfig;
 	}
 
 	public function listTerritories() {
