@@ -417,7 +417,7 @@ var DashboardPageLayout = (function() {
 						return false;
 					}
 				}, {
-					html: ["Edit", "Configuration"],
+					html: ["Configuration"],
 					condition: function() {
 						var application = layout.getApplication();
 						var user = application.getNamedValue('currentUser');
@@ -429,7 +429,16 @@ var DashboardPageLayout = (function() {
 						}
 
 
-						if (AppClient.getUserType() == "admin" || AppClient.getId() === userId) {
+						if (AppClient.getId() === userId) {
+							return true;
+						}
+						return false;
+					}
+				}, {
+					html: ["Edit"],
+					condition: function() {
+
+						if (AppClient.getUserType() == "admin" ) {
 							return true;
 						}
 						return false;
