@@ -393,7 +393,7 @@ core\EventListener {
 			$project->visible = $this->shouldShowProjectFilter()($project);
 			return $project;
 
-		}, $this->cache()->getProjectsMetadataList($filter)), function ($project) {return !!$project->visible;}));
+		}, $this->listProjectsMetadata($filter) /* $this->cache()->getProjectsMetadataList($filter)*/), function ($project) {return !!$project->visible;}));
 
 	}
 
