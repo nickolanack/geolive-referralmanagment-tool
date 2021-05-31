@@ -8379,16 +8379,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 494,
-                            "y": 357
+                            "x": 504,
+                            "y": 367
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 454,
-                                    "y": 608
+                                    "x": 464,
+                                    "y": 618
                                 }
                             }
                         ],
@@ -8557,6 +8557,14 @@
                                                 "presentationRadioFalseLabel": "No",
                                                 "presentationImagesTrueImage": [],
                                                 "presentationImagesFalseImage": []
+                                            }
+                                        },
+                                        {
+                                            "type": "WizardScriptElement",
+                                            "config": {
+                                                "name": "My Custom Script",
+                                                "script": "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.9.config.script.js",
+                                                "description": "Info about my custom script"
                                             }
                                         }
                                     ]
