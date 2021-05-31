@@ -181,6 +181,8 @@ GetWidget('singleFilesSectionDetail')->display($targetInstance);
 GetWidget('taskForm')->display($targetInstance); //proposal wizard
 GetWidget('taskDefaultItems')->display($targetInstance);
 GetWidget('userProfileForm')->display($targetInstance);
+GetWidget('changePassword')->display($targetInstance);
+
 GetWidget('userSelectionForm')->display($targetInstance);
 GetWidget('selectableUserListItemDetail')->display($targetInstance);
 
