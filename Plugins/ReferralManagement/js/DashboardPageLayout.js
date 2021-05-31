@@ -438,6 +438,17 @@ var DashboardPageLayout = (function() {
 					html: ["Edit"],
 					condition: function() {
 
+						var application = layout.getApplication();
+						var user = application.getNamedValue('currentUser');
+						var userId = user;
+						if (typeof user == "number" || typeof user == "string") {
+							userId = parseInt(user);
+						} else {
+							userId = parseInt((user.getUserId || user.getId).bind(user)());
+						}
+
+
+
 						if (AppClient.getUserType() == "admin" ) {
 							return true;
 						}

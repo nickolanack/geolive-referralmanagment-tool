@@ -960,12 +960,6 @@ core\EventListener {
 				return true;
 			}
 
-			//
-			// if ($userMetadata->community === $groupCommunity) {
-			// 	$userMetadata->visibleBecuase = "they're wabun";
-			// 	return true;
-			// }
-
 			if ($userMetadata->community === $clientMetadata['community']) {
 				$userMetadata->visibleBecuase = "Same community";
 				return true;
