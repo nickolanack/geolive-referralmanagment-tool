@@ -38,7 +38,7 @@ class User {
 			(new \attributes\Record('userAttributes'))->getValues($userId, 'user'),
 			function ($attributes) use (&$metadata, $userId) {
 
-				\core\DataStorage::LogQuery('Get User Attributes');
+				\core\DataStorage::LogQuery('Get User Attributes: ' . $userId);
 
 				$communities = $this->listCommunities();
 				$metadata['community'] = 'none';
