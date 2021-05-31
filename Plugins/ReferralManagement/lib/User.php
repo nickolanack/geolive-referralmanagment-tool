@@ -6,6 +6,8 @@ class User {
 
 	protected $cachedUserAttribs = null;
 
+	private static $_communityConfig = null;
+
 	public function getMetadata($userId = -1) {
 
 		$metadata = null;
@@ -35,20 +37,19 @@ class User {
 			(new \attributes\Record('userAttributes'))->getValues($userId, 'user'),
 			function ($attributes) use (&$metadata, $userId) {
 
-
-				$communities=$this->listCommunities();
+				$communities = $this->listCommunities();
 				$metadata['community'] = 'none';
 				if (in_array(strtolower($attributes['community']), $communities)) {
 					$metadata['community'] = $attributes['community'];
 				}
 
-				if(count($communities)==1&&$metadata['community']=='none'){
+				if (count($communities) == 1 && $metadata['community'] == 'none') {
 					$metadata['community'] = $communities[0];
 				}
 
 				//$metadata['-community'] = $attributes['community'];
 				//$metadata['-communityList'] = $this->listCommunities();
-				
+
 				$metadata['status'] = !!$attributes['registeredStatus'];
 
 				$metadata['communityId'] = array_search($metadata['community'], $this->listCommunities());
@@ -123,14 +124,12 @@ class User {
 
 	protected function canCreateCommunityContent($userId = -1) {
 
-
-
 		return $this->getUserRoleLabel($userId) !== 'none';
 	}
 
 	protected function getUserRoleLabel($userId = -1) {
 
-		if(GetWidget('dashboardConfig')->getParameter('allowUnappovedMobileSubmissions')===true){
+		if (GetWidget('dashboardConfig')->getParameter('allowUnappovedMobileSubmissions') === true) {
 			return true;
 		}
 
@@ -143,19 +142,27 @@ class User {
 	public function listCommunities() {
 		return array_merge(array($this->communityCollective()), $this->listTerritories());
 	}
+
+	protected function getCommunityConfig() {
+		if (!self::$_communityConfig) {
+			self::$_communityConfig = GetWidget('communityConfiguration');
+		}
+		return self::$_communityConfig;
+	}
+
 	public function listTerritories() {
-		$communities= GetWidget('communityConfiguration')->getParameter("communities");
-		return array_map(function($community){
+		$communities = $this->getCommunityConfig()->getParameter("communities");
+		return array_map(function ($community) {
 			return $community;
 		}, $communities);
 	}
 	public function communityCollective() {
 
-		$collective = GetWidget('communityConfiguration')->getParameter("collective");
+		$collective = $this->getCommunityConfig()->getParameter("collective");
 
-		if($collective=="{subdomain}"){
-			$domain=HtmlDocument()->getDomain();
-			$collective=substr($domain, 0, strpos($domain, '.'));
+		if ($collective == "{subdomain}") {
+			$domain = HtmlDocument()->getDomain();
+			$collective = substr($domain, 0, strpos($domain, '.'));
 		}
 
 		return $collective;
@@ -190,7 +197,6 @@ class User {
 		return GetClient()->getRealName();
 
 	}
-
 
 	protected function getUsersBio($userId = -1, $default = null) {
 
