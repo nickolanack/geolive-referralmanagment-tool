@@ -4,6 +4,8 @@ namespace ReferralManagement;
 
 class UserRoles {
 
+	private static $_rolesIconsConfig = null;
+
 	public function listRoleAttributes() {
 		return array(
 			"tribal-council" => "isTribalCouncil",
@@ -125,6 +127,13 @@ class UserRoles {
 
 	}
 
+	protected function getRolesIconsConfig() {
+		if (!self::$_rolesIconsConfig) {
+			self::$_rolesIconsConfig = (new \core\Configuration('rolesicons'));
+		}
+		return self::$_rolesIconsConfig;
+	}
+
 	public function getRolesUserCanEdit($userId = -1) {
 
 		$rolesList = $this->listRoles();
@@ -150,7 +159,7 @@ class UserRoles {
 
 	public function listRoleIcons() {
 
-		$config = new \core\Configuration('rolesicons');
+		$config = $this->getRolesIconsConfig();
 
 		$icons = array();
 		foreach (array_merge($this->listRoles(), array('admin', 'none')) as $key) {
@@ -175,11 +184,11 @@ class UserRoles {
 		foreach (array_keys($map) as $key) {
 
 			if ($attribs[$map[$key]] === true || $attribs[$map[$key]] === "true") {
-				return UrlFrom((new \core\Configuration('rolesicons'))->getParameter($key)[0]);
+				return UrlFrom($this->getRolesIconsConfig()->getParameter($key)[0]);
 			}
 
 		}
-		return UrlFrom((new \core\Configuration('rolesicons'))->getParameter('none')[0]);
+		return UrlFrom($this->getRolesIconsConfig()->getParameter('none')[0]);
 	}
 
 }
