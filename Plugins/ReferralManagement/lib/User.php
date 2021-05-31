@@ -4,7 +4,7 @@ namespace ReferralManagement;
 
 class User {
 
-	protected $cachedUserAttribs = null;
+	private static $_cachedUserAttribs = null;
 
 	private static $_communityConfig = null;
 	private static $_dashboardConfig = null;
@@ -34,8 +34,7 @@ class User {
 		}
 
 		GetPlugin('Attributes');
-		$this->_withUserAttributes(
-			(new \attributes\Record('userAttributes'))->getValues($userId, 'user'),
+		$this->_withUserAttributes($userId,
 			function ($attributes) use (&$metadata, $userId) {
 
 				$communities = $this->listCommunities();
@@ -176,10 +175,9 @@ class User {
 		return $collective;
 	}
 
-	protected function _withUserAttributes($attribs, $callbackFn) {
-		$this->cachedUserAttribs = $attribs;
-		$callbackFn($attribs);
-		$this->cachedUserAttribs = null;
+	protected function _withUserAttributes($userId, $callbackFn) {
+		$callbackFn($this->_getUserAttributes($userId));
+		//$this->cachedUserAttribs = null;
 	}
 
 	protected function getUserRoleIcon($userId = -1) {
@@ -289,16 +287,16 @@ class User {
 
 	protected function _getUserAttributes($userId) {
 
-		if (is_null($this->cachedUserAttribs)) {
+		if (!isset(self::$_cachedUserAttribs[$userId])) {
 
 			\core\DataStorage::LogQuery('Get User Attributes: ' . $userId);
 
 			GetPlugin('Attributes');
-			$this->cachedUserAttribs = (new \attributes\Record('userAttributes'))->getValues($userId, 'user');
+			self::$_cachedUserAttribs[$userId] = (new \attributes\Record('userAttributes'))->getValues($userId, 'user');
 
 		}
 
-		return $this->cachedUserAttribs;
+		return self::$_cachedUserAttribs[$userId];
 
 	}
 
