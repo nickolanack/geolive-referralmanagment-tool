@@ -38,8 +38,6 @@ class User {
 			(new \attributes\Record('userAttributes'))->getValues($userId, 'user'),
 			function ($attributes) use (&$metadata, $userId) {
 
-				\core\DataStorage::LogQuery('Get User Attributes: ' . $userId);
-
 				$communities = $this->listCommunities();
 				$metadata['community'] = 'none';
 				if (in_array(strtolower($attributes['community']), $communities)) {
@@ -293,8 +291,10 @@ class User {
 
 		if (is_null($this->cachedUserAttribs)) {
 
+			\core\DataStorage::LogQuery('Get User Attributes: ' . $userId);
+
 			GetPlugin('Attributes');
-			return (new \attributes\Record('userAttributes'))->getValues($userId, 'user');
+			$this->cachedUserAttribs = (new \attributes\Record('userAttributes'))->getValues($userId, 'user');
 
 		}
 
