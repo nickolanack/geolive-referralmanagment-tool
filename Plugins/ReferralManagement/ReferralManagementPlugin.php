@@ -1118,7 +1118,7 @@ core\EventListener {
 			//die(json_encode($u));
 
 			$user = $this->getUsersMetadata($u);
-			return $user;
+			return (object) $user;
 
 		}, $list);
 
