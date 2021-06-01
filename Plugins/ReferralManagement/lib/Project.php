@@ -48,6 +48,7 @@ class Project {
 			->getValues($proposal['id'], 'ReferralManagement.proposal');
 
 		if (key_exists('isDataset', $attributes) && ($attributes['isDataset'] === true || $attributes['isDataset'] === 'true')) {
+			\core\DataStorage::LogQuery('Request datasetAttributes: ' . $proposal['id']);
 			$datasetAttributes = (new \attributes\Record('datasetAttributes'))
 				->getValues($proposal['id'], 'ReferralManagement.proposal');
 			$attributes['dataset'] = $datasetAttributes;
