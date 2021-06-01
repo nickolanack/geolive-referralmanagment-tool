@@ -19,7 +19,7 @@ class Teams {
 		}
 
 		$teamMembers = $attributes;
-		if (!$teamMembers) {
+		if (is_null($teamMembers)) {
 			GetPlugin('Attributes');
 			\core\DataStorage::LogQuery('Query proposalAttributes for team: ' . $proposal['id'] . ' ' . gettype($teamMembers));
 
