@@ -355,7 +355,13 @@ var Project = (function() {
 var MissingProject=(function(){
 
 	var MissingProject = new Class({
-		Extends: MockDataTypeItem
+		Extends: Project,
+		initialize:function(){
+
+		},
+		save:function(){
+			throw 'not saveable';
+		}
 	});
 
 	return MissingProject;
