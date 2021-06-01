@@ -310,7 +310,7 @@
         "instance": "ReferralManagement",
         "parameters": {
             "enableEmailNotifications": false,
-            "enableProjectListCaching": false,
+            "enableProjectListCaching": true,
             "queueEmailDelay": "5",
             "exportSecret": "XXXX-XXXX",
             "customFormCss": ""
