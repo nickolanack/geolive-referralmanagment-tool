@@ -417,7 +417,7 @@ core\EventListener {
 			$project['profileData'] = $this->getLastAnalysis();
 			//$project['visible'] = $this->shouldShowProjectFilter()($project);
 
-			return $project;
+			return (object) $project;
 
 		}, $results);
 
