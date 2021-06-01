@@ -41,6 +41,12 @@ class User {
 				$metadata['community'] = 'none';
 				if (in_array(strtolower($attributes['community']), $communities)) {
 					$metadata['community'] = $attributes['community'];
+
+				} else {
+					if (is_string($attributes['community'])) {
+						$metadata['_community'] = $attributes['community'];
+						$metadata['_communities'] = $communities;
+					}
 				}
 
 				if (count($communities) == 1 && $metadata['community'] == 'none') {
