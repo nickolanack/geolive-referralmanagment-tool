@@ -92,6 +92,9 @@ class Project {
 		}
 
 		$proposal['computed'] = $computed;
+
+		\core\DataStorage::LogQuery('Request tasks: ' . $proposal['id']);
+
 		$proposal['tasks'] = array_map(function ($result) {
 
 			return (new \ReferralManagement\Task())->fromRecord($result)->toArray();
