@@ -388,12 +388,19 @@ core\EventListener {
 			return array();
 		}
 
+		if ($this->getParameter('enableProjectListCaching')) {
+			$list = $this->listProjectsMetadata($filter);
+		} else {
+			$list = $this->cache()->getProjectsMetadataList($filter);
+		}
+
+		//
 		return array_values(array_filter(array_map(function ($project) {
 
 			$project->visible = $this->shouldShowProjectFilter()($project);
 			return $project;
 
-		}, $this->listProjectsMetadata($filter) /* $this->cache()->getProjectsMetadataList($filter)*/), function ($project) {return !!$project->visible;}));
+		}, $list), function ($project) {return !!$project->visible;}));
 
 	}
 

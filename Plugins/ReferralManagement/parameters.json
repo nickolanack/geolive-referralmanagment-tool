@@ -7,6 +7,12 @@
  	"default":false
  },
  {
+    "name":"enableProjectListCaching",
+    "label":"Enable Project List Caching",
+    "type":"boolean",
+    "default":true
+ },
+ {
  	"name":"queueEmailDelay",
  	"label":"Queue Email Delay",
  	"type":"input",
