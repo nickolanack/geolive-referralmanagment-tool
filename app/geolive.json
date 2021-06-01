@@ -311,6 +311,7 @@
         "parameters": {
             "enableEmailNotifications": false,
             "enableProjectListCaching": true,
+            "enableUserListCaching": false,
             "queueEmailDelay": "5",
             "exportSecret": "XXXX-XXXX",
             "customFormCss": ""
