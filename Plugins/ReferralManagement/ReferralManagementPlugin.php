@@ -409,10 +409,10 @@ core\EventListener {
 
 		}, $list), function ($project) {
 			if (!!$project->visible) {
-				$this->filterRemovedProjects[] = $project;
-				return false;
+				return true;
 			}
-			return true;
+			$this->filterRemovedProjects[] = $project;
+			return false;
 		}));
 
 	}
