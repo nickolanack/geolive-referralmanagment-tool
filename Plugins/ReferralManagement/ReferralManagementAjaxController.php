@@ -124,6 +124,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			$response['debug'] = $this->getPlugin()->cache()->getProjectsListCacheStatus(
 				array('status' => array('value' => 'archived', 'comparator' => '!='))
 			);
+			$response['_removed'] = $this->getPlugin()->getLastFilteredProjects();
 		}
 
 		//$userCanSubscribe = GetClient()->isAdmin();
