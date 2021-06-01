@@ -357,7 +357,7 @@ var MissingProject=(function(){
 	var MissingProject = new Class({
 		Extends: Project,
 		initialize:function(){
-
+			 Project.prototype.initialize.call(this, -1, {});
 		},
 		save:function(){
 			throw 'not saveable';
