@@ -395,10 +395,10 @@ core\EventListener {
 			$list = $this->listProjectsMetadata($filter);
 		}
 
-		//
-		return array_values(array_filter(array_map(function ($project) {
+		$filter = $this->shouldShowProjectFilter();
+		return array_values(array_filter(array_map(function ($project) use ($filter) {
 
-			$project->visible = $this->shouldShowProjectFilter()($project);
+			$project->visible = $filter($project);
 			return $project;
 
 		}, $list), function ($project) {return !!$project->visible;}));
