@@ -6817,6 +6817,7 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "singleProjectEditButtonsDetail",
                                     "shouldRender": true,
@@ -6839,30 +6840,30 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getName();",
-                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.5.config.formatElementScript.js",
-                                    "identifier": ""
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.5.config.formatElementScript.js"
                                 }
                             },
                             {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getCompanyName();",
-                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.6.config.formatElementScript.js",
-                                    "identifier": ""
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.6.config.formatElementScript.js"
                                 }
                             },
                             {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.7.config.fieldValueScript.js",
-                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.7.config.formatElementScript.js",
-                                    "identifier": ""
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.7.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -6896,26 +6897,27 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "pros-dates-community",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.9.config.fieldValueScript.js",
-                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.9.config.formatElementScript.js",
-                                    "identifier": ""
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.9.config.formatElementScript.js"
                                 }
                             },
                             {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.fieldValueScript.js",
-                                    "formatElementScript": "el.addClass('created-by')",
-                                    "identifier": ""
+                                    "formatElementScript": "el.addClass('created-by')"
                                 }
                             },
                             {
                                 "type": "UIView",
                                 "config": {
                                     "className": "inline-list-item first-item tasks-list-item-icon",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "projectPriorityTasksDetail",
                                     "shouldRender": true,
@@ -6938,6 +6940,7 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "singleUserTeamCollectionIconsDetail",
                                     "shouldRender": true,
