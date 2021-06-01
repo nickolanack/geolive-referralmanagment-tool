@@ -42,19 +42,15 @@ class Project {
 
 		GetPlugin('Attributes');
 
-		\core\DataStorage::LogQuery('Request proposalAttributes: ' . $proposal['id']);
-
 		$attributes = (new \attributes\Record('proposalAttributes'))
 			->getValues($proposal['id'], 'ReferralManagement.proposal');
 
 		if (key_exists('isDataset', $attributes) && ($attributes['isDataset'] === true || $attributes['isDataset'] === 'true')) {
-			\core\DataStorage::LogQuery('Request datasetAttributes: ' . $proposal['id']);
 			$datasetAttributes = (new \attributes\Record('datasetAttributes'))
 				->getValues($proposal['id'], 'ReferralManagement.proposal');
 			$attributes['dataset'] = $datasetAttributes;
 		}
 
-		\core\DataStorage::LogQuery('Request Team: ' . $proposal['id']);
 		$teamMembers = GetPlugin('ReferralManagement')->getTeamMembersForProject($result, $attributes['teamMembers']);
 
 		$attributes['teamMemberIds'] = array_map(function ($item) {
@@ -93,9 +89,6 @@ class Project {
 		}
 
 		$proposal['computed'] = $computed;
-
-		\core\DataStorage::LogQuery('Request tasks: ' . $proposal['id']);
-
 		$proposal['tasks'] = array_map(function ($result) {
 
 			return (new \ReferralManagement\Task())->fromRecord($result)->toArray();

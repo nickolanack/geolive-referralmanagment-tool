@@ -2,16 +2,16 @@
 
 namespace ReferralManagement;
 
-class Teams{
+class Teams {
 
-	public function listMembersOfProject($project, $attributes = null){
+	public function listMembersOfProject($project, $attributes = null) {
 
 		$pid = $project;
 
 		if (!is_numeric($project)) {
 
-			if(is_object($project)){
-				$project=get_object_vars($project);
+			if (is_object($project)) {
+				$project = get_object_vars($project);
 			}
 
 			$pid = $project['id'];
@@ -21,6 +21,8 @@ class Teams{
 		$teamMembers = $attributes;
 		if (!$teamMembers) {
 			GetPlugin('Attributes');
+			\core\DataStorage::LogQuery('Query proposalAttributes for team: ' . $proposal['id']);
+
 			$attributes = (new \attributes\Record('proposalAttributes'))->getValues($pid, 'ReferralManagement.proposal');
 			$teamMembers = $attributes['teamMembers'];
 		}
@@ -37,7 +39,7 @@ class Teams{
 			if (is_numeric($item)) {
 				$migrated = true;
 				return (object) array(
-					'id' => $item, 
+					'id' => $item,
 					'permissions' => GetPlugin('ReferralManagement')->defaultProjectPermissionsForUser($item, $project));
 			}
 			return json_decode($item);
@@ -50,11 +52,9 @@ class Teams{
 
 		return $teamMembers;
 
-
 	}
-	public function listMembersOfTask($task, $attributes=null){
+	public function listMembersOfTask($task, $attributes = null) {
 
-		
 		$tid = $task;
 
 		if (!is_numeric($task)) {
@@ -91,8 +91,6 @@ class Teams{
 		}
 
 		return $teamMembers;
-
-
 
 	}
 
