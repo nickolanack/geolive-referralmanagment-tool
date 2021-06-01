@@ -1,5 +1,8 @@
 
 
+if(item instanceof MissingProject){
+    return '--';
+}
 
 if(item.isDataset()){
     return item.getSpatialDocuments().length+" spatial";
