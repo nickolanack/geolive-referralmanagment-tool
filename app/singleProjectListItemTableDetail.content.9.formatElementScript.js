@@ -1,7 +1,9 @@
 el.addClass("inline check");
 el.setAttribute("data-col","");
 
-
+if(item instanceof MissingProject){
+    return null;
+}
 
 var input=new Element('input', {type:"checkbox", events:{click:function(event){
     event.stopPropagation();
