@@ -352,4 +352,15 @@ var Project = (function() {
 })();
 
 
+var MissingProject=(function(){
+
+	var MissingProject = new Class({
+		Extends: MockDataTypeObject
+	});
+
+	return MissingProject;
+
+})()
+
+
 var Proposal = Project;

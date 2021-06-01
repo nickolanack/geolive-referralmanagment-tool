@@ -83,8 +83,20 @@ var ItemProjectsCollection = (function(){
 
 	    getProjectObjects:function(){
 
+	    	/**
+	    	 * projects may not be visible to current user, restricted etc: use MissingProject placeholder
+	    	 */
+
 	    	return this.getProjects().map(function(project){
-	    		return ProjectTeam.CurrentTeam().getProject(project);
+	    		try{
+		    		return ProjectTeam.CurrentTeam().getProject(project);
+		    	}catch(e){
+		    		return new MissingProject();
+
+		    	}
+
+
+
 	    	});
 
 	    },
