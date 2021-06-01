@@ -1006,7 +1006,9 @@ core\EventListener {
 
 		$clientId = GetClient()->getUserId();
 
-		if (!Auth('memberof', 'lands-department-manager', 'group')) {
+		$minAccessLevel = 'lands-department-manager';
+
+		if (!Auth('memberof', $minAccessLevel, 'group')) {
 
 			return function (&$item) use ($clientId) {
 
@@ -1029,7 +1031,7 @@ core\EventListener {
 		//$groupCommunity=$this->communityCollective();
 
 		/**
-		 * Lands Dept Managers+
+		 * all other access must be granted by adding user/community to team, or user created
 		 */
 
 		return function (&$item) use ($clientId, $clientMetadata) {
