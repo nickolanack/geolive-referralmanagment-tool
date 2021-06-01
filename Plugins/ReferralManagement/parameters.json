@@ -13,6 +13,12 @@
     "default":true
  },
  {
+    "name":"enableUserListCaching",
+    "label":"Enable User List Caching",
+    "type":"boolean",
+    "default":true
+ },
+ {
  	"name":"queueEmailDelay",
  	"label":"Queue Email Delay",
  	"type":"input",

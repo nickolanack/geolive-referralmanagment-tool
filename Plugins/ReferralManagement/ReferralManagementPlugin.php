@@ -109,7 +109,13 @@ core\EventListener {
 	}
 
 	public function getClientsUserList() {
-		$users = $this->cache()->getUsersMetadataList();
+
+		if ($this->getParameter('enableUserListCaching')) {
+			$users = $this->cache()->getUsersMetadataList();
+		} else {
+			$users = $this->listAllUsersMetadata();
+		}
+
 		$users = array_values(array_filter($users, $this->shouldShowUserFilter()));
 		return $users;
 	}
