@@ -917,6 +917,8 @@ core\EventListener {
 	 */
 	public function shouldShowUserFilter() {
 
+		\core\DataStorage::LogQuery("Create User Filter");
+
 		$roles = (new \ReferralManagement\UserRoles());
 		$managerRoles = $roles->listManagerRoles();
 		if (GetClient()->isAdmin()) {
@@ -983,6 +985,8 @@ core\EventListener {
 	}
 
 	public function shouldShowProjectFilter() {
+
+		\core\DataStorage::LogQuery("Create Project Filter");
 
 		$clientId = GetClient()->getUserId();
 

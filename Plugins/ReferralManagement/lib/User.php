@@ -289,7 +289,7 @@ class User {
 
 		if (!isset(self::$_cachedUserAttribs[$userId])) {
 
-			\core\DataStorage::LogQuery('Get User Attributes: ' . $userId);
+			//\core\DataStorage::LogQuery('Get User Attributes: ' . $userId);
 
 			GetPlugin('Attributes');
 			self::$_cachedUserAttribs[$userId] = (new \attributes\Record('userAttributes'))->getValues($userId, 'user');
