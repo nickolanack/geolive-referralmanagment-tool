@@ -11,6 +11,6 @@ return new ModalFormButtonModule(application, item, {
 			},
 			formName: "tagForm",
 			"class": "inline-edit",
-
+            stopPropagation:true
 
 		})
