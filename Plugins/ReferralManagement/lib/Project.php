@@ -51,6 +51,10 @@ class Project {
 			$attributes['dataset'] = $datasetAttributes;
 		}
 
+		if (!$attributes['teamMembers']) {
+			$attributes['teamMembers'] = array();
+		}
+
 		$teamMembers = GetPlugin('ReferralManagement')->getTeamMembersForProject($result, $attributes['teamMembers']);
 
 		$attributes['teamMemberIds'] = array_map(function ($item) {
