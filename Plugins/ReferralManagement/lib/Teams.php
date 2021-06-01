@@ -21,7 +21,7 @@ class Teams {
 		$teamMembers = $attributes;
 		if (!$teamMembers) {
 			GetPlugin('Attributes');
-			\core\DataStorage::LogQuery('Query proposalAttributes for team: ' . $proposal['id']);
+			\core\DataStorage::LogQuery('Query proposalAttributes for team: ' . $proposal['id'] . ' ' . gettype($teamMembers));
 
 			$attributes = (new \attributes\Record('proposalAttributes'))->getValues($pid, 'ReferralManagement.proposal');
 			$teamMembers = $attributes['teamMembers'];
