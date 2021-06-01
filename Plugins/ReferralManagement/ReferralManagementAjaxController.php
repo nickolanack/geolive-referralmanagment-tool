@@ -122,7 +122,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 		if ($this->getPlugin()->getParameter('enableProjectListCaching')) {
 			$response['debug'] = $this->getPlugin()->cache()->getProjectsListCacheStatus(
-				array('status' => array('value' => 'archived', 'comparator' => '!=')),
+				array('status' => array('value' => 'archived', 'comparator' => '!='))
 			);
 		}
 
