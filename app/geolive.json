@@ -10094,13 +10094,14 @@
         "name": "Content",
         "instance": "CustomContent",
         "parameters": {
-            "customScript": "Generate Map Layer Group Legends.customScript.js",
             "widgetTitle": "Generate Map Layer Group Legends",
             "target": "forTheMap",
-            "readAccess": "public",
+            "customScript": "Generate Map Layer Group Legends.customScript.js",
             "language": "html\/text",
             "returnsValue": false,
-            "cacheable": false
+            "cacheable": false,
+            "parseMarkdown": false,
+            "readAccess": "public"
         }
     },
     "widget.229": {
