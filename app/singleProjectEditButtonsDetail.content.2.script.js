@@ -1,4 +1,4 @@
-if(!item.isArchived()){
+if(item.getId()<=0||(!item.isArchived())){
     return null;
 }
 
