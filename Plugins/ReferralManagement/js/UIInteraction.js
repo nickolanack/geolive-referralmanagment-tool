@@ -118,6 +118,12 @@ var UIInteraction = (function() {
 		addProjectOverviewClick: function(el, project) {
 
 
+			if(project instanceof MissingProject){
+				el.addClass('missing-project-no-click');
+				return;
+			}
+
+
 			var me = this;
 			el.addClass('with-project-detail-click');
 			el.addEvent('click', function(e) {
