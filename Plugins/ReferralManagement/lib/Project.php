@@ -54,6 +54,7 @@ class Project {
 			$attributes['dataset'] = $datasetAttributes;
 		}
 
+		\core\DataStorage::LogQuery('Request Team: ' . $proposal['id']);
 		$teamMembers = GetPlugin('ReferralManagement')->getTeamMembersForProject($result, $attributes['teamMembers']);
 
 		$attributes['teamMemberIds'] = array_map(function ($item) {
