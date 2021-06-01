@@ -38,9 +38,23 @@ class User {
 			function ($attributes) use (&$metadata, $userId) {
 
 				$communities = $this->listCommunities();
+
+				$communitiesComparison = array_map(function ($c) {
+					$c = strtolower($c);
+					$c = explode('|', $c);
+					return array_shift($c);
+
+				}, $communities);
+
 				$metadata['community'] = 'none';
-				if (in_array(strtolower($attributes['community']), $communities)) {
-					$metadata['community'] = $attributes['community'];
+
+				$uc = strtolower($attributes['community']);
+				$uc = explode('|', $uc);
+				$uc = array_shift($uc);
+
+				if (in_array($uc, $communitiesComparison)) {
+					$i = array_search($uc, $communitiesComparison);
+					$metadata['community'] = $communities[$i];;
 
 				} else {
 					if (is_string($attributes['community'])) {
