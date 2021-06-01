@@ -355,7 +355,7 @@ var Project = (function() {
 var MissingProject=(function(){
 
 	var MissingProject = new Class({
-		Extends: MockDataTypeObject
+		Extends: MockDataTypeItem
 	});
 
 	return MissingProject;
