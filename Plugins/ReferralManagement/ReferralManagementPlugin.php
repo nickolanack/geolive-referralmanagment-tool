@@ -18,6 +18,9 @@ core\EventListener {
 
 	protected $description = 'ReferralManagement specific views, etc.';
 
+	protected $filterRemovedProjects = array();
+	protected $filterRemovedUsers = array();
+
 	use core\WidgetProviderTrait;
 	use core\ModuleProviderTrait;
 	use core\AjaxControllerProviderTrait;
@@ -396,13 +399,26 @@ core\EventListener {
 		}
 
 		$filter = $this->shouldShowProjectFilter();
+
+		$this->filterRemovedProjects = array();
+
 		return array_values(array_filter(array_map(function ($project) use ($filter) {
 
 			$project->visible = $filter($project);
 			return $project;
 
-		}, $list), function ($project) {return !!$project->visible;}));
+		}, $list), function ($project) {
+			if (!!$project->visible) {
+				$this->filterRemovedProjects[] = $project;
+				return false;
+			}
+			return true;
+		}));
 
+	}
+
+	public function getLastFilteredProjects() {
+		return $this->filterRemovedProjects;
 	}
 
 	protected function onTriggerUpdateProjectList($params) {
