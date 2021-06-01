@@ -480,7 +480,17 @@ var DashboardPageLayout = (function() {
 						var project = application.getNamedValue("currentProject");
 						return project.isCollection();
 					}
+				},
+				{
+					html: ['Datasets'],
+					condition: function() {
+
+						var application = ReferralManagementDashboard.getApplication();
+						var project = application.getNamedValue("currentProject");
+						return !(project instanceof MissingProject);
+					}
 				}
+
 
 			]
 
