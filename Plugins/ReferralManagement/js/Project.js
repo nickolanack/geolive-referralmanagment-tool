@@ -358,8 +358,8 @@ var MissingProject=(function(){
 		Extends: Project,
 		initialize:function(){
 			 Project.prototype.initialize.call(this, -1, {
-			 	createdDate:null,
-			 	modifiedDate:null,
+			 	createdDate:'--',
+			 	modifiedDate:'--',
 			 	attributes:{
 			 		title:""
 			 	},

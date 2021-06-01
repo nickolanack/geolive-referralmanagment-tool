@@ -482,7 +482,7 @@ var DashboardPageLayout = (function() {
 					}
 				},
 				{
-					html: ['Datasets', 'Access', 'Team', 'Users', 'Discussions', 'Map'],
+					html: ['Datasets', 'Access', 'Team', 'Users', 'Discussions', 'Map', 'Files', 'Notes'],
 					condition: function() {
 
 						var application = ReferralManagementDashboard.getApplication();
