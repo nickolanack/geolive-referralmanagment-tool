@@ -17136,7 +17136,7 @@
                                     "loadAsync": false,
                                     "identifier": "col-name",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return item.getName();",
+                                    "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
                                     "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
                                 }
                             },
