@@ -389,9 +389,10 @@ core\EventListener {
 		}
 
 		if ($this->getParameter('enableProjectListCaching')) {
-			$list = $this->listProjectsMetadata($filter);
-		} else {
+
 			$list = $this->cache()->getProjectsMetadataList($filter);
+		} else {
+			$list = $this->listProjectsMetadata($filter);
 		}
 
 		//
