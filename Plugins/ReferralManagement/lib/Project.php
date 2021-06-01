@@ -41,6 +41,9 @@ class Project {
 		$proposal['discussion'] = GetPlugin('Discussions')->getDiscussionForItem($proposal['id'], 'ReferralManagement.proposal');
 
 		GetPlugin('Attributes');
+
+		\core\DataStorage::LogQuery('Request proposalAttributes: ' . $proposal['id']);
+
 		$attributes = (new \attributes\Record('proposalAttributes'))
 			->getValues($proposal['id'], 'ReferralManagement.proposal');
 
