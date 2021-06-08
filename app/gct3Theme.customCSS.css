@@ -1200,3 +1200,10 @@ div.field-value-module.inline.icon, div.field-value-module.inline.check {
     background-color: #cde6cd;
 }
 
+
+button.download-link {
+    border: none;
+    margin: 0 10px;
+    background-color: transparent;
+    color: #59d759;
+}
