@@ -17795,6 +17795,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getName();",
                                     "formatElementScript": "userProfileDetailOverview.metadata.positions.content.modules.4.config.formatElementScript.js"
@@ -17804,6 +17805,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "",
                                     "fieldLabelScript": "return \"Role: \";",
                                     "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.5.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-role');"
@@ -17813,6 +17815,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "",
                                     "fieldLabelScript": "return \"Community\/Group: \"",
                                     "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.6.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-community');"
@@ -17822,6 +17825,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "",
                                     "fieldLabelScript": "return \"Position: \";",
                                     "fieldValueScript": "return \"--\";",
                                     "formatElementScript": ""
@@ -17831,6 +17835,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "",
                                     "fieldLabelScript": "return \"Department: \";",
                                     "fieldValueScript": "return \"--\";",
                                     "formatElementScript": ""
@@ -17850,6 +17855,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "",
                                     "fieldLabelScript": "return \"Telephone: \";",
                                     "fieldValueScript": "return \"Field Value Script\";",
                                     "formatElementScript": ""
@@ -17859,6 +17865,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "",
                                     "fieldLabelScript": "return \"Email: \";",
                                     "fieldValueScript": "return item.getEmail();",
                                     "formatElementScript": ""
@@ -17868,6 +17875,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "",
                                     "fieldLabelScript": "return \"Address: \";",
                                     "fieldValueScript": "return \"--\";",
                                     "formatElementScript": ""
@@ -17898,14 +17906,6 @@
                                     "embedPortrait": true,
                                     "preferLocalContent": true,
                                     "portraitClip": true
-                                }
-                            },
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "userProfileDetailOverview.metadata.positions.content.modules.14.config.script.js",
-                                    "description": "Info about my custom script"
                                 }
                             }
                         ]
