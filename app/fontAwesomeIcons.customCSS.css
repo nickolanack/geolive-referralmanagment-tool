@@ -197,6 +197,8 @@
     font-size: 24px;
 }
 
+button.download-link:before {content: "\f019";font-family: 'FontAwesome';}
+
 
 
 
