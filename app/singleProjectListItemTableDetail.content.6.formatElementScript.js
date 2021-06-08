@@ -23,8 +23,9 @@ if(el.hasClass('withItems')){
     "html":"", 
     "style":"", 
     "class":"download-link", 
-    "events":{"click":function(){
+    "events":{"click":function(e){
     
+        e.stopPropagation();
         var downloadQuery=new AjaxControlQuery(CoreAjaxUrlRoot, 'download_files', {
 		                "plugin": "ReferralManagement",
 		                "proposal":item.getId()
