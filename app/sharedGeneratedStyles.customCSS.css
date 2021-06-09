@@ -195,6 +195,10 @@ if(!empty($altLogo)){
     }  
     
     <?php
+}else{
+    .alt-logo {
+       display:none;
+    }
 }
 
 
