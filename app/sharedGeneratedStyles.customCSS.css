@@ -170,12 +170,6 @@ if(empty($applicationLogo)){
     $applicationLogo=$applicationLogo[0];
 }
 
-$altLogo=$config->getParameter('applicationLogoAlt', array());
-if(empty($altLogo)){
-    $altLogo=$menuIconDefault;
-}else{
-    $altLogo=$altLogo[0];
-}
 
 
 
@@ -185,12 +179,23 @@ if(empty($altLogo)){
     background-image:url("<?php echo UrlFrom($applicationLogo."?thumb=>200x>200"); ?>");
 } 
 
- .alt-logo {
-
-    background-image:url("<?php echo UrlFrom($altLogo."?thumb=>200x>200"); ?>");
-}  
+ 
 
 <?php
+
+
+$altLogo=$config->getParameter('applicationLogoAlt', array());
+if(!empty($altLogo)){
+    
+    $altLogo=$altLogo[0];
+    ?>
+    .alt-logo {
+
+        background-image:url("<?php echo UrlFrom($altLogo."?thumb=>200x>200"); ?>");
+    }  
+    
+    <?php
+}
 
 
 
