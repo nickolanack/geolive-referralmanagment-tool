@@ -27,7 +27,7 @@ var ItemStars=(function(){
 		},
 
 		canStar:function(){
-			return me.getId()>0;
+			return this.getId()>0;
 		},
 
 		setStarred: function(starred, callback) {
