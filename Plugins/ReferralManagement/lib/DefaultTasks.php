@@ -112,7 +112,7 @@ class DefaultTasks {
 
 		}
 
-		return $taskTemplates["taskTemplates"];
+		return $taskTemplates;
 	}
 
 }

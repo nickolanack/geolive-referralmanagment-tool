@@ -369,7 +369,7 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 	}
 
 	protected function defaultTaskTemplates($json) {
-		return array('taskTemplates' => $this->getPlugin()->getDefaultProposalTaskTemplates($json->proposal));
+		return $this->getPlugin()->getDefaultProposalTaskTemplates($json->proposal);
 	}
 	protected function createDefaultTasks($json) {
 		$taskIds = $this->getPlugin()->createDefaultProposalTasks($json->proposal);
