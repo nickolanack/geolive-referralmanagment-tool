@@ -26,6 +26,10 @@ var ItemStars=(function(){
 			return data;
 		},
 
+		canStar:function(){
+			return me.getId()>0;
+		},
+
 		setStarred: function(starred, callback) {
 
 			var me = this;
