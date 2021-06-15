@@ -42,7 +42,7 @@ var NamedCategory = (function() {
 
 
 		isRootTag: function() {
-			return this.getCategory().toLowerCase() == this.getName().toLowerCase();
+			return (!this.getCategory())||this.getCategory().toLowerCase() == this.getName().toLowerCase();
 		},
 		getDescriptionPlain: function() {
 
