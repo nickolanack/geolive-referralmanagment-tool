@@ -80,10 +80,8 @@ class DefaultTasks {
 			"type" => $typeVar,
 			"id" => $proposal,
 			"taskTemplates" => array(),
-			"config"=>$config=>getParameters()
+			"config" => $config->getParameters(),
 		);
-
-
 
 		$config = GetWidget('proposalConfig');
 		foreach ($config->getParameter('taskNames') as $taskName) {
