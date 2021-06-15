@@ -7,7 +7,7 @@ var UITextFieldLayerBrowser = function() {
 
     var bar = UITextField.RenderMediaBrowserBar.bind(me)();
 
-    UITextField.RenderPushboxMediaButton(bar, {
+    UploadForm.FileBrowserSelect(bar, {
         className: "layer noIcon",
         url: CoreContentUrlRoot + "&format=raw&controller=plugins&plugin=ReferralManagement&view=plugin&pluginView=browser.layers&parent=window.parent&mode=function&function=GrabImage&addUrlImage=yes",
         tip: "add a spatial feature"

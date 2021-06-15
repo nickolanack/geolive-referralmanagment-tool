@@ -44,7 +44,7 @@ var ItemNavigationTagLinks=(function(){
 			tags.forEach(function(t) {
 
 
-				if (typesFilter.indexOf(t.getType())==-1){
+				if ((!t.getType)||typesFilter.indexOf(t.getType())==-1){
 					return;
 				}
 
