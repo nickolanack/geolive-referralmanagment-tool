@@ -1,7 +1,86 @@
+
+@charset "utf-8";
+
 $highlightBtnColor:#efa82c;
 
 [data-view="leftPanel"] {
     background-color: #222222;
+}
+
+
+.project-list-btns {
+    display: inline-block;
+    width: 100%;
+}
+
+.project-list-filters.section-indent {
+    display: inline-block;
+    width: 100%;
+}
+
+div.field-value-module.inline.icon, div.field-value-module.inline.check {
+    width: 30px;
+}
+.field-value-module.inline.sortable {
+  
+    margin: 0px;
+    display: inline-block;
+    padding: 5px;
+    box-sizing: border-box;
+   
+}
+
+button.download-link {
+    border: none;
+    margin: 0 10px;
+    background-color: transparent;
+    color: #59d759;
+}
+
+button.primary-btn.nav-new-btn.view-selection.inline {
+  display: none;
+  background-color: #efa82c;
+  color:white;
+  float: right; }
+
+button.primary-btn.nav-new-btn.view-selection.inline.with-selection {
+  display: inline-block; }
+
+button.primary-btn.nav-new-btn.view-selection:before {
+  content: "";
+  font-family: 'FontAwesome';
+  font-size: 15px;
+  margin-right: 5px; }
+
+.tag-width span.field-value {
+    width: 120px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.field-value-module.inline.icon:before {
+    content: "\f1b2";
+    font-family: 'FontAwesome';
+    color: #efa82c;
+    vertical-align: super;
+}
+.table-header .field-value-module.icon:before {
+    visibility: hidden;
+}
+
+
+.table-header .field-value-module:before {
+    content: "";
+    font-family: 'FontAwesome';
+    margin-right: 5px;
+    color: gray;
+    position:absolute;
+    left:-10px
+}
+.table-header .field-value-module{
+    position:relative;
 }
 
 .ui-view.login-form{

@@ -5174,7 +5174,7 @@
             "showLeftPanelUser": true,
             "useFontAwesome": true,
             "saveParametersAsData": false,
-            "enableMobile": true,
+            "enableMobile": false,
             "autoCreateDefaultTasks": false,
             "allowUnappovedMobileSubmissions": false,
             "autoApproveMobileCommunityOnce": false,
@@ -11427,19 +11427,19 @@
             "metadata": {
                 "title": "proposalAttributes",
                 "_tableDiagramState": {
-                    "x": 326,
-                    "y": 230
+                    "x": 0,
+                    "y": 0
                 },
                 "_diagramState": {
-                    "x": 326,
-                    "y": 230
+                    "x": 0,
+                    "y": 0
                 },
                 "appliesTo": [
                     "proposal"
                 ],
                 "_typeDiagramState": {
-                    "x": 92,
-                    "y": 216
+                    "x": 0,
+                    "y": 0
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -19864,19 +19864,19 @@
             "metadata": {
                 "title": "datasetAttributes",
                 "_tableDiagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 0,
+                    "y": 0
                 },
                 "_diagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 0,
+                    "y": 0
                 },
                 "appliesTo": [
                     "proposal"
                 ],
                 "_typeDiagramState": {
-                    "x": 100,
-                    "y": 300
+                    "x": 0,
+                    "y": 0
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -20691,16 +20691,16 @@
                             "themeForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 378,
-                            "y": 510
+                            "x": 388,
+                            "y": 520
                         },
                         "children": [
                             "themeForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 338,
-                                    "y": 711
+                                    "x": 348,
+                                    "y": 721
                                 }
                             }
                         ],
@@ -20755,7 +20755,7 @@
                                                 "getValueScript": "themeForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.getValueScript.js",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "",
-                                                "validateValueScript": " return defaultValidationFn() "
+                                                "validateValueScript": " return true"
                                             }
                                         },
                                         {
@@ -20777,7 +20777,7 @@
                                                 "getValueScript": "themeForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.getValueScript.js",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "",
-                                                "validateValueScript": " return defaultValidationFn() "
+                                                "validateValueScript": " return true"
                                             }
                                         },
                                         {
@@ -20799,7 +20799,7 @@
                                                 "getValueScript": "themeForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.getValueScript.js",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "",
-                                                "validateValueScript": " return defaultValidationFn() "
+                                                "validateValueScript": " return true;"
                                             }
                                         }
                                     ]
