@@ -23,6 +23,11 @@ var ItemDiscussion=(function(){
 
 		getDiscussionSubscription: function() {
 			var me = this;
+
+			if(me.getId()==-1){
+				return false;
+			}
+
 			return {
 				"channel": "discussion." + me.data.discussion.id,
 				"event": "post"
