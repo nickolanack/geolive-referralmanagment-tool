@@ -76,6 +76,8 @@ class DefaultTasks {
 		$typeName = (new \attributes\Record('proposalAttributes'))->getValues($proposal, 'ReferralManagement.proposal')['type'];
 		$typeVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $typeName)));
 
+		$config = GetWidget('proposalConfig');
+
 		$taskTemplates = array(
 			"type" => $typeVar,
 			"id" => $proposal,
@@ -83,7 +85,6 @@ class DefaultTasks {
 			"config" => $config->getParameters(),
 		);
 
-		$config = GetWidget('proposalConfig');
 		foreach ($config->getParameter('taskNames') as $taskName) {
 			$taskVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $taskName)));
 			if (empty($taskVar)) {
