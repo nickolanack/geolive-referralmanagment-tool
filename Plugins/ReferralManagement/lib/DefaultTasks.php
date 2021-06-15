@@ -80,7 +80,10 @@ class DefaultTasks {
 			"type" => $typeVar,
 			"id" => $proposal,
 			"taskTemplates" => array(),
+			"config"=>$config=>getParameters()
 		);
+
+
 
 		$config = GetWidget('proposalConfig');
 		foreach ($config->getParameter('taskNames') as $taskName) {
@@ -90,8 +93,9 @@ class DefaultTasks {
 			}
 
 			$taskTemplate = array();
+			$fieldName = "show" . ucfirst($taskVar) . "For" . ucfirst($typeVar);
 
-			$taskTemplate["show" . ucfirst($taskVar) . "For" . ucfirst($typeVar)] = $config->getParameter("show" . ucfirst($taskVar) . "For" . ucfirst($typeVar));
+			$taskTemplate[$fieldName] = $config->getParameter($fieldName);
 
 			if ($config->getParameter("show" . ucfirst($taskVar) . "For" . ucfirst($typeVar))) {
 				$taskTemplate["task"] = array(
