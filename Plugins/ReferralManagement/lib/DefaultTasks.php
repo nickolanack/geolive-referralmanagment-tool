@@ -74,44 +74,48 @@ class DefaultTasks {
 
 		GetPlugin('Attributes');
 		$typeName = (new \attributes\Record('proposalAttributes'))->getValues($proposal, 'ReferralManagement.proposal')['type'];
-		$typeVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $typeName)));
+		$types = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $typeName)));
 
 		$config = GetWidget('proposalConfig');
 
 		$taskTemplates = array(
-			"type" => $typeVar,
+			"types" => $types,
 			"id" => $proposal,
 			"taskTemplates" => array(),
 			"config" => $config->getParameters(),
 		);
 
-		foreach ($config->getParameter('taskNames') as $taskName) {
-			$taskVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $taskName)));
-			if (empty($taskVar)) {
-				continue;
+		foreach ($types as $typeVar) {
+
+			foreach ($config->getParameter('taskNames') as $taskName) {
+				$taskVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $taskName)));
+				if (empty($taskVar)) {
+					continue;
+				}
+
+				$taskTemplate = array();
+				$fieldName = "show" . ucfirst($taskVar) . "For" . ucfirst($typeVar);
+
+				$taskTemplate[$fieldName] = $config->getParameter($fieldName);
+
+				if ($config->getParameter($fieldName)) {
+					$taskTemplate["task"] = array(
+						"id" => -1,
+						"name" => $config->getParameter($taskVar . "Label"),
+						"description" => $config->getParameter($taskVar . "Description"),
+						"dueDate" => $this->parseDueDateString($config->getParameter($taskVar . "DueDate"), $proposal),
+						"complete" => false,
+						"attributes" => array(
+							"isPriority" => false,
+							"starUsers" => [],
+							"attachements" => ""
+						),
+					);
+				}
+
+				$taskTemplates["taskTemplates"][] = $taskTemplate;
+
 			}
-
-			$taskTemplate = array();
-			$fieldName = "show" . ucfirst($taskVar) . "For" . ucfirst($typeVar);
-
-			$taskTemplate[$fieldName] = $config->getParameter($fieldName);
-
-			if ($config->getParameter("show" . ucfirst($taskVar) . "For" . ucfirst($typeVar))) {
-				$taskTemplate["task"] = array(
-					"id" => -1,
-					"name" => $config->getParameter($taskVar . "Label"),
-					"description" => $config->getParameter($taskVar . "Description"),
-					"dueDate" => $this->parseDueDateString($config->getParameter($taskVar . "DueDate"), $proposal),
-					"complete" => false,
-					"attributes" => array(
-						"isPriority" => false,
-						"starUsers" => [],
-						"attachements" => ""
-					),
-				);
-			}
-
-			$taskTemplates["taskTemplates"][] = $taskTemplate;
 
 		}
 
