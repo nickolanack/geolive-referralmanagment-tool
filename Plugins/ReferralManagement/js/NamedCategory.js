@@ -40,6 +40,9 @@ var NamedCategory = (function() {
 		},
 
 
+		getDescription:function(){
+			return this._getDescription()||"";
+		},
 
 		isRootTag: function() {
 			return (!this.getCategory())||this.getCategory().toLowerCase() == this.getName().toLowerCase();
