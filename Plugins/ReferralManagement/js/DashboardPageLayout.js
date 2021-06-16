@@ -581,7 +581,7 @@ var DashboardPageLayout = (function() {
 
 		app.getDisplayController().addDetailViewContentFormatter(function(item, name, content){
 
-			if(view.indexOf(name)==-1){
+			if(views.indexOf(name)==-1){
 				return content;
 
 			}
