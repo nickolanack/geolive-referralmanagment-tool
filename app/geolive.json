@@ -20503,7 +20503,7 @@
                                     "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "communityDetailView.metadata.positions.content.modules.1.config.resolveItemScript.js",
-                                    "filterModulesScript": "communityDetailView.metadata.positions.content.modules.1.config.filterModulesScript.js",
+                                    "filterModulesScript": "return list;",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": ""
