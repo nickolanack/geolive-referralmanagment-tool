@@ -301,8 +301,9 @@ var ProjectList = (function() {
 			return null;
 		}
 
-		var div = new Element('div', {
-			"class": "project-list-btns"
+		var div = new ElementModule('div', {
+			"class": "project-list-btns",
+			"identifier":"project-list-btns"
 		});
 
 

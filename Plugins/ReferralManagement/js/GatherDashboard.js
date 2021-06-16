@@ -1,17 +1,22 @@
-var ReferralManagementDashboard = (function() {
+var GatherDashboard = (function() {
 
 
 	var _application = null;
 
 
-	return {
+	var GatherDashboard = new Class_({
+		Implements:[Events],
 
-		getApplication: function() {
+		getApplication: function(callback) {
 
-			return _application;
+			if (callback && !_application) {
 
+			}
 
+			return _application
 		},
+
+
 
 		getView: function(app, callback) {
 
@@ -184,7 +189,7 @@ var ReferralManagementDashboard = (function() {
 		addItemDiscussionInfo: function(el, item, application) {
 
 			ItemDiscussion.AddItemDiscussionIndicator(el, item, application);
-			
+
 		},
 
 
@@ -251,7 +256,7 @@ var ReferralManagementDashboard = (function() {
 
 		},
 
-		
+
 		/*
 		 * @deprecated
 		 */
@@ -281,7 +286,7 @@ var ReferralManagementDashboard = (function() {
 
 			return cmp;
 		},
-	
+
 
 
 		currentTaskFilterFn: function(a) {
@@ -369,7 +374,7 @@ var ReferralManagementDashboard = (function() {
 			}, {
 				label: "priority",
 				sortFn: function(a, b) {
-					return -ReferralManagementDashboard.taskSortPriority(a, b);
+					return -GatherDashboard.taskSortPriority(a, b);
 				}
 			}, {
 				label: "complete",
@@ -428,7 +433,7 @@ var ReferralManagementDashboard = (function() {
 					events: {
 						click: function() {
 							console.log(data[0]);
-							data = ReferralManagementDashboard.projectActivityChartData(item, application, {
+							data = GatherDashboard.projectActivityChartData(item, application, {
 								endAt: data[0].day
 							});
 							chart.redraw(data);
@@ -440,7 +445,7 @@ var ReferralManagementDashboard = (function() {
 					events: {
 						click: function() {
 							console.log(data[data.length - 1]);
-							data = ReferralManagementDashboard.projectActivityChartData(item, application, {
+							data = GatherDashboard.projectActivityChartData(item, application, {
 								startAt: data[data.length - 1].day
 							});
 							chart.redraw(data);
@@ -459,7 +464,7 @@ var ReferralManagementDashboard = (function() {
 						events: {
 							click: function() {
 								console.log(data[0]);
-								data = ReferralManagementDashboard.projectActivityChartData(item, application, {
+								data = GatherDashboard.projectActivityChartData(item, application, {
 									startAt: startDate
 								});
 								chart.redraw(data);
@@ -616,10 +621,10 @@ var ReferralManagementDashboard = (function() {
 		},
 
 		getLabelForManager: function() {
-			return ReferralManagementDashboard.getLabelForUserRole('lands-department-manager');
+			return GatherDashboard.getLabelForUserRole('lands-department-manager');
 		},
 		getLabelForMember: function() {
-			return ReferralManagementDashboard.getLabelForUserRole('lands-department');
+			return GatherDashboard.getLabelForUserRole('lands-department');
 		},
 		getLabelForCommunityMember: function() {
 			return 'Community Member';
@@ -688,7 +693,7 @@ var ReferralManagementDashboard = (function() {
 
 
 		createGuestDashboardNavigationController: function() {
-			return new GuestNavigationMenu(ReferralManagementDashboard.getApplication());
+			return new GuestNavigationMenu(GatherDashboard.getApplication());
 
 		},
 
@@ -794,6 +799,10 @@ var ReferralManagementDashboard = (function() {
 
 
 
-	};
+	});
+
+	return new GatherDashboard();
 
 })();
+
+var ReferralManagementDashboard=GatherDashboard;
