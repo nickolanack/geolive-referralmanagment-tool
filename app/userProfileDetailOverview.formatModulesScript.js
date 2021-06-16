@@ -1,1 +1,1 @@
-DashboardPageLayout.layoutPage("userProfileDetailOverview",list);
+//DashboardPageLayout.layoutPage("userProfileDetailOverview",list);
