@@ -300,7 +300,7 @@ var DashboardPageLayout = (function() {
 		return items;
 
 
-	}).addLayout('mainMap', function(content) {
+	}).addLayout('mainMapDetail', function(content) {
 
 		if (AppClient.getUserType() != "admin") {
 			content.filter(function(m) {
@@ -576,7 +576,7 @@ var DashboardPageLayout = (function() {
 
 	GatherDashboard.getApplication(function(app){
 
-		var views=['mainDashboardDetail', 'mainProjectsDetail', 'mainDocumentsDetail'];
+		var views=['mainDashboardDetail', 'mainProjectsDetail', 'mainDocumentsDetail', 'mainMapDetail'];
 
 
 		app.getDisplayController().addDetailViewContentFormatter(function(item, name, content){
