@@ -1,1 +1,1 @@
-DashboardPageLayout.layoutPage('mainDocumentsDetail', list);
+//DashboardPageLayout.layoutPage('mainDocumentsDetail', list);
