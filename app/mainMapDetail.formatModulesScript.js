@@ -1,1 +1,1 @@
-DashboardPageLayout.layoutPage('mainMap', list);
+//DashboardPageLayout.layoutPage('mainMap', list);
