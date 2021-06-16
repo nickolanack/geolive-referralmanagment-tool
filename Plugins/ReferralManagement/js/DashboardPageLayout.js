@@ -1,6 +1,9 @@
 var DashboardPageLayout = (function() {
 
 
+
+
+
 	var DashboardPageLayout = new Class({
 
 		getApplication: function() {
@@ -568,6 +571,14 @@ var DashboardPageLayout = (function() {
 		return buttons;
 
 	});
+
+
+
+	GatherDashboard.getApplication(function(app){
+
+		
+		
+	})
 
 	return layout;
 

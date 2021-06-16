@@ -2,25 +2,42 @@ var GatherDashboard = (function() {
 
 
 	var _application = null;
+	var _setApplication = function(app, callback) {
+		
+		if(!_application){
+			_application = app;
+			callback();
+		}
+		
+	};
+
 
 
 	var GatherDashboard = new Class_({
-		Implements:[Events],
+		Implements: [Events],
 
 		getApplication: function(callback) {
 
-			if (callback && !_application) {
+			if (callback){
 
+				if(!_application) {
+					this.addEvent('load:once', function(){
+						callback(_application);
+					});
+					return;
+				}
+				callback(_application);
 			}
 
 			return _application
 		},
 
 
-
 		getView: function(app, callback) {
-
-			_application = app;
+			var me=this;
+			_setApplication(app, function(){
+				me.fireEvent('load');
+			});
 
 			app.getNamedValue('navigationController', function(controller) {
 				var view = controller.getTemplateNameForView(controller.getCurrentView());
@@ -805,4 +822,4 @@ var GatherDashboard = (function() {
 
 })();
 
-var ReferralManagementDashboard=GatherDashboard;
+var ReferralManagementDashboard = GatherDashboard;
