@@ -2,8 +2,6 @@ var DashboardPageLayout = (function() {
 
 
 
-
-
 	var DashboardPageLayout = new Class({
 
 		getApplication: function() {
@@ -64,9 +62,9 @@ var DashboardPageLayout = (function() {
 
 		addLayout: function(name, fn) {
 
-			if(name&&name.length&&typeof name!=="string"){
-				var me=this;
-				name.forEach(function(n){
+			if (name && name.length && typeof name !== "string") {
+				var me = this;
+				name.forEach(function(n) {
 					me.addLayout(n, fn);
 				});
 				return this;
@@ -345,23 +343,23 @@ var DashboardPageLayout = (function() {
 
 		if (!DashboardConfig.getValue('showLeftPanelUser')) {
 
-			content=content.filter(function(item){
-				return (!(item&&item.getIdentifier))||item.getIdentifier()!=="user-profile";
+			content = content.filter(function(item) {
+				return (!(item && item.getIdentifier)) || item.getIdentifier() !== "user-profile";
 			});
 
 			//content.splice(1, 1);
 		} else {
 
-			content=content.filter(function(item){
-				return (!(item&&item.getIdentifier))||item.getIdentifier()!=="application-logo";
+			content = content.filter(function(item) {
+				return (!(item && item.getIdentifier)) || item.getIdentifier() !== "application-logo";
 			});
 
 			//content.splice(2, 1);
 		}
 
 		if (!DashboardConfig.getValue('showLeftPanelPrimaryBtn')) {
-			content=content.filter(function(item){
-				return (!(item&&item.getIdentifier))||item.getIdentifier()!=="primary-btns";
+			content = content.filter(function(item) {
+				return (!(item && item.getIdentifier)) || item.getIdentifier() !== "primary-btns";
 			});
 			//content.splice(2, 1);
 		}
@@ -376,8 +374,8 @@ var DashboardPageLayout = (function() {
 
 		var removeCols = ['col-approval', 'col-ownership'];
 
-		return content.filter(function(m){
-			return removeCols.indexOf(m.getIdentifier())<0;
+		return content.filter(function(m) {
+			return removeCols.indexOf(m.getIdentifier()) < 0;
 		})
 
 		//return content;
@@ -460,7 +458,7 @@ var DashboardPageLayout = (function() {
 
 
 
-						if (AppClient.getUserType() == "admin" ) {
+						if (AppClient.getUserType() == "admin") {
 							return true;
 						}
 						return false;
@@ -491,8 +489,7 @@ var DashboardPageLayout = (function() {
 						var project = application.getNamedValue("currentProject");
 						return project.isCollection();
 					}
-				},
-				{
+				}, {
 					html: ['Datasets', 'Access', 'Team', 'Users', 'Discussions', 'Map', 'Files', 'Notes'],
 					condition: function() {
 
@@ -582,21 +579,23 @@ var DashboardPageLayout = (function() {
 
 
 
-	GatherDashboard.getApplication(function(app){
+	GatherDashboard.getApplication(function(app) {
 
-		var views=[
-			'mainDashboardDetail', 
-			'mainProjectsDetail', 
-			'mainDocumentsDetail', 
-			'mainMapDetail', 
+		var views = [
+			'mainDashboardDetail',
+			'mainProjectsDetail',
+			'mainDocumentsDetail',
+			'mainMapDetail',
 			'singleProjectFilesDetail',
-			'userProfileDetailOverview'
+			'userProfileDetailOverview',
+			'leftPanel',
+			'singleProjectListItemTableDetail'
 		];
 
 
-		app.getDisplayController().addDetailViewContentFormatter(function(item, name, content){
+		app.getDisplayController().addDetailViewContentFormatter(function(item, name, content) {
 
-			if(views.indexOf(name)==-1){
+			if (views.indexOf(name) == -1) {
 				return content;
 
 			}
@@ -604,7 +603,7 @@ var DashboardPageLayout = (function() {
 			return layout.layoutPage(name, content);
 
 		});
-		
+
 	})
 
 	return layout;
