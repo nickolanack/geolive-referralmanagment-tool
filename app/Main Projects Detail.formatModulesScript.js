@@ -1,1 +1,1 @@
-return DashboardPageLayout.layoutPage('mainProjectDetail', list);
+//return DashboardPageLayout.layoutPage('mainProjectDetail', list);
