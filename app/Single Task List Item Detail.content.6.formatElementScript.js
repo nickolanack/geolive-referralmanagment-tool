@@ -10,7 +10,11 @@ var replacementMap=function(str){
     
 }
 valueEl.addClass('duedate');
-valueEl.setAttribute('data-due-date', item.hasDueDate()?replacementMap(moment(item.getDueDate()).fromNow()):"No Date");
+var dateString=item.getDueDate();
+if(dateString.indexOf('in ')!==0){
+    dateString=moment(item.getDueDate()).fromNow()
+}
+valueEl.setAttribute('data-due-date', item.hasDueDate()?replacementMap(dateString):"No Date");
 
 
 if(item.getId()<=0){

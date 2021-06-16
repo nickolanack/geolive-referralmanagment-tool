@@ -1,4 +1,10 @@
 /*Stars*/
+
+
+if(!item.canStar()){
+    return null;
+}
+
 var mod= new ElementModule('div', {"class":"starred-indicator "+(item.isStarred()?"starred ":"")+(item.hasOtherStars()?"other-stars ":""), 
     events:{click:function(e){
         e.stop();

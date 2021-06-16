@@ -1,3 +1,7 @@
+ 
+    
+
+ 
  var mod=new ElementModule('div', {"class":"priority-indicator "+(item.isPriorityTask()?"priority":""), 
     events:{click:function(e){
         e.stop();

@@ -6654,6 +6654,7 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "inline-icon-list-view",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "singleUserTeamCollectionIconsInlineDetail",
                                     "shouldRender": true,
@@ -6676,20 +6677,20 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getName();",
-                                    "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.2.config.formatElementScript.js",
-                                    "identifier": ""
+                                    "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.2.config.formatElementScript.js"
                                 }
                             },
                             {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "",
                                     "fieldLabelScript": "return \"Comments\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.3.config.formatElementScript.js",
-                                    "identifier": ""
+                                    "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.3.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -6712,10 +6713,10 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "due-date",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "Single Task List Item Detail.metadata.positions.content.modules.6.config.fieldValueScript.js",
-                                    "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.6.config.formatElementScript.js",
-                                    "identifier": ""
+                                    "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.6.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -8173,7 +8174,10 @@
             "Obtain-Agreement-DocumentDueDate": "in 10 days",
             "Schedule-Meeting-With-ProponentLabel": "Schedule Meeting With Proponent",
             "Schedule-Meeting-With-ProponentDescription": "",
-            "Schedule-Meeting-With-ProponentDueDate": "in 10 days"
+            "Schedule-Meeting-With-ProponentDueDate": "in 10 days",
+            "enableUserAjaxWrite": false,
+            "authUserAjaxScript": "XXXX-XXXX",
+            "saveParametersAsData": true
         }
     },
     "widget.195": {
@@ -17768,37 +17772,13 @@
                         "modules": [
                             "userProfileDetailOverview.metadata.positions.content.modules.0.json",
                             {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "userProfileDetailOverview.metadata.positions.content.modules.1.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "userProfileDetailOverview.metadata.positions.content.modules.2.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "userProfileDetailOverview.metadata.positions.content.modules.3.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getName();",
-                                    "formatElementScript": "userProfileDetailOverview.metadata.positions.content.modules.4.config.formatElementScript.js"
+                                    "formatElementScript": "userProfileDetailOverview.metadata.positions.content.modules.1.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -17807,7 +17787,7 @@
                                     "loadAsync": false,
                                     "identifier": "",
                                     "fieldLabelScript": "return \"Role: \";",
-                                    "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.5.config.fieldValueScript.js",
+                                    "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.2.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-role');"
                                 }
                             },
@@ -17817,7 +17797,7 @@
                                     "loadAsync": false,
                                     "identifier": "",
                                     "fieldLabelScript": "return \"Community\/Group: \"",
-                                    "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.6.config.fieldValueScript.js",
+                                    "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.3.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-community');"
                                 }
                             },
@@ -17884,7 +17864,7 @@
                             {
                                 "type": "FormattedText",
                                 "config": {
-                                    "textValueScript": "userProfileDetailOverview.metadata.positions.content.modules.13.config.textValueScript.js",
+                                    "textValueScript": "userProfileDetailOverview.metadata.positions.content.modules.10.config.textValueScript.js",
                                     "formatModuleScript": "",
                                     "className": "project-description",
                                     "imageWidth": 300,
