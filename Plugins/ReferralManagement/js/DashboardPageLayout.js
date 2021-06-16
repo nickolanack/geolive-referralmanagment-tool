@@ -329,8 +329,8 @@ var DashboardPageLayout = (function() {
 		if (!DashboardConfig.getValue('showSplitProjectDetail')) {
 			content = content.slice(0, 1);
 			content[0].options.className = content[0].options.className.split(' ').slice(0, -1).join(' ');
-
 		}
+		return content;
 		//callback(content);
 
 	}).addLayout('groupListsProjectDetail', function(content, options, callback) {
