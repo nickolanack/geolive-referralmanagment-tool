@@ -14,10 +14,7 @@ var UITextFieldLayerBrowser = function() {
     }, function(pushbox) {
 
         (parent.window || window).GrabImage = function(layer, mime, error) {
-            if (me.editorType == "text") {
-                me.setValue((me.getValue() || "") + '<a href="' + layer + '">doc.kml</a>');
-            //alert(img);
-            }
+            me.setValue((me.getValue() || "") + '<a href="' + layer + '">doc.kml</a>');
             pushbox.close();
 
         };
@@ -31,8 +28,9 @@ var UITextFieldLayerList = function() {
 
 
 
-    var me = this;
-    var listEl = UITextField.RenderMediaSelectionBar.bind(me)({
+    var mediaSelection=(new UITextFieldMediaSelection(this));
+
+    var listEl=mediaSelection.renderToolbar({
         className:'spatial-files'
     });
 
@@ -40,14 +38,12 @@ var UITextFieldLayerList = function() {
     new AjaxFileUploader(listEl,{
         types:["document"],
         selectFile:function(fileinfo, type){
-            if (me.editorType == "text") {
-                me.setValue((me.getValue() || "") + fileinfo.html);
-            }
+            me.setValue((me.getValue() || "") + fileinfo.html);
         }
     })
 
 
-    UITextField.AddMediaListParser.bind(me)(listEl, JSTextUtilities.ParseLinks, function(container, link, callback) {
+    mediaSelection.addParser(JSTextUtilities.ParseLinks, function(container, link, callback) {
 
 
 
@@ -55,21 +51,9 @@ var UITextFieldLayerList = function() {
             textQuery: function(callback) {
                 callback(link.url);
             },
-            //"class": ,
-            width: 32,
-            height: 32,
             download: false,
-            //setBackgroundImage: true
+            setBackgroundImage: true
         })).addEvent('load', callback).load(null, container, null);
-
-
-        // (new ImageModule({
-        //         textQuery: function(callback) {
-        //             callback(CoreContentUrlRoot + "&format=raw&controller=plugins&plugin=Maps&view=plugin&pluginView=kml.tile&kml=" + encodeURIComponent(link.url));
-        //         },
-        //         width: 32,
-        //         height: 32
-        //     })).addEvent('load', callback).load(null, container, null);
 
 
     }, {
