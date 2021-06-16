@@ -33,6 +33,7 @@ var GatherDashboard = (function() {
 		},
 
 		setApplication:function(app){
+			var me=this;
 			_setApplication(app, function(){
 				me.fireEvent('load');
 			});
