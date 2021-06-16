@@ -1,1 +1,1 @@
-DashboardPageLayout.layoutSection('singleProjectListItemTableDetail', list);
+//DashboardPageLayout.layoutSection('singleProjectListItemTableDetail', list);
