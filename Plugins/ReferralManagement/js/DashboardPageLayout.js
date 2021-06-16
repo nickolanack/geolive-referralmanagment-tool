@@ -576,7 +576,9 @@ var DashboardPageLayout = (function() {
 
 	GatherDashboard.getApplication(function(app){
 
-		
+		app.getDisplayController().addDetailViewContentFormatter(function(item, name, content){
+			return content;
+		});
 		
 	})
 
