@@ -32,6 +32,13 @@ var GatherDashboard = (function() {
 			return _application
 		},
 
+		setApplication:function(app){
+			_setApplication(app, function(){
+				me.fireEvent('load');
+			});
+			return this;
+		},
+
 
 		getView: function(app, callback) {
 			var me=this;
