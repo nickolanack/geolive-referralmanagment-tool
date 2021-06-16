@@ -584,7 +584,14 @@ var DashboardPageLayout = (function() {
 
 	GatherDashboard.getApplication(function(app){
 
-		var views=['mainDashboardDetail', 'mainProjectsDetail', 'mainDocumentsDetail', 'mainMapDetail', 'singleProjectFilesDetail'];
+		var views=[
+			'mainDashboardDetail', 
+			'mainProjectsDetail', 
+			'mainDocumentsDetail', 
+			'mainMapDetail', 
+			'singleProjectFilesDetail',
+			'userProfileDetailOverview'
+		];
 
 
 		app.getDisplayController().addDetailViewContentFormatter(function(item, name, content){
