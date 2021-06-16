@@ -331,7 +331,7 @@ var DashboardPageLayout = (function() {
 			content[0].options.className = content[0].options.className.split(' ').slice(0, -1).join(' ');
 
 		}
-		callback(content);
+		//callback(content);
 
 	}).addLayout('groupListsProjectDetail', function(content, options, callback) {
 
