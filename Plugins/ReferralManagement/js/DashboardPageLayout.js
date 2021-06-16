@@ -64,6 +64,14 @@ var DashboardPageLayout = (function() {
 
 		addLayout: function(name, fn) {
 
+			if(name&&name.length&&typeof name!=="string"){
+				var me=this;
+				name.forEach(function(n){
+					me.addLayout(n, fn);
+				});
+				return this;
+			}
+
 			if (!this._layouts) {
 				this._layouts = {};
 			}
@@ -380,7 +388,7 @@ var DashboardPageLayout = (function() {
 		}
 
 		return content;
-	}).addLayout("mainDocumentsDetail", function(content) {
+	}).addLayout(['mainDocumentsDetail', 'singleProjectFilesDetail'], function(content) {
 
 		content.splice(0, 1);
 
@@ -576,7 +584,7 @@ var DashboardPageLayout = (function() {
 
 	GatherDashboard.getApplication(function(app){
 
-		var views=['mainDashboardDetail', 'mainProjectsDetail', 'mainDocumentsDetail', 'mainMapDetail'];
+		var views=['mainDashboardDetail', 'mainProjectsDetail', 'mainDocumentsDetail', 'mainMapDetail', 'singleProjectFilesDetail'];
 
 
 		app.getDisplayController().addDetailViewContentFormatter(function(item, name, content){
