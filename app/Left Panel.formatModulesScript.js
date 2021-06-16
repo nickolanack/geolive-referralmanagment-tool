@@ -4,4 +4,4 @@
 //     list.content.splice(2,1);
 // }
 
-DashboardPageLayout.layoutSection('leftPanel', list);
+//DashboardPageLayout.layoutSection('leftPanel', list);
