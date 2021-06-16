@@ -310,7 +310,7 @@ var DashboardPageLayout = (function() {
 
 		return content;
 
-	}).addLayout('mainProjectDetail', function(content) {
+	}).addLayout('mainProjectsDetail', function(content) {
 
 
 		if (AppClient.getUserType() != "admin") {
