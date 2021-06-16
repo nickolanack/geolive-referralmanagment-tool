@@ -49,6 +49,7 @@ $dashConfig=GetWidget('dashboardConfig');
 IncludeJSBlock('
     
     window.addEvent("load",function(){
+        
         var mins=1;
         setInterval(function(){
             var number = Math.random() + "";
@@ -65,6 +66,7 @@ IncludeJSBlock('
 
 
     '.$targetInstance->getJSObjectName().'.runOnceOnLoad(function(app){
+        GatherDashboard.setApplication(app);
         app.getDisplayController().setOptions({
             popoverOptions:{
                 parentClassName:"'.($dashConfig->getParameter('darkMode')?' dark':'').' '.
