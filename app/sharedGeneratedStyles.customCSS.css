@@ -233,6 +233,12 @@ $gatherIcon=$config->getParameter('gatherIcon', array());
 } 
 
 
+.navigation-menu li.menu-links-survey:before{
+     background-image:url("<?php echo UrlFrom($gatherIcon."?thumb=>200x>200"); ?>");
+     content:"";
+}
+
+
 <?php 
 if(!$useFontAwesome){
     $attachmentIcon=$config->getParameter('attachmentIcon', array());
