@@ -544,9 +544,11 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
                 font-size: 10px;
             }
 
-            .survey-link a:before {
+            .survey-link a:before, .navigation-menu li.menu-links-survey:before {
                 background-image: url("<?php echo UrlFrom($surveyMenuIcon."?thumb=x>100y>100&tint=".$config->getParameter("menuIconColor", "rgb(180,180,180)")); ?>");
                 content:"";
+            }
+            .survey-link a:before {
                 display: inline-block;
                 width: 20px;
                 height: 20px;
@@ -554,7 +556,7 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
                 margin: 5px;
                 vertical-align: middle;
             }
-            .survey-link a:hover:before {
+            .survey-link a:hover:before  {
                 background-image: url("<?php echo UrlFrom($surveyMenuIcon."?thumb=x>100y>100&tint=".$config->getParameter("menuIconTint")); ?>");
             }
             <?php
@@ -567,8 +569,9 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
             $slackMenuIcon=$slackMenuIcon[0];
             ?>
             
-            .survey-link a.slack-link:before {
+            .survey-link a.slack-link:before,  .navigation-menu li.menu-links-slack:before {
                 background-image: url("<?php echo UrlFrom($slackMenuIcon."?thumb=x>100y>100"); ?>");
+                content:"";
             }
             
             <?php
