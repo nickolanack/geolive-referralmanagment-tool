@@ -389,7 +389,11 @@ var DashboardPageLayout = (function() {
 	}).addLayout("userProfileDetailOverview", function(content) {
 
 
-		console.error(layout.currentItem());
+		//console.error(layout.currentItem());
+		var user=layout.currentItem();
+		if(user&&AppClient.getId()+""!==user.getId()+""){
+			return content;
+		}
 
 
 		if (DashboardConfig.getValue('showLeftPanelUser')) {
