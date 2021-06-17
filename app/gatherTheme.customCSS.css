@@ -3,6 +3,11 @@
 
 $highlightBtnColor:#efa82c;
 
+
+button.primary-btn.nav-new-btn{
+    background-color:$highlightBtnColor;
+}
+
 [data-view="leftPanel"] {
     background-color: #222222;
 }
