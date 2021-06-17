@@ -11,6 +11,9 @@ DashboardConfig.getValue("enableUserProfiles",function(enabled){
     
 });
 
+if(item.getId()+""!==AppClient.getId()+""){
+    return;
+}
 
 el.appendChild(new Element('button', {"class":"inline-logout","html":"logout", "events":{"click":function(e){
     e.stop();

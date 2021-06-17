@@ -3,6 +3,11 @@
 
 $highlightBtnColor:#efa82c;
 
+
+button.primary-btn.nav-new-btn{
+    background-color:$highlightBtnColor;
+}
+
 [data-view="leftPanel"] {
     background-color: #222222;
 }
@@ -367,6 +372,12 @@ button.inline-btn.add, button.primary-btn {
     border-radius: 100px;
     margin-right: 12px;
 }
+
+
+.search-panel .ui-view.user-detail {
+    display: none;
+}
+
 
 [data-view="projectsOverviewDetail"]{
     display:block;

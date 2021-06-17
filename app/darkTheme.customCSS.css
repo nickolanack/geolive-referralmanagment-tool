@@ -71,7 +71,11 @@ $mainStyleColor:#efa82c;
          color: $fontColor;
     }
 
-    .navigation-menu button:hover, .inline-navigation-menu button:hover {
+    .navigation-menu li:hover button, .inline-navigation-menu li:hover button {
+        color: $fontColor;
+    }
+    
+    .navigation-menu li:hover:before, .inline-navigation-menu li:hover:before {
         color: $fontColor;
     }
 

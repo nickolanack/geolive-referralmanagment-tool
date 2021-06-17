@@ -1,2 +1,8 @@
-return new Element('div',{'class':"survey-link",html:'<a class="survey-form" href="<?php echo GetWidget('dashboardConfig')->getParameter('surveyUrl'); ?>">Survey</a>'+
-'<a class="slack-link" href="<?php echo GetWidget('dashboardConfig')->getParameter('slackUrl'); ?>">Slack Chat</a>'});
+return new Element('div',{'class':"survey-link",html:
+
+
+
+`
+<a class="survey-form" href="`+DashboardConfig.getValue('surveyUrl')+`">Survey</a>
+<a class="slack-link" href="`+DashboardConfig.getValue('slackUrl')+`">Slack Chat</a>
+`});
