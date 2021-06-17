@@ -361,37 +361,40 @@ a.pb-btn-close:after {
 
 }
 
+.search-panel{
 
-span.notifications {
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    background-color: rgba(0,0,0,0.1);
-    position: relative;
-    top: 12px;
-    cursor: pointer;
-    border-radius: 100%;
-}
+    span.notifications {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        background-color: rgba(0,0,0,0.1);
+        position: relative;
+        top: 12px;
+        cursor: pointer;
+        border-radius: 100%;
+    }
+    
+    
+    span.notifications:after {
+        content: "\f0f3";
+        font-family: 'FontAwesome';
+        position: absolute;
+        left: 9px;
+        top: 5px;
+        color: $highlightBtnColor;
+    }
+    
+    span.notifications.selection:after {
+        content: "\0f041";
+        font-size: 20px;
+        left: 11px;
+        top: 7px;
+        color: rgba(0,0,0,0.3);
+    }
+    span.notifications.selection.has-selection:after {
+        color: #76aaff;
+    }
 
-
-span.notifications:after {
-    content: "\f0f3";
-    font-family: 'FontAwesome';
-    position: absolute;
-    left: 9px;
-    top: 5px;
-    color: $highlightBtnColor;
-}
-
-span.notifications.selection:after {
-    content: "\0f041";
-    font-size: 20px;
-    left: 11px;
-    top: 7px;
-    color: rgba(0,0,0,0.3);
-}
-span.notifications.selection.has-selection:after {
-    color: #76aaff;
 }
 
 
