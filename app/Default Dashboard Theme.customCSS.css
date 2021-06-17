@@ -3461,6 +3461,38 @@ img.static-map {
     
 .search-panel{
     
+
+    &.ui-view{
+        text-align: right;
+    }
+
+    input.search-input {
+        border-radius: 25px;
+        background-color: #f7f7f7;
+        border-color: rgba(0,0,0,0.1);
+        transition: width 0.3s;
+        width:250px;
+    }
+
+    input.search-input:focus,  input.search-input.focus {
+        width: 400px;
+        outline: none;
+        box-shadow: 0 0 4px rgba(0,0,0,0.3) inset;
+        border-color: #c6c6c6;
+    }
+
+    .search-container{
+        position:relative;
+    }
+
+    .search-result-list{
+        margin-top:0;
+        margin-left:1px;
+    }
+  
+
+    
+    
     span.SearchModule.search-container {
         display: inline;
     }
