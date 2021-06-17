@@ -228,7 +228,7 @@ $gatherIcon=$config->getParameter('gatherIcon', array());
         }
     ?>
  .gather-icon {
-
+    
     background-image:url("<?php echo UrlFrom($gatherIcon."?thumb=>200x>200"); ?>");
 } 
 
@@ -236,6 +236,9 @@ $gatherIcon=$config->getParameter('gatherIcon', array());
 .navigation-menu li.menu-links-gather:before{
      background-image:url("<?php echo UrlFrom($gatherIcon."?thumb=>200x>200"); ?>");
      content:"";
+     width: 30px;
+     height: 30px;
+     margin: 0 5px;
 }
 
 
