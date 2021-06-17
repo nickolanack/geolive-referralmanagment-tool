@@ -569,7 +569,9 @@ var MainNavigationMenu = new Class({
 				],
 				"Links": [
 					{
-						html: "Gather",
+						html: DashboardConfig.getValue('gatherLabel'),
+						name:"Gather",
+						"class":"application-logo gather-logo gather-icon",
 						events: {
 							click: function() {}
 						}
@@ -577,12 +579,19 @@ var MainNavigationMenu = new Class({
 					{	
 						html: "Survey",
 						events: {
-							click: function() {}
+							click: function() {
+								window.open(DashboardConfig.getValue('surveyUrl'), "_blank")
+
+							}
 						}
 					}, {
 						html: "Slack Chat",
 						events: {
-							click: function() {}
+							click: function() {
+
+
+								window.open(DashboardConfig.getValue('slackUrl'), "_blank")
+							}
 						}
 					}
 						
