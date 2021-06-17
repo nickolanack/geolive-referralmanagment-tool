@@ -571,7 +571,7 @@ var MainNavigationMenu = new Class({
 					{
 						html: DashboardConfig.getValue('gatherLabel'),
 						name:"Gather",
-						"class":"application-logo gather-logo gather-icon",
+						"_class":"application-logo gather-logo gather-icon",
 						events: {
 							click: function() {}
 						}
