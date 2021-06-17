@@ -3481,6 +3481,12 @@ img.static-map {
         border-color: #c6c6c6;
     }
 
+    
+        
+    .search-bar-content {
+        width: unset;
+    }
+    
     .search-container{
         position:relative;
     }
