@@ -12,6 +12,15 @@ $mainStyleColor:#efa82c;
 
 .dark{
     
+    
+    .navigation-menu li.menu-links-gather:before, .navigation-menu li.menu-links-survey:before, .navigation-menu li.menu-links-slack:before {
+        filter:grayscale(1);
+    }
+    
+    .navigation-menu li.menu-links-gather:hover:before, .navigation-menu li.menu-links-survey:hover::before, .navigation-menu li.menu-links-slack:hover::before {
+        filter:grayscale(0);
+    }
+    
     .WizardTitle li {
         border-color: transparent;
         background-color: rgba(0, 0, 0, 0.2);
