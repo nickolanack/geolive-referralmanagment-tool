@@ -7420,16 +7420,16 @@
                             "taskForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 286,
-                            "y": 214
+                            "x": 296,
+                            "y": 224
                         },
                         "children": [
                             "taskForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 246,
-                                    "y": 477
+                                    "x": 256,
+                                    "y": 487
                                 }
                             }
                         ],
@@ -7455,6 +7455,7 @@
                                             "type": "UIView",
                                             "config": {
                                                 "className": "",
+                                                "identifier": "",
                                                 "viewType": "view",
                                                 "namedView": "singleUserTeamCollectionIconsDetail",
                                                 "shouldRender": true,
@@ -7464,11 +7465,13 @@
                                                 "formOptions": "{}",
                                                 "showDeleteButton": false,
                                                 "deleteItemScript": "defaultBehaviorFn()",
+                                                "initModuleScript": "",
                                                 "formatModuleScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.formatModuleScript.js",
                                                 "resolveItemScript": "return item",
                                                 "filterModulesScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.filterModulesScript.js",
                                                 "itemButtonsScript": "return [];",
-                                                "insertAtTop": false
+                                                "insertAtTop": false,
+                                                "targetName": ""
                                             }
                                         },
                                         {
@@ -7484,6 +7487,7 @@
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "add another value",
                                                 "formatter": true,
+                                                "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
                                                 "getValueScript": "return item.getName()",
@@ -7505,6 +7509,7 @@
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "add another value",
                                                 "formatter": "none",
+                                                "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
                                                 "getValueScript": "return item.getDescription();",
@@ -7526,6 +7531,7 @@
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "add another value",
                                                 "formatter": "date",
+                                                "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
                                                 "getValueScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.getValueScript.js",
@@ -7547,6 +7553,7 @@
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "add another value",
                                                 "formatter": "time",
+                                                "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
                                                 "getValueScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.getValueScript.js",
@@ -7590,7 +7597,7 @@
                                                 "attributeFields": [
                                                     "taskForm.metadata.children.1.builderMetadata.positions.content.modules.9.config.attributeFields.0.json"
                                                 ],
-                                                "label": "{field.label}",
+                                                "label": "Attachments",
                                                 "message": "add a description",
                                                 "lines": 3,
                                                 "mandatory": false,
