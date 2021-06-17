@@ -320,18 +320,11 @@ button.primary-btn.nav-new-btn.view-selection:before {
 
 
 .navigation-menu .menu-main li{
-    &.menu-main-users {
-        display: none;
-    }
-    &.menu-main-projects {
-        display: none;
-    }
-    &.menu-main-timetracking {
-        display: none;
-    }
-     &.menu-main-documents {
-        display: none;
-    }
+    &.menu-main-users, 
+    &.menu-main-projects, 
+    &.menu-main-tasks, 
+    &.menu-main-timetracking, 
+    &.menu-main-documents, 
     &.menu-main-reports {
         display: none;
     }
