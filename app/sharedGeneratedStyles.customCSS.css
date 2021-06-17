@@ -233,7 +233,7 @@ $gatherIcon=$config->getParameter('gatherIcon', array());
 } 
 
 
-.navigation-menu li.menu-links-survey:before{
+.navigation-menu li.menu-links-gather:before{
      background-image:url("<?php echo UrlFrom($gatherIcon."?thumb=>200x>200"); ?>");
      content:"";
 }
