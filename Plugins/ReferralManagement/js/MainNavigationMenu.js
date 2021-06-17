@@ -297,7 +297,7 @@ var MainNavigationMenu = new Class({
 					template: "tagsDetail"
 				}, {
 					html: "Tasks",
-					"class":"hidden",
+					"--class":"hidden",
 					formatEl: function(li) {
 						ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
 
