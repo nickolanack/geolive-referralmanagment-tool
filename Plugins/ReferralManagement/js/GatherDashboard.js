@@ -13,7 +13,7 @@ var GatherDashboard = (function() {
 
 
 
-	var GatherDashboard = new Class_({
+	var GatherDashboardClass = new Class_({
 		Implements: [Events],
 
 		getApplication: function(callback) {
@@ -826,7 +826,7 @@ var GatherDashboard = (function() {
 
 	});
 
-	return new GatherDashboard();
+	return new GatherDashboardClass();
 
 })();
 
