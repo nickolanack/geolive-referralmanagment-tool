@@ -9,33 +9,7 @@ $highlightBtnColor:#cd0101; /*#ff0258;*/
     width: 100%;
 }
 
-span.notifications.selection.has-selection:before {
-    position: absolute;
-    background: rgba(0,0,0,0.1);
-    width: 252px;
-    height: 36px;
-    right: 0;
-    content: "";
-    border-radius: 17px;
-}
 
-span.notifications.selection button {
-    position: absolute;
-    right: 121px;
-    white-space: nowrap;
-    top: -5px;
-    background: #7b889f;
-    padding: 5px 16px;
-    display: none;
-}
-
-span.notifications.selection button:first-child {
-    right: 50px;
-}
-
-span.notifications.selection.has-selection button {
-    display: inline-block;
-}
 
 .pb-c.gct3 .template-footer {
     z-index: 1;
@@ -362,37 +336,6 @@ a.pb-btn-close:after {
 }
 
 
-span.notifications {
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    background-color: rgba(0,0,0,0.1);
-    position: relative;
-    top: 12px;
-    cursor: pointer;
-    border-radius: 100%;
-}
-
-
-span.notifications:after {
-    content: "\f0f3";
-    font-family: 'FontAwesome';
-    position: absolute;
-    left: 9px;
-    top: 5px;
-    color: $highlightBtnColor;
-}
-
-span.notifications.selection:after {
-    content: "\0f041";
-    font-size: 20px;
-    left: 11px;
-    top: 7px;
-    color: rgba(0,0,0,0.3);
-}
-span.notifications.selection.has-selection:after {
-    color: #76aaff;
-}
 
 
 
@@ -472,9 +415,7 @@ span.notifications.selection.has-selection:after {
    padding: 5px 10px;
    font-size: 12px;
 }
-.search-bar-content {
-    width: unset;
-}
+
 .widget-33.geolive-top-bar .search-bar-content {
     width: calc( 100% - 300px );
 }
@@ -596,34 +537,17 @@ ul.project, ul.user{
     margin-right: 0;
 }
 
-.ui-view.search-panel {
-    background: white;
-    text-align: right;
+.search-panel {
+
+    span.notifications:after {
+        color: $highlightBtnColor;
+    }
+
+
+    &.ui-view{
+        background: white;
+    }
 }
-
-.search-panel input.search-input {
-    border-radius: 25px;
-    background-color: #f7f7f7;
-    border-color: rgba(0,0,0,0.1);
-    transition: width 0.3s;
-    width:250px;
-}
-
-.search-panel input.search-input:focus, .search-panel input.search-input.focus {
-    width: 400px;
-    outline: none;
-    box-shadow: 0 0 4px rgba(0,0,0,0.3) inset;
-    border-color: #c6c6c6;
-}
-
-  .search-panel .search-container{
-    position:relative;
-  }
-
-  .search-panel .search-result-list{
-    margin-top:0;
-    margin-left:1px;
-  }
 
 .dataset-description {
     font-size: 12px;

@@ -178,9 +178,21 @@ $mainStyleColor:#efa82c;
     }
 
 
-
+    .search-panel{
         
-
+        input.search-input {
+            background: $tagBtnColor;
+            color: white;
+            border-color: #433400;
+        }
+    
+        input.search-input::placeholder {
+            color: #ceb250;
+            font-style:italic;
+            font-weight:100;
+        }
+        
+    }
 
 
 }
