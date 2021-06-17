@@ -20,6 +20,15 @@ button:focus {outline:0;}
     margin-top: 30px;
 }
 
+.navigation-menu li.menu-links-gather:before, .navigation-menu li.menu-links-survey:before, .navigation-menu li.menu-links-slack:before {
+        filter:grayscale(1);
+    }
+    
+    .navigation-menu li.menu-links-gather:hover:before, .navigation-menu li.menu-links-survey:hover::before, .navigation-menu li.menu-links-slack:hover::before {
+        filter:grayscale(0);
+    }
+    
+
 button.primary-btn.nav-new-btn{
 
     
