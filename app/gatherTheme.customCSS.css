@@ -373,6 +373,12 @@ button.inline-btn.add, button.primary-btn {
     margin-right: 12px;
 }
 
+
+.search-panel .ui-view.user-detail {
+    display: none;
+}
+
+
 [data-view="projectsOverviewDetail"]{
     display:block;
     margin-bottom:50px;
