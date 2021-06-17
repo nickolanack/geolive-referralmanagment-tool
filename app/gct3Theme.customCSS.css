@@ -11,6 +11,19 @@ $highlightBtnColor:#cd0101; /*#ff0258;*/
 
 
 
+.uitext-container {
+
+.media-item .document, .media-item .image, .media-item .audio, .media-item .video {
+    width: 100px;
+    height: 80px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+}
+
+
+
 .pb-c.gct3 .template-footer {
     z-index: 1;
 }
