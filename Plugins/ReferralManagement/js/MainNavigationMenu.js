@@ -573,14 +573,16 @@ var MainNavigationMenu = new Class({
 						name:"Gather",
 						"_class":"application-logo gather-logo gather-icon",
 						events: {
-							click: function() {}
+							click: function() {
+								window.open("https://gather.geoforms.ca", "_blank");
+							}
 						}
 					},
 					{	
 						html: "Survey",
 						events: {
 							click: function() {
-								window.open(DashboardConfig.getValue('surveyUrl'), "_blank")
+								window.open(DashboardConfig.getValue('surveyUrl'), "_blank");
 
 							}
 						}
@@ -590,7 +592,7 @@ var MainNavigationMenu = new Class({
 							click: function() {
 
 
-								window.open(DashboardConfig.getValue('slackUrl'), "_blank")
+								window.open(DashboardConfig.getValue('slackUrl'), "_blank");
 							}
 						}
 					}
