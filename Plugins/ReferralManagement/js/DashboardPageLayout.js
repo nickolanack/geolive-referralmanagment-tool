@@ -13,6 +13,13 @@ var DashboardPageLayout = (function() {
 		layoutSection: function(name, modules) {
 			return this.layoutPage(name, modules);
 		},
+		withItem:function(item){
+			this._item=item;
+			return this;
+		},
+		currentItem:function(){
+			return this._item||null;
+		},
 		layoutPage: function(name, modules, callback) {
 
 
@@ -381,6 +388,10 @@ var DashboardPageLayout = (function() {
 		//return content;
 	}).addLayout("userProfileDetailOverview", function(content) {
 
+
+		console.error(layout.currentItem());
+
+
 		if (DashboardConfig.getValue('showLeftPanelUser')) {
 			content.splice(0, 1);
 		}
@@ -601,7 +612,7 @@ var DashboardPageLayout = (function() {
 
 			}
 
-			return layout.layoutPage(name, content);
+			return layout.withItem(item).layoutPage(name, content);
 
 		});
 
