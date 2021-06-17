@@ -3459,38 +3459,103 @@ img.static-map {
 }
     
     
+.search-panel{
+    
+    span.SearchModule.search-container {
+        display: inline;
+    }
+    
+    span.search-bar-btn.left.search {
+        left: 0;
+        background-color: transparent;
+        border-right-width: 0;
+        box-shadow: none;
+        border-color: gray;
+        float: none;
+        top: 6px;
+        border: none;
+        position: absolute;
+    }
+    
+    input.search-input {
+        margin-left: 0;
+        border-color: gray;
+        box-shadow:none;
+        font-weight:300;
+        font-size: 16px;
+        text-indent: 50px;
+    }
+    
+    button.primary-btn {
+        margin: 10px;
+        margin-right: 0;
+        padding: 12.5px 30px;
+        margin-bottom: 0;
+    }
+
+
+
+    span.notifications.selection.has-selection:before {
+        position: absolute;
+        background: rgba(0,0,0,0.1);
+        width: 252px;
+        height: 36px;
+        right: 0;
+        content: "";
+        border-radius: 17px;
+    }
+    
+    span.notifications.selection button {
+        position: absolute;
+        right: 121px;
+        white-space: nowrap;
+        top: -5px;
+        background: #7b889f;
+        padding: 5px 16px;
+        display: none;
+    }
+    
+    span.notifications.selection button:first-child {
+        right: 50px;
+    }
+    
+    span.notifications.selection.has-selection button {
+        display: inline-block;
+    }
+
+
+    span.notifications {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        background-color: rgba(0,0,0,0.1);
+        position: relative;
+        top: 12px;
+        cursor: pointer;
+        border-radius: 100%;
+    }
     
     
-.search-panel span.SearchModule.search-container {
-    display: inline;
-}
+    span.notifications:after {
+        content: "\f0f3";
+        font-family: 'FontAwesome';
+        position: absolute;
+        left: 9px;
+        top: 5px;
+        color: $highlightBtnColor;
+    }
+    
+    span.notifications.selection:after {
+        content: "\0f041";
+        font-size: 20px;
+        left: 11px;
+        top: 7px;
+        color: rgba(0,0,0,0.3);
+    }
+    span.notifications.selection.has-selection:after {
+        color: #76aaff;
+    }
 
-.search-panel span.search-bar-btn.left.search {
-    left: 0;
-    background-color: transparent;
-    border-right-width: 0;
-    box-shadow: none;
-    border-color: gray;
-    float: none;
-    top: 6px;
-    border: none;
-    position: absolute;
-}
-
-.search-panel input.search-input {
-    margin-left: 0;
-    border-color: gray;
-    box-shadow:none;
-    font-weight:300;
-    font-size: 16px;
-    text-indent: 50px;
-}
-
-.search-panel button.primary-btn {
-    margin: 10px;
-    margin-right: 0;
-    padding: 12.5px 30px;
-    margin-bottom: 0;
 }
 
 
