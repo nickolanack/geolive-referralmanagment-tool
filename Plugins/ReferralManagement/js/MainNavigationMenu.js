@@ -297,6 +297,7 @@ var MainNavigationMenu = new Class({
 					template: "tagsDetail"
 				}, {
 					html: "Tasks",
+					"class":"hidden",
 					formatEl: function(li) {
 						ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
 
@@ -355,6 +356,10 @@ var MainNavigationMenu = new Class({
 					{
 						html: "Projects",
 						alias: {"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true},
+					},
+					{
+						html: "Projects",
+						alias: {"section":"Main", "button":"Tasks", "useClassNames":true, "mirrorActive":true},
 					},
 					{
 						html: "Documents",
