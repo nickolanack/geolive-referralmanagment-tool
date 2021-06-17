@@ -566,6 +566,27 @@ var MainNavigationMenu = new Class({
 						html: "Subsistence"
 					}
 
+				],
+				"Links": [
+					{
+						html: "Gather",
+						events: {
+							click: function() {}
+						}
+					},
+					{	
+						html: "Survey",
+						events: {
+							click: function() {}
+						}
+					}, {
+						html: "Slack Chat",
+						events: {
+							click: function() {}
+						}
+					}
+						
+
 				]
 
 			}, (AppClient.getUserType() == "admin" ? {
