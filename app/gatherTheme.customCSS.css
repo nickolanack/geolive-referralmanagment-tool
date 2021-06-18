@@ -2,11 +2,24 @@
 @charset "utf-8";
 
 $highlightBtnColor:#efa82c;
+$highlightBtnHoverColor:#f56e13;;
 
 
 button.primary-btn.nav-new-btn{
     background-color:$highlightBtnColor;
 }
+
+
+ button.primary-btn.nav-new-btn:hover {
+    background-color: $highlightBtnHoverColor; /* */
+ }
+ 
+ .left-panel .user-detail .single_ImageContainer:hover:after {
+    box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    border-color: #efa82c;
+    cursor:pointer
+}
+
 
 [data-view="leftPanel"] {
     background-color: #222222;
