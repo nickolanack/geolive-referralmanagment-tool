@@ -5,7 +5,8 @@ var UITextFieldLayerBrowser = function() {
 
     me._getElement().setStyle("display", "none");
 
-    var bar = UITextField.RenderMediaBrowserBar.bind(me)();
+    var bar = (new UITextFieldMediaSelection(this)).renderMediaBrowserBar();
+
 
     UploadForm.FileBrowserSelect(bar, {
         className: "layer noIcon",
