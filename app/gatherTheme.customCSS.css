@@ -2,11 +2,17 @@
 @charset "utf-8";
 
 $highlightBtnColor:#efa82c;
+$highlightBtnHoverColor:#f56e13;;
 
 
 button.primary-btn.nav-new-btn{
     background-color:$highlightBtnColor;
 }
+
+
+ button.primary-btn.nav-new-btn:hover {
+    background-color: $highlightBtnHoverColor; /* */
+ }
 
 [data-view="leftPanel"] {
     background-color: #222222;
