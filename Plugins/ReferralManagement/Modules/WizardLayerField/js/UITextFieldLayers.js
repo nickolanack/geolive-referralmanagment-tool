@@ -8,7 +8,7 @@ var UITextFieldLayerBrowser = function() {
     var bar = (new UITextFieldMediaSelection(this)).renderMediaBrowserBar();
 
 
-    UploadForm.FileBrowserSelect(bar, {
+    var uploader=UploadForm.FileBrowserSelect(bar, {
         className: "layer noIcon",
         url: CoreContentUrlRoot + "&format=raw&controller=plugins&plugin=ReferralManagement&view=plugin&pluginView=browser.layers&parent=window.parent&mode=function&function=GrabImage&addUrlImage=yes",
         tip: "add a spatial feature"
@@ -22,6 +22,7 @@ var UITextFieldLayerBrowser = function() {
 
     });
 
+    uploader.acceptExts(["shp", "kml", "kmz", "zip"]);
 
 
 };
