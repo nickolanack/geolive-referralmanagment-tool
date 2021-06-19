@@ -28,7 +28,7 @@ var UITextFieldLayerBrowser = function() {
 };
 var UITextFieldLayerList = function() {
 
-
+    var me=this;
 
     var mediaSelection=(new UITextFieldMediaSelection(this));
 
