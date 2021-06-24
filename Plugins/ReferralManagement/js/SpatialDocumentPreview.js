@@ -79,18 +79,18 @@ var SpatialDocumentPreview = (function() {
 
 				var InlineProjectSelection=new Class_({
 					Extends:MockDataTypeItem,
-					hasProject:function(){
+					hasProject:function(item){
 
-						return false;
+						return item.isBaseMapLayer();
 
 					},
 					addProject:function(p){},
 					removeProject:function(p){}
 				});
 
-				var selection=(new InlineProjectSelection({
+				var selection=new InlineProjectSelection({
 
-                        }));
+                        });
 
 				(new UIModalDialog(
                         ReferralManagementDashboard.getApplication(),
