@@ -2247,15 +2247,15 @@
             "forestryColor": "rgb(60, 133, 0)",
             "communityColor": "rgb(235, 212, 0)",
             "boundaryColor": "rgb(239, 173, 0)",
-            "townshipsMouseover": "<span style=\"font-size:20px\">Townships Data<\/span> <\/br>Much of rural Ontario is subdivided into geographic townships. These administrative areas are used to organize land surveying and natural resource exploration.",
-            "miningMouseover": "<span style=\"font-size:20px\">Mining Data<\/span> <\/br>These map layers contain data provided by Ministry of Northern Development and Mines about current claims and abandoned mine sites.",
-            "forestryMouseover": "<span style=\"font-size:20px\">Forestry Data<\/span> <\/br>These map layers show information about Ontario's Crown forest management units and cut block information.",
+            "townshipsMouseover": "<span style=\"font-size:20px\">Township Data<\/span> <\/br>These layers display administrative areas are used to organize land surveying and natural resource exploration.",
+            "miningMouseover": "<span style=\"font-size:20px\">Mining Data<\/span> <\/br>These map layers contain mining such as current claims and abandoned mine sites.",
+            "forestryMouseover": "<span style=\"font-size:20px\">Forestry Data<\/span> <\/br>These map layers show forestry related information.",
             "communityMouseover": "<span style=\"font-size:20px\">Community Data<\/span><\/br>These map layers contain information provided by the community about Culture, Environment, Habitat, Subsistence and Transportation.",
-            "boundaryMouseover": "<span style=\"font-size:20px\">Boundary Data<\/span><\/br>These map layers display information about the location of the boundaries between the five different First Nations that make up the Wabun Tribal Council.",
+            "boundaryMouseover": "<span style=\"font-size:20px\">Boundary Data<\/span><\/br>These map layers display boundaries information.",
             "crowdsource": [
                 "webresources\/config-113\/184ba.[G]_tY7_o8O_[ImAgE]_Clx.png"
             ],
-            "crowdsourceMouseover": "<span style=\"font-size:20px\">Community Crowdsourced Data<\/span> <\/br>These map layers contain photographs taken by community members in the territory. These present information about Culture, Environment, Habitat, Subsistence and Transportation.",
+            "crowdsourceMouseover": "<span style=\"font-size:20px\">Community Crowdsourced Data<\/span> <\/br>These map layers contain content contributed by community members.",
             "crowdsourceTint": "rgb(0,0,0)",
             "crowdsourceColor": "rgb(180, 53, 53)",
             "formatParametersScript": "return $parameters;",
@@ -2276,7 +2276,7 @@
             "enableUserAjaxWrite": false,
             "authUserAjaxScript": "XXXX-XXXX",
             "other": [],
-            "otherMouseover": "",
+            "otherMouseover": "<span style=\"font-size:20px\">Other Data<\/span><\/br>These map layers display additional useful features.",
             "otherTint": "rgb(0,0,0)",
             "otherColor": "rgb(255,255,255)"
         }
