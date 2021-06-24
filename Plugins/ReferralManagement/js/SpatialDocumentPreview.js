@@ -71,7 +71,7 @@ var SpatialDocumentPreview = (function() {
 
 
 			new UIMapSubTileButton(me._mapTile, {
-				containerClassName: 'spatial-file-tile add',
+				containerClassName: 'spatial-file-tile add always-show',
 				buttonClassName: '',
 				//image: response.metadata.image||response.metadata.mimeIcon||response.metadata.mediaTypeIcon,
 
