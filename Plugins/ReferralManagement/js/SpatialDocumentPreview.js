@@ -8,7 +8,10 @@ var SpatialDocumentPreview = (function() {
 	var SpatialDocumentPreview = new Class({
 
 
-		show: function(urls, wizard, callback) {
+
+
+
+		show: function(urls) {
 
 			var me = this;
 			var map = me._map;
@@ -38,7 +41,9 @@ var SpatialDocumentPreview = (function() {
 			}
 
 			var offset = 40;
-			layers = urls.map(function(layerOpts, i) {
+
+			var createLayer=function(layerOpts, i){
+
 
 
 				var layer = ProjectLayer.MakeProjectLayer(map, layerOpts);
@@ -67,7 +72,13 @@ var SpatialDocumentPreview = (function() {
 
 				return layer;
 
+			}
+
+			layers = urls.map(function(layerOpts, i) {
+				return createLayer(layerOpts, i);
 			});
+
+
 
 
 			new UIMapSubTileButton(me._mapTile, {
@@ -87,7 +98,21 @@ var SpatialDocumentPreview = (function() {
 					canAddRemoveProject:function(item){
 						return !item.isBaseMapLayer();
 					},
-					addProject:function(p){},
+					addProject:function(p){
+
+						console.log('add selection');
+						console.log(p);
+
+						spatial=SpatialProject.ItemsSpatial(p);
+
+						var newLayers=spatial.map(function(layerOpts, i) {
+							return createLayer(layerOpts, i+layers.length);
+						});
+
+						layers=layers.concat(newLayers);
+
+
+					},
 					removeProject:function(p){}
 				});
 
