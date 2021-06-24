@@ -1,7 +1,7 @@
 
 .#{$themeName}{
     
-    .ui-view.dashboard-main{
+    .ui-view.dashboard-main, .ui-view.inset-menu-shading > div{
         color:$mainFontContentColor;
         background-color:$mainColorContent;
         .dataset-description, .section-welcome span{
