@@ -1,4 +1,3 @@
-
 var UITextFieldLayerBrowser = function() {
 
     var me = this;
@@ -8,14 +7,23 @@ var UITextFieldLayerBrowser = function() {
     var bar = (new UITextFieldMediaSelection(this)).renderMediaBrowserBar();
 
 
-    var uploader=UploadForm.FileBrowserSelect(bar, {
+
+    var appendMediaHtml = function(result) {
+        me.setValue((me.getValue() || "") + result.html);
+    };
+
+
+    var uploader = UploadForm.FileBrowserSelect(bar, {
         className: "layer noIcon",
         url: CoreContentUrlRoot + "&format=raw&controller=plugins&plugin=ReferralManagement&view=plugin&pluginView=browser.layers&parent=window.parent&mode=function&function=GrabImage&addUrlImage=yes",
-        tip: "add a spatial feature"
+        tip: "add a spatial feature",
+        selectFile: appendMediaHtml
     }, function(pushbox) {
 
         (parent.window || window).GrabImage = function(layer, mime, error) {
-            me.setValue((me.getValue() || "") + '<a href="' + layer + '">doc.kml</a>');
+            appendMediaHtml({
+                html: '<a href="' + layer + '">doc.kml</a>'
+            });
             pushbox.close();
 
         };
@@ -28,18 +36,18 @@ var UITextFieldLayerBrowser = function() {
 };
 var UITextFieldLayerList = function() {
 
-    var me=this;
+    var me = this;
 
-    var mediaSelection=(new UITextFieldMediaSelection(this));
+    var mediaSelection = (new UITextFieldMediaSelection(this));
 
-    var listEl=mediaSelection.renderToolbar({
-        className:'spatial-files'
+    var listEl = mediaSelection.renderToolbar({
+        className: 'spatial-files'
     });
 
 
-    new AjaxFileUploader(listEl,{
-        types:["document"],
-        selectFile:function(fileinfo, type){
+    new AjaxFileUploader(listEl, {
+        types: ["document"],
+        selectFile: function(fileinfo, type) {
             me.setValue((me.getValue() || "") + fileinfo.html);
         }
     })
@@ -64,7 +72,4 @@ var UITextFieldLayerList = function() {
 
 
 
-
-
 };
-
