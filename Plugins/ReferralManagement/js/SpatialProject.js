@@ -62,7 +62,7 @@ var SpatialProject = (function() {
 			if (files.length) {
 				SpatialDocumentPreview.show(files);
 			} else {
-				//tile.disable();
+				SpatialDocumentPreview.show([]);
 			}
 		}
 
