@@ -2811,6 +2811,10 @@ img.static-map {
     background-color: mediumseagreen;
 }
 
+.spatial-file-tile.add.always-show>.tileButton {
+    display: inline-block;
+}
+
 
 .tileOptionContainer.spatial-file-tile {
     display: inline-block;
