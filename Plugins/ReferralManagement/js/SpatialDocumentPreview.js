@@ -84,6 +84,9 @@ var SpatialDocumentPreview = (function() {
 						return item.isBaseMapLayer();
 
 					},
+					canAddRemoveProject:function(item){
+						return !item.isBaseMapLayer();
+					},
 					addProject:function(p){},
 					removeProject:function(p){}
 				});
