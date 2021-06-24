@@ -279,6 +279,7 @@ a.pb-btn-close:after {
         height: 40px;
         line-height: 40px;
         border-radius: 20px;
+        overflow-y: hidden;
     }
     
     .text-input::placeholder {
