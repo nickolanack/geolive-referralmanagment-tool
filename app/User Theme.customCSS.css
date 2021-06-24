@@ -27,4 +27,8 @@
         background-color:$topBarColorContent;
     }
     
+    .dataset-item button.form-btn.inline-edit, .table-header .field-value-module.inline.sortable{
+        background-color:$genericButtonColorContent;
+    }
+    
 }
