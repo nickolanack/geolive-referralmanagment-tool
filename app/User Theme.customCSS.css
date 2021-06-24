@@ -4,7 +4,7 @@
     .ui-view.dashboard-main{
         color:$mainFontContentColor;
         background-color:$mainColorContent;
-        .dataset-description, .section-wecome > *, .section-help .hint{
+        .dataset-description, .section-welcom .hint{
             color:$mainFontContentColor;
         }
         
