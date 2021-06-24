@@ -90,7 +90,7 @@ var SpatialDocumentPreview = (function() {
 
 				var selection=(new InlineProjectSelection({
 
-                        }))
+                        }));
 
 				(new UIModalDialog(
                         ReferralManagementDashboard.getApplication(),
