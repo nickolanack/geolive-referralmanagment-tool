@@ -4,6 +4,10 @@
     .ui-view.dashboard-main{
         color:$mainFontContentColor;
         background-color:$mainColorContent;
+        .dataset-description{
+            color:$mainFontContentColor;
+        }
+        
     }
     
     [data-view="leftPanel"].ui-view.left-panel {
