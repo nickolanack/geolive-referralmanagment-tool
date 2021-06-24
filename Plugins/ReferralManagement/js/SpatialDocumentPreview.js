@@ -77,11 +77,24 @@ var SpatialDocumentPreview = (function() {
 
 			}).addEvent('click', function() {
 
+				var InlineProjectSelection=new Class_({
+					Extends:MockDataTypeItem,
+					hasProject:function(){
+
+						return false;
+
+					},
+					addProject:function(p){},
+					removeProject:function(p){}
+				});
+
+				var selection=(new InlineProjectSelection({
+
+                        }))
+
 				(new UIModalDialog(
                         ReferralManagementDashboard.getApplication(),
-                        (new MockDataTypeItem({
-
-                        })), {
+                        selection, {
                             "formName": "datasetSelectForm",
                             "formOptions": {
                                 template: "form"
