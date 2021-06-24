@@ -77,6 +77,19 @@ var SpatialDocumentPreview = (function() {
 
 			}).addEvent('click', function() {
 
+				(new UIModalDialog(
+                        ReferralManagementDashboard.getApplication(),
+                        (new MockDataTypeItem({
+
+                        })), {
+                            "formName": "datasetSelectForm",
+                            "formOptions": {
+                                template: "form"
+                            }
+                        }
+                    )).show();
+
+
 			}).getElement().setStyle('right', layers.length * offset + 40);
 
 			return clear;
