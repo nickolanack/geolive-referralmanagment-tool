@@ -23,4 +23,8 @@
          background-color:$altHighlightColor;
     }
     
+    .search-panel.ui-view {
+        background-color:$topBarColorContent;
+    }
+    
 }
