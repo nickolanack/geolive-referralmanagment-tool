@@ -2137,6 +2137,33 @@
                     "default": "rgb(255,255,255)",
                     "label": "boundary color"
                 },
+                "other": {
+                    "type": "images",
+                    "name": "other",
+                    "default": [],
+                    "label": "other",
+                    "maxHeight": 256,
+                    "maxWidth": 256,
+                    "limit": 1
+                },
+                "otherMouseover": {
+                    "type": "text",
+                    "name": "otherMouseover",
+                    "default": "",
+                    "label": "otherMouseover"
+                },
+                "otherTint": {
+                    "type": "color",
+                    "name": "otherTint",
+                    "default": "rgb(0,0,0)",
+                    "label": "other tint"
+                },
+                "otherColor": {
+                    "type": "color",
+                    "name": "otherColor",
+                    "default": "rgb(255,255,255)",
+                    "label": "other color"
+                },
                 "project": {
                     "type": "images",
                     "name": "project",
@@ -2245,7 +2272,13 @@
             ],
             "selectionMouseover": "<span style=\"font-size:20px\">Selection<\/span><\/br>These map layers have been selected.",
             "selectionTint": "rgb(0,0,0)",
-            "selectionColor": "rgb(214, 196, 214)"
+            "selectionColor": "rgb(214, 196, 214)",
+            "enableUserAjaxWrite": false,
+            "authUserAjaxScript": "XXXX-XXXX",
+            "other": [],
+            "otherMouseover": "",
+            "otherTint": "rgb(0,0,0)",
+            "otherColor": "rgb(255,255,255)"
         }
     },
     "widget.115": {
