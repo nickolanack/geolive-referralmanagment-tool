@@ -37,7 +37,7 @@
         background-color:$genericButtonColorContent;
     }
     
-    .section-title {
+    .section-title, .tag-item span.field-label {
         color: $mainFontHeadingColor;
     }
     
