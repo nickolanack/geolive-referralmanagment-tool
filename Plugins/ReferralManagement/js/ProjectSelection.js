@@ -12,23 +12,38 @@ var ProjectSelection = (function() {
 
 			if (checkbox.checked) {
 
-				NotificationBubble.Make("", "Added `" + item.getName() + "` to selection");
-				if (selection.indexOf(item.getId()) == -1) {
-					selection.push(item.getId());
-					this.fireEvent('select',[item.getId()])
-					this.fireEvent('change',[selection.slice(0)]);
-				}
+				this.addProject(item);
 
 				return;
 			}
 
-			NotificationBubble.Make("", "Removed `" + item.getName() + "` to selection");
+			this.removeProject(item);
+
+		},
+
+		addProject:function(item){
+
+			
+			if (selection.indexOf(item.getId()) == -1) {
+				NotificationBubble.Make("", "Added `" + item.getName() + "` to selection");
+				selection.push(item.getId());
+				this.fireEvent('select',[item.getId()])
+				this.fireEvent('change',[selection.slice(0)]);
+			}
+
+
+		},
+		removeProject:function(item){
+
+
 			var index = selection.indexOf(item.getId());
 			if (index >= 0) {
+				NotificationBubble.Make("", "Removed `" + item.getName() + "` to selection");
 				selection.splice(index, 1);
 				this.fireEvent('unselect',[item.getId()]);
 				this.fireEvent('change',[selection.slice(0)]);
 			}
+
 
 		},
 		clear:function(){

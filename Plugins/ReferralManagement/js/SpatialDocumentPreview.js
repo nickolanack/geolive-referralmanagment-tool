@@ -92,7 +92,7 @@ var SpatialDocumentPreview = (function() {
 					Extends:MockDataTypeItem,
 					hasProject:function(item){
 
-						return item.isBaseMapLayer();
+						return item.isBaseMapLayer()||ProjectSelection.hasProject(item);
 
 					},
 					canAddRemoveProject:function(item){
@@ -105,6 +105,9 @@ var SpatialDocumentPreview = (function() {
 
 						spatial=SpatialProject.ItemsSpatial(p);
 
+
+						ProjectSelection.addProject(p);
+
 						var newLayers=spatial.map(function(layerOpts, i) {
 							return createLayer(layerOpts, i+layers.length);
 						});
@@ -113,7 +116,11 @@ var SpatialDocumentPreview = (function() {
 
 
 					},
-					removeProject:function(p){}
+					removeProject:function(p){
+
+						ProjectSelection.removeProject(p);
+
+					}
 				});
 
 				var selection=new InlineProjectSelection({
