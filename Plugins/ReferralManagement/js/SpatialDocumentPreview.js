@@ -79,9 +79,15 @@ var SpatialDocumentPreview = (function() {
 			});
 
 
+			var addLayerTile=null;
+			var positionAddLayerTile=function(){
 
+				//if(addLayerTile){
+				addLayerTile.getElement().setStyle('right', layers.length * offset + 40);
+				//}
+			}
 
-			new UIMapSubTileButton(me._mapTile, {
+			addLayerTile=new UIMapSubTileButton(me._mapTile, {
 				containerClassName: 'spatial-file-tile add always-show',
 				buttonClassName: '',
 				//image: response.metadata.image||response.metadata.mimeIcon||response.metadata.mediaTypeIcon,
@@ -113,7 +119,7 @@ var SpatialDocumentPreview = (function() {
 						});
 
 						layers=layers.concat(newLayers);
-
+						positionAddLayerTile();
 
 					},
 					removeProject:function(p){
@@ -138,7 +144,9 @@ var SpatialDocumentPreview = (function() {
                     )).show();
 
 
-			}).getElement().setStyle('right', layers.length * offset + 40);
+			});
+
+			positionAddLayerTile();
 
 			return clear;
 		},
