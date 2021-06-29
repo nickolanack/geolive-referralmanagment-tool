@@ -1,9 +1,15 @@
 
 .#{$themeName}{
     
-    .ui-view.dashboard-main{
+    .ui-view.dashboard-main, .ui-view.inset-menu-shading > div{
         color:$mainFontContentColor;
         background-color:$mainColorContent;
+        .dataset-description, .section-welcome span{
+            color:$mainFontContentColor;
+        }
+        
+        
+        
     }
     
     [data-view="leftPanel"].ui-view.left-panel {
@@ -21,6 +27,18 @@
     
     button.primary-btn.nav-new-btn.btn-index-1{
          background-color:$altHighlightColor;
+    }
+    
+    .search-panel.ui-view {
+        background-color:$topBarColorContent;
+    }
+    
+    .dataset-item button.form-btn.inline-edit, .table-header .field-value-module.inline.sortable{
+        background-color:$genericButtonColorContent;
+    }
+    
+    .section-title, .tag-item span.field-label {
+        color: $mainFontHeadingColor;
     }
     
 }
