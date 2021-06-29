@@ -7,6 +7,10 @@ span.field-value.is-dark {
     color: white;
 }
 
+.item-icon.is-dark>.field-label {
+    filter: invert(1);
+}
+
 
 .project-list-filters.section-indent{
     display: inline-table;
