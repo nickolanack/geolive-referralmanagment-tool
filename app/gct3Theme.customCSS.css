@@ -3,6 +3,10 @@
 $highlightBtnColor:#cd0101; /*#ff0258;*/
 
 
+span.field-value.is-dark {
+    color: white;
+}
+
 
 .project-list-filters.section-indent{
     display: inline-table;
