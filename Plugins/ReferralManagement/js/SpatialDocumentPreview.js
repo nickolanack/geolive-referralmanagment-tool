@@ -179,7 +179,7 @@ var SpatialDocumentPreview = (function() {
 				clearTile.disable();
 				//map.clearMode('proposal');
 
-				Array.each(layers, function(layer) {
+				layers.forEach(function(layer) {
 					layer.hide();
 				});
 
@@ -229,7 +229,7 @@ var SpatialDocumentPreview = (function() {
 				subTile.remove();
 				//map.clearMode('proposal');
 
-				Array.each(layers, function(layer) {
+				layers.forEach(function(layer) {
 					layer.hide();
 				});
 

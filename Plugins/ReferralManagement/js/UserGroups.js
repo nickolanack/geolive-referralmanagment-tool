@@ -61,7 +61,7 @@ var UserGroups = (function() {
 
 	UserGroups.GetSubgroups = function() {
 		return Community.territories.map(function(name) {
-			return String.capitalize.call(null, name)
+			return String_.capitalize.call(null, name)
 		});
 	}
 
@@ -69,7 +69,7 @@ var UserGroups = (function() {
 
 
 		return Community.territories.map(function(name) {
-			return String.capitalize.call(null, name.split('|').pop());
+			return String_.capitalize.call(null, name.split('|').pop());
 		})
 	}
 
