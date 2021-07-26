@@ -127,6 +127,10 @@ class ListItemCache {
 			HtmlDocument()->setCachedPage($cacheName, json_encode($users));
 		}
 
+
+		Broadcast('cacheusers', 'trigger', array(
+			'event'=>'onTriggerUpdateUserList';
+		));
 		(new \core\LongTaskProgress())->throttle('onTriggerUpdateUserList', array(), array('interval' => 30));
 
 		return $users;
