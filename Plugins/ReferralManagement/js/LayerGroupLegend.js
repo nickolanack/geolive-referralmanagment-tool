@@ -19,11 +19,38 @@ var LayerGroupLegend = (function() {
 
 
 
-    (new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration", {
-        'widget': "iconset"
-    })).addEvent('success',function(response){
+    
 
-    }).execute();
+
+    var iconset=null;
+    var iconsetQuery=null;
+    var popoverQueue=[];
+
+    LayerGroupLegend.MakeMouseover=function(group, popover){
+
+        
+        if(!iconsetQuery){
+            iconsetQuery=(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration", {
+                'widget': "iconset"
+            })).addEvent('success',function(response){
+                iconset=response.parameters;
+                popoverQueue.forEach(function(args){
+                    LayerGroupLegend.MakeMouseover.apply(null, args);
+                });
+                popoverQueue=null;
+            }).execute();
+        }
+
+        if(!iconset){
+            popoverQueue.push([group, popover]);
+            return;
+        }
+
+        popover.setDescription(iconset[group+"Mouseover"]);
+
+
+
+    } 
 
 
 
@@ -42,9 +69,11 @@ var LayerGroupLegend = (function() {
             }
         });
         var p = new UIPopover(element, {
-            description: mouseover,
+            description: '',
             anchor: UIPopover.AnchorTo(["right"])
         });
+
+        MakeMouseover(p);
 
         legend.addEvent("toggle", function() {
             p.hide();
