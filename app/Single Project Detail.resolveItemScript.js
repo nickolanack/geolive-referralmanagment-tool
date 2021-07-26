@@ -1,5 +1,5 @@
 
-if(item instanceof GenericApp){
+if(item instanceof \core\GenericApp){
     return item.getNamedValue("currentProject");
 }
 
