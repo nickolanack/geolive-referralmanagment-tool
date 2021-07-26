@@ -19,6 +19,14 @@ var LayerGroupLegend = (function() {
 
 
 
+    (new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration", {
+        'widget': "iconset"
+    })).addEvent('success',function(response){
+
+    }).execute();
+
+
+
     LayerGroupLegend.FormatLegend = function(group, mouseover, legend) {
 
 
