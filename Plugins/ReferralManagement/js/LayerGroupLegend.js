@@ -46,7 +46,7 @@ var LayerGroupLegend = (function() {
             return;
         }
 
-        popover.setDescription(iconset[group+"Mouseover"]);
+        popover.setText(iconset[group+"Mouseover"]);
 
 
 
