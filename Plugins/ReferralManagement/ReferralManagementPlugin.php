@@ -98,9 +98,9 @@ core\EventListener {
 
 		if ($params->itemType === "user") {
 			(new \core\LongTaskProgress())
-				->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval' => 30));
+				->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval' => 10));
 			(new \core\LongTaskProgress())
-				->throttle('onTriggerUpdateDevicesList', array('team' => 1), array('interval' => 30));
+				->throttle('onTriggerUpdateDevicesList', array('team' => 1), array('interval' => 10));
 			return;
 		}
 
@@ -121,6 +121,11 @@ core\EventListener {
 	}
 
 	protected function onTriggerUpdateUserList($params) {
+
+		Broadcast('cacheusers', 'handle', array(
+			'event'=>'onTriggerUpdateUserList'
+		));
+
 		$this->cache()->cacheUsersMetadataList($params);
 	}
 
@@ -140,14 +145,14 @@ core\EventListener {
 	protected function onCreateUser($params) {
 		foreach ($this->listTeams() as $team) {
 			(new \core\LongTaskProgress())
-				->throttle('onTriggerUpdateUserList', array('team' => $team), array('interval' => 30));
+				->throttle('onTriggerUpdateUserList', array('team' => $team), array('interval' => 10));
 		}
 	}
 
 	protected function onDeleteUser($params) {
 		foreach ($this->listTeams() as $team) {
 			(new \core\LongTaskProgress())
-				->throttle('onTriggerUpdateUserList', array('team' => $team), array('interval' => 30));
+				->throttle('onTriggerUpdateUserList', array('team' => $team), array('interval' => 10));
 		}
 	}
 

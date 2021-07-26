@@ -55,7 +55,7 @@ class ListItemCache {
 			$projects = json_decode(json_encode($projects));
 		}
 
-		(new \core\LongTaskProgress())->throttle('onTriggerUpdateProjectList', array('filter' => $filter), array('interval' => 30));
+		(new \core\LongTaskProgress())->throttle('onTriggerUpdateProjectList', array('filter' => $filter), array('interval' => 10));
 
 		return $projects;
 
@@ -131,7 +131,7 @@ class ListItemCache {
 		Broadcast('cacheusers', 'trigger', array(
 			'event'=>'onTriggerUpdateUserList'
 		));
-		(new \core\LongTaskProgress())->throttle('onTriggerUpdateUserList', array(), array('interval' => 30));
+		(new \core\LongTaskProgress())->throttle('onTriggerUpdateUserList', array(), array('interval' => 10));
 
 		return $users;
 
@@ -182,7 +182,7 @@ class ListItemCache {
 			HtmlDocument()->setCachedPage($cacheName, json_encode($devices));
 		}
 		//TODO: throttle this
-		(new \core\LongTaskProgress())->throttle('onTriggerUpdateDevicesList', array(), array('interval' => 30));
+		(new \core\LongTaskProgress())->throttle('onTriggerUpdateDevicesList', array(), array('interval' => 10));
 
 		return $devices;
 	}
