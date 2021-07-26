@@ -73,7 +73,7 @@ var LayerGroupLegend = (function() {
             anchor: UIPopover.AnchorTo(["right"])
         });
 
-        MakeMouseover(p);
+        LayerGroupLegend.MakeMouseover(p);
 
         legend.addEvent("toggle", function() {
             p.hide();
