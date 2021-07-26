@@ -814,6 +814,8 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	protected function usersOnline() {
 
+
+
 		return array(
 			'results' => GetClient()->isOnlineGroup(array_map(function ($user) {
 				return $user->id;
@@ -829,6 +831,13 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 			foreach ($user->devices as $deviceId) {
 				$deviceIds[] = $deviceId;
 			}
+		}
+
+		if(empty($deviceIds)){
+			return array(
+				'extra'=>array(),
+				'results'=>array()
+			);
 		}
 
 		$devicesOnlineStatus = GetPlugin('Apps')->isOnlineGroup($deviceIds);
