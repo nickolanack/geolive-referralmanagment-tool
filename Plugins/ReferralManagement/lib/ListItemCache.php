@@ -129,7 +129,7 @@ class ListItemCache {
 
 
 		Broadcast('cacheusers', 'trigger', array(
-			'event'=>'onTriggerUpdateUserList';
+			'event'=>'onTriggerUpdateUserList'
 		));
 		(new \core\LongTaskProgress())->throttle('onTriggerUpdateUserList', array(), array('interval' => 30));
 
