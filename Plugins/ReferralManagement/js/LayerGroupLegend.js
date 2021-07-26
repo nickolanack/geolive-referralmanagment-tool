@@ -54,7 +54,7 @@ var LayerGroupLegend = (function() {
 
 
 
-    LayerGroupLegend.FormatLegend = function(group, mouseover, legend) {
+    LayerGroupLegend.FormatLegend = function(group, legend) {
 
 
 
