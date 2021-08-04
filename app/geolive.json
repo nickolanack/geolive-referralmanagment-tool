@@ -20950,5 +20950,105 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.398": {
+        "name": "Generic Form",
+        "instance": "WizardBuilder",
+        "parameters": {
+            "widgetTitle": "Simple Marker Form",
+            "target": "forTheMap",
+            "templateName": "userLayerMarker",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "formatStepModulesScript": "",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": 47,
+                    "y": 435
+                },
+                "children": [
+                    "Simple Marker Form.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "Simple Marker Form.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 301,
+                            "y": 132
+                        },
+                        "children": [
+                            "Simple Marker Form.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 261,
+                                    "y": 298
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "Simple Marker Form.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "Simple Marker Form.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "WizardDescriptionField",
+                                            "config": {
+                                                "label": "Description",
+                                                "message": "add a description",
+                                                "lines": 3,
+                                                "mandatory": false,
+                                                "showAudios": true,
+                                                "showImages": true,
+                                                "showDocuments": true,
+                                                "showVideos": true,
+                                                "className": "",
+                                                "maxChars": 0,
+                                                "showExpandInput": true,
+                                                "toolbarPosition": "bottom",
+                                                "textFormatScript": "",
+                                                "mediaIconTint": "rgb(100, 149, 237)",
+                                                "onRenderModuleFn": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "Simple Marker Form.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "readAccess": "public"
+        }
     }
 }
