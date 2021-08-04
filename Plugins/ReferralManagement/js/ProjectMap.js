@@ -26,6 +26,19 @@ var ProjectMap=(function(){
 		formatMarkerTile:function(dragTile, index){
 
 			this._map=dragTile.getMap();
+			this._map.setItemEditFn(function(mapitem, options){
+
+
+
+				options.formName="userLayerMarker";
+				options.formOptions={
+                 	template:"form"
+             	};
+
+				this._map.defaultEditItemFn.call(this._map, mapitem, options);
+				
+			});
+
 		}
 
 	});
