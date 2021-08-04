@@ -29,7 +29,9 @@ var ProjectMap=(function(){
 			var me=this;
 			this._map.setItemEditFn(function(mapitem, options){
 
-
+				if(parseInt(mapitem.getId())==-1&&mapitem.getLayer().getId().indexOf("-")>0){
+					return;
+				}
 
 				options.formName="userLayerMarker";
 				options.formOptions={
@@ -39,6 +41,9 @@ var ProjectMap=(function(){
 				me._map.defaultEditItemFn.call(me._map, mapitem, options);
 
 			});
+
+
+			
 
 		}
 
