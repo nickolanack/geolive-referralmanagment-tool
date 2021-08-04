@@ -209,8 +209,8 @@ var LayerGroupLegend = (function() {
             var modalFormViewController =  new PushBoxModuleViewer(map, {});
             var newItem= new MockDataTypeItem({
                 mutable:true,
-                showIcon:true,
-                showLabel:false,
+                showIcons:true,
+                showLabels:false,
                 description:"",
             });
             var wizard = wizardTemplate(newItem, {});
