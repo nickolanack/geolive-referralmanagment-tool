@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "\nreturn SpatialProject.InitMainMap();",
+        "script": "\nreturn SpatialProject.InitMainMap(application);",
         "description": "Info about my custom script"
     }
 }
