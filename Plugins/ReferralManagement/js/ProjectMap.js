@@ -26,6 +26,7 @@ var ProjectMap=(function(){
 		formatMarkerTile:function(dragTile, index){
 
 			this._map=dragTile.getMap();
+			var me=this;
 			this._map.setItemEditFn(function(mapitem, options){
 
 
@@ -35,8 +36,8 @@ var ProjectMap=(function(){
                  	template:"form"
              	};
 
-				this._map.defaultEditItemFn.call(this._map, mapitem, options);
-				
+				me._map.defaultEditItemFn.call(me._map, mapitem, options);
+
 			});
 
 		}
