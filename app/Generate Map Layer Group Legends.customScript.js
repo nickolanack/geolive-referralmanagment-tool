@@ -18,7 +18,14 @@
                 );
             
             ',
+            'editLayerScript'=>'
+                
+                return LayerGroupLegend.EditLayerScript(
+                    "'.$groupName.'", 
+                    defaultBehaviorFn
+                );    
             
+            ',
             
             'shouldShowLayerScript'=>'
             
