@@ -22,7 +22,6 @@
                 
                 return LayerGroupLegend.EditLayerScript(
                     "'.$groupName.'", 
-                    legend,
                     defaultBehaviorFn
                 );    
             
