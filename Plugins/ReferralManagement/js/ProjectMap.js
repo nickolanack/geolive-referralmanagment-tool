@@ -4,7 +4,7 @@ var ProjectMap=(function(){
 
 		initalize:function(map){
 
-
+			this._map=map;
 
 		},
 
@@ -14,7 +14,7 @@ var ProjectMap=(function(){
 
 		dropMarker:function(latlng, icon, defaultFn){
 
-
+			//MapFactory.LatLngToMarkerWizard(map, latlng, {image:iconUrl});
 
 		},
 		formatMarkerTile:function(dragTile, index){
