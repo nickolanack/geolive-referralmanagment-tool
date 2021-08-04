@@ -2,7 +2,7 @@ var ProjectMap=(function(){
 
 	var ProjectMap=new Class({
 
-		initalize:function(map){
+		initialize:function(map){
 
 			this._map=map;
 
