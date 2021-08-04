@@ -8,6 +8,10 @@ var ProjectMap=(function(){
 
 		},
 
+		setProject:function(project){
+			this._project=project;
+		}
+
 		dropMarker:function(latlng, icon, defaultFn){
 
 
