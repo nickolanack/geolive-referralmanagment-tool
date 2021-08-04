@@ -14,7 +14,7 @@ var ProjectMap=(function(){
 
 		dropMarker:function(latlng, icon, defaultFn){
 
-			MapFactory.LatLngToMarkerWizard(this._map, latlng, {image:icon});
+			MapFactory.LatLngToMarkerWizard(this._map, latlng, {image:icon, wizardName:"userLayerMarker"});
 
 		},
 		formatMarkerTile:function(dragTile, index){
