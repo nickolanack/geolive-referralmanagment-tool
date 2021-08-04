@@ -190,6 +190,17 @@ var LayerGroupLegend = (function() {
     }
 
 
+    LayerGroupLegend.EditLayerScript=function(name, defaultBehaviorFn){
+        if(name=="project"){
+
+        }
+
+        if(name=="project"){
+
+        }
+    };
+                
+
     LayerGroupLegend.ShouldShowLayerScript = function(group, lid, layer) {
 
         if (LayerGroupItemList.getLayerGroupItems(group).map(function(l) {
