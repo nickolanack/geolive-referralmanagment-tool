@@ -21056,7 +21056,7 @@
         "instance": "MultipointTool",
         "parameters": {
             "widgetTitle": "",
-            "target": "none",
+            "target": "forTheMap",
             "controlColor": "rgb(48,84,107)",
             "tileIcon": [],
             "strokeColor": "rgb(0,0,0)",
@@ -21076,7 +21076,9 @@
             "getInitialFeatureScript": "",
             "onFeatureStartScript": "",
             "onFeatureChangeScript": "",
-            "onFeatureEndScript": ""
+            "onFeatureEndScript": "",
+            "readAccess": "public",
+            "position": ""
         }
     }
 }
