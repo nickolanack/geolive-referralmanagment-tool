@@ -12,6 +12,10 @@ var ProjectMap=(function(){
 
 
 
+		},
+		formatMarkerTile:function(dragTile, index){
+
+			console.log('format marker tile');
 		}
 
 	});
