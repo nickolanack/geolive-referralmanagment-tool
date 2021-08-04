@@ -38,12 +38,16 @@ var ProjectMap=(function(){
                  	template:"form"
              	};
 
-				me._map.defaultEditItemFn.call(me._map, mapitem, options);
+				return me._map.defaultEditItemFn.call(me._map, mapitem, options);
 
 			});
 
 
 			
+
+
+
+
 
 		}
 
