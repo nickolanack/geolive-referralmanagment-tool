@@ -1,22 +1,20 @@
 {
-    "type": "FormTextField",
+    "type": "WizardDescriptionField",
     "config": {
-        "className": "",
-        "label": "Marker Icon",
-        "placeholder": "",
-        "lines": 1,
-        "maxChars": 0,
+        "label": "Description",
+        "message": "add a description",
+        "lines": 3,
         "mandatory": false,
-        "multiEntry": false,
-        "muliTemplate": "lines",
-        "multiMessage": "add another value",
-        "formatter": "none",
-        "beforeRenderModuleScript": "",
-        "onRenderTextFieldScript": "",
-        "formatValueScript": "",
-        "getValueScript": " return \"Hello World\"; ",
-        "updateValueScript": " object.value=value ",
-        "submitValueScript": "",
-        "validateValueScript": " return defaultValidationFn() "
+        "showAudios": true,
+        "showImages": true,
+        "showDocuments": true,
+        "showVideos": true,
+        "className": "",
+        "maxChars": 0,
+        "showExpandInput": true,
+        "toolbarPosition": "bottom",
+        "textFormatScript": "",
+        "mediaIconTint": "rgb(100, 149, 237)",
+        "onRenderModuleFn": ""
     }
 }
