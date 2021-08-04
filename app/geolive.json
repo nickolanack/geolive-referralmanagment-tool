@@ -20969,8 +20969,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -18,
-                    "y": 171
+                    "x": 47,
+                    "y": 435
                 },
                 "children": [
                     "Simple Marker Form.metadata.children.0.json",
@@ -20981,11 +20981,18 @@
                             "Simple Marker Form.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 128,
-                            "y": 260
+                            "x": 301,
+                            "y": 132
                         },
                         "children": [
-                            "Simple Marker Form.metadata.children.1.children.0.json"
+                            "Simple Marker Form.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 261,
+                                    "y": 298
+                                }
+                            }
                         ],
                         "builderMetadata": {
                             "positions": {
@@ -21013,7 +21020,8 @@
                                                 "showExpandInput": true,
                                                 "toolbarPosition": "bottom",
                                                 "textFormatScript": "",
-                                                "mediaIconTint": "rgb(100, 149, 237)"
+                                                "mediaIconTint": "rgb(100, 149, 237)",
+                                                "onRenderModuleFn": ""
                                             }
                                         }
                                     ]
@@ -21032,7 +21040,10 @@
                                 "content",
                                 "footer",
                                 "menu"
-                            ]
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
                         }
                     }
                 ]
