@@ -4,7 +4,7 @@ var ProjectMap=(function(){
 
 		initialize:function(map){
 
-			this._map=map;
+			
 
 		},
 
@@ -14,12 +14,12 @@ var ProjectMap=(function(){
 
 		dropMarker:function(latlng, icon, defaultFn){
 
-			//MapFactory.LatLngToMarkerWizard(map, latlng, {image:iconUrl});
+			MapFactory.LatLngToMarkerWizard(this._map, latlng, {image:iconUrl});
 
 		},
 		formatMarkerTile:function(dragTile, index){
 
-			console.log('format marker tile');
+			this._map=dragTile.getMap();
 		}
 
 	});
