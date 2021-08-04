@@ -190,14 +190,31 @@ var LayerGroupLegend = (function() {
     }
 
 
-    LayerGroupLegend.EditLayerScript=function(name, defaultBehaviorFn){
+    LayerGroupLegend.EditLayerScript=function(map, name, defaultBehaviorFn){
+        
+
+
         if(name=="project"){
 
+            var formName="projectLayerSettings";
+
+            var wizardTemplate = map.getDisplayController().getWizardTemplate(formName);
+            if ((typeof wizardTemplate) != 'function') {
+
+                if(window.console&&console.warn){
+                    console.warn('Expected named wizardTemplate: '+formName+', to exist');
+                }
+
+            }
+            var modalFormViewController =  new PushBoxModuleViewer(map, {});
+            var newItem= new MockEventDataTypeItem({
+                
+            });
+            var wizard = wizardTemplate(newItem, {});
+            wizard.buildAndShow(modalFormViewController, {template:"form"}); 
         }
 
-        if(name=="project"){
-
-        }
+       
     };
                 
 
