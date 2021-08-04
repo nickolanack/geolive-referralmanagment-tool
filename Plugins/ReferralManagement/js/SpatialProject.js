@@ -119,7 +119,7 @@ var SpatialProject = (function() {
 
 	};
 
-	SpatialProject.InitMainMap = function() {
+	SpatialProject.InitMainMap = function(map) {
 
 		map.getNamedValue('ProjectMap', function(projectMap){
 			projectMap.setProject(null);
@@ -151,7 +151,7 @@ var SpatialProject = (function() {
 	}
 
 
-	SpatialProject.InitCurrentProject = function(item) {
+	SpatialProject.InitCurrentProject = function(map, item) {
 
 
 		map.getNamedValue('ProjectMap', function(projectMap){
