@@ -13,7 +13,6 @@
             
                 LayerGroupLegend.FormatLegend(
                     "'.$groupName.'", 
-                    '.json_encode(GetPlugin("ReferralManagement")->getMouseoverForGroup($groupName)).', 
                     legend
                    
                 );

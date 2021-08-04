@@ -311,7 +311,7 @@
         "parameters": {
             "enableEmailNotifications": false,
             "enableProjectListCaching": true,
-            "enableUserListCaching": false,
+            "enableUserListCaching": true,
             "queueEmailDelay": "5",
             "exportSecret": "XXXX-XXXX",
             "customFormCss": ""
@@ -428,7 +428,8 @@
                 "layerMap": {
                     "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/LGb_[ImAgE]_FkE_[G]_aQl.png": null
                 },
-                "renderSettings": []
+                "renderSettings": [],
+                "layerMapMetadata": []
             },
             "groupIcon": [],
             "showToolTips": true,
@@ -437,7 +438,7 @@
             "formatTipScript": "",
             "guestLoginDrag": true,
             "onDragEndScript": "widget.TileButtons.35.onDragEndScript.js",
-            "onDisplayTileScript": "",
+            "onDisplayTileScript": "widget.TileButtons.35.onDisplayTileScript.js",
             "onProfileClickScript": "",
             "sections": [
                 "fullscreen",
