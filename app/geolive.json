@@ -21099,8 +21099,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -18,
-                    "y": 171
+                    "x": 8,
+                    "y": 181
                 },
                 "children": [
                     "projectLayerSettings.metadata.children.0.json",
@@ -21111,16 +21111,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 158,
-                            "y": 290
+                            "x": 168,
+                            "y": 300
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 118,
-                                    "y": 456
+                                    "x": 128,
+                                    "y": 466
                                 }
                             }
                         ],
@@ -21133,7 +21133,33 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                        "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "FormBooleanField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Show Labels",
+                                                "mandatory": false,
+                                                "getValueScript": "return item.getShowLabels();",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": "",
+                                                "formatElementScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "FormBooleanField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Show Icons",
+                                                "mandatory": false,
+                                                "getValueScript": "return item.getShowIcons();",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": "",
+                                                "formatElementScript": ""
+                                            }
+                                        }
                                     ]
                                 },
                                 "footer": {
