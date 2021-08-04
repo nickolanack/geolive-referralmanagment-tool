@@ -438,7 +438,7 @@
             "formatTipScript": "",
             "guestLoginDrag": true,
             "onDragEndScript": "widget.TileButtons.35.onDragEndScript.js",
-            "onDisplayTileScript": "console.log(\"Hello world\");",
+            "onDisplayTileScript": "widget.TileButtons.35.onDisplayTileScript.js",
             "onProfileClickScript": "",
             "sections": [
                 "fullscreen",
