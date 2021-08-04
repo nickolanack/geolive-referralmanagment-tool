@@ -21050,5 +21050,35 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.399": {
+        "name": "Multipoint Tool",
+        "instance": "MultipointTool",
+        "parameters": {
+            "widgetTitle": "",
+            "target": "forTheMap",
+            "controlColor": "rgb(48,84,107)",
+            "tileIcon": [],
+            "strokeColor": "rgb(0,0,0)",
+            "startColor": "rgb(77, 144, 254)",
+            "vertexColor": "rgb(255,255,255)",
+            "endColor": "rgb(77, 144, 254)",
+            "strokeWidth": "1.5",
+            "showOpenClosePath": true,
+            "showSavePath": false,
+            "autoClosePath": false,
+            "startInDrawingMode": false,
+            "showTile": true,
+            "formatPopover": "",
+            "formatDistance": "",
+            "formatHeading": "",
+            "onRenderTileScript": "",
+            "getInitialFeatureScript": "",
+            "onFeatureStartScript": "",
+            "onFeatureChangeScript": "",
+            "onFeatureEndScript": "",
+            "readAccess": "public",
+            "position": ""
+        }
     }
 }
