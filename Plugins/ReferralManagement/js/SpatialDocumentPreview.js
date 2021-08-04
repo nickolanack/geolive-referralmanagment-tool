@@ -45,7 +45,7 @@ var SpatialDocumentPreview = (function() {
 			var createLayer=function(layerOpts, i){
 
 
-				var notification=NotificationBubble.Make("Loading: "+layerOpts.name, null, {autoClose:false});
+				var notification=NotificationBubble.Make('', "Loading: "+layerOpts.name, {autoClose:false});
 
 				var layer = ProjectLayer.MakeProjectLayer(map, layerOpts);
 				layer.addEvent('load:once', function() {
@@ -56,7 +56,7 @@ var SpatialDocumentPreview = (function() {
 						extendBounds(b);
 
 
-						notification.fadeOut();
+						notification.fadeout();
 
 						new UIMapSubTileButton(me._mapTile, {
 							containerClassName: 'spatial-file-tile',
