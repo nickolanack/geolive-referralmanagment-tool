@@ -21,6 +21,7 @@
             'editLayerScript'=>'
                 
                 return LayerGroupLegend.EditLayerScript(
+                    map,
                     "'.$groupName.'", 
                     defaultBehaviorFn
                 );    
