@@ -29,7 +29,7 @@ var ProjectMap=(function(){
 			var me=this;
 			this._map.setItemEditFn(function(mapitem, options){
 
-				if(parseInt(mapitem.getId())==-1&&mapitem.getLayer().getId().indexOf("-")>0){
+				if(parseInt(mapitem.getId())==-1&&(mapitem.getLayer().getId()+"").indexOf("-")>0){
 					return;
 				}
 
