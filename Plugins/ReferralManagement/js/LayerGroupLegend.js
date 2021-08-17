@@ -198,23 +198,34 @@ var LayerGroupLegend = (function() {
 
             var formName="projectLayerSettings";
 
-            var wizardTemplate = map.getDisplayController().getWizardTemplate(formName);
-            if ((typeof wizardTemplate) != 'function') {
+            var projectIdString=layerObject.id.split("-");
+            var layerIndex=parseInt(projectIdString.pop());
+            var projectId=parseInt(projectIdString.pop());
 
-                if(window.console&&console.warn){
-                    console.warn('Expected named wizardTemplate: '+formName+', to exist');
+            ProjectTeam.CurrentTeam().getProject(function(project)){
+                var wizardTemplate = map.getDisplayController().getWizardTemplate(formName);
+                if ((typeof wizardTemplate) != 'function') {
+
+                    if(window.console&&console.warn){
+                        console.warn('Expected named wizardTemplate: '+formName+', to exist');
+                    }
+
                 }
+                var modalFormViewController =  new PushBoxModuleViewer(map, {});
+                var newItem= new MockDataTypeItem({
+                    mutable:true,
+                    showIcons:true,
+                    showLabels:false,
+                    description:"",
+                });
+                var wizard = wizardTemplate(newItem, {});
+                wizard.buildAndShow(modalFormViewController, {template:"form"}); 
+
 
             }
-            var modalFormViewController =  new PushBoxModuleViewer(map, {});
-            var newItem= new MockDataTypeItem({
-                mutable:true,
-                showIcons:true,
-                showLabels:false,
-                description:"",
-            });
-            var wizard = wizardTemplate(newItem, {});
-            wizard.buildAndShow(modalFormViewController, {template:"form"}); 
+
+
+            
         }
 
        
