@@ -190,7 +190,7 @@ var LayerGroupLegend = (function() {
     }
 
 
-    LayerGroupLegend.EditLayerScript=function(map, name, defaultBehaviorFn){
+    LayerGroupLegend.EditLayerScript=function(map, name, layerObject, defaultBehaviorFn){
         
 
 
