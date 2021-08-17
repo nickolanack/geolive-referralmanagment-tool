@@ -2705,10 +2705,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "module-wizard-step-one-text.contentTemplate.html",
             "widgetTitle": "module.wizard-step-one.text",
-            "comments": "",
             "target": "module.wizard-step-one.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "module-wizard-step-one-text.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -2716,10 +2718,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "module-wizard-step-two-text.contentTemplate.html",
             "widgetTitle": "module.wizard-step-two.text",
-            "comments": "",
             "target": "module.wizard-step-two.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "module-wizard-step-two-text.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -2727,10 +2731,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "module-wizard-step-three-text.contentTemplate.html",
             "widgetTitle": "module.wizard-step-three.text",
-            "comments": "",
             "target": "module.wizard-step-three.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "module-wizard-step-three-text.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -3004,10 +3010,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "module-proposals-list-text.contentTemplate.html",
             "widgetTitle": "module.proposals-list.text",
-            "comments": "",
             "target": "module.proposals-list.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "module-proposals-list-text.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -3793,8 +3801,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "module--text.contentTemplate.html",
-            "widgetTitle": "module..text"
+            "widgetTitle": "module..text",
+            "target": "",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "module--text.contentTemplate.html"
         }
     },
     "widget.147": {
@@ -10121,10 +10133,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "proposal-report.contentTemplate.html",
             "widgetTitle": "proposal.report",
-            "comments": "",
             "target": "proposal.report",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "proposal-report.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -13748,19 +13762,24 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "activate-proposal-email-subject.contentTemplate.html",
             "widgetTitle": "activate.proposal.email.subject",
-            "target": "activate.proposal.email.subject"
+            "target": "activate.proposal.email.subject",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "activate-proposal-email-subject.contentTemplate.html"
         }
     },
     "widget.245": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "activate-proposal-email-body.contentTemplate.html",
             "widgetTitle": "activate.proposal.email.body",
             "target": "activate.proposal.email.body",
             "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "activate-proposal-email-body.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -14499,10 +14518,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "email-onRemoveTeamMemberFromTask-subject.contentTemplate.html",
             "widgetTitle": "email.onRemoveTeamMemberFromTask.subject",
             "target": "email.onRemoveTeamMemberFromTask.subject",
             "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "email-onRemoveTeamMemberFromTask-subject.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -14510,19 +14531,24 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "Message Content",
             "widgetTitle": "email.onRemoveTeamMemberFromTask.content",
-            "target": "email.onRemoveTeamMemberFromTask.content"
+            "target": "email.onRemoveTeamMemberFromTask.content",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "Message Content"
         }
     },
     "widget.260": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "email-onAddTeamMemberToTask-subject.contentTemplate.html",
             "widgetTitle": "email.onAddTeamMemberToTask.subject",
             "target": "email.onAddTeamMemberToTask.subject",
             "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "email-onAddTeamMemberToTask-subject.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -14530,19 +14556,24 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "Message Content",
             "widgetTitle": "email.onAddTeamMemberToTask.content",
-            "target": "email.onAddTeamMemberToTask.content"
+            "target": "email.onAddTeamMemberToTask.content",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "Message Content"
         }
     },
     "widget.262": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "email-onRemoveTeamMemberFromProject-subject.contentTemplate.html",
             "widgetTitle": "email.onRemoveTeamMemberFromProject.subject",
             "target": "email.onRemoveTeamMemberFromProject.subject",
             "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "email-onRemoveTeamMemberFromProject-subject.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -14550,10 +14581,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "email-onRemoveTeamMemberFromProject-content.contentTemplate.html",
             "widgetTitle": "email.onRemoveTeamMemberFromProject.content",
             "target": "email.onRemoveTeamMemberFromProject.content",
             "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "email-onRemoveTeamMemberFromProject-content.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -14561,10 +14594,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "email-onAddTeamMemberToProject-subject.contentTemplate.html",
             "widgetTitle": "email.onAddTeamMemberToProject.subject",
             "target": "email.onAddTeamMemberToProject.subject",
             "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "email-onAddTeamMemberToProject-subject.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -14572,10 +14607,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "email-onAddTeamMemberToProject-content.contentTemplate.html",
             "widgetTitle": "email.onAddTeamMemberToProject.content",
             "target": "email.onAddTeamMemberToProject.content",
             "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "email-onAddTeamMemberToProject-content.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -14583,10 +14620,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "email-onProjectUpdate-subject.contentTemplate.html",
             "widgetTitle": "email.onProjectUpdate.subject",
             "target": "email.onProjectUpdate.subject",
             "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "email-onProjectUpdate-subject.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -14594,10 +14633,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "email-onProjectUpdate-content.contentTemplate.html",
             "widgetTitle": "email.onProjectUpdate.content",
             "target": "email.onProjectUpdate.content",
             "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "email-onProjectUpdate-content.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -14683,10 +14724,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "email-onTaskUpdate-subject.contentTemplate.html",
             "widgetTitle": "email.onTaskUpdate.subject",
             "target": "email.onTaskUpdate.subject",
             "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "email-onTaskUpdate-subject.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -14694,10 +14737,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "email-onTaskUpdate-content.contentTemplate.html",
             "widgetTitle": "email.onTaskUpdate.content",
             "target": "email.onTaskUpdate.content",
             "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "email-onTaskUpdate-content.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -15364,10 +15409,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "email-MagicLoginLink-subject.contentTemplate.html",
             "widgetTitle": "email.MagicLoginLink.subject",
             "target": "email.MagicLoginLink.subject",
             "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "email-MagicLoginLink-subject.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -15375,10 +15422,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "email-MagicLoginLink-content.contentTemplate.html",
             "widgetTitle": "email.MagicLoginLink.content",
             "target": "email.MagicLoginLink.content",
             "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "email-MagicLoginLink-content.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -15430,10 +15479,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "site-error-html.contentTemplate.html",
             "widgetTitle": "site.error.html",
             "target": "site.error.html",
             "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "site-error-html.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -15441,108 +15492,144 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "event: update.task",
             "widgetTitle": "activityfeed.update.task.text",
-            "target": "activityfeed.update.task.text"
+            "target": "activityfeed.update.task.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "event: update.task"
         }
     },
     "widget.285": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "event: create.proposal",
             "widgetTitle": "activityfeed.create.proposal.text",
-            "target": "activityfeed.create.proposal.text"
+            "target": "activityfeed.create.proposal.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "event: create.proposal"
         }
     },
     "widget.286": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "event: update.proposal",
             "widgetTitle": "activityfeed.update.proposal.text",
-            "target": "activityfeed.update.proposal.text"
+            "target": "activityfeed.update.proposal.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "event: update.proposal"
         }
     },
     "widget.287": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "event: create.task",
             "widgetTitle": "activityfeed.create.task.text",
-            "target": "activityfeed.create.task.text"
+            "target": "activityfeed.create.task.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "event: create.task"
         }
     },
     "widget.288": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "event: delete.task",
             "widgetTitle": "activityfeed.delete.task.text",
-            "target": "activityfeed.delete.task.text"
+            "target": "activityfeed.delete.task.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "event: delete.task"
         }
     },
     "widget.289": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "event: update.proposal.status",
             "widgetTitle": "activityfeed.update.proposal.status.text",
-            "target": "activityfeed.update.proposal.status.text"
+            "target": "activityfeed.update.proposal.status.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "event: update.proposal.status"
         }
     },
     "widget.290": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "event: update.task.priority",
             "widgetTitle": "activityfeed.update.task.priority.text",
-            "target": "activityfeed.update.task.priority.text"
+            "target": "activityfeed.update.task.priority.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "event: update.task.priority"
         }
     },
     "widget.291": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "event: update.task.star",
             "widgetTitle": "activityfeed.update.task.star.text",
-            "target": "activityfeed.update.task.star.text"
+            "target": "activityfeed.update.task.star.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "event: update.task.star"
         }
     },
     "widget.292": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "event: update.task.date",
             "widgetTitle": "activityfeed.update.task.date.text",
-            "target": "activityfeed.update.task.date.text"
+            "target": "activityfeed.update.task.date.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "event: update.task.date"
         }
     },
     "widget.293": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "event: add.task.attachements",
             "widgetTitle": "activityfeed.add.task.attachements.text",
-            "target": "activityfeed.add.task.attachements.text"
+            "target": "activityfeed.add.task.attachements.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "event: add.task.attachements"
         }
     },
     "widget.294": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "activityfeed-remove-task-attachements-text.contentTemplate.html",
             "widgetTitle": "activityfeed.remove.task.attachements.text",
-            "target": "activityfeed.remove.task.attachements.text"
+            "target": "activityfeed.remove.task.attachements.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "activityfeed-remove-task-attachements-text.contentTemplate.html"
         }
     },
     "widget.295": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "activityfeed-add-proposal-description-text.contentTemplate.html",
             "widgetTitle": "activityfeed.add.proposal.description.text",
-            "target": "activityfeed.add.proposal.description.text"
+            "target": "activityfeed.add.proposal.description.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "activityfeed-add-proposal-description-text.contentTemplate.html"
         }
     },
     "widget.296": {
@@ -15566,63 +15653,84 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "event: update.user.role",
             "widgetTitle": "activityfeed.update.user.role.text",
-            "target": "activityfeed.update.user.role.text"
+            "target": "activityfeed.update.user.role.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "event: update.user.role"
         }
     },
     "widget.298": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "event: create.default.tasks",
             "widgetTitle": "activityfeed.create.default.tasks.text",
-            "target": "activityfeed.create.default.tasks.text"
+            "target": "activityfeed.create.default.tasks.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "event: create.default.tasks"
         }
     },
     "widget.299": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "activityfeed-add-proposal-projectLetters-text.contentTemplate.html",
             "widgetTitle": "activityfeed.add.proposal.projectLetters.text",
-            "target": "activityfeed.add.proposal.projectLetters.text"
+            "target": "activityfeed.add.proposal.projectLetters.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "activityfeed-add-proposal-projectLetters-text.contentTemplate.html"
         }
     },
     "widget.300": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "activityfeed-remove-proposal-projectLetters-text.contentTemplate.html",
             "widgetTitle": "activityfeed.remove.proposal.projectLetters.text",
-            "target": "activityfeed.remove.proposal.projectLetters.text"
+            "target": "activityfeed.remove.proposal.projectLetters.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "activityfeed-remove-proposal-projectLetters-text.contentTemplate.html"
         }
     },
     "widget.301": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "activityfeed-remove-proposal-description-text.contentTemplate.html",
             "widgetTitle": "activityfeed.remove.proposal.description.text",
-            "target": "activityfeed.remove.proposal.description.text"
+            "target": "activityfeed.remove.proposal.description.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "activityfeed-remove-proposal-description-text.contentTemplate.html"
         }
     },
     "widget.302": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "activityfeed-add-proposal-spatialFeatures-text.contentTemplate.html",
             "widgetTitle": "activityfeed.add.proposal.spatialFeatures.text",
-            "target": "activityfeed.add.proposal.spatialFeatures.text"
+            "target": "activityfeed.add.proposal.spatialFeatures.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "activityfeed-add-proposal-spatialFeatures-text.contentTemplate.html"
         }
     },
     "widget.303": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "activityfeed-remove-proposal-spatialFeatures-text.contentTemplate.html",
             "widgetTitle": "activityfeed.remove.proposal.spatialFeatures.text",
-            "target": "activityfeed.remove.proposal.spatialFeatures.text"
+            "target": "activityfeed.remove.proposal.spatialFeatures.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "activityfeed-remove-proposal-spatialFeatures-text.contentTemplate.html"
         }
     },
     "widget.304": {
@@ -15762,10 +15870,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "email-VerifyEmailLink-subject.contentTemplate.html",
             "widgetTitle": "email.VerifyEmailLink.subject",
             "target": "email.VerifyEmailLink.subject",
             "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "email-VerifyEmailLink-subject.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -15773,10 +15883,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "email-VerifyEmailLink-content.contentTemplate.html",
             "widgetTitle": "email.VerifyEmailLink.content",
             "target": "email.VerifyEmailLink.content",
             "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "email-VerifyEmailLink-content.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -15784,10 +15896,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "email-DefaultMailerTemplate-subject.contentTemplate.html",
             "widgetTitle": "email.DefaultMailerTemplate.subject",
             "target": "email.DefaultMailerTemplate.subject",
             "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "email-DefaultMailerTemplate-subject.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -15875,18 +15989,24 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "event: remove.proposal.permits",
             "widgetTitle": "activityfeed.remove.proposal.permits.text",
-            "target": "activityfeed.remove.proposal.permits.text"
+            "target": "activityfeed.remove.proposal.permits.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "event: remove.proposal.permits"
         }
     },
     "widget.315": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "event: add.proposal.permits",
             "widgetTitle": "activityfeed.add.proposal.permits.text",
-            "target": "activityfeed.add.proposal.permits.text"
+            "target": "activityfeed.add.proposal.permits.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "event: add.proposal.permits"
         }
     },
     "widget.316": {
@@ -15963,18 +16083,24 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "event: add.proposal.agreements",
             "widgetTitle": "activityfeed.add.proposal.agreements.text",
-            "target": "activityfeed.add.proposal.agreements.text"
+            "target": "activityfeed.add.proposal.agreements.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "event: add.proposal.agreements"
         }
     },
     "widget.318": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "event: add.proposal.documents",
             "widgetTitle": "activityfeed.add.proposal.documents.text",
-            "target": "activityfeed.add.proposal.documents.text"
+            "target": "activityfeed.add.proposal.documents.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "event: add.proposal.documents"
         }
     },
     "widget.319": {
@@ -16152,27 +16278,36 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "event: guest.proposal",
             "widgetTitle": "activityfeed.guest.proposal.text",
-            "target": "activityfeed.guest.proposal.text"
+            "target": "activityfeed.guest.proposal.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "event: guest.proposal"
         }
     },
     "widget.325": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "event: delete.proposal",
             "widgetTitle": "activityfeed.delete.proposal.text",
-            "target": "activityfeed.delete.proposal.text"
+            "target": "activityfeed.delete.proposal.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "event: delete.proposal"
         }
     },
     "widget.326": {
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "activityfeed-update-proposal-permissions-text.contentTemplate.html",
             "widgetTitle": "activityfeed.update.proposal.permissions.text",
-            "target": "activityfeed.update.proposal.permissions.text"
+            "target": "activityfeed.update.proposal.permissions.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "activityfeed-update-proposal-permissions-text.contentTemplate.html"
         }
     },
     "widget.327": {
@@ -16199,9 +16334,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "activityfeed-remove-proposal-documents-text.contentTemplate.html",
             "widgetTitle": "activityfeed.remove.proposal.documents.text",
-            "target": "activityfeed.remove.proposal.documents.text"
+            "target": "activityfeed.remove.proposal.documents.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "activityfeed-remove-proposal-documents-text.contentTemplate.html"
         }
     },
     "widget.329": {
@@ -16528,9 +16666,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "module-html-communityDashboardPending-text.contentTemplate.html",
             "widgetTitle": "module.html-communityDashboardPending.text",
-            "target": "module.html-communityDashboardPending.text"
+            "target": "module.html-communityDashboardPending.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "module-html-communityDashboardPending-text.contentTemplate.html"
         }
     },
     "widget.335": {
@@ -17155,10 +17296,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "module-html-peopleUsersDetail-text.contentTemplate.html",
             "widgetTitle": "module.html-peopleUsersDetail.text",
             "target": "module.html-peopleUsersDetail.text",
             "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "module-html-peopleUsersDetail-text.contentTemplate.html",
             "readAccess": "public"
         }
     },
@@ -17166,10 +17309,12 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "module-html-communityUsersDetail-text.contentTemplate.html",
             "widgetTitle": "module.html-communityUsersDetail.text",
             "target": "module.html-communityUsersDetail.text",
             "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "contentTemplate": "module-html-communityUsersDetail-text.contentTemplate.html",
             "readAccess": "public"
         }
     },
