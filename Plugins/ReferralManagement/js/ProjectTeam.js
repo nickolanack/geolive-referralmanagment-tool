@@ -637,7 +637,7 @@ var ProjectTeam = (function() {
 
 			//return prop[0];
 
-			throw 'Proposal does not exist';
+			throw 'Proposal does not exist: '+id;
 		},
 		getProposal: function() {
 			var me = this;
