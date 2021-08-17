@@ -621,7 +621,7 @@ var ProjectTeam = (function() {
 			if (callback) {
 
 				me.runOnceOnLoad(function() {
-					callback(me.getProject());
+					callback(me.getProject(id));
 				});
 
 				return;
