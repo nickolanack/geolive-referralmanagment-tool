@@ -29,6 +29,17 @@ var ProjectLayer = (function() {
 				}
 			});
 
+			var icon='https://storage.googleapis.com/support-kms-prod/SNP_2752125_en_v0';
+			if(options.projectAttributes&&options.projectAttribute.metadata&&options.projectAttribute.metadata.description){
+				ItemAttachments.ParseHtmlUrls(options.projectAttribute.metadata.description).forEach(function(item){
+					if(item.type=="image"){
+						icon=item.url;
+					}
+				})
+			}
+
+
+
 			baseClass= new Class({
 				Extends: GeoliveLayer,
 				_initMarker: function(data, xml, markerDataArray, i) {
