@@ -11490,19 +11490,19 @@
             "metadata": {
                 "title": "proposalAttributes",
                 "_tableDiagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 326,
+                    "y": 230
                 },
                 "_diagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 326,
+                    "y": 230
                 },
                 "appliesTo": [
                     "proposal"
                 ],
                 "_typeDiagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 92,
+                    "y": 216
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -20054,19 +20054,19 @@
             "metadata": {
                 "title": "datasetAttributes",
                 "_tableDiagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 322,
+                    "y": 275
                 },
                 "_diagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 322,
+                    "y": 275
                 },
                 "appliesTo": [
                     "proposal"
                 ],
                 "_typeDiagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 100,
+                    "y": 300
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -21263,16 +21263,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 168,
-                            "y": 300
+                            "x": 178,
+                            "y": 310
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 128,
-                                    "y": 466
+                                    "x": 138,
+                                    "y": 486
                                 }
                             }
                         ],
@@ -21295,7 +21295,7 @@
                                                 "getValueScript": "return item.getShowLabels();",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "",
-                                                "validateValueScript": "",
+                                                "validateValueScript": "return true;",
                                                 "formatElementScript": ""
                                             }
                                         },
@@ -21308,7 +21308,7 @@
                                                 "getValueScript": "return item.getShowIcons();",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "",
-                                                "validateValueScript": "",
+                                                "validateValueScript": "return true;",
                                                 "formatElementScript": ""
                                             }
                                         }
