@@ -124,7 +124,7 @@ var Project = (function() {
 				}
 			});
 
-			(new DatasetLayerDataProposalQuery(me.getId(), data)).execute();
+			(new DatasetLayerDataProposalQuery(this.getId(), data)).execute();
 
 			//me.data.attributes.datasetLayerData = [data]
 			
