@@ -103,7 +103,31 @@ var Project = (function() {
 			return (this.data.attributes && (this.data.attributes.isDataset === true || this.data.attributes.isDataset === "true"));
 		},
 
-		setDatasetAttributes:function(data, itemIndex){
+		getDatasetAttributes(itemIndex){
+			itemIndex=parseInt(itemIndex)||0;
+
+
+			if(this.data&&this.data.attributes&&this.data.attributes.dataset&&this.data.attributes.dataset.metadata){
+				var metadata=this.data.attributes.dataset.metadata;
+				if(typeof metadata=='string'){
+					metadata=JSON.parse(metadata);
+					if(isArray_(metadata)){
+
+						metadata= metadata[metadata.length>itemIndex?itemIndex:0];
+						
+					}
+
+					if(isObject_(metadata)){
+						return { metadata:metadata };
+					}
+				}
+			}
+			
+
+			return {metadata:{}};
+
+		},
+		setDatasetMetadata:function(data, itemIndex){
 
 			itemIndex=parseInt(itemIndex)||0;
 
@@ -118,7 +142,7 @@ var Project = (function() {
 						itemType: "ReferralManagement.proposal",
 						table: "datasetAttributes",
 						fieldValues: {
-							"metadata": [data]
+							"metadata": data
 						}
 					});
 				}
@@ -126,8 +150,12 @@ var Project = (function() {
 
 			(new DatasetLayerDataProposalQuery(this.getId(), data)).execute();
 
-			//me.data.attributes.datasetLayerData = [data]
-			
+			try{
+				this.data.attributes.dataset.metadata = data
+			}catch(e){
+				console.error(e);
+			}
+
 
 
 		},

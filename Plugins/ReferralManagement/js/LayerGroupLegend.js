@@ -224,7 +224,7 @@ var LayerGroupLegend = (function() {
 
                     var data = wizard.getData();
                     console.log(data);
-                    project.setDatasetAttributes(data, layerIndex);
+                    project.setDatasetMetadata(data, layerIndex);
 
                 });
 

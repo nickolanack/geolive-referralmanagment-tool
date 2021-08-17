@@ -85,7 +85,8 @@ var SpatialProject = (function() {
 					return {
 						url: url,
 						id: "project-" + p.getId() + '-' + i + '',
-						name: p.getName()
+						name: p.getName(),
+						projectAttributes:p.getDatasetAttributes(i)
 					}
 				}));
 			});
@@ -107,7 +108,8 @@ var SpatialProject = (function() {
 				//project:item,
 				group: group,
 				id: "project-" + item.getId() + '-' + i + '',
-				name: item.getName()
+				name: item.getName(),
+				projectAttributes:item.getDatasetAttributes(i)
 			}, options);
 
 
