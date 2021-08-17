@@ -108,7 +108,27 @@ var Project = (function() {
 			itemIndex=parseInt(itemIndex)||0;
 
 
+			var DatasetLayerDataProposalQuery: new Class({
+				Extends: AjaxControlQuery,
+				initialize: function(id, data) {
+
+					this.parent(CoreAjaxUrlRoot, "save_attribute_value_list", {
+						plugin: "Attributes",
+						itemId: id,
+						itemType: "ReferralManagement.proposal",
+						table: "datasetAttributes",
+						fieldValues: {
+							"metadata": [data]
+						}
+					});
+				}
+			});
+
+			(new DatasetLayerDataProposalQuery(me.getId(), data).execute();
+
+			//me.data.attributes.datasetLayerData = [data]
 			
+
 
 		},
 
