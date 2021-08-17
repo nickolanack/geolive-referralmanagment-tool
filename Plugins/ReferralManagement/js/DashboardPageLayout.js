@@ -576,6 +576,12 @@ var DashboardPageLayout = (function() {
 					config: "enableMobile"
 				}
 
+			],
+			"Links"[
+				{
+					html: "Slack Chat",
+					config: "showSlack"
+				}
 			]
 
 		});
