@@ -23,6 +23,7 @@
                 return LayerGroupLegend.EditLayerScript(
                     map,
                     "'.$groupName.'", 
+                    layerObject,
                     defaultBehaviorFn
                 );    
             
