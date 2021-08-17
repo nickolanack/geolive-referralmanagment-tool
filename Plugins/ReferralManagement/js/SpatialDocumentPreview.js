@@ -45,7 +45,10 @@ var SpatialDocumentPreview = (function() {
 			var createLayer=function(layerOpts, i){
 
 
-				var notification=NotificationBubble.Make('', "Loading: "+layerOpts.name, {autoClose:false});
+				var notification=NotificationBubble.Make('', "Loading: "+layerOpts.name, {
+					autoClose:false,
+					from:'top-center'
+				});
 
 				var layer = ProjectLayer.MakeProjectLayer(map, layerOpts);
 				layer.addEvent('load:once', function() {
