@@ -47,7 +47,9 @@ var SpatialDocumentPreview = (function() {
 
 				var notification=NotificationBubble.Make('', "Loading: "+layerOpts.name, {
 					autoClose:false,
-					from:'top-center'
+					from:'top-center',
+					position:window.getSize().y/2
+
 				});
 
 				var layer = ProjectLayer.MakeProjectLayer(map, layerOpts);
