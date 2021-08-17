@@ -28,6 +28,11 @@ button:focus {outline:0;}
         filter:grayscale(0);
     }
     
+    
+.bubble.top-center-down {
+    right: unset;
+    left: calc( 50% - 100px);
+}
 
 button.primary-btn.nav-new-btn{
 
