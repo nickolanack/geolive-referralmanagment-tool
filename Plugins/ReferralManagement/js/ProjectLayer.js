@@ -41,7 +41,7 @@ var ProjectLayer = (function() {
 					var icon='https://storage.googleapis.com/support-kms-prod/SNP_2752125_en_v0';
 					if(me.options.projectAttributes&&me.options.projectAttributes.metadata&&me.options.projectAttributes.metadata.description){
 						JSTextUtilities.ParseImages(me.options.projectAttributes.metadata.description).forEach(function(item){
-							if(item.type=="image"){
+							if(item.type.indexOf("image")>=0){
 								icon=item.url;
 							}
 						})
