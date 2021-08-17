@@ -202,7 +202,7 @@ var LayerGroupLegend = (function() {
             var layerIndex=parseInt(projectIdString.pop());
             var projectId=parseInt(projectIdString.pop());
 
-            ProjectTeam.CurrentTeam().getProject(function(project)){
+            ProjectTeam.CurrentTeam().getProject(function(project){
                 var wizardTemplate = map.getDisplayController().getWizardTemplate(formName);
                 if ((typeof wizardTemplate) != 'function') {
 
@@ -222,7 +222,7 @@ var LayerGroupLegend = (function() {
                 wizard.buildAndShow(modalFormViewController, {template:"form"}); 
 
 
-            }
+            });
 
 
             
