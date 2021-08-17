@@ -45,7 +45,7 @@ var ProjectLayer = (function() {
 				_initMarker: function(data, xml, markerDataArray, i) {
 					var me = this;
 					GeoliveLayer.prototype._initMarker.call(this, Object.append(data, {
-						icon: 'https://storage.googleapis.com/support-kms-prod/SNP_2752125_en_v0',
+						icon: icon,
 						clickable: false
 					}), xml, markerDataArray, i);
 				},
