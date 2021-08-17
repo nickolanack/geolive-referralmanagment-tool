@@ -4781,6 +4781,12 @@
                     "limit": 1
                 },
                 {
+                    "type": "boolean",
+                    "label": "showSlack",
+                    "name": "showSlack",
+                    "default": true
+                },
+                {
                     "type": "text",
                     "label": "slackUrl",
                     "name": "slackUrl",
@@ -5225,7 +5231,8 @@
             "enableUserAjaxWrite": false,
             "authUserAjaxScript": "XXXX-XXXX",
             "applicationLogoAlt": [],
-            "showAltLogo": false
+            "showAltLogo": false,
+            "showSlack": true
         }
     },
     "widget.154": {
