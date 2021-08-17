@@ -103,6 +103,15 @@ var Project = (function() {
 			return (this.data.attributes && (this.data.attributes.isDataset === true || this.data.attributes.isDataset === "true"));
 		},
 
+		setDatasetAttributes:function(data, itemIndex){
+
+			itemIndex=parseInt(itemIndex)||0;
+
+
+			
+
+		},
+
 		isBaseMapLayer: function() {
 			if(!this.isDataset()){
 				return false;

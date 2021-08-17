@@ -220,7 +220,13 @@ var LayerGroupLegend = (function() {
                 });
                 var wizard = wizardTemplate(newItem, {});
                 wizard.buildAndShow(modalFormViewController, {template:"form"}); 
+                wizard.addEvent('complete', function() {
 
+                    var data = wizard.getData();
+                    console.log(data);
+                    project.setDatasetAttributes(data. layerIndex);
+
+                });
 
             });
 
