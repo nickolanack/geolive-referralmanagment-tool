@@ -108,7 +108,7 @@ var Project = (function() {
 			itemIndex=parseInt(itemIndex)||0;
 
 
-			var DatasetLayerDataProposalQuery: new Class({
+			var DatasetLayerDataProposalQuery= new Class({
 				Extends: AjaxControlQuery,
 				initialize: function(id, data) {
 
