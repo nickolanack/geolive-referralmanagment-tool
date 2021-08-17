@@ -577,7 +577,7 @@ var DashboardPageLayout = (function() {
 				}
 
 			],
-			"Links"[
+			"Links":[
 				{
 					html: "Slack Chat",
 					config: "showSlack"
