@@ -78,7 +78,7 @@ var Project = (function() {
 			if (me.data) {
 				change = true;
 			}
-
+			
 			me.data = data;
 
 

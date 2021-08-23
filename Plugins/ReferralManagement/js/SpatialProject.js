@@ -32,7 +32,8 @@ var SpatialProject = (function() {
 						group: project.getBaseMapLayerType(),
 
 						//project:item,
-						id: "project-" + project.getId() + '-' + i + ''
+						id: "project-" + project.getId() + '-' + i + '',
+						projectAttributes:project.getDatasetAttributes(i)
 					});
 
 					map.getLayerManager().addLayer(layer);
