@@ -69,7 +69,18 @@ var ProjectLayer = (function() {
 		}
 
 
+
+		if(options.projectAttributes&&options.projectAttributes.metadata&&options.projectAttributes.metadata.description){
+			JSTextUtilities.ParseImages(options.projectAttributes.metadata.description).forEach(function(item){
+				if(item.type.indexOf("image")>=0){
+					options.icon=item.url;
+				}
+			});
+		}
+
 		var layer = new baseClass(map, options);
+
+
 
 
 
