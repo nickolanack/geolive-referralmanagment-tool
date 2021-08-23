@@ -110,6 +110,11 @@ var Project = (function() {
 			if(this.data&&this.data.attributes&&this.data.attributes.dataset&&this.data.attributes.dataset.metadata){
 				var metadata=this.data.attributes.dataset.metadata;
 				if(typeof metadata=='string'){
+
+					/**
+					 * it is a string from the server (json encoded), but when saved through the form in is an object
+					 */
+
 					metadata=JSON.parse(metadata);
 				}
 

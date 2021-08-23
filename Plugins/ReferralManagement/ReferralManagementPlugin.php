@@ -104,6 +104,20 @@ core\EventListener {
 			return;
 		}
 
+
+		if ($params->itemType === "ReferralManagement.proposal") {
+
+			$filter=array('status' => array('value' => 'archived', 'comparator' => '!='));
+
+			(new \core\LongTaskProgress())
+				->throttle('onTriggerUpdateUserList', array('filter' => $filter), array('interval' => 10)));
+
+			return;
+		}
+
+
+
+
 		//error_log($params->itemType);
 
 	}
