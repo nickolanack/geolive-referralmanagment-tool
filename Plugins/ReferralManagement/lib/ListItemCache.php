@@ -23,15 +23,33 @@ class ListItemCache {
 
 
 			$cachedProjects=json_decode($cacheData);
+			$updated=array();
+
 			foreach($projects as $project){
 				foreach($cachedProjects as $cachedProject){
 					if($project->id==$cachedProject->id){
 						if(json_encode($cachedProject)!=json_encode($project)){
 							$this->notifier()->broadcastProjectUpdate($project->id);
+
+							
+							Broadcast('proposal.' . $project->id, 'update', array(
+								'user' => GetClient()->getUserId(),
+								'updated' => array((new \ReferralManagement\Project())->fromId($project->id)->toArray()),
+							));
+
+
+							$updated[]=$project->id;
 						}
 					}
 				}
 			}
+
+
+
+			Broadcast('proposals', 'update', array(
+				'updated' => $updated
+			));
+
 
 		}
 		Emit('onUpdateProjectList', array());
