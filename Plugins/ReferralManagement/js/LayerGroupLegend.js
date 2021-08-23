@@ -212,12 +212,21 @@ var LayerGroupLegend = (function() {
 
                 }
                 var modalFormViewController =  new PushBoxModuleViewer(map, {});
-                var newItem= new MockDataTypeItem({
+
+
+                var data={
                     mutable:true,
                     showIcons:true,
                     showLabels:false,
                     description:"",
-                });
+                };
+
+                if(layerObject.projectAttributes&&layerObject.projectAttributes.metadata){
+                    data=ObjectAppend_(data, layerObject.projectAttributes.metadata);
+                }
+
+
+                var newItem= new MockDataTypeItem(data);
                 var wizard = wizardTemplate(newItem, {});
                 wizard.buildAndShow(modalFormViewController, {template:"form"}); 
                 wizard.addEvent('complete', function() {
