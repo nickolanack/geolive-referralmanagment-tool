@@ -235,6 +235,10 @@ var LayerGroupLegend = (function() {
                     console.log(data);
                     project.setDatasetMetadata(data, layerIndex);
 
+
+                    //update current map
+
+
                 });
 
             });

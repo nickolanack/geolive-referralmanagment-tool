@@ -62,10 +62,19 @@ var ProjectLayer = (function() {
 
 
 
+
+
+
+
 		}
 
 
-		return new baseClass(map, options)
+		var layer = new baseClass(map, options);
+
+		
+
+
+		return layer;
 
 
 	}
