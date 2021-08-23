@@ -25,7 +25,7 @@ class ListItemCache {
 			$cachedProjects=json_decode($cacheData);
 			foreach($projects as $project){
 				foreach($cachedProjects as $cachedProject){
-					if($projects->id==$cachedProject->id){
+					if($project->id==$cachedProject->id){
 						if(json_encode($cachedProject)!=json_encode($project)){
 							$this->broadcastProjectUpdate($project->id);
 						}
