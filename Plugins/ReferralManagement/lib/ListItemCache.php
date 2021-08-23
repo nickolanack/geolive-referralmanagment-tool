@@ -19,7 +19,7 @@ class ListItemCache {
 		$newData = json_encode($projects);
 		HtmlDocument()->setCachedPage($cacheName, $newData);
 		if ($newData != $cacheData) {
-			$this->notifier()->onProjectListChanged();
+			
 
 
 			$cachedProjects=json_decode($cacheData);
@@ -40,12 +40,6 @@ class ListItemCache {
 						if(json_encode($cachedProject)!=json_encode($project)){
 							//$this->notifier()->broadcastProjectUpdate($project->id);
 
-							
-							Broadcast('proposal.' . $project->id, 'update', array(
-								'user' => GetClient()->getUserId(),
-								'updated' => array((new \ReferralManagement\Project())->fromId($project->id)->toArray()),
-							));
-
 
 							$updated[]=$project->id;
 
@@ -57,12 +51,25 @@ class ListItemCache {
 				}
 			}
 
+			if(!empty($updated)){
+
+				$this->notifier()->onProjectListChanged();
+
+				Broadcast('proposals', 'update', array(
+					'updated' => $updated,
+				));
 
 
-			Broadcast('proposals', 'update', array(
-				'updated' => $updated,
-				'compare' => $updatedFirst
-			));
+				foreach($updated as $projectId){
+					Broadcast('proposal.' . $projectId, 'update', array(
+						'user' => GetClient()->getUserId(),
+						'updated' => array((new \ReferralManagement\Project())->fromId($projectId)->toArray()),
+					));
+				}
+
+
+				
+			}
 
 
 		}
