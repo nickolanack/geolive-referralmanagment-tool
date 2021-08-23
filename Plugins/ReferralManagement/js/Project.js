@@ -111,16 +111,16 @@ var Project = (function() {
 				var metadata=this.data.attributes.dataset.metadata;
 				if(typeof metadata=='string'){
 					metadata=JSON.parse(metadata);
-					if(isArray_(metadata)){
-
-						metadata= metadata[metadata.length>itemIndex?itemIndex:0];
-						
-					}
-
-					if(isObject_(metadata)){
-						return { metadata:metadata };
-					}
 				}
+
+				if(isArray_(metadata)){
+					metadata= metadata[metadata.length>itemIndex?itemIndex:0];
+				}
+
+				if(isObject_(metadata)){
+					return { metadata:metadata };
+				}
+				
 			}
 			
 
