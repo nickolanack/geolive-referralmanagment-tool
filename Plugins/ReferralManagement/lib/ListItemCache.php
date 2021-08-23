@@ -27,7 +27,7 @@ class ListItemCache {
 				foreach($cachedProjects as $cachedProject){
 					if($project->id==$cachedProject->id){
 						if(json_encode($cachedProject)!=json_encode($project)){
-							$this->broadcastProjectUpdate($project->id);
+							$this->notifier()->broadcastProjectUpdate($project->id);
 						}
 					}
 				}
