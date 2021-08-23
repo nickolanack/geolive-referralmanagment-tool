@@ -71,8 +71,18 @@ var ProjectLayer = (function() {
 
 		var layer = new baseClass(map, options);
 
-		
 
+
+		if((options.id+"").indexOf("project-")===0){
+			var pid=options.id.split('-')[1];
+			var layerIndex=options.id.split('-').pop()
+			var project=ProjectTeam.CurrentTeam().getProject(pid);
+
+			project.addEvent('updateDatasetAttributes',function(data){
+				layer.options.projectAttributes=project.getDatasetAttributes(layerIndex);
+				layer.reload();
+			});
+		}
 
 		return layer;
 
