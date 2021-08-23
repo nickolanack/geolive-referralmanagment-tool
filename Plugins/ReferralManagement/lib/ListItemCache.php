@@ -34,6 +34,8 @@ class ListItemCache {
 						unset($project->computed);
 						unset($cachedProject->computed);
 
+						unset($project->profileData);
+						unset($cachedProject->profileData);
 
 						if(json_encode($cachedProject)!=json_encode($project)){
 							//$this->notifier()->broadcastProjectUpdate($project->id);
