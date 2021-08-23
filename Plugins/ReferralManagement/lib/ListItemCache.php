@@ -20,6 +20,19 @@ class ListItemCache {
 		HtmlDocument()->setCachedPage($cacheName, $newData);
 		if ($newData != $cacheData) {
 			$this->notifier()->onProjectListChanged();
+
+
+			$cachedProjects=json_decode($cacheData);
+			foreach($projects as $project){
+				foreach($cachedProjects as $cachedProject){
+					if($projects->id==$cachedProject->id){
+						if(json_encode($cachedProject)!=json_encode($project)){
+							$this->broadcastProjectUpdate($project->id);
+						}
+					}
+				}
+			}
+
 		}
 		Emit('onUpdateProjectList', array());
 	}
