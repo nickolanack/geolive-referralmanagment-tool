@@ -25,9 +25,11 @@ class ListItemCache {
 			$cachedProjects=json_decode($cacheData);
 			$updated=array();
 
+			$updatedFirst=array();
+
 			foreach($projects as $project){
 				foreach($cachedProjects as $cachedProject){
-					if($project->id==$cachedProject->id){
+					if($project->id===$cachedProject->id){
 
 						unset($project->computed);
 						unset($cachedProject->computed);
@@ -44,6 +46,10 @@ class ListItemCache {
 
 
 							$updated[]=$project->id;
+
+							if(empty($updatedFirst)){
+								$updatedFirst=array($project, $cachedProject);
+							}
 						}
 					}
 				}
@@ -52,7 +58,8 @@ class ListItemCache {
 
 
 			Broadcast('proposals', 'update', array(
-				'updated' => $updated
+				'updated' => $updated,
+				'compare' => $updatedFirst
 			));
 
 
