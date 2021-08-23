@@ -1,5 +1,5 @@
 {
-    "type": "WizardDescriptionField",
+    "type": "FormTextDescriptionField",
     "config": {
         "label": "Marker Icon",
         "message": "",
@@ -15,6 +15,6 @@
         "toolbarPosition": "bottom",
         "textFormatScript": "",
         "mediaIconTint": "rgb(100, 149, 237)",
-        "onRenderModuleFn": ""
+        "onRenderModuleFn": "module.getTextField().getInputElement().setStyle('display','none');"
     }
 }
