@@ -30,7 +30,7 @@ class ListItemCache {
 					if($project->id==$cachedProject->id){
 
 						unset($project->computed);
-						unset($cachedProject->computed)
+						unset($cachedProject->computed);
 
 
 						if(json_encode($cachedProject)!=json_encode($project)){
