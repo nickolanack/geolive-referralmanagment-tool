@@ -39,10 +39,14 @@ var NamedCategory = (function() {
 
 		},
 
+		getCategoryForChildren:function(){
+			return this.getName().toLowerCase();
+		},
+
 		getChildTagsData:function(){
 
 			var me=this;
-			return NamedCategoryList.getProjectTagsData(this.getCategory()).filter(function(tag){
+			return NamedCategoryList.getProjectTagsData(this.getCategoryForChildren()).filter(function(tag){
 			    return tag!=me;
 			});
 		},
@@ -164,9 +168,9 @@ var NamedCategory = (function() {
 			"class": className+"primary-btn"
 
 
-		}), new ModalFormButtonModule(application, NamedCategory.CreateNewCategory(item.getCategory()), {
+		}), new ModalFormButtonModule(application, NamedCategory.CreateNewCategory(item.getCategoryForChildren()), {
 
-			label: "Add " + item.getCategory().capitalize() + " Tag",
+			label: "Add " + item.getName().capitalize() + " Tag",
 			formOptions: {
 				template: "form"
 			},
