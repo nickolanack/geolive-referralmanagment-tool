@@ -165,7 +165,7 @@ var NamedCategory = (function() {
 			"class": "primary-btn"
 
 
-		}), new ModalFormButtonModule(application, new MockDataTypeItem({
+		}), (new ModalFormButtonModule(application, new MockDataTypeItem({
 			"name": "Are you sure you want to delete this item"
 		}), {
 
@@ -178,7 +178,9 @@ var NamedCategory = (function() {
 			"class": "primary-btn error"
 
 
-		})];
+		})).addEvent('complete', function(){
+			console.log('delete');
+		}];
 
 
 	};
