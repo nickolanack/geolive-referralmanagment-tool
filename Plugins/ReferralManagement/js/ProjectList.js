@@ -34,6 +34,7 @@ var ProjectList = (function() {
 			}
 			return "New project"
 		},
+
 		getFormName:function(){
 			if(this._getFormName){
 				return this._getFormName();
@@ -50,7 +51,6 @@ var ProjectList = (function() {
 		},
 
 		getProjectList:function(callback){
-
 
 			if(this.getProjects){
 				
@@ -76,9 +76,8 @@ var ProjectList = (function() {
 			    callback(projects)
 			});
 
-       
-
 		}
+		
 	});
 
 	var filters=[{

@@ -125,7 +125,7 @@ var SpatialProject = (function() {
 	SpatialProject.InitMainMap = function() {
 
 		
-
+		window.CurrentMapType="MainMap";
 		window.GetSpatialFiles = function() {
 
 
@@ -155,8 +155,9 @@ var SpatialProject = (function() {
 	SpatialProject.InitCurrentProject = function(item) {
 
 
-	
-
+		
+		window.CurrentMapType="ProjectMap";
+		window.CurrentMapItem=item;
 		window.GetSpatialFiles = function() {
 
 

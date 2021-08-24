@@ -5,9 +5,26 @@ var ProjectMap=(function(){
 
 	window.InitUserLayer=function(layer){
 
-		console.log(layer.addParserFilter('point', function(data, i){
-			return true;
-		}))
+
+		var checkMapFilter=function(data){
+			if(window.CurrentMapType=="MainMap"){
+				return data.name.indexOf('<main>')>=0;
+			}
+
+			return data.name.indexOf('<project:'+window.CurrentMapItem.getId()+'>')>=0;
+		};
+
+		layer.addParserFilter('point', function(data, i){
+			return checkMapFilter(data);
+		});
+
+		layer.addParserFilter('line', function(data, i){
+			return checkMapFilter(data);
+		});
+
+		layer.addParserFilter('polygon', function(data, i){
+			return checkMapFilter(data);
+		});
 
 
 
