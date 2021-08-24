@@ -16693,7 +16693,15 @@
                     },
                     "content": {
                         "modules": [
-                            "tagsDetail.metadata.positions.content.modules.0.json"
+                            "tagsDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "Add Root Category",
+                                    "script": "",
+                                    "description": "Info about my custom script"
+                                }
+                            }
                         ]
                     },
                     "footer": {
