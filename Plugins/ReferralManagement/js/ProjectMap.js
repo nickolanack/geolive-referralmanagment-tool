@@ -5,7 +5,7 @@ var ProjectMap=(function(){
 
 	window.InitUserLayer=function(layer){
 
-		console.log(layer.addParserFilter('marker', function(data, i){
+		console.log(layer.addParserFilter('point', function(data, i){
 			return true;
 		}))
 
