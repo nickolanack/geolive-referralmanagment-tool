@@ -121,6 +121,20 @@ var NamedCategory = (function() {
 	};
 
 
+	NamedCategory.CreateRootCategoryButtons = function(application, item) {
+		return [new ModalFormButtonModule(application, NamedCategory.CreateNewCategory(""), {
+
+			label: "Add New Category",
+			formOptions: {
+				template: "form"
+			},
+			formName: "tagForm",
+			"class": "primary-btn"
+
+
+		})];
+	}
+
 	NamedCategory.CreateCategoryButtons = function(application, item) {
 
 
