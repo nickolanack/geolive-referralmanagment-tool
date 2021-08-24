@@ -45,7 +45,20 @@ var SpatialDocumentPreview = (function() {
 			var createLayer=function(layerOpts, i){
 
 
-				var notification=NotificationBubble.Make('', "Loading: "+layerOpts.name, {
+
+				
+
+				var div=new Element('div');
+				div.innerHTML="Loading: "+layerOpts.name;
+				var spinner = new Spinner(div, {
+                            width: 20,
+                            height: 20,
+                            color: 'rgba(255,255,255)',
+                            start: true
+                        });
+
+
+				var notification=NotificationBubble.Make('', div, {
 					autoClose:false,
 					from:'top-center',
 					position:window.getSize().y/2
