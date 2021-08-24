@@ -40,6 +40,8 @@ var NamedCategory = (function() {
 		},
 
 
+
+
 		getDescription:function(){
 			return this._getDescription()||"";
 		},
@@ -80,6 +82,11 @@ var NamedCategory = (function() {
 				color: this.getColor()
 
 			};
+
+			if(args.category==""||args.category=="_root"){
+				//make root category the same name but lower case
+				args.category=this.getName().toLowerCase();
+			}
 
 			if (this.getId() > 0) {
 				args.id = this.getId();
