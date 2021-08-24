@@ -39,7 +39,12 @@ var NamedCategory = (function() {
 
 		},
 
+		getChildTagsData:function(){
 
+			return NamedCategoryList.getProjectTagsData(this.getCategory()).filter(function(tag){
+			    return tag!=this;
+			});
+		},
 
 
 		getDescription:function(){
@@ -179,6 +184,12 @@ var NamedCategory = (function() {
 
 
 		})).addEvent('complete', function(){
+
+			if(item.getChildTagsData().length>0){
+				alert("Delete child tags first");
+				return;
+			}
+
 			console.log('delete');
 		})];
 
