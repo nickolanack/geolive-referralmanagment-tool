@@ -49,8 +49,8 @@ var ProjectLayer = (function() {
 
 
 					var showLabel=true;
-					if(me.options.projectAttributes&&me.options.projectAttributes.metadata&&typeof me.options.projectAttributes.metadata.showLabel=="boolean"){
-						showLabel=me.options.projectAttributes.metadata.showLabel
+					if(me.options.projectAttributes&&me.options.projectAttributes.metadata&&typeof me.options.projectAttributes.metadata.showLabels=="boolean"){
+						showLabel=me.options.projectAttributes.metadata.showLabels;
 					}
 
 					GeoliveLayer.prototype._initMarker.call(this, Object.append(data, {
