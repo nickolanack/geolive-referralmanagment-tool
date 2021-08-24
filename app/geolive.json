@@ -21263,16 +21263,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 198,
-                            "y": 330
+                            "x": 218,
+                            "y": 350
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 158,
-                                    "y": 506
+                                    "x": 178,
+                                    "y": 526
                                 }
                             }
                         ],
@@ -21294,7 +21294,7 @@
                                                 "mandatory": false,
                                                 "getValueScript": "return item.getShowLabels();",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "",
+                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
                                                 "validateValueScript": "return true;",
                                                 "formatElementScript": ""
                                             }
@@ -21307,7 +21307,7 @@
                                                 "mandatory": false,
                                                 "getValueScript": "return item.getShowIcons();",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "",
+                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
                                                 "validateValueScript": "return true;",
                                                 "formatElementScript": ""
                                             }
