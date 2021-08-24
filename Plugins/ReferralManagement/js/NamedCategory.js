@@ -151,6 +151,9 @@ var NamedCategory = (function() {
 	NamedCategory.CreateCategoryButtons = function(application, item) {
 
 
+		var className=item.isRootTag()?"":"small ";
+
+
 		return [new ModalFormButtonModule(application, item, {
 
 			label: "Edit",
@@ -158,7 +161,7 @@ var NamedCategory = (function() {
 				template: "form"
 			},
 			formName: "tagForm",
-			"class": "primary-btn"
+			"class": className+"primary-btn"
 
 
 		}), new ModalFormButtonModule(application, NamedCategory.CreateNewCategory(item.getCategory()), {
@@ -168,7 +171,7 @@ var NamedCategory = (function() {
 				template: "form"
 			},
 			formName: "tagForm",
-			"class": "primary-btn"
+			"class": className+"primary-btn"
 
 
 		}), (new ModalFormButtonModule(application, new MockDataTypeItem({
@@ -181,7 +184,7 @@ var NamedCategory = (function() {
 				"template": "form",
 				"className": "alert-view"
 			},
-			"class": "primary-btn error"
+			"class": className+"primary-btn error"
 
 
 		})).addEvent('complete', function(){
