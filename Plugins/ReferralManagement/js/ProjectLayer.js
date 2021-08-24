@@ -48,15 +48,29 @@ var ProjectLayer = (function() {
 					}
 
 
+					var showLabel=true;
+					if(me.options.projectAttributes&&me.options.projectAttributes.metadata&&typeof me.options.projectAttributes.metadata.showLabel=="boolean"){
+						showLabel=me.options.projectAttributes.metadata.showLabel
+					}
+
 					GeoliveLayer.prototype._initMarker.call(this, Object.append(data, {
 						icon: icon,
-						clickable: false
+						clickable: false,
+						showLabel:true
 					}), xml, markerDataArray, i);
+
+
+					// var showLabel=true;
+					// if(showLabel){
+					// 	me._label=new GeoliveLabel(me.getLatLng(), '<span>'+me.getName()+'</span>');
+					// }
+
 				},
 				_getKmlQuery: function() {
 					var me = this;
 					return new KMLDocumentQuery(me.options.url);
 				}
+
 
 			});
 
