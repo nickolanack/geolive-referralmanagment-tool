@@ -1,5 +1,18 @@
 var ProjectMap=(function(){
 
+
+
+
+	window.InitUserLayer=function(layer){
+
+		console.log(layer.addParserFilter('marker', function(data, i){
+			return true;
+		}))
+
+
+
+	};
+
 	var ProjectMap=new Class({
 
 		initialize:function(map){
