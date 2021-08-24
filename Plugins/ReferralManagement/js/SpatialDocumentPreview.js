@@ -61,7 +61,8 @@ var SpatialDocumentPreview = (function() {
 				var notification=NotificationBubble.Make('', div, {
 					autoClose:false,
 					from:'top-center',
-					position:window.getSize().y/2
+					position:window.getSize().y/2,
+					className:"layer-loading"
 
 				});
 
