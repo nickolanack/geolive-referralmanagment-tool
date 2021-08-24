@@ -89,9 +89,9 @@ var NamedCategory = (function() {
 		},
 
 		remove:function(){
-
+			var me=this;
 			(new RemoveTagQuery({id:this.getId()})).addEvent('success', function(response) {
-
+				me.fireEvent('remove');
 			}).execute();
 
 		},
@@ -217,7 +217,7 @@ var NamedCategory = (function() {
 				alert("Delete child tags first");
 				return;
 			}
-
+			item.remove();
 			console.log('delete');
 		})];
 
