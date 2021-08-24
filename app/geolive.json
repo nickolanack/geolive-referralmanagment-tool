@@ -17520,6 +17520,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "",
                                     "fieldLabelScript": "return \"Tag Value: \";",
                                     "fieldValueScript": "return item.getName();",
                                     "formatElementScript": ""
@@ -17529,6 +17530,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getDescription();",
                                     "formatElementScript": ""
