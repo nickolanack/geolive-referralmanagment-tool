@@ -180,7 +180,7 @@ var NamedCategory = (function() {
 
 		})).addEvent('complete', function(){
 			console.log('delete');
-		}];
+		})];
 
 
 	};
