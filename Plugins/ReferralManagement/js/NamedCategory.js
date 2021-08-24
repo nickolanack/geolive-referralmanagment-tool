@@ -41,8 +41,9 @@ var NamedCategory = (function() {
 
 		getChildTagsData:function(){
 
+			var me=this;
 			return NamedCategoryList.getProjectTagsData(this.getCategory()).filter(function(tag){
-			    return tag!=this;
+			    return tag!=me;
 			});
 		},
 
