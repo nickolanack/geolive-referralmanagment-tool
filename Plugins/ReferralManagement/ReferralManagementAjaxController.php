@@ -19,30 +19,31 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	protected function getAdminChannels($json) {
 
-		return array('channels' => array(
-			array(
-				'channel' => 'proposals',
-				'event' => 'update',
-			),
-			array(
-				'channel' => 'userList',
-				'event' => 'update',
-			),
-			array(
-				'channel' => 'devicelist',
-				'event' => 'update',
-			),
+		return array(
+			'channels' => array(
+				array(
+					'channel' => 'proposals',
+					'event' => 'update',
+				),
+				array(
+					'channel' => 'userList',
+					'event' => 'update',
+				),
+				array(
+					'channel' => 'devicelist',
+					'event' => 'update',
+				),
 
-			array(
-				'channel' => 'cacheusers',
-				'event' => 'update',
-			),
+				array(
+					'channel' => 'cacheusers',
+					'event' => 'update',
+				),
 
-			array(
-				'channel' => 'cacheprojects',
-				'event' => 'update',
+				array(
+					'channel' => 'cacheprojects',
+					'event' => 'update',
+				),
 			),
-		),
 		);
 	}
 
@@ -921,6 +922,12 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 
 	protected function saveTag($json) {
 
+
+		$minAccessLevel = 'lands-department-manager';
+		if (!Auth('memberof', $minAccessLevel, 'group')) {
+			return $this->setError('Not authorized');
+		}
+
 		$updateData = array(
 			'name' => $json->name,
 			'shortName' => $json->shortName ? $json->shortName : $json->name,
@@ -940,6 +947,22 @@ class ReferralManagementAjaxController extends core\AjaxController implements co
 		return array('tag' => $updateData);
 
 	}
+
+
+	protected function removeTag($json) {
+
+		$minAccessLevel = 'lands-department-manager';
+		if (!Auth('memberof', $minAccessLevel, 'group')) {
+			return $this->setError('Not authorized');
+		}
+
+		
+		$this->getPlugin()->getDatabase()->deleteCategory($json->id);
+
+		return true;
+
+	}
+
 
 	protected function saveDepartment($json) {
 

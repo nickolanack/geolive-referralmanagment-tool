@@ -12,6 +12,17 @@ var NamedCategory = (function() {
 	});
 
 
+	var RemoveTagQuery = new Class({
+		Extends: AjaxControlQuery,
+		initialize: function(options) {
+			this.parent(CoreAjaxUrlRoot, 'remove_tag', Object.append({
+				plugin: 'ReferralManagement'
+			}, options));
+		}
+	});
+
+
+
 
 	NamedCategory = new Class({
 		Extends: MockDataTypeItem,
@@ -76,6 +87,15 @@ var NamedCategory = (function() {
 			}
 			return null;
 		},
+
+		remove:function(){
+
+			(new RemoveTagQuery({id:this.getId()})).addEvent('success', function(response) {
+
+			}).execute();
+
+		},
+
 		save: function(callback) {
 
 			var i = ProjectTagList.getProjectTags().indexOf(this);

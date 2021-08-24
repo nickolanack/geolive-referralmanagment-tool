@@ -180,6 +180,13 @@
             ]
         }
     },
+    "remove_tag":{
+        "validate": {
+            "checkKeys": [
+                "id"
+            ]
+        }
+    },
     "save_department":{
         "validate": {
             "checkKeys": [
