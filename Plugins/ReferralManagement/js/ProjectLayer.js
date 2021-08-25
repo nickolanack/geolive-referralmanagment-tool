@@ -119,12 +119,12 @@ var ProjectLayer = (function() {
 
 
 
-		var layer = new baseClass(map, ObjedAppend_(options,{
+		var layer = new baseClass(map, ObjectAppend_(options,{
 			markerOptions:markerOptions,
 			polygonOptions:polygonOptions,
 			lineOptions:lineOptions
 
-		});
+		}));
 
 
 
