@@ -21274,16 +21274,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 304,
-                            "y": 210
+                            "x": 314,
+                            "y": 220
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 264,
-                                    "y": 411
+                                    "x": 274,
+                                    "y": 458
                                 }
                             }
                         ],
@@ -21385,7 +21385,7 @@
                                                 "formatValueScript": "",
                                                 "getValueScript": " return item.getLineOpacity();",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "wizardData.lineOpacity=value;",
+                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.5.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         },
