@@ -100,7 +100,7 @@ var ProjectLayer = (function() {
 					GeoliveLayer.prototype._initMarker.call(this, Object.append(data, markerOptions), xml, markerDataArray, i);
 				},
 				_initPolygon: function(data, xml, lineDataArray, i) {
-					GeoliveLayer.prototype._initLine.call(this, Object.append(data, polygonOptions), xml, lineDataArray, i);
+					GeoliveLayer.prototype._initPolygon.call(this, Object.append(data, polygonOptions), xml, lineDataArray, i);
 				},
 				_initLine: function(data, xml, lineDataArray, i) {
 					GeoliveLayer.prototype._initLine.call(this, Object.append(data, lineOptions), xml, lineDataArray, i);
