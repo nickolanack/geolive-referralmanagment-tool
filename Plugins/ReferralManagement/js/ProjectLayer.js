@@ -97,13 +97,13 @@ var ProjectLayer = (function() {
 			baseClass = new Class({
 				Extends: GeoliveLayer,
 				_initMarker: function(data, xml, markerDataArray, i) {
-					GeoliveLayer.prototype._initMarker.call(this, Object.append(data, markerOptions), xml, markerDataArray, i);
+					GeoliveLayer.prototype._initMarker.call(this, Object.append(data, this.options.markerOptions), xml, markerDataArray, i);
 				},
 				_initPolygon: function(data, xml, lineDataArray, i) {
-					GeoliveLayer.prototype._initPolygon.call(this, Object.append(data, polygonOptions), xml, lineDataArray, i);
+					GeoliveLayer.prototype._initPolygon.call(this, Object.append(data, this.options.polygonOptions), xml, lineDataArray, i);
 				},
 				_initLine: function(data, xml, lineDataArray, i) {
-					GeoliveLayer.prototype._initLine.call(this, Object.append(data, lineOptions), xml, lineDataArray, i);
+					GeoliveLayer.prototype._initLine.call(this, Object.append(data, this.options.lineOptions), xml, lineDataArray, i);
 				},
 				_getKmlQuery: function() {
 					var me = this;
@@ -119,7 +119,12 @@ var ProjectLayer = (function() {
 
 
 
-		var layer = new baseClass(map, options);
+		var layer = new baseClass(map, ObjedAppend_(options,{
+			markerOptions:markerOptions,
+			polygonOptions:polygonOptions,
+			lineOptions:lineOptions
+
+		});
 
 
 
