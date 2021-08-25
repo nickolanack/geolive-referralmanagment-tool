@@ -2,17 +2,80 @@ var ProjectLayer = (function() {
 
 
 
-	var ProjectLayer=new Class({});
+	var ProjectLayer = new Class({});
 
 
-	var baseClass=false;
+	var baseClass = false;
 
 
-	ProjectLayer.MakeProjectLayer=function(map, options){
+	ProjectLayer.MakeProjectLayer = function(map, options) {
 
-		if(!baseClass){
-			if(!window.GeoliveLayer){
-				if(window.console&&console.warn){
+
+
+		var markerOptions = {
+			icon: 'https://storage.googleapis.com/support-kms-prod/SNP_2752125_en_v0',
+			showLabels: false,
+			clickable: false,
+		};
+		var lineOptions = {};
+		var polygonOptions = {};
+
+		if (options.projectAttributes && options.projectAttributes.metadata) {
+
+
+			var metadata = options.projectAttributes.metadata;
+			if (metadata.description) {
+				JSTextUtilities.ParseImages(metadata.description).forEach(function(item) {
+					if (item.type.indexOf("image") >= 0) {
+						options.icon = item.url;
+						markerOptions.icon = item.url;
+					}
+				});
+			}
+
+			if (typeof metadata.showLabels == "boolean") {
+				markerOptions.showLabels = metadata.showLabels;
+			}
+
+			if (typeof metadata.lineColor == "string") {
+
+
+
+				lineOptions.lineColor = metadata.lineColor;
+				polygonOptions.lineColor = metadata.lineColor;
+			}
+
+			if (typeof metadata.lineOpacity != "undefined") {
+
+				var lineOpacity = ParseFloat(metadata.lineOpacity);
+				lineOpacity = Math.min(Math.max(0, lineOpacity), 1);
+
+				lineOptions.lineOpacity = lineOpacity;
+				polygonOptions.lineOpacity = lineOpacity;
+
+			}
+
+			if (typeof metadata.fillColor == "string") {
+
+				polygonOptions.polyColor = metadata.fillColor;
+			}
+
+			if (typeof metadata.fillOpacity != "undefined") {
+
+				var fillOpacity = ParseFloat(metadata.fillOpacity);
+				fillOpacity = Math.min(Math.max(0, fillOpacity), 1);
+				polygonOptions.polyOpacity = fillOpacity;
+
+
+			}
+
+		}
+
+
+
+		if (!baseClass) {
+			if (!window.GeoliveLayer) {
+				if (window.console && console.warn) {
 					console.warn('GeoliveLayer is not defined');
 				}
 				return null;
@@ -31,40 +94,16 @@ var ProjectLayer = (function() {
 
 
 
-
-
-			baseClass= new Class({
+			baseClass = new Class({
 				Extends: GeoliveLayer,
 				_initMarker: function(data, xml, markerDataArray, i) {
-					var me = this;
-
-					var icon='https://storage.googleapis.com/support-kms-prod/SNP_2752125_en_v0';
-					if(me.options.projectAttributes&&me.options.projectAttributes.metadata&&me.options.projectAttributes.metadata.description){
-						JSTextUtilities.ParseImages(me.options.projectAttributes.metadata.description).forEach(function(item){
-							if(item.type.indexOf("image")>=0){
-								icon=item.url;
-							}
-						})
-					}
-
-
-					var showLabel=true;
-					if(me.options.projectAttributes&&me.options.projectAttributes.metadata&&typeof me.options.projectAttributes.metadata.showLabels=="boolean"){
-						showLabel=me.options.projectAttributes.metadata.showLabels;
-					}
-
-					GeoliveLayer.prototype._initMarker.call(this, Object.append(data, {
-						icon: icon,
-						clickable: false,
-						showLabel:true
-					}), xml, markerDataArray, i);
-
-
-					// var showLabel=true;
-					// if(showLabel){
-					// 	me._label=new GeoliveLabel(me.getLatLng(), '<span>'+me.getName()+'</span>');
-					// }
-
+					GeoliveLayer.prototype._initMarker.call(this, Object.append(data, markerOptions), xml, markerDataArray, i);
+				},
+				_initPolygon: function(data, xml, lineDataArray, i) {
+					GeoliveLayer.prototype._initLine.call(this, Object.append(data, polygonOptions), xml, lineDataArray, i);
+				},
+				_initLine: function(data, xml, lineDataArray, i) {
+					GeoliveLayer.prototype._initLine.call(this, Object.append(data, lineOptions), xml, lineDataArray, i);
 				},
 				_getKmlQuery: function() {
 					var me = this;
@@ -76,35 +115,21 @@ var ProjectLayer = (function() {
 
 
 
-
-
-
-
 		}
 
 
-
-		if(options.projectAttributes&&options.projectAttributes.metadata&&options.projectAttributes.metadata.description){
-			JSTextUtilities.ParseImages(options.projectAttributes.metadata.description).forEach(function(item){
-				if(item.type.indexOf("image")>=0){
-					options.icon=item.url;
-				}
-			});
-		}
 
 		var layer = new baseClass(map, options);
 
 
 
+		if ((options.id + "").indexOf("project-") === 0) {
+			var pid = options.id.split('-')[1];
+			var layerIndex = options.id.split('-').pop()
+			var project = ProjectTeam.CurrentTeam().getProject(pid);
 
-
-		if((options.id+"").indexOf("project-")===0){
-			var pid=options.id.split('-')[1];
-			var layerIndex=options.id.split('-').pop()
-			var project=ProjectTeam.CurrentTeam().getProject(pid);
-
-			project.addEvent('updateDatasetAttributes',function(data){
-				layer.options.projectAttributes=project.getDatasetAttributes(layerIndex);
+			project.addEvent('updateDatasetAttributes', function(data) {
+				layer.options.projectAttributes = project.getDatasetAttributes(layerIndex);
 				layer.reload();
 			});
 		}
@@ -113,7 +138,6 @@ var ProjectLayer = (function() {
 
 
 	}
-
 
 
 
