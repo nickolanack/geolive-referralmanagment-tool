@@ -12,7 +12,7 @@ var ProjectList = (function() {
 			var opts=controller.getNavigationOptions();
 			if(opts.filter){
 				return (function(a){
-					return a.getProjectType()===opts.filter;
+					return a.getProjectTypes().indexOf(opts.filter)>=0;
 				}).apply(null, arguments);
 				//return ([getFilter(opts.filter)]).concat(filters);
 			}
