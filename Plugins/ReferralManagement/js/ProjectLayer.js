@@ -47,8 +47,8 @@ var ProjectLayer = (function() {
 				var lineWidth=parseFloat(metadata.lineWidth);
 				lineWidth = Math.min(Math.max(0, lineWidth), 5);
 
-				lineOptions.lineWidth = metadata.lineColor;
-				polygonOptions.lineWidth = metadata.lineColor;
+				lineOptions.lineWidth = lineWidth;
+				polygonOptions.lineWidth = lineWidth;
 			}
 
 
