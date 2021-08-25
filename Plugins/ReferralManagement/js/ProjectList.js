@@ -124,7 +124,7 @@ var ProjectList = (function() {
 					label: type,
 					name: type,
 					filterFn: function(a) {
-						return a.getProjectType()===type;
+						return a.getProjectTypes().indexOf(type)>=0;
 					}
 				};
 			
