@@ -47,7 +47,7 @@ var ProjectLayer = (function() {
 
 			if (typeof metadata.lineOpacity != "undefined") {
 
-				var lineOpacity = ParseFloat(metadata.lineOpacity);
+				var lineOpacity = parseFloat(metadata.lineOpacity);
 				lineOpacity = Math.min(Math.max(0, lineOpacity), 1);
 
 				lineOptions.lineOpacity = lineOpacity;
@@ -62,7 +62,7 @@ var ProjectLayer = (function() {
 
 			if (typeof metadata.fillOpacity != "undefined") {
 
-				var fillOpacity = ParseFloat(metadata.fillOpacity);
+				var fillOpacity = parseFloat(metadata.fillOpacity);
 				fillOpacity = Math.min(Math.max(0, fillOpacity), 1);
 				polygonOptions.polyOpacity = fillOpacity;
 
