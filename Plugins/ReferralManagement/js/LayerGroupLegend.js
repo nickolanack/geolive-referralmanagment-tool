@@ -222,7 +222,7 @@ var LayerGroupLegend = (function() {
                     fillColor:"#000000",
                     lineOpacity:1,
                     fillOpacity:0.5,
-                    lineWidth:1
+                    lineWidth:1,
                     description:"",
                 };
 
