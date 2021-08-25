@@ -21274,16 +21274,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 238,
-                            "y": 370
+                            "x": 248,
+                            "y": 380
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 198,
-                                    "y": 571
+                                    "x": 208,
+                                    "y": 581
                                 }
                             }
                         ],
@@ -21339,9 +21339,9 @@
                                                 "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": " return \"#000000\"; ",
+                                                "getValueScript": "return item.getLineColor();",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "",
+                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         },
@@ -21361,9 +21361,9 @@
                                                 "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": " return \"#777777\"; ",
+                                                "getValueScript": " return item.getFillColor();",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "",
+                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.4.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         }
