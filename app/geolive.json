@@ -21393,5 +21393,32 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.401": {
+        "name": "Map Overlay View",
+        "instance": "MapOverlayView",
+        "parameters": {
+            "widgetTitle": "",
+            "target": "none",
+            "position": "LEFT_TOP",
+            "className": "",
+            "identifier": "",
+            "viewType": "view",
+            "namedView": "defaultView",
+            "shouldRender": true,
+            "namedViewScript": "return namedView",
+            "showInlineEdit": false,
+            "namedFormView": "defaultView",
+            "formOptions": "{}",
+            "showDeleteButton": false,
+            "deleteItemScript": "defaultBehaviorFn()",
+            "initModuleScript": "",
+            "formatModuleScript": "",
+            "resolveItemScript": "return item",
+            "filterModulesScript": "return list",
+            "itemButtonsScript": "return [];",
+            "insertAtTop": false,
+            "targetName": ""
+        }
     }
 }
