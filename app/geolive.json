@@ -21399,8 +21399,8 @@
         "instance": "MapOverlayView",
         "parameters": {
             "widgetTitle": "",
-            "target": "none",
-            "position": "LEFT_TOP",
+            "target": "forTheMap",
+            "position": "TOP_CENTER",
             "className": "",
             "identifier": "",
             "viewType": "view",
@@ -21418,7 +21418,8 @@
             "filterModulesScript": "return list",
             "itemButtonsScript": "return [];",
             "insertAtTop": false,
-            "targetName": ""
+            "targetName": "",
+            "readAccess": "public"
         }
     }
 }
