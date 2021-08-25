@@ -38,12 +38,21 @@ var ProjectLayer = (function() {
 			}
 
 			if (typeof metadata.lineColor == "string") {
-
-
-
 				lineOptions.lineColor = metadata.lineColor;
 				polygonOptions.lineColor = metadata.lineColor;
 			}
+
+			if (typeof metadata.lineWidth != "undefined") {
+				
+				var lineWidth=parseFloat(metadata.lineWidth);
+				lineWidth = Math.min(Math.max(0, lineWidth), 5);
+
+				lineOptions.lineWidth = metadata.lineColor;
+				polygonOptions.lineWidth = metadata.lineColor;
+			}
+
+
+
 
 			if (typeof metadata.lineOpacity != "undefined") {
 
