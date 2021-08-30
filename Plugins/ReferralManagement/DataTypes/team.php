@@ -1,6 +1,6 @@
 <?php
 
-class TeamDataType extends core\PluginDataType {
+class TeamDataType extends \core\extensions\plugin\PluginDataType {
     protected $authtasks = array(
         'read',
         'write',

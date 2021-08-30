@@ -12,8 +12,8 @@
  */
 include_once Core::WidgetDir() . DS . 'WizardBuilder' . DS . 'WizardBuilderWidget.php';
 
-class ProposalWizardBuilderWidget extends WizardBuilderWidget implements core\PluginMember {
-    use core\PluginMemberTrait;
+class ProposalWizardBuilderWidget extends WizardBuilderWidget implements \core\extensions\plugin\PluginMember {
+    use \core\extensions\plugin\PluginMemberTrait;
     protected $name = 'Proposal Wizard Builder';
 
     public function getDescription() {

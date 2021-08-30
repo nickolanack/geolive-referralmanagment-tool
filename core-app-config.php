@@ -10,7 +10,7 @@ $configDBFile = __DIR__ . '/rmt-config.db';
 $config['configsource'] = function () use ($configDBFile) {
 
 	//error_log($dbFile);
-	return new core\SqliteDatabase($configDBFile, 'z78ge_');
+	return new \core\SqliteDatabase($configDBFile, 'z78ge_');
 
 };
 
@@ -30,7 +30,7 @@ $config['datasource'] = function () use ($configDBFile, $defaultDatasource) {
 		}
 
 		
-		return new core\SqliteDatabase($dataDBFile, 'z78ge_');
+		return new \core\SqliteDatabase($dataDBFile, 'z78ge_');
 
 	}
 

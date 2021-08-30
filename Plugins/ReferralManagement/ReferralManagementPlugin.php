@@ -21,13 +21,13 @@ core\EventListener {
 	protected $filterRemovedProjects = array();
 	protected $filterRemovedUsers = array();
 
-	use core\WidgetProviderTrait;
-	use core\ModuleProviderTrait;
-	use core\AjaxControllerProviderTrait;
-	use core\DatabaseProviderTrait;
-	use core\DataTypeProviderTrait;
-	use core\EventListenerTrait;
-	use core\TemplateRenderer;
+	use \core\WidgetProviderTrait;
+	use \core\ModuleProviderTrait;
+	use \core\AjaxControllerProviderTrait;
+	use \core\DatabaseProviderTrait;
+	use \core\DataTypeProviderTrait;
+	use \core\EventListenerTrait;
+	use \core\TemplateRenderer;
 
 	public function formatMobileConfig($parameters) {
 
@@ -1109,11 +1109,11 @@ core\EventListener {
 	}
 
 	public function getLayersForGroup($name) {
-		$config = new core\Configuration('layerGroups');
+		$config = new \core\Configuration('layerGroups');
 		return $config->getParameter($name, array());
 	}
 	public function getMouseoverForGroup($name) {
-		$config = new core\Configuration('iconset');
+		$config = new \core\Configuration('iconset');
 		return $config->getParameter($name . "Mouseover", "{configuration.iconset." . $name . "Mouseover}");
 	}
 

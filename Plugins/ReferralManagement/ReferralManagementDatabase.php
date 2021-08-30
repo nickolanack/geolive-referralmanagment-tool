@@ -8,9 +8,9 @@
  * @version	1.0
  *
  */
-class ReferralManagementDatabase extends core\DataStorage {
+class ReferralManagementDatabase extends \core\DataStorage {
 
-    use core\DatabaseTrait;
+    use \core\DatabaseTrait;
     protected $tableSubPrefix="Proponent_";
 
     

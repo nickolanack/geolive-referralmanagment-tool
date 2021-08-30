@@ -1,6 +1,6 @@
 <?php
 
-class ProposalDataType extends core\PluginDataType {
+class ProposalDataType extends \core\extensions\plugin\PluginDataType {
     protected $authtasks = array(
         'read',
         'write',
