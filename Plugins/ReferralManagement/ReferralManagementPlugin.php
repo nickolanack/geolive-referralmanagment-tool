@@ -10,7 +10,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 \core\ViewController,
 \core\extensions\widget\WidgetProvider,
 \core\DataTypeProvider,
-\core\extensions\widget\ModuleProvider,
+\core\extensions\module\ModuleProvider,
 \core\TaskProvider,
 \core\AjaxControllerProvider,
 \core\DatabaseProvider,
@@ -22,7 +22,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	protected $filterRemovedUsers = array();
 
 	use \core\extensions\widget\WidgetProviderTrait;
-	use \core\extensions\widget\ModuleProviderTrait;
+	use \core\extensions\module\ModuleProviderTrait;
 	use \core\AjaxControllerProviderTrait;
 	use \core\DatabaseProviderTrait;
 	use \core\DataTypeProviderTrait;
