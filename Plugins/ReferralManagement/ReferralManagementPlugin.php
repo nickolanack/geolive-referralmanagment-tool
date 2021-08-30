@@ -6,7 +6,7 @@ include_once __DIR__ . '/lib/Task.php';
 include_once __DIR__ . '/lib/User.php';
 include_once __DIR__ . '/lib/UserRoles.php';
 
-class ReferralManagementPlugin extends Plugin implements
+class ReferralManagementPlugin extends \core\extensions\Plugin implements
 core\ViewController,
 core\WidgetProvider,
 core\DataTypeProvider,

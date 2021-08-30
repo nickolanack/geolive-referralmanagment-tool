@@ -8,7 +8,7 @@ include_once $path . DS . 'AttributesModuleTrait.php';
 class WizardLayerFieldModule extends AttributeWizardModule {
 
 	use AttributesModuleTrait;
-	use ModuleFormBuilderTrait;
+	use \core\extensions\module\ModuleFormBuilderTrait;
 	protected $attributeFieldName = 'attributeFields'; // because AttributesModuleTrait assumes 'attributeFields'
 	protected $defaultParameters = array(
 
