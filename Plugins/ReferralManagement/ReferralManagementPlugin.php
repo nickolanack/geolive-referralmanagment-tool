@@ -7,14 +7,14 @@ include_once __DIR__ . '/lib/User.php';
 include_once __DIR__ . '/lib/UserRoles.php';
 
 class ReferralManagementPlugin extends \core\extensions\Plugin implements
-core\ViewController,
-core\WidgetProvider,
-core\DataTypeProvider,
-core\ModuleProvider,
-core\TaskProvider,
-core\AjaxControllerProvider,
-core\DatabaseProvider,
-core\EventListener {
+\core\ViewController,
+\core\extensions\widget\WidgetProvider,
+\core\DataTypeProvider,
+\core\ModuleProvider,
+\core\TaskProvider,
+\core\AjaxControllerProvider,
+\core\DatabaseProvider,
+\core\EventListener {
 
 	protected $description = 'ReferralManagement specific views, etc.';
 
