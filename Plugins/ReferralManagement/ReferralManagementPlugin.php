@@ -21,7 +21,7 @@ core\EventListener {
 	protected $filterRemovedProjects = array();
 	protected $filterRemovedUsers = array();
 
-	use \core\WidgetProviderTrait;
+	use \core\extensions\widget\WidgetProviderTrait;
 	use \core\ModuleProviderTrait;
 	use \core\AjaxControllerProviderTrait;
 	use \core\DatabaseProviderTrait;
