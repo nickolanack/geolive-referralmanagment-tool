@@ -11,6 +11,10 @@ var ProjectMap=(function(){
 				return data.name.indexOf('<main>')>=0;
 			}
 
+			if(!window.CurrentMapItem){
+				return false;
+			}
+
 			return data.name.indexOf('<project:'+window.CurrentMapItem.getId()+'>')>=0;
 		};
 
