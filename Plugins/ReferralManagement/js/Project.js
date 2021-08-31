@@ -76,6 +76,11 @@ var Project = (function() {
 			var change = false;
 
 			if (me.data) {
+
+				if(JSON.stringify(data)!=JSON.stringify(me.data)){
+					return;
+				}
+
 				change = true;
 			}
 			
