@@ -2708,7 +2708,7 @@ span.remove-btn {
     background: white;
     border-radius: 100%;
     z-index: 1;
-    background-image: url(<?php echo UrlFrom("{scripts}/pushbox/ic_clear_black_18dp.png); ?>);
+    background-image: url(<?php echo UrlFrom("{scripts}/pushbox/ic_clear_black_18dp.png"); ?>);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 75%;
