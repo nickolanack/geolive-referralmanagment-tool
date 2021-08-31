@@ -42,6 +42,14 @@ button.primary-btn.nav-new-btn {
     cursor: pointer;
 }
 
+span.field-value.alt-tag {
+    vertical-align: bottom;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+}
+
 
 .pb-c.gct3 {
     background-color: $purple;
