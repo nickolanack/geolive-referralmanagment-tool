@@ -78,7 +78,7 @@ var ProfileNavigationMenu = new Class({
 					html: "Log Out",
 					events: {
 						click: function() {
-							AppClient.logout();
+							GatherDashboard.logout();
 						}
 					}
 				}]

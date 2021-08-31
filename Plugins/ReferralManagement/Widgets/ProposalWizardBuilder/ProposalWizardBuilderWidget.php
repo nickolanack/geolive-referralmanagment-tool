@@ -21,7 +21,7 @@ class ProposalWizardBuilderWidget extends WizardBuilderWidget implements \core\e
     }
 
     protected function getModulesList() {
-        return Module::ListInstantiableModuleNames(
+        return \core\extensions\Module::ListInstantiableModuleNames(
             array(
                 'type' => array(
                     'wizard',
