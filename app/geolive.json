@@ -9986,6 +9986,30 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "",
+                                    "identifier": "",
+                                    "viewType": "view",
+                                    "namedView": "singleMapTitleBarView",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "mainMapDetailOverview",
                                     "shouldRender": true,
