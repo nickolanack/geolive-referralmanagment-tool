@@ -550,6 +550,25 @@ var GatherDashboard = (function() {
 		},
 
 		logout:function(){
+
+
+			var div=new Element('div');
+			div.innerHTML="Signing out";
+			var spinner = new Spinner(div, {
+                width: 20,
+                height: 20,
+                color: 'rgba(255,255,255)',
+                start: true
+            });
+
+			var notification=NotificationBubble.Make('', div, {
+				autoClose:false,
+				from:'top-center',
+				position:window.getSize().y/2,
+				className:"layer-loading signing-out"
+
+			});
+
 			AppClient.logout();
 		},
 		addLogoutBtn: function() {
