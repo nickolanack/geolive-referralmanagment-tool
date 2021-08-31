@@ -17,6 +17,6 @@ if(item.getId()+""!==AppClient.getId()+""){
 
 el.appendChild(new Element('button', {"class":"inline-logout","html":"logout", "events":{"click":function(e){
     e.stop();
-    AppClient.logout();
+    GatherDashboard.logout();
     
 }}}));
