@@ -20,7 +20,7 @@
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
         "targetName": "",
-        "getItemListScript": " \n if(item.getProjectList){\n     item.getProjectList(callback);\n     return;\n }\n \n \n ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){\n     var projects=team.getProjects();\n     if(!application.getNamedValue(\"currentProject\")){\n        application.setNamedValue(\"currentProject\", projects[0]);\n    }\n    callback(projects)\n })\n\n       ",
+        "getItemListScript": " \n if(item.getProjectList){\n     item.getProjectList(callback);\n     return;\n }\n \n \n if(item instanceof Project){\n     \n    callback(new ProjectList({\n\t\t\t\t\t\t\t\"label\":\"Collection Datasets\",\n\t\t\t                \"showCreateBtn\":true,\n\t\t\t                projects:function(callback){\n\t\t\t                \tcallback([item].concat(item.getProjectObjects()));\n\t\t\t                }\n\t\t\t\t\t\t}));\n     \n     \n }\n \n \n ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){\n     var projects=team.getProjects();\n     if(!application.getNamedValue(\"currentProject\")){\n        application.setNamedValue(\"currentProject\", projects[0]);\n    }\n    callback(projects)\n })\n\n       ",
         "formatItemListScript": "return list;",
         "formatListItemModuleScript": "return item;",
         "emptyNamedView": "emptyListView",
