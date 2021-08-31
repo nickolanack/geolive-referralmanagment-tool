@@ -549,13 +549,17 @@ var GatherDashboard = (function() {
 			Project.AddListEvents(module);
 		},
 
+		logout:function(){
+			AppClient.logout();
+		},
 		addLogoutBtn: function() {
+			var me=this;
 			return new Element('button', {
 				"class": "primary-btn warn",
 				"html": "Log out",
 				events: {
 					"click": function() {
-						AppClient.logout();
+						me.logout();
 					}
 				}
 			});
