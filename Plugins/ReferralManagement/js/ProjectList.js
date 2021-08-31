@@ -588,7 +588,6 @@ var ProjectList = (function() {
 	};
 
 
-
 	return ProjectList;
 
 })();

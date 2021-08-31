@@ -77,7 +77,7 @@ var Project = (function() {
 
 			if (me.data) {
 
-				if(JSON.stringify(data)!=JSON.stringify(me.data)){
+				if(JSON.stringify(data)==JSON.stringify(me.data)){
 					return;
 				}
 
