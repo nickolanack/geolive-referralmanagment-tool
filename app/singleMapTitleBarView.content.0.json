@@ -7,7 +7,7 @@
         "viewType": "view",
         "namedView": "singleProjectListItemDetail",
         "shouldRender": true,
-        "namedViewScript": "return namedView",
+        "namedViewScript": "\nvar view=DashboardConfig.getValue(\"projectListItemView\");\nif(view){\n    return view;\n}\n\n\nreturn \"singleProjectListItemDetail\"",
         "showInlineEdit": false,
         "namedFormView": "defaultView",
         "formOptions": "\"{}\"",
