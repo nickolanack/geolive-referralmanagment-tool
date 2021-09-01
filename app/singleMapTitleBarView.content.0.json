@@ -16,7 +16,7 @@
         "initModuleScript": "",
         "formatModuleScript": "",
         "resolveItemScript": "return item;",
-        "filterModulesScript": "\nconsole.log(uiview);\nconsole.log(listItem);\n\nreturn list",
+        "filterModulesScript": "\nconsole.log('format list modules');\n\nconsole.log(list);\n\nreturn list",
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
         "targetName": "",
