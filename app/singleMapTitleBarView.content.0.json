@@ -16,7 +16,7 @@
         "initModuleScript": "",
         "formatModuleScript": "",
         "resolveItemScript": "return item;",
-        "filterModulesScript": "\nconsole.log('format list modules');\n\nconsole.log(list);\n\nlist.content=list.content.concat(list.footer||[])\n\nreturn list",
+        "filterModulesScript": "\nconsole.log('format list modules');\n\nconsole.log(list);\n\nlist.content=list.content.concat(list.footer||[]);\nuiview.options.addEditButtonsTo='content';\n\nreturn list",
         "itemButtonsScript": "return [{\n    label:\"test\"\n}];",
         "insertAtTop": false,
         "targetName": "",
