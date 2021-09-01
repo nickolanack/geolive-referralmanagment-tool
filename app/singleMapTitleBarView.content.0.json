@@ -22,7 +22,7 @@
         "targetName": "",
         "getItemListScript": "  \n if(item.getProjectList){\n     item.getProjectList(callback);\n     return;\n }\n \n if(item instanceof Project){\n     \n    (new ProjectList({\n\t\t\t\t\t\t\t\"label\":\"Collection Datasets\",\n\t\t\t                \"showCreateBtn\":true,\n\t\t\t                projects:function(callback){\n\t\t\t                \tcallback([item].concat(item.getProjectObjects()));\n\t\t\t                }\n\t\t\t\t\t\t})).getProjectList(callback);\n     \n     return;\n }\n\n (new ProjectList({\n\t\t\t\t\t\t\t\"label\":\"Collection Datasets\",\n\t\t\t                \"showCreateBtn\":true,\n\t\t\t                projects:function(callback){\n\t\t\t                \tcallback(ProjectSelection.getProjects());\n\t\t\t                }\n\t\t\t\t\t\t})).getProjectList(callback);\n     \n     return;\n       \n       \n       \n       ",
         "formatItemListScript": "return list;",
-        "formatListItemModuleScript": "return item;",
+        "formatListItemModuleScript": "ProjectList.AddListItemClassNames(child, childView, application);",
         "emptyNamedView": "emptyListView",
         "filterItemsScript": "return true;",
         "sortItemsScript": "",
