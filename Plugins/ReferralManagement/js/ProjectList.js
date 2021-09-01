@@ -546,13 +546,7 @@ var ProjectList = (function() {
 
 	}
 
-
-	ProjectList.AddListItemEvents = function(child, childView, application, listFilterFn) {
-
-
-		UIInteraction.addProjectOverviewClick(childView.getElement(), child);
-
-
+	ProjectList.AddListItemClassNames = function(child, childView, application) {
 		var current = application.getNamedValue("currentProject");
 		if (current && current.getId() == child.getId()) {
 			childView.getElement().addClass("active-project");
@@ -567,6 +561,14 @@ var ProjectList = (function() {
 			}
 		}
 
+	}
+	ProjectList.AddListItemEvents = function(child, childView, application, listFilterFn) {
+
+
+		UIInteraction.addProjectOverviewClick(childView.getElement(), child);
+
+
+		ProjectList.AddListItemClassNames(child, childView, application);
 
 
 		childView.addWeakEvent(child, "change", function() {
