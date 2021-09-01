@@ -98,6 +98,9 @@ var ProjectLayer = (function() {
 						"document": url,
 						"plugin": "Maps"
 					});
+
+					me._cacheable=true;
+
 				}
 			});
 
