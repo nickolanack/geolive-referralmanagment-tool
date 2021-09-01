@@ -59,6 +59,14 @@ button:focus {outline:0;}
         max-width: 16%;
         padding-right:15px
     }
+    
+    .tag-width span.field-value {
+        width: 20px;
+        height: 20px;
+        vertical-align: bottom;
+        margin-bottom: 3.5px;
+        font-size: 0;
+    }
 
 }
 
