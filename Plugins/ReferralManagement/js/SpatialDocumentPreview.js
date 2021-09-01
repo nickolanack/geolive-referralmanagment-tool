@@ -80,7 +80,9 @@ var SpatialDocumentPreview = (function() {
 						new UIMapSubTileButton(me._mapTile, {
 							containerClassName: 'spatial-file-tile',
 							buttonClassName: '',
-							image: (response.metadata.image || response.metadata.mimeIcon || response.metadata.mediaTypeIcon),
+							image: '/php-core-app/core.php?iam=administrator&format=raw&controller=plugins&view=plugin&plugin=Maps&pluginView=kml.tile&kml='+
+							response.metadata.path+'&size=250&pad=10&nocache=1' //&type=street&prj=GOOGLE
+							//(response.metadata.image || response.metadata.mimeIcon || response.metadata.mediaTypeIcon),
 
 						}).addEvent('click', function() {
 							map.fitBounds(b);
