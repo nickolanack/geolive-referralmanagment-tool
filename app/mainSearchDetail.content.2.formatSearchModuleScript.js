@@ -1,6 +1,6 @@
 searchModule.addEvent('focus',function(){
     setTimeout(function(){  
-    searchModule.results.setStyle('width', "400px");
+    searchModule.results.setStyle('width', "370px");
     },100);
     
 })
