@@ -1,7 +1,6 @@
 searchModule.addEvent('focus',function(){
     setTimeout(function(){  
-    var p = searchModule.search.searchInput.getCoordinates( searchModule.search.container);
-    searchModule.results.setStyle('width', (p.width) + "px");
+    searchModule.results.setStyle('width', "400px");
     },100);
     
 })
