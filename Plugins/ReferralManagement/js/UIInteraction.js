@@ -72,6 +72,11 @@ var UIInteraction = (function() {
 
 		},
 
+		navigateToProjectSearchResults:function(results){
+
+
+
+		},
 		navigateToProjectOverview: function(project) {
 
 			// var application = this._getApplication();
