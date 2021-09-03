@@ -11,6 +11,25 @@ span.field-value.is-dark {
     filter: invert(1);
 }
 
+.search-result-list.hybrid {
+    /* box-sizing: inherit; */
+    margin: 0 15px;
+    background-color: #2e354c;
+    color: white;
+}
+
+.search-result-list.hybrid  span.result-clickable {
+    font-size: 15px;
+    font-weight:500;
+    line-height:30px;
+    height:30px;
+}
+
+.search-result-list.hybrid  .field-label {
+    font-size: 8px;
+    margin-right:5px
+}
+
 
 .project-list-filters.section-indent{
     display: inline-table;
