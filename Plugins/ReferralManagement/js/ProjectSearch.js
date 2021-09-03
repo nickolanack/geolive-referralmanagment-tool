@@ -63,7 +63,14 @@ var ProjectSearch = (function() {
 				}
 			});
 
-			return [new ProjectSearchAggregator(search, {})];
+
+			var projectSearchAggregator=new ProjectSearchAggregator(search, {});
+			search.addEvent('search', function(){
+				UIInteraction.navigateToProjectSearchResults(projectSearchAggregator.getLastResponse());
+			});
+
+
+			return [projectSearchAggregator];
 
 		}
 
