@@ -16657,6 +16657,8 @@
                                 "type": "Search",
                                 "config": {
                                     "getAggregatorsScript": "mainSearchDetail.metadata.positions.content.modules.2.config.getAggregatorsScript.js",
+                                    "searchOptions": "{}",
+                                    "formatSearchModuleScript": "mainSearchDetail.metadata.positions.content.modules.2.config.formatSearchModuleScript.js",
                                     "placeholder": "Type to search..."
                                 }
                             },
