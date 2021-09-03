@@ -160,7 +160,9 @@
         "parameters": {
             "releaseServer": "http:\/\/release.geolive.ca",
             "releasePackage": "master",
-            "autoUpdate": false
+            "autoUpdate": false,
+            "composerPath": "\/usr\/bin\/composer",
+            "bowerPath": ""
         }
     },
     "plugin.24": {
