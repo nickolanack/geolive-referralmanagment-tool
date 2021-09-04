@@ -93,7 +93,7 @@ var UIInteraction = (function() {
 					"label":"Search Results",
 	                "showCreateBtn":false,
 	                projects:function(callback){
-	                	callback(results.map(function(result){
+	                	callback((results.results||results).map(function(result){
 	                		return ProjectTeam.CurrentTeam().getProject(result.item);
 	                	}));
 	                }
