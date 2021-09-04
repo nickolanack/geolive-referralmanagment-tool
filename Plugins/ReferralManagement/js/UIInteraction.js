@@ -74,6 +74,35 @@ var UIInteraction = (function() {
 
 		navigateToProjectSearchResults:function(results){
 
+			var controller = this._getApplication().getNamedValue('navigationController');
+
+
+
+			controller.navigateTo("Datasets", "Main", {
+
+				// filters: ProjectTagList.getProjectTagsData('_root').map(function(cat) {
+				// 	if (cat.getName() == typeName) {
+				// 		category = cat;
+				// 	}
+				// 	return cat.getName();
+
+				// }),
+				//filter:child.getName(),
+
+				item: new ProjectList({
+					"label":"Search Results",
+	                "showCreateBtn":false,
+	                projects:function(callback){
+	                	callback(results.map(function(result){
+	                		return ProjectTeam.CurrentTeam().getProject(result.item);
+	                	}));
+	                }
+				})
+			});
+
+
+
+			
 
 
 		},
