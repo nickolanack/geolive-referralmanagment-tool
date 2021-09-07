@@ -16,7 +16,8 @@ var ProjectLayer = (function() {
 		console.log(list);
 
 		list.content=([
-		        new ElementModule('button',{
+		        new ElementModule('div',{
+		        	"class":"field-value-module inline btn",
 		            html:'toggle',
 		            events:{
 		                click:function(){
@@ -25,7 +26,8 @@ var ProjectLayer = (function() {
 		            }
 		        })
 		    ]).concat(list.content,[
-		        new ElementModule('button',{
+		        new ElementModule('div',{
+		        	"class":"field-value-module inline btn",
 		            html:'remove',
 		            events:{
 		                click:function(){
@@ -33,7 +35,8 @@ var ProjectLayer = (function() {
 		                }
 		            }
 		        }),
-		        new ElementModule('button',{
+		        new ElementModule('div',{
+		        	"class":"field-value-module inline btn",
 		            html:'config',
 		            events:{
 		                click:function(){
