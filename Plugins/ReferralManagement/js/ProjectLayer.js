@@ -17,7 +17,7 @@ var ProjectLayer = (function() {
 
 		var adminBtns=[];
 
-		if(list.content[list.content.length-1].getIdentifier()="admin-btn"){
+		if(list.content[list.content.length-1].getIdentifier()=="admin-btn"){
 			adminBtns.push(list.content.pop());
 		}
 		
