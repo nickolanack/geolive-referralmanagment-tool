@@ -15,6 +15,14 @@ var ProjectLayer = (function() {
 
 		console.log(list);
 
+		var adminBtns=[];
+
+		if(list.content[list.content.length-1].getIdentifier()="admin-btn"){
+			adminBtns.push(list.content.pop());
+		}
+		
+
+
 		list.content=([
 		        new ElementModule('div',{
 		        	"class":"field-value-module inline btn",
@@ -46,7 +54,8 @@ var ProjectLayer = (function() {
 		        })
 		        
 		    
-		    ]);
+		    ], adminBtns);
+
 
 
 		return list
