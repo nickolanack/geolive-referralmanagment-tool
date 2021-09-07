@@ -1,12 +1,7 @@
 @charset "utf-8";
 
 /*Login*/
-$themeInset:#f0f0f0;
-$tagBtnColor:#e1e1e1;
 
-
-$mainStyleColor:#525252;
-$highlightBtnColor:$mainStyleColor;
 
 body.body-overlayed>#viewControllerApp>div>div>.ui-view {
     filter: blur(5px) grayscale(1);
