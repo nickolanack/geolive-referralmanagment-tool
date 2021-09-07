@@ -16,7 +16,7 @@
         "initModuleScript": "",
         "formatModuleScript": "",
         "resolveItemScript": "return item;",
-        "filterModulesScript": "\nconsole.log('format list modules');\n\nconsole.log(list);\n\nlist.content=([\n        new ElementModule('button',{\n            html:'toggle',\n            events:{\n                click:function(){\n                    console.log(toggle)\n                }\n            }\n        })\n    ]).concat(list.content,[\n        new ElementModule('button',{\n            html:'remove',\n            events:{\n                click:function(){\n                    console.log(toggle)\n                }\n            }\n        }),\n        new ElementModule('button',{\n            html:'config',\n            events:{\n                click:function(){\n                    console.log(toggle)\n                }\n            }\n        })\n        \n    \n    ]);\n\n\nreturn list",
+        "filterModulesScript": "\nreturn ProjectLayer.FormatListItemViewModulesScript(list, listItem, uiview, callback);",
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
         "targetName": "",
