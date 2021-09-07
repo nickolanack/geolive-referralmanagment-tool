@@ -160,9 +160,7 @@
         "parameters": {
             "releaseServer": "http:\/\/release.geolive.ca",
             "releasePackage": "master",
-            "autoUpdate": false,
-            "composerPath": "\/usr\/bin\/composer",
-            "bowerPath": ""
+            "autoUpdate": false
         }
     },
     "plugin.24": {
@@ -16665,8 +16663,6 @@
                                 "type": "Search",
                                 "config": {
                                     "getAggregatorsScript": "mainSearchDetail.metadata.positions.content.modules.2.config.getAggregatorsScript.js",
-                                    "searchOptions": "{}",
-                                    "formatSearchModuleScript": "mainSearchDetail.metadata.positions.content.modules.2.config.formatSearchModuleScript.js",
                                     "placeholder": "Type to search..."
                                 }
                             },
@@ -18500,8 +18496,10 @@
             "sass": true,
             "widgetTitle": "gct3Theme",
             "target": "gct3Theme",
-            "customCSS": "",
-            "sassParamters": [],
+            "customCSS": "gct3Theme.customCSS.css",
+            "sassParamters": {
+                "datasetIconSize": "50%"
+            },
             "useRemote": "",
             "readAccess": "public"
         }
