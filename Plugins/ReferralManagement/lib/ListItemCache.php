@@ -119,7 +119,7 @@ class ListItemCache {
 		$cacheFile = HtmlDocument()->getCachedPageFile($cacheName);
 		$cacheData = HtmlDocument()->getCachedPage($cacheName);
 
-		$start = microtime();
+		$start = microtime(true);
 
 		Broadcast('cacheusers', 'update', array(
 			'params' => $params,
@@ -144,8 +144,8 @@ class ListItemCache {
 				'client' => GetClient()->getUserName(),
 				'domain' => HtmlDocument()->getDomain(),
 				'caller' => get_class() . ' -> ' . __METHOD__,
-				'time' => microtime(),
-				'interval' => microtime() - $start,
+				'time' => microtime(true),
+				'interval' => (microtime(true) - $start),
 				'cache' => array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
 				'status' => 'write',
 			));
@@ -158,8 +158,8 @@ class ListItemCache {
 			'client' => GetClient()->getUserName(),
 			'domain' => HtmlDocument()->getDomain(),
 			'caller' => get_class() . ' -> ' . __METHOD__,
-			'time' => microtime(),
-			'interval' => microtime() - $start,
+			'time' => microtime(true),
+			'interval' => (microtime(true) - $start),
 			'cache' => array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
 			'status' => 'skip',
 		));
