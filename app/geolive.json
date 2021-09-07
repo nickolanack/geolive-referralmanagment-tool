@@ -2297,6 +2297,7 @@
             "target": "forTheMap",
             "customCSS": "Generated Style Script.customCSS.css",
             "sassParamters": [],
+            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -4050,6 +4051,7 @@
             "target": "sharedDashboardTheme",
             "customCSS": "Default Dashboard Theme.customCSS.css",
             "sassParamters": [],
+            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -6107,6 +6109,7 @@
             "target": "sharedGeneratedStyles",
             "customCSS": "sharedGeneratedStyles.customCSS.css",
             "sassParamters": [],
+            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -18494,6 +18497,7 @@
             "target": "gct3Theme",
             "customCSS": "gct3Theme.customCSS.css",
             "sassParamters": [],
+            "useRemote": "https:\/\/gct3.gather.geoforms.ca\/app\/nickolanack\/php-core-app\/core.php?task=generate_css&format=ajax&json={%22widget%22:%22gct3Theme%22,%20%22variables%22:{}}",
             "readAccess": "public"
         }
     },
@@ -18600,6 +18604,7 @@
             "target": "darkTheme",
             "customCSS": "darkTheme.customCSS.css",
             "sassParamters": [],
+            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -18733,6 +18738,7 @@
             "target": "gatherTheme",
             "customCSS": "gatherTheme.customCSS.css",
             "sassParamters": [],
+            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -18747,6 +18753,7 @@
             "target": "fontAwesomeIcons",
             "customCSS": "fontAwesomeIcons.customCSS.css",
             "sassParamters": [],
+            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -19568,6 +19575,7 @@
             "target": "purpleTheme",
             "customCSS": "purpleTheme.customCSS.css",
             "sassParamters": [],
+            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -20916,6 +20924,7 @@
                 "genericButtonColorContent": "rgba(0,0,0,0.04)",
                 "themeName": "userTheme"
             },
+            "useRemote": "",
             "readAccess": "public"
         }
     },
