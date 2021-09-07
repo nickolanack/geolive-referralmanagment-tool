@@ -2295,6 +2295,7 @@
             "target": "forTheMap",
             "customCSS": "Generated Style Script.customCSS.css",
             "sassParamters": [],
+            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -4053,6 +4054,7 @@
                 "mainStyleColor": "#525252",
                 "highlightBtnColor": "$mainStyleColor"
             },
+            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -6110,6 +6112,7 @@
             "target": "sharedGeneratedStyles",
             "customCSS": "sharedGeneratedStyles.customCSS.css",
             "sassParamters": [],
+            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -18494,7 +18497,10 @@
             "widgetTitle": "gct3Theme",
             "target": "gct3Theme",
             "customCSS": "gct3Theme.customCSS.css",
-            "sassParamters": [],
+            "sassParamters": {
+                "datasetIconSize": "50%"
+            },
+            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -18601,6 +18607,7 @@
             "target": "darkTheme",
             "customCSS": "darkTheme.customCSS.css",
             "sassParamters": [],
+            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -18734,6 +18741,7 @@
             "target": "gatherTheme",
             "customCSS": "gatherTheme.customCSS.css",
             "sassParamters": [],
+            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -18748,6 +18756,7 @@
             "target": "fontAwesomeIcons",
             "customCSS": "fontAwesomeIcons.customCSS.css",
             "sassParamters": [],
+            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -19569,6 +19578,7 @@
             "target": "purpleTheme",
             "customCSS": "purpleTheme.customCSS.css",
             "sassParamters": [],
+            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -20917,6 +20927,7 @@
                 "genericButtonColorContent": "rgba(0,0,0,0.04)",
                 "themeName": "userTheme"
             },
+            "useRemote": "",
             "readAccess": "public"
         }
     },

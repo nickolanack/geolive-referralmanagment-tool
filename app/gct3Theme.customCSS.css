@@ -645,13 +645,17 @@ ul.project, ul.user{
     float: right;
     
     border-radius: 100%;
-    background-size: 50%;
     background-position: center;
     background-repeat: no-repeat;
     
    
     
 }
+
+.dataset-item .field-value-module.item-icon, .dataset-item .field-value-module.item-icon>.field-label {
+    background-size: $datasetIconSize;
+}
+
 
 .ui-view.section-module.dataset-item {
     height: unset;
