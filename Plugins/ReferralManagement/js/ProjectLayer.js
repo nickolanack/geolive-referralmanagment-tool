@@ -8,6 +8,51 @@ var ProjectLayer = (function() {
 	var baseClass = false;
 
 
+	ProjectLayer.FormatListItemViewModulesScript=function(list, listItem, uiview, callback){
+
+
+		 console.log('format list modules');
+
+		console.log(list);
+
+		list.content=([
+		        new ElementModule('button',{
+		            html:'toggle',
+		            events:{
+		                click:function(){
+		                    console.log(toggle)
+		                }
+		            }
+		        })
+		    ]).concat(list.content,[
+		        new ElementModule('button',{
+		            html:'remove',
+		            events:{
+		                click:function(){
+		                    console.log(toggle)
+		                }
+		            }
+		        }),
+		        new ElementModule('button',{
+		            html:'config',
+		            events:{
+		                click:function(){
+		                    console.log(toggle)
+		                }
+		            }
+		        })
+		        
+		    
+		    ]);
+
+
+		return list
+       
+
+
+	}
+
+
 	ProjectLayer.MakeProjectLayer = function(map, options) {
 
 
