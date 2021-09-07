@@ -36,6 +36,7 @@ span.field-value.is-dark {
 }
 
 
+
 .project-list-filters.section-indent{
     display: inline-table;
     width: 100%;
@@ -650,10 +651,6 @@ ul.project, ul.user{
     
    
     
-}
-
-.dataset-item .field-value-module.item-icon, .dataset-item .field-value-module.item-icon>.field-label {
-    background-size: 75%;
 }
 
 .ui-view.section-module.dataset-item {
