@@ -160,9 +160,7 @@
         "parameters": {
             "releaseServer": "http:\/\/release.geolive.ca",
             "releasePackage": "master",
-            "autoUpdate": false,
-            "composerPath": "\/usr\/bin\/composer",
-            "bowerPath": ""
+            "autoUpdate": false
         }
     },
     "plugin.24": {
@@ -2297,7 +2295,6 @@
             "target": "forTheMap",
             "customCSS": "Generated Style Script.customCSS.css",
             "sassParamters": [],
-            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -4056,7 +4053,6 @@
                 "mainStyleColor": "#525252",
                 "highlightBtnColor": "$mainStyleColor"
             },
-            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -6114,7 +6110,6 @@
             "target": "sharedGeneratedStyles",
             "customCSS": "sharedGeneratedStyles.customCSS.css",
             "sassParamters": [],
-            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -16665,8 +16660,6 @@
                                 "type": "Search",
                                 "config": {
                                     "getAggregatorsScript": "mainSearchDetail.metadata.positions.content.modules.2.config.getAggregatorsScript.js",
-                                    "searchOptions": "{}",
-                                    "formatSearchModuleScript": "mainSearchDetail.metadata.positions.content.modules.2.config.formatSearchModuleScript.js",
                                     "placeholder": "Type to search..."
                                 }
                             },
@@ -18502,7 +18495,6 @@
             "target": "gct3Theme",
             "customCSS": "gct3Theme.customCSS.css",
             "sassParamters": [],
-            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -18609,7 +18601,6 @@
             "target": "darkTheme",
             "customCSS": "darkTheme.customCSS.css",
             "sassParamters": [],
-            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -18743,7 +18734,6 @@
             "target": "gatherTheme",
             "customCSS": "gatherTheme.customCSS.css",
             "sassParamters": [],
-            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -18758,7 +18748,6 @@
             "target": "fontAwesomeIcons",
             "customCSS": "fontAwesomeIcons.customCSS.css",
             "sassParamters": [],
-            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -19580,7 +19569,6 @@
             "target": "purpleTheme",
             "customCSS": "purpleTheme.customCSS.css",
             "sassParamters": [],
-            "useRemote": "",
             "readAccess": "public"
         }
     },
@@ -20929,7 +20917,6 @@
                 "genericButtonColorContent": "rgba(0,0,0,0.04)",
                 "themeName": "userTheme"
             },
-            "useRemote": "",
             "readAccess": "public"
         }
     },

@@ -22,10 +22,6 @@ button:focus {outline:0;}
     background: rgba(0,0,0,0.1);
     height: 58px;
 
-    button{
-        display:none;
-        
-    }
 
     [data-col="created"] {
         display: none;
