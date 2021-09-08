@@ -26,10 +26,13 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
     $altLogo=$config->getParameter('applicationLogoAlt', array());
     if(!empty($altLogo)){
     
-        $altLogo=$altLogo[0];    
+        $altLogo=$altLogo[0];  
+        $altLogo==UrlFrom($altLogo."?thumb=>200x>200");
     }else{
         $altLogo=false;
     }
+    
+    $parameters['applicationAltLogo']=$altLogo;
     
     
     
