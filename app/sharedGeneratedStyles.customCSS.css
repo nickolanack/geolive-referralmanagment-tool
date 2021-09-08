@@ -350,8 +350,8 @@ if(!$useFontAwesome){
     }
 
     .priority-tasks {
-        background-image:url("<?php echo UrlFrom($priorityIcon."?tint=".$config->getParameter("priorityTint", "rgb(180,180,180)")); ?>");
-        border-color:<?php echo $config->getParameter("priorityTint", "rgb(180,180,180)"); ?>;
+        background-image:url($priorityIconTint);
+        border-color:$priorityTint;
         
     }
 

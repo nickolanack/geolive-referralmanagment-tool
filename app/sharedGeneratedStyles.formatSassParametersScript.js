@@ -180,6 +180,7 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
         $remainingIcon=$remainingIcon[0];
     }
 
+    $parameters['priorityTint']=$config->getParameter("priorityTint", "rgb(180,180,180)");
     $parameters['priorityIcon']=json_encode(UrlFrom($priorityIcon."?tint=rgb(180,180,180)"));
     $parameters['priorityIconTint']=json_encode(UrlFrom($priorityIcon."?tint=".$config->getParameter("priorityTint", "rgb(180,180,180)")));
     $parameters['overdueIcon']=json_encode(UrlFrom($overdueIcon."?tint=rgb(180,180,180)"));
