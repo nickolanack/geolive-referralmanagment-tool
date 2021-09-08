@@ -30,6 +30,16 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
     $parameters['mobileIcons']=(object) $mobileIcons;
     
     
+    
+    $parameters['addIcon']=false;
+    $addIcon=$config->getParameter('fileUploadBtnIcon', array());
+    if(!empty($addIcon)){
+        $parameters['addIcon']=json_encode(UrlFrom($addIcon[0].'?thumb=x>100y>100'));
+    }
+    
+    
+    
+    
     $attachmentIcon=$config->getParameter('attachmentIcon', array());
     if(!empty($attachmentIcon)){
         $attachmentIcon=$menuIconDefault;

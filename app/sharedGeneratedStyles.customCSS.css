@@ -104,7 +104,6 @@ if(!$useFontAwesome){
         
         @if $icon {
             .#{$n}-app-link{
-                    
                 background-image:url($icon);
             }
         }
@@ -115,22 +114,6 @@ if(!$useFontAwesome){
     <?php
     
 
-
-foreach(['apple', 'google'] as $mobile){
-    $appIcon=$config->getParameter($mobile.'AppIcon', array());
-        if(!empty($appIcon)){
-
-        ?>
-            .<?php echo $mobile; ?>-app-link{
-                
-                background-image:url("<?php echo UrlFrom($appIcon[0].'?thumb=x>200y>100'); ?>");
-            }
-       <?php  
-    }
-   
-    
-    
-}
 
 if(!$useFontAwesome){
     $addIcon=$config->getParameter('fileUploadBtnIcon', array());
