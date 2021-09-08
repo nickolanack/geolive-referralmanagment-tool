@@ -454,13 +454,20 @@ foreach(['prev', 'next'] as $nav){
     $navIcons: ("prev": auto, "next": auto);
     $navIconsHover: ("prev": auto, "next": auto);
 
-    @each $n in $nav {
+    @each $n, $icon in $navIcons {
         .#{$n}-btn {
-            display:map.get($navIcons, $n);
+            display:$icon;
         }
       
+        
+      
+    }
+    
+    @each $n, $icon in $navIconsHover {
+      
+      
         .#{$n}-btn:hover {
-            display:map.get($navIconsHover, $n);
+            display:$icon;
         }
       
     }
