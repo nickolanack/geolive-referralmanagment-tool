@@ -170,29 +170,23 @@ if(!$useFontAwesome){
 } 
 
 
-<?php
+@if $applicationLogoAlt {
 
-
-$altLogo=$config->getParameter('applicationLogoAlt', array());
-if(!empty($altLogo)){
-    
-    $altLogo=$altLogo[0];
-    ?>
     .alt-logo {
 
-        background-image:url("<?php echo UrlFrom($altLogo."?thumb=>200x>200"); ?>");
+        background-image:url($applicationLogoAlt);
     }  
+  
+}
+@else{
     
-    <?php
-}else{
-    
-    ?>
+
     .alt-logo {
        display:none;
     }
-    <?php
+
 }
-?>
+
 
 
 .gather-logo {
