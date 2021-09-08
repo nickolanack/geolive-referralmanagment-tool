@@ -18,7 +18,6 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
         }else{
             $gatherLogo=$gatherLogo[0];
         }
-    
     $parameters['gatherLogo']=json_encode(UrlFrom($gatherLogo."?thumb=>200x>200"));
 
 
