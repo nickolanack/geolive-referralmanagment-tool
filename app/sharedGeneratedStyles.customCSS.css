@@ -164,6 +164,32 @@ if(!$useFontAwesome){
 
 
 ?>
+
+@if not $useFontAwesome{
+
+    @each $n, $icon in $sectionIcons {
+        li.menu-#{$n}:before{
+            background-image:url($icon);
+        }
+     
+        .label-#{$n}{
+            background-image:url($icon);
+        }
+    }
+ 
+ 
+    @each $n, $icon in $sectionIconsActive {
+        li.menu-#{$n}.active:before{
+            background-image:url($icon);
+        }
+    }
+}
+
+
+
+
+
+
  .application-logo {
 
     background-image:url($applicationLogo);
