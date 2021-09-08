@@ -20,9 +20,9 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
     foreach(['apple', 'google'] as $mobile){
         $appIcon=$config->getParameter($mobile.'AppIcon', array());
             if(!empty($appIcon)){
-                $mobileIcon[$mobile]=UrlFrom($appIcon[0].'?thumb=x>200y>100');
+                $mobileIcons[$mobile]=UrlFrom($appIcon[0].'?thumb=x>200y>100');
             }else{
-                $mobileIcon[$mobile]=false;
+                $mobileIcons[$mobile]=false;
             }
         }
     }
