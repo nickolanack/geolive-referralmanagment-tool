@@ -162,23 +162,13 @@ if(!$useFontAwesome){
 
 
 
-$applicationLogo=$config->getParameter('applicationLogo', array());
-if(empty($applicationLogo)){
-    $applicationLogo=$menuIconDefault;
-}else{
-    $applicationLogo=$applicationLogo[0];
-}
-
-
-
 
 ?>
  .application-logo {
 
-    background-image:url("<?php echo UrlFrom($applicationLogo."?thumb=>200x>200"); ?>");
+    background-image:url($applicationLogo);
 } 
 
- 
 
 <?php
 
