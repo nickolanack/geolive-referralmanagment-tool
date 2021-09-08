@@ -406,25 +406,6 @@ foreach(GetPlugin("ReferralManagement")->getRoleIcons() as $role=>$icon){
  <?php   
 }
 
-
-
-
-foreach(['image', 'document', 'layer', 'audio', 'video'] as $mime){
-    $mediaIcon=$config->getParameter($mime.'UploadIcon', array());
-        if(empty($mediaIcon)){
-            $mediaIcon=$menuIconDefault;
-        }else{
-            $mediaIcon=$mediaIcon[0];
-        }
-    ?>
-        .upload-btns span.<?php echo $mime?>.noIcon {
-            background-image:url("<?php echo UrlFrom($mediaIcon."?tint=".$config->getParameter("uploadTint", "rgb(180,180,180)")); ?>");
-        }
-    <?php
-    
-    
-}
-
 ?>
 
     @each $n, $icon in $mediaIcons {
