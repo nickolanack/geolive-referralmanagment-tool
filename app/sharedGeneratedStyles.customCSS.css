@@ -1,11 +1,4 @@
 
-.test_bool_true{
-    @if $useFontAwesome 
-        color:blue;
-    
-    @if not $useFontAwesome 
-        color:red;
-}
  
 
 
