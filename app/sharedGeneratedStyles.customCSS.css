@@ -450,10 +450,7 @@ foreach(['prev', 'next'] as $nav){
 
 
 
-    $nav: 'prev', 'next';
-    $navIcons: ("prev": auto, "next": auto);
-    $navIconsHover: ("prev": auto, "next": auto);
-
+   
     @each $n, $icon in $navIcons {
         .#{$n}-btn {
             background-image:url($icon);
