@@ -387,27 +387,6 @@ if(!$useFontAwesome){
 }
 
 
-
-
-<?php 
-
-
-foreach(GetPlugin("ReferralManagement")->getRoleIcons() as $role=>$icon){
-    ?>
-    .role-<?php echo $role; ?>{
-        background-image:url('<?php echo UrlFrom($icon); ?>?grayscale');
-        filter: grayscale(100);
-    }
-    
-    .role-<?php echo $role; ?>.active{
-        background-image:url('<?php echo UrlFrom($icon); ?>');
-        filter: grayscale(0);
-    }
- <?php   
-}
-
-?>
-
      @each $n, $icon in $roleIcons {
         .role-#{$n}{
             background-image:url($icon);
