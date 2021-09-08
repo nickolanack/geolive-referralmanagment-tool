@@ -34,6 +34,25 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
 
 
 
+
+    $optionsMenuIcon=$config->getParameter('optionsMenuIcon', array());
+        if(!empty($optionsMenuIcon)){
+          
+            $optionsMenuIcon=$optionsMenuIcon[0];
+            $optionsMenuIconHover=json_encode(UrlFrom($optionsMenuIcon."?thumb=x>100y>100&tint=".$config->getParameter("menuIconTint")));
+            $optionsMenuIcon=json_encode(UrlFrom($optionsMenuIcon."?thumb=x>100y>100&tint=".$config->getParameter("menuIconColor", "rgb(180,180,180)")));
+            
+        
+        }else{
+             $optionsMenuIcon=false;
+        }
+
+        $parameters['optionsMenuIconHover']=$optionsMenuIconHover;
+        $parameters['optionsMenuIcon']=$optionsMenuIcon;
+
+
+
+
     $slackMenuIcon=$config->getParameter('slackMenuIcon', array());
         if(!empty($slackMenuIcon)){
             $slackMenuIcon=$slackMenuIcon[0];
