@@ -451,8 +451,8 @@ foreach(['prev', 'next'] as $nav){
 
 
     $nav: 'prev', 'next';
-    $navIcons=: ("prev": auto, "next": auto);
-    $navIconsHover=: ("prev": auto, "next": auto);
+    $navIcons: ("prev": auto, "next": auto);
+    $navIconsHover: ("prev": auto, "next": auto);
 
     @each $n in $nav {
         .#{$n}-btn {
