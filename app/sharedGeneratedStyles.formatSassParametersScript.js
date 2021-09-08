@@ -33,6 +33,33 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
     
     
     
+    
+    $sectionIcons=array();
+    $sectionIconsActive=array();
+    foreach($config->getParameters() as $key=>$value){
+        foreach(array('main', 'people', 'accounting','community', 'configuration') as $section){
+            if(strpos($key, $section.'-')===0){
+                $icon=$menuIconDefault;
+                if(!empty($value)){
+                    $icon=$value[0];
+                }
+                
+                $sectionIcons[$key]=UrlFrom($icon."?thumb=>20x>20&tint=".
+                    $config->getParameter("menuIconColor", "rgb(180,180,180)"));
+                
+                $sectionIconsActive[$key]=UrlFrom($icon."?thumb=>20x>20&tint=".$config->getParameter("menuIconTint"));
+               
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     $mobileIcons=array();
     
     foreach(['apple', 'google'] as $mobile){
