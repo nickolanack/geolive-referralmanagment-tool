@@ -305,10 +305,7 @@ if(!$useFontAwesome){
         background-image:url("<?php echo UrlFrom($menuIconDefault."?tint=rgb(180,180,180)"); ?>");
     }
 
-}
 
-
-@if not $useFontAwesome{
     <?php 
 
         $starredIcon=$config->getParameter('starIcon', array());
@@ -333,12 +330,7 @@ if(!$useFontAwesome){
         
     }
 
-}
 
-
-
-
-@if not $useFontAwesome{
 <?php 
 
     $priorityIcon=$config->getParameter('priorityIcon', array());
