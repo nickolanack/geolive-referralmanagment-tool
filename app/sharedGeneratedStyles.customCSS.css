@@ -40,11 +40,7 @@ $config=GetWidget('dashboardConfig');
 
 
 $useFontAwesome=$config->getParameter('useFontAwesome');
-if($useFontAwesome){
-    ?>
-    
-    <?php
-}
+
 
 
     $offsetY=10;
