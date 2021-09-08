@@ -447,6 +447,23 @@ foreach(['prev', 'next'] as $nav){
 }
 
 ?>
+
+
+
+    $nav: 'prev', 'next';
+
+    @each $n in $nav {
+        .#{4n}-btn {
+            
+        }
+      
+        .#{4n}-btn:hover {
+            
+        }
+      
+    }
+
+
         
         
         @if $backgroundImage {
