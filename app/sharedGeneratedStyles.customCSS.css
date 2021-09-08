@@ -1,10 +1,4 @@
 
- 
-
-
-
-
-
 
 .project-type-missing-tasks-hint {
     background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/tree.png?tint=rgb(198, 175, 79)"); ?>");
@@ -46,7 +40,11 @@ $config=GetWidget('dashboardConfig');
 
 
 $useFontAwesome=$config->getParameter('useFontAwesome');
-
+if($useFontAwesome){
+    ?>
+    
+    <?php
+}
 
 
     $offsetY=10;
@@ -84,10 +82,8 @@ if(!$useFontAwesome){
     }
 }
 
-
+if($config->getParameter('showSplitProjectDetail')){
     ?>
-    
-@if $showSplitProjectDetail{
    
    [data-view="splitProjectDetail"]>div>div{
         display:inline-table;
@@ -95,11 +91,11 @@ if(!$useFontAwesome){
         height: 100%;
     }
     
-}
+    
     
     <?php
     
-
+}
 
 foreach(['apple', 'google'] as $mobile){
     $appIcon=$config->getParameter($mobile.'AppIcon', array());
@@ -207,20 +203,38 @@ if(!empty($altLogo)){
     }
     <?php
 }
-?>
 
 
-.gather-logo {
-    background-image:url($gatherLogo);
+
+
+$gatherLogo=$config->getParameter('gatherLogo', array());
+        if(empty($gatherLogo)){
+            $gatherLogo=$menuIconDefault;
+        }else{
+            $gatherLogo=$gatherLogo[0];
+        }
+    ?>
+ .gather-logo {
+
+    background-image:url("<?php echo UrlFrom($gatherLogo."?thumb=>200x>200"); ?>");
 }  
 
-.gather-icon {
-    background-image:url($gatherIcon);
+<?php
+$gatherIcon=$config->getParameter('gatherIcon', array());
+        if(empty($gatherIcon)){
+            $gatherIcon=$gatherLogo;
+        }else{
+            $gatherIcon=$gatherIcon[0];
+        }
+    ?>
+ .gather-icon {
+    
+    background-image:url("<?php echo UrlFrom($gatherIcon."?thumb=>200x>200"); ?>");
 } 
 
 
 .navigation-menu li.menu-links-gather:before{
-     background-image:url($gatherIcon);
+     background-image:url("<?php echo UrlFrom($gatherIcon."?thumb=>200x>200"); ?>");
      content:"";
      width: 30px;
      height: 30px;
@@ -262,15 +276,17 @@ if(!$useFontAwesome){
     position: relative;
 }
 
+<?php 
 
-@if not $useFontAwesome{
 
+if(!$useFontAwesome){
+    ?>
     .field-value-module.with-description .field-value:after{
          background-image: url("<?php echo UrlFrom("{assets}/Control Panel Icons/text.png?tint=rgb(180,180,180)"); ?>");
     }
-
+<?php 
 }
-
+?>
 .field-value-module.with-description .field-value:after{
     content: "";
     width: 20px;
@@ -283,15 +299,28 @@ if(!$useFontAwesome){
 }
 
 
-@if not $useFontAwesome{
 
-    .synopsis-item {
-        background-image:url("<?php echo UrlFrom($menuIconDefault."?tint=rgb(180,180,180)"); ?>");
-    }
+<?php
 
 
-    <?php 
 
+if(!$useFontAwesome){
+    ?>
+.synopsis-item {
+    background-image:url("<?php echo UrlFrom($menuIconDefault."?tint=rgb(180,180,180)"); ?>");
+}
+<?php 
+}
+?>
+
+
+
+
+<?php 
+
+
+if(!$useFontAwesome){
+    
         $starredIcon=$config->getParameter('starIcon', array());
         if(empty($starredIcon)){
             $starredIcon=$menuIconDefault;
@@ -299,23 +328,35 @@ if(!$useFontAwesome){
             $starredIcon=$starredIcon[0];
         }
     ?>
-    .starred-indicator {
+ .starred-indicator {
+
+    background-image:url("<?php echo UrlFrom($starredIcon."?tint=rgb(180,180,180)"); ?>");
+}   
+.starred-indicator.starred {
+
+    background-image:url("<?php echo UrlFrom($starredIcon."?tint=".$config->getParameter("starTint", "rgb(180,180,180)")); ?>");
+}
+
+
+.starred-tasks {
+    background-image:url("<?php echo UrlFrom($starredIcon."?tint=".$config->getParameter("starTint", "rgb(180,180,180)")); ?>");
+    border-color:<?php echo $config->getParameter("starTint", "rgb(180,180,180)"); ?>;
     
-        background-image:url("<?php echo UrlFrom($starredIcon."?tint=rgb(180,180,180)"); ?>");
-    }   
-    .starred-indicator.starred {
-    
-        background-image:url("<?php echo UrlFrom($starredIcon."?tint=".$config->getParameter("starTint", "rgb(180,180,180)")); ?>");
-    }
-    
-    .starred-tasks {
-        background-image:url("<?php echo UrlFrom($starredIcon."?tint=".$config->getParameter("starTint", "rgb(180,180,180)")); ?>");
-        border-color:<?php echo $config->getParameter("starTint", "rgb(180,180,180)"); ?>;
-        
-    }
+}
+
+<?php 
+}
+?>
+
+
+
 
 
 <?php 
+
+
+if(!$useFontAwesome){
+
 
     $priorityIcon=$config->getParameter('priorityIcon', array());
     if(empty($priorityIcon)){
@@ -343,10 +384,12 @@ if(!$useFontAwesome){
 
     ?>
     .priority-indicator {
-        background-image:url($priorityIcon);
+
+        background-image:url("<?php echo UrlFrom($priorityIcon."?tint=rgb(180,180,180)"); ?>");
     }   
     .priority-indicator.priority {
-        background-image:url($priorityIconTint);
+
+        background-image:url("<?php echo UrlFrom($priorityIcon."?tint=".$config->getParameter("priorityTint", "rgb(180,180,180)")); ?>");
     }
 
     .priority-tasks {
@@ -384,7 +427,9 @@ if(!$useFontAwesome){
          background-image:url("<?php echo UrlFrom($overdueIcon."?tint=rgba(60, 179, 113)"); ?>");
     }
 
+<?php 
 }
+?>
 
 
 
@@ -496,7 +541,7 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
         }
         
         
-        $surveyMenuIcon=$config->getParameter('surveyMenuIcon', array());
+         $surveyMenuIcon=$config->getParameter('surveyMenuIcon', array());
         if(!empty($surveyMenuIcon)){
           
             $surveyMenuIcon=$surveyMenuIcon[0];
@@ -541,28 +586,29 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
             <?php
         }
         
-        ?>
+         if(!$config->getParameter("showUsersRoles")){
+            ?>
         
-        @if not $showUsersRoles{
-            
-           .user-detail .user-role, .user-detail .user-community{
+            .user-detail .user-role, .user-detail .user-community{
                 display:none;
-            } 
-            
-        }
-        @else{
-           .user-detail .user-role, .user-detail .user-community{
+            }
+            <?php
+        }else{
+            ?>
+            .user-detail .user-role, .user-detail .user-community{
                
-            } 
+            }
+            <?php
         }
-        
-        @if not $showFileThumbnails{
-            
+                
+        if(!$config->getParameter("showFileThumbnails")){
+            ?>
             .image.attachment-thumb{
                 display:none;
             }
-            
+            <?php
         }
         
-    
-
+        
+        
+?>
