@@ -361,12 +361,10 @@ if(!$useFontAwesome){
 
     ?>
     .priority-indicator {
-
-        background-image:url("<?php echo UrlFrom($priorityIcon."?tint=rgb(180,180,180)"); ?>");
+        background-image:url($priorityIcon);
     }   
     .priority-indicator.priority {
-
-        background-image:url("<?php echo UrlFrom($priorityIcon."?tint=".$config->getParameter("priorityTint", "rgb(180,180,180)")); ?>");
+        background-image:url($priorityIconTint);
     }
 
     .priority-tasks {
