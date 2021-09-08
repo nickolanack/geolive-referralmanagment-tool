@@ -35,9 +35,9 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
         $remainingIcon=$remainingIcon[0];
     }
 
-    $parameters['priorityIcon']=$priorityIcon;
-    $parameters['overdueIcon']=$overdueIcon;
-    $parameters['remainingIcon']=$remainingIcon;
+    $parameters['priorityIcon']=json_encode($priorityIcon);
+    $parameters['overdueIcon']=json_encode($overdueIcon);
+    $parameters['remainingIcon']=json_encode($remainingIcon);
 
 
 
