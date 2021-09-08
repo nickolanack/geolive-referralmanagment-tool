@@ -2,13 +2,6 @@
  
 
 
-.test_bool_true{
-    @if not $useFontAwesome {
-        color:blue;
-    }
-    
-}
-
 
 
 
@@ -360,12 +353,8 @@ if(!$useFontAwesome){
 
 
 
-
+@if not $useFontAwesome{
 <?php 
-
-
-if(!$useFontAwesome){
-
 
     $priorityIcon=$config->getParameter('priorityIcon', array());
     if(empty($priorityIcon)){
@@ -436,9 +425,7 @@ if(!$useFontAwesome){
          background-image:url("<?php echo UrlFrom($overdueIcon."?tint=rgba(60, 179, 113)"); ?>");
     }
 
-<?php 
 }
-?>
 
 
 
