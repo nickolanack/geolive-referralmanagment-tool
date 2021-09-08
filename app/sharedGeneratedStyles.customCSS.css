@@ -453,7 +453,7 @@ foreach(['prev', 'next'] as $nav){
     $nav: 'prev', 'next';
 
     @each $n in $nav {
-        .#{4n}-btn {
+        .#{$n}-btn {
             display:auto;
         }
       
