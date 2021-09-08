@@ -46,8 +46,22 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
 
 
 
-
-
+    $surveyMenuIcon=$config->getParameter('surveyMenuIcon', array());
+        if(!empty($surveyMenuIcon)){
+            $surveyMenuIcon=$surveyMenuIcon[0];
+            $surveyMenuIcon=json_encode(UrlFrom($surveyMenuIcon."?thumb=x>100y>100&tint=".
+                $config->getParameter("menuIconColor", "rgb(180,180,180)")));
+            $surveyMenuIconHover=json_encode(UrlFrom($surveyMenuIcon."?thumb=x>100y>100&tint=".
+                $config->getParameter("menuIconTint")));
+            
+             $parameters['surveyMenuIconHover']=$surveyMenuIconHover;    
+            
+        }else{
+            $surveyMenuIcon=false;
+        }
+        
+    $parameters['surveyMenuIcon']=$surveyMenuIcon;
+    
 
     $priorityIcon=$config->getParameter('priorityIcon', array());
     if(empty($priorityIcon)){
