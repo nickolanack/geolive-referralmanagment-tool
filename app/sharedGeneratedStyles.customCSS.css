@@ -456,18 +456,13 @@ foreach(['prev', 'next'] as $nav){
 
     @each $n, $icon in $navIcons {
         .#{$n}-btn {
-            display:$icon;
+            background-image:url($icon);
         }
-      
-        
-      
     }
     
     @each $n, $icon in $navIconsHover {
-      
-      
         .#{$n}-btn:hover {
-            display:$icon;
+            background-image:url($icon);
         }
       
     }
