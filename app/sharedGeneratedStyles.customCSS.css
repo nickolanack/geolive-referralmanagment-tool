@@ -1,4 +1,16 @@
 
+@if $useFontAwesome {
+    .test_bool_true{
+         color:blue;
+    }
+ }
+ 
+ @if not $useFontAwesome {
+    .test_bool_false{
+        color:blue;
+    }
+ }
+
 
 .project-type-missing-tasks-hint {
     background-image:url("<?php echo UrlFrom("{assets}/Control Panel Icons/tree.png?tint=rgb(198, 175, 79)"); ?>");
