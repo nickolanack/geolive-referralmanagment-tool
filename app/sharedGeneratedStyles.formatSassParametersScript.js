@@ -13,6 +13,16 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
     $parameters['menuIconDefault']=json_encode(UrlFrom($menuIconDefault."?tint=rgb(180,180,180)"));
     
     
+    $applicationLogo=$config->getParameter('applicationLogo', array());
+    if(empty($applicationLogo)){
+        $applicationLogo=$menuIconDefault;
+    }else{
+        $applicationLogo=$applicationLogo[0];
+    }
+    
+    $parameters['applicationLogo']=json_encode(UrlFrom($applicationLogo."?thumb=>200x>200"));
+        
+    
     
     
     $mobileIcons=array();
