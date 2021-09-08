@@ -47,6 +47,19 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
     
 
 
+    $roleIcons=array();
+    $roleIconsActive=array();
+    foreach(GetPlugin("ReferralManagement")->getRoleIcons() as $role=>$icon){
+        
+        $roleIcons[$role]=UrlFrom($icon."?grayscale");
+        $roleIconsActive[$role]=UrlFrom($icon);
+        
+    }
+
+    $parameters['roleIcons']=(object)$roleIcons;
+    $parameters['roleIconsActive']=(object)$roleIconsActive;
+
+    
 
 
 
