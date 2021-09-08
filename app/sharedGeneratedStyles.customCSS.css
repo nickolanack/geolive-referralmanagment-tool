@@ -1,15 +1,12 @@
 
-@if $useFontAwesome 
-    .test_bool_true{
-         color:blue;
-    }
- 
- 
- @if not $useFontAwesome 
-    .test_bool_false{
+.test_bool_true{
+    @if $useFontAwesome 
         color:blue;
-    }
+    @if not $useFontAwesome 
+        color:red;
+}
  
+
 
 
 .project-type-missing-tasks-hint {
