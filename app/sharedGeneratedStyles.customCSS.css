@@ -211,34 +211,17 @@ if(!empty($altLogo)){
 
 
 
-$gatherLogo=$config->getParameter('gatherLogo', array());
-        if(empty($gatherLogo)){
-            $gatherLogo=$menuIconDefault;
-        }else{
-            $gatherLogo=$gatherLogo[0];
-        }
-    ?>
- .gather-logo {
-
+.gather-logo {
     background-image:url($gatherLogo);
 }  
 
-<?php
-$gatherIcon=$config->getParameter('gatherIcon', array());
-        if(empty($gatherIcon)){
-            $gatherIcon=$gatherLogo;
-        }else{
-            $gatherIcon=$gatherIcon[0];
-        }
-    ?>
- .gather-icon {
-    
-    background-image:url("<?php echo UrlFrom($gatherIcon."?thumb=>200x>200"); ?>");
+.gather-icon {
+    background-image:url($gatherIcon);
 } 
 
 
 .navigation-menu li.menu-links-gather:before{
-     background-image:url("<?php echo UrlFrom($gatherIcon."?thumb=>200x>200"); ?>");
+     background-image:url($gatherIcon);
      content:"";
      width: 30px;
      height: 30px;
