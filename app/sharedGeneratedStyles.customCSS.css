@@ -559,6 +559,21 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
             <?php
         }
         
+        ?>
+        
+        @if not $showUsersRoles{
+            
+            
+            
+        }
+        @else{
+            
+            
+            
+        }
+        
+        <?php
+        
          if(!$config->getParameter("showUsersRoles")){
             ?>
         
