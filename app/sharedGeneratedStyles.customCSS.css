@@ -278,17 +278,15 @@ if(!$useFontAwesome){
     position: relative;
 }
 
-<?php 
 
+@if not $useFontAwesome{
 
-if(!$useFontAwesome){
-    ?>
     .field-value-module.with-description .field-value:after{
          background-image: url("<?php echo UrlFrom("{assets}/Control Panel Icons/text.png?tint=rgb(180,180,180)"); ?>");
     }
-<?php 
+
 }
-?>
+
 .field-value-module.with-description .field-value:after{
     content: "";
     width: 20px;
@@ -301,28 +299,18 @@ if(!$useFontAwesome){
 }
 
 
+@if not $useFontAwesome{
 
-<?php
+    .synopsis-item {
+        background-image:url("<?php echo UrlFrom($menuIconDefault."?tint=rgb(180,180,180)"); ?>");
+    }
 
-
-
-if(!$useFontAwesome){
-    ?>
-.synopsis-item {
-    background-image:url("<?php echo UrlFrom($menuIconDefault."?tint=rgb(180,180,180)"); ?>");
 }
-<?php 
-}
-?>
 
 
+@if not $useFontAwesome{
+    <?php 
 
-
-<?php 
-
-
-if(!$useFontAwesome){
-    
         $starredIcon=$config->getParameter('starIcon', array());
         if(empty($starredIcon)){
             $starredIcon=$menuIconDefault;
@@ -330,25 +318,22 @@ if(!$useFontAwesome){
             $starredIcon=$starredIcon[0];
         }
     ?>
- .starred-indicator {
-
-    background-image:url("<?php echo UrlFrom($starredIcon."?tint=rgb(180,180,180)"); ?>");
-}   
-.starred-indicator.starred {
-
-    background-image:url("<?php echo UrlFrom($starredIcon."?tint=".$config->getParameter("starTint", "rgb(180,180,180)")); ?>");
-}
-
-
-.starred-tasks {
-    background-image:url("<?php echo UrlFrom($starredIcon."?tint=".$config->getParameter("starTint", "rgb(180,180,180)")); ?>");
-    border-color:<?php echo $config->getParameter("starTint", "rgb(180,180,180)"); ?>;
+    .starred-indicator {
     
-}
+        background-image:url("<?php echo UrlFrom($starredIcon."?tint=rgb(180,180,180)"); ?>");
+    }   
+    .starred-indicator.starred {
+    
+        background-image:url("<?php echo UrlFrom($starredIcon."?tint=".$config->getParameter("starTint", "rgb(180,180,180)")); ?>");
+    }
+    
+    .starred-tasks {
+        background-image:url("<?php echo UrlFrom($starredIcon."?tint=".$config->getParameter("starTint", "rgb(180,180,180)")); ?>");
+        border-color:<?php echo $config->getParameter("starTint", "rgb(180,180,180)"); ?>;
+        
+    }
 
-<?php 
 }
-?>
 
 
 
