@@ -10,6 +10,16 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
 
     
     $menuIconDefault=$config->getParameter('defaultMenuIcon')[0];
+    
+    
+    $gatherLogo=$config->getParameter('gatherLogo', array());
+        if(empty($gatherLogo)){
+            $gatherLogo=$menuIconDefault;
+        }else{
+            $gatherLogo=$gatherLogo[0];
+        }
+    
+    $parameters['gatherLogo']=json_encode(UrlFrom($gatherLogo."?thumb=>200x>200"));
 
 
 
