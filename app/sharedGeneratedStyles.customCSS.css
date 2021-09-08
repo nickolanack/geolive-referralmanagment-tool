@@ -427,8 +427,11 @@ foreach(['image', 'document', 'layer', 'audio', 'video'] as $mime){
 
 ?>
 
-
-
+    @each $n, $icon in $mediaIcons {
+        .upload-btns span.#{$n}.noIcon {
+            background-image:url($icon);
+        }
+    }
    
     @each $n, $icon in $navIcons {
         .#{$n}-btn {
