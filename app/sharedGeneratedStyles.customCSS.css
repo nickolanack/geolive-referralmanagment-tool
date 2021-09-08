@@ -228,30 +228,20 @@ if(!empty($altLogo)){
 }
 
 
-<?php 
-if(!$useFontAwesome){
-    $attachmentIcon=$config->getParameter('attachmentIcon', array());
-    if(empty($attachmentIcon)){
-        $attachmentIcon=$attachmentIcon;
-    }else{
-        $attachmentIcon=$attachmentIcon[0];
-    }
 
-    ?>
-    
+@if not $useFontAwesome{
+
     .attachment-indicator {
-        background-image:url("<?php echo UrlFrom($attachmentIcon."?tint=".$config->getParameter("attachmentTint", "rgb(180,180,180)")); ?>");
+        background-image:url($attachmentIcon);
     }
-
 
     .discussion button.upload-button {
-        background-image: url("<?php echo UrlFrom($attachmentIcon."?tint=".$config->getParameter("attachmentTint", "rgb(180,180,180)")); ?>");
+        background-image: url($attachmentIcon);
        
     }
-
-<?php
+    
 }
-?>
+
 
 .discussion button.upload-button {
     font-size: 0;

@@ -14,6 +14,20 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
     
     
     
+    
+    $attachmentIcon=$config->getParameter('attachmentIcon', array());
+    if(!empty($attachmentIcon)){
+        $attachmentIcon=$menuIconDefault;
+    }else{
+        $attachmentIcon=$attachmentIcon[0];
+    }
+    
+    $parameters['attachmentIcon']=json_encode(UrlFrom($attachmentIcon.
+        "?tint=".$config->getParameter("attachmentTint", "rgb(180,180,180)")));
+    
+    
+    
+    
     $gatherLogo=$config->getParameter('gatherLogo', array());
         if(empty($gatherLogo)){
             $gatherLogo=$menuIconDefault;
