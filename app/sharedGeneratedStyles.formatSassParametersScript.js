@@ -24,7 +24,7 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
             }else{
                 $mobileIcons[$mobile]=false;
             }
-        }
+        
     }
     
     $parameters['mobileIcons']=(object) $mobileIcons;
