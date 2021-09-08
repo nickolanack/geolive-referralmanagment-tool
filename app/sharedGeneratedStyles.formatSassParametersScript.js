@@ -33,6 +33,28 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
 
 
 
+    $navIcons=array();
+    $navIconsHover=array();
+    
+    foreach(['prev', 'next'] as $nav){
+        $navIcon=$config->getParameter($nav.'NavIcon', array());
+        if(empty($navIcon)){
+            $navIcon=$menuIconDefault;
+        }else{
+            $navIcon=$navIcon[0];
+        }
+        
+        $navIcons[$nav]=json_encode(UrlFrom($navIcon."?tint=".$config->getParameter("uploadTint", "rgb(180,180,180)")));
+        $navIconsHover[$nav]=json_encode(UrlFrom($navIcon."?tint=".$config->getParameter("menuIconTint")));
+        
+    }
+
+    $parameters['navIcons']=(object)$navIcons;
+    $parameters['navIconsHover']=(object)$navIconsHover;
+
+    
+
+
 
     $backgroundImage=$config->getParameter('backgroundImage', array());
         if(!empty($backgroundImage)){
