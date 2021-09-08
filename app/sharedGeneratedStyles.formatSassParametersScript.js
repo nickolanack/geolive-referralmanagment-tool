@@ -33,8 +33,6 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
     
     
     
-    
-    
     $mobileIcons=array();
     
     foreach(['apple', 'google'] as $mobile){
@@ -48,8 +46,6 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
     }
     
     $parameters['mobileIcons']=(object) $mobileIcons;
-    
-    
     
     $parameters['addIcon']=false;
     $addIcon=$config->getParameter('fileUploadBtnIcon', array());
