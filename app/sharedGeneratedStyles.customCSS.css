@@ -563,40 +563,24 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
         
         @if not $showUsersRoles{
             
-            
+           .user-detail .user-role, .user-detail .user-community{
+                display:none;
+            } 
             
         }
         @else{
-            
-            
-            
-        }
-        
-        <?php
-        
-         if(!$config->getParameter("showUsersRoles")){
-            ?>
-        
-            .user-detail .user-role, .user-detail .user-community{
-                display:none;
-            }
-            <?php
-        }else{
-            ?>
-            .user-detail .user-role, .user-detail .user-community{
+           .user-detail .user-role, .user-detail .user-community{
                
-            }
-            <?php
+            } 
         }
-                
-        if(!$config->getParameter("showFileThumbnails")){
-            ?>
+        
+        @if not $showFileThumbnails{
+            
             .image.attachment-thumb{
                 display:none;
             }
-            <?php
+            
         }
         
-        
-        
-?>
+    
+
