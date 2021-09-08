@@ -301,47 +301,19 @@ if(!$useFontAwesome){
     ?>
     .starred-indicator {
     
-        background-image:url("<?php echo UrlFrom($starredIcon."?tint=rgb(180,180,180)"); ?>");
+        background-image:url($starredIcon);
     }   
     .starred-indicator.starred {
     
-        background-image:url("<?php echo UrlFrom($starredIcon."?tint=".$config->getParameter("starTint", "rgb(180,180,180)")); ?>");
+        background-image:url($starredIconActive);
     }
     
     .starred-tasks {
-        background-image:url("<?php echo UrlFrom($starredIcon."?tint=".$config->getParameter("starTint", "rgb(180,180,180)")); ?>");
-        border-color:<?php echo $config->getParameter("starTint", "rgb(180,180,180)"); ?>;
+        background-image:url($starredIconActive);
+        border-color:$starredTint;
         
     }
 
-
-<?php 
-
-    $priorityIcon=$config->getParameter('priorityIcon', array());
-    if(empty($priorityIcon)){
-        $priorityIcon=$menuIconDefault;
-    }else{
-        $priorityIcon=$priorityIcon[0];
-    }
-
-     $overdueIcon=$config->getParameter('overdueIcon', array());
-    if(empty($overdueIcon)){
-        $overdueIcon=$menuIconDefault;
-    }else{
-        $overdueIcon=$overdueIcon[0];
-    }
-
-
-    $remainingIcon=$config->getParameter('remainingIcon', array());
-    if(empty($remainingIcon)){
-        $remainingIcon=$menuIconDefault;
-    }else{
-        $remainingIcon=$remainingIcon[0];
-    }
-
-
-
-    ?>
     .priority-indicator {
         background-image:url($priorityIcon);
     }   

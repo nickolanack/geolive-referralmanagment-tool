@@ -212,6 +212,10 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
         
     $parameters['remainingIconCompleted']=json_encode(UrlFrom($remainingIcon."?tint=rgba(60, 179, 113)"));
     
+    $parameters['starredTint']=$config->getParameter("starTint", "rgb(180,180,180)");
+    $parameters['starredIcon']=json_encode(UrlFrom($starredIcon."?tint=rgb(180,180,180)"));
+    $parameters['starredIconActive']=json_encode(UrlFrom($starredIcon.
+        "?tint=".$config->getParameter("starTint", "rgb(180,180,180)")));
     $parameters['starredIconCreated']=json_encode(UrlFrom($starredIcon."?tint=rgba(106, 124, 233)"));
 
 
