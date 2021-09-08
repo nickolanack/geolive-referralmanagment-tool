@@ -408,6 +408,23 @@ foreach(GetPlugin("ReferralManagement")->getRoleIcons() as $role=>$icon){
 
 ?>
 
+     @each $n, $icon in $roleIcons {
+        .role-#{$n}{
+            background-image:url($icon);
+            filter: grayscale(100);
+        }
+     }
+     
+     @each $n, $icon in $roleIconsActive {
+        .role-#{$n}.active{
+            background-image:url($icon);
+            filter: grayscale(0);
+        }
+     }
+
+
+
+
     @each $n, $icon in $mediaIcons {
         .upload-btns span.#{$n}.noIcon {
             background-image:url($icon);
