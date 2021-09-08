@@ -24,15 +24,14 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
     
     
     $altLogo=$config->getParameter('applicationLogoAlt', array());
+    $parameters['applicationAltLogo']=false;
     if(!empty($altLogo)){
     
         $altLogo=$altLogo[0];  
-        $altLogo==json_encode(UrlFrom($altLogo."?thumb=>200x>200"));
-    }else{
-        $altLogo=false;
+        $parameters['applicationAltLogo']=json_encode(UrlFrom($altLogo."?thumb=>200x>200"));
     }
     
-    $parameters['applicationAltLogo']=$altLogo;
+    
     
     
     
