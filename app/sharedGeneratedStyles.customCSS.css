@@ -425,27 +425,6 @@ foreach(['image', 'document', 'layer', 'audio', 'video'] as $mime){
     
 }
 
-
-
-foreach(['prev', 'next'] as $nav){
-    $navIcon=$config->getParameter($nav.'NavIcon', array());
-        if(empty($navIcon)){
-            $navIcon=$menuIconDefault;
-        }else{
-            $navIcon=$navIcon[0];
-        }
-    ?>
-       .<?php echo $nav; ?>-btn {
-            background-image:url("<?php echo UrlFrom($navIcon."?tint=".$config->getParameter("uploadTint", "rgb(180,180,180)")); ?>");
-        }
-        .<?php echo $nav; ?>-btn:hover {
-            background-image:url("<?php echo UrlFrom($navIcon."?tint=".$config->getParameter("menuIconTint")); ?>");
-        }
-    <?php
-    
-    
-}
-
 ?>
 
 

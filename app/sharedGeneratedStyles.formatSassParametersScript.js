@@ -31,6 +31,25 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
 
 
 
+    $mediaIcons=array();
+    foreach(['image', 'document', 'layer', 'audio', 'video'] as $mime){
+        $mediaIcon=$config->getParameter($mime.'UploadIcon', array());
+            if(empty($mediaIcon)){
+                $mediaIcon=$menuIconDefault;
+            }else{
+                $mediaIcon=$mediaIcon[0];
+            }
+        $mediaIcons[$mime]=UrlFrom($mediaIcon."?tint=".$config->getParameter("uploadTint", "rgb(180,180,180)"));
+    }
+    $parameters['mediaIcons']=(object)$mediaIcons;
+    
+    
+    
+
+
+
+
+
 
 
     $navIcons=array();
@@ -53,6 +72,11 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
     $parameters['navIconsHover']=(object)$navIconsHover;
 
     
+
+
+
+
+
 
 
 
