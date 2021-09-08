@@ -286,19 +286,9 @@ if(!$useFontAwesome){
 @if not $useFontAwesome{
 
     .synopsis-item {
-        background-image:url("<?php echo UrlFrom($menuIconDefault."?tint=rgb(180,180,180)"); ?>");
+        background-image:url($menuIconDefault);
     }
 
-
-    <?php 
-
-        $starredIcon=$config->getParameter('starIcon', array());
-        if(empty($starredIcon)){
-            $starredIcon=$menuIconDefault;
-        }else{
-            $starredIcon=$starredIcon[0];
-        }
-    ?>
     .starred-indicator {
     
         background-image:url($starredIcon);

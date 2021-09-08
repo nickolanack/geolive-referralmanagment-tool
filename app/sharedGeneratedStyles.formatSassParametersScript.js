@@ -10,6 +10,8 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
 
     
     $menuIconDefault=$config->getParameter('defaultMenuIcon')[0];
+    $parameters['menuIconDefault']=json_encode(UrlFrom($menuIconDefault."?tint=rgb(180,180,180)"));
+    
     
     
     $gatherLogo=$config->getParameter('gatherLogo', array());
