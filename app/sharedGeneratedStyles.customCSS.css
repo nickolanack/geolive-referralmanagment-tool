@@ -220,7 +220,7 @@ $gatherLogo=$config->getParameter('gatherLogo', array());
     ?>
  .gather-logo {
 
-    background-image:url("<?php echo UrlFrom($gatherLogo."?thumb=>200x>200"); ?>");
+    background-image:url($gatherLogo);
 }  
 
 <?php
