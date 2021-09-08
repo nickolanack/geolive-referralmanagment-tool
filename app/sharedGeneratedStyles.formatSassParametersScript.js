@@ -27,7 +27,7 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
     if(!empty($altLogo)){
     
         $altLogo=$altLogo[0];  
-        $altLogo==UrlFrom($altLogo."?thumb=>200x>200");
+        $altLogo==json_encode(UrlFrom($altLogo."?thumb=>200x>200"));
     }else{
         $altLogo=false;
     }
