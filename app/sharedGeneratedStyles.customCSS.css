@@ -358,9 +358,17 @@ if(!$useFontAwesome){
 
 
     .overdue-tasks {
-        background-image:url("<?php echo UrlFrom($overdueIcon."?tint=".$config->getParameter("overdueTint", "rgb(180,180,180)")); ?>");
-        border-color:<?php echo $config->getParameter("overdueTint", "rgb(180,180,180)"); ?>;
+        background-image:url($overdueIcon);
+        border-color:$overdueTint;
         
+    }
+    
+    .segment.overdue{
+        background-image:url($overdueIconSegment);
+    }
+    
+    .segment.duedate, .segment.complete{
+         background-image:url($overdueIconSegmentComplete);
     }
 
 
@@ -371,18 +379,15 @@ if(!$useFontAwesome){
     }
 
 
-    .segment.overdue{
-        background-image:url("<?php echo UrlFrom($overdueIcon."?tint=rgba(50,50,50)"); ?>");
-    }
+    
+    
     .segment.completed{
          background-image:url("<?php echo UrlFrom($remainingIcon."?tint=rgba(60, 179, 113)"); ?>");
     }
     .segment.created{
          background-image:url("<?php echo UrlFrom($starredIcon."?tint=rgba(106, 124, 233)"); ?>");
     }
-    .segment.duedate, .segment.complete{
-         background-image:url("<?php echo UrlFrom($overdueIcon."?tint=rgba(60, 179, 113)"); ?>");
-    }
+    
 
 }
 

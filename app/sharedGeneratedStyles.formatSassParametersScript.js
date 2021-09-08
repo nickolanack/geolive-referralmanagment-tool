@@ -183,7 +183,18 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
     $parameters['priorityTint']=$config->getParameter("priorityTint", "rgb(180,180,180)");
     $parameters['priorityIcon']=json_encode(UrlFrom($priorityIcon."?tint=rgb(180,180,180)"));
     $parameters['priorityIconTint']=json_encode(UrlFrom($priorityIcon."?tint=".$config->getParameter("priorityTint", "rgb(180,180,180)")));
-    $parameters['overdueIcon']=json_encode(UrlFrom($overdueIcon."?tint=rgb(180,180,180)"));
+    
+    
+    
+    $parameters['overdueTint']=$config->getParameter("overdueTint", "rgb(180,180,180)");
+    $parameters['overdueIcon']=json_encode(UrlFrom($overdueIcon."?tint=".
+        $config->getParameter("overdueTint", "rgb(180,180,180)")));
+        
+    $parameters['overdueIconSegment']=json_encode(UrlFrom($overdueIcon."?tint=rgba(50,50,50)"));
+    $parameters['overdueIconSegmentComplete']=json_encode(UrlFrom($overdueIcon."?tint=rgba(60, 179, 113)"));
+    
+    
+    
     $parameters['remainingIcon']=json_encode(UrlFrom($remainingIcon."?tint=rgb(180,180,180)"));
 
 
