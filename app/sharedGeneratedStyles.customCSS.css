@@ -3,7 +3,7 @@
 
 
 .test_bool_true{
-    @if $useFontAwesome {
+    @if not $useFontAwesome {
         color:blue;
     }
     
