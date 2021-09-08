@@ -373,8 +373,8 @@ if(!$useFontAwesome){
 
 
     .remaining-tasks {
-        background-image:url("<?php echo UrlFrom($remainingIcon."?tint=".$config->getParameter("remainingTint", "rgb(180,180,180)")); ?>");
-        border-color:<?php echo $config->getParameter("remainingTint", "rgb(180,180,180)"); ?>;
+        background-image:url($remainingIcon);
+        border-color:$remainingTint;
         
     }
 
@@ -382,10 +382,10 @@ if(!$useFontAwesome){
     
     
     .segment.completed{
-         background-image:url("<?php echo UrlFrom($remainingIcon."?tint=rgba(60, 179, 113)"); ?>");
+         background-image:url($remainingIconCompleted);
     }
     .segment.created{
-         background-image:url("<?php echo UrlFrom($starredIcon."?tint=rgba(106, 124, 233)"); ?>");
+         background-image:url($starredIconCreated);
     }
     
 

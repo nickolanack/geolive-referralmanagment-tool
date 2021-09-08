@@ -180,6 +180,17 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
         $remainingIcon=$remainingIcon[0];
     }
 
+    
+    
+    $starredIcon=$config->getParameter('starIcon', array());
+        if(empty($starredIcon)){
+            $starredIcon=$menuIconDefault;
+        }else{
+            $starredIcon=$starredIcon[0];
+        }
+
+
+
     $parameters['priorityTint']=$config->getParameter("priorityTint", "rgb(180,180,180)");
     $parameters['priorityIcon']=json_encode(UrlFrom($priorityIcon."?tint=rgb(180,180,180)"));
     $parameters['priorityIconTint']=json_encode(UrlFrom($priorityIcon."?tint=".$config->getParameter("priorityTint", "rgb(180,180,180)")));
@@ -195,10 +206,19 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
     
     
     
-    $parameters['remainingIcon']=json_encode(UrlFrom($remainingIcon."?tint=rgb(180,180,180)"));
+    $parameters['remainingTint']=$config->getParameter("remainingTint", "rgb(180,180,180)");
+    $parameters['remainingIcon']=json_encode(UrlFrom($remainingIcon."?tint=".
+        $config->getParameter("remainingTint", "rgb(180,180,180)")));
+        
+    $parameters['remainingIconCompleted']=json_encode(UrlFrom($remainingIcon."?tint=rgba(60, 179, 113)"));
+    
+    $parameters['starredIconCreated']=json_encode(UrlFrom($starredIcon."?tint=rgba(106, 124, 233)"));
 
 
 
 
 
 return $parameters;
+
+
+
