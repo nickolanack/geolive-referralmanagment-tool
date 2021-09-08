@@ -22,6 +22,14 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
     $parameters['gatherLogo']=json_encode(UrlFrom($gatherLogo."?thumb=>200x>200"));
 
 
+    $gatherIcon=$config->getParameter('gatherIcon', array());
+        if(empty($gatherIcon)){
+            $gatherIcon=$gatherLogo;
+        }else{
+            $gatherIcon=$gatherIcon[0];
+        }
+    $parameters['gatherIcon']=json_encode(UrlFrom($gatherIcon."?thumb=>200x>200"));
+
 
     $priorityIcon=$config->getParameter('priorityIcon', array());
     if(empty($priorityIcon)){
