@@ -514,7 +514,7 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
         }
         
         
-         $surveyMenuIcon=$config->getParameter('surveyMenuIcon', array());
+        $surveyMenuIcon=$config->getParameter('surveyMenuIcon', array());
         if(!empty($surveyMenuIcon)){
           
             $surveyMenuIcon=$surveyMenuIcon[0];
