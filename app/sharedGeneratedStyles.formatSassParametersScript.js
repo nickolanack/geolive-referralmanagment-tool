@@ -30,6 +30,25 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
     $parameters['gatherIcon']=json_encode(UrlFrom($gatherIcon."?thumb=>200x>200"));
 
 
+
+
+
+
+    $slackMenuIcon=$config->getParameter('slackMenuIcon', array());
+        if(!empty($slackMenuIcon)){
+            $slackMenuIcon=$slackMenuIcon[0];
+            $slackMenuIcon=json_encode(UrlFrom($slackMenuIcon."?thumb=x>100y>100"));
+        }else{
+            $slackMenuIcon=false;
+        }
+
+    $parameters['slackMenuIcon']=$slackMenuIcon;
+
+
+
+
+
+
     $priorityIcon=$config->getParameter('priorityIcon', array());
     if(empty($priorityIcon)){
         $priorityIcon=$menuIconDefault;
