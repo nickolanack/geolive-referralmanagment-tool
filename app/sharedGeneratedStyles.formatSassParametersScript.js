@@ -44,8 +44,8 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
             $navIcon=$navIcon[0];
         }
         
-        $navIcons[$nav]=json_encode(UrlFrom($navIcon."?tint=".$config->getParameter("uploadTint", "rgb(180,180,180)")));
-        $navIconsHover[$nav]=json_encode(UrlFrom($navIcon."?tint=".$config->getParameter("menuIconTint")));
+        $navIcons[$nav]=UrlFrom($navIcon."?tint=".$config->getParameter("uploadTint", "rgb(180,180,180)"));
+        $navIconsHover[$nav]=UrlFrom($navIcon."?tint=".$config->getParameter("menuIconTint"));
         
     }
 
