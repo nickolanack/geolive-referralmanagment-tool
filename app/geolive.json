@@ -174,7 +174,9 @@
             },
             "routes": [
                 "plugin.UserInterface.24.routes.0.json"
-            ]
+            ],
+            "useRemoteServerUI": false,
+            "remoteServerUrl": ""
         }
     },
     "plugin.28": {
@@ -2296,6 +2298,7 @@
             "target": "forTheMap",
             "customCSS": "Generated Style Script.customCSS.css",
             "sassParamters": [],
+            "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
             "readAccess": "public"
         }
@@ -4058,6 +4061,7 @@
                 "mainStyleColor": "#525252",
                 "highlightBtnColor": "$mainStyleColor"
             },
+            "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
             "readAccess": "public"
         }
@@ -6130,6 +6134,7 @@
             "target": "sharedGeneratedStyles",
             "customCSS": "sharedGeneratedStyles.customCSS.css",
             "sassParamters": [],
+            "formatSassParametersScript": "sharedGeneratedStyles.formatSassParametersScript.js",
             "useRemote": "",
             "readAccess": "public"
         }
@@ -18595,6 +18600,7 @@
             "sassParamters": {
                 "datasetIconSize": "50%"
             },
+            "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
             "readAccess": "public"
         }
@@ -18703,6 +18709,7 @@
             "target": "darkTheme",
             "customCSS": "darkTheme.customCSS.css",
             "sassParamters": [],
+            "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
             "readAccess": "public"
         }
@@ -18839,6 +18846,7 @@
             "target": "gatherTheme",
             "customCSS": "gatherTheme.customCSS.css",
             "sassParamters": [],
+            "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
             "readAccess": "public"
         }
@@ -18854,6 +18862,7 @@
             "target": "fontAwesomeIcons",
             "customCSS": "fontAwesomeIcons.customCSS.css",
             "sassParamters": [],
+            "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
             "readAccess": "public"
         }
@@ -19686,6 +19695,7 @@
             "target": "purpleTheme",
             "customCSS": "purpleTheme.customCSS.css",
             "sassParamters": [],
+            "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
             "readAccess": "public"
         }
@@ -21037,6 +21047,7 @@
                 "genericButtonColorContent": "rgba(0,0,0,0.04)",
                 "themeName": "userTheme"
             },
+            "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
             "readAccess": "public"
         }
