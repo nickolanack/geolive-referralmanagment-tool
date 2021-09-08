@@ -472,15 +472,13 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
         
         
         
+        ?>
         
-        $optionsMenuIcon=$config->getParameter('optionsMenuIcon', array());
-        if(!empty($optionsMenuIcon)){
-          
-            $optionsMenuIcon=$optionsMenuIcon[0];
-            ?>
+        
+        @if $optionsMenuIcon {
 
             .inline-btn.optionlist:before {
-                background-image: url("<?php echo UrlFrom($optionsMenuIcon."?thumb=x>100y>100&tint=".$config->getParameter("menuIconColor", "rgb(180,180,180)")); ?>");
+                background-image: url($optionsMenuIcon);
                 display: inline-block;
                 width: 6px;
                 height: 25px;
@@ -490,13 +488,10 @@ $backgroundImage=$config->getParameter('backgroundImage', array());
                 background-repeat: no-repeat;
             }
             .inline-btn.optionlist:hover:before {
-             background-image: url("<?php echo UrlFrom($optionsMenuIcon."?thumb=x>100y>100&tint=".$config->getParameter("menuIconTint")); ?>");
+                background-image: url($optionsMenuIconHover);
             }
-            <?php
         }
-        
-        
-        ?>
+            
         
         @if $surveyMenuIcon {
         
