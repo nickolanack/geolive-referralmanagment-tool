@@ -84,8 +84,10 @@ if(!$useFontAwesome){
     }
 }
 
-if($config->getParameter('showSplitProjectDetail')){
+
     ?>
+    
+@if $showSplitProjectDetail{
    
    [data-view="splitProjectDetail"]>div>div{
         display:inline-table;
@@ -93,11 +95,11 @@ if($config->getParameter('showSplitProjectDetail')){
         height: 100%;
     }
     
-    
+}
     
     <?php
     
-}
+
 
 foreach(['apple', 'google'] as $mobile){
     $appIcon=$config->getParameter($mobile.'AppIcon', array());
