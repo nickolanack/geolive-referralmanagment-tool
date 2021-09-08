@@ -110,24 +110,21 @@ if(!$useFontAwesome){
      }
 
 
+
+
+@if not $useFontAwesome{
+    @if $addIcon{
+    
+        .file-list .droppable .add-btn {
+            background-image:url($addIcon);
+        }
+    
+    }
+    
+}
     
     <?php
     
-
-
-if(!$useFontAwesome){
-    $addIcon=$config->getParameter('fileUploadBtnIcon', array());
-    if(!empty($addIcon)){
-
-        ?>
-        .file-list .droppable .add-btn {
-            background-image:url("<?php echo UrlFrom($addIcon[0].'?thumb=x>100y>100'); ?>");
-        }
-        <?php
-
-    }
-}
-
 
 
 $menuIconDefault=$config->getParameter('defaultMenuIcon')[0];
