@@ -34,6 +34,21 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
 
 
 
+    $backgroundImage=$config->getParameter('backgroundImage', array());
+        if(!empty($backgroundImage)){
+          
+            $backgroundImage=$backgroundImage[0];
+            $backgroundImage=json_encode(UrlFrom($backgroundImage."?thumb=>200x>200"));
+        }else{
+            $backgroundImage=false;
+        }
+
+        $parameters['backgroundImage']=$backgroundImage;
+
+
+
+
+
 
     $optionsMenuIcon=$config->getParameter('optionsMenuIcon', array());
         if(!empty($optionsMenuIcon)){
