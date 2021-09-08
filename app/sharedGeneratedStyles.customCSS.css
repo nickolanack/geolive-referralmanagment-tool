@@ -96,6 +96,21 @@ if(!$useFontAwesome){
     }
     
 }
+
+
+    
+    
+    @each $n, $icon in $mobileIcons {
+        
+        @if $icon {
+            .#{$n}-app-link{
+                    
+                background-image:url($icon);
+            }
+        }
+     }
+
+
     
     <?php
     
