@@ -87,6 +87,17 @@ if(!$useFontAwesome){
 
     ?>
     
+@if not $useFontAwesome{
+
+    @each $n, $icon in $fileIcons {
+        file-item .#{$n}-btn {
+            background-image:url($icon);
+        }
+    }  
+}
+    
+    
+    
 @if $showSplitProjectDetail{
    
    [data-view="splitProjectDetail"]>div>div{
