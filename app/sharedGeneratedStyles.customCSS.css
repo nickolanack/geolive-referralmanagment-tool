@@ -69,23 +69,28 @@ $useFontAwesome=$config->getParameter('useFontAwesome');
     }
 
 
-if(!$useFontAwesome){
-    foreach(['remove', 'edit', 'download'] as $fileFn){
-        $editIcon=$config->getParameter('file'.ucfirst($fileFn).'BtnIcon', array());
-            if(!empty($editIcon)){
-
-            ?>
-                .file-item .<?php echo $fileFn; ?>-btn {
-                    background-image:url("<?php echo UrlFrom($editIcon[0].'?thumb=x>100y>100'); ?>");
-                }
-           <?php  
-        }
-     
-    }
-}
-
 
     ?>
+    
+    $fileBtns:'remove', 'edit', 'download';
+    $offsetY=10px;
+    $offsetX=10px;
+    @each $fileBtn in $fileBtns {
+        
+        $i: list.index($fileBtns, $fileBtn);
+     
+        .file-list .file-item button.#{$fileBtn}-btn {
+            top:$offsetY+30px*$i
+        }
+                
+        .layout-list .file-list .file-item button.#{$fileBtn}-btn {
+            top:10px;
+            right:$offsetX+30px*$i
+        }
+        
+        
+    }
+    
     
 @if not $useFontAwesome{
 
