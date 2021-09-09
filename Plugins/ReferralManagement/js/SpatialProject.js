@@ -33,7 +33,7 @@ var SpatialProject = (function() {
 
 						//project:item,
 						id: "project-" + project.getId() + '-' + i + '',
-						projectAttributes:project.getDatasetAttributes(i)
+						projectAttributes: project.getDatasetAttributes(i)
 					});
 
 					map.getLayerManager().addLayer(layer);
@@ -87,7 +87,7 @@ var SpatialProject = (function() {
 						url: url,
 						id: "project-" + p.getId() + '-' + i + '',
 						name: p.getName(),
-						projectAttributes:p.getDatasetAttributes(i)
+						projectAttributes: p.getDatasetAttributes(i)
 					}
 				}));
 			});
@@ -110,7 +110,7 @@ var SpatialProject = (function() {
 				group: group,
 				id: "project-" + item.getId() + '-' + i + '',
 				name: item.getName(),
-				projectAttributes:item.getDatasetAttributes(i)
+				projectAttributes: item.getDatasetAttributes(i)
 			}, options);
 
 
@@ -124,8 +124,8 @@ var SpatialProject = (function() {
 
 	SpatialProject.InitMainMap = function() {
 
-		
-		window.CurrentMapType="MainMap";
+
+		window.CurrentMapType = "MainMap";
 		window.GetSpatialFiles = function() {
 
 
@@ -151,13 +151,45 @@ var SpatialProject = (function() {
 
 	}
 
+	SpatialProject.GetProjectList = function(item, callback) {
+
+		if (item.getProjectList) {
+			item.getProjectList(callback);
+			return;
+		}
+
+		if (item instanceof Project) {
+
+			(new ProjectList({
+				"label": "Collection Datasets",
+				"showCreateBtn": true,
+				projects: function(callback) {
+					callback([item].concat(item.getProjectObjects()));
+				}
+			})).getProjectList(callback);
+
+			return;
+		}
+
+		(new ProjectList({
+			"label": "Collection Datasets",
+			"showCreateBtn": true,
+			projects: function(callback) {
+				callback(ProjectSelection.getProjects());
+			}
+		})).getProjectList(callback);
+
+		return;
+
+	}
+
 
 	SpatialProject.InitCurrentProject = function(item) {
 
 
-		
-		window.CurrentMapType="ProjectMap";
-		window.CurrentMapItem=item;
+
+		window.CurrentMapType = "ProjectMap";
+		window.CurrentMapItem = item;
 		window.GetSpatialFiles = function() {
 
 
@@ -170,7 +202,7 @@ var SpatialProject = (function() {
 							url: url,
 							id: "project-" + p.getId() + '-' + i + '',
 							name: p.getName(),
-							projectAttributes:p.getDatasetAttributes(i)
+							projectAttributes: p.getDatasetAttributes(i)
 						}
 					}));
 				});
@@ -191,7 +223,7 @@ var SpatialProject = (function() {
 					group: "project",
 					id: "project-" + item.getId() + '-' + i + '',
 					name: item.getName(),
-					projectAttributes:item.getDatasetAttributes(i)
+					projectAttributes: item.getDatasetAttributes(i)
 				}, options);
 
 
