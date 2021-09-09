@@ -80,12 +80,12 @@ $useFontAwesome=$config->getParameter('useFontAwesome');
         $i: index($fileBtns, $fileBtn);
      
         .file-list .file-item button.#{$fileBtn}-btn {
-            top:$offsetY+30px*($i-1);
+            top:$offsetY+30px*($i - 1);
         }
                 
         .layout-list .file-list .file-item button.#{$fileBtn}-btn {
             top:10px;
-            right:$offsetX+30px*($i-1);
+            right:$offsetX+30px*($i - 1);
         }
         
         
