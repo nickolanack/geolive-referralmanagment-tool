@@ -40,37 +40,7 @@ button.btn-search-list {
 }
 
 
-<?php 
-$config=GetWidget('dashboardConfig');
 
-
-
-$useFontAwesome=$config->getParameter('useFontAwesome');
-
-
-
-    $offsetY=10;
-    $offsetX=10;
-    foreach(['remove', 'edit', 'download'] as $fileFn){
-        
-
-            ?>
-               .file-list .file-item button.<?php echo $fileFn; ?>-btn {
-                    top:<?php echo $offsetY; $offsetY+=30;?>px;
-                }
-                
-                .layout-list .file-list .file-item button.<?php echo $fileFn; ?>-btn {
-                    top:10px;
-                    right:<?php echo $offsetX; $offsetX+=30;?>px;
-                }
-           <?php  
-        
-    
-    }
-
-
-
-    ?>
     
     $fileBtns:'remove', 'edit', 'download';
     $offsetY:10px;
