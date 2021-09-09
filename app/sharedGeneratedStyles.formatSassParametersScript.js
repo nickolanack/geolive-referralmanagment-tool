@@ -54,9 +54,15 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
     }
     
     
+    $fileIcons=array();
+    foreach(['remove', 'edit', 'download'] as $fileFn){
+        $editIcon=$config->getParameter('file'.ucfirst($fileFn).'BtnIcon', array());
+        if(!empty($editIcon)){
+            $fileIcons[$fileFn]=UrlFrom($editIcon[0].'?thumb=x>100y>100')
+        }
+    }
     
-    
-    
+    $parameters['fileIcons']=(object) $fileIcons;
     
     
     
@@ -71,6 +77,8 @@ $parameters['showSplitProjectDetail']=$config->getParameter("showSplitProjectDet
             }
         
     }
+    
+    
     
     $parameters['mobileIcons']=(object) $mobileIcons;
     
