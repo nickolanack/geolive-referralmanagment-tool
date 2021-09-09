@@ -77,7 +77,7 @@ $useFontAwesome=$config->getParameter('useFontAwesome');
     $offsetX:10px;
     @each $fileBtn in $fileBtns {
         
-        $i: list.index($fileBtns, $fileBtn);
+        $i: index($fileBtns, $fileBtn);
      
         .file-list .file-item button.#{$fileBtn}-btn {
             top:$offsetY+30px*$i
