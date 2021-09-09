@@ -73,8 +73,8 @@ $useFontAwesome=$config->getParameter('useFontAwesome');
     ?>
     
     $fileBtns:'remove', 'edit', 'download';
-    $offsetY=10px;
-    $offsetX=10px;
+    $offsetY:10px;
+    $offsetX:10px;
     @each $fileBtn in $fileBtns {
         
         $i: list.index($fileBtns, $fileBtn);
