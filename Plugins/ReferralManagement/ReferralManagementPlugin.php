@@ -29,6 +29,18 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	use \core\EventListenerTrait;
 	use \core\TemplateRenderer;
 
+
+
+
+
+
+	public function getGeneratedSassParameters($parameters) {
+
+		include_once __DIR__ . '/lib/Sass.php';
+		return (new \ReferralManagement\Sass())->getSassParameters($parameters);
+
+	}
+
 	public function formatMobileConfig($parameters) {
 
 		$parameters['client'] = GetPlugin('ReferralManagement')->getUsersMetadata();
