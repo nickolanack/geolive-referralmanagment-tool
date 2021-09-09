@@ -160,7 +160,9 @@
         "parameters": {
             "releaseServer": "http:\/\/release.geolive.ca",
             "releasePackage": "master",
-            "autoUpdate": false
+            "autoUpdate": false,
+            "composerPath": "\/usr\/bin\/composer",
+            "bowerPath": ""
         }
     },
     "plugin.24": {
@@ -175,8 +177,8 @@
             "routes": [
                 "plugin.UserInterface.24.routes.0.json"
             ],
-            "useRemoteServerUI": false,
-            "remoteServerUrl": ""
+            "useRemoteServerUI": true,
+            "remoteServerUrl": "https:\/\/gct3.gather.geoforms.ca\/app\/nickolanack\/php-core-app\/core.php?task=TASK&format=ajax&json=JSON"
         }
     },
     "plugin.28": {
@@ -16750,6 +16752,8 @@
                                 "type": "Search",
                                 "config": {
                                     "getAggregatorsScript": "mainSearchDetail.metadata.positions.content.modules.2.config.getAggregatorsScript.js",
+                                    "searchOptions": "{}",
+                                    "formatSearchModuleScript": "mainSearchDetail.metadata.positions.content.modules.2.config.formatSearchModuleScript.js",
                                     "placeholder": "Type to search..."
                                 }
                             },
@@ -18596,10 +18600,8 @@
             "sass": true,
             "widgetTitle": "gct3Theme",
             "target": "gct3Theme",
-            "customCSS": "gct3Theme.customCSS.css",
-            "sassParamters": {
-                "datasetIconSize": "50%"
-            },
+            "customCSS": "",
+            "sassParamters": [],
             "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
             "readAccess": "public"
