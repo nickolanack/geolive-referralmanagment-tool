@@ -2,198 +2,83 @@ var SpatialProject = (function() {
 
 
 
-	var SpatialProject = new Class({});
+	var SpatialProject = new Class({
 
 
-	SpatialProject.InitMapLayers = function(map) {
+		InitMapLayers: function(map) {
 
-		ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+			ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
 
-			var projects = team.getProjects().filter(function(p) {
-				return p.isDataset() && p.isBaseMapLayer();
-			});
+				var projects = team.getProjects().filter(function(p) {
+					return p.isDataset() && p.isBaseMapLayer();
+				});
 
-			projects.map(function(project) {
+				projects.map(function(project) {
 
-				var spatial = project.getSpatialDocuments();
+					var spatial = project.getSpatialDocuments();
 
-				spatial.forEach(function(url, i) {
+					spatial.forEach(function(url, i) {
 
 
-					if (window.GetSpatialFiles().map(function(opt) {
-							return opt.url
-						}).indexOf(url) >= 0) {
-						return;
-					}
+						if (window.GetSpatialFiles().map(function(opt) {
+								return opt.url
+							}).indexOf(url) >= 0) {
+							return;
+						}
 
-					var layer = ProjectLayer.MakeProjectLayer(map, {
-						url: url,
-						name: project.getName(),
-						group: project.getBaseMapLayerType(),
+						var layer = ProjectLayer.MakeProjectLayer(map, {
+							url: url,
+							name: project.getName(),
+							group: project.getBaseMapLayerType(),
 
-						//project:item,
-						id: "project-" + project.getId() + '-' + i + '',
-						projectAttributes: project.getDatasetAttributes(i)
+							//project:item,
+							id: "project-" + project.getId() + '-' + i + '',
+							projectAttributes: project.getDatasetAttributes(i)
+						});
+
+						map.getLayerManager().addLayer(layer);
+
 					});
 
-					map.getLayerManager().addLayer(layer);
+
 
 				});
 
 
-
 			});
 
 
-		});
+		},
 
 
-	};
+		InitMapTile: function(tile, control, map) {
+
+			SpatialDocumentPreview.setTile(tile, control);
+			SpatialDocumentPreview.setMap(map);
 
 
-	SpatialProject.InitMapTile = function(tile, control, map) {
-
-		SpatialDocumentPreview.setTile(tile, control);
-		SpatialDocumentPreview.setMap(map);
-
-
-		var getFiles = window.GetSpatialFiles || window.parent.GetSpatialFiles
-		if (getFiles) {
-			var files = getFiles();
-			if (files.length) {
-				SpatialDocumentPreview.show(files);
-			} else {
-				SpatialDocumentPreview.show([]);
-			}
-		}
-
-	};
-
-
-	SpatialProject.ItemsSpatial = function(item, group) {
-
-		if (!group) {
-			group = "selection";
-		}
-
-
-		var spatial = [];
-		spatial = spatial.concat(item.getSpatialDocuments());
-
-		if (item.getProjectObjects) {
-			item.getProjectObjects().forEach(function(p) {
-				spatial = spatial.concat(p.getSpatialDocuments().map(function(url, i) {
-					return {
-						url: url,
-						id: "project-" + p.getId() + '-' + i + '',
-						name: p.getName(),
-						projectAttributes: p.getDatasetAttributes(i)
-					}
-				}));
-			});
-		}
-
-
-
-		spatial = spatial.map(function(spatial, i) {
-
-			var url = spatial;
-			var options = {};
-			if (spatial.url) {
-				options = spatial;
-			}
-
-
-			return Object.append({
-				url: url,
-				//project:item,
-				group: group,
-				id: "project-" + item.getId() + '-' + i + '',
-				name: item.getName(),
-				projectAttributes: item.getDatasetAttributes(i)
-			}, options);
-
-
-
-		});
-
-		return spatial;
-
-
-	};
-
-	SpatialProject.InitMainMap = function() {
-
-
-		window.CurrentMapType = "MainMap";
-		window.GetSpatialFiles = function() {
-
-
-
-			var items = ProjectSelection.getProjects();
-			var list = [];
-
-			items.forEach(function(item) {
-
-				var spatial = SpatialProject.ItemsSpatial(item);
-				list = list.concat(spatial);
-
-			});
-
-			return list;
-
-		}
-
-
-		return null;
-
-
-
-	}
-
-	SpatialProject.GetProjectList = function(item, callback) {
-
-		if (item.getProjectList) {
-			item.getProjectList(callback);
-			return;
-		}
-
-		if (item instanceof Project) {
-
-			(new ProjectList({
-				"label": "Collection Datasets",
-				"showCreateBtn": true,
-				projects: function(callback) {
-					callback([item].concat(item.getProjectObjects()));
+			var getFiles = window.GetSpatialFiles || window.parent.GetSpatialFiles
+			if (getFiles) {
+				var files = getFiles();
+				if (files.length) {
+					SpatialDocumentPreview.show(files);
+				} else {
+					SpatialDocumentPreview.show([]);
 				}
-			})).getProjectList(callback);
-
-			return;
-		}
-
-		(new ProjectList({
-			"label": "Collection Datasets",
-			"showCreateBtn": true,
-			projects: function(callback) {
-				callback(ProjectSelection.getProjects());
 			}
-		})).getProjectList(callback);
 
-		return;
-
-	}
+		},
 
 
-	SpatialProject.InitCurrentProject = function(item) {
+		ItemsSpatial: function(item, group) {
+
+			if (!group) {
+				group = "selection";
+			}
 
 
-
-		window.CurrentMapType = "ProjectMap";
-		window.CurrentMapItem = item;
-		window.GetSpatialFiles = function() {
-
-
-			var spatial = item.getSpatialDocuments();
+			var spatial = [];
+			spatial = spatial.concat(item.getSpatialDocuments());
 
 			if (item.getProjectObjects) {
 				item.getProjectObjects().forEach(function(p) {
@@ -208,7 +93,9 @@ var SpatialProject = (function() {
 				});
 			}
 
-			return spatial.map(function(spatial, i) {
+
+
+			spatial = spatial.map(function(spatial, i) {
 
 				var url = spatial;
 				var options = {};
@@ -220,7 +107,7 @@ var SpatialProject = (function() {
 				return Object.append({
 					url: url,
 					//project:item,
-					group: "project",
+					group: group,
 					id: "project-" + item.getId() + '-' + i + '',
 					name: item.getName(),
 					projectAttributes: item.getDatasetAttributes(i)
@@ -229,12 +116,127 @@ var SpatialProject = (function() {
 
 
 			});
+
+			return spatial;
+
+
+		},
+
+		InitMainMap: function() {
+
+
+			window.CurrentMapType = "MainMap";
+			window.GetSpatialFiles = function() {
+
+
+
+				var items = ProjectSelection.getProjects();
+				var list = [];
+
+				items.forEach(function(item) {
+
+					var spatial = SpatialProject.ItemsSpatial(item);
+					list = list.concat(spatial);
+
+				});
+
+				return list;
+
+			}
+
+
+			return null;
+
+
+
+		},
+
+		GetProjectList: function(item, callback) {
+
+			if (item.getProjectList) {
+				item.getProjectList(callback);
+				return;
+			}
+
+			if (item instanceof Project) {
+
+				(new ProjectList({
+					"label": "Collection Datasets",
+					"showCreateBtn": true,
+					projects: function(callback) {
+						callback([item].concat(item.getProjectObjects()));
+					}
+				})).getProjectList(callback);
+
+				return;
+			}
+
+			(new ProjectList({
+				"label": "Collection Datasets",
+				"showCreateBtn": true,
+				projects: function(callback) {
+					callback(ProjectSelection.getProjects());
+				}
+			})).getProjectList(callback);
+
+			return;
+
+		},
+
+
+		InitCurrentProject: function(item) {
+
+
+
+			window.CurrentMapType = "ProjectMap";
+			window.CurrentMapItem = item;
+			window.GetSpatialFiles = function() {
+
+
+				var spatial = item.getSpatialDocuments();
+
+				if (item.getProjectObjects) {
+					item.getProjectObjects().forEach(function(p) {
+						spatial = spatial.concat(p.getSpatialDocuments().map(function(url, i) {
+							return {
+								url: url,
+								id: "project-" + p.getId() + '-' + i + '',
+								name: p.getName(),
+								projectAttributes: p.getDatasetAttributes(i)
+							}
+						}));
+					});
+				}
+
+				return spatial.map(function(spatial, i) {
+
+					var url = spatial;
+					var options = {};
+					if (spatial.url) {
+						options = spatial;
+					}
+
+
+					return Object.append({
+						url: url,
+						//project:item,
+						group: "project",
+						id: "project-" + item.getId() + '-' + i + '',
+						name: item.getName(),
+						projectAttributes: item.getDatasetAttributes(i)
+					}, options);
+
+
+
+				});
+			}
+
+			return null;
+
 		}
 
-		return null;
+	});
 
-	}
-
-	return SpatialProject;
+	return new SpatialProject();
 
 })()
