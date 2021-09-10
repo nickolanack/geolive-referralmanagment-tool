@@ -211,7 +211,9 @@ var SpatialProject = (function() {
 
 		},
 
-
+		FormatListModulesScript:function(module, item){
+			console.log('hello');
+		},
 		FormatListItemViewModulesScript: function(list, listItem, uiview, callback) {
 
 
