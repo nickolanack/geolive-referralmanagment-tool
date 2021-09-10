@@ -26,7 +26,7 @@ var SpatialProject = (function() {
 							return;
 						}
 
-						var layer = ProjectLayer.MakeProjectLayer(map, {
+						var layer = new ProjectLayer(map, {
 							url: url,
 							name: project.getName(),
 							group: project.getBaseMapLayerType(),
@@ -206,6 +206,63 @@ var SpatialProject = (function() {
 			}
 
 			return null;
+
+		},
+
+
+		FormatListItemViewModulesScript:function(list, listItem, uiview, callback){
+
+
+			 console.log('format list modules');
+
+			console.log(list);
+
+			var adminBtns=[];
+
+			if(list.content[list.content.length-1].getIdentifier()=="admin-btn"){
+				adminBtns.push(list.content.pop());
+			}
+			
+
+
+			list.content=([
+			        new ElementModule('div',{
+			        	"class":"field-value-module inline btn",
+			            html:'toggle',
+			            events:{
+			                click:function(){
+			                    console.log(toggle)
+			                }
+			            }
+			        })
+			    ]).concat(list.content,[
+			        new ElementModule('div',{
+			        	"class":"field-value-module inline btn",
+			            html:'remove',
+			            events:{
+			                click:function(){
+			                    console.log(toggle)
+			                }
+			            }
+			        }),
+			        new ElementModule('div',{
+			        	"class":"field-value-module inline btn",
+			            html:'config',
+			            events:{
+			                click:function(){
+			                    console.log(toggle)
+			                }
+			            }
+			        })
+			        
+			    
+			    ], adminBtns);
+
+
+
+			return list
+	       
+
 
 		},
 

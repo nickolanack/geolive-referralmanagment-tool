@@ -66,7 +66,7 @@ var SpatialDocumentPreview = (function() {
 
 				});
 
-				var layer = ProjectLayer.MakeProjectLayer(map, layerOpts);
+				var layer = new ProjectLayer(map, layerOpts);
 				layer.addEvent('load:once', function() {
 					(new AjaxControlQuery(CoreAjaxUrlRoot, 'file_metadata', {
 						'file': layerOpts.url
