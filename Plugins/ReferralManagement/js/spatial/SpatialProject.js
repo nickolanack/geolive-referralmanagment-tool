@@ -231,7 +231,7 @@ var SpatialProject = (function() {
 
 			var toggle = new ElementModule('div', {
 				"class": "field-value-module inline btn active",
-				html: 'toggle',
+				html: '',
 				events: {
 					click: function() {
 
@@ -250,6 +250,9 @@ var SpatialProject = (function() {
 					}
 				}
 			});
+			toggle.appendChild(new Element('span', {"class":'indicator-switch'}))
+
+
 
 			list.content = ([toggle]).concat(list.content, [
 				new ElementModule('div', {
