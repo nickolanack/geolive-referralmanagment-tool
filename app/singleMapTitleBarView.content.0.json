@@ -16,7 +16,7 @@
         "initModuleScript": "",
         "formatModuleScript": "",
         "resolveItemScript": "return item;",
-        "filterModulesScript": "return ProjectLayer.FormatListItemViewModulesScript(list, listItem, uiview, callback);",
+        "filterModulesScript": "return SpatialProject.FormatListItemViewModulesScript(list, listItem, uiview, callback);",
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
         "targetName": "",
