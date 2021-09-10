@@ -285,6 +285,7 @@ var SpatialProject = (function() {
 						events: {
 							click: function() {
 								ProjectSelection.removeProject(listItem);
+								uiview.parentUIView.redraw();
 							}
 						}
 					});
