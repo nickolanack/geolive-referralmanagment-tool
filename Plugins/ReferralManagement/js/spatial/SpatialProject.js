@@ -254,17 +254,7 @@ var SpatialProject = (function() {
 
 
 
-			list.content = ([toggle]).concat(list.content, [
-				new ElementModule('div', {
-					"class": "field-value-module inline btn",
-					html: 'remove',
-					events: {
-						click: function() {
-
-						}
-					}
-				}),
-				new ElementModule('div', {
+			var editBtn=new ElementModule('div', {
 					"class": "field-value-module inline btn",
 					html: 'config',
 					events: {
@@ -272,7 +262,26 @@ var SpatialProject = (function() {
 
 						}
 					}
-				})
+				});
+
+			editBtn.appendChild(new Element('span',{"class":"btn inline-edit"}));
+
+
+			var removeBtn=new ElementModule('div', {
+					"class": "field-value-module inline btn",
+					html: 'remove',
+					events: {
+						click: function() {
+
+						}
+					}
+				});
+			removeBtn.appendChild(new Element('span',{"class":"btn inline-remove"}))
+
+
+			list.content = ([toggle]).concat(list.content, [
+				removeBtn,
+				editBtn
 
 
 			], adminBtns);
