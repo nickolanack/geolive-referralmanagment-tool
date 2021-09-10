@@ -194,9 +194,10 @@ var Project = (function() {
 		},
 		getMapLayerIds:function(){
 
+	
 			return this.getSpatialDocuments().map(function(d, i){
 				return "project-" + this.getId() + '-' + i + '';
-			});
+			}, this);
 
 		},
 
