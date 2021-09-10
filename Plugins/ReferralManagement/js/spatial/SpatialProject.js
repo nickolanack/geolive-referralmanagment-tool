@@ -3,7 +3,7 @@ var SpatialProject = (function() {
 
 
 	var SpatialProject = new Class({
-		implements:[Events],
+		Implements:[Events],
 
 		InitMapLayers: function(map) {
 
