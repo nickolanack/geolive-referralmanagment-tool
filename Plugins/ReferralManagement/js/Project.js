@@ -190,12 +190,12 @@ var Project = (function() {
 		},
 		getMapLayerId:function(index){
 			index=index||0;
-			return "project-" + project.getId() + '-' + index + '';
+			return "project-" + this.getId() + '-' + index + '';
 		},
 		getMapLayerIds:function(){
 
 			return this.getSpatialDocuments().map(function(d, i){
-				return "project-" + project.getId() + '-' + i + '';
+				return "project-" + this.getId() + '-' + i + '';
 			});
 
 		},
