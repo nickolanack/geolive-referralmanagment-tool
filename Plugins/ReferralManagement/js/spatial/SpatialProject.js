@@ -286,6 +286,16 @@ var SpatialProject = (function() {
 							click: function() {
 								ProjectSelection.removeProject(listItem);
 								uiview.parentUIView.redraw();
+
+
+								listItem.getMapLayerIds().forEach(function(lid) {
+									try{
+										me._map.getLayerManager().removeLayer(me._map.getLayerManager().getLayer(lid));
+									}catch(e){
+										console.error(e);
+									}
+								});
+					
 							}
 						}
 					});
