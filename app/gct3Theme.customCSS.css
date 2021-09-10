@@ -1065,7 +1065,7 @@ button.primary-btn.nav-new-btn.view-selection:before{
 
 
 
-.section-welcome button.inline-edit, button.inline-edit{
+.section-welcome button.inline-edit, button.inline-edit, .btn.inline-edit, .btn.inline-remove{
    
     
     
@@ -1087,6 +1087,18 @@ button.primary-btn.nav-new-btn.view-selection:before{
         color: mediumseagreen;
         cursor:pointer;
 }
+
+.btn.inline-remove{
+    
+    &:after {
+        content: "\f040";
+        
+    }
+    color: crimson;
+}
+
+
+
 
 .section-welcome button.inline-edit{
     position: absolute;
