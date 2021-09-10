@@ -7,6 +7,12 @@ var ProjectLayer = (function() {
 		initialize: function(map, options) {
 
 
+			/**
+			 * Can define and return a totally new class here. 
+			 * why? because it has dependencies that may be unavailable when this file is loaded
+			 */
+
+
 
 			if (!window.GeoliveLayer) {
 				if (window.console && console.warn) {
@@ -38,7 +44,9 @@ var ProjectLayer = (function() {
 						showLabels: false,
 						clickable: false,
 					};
-					var lineOptions = {};
+					var lineOptions = {
+						zIndex:
+					};
 					var polygonOptions = {};
 
 					if (options.projectAttributes && options.projectAttributes.metadata) {

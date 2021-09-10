@@ -312,6 +312,10 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		IncludeJS(__DIR__ . '/js/spatial/SpatialDocumentPreview.js');
 		IncludeJS(__DIR__ . '/js/spatial/ProjectLayer.js');
 		IncludeJS(__DIR__ . '/js/spatial/ProjectMap.js');
+		IncludeJS(__DIR__ . '/js/spatial/LayerGroup.js');
+		IncludeJS(__DIR__ . '/js/spatial/LayerGroupLegend.js');
+		IncludeJS(__DIR__ . '/js/spatial/LegendHelper.js');
+ 
 
 		IncludeJS(__DIR__ . '/js/MainNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/ProjectsOverviewNavigationMenu.js');
@@ -357,8 +361,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		IncludeJS(__DIR__ . '/js/ProjectSearch.js');
 		IncludeJS(__DIR__ . '/js/PostContent.js');
 		IncludeJS(__DIR__ . '/js/UserIcon.js');
-		IncludeJS(__DIR__ . '/js/LayerGroup.js');
-		IncludeJS(__DIR__ . '/js/LayerGroupLegend.js');
+		
 
 		if (GetClient()->isAdmin()) {
 			IncludeJS(__DIR__ . '/js/AdminMonitor.js');
