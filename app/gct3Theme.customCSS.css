@@ -1186,6 +1186,19 @@ div.field-value-module.inline.icon, div.field-value-module.inline.check {
     width: 30px;
 }
 
+div.field-value-module.inline.check {
+    position:relative;
+    input[type="checkbox"]:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        z-index: 0;
+        top: -5px;
+        left: -6px;
+    }
+}
+
 .table-header .field-value-module.icon:before {
     visibility:hidden
 }
