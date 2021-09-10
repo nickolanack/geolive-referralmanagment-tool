@@ -128,6 +128,7 @@ var SpatialProject = (function() {
 
 
 			this._clearCurrentProject();
+			var me=this;
 
 			window.CurrentMapType = "MainMap";
 			window.GetSpatialFiles = function() {
@@ -139,7 +140,7 @@ var SpatialProject = (function() {
 
 				items.forEach(function(item) {
 
-					var spatial = SpatialProject.ItemsSpatial(item);
+					var spatial = me.ItemsSpatial(item);
 					list = list.concat(spatial);
 
 				});
