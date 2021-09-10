@@ -266,7 +266,7 @@ var SpatialProject = (function() {
 								return;
 							}
 
-							me.editLayer(me._map, me._map.getLayerManager().getLayer(lid).options);
+							me.editLayer(me._map, me._map.getLayerManager().getLayer(lids[0]).getOptions());
 									
 						}
 					}
