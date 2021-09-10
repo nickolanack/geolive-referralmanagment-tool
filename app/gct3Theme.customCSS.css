@@ -584,6 +584,16 @@ ul.project, ul.user{
 .section-padding {
     margin: 30px 40px;
 }
+
+.ui-view.section-padding[data-view="datasetsView"] {
+    padding: 30px 40px;
+    margin: 0;
+    background-color: rgba(0,0,0,0.03);
+    background: linear-gradient(0deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.05) 100%);
+}
+
+
+
 .section-indent {
     margin-left: 40px;
 }
