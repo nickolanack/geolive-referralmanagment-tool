@@ -253,28 +253,29 @@ var SpatialProject = (function() {
 			});
 			toggle.appendChild(new Element('span', {"class":'indicator-switch'}))
 
+			var editBtn=null;
+			if(me._item!==listItem){
+
+				editBtn=new ElementModule('div', {
+						"class": "field-value-module inline btn",
+						html: '',
+						events: {
+							click: function() {
+								var lids=listItem.getMapLayerIds();
 
 
-			var editBtn=new ElementModule('div', {
-					"class": "field-value-module inline btn",
-					html: '',
-					events: {
-						click: function() {
-							var lids=listItem.getMapLayerIds();
+								if(lids.length!=1){
+									return;
+								}
 
-
-							if(lids.length!=1){
-								return;
+								me.editLayer(me._map, me._map.getLayerManager().getLayer(lids[0]).getOptions());
+										
 							}
-
-							me.editLayer(me._map, me._map.getLayerManager().getLayer(lids[0]).getOptions());
-									
 						}
-					}
-				});
+					});
 
-			editBtn.appendChild(new Element('span',{"class":"btn inline-edit"}));
-
+				editBtn.appendChild(new Element('span',{"class":"btn inline-edit"}));
+				}
 
 			var removeBtn=new ElementModule('div', {
 					"class": "field-value-module inline btn",
