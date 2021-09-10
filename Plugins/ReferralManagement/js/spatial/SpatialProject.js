@@ -302,7 +302,7 @@ var SpatialProject = (function() {
 			this._item=null;
 			this.fireEvent('mainMap');
 
-		}
+		},
 
 		_setCurrentProject:function(item){
 			this._item=item;
