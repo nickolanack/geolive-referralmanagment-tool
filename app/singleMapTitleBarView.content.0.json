@@ -14,7 +14,7 @@
         "showDeleteButton": false,
         "deleteItemScript": "defaultBehaviorFn()",
         "initModuleScript": "",
-        "formatModuleScript": "",
+        "formatModuleScript": "return SpatialProject.FormatListModulesScript(module, item);",
         "resolveItemScript": "return item;",
         "filterModulesScript": "return SpatialProject.FormatListItemViewModulesScript(list, listItem, uiview, callback);",
         "itemButtonsScript": "return [];",
