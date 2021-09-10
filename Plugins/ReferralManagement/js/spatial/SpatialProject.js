@@ -256,10 +256,18 @@ var SpatialProject = (function() {
 
 			var editBtn=new ElementModule('div', {
 					"class": "field-value-module inline btn",
-					html: 'config',
+					html: '',
 					events: {
 						click: function() {
+							var lids=listItem.getMapLayerIds();
 
+
+							if(lids.length!=1){
+								return;
+							}
+
+							me.editLayer(me._map, me._map.getLayerManager().getLayer(lid).options);
+									
 						}
 					}
 				});
@@ -269,10 +277,10 @@ var SpatialProject = (function() {
 
 			var removeBtn=new ElementModule('div', {
 					"class": "field-value-module inline btn",
-					html: 'remove',
+					html: '',
 					events: {
 						click: function() {
-
+							ProjectSelection.removeProject(listItem);
 						}
 					}
 				});
@@ -290,6 +298,63 @@ var SpatialProject = (function() {
 
 			return list
 
+
+
+		},
+
+
+		editLayer:function(map, layerObject){
+
+
+			var formName="projectLayerSettings";
+
+            var projectIdString=layerObject.id.split("-");
+            var layerIndex=parseInt(projectIdString.pop());
+            var projectId=parseInt(projectIdString.pop());
+
+            ProjectTeam.CurrentTeam().getProject(projectId,function(project){
+                var wizardTemplate = map.getDisplayController().getWizardTemplate(formName);
+                if ((typeof wizardTemplate) != 'function') {
+
+                    if(window.console&&console.warn){
+                        console.warn('Expected named wizardTemplate: '+formName+', to exist');
+                    }
+
+                }
+                var modalFormViewController =  new PushBoxModuleViewer(map, {});
+
+
+                var data={
+                    mutable:true,
+                    showIcons:true,
+                    showLabels:false,
+                    lineColor:"#000000",
+                    fillColor:"#000000",
+                    lineOpacity:1,
+                    fillOpacity:0.5,
+                    lineWidth:1,
+                    description:"",
+                };
+
+                if(layerObject.projectAttributes&&layerObject.projectAttributes.metadata){
+                    data=ObjectAppend_(data, layerObject.projectAttributes.metadata);
+                }
+
+
+                var newItem= new MockDataTypeItem(data);
+                var wizard = wizardTemplate(newItem, {});
+                wizard.buildAndShow(modalFormViewController, {template:"form"}); 
+                wizard.addEvent('complete', function() {
+
+                    var data = wizard.getData();
+                    console.log(data);
+                    project.setDatasetMetadata(data, layerIndex);
+
+                    //update current map
+
+                });
+
+            });
 
 
 		},
