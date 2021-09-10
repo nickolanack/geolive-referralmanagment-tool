@@ -188,6 +188,17 @@ var Project = (function() {
 			}
 			return this.data.attributes.dataset.baseMapLayer;
 		},
+		getMapLayerId:function(index){
+			index=index||0;
+			return "project-" + project.getId() + '-' + index + '';
+		}
+		getMapLayerIds:function(){
+
+			return this.getSpatialDocuments().map(function(d, i){
+				return "project-" + project.getId() + '-' + i + '';
+			});
+
+		},
 
 		isCollection: function() {
 			return !this.isDataset();

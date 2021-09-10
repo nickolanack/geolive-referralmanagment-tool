@@ -3,9 +3,11 @@ var SpatialProject = (function() {
 
 
 	var SpatialProject = new Class({
-		Implements:[Events],
+		Implements: [Events],
 
 		InitMapLayers: function(map) {
+
+			this._setMap(map);
 
 			ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
 
@@ -153,7 +155,6 @@ var SpatialProject = (function() {
 
 		},
 
-		
 
 
 		InitCurrentProject: function(item) {
@@ -210,58 +211,73 @@ var SpatialProject = (function() {
 		},
 
 
-		FormatListItemViewModulesScript:function(list, listItem, uiview, callback){
+		FormatListItemViewModulesScript: function(list, listItem, uiview, callback) {
 
 
 			console.log('format list modules');
 
 			console.log(list);
 
-			var adminBtns=[];
+			var adminBtns = [];
 
-			if(list.content[list.content.length-1].getIdentifier()=="admin-btn"){
+			if (list.content[list.content.length - 1].getIdentifier() == "admin-btn") {
 				adminBtns.push(list.content.pop());
 			}
-			
+
+			var me = this;
+
+			var visible = true;
 
 
-			list.content=([
-			        new ElementModule('div',{
-			        	"class":"field-value-module inline btn",
-			            html:'toggle',
-			            events:{
-			                click:function(){
-			                    console.log(toggle)
-			                }
-			            }
-			        })
-			    ]).concat(list.content,[
-			        new ElementModule('div',{
-			        	"class":"field-value-module inline btn",
-			            html:'remove',
-			            events:{
-			                click:function(){
-			                    console.log(toggle)
-			                }
-			            }
-			        }),
-			        new ElementModule('div',{
-			        	"class":"field-value-module inline btn",
-			            html:'config',
-			            events:{
-			                click:function(){
-			                    console.log(toggle)
-			                }
-			            }
-			        })
-			        
-			    
-			    ], adminBtns);
+			var toggle = new ElementModule('div', {
+				"class": "field-value-module inline btn active",
+				html: 'toggle',
+				events: {
+					click: function() {
+
+						visible = !visible;
+						listItem.getMapLayerIds().forEach(function(lid) {
+
+							if (visible) {
+								me._map.getLayerManager().getLayer(lid).show();
+								toggle.getElement().addClass('active');
+								return;
+							}
+							me._map.getLayerManager().getLayer(lid).hide();
+							toggle.getElement().removeClass('active');
+
+						});
+					}
+				}
+			});
+
+			list.content = ([toggle]).concat(list.content, [
+				new ElementModule('div', {
+					"class": "field-value-module inline btn",
+					html: 'remove',
+					events: {
+						click: function() {
+
+						}
+					}
+				}),
+				new ElementModule('div', {
+					"class": "field-value-module inline btn",
+					html: 'config',
+					events: {
+						click: function() {
+
+						}
+					}
+				})
+
+
+			], adminBtns);
 
 
 
 			return list
-	       
+
 
 
 		},
@@ -298,15 +314,19 @@ var SpatialProject = (function() {
 
 		},
 
-		_clearCurrentProject:function(item){
-			this._item=null;
+		_setMap: function(map) {
+			this._map = map;
+		},
+
+		_clearCurrentProject: function(item) {
+			this._item = null;
 			this.fireEvent('mainMap');
 
 		},
 
-		_setCurrentProject:function(item){
-			this._item=item;
-			this.fireEvent('projectMap',[item]);
+		_setCurrentProject: function(item) {
+			this._item = item;
+			this.fireEvent('projectMap', [item]);
 
 		}
 
