@@ -124,7 +124,7 @@ var ProjectLayer = (function() {
 
 
 
-				}.
+				},
 
 				_initMarker: function(data, xml, markerDataArray, i) {
 					GeoliveLayer.prototype._initMarker.call(this, Object.append(data, this.options.markerOptions), xml, markerDataArray, i);

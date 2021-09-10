@@ -296,7 +296,7 @@ var SpatialProject = (function() {
 
 			return;
 
-		}
+		},
 
 		_clearCurrentProject:function(item){
 			this._item=null;
