@@ -308,9 +308,10 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		IncludeJS(__DIR__ . '/js/ConfigItem.js');
 		IncludeJS(__DIR__ . '/js/HtmlContent.js');
 
-		IncludeJS(__DIR__ . '/js/SpatialProject.js');
-		IncludeJS(__DIR__ . '/js/SpatialDocumentPreview.js');
-		IncludeJS(__DIR__ . '/js/ProjectLayer.js');
+		IncludeJS(__DIR__ . '/js/spatial/SpatialProject.js');
+		IncludeJS(__DIR__ . '/js/spatial/SpatialDocumentPreview.js');
+		IncludeJS(__DIR__ . '/js/spatial/ProjectLayer.js');
+		IncludeJS(__DIR__ . '/js/spatial/ProjectMap.js');
 
 		IncludeJS(__DIR__ . '/js/MainNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/ProjectsOverviewNavigationMenu.js');
@@ -352,7 +353,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		IncludeJS(__DIR__ . '/js/ProjectFiles.js');
 		IncludeJS(__DIR__ . '/js/TaskItem.js');
 		IncludeJS(__DIR__ . '/js/RecentItems.js');
-		IncludeJS(__DIR__ . '/js/ProjectMap.js');
+		
 		IncludeJS(__DIR__ . '/js/ProjectSearch.js');
 		IncludeJS(__DIR__ . '/js/PostContent.js');
 		IncludeJS(__DIR__ . '/js/UserIcon.js');

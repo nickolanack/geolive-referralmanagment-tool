@@ -3,7 +3,7 @@ var SpatialProject = (function() {
 
 
 	var SpatialProject = new Class({
-
+		implements:[Events],
 
 		InitMapLayers: function(map) {
 
@@ -125,6 +125,8 @@ var SpatialProject = (function() {
 		InitMainMap: function() {
 
 
+			this._clearCurrentProject();
+
 			window.CurrentMapType = "MainMap";
 			window.GetSpatialFiles = function() {
 
@@ -151,41 +153,13 @@ var SpatialProject = (function() {
 
 		},
 
-		GetProjectList: function(item, callback) {
-
-			if (item.getProjectList) {
-				item.getProjectList(callback);
-				return;
-			}
-
-			if (item instanceof Project) {
-
-				(new ProjectList({
-					"label": "Collection Datasets",
-					"showCreateBtn": true,
-					projects: function(callback) {
-						callback([item].concat(item.getProjectObjects()));
-					}
-				})).getProjectList(callback);
-
-				return;
-			}
-
-			(new ProjectList({
-				"label": "Collection Datasets",
-				"showCreateBtn": true,
-				projects: function(callback) {
-					callback(ProjectSelection.getProjects());
-				}
-			})).getProjectList(callback);
-
-			return;
-
-		},
+		
 
 
 		InitCurrentProject: function(item) {
 
+
+			this._setCurrentProject(item);
 
 
 			window.CurrentMapType = "ProjectMap";
@@ -233,7 +207,52 @@ var SpatialProject = (function() {
 
 			return null;
 
+		},
+
+		GetProjectList: function(item, callback) {
+
+			if (item.getProjectList) {
+				item.getProjectList(callback);
+				return;
+			}
+
+			if (item instanceof Project) {
+
+				(new ProjectList({
+					"label": "Collection Datasets",
+					"showCreateBtn": true,
+					projects: function(callback) {
+						callback([item].concat(item.getProjectObjects()));
+					}
+				})).getProjectList(callback);
+
+				return;
+			}
+
+			(new ProjectList({
+				"label": "Collection Datasets",
+				"showCreateBtn": true,
+				projects: function(callback) {
+					callback(ProjectSelection.getProjects());
+				}
+			})).getProjectList(callback);
+
+			return;
+
 		}
+
+		_clearCurrentProject:function(item){
+			this._item=null;
+			this.fireEvent('mainMap');
+
+		}
+
+		_setCurrentProject:function(item){
+			this._item=item;
+			this.fireEvent('projectMap',[item]);
+
+		}
+
 
 	});
 
