@@ -212,7 +212,9 @@ var SpatialProject = (function() {
 		},
 
 		FormatListModulesScript:function(module, item){
-			console.log('hello');
+			 module.addWeakEvent(ProjectSelection, 'change', function(){
+			 	module.redraw();
+			 });
 		},
 		FormatListItemViewModulesScript: function(list, listItem, uiview, callback) {
 
@@ -287,7 +289,7 @@ var SpatialProject = (function() {
 						events: {
 							click: function() {
 								ProjectSelection.removeProject(listItem);
-								uiview.parentUIView.redraw();
+								//uiview.parentUIView.redraw();
 
 
 								listItem.getMapLayerIds().forEach(function(lid) {
@@ -413,6 +415,7 @@ var SpatialProject = (function() {
 
 		_setMap: function(map) {
 			this._map = map;
+			this.fireEvent('map', ['map']);
 		},
 
 		_clearCurrentProject: function(item) {
