@@ -45,7 +45,7 @@ var ProjectLayer = (function() {
 						clickable: false,
 					};
 					var lineOptions = {
-						zIndex:
+						
 					};
 					var polygonOptions = {};
 
