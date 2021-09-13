@@ -22,15 +22,21 @@ var UIInteraction = (function() {
 				}
 			});
 
+			var filters=ProjectTagList.getProjectTagsData('_root').map(function(cat) {
+				if (cat.getName() == typeName) {
+					//category = cat;
+				}
+				return cat.getName();
+			});
+
+			if(filters.indexOf(typeName)==-1){
+				//not a root category
+				filters.push(typeName);
+			}
+
 			controller.navigateTo("Datasets", "Main", {
 
-				filters: ProjectTagList.getProjectTagsData('_root').map(function(cat) {
-					if (cat.getName() == typeName) {
-						//category = cat;
-					}
-					return cat.getName();
-
-				}),
+				filters: filters,
 				//filter:child.getName(),
 
 				item: new ProjectList({
