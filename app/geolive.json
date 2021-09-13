@@ -13523,7 +13523,7 @@
                                     "formOptions": "\"{}\"",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "defaultBehaviorFn()",
-                                    "initModuleScript": "module.render();",
+                                    "initModuleScript": "module.draw();",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
