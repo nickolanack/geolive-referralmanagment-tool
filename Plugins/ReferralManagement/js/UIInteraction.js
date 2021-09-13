@@ -16,11 +16,17 @@ var UIInteraction = (function() {
 
 			var category = null;
 
+			ProjectTagList.getProjectTagsData().forEach(function(cat) {
+				if (cat.getName() == typeName) {
+					category = cat;
+				}
+			});
+
 			controller.navigateTo("Datasets", "Main", {
 
 				filters: ProjectTagList.getProjectTagsData('_root').map(function(cat) {
 					if (cat.getName() == typeName) {
-						category = cat;
+						//category = cat;
 					}
 					return cat.getName();
 
