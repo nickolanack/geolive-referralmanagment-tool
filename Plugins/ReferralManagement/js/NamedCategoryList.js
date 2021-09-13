@@ -118,7 +118,7 @@ var NamedCategoryList = (function() {
 
 
 				if (category && category != "") {
-					return item.getCategory() == category;
+					return item.getCategory() == category.toLowerCase();
 				}
 				return true;
 			})

@@ -38,7 +38,7 @@ var UIInteraction = (function() {
 
 				filters: filters,
 				//filter:child.getName(),
-
+				category:category,
 				item: new ProjectList({
 					"icon": category.getIcon(),
 					"color": category.getColor(),
