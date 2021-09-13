@@ -101,7 +101,11 @@ var NamedCategoryList = (function() {
 			return tags[0];
 		},
 
-
+		getProjectChildTagsData: function(category) {
+			return this.getProjectTagsData(category).filter(function(cat){
+				return cat.getName().toLowerCase()!=category.toLowerCase();
+			});
+		},
 		getProjectTagsData: function(category) {
 
 
