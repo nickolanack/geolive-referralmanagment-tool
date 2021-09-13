@@ -1,6 +1,5 @@
 <?php
  
- 
 
  $layerGroups=array('project', 'selection', 'community', 'townships', 'mining', 'forestry', 'boundary', 'crowdsource', 'other', 'user');
     foreach($layerGroups as $i=>$groupName){
