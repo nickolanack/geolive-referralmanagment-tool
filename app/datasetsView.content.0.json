@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "var div=new Element('div', {\"class\":\"section-title\", events:{\n    click:function(){\n        var controller = application.getNamedValue('navigationController');\n        controller.navigateTo(\"Projects\", \"Main\", {\n\t\t\t\t\t\tfilters:ProjectTagList.getProjectTagsData('_root').map(function(item){ return item.getName(); }),\n\t\t\t\t\t\t\/\/filter:child.getName()\n\t\t\t\t\t});\n    }\n}});\ndiv.appendChild(new Element('span',{html:\"Datasets & Collections\"}));\nreturn div;",
+        "script": "var div=new Element('div', {\"class\":\"section-title\", events:{\n    click:function(){\n        var controller = application.getNamedValue('navigationController');\n        controller.navigateTo(\"Projects\", \"Main\", {\n\t\t\t\t\t\tfilters:ProjectTagList.getProjectTagsData('_root').map(function(item){ return item.getName(); }),\n\t\t\t\t\t\t\/\/filter:child.getName()\n\t\t\t\t\t});\n    }\n}});\nvar sub=\"\";\nif(item instanceof ProjectList){\n}\ndiv.appendChild(new Element('span',{html:\"Datasets & Collections\"+sub}));\nreturn div;",
         "description": "Info about my custom script"
     }
 }
