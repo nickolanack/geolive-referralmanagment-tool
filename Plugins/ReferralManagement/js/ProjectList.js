@@ -54,12 +54,19 @@ var ProjectList = (function() {
 
 			if (this.getLockFilter) {
 				var filter = this.getLockFilter();
-				if (filter && filter.length == 1 && ProjectTagList.getProjectTagsData(filter[0]).length > 0) {
+
+
+				if((!filter)||filter.length==0){
+					return null;
+				}
+
+				if (filter.length == 1 && ProjectTagList.getProjectTagsData(filter[0]).length > 0) {
 					var childTags = ProjectTagList.getProjectChildTagsData(filter[0]);
 					if (childTags.length > 0) {
 						return childTags;
 					}
 				}
+
 
 
 				var tag = ProjectTagList.getTag(filter[0]);
