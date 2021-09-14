@@ -63,6 +63,15 @@ var NamedCategory = (function() {
 		},
 
 
+		appliesToItem:function(item){
+			return true;
+		},
+
+		appliesToType:function(type){
+			return true;
+		},
+
+
 		getLabelForContent:function(){
 			return this.getName() + " Datasets & Collections"
 		},
@@ -94,6 +103,12 @@ var NamedCategory = (function() {
 		isRootTag: function() {
 			return (!this.getCategory())||this.getCategory().toLowerCase() == this.getName().toLowerCase();
 		},
+
+
+		isLeafTag:function(){
+			return this.getChildTagsData().length==0;
+		},
+
 		getDescriptionPlain: function() {
 
 			var images = JSTextUtilities.ParseImages(this.getDescription())

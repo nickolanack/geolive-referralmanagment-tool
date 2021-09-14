@@ -50,6 +50,19 @@ var ProjectList = (function() {
 			return [];
 		},
 
+		getProjectListFilterChildTags:function(){
+
+			if(this.getLockFilter){
+			   var filter=this.getLockFilter();
+			   if(filter&&filter.length==1&&ProjectTagList.getProjectTagsData(filter[0]).length>0){
+			       return ProjectTagList.getProjectChildTagsData(filter[0]);
+			   }
+			}
+
+			return null;
+
+		},
+
 		getProjectList:function(callback){
 
 			if(this.getProjects){
