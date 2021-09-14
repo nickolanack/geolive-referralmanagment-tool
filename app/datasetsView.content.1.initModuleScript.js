@@ -1,0 +1,1 @@
+NamedCategory.AddStyle(item, module.getElement());
