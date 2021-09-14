@@ -1,1 +1,1 @@
-NamedCategory.AddStyle(item, module.getElement());
+NamedCategory.AddClass(item, module.getElement());
