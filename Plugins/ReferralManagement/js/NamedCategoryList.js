@@ -63,15 +63,48 @@ var NamedCategoryList = (function() {
 		},
 
 
-		getProjectsWithTag: function(category) {
+		_flattenTagTree:function(category, list){
 
-			/**
-			 * TODO this looks like it will only support first 2 levels (depth) of nested categories
-			 */
+			category=category.toLowerCase();
 
-			var tags = _tags.filter(function(tag) {
-				return tag.getName().toLowerCase() == category.toLowerCase() || tag.getCategory().toLowerCase() == category.toLowerCase();
-			});
+
+			if(typeof list=="undefined"){
+				list=[category];
+			}
+
+			var tags = _tags.forEach(function(tag) {
+
+				var child=tag.getName().toLowerCase();
+
+				if(child != category && tag.getCategory().toLowerCase() == category&&list.indexOf(tag)==-1){
+					list.push(tag);
+					this._flattenTagTree(child, list);
+				}
+			}, this);
+
+			return list;
+
+		},
+
+
+		getProjectsWithTag: function(category, recursive) {
+
+			var tags=[];
+
+			if(recursive!==false){
+				
+				tags=this._flattenTagTree(category);
+
+			}else{
+
+				tags = _tags.filter(function(tag) {
+					return tag.getName().toLowerCase() == category.toLowerCase();
+				});
+
+			}
+
+
+
 
 			return ProjectTeam.CurrentTeam().getProjects().filter(function(project) {
 				var types = project.getProjectTypes();
