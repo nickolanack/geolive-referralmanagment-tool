@@ -71,6 +71,12 @@ var ProjectList = (function() {
 
 		},
 
+		isFilteringOnTag:function(tag){
+
+
+			return true;
+		},
+
 		getProjectList:function(callback){
 
 			if(this.getProjects){
