@@ -236,8 +236,8 @@ var NamedCategory = (function() {
 	}
 
 	NamedCategory.AddClass=function(item, el){
-		
-	}
+		el.addClass("category-"item.getName().toLowerCase().replace(' ','-'));
+	}	
 
 	NamedCategory.AddStyle=function(item, el, labelEl){
 
