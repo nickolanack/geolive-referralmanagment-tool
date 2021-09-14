@@ -35,7 +35,12 @@ span.field-value.is-dark {
     }
 }
 
-
+[data-view="tagsDetail"] .primary-btn, [data-view="tagsDetail"] [data-view="tagsDetailItem"]:hover  .tag-item .primary-btn {
+    opacity:0.4;
+}
+[data-view="tagsDetail"] [data-view="tagsDetailItem"]:hover .primary-btn, [data-view="tagsDetail"] [data-view="tagsDetailItem"]:hover .tag-item:hover .primary-btn {
+    opacity:1
+}
 
 .project-list-filters.section-indent{
     display: inline-table;
