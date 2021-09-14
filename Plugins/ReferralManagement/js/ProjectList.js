@@ -74,7 +74,13 @@ var ProjectList = (function() {
 		isFilteringOnTag:function(tag){
 
 
-			return true;
+			if(this.getLockFilter){
+			   var filter=this.getLockFilter();
+	
+				return ProjectTagList.getTag(filter[0])===tag;
+			}
+
+			return false;
 		},
 
 		getProjectList:function(callback){
