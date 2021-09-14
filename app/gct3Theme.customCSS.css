@@ -45,6 +45,7 @@ span.field-value.is-dark {
     
     &.parent-category-projects.dataset-item {
         min-height:30px;
+        max-width: 200px;
         .dataset-description {
             display:none;
         }
