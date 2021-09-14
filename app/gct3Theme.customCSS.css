@@ -49,6 +49,30 @@ span.field-value.is-dark {
             display:none;
         }
     }
+    
+    &.parent-category-projects{
+    
+        .section-title {
+            font-size: 14px;
+            font-family: Arial;
+        }
+        
+        .field-value-module.item-icon.left-icons {
+            display: none;
+        }
+        
+        button.form-btn.inline-edit {
+            display: none;
+        }
+        
+        .field-value-module.item-icon, .field-value-module.item-icon > .field-label {
+            width: 30px;
+            height: 30px;
+            background-size:80%;
+        }
+    
+    }
+    
 
 
     
