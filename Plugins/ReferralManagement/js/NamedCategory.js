@@ -63,6 +63,25 @@ var NamedCategory = (function() {
 		},
 
 
+		getParentTagData:function(){
+
+			var me=this;
+			var list= NamedCategoryList.getProjectTagsData(me.getCategory()).filter(function(tag){
+			    return tag!=me;
+			});
+
+			if(list.length>1){
+				throw 'Expected one parent at most';
+			}
+
+			if(list.length==1){
+				return list[0];
+			}
+			return null;
+
+		},
+
+
 		getDescription:function(){
 			return this._getDescription()||"";
 		},
@@ -235,8 +254,21 @@ var NamedCategory = (function() {
 		return NamedCategoryList.getTag(category).getShortName();
 	}
 
-	NamedCategory.AddClass=function(item, el){
-		el.addClass("category-"+item.getName().toLowerCase().replace(' ','-'));
+	NamedCategory.AddClass=function(item, el, prefix){
+
+		prefix=prefix||'';
+
+		el.addClass(prefix+"category-"+item.getName().toLowerCase().replace(' ','-'));
+
+
+
+		if(!item.isRootTag()){
+			var p=item.getParentTagData();
+			if(item){
+				NamedCategory.AddClass(p, el, 'parent-')
+			}
+		}
+
 	}	
 
 	NamedCategory.AddStyle=function(item, el, labelEl){
