@@ -36,8 +36,12 @@ span.field-value.is-dark {
 }
 
 
-.ui-list-view .ui-view.section-module.category-projects {
-    background-color: #b4deda;
+
+.ui-list-view .ui-view.section-module{
+    
+    &.category-projects, &.parent-category-projects.current-filter {
+        background-color: #b4deda;
+    }
 }
 
 [data-view="tagsDetail"] .primary-btn, [data-view="tagsDetail"] [data-view="tagsDetailItem"]:hover  .tag-item .primary-btn {
