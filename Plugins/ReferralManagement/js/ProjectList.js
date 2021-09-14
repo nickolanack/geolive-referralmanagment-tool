@@ -663,7 +663,7 @@ var ProjectList = (function() {
 	};
 
 
-	ProjectList.ResolveSharedCommunityProjectList:function(item){
+	ProjectList.ResolveSharedCommunityProjectList=function(item){
 
 
 		return new ProjectList({
