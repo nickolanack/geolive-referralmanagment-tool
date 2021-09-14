@@ -268,6 +268,27 @@ var NamedCategory = (function() {
 
 	}
 
+	NamedCategory.CategoryHeading=function(item, application){
+
+		var div=new Element('div', {"class":"section-title", events:{
+		    click:function(){
+		        var controller = application.getNamedValue('navigationController');
+		        controller.navigateTo("Projects", "Main", {
+								filters:ProjectTagList.getProjectTagsData('_root').map(function(item){ return item.getName(); }),
+								//filter:child.getName()
+							});
+		    }
+		}});
+		var sub="";
+		if(item instanceof ProjectList){
+		    div.addClass('sub-categories');
+		    sub="Subcategories: ";
+		}
+		div.appendChild(new Element('span',{html:sub+"Datasets & Collections"}));
+		return div;
+
+	};
+
 
 	NamedCategory.AddItemIcons = function(item, el) {
 
