@@ -77,12 +77,27 @@ var ProjectList = (function() {
 
 		},
 
+		getPinList:function(){
+			
+			return new ProjectList({
+
+
+
+			});s
+
+		},
+
+		hasPinList:function(){
+			return true;
+		},
+
+	
+
 		isFilteringOnTag: function(tag) {
 
 
 			if (this.getLockFilter) {
 				var filter = this.getLockFilter();
-
 				return ProjectTagList.getTag(filter[0]) === tag;
 			}
 
@@ -626,6 +641,26 @@ var ProjectList = (function() {
 
 
 	};
+
+
+	ProjectList.ResolveProjectList=function(item){
+
+		if(item instanceof ProjectList){
+		    return item;
+		}
+
+		if(item&&item.label){
+		    return new ProjectList(item);
+		}
+
+
+		return new ProjectList({
+		    label:"Projects",
+		    showCreateBtn:true,
+		    filter:null,
+		    invertfilter:false
+		})
+	}
 
 
 	return ProjectList;
