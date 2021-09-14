@@ -58,7 +58,7 @@ var NamedCategory = (function() {
 
 			var me=this;
 			return NamedCategoryList.getProjectTagsData(this.getCategoryForChildren()).filter(function(tag){
-			    return tag!=me;
+			    return tag!=me
 			});
 		},
 
@@ -67,7 +67,7 @@ var NamedCategory = (function() {
 
 			var me=this;
 			var list= NamedCategoryList.getProjectTagsData(me.getCategory()).filter(function(tag){
-			    return tag!=me;
+			    return tag!=me&&tag.getName().toLowerCase()==me.getCategory();
 			});
 
 			if(list.length>1){
