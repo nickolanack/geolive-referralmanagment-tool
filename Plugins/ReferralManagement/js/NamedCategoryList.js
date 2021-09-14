@@ -96,11 +96,11 @@ var NamedCategoryList = (function() {
 				tags=this._flattenTagTree(category);
 
 			}
-			
 
-			_tags.forEach(function(tag) {
-				tags.push(tag.getName().toLowerCase() == category.toLowerCase());
-			});
+
+			tags=tags.concat(_tags.filter(function(tag) {
+				return tag.getName().toLowerCase() == category.toLowerCase();
+			}));
 
 			
 
