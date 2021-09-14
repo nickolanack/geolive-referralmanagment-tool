@@ -279,12 +279,11 @@ var NamedCategory = (function() {
 							});
 		    }
 		}});
-		var sub="";
 		if(item instanceof ProjectList){
-		    div.addClass('sub-categories');
-		    sub="Subcategories: ";
+		    
+		    return null;
 		}
-		div.appendChild(new Element('span',{html:sub+"Datasets & Collections"}));
+		div.appendChild(new Element('span',{html:"Datasets & Collections"}));
 		return div;
 
 	};
