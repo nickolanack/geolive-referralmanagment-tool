@@ -36,8 +36,47 @@ span.field-value.is-dark {
 }
 
 
-.ui-list-view .ui-view.section-module.category-projects {
-    background-color: #b4deda;
+
+.ui-list-view .ui-view.section-module{
+    
+    &.category-projects, &.parent-category-projects.current-filter {
+        background-color: #b4deda;
+    }
+    
+    &.parent-category-projects.dataset-item {
+        min-height:30px;
+        max-width: 200px;
+        .dataset-description {
+            display:none;
+        }
+    }
+    
+    &.parent-category-projects{
+    
+        .section-title {
+            font-size: 14px;
+            font-family: Arial;
+        }
+        
+        .field-value-module.item-icon.left-icons {
+            display: none;
+        }
+        
+        button.form-btn.inline-edit {
+            display: none;
+        }
+        
+        .field-value-module.item-icon, .field-value-module.item-icon > .field-label {
+            width: 30px;
+            height: 30px;
+            background-size:80%;
+        }
+    
+    }
+    
+
+
+    
 }
 
 [data-view="tagsDetail"] .primary-btn, [data-view="tagsDetail"] [data-view="tagsDetailItem"]:hover  .tag-item .primary-btn {
