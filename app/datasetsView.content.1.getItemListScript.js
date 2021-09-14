@@ -1,6 +1,6 @@
 
 if(item instanceof ProjectList){
-   var tags=ProjectList.getProjectListFilterChildTags();
+   var tags=item.getProjectListFilterChildTags();
    if(tags){
        return tags;
    }
