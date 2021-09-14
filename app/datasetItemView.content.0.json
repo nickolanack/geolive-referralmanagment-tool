@@ -5,6 +5,6 @@
         "identifier": "",
         "fieldLabelScript": "return \"\";",
         "fieldValueScript": "return \"\";",
-        "formatElementScript": "\nNamedCategory.AddClass(item, el.parentNode.parentNode.parentNode);"
+        "formatElementScript": "\nNamedCategory.AddStyle(item, el,labelEl);"
     }
 }
