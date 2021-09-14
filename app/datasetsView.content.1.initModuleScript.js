@@ -1,1 +1,0 @@
-NamedCategory.AddClass(item, module.getElement());
