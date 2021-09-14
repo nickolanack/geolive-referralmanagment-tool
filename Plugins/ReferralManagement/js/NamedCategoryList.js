@@ -63,6 +63,33 @@ var NamedCategoryList = (function() {
 		},
 
 
+		listMemberOf(types, category){
+
+			types=types.map(function(t){
+				return t.toLowerCase();
+			});
+			category=category.toLowerCase();
+
+			if(types.indexOf(category)>=0){
+				return true;
+			}
+
+			var tags=this._flattenTagTree(category);
+			
+			for (var i = 0; i < types.length; i++) {
+				for (var j = 0; j < tags.length; j++) {
+					if (types[i] == tags[j].getName().toLowerCase()) {
+						return true;
+					}
+				}
+			}
+
+
+			return false;
+
+
+		},
+
 		_flattenTagTree:function(category, list){
 
 			category=category.toLowerCase();

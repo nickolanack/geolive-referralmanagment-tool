@@ -12,7 +12,7 @@ var ProjectList = (function() {
 			var opts=controller.getNavigationOptions();
 			if(opts.filter){
 				return (function(a){
-					return a.getProjectTypes().indexOf(opts.filter)>=0;
+					return NamedCategoryList.listMemberOf(a.getProjectTypes(), opts.filter);
 				}).apply(null, arguments);
 				//return ([getFilter(opts.filter)]).concat(filters);
 			}
@@ -124,7 +124,7 @@ var ProjectList = (function() {
 					label: type,
 					name: type,
 					filterFn: function(a) {
-						return a.getProjectTypes().indexOf(type)>=0;
+						return NamedCategoryList.listMemberOf(a.getProjectTypes(), type);
 					}
 				};
 			
