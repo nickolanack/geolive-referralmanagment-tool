@@ -57,6 +57,14 @@ var ProjectList = (function() {
 			   if(filter&&filter.length==1&&ProjectTagList.getProjectTagsData(filter[0]).length>0){
 			       return ProjectTagList.getProjectChildTagsData(filter[0]);
 			   }
+
+
+			   var tag=ProjectTagList.getTag(filter[0]);
+			   if((!tag.isRootTag())&&tag.isLeafTag()){
+			   		return tag.getParentTagData().getChildTagsData();
+			   }
+
+
 			}
 
 			return null;
