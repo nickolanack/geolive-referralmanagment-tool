@@ -219,6 +219,7 @@ var NamedCategory = (function() {
 			}
 			item.remove();
 			console.log('delete');
+
 		})];
 
 
@@ -232,6 +233,39 @@ var NamedCategory = (function() {
 		}
 
 		return NamedCategoryList.getTag(category).getShortName();
+	}
+
+	NamedCategory.AddClass=function(item, el){
+		
+	}
+
+	NamedCategory.AddStyle=function(item, el, labelEl){
+
+		el.addClass('item-icon')
+		//RecentItems.setIconForItemEl(item, el);
+
+		var url=item.getIcon();
+		if(url){
+		    labelEl.setStyle('background-image', 'url('+url+')');
+		    el.setStyle('background-color', item.getColor());
+		    
+		    var c=item.getColor();
+			if(c[0]=="#"){
+				var c = c.substring(1);      // strip #
+				var rgb = parseInt(c, 16);   // convert rrggbb to decimal
+				var r = (rgb >> 16) & 0xff;  // extract red
+				var g = (rgb >>  8) & 0xff;  // extract green
+				var b = (rgb >>  0) & 0xff;  // extract blue
+
+				var luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // per ITU-R BT.709
+
+				if (luma < 40) {
+				    el.addClass('is-dark');
+				}
+			}
+		}
+
+
 	}
 
 
