@@ -69,7 +69,7 @@ var NamedCategoryList = (function() {
 
 
 			if(typeof list=="undefined"){
-				list=[category];
+				list=[];
 			}
 
 			var tags = _tags.forEach(function(tag) {
@@ -95,13 +95,14 @@ var NamedCategoryList = (function() {
 				
 				tags=this._flattenTagTree(category);
 
-			}else{
-
-				tags = _tags.filter(function(tag) {
-					return tag.getName().toLowerCase() == category.toLowerCase();
-				});
-
 			}
+			
+
+			_tags.forEach(function(tag) {
+				tags.push(tag.getName().toLowerCase() == category.toLowerCase());
+			});
+
+			
 
 
 
