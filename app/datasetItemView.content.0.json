@@ -5,6 +5,6 @@
         "identifier": "",
         "fieldLabelScript": "return \"\";",
         "fieldValueScript": "return \"\";",
-        "formatElementScript": "el.addClass('item-icon')\n\/\/RecentItems.setIconForItemEl(item, el);\n\nvar url=item.getIcon();\nif(url){\n    labelEl.setStyle('background-image', 'url('+url+')');\n    el.setStyle('background-color', item.getColor());\n    \n    var c=item.getColor();\n\t\t\t\t\tif(c[0]==\"#\"){\n\t\t\t\t\t\tvar c = c.substring(1);      \/\/ strip #\n\t\t\t\t\t\tvar rgb = parseInt(c, 16);   \/\/ convert rrggbb to decimal\n\t\t\t\t\t\tvar r = (rgb >> 16) & 0xff;  \/\/ extract red\n\t\t\t\t\t\tvar g = (rgb >>  8) & 0xff;  \/\/ extract green\n\t\t\t\t\t\tvar b = (rgb >>  0) & 0xff;  \/\/ extract blue\n\n\t\t\t\t\t\tvar luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; \/\/ per ITU-R BT.709\n\n\t\t\t\t\t\tif (luma < 40) {\n\t\t\t\t\t\t    el.addClass('is-dark');\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n}"
+        "formatElementScript": "NamedCategory.AddStyle(item, el, labelEl);\nNamedCategory.AddClass(item, el.parentNode.parentNode.parentNode);"
     }
 }
