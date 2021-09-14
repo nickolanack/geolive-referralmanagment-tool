@@ -104,7 +104,20 @@ var NamedCategory = (function() {
 			if (images.length > 0) {
 				return images[0];
 			}
+
+			if((!this.isRootTag())&&this.shouldUseParentIcon()){
+				var p=this.getParentTagData();
+				if(p){
+					return p.getIcon();
+				}
+			}
+
+
 			return null;
+		},
+
+		shouldUseParentIcon:function(){
+			return true;
 		},
 
 		remove:function(){
