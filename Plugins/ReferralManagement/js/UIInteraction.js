@@ -42,7 +42,7 @@ var UIInteraction = (function() {
 				item: new ProjectList({
 					"icon": category.getIcon(),
 					"color": category.getColor(),
-					"label": category.getName() + " Datasets & Collections",
+					"label": category.getLabelForContent(),
 					"showCreateBtn": false,
 					"createBtns": [{
 						"label": "Add Dataset",

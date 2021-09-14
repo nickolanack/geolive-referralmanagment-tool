@@ -63,6 +63,11 @@ var NamedCategory = (function() {
 		},
 
 
+		getLabelForContent:function(){
+			return this.getName() + " Datasets & Collections"
+		},
+
+
 		getParentTagData:function(){
 
 			var me=this;
