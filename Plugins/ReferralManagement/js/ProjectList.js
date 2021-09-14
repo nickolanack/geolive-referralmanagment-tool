@@ -4,23 +4,23 @@ var ProjectList = (function() {
 	var ProjectList = new Class({
 		Extends: MockDataTypeItem,
 
-		applyFilter:function(){
+		applyFilter: function() {
 
 
 			var application = ReferralManagementDashboard.getApplication();
 			var controller = application.getNamedValue('navigationController');
-			var opts=controller.getNavigationOptions();
-			if(opts.filter){
-				return (function(a){
+			var opts = controller.getNavigationOptions();
+			if (opts.filter) {
+				return (function(a) {
 					return NamedCategoryList.listMemberOf(a.getProjectTypes(), opts.filter);
 				}).apply(null, arguments);
 				//return ([getFilter(opts.filter)]).concat(filters);
 			}
-			
 
-			if(this.getFilter){
-				var filter=this.getFilter();
-				if(!filter){
+
+			if (this.getFilter) {
+				var filter = this.getFilter();
+				if (!filter) {
 					return true;
 				}
 			}
@@ -28,41 +28,47 @@ var ProjectList = (function() {
 			return ProjectList.currentProjectFilterFn.apply(null, arguments);
 		},
 
-		getAddButtonLabel:function(){
-			if(this._getAddButtonLabel){
+		getAddButtonLabel: function() {
+			if (this._getAddButtonLabel) {
 				return this._getAddButtonLabel();
 			}
 			return "New project"
 		},
 
-		getFormName:function(){
-			if(this._getFormName){
+		getFormName: function() {
+			if (this._getFormName) {
 				return this._getFormName();
 			}
 			return "ProposalTemplate"
 		},
 
-		getCreateBtns:function(){
+		getCreateBtns: function() {
 
-			if(this._getCreateBtns){
+			if (this._getCreateBtns) {
 				return this._getCreateBtns();
 			}
 			return [];
 		},
 
-		getProjectListFilterChildTags:function(){
+		getProjectListFilterChildTags: function() {
 
-			if(this.getLockFilter){
-			   var filter=this.getLockFilter();
-			   if(filter&&filter.length==1&&ProjectTagList.getProjectTagsData(filter[0]).length>0){
-			       return ProjectTagList.getProjectChildTagsData(filter[0]);
-			   }
+			if (this.getLockFilter) {
+				var filter = this.getLockFilter();
+				if (filter && filter.length == 1 && ProjectTagList.getProjectTagsData(filter[0]).length > 0) {
+					var childTags = ProjectTagList.getProjectChildTagsData(filter[0]);
+					if (childTags.length > 0) {
+						return childTags;
+					}
+				}
 
 
-			   var tag=ProjectTagList.getTag(filter[0]);
-			   if((!tag.isRootTag())&&tag.isLeafTag()){
-			   		return tag.getParentTagData().getChildTagsData();
-			   }
+				var tag = ProjectTagList.getTag(filter[0]);
+				if ((!tag.isRootTag()) && tag.isLeafTag()) {
+					var parentLevelTags = tag.getParentTagData().getChildTagsData();
+					if (parentLevelTags.length > 0) {
+						return parentLevelTags;
+					}
+				}
 
 
 			}
@@ -71,24 +77,24 @@ var ProjectList = (function() {
 
 		},
 
-		isFilteringOnTag:function(tag){
+		isFilteringOnTag: function(tag) {
 
 
-			if(this.getLockFilter){
-			   var filter=this.getLockFilter();
-	
-				return ProjectTagList.getTag(filter[0])===tag;
+			if (this.getLockFilter) {
+				var filter = this.getLockFilter();
+
+				return ProjectTagList.getTag(filter[0]) === tag;
 			}
 
 			return false;
 		},
 
-		getProjectList:function(callback){
+		getProjectList: function(callback) {
 
-			if(this.getProjects){
-				
-				var projects=this.getProjects();
-				if(typeof projects=="function"){
+			if (this.getProjects) {
+
+				var projects = this.getProjects();
+				if (typeof projects == "function") {
 					projects(callback)
 					return;
 				}
@@ -101,46 +107,44 @@ var ProjectList = (function() {
 
 			var application = ReferralManagementDashboard.getApplication();
 
-			ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
-			     var projects=team.getProjects();
-			     if(!application.getNamedValue("currentProject")){
-			        application.setNamedValue("currentProject", projects[0]);
-			    }
-			    callback(projects)
+			ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+				var projects = team.getProjects();
+				if (!application.getNamedValue("currentProject")) {
+					application.setNamedValue("currentProject", projects[0]);
+				}
+				callback(projects)
 			});
 
 		}
-		
+
 	});
 
-	var filters=[{
-			label: "complete",
-			filterFn: function(a) {
-				return a.isComplete();
-			}
-		}, {
-			label: "high priority",
-			name: "high",
-			filterFn: function(a) {
-				return a.isHighPriority();
-			}
-		}, {
-			label: "implemented",
-			labelInv: "pending",
-			name: "implemented",
-			filterFn: function(a) {
-				return a.isImplemented();
-			}
-		},{
-			label: "collection",
-			labelInv: "dataset",
-			name: "collection",
-			filterFn: function(a) {
-				return a.isCollection();
-			}
-		}];
-
-
+	var filters = [{
+		label: "complete",
+		filterFn: function(a) {
+			return a.isComplete();
+		}
+	}, {
+		label: "high priority",
+		name: "high",
+		filterFn: function(a) {
+			return a.isHighPriority();
+		}
+	}, {
+		label: "implemented",
+		labelInv: "pending",
+		name: "implemented",
+		filterFn: function(a) {
+			return a.isImplemented();
+		}
+	}, {
+		label: "collection",
+		labelInv: "dataset",
+		name: "collection",
+		filterFn: function(a) {
+			return a.isCollection();
+		}
+	}];
 
 
 
@@ -148,27 +152,27 @@ var ProjectList = (function() {
 
 		var application = ReferralManagementDashboard.getApplication();
 		var controller = application.getNamedValue('navigationController');
-		var opts=controller.getNavigationOptions();
+		var opts = controller.getNavigationOptions();
 
-		var filterList=filters;
-		var getFilter=function(type){
+		var filterList = filters;
+		var getFilter = function(type) {
 
 			return {
-					label: type,
-					name: type,
-					filterFn: function(a) {
-						return NamedCategoryList.listMemberOf(a.getProjectTypes(), type);
-					}
-				};
-			
+				label: type,
+				name: type,
+				filterFn: function(a) {
+					return NamedCategoryList.listMemberOf(a.getProjectTypes(), type);
+				}
+			};
+
 
 		}
 
-		if(opts.filter){
+		if (opts.filter) {
 			//return ([getFilter(opts.filter)]).concat(filters);
 		}
 
-		if(opts.filters){
+		if (opts.filters) {
 			return (opts.filters.map(getFilter)).concat(filters);
 		}
 
@@ -178,8 +182,10 @@ var ProjectList = (function() {
 	};
 
 
-	ProjectList.HasSortFn=function(name){
-		return ProjectList.projectSorters().map(function(s){return s.label; }).indexOf(name)>=0;
+	ProjectList.HasSortFn = function(name) {
+		return ProjectList.projectSorters().map(function(s) {
+			return s.label;
+		}).indexOf(name) >= 0;
 	};
 	ProjectList.projectSorters = function() {
 
@@ -208,26 +214,22 @@ var ProjectList = (function() {
 			sortFn: function(a, b) {
 				return (a.getCreationDate() > b.getCreationDate() ? 1 : -1);
 			}
-		},
-		{
+		}, {
 			label: "modified",
 			sortFn: function(a, b) {
 				return (a.getModificationDate() > b.getModificationDate() ? 1 : -1);
 			}
-		},
-		{
+		}, {
 			label: "user",
 			sortFn: function(a, b) {
 				return (a.getProjectUsername() > b.getProjectUsername() ? 1 : -1);
 			}
-		},
-		{
+		}, {
 			label: "date",
 			sortFn: function(a, b) {
 				return (a.getCreationDate() > b.getCreationDate() ? 1 : -1);
 			}
-		},
-		{
+		}, {
 			label: "type",
 			sortFn: function(a, b) {
 				return (a.getProjectType() > b.getProjectType() ? 1 : -1);
@@ -248,24 +250,24 @@ var ProjectList = (function() {
 	};
 
 
-	var _generateBtn=function(options){
+	var _generateBtn = function(options) {
 
 
-		options=Object.append({
-			"label":"ProposalTemplate",
-	        "formName":"New project",
-	        "item":new Proposal(),
-	        "className":"add"
-		},options);
+		options = Object.append({
+			"label": "ProposalTemplate",
+			"formName": "New project",
+			"item": new Proposal(),
+			"className": "add"
+		}, options);
 
 
-		if(options.item){
+		if (options.item) {
 
 		}
 
-		var btn=new Element("button", {
+		var btn = new Element("button", {
 			"data-lbl": options.label,
-			"class": "inline-btn primary-btn "+options.className,
+			"class": "inline-btn primary-btn " + options.className,
 			"events": {
 				"click": function() {
 
@@ -273,7 +275,11 @@ var ProjectList = (function() {
 
 					var application = ReferralManagementDashboard.getApplication();
 					(new UIModalDialog(application, newItem, {
-	                "formName":options.formName, "formOptions":{template:"form"}})).show()
+						"formName": options.formName,
+						"formOptions": {
+							template: "form"
+						}
+					})).show()
 
 					newItem.addEvent("save:once", function() {
 						ProjectTeam.CurrentTeam().addProject(newItem);
@@ -291,31 +297,31 @@ var ProjectList = (function() {
 
 	ProjectList.GetButtonDefinitions = function(item) {
 
-		
 
-		var buttons=[];
 
-		
-		if ((!item) ||item.getShowCreateBtn && item.getShowCreateBtn() === true) {
+		var buttons = [];
+
+
+		if ((!item) || item.getShowCreateBtn && item.getShowCreateBtn() === true) {
 
 			var formName = "ProposalTemplate";
 			var btnLabel = "New project";
 
 			if (item && item instanceof ProjectList) {
-				formName=item.getFormName();
-				btnLabel=item.getAddButtonLabel();
+				formName = item.getFormName();
+				btnLabel = item.getAddButtonLabel();
 			}
 
 			buttons.push({
-				"label":btnLabel,
-	             "formName":formName
+				"label": btnLabel,
+				"formName": formName
 			});
-		
+
 		}
 
-		
+
 		if (item && item instanceof ProjectList) {
-			buttons=buttons.concat(item.getCreateBtns());
+			buttons = buttons.concat(item.getCreateBtns());
 		}
 
 
@@ -325,25 +331,24 @@ var ProjectList = (function() {
 	ProjectList.HeaderMenuContent = function(item) {
 
 
-		
 
-		var buttons=ProjectList.GetButtonDefinitions(item);
+		var buttons = ProjectList.GetButtonDefinitions(item);
 
-		if((!buttons)||buttons.length==0){
+		if ((!buttons) || buttons.length == 0) {
 			return null;
 		}
 
 		var div = new ElementModule('div', {
 			"class": "project-list-btns",
-			"identifier":"project-list-btns"
+			"identifier": "project-list-btns"
 		});
 
 
-		buttons.forEach(function(btn){
+		buttons.forEach(function(btn) {
 			div.appendChild(_generateBtn(btn));
 		})
 
-		
+
 		return div;
 	};
 
@@ -377,7 +382,7 @@ var ProjectList = (function() {
 			}));
 
 
-			var sortModule=(new ListSortModule(function() {
+			var sortModule = (new ListSortModule(function() {
 				return viewer.findChildViews(function(v) {
 					return v instanceof UIListViewModule
 				}).pop();
@@ -387,18 +392,18 @@ var ProjectList = (function() {
 				currentSortInvert: true,
 				//applyfilter:true
 			})).load(null, div, null);
-			parentModule.runOnceOnLoad(function(){
+			parentModule.runOnceOnLoad(function() {
 				/**
 				 * TODO remove this timeout, the need for it. or set sortModule to automatically setSortObject
 				 */
-				setTimeout(function(){
+				setTimeout(function() {
 					sortModule.getListModule().setSortObject(sortModule);
 				}, 100);
 			});
 
 
-			var filter=(item&&item.getFilter)?item.getFilter():"complete";
-			var invertFilter=(item&&item.getInvertFilter)?item.getInvertFilter():(filter=="complete"?true:false);
+			var filter = (item && item.getFilter) ? item.getFilter() : "complete";
+			var invertFilter = (item && item.getInvertFilter) ? item.getInvertFilter() : (filter == "complete" ? true : false);
 
 			var filterModule = (new ListFilterModule(function() {
 				return viewer.findChildViews(function(v) {
@@ -410,9 +415,9 @@ var ProjectList = (function() {
 				currentFilterInvert: invertFilter,
 				//applyfilter:true
 			})).load(null, div, null);
-			parentModule.runOnceOnLoad(function(){
+			parentModule.runOnceOnLoad(function() {
 
-				setTimeout(function(){
+				setTimeout(function() {
 					filterModule.getListModule().setFilterObject(filterModule);
 				}, 500)
 			});
@@ -430,113 +435,113 @@ var ProjectList = (function() {
 	}
 
 
-	var _renderHeader=function(listModule, module){
+	var _renderHeader = function(listModule, module) {
 		module.getViewName(function(view) {
 
-					if (view !== "singleProjectListItemTableDetail") {
+			if (view !== "singleProjectListItemTableDetail") {
+				return;
+			}
+
+			var counter = 0;
+			var interval = setInterval(function() {
+				counter++;
+				var el = module.getElement();
+				var header = new Element('div', {
+					"class": "table-header",
+					html: el.innerHTML
+				});
+
+				var parentNode = listModule.getElement();
+
+				if (!(parentNode && header.firstChild && header.firstChild.firstChild)) {
+
+					if (counter > 15) {
+						console.error('unable to inject header');
+						clearInterval(interval);
+					}
+
+					return;
+				}
+				clearInterval(interval);
+
+				if (parentNode.firstChild) {
+					parentNode.insertBefore(header, parentNode.firstChild);
+				} else {
+					parentNode.appendChild(header);
+				}
+
+				header.firstChild.firstChild.childNodes.forEach(function(colEl) {
+
+					colEl.addClass('sortable');
+
+					var sort = colEl.getAttribute('data-col');
+					if (!ProjectList.HasSortFn(sort)) {
+						colEl.addClass('disabled');
 						return;
 					}
 
-					var counter = 0;
-					var interval = setInterval(function() {
-						counter++;
-						var el = module.getElement();
-						var header = new Element('div', {
-							"class": "table-header",
-							html: el.innerHTML
-						});
+					colEl.addEvent('click', function() {
 
-						var parentNode=listModule.getElement();
+						var sort = colEl.getAttribute('data-col');
+						var sortModule = listModule.getSortObject();
 
-						if (!(parentNode && header.firstChild && header.firstChild.firstChild)) {
+						if (!sortModule) {
 
-							if (counter > 15) {
-								console.error('unable to inject header');
-								clearInterval(interval);
-							}
 
-							return;
+							/**
+							 * Not going to render this temporary module, but it should still work
+							 */
+
+
+							sortModule = (new ListSortModule(function() {
+								return listModule;
+							}, {
+								sorters: ProjectList.projectSorters()
+							}));
+
+							listModule.setSortObject(sortModule);
+
+
+
+							/**
+							 * 
+							 */
+
+
+
 						}
-						clearInterval(interval);
 
-						if(parentNode.firstChild){
-							parentNode.insertBefore(header, parentNode.firstChild);
-						}else{
-							parentNode.appendChild(header);
-						}
-
-						header.firstChild.firstChild.childNodes.forEach(function(colEl) {
-
-							colEl.addClass('sortable');
-
-							var sort=colEl.getAttribute('data-col');
-							if(!ProjectList.HasSortFn(sort)){
-								colEl.addClass('disabled');
-								return;
-							}
-
-							colEl.addEvent('click', function() {
-
-								var sort = colEl.getAttribute('data-col');
-								var sortModule = listModule.getSortObject();
-
-								if(!sortModule){
-
-
-									/**
-									 * Not going to render this temporary module, but it should still work
-									 */
-
-
-								   sortModule=(new ListSortModule(function() {
-										return listModule;
-									}, {
-										sorters: ProjectList.projectSorters()
-									}));
-
-								   listModule.setSortObject(sortModule);
+						sortModule.applySort(sort);
 
 
 
-								   /**
-								    * 
-								    */
-
-
-
-								}
-
-								sortModule.applySort(sort);
-
-
-
-							});
-						});
-
-
-					}, 200);
-
+					});
 				});
+
+
+			}, 200);
+
+		});
 	}
 
 	ProjectList.AddTableHeader = function(listModule) {
-		listModule.runOnceOnLoad( /*addEvent('renderModule:once', */function() {
-			var index=0;
-			var module=listModule.getDetailViewAt(0);
+		listModule.runOnceOnLoad( /*addEvent('renderModule:once', */ function() {
+			var index = 0;
+			var module = listModule.getDetailViewAt(0);
 
-			if(!module){
+			if (!module) {
 				console.error('empty project list')
 				return;
 			}
 
 			module.runOnceOnLoad(function() {
 				_renderHeader(listModule, module);
-				setTimeout(function(){
-					listModule.addEvent('load', function(){
+				setTimeout(function() {
+					listModule.addEvent('load', function() {
 						_renderHeader(listModule, module);
 					})
 				}, 500);
-				
+
 			});
 
 			//}
@@ -548,8 +553,8 @@ var ProjectList = (function() {
 
 	ProjectList.AddListEvents = function(listModule, target) {
 
-		if(!target){
-			target=ProjectTeam.CurrentTeam();
+		if (!target) {
+			target = ProjectTeam.CurrentTeam();
 		}
 
 		listModule.addWeakEvent(target, 'addProject', function(p) {
@@ -585,12 +590,12 @@ var ProjectList = (function() {
 			childView.getElement().addClass("active-project");
 		}
 
-		if(child.isDataset&&child.isDataset()){
+		if (child.isDataset && child.isDataset()) {
 			childView.getElement().addClass("is-dataset");
-			if(child.isBaseMapLayer()){
+			if (child.isBaseMapLayer()) {
 				childView.getElement().addClass("is-basemap-layer");
 
-				childView.getElement().addClass("basemap-layer-"+child.getBaseMapLayerType());
+				childView.getElement().addClass("basemap-layer-" + child.getBaseMapLayerType());
 			}
 		}
 
