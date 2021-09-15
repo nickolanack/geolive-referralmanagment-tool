@@ -90,12 +90,12 @@ var ProjectList = (function() {
 
 
 
-			});s
+			});
 
 		},
 
 		hasPinList:function(){
-			return true;
+			return false;
 		},
 
 	
