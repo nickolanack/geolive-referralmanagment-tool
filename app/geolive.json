@@ -13533,11 +13533,26 @@
                                 }
                             },
                             {
-                                "type": "WizardScriptElement",
+                                "type": "UIView",
                                 "config": {
-                                    "name": "My Custom Script",
-                                    "script": "Projects List Detail.metadata.positions.content.modules.2.config.script.js",
-                                    "description": "Info about my custom script"
+                                    "className": "section-padding",
+                                    "identifier": "",
+                                    "viewType": "view",
+                                    "namedView": "datasetsView",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             },
                             {
@@ -13545,6 +13560,14 @@
                                 "config": {
                                     "name": "My Custom Script",
                                     "script": "Projects List Detail.metadata.positions.content.modules.3.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "Projects List Detail.metadata.positions.content.modules.4.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             },
@@ -13557,25 +13580,25 @@
                                     "viewType": "view",
                                     "namedView": "singleProjectListItemDetail",
                                     "shouldRender": true,
-                                    "namedViewScript": "Projects List Detail.metadata.positions.content.modules.4.config.namedViewScript.js",
+                                    "namedViewScript": "Projects List Detail.metadata.positions.content.modules.5.config.namedViewScript.js",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "initModuleScript": "\n\t\t\nProject.addTableHeader(module)",
-                                    "formatModuleScript": "Projects List Detail.metadata.positions.content.modules.4.config.formatModuleScript.js",
+                                    "formatModuleScript": "Projects List Detail.metadata.positions.content.modules.5.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
-                                    "getItemListScript": "Projects List Detail.metadata.positions.content.modules.4.config.getItemListScript.js",
+                                    "getItemListScript": "Projects List Detail.metadata.positions.content.modules.5.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "Projects List Detail.metadata.positions.content.modules.4.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "Projects List Detail.metadata.positions.content.modules.5.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
-                                    "filterItemsScript": "Projects List Detail.metadata.positions.content.modules.4.config.filterItemsScript.js",
-                                    "sortItemsScript": "Projects List Detail.metadata.positions.content.modules.4.config.sortItemsScript.js",
+                                    "filterItemsScript": "Projects List Detail.metadata.positions.content.modules.5.config.filterItemsScript.js",
+                                    "sortItemsScript": "Projects List Detail.metadata.positions.content.modules.5.config.sortItemsScript.js",
                                     "maxItems": "25"
                                 }
                             }

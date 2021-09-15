@@ -1,3 +1,4 @@
-/*Project Filters*/
+/*Projects Header*/
 
-return ProjectList.SortMenuContent(item);
+
+return ProjectList.HeaderMenuContent(item);
