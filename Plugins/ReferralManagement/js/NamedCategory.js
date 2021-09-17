@@ -284,7 +284,14 @@ var NamedCategory = (function() {
 			return "";
 		}
 
-		return NamedCategoryList.getTag(category).getShortName();
+		try{
+
+			return NamedCategoryList.getTag(category).getShortName();
+
+		}catch(e){
+			console.error("Missing Project Type")
+			return "";
+		}
 	}
 
 	NamedCategory.AddClass=function(item, el, prefix){
