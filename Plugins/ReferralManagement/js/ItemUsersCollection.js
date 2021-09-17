@@ -111,7 +111,7 @@ var ItemUsersCollection = (function(){
 
 		},
 		_addUsersCollectionFormData:function(data){
-			data.team= (me._team || []).map(function(t) {
+			data.team= (this._team || []).map(function(t) {
 				return t.getId()
 			});
 		},
