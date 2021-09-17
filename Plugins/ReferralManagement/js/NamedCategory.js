@@ -296,6 +296,8 @@ var NamedCategory = (function() {
 
 	NamedCategory.AddClass=function(item, el, prefix){
 
+		try{
+
 		prefix=prefix||'';
 
 		el.addClass(prefix+"category-"+item.getName().toLowerCase().replace(' ','-'));
@@ -307,6 +309,11 @@ var NamedCategory = (function() {
 			if(item){
 				NamedCategory.AddClass(p, el, 'parent-')
 			}
+		}
+
+		}catch(e){
+			console.error(e);
+
 		}
 
 	}	
