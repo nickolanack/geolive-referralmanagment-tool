@@ -149,7 +149,7 @@ var ItemProjectsCollection = (function(){
 	    	this._projects=[];
 		},
 		_addProjectsCollectionFormData:function(data){
-			data.projects= (me._projects || []).map(function(project) {
+			data.projects= (this._projects || []).map(function(project) {
 				var id=getProjectId(project);
 				return id;
 			});
