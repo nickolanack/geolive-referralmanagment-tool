@@ -110,7 +110,7 @@ class Project {
 
 		if (($proposalId = (int) $database->createProposal(array(
 			'user' => GetClient()->getUserId(),
-			'metadata' => '{}',
+			'metadata' => isset($json->metadata)?json_encode($json->metadata):'{}',
 			'createdDate' => ($now = date('Y-m-d H:i:s')),
 			'modifiedDate' => $now,
 			'status' => 'active',
