@@ -913,7 +913,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			unset($category->type);
 
 			return $category;
-		}, $this->getPlugin()->getDatabase()->getCategorys());
+		}, $this->getPlugin()->getDatabase()->getCategories());
 
 		return array(
 			'tags' => $tags ? $tags : array(),
