@@ -35,6 +35,8 @@ class Project {
 		$proposal['userdetails'] = GetClient()->userMetadataFor((int) $proposal['user']);
 		$proposal['community'] = GetPlugin('ReferralManagement')->communityCollective();
 		//$proposal['']
+		//
+		$proposal['metadata']=json_decode($proposal['metadata']);
 
 		$proposal['link'] = HtmlDocument()->website() . '/Projects/Project-' . $proposal['id'] . '/Overview';
 
