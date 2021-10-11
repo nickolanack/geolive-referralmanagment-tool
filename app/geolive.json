@@ -160,9 +160,7 @@
         "parameters": {
             "releaseServer": "http:\/\/release.geolive.ca",
             "releasePackage": "master",
-            "autoUpdate": false,
-            "composerPath": "\/usr\/bin\/composer",
-            "bowerPath": ""
+            "autoUpdate": false
         }
     },
     "plugin.24": {
@@ -177,8 +175,8 @@
             "routes": [
                 "plugin.UserInterface.24.routes.0.json"
             ],
-            "useRemoteServerUI": true,
-            "remoteServerUrl": "https:\/\/gct3.gather.geoforms.ca\/app\/nickolanack\/php-core-app\/core.php?task=TASK&format=ajax&json=JSON"
+            "useRemoteServerUI": false,
+            "remoteServerUrl": ""
         }
     },
     "plugin.28": {
@@ -6134,7 +6132,7 @@
             "sass": true,
             "widgetTitle": "sharedGeneratedStyles",
             "target": "sharedGeneratedStyles",
-            "customCSS": "",
+            "customCSS": "sharedGeneratedStyles.customCSS.css",
             "sassParamters": [],
             "formatSassParametersScript": "sharedGeneratedStyles.formatSassParametersScript.js",
             "useRemote": "",
@@ -13512,10 +13510,56 @@
                         "modules": [
                             "Projects List Detail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "section-padding",
+                                    "identifier": "",
+                                    "viewType": "view",
+                                    "namedView": "datasetsView",
+                                    "shouldRender": false,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "Projects List Detail.metadata.positions.content.modules.1.config.formatModuleScript.js",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "section-padding",
+                                    "identifier": "",
+                                    "viewType": "view",
+                                    "namedView": "datasetsView",
+                                    "shouldRender": false,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "Projects List Detail.metadata.positions.content.modules.2.config.formatModuleScript.js",
+                                    "resolveItemScript": "return item.getPinList();",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            },
+                            {
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "Projects List Detail.metadata.positions.content.modules.1.config.script.js",
+                                    "script": "Projects List Detail.metadata.positions.content.modules.3.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             },
@@ -13523,7 +13567,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "Projects List Detail.metadata.positions.content.modules.2.config.script.js",
+                                    "script": "Projects List Detail.metadata.positions.content.modules.4.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             },
@@ -13536,25 +13580,25 @@
                                     "viewType": "view",
                                     "namedView": "singleProjectListItemDetail",
                                     "shouldRender": true,
-                                    "namedViewScript": "Projects List Detail.metadata.positions.content.modules.3.config.namedViewScript.js",
+                                    "namedViewScript": "Projects List Detail.metadata.positions.content.modules.5.config.namedViewScript.js",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "initModuleScript": "\n\t\t\nProject.addTableHeader(module)",
-                                    "formatModuleScript": "Projects List Detail.metadata.positions.content.modules.3.config.formatModuleScript.js",
+                                    "formatModuleScript": "Projects List Detail.metadata.positions.content.modules.5.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
-                                    "getItemListScript": "Projects List Detail.metadata.positions.content.modules.3.config.getItemListScript.js",
+                                    "getItemListScript": "Projects List Detail.metadata.positions.content.modules.5.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "Projects List Detail.metadata.positions.content.modules.3.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "Projects List Detail.metadata.positions.content.modules.5.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
-                                    "filterItemsScript": "Projects List Detail.metadata.positions.content.modules.3.config.filterItemsScript.js",
-                                    "sortItemsScript": "Projects List Detail.metadata.positions.content.modules.3.config.sortItemsScript.js",
+                                    "filterItemsScript": "Projects List Detail.metadata.positions.content.modules.5.config.filterItemsScript.js",
+                                    "sortItemsScript": "Projects List Detail.metadata.positions.content.modules.5.config.sortItemsScript.js",
                                     "maxItems": "25"
                                 }
                             }
@@ -17684,7 +17728,7 @@
                                     "loadAsync": false,
                                     "identifier": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return item.getDescription();",
+                                    "fieldValueScript": "tagDetailView.metadata.positions.content.modules.2.config.fieldValueScript.js",
                                     "formatElementScript": ""
                                 }
                             }
@@ -18546,6 +18590,7 @@
                                 "config": {
                                     "listClassName": "",
                                     "className": "section-module w-30-60 dataset-item",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "datasetItemView",
                                     "shouldRender": true,
@@ -18600,8 +18645,10 @@
             "sass": true,
             "widgetTitle": "gct3Theme",
             "target": "gct3Theme",
-            "customCSS": "",
-            "sassParamters": [],
+            "customCSS": "gct3Theme.customCSS.css",
+            "sassParamters": {
+                "datasetIconSize": "50%"
+            },
             "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
             "readAccess": "public"
@@ -19485,6 +19532,7 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "main-panel inset-shading",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "singleProjectDetail",
                                     "shouldRender": true,
