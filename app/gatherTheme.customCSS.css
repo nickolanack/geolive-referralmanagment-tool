@@ -159,7 +159,7 @@ button.primary-btn.nav-new-btn.view-selection:before {
         right: 0;
         top: 0;
         z-index: -1;
-        background-image: url(https://dyl2vw577xcfk.cloudfront.net/wabun.geoforms.ca/1/Uploads/%5BImAgE%5D_KGR_%5BG%5D_BdY_wCX.jpeg);
+        background-image: url($loginImage);
         background-size: cover;
         background-blend-mode: luminosity;
     }
