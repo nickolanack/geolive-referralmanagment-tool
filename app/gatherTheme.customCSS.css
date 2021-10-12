@@ -152,7 +152,7 @@ button.primary-btn.nav-new-btn.view-selection:before {
 
     &:after {
         content: "";
-        background: #e88224;
+        background: $loginImageTint;
         position: fixed;
         width: 50%;
         height: 100%;
