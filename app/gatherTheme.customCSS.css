@@ -162,6 +162,7 @@ button.primary-btn.nav-new-btn.view-selection:before {
         background-image: url($loginImage);
         background-size: cover;
         background-blend-mode: luminosity;
+        background-position: center;
     }
 
     
