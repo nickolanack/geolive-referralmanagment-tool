@@ -2,7 +2,7 @@
 
 
 $highlightBtnColor:#efa82c;
-$highlightBtnHoverColor:#f56e13;;
+$highlightBtnHoverColor:#f56e13;
 
 
 button.primary-btn.nav-new-btn{
@@ -152,7 +152,7 @@ button.primary-btn.nav-new-btn.view-selection:before {
 
     &:after {
         content: "";
-        background: $loginImageTint;
+        background-color: $loginImageTint;
         position: fixed;
         width: 50%;
         height: 100%;
