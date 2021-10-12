@@ -199,6 +199,11 @@ $mainStyleColor:#efa82c;
         }
         
     }
+    
+    
+    ul.user-roles li {
+        filter: invert(1);
+    }
 
 
 }
