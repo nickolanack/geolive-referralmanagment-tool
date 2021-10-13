@@ -484,6 +484,8 @@ var TaskItem = (function() {
 				});
 			});
 
+			RecentItems.colorizeEl(modalButton.getElement(), item.getProjectType());
+
 
 			modules.push(modalButton);
 
