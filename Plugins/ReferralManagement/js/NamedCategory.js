@@ -54,6 +54,10 @@ var NamedCategory = (function() {
 			return this.getName().toLowerCase();
 		},
 
+		getCategory:function(){
+			return this._getCategory()||this.getName().toLowerCase();
+		},
+
 		getChildTagsData:function(){
 
 			var me=this;
