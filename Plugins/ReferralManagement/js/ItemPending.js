@@ -3,7 +3,7 @@ var ItemPending = (function(){
 
 	var SetApprovedQuery = new Class({
 		Extends: AjaxControlQuery,
-		initialize: function(id, approved) {
+		initialize: function(id, implemented) {
 
 			this.parent(CoreAjaxUrlRoot, "save_attribute_value_list", {
 				plugin: "Attributes",
@@ -11,7 +11,7 @@ var ItemPending = (function(){
 				itemType: "ReferralManagement.proposal",
 				table: "proposalAttributes",
 				fieldValues: {
-					"approved": approved
+					"implemented": implemented
 				}
 			});
 		}
@@ -25,14 +25,14 @@ var ItemPending = (function(){
 
 		isImplemented: function() {
 			var me = this;
-			return me.data.attributes && (me.data.attributes.approved === true || me.data.attributes.approved === "true");
+			return me.data.attributes && (me.data.attributes.implemented === true || me.data.attributes.implemented === "true");
 		},
 		setPending: function() {
 
 			var me = this;
 
 			(new SetApprovedQuery(me.getId(), false)).execute();
-			me.data.attributes.approved = false;
+			me.data.attributes.implemented = false;
 			me.fireEvent("unapproved");
 
 		},
@@ -40,7 +40,7 @@ var ItemPending = (function(){
 			var me = this;
 
 			(new SetApprovedQuery(me.getId(), true)).execute();
-			me.data.attributes.approved = true;
+			me.data.attributes.implemented = true;
 			me.fireEvent("approved");
 		},
 		isPending: function() {
