@@ -9,6 +9,33 @@ body.body-overlayed>#viewControllerApp>div>div>.ui-view {
 button:focus {outline:0;}
 
 
+button.inline-edit, .btn.inline-edit, .btn.inline-remove{
+   
+    &:after {
+        content: "\f040";
+        font-family: 'FontAwesome';
+        font-size:20px;
+    }
+    
+        
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 100%;
+        font-size: 0;
+        padding: 0;
+        color: mediumseagreen;
+        cursor:pointer;
+}
+
+.btn.inline-remove{
+    
+    &:after {
+        content: "\f00d";
+        
+    }
+    color: crimson;
+}
 
 
 
