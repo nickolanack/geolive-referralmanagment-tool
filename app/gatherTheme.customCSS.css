@@ -482,7 +482,7 @@ button.selectable{
         &.selected{
             background-color:$pendingColor;
             border-color: transparent;
-            color:white;
+            color:$buttonTextColor;
         }
         
     }
@@ -493,7 +493,7 @@ button.selectable{
         &.selected{
             background-color:$implementedColor;
             border-color: transparent;
-            color:white;
+            color:$buttonTextColor;
         }
         
         
