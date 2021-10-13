@@ -463,7 +463,7 @@ button.selectable{
 }
 
 
-.primary-btn, .primary-btn.selectable {
+.primary-btn, .primary-btn.selectable, .primary-btn.selectable.selected {
     &.pending{
         background-color:crimson;
     }
