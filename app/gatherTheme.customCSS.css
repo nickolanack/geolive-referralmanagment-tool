@@ -3,6 +3,7 @@
 
 $highlightBtnColor:#efa82c;
 $highlightBtnHoverColor:#f56e13;
+$primaryBtnColor:mediumseagreen;
 
 
 button.primary-btn.nav-new-btn{
@@ -446,17 +447,32 @@ button.inline-btn.add, button.primary-btn {
 
 button.selectable{
     &.primary-btn {
-        border: 1px dashed mediumseagreen;
+        border: 1px dashed $primaryBtnColor;
         background-color: transparent;
         float: left;
         
         &.selected {
-            background-color: mediumseagreen;
+            background-color: $primaryBtnColor;
         }
-
+    
+        
+        
+        
         
     }
-    
+}
+
+
+.primary-btn {
+    &.pending{
+        background-color:crimson;
+    }
+    &.implemented{}
+    &.share{}
+    &.remove{}
+    &.edit{}
+    &.archive{}
+    &.unarchive{}
     
 }
 
