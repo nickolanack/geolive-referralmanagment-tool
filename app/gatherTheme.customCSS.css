@@ -3,10 +3,14 @@
 
 $highlightBtnColor:#efa82c;
 $highlightBtnHoverColor:#f56e13;
+$defaultBtnColor:$highlightBtnColor;
 $primaryBtnColor:mediumseagreen;
 $pendingColor:crimson;
 $implementedColor:$primaryBtnColor;
 $shareColor:#6A7CE9;
+$addColor:$highlightBtnColor;
+$buttonTextColor:black;
+
 
 
 button.primary-btn.nav-new-btn{
@@ -388,9 +392,13 @@ button.primary-btn.nav-new-btn.view-selection:before {
 }
 
 
-button.inline-btn.add, button.primary-btn {
-    background-color: $highlightBtnColor;
+button.inline-btn, button.primary-btn {
+    background-color: $defaultBtnColor;
+    color:$buttonTextColor;
     border-radius: 100px;
+    &.add{
+        background-color: $addColor;
+    }
 }
 
 
