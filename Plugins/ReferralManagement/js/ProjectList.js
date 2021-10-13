@@ -276,8 +276,8 @@ var ProjectList = (function() {
 
 
 		options = Object.append({
-			"label": "ProposalTemplate",
-			"formName": "New project",
+			"formName": "ProposalTemplate",
+			"label": "New project",
 			"item": new Proposal(),
 			"className": "add"
 		}, options);
@@ -288,7 +288,6 @@ var ProjectList = (function() {
 		}
 
 		var btn = new Element("button", {
-			"data-lbl": options.label,
 			"class": "inline-btn primary-btn " + options.className,
 			"events": {
 				"click": function() {
@@ -310,6 +309,7 @@ var ProjectList = (function() {
 				}
 			}
 		});
+		btn.setAttribute("data-lbl",  options.label)
 
 		return btn;
 
