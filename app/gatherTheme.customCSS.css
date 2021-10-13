@@ -4,6 +4,9 @@
 $highlightBtnColor:#efa82c;
 $highlightBtnHoverColor:#f56e13;
 $primaryBtnColor:mediumseagreen;
+$pendingColor:crimson;
+$implementedColor:$primaryBtnColor;
+$shareColor:#6A7CE9;
 
 
 button.primary-btn.nav-new-btn{
@@ -466,10 +469,10 @@ button.selectable{
 .primary-btn, .primary-btn.selectable {
     &.pending{
         
-        border: 1px dashed crimson;
-        color:crimson;
+        border: 1px dashed $pendingColor;
+        color:$pendingColor;
         &.selected{
-            background-color:crimson;
+            background-color:$pendingColor;
             border-color: transparent;
             color:white;
         }
@@ -477,17 +480,19 @@ button.selectable{
     }
     &.implemented{
         
-        border: 1px dashed $primaryBtnColor;
-        color:$primaryBtnColor;
+        border: 1px dashed $implementedColor;
+        color:$implementedColor;
         &.selected{
-            background-color:$primaryBtnColor;
+            background-color:$implementedColor;
             border-color: transparent;
             color:white;
         }
         
         
     }
-    &.share{}
+    &.share{
+        background-color:$shareColor;
+    }
     &.remove{}
     &.edit{}
     &.archive{}
