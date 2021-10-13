@@ -136,6 +136,8 @@ var RecentItems = (function() {
 
 						if (luma < 40) {
 						    el.addClass('is-dark');
+						}else{
+							el.addClass('is-light');
 						}
 					}
 
