@@ -204,6 +204,15 @@ $mainStyleColor:#efa82c;
     ul.user-roles li {
         filter: invert(1);
     }
+    
+    
+    .ui-view[data-view="singleMapTitleBarView"] {
+        .ui-view[data-view="singleProjectListItemTableDetail"] {
+            background-color:$tagBtnColor;
+            
+        }
+    }
+
 
 
 }
