@@ -55,6 +55,7 @@ var ItemPending = (function(){
 
 
 		if (!DashboardConfig.getValue('enablePending')) {
+			
 			return null
 		}
 
@@ -65,7 +66,7 @@ var ItemPending = (function(){
 		var pending = new ElementModule('button', {
 			"html": "Pending",
 			"style": "",
-			"class": "primary-btn selectable " + (item.isPending() ? "selected" : ""),
+			"class": "primary-btn pending selectable " + (item.isPending() ? "selected" : ""),
 			"events": {
 				"click": function() {
 					item.setPending();
@@ -78,7 +79,7 @@ var ItemPending = (function(){
 		var implemented = new ElementModule('button', {
 			"html": "Implemented",
 			"style": "",
-			"class": "primary-btn selectable " + (item.isImplemented() ? "selected" : ""),
+			"class": "primary-btn implemented selectable " + (item.isImplemented() ? "selected" : ""),
 			"events": {
 				"click": function() {
 					item.setImplemented();

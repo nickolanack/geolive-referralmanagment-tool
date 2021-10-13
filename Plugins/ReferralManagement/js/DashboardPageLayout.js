@@ -559,14 +559,16 @@ var DashboardPageLayout = (function() {
 					html: ['Messages'],
 					condition: function() {
 						return AppClient.getUserType() == "admin";
-					}
+					},
+					addClass:"admin-only"
 				}
 			],
 			"Referrals": [{
 				html: ['Tracking', 'Reports', 'Import'],
 				condition: function() {
 					return AppClient.getUserType() == "admin";
-				}
+				},
+				addClass:"admin-only"
 			}],
 			"People": [{
 					html: "Clients",
