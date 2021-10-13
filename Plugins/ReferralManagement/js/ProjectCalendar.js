@@ -81,9 +81,12 @@ var ProjectCalendar = (function() {
 					}))
 					var renderDataItem = function(d) {
 						var dataEl = el.appendChild(new Element('span', {
-							"class": "event-data",
-							"data-label": d.item.getName()
+							"class": "event-data"
 						}));
+
+						dataEl.setAttribute("data-label", d.item.getName());
+
+
 						if (d.item.isComplete()) {
 							dataEl.addClass("complete");
 						}
