@@ -463,9 +463,15 @@ button.selectable{
 }
 
 
-.primary-btn, .primary-btn.selectable, .primary-btn.selectable.selected {
+.primary-btn, .primary-btn.selectable {
     &.pending{
-        background-color:crimson;
+        
+        border: 1px dashed crimson;
+        &.selected{
+            background-color:crimson;
+            background-color: transparent;
+        }
+        
     }
     &.implemented{}
     &.share{}
