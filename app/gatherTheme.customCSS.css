@@ -467,9 +467,11 @@ button.selectable{
     &.pending{
         
         border: 1px dashed crimson;
+        color:crimson;
         &.selected{
             background-color:crimson;
             border-color: transparent;
+            color:white;
         }
         
     }
