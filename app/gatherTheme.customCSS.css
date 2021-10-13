@@ -469,7 +469,7 @@ button.selectable{
         border: 1px dashed crimson;
         &.selected{
             background-color:crimson;
-            background-color: transparent;
+            border-color: transparent;
         }
         
     }
