@@ -475,7 +475,18 @@ button.selectable{
         }
         
     }
-    &.implemented{}
+    &.implemented{
+        
+        border: 1px dashed $primaryBtnColor;
+        color:$primaryBtnColor;
+        &.selected{
+            background-color:$primaryBtnColor;
+            border-color: transparent;
+            color:white;
+        }
+        
+        
+    }
     &.share{}
     &.remove{}
     &.edit{}
