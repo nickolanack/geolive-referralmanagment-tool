@@ -20,7 +20,10 @@ var ProjectsOverviewNavigationMenu = new Class({
 				view: "Split",
 				section: "Layout"
 			},
-			menuId: "projectMenu"
+			menuId: "projectMenu",
+			transitionAnimation:{
+				useScreenHeight:true
+			}
 		});
 
 		this.application=application;
