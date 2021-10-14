@@ -8315,16 +8315,16 @@
                             "taskDefaultItems.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 228,
-                            "y": 360
+                            "x": 238,
+                            "y": 370
                         },
                         "children": [
                             "taskDefaultItems.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 188,
-                                    "y": 526
+                                    "x": 198,
+                                    "y": 536
                                 }
                             }
                         ],
@@ -8343,6 +8343,7 @@
                                             "config": {
                                                 "listClassName": "project-tasks",
                                                 "className": "task-item",
+                                                "identifier": "",
                                                 "viewType": "view",
                                                 "namedView": "singleTaskListItemDetail",
                                                 "shouldRender": true,
