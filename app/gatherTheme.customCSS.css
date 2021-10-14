@@ -7,15 +7,44 @@ $defaultBtnColor:$highlightBtnColor;
 $primaryBtnColor:mediumseagreen;
 $pendingColor:crimson;
 $implementedColor:$primaryBtnColor;
+
 $shareColor:#6A7CE9;
+$shareColorHover:darken($shareColor, 10%);
+
+$reportColor:$primaryBtnColor;
+$reportColorHover:darken($reportColor, 10%);
+
+$editColor:$defaultBtnColor;
+$editColorHover:darken($editColor, 10%);
+
+$archiveColor:#EDC84C;
+$archiveColorHover:darken($archiveColor, 10%);
+
+
 $addColor:$highlightBtnColor;
+$addColorHover:$highlightBtnHoverColor;
+
+
 $buttonTextColor:black;
 $leftPanelColor:#222222;
 
 
 
+
+
 button.primary-btn.nav-new-btn{
     background-color:$highlightBtnColor;
+}
+
+
+button.form-btn.inline-edit {
+    float: right;
+    background-color: rgb(238, 238, 238);
+    padding: 0;
+    height: 36px;
+    width: 36px;
+    margin: 10px;
+    margin-right: 0;
 }
 
 
@@ -401,10 +430,19 @@ button.primary-btn.nav-new-btn.view-selection:before {
 
 button.inline-btn, button.primary-btn {
     background-color: $defaultBtnColor;
+    transition: background-color 2s;
     color:$buttonTextColor;
     border-radius: 100px;
+    
+    &:hover{
+        transition: background-color 0.3s;
+    }
+    
     &.add{
         background-color: $addColor;
+        &:hover{
+            background-color: $addColorHover;
+        }
     }
 }
 
@@ -486,10 +524,16 @@ button.selectable{
         
         border: 1px dashed $pendingColor;
         color:$pendingColor;
+        &:hover{
+            background-color:adjust-color($pendingColor, $alpha: -0.7);
+        }
         &.selected{
             background-color:$pendingColor;
             border-color: transparent;
             color:$buttonTextColor;
+            &:hover{
+                 background-color:darken($pendingColor, 10%);
+            }
         }
         
     }
@@ -497,20 +541,49 @@ button.selectable{
         
         border: 1px dashed $implementedColor;
         color:$implementedColor;
+        &:hover{
+            background-color:adjust-color($implementedColor, $alpha: -0.7);
+        }
         &.selected{
             background-color:$implementedColor;
             border-color: transparent;
             color:$buttonTextColor;
+            &:hover{
+                 background-color:darken($implementedColor, 10%);
+            }
         }
         
         
     }
     &.share{
         background-color:$shareColor;
+        &:hover{
+             background-color:$shareColorHover;
+        }
     }
     &.remove{}
-    &.edit{}
-    &.archive{}
+    &.report{
+        background-color:$reportColor;
+        &:hover{
+             background-color:$reportColorHover;
+        }
+        
+    }
+    &.edit{
+        background-color:$editColor;
+        &:hover{
+             background-color:$editColorHover;
+        }
+        
+    }
+    &.archive{
+        
+        background-color:$archiveColor;
+        &:hover{
+             background-color:$archiveColorHover;
+        }
+        
+    }
     &.unarchive{}
     
 }
