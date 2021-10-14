@@ -11,17 +11,7 @@ class DefaultTasks {
 	public function createTasksForProposal($proposal) {
 
 		$taskIds = array();
-
-		GetPlugin('Attributes');
-		$types = (new \attributes\Record('proposalAttributes'))->getValues($proposal, 'ReferralManagement.proposal')['type'];
-
-		if (is_string($types) && $types{0} == "[") {
-			$types = json_decode($types);
-		}
-
-		if (!is_array($types)) {
-			$types = array($types);
-		}
+		$types = $this->getTypes($proposal);
 
 		foreach ($types as $typeName) {
 
@@ -65,6 +55,24 @@ class DefaultTasks {
 
 	}
 
+
+	protected function getTypes($proposal){
+		GetPlugin('Attributes');
+		$types = (new \attributes\Record('proposalAttributes'))->getValues($proposal, 'ReferralManagement.proposal')['type'];
+
+		if (is_string($types) && $types{0} == "[") {
+			$types = json_decode($types);
+		}
+
+		if (!is_array($types)) {
+			$types = array($types);
+		}
+
+		return $types;
+
+
+	}
+
 	protected function parseDueDateString($date, $proposal) {
 		return $date;
 		return $this->renderTemplate("dueDateTemplate", $date, GetPlugin('ReferralManagement')->getProposalData($proposal));
@@ -72,9 +80,7 @@ class DefaultTasks {
 
 	public function getTemplatesForProposal($proposal) {
 
-		GetPlugin('Attributes');
-		$typeName = (new \attributes\Record('proposalAttributes'))->getValues($proposal, 'ReferralManagement.proposal')['type'];
-		$types = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $typeName)));
+		$types = $this->getTypes($proposal);
 
 		$config = GetWidget('proposalConfig');
 
@@ -84,6 +90,8 @@ class DefaultTasks {
 			"taskTemplates" => array(),
 			"config" => $config->getParameters(),
 		);
+
+
 
 		foreach ($types as $typeVar) {
 
