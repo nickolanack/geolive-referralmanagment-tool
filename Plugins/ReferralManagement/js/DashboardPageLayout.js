@@ -24,7 +24,7 @@ var DashboardPageLayout = (function() {
 		currentItem:function(){
 			return this._item||null;
 		},
-		layoutPage: function(name, modules, callback) {
+		layoutPage: function(name, modules) {
 
 
 			var options = {};
@@ -40,20 +40,10 @@ var DashboardPageLayout = (function() {
 					return modules;
 				}
 
-				var result = me._layouts[name](modules.content, options, function(content) {
-
-					modules.content = content;
-					callback(modules);
-
-				});
+				var result = me._layouts[name](modules.content, options);
 
 				if(typeof result != "undefined"){
 					modules.content = result;
-				}
-
-				if (callback) {
-					callback(modules)
-					return;
 				}
 
 				return modules;
@@ -67,13 +57,13 @@ var DashboardPageLayout = (function() {
 			 * @unused - layout functionality is now connected to display controller's detail-view/template content
 			 * generator - it has no access to UIViewModule. 
 			 */
-			if (name instanceof UIViewModule && callback) {
-				options = Object.append(options, name.options);
-				name.getViewName(function(name) {
-					layout(name);
-				});
-				return;
-			}
+			// if (name instanceof UIViewModule && callback) {
+			// 	options = Object.append(options, name.options);
+			// 	name.getViewName(function(name) {
+			// 		layout(name);
+			// 	});
+			// 	return;
+			// }
 
 			/**
 			 *  ************
@@ -360,9 +350,9 @@ var DashboardPageLayout = (function() {
 
 	}).addLayout('groupListsProjectDetail', function(content, options, callback) {
 
-			callback(content.slice(0, 1).concat(content.slice(1).map(function(item) {
+			return content.slice(0, 1).concat(content.slice(1).map(function(item) {
 				return layout.splitCol([item]);
-			})));
+			}));
 
 	}).addLayout('leftPanel', function(content) {
 
