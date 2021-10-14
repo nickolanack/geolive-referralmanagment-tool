@@ -517,3 +517,21 @@ button.selectable{
 }
 
 
+
+[data-view="groupListsProjectDetail"].ui-view.left-panel .w-50 .dark-only-shading.inset-menu-shading {
+   
+    border-radius: 5px;
+    padding: 15px;
+    width: calc(100% - 15px);
+    box-sizing: border-box;
+    margin-left: 15px;
+}
+.dark [data-view="groupListsProjectDetail"].ui-view.left-panel .w-50 .dark-only-shading.inset-menu-shading {
+     background-color: #222222;
+}
+
+
+
+
+
+
