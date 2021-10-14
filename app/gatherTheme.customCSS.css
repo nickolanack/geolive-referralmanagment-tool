@@ -136,6 +136,12 @@ button.primary-btn.nav-new-btn.view-selection:before {
     color: #efa82c;
     vertical-align: super;
 }
+
+.is-dataset .field-value-module.inline.icon:before {
+    content: "\0f278";
+}
+
+
 .table-header .field-value-module.icon:before {
     visibility: hidden;
 }
