@@ -504,16 +504,25 @@ button.selectable{
         
         border: 1px dashed $implementedColor;
         color:$implementedColor;
+         &:hover{
+             background-color:adjust($implementedColor, $alpha: -0.7);
+         }
         &.selected{
             background-color:$implementedColor;
             border-color: transparent;
             color:$buttonTextColor;
+            &:hover{
+                 background-color:darken($implementedColor, 10%);
+            }
         }
         
         
     }
     &.share{
         background-color:$shareColor;
+        &:hover{
+             background-color:darken($shareColor, 10%);
+        }
     }
     &.remove{}
     &.edit{}
