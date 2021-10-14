@@ -1,1 +1,1 @@
-return ReferralManagementDashboard.getProjectTags();
+return LayerGroupItemList.getGroupNames()

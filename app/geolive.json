@@ -21814,16 +21814,16 @@
                             "baseMapForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 231,
-                            "y": 298
+                            "x": 241,
+                            "y": 308
                         },
                         "children": [
                             "baseMapForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 191,
-                                    "y": 586
+                                    "x": 201,
+                                    "y": 596
                                 }
                             },
                             {
@@ -21833,88 +21833,16 @@
                                     "baseMapForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 706,
-                                    "y": 314
+                                    "x": 787,
+                                    "y": 296
                                 },
                                 "children": [
                                     "baseMapForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 666,
-                                            "y": 490
-                                        }
-                                    },
-                                    {
-                                        "title": "New Empty Step",
-                                        "class": "AttributesTableNode",
-                                        "fields": [
-                                            "baseMapForm.metadata.children.1.children.2.children.2.fields.0.json"
-                                        ],
-                                        "_diagramState": {
-                                            "x": 843,
-                                            "y": 866
-                                        },
-                                        "children": [
-                                            "baseMapForm.metadata.children.1.children.2.children.2.children.0.json",
-                                            {
-                                                "class": "InsertNode",
-                                                "_diagramState": {
-                                                    "x": 803,
-                                                    "y": 1032
-                                                }
-                                            }
-                                        ],
-                                        "builderMetadata": {
-                                            "positions": {
-                                                "title": {
-                                                    "modules": [
-                                                        "baseMapForm.metadata.children.1.children.2.children.2.builderMetadata.positions.title.modules.0.json"
-                                                    ]
-                                                },
-                                                "content": {
-                                                    "modules": [
-                                                        "baseMapForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.0.json",
-                                                        {
-                                                            "type": "plugin.Attributes.WizardTagCloud",
-                                                            "config": {
-                                                                "attributeFields": [
-                                                                    "baseMapForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
-                                                                ],
-                                                                "className": "",
-                                                                "showLabel": false,
-                                                                "showAddWord": false,
-                                                                "label": "Nations impacted by this dataset",
-                                                                "addWordPlaceholder": "add a keyword",
-                                                                "fontColor": "rgb(0, 0, 0)",
-                                                                "hoverColor": "rgb(143, 188, 143)",
-                                                                "selectedColor": "rgb(143, 188, 143)",
-                                                                "shuffleTags": false,
-                                                                "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
-                                                                "getItemTagsScript": "baseMapForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.1.config.getItemTagsScript.js",
-                                                                "formatModule": "ProjectTeam.FormatTagCloudLanguageValues(module);\nmodule.runOnceOnLoad(function(){\nvar cats= Proposal.ListTerritories();\nif(cats.length==0){\n    module.getCloud().getElement().parentNode.setStyle(\"display\",\"none\");\n}\n});\n"
-                                                            }
-                                                        }
-                                                    ]
-                                                },
-                                                "footer": {
-                                                    "modules": [
-                                                        "baseMapForm.metadata.children.1.children.2.children.2.builderMetadata.positions.footer.modules.0.json"
-                                                    ]
-                                                },
-                                                "menu": {
-                                                    "modules": []
-                                                }
-                                            },
-                                            "positionList": [
-                                                "title",
-                                                "content",
-                                                "footer",
-                                                "menu"
-                                            ],
-                                            "_diagramState": {
-                                                "minimized": false
-                                            }
+                                            "x": 747,
+                                            "y": 462
                                         }
                                     }
                                 ],
@@ -21937,26 +21865,6 @@
                                                         "className": "",
                                                         "showLabel": false,
                                                         "showAddWord": false,
-                                                        "label": "Dataset tags",
-                                                        "addWordPlaceholder": "add a keyword",
-                                                        "fontColor": "rgb(0, 0, 0)",
-                                                        "hoverColor": "rgb(143, 188, 143)",
-                                                        "selectedColor": "rgb(143, 188, 143)",
-                                                        "shuffleTags": false,
-                                                        "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
-                                                        "getItemTagsScript": "baseMapForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.1.config.getItemTagsScript.js",
-                                                        "formatModule": ""
-                                                    }
-                                                },
-                                                {
-                                                    "type": "plugin.Attributes.WizardTagCloud",
-                                                    "config": {
-                                                        "attributeFields": [
-                                                            "baseMapForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
-                                                        ],
-                                                        "className": "",
-                                                        "showLabel": false,
-                                                        "showAddWord": false,
                                                         "label": "Add to base map layer",
                                                         "addWordPlaceholder": "add a keyword",
                                                         "fontColor": "rgb(0, 0, 0)",
@@ -21964,7 +21872,7 @@
                                                         "selectedColor": "rgb(143, 188, 143)",
                                                         "shuffleTags": false,
                                                         "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
-                                                        "getItemTagsScript": "baseMapForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.2.config.getItemTagsScript.js",
+                                                        "getItemTagsScript": "baseMapForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.1.config.getItemTagsScript.js",
                                                         "formatModule": ""
                                                     }
                                                 }

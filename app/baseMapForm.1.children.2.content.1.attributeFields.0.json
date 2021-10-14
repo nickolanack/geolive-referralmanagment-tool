@@ -1,13 +1,13 @@
 {
     "visibility": "public",
-    "tableId": "5",
-    "tableName": "proposalAttributes",
-    "tableSuffix": "_3497",
-    "title": "type",
-    "label": "Type",
+    "tableId": "7",
+    "tableName": "datasetAttributes",
+    "tableSuffix": "_6314",
+    "title": "baseMapLayer",
+    "label": "Base Map Layer",
     "description": "",
     "fieldType": "text",
-    "color": "rgb(NaN, NaN, NaN)",
+    "color": "rgb(undefined, undefined, undefined)",
     "searchability": "public",
     "editability": "registered",
     "fieldTextOptions": {
@@ -28,5 +28,5 @@
             "colorize": false
         }
     },
-    "allowMultiple": true
+    "allowMultiple": false
 }
