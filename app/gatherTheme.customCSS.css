@@ -405,11 +405,14 @@ button.inline-btn, button.primary-btn {
     transition: background-color 2s;
     color:$buttonTextColor;
     border-radius: 100px;
+    
+    &:hover{
+        transition: background-color 0.3s;
+    }
+    
     &.add{
         background-color: $addColor;
-        
         &:hover{
-            transition: background-color 0.3s;
             background-color: $addColorHover;
         }
     }
