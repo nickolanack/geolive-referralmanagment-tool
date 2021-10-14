@@ -9,6 +9,7 @@ $pendingColor:crimson;
 $implementedColor:$primaryBtnColor;
 $shareColor:#6A7CE9;
 $addColor:$highlightBtnColor;
+$addColorHover:$highlightBtnHoverColor;
 $buttonTextColor:black;
 $leftPanelColor:#222222;
 
@@ -405,6 +406,9 @@ button.inline-btn, button.primary-btn {
     border-radius: 100px;
     &.add{
         background-color: $addColor;
+        &:hover{
+            background-color: $addColorHover;
+        }
     }
 }
 
