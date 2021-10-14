@@ -746,16 +746,15 @@ var TaskItem = (function() {
 		"proposal": viewControllerApp.getNamedValue("currentProject").getId()
 	})).addEvent('success', function(resp) {
 
-		callback(resp.taskTemplates.map(function(data) {
+		callback(resp.taskTemplates.filter(function(data){
+			return !!data.task;
+		}).map(function(data) {
 			return new TaskTemplateItem(viewControllerApp.getNamedValue("currentProject"), data.task);
 		}));
 
 	}).execute();
 
 	}
-
-
-
 
 
 	return TaskItem;
