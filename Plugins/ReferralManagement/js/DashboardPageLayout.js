@@ -43,13 +43,15 @@ var DashboardPageLayout = (function() {
 
 				});
 
-				if (typeof result != "undefined" && callback) {
+				if(typeof result != "undefined"){
 					modules.content = result;
+				}
+
+				if (callback) {
 					callback(modules)
 					return;
 				}
 
-				modules.content = result;
 				return modules;
 			}
 
