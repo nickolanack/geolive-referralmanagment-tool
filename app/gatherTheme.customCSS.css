@@ -505,7 +505,7 @@ button.selectable{
         border: 1px dashed $implementedColor;
         color:$implementedColor;
          &:hover{
-             background-color:adjust($implementedColor, $alpha: -0.7);
+             background-color:adjust-color($implementedColor, $alpha: -0.7);
          }
         &.selected{
             background-color:$implementedColor;
