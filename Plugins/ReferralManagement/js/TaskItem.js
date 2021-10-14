@@ -440,8 +440,14 @@ var TaskItem = (function() {
 		var modalButton;
 
 
+
+
+
+
 		var modules = [
-			TaskItem._newTask(application, item)
+
+			TaskItem._newTask(application, item),
+			
 		];
 
 
@@ -488,6 +494,9 @@ var TaskItem = (function() {
 
 
 			modules.push(modalButton);
+			var editDefaultTasksButton=TaskItem._editDefaultTasks(application, item);
+			RecentItems.colorizeEl(editDefaultTasksButton.getElement(), item.getProjectType());
+			modules.push(editDefaultTasksButton);
 
 
 		} else {
@@ -675,6 +684,39 @@ var TaskItem = (function() {
 
 	};
 
+
+	TaskItem._editDefaultTasks=function(application, item){
+
+
+
+		var CategoryTasks=new Class({
+			Extends:MockDataTypeItem,
+		    getTitle:function(){
+		    	return "Default Tasks For: "+this.getCategory().getName();
+		    }
+		});
+
+		var item=new CategoryTasks({
+		    category:NamedCategoryList.getTag(item.getProjectType())
+		});
+
+		return (new ModalFormButtonModule(application, item, {
+				label: "Edit default tasks",
+				formName: "defaultTasksForm",
+				formOptions: {
+					template: "form"
+				},
+				hideText: true,
+				"class": "inline-edit",
+				"style":"float:right;"
+			})).addEvent("show", function() {
+				
+
+			})
+
+	}
+
+
 	TaskItem._newTask=function(application, item){
 
 
@@ -712,6 +754,9 @@ var TaskItem = (function() {
 			html: "Automatic task creation is "+(DashboardConfig.getValue("autoCreateDefaultTasks")?"enabled":"disabled")
 		}))
 	}
+
+
+
 
 
 	TaskItem.TaskTemplates=function(callback){
