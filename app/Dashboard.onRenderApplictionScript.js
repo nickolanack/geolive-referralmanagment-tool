@@ -213,6 +213,7 @@ GetWidget('layerGroupForm')->display($targetInstance);
 GetWidget('mainMapDetailLayers')->display($targetInstance);
 GetWidget('themeForm')->display($targetInstance);
 
-
+GetWidget('defaultTasksForm')->display($targetInstance);
+GetWidget('baseMapForm')->display($targetInstance);
 
 GetWidget('defaultPostDetail')->display($targetInstance);
