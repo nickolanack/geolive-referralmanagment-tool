@@ -714,7 +714,7 @@ var TaskItem = (function() {
 	}
 
 
-	TaskItem.TaskTemplates=function(){
+	TaskItem.TaskTemplates=function(callback){
 
 
 		var viewControllerApp = ReferralManagementDashboard.getApplication();
