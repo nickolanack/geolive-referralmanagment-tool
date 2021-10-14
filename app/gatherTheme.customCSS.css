@@ -551,6 +551,13 @@ button.selectable{
         }
     }
     &.remove{}
+    &.report{
+        background-color:$reportColor;
+        &:hover{
+             background-color:$reportColorHover;
+        }
+        
+    }
     &.edit{
         background-color:$editColor;
         &:hover{
