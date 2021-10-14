@@ -48,10 +48,7 @@ var ProjectsOverviewNavigationMenu = new Class({
 						template:"splitProjectDetail",
 					}, {
 						html: "List",
-						template:"groupListsProjectDetail",
-						viewOptions:{
-							layout:"fullwidth"
-						}
+						template:"groupListsProjectDetail"
 					}
 					// , {
 					// 	html: "Fancy",

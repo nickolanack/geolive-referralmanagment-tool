@@ -10,7 +10,11 @@ var DashboardPageLayout = (function() {
 
 		},
 
+
 		layoutSection: function(name, modules) {
+			/*
+			 * @deprecated
+			 */
 			return this.layoutPage(name, modules);
 		},
 		withItem:function(item){
@@ -57,6 +61,12 @@ var DashboardPageLayout = (function() {
 
 
 
+			/**
+			 * *************
+			 * @deprecated 
+			 * @unused - layout functionality is now connected to display controller's detail-view/template content
+			 * generator - it has no access to UIViewModule. 
+			 */
 			if (name instanceof UIViewModule && callback) {
 				options = Object.append(options, name.options);
 				name.getViewName(function(name) {
@@ -64,6 +74,10 @@ var DashboardPageLayout = (function() {
 				});
 				return;
 			}
+
+			/**
+			 *  ************
+			 */
 
 			return layout(name);
 
@@ -344,10 +358,10 @@ var DashboardPageLayout = (function() {
 
 	}).addLayout('groupListsProjectDetail', function(content, options, callback) {
 
-		if (options.layout && options.layout == "fullwidth")
 			callback(content.slice(0, 1).concat(content.slice(1).map(function(item) {
 				return layout.splitCol([item]);
 			})));
+			
 	}).addLayout('leftPanel', function(content) {
 
 		if (!DashboardConfig.getValue('showLeftPanelUser')) {
