@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "var div= ProjectList.HeaderMenuContent();\ndiv.addClass('header-hieght');\n\n\nreturn div;",
+        "script": "var div= ProjectList.HeaderMenuContent();\n(div.addClass||div.getElement().addClass)('header-hieght');\n\n\nreturn div;",
         "description": "Info about my custom script"
     }
 }
