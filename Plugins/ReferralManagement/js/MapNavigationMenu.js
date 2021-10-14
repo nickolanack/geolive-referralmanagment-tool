@@ -55,7 +55,33 @@ var MapNavigationMenu = new Class({
 					html: "Add Basemap",
 					events: {
 						click: function() {
-							alert('dev: open basemap form');
+							var options = {
+								"formName": "baseMapForm",
+								"item": new Proposal(),
+							};
+
+
+							if (options.item) {
+
+							}
+
+						
+
+							var newItem = options.item;
+
+							var application = ReferralManagementDashboard.getApplication();
+							(new UIModalDialog(application, newItem, {
+								"formName": options.formName,
+								"formOptions": {
+									template: "form"
+								}
+							})).show()
+
+							newItem.addEvent("save:once", function() {
+								ProjectTeam.CurrentTeam().addProject(newItem);
+							});
+
+									
 						}
 					}
 				}],
