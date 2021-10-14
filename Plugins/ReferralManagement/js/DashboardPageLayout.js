@@ -613,7 +613,8 @@ var DashboardPageLayout = (function() {
 			'userProfileDetailOverview',
 			'leftPanel',
 			'singleProjectListItemTableDetail',
-			'splitProjectDetail'
+			'splitProjectDetail',
+			'groupListsProjectDetail'
 		];
 
 
