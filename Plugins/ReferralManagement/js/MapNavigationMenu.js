@@ -51,7 +51,34 @@ var MapNavigationMenu = new Class({
 				}, {
 					html: "Layers",
 					template: "mainMapDetailLayers"
-				}]
+				},{
+					html: "Add Basemap",
+					events: {
+						click: function() {
+								
+						}
+					}
+				}],
+				"Layout": [{
+						html: "Split",
+							events: {
+							click: function() {
+									
+							}
+						}
+					}, {
+						html: "List",
+						events: {
+							click: function() {
+									
+							}
+						}
+					}
+					// , {
+					// 	html: "Fancy",
+					// 	template:"datasetsView",
+					// }
+				]
 			};
 
 
