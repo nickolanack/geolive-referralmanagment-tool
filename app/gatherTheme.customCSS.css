@@ -37,6 +37,17 @@ button.primary-btn.nav-new-btn{
 }
 
 
+button.form-btn.inline-edit {
+    float: right;
+    background-color: rgb(238, 238, 238);
+    padding: 0;
+    height: 36px;
+    width: 36px;
+    margin: 10px;
+    margin-right: 0;
+}
+
+
  button.primary-btn.nav-new-btn:hover {
     background-color: $highlightBtnHoverColor; /* */
  }
