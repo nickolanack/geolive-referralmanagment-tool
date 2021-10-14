@@ -496,10 +496,16 @@ button.selectable{
         
         border: 1px dashed $pendingColor;
         color:$pendingColor;
+        &:hover{
+            background-color:adjust-color($pendingColor, $alpha: -0.7);
+        }
         &.selected{
             background-color:$pendingColor;
             border-color: transparent;
             color:$buttonTextColor;
+            &:hover{
+                 background-color:darken($pendingColor, 10%);
+            }
         }
         
     }
@@ -507,9 +513,9 @@ button.selectable{
         
         border: 1px dashed $implementedColor;
         color:$implementedColor;
-         &:hover{
-             background-color:adjust-color($implementedColor, $alpha: -0.7);
-         }
+        &:hover{
+            background-color:adjust-color($implementedColor, $alpha: -0.7);
+        }
         &.selected{
             background-color:$implementedColor;
             border-color: transparent;
