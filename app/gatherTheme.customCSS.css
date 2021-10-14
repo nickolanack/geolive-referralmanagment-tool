@@ -402,10 +402,12 @@ button.primary-btn.nav-new-btn.view-selection:before {
 
 button.inline-btn, button.primary-btn {
     background-color: $defaultBtnColor;
+    transition: background-color 2s;
     color:$buttonTextColor;
     border-radius: 100px;
     &.add{
         background-color: $addColor;
+        
         &:hover{
             background-color: $addColorHover;
         }
