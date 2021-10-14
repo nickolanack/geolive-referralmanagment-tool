@@ -1,10 +1,8 @@
 {
-    "type": "WizardTitleField",
+    "type": "WizardScriptElement",
     "config": {
-        "label": "Title",
-        "message": "add a title",
-        "className": "",
-        "maxChars": 0,
-        "textFormatScript": ""
+        "name": "My Custom Script",
+        "script": "if(item.getId()>0){\n    return '<h2>Edit collection: <span>'+item.getName()+'<\/span><h2>';\n}\n\nif(AppClient.getUserType()==\"guest\"){\n    return '<h2>Create new collection: <span>as a proponent<\/span><h2>';\n}\n\n\nreturn '<h2>Create new collection<h2>';",
+        "description": "Info about my custom script"
     }
 }

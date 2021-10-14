@@ -21802,23 +21802,278 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -18,
-                    "y": 171
+                    "x": -51,
+                    "y": 741
                 },
                 "children": [
                     "baseMapForm.metadata.children.0.json",
                     {
-                        "title": "New Empty Step",
+                        "title": "Intro",
                         "class": "AttributesTableNode",
                         "fields": [
                             "baseMapForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 128,
-                            "y": 260
+                            "x": 186,
+                            "y": 315
                         },
                         "children": [
-                            "baseMapForm.metadata.children.1.children.0.json"
+                            "baseMapForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 146,
+                                    "y": 528
+                                }
+                            },
+                            {
+                                "title": "Documents",
+                                "class": "AttributesTableNode",
+                                "fields": [
+                                    "baseMapForm.metadata.children.1.children.2.fields.0.json"
+                                ],
+                                "_diagramState": {
+                                    "x": 564,
+                                    "y": 266
+                                },
+                                "children": [
+                                    "baseMapForm.metadata.children.1.children.2.children.0.json",
+                                    {
+                                        "class": "InsertNode",
+                                        "_diagramState": {
+                                            "x": 524,
+                                            "y": 442
+                                        }
+                                    },
+                                    {
+                                        "title": "New Empty Step",
+                                        "class": "AttributesTableNode",
+                                        "fields": [
+                                            "baseMapForm.metadata.children.1.children.2.children.2.fields.0.json"
+                                        ],
+                                        "_diagramState": {
+                                            "x": 1039,
+                                            "y": 301
+                                        },
+                                        "children": [
+                                            "baseMapForm.metadata.children.1.children.2.children.2.children.0.json",
+                                            {
+                                                "class": "InsertNode",
+                                                "_diagramState": {
+                                                    "x": 999,
+                                                    "y": 552
+                                                }
+                                            }
+                                        ],
+                                        "builderMetadata": {
+                                            "positions": {
+                                                "title": {
+                                                    "modules": [
+                                                        "baseMapForm.metadata.children.1.children.2.children.2.builderMetadata.positions.title.modules.0.json"
+                                                    ]
+                                                },
+                                                "content": {
+                                                    "modules": [
+                                                        "baseMapForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.0.json",
+                                                        {
+                                                            "type": "InlineHtml",
+                                                            "config": {
+                                                                "className": "",
+                                                                "text": "Who created the datasets contained in this collection?",
+                                                                "template": "",
+                                                                "templateVariablesScript": "",
+                                                                "formatTextScript": ""
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "FormBooleanField",
+                                                            "config": {
+                                                                "className": "",
+                                                                "label": "Government",
+                                                                "mandatory": false,
+                                                                "getValueScript": "",
+                                                                "updateValueScript": " object.value=value ",
+                                                                "submitValueScript": "",
+                                                                "validateValueScript": "",
+                                                                "formatElementScript": ""
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "FormBooleanField",
+                                                            "config": {
+                                                                "className": "",
+                                                                "label": "Business",
+                                                                "mandatory": false,
+                                                                "getValueScript": "",
+                                                                "updateValueScript": " object.value=value ",
+                                                                "submitValueScript": "",
+                                                                "validateValueScript": "",
+                                                                "formatElementScript": ""
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "FormBooleanField",
+                                                            "config": {
+                                                                "className": "",
+                                                                "label": "Individual",
+                                                                "mandatory": false,
+                                                                "getValueScript": "",
+                                                                "updateValueScript": " object.value=value ",
+                                                                "submitValueScript": "",
+                                                                "validateValueScript": "",
+                                                                "formatElementScript": ""
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "FormBooleanField",
+                                                            "config": {
+                                                                "className": "",
+                                                                "label": "Community",
+                                                                "mandatory": false,
+                                                                "getValueScript": "",
+                                                                "updateValueScript": " object.value=value ",
+                                                                "submitValueScript": "",
+                                                                "validateValueScript": "",
+                                                                "formatElementScript": ""
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "InlineHtml",
+                                                            "config": {
+                                                                "className": "",
+                                                                "text": "Do any of the project documents contain sensitive material?",
+                                                                "template": "",
+                                                                "templateVariablesScript": "",
+                                                                "formatTextScript": ""
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "FormBooleanField",
+                                                            "config": {
+                                                                "className": "",
+                                                                "label": "yes, this project contains sensitive data",
+                                                                "mandatory": false,
+                                                                "getValueScript": "",
+                                                                "updateValueScript": " object.value=value ",
+                                                                "submitValueScript": "",
+                                                                "validateValueScript": "",
+                                                                "formatElementScript": ""
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "plugin.Attributes.WizardTagCloud",
+                                                            "config": {
+                                                                "attributeFields": [
+                                                                    "baseMapForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
+                                                                ],
+                                                                "className": "",
+                                                                "showLabel": false,
+                                                                "showAddWord": false,
+                                                                "label": "Nations impacted by this collection",
+                                                                "addWordPlaceholder": "add a keyword",
+                                                                "fontColor": "rgb(0, 0, 0)",
+                                                                "hoverColor": "rgb(143, 188, 143)",
+                                                                "selectedColor": "rgb(143, 188, 143)",
+                                                                "shuffleTags": false,
+                                                                "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
+                                                                "getItemTagsScript": "baseMapForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.8.config.getItemTagsScript.js",
+                                                                "formatModule": "ProjectTeam.FormatTagCloudLanguageValues(module);\nmodule.runOnceOnLoad(function(){\nvar cats= Proposal.ListTerritories();\nif(cats.length==0){\n    module.getCloud().getElement().parentNode.setStyle(\"display\",\"none\");\n}\n});\n"
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "footer": {
+                                                    "modules": [
+                                                        "baseMapForm.metadata.children.1.children.2.children.2.builderMetadata.positions.footer.modules.0.json"
+                                                    ]
+                                                },
+                                                "menu": {
+                                                    "modules": []
+                                                }
+                                            },
+                                            "positionList": [
+                                                "title",
+                                                "content",
+                                                "footer",
+                                                "menu"
+                                            ],
+                                            "_diagramState": {
+                                                "minimized": false
+                                            }
+                                        }
+                                    }
+                                ],
+                                "builderMetadata": {
+                                    "positions": {
+                                        "title": {
+                                            "modules": [
+                                                "baseMapForm.metadata.children.1.children.2.builderMetadata.positions.title.modules.0.json"
+                                            ]
+                                        },
+                                        "content": {
+                                            "modules": [
+                                                "baseMapForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.0.json",
+                                                {
+                                                    "type": "UIListView",
+                                                    "config": {
+                                                        "listClassName": "dataset-select",
+                                                        "className": "",
+                                                        "identifier": "",
+                                                        "viewType": "view",
+                                                        "namedView": "singleProjectListItemTableDetail",
+                                                        "shouldRender": true,
+                                                        "namedViewScript": "return namedView",
+                                                        "showInlineEdit": false,
+                                                        "namedFormView": "defaultView",
+                                                        "formOptions": "\"{}\"",
+                                                        "showDeleteButton": false,
+                                                        "deleteItemScript": "defaultBehaviorFn()",
+                                                        "initModuleScript": "",
+                                                        "formatModuleScript": "baseMapForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.1.config.formatModuleScript.js",
+                                                        "resolveItemScript": "return item",
+                                                        "filterModulesScript": "return list",
+                                                        "itemButtonsScript": "return [];",
+                                                        "insertAtTop": false,
+                                                        "targetName": "",
+                                                        "getItemListScript": "baseMapForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.1.config.getItemListScript.js",
+                                                        "formatItemListScript": "return list;",
+                                                        "formatListItemModuleScript": "return item;",
+                                                        "emptyNamedView": "emptyListView",
+                                                        "filterItemsScript": "return true;",
+                                                        "sortItemsScript": "",
+                                                        "maxItems": "-1"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "WizardScriptElement",
+                                                    "config": {
+                                                        "name": "My Custom Script",
+                                                        "script": "baseMapForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.2.config.script.js",
+                                                        "description": "Info about my custom script"
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "footer": {
+                                            "modules": [
+                                                "baseMapForm.metadata.children.1.children.2.builderMetadata.positions.footer.modules.0.json"
+                                            ]
+                                        },
+                                        "menu": {
+                                            "modules": []
+                                        }
+                                    },
+                                    "positionList": [
+                                        "title",
+                                        "content",
+                                        "footer",
+                                        "menu"
+                                    ],
+                                    "_diagramState": {
+                                        "minimized": false
+                                    }
+                                }
+                            }
                         ],
                         "builderMetadata": {
                             "positions": {
@@ -21831,22 +22086,113 @@
                                     "modules": [
                                         "baseMapForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
-                                            "type": "WizardDescriptionField",
+                                            "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
-                                                "label": "Description",
-                                                "message": "add a description",
-                                                "lines": 3,
+                                                "attributeFields": [
+                                                    "baseMapForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "label": "Collection title",
+                                                "message": "Add title for your project",
+                                                "lines": 1,
+                                                "maxChars": 0,
                                                 "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": "{}",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "baseMapForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "label": "Organization",
+                                                "message": "Add organization name",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": "{}",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Department",
+                                                "placeholder": "add value",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "beforeRenderModuleScript": "",
+                                                "onRenderTextFieldScript": "baseMapForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.onRenderTextFieldScript.js",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return \"\"; ",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTagCloud",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "baseMapForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "showLabel": false,
+                                                "showAddWord": false,
+                                                "label": "Collection tags",
+                                                "addWordPlaceholder": "add a keyword",
+                                                "fontColor": "rgb(255, 255, 255)",
+                                                "hoverColor": "rgb(106, 233, 191)",
+                                                "selectedColor": "rgb(106, 124, 233)",
+                                                "shuffleTags": false,
+                                                "tags": "[\"Forestry\", \"Mining\", \"Energy\", \"Roads\"]",
+                                                "getItemTagsScript": "baseMapForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.getItemTagsScript.js",
+                                                "formatModule": "ProjectTagList.formatTagCloudModule(module);"
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardDescriptionAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "baseMapForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.attributeFields.0.json"
+                                                ],
+                                                "label": "Collection description",
+                                                "message": "Here you can add a short description of the proposed project for your own reference",
+                                                "lines": 4,
+                                                "mandatory": true,
                                                 "showAudios": true,
                                                 "showImages": true,
                                                 "showDocuments": true,
                                                 "showVideos": true,
-                                                "className": "",
+                                                "className": "no-media hidden",
                                                 "maxChars": 0,
                                                 "showExpandInput": true,
                                                 "toolbarPosition": "bottom",
                                                 "textFormatScript": "",
-                                                "mediaIconTint": "rgb(100, 149, 237)"
+                                                "onRenderModuleFn": ""
                                             }
                                         }
                                     ]
@@ -21865,7 +22211,10 @@
                                 "content",
                                 "footer",
                                 "menu"
-                            ]
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
                         }
                     }
                 ]
