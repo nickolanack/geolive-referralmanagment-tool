@@ -1003,7 +1003,7 @@ button.inline-logout {
 }
 
 [data-view="splitProjectDetail"].ui-view.inset-menu-shading {
-        display: contents;
+        max-width: unset;
     }
 
 

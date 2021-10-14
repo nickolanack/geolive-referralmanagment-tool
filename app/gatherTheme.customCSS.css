@@ -10,6 +10,7 @@ $implementedColor:$primaryBtnColor;
 $shareColor:#6A7CE9;
 $addColor:$highlightBtnColor;
 $buttonTextColor:black;
+$leftPanelColor:#222222;
 
 
 
@@ -30,7 +31,7 @@ button.primary-btn.nav-new-btn{
 
 
 [data-view="leftPanel"] {
-    background-color: #222222;
+    background-color: $leftPanelColor;
 }
 
 [data-view="mainProjectsDetail"] .project-list-filters {
@@ -515,5 +516,23 @@ button.selectable{
     display: inline-block;
     white-space: nowrap;
 }
+
+
+
+[data-view="groupListsProjectDetail"].ui-view.left-panel .w-50 .dark-only-shading.inset-menu-shading {
+   
+    border-radius: 5px;
+    padding: 15px;
+    width: calc(100% - 15px);
+    box-sizing: border-box;
+    margin-left: 15px;
+}
+.dark [data-view="groupListsProjectDetail"].ui-view.left-panel .w-50 .dark-only-shading.inset-menu-shading {
+     background-color: $leftPanelColor;
+}
+
+
+
+
 
 
