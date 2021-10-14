@@ -7,11 +7,28 @@ $defaultBtnColor:$highlightBtnColor;
 $primaryBtnColor:mediumseagreen;
 $pendingColor:crimson;
 $implementedColor:$primaryBtnColor;
+
 $shareColor:#6A7CE9;
+$shareColorHover:darken($shareColor, 10%);
+
+$reportColor:$primaryBtnColor;
+$reportColorHover:darken($reportColor, 10%);
+
+$editColor:$defaultBtnColor;
+$editColorHover:darken($editColor, 10%);
+
+$archiveColor:#EDC84C;
+$archiveColorHover:darken($archiveColor, 10%);
+
+
 $addColor:$highlightBtnColor;
 $addColorHover:$highlightBtnHoverColor;
+
+
 $buttonTextColor:black;
 $leftPanelColor:#222222;
+
+
 
 
 
@@ -530,12 +547,25 @@ button.selectable{
     &.share{
         background-color:$shareColor;
         &:hover{
-             background-color:darken($shareColor, 10%);
+             background-color:$shareColorHover;
         }
     }
     &.remove{}
-    &.edit{}
-    &.archive{}
+    &.edit{
+        background-color:$editColor;
+        &:hover{
+             background-color:$editColorHover;
+        }
+        
+    }
+    &.archive{
+        
+        background-color:$archiveColor;
+        &:hover{
+             background-color:$archiveColorHover;
+        }
+        
+    }
     &.unarchive{}
     
 }
