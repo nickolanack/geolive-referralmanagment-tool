@@ -116,7 +116,9 @@ var DashboardPageLayout = (function() {
 		_removeClassNames: function(items) {
 			var me = this;
 			items.forEach(function(item) {
-				item.options.className = item.options.className.replace(' w-', ' -w-');
+				if(item.options.className){
+					item.options.className = item.options.className.replace(' w-', ' -w-');
+				}
 			});
 
 
@@ -361,7 +363,7 @@ var DashboardPageLayout = (function() {
 			callback(content.slice(0, 1).concat(content.slice(1).map(function(item) {
 				return layout.splitCol([item]);
 			})));
-			
+
 	}).addLayout('leftPanel', function(content) {
 
 		if (!DashboardConfig.getValue('showLeftPanelUser')) {
