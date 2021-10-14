@@ -250,7 +250,7 @@ var TaskItem = (function() {
 		},
 		hasDueDate: function() {
 			var me = this;
-			if (me.data.dueDate.indexOf("00-00-00") === 0 || me.data.dueDate.indexOf("0000-00-00") === 0) {
+			if (typeof me.data.dueDate=="undefined"||me.data.dueDate.indexOf("00-00-00") === 0 || me.data.dueDate.indexOf("0000-00-00") === 0) {
 				return false;
 			}
 			return true;

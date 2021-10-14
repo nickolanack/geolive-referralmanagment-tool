@@ -87,7 +87,7 @@ var MapNavigationMenu = new Class({
 				}],
 				"Layout": [{
 						html: "Split",
-							events: {
+						events: {
 							click: function() {
 								alert('dev: default map layout');
 							}
