@@ -55,7 +55,7 @@ var MapNavigationMenu = new Class({
 					html: "Add Basemap",
 					events: {
 						click: function() {
-								
+							alert('dev: open basemap form');
 						}
 					}
 				}],
@@ -63,14 +63,14 @@ var MapNavigationMenu = new Class({
 						html: "Split",
 							events: {
 							click: function() {
-									
+								alert('dev: default map layout');
 							}
 						}
 					}, {
 						html: "List",
 						events: {
 							click: function() {
-									
+								alert('dev: split map layout (with left panel)');
 							}
 						}
 					}
