@@ -1,4 +1,4 @@
 
-TaskItem.FormatTaskTemplateModules(list);
+TaskItem.FormatTaskTemplateModules(list, listItem, uiview);
 
 return list
