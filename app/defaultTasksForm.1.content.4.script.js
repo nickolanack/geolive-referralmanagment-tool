@@ -1,1 +1,1 @@
-return TaskItem.NewTaskTemplateButton(item);
+return TaskItem.NewTaskTemplateButton(item, viewer);
