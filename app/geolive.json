@@ -22182,16 +22182,16 @@
                             "defaultTasksForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 291,
-                            "y": 199
+                            "x": 301,
+                            "y": 209
                         },
                         "children": [
                             "defaultTasksForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 251,
-                                    "y": 400
+                                    "x": 261,
+                                    "y": 410
                                 }
                             }
                         ],
@@ -22252,7 +22252,7 @@
                                         {
                                             "type": "UIListView",
                                             "config": {
-                                                "listClassName": "",
+                                                "listClassName": "project-tasks",
                                                 "className": "task-item",
                                                 "identifier": "",
                                                 "viewType": "view",
