@@ -1,1 +1,1 @@
-TaskItem.TaskTemplates(callback);
+TaskItem.TaskTemplates(item, callback);
