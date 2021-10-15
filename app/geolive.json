@@ -22182,16 +22182,16 @@
                             "defaultTasksForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 271,
-                            "y": 179
+                            "x": 281,
+                            "y": 189
                         },
                         "children": [
                             "defaultTasksForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 231,
-                                    "y": 355
+                                    "x": 241,
+                                    "y": 390
                                 }
                             }
                         ],
@@ -22251,11 +22251,42 @@
                                         },
                                         {
                                             "type": "UIListView",
-                                            "config": []
+                                            "config": {
+                                                "listClassName": "",
+                                                "className": "task-item",
+                                                "identifier": "",
+                                                "viewType": "view",
+                                                "namedView": "singleTaskListItemDetail",
+                                                "shouldRender": true,
+                                                "namedViewScript": "return namedView",
+                                                "showInlineEdit": false,
+                                                "namedFormView": "defaultView",
+                                                "formOptions": "{}",
+                                                "showDeleteButton": false,
+                                                "deleteItemScript": "defaultBehaviorFn()",
+                                                "initModuleScript": "",
+                                                "formatModuleScript": "",
+                                                "resolveItemScript": "return item",
+                                                "filterModulesScript": "return list",
+                                                "itemButtonsScript": "return [];",
+                                                "insertAtTop": false,
+                                                "targetName": "",
+                                                "getItemListScript": "defaultTasksForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.getItemListScript.js",
+                                                "formatItemListScript": "return list;",
+                                                "formatListItemModuleScript": "return item;",
+                                                "emptyNamedView": "emptyListView",
+                                                "filterItemsScript": "return true;",
+                                                "sortItemsScript": "",
+                                                "maxItems": "-1"
+                                            }
                                         },
                                         {
                                             "type": "WizardScriptElement",
-                                            "config": []
+                                            "config": {
+                                                "name": "My Custom Script",
+                                                "script": "",
+                                                "description": "Info about my custom script"
+                                            }
                                         }
                                     ]
                                 },
