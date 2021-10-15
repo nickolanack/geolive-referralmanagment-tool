@@ -22182,16 +22182,16 @@
                             "defaultTasksForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 411,
-                            "y": 319
+                            "x": 421,
+                            "y": 329
                         },
                         "children": [
                             "defaultTasksForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 371,
-                                    "y": 520
+                                    "x": 381,
+                                    "y": 530
                                 }
                             }
                         ],
@@ -22264,7 +22264,7 @@
                                                 "formOptions": "{}",
                                                 "showDeleteButton": false,
                                                 "deleteItemScript": "defaultBehaviorFn()",
-                                                "initModuleScript": "",
+                                                "initModuleScript": "defaultTasksForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.initModuleScript.js",
                                                 "formatModuleScript": "",
                                                 "resolveItemScript": "return item",
                                                 "filterModulesScript": "defaultTasksForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.filterModulesScript.js",
@@ -22272,7 +22272,7 @@
                                                 "insertAtTop": false,
                                                 "targetName": "",
                                                 "getItemListScript": "defaultTasksForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.getItemListScript.js",
-                                                "formatItemListScript": "defaultTasksForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.formatItemListScript.js",
+                                                "formatItemListScript": "\n\nreturn list;",
                                                 "formatListItemModuleScript": "return item;",
                                                 "emptyNamedView": "emptyListView",
                                                 "filterItemsScript": "return true;",
