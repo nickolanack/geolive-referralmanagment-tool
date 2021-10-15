@@ -1,0 +1,1 @@
+wizardDataset.color=object.value
