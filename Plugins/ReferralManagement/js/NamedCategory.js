@@ -28,10 +28,12 @@ var NamedCategory = (function() {
 		Extends: MockDataTypeItem,
 		Implements: [Events],
 		initialize: function(options) {
-			this.parent(options);
+			
 
 			options.shortName = options.shortName || options.name;
+			options.metadata = options.metadata || {};
 
+			this.parent(options);
 
 
 			this.setName = function(n) {

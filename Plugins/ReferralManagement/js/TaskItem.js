@@ -819,6 +819,9 @@ var TaskItem = (function() {
 
 					//console.error(item.getColor());
 					category.setColor(item.getColor());
+					category.setMetadata({
+						taskTemplates:taskTemplates
+					});
 					category.save(function(){
 
 					});

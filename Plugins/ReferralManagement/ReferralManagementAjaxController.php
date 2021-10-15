@@ -909,11 +909,12 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			$category->color = "#eeeeee";
 			if ($category->metadata && key_exists('color', $category->metadata)) {
 				$category->color = $category->metadata->color;
+				unset($category->metadata->color);
 			}
 
 			$category->shortName = $category->shortName ? $category->shortName : $category->name;
 
-			unset($category->metadata);
+			//unset($category->metadata);
 			unset($category->type);
 
 			return $category;
