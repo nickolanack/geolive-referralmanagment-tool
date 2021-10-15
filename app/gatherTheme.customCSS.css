@@ -29,6 +29,20 @@ $buttonTextColor:black;
 $leftPanelColor:#222222;
 
 
+.form-list [data-view="singleTaskListItemDetail"] {
+    display: inline-block;
+    width: calc( 100% - 75px );
+    position: relative;
+    
+    
+    .inline-btn.remove {
+        position: absolute;
+        right: -85px;
+        top: -6px;
+        padding: 6px 10px;
+    }
+}
+
 
 
 
@@ -45,6 +59,11 @@ button.form-btn.inline-edit {
     width: 36px;
     margin: 10px;
     margin-right: 0;
+    color:white;
+}
+
+button.form-btn.inline-edit.is-light {
+    color: black;
 }
 
 
