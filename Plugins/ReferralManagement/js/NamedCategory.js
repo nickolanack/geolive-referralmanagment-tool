@@ -47,8 +47,17 @@ var NamedCategory = (function() {
 				options.color = c
 			}
 
+			this.setMetadata = function(m){
+				options.metadata=JSON.parse(JSON.stringify(m));
+			}
+
 
 		},
+
+		getMetadata:function(){
+			return JSON.parse(JSON.stringify(this._getMetadata?this._getMetadata():{}));
+		},
+
 
 		getCategoryForChildren:function(){
 			return this.getName().toLowerCase();
@@ -165,7 +174,8 @@ var NamedCategory = (function() {
 				shortName: this.getShortName(),
 				description: this.getDescription(),
 				category: this.getCategory(),
-				color: this.getColor()
+				color: this.getColor(),
+				metadata:this.getMetadata()
 
 			};
 

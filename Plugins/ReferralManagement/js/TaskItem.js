@@ -414,8 +414,14 @@ var TaskItem = (function() {
 			if (cb) {
 				cb(false);
 			}
-		}
+		},
 
+		templateMetadata:function(){
+			return {
+				name:this.getName(),
+				dueDate:this.getDueDate()
+			}
+		}
 	});
 
 
@@ -466,13 +472,26 @@ var TaskItem = (function() {
 			
 
 				var viewControllerApp = ReferralManagementDashboard.getApplication();
+				var name="Some Task";
+
+				var names=_currentListModule.getItems().map(function(task){
+					return task.getName();
+				});
+
+				var i=2;
+
+				while(names.indexOf(name)>=0){
+					name="Some Task "+i;
+					i++;
+				}
+
 				var task=new TaskTemplateItem(viewControllerApp.getNamedValue("currentProject"), {
-					name:"Some Task"
+					name:name,
+					dueDate:"In 10 days"
 				});
 
 				_currentListModule.addItem(task, function(){
-
-
+					//callback on load
 				});
 
 			}}
@@ -793,7 +812,9 @@ var TaskItem = (function() {
 				item.addEvent('save', function(){
 
 
-					var items=_currentListModule.getItems();
+					var taskTemplates=_currentListModule.getItems().map(function(task){
+						return task.templateMetadata();
+					});
 
 
 					//console.error(item.getColor());

@@ -931,13 +931,20 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		if (!Auth('memberof', $minAccessLevel, 'group')) {
 			return $this->setError('Not authorized');
 		}
+		$metadata=array();
+		if(isset($json->metadata)){
+			$metadata=json_decode(json_encode($json->metadata),true);
+		}
+		if(!is_array($metadata)){
+			$metadata=array();
+		}
 
 		$updateData = array(
 			'name' => $json->name,
 			'shortName' => $json->shortName ? $json->shortName : $json->name,
 			'description' => $json->description,
 			'type' => $json->category,
-			'metadata' => json_encode(array('color' => $json->color)),
+			'metadata' => json_encode(array_merge($metadata, array('color' => $json->color))),
 		);
 
 		if (key_exists('id', $json)) {
