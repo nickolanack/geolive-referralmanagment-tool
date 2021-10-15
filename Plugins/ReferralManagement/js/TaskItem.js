@@ -694,10 +694,14 @@ var TaskItem = (function() {
 		    getTitle:function(){
 		    	return "Default Tasks For: "+this.getCategory().getName();
 		    }
+
 		});
 
+		var category=NamedCategoryList.getTag(item.getProjectType());
+
 		var item=new CategoryTasks({
-		    category:NamedCategoryList.getTag(item.getProjectType())
+			color:category.getColor(),
+		    category:category
 		});
 
 		return (new ModalFormButtonModule(application, item, {
@@ -759,7 +763,7 @@ var TaskItem = (function() {
 
 
 
-	TaskItem.TaskTemplates=function(callback){
+	TaskItem.TaskTemplates=function(category, callback){
 
 
 		var viewControllerApp = ReferralManagementDashboard.getApplication();
