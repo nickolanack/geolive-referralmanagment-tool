@@ -397,6 +397,29 @@ var TaskItem = (function() {
 
 	});
 
+
+	var TaskTemplateItem=new Class({
+		Extends: TaskItem,
+		save: function(cb) {
+			if (cb) {
+				cb(false);
+			}
+		},
+		setStarred: function(v, cb) {
+			if (cb) {
+				cb(false);
+			}
+		},
+		setPriority: function(v, cb) {
+			if (cb) {
+				cb(false);
+			}
+		}
+
+	});
+
+
+
 	TaskItem.RemoveTask = function(task) {
 		task.fireEvent('remove');
 	};
@@ -427,6 +450,53 @@ var TaskItem = (function() {
 
 	};
 
+	var _currentListModule;
+
+	TaskItem.InitTemplateList = function(listModule) {
+		_currentListModule=listModule;
+	}
+
+	TaskItem.NewTaskTemplateButton = function(item) {
+
+		var module=new ElementModule('button', {
+			html:"Add Task",
+			"className":"inline-btn primary-btn add",
+			events:{click:function(){
+
+			
+
+				var viewControllerApp = ReferralManagementDashboard.getApplication();
+				var task=new TaskTemplateItem(viewControllerApp.getNamedValue("currentProject"), {
+					name:"Some Task"
+				});
+
+				_currentListModule.addItem(task, function(){
+
+
+				});
+
+			}}
+		});
+
+		return module;
+
+
+	}
+
+	
+
+	TaskItem.FormatTaskTemplateModules=function(list, listItem, uiview, listModule){
+
+		
+		list.content.push(new ElementModule('button', {
+		    html:"Remove",
+		    className:"inline-btn remove primary-btn error",
+		    events:{click:function(){
+		    	uiview.remove();
+		    }}
+		}))
+
+	}
 
 	/**
 	 * returns a module arrays
@@ -451,7 +521,10 @@ var TaskItem = (function() {
 		];
 
 
-		if (item.getProjectType() && item.getProjectType() != "") {
+		var category=item.getProjectType();
+
+
+		if (category && category != "") {
 			modalButton = new ModalFormButtonModule(application, new MockDataTypeItem(), {
 				label: "Add default " + item.getProjectType().toLowerCase() + " tasks",
 				formName: "taskDefaultItems",
@@ -507,7 +580,7 @@ var TaskItem = (function() {
 		}
 
 
-		modules.push(TaskItem._defaultTasksInfo());
+		modules.push(TaskItem._defaultTasksInfo(category));
 
 		modules.push(new ElementModule("label", {
 			html: "Incomplete tasks"
@@ -701,7 +774,8 @@ var TaskItem = (function() {
 
 		var item=new CategoryTasks({
 			color:category.getColor(),
-		    category:category
+		    category:category,
+		    mutable:true
 		});
 
 		return (new ModalFormButtonModule(application, item, {
@@ -715,6 +789,20 @@ var TaskItem = (function() {
 				"style":"float:right;"
 			})).addEvent("show", function() {
 				
+
+				item.addEvent('save', function(){
+
+
+					var items=_currentListModule.getItems();
+
+
+					//console.error(item.getColor());
+					category.setColor(item.getColor());
+					category.save(function(){
+
+					});
+
+				});
 
 			})
 
@@ -751,14 +839,26 @@ var TaskItem = (function() {
 	}
 
 
-	TaskItem._defaultTasksInfo=function(){
+	TaskItem._defaultTasksInfo=function(category){
 
-		return (new ElementModule('label', {
+		var label= (new ElementModule('label', {
 			"class": "project-default-tasks-hint pro-tip-hint",
 			html: "Automatic task creation is "+(DashboardConfig.getValue("autoCreateDefaultTasks")?"enabled":"disabled")
-		}))
-	}
+		}));
 
+		TaskItem.TaskTemplates(category, function(tasks){
+			if(tasks.length==0){
+				label.getElement().innerHTML+='<br/><span style="color:crimson;">There are no default tasks for this type</span>';
+			}
+
+		});
+
+
+
+		
+
+		return label;
+	}
 
 
 
@@ -768,25 +868,7 @@ var TaskItem = (function() {
 
 		var viewControllerApp = ReferralManagementDashboard.getApplication();
 
-		var TaskTemplateItem=new Class({
-			Extends: TaskItem,
-			save: function(cb) {
-				if (cb) {
-					cb(false);
-				}
-			},
-			setStarred: function(v, cb) {
-				if (cb) {
-					cb(false);
-				}
-			},
-			setPriority: function(v, cb) {
-				if (cb) {
-					cb(false);
-				}
-			}
-
-		});
+		
 
 
 
