@@ -22182,16 +22182,16 @@
                             "defaultTasksForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 401,
-                            "y": 309
+                            "x": 411,
+                            "y": 319
                         },
                         "children": [
                             "defaultTasksForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 361,
-                                    "y": 510
+                                    "x": 371,
+                                    "y": 520
                                 }
                             }
                         ],
@@ -22272,7 +22272,7 @@
                                                 "insertAtTop": false,
                                                 "targetName": "",
                                                 "getItemListScript": "defaultTasksForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.getItemListScript.js",
-                                                "formatItemListScript": "return list;",
+                                                "formatItemListScript": "defaultTasksForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.formatItemListScript.js",
                                                 "formatListItemModuleScript": "return item;",
                                                 "emptyNamedView": "emptyListView",
                                                 "filterItemsScript": "return true;",
