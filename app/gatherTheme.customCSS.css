@@ -45,6 +45,11 @@ button.form-btn.inline-edit {
     width: 36px;
     margin: 10px;
     margin-right: 0;
+    color:white;
+}
+
+button.form-btn.inline-edit.is-light {
+    color: black;
 }
 
 
