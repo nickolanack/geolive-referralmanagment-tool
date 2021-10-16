@@ -22182,16 +22182,16 @@
                             "defaultTasksForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 431,
-                            "y": 339
+                            "x": 441,
+                            "y": 349
                         },
                         "children": [
                             "defaultTasksForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 391,
-                                    "y": 540
+                                    "x": 401,
+                                    "y": 550
                                 }
                             }
                         ],
@@ -22228,28 +22228,6 @@
                                             }
                                         },
                                         {
-                                            "type": "FormTextField",
-                                            "config": {
-                                                "className": "",
-                                                "label": "Default tasks",
-                                                "placeholder": "",
-                                                "lines": 1,
-                                                "maxChars": 0,
-                                                "mandatory": false,
-                                                "multiEntry": false,
-                                                "muliTemplate": "lines",
-                                                "multiMessage": "add another value",
-                                                "formatter": "none",
-                                                "beforeRenderModuleScript": "",
-                                                "onRenderTextFieldScript": "",
-                                                "formatValueScript": "",
-                                                "getValueScript": " return \"Hello World\"; ",
-                                                "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "",
-                                                "validateValueScript": " return defaultValidationFn() "
-                                            }
-                                        },
-                                        {
                                             "type": "UIListView",
                                             "config": {
                                                 "listClassName": "project-tasks form-list",
@@ -22264,14 +22242,14 @@
                                                 "formOptions": "{}",
                                                 "showDeleteButton": false,
                                                 "deleteItemScript": "defaultBehaviorFn()",
-                                                "initModuleScript": "defaultTasksForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.initModuleScript.js",
+                                                "initModuleScript": "defaultTasksForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.initModuleScript.js",
                                                 "formatModuleScript": "",
                                                 "resolveItemScript": "return item",
-                                                "filterModulesScript": "defaultTasksForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.filterModulesScript.js",
+                                                "filterModulesScript": "defaultTasksForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.filterModulesScript.js",
                                                 "itemButtonsScript": "return [];",
                                                 "insertAtTop": false,
                                                 "targetName": "",
-                                                "getItemListScript": "defaultTasksForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.getItemListScript.js",
+                                                "getItemListScript": "defaultTasksForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.getItemListScript.js",
                                                 "formatItemListScript": "\n\nreturn list;",
                                                 "formatListItemModuleScript": "return item;",
                                                 "emptyNamedView": "emptyListView",
@@ -22284,7 +22262,7 @@
                                             "type": "WizardScriptElement",
                                             "config": {
                                                 "name": "My Custom Script",
-                                                "script": "defaultTasksForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.script.js",
+                                                "script": "defaultTasksForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.script.js",
                                                 "description": "Info about my custom script"
                                             }
                                         }
