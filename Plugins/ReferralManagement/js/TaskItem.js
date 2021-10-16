@@ -544,7 +544,16 @@ var TaskItem = (function() {
 
 
 		if (category && category != "") {
-			modalButton = new ModalFormButtonModule(application, new MockDataTypeItem(), {
+
+
+			var taskGroup=new CategoryTaskTemplateGroup({
+			    category:category,
+			    project:item,
+			    //mutable:true
+			});
+
+
+			modalButton = new ModalFormButtonModule(application, taskGroup/*new MockDataTypeItem()*/, {
 				label: "Add default " + item.getProjectType().toLowerCase() + " tasks",
 				formName: "taskDefaultItems",
 				formOptions: {
@@ -777,11 +786,7 @@ var TaskItem = (function() {
 	};
 
 
-	TaskItem._editDefaultTasks=function(application, item){
-
-
-
-		var CategoryTasks=new Class({
+	var CategoryTaskTemplateGroup=new Class({
 			Extends:MockDataTypeItem,
 		    getTitle:function(){
 		    	return "Default Tasks For: "+this.getCategory().getName();
@@ -789,15 +794,22 @@ var TaskItem = (function() {
 
 		});
 
+
+	TaskItem._editDefaultTasks=function(application, item){
+
+
+
+		
 		var category=NamedCategoryList.getTag(item.getProjectType());
 
-		var item=new CategoryTasks({
+		var taskGroup=new CategoryTaskTemplateGroup({
 			color:category.getColor(),
 		    category:category,
+		    project:item,
 		    mutable:true
 		});
 
-		return (new ModalFormButtonModule(application, item, {
+		return (new ModalFormButtonModule(application, taskGroup, {
 				label: "Edit default tasks",
 				formName: "defaultTasksForm",
 				formOptions: {
@@ -809,7 +821,7 @@ var TaskItem = (function() {
 			})).addEvent("show", function() {
 				
 
-				item.addEvent('save', function(){
+				taskGroup.addEvent('save', function(){
 
 
 					var taskTemplates=_currentListModule.getItems().map(function(task){
@@ -818,7 +830,7 @@ var TaskItem = (function() {
 
 
 					//console.error(item.getColor());
-					category.setColor(item.getColor());
+					category.setColor(taskGroup.getColor());
 					category.setMetadata({
 						taskTemplates:taskTemplates
 					});
@@ -891,23 +903,61 @@ var TaskItem = (function() {
 
 
 		var viewControllerApp = ReferralManagementDashboard.getApplication();
+		var project=false;
 
-		
+		if((!category)||(typeof category=="string"&&category=="")){
+			project=viewControllerApp.getNamedValue("currentProject");
+			category=NamedCategoryList.getTag(project.getProjectType());
+		}
+
+		if(category instanceof Project){
+			project=category;
+			var category=NamedCategoryList.getTag(project.getProjectType());
+		}
+
+		if(category instanceof CategoryTaskTemplateGroup){
+			project=category.getProject();
+			category=category.getCategory();
+		}
+
+
+		if(typeof category=="string"){
+			var category=NamedCategoryList.getTag(category);
+		}
+
+
+		if(project===false){
+			project=viewControllerApp.getNamedValue("currentProject");
+		}
+
+
+		if(category instanceof NamedCategory){
+
+			var meta=category.getMetadata();
+			if(meta&&meta.taskTemplates){
+
+				callback(meta.taskTemplates.map(function(data) {
+					return new TaskTemplateItem(project, data);
+				}));
+				return;
+			}
+
+		}
 
 
 
-	(new AjaxControlQuery(CoreAjaxUrlRoot, 'default_task_templates', {
-		"plugin": "ReferralManagement",
-		"proposal": viewControllerApp.getNamedValue("currentProject").getId()
-	})).addEvent('success', function(resp) {
+		(new AjaxControlQuery(CoreAjaxUrlRoot, 'default_task_templates', {
+			"plugin": "ReferralManagement",
+			"proposal": viewControllerApp.getNamedValue("currentProject").getId()
+		})).addEvent('success', function(resp) {
 
-		callback(resp.taskTemplates.filter(function(data){
-			return !!data.task;
-		}).map(function(data) {
-			return new TaskTemplateItem(viewControllerApp.getNamedValue("currentProject"), data.task);
-		}));
+			callback(resp.taskTemplates.filter(function(data) {
+				return !!data.task;
+			}).map(function(data) {
+				return new TaskTemplateItem(project, data.task);
+			}));
 
-	}).execute();
+		}).execute();
 
 	}
 

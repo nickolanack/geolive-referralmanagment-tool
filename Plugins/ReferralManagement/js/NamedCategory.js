@@ -33,8 +33,7 @@ var NamedCategory = (function() {
 			options.shortName = options.shortName || options.name;
 			options.metadata = options.metadata || {};
 
-			this.parent(options);
-
+			MockDataTypeItem.prototype.initialize.call(this, options);
 
 			this.setName = function(n) {
 				options.name = n
