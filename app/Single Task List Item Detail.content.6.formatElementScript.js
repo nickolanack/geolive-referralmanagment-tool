@@ -1,1 +1,1 @@
-TaskItem.FormatDueDateFieldValue(item, el, fieldValue);
+TaskItem.FormatDueDateFieldValue(item, el, valueEl);
