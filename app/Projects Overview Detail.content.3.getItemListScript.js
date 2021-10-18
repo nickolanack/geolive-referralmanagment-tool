@@ -1,3 +1,7 @@
+ ProjectList.GetUIListItems(item);
+ return;
+ 
+ 
  
  ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
      var proposals=team.getProposals();
