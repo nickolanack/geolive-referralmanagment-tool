@@ -6316,6 +6316,7 @@
                                 "config": {
                                     "listClassName": "projects-list",
                                     "className": "",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "singleProjectListItemDetail",
                                     "shouldRender": true,
@@ -6789,7 +6790,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "",
+                                    "identifier": "task-name",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getName();",
                                     "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.2.config.formatElementScript.js"
@@ -6799,7 +6800,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "",
+                                    "identifier": "task-comments",
                                     "fieldLabelScript": "return \"Comments\";",
                                     "fieldValueScript": "return \"\";",
                                     "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.3.config.formatElementScript.js"
@@ -8342,16 +8343,16 @@
                             "taskDefaultItems.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 248,
-                            "y": 380
+                            "x": 258,
+                            "y": 390
                         },
                         "children": [
                             "taskDefaultItems.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 208,
-                                    "y": 546
+                                    "x": 218,
+                                    "y": 556
                                 }
                             }
                         ],
@@ -8380,7 +8381,7 @@
                                                 "formOptions": "{}",
                                                 "showDeleteButton": false,
                                                 "deleteItemScript": "",
-                                                "initModuleScript": "",
+                                                "initModuleScript": "taskDefaultItems.metadata.children.1.builderMetadata.positions.content.modules.1.config.initModuleScript.js",
                                                 "formatModuleScript": "",
                                                 "resolveItemScript": "return item",
                                                 "filterModulesScript": "return list",
@@ -22217,16 +22218,16 @@
                             "defaultTasksForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 441,
-                            "y": 349
+                            "x": 471,
+                            "y": 379
                         },
                         "children": [
                             "defaultTasksForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 401,
-                                    "y": 550
+                                    "x": 431,
+                                    "y": 580
                                 }
                             }
                         ],
@@ -22299,6 +22300,16 @@
                                                 "name": "My Custom Script",
                                                 "script": "defaultTasksForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.script.js",
                                                 "description": "Info about my custom script"
+                                            }
+                                        },
+                                        {
+                                            "type": "InlineHtml",
+                                            "config": {
+                                                "className": "",
+                                                "text": "<div style=\"margin-bottom:100px;\"><\/div>",
+                                                "template": "",
+                                                "templateVariablesScript": "",
+                                                "formatTextScript": ""
                                             }
                                         }
                                     ]
