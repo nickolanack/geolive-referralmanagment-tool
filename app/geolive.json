@@ -22218,16 +22218,16 @@
                             "defaultTasksForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 441,
-                            "y": 349
+                            "x": 451,
+                            "y": 359
                         },
                         "children": [
                             "defaultTasksForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 401,
-                                    "y": 550
+                                    "x": 411,
+                                    "y": 547
                                 }
                             }
                         ],
@@ -22300,6 +22300,16 @@
                                                 "name": "My Custom Script",
                                                 "script": "defaultTasksForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.script.js",
                                                 "description": "Info about my custom script"
+                                            }
+                                        },
+                                        {
+                                            "type": "InlineHtml",
+                                            "config": {
+                                                "className": "",
+                                                "text": "<div style=\"margin-bottom:50px;\"><\/div>",
+                                                "template": "",
+                                                "templateVariablesScript": "",
+                                                "formatTextScript": ""
                                             }
                                         }
                                     ]
