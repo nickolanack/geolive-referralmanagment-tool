@@ -22348,7 +22348,7 @@
             "sass": true,
             "widgetTitle": "adminStyles",
             "target": "adminStyles",
-            "customCSS": "",
+            "customCSS": "adminStyles.customCSS.css",
             "sassParamters": [],
             "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
