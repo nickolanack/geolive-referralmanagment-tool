@@ -4808,6 +4808,24 @@
                     "limit": 1
                 },
                 {
+                    "type": "text",
+                    "label": "gatherUrl",
+                    "name": "gatherUrl",
+                    "default": "https:\/\/gather.geoforms.ca\/"
+                },
+                {
+                    "type": "text",
+                    "label": "showMapAnnotationsMain",
+                    "name": "showMapAnnotationsMain",
+                    "default": true
+                },
+                {
+                    "type": "text",
+                    "label": "showMapAnnotationsProject",
+                    "name": "showMapAnnotationsProject",
+                    "default": true
+                },
+                {
                     "type": "boolean",
                     "label": "showSlack",
                     "name": "showSlack",
@@ -5267,7 +5285,10 @@
             "showAltLogo": false,
             "showSlack": true,
             "showSurvey": true,
-            "showDatasets": false
+            "showDatasets": false,
+            "gatherUrl": "https:\/\/gather.geoforms.ca\/",
+            "showMapAnnotationsMain": true,
+            "showMapAnnotationsProject": true
         }
     },
     "widget.154": {
