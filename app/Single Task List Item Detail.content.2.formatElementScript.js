@@ -36,8 +36,8 @@
             })
         });
 
-        
-        
+        valueEl.addClass('editable');
+        return;
     }
     
     edit.addClass('editable');
