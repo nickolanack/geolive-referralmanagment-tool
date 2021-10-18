@@ -22343,15 +22343,16 @@
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
-            "cacheable": false,
-            "link": false,
-            "sass": false,
-            "widgetTitle": "",
-            "target": "none",
+            "cacheable": true,
+            "link": true,
+            "sass": true,
+            "widgetTitle": "adminStyles",
+            "target": "adminStyles",
             "customCSS": "",
             "sassParamters": [],
             "formatSassParametersScript": "return $parameters;",
-            "useRemote": ""
+            "useRemote": "",
+            "readAccess": "public"
         }
     }
 }
