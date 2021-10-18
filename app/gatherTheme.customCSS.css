@@ -63,6 +63,9 @@ button.primary-btn.nav-new-btn, .inline-navigation-menu li.menu-map-add.basemap 
     padding: 5px 10px;
     border-radius: 100px;
     color: #2d2d2d;
+    float: unset;
+    vertical-align: unset;
+    margin: 0;
 }
 
 
