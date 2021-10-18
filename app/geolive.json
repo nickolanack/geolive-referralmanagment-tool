@@ -6790,7 +6790,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "",
+                                    "identifier": "task-name",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getName();",
                                     "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.2.config.formatElementScript.js"
