@@ -45,6 +45,15 @@ $leftPanelColor:#222222;
 
 
 
+.dark .layout-list .file-list .file-item .file-container {
+    overflow: hidden;
+    border-radius: 3px;
+    background: #030310;
+    padding: 0;
+    border-width: 0;
+}
+
+
 
 button.primary-btn.nav-new-btn{
     background-color:$highlightBtnColor;
