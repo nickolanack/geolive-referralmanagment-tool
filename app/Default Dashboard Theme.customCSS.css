@@ -1738,7 +1738,7 @@ ul.item-tags li.min, .task-item.compact ul.item-tags li{
     padding-right: 5px;
 }
 
-span.field-value.duedate>input {
+span.field-value.duedate>input, .task-title input  {
     display:none;
     right: 5px;
     z-index: 1;
@@ -1753,12 +1753,16 @@ span.field-value.duedate>input {
     top: -2px;
     margin-left: 5px;
 }
-span.field-value.duedate.editing>input {
+span.field-value.duedate.editing>input, .task-title .editing input {
     display:inline-block;
 }
-span.field-value.duedate.editing {
+span.field-value.duedate.editing, .task-title .editing{
     font-size: 0;
 }
+
+
+
+
 
 ul.item-tags li {
     list-style: none;
