@@ -1761,6 +1761,17 @@ span.field-value.duedate.editing, .task-title .editing{
 }
 
 
+.pb-c{
+    span.field-value.duedate.editing:before {content: "In";font-size: 12px;}
+    span.field-value.duedate.editing:after {
+        content: "days";font-size: 12px;
+    }
+    
+    span.field-value.duedate.editing>input {
+        width: 40px;
+        margin:0 5px 0 15px;
+    }
+}
 
 
 
