@@ -6800,7 +6800,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "",
+                                    "identifier": "task-comments",
                                     "fieldLabelScript": "return \"Comments\";",
                                     "fieldValueScript": "return \"\";",
                                     "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.3.config.formatElementScript.js"
