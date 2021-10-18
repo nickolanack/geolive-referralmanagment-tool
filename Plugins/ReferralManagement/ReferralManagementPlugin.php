@@ -1137,9 +1137,16 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		include_once __DIR__ . '/lib/DefaultTasks.php';
 		return (new \ReferralManagement\DefaultTasks())->getTemplatesForProposal($proposal);
 	}
-	public function createDefaultProposalTasks($proposal) {
+	public function createDefaultProposalTasks($proposal, $templates=null) {
 		include_once __DIR__ . '/lib/DefaultTasks.php';
-		return (new \ReferralManagement\DefaultTasks())->createTasksForProposal($proposal);
+
+		$taskTemplate= (new \ReferralManagement\DefaultTasks());
+
+		if(!is_null($templates)){
+			$taskTemplate->withTemplateDefinition($templates);
+		}
+
+		return $taskTemplate->createTasksForProposal($proposal);
 	}
 
 	public function listAllUsersMetadata() {

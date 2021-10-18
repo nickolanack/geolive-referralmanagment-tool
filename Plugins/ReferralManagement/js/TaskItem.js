@@ -28,7 +28,7 @@ var TaskItem = (function() {
 	});
 
 
-	
+
 	var SetDueDateTaskQuery = new Class({
 		Extends: AjaxControlQuery,
 		initialize: function(task, duedate) {
@@ -57,7 +57,7 @@ var TaskItem = (function() {
 	var TaskItem = new Class({
 		Extends: DataTypeObject,
 		Implements: [
-			Events, 
+			Events,
 			ItemUsersCollection,
 			ItemStars,
 			ItemDiscussion
@@ -87,24 +87,24 @@ var TaskItem = (function() {
 			var me = this;
 
 			//fix any formatting issues that would otherwise appear to have changed the data
-			data =this._preformatStarsData(data);
+			data = this._preformatStarsData(data);
 
-			var dataChanged=JSON.stringify(data) !== JSON.stringify(me.data);
-			
-			var modifiedDateChanged=data.modifiedDate!==me.data.modifiedDate;
-			
-			var attributesChangedJson=JSON.stringify(data.attributes)!==JSON.stringify(me.data.attributes);
-	
-			var discussionChanged=data.discussion.lastPost!==me.data.discussion.lastPost;
+			var dataChanged = JSON.stringify(data) !== JSON.stringify(me.data);
+
+			var modifiedDateChanged = data.modifiedDate !== me.data.modifiedDate;
+
+			var attributesChangedJson = JSON.stringify(data.attributes) !== JSON.stringify(me.data.attributes);
+
+			var discussionChanged = data.discussion.lastPost !== me.data.discussion.lastPost;
 
 
-			if (modifiedDateChanged||attributesChangedJson||discussionChanged) {
+			if (modifiedDateChanged || attributesChangedJson || discussionChanged) {
 				me._setData(data);
 				me.fireEvent('change');
 				return;
 			}
 
-			if(dataChanged){
+			if (dataChanged) {
 				console.log("data changed though");
 			}
 
@@ -116,10 +116,10 @@ var TaskItem = (function() {
 			me._attributes = attributes;
 
 		},
-		
+
 		_setData: function(data) {
 
-			data=this._preformatStarsData(data);
+			data = this._preformatStarsData(data);
 
 
 			if (!this.data) {
@@ -127,7 +127,7 @@ var TaskItem = (function() {
 			}
 
 			if (data) {
-				this.data = Object.append(this.data || {},  data);
+				this.data = Object.append(this.data || {}, data);
 				this._id = this.data.id;
 			}
 
@@ -219,7 +219,7 @@ var TaskItem = (function() {
 			var me = this;
 			me.fireEvent("saving");
 
-			var data={
+			var data = {
 				itemId: me.getItem().getId(),
 				itemType: me.getItem().getType(),
 				attributes: me._attributes || {},
@@ -229,7 +229,7 @@ var TaskItem = (function() {
 			};
 
 			this._addUsersCollectionFormData(data);
-			
+
 			(new SaveTaskQuery(Object.append(me.data, data))).addEvent('success', function(r) {
 				me._id = r.id;
 				me.data.id = r.id;
@@ -250,7 +250,7 @@ var TaskItem = (function() {
 		},
 		hasDueDate: function() {
 			var me = this;
-			if (typeof me.data.dueDate=="undefined"||me.data.dueDate.indexOf("00-00-00") === 0 || me.data.dueDate.indexOf("0000-00-00") === 0) {
+			if (typeof me.data.dueDate == "undefined" || me.data.dueDate.indexOf("00-00-00") === 0 || me.data.dueDate.indexOf("0000-00-00") === 0) {
 				return false;
 			}
 			return true;
@@ -258,6 +258,28 @@ var TaskItem = (function() {
 		getDueDate: function() {
 			var me = this;
 			return me.data.dueDate || "00-00-00 00:00:00";
+		},
+
+		getFormattedDueDate() {
+
+			var dateString = "No Due Date";
+
+			if (this.hasDueDate()) {
+
+				var date=this.getDueDate();
+				dateString = date;
+				var num=date=parseInt(date);
+				if(date+""==num&&num>0){
+					dateString="in "+num+" day"+(num==1?"":"s");
+				}
+
+				
+				if (dateString.indexOf('in ') !== 0) {
+					dateString = moment(this.getDueDate()).fromNow();
+				}
+			}
+
+			return dateString;
 		},
 
 		getModifiedDate: function() {
@@ -309,8 +331,8 @@ var TaskItem = (function() {
 			var me = this;
 			return me.hasDueDate() && (!me.isComplete()) && (new Date(me.getDueDate()).valueOf() < (new Date()).valueOf());
 		},
-	
-		
+
+
 		hasAttachments: function() {
 			var me = this;
 			return me.getFiles().length > 0;
@@ -375,7 +397,7 @@ var TaskItem = (function() {
 		},
 		getNavigationTags: function() {
 			var me = this;
-			return me.getItem().getNavigationTags?me.getItem().getNavigationTags():[];
+			return me.getItem().getNavigationTags ? me.getItem().getNavigationTags() : [];
 		},
 		addUserListLabel: function() {
 			return 'Assign To Member';
@@ -389,7 +411,7 @@ var TaskItem = (function() {
 			return me.hasUser(AppClient);
 		},
 
-		
+
 		getAvailableUsers: function() {
 			var me = this;
 			return me.getItem().getUsers();
@@ -397,8 +419,140 @@ var TaskItem = (function() {
 
 	});
 
+	TaskItem.FormatNameFieldValue = function(item, el, valueEl) {
 
-	var TaskTemplateItem=new Class({
+		el.addClass('task-title');
+		if (item.isComplete()) {
+			el.addClass('complete');
+
+		}
+
+
+		if (item.getDescription() && item.getDescription() !== "") {
+			el.addClass('with-description');
+		}
+
+		var application = ReferralManagementDashboard.getApplication();
+		ReferralManagementDashboard.addItemDiscussionInfo(el, item, application);
+
+
+		var edit = el.appendChild(new Element('span'));
+
+		if (item.getId() <= 0) {
+
+			var input = valueEl.appendChild(new Element('input', {
+
+				type: "text",
+				events: {
+					change: function() {
+						console.log(this.value);
+						item.setName(this.value);
+						valueEl.firstChild.textContent=this.value;
+
+					}
+				}
+			}));
+
+			input.value = item.getName();
+
+			valueEl.addEvent('click', function(e) {
+				e.stopPropagation();
+				valueEl.addClass('editing');
+				input.focus();
+				input.addEvent('blur', function() {
+					valueEl.removeClass('editing');
+				})
+			});
+
+			valueEl.addClass('editable');
+			return;
+		}
+
+		edit.addClass('editable');
+		edit.addEvent("click", function() {
+
+
+			var formName = "taskForm";
+
+
+
+			application.getDisplayController().displayPopoverForm(
+				formName,
+				item, {
+					template: "form"
+				}
+			);
+
+		})
+
+		valueEl.addClass('clickable-task');
+		valueEl.addEvent('click', function() {
+
+
+			application.getDisplayController().displayPopoverForm(
+				"taskDetailPopover",
+				item,
+				application, {}
+			);
+		})
+
+	}
+
+	TaskItem.FormatDueDateFieldValue = function(item, el, valueEl) {
+
+		el.addClass('float-right due-date')
+		if (item.isOverdue()) {
+			el.addClass('overdue');
+			el.parentNode.addClass('overdue');
+		}
+
+		var replacementMap = function(str) {
+
+			return str.replace('days', 'd').replace('day', 'd').replace('hours', 'h').replace('hour', 'h');
+
+		}
+		valueEl.addClass('duedate');
+		var dateString = item.getDueDate();
+		if (dateString.indexOf('in ') !== 0) {
+			dateString = moment(item.getDueDate()).fromNow()
+		}
+		valueEl.setAttribute('data-due-date', item.hasDueDate() ? replacementMap(dateString) : "No Date");
+
+
+		if (item.getId() <= 0) {
+			// return;
+		}
+
+		var input = valueEl.appendChild(new Element('input', {
+
+			type: item.getId() <= 0 ? "number" : "date",
+			events: {
+				change: function() {
+					console.log(this.value);
+					item.setDueDateDay(this.value);
+					valueEl.firstChild.textContent=item.getFormattedDueDate();
+
+				}
+			}
+		}));
+
+		input.value = item.getDueDate().split(' ').shift();
+
+		valueEl.addEvent('click', function(e) {
+			e.stopPropagation();
+			valueEl.addClass('editing');
+			input.focus();
+			input.addEvent('blur', function() {
+				valueEl.removeClass('editing');
+			})
+		});
+
+
+
+	}
+
+
+	var TaskTemplateItem = new Class({
 		Extends: TaskItem,
 		save: function(cb) {
 			if (cb) {
@@ -416,10 +570,10 @@ var TaskItem = (function() {
 			}
 		},
 
-		templateMetadata:function(){
+		templateMetadata: function() {
 			return {
-				name:this.getName(),
-				dueDate:this.getDueDate()
+				name: this.getName(),
+				dueDate: this.getDueDate()
 			}
 		}
 	});
@@ -459,42 +613,44 @@ var TaskItem = (function() {
 	var _currentListModule;
 
 	TaskItem.InitTemplateList = function(listModule) {
-		_currentListModule=listModule;
+		_currentListModule = listModule;
 	}
 
 	TaskItem.NewTaskTemplateButton = function(item) {
 
-		var module=new ElementModule('button', {
-			html:"Add Task",
-			"className":"inline-btn primary-btn add",
-			events:{click:function(){
+		var module = new ElementModule('button', {
+			html: "Add Task",
+			"className": "inline-btn primary-btn add",
+			events: {
+				click: function() {
 
-			
 
-				var viewControllerApp = ReferralManagementDashboard.getApplication();
-				var name="Some Task";
 
-				var names=_currentListModule.getItems().map(function(task){
-					return task.getName();
-				});
+					var viewControllerApp = ReferralManagementDashboard.getApplication();
+					var name = "Some Task";
 
-				var i=2;
+					var names = _currentListModule.getItems().map(function(task) {
+						return task.getName();
+					});
 
-				while(names.indexOf(name)>=0){
-					name="Some Task "+i;
-					i++;
+					var i = 2;
+
+					while (names.indexOf(name) >= 0) {
+						name = "Some Task " + i;
+						i++;
+					}
+
+					var task = new TaskTemplateItem(viewControllerApp.getNamedValue("currentProject"), {
+						name: name,
+						dueDate: "in 7 days"
+					});
+
+					_currentListModule.addItem(task, function() {
+						//callback on load
+					});
+
 				}
-
-				var task=new TaskTemplateItem(viewControllerApp.getNamedValue("currentProject"), {
-					name:name,
-					dueDate:"In 10 days"
-				});
-
-				_currentListModule.addItem(task, function(){
-					//callback on load
-				});
-
-			}}
+			}
 		});
 
 		return module;
@@ -502,17 +658,19 @@ var TaskItem = (function() {
 
 	}
 
-	
 
-	TaskItem.FormatTaskTemplateModules=function(list, listItem, uiview, listModule){
 
-		
+	TaskItem.FormatTaskTemplateModules = function(list, listItem, uiview, listModule) {
+
+
 		list.content.push(new ElementModule('button', {
-		    html:"Remove",
-		    className:"inline-btn remove primary-btn error",
-		    events:{click:function(){
-		    	uiview.remove();
-		    }}
+			html: "Remove",
+			className: "inline-btn remove primary-btn error",
+			events: {
+				click: function() {
+					uiview.remove();
+				}
+			}
 		}))
 
 	}
@@ -530,30 +688,27 @@ var TaskItem = (function() {
 
 
 
-
-
-
 		var modules = [
 
 			TaskItem._newTask(application, item),
-			
+
 		];
 
 
-		var category=item.getProjectType();
+		var category = item.getProjectType();
 
 
 		if (category && category != "") {
 
 
-			var taskGroup=new CategoryTaskTemplateGroup({
-			    category:category,
-			    project:item,
-			    //mutable:true
+			var taskGroup = new CategoryTaskTemplateGroup({
+				category: category,
+				project: item,
+				//mutable:true
 			});
 
 
-			modalButton = new ModalFormButtonModule(application, taskGroup/*new MockDataTypeItem()*/, {
+			modalButton = new ModalFormButtonModule(application, taskGroup /*new MockDataTypeItem()*/ , {
 				label: "Add default " + item.getProjectType().toLowerCase() + " tasks",
 				formName: "taskDefaultItems",
 				formOptions: {
@@ -567,6 +722,14 @@ var TaskItem = (function() {
 
 					var data = wizard.getData();
 					console.log(data);
+
+
+					var taskTemplates = _currentListModule.getItems().map(function(task) {
+						return task.templateMetadata();
+					});
+
+					data.taskTemplates=taskTemplates;
+
 
 
 					var CreateDefaultTaskQuery = new Class({
@@ -595,7 +758,7 @@ var TaskItem = (function() {
 
 
 			modules.push(modalButton);
-			var editDefaultTasksButton=TaskItem._editDefaultTasks(application, item);
+			var editDefaultTasksButton = TaskItem._editDefaultTasks(application, item);
 			RecentItems.colorizeEl(editDefaultTasksButton.getElement(), item.getProjectType());
 			modules.push(editDefaultTasksButton);
 
@@ -616,31 +779,28 @@ var TaskItem = (function() {
 
 
 
+		var counterFn = function() {
 
+			var tasks = item.getTasks();
 
-
-		var counterFn=function(){
-
-			var tasks=item.getTasks();
-
-			var onScheduleLabel='create some tasks to get started';
-			if(tasks.length>0){
-				onScheduleLabel=(item.isOnSchedule() ? 'you\'re on schedule' : '<span class="warn">you\'re behind schedule</span>');
+			var onScheduleLabel = 'create some tasks to get started';
+			if (tasks.length > 0) {
+				onScheduleLabel = (item.isOnSchedule() ? 'you\'re on schedule' : '<span class="warn">you\'re behind schedule</span>');
 			}
 
 			return tasks.filter(function(t) {
-					return t.isComplete();
-				}).length + '/' + tasks.length + ' tasks complete, ' + onScheduleLabel
-				
+				return t.isComplete();
+			}).length + '/' + tasks.length + ' tasks complete, ' + onScheduleLabel
+
 		};
-		var counter=new ElementModule("div", {
+		var counter = new ElementModule("div", {
 			"class": "task-subtext",
 			html: counterFn()
 
 		})
 
-		counter.addWeakEvent(item, 'taskChanged', function(){
-			counter.getElement().innerHtml=counterFn();
+		counter.addWeakEvent(item, 'taskChanged', function() {
+			counter.getElement().innerHtml = counterFn();
 		});
 		modules.push(counter);
 
@@ -648,204 +808,200 @@ var TaskItem = (function() {
 
 	};
 
-	TaskItem.TaskListSortMenu=function(contentIndex, sorters, filters){
+	TaskItem.TaskListSortMenu = function(contentIndex, sorters, filters) {
 
-		if(typeof contentIndex!="number"){
-			contentIndex=2;
+		if (typeof contentIndex != "number") {
+			contentIndex = 2;
 		}
 
-		if(!sorters){
-			sorters=ReferralManagementDashboard.taskSorters();
+		if (!sorters) {
+			sorters = ReferralManagementDashboard.taskSorters();
 		}
 
-		if(!filters){
-			filters=ReferralManagementDashboard.taskFilters();
+		if (!filters) {
+			filters = ReferralManagementDashboard.taskFilters();
 		}
 
-		if(typeof contentIndex!="number"){
-			contentIndex=2;
+		if (typeof contentIndex != "number") {
+			contentIndex = 2;
 		}
 
 		var application = ReferralManagementDashboard.getApplication();
 
-		return function(viewer, element){
+		return function(viewer, element) {
 
 
 
-
-			var initialSort="priority";
-
-
-		    if(sorters.filter(function(f){
-	            return f.label===initialSort;
-	        }).length==0){
-		    	initialSort=null;
-	        }
+			var initialSort = "priority";
 
 
-		    var filter=(new ListSortModule(function(){
-		        return viewer.getChildView('content', contentIndex);
-		    }, {
-		        sorters:sorters,
-		        currentSort:initialSort,
-		        currentSortInvert:true
-		    }));
-		    
-		    
+			if (sorters.filter(function(f) {
+					return f.label === initialSort;
+				}).length == 0) {
+				initialSort = null;
+			}
 
 
-		    var initialFilter="complete";
-
-
-		    if(filters.filter(function(f){
-	            return f.label===initialFilter;
-	        }).length==0){
-		    	initialFilter=null;
-	        }
-
-		   	var sort=(new ListFilterModule(function(){
-		        return viewer.getChildView('content', contentIndex);
-		    }, {
-		        filters:filters,
-		        currentFilter:initialFilter,
-		        currentFilterInvert:true
-		    }));
-		    
+			var filter = (new ListSortModule(function() {
+				return viewer.getChildView('content', contentIndex);
+			}, {
+				sorters: sorters,
+				currentSort: initialSort,
+				currentSortInvert: true
+			}));
 
 
 
+			var initialFilter = "complete";
 
-		    application.setNamedValue('taskListFilter', sort);
-		    
-		    return new ModuleArray([filter, sort],{"class":"filter-btns"});
-		    
+
+			if (filters.filter(function(f) {
+					return f.label === initialFilter;
+				}).length == 0) {
+				initialFilter = null;
+			}
+
+			var sort = (new ListFilterModule(function() {
+				return viewer.getChildView('content', contentIndex);
+			}, {
+				filters: filters,
+				currentFilter: initialFilter,
+				currentFilterInvert: true
+			}));
+
+
+
+			application.setNamedValue('taskListFilter', sort);
+
+			return new ModuleArray([filter, sort], {
+				"class": "filter-btns"
+			});
+
 		}
 	};
 
 
-	TaskItem.OverviewTaskListSortMenu=function(){
+	TaskItem.OverviewTaskListSortMenu = function() {
 
-		return TaskItem.TaskListSortMenu(3, 
-			ReferralManagementDashboard.taskSorters().filter(function(f){
-	            return f.label!=='complete';
-	        }), ReferralManagementDashboard.taskFilters().filter(function(f){
-	            return f.label!=='complete';
-	        }));
+		return TaskItem.TaskListSortMenu(3,
+			ReferralManagementDashboard.taskSorters().filter(function(f) {
+				return f.label !== 'complete';
+			}), ReferralManagementDashboard.taskFilters().filter(function(f) {
+				return f.label !== 'complete';
+			}));
 	}
 
 
-	TaskItem.MainTaskListSortMenu=function(){
+	TaskItem.MainTaskListSortMenu = function() {
 		//@ deprecated
 		return TaskItem.TaskListSortMenu();
 
-		
+
 	};
 
 
 
+	TaskItem.AddListItemEvents = function(listModule, childView, child) {
 
-	TaskItem.AddListItemEvents=function(listModule, childView, child){
-
-		if(child.isPriorityTask()){
+		if (child.isPriorityTask()) {
 			childView.getElement().addClass('priority');
 		}
 
-		childView.runOnceOnLoad(function(){
-    
-    
-    
-		    childView.addWeakEvent(child, "saving", function(){
-		        childView.startSpinner();
-		    });
-		    childView.addWeakEvent(child, "change", function(event){
+		childView.runOnceOnLoad(function() {
 
-		    	if(child.isPriorityTask()){
+
+
+			childView.addWeakEvent(child, "saving", function() {
+				childView.startSpinner();
+			});
+			childView.addWeakEvent(child, "change", function(event) {
+
+				if (child.isPriorityTask()) {
 					childView.getElement().addClass('priority');
-				}else{
+				} else {
 					childView.getElement().removeClass('priority');
 				}
 
 
-		        if(listModule.applyFilterToItem(child)){
-		             childView.redraw();
-		             return;
-		        }
-		        
-		        //no longer passes filter
-		        childView.remove();
-		       
-		    });
-		    
+				if (listModule.applyFilterToItem(child)) {
+					childView.redraw();
+					return;
+				}
+
+				//no longer passes filter
+				childView.remove();
+
+			});
+
 		})
 
-		childView.addWeakEvent(child, 'remove',function(){
-		    childView.remove();
+		childView.addWeakEvent(child, 'remove', function() {
+			childView.remove();
 		});
 
 
 	};
 
 
-	var CategoryTaskTemplateGroup=new Class({
-			Extends:MockDataTypeItem,
-		    getTitle:function(){
-		    	return "Default Tasks For: "+this.getCategory().getName();
-		    }
+	var CategoryTaskTemplateGroup = new Class({
+		Extends: MockDataTypeItem,
+		getTitle: function() {
+			return "Default Tasks For: " + this.getCategory().getName();
+		}
 
-		});
-
-
-	TaskItem._editDefaultTasks=function(application, item){
+	});
 
 
+	TaskItem._editDefaultTasks = function(application, item) {
 
-		
-		var category=NamedCategoryList.getTag(item.getProjectType());
 
-		var taskGroup=new CategoryTaskTemplateGroup({
-			color:category.getColor(),
-		    category:category,
-		    project:item,
-		    mutable:true
+
+		var category = NamedCategoryList.getTag(item.getProjectType());
+
+		var taskGroup = new CategoryTaskTemplateGroup({
+			color: category.getColor(),
+			category: category,
+			project: item,
+			mutable: true
 		});
 
 		return (new ModalFormButtonModule(application, taskGroup, {
-				label: "Edit default tasks",
-				formName: "defaultTasksForm",
-				formOptions: {
-					template: "form"
-				},
-				hideText: true,
-				"class": "inline-edit",
-				"style":"float:right;"
-			})).addEvent("show", function() {
-				
-
-				taskGroup.addEvent('save', function(){
+			label: "Edit default tasks",
+			formName: "defaultTasksForm",
+			formOptions: {
+				template: "form"
+			},
+			hideText: true,
+			"class": "inline-edit",
+			"style": "float:right;"
+		})).addEvent("show", function() {
 
 
-					var taskTemplates=_currentListModule.getItems().map(function(task){
-						return task.templateMetadata();
-					});
+			taskGroup.addEvent('save', function() {
 
 
-					//console.error(item.getColor());
-					category.setColor(taskGroup.getColor());
-					category.setMetadata({
-						taskTemplates:taskTemplates
-					});
-					category.save(function(){
+				var taskTemplates = _currentListModule.getItems().map(function(task) {
+					return task.templateMetadata();
+				});
 
-					});
+
+				//console.error(item.getColor());
+				category.setColor(taskGroup.getColor());
+				category.setMetadata({
+					taskTemplates: taskTemplates
+				});
+				category.save(function() {
 
 				});
 
-			})
+			});
+
+		})
 
 	}
 
 
-	TaskItem._newTask=function(application, item){
+	TaskItem._newTask = function(application, item) {
 
 
 		var task = new TaskItem(item);
@@ -866,7 +1022,7 @@ var TaskItem = (function() {
 
 	}
 
-	TaskItem._missingProjectTypeInfo=function(){
+	TaskItem._missingProjectTypeInfo = function() {
 
 		return (new ElementModule('label', {
 			"class": "project-type-missing-tasks-hint pro-tip-hint",
@@ -875,66 +1031,63 @@ var TaskItem = (function() {
 	}
 
 
-	TaskItem._defaultTasksInfo=function(category){
+	TaskItem._defaultTasksInfo = function(category) {
 
-		var label= (new ElementModule('label', {
+		var label = (new ElementModule('label', {
 			"class": "project-default-tasks-hint pro-tip-hint",
-			html: "Automatic task creation is "+(DashboardConfig.getValue("autoCreateDefaultTasks")?"enabled":"disabled")
+			html: "Automatic task creation is " + (DashboardConfig.getValue("autoCreateDefaultTasks") ? "enabled" : "disabled")
 		}));
 
-		TaskItem.TaskTemplates(category, function(tasks){
-			if(tasks.length==0){
-				label.getElement().innerHTML+='<br/><span style="color:crimson;">There are no default tasks for this type</span>';
+		TaskItem.TaskTemplates(category, function(tasks) {
+			if (tasks.length == 0) {
+				label.getElement().innerHTML += '<br/><span style="color:crimson;">There are no default tasks for this type</span>';
 			}
 
 		});
 
 
 
-		
-
 		return label;
 	}
 
 
 
-
-	TaskItem.TaskTemplates=function(category, callback){
+	TaskItem.TaskTemplates = function(category, callback) {
 
 
 		var viewControllerApp = ReferralManagementDashboard.getApplication();
-		var project=false;
+		var project = false;
 
-		if((!category)||(typeof category=="string"&&category=="")){
-			project=viewControllerApp.getNamedValue("currentProject");
-			category=NamedCategoryList.getTag(project.getProjectType());
+		if ((!category) || (typeof category == "string" && category == "")) {
+			project = viewControllerApp.getNamedValue("currentProject");
+			category = NamedCategoryList.getTag(project.getProjectType());
 		}
 
-		if(category instanceof Project){
-			project=category;
-			var category=NamedCategoryList.getTag(project.getProjectType());
+		if (category instanceof Project) {
+			project = category;
+			var category = NamedCategoryList.getTag(project.getProjectType());
 		}
 
-		if(category instanceof CategoryTaskTemplateGroup){
-			project=category.getProject();
-			category=category.getCategory();
-		}
-
-
-		if(typeof category=="string"){
-			var category=NamedCategoryList.getTag(category);
+		if (category instanceof CategoryTaskTemplateGroup) {
+			project = category.getProject();
+			category = category.getCategory();
 		}
 
 
-		if(project===false){
-			project=viewControllerApp.getNamedValue("currentProject");
+		if (typeof category == "string") {
+			var category = NamedCategoryList.getTag(category);
 		}
 
 
-		if(category instanceof NamedCategory){
+		if (project === false) {
+			project = viewControllerApp.getNamedValue("currentProject");
+		}
 
-			var meta=category.getMetadata();
-			if(meta&&meta.taskTemplates){
+
+		if (category instanceof NamedCategory) {
+
+			var meta = category.getMetadata();
+			if (meta && meta.taskTemplates) {
 
 				callback(meta.taskTemplates.map(function(data) {
 					return new TaskTemplateItem(project, data);

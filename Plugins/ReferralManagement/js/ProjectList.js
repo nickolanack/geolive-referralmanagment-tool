@@ -56,7 +56,7 @@ var ProjectList = (function() {
 				var filter = this.getLockFilter();
 
 
-				if((!filter)||filter.length==0){
+				if ((!filter) || filter.length == 0) {
 					return null;
 				}
 
@@ -84,8 +84,8 @@ var ProjectList = (function() {
 
 		},
 
-		getPinList:function(){
-			
+		getPinList: function() {
+
 			return new ProjectList({
 
 
@@ -94,11 +94,11 @@ var ProjectList = (function() {
 
 		},
 
-		hasPinList:function(){
+		hasPinList: function() {
 			return false;
 		},
 
-	
+
 
 		isFilteringOnTag: function(tag) {
 
@@ -134,7 +134,15 @@ var ProjectList = (function() {
 				if (!application.getNamedValue("currentProject")) {
 					application.setNamedValue("currentProject", projects[0]);
 				}
-				callback(projects)
+				DashboardConfig.getValue('showDatasets', function(show) {
+					if (!show) {
+						callback(projects.filter(function(project) {
+							return !project.isDataset();
+						}));
+						return;
+					}
+					callback(projects)
+				});
 			});
 
 		}
@@ -142,39 +150,59 @@ var ProjectList = (function() {
 	});
 
 
+	ProjectList.ResolveProjectList = function(item) {
 
-	ProjectList.GetUIListItems=function(item){
+		if (item instanceof ProjectList) {
+			return item;
+		}
 
-
-
-
-
-		if(item.getProjectList){
-		 item.getProjectList(callback);
-		 return;
+		if (item && item.label) {
+			return new ProjectList(item);
 		}
 
 
-		ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+		return new ProjectList({
+			label: "Projects",
+			showCreateBtn: true,
+			filter: null,
+			invertfilter: false
+		})
+	};
 
-		 var projects=team.getProjects();
-		 var application = ReferralManagementDashboard.getApplication();
 
-		 if(!application.getNamedValue("currentProject")){
-		    application.setNamedValue("currentProject", projects[0]);
+	ProjectList.GetUIListItems = function(item, callback) {
+
+
+
+		if (item.getProjectList) {
+			item.getProjectList(callback);
+			return;
 		}
-		DashboardConfig.getValue('showDatasets', function(show) {
-		    if(!show){
-		        callback(projects.filter(function(project){
-		            return !project.isDataset();
-		        }));
-		        return;
-		    }
-		    callback(projects)
-		})
-		})
 
-       
+
+		console.error('Expected item to be an instanceof ProjectList');
+
+
+		ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+
+			var projects = team.getProjects();
+			var application = ReferralManagementDashboard.getApplication();
+
+			if (!application.getNamedValue("currentProject")) {
+				application.setNamedValue("currentProject", projects[0]);
+			}
+			DashboardConfig.getValue('showDatasets', function(show) {
+				if (!show) {
+					callback(projects.filter(function(project) {
+						return !project.isDataset();
+					}));
+					return;
+				}
+				callback(projects)
+			});
+		});
+
+
 	}
 
 	var filters = [{
@@ -345,7 +373,7 @@ var ProjectList = (function() {
 				}
 			}
 		});
-		btn.setAttribute("data-lbl",  options.label)
+		btn.setAttribute("data-lbl", options.label)
 
 		return btn;
 
@@ -562,7 +590,7 @@ var ProjectList = (function() {
 
 
 							/**
-							 * 
+							 *
 							 */
 
 
@@ -686,63 +714,43 @@ var ProjectList = (function() {
 	};
 
 
-	ProjectList.ResolveProjectList=function(item){
 
-		if(item instanceof ProjectList){
-		    return item;
-		}
-
-		if(item&&item.label){
-		    return new ProjectList(item);
-		}
+	ProjectList.ResolveSharedCommunityProjectList = function(item) {
 
 
 		return new ProjectList({
-		    label:"Projects",
-		    showCreateBtn:true,
-		    filter:null,
-		    invertfilter:false
-		})
-	};
 
+			"label": "Datasets & Collections shared with: " + item.getName(),
+			"showCreateBtn": false,
+			"createBtns": [{
+				"label": "Share",
+				"formName": "projectSelectionSomthing"
+			}],
+			"filter": null,
+			"--lockFilter": [ /*"!collection", */ ],
+			"projects": function(cb) {
+				ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+					var projects = team.getProjects();
 
-	ProjectList.ResolveSharedCommunityProjectList=function(item){
+					cb(projects.filter(function(p) {
 
+						//return true;
 
-		return new ProjectList({
-							
-			"label":"Datasets & Collections shared with: "+item.getName(),
-			"showCreateBtn":false,
-			 "createBtns":[{
-					"label":"Share",
-		            "formName":"projectSelectionSomthing"
-		        }
-			],
-			"filter":null,
-			"--lockFilter":[/*"!collection", */],
-			"projects":function(cb){
-			    ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
-					 var projects=team.getProjects();
-					 
-					 cb(projects.filter(function(p){
-					     
-					     //return true;
-					     
-					     if(p.getCommunitiesInvolved().indexOf(item.getName())>=0){
-					         return true;
-					     }
-					     
-					     try {
+						if (p.getCommunitiesInvolved().indexOf(item.getName()) >= 0) {
+							return true;
+						}
+
+						try {
 							var user = team.getUser(p.getProjectSubmitterId());
-					     }catch(e){
-					         return user.getCommunity()==item.getName();
-					         console.error(e);
-					     }
-					     
-					     
-					     return false;
-					 }))
-			    });
+						} catch (e) {
+							return user.getCommunity() == item.getName();
+							console.error(e);
+						}
+
+
+						return false;
+					}))
+				});
 			}
 		})
 

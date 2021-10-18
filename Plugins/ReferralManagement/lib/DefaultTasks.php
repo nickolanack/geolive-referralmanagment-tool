@@ -8,45 +8,33 @@ namespace ReferralManagement;
 
 class DefaultTasks {
 
+	private $templates = null;
+
 	public function createTasksForProposal($proposal) {
+
+		if (is_null($this->templates)) {
+			$this->withConfigTemplates();
+		}
 
 		$taskIds = array();
 		$types = $this->getTypes($proposal);
 
-		foreach ($types as $typeName) {
+		Emit('onCreateDefaultTasksForProposal', array(
+			'proposal' => $proposal,
+		));
 
-			Emit('onCreateDefaultTasksForProposal', array(
-				'proposal' => $proposal,
-				'type' => $typeName,
-			));
+		foreach ($this->templates as $template) {
 
-			$typeVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $typeName)));
+			if ($taskId = GetPlugin('Tasks')->createTask($proposal, 'ReferralManagement.proposal', $template)) {
 
-			$config = GetWidget('proposalConfig');
-			foreach ($config->getParameter('taskNames') as $taskName) {
-				$taskVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $taskName)));
-				if (!empty($taskVar)) {
+				Emit('onCreateDefaultTaskForProposal', array(
+					'proposal' => $proposal,
+					'task' => $taskId,
+					'name' => $taskName,
+					'type' => $typeName,
+				));
+				$taskIds[] = $taskId;
 
-					if ($config->getParameter("show" . ucfirst($taskVar) . "For" . ucfirst($typeVar))) {
-
-						if ($taskId = GetPlugin('Tasks')->createTask($proposal, 'ReferralManagement.proposal', array(
-							"name" => $config->getParameter($taskVar . "Label"),
-							"description" => $config->getParameter($taskVar . "Description"),
-							"dueDate" => $this->parseDueDateString($config->getParameter($taskVar . "DueDate"), $proposal),
-							"complete" => false,
-						))) {
-
-							Emit('onCreateDefaultTaskForProposal', array(
-								'proposal' => $proposal,
-								'task' => $taskId,
-								'name' => $taskName,
-								'type' => $typeName,
-							));
-							$taskIds[] = $taskId;
-
-						}
-					}
-				}
 			}
 
 		}
@@ -55,8 +43,90 @@ class DefaultTasks {
 
 	}
 
+	/**
+	 * @deprecated define task templates for each category. use category->metadata->taskTemplates=[{...},...]	 *
+	 */
+	protected function withConfigTemplates($types) {
 
-	protected function getTypes($proposal){
+		$config = GetWidget('proposalConfig');
+		$this->templates = array();
+
+		foreach ($types as $typeName) {
+
+			$typeVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $typeName)));
+
+			foreach ($config->getParameter('taskNames') as $taskName) {
+				$taskVar = str_replace(' ', '-', str_replace(',', '', str_replace('/', '', $taskName)));
+				if (!empty($taskVar)) {
+
+					if ($config->getParameter("show" . ucfirst($taskVar) . "For" . ucfirst($typeVar))) {
+
+						$this->templates[] = array(
+							"name" => $config->getParameter($taskVar . "Label"),
+							"description" => $config->getParameter($taskVar . "Description"),
+							"dueDate" => $this->parseDueDateString($config->getParameter($taskVar . "DueDate"), $proposal),
+							"complete" => false,
+						);
+					}
+				}
+			}
+		}
+	}
+
+	public function withTemplateDefinition($definition) {
+
+		$this->templates = array();
+		foreach ($definition as $def) {
+
+			if (is_object($def)) {
+				$def == get_object_vars($def);
+			}
+
+			if (!is_array($def)) {
+				throw new \Exception('Invalid task definition');
+			}
+
+			$default = array(
+				'name' => 'Some Task',
+				'description' => '',
+				'dueDate' => 'in 7 days',
+				'complete' => false,
+			);
+
+			$template = array_merge($default, array_intersect_key($def, $default));
+
+			$this->validateTemplate($template);
+			$this->templates[] = $template;
+
+		}
+
+		return $this;
+	}
+
+	protected function validateTemplate($template) {
+
+		$default = $default = array(
+			'name' => 'string',
+			'description' => 'string',
+			'dueDate' => 'string',
+			'complete' => 'boolean',
+		);
+
+		$missing = array_intersect_key($default, $template);
+		if (count($missing)) {
+			throw new \Exception('Missing task template keys: ' . implode(array_keys($missing)));
+		}
+
+		foreach ($default as $key => $type) {
+			$actualType = gettype($template['key']);
+			if ($actualType !== $type) {
+				throw new \Exception('Expected template key: ' . $key . ', to be ' . $type . '.  (' . $actualType . ')');
+			}
+		}
+
+	}
+
+	protected function getTypes($proposal) {
 		GetPlugin('Attributes');
 		$types = (new \attributes\Record('proposalAttributes'))->getValues($proposal, 'ReferralManagement.proposal')['type'];
 
@@ -69,7 +139,6 @@ class DefaultTasks {
 		}
 
 		return $types;
-
 
 	}
 
@@ -90,8 +159,6 @@ class DefaultTasks {
 			"taskTemplates" => array(),
 			"config" => $config->getParameters(),
 		);
-
-
 
 		foreach ($types as $typeVar) {
 
