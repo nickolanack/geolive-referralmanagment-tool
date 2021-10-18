@@ -79,11 +79,11 @@ class DefaultTasks {
 		foreach ($definition as $def) {
 
 			if (is_object($def)) {
-				$def == get_object_vars($def);
+				$def = get_object_vars($def);
 			}
 
 			if (!is_array($def)) {
-				throw new \Exception('Invalid task definition');
+				throw new \Exception('Invalid task definition: '.gettype($def));
 			}
 
 			$default = array(
@@ -112,15 +112,15 @@ class DefaultTasks {
 			'complete' => 'boolean',
 		);
 
-		$missing = array_intersect_key($default, $template);
+		$missing = array_diff_key($default, $template);
 		if (count($missing)) {
-			throw new \Exception('Missing task template keys: ' . implode(array_keys($missing)));
+			throw new \Exception('Missing task template keys: ' . implode(array_keys($missing)).' '.json_encode($template));
 		}
 
 		foreach ($default as $key => $type) {
-			$actualType = gettype($template['key']);
+			$actualType = gettype($template[$key]);
 			if ($actualType !== $type) {
-				throw new \Exception('Expected template key: ' . $key . ', to be ' . $type . '.  (' . $actualType . ')');
+				throw new \Exception('Expected template key: ' . $key . ', to be ' . $type . '.  (' . $actualType . ') '.json_encode($template));
 			}
 		}
 
