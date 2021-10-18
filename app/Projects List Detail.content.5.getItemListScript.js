@@ -10,7 +10,15 @@
      if(!application.getNamedValue("currentProject")){
         application.setNamedValue("currentProject", projects[0]);
     }
-    callback(projects)
+    DashboardConfig.getValue('showDatasets', function(show) {
+        if(!show){
+            callback(projects.filter(function(project){
+                return !project.isDataset();
+            }));
+            return;
+        }
+        callback(projects)
+    })
  })
 
        
