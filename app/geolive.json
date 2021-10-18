@@ -4795,6 +4795,12 @@
                     "limit": 1
                 },
                 {
+                    "type": "boolean",
+                    "label": "showSurvey",
+                    "name": "showSurvey",
+                    "default": true
+                },
+                {
                     "type": "text",
                     "label": "surveyUrl",
                     "name": "surveyUrl",
@@ -5261,7 +5267,8 @@
             "authUserAjaxScript": "XXXX-XXXX",
             "applicationLogoAlt": [],
             "showAltLogo": false,
-            "showSlack": true
+            "showSlack": true,
+            "showSurvey": true
         }
     },
     "widget.154": {
