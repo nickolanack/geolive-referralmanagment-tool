@@ -520,7 +520,11 @@ var DashboardPageLayout = (function() {
 						var project = application.getNamedValue("currentProject");
 						return !(project instanceof MissingProject);
 					}
-				}
+				},
+				{
+					html: "Datasets",
+					config: "showDatasets"
+				},
 
 
 			]
@@ -591,6 +595,10 @@ var DashboardPageLayout = (function() {
 				{
 					html: "Slack Chat",
 					config: "showSlack"
+				},
+				{
+					html: "Survey",
+					config: "showSurvey"
 				}
 			]
 
