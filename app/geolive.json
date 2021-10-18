@@ -4895,6 +4895,12 @@
                 },
                 {
                     "type": "boolean",
+                    "name": "showDatasets",
+                    "default": false,
+                    "label": "showDatasets"
+                },
+                {
+                    "type": "boolean",
                     "name": "enablePending",
                     "default": false,
                     "label": "enablePending"
@@ -5268,7 +5274,8 @@
             "applicationLogoAlt": [],
             "showAltLogo": false,
             "showSlack": true,
-            "showSurvey": true
+            "showSurvey": true,
+            "showDatasets": false
         }
     },
     "widget.154": {
