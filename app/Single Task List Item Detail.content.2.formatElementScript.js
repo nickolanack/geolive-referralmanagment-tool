@@ -16,7 +16,28 @@
     var edit=el.appendChild(new Element('span'));
     
     if(item.getId()<=0){
-        return;
+        
+        var input=valueEl.appendChild(new Element('input', {
+    
+            type:"text" ,events:{change:function(){
+            console.log(this.value);
+            item.setName(this.value);
+            
+        }}}));
+        
+        input.value=item.getName();
+        
+        valueEl.addEvent('click',function(e){
+            e.stopPropagation();
+            valueEl.addClass('editing');
+            input.focus();
+            input.addEvent('blur',function(){
+                valueEl.removeClass('editing');
+            })
+        });
+
+        
+        
     }
     
     edit.addClass('editable');

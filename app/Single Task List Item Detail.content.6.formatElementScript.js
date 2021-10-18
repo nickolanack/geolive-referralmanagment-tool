@@ -18,12 +18,12 @@ valueEl.setAttribute('data-due-date', item.hasDueDate()?replacementMap(dateStrin
 
 
 if(item.getId()<=0){
-    return;
+   // return;
 }
 
 var input=valueEl.appendChild(new Element('input', {
     
-    type:"date" ,events:{change:function(){
+    type:item.getId()<=0?"number":"date" ,events:{change:function(){
     console.log(this.value);
     item.setDueDateDay(this.value);
     
