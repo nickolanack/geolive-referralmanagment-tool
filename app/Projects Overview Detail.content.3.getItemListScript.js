@@ -1,4 +1,4 @@
- ProjectList.GetUIListItems(item);
+ ProjectList.GetUIListItems(item, callback);
  return;
  
  
