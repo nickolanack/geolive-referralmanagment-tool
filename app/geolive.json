@@ -9311,16 +9311,16 @@
                             "filesListForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 403,
-                            "y": 463
+                            "x": 413,
+                            "y": 473
                         },
                         "children": [
                             "filesListForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 363,
-                                    "y": 629
+                                    "x": 373,
+                                    "y": 639
                                 }
                             }
                         ],
@@ -9339,6 +9339,7 @@
                                             "config": {
                                                 "listClassName": "file-list",
                                                 "className": "file-item droppable-hide",
+                                                "identifier": "",
                                                 "viewType": "view",
                                                 "namedView": "singleFileListItemDetail",
                                                 "shouldRender": true,
