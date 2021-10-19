@@ -2,16 +2,17 @@
 .dark .navigation-menu button.admin-only, .dark .inline-navigation-menu button.admin-only {
     padding: 5px 10px;
     border-radius: 24px;
-    background-color: #efa82c47;
-    box-shadow: 0 0 2px 0.5px #efa82c;
-    color: white;
+    color: #efa82c47;
     font-style: italic;
     
-    &:after{
+    &:before{
         content:"\0f023";
         color:#efa82c;
-        margin-left: 5px;
+        margin-right: 5px;
         font-family: 'FontAwesome';    
     }
     
 }
+
+
+
