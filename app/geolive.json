@@ -22359,15 +22359,43 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "",
-            "target": "none",
-            "templateName": "{target}",
+            "widgetTitle": "Plain InfoWindow",
+            "target": "forTheMap",
+            "templateName": "plainInfoWindow",
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "formatModulesScript": "",
             "notifyViewer": false,
-            "useRemote": ""
+            "useRemote": "",
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": [
+                            "Plain InfoWindow.metadata.positions.title.modules.0.json"
+                        ]
+                    },
+                    "content": {
+                        "modules": [
+                            "Plain InfoWindow.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
         }
     }
 }
