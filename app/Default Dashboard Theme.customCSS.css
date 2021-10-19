@@ -9,6 +9,14 @@ body.body-overlayed>#viewControllerApp>div>div>.ui-view {
 button:focus {outline:0;}
 
 
+.pro-tip-hint.inline-tip{
+    width: 400px;
+    display: block;
+    float: unset;
+    padding-left: 18px;
+}
+
+
 button.inline-edit, .btn.inline-edit, .btn.inline-remove{
    
     &:after {
@@ -79,11 +87,12 @@ button.inline-edit, .btn.inline-edit, .btn.inline-remove{
         width: auto;
         max-width: 16%;
         padding-right:15px;
+        vertical-align: top;
         
         span.indicator-switch {
             margin: 0;
             position: relative;
-            top: -2px;
+            top: 10px;
         }
         
     }

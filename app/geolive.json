@@ -7214,7 +7214,7 @@
                             {
                                 "type": "InlineHtml",
                                 "config": {
-                                    "className": "pro-tip-hint",
+                                    "className": "pro-tip-hint inline-tip",
                                     "text": "You can drag and drop files into this space to add them to the project",
                                     "template": "",
                                     "templateVariablesScript": "",
@@ -7226,6 +7226,7 @@
                                 "config": {
                                     "listClassName": "layout-list",
                                     "className": "",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "singleFilesSectionDetail",
                                     "shouldRender": true,
@@ -9041,6 +9042,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "file-name",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleFileListItemDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
                                     "formatElementScript": ""
@@ -22352,6 +22354,49 @@
             "sassParamters": [],
             "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
+            "readAccess": "public"
+        }
+    },
+    "widget.405": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "Plain InfoWindow",
+            "target": "forTheMap",
+            "templateName": "plainInfoWindow",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "useRemote": "",
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": [
+                            "Plain InfoWindow.metadata.positions.title.modules.0.json"
+                        ]
+                    },
+                    "content": {
+                        "modules": [
+                            "Plain InfoWindow.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
             "readAccess": "public"
         }
     }
