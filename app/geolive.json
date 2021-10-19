@@ -7214,7 +7214,7 @@
                             {
                                 "type": "InlineHtml",
                                 "config": {
-                                    "className": "pro-tip-hint",
+                                    "className": "pro-tip-hint inline-tip",
                                     "text": "You can drag and drop files into this space to add them to the project",
                                     "template": "",
                                     "templateVariablesScript": "",
@@ -7226,6 +7226,7 @@
                                 "config": {
                                     "listClassName": "layout-list",
                                     "className": "",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "singleFilesSectionDetail",
                                     "shouldRender": true,
