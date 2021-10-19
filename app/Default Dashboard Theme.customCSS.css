@@ -3090,7 +3090,7 @@ img.static-map {
         background-position: center;
     }
 
-    .ui-view.left-panel[[data-view="leftPanel"]]{
+    .ui-view.left-panel[data-view="leftPanel"]{
         width:100px;
         min-width:100px;
     }
