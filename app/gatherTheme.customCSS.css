@@ -55,8 +55,24 @@ $leftPanelColor:#222222;
 
 
 
-button.primary-btn.nav-new-btn{
+button.primary-btn.nav-new-btn, .inline-navigation-menu li.menu-map-add.basemap button{
     background-color:$highlightBtnColor;
+}
+
+.inline-navigation-menu li.menu-map-add.basemap button {
+    padding: 5px 10px;
+    border-radius: 100px;
+    color: #2d2d2d;
+    float: unset;
+    vertical-align: unset;
+    margin: 0;
+}
+
+
+.inline-navigation-menu li.menu-map-add.basemap button:before {
+    content: "+ ";
+    font-size: 20px;
+    vertical-align: middle;
 }
 
 
@@ -76,7 +92,7 @@ button.form-btn.inline-edit.is-light {
 }
 
 
- button.primary-btn.nav-new-btn:hover {
+ button.primary-btn.nav-new-btn:hover, .inline-navigation-menu li.menu-map-add.basemap button:hover {
     background-color: $highlightBtnHoverColor; /* */
  }
  

@@ -22338,5 +22338,21 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.404": {
+        "name": "Stylesheet",
+        "instance": "CSS",
+        "parameters": {
+            "cacheable": true,
+            "link": true,
+            "sass": true,
+            "widgetTitle": "adminStyles",
+            "target": "adminStyles",
+            "customCSS": "adminStyles.customCSS.css",
+            "sassParamters": [],
+            "formatSassParametersScript": "return $parameters;",
+            "useRemote": "",
+            "readAccess": "public"
+        }
     }
 }
