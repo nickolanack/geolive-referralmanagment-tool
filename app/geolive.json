@@ -9042,6 +9042,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "file-name",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleFileListItemDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
                                     "formatElementScript": ""
