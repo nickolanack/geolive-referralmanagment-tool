@@ -50,8 +50,14 @@ var MapNavigationMenu = new Class({
 					template: "mainMapDetailOverview"
 				}, {
 					html: "Layers",
-					template: "mainMapDetailLayers"
-				},{
+					template: "mainMapDetailLayers",
+					readAccess: {
+						condition: function() {
+							return AppClient.getUserType() == "admin";
+						},
+						addClass: "admin-only"
+					}
+				}, {
 					html: "Add Basemap",
 					events: {
 						click: function() {
@@ -65,7 +71,7 @@ var MapNavigationMenu = new Class({
 
 							}
 
-						
+
 
 							var newItem = options.item;
 
@@ -81,7 +87,7 @@ var MapNavigationMenu = new Class({
 								ProjectTeam.CurrentTeam().addProject(newItem);
 							});
 
-									
+
 						}
 					}
 				}],
@@ -91,6 +97,12 @@ var MapNavigationMenu = new Class({
 							click: function() {
 								alert('dev: default map layout');
 							}
+						},
+						readAccess: {
+							condition: function() {
+								return AppClient.getUserType() == "admin";
+							},
+							addClass: "admin-only"
 						}
 					}, {
 						html: "List",
@@ -98,6 +110,12 @@ var MapNavigationMenu = new Class({
 							click: function() {
 								alert('dev: split map layout (with left panel)');
 							}
+						},
+						readAccess: {
+							condition: function() {
+								return AppClient.getUserType() == "admin";
+							},
+							addClass: "admin-only"
 						}
 					}
 					// , {
@@ -108,8 +126,7 @@ var MapNavigationMenu = new Class({
 			};
 
 
-			//me.menu = DashboardPageLayout.layoutMenu('mapMenu', me.menu);
-
+			me.menu = DashboardPageLayout.layoutMenu('mapMenu', me.menu);
 			me.process();
 
 		});

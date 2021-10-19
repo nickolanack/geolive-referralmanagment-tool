@@ -61,6 +61,12 @@ var ProjectMap=(function(){
 
 			this._map=dragTile.getMap();
 			var me=this;
+
+
+			this._map.setDefaultView(function(item){
+				console.log('set map view');
+			});
+
 			this._map.setItemEditFn(function(mapitem, options){
 
 				if(parseInt(mapitem.getId())==-1&&(mapitem.getLayer().getId()+"").indexOf("-")>0){
@@ -78,6 +84,8 @@ var ProjectMap=(function(){
 
 
 			
+
+
 
 
 

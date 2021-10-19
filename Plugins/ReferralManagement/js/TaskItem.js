@@ -268,8 +268,8 @@ var TaskItem = (function() {
 
 				var date=this.getDueDate();
 				dateString = date;
-				var num=date=parseInt(date);
-				if(date+""==num&&num>0){
+				var num=parseInt(date);
+				if(date+""==num+""&&num>0){//&&num<2000){
 					dateString="in "+num+" day"+(num==1?"":"s");
 				}
 
@@ -329,6 +329,11 @@ var TaskItem = (function() {
 		},
 		isOverdue: function() {
 			var me = this;
+
+			if(this.getId()<0){
+				return false;
+			}
+
 			return me.hasDueDate() && (!me.isComplete()) && (new Date(me.getDueDate()).valueOf() < (new Date()).valueOf());
 		},
 
@@ -529,7 +534,7 @@ var TaskItem = (function() {
 			events: {
 				change: function() {
 					console.log(this.value);
-					item.setDueDateDay(this.value);
+					item.setDueDate(this.value);
 					valueEl.firstChild.textContent=item.getFormattedDueDate();
 
 				}

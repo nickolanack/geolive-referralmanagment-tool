@@ -95,7 +95,7 @@ var DashboardPageLayout = (function() {
 
 
 			if (!(this._layouts && this._layouts[name])) {
-				return modules;
+				return buttons;
 			}
 
 			return this._layouts[name](buttons);
@@ -255,12 +255,19 @@ var DashboardPageLayout = (function() {
 
 
 						if (shouldFilter) {
+
+
 							var filterValue = me._evalFilterObj(filterObj);
 
 							if (filterValue === false && filterObj.hide === true) {
 
 								item.class = (item.class || "") + " hidden";
 								return true;
+							}
+
+
+							if(filterObj.addClass){
+								item.class = (item.class || "") + " "+filterObj.addClass;
 							}
 
 							return filterValue;
@@ -276,6 +283,46 @@ var DashboardPageLayout = (function() {
 
 
 			});
+
+
+
+			/**
+			 * self defined filters
+			 */
+
+			Object.keys(buttons).forEach(function(menu) {
+
+				buttons[menu] = buttons[menu].filter(function(item) {
+					if (item.readAccess) {
+						filterObj = item.readAccess;
+
+						var filterValue = me._evalFilterObj(filterObj);
+
+						if (filterValue === false && filterObj.hide === true) {
+
+							item.class = (item.class || "") + " hidden";
+							return true;
+						}
+
+
+						if (filterObj.addClass) {
+							item.class = (item.class || "") + " " + filterObj.addClass;
+						}
+
+						return filterValue;
+
+					}
+
+
+					return true;
+
+				});
+
+
+			});
+
+
+
 
 		}
 
@@ -532,6 +579,34 @@ var DashboardPageLayout = (function() {
 		});
 
 		layout.applyMenuOverrides(buttons, 'project');
+
+		return buttons;
+
+	}).addLayout('mapMenu', function(buttons) {
+
+		layout.applyMenuFilter(buttons, {
+
+			// "Map": [{
+			// 		html: 'Layers',
+			// 		condition: function() {
+			// 			return AppClient.getUserType() == "admin";
+			// 		},
+			// 		addClass:"admin-only"
+			// 	}
+			// ],
+			// "Layout": [{
+			// 		html: ['Split', 'List'],
+			// 		condition: function() {
+			// 			return AppClient.getUserType() == "admin";
+			// 		},
+			// 		addClass:"admin-only"
+			// 	}
+			// ]
+			
+			
+
+		});
+
 
 		return buttons;
 
