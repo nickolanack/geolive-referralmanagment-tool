@@ -511,49 +511,13 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function downloadFiles($json) {
 
-		include_once __DIR__ . '/lib/ComputedData.php';
-		$parser = new \ReferralManagement\ComputedData();
 
-		$localPath = function ($url) {
-			if ((new \core\html\Path())->isHostedLocally($url)) {
-				return PathFrom($url);
-			}
-
-			return $url;
-		};
-
-		$data = $this->getPlugin()->getProposalData($json->proposal);
-
-		$zip = new ZipArchive();
-		$filename = tempnam(__DIR__, '_zip');
-
-		if ($zip->open($filename, ZipArchive::CREATE) !== TRUE) {
-			exit("cannot open <" . $filename . ">\n");
+		if (!Auth('write', $json->proposal, 'ReferralManagement.proposal')) {
+			return $this->setError('No access or does not exist');
 		}
 
-		foreach (array_map($localPath, $parser->parseProposalFiles($data)) as $url) {
-			$zip->addFromString(basename($url), file_get_contents($url));
-		}
-
-		foreach ($data['tasks'] as $task) {
-			foreach (array_map($localPath, $parser->parseTaskFiles($task)) as $url) {
-				$zip->addFromString(basename($url), file_get_contents($url));
-			}
-		}
-
-		$zip->close();
-		$content = file_get_contents($filename);
-		unlink($filename);
-
-		$title = $data['attributes']['title'];
-
-		header("Content-Type: application/zip");
-		header("Content-Length: " . mb_strlen($content, "8bit"));
-		header("Content-Disposition: attachment; filename=\"" . $title . "-attachments-" . time() . ".zip\"");
-		exit($content);
-
-		return array('files' => $data['files'], 'proposal' => $data);
-
+		include_once __DIR__ . '/lib/FileExport.php';
+		(new \ReferralManagement\FileExport())->downloadProjectFiles($json->proposal);
 	}
 
 	protected function getReserveMetadata($json) {

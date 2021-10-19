@@ -65,6 +65,7 @@ var ProjectMap=(function(){
 
 			this._map.setDefaultView(function(item){
 				console.log('set map view');
+				return 'plainInfoWindow';
 			});
 
 			this._map.setItemEditFn(function(mapitem, options){

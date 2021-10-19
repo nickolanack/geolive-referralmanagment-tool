@@ -14,7 +14,8 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 \core\TaskProvider,
 \core\AjaxControllerProvider,
 \core\DatabaseProvider,
-\core\EventListener {
+\core\EventListener,
+\core\UrlEncoderDecoder {
 
 	protected $description = 'ReferralManagement specific views, etc.';
 
@@ -31,6 +32,21 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 
 
+
+
+
+	public function decodePathSegments($segments){
+
+        $vars=array();
+        return $vars;
+    }
+
+    /**
+     * @SuppressWarnings("unused") 
+     */
+    public function encodeUrlVariables(&$variables) {
+        
+    }
 
 
 

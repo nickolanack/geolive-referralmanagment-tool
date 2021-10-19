@@ -1045,7 +1045,7 @@ var TaskItem = (function() {
 
 		TaskItem.TaskTemplates(category, function(tasks) {
 			if (tasks.length == 0) {
-				label.getElement().innerHTML += '<br/><span style="color:crimson;">There are no default tasks for this type</span>';
+				label.getElement().innerHTML += '<br/><span style="color:crimson;">There are no default tasks</span>';
 			}
 
 		});
