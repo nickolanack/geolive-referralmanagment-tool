@@ -3963,7 +3963,65 @@ span.navigation-menu.settings-menu {
 }
 
 
+[data-view="groupListsProjectDetail"]{
+     @media screen and (max-width: 1000px) {
 
+        div.field-value-module.inline{
+             width:200px;
+             span{
+                 max-width:200px;
+             }
+        }
+    
+     }
+    
+    
+     @media screen and (max-width: 8250px) {
+         
+        .field-value-module.inline{
+    
+           &[data-col="attachments"]{
+                font-size:0;
+                width: 50px;
+           }
+        
+           &[data-col="type"]{
+                 width:90px;
+                 span{
+                     max-width:80px;
+                 }
+        
+           }
+           
+       }
+       
+     }
+    
+    
+     @media screen and (max-width: 750px) {
+         
+        div.field-value-module.inline{
+             width:180px;
+             span{
+                 max-width:170px;
+             }
+        }
+    
+    }
+    
+    
+     @media screen and (max-width: 700px) {
+         
+    
+        div.field-value-module.inline{
+             width:140px;
+             span{
+                 max-width:130px;
+             }
+        }
+    
+    }
+}
 
 
 
