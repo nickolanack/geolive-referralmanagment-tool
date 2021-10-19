@@ -15429,6 +15429,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "",
                                     "fieldLabelScript": "singleTaskOverviewDetail.metadata.positions.content.modules.1.config.fieldLabelScript.js",
                                     "fieldValueScript": "return item.getName()",
                                     "formatElementScript": "singleTaskOverviewDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
@@ -15438,6 +15439,7 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "task-detail-view",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "singleTaskListItemDetail",
                                     "shouldRender": true,
@@ -15489,7 +15491,8 @@
                                     "className": "",
                                     "text": "<h3>Comments<\/h3>",
                                     "template": "",
-                                    "templateVariablesScript": ""
+                                    "templateVariablesScript": "",
+                                    "formatTextScript": ""
                                 }
                             },
                             {
@@ -15517,7 +15520,8 @@
                                     "className": "",
                                     "text": "<h3>Attachments<\/h3>",
                                     "template": "",
-                                    "templateVariablesScript": ""
+                                    "templateVariablesScript": "",
+                                    "formatTextScript": ""
                                 }
                             },
                             {
@@ -15525,6 +15529,7 @@
                                 "config": {
                                     "listClassName": "file-list",
                                     "className": "inset-item file-item droppable-hide",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "singleFileListItemDetail",
                                     "shouldRender": true,
