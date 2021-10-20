@@ -3907,7 +3907,7 @@ span.navigation-menu.settings-menu {
     @media screen and (max-width: 2000px) {
     
         div.field-value-module.inline{
-             width:200px;
+             max-width:200px;
              span{
                  max-width:200px;
              }
@@ -3941,7 +3941,7 @@ span.navigation-menu.settings-menu {
      @media screen and (max-width: 1500px) {
          
         div.field-value-module.inline{
-             width:180px;
+             max-width:180px;
              span{
                  max-width:170px;
              }
@@ -3954,7 +3954,7 @@ span.navigation-menu.settings-menu {
          
     
         div.field-value-module.inline{
-             width:140px;
+             max-width:140px;
              span{
                  max-width:130px;
              }
@@ -3989,7 +3989,7 @@ span.navigation-menu.settings-menu {
      @media screen and (max-width: 4000px) {
 
         div.field-value-module.inline{
-             width:200px;
+             max-width:200px;
              span{
                  max-width:200px;
              }
@@ -4023,7 +4023,7 @@ span.navigation-menu.settings-menu {
      @media screen and (max-width: 3000px) {
          
         div.field-value-module.inline{
-             width:180px;
+             max-width:180px;
              span{
                  max-width:170px;
              }
@@ -4036,7 +4036,7 @@ span.navigation-menu.settings-menu {
          
     
         div.field-value-module.inline{
-             width:140px;
+             max-width:140px;
              span{
                  max-width:130px;
              }
