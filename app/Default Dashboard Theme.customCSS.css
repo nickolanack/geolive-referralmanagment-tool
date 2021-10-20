@@ -3923,7 +3923,7 @@ span.navigation-menu.settings-menu {
            &[data-col="attachments"]{
                 font-size:0;
                 width: 50px;
-                &sortable .download-link{
+                &.sortable .download-link{
                     display:none;
                 }
            }
@@ -4008,7 +4008,7 @@ span.navigation-menu.settings-menu {
            &[data-col="attachments"]{
                 font-size:0;
                 width: 50px;
-                &sortable .download-link{
+                &.sortable .download-link{
                     display:none;
                 }
            }
