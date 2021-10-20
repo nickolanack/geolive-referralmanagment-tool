@@ -2531,14 +2531,24 @@ button.inline-btn.add:hover{
 }
 
 
-.ui-view.priority-high:before, .ui-view.priority:before {
-    width: 4px;
-    height: 100%;
-    background-color: crimson;
-    position: absolute;
-    left: -4px;
-    content: "";
-    top: 0;
+.ui-view.priority-high, .ui-view.priority {
+    
+    &:before{
+        width: 4px;
+        height: 100%;
+        background-color: crimson;
+        position: absolute;
+        left: -4px;
+        content: "";
+        top: 0;
+    }
+    
+    
+    &.complete:before {
+        opacity:0.3;
+        background-color: mediumseagreen;
+     }
+    
 }
 
 
