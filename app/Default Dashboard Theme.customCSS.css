@@ -3923,6 +3923,9 @@ span.navigation-menu.settings-menu {
            &[data-col="attachments"]{
                 font-size:0;
                 width: 50px;
+                &sortable .download-link{
+                    display:none;
+                }
            }
         
            &[data-col="type"]{
@@ -4005,6 +4008,9 @@ span.navigation-menu.settings-menu {
            &[data-col="attachments"]{
                 font-size:0;
                 width: 50px;
+                &sortable .download-link{
+                    display:none;
+                }
            }
         
            &[data-col="type"]{
