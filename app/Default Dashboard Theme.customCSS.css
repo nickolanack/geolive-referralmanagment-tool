@@ -4064,6 +4064,20 @@ span.navigation-menu.settings-menu {
         }
     
     }
+    
+    @media screen and (max-width: 1600px) {
+         
+    
+        div.field-value-module.inline{
+            &[data-col="user"]{
+                max-width:90px;
+                span{
+                    max-width:80px;
+                }
+            } 
+        }
+    
+    }
 }
 
 
