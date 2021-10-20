@@ -4078,6 +4078,20 @@ span.navigation-menu.settings-menu {
         }
     
     }
+    
+    
+      @media screen and (max-width: 1400px) {
+        div.field-value-module.inline{
+             &[data-col="type"]{
+                width:50px;
+                span{
+                    width: 24px;
+                    font-size: 0;
+                }
+             }
+    
+        }
+    }
 }
 
 
