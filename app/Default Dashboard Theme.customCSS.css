@@ -3961,6 +3961,27 @@ span.navigation-menu.settings-menu {
         }
     
     }
+    
+     @media screen and (max-width: 1100px) {
+         
+    
+        div.field-value-module.inline{
+            &[data-col="modified"]{
+                display:none;
+            } 
+        }
+    
+    }
+    @media screen and (max-width: 900px) {
+         
+    
+        div.field-value-module.inline{
+            &[data-col="created"]{
+                display:none;
+            } 
+        }
+    
+    }
 }
 
 
