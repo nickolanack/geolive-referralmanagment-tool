@@ -3964,7 +3964,7 @@ span.navigation-menu.settings-menu {
 
 
 [data-view="groupListsProjectDetail"]{
-     @media screen and (max-width: 1000px) {
+     @media screen and (max-width: 4000px) {
 
         div.field-value-module.inline{
              width:200px;
@@ -3976,7 +3976,7 @@ span.navigation-menu.settings-menu {
      }
     
     
-     @media screen and (max-width: 825px) {
+     @media screen and (max-width: 3300px) {
          
         .field-value-module.inline{
     
@@ -3998,7 +3998,7 @@ span.navigation-menu.settings-menu {
      }
     
     
-     @media screen and (max-width: 750px) {
+     @media screen and (max-width: 3000px) {
          
         div.field-value-module.inline{
              width:180px;
@@ -4010,7 +4010,7 @@ span.navigation-menu.settings-menu {
     }
     
     
-     @media screen and (max-width: 700px) {
+     @media screen and (max-width: 2800px) {
          
     
         div.field-value-module.inline{
