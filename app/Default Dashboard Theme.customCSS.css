@@ -4022,6 +4022,27 @@ span.navigation-menu.settings-menu {
         }
     
     }
+    
+    @media screen and (max-width: 2400px) {
+         
+    
+        div.field-value-module.inline{
+            &[data-col="modified"]{
+                display:none;
+            } 
+        }
+    
+    }
+    @media screen and (max-width: 2000px) {
+         
+    
+        div.field-value-module.inline{
+            &[data-col="created"]{
+                display:none;
+            } 
+        }
+    
+    }
 }
 
 
