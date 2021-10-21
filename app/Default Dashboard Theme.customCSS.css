@@ -1770,7 +1770,7 @@ span.field-value.duedate.editing, .task-title .editing{
 }
 
 
-.pb-c{
+.pb-c .form-list{
     span.field-value.duedate.editing:before {content: "In";font-size: 12px;}
     span.field-value.duedate.editing:after {
         content: "days";font-size: 12px;
