@@ -57,6 +57,11 @@ $leftPanelColor:#222222;
     display:none;
 }
 
+.pb-c [data-view="singleUserTeamCollectionIconsDetail"] .pro-tip-hint {
+    float: unset;
+    padding: 0;
+}
+
 
 
 button.primary-btn.nav-new-btn, .inline-navigation-menu li.menu-map-add.basemap button{
