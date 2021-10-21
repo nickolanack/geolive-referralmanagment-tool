@@ -4935,6 +4935,12 @@
                 },
                 {
                     "type": "boolean",
+                    "name": "showProjectActivity",
+                    "default": true,
+                    "label": "showProjectActivity"
+                },
+                {
+                    "type": "boolean",
                     "name": "enableMap",
                     "default": true,
                     "label": "enableMap"
@@ -5294,7 +5300,8 @@
             "showDatasets": false,
             "gatherUrl": "https:\/\/gather.geoforms.ca\/",
             "showMapAnnotationsMain": true,
-            "showMapAnnotationsProject": true
+            "showMapAnnotationsProject": true,
+            "showProjectActivity": true
         }
     },
     "widget.154": {
