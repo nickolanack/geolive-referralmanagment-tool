@@ -383,6 +383,39 @@ button.public-user-chat {
     background-color: crimson;
 }
 
+
+
+ .withPosts .posts:before  {
+    background-color: transparent;
+}
+ .withPosts .posts {
+     position:relative;
+     margin-left:2px;
+ }
+ .withPosts .posts:after{
+    content: "\0f075";
+    font-family:'FontAwesome';
+    font-size: 18px;
+    margin-left: 8px;
+    line-height: 15px;
+    position:absolute;
+    top: 3px;
+    left: -5px;
+    z-index: -1;
+}
+
+
+.field-value-module.with-description .field-value:after {
+    content:"\0f036";
+    font-family:'FontAwesome';
+    font-size: 14px;
+    margin-left: 8px;
+    line-height: 15px;
+}
+
+
+
+
 li.menu-project-discussion.withPosts:after {
     content: attr(data-counter);
     position: relative;
