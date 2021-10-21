@@ -53,6 +53,10 @@ $leftPanelColor:#222222;
     border-width: 0;
 }
 
+.pb-c [data-view="singleTaskOverviewDetail"] [data-view="singleUserTeamCollectionIconsInlineDetail"] {
+    display:none;
+}
+
 
 
 button.primary-btn.nav-new-btn, .inline-navigation-menu li.menu-map-add.basemap button{
