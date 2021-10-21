@@ -6,7 +6,7 @@ if(!DashboardConfig.getValue("showProjecReports")){
     return null;
 }
 
-return new Element('button',{"html":"Create report", "class":"primary-btn report", "events":{"click":function(){
+return new ElementModule('button',{"data-identifier":"button-report", "html":"Create report", "class":"primary-btn report", "events":{"click":function(){
     
     var exportQuery=new AjaxControlQuery(CoreAjaxUrlRoot, 'generate_report', {
 		                "plugin": "ReferralManagement",
