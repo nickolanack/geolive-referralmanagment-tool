@@ -61,6 +61,17 @@ $leftPanelColor:#222222;
     float: unset;
     padding: 0;
 }
+.pb-c .field-value-module.item-title {
+    
+    /*mimic h2 form headings*/
+    width: unset;
+    margin: 10px 0;
+    font-size: 18px;
+    overflow: visible;
+    white-space: normal;
+    line-height: 26px;
+    font-weight: 100;
+}
 
 
 
