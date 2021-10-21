@@ -1,11 +1,4 @@
-var enabled= DashboardConfig.getValue('enableTasks');
-    
-    if(!enabled){
-        return null;
-    }
-    
-
-    var t=item.getTasks().filter(function(t){
+   var t=item.getTasks().filter(function(t){
         return !t.isComplete();
     });
     var u=t.filter(function(t){

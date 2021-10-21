@@ -1,12 +1,4 @@
 
-
-var enabled= DashboardConfig.getValue('enableProposals');
-    
-    if(!enabled){
-        return null;
-    }
-
-
 var d=item.getDaysUntilDeadline();
 
 return new ModuleArray([
