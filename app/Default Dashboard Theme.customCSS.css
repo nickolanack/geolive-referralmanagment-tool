@@ -385,10 +385,10 @@ button.public-user-chat {
 
 
 
- .withPosts .posts:before  {
+ .withPosts .posts:before, .withItemsIndicator.hasItems .items:before  {
     background-color: transparent;
 }
- .withPosts .posts {
+ .withPosts .posts, .withItemsIndicator.hasItems .items:before {
      position:relative;
      margin-left:2px;
  }
@@ -401,11 +401,11 @@ button.public-user-chat {
     position:absolute;
     top: 3px;
     left: -5px;
-    z-index: -1;
+  
 }
 
 
-.field-value-module.with-description .field-value:after {
+.field-value-module.with-description span.field-value:after {
     content:"\0f036";
     font-family:'FontAwesome';
     font-size: 14px;
