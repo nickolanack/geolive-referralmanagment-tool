@@ -25,4 +25,4 @@ var enabled= DashboardConfig.getValue('enableTasks');
         new ElementModule("label",{html:"Remaining tasks"}),
         new ElementModule("div",{html:str, "class":"percent-complete-value"}),
         new ProgressBarModule({value:function(){ return 100-item.getPercentComplete(); },"class":"percent-complete"})
-    ],{"class":"progress"});
+    ],{"class":"progress", identifier:"project-task-remaining"});
