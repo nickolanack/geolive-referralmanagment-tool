@@ -197,7 +197,7 @@
     font-size: 24px;
 }
 
- .not-complete>.completion-indicator:hover:after {
+ .completion-indicator:hover:after {
     content: "";
     font-family: FontAwesome;
     color: #596f63;
