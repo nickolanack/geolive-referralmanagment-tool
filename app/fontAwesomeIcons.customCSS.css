@@ -197,6 +197,17 @@
     font-size: 24px;
 }
 
+ .not-complete>.completion-indicator:hover:after {
+    content: "";
+    font-family: FontAwesome;
+    color: #596f63;
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    font-size: 24px;
+    
+}
+
 button.download-link:before {content: "\f019";font-family: 'FontAwesome';}
 
 
