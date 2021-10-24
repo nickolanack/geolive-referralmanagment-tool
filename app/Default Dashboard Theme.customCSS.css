@@ -441,6 +441,25 @@ li.menu-project-discussion.withPosts:after {
     pointer-events: auto;
 }
 
+
+.discussion-module {overflow-y: scroll;}
+
+.ui-post-view>div {
+   
+    margin-bottom: 20px;
+    min-width: calc( 100% - 40px );
+    margin-right: 20px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.dark{
+    .ui-post-view>div {
+        background-color: #222222;
+    }
+}
+
 .feed-sub-item .progress-bar.percent-complete, .feed-sub-item .inline-btn.optionlist {
     display: none;
 }
