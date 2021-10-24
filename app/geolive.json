@@ -7328,7 +7328,8 @@
                             {
                                 "type": "FlexibleHeight",
                                 "config": {
-                                    "identifier": "discussion-flexible-height"
+                                    "identifier": "discussion-flexible-height",
+                                    "targetElementScript": "singleProjectDiscussionDetail.metadata.positions.content.modules.2.config.targetElementScript.js"
                                 }
                             }
                         ]
