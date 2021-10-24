@@ -391,6 +391,13 @@ button.primary-btn.nav-new-btn.view-selection:before {
 .inline-navigation-menu li.active {
     border-bottom: 4px solid $highlightBtnColor;
     button {
+        color: $highlightBtnColor;
+    }
+}
+
+.dark .inline-navigation-menu li.active {
+   
+    button {
         color: white;
     }
 }
