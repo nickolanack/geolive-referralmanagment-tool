@@ -7314,11 +7314,21 @@
                                     "height": 200,
                                     "inlineEditing": false,
                                     "inlineReply": true,
+                                    "inlineReplyNamedForm": "",
                                     "emptyMessage": "There are no discussion posts for this proposal",
                                     "channel": "default",
+                                    "resolveChannelScript": "return defaultChannel;",
                                     "resolveItemScript": "return item;",
                                     "initialPostsScript": "return null;",
-                                    "namedView": "defaultPostDetail"
+                                    "namedView": "defaultPostDetail",
+                                    "reverseOrder": false,
+                                    "className": ""
+                                }
+                            },
+                            {
+                                "type": "FlexibleHeight",
+                                "config": {
+                                    "identifier": "discussion-flexible-height"
                                 }
                             }
                         ]
