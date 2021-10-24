@@ -39,22 +39,7 @@ var UIInteraction = (function() {
 				filters: filters,
 				//filter:child.getName(),
 				category:category,
-				item: new ProjectList({
-					"icon": category.getIcon(),
-					"color": category.getColor(),
-					"label": category.getLabelForContent(),
-					"showCreateBtn": false,
-					"createBtns": [{
-						"label": "Add Dataset",
-						"formName": "documentForm"
-					}, {
-						"label": "Add Collection",
-						"formName": "documentProjectForm",
-						"className": "add collection"
-					}],
-					"filter": null,
-					"lockFilter": [ /*"!collection", */ typeName]
-				})
+				item: ProjectList.NamedCategoryProjectList(category)
 			});
 
 		},

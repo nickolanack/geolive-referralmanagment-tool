@@ -14,7 +14,8 @@ var ProjectFilesNavigationMenu = new Class({
 					return v instanceof UIListViewModule;
 				}).pop();
 			},
-			menuId: "filesMenu"
+			menuId: "filesMenu",
+			identifier:"project-files-menu"
 		});
 
 		this.application=application;

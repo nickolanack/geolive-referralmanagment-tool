@@ -1,4 +1,3 @@
-
 var ProjectTeam = (function() {
 
 	var ProjectListQuery = new Class({
@@ -15,7 +14,7 @@ var ProjectTeam = (function() {
 		initialize: function(projectId) {
 			this.parent(CoreAjaxUrlRoot, 'get_project', {
 				plugin: 'ReferralManagement',
-				project:projectId
+				project: projectId
 			});
 		}
 	});
@@ -71,8 +70,6 @@ var ProjectTeam = (function() {
 
 
 
-
-
 	var ProjectTeam = new Class({
 		Extends: DataTypeObject,
 		Implements: [Events],
@@ -85,12 +82,12 @@ var ProjectTeam = (function() {
 			me.type = 'ReferralManagement.team';
 			me._id = 1;
 
-			me._loadUsers(function(){
+			me._loadUsers(function() {
 				me._loadProjects();
 			})
 			me._loadDevices();
 
-			me.addEvent('userListChanged',function(){
+			me.addEvent('userListChanged', function() {
 				me._updateTeamList();
 			})
 
@@ -102,19 +99,19 @@ var ProjectTeam = (function() {
 
 
 		},
-		_updateTeamList:function(){
-			var me=this;
+		_updateTeamList: function() {
+			var me = this;
 			me.getAllUsers(function(list) {
 				me._team = list.filter(function(user) {
 					return user.isTeamMember();
 				});
 			})
 		},
-		_addProject:function(data){
+		_addProject: function(data) {
 
-			var me=this;
-			if(!me._projects){
-				me._projects=[];
+			var me = this;
+			if (!me._projects) {
+				me._projects = [];
 			}
 
 			var p = new Proposal(data.id, Object.append({
@@ -126,18 +123,18 @@ var ProjectTeam = (function() {
 			return p;
 
 		},
-		_updateProject:function(data){
+		_updateProject: function(data) {
 
-			var me=this;
+			var me = this;
 
-			if(data.id){
+			if (data.id) {
 				try {
 
 					var project = me.getProject(data.id);
 					project._setData(data);
 
 				} catch (e) {
-					var p=me._addProject(data);
+					var p = me._addProject(data);
 					me.fireEvent('addProject', [p]);
 					if (p.hasTasks()) {
 						me.fireEvent('tasksChanged');
@@ -148,22 +145,22 @@ var ProjectTeam = (function() {
 			}
 
 
-			var id=parseInt(data);		
-			me._updateProjectWithId(id);	
+			var id = parseInt(data);
+			me._updateProjectWithId(id);
 
-			
+
 
 		},
 
-		_updateProjectWithId:function(id){
+		_updateProjectWithId: function(id) {
 
-			var me=this;
+			var me = this;
 			try {
 
 				var project = me.getProject(id);
-				(new ProjectQuery(id)).addEvent("success", function(resp){
-					
-					if(resp.results.length==0){
+				(new ProjectQuery(id)).addEvent("success", function(resp) {
+
+					if (resp.results.length == 0) {
 						me.removeProject(project);
 						NotificationBubble.Make("", "A project has been removed");
 					}
@@ -178,11 +175,11 @@ var ProjectTeam = (function() {
 
 
 			} catch (e) {
-				
 
-				(new ProjectQuery(id)).addEvent("success", function(resp){
+
+				(new ProjectQuery(id)).addEvent("success", function(resp) {
 					resp.results.forEach(function(result) {
-						var p=me._addProject(result);
+						var p = me._addProject(result);
 						me.fireEvent('addProject', [p]);
 						if (p.hasTasks()) {
 							me.fireEvent('tasksChanged');
@@ -198,8 +195,8 @@ var ProjectTeam = (function() {
 
 		},
 
-		_loadProjects:function(){
-			var me=this;
+		_loadProjects: function() {
+			var me = this;
 			(new ProjectListQuery()).addEvent('success', function(resp) {
 
 				me._projects = [];
@@ -257,24 +254,24 @@ var ProjectTeam = (function() {
 			}).execute();
 
 		},
-		_updateDeviceList:function(res){
-			var me=this;
+		_updateDeviceList: function(res) {
+			var me = this;
 			(new DeviceListQuery(me.getId())).addEvent('success', function(resp) {
 
 				resp.results.forEach(function(user) {
-						try{ 
-							me.getDevice(user.id).setData(user);
-						}catch(e){
-							me._addDevice(user);	
-							me.fireEvent('deviceListChanged')
-						}
+					try {
+						me.getDevice(user.id).setData(user);
+					} catch (e) {
+						me._addDevice(user);
+						me.fireEvent('deviceListChanged')
+					}
 				});
 
 			}).execute();
 
 		},
-		_updateUserList:function(res){
-			var me=this;
+		_updateUserList: function(res) {
+			var me = this;
 			(new UserListQuery(me.getId())).addEvent('success', function(resp) {
 
 				// if(resp.communities){
@@ -282,88 +279,87 @@ var ProjectTeam = (function() {
 				// }
 
 				resp.results.forEach(function(user) {
-					try{
+					try {
 						me.getUser(user.id).setData(user);
-					}catch(e){
-						me._addUser(user);	
+					} catch (e) {
+						me._addUser(user);
 						me.fireEvent('userListChanged')
 					}
 				});
 			}).execute();
 		},
-		_addDevice:function(data){
+		_addDevice: function(data) {
 
-			var me=this;
-			if(!me._devices){
-				me._devices=[];
+			var me = this;
+			if (!me._devices) {
+				me._devices = [];
 			}
 
 			me._devices.push((new Device({
 
-					userType: "user",
-					id: data.id,
-					metadata: data
+				userType: "user",
+				id: data.id,
+				metadata: data
 
-				})).addEvent('update', function() {
-					me.fireEvent('deviceListChanged')
-				})
-			);
+			})).addEvent('update', function() {
+				me.fireEvent('deviceListChanged')
+			}));
 
 		},
-		_loadDevices:function(){
-			var me=this;
+		_loadDevices: function() {
+			var me = this;
 			(new DeviceListQuery()).addEvent('success', function(resp) {
 
 
-				me._devices=[];
+				me._devices = [];
 				resp.results.forEach(function(user) {
-					me._addDevice(user); 
+					me._addDevice(user);
 				});
 
 				if (resp.subscription) {
-                    AjaxControlQuery.Subscribe(resp.subscription, function(result) {
-                       me._updateDeviceList(result);
-                    });
-                }
+					AjaxControlQuery.Subscribe(resp.subscription, function(result) {
+						me._updateDeviceList(result);
+					});
+				}
 
 
-                setInterval(me._updateDevicesOnlineAsync.bind(me), 60000);
-                me._updateDevicesOnlineAsync();
-                
+				setInterval(me._updateDevicesOnlineAsync.bind(me), 60000);
+				me._updateDevicesOnlineAsync();
+
 
 				me.fireEvent('loadDevices');
 
 			}).execute();
 
 		},
-		_updateDevicesOnlineAsync:function(){
-			var me=this;
+		_updateDevicesOnlineAsync: function() {
+			var me = this;
 			(new DevicesOnlineQuery()).addEvent('success', function(resp) {
 
-            	resp.results.forEach(function(device){
-            		me.getDevice(device.id).setOnline(device.online);
-            	});
+				resp.results.forEach(function(device) {
+					me.getDevice(device.id).setOnline(device.online);
+				});
 
-            }).execute();
+			}).execute();
 		},
-		_updateUsersOnlineAsync:function(){
-			var me=this;
+		_updateUsersOnlineAsync: function() {
+			var me = this;
 			(new UsersOnlineQuery()).addEvent('success', function(resp) {
 
-            	resp.results.forEach(function(user){
-            		me.getUser(user.id).setOnline(user.online);
-            	});
+				resp.results.forEach(function(user) {
+					me.getUser(user.id).setOnline(user.online);
+				});
 
-            }).execute();
+			}).execute();
 		},
-		_addUser:function(data){
-			var me=this;
-			if(!me._users){
-				me._users=[];
+		_addUser: function(data) {
+			var me = this;
+			if (!me._users) {
+				me._users = [];
 			}
 
-			
-			var user=(new DashboardUser({
+
+			var user = (new DashboardUser({
 
 				userType: "user",
 				id: data.id,
@@ -373,13 +369,13 @@ var ProjectTeam = (function() {
 				me.fireEvent('userListChanged')
 			})
 
-			if(data.id+""===AppClient.getId()+""){
-				me._currentClient=user;
+			if (data.id + "" === AppClient.getId() + "") {
+				me._currentClient = user;
 
 				AjaxControlQuery.Subscribe({
-					"channel": "user."+AppClient.getId(),
+					"channel": "user." + AppClient.getId(),
 					"event": "notification",
-				}, function(message){
+				}, function(message) {
 
 
 
@@ -389,14 +385,14 @@ var ProjectTeam = (function() {
 
 			me._users.push(user);
 		},
-		_loadUsers:function(callback){
+		_loadUsers: function(callback) {
 
-			var me=this;
+			var me = this;
 
 
 			(new UserListQuery(me.getId())).addEvent('success', function(resp) {
 
-				me._users=[];
+				me._users = [];
 				var currentUser;
 				resp.results.forEach(function(data) {
 					me._addUser(data);
@@ -404,16 +400,14 @@ var ProjectTeam = (function() {
 
 
 
-
-
 				if (resp.subscription) {
-                    AjaxControlQuery.Subscribe(resp.subscription, function(result) {
-                       me._updateUserList(result);
-                    });
-                }
+					AjaxControlQuery.Subscribe(resp.subscription, function(result) {
+						me._updateUserList(result);
+					});
+				}
 
 
-                if(!me._currentClient){
+				if (!me._currentClient) {
 					var ClientUserQuery = new Class({
 						Extends: AjaxControlQuery,
 						initialize: function() {
@@ -425,7 +419,7 @@ var ProjectTeam = (function() {
 						}
 					});
 
-					(new ClientUserQuery()).addEvent('success', function(resp){
+					(new ClientUserQuery()).addEvent('success', function(resp) {
 
 						me._addUser(resp.result);
 
@@ -433,8 +427,8 @@ var ProjectTeam = (function() {
 						callback();
 
 						setInterval(me._updateUsersOnlineAsync.bind(me), 60000);
-               			me._updateUsersOnlineAsync();
-						
+						me._updateUsersOnlineAsync();
+
 
 					}).execute()
 
@@ -446,7 +440,7 @@ var ProjectTeam = (function() {
 				callback();
 
 				setInterval(me._updateUsersOnlineAsync.bind(me), 60000);
-               	me._updateUsersOnlineAsync();
+				me._updateUsersOnlineAsync();
 
 			}).execute();
 
@@ -565,7 +559,9 @@ var ProjectTeam = (function() {
 			me.getProjects().forEach(function(p) {
 				tasks = tasks.concat(p.getTasks());
 			});
-			return tasks.filter(function(t){return !t.isComplete()});
+			return tasks.filter(function(t) {
+				return !t.isComplete()
+			});
 		},
 		/**
 		 * returns an object indexed by yyyy-mm-dd containing event name, or names ie: string or array<string>
@@ -600,8 +596,8 @@ var ProjectTeam = (function() {
 			});
 			return events;
 		},
-		hasProject: function(id){
-			var me=this;
+		hasProject: function(id) {
+			var me = this;
 			var prop = me.getAllProjects();
 			for (var i = 0; i < prop.length; i++) {
 				if (prop[i].getId() + "" === id + "") {
@@ -614,8 +610,8 @@ var ProjectTeam = (function() {
 		getProject: function(id, callback) {
 
 			var me = this;
-			if(id instanceof Project){
-				id=id.getId();
+			if (id instanceof Project) {
+				id = id.getId();
 			}
 
 			if (callback) {
@@ -637,7 +633,7 @@ var ProjectTeam = (function() {
 
 			//return prop[0];
 
-			throw 'Proposal does not exist: '+id;
+			throw 'Proposal does not exist: ' + id;
 		},
 		getProposal: function() {
 			var me = this;
@@ -691,23 +687,23 @@ var ProjectTeam = (function() {
 			return me._team.slice(0);
 		},
 
-		getActivatedDevices:function(callback){
+		getActivatedDevices: function(callback) {
 
-			var me=this;
-			if(callback){
-				me.getDevices(function(devices){
-				    callback(devices.filter(function(d){
-				        return d.isActivated();
-				    }))
+			var me = this;
+			if (callback) {
+				me.getDevices(function(devices) {
+					callback(devices.filter(function(d) {
+						return d.isActivated();
+					}))
 				});
 				return;
 			}
 
 
-			return me.getDevices().filter(function(d){
-		        return d.isActivated();
-		    })
-			
+			return me.getDevices().filter(function(d) {
+				return d.isActivated();
+			})
+
 		},
 		getDevices: function(callback) {
 			var me = this;
@@ -737,82 +733,82 @@ var ProjectTeam = (function() {
 			return me._devices.slice(0);
 		},
 
-		listCommunities:function(){
-			var me=this;
+		listCommunities: function() {
+			var me = this;
 
 			if (!me._communities) {
 				if (callback) {
-					me.runOnceOnLoad(function(){
-					    callback(me.listCommunities());
+					me.runOnceOnLoad(function() {
+						callback(me.listCommunities());
 					});
 
 					return null;
 
-			 	}
-			 	throw 'Community list has not been loaded yet. hint: add callback arg to this call';
+				}
+				throw 'Community list has not been loaded yet. hint: add callback arg to this call';
 			}
 
-			if(callback){
+			if (callback) {
 				callback(me._communities);
 			}
 
 			return me._communities;
 		},
 
-		getCommunityMembersAndUnassigned:function(callback){
+		getCommunityMembersAndUnassigned: function(callback) {
 
-			var me=this;
+			var me = this;
 
 
 			if (!me._users) {
 				if (callback) {
-					me.getAllUsers(function(){
-					    callback(me.getCommunityMembersAndUnassigned());
+					me.getAllUsers(function() {
+						callback(me.getCommunityMembersAndUnassigned());
 					});
 
 					return null;
 
-			 	}
-			 	throw 'CommunityMembers list has not been loaded yet. hint: add callback arg to this call';
+				}
+				throw 'CommunityMembers list has not been loaded yet. hint: add callback arg to this call';
 
 			}
 
-			if(callback){
+			if (callback) {
 				callback(me.getCommunityMembersAndUnassigned());
 			}
 
-			return me.getAllUsers().filter(function(u){
-		    	return u.isCommunityMember()||u.isUnassigned();
-		    });
+			return me.getAllUsers().filter(function(u) {
+				return u.isCommunityMember() || u.isUnassigned();
+			});
 
 
 		},
 
-		getCommunityMembers:function(callback){
+		getCommunityMembers: function(callback) {
 
-			var me=this;
+			var me = this;
 
 
 			if (!me._users) {
 				if (callback) {
-					me.getAllUsers(function(){
-					    callback(me.getCommunityMembers());
+					me.getAllUsers(function() {
+						callback(me.getCommunityMembers());
 					});
 
 					return null;
 
-			 	}
-			 	throw 'CommunityMembers list has not been loaded yet. hint: add callback arg to this call';
+				}
+				throw 'CommunityMembers list has not been loaded yet. hint: add callback arg to this call';
 
 			}
 
-			if(callback){
+			if (callback) {
 				callback(me.getCommunityMembers());
 			}
 
-			return me.getAllUsers().filter(function(u){
-		    	return u.isCommunityMember();
-		    });
+			return me.getAllUsers().filter(function(u) {
+				return u.isCommunityMember();
+			});
 
 
 		},
@@ -927,7 +923,7 @@ var ProjectTeam = (function() {
 
 			return me.getProjects().map(function(p) {
 				return p.getCompany();
-			}).filter(function(c){
+			}).filter(function(c) {
 				return !!c;
 			});
 		},
@@ -955,8 +951,8 @@ var ProjectTeam = (function() {
 
 		removeProject: function(p) {
 
-			var me=this;
-			
+			var me = this;
+
 			if (!(p instanceof Proposal)) {
 				throw 'Must be a Proposal';
 			}
@@ -980,11 +976,83 @@ var ProjectTeam = (function() {
 	/*
 	 * @deprecated
 	 */
-	ProjectTeam.GetAllCommunities=function(){
+	ProjectTeam.GetAllCommunities = function() {
 		return UserGroups.AllGroups();
 	}
 
-	ProjectTeam.LimitUserCommunityTagCloudValues= function(module) {
+
+	ProjectTeam.GetProjectUserList = function(item) {
+
+		var application = ReferralManagementDashboard.getApplication();
+
+		var label = "Project team";
+		var subText = "working on this project";
+
+		if (item.getType() === "Tasks.task") {
+			label = "Assigned users";
+			subText = "assigned to this task";
+
+		}
+
+		// if(item.getId()<=0){
+		//     return  new ElementModule("label",{html:"After you save this task you can assign it to a team member", "class":"pro-tip-hint task-users-not-saved-hint"});
+		// }
+
+
+		if (item.getAvailableUsers().length <= 0) {
+			return new ElementModule("label", {
+				html: "If you add members to this project, you can assign this task to a team member",
+				"class": "pro-tip-hint task-users-no-team-hint"
+			});
+		}
+
+		return new ModuleArray([
+			new ElementModule("label", {
+				html: label
+			}),
+			new ElementModule("div", {
+				html: item.getUsers().length + ' user' + (item.getUsers().length == 1 ? ' is' : 's are') + ' ' + subText
+			}),
+			new UIListViewModule(application, item, {
+				getItemList: function(project, callback) {
+					callback(item.getUsers());
+				},
+				formatItemList: function(l) {
+					return l;
+				},
+				detailViewOptions: {
+					namedView: "singleUserListItemDetail",
+					filterModules: function(list, child) {
+						var module = list.content[0];
+						module.addEvent("load:once", function() {
+							setTimeout(function() {
+								new UIPopover(module.getElement(), {
+									title: child.getName(),
+									anchor: UIPopover.AnchorAuto()
+								});
+							}, 200);
+
+						});
+
+
+						return {
+							"content": [module]
+						}; /*only return the icon*/
+					}
+				},
+				className: "icon-list-view ",
+				emptyNamedView: "emptyListView"
+			})
+		], {
+			"class": "inline-list-item users-list-item-icon"
+		});
+
+
+	}
+
+
+
+	ProjectTeam.LimitUserCommunityTagCloudValues = function(module) {
 
 		//modify tag cloud 
 
@@ -1006,71 +1074,68 @@ var ProjectTeam = (function() {
 
 
 
-
-
-
 		});
 	};
 
-	ProjectTeam.FormatTagCloudLanguageValues= function(module) {
+	ProjectTeam.FormatTagCloudLanguageValues = function(module) {
 
 		//modify tag cloud 
 
 		//module.runOnceOnLoad(function() {
 		//
-			/**
-			 * support simple language tags
-			 * ie: 
-			 * [ ..., 
-			 * 	"Wabigoon Lake|Waabigoniiw Saaga'iganiiw Anishinaabeg",
-			 * 	"Northwest Bay|Naicatchewenin", ...] 
-             *
-             * use the first word as the value, display the second
-             * 
-			 */
-			module.setValueFormatter(function(v){
-				return v.split('|').shift();
-			});
-			var cloud = module.getCloud();
+		/**
+		 * support simple language tags
+		 * ie: 
+		 * [ ..., 
+		 * 	"Wabigoon Lake|Waabigoniiw Saaga'iganiiw Anishinaabeg",
+		 * 	"Northwest Bay|Naicatchewenin", ...] 
+		 *
+		 * use the first word as the value, display the second
+		 * 
+		 */
+		module.setValueFormatter(function(v) {
+			return v.split('|').shift();
+		});
+		var cloud = module.getCloud();
 
-			cloud.setWordFormatter(function(word){
-				return word.split('|').pop();
-			});
-			
-		
+		cloud.setWordFormatter(function(word) {
+			return word.split('|').pop();
+		});
+
+
 		//});
 	};
-	ProjectTeam.FormatUserCommunityTagCloud= function(module) {
+	ProjectTeam.FormatUserCommunityTagCloud = function(module) {
 		ProjectTeam.LimitUserCommunityTagCloudValues(module);
 		ProjectTeam.FormatTagCloudLanguageValues(module);
 	};
 
 
-	ProjectTeam.GetAllRoles=function(){
+	ProjectTeam.GetAllRoles = function() {
 		return UserGroups.GetAllRoles();
 	}
 
-	ProjectTeam.GetCommunitiesUserCanEdit=function(){
+	ProjectTeam.GetCommunitiesUserCanEdit = function() {
 
 
-		var user=ProjectTeam.CurrentTeam().getUser(AppClient.getId());
+		var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
 
-		var community=user.getCommunity();
+		var community = user.getCommunity();
 
-		if(community===UserGroups.GetCollective()){
+		if (community === UserGroups.GetCollective()) {
 			return ProjectTeam.GetAllCommunities();
 		}
 
 		return [community];
 	}
 
-	ProjectTeam.GetRolesUserCanAssign=function(){
+	ProjectTeam.GetRolesUserCanAssign = function() {
 
-		if(AppClient.getUserType()=="admin"){
+		if (AppClient.getUserType() == "admin") {
 			return ProjectTeam.GetAllRoles();
 		}
-		var user=ProjectTeam.CurrentTeam().getUser(AppClient.getId());
-		return user.getRolesUserCanAssign();          
+		var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
+		return user.getRolesUserCanAssign();
 
 	}
 
@@ -1086,8 +1151,3 @@ var ProjectTeam = (function() {
 
 
 })();
-
-
-
-
-

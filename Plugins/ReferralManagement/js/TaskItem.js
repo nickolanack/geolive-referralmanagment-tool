@@ -521,6 +521,12 @@ var TaskItem = (function() {
 		if (dateString.indexOf('in ') !== 0) {
 			dateString = moment(item.getDueDate()).fromNow()
 		}
+
+		if(!item.hasDueDate()){
+			el.addClass('no-date');
+		}
+
+
 		valueEl.setAttribute('data-due-date', item.hasDueDate() ? replacementMap(dateString) : "No Date");
 
 
@@ -706,6 +712,9 @@ var TaskItem = (function() {
 		if (category && category != "") {
 
 
+
+
+
 			var taskGroup = new CategoryTaskTemplateGroup({
 				category: category,
 				project: item,
@@ -759,13 +768,29 @@ var TaskItem = (function() {
 				});
 			});
 
+
+			TaskItem.TaskTemplates(category, function(tasks) {
+				if (tasks.length == 0) {
+					modalButton.getElement().addClass('with-no-tasks');
+				}
+
+			});
+
+
 			RecentItems.colorizeEl(modalButton.getElement(), item.getProjectType());
 
 
 			modules.push(modalButton);
-			var editDefaultTasksButton = TaskItem._editDefaultTasks(application, item);
-			RecentItems.colorizeEl(editDefaultTasksButton.getElement(), item.getProjectType());
-			modules.push(editDefaultTasksButton);
+
+
+			var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
+			if (user.isTeamManager()) {
+
+				var editDefaultTasksButton = TaskItem._editDefaultTasks(application, item);
+				RecentItems.colorizeEl(editDefaultTasksButton.getElement(), item.getProjectType());
+				modules.push(editDefaultTasksButton);
+
+			}
 
 
 		} else {
@@ -910,6 +935,10 @@ var TaskItem = (function() {
 
 		if (child.isPriorityTask()) {
 			childView.getElement().addClass('priority');
+		}
+
+		if (child.isComplete()) {
+			childView.getElement().addClass('complete');
 		}
 
 		childView.runOnceOnLoad(function() {

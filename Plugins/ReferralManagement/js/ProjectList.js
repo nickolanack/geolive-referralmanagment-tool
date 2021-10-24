@@ -32,14 +32,18 @@ var ProjectList = (function() {
 			if (this._getAddButtonLabel) {
 				return this._getAddButtonLabel();
 			}
-			return "New project"
+
+			return DashboardConfig.getValue('leftPanelPrimaryBtnLabel');
+		
+			//return "New project"
 		},
 
 		getFormName: function() {
 			if (this._getFormName) {
 				return this._getFormName();
 			}
-			return "ProposalTemplate"
+			return DashboardConfig.getValue('leftPanelPrimaryBtnForm');
+			//return "ProposalTemplate"
 		},
 
 		getCreateBtns: function() {
@@ -713,7 +717,38 @@ var ProjectList = (function() {
 
 	};
 
+	ProjectList.NamedCategoryProjectList=function(category){
 
+
+
+		var btns=[];
+
+
+		if(DashboardConfig.getValue('showDatasets')){
+			btns.push({
+				"label": DashboardConfig.getValue('leftPanelSecondaryBtnLabel'),
+				"formName": DashboardConfig.getValue('leftPanelSecondaryBtnForm'),
+			});
+		}
+		btns.push({
+			"label": DashboardConfig.getValue('leftPanelPrimaryBtnLabel'),
+			"formName": DashboardConfig.getValue('leftPanelPrimaryBtnForm'),
+			"className": "add collection"
+		});
+
+
+		return new ProjectList({
+			"icon": category.getIcon(),
+			"color": category.getColor(),
+			"label": category.getName() +" "+ (DashboardConfig.getValue('showDatasets')?"Datasets & ":"")+(DashboardConfig.getValue('enableProposals')?"Projects":"Collections"),
+			"showCreateBtn": false,
+			"createBtns": btns,
+			"filter": null,
+			"lockFilter": [ /*"!collection", */ category.getName()]
+		});
+
+
+	}
 
 	ProjectList.ResolveSharedCommunityProjectList = function(item) {
 

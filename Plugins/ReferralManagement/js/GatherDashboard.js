@@ -835,18 +835,6 @@ var GatherDashboard = (function() {
 
 
 
-		getProjectFileSections: function(project) {
-			return ProjectFiles.getProjectFileSections(project);
-		},
-		getFileModule: function(file, typeName) {
-			return ProjectFiles.getFileModule(file, typeName);
-		},
-		fileEditButtons: function(item, application, listItem) {
-			return ProjectFiles.fileEditButtons(item, application, listItem);
-		}
-
-
-
 	});
 
 	return new GatherDashboardClass();

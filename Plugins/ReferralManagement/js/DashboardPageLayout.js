@@ -324,6 +324,26 @@ var DashboardPageLayout = (function() {
 
 
 
+		},
+
+		filterIdentifier:function(modules, identifier, condition){
+
+
+
+			var itentifiers=typeof identifier=="string"?[identifier]:identifier;
+			return modules.filter(function(item){
+				return (!(item && item.getIdentifier)) || itentifiers.indexOf(item.getIdentifier())==-1 || condition;
+			});
+
+		},
+
+		filterIdentifierConfig(modules, identifier, configVar){
+			return this.filterIdentifier(modules, identifier, DashboardConfig.getValue(configVar))
+		},
+
+
+		filterIdentifierUser(modules, identifier, user){
+			return this.filterIdentifier(modules, identifier, AppClient.getUserType()===user);
 		}
 
 
@@ -458,9 +478,29 @@ var DashboardPageLayout = (function() {
 		return content;
 	}).addLayout(['mainDocumentsDetail', 'singleProjectFilesDetail'], function(content) {
 
-		content.splice(0, 1);
+		//content.splice(0, 1);
+		
+		content=layout.filterIdentifierUser(content, ['project-files-menu'], 'admin');
 
 		return content;
+	}).addLayout('singleProjectOverviewDetail', function(content){
+
+
+		content=layout.filterIdentifierConfig(content, ['project-task-progress', 'project-task-remaining', 'project-task-deadline', 'project-tasks-overview'], 'enableTasks');
+		content=layout.filterIdentifierConfig(content, 'activity-chart', 'showProjectActivity');//'enableTasks');
+
+
+		content=layout.filterIdentifier(content, ['project-task-progress', 'project-task-remaining', 'project-task-deadline', 'project-tasks-overview'], !layout.currentItem().isDataset());
+		content=layout.filterIdentifier(content, 'activity-chart', !layout.currentItem().isDataset());//'enableTasks');
+
+		
+		return content;
+
+	}).addLayout('singleProjectEditButtonsDetail', function(content){
+
+		content=layout.filterIdentifier(content, ['pending-buttons', 'button-report'], !layout.currentItem().isDataset());//'enableTasks');
+		return content;
+
 	}).addLayout('profileMenu', function(buttons) {
 
 
@@ -527,6 +567,10 @@ var DashboardPageLayout = (function() {
 						}
 
 
+						if(userId==AppClient.getId()){
+							return true;
+						}
+
 
 						if (AppClient.getUserType() == "admin") {
 							return true;
@@ -549,6 +593,12 @@ var DashboardPageLayout = (function() {
 			"Project": [{
 					html: "Tasks",
 					config: "enableTasks"
+				},
+				{
+					html: "Tasks",
+					condition: function(){
+						return (!layout.currentItem().isDataset)||!layout.currentItem().isDataset();
+					}
 				},
 
 				{
@@ -584,30 +634,7 @@ var DashboardPageLayout = (function() {
 
 	}).addLayout('mapMenu', function(buttons) {
 
-		layout.applyMenuFilter(buttons, {
-
-			// "Map": [{
-			// 		html: 'Layers',
-			// 		condition: function() {
-			// 			return AppClient.getUserType() == "admin";
-			// 		},
-			// 		addClass:"admin-only"
-			// 	}
-			// ],
-			// "Layout": [{
-			// 		html: ['Split', 'List'],
-			// 		condition: function() {
-			// 			return AppClient.getUserType() == "admin";
-			// 		},
-			// 		addClass:"admin-only"
-			// 	}
-			// ]
-			
-			
-
-		});
-
-
+		layout.applyMenuFilter(buttons, {});
 		return buttons;
 
 	}).addLayout('mainMenu', function(buttons) {
@@ -705,7 +732,9 @@ var DashboardPageLayout = (function() {
 			'leftPanel',
 			'singleProjectListItemTableDetail',
 			'splitProjectDetail',
-			'groupListsProjectDetail'
+			'groupListsProjectDetail',
+			'singleProjectOverviewDetail',
+			'singleProjectEditButtonsDetail'
 		];
 
 

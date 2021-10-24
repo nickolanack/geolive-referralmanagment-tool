@@ -26,6 +26,13 @@ var ProjectFiles = (function() {
 		},
 
 		getUrl:function(){
+			
+			return this._url;
+		},
+		getDownloadUrl:function(){
+			if(this._option.project){
+				return '/projectfiles/'+this._option.project.getId()+'/'+(this._url.split('/').pop());
+			}
 			return this._url;
 		}
 
@@ -739,7 +746,12 @@ var ProjectFiles = (function() {
 					events: {
 						click: function(e) {
 
-							window.open(listItem.getUrl?listItem.getUrl():listItem, 'Download');
+							if(typeof listItem=="string"&&item.getProject){
+								window.open(new ProjectFile(listItem, {project:item.getProject()}).getDownloadUrl(), 'Download');
+								return;
+							}
+
+							window.open(listItem.getDownloadUrl?listItem.getDownloadUrl():listItem, 'Download');
 						}
 					}
 				}),

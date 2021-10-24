@@ -98,8 +98,7 @@ var ItemPending = (function(){
 		});
 
 
-
-		return new ModuleArray([pending, implemented],{"class":"pending-status"});
+		return new ModuleArray([pending, implemented],{"class":"pending-status", identifier:"pending-buttons"});
 
 
 	};

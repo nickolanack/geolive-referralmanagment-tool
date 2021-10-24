@@ -27,10 +27,15 @@ var ProjectActivityChart=(function(){
 		    }})
 
 		return new ModuleArray([
-		    new ElementModule("label",{html:"Project activity"}),
+		    new ElementModule("label",{
+		    	html:"Project activity"
+		    }),
 		    activityLabel,
 		    chart
-		],{"class":"inline-list-item timesheets-list-item-icon"});
+		],{
+			"class":"inline-list-item timesheets-list-item-icon",
+			"identifier":"activity-chart"
+		});
 
 
 	}

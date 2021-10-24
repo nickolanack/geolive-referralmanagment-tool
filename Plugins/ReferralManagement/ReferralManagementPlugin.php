@@ -37,6 +37,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 	public function decodePathSegments($segments){
 
+		error_log($segments);
         $vars=array();
         return $vars;
     }
