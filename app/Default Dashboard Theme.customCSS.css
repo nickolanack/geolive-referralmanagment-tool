@@ -2589,6 +2589,11 @@ button.inline-btn.add:hover{
     display: inline-block;
 }
 
+.feed-sub-item .user-profile-icon, .feed-sub-item div.user-profile-icon.content, .feed-sub-item .user-profile-icon > span{
+    width: 20px;
+    height: 20px;
+}
+
 
 .ui-view.priority-high, .ui-view.priority {
     
