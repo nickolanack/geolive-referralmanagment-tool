@@ -6603,7 +6603,10 @@
                             "Activity Feed Detail.metadata.positions.content.modules.0.json",
                             {
                                 "type": "FlexibleHeight",
-                                "config": []
+                                "config": {
+                                    "identifier": "",
+                                    "targetElementScript": "Activity Feed Detail.metadata.positions.content.modules.1.config.targetElementScript.js"
+                                }
                             }
                         ]
                     },
