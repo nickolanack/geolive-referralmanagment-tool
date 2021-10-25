@@ -5618,15 +5618,23 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "inset-shading w-full",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "activityFeedDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "return AppClient;",
-                                    "itemButtonsScript": "return [];"
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             }
                         ]
