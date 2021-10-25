@@ -44,6 +44,13 @@ $leftPanelColor:#222222;
 }
 
 
+.discussion-header{
+    border-bottom: 4px solid #5b4825;
+    box-shadow: 13px 12px 10px black;
+    z-index: 1;
+    position: relative;
+}
+
 
 .dark .layout-list .file-list .file-item .file-container {
     overflow: hidden;
