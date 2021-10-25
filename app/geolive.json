@@ -6600,7 +6600,11 @@
                     },
                     "content": {
                         "modules": [
-                            "Activity Feed Detail.metadata.positions.content.modules.0.json"
+                            "Activity Feed Detail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FlexibleHeight",
+                                "config": []
+                            }
                         ]
                     },
                     "footer": {
