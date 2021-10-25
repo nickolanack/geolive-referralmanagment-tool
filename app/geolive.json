@@ -784,7 +784,7 @@
         "parameters": {
             "widgetTitle": "Fit Screen",
             "target": "forTheMap",
-            "offset": "100",
+            "offset": "0",
             "maxHeight": "2000",
             "minHeight": "400",
             "offsetScript": "",
@@ -5618,15 +5618,23 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "inset-shading w-full",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "activityFeedDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
+                                    "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "return AppClient;",
-                                    "itemButtonsScript": "return [];"
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             }
                         ]
@@ -6600,7 +6608,14 @@
                     },
                     "content": {
                         "modules": [
-                            "Activity Feed Detail.metadata.positions.content.modules.0.json"
+                            "Activity Feed Detail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FlexibleHeight",
+                                "config": {
+                                    "identifier": "",
+                                    "targetElementScript": "Activity Feed Detail.metadata.positions.content.modules.1.config.targetElementScript.js"
+                                }
+                            }
                         ]
                     },
                     "footer": {
@@ -15372,16 +15387,16 @@
                             "taskDetailPopover.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 158,
-                            "y": 290
+                            "x": 168,
+                            "y": 300
                         },
                         "children": [
                             "taskDetailPopover.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 118,
-                                    "y": 456
+                                    "x": 128,
+                                    "y": 466
                                 }
                             }
                         ],

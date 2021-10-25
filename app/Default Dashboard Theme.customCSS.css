@@ -2574,12 +2574,24 @@ button.inline-btn.add:hover{
 }
 
 .ui-view.feed-sub-item, .ui-view.feed-sub-item:first-child {
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-top: 1px solid rgba(255, 255, 255, 0.5);;
+    
     margin: 10px;
-    display: inline-table;
-    min-width: 500px;
-    border-radius: 2px;
+    display: block;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(255 255 255 / 10%);
+    box-shadow: 0 0 5px black;
+}
+
+
+
+.feed-sub-item>*>*>div {
+    display: inline-block;
+}
+
+.feed-sub-item .user-profile-icon, .feed-sub-item div.user-profile-icon.content, .feed-sub-item .user-profile-icon > span{
+    width: 20px;
+    height: 20px;
 }
 
 
