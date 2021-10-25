@@ -15,6 +15,6 @@
         "toolbarPosition": "bottom",
         "textFormatScript": "",
         "mediaIconTint": "rgb(100, 149, 237)",
-        "onRenderModuleFn": "module.getTextField().getInputElement().addClass('discussion-textbox');"
+        "onRenderModuleFn": "module.runOnceOnLoad(function(){\n    module.getTextField().getInputElement().addClass('discussion-textbox');\n})"
     }
 }
