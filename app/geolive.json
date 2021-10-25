@@ -7346,6 +7346,29 @@
                                     "identifier": "discussion-flexible-height",
                                     "targetElementScript": "singleProjectDiscussionDetail.metadata.positions.content.modules.2.config.targetElementScript.js"
                                 }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "reply-box",
+                                    "identifier": "",
+                                    "viewType": "form",
+                                    "namedView": "defaultView",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "discussionReplyFrom",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
                             }
                         ]
                     },
