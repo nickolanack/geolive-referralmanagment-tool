@@ -53,6 +53,26 @@ $leftPanelColor:#222222;
     border-width: 0;
 }
 
+.pb-c [data-view="singleTaskOverviewDetail"] [data-view="singleUserTeamCollectionIconsInlineDetail"] {
+    display:none;
+}
+
+.pb-c [data-view="singleUserTeamCollectionIconsDetail"] .pro-tip-hint {
+    float: unset;
+    padding: 0;
+}
+.pb-c .field-value-module.item-title {
+    
+    /*mimic h2 form headings*/
+    width: unset;
+    margin: 10px 0;
+    font-size: 18px;
+    overflow: visible;
+    white-space: normal;
+    line-height: 26px;
+    font-weight: 100;
+}
+
 
 
 button.primary-btn.nav-new-btn, .inline-navigation-menu li.menu-map-add.basemap button{
@@ -370,6 +390,13 @@ button.primary-btn.nav-new-btn.view-selection:before {
 
 .inline-navigation-menu li.active {
     border-bottom: 4px solid $highlightBtnColor;
+    button {
+        color: darken($highlightBtnColor, 20%);
+    }
+}
+
+.dark .inline-navigation-menu li.active {
+   
     button {
         color: white;
     }

@@ -89,7 +89,7 @@
 }
 
 
-.inline-navigation-menu li.menu-user-configuration:before {
+.inline-navigation-menu li.menu-user-configuration>button:before {
     content: "\f013";
     font-family: FontAwesome;
     font-size: 20px;
@@ -195,6 +195,17 @@
     left: -5px;
     top: -5px;
     font-size: 24px;
+}
+
+ .completion-indicator:hover:after {
+    content: "";
+    font-family: FontAwesome;
+    color: #596f63;
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    font-size: 24px;
+    
 }
 
 button.download-link:before {content: "\f019";font-family: 'FontAwesome';}
