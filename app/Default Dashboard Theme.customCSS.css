@@ -2581,6 +2581,10 @@ button.inline-btn.add:hover{
     border:none;
 }
 
+.feed-sub-item>*>*>div {
+    display: inline-block;
+}
+
 
 .ui-view.priority-high, .ui-view.priority {
     
