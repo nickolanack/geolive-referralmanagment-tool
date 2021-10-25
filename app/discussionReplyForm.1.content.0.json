@@ -9,12 +9,12 @@
         "showImages": true,
         "showDocuments": true,
         "showVideos": true,
-        "className": "discussion-textbox",
+        "className": "",
         "maxChars": 0,
         "showExpandInput": true,
         "toolbarPosition": "bottom",
         "textFormatScript": "",
         "mediaIconTint": "rgb(100, 149, 237)",
-        "onRenderModuleFn": ""
+        "onRenderModuleFn": "module.getTextField().getInputElement().addClass('discussion-textbox');"
     }
 }
