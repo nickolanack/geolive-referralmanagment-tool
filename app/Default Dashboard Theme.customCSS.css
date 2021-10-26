@@ -1977,11 +1977,11 @@ ul.item-tags li {
 
 
 .file-browse-btn {
-    background-color: #6A7CE9;
-    border-color: #6A7CE9;
+    background-color: mediumseagrean;
+    border-color: mediumseagrean;
     padding: 2px 5px;
-    min-height: 20px;
-    min-width: 14px;
+    min-height: 30px;
+    min-width: 30px;
     margin-right: 11px;
     background-size: 70%;
     border-radius: 100%;
@@ -1994,13 +1994,13 @@ ul.item-tags li {
 }
 
 .upload-btns .file-browse-btn:after {
-    content: "+";
-    position: absolute;
-    top: -8px;
-    right: -2px;
-    color: #6A7CE9;
-    text-shadow: 0 0 3px black;
-    font-size: 9px;
+  content: "+";
+  position: absolute;
+  top: 4px;
+  left: -17px;
+  color: mediumseagreen;
+  text-shadow: 0 0 3px black;
+  font-size: 20px;
 }
 
 .upload-btns .file-browse-btn {
