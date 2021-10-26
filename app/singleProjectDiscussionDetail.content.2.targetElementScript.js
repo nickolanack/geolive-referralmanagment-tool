@@ -1,3 +1,3 @@
 return viewer.findChildViews(function(v) {
-    return v instanceof DiscussionModule;  				
+    return v instanceof UIViewModule;  				
 }).pop().getElement();
