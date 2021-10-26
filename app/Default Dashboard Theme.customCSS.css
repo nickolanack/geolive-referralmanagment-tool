@@ -3992,7 +3992,7 @@ span.navigation-menu.settings-menu {
 
 
 
-@media screen and (max-width: 1450px) {
+@media screen and (max-height: 1450px) {
     .navigation-menu ul label, .menu-links{
         display:none;
     }    
