@@ -1,3 +1,3 @@
 return viewer.findChildViews(function(v) {
-    return v instanceof TextFieldModule;  				
+    return v instanceof UIViewModule;  				
 }).pop().getElement().getSize().y;
