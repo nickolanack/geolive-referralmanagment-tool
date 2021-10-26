@@ -3991,6 +3991,15 @@ span.navigation-menu.settings-menu {
 }
 
 
+
+@media screen and (max-width: 1450px) {
+    .navigation-menu ul label, .menu-links{
+        display:none;
+    }    
+       
+}
+
+
 [data-view="splitProjectDetail"]{
     @media screen and (max-width: 2000px) {
     
