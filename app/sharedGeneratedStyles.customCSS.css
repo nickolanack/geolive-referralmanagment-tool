@@ -313,7 +313,7 @@ button.btn-search-list {
 
 
     @each $n, $icon in $mediaIcons {
-        .upload-btns span.#{$n}.noIcon {
+        .upload-btns .#{$n}.file-browse-btn {
             background-image:url($icon);
         }
     }
