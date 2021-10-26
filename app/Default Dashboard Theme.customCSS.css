@@ -4002,6 +4002,14 @@ span.navigation-menu.settings-menu {
 }
 
 
+@media screen and (max-height: 1200px) {
+   .navigation-menu ul li {
+        padding: 7px 10px;
+        margin: 3px 0;
+    }
+}
+
+
 [data-view="splitProjectDetail"]{
     @media screen and (max-width: 2000px) {
     
