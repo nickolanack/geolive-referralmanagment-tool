@@ -1933,10 +1933,7 @@ ul.item-tags li {
 }
 
 
-.inline-btn, .nav>.next-btn, .nav>.prev-btn, 
-span.image.noIcon, span.video.noIcon, 
-span.document.noIcon, span.audio.noIcon, 
-span.layer.noIcon, .uilist-pageination button {
+.inline-btn, .nav>.next-btn, .nav>.prev-btn, .file-browse-btn, .uilist-pageination button {
     
     border: 1px solid gray;
     background-color: transparent;
@@ -1979,7 +1976,7 @@ span.layer.noIcon, .uilist-pageination button {
 
 
 
-span.image.noIcon, span.video.noIcon, span.document.noIcon, span.audio.noIcon, span.layer.noIcon {
+.file-browse-btn {
     background-color: #6A7CE9;
     border-color: #6A7CE9;
     padding: 2px 5px;
@@ -1996,7 +1993,7 @@ span.image.noIcon, span.video.noIcon, span.document.noIcon, span.audio.noIcon, s
     background-color: #dddddd;
 }
 
-.upload-btns span.noIcon:after {
+.upload-btns .file-browse-btn:after {
     content: "+";
     position: absolute;
     top: -8px;
@@ -2006,11 +2003,11 @@ span.image.noIcon, span.video.noIcon, span.document.noIcon, span.audio.noIcon, s
     font-size: 9px;
 }
 
-.upload-btns span.noIcon {
+.upload-btns .file-browse-btn {
     position: relative;
 }
 
-span.layer.noIcon {
+.layer.file-browse-btn {
     width: 26px;
     height: 26px;
     box-sizing: border-box;
@@ -2096,8 +2093,11 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {}
 
 
 
-.only-docs .audio.noIcon, .only-docs .video.noIcon, .only-docs .image.noIcon {
-    display: none;
+.only-docs .file-browse-btn{
+    
+    &audio, .&.video, &.image {
+        display: none;
+    }
 }
 
 .uitext-container.no-text {
@@ -2485,7 +2485,7 @@ span.filter-btns {
         width: 125px;
     }
     
-    span.document.noIcon {
+    .document.file-browse-btn {
         width: 70px;
         height: 50px;
         border-radius: 4px;
@@ -2494,7 +2494,7 @@ span.filter-btns {
         background-image: none;
     }
     
-    .upload-btns span.noIcon:after{
+    .upload-btns .file-browse-btn:after{
         
     }
 }
@@ -3003,10 +3003,10 @@ span.remove-btn:after {
     overflow-y: scroll;
 }
 
-.no-media span.noIcon, .only-image span.noIcon, .only-doc span.noIcon {
+.no-media .file-browse-btn, .only-image .file-browse-btn, .only-doc .file-browse-btn {
     display: none;
 }
-.only-doc span.document.noIcon, .only-image span.image.noIcon {
+.only-doc .document.file-browse-btn, .only-image .image.file-browse-btn {
     display: inline-block;
 }
 
