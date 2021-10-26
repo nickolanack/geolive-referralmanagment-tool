@@ -2494,12 +2494,10 @@ span.filter-btns {
         background-image: none;
     }
     
-    .upload-btns .file-browse-btn:after{
-        
-    }
     
     
-    .reply-box .upload-btns .file-browse-btn:after {
+    
+    .upload-btns .file-browse-btn:after {
         position: relative;
         color: black;
         text-shadow: none;
