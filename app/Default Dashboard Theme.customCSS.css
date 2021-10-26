@@ -2497,6 +2497,20 @@ span.filter-btns {
     .upload-btns .file-browse-btn:after{
         
     }
+    
+    
+    .reply-box .upload-btns .file-browse-btn:after {
+        position: relative;
+        color: black;
+        text-shadow: none;
+        content: "\0f093";
+        font-family: 'FontAwesome';
+        text-align: center;
+        left: 0;
+        top: 0;
+        font-size: 30px;
+        color: white;
+    }
 }
 
 
