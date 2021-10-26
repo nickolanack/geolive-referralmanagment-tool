@@ -7344,7 +7344,9 @@
                                 "type": "FlexibleHeight",
                                 "config": {
                                     "identifier": "discussion-flexible-height",
-                                    "targetElementScript": "singleProjectDiscussionDetail.metadata.positions.content.modules.2.config.targetElementScript.js"
+                                    "targetElementScript": "singleProjectDiscussionDetail.metadata.positions.content.modules.2.config.targetElementScript.js",
+                                    "offset": "0",
+                                    "offsetScript": "singleProjectDiscussionDetail.metadata.positions.content.modules.2.config.offsetScript.js"
                                 }
                             },
                             {
