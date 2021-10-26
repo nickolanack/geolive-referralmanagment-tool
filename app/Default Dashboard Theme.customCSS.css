@@ -3993,8 +3993,11 @@ span.navigation-menu.settings-menu {
 
 
 @media screen and (max-height: 1450px) {
-    .navigation-menu ul label, .menu-links{
-        display:none;
+    .navigation-menu ul{
+        
+        label, &.menu-links
+            display:none;
+        }
     }    
        
 }
