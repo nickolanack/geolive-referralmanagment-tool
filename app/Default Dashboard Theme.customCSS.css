@@ -2522,6 +2522,15 @@ span.filter-btns {
     }
 }
 
+.dark{
+    .ui-view.reply-box{
+        .discussion-textbox{
+            background-color: #484848;
+            color: white;
+        }
+    }
+}
+
 
 button.t-btn {
     margin-left:0;
