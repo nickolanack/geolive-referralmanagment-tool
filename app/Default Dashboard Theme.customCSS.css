@@ -4089,6 +4089,28 @@ span.navigation-menu.settings-menu {
 }
 
 
+@media screen and (max-height: 1000px){
+
+    
+
+        .left-panel .user-detail .single_ImageContainer {
+            transform: scale(0.6);
+            margin: -15px; 
+        }
+
+        .left-panel .user-detail .FormattedTextModule {
+            height: 135px;
+        }
+
+       .left-panel button.primary-btn.nav-new-btn {
+            height: 40px;
+            line-height: 22px;
+        }
+    }
+
+}
+
+
 [data-view="splitProjectDetail"]{
     @media screen and (max-width: 2000px) {
     
