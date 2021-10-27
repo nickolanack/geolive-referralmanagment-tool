@@ -2529,6 +2529,7 @@ span.filter-btns {
         top: 0;
         font-size: 30px;
         color: white;
+        pointer-events: none;
     }
 }
 
