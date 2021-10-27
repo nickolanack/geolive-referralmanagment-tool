@@ -4067,7 +4067,7 @@ span.navigation-menu.settings-menu {
 
 @media screen and (max-height: 1450px) {
     .navigation-menu ul{
-        label, &.menu-links, .admin-only{
+        label, .admin-only{
             display:none;
         }
     }    
