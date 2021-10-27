@@ -4128,6 +4128,20 @@ span.navigation-menu.settings-menu {
 
 
 
+@media screen and (max-height: 1000px) and (max-width: 1000px){
+   .navigation-menu ul button {
+    font-size:10px;
+   }
+   .navigation-menu ul li {
+    padding: 2px;
+   }
+
+   .left-panel button.primary-btn.nav-new-btn {
+       margin: 10px 23px;
+   }
+}
+
+
 
 
 [data-view="splitProjectDetail"]{
