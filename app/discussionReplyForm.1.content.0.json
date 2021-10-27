@@ -15,6 +15,6 @@
         "toolbarPosition": "bottom",
         "textFormatScript": "",
         "mediaIconTint": "rgb(100, 149, 237)",
-        "onRenderModuleFn": "module.runOnceOnLoad(function(){\n    module.getTextField().getInputElement().addClass('discussion-textbox');\n    module.getTextField().addEvent('onEnterKey',function(e){\n        console.log(e)    \n        \n    });\n    \n});"
+        "onRenderModuleFn": "module.runOnceOnLoad(function(){\n    module.getTextField().getInputElement().addClass('discussion-textbox');\n    module.getTextField().addEvent('onEnterKey',function(e){\n       if(!e.shiftKey){\n            var value=module.getTextField().getValue();\n            value=value.trim();\n            module.getTextField().setValue('');\n            if(value&&value!==\"\"){\n                \n                console.log(\"send \"+value);\n                \n            }\n            \n       }   \n    });\n    \n});"
     }
 }
