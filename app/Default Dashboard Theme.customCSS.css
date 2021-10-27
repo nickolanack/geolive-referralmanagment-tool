@@ -2473,6 +2473,16 @@ span.filter-btns {
 
 
 .ui-view.reply-box{
+    
+    .label  {
+        display:none;
+    }
+
+
+    padding-top:6px;
+
+    
+    
     .discussion-textbox{
         width: calc( 100% - 150px );
         box-sizing: border-box;
