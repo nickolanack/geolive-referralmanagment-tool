@@ -3198,14 +3198,28 @@ img.static-map {
 
 @media screen and (max-width: 1250px) {
     
+    .left-panel{
     
-    .left-panel .application-logo {
-        text-overflow: clip;
-        overflow: hidden;
-    }
+        .application-logo {
+            text-overflow: clip;
+            overflow: hidden;
+        }
+        
+        .application-logo.big {
+            height: 100px;
+        }
+        
+        .user-detail .single_ImageContainer {
+            transform: scale(0.6);
+            margin: -15px;
+        }
     
-    .left-panel .application-logo.big {
-        height: 100px;
+        .user-detail .FormattedTextModule {
+            height: 135px;
+        }
+        
+        min-width: 180px;
+        width: 180px;
     }
 
     
@@ -3216,14 +3230,7 @@ img.static-map {
 
     }
     
-    .user-detail .single_ImageContainer {
-        transform: scale(0.6);
-        margin: -15px;
-    }
-
-    .user-detail .FormattedTextModule {
-        height: 135px;
-    }
+    
  
     .ui-view.dashboard-main {
         font-size: 12px;
