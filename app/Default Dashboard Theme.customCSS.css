@@ -3174,6 +3174,28 @@ img.static-map {
 }
 
 
+@media screen and (max-height: 1000px){
+
+    .left-panel{
+
+        .user-detail .single_ImageContainer {
+            transform: scale(0.6);
+            margin: -15px; 
+        }
+
+        .FormattedTextModule {
+            height: 135px;
+        }
+
+        button.primary-btn.nav-new-btn {
+            height: 40px;
+            line-height: 22px;
+        }
+    }
+
+}
+
+
 @media screen and (max-width: 1250px) {
     
     
@@ -4089,26 +4111,7 @@ span.navigation-menu.settings-menu {
 }
 
 
-@media screen and (max-height: 1000px){
 
-    .left-panel{
-
-        .user-detail .single_ImageContainer {
-            transform: scale(0.6);
-            margin: -15px; 
-        }
-
-        .FormattedTextModule {
-            height: 135px;
-        }
-
-        button.primary-btn.nav-new-btn {
-            height: 40px;
-            line-height: 22px;
-        }
-    }
-
-}
 
 
 [data-view="splitProjectDetail"]{
