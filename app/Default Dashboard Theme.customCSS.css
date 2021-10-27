@@ -3266,10 +3266,37 @@ img.static-map {
 }
 
 @media screen and (max-width: 1000px){
+     .left-panel{
+        .application-logo {
+            font-size: 0;
+            background-position: center;
+        }
+        
+        .item-title>.field-value {
+            font-size: 0.9em;
+        }
+        
+        .user-detail .FormattedTextModule{
+            height:100px
+         }
     
-    .left-panel .application-logo {
-        font-size: 0;
-        background-position: center;
+        .user-detail .single_ImageContainer{
+            transform: scale(0.4);
+            margin: -33px;
+        }
+        
+        .user-detail .field-label{
+            display:none;
+        }
+    
+        .user-detail .field-value{
+            display:none;
+        }
+        
+        
+        width:100px;
+        min-width:100px;
+    
     }
 
     .ui-view.left-panel[data-view="leftPanel"]{
@@ -3277,26 +3304,8 @@ img.static-map {
         min-width:100px;
     }
     
-    .left-panel .item-title>.field-value {
-        font-size: 0.9em;
-    }
     
-    .user-detail .FormattedTextModule{
-        height:100px
-     }
-
-    .user-detail .single_ImageContainer{
-        transform: scale(0.4);
-        margin: -33px;
-    }
-
-    .user-detail .field-label{
-        display:none;
-    }
-
-    .user-detail .field-value{
-        display:none;
-    }
+    
     
    
    
