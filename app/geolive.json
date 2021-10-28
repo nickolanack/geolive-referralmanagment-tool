@@ -22615,16 +22615,16 @@
                             "discussionMediaPostForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 138,
-                            "y": 270
+                            "x": 148,
+                            "y": 280
                         },
                         "children": [
                             "discussionMediaPostForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 98,
-                                    "y": 436
+                                    "x": 108,
+                                    "y": 446
                                 }
                             }
                         ],
@@ -22640,7 +22640,11 @@
                                         "discussionMediaPostForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
                                             "type": "WizardScriptElement",
-                                            "config": []
+                                            "config": {
+                                                "name": "My Custom Script",
+                                                "script": "",
+                                                "description": "Info about my custom script"
+                                            }
                                         }
                                     ]
                                 },
