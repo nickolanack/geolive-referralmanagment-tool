@@ -2534,7 +2534,7 @@ span.filter-btns {
         position: relative;
         color: black;
         text-shadow: none;
-        content: "\0f093";
+        content: "\0f15b"; /*file*/
         font-family: 'FontAwesome';
         text-align: center;
         left: 0;
@@ -2542,6 +2542,10 @@ span.filter-btns {
         font-size: 30px;
         color: white;
         pointer-events: none;
+    
+    }
+    .upload-btns .file-browse-btn.send-btn:after {
+        ontent: "\0f1d8";
     }
 }
 
