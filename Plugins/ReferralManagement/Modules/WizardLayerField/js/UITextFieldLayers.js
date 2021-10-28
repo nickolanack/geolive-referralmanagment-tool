@@ -4,16 +4,15 @@ var UITextFieldLayerBrowser = function() {
 
     me._getElement().setStyle("display", "none");
 
-    var bar = (new UITextFieldMediaSelection(this)).renderMediaBrowserBar();
-
-
+     
+    var mediaSelection = (new UITextFieldMediaSelection(this)).renderButtonToolbar();
 
     var appendMediaHtml = function(result) {
         me.setValue((me.getValue() || "") + result.html);
     };
 
 
-    var uploader = UploadForm.FileBrowserSelect(bar, {
+    var uploader = UploadForm.FileBrowserSelect(mediaSelection.getButtonToolbarElement(), {
         className: "layer noIcon",
         url: CoreContentUrlRoot + "&format=raw&controller=plugins&plugin=ReferralManagement&view=plugin&pluginView=browser.layers&parent=window.parent&mode=function&function=GrabImage&addUrlImage=yes",
         tip: "add a spatial feature",
