@@ -95,7 +95,7 @@ $mainStyleColor:#efa82c;
         background-color: transparent;
     }
 
-    .text-input, .discussion-textbox {
+    .text-input, .discussion-textbox, .ui-view.reply-box .discussion-textbox {
         background-color: $darkThemeInputBG;
         border: 1px solid #4e4e4e;
         color: $fontColor;
