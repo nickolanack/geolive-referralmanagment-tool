@@ -40,12 +40,11 @@ var UITextFieldLayerList = function() {
 
     var mediaSelection = (new UITextFieldMediaSelection(this));
 
-    var listEl = mediaSelection.renderToolbar({
+    mediaSelection.renderToolbar({
         className: 'spatial-files'
     });
 
-
-    new AjaxFileUploader(listEl, {
+    new AjaxFileUploader(mediaSelection.getToolbarPreviewElement(), {
         types: ["document"],
         selectFile: function(fileinfo, type) {
             me.setValue((me.getValue() || "") + fileinfo.html);
