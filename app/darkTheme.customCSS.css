@@ -2,6 +2,7 @@
 
 
 $darkThemeBG:#030310;
+$darkThemeInputBG:#1e1e1e;
 $darkThemeInset:#030310;
 $tagBtnColor:#2E303A;
 $fontColor:#e0e0e2;
@@ -95,7 +96,7 @@ $mainStyleColor:#efa82c;
     }
 
     .text-input, .discussion-textbox {
-        background-color: $darkThemeBG;
+        background-color: $darkThemeInputBG;
         border: 1px solid #4e4e4e;
         color: $fontColor;
         border: 1px solid #4e4e4e;
