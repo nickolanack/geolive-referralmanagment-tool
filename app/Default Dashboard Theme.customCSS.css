@@ -2472,6 +2472,8 @@ span.filter-btns {
 
 
 
+
+
 .ui-view.reply-box{
     
     .label  {
@@ -2549,11 +2551,17 @@ span.filter-btns {
     }
 }
 
+[data-view="singleTaskOverviewDetail"] .ui-view.reply-box {
+    box-shadow:none;
+}
+
 .dark{
-    .ui-view.reply-box{
-        .discussion-textbox{
-            background-color: #484848;
-            color: white;
+    [data-view="singleProjectDetail"]{
+        .ui-view.reply-box{
+            .discussion-textbox{
+                background-color: #484848;
+                color: white;
+            }
         }
     }
 }
