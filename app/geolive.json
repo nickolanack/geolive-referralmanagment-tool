@@ -22615,11 +22615,18 @@
                             "discussionMediaPostForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 128,
-                            "y": 260
+                            "x": 138,
+                            "y": 270
                         },
                         "children": [
-                            "discussionMediaPostForm.metadata.children.1.children.0.json"
+                            "discussionMediaPostForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 98,
+                                    "y": 436
+                                }
+                            }
                         ],
                         "builderMetadata": {
                             "positions": {
@@ -22632,23 +22639,8 @@
                                     "modules": [
                                         "discussionMediaPostForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
-                                            "type": "WizardDescriptionField",
-                                            "config": {
-                                                "label": "Description",
-                                                "message": "add a description",
-                                                "lines": 3,
-                                                "mandatory": false,
-                                                "showAudios": true,
-                                                "showImages": true,
-                                                "showDocuments": true,
-                                                "showVideos": true,
-                                                "className": "",
-                                                "maxChars": 0,
-                                                "showExpandInput": true,
-                                                "toolbarPosition": "bottom",
-                                                "textFormatScript": "",
-                                                "mediaIconTint": "rgb(100, 149, 237)"
-                                            }
+                                            "type": "WizardScriptElement",
+                                            "config": []
                                         }
                                     ]
                                 },
@@ -22666,7 +22658,10 @@
                                 "content",
                                 "footer",
                                 "menu"
-                            ]
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
                         }
                     }
                 ]
