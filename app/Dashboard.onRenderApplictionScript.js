@@ -220,4 +220,9 @@ GetWidget('themeForm')->display($targetInstance);
 GetWidget('defaultTasksForm')->display($targetInstance);
 GetWidget('baseMapForm')->display($targetInstance);
 
+GetWIdget('discussionMediaPostForm')->display($targetInstance);
+
+
+
+
 GetWidget('defaultPostDetail')->display($targetInstance);
