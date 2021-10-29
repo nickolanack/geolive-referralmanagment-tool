@@ -8866,6 +8866,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "defaultPostDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('timestamp');"
@@ -8903,6 +8904,7 @@
                                 "config": {
                                     "listClassName": "",
                                     "className": "feed-sub-item",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "defaultView",
                                     "shouldRender": true,
