@@ -3791,6 +3791,7 @@
         "parameters": {
             "widgetTitle": "itemDiscussion",
             "target": "itemDiscussion",
+            "discussionTarget": "",
             "width": "300",
             "constrainHeight": true,
             "height": "200",
@@ -7324,6 +7325,7 @@
                             {
                                 "type": "plugin.Discussions.Discussion",
                                 "config": {
+                                    "discussionTarget": "itemDiscussion",
                                     "width": 0,
                                     "constrainHeight": false,
                                     "height": 200,
