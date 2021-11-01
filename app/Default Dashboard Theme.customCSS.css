@@ -9,6 +9,14 @@ body.body-overlayed>#viewControllerApp>div>div>.ui-view {
 button:focus {outline:0;}
 
 
+.bubble.dark {
+    background-color: white;
+    color: black;
+    text-shadow: none;
+    border: none;
+}
+
+
 .pro-tip-hint.inline-tip{
     width: 400px;
     display: block;
