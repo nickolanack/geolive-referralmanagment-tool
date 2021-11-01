@@ -9,6 +9,36 @@ body.body-overlayed>#viewControllerApp>div>div>.ui-view {
 button:focus {outline:0;}
 
 
+.bubble.dark {
+    background-color: white;
+    color: black;
+    text-shadow: none;
+    border: none;
+}
+.popover.dark{
+    &>.tip {
+        background-color: white;
+        color: black;
+        text-shadow: none;
+    }
+    
+    &.arrow_right .tip:before {
+        border-left-color: white;
+    }
+    &.arrow_left .tip:before {
+        border-right-color: white;
+    }
+    
+    &.arrow_top .tip:before {
+        border-bottom-color: white;
+    }
+    
+    &.arrow_bottom .tip:before {
+        border-top-color: white;
+    }
+}
+
+
 .pro-tip-hint.inline-tip{
     width: 400px;
     display: block;
@@ -1680,6 +1710,12 @@ img.youtubelogo {
     color:#E96A6A;
 }
 
+.task-item .field-value-module.no-date {
+    color: gray;
+    font-size: 12px;
+    font-style: italic;
+}
+
 
 .item-title.overdue .field-label,
 .item-title.complete .field-label,
@@ -2681,6 +2717,8 @@ button.inline-btn.add:hover{
     
     button.inline-btn{
     
+            opacity:0.5;
+            filter:grayscale(1);
         
             margin-right: 0;
             margin-left: 8px;
@@ -2696,6 +2734,16 @@ button.inline-btn.add:hover{
         &.edit {
         }
     }
+    
+    
+    
+   
+    &:hover button.inline-btn {
+        opacity:1;
+        filter:grayscale(0);
+    }
+    
+    
 }
 
 
@@ -3217,6 +3265,10 @@ img.static-map {
     
     .due-date.editing .field-value:after {
        font-size:0;
+    }
+    
+    .task-item .field-value-module.no-date{
+        display:none;
     }
   
     
@@ -3814,9 +3866,10 @@ img.static-map {
 
             }
 
-            button{
+            ul button{
               text-align: center;
               width:70px;
+              font-size: 12px;
             }
 
             li:after{

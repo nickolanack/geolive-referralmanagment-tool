@@ -3792,6 +3792,8 @@
             "widgetTitle": "itemDiscussion",
             "target": "itemDiscussion",
             "parseMarkdown": true,
+            "allowDelete": false,
+            "allowEdit": false,
             "discussionTarget": "",
             "width": "300",
             "constrainHeight": true,
