@@ -77,6 +77,12 @@ IncludeJSBlock('
         NotificationBubble.SetOptions({
             className:"'.($dashConfig->getParameter('darkMode')?' dark':'').' '.
                 $dashConfig->getParameter('pageClassNames').'"
+        });
+        
+        
+        UIPopover.SetOptions({
+            className:"'.($dashConfig->getParameter('darkMode')?' dark':'').' '.
+                $dashConfig->getParameter('pageClassNames').'"
         })
         
     });
