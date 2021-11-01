@@ -8929,6 +8929,14 @@
                                     "sortItemsScript": "",
                                     "maxItems": "-1"
                                 }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "defaultPostDetail.metadata.positions.content.modules.4.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
                             }
                         ]
                     },
