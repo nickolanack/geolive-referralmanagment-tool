@@ -5,12 +5,15 @@ return new ModuleArray([
             events:{click:function(){
                 item.remove();
             }}
-        }),
+        })/*,
          new ElementModule('button', {
             html:"Edit",
             "class":"inline-btn edit",
             events:{click:function(){
                 
+                
+                
+                
             }}
-        })
+        })*/
     ], {identifier:"post-buttons"});
