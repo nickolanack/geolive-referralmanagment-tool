@@ -13,7 +13,7 @@ var UITextFieldLayerBrowser = function() {
 
 
     var uploader = UploadForm.FileBrowserSelect(mediaSelection.getButtonToolbarElement(), {
-        className: "layer noIcon",
+        className: "layer noIcon file-browse-btn",
         url: CoreContentUrlRoot + "&format=raw&controller=plugins&plugin=ReferralManagement&view=plugin&pluginView=browser.layers&parent=window.parent&mode=function&function=GrabImage&addUrlImage=yes",
         tip: "add a spatial feature",
         selectFile: appendMediaHtml
