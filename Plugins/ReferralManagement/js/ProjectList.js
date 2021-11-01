@@ -501,8 +501,7 @@ var ProjectList = (function() {
 				}).pop();
 			}, {
 				filters: ProjectList.projectFilters(),
-				currentFilter: filter,
-				currentFilterInvert: invertFilter,
+				currentFilter: (invertFilter?'!':'')+filter,
 				//applyfilter:true
 			})).load(null, div, null);
 			parentModule.runOnceOnLoad(function() {

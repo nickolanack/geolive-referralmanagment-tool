@@ -144,7 +144,7 @@ var ProjectActivityChart=(function(){
 												filterFn: function(a) {
 													return list.indexOf(a) >= 0;
 												}
-											}, false);
+											});
 
 										}
 

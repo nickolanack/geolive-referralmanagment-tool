@@ -895,8 +895,7 @@ var TaskItem = (function() {
 				return viewer.getChildView('content', contentIndex);
 			}, {
 				filters: filters,
-				currentFilter: initialFilter,
-				currentFilterInvert: true
+				currentFilter: '!'+initialFilter,
 			}));
 
 
