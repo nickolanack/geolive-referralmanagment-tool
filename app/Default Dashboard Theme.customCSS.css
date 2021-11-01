@@ -15,6 +15,28 @@ button:focus {outline:0;}
     text-shadow: none;
     border: none;
 }
+.popover.dark{
+    &>.tip {
+        background-color: white;
+        color: black;
+        text-shadow: none;
+    }
+    
+    &.arrow_right .tip:before {
+        border-left-color: white;
+    }
+    &.arrow_left .tip:before {
+        border-right-color: white;
+    }
+    
+    &.arrow_top .tip:before {
+        border-bottom-color: white;
+    }
+    
+    &.arrow_bottom .tip:before {
+        border-top-color: white;
+    }
+}
 
 
 .pro-tip-hint.inline-tip{
