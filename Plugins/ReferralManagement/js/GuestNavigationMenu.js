@@ -65,10 +65,10 @@ var GuestNavigationMenu = (function() {
 							"events": {
 								"click": function() {
 
-									$$('.public-map').setStyle('opacity', 1);
-									$$('.public-map').setStyle('pointer-events', 'auto');
-									$$('.login-form').setStyle('display', 'none');
-									$$('.public-menu').setStyle('display', 'none');
+									$$('.public-map')[0].setStyle('opacity', 1);
+									$$('.public-map')[0].setStyle('pointer-events', 'auto');
+									$$('.login-form')[0].setStyle('display', 'none');
+									$$('.public-menu')[0].setStyle('display', 'none');
 
 								}
 							},
@@ -78,6 +78,13 @@ var GuestNavigationMenu = (function() {
 
 						}, {
 							"name": "About",
+							"viewOptions": {
+								"viewType": "view"
+							},
+							"class": "primary-btn"
+
+						}, {
+							"name": "Privacy",
 							"viewOptions": {
 								"viewType": "view"
 							},
