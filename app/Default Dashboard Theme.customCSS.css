@@ -1710,6 +1710,12 @@ img.youtubelogo {
     color:#E96A6A;
 }
 
+.task-item .field-value-module.no-date {
+    color: gray;
+    font-size: 12px;
+    font-style: italic;
+}
+
 
 .item-title.overdue .field-label,
 .item-title.complete .field-label,
@@ -3247,6 +3253,10 @@ img.static-map {
     
     .due-date.editing .field-value:after {
        font-size:0;
+    }
+    
+    .task-item .field-value-module.no-date{
+        display:none;
     }
   
     
