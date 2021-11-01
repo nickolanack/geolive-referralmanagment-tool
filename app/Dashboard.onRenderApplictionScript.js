@@ -73,6 +73,12 @@ IncludeJSBlock('
                 $dashConfig->getParameter('pageClassNames').'"
             }
         })
+        
+        NotificationBubble.SetOptions({
+            className:"'.($dashConfig->getParameter('darkMode')?' dark':'').' '.
+                $dashConfig->getParameter('pageClassNames').'"
+        })
+        
     });
 
 ');
