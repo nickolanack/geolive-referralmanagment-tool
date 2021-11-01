@@ -2676,6 +2676,30 @@ button.inline-btn.add:hover{
     background-color: #7d8df1;
 }
 
+
+[data-view="defaultPostDetail"]{
+    
+    button.inline-btn{
+    
+        
+            margin-right: 0;
+            margin-left: 8px;
+            margin-top: 10px;
+            border: none;
+            cursor:pointer;
+            border-radius: 2px;
+        
+    
+        &.remove {
+            background-color:crimson;
+        }
+        &.edit {
+        }
+    }
+}
+
+
+
 .ui-view.feed-sub-item, .ui-view.feed-sub-item:first-child {
     
     margin: 10px;
@@ -2918,6 +2942,7 @@ ul.user-roles:hover>li.active {
 .user-item .inline-btn.optionlist {
     position: relative;
 }
+
 
 .icon-list-view>.ui-view {
     display: inline-block;
