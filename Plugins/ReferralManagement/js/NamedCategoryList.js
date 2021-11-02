@@ -148,7 +148,13 @@ var NamedCategoryList = (function() {
 			});
 		},
 
+		hasTag:function(category){
+			var tags = _tags.filter(function(tag) {
+				return tag.getName().toLowerCase() == category.toLowerCase();
+			});
 
+			return tags.length>0;
+		},
 		getTag:function(category){
 
 			var tags = _tags.filter(function(tag) {

@@ -82,13 +82,16 @@ var ProjectList = (function() {
 				}
 
 
+				if(ProjectTagList.hasTag(filterName)){
 
-				var tag = ProjectTagList.getTag(filterName);
-				if ((!tag.isRootTag()) && tag.isLeafTag()) {
-					var parentLevelTags = tag.getParentTagData().getChildTagsData();
-					if (parentLevelTags.length > 0) {
-						return parentLevelTags;
+					var tag = ProjectTagList.getTag(filterName);
+					if ((!tag.isRootTag()) && tag.isLeafTag()) {
+						var parentLevelTags = tag.getParentTagData().getChildTagsData();
+						if (parentLevelTags.length > 0) {
+							return parentLevelTags;
+						}
 					}
+					
 				}
 
 
