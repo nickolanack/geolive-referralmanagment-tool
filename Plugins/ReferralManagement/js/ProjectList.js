@@ -64,8 +64,18 @@ var ProjectList = (function() {
 					return null;
 				}
 
-				if (filter.length == 1 && ProjectTagList.getProjectTagsData(filter[0]).length > 0) {
-					var childTags = ProjectTagList.getProjectChildTagsData(filter[0]);
+				var filterName=filter;
+				if(isArray_(filterName)){
+					filterName=filterName[0];
+				}
+
+				if(filterName.length > 0 && filterName[0]=='!'){
+					filterName=filterName.slice(1);
+				}
+
+
+				if (filterName.length > 0 && ProjectTagList.getProjectTagsData(filterName).length > 0) {
+					var childTags = ProjectTagList.getProjectChildTagsData(filterName);
 					if (childTags.length > 0) {
 						return childTags;
 					}
@@ -73,7 +83,7 @@ var ProjectList = (function() {
 
 
 
-				var tag = ProjectTagList.getTag(filter[0]);
+				var tag = ProjectTagList.getTag(filterName);
 				if ((!tag.isRootTag()) && tag.isLeafTag()) {
 					var parentLevelTags = tag.getParentTagData().getChildTagsData();
 					if (parentLevelTags.length > 0) {
