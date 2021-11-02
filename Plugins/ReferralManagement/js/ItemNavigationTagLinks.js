@@ -1,6 +1,6 @@
-var ItemNavigationTagLinks=(function(){
+var ItemNavigationTagLinks = (function() {
 
-	var ItemNavigationTagLinks=new Class({
+	var ItemNavigationTagLinks = new Class({
 
 		getNavigationTags: function() {
 			throw 'requires implementation'
@@ -10,41 +10,49 @@ var ItemNavigationTagLinks=(function(){
 
 
 
-	ItemNavigationTagLinks.CreateNavigationTagListModule=function(item, typesFilter){
+	ItemNavigationTagLinks.CreateNavigationTagListModule = function(item, typesFilter) {
 
 
 
+		if (!typesFilter) {
+			typesFilter = ['ReferralManagement.proposal'];
+		}
 
-			if(!typesFilter){
-				typesFilter=['ReferralManagement.proposal'];
+		var tags = item.getNavigationTags();
+
+		var application = ReferralManagementDashboard.getApplication();
+		if (tags.length == 0) {
+
+			return null;
+		}
+
+		var classMap = function(type) {
+			if (type == "ReferralManagement.proposal") {
+				return "menu-main-projects";
 			}
 
-			var tags = item.getNavigationTags();
-
-			var application = ReferralManagementDashboard.getApplication();
-			if (tags.length == 0) {
-
-				return null;
+			if (type == "ReferralManagement.client") {
+				return "menu-people-clients";
 			}
+			return 'type-' + type.toLowerCase().split('.').join('-');
+		}
 
-			var classMap = function(type) {
-				if (type == "ReferralManagement.proposal") {
-					return "menu-main-projects";
-				}
+		var ul = new ElementModule('ul', {
+			"class": "item-tags"
+		});
 
-				if (type == "ReferralManagement.client") {
-					return "menu-people-clients";
-				}
-				return 'type-'+type.toLowerCase().split('.').join('-');
-			}
+		while (tags.length) {
 
-			var ul = new ElementModule('ul', {
-				"class": "item-tags"
-			});
-			tags.forEach(function(t) {
+			(function(t) {
 
 
-				if ((!t.getType)||typesFilter.indexOf(t.getType())==-1){
+
+				if ((!t.getType) || typesFilter.indexOf(t.getType()) == -1) {
+
+					// if(t.getNavigationTags){
+					// 	tags=tags.concat(t.getNavigationTags());
+					// }
+
 					return;
 				}
 
@@ -61,7 +69,7 @@ var ItemNavigationTagLinks=(function(){
 							var view = controller.getCurrentView();
 							console.log(view);
 
-							if(typeof t.navigate=='function'){
+							if (typeof t.navigate == 'function') {
 								t.navigate();
 								return;
 							}
@@ -78,11 +86,17 @@ var ItemNavigationTagLinks=(function(){
 					}
 
 				}));
-			});
 
 
-			return ul;
-		
+			})(tags.shift())
+
+
+		}
+
+
+
+		return ul;
+
 
 	}
 

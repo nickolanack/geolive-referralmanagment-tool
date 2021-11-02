@@ -15,6 +15,10 @@ var ProjectFiles = (function() {
 			this._url=url;
 			this._option=Object.append({}, option);
 
+			if(this._option.project&&(!(this._option.project instanceof Project))){
+				console.error('Project option, (options.project) is not a Project!');
+			}
+
 		},
 		getNavigationTags:function(){
 
@@ -49,7 +53,15 @@ var ProjectFiles = (function() {
 		getName:function(){
 			return this.getType();
 		},
-		navigate:function(){}
+		navigate:function(){},
+		getNavigationTags:function(){
+
+			var tags=[];
+			if(this._file._option.project){
+				tags.push(this._file._option.project);
+			}
+			return tags;
+		},
 	})
 
 
@@ -617,6 +629,12 @@ var ProjectFiles = (function() {
 
 				if ((['audio', 'video', 'image', 'document']).indexOf(type) >= 0) {
 
+
+
+
+
+
+
 					if (type == 'audio') {
 						(new AudioModule({
 							textQuery: function(callback) {
@@ -642,7 +660,8 @@ var ProjectFiles = (function() {
 							},
 							"class": typeName,
 							width: 100,
-							height: 100
+							height: 100,
+							setBackgroundImage: true
 						})).load(null, container, null);
 					}
 					if (type == 'document') {
@@ -721,16 +740,15 @@ var ProjectFiles = (function() {
 			return [
 
 				ItemNavigationTagLinks.CreateNavigationTagListModule(
-					new ProjectFile(
+					((listItem instanceof ProjectFile)?listItem:new ProjectFile(
 						listItem.getUrl?listItem.getUrl():listItem, 
 						{
 							type:"", 
 							project:(item.getProject?item.getProject():item)
-						}),[
-							"ReferralManagement.proposal", "permits", "letters", "agreements", "spatial"
-				]),
+						})),
+					["ReferralManagement.proposal" /*, "permits", "letters", "agreements", "spatial"*/]),
 
-			new ElementModule('button', {
+				new ElementModule('button', {
 					"class": "remove-btn",
 					events: {
 						click: function() {
