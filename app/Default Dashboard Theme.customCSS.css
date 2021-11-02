@@ -3875,7 +3875,7 @@ img.static-map {
         }
 
         @media screen and (max-width: 1000px){
-           label{
+           ul label{
                 font-size: 0;
                 width: 90px;
                 border-top: 1px solid rgba(0,0,0,0.3);
