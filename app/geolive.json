@@ -7601,16 +7601,16 @@
                             "taskForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 296,
-                            "y": 224
+                            "x": 306,
+                            "y": 234
                         },
                         "children": [
                             "taskForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 256,
-                                    "y": 487
+                                    "x": 266,
+                                    "y": 497
                                 }
                             }
                         ],
@@ -7674,7 +7674,7 @@
                                                 "getValueScript": "return item.getName()",
                                                 "updateValueScript": "return {\"name\":value}",
                                                 "submitValueScript": "",
-                                                "validateValueScript": ""
+                                                "validateValueScript": "return true;"
                                             }
                                         },
                                         {
