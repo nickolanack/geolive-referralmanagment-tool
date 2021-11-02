@@ -3431,6 +3431,12 @@ img.static-map {
         width: calc( 50% - 10px);
         height: 200px;
     }
+    
+    .ui-view.w-30.secondary-col{
+        width: calc( 100% - 10px);
+        height: 300px;
+    }
+    
     .ui-view.w-30.project-list, .ui-view.w-30-60{
         width: calc( 100% - 10px);
         height: 300px;
@@ -3869,7 +3875,7 @@ img.static-map {
         }
 
         @media screen and (max-width: 1000px){
-           label{
+           ul label{
                 font-size: 0;
                 width: 90px;
                 border-top: 1px solid rgba(0,0,0,0.3);
