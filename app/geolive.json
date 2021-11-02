@@ -7601,16 +7601,16 @@
                             "taskForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 306,
-                            "y": 234
+                            "x": 316,
+                            "y": 244
                         },
                         "children": [
                             "taskForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 266,
-                                    "y": 497
+                                    "x": 276,
+                                    "y": 507
                                 }
                             }
                         ],
@@ -7696,7 +7696,7 @@
                                                 "getValueScript": "return item.getDescription();",
                                                 "updateValueScript": "return {\"description\":value}",
                                                 "submitValueScript": "",
-                                                "validateValueScript": ""
+                                                "validateValueScript": "return true;"
                                             }
                                         },
                                         {
@@ -7718,7 +7718,7 @@
                                                 "getValueScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.getValueScript.js",
                                                 "updateValueScript": "return {\"dueDate\":value}",
                                                 "submitValueScript": "",
-                                                "validateValueScript": ""
+                                                "validateValueScript": "return true;"
                                             }
                                         },
                                         {
@@ -7740,7 +7740,7 @@
                                                 "getValueScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.getValueScript.js",
                                                 "updateValueScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.updateValueScript.js",
                                                 "submitValueScript": "",
-                                                "validateValueScript": ""
+                                                "validateValueScript": "return true;"
                                             }
                                         },
                                         {
