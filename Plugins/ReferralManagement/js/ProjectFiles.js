@@ -588,8 +588,10 @@ var ProjectFiles = (function() {
 					if (urls.length) {
 						file = urls[0];
 					}
+				}
 
-
+				if(file.getUrl){
+					file=file.getUrl();
 				}
 			}
 
