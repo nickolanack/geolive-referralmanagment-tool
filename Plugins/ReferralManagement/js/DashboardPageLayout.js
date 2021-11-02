@@ -120,7 +120,7 @@ var DashboardPageLayout = (function() {
 			this._removeClassNames(items);
 
 			return new ModuleArray(items, {
-				"class": "array-module ui-view w-60"
+				"class": "array-module ui-view w-60 main-col"
 			});
 		},
 		splitCol: function(items) {
@@ -128,7 +128,7 @@ var DashboardPageLayout = (function() {
 			this._removeClassNames(items);
 
 			return new ModuleArray(items, {
-				"class": "array-module ui-view w-50"
+				"class": "array-module ui-view w-50 split-col"
 			});
 		},
 		secondaryCol: function(items) {
@@ -136,7 +136,7 @@ var DashboardPageLayout = (function() {
 			this._removeClassNames(items);
 
 			return new ModuleArray(items, {
-				"class": "array-module ui-view w-30"
+				"class": "array-module ui-view w-30 secondary-col"
 			});
 		},
 		applySectionFilter: function(buttons, filters) {
