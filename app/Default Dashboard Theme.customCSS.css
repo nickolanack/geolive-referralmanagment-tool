@@ -2713,6 +2713,17 @@ button.inline-btn.add:hover{
 }
 
 
+button.inline-btn.with-no-tasks {
+    opacity: 0.3;
+    filter: grayscale(1);
+    max-width: 100px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+
 [data-view="defaultPostDetail"]{
     
     button.inline-btn{
