@@ -6617,7 +6617,9 @@
                                 "type": "FlexibleHeight",
                                 "config": {
                                     "identifier": "",
-                                    "targetElementScript": "Activity Feed Detail.metadata.positions.content.modules.1.config.targetElementScript.js"
+                                    "targetElementScript": "Activity Feed Detail.metadata.positions.content.modules.1.config.targetElementScript.js",
+                                    "offset": "0",
+                                    "offsetScript": ""
                                 }
                             }
                         ]
