@@ -223,3 +223,38 @@ button.download-link:before {content: "\f019";font-family: 'FontAwesome';}
     color: gray;
 }
 
+
+.document.no-thumb:after {
+    content: "\0f15b";
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    top: calc( 50% - 10px );
+    font-family: 'FontAwesome';
+    position: relative;
+    left: calc( 50% - 9px );
+    font-size: 25px;
+    color: mediumseagreen;
+}
+
+
+.document.no-thumb.ext-zip:after, .document.no-thumb.ext-kml:after, .document.no-thumb.ext-kmz:after {
+
+     content: "\0f15b";
+
+}
+
+.document.no-thumb.ext-pdf:after {
+
+     content: "\0f1c1";
+
+}
+
+
+.document.no-thumb.ext-doc:after, .document.no-thumb.ext-docx:after {
+
+     content: "\0f1c2";
+
+}
+
+
