@@ -2159,7 +2159,7 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {}
     }
 }
 
-.uitext-container.no-text {
+.uitext-container.no-text, .boolean-field.checkboxStyle {
     background: rgba(0,0,0,0.1);
     padding: 10px;
     box-sizing: border-box;
@@ -2167,6 +2167,11 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {}
     margin-bottom: 15px;
     border-radius: 2px;
     
+}
+
+.boolean-field.checkboxStyle {
+    margin-bottom: 10px;
+    margin-top: 5px;
 }
 
 .uitext-container, .TagCloudModule .tag-cloud {
