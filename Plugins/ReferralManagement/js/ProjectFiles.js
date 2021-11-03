@@ -673,7 +673,7 @@ var ProjectFiles = (function() {
 							width: 100,
 							height: 100,
 							download: false,
-							setBackgroundImage: true
+							showImage: false
 						})).load(null, container, null);
 					}
 
