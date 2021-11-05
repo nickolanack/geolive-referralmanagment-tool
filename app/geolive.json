@@ -21723,16 +21723,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 324,
-                            "y": 230
+                            "x": 334,
+                            "y": 240
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 284,
-                                    "y": 468
+                                    "x": 294,
+                                    "y": 478
                                 }
                             }
                         ],
@@ -21751,6 +21751,7 @@
                                             "config": {
                                                 "className": "",
                                                 "label": "Show Labels",
+                                                "identifier": "boolean-field",
                                                 "mandatory": false,
                                                 "getValueScript": "return item.getShowLabels();",
                                                 "updateValueScript": " object.value=value ",
@@ -21764,11 +21765,26 @@
                                             "config": {
                                                 "className": "",
                                                 "label": "Show Icons",
+                                                "identifier": "boolean-field",
                                                 "mandatory": false,
                                                 "getValueScript": "return item.getShowIcons();",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
                                                 "validateValueScript": "return true;",
+                                                "formatElementScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "FormBooleanField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Show attributes",
+                                                "identifier": "boolean-field-attributes",
+                                                "mandatory": false,
+                                                "getValueScript": "return false;",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": "",
                                                 "formatElementScript": ""
                                             }
                                         },
@@ -21790,7 +21806,7 @@
                                                 "formatValueScript": "",
                                                 "getValueScript": "return item.getLineColor();",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
+                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.4.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         },
@@ -21812,7 +21828,7 @@
                                                 "formatValueScript": "",
                                                 "getValueScript": " return item.getFillColor();",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.4.config.submitValueScript.js",
+                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.5.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         },
@@ -21834,7 +21850,7 @@
                                                 "formatValueScript": "",
                                                 "getValueScript": " return item.getLineOpacity();",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.5.config.submitValueScript.js",
+                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.6.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         },
@@ -21856,7 +21872,7 @@
                                                 "formatValueScript": "",
                                                 "getValueScript": " return item.getFillOpacity(); ",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.6.config.submitValueScript.js",
+                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.7.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         },
@@ -21878,7 +21894,7 @@
                                                 "formatValueScript": "",
                                                 "getValueScript": " return item.getLineWidth();",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.7.config.submitValueScript.js",
+                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.8.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         }
