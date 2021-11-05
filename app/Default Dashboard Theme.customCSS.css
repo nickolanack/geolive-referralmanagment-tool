@@ -2335,13 +2335,15 @@ span.filter-btns {
 }
 
 .inline-btn.sort, .inline-btn.optionlist {
-    font-size: 11px;
     line-height: 13px;
     position: relative;
     border: none;
     background-color: $tagBtnColor;
-    width: 100px;
-    padding: 5px 10px;
+    min-width: 100px;
+    padding: 10px 30px;
+    font-size: 14px;
+    font-weight: 100;
+    font-family: Arial;
 }
 
 .inline-btn.filter{
