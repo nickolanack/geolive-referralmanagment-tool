@@ -332,6 +332,10 @@ button.primary-btn.nav-new-btn.view-selection:before {
     font-size: 25px;
 }
 
+[data-view="tasksListDetail"] .section-title, span.filter-btns {
+    height: 40px;
+}
+
 .priority-indicator{
     display:none;
 }
