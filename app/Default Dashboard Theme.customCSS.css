@@ -3652,7 +3652,7 @@ img.static-map {
         background-color: transparent;
         color: black;
         padding: 0;
-        font-size: 16px;
+        font-size: 25px;
         font-weight: 100;
     }
     
@@ -3888,9 +3888,11 @@ img.static-map {
     .navigation-menu{
 
         @media screen and (max-width: 1250px){
-           ul li {
+            ul li {
                 padding-left: 10px;
             }
+            
+            
         }
 
 
@@ -3925,6 +3927,17 @@ img.static-map {
         }
 
 
+    }
+    
+    
+     @media screen and (max-width: 1250px) {
+    
+        .inline-navigation-menu button {
+            
+            font-size:16px;
+            
+        }
+    
     }
 
 /**Navigation Menu**/
