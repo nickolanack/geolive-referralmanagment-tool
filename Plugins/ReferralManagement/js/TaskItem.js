@@ -877,7 +877,8 @@ var TaskItem = (function() {
 			}, {
 				sorters: sorters,
 				currentSort: initialSort,
-				currentSortInvert: true
+				currentSortInvert: true,
+				label:"Sort"
 			}));
 
 
@@ -896,6 +897,7 @@ var TaskItem = (function() {
 			}, {
 				filters: filters,
 				currentFilter: (initialFilter?'!'+initialFilter:null),
+				label:"Filter"
 			}));
 
 
