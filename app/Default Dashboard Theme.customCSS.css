@@ -4096,6 +4096,39 @@ img.static-map {
     span.notifications.selection.has-selection:after {
         color: #76aaff;
     }
+    
+    
+    span.dark-toggle:after, span.admin-toggle:after  {
+        content: "";
+        font-family: 'FontAwesome';
+        position: absolute;
+        left: 13px;
+        top: 5px;
+        color: #525252;
+        font-size:16px;
+    }
+    
+    span.dark-toggle:after{
+        content:"\0f0eb"
+    }
+    span.admin-toggle:after{
+        content:"\0f023"
+    }
+    
+    span.dark-toggle, span.admin-toggle {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      background-color: rgba(0, 0, 0, 0.1);
+      position: relative;
+      top: 12px;
+      cursor: pointer;
+      border-radius: 100%; 
+      margin-left:10px
+        
+    }
+    
+    
 
 }
 
