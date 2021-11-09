@@ -22706,5 +22706,12 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.408": {
+        "name": "Kml Renderer",
+        "instance": "KmlRenderer",
+        "parameters": {
+            "target": "none"
+        }
     }
 }
