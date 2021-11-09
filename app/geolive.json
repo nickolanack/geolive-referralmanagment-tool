@@ -22711,7 +22711,13 @@
         "name": "Kml Renderer",
         "instance": "KmlRenderer",
         "parameters": {
-            "target": "none"
+            "widgetTitle": "Kml renderer",
+            "target": "kmlDocumentRenderer",
+            "allowDelete": false,
+            "allowEdit": false,
+            "cacheable": true,
+            "resolveSpatialFilePathScript": "return $parameters;",
+            "readAccess": "public"
         }
     }
 }
