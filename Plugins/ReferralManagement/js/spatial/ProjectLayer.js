@@ -27,7 +27,7 @@ var ProjectLayer = (function() {
 					var me = this;
 					XMLControlQuery.prototype.initialize.call(this, CoreAjaxUrlRoot, 'get_kml_for_document', {
 						"document": url,
-						"plugin": "Maps"
+						'widget': "kmlDocumentRenderer"
 					});
 
 					me._cacheable = true;
