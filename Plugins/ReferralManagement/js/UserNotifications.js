@@ -37,7 +37,7 @@ var UserNotifications=(function(){
 			    events:{click:function(){
 			        
 
-			        var el=$$('.ui-view.dashboard-main')[0];
+			        var el=$$('body')[0];
 			       if(el.hasClass('hide-admin')){
 			       		el.removeClass('hide-admin');
 			       		return;

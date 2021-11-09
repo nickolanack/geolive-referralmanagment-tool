@@ -6,7 +6,7 @@ class ListItemCache {
 
 	public function cacheProjectsMetadataList($filter) {
 
-		Broadcast('cacheprojects', 'update', array('params' => $params));
+		Broadcast('cacheprojects', 'update', array('params' => $filter));
 
 		$filterHash = md5(json_encode($filter));
 		$filter = json_decode(json_encode($filter), true); //decode as array!

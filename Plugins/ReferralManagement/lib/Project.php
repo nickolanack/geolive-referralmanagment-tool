@@ -32,10 +32,16 @@ class Project {
 
 		$proposal = get_object_vars($result);
 
+		$proposal['id']==intval($proposal['id']);
+
 		$proposal['userdetails'] = GetClient()->userMetadataFor((int) $proposal['user']);
 		$proposal['community'] = GetPlugin('ReferralManagement')->communityCollective();
-		//$proposal['']
-		//
+		
+		$proposal['tmz']=date_default_timezone_get();
+		$proposal['createdDateTimestamp']=strtotime($proposal['createdDate']);
+		$proposal['modifiedDateTimestamp']=strtotime($proposal['modifiedDate']);
+
+
 		$proposal['metadata']=json_decode($proposal['metadata']);
 
 		$proposal['link'] = HtmlDocument()->website() . '/Projects/Project-' . $proposal['id'] . '/Overview';
