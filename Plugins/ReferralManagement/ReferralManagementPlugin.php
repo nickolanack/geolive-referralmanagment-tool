@@ -929,11 +929,17 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 			->toArray();
 	}
 
-	public function getProposalData($id) {
+
+	public function getProjectData($id) {
 
 		return (new \ReferralManagement\Project())
 			->fromId($id)
 			->toArray();
+	}
+
+	public function getProposalData($id) {
+
+		return $this->getProjectData($id);
 	}
 
 	/**
