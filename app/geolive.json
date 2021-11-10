@@ -21796,6 +21796,8 @@
             "widgetTitle": "Kml renderer",
             "target": "kmlDocumentRenderer",
             "cacheable": true,
+            "allowExternalFilePaths": true,
+            "allowExternalUrls": false,
             "resolveSpatialFilePathScript": "Kml renderer.resolveSpatialFilePathScript.js",
             "readAccess": "public"
         }
