@@ -16,7 +16,7 @@ if(strpos($file,'{datawarehouse}')===0){
     $data=GetPlugin('ReferralManagement')->getProjectData($id);
     $realpath=realpath('/srv/gather_gis/Data_Warehouse/'.$data['metadata']->file->file);
     if(file_exists($realpath)){
-        throw new \Exception($realpath);
+        //throw new \Exception($realpath);
         return $realpath;
     }
    
