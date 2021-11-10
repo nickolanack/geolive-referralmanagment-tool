@@ -18,6 +18,7 @@ if(strpos($file,'{datawarehouse}')===0){
     if(file_exists($realpath)){
         return $realpath;
     }
+    throw new \Exception($realpath);
     
     return $data['metadata']->file;
     
