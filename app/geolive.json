@@ -21724,5 +21724,35 @@
             "onLoadScript": "",
             "formatStepModulesScript": ""
         }
+    },
+    "widget.404": {
+        "name": "Stylesheet",
+        "instance": "CSS",
+        "parameters": {
+            "cacheable": false,
+            "link": false,
+            "sass": false,
+            "widgetTitle": "",
+            "target": "none",
+            "customCSS": "",
+            "sassParamters": [],
+            "formatSassParametersScript": "return $parameters;",
+            "useRemote": ""
+        }
+    },
+    "widget.405": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "",
+            "target": "none",
+            "templateName": "{target}",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "useRemote": ""
+        }
     }
 }
