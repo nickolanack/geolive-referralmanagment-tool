@@ -43,12 +43,10 @@ var ItemAttachments = (function() {
 			var list=[];
 
 			if (me.data && me.data.attributes.spatialFeatures) {
-
 				list=Project.ParseHtmlUrls(me.data.attributes.spatialFeatures);
-
 			}
 
-			if(me.data&&me.metadata&&me.metadata.file){
+			if(me.data&&me.data.metadata&&me.data.metadata.file){
 				list.push("{datawarehouse}/{project:"+me.getId()+"}/defualt.kml");
 			}
 
