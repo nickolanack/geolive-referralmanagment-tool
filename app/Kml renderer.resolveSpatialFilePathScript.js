@@ -8,9 +8,9 @@ if(strpos($file,'{datawarehouse}')===0){
     $id=explode('}',$id);
     $id=array_shift($id);
     
-    if(intval($id)<=0){
-        $id=30;
-    }
+    // if(intval($id)<=0){
+    //     $id=30;
+    // }
     
     
     $data=GetPlugin('ReferralManagement')->getProjectData($id);
