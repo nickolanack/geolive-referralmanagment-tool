@@ -2,7 +2,6 @@
     "type": "UIView",
     "config": {
         "className": "",
-        "identifier": "",
         "viewType": "view",
         "namedView": "singleTaskOverviewDetail",
         "shouldRender": true,
@@ -12,12 +11,10 @@
         "formOptions": "\"{}\"",
         "showDeleteButton": false,
         "deleteItemScript": "defaultBehaviorFn()",
-        "initModuleScript": "",
         "formatModuleScript": "",
         "resolveItemScript": "return item",
         "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",
-        "insertAtTop": false,
-        "targetName": ""
+        "insertAtTop": false
     }
 }

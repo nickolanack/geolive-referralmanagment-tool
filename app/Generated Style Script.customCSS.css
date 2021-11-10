@@ -100,9 +100,8 @@ foreach(array("permit", "agreement", "letter", "document", "spatial", "other") a
     }
     
     .file-list.<?php echo $type;?>s .file-container{
-        /*
         background-image: url("<?php echo UrlFrom($config->getParameter($type)[0]."?tint=".$config->getParameter($type."Tint","rgb(0,0,0)")); ?>");
-        */
+
     }
    
     <?php 
@@ -113,7 +112,7 @@ foreach(array("permit", "agreement", "letter", "document", "spatial", "other") a
 
 ?>
 
-.add-spatial .upload-btns .documen.file-browse-btnt, .add-spatial .upload-btns .layer.file-browse-btn{
+.add-spatial .upload-btns span.document, .add-spatial .upload-btns span.layer.noIcon{
     background-image: url("<?php echo UrlFrom($config->getParameter('spatial')[0])."?tint=".$config->getParameter("spatialTint","rgb(0,0,0)"); ?>");
 }
 span.flag{

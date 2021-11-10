@@ -2,7 +2,6 @@
     "type": "FieldValue",
     "config": {
         "loadAsync": false,
-        "identifier": "",
         "fieldLabelScript": "return \"#task-\"+item.getId()",
         "fieldValueScript": "return \"\";",
         "formatElementScript": "el.addClass('task-id');"

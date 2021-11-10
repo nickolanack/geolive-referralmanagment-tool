@@ -1,20 +1,16 @@
 {
     "type": "plugin.Discussions.Discussion",
     "config": {
-        "discussionTarget": "",
         "width": 0,
         "constrainHeight": false,
         "height": 100,
         "inlineEditing": true,
         "inlineReply": false,
-        "inlineReplyNamedForm": "",
         "emptyMessage": "There are no events to display",
         "channel": "wabun",
-        "resolveChannelScript": "return defaultChannel;",
         "resolveItemScript": "return new MockDataTypeItem({type:\"widget\", id:145});",
-        "initialPostsScript": "",
+        "initialPostsScript": "return <?php \n\n $posts=($plugin=GetPlugin('Discussions'))->getPostsForItem(145, 'widget', 'wabun');\n echo json_encode($posts, JSON_PRETTY_PRINT);\n\n\n?>;",
         "namedView": "defaultPostDetail",
-        "reverseOrder": true,
-        "className": ""
+        "reverseOrder": true
     }
 }

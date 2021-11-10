@@ -1,4 +1,11 @@
-   var t=item.getTasks().filter(function(t){
+var enabled= DashboardConfig.getValue('enableTasks');
+    
+    if(!enabled){
+        return null;
+    }
+    
+
+    var t=item.getTasks().filter(function(t){
         return !t.isComplete();
     });
     var u=t.filter(function(t){
@@ -18,4 +25,4 @@
         new ElementModule("label",{html:"Remaining tasks"}),
         new ElementModule("div",{html:str, "class":"percent-complete-value"}),
         new ProgressBarModule({value:function(){ return 100-item.getPercentComplete(); },"class":"percent-complete"})
-    ],{"class":"progress", identifier:"project-task-remaining"});
+    ],{"class":"progress"});

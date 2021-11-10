@@ -1,1 +1,0 @@
-ProjectList.GetUIListItems(item, callback);

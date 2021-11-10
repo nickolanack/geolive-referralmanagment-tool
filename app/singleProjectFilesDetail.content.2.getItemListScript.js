@@ -1,1 +1,1 @@
-return ProjectFiles.getProjectFileSections(item);
+return ReferralManagementDashboard.getProjectFileSections(item);

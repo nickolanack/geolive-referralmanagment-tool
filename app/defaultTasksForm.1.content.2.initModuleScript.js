@@ -1,1 +1,0 @@
-TaskItem.InitTemplateList(module);
