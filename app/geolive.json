@@ -22713,10 +22713,10 @@
         "parameters": {
             "widgetTitle": "Kml renderer",
             "target": "kmlDocumentRenderer",
+            "cacheable": true,
+            "resolveSpatialFilePathScript": "Kml renderer.resolveSpatialFilePathScript.js",
             "allowDelete": false,
             "allowEdit": false,
-            "cacheable": true,
-            "resolveSpatialFilePathScript": "return $parameters;",
             "readAccess": "public"
         }
     }
