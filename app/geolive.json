@@ -22714,7 +22714,7 @@
             "widgetTitle": "Kml renderer",
             "target": "kmlDocumentRenderer",
             "cacheable": true,
-            "resolveSpatialFilePathScript": "return $path;",
+            "resolveSpatialFilePathScript": "return $file;",
             "allowDelete": false,
             "allowEdit": false,
             "readAccess": "public"
