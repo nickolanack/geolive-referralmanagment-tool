@@ -21793,10 +21793,11 @@
         "name": "Kml Renderer",
         "instance": "KmlRenderer",
         "parameters": {
-            "widgetTitle": "",
-            "target": "none",
+            "widgetTitle": "Kml renderer",
+            "target": "kmlDocumentRenderer",
             "cacheable": true,
-            "resolveSpatialFilePathScript": "return $path;"
+            "resolveSpatialFilePathScript": "Kml renderer.resolveSpatialFilePathScript.js",
+            "readAccess": "public"
         }
     }
 }
