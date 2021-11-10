@@ -1,6 +1,6 @@
 
 if(strpos($file,'{datawarehouse}')===0){
-    throw new \Exception(print_r($args));
+    throw new \Exception(print_r($args, true));
 }
 
 return $file;
