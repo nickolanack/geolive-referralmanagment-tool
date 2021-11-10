@@ -21788,5 +21788,15 @@
             "onLoadScript": "",
             "formatStepModulesScript": ""
         }
+    },
+    "widget.408": {
+        "name": "Kml Renderer",
+        "instance": "KmlRenderer",
+        "parameters": {
+            "widgetTitle": "",
+            "target": "none",
+            "cacheable": true,
+            "resolveSpatialFilePathScript": "return $path;"
+        }
     }
 }
