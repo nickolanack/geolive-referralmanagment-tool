@@ -21723,16 +21723,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 334,
-                            "y": 240
+                            "x": 344,
+                            "y": 250
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 294,
-                                    "y": 478
+                                    "x": 304,
+                                    "y": 501
                                 }
                             }
                         ],
@@ -21781,9 +21781,9 @@
                                                 "label": "Show attributes",
                                                 "identifier": "boolean-field-attributes",
                                                 "mandatory": false,
-                                                "getValueScript": "return false;",
+                                                "getValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.3.config.getValueScript.js",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "",
+                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
                                                 "validateValueScript": "",
                                                 "formatElementScript": ""
                                             }
