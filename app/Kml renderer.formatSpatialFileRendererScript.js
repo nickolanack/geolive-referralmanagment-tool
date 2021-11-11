@@ -1,0 +1,1 @@
+Broadcast('kmlRender', 'format', $args);

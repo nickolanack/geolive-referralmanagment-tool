@@ -2,7 +2,7 @@ if(item.getId()<=0||(!item.isArchived())){
     return null;
 }
 
-return new Element('button',{"html":"Delete", "class":"primary-btn error", "events":{"click":function(){
+return new Element('button',{"html":"Delete", "class":"primary-btn error remove", "events":{"click":function(){
     
     
     if (confirm('Are you sure you want to delete this proposal?')) {

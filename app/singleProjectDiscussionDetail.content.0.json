@@ -1,9 +1,10 @@
 {
     "type": "InlineHtml",
     "config": {
-        "className": "section-title",
+        "className": "section-title discussion-header",
         "text": "Discussion",
         "template": "",
-        "templateVariablesScript": ""
+        "templateVariablesScript": "",
+        "formatTextScript": ""
     }
 }

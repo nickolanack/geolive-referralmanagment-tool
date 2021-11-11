@@ -1,1 +1,1 @@
-wizardDataSet.fillOpacity=object.value;
+wizardDataSet.lineOpacity=object.value;
