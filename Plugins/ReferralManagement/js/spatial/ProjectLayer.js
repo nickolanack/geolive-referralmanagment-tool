@@ -27,7 +27,7 @@ var ProjectLayer = (function() {
 					var me = this;
 					XMLControlQuery.prototype.initialize.call(this, CoreAjaxUrlRoot, 'get_kml_for_document', {
 						"document": url,
-						"options":(options.projectAttributes&&options.projectAttributes.metadata)?options.projectAttributes.metadata:{}
+						"options":(options.projectAttributes&&options.projectAttributes.metadata)?options.projectAttributes.metadata:{},
 						'widget': "kmlDocumentRenderer"
 					});
 
