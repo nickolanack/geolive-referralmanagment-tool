@@ -350,7 +350,7 @@ var SpatialProject = (function() {
                     mutable:true,
                     showIcons:true,
                     showLabels:false,
-                    showAttributes:false,
+                    showAttributes:true,
                     lineColor:"#000000",
                     fillColor:"#000000",
                     lineOpacity:1,
