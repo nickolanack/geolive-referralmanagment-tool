@@ -54,7 +54,48 @@ var ProjectList = (function() {
 			return [];
 		},
 
+		hasCategoryLockFilter:function(){
+			if (this.getCategoryLockFilter()) {
+				return true;
+			}
+			return false;
+
+		},
+
+		getCategoryLockFilter:function(){
+			if (this.getLockFilter) {
+				var filter = this.getLockFilter();
+
+
+				if ((!filter) || filter.length == 0) {
+					return null;
+				}
+
+				var filterName=filter;
+				if(isArray_(filterName)){
+					filterName=filterName[0];
+				}
+
+				if(filterName.length > 0 && filterName[0]=='!'){
+					filterName=filterName.slice(1);
+				}
+
+
+				if(ProjectTagList.hasTag(filterName)){
+					return ProjectTagList.getTag(filterName);
+				}
+			}
+
+			return null;
+		},
+
 		getProjectListFilterChildTags: function() {
+
+
+			/**
+			 * todo: replace most of this with getCategoryLockFilter method above;
+			 */
+
 
 			if (this.getLockFilter) {
 				var filter = this.getLockFilter();
