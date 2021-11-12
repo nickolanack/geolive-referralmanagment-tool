@@ -38,6 +38,15 @@ button:focus {outline:0;}
     }
 }
 
+.section-title button {
+    border:none;
+}
+.section-title button:after {
+    content: "\0f148";
+    font-family: 'FontAwesome';
+    font-size: 30px;
+}
+
 
 
 .dark, .dark *{
