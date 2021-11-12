@@ -6,11 +6,11 @@ if(data){
     }
     
     var t = new Element('table');
-    Object.keys(data).forEach(function(k)){
+    Object.keys(data).forEach(function(k){
        var tr = t.appendChild(new Element('tr'));
        tr.appendChild(new Element('td', {html:k}));
        tr.appendChild(new Element('td', {html:data[k]}));
-    }
+    });
     return t;
     
 }
