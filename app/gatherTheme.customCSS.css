@@ -1,16 +1,128 @@
-
 @charset "utf-8";
 
+
 $highlightBtnColor:#efa82c;
-$highlightBtnHoverColor:#f56e13;;
+$highlightBtnHoverColor:#f56e13;
+$defaultBtnColor:$highlightBtnColor;
+$primaryBtnColor:mediumseagreen;
+$pendingColor:crimson;
+$implementedColor:$primaryBtnColor;
+
+$shareColor:#6A7CE9;
+$shareColorHover:darken($shareColor, 10%);
+
+$reportColor:$primaryBtnColor;
+$reportColorHover:darken($reportColor, 10%);
+
+$editColor:$defaultBtnColor;
+$editColorHover:darken($editColor, 10%);
+
+$archiveColor:#EDC84C;
+$archiveColorHover:darken($archiveColor, 10%);
 
 
-button.primary-btn.nav-new-btn{
-    background-color:$highlightBtnColor;
+$addColor:$highlightBtnColor;
+$addColorHover:$highlightBtnHoverColor;
+
+
+$buttonTextColor:black;
+$leftPanelColor:#222222;
+
+
+.form-list [data-view="singleTaskListItemDetail"] {
+    display: inline-block;
+    width: calc( 100% - 75px );
+    position: relative;
+    
+    
+    .inline-btn.remove {
+        position: absolute;
+        right: -85px;
+        top: -6px;
+        padding: 6px 10px;
+    }
 }
 
 
- button.primary-btn.nav-new-btn:hover {
+.discussion-header{
+    border-bottom: 4px solid #2E303A;
+    box-shadow: 13px 12px 10px rgb(0 0 0 / 50%);;
+    z-index: 1;
+    position: relative;
+}
+
+
+.dark .layout-list .file-list .file-item .file-container {
+    overflow: hidden;
+    border-radius: 3px;
+    background: #030310;
+    padding: 0;
+    border-width: 0;
+}
+
+.pb-c [data-view="singleTaskOverviewDetail"] [data-view="singleUserTeamCollectionIconsInlineDetail"] {
+    display:none;
+}
+
+.pb-c [data-view="singleUserTeamCollectionIconsDetail"] .pro-tip-hint {
+    float: unset;
+    padding: 0;
+}
+.pb-c .field-value-module.item-title {
+    
+    /*mimic h2 form headings*/
+    width: unset;
+    margin: 10px 0;
+    font-size: 18px;
+    overflow: visible;
+    white-space: normal;
+    line-height: 26px;
+    font-weight: 100;
+}
+
+
+
+button.primary-btn.nav-new-btn, .inline-navigation-menu li.menu-map-add.basemap button{
+    background-color:$highlightBtnColor;
+}
+
+.inline-navigation-menu li.menu-map-add.basemap button {
+    padding: 5px 10px;
+    border-radius: 100px;
+    color: #2d2d2d;
+    float: unset;
+    vertical-align: bottom;
+    margin: 0;
+    font-size: 1em;
+    position: relative;
+    top: 2px;
+}
+
+
+.inline-navigation-menu li.menu-map-add.basemap button:before {
+    content: "+ ";
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+
+button.form-btn.inline-edit {
+    float: right;
+    background-color: rgb(238, 238, 238);
+    padding: 0;
+    height: 36px;
+    width: 36px;
+    margin: 10px;
+    margin-right: 0;
+    color:white;
+}
+
+button.form-btn.inline-edit.is-light {
+    color: black;
+}
+
+
+ button.primary-btn.nav-new-btn:hover, .inline-navigation-menu li.menu-map-add.basemap button:hover {
     background-color: $highlightBtnHoverColor; /* */
  }
  
@@ -22,7 +134,7 @@ button.primary-btn.nav-new-btn{
 
 
 [data-view="leftPanel"] {
-    background-color: #222222;
+    background-color: $leftPanelColor;
 }
 
 [data-view="mainProjectsDetail"] .project-list-filters {
@@ -111,6 +223,14 @@ button.primary-btn.nav-new-btn.view-selection:before {
     text-align: center;
     border-radius: 2px;
     cursor: pointer;
+    
+    &.is-light {
+        color: black;
+    }
+    &.is-dark {
+        color: white;
+    }
+    
 }
 
 .field-value-module.inline.icon:before {
@@ -119,6 +239,12 @@ button.primary-btn.nav-new-btn.view-selection:before {
     color: #efa82c;
     vertical-align: super;
 }
+
+.is-dataset .field-value-module.inline.icon:before {
+    content: "\0f278";
+}
+
+
 .table-header .field-value-module.icon:before {
     visibility: hidden;
 }
@@ -152,16 +278,17 @@ button.primary-btn.nav-new-btn.view-selection:before {
 
     &:after {
         content: "";
-        background: #e88224;
+        background-color: $loginImageTint;
         position: fixed;
         width: 50%;
         height: 100%;
         right: 0;
         top: 0;
         z-index: -1;
-        background-image: url(https://dyl2vw577xcfk.cloudfront.net/wabun.geoforms.ca/1/Uploads/%5BImAgE%5D_KGR_%5BG%5D_BdY_wCX.jpeg);
+        background-image: url($loginImage);
         background-size: cover;
         background-blend-mode: luminosity;
+        background-position: center;
     }
 
     
@@ -203,6 +330,10 @@ button.primary-btn.nav-new-btn.view-selection:before {
 .section-title {
     font-weight: 400;
     font-size: 25px;
+}
+
+[data-view="tasksListDetail"] .section-title, span.filter-btns {
+    height: 40px;
 }
 
 .priority-indicator{
@@ -273,6 +404,13 @@ button.primary-btn.nav-new-btn.view-selection:before {
 
 .inline-navigation-menu li.active {
     border-bottom: 4px solid $highlightBtnColor;
+    button {
+        color: darken($highlightBtnColor, 20%);
+    }
+}
+
+.dark .inline-navigation-menu li.active {
+   
     button {
         color: white;
     }
@@ -375,9 +513,22 @@ button.primary-btn.nav-new-btn.view-selection:before {
 }
 
 
-button.inline-btn.add, button.primary-btn {
-    background-color: $highlightBtnColor;
+button.inline-btn, button.primary-btn {
+    background-color: $defaultBtnColor;
+    transition: background-color 2s;
+    color:$buttonTextColor;
     border-radius: 100px;
+    
+    &:hover{
+        transition: background-color 0.3s;
+    }
+    
+    &.add{
+        background-color: $addColor;
+        &:hover{
+            background-color: $addColorHover;
+        }
+    }
 }
 
 
@@ -437,17 +588,88 @@ button.inline-btn.add, button.primary-btn {
 
 button.selectable{
     &.primary-btn {
-        border: 1px dashed mediumseagreen;
+        border: 1px dashed $primaryBtnColor;
         background-color: transparent;
         float: left;
         
         &.selected {
-            background-color: mediumseagreen;
+            background-color: $primaryBtnColor;
         }
-
+    
+        
+        
+        
         
     }
-    
+}
+
+
+.primary-btn, .primary-btn.selectable {
+    &.pending{
+        
+        border: 1px dashed $pendingColor;
+        color:$pendingColor;
+        &:hover{
+            background-color:adjust-color($pendingColor, $alpha: -0.7);
+        }
+        &.selected{
+            background-color:$pendingColor;
+            border-color: transparent;
+            color:$buttonTextColor;
+            &:hover{
+                 background-color:darken($pendingColor, 10%);
+            }
+        }
+        
+    }
+    &.implemented{
+        
+        border: 1px dashed $implementedColor;
+        color:$implementedColor;
+        &:hover{
+            background-color:adjust-color($implementedColor, $alpha: -0.7);
+        }
+        &.selected{
+            background-color:$implementedColor;
+            border-color: transparent;
+            color:$buttonTextColor;
+            &:hover{
+                 background-color:darken($implementedColor, 10%);
+            }
+        }
+        
+        
+    }
+    &.share{
+        background-color:$shareColor;
+        &:hover{
+             background-color:$shareColorHover;
+        }
+    }
+    &.remove{}
+    &.report{
+        background-color:$reportColor;
+        &:hover{
+             background-color:$reportColorHover;
+        }
+        
+    }
+    &.edit{
+        background-color:$editColor;
+        &:hover{
+             background-color:$editColorHover;
+        }
+        
+    }
+    &.archive{
+        
+        background-color:$archiveColor;
+        &:hover{
+             background-color:$archiveColorHover;
+        }
+        
+    }
+    &.unarchive{}
     
 }
 
@@ -458,5 +680,23 @@ button.selectable{
     display: inline-block;
     white-space: nowrap;
 }
+
+
+
+[data-view="groupListsProjectDetail"].ui-view.left-panel .w-50 .dark-only-shading.inset-menu-shading {
+   
+    border-radius: 5px;
+    padding: 15px;
+    width: calc(100% - 15px);
+    box-sizing: border-box;
+    margin-left: 15px;
+}
+.dark [data-view="groupListsProjectDetail"].ui-view.left-panel .w-50 .dark-only-shading.inset-menu-shading {
+     background-color: $leftPanelColor;
+}
+
+
+
+
 
 

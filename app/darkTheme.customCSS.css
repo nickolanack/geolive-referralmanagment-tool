@@ -2,6 +2,7 @@
 
 
 $darkThemeBG:#030310;
+$darkThemeInputBG:#1e1e1e;
 $darkThemeInset:#030310;
 $tagBtnColor:#2E303A;
 $fontColor:#e0e0e2;
@@ -94,8 +95,8 @@ $mainStyleColor:#efa82c;
         background-color: transparent;
     }
 
-    .text-input, .discussion-textbox {
-        background-color: $darkThemeBG;
+    .text-input, .discussion-textbox, .ui-view.reply-box .discussion-textbox {
+        background-color: $darkThemeInputBG;
         border: 1px solid #4e4e4e;
         color: $fontColor;
         border: 1px solid #4e4e4e;
@@ -107,7 +108,7 @@ $mainStyleColor:#efa82c;
     }
 
 
-    .label.top-left, .checkboxStyle {
+    .label.top-left, .checkbox-style {
         color: $fontColor;
     }
 
@@ -199,6 +200,20 @@ $mainStyleColor:#efa82c;
         }
         
     }
+    
+    
+    ul.user-roles li {
+        filter: invert(1);
+    }
+    
+    
+    .ui-view[data-view="singleMapTitleBarView"] {
+        .ui-view[data-view="singleProjectListItemTableDetail"] {
+            background-color:$tagBtnColor;
+            
+        }
+    }
+
 
 
 }

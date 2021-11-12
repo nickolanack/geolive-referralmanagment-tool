@@ -73,9 +73,25 @@ IncludeJSBlock('
                 $dashConfig->getParameter('pageClassNames').'"
             }
         })
+        
+        NotificationBubble.SetOptions({
+            className:"'.($dashConfig->getParameter('darkMode')?' dark':'').' '.
+                $dashConfig->getParameter('pageClassNames').'"
+        });
+        
+        
+        UIPopover.SetOptions({
+            className:"'.($dashConfig->getParameter('darkMode')?' dark':'').' '.
+                $dashConfig->getParameter('pageClassNames').'"
+        })
+        
     });
 
 ');
+
+
+
+    GetWidget('adminStyles')->display($targetInstance);   
 
 
     if(strpos($dashConfig->getParameter('pageClassNames'), 'dark')!==false||$dashConfig->getParameter('darkMode')){
@@ -212,6 +228,12 @@ GetWidget('textFieldForm')->display($targetInstance);
 GetWidget('layerGroupForm')->display($targetInstance);
 GetWidget('mainMapDetailLayers')->display($targetInstance);
 GetWidget('themeForm')->display($targetInstance);
+
+GetWidget('defaultTasksForm')->display($targetInstance);
+GetWidget('baseMapForm')->display($targetInstance);
+
+GetWIdget('discussionMediaPostForm')->display($targetInstance);
+
 
 
 
