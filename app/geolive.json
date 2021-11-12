@@ -22527,7 +22527,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "console.error(item);",
+                                    "script": "Plain InfoWindow.metadata.positions.content.modules.1.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
