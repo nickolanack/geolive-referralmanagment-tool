@@ -92,11 +92,11 @@ IncludeJSBlock('
 
 
     GetWidget('adminStyles')->display($targetInstance);   
-
-
+    GetWidget('darkTheme')->display($targetInstance);   
+    
     if(strpos($dashConfig->getParameter('pageClassNames'), 'dark')!==false||$dashConfig->getParameter('darkMode')){
         
-         GetWidget('darkTheme')->display($targetInstance);   
+         
         
     }
 

@@ -216,42 +216,46 @@ $mainStyleColor:#efa82c;
 
 
 
-}
 
 
-.ui-view.inset-menu-shading.dark-only-shading>div {
-    background-color: transparent;
-}
-
-
-[data-view="tasksOverviewListDetail"], [data-view="projectsOverviewDetail"] {
-
-    .section-title {
-        background-color: rgba(255, 255, 255, 0.1);
-    }
- .filter-btns .sort, button.inline-btn.add.primary-btn{
-       margin-top: 7px !important;
-    }
-
-    .ui-view.active-project {
+    .ui-view.inset-menu-shading.dark-only-shading>div {
         background-color: transparent;
     }
+    
+    
+    [data-view="tasksOverviewListDetail"], [data-view="projectsOverviewDetail"] {
+    
+        .section-title {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+     .filter-btns .sort, button.inline-btn.add.primary-btn{
+           margin-top: 7px !important;
+        }
+    
+        .ui-view.active-project {
+            background-color: transparent;
+        }
+    }
+    
+    
+    
+    [data-view="tasksOverviewListDetail"] {
+    
+        .section-title {
+            margin-top:100px;
+        }
+        
+       
+        
+    }
+
+
 }
 
 .pb-w .template-footer {
  
     background-color: #3f3f3f;
 
-}
-
-[data-view="tasksOverviewListDetail"] {
-
-    .section-title {
-        margin-top:100px;
-    }
-    
-   
-    
 }
 
 
