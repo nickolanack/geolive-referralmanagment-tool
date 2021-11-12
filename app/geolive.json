@@ -22522,7 +22522,15 @@
                     },
                     "content": {
                         "modules": [
-                            "Plain InfoWindow.metadata.positions.content.modules.0.json"
+                            "Plain InfoWindow.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "console.error(item);",
+                                    "description": "Info about my custom script"
+                                }
+                            }
                         ]
                     },
                     "footer": {
