@@ -14,7 +14,7 @@
         "beforeRenderModuleScript": "module.setLabel(item.getLabel());",
         "onRenderTextFieldScript": "",
         "formatValueScript": "",
-        "getValueScript": " return item.getText();",
+        "getValueScript": " var value = item.getText(callback);\n if(typeof value==\"string\"){\n     return value;\n }\n \n  if(typeof value==\"function\"){\n     value= value(callback);\n     if(typeof value==\"string\"){\n         return value;\n     }\n }",
         "updateValueScript": " object.value=value ",
         "submitValueScript": "item.setText(object.value)",
         "validateValueScript": " return defaultValidationFn() "
