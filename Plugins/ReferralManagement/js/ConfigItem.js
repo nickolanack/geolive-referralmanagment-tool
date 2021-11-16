@@ -112,6 +112,22 @@ var ConfigItem = (function() {
 
 
     ConfigItem.CreateEditBtn = function(item, options, callback) {
+
+
+        if(!(item instanceof ConfigItem)&&(!options)&&item.userAuth){
+            options=item;
+        }
+
+        if(typeof options=="function"){
+            callback=options;
+            options={};
+        }
+
+
+        options=Object.append({
+            userAuth:false
+        }, options);
+
         return new Element('button', {
 
             html: "edit",
