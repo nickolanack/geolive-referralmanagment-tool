@@ -111,6 +111,57 @@ var ConfigItem = (function() {
     }
 
 
+    ConfigItem.CreateEditBtn = function(item, options) {
+        return new Element('button', {
+
+            html: "edit",
+            'class': 'inline-edit',
+            events: {
+                click: function() {
+
+                   
+
+                    var configValue = (new MockDataTypeItem({
+                        mutable: true,
+                        label: item.getEditLabel(),
+                        text: item.getText()
+                    }));
+
+                    configValue.addEvent('save', function() {
+
+                        //content.innerHTML = configValue.getText();
+                        //text = configValue.getText();
+
+                        (new AjaxControlQuery(CoreAjaxUrlRoot, (options.userAuth?'user_':'')+'set_configuration_field', {
+                            "widget": item.getWidget(),
+                            "field": {
+                                "name": item.getParam(),
+                                "value": configValue.getText()
+                            }
+                        })).execute();
+
+
+                    });
+
+
+
+                    (new UIModalDialog(
+                        ReferralManagementDashboard.getApplication(),
+                        configValue, {
+                            "formName": item.getForm(),
+                            "formOptions": {
+                                template: "form"
+                            }
+                        }
+                    )).show();
+
+                }
+            }
+
+        })
+    }
+
+
 
     return ConfigItem;
 
