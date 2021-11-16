@@ -17768,7 +17768,7 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
+            "parseMarkdown": true,
             "contentTemplate": "module-html-peopleUsersDetail-text.contentTemplate.html",
             "readAccess": "public"
         }
