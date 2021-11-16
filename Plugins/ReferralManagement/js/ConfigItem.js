@@ -111,7 +111,7 @@ var ConfigItem = (function() {
     }
 
 
-    ConfigItem.CreateEditBtn = function(item, options) {
+    ConfigItem.CreateEditBtn = function(item, options, callback) {
         return new Element('button', {
 
             html: "edit",
@@ -124,13 +124,23 @@ var ConfigItem = (function() {
                     var configValue = (new MockDataTypeItem({
                         mutable: true,
                         label: item.getEditLabel(),
-                        text: item.getText()
+                        text: item.getText?item.getText():function(callback){
+
+                             (new AjaxControlQuery(CoreAjaxUrlRoot, 'get_configuration_field', {
+                                "widget": item.getWidget(),
+                                "field": item.getParam()
+                            })).addEvent('success',function(resp){
+                                 callback(resp.value);
+                             }).execute();
+
+                        }
                     }));
 
                     configValue.addEvent('save', function() {
 
                         //content.innerHTML = configValue.getText();
                         //text = configValue.getText();
+                        
 
                         (new AjaxControlQuery(CoreAjaxUrlRoot, (options.userAuth?'user_':'')+'set_configuration_field', {
                             "widget": item.getWidget(),
