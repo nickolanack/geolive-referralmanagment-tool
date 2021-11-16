@@ -1,40 +1,38 @@
 var ConfigItem = (function() {
 
     var ConfigItem = new Class({
-        Extends:MockDataTypeItem
+        Extends: MockDataTypeItem
     });
 
 
 
-    ConfigItem.GetTextBlockModule = function(item , options) {
+    ConfigItem.GetTextBlockModule = function(item, options) {
 
-        
-        if(!(item instanceof ConfigItem)&&(!options)&&item.userAuth){
-            options=item;
+
+        if (!(item instanceof ConfigItem) && (!options) && item.userAuth) {
+            options = item;
         }
 
-        options=Object.append({
-            userAuth:false
+        options = Object.append({
+            userAuth: false
         }, options);
 
 
-        if(!(item instanceof ConfigItem)){
+        if (!(item instanceof ConfigItem)) {
 
             var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
-            item=new ConfigItem({
+            item = new ConfigItem({
                 "className": "section-help section-welcome section-module",
-                'heading':`<div class="section-title">
+                'heading': `<div class="section-title">
                         <span class="thin">Welcome Back,</span> ` + user.getName() + `
                     </div>`,
-                'param':'welcomeText',
-                'editLabel':'Edit welcome text',
-                'widget':"dashboardContentConfig",
-                'form':'textFieldForm'
+                'param': 'welcomeText',
+                'editLabel': 'Edit welcome text',
+                'widget': "dashboardContentConfig",
+                'form': 'textFieldForm'
             });
         }
 
-
-      
 
 
         var div = new Element('div', {
@@ -75,7 +73,7 @@ var ConfigItem = (function() {
                         content.innerHTML = configValue.getText();
                         text = configValue.getText();
 
-                        (new AjaxControlQuery(CoreAjaxUrlRoot, (options.userAuth?'user_':'')+'set_configuration_field', {
+                        (new AjaxControlQuery(CoreAjaxUrlRoot, (options.userAuth ? 'user_' : '') + 'set_configuration_field', {
                             "widget": item.getWidget(),
                             "field": {
                                 "name": item.getParam(),
@@ -114,18 +112,18 @@ var ConfigItem = (function() {
     ConfigItem.CreateEditBtn = function(item, options, callback) {
 
 
-        if(!(item instanceof ConfigItem)&&(!options)&&item.userAuth){
-            options=item;
+        if (!(item instanceof ConfigItem) && (!options) && item.userAuth) {
+            options = item;
         }
 
-        if(typeof options=="function"){
-            callback=options;
-            options={};
+        if (typeof options == "function") {
+            callback = options;
+            options = {};
         }
 
 
-        options=Object.append({
-            userAuth:false
+        options = Object.append({
+            userAuth: false
         }, options);
 
         return new Element('button', {
@@ -135,19 +133,27 @@ var ConfigItem = (function() {
             events: {
                 click: function() {
 
-                   
+                    var prefix = (options.userAuth ? 'user_' : '')
+                    var getMethod = prefix + 'get_raw';
+                    var setMethod = prefix + 'set_template';
+
+                    if (item.getParam) {
+                        getMethod = 'get_configuration_field'; //no user method
+                        setMethod = prefix + 'set_configuration_field';
+                    }
+
 
                     var configValue = (new MockDataTypeItem({
                         mutable: true,
                         label: item.getEditLabel(),
-                        text: item.getText?item.getText():function(callback){
+                        text: item.getText ? item.getText() : function(callback) {
 
-                             (new AjaxControlQuery(CoreAjaxUrlRoot,  (options.userAuth?'user_':'')+'get_raw', {
+                            (new AjaxControlQuery(CoreAjaxUrlRoot, getMethod, {
                                 "widget": item.getWidget(),
-                                "field": item.getParam()
-                            })).addEvent('success',function(resp){
-                                 callback(resp.value);
-                             }).execute();
+                                "field": item.getParam?item.getParam():null
+                            })).addEvent('success', function(resp) {
+                                callback(resp.value);
+                            }).execute();
 
                         }
                     }));
@@ -156,9 +162,9 @@ var ConfigItem = (function() {
 
                         //content.innerHTML = configValue.getText();
                         //text = configValue.getText();
-                        
 
-                        (new AjaxControlQuery(CoreAjaxUrlRoot, (options.userAuth?'user_':'')+'set_template', {
+
+                        (new AjaxControlQuery(CoreAjaxUrlRoot, setMethod, {
                             "widget": item.getWidget(),
                             "field": {
                                 "name": item.getParam(),
