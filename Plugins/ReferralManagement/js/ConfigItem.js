@@ -166,10 +166,11 @@ var ConfigItem = (function() {
 
                         (new AjaxControlQuery(CoreAjaxUrlRoot, setMethod, {
                             "widget": item.getWidget(),
-                            "field": {
+                            "field": item.getParam?{
                                 "name": item.getParam(),
                                 "value": configValue.getText()
-                            }
+                            }:null,
+                            'content':configValue.getText()
                         })).execute();
 
 
