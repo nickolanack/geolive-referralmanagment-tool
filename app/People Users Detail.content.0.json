@@ -5,7 +5,7 @@
         "text": "edit template",
         "template": "html.peopleUsersDetail",
         "templateVariablesScript": "{}",
-        "formatTextScript": "var btn=ConfigItem.CreateEditBtn(new ConfigItem({\n    \n}));\n\nif(btn){\n    module.appendChild(btn);\n}",
+        "formatTextScript": "var btn=ConfigItem.CreateEditBtn(new ConfigItem({\n    \n}));\n\nif(btn){\n    module.getElement().appendChild(btn);\n}",
         "ajaxRequestTemplate": true
     }
 }
