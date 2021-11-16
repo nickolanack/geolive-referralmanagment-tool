@@ -126,7 +126,7 @@ var ConfigItem = (function() {
                         label: item.getEditLabel(),
                         text: item.getText?item.getText():function(callback){
 
-                             (new AjaxControlQuery(CoreAjaxUrlRoot, 'get_configuration_field', {
+                             (new AjaxControlQuery(CoreAjaxUrlRoot,  (options.userAuth?'user_':'')+'get_raw', {
                                 "widget": item.getWidget(),
                                 "field": item.getParam()
                             })).addEvent('success',function(resp){
@@ -142,7 +142,7 @@ var ConfigItem = (function() {
                         //text = configValue.getText();
                         
 
-                        (new AjaxControlQuery(CoreAjaxUrlRoot, (options.userAuth?'user_':'')+'set_configuration_field', {
+                        (new AjaxControlQuery(CoreAjaxUrlRoot, (options.userAuth?'user_':'')+'set_template', {
                             "widget": item.getWidget(),
                             "field": {
                                 "name": item.getParam(),
