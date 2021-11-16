@@ -152,7 +152,7 @@ var ConfigItem = (function() {
                                 "widget": item.getWidget(),
                                 "field": item.getParam?item.getParam():null
                             })).addEvent('success', function(resp) {
-                                callback(resp.value);
+                                callback(resp.template||resp.value);
                             }).execute();
 
                         }
