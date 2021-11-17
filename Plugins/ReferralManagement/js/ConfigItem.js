@@ -1,8 +1,30 @@
 var ConfigItem = (function() {
 
+
+    /**
+     * Use config items to display some configuration text, with admin edit buttons
+     */
+
+
     var ConfigItem = new Class({
         Extends: MockDataTypeItem
     });
+
+    ConfigItem.WelcomeText=function(){
+
+        return ConfigItem.GetTextBlockModule(new ConfigItem({
+                "className": "section-help section-welcome section-module",
+                'heading': `<div class="section-title">
+                        <span class="thin">Welcome Back,</span> ` + user.getName() + `
+                    </div>`,
+                'param': 'welcomeText',
+                'editLabel': 'Edit welcome text',
+                'widget': "dashboardContentConfig",
+                'form': 'textFieldForm'
+            },{
+            "userAuth":true
+        });
+    }
 
 
 
@@ -20,17 +42,7 @@ var ConfigItem = (function() {
 
         if (!(item instanceof ConfigItem)) {
 
-            var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
-            item = new ConfigItem({
-                "className": "section-help section-welcome section-module",
-                'heading': `<div class="section-title">
-                        <span class="thin">Welcome Back,</span> ` + user.getName() + `
-                    </div>`,
-                'param': 'welcomeText',
-                'editLabel': 'Edit welcome text',
-                'widget': "dashboardContentConfig",
-                'form': 'textFieldForm'
-            });
+            throw 'Expected ConfigItem';
         }
 
 
