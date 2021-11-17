@@ -10469,7 +10469,8 @@
                                     "text": "Community Members &amp; Unassigned Users",
                                     "template": "",
                                     "templateVariablesScript": "",
-                                    "formatTextScript": ""
+                                    "formatTextScript": "",
+                                    "ajaxRequestTemplate": false
                                 }
                             },
                             {
@@ -10477,6 +10478,7 @@
                                 "config": {
                                     "listClassName": "",
                                     "className": "user-item section-module",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "singleUserListItemDetail",
                                     "shouldRender": true,
