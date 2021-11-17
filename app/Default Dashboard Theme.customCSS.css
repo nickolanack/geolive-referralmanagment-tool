@@ -1034,7 +1034,7 @@ span.warn {
     display: inline;
 }
 
-.section-title {
+.section-title, .markdown h2 {
     padding: 10px;
     font-size: 20px;
     line-height:1.1em;
