@@ -16583,16 +16583,16 @@
                             "userInviteForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 158,
-                            "y": 290
+                            "x": 178,
+                            "y": 310
                         },
                         "children": [
                             "userInviteForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 118,
-                                    "y": 456
+                                    "x": 138,
+                                    "y": 486
                                 }
                             }
                         ],
@@ -16610,6 +16610,28 @@
                                             "type": "FormTextField",
                                             "config": {
                                                 "className": "",
+                                                "label": "Users name",
+                                                "placeholder": "add name",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "beforeRenderModuleScript": "",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return \"\"; ",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "userInviteForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
                                                 "label": "Users email address",
                                                 "placeholder": "add email",
                                                 "lines": 1,
@@ -16619,11 +16641,12 @@
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "add another value",
                                                 "formatter": "none",
+                                                "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
                                                 "getValueScript": " return \"\"; ",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "userInviteForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
+                                                "submitValueScript": "userInviteForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         }
@@ -20850,16 +20873,16 @@
                             "textFieldForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 238,
-                            "y": 370
+                            "x": 258,
+                            "y": 390
                         },
                         "children": [
                             "textFieldForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 198,
-                                    "y": 536
+                                    "x": 218,
+                                    "y": 556
                                 }
                             }
                         ],
@@ -20872,7 +20895,29 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "textFieldForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                        "textFieldForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Some Field",
+                                                "placeholder": "add value",
+                                                "lines": 5,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "beforeRenderModuleScript": "textFieldForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.beforeRenderModuleScript.js",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": "textFieldForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.getValueScript.js",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "item.setText(object.value)",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        }
                                     ]
                                 },
                                 "footer": {

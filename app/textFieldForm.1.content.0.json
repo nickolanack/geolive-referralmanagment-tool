@@ -1,22 +1,8 @@
 {
-    "type": "FormTextField",
+    "type": "WizardScriptElement",
     "config": {
-        "className": "",
-        "label": "Some Field",
-        "placeholder": "add value",
-        "lines": 5,
-        "maxChars": 0,
-        "mandatory": false,
-        "multiEntry": false,
-        "muliTemplate": "lines",
-        "multiMessage": "add another value",
-        "formatter": "none",
-        "beforeRenderModuleScript": "module.setLabel(item.getLabel());",
-        "onRenderTextFieldScript": "",
-        "formatValueScript": "",
-        "getValueScript": " var value = item.getText(callback);\n if(typeof value==\"string\"){\n     return value;\n }\n \n  if(typeof value==\"function\"){\n     value= value(callback);\n     if(typeof value==\"string\"){\n         return value;\n     }\n }",
-        "updateValueScript": " object.value=value ",
-        "submitValueScript": "item.setText(object.value)",
-        "validateValueScript": " return defaultValidationFn() "
+        "name": "My Custom Script",
+        "script": "return new ElementModule('h2',{\n    html:item.getHeading?item.getHeading():\"Edit field\"\n});",
+        "description": "Info about my custom script"
     }
 }
