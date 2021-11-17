@@ -5991,17 +5991,6 @@
                                 }
                             },
                             {
-                                "type": "InlineHtml",
-                                "config": {
-                                    "className": "",
-                                    "text": "Team Members",
-                                    "template": "",
-                                    "templateVariablesScript": "",
-                                    "formatTextScript": "",
-                                    "ajaxRequestTemplate": false
-                                }
-                            },
-                            {
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "",
@@ -6023,12 +6012,12 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
-                                    "getItemListScript": "People Users Detail.metadata.positions.content.modules.3.config.getItemListScript.js",
+                                    "getItemListScript": "People Users Detail.metadata.positions.content.modules.2.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "People Users Detail.metadata.positions.content.modules.3.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "People Users Detail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
-                                    "sortItemsScript": "People Users Detail.metadata.positions.content.modules.3.config.sortItemsScript.js",
+                                    "sortItemsScript": "People Users Detail.metadata.positions.content.modules.2.config.sortItemsScript.js",
                                     "maxItems": "15"
                                 }
                             },
@@ -6036,7 +6025,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "People Users Detail.metadata.positions.content.modules.4.config.script.js",
+                                    "script": "People Users Detail.metadata.positions.content.modules.3.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
@@ -10463,17 +10452,6 @@
                                 }
                             },
                             {
-                                "type": "InlineHtml",
-                                "config": {
-                                    "className": "",
-                                    "text": "Community Members &amp; Unassigned Users",
-                                    "template": "",
-                                    "templateVariablesScript": "",
-                                    "formatTextScript": "",
-                                    "ajaxRequestTemplate": false
-                                }
-                            },
-                            {
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "",
@@ -10495,9 +10473,9 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
-                                    "getItemListScript": "communityUsersDetail.metadata.positions.content.modules.3.config.getItemListScript.js",
+                                    "getItemListScript": "communityUsersDetail.metadata.positions.content.modules.2.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "communityUsersDetail.metadata.positions.content.modules.3.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "communityUsersDetail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
                                     "sortItemsScript": "",
@@ -10508,7 +10486,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "communityUsersDetail.metadata.positions.content.modules.4.config.script.js",
+                                    "script": "communityUsersDetail.metadata.positions.content.modules.3.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
