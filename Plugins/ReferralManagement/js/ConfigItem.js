@@ -11,6 +11,8 @@ var ConfigItem = (function() {
     });
 
     ConfigItem.WelcomeText=function(){
+        
+        var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
 
         return ConfigItem.GetTextBlockModule(new ConfigItem({
             "className": "section-help section-welcome section-module",
