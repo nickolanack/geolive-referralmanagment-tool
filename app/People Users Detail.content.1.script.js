@@ -1,1 +1,1 @@
-return ReferralManagementDashboard.getUsersTeamMembersDescription();
+return UserGroups.ClientRoleInformation();
