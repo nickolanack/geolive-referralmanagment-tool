@@ -1,3 +1,3 @@
 return UserGroups.UserInvitationBtn({
-    label:"Invite Team Member"
+    label:"Invite team member"
 }));
