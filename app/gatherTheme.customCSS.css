@@ -45,7 +45,9 @@ $leftPanelColor:#222222;
 
 
 .content.markdown {
-    padding-left: 15px;
+    h1{
+        padding-left: 10px;
+    }
      p {
         padding-left: 25px;
     }
@@ -340,7 +342,7 @@ button.primary-btn.nav-new-btn.view-selection:before {
     color: gray;
 }
 
-.section-title {
+.section-title, .markdown h2 {
     font-weight: 400;
     font-size: 25px;
 }
