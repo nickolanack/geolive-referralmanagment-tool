@@ -270,6 +270,21 @@ var UserGroups = (function() {
 
 	}
 
+
+	UserGroups.UserInvitationBtn=function(options){
+
+		return (new ModalFormButtonModule(GatherDashboard.getApplication(), AppClient,ObjectAppend_({
+		        label:"Invite User",
+		        formName:"userInviteForm",
+		        formOptions:{
+		            template:"form"
+		        },
+		        //hideText:true,
+		        "class":"primary-btn"
+		    }, options));
+
+	}
+
 	UserGroups.ClientRoleInformation = function() {
 
 		var title = ""
