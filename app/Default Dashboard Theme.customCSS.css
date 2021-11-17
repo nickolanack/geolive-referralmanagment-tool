@@ -47,7 +47,12 @@ button:focus {outline:0;}
     font-size: 30px;
 }
 
-
+.markdown button.inline-edit {
+    float: right;
+    margin-right: 18px;
+    position: relative;
+    top: -60px;
+}
 
 .dark, .dark *{
     
