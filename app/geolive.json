@@ -20873,16 +20873,16 @@
                             "textFieldForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 238,
-                            "y": 370
+                            "x": 248,
+                            "y": 380
                         },
                         "children": [
                             "textFieldForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 198,
-                                    "y": 536
+                                    "x": 208,
+                                    "y": 546
                                 }
                             }
                         ],
@@ -20895,7 +20895,29 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "textFieldForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                        "textFieldForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Some Field",
+                                                "placeholder": "add value",
+                                                "lines": 5,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "beforeRenderModuleScript": "textFieldForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.beforeRenderModuleScript.js",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": "textFieldForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.getValueScript.js",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "item.setText(object.value)",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        }
                                     ]
                                 },
                                 "footer": {
