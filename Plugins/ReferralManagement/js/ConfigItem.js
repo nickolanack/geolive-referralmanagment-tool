@@ -65,7 +65,8 @@ var ConfigItem = (function() {
                     var configValue = (new MockDataTypeItem({
                         mutable: true,
                         label: item.getEditLabel(),
-                        text: text
+                        text: text,
+
                     }));
 
                     configValue.addEvent('save', function() {
@@ -155,7 +156,8 @@ var ConfigItem = (function() {
                                 callback(resp.template||resp.value);
                             }).execute();
 
-                        }
+                        },
+                        stepOptions:item.getStepOptions?item.getStepOptions.bind(item):null
                     }));
 
                     configValue.addEvent('save', function() {
