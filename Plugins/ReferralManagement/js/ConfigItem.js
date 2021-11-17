@@ -157,7 +157,7 @@ var ConfigItem = (function() {
                             }).execute();
 
                         },
-                        stepOptions:item.getStepOptions?item.getStepOptions.bind(item):null
+                        stepOptions:item.getStepOptions?item.getStepOptions(item):null
                     }));
 
                     configValue.addEvent('save', function() {
