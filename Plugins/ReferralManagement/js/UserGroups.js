@@ -297,6 +297,9 @@ var UserGroups = (function() {
                 	'plugin':"Users"
                 }).addEvent("onSuccess",function(response){
                         
+                	if(response.error){
+                        NotificationBubble.Make(response.error);
+                    }
 
                         if(response.success&&response.subscription){
 
