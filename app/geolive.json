@@ -22794,5 +22794,31 @@
             "allowEdit": false,
             "readAccess": "public"
         }
+    },
+    "widget.409": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.InvitationVerifyEmailLink.subject",
+            "target": "email.InvitationVerifyEmailLink.subject",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "contentTemplate": "Subject"
+        }
+    },
+    "widget.410": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.InvitationVerifyEmailLink.content",
+            "target": "email.InvitationVerifyEmailLink.content",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "contentTemplate": "Message Content"
+        }
     }
 }
