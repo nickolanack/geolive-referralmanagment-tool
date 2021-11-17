@@ -259,7 +259,7 @@ var UserGroups = (function() {
 
 		var p=new Element('p',{
 			"class":"hint",
-			"html":"<span class=\"section-title\">Pending users</span>"
+			"html":""
 		});
 
 		p.appendChild(HtmlContent.MakeInfoButtonModule({
@@ -272,7 +272,7 @@ var UserGroups = (function() {
 
 	UserGroups.ClientRoleInformation = function() {
 
-		var title = "<span class=\"section-title\">My community and user roles</span>"
+		var title = ""
 
 		var text="";
 		if (AppClient.getUserType() === "admin") {
