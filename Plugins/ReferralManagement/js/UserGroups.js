@@ -4,6 +4,7 @@ var UserGroups = (function() {
 
 
 
+
 	var MainRoles;
 
 
@@ -273,7 +274,47 @@ var UserGroups = (function() {
 
 	UserGroups.UserInvitationBtn=function(options){
 
-		return new ModalFormButtonModule(GatherDashboard.getApplication(), AppClient, ObjectAppend_({
+
+		var userInvite=(new MockDataTypeItem({
+            mutable: true,
+            name: '',
+            email:''
+        }));
+
+
+        var InviteRequest=new Class_({
+            Extends:AjaxControlQuery,
+            initialize:function(credentials){
+                this.parent(FrameworkCMSAjaxUrlRoot, "invite", credentials);
+            }
+        });
+
+        userInvite.addEvent('save',function(){
+
+        	(new InviteRequest({
+                	name:user.getName(),
+                	email:user.getEmail(),
+                	'plugin':"Users"
+                }).addEvent("onSuccess",function(response){
+                        
+
+                        if(response.success&&response.subscription){
+
+                            var container=new Element("div", {"class":"progress"});
+
+                            (new UITaskProgressSubscription(container, response)).addEvent("complete",function(){
+                            	
+                            })
+                            return;
+                        }
+
+                    })).execute();
+
+
+        });
+
+
+		return new ModalFormButtonModule(GatherDashboard.getApplication(), userInvite, ObjectAppend_({
 		        label:"Invite User",
 		        formName:"userInviteForm",
 		        formOptions:{
