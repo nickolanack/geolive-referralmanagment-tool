@@ -292,8 +292,8 @@ var UserGroups = (function() {
         userInvite.addEvent('save',function(){
 
         	(new InviteRequest({
-                	name:user.getName(),
-                	email:user.getEmail(),
+                	name:userInvite.getName(),
+                	email:userInvite.getEmail(),
                 	'plugin':"Users"
                 }).addEvent("onSuccess",function(response){
                         
