@@ -22819,7 +22819,8 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
-            "contentTemplate": "Message Content"
+            "contentTemplate": "email-InvitationVerifyEmailLink-content.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }
