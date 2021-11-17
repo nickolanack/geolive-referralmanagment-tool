@@ -1,21 +1,8 @@
 {
-    "type": "FormTextField",
+    "type": "WizardScriptElement",
     "config": {
-        "className": "",
-        "label": "Users name",
-        "placeholder": "add name",
-        "lines": 1,
-        "maxChars": 0,
-        "mandatory": false,
-        "multiEntry": false,
-        "muliTemplate": "lines",
-        "multiMessage": "add another value",
-        "formatter": "none",
-        "onRenderTextFieldScript": "",
-        "formatValueScript": "",
-        "getValueScript": " return \"\"; ",
-        "updateValueScript": " object.value=value ",
-        "submitValueScript": "wizardDataset.name=object.value;",
-        "validateValueScript": " return defaultValidationFn() "
+        "name": "My Custom Script",
+        "script": "return new ElementModule('h2',{\n    html:item.getHeading?item.getHeading():\"Edit Field\"\n});",
+        "description": "Info about my custom script"
     }
 }
