@@ -22805,7 +22805,8 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
-            "contentTemplate": "Subject"
+            "contentTemplate": "email-InvitationVerifyEmailLink-subject.contentTemplate.html",
+            "readAccess": "public"
         }
     },
     "widget.410": {
