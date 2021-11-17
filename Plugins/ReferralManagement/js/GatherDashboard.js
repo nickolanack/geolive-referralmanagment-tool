@@ -713,15 +713,7 @@ var GatherDashboard = (function() {
 		/*
 		 * @deprecated
 		 */
-		getUsersTeamMembersDescription: function() {
-			return UserGroups.ClientRoleInformation();
-		},
-
-		getUsersCommunityMembersDescription: function() {
-			return "<p>You can approve new site users.</p>"
-		},
-
-
+		
 		getUsersMobileDevicesDescription: function() {
 
 

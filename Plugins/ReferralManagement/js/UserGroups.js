@@ -255,6 +255,20 @@ var UserGroups = (function() {
 	};
 
 
+	UserGroups.PendingCommunityInformation = function() {
+
+		var p=new Element('p',{
+			"class":"hint",
+			"html":"<span class=\"section-title\">Pending users</span>"
+		});
+
+		p.appendChild(HtmlContent.MakeInfoButtonModule({
+			description:'You can approve new site users.'
+		}));
+		
+		return p;
+
+	}
 
 	UserGroups.ClientRoleInformation = function() {
 
