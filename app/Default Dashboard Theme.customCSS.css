@@ -54,6 +54,10 @@ button:focus {outline:0;}
     top: -60px;
 }
 
+[data-view="peopleUsersDetail"], [data-view="communityUsersDetail"] {
+    margin-bottom: 90px;
+}
+
 .dark, .dark *{
     
     &::-webkit-scrollbar {
