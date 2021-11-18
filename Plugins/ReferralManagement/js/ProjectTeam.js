@@ -921,11 +921,20 @@ var ProjectTeam = (function() {
 		getCompanies: function() {
 			var me = this;
 
-			return me.getProjects().map(function(p) {
+			var list= me.getProjects().map(function(p) {
 				return p.getCompany();
 			}).filter(function(c) {
 				return !!c;
 			});
+
+			var names=list.map(function(c){
+				return c.getCompanyName();
+			});
+
+			return list.filter(function(c,i){
+				return names.indexOf(c.getCompanyName()===i);
+			});
+			
 		},
 
 		getArchivedProjects: function(callback) {
