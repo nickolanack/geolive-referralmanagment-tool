@@ -22883,5 +22883,19 @@
             "contentTemplate": "email-InvitationVerifyEmailLink-content.contentTemplate.html",
             "readAccess": "public"
         }
+    },
+    "widget.411": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-proponentsText.text",
+            "target": "module.html-proponentsText.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Clients Detail View"
+        }
     }
 }
