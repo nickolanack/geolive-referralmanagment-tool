@@ -2723,6 +2723,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "module-wizard-step-one-text.contentTemplate.html",
             "readAccess": "public"
         }
@@ -2737,6 +2738,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "module-wizard-step-two-text.contentTemplate.html",
             "readAccess": "public"
         }
@@ -2751,6 +2753,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "module-wizard-step-three-text.contentTemplate.html",
             "readAccess": "public"
         }
@@ -3031,6 +3034,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "module-proposals-list-text.contentTemplate.html",
             "readAccess": "public"
         }
@@ -3827,6 +3831,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "module--text.contentTemplate.html"
         }
     },
@@ -10370,6 +10375,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "proposal-report.contentTemplate.html",
             "readAccess": "public"
         }
@@ -14067,6 +14073,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "activate-proposal-email-subject.contentTemplate.html"
         }
     },
@@ -14080,6 +14087,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "activate-proposal-email-body.contentTemplate.html",
             "readAccess": "public"
         }
@@ -14830,6 +14838,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "email-onRemoveTeamMemberFromTask-subject.contentTemplate.html",
             "readAccess": "public"
         }
@@ -14844,6 +14853,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "Message Content"
         }
     },
@@ -14857,6 +14867,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "email-onAddTeamMemberToTask-subject.contentTemplate.html",
             "readAccess": "public"
         }
@@ -14871,6 +14882,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "Message Content"
         }
     },
@@ -14884,6 +14896,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "email-onRemoveTeamMemberFromProject-subject.contentTemplate.html",
             "readAccess": "public"
         }
@@ -14898,6 +14911,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "email-onRemoveTeamMemberFromProject-content.contentTemplate.html",
             "readAccess": "public"
         }
@@ -14912,6 +14926,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "email-onAddTeamMemberToProject-subject.contentTemplate.html",
             "readAccess": "public"
         }
@@ -14926,6 +14941,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "email-onAddTeamMemberToProject-content.contentTemplate.html",
             "readAccess": "public"
         }
@@ -14940,6 +14956,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "email-onProjectUpdate-subject.contentTemplate.html",
             "readAccess": "public"
         }
@@ -14954,6 +14971,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "email-onProjectUpdate-content.contentTemplate.html",
             "readAccess": "public"
         }
@@ -15046,6 +15064,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "email-onTaskUpdate-subject.contentTemplate.html",
             "readAccess": "public"
         }
@@ -15060,6 +15079,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "email-onTaskUpdate-content.contentTemplate.html",
             "readAccess": "public"
         }
@@ -15788,6 +15808,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "email-MagicLoginLink-subject.contentTemplate.html",
             "readAccess": "public"
         }
@@ -15802,6 +15823,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "email-MagicLoginLink-content.contentTemplate.html",
             "readAccess": "public"
         }
@@ -15860,6 +15882,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "site-error-html.contentTemplate.html",
             "readAccess": "public"
         }
@@ -15874,6 +15897,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "event: update.task"
         }
     },
@@ -15887,6 +15911,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "event: create.proposal"
         }
     },
@@ -15900,6 +15925,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "event: update.proposal"
         }
     },
@@ -15913,6 +15939,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "event: create.task"
         }
     },
@@ -15926,6 +15953,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "event: delete.task"
         }
     },
@@ -15939,6 +15967,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "event: update.proposal.status"
         }
     },
@@ -15952,6 +15981,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "event: update.task.priority"
         }
     },
@@ -15965,6 +15995,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "event: update.task.star"
         }
     },
@@ -15978,6 +16009,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "event: update.task.date"
         }
     },
@@ -15991,6 +16023,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "event: add.task.attachements"
         }
     },
@@ -16004,6 +16037,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-remove-task-attachements-text.contentTemplate.html"
         }
     },
@@ -16017,6 +16051,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-add-proposal-description-text.contentTemplate.html"
         }
     },
@@ -16047,6 +16082,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "event: update.user.role"
         }
     },
@@ -16060,6 +16096,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "event: create.default.tasks"
         }
     },
@@ -16073,6 +16110,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-add-proposal-projectLetters-text.contentTemplate.html"
         }
     },
@@ -16086,6 +16124,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-remove-proposal-projectLetters-text.contentTemplate.html"
         }
     },
@@ -16099,6 +16138,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-remove-proposal-description-text.contentTemplate.html"
         }
     },
@@ -16112,6 +16152,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-add-proposal-spatialFeatures-text.contentTemplate.html"
         }
     },
@@ -16125,6 +16166,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-remove-proposal-spatialFeatures-text.contentTemplate.html"
         }
     },
@@ -16274,6 +16316,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "email-VerifyEmailLink-subject.contentTemplate.html",
             "readAccess": "public"
         }
@@ -16288,6 +16331,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "email-VerifyEmailLink-content.contentTemplate.html",
             "readAccess": "public"
         }
@@ -16302,6 +16346,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "email-DefaultMailerTemplate-subject.contentTemplate.html",
             "readAccess": "public"
         }
@@ -16396,6 +16441,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "event: remove.proposal.permits"
         }
     },
@@ -16409,6 +16455,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "event: add.proposal.permits"
         }
     },
@@ -16494,6 +16541,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "event: add.proposal.agreements"
         }
     },
@@ -16507,6 +16555,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "event: add.proposal.documents"
         }
     },
@@ -16714,6 +16763,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "event: guest.proposal"
         }
     },
@@ -16727,6 +16777,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "event: delete.proposal"
         }
     },
@@ -16740,6 +16791,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-update-proposal-permissions-text.contentTemplate.html"
         }
     },
@@ -16773,6 +16825,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-remove-proposal-documents-text.contentTemplate.html"
         }
     },
@@ -17111,6 +17164,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "module-html-communityDashboardPending-text.contentTemplate.html"
         }
     },
@@ -17753,6 +17807,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "saveTemplateAsData": true,
             "contentTemplate": "module-html-peopleUsersDetail-text.contentTemplate.html",
             "readAccess": "public"
         }
@@ -17767,6 +17822,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "saveTemplateAsData": false,
             "contentTemplate": "module-html-communityUsersDetail-text.contentTemplate.html",
             "readAccess": "public"
         }
@@ -22805,6 +22861,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "email-InvitationVerifyEmailLink-subject.contentTemplate.html",
             "readAccess": "public"
         }
@@ -22819,6 +22876,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "saveTemplateAsData": false,
             "contentTemplate": "email-InvitationVerifyEmailLink-content.contentTemplate.html",
             "readAccess": "public"
         }
