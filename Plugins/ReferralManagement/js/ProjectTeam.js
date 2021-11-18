@@ -932,7 +932,7 @@ var ProjectTeam = (function() {
 			});
 
 			return list.filter(function(c,i){
-				return names.indexOf(c.getName()===i);
+				return names.indexOf(c.getName())===i;
 			});
 			
 		},
