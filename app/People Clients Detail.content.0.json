@@ -3,7 +3,9 @@
     "config": {
         "className": "",
         "text": "Clients Detail View",
-        "template": "",
-        "templateVariablesScript": ""
+        "template": "html.proponentsText",
+        "templateVariablesScript": "{}",
+        "formatTextScript": "",
+        "ajaxRequestTemplate": false
     }
 }
