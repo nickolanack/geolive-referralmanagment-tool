@@ -14810,7 +14810,30 @@
                     },
                     "content": {
                         "modules": [
-                            "configurationArchiveDetail.metadata.positions.content.modules.0.json"
+                            "configurationArchiveDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "inset-menu-shading no-sub-list-style",
+                                    "identifier": "",
+                                    "viewType": "view",
+                                    "namedView": "archiveListView",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            }
                         ]
                     },
                     "footer": {
@@ -22896,6 +22919,21 @@
             "parseMarkdown": true,
             "saveTemplateAsData": false,
             "contentTemplate": "#Clients and proponents",
+            "readAccess": "public"
+        }
+    },
+    "widget.412": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-archiveText.text",
+            "target": "module.html-archiveText.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "Archive",
             "readAccess": "public"
         }
     }
