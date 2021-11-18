@@ -1086,12 +1086,18 @@ var TaskItem = (function() {
 			html: "Automatic task creation is " + (DashboardConfig.getValue("autoCreateDefaultTasks") ? "enabled" : "disabled")
 		}));
 
+		try{
+
 		TaskItem.TaskTemplates(category, function(tasks) {
 			if (tasks.length == 0) {
 				label.getElement().innerHTML += '<br/><span style="color:crimson;">There are no default tasks</span>';
 			}
 
 		});
+
+		}catch(e){
+			console.error(e);
+		}
 
 
 
