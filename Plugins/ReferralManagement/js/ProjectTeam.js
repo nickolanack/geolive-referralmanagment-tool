@@ -928,11 +928,11 @@ var ProjectTeam = (function() {
 			});
 
 			var names=list.map(function(c){
-				return c.getCompanyName();
+				return c.getName();
 			});
 
 			return list.filter(function(c,i){
-				return names.indexOf(c.getCompanyName()===i);
+				return names.indexOf(c.getName()===i);
 			});
 			
 		},
