@@ -22893,9 +22893,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
+            "parseMarkdown": true,
             "saveTemplateAsData": false,
-            "contentTemplate": "Clients Detail View"
+            "contentTemplate": "#Clients and proponents",
+            "readAccess": "public"
         }
     }
 }
