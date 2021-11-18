@@ -1,20 +1,11 @@
 {
-    "type": "UIView",
+    "type": "InlineHtml",
     "config": {
-        "className": "inset-menu-shading no-sub-list-style",
-        "viewType": "view",
-        "namedView": "archiveListView",
-        "shouldRender": true,
-        "namedViewScript": "return namedView",
-        "showInlineEdit": false,
-        "namedFormView": "defaultView",
-        "formOptions": "{}",
-        "showDeleteButton": false,
-        "deleteItemScript": "defaultBehaviorFn()",
-        "formatModuleScript": "",
-        "resolveItemScript": "return item",
-        "filterModulesScript": "return list",
-        "itemButtonsScript": "return [];",
-        "insertAtTop": false
+        "className": "",
+        "text": "",
+        "template": "html.archiveText",
+        "templateVariablesScript": "{}",
+        "formatTextScript": "",
+        "ajaxRequestTemplate": true
     }
 }
