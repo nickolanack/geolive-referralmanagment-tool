@@ -797,6 +797,19 @@ var TaskItem = (function() {
 
 
 			modules.push(TaskItem._missingProjectTypeInfo());
+			modules.push(new ModalFormButtonModule(application, item /*new MockDataTypeItem()*/ , {
+				label: "Set project type",
+				formName: "chooseProjectType",
+				formOptions: {
+					template: "form"
+				},
+				hideText: true,
+				"class": "inline-btn add primary-btn"
+			}).addEvent('show', function() {
+				
+
+			});
+			
 
 		}
 
