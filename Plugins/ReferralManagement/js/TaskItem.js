@@ -808,7 +808,7 @@ var TaskItem = (function() {
 			}).addEvent('show', function() {
 				
 
-			});
+			}));
 			
 
 		}
