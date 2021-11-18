@@ -19,9 +19,13 @@ var ItemContact=(function(){
 
 		getCompany: function() {
 			var me = this;
-			return new ProjectClient(-1, {
-				name: me.getCompanyName()
-			});
+			var name=me.getCompanyName();
+			if(name&&name!=""){
+				return new ProjectClient(-1, {
+					name: me.getCompanyName()
+				});
+			}
+			return null;
 		},
 
 		getContacts:function(){
