@@ -1300,3 +1300,17 @@ button.download-link {
     background-color: transparent;
     color: #59d759;
 }
+
+.dark .ui-list-view .ui-view.section-module, .dark .section-module, .dark .search-panel.ui-view {
+    background: #2e354c;
+    color:white;
+}
+
+.dark .section-title, .dark .section-help > *, .dark .section-help .hint, .dark .dataset-description {
+    color: white;
+}
+
+
+.dark .main-content-area .ui-view.left-panel {
+    background-color: black;
+}
