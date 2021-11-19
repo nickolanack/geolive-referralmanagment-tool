@@ -1,10 +1,9 @@
 {
-    "type": "WizardTitleField",
+    "type": "TagCloud",
     "config": {
-        "label": "Title",
-        "message": "add a title",
-        "className": "",
-        "maxChars": 0,
-        "textFormatScript": ""
+        "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
+        "getItemTagsScript": "return NamedCategoryList.getProjectTags();",
+        "formatModuleScript": "",
+        "scaleWords": true
     }
 }
