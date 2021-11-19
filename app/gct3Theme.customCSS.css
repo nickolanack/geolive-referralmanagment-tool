@@ -1314,3 +1314,7 @@ button.download-link {
 .dark .main-content-area .ui-view.left-panel {
     background-color: black;
 }
+.dark .ui-view.section-padding[data-view="datasetsView"] {
+    border-color: #3d414e;
+    background-color: #272931;
+}
