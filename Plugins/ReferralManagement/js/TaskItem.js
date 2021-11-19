@@ -799,7 +799,7 @@ var TaskItem = (function() {
 			
 			modules.push(new ModalFormButtonModule(application, item /*new MockDataTypeItem()*/ , {
 				label: "Set project type",
-				formName: "chooseProjectType",
+				formName: "chooseProjectTypeForm",
 				formOptions: {
 					template: "form"
 				},
