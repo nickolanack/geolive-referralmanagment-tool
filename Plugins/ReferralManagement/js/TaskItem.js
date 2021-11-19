@@ -796,7 +796,7 @@ var TaskItem = (function() {
 		} else {
 
 
-			modules.push(TaskItem._missingProjectTypeInfo());
+			
 			modules.push(new ModalFormButtonModule(application, item /*new MockDataTypeItem()*/ , {
 				label: "Set project type",
 				formName: "chooseProjectType",
@@ -809,6 +809,7 @@ var TaskItem = (function() {
 				
 
 			}));
+			modules.push(TaskItem._missingProjectTypeInfo());
 			
 
 		}
