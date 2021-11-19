@@ -1301,7 +1301,8 @@ button.download-link {
     color: #59d759;
 }
 
-.dark .ui-list-view .ui-view.section-module, .dark .section-module, .dark .search-panel.ui-view {
+.dark .ui-list-view .ui-view.section-module, .dark .section-module, .dark .search-panel.ui-view,
+.dark [data-view="mainActivityDetail"] .ui-post-view > div {
     background: #3d414e;
     color:white;
 }
