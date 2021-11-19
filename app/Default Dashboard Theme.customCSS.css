@@ -55,6 +55,10 @@ button:focus {outline:0;}
 }
 
 [data-view="peopleUsersDetail"], [data-view="communityUsersDetail"] {
+    
+    &.section-padding{
+         margin-bottom: 90px;
+    }
     margin-bottom: 90px;
 }
 
