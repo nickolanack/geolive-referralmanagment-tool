@@ -96,6 +96,14 @@ var ProjectNavigationMenu = new Class({
 							ReferralManagementDashboard.addItemSpatialInfo(li, item, application);
 
 						}
+					},
+					{
+						html: "History",
+						formatEl: function(li) {
+
+							
+
+						}
 					}
 				]
 			};
