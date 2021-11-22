@@ -9,7 +9,7 @@
         "inlineReply": false,
         "inlineReplyNamedForm": "",
         "emptyMessage": "There are no events to display",
-        "channel": "wabun",
+        "channel": "activity",
         "resolveChannelScript": "return defaultChannel;",
         "resolveItemScript": "return new MockDataTypeItem({type:\"widget\", id:145});",
         "initialPostsScript": "",
