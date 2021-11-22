@@ -8,11 +8,11 @@ var RecentItems = (function() {
 	});
 
 
-	(new AjaxControlQuery(CoreAjaxUrlRoot, 'recent_activity' {
+	(new AjaxControlQuery(CoreAjaxUrlRoot, 'recent_activity', {
 		plugin: 'ReferralManagement'
 	})).addEvent("success", function(result) {
-		
-		
+
+
 	}).execute();
 
 	var RecentItems = new Class({
