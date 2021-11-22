@@ -47,7 +47,7 @@ var ItemNavigationTagLinks = (function() {
 
 
 
-				if ((!t.getType) || typesFilter.indexOf(t.getType()) == -1) {
+				if ((!t) || (!t.getType) || typesFilter.indexOf(t.getType()) == -1) {
 
 					// if(t.getNavigationTags){
 					// 	tags=tags.concat(t.getNavigationTags());
