@@ -6,8 +6,8 @@ class Notifications {
 
 	private function post($message, $data) {
 		$discussion = GetPlugin('Discussions');
-		$discussion->post($discussion->getDiscussionForItem(145, 'widget', 'wabun')->id, $message, $data);
-		$discussion->post($discussion->getDiscussionForItem(GetClient()->getUserId(), 'user', 'wabun')->id, $message, $data);
+		$discussion->post($discussion->getDiscussionForItem(145, 'widget', 'activity')->id, $message, $data);
+		$discussion->post($discussion->getDiscussionForItem(GetClient()->getUserId(), 'user', 'activity')->id, $message, $data);
 		return $this;
 	}
 
