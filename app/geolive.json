@@ -23045,7 +23045,16 @@
                     },
                     "content": {
                         "modules": [
-                            "singleProjectHistoryDetail.metadata.positions.content.modules.0.json"
+                            "singleProjectHistoryDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FlexibleHeight",
+                                "config": {
+                                    "identifier": "",
+                                    "targetElementScript": "singleProjectHistoryDetail.metadata.positions.content.modules.1.config.targetElementScript.js",
+                                    "offset": "0",
+                                    "offsetScript": ""
+                                }
+                            }
                         ]
                     },
                     "footer": {
