@@ -1,12 +1,19 @@
 var RecentItems = (function() {
 
 
-	var MockEventDataTypeItem=new Class({
-				Extends:MockDataTypeItem,
-				Implements:[Events]
+	var MockEventDataTypeItem = new Class({
+		Extends: MockDataTypeItem,
+		Implements: [Events]
 
-		});
+	});
 
+
+	(new AjaxControlQuery(CoreAjaxUrlRoot, 'recent_activity' {
+		plugin: 'ReferralManagement'
+	})).addEvent("success", function(result) {
+		
+		
+	}).execute();
 
 	var RecentItems = new Class({
 		Extends: DataTypeObject,
@@ -19,25 +26,24 @@ var RecentItems = (function() {
 			return this._label;
 		},
 
-		
 
 
-		setListData:function(data, filter){
+		setListData: function(data, filter) {
 
-			
 
-			var me=this;
 
-			this._listData=data.filter(function(item){
-				if(filter){
-					return item.text.indexOf(filter)>=0;
+			var me = this;
+
+			this._listData = data.filter(function(item) {
+				if (filter) {
+					return item.text.indexOf(filter) >= 0;
 				}
 				return true;
-			}).map(function(item){
+			}).map(function(item) {
 				return new MockEventDataTypeItem({
-					name:me.formatEventText(item.text, item),
-					creationDate:item.createdDate,
-					data:item
+					name: me.formatEventText(item.text, item),
+					creationDate: item.createdDate,
+					data: item
 				});
 			});
 
@@ -45,56 +51,54 @@ var RecentItems = (function() {
 
 
 
-		formatEventText:function(text, data){
+		formatEventText: function(text, data) {
 
 
 
-
-
-			if(text.indexOf('event:')===0){
-				text=text.split(':').slice(1).join(':');
+			if (text.indexOf('event:') === 0) {
+				text = text.split(':').slice(1).join(':');
 			}
 
 
 			if (ProjectTeam.CurrentTeam().hasUser(data.user)) {
 
 				var userName = ProjectTeam.CurrentTeam().getUser(data.user).getName();
-				text=userName+text;
+				text = userName + text;
 
-				text=text.replace('update.','updated.')
-				text=text.replace('create.','created.')
+				text = text.replace('update.', 'updated.')
+				text = text.replace('create.', 'created.')
 
 			}
 
-			if(data.metadata.items&&data.metadata.items.length){
-				data.metadata.items.forEach(function(dataItem){
+			if (data.metadata.items && data.metadata.items.length) {
+				data.metadata.items.forEach(function(dataItem) {
 
-					if(dataItem.type=="User"){
+					if (dataItem.type == "User") {
 						if (ProjectTeam.CurrentTeam().hasUser(dataItem.id)) {
-							var targetUserName= ProjectTeam.CurrentTeam().getUser(dataItem.id).getName();
-							text+=' for: '+targetUserName;
+							var targetUserName = ProjectTeam.CurrentTeam().getUser(dataItem.id).getName();
+							text += ' for: ' + targetUserName;
 						}
 					}
 
-					if(dataItem.type=="ReferralManagement.proposal"){
+					if (dataItem.type == "ReferralManagement.proposal") {
 						if (ProjectTeam.CurrentTeam().hasProject(dataItem.id)) {
-							var targetUserName= ProjectTeam.CurrentTeam().getProject(dataItem.id).getName();
-							text+=' for: '+targetUserName;
+							var targetUserName = ProjectTeam.CurrentTeam().getProject(dataItem.id).getName();
+							text += ' for: ' + targetUserName;
 						}
 					}
 				})
 			}
 
 
-			text=text.replace('proposal', 'project');
-			text=text.split('.').join(' ');
+			text = text.replace('proposal', 'project');
+			text = text.split('.').join(' ');
 
 
 			return text;
 		},
 		getList: function(application, callback) {
 
-			if(this._listData){
+			if (this._listData) {
 				callback(this._listData.slice(0));
 				return;
 			}
@@ -117,43 +121,43 @@ var RecentItems = (function() {
 
 	});
 
-	RecentItems.colorizeEl=function(el, type){
-		ReferralManagementDashboard.getProjectTagsData().filter(function(tag){
-				if(tag.getName().toLowerCase()==type.toLowerCase()){
-					el.setStyles({
-					"background-color":tag.getColor()
-					});
+	RecentItems.colorizeEl = function(el, type) {
+		ReferralManagementDashboard.getProjectTagsData().filter(function(tag) {
+			if (tag.getName().toLowerCase() == type.toLowerCase()) {
+				el.setStyles({
+					"background-color": tag.getColor()
+				});
 
-					var c=tag.getColor();
-					if(c[0]=="#"){
-						var c = c.substring(1);      // strip #
-						var rgb = parseInt(c, 16);   // convert rrggbb to decimal
-						var r = (rgb >> 16) & 0xff;  // extract red
-						var g = (rgb >>  8) & 0xff;  // extract green
-						var b = (rgb >>  0) & 0xff;  // extract blue
+				var c = tag.getColor();
+				if (c[0] == "#") {
+					var c = c.substring(1); // strip #
+					var rgb = parseInt(c, 16); // convert rrggbb to decimal
+					var r = (rgb >> 16) & 0xff; // extract red
+					var g = (rgb >> 8) & 0xff; // extract green
+					var b = (rgb >> 0) & 0xff; // extract blue
 
-						var luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // per ITU-R BT.709
+					var luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // per ITU-R BT.709
 
-						if (luma < 40) {
-						    el.addClass('is-dark');
-						}else{
-							el.addClass('is-light');
-						}
+					if (luma < 40) {
+						el.addClass('is-dark');
+					} else {
+						el.addClass('is-light');
 					}
-
 				}
-			});
+
+			}
+		});
 
 
 	};
 
 
-	RecentItems.getType=function(item){
+	RecentItems.getType = function(item) {
 
-		if(item instanceof Proposal){
-			var type=item.getProjectType();
+		if (item instanceof Proposal) {
+			var type = item.getProjectType();
 
-			if((!type)||type==""){
+			if ((!type) || type == "") {
 				return "";
 			}
 			return type.toLowerCase();
@@ -164,28 +168,28 @@ var RecentItems = (function() {
 
 	}
 
-	RecentItems.colorizeItemEl=function(item, view){
+	RecentItems.colorizeItemEl = function(item, view) {
 
-		if(item instanceof Proposal){
-			var type=item.getProjectType();
+		if (item instanceof Proposal) {
+			var type = item.getProjectType();
 
-			if((!type)||type==""){
+			if ((!type) || type == "") {
 				return;
 			}
-			type=type.toLowerCase();
+			type = type.toLowerCase();
 
-			var colors={
-				"forestry":"#88ed88",
-				"mining":"#f1ee40",
-				"energy":"#6ab1ff",
-				"roads":"#c8c8c8"
+			var colors = {
+				"forestry": "#88ed88",
+				"mining": "#f1ee40",
+				"energy": "#6ab1ff",
+				"roads": "#c8c8c8"
 			};
 
 
-			ReferralManagementDashboard.getProjectTagsData().filter(function(tag){
-				if(tag.getName().toLowerCase()==type){
-					(view.setStyles?view:view.getElement()).setStyles({
-					"background-color":tag.getColor()
+			ReferralManagementDashboard.getProjectTagsData().filter(function(tag) {
+				if (tag.getName().toLowerCase() == type) {
+					(view.setStyles ? view : view.getElement()).setStyles({
+						"background-color": tag.getColor()
 					});
 				}
 			});
@@ -197,35 +201,37 @@ var RecentItems = (function() {
 
 
 
-			(view.setAttribute?view:view.getElement()).setAttribute('data-project-type',type);
+			(view.setAttribute ? view : view.getElement()).setAttribute('data-project-type', type);
 
 		}
 
 	};
 
-	RecentItems.getClassForItem=function(item){
+	RecentItems.getClassForItem = function(item) {
 
 	};
-	RecentItems.setClassForItemEl=function(item, view){
+	RecentItems.setClassForItemEl = function(item, view) {
 		//view.getElement().addClass('some-color-'+Math.round(Math.random()*4));
 	};
 
-	RecentItems.getIconForItem=function(item){
+	RecentItems.getIconForItem = function(item) {
 
 	};
 
-	RecentItems.setIconForItemEl=function(item, element){
+	RecentItems.setIconForItemEl = function(item, element) {
 
 
-		if(item instanceof MockEventDataTypeItem){
+		if (item instanceof MockEventDataTypeItem) {
 
-			var data=item.getData();
-			var modules=[];
-			if(data.metadata.items&&data.metadata.items.length){
-				data.metadata.items.forEach(function(dataItem){
-					if(dataItem.type=="User"){
-						var mod=ReferralManagementDashboard.createUserIcon(new MockEventDataTypeItem({userId:dataItem.id}));
-						if(mod){
+			var data = item.getData();
+			var modules = [];
+			if (data.metadata.items && data.metadata.items.length) {
+				data.metadata.items.forEach(function(dataItem) {
+					if (dataItem.type == "User") {
+						var mod = ReferralManagementDashboard.createUserIcon(new MockEventDataTypeItem({
+							userId: dataItem.id
+						}));
+						if (mod) {
 							modules.push(mod);
 						}
 					}
@@ -233,64 +239,69 @@ var RecentItems = (function() {
 				});
 			}
 
-			if(modules.length==0){
-				var mod=ReferralManagementDashboard.createUserIcon(new MockEventDataTypeItem({userId:data.user}));
-				if(mod){
+			if (modules.length == 0) {
+				var mod = ReferralManagementDashboard.createUserIcon(new MockEventDataTypeItem({
+					userId: data.user
+				}));
+				if (mod) {
 					modules.push(mod);
 				}
 			}
 
-			modules.forEach(function(mod){
+			modules.forEach(function(mod) {
 				mod.load(null, element, null);
 			});
 
-		//
+			//
 
 		}
 
 
 
-		if(item instanceof Proposal){
+		if (item instanceof Proposal) {
 
 
 
-
-			var userId=item.getProjectSubmitterId();
-			var mod=ReferralManagementDashboard.createUserIcon(new MockEventDataTypeItem({userId:userId}));
-			if(mod){
+			var userId = item.getProjectSubmitterId();
+			var mod = ReferralManagementDashboard.createUserIcon(new MockEventDataTypeItem({
+				userId: userId
+			}));
+			if (mod) {
 				mod.load(null, element, null);
 			}
-					
+
 		}
 
 	};
 
-	RecentItems.addInteractionEventsForItem=function(item, view, application){
-		if(item instanceof MockEventDataTypeItem){
+	RecentItems.addInteractionEventsForItem = function(item, view, application) {
+		if (item instanceof MockEventDataTypeItem) {
 
 
-			var data=item.getData();
-			var users=[];
-			if(data.metadata.items&&data.metadata.items.length){
-				data.metadata.items.forEach(function(dataItem){
-					if(dataItem.type=="User"){
+			var data = item.getData();
+			var users = [];
+			if (data.metadata.items && data.metadata.items.length) {
+				data.metadata.items.forEach(function(dataItem) {
+					if (dataItem.type == "User") {
 						users.push(dataItem.id);
 					}
 				});
 			}
 
-			UIInteraction.addUserProfileClick(view.getElement(), users.length?users.shift():AppClient);
+			UIInteraction.addUserProfileClick(view.getElement(), users.length ? users.shift() : AppClient);
 
 			return;
 		}
-		ProjectList.AddListItemEvents(item, view, application, function(p){ return !p.isArchived(); });
+		ProjectList.AddListItemEvents(item, view, application, function(p) {
+			return !p.isArchived();
+		});
 
 	};
 
 
 	RecentItems.RecentProjectActivity = new RecentItems({
 		label: "Recent activity",
-		showItems:10
+		showItems: 10
 	});
 	RecentItems.RecentActivity = new RecentItems({
 		label: "Recent activity"

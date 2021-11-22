@@ -890,8 +890,8 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		);
 	}
 
-	protected function saveTag($json) {
 
+	protected function saveTag($json) {
 
 		$minAccessLevel = 'lands-department-manager';
 		if (!Auth('memberof', $minAccessLevel, 'group')) {
@@ -937,6 +937,16 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		$this->getPlugin()->getDatabase()->deleteCategory($json->id);
 
 		return true;
+
+	}
+
+
+	protected function recentActivity($json){
+
+		$posts=GetPlugin('Discussions')->getPostsForItem(145, 'widget', 'activity');
+		return array(
+			'activity'=>$posts
+		);
 
 	}
 
