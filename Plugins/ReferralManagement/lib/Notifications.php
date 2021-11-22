@@ -11,7 +11,7 @@ class Notifications {
 		return $this;
 	}
 
-	private function on($event, $postData, $params = array()) {
+	private function onEvent($event, $postData, $params = array()) {
 
 		$variablesObject = array(
 			'postData' => $postData,
@@ -29,7 +29,7 @@ class Notifications {
 	}
 
 	public function onUpdateUserRole($json) {
-		$this->on('update.user.role', array(
+		$this->onEvent('update.user.role', array(
 			"items" => array(
 				array(
 					"type" => "User",
@@ -61,7 +61,7 @@ class Notifications {
 
 	public function onGuestProposal($projectId, $params) {
 
-		$this->on('guest.proposal', array(
+		$this->onEvent('guest.proposal', array(
 			"items" => array(
 				array(
 					"type" => "ReferralManagement.proposal",
@@ -74,7 +74,7 @@ class Notifications {
 
 	public function onUpdateProjectPermissions($json) {
 
-		$this->on('update.proposal.permissions', array(
+		$this->onEvent('update.proposal.permissions', array(
 			"items" => array(
 				array(
 					"type" => "ReferralManagement.proposal",
@@ -92,7 +92,7 @@ class Notifications {
 
 	public function onUpdateProposalStatus($json) {
 
-		$this->on('update.proposal.status', array(
+		$this->onEvent('update.proposal.status', array(
 			"items" => array(
 				array(
 					"type" => "ReferralManagement.proposal",
@@ -133,7 +133,7 @@ class Notifications {
 		$typeName = explode('.', $json->type);
 		$typeName = array_pop($typeName);
 
-		$this->on('add.' . $typeName . '.' . $json->documentType, array(
+		$this->onEvent('add.' . $typeName . '.' . $json->documentType, array(
 			"items" => array(
 				array(
 					"type" => $json->type,
@@ -189,7 +189,7 @@ class Notifications {
 		$typeName = explode('.', $json->type);
 		$typeName = array_pop($typeName);
 
-		$this->on('remove.' . $typeName . '.' . $json->documentType, array(
+		$this->onEvent('remove.' . $typeName . '.' . $json->documentType, array(
 			"items" => array(
 				array(
 					"type" => $json->type,
@@ -220,7 +220,7 @@ class Notifications {
 	}
 
 	public function onDeleteProposal($json) {
-		$this->on('delete.proposal', array(
+		$this->onEvent('delete.proposal', array(
 			"items" => array(
 				array(
 					"type" => "ReferralManagement.proposal",
@@ -233,7 +233,7 @@ class Notifications {
 
 	public function onUpdateProposal($json) {
 
-		$this->on('update.proposal', array(
+		$this->onEvent('update.proposal', array(
 			"items" => array(
 				array(
 					"type" => "ReferralManagement.proposal",
@@ -250,7 +250,7 @@ class Notifications {
 	}
 
 	public function onCreateProposal($projectId, $json) {
-		$this->on('create.proposal', array(
+		$this->onEvent('create.proposal', array(
 			"items" => array(
 				array(
 					"type" => "ReferralManagement.proposal",
@@ -266,7 +266,7 @@ class Notifications {
 	}
 
 	public function onDeleteTask($json) {
-		$this->on('delete.task', array(
+		$this->onEvent('delete.task', array(
 			"items" => array(
 				array(
 					"type" => "Task.task",
@@ -277,7 +277,7 @@ class Notifications {
 		);
 	}
 	public function onUpdateTask($json) {
-		$this->on('update.task', array(
+		$this->onEvent('update.task', array(
 			"items" => array(
 				array(
 					"type" => "Tasks.task",
@@ -294,7 +294,7 @@ class Notifications {
 	}
 
 	public function onUpdateTaskStar($json) {
-		$this->on('update.task.star', array(
+		$this->onEvent('update.task.star', array(
 			"items" => array(
 				array(
 					"type" => "Tasks.task",
@@ -306,7 +306,7 @@ class Notifications {
 	}
 
 	public function onUpdateTaskDate($json) {
-		$this->on('update.task.date', array(
+		$this->onEvent('update.task.date', array(
 			"items" => array(
 				array(
 					"type" => "Tasks.task",
@@ -323,7 +323,7 @@ class Notifications {
 	}
 
 	public function onUpdateTaskPriority($json) {
-		$this->on('update.task.priority', array(
+		$this->onEvent('update.task.priority', array(
 			"items" => array(
 				array(
 					"type" => "Tasks.task",
@@ -334,7 +334,7 @@ class Notifications {
 		);
 	}
 	public function onCreateTask($taskId, $json) {
-		$this->on('create.task', array(
+		$this->onEvent('create.task', array(
 			"items" => array(
 				array(
 					"type" => "Tasks.task",
@@ -352,7 +352,7 @@ class Notifications {
 
 	public function onCreateDefaultTasks($taskIdList, $json) {
 
-		$this->on('create.default.tasks',
+		$this->onEvent('create.default.tasks',
 			array(
 				"items" => array_map(
 					function ($taskId) {
