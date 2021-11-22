@@ -234,7 +234,9 @@ GetWidget('themeForm')->display($targetInstance);
 GetWidget('defaultTasksForm')->display($targetInstance);
 GetWidget('baseMapForm')->display($targetInstance);
 
-GetWIdget('discussionMediaPostForm')->display($targetInstance);
+GetWidget('discussionMediaPostForm')->display($targetInstance);
+
+GetWidget('singleProjectHistoryDetail')->display($targetInstance);
 
 
 
