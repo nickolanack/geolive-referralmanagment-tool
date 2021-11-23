@@ -28,19 +28,23 @@ var RecentItems = (function() {
 
 			var me = this;
 
-			this._listData = data.filter(function(item) {
-				if (filter) {
-					return item.text.indexOf(filter) >= 0;
-				}
-				return true;
-			}).map(function(item) {
-				return new MockEventDataTypeItem({
-					user:item.user,
-					name: me.formatEventText(item.text, item),
-					creationDate: item.createdDate,
-					data: item
+			ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+
+				me._listData = data.filter(function(item) {
+					if (filter) {
+						return item.text.indexOf(filter) >= 0;
+					}
+					return true;
+				}).map(function(item) {
+					return new MockEventDataTypeItem({
+						user:item.user,
+						name: me.formatEventText(item.text, item),
+						creationDate: item.createdDate,
+						data: item
+					});
 				});
-			});
+
+			})
 
 		},
 
@@ -107,8 +111,6 @@ var RecentItems = (function() {
 			})
 
 			return null;
-
-
 			return this._list;
 		},
 
@@ -311,10 +313,12 @@ var RecentItems = (function() {
 	})).addEvent("success", function(result) {
 
 		var recent=result.activity.reverse();
+
 		
 		RecentItems.RecentUserActivity.setListData(recent,'.user');
 		RecentItems.RecentActivity.setListData(recent,'.proposal');
 
+		
 	}).execute();
 
 
