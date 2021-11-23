@@ -8,6 +8,27 @@ class Notifications {
 		$discussion = GetPlugin('Discussions');
 		$discussion->post($discussion->getDiscussionForItem(145, 'widget', 'activity')->id, $message, $data);
 		$discussion->post($discussion->getDiscussionForItem(GetClient()->getUserId(), 'user', 'activity')->id, $message, $data);
+
+
+
+		if(isset($data['items'])){
+			foreach($data[$items] as $item){
+				if($item['type']=='ReferralManagement.proposal'){
+					$discussion->post($discussion->getDiscussionForItem($item['id'], $item['type'], 'activity')->id, $message, $data);
+				}
+			}
+		}
+
+		if(isset($data['items'])){
+			foreach($data[$items] as $item){
+				if($item['type']=='user'&&$item['id']!=GetClient()->getUserId()){
+					$discussion->post($discussion->getDiscussionForItem($item['id'], $item['type'], 'activity')->id, $message, $data);
+				}
+			}
+		}
+		
+
+
 		return $this;
 	}
 
