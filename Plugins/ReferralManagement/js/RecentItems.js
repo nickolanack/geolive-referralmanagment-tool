@@ -38,7 +38,7 @@ var RecentItems = (function() {
 				}).map(function(item) {
 					return new MockEventDataTypeItem({
 						user:item.user,
-						name: me.formatEventText(item.text, item),
+						name: RecentItems.formatEventText(item.text, item),
 						creationDate: item.createdDate,
 						data: item
 					});
@@ -50,51 +50,7 @@ var RecentItems = (function() {
 
 
 
-		formatEventText: function(text, data) {
-
-
-
-			if (text.indexOf('event:') === 0) {
-				text = text.split(':').slice(1).join(':');
-			}
-
-
-			if (ProjectTeam.CurrentTeam().hasUser(data.user)) {
-
-				var userName = ProjectTeam.CurrentTeam().getUser(data.user).getName();
-				text = userName + text;
-
-				text = text.replace('update.', 'updated.')
-				text = text.replace('create.', 'created.')
-
-			}
-
-			if (data.metadata.items && data.metadata.items.length) {
-				data.metadata.items.forEach(function(dataItem) {
-
-					if (dataItem.type == "User") {
-						if (ProjectTeam.CurrentTeam().hasUser(dataItem.id)) {
-							var targetUserName = ProjectTeam.CurrentTeam().getUser(dataItem.id).getName();
-							text += ' for: ' + targetUserName;
-						}
-					}
-
-					if (dataItem.type == "ReferralManagement.proposal") {
-						if (ProjectTeam.CurrentTeam().hasProject(dataItem.id)) {
-							var targetUserName = ProjectTeam.CurrentTeam().getProject(dataItem.id).getName();
-							text += ' for: ' + targetUserName;
-						}
-					}
-				})
-			}
-
-
-			text = text.replace('proposal', 'project');
-			text = text.split('.').join(' ');
-
-
-			return text;
-		},
+		
 		getList: function(application, callback) {
 
 			if (this._listData) {
@@ -117,6 +73,8 @@ var RecentItems = (function() {
 
 
 	});
+
+
 
 	RecentItems.colorizeEl = function(el, type) {
 		ReferralManagementDashboard.getProjectTagsData().filter(function(tag) {
@@ -164,6 +122,53 @@ var RecentItems = (function() {
 
 
 	}
+
+	RecentItems.formatEventText = function(text, data) {
+
+
+
+		if (text.indexOf('event:') === 0) {
+			text = text.split(':').slice(1).join(':');
+		}
+
+
+		if (ProjectTeam.CurrentTeam().hasUser(data.user)) {
+
+			var userName = ProjectTeam.CurrentTeam().getUser(data.user).getName();
+			text = userName + text;
+
+			text = text.replace('update.', 'updated.')
+			text = text.replace('create.', 'created.')
+
+		}
+
+		if (data.metadata.items && data.metadata.items.length) {
+			data.metadata.items.forEach(function(dataItem) {
+
+				if (dataItem.type == "User") {
+					if (ProjectTeam.CurrentTeam().hasUser(dataItem.id)) {
+						var targetUserName = ProjectTeam.CurrentTeam().getUser(dataItem.id).getName();
+						text += ' for: ' + targetUserName;
+					}
+				}
+
+				if (dataItem.type == "ReferralManagement.proposal") {
+					if (ProjectTeam.CurrentTeam().hasProject(dataItem.id)) {
+						var targetUserName = ProjectTeam.CurrentTeam().getProject(dataItem.id).getName();
+						text += ' for: ' + targetUserName;
+					}
+				}
+			})
+		}
+
+
+		text = text.replace('proposal', 'project');
+		text = text.split('.').join(' ');
+
+
+		return text;
+	};
+
 
 	RecentItems.colorizeItemEl = function(item, view) {
 
@@ -321,7 +326,11 @@ var RecentItems = (function() {
 		
 	}).execute();
 
-	RecentItems.FormatPost=function(p){};
+	RecentItems.FormatPost=function(p){
+
+		p.text=RecentItems.formatEventText(p.text, p);
+
+	};
 
 
 	return RecentItems;
