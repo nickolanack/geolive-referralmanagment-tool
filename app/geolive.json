@@ -23096,7 +23096,16 @@
                     },
                     "content": {
                         "modules": [
-                            "userProfileDetailActivity.metadata.positions.content.modules.0.json"
+                            "userProfileDetailActivity.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FlexibleHeight",
+                                "config": {
+                                    "identifier": "",
+                                    "targetElementScript": "userProfileDetailActivity.metadata.positions.content.modules.1.config.targetElementScript.js",
+                                    "offset": "0",
+                                    "offsetScript": ""
+                                }
+                            }
                         ]
                     },
                     "footer": {
