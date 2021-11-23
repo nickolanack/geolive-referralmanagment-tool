@@ -12,7 +12,7 @@ class Notifications {
 
 
 		if(isset($data['items'])){
-			foreach($data[$items] as $item){
+			foreach($data['items'] as $item){
 				if($item['type']=='ReferralManagement.proposal'){
 					$discussion->post($discussion->getDiscussionForItem($item['id'], $item['type'], 'activity')->id, $message, $data);
 				}
