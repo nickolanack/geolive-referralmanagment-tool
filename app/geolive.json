@@ -23125,5 +23125,19 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.416": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "activityfeed.update.proposal.team.remove.text",
+            "target": "activityfeed.update.proposal.team.remove.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "activityfeed-update-proposal-team-remove-text.contentTemplate.html"
+        }
     }
 }
