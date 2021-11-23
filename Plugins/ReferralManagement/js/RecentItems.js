@@ -41,6 +41,7 @@ var RecentItems = (function() {
 				return true;
 			}).map(function(item) {
 				return new MockEventDataTypeItem({
+					user:item.user,
 					name: me.formatEventText(item.text, item),
 					creationDate: item.createdDate,
 					data: item
