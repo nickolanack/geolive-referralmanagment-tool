@@ -130,6 +130,20 @@ class Notifications {
 
 	public function onAddTeamMemberToProject($user, $project) {
 
+
+		$this->onEvent('update.proposal.team.add', array(
+			"items" => array(
+				array(
+					"type" => "ReferralManagement.proposal",
+					"id" => $project,
+				),
+				array(
+					"type" => "User",
+					"id" => $user,
+				)
+			))
+		);
+
 		$this->broadcastProjectUpdate($project);
 		$this->queueEmailProjectUpdate($project, array(
 			'action' => 'Assigned team member',
@@ -137,6 +151,20 @@ class Notifications {
 
 	}
 	public function onRemoveTeamMemberFromProject($user, $project) {
+
+
+		$this->onEvent('update.proposal.team.remove', array(
+			"items" => array(
+				array(
+					"type" => "ReferralManagement.proposal",
+					"id" => $project,
+				),
+				array(
+					"type" => "User",
+					"id" => $user,
+				)
+			))
+		);
 
 		$this->broadcastProjectUpdate($project);
 		$this->queueEmailProjectUpdate($project, array(

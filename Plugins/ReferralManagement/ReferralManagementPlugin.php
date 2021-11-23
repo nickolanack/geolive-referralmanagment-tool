@@ -708,7 +708,6 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 		$this->setChildProjectsForProject($project, $childProjects);
 
-		//$this->notifier()->onAddTeamMemberToProject($user, $project);
 
 		return $childProjects;
 
