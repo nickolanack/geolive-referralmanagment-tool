@@ -8,13 +8,7 @@ var RecentItems = (function() {
 	});
 
 
-	(new AjaxControlQuery(CoreAjaxUrlRoot, 'recent_activity', {
-		plugin: 'ReferralManagement'
-	})).addEvent("success", function(result) {
-
-
-	}).execute();
-
+	
 	var RecentItems = new Class({
 		Extends: DataTypeObject,
 		Implements: [Events],
@@ -310,6 +304,19 @@ var RecentItems = (function() {
 	RecentItems.RecentUserActivity = new RecentItems({
 		label: "Recent user activity"
 	});
+
+
+	(new AjaxControlQuery(CoreAjaxUrlRoot, 'recent_activity', {
+		plugin: 'ReferralManagement'
+	})).addEvent("success", function(result) {
+
+		var recent=result.activity.reverse();
+		
+		RecentItems.RecentUserActivity.setListData(recent,'.user');
+		RecentItems.RecentActivity.setListData(recent,'.proposal');
+
+	}).execute();
+
 
 
 
