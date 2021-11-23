@@ -321,7 +321,7 @@ var RecentItems = (function() {
 		
 	}).execute();
 
-
+	RecentItems.FormatPost=function(p){};
 
 
 	return RecentItems;
