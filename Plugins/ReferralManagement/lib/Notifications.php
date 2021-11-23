@@ -16,11 +16,7 @@ class Notifications {
 				if($item['type']=='ReferralManagement.proposal'){
 					$discussion->post($discussion->getDiscussionForItem($item['id'], $item['type'], 'activity')->id, $message, $data);
 				}
-			}
-		}
-
-		if(isset($data['items'])){
-			foreach($data[$items] as $item){
+			
 				if($item['type']=='user'&&$item['id']!=GetClient()->getUserId()){
 					$discussion->post($discussion->getDiscussionForItem($item['id'], $item['type'], 'activity')->id, $message, $data);
 				}
