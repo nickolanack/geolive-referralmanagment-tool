@@ -231,12 +231,14 @@ GetWidget('layerGroupForm')->display($targetInstance);
 GetWidget('mainMapDetailLayers')->display($targetInstance);
 GetWidget('themeForm')->display($targetInstance);
 
-GetWidget('defaultTasksForm')->display($targetInstance);
+GetWidget('defaultTasksForm')->display($taragetInstance);
 GetWidget('baseMapForm')->display($targetInstance);
 
 GetWidget('discussionMediaPostForm')->display($targetInstance);
 
 GetWidget('singleProjectHistoryDetail')->display($targetInstance);
+GetWidget('userProfileDetailActivity')->display($targetInstance);
+
 
 
 
