@@ -1,0 +1,21 @@
+{
+    "type": "plugin.Discussions.Discussion",
+    "config": {
+        "discussionTarget": "",
+        "width": 300,
+        "constrainHeight": true,
+        "height": 200,
+        "inlineEditing": true,
+        "inlineReply": true,
+        "inlineReplyNamedForm": "",
+        "emptyMessage": "There are no entries",
+        "channel": "activity",
+        "resolveChannelScript": "return defaultChannel;",
+        "resolveItemScript": "return item;",
+        "initialPostsScript": "return null;",
+        "formatPostScript": "return RecentItems.formatEventText(post.text, post);",
+        "namedView": "defaultPostDetail",
+        "reverseOrder": false,
+        "className": ""
+    }
+}

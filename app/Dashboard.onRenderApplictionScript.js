@@ -237,6 +237,8 @@ GetWidget('baseMapForm')->display($targetInstance);
 GetWidget('discussionMediaPostForm')->display($targetInstance);
 
 GetWidget('singleProjectHistoryDetail')->display($targetInstance);
+GetWidget('userProfileDetailActivity')->display($targetInstance);
+
 
 
 

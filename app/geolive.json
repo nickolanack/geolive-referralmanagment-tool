@@ -23075,5 +23075,55 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.415": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "userProfileDetailActivity",
+            "target": "userProfileDetailActivity",
+            "templateName": "userProfileDetailActivity",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "useRemote": "",
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "userProfileDetailActivity.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FlexibleHeight",
+                                "config": {
+                                    "identifier": "",
+                                    "targetElementScript": "userProfileDetailActivity.metadata.positions.content.modules.1.config.targetElementScript.js",
+                                    "offset": "0",
+                                    "offsetScript": ""
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
     }
 }
