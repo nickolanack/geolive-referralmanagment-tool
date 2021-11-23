@@ -1,13 +1,21 @@
 {
-    "type": "DefaultDescription",
+    "type": "plugin.Discussions.Discussion",
     "config": {
-        "className": "",
-        "imageWidth": 300,
-        "imageHeight": 240,
-        "multiImageWidth": 100,
-        "multiImageHeight": 75,
-        "autoArrange": true,
-        "oneLine": true,
-        "maxChars": 0
+        "discussionTarget": "",
+        "width": 300,
+        "constrainHeight": true,
+        "height": 200,
+        "inlineEditing": true,
+        "inlineReply": true,
+        "inlineReplyNamedForm": "",
+        "emptyMessage": "There are no entries",
+        "channel": "activity",
+        "resolveChannelScript": "return defaultChannel;",
+        "resolveItemScript": "return item;",
+        "initialPostsScript": "return null;",
+        "formatPostScript": "",
+        "namedView": "defaultPostDetail",
+        "reverseOrder": false,
+        "className": ""
     }
 }
