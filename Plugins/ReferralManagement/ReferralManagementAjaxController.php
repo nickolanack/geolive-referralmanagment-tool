@@ -230,6 +230,9 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 	}
 
 	protected function saveGuestProposal($json) {
+		return $this->saveGuestProject($json);
+	}
+	protected function saveGuestProject($json) {
 
 		if (key_exists('email', $json) && key_exists('token', $json)) {
 

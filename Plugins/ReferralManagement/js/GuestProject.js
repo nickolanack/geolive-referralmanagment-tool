@@ -4,7 +4,7 @@ var GuestProject = (function() {
 	var SaveGuestProjectQuery = new Class({
 		Extends: AjaxControlQuery,
 		initialize: function(data) {
-			this.parent(CoreAjaxUrlRoot, 'save_guest_proposal', Object.append({
+			this.parent(CoreAjaxUrlRoot, 'save_guest_project', Object.append({
 				plugin: 'ReferralManagement'
 			}, (data || {})));
 		}
