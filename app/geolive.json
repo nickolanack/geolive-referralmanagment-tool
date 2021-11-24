@@ -23139,5 +23139,19 @@
             "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-update-proposal-team-remove-text.contentTemplate.html"
         }
+    },
+    "widget.417": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "activityfeed.update.proposal.team.add.text",
+            "target": "activityfeed.update.proposal.team.add.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "activityfeed-update-proposal-team-add-text.contentTemplate.html"
+        }
     }
 }

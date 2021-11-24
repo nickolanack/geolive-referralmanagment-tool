@@ -2,8 +2,8 @@
     "type": "plugin.Discussions.Discussion",
     "config": {
         "discussionTarget": "",
-        "width": 300,
-        "constrainHeight": true,
+        "width": 0,
+        "constrainHeight": false,
         "height": 200,
         "inlineEditing": true,
         "inlineReply": true,
@@ -13,8 +13,9 @@
         "resolveChannelScript": "return defaultChannel;",
         "resolveItemScript": "return item;",
         "initialPostsScript": "return null;",
+        "formatPostScript": "return RecentItems.formatEventText(post.text, post);",
         "namedView": "defaultPostDetail",
-        "reverseOrder": false,
+        "reverseOrder": true,
         "className": ""
     }
 }
