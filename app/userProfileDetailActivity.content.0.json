@@ -15,7 +15,7 @@
         "initialPostsScript": "return null;",
         "formatPostScript": "return RecentItems.formatEventText(post.text, post);",
         "namedView": "defaultPostDetail",
-        "reverseOrder": false,
+        "reverseOrder": true,
         "className": ""
     }
 }
