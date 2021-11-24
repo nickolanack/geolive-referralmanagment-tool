@@ -13,8 +13,9 @@
         "resolveChannelScript": "return defaultChannel;",
         "resolveItemScript": "return item;",
         "initialPostsScript": "return null;",
+        "formatPostScript": "",
         "namedView": "defaultPostDetail",
-        "reverseOrder": false,
+        "reverseOrder": true,
         "className": ""
     }
 }
