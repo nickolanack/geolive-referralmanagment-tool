@@ -68,7 +68,7 @@ var PostContent = (function() {
 					
 					return new MockDataTypeItem({
 						type: "ReferralManagement.proposal",
-						name: "pending project",
+						name: "{pending}",
 						companyName:"",
 						percentComplete:0,
 						priority:'',
