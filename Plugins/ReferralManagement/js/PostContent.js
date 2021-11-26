@@ -20,6 +20,9 @@ var PostContent = (function() {
 				if (type == 'Tasks.task') {
 					return team.getTask(i.id);
 				}
+
+
+
 				if (type == 'ReferralManagement.proposal') {
 					
 					try {
@@ -48,6 +51,30 @@ var PostContent = (function() {
 						})
 
 					}
+				}
+
+				if (type.toLowerCase() == 'guest') {
+					
+					return new MockDataTypeItem({
+						type: "user",
+						name: "",
+						email: i.email
+					})
+
+					
+				}
+
+				if (type.toLowerCase() == 'token') {
+					
+					return new MockDataTypeItem({
+						type: "ReferralManagement.proposal",
+						name: "pending project",
+						companyName:"",
+						percentComplete:0,
+						priority:''
+					})
+
+					
 				}
 
 
