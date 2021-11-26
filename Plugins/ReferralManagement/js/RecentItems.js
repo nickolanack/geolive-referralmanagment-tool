@@ -176,8 +176,8 @@ var RecentItems = (function() {
 		text = text.split('.').join(' ');
 
 
-		text=text.replace('team remove:', 'removed user from project')
-		text=text.replace('team add:', 'added user to project')
+		text=text.replace('team remove', 'removed user from project')
+		text=text.replace('team add', 'added user to project')
 
 		return text;
 	};
