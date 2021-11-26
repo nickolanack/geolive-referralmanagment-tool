@@ -167,7 +167,7 @@ var RecentItems = (function() {
 			})
 
 			if(itemsText.length>0){
-				text+='<span>'+itemsText+'<span>';
+				text+='<span class="items-label">'+itemsText+'<span>';
 			}
 		}
 
@@ -176,8 +176,8 @@ var RecentItems = (function() {
 		text = text.split('.').join(' ');
 
 
-		text=text.replace('team remove for:', 'removed user from project')
-		text=text.replace('team add for:', 'added user to project')
+		text=text.replace('team remove:', 'removed user from project')
+		text=text.replace('team add:', 'added user to project')
 
 		return text;
 	};
