@@ -63,8 +63,13 @@ class Notifications {
 		$this->onEvent('guest.proposal.validating', array(
 			"items" => array(
 				array(
-					"type" => "Guest",
+					"type" => "guest",
 					"id" => 0,
+					"email"=>$json->email
+				),
+				array(
+					'type'=>'token',
+					'id'=>$json->token
 				)
 
 			),$json)
