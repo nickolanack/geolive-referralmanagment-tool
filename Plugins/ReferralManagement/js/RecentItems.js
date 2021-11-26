@@ -143,22 +143,32 @@ var RecentItems = (function() {
 		}
 
 		if (data.metadata.items && data.metadata.items.length) {
+
+			var itemsText='';
+
 			data.metadata.items.forEach(function(dataItem) {
+
+
+
 
 				if (dataItem.type == "User") {
 					if (ProjectTeam.CurrentTeam().hasUser(dataItem.id)) {
 						var targetUserName = ProjectTeam.CurrentTeam().getUser(dataItem.id).getName();
-						text += ' for: ' + targetUserName;
+						itemsText += ' for: ' + targetUserName;
 					}
 				}
 
 				if (dataItem.type == "ReferralManagement.proposal") {
 					if (ProjectTeam.CurrentTeam().hasProject(dataItem.id)) {
 						var targetUserName = ProjectTeam.CurrentTeam().getProject(dataItem.id).getName();
-						text += ' for: ' + targetUserName;
+						itemsText += ' for: ' + targetUserName;
 					}
 				}
 			})
+
+			if(itemsText.length>0){
+				text+='<span>'+itemsText+'<span>';
+			}
 		}
 
 
@@ -166,8 +176,8 @@ var RecentItems = (function() {
 		text = text.split('.').join(' ');
 
 
-		text=text.replace('team remove for', 'removed user from')
-		text=text.replace('team add for', 'added user to')
+		text=text.replace('team remove for:', 'removed user from project')
+		text=text.replace('team add for:', 'added user to project')
 
 		return text;
 	};
