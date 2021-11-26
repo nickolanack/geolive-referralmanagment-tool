@@ -664,7 +664,7 @@ ul.project, ul.user{
     margin: 30px 40px;
 }
 
-.ui-view.section-padding[data-view="datasetsView"] {
+.ui-view.section-padding[data-view="datasetsView"], .ui-view.section-padding[data-view="userProfileDetailOverview"]  {
     padding: 30px 40px;
     margin: 0;
     background-color: rgba(0,0,0,0.03);
