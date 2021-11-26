@@ -1,1 +1,1 @@
-return (item.getCompanyName?item.getCompanyName():"");
+return (item.getCompanyName?item.getCompanyName():"")||"";
