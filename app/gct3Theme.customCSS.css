@@ -13,6 +13,18 @@ span.field-value.is-dark {
 
 
 
+.ui-view.card-one, .ui-view.card-two{
+    display: inline-block;
+    width: 600px;
+}
+
+
+.card-two .ui-view.user-detail.just-pic {
+    display: none;
+    width: 300px;
+}
+
+
 [data-view="userProfileDetailView"]{
     
     
