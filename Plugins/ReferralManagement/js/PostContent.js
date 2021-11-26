@@ -56,7 +56,7 @@ var PostContent = (function() {
 				if (type.toLowerCase() == 'guest') {
 					
 					return new MockDataTypeItem({
-						type: "user",
+						type: "user",	
 						name: "",
 						email: i.email
 					})
@@ -71,7 +71,8 @@ var PostContent = (function() {
 						name: "pending project",
 						companyName:"",
 						percentComplete:0,
-						priority:''
+						priority:'',
+						token:i.token
 					})
 
 					
