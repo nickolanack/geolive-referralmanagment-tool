@@ -13,13 +13,13 @@ span.field-value.is-dark {
 
 
 
-.ui-view.card-one, .ui-view.card-two{
+.ui-view.card-one, .ui-view.card-two, .ui-view.card-three{
     display: inline-block;
     width: 600px;
 }
 
 
-.card-two .ui-view.user-detail.just-pic {
+.card-two .ui-view.user-detail.just-pic, .card-three .ui-view.user-detail.just-pic {
     display: none;
     width: 300px;
 }
