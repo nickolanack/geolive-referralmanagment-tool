@@ -6,27 +6,39 @@ class Notifications {
 
 	private function post($message, $data) {
 		$discussion = GetPlugin('Discussions');
-		$discussion->post($discussion->getDiscussionForItem(145, 'widget', 'activity')->id, $message, $data);
-		$discussion->post($discussion->getDiscussionForItem(GetClient()->getUserId(), 'user', 'activity')->id, $message, $data);
 
+		$channels=array('widget.145.activity');//debug
+
+		$discussion->post($discussion->getDiscussionForItem(145, 'widget', 'activity')->id, $message, $data);
+
+
+		if(!GetClient()->isGuest()){
+			$discussion->post($discussion->getDiscussionForItem(GetClient()->getUserId(), 'user', 'activity')->id, $message, $data);
+			$channels[]='user.'.GetClient()->getUserId().'.activity';
+		}
 
 
 		if(isset($data['items'])){
 			foreach($data['items'] as $item){
 				if($item['type']=='ReferralManagement.proposal'){
 					$discussion->post($discussion->getDiscussionForItem($item['id'], $item['type'], 'activity')->id, $message, $data);
+					$channels[]=$item['type'].'.'.$item['id'].'.activity';
 				}
 			
 				if($item['type']=='user'&&$item['id']!=GetClient()->getUserId()){
 					$discussion->post($discussion->getDiscussionForItem($item['id'], $item['type'], 'activity')->id, $message, $data);
+					$channels[]=$item['type'].'.'.$item['id'].'.activity';
 				}
 			}
 		}
 		
-
+		Broadcast('activity', 'post', array_merge('message'=>$message, array($data), 'channels'=>$channels);
 
 		return $this;
 	}
+
+
+
 
 	private function onEvent($event, $postData, $params = array()) {
 
@@ -42,6 +54,34 @@ class Notifications {
 		);
 
 		return $this;
+
+	}
+
+
+	public function onGuestProjectPendingValidation($json){
+
+		$this->onEvent('guest.proposal.validating', "items" => array(
+				array(
+					"type" => "Guest",
+					"id" => $json->user,
+				)
+
+			)),
+			$json)
+
+	}
+
+
+	public function onGuestProposal($projectId, $params) {
+
+		$this->onEvent('guest.proposal', array(
+			"items" => array(
+				array(
+					"type" => "ReferralManagement.proposal",
+					"id" => $projectId,
+				),
+			), $params)
+		);
 
 	}
 
@@ -76,18 +116,7 @@ class Notifications {
 		Emit('onDeauthorizeCommunityMemberDevice', $clientMeta);
 	}
 
-	public function onGuestProposal($projectId, $params) {
-
-		$this->onEvent('guest.proposal', array(
-			"items" => array(
-				array(
-					"type" => "ReferralManagement.proposal",
-					"id" => $projectId,
-				),
-			), $params)
-		);
-
-	}
+	
 
 	public function onUpdateProjectPermissions($json) {
 

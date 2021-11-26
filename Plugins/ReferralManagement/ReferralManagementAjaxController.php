@@ -256,6 +256,10 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 					->to($json->email)
 					->send();
 
+
+				$this->getPlugin()->notifier()->onGuestProjectPendingValidation($json);
+
+
 				return true;
 			}
 

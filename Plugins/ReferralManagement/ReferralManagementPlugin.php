@@ -30,11 +30,6 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	use \core\EventListenerTrait;
 	use \core\TemplateRenderer;
 
-
-
-
-
-
 	public function decodePathSegments($segments){
 
 		error_log($segments);
