@@ -2,6 +2,7 @@
     "type": "FieldValue",
     "config": {
         "loadAsync": false,
+        "identifier": "",
         "fieldLabelScript": "return \"\";",
         "fieldValueScript": "return item.getName();",
         "formatElementScript": "el.addClass('item-title')"

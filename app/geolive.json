@@ -6736,30 +6736,34 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return item.getCompanyName();",
+                                    "fieldValueScript": "Single Project List Item Detail.metadata.positions.content.modules.1.config.fieldValueScript.js",
                                     "formatElementScript": "Single Project List Item Detail.metadata.positions.content.modules.1.config.formatElementScript.js"
                                 }
                             },
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
+                                    "name": "My Custom Script",
                                     "script": "Single Project List Item Detail.metadata.positions.content.modules.2.config.script.js",
-                                    "identifier": "customScriptElement"
+                                    "description": "Info about my custom script"
                                 }
                             },
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
+                                    "name": "My Custom Script",
                                     "script": "Single Project List Item Detail.metadata.positions.content.modules.3.config.script.js",
-                                    "identifier": "customScriptElement"
+                                    "description": "Info about my custom script"
                                 }
                             },
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
+                                    "name": "My Custom Script",
                                     "script": "Single Project List Item Detail.metadata.positions.content.modules.4.config.script.js",
-                                    "identifier": "customScriptElement"
+                                    "description": "Info about my custom script"
                                 }
                             }
                         ]
