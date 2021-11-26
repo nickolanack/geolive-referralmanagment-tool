@@ -11,6 +11,22 @@ span.field-value.is-dark {
     filter: invert(1);
 }
 
+
+
+[data-view="userProfileDetailOverview"]{
+    
+    
+        
+    li.menu-user-timesheet, li.menu-user-configuration, li.menu-user-projects {
+        display:none;
+    }
+    
+        
+    
+}
+
+
+
 .search-result-list.hybrid {
     /* box-sizing: inherit; */
     margin: 0 15px;
