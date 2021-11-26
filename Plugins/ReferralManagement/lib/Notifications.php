@@ -60,14 +60,15 @@ class Notifications {
 
 	public function onGuestProjectPendingValidation($json){
 
-		$this->onEvent('guest.proposal.validating', "items" => array(
+		$this->onEvent('guest.proposal.validating', array(
+			"items" => array(
 				array(
 					"type" => "Guest",
 					"id" => $json->user,
 				)
 
-			)),
-			$json)
+			),$json),
+			);
 
 	}
 
