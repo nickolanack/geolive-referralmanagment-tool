@@ -80,8 +80,17 @@ class Notifications {
 
 	public function onGuestProposal($projectId, $params) {
 
-		$this->onEvent('guest.proposal', array(
+		$this->onEvent('guest.proposal.validated', array(
 			"items" => array(
+				array(
+					"type" => "guest",
+					"id" => 0,
+					"email"=>$json->validationData->email
+				),
+				array(
+					'type'=>'token',
+					'id'=>$json->validationData->token
+				),
 				array(
 					"type" => "ReferralManagement.proposal",
 					"id" => $projectId,
