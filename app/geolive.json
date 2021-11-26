@@ -18575,7 +18575,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "",
+                                    "identifier": "user-department",
                                     "fieldLabelScript": "return \"Department: \";",
                                     "fieldValueScript": "return \"--\";",
                                     "formatElementScript": ""
@@ -18596,7 +18596,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "",
+                                    "identifier": "user-phone",
                                     "fieldLabelScript": "return \"Telephone: \";",
                                     "fieldValueScript": "return \"Field Value Script\";",
                                     "formatElementScript": ""
@@ -18606,7 +18606,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "",
+                                    "identifier": "user-email",
                                     "fieldLabelScript": "return \"Email: \";",
                                     "fieldValueScript": "return item.getEmail();",
                                     "formatElementScript": ""
@@ -18616,7 +18616,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "",
+                                    "identifier": "user-address",
                                     "fieldLabelScript": "return \"Address: \";",
                                     "fieldValueScript": "return \"--\";",
                                     "formatElementScript": ""
