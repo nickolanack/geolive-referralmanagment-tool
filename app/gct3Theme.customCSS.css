@@ -21,9 +21,10 @@ span.field-value.is-dark {
 
 .card-two .ui-view.user-detail.just-pic, .card-three .ui-view.user-detail.just-pic {
     display: none;
+}
+ .ui-view.card-two, .ui-view.card-three{
     width: 300px;
 }
-
 
 [data-view="userProfileDetailView"]{
     
