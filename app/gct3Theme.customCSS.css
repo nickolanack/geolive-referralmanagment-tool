@@ -34,6 +34,15 @@ span.field-value.is-dark {
     border-radius: 8px;
 }
 
+
+.card-one .field-value-module, .card-one .project-description {
+    display: none;
+
+}
+.ui-view.card-one {
+    width: 300px;
+}
+
 [data-view="userProfileDetailView"]{
     
     
