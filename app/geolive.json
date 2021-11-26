@@ -18535,7 +18535,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "",
+                                    "identifier": "user-name",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getName();",
                                     "formatElementScript": "userProfileDetailOverview.metadata.positions.content.modules.1.config.formatElementScript.js"
@@ -18545,7 +18545,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "",
+                                    "identifier": "user-role",
                                     "fieldLabelScript": "return \"Role: \";",
                                     "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.2.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-role');"
@@ -18555,7 +18555,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "",
+                                    "identifier": "user-group",
                                     "fieldLabelScript": "return \"Community\/Group: \"",
                                     "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.3.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-community');"
@@ -18565,7 +18565,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "",
+                                    "identifier": "user-position",
                                     "fieldLabelScript": "return \"Position: \";",
                                     "fieldValueScript": "return \"--\";",
                                     "formatElementScript": ""
