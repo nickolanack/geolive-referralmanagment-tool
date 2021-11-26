@@ -23167,5 +23167,19 @@
             "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-guest-proposal-validating-text.contentTemplate.html"
         }
+    },
+    "widget.419": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "activityfeed.guest.proposal.validated.text",
+            "target": "activityfeed.guest.proposal.validated.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "activityfeed-guest-proposal-validated-text.contentTemplate.html"
+        }
     }
 }
