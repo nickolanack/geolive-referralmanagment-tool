@@ -18723,10 +18723,10 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "",
+                                    "className": "section-padding",
                                     "identifier": "",
                                     "viewType": "view",
-                                    "namedView": "userProfileDetailProjects",
+                                    "namedView": "userProfileDetailCards",
                                     "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
@@ -18746,10 +18746,10 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "section-padding",
+                                    "className": "",
                                     "identifier": "",
                                     "viewType": "view",
-                                    "namedView": "userProfileDetailCards",
+                                    "namedView": "userProfileDetailProjects",
                                     "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
