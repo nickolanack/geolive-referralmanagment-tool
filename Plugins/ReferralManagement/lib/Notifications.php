@@ -67,8 +67,8 @@ class Notifications {
 					"id" => $json->user,
 				)
 
-			),$json),
-			);
+			),$json)
+		);
 
 	}
 
