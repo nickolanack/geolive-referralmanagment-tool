@@ -85,11 +85,11 @@ class Notifications {
 				array(
 					"type" => "guest",
 					"id" => 0,
-					"email"=>$json->validationData->email
+					"email"=>$params->validationData->email
 				),
 				array(
 					'type'=>'token',
-					'id'=>$json->validationData->token
+					'id'=>$params->validationData->token
 				),
 				array(
 					"type" => "ReferralManagement.proposal",
