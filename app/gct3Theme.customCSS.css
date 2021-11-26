@@ -26,6 +26,14 @@ span.field-value.is-dark {
     width: 300px;
 }
 
+
+.ui-view.card-two, .ui-view.card-three,  .ui-view.card-three, .ui-view.card-four{
+    background: white;
+    margin: 10px;
+    padding:10px;
+    border-radius: 8px;
+}
+
 [data-view="userProfileDetailView"]{
     
     
