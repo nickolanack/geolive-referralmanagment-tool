@@ -4,7 +4,7 @@
         "loadAsync": false,
         "identifier": "",
         "fieldLabelScript": "return \"\";",
-        "fieldValueScript": "return item.getName();",
+        "fieldValueScript": "var name= item.getName();\n\nif(name=='{pending}'){\n    return 'Validation pending';\n}\n\nreturn name;",
         "formatElementScript": "el.addClass('item-title')"
     }
 }
