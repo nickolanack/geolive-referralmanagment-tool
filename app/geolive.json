@@ -18588,7 +18588,8 @@
                                     "text": "Contact Details:",
                                     "template": "",
                                     "templateVariablesScript": "",
-                                    "formatTextScript": ""
+                                    "formatTextScript": "",
+                                    "ajaxRequestTemplate": false
                                 }
                             },
                             {
@@ -18646,6 +18647,29 @@
                                     "embedPortrait": true,
                                     "preferLocalContent": true,
                                     "portraitClip": true
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "",
+                                    "identifier": "",
+                                    "viewType": "view",
+                                    "namedView": "userProfileDetailProjects",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             }
                         ]
