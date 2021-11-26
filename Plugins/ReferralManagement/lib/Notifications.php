@@ -64,7 +64,7 @@ class Notifications {
 			"items" => array(
 				array(
 					"type" => "Guest",
-					"id" => $json->user,
+					"id" => 0,
 				)
 
 			),$json)
