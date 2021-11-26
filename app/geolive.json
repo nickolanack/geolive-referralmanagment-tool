@@ -18545,9 +18545,39 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "user-email",
+                                    "fieldLabelScript": "return \"Email: \";",
+                                    "fieldValueScript": "return item.getEmail();",
+                                    "formatElementScript": ""
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "identifier": "user-phone",
+                                    "fieldLabelScript": "return \"Telephone: \";",
+                                    "fieldValueScript": "return \"Field Value Script\";",
+                                    "formatElementScript": ""
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "identifier": "user-address",
+                                    "fieldLabelScript": "return \"Address: \";",
+                                    "fieldValueScript": "return \"--\";",
+                                    "formatElementScript": ""
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
                                     "identifier": "user-role",
                                     "fieldLabelScript": "return \"Role: \";",
-                                    "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.2.config.fieldValueScript.js",
+                                    "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.5.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-role');"
                                 }
                             },
@@ -18557,7 +18587,7 @@
                                     "loadAsync": false,
                                     "identifier": "user-group",
                                     "fieldLabelScript": "return \"Community\/Group: \"",
-                                    "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.3.config.fieldValueScript.js",
+                                    "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.6.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-community');"
                                 }
                             },
@@ -18582,50 +18612,9 @@
                                 }
                             },
                             {
-                                "type": "InlineHtml",
-                                "config": {
-                                    "className": "",
-                                    "text": "Contact Details:",
-                                    "template": "",
-                                    "templateVariablesScript": "",
-                                    "formatTextScript": "",
-                                    "ajaxRequestTemplate": false
-                                }
-                            },
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "identifier": "user-phone",
-                                    "fieldLabelScript": "return \"Telephone: \";",
-                                    "fieldValueScript": "return \"Field Value Script\";",
-                                    "formatElementScript": ""
-                                }
-                            },
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "identifier": "user-email",
-                                    "fieldLabelScript": "return \"Email: \";",
-                                    "fieldValueScript": "return item.getEmail();",
-                                    "formatElementScript": ""
-                                }
-                            },
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "identifier": "user-address",
-                                    "fieldLabelScript": "return \"Address: \";",
-                                    "fieldValueScript": "return \"--\";",
-                                    "formatElementScript": ""
-                                }
-                            },
-                            {
                                 "type": "FormattedText",
                                 "config": {
-                                    "textValueScript": "userProfileDetailOverview.metadata.positions.content.modules.10.config.textValueScript.js",
+                                    "textValueScript": "userProfileDetailOverview.metadata.positions.content.modules.9.config.textValueScript.js",
                                     "formatModuleScript": "",
                                     "className": "project-description",
                                     "imageWidth": 300,
