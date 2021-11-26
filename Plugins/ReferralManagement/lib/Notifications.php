@@ -32,7 +32,7 @@ class Notifications {
 			}
 		}
 		
-		Broadcast('activity', 'post', array_merge('message'=>$message, array($data), 'channels'=>$channels);
+		Broadcast('activity', 'post', array_merge(array('message'=>$message, 'channels'=>$channels), $data));
 
 		return $this;
 	}
