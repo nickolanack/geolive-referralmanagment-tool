@@ -13,7 +13,7 @@ span.field-value.is-dark {
 
 
 
-.ui-view.card-one, .ui-view.card-two, .ui-view.card-three{
+.ui-view.card-one, .ui-view.card-two, .ui-view.card-three, .ui-view.card-four{
     display: inline-block;
     width: 600px;
 }
@@ -22,7 +22,7 @@ span.field-value.is-dark {
 .card-two .ui-view.user-detail.just-pic, .card-three .ui-view.user-detail.just-pic {
     display: none;
 }
- .ui-view.card-two, .ui-view.card-three{
+ .ui-view.card-two, .ui-view.card-three, .ui-view.card-four{
     width: 300px;
 }
 
