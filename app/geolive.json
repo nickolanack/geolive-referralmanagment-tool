@@ -18536,6 +18536,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "user-name",
+                                    "className": "profile-info",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getName();",
                                     "formatElementScript": "userProfileDetailOverview.metadata.positions.content.modules.1.config.formatElementScript.js"
@@ -18546,6 +18547,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "user-email",
+                                    "className": "profile-info",
                                     "fieldLabelScript": "return \"Email: \";",
                                     "fieldValueScript": "return item.getEmail();",
                                     "formatElementScript": ""
@@ -18556,6 +18558,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "user-phone",
+                                    "className": "profile-info",
                                     "fieldLabelScript": "return \"Telephone: \";",
                                     "fieldValueScript": "return \"Field Value Script\";",
                                     "formatElementScript": ""
@@ -18566,6 +18569,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "user-address",
+                                    "className": "profile-info",
                                     "fieldLabelScript": "return \"Address: \";",
                                     "fieldValueScript": "return \"--\";",
                                     "formatElementScript": ""
@@ -18576,6 +18580,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "user-role",
+                                    "className": "",
                                     "fieldLabelScript": "return \"Role: \";",
                                     "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.5.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-role');"
@@ -18586,6 +18591,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "user-group",
+                                    "className": "",
                                     "fieldLabelScript": "return \"Community\/Group: \"",
                                     "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.6.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-community');"
@@ -18596,6 +18602,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "user-position",
+                                    "className": "",
                                     "fieldLabelScript": "return \"Position: \";",
                                     "fieldValueScript": "return \"--\";",
                                     "formatElementScript": ""
@@ -18606,6 +18613,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "user-department",
+                                    "className": "",
                                     "fieldLabelScript": "return \"Department: \";",
                                     "fieldValueScript": "return \"--\";",
                                     "formatElementScript": ""
