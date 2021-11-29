@@ -117,7 +117,7 @@ button:focus {outline:0;}
     
 }
 
- .dark [data-view="userProfileDetailCards"]{ 
+ .dark [data-view="userProfileDetailView"]{ 
     [data-view="userProfileDetailCards"]{
         .ui-view.profile-card{
              background: #2E303A;
