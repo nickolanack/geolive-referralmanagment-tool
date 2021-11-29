@@ -54,6 +54,57 @@ button:focus {outline:0;}
     top: -60px;
 }
 
+
+.ui-view.card-one, .ui-view.card-two, .ui-view.card-three, .ui-view.card-four{
+    display: inline-block;
+    width: 600px;
+}
+
+
+.card-two .ui-view.user-detail.just-pic, .card-three .ui-view.user-detail.just-pic, .card-four .ui-view.user-detail.just-pic {
+    display: none;
+}
+ .ui-view.card-two, .ui-view.card-three, .ui-view.card-four{
+    width: 300px;
+}
+
+
+.ui-view.card-two, .ui-view.card-three,  .ui-view.card-three, .ui-view.card-four{
+    background: white;
+    margin: 10px;
+    padding:10px;
+    border-radius: 8px;
+}
+
+
+.card-one .field-value-module, .card-one .project-description {
+    display: none;
+
+}
+.ui-view.card-one {
+    width: 300px;
+}
+
+[data-view="userProfileDetailView"]{
+    
+    
+        
+    li.menu-user-timesheet, li.menu-user-configuration, li.menu-user-projects {
+        display:none;
+    }
+    
+    .user-name {
+        display: none;
+    }
+    
+        
+    
+}
+
+
+
+
+
 [data-view="peopleUsersDetail"], [data-view="communityUsersDetail"] {
     
     &.section-padding{
