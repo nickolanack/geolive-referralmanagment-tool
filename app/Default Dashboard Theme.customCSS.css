@@ -132,6 +132,9 @@ button:focus {outline:0;}
     [data-view="userProfileDetailCards"]{
         .ui-view.profile-card{
              background: #2E303A;
+             &.card-one{
+                 background: none;
+             }
         }
     }
  }
