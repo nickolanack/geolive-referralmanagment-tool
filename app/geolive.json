@@ -18535,7 +18535,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "user-name",
+                                    "identifier": "user-name person-info",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getName();",
                                     "formatElementScript": "userProfileDetailOverview.metadata.positions.content.modules.1.config.formatElementScript.js"
@@ -18545,7 +18545,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "user-email",
+                                    "identifier": "user-email person-info",
                                     "fieldLabelScript": "return \"Email: \";",
                                     "fieldValueScript": "return item.getEmail();",
                                     "formatElementScript": ""
@@ -18555,7 +18555,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "user-phone",
+                                    "identifier": "user-phone person-info",
                                     "fieldLabelScript": "return \"Telephone: \";",
                                     "fieldValueScript": "return \"Field Value Script\";",
                                     "formatElementScript": ""
@@ -18565,7 +18565,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "user-address",
+                                    "identifier": "user-address person-info",
                                     "fieldLabelScript": "return \"Address: \";",
                                     "fieldValueScript": "return \"--\";",
                                     "formatElementScript": ""
@@ -18575,7 +18575,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "user-role",
+                                    "identifier": "user-role person-role",
                                     "fieldLabelScript": "return \"Role: \";",
                                     "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.5.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-role');"
@@ -18585,7 +18585,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "user-group",
+                                    "identifier": "user-group person-role",
                                     "fieldLabelScript": "return \"Community\/Group: \"",
                                     "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.6.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-community');"
@@ -18595,7 +18595,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "user-position",
+                                    "identifier": "user-position person-role",
                                     "fieldLabelScript": "return \"Position: \";",
                                     "fieldValueScript": "return \"--\";",
                                     "formatElementScript": ""
@@ -18605,7 +18605,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "user-department",
+                                    "identifier": "user-department person-role",
                                     "fieldLabelScript": "return \"Department: \";",
                                     "fieldValueScript": "return \"--\";",
                                     "formatElementScript": ""
@@ -18616,7 +18616,7 @@
                                 "config": {
                                     "textValueScript": "userProfileDetailOverview.metadata.positions.content.modules.9.config.textValueScript.js",
                                     "formatModuleScript": "",
-                                    "className": "project-description",
+                                    "className": "project-description person-bio",
                                     "imageWidth": 300,
                                     "imageHeight": 240,
                                     "multiImageWidth": 100,
