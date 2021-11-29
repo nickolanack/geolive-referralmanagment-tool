@@ -18580,7 +18580,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "user-role",
-                                    "className": "",
+                                    "className": "profile-role",
                                     "fieldLabelScript": "return \"Role: \";",
                                     "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.5.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-role');"
@@ -18591,7 +18591,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "user-group",
-                                    "className": "",
+                                    "className": "profile-role",
                                     "fieldLabelScript": "return \"Community\/Group: \"",
                                     "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.6.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-community');"
@@ -18602,7 +18602,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "user-position",
-                                    "className": "",
+                                    "className": "profile-role",
                                     "fieldLabelScript": "return \"Position: \";",
                                     "fieldValueScript": "return \"--\";",
                                     "formatElementScript": ""
@@ -18613,7 +18613,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "user-department",
-                                    "className": "",
+                                    "className": "profile-role",
                                     "fieldLabelScript": "return \"Department: \";",
                                     "fieldValueScript": "return \"--\";",
                                     "formatElementScript": ""
@@ -18624,7 +18624,7 @@
                                 "config": {
                                     "textValueScript": "userProfileDetailOverview.metadata.positions.content.modules.9.config.textValueScript.js",
                                     "formatModuleScript": "",
-                                    "className": "project-description person-bio",
+                                    "className": "project-description profile-bio",
                                     "imageWidth": 300,
                                     "imageHeight": 240,
                                     "multiImageWidth": 100,
