@@ -55,35 +55,9 @@ button:focus {outline:0;}
 }
 
 
-.ui-view.card-one, .ui-view.card-two, .ui-view.card-three, .ui-view.card-four{
-    display: inline-block;
-    width: 600px;
-}
 
 
-.card-two .ui-view.user-detail.just-pic, .card-three .ui-view.user-detail.just-pic, .card-four .ui-view.user-detail.just-pic {
-    display: none;
-}
- .ui-view.card-two, .ui-view.card-three, .ui-view.card-four{
-    width: 300px;
-}
 
-
-.ui-view.card-two, .ui-view.card-three,  .ui-view.card-three, .ui-view.card-four{
-    background: white;
-    margin: 10px;
-    padding:10px;
-    border-radius: 8px;
-}
-
-
-.card-one .field-value-module, .card-one .project-description {
-    display: none;
-
-}
-.ui-view.card-one {
-    width: 300px;
-}
 
 [data-view="userProfileDetailView"]{
     
@@ -95,6 +69,48 @@ button:focus {outline:0;}
     
     .user-name {
         display: none;
+    }
+    
+    
+    [data-view="userProfileDetailCards"]{
+        
+        .ui-view.profile-card{
+            display: inline-block;
+            width: 600px;
+        }
+    
+    
+        .card-two, .card-three, .card-four {
+            .ui-view.user-detail.just-pic {
+                display: none;
+            }
+        }
+         .ui-view.card-two, .ui-view.card-three, .ui-view.card-four{
+            width: 300px;
+        }
+        
+        
+        .ui-view.profile-card{
+            background: white;
+            margin: 10px;
+            padding:10px;
+            border-radius: 8px;
+        }
+        
+        
+        .ui-view.card-one{
+            
+            width: 300px;
+            
+            .field-value-module, .project-description {
+                display: none;
+            }
+        
+        }
+       
+            
+        
+        
     }
     
         
