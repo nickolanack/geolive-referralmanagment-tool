@@ -18738,7 +18738,7 @@
                                     "identifier": "user-position",
                                     "className": "profile-role",
                                     "fieldLabelScript": "return \"Position: \";",
-                                    "fieldValueScript": "return \"--\";",
+                                    "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.7.config.fieldValueScript.js",
                                     "formatElementScript": ""
                                 }
                             },
@@ -18749,7 +18749,7 @@
                                     "identifier": "user-department",
                                     "className": "profile-role",
                                     "fieldLabelScript": "return \"Department: \";",
-                                    "fieldValueScript": "return \"--\";",
+                                    "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.8.config.fieldValueScript.js",
                                     "formatElementScript": ""
                                 }
                             },
