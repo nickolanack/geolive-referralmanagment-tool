@@ -18772,7 +18772,7 @@
                                     "identifier": "user-address",
                                     "className": "profile-info",
                                     "fieldLabelScript": "return \"Address: \";",
-                                    "fieldValueScript": "return \"--\";",
+                                    "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.4.config.fieldValueScript.js",
                                     "formatElementScript": ""
                                 }
                             },
