@@ -148,6 +148,14 @@ var DashboardUser = (function() {
 			});
 			return me;
 		},
+		getAddress:function(){
+			var me = this;
+			if (me.options.metadata.address) {
+				return me.options.metadata.address;
+			}
+			return null;
+
+		},
 		getPosition:function(){
 
 			var me = this;
