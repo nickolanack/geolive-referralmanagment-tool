@@ -1,3 +1,3 @@
 return new ProjectList({
-    "label":  item.getName()+"'s Projects"
+    "label":  (item.getId()==AppClient.getId()?"Your":item.getName()+"'s")+" Projects"
 })
