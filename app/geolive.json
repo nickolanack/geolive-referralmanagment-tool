@@ -8599,16 +8599,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 544,
-                            "y": 407
+                            "x": 554,
+                            "y": 417
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 504,
-                                    "y": 670
+                                    "x": 514,
+                                    "y": 705
                                 }
                             }
                         ],
@@ -8670,7 +8670,7 @@
                                                 "formatter": "none",
                                                 "iconTint": "rgb(100, 149, 237)",
                                                 "autocomplete": true,
-                                                "inputOptions": [],
+                                                "inputOptions": "{}",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": ""
                                             }
@@ -8793,8 +8793,8 @@
                                                 "attributeFields": [
                                                     "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.10.config.attributeFields.0.json"
                                                 ],
-                                                "className": "",
-                                                "label": "",
+                                                "className": "width-2",
+                                                "label": "Role",
                                                 "message": "",
                                                 "lines": 1,
                                                 "maxChars": 0,
@@ -8816,8 +8816,8 @@
                                                 "attributeFields": [
                                                     "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.11.config.attributeFields.0.json"
                                                 ],
-                                                "className": "",
-                                                "label": "",
+                                                "className": "width-2",
+                                                "label": "Department",
                                                 "message": "",
                                                 "lines": 1,
                                                 "maxChars": 0,
