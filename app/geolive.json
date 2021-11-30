@@ -8599,16 +8599,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 554,
-                            "y": 417
+                            "x": 564,
+                            "y": 427
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 514,
-                                    "y": 705
+                                    "x": 524,
+                                    "y": 715
                                 }
                             }
                         ],
@@ -8818,6 +8818,29 @@
                                                 ],
                                                 "className": "width-2",
                                                 "label": "Department",
+                                                "message": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add more values",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": "{}",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.12.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "label": "Address",
                                                 "message": "",
                                                 "lines": 1,
                                                 "maxChars": 0,
