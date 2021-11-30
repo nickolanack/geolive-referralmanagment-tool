@@ -4,7 +4,7 @@ return new ProjectList({
 
 		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
      				callback(team.getProjects().filter(function(p){
-     					p.getProjectSubmitterId()+""==item.getId()+""
+     					return p.getProjectSubmitterId()+""==item.getId()+""
      				}));
      			});
             }
