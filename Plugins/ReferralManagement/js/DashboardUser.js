@@ -148,6 +148,24 @@ var DashboardUser = (function() {
 			});
 			return me;
 		},
+		getPosition:function(){
+
+			var me = this;
+			if (me.options.metadata.position) {
+				return me.options.metadata.position;
+			}
+			return null;
+
+		},
+		getDepartment:function(){
+
+			var me = this;
+			if (me.options.metadata.department) {
+				return me.options.metadata.department;
+			}
+			return null;
+
+		},
 		getProfileIcon: function() {
 			var me = this;
 			if (me.options.metadata.avatar) {
