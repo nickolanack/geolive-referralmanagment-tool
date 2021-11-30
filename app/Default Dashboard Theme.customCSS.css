@@ -118,6 +118,15 @@ button:focus {outline:0;}
             
         
         }
+        
+        
+        .profile-info, .profile-role, .profile-bio  {
+            display: none;
+        }
+        
+        .card-two .profile-info, .card-three .profile-role, .card-four .profile-bio  {
+            display: block;
+        }
        
             
         
