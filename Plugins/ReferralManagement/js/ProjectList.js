@@ -813,7 +813,7 @@ var ProjectList = (function() {
 
 		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
      				team.getProjects().filter(function(p){
-     					return p.getProjectSubmitterId()==user.getId()
+     					return p.getProjectSubmitterId()+""==user.getId()+"";
      				});
      			});
             }
