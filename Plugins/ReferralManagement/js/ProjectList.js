@@ -803,6 +803,27 @@ var ProjectList = (function() {
 
 	}
 
+
+	ProjectList.UsersProjectList = function(user) {
+
+
+		return new ProjectList({
+		    "label":  (user.getId()==AppClient.getId()?"Your":user.getName()+"'s")+" Projects",
+		    projects:function(callback){
+
+		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+     				team.getProjects().filter(function(p){
+     					return p.getProjectSubmitterId()==user.getId()
+     				});
+     			});
+            }
+		});
+
+
+	}
+
+
+
 	ProjectList.ResolveSharedCommunityProjectList = function(item) {
 
 

@@ -65,6 +65,11 @@ var PostContent = (function() {
 				}
 
 				if (type.toLowerCase() == 'token') {
+
+
+					/*
+					 * hide this item if validated
+					 */
 					
 					return new MockDataTypeItem({
 						type: "ReferralManagement.proposal",
@@ -83,6 +88,10 @@ var PostContent = (function() {
 			}).filter(function(postItem) {
 				return !!postItem;
 			});
+
+			
+
+			
 			return postItems;
 
 		}
