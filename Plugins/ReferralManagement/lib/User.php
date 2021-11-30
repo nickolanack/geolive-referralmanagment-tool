@@ -72,6 +72,10 @@ class User {
 
 				$metadata['status'] = !!$attributes['registeredStatus'];
 
+				$metadata['position'] = $attributes['role'];
+				$metadata['department'] = $attributes['department'];
+
+
 				$metadata['communityId'] = array_search($metadata['community'], $this->listCommunities());
 
 				$metadata['role-icon'] = $this->getUserRoleIcon($userId);
