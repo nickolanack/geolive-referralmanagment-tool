@@ -72,6 +72,7 @@ class User {
 
 				$metadata['status'] = !!$attributes['registeredStatus'];
 
+				$metadata['address'] = $attributes['address'];
 				$metadata['position'] = $attributes['role'];
 				$metadata['department'] = $attributes['department'];
 
