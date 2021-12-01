@@ -4059,7 +4059,7 @@
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
-            "cacheable": false,
+            "cacheable": true,
             "link": true,
             "sass": true,
             "widgetTitle": "Default Dashboard Theme",
