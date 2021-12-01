@@ -7344,10 +7344,11 @@
                                     "inlineReply": false,
                                     "inlineReplyNamedForm": "",
                                     "emptyMessage": "There are no discussion posts for this proposal",
-                                    "channel": "default",
+                                    "channel": "messages",
                                     "resolveChannelScript": "return defaultChannel;",
                                     "resolveItemScript": "return item;",
                                     "initialPostsScript": "return null;",
+                                    "formatPostScript": "",
                                     "namedView": "defaultPostDetail",
                                     "reverseOrder": false,
                                     "className": ""
