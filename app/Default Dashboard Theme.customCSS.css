@@ -479,11 +479,12 @@ body.dragover{
 
 
 div.field-value-module.inline {
-    display: table-cell;
-    /*min-width: 250px;*/
-    
+    display: inline-block;
     width: 250px;
     max-width: 16%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 [data-view="singleProjectListItemTableDetail"], .table-header {
