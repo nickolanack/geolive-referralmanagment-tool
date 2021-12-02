@@ -22,6 +22,7 @@ if(strpos($file,'{datawarehouse}')===0){
         if(file_exists($realpath)){
             return $realpath;
         }
+        throw new \Exception('file does not exist: '+$realpath);
     }
     
     return $data['metadata']->file;
