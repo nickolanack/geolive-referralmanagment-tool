@@ -160,9 +160,7 @@
         "parameters": {
             "releaseServer": "http:\/\/release.geolive.ca",
             "releasePackage": "master",
-            "autoUpdate": false,
-            "composerPath": "\/usr\/bin\/composer",
-            "bowerPath": ""
+            "autoUpdate": false
         }
     },
     "plugin.24": {
@@ -175,10 +173,16 @@
                 "pluginView": "front"
             },
             "routes": [
-                "plugin.UserInterface.24.routes.0.json"
+                "plugin.UserInterface.24.routes.0.json",
+                {
+                    "name": "projectfiles",
+                    "view": "plugin",
+                    "plugin": "ReferralManagement",
+                    "pluginView": "file"
+                }
             ],
-            "useRemoteServerUI": true,
-            "remoteServerUrl": "https:\/\/gct3.gather.geoforms.ca\/app\/nickolanack\/php-core-app\/core.php?task=TASK&format=ajax&json=JSON"
+            "useRemoteServerUI": false,
+            "remoteServerUrl": ""
         }
     },
     "plugin.28": {
@@ -7344,7 +7348,7 @@
                                     "inlineReply": false,
                                     "inlineReplyNamedForm": "",
                                     "emptyMessage": "There are no discussion posts for this proposal",
-                                    "channel": "messages",
+                                    "channel": "discussion",
                                     "resolveChannelScript": "return defaultChannel;",
                                     "resolveItemScript": "return item;",
                                     "initialPostsScript": "return null;",
@@ -22960,16 +22964,16 @@
                             "discussionReplyForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 432,
-                            "y": 332
+                            "x": 442,
+                            "y": 342
                         },
                         "children": [
                             "discussionReplyForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 392,
-                                    "y": 498
+                                    "x": 402,
+                                    "y": 508
                                 }
                             }
                         ],
@@ -23101,7 +23105,7 @@
             "widgetTitle": "Kml renderer",
             "target": "kmlDocumentRenderer",
             "cacheable": true,
-            "allowExternalFilePaths": true,
+            "allowExternalFilePaths": false,
             "allowExternalUrls": false,
             "resolveSpatialFilePathScript": "Kml renderer.resolveSpatialFilePathScript.js",
             "formatSpatialFileRendererScript": "Kml renderer.formatSpatialFileRendererScript.js",
