@@ -147,10 +147,9 @@ var ItemDiscussion = (function() {
 			uitext.addAutocompleteDropdown(function(text){
 
 				if(text&&text.length>1&&text[0]=='@'){
-					return [
-						'a', 'b', 'c'
-
-					]
+					return ProjectTeam.CurrentTeam().getUsers().filter(function(u){ return u.getName.toLowerCase().indexOf(text.substring(1).toLowerCase())===0; }).map(function(u){
+						return u.getName();
+					});
 				}
 
 
