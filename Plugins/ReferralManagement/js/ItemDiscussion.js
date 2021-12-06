@@ -154,7 +154,9 @@ var ItemDiscussion = (function() {
 				}
 
 
-			}, {});
+			}, {
+				minChars:2
+			});
 
 		});
 
