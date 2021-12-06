@@ -143,6 +143,19 @@ var ItemDiscussion = (function() {
 
 			});
 
+
+			uitext.addAutocompleteDropdown(function(text){
+
+				if(text&&text.length>1&&text[0]=='@'){
+					return [
+						'a', 'b', 'c'
+
+					]
+				}
+
+
+			}, {});
+
 		});
 
 
