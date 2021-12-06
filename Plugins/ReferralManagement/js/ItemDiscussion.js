@@ -1,6 +1,6 @@
-var ItemDiscussion=(function(){
+var ItemDiscussion = (function() {
 
-	var ItemDiscussion=new Class({
+	var ItemDiscussion = new Class({
 
 		hasPosts: function() {
 			var me = this;
@@ -24,7 +24,7 @@ var ItemDiscussion=(function(){
 		getDiscussionSubscription: function() {
 			var me = this;
 
-			if(me.getId()==-1){
+			if (me.getId() == -1) {
 				return false;
 			}
 
@@ -37,74 +37,182 @@ var ItemDiscussion=(function(){
 	});
 
 
+	ItemDiscussion.AddTextFieldFormat=function(module, application) {
+
+		module.runOnceOnLoad(function() {
 
 
+			var getDiscussion = function() {
 
-	ItemDiscussion.AddItemDiscussionIndicator =function(el, item, application) {
-
-			var newPosts = 0;
-			var totalPosts = 0;
-
-			var postCounter = null;
-
-			var addEl = function() {
-				postCounter = el.appendChild(new Element('span'));
-				postCounter.addClass('posts items');
-				el.addClass('withPosts withItemsIndicator');
-
-				if (item instanceof TaskItem) {
-					postCounter.addEvent('click', function() {
-						application.getDisplayController().displayPopoverForm(
-							"taskDetailPopover",
-							item,
-							application, {}
-						);
+				var discussion = module.getViewer()
+					.getUIView()
+					.getViewer()
+					.findChildViews(function(c) {
+						return c instanceof DiscussionModule
 					})
-				}
+					.pop();
+				return discussion;
 			}
 
-			var updateCounter = function() {
+			var uitext = module.getTextField();
+			uitext.setValue('');
+			uitext.getInputElement().addClass('discussion-textbox');
 
-				if (!postCounter) {
-					addEl();
+
+
+			(new UITextFieldMediaSelection(uitext)).addToolbarBtn({
+				"class": "send-btn",
+				events: {
+					click: function() {
+
+						var value = uitext.getValue();
+						value = value.trim();
+						uitext.setValue('');
+						if (value && value !== "") {
+
+							//console.log("send "+value);
+							var discussion = getDiscussion();
+							discussion.getDiscussion().post(value, function(success) {
+								//console.log('success: '+(success?'true':'false'));  
+								if (!success) {
+									alert('Something went wrong');
+								}
+							});
+						}
+
+					},
 				}
-
-				postCounter.setAttribute('data-posts', totalPosts);
-				postCounter.setAttribute('data-items', totalPosts);
-
-				if (totalPosts > 0) {
-					el.addClass("hasItems");
-				}
-
-				if (newPosts > 0) {
-					el.addClass('newPosts');
-					el.addClass('new-items');
-					postCounter.setAttribute('data-posts', newPosts + '/' + item.numberOfPosts());
-				} else {
-					el.removeClass('newPosts');
-					el.removeClass('new-items');
-				}
-			};
-
-			if (item.hasPosts()) {
-				newPosts = item.numberOfNewPosts();
-				totalPosts = item.numberOfPosts();
-				updateCounter();
-			}
-
-
-			//AjaxControlQuery.WeakSubscribe(el, ...)
-			var subscription = item.getDiscussionSubscription();
-			if (!subscription) {
-				return;
-			}
-			AjaxControlQuery.WeakSubscribe(el, subscription, function() {
-				newPosts++;
-				totalPosts++;
-				updateCounter();
 			});
 
+			
+
+
+
+			uitext.addEvent('onEnterKey', function(e) {
+				if (!e.shiftKey) {
+					var value = uitext.getValue();
+					value = value.trim();
+					uitext.setValue('');
+					if (value && value !== "") {
+
+						//console.log("send "+value);
+						var discussion = getDiscussion();
+						discussion.getDiscussion().post(value, function(success) {
+							//console.log('success: '+(success?'true':'false'));  
+							if (!success) {
+								alert('Something went wrong');
+							}
+						});
+					}
+				}
+			});
+
+			uitext.addEvent('addMediaItem', function(fileInfo) {
+
+
+				(new UITextFieldMediaSelection(uitext)).clear();
+
+				var value = fileInfo.html;
+				value = value.trim();
+				if (value && value !== "") {
+
+					application.getDisplayController().displayPopoverForm(
+						'discussionMediaPostForm',
+						(new MockDataTypeItem({
+							name: ""
+						})).addEvent('save', function() {
+
+							var discussion = getDiscussion();
+							discussion.getDiscussion().post(value, function(success) {
+								//console.log('success: '+(success?'true':'false'));  
+								if (!success) {
+									alert('Something went wrong');
+								}
+							});
+
+						}), {
+							template: "form"
+						}
+					);
+
+
+
+				}
+
+
+			});
+
+		});
+
+
+	}
+
+
+	ItemDiscussion.AddItemDiscussionIndicator = function(el, item, application) {
+
+		var newPosts = 0;
+		var totalPosts = 0;
+
+		var postCounter = null;
+
+		var addEl = function() {
+			postCounter = el.appendChild(new Element('span'));
+			postCounter.addClass('posts items');
+			el.addClass('withPosts withItemsIndicator');
+
+			if (item instanceof TaskItem) {
+				postCounter.addEvent('click', function() {
+					application.getDisplayController().displayPopoverForm(
+						"taskDetailPopover",
+						item,
+						application, {}
+					);
+				})
+			}
+		}
+
+		var updateCounter = function() {
+
+			if (!postCounter) {
+				addEl();
+			}
+
+			postCounter.setAttribute('data-posts', totalPosts);
+			postCounter.setAttribute('data-items', totalPosts);
+
+			if (totalPosts > 0) {
+				el.addClass("hasItems");
+			}
+
+			if (newPosts > 0) {
+				el.addClass('newPosts');
+				el.addClass('new-items');
+				postCounter.setAttribute('data-posts', newPosts + '/' + item.numberOfPosts());
+			} else {
+				el.removeClass('newPosts');
+				el.removeClass('new-items');
+			}
 		};
+
+		if (item.hasPosts()) {
+			newPosts = item.numberOfNewPosts();
+			totalPosts = item.numberOfPosts();
+			updateCounter();
+		}
+
+
+		//AjaxControlQuery.WeakSubscribe(el, ...)
+		var subscription = item.getDiscussionSubscription();
+		if (!subscription) {
+			return;
+		}
+		AjaxControlQuery.WeakSubscribe(el, subscription, function() {
+			newPosts++;
+			totalPosts++;
+			updateCounter();
+		});
+
+	};
 
 	return ItemDiscussion;
 
