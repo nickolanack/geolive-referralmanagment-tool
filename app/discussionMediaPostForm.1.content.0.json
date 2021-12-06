@@ -14,7 +14,7 @@
         "beforeRenderModuleScript": "",
         "onRenderTextFieldScript": "",
         "formatValueScript": "",
-        "getValueScript": " return \"Hello World\"; ",
+        "getValueScript": " return item.getName();",
         "updateValueScript": " object.value=value ",
         "submitValueScript": "",
         "validateValueScript": " return defaultValidationFn() "
