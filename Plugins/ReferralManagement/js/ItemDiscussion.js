@@ -119,7 +119,8 @@ var ItemDiscussion = (function() {
 					application.getDisplayController().displayPopoverForm(
 						'discussionMediaPostForm',
 						(new MockDataTypeItem({
-							name: ""
+							name: "",
+							fileInfo:fileInfo
 						})).addEvent('save', function() {
 
 							var discussion = getDiscussion();
