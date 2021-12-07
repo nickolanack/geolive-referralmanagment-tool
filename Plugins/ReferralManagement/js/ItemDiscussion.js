@@ -146,8 +146,10 @@ var ItemDiscussion = (function() {
 			uitext.addAutocompleteDropdown(function(text){
 
 				if(text&&text.length>1&&text[0]=='@'){
-					return ProjectTeam.CurrentTeam().getUsers().filter(function(u){ return u.getName().toLowerCase().indexOf(text.substring(1).toLowerCase())===0; }).map(function(u){
-						return u.getName();
+					return ProjectTeam.CurrentTeam().getUsers().filter(function(u){ 
+						return u.getName().toLowerCase().indexOf(text.substring(1).toLowerCase())===0||u.getEmail().toLowerCase().indexOf(text.substring(1).toLowerCase())===0; 
+					}).map(function(u){
+						return '@'+u.getEmail()+' - '+u.getName();
 					});
 				}
 
