@@ -18752,7 +18752,7 @@
                                     "className": "profile-info",
                                     "fieldLabelScript": "return \"Email: \";",
                                     "fieldValueScript": "return item.getEmail();",
-                                    "formatElementScript": ""
+                                    "formatElementScript": "userProfileDetailOverview.metadata.positions.content.modules.2.config.formatElementScript.js"
                                 }
                             },
                             {
