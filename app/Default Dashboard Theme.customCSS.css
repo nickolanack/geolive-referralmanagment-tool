@@ -66,10 +66,16 @@ span.field-label.email-click:after {
     margin-right: 5px;
     font-size: 18px;
     color: mediumseagreen;
+    cursor: pointer;
 }
 
 span.field-label.email-click {
     font-size: 0;
+}
+
+span.field-label.email-click.is-you:after {
+    color: white;
+    cursor: default;
 }
 
 
