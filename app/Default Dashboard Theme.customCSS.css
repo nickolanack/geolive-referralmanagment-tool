@@ -59,23 +59,29 @@ ul.option-list.dir-up.position-top {
     bottom: 0;
 }
 
-span.field-label.email-click:after {
-    cursor: pointer;
-    content: "\0f0e0";
-    font-family: 'FontAwesome';
-    margin-right: 5px;
-    font-size: 18px;
-    color: mediumseagreen;
-    cursor: pointer;
-}
 
-span.field-label.email-click {
+
+span.field-label.email-click, span.field-label.phone-click, span.field-label.address-click {
     font-size: 0;
+    
+    &:after {
+        cursor: pointer;
+        content: "\0f0e0";
+        font-family: 'FontAwesome';
+        margin-right: 5px;
+        font-size: 18px;
+        color: mediumseagreen;
+        cursor: pointer;
+    }
+        
+    &.is-you:after {
+        color: white;
+        cursor: default;
+    }
 }
-
-span.field-label.email-click.is-you:after {
-    color: white;
-    cursor: default;
+span.field-label.phone-click:after {
+}
+span.field-label.address-click:after {
 }
 
 
