@@ -80,8 +80,10 @@ span.field-label.email-click, span.field-label.phone-click, span.field-label.add
     }
 }
 span.field-label.phone-click:after {
+    content: "\0f095";
 }
 span.field-label.address-click:after {
+    content: "\0f041";
 }
 
 
