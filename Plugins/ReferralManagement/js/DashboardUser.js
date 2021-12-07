@@ -243,7 +243,7 @@ var DashboardUser = (function() {
 
 
 
-	DashboardUser.EmailTo=function(user, el){
+	DashboardUser.Email=function(user, el){
 
 		if(!el){
 			el=new Element('span');
@@ -267,6 +267,54 @@ var DashboardUser = (function() {
 
 		return el;
 
+	};
+
+	DashboardUser.Call=function(user, el){
+
+		if(!el){
+			el=new Element('span');
+		}
+
+		el.addClass('phone-click');
+
+		if(user.getId()+""==AppClient.getId()+""){
+		    
+		    el.addClass("is-you");
+		    return;
+		}
+
+		el.addEvent('click', function(){
+		    
+		    new Element('a', {
+		        href:"tel:",
+		        target:"blank"
+		    }).click();
+		});
+
+		return el;
+
+	}
+
+	DashboardUser.Address=function(user, el){
+
+		if(!el){
+			el=new Element('span');
+		}
+
+		el.addClass('address-click');
+
+		if(user.getId()+""==AppClient.getId()+""){
+		    
+		    el.addClass("is-you");
+		    return;
+		}
+
+		el.addEvent('click', function(){
+		    
+		    
+		});
+
+		return el;
 
 	}
 
