@@ -158,7 +158,22 @@ var ItemDiscussion = (function() {
 				minChars:2,
 				direction:'up',
 				insert:'top'
-			});
+			}).addAutocompleteDropdown(function(text){
+
+				if(text&&text.length>1&&text[0]=='#'){
+					return ProjectTeam.CurrentTeam().getProjects().filter(function(p){ 
+						return p.getName().toLowerCase().indexOf(text.substring(1).toLowerCase())===0; 
+					}).map(function(p){
+						return '#'+u.getName();
+					});
+				}
+
+
+			}, {
+				minChars:2,
+				direction:'up',
+				insert:'top'
+			})
 
 		});
 
