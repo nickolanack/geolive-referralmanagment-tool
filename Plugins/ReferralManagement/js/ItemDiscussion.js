@@ -137,7 +137,6 @@ var ItemDiscussion = (function() {
 					);
 
 
-
 				}
 
 
@@ -154,7 +153,9 @@ var ItemDiscussion = (function() {
 
 
 			}, {
-				minChars:2
+				minChars:2,
+				direction:'up',
+				insert:'before'
 			});
 
 		});
