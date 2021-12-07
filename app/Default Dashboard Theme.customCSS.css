@@ -59,7 +59,18 @@ ul.option-list.dir-up.position-top {
     bottom: 0;
 }
 
+span.field-label.email-click:after {
+    cursor: pointer;
+    content: "\0f0e0";
+    font-family: 'FontAwesome';
+    margin-right: 5px;
+    font-size: 18px;
+    color: mediumseagreen;
+}
 
+span.field-label.email-click {
+    font-size: 0;
+}
 
 
 [data-view="userProfileDetailView"]{
