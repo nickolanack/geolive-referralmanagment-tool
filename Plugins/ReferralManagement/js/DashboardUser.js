@@ -242,6 +242,35 @@ var DashboardUser = (function() {
 
 
 
+
+	DashboardUser.EmailTo=function(user, el){
+
+		if(!el){
+			el=new Element('span');
+		}
+
+		el.addClass('email-click');
+
+		if(user.getId()+""==AppClient.getId()+""){
+		    
+		    el.addClass("is-you");
+		    return;
+		}
+
+		el.addEvent('click', function(){
+		    
+		    new Element('a', {
+		        href:"mailto:"+user.getEmail(),
+		        target:"blank"
+		    }).click();
+		})
+
+		return el;
+
+
+	}
+
+
 	return DashboardUser;
 
 })();
