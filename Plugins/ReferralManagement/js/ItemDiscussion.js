@@ -164,7 +164,7 @@ var ItemDiscussion = (function() {
 					return ProjectTeam.CurrentTeam().getProjects().filter(function(p){ 
 						return p.getName().toLowerCase().indexOf(text.substring(1).toLowerCase())===0; 
 					}).map(function(p){
-						return '#'+u.getName();
+						return '#'+p.getName();
 					});
 				}
 
