@@ -18763,7 +18763,7 @@
                                     "className": "profile-info",
                                     "fieldLabelScript": "return \"Telephone: \";",
                                     "fieldValueScript": "return \"Field Value Script\";",
-                                    "formatElementScript": ""
+                                    "formatElementScript": "userProfileDetailOverview.metadata.positions.content.modules.3.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -18774,7 +18774,7 @@
                                     "className": "profile-info",
                                     "fieldLabelScript": "return \"Address: \";",
                                     "fieldValueScript": "userProfileDetailOverview.metadata.positions.content.modules.4.config.fieldValueScript.js",
-                                    "formatElementScript": ""
+                                    "formatElementScript": "userProfileDetailOverview.metadata.positions.content.modules.4.config.formatElementScript.js"
                                 }
                             },
                             {

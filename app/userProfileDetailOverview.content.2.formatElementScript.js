@@ -1,1 +1,1 @@
-DashboardUser.EmailTo(item, labelEl);
+DashboardUser.Email(item, labelEl);
