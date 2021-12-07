@@ -157,7 +157,7 @@ var ItemDiscussion = (function() {
 			}, {
 				minChars:2,
 				direction:'up',
-				insert:'before'
+				insert:'top'
 			});
 
 		});
