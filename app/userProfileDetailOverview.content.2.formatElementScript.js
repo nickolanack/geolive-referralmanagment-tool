@@ -1,5 +1,5 @@
 labelEl.addClass('email-click');
-label.addEvent('click', function(){
+labelEl.addEvent('click', function(){
     
     new Element('a', {
         href:"mailto:"+item.getEmail(),
