@@ -72,6 +72,10 @@ span.field-label.email-click, span.field-label.phone-click, span.field-label.add
         font-size: 18px;
         color: mediumseagreen;
         cursor: pointer;
+        width: 20px;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
     }
         
     &.is-you:after {
