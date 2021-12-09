@@ -157,7 +157,8 @@ var ItemDiscussion = (function() {
 			}, {
 				minChars:2,
 				direction:'up',
-				insert:'top'
+				insert:'top',
+				textInsert:'inject'
 			}).addAutocompleteDropdown(function(text){
 
 				if(text&&text.length>1&&text[0]=='#'){
@@ -172,7 +173,8 @@ var ItemDiscussion = (function() {
 			}, {
 				minChars:2,
 				direction:'up',
-				insert:'top'
+				insert:'top',
+				textInsert:'inject'
 			})
 
 		});

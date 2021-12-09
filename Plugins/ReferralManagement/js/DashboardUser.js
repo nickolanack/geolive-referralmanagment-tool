@@ -258,6 +258,10 @@ var DashboardUser = (function() {
 		}
 
 		el.addEvent('click', function(){
+
+
+			//if(DashboardConfig)
+
 		    
 		    new Element('a', {
 		        href:"mailto:"+user.getEmail(),
