@@ -149,7 +149,11 @@ var ItemDiscussion = (function() {
 					return ProjectTeam.CurrentTeam().getUsers().filter(function(u){ 
 						return u.getName().toLowerCase().indexOf(text.substring(1).toLowerCase())===0||u.getEmail().toLowerCase().indexOf(text.substring(1).toLowerCase())===0; 
 					}).map(function(u){
-						return '@'+u.getEmail()+' - '+u.getName();
+
+						return {
+							listValue:u.getEmail()+', '+u.getName(),
+							value:'@['+u.getEmail()+' '+u.getName()+']'
+						}
 					});
 				}
 
@@ -165,7 +169,10 @@ var ItemDiscussion = (function() {
 					return ProjectTeam.CurrentTeam().getProjects().filter(function(p){ 
 						return p.getName().toLowerCase().indexOf(text.substring(1).toLowerCase())===0; 
 					}).map(function(p){
-						return '#'+p.getName();
+						return {
+							listValue:''+p.getName(),
+							value:'#['+p.getId()+' '+p.getName()+']'
+						}
 					});
 				}
 
