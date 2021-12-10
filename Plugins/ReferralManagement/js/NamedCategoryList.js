@@ -61,6 +61,21 @@ var NamedCategoryList = (function() {
 
 			return tags;
 		},
+		getSelectableProjectTags:function(callback){
+
+
+			var list = this.getProjectTagsData().filter(function(t){
+				return t.getMetadata().selectable!==false;
+			})
+
+			if(callback){
+				callback(list);
+			}
+
+			return list;
+
+
+		},
 
 
 		listMemberOf(types, category){
