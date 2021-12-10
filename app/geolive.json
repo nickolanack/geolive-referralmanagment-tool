@@ -23534,13 +23534,14 @@
         "name": "Tile Renderer",
         "instance": "TileRenderer",
         "parameters": {
-            "widgetTitle": "",
-            "target": "none",
+            "widgetTitle": "kmlDocumentTileRenderer",
+            "target": "kmlDocumentTileRenderer",
             "cacheable": true,
             "allowExternalFilePaths": false,
             "allowExternalUrls": false,
             "resolveSpatialFilePathScript": "return $path;",
-            "formatSpatialFileRendererScript": ""
+            "formatSpatialFileRendererScript": "",
+            "readAccess": "public"
         }
     }
 }
