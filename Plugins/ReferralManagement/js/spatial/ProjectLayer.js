@@ -107,7 +107,7 @@ var ProjectLayer = (function() {
 
 						}
 
-						if (typeof metadata.renderTiles === true) {
+						if (metadata.renderTiles === true) {
 							options.parseBehavior='tile';
 							
 						}
