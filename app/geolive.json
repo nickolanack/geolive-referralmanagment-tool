@@ -23529,5 +23529,18 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.421": {
+        "name": "Tile Renderer",
+        "instance": "TileRenderer",
+        "parameters": {
+            "widgetTitle": "",
+            "target": "none",
+            "cacheable": true,
+            "allowExternalFilePaths": false,
+            "allowExternalUrls": false,
+            "resolveSpatialFilePathScript": "return $path;",
+            "formatSpatialFileRendererScript": ""
+        }
     }
 }
