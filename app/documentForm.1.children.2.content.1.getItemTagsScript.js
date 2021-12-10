@@ -1,1 +1,1 @@
-return ProjectTagList.getSelectableProjectTags();
+return ReferralManagementDashboard.getProjectTags();
