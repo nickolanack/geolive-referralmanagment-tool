@@ -155,7 +155,13 @@ var ProjectLayer = (function() {
 				},
 				_getTileUrl: function(tile, zoom) {
 		            var me = this;
-		            return CoreAjaxUrlRoot + '&format=raw&controller=plugins&view=plugin&plugin=Maps&pluginView=layer.tile&layer=' + me.getId() + '&z=' + zoom + '&x=' + tile.x + '&y=' + tile.y;
+		            return CoreAjaxUrlRoot + '&format=ajax&json='+JSON.stringify({
+		            		"widget":"kmlDocumentTileRenderer",
+		            		"document":me.options.url,
+		            		"z":zoom,
+		            		"x": tile.x,
+		            		"y": tile.y
+		            	});
 		        },
 
 
