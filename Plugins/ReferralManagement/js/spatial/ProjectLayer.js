@@ -155,7 +155,7 @@ var ProjectLayer = (function() {
 				},
 				_getTileUrl: function(tile, zoom) {
 		            var me = this;
-		            return CoreAjaxUrlRoot + '&format=aja&task=get_tile_for_document&json='+JSON.stringify({
+		            return CoreAjaxUrlRoot + '&task=get_tile_for_document&json='+JSON.stringify({
 		            		"widget":"kmlDocumentTileRenderer",
 		            		"document":me.options.url,
 		            		"z":zoom,
