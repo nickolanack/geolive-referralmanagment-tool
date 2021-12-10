@@ -66,6 +66,8 @@ var NamedCategoryList = (function() {
 
 			var list = this.getProjectTagsData().filter(function(t){
 				return t.getMetadata().selectable!==false;
+			}).map(function(t){
+				t.getName();
 			})
 
 			if(callback){
