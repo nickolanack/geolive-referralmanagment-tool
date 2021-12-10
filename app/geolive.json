@@ -23539,7 +23539,7 @@
             "cacheable": true,
             "allowExternalFilePaths": false,
             "allowExternalUrls": false,
-            "resolveSpatialFilePathScript": "return $path;",
+            "resolveSpatialFilePathScript": "kmlDocumentTileRenderer.resolveSpatialFilePathScript.js",
             "formatSpatialFileRendererScript": "",
             "readAccess": "public"
         }
