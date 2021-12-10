@@ -107,6 +107,11 @@ var ProjectLayer = (function() {
 
 						}
 
+						if (typeof metadata.renderTiles === true) {
+							options.parseBehavior='tile';
+							
+						}
+
 					}
 
 
@@ -147,7 +152,11 @@ var ProjectLayer = (function() {
 				_getKmlQuery: function() {
 					var me = this;
 					return new KMLDocumentQuery(me.options.url);
-				}
+				},
+				_getTileUrl: function(tile, zoom) {
+		            var me = this;
+		            return CoreAjaxUrlRoot + '&format=raw&controller=plugins&view=plugin&plugin=Maps&pluginView=layer.tile&layer=' + me.getId() + '&z=' + zoom + '&x=' + tile.x + '&y=' + tile.y;
+		        },
 
 
 			});

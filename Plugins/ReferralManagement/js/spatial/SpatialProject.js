@@ -351,6 +351,7 @@ var SpatialProject = (function() {
                     showIcons:true,
                     showLabels:false,
                     showAttributes:true,
+                    renderTiles:false,
                     lineColor:"#000000",
                     fillColor:"#000000",
                     lineOpacity:1,
