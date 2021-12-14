@@ -38,6 +38,11 @@ button:focus {outline:0;}
     }
 }
 
+
+.no-min-height .discussion .posts {
+    min-height: unset;
+}
+
 .section-title button {
     border:none;
 }
