@@ -7072,6 +7072,28 @@
                                 }
                             },
                             {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "identifier": "pros-dates-community",
+                                    "className": "",
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.8.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.8.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "identifier": "proj-author",
+                                    "className": "",
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.9.config.fieldValueScript.js",
+                                    "formatElementScript": "el.addClass('created-by')"
+                                }
+                            },
+                            {
                                 "type": "plugin.Discussions.Discussion",
                                 "config": {
                                     "discussionTarget": "",
@@ -7113,28 +7135,6 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": ""
-                                }
-                            },
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "identifier": "pros-dates-community",
-                                    "className": "",
-                                    "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.fieldValueScript.js",
-                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.formatElementScript.js"
-                                }
-                            },
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "identifier": "proj-author",
-                                    "className": "",
-                                    "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.11.config.fieldValueScript.js",
-                                    "formatElementScript": "el.addClass('created-by')"
                                 }
                             },
                             {
