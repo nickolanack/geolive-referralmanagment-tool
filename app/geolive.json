@@ -7122,6 +7122,29 @@
                                     "className": "",
                                     "identifier": "",
                                     "viewType": "view",
+                                    "namedView": "projectsListDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "singleProjectOverviewDetail.metadata.positions.content.modules.11.config.resolveItemScript.js",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "",
+                                    "identifier": "",
+                                    "viewType": "view",
                                     "namedView": "singleUserTeamCollectionIconsDetail",
                                     "shouldRender": true,
                                     "namedViewScript": "return namedView",
@@ -7143,7 +7166,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.12.config.script.js",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.13.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             },
@@ -7151,31 +7174,8 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.13.config.script.js",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.14.config.script.js",
                                     "description": "Info about my custom script"
-                                }
-                            },
-                            {
-                                "type": "UIView",
-                                "config": {
-                                    "className": "",
-                                    "identifier": "",
-                                    "viewType": "view",
-                                    "namedView": "projectsListDetail",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultView",
-                                    "formOptions": "\"{}\"",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "defaultBehaviorFn()",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "singleProjectOverviewDetail.metadata.positions.content.modules.14.config.resolveItemScript.js",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": ""
                                 }
                             }
                         ]
