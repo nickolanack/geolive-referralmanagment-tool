@@ -131,6 +131,7 @@ var ProjectLayer = (function() {
 						var project = ProjectTeam.CurrentTeam().getProject(pid);
 
 						project.addEvent('updateDatasetAttributes', function(data) {
+							
 							layer.options.projectAttributes = project.getDatasetAttributes(layerIndex);
 							layer.reload();
 						});

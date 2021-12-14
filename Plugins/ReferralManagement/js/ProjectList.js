@@ -823,6 +823,20 @@ var ProjectList = (function() {
 	}
 
 
+	ProjectList.ProjectRelatedProjectsList = function(user) {
+
+
+		return new ProjectList({
+		    "label":  "Related Projects",
+		    projects:function(callback){
+
+		    	callback([]);
+            }
+		});
+
+
+	}
+
 
 	ProjectList.ResolveSharedCommunityProjectList = function(item) {
 
