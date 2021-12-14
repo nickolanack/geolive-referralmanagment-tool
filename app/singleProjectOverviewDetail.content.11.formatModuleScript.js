@@ -1,0 +1,1 @@
+module.getElement().appendChild(new Element('button', {html:"Add notes"}));
