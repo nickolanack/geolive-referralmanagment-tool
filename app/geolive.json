@@ -7016,6 +7016,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getName();",
                                     "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.4.config.formatElementScript.js"
@@ -7026,6 +7027,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getCompanyName();",
                                     "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.5.config.formatElementScript.js"
@@ -7036,6 +7038,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.6.config.fieldValueScript.js",
                                     "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.6.config.formatElementScript.js"
@@ -7073,6 +7076,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "pros-dates-community",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.8.config.fieldValueScript.js",
                                     "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.8.config.formatElementScript.js"
@@ -7083,6 +7087,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "proj-author",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.9.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('created-by')"
@@ -7148,6 +7153,29 @@
                                     "name": "My Custom Script",
                                     "script": "singleProjectOverviewDetail.metadata.positions.content.modules.13.config.script.js",
                                     "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "",
+                                    "identifier": "",
+                                    "viewType": "view",
+                                    "namedView": "projectsListDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "singleProjectOverviewDetail.metadata.positions.content.modules.14.config.resolveItemScript.js",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             }
                         ]
