@@ -54,9 +54,41 @@ button:focus {outline:0;}
     top: -60px;
 }
 
+ul.option-list.dir-up.position-top {
+    top: unset;
+    bottom: 0;
+}
 
 
 
+span.field-label.email-click, span.field-label.phone-click, span.field-label.address-click {
+    font-size: 0;
+    
+    &:after {
+        cursor: pointer;
+        content: "\0f0e0";
+        font-family: 'FontAwesome';
+        margin-right: 5px;
+        font-size: 18px;
+        color: mediumseagreen;
+        cursor: pointer;
+        width: 20px;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+    }
+        
+    &.is-you:after {
+        color: white;
+        cursor: default;
+    }
+}
+span.field-label.phone-click:after {
+    content: "\0f095";
+}
+span.field-label.address-click:after {
+    content: "\0f041";
+}
 
 
 [data-view="userProfileDetailView"]{
@@ -92,7 +124,7 @@ button:focus {outline:0;}
         
         
         .ui-view.profile-card{
-            background: red;
+            background: white;
             margin: 10px;
             padding:10px;
             border-radius: 8px;
