@@ -221,6 +221,7 @@ var ProjectList = (function() {
 
 		return new ProjectList({
 			label: "Projects",
+			labelClass:"",
 			showCreateBtn: true,
 			filter: null,
 			invertfilter: false
@@ -833,7 +834,6 @@ var ProjectList = (function() {
 		    	callback([]);
             }
 		});
-
 
 	}
 
