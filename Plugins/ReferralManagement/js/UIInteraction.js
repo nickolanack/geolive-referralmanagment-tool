@@ -10,6 +10,12 @@ var UIInteraction = (function() {
 			return ReferralManagementDashboard.getApplication();
 
 		},
+		navigateToCompany: function(client) {
+			var controller = this._getApplication().getNamedValue('navigationController');
+			controller.navigateTo("Datasets", "Main", {
+				item: ProjectList.CompanyProjectsList(client)
+			});
+		},
 		navigateToNamedCategoryType: function(typeName) {
 
 			var controller = this._getApplication().getNamedValue('navigationController');

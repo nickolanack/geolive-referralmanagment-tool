@@ -841,6 +841,24 @@ var ProjectList = (function() {
 
 	}
 
+	ProjectList.CompanyProjectsList = function(project) {
+
+
+		return new ProjectList({
+		    "label":  "Related Projects",
+		    "labelClass":"",
+		    projects:function(callback){
+
+		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+     				callback(team.getProjects().filter(function(p){
+     					return p.getCompanyName()!=""&& p.getCompanyName()==project.getCompanyName();
+     				}));
+     			});
+            }
+		});
+
+	}
+
 
 	ProjectList.ResolveSharedCommunityProjectList = function(item) {
 
