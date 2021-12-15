@@ -20,6 +20,29 @@ button:focus {outline:0;}
     }
 }
 
+.user-notes{
+
+    .activity-feed:before {
+        display: none;
+    }
+    
+    .ui-post-view:after {
+        display: none;
+    }
+    
+    .user-profile-icon, div.user-profile-icon.content{
+        display: none;
+    }
+    
+    .ui-post-view {
+        margin-left: 0;
+        min-height: unset;
+        padding-left: 10px;
+    }
+}
+
+
+
 .bubble.dark {
     background-color: white;
     color: black;
