@@ -833,7 +833,7 @@ var ProjectList = (function() {
 
 		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
      				callback(team.getProjects().filter(function(p){
-     					return p.getCompanyName()!=""&& p.getCompanyName()==project.getCompanyName();
+     					return p.getId()!=project.getId()&&p.getCompanyName()!=""&& p.getCompanyName()==project.getCompanyName();
      				}));
      			});
             }
