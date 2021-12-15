@@ -823,7 +823,7 @@ var ProjectList = (function() {
 	}
 
 
-	ProjectList.ProjectRelatedProjectsList = function(user) {
+	ProjectList.ProjectRelatedProjectsList = function(project) {
 
 
 		return new ProjectList({
@@ -831,7 +831,11 @@ var ProjectList = (function() {
 		    "labelClass":"",
 		    projects:function(callback){
 
-		    	callback([]);
+		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+     				callback(team.getProjects().filter(function(p){
+     					return p.getCompanyName()!=""&& p.getCompanyName()==project.getCompanyName();
+     				}));
+     			});
             }
 		});
 
