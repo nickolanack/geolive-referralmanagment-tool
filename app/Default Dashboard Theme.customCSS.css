@@ -9,8 +9,15 @@ body.body-overlayed>#viewControllerApp>div>div>.ui-view {
 button:focus {outline:0;}
 
 
-.ui-view.reply-box.hide-content .uitext-container {
-    display: none;
+.ui-view.reply-box.hide-content{
+
+
+    height: 60px;
+    padding-right: 25px;
+
+    .uitext-container {
+        display: none;
+    }
 }
 
 .bubble.dark {
