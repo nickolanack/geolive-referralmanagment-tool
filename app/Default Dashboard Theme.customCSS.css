@@ -9,6 +9,40 @@ body.body-overlayed>#viewControllerApp>div>div>.ui-view {
 button:focus {outline:0;}
 
 
+.has-hidden-content.hide{
+
+
+    height: 60px;
+    padding-right: 25px;
+
+    .uitext-container {
+        display: none;
+    }
+}
+
+.user-notes{
+
+    .activity-feed:before {
+        display: none;
+    }
+    
+    .ui-post-view:after {
+        display: none;
+    }
+    
+    .user-profile-icon, div.user-profile-icon.content{
+        display: none;
+    }
+    
+    .ui-post-view {
+        margin-left: 0;
+        min-height: unset;
+        padding-left: 10px;
+    }
+}
+
+
+
 .bubble.dark {
     background-color: white;
     color: black;
@@ -36,6 +70,11 @@ button:focus {outline:0;}
     &.arrow_bottom .tip:before {
         border-top-color: white;
     }
+}
+
+
+.no-min-height .discussion .posts {
+    min-height: unset;
 }
 
 .section-title button {

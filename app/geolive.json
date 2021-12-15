@@ -7016,6 +7016,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getName();",
                                     "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.4.config.formatElementScript.js"
@@ -7026,6 +7027,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getCompanyName();",
                                     "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.5.config.formatElementScript.js"
@@ -7036,6 +7038,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.6.config.fieldValueScript.js",
                                     "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.6.config.formatElementScript.js"
@@ -7073,6 +7076,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "pros-dates-community",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.8.config.fieldValueScript.js",
                                     "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.8.config.formatElementScript.js"
@@ -7083,9 +7087,54 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "proj-author",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.9.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('created-by')"
+                                }
+                            },
+                            {
+                                "type": "plugin.Discussions.Discussion",
+                                "config": {
+                                    "discussionTarget": "itemDiscussion",
+                                    "width": 0,
+                                    "constrainHeight": false,
+                                    "height": 200,
+                                    "inlineEditing": true,
+                                    "inlineReply": true,
+                                    "inlineReplyNamedForm": "",
+                                    "emptyMessage": "There are no entries",
+                                    "channel": "notes",
+                                    "resolveChannelScript": "return defaultChannel;",
+                                    "resolveItemScript": "return item;",
+                                    "initialPostsScript": "return null;",
+                                    "formatPostScript": "",
+                                    "namedView": "defaultPostDetail",
+                                    "reverseOrder": false,
+                                    "className": "no-min-height user-notes"
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "reply-box",
+                                    "identifier": "",
+                                    "viewType": "form",
+                                    "namedView": "discussionReplyForm",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "discussionReplyForm",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "singleProjectOverviewDetail.metadata.positions.content.modules.11.config.formatModuleScript.js",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             },
                             {
@@ -7105,6 +7154,29 @@
                                     "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "inline-list-item",
+                                    "identifier": "",
+                                    "viewType": "view",
+                                    "namedView": "projectsListDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "singleProjectOverviewDetail.metadata.positions.content.modules.13.config.resolveItemScript.js",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
@@ -7138,7 +7210,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.12.config.script.js",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.15.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             },
@@ -7146,7 +7218,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.13.config.script.js",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.16.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
