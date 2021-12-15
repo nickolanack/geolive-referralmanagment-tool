@@ -841,7 +841,7 @@ var ProjectList = (function() {
 
 	}
 
-	ProjectList.CompanyProjectsList = function(project) {
+	ProjectList.CompanyProjectsList = function(client) {
 
 
 		return new ProjectList({
@@ -851,7 +851,7 @@ var ProjectList = (function() {
 
 		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
      				callback(team.getProjects().filter(function(p){
-     					return p.getCompanyName()!=""&& p.getCompanyName()==project.getCompanyName();
+     					return p.getCompanyName()!=""&& p.getCompanyName()==client.getName();
      				}));
      			});
             }
