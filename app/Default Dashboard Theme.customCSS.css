@@ -9,6 +9,10 @@ body.body-overlayed>#viewControllerApp>div>div>.ui-view {
 button:focus {outline:0;}
 
 
+.ui-view.reply-box.hide-content .uitext-container {
+    display: none;
+}
+
 .bubble.dark {
     background-color: white;
     color: black;
