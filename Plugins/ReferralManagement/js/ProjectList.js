@@ -846,7 +846,6 @@ var ProjectList = (function() {
 
 		return new ProjectList({
 			"label": client.getName() +" "+ (DashboardConfig.getValue('showDatasets')?"Datasets & ":"")+(DashboardConfig.getValue('enableProposals')?"Projects":"Collections"),
-		    "labelClass":"",
 		    projects:function(callback){
 
 		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
