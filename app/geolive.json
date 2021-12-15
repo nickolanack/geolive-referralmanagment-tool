@@ -5966,7 +5966,7 @@
                                     "targetName": "",
                                     "getItemListScript": "People Clients Detail.metadata.positions.content.modules.1.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "",
+                                    "formatListItemModuleScript": "People Clients Detail.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
                                     "sortItemsScript": "",
