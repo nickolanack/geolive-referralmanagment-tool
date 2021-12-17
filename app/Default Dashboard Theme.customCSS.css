@@ -76,6 +76,9 @@ button:focus {outline:0;}
         border-color: cornflowerblue;
         color:cornflowerblue;
     }
+    li.blank {
+        visibility: hidden;
+    }
     
 }
 
