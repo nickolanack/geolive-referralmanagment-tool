@@ -64,6 +64,10 @@ button:focus {outline:0;}
         
     }
     
+    li.mail:before {
+        content: "\0f003";
+    }
+    
 }
 
 li.current {
