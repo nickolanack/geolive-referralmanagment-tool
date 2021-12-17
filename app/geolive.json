@@ -23802,9 +23802,9 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "",
-            "target": "none",
-            "templateName": "{target}",
+            "widgetTitle": "assessmentFlow",
+            "target": "assessmentFlow",
+            "templateName": "assessmentFlow",
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
@@ -23818,7 +23818,7 @@
                     },
                     "content": {
                         "modules": [
-                            "widget.DetailView.423.metadata.positions.content.modules.0.json"
+                            "assessmentFlow.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
