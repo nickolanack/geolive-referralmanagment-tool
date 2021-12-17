@@ -107,6 +107,7 @@ var ProjectNavigationMenu = new Class({
 					},
 					{
 						html: "Status",
+						template: "proposalOverviewStatus",
 						formatEl: function(li) {
 
 							
@@ -115,7 +116,6 @@ var ProjectNavigationMenu = new Class({
 					},
 					{
 						html: "Proponent",
-						template: "proposalOverviewStatus",
 						formatEl: function(li) {
 
 							
