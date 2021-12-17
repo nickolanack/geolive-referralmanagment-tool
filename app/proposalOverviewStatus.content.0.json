@@ -1,8 +1,23 @@
 {
-    "type": "WizardScriptElement",
+    "type": "UIView",
     "config": {
-        "name": "My Custom Script",
-        "script": "var title= 'Project submission';\nvar content=new Element('div');\n\n\ncontent.appendChild(new Element('div', {html:title}));\nvar proponentFlow=content.appendChild(new Element('ul',{\"class\":\"flow\"}));\n\nvar last=null;\nvar appendStep=function(name, options){\n    \n    var el= proponentFlow.appendChild(new Element('li', options||{}));\n    el.setAttribute('data-label',name);\n    if(last){\n        last.appendChild(new Element('span'));\n    }\n    \n    last=el;\n    return el;\n}\n\n\nproponentFlow.appendChild(new Element('label',{html:\"Proponent Flow\"}));\n\n\n\nappendStep(\"Project submission\", {\"class\":\"complete\"});\nappendStep(\"Validation\", {\"class\":\"current mail\"});\nappendStep(\"Initial Review\", {\"class\":\"user\"});\nappendStep(\"...\");\nappendStep(\"...\");\n\n\nreturn content;",
-        "description": "Info about my custom script"
+        "className": "",
+        "identifier": "",
+        "viewType": "view",
+        "namedView": "proponentFlow",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
+        "showInlineEdit": false,
+        "namedFormView": "defaultView",
+        "formOptions": "\"{}\"",
+        "showDeleteButton": false,
+        "deleteItemScript": "defaultBehaviorFn()",
+        "initModuleScript": "",
+        "formatModuleScript": "",
+        "resolveItemScript": "return item",
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false,
+        "targetName": ""
     }
 }

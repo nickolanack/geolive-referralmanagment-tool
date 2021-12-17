@@ -23736,7 +23736,15 @@
                     },
                     "content": {
                         "modules": [
-                            "proposalOverviewStatus.metadata.positions.content.modules.0.json"
+                            "proposalOverviewStatus.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIView",
+                                "config": []
+                            },
+                            {
+                                "type": "UIView",
+                                "config": []
+                            }
                         ]
                     },
                     "footer": {
