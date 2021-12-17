@@ -1,1 +1,1 @@
-<div class="section-title section-padding">Assessment flow</div>
+<div class="section-title section-padding">Assessment workflow</div>

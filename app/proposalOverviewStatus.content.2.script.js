@@ -1,1 +1,1 @@
-<div class="section-title section-padding">Processing Flow</div>
+<div class="section-title section-padding">Processing workflow</div>
