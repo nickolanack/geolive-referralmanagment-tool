@@ -510,6 +510,11 @@ var ProjectList = (function() {
 		}
 
 
+		if(item instanceof ProjectList&&item.getShowFilters&&item.getShowFilters()===false){
+			return null;
+		}
+
+
 
 		var application = ReferralManagementDashboard.getApplication();
 
