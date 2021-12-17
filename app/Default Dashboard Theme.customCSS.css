@@ -41,7 +41,9 @@ button:focus {outline:0;}
     }
 }
 
-
+[data-view="singleProjectOverviewDetail"] [data-view="projectsListDetail"] .projects-list .ui-view:last-child {
+    border-bottom:none;
+}
 
 .bubble.dark {
     background-color: white;
