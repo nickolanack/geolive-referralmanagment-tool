@@ -104,6 +104,22 @@ var ProjectNavigationMenu = new Class({
 							
 
 						}
+					},
+					{
+						html: "Status",
+						formatEl: function(li) {
+
+							
+
+						}
+					},
+					{
+						html: "Proponent",
+						formatEl: function(li) {
+
+							
+
+						}
 					}
 				]
 			};
