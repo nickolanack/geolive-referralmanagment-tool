@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "var title= 'Project submission';\nvar content=new Element('div');\n\n\ncontent.appendChild(new Element('div', {html:title});\nvar proponentFlow=content.appendChild(new Element('ul'));\n\nproponentFlow.appendChild(new Element('label',{html:\"Proponent Flow\"}));\nproponentFlow.appendChild(new Element('li'));\nproponentFlow.appendChild(new Element('li'));\nproponentFlow.appendChild(new Element('li'));\n\n\n\n\nreturn content;",
+        "script": "var title= 'Project submission';\nvar content=new Element('div');\n\n\ncontent.appendChild(new Element('div', {html:title}));\nvar proponentFlow=content.appendChild(new Element('ul'));\n\nproponentFlow.appendChild(new Element('label',{html:\"Proponent Flow\"}));\nproponentFlow.appendChild(new Element('li'));\nproponentFlow.appendChild(new Element('li'));\nproponentFlow.appendChild(new Element('li'));\n\n\n\n\nreturn content;",
         "description": "Info about my custom script"
     }
 }
