@@ -23743,6 +23743,37 @@
                                     "className": "",
                                     "identifier": "",
                                     "viewType": "view",
+                                    "namedView": "proponentFlow",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "proposalOverviewStatus.metadata.positions.content.modules.2.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "",
+                                    "identifier": "",
+                                    "viewType": "view",
                                     "namedView": "processingFlow",
                                     "shouldRender": true,
                                     "namedViewScript": "return namedView",
@@ -23758,6 +23789,14 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": ""
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "proposalOverviewStatus.metadata.positions.content.modules.4.config.script.js",
+                                    "description": "Info about my custom script"
                                 }
                             },
                             {
