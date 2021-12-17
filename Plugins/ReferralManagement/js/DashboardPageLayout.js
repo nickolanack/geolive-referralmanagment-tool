@@ -610,7 +610,7 @@ var DashboardPageLayout = (function() {
 						return project.isCollection();
 					}
 				}, {
-					html: ['Datasets', 'Access', 'Team', 'Users', 'Discussions', 'Map', 'Files', 'Notes'],
+					html: ['Datasets', 'Access', 'Team', 'Users', 'Discussions', 'Map', 'Files', 'Notes', 'History', 'Proponent'],
 					condition: function() {
 
 						var application = ReferralManagementDashboard.getApplication();
@@ -622,6 +622,20 @@ var DashboardPageLayout = (function() {
 					html: "Datasets",
 					config: "showDatasets"
 				},
+				{
+					html: "Proponent",
+					config: "enableProposals"
+				},
+				{
+					html: "Proponent",
+					condition: function() {
+						if (AppClient.getUserType() == "admin") {
+							return true;
+						}
+						return false;
+						
+					}
+				}
 
 
 			]
