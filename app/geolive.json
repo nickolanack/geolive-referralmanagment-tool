@@ -23761,9 +23761,9 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "",
-            "target": "none",
-            "templateName": "{target}",
+            "widgetTitle": "proponentFlow",
+            "target": "proponentFlow",
+            "templateName": "proponentFlow",
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
@@ -23777,7 +23777,7 @@
                     },
                     "content": {
                         "modules": [
-                            "widget.DetailView.422.metadata.positions.content.modules.0.json"
+                            "proponentFlow.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
