@@ -61,6 +61,7 @@ button:focus {outline:0;}
     }
     li.complete:before {
         content: "\0f00c";
+        color: mediumseagreen;
         
     }
     
@@ -68,11 +69,14 @@ button:focus {outline:0;}
         content: "\0f003";
     }
     
+    li.current {
+        border-color: cornflowerblue;
+        color:cornflowerblue;
+    }
+    
 }
 
-li.current {
-    border-color: cornflowerblue;
-}
+
 
 .user-notes{
 
