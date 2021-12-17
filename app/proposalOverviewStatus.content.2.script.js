@@ -1,1 +1,1 @@
-<div class="section-title section-padding">Processing workflow</div>
+return '<div class="section-title section-padding">Processing workflow</div>';
