@@ -57,7 +57,7 @@ var ProposalFlow=(function(){
 
 				    	
 				    	els.forEach(function(e,i){
-				    		if(i<=index){
+				    		if(i<index){
 				    			e.removeClass('current');
 				    			e.addClass('complete');
 				    		}
@@ -69,6 +69,7 @@ var ProposalFlow=(function(){
 				    	})
 				    	if(el){ 
 				    		el.addClass('current'); 
+				    		el.remove('complete'); 
 				    	}
 				    });
 				}
