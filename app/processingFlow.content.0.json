@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "return (new ProposalFlow())\n    .addStep(\"\", {\"class\":\"blank\"})\n    .addStep(\"Intake\", {\"class\":\"current mail\"})\n    .addStep(\"Filling\", {\"class\":\"user\"})\n    .addStep(\"Team building\", {\"class\":\"user\"})\n    .addStep(\"Task assignment\")\n    .addStep(\"Briefing\")\n    .addStep(\"Tracking\")\n    .getElement();\n\n\n",
+        "script": "return (new ProposalFlow())\n    .addStep(\"\", {\"class\":\"blank\"})\n    .addStep(\"Intake\", {\"class\":\"current mail\"})\n    .addStep(\"Filling\", {\"class\":\"user\"})\n    .addStep(\"Team building\", {\"class\":\"user\"})\n    .addStep(\"Task assignment\")\n    .addStep(\"Briefing\")\n    .addStep(\"Tracking\",{completable:false})\n    .getElement();\n\n\n",
         "description": "Info about my custom script"
     }
 }
