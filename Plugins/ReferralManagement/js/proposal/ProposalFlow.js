@@ -38,14 +38,25 @@ var ProposalFlow=(function(){
 			    	el.addClass('clickable');
 				    el.addEvent('click', function(){
 
+
+				    	var current=el;
+
 				    	if(options.unclickable===true){
 				    		el.removeClass('clickable');
 				    		el.removeEvents('click');
 				    	}
 
+				    	if(el.hasClass('current')){
+				    		index++;
+				    		if(els.length>index){
+				    			el=els[index];
+				    		}
+				    	}
+
 				    	var index=els.indexOf(el);
+
 				    	els.forEach(function(e,i){
-				    		if(i<index){
+				    		if(i<=index){
 				    			e.removeClass('current');
 				    			e.addClass('complete');
 				    		}
@@ -55,7 +66,9 @@ var ProposalFlow=(function(){
 				    		}
 
 				    	})
-				    	el.addClass('current');
+				    	if(el){ 
+				    		el.addClass('current'); 
+				    	}
 				    });
 				}
 
