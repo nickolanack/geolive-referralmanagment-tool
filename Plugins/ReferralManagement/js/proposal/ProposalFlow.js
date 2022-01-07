@@ -16,6 +16,10 @@ var ProposalFlow=(function(){
 			var proponentFlow=content.appendChild(new Element('ul',{"class":"flow"}));
 
 			var last=null;
+
+
+			var els=[];
+
 			var appendStep=function(name, options){
 			    
 			    var el= proponentFlow.appendChild(new Element('li', options||{}));
@@ -24,7 +28,26 @@ var ProposalFlow=(function(){
 			        last.appendChild(new Element('span'));
 			    }
 			    
+
+			    els.push(el);
 			    last=el;
+
+			    el.addEvent('click'){
+			    	var index=els.indexOf(el);
+			    	els.forEach(function(e,i){
+			    		if(i<index){
+			    			e.removeClass('current');
+			    			e.addClass('complete');
+			    		}
+			    		if(i>index){
+			    			e.removeClass('current');
+			    			e.removeClass('complete');
+			    		}
+
+			    	})
+			    	el.addClass('current');
+			    }
+
 			    return el;
 			}
 
