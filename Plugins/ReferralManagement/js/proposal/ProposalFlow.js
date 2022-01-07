@@ -77,14 +77,6 @@ var ProposalFlow=(function(){
 			}
 
 			this._appendStep=appendStep;
-
-			// appendStep("Project submission", {"class":"complete"});
-			// appendStep("Validation", {"class":"current mail"});
-			// appendStep("Initial Review", {"class":"user"});
-			// appendStep("...");
-			// appendStep("...");
-
-
 			this.element = content;
 
 
