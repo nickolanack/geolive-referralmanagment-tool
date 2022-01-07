@@ -33,7 +33,14 @@ var ProposalFlow=(function(){
 			    last=el;
 
 			    if(options.clickable!==false){
+			    	el.addClass('clickable');
 				    el.addEvent('click', function(){
+
+				    	if(options.unclickable===true){
+				    		el.removeClass('clickable');
+				    		el.removeEvents('click');
+				    	}
+
 				    	var index=els.indexOf(el);
 				    	els.forEach(function(e,i){
 				    		if(i<index){
