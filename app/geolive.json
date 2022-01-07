@@ -181,10 +181,11 @@
                     "pluginView": "file"
                 },
                 {
-                    "name": "project",
+                    "name": "proposal",
                     "view": "plugin",
-                    "plugin": "ReferralManagement",
-                    "pluginView": "project"
+                    "plugin": "UserInterface",
+                    "pluginView": "widget",
+                    "widget": "dashboard"
                 }
             ],
             "useRemoteServerUI": false,
