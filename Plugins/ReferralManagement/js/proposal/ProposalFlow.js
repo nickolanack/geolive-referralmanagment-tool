@@ -69,7 +69,7 @@ var ProposalFlow=(function(){
 				    	})
 				    	if(el){ 
 				    		el.addClass('current'); 
-				    		el.remove('complete'); 
+				    		el.removeClass('complete'); 
 				    	}
 				    });
 				}
