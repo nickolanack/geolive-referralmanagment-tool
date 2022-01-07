@@ -38,7 +38,7 @@ var ProposalFlow = (function() {
 				last = el;
 
 				if (options.clickable !== false) {
-					me._addInteraction(el);
+					me._addInteraction(el, options);
 				}
 
 				return el;
@@ -50,7 +50,7 @@ var ProposalFlow = (function() {
 
 
 		},
-		_addInteraction: function(el) {
+		_addInteraction: function(el, options) {
 			var els = this.els;
 			el.addClass('clickable');
 			el.addEvent('click', function() {
