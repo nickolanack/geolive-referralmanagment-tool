@@ -74,13 +74,13 @@ var ProposalFlow = (function() {
 
 
 				els.forEach(function(e, i) {
+
+
+					e.removeClass('current');
+					e.removeClass('complete');
+
 					if (i < index) {
-						e.removeClass('current');
 						e.addClass('complete');
-					}
-					if (i > index) {
-						e.removeClass('current');
-						e.removeClass('complete');
 					}
 
 				})
