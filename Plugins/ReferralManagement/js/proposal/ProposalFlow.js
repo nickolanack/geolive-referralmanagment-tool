@@ -46,7 +46,7 @@ var ProposalFlow=(function(){
 
 		addStep:function(){
 
-			this._appendStep.call(this, arguments);
+			this._appendStep.apply(this, arguments);
 			return this;
 		},
 
