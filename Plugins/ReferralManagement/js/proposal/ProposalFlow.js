@@ -1,97 +1,103 @@
-var ProposalFlow=(function(){
+var ProposalFlow = (function() {
 
 
-	var ProposalFlow=new Class({
+	var ProposalFlow = new Class({
 
 
-		initialize:function(definition){
-
-
-
-
-			var content=new Element('div');
+		initialize: function(definition) {
 
 
 
-			var proponentFlow=content.appendChild(new Element('ul',{"class":"flow"}));
-
-			var last=null;
+			var content = new Element('div');
 
 
-			var els=[];
 
-			var appendStep=function(name, options){
+			var proponentFlow = content.appendChild(new Element('ul', {
+				"class": "flow"
+			}));
 
-				options=options||{};
-			    
-			    var el= proponentFlow.appendChild(new Element('li', options||{}));
-			    el.setAttribute('data-label',name);
-			    if(last){
-			        last.appendChild(new Element('span'));
-			    }
-			    
-
-			    els.push(el);
-			    last=el;
-
-			    if(options.clickable!==false){
-			    	el.addClass('clickable');
-				    el.addEvent('click', function(){
+			var last = null;
 
 
-				    	var current=el;
-				    	var index=els.indexOf(el);
+			var els = [];
+			var me=this;
+			me.els=els;
 
+			var appendStep = function(name, options) {
 
-				    	if(options.unclickable===true){
-				    		el.removeClass('clickable');
-				    		el.removeEvents('click');
-				    	}
+				options = options || {};
 
-				    	if(el.hasClass('current')){
-				    		index++;
-				    		if(els.length>index){
-				    			el=els[index];
-				    		}
-				    	}
-
-				    	
-				    	els.forEach(function(e,i){
-				    		if(i<index){
-				    			e.removeClass('current');
-				    			e.addClass('complete');
-				    		}
-				    		if(i>index){
-				    			e.removeClass('current');
-				    			e.removeClass('complete');
-				    		}
-
-				    	})
-				    	if(el){ 
-				    		el.addClass('current'); 
-				    		el.removeClass('complete'); 
-				    	}
-				    });
+				var el = proponentFlow.appendChild(new Element('li', options || {}));
+				el.setAttribute('data-label', name);
+				if (last) {
+					last.appendChild(new Element('span'));
 				}
 
-			    return el;
+
+				els.push(el);
+				last = el;
+
+				if (options.clickable !== false) {
+					me._addInteraction(el);
+				}
+
+				return el;
 			}
 
-			this._appendStep=appendStep;
+			this._appendStep = appendStep;
 			this.element = content;
 
 
 
+		},
+		_addInteraction: function(el) {
+			var els = this.els;
+			el.addClass('clickable');
+			el.addEvent('click', function() {
 
+
+				var current = el;
+				var index = els.indexOf(el);
+
+
+				if (options.unclickable === true) {
+					el.removeClass('clickable');
+					el.removeEvents('click');
+				}
+
+				if (el.hasClass('current')) {
+					index++;
+					if (els.length > index) {
+						el = els[index];
+					}
+				}
+
+
+				els.forEach(function(e, i) {
+					if (i < index) {
+						e.removeClass('current');
+						e.addClass('complete');
+					}
+					if (i > index) {
+						e.removeClass('current');
+						e.removeClass('complete');
+					}
+
+				})
+				if (el) {
+					el.addClass('current');
+					el.removeClass('complete');
+				}
+			});
 		},
 
-		addStep:function(){
+		addStep: function() {
 
 			this._appendStep.apply(this, arguments);
 			return this;
 		},
 
-		getElement:function(){
+		getElement: function() {
 
 			return this.element;
 		}
