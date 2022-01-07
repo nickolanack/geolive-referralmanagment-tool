@@ -21,6 +21,8 @@ var ProposalFlow=(function(){
 			var els=[];
 
 			var appendStep=function(name, options){
+
+				options=options||{};
 			    
 			    var el= proponentFlow.appendChild(new Element('li', options||{}));
 			    el.setAttribute('data-label',name);
