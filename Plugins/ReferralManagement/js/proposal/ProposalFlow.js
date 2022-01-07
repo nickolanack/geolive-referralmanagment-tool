@@ -32,7 +32,7 @@ var ProposalFlow=(function(){
 			    els.push(el);
 			    last=el;
 
-			    el.addEvent('click'){
+			    el.addEvent('click', function(){
 			    	var index=els.indexOf(el);
 			    	els.forEach(function(e,i){
 			    		if(i<index){
@@ -46,7 +46,7 @@ var ProposalFlow=(function(){
 
 			    	})
 			    	el.addClass('current');
-			    }
+			    });
 
 			    return el;
 			}
