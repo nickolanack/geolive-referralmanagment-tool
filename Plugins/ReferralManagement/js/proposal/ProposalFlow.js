@@ -32,21 +32,23 @@ var ProposalFlow=(function(){
 			    els.push(el);
 			    last=el;
 
-			    el.addEvent('click', function(){
-			    	var index=els.indexOf(el);
-			    	els.forEach(function(e,i){
-			    		if(i<index){
-			    			e.removeClass('current');
-			    			e.addClass('complete');
-			    		}
-			    		if(i>index){
-			    			e.removeClass('current');
-			    			e.removeClass('complete');
-			    		}
+			    if(options.clickable!==false){
+				    el.addEvent('click', function(){
+				    	var index=els.indexOf(el);
+				    	els.forEach(function(e,i){
+				    		if(i<index){
+				    			e.removeClass('current');
+				    			e.addClass('complete');
+				    		}
+				    		if(i>index){
+				    			e.removeClass('current');
+				    			e.removeClass('complete');
+				    		}
 
-			    	})
-			    	el.addClass('current');
-			    });
+				    	})
+				    	el.addClass('current');
+				    });
+				}
 
 			    return el;
 			}
