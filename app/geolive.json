@@ -799,8 +799,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 152,
-                    "y": 386
+                    "x": 108,
+                    "y": 164
                 },
                 "children": [
                     "widget.ProposalWizardBuilder.65.metadata.children.0.json",
@@ -811,16 +811,16 @@
                             "widget.ProposalWizardBuilder.65.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 99,
-                            "y": 717
+                            "x": 176,
+                            "y": 631
                         },
                         "children": [
                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 59,
-                                    "y": 743
+                                    "x": 136,
+                                    "y": 657
                                 }
                             },
                             {
@@ -830,16 +830,16 @@
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 492,
-                                    "y": 523
+                                    "x": 478,
+                                    "y": 499
                                 },
                                 "children": [
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 452,
-                                            "y": 549
+                                            "x": 438,
+                                            "y": 525
                                         }
                                     },
                                     {
@@ -849,31 +849,31 @@
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 893,
-                                            "y": 641
+                                            "x": 768,
+                                            "y": 364
                                         },
                                         "children": [
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 853,
-                                                    "y": 667
+                                                    "x": 728,
+                                                    "y": 390
                                                 }
                                             },
                                             {
                                                 "class": "DecisionNode",
                                                 "_diagramState": {
-                                                    "x": 1259,
-                                                    "y": 339
+                                                    "x": 1007,
+                                                    "y": 181
                                                 },
                                                 "children": [
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.0.json",
                                                     {
                                                         "class": "DecisionStemNode",
                                                         "_diagramState": {
-                                                            "x": 1269,
-                                                            "y": 399
+                                                            "x": 1017,
+                                                            "y": 241
                                                         },
                                                         "builderMetadata": {
                                                             "positions": {
@@ -896,16 +896,16 @@
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.2.fields.0.json"
                                                         ],
                                                         "_diagramState": {
-                                                            "x": 1585,
-                                                            "y": 200
+                                                            "x": 1341,
+                                                            "y": 167
                                                         },
                                                         "children": [
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.2.children.0.json",
                                                             {
                                                                 "class": "InsertNode",
                                                                 "_diagramState": {
-                                                                    "x": 1545,
-                                                                    "y": 413
+                                                                    "x": 1301,
+                                                                    "y": 380
                                                                 }
                                                             }
                                                         ],
@@ -1053,16 +1053,16 @@
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.3.fields.0.json"
                                                         ],
                                                         "_diagramState": {
-                                                            "x": 1561,
-                                                            "y": 731
+                                                            "x": 924,
+                                                            "y": 835
                                                         },
                                                         "children": [
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.3.children.0.json",
                                                             {
                                                                 "class": "InsertNode",
                                                                 "_diagramState": {
-                                                                    "x": 1521,
-                                                                    "y": 897
+                                                                    "x": 884,
+                                                                    "y": 1001
                                                                 }
                                                             }
                                                         ],
@@ -23736,7 +23736,309 @@
                     },
                     "content": {
                         "modules": [
-                            "proposalOverviewStatus.metadata.positions.content.modules.0.json"
+                            "proposalOverviewStatus.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "",
+                                    "identifier": "",
+                                    "viewType": "view",
+                                    "namedView": "proponentFlow",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "proposalOverviewStatus.metadata.positions.content.modules.2.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "",
+                                    "identifier": "",
+                                    "viewType": "view",
+                                    "namedView": "processingFlow",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "proposalOverviewStatus.metadata.positions.content.modules.4.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "",
+                                    "identifier": "",
+                                    "viewType": "view",
+                                    "namedView": "assessmentFlow",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.422": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "proponentFlow",
+            "target": "proponentFlow",
+            "templateName": "proponentFlow",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "useRemote": "",
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "proponentFlow.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.423": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "processingFlow",
+            "target": "processingFlow",
+            "templateName": "processingFlow",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "useRemote": "",
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "processingFlow.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.424": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "assessmentFlow",
+            "target": "assessmentFlow",
+            "templateName": "assessmentFlow",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "useRemote": "",
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "assessmentFlow.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.425": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "singleProjectProponentDetail",
+            "target": "singleProjectProponentDetail",
+            "templateName": "singleProjectProponentDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "useRemote": "",
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "singleProjectProponentDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "plugin.Discussions.Discussion",
+                                "config": {
+                                    "discussionTarget": "itemDiscussion",
+                                    "width": 0,
+                                    "constrainHeight": false,
+                                    "height": 200,
+                                    "inlineEditing": false,
+                                    "inlineReply": false,
+                                    "inlineReplyNamedForm": "",
+                                    "emptyMessage": "There are no discussion posts for this proposal",
+                                    "channel": "proponent",
+                                    "resolveChannelScript": "return defaultChannel;",
+                                    "resolveItemScript": "return item;",
+                                    "initialPostsScript": "return null;",
+                                    "formatPostScript": "",
+                                    "namedView": "defaultPostDetail",
+                                    "reverseOrder": false,
+                                    "className": ""
+                                }
+                            },
+                            {
+                                "type": "FlexibleHeight",
+                                "config": {
+                                    "identifier": "discussion-flexible-height",
+                                    "targetElementScript": "singleProjectProponentDetail.metadata.positions.content.modules.2.config.targetElementScript.js",
+                                    "offset": "0",
+                                    "offsetScript": "singleProjectProponentDetail.metadata.positions.content.modules.2.config.offsetScript.js"
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "reply-box",
+                                    "identifier": "",
+                                    "viewType": "form",
+                                    "namedView": "discussionReplyForm",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "discussionReplyForm",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            }
                         ]
                     },
                     "footer": {

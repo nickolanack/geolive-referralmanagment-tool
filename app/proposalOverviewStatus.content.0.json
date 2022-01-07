@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "return 'Project submission'",
+        "script": "return '<div class=\"section-title section-padding\">Proponent submision workflow<\/div>';",
         "description": "Info about my custom script"
     }
 }
