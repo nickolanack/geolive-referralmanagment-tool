@@ -173,19 +173,7 @@
                 "pluginView": "front"
             },
             "routes": [
-                "plugin.UserInterface.24.routes.0.json",
-                {
-                    "name": "projectfiles",
-                    "view": "plugin",
-                    "plugin": "ReferralManagement",
-                    "pluginView": "file"
-                },
-                {
-                    "name": "project",
-                    "view": "plugin",
-                    "plugin": "ReferralManagement",
-                    "pluginView": "project"
-                }
+                "plugin.UserInterface.24.routes.0.json"
             ],
             "useRemoteServerUI": false,
             "remoteServerUrl": ""
