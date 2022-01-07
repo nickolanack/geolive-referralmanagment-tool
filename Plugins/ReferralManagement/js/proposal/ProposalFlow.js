@@ -59,6 +59,8 @@ var ProposalFlow = (function() {
 
 			el.addEvent('click', function() {
 
+				console.log('click index:' +index);
+
 				if (options.unclickable === true) {
 					el.removeClass('clickable');
 					el.removeEvents('click');
