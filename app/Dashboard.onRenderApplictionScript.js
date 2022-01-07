@@ -239,6 +239,8 @@ GetWidget('discussionMediaPostForm')->display($targetInstance);
 GetWidget('singleProjectHistoryDetail')->display($targetInstance);
 GetWidget('userProfileDetailActivity')->display($targetInstance);
 
+GetWidget('proposalOverviewStatus')->display($targetInstance);
+GetWidget('singleProjectProponentDetail')->display($targetInstance);
 
 
 
