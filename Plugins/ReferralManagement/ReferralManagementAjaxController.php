@@ -55,6 +55,16 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		));
 	}
 
+
+	protected function setStateData($json) {
+
+		return true;
+	}
+
+
+
+
+
 	protected function getUserRoles($json) {
 
 		include_once __DIR__ . '/lib/UserRoles.php';
