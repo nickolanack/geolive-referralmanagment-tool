@@ -373,6 +373,9 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		IncludeJS(__DIR__ . '/js/ProjectSearch.js');
 		IncludeJS(__DIR__ . '/js/PostContent.js');
 		IncludeJS(__DIR__ . '/js/UserIcon.js');
+
+
+		IncludeJS(__DIR__ . '/js/proposoal/ProposalFlow.js');
 		
 
 		if (GetClient()->isAdmin()) {
@@ -392,7 +395,9 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 			if (($id = (int) $database->createProposal(array(
 				'user' => GetClient()->getUserId(),
-				'metadata' => json_encode(array("email" => $params->validationData->email)),
+				'metadata' => json_encode(array(
+					"email" => $params->validationData->email
+				)),
 				'createdDate' => ($now = date('Y-m-d H:i:s')),
 				'modifiedDate' => $now,
 				'status' => 'active',
