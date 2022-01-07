@@ -7,7 +7,7 @@ var ProposalFlow = (function() {
 
 
 	var ProposalFlow = new Class({
-
+		Implements:[Events],
 
 		initialize: function(stateName, item) {
 
@@ -61,8 +61,12 @@ var ProposalFlow = (function() {
 
 		},
 		_addInteraction: function(el, options) {
+
+			var me=this;
 			var els = this.els;
 			el.addClass('clickable');
+
+
 
 			if(options.completable===false){
 				el.addClass('ongoing');
@@ -89,6 +93,8 @@ var ProposalFlow = (function() {
 					if (els.length > index) {
 						currentEl = els[index];
 					}
+
+
 				}
 
 
@@ -100,10 +106,12 @@ var ProposalFlow = (function() {
 
 					if (i < index) {
 						e.addClass('complete');
+						me.fireEvent("complete",[i]);
 					}
 
 				})
 				if (currentEl) {
+					me.fireEvent("current",[index]);
 					currentEl.addClass('current');
 					currentEl.removeClass('complete');
 				}
