@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "\n\nreturn (new ProposalFlow())\n    .addStep(\"Project submission\", {\"class\":\"complete\", \"clickable\":false})\n    .addStep(\"Validation\", {\"class\":\"current mail\"})\n    .addStep(\"Initial Review\", {\"class\":\"user\"})\n    .addStep(\"...\")\n    .addStep(\"...\")\n    .getElement();\n\n",
+        "script": "\n\nreturn (new ProposalFlow('proponent',item))\n    .addStep(\"Project submission\", {\"class\":\"complete\", \"clickable\":false})\n    .addStep(\"Validation\", {\"class\":\"current mail\"})\n    .addStep(\"Initial Review\", {\"class\":\"user\"})\n    .addStep(\"...\")\n    .addStep(\"...\")\n    .getElement();\n\n",
         "description": "Info about my custom script"
     }
 }
