@@ -40,6 +40,8 @@ var ProposalFlow=(function(){
 
 
 				    	var current=el;
+				    	var index=els.indexOf(el);
+
 
 				    	if(options.unclickable===true){
 				    		el.removeClass('clickable');
@@ -53,8 +55,7 @@ var ProposalFlow=(function(){
 				    		}
 				    	}
 
-				    	var index=els.indexOf(el);
-
+				    	
 				    	els.forEach(function(e,i){
 				    		if(i<=index){
 				    			e.removeClass('current');
