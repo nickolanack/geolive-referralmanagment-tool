@@ -54,6 +54,10 @@ var ProposalFlow = (function() {
 			var els = this.els;
 			el.addClass('clickable');
 
+			if(options.completable===false){
+				el.addClass('ongoing');
+			}
+
 
 			var clickIndex = els.indexOf(el);
 
@@ -69,7 +73,7 @@ var ProposalFlow = (function() {
 					currentEl.removeEvents('click');
 				}
 
-				if (currentEl.hasClass('current')) {
+				if (currentEl.hasClass('current')&&options.completable!==false) {
 					index++;
 					currentEl=null;
 					if (els.length > index) {
