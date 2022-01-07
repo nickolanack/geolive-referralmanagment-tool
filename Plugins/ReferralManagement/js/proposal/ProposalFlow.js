@@ -55,8 +55,6 @@ var ProposalFlow = (function() {
 			el.addClass('clickable');
 			el.addEvent('click', function() {
 
-
-				var current = el;
 				var index = els.indexOf(el);
 
 
