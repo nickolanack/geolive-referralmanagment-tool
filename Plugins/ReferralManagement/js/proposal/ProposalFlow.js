@@ -53,10 +53,11 @@ var ProposalFlow = (function() {
 		_addInteraction: function(el, options) {
 			var els = this.els;
 			el.addClass('clickable');
+
+
+			var index = els.indexOf(el);
+
 			el.addEvent('click', function() {
-
-				var index = els.indexOf(el);
-
 
 				if (options.unclickable === true) {
 					el.removeClass('clickable');
@@ -65,6 +66,7 @@ var ProposalFlow = (function() {
 
 				if (el.hasClass('current')) {
 					index++;
+					el=null;
 					if (els.length > index) {
 						el = els[index];
 					}
