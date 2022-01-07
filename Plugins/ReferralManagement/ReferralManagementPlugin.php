@@ -375,7 +375,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		IncludeJS(__DIR__ . '/js/UserIcon.js');
 
 
-		IncludeJS(__DIR__ . '/js/proposoal/ProposalFlow.js');
+		IncludeJS(__DIR__ . '/js/propososal/ProposalFlow.js');
 		
 
 		if (GetClient()->isAdmin()) {
