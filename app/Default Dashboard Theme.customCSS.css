@@ -62,14 +62,16 @@ button:focus {outline:0;}
         content: "\0f017";font-family: 'FontAwesome';position: absolute;text-align: center;width: 100px;line-height: 100px;font-size: 30px;
         
     }
+    
+    
+    li.mail:before {
+        content: "\0f003";
+    }
+    
     li.complete:before {
         content: "\0f00c";
         color: mediumseagreen;
         
-    }
-    
-    li.mail:before {
-        content: "\0f003";
     }
     
     li.current {
