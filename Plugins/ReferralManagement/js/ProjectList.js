@@ -563,11 +563,13 @@ var ProjectList = (function() {
 				currentFilter: (invertFilter?'!':'')+filter,
 				//applyfilter:true
 			})).load(null, div, null);
+			
 			parentModule.runOnceOnLoad(function() {
 
 				setTimeout(function() {
 					filterModule.getListModule().setFilterObject(filterModule);
-				}, 500)
+				}, 500);
+
 			});
 
 			if (item && item.getLockFilter) {
@@ -750,6 +752,9 @@ var ProjectList = (function() {
 	}
 	ProjectList.AddListItemEvents = function(child, childView, application, listFilterFn) {
 
+
+
+		childView.getElement().addClass("priority-"+child.getPriority());
 
 		UIInteraction.addProjectOverviewClick(childView.getElement(), child);
 
