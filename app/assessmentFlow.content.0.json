@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "return (new ProposalFlow('assessment',item))\n    .addStep(\"\", {\"class\":\"blank\"})\n    .addStep(\"\", {\"class\":\"blank\"})\n    .addStep(\"Quality Assessment\", {\"class\":\"current user\", \"completes\":{\"proponent\":\"validation\"}})\n    .addStep(\"Prioritization\", {\"class\":\"mail\"})\n    .addStep(\"Meeting schedules\", {\"class\":\"user\"})\n    .addStep(\"Dispute resolution\")\n    .addStep(\"Reporting\")\n    .getElement();\n",
+        "script": "return (new ProposalFlow('assessment',item))\n    .addStep(\"\", {\"class\":\"blank\"})\n    .addStep(\"\", {\"class\":\"blank\"})\n    .addStep(\"Quality Assessment\", {\"class\":\"current user\", \"completes\":{\"proponent\":\"validation\"}})\n    .addStep(\"Prioritization\", {\"class\":\"mail\"})\n    .addStep(\"Meeting schedules\", {\"class\":\"user\"})\n    .addStep(\"Dispute resolution\")\n    .addStep(\"Reporting\")\n    .addStep(\"Monitoring\",{\"ongoing\":true})\n    .getElement();\n",
         "description": "Info about my custom script"
     }
 }
