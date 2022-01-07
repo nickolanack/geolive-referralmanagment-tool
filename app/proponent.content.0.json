@@ -1,4 +1,23 @@
 {
     "type": "UIView",
-    "config": {}
+    "config": {
+        "className": "dashboard-main",
+        "identifier": "",
+        "viewType": "view",
+        "namedView": "dashboardContent",
+        "shouldRender": true,
+        "namedViewScript": "\n\n\nif(AppClient.getUserType()==\"guest\"){\n    return \"guestDashboard\";\n}\n\n\/\/return namedView;\nreturn \"dashboardLoader\";\n",
+        "showInlineEdit": false,
+        "namedFormView": "defaultFormView",
+        "formOptions": "{}",
+        "showDeleteButton": false,
+        "deleteItemScript": "",
+        "initModuleScript": "module.getElement().addClass('test')",
+        "formatModuleScript": "",
+        "resolveItemScript": "",
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false,
+        "targetName": ""
+    }
 }
