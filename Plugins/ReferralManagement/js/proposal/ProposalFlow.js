@@ -1,12 +1,22 @@
 var ProposalFlow = (function() {
 
 
+
+	var currentItem=null;
+	var stateFlows={};
+
+
 	var ProposalFlow = new Class({
 
 
-		initialize: function(definition) {
+		initialize: function(stateName, item) {
 
+			if(currentItem!==item){
+				item=currentItem;
+				stateFlows={};
+			}
 
+			stateFlows[stateName]=this;
 
 			var content = new Element('div');
 
