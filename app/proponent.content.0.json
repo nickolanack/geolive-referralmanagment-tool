@@ -6,7 +6,7 @@
         "viewType": "view",
         "namedView": "dashboardContent",
         "shouldRender": true,
-        "namedViewScript": "\n\n\nif(AppClient.getUserType()==\"guest\"){\n    return \"guestDashboard\";\n}\n\n\/\/return namedView;\nreturn \"dashboardLoader\";\n",
+        "namedViewScript": "\n\n\n\/\/if(AppClient.getUserType()==\"guest\"){\n\/\/    return \"guestDashboard\";\n\/\/}\n\n\/\/return namedView;\nreturn \"dashboardLoader\";\n",
         "showInlineEdit": false,
         "namedFormView": "defaultFormView",
         "formOptions": "{}",
