@@ -413,10 +413,10 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 
 				$subject = (new \core\Template(
-					'proponent.proposal.link.email.subject', "Your proposal has been submitted"))
+					'proponent.proposal.link.email.subject', "Your proposal has been submitted successfully"))
 					->render(GetClient()->getUserMetadata());
 				$body = (new \core\Template(
-					'proponent.proposal.link.email.body', "You can view the status proposal here: <a href=\"{{link}}\" >Click Here</a>"))
+					'proponent.proposal.link.email.body', "You can view the status of your proposal here: <a href=\"{{link}}\" >Click Here</a>"))
 					->render(array_merge(GetClient()->getUserMetadata(), array("link" => $clientLink)));
 
 				GetPlugin('Email')->getMailer()

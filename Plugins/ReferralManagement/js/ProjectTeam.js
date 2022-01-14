@@ -11,11 +11,17 @@ var ProjectTeam = (function() {
 
 	var ProjectQuery = new Class({
 		Extends: AjaxControlQuery,
-		initialize: function(projectId) {
-			this.parent(CoreAjaxUrlRoot, 'get_project', {
+		initialize: function(projectId, accessToken) {
+			var opts={
 				plugin: 'ReferralManagement',
 				project: projectId
-			});
+			};
+
+			if(accessToken){
+				opts.accessToken=accessToken;
+			}
+
+			this.parent(CoreAjaxUrlRoot, 'get_project', opts);
 		}
 	});
 
@@ -472,7 +478,13 @@ var ProjectTeam = (function() {
 
 		},
 
-		requestProject:function(id, callback){
+		requestProject:function(id, accessToken, callback){
+
+
+			if((!callback)&&accessToken&&typeof accessToken=='function'){
+				callback=accessToken;
+				accessToken=null;
+			}
 
 			if(this.hasProject(id)){
 				callback(this.getProject(id, callback));
@@ -481,7 +493,7 @@ var ProjectTeam = (function() {
 
 			var me=this;
 
-			(new ProjectQuery(id)).addEvent('success', function(req){
+			(new ProjectQuery(id, accessToken)).addEvent('success', function(req){
 				callback(me._addProject(req.results[0]));
 			}).execute();
 

@@ -55,13 +55,19 @@ var DashboardLoader = (function() {
 
 							if(segments.length>index+1){
 								var id=segments[index+1];
+
+								var accessToken=null;
+								if(segments.length>index+2){
+									accessToken=segments[index+2];
+								}
+
 								if(id==parseInt(id)+""){
 
 
 									if(!team.hasProject(id)){
 
 
-										team.requestProject(id, function(project){
+										team.requestProject(id, accessToken, function(project){
 											application.setNamedValue('currentProject', project);
 											loadView("singleProjectDetail", project);
 										})
