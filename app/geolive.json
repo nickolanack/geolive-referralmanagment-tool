@@ -24150,5 +24150,33 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.427": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "proponent.proposal.link.email.subject",
+            "target": "proponent.proposal.link.email.subject",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "proponent-proposal-link-email-subject.contentTemplate.html"
+        }
+    },
+    "widget.428": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "proponent.proposal.link.email.body",
+            "target": "proponent.proposal.link.email.body",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "proponent-proposal-link-email-body.contentTemplate.html"
+        }
     }
 }
