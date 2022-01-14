@@ -636,16 +636,16 @@ var DashboardPageLayout = (function() {
 					html: "Proponent",
 					config: "enableProposals"
 				},
-				{
-					html: ["Proponent", "Status"],
-					condition: function() {
-						if (AppClient.getUserType() == "admin"||AppClient.getUserType() == "guest") {
-							return true;
-						}
-						return false;
+				// {
+				// 	html: ["Proponent", "Status"],
+				// 	condition: function() {
+				// 		if (AppClient.getUserType() == "admin"||AppClient.getUserType() == "guest") {
+				// 			return true;
+				// 		}
+				// 		return false;
 						
-					}
-				},
+				// 	}
+				// },
 				{
 					html: ['Datasets', 'Tasks', 'Access', 'Team', 'Users', 'Discussion',  'Notes', 'History'],
 					condition: function() {
