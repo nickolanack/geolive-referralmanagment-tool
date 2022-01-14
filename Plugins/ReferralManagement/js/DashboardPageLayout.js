@@ -501,6 +501,11 @@ var DashboardPageLayout = (function() {
 		content=layout.filterIdentifier(content, ['pending-buttons', 'button-report'], !layout.currentItem().isDataset());//'enableTasks');
 		return content;
 
+	}).addLayout('proposalOverviewStatus', function(){
+
+		content=layout.filterIdentifier(content, ['flow-processing', 'flow-assessment'], AppClient.getUserType() != "guest");//'enableTasks');
+		return content;
+
 	}).addLayout('profileMenu', function(buttons) {
 
 
@@ -758,7 +763,8 @@ var DashboardPageLayout = (function() {
 			'splitProjectDetail',
 			'groupListsProjectDetail',
 			'singleProjectOverviewDetail',
-			'singleProjectEditButtonsDetail'
+			'singleProjectEditButtonsDetail',
+			'proposalOverviewStatus'
 		];
 
 
