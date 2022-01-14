@@ -493,12 +493,17 @@ var DashboardPageLayout = (function() {
 		content=layout.filterIdentifier(content, ['project-task-progress', 'project-task-remaining', 'project-task-deadline', 'project-tasks-overview'], !layout.currentItem().isDataset());
 		content=layout.filterIdentifier(content, 'activity-chart', !layout.currentItem().isDataset());//'enableTasks');
 
+
+		content=layout.filterIdentifier(content, ['project-edit-btns','activity-chart', 'project-task-progress', 'project-task-remaining', 'project-task-deadline', 'project-tasks-overview'],  AppClient.getUserType() != "guest");//'enableTasks');
 		
 		return content;
 
 	}).addLayout('singleProjectEditButtonsDetail', function(content){
 
 		content=layout.filterIdentifier(content, ['pending-buttons', 'button-report'], !layout.currentItem().isDataset());//'enableTasks');
+
+
+
 		return content;
 
 	}).addLayout('proposalOverviewStatus', function(content){
