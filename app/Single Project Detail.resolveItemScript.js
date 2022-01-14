@@ -7,6 +7,7 @@ if(item instanceof GenericApp){
         
         
     }
+    return current;
 }
 
 return item
