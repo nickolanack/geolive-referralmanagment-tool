@@ -635,6 +635,16 @@ var DashboardPageLayout = (function() {
 						return false;
 						
 					}
+				},
+				{
+					html: ['Datasets', 'Access', 'Team', 'Users', 'Discussions',  'Notes', 'History'],
+					condition: function() {
+
+						if (AppClient.getUserType() == "guest") {
+							return false;
+						}
+						return true;
+					}
 				}
 
 

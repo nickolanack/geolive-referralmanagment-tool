@@ -405,8 +405,9 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 
 
-				$clientToken = ($links = GetPlugin('Links'))->createLinkEventCode('projectAccessToken', array(
-					'id'=>$id
+				$clientToken = ($links = GetPlugin('Links'))->createDataCode('projectAccessToken', array(
+					'id'=>$id,
+					"email" => $params->validationData->email
 				));
 
 				$clientLink = HtmlDocument()->website() . '/proposal/'.$id.'/' . $clientToken;
