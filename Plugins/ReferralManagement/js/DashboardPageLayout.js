@@ -494,7 +494,7 @@ var DashboardPageLayout = (function() {
 		content=layout.filterIdentifier(content, 'activity-chart', !layout.currentItem().isDataset());//'enableTasks');
 
 
-		content=layout.filterIdentifier(content, ['project-edit-btns','activity-chart', 'project-task-progress', 'project-task-remaining', 'project-task-deadline', 'project-tasks-overview', 'discussion-reply'],  AppClient.getUserType() != "guest");//'enableTasks');
+		content=layout.filterIdentifier(content, ['project-edit-btns','activity-chart', 'project-task-progress', 'project-task-remaining', 'project-task-deadline', 'project-tasks-overview', 'discussion-reply','project-team'],  AppClient.getUserType() != "guest");//'enableTasks');
 		
 		return content;
 
