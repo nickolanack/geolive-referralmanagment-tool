@@ -1,6 +1,12 @@
 
 if(item instanceof GenericApp){
-    return item.getNamedValue("currentProject");
+    var current= item.getNamedValue("currentProject");
+    if(!current){
+        
+            console.error('no current project');
+        
+        
+    }
 }
 
 return item
