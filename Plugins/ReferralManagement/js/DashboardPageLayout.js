@@ -501,7 +501,7 @@ var DashboardPageLayout = (function() {
 		content=layout.filterIdentifier(content, ['pending-buttons', 'button-report'], !layout.currentItem().isDataset());//'enableTasks');
 		return content;
 
-	}).addLayout('proposalOverviewStatus', function(){
+	}).addLayout('proposalOverviewStatus', function(content){
 
 		content=layout.filterIdentifier(content, ['flow-processing', 'flow-assessment'], AppClient.getUserType() != "guest");//'enableTasks');
 		return content;
