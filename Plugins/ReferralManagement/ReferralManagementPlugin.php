@@ -403,6 +403,29 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 				'status' => 'active',
 			)))) {
 
+
+
+				$clientToken = ($links = GetPlugin('Links'))->createLinkEventCode('projectAccessToken', array(
+					'id'=>$id
+				));
+
+				$clientLink = HtmlDocument()->website() . '/proposal/'.$id.'/' . $clientToken;
+
+
+				$subject = (new \core\Template(
+					'proponent.proposal.link.email.subject', "Your proposal has been submitted"))
+					->render(GetClient()->getUserMetadata());
+				$body = (new \core\Template(
+					'proponent.proposal.link.email.body', "You can view the status proposal here: <a href=\"{{link}}\" >Click Here</a>"))
+					->render(array_merge(GetClient()->getUserMetadata(), array("link" => $clientLink)));
+
+				GetPlugin('Email')->getMailer()
+					->mail($subject, $body)
+					->to($params->validationData->email)
+					->send();
+
+
+
 				$this->notifier()->onGuestProposal($id, $params);
 
 				GetPlugin('Attributes');

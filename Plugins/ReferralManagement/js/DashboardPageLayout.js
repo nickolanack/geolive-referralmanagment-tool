@@ -629,7 +629,7 @@ var DashboardPageLayout = (function() {
 				{
 					html: ["Proponent", "Status"],
 					condition: function() {
-						if (AppClient.getUserType() == "admin") {
+						if (AppClient.getUserType() == "admin"||AppClient.getUserType() == "guest") {
 							return true;
 						}
 						return false;

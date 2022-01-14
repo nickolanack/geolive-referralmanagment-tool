@@ -472,6 +472,22 @@ var ProjectTeam = (function() {
 
 		},
 
+		requestProject:function(id, callback){
+
+			if(this.hasProject(id)){
+				callback(this.getProject(id, callback));
+				return;
+			}
+
+			var me=this;
+
+			(new ProjectQuery(id)).addEvent('success', function(req){
+				callback(me._addProject(req.results[0]));
+			}).execute();
+
+
+		},
+
 		addProject: function(p) {
 			var me = this;
 			if (!(p instanceof Proposal)) {

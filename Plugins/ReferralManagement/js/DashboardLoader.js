@@ -15,7 +15,7 @@ var DashboardLoader = (function() {
 
 				var currentView = 'dashboardLoader';
 
-				var loadView = function(view) {
+				var loadView = function(view, item) {
 
 					if (currentView == view) {
 						return;
@@ -27,9 +27,11 @@ var DashboardLoader = (function() {
 
 
 					currentView = view;
+
+
 					application.getChildView('content', 0).redraw({
 						"namedView": view
-					});
+					},item||null);
 
 
 				}
@@ -37,6 +39,64 @@ var DashboardLoader = (function() {
 
 
 				var checkUserRole = function(team) {
+
+					var segments=window.location.href.split('/');
+					var index=segments.indexOf('proposal')||segments.indexOf('project');
+					if(index>0){
+
+						var current=application.getNamedValue('currentProject');
+						if(!current){
+
+							var list=team.getAllProjects();
+							if(list.length>0){
+								current=team.getAllProjects()[0];
+							}
+	
+
+							if(segments.length>index+1){
+								var id=segments[index+1];
+								if(id==parseInt(id)+""){
+
+
+									if(!team.hasProject(id)){
+
+
+										team.requestProject(id, function(project){
+											application.setNamedValue('currentProject', project);
+											loadView("singleProjectDetail", project);
+										})
+										return;
+
+
+									}
+
+
+
+									current=null;
+									try{
+										current=team.getProject(id);
+									}catch(e){
+										console.error(e);
+									}
+								}
+							}
+
+							
+
+							
+
+							if(!current){
+								$$('.application-logo')[0].innerHTML="You do not have access to this resource";
+								return;
+							}
+
+
+							application.setNamedValue('currentProject', current);
+						}
+
+						loadView("singleProjectDetail", current);
+						return;
+					}
 
 					if (AppClient.getUserType() == "admin") {
 						loadView("dashboardContent");

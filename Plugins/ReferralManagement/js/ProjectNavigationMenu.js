@@ -18,10 +18,13 @@ var ProjectNavigationMenu = new Class({
 			parentMenu: application.getNamedValue('projectLayoutNavigationController')||application.getNamedValue('navigationController'),
 			initialView: function(){
 
-				var opts=application.getNamedValue('navigationController').getNavigationOptions();
+				var mainNav=application.getNamedValue('navigationController');
+				if(mainNav){
+					var opts=application.getNamedValue('navigationController').getNavigationOptions();
 
-				if(opts.projectInitialView){
-					return opts.projectInitialView;
+					if(opts.projectInitialView){
+						return opts.projectInitialView;
+					}
 				}
 
 				return {
@@ -126,7 +129,7 @@ var ProjectNavigationMenu = new Class({
 			};
 
 
-			me.menu=DashboardPageLayout.layoutMenu('projectMenu', me.menu);
+			me.menu=DashboardPageLayout.withItem(application.getNamedValue('currentProject')).layoutMenu('projectMenu', me.menu);
 
 			// me.menu.Project = me.menu.Project.filter(function(item) {
 
