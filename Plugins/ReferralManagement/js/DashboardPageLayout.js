@@ -633,6 +633,10 @@ var DashboardPageLayout = (function() {
 					config: "showDatasets"
 				},
 				{
+					html: "Status",
+					config: "enableProposals"
+				},
+				{
 					html: "Proponent",
 					config: "enableProposals"
 				},

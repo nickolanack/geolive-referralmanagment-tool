@@ -46,6 +46,8 @@ var ProjectNavigationMenu = new Class({
 			me.menu = {
 				"Project": [{
 						html: "Overview",
+					},  {
+						html: "Tasks",
 					}, {
 						html: "Team",
 						name: "Users",
@@ -54,9 +56,7 @@ var ProjectNavigationMenu = new Class({
 							ReferralManagementDashboard.addItemUsersInfo(li, item, application);
 
 						}
-					}, {
-						html: "Tasks",
-					}, {
+					},{
 						html: "Files",
 						formatEl: function(li) {
 
