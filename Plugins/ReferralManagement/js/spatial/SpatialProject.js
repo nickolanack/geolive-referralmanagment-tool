@@ -235,7 +235,7 @@ var SpatialProject = (function() {
 
 
 			var toggle = new ElementModule('div', {
-				"class": "field-value-module inline btn active",
+				"class": "field-value-module inline btn active toggle",
 				html: '',
 				events: {
 					click: function() {
