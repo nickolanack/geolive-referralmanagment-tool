@@ -189,7 +189,11 @@ var MainNavigationMenu = new Class({
 				}, 
 				{
 					html: "Datasets",
-					alias: {"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true},
+					alias: {"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true,
+						isActive:function(value){
+							return value;
+						}
+					},
 					item:{
 						label:"Datasets",
 					    showCreateBtn:true,
@@ -200,7 +204,12 @@ var MainNavigationMenu = new Class({
 				},
 				{
 					html: "Collections",
-					alias: {"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true},
+					alias: {
+						"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true,
+						isActive:function(value){
+							return value;
+						}
+					},
 					item:{
 						label:"Collections",
 					    showCreateBtn:true,
