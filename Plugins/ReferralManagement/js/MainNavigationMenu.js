@@ -16,7 +16,7 @@ var MainNavigationMenuBase = new Class({
 				 */
 				
 				var getTarget=function(){
-					callback(viewer.getApplication().getChildView('content', 0).getChildView('content', 1).getChildView('content', DashboardConfig.getValue('showSearchMenu')?1:0));
+					callback(viewer.getApplication().getChildView('content', 0).getChildView('content', 1).getChildView('content', DashboardConfig.getValue('showSearchMenu')?2:1));
 				}
 
 				try{
