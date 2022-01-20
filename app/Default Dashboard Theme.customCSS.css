@@ -4827,7 +4827,13 @@ span.navigation-menu.settings-menu {
     }
 }
 
+.ui-view.map-layers-list .toggle {
+    overflow: visible;
+}
 
+.ui-view.map-layers-list [data-identifier="col-name"]{
+    min-width:200px
+}
 
     
     
