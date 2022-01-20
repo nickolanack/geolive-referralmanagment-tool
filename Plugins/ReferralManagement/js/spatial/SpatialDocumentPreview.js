@@ -69,7 +69,7 @@ var SpatialDocumentPreview = (function() {
 				var layer = new ProjectLayer(map, layerOpts);
 				layer.addEvent('error',function(){
 
-					notification.setDescription('Error loading layer');
+					notification.setDescription("Error loading layer: "+layerOpts.name);
 					setTimeout(function(){
 						notification.fadeout();
 					}, 3000);
