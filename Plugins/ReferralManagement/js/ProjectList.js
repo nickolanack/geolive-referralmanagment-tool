@@ -839,6 +839,7 @@ var ProjectList = (function() {
 		return new ProjectList({
 		    "label":  "Related Projects",
 		    "labelClass":"",
+		    "showFilters":false,
 		    projects:function(callback){
 
 		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){

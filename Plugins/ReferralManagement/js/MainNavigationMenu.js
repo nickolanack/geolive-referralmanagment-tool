@@ -20,7 +20,7 @@ var MainNavigationMenuBase = new Class({
 				}
 
 				try{
-					getTarget();
+					getTarget();UserAuthorization.Microphone
 					return;
 				}catch(e){
 					console.error(e);
