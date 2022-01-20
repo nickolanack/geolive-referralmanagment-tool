@@ -4135,9 +4135,9 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "navigation-breadcrumbs",
-                                    "className": "",
-                                    "fieldLabelScript": "return \"Field Label Script\";",
-                                    "fieldValueScript": "return \"Field Value Script\";",
+                                    "className": "breadcrumbs",
+                                    "fieldLabelScript": "return \"Dashboard\";",
+                                    "fieldValueScript": "return \"current path\";",
                                     "formatElementScript": ""
                                 }
                             },
