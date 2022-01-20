@@ -95,7 +95,7 @@ var ProjectSearch = (function() {
 
 			var projectSearchAggregator=new ProjectSearchAggregator(search, {});
 			search.addEvent('search', function(){
-				projectSearchAggregator.getLastResponse(function(results){
+				projectSearchAggregator.getCurrentResults(function(results){
 					projectSearchAggregator.clear();
 					UIInteraction.navigateToProjectSearchResults(results);
 				});
