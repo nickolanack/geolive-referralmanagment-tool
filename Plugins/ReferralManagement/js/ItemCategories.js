@@ -4,9 +4,7 @@ var ItemCategories=(function(){
 
 		getProjectType: function() {
 
-			var types= this.getProjectTypes().filter(function(t){
-				return NamedCategoryList.hasTag(t);
-			});
+			var types= this.getProjectTypes();
 
 
 			if(types.length>0){
@@ -27,11 +25,11 @@ var ItemCategories=(function(){
 				return [];
 			}
 			if(typeof type=="string"){
-				return [type];
+				type=[type];
 			}
 
 			return type.filter(function(t){
-				return t&&t!=="";
+				return t&&t!==""&&NamedCategoryList.hasTag(t);
 			});
 		}
 
