@@ -40,6 +40,7 @@ var ProjectSearch = (function() {
 				Extends: UISearchListAggregator,
 				initialize: function(search, options) {
 					var me=this;
+					
 					this.parent(search, Object.append({
 
 						PreviousTemplate: UIListAggregator.PreviousTemplate,
@@ -53,7 +54,7 @@ var ProjectSearch = (function() {
 								click: function(result) {
 
 									UIInteraction.navigateToProjectOverview(ProjectTeam.CurrentTeam().getProject(result.item));
-									search.setValue('');
+									me.clear();
 
 								}
 							}
@@ -65,6 +66,12 @@ var ProjectSearch = (function() {
 				},
 				getLastResponse: function() {
 					return this._results;
+				},
+				clear:function(){
+					this.getSearchControl().clear();
+				},
+				getCurrentResults:function(callback){
+					callback(this._results);
 				},
 				_getRequest: function(filters) {
 					var me = this;
@@ -88,7 +95,10 @@ var ProjectSearch = (function() {
 
 			var projectSearchAggregator=new ProjectSearchAggregator(search, {});
 			search.addEvent('search', function(){
-				UIInteraction.navigateToProjectSearchResults(projectSearchAggregator.getLastResponse());
+				projectSearchAggregator.getLastResponse(function(results){
+					projectSearchAggregator.clear();
+					UIInteraction.navigateToProjectSearchResults(results);
+				});
 			});
 
 
