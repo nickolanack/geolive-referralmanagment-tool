@@ -191,6 +191,9 @@ var MainNavigationMenu = new Class({
 					html: "Datasets",
 					alias: {"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true,
 						isActive:function(value){
+							if(value&&item&&item.lockFilter){
+								return item.lockFilter==='!collection';
+							}
 							return value;
 						}
 					},
@@ -206,7 +209,10 @@ var MainNavigationMenu = new Class({
 					html: "Collections",
 					alias: {
 						"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true,
-						isActive:function(value){
+						isActive:function(value, options, item){
+							if(value&&item&&item.lockFilter){
+								return item.lockFilter==='collection';
+							}
 							return value;
 						}
 					},
