@@ -356,10 +356,13 @@ span.field-label.address-click:after {
 }
 
 .ui-view.reply-box {
-    border-top: 4px solid #2E303A;
-    box-shadow: 13px -12px 10px rgb(0 0 0 / 50%);
+    
     z-index: 1;
     position: relative;
+}
+.dark .ui-view.reply-box {
+    border-top: 4px solid #2E303A;
+    box-shadow: 13px -12px 10px rgb(0 0 0 / 50%);
 }
 
 button.inline-edit, .btn.inline-edit, .btn.inline-remove{
