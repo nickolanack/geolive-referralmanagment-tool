@@ -4131,13 +4131,25 @@
                         "modules": [
                             "Main Panel.metadata.positions.content.modules.0.json",
                             {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "identifier": "navigation-breadcrumbs",
+                                    "className": "",
+                                    "fieldLabelScript": "return \"Field Label Script\";",
+                                    "fieldValueScript": "return \"Field Value Script\";",
+                                    "formatElementScript": ""
+                                }
+                            },
+                            {
                                 "type": "UIView",
                                 "config": {
                                     "className": "main-content-area",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "mainDashboardDetail",
                                     "shouldRender": true,
-                                    "namedViewScript": "Main Panel.metadata.positions.content.modules.1.config.namedViewScript.js",
+                                    "namedViewScript": "Main Panel.metadata.positions.content.modules.2.config.namedViewScript.js",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
                                     "formOptions": "{}",
