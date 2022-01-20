@@ -4,8 +4,15 @@ var ItemCategories=(function(){
 
 		getProjectType: function() {
 
-			var types= this.getProjectTypes();
+			var types= this.getProjectTypes().filter(function(t){
+				return NamedCategoryList.hasTag(t);
+			});
+
+
 			if(types.length>0){
+
+
+
 				return types[0];
 			}
 
