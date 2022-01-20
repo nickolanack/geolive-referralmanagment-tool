@@ -31,6 +31,7 @@ button:focus {outline:0;}
     color: $highlightBtnColor;
     font-style: italic;
     padding: 5px;
+    text-indent: 20px;
 }
 
 .field-value-module.breadcrumbs .field-label {
