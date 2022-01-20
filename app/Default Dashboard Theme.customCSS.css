@@ -27,6 +27,26 @@ button:focus {outline:0;}
 }
 
 
+.field-value-module.breadcrumbs {
+    color: #6395ed;
+    font-style: italic;
+    padding: 5px;
+}
+
+.field-value-module.breadcrumbs .field-label {
+    font-weight: 400;
+    cursor:pointer;
+}
+
+.field-value-module.breadcrumbs .field-value:before {
+    content: ">>";
+    font-size: 10px;
+    vertical-align: text-bottom;
+    padding: 0 5px;
+    
+}
+
+
 .flow {
     
     margin-bottom: 70px;
