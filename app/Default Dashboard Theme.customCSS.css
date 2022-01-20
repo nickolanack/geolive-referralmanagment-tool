@@ -28,7 +28,7 @@ button:focus {outline:0;}
 
 
 .field-value-module.breadcrumbs {
-    color: #6395ed;
+    color: $highlightBtnColor;
     font-style: italic;
     padding: 5px;
 }
