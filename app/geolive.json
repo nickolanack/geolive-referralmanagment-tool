@@ -4137,7 +4137,7 @@
                                     "identifier": "navigation-breadcrumbs",
                                     "className": "breadcrumbs",
                                     "fieldLabelScript": "return \"Dashboard\";",
-                                    "fieldValueScript": "return \"Field Value Script\";",
+                                    "fieldValueScript": "return \"current path\";",
                                     "formatElementScript": ""
                                 }
                             },
