@@ -67,7 +67,14 @@ var SpatialDocumentPreview = (function() {
 				});
 
 				var layer = new ProjectLayer(map, layerOpts);
-				layer.addEvent('load:once', function() {
+				layer.addEvent('error',function(){
+
+					notification.setDescription('Error loading layer');
+					setTimeout(function(){
+						notification.fadeout();
+					}, 3000);
+
+				}).addEvent('load:once', function() {
 					(new AjaxControlQuery(CoreAjaxUrlRoot, 'file_metadata', {
 						'file': layerOpts.url
 					})).addEvent('success', function(response) {
