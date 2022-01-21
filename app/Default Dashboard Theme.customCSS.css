@@ -27,6 +27,11 @@ button:focus {outline:0;}
 }
 
 
+.ui-list-view.hidden {
+    display: none;
+}
+
+
 .field-value-module.breadcrumbs {
     color: $highlightBtnColor;
     font-style: italic;
