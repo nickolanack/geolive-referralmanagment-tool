@@ -2,7 +2,7 @@
 
 var hidden=false;
 var toggle= new ElementModule('button', {
-    'class':'section-toggle'
+    'class':'section-toggle',
     events:{
         click:function(){
                 
