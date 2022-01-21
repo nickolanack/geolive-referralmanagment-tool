@@ -24200,5 +24200,20 @@
             "saveTemplateAsData": false,
             "contentTemplate": "proponent-proposal-link-email-body.contentTemplate.html"
         }
+    },
+    "widget.429": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "",
+            "target": "none",
+            "templateName": "{target}",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "useRemote": ""
+        }
     }
 }
