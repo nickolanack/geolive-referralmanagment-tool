@@ -30,6 +30,9 @@ button:focus {outline:0;}
 .ui-list-view.hidden {
     display: none;
 }
+.bar-chart.hidden {
+    display: none;
+}
 
 
 .field-value-module.breadcrumbs {
@@ -201,6 +204,7 @@ button:focus {outline:0;}
 button.section-toggle {
     
     position:relative;
+    margin: 10px 0;
     
 }
 
