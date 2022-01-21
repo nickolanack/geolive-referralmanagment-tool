@@ -8718,6 +8718,14 @@
                         "modules": [
                             "projectPriorityTasksDetail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "projectPriorityTasksDetail.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "project-tasks",
@@ -8741,10 +8749,10 @@
                                     "targetName": "",
                                     "getItemListScript": "return item.getTasks();",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "projectPriorityTasksDetail.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "projectPriorityTasksDetail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
-                                    "filterItemsScript": "projectPriorityTasksDetail.metadata.positions.content.modules.1.config.filterItemsScript.js",
-                                    "sortItemsScript": "projectPriorityTasksDetail.metadata.positions.content.modules.1.config.sortItemsScript.js",
+                                    "filterItemsScript": "projectPriorityTasksDetail.metadata.positions.content.modules.2.config.filterItemsScript.js",
+                                    "sortItemsScript": "projectPriorityTasksDetail.metadata.positions.content.modules.2.config.sortItemsScript.js",
                                     "maxItems": "-1"
                                 }
                             }
