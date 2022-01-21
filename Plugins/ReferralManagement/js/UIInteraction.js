@@ -246,17 +246,28 @@ var UIInteraction = (function() {
 
 		createSectionToggle:function(filter){
 
+			var toggle=null;
+			var getTargets=function(){
 
+				 if(filter instanceof Module){
+				 	return [filter];
+				 }
+
+				 return toggle.getViewer().findChildViews(filter);
+			};
+			var getFirst=function(){
+				return getTargets().pop();
+			}
 
 			var hidden=false;
-			var toggle= new ElementModule('button', {
+			toggle= new ElementModule('button', {
 			    'class':'section-toggle',
 			    events:{
 			        click:function(){
 			            
 			                console.log(toggle);
 			                
-			                toggle.getViewer().findChildViews(filter).forEach(function(v){
+			                getTargets().forEach(function(v){
 			  				   if(hidden){
 			  				       v.show();
 			  				       return;
@@ -270,10 +281,9 @@ var UIInteraction = (function() {
 			        }
 			    }
 			}).runOnceOnLoad(function(){
-			    var list= toggle.getViewer().findChildViews(filter).pop();
-			  	 
-			  	 list.runOnceOnLoad(function(){
-			  	     if(list.getElement().hasClass('hidden')){
+			    var item= getFirst()
+			  	 item.runOnceOnLoad(function(){
+			  	     if(item.getElement().hasClass('hidden')){
 			  	         hidden=true;
 			  	     }
 			  	 });
