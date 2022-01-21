@@ -595,6 +595,22 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	}
 
+	protected function listShareLinks($json) {
+		$clientToken = ($links = GetPlugin('Links'))->createDataCode('projectAccessToken', array(
+			'id' => $json->id,
+			"creator" => GetClient()->getUserId(),
+		));
+
+		return array(
+			'token' => $clientToken,
+			'link' => HtmlDocument()->website() . '/proposal/' . $json->id . '/' . $clientToken
+		);
+
+	}
+
+
+	
+
 	protected function exportProposals($json) {
 
 		include_once __DIR__ . '/lib/Export.php';

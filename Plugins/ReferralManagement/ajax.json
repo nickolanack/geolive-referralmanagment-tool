@@ -74,6 +74,13 @@
             ]
         }
     },
+    "list_share_links": {
+        "validate": {
+            "checkKeys": [
+                "id"
+            ]
+        }
+    },
     "set_proposal_status": {
         "validate": {
             "checkKeys": [

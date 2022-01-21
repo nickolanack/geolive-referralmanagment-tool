@@ -27,14 +27,7 @@ var AdminMonitor=(function(){
 
 		}
 
-
-
-
-
-
 	});
-
-
 
 	(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_admin_channels', {
 		'plugin': "ReferralManagement"
