@@ -22,5 +22,7 @@
     display: none;
 }
 
-
+.hide-admin li.admin-only {
+    display: none;
+}
 
