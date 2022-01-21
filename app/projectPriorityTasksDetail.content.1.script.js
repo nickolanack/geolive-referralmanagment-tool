@@ -15,7 +15,7 @@ var toggle= new ElementModule('button', {
   				       v.show();
   				       return;
   				   }
-  				   v.hide;
+  				   v.hide();
   				});
   				hidden=!hidden;
             
