@@ -1,5 +1,9 @@
 application.getNamedValue('navigationController',function(controller){
     
+    labelEl.addEvent('click',function(){
+         controller.navigateTo('Dashboard', 'Main');
+    });
+    
     var rootState;
     controller.addEvent('navigate', function(state, options, item) {
         console.log(state); 
