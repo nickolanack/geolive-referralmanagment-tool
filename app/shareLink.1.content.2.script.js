@@ -8,7 +8,7 @@ var button= new ElementModule('button', {
 			'id':item.getId()
 		})).addEvent('success', function(resp){
 		    
-		    $('#theShareLink').href=resp.link;
+		    $('theShareLink').href=resp.link;
 		    
 		    console.log(resp);
 		    
