@@ -270,8 +270,10 @@ var UIInteraction = (function() {
 			                getTargets().forEach(function(v){
 			  				   if(hidden){
 			  				       v.show();
+			  				       toggle.getElement().addClass('active');
 			  				       return;
 			  				   }
+			  				   toggle.getElement().removeClass('active')
 			  				   v.hide();
 			  				});
 			  				hidden=!hidden;
@@ -285,7 +287,10 @@ var UIInteraction = (function() {
 			  	 item.runOnceOnLoad(function(){
 			  	     if(item.getElement().hasClass('hidden')){
 			  	         hidden=true;
+			  	         toggle.getElement().removeClass('active')
+			  	         return;
 			  	     }
+			  	     toggle.getElement().addClass('active')
 			  	 });
 			  	 
 			})
