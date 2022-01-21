@@ -7323,6 +7323,29 @@
                                     "script": "singleProjectOverviewDetail.metadata.positions.content.modules.16.config.script.js",
                                     "description": "Info about my custom script"
                                 }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "",
+                                    "identifier": "activity-chart",
+                                    "viewType": "view",
+                                    "namedView": "*Activity Chart*\/\n\n\n\n\n\nactivityChartView",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
                             }
                         ]
                     },
