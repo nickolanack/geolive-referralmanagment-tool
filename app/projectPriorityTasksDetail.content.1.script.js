@@ -23,6 +23,17 @@ var toggle= new ElementModule('button', {
             
         }
     }
-});
+}).runOnceOnLoad(function(){
+    var list= toggle.getViewer().findChildViews(function(v) {
+    	return v instanceof UIListViewModule
+  	 }).pop();
+  	 
+  	 list.runOnceOnLoad(function(){
+  	     if(list.getElement().hasClass('hidden')){
+  	         hidden=true;
+  	     }
+  	 });
+  	 
+})
 
 return toggle;
