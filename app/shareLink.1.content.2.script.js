@@ -4,8 +4,12 @@ var button= new ElementModule('button', {
     events:{click:function(){
         
         (new AjaxControlQuery(CoreAjaxUrlRoot, 'generate_share_link', {
-			'plugin': "ReferralManagement"
+			'plugin': "ReferralManagement",
+			'id':item.getId()
 		})).addEvent('success', function(resp){
+		    
+		    $('theShareLink').href=resp.link;
+		    $('theShareLink').innerHTML=resp.link;
 		    
 		    console.log(resp);
 		    

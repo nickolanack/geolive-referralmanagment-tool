@@ -7317,11 +7317,26 @@
                                 }
                             },
                             {
-                                "type": "WizardScriptElement",
+                                "type": "UIView",
                                 "config": {
-                                    "name": "My Custom Script",
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.16.config.script.js",
-                                    "description": "Info about my custom script"
+                                    "className": "",
+                                    "identifier": "activity-chart",
+                                    "viewType": "view",
+                                    "namedView": "activityChartView",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             }
                         ]
@@ -8718,10 +8733,19 @@
                         "modules": [
                             "projectPriorityTasksDetail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "projectPriorityTasksDetail.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
                                 "type": "UIListView",
                                 "config": {
-                                    "listClassName": "project-tasks",
+                                    "listClassName": "project-tasks hidden",
                                     "className": "task-item",
+                                    "identifier": "priority-task-list",
                                     "viewType": "view",
                                     "namedView": "singleTaskListItemDetail",
                                     "shouldRender": true,
@@ -8740,10 +8764,10 @@
                                     "targetName": "",
                                     "getItemListScript": "return item.getTasks();",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "projectPriorityTasksDetail.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "projectPriorityTasksDetail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
-                                    "filterItemsScript": "projectPriorityTasksDetail.metadata.positions.content.modules.1.config.filterItemsScript.js",
-                                    "sortItemsScript": "projectPriorityTasksDetail.metadata.positions.content.modules.1.config.sortItemsScript.js",
+                                    "filterItemsScript": "projectPriorityTasksDetail.metadata.positions.content.modules.2.config.filterItemsScript.js",
+                                    "sortItemsScript": "projectPriorityTasksDetail.metadata.positions.content.modules.2.config.sortItemsScript.js",
                                     "maxItems": "-1"
                                 }
                             }
@@ -15182,16 +15206,16 @@
                             "shareLink.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 437,
-                            "y": 233
+                            "x": 487,
+                            "y": 283
                         },
                         "children": [
                             "shareLink.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 397,
-                                    "y": 409
+                                    "x": 447,
+                                    "y": 459
                                 }
                             }
                         ],
@@ -24190,6 +24214,47 @@
             "parseMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "proponent-proposal-link-email-body.contentTemplate.html"
+        }
+    },
+    "widget.429": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "activityChartView",
+            "target": "activityChartView",
+            "templateName": "activityChartView",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "useRemote": "",
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "activityChartView.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
         }
     }
 }
