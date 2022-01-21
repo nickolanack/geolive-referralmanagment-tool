@@ -5,6 +5,8 @@ var toggle= new ElementModule('button', {
     'class':'section-toggle',
     events:{
         click:function(){
+            
+                console.log(toggle);
                 
                 toggle.getViewer().findChildViews(function(v) {
     					return v instanceof UIListViewModule
