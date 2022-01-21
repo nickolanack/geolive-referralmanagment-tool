@@ -8728,7 +8728,7 @@
                             {
                                 "type": "UIListView",
                                 "config": {
-                                    "listClassName": "project-tasks",
+                                    "listClassName": "project-tasks hidden",
                                     "className": "task-item",
                                     "identifier": "priority-task-list",
                                     "viewType": "view",
