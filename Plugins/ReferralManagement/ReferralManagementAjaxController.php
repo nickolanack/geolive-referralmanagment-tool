@@ -55,15 +55,10 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		));
 	}
 
-
 	protected function setStateData($json) {
 
 		return true;
 	}
-
-
-
-
 
 	protected function getUserRoles($json) {
 
@@ -266,9 +261,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 					->to($json->email)
 					->send();
 
-
 				$this->getPlugin()->notifier()->onGuestProjectPendingValidation($json);
-
 
 				return true;
 			}
@@ -291,7 +284,6 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		);
 
 	}
-
 
 	protected function saveProposal($json) {
 		return $this->saveProject($json);
@@ -395,8 +387,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 	}
 	protected function createDefaultTasks($json) {
 
-
-		$taskIds = $this->getPlugin()->createDefaultProposalTasks($json->proposal, isset($json->taskTemplates)?$json->taskTemplates:null);
+		$taskIds = $this->getPlugin()->createDefaultProposalTasks($json->proposal, isset($json->taskTemplates) ? $json->taskTemplates : null);
 		$this->getPlugin()->notifier()->onCreateDefaultTasks($taskIds, $json);
 
 		return array("tasks" => $taskIds, 'tasksData' => array_map(function ($taskId) {
@@ -528,7 +519,6 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function downloadFiles($json) {
 
-
 		if (!Auth('write', $json->proposal, 'ReferralManagement.proposal')) {
 			return $this->setError('No access or does not exist');
 		}
@@ -588,6 +578,20 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		}
 
 		return array('result' => Core::LoadPlugin('ExternalContent')->ParseHTML($website));
+
+	}
+
+	protected function generateShareLink($json) {
+
+		$clientToken = ($links = GetPlugin('Links'))->createDataCode('projectAccessToken', array(
+			'id' => $json->id,
+			"creator" => GetClient()->getUserId(),
+		));
+
+		return array(
+			'token' => $clientToken,
+			'link' => HtmlDocument()->website() . '/proposal/' . $json->id . '/' . $clientToken
+		);
 
 	}
 
@@ -801,8 +805,6 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function usersOnline() {
 
-
-
 		return array(
 			'results' => GetClient()->isOnlineGroup(array_map(function ($user) {
 				return $user->id;
@@ -820,10 +822,10 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			}
 		}
 
-		if(empty($deviceIds)){
+		if (empty($deviceIds)) {
 			return array(
-				'extra'=>array(),
-				'results'=>array()
+				'extra' => array(),
+				'results' => array(),
 			);
 		}
 
@@ -907,19 +909,18 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		);
 	}
 
-
 	protected function saveTag($json) {
 
 		$minAccessLevel = 'lands-department-manager';
 		if (!Auth('memberof', $minAccessLevel, 'group')) {
 			return $this->setError('Not authorized');
 		}
-		$metadata=array();
-		if(isset($json->metadata)){
-			$metadata=json_decode(json_encode($json->metadata),true);
+		$metadata = array();
+		if (isset($json->metadata)) {
+			$metadata = json_decode(json_encode($json->metadata), true);
 		}
-		if(!is_array($metadata)){
-			$metadata=array();
+		if (!is_array($metadata)) {
+			$metadata = array();
 		}
 
 		$updateData = array(
@@ -942,7 +943,6 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	}
 
-
 	protected function removeTag($json) {
 
 		$minAccessLevel = 'lands-department-manager';
@@ -950,23 +950,20 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			return $this->setError('Not authorized');
 		}
 
-		
 		$this->getPlugin()->getDatabase()->deleteCategory($json->id);
 
 		return true;
 
 	}
 
+	protected function recentActivity($json) {
 
-	protected function recentActivity($json){
-
-		$posts=GetPlugin('Discussions')->getPostsForItem(145, 'widget', 'activity');
+		$posts = GetPlugin('Discussions')->getPostsForItem(145, 'widget', 'activity');
 		return array(
-			'activity'=>$posts
+			'activity' => $posts,
 		);
 
 	}
-
 
 	protected function saveDepartment($json) {
 

@@ -1,6 +1,6 @@
 {
 
-    "get_admin_channels":{
+    "get_admin_channels": {
         "access": "special"
     },
 
@@ -8,26 +8,26 @@
     "get_dashboard_config": [],
     "get_user_roles": [],
     "list_projects": {
-        "profile":true,
-        "count":"results"
+        "profile": true,
+        "count": "results"
     },
-     "list_archived_projects": {
-        "profile":true,
-        "count":"results"
+    "list_archived_projects": {
+        "profile": true,
+        "count": "results"
     },
-    "list_layer_items":[],
+    "list_layer_items": [],
     "upload_tus": [],
     "save_proposal": {
-        "access":"registered"
+        "access": "registered"
     },
 
 
     "set_state_data": {
-        "access":"registered"
+        "access": "registered"
     },
 
     "save_project": {
-        "access":"registered"
+        "access": "registered"
     },
 
     "save_team_member_permissions": [],
@@ -39,7 +39,7 @@
 
     "save_guest_proposal": [],
     "save_guest_project": [],
-    
+
     "save_task": [],
     "delete_task": {
         "validate": {
@@ -65,7 +65,14 @@
         }
     },
     "export_proposals": {
-        
+
+    },
+    "generate_share_link": {
+        "validate": {
+            "checkKeys": [
+                "id"
+            ]
+        }
     },
     "set_proposal_status": {
         "validate": {
@@ -75,14 +82,14 @@
             ]
         }
     },
-    "create_default_tasks":[],
-    "default_task_templates":[],
-    "generate_report":[],
-    "download_files":[],
+    "create_default_tasks": [],
+    "default_task_templates": [],
+    "generate_report": [],
+    "download_files": [],
 
 
     "list_users": {
-        "profile":true
+        "profile": true
     },
     "get_user": {
         "validate": {
@@ -92,32 +99,32 @@
         }
     },
     "list_devices": {
-        "profile":true
+        "profile": true
     },
     "add_item_user": {
         "validate": {
             "checkKeys": [
-               "user",
-               "item",
-               "type"
+                "user",
+                "item",
+                "type"
             ]
         }
     },
     "add_item_project": {
         "validate": {
             "checkKeys": [
-               "project",
-               "item",
-               "type"
+                "project",
+                "item",
+                "type"
             ]
         }
     },
     "remove_item_user": {
         "validate": {
             "checkKeys": [
-               "project",
-               "item",
-               "type"
+                "project",
+                "item",
+                "type"
             ]
         }
     },
@@ -177,44 +184,36 @@
         }
     },
     "users_online": {
-        "validate": {
-        }
+        "validate": {}
     },
     "devices_online": {
-        "validate": {
-        }
+        "validate": {}
     },
-    "get_server_config":{},
-    "list_departments":{},
-    "list_tags":{},
-    "save_tag":{
+    "get_server_config": {},
+    "list_departments": {},
+    "list_tags": {},
+    "save_tag": {
         "validate": {
             "checkKeys": [
                 "category", "color", "name", "description"
             ]
         }
     },
-    "remove_tag":{
+    "remove_tag": {
         "validate": {
             "checkKeys": [
                 "id"
             ]
         }
     },
-    "save_department":{
+    "save_department": {
         "validate": {
             "checkKeys": [
                 "name", "description"
             ]
         }
     },
-    "recent_activity":{
-    }
-
-
-
-
-
+    "recent_activity": {}
 
 
 
