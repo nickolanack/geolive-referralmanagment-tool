@@ -217,6 +217,10 @@ button.section-toggle:after {
     color: mediumseagreen;
     font-size: 30px;
 }
+button.section-toggle.active{}
+button.section-toggle.active:after {
+    content: "\0f106";
+}
 
 ul.option-list.dir-up.position-top {
     top: unset;
