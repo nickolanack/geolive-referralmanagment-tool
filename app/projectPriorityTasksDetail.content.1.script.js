@@ -1,4 +1,8 @@
 
+return UIInteraction.createSectionToggle(function(v) {
+    	return v instanceof UIListViewModule
+  	 });
+
 
 var hidden=false;
 var toggle= new ElementModule('button', {
