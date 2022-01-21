@@ -7,6 +7,8 @@ application.getNamedValue('navigationController',function(controller){
     controller.addEvent('childNavigation', function(menu, state, options, item) {
         console.log(state); 
         
+        valueEl.appendChild(new Element('span', {"class":"field-value", html:state.view}));
+        
     })
     
 })
