@@ -8,6 +8,11 @@ application.getNamedValue('navigationController',function(controller){
     controller.addEvent('navigate', function(state, options, item) {
         console.log(state); 
         rootState=state;
+        if(view=='Dashboard'){
+            valueEl.addClass('hidden');
+            return;
+        }
+        valueEl.removeClass('hidden');
         valueEl.innerHTML=state.view;
     })
     
