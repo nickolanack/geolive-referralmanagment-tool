@@ -9,6 +9,7 @@ var button= new ElementModule('button', {
 		})).addEvent('success', function(resp){
 		    
 		    $('theShareLink').href=resp.link;
+		    $('theShareLink').innerHTML=resp.link;
 		    
 		    console.log(resp);
 		    
