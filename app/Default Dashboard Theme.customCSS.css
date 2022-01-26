@@ -60,7 +60,17 @@ button:focus {outline:0;}
 }
 
 
+.tag-width span.field-value {
+    
 
+    &.is-light {
+        color: black;
+    }
+    &.is-dark {
+        color: white;
+    }
+    
+}
 
 
 
