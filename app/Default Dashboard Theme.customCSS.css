@@ -24,6 +24,9 @@ button:focus {outline:0;}
 span.field-label.clickable, span.field-value.clickable {
     color: white;
 }
+span.field-value.clickable .field-value {
+    color: #52525;
+}
 
 
 .application-logo.info-warn {
