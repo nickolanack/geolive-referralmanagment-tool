@@ -29,8 +29,7 @@ application.getNamedValue('navigationController',function(controller){
     
     controller.addEvent('childNavigation', function(menu, state, options, item) {
         console.log(state); 
-        var view=state.view;
-        
+
         var rootView=rootState.view;
         if(rootView==='Project'){
             var p=application.getNamedValue("currentProject");
