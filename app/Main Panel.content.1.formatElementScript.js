@@ -18,10 +18,13 @@ application.getNamedValue('navigationController',function(controller){
         if(view==='Project'){
             var p=application.getNamedValue("currentProject");
             console.log(p);
+            if(p){
+                view='Project: '+p.getName();
+            }
         }
         
         
-        valueEl.innerHTML=state.view;
+        valueEl.innerHTMLview;
     })
     
     controller.addEvent('childNavigation', function(menu, state, options, item) {
