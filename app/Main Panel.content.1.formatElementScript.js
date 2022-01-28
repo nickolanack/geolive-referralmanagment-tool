@@ -3,6 +3,7 @@ application.getNamedValue('navigationController',function(controller){
     labelEl.addEvent('click',function(){
          controller.navigateTo('Dashboard', 'Main');
     });
+    labelEl.addClass('clickable')
     
     var rootState;
     controller.addEvent('navigate', function(state, options, item) {
@@ -42,6 +43,6 @@ application.getNamedValue('navigationController',function(controller){
         valueEl.innerHTML=rootView;
         valueEl.appendChild(new Element('span', {"class":"field-value", html:state.view}));
         
-    })
+    });
     
 })
