@@ -31,7 +31,7 @@ var ProjectActivityChart=(function(){
 		    	html:"Project activity"
 		    }),
 		    activityLabel,
-		    UIInteraction.createSectionToggle(chart),
+		    UIInteraction.createSectionToggle(chart, {startHidden:true}),
 		    chart
 		],{
 			"class":"inline-list-item timesheets-list-item-icon",
