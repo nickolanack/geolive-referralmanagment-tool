@@ -21,6 +21,11 @@ button:focus {outline:0;}
 }
 
 
+span.field-label.clickable, span.field-value.clickable {
+    color: white;
+}
+
+
 .application-logo.info-warn {
     color: crimson;
     font-size: 20px;
