@@ -14263,6 +14263,14 @@
                                     "sortItemsScript": "Projects List Detail.metadata.positions.content.modules.5.config.sortItemsScript.js",
                                     "maxItems": "25"
                                 }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "Projects List Detail.metadata.positions.content.modules.6.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
                             }
                         ]
                     },
