@@ -841,6 +841,7 @@ var ProjectList = (function() {
 		    "labelClass":"",
 		    "showFilters":false,
 		    "showMinimize":true,
+		    "startMinimized":true,
 		    projects:function(callback){
 
 		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){

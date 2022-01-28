@@ -285,6 +285,18 @@ var UIInteraction = (function() {
 			}).runOnceOnLoad(function(){
 			    var item= getFirst()
 			  	 item.runOnceOnLoad(function(){
+
+			  	 	if(typeof options.startHidden=='boolean'){
+
+			  	 		getTargets().forEach(function(target){
+			  	 			if(options.startHidden==true){
+			  	 				target.getElement().addClass('hidden');
+			  	 				return;
+			  	 			}
+			  	 			target.getElement().removeClass('hidden');
+			  	 		});
+			  	 	}
+
 			  	     if(item.getElement().hasClass('hidden')){
 			  	         hidden=true;
 			  	         toggle.getElement().removeClass('active')
