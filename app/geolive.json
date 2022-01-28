@@ -9226,6 +9226,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "defaultPostDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('timestamp');"
@@ -9294,6 +9295,14 @@
                                 "config": {
                                     "name": "My Custom Script",
                                     "script": "defaultPostDetail.metadata.positions.content.modules.4.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "defaultPostDetail.metadata.positions.content.modules.5.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
