@@ -31,9 +31,16 @@ application.getNamedValue('navigationController',function(controller){
         console.log(state); 
         var view=state.view;
         
+        var rootView=rootState.view;
+        if(rootView==='Project'){
+            var p=application.getNamedValue("currentProject");
+            console.log(p);
+            if(p){
+                rootView='Project: '+p.getName();
+            }
+        }
         
-        
-         valueEl.innerHTML=rootState.view;
+        valueEl.innerHTML=rootView;
         valueEl.appendChild(new Element('span', {"class":"field-value", html:state.view}));
         
     })
