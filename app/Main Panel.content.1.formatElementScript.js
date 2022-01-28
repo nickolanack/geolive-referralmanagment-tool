@@ -13,6 +13,14 @@ application.getNamedValue('navigationController',function(controller){
             return;
         }
         valueEl.removeClass('hidden');
+        
+        var view=state.view;
+        if(view==='Project'){
+            var p=application.getNamedValue("currentProject");
+            console.log(p);
+        }
+        
+        
         valueEl.innerHTML=state.view;
     })
     
@@ -20,10 +28,7 @@ application.getNamedValue('navigationController',function(controller){
         console.log(state); 
         var view=state.view;
         
-        if(view==='Project'){
-            var p=application.getNamedValue("currentProject");
-            console.log(p);
-        }
+        
         
          valueEl.innerHTML=rootState.view;
         valueEl.appendChild(new Element('span', {"class":"field-value", html:state.view}));
