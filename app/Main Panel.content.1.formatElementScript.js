@@ -24,7 +24,7 @@ application.getNamedValue('navigationController',function(controller){
         }
         
         
-        valueEl.innerHTMLview;
+        valueEl.innerHTML=view;
     })
     
     controller.addEvent('childNavigation', function(menu, state, options, item) {
