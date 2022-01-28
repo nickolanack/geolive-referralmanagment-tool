@@ -18,6 +18,13 @@ application.getNamedValue('navigationController',function(controller){
     
     controller.addEvent('childNavigation', function(menu, state, options, item) {
         console.log(state); 
+        var view=state.view;
+        
+        if(view==='Project'){
+            var p=application.getNamedValue("currentProject");
+            console.log(p);
+        }
+        
          valueEl.innerHTML=rootState.view;
         valueEl.appendChild(new Element('span', {"class":"field-value", html:state.view}));
         
