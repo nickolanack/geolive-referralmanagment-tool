@@ -490,6 +490,9 @@ var DashboardPageLayout = (function() {
 		content=layout.filterIdentifierConfig(content, 'activity-chart', 'showProjectActivity');//'enableTasks');
 
 
+
+		content=layout.filterIdentifierConfig(content, ['status-assessment', 'status-processing'], 'enableProposals');
+
 		content=layout.filterIdentifier(content, ['project-task-progress', 'project-task-remaining', 'project-task-deadline', 'project-tasks-overview'], !layout.currentItem().isDataset());
 		content=layout.filterIdentifier(content, 'activity-chart', !layout.currentItem().isDataset());//'enableTasks');
 

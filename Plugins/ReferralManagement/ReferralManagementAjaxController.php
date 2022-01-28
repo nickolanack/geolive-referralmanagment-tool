@@ -596,15 +596,12 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 	}
 
 	protected function listShareLinks($json) {
-		$clientToken = ($links = GetPlugin('Links'))->createDataCode('projectAccessToken', array(
-			'id' => $json->id,
-			"creator" => GetClient()->getUserId(),
-		));
+		// $links=GetPlugin('Links')->list
 
-		return array(
-			'token' => $clientToken,
-			'link' => HtmlDocument()->website() . '/proposal/' . $json->id . '/' . $clientToken
-		);
+		// return array(
+		// 	'token' => $clientToken,
+		// 	'link' => HtmlDocument()->website() . '/proposal/' . $json->id . '/' . $clientToken
+		// );
 
 	}
 
