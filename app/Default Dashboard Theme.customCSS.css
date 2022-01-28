@@ -27,10 +27,7 @@ button:focus {outline:0;}
 }
 
 
-.ui-list-view.hidden {
-    display: none;
-}
-.bar-chart.hidden {
+.ui-list-view.hidden, .bar-chart.hidden, .ui-view.hidden {
     display: none;
 }
 
