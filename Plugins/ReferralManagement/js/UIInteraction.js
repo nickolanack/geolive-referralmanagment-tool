@@ -244,7 +244,7 @@ var UIInteraction = (function() {
 		},
 
 
-		createSectionToggle:function(filter){
+		createSectionToggle:function(filter, options){
 
 			var toggle=null;
 			var getTargets=function(){

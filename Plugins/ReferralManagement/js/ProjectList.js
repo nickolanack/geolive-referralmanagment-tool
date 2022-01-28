@@ -840,6 +840,7 @@ var ProjectList = (function() {
 		    "label":  "Related Projects",
 		    "labelClass":"",
 		    "showFilters":false,
+		    "showMinimize":true,
 		    projects:function(callback){
 
 		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
