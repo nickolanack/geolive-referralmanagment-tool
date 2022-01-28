@@ -1,4 +1,4 @@
 
-if(item instanceof ProjectList&&item.hasPinList()){
+if(item instanceof ProjectList&&item.getProjectListFilterChildTags()){
     module.draw();
 }
