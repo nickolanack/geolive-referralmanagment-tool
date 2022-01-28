@@ -40,6 +40,10 @@ button:focus {outline:0;}
     font-style: italic;
     padding: 5px;
     text-indent: 20px;
+    
+    span.field-value.hidden{
+        display:none;
+    }
 }
 
 .field-value-module.breadcrumbs .field-label {
@@ -56,7 +60,17 @@ button:focus {outline:0;}
 }
 
 
+.tag-width span.field-value {
+    
 
+    &.is-light {
+        color: black;
+    }
+    &.is-dark {
+        color: white;
+    }
+    
+}
 
 
 
@@ -216,6 +230,10 @@ button.section-toggle:after {
     font-family: 'FontAwesome';
     color: mediumseagreen;
     font-size: 30px;
+}
+button.section-toggle.active{}
+button.section-toggle.active:after {
+    content: "\0f106";
 }
 
 ul.option-list.dir-up.position-top {
