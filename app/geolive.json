@@ -7206,7 +7206,7 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "",
+                                    "className": "hidden",
                                     "identifier": "status-processing",
                                     "viewType": "view",
                                     "namedView": "processingFlow",
@@ -7229,7 +7229,7 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "",
+                                    "className": "hidden",
                                     "identifier": "status-assessment",
                                     "viewType": "view",
                                     "namedView": "assessmentFlow",
