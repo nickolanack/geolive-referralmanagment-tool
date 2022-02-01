@@ -3,6 +3,7 @@ application.getNamedValue('navigationController',function(controller){
     labelEl.addEvent('click',function(){
          controller.navigateTo('Dashboard', 'Main');
     });
+    labelEl.addClass('clickable')
     
     var rootState;
     controller.addEvent('navigate', function(state, options, item) {
@@ -13,14 +14,38 @@ application.getNamedValue('navigationController',function(controller){
             return;
         }
         valueEl.removeClass('hidden');
-        valueEl.innerHTML=state.view;
+        
+        var view=state.view;
+        if(view==='Project'){
+            var p=application.getNamedValue("currentProject");
+            console.log(p);
+            if(p){
+                view='Project: '+p.getName();
+            }
+        }
+        
+        
+        valueEl.innerHTML=view;
     })
     
     controller.addEvent('childNavigation', function(menu, state, options, item) {
         console.log(state); 
-         valueEl.innerHTML=rootState.view;
+
+        var rootView=rootState.view;
+        valueEl.removeClass('clickable');
+        if(rootView==='Project'){
+            var p=application.getNamedValue("currentProject");
+            console.log(p);
+            if(p){
+                rootView='Project: '+p.getName();
+                valueEl.addClass('clickable');
+            }
+        }
+        
+        
+        valueEl.innerHTML=rootView;
         valueEl.appendChild(new Element('span', {"class":"field-value", html:state.view}));
         
-    })
+    });
     
 })

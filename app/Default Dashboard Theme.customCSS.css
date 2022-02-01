@@ -21,6 +21,14 @@ button:focus {outline:0;}
 }
 
 
+span.field-label.clickable, span.field-value.clickable {
+    color: white;
+}
+span.field-value.clickable .field-value {
+    color: #52525;
+}
+
+
 .application-logo.info-warn {
     color: crimson;
     font-size: 20px;
@@ -3015,7 +3023,7 @@ button.t-btn {
 }
 
 
-.timestamp .field-value {
+.timestamp .field-value, .post-user {
     color: #6A7CE9;
     font-size: 12px;
 }
