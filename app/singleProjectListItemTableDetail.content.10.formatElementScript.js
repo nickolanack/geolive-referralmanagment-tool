@@ -5,6 +5,14 @@ el.setAttribute("data-col","community");
 var communities=([item.getProjectCommunity()]).concat(item.getCommunitiesInvolved())
 //return communities.slice(0,2).join(', ')+(communities.length>2?', '+communities.length+' other'+(communities.length==3?'':'s'):'')
 
+var showRootCommunity=false;
+if(!showRootCommunity){
+    var i=communities.indexOf(UserGroups.GetCollective());
+    if(i>=0){
+        communities.splice(i,1);
+    }
+}
+
 var types=communities;
 var plainTag=new NamedCategory({
 			name: "",
