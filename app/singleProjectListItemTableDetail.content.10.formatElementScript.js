@@ -38,9 +38,10 @@ var plainTag=new NamedCategory({
     UIInteraction.navigateToNamedCommunityType(types[0]);
 });
 
-types.slice(1).forEach(function(type){
-  var tag=el.appendChild(new Element('span', {"class":"field-value"}));
-  tag.innerHTML=type;
+types.slice(1).forEach(function(type,i){
+  var tag=el.appendChild(new Element('span', {"class":"field-value tag-alt"}));
+    
+    //tag.innerHTML=type;
     RecentItems.colorizeEl(tag, type, plainTag);
     tag.addEvent('click', function(e){
         e.stop();//Propagation()
