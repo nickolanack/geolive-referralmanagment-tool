@@ -1,43 +1,21 @@
-el.addClass("inline");
+el.addClass("inline tag-width");
+RecentItems.colorizeEl(valueEl, item.getProjectType());
+el.setAttribute("data-col","type");
 
-
-if(item.getDocumentsRecursive().concat(item.getAttachmentsRecursive()).concat(item.getSpatialDocumentsRecursive()).length>0){
-    el.addClass('withItems');
-}
-
-if(item.getDocumentsChildren().concat(item.getAttachmentsChildren()).concat(item.getSpatialDocumentsChildren()).length>0){
-    el.addClass('withChildItems');
-}
-
-el.setAttribute("data-col","attachments");
 
 el.addEvent('click', function(e){
-   e.stop();
-   UIInteraction.navigateToProjectSection(item ,"Map");
-    
+    e.stop();//Propagation()
+    UIInteraction.navigateToNamedCategoryType(item.getProjectType());
 });
 
 
-if(el.hasClass('withItems')){
-    el.appendChild(new Element('button',{
-    "html":"", 
-    "style":"", 
-    "class":"download-link", 
-    "events":{"click":function(e){
-    
-        e.stopPropagation();
-        var downloadQuery=new AjaxControlQuery(CoreAjaxUrlRoot, 'download_files', {
-		                "plugin": "ReferralManagement",
-		                "proposal":item.getId()
-		                });
-    				//downloadQuery.execute(); //for testing.
-    				window.open(downloadQuery.getUrl(true),'Download'); 
 
-    }}}))
-    
-}
-
-
-if(item.hasGuestSubmitter()){
-    el.appendChild(new Element('span',{"class":"guest-submitter"}))
-}
+var types=item.getProjectTypes();
+types.slice(1).forEach(function(type){
+  var tag=el.appendChild(new Element('span', {"class":"field-value alt-tag"}));
+  RecentItems.colorizeEl(tag, type);
+    tag.addEvent('click', function(e){
+        e.stop();//Propagation()
+        UIInteraction.navigateToNamedCategoryType(type);
+    });
+});

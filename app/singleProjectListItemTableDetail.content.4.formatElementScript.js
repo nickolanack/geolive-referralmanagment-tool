@@ -1,2 +1,2 @@
 el.addClass("inline");
-el.setAttribute("data-col","modified");
+el.setAttribute("data-col","created");

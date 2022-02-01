@@ -1,2 +1,2 @@
 el.addClass("inline");
-el.setAttribute("data-col","community");
+el.setAttribute("data-col","ownership");
