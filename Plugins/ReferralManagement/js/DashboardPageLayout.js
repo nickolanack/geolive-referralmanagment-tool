@@ -514,7 +514,7 @@ var DashboardPageLayout = (function() {
 	}).addLayout('proposalOverviewStatus', function(content){
 
 		content=layout.filterIdentifier(content, ['flow-processing', 'flow-assessment'], AppClient.getUserType() != "guest");//'enableTasks');
-		content=layout.filterIdentifier(content, ['flow-proponent'], layout.currentItem().hasGuestSubmitter();//'enableTasks');
+		content=layout.filterIdentifier(content, ['flow-proponent'], layout.currentItem().hasGuestSubmitter());//'enableTasks');
 		return content;
 
 	}).addLayout('profileMenu', function(buttons) {
