@@ -35,6 +35,9 @@ span.guest-submitter:after {
     content: "";
     top: 0;
 }
+.created-by.guest-submitter > span.field-value {
+    color: coral;
+}
 
 .ui-view.priority-high.with-guest-submitter:before {
      left: 0px;
