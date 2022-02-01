@@ -26,6 +26,22 @@ span.guest-submitter:after {
     color: coral;
     margin: 0 10px;
 }
+.ui-view.with-guest-submitter:before{
+    width: 4px;
+    height: 100%;
+    background-color: coral;
+    position: absolute;
+    left: -4px;
+    content: "";
+    top: 0;
+}
+.created-by.guest-submitter > span.field-value {
+    color: coral;
+}
+
+.ui-view.priority-high.with-guest-submitter:before {
+     left: 0px;
+}
 
 
 span.field-label.clickable, span.field-value.clickable {
