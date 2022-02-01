@@ -55,7 +55,7 @@ var UIInteraction = (function() {
 			var controller = this._getApplication().getNamedValue('navigationController');
 
 			controller.navigateTo("Datasets", "Main", {
-				item: ProjectList.NamedCommunityProjectList(category)
+				item: ProjectList.NamedCommunityProjectList(typeName)
 			});
 
 		},
