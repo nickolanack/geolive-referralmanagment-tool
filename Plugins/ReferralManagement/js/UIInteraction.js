@@ -49,6 +49,17 @@ var UIInteraction = (function() {
 			});
 
 		},
+
+		navigateToNamedCommunityType: function(typeName) {
+
+			var controller = this._getApplication().getNamedValue('navigationController');
+
+			controller.navigateTo("Datasets", "Main", {
+				item: ProjectList.NamedCommunityProjectList(category)
+			});
+
+		},
+
 		addDatasetTypeEvents: function(child, childView, application) {
 
 			var me = this;

@@ -784,6 +784,28 @@ var ProjectList = (function() {
 
 	};
 
+	ProjectList.NamedCommunityProjectList=function(community){
+
+
+	
+
+
+		return new ProjectList({
+
+			"label": community +" "+ (DashboardConfig.getValue('showDatasets')?"Datasets & ":"")+(DashboardConfig.getValue('enableProposals')?"Projects":"Collections"),
+			"showCreateBtn": false,
+
+			projects:function(callback){
+
+		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+     				callback(team.getProjects().filter(function(p){
+     					return ([p.getProjectCommunity()]).concat(p.getCommunitiesInvolved).indexOf(community)>=0;
+     				}));
+     			});
+            }
+		});
+	},
+
 	ProjectList.NamedCategoryProjectList=function(category){
 
 
