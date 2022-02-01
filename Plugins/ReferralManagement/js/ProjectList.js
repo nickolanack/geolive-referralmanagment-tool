@@ -756,6 +756,10 @@ var ProjectList = (function() {
 
 		childView.getElement().addClass("priority-"+child.getPriority());
 
+		if(child.hasGuestSubmitter&&child.hasGuestSubmitter()){
+			childView.getElement().addClass("with-guest-submitter");
+		}
+
 		UIInteraction.addProjectOverviewClick(childView.getElement(), child);
 
 
