@@ -7,14 +7,14 @@ var communities=([item.getProjectCommunity()]).concat(item.getCommunitiesInvolve
 
 var types=communities;
 
- el.innerHTML=types[0];
+ valueEl.innerHTML=types[0];
 
 types.slice(1).forEach(function(type){
   var tag=el.appendChild(new Element('span', {"class":"field-value"}));
   tag.innerHTML=type;
-  //RecentItems.colorizeEl(tag, type);
+    RecentItems.colorizeEl(tag, type);
     tag.addEvent('click', function(e){
         e.stop();//Propagation()
-       // UIInteraction.navigateToNamedCategoryType(type);
+        UIInteraction.navigateToNamedCategoryType(type);
     });
 });
