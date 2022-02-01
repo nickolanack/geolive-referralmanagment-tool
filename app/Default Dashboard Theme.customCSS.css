@@ -20,6 +20,13 @@ button:focus {outline:0;}
     }
 }
 
+span.guest-submitter:after {
+    content: "\0f007";
+    font-family: 'FontAwesome';
+    color: coral;
+    margin: 0 10px;
+}
+
 
 span.field-label.clickable, span.field-value.clickable {
     color: white;
