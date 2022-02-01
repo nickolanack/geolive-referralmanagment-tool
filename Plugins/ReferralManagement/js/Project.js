@@ -342,14 +342,14 @@ var Project = (function() {
 			return me.data.userdetails.name;
 		},
 
-		isGuestCreator:function(){
+		hasGuestSubmitter:function(){
 			return this.getProjectSubmitterId()<=0;
 		},
 
 		getProjectSubmitter: function() {
 			var me = this;
 
-			if(this.isGuestCreator()){
+			if(this.hasGuestSubmitter()){
 				if(me.data.metadata&&me.data.metadata.email){
 					return me.data.metadata.email;
 				}

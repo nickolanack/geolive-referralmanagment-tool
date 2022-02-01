@@ -643,6 +643,15 @@ var DashboardPageLayout = (function() {
 					html: "Proponent",
 					config: "enableProposals"
 				},
+				{
+					html: "Proponent",
+					condition: function() {
+
+						var application = ReferralManagementDashboard.getApplication();
+						var project = application.getNamedValue("currentProject");
+						return project.hasGuestSubmitter();
+					}
+				},
 				// {
 				// 	html: ["Proponent", "Status"],
 				// 	condition: function() {
