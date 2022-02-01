@@ -11,6 +11,11 @@ if(!showRootCommunity){
     if(i>=0){
         communities.splice(i,1);
     }
+    
+}
+
+if(communities.length==0){
+    return;
 }
 
 var types=communities;
