@@ -8,6 +8,7 @@ var communities=([item.getProjectCommunity()]).concat(item.getCommunitiesInvolve
 var types=communities;
 
  valueEl.innerHTML=types[0];
+ RecentItems.colorizeEl(valueEl, types[0]);
 
 types.slice(1).forEach(function(type){
   var tag=el.appendChild(new Element('span', {"class":"field-value"}));
