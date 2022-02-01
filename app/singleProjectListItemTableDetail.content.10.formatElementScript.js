@@ -39,7 +39,7 @@ var plainTag=new NamedCategory({
 });
 
 types.slice(1).forEach(function(type,i){
-  var tag=el.appendChild(new Element('span', {"class":"field-value tag-alt"}));
+  var tag=el.appendChild(new Element('span', {"class":"field-value alt-tag"}));
     
     //tag.innerHTML=type;
     RecentItems.colorizeEl(tag, type, plainTag);
