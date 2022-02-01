@@ -44,6 +44,12 @@ span.guest-submitter:after {
 }
 
 
+.field-value-module.check[data-col="id"] .field-value {
+    color: $tagBtnColor;
+    font-size: 12px;
+}
+
+
 span.field-label.clickable, span.field-value.clickable {
     color: white;
 }
@@ -56,6 +62,8 @@ span.field-value.clickable .field-value {
     color: crimson;
     font-size: 20px;
 }
+
+
 
 
 .ui-list-view.hidden, .bar-chart.hidden, .ui-view.hidden {
