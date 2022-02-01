@@ -493,6 +493,8 @@ var DashboardPageLayout = (function() {
 
 		content=layout.filterIdentifierConfig(content, ['proposal-status', 'status-assessment', 'status-processing'], 'enableProposals');
 
+
+
 		content=layout.filterIdentifier(content, ['project-task-progress', 'project-task-remaining', 'project-task-deadline', 'project-tasks-overview'], !layout.currentItem().isDataset());
 		content=layout.filterIdentifier(content, 'activity-chart', !layout.currentItem().isDataset());//'enableTasks');
 
@@ -512,6 +514,7 @@ var DashboardPageLayout = (function() {
 	}).addLayout('proposalOverviewStatus', function(content){
 
 		content=layout.filterIdentifier(content, ['flow-processing', 'flow-assessment'], AppClient.getUserType() != "guest");//'enableTasks');
+		content=layout.filterIdentifier(content, ['flow-proponent'], layout.currentItem().hasGuestSubmitter();//'enableTasks');
 		return content;
 
 	}).addLayout('profileMenu', function(buttons) {
