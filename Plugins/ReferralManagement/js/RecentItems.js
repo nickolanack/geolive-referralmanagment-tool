@@ -76,33 +76,45 @@ var RecentItems = (function() {
 
 
 
-	RecentItems.colorizeEl = function(el, type) {
-		ReferralManagementDashboard.getProjectTagsData().filter(function(tag) {
-			if (tag.getName().toLowerCase() == type.toLowerCase()) {
-				el.setStyles({
-					"background-color": tag.getColor()
-				});
-
-				var c = tag.getColor();
-				if (c[0] == "#") {
-					var c = c.substring(1); // strip #
-					var rgb = parseInt(c, 16); // convert rrggbb to decimal
-					var r = (rgb >> 16) & 0xff; // extract red
-					var g = (rgb >> 8) & 0xff; // extract green
-					var b = (rgb >> 0) & 0xff; // extract blue
-
-					var luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // per ITU-R BT.709
-
-					if (luma < 40) {
-						el.addClass('is-dark');
-					} else {
-						el.addClass('is-light');
-					}
-				}
-
-			}
+	RecentItems.colorizeEl = function(el, type, defaultTag) {
+		var tags=ReferralManagementDashboard.getProjectTagsData().filter(function(tag) {
+			return tag.getName().toLowerCase() == type.toLowerCase();
 		});
 
+		if(tags.length){
+			RecentItems.colorizeElTag(el, tags[0]);
+			return;
+		}
+
+		if(defaultTag){
+			RecentItems.colorizeElTag(el, defaultTag);
+		}
+	};
+
+	RecentItems.colorizeElTag = function(el, tag) {
+		
+		el.setStyles({
+			"background-color": tag.getColor()
+		});
+
+		var c = tag.getColor();
+		if (c[0] == "#") {
+			var c = c.substring(1); // strip #
+			var rgb = parseInt(c, 16); // convert rrggbb to decimal
+			var r = (rgb >> 16) & 0xff; // extract red
+			var g = (rgb >> 8) & 0xff; // extract green
+			var b = (rgb >> 0) & 0xff; // extract blue
+
+			var luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // per ITU-R BT.709
+
+			if (luma < 40) {
+				el.addClass('is-dark');
+			} else {
+				el.addClass('is-light');
+			}
+		}
+
+			
 
 	};
 
