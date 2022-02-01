@@ -6,9 +6,20 @@ var communities=([item.getProjectCommunity()]).concat(item.getCommunitiesInvolve
 //return communities.slice(0,2).join(', ')+(communities.length>2?', '+communities.length+' other'+(communities.length==3?'':'s'):'')
 
 var types=communities;
+var plainTag=new NamedCategory({
+			name: "",
+			shortName: "",
+			description: "",
+			type: "Community.tag",
+			id: -1,
+			color: "#f0f0f0",
+			category: "_"
+		});
+
+
 
  valueEl.innerHTML=types[0];
- RecentItems.colorizeEl(valueEl, types[0]);
+ RecentItems.colorizeEl(valueEl, types[0], plainTag);
  el.addEvent('click', function(e){
     e.stop();//Propagation()
     UIInteraction.navigateToNamedCommunityType(types[0]);
@@ -17,7 +28,7 @@ var types=communities;
 types.slice(1).forEach(function(type){
   var tag=el.appendChild(new Element('span', {"class":"field-value"}));
   tag.innerHTML=type;
-    RecentItems.colorizeEl(tag, type);
+    RecentItems.colorizeEl(tag, type, plainTag);
     tag.addEvent('click', function(e){
         e.stop();//Propagation()
         UIInteraction.navigateToNamedCommunityType(type);
