@@ -367,6 +367,10 @@ var Project = (function() {
 
 		
 
+		getProjectCommunity:function(){
+			return this.data.community;
+		},
+
 		getCommunitiesInvolved: function() {
 
 			var me = this;
