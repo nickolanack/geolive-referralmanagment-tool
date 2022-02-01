@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "return '<div class=\"section-title section-padding\">Proponent submision workflow<\/div>';",
+        "script": "if(item.hasGuestSubmitter()){\n    return '<div class=\"section-title section-padding\">Proponent submision workflow<\/div>';\n}",
         "description": "Info about my custom script"
     }
 }
