@@ -799,7 +799,7 @@ var ProjectList = (function() {
 
 		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
      				callback(team.getProjects().filter(function(p){
-     					return ([p.getProjectCommunity()]).concat(p.getCommunitiesInvolved).indexOf(community)>=0;
+     					return ([p.getProjectCommunity()]).concat(p.getCommunitiesInvolved()).indexOf(community)>=0;
      				}));
      			});
             }
