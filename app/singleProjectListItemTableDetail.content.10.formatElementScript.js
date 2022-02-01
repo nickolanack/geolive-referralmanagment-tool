@@ -11,7 +11,7 @@ var types=communities;
  RecentItems.colorizeEl(valueEl, types[0]);
  el.addEvent('click', function(e){
     e.stop();//Propagation()
-    UIInteraction.navigateToNamedCategoryType(types[0]);
+    UIInteraction.navigateToNamedCommunityType(types[0]);
 });
 
 types.slice(1).forEach(function(type){
@@ -20,6 +20,6 @@ types.slice(1).forEach(function(type){
     RecentItems.colorizeEl(tag, type);
     tag.addEvent('click', function(e){
         e.stop();//Propagation()
-        UIInteraction.navigateToNamedCategoryType(type);
+        UIInteraction.navigateToNamedCommunityType(type);
     });
 });
