@@ -3,6 +3,7 @@
     "config": {
         "loadAsync": false,
         "identifier": "col-icon",
+        "className": "",
         "fieldLabelScript": "return \"\";",
         "fieldValueScript": "return \"\";",
         "formatElementScript": "el.addClass(\"inline icon\");\n\/\/el.setAttribute(\"data-col\",\"name\");"

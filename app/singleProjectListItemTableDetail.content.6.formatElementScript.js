@@ -34,4 +34,10 @@ if(el.hasClass('withItems')){
     				window.open(downloadQuery.getUrl(true),'Download'); 
 
     }}}))
+    
+}
+
+
+if(item.hasGuestSubmitter()){
+    el.appendChild(new Element('span',{"class":"guest-submitter"}))
 }
