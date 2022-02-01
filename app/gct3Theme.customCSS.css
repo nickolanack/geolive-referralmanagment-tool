@@ -14,7 +14,14 @@ span.field-value.is-dark {
 
 
 
-
+span.field-label.clickable, span.field-value.clickable {
+    color: #2e344b;
+}
+.dark{
+    span.field-label.clickable, span.field-value.clickable {
+        color: white;
+    }
+}
 
 
 .search-result-list.hybrid {
