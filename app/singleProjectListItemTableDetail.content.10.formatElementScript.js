@@ -38,6 +38,19 @@ var plainTag=new NamedCategory({
     UIInteraction.navigateToNamedCommunityType(types[0]);
 });
 
+
+var others=types.slice(1);
+if(others.length>0){
+    var othersEl=el.appendChild(new Element('span', {
+        "class":"field-value not-tag", 
+        "html":' '+others.length+ 'other'+(others.length==1?'':'s')
+        
+    }));
+}
+
+return;
+
+
 types.slice(1).forEach(function(type,i){
   var tag=el.appendChild(new Element('span', {"class":"field-value alt-tag"}));
     
