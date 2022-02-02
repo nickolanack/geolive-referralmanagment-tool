@@ -26,7 +26,7 @@ span.guest-submitter:after {
     color: coral;
     margin: 0 10px;
 }
-.ui-view.with-guest-submitter:before{
+.ui-view.with-guest-submitter:after{
     width: 4px;
     height: 100%;
     background-color: coral;
@@ -40,7 +40,7 @@ span.guest-submitter:after {
 }
 
 .ui-view.priority-high, .ui-view.priority-medium{
-    &.with-guest-submitter:before {
+    &.with-guest-submitter:after {
         left: 0px;
     }
 }
