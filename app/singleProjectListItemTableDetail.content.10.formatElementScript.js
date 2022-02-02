@@ -43,7 +43,7 @@ var others=types.slice(1);
 if(others.length>0){
     var othersEl=el.appendChild(new Element('span', {
         "class":"field-value not-tag", 
-        "html":' '+others.length+ 'other'+(others.length==1?'':'s')
+        "html":''+others.length+ ' other'+(others.length==1?'':'s')
         
     }));
 }
