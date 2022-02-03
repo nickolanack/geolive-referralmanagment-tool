@@ -255,8 +255,13 @@ button.primary-btn.nav-new-btn.view-selection:before {
     vertical-align: super;
 }
 
+
 .is-dataset .field-value-module.inline.icon:before {
     content: "\0f278";
+}
+
+.is-archived .field-value-module.inline.icon:before {
+    content: "\0f187";
 }
 
 
