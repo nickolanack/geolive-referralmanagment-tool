@@ -48,6 +48,7 @@ if(others.length>0){
     }));
     
     var content=new Element('div');
+    //var textContent='';
     
     types.slice(1).forEach(function(type,i){
         
@@ -61,7 +62,7 @@ if(others.length>0){
             UIInteraction.navigateToNamedCommunityType(type);
         });
         
-        
+        tag.innerHTML=type;
         
         
     });
