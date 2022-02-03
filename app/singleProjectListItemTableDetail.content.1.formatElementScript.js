@@ -9,5 +9,10 @@ if(item.getPermitIds){
         el.addClass('has-'+(permits.length)+'id'+(permits.length==1?'':'s'))
     }
     
-    el.appendChild(new Element('span',{"class":"id-items"}));
+    var ids=el.appendChild(new Element('span',{"class":"id-items"}));
+    
+     new UIPopover(module.getElement(),{
+        description:permits.join("<br/>");
+        anchor:UIPopover.AnchorAuto()
+    });
 }
