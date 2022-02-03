@@ -65,12 +65,12 @@ span.field-value.clickable .field-value {
 }
 
 
-.field-value-module.has-ids:after {
-    content: "\0f0a3";
-    font-family: 'FontAwesome';
-    display: inline-block;
-    float: left;
-    margin-right: 10px;
+.field-value-module.has-ids .id-items:after {
+  content: "";
+  font-family: 'FontAwesome';
+  display: inline-block;
+  float: left;
+  margin: 0 5px;
 }
 div.field-value-module.inline.ids{
     width: 60px;
