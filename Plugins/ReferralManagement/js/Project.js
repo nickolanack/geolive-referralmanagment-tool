@@ -361,7 +361,13 @@ var Project = (function() {
 				}
 			}
 
-			return me.data.userdetails.name + " " + me.data.userdetails.email;
+			var list=[me.data.userdetails.name, me.data.userdetails.email];
+			return (list).filter(function(str, i){
+				return list.indexOf(str)===i;
+			}).join(' ');
+		
+
+			
 		},
 
 		getProjectSubmitterId: function() {
