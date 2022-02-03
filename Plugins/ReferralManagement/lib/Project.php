@@ -165,7 +165,7 @@ class Project {
 		$database->updateProposal(array(
 			'id' => $proposalId,
 			//'user' => GetClient()->getUserId(),
-			'metadata' => '{}',
+			//'metadata' => '{}',
 			'modifiedDate' => date('Y-m-d H:i:s'),
 			'status' => 'active',
 		));
