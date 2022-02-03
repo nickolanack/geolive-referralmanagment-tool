@@ -18432,7 +18432,7 @@
                                     "identifier": "col-id",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
+                                    "fieldValueScript": "return parseInt(item.getId());",
                                     "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
                                 }
                             },
