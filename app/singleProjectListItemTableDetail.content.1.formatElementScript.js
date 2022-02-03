@@ -12,7 +12,7 @@ if(item.getPermitIds){
     var ids=el.appendChild(new Element('span',{"class":"id-items"}));
     
      new UIPopover(module.getElement(),{
-        description:permits.join("<br/>");
+        description:permits.join("<br/>"),
         anchor:UIPopover.AnchorAuto()
     });
 }
