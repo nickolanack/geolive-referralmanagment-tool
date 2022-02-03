@@ -26,7 +26,7 @@ span.guest-submitter:after {
     color: coral;
     margin: 0 10px;
 }
-.ui-view.with-guest-submitter:before{
+.ui-view.with-guest-submitter:after{
     width: 4px;
     height: 100%;
     background-color: coral;
@@ -39,10 +39,11 @@ span.guest-submitter:after {
     color: coral;
 }
 
-.ui-view.priority-high.with-guest-submitter:before {
-     left: 0px;
+.ui-view.priority-high, .ui-view.priority-medium{
+    &.with-guest-submitter:after {
+        left: 0px;
+    }
 }
-
 
 .field-value-module.check[data-col="id"] .field-value {
     color: $tagBtnColor;
@@ -63,6 +64,17 @@ span.field-value.clickable .field-value {
     font-size: 20px;
 }
 
+
+.field-value-module.has-ids .id-items:after {
+  content: "";
+  font-family: 'FontAwesome';
+  display: inline-block;
+  float: left;
+  margin: 0 5px;
+}
+div.field-value-module.inline.ids{
+    width: 60px;
+}
 
 
 
@@ -3195,7 +3207,7 @@ button.inline-btn.with-no-tasks {
 }
 
 
-.ui-view.priority-high, .ui-view.priority {
+.ui-view.priority-high, .ui-view.priority-medium, .ui-view.priority,  {
     
     &:before{
         width: 4px;
@@ -3213,6 +3225,12 @@ button.inline-btn.with-no-tasks {
         background-color: mediumseagreen;
      }
     
+}
+
+
+
+.ui-view.priority-medium:before{
+    background-color: mediumaquamarine;
 }
 
 

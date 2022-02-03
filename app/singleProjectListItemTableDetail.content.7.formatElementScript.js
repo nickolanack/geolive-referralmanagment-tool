@@ -39,5 +39,9 @@ if(el.hasClass('withItems')){
 
 
 if(item.hasGuestSubmitter()){
-    el.appendChild(new Element('span',{"class":"guest-submitter"}))
+    var guest=el.appendChild(new Element('span',{"class":"guest-submitter"}))
+    new UIPopover(guest, {
+        description:item.getProjectSubmitter(),
+        anchor:UIPopover.AnchorAuto()
+    });
 }
