@@ -69,7 +69,8 @@ if(others.length>0){
     
     new UIPopover(othersEl, {
         content:content,
-        anchor:UIPopover.AnchorAuto()
+        anchor:UIPopover.AnchorAuto(),
+        clickable:true
     });
     
 }
