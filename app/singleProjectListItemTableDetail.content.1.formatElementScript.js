@@ -1,4 +1,4 @@
-el.addClass("inline check");
+el.addClass("inline ids");
 el.setAttribute("data-col","id");
 
 
