@@ -89,6 +89,7 @@ var RecentItems = (function() {
 		if(defaultTag){
 			RecentItems.colorizeElTag(el, defaultTag);
 		}
+		
 	};
 
 	RecentItems.colorizeElTag = function(el, tag) {

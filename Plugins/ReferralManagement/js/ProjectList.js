@@ -760,6 +760,10 @@ var ProjectList = (function() {
 			childView.getElement().addClass("with-guest-submitter");
 		}
 
+		if(child.isArchived()){
+			childView.getElement().addClass("is-archived");
+		}
+
 		UIInteraction.addProjectOverviewClick(childView.getElement(), child);
 
 
