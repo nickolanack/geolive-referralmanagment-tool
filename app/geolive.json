@@ -160,7 +160,9 @@
         "parameters": {
             "releaseServer": "http:\/\/release.geolive.ca",
             "releasePackage": "master",
-            "autoUpdate": false
+            "autoUpdate": false,
+            "composerPath": "\/usr\/bin\/composer",
+            "bowerPath": ""
         }
     },
     "plugin.24": {
@@ -173,23 +175,10 @@
                 "pluginView": "front"
             },
             "routes": [
-                "plugin.UserInterface.24.routes.0.json",
-                {
-                    "name": "projectfiles",
-                    "view": "plugin",
-                    "plugin": "ReferralManagement",
-                    "pluginView": "file"
-                },
-                {
-                    "name": "proposal",
-                    "view": "plugin",
-                    "plugin": "UserInterface",
-                    "pluginView": "widget",
-                    "widget": "proponent"
-                }
+                "plugin.UserInterface.24.routes.0.json"
             ],
-            "useRemoteServerUI": false,
-            "remoteServerUrl": ""
+            "useRemoteServerUI": true,
+            "remoteServerUrl": "https:\/\/gct3.gather.geoforms.ca\/app\/nickolanack\/php-core-app\/core.php?task=TASK&format=ajax&json=JSON"
         }
     },
     "plugin.28": {
@@ -19663,6 +19652,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return \"\";",
                                     "formatElementScript": "datasetItemView.metadata.positions.content.modules.3.config.formatElementScript.js"
@@ -23516,7 +23506,7 @@
             "widgetTitle": "Kml renderer",
             "target": "kmlDocumentRenderer",
             "cacheable": true,
-            "allowExternalFilePaths": false,
+            "allowExternalFilePaths": true,
             "allowExternalUrls": false,
             "resolveSpatialFilePathScript": "Kml renderer.resolveSpatialFilePathScript.js",
             "formatSpatialFileRendererScript": "Kml renderer.formatSpatialFileRendererScript.js",
