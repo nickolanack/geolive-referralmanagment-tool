@@ -22,6 +22,13 @@ var ItemCategories=(function(){
 			var type= me.data.attributes.type || "";
 
 			if(!type){
+
+				if(me.data.metadata&&me.data.metadata.file){
+					var file=me.data.metadata.file.file||me.data.metadata.file.split('/').slice(0,-1).join('/')
+					return [file];
+				}
+
+
 				return [];
 			}
 			if(typeof type=="string"){
