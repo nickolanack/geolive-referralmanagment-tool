@@ -1,2 +1,2 @@
 
-return '<div class="section-title">'+item.getName()+'</div>';
+return '<div class="section-title">'+item.getName().split('/').pop()+'</div>';

@@ -19663,6 +19663,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return \"\";",
                                     "formatElementScript": "datasetItemView.metadata.positions.content.modules.3.config.formatElementScript.js"
@@ -22484,16 +22485,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 344,
-                            "y": 250
+                            "x": 354,
+                            "y": 260
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 304,
-                                    "y": 501
+                                    "x": 314,
+                                    "y": 511
                                 }
                             }
                         ],
@@ -22657,6 +22658,20 @@
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.8.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
+                                        {
+                                            "type": "FormBooleanField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Render as tile images",
+                                                "identifier": "boolean-field",
+                                                "mandatory": false,
+                                                "getValueScript": "return item.getRenderTiles();",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.9.config.submitValueScript.js",
+                                                "validateValueScript": "",
+                                                "formatElementScript": ""
                                             }
                                         }
                                     ]
@@ -24383,6 +24398,20 @@
             "formatModulesScript": "",
             "notifyViewer": false,
             "useRemote": ""
+        }
+    },
+    "widget.431": {
+        "name": "Tile Renderer",
+        "instance": "TileRenderer",
+        "parameters": {
+            "widgetTitle": "kmlDocumentTileRenderer",
+            "target": "kmlDocumentTileRenderer",
+            "cacheable": true,
+            "allowExternalFilePaths": false,
+            "allowExternalUrls": false,
+            "resolveSpatialFilePathScript": "kmlDocumentTileRenderer.resolveSpatialFilePathScript.js",
+            "formatSpatialFileRendererScript": "",
+            "readAccess": "public"
         }
     }
 }

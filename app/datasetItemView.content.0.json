@@ -3,6 +3,7 @@
     "config": {
         "loadAsync": false,
         "identifier": "",
+        "className": "",
         "fieldLabelScript": "return \"\";",
         "fieldValueScript": "return \"\";",
         "formatElementScript": "\nNamedCategory.AddStyle(item, el,labelEl);"

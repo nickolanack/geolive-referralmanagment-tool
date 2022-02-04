@@ -248,6 +248,13 @@ button.primary-btn.nav-new-btn.view-selection:before {
     
 }
 
+.tip-text .alt-tag {
+    padding: 2px 4px;
+    margin: 3px;
+    display: inline-block;
+    cursor: pointer;
+}
+
 .field-value-module.inline.icon:before {
     content: "\f1b2";
     font-family: 'FontAwesome';
@@ -255,8 +262,13 @@ button.primary-btn.nav-new-btn.view-selection:before {
     vertical-align: super;
 }
 
+
 .is-dataset .field-value-module.inline.icon:before {
     content: "\0f278";
+}
+
+.is-archived .field-value-module.inline.icon:before {
+    content: "\0f187";
 }
 
 
