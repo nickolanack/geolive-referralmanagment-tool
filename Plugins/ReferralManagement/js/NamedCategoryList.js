@@ -111,6 +111,15 @@ var NamedCategoryList = (function() {
 
 			category=category.toLowerCase();
 
+			
+			if(!this._cacheFlat){
+				this._cacheFlat={};
+			}
+			if(this._cacheFlat[category]){
+				return this._cacheFlat[category];
+			}
+
+
 
 			if(typeof list=="undefined"){
 				list=[];
@@ -125,6 +134,10 @@ var NamedCategoryList = (function() {
 					this._flattenTagTree(child, list);
 				}
 			}, this);
+
+
+			this._cacheFlat[category]=list;
+			
 
 			return list;
 
