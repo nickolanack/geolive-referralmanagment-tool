@@ -110,8 +110,8 @@ var Project = (function() {
 
 		getMetadataTags:function(){
 			var tags=[];
-			if(this.data.metadata&&this.metadata.iam){
-				tags.push('iam-'+this.metadata.iam);
+			if(this.data.metadata&&this.data.metadata.iam){
+				tags.push('iam-'+this.data.metadata.iam);
 			}
 
 			return tags;
