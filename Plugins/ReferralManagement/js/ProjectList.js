@@ -756,6 +756,12 @@ var ProjectList = (function() {
 
 		childView.getElement().addClass("priority-"+child.getPriority());
 
+		if(child.getMetadataTags){
+			child.getMetadataTags().forEach(function(tag){
+				childView.getElement().addClass(tag);
+			});
+		}
+
 		if(child.hasGuestSubmitter&&child.hasGuestSubmitter()){
 			childView.getElement().addClass("with-guest-submitter");
 		}

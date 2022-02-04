@@ -108,7 +108,16 @@ var Project = (function() {
 			return (this.data.attributes && (this.data.attributes.isDataset === true || this.data.attributes.isDataset === "true"));
 		},
 
-		getDatasetAttributes(itemIndex){
+		getMetadataTags:function(){
+			var tags=[];
+			if(this.data.metadata&&this.metadata.iam){
+				tags.push('iam-'+this.metadata.iam);
+			}
+
+			return tags;
+		},
+
+		getDatasetAttributes:function(itemIndex){
 			itemIndex=parseInt(itemIndex)||0;
 
 
