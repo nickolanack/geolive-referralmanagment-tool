@@ -91,7 +91,7 @@ var NamedCategoryList = (function() {
 				return true;
 			}
 
-			var tags=this._flattenTagTree(category);
+			var tags=this.flatTagTree(category);
 			
 			for (var i = 0; i < types.length; i++) {
 				for (var j = 0; j < tags.length; j++) {
@@ -107,11 +107,8 @@ var NamedCategoryList = (function() {
 
 		},
 
-		_flattenTagTree:function(category, list){
+		flatTagTree:function(category){
 
-			category=category.toLowerCase();
-
-			
 			if(!this._cacheFlat){
 				this._cacheFlat={};
 			}
@@ -119,6 +116,15 @@ var NamedCategoryList = (function() {
 				return this._cacheFlat[category];
 			}
 
+
+			this._cacheFlat[category]=this._flattenTagTree(category);
+			return this._cacheFlat[category];
+
+		},
+
+		_flattenTagTree:function(category, list){
+
+			category=category.toLowerCase();
 
 
 			if(typeof list=="undefined"){
@@ -135,10 +141,6 @@ var NamedCategoryList = (function() {
 				}
 			}, this);
 
-
-			this._cacheFlat[category]=list;
-			
-
 			return list;
 
 		},
@@ -150,7 +152,7 @@ var NamedCategoryList = (function() {
 
 			if(recursive!==false){
 				
-				tags=this._flattenTagTree(category);
+				tags=this.flatTagTree(category);
 
 			}
 
