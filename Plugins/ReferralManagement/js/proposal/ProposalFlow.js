@@ -182,7 +182,7 @@ var ProposalFlow = (function() {
 				currentEl.removeClass('complete');
 			}
 
-		}
+		},
 
 		addStep: function() {
 
