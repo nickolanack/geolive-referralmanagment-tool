@@ -77,7 +77,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		$state=array_merge($state, $data);
 		(new attributes\Record('proposalAttributes'))->setValues($json->id, 'ReferralManagement.proposal', array(
-			'stateData' => $json->priority,
+			'stateData' => json_encode($state),
 		));
 
 
