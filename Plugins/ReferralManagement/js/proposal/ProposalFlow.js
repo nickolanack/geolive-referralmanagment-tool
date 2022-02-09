@@ -2,6 +2,10 @@ var ProposalFlow = (function() {
 
 
 
+	
+
+
+
 	var currentItem=null;
 	var stateFlows={};
 
@@ -57,6 +61,20 @@ var ProposalFlow = (function() {
 			this._appendStep = appendStep;
 			this.element = content;
 
+
+			this.addEvent('current', function(){
+				var setStateQuery=new AjaxControlQuery(CoreAjaxUrlRoot, 'set_state_data', {
+			        "plugin": "ReferralManagement",
+			        "proposal":item.getId(),
+			    });
+
+				setStateQuery.addEvent('success',function(){
+
+
+
+				}).execute();
+
+			});
 
 
 		},
