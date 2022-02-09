@@ -134,12 +134,13 @@ var ProposalFlow = (function() {
 			var clickIndex = els.indexOf(el);
 
 			el.addEvent('click', function() {
-				setCurrent(clickIndex);
+				me.setCurrent(clickIndex);
 			});
 		},
 
 		setCurrent: function(index){
 
+			var me=this;
 			var els=this.els;
 			var options=this.options;
 
