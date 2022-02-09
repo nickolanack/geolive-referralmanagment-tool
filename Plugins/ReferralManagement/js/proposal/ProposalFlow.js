@@ -62,7 +62,9 @@ var ProposalFlow = (function() {
 
 			});
 
-		
+		if(stateData[stateName]){
+			flow.setCurrent(stateData[stateName]);
+		}
 	
 
 	}
@@ -90,6 +92,9 @@ var ProposalFlow = (function() {
 			var els = [];
 			var me = this;
 			me.els = els;
+
+
+			me._currentIndex=0;
 
 			var appendStep = function(name, options) {
 
@@ -141,6 +146,10 @@ var ProposalFlow = (function() {
 			var clickIndex = els.indexOf(el);
 
 			el.addEvent('click', function() {
+				if(el.hasClass('current')){
+					me.setCurrent(clickIndex+1);
+					return;
+				}
 				me.setCurrent(clickIndex);
 			});
 		},
@@ -148,18 +157,21 @@ var ProposalFlow = (function() {
 		setCurrent: function(index){
 
 			var me=this;
+
+			me._currentIndex=index;
+
 			var els=this.els;
 			var options=this.options;
 
 			var currentEl = els[index];
 			//var index = clickIndex;
 
-			console.log('click index:' + index);
+			// console.log('click index:' + index);
 
-			if (options.unclickable === true) {
-				currentEl.removeClass('clickable');
-				currentEl.removeEvents('click');
-			}
+			// if (options.unclickable === true) {
+			// 	currentEl.removeClass('clickable');
+			// 	currentEl.removeEvents('click');
+			// }
 
 			if (currentEl.hasClass('current') && options.completable !== false) {
 				index++;
