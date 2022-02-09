@@ -65,6 +65,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		$data=get_object_vars($json->data);
 
 
+		GetPlugin('Attributes');
 
 
 		$attributes = (new attributes\Record('proposalAttributes'))->getValues($json->id, 'ReferralManagement.proposal');
