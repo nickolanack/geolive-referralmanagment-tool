@@ -62,10 +62,11 @@ var ProposalFlow = (function() {
 			this.element = content;
 
 
-			this.addEvent('current', function(){
+			this.addEvent('current', function(index){
 				var setStateQuery=new AjaxControlQuery(CoreAjaxUrlRoot, 'set_state_data', {
 			        "plugin": "ReferralManagement",
 			        "proposal":item.getId(),
+			        "data":{stateName: index}
 			    });
 
 				setStateQuery.addEvent('success',function(){
