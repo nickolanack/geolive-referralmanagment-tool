@@ -57,7 +57,32 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function setStateData($json) {
 
-		return true;
+
+		if (!Auth('write', $json->id, 'ReferralManagement.proposal')) {
+			return $this->setError('No access or does not exist');
+		}
+
+		$data=get_object_vars($json->data);
+
+
+
+
+		$attributes = (new attributes\Record('proposalAttributes'))->getValues($json->id, 'ReferralManagement.proposal');
+
+		$state=json_decode($attributes['stateData'], true);
+		if(is_null($state)){
+			$state=array();
+		}
+
+		$state=array_merge($state, $data);
+		(new attributes\Record('proposalAttributes'))->setValues($json->id,, 'ReferralManagement.proposal', array(
+			'stateData' => $json->priority,
+		));
+
+
+		return array(
+			'stateData'=>$state
+		);
 	}
 
 	protected function getUserRoles($json) {

@@ -70,7 +70,7 @@ var ProposalFlow = (function() {
 
 				var setStateQuery=new AjaxControlQuery(CoreAjaxUrlRoot, 'set_state_data', {
 			        "plugin": "ReferralManagement",
-			        "proposal":item.getId(),
+			        "id":item.getId(),
 			        "data":data
 			    });
 
