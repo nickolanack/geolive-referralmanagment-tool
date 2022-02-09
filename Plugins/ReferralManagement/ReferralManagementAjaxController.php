@@ -55,34 +55,61 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		));
 	}
 
-	protected function setStateData($json) {
+	protected function getStateData($json) {
 
+		if (!Auth('read', $json->id, 'ReferralManagement.proposal')) {
+			return $this->setError('No access or does not exist');
+		}
+
+		GetPlugin('Attributes');
+
+		$attributes = (new attributes\Record('proposalAttributes'))->getValues($json->id, 'ReferralManagement.proposal');
+
+		$currentState = json_decode($attributes['stateData'], true);
+		if (is_null($currentState)) {
+			$currentState = array();
+		}
+
+		return array(
+			'stateData' => $currentState,
+			'subscription' => array(
+				'channel' => 'projectstate.'.$json->id,
+				'event' => 'update',
+			),
+		);
+	}
+
+	protected function setStateData($json) {
 
 		if (!Auth('write', $json->id, 'ReferralManagement.proposal')) {
 			return $this->setError('No access or does not exist');
 		}
 
-		$data=get_object_vars($json->data);
-
+		$data = get_object_vars($json->data);
 
 		GetPlugin('Attributes');
 
-
 		$attributes = (new attributes\Record('proposalAttributes'))->getValues($json->id, 'ReferralManagement.proposal');
 
-		$state=json_decode($attributes['stateData'], true);
-		if(is_null($state)){
-			$state=array();
+		$currentState = json_decode($attributes['stateData'], true);
+		if (is_null($currentState)) {
+			$currentState = array();
 		}
 
-		$state=array_merge($state, $data);
-		(new attributes\Record('proposalAttributes'))->setValues($json->id, 'ReferralManagement.proposal', array(
-			'stateData' => json_encode($state),
-		));
+		$newState = array_merge($currentState, $data);
+		ksort($newState);
 
+		if (json_encode($currentState) !== json_encode($newState)) {
+
+			(new attributes\Record('proposalAttributes'))->setValues($json->id, 'ReferralManagement.proposal', array(
+				'stateData' => json_encode($newState),
+			));
+
+			Broadcast('projectstate.'.$json->id, 'update', array('state' => $newState));
+		}
 
 		return array(
-			'stateData'=>$state
+			'stateData' => $newState,
 		);
 	}
 
@@ -616,7 +643,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		return array(
 			'token' => $clientToken,
-			'link' => HtmlDocument()->website() . '/proposal/' . $json->id . '/' . $clientToken
+			'link' => HtmlDocument()->website() . '/proposal/' . $json->id . '/' . $clientToken,
 		);
 
 	}
@@ -630,9 +657,6 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		// );
 
 	}
-
-
-	
 
 	protected function exportProposals($json) {
 
