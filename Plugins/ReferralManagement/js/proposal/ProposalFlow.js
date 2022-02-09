@@ -75,7 +75,7 @@ var ProposalFlow = (function() {
 
 		initialize: function(stateName, item) {
 
-			setStateItem(this, stateName, item);
+			
 
 
 			var content = new Element('div');
@@ -87,14 +87,14 @@ var ProposalFlow = (function() {
 			}));
 
 			var last = null;
-
-
 			var els = [];
 			var me = this;
 			me.els = els;
-
-
 			me._currentIndex=0;
+
+
+			setStateItem(this, stateName, item);
+
 
 			var appendStep = function(name, options) {
 
