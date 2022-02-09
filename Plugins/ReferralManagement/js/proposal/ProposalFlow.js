@@ -37,6 +37,31 @@ var ProposalFlow = (function() {
 
 		stateFlows[stateName] = flow;
 
+
+		flow.addEvent('current', function(index) {
+
+
+				if(stateData[stateName]===index){
+					return;
+				}
+
+				var data = {};
+				data[stateName] = index;
+
+				var setStateQuery = new AjaxControlQuery(CoreAjaxUrlRoot, 'set_state_data', {
+					"plugin": "ReferralManagement",
+					"id": item.getId(),
+					"data": data
+				});
+
+				setStateQuery.addEvent('success', function() {
+
+
+
+				}).execute();
+
+			});
+
 		
 	
 
@@ -92,25 +117,7 @@ var ProposalFlow = (function() {
 			this.element = content;
 
 
-			this.addEvent('current', function(index) {
-
-
-				var data = {};
-				data[stateName] = index;
-
-				var setStateQuery = new AjaxControlQuery(CoreAjaxUrlRoot, 'set_state_data', {
-					"plugin": "ReferralManagement",
-					"id": item.getId(),
-					"data": data
-				});
-
-				setStateQuery.addEvent('success', function() {
-
-
-
-				}).execute();
-
-			});
+			
 
 
 
