@@ -16,7 +16,7 @@ var ProposalFlow = (function() {
 		initialize: function(stateName, item) {
 
 			if(currentItem!==item){
-				item=currentItem;
+				currentItem=item;
 				stateFlows={};
 			}
 
