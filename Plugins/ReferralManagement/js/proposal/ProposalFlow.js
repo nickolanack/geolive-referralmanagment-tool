@@ -115,6 +115,10 @@ var ProposalFlow = (function() {
 					me._addInteraction(el, options);
 				}
 
+
+				me.setCurrent(me._currentIndex);
+
+
 				return el;
 			}
 
@@ -146,7 +150,13 @@ var ProposalFlow = (function() {
 			var clickIndex = els.indexOf(el);
 
 			el.addEvent('click', function() {
-				if(el.hasClass('current')){
+
+				if (options.unclickable === true) {
+					el.removeClass('clickable');
+					el.removeEvents('click');
+				}
+
+				if(el.hasClass('current') && options.completable !== false){
 					me.setCurrent(clickIndex+1);
 					return;
 				}
@@ -163,25 +173,14 @@ var ProposalFlow = (function() {
 			var els=this.els;
 			var options=this.options;
 
-			var currentEl = els[index];
-			//var index = clickIndex;
-
-			// console.log('click index:' + index);
-
-			// if (options.unclickable === true) {
-			// 	currentEl.removeClass('clickable');
-			// 	currentEl.removeEvents('click');
-			// }
-
-			if (currentEl.hasClass('current') && options.completable !== false) {
-				index++;
-				currentEl = null;
-				if (els.length > index) {
-					currentEl = els[index];
-				}
 
 
+			var currentEl = null;
+			if(els.length>index){
+				currentEl=els[index];
 			}
+
+			
 
 
 			els.forEach(function(e, i) {
@@ -203,6 +202,9 @@ var ProposalFlow = (function() {
 			}
 
 		},
+
+
+
 
 		addStep: function() {
 
