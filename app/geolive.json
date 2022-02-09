@@ -12195,12 +12195,12 @@
             "metadata": {
                 "title": "proposalAttributes",
                 "_tableDiagramState": {
-                    "x": 307,
-                    "y": 261
+                    "x": 322,
+                    "y": 275
                 },
                 "_diagramState": {
-                    "x": 307,
-                    "y": 261
+                    "x": 322,
+                    "y": 275
                 },
                 "appliesTo": [
                     "proposal"
@@ -13629,11 +13629,11 @@
                         "label": "Permit Number",
                         "description": "",
                         "icon": [],
-                        "color": "rgb(NaN, NaN, NaN)",
+                        "color": "rgb(undefined, undefined, undefined)",
                         "visibility": "public",
                         "editability": "registered",
                         "searchability": "public",
-                        "allowMultiple": true,
+                        "allowMultiple": false,
                         "fieldType": "text",
                         "fieldTextOptions": {
                             "textType": "input",
