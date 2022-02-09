@@ -5,6 +5,7 @@ var ProposalFlow = (function() {
 	var currentItem = null;
 	var stateFlows = {};
 	var stateData={};
+	var stateLoaded={};
 
 
 	var setStateItem=function(flow, stateName, item){
@@ -13,6 +14,8 @@ var ProposalFlow = (function() {
 		if (currentItem !== item) {
 			currentItem = item;
 			stateFlows = {};
+			stateData={};
+			stateLoaded={};
 
 
 			var getStateQuery = new AjaxControlQuery(CoreAjaxUrlRoot, 'get_state_data', {
@@ -30,6 +33,7 @@ var ProposalFlow = (function() {
 					stateData=resp.stateData;
 				});
 
+				stateLoaded[stateName]=true;
 
 			}).execute()
 
