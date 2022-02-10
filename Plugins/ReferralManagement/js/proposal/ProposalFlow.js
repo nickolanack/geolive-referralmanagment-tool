@@ -28,12 +28,14 @@ var ProposalFlow = (function() {
 				Object.keys(resp.stateData).forEach(function(n){
 					if(stateFlows[n]){
 						stateFlows[n].setCurrent(resp.stateData[n]);
+						stateLoaded[n]=true;
 					}
 
 					stateData=resp.stateData;
+
 				});
 
-				stateLoaded[stateName]=true;
+				
 
 			}).execute()
 
