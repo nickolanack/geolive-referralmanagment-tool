@@ -128,9 +128,9 @@ var ProposalFlow = (function() {
 			this._item = item;
 			this._currentIndex = 0;
 
-			var content = new Element('div');
+			this.element = new Element('div');
 
-			var proponentFlow = content.appendChild(new Element('ul', {
+			this.flowEl = this.element.appendChild(new Element('ul', {
 				"class": "flow"
 			}));
 
@@ -142,7 +142,6 @@ var ProposalFlow = (function() {
 
 			
 
-			this.element = content;
 
 		},
 
@@ -150,7 +149,7 @@ var ProposalFlow = (function() {
 
 			options = options || {};
 
-			var el = proponentFlow.appendChild(new Element('li', options || {}));
+			var el = this.flowEl.appendChild(new Element('li', options || {}));
 			el.setAttribute('data-label', name);
 			if (this._last) {
 				this._last.appendChild(new Element('span'));
