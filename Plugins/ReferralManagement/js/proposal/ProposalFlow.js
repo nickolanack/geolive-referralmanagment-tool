@@ -124,14 +124,11 @@ var ProposalFlow = (function() {
 
 		initialize: function(stateName, item) {
 
-
 			this._stateName = stateName;
 			this._item = item;
 			me._currentIndex = 0;
 
 			var content = new Element('div');
-
-
 
 			var proponentFlow = content.appendChild(new Element('ul', {
 				"class": "flow"
@@ -142,19 +139,13 @@ var ProposalFlow = (function() {
 			var me = this;
 			me.els = els;
 
-
-
 			FlowGroup.AddFlowItem(this);
-
 
 			var me._stepOptions=[];
 
 			this.element = content;
 
-
-
 		},
-
 
 		appendStep:function(name, options) {
 
