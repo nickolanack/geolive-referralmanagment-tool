@@ -201,6 +201,10 @@ div.field-value-module.inline.ids{
     
 }
 
+.with-project-detail-click {
+    cursor: pointer;
+}
+
 [data-view="singleProjectUsersDetail"] .ui-list-view {
     margin-bottom: 40px;
 }
