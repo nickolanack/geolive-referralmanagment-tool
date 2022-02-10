@@ -5,7 +5,7 @@ var ProposalFlow = (function() {
 	var currentItem = null;
 	var stateFlows = {};
 	var stateData={};
-	var stateLoaded={};
+	var stateLoaded=false
 
 
 	var setStateItem=function(flow, stateName, item){
@@ -15,7 +15,7 @@ var ProposalFlow = (function() {
 			currentItem = item;
 			stateFlows = {};
 			stateData={};
-			stateLoaded={};
+			stateLoaded=false
 
 
 			var getStateQuery = new AjaxControlQuery(CoreAjaxUrlRoot, 'get_state_data', {
@@ -28,9 +28,9 @@ var ProposalFlow = (function() {
 				Object.keys(resp.stateData).forEach(function(n){
 					if(stateFlows[n]){
 						stateFlows[n].setCurrent(resp.stateData[n]);
-						stateLoaded[n]=true;
+						
 					}
-
+					stateLoaded=true;
 					stateData=resp.stateData;
 
 				});
@@ -51,7 +51,7 @@ var ProposalFlow = (function() {
 					return;
 				}
 
-				if(stateLoaded[stateName]!==true){
+				if(stateLoaded!==true){
 					//default state is 0, initialization would trigger write before state is queried
 					return;
 				}
