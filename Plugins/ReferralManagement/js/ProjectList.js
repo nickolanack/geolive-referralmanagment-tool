@@ -410,7 +410,7 @@ var ProjectList = (function() {
 		}
 
 		var btn = new Element("button", {
-			"class": "inline-btn primary-btn " + options.className,
+			"class": "inline-btn primary-btn " + options.className+" form-"+options.formName,
 			"events": {
 				"click": function() {
 
