@@ -2,20 +2,16 @@ var ProposalFlow = (function() {
 
 
 
-	var currentItem = null;
-	var stateFlows = {};
-	var stateData={};
-	var stateLoaded=false
+	var FlowGroup = new Class({
+
+		initialize: function(item) {
+			this._item = item;
 
 
-	var setStateItem=function(flow, stateName, item){
+			this._stateFlows = {};
+			this._stateData = {};
+			this._statesLoaded=false;
 
-
-		if (currentItem !== item) {
-			currentItem = item;
-			stateFlows = {};
-			stateData={};
-			stateLoaded=false
 
 
 			var getStateQuery = new AjaxControlQuery(CoreAjaxUrlRoot, 'get_state_data', {
@@ -23,60 +19,102 @@ var ProposalFlow = (function() {
 				"id": item.getId()
 			});
 
-			getStateQuery.addEvent('success',function(resp){
+			var me=this;
 
-				Object.keys(resp.stateData).forEach(function(n){
-					if(stateFlows[n]){
-						stateFlows[n].setCurrent(resp.stateData[n]);
-						
+			getStateQuery.addEvent('success', function(resp) {
+
+				Object.keys(resp.stateData).forEach(function(n) {
+					if (me._stateFlows[n]) {
+						me._stateFlows[n].setCurrent(resp.stateData[n]);
+
 					}
-					stateLoaded=true;
-					stateData=resp.stateData;
+					me._statesLoaded = true;
+					me._stateData = resp.stateData;
 
 				});
 
-				
+
 
 			}).execute()
 
-		}
 
-		stateFlows[stateName] = flow;
+		},
+		getItem: function() {
+			return this._item;
+		},
+		remove: function() {
+			//cleanup remove events/subs
+		},
+		addFlow: function(flow) {
 
 
-		flow.addEvent('current', function(index) {
+			var stateName=flow.getStateName();
 
+			this._stateFlows[stateName] = flow;
 
-				if(stateData[stateName]===index){
-					return;
-				}
+			flow.addEvent('current', function(index) {
 
-				if(stateLoaded!==true){
-					//default state is 0, initialization would trigger write before state is queried
-					return;
-				}
+			if (this._stateData[stateName] === index) {
+				return;
+			}
 
-				var data = {};
-				data[stateName] = index;
+			if (this._statesLoaded !== true) {
+				//default state is 0, initialization would trigger write before state is queried
+				return;
+			}
 
-				var setStateQuery = new AjaxControlQuery(CoreAjaxUrlRoot, 'set_state_data', {
-					"plugin": "ReferralManagement",
-					"id": item.getId(),
-					"data": data
-				});
+			var data = {};
+			data[stateName] = index;
 
-				setStateQuery.addEvent('success', function(resp) {
-
-					stateData[stateName]=resp.stateData[stateName];
-
-				}).execute();
-
+			var setStateQuery = new AjaxControlQuery(CoreAjaxUrlRoot, 'set_state_data', {
+				"plugin": "ReferralManagement",
+				"id": item.getId(),
+				"data": data
 			});
 
-		if(stateData[stateName]){
-			flow.setCurrent(stateData[stateName]);
+			setStateQuery.addEvent('success', function(resp) {
+
+				this._stateData[stateName] = resp.stateData[stateName];
+
+			}).execute();
+
+		});
+
+		if (this._stateData[stateName]) {
+			flow.setCurrent(this._stateData[stateName]);
 		}
+
+
+		}
+
+
+	});
+
+
+
+
+
+
+
+	var currentGroup = null;
+
+
+
+	FlowGroup.AddFlowItem = function(flow) {
+
+
+		if ((!currentGroup) || currentGroup.getItem() !== flow.getItem()) {
+
+			if (currentGroup) {
+				currentGroup.remove();
+			}
+
+			currentGroup = new FlowGroup(flow.getItem());
 	
+
+		}
+
+		currentGroup.addFlow(flow);
 
 	}
 
@@ -86,8 +124,10 @@ var ProposalFlow = (function() {
 
 		initialize: function(stateName, item) {
 
-			
 
+			this._stateName = stateName;
+			this._item = item;
+			me._currentIndex = 0;
 
 			var content = new Element('div');
 
@@ -101,50 +141,52 @@ var ProposalFlow = (function() {
 			var els = [];
 			var me = this;
 			me.els = els;
-			me._currentIndex=0;
 
 
-			setStateItem(this, stateName, item);
+
+			FlowGroup.AddFlowItem(this);
 
 
-			var appendStep = function(name, options) {
+			var me._stepOptions=[];
 
-				options = options || {};
-				this.options=options;
-
-				var el = proponentFlow.appendChild(new Element('li', options || {}));
-				el.setAttribute('data-label', name);
-				if (last) {
-					last.appendChild(new Element('span'));
-				}
-
-
-				els.push(el);
-				last = el;
-
-				if (options.clickable !== false) {
-					me._addInteraction(el, options);
-				}
-
-
-				me.setCurrent(me._currentIndex);
-
-
-				return el;
-			}
-
-			this._appendStep = appendStep;
 			this.element = content;
 
 
-			
+
+		},
 
 
+		appendStep:function(name, options) {
+
+			options = options || {};
+
+			var el = proponentFlow.appendChild(new Element('li', options || {}));
+			el.setAttribute('data-label', name);
+			if (last) {
+				last.appendChild(new Element('span'));
+			}
 
 
+			me.els.push(el);
+			me._stepOptions.push(options);
+			last = el;
+
+			if (options.clickable !== false) {
+				me._addInteraction(el, options);
+			}
 
 
+			me.setCurrent(me._currentIndex);
 
+
+			return el;
+		},
+
+		getStateName: function() {
+			return this._stateName;
+		},
+		getItem: function() {
+			return this._item;
 		},
 		_addInteraction: function(el, options) {
 
@@ -167,31 +209,30 @@ var ProposalFlow = (function() {
 					el.removeEvents('click');
 				}
 
-				if(el.hasClass('current') && options.completable !== false){
-					me.setCurrent(clickIndex+1);
+				if (el.hasClass('current') && options.completable !== false) {
+					me.setCurrent(clickIndex + 1);
 					return;
 				}
 				me.setCurrent(clickIndex);
 			});
 		},
 
-		setCurrent: function(index){
+		setCurrent: function(index) {
 
-			var me=this;
+			var me = this;
 
-			me._currentIndex=index;
+			me._currentIndex = index;
 
-			var els=this.els;
-			var options=this.options;
+			var els = this.els;
+			var options = this.options;
 
 
 
 			var currentEl = null;
-			if(els.length>index){
-				currentEl=els[index];
+			if (els.length > index) {
+				currentEl = els[index];
 			}
 
-			
 
 
 			els.forEach(function(e, i) {
@@ -216,10 +257,9 @@ var ProposalFlow = (function() {
 
 
 
-
 		addStep: function() {
 
-			this._appendStep.apply(this, arguments);
+			this.appendStep.apply(this, arguments);
 			return this;
 		},
 
