@@ -49,6 +49,11 @@ var ProposalFlow = (function() {
 					return;
 				}
 
+				if(stateLoaded[stateName]!==true){
+					//default state is 0, initialization would trigger write before state is queried
+					return;
+				}
+
 				var data = {};
 				data[stateName] = index;
 
