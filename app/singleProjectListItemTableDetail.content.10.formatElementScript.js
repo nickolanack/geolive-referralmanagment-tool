@@ -53,7 +53,7 @@ if(others.length>0){
     types.slice(1).forEach(function(type,i){
         
         
-        var tag=content.appendChild(new Element('span', {"class":"field-value alt-tag"}));
+        var tag=content.appendChild(new Element('span', {"class":"field-value tip-tag"}));
         
         //tag.innerHTML=type;
         RecentItems.colorizeEl(tag, type, plainTag);
