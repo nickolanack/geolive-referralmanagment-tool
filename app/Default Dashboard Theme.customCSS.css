@@ -72,6 +72,11 @@ span.field-value.clickable .field-value {
     cursor: pointer;
 }
 
+span.field-value.tip-tag.is-light {
+    color: black;
+    text-shadow: none;
+}
+
 
 .field-value-module.has-ids .id-items:after {
   content: "";
