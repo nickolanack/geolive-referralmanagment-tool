@@ -126,7 +126,7 @@ var ProposalFlow = (function() {
 
 			this._stateName = stateName;
 			this._item = item;
-			me._currentIndex = 0;
+			this._currentIndex = 0;
 
 			var content = new Element('div');
 
@@ -134,14 +134,13 @@ var ProposalFlow = (function() {
 				"class": "flow"
 			}));
 
-			var last = null;
-			var els = [];
-			var me = this;
-			me.els = els;
+			this._last = null;
+			this._stepOptions=[];
+			this.els = [];
 
 			FlowGroup.AddFlowItem(this);
 
-			var me._stepOptions=[];
+			
 
 			this.element = content;
 
@@ -153,14 +152,14 @@ var ProposalFlow = (function() {
 
 			var el = proponentFlow.appendChild(new Element('li', options || {}));
 			el.setAttribute('data-label', name);
-			if (last) {
-				last.appendChild(new Element('span'));
+			if (this._last) {
+				this._last.appendChild(new Element('span'));
 			}
 
 
 			me.els.push(el);
 			me._stepOptions.push(options);
-			last = el;
+			this._last = el;
 
 			if (options.clickable !== false) {
 				me._addInteraction(el, options);
