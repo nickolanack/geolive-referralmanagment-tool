@@ -10,7 +10,7 @@ var ProposalFlow = (function() {
 
 			this._stateFlows = {};
 			this._stateData = {};
-			this._statesLoaded=false;
+			this._statesLoaded = false;
 
 
 
@@ -19,7 +19,7 @@ var ProposalFlow = (function() {
 				"id": item.getId()
 			});
 
-			var me=this;
+			var me = this;
 
 			getStateQuery.addEvent('success', function(resp) {
 
@@ -48,51 +48,49 @@ var ProposalFlow = (function() {
 		addFlow: function(flow) {
 
 
-			var stateName=flow.getStateName();
+			var stateName = flow.getStateName();
 
 			this._stateFlows[stateName] = flow;
 
+			var me=this;
+
 			flow.addEvent('current', function(index) {
 
-			if (this._stateData[stateName] === index) {
-				return;
-			}
+				if (me._stateData[stateName] === index) {
+					return;
+				}
 
-			if (this._statesLoaded !== true) {
-				//default state is 0, initialization would trigger write before state is queried
-				return;
-			}
+				if (me._statesLoaded !== true) {
+					//default state is 0, initialization would trigger write before state is queried
+					return;
+				}
 
-			var data = {};
-			data[stateName] = index;
+				var data = {};
+				data[stateName] = index;
 
-			var setStateQuery = new AjaxControlQuery(CoreAjaxUrlRoot, 'set_state_data', {
-				"plugin": "ReferralManagement",
-				"id": item.getId(),
-				"data": data
+				var setStateQuery = new AjaxControlQuery(CoreAjaxUrlRoot, 'set_state_data', {
+					"plugin": "ReferralManagement",
+					"id": item.getId(),
+					"data": data
+				});
+
+				setStateQuery.addEvent('success', function(resp) {
+
+					me._stateData[stateName] = resp.stateData[stateName];
+
+				}).execute();
+
 			});
 
-			setStateQuery.addEvent('success', function(resp) {
-
-				this._stateData[stateName] = resp.stateData[stateName];
-
-			}).execute();
-
-		});
-
-		if (this._stateData[stateName]) {
-			flow.setCurrent(this._stateData[stateName]);
-		}
+			if (this._stateData[stateName]) {
+				flow.setCurrent(this._stateData[stateName]);
+			}
 
 
 		}
 
 
 	});
-
-
-
-
 
 
 
@@ -110,7 +108,7 @@ var ProposalFlow = (function() {
 			}
 
 			currentGroup = new FlowGroup(flow.getItem());
-	
+
 
 		}
 
@@ -135,17 +133,16 @@ var ProposalFlow = (function() {
 			}));
 
 			this._last = null;
-			this._stepOptions=[];
+			this._stepOptions = [];
 			this.els = [];
 
 			FlowGroup.AddFlowItem(this);
 
-			
 
 
 		},
 
-		appendStep:function(name, options) {
+		appendStep: function(name, options) {
 
 			options = options || {};
 
