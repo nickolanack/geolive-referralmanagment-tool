@@ -24,6 +24,26 @@ span.field-label.clickable, span.field-value.clickable {
 }
 
 
+
+button.form-btn.primary-btn.share {
+    background-color: chocolate;
+}
+
+button.primary-btn.archive.warn {
+    background-color: olive;
+}
+
+button.form-btn.primary-btn.edit {
+    background-color: #29529b;
+}
+
+button.form-btn.primary-btn.edit.notes {
+    background-color: #fba927;
+}
+
+
+
+
 .search-result-list.hybrid {
     /* box-sizing: inherit; */
     margin: 0 15px;
