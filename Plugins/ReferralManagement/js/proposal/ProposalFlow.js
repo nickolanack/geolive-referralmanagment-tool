@@ -156,16 +156,16 @@ var ProposalFlow = (function() {
 			}
 
 
-			me.els.push(el);
-			me._stepOptions.push(options);
+			this.els.push(el);
+			this._stepOptions.push(options);
 			this._last = el;
 
 			if (options.clickable !== false) {
-				me._addInteraction(el, options);
+				this._addInteraction(el, options);
 			}
 
 
-			me.setCurrent(me._currentIndex);
+			this.setCurrent(this._currentIndex);
 
 
 			return el;
@@ -213,8 +213,6 @@ var ProposalFlow = (function() {
 			me._currentIndex = index;
 
 			var els = this.els;
-			var options = this.options;
-
 
 
 			var currentEl = null;
