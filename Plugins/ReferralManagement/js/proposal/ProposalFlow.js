@@ -58,9 +58,9 @@ var ProposalFlow = (function() {
 					"data": data
 				});
 
-				setStateQuery.addEvent('success', function() {
+				setStateQuery.addEvent('success', function(resp) {
 
-
+					stateData[stateName]=resp.stateData[stateName];
 
 				}).execute();
 
