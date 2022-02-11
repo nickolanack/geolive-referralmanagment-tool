@@ -775,11 +775,17 @@ h2 {
 }
 
 
-[data-template-name="form"] .flow {
-    transform: scale(.8);
-    width: 133%;
-    position: relative;
-    left: -100px;
+[data-template-name="form"] {
+    .flow {
+        transform: scale(.8);
+        width: 133%;
+        position: relative;
+        left: -100px;
+    }
+    
+    .flow li:after {
+        font-size: 16px;
+    }
 }
 
 
