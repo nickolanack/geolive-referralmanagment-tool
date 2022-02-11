@@ -1957,16 +1957,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 379,
-                            "y": 282
+                            "x": 389,
+                            "y": 292
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 339,
-                                    "y": 495
+                                    "x": 349,
+                                    "y": 493
                                 }
                             },
                             {
@@ -1976,16 +1976,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 956,
-                                    "y": 541
+                                    "x": 966,
+                                    "y": 551
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 916,
-                                            "y": 707
+                                            "x": 926,
+                                            "y": 717
                                         }
                                     }
                                 ],
@@ -2053,7 +2053,8 @@
                                                 "text": "<div class=\"application-logo\"><\/div><span style=\"text-align: left; font-weight: 100; display: block;\"><span style=\"font-size:20px\">\nLogin to your project dashboard<\/span>\n<p><\/p><br><\/span>",
                                                 "template": "",
                                                 "templateVariablesScript": "",
-                                                "formatTextScript": ""
+                                                "formatTextScript": "",
+                                                "ajaxRequestTemplate": false
                                             }
                                         },
                                         {
@@ -2076,10 +2077,11 @@
                                             "type": "InlineHtml",
                                             "config": {
                                                 "className": "",
-                                                "text": "<br\/><br\/><span style=\"text-align: left; font-weight: 100; display: block;    margin-top: 32px;\"><span style=\"font-size:20px; white-space:nowrap;\">\nDon't have an account?<\/span>\n<br\/><br\/><\/span>",
+                                                "text": "<br\/><br\/><span style=\"text-align: left; font-weight: 100; display: block;    margin-top: 75px;\"><span style=\"font-size:20px; white-space:nowrap;\">\nDon't have an account?<\/span>\n<br\/><br\/><\/span>",
                                                 "template": "",
                                                 "templateVariablesScript": "",
-                                                "formatTextScript": ""
+                                                "formatTextScript": "",
+                                                "ajaxRequestTemplate": false
                                             }
                                         },
                                         {
@@ -2124,7 +2126,8 @@
             "requireTarget": true,
             "target": "loginForm",
             "onLoadScript": "console.error('hello');",
-            "resolveItemScript": "return item;"
+            "resolveItemScript": "return item;",
+            "formatStepModulesScript": ""
         }
     },
     "widget.74": {
