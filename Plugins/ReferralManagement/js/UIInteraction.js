@@ -61,7 +61,7 @@ var UIInteraction = (function() {
 		},
 
 
-		navigateToNamedStatysType: function(typeName) {
+		navigateToNamedStatusType: function(typeName) {
 
 			var controller = this._getApplication().getNamedValue('navigationController');
 
