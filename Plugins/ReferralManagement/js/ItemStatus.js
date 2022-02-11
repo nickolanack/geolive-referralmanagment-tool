@@ -42,11 +42,11 @@ var ItemStatus = (function() {
 
 		var others = types.slice(1);
 		if (others.length > 0) {
-			var othersEl = el.appendChild(new Element('span', {
-				"class": "field-value not-tag",
-				"html": '' + others.length + ' other' + (others.length == 1 ? '' : 's')
+			// var othersEl = el.appendChild(new Element('span', {
+			// 	"class": "field-value not-tag",
+			// 	"html": '' + others.length + ' other' + (others.length == 1 ? '' : 's')
 
-			}));
+			// }));
 
 			//var content = new Element('div');
 			//var textContent='';
@@ -55,7 +55,7 @@ var ItemStatus = (function() {
 
 
 				var tag = el.appendChild(new Element('span', {
-					"class": "field-value alt-tag"
+					"class": "field-value"
 				}));
 
 				//tag.innerHTML=type;
