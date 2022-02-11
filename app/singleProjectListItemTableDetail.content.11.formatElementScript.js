@@ -3,4 +3,4 @@ el.setAttribute("data-col","status");
 
 
 
-ItemStatus.AddTags(el, valueEl)
+ItemStatus.AddTags(item, el, valueEl)
