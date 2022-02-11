@@ -15,7 +15,7 @@ var ItemStatus = (function() {
 		getProponentFlow:function(){
 
 
-			return (new ProposalFlow('proponent',item))
+			return (new ProposalFlow('proponent',this))
 			    .addStep("Submission", {"class":"current", "clickable":false})
 			    .addStep("Validation", {"class":"mail"})
 			    .addStep("Initial Review", {"class":"user"})
@@ -27,7 +27,7 @@ var ItemStatus = (function() {
 		getProcessingFlow:function(){
 
 
-			return (new ProposalFlow('processing',item))
+			return (new ProposalFlow('processing',this))
 			    .addStep("", {"class":"blank"})
 			    .addStep("Intake", {"class":"current mail"})
 			    .addStep("Filling", {"class":"user"})
@@ -40,7 +40,7 @@ var ItemStatus = (function() {
 		getAssessmentFlow:function(){
 
 
-			return (new ProposalFlow('assessment',item))
+			return (new ProposalFlow('assessment',this))
 			    .addStep("", {"class":"blank"})
 			    .addStep("", {"class":"blank"})
 			    .addStep("Quality Assessment", {"class":"current user", "completes":{"proponent":"validation"}})
