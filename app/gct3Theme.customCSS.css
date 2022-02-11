@@ -12,6 +12,9 @@ span.field-value.is-dark {
 }
 
 
+button.inline-btn.primary-btn.add.form-documentForm {
+     background-color: $highlightBtnColor;
+}
 
 
 span.field-label.clickable, span.field-value.clickable {
