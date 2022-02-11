@@ -9,7 +9,50 @@ var ItemStatus = (function() {
 			return [
 				'Filing', 'Monitoring'
 			]
+		},
+
+
+		getProponentFlow:function(){
+
+
+			return (new ProposalFlow('proponent',item))
+			    .addStep("Submission", {"class":"current", "clickable":false})
+			    .addStep("Validation", {"class":"mail"})
+			    .addStep("Initial Review", {"class":"user"})
+			    .addStep("Assessment")
+			    .addStep("Ongoing")
+			    .getElement();
+
+		},
+		getProcessingFlow:function(){
+
+
+			return (new ProposalFlow('processing',item))
+			    .addStep("", {"class":"blank"})
+			    .addStep("Intake", {"class":"current mail"})
+			    .addStep("Filling", {"class":"user"})
+			    .addStep("Tasking", {"class":"user"})
+			    .addStep("Briefing")
+			    .addStep("Tracking",{completable:false})
+			    .getElement();
+
+		},
+		getAssessmentFlow:function(){
+
+
+			return (new ProposalFlow('assessment',item))
+			    .addStep("", {"class":"blank"})
+			    .addStep("", {"class":"blank"})
+			    .addStep("Quality Assessment", {"class":"current user", "completes":{"proponent":"validation"}})
+			    .addStep("Prioritization", {"class":"mail"})
+			    .addStep("Meeting schedules", {"class":"user"})
+			    .addStep("Dispute resolution")
+			    .addStep("Reporting")
+			    .addStep("Monitoring",{"ongoing":true})
+			    .getElement();
+
 		}
+
 	});
 
 
