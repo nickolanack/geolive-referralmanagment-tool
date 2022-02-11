@@ -796,5 +796,11 @@ h2 {
 
  .ui-view.login-form .WizardButton {
     border-radius: 20px;
+    margin-right: 0;
 }
+
+.ui-view.login-form .primary-btn {
+    margin-right: 0;
+}
+
 
