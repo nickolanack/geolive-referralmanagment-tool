@@ -15,14 +15,18 @@ var ItemStatus = (function() {
 
 				if(isObject_(this.data.attributes.stateData)){
 
+					var types=[]
+
 					var status=this.data.attributes.stateData;
 					if(status.processing>=0){
-						return this.getFlowNames('processing')[status.processing];
+						types.push(this.getFlowNames('processing')[status.processing]);
 					}
 
 					if(status.assessment>=0){
-						return this.getFlowNames('assessment')[status.assessment];
+						types.push(this.getFlowNames('assessment')[status.assessment]);
 					}
+
+					return types;
 				}
 			}
 
