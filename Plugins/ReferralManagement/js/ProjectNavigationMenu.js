@@ -101,6 +101,14 @@ var ProjectNavigationMenu = new Class({
 						}
 					},
 					{
+						html: "Briefing",
+						formatEl: function(li) {
+
+							
+
+						}
+					},
+					{
 						html: "History",
 						formatEl: function(li) {
 

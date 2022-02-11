@@ -630,7 +630,7 @@ var DashboardPageLayout = (function() {
 						return project.isCollection();
 					}
 				}, {
-					html: ['Datasets', 'Access', 'Team', 'Users', 'Discussion', 'Map', 'Files', 'Notes', 'History', 'Status', 'Proponent'],
+					html: ['Datasets', 'Access', 'Team', 'Users', 'Discussion', 'Map', 'Files', 'Notes', 'History', 'Status', 'Proponent', 'Briefing'],
 					condition: function() {
 
 						var application = ReferralManagementDashboard.getApplication();
@@ -648,6 +648,10 @@ var DashboardPageLayout = (function() {
 				},
 				{
 					html: "Proponent",
+					config: "enableProposals"
+				},
+				{
+					html: "Briefing",
 					config: "enableProposals"
 				},
 				{
@@ -670,7 +674,7 @@ var DashboardPageLayout = (function() {
 				// 	}
 				// },
 				{
-					html: ['Datasets', 'Tasks', 'Access', 'Team', 'Users', 'Discussion',  'Notes', 'History'],
+					html: ['Datasets', 'Tasks', 'Access', 'Team', 'Users', 'Discussion',  'Notes', 'History', 'Briefing'],
 					condition: function() {
 
 						if (AppClient.getUserType() == "guest") {
