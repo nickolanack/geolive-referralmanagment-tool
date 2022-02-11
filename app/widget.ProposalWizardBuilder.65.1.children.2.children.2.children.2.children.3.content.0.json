@@ -1,23 +1,11 @@
 {
-    "type": "UIView",
+    "type": "InlineHtml",
     "config": {
         "className": "",
-        "identifier": "",
-        "viewType": "view",
-        "namedView": "proponentFlow",
-        "shouldRender": true,
-        "namedViewScript": "return namedView",
-        "showInlineEdit": false,
-        "namedFormView": "defaultView",
-        "formOptions": "{}",
-        "showDeleteButton": false,
-        "deleteItemScript": "defaultBehaviorFn()",
-        "initModuleScript": "",
-        "formatModuleScript": "",
-        "resolveItemScript": "return item",
-        "filterModulesScript": "return list",
-        "itemButtonsScript": "return [];",
-        "insertAtTop": false,
-        "targetName": ""
+        "text": "<h2>Submission status<\/h2>\n<p>Once submitted, you will recieve a validation email ...<\/p>",
+        "template": "",
+        "templateVariablesScript": "",
+        "formatTextScript": "",
+        "ajaxRequestTemplate": false
     }
 }
