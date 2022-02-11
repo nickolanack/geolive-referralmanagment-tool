@@ -8,7 +8,7 @@ var ItemStatus = (function() {
 	});
 
 
-	ItemStatus.AddTags = function(el, valueEl) {
+	ItemStatus.AddTags = function(item, el, valueEl) {
 
 
 
