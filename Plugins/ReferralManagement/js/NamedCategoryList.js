@@ -244,6 +244,10 @@ var NamedCategoryList = (function() {
 		
 			mod.runOnceOnLoad(function(){
 
+				if(AppClient.getUserType()=="guest"){
+					return;
+				}
+
 				var appendPlusBtn=function(){
 
 					mod.getCloud().getElement().appendChild(new Element('span', {
