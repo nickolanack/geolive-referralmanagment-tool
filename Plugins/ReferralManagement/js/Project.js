@@ -20,7 +20,8 @@ var Project = (function() {
 			ItemDiscussion,
 			ItemContact,
 			ItemNavigationTagLinks,
-			ItemCategories
+			ItemCategories,
+			ItemStatus
 		],
 		initialize: function(id, data) {
 			var me = this;
