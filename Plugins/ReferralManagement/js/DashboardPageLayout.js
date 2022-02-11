@@ -454,7 +454,11 @@ var DashboardPageLayout = (function() {
 
 		//var columnIds=['col-name', 'col-user', 'col-created', 'col-modified', 'col-type', 'col-apporval', 'col-ownership']
 
-		var removeCols = ['col-approval', 'col-ownership', 'col-status'];
+		var removeCols = ['col-approval', 'col-ownership', ];
+
+		if(!DashboardConfig.getValue('enableProposals')){
+			removeCols.push('col-status');
+		}
 
 		return content.filter(function(m) {
 			return removeCols.indexOf(m.getIdentifier()) < 0;
