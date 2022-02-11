@@ -718,6 +718,52 @@ button.selectable{
 
 
 
+.WizardTitle li:after {
+    content: "info";
+    position: absolute;
+    bottom: -25px;
+    left: -25px;
+    width: 100px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.WizardTitle li {
+    position: relative;
+}
+
+
+.WizardTitle li._one:after {
+    content: "Info";
+   
+}
+
+.WizardTitle li._two:after {
+    content: "Files";
+   
+}
+
+.WizardTitle li._three:after {
+    content: "Contact";
+   
+}
+
+.WizardTitle li._four:after {
+    content: "Status";
+   
+}
+
+h2 {
+    font-size: 24px;
+    text-transform: capitalize;
+}
+
+.WizardTitle li{
+    /* border-radius: 100%; */
+    padding: 10px 20px;
+    border: none;
+}
+
 
 
 
