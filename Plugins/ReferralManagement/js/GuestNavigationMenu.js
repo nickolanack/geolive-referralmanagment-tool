@@ -57,7 +57,7 @@ var GuestNavigationMenu = (function() {
 							"viewOptions": {
 								"viewType": "form"
 							},
-							"class": "primary-btn"
+							"class": "primary-btn hidden"
 
 						}, {
 							"name": "Map",
@@ -72,7 +72,7 @@ var GuestNavigationMenu = (function() {
 
 								}
 							},
-							"class": "primary-btn",
+							"class": "primary-btn hidden",
 							"style": "background-color: crimson;"
 
 
