@@ -849,6 +849,28 @@ var ProjectList = (function() {
 
 	}
 
+	ProjectList.NamedStatusProjectList=function(status){
+
+
+
+		return new ProjectList({
+
+			"label": status +" "+ (DashboardConfig.getValue('showDatasets')?"Datasets & ":"")+(DashboardConfig.getValue('enableProposals')?"Projects":"Collections"),
+			"showCreateBtn": false,
+
+			projects:function(callback){
+
+		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+     				callback(team.getProjects().filter(function(p){
+     					return p.getProjectStatus().indexOf(status)>=0;
+     				}));
+     			});
+            }
+		});
+
+
+	}
+
 
 	ProjectList.UsersProjectList = function(user) {
 

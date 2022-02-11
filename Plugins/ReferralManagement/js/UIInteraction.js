@@ -60,6 +60,17 @@ var UIInteraction = (function() {
 
 		},
 
+
+		navigateToNamedStatysType: function(typeName) {
+
+			var controller = this._getApplication().getNamedValue('navigationController');
+
+			controller.navigateTo("Datasets", "Main", {
+				item: ProjectList.NamedStatusProjectList(typeName)
+			});
+
+		},
+
 		addDatasetTypeEvents: function(child, childView, application) {
 
 			var me = this;
