@@ -51,9 +51,9 @@ var ItemStatus = (function() {
 			return (new ProposalFlow('proponent',this))
 			    .addStep("Submission", {"class":"current", "clickable":false})
 			    .addStep("Validation", {"class":"mail"})
-			    .addStep("Initial Review", {"class":"user"})
-			    .addStep("Assessment")
-			    .addStep("Ongoing");
+			    .addStep("Office Review", {"class":"user"})
+			    .addStep("Assessments")
+			    .addStep("Outcome");
 			    //.getElement();
 
 		},
