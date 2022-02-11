@@ -1,5 +1,5 @@
 if(window.GuestProposal&&item instanceof GuestProposal){
-    inputElement.setStyle('display','none');
+    textField.getElement().setStyle('display','none');
     inputElement.disabled=true;
     textField.getElement().addClass('disabled');
 }
