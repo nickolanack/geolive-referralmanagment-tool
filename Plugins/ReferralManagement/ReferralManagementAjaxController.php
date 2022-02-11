@@ -71,7 +71,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		}
 
 		return array(
-			'stateData' => $currentState,
+			'stateData' => (object) $currentState,
 			'subscription' => array(
 				'channel' => 'projectstate.'.$json->id,
 				'event' => 'update',
