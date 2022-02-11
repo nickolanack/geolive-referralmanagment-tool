@@ -20,8 +20,8 @@ var ItemStatus = (function() {
 			    .addStep("Validation", {"class":"mail"})
 			    .addStep("Initial Review", {"class":"user"})
 			    .addStep("Assessment")
-			    .addStep("Ongoing")
-			    .getElement();
+			    .addStep("Ongoing");
+			    //.getElement();
 
 		},
 		getProcessingFlow:function(){
@@ -33,8 +33,8 @@ var ItemStatus = (function() {
 			    .addStep("Filling", {"class":"user"})
 			    .addStep("Tasking", {"class":"user"})
 			    .addStep("Briefing")
-			    .addStep("Tracking",{completable:false})
-			    .getElement();
+			    .addStep("Tracking",{completable:false});
+			    //.getElement();
 
 		},
 		getAssessmentFlow:function(){
@@ -48,8 +48,8 @@ var ItemStatus = (function() {
 			    .addStep("Meeting schedules", {"class":"user"})
 			    .addStep("Dispute resolution")
 			    .addStep("Reporting")
-			    .addStep("Monitoring",{"ongoing":true})
-			    .getElement();
+			    .addStep("Monitoring",{"ongoing":true});
+			   // .getElement();
 
 		}
 
