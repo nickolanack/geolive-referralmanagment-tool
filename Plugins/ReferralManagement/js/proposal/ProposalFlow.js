@@ -23,15 +23,19 @@ var ProposalFlow = (function() {
 
 			getStateQuery.addEvent('success', function(resp) {
 
+
+
+
 				Object.keys(resp.stateData).forEach(function(n) {
 					if (me._stateFlows[n]) {
 						me._stateFlows[n].setCurrent(resp.stateData[n]);
-
 					}
-					me._statesLoaded = true;
-					me._stateData = resp.stateData;
+					
 
 				});
+
+				me._statesLoaded = true;
+				me._stateData = resp.stateData;
 
 
 
