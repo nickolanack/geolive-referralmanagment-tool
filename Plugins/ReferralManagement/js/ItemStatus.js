@@ -7,10 +7,15 @@ var ItemStatus = (function() {
 		getProjectStatus:function(){
 
 
-			if(this.data.attributes.statusData){
-				if(isObject_(this.data.attributes.statusData)){
+			if(this.data.attributes.stateData){
 
-					var status=this.data.attributes.statusData;
+				if(typeof this.data.attributes.stateData=='string'&&this.data.attributes.stateData[0]=='{'){
+					this.data.attributes.stateData=JSON.parse(this.data.attributes.stateData);
+				}
+
+				if(isObject_(this.data.attributes.stateData)){
+
+					var status=this.data.attributes.stateData;
 					if(status.processing>=0){
 						return this.getFlowNames('processing')[status.processing];
 					}
