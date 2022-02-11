@@ -6,11 +6,35 @@ var ItemStatus = (function() {
 
 		getProjectStatus:function(){
 
-			return [
-				'Filing', 'Monitoring'
-			]
+
+			if(this.data.attributes.statusData){
+				if(isObject_(this.data.attributes.statusData)){
+
+					var status=this.data.attributes.statusData;
+					if(status.processing>=0){
+						return this.getFlowNames('processing')[status.processing];
+					}
+
+					if(status.assessment>=0){
+						return this.getFlowNames('assessment')[status.assessment];
+					}
+				}
+			}
+
+			return ['Intake'];
+
+			// return [
+			// 	'Filing', 'Monitoring'
+			// ]
 		},
 
+		getFlowNames:function(name){
+			var states={
+				processing:['', 'Intake', 'Filling', 'Tasking', 'Briefing', 'Tracking'],
+				assessment:['', '', 'Quality Assessment', 'Prioritization', 'Meeting schedules', 'Dispute resolution', 'Reporting','Monitoring']
+			};
+			return states[name];
+		},
 
 		getProponentFlow:function(){
 
