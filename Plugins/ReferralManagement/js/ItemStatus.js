@@ -39,7 +39,7 @@ var ItemStatus = (function() {
 
 		getFlowNames:function(name){
 			var states={
-				processing:['', 'Intake', 'Filling', 'Tasking', 'Briefing', 'Tracking'],
+				processing:['', 'Intake', 'Filing', 'Tasking', 'Briefing', 'Tracking'],
 				assessment:['', '', 'Quality Assessment', 'Prioritization', 'Meeting schedules', 'Dispute resolution', 'Reporting','Monitoring']
 			};
 			return states[name];
@@ -63,7 +63,7 @@ var ItemStatus = (function() {
 			return (new ProposalFlow('processing',this))
 			    .addStep("", {"class":"blank"})
 			    .addStep("Intake", {"class":"current mail"})
-			    .addStep("Filling", {"class":"user"})
+			    .addStep("Filing", {"class":"user"})
 			    .addStep("Tasking", {"class":"user"})
 			    .addStep("Briefing")
 			    .addStep("Tracking",{completable:false});
