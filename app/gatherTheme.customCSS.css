@@ -328,6 +328,22 @@ button.primary-btn.nav-new-btn.view-selection:before {
     }
     
     
+    .uitext-container.mandatory-field:before {
+        display:none;
+    }
+    
+    input.text-input.with-1-line {
+        line-height: 38px;
+        height: 38px;
+        font-family: sans-serif;
+        text-indent: 15px;
+        font-size: 14px;
+        background-color: #f9f9f9;
+        border-color: rgba(0,0,0,0.4);
+        box-shadow: 0 0 3px #b3b3b3 inset;
+    }
+        
+    
     color: black;
     .top-left>.lbl-txt {
         color: black;
@@ -788,5 +804,19 @@ h2 {
     }
 }
 
+
+.ui-navigation-menu .hidden {
+    display: none;
+}
+
+
+ .ui-view.login-form .WizardButton {
+    border-radius: 20px;
+    margin-right: 0;
+}
+
+.ui-view.login-form .primary-btn {
+    margin-right: 0;
+}
 
 
