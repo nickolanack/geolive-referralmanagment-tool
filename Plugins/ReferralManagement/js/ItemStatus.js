@@ -39,8 +39,8 @@ var ItemStatus = (function() {
 
 		getFlowNames:function(name){
 			var states={
-				processing:['', 'Intake', 'Filing', 'Tasking', 'Briefing', 'Tracking'],
-				assessment:['', '', 'Quality Assessment', 'Prioritization', 'Meeting schedules', 'Dispute resolution', 'Reporting','Monitoring']
+				processing:['Intake', 'Filing', 'Tasking', 'Briefing', 'Tracking'],
+				assessment:['Quality Assessment', 'Prioritization', 'Meeting schedules', 'Dispute resolution', 'Reporting','Monitoring']
 			};
 			return states[name];
 		},
@@ -61,7 +61,7 @@ var ItemStatus = (function() {
 
 
 			return (new ProposalFlow('processing',this))
-			    .addStep("", {"class":"blank"})
+			    
 			    .addStep("Intake", {"class":"current mail"})
 			    .addStep("Filing", {"class":"user"})
 			    .addStep("Tasking", {"class":"user"})
@@ -74,8 +74,7 @@ var ItemStatus = (function() {
 
 
 			return (new ProposalFlow('assessment',this))
-			    .addStep("", {"class":"blank"})
-			    .addStep("", {"class":"blank"})
+			
 			    .addStep("Quality Assessment", {"class":"current user", "completes":{"proponent":"validation"}})
 			    .addStep("Prioritization", {"class":"mail"})
 			    .addStep("Meeting schedules", {"class":"user"})
