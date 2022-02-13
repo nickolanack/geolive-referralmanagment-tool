@@ -26,9 +26,12 @@ var ItemStatus = (function() {
 						types.push(this.getFlowNames('assessment')[status.assessment]);
 					}
 
-					return types.filter(function(t){
+					types= types.filter(function(t){
 						return typeof t=='string';
 					});
+					if(types.length>0){
+						return types;
+					}
 				}
 			}
 
