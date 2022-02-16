@@ -206,7 +206,11 @@ var ProjectTeam = (function() {
 			(new ProjectListQuery()).addEvent('success', function(resp) {
 
 				me._projects = [];
-				resp.results.forEach(function(result) {
+
+
+				resp.results.sort(function(a, b){
+					return a.createdDate.localeCompare(b.createdDate);
+				}).forEach(function(result) {
 					me._addProject(result);
 				});
 
