@@ -2,5 +2,6 @@
 		
 Project.addTableHeader(module)
 module.setPaginationOptions({
-    position:"both"    
+    position:"both",
+    showPages:true
 });
