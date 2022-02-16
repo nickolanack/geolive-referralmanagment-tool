@@ -615,7 +615,7 @@ var ProjectList = (function() {
 				clearInterval(interval);
 
 				if (parentNode.firstChild) {
-					parentNode.insertBefore(header, parentNode.firstChild);
+					parentNode.insertBefore(header, el);//parentNode.firstChild);
 				} else {
 					parentNode.appendChild(header);
 				}
