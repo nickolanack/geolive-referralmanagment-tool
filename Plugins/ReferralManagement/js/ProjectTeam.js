@@ -209,14 +209,16 @@ var ProjectTeam = (function() {
 
 
 				resp.results.sort(function(a, b){
-					return a.createdDate.localeCompare(b.createdDate);
+					return b.createdDate.localeCompare(a.createdDate);
 				}).forEach(function(result) {
 					me._addProject(result);
 				});
 
 
 				(new ArchiveListQuery()).addEvent('success', function(resp) {
-					resp.results.forEach(function(result) {
+					resp.results.sort(function(a, b){
+						return b.createdDate.localeCompare(a.createdDate);
+					}).forEach(function(result) {
 						me._addProject(result);
 					});
 				}).execute();
