@@ -1,5 +1,0 @@
-
-list.setPaginationOptions({
-    position:"both"    
-});
-
