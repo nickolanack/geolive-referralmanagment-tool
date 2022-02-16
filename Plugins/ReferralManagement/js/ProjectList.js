@@ -586,6 +586,10 @@ var ProjectList = (function() {
 
 
 	var _renderHeader = function(listModule, module) {
+
+
+		var module=listModule.getDetailViewAt(0);
+
 		module.getViewName(function(view) {
 
 			if (view !== "singleProjectListItemTableDetail") {
@@ -685,10 +689,10 @@ var ProjectList = (function() {
 			}
 
 			module.runOnceOnLoad(function() {
-				_renderHeader(listModule, module);
+				_renderHeader(listModule);
 				setTimeout(function() {
 					listModule.addEvent('load', function() {
-						_renderHeader(listModule, module);
+						_renderHeader(listModule);
 					})
 				}, 500);
 
