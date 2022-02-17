@@ -4597,14 +4597,16 @@ img.static-map {
     }
     
     span.dark-toggle:after{
-        content:"\0f0eb"
+        content:"\0f0eb";
     }
     span.admin-toggle:after{
-        content:"\0f023"
+        content:"\0f127";
+        left: 10px;
+        top: 7px;
     }
     
     span.logout-toggle:after{
-        content:"\0f023"
+        content:"\0f023";
     }
     
     span.dark-toggle, span.admin-toggle, span.logout-toggle {
