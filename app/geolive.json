@@ -1957,16 +1957,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 399,
-                            "y": 302
+                            "x": 409,
+                            "y": 312
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 359,
-                                    "y": 503
+                                    "x": 369,
+                                    "y": 513
                                 }
                             },
                             {
@@ -1976,16 +1976,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 976,
-                                    "y": 561
+                                    "x": 986,
+                                    "y": 571
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 936,
-                                            "y": 727
+                                            "x": 946,
+                                            "y": 737
                                         }
                                     }
                                 ],
@@ -2004,6 +2004,7 @@
                                                     "config": {
                                                         "className": "registration-left",
                                                         "showCancel": false,
+                                                        "showBack": false,
                                                         "showNext": true,
                                                         "showName": true,
                                                         "showUsername": true,
@@ -10493,9 +10494,10 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "login-form",
+                                    "identifier": "",
                                     "viewType": "form",
                                     "namedView": "userProfileForm",
-                                    "shouldRender": true,
+                                    "shouldRender": false,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "userProfileForm",
@@ -10551,7 +10553,15 @@
                     },
                     "content": {
                         "modules": [
-                            "nonMemberDashboard.metadata.positions.content.modules.0.json"
+                            "nonMemberDashboard.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "nonMemberDashboard.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            }
                         ]
                     },
                     "footer": {
