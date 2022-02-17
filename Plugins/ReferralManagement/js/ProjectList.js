@@ -598,6 +598,8 @@ var ProjectList = (function() {
 
 			var counter = 0;
 			var interval = setInterval(function() {
+
+				module=listModule.getDetailViewAt(0);
 				counter++;
 				var el = module.getElement();
 				var header = new Element('div', {
