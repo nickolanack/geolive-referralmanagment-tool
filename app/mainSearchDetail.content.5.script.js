@@ -13,6 +13,6 @@
 // fitSticky();
 
 $$('.dashboard-main')[0].addClass('sticky-top');
-window.addEvent('scroll', function(){
+document.addEvent('scroll', function(){
     console.log('scroll')
 });
