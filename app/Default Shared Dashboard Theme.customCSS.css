@@ -9,6 +9,27 @@ body.body-overlayed>#viewControllerApp>div>div>.ui-view {
 button:focus {outline:0;}
 
 
+.sticky-top{
+    .ui-view.left-panel {
+        z-index: 2;
+        position: relative;
+    }
+    
+    .ui-view.search-panel {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        width:100%
+    }
+    
+    .ui-view.main-panel {
+        padding-top: 62px;
+    }
+}
+
+
+
 .has-hidden-content.hide{
 
 
