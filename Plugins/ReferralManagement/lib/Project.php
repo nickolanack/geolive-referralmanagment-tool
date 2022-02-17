@@ -37,11 +37,11 @@ class Project {
 		$proposal['userdetails'] = GetClient()->userMetadataFor((int) $proposal['user']);
 
 		if(isset($proposal['userdetails']['roles'])){
-			unset($proposal['userdetails']['roles'])
+			unset($proposal['userdetails']['roles']);
 		}
 
 		if(isset($proposal['userdetails']['lastLogin'])){
-			unset($proposal['userdetails']['lastLogin'])
+			unset($proposal['userdetails']['lastLogin']);
 		}
 
 
