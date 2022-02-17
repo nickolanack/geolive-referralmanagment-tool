@@ -125,7 +125,7 @@ var ProjectSelection = (function() {
 		}));
 
 		module.getElement().appendChild(new Element('button', {
-			"html":"View Selection", "class":"primary-btn nav-new-btn view-selection", "events":{"click":function(){
+			"html":"View Selection", "class":"primary-btn view-selection", "events":{"click":function(){
 				
 			}}
 		}));
