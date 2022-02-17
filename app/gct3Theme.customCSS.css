@@ -45,7 +45,13 @@ button.form-btn.primary-btn.edit.notes {
 }
 
 
+.ui-list-view .ui-view.section-module:hover {
+    background-color: #effbfb;
+}
 
+.dark .ui-list-view .ui-view.section-module:hover {
+    background-color: #2e344b;
+}
 
 .search-result-list.hybrid {
     /* box-sizing: inherit; */
