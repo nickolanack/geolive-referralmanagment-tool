@@ -10555,33 +10555,10 @@
                         "modules": [
                             "nonMemberDashboard.metadata.positions.content.modules.0.json",
                             {
-                                "type": "UIView",
-                                "config": {
-                                    "className": "",
-                                    "identifier": "",
-                                    "viewType": "view",
-                                    "namedView": "communityMemberDashboard",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": ""
-                                }
-                            },
-                            {
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "nonMemberDashboard.metadata.positions.content.modules.2.config.script.js",
+                                    "script": "nonMemberDashboard.metadata.positions.content.modules.1.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
