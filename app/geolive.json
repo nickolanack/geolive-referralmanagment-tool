@@ -10494,9 +10494,10 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "login-form",
+                                    "identifier": "",
                                     "viewType": "form",
                                     "namedView": "userProfileForm",
-                                    "shouldRender": true,
+                                    "shouldRender": false,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "userProfileForm",
