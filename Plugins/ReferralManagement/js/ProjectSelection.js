@@ -96,12 +96,16 @@ var ProjectSelection = (function() {
 
 
 		module.getElement().appendChild(new Element('button', {
-			"html":"clear", "class":"primary-btn", "events":{"click":function(){
+			"html":"clear", 
+			"class":"primary-btn", 
+			"events":{"click":function(){
 				ProjectSelection.clear();
 			}}
 		}));
 		module.getElement().appendChild(new Element('button', {
-			"html":"New Collection", "class":"primary-btn", "events":{"click":function(){
+			"html":"New Collection", 
+			"class":"primary-btn create", 
+			"events":{"click":function(){
 				var formName = DashboardConfig.getValue("leftPanelSecondaryBtnForm"); //"documentProjectForm";//"ProposalTemplate";
 				var newItem = new Proposal();
 
@@ -117,6 +121,12 @@ var ProjectSelection = (function() {
 					ProjectTeam.CurrentTeam().addProject(newItem);
 					UIInteraction.navigateToProjectOverview(newItem);
 				});
+			}}
+		}));
+
+		module.getElement().appendChild(new Element('button', {
+			"html":"View Selection", "class":"primary-btn nav-new-btn view-selection", "events":{"click":function(){
+				
 			}}
 		}));
 
