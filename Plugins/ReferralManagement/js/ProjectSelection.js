@@ -126,7 +126,8 @@ var ProjectSelection = (function() {
 
 		module.getElement().appendChild(new Element('button', {
 			"html":"View Selection", "class":"primary-btn view-selection", "events":{"click":function(){
-				
+				var controller = application.getNamedValue('navigationController');
+				controller.navigateTo("Map", "Main");
 			}}
 		}));
 
