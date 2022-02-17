@@ -2409,7 +2409,7 @@ ul.item-tags li {
 }
 
 
-.inline-btn, .nav>.next-btn, .nav>.prev-btn, .file-browse-btn, .uilist-pageination button {
+.inline-btn, .nav>.next-btn, .nav>.prev-btn, .file-browse-btn, .uilist-pagination button {
     
     border: 1px solid gray;
     background-color: transparent;
@@ -2422,13 +2422,13 @@ ul.item-tags li {
     margin-right:20px;
 }
 
-.uilist-pageination {
+.uilist-pagination {
     height: 18px;
     margin: 10px;
     text-align:right;
 }
 
-.uilist-pageination:before {
+.pagination-item:before {
     content: attr(data-list-count);
    
     font-size: 12px;
@@ -2440,11 +2440,11 @@ ul.item-tags li {
 
 
 
-.uilist-pageination button{
+.uilist-pagination button{
     cursor:pointer;
 }
 
-.uilist-pageination button{
+.uilist-pagination button{
     border: none;
     background-color: #04a049;
 }
