@@ -607,7 +607,7 @@ var ProjectList = (function() {
 
 				var parentNode = listModule.getElement();
 
-				if (!(parentNode && header.firstChild && header.firstChild.firstChild)) {
+				if (!(parentNode &&el.parentNode===parentNode&& header.firstChild && header.firstChild.firstChild)) {
 
 					if (counter > 15) {
 						console.error('unable to inject header');
