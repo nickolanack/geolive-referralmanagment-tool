@@ -14,5 +14,9 @@
 
 $$('.dashboard-main')[0].addClass('sticky-top');
 $$('.dashboard-main')[0].addEvent('scroll', function(){
-    console.log('scroll')
+   if(this.getScroll().y>10){
+       this.addClass('scrolled');
+       return;
+   }
+   this.removeClass('scrolled');
 });
