@@ -591,7 +591,9 @@ var GatherDashboard = (function() {
 
 			var itemIsCurrentClient = item.getId() + "" == AppClient.getId() + "";
 
-			if (itemIsCurrentClient) {
+
+			var showLogoutButton=false;
+			if (showLogoutButton&&itemIsCurrentClient) {
 
 				items.push(
 					me.addLogoutBtn()
