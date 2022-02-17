@@ -4483,7 +4483,7 @@ img.static-map {
         right: 121px;
         white-space: nowrap;
         top: -5px;
-        background: #7b889f;
+        background: cornflowerblue;
         padding: 5px 16px;
         display: none;
         font-size: 14px;
@@ -4491,10 +4491,12 @@ img.static-map {
     
     span.notifications.selection button:first-child {
         right: 50px;
+        background: #7b889f;
     }
     
     span.notifications.selection button:last-child {
         right: 255px;
+        background-color: #268039;
     }
     
     span.notifications.selection.has-selection button {
