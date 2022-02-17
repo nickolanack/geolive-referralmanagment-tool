@@ -113,7 +113,8 @@ var GatherDashboard = (function() {
 					"formName": "dialogForm",
 					"formOptions": {
 						"template": "form",
-						"className": "alert-view"
+						"className": "alert-view",
+						"showCancel":false
 					}
 				})).show();
 			}
