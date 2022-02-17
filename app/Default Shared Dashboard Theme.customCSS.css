@@ -106,10 +106,15 @@ div.field-value-module.inline.ids{
         display:none;
     }
 }
-
+/*
 .ui-list-view .ui-view.section-module:hover {
     background-color: #effbfb;
 }
+
+.dark .ui-list-view .ui-view.section-module:hover {
+    background-color: #effbfb;
+}
+*/
 
 .field-value-module.breadcrumbs .field-label {
     font-weight: 400;
