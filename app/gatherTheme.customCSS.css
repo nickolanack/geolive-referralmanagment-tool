@@ -353,12 +353,12 @@ button.primary-btn.nav-new-btn.view-selection:before {
 
 
 
-.dark .uilist-pageination:before {
+.dark .pagination-item:before {
     color: $highlightBtnColor;
 }
 
 
-.dark .uilist-pageination button {
+.dark .uilist-pagination button {
     background-color: #2e303a;
     border: none;
     color: gray;
