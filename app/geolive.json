@@ -10552,7 +10552,15 @@
                     },
                     "content": {
                         "modules": [
-                            "nonMemberDashboard.metadata.positions.content.modules.0.json"
+                            "nonMemberDashboard.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "nonMemberDashboard.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            }
                         ]
                     },
                     "footer": {
