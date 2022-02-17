@@ -575,7 +575,7 @@ var GatherDashboard = (function() {
 		addLogoutBtn: function() {
 			var me=this;
 			return new Element('button', {
-				"class": "primary-btn warn",
+				"class": "primary-btn warn logout-btn",
 				"html": "Log out",
 				events: {
 					"click": function() {
