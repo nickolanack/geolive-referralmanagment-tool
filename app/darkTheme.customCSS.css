@@ -86,11 +86,11 @@ $mainStyleColor:#efa82c;
          background-color: $darkThemeBG;
     }
 
-    .uilist-pageination:before{
+    .pagination-item:before{
          color: #6AE9BF;
     }
 
-    .uilist-pageination button{
+    .uilist-pagination button{
         border: 1px solid gray;
         background-color: transparent;
     }
