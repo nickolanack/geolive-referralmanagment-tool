@@ -2422,6 +2422,10 @@ ul.item-tags li {
     margin-right:20px;
 }
 
+.pagination-item button {
+    float: unset;
+}
+
 .uilist-pagination {
     height: 18px;
     margin: 10px;
