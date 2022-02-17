@@ -10,7 +10,7 @@ button:focus {outline:0;}
 
 
 .sticky-top{
-    .ui-view.left-panel {
+    .ui-view.left-panel[data-view="leftPanel"] {
         z-index: 2;
         position: relative;
     }
