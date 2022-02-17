@@ -35,6 +35,18 @@ class Project {
 		$proposal['id']==intval($proposal['id']);
 
 		$proposal['userdetails'] = GetClient()->userMetadataFor((int) $proposal['user']);
+
+		if(isset($proposal['userdetails']['roles'])){
+			unset($proposal['userdetails']['roles'])
+		}
+
+		if(isset($proposal['userdetails']['lastLogin'])){
+			unset($proposal['userdetails']['lastLogin'])
+		}
+
+
+
+
 		$proposal['community'] = GetPlugin('ReferralManagement')->communityCollective();
 		
 		$proposal['tmz']=date_default_timezone_get();
