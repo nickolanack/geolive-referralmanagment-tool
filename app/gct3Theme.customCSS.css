@@ -516,6 +516,20 @@ a.pb-btn-close:after {
     
     .login-form {
         position:relative;
+        
+        
+        input.text-input.one.with-1-line {
+            line-height: 40px;
+            height: 40px;
+            box-shadow: 0 0 3px rgb(0 0 0 / 20%) inset;
+            border-color: cornflowerblue;
+            text-indent:10px;
+            font-family:sans-serif;
+            font-size: 15px;
+        }
+        
+        
+        
     }
     
     
