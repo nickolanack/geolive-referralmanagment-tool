@@ -20262,22 +20262,26 @@
                                     "className": "",
                                     "identifier": "",
                                     "viewType": "view",
-                                    "namedView": "googlemap",
+                                    "namedView": "singleMapTitleBarView",
                                     "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "formOptions": "{}",
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
                                     "showDeleteButton": false,
-                                    "deleteItemScript": "",
+                                    "deleteItemScript": "defaultBehaviorFn()",
                                     "initModuleScript": "",
                                     "formatModuleScript": "",
-                                    "resolveItemScript": "",
+                                    "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": ""
                                 }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": []
                             }
                         ]
                     },
