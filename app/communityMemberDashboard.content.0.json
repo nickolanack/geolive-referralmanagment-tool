@@ -1,11 +1,8 @@
 {
-    "type": "InlineHtml",
+    "type": "WizardScriptElement",
     "config": {
-        "className": "user-form ",
-        "text": "<div class=\"application-welcome\"><h2>Welcome<\/h2>\n<p>Your account is pending approval from a community lands department member.<\/p>\n<p>Please fill out your profile information below. This will help us to identify you and create a new user account.<\/p><\/div>",
-        "template": "html.communityDashboardPending",
-        "templateVariablesScript": "{}",
-        "formatTextScript": "",
-        "ajaxRequestTemplate": false
+        "name": "My Custom Script",
+        "script": "return GatherDashboard.addLogoutBtn();",
+        "description": "Info about my custom script"
     }
 }
