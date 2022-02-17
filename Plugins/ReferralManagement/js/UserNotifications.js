@@ -33,7 +33,7 @@ var UserNotifications=(function(){
 			    }}
 			}),
 			new ElementModule('span',{
-			    "class":"admin-toggle",
+			    "class":"logout-toggle",
 			    events:{click:function(){
 			        
 
