@@ -4586,7 +4586,7 @@ img.static-map {
     }
     
     
-    span.dark-toggle:after, span.admin-toggle:after  {
+    span.dark-toggle:after, span.admin-toggle:after, span.logout-toggle:after {
         content: "";
         font-family: 'FontAwesome';
         position: absolute;
@@ -4603,7 +4603,11 @@ img.static-map {
         content:"\0f023"
     }
     
-    span.dark-toggle, span.admin-toggle {
+    span.logout-toggle:after{
+        content:"\0f023"
+    }
+    
+    span.dark-toggle, span.admin-toggle, span.logout-toggle {
       display: inline-block;
       width: 35px;
       height: 35px;
