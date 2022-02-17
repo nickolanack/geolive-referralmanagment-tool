@@ -764,10 +764,18 @@ div#g-recaptcha {
     }
 
 
-span.array-module.registration-module .form-navigation-btns {
-    margin-top: 30px;display: inline-block;width: 100%;
-}
+    span.array-module.registration-module .form-navigation-btns {
+        margin-top: 30px;display: inline-block;width: 100%;
         
+        .submit{
+            background-color: mediumseagreen;
+        }
+        
+    }
+    
+    .uitext-container.mandatory-field.form-password.registration-field.uitext-container {
+        display: block;
+    }    
 
 }
 
