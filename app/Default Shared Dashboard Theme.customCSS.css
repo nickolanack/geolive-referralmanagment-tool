@@ -4486,10 +4486,15 @@ img.static-map {
         background: #7b889f;
         padding: 5px 16px;
         display: none;
+        font-size: 14px;
     }
     
     span.notifications.selection button:first-child {
         right: 50px;
+    }
+    
+    span.notifications.selection button:last-child {
+        right: 255px;
     }
     
     span.notifications.selection.has-selection button {
