@@ -10620,29 +10620,6 @@
                                     "className": "",
                                     "identifier": "",
                                     "viewType": "view",
-                                    "namedView": "singleMapTitleBarView",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultView",
-                                    "formOptions": "\"{}\"",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "defaultBehaviorFn()",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "return item",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": ""
-                                }
-                            },
-                            {
-                                "type": "UIView",
-                                "config": {
-                                    "className": "",
-                                    "identifier": "",
-                                    "viewType": "view",
                                     "namedView": "mainMapDetailOverview",
                                     "shouldRender": true,
                                     "namedViewScript": "return namedView",
@@ -15986,16 +15963,16 @@
                             "forgotPasswordForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 378,
-                            "y": 510
+                            "x": 388,
+                            "y": 520
                         },
                         "children": [
                             "forgotPasswordForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 338,
-                                    "y": 686
+                                    "x": 348,
+                                    "y": 696
                                 }
                             }
                         ],
@@ -16022,6 +15999,7 @@
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "add another value",
                                                 "formatter": "none",
+                                                "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "forgotPasswordForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.onRenderTextFieldScript.js",
                                                 "formatValueScript": "",
                                                 "getValueScript": " return \"\"; ",
@@ -20255,6 +20233,29 @@
                     "content": {
                         "modules": [
                             "mainMapDetailOverview.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "",
+                                    "identifier": "",
+                                    "viewType": "view",
+                                    "namedView": "singleMapTitleBarView",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            },
                             {
                                 "type": "UIView",
                                 "config": {
