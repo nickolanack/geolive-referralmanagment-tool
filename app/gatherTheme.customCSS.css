@@ -358,10 +358,15 @@ button.primary-btn.nav-new-btn.view-selection:before {
 }
 
 
-.dark .uilist-pagination button {
+.dark .uilist-pagination button.disabled {
     background-color: #2e303a;
-    border: none;
     color: gray;
+}
+
+.dark .uilist-pagination button {
+    background-color: #efa82c;
+    color: black;
+    border: none;
 }
 
 .section-title, .markdown h2 {
