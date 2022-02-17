@@ -26,6 +26,13 @@ button:focus {outline:0;}
     .ui-view.main-panel {
         padding-top: 62px;
     }
+    
+    
+    &.scrolled{
+        .ui-view.search-panel {
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+    }
 }
 
 
