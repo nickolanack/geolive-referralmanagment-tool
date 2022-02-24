@@ -800,6 +800,13 @@ var DashboardPageLayout = (function() {
 		];
 
 
+		app.getDisplayController().addFormViewContentFormatter(function(item, name, step, content) {
+
+			return content;
+
+		})
+
+
 		app.getDisplayController().addDetailViewContentFormatter(function(item, name, content) {
 
 			if (views.indexOf(name) == -1) {
