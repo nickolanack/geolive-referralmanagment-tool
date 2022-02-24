@@ -818,16 +818,16 @@
                             "widget.ProposalWizardBuilder.65.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 124,
-                            "y": 529
+                            "x": 134,
+                            "y": 539
                         },
                         "children": [
                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 84,
-                                    "y": 830
+                                    "x": 94,
+                                    "y": 840
                                 }
                             },
                             {
@@ -837,16 +837,16 @@
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 635,
-                                    "y": 520
+                                    "x": 645,
+                                    "y": 530
                                 },
                                 "children": [
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 595,
-                                            "y": 758
+                                            "x": 605,
+                                            "y": 768
                                         }
                                     },
                                     {
@@ -856,23 +856,23 @@
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1400,
-                                            "y": 814
+                                            "x": 1410,
+                                            "y": 824
                                         },
                                         "children": [
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1360,
-                                                    "y": 1040
+                                                    "x": 1370,
+                                                    "y": 1050
                                                 }
                                             },
                                             {
                                                 "class": "DecisionNode",
                                                 "_diagramState": {
-                                                    "x": 1400,
-                                                    "y": 814
+                                                    "x": 1410,
+                                                    "y": 824
                                                 },
                                                 "children": [
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.0.json",
@@ -903,16 +903,16 @@
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.2.fields.0.json"
                                                         ],
                                                         "_diagramState": {
-                                                            "x": 1655,
-                                                            "y": 149
+                                                            "x": 1665,
+                                                            "y": 159
                                                         },
                                                         "children": [
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.2.children.0.json",
                                                             {
                                                                 "class": "InsertNode",
                                                                 "_diagramState": {
-                                                                    "x": 1615,
-                                                                    "y": 362
+                                                                    "x": 1625,
+                                                                    "y": 372
                                                                 }
                                                             }
                                                         ],
@@ -1060,16 +1060,16 @@
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.3.fields.0.json"
                                                         ],
                                                         "_diagramState": {
-                                                            "x": 1636,
-                                                            "y": 748
+                                                            "x": 1646,
+                                                            "y": 758
                                                         },
                                                         "children": [
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.3.children.0.json",
                                                             {
                                                                 "class": "InsertNode",
                                                                 "_diagramState": {
-                                                                    "x": 1596,
-                                                                    "y": 914
+                                                                    "x": 1606,
+                                                                    "y": 924
                                                                 }
                                                             }
                                                         ],
@@ -1318,7 +1318,7 @@
                                                         "attributeFields": [
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
                                                         ],
-                                                        "className": "o-text width-2 only-docs add-documents",
+                                                        "className": "no-text width-2 only-docs add-documents",
                                                         "label": "Documents",
                                                         "message": "add a description",
                                                         "lines": 3,
@@ -1345,7 +1345,7 @@
                                                         "label": "Spatial files",
                                                         "message": "add a description",
                                                         "mandatory": false,
-                                                        "className": "",
+                                                        "className": "add-spatials no-text width-2",
                                                         "toolbarPosition": "bottom"
                                                     }
                                                 },
