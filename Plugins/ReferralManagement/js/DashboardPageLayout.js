@@ -802,6 +802,11 @@ var DashboardPageLayout = (function() {
 
 		app.getDisplayController().addFormViewContentFormatter(function(item, name, step, content) {
 
+
+			if(name==='ProposalTemplate'&&step.getIndex(1)){
+				content.content=content.content.slice(0,5);
+			}
+
 			return content;
 
 		})
