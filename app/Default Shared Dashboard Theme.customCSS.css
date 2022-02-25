@@ -39,6 +39,10 @@ button:focus {outline:0;}
  [data-view="singleProjectOverviewDetail"] [data-view="proposalOverviewStatus"]{
      display:none;
  }
+ 
+ button.section-toggle.some-flow-toggle{
+     display:none;
+ }
 
 
 .has-hidden-content.hide{
