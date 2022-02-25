@@ -13,8 +13,9 @@ var updateFn=function(){
     
     console.log(JSON.stringify(wizardData));
     
-    wizardData.forEach(function(data, i){
+    wizardData.forEach(function(dataGroup, i){
         
+        var data=dataGroup[Object.keys(dataGroup)[0]];
         
         var removeList=[];
         if(Object.keys(data).filter(function(k){
