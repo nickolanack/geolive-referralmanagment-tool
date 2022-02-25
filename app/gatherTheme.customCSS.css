@@ -453,6 +453,17 @@ button.primary-btn.nav-new-btn.view-selection:before {
     }
 }
 
+.field-value-module.breadcrumbs{
+    
+}
+span.field-label.clickable, span.field-value.clickable {
+  color: darken($highlightBtnColor, 20%);
+}
+
+.dark span.field-label.clickable, span.field-value.clickable {
+  color: $highlightBtnColor;
+}
+
 .dark .inline-navigation-menu li.active {
    
     button {
