@@ -334,6 +334,10 @@ button.section-toggle {
     
 }
 
+.dark button.section-toggle {
+    background-color: #222222;
+}
+
 button.section-toggle:after {
     content: "\0f107";
     position: absolute;
