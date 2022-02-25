@@ -22,7 +22,7 @@ var updateFn=function(){
         if(Object.keys(data).filter(function(k){
             return data[k]!==false;
         }).length===0){
-            if(i<wizardData.length-2){
+            if(i<wizardData.length-1){
                 removeList.push(i);
             }
         }else{
