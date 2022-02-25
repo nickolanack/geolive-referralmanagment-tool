@@ -1,11 +1,4 @@
 {
-    "type": "InlineHtml",
-    "config": {
-        "className": "",
-        "text": "{placeholder for list}",
-        "template": "",
-        "templateVariablesScript": "",
-        "formatTextScript": "",
-        "ajaxRequestTemplate": false
-    }
+    "type": "plugin.Attributes.WizardTextAttribute",
+    "config": {}
 }

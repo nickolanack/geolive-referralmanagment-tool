@@ -24575,16 +24575,16 @@
                             "permitListForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 209,
-                            "y": 234
+                            "x": 219,
+                            "y": 244
                         },
                         "children": [
                             "permitListForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 169,
-                                    "y": 400
+                                    "x": 179,
+                                    "y": 410
                                 }
                             }
                         ],
@@ -24595,7 +24595,53 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "permitListForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                        "permitListForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "permitListForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
+                                                ],
+                                                "className": "width-3",
+                                                "label": "Permit Number(s)",
+                                                "message": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add more values",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": "{}",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "permitListForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
+                                                ],
+                                                "className": "width-3",
+                                                "label": "Permit Issued date",
+                                                "message": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "",
+                                                "formatter": "date",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": "{}",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": ""
+                                            }
+                                        }
                                     ]
                                 },
                                 "footer": {
