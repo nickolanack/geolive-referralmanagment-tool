@@ -454,7 +454,7 @@ button.primary-btn.nav-new-btn.view-selection:before {
 }
 
 .field-value-module.breadcrumbs{
-    
+    text-indent: 5px;
 }
 span.field-label.clickable, span.field-value.clickable {
   color: darken($highlightBtnColor, 20%);
