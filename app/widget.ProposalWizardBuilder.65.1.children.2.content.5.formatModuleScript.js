@@ -18,7 +18,7 @@ var updateFn=function(){
         var remove=[];
         if(Object.keys(data).filter(function(k){
             return data[k]!==false;
-        })).length===0){
+        }).length===0){
             if(i<wizardData.length-2){
                 remove.push(i);
             }
