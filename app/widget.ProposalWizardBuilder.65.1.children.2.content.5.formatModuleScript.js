@@ -10,7 +10,7 @@ if(!module.hasWizard()){
             
         var wizards=module.getChildWizards();
         console.log(JSON.stringify(wizards.map(function(wizard){
-            wizard.updateStepData();
+            wizard.update();
             return wizard.getData();
         })));
         
