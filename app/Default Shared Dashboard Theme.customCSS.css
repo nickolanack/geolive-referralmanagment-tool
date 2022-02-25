@@ -2634,7 +2634,7 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {}
     }
 }
 
-.uitext-container.no-text, .boolean-field.checkbox-style {
+.uitext-container.no-text, .boolean-field.checkbox-style, .inline-form-list {
     background: rgba(0,0,0,0.1);
     padding: 10px;
     box-sizing: border-box;
@@ -2642,6 +2642,14 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {}
     margin-bottom: 15px;
     border-radius: 2px;
     
+}
+
+.inline-form-list {
+    
+}
+
+.inline-form-list .ui-view, .inline-form-list .ui-view:first-child {
+    border: none;
 }
 
 .boolean-field.checkboxStyle {
