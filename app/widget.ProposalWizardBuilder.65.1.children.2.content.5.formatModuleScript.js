@@ -15,12 +15,12 @@ var updateFn=function(){
     wizardData.forEach(function(data, i){
         
         
-        var remove=[];
+        var removeList=[];
         if(Object.keys(data).filter(function(k){
             return data[k]!==false;
         }).length===0){
             if(i<wizardData.length-2){
-                remove.push(i);
+                removeList.push(i);
             }
         }else{
             if(i==wizardData.length-1){
@@ -32,7 +32,7 @@ var updateFn=function(){
         }
         
         
-        remove.reverse.forEach(function(i){
+        removeList.reverse().forEach(function(i){
             module.getDetailViewAt(i).remove();
         });
         
