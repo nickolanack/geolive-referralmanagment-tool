@@ -41,21 +41,24 @@ var updateFn=function(){
 }
 
     
-    setTimeout(function(){
+    
             
         var wizards=module.getChildWizards();
         wizards.forEach(function(wizard){
-                
-            
             wizard.addEvent('valueChange', function(){
-
                 updateFn();
-                
-            })
-            
-        })
+            });
+        });
+        
+        module.addEvent('addItem',function(child, childView){
+            childView.getChildWizard(function(wizard){
+                wizard.addEvent('valueChange', function(){
+                    updateFn();
+                });
+            });
+        });
         
         
         
-    }, 3000);
+   
     
