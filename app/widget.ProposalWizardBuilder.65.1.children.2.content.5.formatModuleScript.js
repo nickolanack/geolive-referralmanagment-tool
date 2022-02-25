@@ -6,22 +6,24 @@ if(!module.hasWizard()){
 
 
     
-    setInterval(function(){
+    setTimeout(function(){
             
         var wizards=module.getChildWizards();
         wizards.forEach(function(wizard){
                 
             
-            wizard.addEvent('validation', function(){
-                console.log('validation')
+            wizard.addEvent('valueChange', function(){
+
+                console.log(JSON.stringify(wizards.map(function(wizard){
+                    wizard.update();
+                    return wizard.getData();
+                })));
+                
             })
             
         })
         
-        console.log(JSON.stringify(wizards.map(function(wizard){
-            wizard.update();
-            return wizard.getData();
-        })));
+        
         
     }, 3000);
     
