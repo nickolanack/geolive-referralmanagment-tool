@@ -53,7 +53,9 @@ $leftPanelColor:#222222;
     }
 }
 
-
+.search-panel span.logout-toggle {
+    background-color: #efa82c;
+}
 
 .discussion-header{
     border-bottom: 4px solid #2E303A;
