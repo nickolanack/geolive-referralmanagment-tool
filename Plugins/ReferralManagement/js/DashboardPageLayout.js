@@ -803,8 +803,8 @@ var DashboardPageLayout = (function() {
 			if(name==='ProposalTemplate'&&step.getIndex(1)){
 				console.log(list);
 				list[5].suppressModule();
-				list[6].suppressModule();
-				return list.slice(0,7);
+				//list[6].suppressModule();
+				
 			}
 
 		});
