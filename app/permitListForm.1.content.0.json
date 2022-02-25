@@ -1,11 +1,54 @@
 {
-    "type": "InlineHtml",
+    "type": "plugin.Attributes.WizardTextAttribute",
     "config": {
-        "className": "",
-        "text": "<h2>Submission documents<\/h2>",
-        "template": "",
-        "templateVariablesScript": "",
-        "formatTextScript": "",
-        "ajaxRequestTemplate": false
+        "attributeFields": [
+            {
+                "visibility": "public",
+                "tableId": "5",
+                "tableName": "proposalAttributes",
+                "tableSuffix": "_8359",
+                "title": "permitNumber",
+                "label": "Permit Number",
+                "description": "",
+                "fieldType": "text",
+                "color": "rgb(undefined, undefined, undefined)",
+                "searchability": "public",
+                "editability": "registered",
+                "fieldTextOptions": {
+                    "textType": "input",
+                    "inputOptions": {
+                        "buildAutocomplete": false,
+                        "requireModeration": false,
+                        "limitMaxChars": 0,
+                        "limitMaxWords": 0,
+                        "allowHtml": false,
+                        "allowMedia": true,
+                        "allowLinks": true
+                    },
+                    "listOptions": {
+                        "takeSugesstions": true,
+                        "buildTree": false,
+                        "iconize": false,
+                        "colorize": false
+                    }
+                },
+                "allowMultiple": false
+            }
+        ],
+        "className": "width-3",
+        "label": "Permit Number(s)",
+        "message": "",
+        "lines": 1,
+        "maxChars": 0,
+        "mandatory": false,
+        "multiEntry": false,
+        "muliTemplate": "lines",
+        "multiMessage": "add more values",
+        "formatter": "none",
+        "iconTint": "rgb(100, 149, 237)",
+        "autocomplete": true,
+        "inputOptions": "{}",
+        "onRenderTextFieldScript": "",
+        "formatValueScript": ""
     }
 }
