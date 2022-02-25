@@ -12,7 +12,7 @@ if(!module.hasWizard()){
         wizards.forEach(function(wizard){
                 
             
-            wizard.on('validation', function(){
+            wizard.addEvent('validation', function(){
                 console.log('validation')
             })
             
