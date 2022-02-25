@@ -477,8 +477,10 @@ span.field-label.clickable, span.field-value.clickable {
 
 .inline-navigation-menu {
     li.menu-user-configuration, li.menu-user-edit, li.menu-user-log, li.menu-user-log-out {
+       /*
         float: right;
         margin-right:10px;
+        */
         
     }
     li.menu-user-configuration, li.menu-layout-split, li.menu-layout-list, li.menu-layout-fancy, li.menu-layout-thumbs {
