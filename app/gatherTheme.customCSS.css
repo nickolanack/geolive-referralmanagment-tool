@@ -112,7 +112,7 @@ button.primary-btn.nav-new-btn, .inline-navigation-menu li.basemap button, .inli
 }
 
 
-.inline-navigation-menu li.basemap button:before, .inline-navigation-menu li.focus button:before {
+.inline-navigation-menu li.basemap button:before {
     content: "+ ";
     font-size: 20px;
     vertical-align: middle;
