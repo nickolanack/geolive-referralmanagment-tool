@@ -4,6 +4,41 @@ if(!module.hasWizard()){
 }
 
 
+var updateFn=function(){
+     
+    var wizardData=module.getChildWizards().map(function(wizard){
+        wizard.update();
+        return wizard.getData();
+    });
+    
+    
+    wizardData.forEach(function(data, i){
+        
+        
+        var remove=[];
+        if(Object.keys(data).filter(function(k){
+            return data[k]!==false;
+        })).length===0){
+            if(i<wizardData.length-2){
+                remove.push(i);
+            }
+        }else{
+            if(i==wizardData.length-1){
+                module.addItem(new MockDataTypeItem({
+                    id:-1,
+                    type:item.getType()
+                }))
+            }
+        }
+        
+        
+        remove.reverse.forEach(function(i){
+            module.getDetailViewAt(i).remove();
+        });
+        
+    })
+     
+}
 
     
     setTimeout(function(){
@@ -14,10 +49,7 @@ if(!module.hasWizard()){
             
             wizard.addEvent('valueChange', function(){
 
-                console.log(JSON.stringify(wizards.map(function(wizard){
-                    wizard.update();
-                    return wizard.getData();
-                })));
+                updateFn();
                 
             })
             
