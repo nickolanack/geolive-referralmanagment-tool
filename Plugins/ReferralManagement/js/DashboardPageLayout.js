@@ -802,6 +802,9 @@ var DashboardPageLayout = (function() {
 		app.getDisplayController().addFormViewWizardModuleFormatter(function(item, name, step, list) {
 			if(name==='ProposalTemplate'&&step.getIndex(1)){
 				console.log(list);
+				list[5].suppressModule();
+				list[6].suppressModule();
+				return list.slice(0,7);
 			}
 
 		});
@@ -810,7 +813,7 @@ var DashboardPageLayout = (function() {
 
 
 			if(name==='ProposalTemplate'&&step.getIndex(1)){
-				content.content=content.content.slice(0,5);
+				//content.content=content.content.slice(0,5);
 			}
 
 			return content;
