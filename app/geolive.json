@@ -2436,7 +2436,8 @@
             ],
             "otherMouseover": "<span style=\"font-size:20px\">Other Data<\/span><\/br>These map layers display additional useful features.",
             "otherTint": "rgb(0,0,0)",
-            "otherColor": "rgb(232, 232, 232)"
+            "otherColor": "rgb(232, 232, 232)",
+            "enableRevisions": false
         }
     },
     "widget.115": {
@@ -2826,7 +2827,10 @@
             "formatParametersScript": "return $parameters;",
             "user role tint": "rgb(0,0,0)",
             "formatOutputScript": "return $parameters;",
-            "saveParametersAsData": false
+            "saveParametersAsData": false,
+            "enableUserAjaxWrite": false,
+            "authUserAjaxScript": "XXXX-XXXX",
+            "enableRevisions": false
         }
     },
     "widget.129": {
@@ -3137,7 +3141,11 @@
             "other": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/eW4_%5BG%5D_xWA_W6b_%5BImAgE%5D.png"
             ],
-            "otherTint": "rgb(255, 255, 255)"
+            "otherTint": "rgb(255, 255, 255)",
+            "enableUserAjaxWrite": false,
+            "authUserAjaxScript": "XXXX-XXXX",
+            "saveParametersAsData": false,
+            "enableRevisions": false
         }
     },
     "widget.135": {
@@ -3936,7 +3944,10 @@
                 }
             ],
             "create-marker-heading": "Share a community marker",
-            "create-marker-intro": ""
+            "create-marker-intro": "",
+            "enableUserAjaxWrite": false,
+            "authUserAjaxScript": "XXXX-XXXX",
+            "enableRevisions": false
         }
     },
     "widget.145": {
@@ -5475,7 +5486,8 @@
             "gatherUrl": "https:\/\/gather.geoforms.ca\/",
             "showMapAnnotationsMain": true,
             "showMapAnnotationsProject": true,
-            "showProjectActivity": true
+            "showProjectActivity": true,
+            "enableRevisions": false
         }
     },
     "widget.154": {
