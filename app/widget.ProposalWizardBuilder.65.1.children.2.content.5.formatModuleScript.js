@@ -11,6 +11,7 @@ var updateFn=function(){
         return wizard.getData();
     });
     
+    console.log(JSON.stringify(wizardData));
     
     wizardData.forEach(function(data, i){
         
