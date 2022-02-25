@@ -95,11 +95,11 @@ $leftPanelColor:#222222;
 
 
 
-button.primary-btn.nav-new-btn, .inline-navigation-menu li.menu-map-add.basemap button{
+button.primary-btn.nav-new-btn, .inline-navigation-menu li.basemap button, .inline-navigation-menu li.focus button{
     background-color:$highlightBtnColor;
 }
 
-.inline-navigation-menu li.menu-map-add.basemap button {
+.inline-navigation-menu li.basemap button, .inline-navigation-menu li.focus button {
     padding: 5px 10px;
     border-radius: 100px;
     color: #2d2d2d;
@@ -112,7 +112,7 @@ button.primary-btn.nav-new-btn, .inline-navigation-menu li.menu-map-add.basemap 
 }
 
 
-.inline-navigation-menu li.menu-map-add.basemap button:before {
+.inline-navigation-menu li.basemap button:before, .inline-navigation-menu li.focus button:before {
     content: "+ ";
     font-size: 20px;
     vertical-align: middle;
