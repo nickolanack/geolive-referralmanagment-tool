@@ -4,10 +4,14 @@ if(!module.hasWizard()){
 }
 
 
-module.getChildWizard(function(subWizard){
+
     
     setInterval(function(){
-        console.log(subWizard.getData());
-    }, 3000)
+            
+        var wizards=module.getChildWizards();
+        console.log(wizards.map(function(wizard){
+            return wizard.getData();
+        }));
+        
+    }, 3000);
     
-})
