@@ -12,12 +12,13 @@ var updateFn=function(){
     });
     
     console.log(JSON.stringify(wizardData));
+    var removeList=[];
     
     wizardData.forEach(function(dataGroup, i){
         
         var data=dataGroup[Object.keys(dataGroup)[0]];
         
-        var removeList=[];
+        
         if(Object.keys(data).filter(function(k){
             return data[k]!==false;
         }).length===0){
@@ -34,11 +35,13 @@ var updateFn=function(){
         }
         
         
-        removeList.reverse().forEach(function(i){
-            module.getDetailViewAt(i).remove();
-        });
+        
         
     })
+    
+    removeList.reverse().forEach(function(i){
+            module.getDetailViewAt(i).remove();
+        });
      
 }
 
