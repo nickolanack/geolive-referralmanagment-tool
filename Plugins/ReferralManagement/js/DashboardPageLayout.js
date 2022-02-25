@@ -801,8 +801,8 @@ var DashboardPageLayout = (function() {
 
 		app.getDisplayController().addFormViewWizardModuleFormatter(function(item, name, step, list) {
 			if(name==='ProposalTemplate'&&step.getIndex(1)){
-				console.log(list);
-				list[5].suppressModule();
+				//console.log(list);
+				//list[5].suppressModule();
 				//list[6].suppressModule();
 				
 			}
