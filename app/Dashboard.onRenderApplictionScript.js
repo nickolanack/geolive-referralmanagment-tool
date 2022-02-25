@@ -26,6 +26,7 @@ $firelight->includeScripts();
 GetWidget('projectTypeSelectionForm')->display($targetInstance); //proposal wizard from map
 
 GetWidget('proposalForm')->display($targetInstance); //proposal wizard from map
+GetWidget('permitListForm')->display($targetInstance); //proposal wizard from map
 
 
 
