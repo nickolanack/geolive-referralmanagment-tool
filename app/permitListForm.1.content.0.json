@@ -1,4 +1,11 @@
 {
-    "type": "plugin.Attributes.WizardTextAttribute",
-    "config": {}
+    "type": "InlineHtml",
+    "config": {
+        "className": "",
+        "text": "<h2>Submission documents<\/h2>",
+        "template": "",
+        "templateVariablesScript": "",
+        "formatTextScript": "",
+        "ajaxRequestTemplate": false
+    }
 }

@@ -24575,16 +24575,16 @@
                             "permitListForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 229,
-                            "y": 254
+                            "x": 249,
+                            "y": 274
                         },
                         "children": [
                             "permitListForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 189,
-                                    "y": 430
+                                    "x": 209,
+                                    "y": 525
                                 }
                             }
                         ],
@@ -24599,12 +24599,189 @@
                                     "modules": [
                                         "permitListForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
-                                            "type": "plugin.Attributes.WizardTextAttribute",
-                                            "config": []
+                                            "type": "plugin.Attributes.WizardDescriptionAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "permitListForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
+                                                ],
+                                                "className": "no-text width-2 only-docs add-documents",
+                                                "label": "Documents",
+                                                "message": "add a description",
+                                                "lines": 3,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "showToolbars": true,
+                                                "showAudios": true,
+                                                "showVideos": true,
+                                                "showDocuments": true,
+                                                "showImages": true,
+                                                "showExpandInput": false,
+                                                "toolbarPosition": "bottom",
+                                                "textFormatScript": "",
+                                                "onRenderModuleFn": "",
+                                                "mediaIconTint": "rgb(100, 149, 237)"
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.ReferralManagement.WizardLayerField",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "permitListForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
+                                                ],
+                                                "label": "Spatial files",
+                                                "message": "add a description",
+                                                "mandatory": false,
+                                                "className": "add-spatials no-text width-2",
+                                                "toolbarPosition": "bottom"
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardDescriptionAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "permitListForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
+                                                ],
+                                                "className": "no-text add-permits width-2 only-docs",
+                                                "label": "Permits",
+                                                "message": "add a description",
+                                                "lines": 3,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "showToolbars": true,
+                                                "showAudios": true,
+                                                "showVideos": true,
+                                                "showDocuments": true,
+                                                "showImages": true,
+                                                "showExpandInput": false,
+                                                "toolbarPosition": "bottom",
+                                                "textFormatScript": "",
+                                                "onRenderModuleFn": "",
+                                                "mediaIconTint": "rgb(100, 149, 237)"
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardDescriptionAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "permitListForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
+                                                ],
+                                                "className": "no-text add-agreements only-docs width-2",
+                                                "label": "Agreements",
+                                                "message": "add a description",
+                                                "lines": 3,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "showToolbars": true,
+                                                "showAudios": true,
+                                                "showVideos": true,
+                                                "showDocuments": true,
+                                                "showImages": true,
+                                                "showExpandInput": false,
+                                                "toolbarPosition": "bottom",
+                                                "textFormatScript": "",
+                                                "onRenderModuleFn": "",
+                                                "mediaIconTint": "rgb(100, 149, 237)"
+                                            }
                                         },
                                         {
                                             "type": "plugin.Attributes.WizardTextAttribute",
-                                            "config": []
+                                            "config": {
+                                                "attributeFields": [
+                                                    "permitListForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.attributeFields.0.json"
+                                                ],
+                                                "className": "width-3",
+                                                "label": "Permit Number(s)",
+                                                "message": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add more values",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": "{}",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "permitListForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
+                                                ],
+                                                "className": "width-3",
+                                                "label": "Permit Issued date",
+                                                "message": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "",
+                                                "formatter": "date",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": "{}",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "permitListForm.metadata.children.1.builderMetadata.positions.content.modules.7.config.attributeFields.0.json"
+                                                ],
+                                                "className": "width-3",
+                                                "label": "Permit expiry date",
+                                                "message": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "",
+                                                "formatter": "date",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": "{}",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "UIListView",
+                                            "config": {
+                                                "listClassName": "",
+                                                "className": "",
+                                                "identifier": "",
+                                                "viewType": "form",
+                                                "namedView": "defaultView",
+                                                "shouldRender": true,
+                                                "namedViewScript": "return namedView",
+                                                "showInlineEdit": false,
+                                                "namedFormView": "permitListForm",
+                                                "formOptions": "\"{}\"",
+                                                "showDeleteButton": false,
+                                                "deleteItemScript": "defaultBehaviorFn()",
+                                                "initModuleScript": "",
+                                                "formatModuleScript": "",
+                                                "resolveItemScript": "return item",
+                                                "filterModulesScript": "return list",
+                                                "itemButtonsScript": "return [];",
+                                                "insertAtTop": false,
+                                                "targetName": "",
+                                                "getItemListScript": "return [item];",
+                                                "formatItemListScript": "return list;",
+                                                "formatListItemModuleScript": "return item;",
+                                                "emptyNamedView": "emptyListView",
+                                                "filterItemsScript": "return true;",
+                                                "sortItemsScript": "",
+                                                "maxItems": "-1"
+                                            }
                                         }
                                     ]
                                 },
