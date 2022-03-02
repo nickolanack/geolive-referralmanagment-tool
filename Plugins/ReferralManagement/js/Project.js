@@ -353,6 +353,14 @@ var Project = (function() {
 		},
 		
 
+		getPermitDetailsList:function(){
+
+			var me = this;
+			var permitList= me.data.attributes.permitList;
+			return (permitList||[]);
+
+		},
+
 		getProjectUsername: function() {
 			var me = this;
 			return me.data.userdetails.name;

@@ -494,9 +494,7 @@ var DashboardPageLayout = (function() {
 		content=layout.filterIdentifierConfig(content, 'activity-chart', 'showProjectActivity');//'enableTasks');
 
 
-
 		content=layout.filterIdentifierConfig(content, ['proposal-status', 'status-assessment', 'status-processing'], 'enableProposals');
-
 
 
 		content=layout.filterIdentifier(content, ['project-task-progress', 'project-task-remaining', 'project-task-deadline', 'project-tasks-overview'], !layout.currentItem().isDataset());
@@ -801,9 +799,9 @@ var DashboardPageLayout = (function() {
 
 		app.getDisplayController().addFormViewWizardModuleFormatter(function(item, name, step, list) {
 			if(name==='ProposalTemplate'&&step.getIndex(1)){
-				//console.log(list);
-				//list[5].suppressModule();
-				//list[6].suppressModule();
+				// console.log(list);
+				// list[5].suppressModule();
+				// list[6].suppressModule();
 				
 			}
 
