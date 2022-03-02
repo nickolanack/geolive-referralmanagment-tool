@@ -5,7 +5,7 @@ $highlightBtnColor:#efa82c;
 $highlightBtnHoverColor:#f56e13;
 $defaultBtnColor:$highlightBtnColor;
 $primaryBtnColor:mediumseagreen;
-$pendingColor:crimson;
+$pendingColor:gray; /*crimson;*/
 $implementedColor:$primaryBtnColor;
 
 $shareColor:#6A7CE9;
@@ -53,7 +53,9 @@ $leftPanelColor:#222222;
     }
 }
 
-
+.search-panel span.logout-toggle {
+    background-color: #efa82c;
+}
 
 .discussion-header{
     border-bottom: 4px solid #2E303A;
@@ -93,11 +95,11 @@ $leftPanelColor:#222222;
 
 
 
-button.primary-btn.nav-new-btn, .inline-navigation-menu li.menu-map-add.basemap button{
+button.primary-btn.nav-new-btn, .inline-navigation-menu li.basemap button, .inline-navigation-menu li.focus button{
     background-color:$highlightBtnColor;
 }
 
-.inline-navigation-menu li.menu-map-add.basemap button {
+.inline-navigation-menu li.basemap button, .inline-navigation-menu li.focus button {
     padding: 5px 10px;
     border-radius: 100px;
     color: #2d2d2d;
@@ -110,7 +112,7 @@ button.primary-btn.nav-new-btn, .inline-navigation-menu li.menu-map-add.basemap 
 }
 
 
-.inline-navigation-menu li.menu-map-add.basemap button:before {
+.inline-navigation-menu li.basemap button:before {
     content: "+ ";
     font-size: 20px;
     vertical-align: middle;
@@ -176,19 +178,22 @@ button.form-btn.inline-edit.is-light {
 }
 
 
-textarea.text-input {
+.text-input {
     padding-left: 10px;
     border-radius: 5px;
+    
+    &.with-1-line {
+   
+        overflow: hidden;
+        padding: 0px;
+        height: 35px;
+        line-height: 35px;
+        padding-left: 10px;
+    }
+    
 }
 
-textarea.text-input.with-1-line {
-   
-    overflow: hidden;
-    padding: 0px;
-    height: 35px;
-    line-height: 35px;
-    padding-left: 10px;
-}
+
 
 
 
@@ -451,6 +456,17 @@ button.primary-btn.nav-new-btn.view-selection:before {
     }
 }
 
+.field-value-module.breadcrumbs{
+    text-indent: 5px;
+}
+span.field-label.clickable, span.field-value.clickable {
+  color: darken($highlightBtnColor, 20%);
+}
+
+.dark span.field-label.clickable, span.field-value.clickable {
+  color: $highlightBtnColor;
+}
+
 .dark .inline-navigation-menu li.active {
    
     button {
@@ -464,8 +480,10 @@ button.primary-btn.nav-new-btn.view-selection:before {
 
 .inline-navigation-menu {
     li.menu-user-configuration, li.menu-user-edit, li.menu-user-log, li.menu-user-log-out {
+       /*
         float: right;
         margin-right:10px;
+        */
         
     }
     li.menu-user-configuration, li.menu-layout-split, li.menu-layout-list, li.menu-layout-fancy, li.menu-layout-thumbs {

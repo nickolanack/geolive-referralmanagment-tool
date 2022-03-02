@@ -2048,7 +2048,7 @@
                     "label": "Permit Number",
                     "description": "",
                     "fieldType": "text",
-                    "color": "rgb(undefined, undefined, undefined)",
+                    "color": "rgb(NaN, NaN, NaN)",
                     "searchability": "public",
                     "editability": "registered",
                     "fieldTextOptions": {
@@ -2069,7 +2069,7 @@
                             "colorize": false
                         }
                     },
-                    "allowMultiple": false
+                    "allowMultiple": true
                 },
                 {
                     "visibility": "public",
@@ -2154,6 +2154,38 @@
                     "tableSuffix": "_1332",
                     "title": "stateData",
                     "label": "State Data",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "5",
+                    "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
+                    "title": "permitList",
+                    "label": "permitList",
                     "description": "",
                     "fieldType": "text",
                     "color": "rgb(undefined, undefined, undefined)",

@@ -1,8 +1,23 @@
 {
-    "type": "WizardScriptElement",
+    "type": "UIView",
     "config": {
-        "name": "My Custom Script",
-        "script": "\nreturn new ModuleArray([\n    new ElementModule(\"label\",{html:\"Tasks completed\"}),\n    new ElementModule(\"div\",{html:item.getPercentComplete()+\"%\", \"class\":\"percent-complete-value\"}),\n    new ProgressBarModule({value:function(){ return item.getPercentComplete(); },\"class\":\"percent-complete\"})\n],{\"class\":\"progress\", identifier:\"project-task-progress\"});",
-        "description": "Info about my custom script"
+        "className": "",
+        "identifier": "project-state-progress",
+        "viewType": "view",
+        "namedView": "proposalOverviewStatus",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
+        "showInlineEdit": false,
+        "namedFormView": "defaultView",
+        "formOptions": "\"{}\"",
+        "showDeleteButton": false,
+        "deleteItemScript": "defaultBehaviorFn()",
+        "initModuleScript": "",
+        "formatModuleScript": "",
+        "resolveItemScript": "return item",
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false,
+        "targetName": ""
     }
 }

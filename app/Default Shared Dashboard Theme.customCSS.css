@@ -36,6 +36,34 @@ button:focus {outline:0;}
 }
 
 
+ [data-view="singleProjectOverviewDetail"] [data-view="proposalOverviewStatus"]{
+     display:none;
+     
+     
+    height:200px;
+    
+        
+    .ui-view{
+        display:inline-block;
+        transform: scale(0.8);
+        position: relative;
+        left: -80px;
+    }
+        
+    .html-content{
+        display:none
+    }
+     
+     
+ }
+ 
+ 
+ 
+ 
+ button.section-toggle.some-flow-toggle{
+     display:none;
+ }
+
 
 .has-hidden-content.hide{
 
@@ -332,6 +360,10 @@ button.section-toggle {
     position:relative;
     margin: 10px 0;
     
+}
+
+.dark button.section-toggle {
+    background-color: #222222;
 }
 
 button.section-toggle:after {
@@ -2634,7 +2666,7 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {}
     }
 }
 
-.uitext-container.no-text, .boolean-field.checkbox-style {
+.uitext-container.no-text, .boolean-field.checkbox-style, .inline-form-list .ui-view {
     background: rgba(0,0,0,0.1);
     padding: 10px;
     box-sizing: border-box;
@@ -2642,6 +2674,14 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {}
     margin-bottom: 15px;
     border-radius: 2px;
     
+}
+
+.inline-form-list .ui-view {
+    margin-right: 15px;
+}
+
+.inline-form-list .ui-view, .inline-form-list .ui-view:first-child {
+    border: none;
 }
 
 .boolean-field.checkboxStyle {
