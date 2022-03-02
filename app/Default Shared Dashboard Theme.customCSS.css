@@ -2676,8 +2676,8 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {}
     
 }
 
-.inline-form-list {
-    
+.inline-form-list .ui-view {
+    margin-right: 15px;
 }
 
 .inline-form-list .ui-view, .inline-form-list .ui-view:first-child {
