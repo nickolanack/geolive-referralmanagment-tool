@@ -12245,19 +12245,19 @@
             "metadata": {
                 "title": "proposalAttributes",
                 "_tableDiagramState": {
-                    "x": 305,
-                    "y": 248
+                    "x": 298,
+                    "y": 254
                 },
                 "_diagramState": {
-                    "x": 305,
-                    "y": 248
+                    "x": 298,
+                    "y": 254
                 },
                 "appliesTo": [
                     "proposal"
                 ],
                 "_typeDiagramState": {
-                    "x": 36,
-                    "y": 306
+                    "x": 100,
+                    "y": 300
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -13899,11 +13899,11 @@
                         "label": "permitList",
                         "description": "",
                         "icon": [],
-                        "color": "rgb(undefined, undefined, undefined)",
+                        "color": "rgb(NaN, NaN, NaN)",
                         "visibility": "public",
                         "editability": "registered",
                         "searchability": "public",
-                        "allowMultiple": false,
+                        "allowMultiple": true,
                         "fieldType": "text",
                         "fieldTextOptions": {
                             "textType": "input",
