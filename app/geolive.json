@@ -24526,15 +24526,15 @@
                             "permitListForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 279,
-                            "y": 304
+                            "x": 289,
+                            "y": 314
                         },
                         "children": [
                             "permitListForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 239,
+                                    "x": 249,
                                     "y": 480
                                 }
                             }
@@ -24547,6 +24547,28 @@
                                 "content": {
                                     "modules": [
                                         "permitListForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "width-3",
+                                                "label": "Permit Issued date",
+                                                "placeholder": "add value",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "date",
+                                                "beforeRenderModuleScript": "",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return \"Hello World\"; ",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
                                         {
                                             "type": "FormTextField",
                                             "config": {
