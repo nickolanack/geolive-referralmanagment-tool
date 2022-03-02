@@ -1,54 +1,22 @@
 {
-    "type": "plugin.Attributes.WizardTextAttribute",
+    "type": "FormTextField",
     "config": {
-        "attributeFields": [
-            {
-                "visibility": "public",
-                "tableId": "5",
-                "tableName": "proposalAttributes",
-                "tableSuffix": "_8359",
-                "title": "permitNumber",
-                "label": "Permit Number",
-                "description": "",
-                "fieldType": "text",
-                "color": "rgb(undefined, undefined, undefined)",
-                "searchability": "public",
-                "editability": "registered",
-                "fieldTextOptions": {
-                    "textType": "input",
-                    "inputOptions": {
-                        "buildAutocomplete": false,
-                        "requireModeration": false,
-                        "limitMaxChars": 0,
-                        "limitMaxWords": 0,
-                        "allowHtml": false,
-                        "allowMedia": true,
-                        "allowLinks": true
-                    },
-                    "listOptions": {
-                        "takeSugesstions": true,
-                        "buildTree": false,
-                        "iconize": false,
-                        "colorize": false
-                    }
-                },
-                "allowMultiple": false
-            }
-        ],
         "className": "width-3",
-        "label": "Permit Number(s)",
-        "message": "",
+        "label": "Permit Issued date",
+        "placeholder": "add value",
         "lines": 1,
         "maxChars": 0,
         "mandatory": false,
         "multiEntry": false,
         "muliTemplate": "lines",
-        "multiMessage": "add more values",
-        "formatter": "none",
-        "iconTint": "rgb(100, 149, 237)",
-        "autocomplete": true,
-        "inputOptions": "{}",
+        "multiMessage": "add another value",
+        "formatter": "date",
+        "beforeRenderModuleScript": "",
         "onRenderTextFieldScript": "",
-        "formatValueScript": ""
+        "formatValueScript": "",
+        "getValueScript": " return \"Hello World\"; ",
+        "updateValueScript": " object.value=value ",
+        "submitValueScript": "",
+        "validateValueScript": " return defaultValidationFn() "
     }
 }
