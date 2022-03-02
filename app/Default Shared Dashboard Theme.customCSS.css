@@ -2666,7 +2666,7 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {}
     }
 }
 
-.uitext-container.no-text, .boolean-field.checkbox-style, .inline-form-list {
+.uitext-container.no-text, .boolean-field.checkbox-style, .inline-form-list .ui-view {
     background: rgba(0,0,0,0.1);
     padding: 10px;
     box-sizing: border-box;
