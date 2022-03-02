@@ -7,7 +7,7 @@
         issued:'',
         expiry:''
     });
-});
+}).setUpdateAttribute('proposalAttributes', 'permitList')
     
     
 
