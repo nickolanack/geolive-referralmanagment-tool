@@ -16,7 +16,7 @@
         "formatValueScript": "",
         "getValueScript": " return item.getNumber(); ",
         "updateValueScript": " object.value=value ",
-        "submitValueScript": "wizardDataset.number=object.value;",
+        "submitValueScript": "wizardDataSet.number=object.value;",
         "validateValueScript": " return defaultValidationFn() "
     }
 }
