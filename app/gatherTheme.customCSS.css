@@ -178,19 +178,22 @@ button.form-btn.inline-edit.is-light {
 }
 
 
-textarea.text-input {
+.text-input {
     padding-left: 10px;
     border-radius: 5px;
+    
+    &.with-1-line {
+   
+        overflow: hidden;
+        padding: 0px;
+        height: 35px;
+        line-height: 35px;
+        padding-left: 10px;
+    }
+    
 }
 
-textarea.text-input.with-1-line {
-   
-    overflow: hidden;
-    padding: 0px;
-    height: 35px;
-    line-height: 35px;
-    padding-left: 10px;
-}
+
 
 
 
