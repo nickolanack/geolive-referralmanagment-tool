@@ -24526,16 +24526,16 @@
                             "permitListForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 299,
-                            "y": 324
+                            "x": 309,
+                            "y": 334
                         },
                         "children": [
                             "permitListForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 259,
-                                    "y": 500
+                                    "x": 269,
+                                    "y": 510
                                 }
                             }
                         ],
@@ -24563,9 +24563,9 @@
                                                 "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": " return \"Hello World\"; ",
+                                                "getValueScript": " return item.getIssued();",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "",
+                                                "submitValueScript": "permitListForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         },
@@ -24585,9 +24585,9 @@
                                                 "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": " return \"Hello World\"; ",
+                                                "getValueScript": " return item.getExpiry()",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "",
+                                                "submitValueScript": "permitListForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         }

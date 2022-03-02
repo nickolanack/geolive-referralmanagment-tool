@@ -14,9 +14,9 @@
         "beforeRenderModuleScript": "",
         "onRenderTextFieldScript": "",
         "formatValueScript": "",
-        "getValueScript": " return \"Hello World\"; ",
+        "getValueScript": " return item.getNumber(); ",
         "updateValueScript": " object.value=value ",
-        "submitValueScript": "",
+        "submitValueScript": "wizardDataset.number=object.value;",
         "validateValueScript": " return defaultValidationFn() "
     }
 }
