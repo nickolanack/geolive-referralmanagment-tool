@@ -33,7 +33,29 @@ button:focus {outline:0;}
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         }
     }
+    
+    .search-panel.ui-view {
+        background: white;
+    }
+    
+    
 }
+
+.dark.sticky-top{
+    
+        &.scrolled{
+            .ui-view.search-panel {
+                box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+            }
+        }
+    
+        .search-panel.ui-view {
+            background: #030310;
+            color: white;
+        }
+    }
+    
+
 
 
  [data-view="singleProjectOverviewDetail"] [data-view="proposalOverviewStatus"]{
