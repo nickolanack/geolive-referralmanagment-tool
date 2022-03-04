@@ -457,7 +457,7 @@ var DashboardPageLayout = (function() {
 		var removeCols = ['col-approval', 'col-ownership', ];
 
 
-		(ProjectTeam.GetAllCommunities().length===1){
+		if(ProjectTeam.GetAllCommunities().length===1){
 			removeCols.push('col-community')
 		}
    
