@@ -41,8 +41,7 @@ button:focus {outline:0;}
     
 }
 
-.dark {
-    .sticky-top{
+.dark.sticky-top{
     
         .search-panel.ui-view {
             background: #3d414e;
@@ -50,7 +49,7 @@ button:focus {outline:0;}
         }
     }
     
-}
+
 
 
  [data-view="singleProjectOverviewDetail"] [data-view="proposalOverviewStatus"]{
