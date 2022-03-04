@@ -198,6 +198,11 @@ div.field-value-module.inline.ids{
         color: white;
     }
     
+    
+    &.is-longtext {
+        font-size: 0.8em;
+    }
+    
 }
 
 
