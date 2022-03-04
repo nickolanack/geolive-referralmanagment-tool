@@ -161,7 +161,7 @@ var ProposalFlow = (function() {
 			this._stepOptions.push(options);
 			this._last = el;
 
-			if (options.clickable !== false) {
+			if (options.clickable !== false&&AppClient.getUserType()!=="guest") {
 				this._addInteraction(el, options);
 			}
 
