@@ -115,6 +115,11 @@ var RecentItems = (function() {
 			}
 		}
 
+
+		if(tag.getShortName().length>15){
+			el.addClass('is-longtext');
+		}
+
 			
 
 	};
