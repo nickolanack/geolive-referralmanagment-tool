@@ -4508,6 +4508,12 @@
                 },
                 {
                     "type": "input",
+                    "name": "loginLabel",
+                    "default": "Login",
+                    "label": "loginLabel"
+                },
+                {
+                    "type": "input",
                     "name": "loadingLabel",
                     "default": "Loading your referral dashboard",
                     "label": "loadingLabel"
@@ -5510,9 +5516,10 @@
             "showMapAnnotationsProject": true,
             "showProjectActivity": true,
             "enableRevisions": false,
-            "nameForProjects": "Projects",
+            "nameForProjects": "Submissions",
             "nameForCollections": "Collections",
-            "nameForDatasets": "Datasets"
+            "nameForDatasets": "Datasets",
+            "loginLabel": "Login"
         }
     },
     "widget.154": {
