@@ -808,7 +808,7 @@ var ProjectList = (function() {
 
 		return new ProjectList({
 
-			"label": community +" "+ (DashboardConfig.getValue('showDatasets')?"Datasets & ":"")+(DashboardConfig.getValue('enableProposals')?"Projects":"Collections"),
+			"label": community +" "+ (DashboardConfig.getValue('showDatasets')?"Datasets & ":"")+(DashboardConfig.getValue('enableProposals')?ProjectList.NameForProjects():"Collections"),
 			"showCreateBtn": false,
 
 			projects:function(callback){
@@ -845,7 +845,7 @@ var ProjectList = (function() {
 		return new ProjectList({
 			"icon": category.getIcon(),
 			"color": category.getColor(),
-			"label": category.getName() +" "+ (DashboardConfig.getValue('showDatasets')?"Datasets & ":"")+(DashboardConfig.getValue('enableProposals')?"Projects":"Collections"),
+			"label": category.getName() +" "+ (DashboardConfig.getValue('showDatasets')?"Datasets & ":"")+(DashboardConfig.getValue('enableProposals')?ProjectList.NameForProjects():"Collections"),
 			"showCreateBtn": false,
 			"createBtns": btns,
 			"filter": null,
@@ -855,13 +855,17 @@ var ProjectList = (function() {
 
 	}
 
+	ProjectList.NameForProjects=function(){
+		return DashboardConfig.getValue("nameForProjects",'Projects');
+	}
+
 	ProjectList.NamedStatusProjectList=function(status){
 
 
 
 		return new ProjectList({
 
-			"label": status +" "+ (DashboardConfig.getValue('showDatasets')?"Datasets & ":"")+(DashboardConfig.getValue('enableProposals')?"Projects":"Collections"),
+			"label": status +" "+ (DashboardConfig.getValue('showDatasets')?"Datasets & ":"")+(DashboardConfig.getValue('enableProposals')?ProjectList.NameForProjects():"Collections"),
 			"showCreateBtn": false,
 
 			projects:function(callback){
@@ -882,7 +886,7 @@ var ProjectList = (function() {
 
 
 		return new ProjectList({
-		    "label":  (user.getId()==AppClient.getId()?"Your":user.getName()+"'s")+" Projects",
+		    "label":  (user.getId()==AppClient.getId()?"Your":user.getName()+"'s")+" "+ProjectList.NameForProjects(),
 		    projects:function(callback){
 
 		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
@@ -901,7 +905,7 @@ var ProjectList = (function() {
 
 
 		return new ProjectList({
-		    "label":  "Related Projects",
+		    "label":  "Related "+ProjectList.NameForProjects(),
 		    "labelClass":"",
 		    "showFilters":false,
 		    "showMinimize":true,
@@ -922,7 +926,7 @@ var ProjectList = (function() {
 
 
 		return new ProjectList({
-			"label": client.getName() +" "+ (DashboardConfig.getValue('showDatasets')?"Datasets & ":"")+(DashboardConfig.getValue('enableProposals')?"Projects":"Collections"),
+			"label": client.getName() +" "+ (DashboardConfig.getValue('showDatasets')?"Datasets & ":"")+(DashboardConfig.getValue('enableProposals')?ProjectList.NameForProjects():"Collections"),
 		    projects:function(callback){
 
 		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
