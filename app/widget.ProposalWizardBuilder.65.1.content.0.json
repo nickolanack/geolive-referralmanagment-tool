@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "if(item.getId()>0){\n    return '<h2>Edit submission: <span>'+item.getName()+'<\/span><h2>';\n}\n\nif(AppClient.getUserType()==\"guest\"){\n    return '<h2>New submission<h2>';\n}\n\n\nreturn '<h2>New submission<h2>';",
+        "script": "if(item.getId()>0){\n    return '<h2>Edit submission: <span>'+item.getName()+'<\/span><h2>';\n}\n\nif(AppClient.getUserType()==\"guest\"){\n    return '<h2>Add submission<h2>';\n}\n\n\nreturn '<h2>Add submission<h2>';",
         "description": "Info about my custom script"
     }
 }
