@@ -33,6 +33,15 @@ button:focus {outline:0;}
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         }
     }
+    
+    .search-panel.ui-view {
+        background: white;
+    }
+    
+    .dark .search-panel.ui-view {
+        background: #3d414e;
+        color: white;
+    }
 }
 
 
