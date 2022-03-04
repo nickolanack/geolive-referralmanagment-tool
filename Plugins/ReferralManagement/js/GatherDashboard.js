@@ -765,7 +765,7 @@ var GatherDashboard = (function() {
 			//login.appendChild(new Element('br'));
 			registrationLabel.appendChild(new Element('button', {
 				html: 'Register',
-				style: "background-color:mediumseagreen;",
+				style: "background-color:#6A7CE9;",
 				"class": "primary-btn"
 
 			}));
@@ -781,10 +781,14 @@ var GatherDashboard = (function() {
 					return;
 				}
 
+				/**
+				 * TODO make this variables
+				 */
+
 				var loginProposal = proposal.appendChild(new Element('label', {
-					html: 'Are you a proponent?',
+					html: 'Submit a referral',
 					'class': 'login-button-text',
-					style: "text-align:left; color: #EDC84C; line-height: 55px;",
+					style: "text-align:left; color: #6A7CE9; line-height: 55px;",
 					events: {
 
 					}
@@ -793,7 +797,7 @@ var GatherDashboard = (function() {
 				//login.appendChild(new Element('br'));
 				var proposalButton = loginProposal.appendChild(new Element('button', {
 
-					html: 'Submit a proposal',
+					html: 'Add submission',
 					style: "background-color:#EDC84C;",
 					"class": "primary-btn"
 
