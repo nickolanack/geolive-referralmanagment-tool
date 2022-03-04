@@ -356,6 +356,9 @@ var Project = (function() {
 		getPermitDetailsList:function(){
 
 			var me = this;
+			if(!(me.data&&me.data.attributes&&me.data.attributes.permitList)){
+				return [];
+			}
 			var permitList= me.data.attributes.permitList;
 			return (permitList||[]);
 
