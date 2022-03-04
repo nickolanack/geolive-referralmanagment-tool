@@ -456,6 +456,12 @@ var DashboardPageLayout = (function() {
 
 		var removeCols = ['col-approval', 'col-ownership', ];
 
+
+		(ProjectTeam.GetAllCommunities().length===1){
+			removeCols.push('col-community')
+		}
+   
+
 		if(!DashboardConfig.getValue('enableProposals')){
 			removeCols.push('col-status');
 		}
