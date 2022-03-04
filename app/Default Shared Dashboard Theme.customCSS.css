@@ -43,8 +43,14 @@ button:focus {outline:0;}
 
 .dark.sticky-top{
     
+        &.scrolled{
+            .ui-view.search-panel {
+                box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+            }
+        }
+    
         .search-panel.ui-view {
-            background: #3d414e;
+            background: #030310;
             color: white;
         }
     }
