@@ -5288,6 +5288,24 @@
                 },
                 {
                     "type": "text",
+                    "label": "nameForProjects",
+                    "name": "nameForProjects",
+                    "default": "Projects"
+                },
+                {
+                    "type": "text",
+                    "label": "nameForCollections",
+                    "name": "nameForCollections",
+                    "default": "Collections"
+                },
+                {
+                    "type": "text",
+                    "label": "nameForDatasets",
+                    "name": "nameForDatasets",
+                    "default": "Datasets"
+                },
+                {
+                    "type": "text",
                     "label": "projectListItemView",
                     "name": "projectListItemView",
                     "default": "singleProjectListItemDetail"
@@ -5465,13 +5483,17 @@
             "gatherIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_r7F_lYW_6cm_%5BG%5D-%3Ethumb%3A%3E200x%3E150.png"
             ],
-            "leftPanelPrimaryBtnLabel": "Add Project",
+            "leftPanelPrimaryBtnLabel": "New Submission",
             "leftPanelPrimaryBtnForm": "{projectForm}",
             "showLeftPanelSecondaryBtn": false,
             "leftPanelSecondaryBtnLabel": "Add Dataset",
             "leftPanelSecondaryBtnForm": "{projectForm}",
             "datasetForm": "{projectForm}",
-            "menuLabels": [],
+            "menuLabels": {
+                "main": {
+                    "Referrals.Projects": "Submissions"
+                }
+            },
             "menuItems": [],
             "useCommunitiesAsDepartmens": false,
             "useCommunitiesAsDepartments": false,
@@ -5487,7 +5509,10 @@
             "showMapAnnotationsMain": true,
             "showMapAnnotationsProject": true,
             "showProjectActivity": true,
-            "enableRevisions": false
+            "enableRevisions": false,
+            "nameForProjects": "Projects",
+            "nameForCollections": "Collections",
+            "nameForDatasets": "Datasets"
         }
     },
     "widget.154": {
