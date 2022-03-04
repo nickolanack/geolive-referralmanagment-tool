@@ -856,7 +856,7 @@ var ProjectList = (function() {
 	}
 
 	ProjectList.NameForProjects=function(){
-		return DashboardConfig.getValue("nameForProjects",'Projects');
+		return DashboardConfig.getValue("nameForProjects")||'Projects';
 	}
 
 	ProjectList.NamedStatusProjectList=function(status){
