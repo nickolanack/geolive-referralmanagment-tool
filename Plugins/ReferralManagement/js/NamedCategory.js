@@ -295,7 +295,13 @@ var NamedCategory = (function() {
 
 		try{
 
-			return NamedCategoryList.getTag(category).getShortName();
+			var shortName= NamedCategoryList.getTag(category).getShortName();
+
+			if(shortName&&shortName.length>30){
+				shortName=shortName.substring(0,10)+'...'+shortName.substring(-10);
+			}
+
+			return shortName;
 
 		}catch(e){
 			console.error("Missing Project Type")
