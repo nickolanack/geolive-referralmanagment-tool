@@ -1927,16 +1927,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 409,
-                            "y": 312
+                            "x": 419,
+                            "y": 322
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 369,
-                                    "y": 513
+                                    "x": 379,
+                                    "y": 523
                                 }
                             },
                             {
@@ -1946,16 +1946,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 986,
-                                    "y": 571
+                                    "x": 996,
+                                    "y": 581
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 946,
-                                            "y": 737
+                                            "x": 956,
+                                            "y": 747
                                         }
                                     }
                                 ],
@@ -2022,7 +2022,7 @@
                                             "config": {
                                                 "className": "",
                                                 "text": "<div class=\"application-logo\"><\/div><span style=\"text-align: left; font-weight: 100; display: block;\"><span style=\"font-size:20px\">\nLogin<\/span>\n<p><\/p><br><\/span>",
-                                                "template": "",
+                                                "template": "loginText",
                                                 "templateVariablesScript": "",
                                                 "formatTextScript": "",
                                                 "ajaxRequestTemplate": false
