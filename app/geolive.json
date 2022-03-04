@@ -24691,5 +24691,19 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.433": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.loginText.text",
+            "target": "module.loginText.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "module-loginText-text.contentTemplate.html"
+        }
     }
 }
