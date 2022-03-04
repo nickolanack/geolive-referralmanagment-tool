@@ -714,6 +714,12 @@ var DashboardPageLayout = (function() {
 					html: ["Department", "Tags", "Trash"],
 					config: "simplifiedMenu"
 				}, {
+					html: ['Department'],
+					condition: function() {
+						return !(DashboardConfig.getValue('useCommunitiesAsDepartments')&&ProjectTeam.GetAllCommunities().length<=1);
+					},
+					addClass:"admin-only"
+				}, {
 					html: "Archive",
 					config: "simplifiedMenu",
 					hide: true //menu is still available just hidden
