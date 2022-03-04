@@ -754,7 +754,7 @@ var GatherDashboard = (function() {
 			var registrationLabel = registration.appendChild(new Element('label', {
 				html: 'Register as a new user',
 				'class': 'login-button-text',
-				style: "text-align:left; color: mediumseagreen; line-height: 55px;",
+				style: "text-align:left; color: #6A7CE9; line-height: 55px;",
 				events: {
 					click: function() {
 						//goto next step
@@ -765,7 +765,7 @@ var GatherDashboard = (function() {
 			//login.appendChild(new Element('br'));
 			registrationLabel.appendChild(new Element('button', {
 				html: 'Register',
-				style: "background-color:#6A7CE9;",
+				style: "background-color:mediumseagreen;",
 				"class": "primary-btn"
 
 			}));
