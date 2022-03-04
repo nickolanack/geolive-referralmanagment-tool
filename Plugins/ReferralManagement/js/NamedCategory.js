@@ -297,8 +297,8 @@ var NamedCategory = (function() {
 
 			var shortName= NamedCategoryList.getTag(category).getShortName();
 
-			if(shortName&&shortName.length>30){
-				shortName=shortName.substring(0,10)+'...'+shortName.substring(0, -10);
+			if(shortName&&shortName.length>16){
+				shortName=shortName.substring(0,7)+'...'+shortName.substring(0, -6);
 			}
 
 			return shortName;
