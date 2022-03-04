@@ -1927,16 +1927,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 429,
-                            "y": 332
+                            "x": 439,
+                            "y": 342
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 389,
-                                    "y": 533
+                                    "x": 399,
+                                    "y": 543
                                 }
                             },
                             {
@@ -1946,16 +1946,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 1006,
-                                    "y": 591
+                                    "x": 1016,
+                                    "y": 601
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 966,
-                                            "y": 757
+                                            "x": 976,
+                                            "y": 767
                                         }
                                     }
                                 ],
@@ -2021,11 +2021,19 @@
                                             "type": "InlineHtml",
                                             "config": {
                                                 "className": "",
-                                                "text": "",
+                                                "text": "<div class=\"application-logo\"><\/div>",
                                                 "template": "loginText",
                                                 "templateVariablesScript": "",
                                                 "formatTextScript": "",
                                                 "ajaxRequestTemplate": false
+                                            }
+                                        },
+                                        {
+                                            "type": "WizardScriptElement",
+                                            "config": {
+                                                "name": "My Custom Script",
+                                                "script": "loginForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.script.js",
+                                                "description": "Info about my custom script"
                                             }
                                         },
                                         {
@@ -2059,7 +2067,7 @@
                                             "type": "WizardScriptElement",
                                             "config": {
                                                 "name": "My Custom Script",
-                                                "script": "loginForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.script.js",
+                                                "script": "loginForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.script.js",
                                                 "description": "Info about my custom script"
                                             }
                                         }
