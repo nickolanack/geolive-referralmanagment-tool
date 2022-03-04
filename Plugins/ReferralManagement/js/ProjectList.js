@@ -220,7 +220,7 @@ var ProjectList = (function() {
 
 
 		return new ProjectList({
-			label: "Projects",
+			label: ProjectList.NameForProjects(),
 			showCreateBtn: true,
 			filter: null,
 			invertfilter: false
