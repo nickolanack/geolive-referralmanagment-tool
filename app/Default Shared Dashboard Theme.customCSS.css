@@ -38,10 +38,18 @@ button:focus {outline:0;}
         background: white;
     }
     
-    .dark .search-panel.ui-view {
-        background: #3d414e;
-        color: white;
+    
+}
+
+.dark {
+    .sticky-top{
+    
+        .search-panel.ui-view {
+            background: #3d414e;
+            color: white;
+        }
     }
+    
 }
 
 
