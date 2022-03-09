@@ -90,7 +90,7 @@ var UserNotifications = (function() {
 		];
 
 		if (AppClient.getUserType() === 'admin') {
-			btns.push(new ElementModule('span', {
+			btns.push((new ElementModule('span', {
 				"class": "admin-toggle",
 				events: {
 					click: function() {
@@ -105,7 +105,13 @@ var UserNotifications = (function() {
 
 					}
 				}
-			}))
+			})).runOnceOnLoad(function(button){
+				new UIPopover(button.getElement(),{
+			        description:'Hide/show admin buttons',
+			        anchor:UIPopover.AnchorAuto()
+			    });
+			})
+			)
 		}
 
 
