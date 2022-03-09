@@ -33,7 +33,7 @@ var UserNotifications = (function() {
 
 
 		var btns = [
-			new ElementModule('span', {
+			(new ElementModule('span', {
 				"class": "notifications",
 				events: {
 					click: function() {
@@ -43,8 +43,13 @@ var UserNotifications = (function() {
 
 					}
 				}
+			})).runOnceOnLoad(function(button){
+				new UIPopover(button.getElement(),{
+			        description:'Your notifications',
+			        anchor:UIPopover.AnchorAuto()
+			    });
 			}),
-			new ElementModule('span', {
+			(new ElementModule('span', {
 				"class": "dark-toggle",
 				events: {
 					click: function() {
@@ -58,8 +63,13 @@ var UserNotifications = (function() {
 
 					}
 				}
+			})).runOnceOnLoad(function(button){
+				new UIPopover(button.getElement(),{
+			        description:'Toggle light/dark display',
+			        anchor:UIPopover.AnchorAuto()
+			    });
 			}),
-			new ElementModule('span', {
+			(new ElementModule('span', {
 				"class": "logout-toggle",
 				events: {
 					click: function() {
@@ -71,6 +81,11 @@ var UserNotifications = (function() {
 
 					}
 				}
+			})).runOnceOnLoad(function(button){
+				new UIPopover(button.getElement(),{
+			        description:'Log out',
+			        anchor:UIPopover.AnchorAuto()
+			    });
 			})
 		];
 
