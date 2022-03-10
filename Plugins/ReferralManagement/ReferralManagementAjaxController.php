@@ -859,15 +859,17 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		(new attributes\Record('userAttributes'))->setValues($json->user, 'user', $values);
 
-		$this->getPlugin()->notifier()->onUpdateUserRole($json);
+		$update=array(
+			'role'=>$this->getPlugin()->getUserRoles($json->user),
+			'previous'=>$userRoles
+		);
+
+		$this->getPlugin()->notifier()->onUpdateUserRole((object) array_merge(get_object_vars($json), $update));
 
 		(new \core\LongTaskProgress())->throttle('onTriggerUpdateDevicesList', array('team' => 1), array('interval' => 30));
 		(new \core\LongTaskProgress())->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval' => 30));
 
-		return array(
-			'role'=>$this->getPlugin()->getUserRoles($json->user),
-			'previous'=>$userRoles
-		);
+		return  $update;
 
 	}
 

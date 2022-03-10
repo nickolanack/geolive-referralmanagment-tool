@@ -2,6 +2,9 @@
 
 namespace ReferralManagement;
 
+
+include_once __DIR__.'/EmailNotifications.php';
+
 class Notifications {
 
 	private function post($message, $data) {
@@ -124,6 +127,8 @@ class Notifications {
 			);
 
 		if ($clientMeta['can-create']) {
+
+			$this->queueEmailUserRoleUpdate($json->user, $json);
 			Emit('onAuthorizeCommunityMemberDevice', $clientMeta);
 			return;
 		}
@@ -212,7 +217,7 @@ class Notifications {
 
 		$this->broadcastProjectUpdate($project);
 		$this->queueEmailProjectUpdate($project, array(
-			'action' => 'Assigned team member',
+			'action' => 'Removed team member',
 		));
 
 	}
@@ -508,28 +513,16 @@ class Notifications {
 
 	}
 
+	private function queueEmailUserRoleUpdate($userId, $data = array()) {
+		(new \ReferralManagement\EmailNotifications())->queueEmailUserRoleUpdate($userId, $data);
+	}
+
 	private function queueEmailProjectUpdate($projectId, $data = array()) {
-
-		ScheduleEvent('onTriggerProjectUpdateEmailNotification', array(
-
-			'user' => GetClient()->getUserId(),
-			'project' => (new \ReferralManagement\Project())->fromId($projectId)->toArray(),
-			'info' => $data,
-
-		), intval(GetPlugin('ReferralManagement')->getParameter("queueEmailDelay")));
-
+		(new \ReferralManagement\EmailNotifications())->queueEmailProjectUpdate($projectId, $data);
 	}
 
 	private function queueEmailTaskUpdate($taskId, $data = array()) {
-
-		ScheduleEvent('onTriggerTaskUpdateEmailNotification', array(
-
-			'user' => GetClient()->getUserId(),
-			'task' => (new \ReferralManagement\Task())->fromId($taskId)->toArray(),
-			'info' => $data,
-
-		), intval(GetPlugin('ReferralManagement')->getParameter("queueEmailDelay")));
-
+		(new \ReferralManagement\EmailNotifications())->queueEmailTaskUpdate($projectId, $data);
 	}
 
 }
