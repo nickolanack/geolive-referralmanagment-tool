@@ -865,7 +865,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		(new \core\LongTaskProgress())->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval' => 30));
 
 		return array(
-			'roles'=>$values,
+			'role'=>$this->getPlugin()->getUserRoles($json->user),
 			'previous'=>$userRoles
 		);
 
