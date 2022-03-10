@@ -10981,12 +10981,12 @@
             "metadata": {
                 "title": "userAttributes",
                 "_tableDiagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 310,
+                    "y": 135
                 },
                 "_diagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 310,
+                    "y": 135
                 },
                 "appliesTo": [
                     "user"
@@ -11041,8 +11041,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -11085,8 +11085,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -11121,16 +11121,16 @@
                         },
                         "fieldNumberOptions": {
                             "precision": 0,
-                            "limitMinValue": "0",
-                            "limitMaxValue": "0"
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
                         },
                         "fieldBooleanOptions": {
                             "hideFalse": true,
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -11165,16 +11165,16 @@
                         },
                         "fieldNumberOptions": {
                             "precision": 0,
-                            "limitMinValue": "0",
-                            "limitMaxValue": "0"
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
                         },
                         "fieldBooleanOptions": {
                             "hideFalse": true,
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -11217,8 +11217,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -11253,8 +11253,8 @@
                         },
                         "fieldNumberOptions": {
                             "precision": 0,
-                            "limitMinValue": 0,
-                            "limitMaxValue": 0
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
                         },
                         "fieldBooleanOptions": {
                             "hideFalse": true,
@@ -11305,8 +11305,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -11657,8 +11657,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -11797,6 +11797,50 @@
                         "was": "",
                         "title": "address",
                         "label": "Address",
+                        "description": "",
+                        "icon": [],
+                        "color": "rgb(undefined, undefined, undefined)",
+                        "visibility": "public",
+                        "editability": "registered",
+                        "searchability": "public",
+                        "allowMultiple": false,
+                        "fieldType": "text",
+                        "fieldTextOptions": {
+                            "textType": "input",
+                            "inputOptions": {
+                                "buildAutocomplete": false,
+                                "requireModeration": false,
+                                "limitMaxChars": 0,
+                                "limitMaxWords": 0,
+                                "allowHtml": false,
+                                "allowMedia": true,
+                                "allowLinks": true
+                            },
+                            "listOptions": {
+                                "takeSugesstions": true,
+                                "buildTree": false,
+                                "iconize": false,
+                                "colorize": false
+                            }
+                        },
+                        "fieldNumberOptions": {
+                            "precision": 0,
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
+                        },
+                        "fieldBooleanOptions": {
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
+                        "was": "",
+                        "title": "reviewed",
+                        "label": "Some Data 0",
                         "description": "",
                         "icon": [],
                         "color": "rgb(undefined, undefined, undefined)",
