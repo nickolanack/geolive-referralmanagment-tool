@@ -822,7 +822,8 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 	protected function setUserRole($json) {
 
 
-		$userRoles = (new \ReferralManagement\UserRoles())->getUsersRoles($id);
+		$yourRoles = (new \ReferralManagement\UserRoles())->getUsersRoles();
+		$usersRoles = (new \ReferralManagement\UserRoles())->getUsersRoles($json->user);
 
 		if (!GetClient()->isAdmin()) {
 
@@ -837,8 +838,8 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 				return $this->setError('User cannot apply role: ' . $json->role . ' not in: ' . json_encode($canSetList));
 			}
 
-			if (empty(array_intersect($userRoles, $canSetList)) && !empty($userRoles)) {
-				return $this->setError('Target user: ' . json_encode($userRoles) . ' is not in role that is editable by user: ' . json_encode($canSetList));
+			if (empty(array_intersect($usersRoles, $canSetList)) && !empty($usersRoles)) {
+				return $this->setError('Target user: ' . json_encode($usersRoles) . ' is not in role that is editable by you: ' . json_encode($canSetList));
 			}
 
 		}
@@ -860,8 +861,8 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		(new attributes\Record('userAttributes'))->setValues($json->user, 'user', $values);
 
 		$update=array(
-			'role'=>(new \ReferralManagement\UserRoles())->clearCache()->getUsersRoles($id),
-			'previous'=>$userRoles,
+			'role'=>(new \ReferralManagement\UserRoles())->clearCache()->getUsersRoles($json->user),
+			'previous'=>$usersRoles,
 			'update'=>$values
 		);
 
