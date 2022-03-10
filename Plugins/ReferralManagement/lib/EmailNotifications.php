@@ -32,7 +32,7 @@ class EmailNotifications{
 	}
 
 
-	private function queueEmailUserRoleUpdate($userId, $data = array()) {
+	public function queueEmailUserRoleUpdate($userId, $data = array()) {
 
 		ScheduleEvent('onTriggerUserRoleUpdateEmailNotification', array(
 			'user' => GetClient()->getUserId(),
@@ -45,7 +45,7 @@ class EmailNotifications{
 
 
 
-	
+
 
 
 }
