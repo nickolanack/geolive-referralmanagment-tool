@@ -24,7 +24,6 @@ class TusImportTask{
 
 		set_time_limit(300);
 		$features=($importer=new \TusImport($longTaskProgress))->fromKml(\SpatialFile::Open(PathFrom($params->data[0])));
-		//$tableMetadata = AttributesTable::GetMetadata('featureAttributes');
 
 
 
@@ -83,7 +82,7 @@ class TusImportTask{
 		foreach ($features as $feature) {
 			
 			$attributes=$importer->parseAttributes($feature);
-			//AttributesRecord::Set($feature->getId(), $feature->getType(), $attributes, $tableMetadata);
+			//(new \attributes\Record('featureAttributes'))->setValues($feature->getId(), $feature->getType(), $attributes);
 		
 			$attributesCounter++;
 			$longTaskProgress->check();

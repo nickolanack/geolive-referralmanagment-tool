@@ -201,7 +201,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 	protected function projectSearch($json) {
 
 		GetPlugin('Attributes');
-		return array('results' => (new \attributes\RecordQuery('proposalAttributes'))->searchValues($json->search->name, 'title'));
+		return array('results' => (new \attributes\Record('proposalAttributes'))->searchValues($json->search->name, 'title'));
 
 		$response = array('results' => $this->getPlugin()->getActiveProjectList(array(
 			'LIMIT' => 5,

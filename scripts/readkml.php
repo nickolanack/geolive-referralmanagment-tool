@@ -17,12 +17,12 @@ if (file_exists($dir . '/core.php')) {
 Core::LoadPlugin('Maps');
 Core::LoadPlugin('Attributes');
 
-$tableMetadata = AttributesTable::GetMetadata('featureAttributes');
+$tableMetadata = (new \attributes\Table('featureAttributes'))->toObject();
 
-function setAttributes($item, $tableMetadata)
+function setAttributes($feature, $tableMetadata)
 {
 
-    $name = $item->getName();
+    $name = $feature->getName();
     $activityCode = substr($name, 0, 2);
     $activityMap = array(
         'BE' => 'Berries',
@@ -49,7 +49,7 @@ function setAttributes($item, $tableMetadata)
         $attributes['activity'] = $activityMap[$activityCode];
 
     }
-    $description = $item->getDescription();
+    $description = $feature->getDescription();
     $yr = explode(' ', trim($description));
     $yr = str_replace('.', '', array_pop($yr));
     if (strlen($yr) == 4 && is_numeric($yr)) {
@@ -58,7 +58,7 @@ function setAttributes($item, $tableMetadata)
 
     echo 'featureAttributes=>' . print_r($attributes, true);
 
-    AttributesRecord::Set($item->getId(), $item->getType(), $attributes, $tableMetadata);
+    (new \attributes\Record($tableMetadata))->setValues($feature->getId(), $feature->getType(), $attributes);
 }
 
 include_once MapsPlugin::Path() . DS . 'lib' . DS . 'KmlDocument.php';
