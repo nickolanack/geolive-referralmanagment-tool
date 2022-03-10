@@ -131,8 +131,8 @@ class Notifications {
 
 		if ($clientMeta['can-create']) {
 
-			$this->queueEmailUserRoleUpdate($json->user, $json);
 			Emit('onAuthorizeUser', $clientMeta);
+			$this->queueEmailUserRoleUpdate($json->user, $json);
 			return;
 		}
 
