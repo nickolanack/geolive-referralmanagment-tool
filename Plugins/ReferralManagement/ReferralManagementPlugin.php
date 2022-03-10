@@ -1008,10 +1008,6 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		return (new \ReferralManagement\UserRoles())->listRoles();
 	}
 
-	public function getUserAttributes($userId) {
-		return (new \ReferralManagement\User())->getAttributes($userId);
-	}
-
 	public function getUsersMetadata($id = -1) {
 		return (new \ReferralManagement\User())->getMetadata($id);
 	}

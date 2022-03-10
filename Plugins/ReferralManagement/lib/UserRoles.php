@@ -63,6 +63,13 @@ class UserRoles {
 		return count(array_intersect($rolesList, $this->getUsersRoles($userId))) > 0;
 	}
 
+
+	public function clearCache(){
+
+		(new \ReferralManagement\User())->clearCache();
+		return $this;
+	}
+
 	public function userHasRole($role) {
 
 		if (GetClient()->isGuest()) {
@@ -73,7 +80,7 @@ class UserRoles {
 
 		$map['proponent'] = 'isProponent';
 
-		$attribs = GetPlugin('ReferralManagement')->getUserAttributes(GetClient()->getUserId());
+		$attribs = (new \ReferralManagement\User())->getAttributes(GetClient()->getUserId());
 
 		if (key_exists($role, $map) && key_exists($map[$role], $attribs)) {
 			return $attribs[$map[$role]] === true || $attribs[$map[$role]] === "true";
@@ -90,7 +97,7 @@ class UserRoles {
 
 		$map = $this->listRoleAttributes();
 
-		$attribs = GetPlugin('ReferralManagement')->getUserAttributes($userId);
+		$attribs = (new \ReferralManagement\User())->getAttributes($userId);
 
 		$roles = array();
 
@@ -113,7 +120,7 @@ class UserRoles {
 
 		$map = $this->listRoleAttributes();
 
-		$attribs = GetPlugin('ReferralManagement')->getUserAttributes($userId);
+		$attribs = (new \ReferralManagement\User())->getAttributes($userId);
 
 		foreach (array_keys($map) as $key) {
 
@@ -179,7 +186,7 @@ class UserRoles {
 
 		$map = $this->listRoleAttributes();
 
-		$attribs = GetPlugin('ReferralManagement')->getUserAttributes($userId);
+		$attribs = (new \ReferralManagement\User())->getAttributes($userId);
 
 		foreach (array_keys($map) as $key) {
 

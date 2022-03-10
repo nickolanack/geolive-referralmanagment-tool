@@ -4,10 +4,19 @@ namespace ReferralManagement;
 
 class User {
 
-	private static $_cachedUserAttribs = null;
+	private static $_cachedUserAttribs = array();
 
 	private static $_communityConfig = null;
 	private static $_dashboardConfig = null;
+
+
+
+	public function clearCache(){
+
+		self::$_cachedUserAttribs=array();
+		return $this;
+
+	}
 
 	public function getMetadata($userId = -1) {
 

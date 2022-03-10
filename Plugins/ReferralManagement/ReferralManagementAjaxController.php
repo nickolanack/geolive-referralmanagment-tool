@@ -822,7 +822,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 	protected function setUserRole($json) {
 
 
-		$userRoles = $this->getPlugin()->getUserRoles($json->user);
+		$userRoles = (new \ReferralManagement\UserRoles())->getUsersRoles($id);
 
 		if (!GetClient()->isAdmin()) {
 
@@ -859,8 +859,11 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		(new attributes\Record('userAttributes'))->setValues($json->user, 'user', $values);
 
+
+
+
 		$update=array(
-			'role'=>$this->getPlugin()->getUserRoles($json->user),
+			'role'=>(new \ReferralManagement\UserRoles())->clearCache()->getUsersRoles($id),
 			'previous'=>$userRoles,
 			'update'=>$values
 		);
