@@ -24737,5 +24737,33 @@
             "saveTemplateAsData": false,
             "contentTemplate": "module-loginText-text.contentTemplate.html"
         }
+    },
+    "widget.434": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.onUserRoleChanged.subject",
+            "target": "email.onUserRoleChanged.subject",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Subject"
+        }
+    },
+    "widget.435": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.onUserRoleChanged.content",
+            "target": "email.onUserRoleChanged.content",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Message Content"
+        }
     }
 }
