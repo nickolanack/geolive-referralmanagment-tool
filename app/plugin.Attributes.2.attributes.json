@@ -1,21 +1,25 @@
 [
     {
-        "id": null,
+        "id": "1",
         "name": "userAttributes",
         "description": "",
         "label": "",
-        "suffix": null,
+        "suffix": "_5306",
         "metadata": {
             "title": "userAttributes",
             "readAccess": "public",
             "appliesTo": [
                 "user"
             ],
+            "id": "1",
+            "suffix": "_5306",
             "description": "",
             "fields": [
                 {
                     "visibility": "public",
+                    "tableId": "1",
                     "tableName": "userAttributes",
+                    "tableSuffix": "_5306",
                     "title": "isProponent",
                     "label": "Is Proponent",
                     "description": "",
@@ -35,7 +39,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "1",
                     "tableName": "userAttributes",
+                    "tableSuffix": "_5306",
                     "title": "isTribalCouncil",
                     "label": "Tribal Council Member",
                     "description": "",
@@ -55,7 +61,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "1",
                     "tableName": "userAttributes",
+                    "tableSuffix": "_5306",
                     "title": "isChiefCouncil",
                     "label": "Chief and Council Member",
                     "description": "",
@@ -75,7 +83,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "1",
                     "tableName": "userAttributes",
+                    "tableSuffix": "_5306",
                     "title": "isCommunityMember",
                     "label": "Community Member",
                     "description": "",
@@ -95,7 +105,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "1",
                     "tableName": "userAttributes",
+                    "tableSuffix": "_5306",
                     "title": "isLandsDepartment",
                     "label": "Lands Department Staff",
                     "description": "",
@@ -115,7 +127,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "1",
                     "tableName": "userAttributes",
+                    "tableSuffix": "_5306",
                     "title": "isLandsDepartmentManager",
                     "label": "Lands Department Manager",
                     "description": "",
@@ -135,7 +149,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "1",
                     "tableName": "userAttributes",
+                    "tableSuffix": "_5306",
                     "title": "memberCode",
                     "label": "Community Member Code",
                     "description": "",
@@ -165,7 +181,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "1",
                     "tableName": "userAttributes",
+                    "tableSuffix": "_5306",
                     "title": "approved",
                     "label": "Approved",
                     "description": "",
@@ -185,7 +203,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "1",
                     "tableName": "userAttributes",
+                    "tableSuffix": "_5306",
                     "title": "profileIcon",
                     "label": "Profile Picture",
                     "description": "",
@@ -215,7 +235,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "1",
                     "tableName": "userAttributes",
+                    "tableSuffix": "_5306",
                     "title": "firstName",
                     "label": "First Name",
                     "description": "",
@@ -245,7 +267,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "1",
                     "tableName": "userAttributes",
+                    "tableSuffix": "_5306",
                     "title": "lastName",
                     "label": "Last Name",
                     "description": "",
@@ -275,7 +299,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "1",
                     "tableName": "userAttributes",
+                    "tableSuffix": "_5306",
                     "title": "phone",
                     "label": "Phone",
                     "description": "",
@@ -305,7 +331,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "1",
                     "tableName": "userAttributes",
+                    "tableSuffix": "_5306",
                     "title": "bio",
                     "label": "Bio",
                     "description": "",
@@ -335,7 +363,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "1",
                     "tableName": "userAttributes",
+                    "tableSuffix": "_5306",
                     "title": "email",
                     "label": "Email",
                     "description": "",
@@ -365,7 +395,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "1",
                     "tableName": "userAttributes",
+                    "tableSuffix": "_5306",
                     "title": "community",
                     "label": "Community",
                     "description": "",
@@ -395,7 +427,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "1",
                     "tableName": "userAttributes",
+                    "tableSuffix": "_5306",
                     "title": "registeredStatus",
                     "label": "Registered Status",
                     "description": "",
@@ -415,7 +449,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "1",
                     "tableName": "userAttributes",
+                    "tableSuffix": "_5306",
                     "title": "approvedCommunity",
                     "label": "Approved Community",
                     "description": "",
@@ -445,7 +481,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "1",
                     "tableName": "userAttributes",
+                    "tableSuffix": "_5306",
                     "title": "role",
                     "label": "Role",
                     "description": "",
@@ -475,7 +513,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "1",
                     "tableName": "userAttributes",
+                    "tableSuffix": "_5306",
                     "title": "department",
                     "label": "Department",
                     "description": "",
@@ -505,7 +545,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "1",
                     "tableName": "userAttributes",
+                    "tableSuffix": "_5306",
                     "title": "address",
                     "label": "Address",
                     "description": "",
@@ -537,22 +579,26 @@
         }
     },
     {
-        "id": null,
+        "id": "2",
         "name": "emailerAttributes",
         "description": "",
         "label": "",
-        "suffix": null,
+        "suffix": "_1692",
         "metadata": {
             "title": "emailerAttributes",
             "readAccess": "public",
             "appliesTo": [
                 "marker"
             ],
+            "id": "2",
+            "suffix": "_1692",
             "description": "",
             "fields": [
                 {
                     "visibility": "public",
+                    "tableId": "2",
                     "tableName": "emailerAttributes",
+                    "tableSuffix": "_1692",
                     "title": "name",
                     "label": "Comunity Member's Name",
                     "description": "",
@@ -582,7 +628,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "2",
                     "tableName": "emailerAttributes",
+                    "tableSuffix": "_1692",
                     "title": "email",
                     "label": "Community Members Email Address",
                     "description": "",
@@ -614,22 +662,26 @@
         }
     },
     {
-        "id": null,
+        "id": "3",
         "name": "featureAttributes",
         "description": "",
         "label": "",
-        "suffix": null,
+        "suffix": "_1521",
         "metadata": {
             "title": "featureAttributes",
             "readAccess": "public",
             "appliesTo": [
                 "mapitem"
             ],
+            "id": "3",
+            "suffix": "_1521",
             "description": "",
             "fields": [
                 {
                     "visibility": "public",
+                    "tableId": "3",
                     "tableName": "featureAttributes",
+                    "tableSuffix": "_1521",
                     "title": "activityCode",
                     "label": "Activity Code",
                     "description": "",
@@ -659,7 +711,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "3",
                     "tableName": "featureAttributes",
+                    "tableSuffix": "_1521",
                     "title": "activity",
                     "label": "Activity",
                     "description": "",
@@ -689,7 +743,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "3",
                     "tableName": "featureAttributes",
+                    "tableSuffix": "_1521",
                     "title": "year",
                     "label": "Year",
                     "description": "",
@@ -721,22 +777,26 @@
         }
     },
     {
-        "id": null,
+        "id": "4",
         "name": "proponentAttributes",
         "description": "",
         "label": "",
-        "suffix": null,
+        "suffix": "_3608",
         "metadata": {
             "title": "proponentAttributes",
             "readAccess": "public",
             "appliesTo": [
                 "user"
             ],
+            "id": "4",
+            "suffix": "_3608",
             "description": "",
             "fields": [
                 {
                     "visibility": "public",
+                    "tableId": "4",
                     "tableName": "proponentAttributes",
+                    "tableSuffix": "_3608",
                     "title": "companyName",
                     "label": "Company Name",
                     "description": "",
@@ -766,7 +826,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "4",
                     "tableName": "proponentAttributes",
+                    "tableSuffix": "_3608",
                     "title": "companyType",
                     "label": "Company Type",
                     "description": "",
@@ -796,7 +858,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "4",
                     "tableName": "proponentAttributes",
+                    "tableSuffix": "_3608",
                     "title": "companyAddress",
                     "label": "Company Address",
                     "description": "",
@@ -826,7 +890,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "4",
                     "tableName": "proponentAttributes",
+                    "tableSuffix": "_3608",
                     "title": "companyWebsite",
                     "label": "Company Website",
                     "description": "",
@@ -856,7 +922,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "4",
                     "tableName": "proponentAttributes",
+                    "tableSuffix": "_3608",
                     "title": "contactName",
                     "label": "Contact Name",
                     "description": "",
@@ -886,7 +954,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "4",
                     "tableName": "proponentAttributes",
+                    "tableSuffix": "_3608",
                     "title": "contactNumber",
                     "label": "Contact Number",
                     "description": "",
@@ -918,22 +988,26 @@
         }
     },
     {
-        "id": null,
+        "id": "5",
         "name": "proposalAttributes",
         "description": "",
         "label": "",
-        "suffix": null,
+        "suffix": "_1332",
         "metadata": {
             "title": "proposalAttributes",
             "readAccess": "public",
             "appliesTo": [
                 "proposal"
             ],
+            "id": "5",
+            "suffix": "_1332",
             "description": "",
             "fields": [
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "title",
                     "label": "Title",
                     "description": "",
@@ -963,7 +1037,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "description",
                     "label": "Description",
                     "description": "",
@@ -993,7 +1069,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "spatialFeatures",
                     "label": "Spatial Features",
                     "description": "",
@@ -1023,7 +1101,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "documents",
                     "label": "Documents",
                     "description": "",
@@ -1053,7 +1133,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "status",
                     "label": "Status",
                     "description": "",
@@ -1083,7 +1165,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "company",
                     "label": "Company",
                     "description": "",
@@ -1113,7 +1197,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "submissionDate",
                     "label": "Submission Date",
                     "description": "",
@@ -1143,7 +1229,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "expiryDate",
                     "label": "Expiry Date",
                     "description": "",
@@ -1173,7 +1261,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "commentDeadlineDate",
                     "label": "Comment Deadline",
                     "description": "",
@@ -1203,7 +1293,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "priority",
                     "label": "Priority",
                     "description": "",
@@ -1233,7 +1325,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "projectLetters",
                     "label": "Project Letters",
                     "description": "",
@@ -1263,7 +1357,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "permits",
                     "label": "Permits",
                     "description": "",
@@ -1293,7 +1389,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "permitIssueDate",
                     "label": "Permit Issued Date",
                     "description": "",
@@ -1323,7 +1421,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "permitExpireDate",
                     "label": "Permit Expiry Date",
                     "description": "",
@@ -1353,7 +1453,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "comments",
                     "label": "Comments",
                     "description": "",
@@ -1383,7 +1485,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "agreements",
                     "label": "Agreements",
                     "description": "",
@@ -1413,7 +1517,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "flagged",
                     "label": "Flagged",
                     "description": "",
@@ -1433,7 +1539,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "type",
                     "label": "Type",
                     "description": "",
@@ -1463,7 +1571,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "teamMembers",
                     "label": "Team Members",
                     "description": "",
@@ -1493,7 +1603,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "starUsers",
                     "label": "Star Users",
                     "description": "",
@@ -1523,7 +1635,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "contactName",
                     "label": "Contact Name",
                     "description": "",
@@ -1553,7 +1667,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "contactAddress",
                     "label": "Contact Address",
                     "description": "",
@@ -1583,7 +1699,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "contactEmail",
                     "label": "Contact Email",
                     "description": "",
@@ -1613,7 +1731,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "contactPhone",
                     "label": "Contact Phone",
                     "description": "",
@@ -1643,7 +1763,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "contactFax",
                     "label": "Contact Fax",
                     "description": "",
@@ -1673,7 +1795,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "firstNationsInvolved",
                     "label": "First Nations Involved",
                     "description": "",
@@ -1703,7 +1827,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "assessmentDetails",
                     "label": "Assessment Details",
                     "description": "",
@@ -1733,7 +1859,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "summaryOfConcerns",
                     "label": "Summary Of Concerns",
                     "description": "",
@@ -1763,7 +1891,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "outcome",
                     "label": "Outcome",
                     "description": "",
@@ -1793,7 +1923,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "outcomeReason",
                     "label": "Outcome Reason",
                     "description": "",
@@ -1823,7 +1955,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "authorizationDate",
                     "label": "Autorization Date",
                     "description": "",
@@ -1853,7 +1987,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "autorizationUser",
                     "label": "Authorizer",
                     "description": "",
@@ -1883,7 +2019,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "authorizedCheck",
                     "label": "Authorized",
                     "description": "",
@@ -1903,7 +2041,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "permitNumber",
                     "label": "Permit Number",
                     "description": "",
@@ -1933,7 +2073,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "isDataset",
                     "label": "Is Dataset",
                     "description": "",
@@ -1953,7 +2095,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "childProjects",
                     "label": "Child Projects",
                     "description": "",
@@ -1983,7 +2127,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "implemented",
                     "label": "Implemented",
                     "description": "",
@@ -2003,7 +2149,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "stateData",
                     "label": "State Data",
                     "description": "",
@@ -2033,7 +2181,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "5",
                     "tableName": "proposalAttributes",
+                    "tableSuffix": "_1332",
                     "title": "permitList",
                     "label": "permitList",
                     "description": "",
@@ -2065,22 +2215,26 @@
         }
     },
     {
-        "id": null,
+        "id": "6",
         "name": "taskAttributes",
         "description": "",
         "label": "",
-        "suffix": null,
+        "suffix": "_3341",
         "metadata": {
             "title": "taskAttributes",
             "readAccess": "public",
             "appliesTo": [
                 "task"
             ],
+            "id": "6",
+            "suffix": "_3341",
             "description": "",
             "fields": [
                 {
                     "visibility": "public",
+                    "tableId": "6",
                     "tableName": "taskAttributes",
+                    "tableSuffix": "_3341",
                     "title": "isPriority",
                     "label": "Priority",
                     "description": "",
@@ -2100,7 +2254,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "6",
                     "tableName": "taskAttributes",
+                    "tableSuffix": "_3341",
                     "title": "starUsers",
                     "label": "Star Users",
                     "description": "",
@@ -2130,7 +2286,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "6",
                     "tableName": "taskAttributes",
+                    "tableSuffix": "_3341",
                     "title": "attachements",
                     "label": "Attachements",
                     "description": "",
@@ -2160,7 +2318,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "6",
                     "tableName": "taskAttributes",
+                    "tableSuffix": "_3341",
                     "title": "assignedTo",
                     "label": "Assigned To",
                     "description": "",
@@ -2190,7 +2350,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "6",
                     "tableName": "taskAttributes",
+                    "tableSuffix": "_3341",
                     "title": "teamMembers",
                     "label": "Team Members",
                     "description": "",
@@ -2220,7 +2382,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "6",
                     "tableName": "taskAttributes",
+                    "tableSuffix": "_3341",
                     "title": "createdBy",
                     "label": "Created By",
                     "description": "",
@@ -2250,7 +2414,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "6",
                     "tableName": "taskAttributes",
+                    "tableSuffix": "_3341",
                     "title": "completedBy",
                     "label": "Completed By",
                     "description": "",
@@ -2282,22 +2448,26 @@
         }
     },
     {
-        "id": null,
+        "id": "7",
         "name": "datasetAttributes",
         "description": "",
         "label": "",
-        "suffix": null,
+        "suffix": "_3021",
         "metadata": {
             "title": "datasetAttributes",
             "readAccess": "public",
             "appliesTo": [
                 "proposal"
             ],
+            "id": "7",
+            "suffix": "_3021",
             "description": "",
             "fields": [
                 {
                     "visibility": "public",
+                    "tableId": "7",
                     "tableName": "datasetAttributes",
+                    "tableSuffix": "_3021",
                     "title": "type",
                     "label": "Type",
                     "description": "",
@@ -2327,7 +2497,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "7",
                     "tableName": "datasetAttributes",
+                    "tableSuffix": "_3021",
                     "title": "notes",
                     "label": "Notes",
                     "description": "",
@@ -2357,7 +2529,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "7",
                     "tableName": "datasetAttributes",
+                    "tableSuffix": "_3021",
                     "title": "publicationDate",
                     "label": "Publication Date",
                     "description": "",
@@ -2387,7 +2561,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "7",
                     "tableName": "datasetAttributes",
+                    "tableSuffix": "_3021",
                     "title": "originator",
                     "label": "Originator",
                     "description": "",
@@ -2417,7 +2593,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "7",
                     "tableName": "datasetAttributes",
+                    "tableSuffix": "_3021",
                     "title": "purpose",
                     "label": "Purpose",
                     "description": "",
@@ -2447,7 +2625,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "7",
                     "tableName": "datasetAttributes",
+                    "tableSuffix": "_3021",
                     "title": "metadata",
                     "label": "Metadata",
                     "description": "",
@@ -2477,7 +2657,9 @@
                 },
                 {
                     "visibility": "public",
+                    "tableId": "7",
                     "tableName": "datasetAttributes",
+                    "tableSuffix": "_3021",
                     "title": "baseMapLayer",
                     "label": "Base Map Layer",
                     "description": "",
