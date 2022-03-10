@@ -30,15 +30,15 @@
     },
     "fieldNumberOptions": {
         "precision": 0,
-        "limitMinValue": 0,
-        "limitMaxValue": 0
+        "limitMinValue": "",
+        "limitMaxValue": ""
     },
     "fieldBooleanOptions": {
         "hideFalse": true,
         "trueLabel": "",
         "falseLabel": "",
         "useFieldIcon": false,
-        "trueIcon": [],
-        "falseIcon": []
+        "trueIcon": false,
+        "falseIcon": false
     }
 }
