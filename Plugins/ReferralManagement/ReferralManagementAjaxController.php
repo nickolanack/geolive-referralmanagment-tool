@@ -861,7 +861,8 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		$update=array(
 			'role'=>$this->getPlugin()->getUserRoles($json->user),
-			'previous'=>$userRoles
+			'previous'=>$userRoles,
+			'update'=>$values
 		);
 
 		$this->getPlugin()->notifier()->onUpdateUserRole((object) array_merge(get_object_vars($json), $update));
