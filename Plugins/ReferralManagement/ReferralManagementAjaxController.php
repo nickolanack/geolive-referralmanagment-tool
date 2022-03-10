@@ -821,9 +821,11 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function setUserRole($json) {
 
+
+		$userRoles = $this->getPlugin()->getUserRoles($json->user);
+
 		if (!GetClient()->isAdmin()) {
 
-			$userRoles = $this->getPlugin()->getUserRoles($json->user);
 			$canSetList = $this->getPlugin()->getRolesUserCanEdit();
 
 			if (empty($canSetList)) {
@@ -838,9 +840,6 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			if (empty(array_intersect($userRoles, $canSetList)) && !empty($userRoles)) {
 				return $this->setError('Target user: ' . json_encode($userRoles) . ' is not in role that is editable by user: ' . json_encode($canSetList));
 			}
-
-			(new \core\LongTaskProgress())->throttle('onTriggerUpdateDevicesList', array('team' => 1), array('interval' => 30));
-			(new \core\LongTaskProgress())->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval' => 30));
 
 		}
 
@@ -862,7 +861,13 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		$this->getPlugin()->notifier()->onUpdateUserRole($json);
 
-		return $values;
+		(new \core\LongTaskProgress())->throttle('onTriggerUpdateDevicesList', array('team' => 1), array('interval' => 30));
+		(new \core\LongTaskProgress())->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval' => 30));
+
+		return array(
+			'roles'=>$values,
+			'previous'=>$userRoles
+		);
 
 	}
 
