@@ -126,14 +126,17 @@ class Notifications {
 				)
 			);
 
+
+		Emit('onUpdateUserRole', $clientMeta);
+
 		if ($clientMeta['can-create']) {
 
 			$this->queueEmailUserRoleUpdate($json->user, $json);
-			Emit('onAuthorizeCommunityMemberDevice', $clientMeta);
+			Emit('onAuthorizeUser', $clientMeta);
 			return;
 		}
 
-		Emit('onDeauthorizeCommunityMemberDevice', $clientMeta);
+		Emit('onDeAuthorizeUser', $clientMeta);
 	}
 
 	
