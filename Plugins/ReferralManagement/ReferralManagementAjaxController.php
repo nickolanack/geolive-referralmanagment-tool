@@ -859,9 +859,6 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		(new attributes\Record('userAttributes'))->setValues($json->user, 'user', $values);
 
-
-
-
 		$update=array(
 			'role'=>(new \ReferralManagement\UserRoles())->clearCache()->getUsersRoles($id),
 			'previous'=>$userRoles,
