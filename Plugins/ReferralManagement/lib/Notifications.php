@@ -136,7 +136,7 @@ class Notifications {
 			return;
 		}
 
-		Emit('onDeAuthorizeUser', $clientMeta);
+		Emit('onDeauthorizeUser', $clientMeta);
 	}
 
 	
