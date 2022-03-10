@@ -606,6 +606,24 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 	}
 
+
+	protected function onTriggerUserRoleUpdateEmailNotification($args){
+
+
+
+		
+
+		GetPlugin('Email')->getMailerWithTemplate('onUserRoleChanged', array_merge(
+			get_object_vars($args), array( /*...*/)))
+			->to('nickblackwell82@gmail.com')
+			->send();
+
+		
+
+
+
+	}
+
 	protected function onTriggerProjectUpdateEmailNotification($args) {
 
 		$teamMembers = $this->getTeamMembersForProject($args->project->id);
