@@ -313,7 +313,7 @@ var SpatialProject = (function() {
 				list=list.concat([ removeBtn, editBtn]);
 			}
 		
-			list.concat(adminBtns);
+			list=list.concat(adminBtns);
 
 			list.content = list;
 
