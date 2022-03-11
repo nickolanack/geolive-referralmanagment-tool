@@ -5061,6 +5061,29 @@ span.navigation-menu.settings-menu {
     
     }
     
+    
+    @media screen and (max-width: 1250) {
+    
+        div.field-value-module.inline{
+             
+             
+             &[data-col="created"], &[data-col="modified"]{
+                 
+                   
+                    
+                    .field-value{
+                   
+                        &:after{
+                            font-size:12px;
+                           
+                        }
+                    }
+                  
+             }
+        }
+    
+     }
+    
      @media screen and (max-width: 1100px) {
          
     
