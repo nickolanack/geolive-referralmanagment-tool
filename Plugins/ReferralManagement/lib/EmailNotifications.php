@@ -52,7 +52,6 @@ class EmailNotifications{
 
 
 				$this->getPlugin()->getDatabase()->queueEmail(array(
-					"id",
 					"name"=>$templateName,
 					"recipient"=>$user->id,
 					"eventDate"=>date('Y-m-d H:i:s'),
