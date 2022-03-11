@@ -10981,12 +10981,12 @@
             "metadata": {
                 "title": "userAttributes",
                 "_tableDiagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 319,
+                    "y": 244
                 },
                 "_diagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 319,
+                    "y": 244
                 },
                 "appliesTo": [
                     "user"
@@ -11841,14 +11841,14 @@
                         "was": "",
                         "title": "reviewed",
                         "label": "Reviewed",
-                        "description": "",
+                        "description": "userAttributes.metadata.fields.20.description.js",
                         "icon": [],
                         "color": "rgb(NaN, NaN, NaN)",
                         "visibility": "public",
                         "editability": "registered",
                         "searchability": "public",
                         "allowMultiple": false,
-                        "fieldType": "text",
+                        "fieldType": "boolean",
                         "fieldTextOptions": {
                             "textType": "input",
                             "inputOptions": {

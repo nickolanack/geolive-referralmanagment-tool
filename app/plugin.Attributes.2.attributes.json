@@ -582,28 +582,18 @@
                     "tableSuffix": "_5306",
                     "title": "reviewed",
                     "label": "Reviewed",
-                    "description": "",
-                    "fieldType": "text",
+                    "description": "is set once when user role is set",
+                    "fieldType": "boolean",
                     "color": "rgb(NaN, NaN, NaN)",
                     "searchability": "public",
                     "editability": "registered",
-                    "fieldTextOptions": {
-                        "textType": "input",
-                        "inputOptions": {
-                            "buildAutocomplete": false,
-                            "requireModeration": false,
-                            "limitMaxChars": 0,
-                            "limitMaxWords": 0,
-                            "allowHtml": false,
-                            "allowMedia": true,
-                            "allowLinks": true
-                        },
-                        "listOptions": {
-                            "takeSugesstions": true,
-                            "buildTree": false,
-                            "iconize": false,
-                            "colorize": false
-                        }
+                    "fieldBooleanOptions": {
+                        "hideFalse": true,
+                        "trueLabel": "",
+                        "falseLabel": "",
+                        "useFieldIcon": false,
+                        "trueIcon": false,
+                        "falseIcon": false
                     },
                     "allowMultiple": false
                 }
