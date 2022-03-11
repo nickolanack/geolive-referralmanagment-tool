@@ -43,6 +43,13 @@ $leftPanelColor:#222222;
     }
 }
 
+ul.item-tags li {
+    background-color: #2E303A;
+    font-weight: 500;
+    color: white;
+    width: 150px;
+}
+
 
 .content.markdown {
     h1{

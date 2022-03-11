@@ -45,6 +45,9 @@ button.form-btn.primary-btn.edit.notes {
 }
 
 
+
+
+
 .ui-list-view .ui-view.section-module:hover {
     background-color: #effbfb;
 }
@@ -719,7 +722,12 @@ ul.project, ul.user{
     border: none;
     background: white;
     margin: 10px;
+    
+    &.iam-gatherbot {
+        background-color: #e1e1e1;
+    }
 }
+
 
 .ui-list-view .ui-view.section-module[data-view="singleProjectListItemTableDetail"] {
     margin-bottom: 0;

@@ -160,9 +160,7 @@
         "parameters": {
             "releaseServer": "http:\/\/release.geolive.ca",
             "releasePackage": "master",
-            "autoUpdate": false,
-            "composerPath": "\/usr\/bin\/composer",
-            "bowerPath": ""
+            "autoUpdate": false
         }
     },
     "plugin.24": {
@@ -175,10 +173,23 @@
                 "pluginView": "front"
             },
             "routes": [
-                "plugin.UserInterface.24.routes.0.json"
+                "plugin.UserInterface.24.routes.0.json",
+                {
+                    "name": "projectfiles",
+                    "view": "plugin",
+                    "plugin": "ReferralManagement",
+                    "pluginView": "file"
+                },
+                {
+                    "name": "proposal",
+                    "view": "plugin",
+                    "plugin": "UserInterface",
+                    "pluginView": "widget",
+                    "widget": "proponent"
+                }
             ],
-            "useRemoteServerUI": true,
-            "remoteServerUrl": "https:\/\/gct3.gather.geoforms.ca\/app\/nickolanack\/php-core-app\/core.php?task=TASK&format=ajax&json=JSON"
+            "useRemoteServerUI": false,
+            "remoteServerUrl": ""
         }
     },
     "plugin.28": {
@@ -807,16 +818,16 @@
                             "widget.ProposalWizardBuilder.65.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 203,
-                            "y": 256
+                            "x": 150,
+                            "y": 294
                         },
                         "children": [
                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 163,
-                                    "y": 557
+                                    "x": 110,
+                                    "y": 607
                                 }
                             },
                             {
@@ -826,16 +837,16 @@
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 679,
-                                    "y": 313
+                                    "x": 719,
+                                    "y": 353
                                 },
                                 "children": [
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 639,
-                                            "y": 526
+                                            "x": 679,
+                                            "y": 566
                                         }
                                     },
                                     {
@@ -845,23 +856,23 @@
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1368,
-                                            "y": 957
+                                            "x": 1408,
+                                            "y": 997
                                         },
                                         "children": [
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1328,
-                                                    "y": 1183
+                                                    "x": 1368,
+                                                    "y": 1223
                                                 }
                                             },
                                             {
                                                 "class": "DecisionNode",
                                                 "_diagramState": {
-                                                    "x": 1368,
-                                                    "y": 957
+                                                    "x": 1408,
+                                                    "y": 997
                                                 },
                                                 "children": [
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.0.json",
@@ -892,16 +903,16 @@
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.2.fields.0.json"
                                                         ],
                                                         "_diagramState": {
-                                                            "x": 1655,
-                                                            "y": 128
+                                                            "x": 1695,
+                                                            "y": 168
                                                         },
                                                         "children": [
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.2.children.0.json",
                                                             {
                                                                 "class": "InsertNode",
                                                                 "_diagramState": {
-                                                                    "x": 1615,
-                                                                    "y": 341
+                                                                    "x": 1655,
+                                                                    "y": 381
                                                                 }
                                                             }
                                                         ],
@@ -1049,16 +1060,16 @@
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.3.fields.0.json"
                                                         ],
                                                         "_diagramState": {
-                                                            "x": 1652,
-                                                            "y": 754
+                                                            "x": 1579,
+                                                            "y": 1011
                                                         },
                                                         "children": [
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.3.children.0.json",
                                                             {
                                                                 "class": "InsertNode",
                                                                 "_diagramState": {
-                                                                    "x": 1612,
-                                                                    "y": 920
+                                                                    "x": 1539,
+                                                                    "y": 1177
                                                                 }
                                                             }
                                                         ],
@@ -1578,26 +1589,27 @@
                                             }
                                         },
                                         {
-                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "type": "plugin.Attributes.WizardDescriptionAttribute",
                                             "config": {
                                                 "attributeFields": [
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.7.config.attributeFields.0.json"
                                                 ],
-                                                "className": "width-3",
-                                                "label": "Submission received",
-                                                "message": "",
-                                                "lines": 1,
+                                                "className": "no-text add-letters --width-2 only-docs",
+                                                "label": "Referral letters",
+                                                "message": "add a description",
+                                                "lines": 3,
                                                 "maxChars": 0,
                                                 "mandatory": false,
-                                                "multiEntry": false,
-                                                "muliTemplate": "lines",
-                                                "multiMessage": "",
-                                                "formatter": "date",
-                                                "iconTint": "rgb(100, 149, 237)",
-                                                "autocomplete": true,
-                                                "inputOptions": "{}",
-                                                "onRenderTextFieldScript": "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.7.config.onRenderTextFieldScript.js",
-                                                "formatValueScript": ""
+                                                "showToolbars": true,
+                                                "showAudios": true,
+                                                "showVideos": true,
+                                                "showDocuments": true,
+                                                "showImages": true,
+                                                "showExpandInput": false,
+                                                "toolbarPosition": "bottom",
+                                                "textFormatScript": "",
+                                                "onRenderModuleFn": "",
+                                                "mediaIconTint": "rgb(100, 149, 237)"
                                             }
                                         },
                                         {
@@ -1607,7 +1619,7 @@
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
                                                 ],
                                                 "className": "width-3",
-                                                "label": "Comment deadline",
+                                                "label": "Submission received",
                                                 "message": "",
                                                 "lines": 1,
                                                 "maxChars": 0,
@@ -1630,7 +1642,7 @@
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.9.config.attributeFields.0.json"
                                                 ],
                                                 "className": "width-3",
-                                                "label": "Project expiry date",
+                                                "label": "Comment deadline",
                                                 "message": "",
                                                 "lines": 1,
                                                 "maxChars": 0,
@@ -1647,10 +1659,33 @@
                                             }
                                         },
                                         {
-                                            "type": "plugin.Attributes.WizardTagCloud",
+                                            "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
                                                 "attributeFields": [
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.10.config.attributeFields.0.json"
+                                                ],
+                                                "className": "width-3",
+                                                "label": "Project expiry date",
+                                                "message": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "",
+                                                "formatter": "date",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": "{}",
+                                                "onRenderTextFieldScript": "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.10.config.onRenderTextFieldScript.js",
+                                                "formatValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTagCloud",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.11.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
                                                 "showLabel": false,
@@ -1670,7 +1705,7 @@
                                             "type": "plugin.Attributes.WizardTagCloud",
                                             "config": {
                                                 "attributeFields": [
-                                                    "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.11.config.attributeFields.0.json"
+                                                    "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.12.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
                                                 "showLabel": false,
@@ -1682,7 +1717,7 @@
                                                 "selectedColor": "rgb(143, 188, 143)",
                                                 "shuffleTags": false,
                                                 "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
-                                                "getItemTagsScript": "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.11.config.getItemTagsScript.js",
+                                                "getItemTagsScript": "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.12.config.getItemTagsScript.js",
                                                 "formatModule": "module.runOnceOnLoad(function(){\nvar cats= Proposal.ListTerritories();\nif(cats.length==0){\n    module.getCloud().getElement().parentNode.setStyle(\"display\",\"none\");\n}\n});\n\n\nif(window.GuestProposal&&item instanceof GuestProposal){\n    module.getElement().setStyle('display','none')\n}"
                                             }
                                         },
@@ -1700,7 +1735,7 @@
                                                 "multiMessage": "add another value",
                                                 "formatter": "none",
                                                 "beforeRenderModuleScript": "",
-                                                "onRenderTextFieldScript": "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.12.config.onRenderTextFieldScript.js",
+                                                "onRenderTextFieldScript": "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.13.config.onRenderTextFieldScript.js",
                                                 "formatValueScript": "",
                                                 "getValueScript": " return \"\"; ",
                                                 "updateValueScript": " object.value=value ",
@@ -1916,16 +1951,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 409,
-                            "y": 312
+                            "x": 449,
+                            "y": 352
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 369,
-                                    "y": 513
+                                    "x": 409,
+                                    "y": 565
                                 }
                             },
                             {
@@ -1935,16 +1970,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 986,
-                                    "y": 571
+                                    "x": 1026,
+                                    "y": 611
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 946,
-                                            "y": 737
+                                            "x": 986,
+                                            "y": 777
                                         }
                                     }
                                 ],
@@ -2010,11 +2045,19 @@
                                             "type": "InlineHtml",
                                             "config": {
                                                 "className": "",
-                                                "text": "<div class=\"application-logo\"><\/div><span style=\"text-align: left; font-weight: 100; display: block;\"><span style=\"font-size:20px\">\nLogin<\/span>\n<p><\/p><br><\/span>",
-                                                "template": "",
+                                                "text": "<div class=\"application-logo\"><\/div>",
+                                                "template": "loginText",
                                                 "templateVariablesScript": "",
                                                 "formatTextScript": "",
                                                 "ajaxRequestTemplate": false
+                                            }
+                                        },
+                                        {
+                                            "type": "WizardScriptElement",
+                                            "config": {
+                                                "name": "My Custom Script",
+                                                "script": "loginForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.script.js",
+                                                "description": "Info about my custom script"
                                             }
                                         },
                                         {
@@ -2048,7 +2091,7 @@
                                             "type": "WizardScriptElement",
                                             "config": {
                                                 "name": "My Custom Script",
-                                                "script": "loginForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.script.js",
+                                                "script": "loginForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.script.js",
                                                 "description": "Info about my custom script"
                                             }
                                         }
@@ -4497,6 +4540,12 @@
                 },
                 {
                     "type": "input",
+                    "name": "loginLabel",
+                    "default": "Login",
+                    "label": "loginLabel"
+                },
+                {
+                    "type": "input",
                     "name": "loadingLabel",
                     "default": "Loading your referral dashboard",
                     "label": "loadingLabel"
@@ -5277,6 +5326,24 @@
                 },
                 {
                     "type": "text",
+                    "label": "nameForProjects",
+                    "name": "nameForProjects",
+                    "default": "Projects"
+                },
+                {
+                    "type": "text",
+                    "label": "nameForCollections",
+                    "name": "nameForCollections",
+                    "default": "Collections"
+                },
+                {
+                    "type": "text",
+                    "label": "nameForDatasets",
+                    "name": "nameForDatasets",
+                    "default": "Datasets"
+                },
+                {
+                    "type": "text",
                     "label": "projectListItemView",
                     "name": "projectListItemView",
                     "default": "singleProjectListItemDetail"
@@ -5454,13 +5521,17 @@
             "gatherIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_r7F_lYW_6cm_%5BG%5D-%3Ethumb%3A%3E200x%3E150.png"
             ],
-            "leftPanelPrimaryBtnLabel": "Add Project",
+            "leftPanelPrimaryBtnLabel": "New Submission",
             "leftPanelPrimaryBtnForm": "{projectForm}",
             "showLeftPanelSecondaryBtn": false,
             "leftPanelSecondaryBtnLabel": "Add Dataset",
             "leftPanelSecondaryBtnForm": "{projectForm}",
             "datasetForm": "{projectForm}",
-            "menuLabels": [],
+            "menuLabels": {
+                "main": {
+                    "Referrals.Projects": "Submissions"
+                }
+            },
             "menuItems": [],
             "useCommunitiesAsDepartmens": false,
             "useCommunitiesAsDepartments": false,
@@ -5476,7 +5547,11 @@
             "showMapAnnotationsMain": true,
             "showMapAnnotationsProject": true,
             "showProjectActivity": true,
-            "enableRevisions": false
+            "enableRevisions": false,
+            "nameForProjects": "Submissions",
+            "nameForCollections": "Collections",
+            "nameForDatasets": "Datasets",
+            "loginLabel": "Login"
         }
     },
     "widget.154": {
@@ -10906,19 +10981,19 @@
             "metadata": {
                 "title": "userAttributes",
                 "_tableDiagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 444,
+                    "y": 256
                 },
                 "_diagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 444,
+                    "y": 256
                 },
                 "appliesTo": [
                     "user"
                 ],
                 "_typeDiagramState": {
-                    "x": 100,
-                    "y": 300
+                    "x": 152,
+                    "y": 292
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -10966,8 +11041,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -11010,8 +11085,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -11046,16 +11121,16 @@
                         },
                         "fieldNumberOptions": {
                             "precision": 0,
-                            "limitMinValue": "0",
-                            "limitMaxValue": "0"
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
                         },
                         "fieldBooleanOptions": {
                             "hideFalse": true,
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -11090,16 +11165,16 @@
                         },
                         "fieldNumberOptions": {
                             "precision": 0,
-                            "limitMinValue": "0",
-                            "limitMaxValue": "0"
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
                         },
                         "fieldBooleanOptions": {
                             "hideFalse": true,
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -11142,8 +11217,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -11178,8 +11253,8 @@
                         },
                         "fieldNumberOptions": {
                             "precision": 0,
-                            "limitMinValue": 0,
-                            "limitMaxValue": 0
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
                         },
                         "fieldBooleanOptions": {
                             "hideFalse": true,
@@ -11230,8 +11305,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -11582,8 +11657,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -11760,6 +11835,50 @@
                             "useFieldIcon": false,
                             "trueIcon": [],
                             "falseIcon": []
+                        }
+                    },
+                    {
+                        "was": "",
+                        "title": "reviewed",
+                        "label": "Reviewed",
+                        "description": "userAttributes.metadata.fields.20.description.js",
+                        "icon": [],
+                        "color": "rgb(NaN, NaN, NaN)",
+                        "visibility": "public",
+                        "editability": "registered",
+                        "searchability": "public",
+                        "allowMultiple": false,
+                        "fieldType": "boolean",
+                        "fieldTextOptions": {
+                            "textType": "input",
+                            "inputOptions": {
+                                "buildAutocomplete": false,
+                                "requireModeration": false,
+                                "limitMaxChars": 0,
+                                "limitMaxWords": 0,
+                                "allowHtml": false,
+                                "allowMedia": true,
+                                "allowLinks": true
+                            },
+                            "listOptions": {
+                                "takeSugesstions": true,
+                                "buildTree": false,
+                                "iconize": false,
+                                "colorize": false
+                            }
+                        },
+                        "fieldNumberOptions": {
+                            "precision": 0,
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
+                        },
+                        "fieldBooleanOptions": {
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false,
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     }
                 ]
@@ -18801,16 +18920,16 @@
                             "tagForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 498,
-                            "y": 292
+                            "x": 458,
+                            "y": 252
                         },
                         "children": [
                             "tagForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 458,
-                                    "y": 493
+                                    "x": 418,
+                                    "y": 453
                                 }
                             }
                         ],
@@ -18831,9 +18950,7 @@
                                                 "message": "add a title",
                                                 "className": "",
                                                 "maxChars": 0,
-                                                "textFormatScript": "",
-                                                "beforeRenderModuleScript": "",
-                                                "onRenderTextFieldScript": "tagForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.onRenderTextFieldScript.js"
+                                                "textFormatScript": ""
                                             }
                                         },
                                         {
@@ -18859,7 +18976,7 @@
                                             }
                                         },
                                         {
-                                            "type": "FormTextDescriptionField",
+                                            "type": "WizardDescriptionField",
                                             "config": {
                                                 "label": "Description",
                                                 "message": "add a description",
@@ -23634,7 +23751,7 @@
             "widgetTitle": "Kml renderer",
             "target": "kmlDocumentRenderer",
             "cacheable": true,
-            "allowExternalFilePaths": true,
+            "allowExternalFilePaths": false,
             "allowExternalUrls": false,
             "resolveSpatialFilePathScript": "Kml renderer.resolveSpatialFilePathScript.js",
             "formatSpatialFileRendererScript": "Kml renderer.formatSpatialFileRendererScript.js",
@@ -24648,6 +24765,50 @@
                     }
                 ]
             },
+            "readAccess": "public"
+        }
+    },
+    "widget.433": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.loginText.text",
+            "target": "module.loginText.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "module-loginText-text.contentTemplate.html"
+        }
+    },
+    "widget.434": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.onUserRoleChanged.subject",
+            "target": "email.onUserRoleChanged.subject",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Your account has been approved",
+            "readAccess": "public"
+        }
+    },
+    "widget.435": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.onUserRoleChanged.content",
+            "target": "email.onUserRoleChanged.content",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "email-onUserRoleChanged-content.contentTemplate.html",
             "readAccess": "public"
         }
     }
