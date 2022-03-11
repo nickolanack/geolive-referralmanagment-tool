@@ -1,3 +1,3 @@
-if(item.isEditable&&(!item.isEditable)){
+if(item.isEditable&&(!item.isEditable())){
     inputElement.disabled=true;
 }
