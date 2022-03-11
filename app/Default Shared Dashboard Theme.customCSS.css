@@ -4958,6 +4958,22 @@ span.navigation-menu.settings-menu {
         }
     
      }
+     
+     
+     @media screen and (max-width: 1800px) {
+    
+        div.field-value-module.inline[data-col="modified"]{
+             max-width:100px;
+             span{
+                 max-width:100px;
+             }
+             
+             .field-value{
+                 display:none;
+             }
+        }
+    
+     }
     
     
      @media screen and (max-width: 1650px) {
