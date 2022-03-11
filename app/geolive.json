@@ -10981,12 +10981,12 @@
             "metadata": {
                 "title": "userAttributes",
                 "_tableDiagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 319,
+                    "y": 244
                 },
                 "_diagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 319,
+                    "y": 244
                 },
                 "appliesTo": [
                     "user"
@@ -11041,8 +11041,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -11085,8 +11085,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -11121,16 +11121,16 @@
                         },
                         "fieldNumberOptions": {
                             "precision": 0,
-                            "limitMinValue": "0",
-                            "limitMaxValue": "0"
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
                         },
                         "fieldBooleanOptions": {
                             "hideFalse": true,
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -11165,16 +11165,16 @@
                         },
                         "fieldNumberOptions": {
                             "precision": 0,
-                            "limitMinValue": "0",
-                            "limitMaxValue": "0"
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
                         },
                         "fieldBooleanOptions": {
                             "hideFalse": true,
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -11217,8 +11217,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -11253,8 +11253,8 @@
                         },
                         "fieldNumberOptions": {
                             "precision": 0,
-                            "limitMinValue": 0,
-                            "limitMaxValue": 0
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
                         },
                         "fieldBooleanOptions": {
                             "hideFalse": true,
@@ -11305,8 +11305,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -11657,8 +11657,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -11805,6 +11805,50 @@
                         "searchability": "public",
                         "allowMultiple": false,
                         "fieldType": "text",
+                        "fieldTextOptions": {
+                            "textType": "input",
+                            "inputOptions": {
+                                "buildAutocomplete": false,
+                                "requireModeration": false,
+                                "limitMaxChars": 0,
+                                "limitMaxWords": 0,
+                                "allowHtml": false,
+                                "allowMedia": true,
+                                "allowLinks": true
+                            },
+                            "listOptions": {
+                                "takeSugesstions": true,
+                                "buildTree": false,
+                                "iconize": false,
+                                "colorize": false
+                            }
+                        },
+                        "fieldNumberOptions": {
+                            "precision": 0,
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
+                        },
+                        "fieldBooleanOptions": {
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
+                        "was": "",
+                        "title": "reviewed",
+                        "label": "Reviewed",
+                        "description": "userAttributes.metadata.fields.20.description.js",
+                        "icon": [],
+                        "color": "rgb(NaN, NaN, NaN)",
+                        "visibility": "public",
+                        "editability": "registered",
+                        "searchability": "public",
+                        "allowMultiple": false,
+                        "fieldType": "boolean",
                         "fieldTextOptions": {
                             "textType": "input",
                             "inputOptions": {
@@ -24736,6 +24780,36 @@
             "parseMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "module-loginText-text.contentTemplate.html"
+        }
+    },
+    "widget.434": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.onUserRoleChanged.subject",
+            "target": "email.onUserRoleChanged.subject",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Your account has been approved",
+            "readAccess": "public"
+        }
+    },
+    "widget.435": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.onUserRoleChanged.content",
+            "target": "email.onUserRoleChanged.content",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "email-onUserRoleChanged-content.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }

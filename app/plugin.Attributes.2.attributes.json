@@ -574,6 +574,28 @@
                         }
                     },
                     "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "1",
+                    "tableName": "userAttributes",
+                    "tableSuffix": "_5306",
+                    "title": "reviewed",
+                    "label": "Reviewed",
+                    "description": "is set once when user role is set",
+                    "fieldType": "boolean",
+                    "color": "rgb(NaN, NaN, NaN)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldBooleanOptions": {
+                        "hideFalse": true,
+                        "trueLabel": "",
+                        "falseLabel": "",
+                        "useFieldIcon": false,
+                        "trueIcon": false,
+                        "falseIcon": false
+                    },
+                    "allowMultiple": false
                 }
             ]
         }
