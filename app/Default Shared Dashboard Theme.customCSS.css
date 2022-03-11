@@ -40,6 +40,10 @@ button:focus {outline:0;}
     
 }
 
+span.pagination-item:before {
+    display:none;
+}
+
 .dark.sticky-top{
     
         &.scrolled{
