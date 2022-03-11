@@ -307,7 +307,7 @@ var SpatialProject = (function() {
 			}
 
 
-			var items=([toggle]).concat(items.content);
+			var items=([toggle]).concat(list.content);
 
 			if(AppClient.getUserType()!="guest"){
 				items=items.concat([removeBtn, editBtn]);
