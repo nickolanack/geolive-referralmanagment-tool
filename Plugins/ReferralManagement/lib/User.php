@@ -85,6 +85,8 @@ class User {
 				$metadata['position'] = $attributes['role'];
 				$metadata['department'] = $attributes['department'];
 
+				$metadata['reviewed'] = $attributes['reviewed'];
+
 
 				$metadata['communityId'] = array_search($metadata['community'], $this->listCommunities());
 

@@ -856,6 +856,8 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		}
 
+		$values['reviewed']=true;
+
 		GetPlugin('Attributes');
 
 		(new attributes\Record('userAttributes'))->setValues($json->user, 'user', $values);
