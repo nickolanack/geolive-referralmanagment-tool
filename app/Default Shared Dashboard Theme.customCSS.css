@@ -4934,7 +4934,7 @@ span.navigation-menu.settings-menu {
                     .field-value{
                         font-size:0;
                         &:after{
-                            font-size:16;
+                            font-size:16px;
                             content:attr(data-day);
                         }
                     }
