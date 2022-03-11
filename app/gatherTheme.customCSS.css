@@ -876,6 +876,10 @@ h2 {
         [data-view="proposalOverviewStatus"]{
             display:unset;
             
+            [data-view="proponentFlow"]{
+                display:none;
+            }
+            
             
             .flow-item:before {
                 position: relative;
