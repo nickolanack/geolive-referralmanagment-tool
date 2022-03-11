@@ -59,6 +59,16 @@ var NamedCategory = (function() {
 			return JSON.parse(JSON.stringify(this._getMetadata?this._getMetadata():{}));
 		},
 
+		isEditable:function(){
+			var metadata=this.getMetadata();
+			return metadata.editable!==false;
+		},
+
+		isSelectable:function(){
+			var metadata=this.getMetadata();
+			return metadata.selectable!==false;
+		},
+
 
 		getCategoryForChildren:function(){
 			return this.getName().toLowerCase();
