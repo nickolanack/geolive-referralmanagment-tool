@@ -869,4 +869,16 @@ h2 {
     margin-right: 0;
 }
 
+ [data-view="singleProjectOverviewDetail"]{
+        span.progress{
+            display:none;
+        }
+        [data-view="proposalOverviewStatus"]{
+            display:unset;
+        }
+ }
+
+
+
+
 
