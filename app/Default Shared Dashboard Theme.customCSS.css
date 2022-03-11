@@ -735,12 +735,13 @@ button.primary-btn.nav-new-btn{
         margin-top: 0;
     }
         
-
+    /*
     &:before {
         content: "+ ";
         float: left;
         font-size: 25px;
     }
+    */
 
     &:hover {
         background-color: #dc004c;
