@@ -48,7 +48,7 @@ class EmailNotifications{
 					'user' => $this->getPlugin()->getUsersMetadata($user->id),
 				));
 
-			if($this->getPlugin()->getParameter('queuesEmails', true)){
+			if(true){
 
 
 				$this->getPlugin()->getDatabase()->queueEmail(array(
