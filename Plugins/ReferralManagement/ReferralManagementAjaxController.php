@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 class ReferralManagementAjaxController extends \core\AjaxController implements \core\extensions\plugin\PluginMember {
 	use \core\extensions\plugin\PluginMemberTrait;
 
@@ -296,27 +299,9 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 			if (filter_var($json->email, FILTER_VALIDATE_EMAIL)) {
 
-				$clientToken = ($links = GetPlugin('Links'))->createLinkEventCode('onActivateEmailForGuestProposal', array(
-					'validationData' => $json,
-				));
-
-				$clientLink = HtmlDocument()->website() . '/' . $links->actionUrlForToken($clientToken);
-
-				$subject = (new \core\Template(
-					'activate.proposal.email.subject', "Verify your email address to submit your proposal"))
-					->render(GetClient()->getUserMetadata());
-				$body = (new \core\Template(
-					'activate.proposal.email.body', "Its almost done, just click the link to continue: <a href=\"{{link}}\" >Click Here</a>"))
-					->render(array_merge(GetClient()->getUserMetadata(), array("link" => $clientLink)));
-
-				GetPlugin('Email')->getMailer()
-					->mail($subject, $body)
-					->to($json->email)
-					->send();
-
-				$this->getPlugin()->notifier()->onGuestProjectPendingValidation($json);
-
+				(new \ReferralManagement\GuestProject())->createProjectActivation($json);
 				return true;
+
 			}
 
 			return false;

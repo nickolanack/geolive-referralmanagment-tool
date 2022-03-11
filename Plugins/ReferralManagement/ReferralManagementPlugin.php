@@ -6,6 +6,11 @@ include_once __DIR__ . '/lib/Task.php';
 include_once __DIR__ . '/lib/User.php';
 include_once __DIR__ . '/lib/UserRoles.php';
 
+include_once __DIR__.'/lib/EmailNotifications.php';
+include_once __DIR__.'/lib/GuestProject.php';
+
+
+
 class ReferralManagementPlugin extends \core\extensions\Plugin implements
 \core\ViewController,
 \core\extensions\widget\WidgetProvider,
@@ -386,68 +391,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	}
 
 	protected function onActivateEmailForGuestProposal($params) {
-
-		if (key_exists('validationData', $params) && key_exists('token', $params->validationData)) {
-			$links = GetPlugin('Links');
-			$tokenInfo = $links->peekDataToken($params->validationData->token);
-			$data = $tokenInfo->data;
-
-			$database = $this->getDatabase();
-
-			if (($id = (int) $database->createProposal(array(
-				'user' => GetClient()->getUserId(),
-				'metadata' => json_encode(array(
-					"email" => $params->validationData->email
-				)),
-				'createdDate' => ($now = date('Y-m-d H:i:s')),
-				'modifiedDate' => $now,
-				'status' => 'active',
-			)))) {
-
-
-
-				$clientToken = ($links = GetPlugin('Links'))->createDataCode('projectAccessToken', array(
-					'id'=>$id,
-					"email" => $params->validationData->email
-				));
-
-				$clientLink = HtmlDocument()->website() . '/proposal/'.$id.'/' . $clientToken;
-
-
-				$subject = (new \core\Template(
-					'proponent.proposal.link.email.subject', "Your proposal has been submitted successfully"))
-					->render(GetClient()->getUserMetadata());
-				$body = (new \core\Template(
-					'proponent.proposal.link.email.body', "You can view the status of your proposal here: <a href=\"{{link}}\" >Click Here</a>"))
-					->render(array_merge(GetClient()->getUserMetadata(), array("link" => $clientLink)));
-
-				GetPlugin('Email')->getMailer()
-					->mail($subject, $body)
-					->to($params->validationData->email)
-					->send();
-
-
-
-				$this->notifier()->onGuestProposal($id, $params);
-
-				GetPlugin('Attributes');
-				if (key_exists('attributes', $data->proposalData)) {
-					foreach ($data->proposalData->attributes as $table => $fields) {
-						(new attributes\Record($table))->setValues($id, 'ReferralManagement.proposal', $fields);
-					}
-				}
-
-				Emit('onCreateProposalForGuest', array(
-					'params' => $params,
-					'proposalData' => $data,
-				));
-
-				Emit('onCreateProposal', array('id' => $id));
-
-			}
-
-		}
-
+		(new \ReferralManagement\GuestProject())->activateProject($params);
 	}
 
 	protected function onPost($params) {
@@ -607,115 +551,24 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	}
 
 
+	public function getEmailNotifier(){
+		return new \ReferralManagement\EmailNotifications();
+	}
+
+
+	protected function onTriggerTaskUpdateEmailNotification($args) {
+		$this->getEmailNotifier()->sendEmailTaskUpdate($args);
+	}
+
 	protected function onTriggerUserRoleUpdateEmailNotification($args){
-
-
-
-		
-
-		GetPlugin('Email')->getMailerWithTemplate('onUserRoleChanged', array_merge(
-			get_object_vars($args), array( /*...*/)))
-			->to('nickblackwell82@gmail.com')
-			->send();
-
-		
-
-
-
+		$this->getEmailNotifier()->sendEmailUserRoleUpdate($args);
 	}
 
 	protected function onTriggerProjectUpdateEmailNotification($args) {
-
-		$teamMembers = $this->getTeamMembersForProject($args->project->id);
-
-		if (empty($teamMembers)) {
-			Emit('onEmptyTeamMembersTask', $args);
-		}
-
-		foreach ($teamMembers as $user) {
-
-			$to = $this->emailToAddress($user, "recieves-notifications");
-			if (!$to) {
-				continue;
-			}
-
-			GetPlugin('Email')->getMailerWithTemplate('onProjectUpdate', array_merge(
-				get_object_vars($args),
-				array(
-					'teamMembers' => $teamMembers,
-					'editor' => $this->getUsersMetadata(),
-					'user' => $this->getUsersMetadata($user->id),
-				)))
-				->to($to)
-				->send();
-
-		}
+		$this->getEmailNotifier()->sendEmailProjectUpdate($args)
 	}
 
-	protected function emailToAddress($user, $permissionName = '') {
-
-		$shouldSend = false;
-		if (empty($permissionName)) {
-			$shouldSend = true;
-		}
-
-		if (!empty($permissionName)) {
-			if (in_array($permissionName, $user->permissions)) {
-				$shouldSend = true;
-			}
-		}
-
-		Emit("onCheckEmailPermission", array_merge(get_object_vars($user), array(
-			'shouldSend' => $shouldSend,
-			'permission' => $permissionName,
-		)));
-
-		if (!$this->getParameter('enableEmailNotifications')) {
-			return 'nickblackwell82@gmail.com';
-		}
-
-		$addr = (new \ReferralManagement\User())->getEmail($user->id);
-		return $addr;
-
-	}
-
-	protected function onTriggerTaskUpdateEmailNotification($args) {
-
-		if ($args->task->itemType !== "ReferralManagement.proposal") {
-			Emit('onNotProposalTask', $args);
-			return;
-		}
-
-		$project = $this->getProposalData($args->task->itemId);
-		$teamMembers = $this->getTeamMembersForProject($project);
-		$assignedMembers = $this->getTeamMembersForTask($args->task->id);
-
-		if (empty($teamMembers)) {
-			Emit('onEmptyTeamMembersTask', $args);
-		}
-
-		foreach ($teamMembers as $user) {
-
-			$to = $this->emailToAddress($user, "recieves-notifications");
-			if (!$to) {
-				continue;
-			}
-
-			GetPlugin('Email')->getMailerWithTemplate('onTaskUpdate', array_merge(
-				get_object_vars($args),
-				array(
-					'project' => $project,
-					'teamMembers' => $teamMembers,
-					'assignedMembers' => $assignedMembers,
-					'editor' => $this->getUsersMetadata(),
-					'user' => $this->getUsersMetadata($user->id),
-				)))
-				->to('nickblackwell82@gmail.com')
-				->send();
-
-		}
-
-	}
+	
 
 	public function getChildProjectsForProject($pid, $attributes = null) {
 

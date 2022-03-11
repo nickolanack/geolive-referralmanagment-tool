@@ -61,5 +61,31 @@
 		"name": "metadata",
 		"type": "json",
 		"comment": "any aditional json encoded parameters"
-	}]
+	}],
+	"emailQueue": [{
+			"name": "id",
+			"type": "id"
+		}, {
+
+			"name": "name",
+			"type": "label",
+			"comment": "template name etc"
+		}{
+			"name": "recipient",
+			"type": "label",
+			"comment": ""
+		}, {
+			"name": "eventDate",
+			"type": "date"
+		}, {
+			"name": "parameters",
+			"type": "json",
+			"comment": "email template paramters"
+		}, {
+			"name": "metadata",
+			"type": "json",
+			"comment": "any aditional json encoded parameters"
+		}
+	
+	]
 }
