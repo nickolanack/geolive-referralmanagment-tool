@@ -4959,6 +4959,21 @@ span.navigation-menu.settings-menu {
     
      }
      
+     @media screen and (max-width: 1800px) {
+    
+        div.field-value-module.inline[data-col="attachements"]{
+             max-width:140px;
+             span{
+                 max-width:140px;
+             }
+             
+             .field-value{
+                 display:none;
+             }
+        }
+    
+     }
+     
      
      
     
