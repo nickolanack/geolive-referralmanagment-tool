@@ -4925,11 +4925,20 @@ span.navigation-menu.settings-menu {
              
              &[data-col="created"]{
                  
-                  max-width:150px;
-                     span{
-                         max-width:150px;
-                     }
-                 
+                    max-width:150px;
+                    
+                    span{
+                        max-width:150px;
+                    }
+                    
+                    .field-value{
+                        font-size:0;
+                        &:after{
+                            font-size:16;
+                            content:attr(data-day);
+                        }
+                    }
+                  
              }
         }
     
