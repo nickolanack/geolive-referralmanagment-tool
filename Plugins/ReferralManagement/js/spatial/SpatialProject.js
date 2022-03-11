@@ -307,15 +307,15 @@ var SpatialProject = (function() {
 			}
 
 
-			var list=([toggle]).concat(list.content);
+			var items=([toggle]).concat(items.content);
 
 			if(AppClient.getUserType()!="guest"){
-				list=list.concat([ removeBtn, editBtn]);
+				items=items.concat([removeBtn, editBtn]);
 			}
 		
-			list=list.concat(adminBtns);
+			items=items.concat(adminBtns);
 
-			list.content = list;
+			list.content = items;
 
 
 
