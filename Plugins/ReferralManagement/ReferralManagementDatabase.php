@@ -19,4 +19,8 @@ class ReferralManagementDatabase extends \core\DataStorage {
         return $this->createEmailQueue($args);
     }
 
+    public function getAllQueuedEmails($filter=array()){
+        return $this->getEmailQueues($filter);
+    }
+
 }

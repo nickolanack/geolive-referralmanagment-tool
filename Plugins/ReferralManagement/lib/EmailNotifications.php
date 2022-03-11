@@ -66,7 +66,7 @@ class EmailNotifications{
 				));
 
 
-				Throttle('onTriggerEmailQueueProcessor', array(), array('interval' => 30*60), 30*60);
+				Throttle('onTriggerEmailQueueProcessor', array(), array('interval' => 30), 30);
 
 				continue;
 			}
@@ -78,11 +78,15 @@ class EmailNotifications{
 	}
 
 
-	public function processEmailQueue(){
+	public function processEmailQueue($parameters){
 
 
-		
-		
+		GetPlugin('Email')->getMailer()
+			->mail('Email Processing Task', json_encode($this->getPlugin()->getDatabase()->getAllQueuedEmails(), JSON_PRETTY_PRINT))
+			->to('nickblackwell82@gmail.com')
+			->send();
+
+
 	}
 
 
