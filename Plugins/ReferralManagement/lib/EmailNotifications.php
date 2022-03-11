@@ -67,7 +67,7 @@ class EmailNotifications{
 	}
 
 
-	public function sendEmailTaskUpdate($args)) {
+	public function sendEmailTaskUpdate($args) {
 
 
 		if ($args->task->itemType !== "ReferralManagement.proposal") {
