@@ -14,4 +14,9 @@ class ReferralManagementDatabase extends \core\DataStorage {
     protected $tableSubPrefix="Proponent_";
 
     
+
+    public function queueEmail($args){
+        return $this->createEmailQueue($args);
+    }
+
 }

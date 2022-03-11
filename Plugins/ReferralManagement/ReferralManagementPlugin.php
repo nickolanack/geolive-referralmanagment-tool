@@ -567,6 +567,9 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	protected function onTriggerProjectUpdateEmailNotification($args) {
 		$this->getEmailNotifier()->sendEmailProjectUpdate($args);
 	}
+	protected function onTriggerEmailQueueProcessor($args){
+		$this->getEmailNotifier()->processEmailQueue($args);
+	}
 
 	
 

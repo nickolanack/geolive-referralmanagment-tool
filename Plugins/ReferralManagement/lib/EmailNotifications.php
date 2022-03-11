@@ -39,17 +39,50 @@ class EmailNotifications{
 				continue;
 			}
 
-			GetPlugin('Email')->getMailerWithTemplate('onProjectUpdate', array_merge(
+			$templateName='onProjectUpdate';
+			$arguments=array_merge(
 				get_object_vars($args),
 				array(
 					'teamMembers' => $teamMembers,
 					'editor' => $this->getPlugin()->getUsersMetadata(),
 					'user' => $this->getPlugin()->getUsersMetadata($user->id),
-				)))
-				->to($to)
-				->send();
+				));
+
+			if($this->getPlugin()->getParameter('queuesEmails', true)){
+
+
+				$this->getPlugin()->getDatabase()->queueEmail(array(
+					"id",
+					"name"=>$templateName,
+					"recipient"=>$user->id,
+					"eventDate"=>date('Y-m-d H:i:s'),
+					"parameters"=>json_encode($arguments),
+					"metadata"=>json_encode((object) array())
+				));
+
+				Emit('onQueueEmail', array(
+					'template'=>$templateName,
+					'arguments'=>$arguments
+				));
+
+
+				Throttle('onTriggerEmailQueueProcessor', array(), array('interval' => 30*60), 30*60);
+
+				continue;
+			}
+
+
+			GetPlugin('Email')->getMailerWithTemplate($templateName, $arguments)->to($to)->send();
 
 		}
+	}
+
+
+	public function processEmailQueue(){
+
+
+		
+		
 	}
 
 
