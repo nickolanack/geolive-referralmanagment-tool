@@ -71,7 +71,7 @@ class EmailNotifications{
 				continue;
 			}
 
-
+			Emit('onSentEmailAnyway',array('wt'=>'F'));
 			GetPlugin('Email')->getMailerWithTemplate($templateName, $arguments)->to($to)->send();
 
 		}
