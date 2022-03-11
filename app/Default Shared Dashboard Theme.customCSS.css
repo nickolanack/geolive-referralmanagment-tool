@@ -4922,6 +4922,15 @@ span.navigation-menu.settings-menu {
              span{
                  max-width:200px;
              }
+             
+             &[data-col="created"]{
+                 
+                  max-width:150px;
+                     span{
+                         max-width:150px;
+                     }
+                 
+             }
         }
     
      }
