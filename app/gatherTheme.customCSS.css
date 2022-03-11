@@ -876,10 +876,6 @@ h2 {
         [data-view="proposalOverviewStatus"]{
             display:unset;
             
-            &:before{
-                content:"Activity Title";
-                
-            }
             
         }
  }
