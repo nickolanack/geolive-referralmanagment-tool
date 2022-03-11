@@ -286,6 +286,13 @@ button.primary-btn.nav-new-btn.view-selection:before {
     visibility: hidden;
 }
 
+.table-header button.download-link {
+   display:none;
+}
+.table-header span.guest-submitter:after{
+    display:none;
+}
+
 
 .table-header .field-value-module:before {
     content: "";
