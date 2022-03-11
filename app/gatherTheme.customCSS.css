@@ -55,6 +55,11 @@ ul.item-tags li {
 }
 
 
+.dark [data-view="projectsListDetail"] button.inline-edit {
+    margin-left: 20px;
+    background: #222222;
+}
+
 .content.markdown {
     h1{
         padding-left: 10px;
