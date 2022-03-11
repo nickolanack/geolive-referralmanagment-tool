@@ -4904,6 +4904,18 @@ span.navigation-menu.settings-menu {
 
 
 [data-view="splitProjectDetail"]{
+    
+     @media screen and (max-width: 2500px) {
+    
+        div.field-value-module.inline{
+             max-width:230px;
+             span{
+                 max-width:230px;
+             }
+        }
+    
+     }
+    
     @media screen and (max-width: 2000px) {
     
         div.field-value-module.inline{
