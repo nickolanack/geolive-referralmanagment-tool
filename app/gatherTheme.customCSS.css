@@ -50,6 +50,10 @@ ul.item-tags li {
     width: 150px;
 }
 
+[data-view="singleTaskListItemDetail"] ul.item-tags {
+    float: left;
+}
+
 
 .content.markdown {
     h1{
