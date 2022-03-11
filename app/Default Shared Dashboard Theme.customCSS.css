@@ -5007,6 +5007,29 @@ span.navigation-menu.settings-menu {
        }
        
      }
+     
+     
+     @media screen and (max-width: 1700px) {
+    
+        div.field-value-module.inline{
+             
+             max-width:150px;
+             span{
+                 max-width:150px;
+             }
+             
+             &[data-col="created"], &[data-col="modified"]{
+                 
+                    max-width:120px;
+                    
+                    span{
+                        max-width:110px;
+                    }
+                    
+             }
+        }
+    
+     }
     
     
      @media screen and (max-width: 1500px) {
