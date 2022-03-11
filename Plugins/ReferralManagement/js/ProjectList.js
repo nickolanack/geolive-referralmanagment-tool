@@ -842,10 +842,23 @@ var ProjectList = (function() {
 		});
 
 
+		var name=category.getName();
+		if(name.indexOf('/')>-1){
+			var p=name.split('/');
+			var slug;
+			while(p.length){
+				slug=p.pop();
+				if(slug.length>0){
+					name=slug;
+					break;
+				}
+			}
+		}
+
 		return new ProjectList({
 			"icon": category.getIcon(),
 			"color": category.getColor(),
-			"label": category.getName() +" "+ (DashboardConfig.getValue('showDatasets')?"Datasets & ":"")+(DashboardConfig.getValue('enableProposals')?ProjectList.NameForProjects():"Collections"),
+			"label": name +" "+ (DashboardConfig.getValue('showDatasets')?"Datasets & ":"")+(DashboardConfig.getValue('enableProposals')?ProjectList.NameForProjects():"Collections"),
 			"showCreateBtn": false,
 			"createBtns": btns,
 			"filter": null,
