@@ -4976,7 +4976,7 @@ span.navigation-menu.settings-menu {
      
     
     
-     @media screen and (max-width: 1750px) {
+     @media screen and (max-width: 1850px) {
          
         .field-value-module.inline{
     
@@ -4988,10 +4988,18 @@ span.navigation-menu.settings-menu {
                 }
            }
         
-           &[data-col="type"],  &[data-col="community"], &[data-col="status"]{
+           &[data-col="type"]{
                  width:90px;
                  span{
                      max-width:80px;
+                 }
+        
+           }
+           
+           &[data-col="community"], &[data-col="status"]{
+                 width:150px;
+                 span{
+                     max-width:70px;
                  }
         
            }
