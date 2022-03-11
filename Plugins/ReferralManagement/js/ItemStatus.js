@@ -54,6 +54,9 @@ var ItemStatus = (function() {
 
 
 			return (new ProposalFlow('proponent',this))
+
+				.setLabel('Proponent submision workflow')
+
 			    .addStep("Submission", {"class":"current", "clickable":false})
 			    .addStep("Validation", {"class":"mail"})
 			    .addStep("Office Review", {"class":"user"})
@@ -66,6 +69,8 @@ var ItemStatus = (function() {
 
 
 			return (new ProposalFlow('processing',this))
+
+				.setLabel('Processing workflow')
 			    
 			    .addStep("Intake", {"class":"current mail"})
 			    .addStep("Filing", {"class":"user"})
@@ -79,6 +84,9 @@ var ItemStatus = (function() {
 
 
 			return (new ProposalFlow('assessment',this))
+
+				.setLabel('Assessment workflow')
+
 			
 			    .addStep("Quality Assessment", {"class":"current user", "completes":{"proponent":"validation"}})
 			    .addStep("Prioritization", {"class":"mail"})

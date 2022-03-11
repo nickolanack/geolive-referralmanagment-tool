@@ -43,6 +43,9 @@ var ProposalFlow = (function() {
 
 
 		},
+
+
+
 		getItem: function() {
 			return this._item;
 		},
@@ -254,6 +257,15 @@ var ProposalFlow = (function() {
 		getElement: function() {
 
 			return this.element;
+		},
+
+
+		setLabel(l){
+
+			
+			this.element.setAttribute('data-label', l);
+
+			return this;
 		}
 
 
