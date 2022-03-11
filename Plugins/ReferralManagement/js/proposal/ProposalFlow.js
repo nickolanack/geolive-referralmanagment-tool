@@ -156,7 +156,7 @@ var ProposalFlow = (function() {
 			var el = this.flowEl.appendChild(new Element('li', options || {}));
 			el.setAttribute('data-label', name);
 			if (this._last) {
-				this._last.appendChild(new Element('span'));
+				this._last.appendChild(new Element('span', {"class":"flow-item"}));
 			}
 
 
