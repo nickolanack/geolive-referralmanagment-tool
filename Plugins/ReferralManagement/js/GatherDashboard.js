@@ -55,7 +55,7 @@ var GatherDashboard = (function() {
 		},
 
 		getProjectTags: function(callback) {
-			return ProjectTagList.getProjectTags(callback);
+			return ProjectTagList.getSelectableProjectTags(callback);
 		},
 
 
