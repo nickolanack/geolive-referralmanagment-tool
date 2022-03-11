@@ -298,6 +298,10 @@ button.primary-btn.nav-new-btn.view-selection:before {
     display:none;
 }
 
+.table-header .field-value-module.has-ids .id-items:after{
+    display:none;
+}
+
 
 .table-header .field-value-module:before {
     content: "";
