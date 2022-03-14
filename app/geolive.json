@@ -5521,7 +5521,7 @@
             "gatherIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_r7F_lYW_6cm_%5BG%5D-%3Ethumb%3A%3E200x%3E150.png"
             ],
-            "leftPanelPrimaryBtnLabel": "New Submission",
+            "leftPanelPrimaryBtnLabel": "Add Submission",
             "leftPanelPrimaryBtnForm": "{projectForm}",
             "showLeftPanelSecondaryBtn": false,
             "leftPanelSecondaryBtnLabel": "Add Dataset",
@@ -5551,7 +5551,8 @@
             "nameForProjects": "Submissions",
             "nameForCollections": "Collections",
             "nameForDatasets": "Datasets",
-            "loginLabel": "Login"
+            "loginLabel": "Login",
+            "broadcastChanges": true
         }
     },
     "widget.154": {
