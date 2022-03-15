@@ -227,7 +227,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			$data=GetPlugin('Links')->peekDataToken($json->accessToken);
 
 			if(!(isset($data->name)&&in_array($data->name, array('guestProposalData','projectAccessToken'))&&isset($data->id)&&intval($data->id)==intval($json->id))){
-				return $this->setError('Invalid access token');
+				return $this->setError('Invalid access token: '.json_encode($data));
 			}
 
 			
