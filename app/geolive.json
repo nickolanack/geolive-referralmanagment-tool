@@ -24822,5 +24822,20 @@
             "contentTemplate": "email-onUserRoleChanged-content.contentTemplate.html",
             "readAccess": "public"
         }
+    },
+    "widget.436": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "",
+            "target": "none",
+            "templateName": "{target}",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "useRemote": ""
+        }
     }
 }
