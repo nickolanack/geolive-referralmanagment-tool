@@ -126,7 +126,7 @@ var ProjectNavigationMenu = new Class({
 						}
 					},
 					{
-						html: "Proponent",
+						html: "Communication", //"Proponent"
 						formatEl: function(li) {
 
 							

@@ -638,7 +638,7 @@ var DashboardPageLayout = (function() {
 						return project.isCollection();
 					}
 				}, {
-					html: ['Datasets', 'Access', 'Team', 'Users', 'Discussion', 'Map', 'Files', 'Notes', 'History', 'Status', 'Proponent', 'Briefing'],
+					html: ['Datasets', 'Access', 'Team', 'Users', 'Discussion', 'Map', 'Files', 'Notes', 'History', 'Status', 'Proponent', 'Communication', 'Briefing'],
 					condition: function() {
 
 						var application = ReferralManagementDashboard.getApplication();
@@ -655,7 +655,7 @@ var DashboardPageLayout = (function() {
 					config: "enableProposals"
 				},
 				{
-					html: "Proponent",
+					html: ["Proponent","Communication"],
 					config: "enableProposals"
 				},
 				{
@@ -663,7 +663,7 @@ var DashboardPageLayout = (function() {
 					config: "enableProposals"
 				},
 				{
-					html: "Proponent",
+					html: ["Proponent","Communication"],
 					condition: function() {
 
 						var application = ReferralManagementDashboard.getApplication();
