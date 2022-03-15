@@ -359,6 +359,11 @@ var ProjectFiles = (function() {
 
 		addDropTarget:function(module, project, options){
 
+			if(AppClient.getUserType()==="guest"){
+				return null;
+			}
+
+
 			options=Object.append({
 				moduleClass:'other-documents',
 				fileTypes:["document", "image", "audio", "video"],
