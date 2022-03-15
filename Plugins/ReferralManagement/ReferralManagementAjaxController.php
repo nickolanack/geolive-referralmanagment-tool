@@ -216,6 +216,14 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function getProject($json) {
 
+
+		if (!Auth('read', $json->id, 'ReferralManagement.proposal')) {
+			return $this->setError('No access or does not exist');
+		}
+
+
+
+
 		$response = array('results' => GetPlugin('ReferralManagement')->listProjectsMetadata(array('id' => $json->project)));
 
 		//$this->getPlugin()->getProjectList(array('id'=>$json->project)));
