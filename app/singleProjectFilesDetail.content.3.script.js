@@ -1,4 +1,8 @@
 
+if(AppClient.getUserType()==="guest"){
+		return null;
+	}
+
 return new Element('button',{
     "html":"Download project files", 
     "style":"background-color: mediumseagreen;", 
