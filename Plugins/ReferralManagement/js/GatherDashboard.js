@@ -748,7 +748,10 @@ var GatherDashboard = (function() {
 			return new ModalFormButtonModule(application, proposalObj, {
 			    label: "Add Amendment",
 			    formName: "ProposalTemplate",
-			    "class": "primary-btn edit"
+			    "class": "primary-btn edit",
+			    formOptions: {
+						template: "form"
+				},
 			}).addEvent('complete', function() {
 
 				application.getDisplayController().displayPopoverForm(
