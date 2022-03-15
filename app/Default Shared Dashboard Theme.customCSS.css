@@ -5218,3 +5218,23 @@ span.navigation-menu.settings-menu {
     
     
     
+    
+.view-proponent .ui-view[data-view="singleMapTitleBarView"] .tag-width span.field-value{
+    font-size: unset;
+    width: unset;
+}
+
+.view-proponent .ui-view[data-view="singleMapTitleBarView"] [data-col="attachments"]{
+    display:none;
+}
+.view-proponent .ui-view[data-view="singleMapTitleBarView"] [data-col="community"]{
+    display:none;
+}
+
+.view-proponent .ui-view[data-view="singleMapTitleBarView"] [data-col="status"]{
+    display:none;
+}
+
+
+
+    

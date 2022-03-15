@@ -24543,7 +24543,7 @@
             "requireTarget": false,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "proponent.onRenderApplictionScript.js",
-            "formatModulesScript": "",
+            "formatModulesScript": "proponent.formatModulesScript.js",
             "notifyViewer": false,
             "useRemote": "",
             "metadata": {

@@ -1,10 +1,8 @@
 {
-    "type": "InlineHtml",
+    "type": "WizardScriptElement",
     "config": {
-        "className": "",
-        "text": "<div class=\"application-logo\" style=\"    height: 200px;\n    background-size: auto 100%;\n    background-position: center;\n    background-repeat: no-repeat;\n    margin-bottom: 50px;\n    display: inline-block;\n    width: 100%;\n    line-height: 30;\n    position: relative;\n    top: 100px;\n    top: calc( 50% - 200px );\n    text-align: center;\n    position: fixed;\n\n\"><?php echo GetWidget('dashboardConfig')->getParameter('loadingLabel'); ?><\/div>",
-        "template": "",
-        "templateVariablesScript": "",
-        "formatTextScript": ""
+        "name": "My Custom Script",
+        "script": "\n\n\nreturn `<div class=\"application-logo\" style=\"    height: 200px;\n    background-size: auto 100%;\n    background-position: center;\n    background-repeat: no-repeat;\n    margin-bottom: 50px;\n    display: inline-block;\n    width: 100%;\n    line-height: 30;\n    position: relative;\n    top: 100px;\n    top: calc( 50% - 200px );\n    text-align: center;\n    position: fixed;\n\n\">`+DashboardConfig.getValue('loadingLabel')+`<\/div>`;",
+        "description": "Info about my custom script"
     }
 }
