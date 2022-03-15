@@ -88,8 +88,11 @@ var SpatialDocumentPreview = (function() {
 							containerClassName: 'spatial-file-tile',
 							buttonClassName: '',
 							image: '/php-core-app/core.php?iam=administrator&format=raw&controller=plugins&view=plugin&plugin=Maps&pluginView=kml.tile&kml='+
-							response.metadata.path+'&size=250&pad=10' //&type=street&prj=GOOGLE
+							response.metadata.path+'&size=250&pad=10', //&type=street&prj=GOOGLE
 							//(response.metadata.image || response.metadata.mimeIcon || response.metadata.mediaTypeIcon),
+							toolTip:{
+								title:"Zoom to bounds: "+layerOpts.name
+							}
 
 						}).addEvent('click', function() {
 							map.fitBounds(b);
@@ -122,6 +125,9 @@ var SpatialDocumentPreview = (function() {
 				containerClassName: 'spatial-file-tile add always-show',
 				buttonClassName: '',
 				//image: response.metadata.image||response.metadata.mimeIcon||response.metadata.mediaTypeIcon,
+				toolTip:{
+					title:"Overlay other projects"
+				}
 
 			}).addEvent('click', function() {
 
