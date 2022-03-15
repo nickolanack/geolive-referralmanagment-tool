@@ -217,7 +217,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 	protected function getProject($json) {
 
 
-		if (!Auth('read', $json->id, 'ReferralManagement.proposal')) {
+		if (!Auth('read', $json->project, 'ReferralManagement.proposal')) {
 
 			if(!isset($json->accessToken)){
 				return $this->setError('No access or does not exist');
@@ -227,7 +227,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			$token=GetPlugin('Links')->peekDataToken($json->accessToken);
 
 
-			if(!(isset($token->name)&&isset($token->data)&&in_array($token->name, array('guestProposalData','projectAccessToken'))&&isset($token->data->id)&&intval($token->data->id)==intval($json->id))){
+			if(!(isset($token->name)&&isset($token->data)&&in_array($token->name, array('guestProposalData','projectAccessToken'))&&isset($token->data->id)&&intval($token->data->id)==intval($json->project))){
 				return $this->setError('Invalid access token: '.json_encode($token));
 			}
 
