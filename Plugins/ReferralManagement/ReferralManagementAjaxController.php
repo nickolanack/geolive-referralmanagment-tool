@@ -238,7 +238,9 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 
 
-		$response = array('results' => GetPlugin('ReferralManagement')->listProjectsMetadata(array('id' => $json->project)));
+		$response = array(
+			'results' => GetPlugin('ReferralManagement')->listProjectsMetadata(array('id' => $json->project))
+		);
 
 		//$this->getPlugin()->getProjectList(array('id'=>$json->project)));
 
