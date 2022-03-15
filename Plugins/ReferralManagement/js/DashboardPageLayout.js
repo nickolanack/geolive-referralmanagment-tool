@@ -497,18 +497,22 @@ var DashboardPageLayout = (function() {
 
 
 		content=layout.filterIdentifierConfig(content, ['project-task-progress', 'project-task-remaining', 'project-task-deadline', 'project-tasks-overview'], 'enableTasks');
+		
 		content=layout.filterIdentifierConfig(content, 'activity-chart', 'showProjectActivity');//'enableTasks');
 
 
-		content=layout.filterIdentifierConfig(content, ['proposal-status', 'status-assessment', 'status-processing'], 'enableProposals');
+		content=layout.filterIdentifierConfig(content, ['proponent-edit-btns', 'proposal-status', 'status-assessment', 'status-processing'], 'enableProposals');
 
 
-		content=layout.filterIdentifier(content, ['project-task-progress', 'project-task-remaining', 'project-task-deadline', 'project-tasks-overview'], !layout.currentItem().isDataset());
-		content=layout.filterIdentifier(content, 'activity-chart', !layout.currentItem().isDataset());//'enableTasks');
+		content=layout.filterIdentifier(content, ['proponent-edit-btns', 'activity-chart', 'project-task-progress', 'project-task-remaining', 'project-task-deadline', 'project-tasks-overview'], !layout.currentItem().isDataset());
 
 
 		content=layout.filterIdentifier(content, ['project-edit-btns','activity-chart', 'project-task-progress', 'project-task-remaining', 'project-task-deadline', 'project-tasks-overview', 'discussion-reply','project-team','project-related-projects'],  AppClient.getUserType() != "guest");//'enableTasks');
 		
+
+		content=layout.filterIdentifier(content, ['proponent-edit-btns'],  AppClient.getUserType() === "guest");//'enableTasks');
+		
+
 		return content;
 
 	}).addLayout('singleProjectEditButtonsDetail', function(content){
