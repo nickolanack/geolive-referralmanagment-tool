@@ -242,6 +242,10 @@ GetWidget('userProfileDetailActivity')->display($targetInstance);
 GetWidget('proposalOverviewStatus')->display($targetInstance);
 GetWidget('singleProjectProponentDetail')->display($targetInstance);
 
+GetWidget('proposalForm')->display($targetInstance); //proposal wizard from map
+GetWidget('permitListForm')->display($targetInstance); //proposal wizard from map
+
+
 
 
 
