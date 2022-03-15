@@ -741,6 +741,32 @@ var GatherDashboard = (function() {
 		},
 
 
+		createGuestAmendmentButton:function(application){
+
+
+			var proposalObj = new GuestProposalAmendment(-1, {});
+			return new ModalFormButtonModule(application, proposalObj, {
+			    label: "Add Amendment",
+			    formName: "ProposalTemplate",
+			    "class": "primary-btn edit"
+			}).addEvent('complete', function() {
+
+				application.getDisplayController().displayPopoverForm(
+					'emailVerificationForm',
+					proposalObj,
+					application, {
+						template: "form"
+					}
+				);
+
+			});
+
+
+
+
+		},
+
+
 		createLoginFormButtons: function(application, wizard) {
 
 
