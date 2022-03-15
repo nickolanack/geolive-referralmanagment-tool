@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "\/\/amendment btn\n\nif(item.isArchived()){\n    return null;\n}\n\n\n\nreturn new ModalFormButtonModule(application, item, {\n         \n            label: \"Add Amendment\",\n            formName: \"ProposalTemplate\",\n            \"class\": \"primary-btn edit\"\n\n    \n});\n\n\n\n",
+        "script": "\/\/amendment btn\n\nif(item.isArchived()){\n    return null;\n}\n\n\n\nreturn new ModalFormButtonModule(application, new GuestProposalAmendment(-1, {}), {\n    label: \"Add Amendment\",\n    formName: \"ProposalTemplate\",\n    \"class\": \"primary-btn edit\"\n});\n\n\n\n",
         "description": "Info about my custom script"
     }
 }
