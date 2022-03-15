@@ -694,7 +694,9 @@ var ProjectFiles = (function() {
 
 
 
-
+			if(AppClient.getUserType()==="guest"){
+				return null;
+			}
 
 
 
