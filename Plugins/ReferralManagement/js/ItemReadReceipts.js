@@ -13,7 +13,7 @@ var ItemReadReceipts=(function(){
 				item:this.getId(),
 				type:this.getType(),
 				namespace:'default',
-				metadata=DashboardLoader.getAccessTokenObject(),
+				metadata:DashboardLoader.getAccessTokenObject(),
 				plugin:'Discussions'
 			})).execute();
 
