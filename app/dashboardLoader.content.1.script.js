@@ -15,4 +15,4 @@ return `<div class="application-logo" style="    height: 200px;
     text-align: center;
     position: fixed;
 
-">`+DashboardConfig.getValue('loadingLabel')+`</div>`;
+">Hello: `+DashboardConfig.getValue('loadingLabel')+`</div>`;
