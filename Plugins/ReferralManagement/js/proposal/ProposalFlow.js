@@ -14,10 +14,10 @@ var ProposalFlow = (function() {
 
 
 
-			var getStateQuery = new AjaxControlQuery(CoreAjaxUrlRoot, 'get_state_data', {
+			var getStateQuery = new AjaxControlQuery(CoreAjaxUrlRoot, 'get_state_data', ObjectAppend_({
 				"plugin": "ReferralManagement",
 				"id": item.getId()
-			});
+			}, DashboardLoader.getAccessTokenObject());
 
 			var me = this;
 

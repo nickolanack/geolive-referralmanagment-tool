@@ -4,11 +4,23 @@ var DashboardLoader = (function() {
 	var DashboardLoaderClass = new Class_({
 
 
+		getAccessTokenObject:function(){
 
+			if(this._application&&typeof this._application.getNamedValue('accessToken')=='string'){
+				return { 
+					"accessToken":this._application.getNamedValue('accessToken')
+				};
+				
+			}
+
+			return {};
+		},
 		loadUserDashboardView: function(application) {
 
 
 			this.addTheme();
+			this._application=application;
+
 
 
 			setTimeout(function() {
@@ -59,12 +71,15 @@ var DashboardLoader = (function() {
 								var accessToken=null;
 								if(segments.length>index+2){
 									accessToken=segments[index+2];
+									application.setNamedValue('accessToken', accessToken);
 								}
 
 								if(id==parseInt(id)+""){
 
 
 									if(!team.hasProject(id)){
+
+
 
 
 										team.requestProject(id, accessToken, function(project){
