@@ -15,12 +15,20 @@ var DashboardLoader = (function() {
 
 			return {};
 		},
+		setLoadingMessage:function(message){
+			var items=$$('.application-logo');
+			if(items.length){
+				items[0].innerHTML=message;
+			}
+		},
 		loadUserDashboardView: function(application) {
 
 
 			this.addTheme();
 			this._application=application;
 
+
+			var me=this;
 
 
 			setTimeout(function() {
@@ -83,6 +91,12 @@ var DashboardLoader = (function() {
 
 
 										team.requestProject(id, accessToken, function(project){
+
+											if(!project){
+												me.setLoadingMessage('You do not have access to the requested item');
+												return;
+											}
+
 											application.setNamedValue('currentProject', project);
 											loadView("singleProjectDetail", project);
 										})

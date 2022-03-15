@@ -500,6 +500,12 @@ var ProjectTeam = (function() {
 			var me=this;
 
 			(new ProjectQuery(id, accessToken)).addEvent('success', function(req){
+
+				if(!req.success){
+					callback(null);
+					return;
+				}
+
 				callback(me._addProject(req.results[0]));
 			}).execute();
 
