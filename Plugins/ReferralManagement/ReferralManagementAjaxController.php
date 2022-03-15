@@ -228,7 +228,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 
 			if(!(isset($token->name)&&isset($token->data)&&in_array($token->name, array('guestProposalData','projectAccessToken'))&&isset($token->data->id)&&intval($token->data->id)==intval($json->id))){
-				return $this->setError('Invalid access token: '.json_encode($token->data));
+				return $this->setError('Invalid access token: '.json_encode($token));
 			}
 
 			
