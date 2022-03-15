@@ -1,4 +1,8 @@
 {
     "type": "WizardScriptElement",
-    "config": {}
+    "config": {
+        "name": "My Custom Script",
+        "script": "\/\/share btn\n\nif(item.isArchived()){\n    return null;\n}\n\n\n\nreturn new ModalFormButtonModule(application, item, {\n         \n            label: \"Share\",\n            formName: \"shareLink\",\n            \"class\": \"primary-btn share\"\n\n    \n});\n\n\n\n",
+        "description": "Info about my custom script"
+    }
 }
