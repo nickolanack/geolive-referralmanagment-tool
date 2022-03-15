@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "\/\/amendment btn\n\nif(item.isArchived()){\n    return null;\n}\n\n\nGatherDashboard.createGuestAmendmentButton(application);\n\n\n",
+        "script": "\/\/amendment btn\n\nif(item.isArchived()){\n    return null;\n}\n\n\nreturn GatherDashboard.createGuestAmendmentButton(application);\n\n\n",
         "description": "Info about my custom script"
     }
 }
