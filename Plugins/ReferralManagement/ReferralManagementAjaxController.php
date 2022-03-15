@@ -223,7 +223,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 				return $this->setError('No access or does not exist');
 			}
 
-			return $this->setError(GetPlugin('Links')->peekDataToken($json->accessToken));
+			return $this->setError(json_encode(GetPlugin('Links')->peekDataToken($json->accessToken)));
 
 		
 		}
