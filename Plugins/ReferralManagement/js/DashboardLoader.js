@@ -97,6 +97,8 @@ var DashboardLoader = (function() {
 												return;
 											}
 
+											me.setLoadingMessage('Loading: '+project.getName());
+
 											application.setNamedValue('currentProject', project);
 											loadView("singleProjectDetail", project);
 										})
