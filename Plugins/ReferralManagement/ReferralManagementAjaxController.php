@@ -218,7 +218,14 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 
 		if (!Auth('read', $json->id, 'ReferralManagement.proposal')) {
-			return $this->setError('No access or does not exist');
+
+			if(!isset($json->accessToken)){
+				return $this->setError('No access or does not exist');
+			}
+
+			return $this->setError(GetPlugin('Links'))->peekDataToken($json->accessToken));
+
+		
 		}
 
 
