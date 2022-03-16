@@ -5277,11 +5277,13 @@ span.navigation-menu.settings-menu {
 .view-proponent .ui-view[data-view="singleMapTitleBarView"] [data-col="attachments"]{
     display:none;
 }
-.view-proponent .ui-view[data-view="singleMapTitleBarView"] [data-col="community"]{
+
+
+.ui-view[data-view="singleMapTitleBarView"] [data-col="community"]{
     display:none;
 }
 
-.view-proponent .ui-view[data-view="singleMapTitleBarView"] [data-col="status"]{
+.ui-view[data-view="singleMapTitleBarView"] [data-col="status"]{
     display:none;
 }
 
