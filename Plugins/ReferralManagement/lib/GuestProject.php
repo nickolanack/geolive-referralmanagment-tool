@@ -57,7 +57,7 @@ class GuestProject{
 
 
 
-				$clientToken = ($links = GetPlugin('Links'))->createDataCode('projectAccessToken', array(
+				$clientToken = ($links = GetPlugin('Links'))->createDataCodeForItem($id, "ReferralManagement.proposal",'projectAccessToken', array(
 					'id'=>$id,
 					"email" => $params->validationData->email
 				));

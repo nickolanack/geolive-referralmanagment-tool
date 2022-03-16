@@ -661,7 +661,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function generateShareLink($json) {
 
-		$clientToken = ($links = GetPlugin('Links'))->createDataCode('projectAccessToken', array(
+		$clientToken = ($links = GetPlugin('Links'))->createDataCodeForItem($json->id, "ReferralManagement.proposal", 'projectAccessToken', array(
 			'id' => $json->id,
 			"creator" => GetClient()->getUserId(),
 		));
