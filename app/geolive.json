@@ -15498,8 +15498,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 75,
-                    "y": 403
+                    "x": 145,
+                    "y": 348
                 },
                 "children": [
                     "shareLink.metadata.children.0.json",
@@ -15510,16 +15510,16 @@
                             "shareLink.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 487,
-                            "y": 283
+                            "x": 596,
+                            "y": 213
                         },
                         "children": [
                             "shareLink.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 447,
-                                    "y": 459
+                                    "x": 556,
+                                    "y": 403
                                 }
                             }
                         ],
@@ -15534,11 +15534,34 @@
                                     "modules": [
                                         "shareLink.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
-                                            "type": "WizardScriptElement",
+                                            "type": "UIListView",
                                             "config": {
-                                                "name": "My Custom Script",
-                                                "script": "shareLink.metadata.children.1.builderMetadata.positions.content.modules.1.config.script.js",
-                                                "description": "Info about my custom script"
+                                                "listClassName": "",
+                                                "className": "",
+                                                "identifier": "",
+                                                "viewType": "view",
+                                                "namedView": "tokenDetailView",
+                                                "shouldRender": true,
+                                                "namedViewScript": "return namedView",
+                                                "showInlineEdit": false,
+                                                "namedFormView": "defaultView",
+                                                "formOptions": "{}",
+                                                "showDeleteButton": false,
+                                                "deleteItemScript": "defaultBehaviorFn()",
+                                                "initModuleScript": "",
+                                                "formatModuleScript": "",
+                                                "resolveItemScript": "return item",
+                                                "filterModulesScript": "return list",
+                                                "itemButtonsScript": "return [];",
+                                                "insertAtTop": false,
+                                                "targetName": "",
+                                                "getItemListScript": "shareLink.metadata.children.1.builderMetadata.positions.content.modules.1.config.getItemListScript.js",
+                                                "formatItemListScript": "return list;",
+                                                "formatListItemModuleScript": "return item;",
+                                                "emptyNamedView": "emptyListView",
+                                                "filterItemsScript": "return true;",
+                                                "sortItemsScript": "",
+                                                "maxItems": "-1"
                                             }
                                         },
                                         {
@@ -15546,6 +15569,14 @@
                                             "config": {
                                                 "name": "My Custom Script",
                                                 "script": "shareLink.metadata.children.1.builderMetadata.positions.content.modules.2.config.script.js",
+                                                "description": "Info about my custom script"
+                                            }
+                                        },
+                                        {
+                                            "type": "WizardScriptElement",
+                                            "config": {
+                                                "name": "My Custom Script",
+                                                "script": "shareLink.metadata.children.1.builderMetadata.positions.content.modules.3.config.script.js",
                                                 "description": "Info about my custom script"
                                             }
                                         }
@@ -24866,6 +24897,47 @@
                     "content": {
                         "modules": [
                             "singleProjectProponentButtonsDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.437": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "tokenDetailView",
+            "target": "tokenDetailView",
+            "templateName": "tokenDetailView",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "useRemote": "",
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "tokenDetailView.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
