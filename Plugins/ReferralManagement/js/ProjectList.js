@@ -919,11 +919,21 @@ var ProjectList = (function() {
 
 		return new ProjectList({
 		    "label":  "Related "+ProjectList.NameForProjects(),
+		    "description":function(){
+		    	
+		    	var c = this.getProjectsList().length;
+		    	var type=(ProjectList.NameForProject()).toLowerCase();
+
+		    	//assumes plural ends with s
+		    	type==c==1?:type.substring(0, type.length-1):type;
+		    	
+		    	return "There "+(c==1?"is ":"are ")+c+" related "+type
+		    },
 		    "labelClass":"",
 		    "showFilters":false,
 		    "showMinimize":true,
 		    "startMinimized":true,
-		    projects:function(callback){
+		    "projects":function(callback){
 
 		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
      				callback(team.getProjects().filter(function(p){
