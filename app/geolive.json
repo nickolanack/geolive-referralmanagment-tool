@@ -15510,16 +15510,16 @@
                             "shareLink.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 276,
-                            "y": 252
+                            "x": 286,
+                            "y": 262
                         },
                         "children": [
                             "shareLink.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 236,
-                                    "y": 442
+                                    "x": 246,
+                                    "y": 452
                                 }
                             }
                         ],
@@ -15557,7 +15557,7 @@
                                                 "targetName": "",
                                                 "getItemListScript": "shareLink.metadata.children.1.builderMetadata.positions.content.modules.1.config.getItemListScript.js",
                                                 "formatItemListScript": "return list;",
-                                                "formatListItemModuleScript": "return item;",
+                                                "formatListItemModuleScript": "shareLink.metadata.children.1.builderMetadata.positions.content.modules.1.config.formatListItemModuleScript.js",
                                                 "emptyNamedView": "emptyListView",
                                                 "filterItemsScript": "return true;",
                                                 "sortItemsScript": "",
