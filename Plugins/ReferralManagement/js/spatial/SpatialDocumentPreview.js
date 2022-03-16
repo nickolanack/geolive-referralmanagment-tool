@@ -91,7 +91,7 @@ var SpatialDocumentPreview = (function() {
 							response.metadata.path+'&size=250&pad=10', //&type=street&prj=GOOGLE
 							//(response.metadata.image || response.metadata.mimeIcon || response.metadata.mediaTypeIcon),
 							toolTip:{
-								title:"Zoom to bounds: "+layerOpts.name
+								description:"Zoom to bounds: "+layerOpts.name
 							}
 
 						}).addEvent('click', function() {
@@ -127,7 +127,7 @@ var SpatialDocumentPreview = (function() {
 					buttonClassName: '',
 					//image: response.metadata.image||response.metadata.mimeIcon||response.metadata.mediaTypeIcon,
 					toolTip:{
-						title:"Overlay other projects"
+						description:"Overlay other projects"
 					}
 
 				}).addEvent('click', function() {
