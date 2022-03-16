@@ -3,7 +3,7 @@
 			'id':item.getId()
 		})).addEvent('success', function(resp){
 		   
-		   callback(resp.result.map(function(link){
+		   callback(resp.results.map(function(link){
 		       return new MockDataTypeItem(link)
 		   }))
 		    
