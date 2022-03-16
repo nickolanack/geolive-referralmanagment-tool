@@ -80,6 +80,9 @@ var DashboardLoader = (function() {
 								if(segments.length>index+2){
 									accessToken=segments[index+2];
 									application.setNamedValue('accessToken', accessToken);
+									try{
+										AjaxDiscussion.AddReadReceiptData(me.getAccessTokenObject())
+									}
 								}
 
 								if(id==parseInt(id)+""){
