@@ -442,6 +442,10 @@ button.section-toggle {
     
 }
 
+button.section-toggle.is-empty {
+    display: none;
+}
+
 .dark button.section-toggle {
     background-color: #222222;
 }
