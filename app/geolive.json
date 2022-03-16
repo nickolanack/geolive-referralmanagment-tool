@@ -15498,8 +15498,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 145,
-                    "y": 348
+                    "x": 117,
+                    "y": 355
                 },
                 "children": [
                     "shareLink.metadata.children.0.json",
@@ -15510,16 +15510,16 @@
                             "shareLink.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 596,
-                            "y": 213
+                            "x": 261,
+                            "y": 184
                         },
                         "children": [
                             "shareLink.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 556,
-                                    "y": 403
+                                    "x": 221,
+                                    "y": 374
                                 }
                             }
                         ],
@@ -15546,7 +15546,7 @@
                                                 "showInlineEdit": false,
                                                 "namedFormView": "defaultView",
                                                 "formOptions": "{}",
-                                                "showDeleteButton": false,
+                                                "showDeleteButton": true,
                                                 "deleteItemScript": "defaultBehaviorFn()",
                                                 "initModuleScript": "",
                                                 "formatModuleScript": "",
