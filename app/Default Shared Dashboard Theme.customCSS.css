@@ -68,7 +68,7 @@ button:focus {outline:0;}
         padding: 6px 14px;
         margin: 0;
         
-        .delete-btn {
+        &.delete-btn {
             background-color: crimson;
         }
     }
