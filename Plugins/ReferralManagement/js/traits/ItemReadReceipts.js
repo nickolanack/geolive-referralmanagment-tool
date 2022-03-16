@@ -14,7 +14,7 @@ var ItemReadReceipts=(function(){
 				type:this.getType(),
 				namespace:'default',
 				metadata:DashboardLoader.getAccessTokenObject(),
-				plugin:'Discussions'
+				plugin:'ReadReceipts'
 			})).addEvent('success',function(resp){
 
 				console.log(resp)
