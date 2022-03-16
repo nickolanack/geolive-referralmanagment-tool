@@ -40,11 +40,55 @@ button:focus {outline:0;}
     
 }
 
-
-[data-view="tokenDetailView"] .share-link .field-value {
-    margin-left: 10px;
-    color: #6a7ce9;
+[data-view="tokenDetailView"] {
+    .share-link .field-value {
+        margin-left: 10px;
+        color: #6a7ce9;
+    }
+    
+    .template-content>* {
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    .template-content>* {
+        white-space: nowrap;
+    }
+    
+    
+    
+    li.WizardButton{
+    
+        border-radius: 100px;
+        color: black;
+        
+        height: 15px;
+        font-size: 15px;
+        line-height: 15px;
+        padding: 6px 14px;
+        margin: 0;
+        
+        .delete-btn {
+            background-color: crimson;
+        }
+    }
+    
+    ul.WizardButtonContainer.with-btns.w-delete {
+        margin: 0;
+    }
+    
+    
+    
+    .template-content>span.user-function-placeholder {
+        display: inline;
+        text-align:right;
+    }
 }
+
+
+
+
+
 
 span.pagination-item:before {
     display:none;
