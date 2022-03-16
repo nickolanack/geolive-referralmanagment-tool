@@ -40,6 +40,12 @@ button:focus {outline:0;}
     
 }
 
+
+[data-view="tokenDetailView"] .share-link .field-value {
+    margin-left: 10px;
+    color: #6a7ce9;
+}
+
 span.pagination-item:before {
     display:none;
 }
