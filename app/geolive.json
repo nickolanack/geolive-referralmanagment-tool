@@ -15510,16 +15510,16 @@
                             "shareLink.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 271,
-                            "y": 194
+                            "x": 281,
+                            "y": 204
                         },
                         "children": [
                             "shareLink.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 231,
-                                    "y": 384
+                                    "x": 241,
+                                    "y": 394
                                 }
                             }
                         ],
@@ -15551,7 +15551,7 @@
                                                 "initModuleScript": "",
                                                 "formatModuleScript": "",
                                                 "resolveItemScript": "return item",
-                                                "filterModulesScript": "shareLink.metadata.children.1.builderMetadata.positions.content.modules.1.config.filterModulesScript.js",
+                                                "filterModulesScript": "\nreturn list",
                                                 "itemButtonsScript": "return [];",
                                                 "insertAtTop": false,
                                                 "targetName": "",
