@@ -344,23 +344,23 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 		IncludeJS(__DIR__ . '/js/ProjectQueries.js');
 
-		IncludeJS(__DIR__ . '/js/ItemCollection.js');
-		IncludeJS(__DIR__ . '/js/ItemUsersCollection.js');
-		IncludeJS(__DIR__ . '/js/ItemProjectsCollection.js');
-		IncludeJS(__DIR__ . '/js/ItemTasksCollection.js');
-		IncludeJS(__DIR__ . '/js/ItemPending.js');
-		IncludeJS(__DIR__ . '/js/ItemArchive.js');
-		IncludeJS(__DIR__ . '/js/ItemDeadline.js');
-		IncludeJS(__DIR__ . '/js/ItemAttachments.js');
-		IncludeJS(__DIR__ . '/js/ItemFlags.js');
-		IncludeJS(__DIR__ . '/js/ItemEvents.js');
-		IncludeJS(__DIR__ . '/js/ItemStars.js');
-		IncludeJS(__DIR__ . '/js/ItemDiscussion.js');
-		IncludeJS(__DIR__ . '/js/ItemContact.js');
-		IncludeJS(__DIR__ . '/js/ItemNavigationTagLinks.js');
-		IncludeJS(__DIR__ . '/js/ItemCategories.js');
-		IncludeJS(__DIR__ . '/js/ItemStatus.js');
-		IncludeJS(__DIR__ . '/js/ItemReadReceipts.js');
+		IncludeJS(__DIR__ . '/js/traits/ItemCollection.js');
+		IncludeJS(__DIR__ . '/js/traits/ItemUsersCollection.js');
+		IncludeJS(__DIR__ . '/js/traits/ItemProjectsCollection.js');
+		IncludeJS(__DIR__ . '/js/traits/ItemTasksCollection.js');
+		IncludeJS(__DIR__ . '/js/traits/ItemPending.js');
+		IncludeJS(__DIR__ . '/js/traits/ItemArchive.js');
+		IncludeJS(__DIR__ . '/js/traits/ItemDeadline.js');
+		IncludeJS(__DIR__ . '/js/traits/ItemAttachments.js');
+		IncludeJS(__DIR__ . '/js/traits/ItemFlags.js');
+		IncludeJS(__DIR__ . '/js/traits/ItemEvents.js');
+		IncludeJS(__DIR__ . '/js/traits/ItemStars.js');
+		IncludeJS(__DIR__ . '/js/traits/ItemDiscussion.js');
+		IncludeJS(__DIR__ . '/js/traits/ItemContact.js');
+		IncludeJS(__DIR__ . '/js/traits/ItemNavigationTagLinks.js');
+		IncludeJS(__DIR__ . '/js/traits/ItemCategories.js');
+		IncludeJS(__DIR__ . '/js/traits/ItemStatus.js');
+		IncludeJS(__DIR__ . '/js/traits/ItemReadReceipts.js');
 
 		IncludeJS(__DIR__ . '/js/Project.js');
 
