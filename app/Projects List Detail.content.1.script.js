@@ -1,7 +1,7 @@
 
 
 
-if(item instanceof ProjectList&&item.getShowMinimize&&item.getShowMinimize()){
+if(item instanceof ProjectList&&item.getShowMinimize&&item.getShowMinimize()&&item.getProjectList().length>0){
     var options={};
     
     if(item.getStartMinimized){
