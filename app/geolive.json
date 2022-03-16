@@ -15510,16 +15510,16 @@
                             "shareLink.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 556,
-                            "y": 173
+                            "x": 566,
+                            "y": 183
                         },
                         "children": [
                             "shareLink.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 516,
-                                    "y": 349
+                                    "x": 526,
+                                    "y": 373
                                 }
                             }
                         ],
@@ -15535,7 +15535,34 @@
                                         "shareLink.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
                                             "type": "UIListView",
-                                            "config": []
+                                            "config": {
+                                                "listClassName": "",
+                                                "className": "",
+                                                "identifier": "",
+                                                "viewType": "view",
+                                                "namedView": "tokenDetailView",
+                                                "shouldRender": true,
+                                                "namedViewScript": "return namedView",
+                                                "showInlineEdit": false,
+                                                "namedFormView": "defaultView",
+                                                "formOptions": "{}",
+                                                "showDeleteButton": false,
+                                                "deleteItemScript": "defaultBehaviorFn()",
+                                                "initModuleScript": "",
+                                                "formatModuleScript": "",
+                                                "resolveItemScript": "return item",
+                                                "filterModulesScript": "return list",
+                                                "itemButtonsScript": "return [];",
+                                                "insertAtTop": false,
+                                                "targetName": "",
+                                                "getItemListScript": "return item;",
+                                                "formatItemListScript": "return list;",
+                                                "formatListItemModuleScript": "return item;",
+                                                "emptyNamedView": "emptyListView",
+                                                "filterItemsScript": "return true;",
+                                                "sortItemsScript": "",
+                                                "maxItems": "-1"
+                                            }
                                         },
                                         {
                                             "type": "WizardScriptElement",
