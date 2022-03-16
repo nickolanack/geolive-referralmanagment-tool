@@ -925,7 +925,7 @@ var ProjectList = (function() {
 		    	var type=(ProjectList.NameForProject()).toLowerCase();
 
 		    	//assumes plural ends with s
-		    	type==c==1?:type.substring(0, type.length-1):type;
+		    	type==c==1?type.substring(0, type.length-1):type;
 		    	
 		    	return "There "+(c==1?"is ":"are ")+c+" related "+type
 		    },
