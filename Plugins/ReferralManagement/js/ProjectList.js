@@ -919,15 +919,20 @@ var ProjectList = (function() {
 
 		return new ProjectList({
 		    "label":  "Related "+ProjectList.NameForProjects(),
-		    "description":function(){
-		    	
-		    	var c = this.getProjectList().length;
-		    	var type=(ProjectList.NameForProjects()).toLowerCase();
+		    "description":function(callback){
 
-		    	//assumes plural ends with s
-		    	type==c==1?type.substring(0, type.length-1):type;
+		    	this.getProjectList(function(list){
+		    		var c = list.length;
+			    	var type=(ProjectList.NameForProjects()).toLowerCase();
+
+			    	//assumes plural ends with s
+			    	type==c==1?type.substring(0, type.length-1):type;
+			    	
+			    	callback( "There "+(c==1?"is ":"are ")+c+" related "+type)
+
+		    	});
 		    	
-		    	return "There "+(c==1?"is ":"are ")+c+" related "+type
+		    	
 		    },
 		    "labelClass":"",
 		    "showFilters":false,
