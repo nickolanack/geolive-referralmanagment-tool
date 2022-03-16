@@ -661,6 +661,12 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function generateShareLink($json) {
 
+		if (!Auth('write', $json->id, "ReferralManagement.proposal")) {
+			return $this->setError('No access or does not exist');
+		}
+
+
+
 		$clientToken = ($links = GetPlugin('Links'))->createDataCodeForItem($json->id, "ReferralManagement.proposal", 'projectAccessToken', array(
 			'id' => $json->id,
 			"creator" => GetClient()->getUserId(),
@@ -674,12 +680,12 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 	}
 
 	protected function listShareLinks($json) {
-		// $links=GetPlugin('Links')->list
 
-		// return array(
-		// 	'token' => $clientToken,
-		// 	'link' => HtmlDocument()->website() . '/proposal/' . $json->id . '/' . $clientToken
-		// );
+		if (!Auth('write', $json->id, "ReferralManagement.proposal")) {
+			return $this->setError('No access or does not exist');
+		}
+
+		return array('results'=>GetPlugin('Links')->listDataCodesForItem($json->id, $json->type));
 
 	}
 
