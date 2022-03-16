@@ -921,7 +921,7 @@ var ProjectList = (function() {
 		    "label":  "Related "+ProjectList.NameForProjects(),
 		    "description":function(){
 		    	
-		    	var c = this.getProjects().length;
+		    	var c = this.getProjectList().length;
 		    	var type=(ProjectList.NameForProjects()).toLowerCase();
 
 		    	//assumes plural ends with s
