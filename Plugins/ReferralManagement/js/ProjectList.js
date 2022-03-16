@@ -922,7 +922,7 @@ var ProjectList = (function() {
 		    "description":function(){
 		    	
 		    	var c = this.getProjects().length;
-		    	var type=(ProjectList.NameForProject()).toLowerCase();
+		    	var type=(ProjectList.NameForProjects()).toLowerCase();
 
 		    	//assumes plural ends with s
 		    	type==c==1?type.substring(0, type.length-1):type;
