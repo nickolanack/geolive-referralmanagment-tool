@@ -5,7 +5,7 @@
         "identifier": "",
         "className": "",
         "fieldLabelScript": "return \"Share Link\";",
-        "fieldValueScript": "return item.getData().token.substring(0,5)+'*****';",
+        "fieldValueScript": "return item.getToken().substring(0,5)+'*****';",
         "formatElementScript": ""
     }
 }
