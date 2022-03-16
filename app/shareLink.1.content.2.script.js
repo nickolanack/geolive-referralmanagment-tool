@@ -1,21 +1,11 @@
-var button= new ElementModule('button', {
-    "class":"form-btn primary-btn share",
-    'html':"Create share link",
-    events:{click:function(){
-        
-        (new AjaxControlQuery(CoreAjaxUrlRoot, 'generate_share_link', {
-			'plugin': "ReferralManagement",
-			'id':item.getId()
-		})).addEvent('success', function(resp){
-		    
-		    $('theShareLink').href=resp.link;
-		    $('theShareLink').innerHTML=resp.link;
-		    
-		    console.log(resp);
-		    
-		}).execute();
-    
-    }}
-});
 
-return button;
+
+
+
+
+
+        var link=window.location.href.split('/').slice(0,3).join('/')+'/proposal/'+item.getId()+'/auto';
+        return new ElementModule('p', {
+            html:'<a id="theShareLink" style="color:mediumseagreen;" target="_blank" href="'+link+'"></a>",
+            
+        });
