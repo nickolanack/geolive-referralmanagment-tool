@@ -4,8 +4,8 @@
         "loadAsync": false,
         "identifier": "",
         "className": "",
-        "fieldLabelScript": "return \"Field Label Script\";",
-        "fieldValueScript": "return \"Field Value Script\";",
+        "fieldLabelScript": "return \"Share Link\";",
+        "fieldValueScript": "return item.getData().token.substring(0,5)+'*****';",
         "formatElementScript": ""
     }
 }
