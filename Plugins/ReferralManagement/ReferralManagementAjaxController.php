@@ -685,7 +685,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			return $this->setError('No access or does not exist');
 		}
 
-		return array('results'=>GetPlugin('Links')->listDataCodesForItem($json->id, $json->type));
+		return array('results'=>GetPlugin('Links')->listDataCodesForItem($json->id, "ReferralManagement.proposal");
 
 	}
 
