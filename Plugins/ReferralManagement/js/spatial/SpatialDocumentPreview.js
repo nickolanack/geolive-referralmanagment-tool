@@ -112,78 +112,81 @@ var SpatialDocumentPreview = (function() {
 				return createLayer(layerOpts, i);
 			});
 
+			if(AppClient.getUserType()!=="guest"){
+				
+				var addLayerTile=null;
+				var positionAddLayerTile=function(){
 
-			var addLayerTile=null;
-			var positionAddLayerTile=function(){
-
-				//if(addLayerTile){
-				addLayerTile.getElement().setStyle('right', layers.length * offset + 40);
-				//}
-			}
-
-			addLayerTile=new UIMapSubTileButton(me._mapTile, {
-				containerClassName: 'spatial-file-tile add always-show',
-				buttonClassName: '',
-				//image: response.metadata.image||response.metadata.mimeIcon||response.metadata.mediaTypeIcon,
-				toolTip:{
-					title:"Overlay other projects"
-				}
-
-			}).addEvent('click', function() {
-
-				var InlineProjectSelection=new Class_({
-					Extends:MockDataTypeItem,
-					hasProject:function(item){
-
-						return item.isBaseMapLayer()||ProjectSelection.hasProject(item);
-
-					},
-					canAddRemoveProject:function(item){
-						return !item.isBaseMapLayer();
-					},
-					addProject:function(p){
-
-						console.log('add selection');
-						console.log(p);
-
-						spatial=SpatialProject.ItemsSpatial(p);
-
-
-						ProjectSelection.addProject(p);
-
-						var newLayers=spatial.map(function(layerOpts, i) {
-							return createLayer(layerOpts, i+layers.length);
-						});
-
-						layers=layers.concat(newLayers);
-						positionAddLayerTile();
-
-					},
-					removeProject:function(p){
-
-						ProjectSelection.removeProject(p);
-
+					if(addLayerTile){
+						addLayerTile.getElement().setStyle('right', layers.length * offset + 40);
 					}
+				}
+			
+				addLayerTile=new UIMapSubTileButton(me._mapTile, {
+					containerClassName: 'spatial-file-tile add always-show',
+					buttonClassName: '',
+					//image: response.metadata.image||response.metadata.mimeIcon||response.metadata.mediaTypeIcon,
+					toolTip:{
+						title:"Overlay other projects"
+					}
+
+				}).addEvent('click', function() {
+
+					var InlineProjectSelection=new Class_({
+						Extends:MockDataTypeItem,
+						hasProject:function(item){
+
+							return item.isBaseMapLayer()||ProjectSelection.hasProject(item);
+
+						},
+						canAddRemoveProject:function(item){
+							return !item.isBaseMapLayer();
+						},
+						addProject:function(p){
+
+							console.log('add selection');
+							console.log(p);
+
+							spatial=SpatialProject.ItemsSpatial(p);
+
+
+							ProjectSelection.addProject(p);
+
+							var newLayers=spatial.map(function(layerOpts, i) {
+								return createLayer(layerOpts, i+layers.length);
+							});
+
+							layers=layers.concat(newLayers);
+							positionAddLayerTile();
+
+						},
+						removeProject:function(p){
+
+							ProjectSelection.removeProject(p);
+
+						}
+					});
+
+					var selection=new InlineProjectSelection({
+
+	                        });
+
+					(new UIModalDialog(
+	                        ReferralManagementDashboard.getApplication(),
+	                        selection, {
+	                            "formName": "datasetSelectForm",
+	                            "formOptions": {
+	                                template: "form"
+	                            }
+	                        }
+	                    )).show();
+
+
 				});
 
-				var selection=new InlineProjectSelection({
+				positionAddLayerTile();
 
-                        });
-
-				(new UIModalDialog(
-                        ReferralManagementDashboard.getApplication(),
-                        selection, {
-                            "formName": "datasetSelectForm",
-                            "formOptions": {
-                                template: "form"
-                            }
-                        }
-                    )).show();
-
-
-			});
-
-			positionAddLayerTile();
+			}
 
 			return clear;
 		},
