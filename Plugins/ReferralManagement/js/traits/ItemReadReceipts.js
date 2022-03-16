@@ -15,7 +15,12 @@ var ItemReadReceipts=(function(){
 				namespace:'default',
 				metadata:DashboardLoader.getAccessTokenObject(),
 				plugin:'Discussions'
-			})).execute();
+			})).addEvent('success',function(resp){
+
+				console.log(resp)
+
+
+			}).execute();
 
 
 
