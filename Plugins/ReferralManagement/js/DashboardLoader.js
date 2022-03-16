@@ -82,6 +82,8 @@ var DashboardLoader = (function() {
 									application.setNamedValue('accessToken', accessToken);
 									try{
 										AjaxDiscussion.AddReadReceiptData(me.getAccessTokenObject())
+									}catch(e){
+										console.error(e);
 									}
 								}
 
