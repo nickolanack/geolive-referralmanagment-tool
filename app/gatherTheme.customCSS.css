@@ -894,4 +894,12 @@ h2 {
 
 
 
+.dataset-select .ui-view [data-identifier="col-selection"] {
+  display: inline-block;
+  min-width: 150px;
+  height: 55px;
+  line-height: 55px; 
+    
+}
+
 
