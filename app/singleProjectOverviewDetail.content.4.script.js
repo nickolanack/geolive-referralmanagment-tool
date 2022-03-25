@@ -1,4 +1,16 @@
 
+
+
+var d=item.getDaysUntilDeadline();
+
+return new ModuleArray([
+    new ElementModule("label",{html:"Activity Start Date"}),
+    new ElementModule("div",{html:"there is no start date yet", "class":"percent-complete-value"}),
+    
+],{"class":"progress", identifier:"project-task-deadline"});
+
+
+
 var d=item.getDaysUntilDeadline();
 
 return new ModuleArray([
