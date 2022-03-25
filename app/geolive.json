@@ -7377,6 +7377,14 @@
                                 }
                             },
                             {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.14.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
                                 "type": "plugin.Discussions.Discussion",
                                 "config": {
                                     "discussionTarget": "itemDiscussion",
@@ -7412,7 +7420,7 @@
                                     "showDeleteButton": false,
                                     "deleteItemScript": "defaultBehaviorFn()",
                                     "initModuleScript": "",
-                                    "formatModuleScript": "singleProjectOverviewDetail.metadata.positions.content.modules.15.config.formatModuleScript.js",
+                                    "formatModuleScript": "singleProjectOverviewDetail.metadata.positions.content.modules.16.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
@@ -7459,7 +7467,7 @@
                                     "deleteItemScript": "defaultBehaviorFn()",
                                     "initModuleScript": "",
                                     "formatModuleScript": "",
-                                    "resolveItemScript": "singleProjectOverviewDetail.metadata.positions.content.modules.17.config.resolveItemScript.js",
+                                    "resolveItemScript": "singleProjectOverviewDetail.metadata.positions.content.modules.18.config.resolveItemScript.js",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
@@ -7493,7 +7501,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.19.config.script.js",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.20.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             },
