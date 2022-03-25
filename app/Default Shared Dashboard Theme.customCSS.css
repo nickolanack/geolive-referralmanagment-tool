@@ -5300,5 +5300,14 @@ span.navigation-menu.settings-menu {
 }
 
 
+.dataset-select .ui-view .field-value-module {
+  display: none; }
+
+.dataset-select .ui-view [data-col="name"], .dataset-select .ui-view [data-col="user"], .dataset-select .ui-view [data-col="date"] {
+  display: inline-block;
+  min-width: 150px;
+  height: 55px;
+  line-height: 55px; }
+
 
     
