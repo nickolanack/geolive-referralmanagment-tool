@@ -35,7 +35,7 @@ return function(viewer, element, parentModule){
         description:item.isComplete()?'click to mark task incomplete':'click to mark task complete',
         anchor:UIPopover.AnchorAuto()
     });
-}
+
     
     
 }
