@@ -87,7 +87,15 @@ button:focus {outline:0;}
 
 
 
-
+.tileButton.zoom-bounds:after {
+    content: "\0f247";
+    font-family: 'FontAwesome';
+    color: #858585;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 21px;
+}
 
 
 span.pagination-item:before {
