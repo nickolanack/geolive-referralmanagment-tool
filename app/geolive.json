@@ -24975,32 +24975,82 @@
             "notifyViewer": false,
             "useRemote": "",
             "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "singleProjectBriefingDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "plugin.Discussions.Discussion",
+                                "config": {
+                                    "discussionTarget": "itemDiscussion",
+                                    "width": 0,
+                                    "constrainHeight": false,
+                                    "height": 200,
+                                    "inlineEditing": false,
+                                    "inlineReply": false,
+                                    "inlineReplyNamedForm": "",
+                                    "emptyMessage": "There are no discussion posts for this proposal",
+                                    "channel": "discussion",
+                                    "resolveChannelScript": "return defaultChannel;",
+                                    "resolveItemScript": "return item;",
+                                    "initialPostsScript": "return null;",
+                                    "formatPostScript": "",
+                                    "namedView": "defaultPostDetail",
+                                    "reverseOrder": false,
+                                    "className": ""
+                                }
+                            },
+                            {
+                                "type": "FlexibleHeight",
+                                "config": {
+                                    "identifier": "discussion-flexible-height",
+                                    "targetElementScript": "singleProjectBriefingDetail.metadata.positions.content.modules.2.config.targetElementScript.js",
+                                    "offset": "0",
+                                    "offsetScript": "singleProjectBriefingDetail.metadata.positions.content.modules.2.config.offsetScript.js"
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "reply-box",
+                                    "identifier": "",
+                                    "viewType": "form",
+                                    "namedView": "discussionReplyForm",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "discussionReplyForm",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
                 "positionList": [
                     "title",
                     "content",
                     "footer",
                     "menu"
                 ],
-                "positions": {
-                    "title": {
-                        "modules": [
-                            "singleProjectBriefingDetail.metadata.positions.title.modules.0.json"
-                        ]
-                    },
-                    "content": {
-                        "modules": [
-                            "singleProjectBriefingDetail.metadata.positions.content.modules.0.json"
-                        ]
-                    },
-                    "footer": {
-                        "modules": [
-                            "singleProjectBriefingDetail.metadata.positions.footer.modules.0.json"
-                        ]
-                    },
-                    "menu": {
-                        "modules": []
-                    }
-                }
+                "_diagramState": []
             },
             "readAccess": "public"
         }
