@@ -20,7 +20,7 @@
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
         "targetName": "",
-        "getItemListScript": "ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){\n    \n    callback(team.getProjects().filter(function(p){ \n        \n        if(item.canAddRemoveProject&&(!item.canAddRemoveProject(p))){\n            return false;\n        }\n        return p.isDataset(); \n        \n    }));\n    \n});",
+        "getItemListScript": "ItemProjectsCollection.GetSelectableProjectsList(item, callback)",
         "formatItemListScript": "return list;",
         "formatListItemModuleScript": "return item;",
         "emptyNamedView": "emptyListView",
