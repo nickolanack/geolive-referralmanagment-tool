@@ -32,7 +32,7 @@ return function(viewer, element, parentModule){
     
     
     pop=new UIPopover(el, {
-        description:item.isComplete()?'click to mark task incomplete':'click to mark task complete'),
+        description:item.isComplete()?'click to mark task incomplete':'click to mark task complete',
         anchor:UIPopover.AnchorAuto()
     });
 }
