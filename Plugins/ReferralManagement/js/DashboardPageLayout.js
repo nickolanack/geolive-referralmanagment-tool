@@ -529,6 +529,11 @@ var DashboardPageLayout = (function() {
 		content=layout.filterIdentifier(content, ['flow-proponent'], layout.currentItem().hasGuestSubmitter());//'enableTasks');
 		return content;
 
+	}).addLayout('singleProjectListItemDetail', function(content){
+
+		
+		return content;
+
 	}).addLayout('profileMenu', function(buttons) {
 
 
@@ -810,7 +815,8 @@ var DashboardPageLayout = (function() {
 			'groupListsProjectDetail',
 			'singleProjectOverviewDetail',
 			'singleProjectEditButtonsDetail',
-			'proposalOverviewStatus'
+			'proposalOverviewStatus',
+			'singleProjectListItemDetail'
 		];
 
 		app.getDisplayController().addFormViewWizardModuleFormatter(function(item, name, step, list) {
