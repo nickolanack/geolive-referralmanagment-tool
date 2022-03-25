@@ -184,7 +184,7 @@ var ItemProjectsCollection = (function(){
 		        if(item.canAddRemoveProject&&(!item.canAddRemoveProject(p))){
 		            return false;
 		        }
-		        return p.isDataset(); 
+		        return true; //p.isDataset(); 
 		        
 		    }));
 		    
