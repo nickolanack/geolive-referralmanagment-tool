@@ -7377,14 +7377,6 @@
                                 }
                             },
                             {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.14.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
                                 "type": "plugin.Discussions.Discussion",
                                 "config": {
                                     "discussionTarget": "itemDiscussion",
@@ -7403,6 +7395,14 @@
                                     "namedView": "defaultPostDetail",
                                     "reverseOrder": false,
                                     "className": "no-min-height user-notes"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.15.config.script.js",
+                                    "description": "Info about my custom script"
                                 }
                             },
                             {
