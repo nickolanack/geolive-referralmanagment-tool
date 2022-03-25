@@ -153,18 +153,19 @@ span.pagination-item:before {
  @media screen and (max-width: 1900px) {
     
     [data-view="singleProjectOverviewDetail"] [data-view="proposalOverviewStatus"] .ui-view {
-        display: inline-block;
         transform: scale(0.6);
-
         margin-right: -200px;
         margin-left: -50px;
+        
+        .flow-item:before {
+            
+        }
+        
+        .flow li:after {
+            
+        }
     }
 
-     [data-view="singleProjectOverviewDetail"] [data-view="proposalOverviewStatus"] [data-view="proponentFlow"] {
-        display: none;
-     }
-
-     
  }
  
   @media screen and (max-width: 1400px) {
@@ -174,12 +175,15 @@ span.pagination-item:before {
             transform: scale(0.4);
             margin-right: -290px;
             margin-left: -120px;
+            
+        .flow-item:before {
+            
+        }
+        
+        .flow li:after{
+            display:none;
+        }
     }
-
-     [data-view="singleProjectOverviewDetail"] [data-view="proposalOverviewStatus"] [data-view="proponentFlow"] {
-        display: none;
-     }
-
      
  }
   
