@@ -87,7 +87,7 @@ button:focus {outline:0;}
 
 
 
-.tileButton.zoom-bounds:after {
+.zoom-bounds>.tileButton:after {
     content: "\0f247";
     font-family: 'FontAwesome';
     color: #858585;
