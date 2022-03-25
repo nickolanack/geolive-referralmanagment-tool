@@ -8,6 +8,11 @@ el.addEvent('click', function(e){
     UIInteraction.navigateToNamedCategoryType(item.getProjectType());
 });
 
+new UIPopover(el, {
+        description:item.getProjectType(),
+        anchor:UIPopover.AnchorAuto()
+    });
+
 
 
 var types=item.getProjectTypes();
@@ -18,4 +23,10 @@ types.slice(1).forEach(function(type){
         e.stop();//Propagation()
         UIInteraction.navigateToNamedCategoryType(type);
     });
+    
+    new UIPopover(tag, {
+        description:type,
+        anchor:UIPopover.AnchorAuto()
+    });
+    
 });
