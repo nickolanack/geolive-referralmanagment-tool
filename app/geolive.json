@@ -7194,11 +7194,26 @@
                         "modules": [
                             "singleProjectOverviewDetail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "WizardScriptElement",
+                                "type": "UIView",
                                 "config": {
-                                    "name": "My Custom Script",
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.1.config.script.js",
-                                    "description": "Info about my custom script"
+                                    "className": "",
+                                    "identifier": "project-state-progress",
+                                    "viewType": "view",
+                                    "namedView": "proposalOverviewStatus",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             },
                             {
@@ -7218,26 +7233,11 @@
                                 }
                             },
                             {
-                                "type": "UIView",
+                                "type": "WizardScriptElement",
                                 "config": {
-                                    "className": "",
-                                    "identifier": "project-edit-btns",
-                                    "viewType": "view",
-                                    "namedView": "singleProjectEditButtonsDetail",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": ""
+                                    "name": "My Custom Script",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.4.config.script.js",
+                                    "description": "Info about my custom script"
                                 }
                             },
                             {
