@@ -25011,6 +25011,14 @@
                                     "offset": "0",
                                     "offsetScript": "singleProjectBriefingDetail.metadata.positions.content.modules.2.config.offsetScript.js"
                                 }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "singleProjectBriefingDetail.metadata.positions.content.modules.3.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
                             }
                         ]
                     },
