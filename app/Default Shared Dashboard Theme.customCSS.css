@@ -166,6 +166,23 @@ span.pagination-item:before {
 
      
  }
+ 
+  @media screen and (max-width: 1400px) {
+    
+    [data-view="singleProjectOverviewDetail"] [data-view="proposalOverviewStatus"] .ui-view {
+        display: inline-block;
+        transform: scale(0.6);
+
+        margin-right: -200px;
+        margin-left: -50px;
+    }
+
+     [data-view="singleProjectOverviewDetail"] [data-view="proposalOverviewStatus"] [data-view="proponentFlow"] {
+        display: none;
+     }
+
+     
+ }
   
  
  
