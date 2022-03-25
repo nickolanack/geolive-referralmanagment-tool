@@ -85,7 +85,16 @@ button:focus {outline:0;}
     }
 }
 
+.discussion-module.no-min-height.user-notes.hidden {
+    display: none;
+}
 
+button.section-toggle.some-discussion-toggle {
+    position: relative;
+    top: 65px;
+    left: 25px;
+    z-index: 3;
+}
 
 .zoom-bounds>.tileButton:after {
     content: "\0f247";
