@@ -19,7 +19,7 @@ el.addEvent('click', function(e){
 
 
 if(el.hasClass('withItems')){
-    el.appendChild(new Element('button',{
+   var dl= el.appendChild(new Element('button',{
     "html":"", 
     "style":"", 
     "class":"download-link", 
@@ -33,7 +33,12 @@ if(el.hasClass('withItems')){
     				//downloadQuery.execute(); //for testing.
     				window.open(downloadQuery.getUrl(true),'Download'); 
 
-    }}}))
+    }}}));
+    
+    new UIPopover(dl, {
+        description:"click to download",
+        anchor:UIPopover.AnchorAuto()
+    });
     
 }
 
@@ -41,7 +46,7 @@ if(el.hasClass('withItems')){
 if(item.hasGuestSubmitter()){
     var guest=el.appendChild(new Element('span',{"class":"guest-submitter"}))
     new UIPopover(guest, {
-        description:item.getProjectSubmitter(),
+        description:"submitted by: "item.getProjectSubmitter(),
         anchor:UIPopover.AnchorAuto()
     });
 }
