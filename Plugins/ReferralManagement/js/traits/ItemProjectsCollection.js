@@ -195,6 +195,8 @@ var ItemProjectsCollection = (function(){
 	ItemProjectsCollection.FormatProjectSelectionListModules = function(list, item, listItem) {
 
 
+		return;
+
 		list.content.push(ItemCollection.AddSelectionButtonBehavior(
 			function(){
 				return item.hasProject(listItem)
