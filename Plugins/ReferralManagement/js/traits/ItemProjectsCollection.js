@@ -174,6 +174,24 @@ var ItemProjectsCollection = (function(){
 
 	});
 
+	ItemProjectsCollection.GetSelectableProjectsList = function(item) {
+
+
+		ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+    
+		    callback(team.getProjects().filter(function(p){ 
+		        
+		        if(item.canAddRemoveProject&&(!item.canAddRemoveProject(p))){
+		            return false;
+		        }
+		        return p.isDataset(); 
+		        
+		    }));
+		    
+		});
+	};
+
+
 	ItemProjectsCollection.FormatProjectSelectionListModules = function(list, item, listItem) {
 
 
