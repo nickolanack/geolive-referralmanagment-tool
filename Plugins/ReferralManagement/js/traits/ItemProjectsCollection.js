@@ -174,7 +174,7 @@ var ItemProjectsCollection = (function(){
 
 	});
 
-	ItemProjectsCollection.GetSelectableProjectsList = function(item) {
+	ItemProjectsCollection.GetSelectableProjectsList = function(item, callback) {
 
 
 		ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
