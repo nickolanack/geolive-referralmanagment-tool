@@ -7242,7 +7242,11 @@
                             },
                             {
                                 "type": "WizardScriptElement",
-                                "config": []
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.5.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
                             },
                             {
                                 "type": "FieldValue",
