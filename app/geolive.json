@@ -24993,7 +24993,7 @@
                                     "inlineReply": false,
                                     "inlineReplyNamedForm": "",
                                     "emptyMessage": "There are no discussion posts for this proposal",
-                                    "channel": "discussion",
+                                    "channel": "briefing",
                                     "resolveChannelScript": "return defaultChannel;",
                                     "resolveItemScript": "return item;",
                                     "initialPostsScript": "return null;",
@@ -25010,29 +25010,6 @@
                                     "targetElementScript": "singleProjectBriefingDetail.metadata.positions.content.modules.2.config.targetElementScript.js",
                                     "offset": "0",
                                     "offsetScript": "singleProjectBriefingDetail.metadata.positions.content.modules.2.config.offsetScript.js"
-                                }
-                            },
-                            {
-                                "type": "UIView",
-                                "config": {
-                                    "className": "reply-box",
-                                    "identifier": "",
-                                    "viewType": "form",
-                                    "namedView": "discussionReplyForm",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "discussionReplyForm",
-                                    "formOptions": "\"{}\"",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "defaultBehaviorFn()",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "return item",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": ""
                                 }
                             }
                         ]
