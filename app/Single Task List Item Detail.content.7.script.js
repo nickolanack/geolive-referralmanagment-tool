@@ -17,11 +17,11 @@ return function(viewer, element, parentModule){
        if(item.isComplete()){
            element.removeClass('not-complete');
            element.addClass('complete');
-           pop.setDescription('click to mark task incomplete');
+           pop.setDescription('click to mark incomplete');
        }else{
            element.addClass('not-complete');
            element.removeClass('complete');
-           pop.setDescription('click to mark task complete');
+           pop.setDescription('click to mark complete');
        }
        
  
@@ -32,7 +32,7 @@ return function(viewer, element, parentModule){
     
     
     pop=new UIPopover(el, {
-        description:item.isComplete()?'click to mark task incomplete':'click to mark task complete',
+        description:item.isComplete()?'click to mark incomplete':'click to mark complete',
         anchor:UIPopover.AnchorAuto()
     });
 
