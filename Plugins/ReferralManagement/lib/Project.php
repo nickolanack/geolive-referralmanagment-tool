@@ -170,7 +170,13 @@ class Project {
 
 	public function updateMetadata($metadata) {
 
-		$proposalId = (int) $json->id;
+		if(!$this->record){
+			throw new \Exception('call fromId(...) first');
+		}
+
+		
+
+		$proposalId = (int) $this->record->id;
 
 		/* @var $database ReferralManagementDatabase */
 		$database = GetPlugin('ReferralManagement')->getDatabase();
