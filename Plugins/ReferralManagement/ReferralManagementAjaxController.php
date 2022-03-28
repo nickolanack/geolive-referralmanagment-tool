@@ -414,7 +414,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 				return array(
 					'id' => $json->id,
-					'data' => (new \ReferralManagement\Project())->updateMetadata($json->metadata)->toArray(),
+					'data' => (new \ReferralManagement\Project())->fromId($json->id)->updateMetadata($json->metadata)->toArray(),
 				);
 
 			} catch (Exception $e) {
