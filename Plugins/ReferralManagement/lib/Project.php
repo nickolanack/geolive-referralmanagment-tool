@@ -174,7 +174,7 @@ class Project {
 			throw new \Exception('call fromId(...) first');
 		}
 
-		
+
 
 		$proposalId = (int) $this->record->id;
 
@@ -189,7 +189,9 @@ class Project {
 		
 		// Emit('onUpdateProposal', array('id' => $proposalId));
 
-		return $this->fromId($proposalId); 
+		$this->fromId($proposalId); 
+		$this->record->metadata=json_encode($metadata);
+		return $this;
 
 	}
 
