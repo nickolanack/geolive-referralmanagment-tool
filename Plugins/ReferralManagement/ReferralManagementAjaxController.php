@@ -401,6 +401,35 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	}
 
+
+	protected function saveProjectMetadata($json){
+
+		if (key_exists('id', $json) && (int) $json->id > 0) {
+
+			if (!Auth('write', $json->id, 'ReferralManagement.proposal')) {
+				return $this->setError('No access or does not exist');
+			}
+
+			try {
+
+				return array(
+					'id' => $json->id,
+					'data' => (new \ReferralManagement\Project())->updateMetadata($json->metadata)->toArray(),
+				);
+
+			} catch (Exception $e) {
+				return $this->setError($e->getMessage());
+			}
+
+		}
+
+		
+		return $this->setError('Invalid project');
+		
+
+
+	}
+
 	protected function deleteTask($json) {
 
 		if ((int) $json->id > 0) {

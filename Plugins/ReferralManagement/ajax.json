@@ -32,6 +32,15 @@
         "access": "registered"
     },
 
+    "save_project_metadata": {
+        "access": "registered",
+        "validate": {
+            "checkKeys": [
+                "id", "metadata",
+            ]
+        }
+    },
+
     "save_team_member_permissions": [],
 
     "get_project_layers": [],
@@ -222,6 +231,8 @@
             ]
         }
     },
+
+    
     "recent_activity": {}
 
 

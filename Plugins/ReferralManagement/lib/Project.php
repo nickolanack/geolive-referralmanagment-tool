@@ -167,6 +167,26 @@ class Project {
 
 	}
 
+
+	public function updateMetadata($metadata) {
+
+		$proposalId = (int) $json->id;
+
+		/* @var $database ReferralManagementDatabase */
+		$database = GetPlugin('ReferralManagement')->getDatabase();
+
+		// $database->updateProposal(array(
+		// 	'id' => $proposalId,
+		// 	'metadata'=>json_encode($metadata);
+		// ));
+
+		
+		// Emit('onUpdateProposal', array('id' => $proposalId));
+
+		return $this->fromId($proposalId); 
+
+	}
+
 	public function updateFromJson($json) {
 
 		$proposalId = (int) $json->id;
