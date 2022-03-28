@@ -181,17 +181,17 @@ class Project {
 		/* @var $database ReferralManagementDatabase */
 		$database = GetPlugin('ReferralManagement')->getDatabase();
 
-		// $database->updateProposal(array(
-		// 	'id' => $proposalId,
-		// 	'metadata'=>json_encode($metadata);
-		// ));
+		$database->updateProposal(array(
+			'id' => $proposalId,
+			'metadata'=>json_encode($metadata);
+		));
 
 		
-		// Emit('onUpdateProposal', array('id' => $proposalId));
+		Emit('onUpdateProposal', array('id' => $proposalId));
 
-		$this->fromId($proposalId); 
-		$this->record->metadata=json_encode($metadata);
-		return $this;
+		return $this->fromId($proposalId); 
+		// $this->record->metadata=json_encode($metadata);
+		// return $this;
 
 	}
 
