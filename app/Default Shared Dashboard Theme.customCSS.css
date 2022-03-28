@@ -85,7 +85,16 @@ button:focus {outline:0;}
     }
 }
 
+.discussion-module.no-min-height.user-notes.hidden {
+    display: none;
+}
 
+button.section-toggle.some-discussion-toggle {
+    position: relative;
+    top: 65px;
+    left: 25px;
+    z-index: 3;
+}
 
 .zoom-bounds>.tileButton:after {
     content: "\0f247";
@@ -139,6 +148,70 @@ span.pagination-item:before {
      
      
  }
+ 
+ 
+ [data-view="singleProjectBriefingDetail"] .activity-feed {
+    visibility: hidden;
+}
+ 
+ @media screen and (max-width: 1900px) {
+    
+    [data-view="singleProjectOverviewDetail"] [data-view="proposalOverviewStatus"] .ui-view {
+        transform: scale(0.6);
+        margin-right: -200px;
+        margin-left: -50px;
+        
+        .flow-item:before {
+            font-size: 27px;
+        }
+        
+        .flow li:after {
+            
+        }
+    }
+
+ }
+ 
+  @media screen and (max-width: 1400px) {
+    
+    [data-view="singleProjectOverviewDetail"] [data-view="proposalOverviewStatus"] .ui-view {
+        display: inline-block;
+            transform: scale(0.4);
+            margin-right: -290px;
+            margin-left: -120px;
+            margin-bottom: -50px;
+            
+        .flow-item:before {
+            font-size: 40px;
+        }
+        
+        .flow li:after{
+            display:none;
+        }
+    }
+     
+ }
+ 
+ @media screen and (max-width: 1400px) {
+    
+    [data-view="singleProjectOverviewDetail"] [data-view="proposalOverviewStatus"] .ui-view {
+        display: inline-block;
+            transform: scale(0.4);
+            margin-right: -290px;
+            margin-left: -120px;
+            margin-bottom: -50px;
+            
+        .flow-item:before {
+            font-size: 40px;
+        }
+        
+        .flow li:after{
+            display:none;
+        }
+    }
+     
+ }
+  
  
  
  
