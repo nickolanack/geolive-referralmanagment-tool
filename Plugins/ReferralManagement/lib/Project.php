@@ -183,7 +183,7 @@ class Project {
 
 		$database->updateProposal(array(
 			'id' => $proposalId,
-			'metadata'=>json_encode($metadata);
+			'metadata'=>json_encode($metadata)
 		));
 
 		
