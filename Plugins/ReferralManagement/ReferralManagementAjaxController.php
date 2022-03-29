@@ -572,7 +572,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 			$this->getPlugin()->notifier()->onUpdateProposalStatus($json);
 
-			return array('id' => (int) $json->id);
+			return array('id' => (int) $json->id, 'status'=>$json->status);
 
 		}
 
