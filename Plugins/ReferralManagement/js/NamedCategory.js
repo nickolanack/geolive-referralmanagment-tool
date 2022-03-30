@@ -75,15 +75,17 @@ var NamedCategory = (function() {
 		getColor:function(){
 
 			var c=this._getColor();
-			if(!c){
-				try{
-					c=this.getParentTagData().getColor();
-				}catch(e){}
+
+			if(c){
+				return c;
 			}
 
-			if(!c){
-				return '#c0c0c0';
-			}
+		
+			try{
+				c=this.getParentTagData().getColor();
+			}catch(e){}
+			
+			return c||'#c0c0c0';
 
 		},
 
