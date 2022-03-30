@@ -312,6 +312,7 @@ var UIInteraction = (function() {
 					    var item=me.getFirst();
 
 					    if(!(item&&item.runOnceOnLoad)){
+					    	console.error(me._filter);
 					    	throw 'Expected item to be a module';
 					    }
 
