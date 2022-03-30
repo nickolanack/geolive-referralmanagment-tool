@@ -309,6 +309,13 @@ var UIInteraction = (function() {
 					});
  
 					this.runOnceOnLoad(function(){
+					    
+						if(me.getTargets().length==0){
+							me.remove();
+							return;
+						}
+
+
 					    var item=me.getFirst();
 
 					    if(!(item&&item.runOnceOnLoad)){
@@ -351,7 +358,11 @@ var UIInteraction = (function() {
 
 				},
 				getFirst:function(){
-					return this.getTargets().pop();
+					var targets= this.getTargets();
+					if(targets.length==0){
+						return null;
+					}
+					return targets.pop();
 				},
 				getTargets:function(){
 
