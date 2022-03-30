@@ -354,7 +354,7 @@ var UIInteraction = (function() {
 					 }
 
 					 return this.getViewer().findChildViews(this._filter);
-				};
+				}
 
 			});
 
