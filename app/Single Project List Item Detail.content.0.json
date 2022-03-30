@@ -3,8 +3,9 @@
     "config": {
         "loadAsync": false,
         "identifier": "",
+        "className": "",
         "fieldLabelScript": "return \"\";",
-        "fieldValueScript": "var name= item.getName();\n\nif(name=='{pending}'){\n    return 'Validation pending';\n}\n\nreturn name;",
+        "fieldValueScript": "var name= item.getName();\n\nif(name=='{pending}'){\n    return 'Validation pending';\n}\n\nif((!name)||name==\"\"){\n    return 'Empty name';\n}\n\n\nreturn name;",
         "formatElementScript": "el.addClass('item-title')"
     }
 }
