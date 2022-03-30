@@ -32,7 +32,8 @@ var NamedCategory = (function() {
 
 			options.shortName = options.shortName || options.name;
 			options.metadata = options.metadata || {};
-			options.color = options.color||'#f0f0f0';
+			
+			//options.color = options.color||'#f0f0f0';
 
 			MockDataTypeItem.prototype.initialize.call(this, options);
 
@@ -70,6 +71,21 @@ var NamedCategory = (function() {
 			return metadata.selectable!==false;
 		},
 
+
+		getColor:function(){
+
+			var c=this._getColor();
+			if(!c){
+				try{
+					c=this.getParentTagData().getColor();
+				}catch(e){}
+			}
+
+			if(!c){
+				return '#c0c0c0';
+			}
+
+		}
 
 		getCategoryForChildren:function(){
 			return this.getName().toLowerCase();
