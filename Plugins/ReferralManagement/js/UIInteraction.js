@@ -309,7 +309,12 @@ var UIInteraction = (function() {
 					});
  
 					this.runOnceOnLoad(function(){
-					    var item=me.getFirst()
+					    var item=me.getFirst();
+
+					    if(!item.runOnceOnLoad){
+					    	throw 'Expected item to be a module';
+					    }
+
 					  	 item.runOnceOnLoad(function(){
 
 
