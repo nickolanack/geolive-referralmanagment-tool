@@ -268,71 +268,97 @@ var UIInteraction = (function() {
 
 		createSectionToggle:function(filter, options){
 
-			options=options||{};
+		
+		
+			var SectionToggle=new Class_({
+				Extends:ElementModule,
+				initialize:function(filter, options){
 
-			var toggle=null;
-			var getTargets=function(){
+					var me=this;
+					this._filter=filter;
+					this._toggleOptions=options||{};
 
-				 if(filter instanceof Module){
-				 	return [filter];
-				 }
+					this._hidden=false;
 
-				 return toggle.getViewer().findChildViews(filter);
-			};
-			var getFirst=function(){
-				return getTargets().pop();
-			}
 
-			var hidden=false;
-			toggle= new ElementModule('button', {
-			    'class':'section-toggle',
-			    events:{
-			        click:function(){
-			            
-			                console.log(toggle);
-			                
-			                getTargets().forEach(function(v){
-			  				   if(hidden){
-			  				       v.show();
-			  				       toggle.getElement().addClass('active');
-			  				       return;
-			  				   }
-			  				   toggle.getElement().removeClass('active')
-			  				   v.hide();
-			  				});
-			  				hidden=!hidden;
-			            
-			            
-			            
-			        }
-			    }
-			}).runOnceOnLoad(function(){
-			    var item= getFirst()
-			  	 item.runOnceOnLoad(function(){
+					ElementModule.prototype.initialize.call(this, 'button', {
+					    'class':'section-toggle',
+					    events:{
+					        click:function(){
+					            
+					                console.log(me);
+					                
+					                me.getTargets().forEach(function(v, i){
 
-			  	 	if(typeof options.startHidden=='boolean'){
+					           
 
-			  	 		getTargets().forEach(function(target){
-			  	 			if(options.startHidden==true){
-			  	 				target.getElement().addClass('hidden');
-			  	 				return;
-			  	 			}
-			  	 			target.getElement().removeClass('hidden');
-			  	 		});
-			  	 	}
+					  				    if(me._hidden){
+					  				       v.show();
+					  				       me.getElement().addClass('active');
+					  				       return;
+					  				   }
+					  				   me.getElement().removeClass('active')
+					  				   v.hide();
+					  				});
+					  				me._hidden=!me._hidden;
+					            
+					            
+					            
+					        }
+					    }
+					});
+ 
+					this.runOnceOnLoad(function(){
+					    var item=me.getFirst()
+					  	 item.runOnceOnLoad(function(){
 
-			  	     if(item.getElement().hasClass('hidden')){
-			  	         hidden=true;
-			  	         toggle.getElement().removeClass('active')
-			  	         return;
-			  	     }
-			  	     toggle.getElement().addClass('active')
-			  	 });
-			  	 
-			})
 
-			return toggle;
 
+					  	 	if(typeof me._toggleOptions.startHidden=='boolean'){
+
+					  	 		me.getTargets().forEach(function(target){
+
+
+					  	 			if(me._toggleOptions.startHidden==true){
+					  	 				target.getElement().addClass('hidden');
+					  	 				return;
+					  	 			}
+					  	 			target.getElement().removeClass('hidden');
+
+
+					  	 		});
+					  	 	}
+
+					  	     if(item.getElement().hasClass('hidden')){
+					  	         me._hidden=true;
+					  	         me.getElement().removeClass('active')
+					  	         return;
+					  	     }
+					  	     me.getElement().addClass('active')
+
+
+					  	     me.fireEvent('init');
+
+					  	 });
+					  	 
+					});
+
+				},
+				getFirst:function(){
+					return this.getTargets().pop();
+				},
+				getTargets:function(){
+
+					 if(this._filter instanceof Module){
+					 	return [this._filter];
+					 }
+
+					 return this.getViewer().findChildViews(this._filter);
+				};
+
+			});
+
+			return new SectionToggle(filter, options);
 
 		}
 
