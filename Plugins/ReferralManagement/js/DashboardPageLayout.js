@@ -501,7 +501,7 @@ var DashboardPageLayout = (function() {
 		content=layout.filterIdentifierConfig(content, 'activity-chart', 'showProjectActivity');//'enableTasks');
 
 
-		content=layout.filterIdentifierConfig(content, ['project-response-date','proponent-edit-btns', 'proposal-status', 'status-assessment', 'status-processing'], 'enableProposals');
+		content=layout.filterIdentifierConfig(content, ['project-related-projects', 'project-response-date','proponent-edit-btns', 'proposal-status', 'status-assessment', 'status-processing'], 'enableProposals');
 
 
 		content=layout.filterIdentifier(content, ['proponent-edit-btns', 'activity-chart', 'project-task-progress', 'project-task-remaining', 'project-task-deadline', 'project-tasks-overview'], !layout.currentItem().isDataset());
