@@ -85,7 +85,7 @@ var NamedCategory = (function() {
 				return '#c0c0c0';
 			}
 
-		}
+		},
 
 		getCategoryForChildren:function(){
 			return this.getName().toLowerCase();
