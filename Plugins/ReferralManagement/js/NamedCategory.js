@@ -32,6 +32,7 @@ var NamedCategory = (function() {
 
 			options.shortName = options.shortName || options.name;
 			options.metadata = options.metadata || {};
+			options.color = options.color||'#f0f0f0';
 
 			MockDataTypeItem.prototype.initialize.call(this, options);
 
