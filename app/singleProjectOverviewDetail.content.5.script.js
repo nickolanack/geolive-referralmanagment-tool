@@ -1,1 +1,1 @@
-return new Element('div', {html:"Requested Response Date", style:"float right;"})
+return new ElementModule('div', {html:"Requested Response Date", style:"float right;", identifier:"project-response-date"})
