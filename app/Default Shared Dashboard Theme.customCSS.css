@@ -94,7 +94,26 @@ button.section-toggle.some-discussion-toggle {
     top: 65px;
     left: 25px;
     z-index: 3;
+    
+    
+    &.empty-notes {
+        display: none;
+    }
+    
+    &.empty-notes.with-reply-box {
+        display: inline-block;
+    }
+    
+    &.with-reply-box {
+        top: 150px;
+    }
+    
+    
+    
 }
+
+
+
 
 .zoom-bounds>.tileButton:after {
     content: "\0f247";
