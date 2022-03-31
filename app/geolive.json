@@ -25088,7 +25088,22 @@
         "name": "Configuration",
         "instance": "Configuration",
         "parameters": {
-            "target": "none"
+            "target": "none",
+            "contentTemplate": "",
+            "comments": "",
+            "formatParametersScript": "return $parameters;",
+            "formatOutputScript": "return $parameters;",
+            "enableUserAjaxWrite": false,
+            "authUserAjaxScript": "XXXX-XXXX",
+            "saveParametersAsData": false,
+            "enableRevisions": false,
+            "broadcastChanges": false,
+            "parameters": [
+                "widget.Configuration.440.parameters.0.json"
+            ],
+            "reports": [],
+            "widgetTitle": "",
+            "readAccess": "public"
         }
     }
 }
