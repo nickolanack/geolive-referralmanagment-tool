@@ -5,7 +5,8 @@ setTimeout(function(){
             "class":"notes form-btn primary-btn edit", 
             events:{click:function(){
                 module.getElement().removeClass('hide');
-                button.parentNode.removeChild(button);
+                //button.parentNode.removeChild(button);
+                button.addClass('hide');
             }}
         
         }));
