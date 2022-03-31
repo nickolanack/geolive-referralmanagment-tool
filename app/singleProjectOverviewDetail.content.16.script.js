@@ -11,7 +11,14 @@
                 discussion.once('addPosts',function(){
                    b.getElement().removeClass('empty-notes');
                 });
-            }     
+            }
+            
+            var reply=b.findTargets(function(v){
+                return v.getIdentifier()==='discussion-reply';
+            });
+            console.log(reply);
+            
+            
         });
        
      })
