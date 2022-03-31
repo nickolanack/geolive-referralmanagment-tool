@@ -11,7 +11,32 @@
                 discussion.once('addPosts',function(){
                    b.getElement().removeClass('empty-notes');
                 });
-            }     
+            }
+            
+            var reply=b.findTargets(function(v){
+                return v.getIdentifier()==='discussion-reply';
+            });
+            console.log(reply);
+            var replyView=reply.length>0?reply[0]:null;
+            if(replyView){
+                replyView.getNamedValue('addNotesButton',function(replyBtn){
+                    replyBtn.addEvent('click', function(){
+                        b.getElement().addClass('with-reply-box');
+                    });
+                    b.on('collapse',function(){
+                        b.getElement().removeClass('with-reply-box')
+                        replyView.getElement().addClass('hide');
+                        replyBtn.removeClass('hide');
+                    });
+                    
+                    
+                    
+                });
+               
+                
+            }
+            
+            
         });
        
      })
