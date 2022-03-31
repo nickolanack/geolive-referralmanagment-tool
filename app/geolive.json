@@ -25064,7 +25064,21 @@
             "enableRevisions": false,
             "broadcastChanges": false,
             "parameters": [
-                "Workflow configuration.parameters.0.json"
+                "Workflow configuration.parameters.0.json",
+                {
+                    "type": "json",
+                    "name": "processing",
+                    "placeholder": "example config field",
+                    "default": [],
+                    "label": "processing"
+                },
+                {
+                    "type": "json",
+                    "name": "assessment",
+                    "placeholder": "example config field",
+                    "default": [],
+                    "label": "processing"
+                }
             ],
             "widgetTitle": "Workflow configuration",
             "readAccess": "public"

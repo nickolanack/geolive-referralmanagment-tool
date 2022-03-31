@@ -1,7 +1,7 @@
 {
-    "type": "text",
-    "name": "hello",
+    "type": "json",
+    "name": "proponent",
     "placeholder": "example config field",
-    "default": "World",
-    "label": "Hello"
+    "default": {},
+    "label": "proponent"
 }
