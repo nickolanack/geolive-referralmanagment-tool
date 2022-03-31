@@ -13,6 +13,11 @@ var ProposalFlow = (function() {
 			this._statesLoaded = false;
 
 
+			/**
+			 * TODO query workflow layout 
+			 */
+
+
 
 			var getStateQuery = new AjaxControlQuery(CoreAjaxUrlRoot, 'get_state_data', ObjectAppend_({
 				"plugin": "ReferralManagement",

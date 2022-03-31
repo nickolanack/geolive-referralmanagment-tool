@@ -4,6 +4,8 @@ var ItemStatus = (function() {
 	var ItemStatus = new Class({
 
 
+
+
 		getProjectStatus:function(){
 
 
@@ -84,6 +86,7 @@ var ItemStatus = (function() {
 
 
 			return (new ProposalFlow('assessment',this))
+
 
 				.setLabel('Assessment workflow')
 
