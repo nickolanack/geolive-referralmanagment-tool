@@ -25088,7 +25088,7 @@
         "name": "Configuration",
         "instance": "Configuration",
         "parameters": {
-            "target": "none",
+            "target": "reports",
             "contentTemplate": "",
             "comments": "",
             "formatParametersScript": "return $parameters;",
@@ -25099,10 +25099,10 @@
             "enableRevisions": false,
             "broadcastChanges": false,
             "parameters": [
-                "widget.Configuration.440.parameters.0.json"
+                "Project Reports.parameters.0.json"
             ],
             "reports": [],
-            "widgetTitle": "",
+            "widgetTitle": "Project Reports",
             "readAccess": "public"
         }
     }
