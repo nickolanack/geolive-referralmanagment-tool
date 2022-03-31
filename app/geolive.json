@@ -25048,5 +25048,62 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.439": {
+        "name": "Configuration",
+        "instance": "Configuration",
+        "parameters": {
+            "target": "workflow",
+            "contentTemplate": "",
+            "comments": "",
+            "formatParametersScript": "return $parameters;",
+            "formatOutputScript": "return $parameters;",
+            "enableUserAjaxWrite": false,
+            "authUserAjaxScript": "XXXX-XXXX",
+            "saveParametersAsData": true,
+            "enableRevisions": false,
+            "broadcastChanges": false,
+            "parameters": [
+                "Workflow configuration.parameters.0.json",
+                {
+                    "type": "json",
+                    "name": "processing",
+                    "placeholder": "example config field",
+                    "default": [],
+                    "label": "processing"
+                },
+                {
+                    "type": "json",
+                    "name": "assessment",
+                    "placeholder": "example config field",
+                    "default": [],
+                    "label": "processing"
+                }
+            ],
+            "widgetTitle": "Workflow configuration",
+            "readAccess": "public"
+        }
+    },
+    "widget.440": {
+        "name": "Configuration",
+        "instance": "Configuration",
+        "parameters": {
+            "target": "reports",
+            "contentTemplate": "",
+            "comments": "",
+            "formatParametersScript": "return $parameters;",
+            "formatOutputScript": "return $parameters;",
+            "enableUserAjaxWrite": false,
+            "authUserAjaxScript": "XXXX-XXXX",
+            "saveParametersAsData": true,
+            "enableRevisions": false,
+            "broadcastChanges": false,
+            "parameters": [
+                "Project Reports.parameters.0.json"
+            ],
+            "reports": [],
+            "widgetTitle": "Project Reports",
+            "readAccess": "public"
+        }
     }
 }
