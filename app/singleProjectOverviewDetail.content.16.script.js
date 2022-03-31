@@ -4,7 +4,17 @@
  
  console.log('add init');
  b.addEvent('init', function(){
-     console.log('set up special behavior')
+     b.getFirst().getDiscussion(function(discussion){
+        discussion.onStarted(function(){
+            if(discussion.numberOfPosts()==0){
+                b.addClass('empty-notes');
+                discussion.once('addPosts',function(){
+                   b.removeClass('empty-notes');
+                });
+            }     
+        });
+       
+     })
  });
  
  b.getElement().addClass('some-discussion-toggle');
