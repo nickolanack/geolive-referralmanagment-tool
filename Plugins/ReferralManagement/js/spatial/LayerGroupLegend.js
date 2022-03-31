@@ -42,6 +42,9 @@ var LayerGroupLegend = (function() {
         }
 
         if(!iconset){
+            if(!popoverQueue){
+                popoverQueue=[];
+            }
             popoverQueue.push([group, popover]);
             return;
         }
