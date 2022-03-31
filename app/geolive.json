@@ -25053,7 +25053,21 @@
         "name": "Configuration",
         "instance": "Configuration",
         "parameters": {
-            "target": "none"
+            "target": "workflow",
+            "contentTemplate": "",
+            "comments": "",
+            "formatParametersScript": "return $parameters;",
+            "formatOutputScript": "return $parameters;",
+            "enableUserAjaxWrite": false,
+            "authUserAjaxScript": "XXXX-XXXX",
+            "saveParametersAsData": true,
+            "enableRevisions": false,
+            "broadcastChanges": false,
+            "parameters": [
+                "Workflow configuration.parameters.0.json"
+            ],
+            "widgetTitle": "Workflow configuration",
+            "readAccess": "public"
         }
     }
 }
