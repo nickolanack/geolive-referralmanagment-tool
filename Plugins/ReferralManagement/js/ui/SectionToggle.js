@@ -17,21 +17,21 @@ var SectionToggle=(function(){
 					    events:{
 					        click:function(){
 					            
-					                console.log(me);
-					                
-					                me.getTargets().forEach(function(v, i){
+				                console.log(me);
+				                
+				                me.getTargets().forEach(function(v, i){
 
-					           
+				           
 
-					  				    if(me._hidden){
-					  				       v.show();
-					  				       me.getElement().addClass('active');
-					  				       return;
-					  				   }
-					  				   me.getElement().removeClass('active')
-					  				   v.hide();
-					  				});
-					  				me._hidden=!me._hidden;
+				  				    if(me._hidden){
+				  				       v.show();
+				  				       me.getElement().addClass('active');
+				  				       return;
+				  				   }
+				  				   me.getElement().removeClass('active')
+				  				   v.hide();
+				  				});
+				  				me._hidden=!me._hidden;
 					            
 					            
 					            
@@ -95,13 +95,17 @@ var SectionToggle=(function(){
 					}
 					return targets.pop();
 				},
+
+				findTargets:function(filter){
+					if(filter instanceof Module){
+					 	return [filter];
+					}
+
+					return this.getViewer().findChildViews(filter);
+				},
+
 				getTargets:function(){
-
-					 if(this._filter instanceof Module){
-					 	return [this._filter];
-					 }
-
-					 return this.getViewer().findChildViews(this._filter);
+					 return this.findTargets(this._filter);
 				}
 
 			});
