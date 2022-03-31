@@ -11,6 +11,12 @@ var LegendHelper=(function(){
 
 		addLegend:function(legend, map){
 			legends.push(legend);
+			legend.on('remove',function(){
+				var i=legends.indexOf(legend);
+				if(i>=0){
+					legends.splice(i,1);
+				}
+			});
 
 
 			legend.addEvent("maximize",function(){
