@@ -32,7 +32,11 @@ var SectionToggle=(function(){
 				  				   v.hide();
 				  				});
 				  				me._hidden=!me._hidden;
-					            
+					            if(me._hidden){
+					            	me.fireEvent('collapse');
+					            }else{
+					            	me.fireEvent('expand');
+					            }
 					            
 					            
 					        }
