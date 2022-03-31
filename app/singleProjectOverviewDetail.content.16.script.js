@@ -7,9 +7,9 @@
      b.getFirst().getDiscussion(function(discussion){
         discussion.onStarted(function(){
             if(discussion.numberOfPosts()==0){
-                b.addClass('empty-notes');
+                b.getElement().addClass('empty-notes');
                 discussion.once('addPosts',function(){
-                   b.removeClass('empty-notes');
+                   b.getElement().removeClass('empty-notes');
                 });
             }     
         });
