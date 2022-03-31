@@ -16,29 +16,8 @@ var SectionToggle=(function(){
 					    'class':'section-toggle',
 					    events:{
 					        click:function(){
-					            
-				                console.log(me);
-				                
-				                me.getTargets().forEach(function(v, i){
-
-				           
-
-				  				    if(me._hidden){
-				  				       v.show();
-				  				       me.getElement().addClass('active');
-				  				       return;
-				  				   }
-				  				   me.getElement().removeClass('active')
-				  				   v.hide();
-				  				});
-				  				me._hidden=!me._hidden;
-					            if(me._hidden){
-					            	me.fireEvent('collapse');
-					            }else{
-					            	me.fireEvent('expand');
-					            }
-					            
-					            
+					           
+				            	me.toggle();
 					        }
 					    }
 					});
@@ -91,6 +70,39 @@ var SectionToggle=(function(){
 					  	 
 					});
 
+				},
+				toggle:function(){
+					if(this._hidden){
+						this.expand();
+						return;
+					}
+					this.collapse();
+				},
+				expand:function(){
+					var me=this;
+					if(!me._hidden){
+						return;
+					}
+					me.getTargets().forEach(function(v, i){
+	  				    v.show();
+	  				    me.getElement().addClass('active');	  				  
+	  				});
+				  	me._hidden=false;            
+					me.fireEvent('expand');
+					            
+				},
+				collapse:function(){
+					var me=this;
+					if(me._hidden){
+						return;
+					}
+					me.getTargets().forEach(function(v, i){
+	  				   	me.getElement().removeClass('active')
+	  				   	v.hide();
+	  				});
+				 	me._hidden=true;
+					me.fireEvent('collapse');
+					            
 				},
 				getFirst:function(){
 					var targets= this.getTargets();
