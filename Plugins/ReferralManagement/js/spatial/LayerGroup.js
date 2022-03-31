@@ -83,7 +83,13 @@ var LayerGroupItemList = (function() {
 
 	(new LayerGroupItemListQuery()).addEvent('success', function(response) {
 		_layerItems=[];
-		_layerNames=Object.keys(response.parameters);
+		_layerNames=[];
+
+		if(!response.parameters){
+			return;
+		}
+
+		layerNames=Object.keys(response.parameters);
 		Object.keys(response.parameters).map(function(group){
 
 
