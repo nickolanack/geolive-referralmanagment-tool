@@ -5380,7 +5380,16 @@ span.navigation-menu.settings-menu {
   display: inline-block;
   min-width: 150px;
   height: 55px;
-  line-height: 55px; }
+  line-height: 55px; 
+    
+}
 
 
+    
+button.form-btn.primary-btn.hide {
+    display: none;
+}
+    
+    
+    
     
