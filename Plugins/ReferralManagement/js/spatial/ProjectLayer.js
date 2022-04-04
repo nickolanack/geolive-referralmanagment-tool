@@ -141,14 +141,14 @@ var ProjectLayer = (function() {
 
 				},
 
-				_initMarker: function(data, xml, markerDataArray, i) {
-					GeoliveLayer.prototype._initMarker.call(this, Object.append(data, this.options.markerOptions), xml, markerDataArray, i);
+				_initMarker: function(data, markerDataArray, i) {
+					GeoliveLayer.prototype._initMarker.call(this, Object.append(data, this.options.markerOptions), markerDataArray, i);
 				},
-				_initPolygon: function(data, xml, lineDataArray, i) {
-					GeoliveLayer.prototype._initPolygon.call(this, Object.append(data, this.options.polygonOptions), xml, lineDataArray, i);
+				_initPolygon: function(data, lineDataArray, i) {
+					GeoliveLayer.prototype._initPolygon.call(this, Object.append(data, this.options.polygonOptions), lineDataArray, i);
 				},
-				_initLine: function(data, xml, lineDataArray, i) {
-					GeoliveLayer.prototype._initLine.call(this, Object.append(data, this.options.lineOptions), xml, lineDataArray, i);
+				_initLine: function(data, lineDataArray, i) {
+					GeoliveLayer.prototype._initLine.call(this, Object.append(data, this.options.lineOptions), lineDataArray, i);
 				},
 				_getKmlQuery: function() {
 					var me = this;
