@@ -288,13 +288,24 @@ var SpatialDocumentPreview = (function() {
 				clear();
 			};
 		},
+		_remove:function(){
 
+			this._mapTileControl=null;
+			this._mapTile=null;
+			this._tile=null;
+			this._control=null
+
+		},
 		setMap: function(map) {
 
 			var me = this;
 			me._map = map;
 
+
 			map.once('remove',function(){
+
+				me._remove();
+				
 				if(me._map==map){
 					me._map=null;
 				}
