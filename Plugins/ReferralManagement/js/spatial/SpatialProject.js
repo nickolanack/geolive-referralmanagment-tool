@@ -417,10 +417,11 @@ var SpatialProject = (function() {
 		},
 
 		_setMap: function(map) {
-			this._map = map;
-			this.fireEvent('map', ['map']);
-
 			var me=this;
+			me._map = map;
+			me.fireEvent('map', ['map']);
+
+			
 			map.once('remove',function(){
 				if(me._map==map){
 					me._map=null;

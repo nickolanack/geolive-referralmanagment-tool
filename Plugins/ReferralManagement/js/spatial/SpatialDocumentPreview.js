@@ -294,6 +294,13 @@ var SpatialDocumentPreview = (function() {
 			var me = this;
 			me._map = map;
 
+			map.once('remove',function(){
+				if(me._map==map){
+					me._map=null;
+				}
+			});
+
+
 		},
 		setParentTile: function(tile, control) {
 
