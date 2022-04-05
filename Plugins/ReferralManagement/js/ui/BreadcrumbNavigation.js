@@ -32,8 +32,10 @@ var BreadcrumbNavigation=(function(){
 		addPath:function(path, handler){
 
 			if(!this._handlers){
-				this._handlers[path]=handler;
+				this._handlers={};
+				
 			}
+			this._handlers[path]=handler;
 			return this;
 		},
 
