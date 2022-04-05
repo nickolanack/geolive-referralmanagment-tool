@@ -48,7 +48,7 @@ var BreadcrumbNavigation=(function(){
 	        		view=result;
 	        	}
 	        }
-			valueEl.innerHTML=view;
+			this._valueEl.innerHTML=view;
 
 
 		},
