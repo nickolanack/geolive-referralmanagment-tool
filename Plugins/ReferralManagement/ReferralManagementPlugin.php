@@ -318,6 +318,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 
 		IncludeJS(__DIR__ . '/js/ui/SectionToggle.js');
+		IncludeJS(__DIR__ . '/js/ui/BreadcrumbNavigation.js');
 
 
 		IncludeJS(__DIR__ . '/js/GuestNavigationMenu.js');
