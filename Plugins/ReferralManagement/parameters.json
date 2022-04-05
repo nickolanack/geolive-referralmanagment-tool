@@ -1,35 +1,42 @@
 [
 
- {
- 	"name":"enableEmailNotifications",
- 	"label":"Enable Email Notifications",
- 	"type":"boolean",
- 	"default":false
- },
- {
-    "name":"enableProjectListCaching",
-    "label":"Enable Project List Caching",
-    "type":"boolean",
-    "default":true
- },
- {
-    "name":"enableUserListCaching",
-    "label":"Enable User List Caching",
-    "type":"boolean",
-    "default":true
- },
- {
- 	"name":"queueEmailDelay",
- 	"label":"Queue Email Delay",
- 	"type":"input",
- 	"default":"30"
- },
- {
- 	"name":"exportSecret",
- 	"label":"Export Secret",
- 	"type":"input",
- 	"default":""
+   {
+      "name": "enableEmailNotifications",
+      "label": "Enable Email Notifications",
+      "type": "boolean",
+      "default": false
+   }, {
+      "name": "enableProjectListCaching",
+      "label": "Enable Project List Caching",
+      "type": "boolean",
+      "default": true
+   }, {
+      "name": "enableUserListCaching",
+      "label": "Enable User List Caching",
+      "type": "boolean",
+      "default": true
+   }, {
+      "name": "queueEmailDelay",
+      "label": "Queue Email Delay",
+      "type": "input",
+      "default": "30"
+   }, {
+      "name": "exportSecret",
+      "label": "Export Secret",
+      "type": "input",
+      "default": ""
 
- }
+   }, {
+      "name": "exportSecret",
+      "label": "Export Secret",
+      "type": "input",
+      "default": ""
+
+   }, {
+      "name": "datawarehousePaths",
+      "type": "input.array",
+      "default": [],
+      "label": "data warehouse folders"
+   }
 
 ]
