@@ -1,4 +1,3 @@
-
 if(strpos($file,'{datawarehouse}')===0){
 	    //throw new \Exception(print_r($args, true));
 	    
@@ -34,7 +33,7 @@ if(strpos($file,'{datawarehouse}')===0){
 	    	}
 
 	        
-	        throw new \Exception('file does not exist: '.$realpath);
+	        throw new \Exception('file does not exist: '.$realpath.' '.json_encode($data['metadata']));
 	    }
 	    
 	    return $data['metadata']->file;
