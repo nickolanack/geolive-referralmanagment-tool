@@ -21,7 +21,9 @@
 	    if(isset($data['metadata']->file->file)){
 
 	    	$paths=$gather->getParameters('datawarehousePaths', array());
-
+    
+            error_log(json_encode($paths));
+    
 	    	foreach($paths as $dir){
 	    		$dir=rtrim(trim($dir),'/');
 	    		if((!empty($dir))&&is_dir($dir)){
