@@ -9,7 +9,7 @@ var ItemContact=(function(){
 
 		getCompanyName: function() {
 			var me = this;
-			return me.data.attributes.company;
+			return me.data.attributes.company||'';
 		},
 
 		getClientName: function() {
