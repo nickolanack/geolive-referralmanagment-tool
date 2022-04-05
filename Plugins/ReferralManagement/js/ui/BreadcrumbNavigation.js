@@ -48,6 +48,8 @@ var BreadcrumbNavigation = (function() {
 		},
 		setPath: function(view) {
 
+			var me=this;
+
 			if (this._handlers[view]) {
 				var result = this._handlers[view](this._rootState, this._rootItem);
 				if (typeof result == 'string') {
@@ -65,9 +67,10 @@ var BreadcrumbNavigation = (function() {
 				
 				this.setValue(view[0]);
 
+
 				parts.forEach(function(part){
 
-					this._valueEl.appendChild(new Element('span', {
+					me._valueEl.appendChild(new Element('span', {
 						"class": "field-value",
 						html: part
 					}));
