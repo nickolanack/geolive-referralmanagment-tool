@@ -67,7 +67,7 @@ var BreadcrumbNavigation = (function() {
 
 				parts.forEach(function(part){
 
-					valueEl.appendChild(new Element('span', {
+					this._valueEl.appendChild(new Element('span', {
 						"class": "field-value",
 						html: part
 					}));
