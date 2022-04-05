@@ -77,6 +77,17 @@ var BreadcrumbNavigation=(function(){
 
 			});
 
+
+			me.addPath('Projects', function(state, item){
+
+				return item.label||item.getLabel?item.getLabel()::null||(DashboardConfig.getValue('showDatasets')?"Datasets & ":"")+(DashboardConfig.getValue('enableProposals')?ProjectList.NameForProjects():"Collections")
+
+			});
+
+
+
+
+
 			GatherDashboard.getApplication(function(application){
 
 
@@ -96,6 +107,7 @@ var BreadcrumbNavigation=(function(){
 				        
 
 				        me._rootState=state;
+				        me._rootItem=item;
 
 				        if(state.view=='Dashboard'){
 				           me.hidePath();
@@ -103,7 +115,7 @@ var BreadcrumbNavigation=(function(){
 				        }
 				       
 				        me.setPath(state.view);
-				        me.showPath();
+				        me.showPath(state, item);
 				        
 				    
 
@@ -112,7 +124,7 @@ var BreadcrumbNavigation=(function(){
 				    controller.addEvent('childNavigation', function(menu, state, options, item) {
 
 				        me.setPath(me._rootState.view);
-				        me.showPath();
+				        me.showPath(me._rootState, me._rootItem);
 				        valueEl.appendChild(new Element('span', {"class":"field-value", html:state.view}));
 				        
 				    });
