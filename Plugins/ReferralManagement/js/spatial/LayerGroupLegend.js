@@ -11,11 +11,11 @@ var LayerGroupLegend = (function() {
 
     var LayerGroupLegend = new Class({
 
-        initialize: function(map) {
+        initialize: function() {
 
 
 
-        }
+        },
 
 
         setMap:function(map){
