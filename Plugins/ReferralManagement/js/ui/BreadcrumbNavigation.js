@@ -80,7 +80,15 @@ var BreadcrumbNavigation=(function(){
 
 			me.addPath('Projects', function(state, item){
 
-				return item.label||(item.getLabel?item.getLabel():null)||((DashboardConfig.getValue('showDatasets')?"Datasets & ":"")+(DashboardConfig.getValue('enableProposals')?ProjectList.NameForProjects():"Collections"));
+				if(item&&item.getLabel){
+					return item.getLabel();
+				}
+
+				if(item&&item.label){
+					return item.label;
+				}
+
+				return ((DashboardConfig.getValue('showDatasets')?"Datasets & ":"")+(DashboardConfig.getValue('enableProposals')?ProjectList.NameForProjects():"Collections"));
 
 			});
 
