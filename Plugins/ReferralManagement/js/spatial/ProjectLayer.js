@@ -132,11 +132,17 @@ var ProjectLayer = (function() {
 
 						var layer=this;
 
-						project.addEvent('updateDatasetAttributes', function(data) {
+						var attributeEventHandler=function(data) {
 							
 							layer.options.projectAttributes = project.getDatasetAttributes(layerIndex);
 							layer.reload();
+						}
+
+						project.addEvent('updateDatasetAttributes', attributeEventHandler);
+						map.once('remove', function(){
+							project.removeEvent('updateDatasetAttributes', attributeEventHandler);
 						});
+
 					}
 
 
