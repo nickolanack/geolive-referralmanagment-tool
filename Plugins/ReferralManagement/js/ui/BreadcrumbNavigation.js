@@ -89,9 +89,9 @@ var BreadcrumbNavigation=(function(){
 							if(filter&&filter[0]){
 								var tag=ProjectTagList.getTag(filter[0]);
 
-								var parent;
+								var parent=tag;
 								var list=[];
-								while(parent=tag.getParentTagData()){
+								while(parent=parent.getParentTagData()){
 									list.unshift(parent.getShortName());
 								}
 
