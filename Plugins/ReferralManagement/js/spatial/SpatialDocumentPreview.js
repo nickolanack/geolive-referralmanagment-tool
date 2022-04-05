@@ -84,11 +84,18 @@ var SpatialDocumentPreview = (function() {
 
 						notification.fadeout();
 
+						var imageUrl='';
+						try{
+						imageUrl'/php-core-app/core.php?iam=administrator&format=raw&controller=plugins&view=plugin&plugin=Maps&pluginView=kml.tile&kml='+
+							response.metadata.path+'&size=250&pad=10' //&type=street&prj=GOOGLE
+						}catch(e){
+							console.error(e);
+						}
+
 						new UIMapSubTileButton(me._mapTile, {
 							containerClassName: 'spatial-file-tile zoom-bounds',
 							buttonClassName: '',
-							image: '/php-core-app/core.php?iam=administrator&format=raw&controller=plugins&view=plugin&plugin=Maps&pluginView=kml.tile&kml='+
-							response.metadata.path+'&size=250&pad=10', //&type=street&prj=GOOGLE
+							image: imageUrl,
 							//(response.metadata.image || response.metadata.mimeIcon || response.metadata.mediaTypeIcon),
 							toolTip:{
 								description:"Zoom to bounds: "+layerOpts.name
