@@ -18,7 +18,7 @@ var BreadcrumbNavigation=(function(){
 		    this._labelEl.addClass('clickable')
 		    this._labelEl.innerHTML="Dashboard";
 
-		}
+		},
 
 		
 		hidePath:function(){
