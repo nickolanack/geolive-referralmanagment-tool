@@ -89,7 +89,7 @@ var LayerGroupItemList = (function() {
 			return;
 		}
 
-		layerNames=Object.keys(response.parameters);
+		_layerNames=Object.keys(response.parameters);
 		Object.keys(response.parameters).map(function(group){
 
 
