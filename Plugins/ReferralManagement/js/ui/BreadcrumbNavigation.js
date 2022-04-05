@@ -1,107 +1,133 @@
-var BreadcrumbNavigation=(function(){
+var BreadcrumbNavigation = (function() {
 
 
-	var BreadcrumbNavigation=new Class_({
-		Implements:[Events],
+	var BreadcrumbNavigation = new Class_({
+		Implements: [Events],
 
-		_setRoot:function(label, view){
+		_setRoot: function(label, view) {
 
-			if(this._clickRoot){
+			if (this._clickRoot) {
 				this._labelEl.removeEvent('click', this._clickRoot)
 			}
 
-			this._clickRoot=function(){
-		         controller.navigateTo.apply(controller, view);
-		    };
+			this._clickRoot = function() {
+				controller.navigateTo.apply(controller, view);
+			};
 
 			this._labelEl.addEvent('click', this._clickRoot);
-		    this._labelEl.addClass('clickable')
-		    this._labelEl.innerHTML="Dashboard";
+			this._labelEl.addClass('clickable')
+			this._labelEl.innerHTML = "Dashboard";
 
 		},
 
-		getApplication:function(){
+		getApplication: function() {
 			return this._application;
 		},
 
-		
-		hidePath:function(){
+
+		hidePath: function() {
 			this._valueEl.addClass('hidden');
 		},
-		showPath:function(){
+		showPath: function() {
 			this._valueEl.removeClass('hidden');
 		},
 
 
-		addPath:function(path, handler){
+		addPath: function(path, handler) {
 
-			if(!this._handlers){
-				this._handlers={};
-				
+			if (!this._handlers) {
+				this._handlers = {};
+
 			}
-			this._handlers[path]=handler;
+			this._handlers[path] = handler;
 			return this;
 		},
 
+		setValue:function(label, view){
+			this._valueEl.innerHTML = label;
+		},
+		setPath: function(view) {
 
-		setPath:function(view){
+			if (this._handlers[view]) {
+				var result = this._handlers[view](this._rootState, this._rootItem);
+				if (typeof result == 'string') {
+					view = result;
+				}
 
-			if(this._handlers[view]){
-	        	var result=this._handlers[view](this._rootState, this._rootItem);
-	        	if(typeof result=='string'){
-	        		view=result;
-	        	}
-	        }
-			this._valueEl.innerHTML=view;
+				if (isArray_(result)) {
+					view = result;
+				}
+			}
+
+			if (isArray_(view)) {
+
+				var parts=view.slice(1);
+				
+				this.setValue(view[0]);
+
+				parts.forEach(function(part){
+
+					valueEl.appendChild(new Element('span', {
+						"class": "field-value",
+						html: part
+					}));
+
+				});
+
+				return;
+			}
+
+			this.setValue(view);
 
 
 		},
 
 
-		render:function(el, labelEl, valueEl){
+		render: function(el, labelEl, valueEl) {
 
-			var me=this;
+			var me = this;
 
 
-			me.addPath('Project', function(){
+			me.addPath('Project', function() {
 
-				var p=me.getApplication().getNamedValue("currentProject");
-				if(p){
+				var p = me.getApplication().getNamedValue("currentProject");
+				if (p) {
 
-					var projectsName=DashboardConfig.getValue('enableProposals')?ProjectList.NameForProjects():"Collections";
+					var projectsName = DashboardConfig.getValue('enableProposals') ? ProjectList.NameForProjects() : "Collections";
 
-					var type = p.isDataset()?'Dataset':projectsName.substring(0,projectsName.length-1);
+					var type = p.isDataset() ? 'Dataset' : projectsName.substring(0, projectsName.length - 1);
 
-					return type + ': '+p.getName();
+					return type + ': ' + p.getName();
 				}
 
 			});
 
 
-			me.addPath('Projects', function(state, item){
+			me.addPath('Projects', function(state, item) {
 
-				if(item&&item.getLabel){
+				if (item && item.getLabel) {
 
 
-					if(item.getLockFilter){
-						try{
-							var filter=item.getLockFilter();
-							if(filter&&filter[0]){
-								var tag=ProjectTagList.getTag(filter[0]);
+					if (item.getLockFilter) {
+						try {
+							var filter = item.getLockFilter();
+							if (filter && filter[0]) {
+								var tag = ProjectTagList.getTag(filter[0]);
 
-								var parent=tag;
-								var list=[];
-								while(parent=parent.getParentTagData()){
+								var parent = tag;
+								var list = [];
+								while (parent = parent.getParentTagData()) {
 									list.unshift(parent.getShortName());
 								}
 
-								if(list.length){
-									return list.join(', ')+', '+item.getLabel();
+								if (list.length) {
+									list.push(tag.getShortName());
+									return list
 								}
 
 
 							}
-						}catch(e){
+						} catch (e) {
 							console.error(e);
 						}
 					}
@@ -110,59 +136,60 @@ var BreadcrumbNavigation=(function(){
 					return item.getLabel();
 				}
 
-				if(item&&item.label){
+				if (item && item.label) {
 					return item.label;
 				}
 
-				return ((DashboardConfig.getValue('showDatasets')?"Datasets & ":"")+(DashboardConfig.getValue('enableProposals')?ProjectList.NameForProjects():"Collections"));
+				return ((DashboardConfig.getValue('showDatasets') ? "Datasets & " : "") + (DashboardConfig.getValue('enableProposals') ? ProjectList.NameForProjects() : "Collections"));
 
 			});
 
 
 
-
-
-			GatherDashboard.getApplication(function(application){
+			GatherDashboard.getApplication(function(application) {
 
 
 
-				application.getNamedValue('navigationController',function(controller){
+				application.getNamedValue('navigationController', function(controller) {
 
-					me._application=application;
-					me._controller=controller;
-					me._labelEl=labelEl;
-					me._valueEl=valueEl;
-					me._el=el;
-		    
-				    me._setRoot('Dashboard', ['Dashboard', 'Main']);
-				    
-				
-				    controller.addEvent('navigate', function(state, options, item) {
-				        
+					me._application = application;
+					me._controller = controller;
+					me._labelEl = labelEl;
+					me._valueEl = valueEl;
+					me._el = el;
 
-				        me._rootState=state;
-				        me._rootItem=item;
+					me._setRoot('Dashboard', ['Dashboard', 'Main']);
 
-				        if(state.view=='Dashboard'){
-				           me.hidePath();
-				            return;
-				        }
-				       
-				        me.setPath(state.view);
-				        me.showPath();
-				        
-				    
 
-				    });
-				    
-				    controller.addEvent('childNavigation', function(menu, state, options, item) {
+					controller.addEvent('navigate', function(state, options, item) {
 
-				        me.setPath(me._rootState.view);
-				        me.showPath();
-				        valueEl.appendChild(new Element('span', {"class":"field-value", html:state.view}));
-				        
-				    });
-				    
+
+						me._rootState = state;
+						me._rootItem = item;
+
+						if (state.view == 'Dashboard') {
+							me.hidePath();
+							return;
+						}
+
+						me.setPath(state.view);
+						me.showPath();
+
+
+
+					});
+
+					controller.addEvent('childNavigation', function(menu, state, options, item) {
+
+						me.setPath(me._rootState.view);
+						me.showPath();
+						valueEl.appendChild(new Element('span', {
+							"class": "field-value",
+							html: state.view
+						}));
+
+					});
+
 				});
 
 			});
@@ -175,7 +202,6 @@ var BreadcrumbNavigation=(function(){
 	});
 
 
-			
 
 	return new BreadcrumbNavigation();
 
