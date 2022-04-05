@@ -160,7 +160,9 @@
         "parameters": {
             "releaseServer": "http:\/\/release.geolive.ca",
             "releasePackage": "master",
-            "autoUpdate": false
+            "autoUpdate": false,
+            "composerPath": "\/usr\/bin\/composer",
+            "bowerPath": ""
         }
     },
     "plugin.24": {
@@ -173,23 +175,10 @@
                 "pluginView": "front"
             },
             "routes": [
-                "plugin.UserInterface.24.routes.0.json",
-                {
-                    "name": "projectfiles",
-                    "view": "plugin",
-                    "plugin": "ReferralManagement",
-                    "pluginView": "file"
-                },
-                {
-                    "name": "proposal",
-                    "view": "plugin",
-                    "plugin": "UserInterface",
-                    "pluginView": "widget",
-                    "widget": "proponent"
-                }
+                "plugin.UserInterface.24.routes.0.json"
             ],
-            "useRemoteServerUI": false,
-            "remoteServerUrl": ""
+            "useRemoteServerUI": true,
+            "remoteServerUrl": "https:\/\/gct3.gather.geoforms.ca\/app\/nickolanack\/php-core-app\/core.php?task=TASK&format=ajax&json=JSON"
         }
     },
     "plugin.28": {
@@ -329,6 +318,10 @@
             "enableUserListCaching": true,
             "queueEmailDelay": "5",
             "exportSecret": "XXXX-XXXX",
+            "datawarehousePaths": [
+                "\/srv\/gather_gis\/",
+                ""
+            ],
             "customFormCss": ""
         }
     },
@@ -363,11 +356,6 @@
             "secret": "XXXX-XXXX",
             "voice": "Nicole"
         }
-    },
-    "plugin.50": {
-        "name": "Read Receipts",
-        "instance": "ReadReceipts",
-        "parameters": {}
     },
     "widget.33": {
         "name": "Attr Search Bar",
