@@ -2,58 +2,106 @@ var BreadcrumbNavigation=(function(){
 
 
 	var BreadcrumbNavigation=new Class_({
+		Implements:[Events],
+
+		_setRoot:function(label, view){
+
+			if(this._clickRoot){
+				this._labelEl.removeEvent('click', this._clickRoot)
+			}
+
+			this._clickRoot=function(){
+		         controller.navigateTo.apply(controller, view);
+		    };
+
+			this._labelEl.addEvent('click', this._clickRoot);
+		    this._labelEl.addClass('clickable')
+		    this._labelEl.innerHTML="Dashboard";
+
+		}
+
+		
+		hidePath:function(){
+			this._valueEl.addClass('hidden');
+		},
+		showPath:function(){
+			this._valueEl.removeClass('hidden');
+		},
+
+
+		addPath:function(path, handler){
+
+			if(!this._handlers){
+				this._handlers[path]=handler;
+			}
+			return this;
+		},
+
+
+		setPath:function(view){
+
+			if(this._handlers[view]){
+	        	var result=this._handlers[view]();
+	        	if(typeof result=='string'){
+	        		view=result;
+	        	}
+	        }
+			valueEl.innerHTML=view;
+
+
+		},
 
 
 		render:function(el, labelEl, valueEl){
 
+			var me=this;
+
+
+			me.addPath('Project', function(){
+
+				var p=application.getNamedValue("currentProject");
+				if(p){
+					return 'Project: '+p.getName();
+				}
+
+			});
+
 			GatherDashboard.getApplication(function(application){
 
+
+
 				application.getNamedValue('navigationController',function(controller){
+
+					me._application=application;
+					me._controller=controller;
+					me._labelEl=labelEl;
+					me._valueEl=valueEl;
+					me._el=el;
 		    
-				    labelEl.addEvent('click',function(){
-				         controller.navigateTo('Dashboard', 'Main');
-				    });
-				    labelEl.addClass('clickable')
+				    me._setRoot('Dashboard', ['Dashboard', 'Main']);
 				    
-				    var rootState;
+				
 				    controller.addEvent('navigate', function(state, options, item) {
-				        console.log(state); 
-				        rootState=state;
+				        
+
+				        me._rootState=state;
+
 				        if(state.view=='Dashboard'){
-				            valueEl.addClass('hidden');
+				           me.hidePath();
 				            return;
 				        }
-				        valueEl.removeClass('hidden');
+				       
+				        me.setPath(state.view);
+				        me.showPath();
 				        
-				        var view=state.view;
-				        if(view==='Project'){
-				            var p=application.getNamedValue("currentProject");
-				            console.log(p);
-				            if(p){
-				                view='Project: '+p.getName();
-				            }
-				        }
-				        
-				        
-				        valueEl.innerHTML=view;
-				    })
+				    
+
+				    });
 				    
 				    controller.addEvent('childNavigation', function(menu, state, options, item) {
-				        console.log(state); 
 
-				        var rootView=rootState.view;
-				        valueEl.removeClass('clickable');
-				        if(rootView==='Project'){
-				            var p=application.getNamedValue("currentProject");
-				            console.log(p);
-				            if(p){
-				                rootView='Project: '+p.getName();
-				                valueEl.addClass('clickable');
-				            }
-				        }
-				        
-				        
-				        valueEl.innerHTML=rootView;
+				        me.setPath(me._rootState.view);
+				        me.showPath();
 				        valueEl.appendChild(new Element('span', {"class":"field-value", html:state.view}));
 				        
 				    });
