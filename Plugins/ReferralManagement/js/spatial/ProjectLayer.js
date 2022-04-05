@@ -130,6 +130,8 @@ var ProjectLayer = (function() {
 						var layerIndex = options.id.split('-').pop()
 						var project = ProjectTeam.CurrentTeam().getProject(pid);
 
+						var layer=this;
+
 						project.addEvent('updateDatasetAttributes', function(data) {
 							
 							layer.options.projectAttributes = project.getDatasetAttributes(layerIndex);
