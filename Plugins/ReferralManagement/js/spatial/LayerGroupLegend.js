@@ -25,11 +25,11 @@ var LayerGroupLegend = (function() {
                 return;
             }
 
-
+            var me=this;
             if(!this._map){
                 this._map=map;
                 map.once('remove', function(){
-                    this._remove();
+                    me._remove();
                 });
             }
 
