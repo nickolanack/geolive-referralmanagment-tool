@@ -160,9 +160,7 @@
         "parameters": {
             "releaseServer": "http:\/\/release.geolive.ca",
             "releasePackage": "master",
-            "autoUpdate": false,
-            "composerPath": "\/usr\/bin\/composer",
-            "bowerPath": ""
+            "autoUpdate": false
         }
     },
     "plugin.24": {
@@ -175,10 +173,23 @@
                 "pluginView": "front"
             },
             "routes": [
-                "plugin.UserInterface.24.routes.0.json"
+                "plugin.UserInterface.24.routes.0.json",
+                {
+                    "name": "projectfiles",
+                    "view": "plugin",
+                    "plugin": "ReferralManagement",
+                    "pluginView": "file"
+                },
+                {
+                    "name": "proposal",
+                    "view": "plugin",
+                    "plugin": "UserInterface",
+                    "pluginView": "widget",
+                    "widget": "proponent"
+                }
             ],
-            "useRemoteServerUI": true,
-            "remoteServerUrl": "https:\/\/gct3.gather.geoforms.ca\/app\/nickolanack\/php-core-app\/core.php?task=TASK&format=ajax&json=JSON"
+            "useRemoteServerUI": false,
+            "remoteServerUrl": ""
         }
     },
     "plugin.28": {
@@ -318,10 +329,7 @@
             "enableUserListCaching": true,
             "queueEmailDelay": "5",
             "exportSecret": "XXXX-XXXX",
-            "datawarehousePaths": [
-                "\/srv\/gather_gis\/",
-                ""
-            ],
+            "datawarehousePaths": [],
             "customFormCss": ""
         }
     },
@@ -356,6 +364,11 @@
             "secret": "XXXX-XXXX",
             "voice": "Nicole"
         }
+    },
+    "plugin.50": {
+        "name": "Read Receipts",
+        "instance": "ReadReceipts",
+        "parameters": {}
     },
     "widget.33": {
         "name": "Attr Search Bar",
@@ -7255,7 +7268,7 @@
                                     "identifier": "",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.7.config.fieldValueScript.js",
+                                    "fieldValueScript": "return item.getCompanyName();",
                                     "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.7.config.formatElementScript.js"
                                 }
                             },
@@ -15510,16 +15523,16 @@
                             "shareLink.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 379,
-                            "y": 259
+                            "x": 296,
+                            "y": 272
                         },
                         "children": [
                             "shareLink.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 339,
-                                    "y": 449
+                                    "x": 256,
+                                    "y": 462
                                 }
                             }
                         ],
@@ -23813,7 +23826,7 @@
             "widgetTitle": "Kml renderer",
             "target": "kmlDocumentRenderer",
             "cacheable": true,
-            "allowExternalFilePaths": true,
+            "allowExternalFilePaths": false,
             "allowExternalUrls": false,
             "resolveSpatialFilePathScript": "Kml renderer.resolveSpatialFilePathScript.js",
             "formatSpatialFileRendererScript": "Kml renderer.formatSpatialFileRendererScript.js",
