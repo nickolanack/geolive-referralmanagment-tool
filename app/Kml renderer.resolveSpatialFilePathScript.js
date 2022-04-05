@@ -1,4 +1,4 @@
-if(strpos($file,'{datawarehouse}')===0){
+    if(strpos($file,'{datawarehouse}')===0){
 	    //throw new \Exception(print_r($args, true));
 	    
 	    
@@ -28,6 +28,8 @@ if(strpos($file,'{datawarehouse}')===0){
 	    			$realpath=realpath($dir.'/'.$data['metadata']->file->file);
 			        if(file_exists($realpath)){
 			            return $realpath;
+			        }else{
+			        	error_log($realpath);
 			        }
 	    		}
 	    	}
