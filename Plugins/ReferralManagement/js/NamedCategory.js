@@ -489,6 +489,9 @@ var NamedCategory = (function() {
 
 	};
 
+
+
+
 	NamedCategory.CreateCategoryLabel = function(application, item) {
 
 		var type = 'Tag';

@@ -820,7 +820,7 @@ var ProjectList = (function() {
      			});
             }
 		});
-	},
+	};
 
 	ProjectList.NamedCategoryProjectList=function(category){
 
@@ -866,7 +866,7 @@ var ProjectList = (function() {
 		});
 
 
-	}
+	};
 
 	ProjectList.NameForProjects=function(){
 		return DashboardConfig.getValue("nameForProjects")||'Projects';

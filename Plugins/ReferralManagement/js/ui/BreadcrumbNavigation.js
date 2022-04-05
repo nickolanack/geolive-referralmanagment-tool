@@ -81,6 +81,32 @@ var BreadcrumbNavigation=(function(){
 			me.addPath('Projects', function(state, item){
 
 				if(item&&item.getLabel){
+
+
+					if(item.getLockFilter){
+						try{
+							var filter=item.getLockFilter();
+							if(filter&&filter[0]){
+								var tag=ProjectTagList.getTag(filter[0]);
+
+								var parent;
+								var list=[];
+								while(parent=tag.getParentTagData()){
+									list.unshift(parent.getShortName());
+								}
+
+								if(list.length){
+									return list.join(', ')+', '+item.getLabel();
+								}
+
+
+							}
+						}catch(e){
+							console.error(e);
+						}
+					}
+
+
 					return item.getLabel();
 				}
 
