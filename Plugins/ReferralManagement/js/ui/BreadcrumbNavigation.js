@@ -20,6 +20,10 @@ var BreadcrumbNavigation=(function(){
 
 		},
 
+		getApplication:function(){
+			return this._application;
+		},
+
 		
 		hidePath:function(){
 			this._valueEl.addClass('hidden');
@@ -61,7 +65,7 @@ var BreadcrumbNavigation=(function(){
 
 			me.addPath('Project', function(){
 
-				var p=application.getNamedValue("currentProject");
+				var p=me.getApplication().getNamedValue("currentProject");
 				if(p){
 					return 'Project: '+p.getName();
 				}
