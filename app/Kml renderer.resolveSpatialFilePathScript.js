@@ -24,7 +24,7 @@ if(strpos($file,'{datawarehouse}')===0){
 	    	$paths=$gather->getParameters('datawarehousePaths', array());
 
 	    	foreach($paths as $dir){
-	    		$dir=rtim(trim($dir),'/');
+	    		$dir=rtrim(trim($dir),'/');
 	    		if((!empty($dir))&&is_dir($dir)){
 	    			$realpath=realpath($dir.'/'.$data['metadata']->file->file);
 			        if(file_exists($realpath)){
