@@ -67,7 +67,11 @@ var BreadcrumbNavigation=(function(){
 
 				var p=me.getApplication().getNamedValue("currentProject");
 				if(p){
-					return 'Project: '+p.getName();
+
+
+					var type = p.isDataset()?'Dataset':((DashboardConfig.getValue('enableProposals')?ProjectList.NameForProjects():"Collections")).substring(0,-1);
+
+					return type + ': '+p.getName();
 				}
 
 			});
