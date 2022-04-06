@@ -56,6 +56,13 @@ var BreadcrumbNavigation = (function() {
 
 			el.innerHTML = label;
 
+			if(click){
+				var fn=click;
+				click=function(ev){
+					ev.preventDefault();
+					fn();
+				}
+			}
 
 			if(el==this._valueEl){
 				el.removeClass('clickable');
