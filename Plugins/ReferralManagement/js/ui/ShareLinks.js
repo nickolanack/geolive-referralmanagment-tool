@@ -19,7 +19,7 @@ var ShareLinks=(function(){
 	        var linkEl=new Element('a', {
 	        	style:"color:mediumseagreen;",
 	        	target:"_blank",
-	        	href="";
+	        	href:""
 	        });
 
 	        link.getElement().appendChild(linkEl);
