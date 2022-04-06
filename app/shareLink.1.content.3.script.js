@@ -1,3 +1,8 @@
+
+
+return (new ShareLinks()).render();
+
+
 var button= new ElementModule('button', {
     "class":"form-btn primary-btn share",
     'html':"Create share link",
