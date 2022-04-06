@@ -336,6 +336,13 @@ div.field-value-module.inline.ids{
     span.field-value.hidden{
         display:none;
     }
+    
+    
+    &>.field-value:before {
+        display: none;
+        
+    }
+    
 }
 
 .ui-list-view .ui-view.section-module:hover {
