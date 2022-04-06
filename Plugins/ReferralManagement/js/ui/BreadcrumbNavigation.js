@@ -97,26 +97,29 @@ var BreadcrumbNavigation = (function() {
 				}
 			}
 
-			if (isArray_(view)) {
 
-				var parts=view.slice(1);
-				this.setValue(view[0], this._valueEl);
+			this._valueEl.innerHTML="";
 
-
-				parts.forEach(function(part){
-
-					var link=me._valueEl.appendChild(new Element('span', {
-						"class": "field-value",
-					}));
-
-					me.setValue(part, link);
-
-				});
-
-				return;
+			if (!isArray_(view)) {
+				view=[view];
 			}
 
-			this.setValue(view, this._valueEl);
+			var parts=view.slice(0);
+				//this.setValue(view[0], this._valueEl);
+
+
+			parts.forEach(function(part){
+
+				var link=me._valueEl.appendChild(new Element('span', {
+					"class": "field-value",
+				}));
+
+				me.setValue(part, link);
+
+			});
+
+			return;
+			
 
 
 		},
