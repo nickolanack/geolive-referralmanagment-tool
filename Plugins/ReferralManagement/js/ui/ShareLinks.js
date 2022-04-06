@@ -1,3 +1,15 @@
+var ShareLinkItem=(function(){
+
+
+	var ShareLinkItem = new Class_({
+		Extends:MockDataTypeItem
+	});
+
+	return ShareLinkItem;
+
+})()
+
+
 var ShareLinks=(function(){
 
 
