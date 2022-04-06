@@ -18,7 +18,7 @@ var ShareLinks=(function(){
 
 	        var linkEl=new Element('a', {
 	        	style:"color:mediumseagreen;",
-	        	target:"_blank"
+	        	target:"_blank",
 	        	href="";
 	        });
 
