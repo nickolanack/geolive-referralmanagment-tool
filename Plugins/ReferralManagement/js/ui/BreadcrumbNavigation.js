@@ -43,8 +43,36 @@ var BreadcrumbNavigation = (function() {
 			return this;
 		},
 
-		setValue:function(label, view){
-			this._valueEl.innerHTML = label;
+		setValue:function(part, el){
+			
+
+			var label=part;
+			var click=null;
+			if(isArray_(part)){
+				label=part[0];
+				click=part[1];
+			}
+
+			el.innerHTML = label;
+
+
+			if(el==this._valueEl){
+				el.removeClass('clickable');
+				if(this._valueClick){
+					el.removeEvent('click', this._valueClick);
+				}
+
+				if(click){
+					this._valueClick=click;
+				}
+			}
+
+			if(click){
+				el.addClass('clickable')
+				el.addEvent('click', click);
+			}
+
+
 		},
 		setPath: function(view) {
 
@@ -64,36 +92,23 @@ var BreadcrumbNavigation = (function() {
 			if (isArray_(view)) {
 
 				var parts=view.slice(1);
-				
-				this.setValue(view[0]);
+				this.setValue(view[0], this._valueEl);
 
 
 				parts.forEach(function(part){
 
-					var label=part;
-					var click=null;
-					if(isArray_(part)){
-						label=part[0];
-						click=part[1];
-					}
-
 					var link=me._valueEl.appendChild(new Element('span', {
 						"class": "field-value",
-						html: label
 					}));
 
-					if(click){
-						link.addEvent('click', click);
-					}
-
-				
+					me.setValue(part, link);
 
 				});
 
 				return;
 			}
 
-			this.setValue(view);
+			this.setValue(view, this._valueEl);
 
 
 		},
