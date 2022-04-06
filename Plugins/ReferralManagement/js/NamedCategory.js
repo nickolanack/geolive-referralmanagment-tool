@@ -117,9 +117,16 @@ var NamedCategory = (function() {
 		getParentTagData:function(){
 
 			var me=this;
-			var list= NamedCategoryList.getProjectTagsData(me.getCategory()).filter(function(tag){
-			    return tag!=me&&tag.getName().toLowerCase()==me.getCategory();
-			});
+
+			var list= NamedCategoryList.getProjectTagsData().filter(function(tag){
+				return tag!=me&&tag.getName().toLowerCase()==me.getCategory();
+			});//.map(function(t){return t.getShortName()})
+
+
+
+			// var list= NamedCategoryList.getProjectTagsData(me.getCategory()).filter(function(tag){
+			//     return tag!=me&&tag.getName().toLowerCase()==me.getCategory();
+			// });
 
 			if(list.length>1){
 				throw 'Expected one parent at most';
