@@ -1,6 +1,6 @@
 
 
-return (new ShareLinks()).render();
+return (new ShareLinks()).render(item);
 
 
 var button= new ElementModule('button', {
