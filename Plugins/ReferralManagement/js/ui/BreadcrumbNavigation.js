@@ -193,6 +193,7 @@ var BreadcrumbNavigation = (function() {
 					me._el = el;
 
 					me._setRoot('Dashboard', ['Dashboard', 'Main']);
+					me.hidePath();
 
 
 					controller.addEvent('navigate', function(state, options, item) {
