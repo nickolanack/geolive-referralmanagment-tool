@@ -58,8 +58,8 @@ var BreadcrumbNavigation = (function() {
 
 			if(click){
 				var fn=click;
-				click=function(ev){
-					ev.preventDefault();
+				click=function(e){
+					e.stopPropagation();
 					fn();
 				}
 			}
