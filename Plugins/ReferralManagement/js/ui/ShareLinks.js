@@ -11,9 +11,8 @@ var ShareLinks=(function(){
 		render:function(){
 
 
-	        var link new ElementModule('p', {
-	            //html:'<a id="theShareLink" style="color:mediumseagreen;" target="_blank" href=""></a>',
-	            
+	        var link = new ElementModule('p', {
+	            //html:'<a id="theShareLink" style="color:mediumseagreen;" target="_blank" href=""></a>'
 	        });
 
 
