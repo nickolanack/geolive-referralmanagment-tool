@@ -12,7 +12,7 @@ var BreadcrumbNavigation = (function() {
 
 			var me=this;
 			this._clickRoot = function() {
-				me.controller.navigateTo.apply(controller, view);
+				me._controller.navigateTo.apply(me._controller, view);
 			};
 
 			this._labelEl.addEvent('click', this._clickRoot);
