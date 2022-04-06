@@ -33,7 +33,7 @@ var BreadcrumbNavigation = (function() {
 		},
 
 
-		addPath: function(path, handler) {
+		addPathHandler: function(path, handler) {
 
 			if (!this._handlers) {
 				this._handlers = {};
@@ -70,10 +70,23 @@ var BreadcrumbNavigation = (function() {
 
 				parts.forEach(function(part){
 
-					me._valueEl.appendChild(new Element('span', {
+					var label=part;
+					var click=null;
+					if(isArray_(part)){
+						label=part[0];
+						click=part[1];
+					}
+
+					var link=me._valueEl.appendChild(new Element('span', {
 						"class": "field-value",
-						html: part
+						html: label
 					}));
+
+					if(click){
+						link.addEvent('click', click);
+					}
+
+				
 
 				});
 
@@ -91,7 +104,7 @@ var BreadcrumbNavigation = (function() {
 			var me = this;
 
 
-			me.addPath('Project', function() {
+			me.addPathHandler('Project', function() {
 
 				var p = me.getApplication().getNamedValue("currentProject");
 				if (p) {
@@ -106,7 +119,7 @@ var BreadcrumbNavigation = (function() {
 			});
 
 
-			me.addPath('Projects', function(state, item) {
+			me.addPathHandler('Projects', function(state, item) {
 
 				if (item && item.getLabel) {
 
@@ -120,7 +133,9 @@ var BreadcrumbNavigation = (function() {
 								var parent = tag;
 								var list = [];
 								while (parent = parent.getParentTagData()) {
-									list.unshift(parent.getShortName());
+									list.unshift([parent.getShortName(), (function(){
+										UIInteraction.navigateToNamedCategoryType(this.getName());
+									}).bind(parent)]);
 								}
 
 								if (list.length) {
