@@ -8,7 +8,7 @@ var ShareLinks=(function(){
 
 	var ShareLinks=new Class_({
 
-		render:function(){
+		render:function(item){
 
 
 	        var link = new ElementModule('p', {
