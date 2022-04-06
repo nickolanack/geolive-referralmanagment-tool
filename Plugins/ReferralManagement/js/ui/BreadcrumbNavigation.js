@@ -10,8 +10,9 @@ var BreadcrumbNavigation = (function() {
 				this._labelEl.removeEvent('click', this._clickRoot)
 			}
 
+			var me=this;
 			this._clickRoot = function() {
-				controller.navigateTo.apply(controller, view);
+				me.controller.navigateTo.apply(controller, view);
 			};
 
 			this._labelEl.addEvent('click', this._clickRoot);
