@@ -25,7 +25,14 @@ var ShareLinks = (function() {
 
 
 	var ShareLinks = new Class_({
+		_addPopover:function(el, description){
 
+			new UIPopover(el, {
+	           description:description,
+	           anchor:UIPopover.AnchorAuto()
+	       });
+
+		},
 		render: function(item) {
 
 
@@ -35,8 +42,10 @@ var ShareLinks = (function() {
 			});
 
 
-
+			var editable=false;
 			var currentToken;
+
+			var me=this;
 
 
 			var button = new ElementModule('button', {
@@ -63,73 +72,88 @@ var ShareLinks = (function() {
 
 
 
-							link.getElement().appendChild(new Element('a', {
-								style: "color:mediumseagreen;",
-								target: "_blank",
-								href: resp.link,
-								html: resp.link.substring(0,20)+'...'+resp.link.substring(resp.link.length-20)
-							}));
+							me._addPopover(
+								link.getElement().appendChild(new Element('a', {
+									style: "color:mediumseagreen;",
+									target: "_blank",
+									href: resp.link,
+									html: resp.link.substring(0,20)+'...'+resp.link.substring(resp.link.length-20)
+								})), 
+								'click to open share link in a new tab'
+							);
 
-							link.getElement().appendChild(new Element('button', {
-								"class": "mail inline-edit",
-								style: "margin-left:10px;",
-								html: "mail",
-								events: {
-									click: function() {
-
-										(new Element('a', {
-											href:"mailto:?subject=Here is a public link to: "+item.getName()+"&body="+encodeURIComponent("\n"+resp.link+"\n"),
-											target:"_blank"
-										})).click();
-
-									}
-								}
-							}));
-
-							if (navigator.clipboard.writeText) {
-
+							me._addPopover(
 								link.getElement().appendChild(new Element('button', {
-									"class": "copy inline-edit",
+									"class": "mail inline-edit",
 									style: "margin-left:10px;",
-									html: "copy",
+									html: "mail",
 									events: {
 										click: function() {
 
-											var btn = this;
-											navigator.clipboard.writeText(resp.link).then(function() {
-												btn.addClass('copied');
-											}, function() {
-												btn.addClass('failed');
-											});
+											(new Element('a', {
+												href:"mailto:?subject=Here is a public link to: "+item.getName()+"&body="+encodeURIComponent("\n"+resp.link+"\n"),
+												target:"_blank"
+											})).click();
+
+										}
+									}
+								})),
+								'click to email the link'
+							);
+
+							if (navigator.clipboard.writeText) {
+
+								me._addPopover(
+									link.getElement().appendChild(new Element('button', {
+										"class": "copy inline-edit",
+										style: "margin-left:10px;",
+										html: "copy",
+										events: {
+											click: function() {
+
+												var btn = this;
+												navigator.clipboard.writeText(resp.link).then(function() {
+													btn.addClass('copied');
+												}, function() {
+													btn.addClass('failed');
+												});
+
+											}
+										}
+									})),
+									'copy link to clipboard'
+								);
+							}
+
+							if(editable){
+
+								link.getElement().appendChild(new Element('button', {
+									"class": "edit inline-edit",
+									style: "margin-left:10px;",
+									html: "edit",
+									events: {
+										click: function() {
 
 										}
 									}
 								}));
 							}
 
-							link.getElement().appendChild(new Element('button', {
-								"class": "edit inline-edit",
-								style: "margin-left:10px;",
-								html: "edit",
-								events: {
-									click: function() {
-
+							me._addPopover(
+								link.getElement().appendChild(new Element('button', {
+									"class": "delete inline-edit btn inline-remove",
+									style: "margin-left:10px;",
+									html: "remove",
+									events: {
+										click: function() {
+											currentToken.remove();
+											currentToken=null;
+											link.getElement().innerHTML = "";
+										}
 									}
-								}
-							}));
-
-							link.getElement().appendChild(new Element('button', {
-								"class": "delete inline-edit btn inline-remove",
-								style: "margin-left:10px;",
-								html: "remove",
-								events: {
-									click: function() {
-										currentToken.remove();
-										currentToken=null;
-										link.getElement().innerHTML = "";
-									}
-								}
-							}));
+								})),
+								'delete the current share link'
+							);
 
 							console.log(resp);
 
