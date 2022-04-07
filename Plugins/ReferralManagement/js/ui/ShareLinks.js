@@ -54,7 +54,7 @@ var ShareLinks = (function() {
 								style: "color:mediumseagreen;",
 								target: "_blank",
 								href: resp.link,
-								html: resp.link.substring(0,10)+'...'+resp.link.substring(-10)
+								html: resp.link.substring(0,10)+'...'+resp.link.substring(resp.link.length-10)
 							}));
 
 							link.getElement().appendChild(new Element('button', {
@@ -96,6 +96,17 @@ var ShareLinks = (function() {
 
 							link.getElement().appendChild(new Element('button', {
 								"class": "edit inline-edit",
+								style: "margin-left:10px;",
+								html: "edit",
+								events: {
+									click: function() {
+
+									}
+								}
+							}));
+
+							link.getElement().appendChild(new Element('button', {
+								"class": "delete inline-edit",
 								style: "margin-left:10px;",
 								html: "edit",
 								events: {
