@@ -122,7 +122,7 @@ var TableHeader = (function() {
 
 
 						sortModule = (new ListSortModule(function() {
-							return listModule;
+							return me._listModule;
 						}, {
 							sorters: ProjectList.projectSorters()
 						}));
