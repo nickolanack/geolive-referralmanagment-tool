@@ -9,7 +9,22 @@ body.body-overlayed>#viewControllerApp>div>div>.ui-view {
 button:focus {outline:0;}
 
 
+.search-bar-content:after {
+    position: absolute;
+    content: "\0f002";
+    left: 18px;
+    top: 19px;
+    z-index: 1;
+    font-family: FontAwesome;
+    color: #c0c0c0;
+}
 
+.geolive-top-bar .search-bar-content:after {
+    left: unset;
+    right: 50px;
+    font-size: 17px;
+    top: 21px;
+}
 
 
 .share-links{
@@ -809,7 +824,7 @@ button.inline-edit, .btn.inline-edit, .btn.inline-remove, .section-toggle{
 
 .ui-view[data-view="singleMapTitleBarView"] {
     background: rgba(0,0,0,0.1);
-    height: 58px;
+    padding-bottom: 10px;
 
 
     [data-col="created"] {
@@ -838,6 +853,7 @@ button.inline-edit, .btn.inline-edit, .btn.inline-remove, .section-toggle{
         height: 25px;
         line-height: 25px;
         border: none;
+        margin-bottom:0;
     }
     
     
