@@ -106,13 +106,16 @@ class Task{
 			"complete" => $json->complete,
 		)); 
 
-
+		error_log('notifier');
 
 		GetPlugin('ReferralManagement')->notifier()->onUpdateTask($json);
 
 		GetPlugin('Attributes');
 		if (key_exists('attributes', $json)) {
 			foreach ($json->attributes as $table => $fields) {
+
+				error_log('save attributes: '.$table);
+
 				(new \attributes\Record($table))->setValues($taskId, 'Tasks.task', $fields);
 			}
 		}
