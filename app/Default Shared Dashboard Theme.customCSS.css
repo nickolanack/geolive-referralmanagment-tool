@@ -9,6 +9,31 @@ body.body-overlayed>#viewControllerApp>div>div>.ui-view {
 button:focus {outline:0;}
 
 
+
+
+
+.share-links{
+        
+        
+        button.inline-edit.copy:after {
+            content: '\0f0ea';
+        }
+        
+        button.inline-edit.mail:after {
+            content: '\0f0e0';
+        }
+        
+        button.inline-edit.mail, button.inline-edit.copy {
+            background-color:mediumseagreen;
+        }
+        button.inline-edit.mail:after, button.inline-edit.copy:after {
+            color:white;
+        }
+            
+    
+}
+
+
 .sticky-top{
     .ui-view.left-panel[data-view="leftPanel"] {
         z-index: 2;
@@ -336,6 +361,13 @@ div.field-value-module.inline.ids{
     span.field-value.hidden{
         display:none;
     }
+    
+    
+    &>.field-value:before {
+        display: none;
+        
+    }
+    
 }
 
 .ui-list-view .ui-view.section-module:hover {

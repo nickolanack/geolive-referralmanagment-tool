@@ -160,9 +160,7 @@
         "parameters": {
             "releaseServer": "http:\/\/release.geolive.ca",
             "releasePackage": "master",
-            "autoUpdate": false,
-            "composerPath": "\/usr\/bin\/composer",
-            "bowerPath": ""
+            "autoUpdate": false
         }
     },
     "plugin.24": {
@@ -175,10 +173,23 @@
                 "pluginView": "front"
             },
             "routes": [
-                "plugin.UserInterface.24.routes.0.json"
+                "plugin.UserInterface.24.routes.0.json",
+                {
+                    "name": "projectfiles",
+                    "view": "plugin",
+                    "plugin": "ReferralManagement",
+                    "pluginView": "file"
+                },
+                {
+                    "name": "proposal",
+                    "view": "plugin",
+                    "plugin": "UserInterface",
+                    "pluginView": "widget",
+                    "widget": "proponent"
+                }
             ],
-            "useRemoteServerUI": true,
-            "remoteServerUrl": "https:\/\/gct3.gather.geoforms.ca\/app\/nickolanack\/php-core-app\/core.php?task=TASK&format=ajax&json=JSON"
+            "useRemoteServerUI": false,
+            "remoteServerUrl": ""
         }
     },
     "plugin.28": {
@@ -318,10 +329,7 @@
             "enableUserListCaching": true,
             "queueEmailDelay": "5",
             "exportSecret": "XXXX-XXXX",
-            "datawarehousePaths": [
-                "\/srv\/gather_gis\/",
-                ""
-            ],
+            "datawarehousePaths": [],
             "customFormCss": ""
         }
     },
@@ -356,6 +364,11 @@
             "secret": "XXXX-XXXX",
             "voice": "Nicole"
         }
+    },
+    "plugin.50": {
+        "name": "Read Receipts",
+        "instance": "ReadReceipts",
+        "parameters": {}
     },
     "widget.33": {
         "name": "Attr Search Bar",
@@ -7255,7 +7268,7 @@
                                     "identifier": "",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.7.config.fieldValueScript.js",
+                                    "fieldValueScript": "return item.getCompanyName();",
                                     "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.7.config.formatElementScript.js"
                                 }
                             },
@@ -8013,8 +8026,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 99,
-                    "y": 508
+                    "x": 113,
+                    "y": 412
                 },
                 "children": [
                     "taskForm.metadata.children.0.json",
@@ -8025,16 +8038,16 @@
                             "taskForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 326,
-                            "y": 254
+                            "x": 336,
+                            "y": 264
                         },
                         "children": [
                             "taskForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 286,
-                                    "y": 517
+                                    "x": 296,
+                                    "y": 529
                                 }
                             }
                         ],
@@ -8188,6 +8201,7 @@
                                             "config": {
                                                 "className": "",
                                                 "label": "Mark this task as complete",
+                                                "identifier": "boolean-field",
                                                 "mandatory": false,
                                                 "getValueScript": "return item.isComplete()",
                                                 "updateValueScript": "return {\"complete\":value}",
@@ -8202,20 +8216,22 @@
                                                 "attributeFields": [
                                                     "taskForm.metadata.children.1.builderMetadata.positions.content.modules.9.config.attributeFields.0.json"
                                                 ],
+                                                "className": "no-text",
                                                 "label": "Attachments",
                                                 "message": "add a description",
                                                 "lines": 3,
-                                                "mandatory": false,
-                                                "showAudios": true,
-                                                "showImages": true,
-                                                "showDocuments": true,
-                                                "showVideos": true,
-                                                "className": "no-text",
                                                 "maxChars": 0,
+                                                "mandatory": false,
+                                                "showToolbars": true,
+                                                "showAudios": true,
+                                                "showVideos": true,
+                                                "showDocuments": true,
+                                                "showImages": true,
                                                 "showExpandInput": true,
                                                 "toolbarPosition": "bottom",
                                                 "textFormatScript": "",
-                                                "onRenderModuleFn": ""
+                                                "onRenderModuleFn": "",
+                                                "mediaIconTint": "rgb(100, 149, 237)"
                                             }
                                         }
                                     ]
@@ -15510,16 +15526,16 @@
                             "shareLink.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 419,
-                            "y": 299
+                            "x": 296,
+                            "y": 272
                         },
                         "children": [
                             "shareLink.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 379,
-                                    "y": 476
+                                    "x": 256,
+                                    "y": 462
                                 }
                             }
                         ],
@@ -15569,6 +15585,14 @@
                                             "config": {
                                                 "name": "My Custom Script",
                                                 "script": "shareLink.metadata.children.1.builderMetadata.positions.content.modules.2.config.script.js",
+                                                "description": "Info about my custom script"
+                                            }
+                                        },
+                                        {
+                                            "type": "WizardScriptElement",
+                                            "config": {
+                                                "name": "My Custom Script",
+                                                "script": "shareLink.metadata.children.1.builderMetadata.positions.content.modules.3.config.script.js",
                                                 "description": "Info about my custom script"
                                             }
                                         }
@@ -23805,7 +23829,7 @@
             "widgetTitle": "Kml renderer",
             "target": "kmlDocumentRenderer",
             "cacheable": true,
-            "allowExternalFilePaths": true,
+            "allowExternalFilePaths": false,
             "allowExternalUrls": false,
             "resolveSpatialFilePathScript": "Kml renderer.resolveSpatialFilePathScript.js",
             "formatSpatialFileRendererScript": "Kml renderer.formatSpatialFileRendererScript.js",

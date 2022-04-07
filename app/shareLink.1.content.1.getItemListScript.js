@@ -4,7 +4,7 @@
 		})).addEvent('success', function(resp){
 		   
 		   callback(resp.results.map(function(link){
-		       return new ShareLinkItem(link)
+		       return new MockDataTypeItem(link)
 		   }))
 		    
 		}).execute();
