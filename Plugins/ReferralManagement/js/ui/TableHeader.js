@@ -56,7 +56,20 @@ var TableHeader = (function() {
 		},
 
 		_addHeaderBehavior: function() {
+
+			this._listModule.on('load', function(){
+
+				_renderHeader();
+
+			});
+
+			_renderHeader();
 			
+			
+		},
+
+		_renderHeader:function(){
+
 			var listEl=this._listModule.getElement();
 
 			var header = this._makeHeaderEl();
@@ -66,6 +79,8 @@ var TableHeader = (function() {
 			} else {
 				listEl.appendChild(header);
 			}
+
+
 		},
 
 		_makeHeaderEl: function() {
@@ -168,7 +183,7 @@ var TableHeader = (function() {
 			});
 		},
 
-		_renderHeader: function(listModule, module) {
+		__renderHeader: function(listModule, module) {
 
 
 
