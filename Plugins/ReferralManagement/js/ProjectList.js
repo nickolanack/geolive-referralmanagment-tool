@@ -546,14 +546,14 @@ var ProjectList = (function() {
 				 * TODO remove this timeout, the need for it. or set sortModule to automatically setSortObject
 				 */
 				
-				try{
-					sortModule.getListModule().setSortObject(sortModule);
-				}catch(e){	
+				// try{
+				// 	sortModule.getListModule().setSortObject(sortModule);
+				// }catch(e){	
 
 					setTimeout(function() {
 						sortModule.getListModule().setSortObject(sortModule);
 					}, 100);
-				}
+				//}
 			});
 
 
@@ -572,13 +572,13 @@ var ProjectList = (function() {
 			
 			parentModule.runOnceOnLoad(function() {
 
-				try{
-					filterModule.getListModule().setFilterObject(filterModule);
-				}catch(e){
+				// try{
+				// 	filterModule.getListModule().setFilterObject(filterModule);
+				// }catch(e){
 					setTimeout(function() {
 						filterModule.getListModule().setFilterObject(filterModule);
 					}, 500);
-				}
+				//}
 
 				
 
