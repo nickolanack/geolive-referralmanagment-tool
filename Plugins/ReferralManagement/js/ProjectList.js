@@ -612,7 +612,10 @@ var ProjectList = (function() {
 			}
 
 			var counter = 0;
+
 			var interval = setInterval(function() {
+
+
 
 				module=listModule.getDetailViewAt(0);
 				counter++;
@@ -629,11 +632,13 @@ var ProjectList = (function() {
 					if (counter > 15) {
 						console.error('unable to inject header');
 						clearInterval(interval);
+						interval=null;
 					}
 
 					return;
 				}
 				clearInterval(interval);
+				interval=null;
 
 				if (parentNode.firstChild) {
 					parentNode.insertBefore(header, el);//parentNode.firstChild);
@@ -691,6 +696,13 @@ var ProjectList = (function() {
 
 
 			}, 200);
+
+			listModule.once(remove){
+				if(interval){
+					clearInterval(interval);
+					interval=null;
+				}
+			}
 
 		});
 	}
