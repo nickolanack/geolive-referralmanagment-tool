@@ -97,7 +97,6 @@ class Task{
 	public function updateFromJson($json) {
 
 		$taskId =  intval($json->id);
-		error_log(json_encode($json));
 			
 		GetPlugin('Tasks')->updateTask($taskId, array(
 			"name" => $json->name,
@@ -106,7 +105,6 @@ class Task{
 			"complete" => $json->complete,
 		)); 
 
-		error_log('notifier');
 
 		GetPlugin('ReferralManagement')->notifier()->onUpdateTask($json);
 
@@ -114,7 +112,6 @@ class Task{
 		if (key_exists('attributes', $json)) {
 			foreach ($json->attributes as $table => $fields) {
 
-				error_log('save attributes: '.$table);
 
 				(new \attributes\Record($table))->setValues($taskId, 'Tasks.task', $fields);
 			}
