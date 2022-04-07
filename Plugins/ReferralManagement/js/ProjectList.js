@@ -546,14 +546,14 @@ var ProjectList = (function() {
 				 * TODO remove this timeout, the need for it. or set sortModule to automatically setSortObject
 				 */
 				
-				// try{
-				// 	sortModule.getListModule().setSortObject(sortModule);
-				// }catch(e){	
+				 try{
+				 	sortModule.getListModule().setSortObject(sortModule);
+				}catch(e){	
 
 					setTimeout(function() {
 						sortModule.getListModule().setSortObject(sortModule);
 					}, 100);
-				//}
+				}
 			});
 
 
