@@ -111,7 +111,7 @@ var ShareLinks = (function() {
 								html: "remove",
 								events: {
 									click: function() {
-										(new ShareLinkItem(resp)).remove();
+										(new ShareLinkItem(ObjectAppend_(resp, {data:{id:item.getId()}}))).remove();
 										link.innerHTML = "";
 									}
 								}
