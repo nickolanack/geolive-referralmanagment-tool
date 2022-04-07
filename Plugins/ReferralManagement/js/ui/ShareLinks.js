@@ -47,7 +47,7 @@ var ShareLinks = (function() {
 							'id': item.getId()
 						})).addEvent('success', function(resp) {
 
-							link.innerHTML = "";
+							link.getElement().innerHTML = "";
 
 
 							link.getElement().appendChild(new Element('a', {
@@ -112,7 +112,7 @@ var ShareLinks = (function() {
 								events: {
 									click: function() {
 										(new ShareLinkItem(ObjectAppend_(resp, {data:{id:item.getId()}}))).remove();
-										link.innerHTML = "";
+										link.getElement().innerHTML = "";
 									}
 								}
 							}));
