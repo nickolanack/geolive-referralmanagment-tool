@@ -1,1 +1,1 @@
-return item.getModificationDate()
+return moment(item.getModificationDate()).fromNow()

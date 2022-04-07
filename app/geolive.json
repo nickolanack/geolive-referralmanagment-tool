@@ -18746,7 +18746,7 @@
                                     "identifier": "col-created",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return item.getCreationDate();\n",
+                                    "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.4.config.fieldValueScript.js",
                                     "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.4.config.formatElementScript.js"
                                 }
                             },
