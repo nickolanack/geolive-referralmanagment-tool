@@ -57,13 +57,14 @@ var TableHeader = (function() {
 
 		_addHeaderBehavior: function() {
 
+			var me=this;
 			this._listModule.on('load', function(){
 
-				_renderHeader();
+				me._renderHeader();
 
 			});
 
-			_renderHeader();
+			this._renderHeader();
 			
 			
 		},
