@@ -89,6 +89,9 @@ var TableHeader = (function() {
 		},
 
 		_makeHeaderEl: function() {
+
+			var me=this;
+
 			var header = new Element('div', {
 				"class": "table-header",
 				html: this._headerString
@@ -108,7 +111,7 @@ var TableHeader = (function() {
 				colEl.addEvent('click', function() {
 
 					var sort = colEl.getAttribute('data-col');
-					var sortModule = listModule.getSortObject();
+					var sortModule = me._listModule.getSortObject();
 
 					if (!sortModule) {
 
@@ -124,7 +127,7 @@ var TableHeader = (function() {
 							sorters: ProjectList.projectSorters()
 						}));
 
-						listModule.setSortObject(sortModule);
+						me._listModule.setSortObject(sortModule);
 
 
 
