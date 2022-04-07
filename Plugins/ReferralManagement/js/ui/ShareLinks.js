@@ -54,7 +54,7 @@ var ShareLinks = (function() {
 								style: "color:mediumseagreen;",
 								target: "_blank",
 								href: resp.link,
-								html: resp.link.substring(0,10)+'...'+resp.link.substring(resp.link.length-10)
+								html: resp.link.substring(0,20)+'...'+resp.link.substring(resp.link.length-20)
 							}));
 
 							link.getElement().appendChild(new Element('button', {
@@ -124,6 +124,16 @@ var ShareLinks = (function() {
 					}
 				}
 			});
+
+
+			button.runOnceOnLoad(function(){
+				var list=button.getViewer().findChildViews(function(c) {
+   	 				return c instanceof UIListViewModule
+				});
+				if(list.length>0){
+					list=list[0];
+				}
+			})
 
 			return [link, button];
 
