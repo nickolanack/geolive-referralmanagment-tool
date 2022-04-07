@@ -6,7 +6,7 @@ var ShareLinkItem = (function() {
 		remove: function(callback) {
 
 
-			if(typeof this.getGetData().email=='string'){
+			if(typeof this.getData().email=='string'){
 				console.error('Dont delete proponent token');
 				if(callback){
 					callback(false);
@@ -25,7 +25,7 @@ var ShareLinkItem = (function() {
 		},
 		canRemove:function(){
 
-			if(typeof this.getGetData().email=='string'){
+			if(typeof this.getData().email=='string'){
 				return false;
 			}
 			return true;
