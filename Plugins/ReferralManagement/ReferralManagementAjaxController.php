@@ -708,6 +708,24 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	}
 
+	protected function deleteShareLink($json) {
+
+		if (!Auth('write', $json->id, "ReferralManagement.proposal")) {
+			return $this->setError('No access or does not exist');
+		}
+
+
+		$list=GetPlugin('Links')->listDataCodesForItem($json->id, "ReferralManagement.proposal");
+		foreach($list as $token){
+			if($token->token==$json->token){
+				return GetPlugin('Links')->expireToken($token);
+			}
+		}
+
+		return $this->setError('Invalid token for id: '+$json->id);
+		
+	}
+
 	protected function listShareLinks($json) {
 
 		if (!Auth('write', $json->id, "ReferralManagement.proposal")) {

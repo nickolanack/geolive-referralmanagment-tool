@@ -85,6 +85,14 @@
             ]
         }
     },
+    "delete_share_link": {
+        "validate": {
+            "checkKeys": [
+                "id",
+                "token"
+            ]
+        }
+    },
     "list_share_links": {
         "validate": {
             "checkKeys": [
