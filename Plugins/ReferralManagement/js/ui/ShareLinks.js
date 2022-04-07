@@ -59,7 +59,7 @@ var ShareLinks = (function() {
 								item.fireEvent('addToken', [currentToken]); //trigger list render
 							}
 
-							currentToken=(new ShareLinkItem(ObjectAppend_(resp, {data:{id:item.getId()}}))).remove();
+							currentToken=new ShareLinkItem(ObjectAppend_(resp, {data:{id:item.getId()}}));
 
 
 
