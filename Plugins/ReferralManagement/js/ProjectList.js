@@ -619,6 +619,13 @@ var ProjectList = (function() {
 
 				module=listModule.getDetailViewAt(0);
 				counter++;
+
+				if(!module){
+
+					return;
+				}
+
+
 				var el = module.getElement();
 				var header = new Element('div', {
 					"class": "table-header",
