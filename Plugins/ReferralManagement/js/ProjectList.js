@@ -545,9 +545,15 @@ var ProjectList = (function() {
 				/**
 				 * TODO remove this timeout, the need for it. or set sortModule to automatically setSortObject
 				 */
-				setTimeout(function() {
+				
+				try{
 					sortModule.getListModule().setSortObject(sortModule);
-				}, 100);
+				}catch(){	
+
+					setTimeout(function() {
+						sortModule.getListModule().setSortObject(sortModule);
+					}, 100);
+				}
 			});
 
 
@@ -566,9 +572,15 @@ var ProjectList = (function() {
 			
 			parentModule.runOnceOnLoad(function() {
 
-				setTimeout(function() {
+				try{
 					filterModule.getListModule().setFilterObject(filterModule);
-				}, 500);
+				}catch(){
+					setTimeout(function() {
+						filterModule.getListModule().setFilterObject(filterModule);
+					}, 500);
+				}
+
+				
 
 			});
 
