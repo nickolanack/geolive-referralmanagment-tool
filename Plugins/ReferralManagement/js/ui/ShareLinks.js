@@ -57,13 +57,14 @@ var ShareLinks = (function() {
 							}));
 
 							link.getElement().appendChild(new Element('button', {
-								"class": "mail",
+								"class": "mail inline-edit",
+								style: "margin-left:10px;",
 								html: "mail",
 								events: {
 									click: function() {
 
 										(new Element('a', {
-											href:"mailto:?subject=Here is a public link to "+item.getName()+"&body="+encodeURIComponent("\n"+resp.link+"\n"),
+											href:"mailto:?subject=Here is a public link to: "+item.getName()+"&body="+encodeURIComponent("\n"+resp.link+"\n"),
 											target:"_blank"
 										})).click();
 
@@ -74,7 +75,8 @@ var ShareLinks = (function() {
 							if (navigator.clipboard.writeText) {
 
 								link.getElement().appendChild(new Element('button', {
-									"class": "copy",
+									"class": "copy inline-edit",
+									style: "margin-left:10px;",
 									html: "copy",
 									events: {
 										click: function() {
@@ -92,7 +94,8 @@ var ShareLinks = (function() {
 							}
 
 							link.getElement().appendChild(new Element('button', {
-								"class": "edit",
+								"class": "edit inline-edit",
+								style: "margin-left:10px;",
 								html: "edit",
 								events: {
 									click: function() {
