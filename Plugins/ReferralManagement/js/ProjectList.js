@@ -577,20 +577,26 @@ var ProjectList = (function() {
 				// }catch(e){
 					setTimeout(function() {
 						filterModule.getListModule().setFilterObject(filterModule);
+
+
+						if (item && item.getLockFilter) {
+							filterModule.lockFilter(item.getLockFilter());
+							filterModule.runOnceOnLoad(function() {
+								setTimeout(function() {
+									filterModule.reset()
+								}, 100);
+							});
+						}
+
+
+
 					}, 500);
 				//}
 
 				
 
-				if (item && item.getLockFilter) {
-					filterModule.lockFilter(item.getLockFilter());
-					filterModule.runOnceOnLoad(function() {
-						setTimeout(function() {
-							filterModule.reset()
-						}, 100);
-					});
-				}
-					
+
+
 
 			});
 
