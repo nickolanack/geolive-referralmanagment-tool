@@ -548,7 +548,7 @@ var ProjectList = (function() {
 				
 				try{
 					sortModule.getListModule().setSortObject(sortModule);
-				}catch(){	
+				}catch(e){	
 
 					setTimeout(function() {
 						sortModule.getListModule().setSortObject(sortModule);
@@ -574,7 +574,7 @@ var ProjectList = (function() {
 
 				try{
 					filterModule.getListModule().setFilterObject(filterModule);
-				}catch(){
+				}catch(e){
 					setTimeout(function() {
 						filterModule.getListModule().setFilterObject(filterModule);
 					}, 500);
