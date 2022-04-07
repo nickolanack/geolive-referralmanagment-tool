@@ -582,16 +582,19 @@ var ProjectList = (function() {
 
 				
 
+				if (item && item.getLockFilter) {
+					filterModule.lockFilter(item.getLockFilter());
+					filterModule.runOnceOnLoad(function() {
+						setTimeout(function() {
+							filterModule.reset()
+						}, 100);
+					});
+				}
+					
+
 			});
 
-			if (item && item.getLockFilter) {
-				filterModule.lockFilter(item.getLockFilter());
-				filterModule.runOnceOnLoad(function() {
-					setTimeout(function() {
-						filterModule.reset()
-					}, 100);
-				});
-			}
+			
 
 		}
 	}
@@ -621,7 +624,6 @@ var ProjectList = (function() {
 				counter++;
 
 				if(!module){
-
 					return;
 				}
 
