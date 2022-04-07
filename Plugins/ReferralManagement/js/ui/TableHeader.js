@@ -1,10 +1,124 @@
-var TableHeader=(function(){
+var TableHeader = (function() {
 
-	var TableHeader=new Class_({
+	var TableHeader = new Class_({
 
-		render:function(listModule){
 
-			var me=this;
+		render: function(listModule) {
+
+			var me = this;
+			this._listModule = listModule;
+
+			listModule.once('remove', function() {
+				me._remove();
+			});
+
+
+			listModule.runOnceOnLoad(function() {
+
+				var module = listModule.getDetailViewAt(0);
+				if (!module) {
+					listModule.once('loadItem', function(module) {
+						me._createHeaderFromContent(module);
+						me._addHeaderBehavior();
+					});
+					return;
+				}
+
+				me._createHeaderFromContent(module.getElement().innerHTML);
+				me._addHeaderBehavior();
+
+
+
+			});
+
+			/**
+				* @deprecated
+				*/
+			//this._render(listModule);
+
+
+		},
+
+		_createHeaderFromContent(module) {
+			this._headerString = module.getElement().innerHTML;
+		},
+
+		_addHeaderBehavior: function() {
+			this._listModule.getElement();
+
+			var header = this._makeHeaderEl();
+
+			if (listEl.firstChild) {
+				listEl.insertBefore(header, listEl.firstChild);
+			} else {
+				listEl.appendChild(header);
+			}
+		},
+
+		_makeHeaderEl: function() {
+			var header = new Element('div', {
+				"class": "table-header",
+				html: this._headerString
+			});
+
+
+			header.firstChild.firstChild.childNodes.forEach(function(colEl) {
+
+				colEl.addClass('sortable');
+
+				var sort = colEl.getAttribute('data-col');
+				if (!ProjectList.HasSortFn(sort)) {
+					colEl.addClass('disabled');
+					return;
+				}
+
+				colEl.addEvent('click', function() {
+
+					var sort = colEl.getAttribute('data-col');
+					var sortModule = listModule.getSortObject();
+
+					if (!sortModule) {
+
+
+						/**
+							* Not going to render this temporary module, but it should still work
+							*/
+
+
+						sortModule = (new ListSortModule(function() {
+							return listModule;
+						}, {
+							sorters: ProjectList.projectSorters()
+						}));
+
+						listModule.setSortObject(sortModule);
+
+
+
+						/**
+							*
+							*/
+
+					}
+
+					sortModule.applySort(sort);
+
+
+
+				});
+			});
+
+
+			return header;
+		},
+
+		_remove: function() {
+
+		},
+
+		_render: function(listModule) {
+
+			var me = this;
 
 			listModule.runOnceOnLoad( /*addEvent('renderModule:once', */ function() {
 				var index = 0;
@@ -16,11 +130,11 @@ var TableHeader=(function(){
 				}
 
 
-				listModule.getSortObject(function(sort){
+				listModule.getSortObject(function(sort) {
 					sort.hide();
 				})
 
-				listModule.getFilterObject(function(filter){
+				listModule.getFilterObject(function(filter) {
 					filter.hide();
 				})
 
@@ -45,117 +159,115 @@ var TableHeader=(function(){
 
 
 
+			var module = listModule.getDetailViewAt(0);
 
+			module.getViewName(function(view) {
 
-		var module=listModule.getDetailViewAt(0);
-
-		module.getViewName(function(view) {
-
-			if (view !== "singleProjectListItemTableDetail") {
-				return;
-			}
-
-			var counter = 0;
-
-			var interval = setInterval(function() {
-
-
-
-				module=listModule.getDetailViewAt(0);
-				counter++;
-
-				if(!module){
+				if (view !== "singleProjectListItemTableDetail") {
 					return;
 				}
 
+				var counter = 0;
 
-				var el = module.getElement();
-				var header = new Element('div', {
-					"class": "table-header",
-					html: el.innerHTML
-				});
+				var interval = setInterval(function() {
 
-				var parentNode = listModule.getElement();
 
-				if (!(parentNode &&el.parentNode===parentNode&& header.firstChild && header.firstChild.firstChild)) {
 
-					if (counter > 15) {
-						console.error('unable to inject header');
-						clearInterval(interval);
-						interval=null;
-					}
+					module = listModule.getDetailViewAt(0);
+					counter++;
 
-					return;
-				}
-				clearInterval(interval);
-				interval=null;
-
-				if (parentNode.firstChild) {
-					parentNode.insertBefore(header, el);//parentNode.firstChild);
-				} else {
-					parentNode.appendChild(header);
-				}
-
-				header.firstChild.firstChild.childNodes.forEach(function(colEl) {
-
-					colEl.addClass('sortable');
-
-					var sort = colEl.getAttribute('data-col');
-					if (!ProjectList.HasSortFn(sort)) {
-						colEl.addClass('disabled');
+					if (!module) {
 						return;
 					}
 
-					colEl.addEvent('click', function() {
 
-						var sort = colEl.getAttribute('data-col');
-						var sortModule = listModule.getSortObject();
+					var el = module.getElement();
+					var header = new Element('div', {
+						"class": "table-header",
+						html: el.innerHTML
+					});
 
-						if (!sortModule) {
+					var parentNode = listModule.getElement();
 
+					if (!(parentNode && el.parentNode === parentNode && header.firstChild && header.firstChild.firstChild)) {
 
-							/**
-							 * Not going to render this temporary module, but it should still work
-							 */
-
-
-							sortModule = (new ListSortModule(function() {
-								return listModule;
-							}, {
-								sorters: ProjectList.projectSorters()
-							}));
-
-							listModule.setSortObject(sortModule);
-
-
-
-							/**
-							 *
-							 */
-
-
-
+						if (counter > 15) {
+							console.error('unable to inject header');
+							clearInterval(interval);
+							interval = null;
 						}
 
-						sortModule.applySort(sort);
+						return;
+					}
+					clearInterval(interval);
+					interval = null;
+
+					if (parentNode.firstChild) {
+						parentNode.insertBefore(header, el); //parentNode.firstChild);
+					} else {
+						parentNode.appendChild(header);
+					}
+
+					header.firstChild.firstChild.childNodes.forEach(function(colEl) {
+
+						colEl.addClass('sortable');
+
+						var sort = colEl.getAttribute('data-col');
+						if (!ProjectList.HasSortFn(sort)) {
+							colEl.addClass('disabled');
+							return;
+						}
+
+						colEl.addEvent('click', function() {
+
+							var sort = colEl.getAttribute('data-col');
+							var sortModule = listModule.getSortObject();
+
+							if (!sortModule) {
+
+
+								/**
+									* Not going to render this temporary module, but it should still work
+									*/
+
+
+								sortModule = (new ListSortModule(function() {
+									return listModule;
+								}, {
+									sorters: ProjectList.projectSorters()
+								}));
+
+								listModule.setSortObject(sortModule);
 
 
 
+								/**
+									*
+									*/
+
+
+
+							}
+
+							sortModule.applySort(sort);
+
+
+
+						});
 					});
+
+
+				}, 200);
+
+				listModule.once('remove', function() {
+					if (interval) {
+						clearInterval(interval);
+						interval = null;
+					}
 				});
 
-
-			}, 200);
-
-			listModule.once('remove',function(){
-				if(interval){
-					clearInterval(interval);
-					interval=null;
-				}
 			});
-
-		});
-	}
+		}
 
 
 
@@ -164,9 +276,6 @@ var TableHeader=(function(){
 
 
 	return TableHeader;
-
-
-
 
 
 
