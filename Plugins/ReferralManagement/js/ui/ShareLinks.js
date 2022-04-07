@@ -127,12 +127,7 @@ var ShareLinks = (function() {
 
 
 			button.runOnceOnLoad(function(){
-				var list=button.getViewer().findChildViews(function(c) {
-   	 				return c instanceof UIListViewModule
-				});
-				if(list.length>0){
-					list=list[0];
-				}
+				
 			})
 
 			return [link, button];
