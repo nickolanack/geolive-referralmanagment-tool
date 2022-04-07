@@ -106,12 +106,13 @@ var ShareLinks = (function() {
 							}));
 
 							link.getElement().appendChild(new Element('button', {
-								"class": "delete inline-edit",
+								"class": "delete inline-edit btn inline-remove",
 								style: "margin-left:10px;",
-								html: "edit",
+								html: "remove",
 								events: {
 									click: function() {
-
+										(new ShareLinkItem(resp)).remove();
+										link.innerHTML = "";
 									}
 								}
 							}));
