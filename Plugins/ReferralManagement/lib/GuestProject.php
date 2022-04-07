@@ -7,7 +7,7 @@ class GuestProject{
 
 
 
-	public function createProjectActivation(){
+	public function createProjectActivation($json){
 
 
 		$clientToken = ($links = GetPlugin('Links'))->createLinkEventCode('onActivateEmailForGuestProposal', array(
