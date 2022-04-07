@@ -3548,7 +3548,7 @@ button.inline-btn.with-no-tasks {
 }
 
 
-.ui-view.priority-high, .ui-view.priority-medium, .ui-view.priority,  {
+.ui-view.priority-high, .ui-view.priority-medium, .ui-view.priority {
     
     &:before{
         width: 4px;
@@ -3558,6 +3558,7 @@ button.inline-btn.with-no-tasks {
         left: -4px;
         content: "";
         top: 0;
+        z-index: 2;
     }
     
     
