@@ -34,6 +34,10 @@ button:focus {outline:0;}
 }
 
 
+.inline-btn.sort.hidden {
+    display: none;
+}
+
 .sticky-top{
     .ui-view.left-panel[data-view="leftPanel"] {
         z-index: 2;
