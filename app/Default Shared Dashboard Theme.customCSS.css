@@ -5031,6 +5031,14 @@ span.navigation-menu.settings-menu {
     text-align: left;
 }
 
+.bubble.info {
+    background-color: cornflowerblue;
+    font-weight: bold;
+    text-align: left;
+    color: black;
+    text-shadow: none;
+}
+
 .bubble .description:after {
     content: "\f00d";
     position: absolute;
