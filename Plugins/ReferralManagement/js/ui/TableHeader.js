@@ -24,7 +24,7 @@ var TableHeader = (function() {
 					return;
 				}
 
-				me._createHeaderFromContent(module.getElement().innerHTML);
+				me._createHeaderFromContent(module);
 				me._addHeaderBehavior();
 
 
