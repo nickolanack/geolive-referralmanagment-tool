@@ -588,6 +588,9 @@ var ProjectList = (function() {
 	var _renderHeader = function(listModule, module) {
 
 
+
+
+
 		var module=listModule.getDetailViewAt(0);
 
 		module.getViewName(function(view) {
@@ -689,6 +692,16 @@ var ProjectList = (function() {
 				console.error('empty project list')
 				return;
 			}
+
+
+			listModule.getSortObject(function(sort){
+				sort.hide();
+			})
+
+			listModule.getFilterObject(function(filter){
+				filter.hide();
+			})
+
 
 			module.runOnceOnLoad(function() {
 				_renderHeader(listModule);
