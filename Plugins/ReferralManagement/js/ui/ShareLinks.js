@@ -7,7 +7,7 @@ var ShareLinkItem = (function() {
 
 			(new AjaxControlQuery(CoreAjaxUrlRoot, 'delete_share_link', {
 				'plugin': "ReferralManagement",
-				'id': this.getId(),
+				'id': item.getId(),
 				'token': this.getToken()
 			})).execute();
 
