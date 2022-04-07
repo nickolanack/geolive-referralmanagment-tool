@@ -54,7 +54,7 @@ var ShareLinks = (function() {
 								style: "color:mediumseagreen;",
 								target: "_blank",
 								href: resp.link,
-								html: resp.link
+								html: resp.link.substring(0,10)+'...'+resp.link.substring(-10)
 							}));
 
 							link.getElement().appendChild(new Element('button', {
