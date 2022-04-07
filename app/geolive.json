@@ -15526,16 +15526,16 @@
                             "shareLink.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 296,
-                            "y": 272
+                            "x": 316,
+                            "y": 292
                         },
                         "children": [
                             "shareLink.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 256,
-                                    "y": 462
+                                    "x": 276,
+                                    "y": 469
                                 }
                             }
                         ],
@@ -15585,14 +15585,6 @@
                                             "config": {
                                                 "name": "My Custom Script",
                                                 "script": "shareLink.metadata.children.1.builderMetadata.positions.content.modules.2.config.script.js",
-                                                "description": "Info about my custom script"
-                                            }
-                                        },
-                                        {
-                                            "type": "WizardScriptElement",
-                                            "config": {
-                                                "name": "My Custom Script",
-                                                "script": "shareLink.metadata.children.1.builderMetadata.positions.content.modules.3.config.script.js",
                                                 "description": "Info about my custom script"
                                             }
                                         }
