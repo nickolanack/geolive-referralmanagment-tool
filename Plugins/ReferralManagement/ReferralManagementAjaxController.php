@@ -718,7 +718,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		$list=GetPlugin('Links')->listDataCodesForItem($json->id, "ReferralManagement.proposal");
 		foreach($list as $token){
 			if($token->token==$json->token){
-				return GetPlugin('Links')->expireToken($token);
+				return GetPlugin('Links')->expireToken($json->token);
 			}
 		}
 
