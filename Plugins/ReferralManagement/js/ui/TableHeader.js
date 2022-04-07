@@ -56,7 +56,8 @@ var TableHeader = (function() {
 		},
 
 		_addHeaderBehavior: function() {
-			this._listModule.getElement();
+			
+			var listEl=this._listModule.getElement();
 
 			var header = this._makeHeaderEl();
 
