@@ -3,7 +3,17 @@ var ShareLinkItem = (function() {
 
 	var ShareLinkItem = new Class_({
 		Extends: MockDataTypeItem,
-		remove: function() {
+		remove: function(callback) {
+
+
+			if(typeof this.getGetData().email=='string'){
+				console.error('Dont delete proponent token');
+				if(callback){
+					callback(false);
+				}
+				return false;
+				
+			}
 
 			(new AjaxControlQuery(CoreAjaxUrlRoot, 'delete_share_link', {
 				'plugin': "ReferralManagement",
