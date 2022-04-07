@@ -572,33 +572,30 @@ var ProjectList = (function() {
 			
 			parentModule.runOnceOnLoad(function() {
 
-				// try{
-				// 	filterModule.getListModule().setFilterObject(filterModule);
-				// }catch(e){
+				try{
+					filterModule.getListModule().setFilterObject(filterModule);
+				}catch(e){
 					setTimeout(function() {
-						filterModule.getListModule().setFilterObject(filterModule);
-
-
-						if (item && item.getLockFilter) {
-							filterModule.lockFilter(item.getLockFilter());
-							filterModule.runOnceOnLoad(function() {
-								setTimeout(function() {
-									filterModule.reset()
-								}, 100);
-							});
-						}
-
-
+						filterModule.getListModule().setFilterObject(filterModule)
 
 					}, 500);
-				//}
+				}
 
-				
-
-
-
+			
+				if (item && item.getLockFilter) {
+					filterModule.lockFilter(item.getLockFilter());
+					filterModule.runOnceOnLoad(function() {
+						setTimeout(function() {
+							console.error('reset filter');
+							//filterModule.reset()
+						}, 100);
+					});
+				}
 
 			});
+
+
+
 
 			
 
