@@ -18,15 +18,15 @@ var TableHeader = (function() {
 				var module = listModule.getDetailViewAt(0);
 				if (!module) {
 					listModule.once('loadItem', function(module) {
-						me._createHeaderFromContent(module, function(){
+						me._createHeaderFromContent(module, function() {
 							me._addHeaderBehavior();
 						});
-						
+
 					});
 					return;
 				}
 
-				me._createHeaderFromContent(module, function(){
+				me._createHeaderFromContent(module, function() {
 					me._addHeaderBehavior();
 				});
 
@@ -34,44 +34,39 @@ var TableHeader = (function() {
 
 			});
 
-			/**
-				* @deprecated
-				*/
-			//this._render(listModule);
-
 
 		},
 
 		_createHeaderFromContent(module, then) {
-			var me=this;
-			module.once('load',function(){
+			var me = this;
+			module.once('load', function() {
 				console.log('loaded: ');
 			})
-			module.once('display',function(){
-				console.log('loaded: '+module.getElement().innerHTML);
+			module.once('display', function() {
+				console.log('loaded: ' + module.getElement().innerHTML);
 				me._headerString = module.getElement().innerHTML;
 				then();
 			})
-			
+
 		},
 
 		_addHeaderBehavior: function() {
 
-			var me=this;
-			this._listModule.on('load', function(){
+			var me = this;
+			this._listModule.on('load', function() {
 
 				me._renderHeader();
 
 			});
 
 			this._renderHeader();
-			
-			
+
+
 		},
 
-		_renderHeader:function(){
+		_renderHeader: function() {
 
-			var listEl=this._listModule.getElement();
+			var listEl = this._listModule.getElement();
 
 			var header = this._makeHeaderEl();
 
@@ -143,162 +138,7 @@ var TableHeader = (function() {
 
 		_remove: function() {
 
-		},
-
-		_render: function(listModule) {
-
-			var me = this;
-
-			listModule.runOnceOnLoad( /*addEvent('renderModule:once', */ function() {
-				var index = 0;
-				var module = listModule.getDetailViewAt(0);
-
-				if (!module) {
-					console.error('empty project list')
-					return;
-				}
-
-
-				listModule.getSortObject(function(sort) {
-					sort.hide();
-				})
-
-				listModule.getFilterObject(function(filter) {
-					filter.hide();
-				})
-
-
-				module.runOnceOnLoad(function() {
-					me._renderHeader(listModule);
-					setTimeout(function() {
-						listModule.addEvent('load', function() {
-							me._renderHeader(listModule);
-						})
-					}, 500);
-
-				});
-
-				//}
-
-				console.log('render project');
-			});
-		},
-
-		__renderHeader: function(listModule, module) {
-
-
-
-			var module = listModule.getDetailViewAt(0);
-
-			module.getViewName(function(view) {
-
-				if (view !== "singleProjectListItemTableDetail") {
-					return;
-				}
-
-				var counter = 0;
-
-				var interval = setInterval(function() {
-
-
-
-					module = listModule.getDetailViewAt(0);
-					counter++;
-
-					if (!module) {
-						return;
-					}
-
-
-					var el = module.getElement();
-					var header = new Element('div', {
-						"class": "table-header",
-						html: el.innerHTML
-					});
-
-					var parentNode = listModule.getElement();
-
-					if (!(parentNode && el.parentNode === parentNode && header.firstChild && header.firstChild.firstChild)) {
-
-						if (counter > 15) {
-							console.error('unable to inject header');
-							clearInterval(interval);
-							interval = null;
-						}
-
-						return;
-					}
-					clearInterval(interval);
-					interval = null;
-
-					if (parentNode.firstChild) {
-						parentNode.insertBefore(header, el); //parentNode.firstChild);
-					} else {
-						parentNode.appendChild(header);
-					}
-
-					header.firstChild.firstChild.childNodes.forEach(function(colEl) {
-
-						colEl.addClass('sortable');
-
-						var sort = colEl.getAttribute('data-col');
-						if (!ProjectList.HasSortFn(sort)) {
-							colEl.addClass('disabled');
-							return;
-						}
-
-						colEl.addEvent('click', function() {
-
-							var sort = colEl.getAttribute('data-col');
-							var sortModule = listModule.getSortObject();
-
-							if (!sortModule) {
-
-
-								/**
-									* Not going to render this temporary module, but it should still work
-									*/
-
-
-								sortModule = (new ListSortModule(function() {
-									return listModule;
-								}, {
-									sorters: ProjectList.projectSorters()
-								}));
-
-								listModule.setSortObject(sortModule);
-
-
-
-								/**
-									*
-									*/
-
-
-
-							}
-
-							sortModule.applySort(sort);
-
-
-
-						});
-					});
-
-
-				}, 200);
-
-				listModule.once('remove', function() {
-					if (interval) {
-						clearInterval(interval);
-						interval = null;
-					}
-				});
-
-			});
 		}
-
-
 
 	});
 
