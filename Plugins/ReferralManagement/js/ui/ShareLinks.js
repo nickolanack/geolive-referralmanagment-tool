@@ -6,13 +6,8 @@ var ShareLinkItem = (function() {
 		remove: function(callback) {
 
 
-			if(typeof this.getData().email=='string'){
-				console.error('Dont delete proponent token');
-				if(callback){
-					callback(false);
-				}
-				return false;
-				
+			if(!this.canRemove()){
+				throw "Can't delete proponent link";
 			}
 
 			(new AjaxControlQuery(CoreAjaxUrlRoot, 'delete_share_link', {
@@ -23,13 +18,11 @@ var ShareLinkItem = (function() {
 
 
 		},
+		isProponentLink:function(){
+			return typeof this.getData().email=='string';
+		},
 		canRemove:function(){
-
-			if(typeof this.getData().email=='string'){
-				return false;
-			}
-			return true;
-
+			return !this.isProponentLink();
 		}
 	});
 
