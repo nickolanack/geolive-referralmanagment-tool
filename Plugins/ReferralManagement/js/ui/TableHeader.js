@@ -40,6 +40,9 @@ var TableHeader = (function() {
 		},
 
 		_createHeaderFromContent(module) {
+			module.runOnceOnLoad(function(){
+				console.log('loaded');
+			})
 			this._headerString = module.getElement().innerHTML;
 		},
 
