@@ -63,8 +63,8 @@ var ShareLinks = (function() {
 									click: function() {
 
 										(new Element('a', {
-											href="mailto:?subject=Here is a public link to "+item.getName()+"&body="+encodeURIComponent("\n"+resp.link+"\n"),
-											target="_blank"
+											href:"mailto:?subject=Here is a public link to "+item.getName()+"&body="+encodeURIComponent("\n"+resp.link+"\n"),
+											target:"_blank"
 										})).click();
 
 									}
@@ -96,7 +96,7 @@ var ShareLinks = (function() {
 								html: "edit",
 								events: {
 									click: function() {
-										
+
 									}
 								}
 							}));
