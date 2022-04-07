@@ -54,7 +54,6 @@ var ShareLinks=(function(){
 
 						link.innerHTML="";
 
-			        	var linkEl=
 
 				        link.getElement().appendChild(new Element('a', {
 				        	style:"color:mediumseagreen;",
