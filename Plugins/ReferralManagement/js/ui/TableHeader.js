@@ -18,14 +18,17 @@ var TableHeader = (function() {
 				var module = listModule.getDetailViewAt(0);
 				if (!module) {
 					listModule.once('loadItem', function(module) {
-						me._createHeaderFromContent(module);
-						me._addHeaderBehavior();
+						me._createHeaderFromContent(module, function(){
+							me._addHeaderBehavior();
+						});
+						
 					});
 					return;
 				}
 
-				me._createHeaderFromContent(module);
-				me._addHeaderBehavior();
+				me._createHeaderFromContent(module, function(){
+					me._addHeaderBehavior();
+				});
 
 
 
@@ -39,14 +42,17 @@ var TableHeader = (function() {
 
 		},
 
-		_createHeaderFromContent(module) {
+		_createHeaderFromContent(module, then) {
+			var me=this;
 			module.once('load',function(){
 				console.log('loaded: ');
 			})
 			module.once('display',function(){
 				console.log('loaded: '+module.getElement().innerHTML);
+				me._headerString = module.getElement().innerHTML;
+				then();
 			})
-			this._headerString = module.getElement().innerHTML;
+			
 		},
 
 		_addHeaderBehavior: function() {
