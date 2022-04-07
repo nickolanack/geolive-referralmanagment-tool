@@ -1,1 +1,1 @@
-return "Created "+moment(item.getData().created).fromNow()
+return " Created "+moment(item.getData().created).fromNow()
