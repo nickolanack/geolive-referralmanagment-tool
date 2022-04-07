@@ -96,7 +96,7 @@ class Task{
 
 	public function updateFromJson($json) {
 
-		$taskId = (int) $json->id;
+		$taskId =  intval($json->id);
 			
 		GetPlugin('Tasks')->updateTask($taskId, array(
 			"name" => $json->name,
