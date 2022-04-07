@@ -22,6 +22,14 @@ var ShareLinkItem = (function() {
 			})).execute();
 
 
+		},
+		canRemove:function(){
+
+			if(typeof this.getGetData().email=='string'){
+				return false;
+			}
+			return true;
+
 		}
 	});
 
