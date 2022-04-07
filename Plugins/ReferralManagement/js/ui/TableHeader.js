@@ -13,6 +13,15 @@ var TableHeader = (function() {
 			});
 
 
+			listModule.getSortObject(function(sort){
+				sort.hide();
+			});
+
+			listModule.getFilterObject(function(filter){
+				filter.hide();
+			});
+
+
 			listModule.runOnceOnLoad(function() {
 
 				var module = listModule.getDetailViewAt(0);
