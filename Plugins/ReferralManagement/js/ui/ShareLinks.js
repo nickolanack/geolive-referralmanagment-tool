@@ -2,7 +2,16 @@ var ShareLinkItem=(function(){
 
 
 	var ShareLinkItem = new Class_({
-		Extends:MockDataTypeItem
+		Extends:MockDataTypeItem,
+		remove:function(){
+
+			(new AjaxControlQuery(CoreAjaxUrlRoot, 'delete_share_link', {
+				'plugin': "ReferralManagement",
+				'id':item.getId()
+			}))
+
+
+		}
 	});
 
 	return ShareLinkItem;
