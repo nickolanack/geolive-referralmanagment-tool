@@ -40,7 +40,7 @@ var TableHeader = (function() {
 		},
 
 		_createHeaderFromContent(module) {
-			module.runOnceOnLoad(function(){
+			module.once('display',function(){
 				console.log('loaded');
 			})
 			this._headerString = module.getElement().innerHTML;
