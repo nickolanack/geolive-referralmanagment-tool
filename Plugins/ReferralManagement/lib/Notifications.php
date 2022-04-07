@@ -525,7 +525,7 @@ class Notifications {
 	}
 
 	private function queueEmailTaskUpdate($taskId, $data = array()) {
-		(new \ReferralManagement\EmailNotifications())->queueEmailTaskUpdate($projectId, $data);
+		(new \ReferralManagement\EmailNotifications())->queueEmailTaskUpdate($taskId, $data);
 	}
 
 }
