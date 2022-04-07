@@ -587,7 +587,7 @@ var ProjectList = (function() {
 					filterModule.runOnceOnLoad(function() {
 						setTimeout(function() {
 							console.error('reset filter');
-							//filterModule.reset()
+							filterModule.reset()
 						}, 100);
 					});
 				}
