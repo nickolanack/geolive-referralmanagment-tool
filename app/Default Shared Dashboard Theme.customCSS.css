@@ -824,7 +824,7 @@ button.inline-edit, .btn.inline-edit, .btn.inline-remove, .section-toggle{
 
 .ui-view[data-view="singleMapTitleBarView"] {
     background: rgba(0,0,0,0.1);
-    height: 58px;
+    padding-bottom: 10px;
 
 
     [data-col="created"] {
