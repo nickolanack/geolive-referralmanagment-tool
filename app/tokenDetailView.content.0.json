@@ -6,6 +6,6 @@
         "className": "share-link",
         "fieldLabelScript": "return \"Share Link\";",
         "fieldValueScript": "return item.getToken().substring(0,5)+'*****';",
-        "formatElementScript": "if(item.isProponentLink()){\n    new UIPopover(el.appendChild(new Element('span',{\n        \"class\":\"guest-submitter\"\n    })),{\n        description:\"guest submitter access: \"+item.getData().email  \n    })\n    \n    \n}"
+        "formatElementScript": "if(item.isProponentLink()){\n    new UIPopover(el.appendChild(new Element('span',{\n        \"class\":\"guest-submitter\"\n    })),{\n        description:\"guest submitter access: \"+item.getData().email ,\n        anchor:UIPopover.AnchorAuto()\n    })\n    \n    \n}"
     }
 }
