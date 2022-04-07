@@ -36,11 +36,17 @@ var ShareLinks = (function() {
 
 
 
+			var currentToken;
+
+
 			var button = new ElementModule('button', {
 				"class": "form-btn primary-btn share",
 				'html': "Create share link",
 				events: {
 					click: function() {
+
+
+
 
 						(new AjaxControlQuery(CoreAjaxUrlRoot, 'generate_share_link', {
 							'plugin': "ReferralManagement",
@@ -48,6 +54,13 @@ var ShareLinks = (function() {
 						})).addEvent('success', function(resp) {
 
 							link.getElement().innerHTML = "";
+
+							if(currentToken){
+								item.fireEvent('addToken', [currentToken]); //trigger list render
+							}
+
+							currentToken=(new ShareLinkItem(ObjectAppend_(resp, {data:{id:item.getId()}}))).remove();
+
 
 
 							link.getElement().appendChild(new Element('a', {
@@ -111,7 +124,8 @@ var ShareLinks = (function() {
 								html: "remove",
 								events: {
 									click: function() {
-										(new ShareLinkItem(ObjectAppend_(resp, {data:{id:item.getId()}}))).remove();
+										currentToken.remove();
+										currentToken=null;
 										link.getElement().innerHTML = "";
 									}
 								}
