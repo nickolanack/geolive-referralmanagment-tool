@@ -30,6 +30,7 @@ var ShareLinks = (function() {
 
 
 			var link = new ElementModule('p', {
+				"class":"share-links"
 				//html:'<a id="theShareLink" style="color:mediumseagreen;" target="_blank" href=""></a>'
 			});
 
