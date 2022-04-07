@@ -586,7 +586,7 @@ var ProjectList = (function() {
 					filterModule.lockFilter(item.getLockFilter());
 					filterModule.runOnceOnLoad(function() {
 						setTimeout(function() {
-							console.error('reset filter');
+							console.error('Call to reset filter module after list loaded, this will likely cause a double load appearance on the list');
 							filterModule.reset()
 						}, 100);
 					});
