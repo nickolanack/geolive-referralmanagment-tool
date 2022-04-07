@@ -697,12 +697,12 @@ var ProjectList = (function() {
 
 			}, 200);
 
-			listModule.once(remove){
+			listModule.once('remove',function(){
 				if(interval){
 					clearInterval(interval);
 					interval=null;
 				}
-			}
+			});
 
 		});
 	}
