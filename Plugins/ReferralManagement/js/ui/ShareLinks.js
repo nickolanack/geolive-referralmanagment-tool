@@ -38,13 +38,7 @@ var ShareLinks=(function(){
 	        });
 
 
-	        var linkEl=new Element('a', {
-	        	style:"color:mediumseagreen;",
-	        	target:"_blank",
-	        	href:""
-	        });
-
-	        link.getElement().appendChild(linkEl);
+	        
 
 
 
@@ -57,6 +51,39 @@ var ShareLinks=(function(){
 						'plugin': "ReferralManagement",
 						'id':item.getId()
 					})).addEvent('success', function(resp){
+
+						link.innerHTML="";
+
+			        	var linkEl=new Element('a', {
+				        	style:"color:mediumseagreen;",
+				        	target:"_blank",
+				        	href:resp.link,
+				        	html:resp.link;
+				        });
+
+				        link.getElement().appendChild(linkEl);
+				        link.getElement().appendChild(new Element('button', {
+				        	"class":"mail",
+				        	html:"mail",
+				        	events:{click:function(){
+
+				        	}}
+				        }))
+				        link.getElement().appendChild(new Element('button', {
+				        	"class":"copy",
+				        	html:"copy",
+				        	events:{click:function(){
+
+				        	}}
+				        }))
+				        link.getElement().appendChild(new Element('button', {
+				        	"class":"edit",
+				        	html:"edit",
+				        	events:{click:function(){
+
+				        	}}
+				        }))
+
 					    
 					    linkEl.href=resp.link;
 					    linkEl.innerHTML=resp.link;
