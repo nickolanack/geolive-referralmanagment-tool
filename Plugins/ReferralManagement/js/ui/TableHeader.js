@@ -40,8 +40,11 @@ var TableHeader = (function() {
 		},
 
 		_createHeaderFromContent(module) {
+			module.once('load',function(){
+				console.log('loaded: ');
+			})
 			module.once('display',function(){
-				console.log('loaded');
+				console.log('loaded: '+module.getElement().innerHTML);
 			})
 			this._headerString = module.getElement().innerHTML;
 		},
