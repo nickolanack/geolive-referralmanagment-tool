@@ -6,6 +6,6 @@
         "className": "share-link",
         "fieldLabelScript": "return \"Share Link\";",
         "fieldValueScript": "return item.getToken().substring(0,5)+'*****';",
-        "formatElementScript": ""
+        "formatElementScript": "if(item.isProponentLink()){\n    el.addClass('guest-submitter');\n    \n}"
     }
 }
