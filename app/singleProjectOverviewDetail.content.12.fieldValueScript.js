@@ -1,1 +1,8 @@
-return ReferralManagementDashboard.getCreatedByString(item);
+var enabled= DashboardConfig.getValue('enableProposals');
+    
+    if(!enabled){
+        return '';
+    }
+
+
+return ReferralManagementDashboard.getDatesString(item);
