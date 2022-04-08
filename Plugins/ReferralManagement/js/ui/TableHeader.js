@@ -3,6 +3,14 @@ var TableHeader = (function() {
 	var TableHeader = new Class_({
 
 
+		labelForCol:function(col){
+			if(col=="user"){
+				return "submitter";
+			}
+			return col;
+		},
+
+
 		render: function(listModule) {
 
 			var me = this;
@@ -104,7 +112,7 @@ var TableHeader = (function() {
 
 
 				var sort = colEl.getAttribute('data-col');
-				colEl.setAttribute('data-label', sort);
+				colEl.setAttribute('data-label', me.labelForCol(sort));
 
 				if(me._sort==sort){
 					colEl.addClass('active');
