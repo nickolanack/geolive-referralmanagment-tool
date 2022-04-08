@@ -7288,14 +7288,14 @@
                                 }
                             },
                             {
-                                "type": "FieldValue",
+                                "type": "InlineHtml",
                                 "config": {
-                                    "loadAsync": false,
-                                    "identifier": "",
-                                    "className": "",
-                                    "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return item.getName();",
-                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.8.config.formatElementScript.js"
+                                    "className": "section-title",
+                                    "text": "Description",
+                                    "template": "",
+                                    "templateVariablesScript": "",
+                                    "formatTextScript": "",
+                                    "ajaxRequestTemplate": false
                                 }
                             },
                             {
@@ -7305,7 +7305,7 @@
                                     "identifier": "",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return item.getCompanyName();",
+                                    "fieldValueScript": "return item.getName();",
                                     "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.9.config.formatElementScript.js"
                                 }
                             },
@@ -7316,19 +7316,19 @@
                                     "identifier": "",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.fieldValueScript.js",
+                                    "fieldValueScript": "return item.getCompanyName();",
                                     "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.formatElementScript.js"
                                 }
                             },
                             {
-                                "type": "InlineHtml",
+                                "type": "FieldValue",
                                 "config": {
-                                    "className": "section-title",
-                                    "text": "Description",
-                                    "template": "",
-                                    "templateVariablesScript": "",
-                                    "formatTextScript": "",
-                                    "ajaxRequestTemplate": false
+                                    "loadAsync": false,
+                                    "identifier": "",
+                                    "className": "",
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.11.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.11.config.formatElementScript.js"
                                 }
                             },
                             {
