@@ -997,11 +997,14 @@ button.primary-btn.nav-new-btn{
     padding:0;
     margin-top :50px;
 
-    &:before{
+    &:after{
         content:"+";
         float:none;
+        font-size: 26px;
     }
     font-size:0;
+    
+    
 }
 
 
