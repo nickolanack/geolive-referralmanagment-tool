@@ -102,7 +102,17 @@ var TableHeader = (function() {
 
 				colEl.addClass('sortable');
 
+
 				var sort = colEl.getAttribute('data-col');
+
+				if(me._sort==sort){
+					colEl.addClass('active');
+					if(me._sortInv){
+						colEl.addClass('asc');
+					}
+				}
+
+
 				if (!ProjectList.HasSortFn(sort)) {
 					colEl.addClass('disabled');
 					return;
@@ -110,7 +120,8 @@ var TableHeader = (function() {
 
 				colEl.addEvent('click', function() {
 
-					var sort = colEl.getAttribute('data-col');
+
+
 					var sortModule = me._listModule.getSortObject();
 
 					if (!sortModule) {
@@ -138,6 +149,14 @@ var TableHeader = (function() {
 					}
 
 					sortModule.applySort(sort);
+					if(me._sort==sort){
+						me._sortInv=!me._sortInv;
+					}else{
+						me._sortInv=false;
+					}
+					me._sort=sort;
+
+
 
 
 
