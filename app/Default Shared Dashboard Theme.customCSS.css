@@ -530,6 +530,30 @@ div.field-value-module.inline.ids{
         min-height: unset;
         padding-left: 10px;
     }
+    
+    
+    
+    
+    span.post-user, .field-value-module.timestamp {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+
+    .FormattedTextModule p {
+        margin: 5px 0;
+        
+    }
+
+    [data-identifier="post-buttons"] {
+        position: absolute;
+        bottom: 30px;
+        right: 50px;
+        
+    }
+    
+    
+    
 }
 
 [data-view="singleProjectOverviewDetail"] [data-view="projectsListDetail"] .projects-list .ui-view:last-child {
@@ -3573,7 +3597,7 @@ button.inline-btn.with-no-tasks {
 }
 
 
-.ui-view.priority-high, .ui-view.priority-medium, .ui-view.priority {
+.ui-view.priority-high, .ui-view.priority-medium, .ui-view.priority-low, .ui-view.priority {
     
     &:before{
         width: 4px;
@@ -3596,8 +3620,12 @@ button.inline-btn.with-no-tasks {
 
 
 
-.ui-view.priority-medium:before{
-    background-color: mediumaquamarine;
+
+.ui-view.priority-medium:before {
+    background-color: khaki;
+}
+.ui-view.priority-low:before {
+    background-color: aquamarine;
 }
 
 
