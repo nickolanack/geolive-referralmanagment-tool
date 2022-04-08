@@ -225,7 +225,7 @@ var Project = (function() {
 		
 		getName: function() {
 			var me = this;
-			return me.data.attributes.title;
+			return me.data.attributes.title||"";
 		},
 
 		getDescription() {
@@ -367,7 +367,7 @@ var Project = (function() {
 
 		getProjectUsername: function() {
 			var me = this;
-			return me.data.userdetails.name;
+			return me.data.userdetails.name||(this.hasGuestSubmitter()?this.getProjectSubmitter():"");
 		},
 
 		hasGuestSubmitter:function(){

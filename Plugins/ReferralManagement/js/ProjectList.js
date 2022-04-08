@@ -333,6 +333,13 @@ var ProjectList = (function() {
 	};
 	ProjectList.projectSorters = function() {
 
+
+
+		var lowerLocalCompare=function(a,b){
+			return (a||"").toLowerCase().localeCompare((b||"").toLowerCase());
+		}
+
+
 		return [{
 			label: "priority",
 			sortFn: function(a, b) {
@@ -341,12 +348,12 @@ var ProjectList = (function() {
 		}, {
 			label: "name",
 			sortFn: function(a, b) {
-				return a.getName().toLowerCase().localeCompare(b.getName().toLowerCase());
+				return lowerLocalCompare(a.getName(), b.getName())
 			}
 		}, {
 			label: "client",
 			sortFn: function(a, b) {
-				return a.getCompanyName().toLowerCase().localeCompare(b.getCompanyName().toLowerCase());
+				return  lowerLocalCompare(a.getCompanyName(), b.getCompanyName());
 			}
 		}, {
 			label: "deadline",
@@ -366,7 +373,7 @@ var ProjectList = (function() {
 		}, {
 			label: "user",
 			sortFn: function(a, b) {
-				return  a.getProjectUsername().toLowerCase().localeCompare(b.getProjectUsername().toLowerCase());
+				return  lowerLocalCompare(a.getProjectUsername(), b.getProjectUsername());
 			}
 		}, {
 			label: "date",
@@ -376,7 +383,7 @@ var ProjectList = (function() {
 		}, {
 			label: "type",
 			sortFn: function(a, b) {
-				return a.getProjectType().toLowerCase().localeCompare(b.getProjectType().toLowerCase());
+				return lowerLocalCompare(a.getProjectType(), b.getProjectType());
 			}
 		}];
 
