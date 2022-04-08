@@ -1173,29 +1173,6 @@ button.primary-btn.nav-new-btn.view-selection:before{
 
 
 
-.table-header .field-value-module:before {
-    content: "\f0dc";
-    font-family: 'FontAwesome';
-    margin-right: 5px;
-    color:gray;
-}
-
-.table-header .field-value-module.active:before {
-    content: "\f0dd";
-    color:cornflowerblue;
-}
-.table-header .field-value-module.active.asc:before {
-    content: "\f0de";
-}
-
-.field-value-module.inline.sortable {
-    background-color: rgba(0,0,0,0.04);
-    margin: 0px;
-    display: inline-block;
-    padding: 5px;
-    box-sizing: border-box;
-    border-radius: 6px;
-}
 
 
 
