@@ -7288,6 +7288,17 @@
                                 }
                             },
                             {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "identifier": "pros-dates-community",
+                                    "className": "",
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.8.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.8.config.formatElementScript.js"
+                                }
+                            },
+                            {
                                 "type": "InlineHtml",
                                 "config": {
                                     "className": "section-title",
@@ -7306,17 +7317,6 @@
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getName();",
-                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.9.config.formatElementScript.js"
-                                }
-                            },
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "identifier": "",
-                                    "className": "",
-                                    "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return item.getCompanyName();",
                                     "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.formatElementScript.js"
                                 }
                             },
@@ -7327,14 +7327,25 @@
                                     "identifier": "",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.11.config.fieldValueScript.js",
+                                    "fieldValueScript": "return item.getCompanyName();",
                                     "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.11.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "identifier": "",
+                                    "className": "",
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.12.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.12.config.formatElementScript.js"
                                 }
                             },
                             {
                                 "type": "FormattedText",
                                 "config": {
-                                    "textValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.12.config.textValueScript.js",
+                                    "textValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.13.config.textValueScript.js",
                                     "formatModuleScript": "",
                                     "className": "project-description",
                                     "imageWidth": 300,
@@ -7356,17 +7367,6 @@
                                     "embedPortrait": true,
                                     "preferLocalContent": true,
                                     "portraitClip": true
-                                }
-                            },
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "identifier": "pros-dates-community",
-                                    "className": "",
-                                    "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.13.config.fieldValueScript.js",
-                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.13.config.formatElementScript.js"
                                 }
                             },
                             {
