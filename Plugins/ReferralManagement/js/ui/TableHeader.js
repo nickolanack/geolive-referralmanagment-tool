@@ -104,6 +104,7 @@ var TableHeader = (function() {
 
 
 				var sort = colEl.getAttribute('data-col');
+				colEl.setAttribute('data-label', sort);
 
 				if(me._sort==sort){
 					colEl.addClass('active');
