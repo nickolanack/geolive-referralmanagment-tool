@@ -7243,11 +7243,14 @@
                                 }
                             },
                             {
-                                "type": "WizardScriptElement",
+                                "type": "FieldValue",
                                 "config": {
-                                    "name": "My Custom Script",
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.5.config.script.js",
-                                    "description": "Info about my custom script"
+                                    "loadAsync": false,
+                                    "identifier": "project-response-date",
+                                    "className": "item-title project-title item-response-date",
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.5.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.5.config.formatElementScript.js"
                                 }
                             },
                             {

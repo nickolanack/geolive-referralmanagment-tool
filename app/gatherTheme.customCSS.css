@@ -29,6 +29,15 @@ $buttonTextColor:black;
 $leftPanelColor:#222222;
 
 
+
+.field-value-module.item-title.item-response-date {
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 30px;
+    text-align: right;
+}
+
+
 .form-list [data-view="singleTaskListItemDetail"] {
     display: inline-block;
     width: calc( 100% - 75px );
