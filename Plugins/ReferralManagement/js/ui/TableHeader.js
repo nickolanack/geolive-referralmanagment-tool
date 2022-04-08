@@ -4,6 +4,11 @@ var TableHeader = (function() {
 
 
 		labelForCol:function(col){
+
+			if((!col){
+				return "";
+			}
+
 			if(col=="user"){
 				return "submitter";
 			}
