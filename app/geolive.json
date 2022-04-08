@@ -7248,8 +7248,8 @@
                                     "loadAsync": false,
                                     "identifier": "project-response-date",
                                     "className": "item-title project-title",
-                                    "fieldLabelScript": "singleProjectOverviewDetail.metadata.positions.content.modules.5.config.fieldLabelScript.js",
-                                    "fieldValueScript": "return item.getDeadlineDate()",
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.5.config.fieldValueScript.js",
                                     "formatElementScript": ""
                                 }
                             },

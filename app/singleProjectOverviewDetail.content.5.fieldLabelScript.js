@@ -1,1 +1,0 @@
-return "Requested Response Date";
