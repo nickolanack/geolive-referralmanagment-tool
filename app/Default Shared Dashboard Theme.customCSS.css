@@ -5089,6 +5089,11 @@ span.navigation-menu.settings-menu {
     margin: 10px;
 }
 
+
+.table-header div.field-value-module.inline{
+    overflow:visible;
+}
+
 .table-header .field-value-module:before {
     content: "\f0dc";
     font-family: 'FontAwesome';
