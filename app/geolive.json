@@ -25196,9 +25196,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
-            "saveTemplateAsData": false,
-            "contentTemplate": "Description"
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "Description",
+            "readAccess": "public"
         }
     },
     "widget.443": {
