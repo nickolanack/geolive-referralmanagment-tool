@@ -7247,7 +7247,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "project-response-date",
-                                    "className": "item-title project-title",
+                                    "className": "item-title project-title item-response-date",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.5.config.fieldValueScript.js",
                                     "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.5.config.formatElementScript.js"
