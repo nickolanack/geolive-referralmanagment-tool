@@ -5114,6 +5114,10 @@ span.navigation-menu.settings-menu {
 }
 
 
+.with-guest-submitter [data-col="user"] span.field-value {
+    color: coral;
+}
+
 
 .field-value-module.inline.sortable {
     background-color: rgba(0,0,0,0.04);
