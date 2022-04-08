@@ -5,7 +5,7 @@ var TableHeader = (function() {
 
 		labelForCol:function(col){
 
-			if((!col){
+			if(!col){
 				return "";
 			}
 
