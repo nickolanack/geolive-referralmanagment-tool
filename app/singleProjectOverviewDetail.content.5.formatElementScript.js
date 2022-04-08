@@ -3,4 +3,4 @@ el.setStyles({
     "width": "100%;",
     "box-sizing":" border-box;",
     "padding-right": "30px;",
-})
+});
