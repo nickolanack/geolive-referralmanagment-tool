@@ -4389,8 +4389,21 @@ img.static-map {
     }
 
 }
+.dark .panel-toggle{
+    &:before {
+        background-color: #030310;
+        border: 1px #efa82c45;
+        border-style: dashed;
+        border-right: none;
+    }
+    &.closed:before {
+        background-color: #222222;
+        border: 1px #efa82c45;
+        border-style: dashed;
+        border-left: none;
+    }
 
-
+}
 
 
 
