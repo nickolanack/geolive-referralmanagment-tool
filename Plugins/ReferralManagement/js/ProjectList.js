@@ -341,12 +341,12 @@ var ProjectList = (function() {
 		}, {
 			label: "name",
 			sortFn: function(a, b) {
-				return (a.getName() > b.getName() ? 1 : -1);
+				return a.getName().toLowerCase().localeCompare(b.getName().toLowerCase());
 			}
 		}, {
 			label: "client",
 			sortFn: function(a, b) {
-				return (a.getCompanyName() > b.getCompanyName() ? 1 : -1);
+				return a.getCompanyName().toLowerCase().localeCompare(b.getCompanyName().toLowerCase());
 			}
 		}, {
 			label: "deadline",
@@ -366,7 +366,7 @@ var ProjectList = (function() {
 		}, {
 			label: "user",
 			sortFn: function(a, b) {
-				return (a.getProjectUsername() > b.getProjectUsername() ? 1 : -1);
+				return  a.getProjectUsername().toLowerCase().localeCompare(b.getProjectUsername().toLowerCase());
 			}
 		}, {
 			label: "date",
@@ -376,7 +376,7 @@ var ProjectList = (function() {
 		}, {
 			label: "type",
 			sortFn: function(a, b) {
-				return (a.getProjectType() > b.getProjectType() ? 1 : -1);
+				return a.getProjectType().toLowerCase().localeCompare(b.getProjectType().toLowerCase());
 			}
 		}];
 
