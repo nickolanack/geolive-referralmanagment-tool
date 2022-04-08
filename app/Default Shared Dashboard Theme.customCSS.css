@@ -5085,7 +5085,7 @@ span.navigation-menu.settings-menu {
     display: none;
 }
 .table-header .field-value-module:after {
-    content: attr(data-col);
+    content: attr(data-label);
 }
 
 .table-header {
