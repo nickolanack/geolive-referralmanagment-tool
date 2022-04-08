@@ -4334,39 +4334,54 @@ img.static-map {
 
 }
 
+.panel-toggle{
+
+    &:before {
+        position: absolute;
+        height: 40px;
+        width: 23px;
+        background-color: white;
+        content:"";
+        box-shadow: none;
+        border-radius: 5px  0 0 5px;
+        left: 7px;
+        top: 11px;
+        border-right: none;
+        box-shadow: 0 0 3px rgba(0,0,0,0.6);
+    }
+    
+    &:after {
+        content: "";
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        border-right: 10px solid #ceb250;
+        position: absolute;
+        top: 24px;
+        left: 14px;
+    }
+    
+    
+    &.closed:before {
+        left: 38px;
+        border-radius: 0 5px 5px 0;
+    }
+    
+    
+    &.closed:after {
+        width: 0;
+        height: 0;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        border-left: 10px solid #ceb250;
+        border-right: none;
+        left: 46px;
+    }
+
+}
 
 
 
-.panel-toggle {
-    position: absolute;
-    right: 0;
-    top: 0;
-    cursor: pointer;
-    padding: 15px;
-    z-index: 1;
-}
-.panel-toggle.closed {
-    right: 8px;
-}
-.panel-toggle.closed:after {
-    width: 0;
-    height: 0;
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    border-left: 10px solid #ceb250;
-    border-right: none;
-    left: 25px;
-}
 
-.panel-toggle:after {
-    content: "";
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    border-right: 10px solid #ceb250;
-    position: absolute;
-    top: 7px;
-    left: 11px;
-}
 
 
 
