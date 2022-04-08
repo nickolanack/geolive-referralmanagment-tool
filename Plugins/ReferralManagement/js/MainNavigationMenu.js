@@ -56,6 +56,11 @@ var MainNavigationMenuBase = new Class({
 			initialView: {
 				view: "Dashboard",
 				section: "Main"
+			},
+			formatEl:function(li, button){
+
+				SidePanelToggle.createPopover(li, button.html||button.name);
+
 			}
 		});
 
