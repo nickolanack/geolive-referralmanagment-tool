@@ -5109,6 +5109,12 @@ span.navigation-menu.settings-menu {
     content: "\f0de";
 }
 
+.table-header .field-value-module.sortable.disabled:before{
+    display:none;
+}
+
+
+
 .field-value-module.inline.sortable {
     background-color: rgba(0,0,0,0.04);
     margin: 0px;
