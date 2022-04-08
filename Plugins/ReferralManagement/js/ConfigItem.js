@@ -98,7 +98,7 @@ var ConfigItem = (function() {
             userAuth: false
         }, options);
 
-        return new Element('button', {
+        var btn = new Element('button', {
 
             html: "edit",
             'class': 'inline-edit',
@@ -164,7 +164,15 @@ var ConfigItem = (function() {
                 }
             }
 
-        })
+        });
+
+        new UIPopover(btn,{
+            description:item.getEditLabel(),
+            anchor:UIPopover.AnchorAuto()
+        });
+
+
+        return btn;
     }
 
 
