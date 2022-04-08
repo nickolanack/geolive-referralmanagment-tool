@@ -22,7 +22,7 @@ var UILeftPanel = (function() {
 				
 
 
-				buttons.push(new Element("button", {
+				buttons.push(SidePanelToggle.createPopover(new Element("button", {
 					"html": label,
 					"style": "",
 					"class": "primary-btn nav-new-btn btn-index-"+buttons.length,
@@ -44,7 +44,7 @@ var UILeftPanel = (function() {
 
 						}
 					}
-				}));
+				}), label));
 
 			});
 
@@ -63,7 +63,7 @@ var UILeftPanel = (function() {
 
 
 
-					buttons.push(new Element("button", {
+					buttons.push(SidePanelToggle.createPopover(new Element("button", {
 						"html": label,
 						"style": "",
 						"class": "primary-btn nav-new-btn btn-index-"+buttons.length,
@@ -85,7 +85,7 @@ var UILeftPanel = (function() {
 
 							}
 						}
-					}));
+					}),label));
 
 
 

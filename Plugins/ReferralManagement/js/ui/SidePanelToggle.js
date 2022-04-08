@@ -79,6 +79,8 @@ var SidePanelToggle=(function(){
 				popover.disable();
 			}
 
+			return el;
+
 		}
 
 
