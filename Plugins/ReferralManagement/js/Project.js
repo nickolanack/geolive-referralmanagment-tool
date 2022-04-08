@@ -314,7 +314,7 @@ var Project = (function() {
 
 		getSubmitDate: function() {
 			var me = this;
-			return me.data.attributes.submissionDate;
+			return me.data.attributes.submissionDate||this.getCreationDate();
 		},
 
 		getDeadlineDate: function() {
