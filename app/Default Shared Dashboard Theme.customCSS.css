@@ -3597,7 +3597,7 @@ button.inline-btn.with-no-tasks {
 }
 
 
-.ui-view.priority-high, .ui-view.priority-medium, .ui-view.priority-low .ui-view.priority {
+.ui-view.priority-high, .ui-view.priority-medium, .ui-view.priority-low, .ui-view.priority {
     
     &:before{
         width: 4px;
