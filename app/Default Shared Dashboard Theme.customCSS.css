@@ -4337,14 +4337,16 @@ img.static-map {
 .panel-toggle{
     
     position: absolute;
-        right: 0;
-        top: 0;
-        cursor: pointer;
-        padding: 15px;
-        z-index: 1;
+    right: 0;
+    top: 0px;
+    cursor: pointer;
+    padding: 15px;
+    z-index: 1;
+    height: 30px;
+    overflow: hidden;
     
     &.closed {
-        right: 8px;
+        right: -30px;
     }
 
     &:before {
@@ -4356,7 +4358,7 @@ img.static-map {
         box-shadow: none;
         border-radius: 5px  0 0 5px;
         left: 7px;
-        top: 11px;
+        top: 10px;
         border-right: none;
         box-shadow: 0 0 3px rgba(0,0,0,0.6);
     }
@@ -4373,7 +4375,7 @@ img.static-map {
     
     
     &.closed:before {
-        left: 38px;
+        left: 0px;
         border-radius: 0 5px 5px 0;
     }
     
@@ -4385,7 +4387,7 @@ img.static-map {
         border-bottom: 7px solid transparent;
         border-left: 10px solid #ceb250;
         border-right: none;
-        left: 46px;
+        left: 7px;
     }
 
 }
