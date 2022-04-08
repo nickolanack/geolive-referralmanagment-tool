@@ -89,8 +89,8 @@ var GatherDashboard = (function() {
 		getDatesString: function(item) {
 
 			var dates = {
-				"submit": item.getSubmitDate(),
-				"expires": item.getExpiryDate(),
+				"submitted": item.getSubmitDate(),
+				"expires on": item.getExpiryDate()||'--',
 				//"deadline": item.getDeadlineDate()
 			};
 
