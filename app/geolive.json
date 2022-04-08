@@ -25211,9 +25211,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
-            "saveTemplateAsData": false,
-            "contentTemplate": "Notes"
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "Notes",
+            "readAccess": "public"
         }
     }
 }
