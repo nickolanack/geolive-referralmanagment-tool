@@ -997,11 +997,14 @@ button.primary-btn.nav-new-btn{
     padding:0;
     margin-top :50px;
 
-    &:before{
+    &:after{
         content:"+";
         float:none;
+        font-size: 26px;
     }
     font-size:0;
+    
+    
 }
 
 
@@ -5082,7 +5085,7 @@ span.navigation-menu.settings-menu {
     display: none;
 }
 .table-header .field-value-module:after {
-    content: attr(data-col);
+    content: attr(data-label);
 }
 
 .table-header {
@@ -5113,6 +5116,10 @@ span.navigation-menu.settings-menu {
     display:none;
 }
 
+
+.with-guest-submitter [data-col="user"] span.field-value {
+    color: coral;
+}
 
 
 .field-value-module.inline.sortable {
