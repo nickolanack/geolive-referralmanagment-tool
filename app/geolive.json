@@ -7200,10 +7200,10 @@
                                 "config": {
                                     "className": "section-title",
                                     "text": "Status",
-                                    "template": "",
+                                    "template": "html.projectStatus",
                                     "templateVariablesScript": "",
-                                    "formatTextScript": "",
-                                    "ajaxRequestTemplate": false
+                                    "formatTextScript": "singleProjectOverviewDetail.metadata.positions.content.modules.1.config.formatTextScript.js",
+                                    "ajaxRequestTemplate": true
                                 }
                             },
                             {
@@ -7314,10 +7314,10 @@
                                 "config": {
                                     "className": "section-title",
                                     "text": "Description",
-                                    "template": "",
+                                    "template": "html.projectDescription",
                                     "templateVariablesScript": "",
-                                    "formatTextScript": "",
-                                    "ajaxRequestTemplate": false
+                                    "formatTextScript": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.formatTextScript.js",
+                                    "ajaxRequestTemplate": true
                                 }
                             },
                             {
@@ -7385,10 +7385,10 @@
                                 "config": {
                                     "className": "section-title",
                                     "text": "Notes",
-                                    "template": "",
+                                    "template": "html.projectNotes",
                                     "templateVariablesScript": "",
-                                    "formatTextScript": "",
-                                    "ajaxRequestTemplate": false
+                                    "formatTextScript": "singleProjectOverviewDetail.metadata.positions.content.modules.15.config.formatTextScript.js",
+                                    "ajaxRequestTemplate": true
                                 }
                             },
                             {
@@ -25170,6 +25170,48 @@
             "reports": [],
             "widgetTitle": "Project Reports",
             "readAccess": "public"
+        }
+    },
+    "widget.441": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-projectStatus.text",
+            "target": "module.html-projectStatus.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Status"
+        }
+    },
+    "widget.442": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-projectDescription.text",
+            "target": "module.html-projectDescription.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Description"
+        }
+    },
+    "widget.443": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-projectNotes.text",
+            "target": "module.html-projectNotes.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Notes"
         }
     }
 }
