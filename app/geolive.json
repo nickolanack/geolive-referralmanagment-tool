@@ -7198,7 +7198,7 @@
                             {
                                 "type": "InlineHtml",
                                 "config": {
-                                    "className": "section-title",
+                                    "className": "",
                                     "text": "Status",
                                     "template": "html.projectStatus",
                                     "templateVariablesScript": "{}",
@@ -7312,7 +7312,7 @@
                             {
                                 "type": "InlineHtml",
                                 "config": {
-                                    "className": "section-title",
+                                    "className": "",
                                     "text": "Description",
                                     "template": "html.projectDescription",
                                     "templateVariablesScript": "{}",
@@ -7383,7 +7383,7 @@
                             {
                                 "type": "InlineHtml",
                                 "config": {
-                                    "className": "section-title",
+                                    "className": "",
                                     "text": "Notes",
                                     "template": "html.projectNotes",
                                     "templateVariablesScript": "{}",
