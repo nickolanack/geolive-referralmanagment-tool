@@ -977,6 +977,12 @@ button.primary-btn.nav-new-btn{
         width:55px;
         margin: 30px 23px;
         padding: 10px 20px;
+        
+        &:after {
+            font-size: 28px;
+            content: "+";
+            vertical-align: middle;
+        }
     
     }
 }
