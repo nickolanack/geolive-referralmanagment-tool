@@ -7321,9 +7321,20 @@
                                 }
                             },
                             {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "section-title",
+                                    "text": "Description",
+                                    "template": "",
+                                    "templateVariablesScript": "",
+                                    "formatTextScript": "",
+                                    "ajaxRequestTemplate": false
+                                }
+                            },
+                            {
                                 "type": "FormattedText",
                                 "config": {
-                                    "textValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.11.config.textValueScript.js",
+                                    "textValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.12.config.textValueScript.js",
                                     "formatModuleScript": "",
                                     "className": "project-description",
                                     "imageWidth": 300,
@@ -7354,8 +7365,8 @@
                                     "identifier": "pros-dates-community",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.12.config.fieldValueScript.js",
-                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.12.config.formatElementScript.js"
+                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.13.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.13.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -7365,15 +7376,15 @@
                                     "identifier": "proj-author",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.13.config.fieldValueScript.js",
-                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.13.config.formatElementScript.js"
+                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.14.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.14.config.formatElementScript.js"
                                 }
                             },
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.14.config.script.js",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.15.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             },
@@ -7448,7 +7459,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.18.config.script.js",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.19.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             },
@@ -7467,7 +7478,7 @@
                                     "showDeleteButton": false,
                                     "deleteItemScript": "defaultBehaviorFn()",
                                     "initModuleScript": "",
-                                    "formatModuleScript": "singleProjectOverviewDetail.metadata.positions.content.modules.19.config.formatModuleScript.js",
+                                    "formatModuleScript": "singleProjectOverviewDetail.metadata.positions.content.modules.20.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
@@ -7514,7 +7525,7 @@
                                     "deleteItemScript": "defaultBehaviorFn()",
                                     "initModuleScript": "",
                                     "formatModuleScript": "",
-                                    "resolveItemScript": "singleProjectOverviewDetail.metadata.positions.content.modules.21.config.resolveItemScript.js",
+                                    "resolveItemScript": "singleProjectOverviewDetail.metadata.positions.content.modules.22.config.resolveItemScript.js",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
