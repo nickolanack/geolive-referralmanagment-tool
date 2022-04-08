@@ -7201,7 +7201,7 @@
                                     "className": "section-title",
                                     "text": "Status",
                                     "template": "html.projectStatus",
-                                    "templateVariablesScript": "",
+                                    "templateVariablesScript": "{}",
                                     "formatTextScript": "singleProjectOverviewDetail.metadata.positions.content.modules.1.config.formatTextScript.js",
                                     "ajaxRequestTemplate": true
                                 }
@@ -7315,7 +7315,7 @@
                                     "className": "section-title",
                                     "text": "Description",
                                     "template": "html.projectDescription",
-                                    "templateVariablesScript": "",
+                                    "templateVariablesScript": "{}",
                                     "formatTextScript": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.formatTextScript.js",
                                     "ajaxRequestTemplate": true
                                 }
@@ -7386,7 +7386,7 @@
                                     "className": "section-title",
                                     "text": "Notes",
                                     "template": "html.projectNotes",
-                                    "templateVariablesScript": "",
+                                    "templateVariablesScript": "{}",
                                     "formatTextScript": "singleProjectOverviewDetail.metadata.positions.content.modules.15.config.formatTextScript.js",
                                     "ajaxRequestTemplate": true
                                 }
