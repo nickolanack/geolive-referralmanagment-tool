@@ -1,1 +1,1 @@
-el.addClass('project-communities project-title user-community');
+el.addClass('item-title project-title company-title label-people-clients')
