@@ -24945,7 +24945,18 @@
                     },
                     "content": {
                         "modules": [
-                            "tokenDetailView.metadata.positions.content.modules.0.json"
+                            "tokenDetailView.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "identifier": "",
+                                    "className": "",
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "tokenDetailView.metadata.positions.content.modules.1.config.fieldValueScript.js",
+                                    "formatElementScript": ""
+                                }
+                            }
                         ]
                     },
                     "footer": {
