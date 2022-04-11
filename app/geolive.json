@@ -25230,5 +25230,33 @@
             "saveTemplateAsData": false,
             "contentTemplate": "email-onProjectUpdate-synopsis.contentTemplate.html"
         }
+    },
+    "widget.445": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.dailyDigest.subject",
+            "target": "email.dailyDigest.subject",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Subject"
+        }
+    },
+    "widget.446": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.dailyDigest.content",
+            "target": "email.dailyDigest.content",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Message Content"
+        }
     }
 }
