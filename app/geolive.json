@@ -25288,7 +25288,8 @@
             "convertStylesToInline": false,
             "parseMarkdown": false,
             "saveTemplateAsData": false,
-            "contentTemplate": "Message Content - onTaskUpdate"
+            "contentTemplate": "email-onTaskUpdate-synopsis.contentTemplate.html",
+            "readAccess": "public"
         }
     },
     "widget.450": {
