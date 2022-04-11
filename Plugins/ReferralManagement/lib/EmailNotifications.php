@@ -84,6 +84,12 @@ class EmailNotifications{
 		$recipients=$db->distinctEmailQueueFieldValues('recipient');
 
 
+		array_walk($recipients, function($recipient){
+
+			error_log(json_encode($recipient));
+
+		});
+
 		Broadcast('processEmailQueue', 'update', array('params' => array(
 			'recipients'=>$recipients
 		)));
