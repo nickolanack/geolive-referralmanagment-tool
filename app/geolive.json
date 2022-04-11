@@ -15791,7 +15791,8 @@
             "convertStylesToInline": false,
             "parseMarkdown": false,
             "saveTemplateAsData": false,
-            "contentTemplate": "Message Content"
+            "contentTemplate": "email-onAddTeamMemberToTask-content.contentTemplate.html",
+            "readAccess": "public"
         }
     },
     "widget.262": {
