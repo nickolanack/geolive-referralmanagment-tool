@@ -25303,7 +25303,8 @@
             "convertStylesToInline": false,
             "parseMarkdown": false,
             "saveTemplateAsData": false,
-            "contentTemplate": "email-onAddTeamMemberToTask-synopsis.contentTemplate.html"
+            "contentTemplate": "email-onAddTeamMemberToTask-synopsis.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }
