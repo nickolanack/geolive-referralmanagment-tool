@@ -10,38 +10,33 @@
  */
 class ReferralManagementDatabase extends \core\DataStorage {
 
-    use \core\DatabaseTrait;
-    protected $tableSubPrefix="Proponent_";
+	use \core\DatabaseTrait;
+	protected $tableSubPrefix = "Proponent_";
 
-    
+	public function queueEmail($args) {
+		return $this->createEmailQueue($args);
+	}
 
-    public function queueEmail($args){
-        return $this->createEmailQueue($args);
-    }
+	public function getAllQueuedEmails($filter = array()) {
+		return $this->getEmailQueues($filter);
+	}
 
-    public function getAllQueuedEmails($filter=array()){
-        return $this->getEmailQueues($filter);
-    }
+	public function deleteRecipientsQueuedEmails($userid) {
 
+		if (is_null($userid)) {
+			throw new \Exception('deleteRecord requires a valid userid: null given');
+		}
 
+		$userid = intval($userid);
 
-    public function deleteRecipientsQueuedEmails($userid){
+		if ($userid <= 0) {
+			throw new \Exception('deleteRecord requires a valid userid > 0: ' . $userid . ' given');
+		}
 
-        if(is_null($userid)){
-            throw new \Exception('deleteRecord requires a valid userid: null given');
-        }
+		return $this->deleteEntry('emailQueue', array(
+			'recipient' => $userid,
+		));
 
-        $userid=intval($userid);
-
-        if($userid<=0){
-            throw new \Exception('deleteRecord requires a valid userid > 0: '.$userid.' given');
-        }
-
-
-        return $this->deleteEntry('emailQueue', array(
-            'recipient' => $userid
-        ));
-    
-    }
+	}
 
 }
