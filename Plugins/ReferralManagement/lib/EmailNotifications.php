@@ -61,23 +61,23 @@ class EmailNotifications{
 
 		if($digestEnabled){
 
-		$this->getPlugin()->getDatabase()->queueEmail(array(
-			"name"=>$templateName,
-			"recipient"=>$user->id,
-			"eventDate"=>date('Y-m-d H:i:s'),
-			"parameters"=>json_encode($arguments),
-			"metadata"=>json_encode((object) array())
-		));
+			$this->getPlugin()->getDatabase()->queueEmail(array(
+				"name"=>$templateName,
+				"recipient"=>$user->id,
+				"eventDate"=>date('Y-m-d H:i:s'),
+				"parameters"=>json_encode($arguments),
+				"metadata"=>json_encode((object) array())
+			));
 
-		Emit('onQueueEmail', array(
-			'template'=>$templateName,
-			'arguments'=>$arguments
-		));
+			Emit('onQueueEmail', array(
+				'template'=>$templateName,
+				'arguments'=>$arguments
+			));
 
 
-		Throttle('onTriggerEmailQueueProcessor', array(), array('interval' => 30), 30);
+			Throttle('onTriggerEmailQueueProcessor', array(), array('interval' => 30), 30);
 
-			return
+			return;
 		}
 
 		$to = $this->emailToAddress($user, "recieves-notifications");
