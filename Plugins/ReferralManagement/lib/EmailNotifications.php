@@ -137,7 +137,7 @@ class EmailNotifications{
 
 
 			GetPlugin('Email')->getMailerWithTemplate($templateName, $arguments)->to($to)->send();
-			//$db->deleteRecipientsQueuedEmails();
+			$db->deleteRecipientsQueuedEmails($recipient);
 	
 
 		});
