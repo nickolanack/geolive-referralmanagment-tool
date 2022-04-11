@@ -96,17 +96,17 @@ class EmailNotifications{
 			foreach($db->getAllQueuedEmails(array('recipient'=>$recipient)) as $record){
 
 
-				$type=$record['name'];
+				$type=$record->name;
 				if(!isset($synopsisData['types'][$type])){
 					$synopsisData['types'][$type]=0;
 				}
 				$synopsisData['types'][$type]+=1;
 
 				$synopsisData=(new \core\Template('email.'.$type.'.synopsis','Message Content - '.$type))
-                        ->render(json_decode($record['parameters']));
+                        ->render(json_decode($record->parameters));
 
 
-                $synopsisData['item'][]=array_merge($record, array(
+                $synopsisData['item'][]=array_merge(get_object_vars($record), array(
                 	'content'=>$content,
                 ));
 
