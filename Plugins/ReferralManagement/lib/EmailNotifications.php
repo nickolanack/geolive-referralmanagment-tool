@@ -86,7 +86,7 @@ class EmailNotifications{
 
 		array_walk($recipients, function($recipient){
 
-			error_log(json_encode($recipient));
+			error_log(json_encode($this->getPlugin()->getUsersMetadata($recipient)));
 
 		});
 
