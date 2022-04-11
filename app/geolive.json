@@ -25306,5 +25306,19 @@
             "contentTemplate": "email-onAddTeamMemberToTask-synopsis.contentTemplate.html",
             "readAccess": "public"
         }
+    },
+    "widget.451": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.onRemoveTeamMemberFromTask.synopsis",
+            "target": "email.onRemoveTeamMemberFromTask.synopsis",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "email-onRemoveTeamMemberFromTask-synopsis.contentTemplate.html"
+        }
     }
 }
