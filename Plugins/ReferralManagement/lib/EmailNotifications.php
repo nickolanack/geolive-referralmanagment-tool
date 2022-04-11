@@ -80,6 +80,15 @@ class EmailNotifications{
 	public function processEmailQueue($parameters){
 
 
+		$db=$this->getPlugin()->getDatabase();
+		$recipients=$db->distinctEmailQueueFieldValues('recipient');
+
+
+		Broadcast('processEmailQueue', 'update', array('params' => array(
+			'recipients'=>$recipients
+		)));
+
+
 		GetPlugin('Email')->getMailer()
 			->mail('Email Processing Task', json_encode($this->getPlugin()->getDatabase()->getAllQueuedEmails(), JSON_PRETTY_PRINT))
 			->to('nickblackwell82@gmail.com')

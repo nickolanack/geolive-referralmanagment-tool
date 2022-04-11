@@ -46,6 +46,11 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 					'channel' => 'cacheprojects',
 					'event' => 'update',
 				),
+
+				array(
+					'channel' => 'processEmailQueue',
+					'event' => 'update',
+				)
 			),
 		);
 	}
