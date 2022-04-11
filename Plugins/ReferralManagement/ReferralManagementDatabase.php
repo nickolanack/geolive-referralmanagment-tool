@@ -23,4 +23,25 @@ class ReferralManagementDatabase extends \core\DataStorage {
         return $this->getEmailQueues($filter);
     }
 
+
+
+    public function deleteRecipientsQueuedEmails($userid){
+
+        if(is_null($userid)){
+            throw new \Exception('deleteRecord requires a valid userid: null given');
+        }
+
+        $userid=intval($userid);
+
+        if($userid<=0){
+            throw new \Exception('deleteRecord requires a valid userid > 0: '.$userid.' given');
+        }
+
+
+        return $this->deleteEntry('emailQueue', array(
+            'recipient' => $userid
+        ));
+    
+    }
+
 }

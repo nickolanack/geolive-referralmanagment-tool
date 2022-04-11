@@ -84,9 +84,48 @@ class EmailNotifications{
 		$recipients=$db->distinctEmailQueueFieldValues('recipient');
 
 
-		array_walk($recipients, function($recipient){
+		array_walk($recipients, function($recipient)use($db){
 
-			error_log(json_encode($this->getPlugin()->getUsersMetadata($recipient)));
+
+
+			$synopsisData=array(
+				'items'=>array(),
+				'types'=>array()
+			);
+
+			foreach($db->getAllQueuedEmails(array('recipient'=>$recipient)) as $record){
+
+
+				$type=$record['name'];
+				if(!isset($synopsisData['types'][$type])){
+					$synopsisData['types'][$type]=0;
+				}
+				$synopsisData['types'][$type]+=1;
+
+				$synopsisData=(new \core\Template('email.'.$type.'.synopsis','Message Content - '.$type))
+                        ->render(json_decode($record['parameters']));
+
+
+                $synopsisData['item'][]=array_merge($record, array(
+                	'content'=>$content,
+                ));
+
+
+			}
+
+
+			$templateName='dailyDigest';
+			$arguments=$synopsisData;
+
+			$to = $this->emailToAddress($recipient);
+			if (!$to) {
+				throw new \Exception('Failed to resolve email');
+			}
+
+
+			GetPlugin('Email')->getMailerWithTemplate($templateName, $arguments)->to($to)->send();
+			//$db->deleteRecipientsQueuedEmails();
+	
 
 		});
 
