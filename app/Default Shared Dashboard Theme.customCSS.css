@@ -531,7 +531,11 @@ div.field-value-module.inline.ids{
         padding-left: 10px;
     }
     
-    
+    .user-notes .ui-post-view > div {
+        margin-bottom: 5px;
+        padding: 5px 15px;
+        background: none;
+    }
     
     
     span.post-user, .field-value-module.timestamp {
