@@ -25258,7 +25258,8 @@
             "convertStylesToInline": false,
             "parseMarkdown": false,
             "saveTemplateAsData": false,
-            "contentTemplate": "Message Content"
+            "contentTemplate": "email-dailyDigest-content.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }
