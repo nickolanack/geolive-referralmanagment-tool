@@ -48,32 +48,44 @@ class EmailNotifications{
 					'user' => $this->getPlugin()->getUsersMetadata($user->id),
 				));
 
-			if(true){
-
-
-				$this->getPlugin()->getDatabase()->queueEmail(array(
-					"name"=>$templateName,
-					"recipient"=>$user->id,
-					"eventDate"=>date('Y-m-d H:i:s'),
-					"parameters"=>json_encode($arguments),
-					"metadata"=>json_encode((object) array())
-				));
-
-				Emit('onQueueEmail', array(
-					'template'=>$templateName,
-					'arguments'=>$arguments
-				));
-
-
-				Throttle('onTriggerEmailQueueProcessor', array(), array('interval' => 30), 30);
-
-				continue;
-			}
-
-			Emit('onSentEmailAnyway',array('wt'=>'F'));
-			GetPlugin('Email')->getMailerWithTemplate($templateName, $arguments)->to($to)->send();
+			
+			$this->send($template, $arguments, $user);
 
 		}
+	}
+
+
+	protected function send($templateName, $arguments, $user){
+
+		$digestEnabled=true;
+
+		if($digestEnabled){
+
+		$this->getPlugin()->getDatabase()->queueEmail(array(
+			"name"=>$templateName,
+			"recipient"=>$user->id,
+			"eventDate"=>date('Y-m-d H:i:s'),
+			"parameters"=>json_encode($arguments),
+			"metadata"=>json_encode((object) array())
+		));
+
+		Emit('onQueueEmail', array(
+			'template'=>$templateName,
+			'arguments'=>$arguments
+		));
+
+
+		Throttle('onTriggerEmailQueueProcessor', array(), array('interval' => 30), 30);
+
+			return
+		}
+
+		$to = $this->emailToAddress($user, "recieves-notifications");
+		if (!$to) {
+			return;
+		}
+
+		GetPlugin('Email')->getMailerWithTemplate($templateName, $arguments)->to($to)->send();
 	}
 
 
@@ -181,7 +193,8 @@ class EmailNotifications{
 				continue;
 			}
 
-			GetPlugin('Email')->getMailerWithTemplate('onTaskUpdate', array_merge(
+			$templateName='onTaskUpdate';
+			$arguments=array_merge(
 				get_object_vars($args),
 				array(
 					'project' => $project,
@@ -189,9 +202,11 @@ class EmailNotifications{
 					'assignedMembers' => $assignedMembers,
 					'editor' => $this->getPlugin()->getUsersMetadata(),
 					'user' => $this->getPlugin()->getUsersMetadata($user->id),
-				)))
-				->to('nickblackwell82@gmail.com')
-				->send();
+				));
+
+			$this->send($template, $arguments, $user);
+
+	
 
 		}
 
@@ -214,10 +229,86 @@ class EmailNotifications{
 
 	public function sendEmailUserRoleUpdate($args){
 
+
+		/**
+		 * User received access to dashboard - do not digest
+		 */
+
+
 		GetPlugin('Email')->getMailerWithTemplate('onUserRoleChanged', array_merge(
 			get_object_vars($args), array( /*...*/)))
 			->to('nickblackwell82@gmail.com')
 			->send();
+	}
+
+
+
+	public function sendEmailUserAssignedTask($args){
+
+
+		$template='onAddTeamMemberToTask';
+		$arguments=array_merge(
+			get_object_vars($args),
+			array(
+				'editor' => $this->getPlugin()->getUsersMetadata(),
+				'user' => $this->getPlugin()->getUsersMetadata($args->member->id),
+			)
+		);
+		$this->send($template, $arguments, $args->member);
+
+
+	}
+
+
+	public function sendEmailUserUnassignedTask($args){
+
+
+		$template='onRemoveTeamMemberFromTask';
+		$arguments=array_merge(
+			get_object_vars($args),
+			array(
+				'editor' => $this->getPlugin()->getUsersMetadata(),
+				'user' => $this->getPlugin()->getUsersMetadata($args->member->id),
+			)
+		);
+		$this->send($template, $arguments, $args->member);
+
+
+	}
+
+
+
+	protected function sendEmailUserAddedToProject($args) {
+
+
+		$template='onAddTeamMemberToProject';
+		$arguments=array_merge(
+			get_object_vars($args),
+			array(
+				'editor' => $this->getPlugin()->getUsersMetadata(),
+				'user' => $this->getPlugin()->getUsersMetadata($args->member->id),
+				'project' => $this->getPlugin()->getProposalData($args->project),
+			)
+		);
+		$this->send($template, $arguments, $args->member);
+
+	}
+
+	protected function sendEmailUserRemovedFromProject($args) {
+
+
+
+		$template='onRemoveTeamMemberFromProject';
+		$arguments=array_merge(
+			get_object_vars($args),
+			array(
+				'editor' => $this->getPlugin()->getUsersMetadata(),
+				'user' => $this->getPlugin()->getUsersMetadata($args->member->id),
+				'project' => $this->getPlugin()->getProposalData($args->project),
+			)
+		);
+		$this->send($template, $arguments, $args->member);
+
 	}
 
 
@@ -248,6 +339,8 @@ class EmailNotifications{
 		return $addr;
 
 	}
+
+
 
 
 

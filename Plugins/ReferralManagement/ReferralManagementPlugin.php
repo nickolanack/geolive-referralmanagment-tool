@@ -584,6 +584,25 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		$this->getEmailNotifier()->processEmailQueue($args);
 	}
 
+
+	protected function onAddTeamMemberToTask($args) {
+		$this->getEmailNotifier()->sendEmailUserAssignedTask($args);
+	}
+
+	protected function onRemoveTeamMemberFromTask($args) {
+		$this->getEmailNotifier()->sendEmailUserUnassignedTask($args);
+	}
+
+
+	protected function onAddTeamMemberToProject($args) {
+		$this->getEmailNotifier()->sendEmailUserAddedToProject($args);
+
+	}
+
+	protected function onRemoveTeamMemberFromProject($args) {
+		$this->getEmailNotifier()->sendEmailUserRemovedFromProject($args);
+	}
+
 	
 
 	public function getChildProjectsForProject($pid, $attributes = null) {
@@ -671,35 +690,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 	}
 
-	protected function onAddTeamMemberToProject($args) {
-
-		GetPlugin('Email')->getMailerWithTemplate('onAddTeamMemberToProject', array_merge(
-			get_object_vars($args),
-			array(
-				'editor' => $this->getUsersMetadata(),
-				'user' => $this->getUsersMetadata($args->member->id),
-				'project' => $this->getProposalData($args->project),
-			)
-		))
-			->to('nickblackwell82@gmail.com')
-			->send();
-
-	}
-
-	protected function onRemoveTeamMemberFromProject($args) {
-
-		GetPlugin('Email')->getMailerWithTemplate('onRemoveTeamMemberFromProject', array_merge(
-			get_object_vars($args),
-			array(
-				'editor' => $this->getUsersMetadata(),
-				'user' => $this->getUsersMetadata($args->member->id),
-				'project' => $this->getProposalData($args->project),
-			)
-		))
-			->to('nickblackwell82@gmail.com')
-			->send();
-
-	}
+	
 
 	public function removeTeamMemberFromProject($user, $project) {
 
@@ -782,32 +773,9 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 	}
 
-	protected function onAddTeamMemberToTask($args) {
+	
 
-		GetPlugin('Email')->getMailerWithTemplate('onAddTeamMemberToTask', array_merge(
-			get_object_vars($args),
-			array(
-				'editor' => $this->getUsersMetadata(),
-				'user' => $this->getUsersMetadata($args->member->id),
-			)
-		))
-			->to('nickblackwell82@gmail.com')
-			->send();
 
-	}
-	protected function onRemoveTeamMemberFromTask($args) {
-
-		GetPlugin('Email')->getMailerWithTemplate('onRemoveTeamMemberFromTask', array_merge(
-			get_object_vars($args),
-			array(
-				'editor' => $this->getUsersMetadata(),
-				'user' => $this->getUsersMetadata($args->member->id),
-			)
-		))
-			->to('nickblackwell82@gmail.com')
-			->send();
-
-	}
 
 	public function removeTeamMemberFromTask($user, $task) {
 
