@@ -108,6 +108,7 @@ class EmailNotifications{
 
                 $synopsisData['items'][]=array_merge(get_object_vars($record), array(
                 	'content'=>$content,
+                	'parameters'=>json_decode($record->parameters)
                 ));
 
 
