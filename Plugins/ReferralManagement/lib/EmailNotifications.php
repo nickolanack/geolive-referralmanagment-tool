@@ -49,7 +49,7 @@ class EmailNotifications{
 				));
 
 			
-			$this->send($template, $arguments, $user);
+			$this->send($templateName, $arguments, $user);
 
 		}
 	}
@@ -204,7 +204,7 @@ class EmailNotifications{
 					'user' => $this->getPlugin()->getUsersMetadata($user->id),
 				));
 
-			$this->send($template, $arguments, $user);
+			$this->send($templateName, $arguments, $user);
 
 	
 
@@ -246,7 +246,7 @@ class EmailNotifications{
 	public function sendEmailUserAssignedTask($args){
 
 
-		$template='onAddTeamMemberToTask';
+		$templateName='onAddTeamMemberToTask';
 		$arguments=array_merge(
 			get_object_vars($args),
 			array(
@@ -254,7 +254,7 @@ class EmailNotifications{
 				'user' => $this->getPlugin()->getUsersMetadata($args->member->id),
 			)
 		);
-		$this->send($template, $arguments, $args->member);
+		$this->send($templateName, $arguments, $args->member);
 
 
 	}
@@ -263,7 +263,7 @@ class EmailNotifications{
 	public function sendEmailUserUnassignedTask($args){
 
 
-		$template='onRemoveTeamMemberFromTask';
+		$templateName='onRemoveTeamMemberFromTask';
 		$arguments=array_merge(
 			get_object_vars($args),
 			array(
@@ -271,7 +271,7 @@ class EmailNotifications{
 				'user' => $this->getPlugin()->getUsersMetadata($args->member->id),
 			)
 		);
-		$this->send($template, $arguments, $args->member);
+		$this->send($templateName, $arguments, $args->member);
 
 
 	}
@@ -281,7 +281,7 @@ class EmailNotifications{
 	protected function sendEmailUserAddedToProject($args) {
 
 
-		$template='onAddTeamMemberToProject';
+		$templateName='onAddTeamMemberToProject';
 		$arguments=array_merge(
 			get_object_vars($args),
 			array(
@@ -290,7 +290,7 @@ class EmailNotifications{
 				'project' => $this->getPlugin()->getProposalData($args->project),
 			)
 		);
-		$this->send($template, $arguments, $args->member);
+		$this->send($templateName, $arguments, $args->member);
 
 	}
 
@@ -298,7 +298,7 @@ class EmailNotifications{
 
 
 
-		$template='onRemoveTeamMemberFromProject';
+		$templateName='onRemoveTeamMemberFromProject';
 		$arguments=array_merge(
 			get_object_vars($args),
 			array(
@@ -307,7 +307,7 @@ class EmailNotifications{
 				'project' => $this->getPlugin()->getProposalData($args->project),
 			)
 		);
-		$this->send($template, $arguments, $args->member);
+		$this->send($templateName, $arguments, $args->member);
 
 	}
 
