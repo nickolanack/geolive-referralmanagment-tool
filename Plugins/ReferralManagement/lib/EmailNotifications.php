@@ -102,7 +102,7 @@ class EmailNotifications{
 				}
 				$synopsisData['types'][$type]+=1;
 
-				$synopsisData=(new \core\Template('email.'.$type.'.synopsis','Message Content - '.$type))
+				$content=(new \core\Template('email.'.$type.'.synopsis','Message Content - '.$type))
                         ->render(json_decode($record->parameters));
 
 
