@@ -25216,5 +25216,19 @@
             "contentTemplate": "Notes",
             "readAccess": "public"
         }
+    },
+    "widget.444": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.onProjectUpdate.synopsis",
+            "target": "email.onProjectUpdate.synopsis",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "email-onProjectUpdate-synopsis.contentTemplate.html"
+        }
     }
 }
