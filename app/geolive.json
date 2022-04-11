@@ -25262,5 +25262,19 @@
             "contentTemplate": "email-dailyDigest-content.contentTemplate.html",
             "readAccess": "public"
         }
+    },
+    "widget.448": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email..synopsis",
+            "target": "email..synopsis",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Message Content - "
+        }
     }
 }
