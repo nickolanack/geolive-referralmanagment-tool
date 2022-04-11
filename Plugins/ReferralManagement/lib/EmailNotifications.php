@@ -2,13 +2,7 @@
 
 namespace ReferralManagement;
 
-class EmailNotifications{
-
-
-
-
-
-
+class EmailNotifications {
 
 	public function queueEmailProjectUpdate($projectId, $data = array()) {
 
@@ -21,8 +15,6 @@ class EmailNotifications{
 		), intval(GetPlugin('ReferralManagement')->getParameter("queueEmailDelay")));
 
 	}
-
-
 
 	public function sendEmailProjectUpdate($args) {
 
@@ -39,8 +31,8 @@ class EmailNotifications{
 				continue;
 			}
 
-			$templateName='onProjectUpdate';
-			$arguments=array_merge(
+			$templateName = 'onProjectUpdate';
+			$arguments = array_merge(
 				get_object_vars($args),
 				array(
 					'teamMembers' => $teamMembers,
@@ -48,32 +40,29 @@ class EmailNotifications{
 					'user' => $this->getPlugin()->getUsersMetadata($user->id),
 				));
 
-			
 			$this->send($templateName, $arguments, $user);
 
 		}
 	}
 
+	protected function send($templateName, $arguments, $user) {
 
-	protected function send($templateName, $arguments, $user){
+		$digestEnabled = true;
 
-		$digestEnabled=true;
-
-		if($digestEnabled){
+		if ($digestEnabled) {
 
 			$this->getPlugin()->getDatabase()->queueEmail(array(
-				"name"=>$templateName,
-				"recipient"=>$user->id,
-				"eventDate"=>date('Y-m-d H:i:s'),
-				"parameters"=>json_encode($arguments),
-				"metadata"=>json_encode((object) array())
+				"name" => $templateName,
+				"recipient" => $user->id,
+				"eventDate" => date('Y-m-d H:i:s'),
+				"parameters" => json_encode($arguments),
+				"metadata" => json_encode((object) array()),
 			));
 
 			Emit('onQueueEmail', array(
-				'template'=>$templateName,
-				'arguments'=>$arguments
+				'template' => $templateName,
+				'arguments' => $arguments,
 			));
-
 
 			Throttle('onTriggerEmailQueueProcessor', array(), array('interval' => 30), 30);
 
@@ -88,74 +77,59 @@ class EmailNotifications{
 		GetPlugin('Email')->getMailerWithTemplate($templateName, $arguments)->to($to)->send();
 	}
 
+	public function processEmailQueue($parameters) {
 
-	public function processEmailQueue($parameters){
+		$db = $this->getPlugin()->getDatabase();
+		$recipients = $db->distinctEmailQueueFieldValues('recipient');
 
+		array_walk($recipients, function ($recipient) use ($db) {
 
-		$db=$this->getPlugin()->getDatabase();
-		$recipients=$db->distinctEmailQueueFieldValues('recipient');
-
-
-		array_walk($recipients, function($recipient)use($db){
-
-
-
-			$synopsisData=array(
-				'items'=>array(),
-				'types'=>array()
+			$synopsisData = array(
+				'items' => array(),
+				'types' => array(),
 			);
 
-			foreach($db->getAllQueuedEmails(array('recipient'=>$recipient)) as $record){
+			foreach ($db->getAllQueuedEmails(array('recipient' => $recipient)) as $record) {
 
-
-				$type=$record->name;
-				if(!isset($synopsisData['types'][$type])){
-					$synopsisData['types'][$type]=0;
+				$type = $record->name;
+				if (!isset($synopsisData['types'][$type])) {
+					$synopsisData['types'][$type] = 0;
 				}
-				$synopsisData['types'][$type]+=1;
+				$synopsisData['types'][$type] += 1;
 
-				$content=(new \core\Template('email.'.$type.'.synopsis','Message Content - '.$type))
-                        ->render(json_decode($record->parameters));
+				$content = (new \core\Template('email.' . $type . '.synopsis', 'Message Content - ' . $type))
+					->render(json_decode($record->parameters));
 
-
-                $synopsisData['items'][]=array_merge(get_object_vars($record), array(
-                	'content'=>$content,
-                	'parameters'=>json_decode($record->parameters)
-                ));
-
+				$synopsisData['items'][] = array_merge(get_object_vars($record), array(
+					'content' => $content,
+					'parameters' => json_decode($record->parameters),
+				));
 
 			}
 
-
-			$templateName='dailyDigest';
-			$arguments=$synopsisData;
+			$templateName = 'dailyDigest';
+			$arguments = $synopsisData;
 
 			$to = $this->emailToAddress($recipient);
 			if (!$to) {
 				throw new \Exception('Failed to resolve email');
 			}
 
-
 			GetPlugin('Email')->getMailerWithTemplate($templateName, $arguments)->to($to)->send();
 			$db->deleteRecipientsQueuedEmails($recipient);
-	
 
 		});
 
 		Broadcast('processEmailQueue', 'update', array('params' => array(
-			'recipients'=>$recipients
+			'recipients' => $recipients,
 		)));
-
 
 		GetPlugin('Email')->getMailer()
 			->mail('Email Processing Task', json_encode($this->getPlugin()->getDatabase()->getAllQueuedEmails(), JSON_PRETTY_PRINT))
 			->to('nickblackwell82@gmail.com')
 			->send();
 
-
 	}
-
-
 
 	public function queueEmailTaskUpdate($taskId, $data = array()) {
 
@@ -169,9 +143,7 @@ class EmailNotifications{
 
 	}
 
-
 	public function sendEmailTaskUpdate($args) {
-
 
 		if ($args->task->itemType !== "ReferralManagement.proposal") {
 			Emit('onNotProposalTask', $args);
@@ -193,8 +165,8 @@ class EmailNotifications{
 				continue;
 			}
 
-			$templateName='onTaskUpdate';
-			$arguments=array_merge(
+			$templateName = 'onTaskUpdate';
+			$arguments = array_merge(
 				get_object_vars($args),
 				array(
 					'project' => $project,
@@ -206,34 +178,25 @@ class EmailNotifications{
 
 			$this->send($templateName, $arguments, $user);
 
-	
-
 		}
 
 	}
-
-
-
 
 	public function queueEmailUserRoleUpdate($userId, $data = array()) {
 
 		ScheduleEvent('onTriggerUserRoleUpdateEmailNotification', array(
 			'user' => GetClient()->getUserId(),
-			'client'=>GetClient()->userMetadataFor($userId),
+			'client' => GetClient()->userMetadataFor($userId),
 			'info' => $data,
 		), intval(GetPlugin('ReferralManagement')->getParameter("queueEmailDelay")));
 
-
 	}
 
-
-	public function sendEmailUserRoleUpdate($args){
-
+	public function sendEmailUserRoleUpdate($args) {
 
 		/**
 		 * User received access to dashboard - do not digest
 		 */
-
 
 		GetPlugin('Email')->getMailerWithTemplate('onUserRoleChanged', array_merge(
 			get_object_vars($args), array( /*...*/)))
@@ -241,13 +204,10 @@ class EmailNotifications{
 			->send();
 	}
 
+	public function sendEmailUserAssignedTask($args) {
 
-
-	public function sendEmailUserAssignedTask($args){
-
-
-		$templateName='onAddTeamMemberToTask';
-		$arguments=array_merge(
+		$templateName = 'onAddTeamMemberToTask';
+		$arguments = array_merge(
 			get_object_vars($args),
 			array(
 				'editor' => $this->getPlugin()->getUsersMetadata(),
@@ -256,15 +216,12 @@ class EmailNotifications{
 		);
 		$this->send($templateName, $arguments, $args->member);
 
-
 	}
 
+	public function sendEmailUserUnassignedTask($args) {
 
-	public function sendEmailUserUnassignedTask($args){
-
-
-		$templateName='onRemoveTeamMemberFromTask';
-		$arguments=array_merge(
+		$templateName = 'onRemoveTeamMemberFromTask';
+		$arguments = array_merge(
 			get_object_vars($args),
 			array(
 				'editor' => $this->getPlugin()->getUsersMetadata(),
@@ -273,16 +230,12 @@ class EmailNotifications{
 		);
 		$this->send($templateName, $arguments, $args->member);
 
-
 	}
-
-
 
 	protected function sendEmailUserAddedToProject($args) {
 
-
-		$templateName='onAddTeamMemberToProject';
-		$arguments=array_merge(
+		$templateName = 'onAddTeamMemberToProject';
+		$arguments = array_merge(
 			get_object_vars($args),
 			array(
 				'editor' => $this->getPlugin()->getUsersMetadata(),
@@ -296,10 +249,8 @@ class EmailNotifications{
 
 	protected function sendEmailUserRemovedFromProject($args) {
 
-
-
-		$templateName='onRemoveTeamMemberFromProject';
-		$arguments=array_merge(
+		$templateName = 'onRemoveTeamMemberFromProject';
+		$arguments = array_merge(
 			get_object_vars($args),
 			array(
 				'editor' => $this->getPlugin()->getUsersMetadata(),
@@ -310,8 +261,6 @@ class EmailNotifications{
 		$this->send($templateName, $arguments, $args->member);
 
 	}
-
-
 
 	protected function emailToAddress($user, $permissionName = '') {
 
@@ -340,14 +289,8 @@ class EmailNotifications{
 
 	}
 
-
-
-
-
-	protected function getPlugin(){
+	protected function getPlugin() {
 		return GetPlugin('ReferralManagement');
 	}
-
-
 
 }
