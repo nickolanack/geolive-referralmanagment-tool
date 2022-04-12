@@ -1,4 +1,21 @@
 {
     "type": "plugin.Discussions.Discussion",
-    "config": {}
+    "config": {
+        "discussionTarget": "",
+        "width": 0,
+        "constrainHeight": false,
+        "height": 100,
+        "inlineEditing": true,
+        "inlineReply": false,
+        "inlineReplyNamedForm": "",
+        "emptyMessage": "There are no events to display",
+        "channel": "activity",
+        "resolveChannelScript": "return defaultChannel;",
+        "resolveItemScript": "return new MockDataTypeItem({type:\"widget\", id:145});",
+        "initialPostsScript": "",
+        "formatPostScript": "return RecentItems.FormatPost(post);",
+        "namedView": "defaultPostDetail",
+        "reverseOrder": true,
+        "className": ""
+    }
 }

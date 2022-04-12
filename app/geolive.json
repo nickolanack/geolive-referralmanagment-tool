@@ -25372,7 +25372,12 @@
                             "userNotificationsFeed.metadata.positions.content.modules.0.json",
                             {
                                 "type": "FlexibleHeight",
-                                "config": []
+                                "config": {
+                                    "identifier": "",
+                                    "targetElementScript": "userNotificationsFeed.metadata.positions.content.modules.1.config.targetElementScript.js",
+                                    "offset": "0",
+                                    "offsetScript": ""
+                                }
                             }
                         ]
                     },
