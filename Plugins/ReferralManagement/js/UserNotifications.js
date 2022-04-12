@@ -39,8 +39,8 @@ var UserNotifications = (function() {
 				events: {
 					click: function() {
 
-						//var controller = application.getNamedValue('navigationController');
-						//controller.navigateTo("Notifications", "Main");
+						var controller = application.getNamedValue('navigationController');
+						controller.navigateTo("Notifications", "Main");
 
 					}
 				}
