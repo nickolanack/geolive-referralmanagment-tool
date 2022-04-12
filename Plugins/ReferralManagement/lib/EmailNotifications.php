@@ -2,7 +2,48 @@
 
 namespace ReferralManagement;
 
-class EmailNotifications {
+class EmailNotifications implements \core\EventListener{
+
+
+	use \core\EventListenerTrait;
+
+
+
+	protected function onTriggerTaskUpdateEmailNotification($args) {
+		$this->sendEmailTaskUpdate($args);
+	}
+
+	protected function onTriggerUserRoleUpdateEmailNotification($args) {
+		$this->sendEmailUserRoleUpdate($args);
+	}
+
+	protected function onTriggerProjectUpdateEmailNotification($args) {
+		$this->sendEmailProjectUpdate($args);
+	}
+	protected function onTriggerEmailQueueProcessor($args) {
+		$this->processEmailQueue($args);
+	}
+
+	protected function onAddTeamMemberToTask($args) {
+		$this->sendEmailUserAssignedTask($args);
+	}
+
+	protected function onRemoveTeamMemberFromTask($args) {
+		$this->sendEmailUserUnassignedTask($args);
+	}
+
+	protected function onAddTeamMemberToProject($args) {
+		$this->sendEmailUserAddedToProject($args);
+	}
+
+	protected function onRemoveTeamMemberFromProject($args) {
+		$this->sendEmailUserRemovedFromProject($args);
+	}
+
+
+
+
+
 
 	public function queueEmailProjectUpdate($projectId, $data = array()) {
 
@@ -197,7 +238,6 @@ class EmailNotifications {
 		/**
 		 * User received access to dashboard - do not digest
 		 */
-
 		GetPlugin('Email')->getMailerWithTemplate('onUserRoleChanged', array_merge(
 			get_object_vars($args), array( /*...*/)))
 			->to('nickblackwell82@gmail.com')
@@ -206,10 +246,17 @@ class EmailNotifications {
 
 	public function sendEmailUserAssignedTask($args) {
 
+
+		$task=$this->getPlugin()->getTaskData($args->task);
+		$project=$this->getPlugin()->getProposalData($task->itemId);
+
+
 		$templateName = 'onAddTeamMemberToTask';
 		$arguments = array_merge(
 			get_object_vars($args),
 			array(
+				'task'=>$task,
+				'project'=>$project,
 				'editor' => $this->getPlugin()->getUsersMetadata(),
 				'user' => $this->getPlugin()->getUsersMetadata($args->member->id),
 			)
@@ -220,10 +267,16 @@ class EmailNotifications {
 
 	public function sendEmailUserUnassignedTask($args) {
 
+
+		$task=$this->getPlugin()->getTaskData($args->task);
+		$project=$this->getPlugin()->getProposalData($task->itemId);
+
 		$templateName = 'onRemoveTeamMemberFromTask';
 		$arguments = array_merge(
 			get_object_vars($args),
 			array(
+				'task'=>$task,
+				'project'=>$project,
 				'editor' => $this->getPlugin()->getUsersMetadata(),
 				'user' => $this->getPlugin()->getUsersMetadata($args->member->id),
 			)

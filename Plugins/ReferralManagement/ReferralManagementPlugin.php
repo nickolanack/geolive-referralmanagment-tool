@@ -6,10 +6,8 @@ include_once __DIR__ . '/lib/Task.php';
 include_once __DIR__ . '/lib/User.php';
 include_once __DIR__ . '/lib/UserRoles.php';
 
-include_once __DIR__.'/lib/EmailNotifications.php';
-include_once __DIR__.'/lib/GuestProject.php';
-
-
+include_once __DIR__ . '/lib/EmailNotifications.php';
+include_once __DIR__ . '/lib/GuestProject.php';
 
 class ReferralManagementPlugin extends \core\extensions\Plugin implements
 \core\ViewController,
@@ -35,21 +33,19 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	use \core\EventListenerTrait;
 	use \core\TemplateRenderer;
 
-	public function decodePathSegments($segments){
+	public function decodePathSegments($segments) {
 
 		error_log($segments);
-        $vars=array();
-        return $vars;
-    }
+		$vars = array();
+		return $vars;
+	}
 
-    /**
-     * @SuppressWarnings("unused") 
-     */
-    public function encodeUrlVariables(&$variables) {
-        
-    }
+	/**
+	 * @SuppressWarnings("unused")
+	 */
+	public function encodeUrlVariables(&$variables) {
 
-
+	}
 
 	public function getGeneratedSassParameters($parameters) {
 
@@ -64,6 +60,18 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		$parameters['communities'] = GetPlugin('ReferralManagement')->listCommunities();
 
 		return $parameters;
+
+	}
+
+
+	protected function onEvent($event, $params){
+
+		if($this->getEmailNotifier()->handlesEvent($event)){
+			/**
+			 * let email notifier handle these events directly
+			 */
+			$this->getEmailNotifier()->handleEvent($event, $args);
+		}
 
 	}
 
@@ -133,19 +141,15 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 			return;
 		}
 
-
 		if ($params->itemType === "ReferralManagement.proposal") {
 
-			$filter=array('status' => array('value' => 'archived', 'comparator' => '!='));
+			$filter = array('status' => array('value' => 'archived', 'comparator' => '!='));
 
 			(new \core\LongTaskProgress())
 				->throttle('onTriggerUpdateProjectList', array('filter' => $filter), array('interval' => 10));
 
 			return;
 		}
-
-
-
 
 		//error_log($params->itemType);
 
@@ -166,7 +170,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	protected function onTriggerUpdateUserList($params) {
 
 		Broadcast('cacheusers', 'handle', array(
-			'event'=>'onTriggerUpdateUserList'
+			'event' => 'onTriggerUpdateUserList',
 		));
 
 		$this->cache()->cacheUsersMetadataList($params);
@@ -316,17 +320,11 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		IncludeJS(__DIR__ . '/js/NamedCategory.js');
 		IncludeJS(__DIR__ . '/js/NamedCategoryList.js');
 
-
 		IncludeJS(__DIR__ . '/js/ui/SectionToggle.js');
 		IncludeJS(__DIR__ . '/js/ui/BreadcrumbNavigation.js');
 		IncludeJS(__DIR__ . '/js/ui/ShareLinks.js');
 		IncludeJS(__DIR__ . '/js/ui/TableHeader.js');
 		IncludeJS(__DIR__ . '/js/ui/SidePanelToggle.js');
-
-		
-
-		
-
 
 		IncludeJS(__DIR__ . '/js/GuestNavigationMenu.js');
 
@@ -344,7 +342,6 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		IncludeJS(__DIR__ . '/js/spatial/LayerGroup.js');
 		IncludeJS(__DIR__ . '/js/spatial/LayerGroupLegend.js');
 		IncludeJS(__DIR__ . '/js/spatial/LegendHelper.js');
- 
 
 		IncludeJS(__DIR__ . '/js/MainNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/ProjectsOverviewNavigationMenu.js');
@@ -388,14 +385,12 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		IncludeJS(__DIR__ . '/js/ProjectFiles.js');
 		IncludeJS(__DIR__ . '/js/TaskItem.js');
 		IncludeJS(__DIR__ . '/js/RecentItems.js');
-		
+
 		IncludeJS(__DIR__ . '/js/ProjectSearch.js');
 		IncludeJS(__DIR__ . '/js/PostContent.js');
 		IncludeJS(__DIR__ . '/js/UserIcon.js');
 
-
 		IncludeJS(__DIR__ . '/js/proposal/ProposalFlow.js');
-		
 
 		if (GetClient()->isAdmin()) {
 			IncludeJS(__DIR__ . '/js/AdminMonitor.js');
@@ -563,44 +558,8 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 	}
 
-
-	public function getEmailNotifier(){
+	public function getEmailNotifier() {
 		return new \ReferralManagement\EmailNotifications();
-	}
-
-
-	protected function onTriggerTaskUpdateEmailNotification($args) {
-		$this->getEmailNotifier()->sendEmailTaskUpdate($args);
-	}
-
-	protected function onTriggerUserRoleUpdateEmailNotification($args){
-		$this->getEmailNotifier()->sendEmailUserRoleUpdate($args);
-	}
-
-	protected function onTriggerProjectUpdateEmailNotification($args) {
-		$this->getEmailNotifier()->sendEmailProjectUpdate($args);
-	}
-	protected function onTriggerEmailQueueProcessor($args){
-		$this->getEmailNotifier()->processEmailQueue($args);
-	}
-
-
-	protected function onAddTeamMemberToTask($args) {
-		$this->getEmailNotifier()->sendEmailUserAssignedTask($args);
-	}
-
-	protected function onRemoveTeamMemberFromTask($args) {
-		$this->getEmailNotifier()->sendEmailUserUnassignedTask($args);
-	}
-
-
-	protected function onAddTeamMemberToProject($args) {
-		$this->getEmailNotifier()->sendEmailUserAddedToProject($args);
-
-	}
-
-	protected function onRemoveTeamMemberFromProject($args) {
-		$this->getEmailNotifier()->sendEmailUserRemovedFromProject($args);
 	}
 
 	
@@ -638,7 +597,6 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		));
 
 		$this->setChildProjectsForProject($project, $childProjects);
-
 
 		return $childProjects;
 
@@ -689,8 +647,6 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		return $teamMembers;
 
 	}
-
-	
 
 	public function removeTeamMemberFromProject($user, $project) {
 
@@ -773,10 +729,6 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 	}
 
-	
-
-
-
 	public function removeTeamMemberFromTask($user, $task) {
 
 		$teamMembers = $this->getTeamMembersForTask($task);
@@ -807,7 +759,6 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 			->fromId($id)
 			->toArray();
 	}
-
 
 	public function getProjectData($id) {
 
@@ -1035,12 +986,12 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		include_once __DIR__ . '/lib/DefaultTasks.php';
 		return (new \ReferralManagement\DefaultTasks())->getTemplatesForProposal($proposal);
 	}
-	public function createDefaultProposalTasks($proposal, $templates=null) {
+	public function createDefaultProposalTasks($proposal, $templates = null) {
 		include_once __DIR__ . '/lib/DefaultTasks.php';
 
-		$taskTemplate= (new \ReferralManagement\DefaultTasks());
+		$taskTemplate = (new \ReferralManagement\DefaultTasks());
 
-		if(!is_null($templates)){
+		if (!is_null($templates)) {
 			$taskTemplate->withTemplateDefinition($templates);
 		}
 
