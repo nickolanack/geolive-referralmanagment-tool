@@ -107,7 +107,11 @@ class ListItemCache implements \core\EventListener {
 			}
 
 		}
-		Emit('onUpdateProjectList', array());
+		Broadcast('cacheprojects','info', array(
+			'filter'=>$filter,
+			'cacheName'=>$cacheName,
+			'filesize'=>filesize(HtmlDocument()->getCachedPageFile($cacheName))
+		));
 	}
 
 	public function getProjectsListCacheStatus($filter) {
