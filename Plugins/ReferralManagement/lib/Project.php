@@ -32,29 +32,25 @@ class Project {
 
 		$proposal = get_object_vars($result);
 
-		$proposal['id']==intval($proposal['id']);
+		$proposal['id'] == intval($proposal['id']);
 
 		$proposal['userdetails'] = GetClient()->userMetadataFor((int) $proposal['user']);
 
-		if(isset($proposal['userdetails']['roles'])){
+		if (isset($proposal['userdetails']['roles'])) {
 			unset($proposal['userdetails']['roles']);
 		}
 
-		if(isset($proposal['userdetails']['lastLogin'])){
+		if (isset($proposal['userdetails']['lastLogin'])) {
 			unset($proposal['userdetails']['lastLogin']);
 		}
 
-
-
-
 		$proposal['community'] = GetPlugin('ReferralManagement')->communityCollective();
-		
-		$proposal['tmz']=date_default_timezone_get();
-		$proposal['createdDateTimestamp']=strtotime($proposal['createdDate']);
-		$proposal['modifiedDateTimestamp']=strtotime($proposal['modifiedDate']);
 
+		$proposal['tmz'] = date_default_timezone_get();
+		$proposal['createdDateTimestamp'] = strtotime($proposal['createdDate']);
+		$proposal['modifiedDateTimestamp'] = strtotime($proposal['modifiedDate']);
 
-		$proposal['metadata']=json_decode($proposal['metadata']);
+		$proposal['metadata'] = json_decode($proposal['metadata']);
 
 		$proposal['link'] = HtmlDocument()->website() . '/Projects/Project-' . $proposal['id'] . '/Overview';
 
@@ -130,7 +126,7 @@ class Project {
 
 		if (($proposalId = (int) $database->createProposal(array(
 			'user' => GetClient()->getUserId(),
-			'metadata' => isset($json->metadata)?json_encode($json->metadata):'{}',
+			'metadata' => isset($json->metadata) ? json_encode($json->metadata) : '{}',
 			'createdDate' => ($now = date('Y-m-d H:i:s')),
 			'modifiedDate' => $now,
 			'status' => 'active',
@@ -159,7 +155,6 @@ class Project {
 			));
 			Emit('onCreateProposal', array('id' => $proposalId));
 
-
 			$config = GetWidget('dashboardConfig');
 			if ($config->getParameter("autoCreateDefaultTasks", false)) {
 				GetPlugin('ReferralManagement')->createDefaultProposalTasks($proposalId);
@@ -175,11 +170,10 @@ class Project {
 
 	}
 
-	public function setStatus($status){
+	public function setStatus($status) {
 
-
-		if(!in_array($status, array('active', 'archived'))){
-			throw new \Exception('Invalid status: '.$status);
+		if (!in_array($status, array('active', 'archived'))) {
+			throw new \Exception('Invalid status: ' . $status);
 		}
 
 		$database = GetPlugin('ReferralManagement')->getDatabase();
@@ -191,17 +185,13 @@ class Project {
 
 		GetPlugin('ReferralManagement')->notifier()->onUpdateProposalStatus($json);
 
-
 	}
-
 
 	public function updateMetadata($metadata) {
 
-		if(!$this->record){
+		if (!$this->record) {
 			throw new \Exception('call fromId(...) first');
 		}
-
-
 
 		$proposalId = (int) $this->record->id;
 
@@ -210,14 +200,13 @@ class Project {
 
 		$database->updateProposal(array(
 			'id' => $proposalId,
-			'metadata'=>json_encode($metadata)
+			'metadata' => json_encode($metadata),
 		));
 
-		
 		Emit('onUpdateProposal', array('id' => $proposalId));
 		GetPlugin('ReferralManagement')->getVersionControl()->queueRevision(array('id' => $proposalId));
 
-		return $this->fromId($proposalId); 
+		return $this->fromId($proposalId);
 		// $this->record->metadata=json_encode($metadata);
 		// return $this;
 
@@ -251,9 +240,5 @@ class Project {
 		return $this->fromId($proposalId);
 
 	}
-
-
-	
-
 
 }
