@@ -165,7 +165,7 @@ class Project {
 				GetPlugin('ReferralManagement')->createDefaultProposalTasks($proposalId);
 			}
 
-			GetPlugin('ReferralManagement')->getVersionControl()->queueRevision(array('id' => $proposalId);
+			GetPlugin('ReferralManagement')->getVersionControl()->queueRevision(array('id' => $proposalId));
 
 			return $this->fromId($proposalId);
 
