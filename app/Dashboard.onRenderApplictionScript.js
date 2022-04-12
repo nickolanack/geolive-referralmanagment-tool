@@ -105,7 +105,6 @@ IncludeJSBlock('
         
         GetWidget('documentProjectForm')->display($targetInstance); //proposal wizard from map
         GetWidget('documentForm')->display($targetInstance); //proposal wizard from map
-        GetWidget('mainNotificationsDetail')->display($targetInstance); //proposal wizard from map
         
 
         
@@ -121,13 +120,13 @@ IncludeJSBlock('
     }
     
     
+GetWidget('mainNotificationsDetail')->display($targetInstance); //proposal wizard from map
     
-    GetWidget('defaultPostDetail')->display($targetInstance);
+GetWidget('defaultPostDetail')->display($targetInstance);
     
-        GetWidget('communityMemberDashboard')->display($targetInstance); 
+GetWidget('communityMemberDashboard')->display($targetInstance); 
 
-    
-    GetWidget('nonMemberDashboard')->display($targetInstance); 
+GetWidget('nonMemberDashboard')->display($targetInstance); 
 
 GetWidget('datasetSelectForm')->display($targetInstance); 
 
