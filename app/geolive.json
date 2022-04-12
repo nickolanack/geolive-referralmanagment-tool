@@ -25353,9 +25353,9 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "userNotificationsFeed",
-            "target": "userNotificationsFeed",
-            "templateName": "userNotificationsFeed",
+            "widgetTitle": "userNotificationFeedDetail",
+            "target": "userNotificationFeedDetail",
+            "templateName": "userNotificationFeedDetail",
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
@@ -25369,12 +25369,12 @@
                     },
                     "content": {
                         "modules": [
-                            "userNotificationsFeed.metadata.positions.content.modules.0.json",
+                            "userNotificationFeedDetail.metadata.positions.content.modules.0.json",
                             {
                                 "type": "FlexibleHeight",
                                 "config": {
                                     "identifier": "",
-                                    "targetElementScript": "userNotificationsFeed.metadata.positions.content.modules.1.config.targetElementScript.js",
+                                    "targetElementScript": "userNotificationFeedDetail.metadata.positions.content.modules.1.config.targetElementScript.js",
                                     "offset": "0",
                                     "offsetScript": ""
                                 }
