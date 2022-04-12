@@ -178,7 +178,7 @@ class Project {
 	public function setStatus($status){
 
 
-		if(!in_array($status, array('active', 'archived')){
+		if(!in_array($status, array('active', 'archived'))){
 			throw new \Exception('Invalid status: '.$status);
 		}
 
