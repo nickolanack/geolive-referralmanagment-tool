@@ -539,7 +539,7 @@ var ProjectTeam = (function() {
 			if (me.isReady()) {
 				fn(me);
 			} else {
-				me.addEvent('load:once', function() {
+				me.once('load', function() {
 					fn(me);
 				});
 			}
@@ -709,7 +709,7 @@ var ProjectTeam = (function() {
 
 				if (callback) {
 
-					me.addEvent('loadTeam', function() {
+					me.once('loadUsers', function() {
 						callback(me.getUsers());
 					});
 
@@ -754,7 +754,7 @@ var ProjectTeam = (function() {
 
 				if (callback) {
 
-					me.addEvent('loadDevices', function() {
+					me.once('loadDevices', function() {
 						callback(me.getDevices());
 					});
 
@@ -862,7 +862,7 @@ var ProjectTeam = (function() {
 
 				if (callback) {
 
-					me.addEvent('loadUsers', function() {
+					me.once('loadUsers', function() {
 						callback(me.getAllUsers());
 					});
 
