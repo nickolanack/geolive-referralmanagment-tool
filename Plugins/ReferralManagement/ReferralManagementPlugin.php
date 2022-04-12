@@ -64,6 +64,9 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	}
 
 
+	/**
+	 * onEvent is called if there is no method with name = $event
+	 */
 	protected function onEvent($event, $params){
 
 		if($this->getEmailNotifier()->handlesEvent($event)){
@@ -73,7 +76,17 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 			$this->getEmailNotifier()->handleEvent($event, $args);
 		}
 
+
+		if($this->cache()->handlesEvent($event)){
+			/**
+			 * let cache handle these events directly
+			 */
+			$this->cache()->handleEvent($event, $args);			
+		}
+
 	}
+
+
 
 	protected function onCreateProposal($params) {
 
@@ -134,10 +147,8 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	protected function onUpdateAttributeRecord($params) {
 
 		if ($params->itemType === "user") {
-			(new \core\LongTaskProgress())
-				->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval' => 10));
-			(new \core\LongTaskProgress())
-				->throttle('onTriggerUpdateDevicesList', array('team' => 1), array('interval' => 10));
+			$this->cache()->needsUserListUpdate();
+			$this->cache()->needsDeviceListUpdate();
 			return;
 		}
 
@@ -145,8 +156,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 			$filter = array('status' => array('value' => 'archived', 'comparator' => '!='));
 
-			(new \core\LongTaskProgress())
-				->throttle('onTriggerUpdateProjectList', array('filter' => $filter), array('interval' => 10));
+			$this->cache()->needsProjectListUpdate($filter);
 
 			return;
 		}
@@ -167,14 +177,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		return $users;
 	}
 
-	protected function onTriggerUpdateUserList($params) {
-
-		Broadcast('cacheusers', 'handle', array(
-			'event' => 'onTriggerUpdateUserList',
-		));
-
-		$this->cache()->cacheUsersMetadataList($params);
-	}
+	
 
 	public function getClientsDeviceList() {
 
@@ -183,25 +186,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		return $devices;
 	}
 
-	protected function onTriggerUpdateDevicesList($params) {
 
-		$this->cache()->cacheDevicesMetadataList($params);
-
-	}
-
-	protected function onCreateUser($params) {
-		foreach ($this->listTeams() as $team) {
-			(new \core\LongTaskProgress())
-				->throttle('onTriggerUpdateUserList', array('team' => $team), array('interval' => 10));
-		}
-	}
-
-	protected function onDeleteUser($params) {
-		foreach ($this->listTeams() as $team) {
-			(new \core\LongTaskProgress())
-				->throttle('onTriggerUpdateUserList', array('team' => $team), array('interval' => 10));
-		}
-	}
 
 	protected function listTeams($fn = null) {
 		return (new \ReferralManagement\User())->listTeams();
@@ -410,14 +395,14 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 			->scanPostForEventTriggers($params);
 
 	}
-	public function getActiveProjectList($filter = array()) {
+	public function getActiveProjectList() {
 
-		return $this->getProjectList(array_merge($filter, array('status' => array('value' => 'archived', 'comparator' => '!='))));
+		return $this->getProjectList(array('status' => 'active'));
 
 	}
-	public function getArchivedProjectList($filter = array()) {
+	public function getArchivedProjectList() {
 
-		return $this->getProjectList(array_merge($filter, array('status' => 'archived')));
+		return $this->getProjectList(array('status' => 'archived'));
 
 	}
 	public function getProjectList($filter = array()) {
@@ -427,7 +412,6 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		}
 
 		if ($this->getParameter('enableProjectListCaching')) {
-
 			$list = $this->cache()->getProjectsMetadataList($filter);
 		} else {
 			$list = $this->listProjectsMetadata($filter);
@@ -456,9 +440,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		return $this->filterRemovedProjects;
 	}
 
-	protected function onTriggerUpdateProjectList($params) {
-		$this->cache()->cacheProjectsMetadataList($params->filter);
-	}
+
 
 	public function listProjectsMetadata($filter) {
 

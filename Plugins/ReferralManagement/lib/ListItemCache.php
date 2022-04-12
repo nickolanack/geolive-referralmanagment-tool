@@ -2,7 +2,44 @@
 
 namespace ReferralManagement;
 
-class ListItemCache {
+class ListItemCache implements \core\EventListener {
+
+	use \core\EventListenerTrait;
+
+	public function needsProjectListUpdate($filter) {
+		//$filter = array('status' => array('value' => 'archived', 'comparator' => '!='));
+		(new \core\LongTaskProgress())
+			->throttle('onTriggerUpdateProjectList', array(), array('interval' => 30));
+	}
+	public function needsDeviceListUpdate() {
+		(new \core\LongTaskProgress())
+			->throttle('onTriggerUpdateDevicesList', array('team' => 1), array('interval' => 30));
+	}
+	public function needsUserListUpdate() {
+		(new \core\LongTaskProgress())
+			->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval' => 30));
+	}
+
+	protected function onCreateUser($params) {
+		$this->needsUserListUpdate();
+	}
+
+	protected function onDeleteUser($params) {
+		$this->needsUserListUpdate();
+	}
+
+	protected function onTriggerUpdateUserList($params) {
+		$this->cacheUsersMetadataList($params);
+	}
+
+	protected function onTriggerUpdateDevicesList($params) {
+		$this->cacheDevicesMetadataList($params);
+	}
+
+	protected function onTriggerUpdateProjectList($params) {
+		$this->cacheProjectsMetadataList(array('status'=>'active'));
+		$this->cacheProjectsMetadataList(array('status'=>'archived'));
+	}
 
 	public function cacheProjectsMetadataList($filter) {
 
@@ -19,17 +56,15 @@ class ListItemCache {
 		$newData = json_encode($projects);
 		HtmlDocument()->setCachedPage($cacheName, $newData);
 		if ($newData != $cacheData) {
-			
 
+			$cachedProjects = json_decode($cacheData);
+			$updated = array();
 
-			$cachedProjects=json_decode($cacheData);
-			$updated=array();
+			$updatedFirst = array();
 
-			$updatedFirst=array();
-
-			foreach($projects as $project){
-				foreach($cachedProjects as $cachedProject){
-					if($project->id===$cachedProject->id){
+			foreach ($projects as $project) {
+				foreach ($cachedProjects as $cachedProject) {
+					if ($project->id === $cachedProject->id) {
 
 						unset($project->computed);
 						unset($cachedProject->computed);
@@ -37,21 +72,20 @@ class ListItemCache {
 						unset($project->profileData);
 						unset($cachedProject->profileData);
 
-						if(json_encode($cachedProject)!=json_encode($project)){
+						if (json_encode($cachedProject) != json_encode($project)) {
 							//$this->notifier()->broadcastProjectUpdate($project->id);
 
+							$updated[] = $project->id;
 
-							$updated[]=$project->id;
-
-							if(empty($updatedFirst)){
-								$updatedFirst=array($project, $cachedProject);
+							if (empty($updatedFirst)) {
+								$updatedFirst = array($project, $cachedProject);
 							}
 						}
 					}
 				}
 			}
 
-			if(!empty($updated)){
+			if (!empty($updated)) {
 
 				$this->notifier()->onProjectListChanged();
 
@@ -59,18 +93,14 @@ class ListItemCache {
 					'updated' => $updated,
 				));
 
-
-				foreach($updated as $projectId){
+				foreach ($updated as $projectId) {
 					Broadcast('proposal.' . $projectId, 'update', array(
 						'user' => GetClient()->getUserId(),
 						'updated' => array((new \ReferralManagement\Project())->fromId($projectId)->toArray()),
 					));
 				}
 
-
-				
 			}
-
 
 		}
 		Emit('onUpdateProjectList', array());
@@ -107,7 +137,7 @@ class ListItemCache {
 			$projects = json_decode(json_encode($projects));
 		}
 
-		(new \core\LongTaskProgress())->throttle('onTriggerUpdateProjectList', array('filter' => $filter), array('interval' => 10));
+		$this->needsProjectListUpdate($filter);
 
 		return $projects;
 
@@ -179,11 +209,7 @@ class ListItemCache {
 			HtmlDocument()->setCachedPage($cacheName, json_encode($users));
 		}
 
-
-		Broadcast('cacheusers', 'trigger', array(
-			'event'=>'onTriggerUpdateUserList'
-		));
-		(new \core\LongTaskProgress())->throttle('onTriggerUpdateUserList', array(), array('interval' => 10));
+		$this->needsUserListUpdate();
 
 		return $users;
 
@@ -233,8 +259,8 @@ class ListItemCache {
 			$devices = GetPlugin('ReferralManagement')->listAllDevicesMetadata();
 			HtmlDocument()->setCachedPage($cacheName, json_encode($devices));
 		}
-		//TODO: throttle this
-		(new \core\LongTaskProgress())->throttle('onTriggerUpdateDevicesList', array(), array('interval' => 10));
+
+		$this->needsDeviceListUpdate();
 
 		return $devices;
 	}

@@ -224,13 +224,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		GetPlugin('Attributes');
 		return array('results' => (new \attributes\Record('proposalAttributes'))->searchValues($json->search->name, 'title'));
-
-		$response = array('results' => $this->getPlugin()->getActiveProjectList(array(
-			'LIMIT' => 5,
-		)));
-
-		return $response;
-
+		
 	}
 
 	protected function getProject($json) {
@@ -256,14 +250,9 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		
 		}
 
-
-
-
 		$response = array(
 			'results' => GetPlugin('ReferralManagement')->listProjectsMetadata(array('id' => $json->project))
 		);
-
-		//$this->getPlugin()->getProjectList(array('id'=>$json->project)));
 
 		return $response;
 
@@ -953,7 +942,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		$this->getPlugin()->notifier()->onUpdateUserRole((object) array_merge(get_object_vars($json), $update));
 
-		(new \core\LongTaskProgress())->throttle('onTriggerUpdateDevicesList', array('team' => 1), array('interval' => 30));
+		$this->getPlugin()->cache()->needsDeviceListUpdate()
 		(new \core\LongTaskProgress())->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval' => 30));
 
 		return  $update;
