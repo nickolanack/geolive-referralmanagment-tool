@@ -214,8 +214,8 @@ class Project {
 		));
 
 		
-		Emit('onUpdateProposal', array('id' => $proposalId
-		GetPlugin('ReferralManagement')->getVersionControl()->queueRevision(array('id' => $proposalId);
+		Emit('onUpdateProposal', array('id' => $proposalId));
+		GetPlugin('ReferralManagement')->getVersionControl()->queueRevision(array('id' => $proposalId));
 
 		return $this->fromId($proposalId); 
 		// $this->record->metadata=json_encode($metadata);
@@ -246,6 +246,7 @@ class Project {
 		}
 
 		Emit('onUpdateProposal', array('id' => $proposalId));
+		GetPlugin('ReferralManagement')->getVersionControl()->queueRevision(array('id' => $proposalId));
 
 		return $this->fromId($proposalId);
 
