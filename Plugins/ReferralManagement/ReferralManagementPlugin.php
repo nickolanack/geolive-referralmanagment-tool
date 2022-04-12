@@ -73,7 +73,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 			/**
 			 * let email notifier handle these events directly
 			 */
-			$this->getEmailNotifier()->handleEvent($event, $args);
+			$this->getEmailNotifier()->handleEvent($event, $params);
 		}
 
 
@@ -81,7 +81,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 			/**
 			 * let cache handle these events directly
 			 */
-			$this->cache()->handleEvent($event, $args);			
+			$this->cache()->handleEvent($event, $params);			
 		}
 
 	}
