@@ -20,6 +20,8 @@ class ListItemCache implements \core\EventListener {
 			->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval' => 30));
 	}
 
+
+
 	protected function onCreateUser($params) {
 		$this->needsUserListUpdate();
 	}
@@ -40,6 +42,8 @@ class ListItemCache implements \core\EventListener {
 		$this->cacheProjectsMetadataList(array('status'=>'active'));
 		$this->cacheProjectsMetadataList(array('status'=>'archived'));
 	}
+
+
 
 	public function cacheProjectsMetadataList($filter) {
 
