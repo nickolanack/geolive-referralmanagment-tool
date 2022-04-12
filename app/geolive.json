@@ -25334,5 +25334,19 @@
             "saveTemplateAsData": false,
             "contentTemplate": "email-onAddTeamMemberToProject-synopsis.contentTemplate.html"
         }
+    },
+    "widget.453": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.onRemoveTeamMemberFromProject.synopsis",
+            "target": "email.onRemoveTeamMemberFromProject.synopsis",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "email-onRemoveTeamMemberFromProject-synopsis.contentTemplate.html"
+        }
     }
 }
