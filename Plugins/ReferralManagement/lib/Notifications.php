@@ -171,11 +171,14 @@ class Notifications {
 			$json
 		);
 
-		$action = GetClient()->getUsername() . ' ' . ($json->status == 'archived' ? 'archived' : 'un-archived') . ' proposal';
+		$event = $json->status == 'archived' ? 'archived':'un-archived';
+
+		$action = GetClient()->getUsername() . ' ' . $event . ' proposal';
 
 		$this->broadcastProjectUpdate($json->id);
 		$this->queueEmailProjectUpdate($json->id, array(
 			'action' => $action,
+			'event'=>$event
 		));
 
 	}
@@ -199,6 +202,8 @@ class Notifications {
 		$this->broadcastProjectUpdate($project);
 		$this->queueEmailProjectUpdate($project, array(
 			'action' => 'Assigned team member',
+			'event'=>'added-member',
+			'member'=>$user
 		));
 
 	}
@@ -221,6 +226,8 @@ class Notifications {
 		$this->broadcastProjectUpdate($project);
 		$this->queueEmailProjectUpdate($project, array(
 			'action' => 'Removed team member',
+			'event'=>'removed-member',
+			'member'=>$user
 		));
 
 	}
@@ -265,6 +272,9 @@ class Notifications {
 			$this->broadcastProjectUpdate($json->id);
 			$this->queueEmailProjectUpdate($json->id, array(
 				'action' => $action,
+				'event'=>'added-document',
+				'type' => $json->documentType,
+				'info'=>$json
 			));
 		}
 
@@ -272,6 +282,8 @@ class Notifications {
 			$this->broadcastTaskUpdate($json->id);
 			$this->queueEmailTaskUpdate($json->id, array(
 				'action' => $action,
+				'event'=>'added-document',
+				'info'=>$json
 			));
 		}
 
@@ -304,6 +316,8 @@ class Notifications {
 			$this->broadcastProjectUpdate($json->id);
 			$this->queueEmailProjectUpdate($json->id, array(
 				"action" => "Removed a file",
+				'event'=>'removed-document',
+				'info'=>$json
 			));
 		}
 
@@ -311,6 +325,8 @@ class Notifications {
 			$this->broadcastTaskUpdate($json->id);
 			$this->queueEmailTaskUpdate($json->id, array(
 				"action" => "Removed a file",
+				'event'=>'removed-document',
+				'info'=>$json
 			));
 		}
 

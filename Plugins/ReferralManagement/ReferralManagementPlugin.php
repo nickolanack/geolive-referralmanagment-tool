@@ -95,14 +95,17 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 			$this->createDefaultProposalTasks($params->id);
 		}
 
-		$this->onUpdateProposal($params);
+		$this->createProjectRevision($params);
 
 	}
 
-	protected function onUpdateProposal($params) {
-
+	protected function createProjectRevision($params){
 		Throttle('onTriggerVersionControlProject', $params, array('interval' => 30), 60);
+	}
 
+
+	protected function onUpdateProposal($params) {
+		$this->createProjectRevision($params);
 	}
 
 	protected function onTriggerVersionControlProject($params) {
@@ -1016,7 +1019,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 			$user = $this->getUsersMetadata($u);
 
 			$user['devices'] = GetPlugin('Apps')->getUsersDeviceIds($u['id']);
-			return $user;
+			return (object) $user;
 
 		}, $list);
 

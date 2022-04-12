@@ -204,8 +204,6 @@ class Project {
 
 		$database->updateProposal(array(
 			'id' => $proposalId,
-			//'user' => GetClient()->getUserId(),
-			//'metadata' => '{}',
 			'modifiedDate' => date('Y-m-d H:i:s'),
 			'status' => 'active',
 		));
@@ -224,5 +222,9 @@ class Project {
 		return $this->fromId($proposalId);
 
 	}
+
+
+	
+
 
 }
