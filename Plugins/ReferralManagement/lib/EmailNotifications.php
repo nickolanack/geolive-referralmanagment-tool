@@ -105,7 +105,7 @@ class EmailNotifications implements \core\EventListener{
 				'arguments' => $arguments,
 			));
 
-			Throttle('onTriggerEmailQueueProcessor', array(), array('interval' => 30), 30);
+			Throttle('onTriggerEmailQueueProcessor', array('time'=>time()), array('interval' => 30), 30);
 
 			return;
 		}
@@ -119,6 +119,12 @@ class EmailNotifications implements \core\EventListener{
 	}
 
 	public function processEmailQueue($parameters) {
+
+
+		Broadcast('processEmailQueue', 'info', array('params' => array(
+			'delay' => isset($parameters->time)?time()-$parameters->time:0,
+		)));
+
 
 		$db = $this->getPlugin()->getDatabase();
 		$recipients = $db->distinctEmailQueueFieldValues('recipient');
