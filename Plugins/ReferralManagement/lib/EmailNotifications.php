@@ -317,13 +317,19 @@ class EmailNotifications implements \core\EventListener{
 
 	protected function emailToAddress($user, $permissionName = '') {
 
+
+		if(is_string($user)||is_numeric($user)){
+			 $user=(object) $this->getPlugin()->getUsersMetadata($user);
+		}
+
+
 		$shouldSend = false;
 		if (empty($permissionName)) {
 			$shouldSend = true;
 		}
 
 		if (!empty($permissionName)) {
-			if (in_array($permissionName, $user->permissions)) {
+			if ((!isset($user->permissions))||in_array($permissionName, $user->permissions)) {
 				$shouldSend = true;
 			}
 		}
