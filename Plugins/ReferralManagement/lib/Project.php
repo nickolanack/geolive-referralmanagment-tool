@@ -159,11 +159,38 @@ class Project {
 			));
 			Emit('onCreateProposal', array('id' => $proposalId));
 
+
+			$config = GetWidget('dashboardConfig');
+			if ($config->getParameter("autoCreateDefaultTasks", false)) {
+				GetPlugin('ReferralManagement')->createDefaultProposalTasks($proposalId);
+			}
+
+			GetPlugin('ReferralManagement')->getVersionControl()->queueRevision(array('id' => $proposalId);
+
 			return $this->fromId($proposalId);
 
 		}
 
 		throw new \Exception('Failed to create proposal');
+
+	}
+
+	public function setStatus($status){
+
+
+		if(!in_array($status, array('active', 'archived')){
+			throw new \Exception('Invalid status: '.$status);
+		}
+
+		$database = GetPlugin('ReferralManagement')->getDatabase();
+
+		$database->updateProposal(array(
+			'id' => (int) $this->record->id,
+			'status' => $status,
+		));
+
+		GetPlugin('ReferralManagement')->notifier()->onUpdateProposalStatus($json);
+
 
 	}
 
@@ -187,7 +214,8 @@ class Project {
 		));
 
 		
-		Emit('onUpdateProposal', array('id' => $proposalId));
+		Emit('onUpdateProposal', array('id' => $proposalId
+		GetPlugin('ReferralManagement')->getVersionControl()->queueRevision(array('id' => $proposalId);
 
 		return $this->fromId($proposalId); 
 		// $this->record->metadata=json_encode($metadata);

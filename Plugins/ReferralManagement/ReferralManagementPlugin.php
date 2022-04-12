@@ -63,56 +63,52 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 	}
 
-
 	/**
 	 * onEvent is called if there is no method with name = $event
 	 */
-	protected function onEvent($event, $params){
+	protected function onEvent($event, $params) {
 
-		if($this->getEmailNotifier()->handlesEvent($event)){
+		if ($this->getEmailNotifier()->handlesEvent($event)) {
 			/**
 			 * let email notifier handle these events directly
 			 */
 			$this->getEmailNotifier()->handleEvent($event, $params);
 		}
 
-
-		if($this->cache()->handlesEvent($event)){
+		if ($this->cache()->handlesEvent($event)) {
 			/**
 			 * let cache handle these events directly
 			 */
-			$this->cache()->handleEvent($event, $params);			
+			$this->cache()->handleEvent($event, $params);
+		}
+
+		if ($this->getVersionControl()->handlesEvent($event)) {
+			/**
+			 * let cache handle these events directly
+			 */
+			$this->getVersionControl()->handleEvent($event, $params);
 		}
 
 	}
-
-
 
 	protected function onCreateProposal($params) {
 
-		$config = GetWidget('dashboardConfig');
-		if ($config->getParameter("autoCreateDefaultTasks", false)) {
-			$this->createDefaultProposalTasks($params->id);
-		}
-
-		$this->createProjectRevision($params);
+		/**
+		 * @deprecated not needed
+		 */
 
 	}
-
-	protected function createProjectRevision($params){
-		Throttle('onTriggerVersionControlProject', $params, array('interval' => 30), 60);
-	}
-
 
 	protected function onUpdateProposal($params) {
-		$this->createProjectRevision($params);
+		/**
+		 * @deprecated not needed
+		 */
 	}
 
-	protected function onTriggerVersionControlProject($params) {
+	public function getVersionControl() {
 
-		sleep(5);
 		include_once __DIR__ . '/lib/VersionControl.php';
-		(new \ReferralManagement\VersionControl())->updateProject($params->id);
+		return new \ReferralManagement\VersionControl();
 
 	}
 
@@ -177,16 +173,12 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		return $users;
 	}
 
-	
-
 	public function getClientsDeviceList() {
 
 		$devices = $this->cache()->getDevicesMetadataList();
 		$devices = array_values(array_filter($devices, $this->shouldShowUserFilter()));
 		return $devices;
 	}
-
-
 
 	protected function listTeams($fn = null) {
 		return (new \ReferralManagement\User())->listTeams();
@@ -413,16 +405,14 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 		if ($this->getParameter('enableProjectListCaching')) {
 
-
-			if($filter['status']=='active'){
+			if ($filter['status'] == 'active') {
 				$list = $this->cache()->getProjectsMetadataList();
 			}
 
-			if($filter['status']=='archive'){
+			if ($filter['status'] == 'archive') {
 				$list = $this->cache()->getArchivedProjectsMetadataList();
 			}
 
-			
 		} else {
 			$list = $this->listProjectsMetadata($filter);
 		}
@@ -449,8 +439,6 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	public function getLastFilteredProjects() {
 		return $this->filterRemovedProjects;
 	}
-
-
 
 	public function listProjectsMetadata($filter) {
 
@@ -553,8 +541,6 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	public function getEmailNotifier() {
 		return new \ReferralManagement\EmailNotifications();
 	}
-
-	
 
 	public function getChildProjectsForProject($pid, $attributes = null) {
 

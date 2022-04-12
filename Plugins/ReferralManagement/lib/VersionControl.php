@@ -2,10 +2,25 @@
 
 namespace ReferralManagement;
 
-class VersionControl{
+class VersionControl implements \core\EventListener{
 
+
+	use \core\EventListenerTrait;
 
 	protected $git = null;
+
+
+
+
+
+	protected function queueRevision($params){
+
+		Throttle('onTriggerVersionControlProject', $params, array('interval' => 30), 60);
+	}
+
+
+
+
 	protected function _git() {
 
 		if (is_null($this->git)) {
@@ -28,7 +43,17 @@ class VersionControl{
 	}
 
 
-	public function updateProject($id){
+
+
+	protected function onTriggerVersionControlProject($params) {
+
+		sleep(5);
+		$this->updateProjectJson($params->id);
+
+	}
+
+
+	protected function updateProjectJson($id){
 
 
 		$data=$this->getPlugin()->getProposalData($id);

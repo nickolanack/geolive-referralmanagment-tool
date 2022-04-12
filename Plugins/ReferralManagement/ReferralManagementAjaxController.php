@@ -556,12 +556,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 				return $this->setError('No access or does not exist');
 			}
 
-			$database->updateProposal(array(
-				'id' => (int) $json->id,
-				'status' => $json->status,
-			));
-
-			$this->getPlugin()->notifier()->onUpdateProposalStatus($json);
+			(new \ReferralManagement\Project())->fromId($json->id)->setStatus($json->status);
 
 			return array('id' => (int) $json->id, 'status'=>$json->status);
 
