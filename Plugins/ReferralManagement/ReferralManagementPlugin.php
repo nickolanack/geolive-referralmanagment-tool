@@ -68,11 +68,14 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	 */
 	protected function onEvent($event, $params) {
 
+		$handled=0;
+
 		if ($this->getEmailNotifier()->handlesEvent($event)) {
 			/**
 			 * let email notifier handle these events directly
 			 */
 			$this->getEmailNotifier()->handleEvent($event, $params);
+			$handled++;
 		}
 
 		if ($this->cache()->handlesEvent($event)) {
@@ -80,6 +83,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 			 * let cache handle these events directly
 			 */
 			$this->cache()->handleEvent($event, $params);
+			$handled++;
 		}
 
 		if ($this->getVersionControl()->handlesEvent($event)) {
@@ -87,23 +91,16 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 			 * let cache handle these events directly
 			 */
 			$this->getVersionControl()->handleEvent($event, $params);
+			$handled++;
 		}
 
-	}
+		if($handled==0){
+			error_log('No handlers for: '.$event);
+		}
 
-	protected function onCreateProposal($params) {
-
-		/**
-		 * @deprecated not needed
-		 */
 
 	}
 
-	protected function onUpdateProposal($params) {
-		/**
-		 * @deprecated not needed
-		 */
-	}
 
 	public function getVersionControl() {
 
