@@ -28,12 +28,15 @@ class Notifications {
 					$channels[]=$item['type'].'.'.$item['id'].'.activity';
 				}
 			
-				if($item['type']=='user'&&$item['id']!=GetClient()->getUserId()){
-					$discussion->post($discussion->getDiscussionForItem($item['id'], $item['type'], 'activity')->id, $message, $data);
+				if($item['type']=='user'/*&&$item['id']!=GetClient()->getUserId()*/){
+					$discussion->post($discussion->getDiscussionForItem($item['id'], $item['type'], 'notifications')->id, $message, $data);
 					$channels[]=$item['type'].'.'.$item['id'].'.activity';
 				}
 			}
 		}
+
+
+
 		
 		Broadcast('activity', 'post', array_merge(array('message'=>$message, 'feeds'=>$channels), $data));
 
@@ -43,7 +46,7 @@ class Notifications {
 
 
 
-	private function onEvent($event, $postData, $params = array()) {
+	private function postEventFeeds($event, $postData, $params = array()) {
 
 		$variablesObject = array(
 			'postData' => $postData,
@@ -63,7 +66,7 @@ class Notifications {
 
 	public function onGuestProjectPendingValidation($json){
 
-		$this->onEvent('guest.proposal.validating', array(
+		$this->postEventFeeds('guest.proposal.validating', array(
 			"items" => array(
 				array(
 					"type" => "guest",
@@ -83,7 +86,7 @@ class Notifications {
 
 	public function onGuestProposal($projectId, $params) {
 
-		$this->onEvent('guest.proposal.validated', array(
+		$this->postEventFeeds('guest.proposal.validated', array(
 			"items" => array(
 				array(
 					"type" => "guest",
@@ -104,7 +107,7 @@ class Notifications {
 	}
 
 	public function onUpdateUserRole($json) {
-		$this->onEvent('update.user.role', array(
+		$this->postEventFeeds('update.user.role', array(
 			"items" => array(
 				array(
 					"type" => "User",
@@ -143,7 +146,7 @@ class Notifications {
 
 	public function onUpdateProjectPermissions($json) {
 
-		$this->onEvent('update.proposal.permissions', array(
+		$this->postEventFeeds('update.proposal.permissions', array(
 			"items" => array(
 				array(
 					"type" => "ReferralManagement.proposal",
@@ -161,7 +164,7 @@ class Notifications {
 
 	public function onUpdateProposalStatus($json) {
 
-		$this->onEvent('update.proposal.status', array(
+		$this->postEventFeeds('update.proposal.status', array(
 			"items" => array(
 				array(
 					"type" => "ReferralManagement.proposal",
@@ -186,7 +189,7 @@ class Notifications {
 	public function onAddTeamMemberToProject($user, $project) {
 
 
-		$this->onEvent('update.proposal.team.add', array(
+		$this->postEventFeeds('update.proposal.team.add', array(
 			"items" => array(
 				array(
 					"type" => "ReferralManagement.proposal",
@@ -199,6 +202,8 @@ class Notifications {
 			))
 		);
 
+
+
 		$this->broadcastProjectUpdate($project);
 		$this->queueEmailProjectUpdate($project, array(
 			'action' => 'Assigned team member',
@@ -210,7 +215,7 @@ class Notifications {
 	public function onRemoveTeamMemberFromProject($user, $project) {
 
 
-		$this->onEvent('update.proposal.team.remove', array(
+		$this->postEventFeeds('update.proposal.team.remove', array(
 			"items" => array(
 				array(
 					"type" => "ReferralManagement.proposal",
@@ -237,7 +242,7 @@ class Notifications {
 		$typeName = explode('.', $json->type);
 		$typeName = array_pop($typeName);
 
-		$this->onEvent('add.' . $typeName . '.' . $json->documentType, array(
+		$this->postEventFeeds('add.' . $typeName . '.' . $json->documentType, array(
 			"items" => array(
 				array(
 					"type" => $json->type,
@@ -298,7 +303,7 @@ class Notifications {
 		$typeName = explode('.', $json->type);
 		$typeName = array_pop($typeName);
 
-		$this->onEvent('remove.' . $typeName . '.' . $json->documentType, array(
+		$this->postEventFeeds('remove.' . $typeName . '.' . $json->documentType, array(
 			"items" => array(
 				array(
 					"type" => $json->type,
@@ -333,7 +338,7 @@ class Notifications {
 	}
 
 	public function onDeleteProposal($json) {
-		$this->onEvent('delete.proposal', array(
+		$this->postEventFeeds('delete.proposal', array(
 			"items" => array(
 				array(
 					"type" => "ReferralManagement.proposal",
@@ -346,7 +351,7 @@ class Notifications {
 
 	public function onUpdateProposal($json) {
 
-		$this->onEvent('update.proposal', array(
+		$this->postEventFeeds('update.proposal', array(
 			"items" => array(
 				array(
 					"type" => "ReferralManagement.proposal",
@@ -363,7 +368,7 @@ class Notifications {
 	}
 
 	public function onCreateProposal($projectId, $json) {
-		$this->onEvent('create.proposal', array(
+		$this->postEventFeeds('create.proposal', array(
 			"items" => array(
 				array(
 					"type" => "ReferralManagement.proposal",
@@ -379,7 +384,7 @@ class Notifications {
 	}
 
 	public function onDeleteTask($json) {
-		$this->onEvent('delete.task', array(
+		$this->postEventFeeds('delete.task', array(
 			"items" => array(
 				array(
 					"type" => "Task.task",
@@ -390,7 +395,7 @@ class Notifications {
 		);
 	}
 	public function onUpdateTask($json) {
-		$this->onEvent('update.task', array(
+		$this->postEventFeeds('update.task', array(
 			"items" => array(
 				array(
 					"type" => "Tasks.task",
@@ -407,7 +412,7 @@ class Notifications {
 	}
 
 	public function onUpdateTaskStar($json) {
-		$this->onEvent('update.task.star', array(
+		$this->postEventFeeds('update.task.star', array(
 			"items" => array(
 				array(
 					"type" => "Tasks.task",
@@ -419,7 +424,7 @@ class Notifications {
 	}
 
 	public function onUpdateTaskDate($json) {
-		$this->onEvent('update.task.date', array(
+		$this->postEventFeeds('update.task.date', array(
 			"items" => array(
 				array(
 					"type" => "Tasks.task",
@@ -436,7 +441,7 @@ class Notifications {
 	}
 
 	public function onUpdateTaskPriority($json) {
-		$this->onEvent('update.task.priority', array(
+		$this->postEventFeeds('update.task.priority', array(
 			"items" => array(
 				array(
 					"type" => "Tasks.task",
@@ -451,7 +456,7 @@ class Notifications {
 
 	}
 	public function onCreateTask($taskId, $json) {
-		$this->onEvent('create.task', array(
+		$this->postEventFeeds('create.task', array(
 			"items" => array(
 				array(
 					"type" => "Tasks.task",
@@ -469,7 +474,7 @@ class Notifications {
 
 	public function onCreateDefaultTasks($taskIdList, $json) {
 
-		$this->onEvent('create.default.tasks',
+		$this->postEventFeeds('create.default.tasks',
 			array(
 				"items" => array_map(
 					function ($taskId) {
@@ -502,6 +507,7 @@ class Notifications {
 		$this->queueEmailTaskUpdate($task, array(
 			'action' => 'Assigned team member',
 		));
+
 
 		$this->broadcastTaskUpdate($task);
 
