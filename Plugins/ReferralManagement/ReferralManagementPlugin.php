@@ -406,11 +406,11 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 				$list = $this->cache()->getProjectsMetadataList();
 			}
 
-			if ($filter['status'] == 'archive') {
+			if ($filter['status'] == 'archived') {
 				$list = $this->cache()->getArchivedProjectsMetadataList();
 			}
 
-			if(!in_array($filter['status'], array('active', 'archive'))){
+			if(!in_array($filter['status'], array('active', 'archived'))){
 				throw new \Exception('Expecting one of `active`, `archive`');
 			}
 
