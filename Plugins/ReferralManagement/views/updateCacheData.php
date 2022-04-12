@@ -1,6 +1,6 @@
 <?php
 
 
-$this->cache()->needsProjectListUpdate();
-$this->cache()->needsDeviceListUpdate();
-$this->cache()->needsUserListUpdate();
+$this->cache()->updateProjectListCache();
+$this->cache()->updateDeviceListCache();
+$this->cache()->updateUserListCache();

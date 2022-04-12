@@ -12,7 +12,7 @@ class Export{
 		
 		$referrals=GetPlugin('ReferralManagement');
 		$database = $referrals->getDatabase();
-		$this->list=array_map(function($project){ return $project->id; }, $database->getAllProposals(array('status' => array('value' => 'archived', 'comparator' => '!='))));
+		$this->list=array_map(function($project){ return $project->id; }, $database->getAllProposals(array('status' => 'active')));
 		return $this;
 
 	}

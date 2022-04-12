@@ -7,7 +7,6 @@ class ListItemCache implements \core\EventListener {
 	use \core\EventListenerTrait;
 
 	public function needsProjectListUpdate() {
-		//$filter = array('status' => array('value' => 'archived', 'comparator' => '!='));
 		(new \core\LongTaskProgress())
 			->throttle('onTriggerUpdateProjectList', array(), array('interval' => 30));
 	}
@@ -20,8 +19,6 @@ class ListItemCache implements \core\EventListener {
 			->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval' => 30));
 	}
 
-
-
 	protected function onCreateUser($params) {
 		$this->needsUserListUpdate();
 	}
@@ -31,21 +28,31 @@ class ListItemCache implements \core\EventListener {
 	}
 
 	protected function onTriggerUpdateUserList($params) {
-		$this->cacheUsersMetadataList($params);
+		$this->cacheUsersMetadataList();
 	}
 
 	protected function onTriggerUpdateDevicesList($params) {
-		$this->cacheDevicesMetadataList($params);
+		$this->cacheDevicesMetadataList();
 	}
 
 	protected function onTriggerUpdateProjectList($params) {
-		$this->cacheProjectsMetadataList(array('status'=>'active'));
-		$this->cacheProjectsMetadataList(array('status'=>'archived'));
+		$this->updateProjectListCache();
 	}
 
+	public function updateProjectListCache() {
+		$this->cacheProjectsMetadataList(array('status' => 'active'));
+		$this->cacheProjectsMetadataList(array('status' => 'archived'));
+	}
 
+	public function updateDeviceListCache() {
+		$this->cacheDevicesMetadataList();
+	}
 
-	public function cacheProjectsMetadataList($filter) {
+	public function updateUserListCache() {
+		$this->cacheUsersMetadataList();
+	}
+
+	protected function cacheProjectsMetadataList($filter) {
 
 		Broadcast('cacheprojects', 'update', array('params' => $filter));
 
@@ -107,14 +114,22 @@ class ListItemCache implements \core\EventListener {
 			}
 
 		}
-		Broadcast('cacheprojects','info', array(
-			'filter'=>$filter,
-			'cacheName'=>$cacheName,
-			'filesize'=>filesize(HtmlDocument()->getCachedPageFile($cacheName))
+		Broadcast('cacheprojects', 'info', array(
+			'filter' => $filter,
+			'cacheName' => $cacheName,
+			'filesize' => filesize(HtmlDocument()->getCachedPageFile($cacheName)),
 		));
 	}
 
-	public function getProjectsListCacheStatus($filter) {
+	public function getProjectsListCacheStatus() {
+		return $this->projectsListCacheStatus(array('status' => 'active'));
+	}
+
+	public function getArchivedProjectsListCacheStatus() {
+		return $this->projectsListCacheStatus(array('status' => 'archived'));
+	}
+
+	protected function projectsListCacheStatus($filter) {
 
 		$filterHash = md5(json_encode($filter));
 
@@ -127,7 +142,16 @@ class ListItemCache implements \core\EventListener {
 		);
 	}
 
-	public function getProjectsMetadataList($filter) {
+
+	public function getProjectsMetadataList(){
+		return $this->projectsMetadataList(array('status' => 'active'));
+	}
+	public function getArchivedProjectsMetadataList() {
+		return $this->projectsMetadataList(array('status' => 'archived'));
+	}
+
+
+	protected function projectsMetadataList($filter) {
 
 		//error_log("write cache: ".\GetPath('{cache}'));
 		$filterHash = md5(json_encode($filter));
@@ -151,7 +175,10 @@ class ListItemCache implements \core\EventListener {
 
 	}
 
-	public function cacheUsersMetadataList($params) {
+	protected function cacheUsersMetadataList() {
+
+
+		$params = (object) array('team' => 1);
 
 		$cacheName = "ReferralManagement.userList.json";
 		$cacheFile = HtmlDocument()->getCachedPageFile($cacheName);
@@ -223,9 +250,9 @@ class ListItemCache implements \core\EventListener {
 
 	}
 
-	public function cacheDevicesMetadataList($params) {
+	protected function cacheDevicesMetadataList() {
 
-		//return;
+		$params = (object) array('team' => 1);
 
 		$cacheName = "ReferralManagement.deviceList.json";
 		$cacheData = HtmlDocument()->getCachedPage($cacheName);

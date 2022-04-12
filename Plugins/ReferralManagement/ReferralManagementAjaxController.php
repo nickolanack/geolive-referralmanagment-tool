@@ -202,9 +202,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		);
 
 		if ($this->getPlugin()->getParameter('enableProjectListCaching')) {
-			$response['debug'] = $this->getPlugin()->cache()->getProjectsListCacheStatus(
-				array('status' => array('value' => 'archived', 'comparator' => '!='))
-			);
+			$response['debug'] = $this->getPlugin()->cache()->getProjectsListCacheStatus();
 			$response['_removed'] = $this->getPlugin()->getLastFilteredProjects();
 		}
 
@@ -535,8 +533,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		$response = array(
 			'results' => $this->getPlugin()->getArchivedProjectList(),
-			'debug' => $this->getPlugin()->cache()->getProjectsListCacheStatus(
-				array('status' => 'archived')),
+			'debug' => $this->getPlugin()->cache()->getArchivedProjectsListCacheStatus()
 		);
 		return $response;
 
@@ -942,8 +939,8 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		$this->getPlugin()->notifier()->onUpdateUserRole((object) array_merge(get_object_vars($json), $update));
 
-		$this->getPlugin()->cache()->needsDeviceListUpdate()
-		(new \core\LongTaskProgress())->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval' => 30));
+		$this->getPlugin()->cache()->needsDeviceListUpdate();
+		$this->getPlugin()->cache()->needsUserListUpdate();
 
 		return  $update;
 

@@ -153,9 +153,6 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		}
 
 		if ($params->itemType === "ReferralManagement.proposal") {
-
-			$filter = array('status' => array('value' => 'archived', 'comparator' => '!='));
-
 			$this->cache()->needsProjectListUpdate();
 
 			return;
@@ -405,14 +402,24 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		return $this->getProjectList(array('status' => 'archived'));
 
 	}
-	public function getProjectList($filter = array()) {
+	protected function getProjectList($filter = array()) {
 
 		if (!Auth('memberof', 'lands-department', 'group')) {
 			return array();
 		}
 
 		if ($this->getParameter('enableProjectListCaching')) {
-			$list = $this->cache()->getProjectsMetadataList($filter);
+
+
+			if($filter['status']=='active'){
+				$list = $this->cache()->getProjectsMetadataList();
+			}
+
+			if($filter['status']=='archive'){
+				$list = $this->cache()->getArchivedProjectsMetadataList();
+			}
+
+			
 		} else {
 			$list = $this->listProjectsMetadata($filter);
 		}
@@ -444,7 +451,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 	public function listProjectsMetadata($filter) {
 
-		$database = GetPlugin('ReferralManagement')->getDatabase();
+		$database = $this->getDatabase();
 		$results = $database->getAllProposals($filter);
 
 		return array_map(function ($result) {
