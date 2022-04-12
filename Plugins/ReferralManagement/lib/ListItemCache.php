@@ -6,7 +6,7 @@ class ListItemCache implements \core\EventListener {
 
 	use \core\EventListenerTrait;
 
-	public function needsProjectListUpdate($filter) {
+	public function needsProjectListUpdate() {
 		//$filter = array('status' => array('value' => 'archived', 'comparator' => '!='));
 		(new \core\LongTaskProgress())
 			->throttle('onTriggerUpdateProjectList', array(), array('interval' => 30));
@@ -141,7 +141,7 @@ class ListItemCache implements \core\EventListener {
 			$projects = json_decode(json_encode($projects));
 		}
 
-		$this->needsProjectListUpdate($filter);
+		$this->needsProjectListUpdate();
 
 		return $projects;
 

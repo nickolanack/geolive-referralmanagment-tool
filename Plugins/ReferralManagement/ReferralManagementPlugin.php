@@ -156,7 +156,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 			$filter = array('status' => array('value' => 'archived', 'comparator' => '!='));
 
-			$this->cache()->needsProjectListUpdate($filter);
+			$this->cache()->needsProjectListUpdate();
 
 			return;
 		}
