@@ -39,8 +39,9 @@ button:focus {outline:0;}
     
     .ui-view.feed-sub-item {
     
-        display: inline-block;
-        
+        &div{
+            display: inline-block;
+        }
         
         
             .template-content>*{
