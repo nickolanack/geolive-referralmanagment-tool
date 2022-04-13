@@ -44,25 +44,37 @@ var UserNotifications = (function() {
 
 					}
 				}
-			})).runOnceOnLoad(function(button){
-				new UIPopover(button.getElement(),{
-			        description:'Your notifications',
-			        anchor:UIPopover.AnchorAuto()
-			    });
+			})).runOnceOnLoad(function(button) {
+				new UIPopover(button.getElement(), {
+					description: 'Your notifications',
+					anchor: UIPopover.AnchorAuto()
+				});
 
 
 
 				(new AjaxControlQuery(CoreAjaxUrlRoot, 'discussion_metadata', ObjectAppend_({
-		            'item': AppClient.getId(),
-		            'itemType':AppClient.getType(),
-		            'channel':'notifications'
-		        }, {"plugin":"Discussions"}))).on('success',function(resp){
-		        	
-		        	button.setAttribute('data-count', 0);
-		        	button.setAttribute('data-new', 0);
+					'item': AppClient.getId(),
+					'itemType': AppClient.getType(),
+					'channel': 'notifications'
+				}, {
+					"plugin": "Discussions"
+				}))).on('success', function(resp) {
 
-		        }).execute();
+					var indicator = button.getElement().appendChild(new Element('span', {
+						"class": "notification-indicator"
+					}));
 
+					indicator.setAttribute('data-count', 0);
+					indicator.setAttribute('data-new', 0);
+
+					if (resp.subscripton) {
+						AjaxControlQuery.Subscribe(resp.subscription, function(result) {
+							console.log(result);
+						});
+					}
+
+
+				}).execute();
 
 
 
@@ -81,11 +93,11 @@ var UserNotifications = (function() {
 
 					}
 				}
-			})).runOnceOnLoad(function(button){
-				new UIPopover(button.getElement(),{
-			        description:'Toggle light/dark display',
-			        anchor:UIPopover.AnchorAuto()
-			    });
+			})).runOnceOnLoad(function(button) {
+				new UIPopover(button.getElement(), {
+					description: 'Toggle light/dark display',
+					anchor: UIPopover.AnchorAuto()
+				});
 			}),
 			(new ElementModule('span', {
 				"class": "logout-toggle",
@@ -99,11 +111,11 @@ var UserNotifications = (function() {
 
 					}
 				}
-			})).runOnceOnLoad(function(button){
-				new UIPopover(button.getElement(),{
-			        description:'Log out',
-			        anchor:UIPopover.AnchorAuto()
-			    });
+			})).runOnceOnLoad(function(button) {
+				new UIPopover(button.getElement(), {
+					description: 'Log out',
+					anchor: UIPopover.AnchorAuto()
+				});
 			})
 		];
 
@@ -123,13 +135,12 @@ var UserNotifications = (function() {
 
 					}
 				}
-			})).runOnceOnLoad(function(button){
-				new UIPopover(button.getElement(),{
-			        description:'Hide/show admin buttons',
-			        anchor:UIPopover.AnchorAuto()
-			    });
-			})
-			)
+			})).runOnceOnLoad(function(button) {
+				new UIPopover(button.getElement(), {
+					description: 'Hide/show admin buttons',
+					anchor: UIPopover.AnchorAuto()
+				});
+			}))
 		}
 
 
