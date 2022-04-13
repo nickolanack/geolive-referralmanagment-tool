@@ -1,23 +1,3 @@
-if(AppClient.getUserType()!="admin"){
-    return;
+if (ProjectTeam.CurrentTeam().hasUser(item.getUserId())) {
+    return new ElementModule('span',{'class':"post-user", 'html':ProjectTeam.CurrentTeam().getUser(item.getUserId()).getName()});
 }
-
-return new ModuleArray([
-        new ElementModule('button', {
-            html:"Delete",
-            "class":"inline-btn remove",
-            events:{click:function(){
-                item.remove();
-            }}
-        })/*,
-         new ElementModule('button', {
-            html:"Edit",
-            "class":"inline-btn edit",
-            events:{click:function(){
-                
-                
-                
-                
-            }}
-        })*/
-    ], {identifier:"post-buttons"});
