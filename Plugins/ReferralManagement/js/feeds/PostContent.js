@@ -4,11 +4,69 @@ var PostContent = (function() {
 	var PostContent = new Class({
 
 
+		formatEventText: function(text, data) {
+
+
+
+			if (text.indexOf('event:') === 0) {
+				text = text.split(':').slice(1).join(':');
+			}
+
+
+			if (ProjectTeam.CurrentTeam().hasUser(data.user)) {
+
+				var userName = ProjectTeam.CurrentTeam().getUser(data.user).getName();
+				text = userName + text;
+
+				text = text.replace('update.', 'updated.')
+				text = text.replace('create.', 'created.')
+
+			}
+
+			if (data.metadata.items && data.metadata.items.length) {
+
+				var itemsText = '';
+
+				data.metadata.items.forEach(function(dataItem) {
+
+
+
+					if (dataItem.type == "User") {
+						if (ProjectTeam.CurrentTeam().hasUser(dataItem.id)) {
+							var targetUserName = ProjectTeam.CurrentTeam().getUser(dataItem.id).getName();
+							itemsText += ' for: ' + targetUserName;
+						}
+					}
+
+					if (dataItem.type == "ReferralManagement.proposal") {
+						if (ProjectTeam.CurrentTeam().hasProject(dataItem.id)) {
+							var targetUserName = ProjectTeam.CurrentTeam().getProject(dataItem.id).getName();
+							itemsText += ' for: ' + targetUserName;
+						}
+					}
+				})
+
+				if (itemsText.length > 0) {
+					text += '<span class="items-label">' + itemsText + '<span>';
+				}
+			}
+
+
+			text = text.replace('proposal', 'project');
+			text = text.split('.').join(' ');
+
+
+			text = text.replace('team remove', 'removed user from project')
+			text = text.replace('team add', 'added user to project')
+
+			return text;
+		},
+
 
 		resolveItems: function(item, items) {
 
 
-			var team=ProjectTeam.CurrentTeam();
+			var team = ProjectTeam.CurrentTeam();
 
 			var postItems = item.getMetadata().items.map(function(i) {
 
@@ -24,7 +82,7 @@ var PostContent = (function() {
 
 
 				if (type == 'ReferralManagement.proposal') {
-					
+
 					try {
 						return team.getProposal(i.id);
 					} catch (e) {
@@ -32,9 +90,9 @@ var PostContent = (function() {
 						return new MockDataTypeItem({
 							type: "ReferralManagement.proposal",
 							name: "project no longer exists",
-							companyName:"",
-							percentComplete:0,
-							priority:''
+							companyName: "",
+							percentComplete: 0,
+							priority: ''
 						});
 
 					}
@@ -54,33 +112,33 @@ var PostContent = (function() {
 				}
 
 				if (type.toLowerCase() == 'guest') {
-					
+
 					return new MockDataTypeItem({
-						type: "user",	
+						type: "user",
 						name: "",
 						email: i.email
 					})
 
-					
+
 				}
 
 				if (type.toLowerCase() == 'token') {
 
 
 					/*
-					 * hide this item if validated
-					 */
-					
+						* hide this item if validated
+						*/
+
 					return new MockDataTypeItem({
 						type: "ReferralManagement.proposal",
 						name: "{pending}",
-						companyName:"",
-						percentComplete:0,
-						priority:'',
-						token:i.token
+						companyName: "",
+						percentComplete: 0,
+						priority: '',
+						token: i.token
 					})
 
-					
+
 				}
 
 
@@ -89,9 +147,8 @@ var PostContent = (function() {
 				return !!postItem;
 			});
 
-			
 
-			
+
 			return postItems;
 
 		}

@@ -141,63 +141,12 @@ var RecentItems = (function() {
 
 	}
 
+
+	/**
+	 * @deprecated use PostContent.formatEventText
+	 */
 	RecentItems.formatEventText = function(text, data) {
-
-
-
-		if (text.indexOf('event:') === 0) {
-			text = text.split(':').slice(1).join(':');
-		}
-
-
-		if (ProjectTeam.CurrentTeam().hasUser(data.user)) {
-
-			var userName = ProjectTeam.CurrentTeam().getUser(data.user).getName();
-			text = userName + text;
-
-			text = text.replace('update.', 'updated.')
-			text = text.replace('create.', 'created.')
-
-		}
-
-		if (data.metadata.items && data.metadata.items.length) {
-
-			var itemsText='';
-
-			data.metadata.items.forEach(function(dataItem) {
-
-
-
-
-				if (dataItem.type == "User") {
-					if (ProjectTeam.CurrentTeam().hasUser(dataItem.id)) {
-						var targetUserName = ProjectTeam.CurrentTeam().getUser(dataItem.id).getName();
-						itemsText += ' for: ' + targetUserName;
-					}
-				}
-
-				if (dataItem.type == "ReferralManagement.proposal") {
-					if (ProjectTeam.CurrentTeam().hasProject(dataItem.id)) {
-						var targetUserName = ProjectTeam.CurrentTeam().getProject(dataItem.id).getName();
-						itemsText += ' for: ' + targetUserName;
-					}
-				}
-			})
-
-			if(itemsText.length>0){
-				text+='<span class="items-label">'+itemsText+'<span>';
-			}
-		}
-
-
-		text = text.replace('proposal', 'project');
-		text = text.split('.').join(' ');
-
-
-		text=text.replace('team remove', 'removed user from project')
-		text=text.replace('team add', 'added user to project')
-
-		return text;
+		return PostContent.formatEventText(text, data);
 	};
 
 
