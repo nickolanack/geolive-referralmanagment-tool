@@ -504,6 +504,21 @@ class Notifications {
 
 	public function onAddTeamMemberToTask($user, $task) {
 
+
+		$this->postEventFeeds('update.task.team.add', array(
+			"items" => array(
+				array(
+					"type" => "Tasks.task",
+					"id" => $task,
+				),
+				array(
+					"type" => "User",
+					"id" => $user,
+				)
+			))
+		);
+
+
 		$this->queueEmailTaskUpdate($task, array(
 			'action' => 'Assigned team member',
 		));
@@ -513,6 +528,19 @@ class Notifications {
 
 	}
 	public function onRemoveTeamMemberFromTask($user, $task) {
+
+		$this->postEventFeeds('update.task.team.remove', array(
+			"items" => array(
+				array(
+					"type" => "Tasks.task",
+					"id" => $task,
+				),
+				array(
+					"type" => "User",
+					"id" => $user,
+				)
+			))
+		);
 
 		$this->queueEmailTaskUpdate($task, array(
 			'action' => 'Unassigned team member',
