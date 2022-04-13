@@ -64,6 +64,11 @@ var UserNotifications = (function() {
 						"class": "notification-indicator"
 					}));
 
+					button.on('click', function(){
+						indicator.setAttribute('data-new', 0);
+						indicator.removeClass('has-new');
+					});
+
 					indicator.setAttribute('data-count', resp.metadata.posts);
 					indicator.setAttribute('data-new', resp.metadata.new);
 					if(resp.metadata.new){
@@ -73,6 +78,7 @@ var UserNotifications = (function() {
 					if (resp.subscription) {
 						AjaxControlQuery.Subscribe(resp.subscription, function(result) {
 							indicator.setAttribute('data-new', parseInt(indicator.getAttribute('data-new'))+1);
+							indicator.setAttribute('data-count', parseInt(indicator.getAttribute('data-count'))+1);
 							indicator.addClass('has-new');
 							console.log(result);
 
