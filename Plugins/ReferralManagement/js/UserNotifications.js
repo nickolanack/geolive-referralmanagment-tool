@@ -75,6 +75,8 @@ var UserNotifications = (function() {
 							indicator.setAttribute('data-new', parseInt(indicator.getAttribute('data-new'))+1);
 							indicator.addClass('has-new');
 							console.log(result);
+
+							NotificationBubble.Make("", NotificationContent.formatEventText(result.text, result), {className:"info"});
 						});
 					}
 
