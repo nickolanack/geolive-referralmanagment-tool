@@ -19,6 +19,19 @@ var NotificationContent=(function(){
 			}
 
 
+			if(text=='event: update.task.team.add'){
+				text='You were assigned to a task'
+				data.text=text;
+				return text;
+			}
+
+			if(text=='event: update.task.team.remove'){
+				text='You were unassigned from a task'
+				data.text=text;
+				return text;
+			}
+
+
 			return PostContent.formatEventText(text, data);		
 		},
 
