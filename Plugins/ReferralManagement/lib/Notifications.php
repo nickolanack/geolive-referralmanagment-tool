@@ -28,7 +28,7 @@ class Notifications {
 					$channels[]=$item['type'].'.'.$item['id'].'.activity';
 				}
 			
-				if($item['type']=='user'/*&&$item['id']!=GetClient()->getUserId()*/){
+				if(strtolower($item['type'])=='user'/*&&$item['id']!=GetClient()->getUserId()*/){
 					$discussion->post($discussion->getDiscussionForItem($item['id'], $item['type'], 'notifications')->id, $message, $data);
 					$channels[]=$item['type'].'.'.$item['id'].'.activity';
 				}
