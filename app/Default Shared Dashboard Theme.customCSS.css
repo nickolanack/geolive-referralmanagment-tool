@@ -10,6 +10,14 @@ button:focus {outline:0;}
 
 
 
+span.notification-indicator:after {
+    content: attr(data-count);
+    position: absolute;
+    font-size: 10px;
+    right: 0;
+    bottom: 0;
+}
+
 [data-view="userNotificationFeedDetail"]{
     [data-view="defaultNotificationDetail"]{
          button.inline-btn.btn.inline-remove {background-color: black;}
