@@ -13,7 +13,7 @@
         "resolveChannelScript": "return defaultChannel;",
         "resolveItemScript": "return item;",
         "initialPostsScript": "return null;",
-        "formatPostScript": "return RecentItems.formatEventText(post.text, post);",
+        "formatPostScript": "return PostContent.formatEventText(post.text, post);",
         "namedView": "defaultPostDetail",
         "reverseOrder": true,
         "className": ""
