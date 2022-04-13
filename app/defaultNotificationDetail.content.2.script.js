@@ -3,7 +3,7 @@
 return new ModuleArray([
         new ElementModule('button', {
             html:"Delete",
-            "class":"inline-btn remove",
+            "class":"inline-btn btn inline-remove",
             events:{click:function(){
                 item.remove();
             }}
