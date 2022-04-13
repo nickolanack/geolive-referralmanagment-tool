@@ -7,11 +7,15 @@ var NotificationContent=(function(){
 
 			if(text=='event: update.proposal.team.add'){
 				text='You were added to a project team'
+				data.text=text;
+				return text;
 			}
 
 
 			if(text=='event: update.proposal.team.remove'){
 				text='You were removed from a project team'
+				data.text=text;
+				return text;
 			}
 
 

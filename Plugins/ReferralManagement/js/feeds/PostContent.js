@@ -59,6 +59,7 @@ var PostContent = (function() {
 			text = text.replace('team remove', 'removed user from project')
 			text = text.replace('team add', 'added user to project')
 
+			data.text=text;
 			return text;
 		},
 
