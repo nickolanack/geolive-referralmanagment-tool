@@ -25498,5 +25498,33 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.456": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "activityfeed.update.task.team.remove.text",
+            "target": "activityfeed.update.task.team.remove.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "event: update.task.team.remove"
+        }
+    },
+    "widget.457": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "activityfeed.update.task.team.add.text",
+            "target": "activityfeed.update.task.team.add.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "event: update.task.team.add"
+        }
     }
 }
