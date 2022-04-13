@@ -25414,32 +25414,114 @@
             "notifyViewer": false,
             "useRemote": "",
             "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "defaultNotificationDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "defaultNotificationDetail.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "identifier": "",
+                                    "className": "",
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "defaultNotificationDetail.metadata.positions.content.modules.2.config.fieldValueScript.js",
+                                    "formatElementScript": "el.addClass('timestamp');"
+                                }
+                            },
+                            {
+                                "type": "FormattedText",
+                                "config": {
+                                    "textValueScript": "defaultNotificationDetail.metadata.positions.content.modules.3.config.textValueScript.js",
+                                    "formatModuleScript": "",
+                                    "className": "",
+                                    "imageWidth": 300,
+                                    "imageHeight": 240,
+                                    "multiImageWidth": 100,
+                                    "multiImageHeight": 75,
+                                    "portraitImageWidth": 75,
+                                    "portraitImageHeight": 100,
+                                    "autoArrange": true,
+                                    "oneLine": true,
+                                    "maxChars": 0,
+                                    "maxWidth": 0,
+                                    "showAudios": true,
+                                    "showVideos": true,
+                                    "showDocuments": true,
+                                    "showImages": true,
+                                    "showLinks": true,
+                                    "showExternalContent": true,
+                                    "embedPortrait": true,
+                                    "preferLocalContent": true,
+                                    "portraitClip": true
+                                }
+                            },
+                            {
+                                "type": "UIListView",
+                                "config": {
+                                    "listClassName": "",
+                                    "className": "feed-sub-item",
+                                    "identifier": "",
+                                    "viewType": "view",
+                                    "namedView": "defaultView",
+                                    "shouldRender": true,
+                                    "namedViewScript": "defaultNotificationDetail.metadata.positions.content.modules.4.config.namedViewScript.js",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": "",
+                                    "getItemListScript": "defaultNotificationDetail.metadata.positions.content.modules.4.config.getItemListScript.js",
+                                    "formatItemListScript": "return list;",
+                                    "formatListItemModuleScript": "defaultNotificationDetail.metadata.positions.content.modules.4.config.formatListItemModuleScript.js",
+                                    "emptyNamedView": "emptyListView",
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "defaultNotificationDetail.metadata.positions.content.modules.5.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
                 "positionList": [
                     "title",
                     "content",
                     "footer",
                     "menu"
                 ],
-                "positions": {
-                    "title": {
-                        "modules": [
-                            "defaultNotificationDetail.metadata.positions.title.modules.0.json"
-                        ]
-                    },
-                    "content": {
-                        "modules": [
-                            "defaultNotificationDetail.metadata.positions.content.modules.0.json"
-                        ]
-                    },
-                    "footer": {
-                        "modules": [
-                            "defaultNotificationDetail.metadata.positions.footer.modules.0.json"
-                        ]
-                    },
-                    "menu": {
-                        "modules": []
-                    }
-                }
+                "_diagramState": []
             },
             "readAccess": "public"
         }

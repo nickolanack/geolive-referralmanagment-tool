@@ -1,0 +1,1 @@
+return item.getTextHtml().replace('proposal', 'project')
