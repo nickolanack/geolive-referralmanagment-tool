@@ -30,9 +30,29 @@ button:focus {outline:0;}
             
         }
     }
+    
      .activity-feed:before{
         display:none
     }
+    
+    
+    
+    .ui-view.feed-sub-item {
+    
+        display: inline-block;
+        
+        
+        
+            .template-content>*{
+                display:none;
+            }
+             .template-content>.item-title{
+                display:block;
+                white-space: nowrap;overflow: visible;
+                
+            }
+    }
+    
 }
 
 
