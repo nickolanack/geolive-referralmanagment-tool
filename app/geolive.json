@@ -22052,8 +22052,9 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "",
+                                    "identifier": "",
                                     "viewType": "view",
-                                    "namedView": "activityFeedDetail",
+                                    "namedView": "userNotificationFeedDetail",
                                     "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
@@ -25347,6 +25348,56 @@
             "parseMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onRemoveTeamMemberFromProject-synopsis.contentTemplate.html"
+        }
+    },
+    "widget.454": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "userNotificationFeedDetail",
+            "target": "userNotificationFeedDetail",
+            "templateName": "userNotificationFeedDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "useRemote": "",
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "userNotificationFeedDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FlexibleHeight",
+                                "config": {
+                                    "identifier": "",
+                                    "targetElementScript": "userNotificationFeedDetail.metadata.positions.content.modules.1.config.targetElementScript.js",
+                                    "offset": "0",
+                                    "offsetScript": ""
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
         }
     }
 }
