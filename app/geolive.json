@@ -25399,5 +25399,104 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.455": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "defaultNotificationDetail",
+            "target": "defaultNotificationDetail",
+            "templateName": "defaultNotificationDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "useRemote": "",
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "defaultNotificationDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIListView",
+                                "config": {
+                                    "listClassName": "",
+                                    "className": "feed-sub-item",
+                                    "identifier": "",
+                                    "viewType": "view",
+                                    "namedView": "defaultView",
+                                    "shouldRender": true,
+                                    "namedViewScript": "defaultNotificationDetail.metadata.positions.content.modules.1.config.namedViewScript.js",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": "",
+                                    "getItemListScript": "defaultNotificationDetail.metadata.positions.content.modules.1.config.getItemListScript.js",
+                                    "formatItemListScript": "return list;",
+                                    "formatListItemModuleScript": "defaultNotificationDetail.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
+                                    "emptyNamedView": "emptyListView",
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "defaultNotificationDetail.metadata.positions.content.modules.2.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "identifier": "",
+                                    "className": "",
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "defaultNotificationDetail.metadata.positions.content.modules.3.config.fieldValueScript.js",
+                                    "formatElementScript": "el.addClass('timestamp');"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "defaultNotificationDetail.metadata.positions.content.modules.4.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
     }
 }
