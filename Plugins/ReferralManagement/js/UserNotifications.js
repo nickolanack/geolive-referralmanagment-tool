@@ -56,7 +56,7 @@ var UserNotifications = (function() {
 		            'item': AppClient.getId(),
 		            'itemType':AppClient.getType(),
 		            'channel':'notifications'
-		        }, "plugin":"Discussions"));
+		        }, {"plugin":"Discussions"}));
 		        discussionMetadata.on('success',function(resp){
 		        	button.setAttribute('data-count', 0);
 		        	button.setAttribute('data-new', 0);
