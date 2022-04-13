@@ -64,11 +64,16 @@ var UserNotifications = (function() {
 						"class": "notification-indicator"
 					}));
 
-					indicator.setAttribute('data-count', 0);
-					indicator.setAttribute('data-new', 0);
+					indicator.setAttribute('data-count', resp.metadata.posts);
+					indicator.setAttribute('data-new', resp.metadata.new);
+					if(resp.metadata.new){
+						indicator.addClass('has-new');
+					}
 
 					if (resp.subscripton) {
 						AjaxControlQuery.Subscribe(resp.subscription, function(result) {
+							indicator.setAttribute('data-new', parseInt(indicator.getAttribute('data-new'))+1);
+							indicator.addClass('has-new');
 							console.log(result);
 						});
 					}
