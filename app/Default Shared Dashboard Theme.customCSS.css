@@ -9,6 +9,35 @@ body.body-overlayed>#viewControllerApp>div>div>.ui-view {
 button:focus {outline:0;}
 
 
+
+[data-view="userNotificationFeedDetail"]{
+    [data-view="defaultNotificationDetail"]{
+         button.inline-btn.btn.inline-remove {background-color: black;}
+        
+        
+        .field-value-module.timestamp, span.post-user {
+            display:inline-block;
+            margin-right:10px;
+        }
+        
+        
+        
+        
+        margin-left: 0; 
+        
+        &:after {
+            display: none;
+            
+        }
+    }
+     .activity-feed:before{
+        display:none
+    }
+}
+
+
+
+
 .search-bar-content:after {
     position: absolute;
     content: "\0f002";
