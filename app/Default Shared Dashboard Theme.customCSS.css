@@ -17,6 +17,27 @@ span.notification-indicator:after {
     right: 0;
     bottom: 0;
 }
+span.notification-indicator.has-new:after{
+    display:none;
+}
+span.notification-indicator.has-new:before{
+    content:attr(data-new);
+    position: absolute;
+    font-size: 11px;
+    background: crimson;
+    padding: 1px 5px;
+    display: inline-block;
+    line-height: 13px;
+    text-align: center;
+    bottom: 4px;
+    right: -4px;
+    z-index: 1;
+    border-radius: 6px;
+    color: black;
+    font-weight: bold;
+    
+}
+
 
 [data-view="userNotificationFeedDetail"]{
     [data-view="defaultNotificationDetail"]{
