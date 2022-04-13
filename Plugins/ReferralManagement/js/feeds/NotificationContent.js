@@ -5,7 +5,7 @@ var NotificationContent=(function(){
 		formatEventText: function(text, data) {
 
 
-			if(text='event: update.proposal.team.add'){
+			if(text=='event: update.project.team.add'){
 				text='You were added to a project team'
 			}
 
