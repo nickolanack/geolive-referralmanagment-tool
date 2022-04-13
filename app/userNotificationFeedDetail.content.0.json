@@ -14,7 +14,7 @@
         "resolveItemScript": "return AppClient;",
         "initialPostsScript": "",
         "formatPostScript": "return RecentItems.FormatPost(post);",
-        "namedView": "defaultPostDetail",
+        "namedView": "defaultNotificationDetail",
         "reverseOrder": true,
         "className": ""
     }
