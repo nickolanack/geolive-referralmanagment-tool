@@ -1,6 +1,4 @@
-if(AppClient.getUserType()!="admin"){
-    return;
-}
+
 
 return new ModuleArray([
         new ElementModule('button', {
