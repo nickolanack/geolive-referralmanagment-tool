@@ -1,10 +1,27 @@
 var NotificationContent=(function(){
 
-	var PostContent = new Class({
+	var NotificationContent = new Class({
+
+		formatEventText: function(text, data) {
 
 
+			if(text='event: update.proposal.team.add'){
+				text='You were added to a project team'
+			}
+
+
+			if(text='event: update.proposal.team.remove'){
+				text='You were removed from a project team'
+			}
+
+
+			return PostContent.formatEventText(text, data);		
+		},
 
 		resolveItems: function(item, items) {
+
+
+
 
 
 			var team=ProjectTeam.CurrentTeam();
@@ -105,7 +122,7 @@ var NotificationContent=(function(){
 	});
 
 
-	return new PostContent();
+	return new NotificationContent();
 
 
 
