@@ -70,7 +70,7 @@ var UserNotifications = (function() {
 						indicator.addClass('has-new');
 					}
 
-					if (resp.subscripton) {
+					if (resp.subscription) {
 						AjaxControlQuery.Subscribe(resp.subscription, function(result) {
 							indicator.setAttribute('data-new', parseInt(indicator.getAttribute('data-new'))+1);
 							indicator.addClass('has-new');
