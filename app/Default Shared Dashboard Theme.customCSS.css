@@ -47,9 +47,14 @@ button:focus {outline:0;}
             .template-content>*{
                 display:none;
             }
-             .template-content>.item-title{
-                display:block;
-                white-space: nowrap;overflow: visible;
+             .template-content{
+                
+                &>.item-title, &.task-title{
+                
+                 
+                    display:block;
+                    white-space: nowrap;overflow: visible;
+                }
                 
             }
     }
