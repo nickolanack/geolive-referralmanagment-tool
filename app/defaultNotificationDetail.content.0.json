@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "\nvar defaultIcon=<?php \n    echo json_encode(UrlFrom(GetWidget('dashboardConfig')->getParameter('defaultUserImage')[0])); \n?>;\n\n\nreturn ReferralManagementDashboard.createUserIcon(item, defaultIcon);\n\n",
+        "script": "if (ProjectTeam.CurrentTeam().hasUser(item.getUserId())) {\n    return new ElementModule('span',{'class':\"post-user\", 'html':ProjectTeam.CurrentTeam().getUser(item.getUserId()).getName()});\n}",
         "description": "Info about my custom script"
     }
 }

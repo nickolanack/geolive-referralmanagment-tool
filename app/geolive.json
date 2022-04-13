@@ -25422,28 +25422,20 @@
                         "modules": [
                             "defaultNotificationDetail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "defaultNotificationDetail.metadata.positions.content.modules.1.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "defaultNotificationDetail.metadata.positions.content.modules.2.config.fieldValueScript.js",
+                                    "fieldValueScript": "defaultNotificationDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('timestamp');"
                                 }
                             },
                             {
                                 "type": "FormattedText",
                                 "config": {
-                                    "textValueScript": "defaultNotificationDetail.metadata.positions.content.modules.3.config.textValueScript.js",
+                                    "textValueScript": "defaultNotificationDetail.metadata.positions.content.modules.2.config.textValueScript.js",
                                     "formatModuleScript": "",
                                     "className": "",
                                     "imageWidth": 300,
@@ -25476,7 +25468,7 @@
                                     "viewType": "view",
                                     "namedView": "defaultView",
                                     "shouldRender": true,
-                                    "namedViewScript": "defaultNotificationDetail.metadata.positions.content.modules.4.config.namedViewScript.js",
+                                    "namedViewScript": "defaultNotificationDetail.metadata.positions.content.modules.3.config.namedViewScript.js",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
                                     "formOptions": "{}",
@@ -25489,9 +25481,9 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
-                                    "getItemListScript": "defaultNotificationDetail.metadata.positions.content.modules.4.config.getItemListScript.js",
+                                    "getItemListScript": "defaultNotificationDetail.metadata.positions.content.modules.3.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "defaultNotificationDetail.metadata.positions.content.modules.4.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "defaultNotificationDetail.metadata.positions.content.modules.3.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
                                     "sortItemsScript": "",
@@ -25502,7 +25494,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "defaultNotificationDetail.metadata.positions.content.modules.5.config.script.js",
+                                    "script": "defaultNotificationDetail.metadata.positions.content.modules.4.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
