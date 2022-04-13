@@ -52,16 +52,16 @@ var UserNotifications = (function() {
 
 
 
-				var discussionMetadata=new AjaxControlQuery(CoreAjaxUrlRoot, 'discussion_metadata', ObjectAppend_({
+				(new AjaxControlQuery(CoreAjaxUrlRoot, 'discussion_metadata', ObjectAppend_({
 		            'item': AppClient.getId(),
 		            'itemType':AppClient.getType(),
 		            'channel':'notifications'
-		        }, {"plugin":"Discussions"}));
-		        discussionMetadata.on('success',function(resp){
+		        }, {"plugin":"Discussions"}))).on('success',function(resp){
+		        	
 		        	button.setAttribute('data-count', 0);
 		        	button.setAttribute('data-new', 0);
 
-		        });
+		        }).execute();
 
 
 
