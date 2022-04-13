@@ -13,7 +13,7 @@
         "resolveChannelScript": "return defaultChannel;",
         "resolveItemScript": "return AppClient;",
         "initialPostsScript": "",
-        "formatPostScript": "return RecentItems.FormatPost(post);",
+        "formatPostScript": "return NotificationContent.formatEventText(post.text, post);",
         "namedView": "defaultNotificationDetail",
         "reverseOrder": true,
         "className": ""
