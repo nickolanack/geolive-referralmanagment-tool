@@ -13,7 +13,7 @@
         "resolveChannelScript": "return defaultChannel;",
         "resolveItemScript": "return new MockDataTypeItem({type:\"widget\", id:145});",
         "initialPostsScript": "",
-        "formatPostScript": "return RecentItems.FormatPost(post);",
+        "formatPostScript": "return PostContent.formatEventText(post.text, post);",
         "namedView": "defaultPostDetail",
         "reverseOrder": true,
         "className": ""
