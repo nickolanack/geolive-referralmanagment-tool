@@ -280,7 +280,7 @@ class Project {
 		$removedKeys=array_values(array_diff(array_keys($fromData), array_keys($toData)));
 		foreach($removedKeys as $key){
 			$changedArray[$key]=$fromData[$key];
-			$updateArray[$key]=null
+			$updateArray[$key]=null;
 		}
 	
 
