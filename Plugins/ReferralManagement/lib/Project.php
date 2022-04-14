@@ -216,7 +216,7 @@ class Project {
 
 		$proposalId = (int) $json->id;
 
-		$previousData=new \ReferralManagement\Project()->fromId($proposalId)->toArray();
+		$previousData=(new \ReferralManagement\Project())->fromId($proposalId)->toArray();
 
 
 		/* @var $database ReferralManagementDatabase */
@@ -254,8 +254,8 @@ class Project {
 
 	protected function getDiff($fromData, $toData){
 
-		
-		
+
+
 	}
 
 
