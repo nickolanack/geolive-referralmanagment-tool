@@ -7203,7 +7203,8 @@
                                     "template": "html.projectStatus",
                                     "templateVariablesScript": "{}",
                                     "formatTextScript": "singleProjectOverviewDetail.metadata.positions.content.modules.1.config.formatTextScript.js",
-                                    "ajaxRequestTemplate": true
+                                    "ajaxRequestTemplate": true,
+                                    "identifier": "status-description"
                                 }
                             },
                             {
@@ -7317,7 +7318,8 @@
                                     "template": "html.projectDescription",
                                     "templateVariablesScript": "{}",
                                     "formatTextScript": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.formatTextScript.js",
-                                    "ajaxRequestTemplate": true
+                                    "ajaxRequestTemplate": true,
+                                    "identifier": "htmlLabel"
                                 }
                             },
                             {
@@ -7388,7 +7390,8 @@
                                     "template": "html.projectNotes",
                                     "templateVariablesScript": "{}",
                                     "formatTextScript": "singleProjectOverviewDetail.metadata.positions.content.modules.15.config.formatTextScript.js",
-                                    "ajaxRequestTemplate": true
+                                    "ajaxRequestTemplate": true,
+                                    "identifier": "htmlLabel"
                                 }
                             },
                             {

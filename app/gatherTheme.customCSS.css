@@ -52,11 +52,29 @@ $leftPanelColor:#222222;
     }
 }
 
+
+.calendar-list.ui-list-view .task-item{
+    border-top: 1px solid #e1e1e1;
+    border-bottom: none;
+    
+}
+.dark .calendar-list.ui-list-view .task-item{
+    border-top-color: #2E303A;
+    
+}
+.calendar-list.ui-list-view .task-item:first-child {
+    border: none;
+    
+}
+
 ul.item-tags li {
-    background-color: #2E303A;
     font-weight: 500;
-    color: white;
     width: 150px;
+}
+
+.dark ul.item-tags li {
+    background-color: #2E303A;
+    color: white;
 }
 
 [data-view="singleTaskListItemDetail"] ul.item-tags {
