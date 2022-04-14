@@ -287,7 +287,7 @@ class Project {
 		$intersect=array_values(array_intersect(array_keys($toData), array_keys($fromData)));
 		foreach($intersect as $key){
 			
-			if(gettype($toData[$key])!=gettype($fromData[$key)){
+			if(gettype($toData[$key])!=gettype($fromData[$key])){
 				$changedArray[$key]=$fromData[$key];
 				$updateArray[$key]=$toData[$key];
 				continue;
