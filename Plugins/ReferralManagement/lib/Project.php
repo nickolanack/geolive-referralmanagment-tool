@@ -293,9 +293,9 @@ class Project {
 				continue;
 			}
 
-			if((!$recursive)&&(is_object($toData[$key||is_array($toData[$key))){
+			if((!$recursive)&&(is_object($toData[$key])||is_array($toData[$key]))){
 
-				if(json_encode($toData[$key)!=json_encode($fromData[$key)){
+				if(json_encode($toData[$key])!=json_encode($fromData[$key])){
 					$changedArray[$key]=$fromData[$key];
 					$updateArray[$key]=$toData[$key];
 				}
