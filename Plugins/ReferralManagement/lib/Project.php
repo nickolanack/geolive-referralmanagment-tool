@@ -216,6 +216,9 @@ class Project {
 
 		$proposalId = (int) $json->id;
 
+		$previousData=new \ReferralManagement\Project()->fromId($proposalId)->toArray();
+
+
 		/* @var $database ReferralManagementDatabase */
 		$database = GetPlugin('ReferralManagement')->getDatabase();
 
@@ -225,8 +228,7 @@ class Project {
 			'status' => 'active',
 		));
 
-		GetPlugin('ReferralManagement')->notifier()->onUpdateProposal($json);
-
+		
 		GetPlugin('Attributes');
 		if (key_exists('attributes', $json)) {
 			foreach ($json->attributes as $table => $fields) {
@@ -234,11 +236,32 @@ class Project {
 			}
 		}
 
+		$this->fromId($proposalId);
+		$updatedData=$this->toArray();
+
+
+		$this->getDiff($previousData, $updatedData);
+
+		GetPlugin('ReferralManagement')->notifier()->onUpdateProposal($json);
 		Emit('onUpdateProposal', array('id' => $proposalId));
 		GetPlugin('ReferralManagement')->getVersionControl()->queueRevision(array('id' => $proposalId));
 
-		return $this->fromId($proposalId);
+		return $this;
 
 	}
+
+
+
+	protected function getDiff($fromData, $toData){
+
+		
+		
+	}
+
+
+
+
+
+
 
 }
