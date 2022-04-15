@@ -946,11 +946,11 @@ button.primary-btn.nav-new-btn {
     color: #2d2d2d;
 }
 
-button.primary-btn.nav-new-btn:before {
-    content: "+ ";
-    float: left;
-    font-size: 25px;
-}
+// button.primary-btn.nav-new-btn:before {
+//     content: "+ ";
+//     float: left;
+//     font-size: 25px;
+// }
 
 button.primary-btn.nav-new-btn:hover {
     background-color: darken($highlightBtnColor, 10%); /*#dc004c;*/
@@ -1024,10 +1024,10 @@ button.primary-btn.nav-new-btn.view-selection:before{
     margin-top :50px;
 }
 
-.ui-view.left-panel.closed button.primary-btn.nav-new-btn:before{
-    content:"+";
-    float:none;
-}
+// .ui-view.left-panel.closed button.primary-btn.nav-new-btn:before{
+//     content:"+";
+//     float:none;
+// }
 
 
 @media screen and (max-width: 1100px){
