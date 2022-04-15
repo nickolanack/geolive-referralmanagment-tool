@@ -24764,7 +24764,7 @@
             "widgetTitle": "kmlDocumentTileRenderer",
             "target": "kmlDocumentTileRenderer",
             "cacheable": true,
-            "allowExternalFilePaths": false,
+            "allowExternalFilePaths": true,
             "allowExternalUrls": false,
             "resolveSpatialFilePathScript": "kmlDocumentTileRenderer.resolveSpatialFilePathScript.js",
             "formatSpatialFileRendererScript": "",
