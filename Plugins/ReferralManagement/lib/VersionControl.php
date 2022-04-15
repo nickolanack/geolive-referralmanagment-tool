@@ -13,7 +13,7 @@ class VersionControl implements \core\EventListener{
 
 
 
-	protected function queueRevision($params){
+	public function queueRevision($params){
 
 		Throttle('onTriggerVersionControlProject', $params, array('interval' => 30), 60);
 	}

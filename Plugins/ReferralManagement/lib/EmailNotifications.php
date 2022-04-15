@@ -246,7 +246,7 @@ class EmailNotifications implements \core\EventListener{
 		 */
 		GetPlugin('Email')->getMailerWithTemplate('onUserRoleChanged', array_merge(
 			get_object_vars($args), array( /*...*/)))
-			->to('nickblackwell82@gmail.com')
+			->to($args->client->email)
 			->send();
 	}
 
