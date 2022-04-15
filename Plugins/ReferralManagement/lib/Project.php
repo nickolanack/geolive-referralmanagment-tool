@@ -178,12 +178,13 @@ class Project {
 
 		$database = GetPlugin('ReferralManagement')->getDatabase();
 
-		$database->updateProposal(array(
+		$data=array(
 			'id' => (int) $this->record->id,
 			'status' => $status,
-		));
+		);
+		$database->updateProposal($data);
 
-		GetPlugin('ReferralManagement')->notifier()->onUpdateProposalStatus($json);
+		GetPlugin('ReferralManagement')->notifier()->onUpdateProposalStatus((object)$data);
 
 	}
 
