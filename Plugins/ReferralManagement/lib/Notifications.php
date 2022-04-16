@@ -66,7 +66,7 @@ class Notifications {
 		$roles = (new \ReferralManagement\UserRoles());
 		return array_values(array_filter(GetClient()->listUsers()), function($user)use($roles){
 			 return $roles->userHasAnyOfRoles($roles->listManagerRoles(), $user['id']);
-		}));
+		});
 	}
 
 	private function postEventFeeds($event, $postData, $params = array()) {
