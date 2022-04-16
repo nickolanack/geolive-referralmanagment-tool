@@ -37,7 +37,7 @@ class Notifications {
 
 					foreach($this->getModerators() as $user){
 						$discussion->post($discussion->getDiscussionForItem($user['id'], 'User', 'notifications')->id, $message, $data);
-						$channels[]=$user['type'].'.'.$user['id'].'.notifications';
+						$channels[]='User.'.$user['id'].'.notifications';
 					}
 
 
