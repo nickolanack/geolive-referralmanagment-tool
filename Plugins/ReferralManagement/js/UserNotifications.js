@@ -1,6 +1,13 @@
 var UserNotifications = (function() {
 
-	var UserNotificationsClass = new Class();
+	var UserNotificationsClass = new Class_({
+
+
+
+
+
+		
+	});
 
 	var UserNotifications = new UserNotificationsClass();
 

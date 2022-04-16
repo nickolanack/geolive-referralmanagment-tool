@@ -30,8 +30,21 @@ class Notifications {
 			
 				if(strtolower($item['type'])=='user'/*&&$item['id']!=GetClient()->getUserId()*/){
 					$discussion->post($discussion->getDiscussionForItem($item['id'], $item['type'], 'notifications')->id, $message, $data);
-					$channels[]=$item['type'].'.'.$item['id'].'.activity';
+					$channels[]=$item['type'].'.'.$item['id'].'.notifications';
 				}
+
+				if(strtolower($item['type'])=='guest'/*&&$item['id']!=GetClient()->getUserId()*/){
+
+					foreach($this->getModerators() as $user){
+						$discussion->post($discussion->getDiscussionForItem($user['id'], $user['type'], 'notifications')->id, $message, $data);
+						$channels[]=$user['type'].'.'.$user['id'].'.notifications';
+					}
+
+
+
+				}
+
+
 			}
 		}
 
@@ -44,7 +57,17 @@ class Notifications {
 	}
 
 
+	/**
+	 * needs to return id and type
+	 */
+	private function getModerators(){
 
+
+		$roles = (new \ReferralManagement\UserRoles());
+		return array_values(array_filter(GetClient()->listUsers()), function($user)use($roles){
+			 return $roles->userHasAnyOfRoles($roles->listManagerRoles(), $user['id']);
+		}));
+	}
 
 	private function postEventFeeds($event, $postData, $params = array()) {
 
