@@ -36,7 +36,7 @@ class Notifications {
 				if(strtolower($item['type'])=='guest'/*&&$item['id']!=GetClient()->getUserId()*/){
 
 					foreach($this->getModerators() as $user){
-						$discussion->post($discussion->getDiscussionForItem($user['id'], $user['type'], 'notifications')->id, $message, $data);
+						$discussion->post($discussion->getDiscussionForItem($user['id'], 'User', 'notifications')->id, $message, $data);
 						$channels[]=$user['type'].'.'.$user['id'].'.notifications';
 					}
 
