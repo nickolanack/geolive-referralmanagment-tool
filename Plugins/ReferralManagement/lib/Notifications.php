@@ -33,7 +33,7 @@ class Notifications {
 					$channels[]=$item['type'].'.'.$item['id'].'.notifications';
 				}
 
-				if(strtolower($item['type'])=='guest'/*&&$item['id']!=GetClient()->getUserId()*/||strtolower($item['type'])=='account'){
+				if(strtolower($item['type'])=='guest'||strtolower($item['type'])=='account'){ /*&&$item['id']!=GetClient()->getUserId()*/
 					foreach($this->getModerators() as $user){
 						$discussion->post($discussion->getDiscussionForItem($user['id'], 'User', 'notifications')->id, $message, $data);
 						$channels[]='User.'.$user['id'].'.notifications';
@@ -92,7 +92,7 @@ class Notifications {
 					"email"=>$user->email,
 					"name"=>$user->name
 				)
-			), $json);
+			), $user)
 		);
 
 
