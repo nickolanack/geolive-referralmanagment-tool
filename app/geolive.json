@@ -25531,5 +25531,19 @@
             "saveTemplateAsData": false,
             "contentTemplate": "event: update.task.team.add"
         }
+    },
+    "widget.458": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "activityfeed.user.account.activation.text",
+            "target": "activityfeed.user.account.activation.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "event: user.account.activation"
+        }
     }
 }
