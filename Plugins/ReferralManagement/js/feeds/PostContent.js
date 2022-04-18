@@ -4,21 +4,23 @@ var PostContent = (function() {
 	var PostContent = new Class({
 
 
-		viewForItem:function(item){
+		viewForItem: function(item) {
 
 
 
-			var type=(item.getType?item.getType():item.type).split('.').pop();
-			var map={"proposal":"project"};
-			if(map[type]){
-			    type=map[type];
+			var type = (item.getType ? item.getType() : item.type).split('.').pop();
+			var map = {
+				"proposal": "project"
+			};
+			if (map[type]) {
+				type = map[type];
 			}
 
-			if(type==='account'){
-				type='user';
+			if (type === 'account') {
+				type = 'user';
 			}
 
-			return 'single'+(type.capitalize())+'ListItemDetail';
+			return 'single' + (type.capitalize()) + 'ListItemDetail';
 
 
 			//return namedView;
@@ -81,7 +83,7 @@ var PostContent = (function() {
 			text = text.replace('team remove', 'removed user from project')
 			text = text.replace('team add', 'added user to project')
 
-			data.text=text;
+			data.text = text;
 			return text;
 		},
 
@@ -120,9 +122,15 @@ var PostContent = (function() {
 
 					}
 				}
+
+				if (type == 'account') {
+					type='User';
+				}
+
+
 				if (type == 'User') {
 
-					if(i.id==AppClient.getId()){
+					if (i.id == AppClient.getId()) {
 						return null;
 					}
 
