@@ -31,6 +31,14 @@ var PostContent = (function() {
 		formatEventText: function(text, data) {
 
 
+			if (text == 'event: user.account.activation') {
+				text = 'A new user account was created'
+				data.text = text;
+				return text;
+			}
+
+
+
 
 			if (text.indexOf('event:') === 0) {
 				text = text.split(':').slice(1).join(':');
