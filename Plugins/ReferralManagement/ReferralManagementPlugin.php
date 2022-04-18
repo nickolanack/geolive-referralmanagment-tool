@@ -63,6 +63,11 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 	}
 
+
+	protected function onEmailVerificationLogin($params){
+		$this->notifier()->onAccountActivation($params);
+	}
+
 	/**
 	 * onEvent is called if there is no method with name = $event
 	 */

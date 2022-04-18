@@ -33,15 +33,11 @@ class Notifications {
 					$channels[]=$item['type'].'.'.$item['id'].'.notifications';
 				}
 
-				if(strtolower($item['type'])=='guest'/*&&$item['id']!=GetClient()->getUserId()*/){
-
+				if(strtolower($item['type'])=='guest'/*&&$item['id']!=GetClient()->getUserId()*/||strtolower($item['type'])=='account'){
 					foreach($this->getModerators() as $user){
 						$discussion->post($discussion->getDiscussionForItem($user['id'], 'User', 'notifications')->id, $message, $data);
 						$channels[]='User.'.$user['id'].'.notifications';
 					}
-
-
-
 				}
 
 
@@ -83,6 +79,23 @@ class Notifications {
 		);
 
 		return $this;
+
+	}
+
+	public function onAccountActivation($user){
+
+		$this->postEventFeeds('user.account.activation', array(
+			"items" => array(
+				array(
+					"type" => "account",
+					"id" => $user->id,
+					"email"=>$user->email,
+					"name"=>$user->name
+				)
+			), $json);
+		);
+
+
 
 	}
 
