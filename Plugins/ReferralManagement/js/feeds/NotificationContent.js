@@ -38,6 +38,13 @@ var NotificationContent = (function() {
 			}
 
 
+			if (text == 'event: user.account.activation') {
+				text = 'A new user account was created and requires moderation'
+				data.text = text;
+				return text;
+			}
+
+
 			return PostContent.formatEventText(text, data);
 		},
 
