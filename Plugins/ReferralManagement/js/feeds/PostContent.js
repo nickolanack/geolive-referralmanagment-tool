@@ -14,6 +14,10 @@ var PostContent = (function() {
 			    type=map[type];
 			}
 
+			if(type==='account'){
+				type='user';
+			}
+
 			return 'single'+(type.capitalize())+'ListItemDetail';
 
 
