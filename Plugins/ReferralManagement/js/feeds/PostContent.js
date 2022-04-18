@@ -4,6 +4,24 @@ var PostContent = (function() {
 	var PostContent = new Class({
 
 
+		viewForItem:function(item){
+
+
+
+			var type=(item.getType?item.getType():item.type).split('.').pop();
+			var map={"proposal":"project"};
+			if(map[type]){
+			    type=map[type];
+			}
+
+			return 'single'+(type.capitalize())+'ListItemDetail';
+
+
+			//return namedView;
+
+		},
+
+
 		formatEventText: function(text, data) {
 
 

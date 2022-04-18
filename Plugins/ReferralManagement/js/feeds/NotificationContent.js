@@ -2,6 +2,12 @@ var NotificationContent=(function(){
 
 	var NotificationContent = new Class({
 
+
+		viewForItem:function(item){
+			return PostContent.viewForItem(item);
+		},
+
+
 		formatEventText: function(text, data) {
 
 
