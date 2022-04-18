@@ -121,6 +121,11 @@ var PostContent = (function() {
 					}
 				}
 				if (type == 'User') {
+
+					if(i.id==AppClient.getId()){
+						return null;
+					}
+
 					try {
 						return team.getUserOrDevice(i.id);
 					} catch (e) {
