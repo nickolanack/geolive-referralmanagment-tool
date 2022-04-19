@@ -242,7 +242,7 @@ GetWidget('userProfileDetailActivity')->display($targetInstance);
 GetWidget('proposalOverviewStatus')->display($targetInstance);
 GetWidget('singleProjectProponentDetail')->display($targetInstance);
 GetWidget('singleProjectBriefingDetail')->display($targetInstance);
-
+GetWidget('singleProjectReviewDetail')->display($targetInstance);
 
 
 
