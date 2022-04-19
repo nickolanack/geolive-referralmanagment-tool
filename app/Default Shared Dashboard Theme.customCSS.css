@@ -4739,12 +4739,14 @@ img.static-map {
                     background-color: $tagBtnColor;
                  
                     position:absolute;
-                    right: 0px;
-                    top: 4px;
+                    right: 10px;
+                    top: 7px;
                     padding: 0px 8px;
                     border-radius: 20px;
                     font-size: 12px;
                 }
+                
+                
 
             }
 
@@ -4763,7 +4765,9 @@ img.static-map {
 
     }
 
-    
+    .navigation-menu ul li.active:after {
+                        right: 7px;
+                }
 
 
     .ui-view.left-panel.closed .navigation-menu{
