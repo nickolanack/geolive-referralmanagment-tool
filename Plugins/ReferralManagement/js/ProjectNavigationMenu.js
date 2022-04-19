@@ -110,6 +110,7 @@ var ProjectNavigationMenu = new Class({
 					},
 					{
 						html: "Review",
+						template:"singleProjectReviewDetail",
 						formatEl: function(li) {
 
 							

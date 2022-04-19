@@ -45,6 +45,10 @@ var NotificationItems=(function(){
 
 		},
 
+		hadItem:function(item){
+			return false;
+		},
+
 		getInfo:function(){
 			return {
 				new:this._new,

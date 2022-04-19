@@ -26,6 +26,9 @@ var Counters = (function() {
 					li.setAttribute('data-counter', l);
 
 
+					
+
+
 					DashboardConfig.getValue("enableTasks", function(enabled) {
 						if (!enabled) {
 							return;
@@ -45,6 +48,19 @@ var Counters = (function() {
 					} else {
 						li.removeClass('has-items')
 					}
+
+
+					var notifications=list.filter(function(p){
+						return NotificationItems.hasItem(p);
+					});
+
+					li.setAttribute('data-counter-notifications', notifications.length);
+					if(notifications.length>0){
+						li.addClass('has-notifications')
+					} else {
+						li.removeClass('has-notifications')
+					}
+					
 				}
 
 				setCounter();
@@ -55,6 +71,7 @@ var Counters = (function() {
 						navigationController.addWeakEvent(team, 'assignUser', setCounter);
 						navigationController.addWeakEvent(team, 'removeProject', setCounter);
 						navigationController.addWeakEvent(team, 'projectStatusChanged', setCounter);
+						navigationController.addWeakEvent(NotificationItems, 'update', setCounter);
 					});
 				});
 
@@ -90,6 +107,22 @@ var Counters = (function() {
 					} else {
 						li.removeClass('has-items')
 					}
+
+
+
+
+					var notifications=list.filter(function(p){
+						return NotificationItems.hasItem(p);
+					});
+
+					li.setAttribute('data-counter-notifications', notifications.length);
+					if(notifications.length>0){
+						li.addClass('has-notifications')
+					} else {
+						li.removeClass('has-notifications')
+					}
+
+
 				}
 
 				setCounter();
@@ -99,6 +132,7 @@ var Counters = (function() {
 						navigationController.addWeakEvent(team, 'addTask', setCounter);
 						navigationController.addWeakEvent(team, 'assignUser', setCounter);
 						navigationController.addWeakEvent(team, 'removeTask', setCounter);
+						navigationController.addWeakEvent(NotificationItems, 'update', setCounter);
 					});
 				});
 
@@ -108,7 +142,7 @@ var Counters = (function() {
 		},
 		addDocumentListCounter:function(li, filter, options){
 
-			
+
 		}
 
 
