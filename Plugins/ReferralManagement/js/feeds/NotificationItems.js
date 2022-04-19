@@ -24,6 +24,7 @@ var NotificationItems=(function(){
 					"plugin": "Discussions"
 				}))).on('success', function(resp) {
 					me._posts=resp.posts;
+					me.fireEvent('change',[me.getInfo()]);
 				}).execute();
 
 
