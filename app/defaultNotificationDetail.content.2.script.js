@@ -8,6 +8,7 @@ var moduleArray = new ModuleArray([
                 console.log('remove uiview');
                 console.log(moduleArray)
                 item.remove();
+                moduleArray.parentUIView.remove();
             }}
         })/*,
          new ElementModule('button', {
