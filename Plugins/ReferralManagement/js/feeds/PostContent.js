@@ -171,7 +171,7 @@ var PostContent = (function() {
 				if (type.toLowerCase() == 'guest') {
 
 					return new MockDataTypeItem({
-						type: "user",
+						type: "User",
 						name: "",
 						email: i.email
 					})
@@ -180,6 +180,8 @@ var PostContent = (function() {
 				}
 
 				if (type.toLowerCase() == 'token') {
+
+					return null;
 
 
 					/*
