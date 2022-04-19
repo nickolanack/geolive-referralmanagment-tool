@@ -415,7 +415,7 @@ var NamedCategory = (function() {
 		    
 		    return null;
 		}
-		div.appendChild(new Element('span',{html:"Datasets & Collections"}));
+		div.appendChild(new Element('span',{html:"Themes"}));
 		return div;
 
 	};
