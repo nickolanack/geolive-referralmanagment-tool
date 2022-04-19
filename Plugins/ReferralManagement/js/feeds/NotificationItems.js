@@ -63,7 +63,7 @@ var NotificationItems=(function(){
 			var id=item.getId();
 			var type=item.getType();
 
-			return this._postData.filter(function(p){
+			return this._postData.slice(this._postData.length-this._new).filter(function(p){
 				return p.metadata.items&&p.metadata.items.filter(function(i){
 					return i.type==type&&i.id+""===id+"";
 				}).length>0
