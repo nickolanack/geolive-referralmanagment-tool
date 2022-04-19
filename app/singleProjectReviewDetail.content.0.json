@@ -1,4 +1,12 @@
 {
     "type": "InlineHtml",
-    "config": {}
+    "config": {
+        "className": "section-title discussion-header",
+        "text": "Briefings",
+        "template": "",
+        "templateVariablesScript": "",
+        "formatTextScript": "",
+        "ajaxRequestTemplate": false,
+        "identifier": "htmlLabel"
+    }
 }

@@ -25569,15 +25569,41 @@
                             "singleProjectReviewDetail.metadata.positions.content.modules.0.json",
                             {
                                 "type": "plugin.Discussions.Discussion",
-                                "config": []
+                                "config": {
+                                    "discussionTarget": "itemDiscussion",
+                                    "width": 0,
+                                    "constrainHeight": false,
+                                    "height": 200,
+                                    "inlineEditing": false,
+                                    "inlineReply": false,
+                                    "inlineReplyNamedForm": "",
+                                    "emptyMessage": "There are no discussion posts for this proposal",
+                                    "channel": "briefing",
+                                    "resolveChannelScript": "return defaultChannel;",
+                                    "resolveItemScript": "return item;",
+                                    "initialPostsScript": "return null;",
+                                    "formatPostScript": "",
+                                    "namedView": "defaultPostDetail",
+                                    "reverseOrder": false,
+                                    "className": ""
+                                }
                             },
                             {
                                 "type": "FlexibleHeight",
-                                "config": []
+                                "config": {
+                                    "identifier": "discussion-flexible-height",
+                                    "targetElementScript": "singleProjectReviewDetail.metadata.positions.content.modules.2.config.targetElementScript.js",
+                                    "offset": "0",
+                                    "offsetScript": "singleProjectReviewDetail.metadata.positions.content.modules.2.config.offsetScript.js"
+                                }
                             },
                             {
                                 "type": "WizardScriptElement",
-                                "config": []
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "singleProjectReviewDetail.metadata.positions.content.modules.3.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
                             }
                         ]
                     },
