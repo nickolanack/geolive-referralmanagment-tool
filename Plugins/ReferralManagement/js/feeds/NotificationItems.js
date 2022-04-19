@@ -17,6 +17,16 @@ var NotificationItems=(function(){
 				"plugin": "Discussions"
 			}))).on('success', function(resp) {
 
+
+				(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_posts', ObjectAppend_({
+					'discussion':resp.metadata.id
+				}, {
+					"plugin": "Discussions"
+				}))).on('success', function(resp) {
+					me._posts=resp.posts;
+				}).execute();
+
+
 				
 				var change=me._new!=parseInt(resp.metadata.new)||me._posts!=parseInt(resp.metadata.posts);
 
