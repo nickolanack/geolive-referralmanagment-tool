@@ -74,19 +74,21 @@ var Counters = (function() {
 				li.removeClass('has-notifications')
 			}
 		},
+		
 		_formatFilter(filter){
 			if(typeof filter!='function'){
 				return function(){ return true; };
 			}
 			return filter;
-		}
+		},
 
 		_formatOptions(filter, options){
 			if(isObject_(filter)&&typeof options=='undefined'){
 				return filter;
 			}
 			return options;
-		}
+		},
+
 		addTaskListCounter:function(li, filter, options){
 
 			var me=this;
