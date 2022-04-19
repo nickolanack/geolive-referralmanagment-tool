@@ -56,7 +56,15 @@ var NotificationItems=(function(){
 		},
 
 		hasItem:function(item){
-			return false;
+
+			var id=item.getId();
+			var type=item.getType();
+
+			return this._posts.filter(function(p){
+				return p.metadata.items&&p.metadata.items.filter(function(i){
+					return i.type==type&&i.id+""===id+"";
+				}).length>0
+			}).length>0;
 		},
 
 		getInfo:function(){
