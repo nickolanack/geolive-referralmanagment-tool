@@ -55,7 +55,7 @@ var Counters = (function() {
 						navigationController.addWeakEvent(team, 'assignUser', setCounter);
 						navigationController.addWeakEvent(team, 'removeProject', setCounter);
 						navigationController.addWeakEvent(team, 'projectStatusChanged', setCounter);
-						navigationController.addWeakEvent(NotificationItems, 'update', setCounter);
+						navigationController.addWeakEvent(NotificationItems, 'change', setCounter);
 					});
 				});
 
@@ -74,7 +74,7 @@ var Counters = (function() {
 				li.removeClass('has-notifications')
 			}
 		},
-		
+
 		_formatFilter(filter){
 			if(typeof filter!='function'){
 				return function(){ return true; };
@@ -130,7 +130,7 @@ var Counters = (function() {
 						navigationController.addWeakEvent(team, 'addTask', setCounter);
 						navigationController.addWeakEvent(team, 'assignUser', setCounter);
 						navigationController.addWeakEvent(team, 'removeTask', setCounter);
-						navigationController.addWeakEvent(NotificationItems, 'update', setCounter);
+						navigationController.addWeakEvent(NotificationItems, 'change', setCounter);
 					});
 				});
 
@@ -192,7 +192,7 @@ var Counters = (function() {
 						navigationController.addWeakEvent(team, 'addUser', setCounter);
 						navigationController.addWeakEvent(team, 'assignUser', setCounter);
 						navigationController.addWeakEvent(team, 'removeUser', setCounter);
-						navigationController.addWeakEvent(NotificationItems, 'update', setCounter);
+						navigationController.addWeakEvent(NotificationItems, 'change', setCounter);
 					});
 				});
 
