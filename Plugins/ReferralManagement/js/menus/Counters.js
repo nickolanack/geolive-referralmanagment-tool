@@ -4,13 +4,25 @@ var Counters = (function() {
 
 	var Counters = new Class_({
 
-		addProjectListCounter: function(li) {
+		addProjectListCounter: function(li, filter, options) {
+
+			if(isObject_(filter)&&typeof options=='undefined'){
+				options=filter;
+				filter=function(){ return true; };
+			}
+
+			if(typeof filter!='function'){
+				filter=function(){ return true; };
+			}
+
 
 			ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
 
 				var setCounter = function() {
-					var l = team.getProjects().length;
 
+					var list = team.getProjects().filter(filter);
+
+					var l=list.length;
 					li.setAttribute('data-counter', l);
 
 
@@ -18,12 +30,12 @@ var Counters = (function() {
 						if (!enabled) {
 							return;
 						}
-						li.setAttribute('data-counter-complete', team.getProjects().filter(function(p) {
+						li.setAttribute('data-counter-complete', list.filter(function(p) {
 							return p.isComplete();
 						}).length + '/' + l)
 
 						li.addClass('has-progress')
-					})
+					});
 
 
 					if (l > 0) {
@@ -43,9 +55,6 @@ var Counters = (function() {
 						navigationController.addWeakEvent(team, 'projectStatusChanged', setCounter);
 					});
 				});
-
-				
-
 
 			});
 
