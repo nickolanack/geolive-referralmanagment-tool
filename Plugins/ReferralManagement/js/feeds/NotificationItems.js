@@ -114,7 +114,7 @@ var NotificationItems=(function(){
 				}
 				
 				update(this.getInfo());
-				this.on('update', update);
+				this.on('change', update);
 
 			
 				var me=this;
