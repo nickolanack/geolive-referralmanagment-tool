@@ -1,51 +1,12 @@
 {
-    "type": "plugin.Attributes.WizardTagCloud",
+    "type": "InlineHtml",
     "config": {
-        "attributeFields": [
-            {
-                "visibility": "public",
-                "tableId": "5",
-                "tableName": "proposalAttributes",
-                "tableSuffix": "_3497",
-                "title": "firstNationsInvolved",
-                "label": "First Nations Involved",
-                "description": "",
-                "fieldType": "text",
-                "color": "rgb(NaN, NaN, NaN)",
-                "searchability": "public",
-                "editability": "registered",
-                "fieldTextOptions": {
-                    "textType": "input",
-                    "inputOptions": {
-                        "buildAutocomplete": false,
-                        "requireModeration": false,
-                        "limitMaxChars": 0,
-                        "limitMaxWords": 0,
-                        "allowHtml": false,
-                        "allowMedia": true,
-                        "allowLinks": true
-                    },
-                    "listOptions": {
-                        "takeSugesstions": true,
-                        "buildTree": false,
-                        "iconize": false,
-                        "colorize": false
-                    }
-                },
-                "allowMultiple": true
-            }
-        ],
         "className": "",
-        "showLabel": false,
-        "showAddWord": false,
-        "label": "Nations impacted",
-        "addWordPlaceholder": "add a keyword",
-        "fontColor": "rgb(0, 0, 0)",
-        "hoverColor": "rgb(143, 188, 143)",
-        "selectedColor": "rgb(143, 188, 143)",
-        "shuffleTags": false,
-        "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
-        "getItemTagsScript": "var cats= Proposal.ListTerritories();\nif(cats.length==0){\n    cats.push(\"placeholder\");\n}\nreturn cats;",
-        "formatModule": "ProjectTeam.FormatTagCloudLanguageValues(module);\nmodule.runOnceOnLoad(function(){\nvar cats= Proposal.ListTerritories();\nif(cats.length==0){\n    module.getCloud().getElement().parentNode.setStyle(\"display\",\"none\");\n}\n});\n"
+        "text": "<h2>Select Communities<\/h2>",
+        "template": "",
+        "templateVariablesScript": "",
+        "formatTextScript": "",
+        "ajaxRequestTemplate": false,
+        "identifier": "htmlLabel"
     }
 }

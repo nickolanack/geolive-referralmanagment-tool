@@ -31,6 +31,22 @@ span.field-label.clickable, span.field-value.clickable {
     }
 }
 
+span.ui-navigation-menu.public-menu button[name="Map"]{
+    display:none;
+}
+
+
+.with-user-profile-click {
+    
+    cursor: pointer;
+    &:hover {
+        color:cornflowerblue;
+    }
+    &:hover .single_ImageContainer:after {
+        border-color: cornflowerblue;
+    }
+}
+
 
 button.form-btn.primary-btn.share {
     background-color: chocolate;

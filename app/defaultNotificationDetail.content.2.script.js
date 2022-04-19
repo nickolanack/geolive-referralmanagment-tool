@@ -5,8 +5,10 @@ var moduleArray = new ModuleArray([
             html:"Delete",
             "class":"inline-btn btn inline-remove",
             events:{click:function(){
-                console.log('remove uiview')
+                console.log('remove uiview');
+                console.log(moduleArray)
                 item.remove();
+                moduleArray.parentUIView.remove();
             }}
         })/*,
          new ElementModule('button', {

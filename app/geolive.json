@@ -18088,7 +18088,8 @@
             "convertStylesToInline": false,
             "parseMarkdown": false,
             "saveTemplateAsData": false,
-            "contentTemplate": "module-html-communityDashboardPending-text.contentTemplate.html"
+            "contentTemplate": "module-html-communityDashboardPending-text.contentTemplate.html",
+            "readAccess": "public"
         }
     },
     "widget.335": {
@@ -21182,16 +21183,16 @@
                             "documentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 231,
-                            "y": 298
+                            "x": 186,
+                            "y": 242
                         },
                         "children": [
                             "documentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 191,
-                                    "y": 586
+                                    "x": 146,
+                                    "y": 530
                                 }
                             },
                             {
@@ -21201,16 +21202,16 @@
                                     "documentForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 706,
-                                    "y": 314
+                                    "x": 695,
+                                    "y": 276
                                 },
                                 "children": [
                                     "documentForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 666,
-                                            "y": 490
+                                            "x": 655,
+                                            "y": 452
                                         }
                                     },
                                     {
@@ -21220,16 +21221,16 @@
                                             "documentForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 843,
-                                            "y": 866
+                                            "x": 1217,
+                                            "y": 307
                                         },
                                         "children": [
                                             "documentForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 803,
-                                                    "y": 1032
+                                                    "x": 1177,
+                                                    "y": 473
                                                 }
                                             }
                                         ],
@@ -22361,16 +22362,16 @@
                             "communitySelectionForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 168,
-                            "y": 300
+                            "x": 178,
+                            "y": 310
                         },
                         "children": [
                             "communitySelectionForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 128,
-                                    "y": 466
+                                    "x": 138,
+                                    "y": 476
                                 }
                             }
                         ],
@@ -22385,13 +22386,23 @@
                                     "modules": [
                                         "communitySelectionForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
-                                            "type": "InlineHtml",
+                                            "type": "plugin.Attributes.WizardTagCloud",
                                             "config": {
+                                                "attributeFields": [
+                                                    "communitySelectionForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
+                                                ],
                                                 "className": "",
-                                                "text": "<h2>Select Communities<\/h2>",
-                                                "template": "",
-                                                "templateVariablesScript": "",
-                                                "formatTextScript": ""
+                                                "showLabel": false,
+                                                "showAddWord": false,
+                                                "label": "Nations impacted",
+                                                "addWordPlaceholder": "add a keyword",
+                                                "fontColor": "rgb(0, 0, 0)",
+                                                "hoverColor": "rgb(143, 188, 143)",
+                                                "selectedColor": "rgb(143, 188, 143)",
+                                                "shuffleTags": false,
+                                                "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
+                                                "getItemTagsScript": "communitySelectionForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.getItemTagsScript.js",
+                                                "formatModule": "ProjectTeam.FormatTagCloudLanguageValues(module);\nmodule.runOnceOnLoad(function(){\nvar cats= Proposal.ListTerritories();\nif(cats.length==0){\n    module.getCloud().getElement().parentNode.setStyle(\"display\",\"none\");\n}\n});\n"
                                             }
                                         }
                                     ]
