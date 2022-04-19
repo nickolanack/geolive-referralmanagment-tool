@@ -12,6 +12,11 @@ span.field-value.is-dark {
 }
 
 
+.navigation-menu ul li:after{
+    background-color: #2E303A;
+}
+
+
 button.inline-btn.primary-btn.add.form-documentForm {
      background-color: $highlightBtnColor;
 }
@@ -25,7 +30,6 @@ span.field-label.clickable, span.field-value.clickable {
         color: white;
     }
 }
-
 
 
 button.form-btn.primary-btn.share {
