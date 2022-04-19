@@ -6,6 +6,7 @@ var NotificationItems=(function(){
 
 			this._new=0;
 			this._posts=0;
+			this._postData=[];
 
 			var me=this;
 
@@ -23,7 +24,7 @@ var NotificationItems=(function(){
 				}, {
 					"plugin": "Discussions"
 				}))).on('success', function(resp) {
-					me._posts=resp.posts;
+					me._postData=resp.posts;
 					me.fireEvent('change',[me.getInfo()]);
 				}).execute();
 
@@ -61,7 +62,7 @@ var NotificationItems=(function(){
 			var id=item.getId();
 			var type=item.getType();
 
-			return this._posts.filter(function(p){
+			return this._postData.filter(function(p){
 				return p.metadata.items&&p.metadata.items.filter(function(i){
 					return i.type==type&&i.id+""===id+"";
 				}).length>0
