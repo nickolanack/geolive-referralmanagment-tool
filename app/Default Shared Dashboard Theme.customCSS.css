@@ -4682,12 +4682,20 @@ img.static-map {
                     background-color: crimson;
                     color: black;
                 }
-
+                
                 &.menu-main-projects:after {
-                    content: attr(data-counter-complete);
+                    content: attr(data-counter);
                 }
 
                 &.menu-main-tasks:after {
+                    content: attr(data-counter);
+                }
+
+                &.menu-main-projects.has-progress:after {
+                    content: attr(data-counter-complete);
+                }
+
+                &.menu-main-tasks.has-progress:after {
                     content: attr(data-counter-complete);
                 }
 
