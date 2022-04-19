@@ -109,6 +109,14 @@ var ProjectNavigationMenu = new Class({
 						}
 					},
 					{
+						html: "Review",
+						formatEl: function(li) {
+
+							
+
+						}
+					},
+					{
 						html: "History",
 						formatEl: function(li) {
 

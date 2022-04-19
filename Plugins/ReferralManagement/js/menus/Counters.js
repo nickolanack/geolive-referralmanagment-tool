@@ -75,7 +75,7 @@ var Counters = (function() {
 			ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
 
 				var setCounter = function() {
-					
+
 					var list = team.getTasks().filter(filter);
 
 					var l=list.length;
@@ -105,6 +105,10 @@ var Counters = (function() {
 
 			});
 
+		},
+		addDocumentListCounter:function(li, filter, options){
+
+			
 		}
 
 

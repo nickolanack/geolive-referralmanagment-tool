@@ -263,7 +263,10 @@ var MainNavigationMenu = new Class({
 					name: "Messages"
 				},{
 					html: "Documents",
-					name: "Documents"
+					name: "Documents",
+					formatEl: function(li) {
+						Counters.addDocumentListCounter(li);
+					}
 				},{
 					html: "Notifications",
 					name: "Notifications",
@@ -345,6 +348,9 @@ var MainNavigationMenu = new Class({
 					{
 						html: "Documents",
 						alias: {"section":"Main", "button":"Documents", "useClassNames":true, "mirrorActive":true},
+						formatEl: function(li) {
+							Counters.addDocumentListCounter(li);
+						}
 					},
 					{
 						html: "Tracking",
