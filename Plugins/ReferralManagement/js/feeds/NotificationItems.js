@@ -45,7 +45,7 @@ var NotificationItems=(function(){
 
 		},
 
-		hadItem:function(item){
+		hasItem:function(item){
 			return false;
 		},
 
