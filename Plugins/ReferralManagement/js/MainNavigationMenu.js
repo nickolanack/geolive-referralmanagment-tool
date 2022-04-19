@@ -174,6 +174,11 @@ var MainNavigationMenu = new Class({
 					    lockFilter:"!collection",
 					    filter:null,
 					    invertfilter:false
+					},
+					formatEl: function(li) {
+						Counters.addProjectListCounter(li, function(p){
+							return p.isDataset();
+						});	
 					}
 				},
 				{
@@ -193,6 +198,11 @@ var MainNavigationMenu = new Class({
 					    lockFilter:"collection",
 					    filter:null,
 					    invertfilter:false
+					},
+					formatEl: function(li) {
+						Counters.addProjectListCounter(li, function(p){
+							return p.isCollection();
+						});	
 					}
 				},
 				{
