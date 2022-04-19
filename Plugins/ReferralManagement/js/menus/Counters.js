@@ -60,6 +60,51 @@ var Counters = (function() {
 
 			});
 
+		},
+		addTaskListCounter:function(li, filter, options){
+
+			if(isObject_(filter)&&typeof options=='undefined'){
+				options=filter;
+				filter=function(){ return true; };
+			}
+
+			if(typeof filter!='function'){
+				filter=function(){ return true; };
+			}
+
+			ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+
+				var setCounter = function() {
+					
+					var list = team.getTasks().filter(filter);
+
+					var l=list.length;
+					li.setAttribute('data-counter', l);
+					li.setAttribute('data-counter-complete', list.filter(function(t) {
+						return t.isComplete();
+					}).length + '/' + l);
+					li.addClass('has-progress');
+
+					if (l > 0) {
+						li.addClass('has-items')
+					} else {
+						li.removeClass('has-items')
+					}
+				}
+
+				setCounter();
+				
+				GatherDashboard.getApplication(function(application){
+					application.getNamedValue('navigationController', function(navigationController){
+						navigationController.addWeakEvent(team, 'addTask', setCounter);
+						navigationController.addWeakEvent(team, 'assignUser', setCounter);
+						navigationController.addWeakEvent(team, 'removeTask', setCounter);
+					});
+				});
+
+
+			});
+
 		}
 
 

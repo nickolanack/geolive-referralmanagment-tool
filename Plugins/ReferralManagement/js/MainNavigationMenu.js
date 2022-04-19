@@ -294,29 +294,7 @@ var MainNavigationMenu = new Class({
 				}, {
 					html: "Tasks",
 					formatEl: function(li) {
-						ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
-
-							var setCounter = function() {
-								var l = team.getTasks().length;
-								li.setAttribute('data-counter', l);
-								li.setAttribute('data-counter-complete', team.getTasks().filter(function(t) {
-									return t.isComplete();
-								}).length + '/' + l)
-
-								if (l > 0) {
-									li.addClass('has-items')
-								} else {
-									li.removeClass('has-items')
-								}
-							}
-
-							setCounter();
-							navigationController.addWeakEvent(team, 'addTask', setCounter);
-							navigationController.addWeakEvent(team, 'assignUser', setCounter);
-							navigationController.addWeakEvent(team, 'removeTask', setCounter);
-
-						});
-
+						Counter.addTaskListCounter(li);
 					}
 				}, {
 					html: "Calendar",
@@ -351,10 +329,18 @@ var MainNavigationMenu = new Class({
 					{
 						html: "Projects",
 						alias: {"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true},
+						formatEl: function(li) {
+							Counters.addProjectListCounter(li, function(p){
+								return !p.isDataset();
+							});	
+						}
 					},
 					{
 						html: "Tasks",
 						alias: {"section":"Main", "button":"Tasks", "useClassNames":true, "mirrorActive":true},
+						formatEl: function(li) {
+							Counter.addTaskListCounter(li);
+						}
 					},
 					{
 						html: "Documents",
