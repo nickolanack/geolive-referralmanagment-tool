@@ -104,8 +104,8 @@ var NotificationItems=(function(){
 		}
 
 
-	})
+	});
 
 	return new NotificationItems();
 
-})():
+})();
