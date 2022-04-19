@@ -38,6 +38,19 @@ var PostContent = (function() {
 			}
 
 
+			if (text == 'event: guest.proposal.validating') {
+				text = 'A guest submission is pending email validation'
+				data.text = text;
+				return text;
+			}
+
+			if (text == 'event: guest.proposal.validated') {
+				text = 'A guest submission was created'
+				data.text = text;
+				return text;
+			}
+
+
 
 
 			if (text.indexOf('event:') === 0) {
