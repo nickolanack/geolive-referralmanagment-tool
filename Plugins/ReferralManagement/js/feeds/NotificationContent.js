@@ -44,6 +44,18 @@ var NotificationContent = (function() {
 				return text;
 			}
 
+			if (text == 'event: guest.proposal.validating') {
+				text = 'A guest submission is pending email validation'
+				data.text = text;
+				return text;
+			}
+
+			if (text == 'event: guest.proposal.validated') {
+				text = 'A guest submission was submitted'
+				data.text = text;
+				return text;
+			}
+
 
 			return PostContent.formatEventText(text, data);
 		},
