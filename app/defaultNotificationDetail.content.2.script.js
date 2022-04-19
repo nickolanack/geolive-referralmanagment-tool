@@ -1,10 +1,11 @@
 
 
-return new ModuleArray([
+var moduleArray = new ModuleArray([
         new ElementModule('button', {
             html:"Delete",
             "class":"inline-btn btn inline-remove",
             events:{click:function(){
+                console.log('remove uiview')
                 item.remove();
             }}
         })/*,
@@ -19,3 +20,6 @@ return new ModuleArray([
             }}
         })*/
     ], {identifier:"post-buttons"});
+    
+    
+return moduleArray;

@@ -38,6 +38,11 @@ span.notification-indicator.has-new:before{
     
 }
 
+span.notification-indicator.empty:after {
+    display: none;
+    
+}
+
 
 [data-view="userNotificationFeedDetail"]{
     [data-view="defaultNotificationDetail"]{
