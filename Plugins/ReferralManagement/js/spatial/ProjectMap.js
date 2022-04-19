@@ -64,6 +64,12 @@ var ProjectMap=(function(){
 
 
 			this._map.setDefaultView(function(item){
+
+
+				if(item.getLayer().getName()=='UserLayer'){
+					return 'default';
+				}
+
 				console.log('set map view');
 				return 'plainInfoWindow';
 			});
