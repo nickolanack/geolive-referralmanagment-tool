@@ -6,15 +6,10 @@ var Counters = (function() {
 
 		addProjectListCounter: function(li, filter, options) {
 
-			if(isObject_(filter)&&typeof options=='undefined'){
-				options=filter;
-				filter=function(){ return true; };
-			}
+			var me=this;
 
-			if(typeof filter!='function'){
-				filter=function(){ return true; };
-			}
-
+			options=this._formatOptions(filter, options);
+			filter=this._formatFilter(filter);
 
 			ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
 
@@ -49,18 +44,7 @@ var Counters = (function() {
 						li.removeClass('has-items')
 					}
 
-
-					var notifications=list.filter(function(p){
-						return NotificationItems.hasItem(p);
-					});
-
-					li.setAttribute('data-counter-notifications', notifications.length);
-					if(notifications.length>0){
-						li.addClass('has-notifications')
-					} else {
-						li.removeClass('has-notifications')
-					}
-					
+					me._addNotifications(li, list);
 				}
 
 				setCounter();
@@ -78,16 +62,37 @@ var Counters = (function() {
 			});
 
 		},
+		_addNotifications:function(li, list){
+			var notifications=list.filter(function(p){
+				return NotificationItems.hasItem(p);
+			});
+
+			li.setAttribute('data-counter-notifications', notifications.length);
+			if(notifications.length>0){
+				li.addClass('has-notifications')
+			} else {
+				li.removeClass('has-notifications')
+			}
+		},
+		_formatFilter(filter){
+			if(typeof filter!='function'){
+				return function(){ return true; };
+			}
+			return filter;
+		}
+
+		_formatOptions(filter, options){
+			if(isObject_(filter)&&typeof options=='undefined'){
+				return filter;
+			}
+			return options;
+		}
 		addTaskListCounter:function(li, filter, options){
 
-			if(isObject_(filter)&&typeof options=='undefined'){
-				options=filter;
-				filter=function(){ return true; };
-			}
+			var me=this;
 
-			if(typeof filter!='function'){
-				filter=function(){ return true; };
-			}
+			options=this._formatOptions(filter, options);
+			filter=this._formatFilter(filter);
 
 			ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
 
@@ -111,24 +116,15 @@ var Counters = (function() {
 
 
 
-					var notifications=list.filter(function(p){
-						return NotificationItems.hasItem(p);
-					});
-
-					li.setAttribute('data-counter-notifications', notifications.length);
-					if(notifications.length>0){
-						li.addClass('has-notifications')
-					} else {
-						li.removeClass('has-notifications')
-					}
+					me._addNotifications(li, list);
 
 
 				}
 
 				setCounter();
 				
-				GatherDashboard.getApplication(function(application){
-					application.getNamedValue('navigationController', function(navigationController){
+				GatherDashboard.getApplication(function(application) {
+					application.getNamedValue('navigationController', function(navigationController) {
 						navigationController.addWeakEvent(team, 'addTask', setCounter);
 						navigationController.addWeakEvent(team, 'assignUser', setCounter);
 						navigationController.addWeakEvent(team, 'removeTask', setCounter);
@@ -143,6 +139,62 @@ var Counters = (function() {
 		addDocumentListCounter:function(li, filter, options){
 
 
+		},
+		addUserListCounter:function(li, filter, options){
+
+			var me=this;
+
+
+			options=this._formatOptions(filter, options);
+
+			options=ObjectAppend_({
+				list:function(cb){
+					ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+						team.getUsers(cb);
+					});
+				}
+
+			}, options);
+
+			filter=this._formatFilter(filter);
+
+			ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+
+				var setCounter = function() {
+					options.list(function(users) {
+
+						list=users.filter(filter);
+						var l = list.length
+
+						li.setAttribute('data-counter', l);
+						if (l > 0) {
+							li.addClass('has-items')
+						} else {
+							li.removeClass('has-items')
+						}
+
+
+						me._addNotifications(li, list);
+
+
+					});
+				}
+
+				setCounter();
+				
+
+
+				GatherDashboard.getApplication(function(application){
+					application.getNamedValue('navigationController', function(navigationController){
+						navigationController.addWeakEvent(team, 'userListChanged', setCounter);
+						navigationController.addWeakEvent(team, 'addUser', setCounter);
+						navigationController.addWeakEvent(team, 'assignUser', setCounter);
+						navigationController.addWeakEvent(team, 'removeUser', setCounter);
+						navigationController.addWeakEvent(NotificationItems, 'update', setCounter);
+					});
+				});
+
+			});
 		}
 
 

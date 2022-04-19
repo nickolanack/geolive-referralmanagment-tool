@@ -403,39 +403,24 @@ var MainNavigationMenu = new Class({
 						return 'Team';
 					},
 					formatEl: function(li) {
-						ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
-
-							var setCounter = function() {
-								team.getUsers(function(users) {
-
-
-
-									var l = users.filter(function(u) {
-										return true;
-									}).length;
-									li.setAttribute('data-counter', l);
-									if (l > 0) {
-										li.addClass('has-items')
-									} else {
-										li.removeClass('has-items')
-									}
-								})
-							}
-
-							setCounter();
-							navigationController.addWeakEvent(team, 'userListChanged', setCounter);
-							navigationController.addWeakEvent(team, 'addUser', setCounter);
-							navigationController.addWeakEvent(team, 'assignUser', setCounter);
-							navigationController.addWeakEvent(team, 'removeUser', setCounter);
-
-						});
-
+						Counters.addUserListCounter(li);
 					}
 				}, {
 					template: "communityUsersDetail",
 					"class": "menu-community-users",
 					html: "Community",
 					formatEl: function(li) {
+
+
+						Counters.addUserListCounter(li, {
+							list:function(cb){
+								ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+									team.getAllUsers(cb);
+								});
+							}
+						});
+						return;
+
 						ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
 
 							var setCounter = function() {
@@ -485,6 +470,16 @@ var MainNavigationMenu = new Class({
 					"class": "menu-community-mobile",
 					html: "Mobile",
 					formatEl: function(li) {
+
+						Counters.addUserListCounter(li, {
+							list:function(cb){
+								ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+									team.getActivatedDevices(cb);
+								});
+							}
+						});
+						return;
+
 						ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
 
 							var setCounter = function() {
