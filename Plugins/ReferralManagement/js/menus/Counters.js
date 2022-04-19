@@ -30,11 +30,13 @@ var Counters = (function() {
 						if (!enabled) {
 							return;
 						}
-						li.setAttribute('data-counter-complete', list.filter(function(p) {
-							return p.isComplete();
-						}).length + '/' + l)
 
-						li.addClass('has-progress')
+						var progress=list.filter(function(p) {
+							return p.isComplete();
+						}).length + '/' + l;
+
+						li.setAttribute('data-counter-complete', progress);
+						li.addClass('has-progress');
 					});
 
 
