@@ -51,7 +51,7 @@ var NotificationContent = (function() {
 			}
 
 			if (text == 'event: guest.proposal.validated') {
-				text = 'A guest submission was submitted'
+				text = 'A guest submission was created'
 				data.text = text;
 				return text;
 			}
