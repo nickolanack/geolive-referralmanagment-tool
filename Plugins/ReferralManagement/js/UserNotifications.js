@@ -39,45 +39,7 @@ var UserNotifications = (function() {
 					anchor: UIPopover.AnchorAuto()
 				});
 
-
-
-				(new AjaxControlQuery(CoreAjaxUrlRoot, 'discussion_metadata', ObjectAppend_({
-					'item': AppClient.getId(),
-					'itemType': AppClient.getType(),
-					'channel': 'notifications'
-				}, {
-					"plugin": "Discussions"
-				}))).on('success', function(resp) {
-
-					var indicator = button.getElement().appendChild(new Element('span', {
-						"class": "notification-indicator"
-					}));
-
-					button.on('click', function(){
-						indicator.setAttribute('data-new', 0);
-						indicator.removeClass('has-new');
-					});
-
-					indicator.setAttribute('data-count', resp.metadata.posts);
-					indicator.setAttribute('data-new', resp.metadata.new);
-					if(resp.metadata.new){
-						indicator.addClass('has-new');
-					}
-
-					if (resp.subscription) {
-						AjaxControlQuery.Subscribe(resp.subscription, function(result) {
-							indicator.setAttribute('data-new', parseInt(indicator.getAttribute('data-new'))+1);
-							indicator.setAttribute('data-count', parseInt(indicator.getAttribute('data-count'))+1);
-							indicator.addClass('has-new');
-							console.log(result);
-
-							NotificationBubble.Make("", NotificationContent.formatEventText(result.text, result), {className:"info"});
-						});
-					}
-
-
-				}).execute();
-
+				NotificationItems.addIndicator(button, {clearsNotifications:true});
 
 
 			}),

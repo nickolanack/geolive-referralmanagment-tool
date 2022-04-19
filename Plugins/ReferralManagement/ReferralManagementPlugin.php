@@ -369,6 +369,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		IncludeJS(__DIR__ . '/js/ProjectSearch.js');
 		IncludeJS(__DIR__ . '/js/feeds/PostContent.js');
 		IncludeJS(__DIR__ . '/js/feeds/NotificationContent.js');
+		IncludeJS(__DIR__ . '/js/feeds/NotificationItems.js');
 		IncludeJS(__DIR__ . '/js/UserIcon.js');
 
 		IncludeJS(__DIR__ . '/js/proposal/ProposalFlow.js');
