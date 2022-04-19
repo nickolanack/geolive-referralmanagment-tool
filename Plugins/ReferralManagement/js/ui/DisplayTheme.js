@@ -36,4 +36,4 @@ var  DisplayTheme=(function(){
 	return new DisplayTheme();
 
 
-})():
+})();
