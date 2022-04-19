@@ -119,7 +119,7 @@ var NotificationItems=(function(){
 
 			
 				var me=this;
-				button.getElement().on('click', function(){
+				button.getElement().addEvent('click', function(){
 					me.clearNew();
 				});
 
