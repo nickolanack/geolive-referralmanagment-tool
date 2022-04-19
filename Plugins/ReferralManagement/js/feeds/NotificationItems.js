@@ -72,7 +72,7 @@ var NotificationItems=(function(){
 
 		getInfo:function(){
 			return {
-				new:this._new,
+				new:this._new,s
 				posts:this._posts
 			};
 
@@ -81,7 +81,7 @@ var NotificationItems=(function(){
 			var change=this._new>0;
 			this._new=0;
 			if(change){
-				me.fireEvent('change',[me.getInfo()]);
+				this.fireEvent('change',[me.getInfo()]);
 			}
 		},
 		addIndicator:function(button, options){
