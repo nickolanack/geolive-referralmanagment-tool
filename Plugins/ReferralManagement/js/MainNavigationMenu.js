@@ -277,7 +277,10 @@ var MainNavigationMenu = new Class({
 					name: "TimeTracking"
 				}, {
 					html: "Users",
-					template: "usersCombinedDetail"
+					template: "usersCombinedDetail",
+					formatEl: function(li) {
+						Counters.addUserListCounter(li);
+					}
 				},{
 					html: "User",
 					class:"hidden",
