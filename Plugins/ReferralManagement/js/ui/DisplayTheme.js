@@ -10,7 +10,7 @@ var  DisplayTheme=(function(){
 
 		start:function(){
 			this.setMode(localStorage.getItem('mode'));
-		}
+		},
 
 
 		setMode:function(mode) {
