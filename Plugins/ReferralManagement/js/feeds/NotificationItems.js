@@ -72,7 +72,7 @@ var NotificationItems=(function(){
 
 		getInfo:function(){
 			return {
-				new:this._new,s
+				new:this._new,
 				posts:this._posts
 			};
 
