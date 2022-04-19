@@ -26,7 +26,9 @@ span.field-label.clickable, span.field-value.clickable {
     }
 }
 
-
+.navigation-menu ul li:after
+    background-color: #2E303A;
+}
 
 button.form-btn.primary-btn.share {
     background-color: chocolate;
