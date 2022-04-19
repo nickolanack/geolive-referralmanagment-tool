@@ -32,7 +32,7 @@ var NotificationItems=(function(){
 				if (resp.subscription) {
 					AjaxControlQuery.Subscribe(resp.subscription, function(result) {
 						me._new=me._new+1;
-						me._new=me._posts+1;
+						me._posts=me._posts+1;
 						
 						me.fireEvent('change',[me.getInfo()]);
 						NotificationBubble.Make("", NotificationContent.formatEventText(result.text, result), {className:"info"});
