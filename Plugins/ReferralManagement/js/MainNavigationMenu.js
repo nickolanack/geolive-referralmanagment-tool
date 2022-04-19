@@ -294,7 +294,7 @@ var MainNavigationMenu = new Class({
 				}, {
 					html: "Tasks",
 					formatEl: function(li) {
-						Counter.addTaskListCounter(li);
+						Counters.addTaskListCounter(li);
 					}
 				}, {
 					html: "Calendar",
@@ -339,7 +339,7 @@ var MainNavigationMenu = new Class({
 						html: "Tasks",
 						alias: {"section":"Main", "button":"Tasks", "useClassNames":true, "mirrorActive":true},
 						formatEl: function(li) {
-							Counter.addTaskListCounter(li);
+							Counters.addTaskListCounter(li);
 						}
 					},
 					{
