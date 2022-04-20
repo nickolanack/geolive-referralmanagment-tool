@@ -111,6 +111,15 @@ var ProjectMap=(function(){
 
 
 			downloadTile.addEvent('click',function(){
+				(new AjaxControlQuery(CoreAjaxUrlRoot, 'layer_display', {
+	                "plugin": "Maps",
+	                "layer": 8,
+	                "format":"json"
+	            })).addEvent('succcess', function(resp){
+
+					console.log(resp);
+
+				}).execute();
 
 			});
 
