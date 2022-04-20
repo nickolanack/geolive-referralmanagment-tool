@@ -63,7 +63,7 @@ var ProjectMap=(function(){
 			var me=this;
 
 
-			var downloadTile = new UIMapSubTileButton(dragTile, {
+			var downloadTile = new UIMapSubTileButton(dragTile.getElement(), {
 				containerClassName: 'download',
 				toolTip: ['', 'click to download your markup items']
 			});
