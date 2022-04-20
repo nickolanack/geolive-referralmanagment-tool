@@ -720,7 +720,7 @@ var DashboardPageLayout = (function() {
 					html: "Users",
 					config: "enableUserProfiles"
 				}, {
-					html: ["Department", "Tags", "Trash"],
+					html: ["Department", "Tags", "Themes", "Trash"],
 					config: "simplifiedMenu"
 				}, {
 					html: ['Department'],
