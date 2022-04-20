@@ -113,7 +113,7 @@ var ProjectMap=(function(){
 			downloadTile.addEvent('click',function(){
 				(new AjaxControlQuery(CoreAjaxUrlRoot, 'layer_display', {
 	                "plugin": "Maps",
-	                "layer": 8,
+	                "layerId": 8,
 	                "format":"json"
 	            })).addEvent('succcess', function(resp){
 
