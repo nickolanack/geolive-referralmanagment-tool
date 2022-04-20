@@ -39,6 +39,30 @@ var ProjectMap=(function(){
 		initialize:function(map){
 
 			
+			console.log('init');
+		},
+
+
+
+		addFormTitleFilters:function(textField){
+
+
+			var isMain=false;
+			textField.addInputFilter(function(text){
+			    if(text.indexOf('<main>')>=0){
+			        text= text.split('<main>').pop();
+			        isMain=true;
+			    }
+			    return text;
+			});
+			textField.addOutputFilter(function(text){
+			    if(isMain){
+			        return '<main>'+text;
+			    }
+			    return text;
+			});
+
+			textField.setValue(textField.getValue());
 
 		},
 
@@ -66,6 +90,11 @@ var ProjectMap=(function(){
 			var downloadTile = new UIMapSubTileButton(dragTile.getElement(), {
 				containerClassName: 'download',
 				toolTip: ['', 'click to download your markup items']
+			});
+
+
+			downloadTile.addEvent('click',function(){
+
 			});
 
 			this._map.setDefaultView(function(item){
