@@ -70,7 +70,9 @@ var ProjectMap=(function(){
 			    return text;
 			});
 
-			textField.setValue(textField.getValue());
+
+			var value=textField.getValue()||'';
+			textField.setValue(value);
 
 		},
 
