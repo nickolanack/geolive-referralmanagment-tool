@@ -38,6 +38,14 @@ span.notification-indicator.has-new:before{
     
 }
 
+.tileOptionContainer.download .tileButton:after {
+    content: "\0f019";
+    font-family: FontAwesome;
+    font-size: 20px;
+    line-height: 26px;
+    color: mediumseagreen;
+}
+
 span.notification-indicator.empty:after {
     display: none;
     
