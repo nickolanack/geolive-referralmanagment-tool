@@ -38,6 +38,10 @@ span.notification-indicator.has-new:before{
     
 }
 
+.tileButtonContainer.activated .tileOptionContainer {
+    display:inline-block;
+}
+
 .tileOptionContainer.download .tileButton:after {
     content: "\0f019";
     font-family: FontAwesome;
