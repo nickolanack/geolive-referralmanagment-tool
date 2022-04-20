@@ -141,7 +141,7 @@ var ProjectMap=(function(){
 
 					parts=parts.map(function(p){return '<Placemark'+p; });
 
-					kmlString=start+(parts.filter(function(p){
+					parts=parts.filter(function(p){
 
 						if(window.CurrentMapType=="MainMap"){
 					        return p.indexOf('<main>')>0;
@@ -154,7 +154,22 @@ var ProjectMap=(function(){
 						return true;
 
 
-					})).join('')+end;
+					})
+
+					parts=parts.map(function(p){
+						if(window.CurrentMapType=="MainMap"){
+					        return p.replace('<main>','');
+					    }
+
+					    if(window.CurrentMapItem){
+							return p.replace('<project:'+window.CurrentMapItem.getId()+'>','');
+						}
+
+						return p;
+
+					})
+
+					kmlString=start+parts.join('')+end;
 
 
 
