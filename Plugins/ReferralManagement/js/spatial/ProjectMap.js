@@ -49,7 +49,7 @@ var ProjectMap=(function(){
 				this._map=null;
 			});
 
-		}
+		},
 
 
 		addFormTitleFilters:function(textField){
