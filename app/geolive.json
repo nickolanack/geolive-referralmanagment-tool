@@ -18991,7 +18991,8 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "",
-                                    "fieldLabelScript": "return \"Tag Value: \";",
+                                    "className": "",
+                                    "fieldLabelScript": "return \"Sub Theme Value: \";",
                                     "fieldValueScript": "return item.getName();",
                                     "formatElementScript": ""
                                 }
@@ -19001,6 +19002,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "tagDetailView.metadata.positions.content.modules.2.config.fieldValueScript.js",
                                     "formatElementScript": ""
