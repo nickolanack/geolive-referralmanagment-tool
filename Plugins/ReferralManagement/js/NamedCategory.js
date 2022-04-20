@@ -501,9 +501,9 @@ var NamedCategory = (function() {
 
 	NamedCategory.CreateCategoryLabel = function(application, item) {
 
-		var type = 'Tag';
+		var type = 'Sub Theme';
 		if (item.isRootTag()) {
-			type = "Category";
+			type = "Theme";
 		}
 
 		return '<div class="section-title"><span>' + item.getCategory().capitalize() + ' ' + type + ':</span></div>';
