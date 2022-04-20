@@ -154,7 +154,7 @@ var ProjectMap=(function(){
 						return true;
 
 
-					})).join('').end;
+					})).join('')+end;
 
 
 
