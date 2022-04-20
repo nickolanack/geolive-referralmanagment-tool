@@ -55,18 +55,27 @@ var ProjectMap=(function(){
 		addFormTitleFilters:function(textField){
 
 
-			var isMain=false;
+		
 			textField.addInputFilter(function(text){
 			    if(text.indexOf('<main>')>=0){
 			        text= text.split('<main>').pop();
-			        isMain=true;
 			    }
+
+			    if(text.indexOf('<project:')>=0){
+			        text= text.split('<project:').pop().split('>').slice(1).join('>')
+			    }
+
 			    return text;
 			});
 			textField.addOutputFilter(function(text){
-			    if(isMain){
+			    if(window.CurrentMapType=="MainMap"){
 			        return '<main>'+text;
 			    }
+
+			    if(window.CurrentMapItem){
+					return '<project:'+window.CurrentMapItem.getId()+'>'+text;
+				}
+
 			    return text;
 			});
 
