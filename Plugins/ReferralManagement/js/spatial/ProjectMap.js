@@ -158,6 +158,18 @@ var ProjectMap=(function(){
 
 
 
+					(function(filename, text) {
+
+						var element = new Element('a');
+						element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+						element.setAttribute('download', filename);
+						element.click();
+						
+
+					})('MyMarkups.kml', kmlString);
+
+
+
 
 				}).execute();
 
