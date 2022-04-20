@@ -115,7 +115,7 @@ var ProjectMap=(function(){
 	                "plugin": "Maps",
 	                "layerId": 8,
 	                "format":"kml"
-	            })).addEvent('succcess', function(resp){
+	            })).addEvent('success', function(resp){
 
 					console.log(resp);
 
