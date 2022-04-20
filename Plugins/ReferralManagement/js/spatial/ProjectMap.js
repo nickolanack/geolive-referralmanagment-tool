@@ -111,10 +111,10 @@ var ProjectMap=(function(){
 
 
 			downloadTile.addEvent('click',function(){
-				(new AjaxControlQuery(CoreAjaxUrlRoot, 'layer_display', {
+				(new StringControlQuery(CoreAjaxUrlRoot, 'layer_display', {
 	                "plugin": "Maps",
 	                "layerId": 8,
-	                "format":"json"
+	                "format":"kml"
 	            })).addEvent('succcess', function(resp){
 
 					console.log(resp);
