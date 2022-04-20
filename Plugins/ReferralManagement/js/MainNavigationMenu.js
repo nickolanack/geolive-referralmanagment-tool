@@ -296,6 +296,7 @@ var MainNavigationMenu = new Class({
 					template: "departmentsDetail"
 				}, {
 					html: "Themes",
+					name:"Tags",
 					template: "tagsDetail"
 				}, {
 					html: "Tasks",
