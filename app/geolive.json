@@ -22736,16 +22736,16 @@
                             "Simple Marker Form.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 301,
-                            "y": 132
+                            "x": 411,
+                            "y": 153
                         },
                         "children": [
                             "Simple Marker Form.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 261,
-                                    "y": 298
+                                    "x": 371,
+                                    "y": 319
                                 }
                             }
                         ],
@@ -22760,7 +22760,7 @@
                                     "modules": [
                                         "Simple Marker Form.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
-                                            "type": "WizardDescriptionField",
+                                            "type": "FormTextDescriptionField",
                                             "config": {
                                                 "label": "Description",
                                                 "message": "add a description",

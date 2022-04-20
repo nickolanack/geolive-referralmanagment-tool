@@ -5,6 +5,8 @@
         "message": "add a title",
         "className": "",
         "maxChars": 0,
-        "textFormatScript": ""
+        "textFormatScript": "",
+        "beforeRenderModuleScript": "",
+        "onRenderTextFieldScript": "\n\nvar isMain=false;\ntextField.addInputFilter(function(text){\n    if(text.indexOf('<main>')>=0){\n        text= text.split('<main>').pop();\n        isMain=true;\n    }\n    return text;\n});\ntextField.addOutputFilter(function(text){\n    if(isMain){\n        return '<main>'+text;\n    }\n    return text;\n});\n\ntextField.setValue(textField.getValue());"
     }
 }
