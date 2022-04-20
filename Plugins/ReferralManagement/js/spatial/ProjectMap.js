@@ -36,12 +36,20 @@ var ProjectMap=(function(){
 
 	var ProjectMap=new Class({
 
-		initialize:function(map){
+		initialize:function(){
 
 			
 			console.log('init');
 		},
 
+		_setMap:function(map){
+
+			this._map=map;
+			map.once('remove',function(){
+				this._map=null;
+			});
+
+		}
 
 
 		addFormTitleFilters:function(textField){
@@ -66,9 +74,6 @@ var ProjectMap=(function(){
 
 		},
 
-		setProject:function(project){
-			this._project=project;
-		},
 
 		dropMarker:function(latlng, icon, defaultFn){
 
@@ -81,9 +86,10 @@ var ProjectMap=(function(){
 			});
 
 		},
+		
 		formatMarkerTile:function(dragTile, index){
 
-			this._map=dragTile.getMap();
+			this._setMap(dragTile.getMap());
 			var me=this;
 
 
@@ -136,6 +142,6 @@ var ProjectMap=(function(){
 
 	});
 
-	return ProjectMap;
+	return new ProjectMap();
 
 })();
