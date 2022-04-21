@@ -22,7 +22,7 @@ var ItemTasksCollection = (function(){
 			return false;
 		},
 
-		getTasks() {
+		getTasks:function() {
 
 			var me = this;
 			if (!me._getTasks) {

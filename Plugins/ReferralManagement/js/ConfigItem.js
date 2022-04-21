@@ -16,9 +16,7 @@ var ConfigItem = (function() {
 
         return ConfigItem.GetTextBlockModule(new ConfigItem({
             "className": "section-help section-welcome section-module",
-            'heading': `<div class="section-title">
-                    <span class="thin">Welcome Back,</span> ` + user.getName() + `
-                </div>`,
+            'heading': '<div class="section-title"> <span class="thin">Welcome Back,</span> ' + user.getName() + ' </div>',
             'param': 'welcomeText',
             'editLabel': 'Edit welcome text',
             'widget': "dashboardContentConfig",

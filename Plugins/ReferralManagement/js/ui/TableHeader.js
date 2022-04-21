@@ -59,7 +59,7 @@ var TableHeader = (function() {
 
 		},
 
-		_createHeaderFromContent(module, then) {
+		_createHeaderFromContent:function(module, then) {
 			var me = this;
 			module.once('load', function() {
 				console.log('loaded: ');

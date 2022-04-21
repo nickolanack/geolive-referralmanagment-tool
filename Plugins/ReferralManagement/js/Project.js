@@ -228,7 +228,7 @@ var Project = (function() {
 			return me.data.attributes.title||"";
 		},
 
-		getDescription() {
+		getDescription:function() {
 			var me = this;
 			return me.data.attributes.description;
 		},

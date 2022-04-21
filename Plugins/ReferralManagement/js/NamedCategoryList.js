@@ -80,7 +80,7 @@ var NamedCategoryList = (function() {
 		},
 
 
-		listMemberOf(types, category){
+		listMemberOf:function(types, category){
 
 			types=types.map(function(t){
 				return t.toLowerCase();

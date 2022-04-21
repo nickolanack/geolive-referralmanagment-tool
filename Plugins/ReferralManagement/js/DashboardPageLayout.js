@@ -174,7 +174,7 @@ var DashboardPageLayout = (function() {
 			});
 
 		},
-		_evalFilterObj(filterObj) {
+		_evalFilterObj:function(filterObj) {
 
 			if (filterObj.condition) {
 				var condition = filterObj.condition;
