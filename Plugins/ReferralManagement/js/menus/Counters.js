@@ -75,14 +75,14 @@ var Counters = (function() {
 			}
 		},
 
-		_formatFilter(filter){
+		_formatFilter:function(filter){
 			if(typeof filter!='function'){
 				return function(){ return true; };
 			}
 			return filter;
 		},
 
-		_formatOptions(filter, options){
+		_formatOptions:function(filter, options){
 			if(isObject_(filter)&&typeof options=='undefined'){
 				return filter;
 			}

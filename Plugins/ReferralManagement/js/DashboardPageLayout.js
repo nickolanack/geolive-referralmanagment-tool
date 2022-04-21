@@ -337,12 +337,12 @@ var DashboardPageLayout = (function() {
 
 		},
 
-		filterIdentifierConfig(modules, identifier, configVar){
+		filterIdentifierConfig:function(modules, identifier, configVar){
 			return this.filterIdentifier(modules, identifier, DashboardConfig.getValue(configVar))
 		},
 
 
-		filterIdentifierUser(modules, identifier, user){
+		filterIdentifierUser:function(modules, identifier, user){
 			return this.filterIdentifier(modules, identifier, AppClient.getUserType()===user);
 		}
 

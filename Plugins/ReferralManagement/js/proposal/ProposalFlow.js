@@ -265,7 +265,7 @@ var ProposalFlow = (function() {
 		},
 
 
-		setLabel(l){
+		setLabel:function(l){
 
 			
 			this.element.setAttribute('data-label', l);

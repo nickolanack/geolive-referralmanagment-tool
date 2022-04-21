@@ -10,6 +10,10 @@ var NotificationItems=(function(){
 
 			var me=this;
 
+			if(AppClient.getUserType()=="guest"){
+				return;
+			}
+
 			(new AjaxControlQuery(CoreAjaxUrlRoot, 'discussion_metadata', ObjectAppend_({
 				'item': AppClient.getId(),
 				'itemType': AppClient.getType(),
@@ -17,6 +21,11 @@ var NotificationItems=(function(){
 			}, {
 				"plugin": "Discussions"
 			}))).on('success', function(resp) {
+
+				if(!resp.success){
+					//guest dashboard
+					return;
+				}
 
 
 				(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_posts', ObjectAppend_({

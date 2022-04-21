@@ -3,7 +3,7 @@ var UserIcon=(function(){
 	var UserIcon=new Class({
 
 
-		createUserAvatarModule(item, defaultIcon) {
+		createUserAvatarModule:function(item, defaultIcon) {
 
 
 			/*

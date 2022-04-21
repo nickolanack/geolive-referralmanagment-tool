@@ -179,11 +179,11 @@ var TaskItem = (function() {
 			var me = this;
 			return me.getName();
 		},
-		getDescription() {
+		getDescription:function() {
 			var me = this;
 			return me.data.description;
 		},
-		setDescription(description) {
+		setDescription:function(description) {
 			var me = this;
 			return me.data.description = description;
 		},
