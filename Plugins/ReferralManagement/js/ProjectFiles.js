@@ -120,7 +120,7 @@ var ProjectFiles = (function() {
 					me.getLetters(projects),
 					me.getPermits(projects),
 					me.getAgreements(projects),
-					me.getOther(projects),
+					me.getOther(projects)
 				);
 			}
 
