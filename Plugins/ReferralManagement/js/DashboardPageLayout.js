@@ -91,7 +91,7 @@ var DashboardPageLayout = (function() {
 			return this;
 		},
 
-		layoutMenu(name, buttons) {
+		layoutMenu:function(name, buttons) {
 
 
 			if (!(this._layouts && this._layouts[name])) {

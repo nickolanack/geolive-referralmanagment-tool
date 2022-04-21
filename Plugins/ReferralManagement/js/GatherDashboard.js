@@ -514,7 +514,7 @@ var GatherDashboard = (function() {
 		createNavigationMenu: function(application) {
 			return (new MainNavigationMenu(application));
 		},
-		createUserIcon(item, defaultIcon) {
+		createUserIcon:function(item, defaultIcon) {
 			return UserIcon.createUserAvatarModule(item, defaultIcon);
 		},
 
