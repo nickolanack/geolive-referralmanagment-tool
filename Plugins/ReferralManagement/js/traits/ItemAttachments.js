@@ -232,7 +232,7 @@ var ItemAttachments = (function() {
 
 			(['description', 'documents', 'agreements', 'permits', 'projectLetters', 'spatialFeatures']).forEach(function(type) {
 
-				if (me.data && me.data.attributes && url && me.data.attributes[type].indexOf(url) >= 0) {
+				if (me.data && me.data.attributes && me.data.attributes[type] && url && me.data.attributes[type].indexOf(url) >= 0) {
 
 					var filtered = me._getFiles(me.data.attributes[type]).filter(function(fileInfo) {
 						return fileInfo.url == url;
