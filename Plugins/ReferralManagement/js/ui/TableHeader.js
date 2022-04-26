@@ -26,6 +26,9 @@ var TableHeader = (function() {
 			});
 
 
+			this._addStyle();
+
+
 			listModule.getSortObject(function(sort){
 				sort.hide();
 			});
@@ -55,6 +58,19 @@ var TableHeader = (function() {
 
 
 			});
+
+
+		},
+
+		_addStyle:function(){
+
+
+			this._listModule.getElement().addClass("_tableStyle_");
+
+			document.head.appendChild(new Element("style", {
+				"type":"text/css", 
+				"html":"._tableStyle_{ background-color:red;}"
+			}));
 
 
 		},
