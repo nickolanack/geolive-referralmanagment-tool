@@ -26,7 +26,7 @@ var TableHeader = (function() {
 			});
 
 
-			this._addStyle();
+			//this._addStyle();
 
 
 			listModule.getSortObject(function(sort){
@@ -62,14 +62,51 @@ var TableHeader = (function() {
 
 		},
 
+		_addFieldStyle:function(dataCol){
+
+			if(!this._dataCols){
+				this._dataCols=[];
+			}
+			this._dataCols.push({
+				col:dataCol,
+				width:'auto'
+			});
+
+
+			this._redrawStyles();
+
+		},
+
+		_redrawStyles:function(){
+
+			if(!this._style){
+				this._addStyle();
+			}
+
+			if(this._timeout){
+				clearTimeout(this._timeout);
+			}
+			var me=this;
+			this._timeout=setTimeout(function(){
+				me._timeout=null;
+				me._style.innerHTML=me._dataCols.map(function(data){
+
+					return '[data-col="'+data.col+'"]{}';
+
+				}).join("\n");
+
+			},500);
+
+		}
+
 		_addStyle:function(){
 
 
 			this._listModule.getElement().addClass("_tableStyle_");
 
-			document.head.appendChild(new Element("style", {
+			this._style=document.head.appendChild(new Element("style", {
 				"type":"text/css", 
-				"html":"._tableStyle_{ background-color:red;}"
+				"html":""
 			}));
 
 
@@ -131,8 +168,10 @@ var TableHeader = (function() {
 
 				colEl.addClass('sortable');
 
-
 				var sort = colEl.getAttribute('data-col');
+				
+				me._addFieldStyle(sort);
+
 				colEl.setAttribute('data-label', me.labelForCol(sort));
 
 				if(me._sort==sort){
@@ -198,7 +237,8 @@ var TableHeader = (function() {
 		},
 
 		_remove: function() {
-
+			this._style.parentNode.removeChild(this._style);
+			this._style=null;
 		}
 
 	});
