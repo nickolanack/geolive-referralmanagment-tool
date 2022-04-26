@@ -1,5 +1,5 @@
 el.addClass("inline check");
-el.setAttribute("data-col","");
+el.setAttribute("data-col","selection");
 
 if(item instanceof MissingProject){
     return null;
