@@ -56,6 +56,21 @@ span.notification-indicator.empty:after {
 }
 
 
+.table-header .check.field-value-module:after {
+    content: "\0f046";
+    font-family: "FontAwesome";
+    font-size: 20px;
+    vertical-align: top;
+}
+
+.table-header .icon.field-value-module:after {
+    content: "\0f1b2";
+    font-family: "FontAwesome";
+    font-size: 20px;
+    vertical-align: top;
+}
+
+
 [data-view="userNotificationFeedDetail"]{
     [data-view="defaultNotificationDetail"]{
          button.inline-btn.btn.inline-remove {background-color: black;}
