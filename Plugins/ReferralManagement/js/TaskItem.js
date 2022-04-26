@@ -260,7 +260,7 @@ var TaskItem = (function() {
 			return me.data.dueDate || "00-00-00 00:00:00";
 		},
 
-		getFormattedDueDate() {
+		getFormattedDueDate: function() {
 
 			var dateString = "No Due Date";
 

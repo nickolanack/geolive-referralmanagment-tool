@@ -69,7 +69,7 @@ var UserNotifications = (function() {
 					click: function() {
 
 
-						if (confirm('Are you sure you want to log out')) {
+						if (confirm('Are you sure you want to log out?')) {
 							GatherDashboard.logout();
 						}
 
