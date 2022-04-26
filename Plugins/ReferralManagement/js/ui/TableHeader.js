@@ -97,7 +97,7 @@ var TableHeader = (function() {
 
 			},500);
 
-		}
+		},
 
 		_addStyle:function(){
 
