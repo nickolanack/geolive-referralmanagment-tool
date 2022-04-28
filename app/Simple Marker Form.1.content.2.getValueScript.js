@@ -1,2 +1,2 @@
-var options=item.getNamedValue('options')||{shared:false};
+var shared=item.getNamedValue('shared');
 return !!options.shared;
