@@ -1,2 +1,2 @@
 wizardDataSet.namedValues=wizardDataSet.namedValue||{};
-wizardDataSet.namedValuesshared=!object.value;
+wizardDataSet.namedValues.shared=!object.value;
