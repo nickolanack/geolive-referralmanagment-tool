@@ -6,10 +6,7 @@ if(key_exists('filter', $parseSettings)&&$parseSettings->filter=='user'){
    }
    
    if(isset($options->map)&&strpos($feature['name'], $options->map)===0){
-       
-        error_log(json_encode($options));
-        error_log(json_encode($feature['info']));
-       
+      
        return isset($feature['info']->shared)&&$feature['info']->shared;
    }
    
