@@ -7,7 +7,7 @@ if(key_exists('filter', $parseSettings)&&$parseSettings->filter=='user'){
         $feature['data']=array();
     }
     $feature['data']['uid']=$feature["uid"];
-    error_log(json_encode($feature));
+    //error_log(json_encode($feature));
 }
 
 return $feature;
