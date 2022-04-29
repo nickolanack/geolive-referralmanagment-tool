@@ -1,1 +1,1 @@
-return ProjectTeam.CurrentTeam().getUserOrDevice(item.getNamedValue('info').uid)
+return ProjectTeam.CurrentTeam().getUserOrDevice(item.getNamedValue('data').uid)
