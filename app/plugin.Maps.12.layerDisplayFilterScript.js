@@ -4,9 +4,12 @@ if(key_exists('filter', $parseSettings)&&$parseSettings->filter=='user'){
    if($feature["uid"]==GetClient()->getUserId()){
        return true;
    }
-   error_log(json_encode($options));
-   error_log(json_encode($feature['info']));
+   
    if(isset($option->map)&&strpos($feature['name'], $option->map)===0){
+       
+        error_log(json_encode($options));
+        error_log(json_encode($feature['info']));
+       
        return isset($feature['info']->shared)&&$feature['info']->shared;
    }
    
