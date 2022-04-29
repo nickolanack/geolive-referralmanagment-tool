@@ -2,9 +2,19 @@ var ProjectMap=(function(){
 
 
 
-
 	window.InitUserLayer=function(layer){
 
+		var layerOptions={};
+
+		if(window.CurrentMapType=="MainMap"){
+			layerOptions.map='<main>';
+		}
+
+		if(window.CurrentMapItem){
+			return layerOptions.map='<project:'+window.CurrentMapItem.getId()+'>';
+		}
+
+		layer.setKmlOptions(layerOptions);
 
 		var checkMapFilter=function(data){
 			if(window.CurrentMapType=="MainMap"){
@@ -29,8 +39,6 @@ var ProjectMap=(function(){
 		layer.addParserFilter('polygon', function(data, i){
 			return checkMapFilter(data);
 		});
-
-
 
 	};
 
