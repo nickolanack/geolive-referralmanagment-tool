@@ -5,7 +5,7 @@ if(key_exists('filter', $parseSettings)&&$parseSettings->filter=='user'){
        return true;
    }
    
-   if(isset($option->map)&&strpos($feature['name'], $option->map)===0){
+   if(isset($options->map)&&strpos($feature['name'], $options->map)===0){
        
         error_log(json_encode($options));
         error_log(json_encode($feature['info']));
