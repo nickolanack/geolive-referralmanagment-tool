@@ -14,12 +14,13 @@
         "maxWidth": 0,
         "showAudios": true,
         "showVideos": true,
-        "showImages": true,
         "showDocuments": true,
+        "showImages": true,
         "showLinks": true,
         "showExternalContent": true,
         "embedPortrait": true,
         "preferLocalContent": true,
-        "portraitClip": true
+        "portraitClip": true,
+        "formatTextScript": "return text;"
     }
 }
