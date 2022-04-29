@@ -8,6 +8,22 @@ body.body-overlayed>#viewControllerApp>div>div>.ui-view {
 
 button:focus {outline:0;}
 
+.ui-template-info-window [data-view="singleUserListItemDetail"]{
+    
+    margin-top:5px
+    
+    .user-roles{
+        display:none;    
+    }
+    
+    .user-profile-icon{
+        float:left;
+        margin-right:10px
+    }
+}
+
+
+
 
 
 span.notification-indicator:after {
