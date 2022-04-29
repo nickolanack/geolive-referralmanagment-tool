@@ -1,6 +1,7 @@
 $parseSettings=$layer->getParseSettings();
 if(key_exists('filter', $parseSettings)&&$parseSettings->filter=='user'){
     
+    error_log('add user');
     
     if(!isset($feature['data'])){
         $feature['data']=array();
