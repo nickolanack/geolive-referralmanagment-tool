@@ -1,2 +1,2 @@
-var shared=item.getNamedValue('shared');
-return !!shared;
+var info=item.getNamedValue('info')||{};
+return !!info.shared;
