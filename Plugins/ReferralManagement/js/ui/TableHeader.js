@@ -3,6 +3,9 @@ var TableHeader = (function() {
 
 
 	var layoutDefault = {
+		'icon': {
+			width: '30px'
+		},
 		'id': {
 			width: '60px'
 		},
