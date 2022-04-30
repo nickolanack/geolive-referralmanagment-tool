@@ -1,15 +1,49 @@
 var TableHeader = (function() {
 
+
+
+	var layoutDefault = {
+		'id': {
+			width: '30px'
+		},
+		'name': {
+			width: 'auto'
+		},
+		'user': {
+			width: 'auto'
+		},
+		'created': {
+			width: 'auto'
+		},
+		'modified': {
+			width: 'auto'
+		},
+		'type': {
+			width: 'auto'
+		},
+		'attachments': {
+			width: 'auto'
+		},
+		'community': {
+			width: 'auto'
+		},
+		'selection': {
+			width: '30px'
+		}
+	}
+
+
+
 	var TableHeader = new Class_({
 
 
-		labelForCol:function(col){
+		labelForCol: function(col) {
 
-			if(!col){
+			if (!col) {
 				return "";
 			}
 
-			if(col=="user"){
+			if (col == "user") {
 				return "submitter";
 			}
 			return col;
@@ -29,11 +63,11 @@ var TableHeader = (function() {
 			//this._addStyle();
 
 
-			listModule.getSortObject(function(sort){
+			listModule.getSortObject(function(sort) {
 				sort.hide();
 			});
 
-			listModule.getFilterObject(function(filter){
+			listModule.getFilterObject(function(filter) {
 				filter.hide();
 			});
 
@@ -62,57 +96,88 @@ var TableHeader = (function() {
 
 		},
 
-		_addFieldStyle:function(dataCol){
+		_getLayout:function(dataCol){
+			return ObjectAppend_({ width: 'auto'}, layoutDefault[dataCol]);
+		},
 
-			if(!this._dataCols){
-				this._dataCols=[];
+		_addFieldStyle: function(dataCol) {
+
+			if((!dataCol)||dataCol==''){
+				return;
 			}
-			this._dataCols.push({
-				col:dataCol,
-				width:'auto'
-			});
 
+			if (!this._dataCols) {
+				this._dataCols = [];
+			}
 
+			this._dataCols.push(ObjectAppend_(this._getLayout(dataCol), {col: dataCol}));
 			this._redrawStyles();
 
 		},
 
-		_redrawStyles:function(){
+		_getStaticCellsInfo: function() {
+			this._dataCols.filter(function(cell) {
+				return cell.width != 'auto';
+			});
+		},
 
-			if(!this._style){
+		_getDynamicCells: function() {
+			this._dataCols.filter(function(cell) {
+				return cell.width == 'auto';
+			});
+		},
+
+		_redrawStyles: function() {
+
+			if (!this._style) {
 				this._addStyle();
 			}
 
-			if(this._timeout){
+			if (this._timeout) {
 				clearTimeout(this._timeout);
 			}
-			var me=this;
-			this._timeout=setTimeout(function(){
-				me._timeout=null;
-				me._style.innerHTML=me._dataCols.map(function(data){
+			var me = this;
+			this._timeout = setTimeout(function() {
+				me._timeout = null;
 
-					return '[data-col="'+data.col+'"]{}';
+
+				var size = this._listModule.getElement().getSize();
+				var available=size
+				var staticSizeItems = this._getStaticCellsInfo().forEach(function(c){
+					available-=parseFloat(c.width);
+				});
+
+				var auto=Math.round((1000*available/this._getDynamicCells().length)/size)/10;
+
+
+
+				me._style.innerHTML = me._dataCols.map(function(data) {
+
+					if(data.width=='auto'){
+						return '[data-col="' + data.col + '"]{ width:'+auto+'%; }';
+					}
+					return '[data-col="' + data.col + '"]{ width:'+data.width+'; }';
 
 				}).join("\n");
 
-			},500);
+			}, 500);
 
 		},
 
-		_addStyle:function(){
+		_addStyle: function() {
 
 
 			this._listModule.getElement().addClass("_tableStyle_");
 
-			this._style=document.head.appendChild(new Element("style", {
-				"type":"text/css", 
-				"html":""
+			this._style = document.head.appendChild(new Element("style", {
+				"type": "text/css",
+				"html": ""
 			}));
 
 
 		},
 
-		_createHeaderFromContent:function(module, then) {
+		_createHeaderFromContent: function(module, then) {
 			var me = this;
 			module.once('load', function() {
 				console.log('loaded: ');
@@ -156,7 +221,7 @@ var TableHeader = (function() {
 
 		_makeHeaderEl: function() {
 
-			var me=this;
+			var me = this;
 
 			var header = new Element('div', {
 				"class": "table-header",
@@ -169,14 +234,14 @@ var TableHeader = (function() {
 				colEl.addClass('sortable');
 
 				var sort = colEl.getAttribute('data-col');
-				
+
 				me._addFieldStyle(sort);
 
 				colEl.setAttribute('data-label', me.labelForCol(sort));
 
-				if(me._sort==sort){
+				if (me._sort == sort) {
 					colEl.addClass('active');
-					if(me._sortInv){
+					if (me._sortInv) {
 						colEl.addClass('asc');
 					}
 				}
@@ -218,14 +283,12 @@ var TableHeader = (function() {
 					}
 
 					sortModule.applySort(sort);
-					if(me._sort==sort){
-						me._sortInv=!me._sortInv;
-					}else{
-						me._sortInv=false;
+					if (me._sort == sort) {
+						me._sortInv = !me._sortInv;
+					} else {
+						me._sortInv = false;
 					}
-					me._sort=sort;
-
-
+					me._sort = sort;
 
 
 
@@ -238,7 +301,7 @@ var TableHeader = (function() {
 
 		_remove: function() {
 			this._style.parentNode.removeChild(this._style);
-			this._style=null;
+			this._style = null;
 		}
 
 	});
