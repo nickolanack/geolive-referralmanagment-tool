@@ -4,7 +4,7 @@ var TableHeader = (function() {
 
 	var layoutDefault = {
 		'id': {
-			width: '30px'
+			width: '60px'
 		},
 		'name': {
 			width: 'auto'
@@ -142,12 +142,12 @@ var TableHeader = (function() {
 
 
 				var size = me._listModule.getElement().getSize();
-				var available=size
-				var staticSizeItems = me._getStaticCellsInfo().forEach(function(c){
+				var available=size.x
+				me._getStaticCellsInfo().forEach(function(c){
 					available-=parseFloat(c.width);
 				});
 
-				var auto=Math.round((1000*available/me._getDynamicCells().length)/size)/10;
+				var auto=Math.round((1000*available/me._getDynamicCells().length)/size.x/10;
 
 
 
