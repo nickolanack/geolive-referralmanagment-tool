@@ -148,7 +148,8 @@ var TableHeader = (function() {
 
 
 				var size = me._listModule.getElement().getSize();
-				var available=size.x
+				var padding=2*10;
+				var available=size.x-padding;
 				me._getStaticCellsInfo().forEach(function(c){
 					available-=parseFloat(c.width);
 				});
