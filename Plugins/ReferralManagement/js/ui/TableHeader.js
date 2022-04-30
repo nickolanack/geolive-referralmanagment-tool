@@ -110,7 +110,13 @@ var TableHeader = (function() {
 				this._dataCols = [];
 			}
 
-			this._dataCols.push(ObjectAppend_(this._getLayout(dataCol), {col: dataCol}));
+			if(this._dataCols.filter(function(data){
+				return data.col==dataCol;
+			}).length==0){
+				this._dataCols.push(ObjectAppend_(this._getLayout(dataCol), {col: dataCol}));
+			}
+
+			
 			this._redrawStyles();
 
 		},
