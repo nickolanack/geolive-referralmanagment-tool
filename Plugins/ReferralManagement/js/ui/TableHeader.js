@@ -147,7 +147,7 @@ var TableHeader = (function() {
 					available-=parseFloat(c.width);
 				});
 
-				var auto=Math.round((1000*available/me._getDynamicCells().length)/size.x/10;
+				var auto=Math.round((1000*available/me._getDynamicCells().length)/size.x)/10;
 
 
 
