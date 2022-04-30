@@ -154,19 +154,20 @@ var TableHeader = (function() {
 
 				var size = me._listModule.getElement().getSize();
 				var padding=2*10;
-				var available=size.x-padding;
+				var available=size.x;//-padding;
+				var static=0;
 				me._getStaticCellsInfo().forEach(function(c){
-					available-=parseFloat(c.width);
+					static-=parseFloat(c.width);
 				});
 
-				var auto=Math.round((1000*available/me._getDynamicCells().length)/size.x)/10;
+				var auto=Math.round(1000/me._getDynamicCells().length)/10;
 
 
 
 				me._style.innerHTML = me._dataCols.map(function(data) {
 
 					if(data.width=='auto'){
-						return '[data-col="' + data.col + '"]{ width:'+auto+'%; }';
+						return '[data-col="' + data.col + '"]{ width: calc( '+auto+'% - '+(static+padding)+'px ); }';
 					}
 					return '[data-col="' + data.col + '"]{ width:'+data.width+'; }';
 
