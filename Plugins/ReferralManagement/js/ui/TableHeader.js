@@ -157,7 +157,7 @@ var TableHeader = (function() {
 				var available=size.x;//-padding;
 				var static=0;
 				me._getStaticCellsInfo().forEach(function(c){
-					static-=parseFloat(c.width);
+					static+=parseFloat(c.width);
 				});
 
 				var auto=Math.round(1000/me._getDynamicCells().length)/10;
