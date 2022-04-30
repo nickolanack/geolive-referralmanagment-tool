@@ -141,13 +141,13 @@ var TableHeader = (function() {
 				me._timeout = null;
 
 
-				var size = this._listModule.getElement().getSize();
+				var size = me._listModule.getElement().getSize();
 				var available=size
-				var staticSizeItems = this._getStaticCellsInfo().forEach(function(c){
+				var staticSizeItems = me._getStaticCellsInfo().forEach(function(c){
 					available-=parseFloat(c.width);
 				});
 
-				var auto=Math.round((1000*available/this._getDynamicCells().length)/size)/10;
+				var auto=Math.round((1000*available/me._getDynamicCells().length)/size)/10;
 
 
 
