@@ -116,13 +116,13 @@ var TableHeader = (function() {
 		},
 
 		_getStaticCellsInfo: function() {
-			this._dataCols.filter(function(cell) {
+			return this._dataCols.filter(function(cell) {
 				return cell.width != 'auto';
 			});
 		},
 
 		_getDynamicCells: function() {
-			this._dataCols.filter(function(cell) {
+			return this._dataCols.filter(function(cell) {
 				return cell.width == 'auto';
 			});
 		},
