@@ -6,6 +6,6 @@
         "className": "",
         "fieldLabelScript": "return \"\";",
         "fieldValueScript": "return \"\";",
-        "formatElementScript": "el.addClass(\"inline icon\");\n\/\/el.setAttribute(\"data-col\",\"name\");"
+        "formatElementScript": "el.addClass(\"inline icon\");\nel.setAttribute(\"data-col\",\"icon\");"
     }
 }
