@@ -140,6 +140,8 @@ var TableHeader = (function() {
 
 			if (!this._style) {
 				this._addStyle();
+				this._resizeEventListener=this._redrawStyles.bind(this);
+				window.addEvent('resize', this._resizeEventListener);
 			}
 
 			if (this._timeout) {
@@ -272,9 +274,8 @@ var TableHeader = (function() {
 
 
 						/**
-							* Not going to render this temporary module, but it should still work
-							*/
-
+						* Not going to render this temporary module, but it should still work
+						*/
 
 						sortModule = (new ListSortModule(function() {
 							return me._listModule;
@@ -284,11 +285,9 @@ var TableHeader = (function() {
 
 						me._listModule.setSortObject(sortModule);
 
-
-
 						/**
-							*
-							*/
+						*
+						*/
 
 					}
 
@@ -310,6 +309,11 @@ var TableHeader = (function() {
 		},
 
 		_remove: function() {
+
+			if(this._resizeEventListener){
+				window.removeEvent('resize', this._resizeEventListener);
+			}
+
 			this._style.parentNode.removeChild(this._style);
 			this._style = null;
 		}
