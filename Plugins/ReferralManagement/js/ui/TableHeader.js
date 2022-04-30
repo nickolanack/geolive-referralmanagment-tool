@@ -161,13 +161,13 @@ var TableHeader = (function() {
 				});
 
 				var auto=Math.round(1000/me._getDynamicCells().length)/10;
-
+				var offset=Math.round(10*(static+padding)/me._getDynamicCells().length)/10;
 
 
 				me._style.innerHTML = me._dataCols.map(function(data) {
 
 					if(data.width=='auto'){
-						return '[data-col="' + data.col + '"]{ width: calc( '+auto+'% - '+(static+padding)+'px ); }';
+						return '[data-col="' + data.col + '"]{ width: calc( '+auto+'% - '+offset+'px ); }';
 					}
 					return '[data-col="' + data.col + '"]{ width:'+data.width+'; }';
 
