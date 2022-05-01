@@ -221,14 +221,14 @@ var TableHeader = (function() {
 
 
 				me._style.innerHTML = 
-					dynamicCells.map(function(cell){
-						return '[data-col="' + data.col + '"]{ width: calc( '+auto+'% - '+staticWidthTotalPerItem+'px ); }';
+					dynamicCells.map(function(col){
+						return '[data-col="' + col.col + '"]{ width: calc( '+auto+'% - '+staticWidthTotalPerItem+'px ); }';
 					}).join("\n")+"\n"+
 					maxedOutCols.map(function(cell){
-						return '[data-col="' + data.col + '"]{ width:'+data.maxWidth+'; }';
+						return '[data-col="' + col.col + '"]{ width:'+col.maxWidth+'; }';
 					}).join("\n")+"\n"+
 					staticCells.map(function(cell){
-						return '[data-col="' + data.col + '"]{ width:'+data.width+'; }';
+						return '[data-col="' + col.col + '"]{ width:'+col.width+'; }';
 					}).join("\n");
 
 
