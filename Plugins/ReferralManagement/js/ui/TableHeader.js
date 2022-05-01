@@ -213,7 +213,7 @@ var TableHeader = (function() {
 
 				var maxedOutWidth=0;
 				maxedOutCols.forEach(function(cell){
-					maxedOutCols+=parseFloat(cell.maxWidth);
+					maxedOutWidth+=parseFloat(cell.maxWidth);
 				});
 
 				var auto=Math.round(1000/dynamicCells.length)/10;
