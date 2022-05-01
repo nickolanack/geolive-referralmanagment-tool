@@ -212,7 +212,7 @@ var TableHeader = (function() {
 				}
 
 				var maxedOutWidth=0;
-				maxedOutCols.forEach(function(cell){
+				maxedOutItems.forEach(function(cell){
 					maxedOutWidth+=parseFloat(cell.maxWidth);
 				});
 
@@ -224,7 +224,7 @@ var TableHeader = (function() {
 					dynamicCells.map(function(cell){
 						return '[data-col="' + cell.col + '"]{ width: calc( '+auto+'% - '+staticWidthTotalPerItem+'px ); }';
 					}).join("\n")+"\n"+
-					maxedOutCols.map(function(cell){
+					maxedOutItems.map(function(cell){
 						return '[data-col="' + cell.col + '"]{ width:'+cell.maxWidth+'; }';
 					}).join("\n")+"\n"+
 					staticCells.map(function(cell){
