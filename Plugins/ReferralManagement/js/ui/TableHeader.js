@@ -159,7 +159,7 @@ var TableHeader = (function() {
 				maxed.forEach(function(cell){
 					nextAvailable-=parseFloat(cell.maxWidth);
 				});
-				return maxed.concat(_getDynamicCellsWithMax(nextAvailable, dynamic.filter(function(cell){
+				return maxed.concat(this._getDynamicCellsWithMax(nextAvailable, dynamic.filter(function(cell){
 					return !filterFn(cell);
 				})));
 			}
