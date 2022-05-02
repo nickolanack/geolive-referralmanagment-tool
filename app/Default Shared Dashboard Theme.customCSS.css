@@ -5432,13 +5432,14 @@ span.navigation-menu.settings-menu {
                         max-width:120px;
                     }
                     
+                    /*
                     .field-value{
                         font-size:0;
                         &:after{
                             font-size:16px;
                             content:attr(data-day);
                         }
-                    }
+                    }*/
                   
              }
         }
@@ -5478,15 +5479,17 @@ span.navigation-menu.settings-menu {
         .field-value-module.inline{
     
            &[data-col="attachments"]{
+               /*
                 font-size:0;
                 width: 50px;
+                */
                 &.sortable .download-link{
                     display:none;
                 }
            }
         
            &[data-col="type"]{
-                 width:90px;
+                 /*width:90px;*/
                  span{
                      max-width:80px;
                  }
@@ -5494,7 +5497,7 @@ span.navigation-menu.settings-menu {
            }
            
            &[data-col="community"], &[data-col="status"]{
-                 width:150px;
+                 /*width:150px;*/
                  span{
                      max-width:70px;
                  }
@@ -5510,7 +5513,7 @@ span.navigation-menu.settings-menu {
     
         div.field-value-module.inline{
              
-             max-width:150px;
+             /*max-width:150px;*/
              span{
                  max-width:150px;
              }
