@@ -346,10 +346,19 @@ var TableHeader = (function() {
 			var header = this._makeHeaderEl();
 
 			if (listEl.firstChild) {
-				listEl.insertBefore(header, listEl.firstChild);
-			} else {
-				listEl.appendChild(header);
-			}
+				var child=listEl.firstChild;
+				if(child.hasClass('uilist-pagination')){
+					child=child.nextSibling;
+				}
+				if(child){
+					listEl.insertBefore(header, child);
+					return;
+				}
+			} 
+				
+
+			listEl.appendChild(header);
+			
 
 
 		},
