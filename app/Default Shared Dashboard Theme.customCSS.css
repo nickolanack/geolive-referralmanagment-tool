@@ -930,9 +930,16 @@ span.field-label.address-click:after {
       background-color: #b28029;
       border-radius:10px;
     }
+    
+    
+    
         
     
 }
+
+.gm-style-iw-d::-webkit-scrollbar {
+        outline:none;
+    }
 
 
 .pro-tip-hint.inline-tip{
