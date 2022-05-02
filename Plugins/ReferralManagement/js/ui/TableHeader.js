@@ -311,7 +311,7 @@ var TableHeader = (function() {
 				}).join("\n")+"\n"+
 				staticCells.map(function(cell){
 					return '[data-col="' + cell.col + '"]{ width:'+cell.width+'; }';
-				}).join("\n");
+				}).join("\n")+"\n"+
 				hiddenCells.map(function(cell){
 					return '[data-col="' + cell.col + '"]{ display:none; }';
 				}).join("\n");
