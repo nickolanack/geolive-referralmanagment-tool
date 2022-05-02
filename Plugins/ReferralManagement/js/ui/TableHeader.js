@@ -21,7 +21,8 @@ var TableHeader = (function() {
 		},
 		'created': {
 			width: 'auto',
-			maxWidth:'250px'
+			maxWidth:'250px',
+			hidden:true
 		},
 		'modified': {
 			width: 'auto',
