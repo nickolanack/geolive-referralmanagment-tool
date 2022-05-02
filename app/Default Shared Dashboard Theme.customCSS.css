@@ -5408,7 +5408,7 @@ span.navigation-menu.settings-menu {
      @media screen and (max-width: 2500px) {
     
         div.field-value-module.inline{
-             max-width:220px;
+             /*max-width:220px;*/
              span{
                  max-width:220px;
              }
@@ -5419,14 +5419,14 @@ span.navigation-menu.settings-menu {
       @media screen and (max-width: 2300px) {
     
         div.field-value-module.inline{
-             max-width:200px;
+             /*max-width:200px;*/
              span{
                  max-width:200px;
              }
              
              &[data-col="created"], &[data-col="modified"]{
                  
-                    max-width:150px;
+                    /*max-width:150px;*/
                     
                     span{
                         max-width:120px;
@@ -5448,7 +5448,7 @@ span.navigation-menu.settings-menu {
     @media screen and (max-width: 2000px) {
     
         div.field-value-module.inline{
-             max-width:180px;
+             /*max-width:180px;*/
              span{
                  max-width:180px;
              }
@@ -5457,7 +5457,7 @@ span.navigation-menu.settings-menu {
      
     
         div.field-value-module.inline[data-col="attachments"]{
-             max-width:140px;
+             /*max-width:140px;*/
              span{
                  max-width:140px;
              }
