@@ -16,7 +16,8 @@ var TableHeader = (function() {
 		},
 		'user': {
 			width: 'auto',
-			maxWidth:'250px'
+			maxWidth:'250px',
+			label:'submitter'
 		},
 		'created': {
 			width: 'auto',
@@ -41,7 +42,8 @@ var TableHeader = (function() {
 
 		'status':{
 			width: 'auto',
-			maxWidth:'250px'
+			maxWidth:'250px',
+			hidden:true
 		},
 
 		'selection': {
@@ -140,13 +142,19 @@ var TableHeader = (function() {
 
 		_getStaticCells: function() {
 			return this._dataCols.filter(function(cell) {
-				return cell.width != 'auto';
+				return cell.width != 'auto' && cell.hidden !== true;;
 			});
 		},
 
 		_getDynamicCells: function() {
 			return this._dataCols.filter(function(cell) {
-				return cell.width == 'auto';
+				return cell.width == 'auto' && cell.hidden !== true;
+			});
+		},
+
+		_getHiddenCells: function() {
+			return this._dataCols.filter(function(cell) {
+				return cell.hidden === true;
 			});
 		},
 
@@ -289,6 +297,8 @@ var TableHeader = (function() {
 			var staticWidthTotalPerItem=Math.round(10*(minnedOutWidth+maxedOutWidth+staticWidthTotal+padding)/dynamicCells.length)/10;
 
 
+			var hiddenCells=this._getHiddenCells();
+
 			this._style.innerHTML = 
 				dynamicCells.map(function(cell){
 					return '[data-col="' + cell.col + '"]{ width: calc( '+auto+'% - '+staticWidthTotalPerItem+'px ); }';
@@ -301,6 +311,9 @@ var TableHeader = (function() {
 				}).join("\n")+"\n"+
 				staticCells.map(function(cell){
 					return '[data-col="' + cell.col + '"]{ width:'+cell.width+'; }';
+				}).join("\n");
+				hiddenCells.map(function(cell){
+					return '[data-col="' + cell.col + '"]{ display:none; }';
 				}).join("\n");
 
 		},
