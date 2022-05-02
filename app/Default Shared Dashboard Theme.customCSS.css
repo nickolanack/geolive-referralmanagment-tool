@@ -5408,7 +5408,7 @@ span.navigation-menu.settings-menu {
      @media screen and (max-width: 2500px) {
     
         div.field-value-module.inline{
-             max-width:220px;
+             /*max-width:220px;*/
              span{
                  max-width:220px;
              }
@@ -5419,7 +5419,7 @@ span.navigation-menu.settings-menu {
       @media screen and (max-width: 2300px) {
     
         div.field-value-module.inline{
-             max-width:200px;
+             /*max-width:200px;*/
              span{
                  max-width:200px;
              }
