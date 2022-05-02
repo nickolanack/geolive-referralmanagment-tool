@@ -169,7 +169,7 @@ var TableHeader = (function() {
 
 		},
 
-		_getDynamicCellsWithMin:function(available){
+		_getDynamicCellsWithMin:function(available, dynamicCells){
 
 			var dynamic=dynamicCells||this._getDynamicCells();
 			var availableEach=available/dynamic.length;
