@@ -41,7 +41,7 @@ var TableHeader = (function() {
 
 		'status':{
 			width: 'auto',
-			minWidth:'250px'
+			maxWidth:'250px'
 		},
 
 		'selection': {
