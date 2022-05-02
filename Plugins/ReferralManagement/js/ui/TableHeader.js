@@ -11,7 +11,8 @@ var TableHeader = (function() {
 			width: '60px'
 		},
 		'name': {
-			width: 'auto'
+			width: 'auto',
+			minWidth:'250px'
 		},
 		'user': {
 			width: 'auto',
@@ -168,6 +169,31 @@ var TableHeader = (function() {
 
 		},
 
+		_getDynamicCellsWithMin:function(available){
+
+			var dynamic=dynamicCells||this._getDynamicCells();
+			var availableEach=available/dynamic.length;
+
+			var filterFn=function(cell){
+				return cell.minWidth&&parseFloat(cell.minWidth)>availableEach;
+			};
+
+			var minned = dynamic.filter(filterFn);
+
+			if(minned.length){
+				var nextAvailable=available;
+				minned.forEach(function(cell){
+					nextAvailable-=parseFloat(cell.minWidth);
+				});
+				return minned.concat(this._getDynamicCellsWithMin(nextAvailable, dynamic.filter(function(cell){
+					return !filterFn(cell);
+				})));
+			}
+
+			return [];
+
+		},
+
 		_redrawStyles: function() {
 
 			if (!this._style) {
@@ -220,7 +246,24 @@ var TableHeader = (function() {
 
 			var available=size.x-(staticWidthTotal+padding);
 
-			var maxedOutItems=this._getDynamicCellsWithMax(available);
+			var minedOutItems=this._getDynamicCellsWithMin(available);
+
+			if(minedOutItems.length){
+				var minnedOutCols=minedOutItems.map(function(cell){
+					return cell.col;
+				});
+				dynamicCells=dynamicCells.filter(function(cell){
+					return minnedOutCols.indexOf(cell.col)==-1;
+				});
+			}
+
+			var minnedOutWidth=0;
+			minedOutItems.forEach(function(cell){
+				minnedOutWidth+=parseFloat(cell.minWidth);
+			});
+
+
+			var maxedOutItems=this._getDynamicCellsWithMax(available-minnedOutWidth, dynamicCells);
 
 			if(maxedOutItems.length){
 				var maxedOutCols=maxedOutItems.map(function(cell){
@@ -237,12 +280,15 @@ var TableHeader = (function() {
 			});
 
 			var auto=Math.round(1000/dynamicCells.length)/10;
-			var staticWidthTotalPerItem=Math.round(10*(maxedOutWidth+staticWidthTotal+padding)/dynamicCells.length)/10;
+			var staticWidthTotalPerItem=Math.round(10*(minnedOutWidth+maxedOutWidth+staticWidthTotal+padding)/dynamicCells.length)/10;
 
 
 			this._style.innerHTML = 
 				dynamicCells.map(function(cell){
 					return '[data-col="' + cell.col + '"]{ width: calc( '+auto+'% - '+staticWidthTotalPerItem+'px ); }';
+				}).join("\n")+"\n"+
+				minnedOutItems.map(function(cell){
+					return '[data-col="' + cell.col + '"]{ width:'+cell.minWidth+'; }';
 				}).join("\n")+"\n"+
 				maxedOutItems.map(function(cell){
 					return '[data-col="' + cell.col + '"]{ width:'+cell.maxWidth+'; }';
