@@ -180,7 +180,7 @@ var TableHeader = (function() {
 				var now=(new Date()).getTime();
 				if((!this._lastWrite)||now-this._lastWrite>500){
 					this._lastWrite=now;
-					me._writeStyles();
+					this._writeStyles();
 				}
 				clearTimeout(this._timeout);
 			}
