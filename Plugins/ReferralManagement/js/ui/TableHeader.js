@@ -347,7 +347,7 @@ var TableHeader = (function() {
 
 			if (listEl.firstChild) {
 				var child=listEl.firstChild;
-				if(child.hasClass('uilist-pagination')){
+				while(child.hasClass('loading')||child.hasClass('uilist-pagination')){
 					child=child.nextSibling;
 				}
 				if(child){
