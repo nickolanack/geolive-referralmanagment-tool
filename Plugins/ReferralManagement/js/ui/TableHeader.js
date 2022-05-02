@@ -176,20 +176,26 @@ var TableHeader = (function() {
 				window.addEvent('resize', this._resizeEventListener);
 			}
 
+			var now=(new Date()).getTime();
+
+			if(!this._lastWrite){
+				this._lastWrite=now-100;
+				setTimeout(function() {
+					me._redrawStyles();
+				}, 250);
+			}
+
+
 			if (this._timeout) {
-				var now=(new Date()).getTime();
-				if(!this._lastWrite){
-					this._lastWrite=now;
-				}
-				if(now-this._lastWrite>500){
-					this._lastWrite=now;
+				
+				if(now-this._lastWrite>250){
 					this._writeStyles();
 				}
 				clearTimeout(this._timeout);
 			}
 			var me = this;
 			this._timeout = setTimeout(function() {
-				this._lastWrite=(new Date()).getTime();
+				
 				me._timeout = null;
 				me._writeStyles();
 			}, 500);
@@ -197,6 +203,8 @@ var TableHeader = (function() {
 		},
 
 		_writeStyles:function(){
+
+			this._lastWrite=(new Date()).getTime();
 
 			var size = this._listModule.getElement().getSize();
 			var padding=2*10;
