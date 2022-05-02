@@ -5495,7 +5495,7 @@ span.navigation-menu.settings-menu {
            }
            
            &[data-col="community"], &[data-col="status"]{
-                 width:150px;
+                 /*width:150px;*/
                  span{
                      max-width:70px;
                  }
