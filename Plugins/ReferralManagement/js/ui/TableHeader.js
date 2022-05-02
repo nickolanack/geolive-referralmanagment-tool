@@ -178,7 +178,10 @@ var TableHeader = (function() {
 
 			if (this._timeout) {
 				var now=(new Date()).getTime();
-				if((!this._lastWrite)||now-this._lastWrite>500){
+				if(!this._lastWrite){
+					this._lastWrite=now;
+				}
+				if(now-this._lastWrite>500){
 					this._lastWrite=now;
 					this._writeStyles();
 				}
