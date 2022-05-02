@@ -38,6 +38,12 @@ var TableHeader = (function() {
 			width: 'auto',
 			maxWidth:'250px'
 		},
+
+		'status':{
+			width: 'auto',
+			minWidth:'250px'
+		},
+
 		'selection': {
 			width: '30px'
 		}

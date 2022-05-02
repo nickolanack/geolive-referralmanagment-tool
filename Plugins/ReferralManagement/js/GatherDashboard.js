@@ -121,6 +121,9 @@ var GatherDashboard = (function() {
 
 		},
 
+		/**
+		 * @deprecated move js/menus/Counters.js
+		 */
 		addItemSpatialInfo: function(el, item, application) {
 
 			var fileCounter = null;
@@ -151,6 +154,9 @@ var GatherDashboard = (function() {
 
 		},
 
+		/**
+		 * @deprecated move js/menus/Counters.js
+		 */
 		addItemFilesInfo: function(el, item, application) {
 
 			var fileCounter = null;
@@ -181,7 +187,9 @@ var GatherDashboard = (function() {
 
 		},
 
-
+		/**
+		 * @deprecated move js/menus/Counters.js
+		 */
 		addItemUsersInfo: function(el, item, application) {
 
 			var fileCounter = null;
@@ -212,6 +220,9 @@ var GatherDashboard = (function() {
 
 		},
 
+		/**
+		 * @deprecated move js/menus/Counters.js
+		 */
 		addItemDiscussionInfo: function(el, item, application) {
 
 			ItemDiscussion.AddItemDiscussionIndicator(el, item, application);
