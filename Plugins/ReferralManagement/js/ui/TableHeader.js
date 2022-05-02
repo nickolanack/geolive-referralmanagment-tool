@@ -37,7 +37,8 @@ var TableHeader = (function() {
 		},
 		'community': {
 			width: 'auto',
-			maxWidth:'250px'
+			maxWidth:'250px',
+			hidden:true
 		},
 
 		'status':{
