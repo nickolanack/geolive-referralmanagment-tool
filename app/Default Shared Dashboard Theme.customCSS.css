@@ -1269,8 +1269,6 @@ body.dragover{
 
 div.field-value-module.inline {
     display: inline-block;
-    width: 250px;
-    max-width: 16%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
