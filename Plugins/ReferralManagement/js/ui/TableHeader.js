@@ -246,10 +246,10 @@ var TableHeader = (function() {
 
 			var available=size.x-(staticWidthTotal+padding);
 
-			var minedOutItems=this._getDynamicCellsWithMin(available);
+			var minnedOutItems=this._getDynamicCellsWithMin(available);
 
-			if(minedOutItems.length){
-				var minnedOutCols=minedOutItems.map(function(cell){
+			if(minnedOutItems.length){
+				var minnedOutCols=minnedOutItems.map(function(cell){
 					return cell.col;
 				});
 				dynamicCells=dynamicCells.filter(function(cell){
@@ -258,7 +258,7 @@ var TableHeader = (function() {
 			}
 
 			var minnedOutWidth=0;
-			minedOutItems.forEach(function(cell){
+			minnedOutItems.forEach(function(cell){
 				minnedOutWidth+=parseFloat(cell.minWidth);
 			});
 
