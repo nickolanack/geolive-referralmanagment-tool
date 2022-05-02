@@ -313,7 +313,7 @@ var TableHeader = (function() {
 					return '[data-col="' + cell.col + '"]{ width:'+cell.width+'; }';
 				}).join("\n")+"\n"+
 				hiddenCells.map(function(cell){
-					return '[data-col="' + cell.col + '"]{ display:none; }';
+					return 'div.field-value-module.inline[data-col="' + cell.col + '"]{ display:none; }';
 				}).join("\n");
 
 		},
