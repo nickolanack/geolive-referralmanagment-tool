@@ -5479,15 +5479,17 @@ span.navigation-menu.settings-menu {
         .field-value-module.inline{
     
            &[data-col="attachments"]{
+               /*
                 font-size:0;
                 width: 50px;
+                */
                 &.sortable .download-link{
                     display:none;
                 }
            }
         
            &[data-col="type"]{
-                 width:90px;
+                 /*width:90px;*/
                  span{
                      max-width:80px;
                  }
