@@ -253,7 +253,7 @@ var TableHeader = (function() {
 				return cell.collapseAt&&parseFloat(cell.collapseAt)>cellWidthEstimate && cell.hidden !== true;
 			});
 
-			var collapsedColNames=collapsedCells.map(fucntion(cell){ return cell.col; });
+			var collapsedColNames=collapsedCells.map(function(cell){ return cell.col; });
 
 			if(JSON.stringify(this._collapsedCols||[])!==JSON.stringify(collapsedColNames)){
 				var last=this._collapsedCols;
