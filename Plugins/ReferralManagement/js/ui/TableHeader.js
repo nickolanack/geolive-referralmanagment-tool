@@ -256,7 +256,7 @@ var TableHeader = (function() {
 			var cellWidthEstimate=available/dynamicCells.length;
 			
 			return this._dataCols.filter(function(cell) {
-				return cell.collapsedAt&&parseFloat(cell.collapsedAt)>cellWidthEstimate && cell.hidden !== true;
+				return cell.collapseAt&&parseFloat(cell.collapseAt)>cellWidthEstimate && cell.hidden !== true;
 			});
 
 		},
