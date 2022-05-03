@@ -23,6 +23,9 @@ var ItemAuthID=(function(){
 			if(isArray_(permits)){
 				return permits[0];
 			}
+
+			return "";
+
 		}
 	
 
