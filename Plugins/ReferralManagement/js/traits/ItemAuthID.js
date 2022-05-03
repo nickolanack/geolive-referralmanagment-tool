@@ -32,4 +32,4 @@ var ItemAuthID=(function(){
 	return ItemAuthID;
 
 
-})():
+})();
