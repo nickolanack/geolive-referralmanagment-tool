@@ -36,7 +36,7 @@ var TableHeader = (function() {
 		'user': {
 			width: 'auto',
 			maxWidth:'250px',
-			label:'Submitter'
+			label:DashboardConfig.getValue('enableProposals')?'Submitter':"Created by"
 		},
 		
 		'type': {
