@@ -74,7 +74,7 @@ var TableHeader = (function() {
 		},
 		
 		'selection': {
-			width: '100px'
+			width: '30px'
 		},
 
 		
