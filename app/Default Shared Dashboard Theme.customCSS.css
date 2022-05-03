@@ -930,9 +930,16 @@ span.field-label.address-click:after {
       background-color: #b28029;
       border-radius:10px;
     }
+    
+    
+    
         
     
 }
+
+.gm-style-iw-d::-webkit-scrollbar {
+        outline:none;
+    }
 
 
 .pro-tip-hint.inline-tip{
@@ -5464,7 +5471,7 @@ span.navigation-menu.settings-menu {
              }
              
              .field-value{
-                 display:none;
+                /* display:none;*/
              }
         }
     
@@ -5520,7 +5527,7 @@ span.navigation-menu.settings-menu {
              
              &[data-col="created"], &[data-col="modified"]{
                  
-                    max-width:120px;
+                    /* max-width:120px;*/
                     
                     span{
                         max-width:110px;
@@ -5535,7 +5542,7 @@ span.navigation-menu.settings-menu {
      @media screen and (max-width: 1500px) {
          
         div.field-value-module.inline{
-             max-width:180px;
+             /* max-width:180px;*/
              span{
                  max-width:170px;
              }
@@ -5553,7 +5560,7 @@ span.navigation-menu.settings-menu {
          
     
         div.field-value-module.inline{
-             max-width:140px;
+             /* max-width:140px; */
              span{
                  max-width:130px;
              }
@@ -5567,7 +5574,7 @@ span.navigation-menu.settings-menu {
     
         div.field-value-module.inline{
             &[data-col="modified"]{
-                display:none;
+                /* display:none; */
             } 
         }
     
