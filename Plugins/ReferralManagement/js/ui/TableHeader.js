@@ -4,6 +4,10 @@ var TableHeader = (function() {
 
 	var layoutDefault = {
 
+		'selection': {
+			width: '30px'
+		},
+
 		'icon': {
 			width: '30px',
 
@@ -59,9 +63,7 @@ var TableHeader = (function() {
 			hidden:true
 		},
 
-		'selection': {
-			width: '30px'
-		}
+		
 	}
 
 
