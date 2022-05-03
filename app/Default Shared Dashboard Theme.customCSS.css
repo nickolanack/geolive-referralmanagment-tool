@@ -486,7 +486,7 @@ span.field-value.tip-tag.is-light {
 
 
 .field-value-module.has-ids .id-items:after {
-  content: "";
+  /* content: ""; */
   font-family: 'FontAwesome';
   display: inline-block;
   float: left;
@@ -4312,6 +4312,8 @@ img.static-map {
         
         min-width: 180px;
         width: 180px;
+        
+        
     }
 
     
@@ -4320,6 +4322,9 @@ img.static-map {
         min-width: 180px;
         width: 180px;
 
+        .navigation-menu ul li:after{
+            display:none;
+        }
     }
     
     
