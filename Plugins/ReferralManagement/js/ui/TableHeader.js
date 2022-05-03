@@ -256,7 +256,7 @@ var TableHeader = (function() {
 			var collapsedColNames=collapsedCells.map(function(cell){ return cell.col; });
 
 			if(JSON.stringify(this._collapsedCols||[])!==JSON.stringify(collapsedColNames)){
-				var last=this._collapsedCols;
+				var last=this._collapsedCols||[];
 				this._collapsedCols=collapsedColNames;
 
 				var expandedCols=last.filter(function(col){
