@@ -11,6 +11,10 @@ var TableHeader = (function() {
 		'id': {
 			width: '60px'
 		},
+		'auth': {
+			width: 'auto',
+			maxWidth:'250px'
+		},
 		'modified': {
 			width: 'auto',
 			maxWidth:'250px'
@@ -79,6 +83,7 @@ var TableHeader = (function() {
 
 				if(!DashboardConfig.getValue('enableProposals')){
 					removeCols.push('col-status');
+					removeCols.push('col-auth');
 				}
 
 				content = content.filter(function(m) {
