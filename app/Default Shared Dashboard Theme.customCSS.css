@@ -24,7 +24,7 @@ button:focus {outline:0;}
 
 
 
-
+.field-value-module.inline.sortable {cursor: pointer;}
 
 span.notification-indicator:after {
     content: attr(data-count);
