@@ -15,7 +15,7 @@ var TableHeader = (function() {
 			label: 'ID #'
 		},
 		'auth': {
-			width: '150px',
+			maxWidth: '150px',
 			label: 'Auth #',
 			"@": [
 
