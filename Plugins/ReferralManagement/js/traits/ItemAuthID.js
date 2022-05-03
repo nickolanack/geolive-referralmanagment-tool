@@ -20,7 +20,7 @@ var ItemAuthID=(function(){
 				return permits;
 			}
 
-			if(isArray_(permits)){
+			if(isArray_(permits)&&permits.length>0){
 				return permits[0];
 			}
 
