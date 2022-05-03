@@ -18876,11 +18876,22 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "col-keywords\n",
+                                    "className": "",
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.8.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
                                     "identifier": "col-attachments",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.8.config.fieldValueScript.js",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.8.config.formatElementScript.js"
+                                    "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.9.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.9.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -18891,7 +18902,7 @@
                                     "className": "",
                                     "fieldLabelScript": "return \"Approval\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.9.config.formatElementScript.js"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.10.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -18902,7 +18913,7 @@
                                     "className": "",
                                     "fieldLabelScript": "return \"Ownership\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.10.config.formatElementScript.js"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.11.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -18913,7 +18924,7 @@
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "\nreturn \"\";",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.11.config.formatElementScript.js"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.12.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -18924,7 +18935,7 @@
                                     "className": "tag-width",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.12.config.formatElementScript.js"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.13.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -18935,7 +18946,7 @@
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.13.config.formatElementScript.js"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.14.config.formatElementScript.js"
                                 }
                             }
                         ]
