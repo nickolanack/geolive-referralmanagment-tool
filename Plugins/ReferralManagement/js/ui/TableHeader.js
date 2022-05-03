@@ -38,7 +38,8 @@ var TableHeader = (function() {
 		'user': {
 			width: 'auto',
 			maxWidth: '250px',
-			label: 'Submitter'
+			label: 'Submitter',
+			collapseAt:'70px'
 		},
 
 		'type': {
@@ -57,7 +58,8 @@ var TableHeader = (function() {
 		'modified': {
 			width: 'auto',
 			maxWidth: '250px',
-			label: "Last Edit"
+			label: "Last Edit",
+			collapseAt:'70px'
 		},
 		'attachments': {
 			width: 'auto',
