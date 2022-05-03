@@ -27,7 +27,8 @@ var TableHeader = (function() {
 			width: 'auto',
 			maxWidth: '250px',
 			"--hidden": true,
-			label: "Submitted"
+			label: "Submitted",
+			collapseAt:'55px'
 		},
 
 		'name': {
