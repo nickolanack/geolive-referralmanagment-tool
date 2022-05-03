@@ -1277,9 +1277,14 @@ body.dragover{
 div.field-value-module.inline {
     display: inline-block;
     overflow: hidden;
-    text-overflow: ellipsis;
+   
     white-space: nowrap;
 }
+
+div.field-value-module.inline>span {
+     text-overflow: ellipsis;
+}
+
 div.field-value-module.inline.toggle {
     overflow: visible;
 }
