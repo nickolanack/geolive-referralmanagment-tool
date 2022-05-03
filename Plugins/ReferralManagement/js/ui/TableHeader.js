@@ -16,7 +16,7 @@ var TableHeader = (function() {
 		},
 		'auth': {
 			width: '150px',
-			label:'Auth #'
+			label:'Auth #',
 			"@":[
 
 			]
