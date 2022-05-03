@@ -378,6 +378,9 @@ var TableHeader = (function() {
 			this._lastWrite = (new Date()).getTime();
 
 			var size = this._listModule.getElement().getSize();
+			if(size.x==0){
+				return;
+			}
 			var padding = 2 * 10;
 			
 
