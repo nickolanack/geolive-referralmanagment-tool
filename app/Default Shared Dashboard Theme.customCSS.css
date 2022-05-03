@@ -5597,7 +5597,7 @@ span.navigation-menu.settings-menu {
     
         div.field-value-module.inline{
             &[data-col="created"]{
-                display:none;
+                /* display:none; */
             } 
         }
     
