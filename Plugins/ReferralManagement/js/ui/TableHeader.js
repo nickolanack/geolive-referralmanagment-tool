@@ -275,7 +275,7 @@ var TableHeader = (function() {
 
 			}
 
-			return collapsed;
+			return collapsedCells;
 
 
 		},
