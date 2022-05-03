@@ -4,7 +4,7 @@ var TableHeader = (function() {
 
 	var layoutDefault = {
 
-		
+
 
 		'icon': {
 			width: '30px',
@@ -12,86 +12,85 @@ var TableHeader = (function() {
 		},
 		'id': {
 			width: '60px',
-			label:'ID #'
+			label: 'ID #'
 		},
 		'auth': {
 			width: '150px',
-			label:'Auth #',
-			"@":[
+			label: 'Auth #',
+			"@": [
 
 			]
 		},
 		'created': {
 			width: 'auto',
-			maxWidth:'250px',
-			"--hidden":true,
-			label:"Submitted"
+			maxWidth: '250px',
+			"--hidden": true,
+			label: "Submitted"
 		},
-		
+
 		'name': {
 			width: 'auto',
-			minWidth:'250px',
-			label:"Name"
+			minWidth: '250px',
+			label: "Name"
 		},
 		'user': {
 			width: 'auto',
-			maxWidth:'250px',
-			label:'Submitter'
+			maxWidth: '250px',
+			label: 'Submitter'
 		},
-		
+
 		'type': {
 			width: 'auto',
-			maxWidth:'250px',
-			label:"Type"
+			maxWidth: '250px',
+			label: "Type"
 		},
 		'keywords': {
 			width: 'auto',
-			maxWidth:'250px',
-			label:"Keywords",
-			hidden:true
+			maxWidth: '250px',
+			label: "Keywords",
+			hidden: true
 		},
 		'modified': {
 			width: 'auto',
-			maxWidth:'250px',
-			label:"Last Edit"
+			maxWidth: '250px',
+			label: "Last Edit"
 		},
 		'attachments': {
 			width: 'auto',
-			maxWidth:'250px',
-			label:"Attachments"
+			maxWidth: '250px',
+			label: "Attachments"
 		},
 		'community': {
 			width: 'auto',
-			maxWidth:'250px',
-			hidden:true,
-			label:"Community"
+			maxWidth: '250px',
+			hidden: true,
+			label: "Community"
 		},
 
-		'status':{
+		'status': {
 			width: 'auto',
-			maxWidth:'250px',
-			hidden:true,
+			maxWidth: '250px',
+			hidden: true,
 		},
-		
+
 		'selection': {
 			width: '30px'
-		};
+		}
 
 
 
-		DashboardConfig.getValue('enableProposals', function(enabled){
-			layoutDefault.user.label=enabled?'Submitter':"Created by";
-		});
+	};
 
-		
-	}
+	DashboardConfig.getValue('enableProposals', function(enabled) {
+		layoutDefault.user.label = enabled ? 'Submitter' : "Created by";
+	});
 
 
 
 	var TableHeader = new Class_({
 
 
-		initialize:function(){
+		initialize: function() {
 
 
 			DashboardPageLayout.addLayout("singleProjectListItemTableDetail", function(content) {
@@ -103,12 +102,12 @@ var TableHeader = (function() {
 				var removeCols = ['col-approval', 'col-ownership', ];
 
 
-				if(ProjectTeam.GetAllCommunities().length===1){
+				if (ProjectTeam.GetAllCommunities().length === 1) {
 					removeCols.push('col-community')
 				}
-		   
 
-				if(!DashboardConfig.getValue('enableProposals')){
+
+				if (!DashboardConfig.getValue('enableProposals')) {
 					removeCols.push('col-status');
 					removeCols.push('col-auth');
 				}
@@ -117,21 +116,21 @@ var TableHeader = (function() {
 					return removeCols.indexOf(m.getIdentifier()) < 0;
 				})
 
-				var order=Object.keys(layoutDefault)
-				content.sort(function(a, b){
-					var aId=a.getIdentifier().split('col-').pop();
-					var bId=b.getIdentifier().split('col-').pop();
+				var order = Object.keys(layoutDefault)
+				content.sort(function(a, b) {
+					var aId = a.getIdentifier().split('col-').pop();
+					var bId = b.getIdentifier().split('col-').pop();
 
-					var aOrder=order.indexOf(aId);
-					var bOrder=order.indexOf(bId);
-					if(aOrder==-1){
-						aOrder=Infinity;
+					var aOrder = order.indexOf(aId);
+					var bOrder = order.indexOf(bId);
+					if (aOrder == -1) {
+						aOrder = Infinity;
 					}
-					if(bOrder==-1){
-						bOrder=Infinity;
+					if (bOrder == -1) {
+						bOrder = Infinity;
 					}
 
-					return aOrder-bOrder;
+					return aOrder - bOrder;
 				});
 
 
@@ -148,7 +147,7 @@ var TableHeader = (function() {
 				return "";
 			}
 
-			if(layoutDefault[col]&&layoutDefault[col].label){
+			if (layoutDefault[col] && layoutDefault[col].label) {
 				return layoutDefault[col].label;
 			}
 			return col;
@@ -201,13 +200,15 @@ var TableHeader = (function() {
 
 		},
 
-		_getLayout:function(dataCol){
-			return ObjectAppend_({ width: 'auto'}, layoutDefault[dataCol]);
+		_getLayout: function(dataCol) {
+			return ObjectAppend_({
+				width: 'auto'
+			}, layoutDefault[dataCol]);
 		},
 
 		_addFieldStyle: function(dataCol) {
 
-			if((!dataCol)||dataCol==''){
+			if ((!dataCol) || dataCol == '') {
 				return;
 			}
 
@@ -215,13 +216,15 @@ var TableHeader = (function() {
 				this._dataCols = [];
 			}
 
-			if(this._dataCols.filter(function(data){
-				return data.col==dataCol;
-			}).length==0){
-				this._dataCols.push(ObjectAppend_(this._getLayout(dataCol), {col: dataCol}));
+			if (this._dataCols.filter(function(data) {
+					return data.col == dataCol;
+				}).length == 0) {
+				this._dataCols.push(ObjectAppend_(this._getLayout(dataCol), {
+					col: dataCol
+				}));
 			}
 
-			
+
 			this._redrawStyles();
 
 		},
@@ -244,23 +247,23 @@ var TableHeader = (function() {
 			});
 		},
 
-		_getDynamicCellsWithMax:function(available, dynamicCells){
+		_getDynamicCellsWithMax: function(available, dynamicCells) {
 
-			var dynamic=dynamicCells||this._getDynamicCells();
-			var availableEach=available/dynamic.length;
+			var dynamic = dynamicCells || this._getDynamicCells();
+			var availableEach = available / dynamic.length;
 
-			var filterFn=function(cell){
-				return cell.maxWidth&&parseFloat(cell.maxWidth)<availableEach;
+			var filterFn = function(cell) {
+				return cell.maxWidth && parseFloat(cell.maxWidth) < availableEach;
 			};
 
 			var maxed = dynamic.filter(filterFn);
 
-			if(maxed.length){
-				var nextAvailable=available;
-				maxed.forEach(function(cell){
-					nextAvailable-=parseFloat(cell.maxWidth);
+			if (maxed.length) {
+				var nextAvailable = available;
+				maxed.forEach(function(cell) {
+					nextAvailable -= parseFloat(cell.maxWidth);
 				});
-				return maxed.concat(this._getDynamicCellsWithMax(nextAvailable, dynamic.filter(function(cell){
+				return maxed.concat(this._getDynamicCellsWithMax(nextAvailable, dynamic.filter(function(cell) {
 					return !filterFn(cell);
 				})));
 			}
@@ -269,23 +272,23 @@ var TableHeader = (function() {
 
 		},
 
-		_getDynamicCellsWithMin:function(available, dynamicCells){
+		_getDynamicCellsWithMin: function(available, dynamicCells) {
 
-			var dynamic=dynamicCells||this._getDynamicCells();
-			var availableEach=available/dynamic.length;
+			var dynamic = dynamicCells || this._getDynamicCells();
+			var availableEach = available / dynamic.length;
 
-			var filterFn=function(cell){
-				return cell.minWidth&&parseFloat(cell.minWidth)>availableEach;
+			var filterFn = function(cell) {
+				return cell.minWidth && parseFloat(cell.minWidth) > availableEach;
 			};
 
 			var minned = dynamic.filter(filterFn);
 
-			if(minned.length){
-				var nextAvailable=available;
-				minned.forEach(function(cell){
-					nextAvailable-=parseFloat(cell.minWidth);
+			if (minned.length) {
+				var nextAvailable = available;
+				minned.forEach(function(cell) {
+					nextAvailable -= parseFloat(cell.minWidth);
 				});
-				return minned.concat(this._getDynamicCellsWithMin(nextAvailable, dynamic.filter(function(cell){
+				return minned.concat(this._getDynamicCellsWithMin(nextAvailable, dynamic.filter(function(cell) {
 					return !filterFn(cell);
 				})));
 			}
@@ -298,14 +301,14 @@ var TableHeader = (function() {
 
 			if (!this._style) {
 				this._addStyle();
-				this._resizeEventListener=this._redrawStyles.bind(this);
+				this._resizeEventListener = this._redrawStyles.bind(this);
 				window.addEvent('resize', this._resizeEventListener);
 			}
 
-			var now=(new Date()).getTime();
+			var now = (new Date()).getTime();
 
-			if(!this._lastWrite){
-				this._lastWrite=now-100;
+			if (!this._lastWrite) {
+				this._lastWrite = now - 100;
 				setTimeout(function() {
 					me._redrawStyles();
 				}, 250);
@@ -313,92 +316,92 @@ var TableHeader = (function() {
 
 
 			if (this._timeout) {
-				
-				if(now-this._lastWrite>250){
+
+				if (now - this._lastWrite > 250) {
 					this._writeStyles();
 				}
 				clearTimeout(this._timeout);
 			}
 			var me = this;
 			this._timeout = setTimeout(function() {
-				
+
 				me._timeout = null;
 				me._writeStyles();
 			}, 500);
 
 		},
 
-		_writeStyles:function(){
+		_writeStyles: function() {
 
-			this._lastWrite=(new Date()).getTime();
+			this._lastWrite = (new Date()).getTime();
 
 			var size = this._listModule.getElement().getSize();
-			var padding=2*10;
-			var staticWidthTotal=0;
+			var padding = 2 * 10;
+			var staticWidthTotal = 0;
 
-			var staticCells=this._getStaticCells();
+			var staticCells = this._getStaticCells();
 
-			staticCells.forEach(function(c){
-				staticWidthTotal+=parseFloat(c.width);
+			staticCells.forEach(function(c) {
+				staticWidthTotal += parseFloat(c.width);
 			});
 
-			var dynamicCells=this._getDynamicCells()
+			var dynamicCells = this._getDynamicCells()
 
-			var available=size.x-(staticWidthTotal+padding);
+			var available = size.x - (staticWidthTotal + padding);
 
-			var minnedOutItems=this._getDynamicCellsWithMin(available);
+			var minnedOutItems = this._getDynamicCellsWithMin(available);
 
-			if(minnedOutItems.length){
-				var minnedOutCols=minnedOutItems.map(function(cell){
+			if (minnedOutItems.length) {
+				var minnedOutCols = minnedOutItems.map(function(cell) {
 					return cell.col;
 				});
-				dynamicCells=dynamicCells.filter(function(cell){
-					return minnedOutCols.indexOf(cell.col)==-1;
+				dynamicCells = dynamicCells.filter(function(cell) {
+					return minnedOutCols.indexOf(cell.col) == -1;
 				});
 			}
 
-			var minnedOutWidth=0;
-			minnedOutItems.forEach(function(cell){
-				minnedOutWidth+=parseFloat(cell.minWidth);
+			var minnedOutWidth = 0;
+			minnedOutItems.forEach(function(cell) {
+				minnedOutWidth += parseFloat(cell.minWidth);
 			});
 
 
-			var maxedOutItems=this._getDynamicCellsWithMax(available-minnedOutWidth, dynamicCells);
+			var maxedOutItems = this._getDynamicCellsWithMax(available - minnedOutWidth, dynamicCells);
 
-			if(maxedOutItems.length){
-				var maxedOutCols=maxedOutItems.map(function(cell){
+			if (maxedOutItems.length) {
+				var maxedOutCols = maxedOutItems.map(function(cell) {
 					return cell.col;
 				});
-				dynamicCells=dynamicCells.filter(function(cell){
-					return maxedOutCols.indexOf(cell.col)==-1;
+				dynamicCells = dynamicCells.filter(function(cell) {
+					return maxedOutCols.indexOf(cell.col) == -1;
 				});
 			}
 
-			var maxedOutWidth=0;
-			maxedOutItems.forEach(function(cell){
-				maxedOutWidth+=parseFloat(cell.maxWidth);
+			var maxedOutWidth = 0;
+			maxedOutItems.forEach(function(cell) {
+				maxedOutWidth += parseFloat(cell.maxWidth);
 			});
 
-			var auto=Math.round(1000/dynamicCells.length)/10;
-			var staticWidthTotalPerItem=Math.round(10*(minnedOutWidth+maxedOutWidth+staticWidthTotal+padding)/dynamicCells.length)/10;
+			var auto = Math.round(1000 / dynamicCells.length) / 10;
+			var staticWidthTotalPerItem = Math.round(10 * (minnedOutWidth + maxedOutWidth + staticWidthTotal + padding) / dynamicCells.length) / 10;
 
 
-			var hiddenCells=this._getHiddenCells();
+			var hiddenCells = this._getHiddenCells();
 
-			this._style.innerHTML = 
-				dynamicCells.map(function(cell){
-					return '[data-col="' + cell.col + '"]{ width: calc( '+auto+'% - '+staticWidthTotalPerItem+'px ); }';
-				}).join("\n")+"\n"+
-				minnedOutItems.map(function(cell){
-					return '[data-col="' + cell.col + '"]{ width:'+cell.minWidth+'; }';
-				}).join("\n")+"\n"+
-				maxedOutItems.map(function(cell){
-					return '[data-col="' + cell.col + '"]{ width:'+cell.maxWidth+'; }';
-				}).join("\n")+"\n"+
-				staticCells.map(function(cell){
-					return '[data-col="' + cell.col + '"]{ width:'+cell.width+'; }';
-				}).join("\n")+"\n"+
-				hiddenCells.map(function(cell){
+			this._style.innerHTML =
+				dynamicCells.map(function(cell) {
+					return '[data-col="' + cell.col + '"]{ width: calc( ' + auto + '% - ' + staticWidthTotalPerItem + 'px ); }';
+				}).join("\n") + "\n" +
+				minnedOutItems.map(function(cell) {
+					return '[data-col="' + cell.col + '"]{ width:' + cell.minWidth + '; }';
+				}).join("\n") + "\n" +
+				maxedOutItems.map(function(cell) {
+					return '[data-col="' + cell.col + '"]{ width:' + cell.maxWidth + '; }';
+				}).join("\n") + "\n" +
+				staticCells.map(function(cell) {
+					return '[data-col="' + cell.col + '"]{ width:' + cell.width + '; }';
+				}).join("\n") + "\n" +
+				hiddenCells.map(function(cell) {
 					return 'div.field-value-module.inline[data-col="' + cell.col + '"]{ display:none; }';
 				}).join("\n");
 
@@ -451,19 +454,19 @@ var TableHeader = (function() {
 			var header = this._makeHeaderEl();
 
 			if (listEl.firstChild) {
-				var child=listEl.firstChild;
-				while(child.hasClass('loading')||child.hasClass('uilist-pagination')){
-					child=child.nextSibling;
+				var child = listEl.firstChild;
+				while (child.hasClass('loading') || child.hasClass('uilist-pagination')) {
+					child = child.nextSibling;
 				}
-				if(child){
+				if (child) {
 					listEl.insertBefore(header, child);
 					return;
 				}
-			} 
-				
+			}
+
 
 			listEl.appendChild(header);
-			
+
 
 
 		},
@@ -511,8 +514,8 @@ var TableHeader = (function() {
 
 
 						/**
-						* Not going to render this temporary module, but it should still work
-						*/
+							* Not going to render this temporary module, but it should still work
+							*/
 
 						sortModule = (new ListSortModule(function() {
 							return me._listModule;
@@ -523,8 +526,8 @@ var TableHeader = (function() {
 						me._listModule.setSortObject(sortModule);
 
 						/**
-						*
-						*/
+							*
+							*/
 
 					}
 
@@ -547,7 +550,7 @@ var TableHeader = (function() {
 
 		_remove: function() {
 
-			if(this._resizeEventListener){
+			if (this._resizeEventListener) {
 				window.removeEvent('resize', this._resizeEventListener);
 			}
 
