@@ -5527,7 +5527,7 @@ span.navigation-menu.settings-menu {
              
              &[data-col="created"], &[data-col="modified"]{
                  
-                    max-width:120px;
+                    /* max-width:120px;*/
                     
                     span{
                         max-width:110px;
