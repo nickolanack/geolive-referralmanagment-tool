@@ -9,16 +9,21 @@ var TableHeader = (function() {
 
 		},
 		'id': {
-			width: '60px'
+			width: '60px',
+			label:'ID #'
 		},
 		'auth': {
 			width: 'auto',
-			maxWidth:'250px'
+			maxWidth:'250px',
+			label:'Auth #'
 		},
-		'modified': {
+		'created': {
 			width: 'auto',
-			maxWidth:'250px'
+			maxWidth:'250px',
+			hidden:true,
+			label:"Submitted"
 		},
+		
 		'name': {
 			width: 'auto',
 			minWidth:'250px'
@@ -26,17 +31,17 @@ var TableHeader = (function() {
 		'user': {
 			width: 'auto',
 			maxWidth:'250px',
-			label:'submitter'
-		},
-		'created': {
-			width: 'auto',
-			maxWidth:'250px',
-			hidden:true
+			label:'Submitter'
 		},
 		
 		'type': {
 			width: 'auto',
 			maxWidth:'250px'
+		},
+		'modified': {
+			width: 'auto',
+			maxWidth:'250px',
+			label:"Last Edit"
 		},
 		'attachments': {
 			width: 'auto',
@@ -121,8 +126,8 @@ var TableHeader = (function() {
 				return "";
 			}
 
-			if (col == "user") {
-				return "submitter";
+			if(layoutDefault[col]&&layoutDefault[col].label){
+				return layoutDefault[col].label;
 			}
 			return col;
 		},
