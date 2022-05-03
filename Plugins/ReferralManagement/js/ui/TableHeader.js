@@ -90,7 +90,16 @@ var TableHeader = (function() {
 					var aId=a.getIdentifier().split('col-').pop();
 					var bId=b.getIdentifier().split('col-').pop();
 
-					return order.indexOf(aId)-order.indexOf(bId);
+					var aOrder=order.indexOf(aId);
+					var bOrder=order.indexOf(bId);
+					if(aOrder==-1){
+						aOrder=Infinity;
+					}
+					if(bOrder==-1){
+						bOrder=Infinity;
+					}
+
+					return aOrder-bOrder;
 				});
 
 
