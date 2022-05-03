@@ -162,9 +162,9 @@ var TableHeader = (function() {
 
 		setTipFor:function(col, el){
 
-			if(layoutDefault.col&&layoutDefault.col.tip){
+			if(layoutDefault[col]&&layoutDefault[col].tip){
 				new UIPopover(el,{
-			        description:layoutDefault.col.tip,
+			        description:layoutDefault[col].tip,
 			        anchor:UIPopover.AnchorAuto()
 			    });
 		    }
