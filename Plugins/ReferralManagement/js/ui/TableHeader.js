@@ -7,12 +7,12 @@ var TableHeader = (function() {
 
 
 		'icon': {
-			width: '30px',
-
+			width: '30px'
 		},
 		'id': {
 			width: '60px',
-			label: 'ID #'
+			label: 'ID #',
+			tip:"These IDs are automatically assigned"
 		},
 		'auth': {
 			maxWidth: '150px',
@@ -20,7 +20,8 @@ var TableHeader = (function() {
 			"@": [
 
 			],
-			collapseAt:'80px'
+			collapseAt:'80px',
+			tip:"The should be included in the referral letter"
 		},
 		'created': {
 			width: 'auto',
@@ -80,7 +81,8 @@ var TableHeader = (function() {
 		},
 
 		'selection': {
-			width: '30px'
+			width: '30px',
+			tip:"Selected items can be viewed together on the map"
 		}
 
 
@@ -158,6 +160,15 @@ var TableHeader = (function() {
 			return col;
 		},
 
+		setTipFor:function(col, el){
+
+			if(layoutDefault.col&&layoutDefault.col.tip){
+				new UIPopover(el,{
+			        description:layoutDefault.col.tip,
+			        anchor:UIPopover.AnchorAuto()
+			    });
+		    }
+		},
 
 		render: function(listModule) {
 
@@ -558,13 +569,13 @@ var TableHeader = (function() {
 
 				colEl.addClass('sortable');
 
-				var sort = colEl.getAttribute('data-col');
+				var column = colEl.getAttribute('data-col');
 
-				me._addFieldStyle(sort);
+				me._addFieldStyle(column);
 
-				colEl.setAttribute('data-label', me.labelForCol(sort));
+				colEl.setAttribute('data-label', me.labelForCol(column));
 
-				if (me._sort == sort) {
+				if (me._sort == column) {
 					colEl.addClass('active');
 					if (me._sortInv) {
 						colEl.addClass('asc');
@@ -572,7 +583,10 @@ var TableHeader = (function() {
 				}
 
 
-				if (!ProjectList.HasSortFn(sort)) {
+				me.setTipFor(column, colEl);
+
+
+				if (!ProjectList.HasSortFn(column)) {
 					colEl.addClass('disabled');
 					return;
 				}
@@ -604,13 +618,13 @@ var TableHeader = (function() {
 
 					}
 
-					sortModule.applySort(sort);
-					if (me._sort == sort) {
+					sortModule.applySort(column);
+					if (me._sort == column) {
 						me._sortInv = !me._sortInv;
 					} else {
 						me._sortInv = false;
 					}
-					me._sort = sort;
+					me._sort = column;
 
 
 
