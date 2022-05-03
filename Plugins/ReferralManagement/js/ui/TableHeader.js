@@ -5,7 +5,7 @@ var TableHeader = (function() {
 	var layoutDefault = {
 
 		'selection': {
-			width: '30px'
+			width: '100px'
 		},
 
 		'icon': {
