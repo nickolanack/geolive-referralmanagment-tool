@@ -42,7 +42,8 @@ var TableHeader = (function() {
 		'type': {
 			width: 'auto',
 			maxWidth: '250px',
-			label: "Type"
+			label: "Type",
+			collapseAt:'150px'
 		},
 		'keywords': {
 			width: 'auto',
@@ -58,7 +59,8 @@ var TableHeader = (function() {
 		'attachments': {
 			width: 'auto',
 			maxWidth: '250px',
-			label: "Attachments"
+			label: "Attachments",
+			collapseAt:'150px'
 		},
 		'community': {
 			width: 'auto',
@@ -241,6 +243,24 @@ var TableHeader = (function() {
 			});
 		},
 
+		_getCollapsedCells:function(){
+
+			var size = this._listModule.getElement().getSize();
+			var padding = 2 * 10;
+			
+			var staticCells = this._getStaticCells();
+			var dynamicCells = this._getDynamicCells()
+			var staticWidthTotal = this._calcCellsWidth(staticCells, 'width');
+			var available = size.x - (staticWidthTotal + padding);
+
+			var cellWidthEstimate=available/dynamicCells.length;
+			
+			return return this._dataCols.filter(function(cell) {
+				return cell.collapsedAt&&parseFloat(cell.collapsedAt)>cellWidthEstimate && cell.hidden !== true;
+			});
+
+		},
+
 		_getHiddenCells: function() {
 			return this._dataCols.filter(function(cell) {
 				return cell.hidden === true;
@@ -351,6 +371,8 @@ var TableHeader = (function() {
 			return total;
 		},
 
+		
+
 		_writeStyles: function() {
 
 			this._lastWrite = (new Date()).getTime();
@@ -359,15 +381,20 @@ var TableHeader = (function() {
 			var padding = 2 * 10;
 			
 
-		
+
+			var collapsedCells=this._getCollapsedCells();
 
 			var staticCells = this._getStaticCells();
+			var dynamicCells = this._getDynamicCells()
+
+			dynamicCells = this._filterColsIn(dynamicCells, collapsedCells);
+			staticCells = this._filterColsIn(staticCells, collapsedCells);
+
 			var staticWidthTotal = this._calcCellsWidth(staticCells, 'width');
 			
 
-			var dynamicCells = this._getDynamicCells()
-
 			var available = size.x - (staticWidthTotal + padding);
+
 
 			
 			var minnedOutItems = this._getDynamicCellsWithMin(available);
@@ -401,7 +428,7 @@ var TableHeader = (function() {
 				staticCells.map(function(cell) {
 					return '[data-col="' + cell.col + '"]{ width:' + cell.width + '; }';
 				}).join("\n") + "\n" +
-				hiddenCells.map(function(cell) {
+				hiddenCells.concat(collapsedCells).map(function(cell) {
 					return 'div.field-value-module.inline[data-col="' + cell.col + '"]{ display:none; }';
 				}).join("\n");
 
