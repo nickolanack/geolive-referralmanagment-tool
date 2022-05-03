@@ -79,11 +79,20 @@ var TableHeader = (function() {
 					removeCols.push('col-status');
 				}
 
-				return content.filter(function(m) {
+				content = content.filter(function(m) {
 					return removeCols.indexOf(m.getIdentifier()) < 0;
 				})
 
-				//return content;
+				var order=Object.keys(layoutDefault)
+				content.sort(function(a, b){
+					var aId=a.getIdentifier().split('col-').pop();
+					var bId=b.getIdentifier().split('col-').pop();
+
+					return order.indexOf(aId)-order.indexOf(bId);
+				});
+
+
+				return content;
 			});
 
 
