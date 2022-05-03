@@ -18813,7 +18813,7 @@
                                     "identifier": "col-auth",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return \"\";",
+                                    "fieldValueScript": "return item.getAuthID();",
                                     "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
                                 }
                             },
