@@ -16,13 +16,13 @@ var TableHeader = (function() {
 		},
 		'auth': {
 			width: 'auto',
-			maxWidth:'250px',
+			maxWidth:'150px',
 			label:'Auth #'
 		},
 		'created': {
 			width: 'auto',
 			maxWidth:'250px',
-			hidden:true,
+			"--hidden":true,
 			label:"Submitted"
 		},
 		
