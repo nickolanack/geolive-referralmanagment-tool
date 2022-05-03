@@ -66,13 +66,15 @@ var TableHeader = (function() {
 			width: 'auto',
 			maxWidth: '250px',
 			hidden: true,
-			label: "Community"
+			label: "Community",
+			collapseAt:'150px'
 		},
 
 		'status': {
 			width: 'auto',
 			maxWidth: '250px',
 			hidden: true,
+			collapseAt:'150px'
 		},
 
 		'selection': {
@@ -90,8 +92,7 @@ var TableHeader = (function() {
 
 
 	var TableHeader = new Class_({
-
-
+		Implements:[Events],
 		initialize: function() {
 
 
@@ -246,9 +247,34 @@ var TableHeader = (function() {
 		_getCollapsedCells:function(cellWidthEstimate){
 
 			
-			return this._dataCols.filter(function(cell) {
+			var collapsedCells= this._dataCols.filter(function(cell) {
 				return cell.collapseAt&&parseFloat(cell.collapseAt)>cellWidthEstimate && cell.hidden !== true;
 			});
+
+			var collapsedColNames=collapsedCells.map(fucntion(cell){ return cell.col; });
+
+			if(JSON.stringify(this._collapsedCols||[])!==JSON.stringify(collapsedColNames)){
+				var last=this._collapsedCols;
+				this._collapsedCols=collapsedColNames;
+
+				var expandedCols=last.filter(function(col){
+					return collapsedColNames.indexOf(col)==-1;
+				});
+				if(expandedCols.length){
+					this.fireEvent('expanded', [expandedCols, cellWidthEstimate]);
+				}
+
+				var collapsedCols=collapsedColNames.filter(function(col){
+					return last.indexOf(col)==-1;
+				});
+				if(collapsedCols.length){
+					this.fireEvent('collapsed', [collapsedCols, cellWidthEstimate]);
+				}
+
+			}
+
+			return collapsed;
+
 
 		},
 
@@ -398,6 +424,9 @@ var TableHeader = (function() {
 			}
 
 			var collapsedCells=this._getCollapsedCells(cellWidthEstimate);
+
+
+
 
 			var staticCells = this._getStaticCells();
 			var dynamicCells = this._getDynamicCells()
