@@ -430,6 +430,8 @@ var TableHeader = (function() {
 
 			var closest50Class='cell-width-est-'+Math.round(cellWidthEstimate/50)*50;
 
+			this._listModule.getElement().setAttribute('data-cell-width-est', cellWidthEstimate);
+
 			if(this._lastClassWidth!=closest50Class){
 				this._listModule.getElement().removeClass(this._lastClassWidth);
 				this._listModule.getElement().addClass(closest50Class);
