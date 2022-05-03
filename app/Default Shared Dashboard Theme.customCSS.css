@@ -5542,7 +5542,7 @@ span.navigation-menu.settings-menu {
      @media screen and (max-width: 1500px) {
          
         div.field-value-module.inline{
-             max-width:180px;
+             /* max-width:180px;*/
              span{
                  max-width:170px;
              }
