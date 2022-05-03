@@ -5574,7 +5574,7 @@ span.navigation-menu.settings-menu {
     
         div.field-value-module.inline{
             &[data-col="modified"]{
-                display:none;
+                /* display:none; */
             } 
         }
     
