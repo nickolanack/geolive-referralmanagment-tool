@@ -4312,6 +4312,8 @@ img.static-map {
         
         min-width: 180px;
         width: 180px;
+        
+        
     }
 
     
@@ -4320,6 +4322,9 @@ img.static-map {
         min-width: 180px;
         width: 180px;
 
+        .navigation-menu ul li:after{
+            display:none;
+        }
     }
     
     
