@@ -331,56 +331,56 @@ var TableHeader = (function() {
 
 		},
 
+		_filterColsIn:function(list, blacklist){
+
+			var blackListCols = blacklist.map(function(cell) {
+				return cell.col;
+			});
+			return  list.filter(function(cell) {
+				return blackListCols.indexOf(cell.col) == -1;
+			});
+
+		},
+
+		_calcCellsWidth:function(list, field){
+
+			var total = 0;
+			list.forEach(function(cell) {
+				total += parseFloat(cell[field]);
+			});
+			return total;
+		},
+
 		_writeStyles: function() {
 
 			this._lastWrite = (new Date()).getTime();
 
 			var size = this._listModule.getElement().getSize();
 			var padding = 2 * 10;
-			var staticWidthTotal = 0;
+			
+
+		
 
 			var staticCells = this._getStaticCells();
-
-			staticCells.forEach(function(c) {
-				staticWidthTotal += parseFloat(c.width);
-			});
+			var staticWidthTotal = this._calcCellsWidth(staticCells, 'width');
+			
 
 			var dynamicCells = this._getDynamicCells()
 
 			var available = size.x - (staticWidthTotal + padding);
 
+			
 			var minnedOutItems = this._getDynamicCellsWithMin(available);
+			dynamicCells=this._filterColsIn(dynamicCells, minnedOutItems);
+			
 
-			if (minnedOutItems.length) {
-				var minnedOutCols = minnedOutItems.map(function(cell) {
-					return cell.col;
-				});
-				dynamicCells = dynamicCells.filter(function(cell) {
-					return minnedOutCols.indexOf(cell.col) == -1;
-				});
-			}
-
-			var minnedOutWidth = 0;
-			minnedOutItems.forEach(function(cell) {
-				minnedOutWidth += parseFloat(cell.minWidth);
-			});
-
+			var minnedOutWidth = this._calcCellsWidth(minnedOutItems, 'minWidth');
+			
 
 			var maxedOutItems = this._getDynamicCellsWithMax(available - minnedOutWidth, dynamicCells);
-
-			if (maxedOutItems.length) {
-				var maxedOutCols = maxedOutItems.map(function(cell) {
-					return cell.col;
-				});
-				dynamicCells = dynamicCells.filter(function(cell) {
-					return maxedOutCols.indexOf(cell.col) == -1;
-				});
-			}
-
-			var maxedOutWidth = 0;
-			maxedOutItems.forEach(function(cell) {
-				maxedOutWidth += parseFloat(cell.maxWidth);
-			});
+			dynamicCells=this._filterColsIn(dynamicCells, maxedOutItems);
+			var maxedOutWidth = this._calcCellsWidth(maxedOutItems, 'maxWidth');
+			
 
 			var auto = Math.round(1000 / dynamicCells.length) / 10;
 			var staticWidthTotalPerItem = Math.round(10 * (minnedOutWidth + maxedOutWidth + staticWidthTotal + padding) / dynamicCells.length) / 10;
