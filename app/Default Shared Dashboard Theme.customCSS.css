@@ -1280,6 +1280,9 @@ div.field-value-module.inline {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+div.field-value-module.inline.toggle {
+    overflow: visible;
+}
 
 [data-view="singleProjectListItemTableDetail"], .table-header {
     display: inline-block;
