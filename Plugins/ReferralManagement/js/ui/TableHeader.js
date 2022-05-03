@@ -3,12 +3,17 @@ var TableHeader = (function() {
 
 
 	var layoutDefault = {
+
 		'icon': {
 			width: '30px',
 
 		},
 		'id': {
 			width: '60px'
+		},
+		'modified': {
+			width: 'auto',
+			maxWidth:'250px'
 		},
 		'name': {
 			width: 'auto',
@@ -24,10 +29,7 @@ var TableHeader = (function() {
 			maxWidth:'250px',
 			hidden:true
 		},
-		'modified': {
-			width: 'auto',
-			maxWidth:'250px'
-		},
+		
 		'type': {
 			width: 'auto',
 			maxWidth:'250px'
