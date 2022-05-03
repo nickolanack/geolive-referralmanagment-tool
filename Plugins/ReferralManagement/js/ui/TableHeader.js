@@ -255,7 +255,7 @@ var TableHeader = (function() {
 
 			var cellWidthEstimate=available/dynamicCells.length;
 			
-			return return this._dataCols.filter(function(cell) {
+			return this._dataCols.filter(function(cell) {
 				return cell.collapsedAt&&parseFloat(cell.collapsedAt)>cellWidthEstimate && cell.hidden !== true;
 			});
 
