@@ -43,7 +43,7 @@ var TableHeader = (function() {
 			width: 'auto',
 			maxWidth: '250px',
 			label: "Type",
-			collapseAt:'100px'
+			collapseAt:'120px'
 		},
 		'keywords': {
 			width: 'auto',
