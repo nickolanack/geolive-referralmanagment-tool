@@ -243,17 +243,8 @@ var TableHeader = (function() {
 			});
 		},
 
-		_getCollapsedCells:function(){
+		_getCollapsedCells:function(cellWidthEstimate){
 
-			var size = this._listModule.getElement().getSize();
-			var padding = 2 * 10;
-			
-			var staticCells = this._getStaticCells();
-			var dynamicCells = this._getDynamicCells()
-			var staticWidthTotal = this._calcCellsWidth(staticCells, 'width');
-			var available = size.x - (staticWidthTotal + padding);
-
-			var cellWidthEstimate=available/dynamicCells.length;
 			
 			return this._dataCols.filter(function(cell) {
 				return cell.collapseAt&&parseFloat(cell.collapseAt)>cellWidthEstimate && cell.hidden !== true;
@@ -371,6 +362,19 @@ var TableHeader = (function() {
 			return total;
 		},
 
+		_getEstimatedCellWidth:function(){
+			var size = this._listModule.getElement().getSize();
+			var padding = 2 * 10;
+			
+			var staticCells = this._getStaticCells();
+			var dynamicCells = this._getDynamicCells()
+			var staticWidthTotal = this._calcCellsWidth(staticCells, 'width');
+			var available = size.x - (staticWidthTotal + padding);
+
+			var cellWidthEstimate=available/dynamicCells.length;
+			return cellWidthEstimate;
+		},
+
 		
 
 		_writeStyles: function() {
@@ -383,9 +387,17 @@ var TableHeader = (function() {
 			}
 			var padding = 2 * 10;
 			
+			var cellWidthEstimate=this._getEstimatedCellWidth();
 
+			var closest50Class='cell-width-est-'+Math.round(cellWidthEstimate/50)*50;
 
-			var collapsedCells=this._getCollapsedCells();
+			if(this._lastClassWidth!=closest50Class){
+				this._listModule.getElement().removeClass(this._lastClassWidth);
+				this._listModule.getElement().addClass(closest50Class);
+				this._lastClassWidth=closest50Class;
+			}
+
+			var collapsedCells=this._getCollapsedCells(cellWidthEstimate);
 
 			var staticCells = this._getStaticCells();
 			var dynamicCells = this._getDynamicCells()
