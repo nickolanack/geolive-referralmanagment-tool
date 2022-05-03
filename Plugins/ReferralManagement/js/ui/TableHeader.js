@@ -15,8 +15,7 @@ var TableHeader = (function() {
 			label:'ID #'
 		},
 		'auth': {
-			width: 'auto',
-			maxWidth:'150px',
+			width: '150px',
 			label:'Auth #'
 		},
 		'created': {
