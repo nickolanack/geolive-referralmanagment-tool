@@ -165,7 +165,7 @@ var TableHeader = (function() {
 			if(layoutDefault[col]&&layoutDefault[col].tip){
 				new UIPopover(el,{
 			        description:layoutDefault[col].tip,
-			        anchor:UIPopover.AnchorAuto()
+			        //anchor:UIPopover.AnchorAuto()
 			    });
 		    }
 		},
