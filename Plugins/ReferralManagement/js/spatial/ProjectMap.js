@@ -121,7 +121,7 @@ var ProjectMap=(function(){
 			downloadTile.addEvent('click',function(){
 				(new StringControlQuery(CoreAjaxUrlRoot, 'layer_display', {
 	                "plugin": "Maps",
-	                "layerId": 8,
+	                "layerName": 'UserLayer',
 	                "format":"kml"
 	            })).addEvent('success', function(kmlString){
 
