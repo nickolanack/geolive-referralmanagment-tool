@@ -19,6 +19,7 @@ var Project = (function() {
 			ItemEvents,
 			ItemDiscussion,
 			ItemContact,
+			ItemAuthID,
 			ItemNavigationTagLinks,
 			ItemCategories,
 			ItemStatus,
