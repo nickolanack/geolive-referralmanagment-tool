@@ -136,6 +136,9 @@ ul.item-tags li {
     font-weight: 100;
 }
 
+.referral-letter .droppable.drop-letters {
+    display:none;
+}
 
 
 button.primary-btn.nav-new-btn, .inline-navigation-menu li.basemap button, .inline-navigation-menu li.focus button{
