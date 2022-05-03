@@ -28,7 +28,8 @@ var TableHeader = (function() {
 		
 		'name': {
 			width: 'auto',
-			minWidth:'250px'
+			minWidth:'250px',
+			label:"Name"
 		},
 		'user': {
 			width: 'auto',
@@ -38,7 +39,8 @@ var TableHeader = (function() {
 		
 		'type': {
 			width: 'auto',
-			maxWidth:'250px'
+			maxWidth:'250px',
+			label:"Type"
 		},
 		'modified': {
 			width: 'auto',
@@ -48,17 +50,19 @@ var TableHeader = (function() {
 		'attachments': {
 			width: 'auto',
 			maxWidth:'250px',
+			label:"Attachments"
 		},
 		'community': {
 			width: 'auto',
 			maxWidth:'250px',
-			hidden:true
+			hidden:true,
+			label:"Community"
 		},
 
 		'status':{
 			width: 'auto',
 			maxWidth:'250px',
-			hidden:true
+			hidden:true,
 		},
 		
 		'selection': {
