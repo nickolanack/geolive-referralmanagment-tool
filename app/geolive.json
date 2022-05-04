@@ -25912,16 +25912,16 @@
                             "tableFieldLayoutForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 396,
-                            "y": 199
+                            "x": 406,
+                            "y": 209
                         },
                         "children": [
                             "tableFieldLayoutForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 356,
-                                    "y": 365
+                                    "x": 366,
+                                    "y": 375
                                 }
                             }
                         ],
@@ -25944,7 +25944,7 @@
                                                 "mandatory": false,
                                                 "getValueScript": "tableFieldLayoutForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.getValueScript.js",
                                                 "updateValueScript": "tableFieldLayoutForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.updateValueScript.js",
-                                                "submitValueScript": "",
+                                                "submitValueScript": "tableFieldLayoutForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
                                                 "validateValueScript": "",
                                                 "formatElementScript": ""
                                             }
