@@ -93,18 +93,24 @@ var TableHeader = (function() {
 	};
 
 
-	(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration_field", {
-		'widget': "projectTableLayout",
-		'field': "layout"
-	})).addEvent('success',function(response){
-		console.log(resonse);
-	}).execute();
-
-
 	DashboardConfig.getValue('enableProposals', function(enabled) {
 		layoutDefault.user.label = enabled ? 'Submitter' : "Created by";
 	});
 
+
+
+	(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration_field", {
+		'widget': "projectTableLayout",
+		'field': "layout"
+	})).addEvent('success',function(response){
+		layoutDefault=response.value;
+		DashboardConfig.getValue('enableProposals', function(enabled) {
+			layoutDefault.user.label = enabled ? 'Submitter' : "Created by";
+		});
+	}).execute();
+
+
+	
 
 
 	var TableHeader = new Class_({
