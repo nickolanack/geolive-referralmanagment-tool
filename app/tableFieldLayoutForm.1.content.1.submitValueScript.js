@@ -1,1 +1,1 @@
-wizardDataset.hidden=!object.value
+wizardDataSet.hidden=!object.value
