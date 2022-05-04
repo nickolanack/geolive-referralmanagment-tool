@@ -6665,6 +6665,18 @@
                                     "preferLocalContent": true,
                                     "portraitClip": true
                                 }
+                            },
+                            {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "",
+                                    "text": "",
+                                    "template": "html.emptyProjects",
+                                    "templateVariablesScript": "{}",
+                                    "formatTextScript": "Projects Overview Detail.metadata.positions.content.modules.5.config.formatTextScript.js",
+                                    "ajaxRequestTemplate": true,
+                                    "identifier": "htmlLabel"
+                                }
                             }
                         ]
                     },
