@@ -1,1 +1,1 @@
-return item.getVisible?item.getVisible():true;
+return !(item.getHidden?item.getHidden():false); //invert

@@ -25832,16 +25832,16 @@
                             "tableLayoutForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 349,
-                            "y": 230
+                            "x": 379,
+                            "y": 260
                         },
                         "children": [
                             "tableLayoutForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 309,
-                                    "y": 396
+                                    "x": 339,
+                                    "y": 426
                                 }
                             }
                         ],
@@ -25912,16 +25912,16 @@
                             "tableFieldLayoutForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 376,
-                            "y": 179
+                            "x": 426,
+                            "y": 229
                         },
                         "children": [
                             "tableFieldLayoutForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 336,
-                                    "y": 345
+                                    "x": 386,
+                                    "y": 395
                                 }
                             }
                         ],
@@ -25943,8 +25943,8 @@
                                                 "identifier": "boolean-field",
                                                 "mandatory": false,
                                                 "getValueScript": "tableFieldLayoutForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.getValueScript.js",
-                                                "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "",
+                                                "updateValueScript": "tableFieldLayoutForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.updateValueScript.js",
+                                                "submitValueScript": "tableFieldLayoutForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
                                                 "validateValueScript": "",
                                                 "formatElementScript": ""
                                             }
