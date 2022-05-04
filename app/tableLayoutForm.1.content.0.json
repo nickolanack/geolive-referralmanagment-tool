@@ -20,7 +20,7 @@
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
         "targetName": "",
-        "getItemListScript": "return item;",
+        "getItemListScript": "(new AjaxControlQuery(CoreAjaxUrlRoot, \"get_configuration_field\", {\n\t\t'widget': \"projectTableLayout\",\n\t\t'field': \"layout\"\n\t})).addEvent('success',function(response){\n\t\tcallback(Object.keys(response.value).map(function(col){\n\t\t    \n\t\t    return new MockDataTypeItem(ObjectAppend_({\n\t\t        mutable:true,\n\t\t        col:col\n\t\t    }, response.value[key]));\n\t\t    \n\t\t}));\n\t}).execute();\n",
         "formatItemListScript": "return list;",
         "formatListItemModuleScript": "return item;",
         "emptyNamedView": "emptyListView",
