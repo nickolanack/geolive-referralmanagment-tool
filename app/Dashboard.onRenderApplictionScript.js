@@ -245,6 +245,8 @@ GetWidget('singleProjectBriefingDetail')->display($targetInstance);
 GetWidget('singleProjectReviewDetail')->display($targetInstance);
 
 
+GetWidget('tableLayoutForm')->display($targetInstance);
+
 
 
 GetWidget('defaultPostDetail')->display($targetInstance);
