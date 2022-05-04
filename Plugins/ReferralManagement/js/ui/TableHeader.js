@@ -272,9 +272,10 @@ var TableHeader = (function() {
 		},
 
 		updateLayout(){
-			
+
+			var me=this;
 			this._dataCols.forEach(function(data){
-				ObjectAppend_(data, this._getLayout(data.col), {
+				ObjectAppend_(data, me._getLayout(data.col), {
 					col: dataCol
 				});
 			});
