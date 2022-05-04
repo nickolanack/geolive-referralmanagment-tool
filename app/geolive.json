@@ -6670,7 +6670,7 @@
                                 "type": "InlineHtml",
                                 "config": {
                                     "className": "",
-                                    "text": "",
+                                    "text": "Hello",
                                     "template": "html.emptyProjects",
                                     "templateVariablesScript": "{}",
                                     "formatTextScript": "Projects Overview Detail.metadata.positions.content.modules.5.config.formatTextScript.js",
@@ -26001,6 +26001,20 @@
         "parameters": {
             "widgetTitle": "module.html-emptyTasks.text",
             "target": "module.html-emptyTasks.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Hello"
+        }
+    },
+    "widget.465": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-emptyProjects.text",
+            "target": "module.html-emptyProjects.text",
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
