@@ -1,1 +1,2 @@
-wizardDataSet.hidden=!object.value
+wizardDataSet.hidden=!object.value;
+wizardDataSet.col=item.getCol()
