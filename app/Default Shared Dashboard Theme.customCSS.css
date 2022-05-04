@@ -2,8 +2,7 @@
 
 
 
-.ui-view[data-view="tableFieldLayoutForm"], .ui-view[data-view="tableFieldLayoutForm"]:first-child{border: none;}
-.ui-view[data-view="tableFieldLayoutForm"] .boolean-field.checkbox-style {margin: 0;}
+
 
 
 
@@ -5778,6 +5777,10 @@ span.navigation-menu.settings-menu {
 button.form-btn.primary-btn.hide {
     display: none;
 }
+  
+  
+.ui-view[data-view="tableFieldLayoutForm"], .ui-view[data-view="tableFieldLayoutForm"]:first-child{border: none;}
+.ui-view[data-view="tableFieldLayoutForm"] .boolean-field.checkbox-style {margin: 0;}
     
     
     
