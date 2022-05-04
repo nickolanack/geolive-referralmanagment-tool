@@ -25909,8 +25909,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -18,
-                    "y": 171
+                    "x": 4,
+                    "y": 188
                 },
                 "children": [
                     "tableFieldLayoutForm.metadata.children.0.json",
@@ -25921,11 +25921,18 @@
                             "tableFieldLayoutForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 128,
-                            "y": 260
+                            "x": 346,
+                            "y": 149
                         },
                         "children": [
-                            "tableFieldLayoutForm.metadata.children.1.children.0.json"
+                            "tableFieldLayoutForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 306,
+                                    "y": 325
+                                }
+                            }
                         ],
                         "builderMetadata": {
                             "positions": {
@@ -25938,30 +25945,35 @@
                                     "modules": [
                                         "tableFieldLayoutForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
-                                            "type": "WizardDescriptionField",
+                                            "type": "WizardTitleField",
                                             "config": {
-                                                "label": "Description",
-                                                "message": "add a description",
-                                                "lines": 3,
-                                                "mandatory": false,
-                                                "showAudios": true,
-                                                "showImages": true,
-                                                "showDocuments": true,
-                                                "showVideos": true,
+                                                "label": "Title",
+                                                "message": "add a title",
                                                 "className": "",
                                                 "maxChars": 0,
-                                                "showExpandInput": true,
-                                                "toolbarPosition": "bottom",
                                                 "textFormatScript": "",
-                                                "mediaIconTint": "rgb(100, 149, 237)"
+                                                "beforeRenderModuleScript": "",
+                                                "onRenderTextFieldScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "FormBooleanField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Visible",
+                                                "identifier": "boolean-field",
+                                                "mandatory": false,
+                                                "getValueScript": "",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": "",
+                                                "formatElementScript": ""
                                             }
                                         }
                                     ]
                                 },
                                 "footer": {
-                                    "modules": [
-                                        "tableFieldLayoutForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
-                                    ]
+                                    "modules": []
                                 },
                                 "menu": {
                                     "modules": []
@@ -25972,7 +25984,10 @@
                                 "content",
                                 "footer",
                                 "menu"
-                            ]
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
                         }
                     }
                 ]
