@@ -25707,7 +25707,7 @@
         "name": "Configuration",
         "instance": "Configuration",
         "parameters": {
-            "target": "none",
+            "target": "projectTableLayout",
             "contentTemplate": "",
             "comments": "",
             "formatParametersScript": "return $parameters;",
@@ -25718,10 +25718,10 @@
             "enableRevisions": false,
             "broadcastChanges": false,
             "parameters": [
-                "widget.Configuration.461.parameters.0.json"
+                "projectTableLayout.parameters.0.json"
             ],
             "layout": [],
-            "widgetTitle": "",
+            "widgetTitle": "projectTableLayout",
             "readAccess": "public"
         }
     }
