@@ -1,5 +1,5 @@
 var btn=ConfigItem.CreateEditBtn(new ConfigItem({
-    "editLabel":"Edit Empty Projects",
+    "editLabel":"Edit Empty Tasks",
     'widget':options.widget,
     'form':'textFieldForm',
     'stepOptions':{
