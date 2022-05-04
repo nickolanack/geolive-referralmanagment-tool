@@ -2,100 +2,106 @@ var TableHeader = (function() {
 
 
 
-	var layoutDefault = {
+
+	/**
+	 * @deprecated User server config
+	 */
+	 var layoutDefault = {};
+	
+	//   {
 
 
 
-		'icon': {
-			width: '30px'
-		},
-		'id': {
-			width: '60px',
-			label: 'ID #',
-			tip:"These IDs are automatically assigned"
-		},
-		'auth': {
-			maxWidth: '150px',
-			label: 'Auth #',
-			"@": [
+	// 	'icon': {
+	// 		width: '30px'
+	// 	},
+	// 	'id': {
+	// 		width: '60px',
+	// 		label: 'ID #',
+	// 		tip:"These IDs are automatically assigned"
+	// 	},
+	// 	'auth': {
+	// 		maxWidth: '150px',
+	// 		label: 'Auth #',
+	// 		"@": [
 
-			],
-			collapseAt:'80px',
-			tip:"The should be included in the referral letter"
-		},
-		'created': {
-			width: 'auto',
-			maxWidth: '250px',
-			"--hidden": true,
-			label: "Submitted",
-			collapseAt:'55px'
-		},
+	// 		],
+	// 		collapseAt:'80px',
+	// 		tip:"The should be included in the referral letter"
+	// 	},
+	// 	'created': {
+	// 		width: 'auto',
+	// 		maxWidth: '250px',
+	// 		"--hidden": true,
+	// 		label: "Submitted",
+	// 		collapseAt:'55px'
+	// 	},
 
-		'name': {
-			width: 'auto',
-			minWidth: '250px',
-			label: "Name"
-		},
-		'user': {
-			width: 'auto',
-			maxWidth: '250px',
-			label: 'Submitter',
-			collapseAt:'70px'
-		},
+	// 	'name': {
+	// 		width: 'auto',
+	// 		minWidth: '250px',
+	// 		label: "Name"
+	// 	},
+	// 	'user': {
+	// 		width: 'auto',
+	// 		maxWidth: '250px',
+	// 		label: 'Submitter',
+	// 		collapseAt:'70px'
+	// 	},
 
-		'type': {
-			width: 'auto',
-			maxWidth: '250px',
-			label: "Type",
-			collapseAt:'120px'
-		},
-		'keywords': {
-			width: 'auto',
-			maxWidth: '250px',
-			label: "Keywords",
-			hidden: true,
-			collapseAt:'150px'
-		},
-		'modified': {
-			width: 'auto',
-			maxWidth: '250px',
-			label: "Last Edit",
-			collapseAt:'70px'
-		},
-		'attachments': {
-			width: 'auto',
-			maxWidth: '250px',
-			label: "Attachments",
-			collapseAt:'150px'
-		},
-		'community': {
-			width: 'auto',
-			maxWidth: '250px',
-			hidden: true,
-			label: "Community",
-			collapseAt:'150px'
-		},
+	// 	'type': {
+	// 		width: 'auto',
+	// 		maxWidth: '250px',
+	// 		label: "Type",
+	// 		collapseAt:'120px'
+	// 	},
+	// 	'keywords': {
+	// 		width: 'auto',
+	// 		maxWidth: '250px',
+	// 		label: "Keywords",
+	// 		hidden: true,
+	// 		collapseAt:'150px'
+	// 	},
+	// 	'modified': {
+	// 		width: 'auto',
+	// 		maxWidth: '250px',
+	// 		label: "Last Edit",
+	// 		collapseAt:'70px'
+	// 	},
+	// 	'attachments': {
+	// 		width: 'auto',
+	// 		maxWidth: '250px',
+	// 		label: "Attachments",
+	// 		collapseAt:'150px'
+	// 	},
+	// 	'community': {
+	// 		width: 'auto',
+	// 		maxWidth: '250px',
+	// 		hidden: true,
+	// 		label: "Community",
+	// 		collapseAt:'150px'
+	// 	},
 
-		'status': {
-			width: 'auto',
-			maxWidth: '250px',
-			hidden: true,
-			collapseAt:'150px'
-		},
+	// 	'status': {
+	// 		width: 'auto',
+	// 		maxWidth: '250px',
+	// 		hidden: true,
+	// 		collapseAt:'150px'
+	// 	},
 
-		'selection': {
-			width: '30px',
-			tip:"Selected items can be viewed together on the map"
-		}
-
-
-
-	};
+	// 	'selection': {
+	// 		width: '30px',
+	// 		tip:"Selected items can be viewed together on the map"
+	// 	}
 
 
-	DashboardConfig.getValue('enableProposals', function(enabled) {
-		layoutDefault.user.label = enabled ? 'Submitter' : "Created by";
-	});
+
+	// };
+
+
+	// DashboardConfig.getValue('enableProposals', function(enabled) {
+	// 	layoutDefault.user.label = enabled ? 'Submitter' : "Created by";
+	// });
 
 
 
@@ -104,9 +110,9 @@ var TableHeader = (function() {
 		'field': "layout"
 	})).addEvent('success',function(response){
 		layoutDefault=response.value;
-		DashboardConfig.getValue('enableProposals', function(enabled) {
-			layoutDefault.user.label = enabled ? 'Submitter' : "Created by";
-		});
+		// DashboardConfig.getValue('enableProposals', function(enabled) {
+		// 	layoutDefault.user.label = enabled ? 'Submitter' : "Created by";
+		// });
 	}).execute();
 
 
