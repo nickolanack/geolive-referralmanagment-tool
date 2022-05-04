@@ -4,7 +4,7 @@
 						template: "form",
 						closeable:false
 					}
-				})).show()
+				})).show();
 				
 return new ModalFormButtonModule(application, AppClient, {
 			    label: "Edit Profile",
@@ -13,4 +13,4 @@ return new ModalFormButtonModule(application, AppClient, {
 			    formOptions: {
 						template: "form"
 				},
-			})			
+			});	
