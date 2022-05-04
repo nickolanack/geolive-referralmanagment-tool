@@ -8,102 +8,6 @@ var TableHeader = (function() {
 	 */
 	 var layoutDefault = {};
 	
-	//   {
-
-
-
-	// 	'icon': {
-	// 		width: '30px'
-	// 	},
-	// 	'id': {
-	// 		width: '60px',
-	// 		label: 'ID #',
-	// 		tip:"These IDs are automatically assigned"
-	// 	},
-	// 	'auth': {
-	// 		maxWidth: '150px',
-	// 		label: 'Auth #',
-	// 		"@": [
-
-	// 		],
-	// 		collapseAt:'80px',
-	// 		tip:"The should be included in the referral letter"
-	// 	},
-	// 	'created': {
-	// 		width: 'auto',
-	// 		maxWidth: '250px',
-	// 		"--hidden": true,
-	// 		label: "Submitted",
-	// 		collapseAt:'55px'
-	// 	},
-
-	// 	'name': {
-	// 		width: 'auto',
-	// 		minWidth: '250px',
-	// 		label: "Name"
-	// 	},
-	// 	'user': {
-	// 		width: 'auto',
-	// 		maxWidth: '250px',
-	// 		label: 'Submitter',
-	// 		collapseAt:'70px'
-	// 	},
-
-	// 	'type': {
-	// 		width: 'auto',
-	// 		maxWidth: '250px',
-	// 		label: "Type",
-	// 		collapseAt:'120px'
-	// 	},
-	// 	'keywords': {
-	// 		width: 'auto',
-	// 		maxWidth: '250px',
-	// 		label: "Keywords",
-	// 		hidden: true,
-	// 		collapseAt:'150px'
-	// 	},
-	// 	'modified': {
-	// 		width: 'auto',
-	// 		maxWidth: '250px',
-	// 		label: "Last Edit",
-	// 		collapseAt:'70px'
-	// 	},
-	// 	'attachments': {
-	// 		width: 'auto',
-	// 		maxWidth: '250px',
-	// 		label: "Attachments",
-	// 		collapseAt:'150px'
-	// 	},
-	// 	'community': {
-	// 		width: 'auto',
-	// 		maxWidth: '250px',
-	// 		hidden: true,
-	// 		label: "Community",
-	// 		collapseAt:'150px'
-	// 	},
-
-	// 	'status': {
-	// 		width: 'auto',
-	// 		maxWidth: '250px',
-	// 		hidden: true,
-	// 		collapseAt:'150px'
-	// 	},
-
-	// 	'selection': {
-	// 		width: '30px',
-	// 		tip:"Selected items can be viewed together on the map"
-	// 	}
-
-
-
-	// };
-
-
-	// DashboardConfig.getValue('enableProposals', function(enabled) {
-	// 	layoutDefault.user.label = enabled ? 'Submitter' : "Created by";
-	// });
-
-
 
 	(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration_field", {
 		'widget': "projectTableLayout",
@@ -694,7 +598,9 @@ var TableHeader = (function() {
 				window.removeEvent('resize', this._resizeEventListener);
 			}
 
-			this._style.parentNode.removeChild(this._style);
+			if(this._style&&this._style.parentNode){
+				this._style.parentNode.removeChild(this._style);
+			}
 			this._style = null;
 			currentHeader=null;
 		}
