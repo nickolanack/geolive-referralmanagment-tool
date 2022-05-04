@@ -6740,36 +6740,13 @@
                                 }
                             },
                             {
-                                "type": "UIView",
-                                "config": {
-                                    "className": "",
-                                    "identifier": "",
-                                    "viewType": "view",
-                                    "namedView": "emptyTasksList",
-                                    "shouldRender": true,
-                                    "namedViewScript": "Tasks Overview List Detail.metadata.positions.content.modules.4.config.namedViewScript.js",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "defaultBehaviorFn()",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "return item",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": ""
-                                }
-                            },
-                            {
                                 "type": "InlineHtml",
                                 "config": {
                                     "className": "",
                                     "text": "Hello",
                                     "template": "html.emptyTasks",
                                     "templateVariablesScript": "{}",
-                                    "formatTextScript": "Tasks Overview List Detail.metadata.positions.content.modules.5.config.formatTextScript.js",
+                                    "formatTextScript": "Tasks Overview List Detail.metadata.positions.content.modules.4.config.formatTextScript.js",
                                     "ajaxRequestTemplate": true,
                                     "identifier": "htmlLabel"
                                 }
