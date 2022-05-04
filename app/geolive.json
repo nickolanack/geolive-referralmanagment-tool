@@ -6740,6 +6740,7 @@
                                 "config": {
                                     "listClassName": "",
                                     "className": "task-item",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "singleTaskListItemDetail",
                                     "shouldRender": true,
@@ -6769,6 +6770,7 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "emptyTasksList",
                                     "shouldRender": true,
@@ -6785,6 +6787,18 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": ""
+                                }
+                            },
+                            {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "",
+                                    "text": "",
+                                    "template": "html.emptyTasks",
+                                    "templateVariablesScript": "{}",
+                                    "formatTextScript": "",
+                                    "ajaxRequestTemplate": true,
+                                    "identifier": "htmlLabel"
                                 }
                             }
                         ]
