@@ -688,7 +688,12 @@ var TableHeader = (function() {
 	});
 
 	TableHeader.UpdateLayout=function(options){
-
+		options.forEach(function(colData){
+			layoutDefault[dataCol.col].hidden=dataCol.hidden;
+		})
+		if(currentHeader){
+			currentHeader._redrawStyles();
+		}
 	}
 
 
