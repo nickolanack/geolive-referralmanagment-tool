@@ -276,7 +276,7 @@ var TableHeader = (function() {
 			var me=this;
 			this._dataCols.forEach(function(data){
 				ObjectAppend_(data, me._getLayout(data.col), {
-					col: dataCol
+					col: data.col
 				});
 			});
 
