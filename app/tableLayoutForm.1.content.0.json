@@ -14,7 +14,7 @@
         "showDeleteButton": false,
         "deleteItemScript": "defaultBehaviorFn()",
         "initModuleScript": "",
-        "formatModuleScript": "",
+        "formatModuleScript": "(new UIFormListBehavior(module));",
         "resolveItemScript": "return item",
         "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",
