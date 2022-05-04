@@ -591,6 +591,17 @@ var TableHeader = (function() {
 			});
 
 
+			if(AppClient.getUserType()!="admin"){
+				(new UIModalFormButton(header.AppendChild(new Element('button')), GatherDashboard.getApplication(), this._listModule.getItem(), {
+					"formName": "tableLayoutForm",
+					"formOptions": {
+						template: "form",
+						closeable:false
+					}
+				}));
+
+      		}
+			
 			header.firstChild.firstChild.childNodes.forEach(function(colEl) {
 
 				colEl.addClass('sortable');
