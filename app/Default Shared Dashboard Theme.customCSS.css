@@ -116,9 +116,9 @@ span.notification-indicator.empty:after {
     
     .ui-view.feed-sub-item {
     
-        &div{
-            display: inline-block;
-        }
+            &div{
+                display: inline-block;
+            }
         
         
             .template-content>*{
@@ -134,6 +134,12 @@ span.notification-indicator.empty:after {
                 }
                 
             }
+            
+        &[data-view="singleUserListItemDetail"]{
+            .template-content>*{
+                display:inline-block;
+            }
+        }
     }
     
 }
