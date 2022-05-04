@@ -1,5 +1,12 @@
 @charset "utf-8";
 
+
+
+.ui-view[data-view="tableFieldLayoutForm"], .ui-view[data-view="tableFieldLayoutForm"]:first-child{border: none;}
+.ui-view[data-view="tableFieldLayoutForm"] .boolean-field.checkbox-style {margin: 0;}
+
+
+
 /*Login*/
 
 body.body-overlayed>#viewControllerApp>div>div>.ui-view {
