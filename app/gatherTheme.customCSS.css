@@ -950,6 +950,16 @@ h2 {
 [data-view="communityMemberDashboard"]{
     .user-form {z-index: 2;position: relative;font-size: 2em;line-height: 1.3em;display: inline-block;margin: 60px;}
     .user-form h2 {font-size: 2.1em;}
+    
+    button.form-btn.primary-btn.edit {
+        position: relative;
+        bottom: 10px;
+        z-index: 2;
+        display: inline-block;
+        float: unset;
+        left: calc( 25% - 100px );
+    }
+    
 }
 
  @media screen and (max-width: 1150px) {
