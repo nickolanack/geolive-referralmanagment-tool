@@ -1,0 +1,1 @@
+return item.getVisible?item.getVisible():true;

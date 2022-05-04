@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "return 'Field Name';",
+        "script": "return item.getLabel?item.getLabel():item.getCol().capitalize();",
         "description": "Info about my custom script"
     }
 }
