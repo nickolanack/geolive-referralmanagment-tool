@@ -114,7 +114,8 @@ var GatherDashboard = (function() {
 					"formOptions": {
 						"template": "form",
 						"className": "alert-view",
-						"showCancel":false
+						"showCancel":false,
+						"closeable":true
 					}
 				})).show();
 			}
