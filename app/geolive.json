@@ -25714,7 +25714,7 @@
             "formatOutputScript": "return $parameters;",
             "enableUserAjaxWrite": false,
             "authUserAjaxScript": "XXXX-XXXX",
-            "saveParametersAsData": false,
+            "saveParametersAsData": true,
             "enableRevisions": false,
             "broadcastChanges": false,
             "parameters": [
@@ -25779,7 +25779,8 @@
                     "width": "auto",
                     "maxWidth": "250px",
                     "label": "Attachments",
-                    "collapseAt": "150px"
+                    "collapseAt": "150px",
+                    "--hidden": true
                 },
                 "community": {
                     "width": "auto",
