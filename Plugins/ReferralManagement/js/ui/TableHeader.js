@@ -1,7 +1,7 @@
 var TableHeader = (function() {
 
 
-
+	var currentHeader=null;
 
 	/**
 	 * @deprecated User server config
@@ -123,6 +123,8 @@ var TableHeader = (function() {
 		Implements:[Events],
 		initialize: function() {
 
+
+			currentHeader=this; //Assumes a single header
 
 			DashboardPageLayout.addLayout("singleProjectListItemTableDetail", function(content) {
 
@@ -680,10 +682,14 @@ var TableHeader = (function() {
 
 			this._style.parentNode.removeChild(this._style);
 			this._style = null;
+			currentHeader=null;
 		}
 
 	});
 
+	TableHeader.UpdateLayout=function(options){
+
+	}
 
 
 	return TableHeader;
