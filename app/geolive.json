@@ -25912,16 +25912,16 @@
                             "tableFieldLayoutForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 346,
-                            "y": 149
+                            "x": 356,
+                            "y": 159
                         },
                         "children": [
                             "tableFieldLayoutForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 306,
-                                    "y": 325
+                                    "x": 316,
+                                    "y": 335
                                 }
                             }
                         ],
@@ -25935,18 +25935,6 @@
                                 "content": {
                                     "modules": [
                                         "tableFieldLayoutForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
-                                        {
-                                            "type": "WizardTitleField",
-                                            "config": {
-                                                "label": "Title",
-                                                "message": "add a title",
-                                                "className": "",
-                                                "maxChars": 0,
-                                                "textFormatScript": "",
-                                                "beforeRenderModuleScript": "",
-                                                "onRenderTextFieldScript": ""
-                                            }
-                                        },
                                         {
                                             "type": "FormBooleanField",
                                             "config": {
