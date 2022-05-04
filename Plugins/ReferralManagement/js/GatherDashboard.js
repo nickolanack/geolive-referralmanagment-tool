@@ -115,7 +115,7 @@ var GatherDashboard = (function() {
 						"template": "form",
 						"className": "alert-view",
 						"showCancel":false,
-						"closeable":true
+						"closable":true
 					}
 				})).show();
 			}
