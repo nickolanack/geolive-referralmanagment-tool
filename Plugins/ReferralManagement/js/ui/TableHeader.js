@@ -271,6 +271,19 @@ var TableHeader = (function() {
 
 		},
 
+		updateLayout(){
+			
+			this._dataCols.forEach(function(data){
+				ObjectAppend_(data, this._getLayout(data.col), {
+					col: dataCol
+				});
+			});
+
+			this._redrawStyles();
+
+				
+		},
+
 		_getStaticCells: function() {
 			return this._dataCols.filter(function(cell) {
 				return cell.width != 'auto' && cell.hidden !== true;;
@@ -692,7 +705,7 @@ var TableHeader = (function() {
 			layoutDefault[colData.col].hidden=colData.hidden;
 		})
 		if(currentHeader){
-			currentHeader._redrawStyles();
+			currentHeader.updateLayout();
 		}
 	}
 
