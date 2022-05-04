@@ -1,1 +1,0 @@
-return !(item.getHidden?item.getHidden():false); //invert

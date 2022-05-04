@@ -25912,16 +25912,16 @@
                             "tableFieldLayoutForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 426,
-                            "y": 229
+                            "x": 446,
+                            "y": 249
                         },
                         "children": [
                             "tableFieldLayoutForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 386,
-                                    "y": 395
+                                    "x": 406,
+                                    "y": 415
                                 }
                             }
                         ],
@@ -25934,21 +25934,7 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "tableFieldLayoutForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
-                                        {
-                                            "type": "FormBooleanField",
-                                            "config": {
-                                                "className": "",
-                                                "label": "Visible",
-                                                "identifier": "boolean-field",
-                                                "mandatory": false,
-                                                "getValueScript": "tableFieldLayoutForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.getValueScript.js",
-                                                "updateValueScript": "tableFieldLayoutForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.updateValueScript.js",
-                                                "submitValueScript": "tableFieldLayoutForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
-                                                "validateValueScript": "",
-                                                "formatElementScript": ""
-                                            }
-                                        }
+                                        "tableFieldLayoutForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
                                     ]
                                 },
                                 "footer": {

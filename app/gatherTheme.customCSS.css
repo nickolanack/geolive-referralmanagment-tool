@@ -934,4 +934,53 @@ h2 {
   float:right;
 }
 
+   
+    
+
+.dark .ui-view.login-form:before {
+    background-color:#222222;
+}
+.dark .ui-view.login-form {
+    color:white;
+}
+.dark .ui-view.login-form .top-left > .lbl-txt {
+    color: white;
+}
+
+
+ @media screen and (max-width: 1150px) {
+
+    .ui-view.login-form:before {
+         width:650px;
+       
+    }
+     
+
+    .ui-view.login-form {
+        width:500px;
+        margin-left:0;
+        margin-right:0;
+        color: black;
+        position: relative;}
+
+   .ui-view.login-form:after{
+      width: calc( 100% - 550px );
+      left:unset;
+      right:0;
+   }
+ }
+
+ @media screen and (max-width: 900px) {
+  .ui-view.login-form:before {
+    width:100%;
+  }
+   .ui-view.login-form{
+        width:100%;
+        margin:auto;
+   }
+   .ui-view.login-form:after{
+     display:none;
+   }
+ }
+
 

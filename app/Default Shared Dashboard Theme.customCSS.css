@@ -2,6 +2,8 @@
 
 /*Login*/
 
+
+
 body.body-overlayed>#viewControllerApp>div>div>.ui-view {
     filter: blur(5px) grayscale(1);
 }
@@ -116,9 +118,9 @@ span.notification-indicator.empty:after {
     
     .ui-view.feed-sub-item {
     
-            &div{
-                display: inline-block;
-            }
+        &div{
+            display: inline-block;
+        }
         
         
             .template-content>*{
@@ -134,12 +136,6 @@ span.notification-indicator.empty:after {
                 }
                 
             }
-            
-        &[data-view="singleUserListItemDetail"]{
-            .template-content>*{
-                display:inline-block;
-            }
-        }
     }
     
 }
@@ -5772,6 +5768,7 @@ button.form-btn.primary-btn.hide {
     display: none;
 }
     
+ 
     
     
     
