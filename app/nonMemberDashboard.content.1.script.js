@@ -2,7 +2,7 @@
 					"formName": "userProfileForm",
 					"formOptions": {
 						template: "form",
-						closeable:false
+						closable:false
 					}
 				})).show();
 				
