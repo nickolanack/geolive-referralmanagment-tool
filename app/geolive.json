@@ -17293,7 +17293,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
-            "saveTemplateAsData": false,
+            "saveTemplateAsData": true,
             "contentTemplate": "email-DefaultMailerTemplate-subject.contentTemplate.html",
             "readAccess": "public"
         }
