@@ -1,12 +1,55 @@
 @charset "utf-8";
 
-
-
-
-
-
-
 /*Login*/
+
+/*
+.dark .ui-view.login-form:before {
+    background-color:#222222;
+}
+.dark .ui-view.login-form {
+    color:white;
+}
+.dark .ui-view.login-form .top-left > .lbl-txt {
+    color: white;
+}
+*/
+
+ @media screen and (max-width: 1150px) {
+
+    .ui-view.login-form:before {
+        background-color:#222222;
+         width:650px;
+       
+    }
+     
+
+    .ui-view.login-form {
+        width:500px;
+        margin-left:0;
+        margin-right:0;
+        color: black;
+        z-index: 2;
+        position: relative;}
+
+   .ui-view.login-form:after{
+      width: calc( 100% - 550px );
+      left:unset;
+      right:0;
+   }
+ }
+
+ @media screen and (max-width: 900px) {
+  .ui-view.login-form:before {
+    width:100%;
+  }
+   .ui-view.login-form{
+        width:100%;
+        margin:auto;
+   }
+   .ui-view.login-form:after{
+     display:none;
+   }
+ }
 
 body.body-overlayed>#viewControllerApp>div>div>.ui-view {
     filter: blur(5px) grayscale(1);
@@ -122,9 +165,9 @@ span.notification-indicator.empty:after {
     
     .ui-view.feed-sub-item {
     
-            &div{
-                display: inline-block;
-            }
+        &div{
+            display: inline-block;
+        }
         
         
             .template-content>*{
@@ -140,12 +183,6 @@ span.notification-indicator.empty:after {
                 }
                 
             }
-            
-        &[data-view="singleUserListItemDetail"]{
-            .template-content>*{
-                display:inline-block;
-            }
-        }
     }
     
 }
@@ -5777,10 +5814,6 @@ span.navigation-menu.settings-menu {
 button.form-btn.primary-btn.hide {
     display: none;
 }
-  
-  
-.ui-view[data-view="tableFieldLayoutForm"], .ui-view[data-view="tableFieldLayoutForm"]:first-child{border: none;}
-.ui-view[data-view="tableFieldLayoutForm"] .boolean-field.checkbox-style {margin: 0;}
     
     
     
