@@ -459,7 +459,7 @@ var TableHeader = (function() {
 
 
 			
-			var minnedOutItems = this._getDynamicCellsWithMin(available);
+			var minnedOutItems = this._getDynamicCellsWithMin(available, dynamicCells);
 			dynamicCells=this._filterColsIn(dynamicCells, minnedOutItems);
 			
 
