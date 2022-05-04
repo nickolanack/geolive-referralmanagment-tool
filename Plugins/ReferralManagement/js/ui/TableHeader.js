@@ -592,7 +592,7 @@ var TableHeader = (function() {
 
 
 			if(AppClient.getUserType()=="admin"){
-				(new UIModalFormButton(header.appendChild(new Element('button')), GatherDashboard.getApplication(), this._listModule.getItem(), {
+				(new UIModalFormButton(header.appendChild(new Element('button')), GatherDashboard.getApplication(), AppClient, {
 					"formName": "tableLayoutForm",
 					"formOptions": {
 						template: "form",
