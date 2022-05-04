@@ -26004,9 +26004,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
-            "saveTemplateAsData": false,
-            "contentTemplate": "module-html-emptyTasks-text.contentTemplate.html"
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "module-html-emptyTasks-text.contentTemplate.html",
+            "readAccess": "public"
         }
     },
     "widget.465": {
