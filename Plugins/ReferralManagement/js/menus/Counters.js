@@ -243,8 +243,7 @@ var Counters = (function() {
 					addEl();
 				}
 
-				fileCounter.setAttribute('data-counter
- ', item.getFiles().length);
+				fileCounter.setAttribute('data-counter', item.getFiles().length);
 				if (item.getFiles().length > 0) {
 					el.addClass("hasItems");
 					return;
@@ -393,8 +392,7 @@ var Counters = (function() {
 				}
 
 				postCounter.setAttribute('data-posts', totalPosts);
-				postCounter.setAttribute('data-counter
- ', totalPosts);
+				postCounter.setAttribute('data-counter', totalPosts);
 
 				if (totalPosts > 0) {
 					el.addClass("hasItems");
@@ -447,8 +445,7 @@ var Counters = (function() {
 					addEl();
 				}
 
-				fileCounter.setAttribute('data-counter
- ', item.getUsers().length);
+				fileCounter.setAttribute('data-counter', item.getUsers().length);
 				if (item.getUsers().length > 0) {
 					el.addClass("hasItems");
 					return;
@@ -478,8 +475,7 @@ var Counters = (function() {
 					addEl();
 				}
 
-				fileCounter.setAttribute('data-counter
- ', item.getSpatialDocuments().length);
+				fileCounter.setAttribute('data-counter', item.getSpatialDocuments().length);
 				if (item.getSpatialDocuments().length > 0) {
 					el.addClass("hasItems");
 					return;
