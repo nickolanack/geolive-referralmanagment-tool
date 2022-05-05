@@ -140,6 +140,17 @@ span.notification-indicator.empty:after {
                 }
                 
             }
+            
+        &[data-view="singleUserListItemDetail"]{
+            .template-content > *
+                display:inline-block;
+            }
+            ul.user-roles{
+                display:none;
+            }    
+          
+        }
+        
     }
     
 }
