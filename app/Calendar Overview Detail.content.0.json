@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "return ReferralManagementDashboard.renderCalendar;",
+        "script": "return ProjectCalendar.RenderCalendar;",
         "description": "Info about my custom script"
     }
 }
