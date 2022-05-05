@@ -8,7 +8,9 @@ var moduleArray = new ModuleArray([
                 console.log('remove uiview');
                 console.log(moduleArray)
                 item.remove();
-                moduleArray.parentUIView.remove();
+                moduleArray.parentUIView.remove(function(){
+                    NotificationItems.removePost(item.getId());
+                });
             }}
         })/*,
          new ElementModule('button', {
