@@ -2620,44 +2620,6 @@ img.youtubelogo {
 
 
 
-.progress-legend {
-    display: inline-block;
-    width: 30%;
-    border-left: 3px solid gray;
-    margin: 5px;
-    padding-left: 10px;
-}
-
-.progress-legend:before {
-    content: attr(data-counter);
-    display: inline-block;
-    float: left;
-    margin-right: 5px;
-}
-
-.progress-legend.add-margin {
-    margin-top: 71px;
-}
-
-.progress-legend .field-label, .progress-legend .field-value {
-    display: block;
-}
-
-.progress-legend.complete {
-    border-color: #6AE9BF;
-}
-
-.progress-legend.less-than-50 {
-    border-color: #EDC84C;
-}
-
-.progress-legend.less-than-10 {
-    border-color: #E96A6A;
-}
-
-
-
-
 
 
 
