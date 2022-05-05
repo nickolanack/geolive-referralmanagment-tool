@@ -4632,7 +4632,7 @@ img.static-map {
 
      
     .withItemsIndicator .items:before, .withItemsIndicator.hasItems .items:before {
-        content: attr(data-posts);
+        content: attr(data-items);
         background-color: rgba(255,255,255,0.1);
         min-width: 8px;
         height: 14px;
