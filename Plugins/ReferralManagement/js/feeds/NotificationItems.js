@@ -88,10 +88,15 @@ var NotificationItems=(function(){
 
 			var id=item.getId();
 			var type=item.getType();
+			var types=[item.getType()];
+			if(type=='user'){
+				types.push('account');
+			}
+
 
 			return this._postData.slice(this._postData.length-this._new).filter(function(p){
 				return p.metadata.items&&p.metadata.items.filter(function(i){
-					return i.type==type&&i.id+""===id+"";
+					return types.indexOf(i.type)>=0&&i.id+""===id+"";
 				}).length>0
 			}).length>0;
 		},
@@ -111,7 +116,7 @@ var NotificationItems=(function(){
 				this.fireEvent('change',[this.getInfo()]);
 			}
 		},
-		
+
 		addIndicator:function(button, options){
 
 				options=ObjectAppend_({
