@@ -18,7 +18,7 @@ var Counters = (function() {
 					var list = team.getProjects().filter(filter);
 
 					var l=list.length;
-					li.setAttribute('data-counter', l);
+					li.setAttribute('data-counter', l>0?l:null);
 
 
 					
@@ -29,9 +29,16 @@ var Counters = (function() {
 							return;
 						}
 
+						if(l==0){
+							li.setAttribute('data-counter-complete', null);
+							li.removeClass('has-progress');
+							return;
+						}
+
 						var progress=list.filter(function(p) {
 							return p.isComplete();
 						}).length + '/' + l;
+
 
 						li.setAttribute('data-counter-complete', progress);
 						li.addClass('has-progress');
@@ -100,14 +107,22 @@ var Counters = (function() {
 
 				var setCounter = function() {
 
+
+
 					var list = team.getTasks().filter(filter);
 
 					var l=list.length;
-					li.setAttribute('data-counter', l);
-					li.setAttribute('data-counter-complete', list.filter(function(t) {
-						return t.isComplete();
-					}).length + '/' + l);
-					li.addClass('has-progress');
+					li.setAttribute('data-counter', l>0?l:null);
+
+					if(l==0){
+						li.setAttribute('data-counter-complete', null);
+						li.removeClass('has-progress');
+					}else{
+						li.setAttribute('data-counter-complete', list.filter(function(t) {
+							return t.isComplete();
+						}).length + '/' + l);
+						li.addClass('has-progress');
+					}
 
 					if (l > 0) {
 						li.addClass('has-items')

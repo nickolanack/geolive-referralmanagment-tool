@@ -693,6 +693,10 @@ var GatherDashboard = (function() {
 			return 'Community Member';
 		},
 
+
+		/**
+		 * @deprecated
+		 */
 		getEmptyProjectsListDescription: function() {
 
 
