@@ -1,1 +1,1 @@
-ReferralManagementDashboard.addProjectItemWeakUpdateEvents(child, childView, application, function(p){ return !p.isArchived(); });
+ProjectList.AddListItemEvents(child, childView, application, function(p){ return !p.isArchived(); });

@@ -19748,7 +19748,7 @@
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "initModuleScript": "",
-                                    "formatModuleScript": "userProfileDetailProjects.metadata.positions.content.modules.2.config.formatModuleScript.js",
+                                    "formatModuleScript": "\nProject.AddListEvents(module);\n",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
