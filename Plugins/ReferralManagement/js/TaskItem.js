@@ -438,7 +438,7 @@ var TaskItem = (function() {
 		}
 
 		var application = ReferralManagementDashboard.getApplication();
-		ReferralManagementDashboard.addItemDiscussionInfo(el, item, application);
+		Counters.addItemDiscussionIndicator(el, item, application);
 
 
 		var edit = el.appendChild(new Element('span'));

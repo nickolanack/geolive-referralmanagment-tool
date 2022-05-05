@@ -53,10 +53,7 @@ var ProjectNavigationMenu = new Class({
 						name: "Users",
 						formatEl: function(li) {
 
-							/**
-							 * @TODO refactor to use js/menus/Counters.js
-							 */
-							ReferralManagementDashboard.addItemUsersInfo(li, item, application);
+							Counters.addItemUsersInfo(li, item, application);
 
 						}
 					},{
@@ -85,10 +82,8 @@ var ProjectNavigationMenu = new Class({
 						html: "Discussion",
 						formatEl: function(li) {
 
-							/**
-							 * @TODO refactor to use js/menus/Counters.js
-							 */
-							//ReferralManagementDashboard.addItemDiscussionInfo(li, item, application);
+					
+							//Counters.addItemDiscussionIndicator(li, item, application);
 
 						}
 					}, 
@@ -99,10 +94,8 @@ var ProjectNavigationMenu = new Class({
 						html: "Map",
 						formatEl: function(li) {
 
-							/**
-							 * @TODO refactor to use js/menus/Counters.js
-							 */
-							ReferralManagementDashboard.addItemSpatialInfo(li, item, application);
+					
+							Counters.addItemSpatialInfo(li, item, application);
 
 						}
 					},
@@ -127,10 +120,8 @@ var ProjectNavigationMenu = new Class({
 						html: "History",
 						formatEl: function(li) {
 
-							/**
-							 * @TODO refactor to use js/menus/Counters.js
-							 */
-							ReferralManagementDashboard.addItemDiscussionInfo(li, item, application);
+				
+							Counters.addItemDiscussionIndicator(li, item, application);
 
 						}
 					},

@@ -116,6 +116,9 @@ var Counters = (function() {
 			});
 
 		},
+
+
+
 		_addNotifications:function(li, list){
 			var notifications=list.filter(function(p){
 				return NotificationItems.hasItem(p);
@@ -324,7 +327,166 @@ var Counters = (function() {
 				});
 
 			});
-		}
+		},
+		addClientListCounter:function(li){
+
+			var me=this;
+
+
+
+			ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+
+				var setCounter = function() {
+				
+
+	
+						var list = team.getCompanies().filter(function(c){ return c&&c!==""; });
+						var l = list.length;
+
+						me._setCounter(li, l);
+
+
+				}
+
+				setCounter();
+				
+
+
+				GatherDashboard.getApplication(function(application){
+					application.getNamedValue('navigationController', function(navigationController){
+					
+					});
+				});
+
+			});
+		},
+
+		addItemDiscussionIndicator:function(el, item, application) {
+
+			var newPosts = 0;
+			var totalPosts = 0;
+
+			var postCounter = null;
+
+			var addEl = function() {
+				postCounter = el.appendChild(new Element('span'));
+				postCounter.addClass('posts items');
+				el.addClass('withPosts withItemsIndicator');
+
+				if (item instanceof TaskItem) {
+					postCounter.addEvent('click', function() {
+						application.getDisplayController().displayPopoverForm(
+							"taskDetailPopover",
+							item,
+							application, {}
+						);
+					})
+				}
+			}
+
+			var updateCounter = function() {
+
+				if (!postCounter) {
+					addEl();
+				}
+
+				postCounter.setAttribute('data-posts', totalPosts);
+				postCounter.setAttribute('data-items', totalPosts);
+
+				if (totalPosts > 0) {
+					el.addClass("hasItems");
+				}
+
+				if (newPosts > 0) {
+					el.addClass('newPosts');
+					el.addClass('new-items');
+					postCounter.setAttribute('data-posts', newPosts + '/' + item.numberOfPosts());
+				} else {
+					el.removeClass('newPosts');
+					el.removeClass('new-items');
+				}
+			};
+
+			if (item.hasPosts()) {
+				newPosts = item.numberOfNewPosts();
+				totalPosts = item.numberOfPosts();
+				updateCounter();
+			}
+
+
+			//AjaxControlQuery.WeakSubscribe(el, ...)
+			var subscription = item.getDiscussionSubscription();
+			if (!subscription) {
+				return;
+			}
+			AjaxControlQuery.WeakSubscribe(el, subscription, function() {
+				newPosts++;
+				totalPosts++;
+				updateCounter();
+			});
+
+		},
+
+		addItemUsersInfo: function(el, item, application) {
+
+			var fileCounter = null;
+
+			var addEl = function() {
+				fileCounter = el.appendChild(new Element('span'));
+				fileCounter.addClass('items');
+				el.addClass('withItemsIndicator');
+			}
+
+
+			var updateCounter = function() {
+
+				if (!fileCounter) {
+					addEl();
+				}
+
+				fileCounter.setAttribute('data-items', item.getUsers().length);
+				if (item.getUsers().length > 0) {
+					el.addClass("hasItems");
+					return;
+				}
+				el.removeClass("hasItems");
+			}
+
+
+			updateCounter();
+
+		},
+	
+		addItemSpatialInfo: function(el, item, application) {
+
+			var fileCounter = null;
+
+			var addEl = function() {
+				fileCounter = el.appendChild(new Element('span'));
+				fileCounter.addClass('items');
+				el.addClass('withItemsIndicator');
+			}
+
+
+			var updateCounter = function() {
+
+				if (!fileCounter) {
+					addEl();
+				}
+
+				fileCounter.setAttribute('data-items', item.getSpatialDocuments().length);
+				if (item.getSpatialDocuments().length > 0) {
+					el.addClass("hasItems");
+					return;
+				}
+				el.removeClass("hasItems");
+			}
+
+
+			updateCounter();
+
+		},
+
 
 
 	});
