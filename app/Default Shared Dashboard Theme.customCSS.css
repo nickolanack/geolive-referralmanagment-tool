@@ -30,6 +30,10 @@ button:focus {outline:0;}
 }
 
 
+.ui-view.has-notification {
+    font-weight: bold;
+}
+
 .field-value-module.inline.sortable {cursor: pointer;}
 
 span.notification-indicator:after {
