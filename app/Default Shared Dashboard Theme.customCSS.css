@@ -1375,7 +1375,7 @@ button.public-user-chat {
 }
 
 .withItemsIndicator.hasItems .items:before {
-    content: attr(data-items);
+    content: attr(data-counter);
 }
 
 .withPosts.newPosts .posts:before {
