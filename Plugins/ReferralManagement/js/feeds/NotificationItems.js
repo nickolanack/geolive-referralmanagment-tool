@@ -78,6 +78,7 @@ var NotificationItems=(function(){
 
 			if(list.length<this._postData.length){
 				this._postData=list;
+				this._posts=list.length;
 				this.fireEvent('change',[this.getInfo()]);
 			}
 
