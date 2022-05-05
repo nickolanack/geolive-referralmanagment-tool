@@ -62,12 +62,7 @@ var ProjectNavigationMenu = new Class({
 					},{
 						html: "Files",
 						formatEl: function(li) {
-
-							/**
-							 * @TODO refactor to use js/menus/Counters.js
-							 */
-							ReferralManagementDashboard.addItemFilesInfo(li, item, application);
-
+							Counters.addProjectDocumentsCounter(li, item);
 						}
 					},{
 						html: "Datasets",
@@ -84,7 +79,6 @@ var ProjectNavigationMenu = new Class({
 						},
 						formatEl: function(li) {
 
-							//ReferralManagementDashboard.addItemFilesInfo(li, item, application);
 
 						}
 					}, {

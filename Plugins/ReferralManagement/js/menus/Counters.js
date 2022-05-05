@@ -189,6 +189,66 @@ var Counters = (function() {
 		},
 		addDocumentListCounter:function(li, filter, options){
 
+			var me=this;
+
+			options=this._formatOptions(filter, options);
+			filter=this._formatFilter(filter);
+
+			ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+
+				var setCounter = function() {
+
+
+
+					var list = Array.prototype.concat.apply([],team.getProjects().map(function(p){return p.getFiles();}));
+
+					var l=list.length;
+					
+					me._setCounter(li, l);
+
+				}
+
+				setCounter();
+				
+				GatherDashboard.getApplication(function(application) {
+					application.getNamedValue('navigationController', function(navigationController) {
+						
+					});
+				});
+
+
+			});
+
+		},
+
+
+		addProjectDocumentsCounter: function(el, item) {
+
+			var fileCounter = null;
+
+			var addEl = function() {
+				fileCounter = el.appendChild(new Element('span'));
+				fileCounter.addClass('items');
+				el.addClass('withItemsIndicator');
+			}
+
+
+			var updateCounter = function() {
+
+				if (!fileCounter) {
+					addEl();
+				}
+
+				fileCounter.setAttribute('data-items', item.getFiles().length);
+				if (item.getFiles().length > 0) {
+					el.addClass("hasItems");
+					return;
+				}
+				el.removeClass("hasItems");
+			}
+
+
+			updateCounter();
 
 		},
 
