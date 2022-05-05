@@ -1885,13 +1885,22 @@ body.dragover .file-item.droppable-hide {
         top: 0;
         left: 0;
         line-height: 50px;
-        color: white;
         background-color: transparent;
         width: 400px;
-        color: #e0e0e2;
         font-size: 1.1em;
     }
 }
+
+
+.dark .layout-list .file-list, .dark .layout-list .file-list {
+    
+    .file-item .field-value-module {
+         color: #e0e0e2;
+    }
+    
+}
+
+
 .layout-thumbs .file-list, .dark .layout-thumbs .file-list {
     .file-container>span {
         width: 100%;
