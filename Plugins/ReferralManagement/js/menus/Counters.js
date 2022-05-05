@@ -4,6 +4,42 @@ var Counters = (function() {
 
 	var Counters = new Class_({
 
+
+		_setCounter:function(li, count){
+
+			
+	
+			if (count> 0) {
+				li.setAttribute('data-counter', count);
+				li.addClass('has-items')
+			} else {
+				if(li.dataset['counter']){
+					delete li.dataset['counter'];
+				}
+				li.removeClass('has-items');
+			}
+
+
+		},
+
+		_setProgress:function(li, complete){
+
+			var count=parseInt(li.getAttribute('data-counter'));
+
+			if(count==0){
+				if(li.dataset['counter-complete']){
+					delete li.dataset['counter-complete']
+				}
+				li.removeClass('has-progress');
+				return;
+			}
+
+			var progress=complete + '/' + count;
+			li.setAttribute('data-counter-complete', progress);
+			li.addClass('has-progress');
+
+		},
+
 		addProjectListCounter: function(li, filter, options) {
 
 			var me=this;
@@ -18,38 +54,22 @@ var Counters = (function() {
 					var list = team.getProjects().filter(filter);
 
 					var l=list.length;
-					li.setAttribute('data-counter', l>0?l:null);
-
-
-					
-
+					me._setCounter(li, l);
+				
 
 					DashboardConfig.getValue("enableTasks", function(enabled) {
 						if (!enabled) {
 							return;
 						}
 
-						if(l==0){
-							li.setAttribute('data-counter-complete', null);
-							li.removeClass('has-progress');
-							return;
-						}
 
-						var progress=list.filter(function(p) {
+						me._setProgress(li, list.filter(function(p) {
 							return p.isComplete();
-						}).length + '/' + l;
+						}).length);
 
-
-						li.setAttribute('data-counter-complete', progress);
-						li.addClass('has-progress');
 					});
 
 
-					if (l > 0) {
-						li.addClass('has-items')
-					} else {
-						li.removeClass('has-items')
-					}
 
 					me._addNotifications(li, list);
 				}
@@ -112,26 +132,13 @@ var Counters = (function() {
 					var list = team.getTasks().filter(filter);
 
 					var l=list.length;
-					li.setAttribute('data-counter', l>0?l:null);
+					
+					me._setCounter(li, l);
 
-					if(l==0){
-						li.setAttribute('data-counter-complete', null);
-						li.removeClass('has-progress');
-					}else{
-						li.setAttribute('data-counter-complete', list.filter(function(t) {
+
+					me._setProgress(li, list.filter(function(t) {
 							return t.isComplete();
-						}).length + '/' + l);
-						li.addClass('has-progress');
-					}
-
-					if (l > 0) {
-						li.addClass('has-items')
-					} else {
-						li.removeClass('has-items')
-					}
-
-
-
+					}).length);
 
 					me._addNotifications(li, list);
 
@@ -180,16 +187,13 @@ var Counters = (function() {
 				var setCounter = function() {
 					options.list(function(users) {
 
+
+
+
 						list=users.filter(filter);
-						var l = list.length
+						var l = list.length;
 
-						li.setAttribute('data-counter', l);
-						if (l > 0) {
-							li.addClass('has-items')
-						} else {
-							li.removeClass('has-items')
-						}
-
+						me._setCounter(li, l);
 
 						me._addNotifications(li, list);
 
