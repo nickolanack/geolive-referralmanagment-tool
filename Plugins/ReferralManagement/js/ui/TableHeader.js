@@ -512,13 +512,13 @@ var TableHeader = (function() {
 
 
 			if(AppClient.getUserType()=="admin"){
-				(new UIModalFormButton(header.appendChild(new Element('button',{"class":"inline-edit"})), GatherDashboard.getApplication(), AppClient, {
+				(new UIModalFormButton(header.insertBefore(new Element('button',{"class":"inline-edit"})), GatherDashboard.getApplication(), AppClient, {
 					"formName": "tableLayoutForm",
 					"formOptions": {
 						template: "form",
 						closeable:false
 					}
-				}));
+				}, header.firstChild));
 
       		}
 			
