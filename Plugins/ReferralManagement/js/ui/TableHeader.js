@@ -511,16 +511,7 @@ var TableHeader = (function() {
 			});
 
 
-			if(AppClient.getUserType()=="admin"){
-				(new UIModalFormButton(header.insertBefore(new Element('button',{"class":"inline-edit"}), header.firstChild), GatherDashboard.getApplication(), AppClient, {
-					"formName": "tableLayoutForm",
-					"formOptions": {
-						template: "form",
-						closeable:false
-					}
-				}));
-
-      		}
+			
 			
 			header.firstChild.firstChild.childNodes.forEach(function(colEl) {
 
@@ -588,6 +579,16 @@ var TableHeader = (function() {
 				});
 			});
 
+			if(AppClient.getUserType()=="admin"){
+				(new UIModalFormButton(header.insertBefore(new Element('button',{"class":"inline-edit"}), header.firstChild), GatherDashboard.getApplication(), AppClient, {
+					"formName": "tableLayoutForm",
+					"formOptions": {
+						template: "form",
+						closeable:false
+					}
+				}));
+
+      		}
 
 			return header;
 		},
