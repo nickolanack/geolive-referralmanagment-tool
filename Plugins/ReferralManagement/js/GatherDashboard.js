@@ -122,40 +122,6 @@ var GatherDashboard = (function() {
 
 		},
 
-		/**
-		 * @deprecated move js/menus/Counters.js
-		 */
-		addItemSpatialInfo: function(el, item, application) {
-
-			var fileCounter = null;
-
-			var addEl = function() {
-				fileCounter = el.appendChild(new Element('span'));
-				fileCounter.addClass('items');
-				el.addClass('withItemsIndicator');
-			}
-
-
-			var updateCounter = function() {
-
-				if (!fileCounter) {
-					addEl();
-				}
-
-				fileCounter.setAttribute('data-items', item.getSpatialDocuments().length);
-				if (item.getSpatialDocuments().length > 0) {
-					el.addClass("hasItems");
-					return;
-				}
-				el.removeClass("hasItems");
-			}
-
-
-			updateCounter();
-
-		},
-
-	
 
 
 		loadUserDashboardView: function(application) {
