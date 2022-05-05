@@ -4631,8 +4631,8 @@ img.static-map {
     }
 
      
-    .withItemsIndicator .posts:before, .withItemsIndicator.hasItems .items:before {
-        content: attr(data-posts);
+    .withItemsIndicator .items:before, .withItemsIndicator.hasItems .items:before {
+        content: attr(data-items);
         background-color: rgba(255,255,255,0.1);
         min-width: 8px;
         height: 14px;
@@ -4651,21 +4651,21 @@ img.static-map {
         content: attr(data-counter);
     }
     
-    .withItemsIndicator.newPosts .posts:before {
+    .withItemsIndicator.newPosts .items:before {
         background-color: crimson;
     }
     
     
     
-     .withItemsIndicator .posts:before, .withItemsIndicator.hasItems .items:before  {
+     .withItemsIndicator .items:before, .withItemsIndicator.hasItems .items:before  {
         background-color: transparent;
     }
-     .withItemsIndicator .posts, .withItemsIndicator.hasItems .items:before {
+     .withItemsIndicator .items, .withItemsIndicator.hasItems .items:before {
          position:relative;
          margin-left:2px;
      }
      /*
-     .withItemsIndicator .posts:after{
+     .withItemsIndicator .items:after{
         content: "\0f075";
         font-family:'FontAwesome';
         font-size: 18px;
