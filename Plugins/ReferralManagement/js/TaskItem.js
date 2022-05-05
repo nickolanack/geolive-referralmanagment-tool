@@ -965,7 +965,7 @@ var TaskItem = (function() {
 			if(NotificationItems.hasItem(child)){
 				childView.getElement().addClass("has-notification");
 			}else{
-				childView.getElement().addClass("has-notification");
+				childView.getElement().removeClass("has-notification");
 			}
 		});
 
