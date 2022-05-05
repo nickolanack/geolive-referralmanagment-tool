@@ -486,8 +486,7 @@ var Counters = (function() {
 
 			updateCounter();
 
-		},
-
+		}
 
 
 	});

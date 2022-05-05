@@ -423,50 +423,7 @@ var MainNavigationMenu = new Class({
 
 
 						Counters.addAllUserListCounter(li);
-						return;
-
-						ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
-
-							var setCounter = function() {
-								team.getAllUsers(function(users) {
-
-
-
-									var l = users.filter(function(u) {
-										var r = u.getRoles();
-										return (!r) || r.length == 0 || r.indexOf('none') >= 0 || r.indexOf('community-member') >= 0;
-									}).length;
-
-
-									var n = users.filter(function(u) {
-										var r = u.getRoles();
-										return (!r) || r.length == 0 || r.indexOf('none') >= 0;
-									}).length;
-
-									li.setAttribute('data-counter', l + (n > 0 ? " (" + n + ")" : ""));
-
-									if (l > 0) {
-										li.addClass('has-items')
-									} else {
-										li.removeClass('has-items')
-									}
-
-									if (n > 0) {
-										li.addClass('has-new-items')
-									} else {
-										li.removeClass('has-new-items')
-									}
-
-								})
-							}
-
-							setCounter();
-							navigationController.addWeakEvent(team, 'userListChanged', setCounter);
-							navigationController.addWeakEvent(team, 'addUser', setCounter);
-							navigationController.addWeakEvent(team, 'assignUser', setCounter);
-							navigationController.addWeakEvent(team, 'removeUser', setCounter);
-
-						});
+						
 
 					}
 				}, {
@@ -482,50 +439,7 @@ var MainNavigationMenu = new Class({
 								});
 							}
 						});
-						return;
-
-						ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
-
-							var setCounter = function() {
-								team.getActivatedDevices(function(users) {
-
-
-
-									var l = users.filter(function(u) {
-										var r = u.getRoles();
-										return (!r) || r.length == 0 || r.indexOf('none') >= 0 || r.indexOf('community-member') >= 0;
-									}).length;
-
-
-									var n = users.filter(function(u) {
-										var r = u.getRoles();
-										return (!r) || r.length == 0 || r.indexOf('none') >= 0;
-									}).length;
-
-									li.setAttribute('data-counter', l + (n > 0 ? " (" + n + ")" : ""));
-
-									if (l > 0) {
-										li.addClass('has-items')
-									} else {
-										li.removeClass('has-items')
-									}
-
-									if (n > 0) {
-										li.addClass('has-new-items')
-									} else {
-										li.removeClass('has-new-items')
-									}
-
-								})
-							}
-
-							setCounter();
-							navigationController.addWeakEvent(team, 'deviceListChanged', setCounter);
-							navigationController.addWeakEvent(team, 'addUser', setCounter);
-							navigationController.addWeakEvent(team, 'assignUser', setCounter);
-							navigationController.addWeakEvent(team, 'removeUser', setCounter);
-
-						});
+						
 
 					}
 				}],
