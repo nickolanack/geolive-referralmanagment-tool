@@ -674,6 +674,18 @@ var ProjectList = (function() {
 
 		childView.getElement().addClass("priority-"+child.getPriority());
 
+		if(NotificationItems.hasItem(child)){
+			childView.getElement().addClass("has-notification");
+		}
+		childView.addWeakEvent(NotificationItems, "change", function() {
+			if(NotificationItems.hasItem(child)){
+				childView.getElement().addClass("has-notification");
+			}else{
+				childView.getElement().addClass("has-notification");
+			}
+		});
+
+
 		if(child.getMetadataTags){
 			child.getMetadataTags().forEach(function(tag){
 				childView.getElement().addClass(tag);

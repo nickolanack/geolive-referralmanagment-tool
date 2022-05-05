@@ -425,19 +425,6 @@ var GatherDashboard = (function() {
 
 		},
 
-
-		//@ deprecated
-		addProjectItemWeakUpdateEvents: function(child, childView, application, listFilterFn) {
-			//Project.AddListItemEvents(child, childView, application, listFilterFn);
-
-			ProjectList.AddListItemEvents(child, childView, application, listFilterFn);
-		},
-
-		//@ deprecated
-		addProjectListModuleWeakEvents: function(module) {
-			Project.AddListEvents(module);
-		},
-
 		logout:function(){
 
 

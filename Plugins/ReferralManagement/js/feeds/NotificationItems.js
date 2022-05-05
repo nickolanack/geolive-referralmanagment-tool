@@ -103,6 +103,7 @@ var NotificationItems=(function(){
 			};
 
 		},
+
 		clearNew:function(){
 			var change=this._new>0;
 			this._new=0;
@@ -110,6 +111,7 @@ var NotificationItems=(function(){
 				this.fireEvent('change',[this.getInfo()]);
 			}
 		},
+		
 		addIndicator:function(button, options){
 
 				options=ObjectAppend_({
