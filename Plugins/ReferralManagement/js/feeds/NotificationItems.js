@@ -29,7 +29,8 @@ var NotificationItems=(function(){
 
 
 				(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_posts', ObjectAppend_({
-					'discussion':resp.metadata.id
+					'discussion':resp.metadata.id,
+					'peek':true
 				}, {
 					"plugin": "Discussions"
 				}))).on('success', function(resp) {
