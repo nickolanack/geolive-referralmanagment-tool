@@ -371,8 +371,8 @@ var Counters = (function() {
 
 			var addEl = function() {
 				postCounter = el.appendChild(new Element('span'));
-				postCounter.addClass('posts items');
-				el.addClass('withPosts withItemsIndicator');
+				postCounter.addClass('items');
+				el.addClass('withItemsIndicator');
 
 				if (item instanceof TaskItem) {
 					postCounter.addEvent('click', function() {
@@ -391,7 +391,6 @@ var Counters = (function() {
 					addEl();
 				}
 
-				postCounter.setAttribute('data-posts', totalPosts);
 				postCounter.setAttribute('data-counter', totalPosts);
 
 				if (totalPosts > 0) {
@@ -401,7 +400,6 @@ var Counters = (function() {
 				if (newPosts > 0) {
 					el.addClass('newPosts');
 					el.addClass('new-items');
-					postCounter.setAttribute('data-posts', newPosts + '/' + item.numberOfPosts());
 				} else {
 					el.removeClass('newPosts');
 					el.removeClass('new-items');
