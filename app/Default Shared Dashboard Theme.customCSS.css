@@ -4743,30 +4743,30 @@ img.static-map {
                     color: black;
                 }
                 
-                &.menu-main-projects, &.menu-main-tasks:after {
+                &:after {
                     content: attr(data-counter);
                 }
 
-                &.menu-main-projects, &.menu-main-tasks{
+                
                     &.has-progress:after {
                         content: attr(data-counter-complete);
                     }
-                }
                 
-                &.menu-main-projects, &.menu-main-tasks{
+                
+                
                     &.has-remaining:after {
                         content: attr(data-counter-remaining);
                     }
-                }
+                
                 
 
-                &.menu-main-projects, &.menu-main-tasks{
+                
                     &.has-notifications:after {
                         content: attr(data-counter-notifications);
                         background-color: crimson;
                         color: black;
                     }
-                }
+                
                 
                 
                 
