@@ -956,6 +956,20 @@ var TaskItem = (function() {
 			childView.getElement().addClass('complete');
 		}
 
+
+
+		if(NotificationItems.hasItem(child)){
+			childView.getElement().addClass("has-notification");
+		}
+		childView.addWeakEvent(NotificationItems, "change", function() {
+			if(NotificationItems.hasItem(child)){
+				childView.getElement().addClass("has-notification");
+			}else{
+				childView.getElement().addClass("has-notification");
+			}
+		});
+
+
 		childView.runOnceOnLoad(function() {
 
 
