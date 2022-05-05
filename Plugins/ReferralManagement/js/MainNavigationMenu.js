@@ -399,6 +399,9 @@ var MainNavigationMenu = new Class({
 					html: "Users",
 					name: "Members",
 					alias: {"section":"Main", "button":"Users", "useClassNames":true, "mirrorActive":true},
+					formatEl: function(li) {
+						Counters.addUserListCounter(li);
+					}
 				},
 				{
 					name: "Users",
