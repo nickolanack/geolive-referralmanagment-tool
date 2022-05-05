@@ -142,7 +142,7 @@ span.notification-indicator.empty:after {
             }
             
         &[data-view="singleUserListItemDetail"]{
-            .template-content > *
+            .template-content > *{
                 display:inline-block;
             }
             ul.user-roles{
