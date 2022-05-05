@@ -25,6 +25,10 @@ button:focus {outline:0;}
 }
 
 
+.content.hidden.markdown {
+    display: none;
+}
+
 
 .field-value-module.inline.sortable {cursor: pointer;}
 
