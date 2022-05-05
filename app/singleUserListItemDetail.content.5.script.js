@@ -1,1 +1,1 @@
-return ReferralManagementDashboard.createRoleEditModules(item);
+return UserGroups.GetRoleSelectionModules(item);
