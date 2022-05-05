@@ -393,7 +393,10 @@ var MainNavigationMenu = new Class({
 					name: "ProjectMembers",
 				}, {
 					html: "Proponents",
-					name: "Clients"
+					name: "Clients",
+					formatEl: function(li) {
+						Counters.addClientListCounter(li);
+					}
 				}, 
 				{
 					html: "Users",
