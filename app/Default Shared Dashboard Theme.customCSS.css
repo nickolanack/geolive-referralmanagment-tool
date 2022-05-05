@@ -4778,6 +4778,12 @@ img.static-map {
                     }
                 }
                 
+                &.menu-main-projects, &.menu-main-tasks{
+                    &.has-remaining:after {
+                        content: attr(data-counter-remaining);
+                    }
+                }
+                
 
                 &.menu-main-projects, &.menu-main-tasks{
                     &.has-notifications:after {
