@@ -7,7 +7,9 @@ var moduleArray = new ModuleArray([
             events:{click:function(){
                 console.log('remove uiview');
                 console.log(moduleArray)
-                item.remove();
+                item.remove(function(){
+                    NotificationItems.removePost(item.getId());
+                });
                 moduleArray.parentUIView.remove();
             }}
         })/*,
