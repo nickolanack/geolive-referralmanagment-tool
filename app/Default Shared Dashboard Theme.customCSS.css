@@ -1358,52 +1358,6 @@ button.public-user-chat {
     right: 30px;
 }
 
-.withPosts .posts:before, .withItemsIndicator.hasItems .items:before {
-    content: attr(data-posts);
-    background-color: rgba(255,255,255,0.1);
-    min-width: 8px;
-    height: 14px;
-    display: inline-block;
-    vertical-align: middle;
-    line-height: 14px;
-    font-size: 10px;
-    color: black;
-    text-align: center;
-    border-radius: 10px;
-    margin: 0 5px;
-    padding: 0 3px;
-}
-
-.withItemsIndicator.hasItems .items:before {
-    content: attr(data-counter);
-}
-
-.withPosts.newPosts .posts:before {
-    background-color: crimson;
-}
-
-
-
- .withPosts .posts:before, .withItemsIndicator.hasItems .items:before  {
-    background-color: transparent;
-}
- .withPosts .posts, .withItemsIndicator.hasItems .items:before {
-     position:relative;
-     margin-left:2px;
- }
- /*
- .withPosts .posts:after{
-    content: "\0f075";
-    font-family:'FontAwesome';
-    font-size: 18px;
-    margin-left: 8px;
-    line-height: 15px;
-    position:absolute;
-    top: 3px;
-    left: -5px;
-  
-}
-*/
 
 
 .field-value-module.with-description span.field-value:after {
@@ -4677,6 +4631,52 @@ img.static-map {
     }
 
      
+    .withPosts .posts:before, .withItemsIndicator.hasItems .items:before {
+        content: attr(data-posts);
+        background-color: rgba(255,255,255,0.1);
+        min-width: 8px;
+        height: 14px;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 14px;
+        font-size: 10px;
+        color: black;
+        text-align: center;
+        border-radius: 10px;
+        margin: 0 5px;
+        padding: 0 3px;
+    }
+    
+    .withItemsIndicator.hasItems .items:before {
+        content: attr(data-counter);
+    }
+    
+    .withPosts.newPosts .posts:before {
+        background-color: crimson;
+    }
+    
+    
+    
+     .withPosts .posts:before, .withItemsIndicator.hasItems .items:before  {
+        background-color: transparent;
+    }
+     .withPosts .posts, .withItemsIndicator.hasItems .items:before {
+         position:relative;
+         margin-left:2px;
+     }
+     /*
+     .withPosts .posts:after{
+        content: "\0f075";
+        font-family:'FontAwesome';
+        font-size: 18px;
+        margin-left: 8px;
+        line-height: 15px;
+        position:absolute;
+        top: 3px;
+        left: -5px;
+      
+    }
+    */
 
     
 
