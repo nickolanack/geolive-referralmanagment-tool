@@ -87,7 +87,7 @@ var PostContent = (function() {
 					if (dataItem.type == "User") {
 						if (ProjectTeam.CurrentTeam().hasUser(dataItem.id)) {
 							var targetUser = ProjectTeam.CurrentTeam().getUser(dataItem.id);
-							var targetUserName =targetUser.getUser(dataItem.id).getName();
+							var targetUserName =targetUser.getName();
 
 							if(targetUser.getId()==AppClient.getId()&&event.indexOf('update.user')!=-1){
 
