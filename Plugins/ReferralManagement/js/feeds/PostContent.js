@@ -28,8 +28,9 @@ var PostContent = (function() {
 		},
 
 
-		formatEventText: function(text, data) {
+		formatEventText: function(event, data) {
 
+			var text=event;
 
 			if (text == 'event: user.account.activation') {
 				text = 'A new user account was created'
@@ -58,12 +59,14 @@ var PostContent = (function() {
 			}
 
 
+			var actionUser=null;
+
 			if (ProjectTeam.CurrentTeam().hasUser(data.user)) {
 
-				var user=ProjectTeam.CurrentTeam().getUser(data.user);
+				var actionUser=ProjectTeam.CurrentTeam().getUser(data.user);
 
-				var userName = user.getName();
-				if(user.getId()==AppClient.getId()){
+				var userName = actionUser.getName();
+				if(actionUser.getId()==AppClient.getId()){
 					userName='You';
 				}
 				text = userName + text;
@@ -83,8 +86,22 @@ var PostContent = (function() {
 
 					if (dataItem.type == "User") {
 						if (ProjectTeam.CurrentTeam().hasUser(dataItem.id)) {
-							var targetUserName = ProjectTeam.CurrentTeam().getUser(dataItem.id).getName();
-							itemsText += ' for: ' + targetUserName;
+							var targetUser = ProjectTeam.CurrentTeam().getUser(dataItem.id);
+							var targetUserName =targetUser.getUser(dataItem.id).getName();
+
+							if(targetUser.getId()==AppClient.getId()&&event.indexOf('update.user')!=-1){
+
+								if(actionUser&&actionUser.getId()==AppClient.getId()){
+									itemsText += ' for your own account';
+								}else{
+									itemsText += ' for your account';
+								}
+								
+							}else{
+								itemsText += ' for: ' + targetUserName;
+							}
+
+							
 						}
 					}
 
