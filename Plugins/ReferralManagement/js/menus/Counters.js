@@ -245,10 +245,10 @@ var Counters = (function() {
 
 				fileCounter.setAttribute('data-counter', item.getFiles().length);
 				if (item.getFiles().length > 0) {
-					el.addClass("hasItems");
+					el.addClass("has-items");
 					return;
 				}
-				el.removeClass("hasItems");
+				el.removeClass("has-items");
 			}
 
 
@@ -394,7 +394,7 @@ var Counters = (function() {
 				postCounter.setAttribute('data-counter', totalPosts);
 
 				if (totalPosts > 0) {
-					el.addClass("hasItems");
+					el.addClass("has-items");
 				}
 
 				if (newPosts > 0) {
@@ -445,10 +445,10 @@ var Counters = (function() {
 
 				fileCounter.setAttribute('data-counter', item.getUsers().length);
 				if (item.getUsers().length > 0) {
-					el.addClass("hasItems");
+					el.addClass("has-items");
 					return;
 				}
-				el.removeClass("hasItems");
+				el.removeClass("has-items");
 			}
 
 
@@ -475,10 +475,10 @@ var Counters = (function() {
 
 				fileCounter.setAttribute('data-counter', item.getSpatialDocuments().length);
 				if (item.getSpatialDocuments().length > 0) {
-					el.addClass("hasItems");
+					el.addClass("has-items");
 					return;
 				}
-				el.removeClass("hasItems");
+				el.removeClass("has-items");
 			}
 
 
