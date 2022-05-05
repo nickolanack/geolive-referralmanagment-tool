@@ -60,7 +60,12 @@ var PostContent = (function() {
 
 			if (ProjectTeam.CurrentTeam().hasUser(data.user)) {
 
-				var userName = ProjectTeam.CurrentTeam().getUser(data.user).getName();
+				var user=ProjectTeam.CurrentTeam().getUser(data.user);
+
+				var userName = user.getName();
+				if(user.getId()==AppClient.getId()){
+					userName='You';
+				}
 				text = userName + text;
 
 				text = text.replace('update.', 'updated.')
