@@ -398,10 +398,8 @@ var Counters = (function() {
 				}
 
 				if (newPosts > 0) {
-					el.addClass('newPosts');
 					el.addClass('new-items');
 				} else {
-					el.removeClass('newPosts');
 					el.removeClass('new-items');
 				}
 			};
