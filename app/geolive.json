@@ -6463,65 +6463,6 @@
             "readAccess": "public"
         }
     },
-    "widget.167": {
-        "name": "Detail View",
-        "instance": "DetailView",
-        "parameters": {
-            "widgetTitle": "Tasks Progress Detail",
-            "target": "tasksProgressDetail",
-            "templateName": "tasksProgressDetail",
-            "requireTarget": true,
-            "resolveItemScript": "return item",
-            "onRenderApplictionScript": "",
-            "formatModulesScript": "",
-            "notifyViewer": false,
-            "useRemote": "",
-            "metadata": {
-                "positions": {
-                    "title": {
-                        "modules": []
-                    },
-                    "content": {
-                        "modules": [
-                            "Tasks Progress Detail.metadata.positions.content.modules.0.json",
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "fieldLabelScript": "return \"Tasks\";",
-                                    "fieldValueScript": "return \"Completed\";",
-                                    "formatElementScript": "Tasks Progress Detail.metadata.positions.content.modules.1.config.formatElementScript.js"
-                                }
-                            },
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "fieldLabelScript": "return \"Tasks\";",
-                                    "fieldValueScript": "return \"Remaining\";",
-                                    "formatElementScript": "Tasks Progress Detail.metadata.positions.content.modules.2.config.formatElementScript.js"
-                                }
-                            }
-                        ]
-                    },
-                    "footer": {
-                        "modules": []
-                    },
-                    "menu": {
-                        "modules": []
-                    }
-                },
-                "positionList": [
-                    "title",
-                    "content",
-                    "footer",
-                    "menu"
-                ],
-                "_diagramState": []
-            },
-            "readAccess": "public"
-        }
-    },
     "widget.168": {
         "name": "Detail View",
         "instance": "DetailView",
