@@ -122,7 +122,7 @@ var PostContent = (function() {
 			text = text.replace('proposal', 'project');
 			text = text.split('.').join(' ');
 
-
+			text = text.replace('updated user role', 'changed the user role')
 			text = text.replace('team remove', 'removed user from project')
 			text = text.replace('team add', 'added user to project')
 
