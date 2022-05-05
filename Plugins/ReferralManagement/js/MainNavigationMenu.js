@@ -279,7 +279,7 @@ var MainNavigationMenu = new Class({
 					html: "Users",
 					template: "usersCombinedDetail",
 					formatEl: function(li) {
-						Counters.addUserListCounter(li);
+						Counters.addAllUserListCounter(li);
 					}
 				},{
 					html: "User",
@@ -400,7 +400,7 @@ var MainNavigationMenu = new Class({
 					name: "Members",
 					alias: {"section":"Main", "button":"Users", "useClassNames":true, "mirrorActive":true},
 					formatEl: function(li) {
-						Counters.addUserListCounter(li);
+						Counters.addAllUserListCounter(li);
 					}
 				},
 				{
@@ -419,13 +419,7 @@ var MainNavigationMenu = new Class({
 					formatEl: function(li) {
 
 
-						Counters.addUserListCounter(li, {
-							list:function(cb){
-								ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
-									team.getAllUsers(cb);
-								});
-							}
-						});
+						Counters.addAllUserListCounter(li);
 						return;
 
 						ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {

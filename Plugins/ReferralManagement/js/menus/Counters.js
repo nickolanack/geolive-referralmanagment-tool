@@ -191,6 +191,27 @@ var Counters = (function() {
 
 
 		},
+
+		addAllUserListCounter:function(li, filter, options){
+			var me=this;
+
+
+			options=this._formatOptions(filter, options);
+
+			options=ObjectAppend_({
+				list:function(cb){
+					ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+						team.getAllUsers(cb);
+					});
+				}
+
+			}, options);
+
+			filter=this._formatFilter(filter);
+
+			return this.addUserListCounter(li filter, options);
+		},
+
 		addUserListCounter:function(li, filter, options){
 
 			var me=this;
