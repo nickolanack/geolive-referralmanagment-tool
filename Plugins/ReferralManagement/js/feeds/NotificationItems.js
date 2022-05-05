@@ -75,7 +75,9 @@ var NotificationItems=(function(){
 				return post.id+""!==postId+"";
 			});
 
+
 			if(list.length<this._postData.length){
+				this._postData=list;
 				this.fireEvent('change',[this.getInfo()]);
 			}
 
