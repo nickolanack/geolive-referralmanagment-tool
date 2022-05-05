@@ -1371,7 +1371,7 @@ button.public-user-chat {
 
 
 
-li.menu-project-discussion.withPosts:after {
+li.menu-project-discussion.withItemsIndicator:after {
     content: attr(data-counter);
     position: relative;
 }
@@ -4631,7 +4631,7 @@ img.static-map {
     }
 
      
-    .withPosts .posts:before, .withItemsIndicator.hasItems .items:before {
+    .withItemsIndicator .posts:before, .withItemsIndicator.hasItems .items:before {
         content: attr(data-posts);
         background-color: rgba(255,255,255,0.1);
         min-width: 8px;
@@ -4651,21 +4651,21 @@ img.static-map {
         content: attr(data-counter);
     }
     
-    .withPosts.newPosts .posts:before {
+    .withItemsIndicator.newPosts .posts:before {
         background-color: crimson;
     }
     
     
     
-     .withPosts .posts:before, .withItemsIndicator.hasItems .items:before  {
+     .withItemsIndicator .posts:before, .withItemsIndicator.hasItems .items:before  {
         background-color: transparent;
     }
-     .withPosts .posts, .withItemsIndicator.hasItems .items:before {
+     .withItemsIndicator .posts, .withItemsIndicator.hasItems .items:before {
          position:relative;
          margin-left:2px;
      }
      /*
-     .withPosts .posts:after{
+     .withItemsIndicator .posts:after{
         content: "\0f075";
         font-family:'FontAwesome';
         font-size: 18px;
