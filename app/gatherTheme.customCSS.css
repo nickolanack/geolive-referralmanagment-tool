@@ -1010,7 +1010,7 @@ h2 {
  }
 
 
-.field-value-module.inline[data-identifier="col-created"] .field-value:after {content: attr(data-raw);font-size: 16px;}
+.field-value-module.inline[data-identifier="col-created"] .field-value:after {content: attr(data-day);font-size: 16px;}
 
 .field-value-module.inline[data-identifier="col-created"] .field-value {font-size: 0;}
 
