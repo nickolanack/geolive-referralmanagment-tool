@@ -26,7 +26,7 @@ var Counters = (function() {
 
 			var count=parseInt(li.getAttribute('data-counter'));
 
-			if(count==0){
+			if(count==0||isNaN(count)){
 				if(li.dataset['counter-complete']){
 					delete li.dataset['counter-complete']
 				}
