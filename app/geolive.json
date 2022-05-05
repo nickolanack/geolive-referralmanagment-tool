@@ -9757,6 +9757,8 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleUserListItemDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
                                     "formatElementScript": "singleUserListItemDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
@@ -9766,6 +9768,8 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleUserListItemDetail.metadata.positions.content.modules.2.config.fieldValueScript.js",
                                     "formatElementScript": ""
@@ -9775,6 +9779,8 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getCommunity()",
                                     "formatElementScript": "el.addClass('user-community');"
