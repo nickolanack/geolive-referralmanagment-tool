@@ -25,6 +25,7 @@ var Counters = (function() {
 		_setProgress:function(li, complete){
 
 			var count=parseInt(li.getAttribute('data-counter'));
+			var progress=complete + '/' + count;
 
 			if(count==0||isNaN(count)){
 				if(li.dataset['counter-complete']){
@@ -34,9 +35,35 @@ var Counters = (function() {
 				return;
 			}
 
-			var progress=complete + '/' + count;
+			
 			li.setAttribute('data-counter-complete', progress);
 			li.addClass('has-progress');
+
+
+			if(complete==count){
+				li.addClass('progress-complete');
+			}else{
+				li.removeClass('progress-complete');
+			}
+
+		},
+
+		_setRemaining:function(li, complete){
+
+			var count=parseInt(li.getAttribute('data-counter'));
+			var remaining=count-complete;
+
+			if(count==0||isNaN(count)||remaining<1||isNaN(remaining)){
+				if(li.dataset['counter-remaining']){
+					delete li.dataset['counter-remaining']
+				}
+				li.removeClass('has-remaining');
+				return;
+			}
+
+
+			li.setAttribute('data-counter-remaining', remaining);
+			li.addClass('has-remaining');
 
 		},
 
@@ -57,17 +84,17 @@ var Counters = (function() {
 					me._setCounter(li, l);
 				
 
-					DashboardConfig.getValue("enableTasks", function(enabled) {
-						if (!enabled) {
-							return;
-						}
+					// DashboardConfig.getValue("enableTasks", function(enabled) {
+					// 	if (!enabled) {
+					// 		return;
+					// 	}
 
 
-						me._setProgress(li, list.filter(function(p) {
-							return p.isComplete();
-						}).length);
+					// 	me._setProgress(li, list.filter(function(p) {
+					// 		return p.isComplete();
+					// 	}).length);
 
-					});
+					// });
 
 
 
@@ -136,7 +163,7 @@ var Counters = (function() {
 					me._setCounter(li, l);
 
 
-					me._setProgress(li, list.filter(function(t) {
+					me._setRemaining(li, list.filter(function(t) {
 							return t.isComplete();
 					}).length);
 
