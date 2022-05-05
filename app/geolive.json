@@ -6565,7 +6565,7 @@
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "initModuleScript": "",
-                                    "formatModuleScript": "Projects Overview Detail.metadata.positions.content.modules.3.config.formatModuleScript.js",
+                                    "formatModuleScript": "Project.AddListEvents(module);",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
