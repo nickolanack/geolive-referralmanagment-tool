@@ -67,6 +67,20 @@ var NotificationItems=(function(){
 
 		},
 
+		removePost:function(postId){
+
+			
+
+			var list=this._postData.filter(function(post){
+				return post.id+""!==postId+"";
+			});
+
+			if(list.length<this._postData.length){
+				this.fireEvent('change',[this.getInfo()]);
+			}
+
+		},
+
 		hasItem:function(item){
 
 			var id=item.getId();

@@ -694,24 +694,6 @@ var GatherDashboard = (function() {
 		},
 
 
-		/**
-		 * @deprecated
-		 */
-		getEmptyProjectsListDescription: function() {
-
-
-			return "<p><span class=\"section-title\">Get started with managing projects</span><br/>You currently have no active projects. To get started, click on the new project button!</p>";
-
-
-		},
-		getEmptyTasksListDescription: function() {
-
-
-			return "<p><span class=\"section-title\">Get started with tasks</span><br/>Tasks are associated with specific projects. To get started, create or select a project and add some tasks related to it.</p>";
-
-
-		},
-
 		getLabelForUserRole: function(role) {
 
 
