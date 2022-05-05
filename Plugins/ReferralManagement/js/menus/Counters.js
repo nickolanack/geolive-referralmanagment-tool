@@ -209,7 +209,7 @@ var Counters = (function() {
 
 			filter=this._formatFilter(filter);
 
-			return this.addUserListCounter(li filter, options);
+			return this.addUserListCounter(li, filter, options);
 		},
 
 		addUserListCounter:function(li, filter, options){
