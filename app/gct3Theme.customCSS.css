@@ -686,19 +686,19 @@ ul.project, ul.user{
 }
 
 
-.withItemsIndicator.hasItems span.items {
+.withItemsIndicator.has-items span.items {
     position: absolute;
     bottom: 2px;
     right: -7px;
 }
 
-.withItemsIndicator.hasItems span.items:before {
+.withItemsIndicator.has-items span.items:before {
     background-color:#525252;
     color:white;
 }
 
 
-.withItemsIndicator.hasItems {
+.withItemsIndicator.has-items {
     position: relative;
 }
 
