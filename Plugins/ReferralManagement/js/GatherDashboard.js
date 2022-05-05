@@ -410,6 +410,20 @@ var GatherDashboard = (function() {
 
 		addWeakUpdateEvents: function(child, childView, listFilterFn) {
 
+
+
+			if(NotificationItems.hasItem(child)){
+				childView.getElement().addClass("has-notification");
+			}
+			childView.addWeakEvent(NotificationItems, "change", function() {
+				if(NotificationItems.hasItem(child)){
+					childView.getElement().addClass("has-notification");
+				}else{
+					childView.getElement().removeClass("has-notification");
+				}
+			});
+			
+
 			childView.addWeakEvent(child, 'update', function() {
 				if ((!listFilterFn) || listFilterFn(child)) {
 					childView.redraw();
