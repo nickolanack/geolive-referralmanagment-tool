@@ -82,12 +82,25 @@ span.notification-indicator.empty:after {
 }
 
 
-.table-header .check.field-value-module:after {
+.table-header .check.field-value-module:before {
     content: "\0f046";
     font-family: "FontAwesome";
     font-size: 20px;
     vertical-align: top;
 }
+
+.table-header .field-value-module.check.sortable.disabled:before{
+    display:inline-block;
+    position: relative;
+    left: -4px;
+    color: #08a049;
+}
+.dark .table-header .field-value-module.check.sortable.disabled:before{
+   
+    color: #59d759;
+}
+
+
 
 .table-header .icon.field-value-module:after {
     content: "\0f1b2";
@@ -5388,7 +5401,7 @@ span.navigation-menu.settings-menu {
 
 
 .field-value-module.inline.check.sortable.disabled {
-    font-size: 0;
+    /*font-size: 0;*/
 }
 .field-value-module.inline.check.sortable.disabled input{
     display:none
