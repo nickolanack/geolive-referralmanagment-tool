@@ -8,7 +8,7 @@ var TableHeader = (function() {
 	 */
 	 var layoutDefault = {};
 	
-
+	//TODO namespace table layouts 'projectTableLayout'
 	(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration_field", {
 		'widget': "projectTableLayout",
 		'field': "layout"
@@ -580,7 +580,9 @@ var TableHeader = (function() {
 			});
 
 			if(AppClient.getUserType()=="admin"){
-				(new UIModalFormButton(header.insertBefore(new Element('button',{"class":"inline-edit"}), header.firstChild), GatherDashboard.getApplication(), AppClient, {
+				(new UIModalFormButton(header.insertBefore(new Element('button',{"class":"inline-edit"}), header.firstChild), GatherDashboard.getApplication(), new MockDataTypeItem({
+					'layout':'projectTableLayout' //TODO: use this to make tableLayoutForm generic and select config name
+				}), {
 					"formName": "tableLayoutForm",
 					"formOptions": {
 						template: "form",
@@ -609,6 +611,9 @@ var TableHeader = (function() {
 	});
 
 	TableHeader.UpdateLayout=function(options){
+
+		//TODO: provide namespaced tableLayout using name 'projectTableLayout'
+
 		options.forEach(function(colData){
 			layoutDefault[colData.col].hidden=colData.hidden;
 		})

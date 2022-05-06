@@ -41,6 +41,10 @@ var ProjectNavigationMenu = new Class({
 
 
 		var me=this;
+
+
+		
+
 		DashboardConfig.runOnceOnLoad(function(dashConfig, config) {
 
 			me.menu = {
@@ -167,7 +171,33 @@ var ProjectNavigationMenu = new Class({
 		var item=this.item;
 
 		if (me.menu) {
-			NavigationMenuModule.prototype.process.call(this);
+
+
+			(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration_field", {
+				'widget': "projectMenuLayout",
+				'field': "layout"
+			})).addEvent('success',function(response){
+
+			
+
+
+				NavigationMenuModule.prototype.process.call(this);
+
+				if(AppClient.getUserType()=="admin"){
+					(new UIModalFormButton(header.insertBefore(new Element('button',{"class":"inline-edit"}), header.firstChild), GatherDashboard.getApplication(), new MockDataTypeItem({
+						menu:me
+					}), {
+						"formName": "menuLayoutForm",
+						"formOptions": {
+							template: "form",
+							closeable:false
+						}
+					}));
+
+	      		}
+
+      		}).execute();
+
 			return;
 		}
 
