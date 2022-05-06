@@ -102,27 +102,31 @@ var ProjectSelection = (function() {
 				ProjectSelection.clear();
 			}}
 		}));
-		module.getElement().appendChild(new Element('button', {
-			"html":"New Collection", 
-			"class":"primary-btn create", 
-			"events":{"click":function(){
-				var formName = DashboardConfig.getValue("leftPanelSecondaryBtnForm"); //"documentProjectForm";//"ProposalTemplate";
-				var newItem = new Proposal();
 
-				selection.forEach(function(item){
-					newItem.addProject(item);
-				});
+		if(DashboardConfig.getValue('enableProposals')){
 
-				application.getDisplayController().displayPopoverForm(formName, newItem, application, {
-					template: "form"
-				});
+			module.getElement().appendChild(new Element('button', {
+				"html":"New Collection", 
+				"class":"primary-btn create", 
+				"events":{"click":function(){
+					var formName = DashboardConfig.getValue("leftPanelSecondaryBtnForm"); //"documentProjectForm";//"ProposalTemplate";
+					var newItem = new Proposal();
 
-				newItem.addEvent("save:once", function() {
-					ProjectTeam.CurrentTeam().addProject(newItem);
-					UIInteraction.navigateToProjectOverview(newItem);
-				});
-			}}
-		}));
+					selection.forEach(function(item){
+						newItem.addProject(item);
+					});
+
+					application.getDisplayController().displayPopoverForm(formName, newItem, application, {
+						template: "form"
+					});
+
+					newItem.addEvent("save:once", function() {
+						ProjectTeam.CurrentTeam().addProject(newItem);
+						UIInteraction.navigateToProjectOverview(newItem);
+					});
+				}}
+			}));
+		}
 
 		module.getElement().appendChild(new Element('button', {
 			"html":"View Selection", "class":"primary-btn view-selection", "events":{"click":function(){
