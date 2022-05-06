@@ -1155,6 +1155,11 @@ var ProjectTeam = (function() {
 		//});
 	};
 	ProjectTeam.FormatUserCommunityTagCloud = function(module) {
+
+		if(ProjectTeam.GetAllCommunities().length==1){
+			module.getElement().setStyle('display', 'none');
+		}
+
 		ProjectTeam.LimitUserCommunityTagCloudValues(module);
 		ProjectTeam.FormatTagCloudLanguageValues(module);
 	};
