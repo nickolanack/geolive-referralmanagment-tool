@@ -7,7 +7,7 @@
         "mandatory": false,
         "getValueScript": "return !(item.getHidden?item.getHidden():false); \/\/invert",
         "updateValueScript": " object.value=value \n \n console.log(item.toObject());",
-        "submitValueScript": "wizardDataSet.hidden=!object.value;\nwizardDataSet.col=item.getCol()",
+        "submitValueScript": "wizardDataSet.hidden=!object.value;\nwizardDataSet.menu=item.getMenu()",
         "validateValueScript": "",
         "formatElementScript": "module.setLabel(item.getLabel?item.getLabel():item.getCol().capitalize())"
     }
