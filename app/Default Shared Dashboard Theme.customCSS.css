@@ -3751,8 +3751,8 @@ span.SearchModule.search-container {
     display: none;
 }
 
-.uitext-container.mandatory-field, .uitext-container.required{
-    .text-input.invalid {
+.uitext-container.mandatory-field, .uitext-container.required.invalid{
+    .text-input {
         border-color: rgb(237, 200, 76);
     }
 }
