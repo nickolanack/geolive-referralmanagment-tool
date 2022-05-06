@@ -8,7 +8,7 @@ if(item instanceof ProjectList){
 
 var vault=new MockDataTypeItem({
     name:"Community Vault",
-    description:"The Dataset that are only visible to you or your community",
+    description:"The Datasets that are only visible to you or your community",
     icon:null
 });
 
