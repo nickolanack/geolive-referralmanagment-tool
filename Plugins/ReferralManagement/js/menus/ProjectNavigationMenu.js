@@ -202,7 +202,7 @@ var ProjectNavigationMenu = (function() {
 
 							var menuConfig=menuLayout[menuName];
 							if(menuConfig["class"]){
-								menuItem.className=(menuItem.className?menuItem.className+" ":"")+menuConfig["class"];
+								menuItem.buttonClass=(menuItem.buttonClass?menuItem.buttonClass+" ":"")+menuConfig["class"];
 							}
 
 						}
