@@ -207,7 +207,7 @@ var ProjectNavigationMenu = (function() {
 
 						}
 
-					}):
+					});
 
 				}
 
