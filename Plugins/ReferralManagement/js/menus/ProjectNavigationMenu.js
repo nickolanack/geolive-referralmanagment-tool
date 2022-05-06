@@ -9,7 +9,7 @@ var ProjectNavigationMenu = (function() {
 		'widget': "projectMenuLayout",
 		'field': "layout"
 	})).addEvent('success', function(response) {
-		var menuLayout=response.value;
+		menuLayout=response.value;
 	}).execute();
 
 
