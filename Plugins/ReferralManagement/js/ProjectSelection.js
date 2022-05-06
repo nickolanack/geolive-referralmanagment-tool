@@ -103,7 +103,7 @@ var ProjectSelection = (function() {
 			}}
 		}));
 
-		if(DashboardConfig.getValue('enableProposals')){
+		if(!DashboardConfig.getValue('enableProposals')){
 
 			module.getElement().appendChild(new Element('button', {
 				"html":"New Collection", 
