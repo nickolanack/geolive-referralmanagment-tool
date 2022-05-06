@@ -2799,8 +2799,11 @@ ul.item-tags li {
     font-size: 1.3em;
 }
 
-.ui-view.active-project {
-    background-color: rgba(255,255,255,0.1);
+.ui-view.active-project, .ui-view.has-notification {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.dark .ui-view.active-project, .dark .ui-view.has-notification {
+    background-color: rgba(34, 34, 34, 0.5);
 }
 
 .ui-view.removing {
