@@ -248,5 +248,9 @@ GetWidget('singleProjectReviewDetail')->display($targetInstance);
 GetWidget('tableLayoutForm')->display($targetInstance);
 GetWidget('tableFieldLayoutForm')->display($targetInstance);
 
+GetWidget('menuLayoutForm')->display($targetInstance);
+GetWidget('menuFieldLayoutForm')->display($targetInstance);
+
+
 
 GetWidget('defaultPostDetail')->display($targetInstance);

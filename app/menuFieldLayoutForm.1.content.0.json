@@ -1,10 +1,14 @@
 {
-    "type": "WizardTitleField",
+    "type": "FormBooleanField",
     "config": {
-        "label": "Title",
-        "message": "add a title",
         "className": "",
-        "maxChars": 0,
-        "textFormatScript": ""
+        "label": "Visible",
+        "identifier": "boolean-field",
+        "mandatory": false,
+        "getValueScript": "return !(item.getHidden?item.getHidden():false); \/\/invert",
+        "updateValueScript": " object.value=value \n \n console.log(item.toObject());",
+        "submitValueScript": "wizardDataSet.hidden=!object.value;\nwizardDataSet.menu=item.getMenu()",
+        "validateValueScript": "",
+        "formatElementScript": "module.setLabel(item.getLabel?item.getLabel():item.getMenu().capitalize())"
     }
 }
