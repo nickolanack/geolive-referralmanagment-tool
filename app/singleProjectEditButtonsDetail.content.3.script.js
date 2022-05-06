@@ -1,35 +1,18 @@
-if(item.getId()<=0||(!item.isArchived())){
+if(item.isArchived()){
     return null;
 }
 
-return new Element('button',{"html":"Delete", "class":"primary-btn error remove", "events":{"click":function(){
+if(!DashboardConfig.getValue("showProjecReports")){
+    return null;
+}
+
+return new ElementModule('button',{"identifier":"button-report", "html":"Create report", "class":"primary-btn report", "events":{"click":function(){
     
-    
-    if (confirm('Are you sure you want to delete this proposal?')) {
-
-
-var DeleteProposalQuery = new Class({
-            Extends: AjaxControlQuery,
-            initialize: function(id) {
-                this.parent(CoreAjaxUrlRoot, 'delete_proposal', {
-                    plugin: 'ReferralManagement',
-                    id: id
-                });
-            }
-        });
-
-
-
-                                (new DeleteProposalQuery(item.getId())).addEvent('success', function() {
-                            
-                                ProjectTeam.CurrentTeam().removeProject(item);
-                                application.getNamedValue('navigationController').navigateTo("Dashboard","Main");
-                                    
-                                }).execute();
-
-                            }
-    
-    
-    
+    var exportQuery=new AjaxControlQuery(CoreAjaxUrlRoot, 'generate_report', {
+		                "plugin": "ReferralManagement",
+		                "proposal":item.getId()
+		                });
+    				//exportQuery.execute(); //for testing.
+    				window.open(exportQuery.getUrl(true),'Download'); 
 
 }}})
