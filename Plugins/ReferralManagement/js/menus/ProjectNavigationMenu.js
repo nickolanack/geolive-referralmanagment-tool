@@ -195,6 +195,20 @@ var ProjectNavigationMenu = (function() {
 
 					})
 
+					me.menu.Project.forEach(function(menuItem){
+
+						var menuName=(menuItem.name||menuItem.html).toLowerCase();
+						if(menuLayout[menuName]){
+
+							var menuConfig=menuLayout[menuName];
+							if(menuConfig["class"]){
+								menuItem.className=(menuItem.className?menuItem.className+" ":"")+menuConfig["class"];
+							}
+
+						}
+
+					}):
+
 				}
 
 
