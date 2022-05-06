@@ -46,7 +46,7 @@ class Task{
 		}
 
 		$starred=array_map(function($u){
-			return parseInt($u);
+			return intval($u);
 		}, $starred);
 
 		$task['attributes']['starUsers'] =$starred;
