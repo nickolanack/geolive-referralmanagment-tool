@@ -4684,6 +4684,19 @@ img.static-map {
       
     }
     */
+    
+    .withItemsIndicator .items {display: none;}
+
+    
+    [data-view="singleTaskListItemDetail"] .withItemsIndicator .items {
+        display: inline-block;
+    }
+    [data-view="singleTaskListItemDetail"] .withItemsIndicator .items:before {
+        content: "\0f0e5"; font-family: 'FontAwesome';
+    }
+    .dark [data-view="singleTaskListItemDetail"] .withItemsIndicator .items:before {
+        color: white;
+    }
 
     
 
@@ -5767,7 +5780,6 @@ button.form-btn.primary-btn.hide {
     display: none;
 }
     
-.withItemsIndicator .items {display: none;}
 
     
     
