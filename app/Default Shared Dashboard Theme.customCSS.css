@@ -5105,8 +5105,10 @@ img.static-map {
     }
     
     span.notifications.selection button:last-child {
-        right: 255px;
         background-color: #268039;
+    }
+    span.notifications.selection button.with-collections {
+        right: 255px;
     }
     
     span.notifications.selection.has-selection button {
