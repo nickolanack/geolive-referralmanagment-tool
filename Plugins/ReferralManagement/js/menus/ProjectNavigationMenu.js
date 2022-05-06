@@ -182,9 +182,9 @@ var ProjectNavigationMenu = (function() {
 				NavigationMenuModule.prototype.process.call(me);
 
 				if (AppClient.getUserType() == "admin") {
-					(new UIModalFormButton(header.insertBefore(new Element('button', {
+					(new UIModalFormButton(me.getElement().insertBefore(new Element('button', {
 						"class": "inline-edit"
-					}), header.firstChild), GatherDashboard.getApplication(), new MockDataTypeItem({
+					}), me.getElement().firstChild), GatherDashboard.getApplication(), new MockDataTypeItem({
 						menu: me
 					}), {
 						"formName": "menuLayoutForm",
