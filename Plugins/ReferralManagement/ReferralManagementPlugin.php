@@ -306,7 +306,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		IncludeJS(__DIR__ . '/js/ui/SidePanelToggle.js');
 		IncludeJS(__DIR__ . '/js/ui/DisplayTheme.js');
 
-		IncludeJS(__DIR__ . '/js/GuestNavigationMenu.js');
+		IncludeJS(__DIR__ . '/js/menus/GuestNavigationMenu.js');
 
 		IncludeJS(__DIR__ . '/js/ProjectSelection.js');
 		IncludeJS(__DIR__ . '/js/UserNotifications.js');
@@ -323,11 +323,11 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		IncludeJS(__DIR__ . '/js/spatial/LayerGroupLegend.js');
 		IncludeJS(__DIR__ . '/js/spatial/LegendHelper.js');
 
-		IncludeJS(__DIR__ . '/js/MainNavigationMenu.js');
-		IncludeJS(__DIR__ . '/js/ProjectsOverviewNavigationMenu.js');
-		IncludeJS(__DIR__ . '/js/ProjectNavigationMenu.js');
-		IncludeJS(__DIR__ . '/js/ProfileNavigationMenu.js');
-		IncludeJS(__DIR__ . '/js/MapNavigationMenu.js');
+		IncludeJS(__DIR__ . '/js/menus/MainNavigationMenu.js');
+		IncludeJS(__DIR__ . '/js/menus/ProjectsOverviewNavigationMenu.js');
+		IncludeJS(__DIR__ . '/js/menus/ProjectNavigationMenu.js');
+		IncludeJS(__DIR__ . '/js/menus/ProfileNavigationMenu.js');
+		IncludeJS(__DIR__ . '/js/menus/MapNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/DashboardUser.js');
 		IncludeJS(__DIR__ . '/js/MobileDeviceList.js');
 
@@ -362,7 +362,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		IncludeJS(__DIR__ . '/js/ProjectTeam.js');
 		IncludeJS(__DIR__ . '/js/ProjectCalendar.js');
 		IncludeJS(__DIR__ . '/js/ProjectActivityChart.js');
-		IncludeJS(__DIR__ . '/js/ProjectFilesNavigationMenu.js');
+		IncludeJS(__DIR__ . '/js/menus/ProjectFilesNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/ProjectFiles.js');
 		IncludeJS(__DIR__ . '/js/TaskItem.js');
 		IncludeJS(__DIR__ . '/js/RecentItems.js');
