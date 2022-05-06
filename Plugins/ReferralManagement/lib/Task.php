@@ -38,9 +38,18 @@ class Task{
 
 
 		$starred = $task['attributes']['starUsers'];
-		if (is_object($starred)) {
-			$task['attributes']['starUsers'] = array_values(get_object_vars($starred));
+		if(is_null($starred){
+			$starred=array();
 		}
+		if (is_object($starred)) {
+			$starred= array_values(get_object_vars($starred));
+		}
+
+		$starred=array_map(function($u){
+			return parseInt($u);
+		}, $starred);
+
+		$task['attributes']['starUsers'] =$starred;
 
 		$teamMembers = GetPlugin('ReferralManagement')->getTeamMembersForTask($result, $attributes['teamMembers']);
 		$task['attributes']['teamMembers'] = $teamMembers;
