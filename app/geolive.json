@@ -26101,16 +26101,24 @@
                 "projectMenuLayout.parameters.0.json"
             ],
             "layout": {
-                "overview": [],
+                "overview": {
+                    "class": "split-right"
+                },
                 "files": [],
                 "tasks": [],
                 "datasets": [],
-                "map": [],
+                "map": {
+                    "class": "split-right"
+                },
                 "review": [],
-                "briefing": [],
+                "briefing": {
+                    "class": "split-right"
+                },
                 "users": [],
                 "discussion": [],
-                "communication": [],
+                "communication": {
+                    "class": "split-right"
+                },
                 "status": [],
                 "history": []
             },
