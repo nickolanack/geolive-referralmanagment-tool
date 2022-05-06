@@ -540,7 +540,12 @@ var TaskItem = (function() {
 			events: {
 				change: function() {
 					console.log(this.value);
-					item.setDueDate(this.value);
+					if(item.getID()>0){
+						item.setDueDateDay(this.value);
+					}else{
+						item.setDueDate(this.value);
+					}
+					
 					valueEl.firstChild.textContent=item.getFormattedDueDate();
 
 				}
