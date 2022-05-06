@@ -182,15 +182,15 @@ var ProjectNavigationMenu = (function() {
 
 
 				if(menuLayout){
-					var sort=Object.keys(menuLayout);
+					var sortOrder=Object.keys(menuLayout);
 					me.menu.Project.sort(function(a, b){
 
 						var aName=(a.name||a.html).toLowerCase();
 						var bName=(b.name||b.html).toLowerCase();
 
 
-						var aIndex=menuLayout.indexOf(aName);
-						var bIndex=menuLayout.indexOf(bName);
+						var aIndex=sortOrder.indexOf(aName);
+						var bIndex=sortOrder.indexOf(bName);
 						return aIndex-bIndex;
 
 					})
