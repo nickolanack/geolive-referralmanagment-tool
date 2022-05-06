@@ -705,6 +705,28 @@ button.inline-btn, button.primary-btn {
     padding: 24px;
 }
 
+@media screen and (max-width: 1330px){
+
+
+    [data-view="singleProjectEditButtonsDetail"]{
+        height:unset;
+        
+    }
+
+   [data-view="singleProjectEditButtonsDetail"]::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    
+    span.pending-status{
+        display: inline-block;
+        float: right;
+       
+    }
+}
+
+
 button.selectable{
     &.primary-btn {
         border: 1px dashed $primaryBtnColor;
