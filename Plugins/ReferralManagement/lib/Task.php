@@ -38,7 +38,7 @@ class Task{
 
 
 		$starred = $task['attributes']['starUsers'];
-		if(is_null($starred)){
+		if(is_empty($starred)){
 			$starred=array();
 		}
 		if (is_object($starred)) {
