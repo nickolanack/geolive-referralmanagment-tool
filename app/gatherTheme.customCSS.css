@@ -713,7 +713,7 @@ button.inline-btn, button.primary-btn {
         
     }
 
-   [data-view="singleProjectEditButtonsDetail"]::after {
+   [data-view="singleProjectEditButtonsDetail"]::after, span.pending-status:after {
       content: "";
       display: block;
       clear: both;
