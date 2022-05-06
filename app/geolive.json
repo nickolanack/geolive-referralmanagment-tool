@@ -26100,7 +26100,20 @@
             "parameters": [
                 "projectMenuLayout.parameters.0.json"
             ],
-            "layout": [],
+            "layout": {
+                "overview": [],
+                "tasks": [],
+                "users": [],
+                "files": [],
+                "datasets": [],
+                "discussion": [],
+                "map": [],
+                "briefing": [],
+                "review": [],
+                "history": [],
+                "status": [],
+                "communication": []
+            },
             "widgetTitle": "projectMenuLayout",
             "readAccess": "public"
         }
