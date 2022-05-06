@@ -8,7 +8,8 @@ if(item instanceof ProjectList){
 
 
 return ProjectTagList.getProjectTagsData('_root').concat(new MockDataTypeItem({
-    name:'Community Vault'
+    name:"Community Vault",
+    description:"The Dataset that are only visible to you or your community"
 }));
 
 
