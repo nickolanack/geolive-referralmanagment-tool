@@ -2,11 +2,14 @@
 
 
 var ProjectNavigationMenu = (function() {
+	
+	var menuLayout=null;
+
 	(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration_field", {
 		'widget': "projectMenuLayout",
 		'field': "layout"
 	})).addEvent('success', function(response) {
-
+		var menuLayout=response.value;
 	}).execute();
 
 
@@ -177,6 +180,22 @@ var ProjectNavigationMenu = (function() {
 
 			if (me.menu) {
 
+
+				if(menuLayout){
+					var sort=Object.keys(menuLayout);
+					me.menu.Project.sort(function(a, b){
+
+						var aName=(a.name||a.html).toLowerCase();
+						var bName=(b.name||b.html).toLowerCase();
+
+
+						var aIndex=menuLayout.indexOf(aName);
+						var bIndex=menuLayout.indexOf(bName);
+						return aIndex-bIndex;
+
+					})
+
+				}
 
 
 				NavigationMenuModule.prototype.process.call(me);
