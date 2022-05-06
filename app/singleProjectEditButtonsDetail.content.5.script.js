@@ -1,3 +1,19 @@
+//share btn
+
+if(item.isArchived()){
+    return null;
+}
 
 
-return Project.PendingButtons(item);
+
+return new ModalFormButtonModule(application, item, {
+         
+            label: "Share",
+            formName: "shareLink",
+            "class": "primary-btn share"
+
+    
+});
+
+
+
