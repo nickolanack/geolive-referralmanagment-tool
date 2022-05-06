@@ -2,6 +2,6 @@ module.setInfoTip('The Referral ID number should be listed first. Additional ID 
 
 //if(window.GuestProposal&&item instanceof GuestProposal){
     module.setMandatory(true, function(object){
-        return object.values&&object.values.length;
+        return !!(object.values&&object.values.length);
     });
 //}   
