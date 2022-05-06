@@ -26107,7 +26107,22 @@
         "name": "Configuration",
         "instance": "Configuration",
         "parameters": {
-            "target": "none"
+            "target": "projectMenuLayout",
+            "contentTemplate": "",
+            "comments": "",
+            "formatParametersScript": "return $parameters;",
+            "formatOutputScript": "return $parameters;",
+            "enableUserAjaxWrite": false,
+            "authUserAjaxScript": "XXXX-XXXX",
+            "saveParametersAsData": false,
+            "enableRevisions": false,
+            "broadcastChanges": false,
+            "parameters": [
+                "projectMenuLayout.parameters.0.json"
+            ],
+            "layout": [],
+            "widgetTitle": "projectMenuLayout",
+            "readAccess": "public"
         }
     }
 }
