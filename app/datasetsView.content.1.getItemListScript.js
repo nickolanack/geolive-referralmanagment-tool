@@ -6,10 +6,12 @@ if(item instanceof ProjectList){
    }
 }
 
-
-return ProjectTagList.getProjectTagsData('_root').concat(new MockDataTypeItem({
+var vault=new MockDataTypeItem({
     name:"Community Vault",
-    description:"The Dataset that are only visible to you or your community"
-}));
+    description:"The Dataset that are only visible to you or your community",
+    icon:null
+});
+
+return ProjectTagList.getProjectTagsData('_root').concat(vault);
 
 
