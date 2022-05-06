@@ -46,7 +46,7 @@ var ItemStars=(function(){
 			if (starred !== me.isStarred()) {
 				if (starred) {
 
-					me.data.attributes.starUsers=(me.data.attributes.starUsers||[]).push(parseInt(AppClient.getId()));
+					me.data.attributes.starUsers=(me.data.attributes.starUsers||[]).concat([parseInt(AppClient.getId())]);
 
 				} else {
 
