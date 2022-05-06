@@ -3751,11 +3751,13 @@ span.SearchModule.search-container {
     display: none;
 }
 
-.uitext-container.mandatory-field>.text-input.invalid {
-    border-color: rgb(237, 200, 76);
+.uitext-container.mandatory-field, .uitext-container.required:before
+    .text-input.invalid {
+        border-color: rgb(237, 200, 76);
+    }
 }
 
-.uitext-container.mandatory-field:before {
+.uitext-container.mandatory-field:before, .uitext-container.required:before {
     content: "* Required";
     color: mediumseagreen;
     float: right;
