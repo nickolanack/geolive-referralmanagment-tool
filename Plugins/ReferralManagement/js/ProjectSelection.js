@@ -129,7 +129,7 @@ var ProjectSelection = (function() {
 		}
 
 		module.getElement().appendChild(new Element('button', {
-			"html":"View Selection", "class":"primary-btn view-selection", "events":{"click":function(){
+			"html":"View Selection", "class":"primary-btn view-selection "+(!DashboardConfig.getValue('enableProposals')?'with-collections':'with-props'), "events":{"click":function(){
 				var controller = application.getNamedValue('navigationController');
 				controller.navigateTo("Map", "Main");
 			}}
