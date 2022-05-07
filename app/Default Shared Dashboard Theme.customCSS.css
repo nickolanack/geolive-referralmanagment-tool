@@ -3060,6 +3060,13 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {}
     
 }
 
+.uitext-container.no-text.required:before {
+    top: -30px;right: -6px;
+}
+.uitext-container.no-text.required {
+    margin-top: 25px;    
+}
+
 .inline-form-list .ui-view {
     margin-right: 15px;
 }
