@@ -3780,9 +3780,8 @@ span.SearchModule.search-container {
 //     top: 5px;
 //     right: 5px;
 // }
-
-.uitext-container.required .required-indicator:before {
-    content: "*";
+.uitext-container.required .required-indicator {
+   
     float: right;
     font-size: 12px;
     font-style: italic;
@@ -3791,6 +3790,9 @@ span.SearchModule.search-container {
     right: 5px;
     color: #edc84c;
     font-size: 25px;
+}
+.uitext-container.required .required-indicator:before {
+    content: "*";
 }
 
 /*
