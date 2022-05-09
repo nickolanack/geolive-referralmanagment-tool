@@ -1,1 +1,1 @@
-return GetPlugin('ReferralManagement')->isUserInGroup('no-role');
+return GetPlugin('ReferralManagement')->isUserInGroup('no-role', $userId);
