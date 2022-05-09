@@ -250,6 +250,7 @@ GetWidget('tableFieldLayoutForm')->display($targetInstance);
 
 GetWidget('menuLayoutForm')->display($targetInstance);
 GetWidget('menuFieldLayoutForm')->display($targetInstance);
+GetWidget('singleProjectSecurityDetail')->display($targetInstance);
 
 
 
