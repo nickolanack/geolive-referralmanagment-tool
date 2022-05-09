@@ -1,0 +1,12 @@
+{
+    "type": "InlineHtml",
+    "config": {
+        "className": "",
+        "text": "Project Security and Access",
+        "template": "html.SecurityContent",
+        "templateVariablesScript": "{}",
+        "formatTextScript": "var btn=ConfigItem.CreateEditBtn(new ConfigItem({\n    \"editLabel\":\"Edit Security Heading\",\n    'widget':options.widget,\n    'form':'textFieldForm',\n    'stepOptions':{\n        width:600\n    }\n}));\n\nif(btn){\n    module.getElement().appendChild(btn);\n}",
+        "ajaxRequestTemplate": true,
+        "identifier": "htmlLabel"
+    }
+}
