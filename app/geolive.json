@@ -9060,16 +9060,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 488,
-                            "y": 195
+                            "x": 498,
+                            "y": 205
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 448,
-                                    "y": 496
+                                    "x": 458,
+                                    "y": 506
                                 }
                             }
                         ],
@@ -9242,7 +9242,7 @@
                                                 "presentationRadioFalseLabel": "No",
                                                 "presentationImagesTrueImage": [],
                                                 "presentationImagesFalseImage": [],
-                                                "onRenderModuleFn": "asdf"
+                                                "onRenderModuleFn": "module.getElement().setStyle('display':'none');"
                                             }
                                         },
                                         {
