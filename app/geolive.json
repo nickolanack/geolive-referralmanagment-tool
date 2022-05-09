@@ -18902,6 +18902,17 @@
                                     "fieldValueScript": "return \"\";",
                                     "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.14.config.formatElementScript.js"
                                 }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "identifier": "col-security",
+                                    "className": "",
+                                    "fieldLabelScript": "return \"Field Label Script\";",
+                                    "fieldValueScript": "return \"Field Value Script\";",
+                                    "formatElementScript": ""
+                                }
                             }
                         ]
                     },
