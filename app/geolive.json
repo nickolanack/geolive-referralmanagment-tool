@@ -26197,5 +26197,19 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.470": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-SecurityContent.text",
+            "target": "module.html-SecurityContent.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Project Security and Access"
+        }
     }
 }
