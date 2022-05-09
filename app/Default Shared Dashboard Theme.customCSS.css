@@ -3057,7 +3057,20 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {}
     margin-top: 15px;
     margin-bottom: 15px;
     border-radius: 2px;
+    border: 1px solid transparent;
     
+}
+
+.uitext-container.no-text.required.invalid, .boolean-field.checkbox-style.required.invalid {
+    border: 1px solid #edc84c;
+    border-radius: 4px;
+}
+
+.uitext-container.no-text.required:before {
+    top: -30px;right: -6px;
+}
+.uitext-container.no-text.required {
+    margin-top: 25px;    
 }
 
 .inline-form-list .ui-view {
@@ -3751,11 +3764,13 @@ span.SearchModule.search-container {
     display: none;
 }
 
-.uitext-container.mandatory-field>.text-input.invalid {
-    border-color: rgb(237, 200, 76);
+.uitext-container.required.invalid{
+    .text-input {
+        border-color: rgb(237, 200, 76);
+    }
 }
 
-.uitext-container.mandatory-field:before {
+.uitext-container.mandatory-field:before, .uitext-container.required:before {
     content: "* Required";
     color: mediumseagreen;
     float: right;
@@ -5105,8 +5120,10 @@ img.static-map {
     }
     
     span.notifications.selection button:last-child {
-        right: 255px;
         background-color: #268039;
+    }
+    span.notifications.selection button.with-collections {
+        right: 255px;
     }
     
     span.notifications.selection.has-selection button {

@@ -13,6 +13,13 @@
     content: "\f05a";
 }
 
+.info-tip:before {
+     content: "\f05a";
+    font-family: 'FontAwesome';
+    display: inline-block;
+    margin-left: 10px;
+}
+
 .navigation-menu li.active:before {
     color: white;
 }
