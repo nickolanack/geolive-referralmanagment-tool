@@ -9060,16 +9060,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 478,
-                            "y": 185
+                            "x": 488,
+                            "y": 195
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 438,
-                                    "y": 486
+                                    "x": 448,
+                                    "y": 496
                                 }
                             }
                         ],
@@ -9235,13 +9235,14 @@
                                                     "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
-                                                "label": "Registered status?",
                                                 "showLabel": true,
+                                                "label": "Registered status?",
                                                 "presentationStyle": "radio",
                                                 "presentationRadioTrueLabel": "Yes",
                                                 "presentationRadioFalseLabel": "No",
                                                 "presentationImagesTrueImage": [],
-                                                "presentationImagesFalseImage": []
+                                                "presentationImagesFalseImage": [],
+                                                "onRenderModuleFn": "asdf"
                                             }
                                         },
                                         {
