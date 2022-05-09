@@ -25,6 +25,20 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function listAccess(){
 
+		if (!Auth('read', $json->project, 'ReferralManagement.proposal')) {
+			
+		}
+
+		$list=array_filter(GetClient()->listUsers(), function($u){
+			return Auth('read', $json->project, 'ReferralManagement.proposal', $u['id']);
+		});
+
+
+		$response = array(
+			'results' => array_values($list);
+		);
+
+		return $response;
 
 		
 	}

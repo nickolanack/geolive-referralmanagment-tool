@@ -10,7 +10,7 @@ class TeamDataType extends \core\extensions\plugin\PluginDataType {
      /**
      * @SuppressWarnings("unused")
      */
-    public function authorize($task, $item) {
+    public function authorize($task, $item, $userId=-1) {
         if (GetClient()->isAdmin()){
             return true;
         }

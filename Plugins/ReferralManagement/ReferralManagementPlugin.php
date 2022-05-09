@@ -453,6 +453,9 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		return $this->filterRemovedProjects;
 	}
 
+	/**
+	 * does not use cached list. use getProjectList for faster results
+	 */
 	public function listProjectsMetadata($filter) {
 
 		$database = $this->getDatabase();
