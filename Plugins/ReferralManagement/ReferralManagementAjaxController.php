@@ -29,7 +29,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			
 		}
 
-		$users=array_filter($this->getPlugin()->getClientsUserList(), function($u) use($json){
+		$users=array_filter($this->getPlugin()->getUserList(), function($u) use($json){
 
 
 			$this->info('auth', 'check project read access: '.$u->name, array(
@@ -40,9 +40,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			return Auth('read', $json->project, 'ReferralManagement.proposal', $u->id);
 		});
 
-		$devices=array_filter($this->getPlugin()->getClientsDeviceList(), function($u) use($json){
-			return Auth('read', $json->project, 'ReferralManagement.proposal', $u->id);
-		});
+		$devices=[];
 
 
 		$response = array(

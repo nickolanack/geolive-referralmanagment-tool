@@ -165,20 +165,30 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 	public function getClientsUserList() {
 
+		$users = array_values(array_filter($this->getUserList(), $this->shouldShowUserFilter()));
+		return $users;
+	}
+
+	public function getUserList() {
+
 		if ($this->getParameter('enableUserListCaching')) {
 			$users = $this->cache()->getUsersMetadataList();
 		} else {
 			$users = $this->listAllUsersMetadata();
 		}
 
-		$users = array_values(array_filter($users, $this->shouldShowUserFilter()));
 		return $users;
 	}
 
 	public function getClientsDeviceList() {
 
+		$devices = array_values(array_filter($this->getDeviceList(), $this->shouldShowUserFilter()));
+		return $devices;
+	}
+
+	public function getDeviceList() {
+
 		$devices = $this->cache()->getDevicesMetadataList();
-		$devices = array_values(array_filter($devices, $this->shouldShowUserFilter()));
 		return $devices;
 	}
 
