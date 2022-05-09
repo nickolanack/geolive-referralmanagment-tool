@@ -35,7 +35,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 
 		$response = array(
-			'results' => array_values($list);
+			'results' => array_values($list)
 		);
 
 		return $response;
