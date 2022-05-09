@@ -69,7 +69,7 @@ class WizardLayerFieldModule extends AttributeWizardModule {
                     object.TextFieldModule =    new TextFieldModule({
                         lines:1,
                         allowEmpty:' .
-				($mandatory ? 'true' : 'false') . ',
+				($mandatory ? 'false' : 'true') . ',
                         legend:' . json_encode($label) . ',
                         toolbar:[UITextFieldLayerBrowser, UITextFieldLayerList],
                         ' . (($mandatory) ? ('messageBackgroundColor:"' .
