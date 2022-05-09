@@ -70,17 +70,22 @@ class UserRoles {
 		return $this;
 	}
 
-	public function userHasRole($role) {
+	public function userHasRole($role, $userId=-1) {
 
-		if (GetClient()->isGuest()) {
-			return false;
+		if($userId==-1){
+			$userId=GetClient()->getUserId();
+			if (GetClient()->isGuest()) {
+				return false;
+			}
 		}
 
+
+		
 		$map = $this->listRoleAttributes();
 
 		$map['proponent'] = 'isProponent';
 
-		$attribs = (new \ReferralManagement\User())->getAttributes(GetClient()->getUserId());
+		$attribs = (new \ReferralManagement\User())->getAttributes($userId);
 
 		if (key_exists($role, $map) && key_exists($map[$role], $attribs)) {
 			return $attribs[$map[$role]] === true || $attribs[$map[$role]] === "true";

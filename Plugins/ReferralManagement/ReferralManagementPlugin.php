@@ -779,8 +779,8 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	/**
 	 * Used in custom user auth
 	 */
-	public function isUserInGroup($role) {
-		return (new \ReferralManagement\UserRoles())->userHasRole($role);
+	public function isUserInGroup($role, $userId=-1) {
+		return (new \ReferralManagement\UserRoles())->userHasRole($role, $userId);
 	}
 
 	public function getGroupMembersOfGroup($group) {
