@@ -20,6 +20,15 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	}
 
+
+
+
+	protected function listAccess(){
+
+
+		
+	}
+
 	protected function getAdminChannels($json) {
 
 		return array(

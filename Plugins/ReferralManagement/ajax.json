@@ -240,8 +240,13 @@
         }
     },
 
-    
-    "recent_activity": {}
+
+    "recent_activity": {},
+    "list_access": {
+        "checkKeys": [
+            "project"
+        ]
+    }
 
 
 
