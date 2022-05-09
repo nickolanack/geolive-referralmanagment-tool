@@ -32,7 +32,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		$users=array_filter($this->getPlugin()->getClientsUserList(), function($u) use($json){
 
 
-			$this->info('auth', 'check memberof', array(
+			$this->info('auth', 'check project read access: '.$u->name, array(
 				'user'=>$u->id,
 				'project'=>$json->project
 			));
