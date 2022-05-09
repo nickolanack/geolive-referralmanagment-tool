@@ -23,7 +23,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 
 
-	protected function listAccess(){
+	protected function listAccess($json){
 
 		if (!Auth('read', $json->project, 'ReferralManagement.proposal')) {
 			
