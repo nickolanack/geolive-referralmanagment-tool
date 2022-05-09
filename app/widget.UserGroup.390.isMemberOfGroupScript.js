@@ -1,1 +1,1 @@
-return GetPlugin('ReferralManagement')->isUserInGroup('lands-department-manager');
+return GetPlugin('ReferralManagement')->isUserInGroup('lands-department-manager', $userId);
