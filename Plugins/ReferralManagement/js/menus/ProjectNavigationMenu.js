@@ -154,6 +154,14 @@ var ProjectNavigationMenu = (function() {
 
 
 							}
+						}, {
+							html: "Security", //"Proponent",
+							template: "singleProjectSecurityDetail",
+							formatEl: function(li) {
+
+
+
+							}
 						}
 					]
 				};
