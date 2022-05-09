@@ -29,11 +29,11 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			
 		}
 
-		$users=array_filter($this->getPlugin()->getClientsUserList(), function($u){
+		$users=array_filter($this->getPlugin()->getClientsUserList(), function($u) use($json){
 			return Auth('read', $json->project, 'ReferralManagement.proposal', $u->id);
 		});
 
-		$devices=array_filter($this->getPlugin()->getClientsDeviceList(), function($u){
+		$devices=array_filter($this->getPlugin()->getClientsDeviceList(), function($u) use($json){
 			return Auth('read', $json->project, 'ReferralManagement.proposal', $u->id);
 		});
 

@@ -15,7 +15,7 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
             return true;
         }
 
-        if(Auth('memberof', 'lands-department', 'group')){
+        if(Auth('memberof', 'lands-department', 'group',  $userId)){
             return true;
         }
 
