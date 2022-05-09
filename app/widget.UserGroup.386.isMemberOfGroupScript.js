@@ -1,1 +1,1 @@
-return GetPlugin('ReferralManagement')->isUserInGroup('community-member');
+return GetPlugin('ReferralManagement')->isUserInGroup('community-member', $userId);
