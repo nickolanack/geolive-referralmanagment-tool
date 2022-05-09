@@ -33,7 +33,8 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 
 			$this->info('auth', 'check memberof', array(
-				'user'=>$u->id
+				'user'=>$u->id,
+				'project'=>$json->project
 			));
 
 			return Auth('read', $json->project, 'ReferralManagement.proposal', $u->id);
