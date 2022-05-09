@@ -837,8 +837,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 12,
-                    "y": 388
+                    "x": 48,
+                    "y": 375
                 },
                 "children": [
                     "widget.ProposalWizardBuilder.65.metadata.children.0.json",
@@ -849,16 +849,16 @@
                             "widget.ProposalWizardBuilder.65.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 298,
-                            "y": 469
+                            "x": 147,
+                            "y": 344
                         },
                         "children": [
                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 258,
-                                    "y": 782
+                                    "x": 107,
+                                    "y": 657
                                 }
                             },
                             {
@@ -868,16 +868,16 @@
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 1181,
-                                    "y": 209
+                                    "x": 619,
+                                    "y": 768
                                 },
                                 "children": [
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 1141,
-                                            "y": 424
+                                            "x": 579,
+                                            "y": 983
                                         }
                                     },
                                     {
@@ -887,31 +887,31 @@
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1714,
-                                            "y": 734
+                                            "x": 1140,
+                                            "y": 537
                                         },
                                         "children": [
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1674,
-                                                    "y": 960
+                                                    "x": 1100,
+                                                    "y": 763
                                                 }
                                             },
                                             {
                                                 "class": "DecisionNode",
                                                 "_diagramState": {
-                                                    "x": 1714,
-                                                    "y": 734
+                                                    "x": 912,
+                                                    "y": 217
                                                 },
                                                 "children": [
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.0.json",
                                                     {
                                                         "class": "DecisionStemNode",
                                                         "_diagramState": {
-                                                            "x": 1584,
-                                                            "y": 654
+                                                            "x": 922,
+                                                            "y": 277
                                                         },
                                                         "builderMetadata": {
                                                             "positions": {
@@ -934,16 +934,16 @@
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.2.fields.0.json"
                                                         ],
                                                         "_diagramState": {
-                                                            "x": 1926,
-                                                            "y": 307
+                                                            "x": 1592,
+                                                            "y": 650
                                                         },
                                                         "children": [
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.2.children.0.json",
                                                             {
                                                                 "class": "InsertNode",
                                                                 "_diagramState": {
-                                                                    "x": 1886,
-                                                                    "y": 520
+                                                                    "x": 1552,
+                                                                    "y": 863
                                                                 }
                                                             }
                                                         ],
@@ -1091,16 +1091,16 @@
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.3.fields.0.json"
                                                         ],
                                                         "_diagramState": {
-                                                            "x": 1643,
-                                                            "y": 933
+                                                            "x": 1575,
+                                                            "y": 64
                                                         },
                                                         "children": [
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.3.children.0.json",
                                                             {
                                                                 "class": "InsertNode",
                                                                 "_diagramState": {
-                                                                    "x": 1603,
-                                                                    "y": 1099
+                                                                    "x": 1535,
+                                                                    "y": 230
                                                                 }
                                                             }
                                                         ],
@@ -1135,6 +1135,20 @@
                                                                                 "itemButtonsScript": "return [];",
                                                                                 "insertAtTop": false,
                                                                                 "targetName": ""
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "type": "FormBooleanField",
+                                                                            "config": {
+                                                                                "className": "",
+                                                                                "label": "I have read and agree to the terms of the disclaimer",
+                                                                                "identifier": "boolean-field",
+                                                                                "mandatory": false,
+                                                                                "getValueScript": "",
+                                                                                "updateValueScript": " object.value=value ",
+                                                                                "submitValueScript": "",
+                                                                                "validateValueScript": "",
+                                                                                "formatElementScript": "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.3.builderMetadata.positions.content.modules.2.config.formatElementScript.js"
                                                                             }
                                                                         }
                                                                     ]
@@ -1190,8 +1204,8 @@
                                                                 "formatter": "none",
                                                                 "iconTint": "rgb(100, 149, 237)",
                                                                 "autocomplete": true,
-                                                                "inputOptions": [],
-                                                                "onRenderTextFieldScript": "",
+                                                                "inputOptions": "{}",
+                                                                "onRenderTextFieldScript": "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.1.config.onRenderTextFieldScript.js",
                                                                 "formatValueScript": ""
                                                             }
                                                         },
@@ -1214,7 +1228,7 @@
                                                                 "iconTint": "rgb(100, 149, 237)",
                                                                 "autocomplete": true,
                                                                 "inputOptions": "{}",
-                                                                "onRenderTextFieldScript": "",
+                                                                "onRenderTextFieldScript": "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.2.config.onRenderTextFieldScript.js",
                                                                 "formatValueScript": ""
                                                             }
                                                         },
@@ -1236,8 +1250,8 @@
                                                                 "formatter": "none",
                                                                 "iconTint": "rgb(100, 149, 237)",
                                                                 "autocomplete": true,
-                                                                "inputOptions": [],
-                                                                "onRenderTextFieldScript": "",
+                                                                "inputOptions": "{}",
+                                                                "onRenderTextFieldScript": "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.3.config.onRenderTextFieldScript.js",
                                                                 "formatValueScript": ""
                                                             }
                                                         },
@@ -1259,8 +1273,8 @@
                                                                 "formatter": "none",
                                                                 "iconTint": "rgb(100, 149, 237)",
                                                                 "autocomplete": true,
-                                                                "inputOptions": [],
-                                                                "onRenderTextFieldScript": "",
+                                                                "inputOptions": "{}",
+                                                                "onRenderTextFieldScript": "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.4.config.onRenderTextFieldScript.js",
                                                                 "formatValueScript": ""
                                                             }
                                                         },
@@ -9034,8 +9048,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 102,
-                    "y": 216
+                    "x": 202,
+                    "y": 318
                 },
                 "children": [
                     "userProfileForm.metadata.children.0.json",
@@ -9046,16 +9060,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 584,
-                            "y": 447
+                            "x": 508,
+                            "y": 215
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 544,
-                                    "y": 748
+                                    "x": 468,
+                                    "y": 516
                                 }
                             }
                         ],
@@ -9083,20 +9097,22 @@
                                                 "attributeFields": [
                                                     "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
                                                 ],
+                                                "className": "no-text only-image",
                                                 "label": "Profile picture",
                                                 "message": "add a description",
                                                 "lines": 3,
-                                                "mandatory": false,
-                                                "showAudios": true,
-                                                "showImages": true,
-                                                "showDocuments": true,
-                                                "showVideos": true,
-                                                "className": "no-text only-image",
                                                 "maxChars": 0,
+                                                "mandatory": false,
+                                                "showToolbars": true,
+                                                "showAudios": true,
+                                                "showVideos": true,
+                                                "showDocuments": true,
+                                                "showImages": true,
                                                 "showExpandInput": true,
                                                 "toolbarPosition": "bottom",
                                                 "textFormatScript": "",
-                                                "onRenderModuleFn": ""
+                                                "onRenderModuleFn": "",
+                                                "mediaIconTint": "rgb(100, 149, 237)"
                                             }
                                         },
                                         {
@@ -9194,20 +9210,22 @@
                                                 "attributeFields": [
                                                     "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.7.config.attributeFields.0.json"
                                                 ],
+                                                "className": "no-media optional",
                                                 "label": "Bio",
                                                 "message": "add a short bio",
                                                 "lines": 3,
-                                                "mandatory": false,
-                                                "showAudios": true,
-                                                "showImages": true,
-                                                "showDocuments": true,
-                                                "showVideos": true,
-                                                "className": "no-media optional",
                                                 "maxChars": 0,
+                                                "mandatory": false,
+                                                "showToolbars": true,
+                                                "showAudios": true,
+                                                "showVideos": true,
+                                                "showDocuments": true,
+                                                "showImages": true,
                                                 "showExpandInput": true,
                                                 "toolbarPosition": "bottom",
                                                 "textFormatScript": "",
-                                                "onRenderModuleFn": ""
+                                                "onRenderModuleFn": "",
+                                                "mediaIconTint": "rgb(100, 149, 237)"
                                             }
                                         },
                                         {
@@ -9217,13 +9235,14 @@
                                                     "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
-                                                "label": "Registered status?",
                                                 "showLabel": true,
+                                                "label": "Registered status?",
                                                 "presentationStyle": "radio",
                                                 "presentationRadioTrueLabel": "Yes",
                                                 "presentationRadioFalseLabel": "No",
                                                 "presentationImagesTrueImage": [],
-                                                "presentationImagesFalseImage": []
+                                                "presentationImagesFalseImage": [],
+                                                "onRenderModuleFn": "module.getElement().setStyle('display','none');"
                                             }
                                         },
                                         {
