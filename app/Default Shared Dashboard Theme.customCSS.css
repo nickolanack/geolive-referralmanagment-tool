@@ -3057,7 +3057,13 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {}
     margin-top: 15px;
     margin-bottom: 15px;
     border-radius: 2px;
+    border: 1px solid transparent;
     
+}
+
+.uitext-container.no-text.required.invalid, .boolean-field.checkbox-style.required.invalid {
+    border: 1px solid #edc84c;
+    border-radius: 4px;
 }
 
 .uitext-container.no-text.required:before {
