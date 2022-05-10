@@ -18,7 +18,9 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
         // if (GetClient()->isAdmin()){
         //     return true;
         // }
-
+        if(is_string($item)){
+            $item=intval($item);
+        }
         if(is_numeric($item)){
             $project=$this->getPlugin()->listProjectsMetadata(array('id' => $item))[0];
         }
