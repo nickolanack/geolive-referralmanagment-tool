@@ -122,7 +122,7 @@ class ListItemCache implements \core\EventListener {
 		}
 
 		if($this->debug){
-			die(json_encode($projects, JSON_PRETTY_PRINT));
+			error_log(json_encode($projects, JSON_PRETTY_PRINT));
 		}
 
 		Broadcast('cacheprojects', 'info', array(
