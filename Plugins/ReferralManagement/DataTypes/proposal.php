@@ -25,7 +25,7 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
             $item=$this->getPlugin()->listProjectsMetadata(array('id' => $item))[0];
         }
 
-        if(!is_array($item)){
+        if(!is_object($item)){
             throw new \Exception('Expected array item metadata: '.gettype($item));
         }
 
