@@ -7,6 +7,8 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
         'extend'
     );
 
+    protected $onlyAuthClient=false;
+
     protected static $filter;
 
     /**
