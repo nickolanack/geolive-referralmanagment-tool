@@ -27,7 +27,7 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
             throw new \Exception('Expected array item metadata');
         }
 
-        $filter=$this->getFilter()
+        $filter=$this->getFilter();
         return $filter($item, $userId);
 
     }
