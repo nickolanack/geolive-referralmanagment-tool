@@ -251,7 +251,7 @@ GetWidget('tableFieldLayoutForm')->display($targetInstance);
 GetWidget('menuLayoutForm')->display($targetInstance);
 GetWidget('menuFieldLayoutForm')->display($targetInstance);
 GetWidget('singleProjectSecurityDetail')->display($targetInstance);
-
+GetWidget('genericLabel')->display($targetInstance);
 
 
 GetWidget('defaultPostDetail')->display($targetInstance);
