@@ -40,5 +40,7 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
         if(!self::$filter){
             self::$filter=GetPlugin('ReferralManagement')->shouldShowProjectFilter();
         }
+
+        return self::$filter;
     }
 }
