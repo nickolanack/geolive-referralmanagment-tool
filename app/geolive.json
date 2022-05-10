@@ -26251,5 +26251,20 @@
             "contentTemplate": "module-html-SecurityContent-text.contentTemplate.html",
             "readAccess": "public"
         }
+    },
+    "widget.471": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "",
+            "target": "none",
+            "templateName": "{target}",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "useRemote": ""
+        }
     }
 }
