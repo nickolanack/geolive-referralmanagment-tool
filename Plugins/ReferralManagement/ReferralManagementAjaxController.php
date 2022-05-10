@@ -55,11 +55,24 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			 }
 		});
 
-		$devices=[];
+		$display=array(
+			"Item Creator"=>"Item Creator",
+			"Proponent"=>"Proponents",
+			"Team Member"=>"Team Members",
+			"Community Manager"=>"Community Managers"
+		);
+
+		$groups=array();
+		foreach($display as $key=>$label){
+			if(isset($list[$key])){
+				$groups[$label]=$list[$key];
+			}
+		}
+
 
 
 		$response = array(
-			'groups'=>$list
+			'groups'=>$groups
 		);
 
 		return $response;

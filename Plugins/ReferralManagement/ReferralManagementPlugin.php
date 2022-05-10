@@ -1010,7 +1010,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 			if (in_array(strtolower($userMetadata['community']), $nationsInvolved)) {
 				//error_log("Your community is involved ".$item['id']);
-				$item->visibleBecuase = "Same community is involved and ".$minAccessLevel;
+				$item->visibleBecuase = "Community Manager";
 				$this->lastAuthReason=$item->visibleBecuase;
 				return true;
 			}
