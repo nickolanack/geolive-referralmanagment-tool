@@ -5825,7 +5825,9 @@ button.form-btn.primary-btn.hide {
     display: none;
 }
     
-
+[data-view="singleProjectSecurityDetail"] .user-item ul.user-roles{
+    display:none;
+}
     
     
     
