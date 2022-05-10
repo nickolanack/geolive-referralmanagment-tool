@@ -4,8 +4,8 @@
         "loadAsync": false,
         "identifier": "",
         "className": "",
-        "fieldLabelScript": "return '<h2>'+item.getLabel()+'<\/h2>';",
+        "fieldLabelScript": "return '';",
         "fieldValueScript": "return \"\";",
-        "formatElementScript": ""
+        "formatElementScript": "labelEl.innerHTML='<h2>'+item.getLabel()+'<\/h2>';"
     }
 }
