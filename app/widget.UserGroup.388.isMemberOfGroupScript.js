@@ -1,1 +1,1 @@
-return GetPlugin('ReferralManagement')->isUserInGroup('proponent');
+return GetPlugin('ReferralManagement')->isUserInGroup('proponent', $userid);

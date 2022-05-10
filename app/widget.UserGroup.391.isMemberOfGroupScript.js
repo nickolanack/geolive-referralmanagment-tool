@@ -1,1 +1,1 @@
-return GetPlugin('ReferralManagement')->isUserInGroup('tribal-council');
+return GetPlugin('ReferralManagement')->isUserInGroup('tribal-council', $userid);
