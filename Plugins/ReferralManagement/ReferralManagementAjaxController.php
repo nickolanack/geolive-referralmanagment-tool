@@ -56,10 +56,10 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		});
 
 		$display=array(
-			"Item Creator"=>"Item Creator",
+			"Item creator"=>"Item Creator",
 			"Proponent"=>"Proponents",
-			"Team Member"=>"Team Members",
-			"Community Manager"=>"Community Managers"
+			"Team member"=>"Team Members",
+			"Community manager"=>"Community Managers"
 		);
 
 		$groups=array();
