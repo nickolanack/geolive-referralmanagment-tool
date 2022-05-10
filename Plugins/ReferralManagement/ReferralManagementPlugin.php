@@ -962,6 +962,10 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 					return true;
 				}
 
+				if(is_array($item->attributes)){
+					$item->attributes=(object)$item->attributes;
+				}
+
 				if (in_array($userId, $item->attributes->teamMemberIds)) {
 					$item->visibleBecuase = "Team member";
 					$this->lastAuthReason=$item->visibleBecuase;
