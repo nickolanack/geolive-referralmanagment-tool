@@ -197,7 +197,8 @@ class Project {
 
 		$list=array();
 
-		array_walk($this->getPlugin()->getUserList(), function($u) use($project, &$list, $plugin){
+		$users=$this->getPlugin()->getUserList();
+		array_walk($users, function($u) use($project, &$list, $plugin){
 
 
 
