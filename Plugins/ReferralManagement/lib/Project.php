@@ -197,7 +197,7 @@ class Project {
 
 		$list=array();
 
-		array_walk($this->getPlugin()->getUserList(), function($u) use($json, $project, &$list, $plugin){
+		array_walk($this->getPlugin()->getUserList(), function($u) use($project, &$list, $plugin){
 
 
 
