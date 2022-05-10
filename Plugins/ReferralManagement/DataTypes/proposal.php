@@ -19,7 +19,7 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
         //     return true;
         // }
 
-        if(is_numeric($item){
+        if(is_numeric($item)){
             $project=$this->getPlugin()->listProjectsMetadata(array('id' => $item))[0];
         }
 
