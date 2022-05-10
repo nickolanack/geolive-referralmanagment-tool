@@ -10,10 +10,9 @@ if(team.length){
 console.log('security list');
 
 var managers=valueEl.appendChild(new Element('span', {'html':'', 'class':'managers'}));
-ProjectTeam.CurrentTeam(function(team){
+var team=ProjectTeam.CurrentTeam();
     
     managers.html=team.getUsers().filter(function(u){
         
     }).length;
     
-}).getUsers()
