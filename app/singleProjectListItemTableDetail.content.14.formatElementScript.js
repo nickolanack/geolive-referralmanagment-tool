@@ -13,6 +13,6 @@ var managers=valueEl.appendChild(new Element('span', {'html':'', 'class':'manage
 var team=ProjectTeam.CurrentTeam();
     
     managers.innerHTML=team.getUsers().filter(function(u){
-        return u.isTeamManager()&&users.indexOf(u)==-1
+        return u.isTeamManager()&&users.map(function(u){return u.getId()}).indexOf(u.getId())==-1;
     }).length;
     
