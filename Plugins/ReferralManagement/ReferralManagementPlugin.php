@@ -899,36 +899,71 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		\core\DataStorage::LogQuery("Create Project Filter");
 
 		$clientId = GetClient()->getUserId();
-
 		$minAccessLevel = 'lands-department-manager';
-
-		if (!Auth('memberof', $minAccessLevel, 'group')) {
-
-			return function (&$item) use ($clientId) {
-
-				if ($item->user == $clientId) {
-					$item->visibleBecuase = "You created";
-					return true;
-				}
-
-				if (in_array($clientId, $item->attributes->teamMemberIds)) {
-					$item->visibleBecuase = "You are a team member";
-					return true;
-				}
-
-				return false;
-
-			};
-		}
-
 		$clientMetadata = $this->getUsersMetadata(GetClient()->getUserId());
+		$clientMinAuth=Auth('memberof', $minAccessLevel, 'group');
+
+		// if (!$clientMinAuth)) {
+
+		// 	return function (&$item) use ($clientId) {
+
+		// 		if ($item->user == $clientId) {
+		// 			$item->visibleBecuase = "You created";
+		// 			return true;
+		// 		}
+
+		// 		if (in_array($clientId, $item->attributes->teamMemberIds)) {
+		// 			$item->visibleBecuase = "You are a team member";
+		// 			return true;
+		// 		}
+
+		// 		return false;
+
+		// 	};
+		// }
+
+		
 		//$groupCommunity=$this->communityCollective();
 
 		/**
 		 * all other access must be granted by adding user/community to team, or user created
 		 */
 
-		return function (&$item) use ($clientId, $clientMetadata) {
+		return function (&$item, $userId=-1) use ($clientId, $clientMetadata, $minAccessLevel, $clientMinAuth) {
+
+
+
+
+
+			if($userId==-1||$userId==$clientId){
+
+				//use cached clientMetadata
+
+				$userId=$clientId;
+				$userMetadata=$clientMetadata;
+				$userMinAuth=$clientMinAuth;
+			}else{
+				$userMetadata=$this->getUsersMetadata($userId);
+				$userMinAuth=Auth('memberof', $minAccessLevel, 'group', $userId);
+			}
+
+			if(!$userMinAuth){
+
+				if ($item->user == $userId) {
+					$item->visibleBecuase = "Item creator";
+					return true;
+				}
+
+				if (in_array($userId, $item->attributes->teamMemberIds)) {
+					$item->visibleBecuase = "Team member";
+					return true;
+				}
+
+				return false;
+
+
+			}
+
 
 			$nationsInvolved = $item->attributes->firstNationsInvolved;
 			if (empty($nationsInvolved)) {
@@ -942,19 +977,19 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 				$nationsInvolved[] = $collective;
 			}
 
-			if (in_array(strtolower($clientMetadata['community']), $nationsInvolved)) {
+			if (in_array(strtolower($userMetadata['community']), $nationsInvolved)) {
 				//error_log("Your community is involved ".$item['id']);
-				$item->visibleBecuase = "Your community is involved";
+				$item->visibleBecuase = "Same community is involved";
 				return true;
 			}
 
-			if ($item->user == $clientId) {
-				$item->visibleBecuase = "You created";
+			if ($item->user == $userId) {
+				$item->visibleBecuase = "Item creator";
 				return true;
 			}
 
-			if (in_array($clientId, $item->attributes->teamMemberIds)) {
-				$item->visibleBecuase = "You are a team member";
+			if (in_array($userId, $item->attributes->teamMemberIds)) {
+				$item->visibleBecuase = "Team member";
 				return true;
 			}
 
