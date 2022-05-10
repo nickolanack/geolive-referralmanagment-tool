@@ -986,12 +986,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 				$nationsInvolved[] = $collective;
 			}
 
-			if (in_array(strtolower($userMetadata['community']), $nationsInvolved)) {
-				//error_log("Your community is involved ".$item['id']);
-				$item->visibleBecuase = "Same community is involved";
-				$this->lastAuthReason=$item->visibleBecuase;
-				return true;
-			}
+			
 
 			if ($item->user == $userId) {
 				$item->visibleBecuase = "Item creator";
@@ -1001,6 +996,13 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 			if (in_array($userId, $item->attributes->teamMemberIds)) {
 				$item->visibleBecuase = "Team member";
+				$this->lastAuthReason=$item->visibleBecuase;
+				return true;
+			}
+
+			if (in_array(strtolower($userMetadata['community']), $nationsInvolved)) {
+				//error_log("Your community is involved ".$item['id']);
+				$item->visibleBecuase = "Same community is involved and ".$minAccessLevel;
 				$this->lastAuthReason=$item->visibleBecuase;
 				return true;
 			}
