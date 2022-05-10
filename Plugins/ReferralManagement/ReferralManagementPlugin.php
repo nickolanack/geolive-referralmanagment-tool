@@ -25,6 +25,9 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	protected $filterRemovedProjects = array();
 	protected $filterRemovedUsers = array();
 
+
+	protected $lastAuthReason='';
+
 	use \core\extensions\widget\WidgetProviderTrait;
 	use \core\extensions\module\ModuleProviderTrait;
 	use \core\AjaxControllerProviderTrait;
@@ -894,6 +897,10 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		};
 	}
 
+	public function getLastAuthReason(){
+		return $this->lastAuthReason;
+	}
+
 	public function shouldShowProjectFilter() {
 
 		\core\DataStorage::LogQuery("Create Project Filter");
@@ -951,11 +958,13 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 				if ($item->user == $userId) {
 					$item->visibleBecuase = "Item creator";
+					$this->lastAuthReason=$item->visibleBecuase;
 					return true;
 				}
 
 				if (in_array($userId, $item->attributes->teamMemberIds)) {
 					$item->visibleBecuase = "Team member";
+					$this->lastAuthReason=$item->visibleBecuase;
 					return true;
 				}
 
@@ -980,16 +989,19 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 			if (in_array(strtolower($userMetadata['community']), $nationsInvolved)) {
 				//error_log("Your community is involved ".$item['id']);
 				$item->visibleBecuase = "Same community is involved";
+				$this->lastAuthReason=$item->visibleBecuase;
 				return true;
 			}
 
 			if ($item->user == $userId) {
 				$item->visibleBecuase = "Item creator";
+				$this->lastAuthReason=$item->visibleBecuase;
 				return true;
 			}
 
 			if (in_array($userId, $item->attributes->teamMemberIds)) {
 				$item->visibleBecuase = "Team member";
+				$this->lastAuthReason=$item->visibleBecuase;
 				return true;
 			}
 

@@ -31,8 +31,11 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 
 		$project=$this->getPlugin()->listProjectsMetadata(array('id' => $json->project))[0];
+		$plugin=$this->getPlugin();
 
-		$users=array_filter($this->getPlugin()->getUserList(), function($u) use($json, $project){
+		$list=array();
+
+		array_walk($this->getPlugin()->getUserList(), function($u) use($json, $project, &$list, $plugin){
 
 
 			$this->info('auth', 'check project read access: '.$u->name, array(
@@ -40,15 +43,18 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 				'project'=>$json->project
 			));
 
-			return Auth('read', $project, 'ReferralManagement.proposal', $u->id);
+
+
+			 if(Auth('read', $project, 'ReferralManagement.proposal', $u->id)){
+			 	$list[$plugin->getLastAuthReason()]=$u;
+			 }
 		});
 
 		$devices=[];
 
 
 		$response = array(
-			'users' => array_values($users),
-			'devices'=>array_values($devices)
+			'groups'=>$list
 		);
 
 		return $response;
