@@ -7,7 +7,7 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
         'extend'
     );
 
-    protected static $fitler;
+    protected static $filter;
 
     /**
      * @SuppressWarnings("unused")
