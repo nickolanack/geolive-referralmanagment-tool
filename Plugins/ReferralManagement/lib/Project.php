@@ -202,7 +202,7 @@ class Project {
 
 
 
-			 if(Auth('read', $project, 'ReferralManagement.proposal', $u->id)){
+			 if(Auth('read', (object)$project, 'ReferralManagement.proposal', $u->id)){
 
 			 	if(!isset($list[$plugin->getLastAuthReason()])){
 			 		$list[$plugin->getLastAuthReason()]=array();
