@@ -224,7 +224,7 @@ class Project {
 			if(isset($list[$key])){
 				$groups[$label]=array_map(function($u){
 					return $u->id;
-				}, $list[$key])
+				}, $list[$key]);
 			}
 		}
 
