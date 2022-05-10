@@ -22,7 +22,7 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
             $item=intval($item);
         }
         if(is_numeric($item)){
-            $project=$this->getPlugin()->listProjectsMetadata(array('id' => $item))[0];
+            $item=$this->getPlugin()->listProjectsMetadata(array('id' => $item))[0];
         }
 
         if(!is_array($item)){
