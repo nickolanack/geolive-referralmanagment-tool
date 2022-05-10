@@ -988,6 +988,9 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 			}
 
+			if(is_array($item->attributes)){
+					$item->attributes=(object)$item->attributes;
+			}
 
 			$nationsInvolved = $item->attributes->firstNationsInvolved;
 			if (empty($nationsInvolved)) {
@@ -1007,10 +1010,6 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 				$item->visibleBecuase = "Item creator";
 				$this->lastAuthReason=$item->visibleBecuase;
 				return true;
-			}
-
-			if(is_array($item->attributes)){
-					$item->attributes=(object)$item->attributes;
 			}
 
 			if (in_array($userId, $item->attributes->teamMemberIds)) {

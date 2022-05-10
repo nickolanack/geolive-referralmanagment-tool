@@ -222,7 +222,9 @@ class Project {
 		$groups=array();
 		foreach($display as $key=>$label){
 			if(isset($list[$key])){
-				$groups[$label]=count($list[$key]);
+				$groups[$label]=array_map(function($u){
+					return $u->id;
+				}, $list[$key])
 			}
 		}
 
