@@ -6,7 +6,7 @@ class ListItemCache implements \core\EventListener {
 
 	use \core\EventListenerTrait;
 
-	protected debug=false;
+	protected $debug=false;
 	public function setDebug($bool){
 		$this->debug=!!$bool;
 	}
