@@ -28,6 +28,12 @@ class Project {
 		return $this->formatProjectResult($this->record);
 	}
 
+
+
+	/**
+	 * Project result should have no data that reflects the state of the current user
+	 */
+
 	protected function formatProjectResult($result) {
 
 		$proposal = get_object_vars($result);
@@ -54,7 +60,12 @@ class Project {
 
 		$proposal['link'] = HtmlDocument()->website() . '/Projects/Project-' . $proposal['id'] . '/Overview';
 
-		$proposal['discussion'] = GetPlugin('Discussions')->getDiscussionForItem($proposal['id'], 'ReferralManagement.proposal');
+		$proposal['discussion'] = GetPlugin('Discussions')->getDiscussionForItem($proposal['id'], 'ReferralManagement.proposal','discussion');
+
+		unset($proposal['discussion']->read);
+		unset($proposal['discussion']->new);
+
+		
 
 		GetPlugin('Attributes');
 

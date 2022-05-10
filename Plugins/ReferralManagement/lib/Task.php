@@ -36,6 +36,8 @@ class Task{
 
 		$task['discussion']=GetPlugin('Discussions')->getDiscussionForItem($task['id'],'Tasks.task');
 
+		unset($task['discussion']->read);
+		unset($task['discussion']->new); 
 
 		$starred = $task['attributes']['starUsers'];
 		if(empty($starred)){

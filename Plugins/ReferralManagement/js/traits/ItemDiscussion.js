@@ -14,11 +14,15 @@ var ItemDiscussion = (function() {
 			return parseInt(me.data.discussion.posts);
 		},
 		numberOfNewPosts: function() {
-			var me = this;
-			if (!(me.data && me.data.discussion)) {
-				return 0;
-			}
-			return parseInt(me.data.discussion.new);
+
+			console.error('this cannot be included in the data due to caching constraints');
+			return 0;
+
+			// var me = this;
+			// if (!(me.data && me.data.discussion)) {
+			// 	return 0;
+			// }
+			// return parseInt(me.data.discussion.new);
 		},
 
 		getDiscussionSubscription: function() {
