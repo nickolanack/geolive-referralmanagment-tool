@@ -15363,16 +15363,16 @@
                             "UsersProjectSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 358,
-                            "y": 257
+                            "x": 368,
+                            "y": 267
                         },
                         "children": [
                             "UsersProjectSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 318,
-                                    "y": 483
+                                    "x": 328,
+                                    "y": 496
                                 }
                             }
                         ],
@@ -15390,6 +15390,7 @@
                                             "type": "UIView",
                                             "config": {
                                                 "className": "form-embedded-item",
+                                                "identifier": "",
                                                 "viewType": "view",
                                                 "namedView": "singleProjectListItemDetail",
                                                 "shouldRender": true,
@@ -15399,11 +15400,13 @@
                                                 "formOptions": "{}",
                                                 "showDeleteButton": false,
                                                 "deleteItemScript": "defaultBehaviorFn()",
+                                                "initModuleScript": "",
                                                 "formatModuleScript": "",
                                                 "resolveItemScript": "return item.getProject();",
                                                 "filterModulesScript": "return list",
                                                 "itemButtonsScript": "return [];",
-                                                "insertAtTop": false
+                                                "insertAtTop": false,
+                                                "targetName": ""
                                             }
                                         },
                                         {
@@ -15411,6 +15414,7 @@
                                             "config": {
                                                 "className": "",
                                                 "label": "Receives notifications",
+                                                "identifier": "boolean-field",
                                                 "mandatory": false,
                                                 "getValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.2.config.getValueScript.js",
                                                 "updateValueScript": "object.value=value",
@@ -15424,6 +15428,7 @@
                                             "config": {
                                                 "className": "",
                                                 "label": "Can add team members",
+                                                "identifier": "boolean-field",
                                                 "mandatory": false,
                                                 "getValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.3.config.getValueScript.js",
                                                 "updateValueScript": "object.value=value",
@@ -15437,6 +15442,7 @@
                                             "config": {
                                                 "className": "",
                                                 "label": "Can Add Tasks",
+                                                "identifier": "boolean-field",
                                                 "mandatory": false,
                                                 "getValueScript": "return item.canAddTasks();",
                                                 "updateValueScript": "object.value=value",
@@ -15450,6 +15456,7 @@
                                             "config": {
                                                 "className": "",
                                                 "label": "Can Assign Tasks",
+                                                "identifier": "boolean-field",
                                                 "mandatory": false,
                                                 "getValueScript": "return item.canAssignTasks();",
                                                 "updateValueScript": "object.value=value",
@@ -15463,6 +15470,7 @@
                                             "config": {
                                                 "className": "",
                                                 "label": "Can Moderate Project Team",
+                                                "identifier": "boolean-field",
                                                 "mandatory": false,
                                                 "getValueScript": "UsersProjectSettings.metadata.children.1.builderMetadata.positions.content.modules.6.config.getValueScript.js",
                                                 "updateValueScript": "object.value=value",

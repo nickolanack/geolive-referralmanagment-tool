@@ -2,6 +2,7 @@
     "type": "UIView",
     "config": {
         "className": "form-embedded-item",
+        "identifier": "",
         "viewType": "view",
         "namedView": "singleUserListItemDetail",
         "shouldRender": true,
@@ -11,10 +12,12 @@
         "formOptions": "{}",
         "showDeleteButton": false,
         "deleteItemScript": "defaultBehaviorFn()",
+        "initModuleScript": "",
         "formatModuleScript": "",
         "resolveItemScript": "return item",
         "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",
-        "insertAtTop": false
+        "insertAtTop": false,
+        "targetName": ""
     }
 }
