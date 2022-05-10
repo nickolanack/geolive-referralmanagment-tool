@@ -28,6 +28,8 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 	protected $lastAuthReason='';
 
+	private $listItemCache=null;
+
 	use \core\extensions\widget\WidgetProviderTrait;
 	use \core\extensions\module\ModuleProviderTrait;
 	use \core\AjaxControllerProviderTrait;
@@ -231,9 +233,18 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		include_once __DIR__ . '/lib/Notifications.php';
 		return (new \ReferralManagement\Notifications());
 	}
+
+
+
 	public function cache() {
+
+		if($this->listItemCache){
+			return $this->listItemCache;
+		}
+
 		include_once __DIR__ . '/lib/ListItemCache.php';
-		return (new \ReferralManagement\ListItemCache());
+		$this->listItemCache = (new \ReferralManagement\ListItemCache());
+		return $this->listItemCache;
 	}
 
 	protected function taskUploadlayer() {
