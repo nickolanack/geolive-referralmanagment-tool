@@ -46,7 +46,12 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 
 			 if(Auth('read', $project, 'ReferralManagement.proposal', $u->id)){
-			 	$list[$plugin->getLastAuthReason()]=$u;
+
+			 	if(!isset($list[$plugin->getLastAuthReason()])){
+			 		$list[$plugin->getLastAuthReason()]=array();
+			 	}
+
+			 	$list[$plugin->getLastAuthReason()][]=$u;
 			 }
 		});
 
