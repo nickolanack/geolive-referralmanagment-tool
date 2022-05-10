@@ -19,6 +19,10 @@ var DashboardUser = (function() {
 			}
 			return me.options.metadata.name;
 		},
+
+		getPhone: function() {
+			return '';
+		},
 		setOnline: function(online) {
 			var me = this;
 			var changed = online !== me._online;

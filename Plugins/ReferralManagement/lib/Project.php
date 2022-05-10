@@ -8,7 +8,7 @@ class Project {
 
 	public function fromId($projectId) {
 
-		$database = GetPlugin('ReferralManagement')->getDatabase();
+		$database = $this->getPlugin()->getDatabase();
 		$result = $database->getProposal($projectId);
 		if (!$result) {
 			throw new \Exception('No record for proposal: ' . $projectId);
@@ -17,6 +17,10 @@ class Project {
 		//return $this->formatProjectResult($result[0]);
 		return $this;
 
+	}
+
+	protected function getPlugin(){
+		return GetPlugin('ReferralManagement');
 	}
 
 	public function fromRecord($record) {
@@ -50,7 +54,7 @@ class Project {
 			unset($proposal['userdetails']['lastLogin']);
 		}
 
-		$proposal['community'] = GetPlugin('ReferralManagement')->communityCollective();
+		$proposal['community'] = $this->getPlugin()->communityCollective();
 
 		$proposal['tmz'] = date_default_timezone_get();
 		$proposal['createdDateTimestamp'] = strtotime($proposal['createdDate']);
@@ -65,7 +69,7 @@ class Project {
 		unset($proposal['discussion']->read);
 		unset($proposal['discussion']->new);
 
-		
+
 
 		GetPlugin('Attributes');
 
@@ -82,7 +86,7 @@ class Project {
 			$attributes['teamMembers'] = array();
 		}
 
-		$teamMembers = GetPlugin('ReferralManagement')->getTeamMembersForProject($result, $attributes['teamMembers']);
+		$teamMembers = $this->getPlugin()->getTeamMembersForProject($result, $attributes['teamMembers']);
 
 		$attributes['teamMemberIds'] = array_map(function ($item) {
 			return $item->id;
@@ -119,12 +123,17 @@ class Project {
 			$computed['urgency'] = 'medium';
 		}
 
+		
+
 		$proposal['computed'] = $computed;
 		$proposal['tasks'] = array_map(function ($result) {
 
 			return (new \ReferralManagement\Task())->fromRecord($result)->toArray();
 
 		}, GetPlugin('Tasks')->getItemsTasks($proposal['id'], "ReferralManagement.proposal"));
+
+
+		$proposal['access']=$this->getAccessStats($proposal);
 
 		return $proposal;
 
@@ -133,7 +142,7 @@ class Project {
 	public function createFromJson($json) {
 
 		/* @var $database ReferralManagementDatabase */
-		$database = GetPlugin('ReferralManagement')->getDatabase();
+		$database = $this->getPlugin()->getDatabase();
 
 		if (($proposalId = (int) $database->createProposal(array(
 			'user' => GetClient()->getUserId(),
@@ -143,7 +152,7 @@ class Project {
 			'status' => 'active',
 		)))) {
 
-			GetPlugin('ReferralManagement')->notifier()->onCreateProposal($proposalId, $json);
+			$this->getPlugin()->notifier()->onCreateProposal($proposalId, $json);
 
 			GetPlugin('Attributes');
 			if (key_exists('attributes', $json)) {
@@ -155,23 +164,23 @@ class Project {
 			if (key_exists('team', $json)) {
 
 				foreach ($json->team as $uid) {
-					GetPlugin('ReferralManagement')->addTeamMemberToProject($uid, $proposalId);
+					$this->getPlugin()->addTeamMemberToProject($uid, $proposalId);
 				}
 
 			}
 
 			Broadcast('proposals', 'update', array(
 				'user' => GetClient()->getUserId(),
-				'created' => array(GetPlugin('ReferralManagement')->getProposalData($proposalId)),
+				'created' => array($this->getPlugin()->getProposalData($proposalId)),
 			));
 			Emit('onCreateProposal', array('id' => $proposalId));
 
 			$config = GetWidget('dashboardConfig');
 			if ($config->getParameter("autoCreateDefaultTasks", false)) {
-				GetPlugin('ReferralManagement')->createDefaultProposalTasks($proposalId);
+				$this->getPlugin()->createDefaultProposalTasks($proposalId);
 			}
 
-			GetPlugin('ReferralManagement')->getVersionControl()->queueRevision(array('id' => $proposalId));
+			$this->getPlugin()->getVersionControl()->queueRevision(array('id' => $proposalId));
 
 			return $this->fromId($proposalId);
 
@@ -181,13 +190,53 @@ class Project {
 
 	}
 
+
+	protected function getAccessStats($project){
+
+		$plugin=$this->getPlugin();
+
+		$list=array();
+
+		array_walk($this->getPlugin()->getUserList(), function($u) use($json, $project, &$list, $plugin){
+
+
+
+			 if(Auth('read', $project, 'ReferralManagement.proposal', $u->id)){
+
+			 	if(!isset($list[$plugin->getLastAuthReason()])){
+			 		$list[$plugin->getLastAuthReason()]=array();
+			 	}
+
+			 	$list[$plugin->getLastAuthReason()][]=$u;
+			 }
+		});
+
+		$display=array(
+			"Item creator"=>"Item Creator",
+			"Proponent"=>"Proponents",
+			"Team member"=>"Team Members",
+			"Community manager"=>"Community Managers"
+		);
+
+		$groups=array();
+		foreach($display as $key=>$label){
+			if(isset($list[$key])){
+				$groups[$label]=count($list[$key]);
+			}
+		}
+
+		return $groups;
+
+	}
+
+
 	public function setStatus($status) {
 
 		if (!in_array($status, array('active', 'archived'))) {
 			throw new \Exception('Invalid status: ' . $status);
 		}
 
-		$database = GetPlugin('ReferralManagement')->getDatabase();
+		$database = $this->getPlugin()->getDatabase();
 
 		$data=array(
 			'id' => (int) $this->record->id,
@@ -195,7 +244,7 @@ class Project {
 		);
 		$database->updateProposal($data);
 
-		GetPlugin('ReferralManagement')->notifier()->onUpdateProposalStatus((object)$data);
+		$this->getPlugin()->notifier()->onUpdateProposalStatus((object)$data);
 
 	}
 
@@ -208,7 +257,7 @@ class Project {
 		$proposalId = (int) $this->record->id;
 
 		/* @var $database ReferralManagementDatabase */
-		$database = GetPlugin('ReferralManagement')->getDatabase();
+		$database = $this->getPlugin()->getDatabase();
 
 		$database->updateProposal(array(
 			'id' => $proposalId,
@@ -216,7 +265,7 @@ class Project {
 		));
 
 		Emit('onUpdateProposal', array('id' => $proposalId));
-		GetPlugin('ReferralManagement')->getVersionControl()->queueRevision(array('id' => $proposalId));
+		$this->getPlugin()->getVersionControl()->queueRevision(array('id' => $proposalId));
 
 		return $this->fromId($proposalId);
 		// $this->record->metadata=json_encode($metadata);
@@ -232,7 +281,7 @@ class Project {
 
 
 		/* @var $database ReferralManagementDatabase */
-		$database = GetPlugin('ReferralManagement')->getDatabase();
+		$database = $this->getPlugin()->getDatabase();
 
 		$database->updateProposal(array(
 			'id' => $proposalId,
@@ -254,9 +303,9 @@ class Project {
 
 		$this->getDiff($previousData, $updatedData);
 
-		GetPlugin('ReferralManagement')->notifier()->onUpdateProposal($json);
+		$this->getPlugin()->notifier()->onUpdateProposal($json);
 		Emit('onUpdateProposal', array('id' => $proposalId));
-		GetPlugin('ReferralManagement')->getVersionControl()->queueRevision(array('id' => $proposalId));
+		$this->getPlugin()->getVersionControl()->queueRevision(array('id' => $proposalId));
 
 		return $this;
 
