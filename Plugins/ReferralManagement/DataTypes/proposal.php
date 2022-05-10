@@ -7,6 +7,8 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
         'extend'
     );
 
+    protected static $fitler;
+
     /**
      * @SuppressWarnings("unused")
      */
@@ -17,14 +19,24 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
         //     return true;
         // }
 
-
-
-      
-        if(Auth('memberof', 'lands-department', 'group',  $userId)){
-            return true;
+        if(is_numeric($item){
+            $project=$this->getPlugin()->listProjectsMetadata(array('id' => $item))[0];
         }
 
-        
-        return false;
+        if(!is_array($item)){
+            throw new \Exception('Expected array item metadata');
+        }
+
+        $filter=$this->getFilter()
+        return $filter($item, $userId);
+
+    }
+
+
+
+    protected function getFilter(){
+        if(!self::$filter){
+            self::$filter=GetPlugin('ReferralManagement')->shouldShowProjectFilter();
+        }
     }
 }

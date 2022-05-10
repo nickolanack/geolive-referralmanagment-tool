@@ -26,10 +26,13 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 	protected function listAccess($json){
 
 		if (!Auth('read', $json->project, 'ReferralManagement.proposal')) {
-			
+			return $this->setError('No access');
 		}
 
-		$users=array_filter($this->getPlugin()->getUserList(), function($u) use($json){
+
+		$project=$this->getPlugin()->listProjectsMetadata(array('id' => $json->project))[0];
+
+		$users=array_filter($this->getPlugin()->getUserList(), function($u) use($json, $project){
 
 
 			$this->info('auth', 'check project read access: '.$u->name, array(
@@ -37,7 +40,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 				'project'=>$json->project
 			));
 
-			return Auth('read', $json->project, 'ReferralManagement.proposal', $u->id);
+			return Auth('read', $project, 'ReferralManagement.proposal', $u->id);
 		});
 
 		$devices=[];
