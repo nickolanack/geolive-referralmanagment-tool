@@ -6,6 +6,12 @@ class ListItemCache implements \core\EventListener {
 
 	use \core\EventListenerTrait;
 
+	protected debug=false;
+	public function setDebug($bool){
+		$this->debug=!!$bool;
+	}
+
+
 	public function needsProjectListUpdate() {
 		(new \core\LongTaskProgress())
 			->throttle('onTriggerUpdateProjectList', array(), array('interval' => 30));
@@ -114,6 +120,11 @@ class ListItemCache implements \core\EventListener {
 			}
 
 		}
+
+		if($this->debug){
+			echo json_encode($projects, JSON_PRETTY_PRINT);
+		}
+
 		Broadcast('cacheprojects', 'info', array(
 			'filter' => $filter,
 			'cacheName' => $cacheName,
