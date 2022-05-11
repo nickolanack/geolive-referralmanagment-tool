@@ -873,10 +873,10 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 			return function ($userMetadata) use ($clientMetadata, $groupCommunity) {
 
-				if ($clientMetadata['community'] === $groupCommunity) {
-					$userMetadata->visibleBecuase = "your " . $groupCommunity;
-					return true;
-				}
+				// if ($clientMetadata['community'] === $groupCommunity) {
+				// 	$userMetadata->visibleBecuase = "your " . $groupCommunity;
+				// 	return true;
+				// }
 
 				if ( /*$userMetadata->community === $groupCommunity ||*/$userMetadata->community === $clientMetadata['community']) {
 					$userMetadata->visibleBecuase = "same community";
