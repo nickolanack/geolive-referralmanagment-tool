@@ -5781,7 +5781,7 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "section-padding",
-                                    "identifier": "",
+                                    "identifier": "sharing-datasets",
                                     "viewType": "view",
                                     "namedView": "datasetsView",
                                     "shouldRender": true,
@@ -5793,7 +5793,7 @@
                                     "deleteItemScript": "defaultBehaviorFn()",
                                     "initModuleScript": "",
                                     "formatModuleScript": "",
-                                    "resolveItemScript": "return item",
+                                    "resolveItemScript": "Main Dashboard Detail.metadata.positions.content.modules.6.config.resolveItemScript.js",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
