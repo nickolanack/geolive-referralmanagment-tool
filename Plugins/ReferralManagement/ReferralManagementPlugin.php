@@ -927,32 +927,6 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		$clientMetadata = $this->getUsersMetadata(GetClient()->getUserId());
 		$clientMinAuth=Auth('memberof', $minAccessLevel, 'group');
 
-		// if (!$clientMinAuth)) {
-
-		// 	return function (&$item) use ($clientId) {
-
-		// 		if ($item->user == $clientId) {
-		// 			$item->visibleBecuase = "You created";
-		// 			return true;
-		// 		}
-
-		// 		if (in_array($clientId, $item->attributes->teamMemberIds)) {
-		// 			$item->visibleBecuase = "You are a team member";
-		// 			return true;
-		// 		}
-
-		// 		return false;
-
-		// 	};
-		// }
-
-		
-		//$groupCommunity=$this->communityCollective();
-
-		/**
-		 * all other access must be granted by adding user/community to team, or user created
-		 */
-		
 		$collectiveIsParent=false;
 		$itemsFollowCommunity=true; //if a user leaves a community the item stays with the community
 
@@ -991,6 +965,24 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 					$this->lastAuthReason=$item->visibleBecuase;
 					return true;
 				}
+
+
+				if (in_array(strtolower($userMetadata['community']), $nationsInvolved)||(
+			
+					($itemsFollowCommunity&&strtolower($userMetadata['community'])==strtolower($item->community))||
+					((!$itemsFollowCommunity)&&strtolower($userMetadata['community'])==strtolower($item->userCommunity))
+
+				)) {
+
+					if($item->access=='public'){
+
+						//error_log("Your community is involved ".$item['id']);
+						$item->visibleBecuase = "Shared public item";
+						$this->lastAuthReason=$item->visibleBecuase;
+						return true;
+					}
+				}
+
 
 				return false;
 
