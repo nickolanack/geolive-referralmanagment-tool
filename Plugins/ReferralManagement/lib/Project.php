@@ -133,8 +133,18 @@ class Project {
 		}, GetPlugin('Tasks')->getItemsTasks($proposal['id'], "ReferralManagement.proposal"));
 
 
-		$proposal['access']=$this->getAccessStats($proposal);
 
+
+
+		$links=GetPlugin('Links')->listDataCodesForItem(($proposal['id'], "ReferralManagement.proposal"));
+		$links=array_map(function($link){
+			unset($link['token']);
+			return $link;
+		}, $links);
+		$proposal['links']=$links;
+
+
+		
 		return $proposal;
 
 	}
@@ -189,49 +199,6 @@ class Project {
 		throw new \Exception('Failed to create proposal');
 
 	}
-
-
-	protected function getAccessStats($project){
-
-		$plugin=$this->getPlugin();
-
-		$list=array();
-
-		$users=$this->getPlugin()->getUserList();
-		array_walk($users, function($u) use($project, &$list, $plugin){
-
-
-
-			 if(Auth('read', (object)$project, 'ReferralManagement.proposal', $u->id)){
-
-			 	if(!isset($list[$plugin->getLastAuthReason()])){
-			 		$list[$plugin->getLastAuthReason()]=array();
-			 	}
-
-			 	$list[$plugin->getLastAuthReason()][]=$u;
-			 }
-		});
-
-		$display=array(
-			"Item creator"=>"Item Creator",
-			"Proponent"=>"Proponents",
-			"Team member"=>"Team Members",
-			"Community manager"=>"Community Managers"
-		);
-
-		$groups=array();
-		foreach($display as $key=>$label){
-			if(isset($list[$key])){
-				$groups[$label]=array_map(function($u){
-					return $u->id;
-				}, $list[$key]);
-			}
-		}
-
-		return $groups;
-
-	}
-
 
 	public function setStatus($status) {
 
