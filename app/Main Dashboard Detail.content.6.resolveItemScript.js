@@ -4,17 +4,26 @@ return new ProjectList({
 	                "tags":[
 	                new MockDataTypeItem({
                         name:"Community Vault",
-                        description:"The Datasets that are only visible to you or your community",
+                        description:"These datasets and collections are only visible to your community members. Nobody else has access to them.
+
+
+",
                         icon:null
                     }),
                     new MockDataTypeItem({
-                        name:"Community Vault",
-                        description:"The Datasets that are only visible to you or your community",
+                        name:"Shared",
+                        description:"These are datasets and collections that your community is sharing with other communities and GCT3. This information will be visible and downloadable to members of these other communities.
+
+",
                         icon:null
                     }),
                     new MockDataTypeItem({
-                        name:"Community Vault",
-                        description:"The Datasets that are only visible to you or your community",
+                        name:"Sharing",
+                        description:"These are datasets and collections that have been shared by other communities and GCT3 with your community. You will be able to view and download these files.
+
+
+ 13m 37s
+",
                         icon:null
                     })
 	                
