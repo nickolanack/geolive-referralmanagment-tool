@@ -21,7 +21,7 @@ var viewers=team.getUsers().filter(function(u){
     return u.isTeamManager()&&users.map(function(u){return u.getId()}).indexOf(u.getId())==-1;
 });
 
-if(viewers.length>0)
+if(viewers.length>0){
     valueEl.appendChild(new Element('span', {'html':viewers.length, 'class':'managers'}));
     description.push(links.length==1?'There is 1 manager':'There are '+links.length+' managers');
 }
