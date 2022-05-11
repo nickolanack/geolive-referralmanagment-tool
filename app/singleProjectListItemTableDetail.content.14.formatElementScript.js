@@ -16,3 +16,8 @@ var team=ProjectTeam.CurrentTeam();
         return u.isTeamManager()&&users.map(function(u){return u.getId()}).indexOf(u.getId())==-1;
     }).length;
     
+el.addEvent('click', function(e){
+   e.stop();
+   UIInteraction.navigateToProjectSection(item ,"Security");
+    
+});
