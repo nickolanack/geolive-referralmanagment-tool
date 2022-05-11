@@ -63,7 +63,7 @@ var ConfigItem = (function() {
         })
 
         var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
-        if (!(user.isTeamManager()&&user.getCommunity() === UserGroups.GetCollective())) {
+        if (!(user.isSiteAdmin())) {
             return div;
         }
 
@@ -81,6 +81,12 @@ var ConfigItem = (function() {
 
 
     ConfigItem.CreateEditBtn = function(item, options, callback) {
+
+
+        var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
+        if (!(user.isSiteAdmin())) {
+            return new Element('span');
+        }
 
 
         if (!(item instanceof ConfigItem) && (!options) && item.userAuth) {
