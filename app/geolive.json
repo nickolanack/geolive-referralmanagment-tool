@@ -20,7 +20,7 @@
             "CSSInlineObfuscationEnabled": false,
             "PHPDebugEnabled": true,
             "JSDebugEnabled": false,
-            "CachingEnabled": false,
+            "CachingEnabled": true,
             "PrettyPrintJson": true,
             "JSCacheObfuscationEnabled": false,
             "phase": "production",
@@ -263,7 +263,7 @@
         "name": "Monolog Plugin",
         "instance": "Monolog",
         "parameters": {
-            "enabled": true,
+            "enabled": false,
             "logPath": "{front}\/..\/logs",
             "logToSentry": false
         }
@@ -7157,7 +7157,7 @@
                             {
                                 "type": "InlineHtml",
                                 "config": {
-                                    "className": "",
+                                    "className": "project-title",
                                     "text": "Status",
                                     "template": "html.projectStatus",
                                     "templateVariablesScript": "{}",
@@ -7272,7 +7272,7 @@
                             {
                                 "type": "InlineHtml",
                                 "config": {
-                                    "className": "",
+                                    "className": "project-title",
                                     "text": "Description",
                                     "template": "html.projectDescription",
                                     "templateVariablesScript": "{}",
@@ -7344,7 +7344,7 @@
                             {
                                 "type": "InlineHtml",
                                 "config": {
-                                    "className": "",
+                                    "className": "project-title",
                                     "text": "Notes",
                                     "template": "html.projectNotes",
                                     "templateVariablesScript": "{}",
