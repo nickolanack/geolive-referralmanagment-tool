@@ -23,7 +23,7 @@ var viewers=team.getUsers().filter(function(u){
 
 if(viewers.length>0){
     valueEl.appendChild(new Element('span', {'html':viewers.length, 'class':'managers'}));
-    description.push(links.length==1?'There is 1 manager':'There are '+links.length+' managers');
+    description.push(viewers.length==1?'There is 1 manager':'There are '+viewers.length+' managers');
 }
 
 var links=item.getShareLinks();
