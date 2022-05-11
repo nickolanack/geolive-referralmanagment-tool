@@ -20,11 +20,11 @@
             "CSSInlineObfuscationEnabled": false,
             "PHPDebugEnabled": true,
             "JSDebugEnabled": false,
-            "CachingEnabled": true,
+            "CachingEnabled": false,
             "PrettyPrintJson": true,
             "JSCacheObfuscationEnabled": true,
             "phase": "production",
-            "ExternalizeWidgetScripts": true,
+            "ExternalizeWidgetScripts": false,
             "showFrontEndEditButtons": true,
             "ForceHTTPS": false,
             "allowProxiesFrom": [
