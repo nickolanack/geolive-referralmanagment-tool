@@ -45,7 +45,7 @@ class Project {
 		$proposal['id'] == intval($proposal['id']);
 
 		$proposal['userdetails'] = GetClient()->userMetadataFor((int) $proposal['user']);
-		$proposal['userCommunity']='...',
+		$proposal['userCommunity']='...';
 
 		if (isset($proposal['userdetails']['roles'])) {
 			unset($proposal['userdetails']['roles']);
