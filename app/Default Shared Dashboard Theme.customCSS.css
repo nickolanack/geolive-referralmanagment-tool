@@ -5842,6 +5842,8 @@ button.form-btn.primary-btn.hide {
 
 .field-value-module.inline.security .field-value span.managers:after {content: "\0f185";}
 
-
+.field-value-module.inline.security .field-value span.share-links:after {
+    content: "\0f0c1";
+}
     
     
