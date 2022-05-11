@@ -65,8 +65,20 @@ button.form-btn.primary-btn.edit.notes {
 }
 
 
-.ui-list-view .ui-view.section-module.category-community-vault {
-    background-color: #6495ed1a;
+.dark .ui-list-view .ui-view.section-module, .ui-list-view .ui-view.section-module{
+
+    .category-shared {
+        background-color: #64edad4a;
+    }
+    
+    .category-sharing{
+        background-color: #ede06452;
+    }
+    
+    .category-community-vault {
+        background-color: #64afed38;
+    }
+
 }
 
 
@@ -1383,3 +1395,8 @@ button.download-link {
     border-color: #3d414e;
     background-color: #272931;
 }
+
+
+
+
+.cat
