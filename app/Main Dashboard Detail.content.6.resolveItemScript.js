@@ -1,9 +1,22 @@
 return new ProjectList({
 					"label":"Security",
 	                "showCreateBtn":false,
-	                projects:function(callback){
-	                	callback((results.results||results).map(function(result){
-	                		return ProjectTeam.CurrentTeam().getProject(result.item);
-	                	}));
-	                }
+	                "tags:[
+	                new MockDataTypeItem({
+                        name:"Community Vault",
+                        description:"The Datasets that are only visible to you or your community",
+                        icon:null
+                    }),
+                    new MockDataTypeItem({
+                        name:"Community Vault",
+                        description:"The Datasets that are only visible to you or your community",
+                        icon:null
+                    })
+                    new MockDataTypeItem({
+                        name:"Community Vault",
+                        description:"The Datasets that are only visible to you or your community",
+                        icon:null
+                    })
+	                
+	                ]
 				})
