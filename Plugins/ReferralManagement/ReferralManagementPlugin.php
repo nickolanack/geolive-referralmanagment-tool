@@ -890,13 +890,18 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 		return function ($userMetadata) use ($clientMetadata, $managerRoles, $groupCommunity) {
 
-			if ($clientMetadata['community'] === $groupCommunity) {
-				$userMetadata->visibleBecuase = "your admin/" . $groupCommunity;
-				return true;
-			}
+			// if ($clientMetadata['community'] === $groupCommunity) {
+			// 	$userMetadata->visibleBecuase = "your admin/" . $groupCommunity;
+			// 	return true;
+			// }
 
 			if ($userMetadata->community === $clientMetadata['community']) {
 				$userMetadata->visibleBecuase = "Same community";
+				return true;
+			}
+
+			if ($userMetadata->community === "none"||empty($userMetadata->roles)) {
+				$userMetadata->visibleBecuase = "Pending user";
 				return true;
 			}
 
