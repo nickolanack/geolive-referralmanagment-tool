@@ -12,9 +12,16 @@ console.log('security list');
 var managers=valueEl.appendChild(new Element('span', {'html':'', 'class':'managers'}));
 var team=ProjectTeam.CurrentTeam();
     
-    managers.innerHTML=team.getUsers().filter(function(u){
-        return u.isTeamManager()&&users.map(function(u){return u.getId()}).indexOf(u.getId())==-1;
-    }).length;
+managers.innerHTML=team.getUsers().filter(function(u){
+    return u.isTeamManager()&&users.map(function(u){return u.getId()}).indexOf(u.getId())==-1;
+}).length;
+
+
+var links=item.getShareLinks();
+if(links.length){
+    valueEl.appendChild(new Element('span', {'html':links.length, 'class':'share-links'}));
+}
+
     
 el.addEvent('click', function(e){
    e.stop();
