@@ -1,4 +1,4 @@
-if (!(AppClient.getUserType() == "admin" || ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isTeamManager())) {
+if (!( ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isTeamManager())) {
             return null;
         }
 
