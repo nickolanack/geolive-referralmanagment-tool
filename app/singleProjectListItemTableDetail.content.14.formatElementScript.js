@@ -35,7 +35,17 @@ if(links.length>0){
 
 if(users.length>0||viewers.length>0||links.length>0){
      new UIPopover(el, {
-        description:'<h3>Item Access:</h3>'+description.join('<br/>'),
+        description:'<h3>Item Access:</h3>'+description.map(function(d, i){
+            if(i>0){
+                d=d.replace('There is ','').replace('There are ','');
+            }
+                
+            if(i>0&&i==description.length-1){
+               d='and '+d;
+            }
+            
+            return d;
+        }).join(', '),
         anchor:UIPopover.AnchorAuto()
     });
 }
