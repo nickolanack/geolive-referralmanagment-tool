@@ -22,7 +22,7 @@
     		       label:"Share Links"
     		   }));
     		   
-    		   list=list.concat(item.getShareLinks());
+    		   list=list.concat(item.getShareLinks().map(function(link){return new ShareLinkItem(link); }));
     		   
 		   }
 		   
