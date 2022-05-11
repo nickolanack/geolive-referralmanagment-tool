@@ -136,11 +136,12 @@ class Project {
 
 
 
-		$links=GetPlugin('Links')->listDataCodesForItem(($proposal['id'], "ReferralManagement.proposal"));
+		$links=GetPlugin('Links')->listDataCodesForItem($proposal['id'], "ReferralManagement.proposal");
 		$links=array_map(function($link){
 			unset($link['token']);
 			return $link;
 		}, $links);
+		
 		$proposal['links']=$links;
 
 
