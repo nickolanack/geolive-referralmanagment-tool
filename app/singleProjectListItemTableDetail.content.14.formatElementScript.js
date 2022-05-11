@@ -35,7 +35,7 @@ if(links.length>0){
 
 if(users.length>0||viewers.length>0||links.length>0){
      new UIPopover(el, {
-        description:'<h2>Item Access:</h2>'+description.join('<br/>'),
+        description:'<h3>Item Access:</h3>'+description.join('<br/>'),
         anchor:UIPopover.AnchorAuto()
     });
 }
