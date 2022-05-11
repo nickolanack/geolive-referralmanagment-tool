@@ -1,1 +1,1 @@
-return RecentItems.RecentUserActivity;
+return RecentItems.RecentProjectActivity;

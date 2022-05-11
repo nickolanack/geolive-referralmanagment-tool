@@ -12,7 +12,19 @@
 		           label:label
 		       }));
 		       list=list.concat(resp.groups[label].map(function(user){
-    		       return ProjectTeam.CurrentTeam().getUser(user.id)
+		           try{
+    		           return ProjectTeam.CurrentTeam().getUser(user.id)
+    		       }catch(e){
+    		           var member = new TeamMember({
+				
+					        userType:"user",
+					        id:user.id,
+					        metadata:user
+					       
+					    });
+					    member.setMissingUser();
+					    return member;
+    		       }
     		   }));
 		   })
 		   
