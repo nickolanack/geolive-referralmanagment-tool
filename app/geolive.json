@@ -7157,7 +7157,7 @@
                             {
                                 "type": "InlineHtml",
                                 "config": {
-                                    "className": "",
+                                    "className": "project-title",
                                     "text": "Status",
                                     "template": "html.projectStatus",
                                     "templateVariablesScript": "{}",
@@ -7272,7 +7272,7 @@
                             {
                                 "type": "InlineHtml",
                                 "config": {
-                                    "className": "",
+                                    "className": "project-title",
                                     "text": "Description",
                                     "template": "html.projectDescription",
                                     "templateVariablesScript": "{}",
@@ -7344,7 +7344,7 @@
                             {
                                 "type": "InlineHtml",
                                 "config": {
-                                    "className": "",
+                                    "className": "project-title",
                                     "text": "Notes",
                                     "template": "html.projectNotes",
                                     "templateVariablesScript": "{}",
