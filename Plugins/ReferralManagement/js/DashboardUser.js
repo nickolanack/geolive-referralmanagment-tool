@@ -81,7 +81,7 @@ var DashboardUser = (function() {
 			var roles = this.getRoles();
 	
 			if (roles.length) {
-				return UserGroups.GetAdminRole()==roles[0];
+				return UserGroups.GetAdminRole()==roles[0]&&this.getCommunity()==UserGroups.GetCollective();
 			}
 
 			return false;
