@@ -947,8 +947,10 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		/**
 		 * all other access must be granted by adding user/community to team, or user created
 		 */
+		
+		$collectiveIsParent=false;
 
-		return function (&$item, $userId=-1) use ($clientId, $clientMetadata, $minAccessLevel, $clientMinAuth) {
+		return function (&$item, $userId=-1) use ($clientId, $clientMetadata, $minAccessLevel, $clientMinAuth, $collectiveIsParent) {
 
 
 
@@ -1001,7 +1003,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 			$nationsInvolved = array_map(function ($community) {return strtolower($community);}, $nationsInvolved);
 
 			$collective = $this->communityCollective();
-			if (!in_array($collective, $nationsInvolved)) {
+			if ($collectiveIsParent&&(!in_array($collective, $nationsInvolved))) {
 				$nationsInvolved[] = $collective;
 			}
 
