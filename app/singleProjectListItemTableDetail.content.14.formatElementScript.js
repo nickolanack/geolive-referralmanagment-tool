@@ -18,7 +18,9 @@ console.log('security list');
 
 var team=ProjectTeam.CurrentTeam();
 var viewers=team.getUsers().filter(function(u){
-    return u.isTeamManager()&&users.map(function(u){return u.getId()}).indexOf(u.getId())==-1;
+    return u.isTeamManager() &&
+        users.map(function(u){return u.getId()}).indexOf(u.getId())==-1 &&
+            (item.getCommunitiesInvolved().indexOf(u.getCommunity())!=-1||item.getProjectCommunity()==u.getCommunity());
 });
 
 if(viewers.length>0){
