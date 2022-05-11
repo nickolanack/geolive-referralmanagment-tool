@@ -846,23 +846,23 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 		$roles = (new \ReferralManagement\UserRoles());
 		$managerRoles = $roles->listManagerRoles();
-		if (GetClient()->isAdmin()) {
+		// if (GetClient()->isAdmin()) {
 
-			//show all users;
-			return function (&$userMetadata) {
+		// 	//show all users;
+		// 	return function (&$userMetadata) {
 
-				if (is_array($userMetadata)) {
-					$userMetadata['visibleBecuase'] = "You are admin";
-				}
+		// 		if (is_array($userMetadata)) {
+		// 			$userMetadata['visibleBecuase'] = "You are admin";
+		// 		}
 
-				if (is_object($userMetadata)) {
-					$userMetadata->visibleBecuase = "You are admin";
-				}
+		// 		if (is_object($userMetadata)) {
+		// 			$userMetadata->visibleBecuase = "You are admin";
+		// 		}
 
-				return true;
-			};
+		// 		return true;
+		// 	};
 
-		}
+		// }
 
 		$clientMetadata = $this->getUsersMetadata(GetClient()->getUserId());
 		$groupCommunity = $this->communityCollective();
