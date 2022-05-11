@@ -76,6 +76,16 @@ var DashboardUser = (function() {
 
 			return me.getRoles()[0];
 		},
+
+		isSiteAdmin: function() {
+			var roles = this.getRoles();
+	
+			if (roles.length) {
+				return UserGroups.GetAdminRole()==roles[0];
+			}
+
+			return false;
+		},
 		isTeamManager: function() {
 			
 			var roles = this.getRoles();

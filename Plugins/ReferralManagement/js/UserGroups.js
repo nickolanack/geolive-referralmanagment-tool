@@ -46,6 +46,11 @@ var UserGroups = (function() {
 		return roles;
 	}
 
+	UserGroups.GetAdminRole = function() {
+		var roles = UserGroups.GetAllRoles();
+		return roles.shift();
+	}
+
 	UserGroups.GetManagerRoles = function() {
 		var roles = UserGroups.GetAllRoles();
 		roles.pop();
