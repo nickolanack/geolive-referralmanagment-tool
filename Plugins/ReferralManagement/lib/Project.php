@@ -72,7 +72,7 @@ class Project {
 		unset($proposal['discussion']->new);
 
 
-		$proposal['access']='private';
+		$proposal['access']='public';
 
 		GetPlugin('Attributes');
 
