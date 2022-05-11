@@ -34,7 +34,7 @@ if(links.length>0){
 
 
 if(users.length>0||viewers.length>0||links.length>0){
-     new UIPopover(el, {
+     new UIPopover(valueEl, {
         description:'<h3>Item Access:</h3>'+description.map(function(d, i){
             if(i>0){
                 d=d.replace('There is ','').replace('There are ','');
