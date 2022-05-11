@@ -5834,5 +5834,14 @@ button.form-btn.primary-btn.hide {
     display:none;
 }
     
+.field-value-module.inline.security .field-value span:before {content: ",";}
+
+.field-value-module.inline.security .field-value span:first-child:before {content: "";}
+
+.field-value-module.inline.security .field-value span:after {content: "\0f0c0";font-family: 'FontAwesome';font-size: 13px;vertical-align: top;margin: 6px;margin-left: 1px;}
+
+.field-value-module.inline.security .field-value span.managers:after {content: "\0f185";}
+
+
     
     
