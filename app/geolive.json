@@ -22,9 +22,9 @@
             "JSDebugEnabled": false,
             "CachingEnabled": true,
             "PrettyPrintJson": true,
-            "JSCacheObfuscationEnabled": true,
+            "JSCacheObfuscationEnabled": false,
             "phase": "production",
-            "ExternalizeWidgetScripts": false,
+            "ExternalizeWidgetScripts": true,
             "showFrontEndEditButtons": true,
             "ForceHTTPS": false,
             "allowProxiesFrom": [
