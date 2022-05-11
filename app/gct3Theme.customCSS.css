@@ -67,15 +67,15 @@ button.form-btn.primary-btn.edit.notes {
 
 .dark .ui-list-view .ui-view.section-module, .ui-list-view .ui-view.section-module{
 
-    .category-shared {
+    &.category-shared {
         background-color: #64edad4a;
     }
     
-    .category-sharing{
+    &.category-sharing{
         background-color: #ede06452;
     }
     
-    .category-community-vault {
+    &.category-community-vault {
         background-color: #64afed38;
     }
 
