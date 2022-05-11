@@ -62,7 +62,8 @@ var ConfigItem = (function() {
             text = value;
         })
 
-        if (!(AppClient.getUserType() == "admin" || ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isTeamManager())) {
+        var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
+        if (!(user.isTeamManager()&&user.getCommunity() === UserGroups.GetCollective())) {
             return div;
         }
 
