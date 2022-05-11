@@ -949,8 +949,9 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		 */
 		
 		$collectiveIsParent=false;
+		$itemsFollowCommunity=true; //if a user leaves a community the item stays with the community
 
-		return function (&$item, $userId=-1) use ($clientId, $clientMetadata, $minAccessLevel, $clientMinAuth, $collectiveIsParent) {
+		return function (&$item, $userId=-1) use ($clientId, $clientMetadata, $minAccessLevel, $clientMinAuth, $collectiveIsParent, $itemsFollowCommunity) {
 
 
 
@@ -1021,7 +1022,12 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 				return true;
 			}
 
-			if (in_array(strtolower($userMetadata['community']), $nationsInvolved)) {
+			if (in_array(strtolower($userMetadata['community']), $nationsInvolved)||(
+			
+				($itemsFollowCommunity&&strtolower($userMetadata['community'])==strtolower($item->community))||
+				((!$itemsFollowCommunity)&&strtolower($userMetadata['community'])==strtolower($item->userCommunity))
+
+			)) {
 				//error_log("Your community is involved ".$item['id']);
 				$item->visibleBecuase = "Community manager";
 				$this->lastAuthReason=$item->visibleBecuase;
