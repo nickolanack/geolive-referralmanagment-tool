@@ -19249,8 +19249,9 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "",
+                                    "className": "",
                                     "fieldLabelScript": "return item.getKind()+\": \";",
-                                    "fieldValueScript": "return item.getName()",
+                                    "fieldValueScript": "departmentDetailView.metadata.positions.content.modules.1.config.fieldValueScript.js",
                                     "formatElementScript": ""
                                 }
                             },
@@ -19259,6 +19260,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getDescription();",
                                     "formatElementScript": ""
@@ -19269,6 +19271,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return \"\";",
                                     "formatElementScript": "departmentDetailView.metadata.positions.content.modules.3.config.formatElementScript.js"
