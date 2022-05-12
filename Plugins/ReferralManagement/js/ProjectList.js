@@ -667,6 +667,18 @@ var ProjectList = (function() {
 			}
 		}
 
+		if(child.getCommunitiesInvolved().length){
+			childView.getElement().addClass("is-shared-community");
+		}
+
+		if(child.getUsers().length){
+			childView.getElement().addClass("is-shared-team");
+		}
+
+		if(child.isPrivate()){
+			childView.getElement().addClass("is-private");
+		}
+
 	}
 	ProjectList.AddListItemEvents = function(child, childView, application, listFilterFn) {
 
