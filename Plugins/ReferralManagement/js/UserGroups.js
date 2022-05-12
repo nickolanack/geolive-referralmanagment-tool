@@ -234,7 +234,8 @@ var UserGroups = (function() {
 
 			addEmpty = true;
 			roleEl.addClass('selectable');
-			roleEl.addEvent('click', function() {
+			roleEl.addEvent('click', function(e) {
+				e.stopPropagation();
 				item.setRole(r, function() {
 					els.forEach(function(e) {
 						e.removeClass("active");
