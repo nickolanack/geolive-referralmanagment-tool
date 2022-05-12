@@ -44,7 +44,7 @@
 		       var units=OrganizationalUnit.DefaultList();
 		       list=list.concat(item.getCommunitiesInvolved().map(function(community){
 		            return units.getItemWithName(community);
-		       }));
+		       }).filter(function(u){return !!u; }));
 		    
 		   }
 		   
