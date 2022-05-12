@@ -29,7 +29,7 @@ if(viewers.length>0){
     description.push(viewers.length==1?'There is 1 manager':'There are '+viewers.length+' managers');
 }
 */
-viewers=0;
+var viewers=0;
 
 var communities=item.getCommunitiesInvolved();
 if(communities.length>0){
