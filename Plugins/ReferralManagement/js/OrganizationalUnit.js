@@ -203,7 +203,8 @@ var OrganizationalUnitList=(function(){
 		},
 		getItemWithName:function(name){
 			var results=this.getItems().filter(function(item){
-				return item.getName()==name;
+				var n=item.getName();
+				return n==name||n.indexOf(name+'|')===0||n.indexOf('|'+name)>0;
 			});
 
 			if(results.length>0){
