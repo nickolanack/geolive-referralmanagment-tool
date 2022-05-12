@@ -185,7 +185,20 @@ var OrganizationalUnitList=(function(){
 			}
 
 			callback([]);
+		},
+		getItemWithName:function(name){
+			var results=this.getItems().filter(function(item){
+				return item.getName()==name;
+			});
+
+			if(results.length>0){
+				return results[0];
+			}
+
+			return null;
 		}
+
+
 	});
 
 	return OrganizationalUnitList;
@@ -259,3 +272,8 @@ var ProjectDepartmentList = (function() {
 
 
 })();
+
+
+
+
+
