@@ -26341,8 +26341,8 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
-            "saveTemplateAsData": false,
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
             "contentTemplate": "module-html-submissionDisclaimer-text.contentTemplate.html",
             "readAccess": "public"
         }
