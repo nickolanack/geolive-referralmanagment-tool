@@ -433,9 +433,9 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	}
 	protected function getProjectList($filter = array()) {
 
-		if (!Auth('memberof', 'lands-department', 'group')) {
-			return array();
-		}
+		// if (!Auth('memberof', 'lands-department', 'group')) {
+		// 	return array();
+		// }
 
 		if ($this->getParameter('enableProjectListCaching')) {
 
