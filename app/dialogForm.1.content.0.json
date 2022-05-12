@@ -2,8 +2,10 @@
     "type": "FieldValue",
     "config": {
         "loadAsync": false,
+        "identifier": "",
+        "className": "",
         "fieldLabelScript": "return \"\";",
-        "fieldValueScript": "return item.getName();",
-        "formatElementScript": ""
+        "fieldValueScript": "return \"\";",
+        "formatElementScript": "valueEl.innerHTML=item.getName();"
     }
 }
