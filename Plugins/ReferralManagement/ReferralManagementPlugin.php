@@ -958,6 +958,24 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 				$userMinAuth=Auth('memberof', $minAccessLevel, 'group', $userId);
 			}
 
+
+			if(is_array($item->attributes)){
+					$item->attributes=(object)$item->attributes;
+			}
+
+			$nationsInvolved = $item->attributes->firstNationsInvolved;
+			if (empty($nationsInvolved)) {
+				$nationsInvolved = array();
+			}
+
+			$nationsInvolved = array_map(function ($community) {return strtolower($community);}, $nationsInvolved);
+
+			$collective = $this->communityCollective();
+			if ($collectiveIsParent&&(!in_array($collective, $nationsInvolved))) {
+				$nationsInvolved[] = $collective;
+			}
+
+
 			if(!$userMinAuth){
 
 				if ($item->user == $userId) {
@@ -999,21 +1017,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 			}
 
-			if(is_array($item->attributes)){
-					$item->attributes=(object)$item->attributes;
-			}
-
-			$nationsInvolved = $item->attributes->firstNationsInvolved;
-			if (empty($nationsInvolved)) {
-				$nationsInvolved = array();
-			}
-
-			$nationsInvolved = array_map(function ($community) {return strtolower($community);}, $nationsInvolved);
-
-			$collective = $this->communityCollective();
-			if ($collectiveIsParent&&(!in_array($collective, $nationsInvolved))) {
-				$nationsInvolved[] = $collective;
-			}
+			
 
 			
 
