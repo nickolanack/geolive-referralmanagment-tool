@@ -3903,42 +3903,47 @@ ul.user-roles {
 
 
 
-ul.user-roles{
-    height:50px;
-}
+
 
 .ui-template-form ul.user-roles {
     display: none;
 }
 
-ul.user-roles li{
-    opacity: 0;
-    filter: grayscale(1);
-  
-}
-
-ul.user-roles:hover li{
-    opacity: 1;
+ul.user-roles{
+    height:50px;
     
-}
-ul.user-roles li.selectable{
-    cursor:pointer;
-}
-ul.user-roles li.selectable:after {
-    display: none;
-}
-ul.user-roles:hover li.selectable:after {
-    display: inline-block;
-}
+    
+    li{
+        opacity: 0;
+        filter: grayscale(1);
+      
+    }
+    
+   
+    li.selectable{
+        cursor:pointer;
+    }
+    li.selectable:after {
+        display: none;
+    }
+    &:hover li, &.hover li{
+        opacity: 1;
+        
+    }
+    &:hover li.selectable:after, &.hover li.selectable:after {
+        display: inline-block;
+    }
+    
+    &>li.active {
+        opacity: 1;
+        float:right;
+    }
+    
+    &:hover>li.active, &.hover>li.active {
+        opacity: 1;
+        float:none;
+    }
 
-ul.user-roles>li.active {
-    opacity: 1;
-    float:right;
-}
-
-ul.user-roles:hover>li.active {
-    opacity: 1;
-    float:none;
 }
 
 
