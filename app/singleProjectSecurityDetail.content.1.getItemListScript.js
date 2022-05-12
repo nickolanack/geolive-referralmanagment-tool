@@ -41,6 +41,11 @@
 		   }
 		   
 		   if(item.getCommunitiesInvolved().length>0){
+		        
+		       list.push(new MockDataTypeItem({
+    		       label:"Shared With Communities"
+    		   }));
+		       
 		       var units=OrganizationalUnit.DefaultList();
 		       list=list.concat(item.getCommunitiesInvolved().map(function(community){
 		            return units.getItemWithName(community);
