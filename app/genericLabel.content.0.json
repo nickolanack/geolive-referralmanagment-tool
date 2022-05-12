@@ -6,6 +6,6 @@
         "className": "",
         "fieldLabelScript": "return '';",
         "fieldValueScript": "return \"\";",
-        "formatElementScript": "labelEl.innerHTML='<h2>'+item.getLabel()+'<\/h2>';\nthis.parentUIView.getElement().removeClass('feed-sub-item')"
+        "formatElementScript": "labelEl.innerHTML='<h2>'+item.getLabel()+'<\/h2>';\nthis.parentUIView.getElement().removeClass('feed-sub-item')\nthis.parentUIView.getElement().removeClass('user-item')\nthis.parentUIView.getElement().addClass('project-title')\n\n"
     }
 }
