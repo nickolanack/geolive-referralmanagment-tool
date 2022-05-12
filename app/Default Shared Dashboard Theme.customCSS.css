@@ -3788,7 +3788,6 @@ span.SearchModule.search-container {
 // }
 .uitext-container.required .required-indicator {
    
-    float: right;
     font-size: 12px;
     font-style: italic;
     position: relative;
@@ -3796,6 +3795,7 @@ span.SearchModule.search-container {
     right: 5px;
     color: #edc84c;
     font-size: 25px;
+    margin-left: 5px;
 }
 .uitext-container.required .required-indicator:before {
     content: "*";
