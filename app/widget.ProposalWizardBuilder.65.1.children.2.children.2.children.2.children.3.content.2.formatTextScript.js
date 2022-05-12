@@ -1,4 +1,4 @@
-return 'Read the disclaimer';
+
 module.getElement().addEvent('click', function(){
     
     (new UIModalDialog(application, text, {
@@ -12,3 +12,4 @@ module.getElement().addEvent('click', function(){
 				})).show();
     
 })
+return 'Read the disclaimer';
