@@ -1,3 +1,6 @@
+if(item instanceof OrganizationalUnit){
+    return 'departmentDetailView';
+}
 
 if(item instanceof ShareLinkItem){
     return 'tokenDetailView';
