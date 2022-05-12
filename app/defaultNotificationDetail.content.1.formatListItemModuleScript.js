@@ -15,5 +15,7 @@ if(child.getType&&child.getType()=="Tasks.task"){
     });
     })
 }
-
-console.log('add item class names and events')
+if(child instanceof DashboardUser){
+   childView.getElement().addClass('user-item');
+   UIInteraction.addUserProfileClick(childView.getElement(), child);
+}
