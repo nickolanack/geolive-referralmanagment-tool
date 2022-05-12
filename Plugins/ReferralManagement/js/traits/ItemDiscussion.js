@@ -65,6 +65,7 @@ var ItemDiscussion = (function() {
 
 
 			(new UITextFieldMediaSelection(uitext)).addToolbarBtn({
+				"hoverTip":"send",
 				"class": "send-btn",
 				events: {
 					click: function() {

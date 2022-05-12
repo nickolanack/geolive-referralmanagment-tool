@@ -102,6 +102,10 @@ var Project = (function() {
 		},
 
 
+		isPrivate:function(){
+			return this.data.access==="private";
+		},
+
 
 		destroy: function() {
 			var me = this;

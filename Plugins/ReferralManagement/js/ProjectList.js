@@ -671,6 +671,7 @@ var ProjectList = (function() {
 			childView.getElement().addClass("is-shared-community");
 		}
 
+
 		if(child.getUsers().length){
 			childView.getElement().addClass("is-shared-team");
 		}
