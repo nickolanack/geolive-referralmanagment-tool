@@ -14959,7 +14959,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
-            "saveTemplateAsData": true,
+            "saveTemplateAsData": false,
             "contentTemplate": "activate-proposal-email-body.contentTemplate.html",
             "readAccess": "public"
         }
