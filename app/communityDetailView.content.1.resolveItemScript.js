@@ -15,6 +15,11 @@ return new ProjectList({
 			     try {
 					var user = team.getUser(p.getProjectSubmitterId());
 			     }catch(e){
+			         
+			         if(!user){
+			             return false;
+			         }
+			         
 			         return user.getCommunity()==item.getName();
 			         console.error(e);
 			     }
