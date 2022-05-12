@@ -1,9 +1,4 @@
-AppClient.authorize('write', {
-				id: item.getId(),
-				type: item.getType()
-			}, function(access) {
-				//check access, bool.
-				if (access) {
+
 					setTimeout(function(){
                         module.getElement().addClass('has-hidden-content hide');
                         var button=module.getElement().appendChild(new Element('button', {
@@ -19,12 +14,7 @@ AppClient.authorize('write', {
                         module.setNamedValue('addNotesButton', button);
                         console.error('debug this')
                     }, 500);
-				} else {
-				    
-				}
-			});
-
-
+			
 
 
 
