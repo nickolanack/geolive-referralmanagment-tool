@@ -8905,16 +8905,16 @@
                             "taskDefaultItems.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 278,
-                            "y": 410
+                            "x": 288,
+                            "y": 420
                         },
                         "children": [
                             "taskDefaultItems.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 238,
-                                    "y": 576
+                                    "x": 248,
+                                    "y": 586
                                 }
                             }
                         ],
@@ -26345,6 +26345,20 @@
             "saveTemplateAsData": true,
             "contentTemplate": "module-html-submissionDisclaimer-text.contentTemplate.html",
             "readAccess": "public"
+        }
+    },
+    "widget.473": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-defaultTasks.text",
+            "target": "module.html-defaultTasks.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "module-html-defaultTasks-text.contentTemplate.html"
         }
     }
 }
