@@ -95,25 +95,35 @@ var OrganizationalUnit = (function() {
 			},
 			items:function(callback){
 				var me=this;
-				DashboardConfig.getValue('useCommunitiesAsDepartments', function(useCommunities){
+
+				var getList=function(useCommunities){
+
 					if(useCommunities){
 
-						 callback(UserGroups.GetSubgroupsLocalized().map(function(name) {
+						return UserGroups.GetSubgroupsLocalized().map(function(name) {
 							return new OrganizationalUnit({
 								name:name,
 								description:"",
 								kind:me.getKind(),
 								editable:false
 							});
-						}));
+						});
 
-						//ashboardConfig.getValue('')
-						return;
 					}
 
-					callback(ProjectDepartmentList.getProjectDepartments())
+					return ProjectDepartmentList.getProjectDepartments();
 
-				});
+				};
+
+				if(callback){
+
+					DashboardConfig.getValue('useCommunitiesAsDepartments', function(useCommunities){
+						callback(getList(useCommunities));
+					});
+					return;
+				}
+				return getList(DashboardConfig.getValue('useCommunitiesAsDepartments'));
+
 			}
 		});
 
@@ -177,14 +187,18 @@ var OrganizationalUnitList=(function(){
 			if(this._getItems){
 				var result=this._getItems();
 				if(typeof result=='function'){
-					result.bind(this)(callback);
-					return;
+					return result.bind(this)(callback);
 				}
-				callback(result);
-				return;
+				if(callback){
+					callback(result);
+				}
+				return result;
 			}
 
-			callback([]);
+			if(callback){
+				callback([]);
+			};
+			return [];
 		},
 		getItemWithName:function(name){
 			var results=this.getItems().filter(function(item){
