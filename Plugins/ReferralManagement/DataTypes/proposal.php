@@ -32,7 +32,17 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
         $auth=$this->isVisible($item, $userId);
         
         if($task=='write'&&$auth){
-            $auth=GetClient()->isUserAdmin($userId)||intval($item->user)==$userId;
+
+
+            $auth=false;
+
+            /**
+             * not even admins can write
+             */
+
+            //$auth=GetClient()->isUserAdmin($userId);
+
+            $auth=$auth||intval($item->user)==$userId;
             if(!$auth){
                array_walk($item->teamMembers, function($teamMember)use(&$auth, $userId){
 
