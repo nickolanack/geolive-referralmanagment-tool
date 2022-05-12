@@ -9781,7 +9781,7 @@
                                     "identifier": "",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return item.getCommunity()",
+                                    "fieldValueScript": "singleUserListItemDetail.metadata.positions.content.modules.3.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-community');"
                                 }
                             },
