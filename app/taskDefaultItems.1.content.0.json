@@ -3,8 +3,10 @@
     "config": {
         "className": "",
         "text": "Are you sure you want to create default tasks...",
-        "template": "",
-        "templateVariablesScript": "",
-        "formatTextScript": ""
+        "template": "html.defaultTasks",
+        "templateVariablesScript": "{}",
+        "formatTextScript": "",
+        "ajaxRequestTemplate": false,
+        "identifier": "htmlLabel"
     }
 }
