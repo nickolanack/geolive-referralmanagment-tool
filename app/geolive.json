@@ -19738,14 +19738,6 @@
                                 }
                             },
                             {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "userProfileDetailView.metadata.positions.content.modules.2.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
                                 "type": "UIView",
                                 "config": {
                                     "className": "",
@@ -19761,7 +19753,7 @@
                                     "deleteItemScript": "defaultBehaviorFn()",
                                     "initModuleScript": "",
                                     "formatModuleScript": "",
-                                    "resolveItemScript": "userProfileDetailView.metadata.positions.content.modules.3.config.resolveItemScript.js",
+                                    "resolveItemScript": "userProfileDetailView.metadata.positions.content.modules.2.config.resolveItemScript.js",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
