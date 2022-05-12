@@ -15,3 +15,5 @@ if(child.getType&&child.getType()=="Tasks.task"){
     });
     })
 }
+
+console.log('add item class names and events')
