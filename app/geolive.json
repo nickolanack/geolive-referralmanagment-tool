@@ -26331,5 +26331,19 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.472": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-submissionDisclaimer.text",
+            "target": "module.html-submissionDisclaimer.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Without Prejudice Statement: "
+        }
     }
 }
