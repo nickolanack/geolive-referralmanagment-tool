@@ -97,6 +97,13 @@ var UserIcon=(function(){
 
 			}
 
+
+			if(!item.getUserId){
+				//console.error('todo: fix invalid user')
+				return div;
+
+			}
+
 			(new GetAttributeItemValueQuery(item.getUserId(), AppClient.getType(), "userAttributes", "profileIcon")).addEvent("success", function(result) {
 
 
