@@ -19546,7 +19546,7 @@
                                     "identifier": "user-phone",
                                     "className": "profile-info",
                                     "fieldLabelScript": "return \"Telephone: \";",
-                                    "fieldValueScript": "return \"Field Value Script\";",
+                                    "fieldValueScript": "return item.getPhone()||\"--\";",
                                     "formatElementScript": "userProfileDetailOverview.metadata.positions.content.modules.3.config.formatElementScript.js"
                                 }
                             },
