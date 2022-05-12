@@ -86,7 +86,7 @@ class Project {
 		}
 
 
-		if(!isset($attributes['dataset']){
+		if(!isset($attributes['dataset'])){
 			$config = GetWidget('dashboardConfig');
 			if($config->getParameter('enableProposals')){
 				$proposal['access']='private';
