@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "if(item.getId()<=0||item.isArchived()){\n    return null;\n}\n\n\nreturn new ModalFormButtonModule(application, item, {\n         \n            label: \"Edit \"+(item.isDataset()?'dataset':DashboardConfig.getValue('enableProposals')?\"submission\":\"collection\"),\n            formOptions: {template:\"form\"},\n            formName: DashboardConfig.getValue(item.isCollection()?\"projectForm\":\"datasetForm\"),\n            \"class\": \"primary-btn edit\"\n\n    \n});\n",
+        "script": "if(item.getId()<=0||item.isArchived()){\n    return null;\n}\n\n\nreturn new ModalFormButtonModule(application, item, {\n         \n            label: \"Edit \"+(item.isDataset()?'dataset':(DashboardConfig.getValue('enableProposals')?\"submission\":\"collection\")),\n            formOptions: {template:\"form\"},\n            formName: DashboardConfig.getValue(item.isCollection()?\"projectForm\":\"datasetForm\"),\n            \"class\": \"primary-btn edit\"\n\n    \n});\n",
         "description": "Info about my custom script"
     }
 }
