@@ -722,6 +722,11 @@ var DashboardPageLayout = (function() {
 				}, {
 					html: ["Department", "Tags", "Themes", "Trash"],
 					config: "simplifiedMenu"
+				},{
+					html: ["Department", "Tags", "Themes"],
+					condition: function() {
+						return ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin();
+					}
 				}, {
 					html: ['Department'],
 					condition: function() {
@@ -746,6 +751,11 @@ var DashboardPageLayout = (function() {
 				}, {
 					html: "Activity",
 					config: "enableActivity"
+				}, {
+					html: "Activity",
+					condition: function() {
+						return ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isTeamManager();
+					}
 				}, {
 					html: "Map",
 					config: "enableMap"
