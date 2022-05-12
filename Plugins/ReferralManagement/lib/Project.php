@@ -85,6 +85,15 @@ class Project {
 			$attributes['dataset'] = $datasetAttributes;
 		}
 
+
+		if(!isset($attributes['dataset']){
+			$config = GetWidget('dashboardConfig');
+			if($config->getParameter('enableProposals')){
+				$proposal['access']='private';
+			}
+		}
+
+
 		if (!$attributes['teamMembers']) {
 			$attributes['teamMembers'] = array();
 		}
