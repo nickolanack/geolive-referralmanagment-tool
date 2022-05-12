@@ -71,6 +71,10 @@ var UserGroups = (function() {
 		});
 	}
 
+	UserGroups.Localize=function(name){
+		return String_.capitalize.call(null, name.split('|').pop());
+	}
+
 	UserGroups.GetSubgroupsLocalized = function() {
 
 

@@ -100,9 +100,10 @@ var OrganizationalUnit = (function() {
 
 					if(useCommunities){
 
-						return UserGroups.GetSubgroupsLocalized().map(function(name) {
+						return UserGroups.GetSubgroups().map(function(name) {
 							return new OrganizationalUnit({
 								name:name,
+								label:UserGroups.Localize(name),
 								description:"",
 								kind:me.getKind(),
 								editable:false
