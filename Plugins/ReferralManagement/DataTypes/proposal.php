@@ -24,8 +24,8 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
 
         $item=$this->resolveItem($item);
         $cacheKey=$task.'.'.$item->id.'.'.$userId;
-        if(isset(self::$Auth[$cacheKey)){
-            return self::$Auth[$cacheKey);
+        if(isset(self::$Auth[$cacheKey])){
+            return self::$Auth[$cacheKey];
         }
        
 
