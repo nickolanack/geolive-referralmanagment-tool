@@ -1,6 +1,6 @@
 
 
-if(AppClient.getUserType()=="admin"){
+if(AppClient.getUserType()=="admin"&&item.getUserId){
     
     var editEl=new Element('span',{"class":"field-value"});
     el.appendChild(editEl)
