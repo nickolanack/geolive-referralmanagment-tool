@@ -17,6 +17,7 @@ console.log('security list');
 
 
 var team=ProjectTeam.CurrentTeam();
+/*
 var viewers=team.getUsers().filter(function(u){
     return u.isTeamManager() &&
         users.map(function(u){return u.getId()}).indexOf(u.getId())==-1 &&
@@ -27,6 +28,8 @@ if(viewers.length>0){
     valueEl.appendChild(new Element('span', {'html':viewers.length, 'class':'managers'}));
     description.push(viewers.length==1?'There is 1 manager':'There are '+viewers.length+' managers');
 }
+*/
+viewers=0;
 
 var communities=item.getCommunitiesInvolved();
 if(communities.length>0){
