@@ -6,6 +6,7 @@
         "template": "html.communityUsersDetail",
         "templateVariablesScript": "{}",
         "formatTextScript": "var btn=ConfigItem.CreateEditBtn(new ConfigItem({\n    \"editLabel\":\"Edit community intro\",\n    'widget':options.widget,\n    'form':'textFieldForm',\n    'stepOptions':{\n        width:600\n    }\n}));\n\nif(btn){\n    module.getElement().appendChild(btn);\n}",
-        "ajaxRequestTemplate": true
+        "ajaxRequestTemplate": true,
+        "identifier": "htmlLabel"
     }
 }
