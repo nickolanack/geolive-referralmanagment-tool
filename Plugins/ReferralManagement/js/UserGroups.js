@@ -151,7 +151,7 @@ var UserGroups = (function() {
 		var foundActive = false;
 
 		var module = new ElementModule('ul', {
-			"class": "user-roles"
+			"class": "user-roles hover"
 		});
 
 		if (item.getId() == AppClient.getId()) {
