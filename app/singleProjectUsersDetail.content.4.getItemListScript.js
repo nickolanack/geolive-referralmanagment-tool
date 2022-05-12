@@ -3,10 +3,18 @@ if(item instanceof OrganizationalUnitList){
     return;
 }
 
-OrganizationalUnit.DefaultList().getItems(function(items){
-    callback(items.filter(function(community){
-        return item.getCommunitiesInvolved().indexOf(community.getName())>=0;
-        //return true;
-        
+
+
+
+
+
+
+var unit=OrganizationalUnit.DefaultList();
+//unit.getItems(function(items){
+    
+    callback(item.getCommunitiesInvolved().map(function(community){
+        return unit.getItemWithName(community);
     }))
-});
+    
+
+//});
