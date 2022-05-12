@@ -15,7 +15,7 @@
         "initModuleScript": "",
         "formatModuleScript": "",
         "resolveItemScript": "",
-        "filterModulesScript": "\nAppClient.authorize('write', {\n\t\t\t\tid: item.getId(),\n\t\t\t\ttype: item.getType()\n\t\t\t}, function(access) {\n\t\t\t\t\/\/check access, bool.\n\t\t\t\tif (access) {\n\t\t\t\t\tcallback(list)\n\t\t\t\t} else {\n\t\t\t\t\t\tcallback(list)\n\t\t\t\t}\n\t\t\t});\n",
+        "filterModulesScript": "\nAppClient.authorize('write', {\n\t\t\t\tid: item.getId(),\n\t\t\t\ttype: item.getType()\n\t\t\t}, function(access) {\n\t\t\t\t\/\/check access, bool.\n\t\t\t\tif (access) {\n\t\t\t\t\tcallback(list)\n\t\t\t\t} else {\n\t\t\t\t    list.content=[];\n\t\t\t\t\tcallback(list)\n\t\t\t\t}\n\t\t\t});\n",
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
         "targetName": ""
