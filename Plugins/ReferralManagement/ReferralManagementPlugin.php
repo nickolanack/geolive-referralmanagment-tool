@@ -1011,6 +1011,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 					}
 				}
 
+				error_log('no min access:'.$item->access);
 
 				return false;
 
