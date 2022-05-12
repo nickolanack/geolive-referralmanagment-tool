@@ -867,28 +867,38 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		$clientMetadata = $this->getUsersMetadata(GetClient()->getUserId());
 		$groupCommunity = $this->communityCollective();
 
-		if (!$roles->userHasAnyOfRoles($roles->listManagerRoles())) {
+		$userIsManager=$roles->userHasAnyOfRoles($roles->listManagerRoles());
+		$userIsTeamMember=$roles->userHasAnyOfRoles($roles->listTeamRoles());
+		
 
-			//non managers can only see 'collective/groupCommunity' users (ie wabun) and thier own community users'
+		return function ($userMetadata) use ($clientMetadata, $managerRoles, $groupCommunity, $userIsManager, $userIsTeamMember) {
 
-			return function ($userMetadata) use ($clientMetadata, $groupCommunity) {
 
-				// if ($clientMetadata['community'] === $groupCommunity) {
-				// 	$userMetadata->visibleBecuase = "your " . $groupCommunity;
-				// 	return true;
-				// }
+			if($userMetadata->id==$clientMetadata['id']){
+				$userMetadata->visibleBecuase = "this is you";
+				return true;
+			}
 
-				if ( /*$userMetadata->community === $groupCommunity ||*/$userMetadata->community === $clientMetadata['community']) {
+
+			if (!$userIsManager) {
+
+	
+
+				if ($userMetadata->community === $clientMetadata['community']) {
+
+					if(!$userIsTeamMember&&empty($userMetadata->roles)){
+						return false;
+					}
+
 					$userMetadata->visibleBecuase = "same community";
 					return true;
 				}
 
 				return false;
-			};
+				
 
-		}
+			}
 
-		return function ($userMetadata) use ($clientMetadata, $managerRoles, $groupCommunity) {
 
 			// if ($clientMetadata['community'] === $groupCommunity) {
 			// 	$userMetadata->visibleBecuase = "your admin/" . $groupCommunity;
