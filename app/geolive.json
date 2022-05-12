@@ -26356,9 +26356,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
-            "saveTemplateAsData": false,
-            "contentTemplate": "module-html-defaultTasks-text.contentTemplate.html"
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "module-html-defaultTasks-text.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }
