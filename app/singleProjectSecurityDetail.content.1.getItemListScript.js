@@ -34,8 +34,18 @@
     		       label:"Share Links"
     		   }));
     		   
-    		   list=list.concat(item.getShareLinks().map(function(link){return new ShareLinkItem(ObjectAppend_({token:"abcdefg"},link)); }));
+    		   list=list.concat(item.getShareLinks().map(function(link){
+    		        return new ShareLinkItem(ObjectAppend_({token:"abcdefg"},link)); 
+    		   }));
     		   
+		   }
+		   
+		   if(item.getCommunitiesInvolved().length>0){
+		       var units=OrganizationalUnit.DefaultList();
+		       list=list.concat(item.getCommunitiesInvolved().map(function(community){
+		            return units.getItemWithName(community);
+		       }));
+		    
 		   }
 		   
 		   callback(list)
