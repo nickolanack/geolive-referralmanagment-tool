@@ -592,7 +592,7 @@ var TableHeader = (function() {
 				}));
 
 
-				new UIPopover(btn{
+				new UIPopover(btn, {
 					application:GatherDashboard.getApplication(),
 					detailViewOptions:{
 						"viewType": "form",
@@ -602,7 +602,7 @@ var TableHeader = (function() {
 							closeable:false
 						}
 					}
-				})
+				});
 
 
       		}
