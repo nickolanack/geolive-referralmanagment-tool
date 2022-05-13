@@ -584,7 +584,7 @@ var TableHeader = (function() {
 				(new UIModalFormButton(header.insertBefore(btn, header.firstChild), GatherDashboard.getApplication(), new MockDataTypeItem({
 					'layout':'projectTableLayout' //TODO: use this to make tableLayoutForm generic and select config name
 				}), {
-					"namedFormView": "tableLayoutForm",
+					"formName": "tableLayoutForm",
 					"formOptions": {
 						template: "form",
 						closeable:false
