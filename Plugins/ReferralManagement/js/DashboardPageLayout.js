@@ -41,7 +41,7 @@ var DashboardPageLayout = (function() {
 						}
 						callback(modules);
 						callback=function(){
-							throw 'Called twice'.;
+							throw 'Called twice';
 						}
 				});
 
@@ -49,7 +49,7 @@ var DashboardPageLayout = (function() {
 					modules.content = result;
 					callback(modules);
 					callback=function(){
-						throw 'Called twice'.;
+						throw 'Called twice';
 					}
 				}
 
