@@ -355,6 +355,12 @@ var DashboardPageLayout = (function() {
 				return m.getIdentifier() !== 'recent-detail';
 			});
 
+
+
+			content=layout.filterIdentifier(modules, 'sharing-datasets',UserGroups.AllGroups().length>1);
+			
+
+
 			return content; //content.slice(0,-2);
 
 		}
