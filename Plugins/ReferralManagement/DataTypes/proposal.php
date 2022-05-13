@@ -52,6 +52,14 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
 
                });
             }
+
+
+            if(!$auth){
+
+                
+
+
+            }
         }        
 
 

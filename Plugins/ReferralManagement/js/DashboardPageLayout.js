@@ -383,7 +383,7 @@ var DashboardPageLayout = (function() {
 			});
 		}
 
-	    content;
+	    return content;
 
 	}).addLayout('mainProjectsDetail', function(content) {
 
@@ -856,12 +856,22 @@ var DashboardPageLayout = (function() {
 
 			}
 
+			var called=false;
+			var err=new Error('Content format callback timeout');
+
 			layout.withItem(item).layoutPage(name, content, function(result){
+				called=true;
 				callback(result);
 				callback=function(){
 					throw 'Called twice';
 				}
 			});
+
+
+			setTimeout(function(){
+				if(!called);
+				throw err;
+			}, 3000);
 
 			
 
