@@ -596,7 +596,7 @@ var TableHeader = (function() {
 					application:GatherDashboard.getApplication(),
 					detailViewOptions:{
 						"viewType": "form",
-                    	"namedView": "tableLayoutForm",
+                    	"namedFormView": "tableLayoutForm",
                     	"formOptions": {
 							template: "form",
 							closeable:false
