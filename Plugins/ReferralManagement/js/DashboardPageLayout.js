@@ -10,13 +10,6 @@ var DashboardPageLayout = (function() {
 
 		},
 
-
-		layoutSection: function(name, modules) {
-			/*
-			 * @deprecated
-			 */
-			return this.layoutPage(name, modules);
-		},
 		withItem:function(item){
 			this._item=item;
 			return this;
@@ -24,7 +17,7 @@ var DashboardPageLayout = (function() {
 		currentItem:function(){
 			return this._item||null;
 		},
-		layoutPage: function(name, modules) {
+		layoutPage: function(name, modules, callback) {
 
 
 			var options = {};
@@ -37,19 +30,33 @@ var DashboardPageLayout = (function() {
 				}
 
 				if (!(me._layouts && me._layouts[name])) {
-					return modules;
+					callback(modules);
+					return;
 				}
 
-				var result = me._layouts[name](modules.content, options);
+				var result = me._layouts[name](modules.content, options, function(result){
 
-				if(typeof result != "undefined"){
+						if(typeof result!='undefined'){
+							modules.content = result;
+						}
+						callback(modules);
+						callback=function(){
+							throw 'Called twice'.;
+						}
+				});
+
+				if(typeof result!="undefined"){
 					modules.content = result;
+					callback(modules);
+					callback=function(){
+						throw 'Called twice'.;
+					}
 				}
 
-				return modules;
+				
 			}
 
-			return layout(name);
+			layout(name);
 
 		},
 
@@ -368,7 +375,7 @@ var DashboardPageLayout = (function() {
 		return items;
 
 
-	}).addLayout('mainMapDetail', function(content) {
+	}).addLayout('mainMapDetail', function(content, callback) {
 
 		if (AppClient.getUserType() != "admin") {
 			content.filter(function(m) {
@@ -376,7 +383,7 @@ var DashboardPageLayout = (function() {
 			});
 		}
 
-		return content;
+	    content;
 
 	}).addLayout('mainProjectsDetail', function(content) {
 
@@ -839,7 +846,14 @@ var DashboardPageLayout = (function() {
 
 			}
 
-			callback(layout.withItem(item).layoutPage(name, content));
+			layout.withItem(item).layoutPage(name, content, function(result){
+				callback(result);
+				callback=function(){
+					throw 'Called twice';
+				}
+			});
+
+			
 
 		});
 
