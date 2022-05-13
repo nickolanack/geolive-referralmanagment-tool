@@ -1565,9 +1565,14 @@ label.boolean-field p {
 
 .created-by>span.field-value:before {
     content: "Submitted by ";
-        color: white;
+    color: black;
     
 }
+.dark .created-by > span.field-value:before {
+    color: white;
+}
+
+
 
 .survey-link a {
     display: block;
