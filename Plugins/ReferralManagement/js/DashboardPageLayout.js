@@ -483,6 +483,9 @@ var DashboardPageLayout = (function() {
 	}).addLayout('singleProjectOverviewDetail', function(content){
 
 
+		
+
+
 		content=layout.filterIdentifierConfig(content, ['project-task-progress', 'project-task-remaining', 'project-task-deadline', 'project-tasks-overview'], 'enableTasks');
 		
 		content=layout.filterIdentifierConfig(content, 'activity-chart', 'showProjectActivity');//'enableTasks');
@@ -500,7 +503,12 @@ var DashboardPageLayout = (function() {
 		content=layout.filterIdentifier(content, ['proponent-edit-btns'],  AppClient.getUserType() === "guest");//'enableTasks');
 		
 
-		return content;
+		AppClient.authorize('write', {
+				id: item.getId(),
+				type: item.getType()
+			}, function(access) {
+				callback(content);
+		});
 
 	}).addLayout('singleProjectEditButtonsDetail', function(content){
 
