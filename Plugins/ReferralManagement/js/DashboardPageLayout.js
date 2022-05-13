@@ -856,11 +856,12 @@ var DashboardPageLayout = (function() {
 
 			}
 
-			var called=false;
 			var err=new Error('Content format callback timeout: '+name);
-
+			var timeout=setTimeout(function(){
+				throw err;
+			}, 3000);
 			layout.withItem(item).layoutPage(name, content, function(result){
-				called=true;
+				clearTimeout(timeout);
 				callback(result);
 				callback=function(){
 					throw 'Called twice';
@@ -868,10 +869,7 @@ var DashboardPageLayout = (function() {
 			});
 
 
-			setTimeout(function(){
-				if(!called);
-				throw err;
-			}, 3000);
+			
 
 			
 
