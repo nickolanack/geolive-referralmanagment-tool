@@ -5860,5 +5860,47 @@ button.form-btn.primary-btn.hide {
 .field-value-module.inline.security .field-value span.share-links:after {
     content: "\0f0c1";
 }
+
+.ui-view.ui-popover-view {
+    min-width: fit-content;
+    text-align: left;
+    /* min-width:300px; */
+    
+}
+.ui-view.ui-popover-view{
+
+     .ui-list-view .ui-view,  .inline-list-item{
+        border-color:whitesmoke;
+        padding: 4px 0px;
+    }
+    
+     .ui-list-view .ui-view:first-child{
+        border-top:none;
+    }
+     .ui-list-view .ui-view:last-child{
+        border-bottom:none;
+    }
+    
+    
+     .label.top-left,   .checkbox-style {
+        color: #e0e0e2;
+    }
+    
+     .uitext-container.no-text, .boolean-field.checkbox-style,  .inline-form-list .ui-view{
+        margin:0;
+        padding:0;
+    }
+}
+.dark .ui-view.ui-popover-view{
+    
+    .label.top-left,  .checkbox-style {
+        color: black;
+    }
+}
+
+
+
+
+
     
     
