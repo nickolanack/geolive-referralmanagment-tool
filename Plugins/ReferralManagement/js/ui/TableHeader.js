@@ -580,15 +580,30 @@ var TableHeader = (function() {
 			});
 
 			if(AppClient.getUserType()=="admin"){
-				(new UIModalFormButton(header.insertBefore(new Element('button',{"class":"inline-edit"}), header.firstChild), GatherDashboard.getApplication(), new MockDataTypeItem({
+				var btn=new Element('button',{"class":"inline-edit"});
+				(new UIModalFormButton(header.insertBefore(btn, header.firstChild), GatherDashboard.getApplication(), new MockDataTypeItem({
 					'layout':'projectTableLayout' //TODO: use this to make tableLayoutForm generic and select config name
 				}), {
-					"formName": "tableLayoutForm",
+					"namedFormView": "tableLayoutForm",
 					"formOptions": {
 						template: "form",
 						closeable:false
 					}
 				}));
+
+
+				new UIPopover(btn{
+					application:GatherDashboard.getApplication(),
+					detailViewOptions:{
+						"viewType": "form",
+                    	"namedView": "tableLayoutForm",
+                    	"formOptions": {
+							template: "form",
+							closeable:false
+						}
+					}
+				})
+
 
       		}
 
