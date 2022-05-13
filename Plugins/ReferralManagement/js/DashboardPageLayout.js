@@ -502,7 +502,7 @@ var DashboardPageLayout = (function() {
 
 		content=layout.filterIdentifier(content, ['proponent-edit-btns'],  AppClient.getUserType() === "guest");//'enableTasks');
 		
-
+		var item=layout.currentItem();
 		AppClient.authorize('write', {
 				id: item.getId(),
 				type: item.getType()
