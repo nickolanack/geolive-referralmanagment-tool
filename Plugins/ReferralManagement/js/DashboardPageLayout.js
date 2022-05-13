@@ -507,8 +507,8 @@ var DashboardPageLayout = (function() {
 				id: item.getId(),
 				type: item.getType()
 			}, function(access) {
-			
-				content=layout.filterIdentifier(content, ['proponent-edit-btns'],  access);
+
+				content=layout.filterIdentifier(content, ['proponent-edit-btns'],  !access);
 				callback(content);
 		});
 
