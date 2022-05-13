@@ -601,7 +601,9 @@ var TableHeader = (function() {
 							template: "form",
 							closeable:false
 						}
-					}
+					},
+					clickable:true,
+					anchor:UIPopover.AnchorAuto()
 				});
 
 
