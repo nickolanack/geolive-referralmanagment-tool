@@ -6,5 +6,7 @@ AppClient.authorize('write', {
 				//check access, bool.
 				if (access) {
 				    module.draw();
-				} 
+				}else{
+				    module.getElement().addClass('hidden')
+				}
 			});
