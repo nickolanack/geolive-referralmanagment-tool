@@ -7479,17 +7479,17 @@
                                     "identifier": "discussion-reply",
                                     "viewType": "form",
                                     "namedView": "discussionReplyForm",
-                                    "shouldRender": true,
+                                    "shouldRender": false,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "discussionReplyForm",
                                     "formOptions": "\"{}\"",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "defaultBehaviorFn()",
-                                    "initModuleScript": "",
+                                    "initModuleScript": "singleProjectOverviewDetail.metadata.positions.content.modules.21.config.initModuleScript.js",
                                     "formatModuleScript": "singleProjectOverviewDetail.metadata.positions.content.modules.21.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
-                                    "filterModulesScript": "return list",
+                                    "filterModulesScript": "",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": ""
@@ -7512,7 +7512,7 @@
                                     "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "",
-                                    "filterModulesScript": "return list",
+                                    "filterModulesScript": "return list;",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": ""
@@ -19546,7 +19546,7 @@
                                     "identifier": "user-phone",
                                     "className": "profile-info",
                                     "fieldLabelScript": "return \"Telephone: \";",
-                                    "fieldValueScript": "return \"Field Value Script\";",
+                                    "fieldValueScript": "return item.getPhone()||\"--\";",
                                     "formatElementScript": "userProfileDetailOverview.metadata.positions.content.modules.3.config.formatElementScript.js"
                                 }
                             },
@@ -19738,14 +19738,6 @@
                                 }
                             },
                             {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "userProfileDetailView.metadata.positions.content.modules.2.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
                                 "type": "UIView",
                                 "config": {
                                     "className": "",
@@ -19761,7 +19753,7 @@
                                     "deleteItemScript": "defaultBehaviorFn()",
                                     "initModuleScript": "",
                                     "formatModuleScript": "",
-                                    "resolveItemScript": "userProfileDetailView.metadata.positions.content.modules.3.config.resolveItemScript.js",
+                                    "resolveItemScript": "userProfileDetailView.metadata.positions.content.modules.2.config.resolveItemScript.js",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,

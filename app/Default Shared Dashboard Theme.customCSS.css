@@ -465,7 +465,11 @@ span.guest-submitter:after {
     content: "\0f007";
     font-family: 'FontAwesome';
     color: coral;
-    margin: 0 10px;
+    margin-right:5px;
+    
+}
+span.guest-submitter {
+    float: left;
 }
 .ui-view.with-guest-submitter:after{
     width: 4px;
@@ -3787,8 +3791,7 @@ span.SearchModule.search-container {
 //     right: 5px;
 // }
 .uitext-container.required .required-indicator {
-   
-    float: right;
+   float:left;
     font-size: 12px;
     font-style: italic;
     position: relative;
@@ -3796,6 +3799,7 @@ span.SearchModule.search-container {
     right: 5px;
     color: #edc84c;
     font-size: 25px;
+    margin-right: 5px;
 }
 .uitext-container.required .required-indicator:before {
     content: "*";
