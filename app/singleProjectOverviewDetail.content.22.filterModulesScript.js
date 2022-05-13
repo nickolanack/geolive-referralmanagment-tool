@@ -6,7 +6,7 @@ AppClient.authorize('write', {
 		if (access) {
 		    callback(list);
 		}else{
-		    list.content=list.content.slice(3)
+		    list.content=list.content.slice(2)
 		    callback(list);
 		}
 	});
