@@ -857,7 +857,7 @@ var DashboardPageLayout = (function() {
 			}
 
 			var called=false;
-			var err=new Error('Content format callback timeout');
+			var err=new Error('Content format callback timeout: '+name);
 
 			layout.withItem(item).layoutPage(name, content, function(result){
 				called=true;
