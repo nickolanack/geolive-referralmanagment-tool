@@ -480,7 +480,7 @@ var DashboardPageLayout = (function() {
 		content=layout.filterIdentifierUser(content, ['project-files-menu'], 'admin');
 
 		return content;
-	}).addLayout('singleProjectOverviewDetail', function(content){
+	}).addLayout('singleProjectOverviewDetail', function(content, callback){
 
 
 		
