@@ -508,7 +508,7 @@ var DashboardPageLayout = (function() {
 				type: item.getType()
 			}, function(access) {
 
-				content=layout.filterIdentifier(content, ['proponent-edit-btns'],  !access);
+				content=layout.filterIdentifier(content, ['project-edit-btns', 'discussion-reply'],  access);
 				callback(content);
 		});
 
