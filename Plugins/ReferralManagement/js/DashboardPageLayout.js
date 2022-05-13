@@ -690,7 +690,7 @@ var DashboardPageLayout = (function() {
 				// 	}
 				// },
 				{
-					html: ['Datasets', 'Tasks', 'Access', 'Team', 'Users', 'Discussion',  'Notes', 'History', 'Briefing', 'Review'],
+					html: ['Datasets', 'Tasks', 'Access', 'Team', 'Users', 'Discussion',  'Notes', 'History', 'Briefing', 'Review', 'Security'],
 					condition: function() {
 
 						if (AppClient.getUserType() == "guest") {
