@@ -49,26 +49,6 @@ var DashboardPageLayout = (function() {
 				return modules;
 			}
 
-
-
-			/**
-			 * *************
-			 * @deprecated 
-			 * @unused - layout functionality is now connected to display controller's detail-view/template content
-			 * generator - it has no access to UIViewModule. 
-			 */
-			// if (name instanceof UIViewModule && callback) {
-			// 	options = Object.append(options, name.options);
-			// 	name.getViewName(function(name) {
-			// 		layout(name);
-			// 	});
-			// 	return;
-			// }
-
-			/**
-			 *  ************
-			 */
-
 			return layout(name);
 
 		},
@@ -851,14 +831,15 @@ var DashboardPageLayout = (function() {
 		})
 
 
-		app.getDisplayController().addDetailViewContentFormatter(function(item, name, content) {
+		app.getDisplayController().addDetailViewContentFormatter(function(item, name, content, callback) {
 
 			if (views.indexOf(name) == -1) {
-				return content;
+				callback(content);
+				return;
 
 			}
 
-			return layout.withItem(item).layoutPage(name, content);
+			callback(layout.withItem(item).layoutPage(name, content));
 
 		});
 
