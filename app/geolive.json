@@ -20,7 +20,7 @@
             "CSSInlineObfuscationEnabled": false,
             "PHPDebugEnabled": true,
             "JSDebugEnabled": false,
-            "CachingEnabled": false,
+            "CachingEnabled": true,
             "PrettyPrintJson": true,
             "JSCacheObfuscationEnabled": false,
             "phase": "production",
@@ -32,14 +32,17 @@
                 ""
             ],
             "pluginPaths": [
-                "{core}\/..\/php-core-map\/Plugins",
-                "{core}\/..\/core-referralmanagment-tool\/Plugins"
+                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/php-core-map\/Plugins",
+                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/core-referralmanagment-tool\/Plugins",
+                ""
             ],
             "widgetPaths": [
-                "{core}\/..\/php-core-map\/Widgets"
+                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/php-core-map\/Widgets",
+                ""
             ],
             "modulePaths": [
-                "{core}\/..\/php-core-map\/Modules"
+                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/php-core-map\/Modules",
+                ""
             ],
             "sandboxDomains": [
                 "*.z.geolive.ca",
