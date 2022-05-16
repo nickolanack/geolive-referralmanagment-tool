@@ -20,7 +20,7 @@
             "CSSInlineObfuscationEnabled": false,
             "PHPDebugEnabled": true,
             "JSDebugEnabled": false,
-            "CachingEnabled": true,
+            "CachingEnabled": false,
             "PrettyPrintJson": true,
             "JSCacheObfuscationEnabled": false,
             "phase": "production",
@@ -32,13 +32,14 @@
                 ""
             ],
             "pluginPaths": [
-                ""
+                "{core}\/..\/php-core-map\/Plugins",
+                "{core}\/..\/core-referralmanagment-tool\/Plugins"
             ],
             "widgetPaths": [
-                ""
+                "{core}\/..\/php-core-map\/Widgets"
             ],
             "modulePaths": [
-                ""
+                "{core}\/..\/php-core-map\/Modules"
             ],
             "sandboxDomains": [
                 "*.z.geolive.ca",
