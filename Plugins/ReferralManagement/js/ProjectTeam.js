@@ -1206,7 +1206,7 @@ var ProjectTeam = (function() {
 	ProjectTeam.AddListEvents=function(listView, listFilterFn) {
 
 		listView.addWeakEvent(ProjectTeam, 'userUpdated', function(user){
-			if (((!listFilterFn) || listFilterFn(child))&&(!listView.hasItem(user))) {
+			if (((!listFilterFn) || listFilterFn(user))&&(!listView.hasItem(user))) {
 				listView.addItem(user);
 				return;
 			}
