@@ -1196,10 +1196,7 @@ var ProjectTeam = (function() {
 	};
 
 	ProjectTeam.CurrentTeam = function() {
-		if (!ProjectTeam._currentTeam) {
-			ProjectTeam._currentTeam = new ProjectTeam();
-		}
-		return ProjectTeam._currentTeam;
+		return ProjectTeam;
 	};
 
 
@@ -1247,7 +1244,7 @@ var ProjectTeam = (function() {
 	};
 
 
-	return ProjectTeam;
+	return new ProjectTeam();
 
 
 
