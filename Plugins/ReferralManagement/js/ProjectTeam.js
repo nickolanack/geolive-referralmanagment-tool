@@ -1154,6 +1154,7 @@ var ProjectTeam = (function() {
 
 		//});
 	};
+
 	ProjectTeam.FormatUserCommunityTagCloud = function(module) {
 
 		if(ProjectTeam.GetAllCommunities().length==1){
@@ -1167,7 +1168,7 @@ var ProjectTeam = (function() {
 
 	ProjectTeam.GetAllRoles = function() {
 		return UserGroups.GetAllRoles();
-	}
+	};
 
 	ProjectTeam.GetCommunitiesUserCanEdit = function() {
 
@@ -1181,7 +1182,7 @@ var ProjectTeam = (function() {
 		}
 
 		return [community];
-	}
+	};
 
 	ProjectTeam.GetRolesUserCanAssign = function() {
 
@@ -1191,14 +1192,52 @@ var ProjectTeam = (function() {
 		var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
 		return user.getRolesUserCanAssign();
 
-	}
+	};
 
 	ProjectTeam.CurrentTeam = function() {
 		if (!ProjectTeam._currentTeam) {
 			ProjectTeam._currentTeam = new ProjectTeam();
 		}
 		return ProjectTeam._currentTeam;
-	}
+	};
+
+
+	ProjectTeam.AddListEvents=function(clistView, listFilterFn) {
+
+	};
+
+	ProjectTeam.AddListItemEvents=function(child, childView, listFilterFn) {
+
+
+
+		if(NotificationItems.hasItem(child)){
+			childView.getElement().addClass("has-notification");
+		}
+		childView.addWeakEvent(NotificationItems, "change", function() {
+			if(NotificationItems.hasItem(child)){
+				childView.getElement().addClass("has-notification");
+			}else{
+				childView.getElement().removeClass("has-notification");
+			}
+		});
+		
+
+		childView.addWeakEvent(child, 'update', function() {
+			if ((!listFilterFn) || listFilterFn(child)) {
+				childView.redraw();
+				return;
+			}
+
+			
+			
+			childView.getElement().addClass('removing');
+			setTimeout(function() {
+				childView.remove();
+			}, 1000);
+		});
+
+	};
+
 
 	return ProjectTeam;
 
