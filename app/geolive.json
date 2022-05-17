@@ -32,12 +32,16 @@
                 ""
             ],
             "pluginPaths": [
+                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/php-core-map\/Plugins",
+                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/core-referralmanagment-tool\/Plugins",
                 ""
             ],
             "widgetPaths": [
+                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/php-core-map\/Widgets",
                 ""
             ],
             "modulePaths": [
+                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/php-core-map\/Modules",
                 ""
             ],
             "sandboxDomains": [
@@ -100,7 +104,7 @@
             "googleMapsVersion": "",
             "tileCachePath": "{front}\/..\/tiles",
             "layerDisplayFilterScript": "plugin.Maps.12.layerDisplayFilterScript.js",
-            "layerDisplayFormatScript": "plugin.Maps.12.layerDisplayFormatScript.js",
+            "layerDisplayFormatScript": "",
             "layerDisplayChildLayersScript": "",
             "formatMapitemScript": "plugin.Maps.12.formatMapitemScript.js",
             "featureUrlScript": ""
@@ -160,7 +164,9 @@
         "parameters": {
             "releaseServer": "http:\/\/release.geolive.ca",
             "releasePackage": "master",
-            "autoUpdate": false
+            "autoUpdate": false,
+            "composerPath": "\/usr\/bin\/composer",
+            "bowerPath": ""
         }
     },
     "plugin.24": {
@@ -188,8 +194,8 @@
                     "widget": "proponent"
                 }
             ],
-            "useRemoteServerUI": false,
-            "remoteServerUrl": ""
+            "useRemoteServerUI": true,
+            "remoteServerUrl": "https:\/\/gct3.gather.geoforms.ca\/app\/nickolanack\/php-core-app\/core.php?task=TASK&format=ajax&json=JSON"
         }
     },
     "plugin.28": {
@@ -263,8 +269,8 @@
         "name": "Monolog Plugin",
         "instance": "Monolog",
         "parameters": {
-            "enabled": false,
-            "logPath": "{front}\/..\/logs",
+            "enabled": true,
+            "logPath": "{front}\/..\/logs\/{domain}",
             "logToSentry": false
         }
     },
@@ -330,6 +336,7 @@
             "queueEmailDelay": "5",
             "exportSecret": "XXXX-XXXX",
             "datawarehousePaths": [
+                "\/srv\/gather_gis\/",
                 ""
             ],
             "customFormCss": ""
@@ -366,11 +373,6 @@
             "secret": "XXXX-XXXX",
             "voice": "Nicole"
         }
-    },
-    "plugin.50": {
-        "name": "Read Receipts",
-        "instance": "ReadReceipts",
-        "parameters": {}
     },
     "widget.33": {
         "name": "Attr Search Bar",
@@ -6331,7 +6333,7 @@
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "initModuleScript": "",
-                                    "formatModuleScript": "People Users Detail.metadata.positions.content.modules.2.config.formatModuleScript.js",
+                                    "formatModuleScript": "",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
@@ -11054,7 +11056,7 @@
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "initModuleScript": "",
-                                    "formatModuleScript": "communityUsersDetail.metadata.positions.content.modules.2.config.formatModuleScript.js",
+                                    "formatModuleScript": "",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
@@ -11105,19 +11107,19 @@
             "metadata": {
                 "title": "userAttributes",
                 "_tableDiagramState": {
-                    "x": 444,
-                    "y": 256
+                    "x": 629,
+                    "y": 208
                 },
                 "_diagramState": {
-                    "x": 444,
-                    "y": 256
+                    "x": 629,
+                    "y": 208
                 },
                 "appliesTo": [
                     "user"
                 ],
                 "_typeDiagramState": {
-                    "x": 152,
-                    "y": 292
+                    "x": 100,
+                    "y": 300
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -12020,19 +12022,19 @@
             "metadata": {
                 "title": "emailerAttributes",
                 "_tableDiagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 588,
+                    "y": 221
                 },
                 "_diagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 588,
+                    "y": 221
                 },
                 "appliesTo": [
                     "marker"
                 ],
                 "_typeDiagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 100,
+                    "y": 300
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -12072,8 +12074,8 @@
                         },
                         "fieldNumberOptions": {
                             "precision": 0,
-                            "limitMinValue": 0,
-                            "limitMaxValue": 0
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
                         },
                         "fieldBooleanOptions": {
                             "hideFalse": true,
@@ -12099,19 +12101,19 @@
             "metadata": {
                 "title": "featureAttributes",
                 "_tableDiagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 413,
+                    "y": 247
                 },
                 "_diagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 413,
+                    "y": 247
                 },
                 "appliesTo": [
                     "mapitem"
                 ],
                 "_typeDiagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 100,
+                    "y": 300
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -12222,19 +12224,19 @@
             "metadata": {
                 "title": "proponentAttributes",
                 "_tableDiagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 413,
+                    "y": 256
                 },
                 "_diagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 413,
+                    "y": 256
                 },
                 "appliesTo": [
                     "user"
                 ],
                 "_typeDiagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 100,
+                    "y": 300
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -12274,8 +12276,8 @@
                         },
                         "fieldNumberOptions": {
                             "precision": 0,
-                            "limitMinValue": 0,
-                            "limitMaxValue": 0
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
                         },
                         "fieldBooleanOptions": {
                             "hideFalse": true,
@@ -12318,8 +12320,8 @@
                         },
                         "fieldNumberOptions": {
                             "precision": 0,
-                            "limitMinValue": 0,
-                            "limitMaxValue": 0
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
                         },
                         "fieldBooleanOptions": {
                             "hideFalse": true,
@@ -12362,8 +12364,8 @@
                         },
                         "fieldNumberOptions": {
                             "precision": 0,
-                            "limitMinValue": 0,
-                            "limitMaxValue": 0
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
                         },
                         "fieldBooleanOptions": {
                             "hideFalse": true,
@@ -12406,8 +12408,8 @@
                         },
                         "fieldNumberOptions": {
                             "precision": 0,
-                            "limitMinValue": 0,
-                            "limitMaxValue": 0
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
                         },
                         "fieldBooleanOptions": {
                             "hideFalse": true,
@@ -12450,8 +12452,8 @@
                         },
                         "fieldNumberOptions": {
                             "precision": 0,
-                            "limitMinValue": 0,
-                            "limitMaxValue": 0
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
                         },
                         "fieldBooleanOptions": {
                             "hideFalse": true,
@@ -12477,12 +12479,12 @@
             "metadata": {
                 "title": "proposalAttributes",
                 "_tableDiagramState": {
-                    "x": 298,
-                    "y": 254
+                    "x": 346,
+                    "y": 263
                 },
                 "_diagramState": {
-                    "x": 298,
-                    "y": 254
+                    "x": 346,
+                    "y": 263
                 },
                 "appliesTo": [
                     "proposal"
@@ -13197,8 +13199,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -13901,8 +13903,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -13989,8 +13991,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -14077,8 +14079,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -14184,19 +14186,19 @@
             "metadata": {
                 "title": "taskAttributes",
                 "_tableDiagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 341,
+                    "y": 264
                 },
                 "_diagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 341,
+                    "y": 264
                 },
                 "appliesTo": [
                     "task"
                 ],
                 "_typeDiagramState": {
-                    "x": 0,
-                    "y": 0
+                    "x": 100,
+                    "y": 300
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -21679,12 +21681,12 @@
             "metadata": {
                 "title": "datasetAttributes",
                 "_tableDiagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 381,
+                    "y": 255
                 },
                 "_diagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 381,
+                    "y": 255
                 },
                 "appliesTo": [
                     "proposal"
@@ -23971,7 +23973,7 @@
             "widgetTitle": "Kml renderer",
             "target": "kmlDocumentRenderer",
             "cacheable": true,
-            "allowExternalFilePaths": false,
+            "allowExternalFilePaths": true,
             "allowExternalUrls": false,
             "resolveSpatialFilePathScript": "Kml renderer.resolveSpatialFilePathScript.js",
             "formatSpatialFileRendererScript": "Kml renderer.formatSpatialFileRendererScript.js",
@@ -24863,7 +24865,7 @@
             "widgetTitle": "kmlDocumentTileRenderer",
             "target": "kmlDocumentTileRenderer",
             "cacheable": true,
-            "allowExternalFilePaths": false,
+            "allowExternalFilePaths": true,
             "allowExternalUrls": false,
             "resolveSpatialFilePathScript": "kmlDocumentTileRenderer.resolveSpatialFilePathScript.js",
             "formatSpatialFileRendererScript": "",
