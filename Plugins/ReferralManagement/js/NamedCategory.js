@@ -504,6 +504,11 @@ var NamedCategory = (function() {
 	};
 
 
+	NamedCategory.AddListItemEvents = function(child, childView){
+
+	};
+
+
 
 
 	NamedCategory.CreateCategoryLabel = function(application, item) {
