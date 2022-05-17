@@ -194,7 +194,7 @@ var NamedCategory = (function() {
 
 		save: function(callback) {
 
-			var i = ProjectTagList.getProjectTags().indexOf(this);
+			var i = ProjectTagList.getProjectTagsData().indexOf(this);
 			if (i < 0) {
 				ProjectTagList.addTag(this);
 			}
