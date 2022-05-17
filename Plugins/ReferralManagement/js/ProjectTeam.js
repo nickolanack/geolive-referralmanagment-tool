@@ -1,4 +1,4 @@
-var ProjectTeam = (function() {
+var ProjectTeamClass = (function() {
 
 	var ProjectListQuery = new Class({
 		Extends: AjaxControlQuery,
@@ -1023,6 +1023,9 @@ var ProjectTeam = (function() {
 
 	});
 
+
+	var ProjectTeam=new ProjectTeamClass();
+
 	/*
 	 * @deprecated
 	 */
@@ -1244,7 +1247,7 @@ var ProjectTeam = (function() {
 	};
 
 
-	return new ProjectTeam();
+	return ProjectTeam;
 
 
 
