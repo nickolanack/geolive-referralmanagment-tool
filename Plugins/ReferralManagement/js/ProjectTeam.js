@@ -378,7 +378,8 @@ var ProjectTeam = (function() {
 				metadata: data
 
 			})).addEvent('update', function() {
-				me.fireEvent('userListChanged')
+				me.fireEvent('userUpdated',[user]);
+				me.fireEvent('userListChanged');
 			})
 
 			if (data.id + "" === AppClient.getId() + "") {
@@ -1202,7 +1203,14 @@ var ProjectTeam = (function() {
 	};
 
 
-	ProjectTeam.AddListEvents=function(clistView, listFilterFn) {
+	ProjectTeam.AddListEvents=function(listView, listFilterFn) {
+
+		listView.addWeakEvent(ProjectTeam, 'userUpdated', function(user){
+			if (((!listFilterFn) || listFilterFn(child))&&(!listView.hasItem(user))) {
+				listView.addItem(user);
+				return;
+			}
+		})
 
 	};
 
