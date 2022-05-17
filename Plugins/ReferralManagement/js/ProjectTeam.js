@@ -1,4 +1,4 @@
-var ProjectTeamClass = (function() {
+var ProjectTeam = (function() {
 
 	var ProjectListQuery = new Class({
 		Extends: AjaxControlQuery,
@@ -76,7 +76,7 @@ var ProjectTeamClass = (function() {
 
 
 
-	var ProjectTeam = new Class({
+	var ProjectTeamClass = new Class({
 		Extends: DataTypeObject,
 		Implements: [Events],
 		initialize: function() {
