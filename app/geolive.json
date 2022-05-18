@@ -20,7 +20,7 @@
             "CSSInlineObfuscationEnabled": false,
             "PHPDebugEnabled": true,
             "JSDebugEnabled": false,
-            "CachingEnabled": false,
+            "CachingEnabled": true,
             "PrettyPrintJson": true,
             "JSCacheObfuscationEnabled": false,
             "phase": "production",
@@ -263,7 +263,7 @@
         "name": "Monolog Plugin",
         "instance": "Monolog",
         "parameters": {
-            "enabled": false,
+            "enabled": true,
             "logPath": "{front}\/..\/logs",
             "logToSentry": false
         }
