@@ -19,22 +19,24 @@ var AdminMonitor=(function(){
 					console.log(channel);
 					console.log(event);
 
+					var opt=ObjectAppend_({}, options);
+
 					if(event.status){
-						options.className+=' status'-event.status;
+						opt.className+=' status-'+event.status;
 					}
 
 					if(event&&event.status&&event.status==="write"){
-						NotificationBubble.Make("", channel.channel+" : "+event.status+" "+(event.interval||"~")+"s", options);
+						NotificationBubble.Make("", channel.channel+" : "+event.status+" "+(event.interval||"~")+"s", opt);
 					}
 
 					if(event&&event.status&&event.status==="start"){
-						NotificationBubble.Make("", channel.channel+" : "+event.status, options);
+						NotificationBubble.Make("", channel.channel+" : "+event.status, opt);
 					}
 					if(event&&event.status&&event.status==="check"){
-						NotificationBubble.Make("", channel.channel+" : "+event.status, options);
+						NotificationBubble.Make("", channel.channel+" : "+event.status, opt);
 					}
 					if(event&&event.status&&event.status==="skip"){
-						NotificationBubble.Make("", channel.channel+" : "+event.status, options);
+						NotificationBubble.Make("", channel.channel+" : "+event.status, opt);
 					}
 				})
 			})
