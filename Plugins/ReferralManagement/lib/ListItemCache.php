@@ -7,10 +7,23 @@ class ListItemCache implements \core\EventListener {
 	use \core\EventListenerTrait;
 
 	protected $debug=false;
+
+	protected static $memcache=null;
+
 	public function setDebug($bool){
 		$this->debug=!!$bool;
 	}
 
+
+	protected getMemcache(){
+
+		if(!self::$memcache){
+			self::$memcache=(new \core\MemcacheConnection())->setPrefix(HtmlDocument()->getDomain().'.');
+		}
+
+		return self::$memcache;
+
+	}
 
 	public function needsProjectListUpdate() {
 		(new \core\LongTaskProgress())
@@ -205,9 +218,28 @@ class ListItemCache implements \core\EventListener {
 
 		$params = (object) array('team' => 1);
 
+
+
 		$cacheName = "ReferralManagement.userList.json";
-		$cacheFile = HtmlDocument()->getCachedPageFile($cacheName);
-		$cacheData = HtmlDocument()->getCachedPage($cacheName);
+		$usedMemcache=false;
+
+		if($this->getMemcache()->isEnabled()){
+
+			$cacheData = $this->getMemcache()->get($cacheName);
+			if(!empty($cacheData)){
+				$cacheData=json_encode($cacheData);
+				$usedMemcache=true;
+			}
+		}
+
+		if(empty($cacheData)){
+			
+			$cacheFile = HtmlDocument()->getCachedPageFile($cacheName);
+			$cacheData = HtmlDocument()->getCachedPage($cacheName);
+		}
+
+
+		
 
 		$start = microtime(true);
 
@@ -217,15 +249,24 @@ class ListItemCache implements \core\EventListener {
 			'domain' => HtmlDocument()->getDomain(),
 			'caller' => get_class() . ' -> ' . __METHOD__,
 			'time' => $start,
-			'cache' => array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
+			'cache' =>  $usedMemcache?'memchache':array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
 			'status' => 'check',
 		));
 
 		$users = GetPlugin('ReferralManagement')->listAllUsersMetadata();
 
 		$newData = json_encode($users);
-		HtmlDocument()->setCachedPage($cacheName, $newData);
+
+		
+
+		
 		if ($newData != $cacheData) {
+
+			HtmlDocument()->setCachedPage($cacheName, $newData);
+			if($this->getMemcache()->isEnabled()){
+				$this->getMemcache()->set($cacheName, $users);
+			}
+			
 			$this->notifier()->onTeamUserListChanged($params->team);
 			Emit('onUpdateUserList', array());
 
@@ -236,7 +277,7 @@ class ListItemCache implements \core\EventListener {
 				'caller' => get_class() . ' -> ' . __METHOD__,
 				'time' => microtime(true),
 				'interval' => (microtime(true) - $start),
-				'cache' => array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
+				'cache' => $usedMemcache?'memchache':array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
 				'status' => 'write',
 			));
 
@@ -250,7 +291,7 @@ class ListItemCache implements \core\EventListener {
 			'caller' => get_class() . ' -> ' . __METHOD__,
 			'time' => microtime(true),
 			'interval' => (microtime(true) - $start),
-			'cache' => array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
+			'cache' =>  $usedMemcache?'memchache':array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
 			'status' => 'skip',
 		));
 
@@ -261,12 +302,24 @@ class ListItemCache implements \core\EventListener {
 		//error_log("write cache: ".\GetPath('{cache}'));
 
 		$cacheName = "ReferralManagement.userList.json";
-		$cacheData = HtmlDocument()->getCachedPage($cacheName);
-		if (!empty($cacheData)) {
-			$users = json_decode($cacheData);
-		} else {
-			$users = GetPlugin('ReferralManagement')->listAllUsersMetadata();
-			HtmlDocument()->setCachedPage($cacheName, json_encode($users));
+		$users=null;
+
+		if($this->getMemcache()->isEnabled()){
+			$cacheData=$this->getMemcache()->get($cacheName);
+			if(!empty($cacheData)){
+				$users= $cacheData;
+			}
+		}
+
+		if(!$users){
+
+			$cacheData = HtmlDocument()->getCachedPage($cacheName);
+			if (!empty($cacheData)) {
+				$users = json_decode($cacheData);
+			} else {
+				$users = GetPlugin('ReferralManagement')->listAllUsersMetadata();
+				HtmlDocument()->setCachedPage($cacheName, json_encode($users));
+			}
 		}
 
 		$this->needsUserListUpdate();
