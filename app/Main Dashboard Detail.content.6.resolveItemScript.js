@@ -5,7 +5,24 @@ return new ProjectList({
 	                new MockDataTypeItem({
                         name:"Community Vault",
                         description:"These datasets and collections are only visible to your community members. Nobody else has access to them.",
-                        icon:null
+                        icon:null,
+                        navigationFn:function(){
+                            
+                            controller.navigateTo("Datasets", "Main", {
+                				item: new ProjectList({
+                        		    "label": "Community Vault",
+                        		    projects:function(callback){
+                        
+                        		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+                             				callback(team.getProjects().filter(function(p){
+                             					return true;
+                             				}));
+                             			});
+                                    }
+                        		})
+                			});
+                            
+                        }
                     }),
                     new MockDataTypeItem({
                         name:"Shared",
