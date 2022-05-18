@@ -8,6 +8,7 @@ return new ProjectList({
                         icon:null,
                         navigationFn:function(){
                             
+                            var controller=GatherDashboard.getApplication().getNamedValue('navigationController')
                             controller.navigateTo("Datasets", "Main", {
                 				item: new ProjectList({
                         		    "label": "Community Vault",
