@@ -89,6 +89,13 @@ var UIInteraction = (function() {
 
 				})(child)
 
+
+				if(child.getNavigationFn){
+					child.getNavigationFn()();
+					return;
+				}
+
+
 				me.navigateToNamedCategoryType(child.getName());
 
 				//});
