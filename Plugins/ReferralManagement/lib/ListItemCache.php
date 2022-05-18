@@ -15,7 +15,7 @@ class ListItemCache implements \core\EventListener {
 	}
 
 
-	protected getMemcache(){
+	protected function getMemcache(){
 
 		if(!self::$memcache){
 			self::$memcache=(new \core\MemcacheConnection())->setPrefix(HtmlDocument()->getDomain().'.');
