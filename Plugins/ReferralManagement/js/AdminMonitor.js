@@ -3,7 +3,7 @@ var AdminMonitor=(function(){
 
 
 	var options={
-		autoClose:false,
+		autoCloseTimeout:5000,
 		className:"debug",
 		from:"bottom-right",
 		to:"top"
