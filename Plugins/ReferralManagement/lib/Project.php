@@ -109,7 +109,7 @@ class Project {
 			$user['id'] = $member->id;
 			$user['permissions'] = $member->permissions;
 
-			return $user;
+			return (object) $user;
 
 		}, $teamMembers);
 

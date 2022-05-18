@@ -93,7 +93,7 @@ class ComputedData {
 	public function parseUserIcon($teamMember) {
 
 		GetPlugin('Attributes');
-        $icon=(new \attributes\Record('userAttributes'))->getValues($teamMember['id'], 'user')['profileIcon'];
+        $icon=(new \attributes\Record('userAttributes'))->getValues($teamMember->id, 'user')['profileIcon'];
         $icon=(new \core\WebMedia())->parseImageUrls($icon);
 
         if(empty($icon)){
