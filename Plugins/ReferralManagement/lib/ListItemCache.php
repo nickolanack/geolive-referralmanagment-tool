@@ -21,6 +21,15 @@ class ListItemCache implements \core\EventListener {
 			->throttle('onTriggerUpdateDevicesList', array('team' => 1), array('interval' => 30));
 	}
 	public function needsUserListUpdate() {
+
+		Broadcast('cacheusers', 'update', array(
+				'client' => GetClient()->getUserName(),
+				'domain' => HtmlDocument()->getDomain(),
+				'caller' => get_class() . ' -> ' . __METHOD__,
+				'time' => microtime(true),
+				'status' => 'start',
+			));
+
 		(new \core\LongTaskProgress())
 			->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval' => 30));
 	}
