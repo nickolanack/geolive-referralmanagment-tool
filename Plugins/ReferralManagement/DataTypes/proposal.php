@@ -44,7 +44,8 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
 
             $auth=$auth||intval($item->user)==$userId;
             if(!$auth){
-               array_walk($item->teamMembers, function($teamMember)use(&$auth, $userId){
+               $teamMembers=$item->attributes['teamMembers'];
+               array_walk($teamMembers, function($teamMember)use(&$auth, $userId){
 
                     if(intval($teamMember->id)==$userId){
                         $auth=true;
