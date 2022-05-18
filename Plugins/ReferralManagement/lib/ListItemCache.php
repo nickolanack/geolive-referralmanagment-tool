@@ -26,6 +26,9 @@ class ListItemCache implements \core\EventListener {
 				'client' => GetClient()->getUserName(),
 				'domain' => HtmlDocument()->getDomain(),
 				'caller' => get_class() . ' -> ' . __METHOD__,
+				'stack'=>array_map(function($item){
+					return (isset($item['file'])?$item['file']:'').(isset($item['line'])?' ::'.$item['line']:'');
+				},  debug_backtrace()),
 				'time' => microtime(true),
 				'status' => 'start',
 			));
