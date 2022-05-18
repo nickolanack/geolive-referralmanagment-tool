@@ -1,21 +1,42 @@
 var UserGroups = (function() {
 
-	var UserGroups = new Class({});
-
-
-
 
 	var MainRoles;
 
+	var UserGroupsBaseClass = new Class({
+		Implements:[Events],
+		initialize:function(){
 
-	(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_user_roles', {
-		'plugin': "ReferralManagement"
-	}))
-	.addEvent('success', function(result) {
-			console.log(result);
-			MainRoles = result.roles;
-		})
-		.execute();
+
+			var me=this;
+
+
+			(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_user_roles', {
+				'plugin': "ReferralManagement"
+			}))
+			.addEvent('success', function(result) {
+				console.log(result);
+				MainRoles = result.roles;
+				me.fireEvent('load');
+				me._isLoaded=true;
+			})
+			.execute();
+
+		},
+		runOnceOnLoad:function(then){
+			if(this._isLoaded){
+				setTimeout(then, 0);
+				return;
+			}
+			this.once('load', then);
+		}
+
+	});
+
+	var UserGroups=new UserGroupsClass();
+
+
+	
 
 
 	UserGroups.GetAllRoles = function() {

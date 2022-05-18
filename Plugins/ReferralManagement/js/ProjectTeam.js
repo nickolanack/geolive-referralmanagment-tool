@@ -436,8 +436,10 @@ var ProjectTeam = (function() {
 
 						me._addUser(resp.result);
 
-						me.fireEvent('loadUsers');
-						callback();
+						UserGroups.runOnceOnLoad(function(){
+							me.fireEvent('loadUsers');
+							callback();
+						});
 
 						setInterval(me._updateUsersOnlineAsync.bind(me), 60000);
 						me._updateUsersOnlineAsync();
@@ -449,8 +451,10 @@ var ProjectTeam = (function() {
 					return;
 				}
 
-				me.fireEvent('loadUsers');
-				callback();
+				UserGroups.runOnceOnLoad(function(){
+					me.fireEvent('loadUsers');
+					callback();
+				});
 
 				setInterval(me._updateUsersOnlineAsync.bind(me), 60000);
 				me._updateUsersOnlineAsync();

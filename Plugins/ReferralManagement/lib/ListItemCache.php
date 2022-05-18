@@ -249,7 +249,7 @@ class ListItemCache implements \core\EventListener {
 			'domain' => HtmlDocument()->getDomain(),
 			'caller' => get_class() . ' -> ' . __METHOD__,
 			'time' => $start,
-			'cache' =>  $this->getMemcache()->isEnabled()?'memchache':array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
+			'cache' =>  $this->getMemcache()->isEnabled()?'memcache':array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
 			'status' => 'check',
 		));
 
@@ -277,7 +277,7 @@ class ListItemCache implements \core\EventListener {
 				'caller' => get_class() . ' -> ' . __METHOD__,
 				'time' => microtime(true),
 				'interval' => (microtime(true) - $start),
-				'cache' => $this->getMemcache()->isEnabled()?'memchache':array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
+				'cache' => $this->getMemcache()->isEnabled()?'memcache':array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
 				'status' => 'write',
 			));
 
@@ -291,7 +291,7 @@ class ListItemCache implements \core\EventListener {
 			'caller' => get_class() . ' -> ' . __METHOD__,
 			'time' => microtime(true),
 			'interval' => (microtime(true) - $start),
-			'cache' =>  $this->getMemcache()->isEnabled()?'memchache':array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
+			'cache' =>  $this->getMemcache()->isEnabled()?'memcache':array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
 			'status' => 'skip',
 		));
 
