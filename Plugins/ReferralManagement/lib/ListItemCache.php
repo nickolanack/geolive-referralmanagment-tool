@@ -258,14 +258,14 @@ class ListItemCache implements \core\EventListener {
 		$newData = json_encode($users);
 
 		
-
+		HtmlDocument()->setCachedPage($cacheName, $newData);
+		if($this->getMemcache()->isEnabled()){
+			$this->getMemcache()->set($cacheName, $users);
+		}
 		
 		if ($newData != $cacheData) {
 
-			HtmlDocument()->setCachedPage($cacheName, $newData);
-			if($this->getMemcache()->isEnabled()){
-				$this->getMemcache()->set($cacheName, $users);
-			}
+			
 			
 			$this->notifier()->onTeamUserListChanged($params->team);
 			Emit('onUpdateUserList', array());
