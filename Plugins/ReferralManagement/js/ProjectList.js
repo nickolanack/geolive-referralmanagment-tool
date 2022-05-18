@@ -912,13 +912,18 @@ var ProjectList = (function() {
 			name:"Community Vault",
             description:"These datasets and collections are only visible to your community members. Nobody else has access to them.",
             filter:function(p){
-            	return p.getProjectCommunity()==ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity();
+            	return p.getProjectCommunity()==ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity()&&p.getCommunitiesInvolved().filter(function(c){
+            		return c&&c!=p.getProjectCommunity();
+            	}).length==0;
             }
 		},{
 			name:"Shared",
             description:"These are datasets and collections that your community is sharing with other communities and GCT3. This information will be visible and downloadable to members of these other communities.",
             filter:function(p){
-            	return p.getProjectCommunity()==ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity();
+
+            	return p.getProjectCommunity()==ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity()&&p.getCommunitiesInvolved().filter(function(c){
+            		return c&&c!=p.getProjectCommunity();
+            	}).length>0;
             }
 
 		},{
