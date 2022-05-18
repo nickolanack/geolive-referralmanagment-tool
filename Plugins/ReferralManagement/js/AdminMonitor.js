@@ -22,6 +22,10 @@ var AdminMonitor=(function(){
 					if(event&&event.status&&event.status==="write"){
 						NotificationBubble.Make("", channel.channel+" : "+event.status+" "+(event.interval||"~")+"s", options);
 					}
+
+					if(event&&event.status&&event.status==="start"){
+						NotificationBubble.Make("", channel.channel+" : "+event.status, options);
+					}
 				})
 			})
 
