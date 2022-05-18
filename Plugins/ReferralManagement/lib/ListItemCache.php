@@ -14,11 +14,11 @@ class ListItemCache implements \core\EventListener {
 
 	public function needsProjectListUpdate() {
 		(new \core\LongTaskProgress())
-			->throttle('onTriggerUpdateProjectList', array(), array('interval' => 30));
+			->throttle('onTriggerUpdateProjectList', array(), array('interval' => 3));
 	}
 	public function needsDeviceListUpdate() {
 		(new \core\LongTaskProgress())
-			->throttle('onTriggerUpdateDevicesList', array('team' => 1), array('interval' => 30));
+			->throttle('onTriggerUpdateDevicesList', array('team' => 1), array('interval' => 5));
 	}
 	public function needsUserListUpdate() {
 
@@ -31,7 +31,7 @@ class ListItemCache implements \core\EventListener {
 			));
 
 		(new \core\LongTaskProgress())
-			->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval' => 30));
+			->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval' => 3));
 	}
 
 	protected function onCreateUser($params) {
