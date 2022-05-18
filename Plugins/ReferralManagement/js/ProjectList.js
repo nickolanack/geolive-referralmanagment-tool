@@ -905,6 +905,51 @@ var ProjectList = (function() {
 	}
 
 
+	ProjectList.ResolveSharedLists=function(){
+
+		return [
+            new MockDataTypeItem({
+                name:"Community Vault",
+                description:"These datasets and collections are only visible to your community members. Nobody else has access to them.",
+                icon:null,
+                navigationFn:function(){
+                    
+                    var controller=GatherDashboard.getApplication().getNamedValue('navigationController')
+                    controller.navigateTo("Datasets", "Main", {
+        				item: new ProjectList({
+                		    "label": "Community Vault",
+                		    "description":"These datasets and collections are only visible to your community members. Nobody else has access to them.",
+                		    projects:function(callback){
+                
+                		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+                     				callback(team.getProjects().filter(function(p){
+                     					return true;
+                     				}));
+                     			});
+                            }
+                		})
+        			});
+                    
+                }
+            }),
+            new MockDataTypeItem({
+                name:"Shared",
+                description:"These are datasets and collections that your community is sharing with other communities and GCT3. This information will be visible and downloadable to members of these other communities.",
+                icon:null
+            }),
+            new MockDataTypeItem({
+                name:"Sharing",
+                description:"These are datasets and collections that have been shared by other communities and GCT3 with your community. You will be able to view and download these files.",
+                icon:null
+            })
+            
+            ];
+
+
+	}
+
+
+
 	ProjectList.ResolveSharedByommunityProjectList=function(item){
 
 		return new ProjectList({
