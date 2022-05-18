@@ -12,6 +12,7 @@ return new ProjectList({
                             controller.navigateTo("Datasets", "Main", {
                 				item: new ProjectList({
                         		    "label": "Community Vault",
+                        		    "description":"These datasets and collections are only visible to your community members. Nobody else has access to them.",
                         		    projects:function(callback){
                         
                         		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
