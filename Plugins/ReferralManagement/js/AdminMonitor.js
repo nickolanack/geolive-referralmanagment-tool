@@ -16,6 +16,14 @@ var AdminMonitor=(function(){
 
 			channels.forEach(function(channel){
 				AjaxControlQuery.Subscribe(channel, function(event){
+
+
+					var el = $$('body')[0];
+					if (el.hasClass('hide-admin')) {
+						return;
+					}
+
+
 					console.log(channel);
 					console.log(event);
 
