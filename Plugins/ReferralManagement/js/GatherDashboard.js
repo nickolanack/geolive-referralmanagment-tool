@@ -76,9 +76,19 @@ var GatherDashboard = (function() {
 
 		getCommunitiesString: function(item) {
 
+			if(ProjectTeam.GetAllCommunities().length==1){
+				return '';
+			}
+
+
 			var communities = item.getCommunitiesInvolved();
 
+
+
 			if (communities.length == 0) {
+
+
+
 				return 'no communities have been selected';
 			}
 
