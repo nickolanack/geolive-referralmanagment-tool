@@ -56,10 +56,10 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
 
 
             if(!$auth){
-
-                
-
-
+                if(intval($item->user)<=0){
+                    $minAccessLevel = 'lands-department-manager';
+                    $auth=Auth('memberof', $minAccessLevel, 'group');
+                }
             }
         }        
 
