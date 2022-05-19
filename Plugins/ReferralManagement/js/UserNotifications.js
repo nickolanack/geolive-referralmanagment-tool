@@ -76,7 +76,7 @@ var UserNotifications = (function() {
 								"className": "alert-view",
 								"showCancel":true,
 								"labelForSubmit":"Yes",
-								"labelForCancel":"No"
+								"labelForCancel":"No",
 								"closable":true
 							}
 						})).on('complete', function(){
