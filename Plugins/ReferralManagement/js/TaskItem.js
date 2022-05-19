@@ -795,7 +795,7 @@ var TaskItem = (function() {
 				var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
 				if (user.isTeamManager()) {
 
-					var editDefaultTasksButton = TaskItem._editDefaultTasks(application, item);
+					var editDefaultTasksButton = TaskItem._editDefaultTasks(application, item, category);
 					RecentItems.colorizeEl(editDefaultTasksButton.getElement(), item.getProjectType());
 					modules.push(editDefaultTasksButton);
 
@@ -1027,11 +1027,11 @@ var TaskItem = (function() {
 	});
 
 
-	TaskItem._editDefaultTasks = function(application, item) {
+	TaskItem._editDefaultTasks = function(application, item, categoryName) {
 
 
 
-		var category = NamedCategoryList.getTag(item.getProjectType());
+		var category = NamedCategoryList.getTag(categoryName);
 
 		var taskGroup = new CategoryTaskTemplateGroup({
 			color: category.getColor(),
