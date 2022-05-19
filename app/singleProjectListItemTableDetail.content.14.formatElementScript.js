@@ -3,20 +3,9 @@ el.setAttribute("data-col","security");
 
 
 var users=item.getUsers();
-    
 var description=[];
 
-
-if(users.length>0){
-    valueEl.appendChild(new Element('span', {'html':users.length, 'class':'team-members'}));
-    description.push(users.length==1?'There is 1 team member':'There are '+users.length+' team members');
-}
-
-console.log('security list');
-
-
-
-var team=ProjectTeam.CurrentTeam();
+//var team=ProjectTeam.CurrentTeam();
 /*
 var viewers=team.getUsers().filter(function(u){
     return u.isTeamManager() &&
@@ -32,14 +21,35 @@ if(viewers.length>0){
 var viewers=0;
 
 var communities=item.getCommunitiesInvolved();
+
+
+var links=item.getShareLinks();
+
+var showSimplified=true;
+
+
+
+if(users.length>0){
+    if(!showSimplified){
+        valueEl.appendChild(new Element('span', {'html':users.length, 'class':'team-members'}));
+    }
+    description.push(users.length==1?'There is 1 team member':'There are '+users.length+' team members');
+}
+
+
+
 if(communities.length>0){
-    valueEl.appendChild(new Element('span', {'html':communities.length, 'class':'communities'}));
+    if(!showSimplified){
+        valueEl.appendChild(new Element('span', {'html':communities.length, 'class':'communities'}));
+    }
     description.push(communities.length==1?'There is 1 community':'There are '+communities.length+' communities');
 }
 
-var links=item.getShareLinks();
+
 if(links.length>0){
-    valueEl.appendChild(new Element('span', {'html':links.length, 'class':'share-links'}));
+    if(!showSimplified){
+        valueEl.appendChild(new Element('span', {'html':links.length, 'class':'share-links'}));
+    }
     description.push(links.length==1?'There is 1 share link':'There are '+links.length+' share links');
 }
 
@@ -47,7 +57,13 @@ if(links.length>0){
 
 
 
-if(users.length>0||viewers.length>0||links.length>0||communities.length){
+if(users.length>0||/*viewers.length>0||*/links.length>0||communities.length){
+    
+    if(showSimplified){
+         valueEl.appendChild(new Element('span', {'html':users.length+links.length+communities.length, 'class':'team-members'})); 
+    }
+    
+    
      new UIPopover(valueEl, {
         description:'<h3>Item Access:</h3>'+description.map(function(d, i){
             if(i>0){
