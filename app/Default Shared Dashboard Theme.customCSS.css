@@ -36,6 +36,10 @@ button:focus {outline:0;}
 
 .field-value-module.inline.sortable {cursor: pointer;}
 
+
+
+
+
 span.notification-indicator:after {
     content: attr(data-count);
     position: absolute;
@@ -5897,7 +5901,6 @@ button.form-btn.primary-btn.hide {
         color: black;
     }
 }
-
 
 
 
