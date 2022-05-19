@@ -69,9 +69,23 @@ var UserNotifications = (function() {
 					click: function() {
 
 
-						if (confirm('Are you sure you want to log out?')) {
+						(new UIModalDialog(application, "Are you sure you want to log out?", {
+							"formName": "dialogForm",
+							"formOptions": {
+								"template": "form",
+								"className": "alert-view",
+								"showCancel":true,
+								"labelForSubmit":"Yes",
+								"labelForCancel":"No"
+								"closable":true
+							}
+						})).on('complete', function(){
 							GatherDashboard.logout();
-						}
+						}).show();
+
+						// if (confirm('Are you sure you want to log out?')) {
+						// 	GatherDashboard.logout();
+						// }
 
 					}
 				}
