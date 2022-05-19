@@ -3,7 +3,7 @@ var UserGroups = (function() {
 
 	var MainRoles;
 
-	var UserGroupsBaseClass = new Class({
+	var UserGroupsClass = new Class({
 		Implements:[Events],
 		initialize:function(){
 
