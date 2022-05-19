@@ -26185,9 +26185,11 @@
                 "map": {
                     "class": "split-right"
                 },
-                "review": [],
+                "review": {
+                    "class": "hidden"
+                },
                 "briefing": {
-                    "class": "split-right"
+                    "class": "hidden split-right"
                 },
                 "users": [],
                 "discussion": [],
