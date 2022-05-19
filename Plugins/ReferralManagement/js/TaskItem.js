@@ -712,90 +712,97 @@ var TaskItem = (function() {
 
 
 		var category = item.getProjectType();
+		var categories=item.getProjectTypes();
 
 
-		if (category && category != "") {
+		if (categories.length>0) {
+
+
+
+			categories.forEach(function(category, index){
 
 
 
 
-
-			var taskGroup = new CategoryTaskTemplateGroup({
-				category: category,
-				project: item,
-				//mutable:true
-			});
-
-
-			modalButton = new ModalFormButtonModule(application, taskGroup /*new MockDataTypeItem()*/ , {
-				label: "Add default " + item.getProjectType().toLowerCase() + " tasks",
-				formName: "taskDefaultItems",
-				formOptions: {
-					template: "form"
-				},
-				hideText: true,
-				"class": "inline-btn add primary-btn"
-			}).addEvent('show', function() {
-				var wizard = modalButton.getWizard();
-				wizard.addEvent('complete', function() {
-
-					var data = wizard.getData();
-					console.log(data);
+				var taskGroup = new CategoryTaskTemplateGroup({
+					category: category,
+					project: item,
+					//mutable:true
+				});
 
 
-					var taskTemplates = _currentListModule.getItems().map(function(task) {
-						return task.templateMetadata();
+				modalButton = new ModalFormButtonModule(application, taskGroup /*new MockDataTypeItem()*/ , {
+					label: "Add default " + item.getProjectType().toLowerCase() + " tasks",
+					formName: "taskDefaultItems",
+					formOptions: {
+						template: "form"
+					},
+					hideText: true,
+					"class": "inline-btn add primary-btn"
+				}).addEvent('show', function() {
+					var wizard = modalButton.getWizard();
+					wizard.addEvent('complete', function() {
+
+						var data = wizard.getData();
+						console.log(data);
+
+
+						var taskTemplates = _currentListModule.getItems().map(function(task) {
+							return task.templateMetadata();
+						});
+
+						data.taskTemplates=taskTemplates;
+
+
+
+						var CreateDefaultTaskQuery = new Class({
+							Extends: AjaxControlQuery,
+							initialize: function(data) {
+								this.parent(CoreAjaxUrlRoot, 'create_default_tasks', Object.append({
+									plugin: 'ReferralManagement',
+									"proposal": item.getId()
+								}, (data || {})));
+							}
+						});
+						new CreateDefaultTaskQuery(data).addEvent("success", function(resp) {
+
+							if (resp.tasksData) {
+								resp.tasksData.forEach(function(data) {
+									item.addTask(new TaskItem(item, data));
+								})
+							}
+						}).execute();
+
+
 					});
-
-					data.taskTemplates=taskTemplates;
-
+				});
 
 
-					var CreateDefaultTaskQuery = new Class({
-						Extends: AjaxControlQuery,
-						initialize: function(data) {
-							this.parent(CoreAjaxUrlRoot, 'create_default_tasks', Object.append({
-								plugin: 'ReferralManagement',
-								"proposal": item.getId()
-							}, (data || {})));
-						}
-					});
-					new CreateDefaultTaskQuery(data).addEvent("success", function(resp) {
-
-						if (resp.tasksData) {
-							resp.tasksData.forEach(function(data) {
-								item.addTask(new TaskItem(item, data));
-							})
-						}
-					}).execute();
-
+				TaskItem.TaskTemplates(category, function(tasks) {
+					if (tasks.length == 0) {
+						modalButton.getElement().addClass('with-no-tasks');
+					}
 
 				});
-			});
 
 
-			TaskItem.TaskTemplates(category, function(tasks) {
-				if (tasks.length == 0) {
-					modalButton.getElement().addClass('with-no-tasks');
+				RecentItems.colorizeEl(modalButton.getElement(), item.getProjectType());
+
+
+				modules.push(modalButton);
+
+
+				var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
+				if (user.isTeamManager()) {
+
+					var editDefaultTasksButton = TaskItem._editDefaultTasks(application, item);
+					RecentItems.colorizeEl(editDefaultTasksButton.getElement(), item.getProjectType());
+					modules.push(editDefaultTasksButton);
+
 				}
 
 			});
 
-
-			RecentItems.colorizeEl(modalButton.getElement(), item.getProjectType());
-
-
-			modules.push(modalButton);
-
-
-			var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
-			if (user.isTeamManager()) {
-
-				var editDefaultTasksButton = TaskItem._editDefaultTasks(application, item);
-				RecentItems.colorizeEl(editDefaultTasksButton.getElement(), item.getProjectType());
-				modules.push(editDefaultTasksButton);
-
-			}
 
 
 		} else {
