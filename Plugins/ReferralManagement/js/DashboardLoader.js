@@ -147,7 +147,7 @@ var DashboardLoader = (function() {
 
 					try {
 						var user = team.getUser(AppClient.getId());
-						if (user.isTeamMember()||(user.isCommunityMember()&&DashboardConfig.getValue('enableProposals'))) {
+						if (user.isTeamMember()||(user.isCommunityMember()&&!DashboardConfig.getValue('enableProposals'))) {
 							loadView("dashboardContent");
 
 							return;
