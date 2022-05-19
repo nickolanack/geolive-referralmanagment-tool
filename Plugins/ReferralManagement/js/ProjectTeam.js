@@ -1235,13 +1235,17 @@ var ProjectTeam = (function() {
 
 	ProjectTeam.AddListEvents=function(listView, listFilterFn) {
 
+
+		
+		listView.addWeakEvent(ProjectTeam, 'reload', function(user){
+			listView.redraw();
+		})
+
+
 		listView.addWeakEvent(ProjectTeam, 'userUpdated', function(user){
 
 			if(user==ProjectTeam.CurrentTeam().getUser(AppClient.getId())){
-				ProjectTeam.refreshData(function(){
-					listView.redraw();
-				});
-
+				ProjectTeam.refreshData();
 				return;
 			}
 
