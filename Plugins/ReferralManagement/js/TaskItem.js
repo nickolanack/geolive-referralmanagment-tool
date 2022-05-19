@@ -711,7 +711,7 @@ var TaskItem = (function() {
 		];
 
 
-		var category = item.getProjectType();
+		//var category = item.getProjectType();
 		var categories=item.getProjectTypes();
 
 
@@ -827,7 +827,7 @@ var TaskItem = (function() {
 		}
 
 
-		modules.push(TaskItem._defaultTasksInfo(category));
+		modules.push(TaskItem._defaultTasksInfo(categories));
 
 		modules.push(new ElementModule("label", {
 			html: "Incomplete tasks"
@@ -1106,25 +1106,26 @@ var TaskItem = (function() {
 	}
 
 
-	TaskItem._defaultTasksInfo = function(category) {
+	TaskItem._defaultTasksInfo = function(categories) {
 
 		var label = (new ElementModule('label', {
 			"class": "project-default-tasks-hint pro-tip-hint",
 			html: "Automatic task creation is " + (DashboardConfig.getValue("autoCreateDefaultTasks") ? "enabled" : "disabled")
 		}));
 
+		categories.forEach(function(category){
 		try{
+			TaskItem.TaskTemplates(category, function(tasks) {
+				if (tasks.length == 0) {
+					label.getElement().innerHTML += '<br/><span style="color:crimson;">There are no default tasks</span>';
+				}
 
-		TaskItem.TaskTemplates(category, function(tasks) {
-			if (tasks.length == 0) {
-				label.getElement().innerHTML += '<br/><span style="color:crimson;">There are no default tasks</span>';
+			});
+
+			}catch(e){
+				console.error(e);
 			}
-
-		});
-
-		}catch(e){
-			console.error(e);
-		}
+		})
 
 
 
