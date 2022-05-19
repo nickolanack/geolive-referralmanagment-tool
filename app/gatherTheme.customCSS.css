@@ -30,6 +30,12 @@ $leftPanelColor:#222222;
 
 
 
+.markdown:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
 .field-value-module.item-title.item-response-date {
     width: 100%;
     box-sizing: border-box;
