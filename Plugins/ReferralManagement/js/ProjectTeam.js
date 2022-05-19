@@ -201,6 +201,14 @@ var ProjectTeam = (function() {
 
 		},
 
+
+		refreshData:function(){
+			var me=this;
+			me._loadUsers(function() {
+				me._loadProjects();
+			});
+		},
+
 		_loadProjects: function() {
 			var me = this;
 			(new ProjectListQuery()).addEvent('success', function(resp) {
@@ -1210,6 +1218,11 @@ var ProjectTeam = (function() {
 	ProjectTeam.AddListEvents=function(listView, listFilterFn) {
 
 		listView.addWeakEvent(ProjectTeam, 'userUpdated', function(user){
+
+			if(user==ProjectTeam.CurrentTeam().getUser(AppClient.getId())){
+				ProjectTeam.refreshData();
+			}
+
 			if (((!listFilterFn) || listFilterFn(user))&&(!listView.hasItem(user))) {
 				listView.addItem(user);
 				return;
