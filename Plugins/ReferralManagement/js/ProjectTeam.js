@@ -204,9 +204,17 @@ var ProjectTeam = (function() {
 
 		refreshData:function(){
 			var me=this;
-			me._loadUsers(function() {
-				me._loadProjects();
-			});
+
+			if(this._refreshTimeout){
+				clearTimeout(this._refreshTimeout);
+			}
+			this._refreshTimeout=setTimeout(function(){
+				delete this._refreshTimeout;
+				me._loadUsers(function() {
+					me._loadProjects();
+				});
+			}, 500);
+			
 		},
 
 		_loadProjects: function() {
