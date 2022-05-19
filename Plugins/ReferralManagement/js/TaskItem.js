@@ -732,7 +732,7 @@ var TaskItem = (function() {
 
 
 				modalButton = new ModalFormButtonModule(application, taskGroup /*new MockDataTypeItem()*/ , {
-					label: "Add default " + item.getProjectType().toLowerCase() + " tasks",
+					label: "Add default " + category.toLowerCase() + " tasks",
 					formName: "taskDefaultItems",
 					formOptions: {
 						template: "form"
@@ -786,7 +786,7 @@ var TaskItem = (function() {
 				});
 
 
-				RecentItems.colorizeEl(modalButton.getElement(), item.getProjectType());
+				RecentItems.colorizeEl(modalButton.getElement(), category);
 
 
 				modules.push(modalButton);
