@@ -796,7 +796,7 @@ var TaskItem = (function() {
 				if (user.isTeamManager()) {
 
 					var editDefaultTasksButton = TaskItem._editDefaultTasks(application, item, category);
-					RecentItems.colorizeEl(editDefaultTasksButton.getElement(), item.getProjectType());
+					RecentItems.colorizeEl(editDefaultTasksButton.getElement(), category);
 					modules.push(editDefaultTasksButton);
 
 				}
