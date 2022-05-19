@@ -89,7 +89,9 @@ var ProjectTeam = (function() {
 			me._id = 1;
 
 			me._loadUsers(function() {
-				me._loadProjects();
+				me._loadProjects(function(){
+					me.fireEvent('load');
+				});
 			})
 			me._loadDevices();
 
@@ -202,7 +204,7 @@ var ProjectTeam = (function() {
 		},
 
 
-		refreshData:function(){
+		refreshData:function(callback){
 			var me=this;
 
 			if(this._refreshTimeout){
@@ -211,13 +213,18 @@ var ProjectTeam = (function() {
 			this._refreshTimeout=setTimeout(function(){
 				delete this._refreshTimeout;
 				me._loadUsers(function() {
-					me._loadProjects();
+					me._loadProjects(function(){
+						me.fireEvent('reload');
+						if(callback){
+							callback();
+						}
+					});
 				});
 			}, 500);
 			
 		},
 
-		_loadProjects: function() {
+		_loadProjects: function(callback) {
 			var me = this;
 			(new ProjectListQuery()).addEvent('success', function(resp) {
 
@@ -274,7 +281,10 @@ var ProjectTeam = (function() {
 				me._isLoaded = true;
 				me.getUsers(function() {
 					me.getDevices(function() {
-						me.fireEvent('load');
+						//me.fireEvent('load');
+						if(callback){
+							callback();
+						}
 					});
 				});
 
@@ -1228,7 +1238,11 @@ var ProjectTeam = (function() {
 		listView.addWeakEvent(ProjectTeam, 'userUpdated', function(user){
 
 			if(user==ProjectTeam.CurrentTeam().getUser(AppClient.getId())){
-				ProjectTeam.refreshData();
+				ProjectTeam.refreshData(function(){
+					listView.redraw();
+				});
+
+				return;
 			}
 
 			if (((!listFilterFn) || listFilterFn(user))&&(!listView.hasItem(user))) {
