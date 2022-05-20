@@ -22,7 +22,7 @@ if(ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin()){
 				template: "form"
 			},
 			hideText: true,
-			"class": "inline-edit",
+			"class": "inline-edit report",
 			"style": "float:right;"
 		})).addEvent("show", function() {
 
