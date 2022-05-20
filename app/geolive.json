@@ -26506,16 +26506,16 @@
                             "flowLayoutItemForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 138,
-                            "y": 270
+                            "x": 148,
+                            "y": 280
                         },
                         "children": [
                             "flowLayoutItemForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 98,
-                                    "y": 436
+                                    "x": 108,
+                                    "y": 446
                                 }
                             }
                         ],
@@ -26534,7 +26534,7 @@
                                             "config": {
                                                 "label": "Description",
                                                 "message": "add a description",
-                                                "lines": 3,
+                                                "lines": 2,
                                                 "mandatory": false,
                                                 "showAudios": true,
                                                 "showImages": true,
@@ -26547,6 +26547,20 @@
                                                 "textFormatScript": "",
                                                 "mediaIconTint": "rgb(100, 149, 237)",
                                                 "onRenderModuleFn": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "FormBooleanField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Link to next",
+                                                "identifier": "boolean-field",
+                                                "mandatory": false,
+                                                "getValueScript": "return item.getLink();",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "flowLayoutItemForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
+                                                "validateValueScript": "",
+                                                "formatElementScript": ""
                                             }
                                         }
                                     ]
