@@ -3,6 +3,7 @@
     return new MockDataTypeItem({
        name:"",
        description:"",
-       icon:"default"
+       icon:"default",
+       link:true
     });
 }).setUpdateField(item.getFlow());
