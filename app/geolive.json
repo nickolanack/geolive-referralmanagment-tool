@@ -26395,16 +26395,16 @@
                             "flowLayoutForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 245,
-                            "y": 201
+                            "x": 255,
+                            "y": 211
                         },
                         "children": [
                             "flowLayoutForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 205,
-                                    "y": 367
+                                    "x": 215,
+                                    "y": 377
                                 }
                             }
                         ],
@@ -26434,7 +26434,7 @@
                                                 "showDeleteButton": false,
                                                 "deleteItemScript": "defaultBehaviorFn()",
                                                 "initModuleScript": "",
-                                                "formatModuleScript": "",
+                                                "formatModuleScript": "flowLayoutForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.formatModuleScript.js",
                                                 "resolveItemScript": "return item",
                                                 "filterModulesScript": "return list",
                                                 "itemButtonsScript": "return [];",
