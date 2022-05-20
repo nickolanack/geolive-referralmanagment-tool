@@ -254,4 +254,14 @@ GetWidget('singleProjectSecurityDetail')->display($targetInstance);
 GetWidget('genericLabel')->display($targetInstance);
 
 
+
+GetWidget('flowLayoutForm')->display($targetInstance);
+GetWidget('flowLayoutItemForm')->display($targetInstance);
+
+
+
+
+
+
+
 GetWidget('defaultPostDetail')->display($targetInstance);
