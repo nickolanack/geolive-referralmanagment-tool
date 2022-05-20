@@ -152,7 +152,7 @@ var ProposalFlow = (function() {
 				var flowItem=new MockDataTypeItem(data);
 				flowItem.on('save',function(){
 
-					var data=flow.getObject()[stateName];
+					var data=flowItem.toObject()[stateName];
 					/*Admin only*/
 					(new AjaxControlQuery(CoreAjaxUrlRoot, "set_configuration_field", {
 						'widget': "workflow",
