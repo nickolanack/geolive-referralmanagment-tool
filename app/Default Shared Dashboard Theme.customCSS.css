@@ -650,6 +650,13 @@ div.field-value-module.inline.ids{
         content: "\0f061";position: absolute;right: -27px;top: 37px;font-family: 'FontAwesome';
         
     }
+    
+    li.no-link > span:after {
+        content: ".";
+        right: -24px;
+        font-size: 45px;
+        top: 27px;
+    }
 
     li:before {
         content: "\0f017";font-family: 'FontAwesome';position: absolute;text-align: center;width: 100px;line-height: 100px;font-size: 30px;
