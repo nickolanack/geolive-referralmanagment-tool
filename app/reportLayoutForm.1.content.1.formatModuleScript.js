@@ -4,4 +4,4 @@
        name:"",
        description:""
     });
-}).setUpdateField(item.getFlow());
+}).setUpdateField('templatesData');
