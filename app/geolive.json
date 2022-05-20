@@ -26700,8 +26700,8 @@
             "formatOutputScript": "return $parameters;",
             "enableUserAjaxWrite": false,
             "authUserAjaxScript": "XXXX-XXXX",
-            "saveParametersAsData": false,
-            "enableRevisions": false,
+            "saveParametersAsData": true,
+            "enableRevisions": true,
             "broadcastChanges": false,
             "parameters": [
                 "reportTemplates.parameters.0.json"
