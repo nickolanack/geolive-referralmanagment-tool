@@ -79,7 +79,7 @@ var ItemStatus = (function() {
 
 
 			        response.value.forEach(function(item){
-			        	flow.addStep(item, {
+			        	flow.addStep(item.name, {
 			        		"class":item["icon"]
 			        	});
 			        });
