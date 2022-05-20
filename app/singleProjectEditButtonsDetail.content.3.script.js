@@ -59,6 +59,7 @@ var reportBtn=new ElementModule('button',{"identifier":"button-report", "html":"
 
 new UIPopover(reportBtn.getElement(), {
 					application:GatherDashboard.getApplication(),
+					item:item,
 					detailViewOptions:{
 						"viewType": "view",
                     	"namedView": "reportSelectionView"
