@@ -26383,8 +26383,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -18,
-                    "y": 171
+                    "x": 13,
+                    "y": 261
                 },
                 "children": [
                     "flowLayoutForm.metadata.children.0.json",
@@ -26395,11 +26395,18 @@
                             "flowLayoutForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 128,
-                            "y": 260
+                            "x": 195,
+                            "y": 151
                         },
                         "children": [
-                            "flowLayoutForm.metadata.children.1.children.0.json"
+                            "flowLayoutForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 155,
+                                    "y": 317
+                                }
+                            }
                         ],
                         "builderMetadata": {
                             "positions": {
@@ -26412,22 +26419,34 @@
                                     "modules": [
                                         "flowLayoutForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
-                                            "type": "WizardDescriptionField",
+                                            "type": "UIListView",
                                             "config": {
-                                                "label": "Description",
-                                                "message": "add a description",
-                                                "lines": 3,
-                                                "mandatory": false,
-                                                "showAudios": true,
-                                                "showImages": true,
-                                                "showDocuments": true,
-                                                "showVideos": true,
+                                                "listClassName": "",
                                                 "className": "",
-                                                "maxChars": 0,
-                                                "showExpandInput": true,
-                                                "toolbarPosition": "bottom",
-                                                "textFormatScript": "",
-                                                "mediaIconTint": "rgb(100, 149, 237)"
+                                                "identifier": "",
+                                                "viewType": "form",
+                                                "namedView": "defaultView",
+                                                "shouldRender": true,
+                                                "namedViewScript": "return namedView",
+                                                "showInlineEdit": false,
+                                                "namedFormView": "flowLayoutItemForm",
+                                                "formOptions": "\"{}\"",
+                                                "showDeleteButton": false,
+                                                "deleteItemScript": "defaultBehaviorFn()",
+                                                "initModuleScript": "",
+                                                "formatModuleScript": "",
+                                                "resolveItemScript": "return item",
+                                                "filterModulesScript": "return list",
+                                                "itemButtonsScript": "return [];",
+                                                "insertAtTop": false,
+                                                "targetName": "",
+                                                "getItemListScript": "return item;",
+                                                "formatItemListScript": "return list;",
+                                                "formatListItemModuleScript": "return item;",
+                                                "emptyNamedView": "emptyListView",
+                                                "filterItemsScript": "return true;",
+                                                "sortItemsScript": "",
+                                                "maxItems": "-1"
                                             }
                                         }
                                     ]
@@ -26446,7 +26465,10 @@
                                 "content",
                                 "footer",
                                 "menu"
-                            ]
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
                         }
                     }
                 ]
