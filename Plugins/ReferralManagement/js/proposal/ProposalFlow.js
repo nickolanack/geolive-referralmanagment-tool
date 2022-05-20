@@ -140,6 +140,21 @@ var ProposalFlow = (function() {
 
 			this.element = new Element('div', {"class":"flow-item"});
 
+
+			if(ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin()){
+				
+				(new UIModalFormButton(this.element.appendChild(new Element('button',{"class":"inline-edit"})), GatherDashboard.getApplication(), new MockDataTypeItem({
+					'flow':stateName 
+				}), {
+					"formName": "flowLayoutForm",
+					"formOptions": {
+						template: "form",
+						closeable:true
+					}
+				}));
+			}
+
+
 			this.flowEl = this.element.appendChild(new Element('ul', {
 				"class": "flow"
 			}));

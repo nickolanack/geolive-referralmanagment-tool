@@ -675,9 +675,18 @@ var TaskItem = (function() {
 	}
 
 
-
+	
 	TaskItem.FormatTaskTemplateModules = function(list, listItem, uiview, listModule) {
 
+		// list.content.unshift(new ElementModule('checkbox', {
+		// 	checked:true
+		// 	className: "inline-btn remove primary-btn error",
+		// 	events: {
+		// 		click: function() {
+		// 			uiview.remove();
+		// 		}
+		// 	}
+		// }))
 
 		list.content.push(new ElementModule('button', {
 			html: "Remove",
