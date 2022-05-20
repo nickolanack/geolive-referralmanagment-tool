@@ -26693,7 +26693,7 @@
         "name": "Configuration",
         "instance": "Configuration",
         "parameters": {
-            "target": "none",
+            "target": "reportTemplates",
             "contentTemplate": "",
             "comments": "",
             "formatParametersScript": "return $parameters;",
@@ -26703,18 +26703,13 @@
             "saveParametersAsData": false,
             "enableRevisions": false,
             "broadcastChanges": false,
-            "parameters": {
-                "hello": {
-                    "type": "text",
-                    "name": "hello",
-                    "placeholder": "example config field",
-                    "default": "World",
-                    "label": "Hello"
-                }
-            },
+            "parameters": [
+                "reportTemplates.parameters.0.json"
+            ],
             "hello": "reportTemplates",
-            "widgetTitle": "",
-            "readAccess": "public"
+            "widgetTitle": "reportTemplates",
+            "readAccess": "public",
+            "templateData": []
         }
     }
 }
