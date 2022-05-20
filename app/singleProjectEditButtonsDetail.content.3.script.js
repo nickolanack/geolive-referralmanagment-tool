@@ -12,10 +12,10 @@ var reportBtns=[]
 
 if(ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin()){
     
-
+    var reportItem=new MockDataTypeItem({templatesData:[],mutable:true})
 		
 	reportBtns.push( 
-		(new ModalFormButtonModule(application, AppClient, {
+		(new ModalFormButtonModule(application, reportItem, {
 			label: "Edit reports",
 			formName: "reportLayoutForm",
 			formOptions: {
@@ -25,8 +25,20 @@ if(ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin()){
 			"class": "inline-edit report",
 			"style": "float:right;"
 		})).addEvent("show", function() {
-
-
+    
+            report.on('save', function(){
+                var data=report.toObject().templatesData;
+                /*Admin only*/
+            	(new AjaxControlQuery(CoreAjaxUrlRoot, "set_configuration_field", {
+            		'widget': "reportTemplates",
+            		'field': {
+            			"name":"templatesData",
+            			"value":data
+            		}
+            	})).addEvent('success',function(response){
+            
+            	}).execute();
+            })
 		})
 	);
     
