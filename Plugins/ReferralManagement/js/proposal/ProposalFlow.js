@@ -153,7 +153,16 @@ var ProposalFlow = (function() {
 				flowItem.on('save',function(){
 
 					var data=flow.getObject()[stateName];
-					console.log(data);
+					/*Admin only*/
+					(new AjaxControlQuery(CoreAjaxUrlRoot, "set_configuration_field", {
+						'widget': "workflow",
+						'field': {
+							"name":stateName,
+							"value":data
+						}
+					})).addEvent('success',function(response){
+
+					}).execute();
 
 				});
 				
