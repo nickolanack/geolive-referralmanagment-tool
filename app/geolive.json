@@ -26395,16 +26395,16 @@
                             "flowLayoutForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 275,
-                            "y": 231
+                            "x": 295,
+                            "y": 251
                         },
                         "children": [
                             "flowLayoutForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 235,
-                                    "y": 397
+                                    "x": 255,
+                                    "y": 417
                                 }
                             }
                         ],
@@ -26494,8 +26494,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -18,
-                    "y": 171
+                    "x": 3,
+                    "y": 166
                 },
                 "children": [
                     "flowLayoutItemForm.metadata.children.0.json",
@@ -26506,16 +26506,16 @@
                             "flowLayoutItemForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 138,
-                            "y": 270
+                            "x": 158,
+                            "y": 290
                         },
                         "children": [
                             "flowLayoutItemForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 98,
-                                    "y": 436
+                                    "x": 118,
+                                    "y": 466
                                 }
                             }
                         ],
@@ -26534,7 +26534,7 @@
                                             "config": {
                                                 "label": "Description",
                                                 "message": "add a description",
-                                                "lines": 3,
+                                                "lines": 2,
                                                 "mandatory": false,
                                                 "showAudios": true,
                                                 "showImages": true,
@@ -26547,6 +26547,42 @@
                                                 "textFormatScript": "",
                                                 "mediaIconTint": "rgb(100, 149, 237)",
                                                 "onRenderModuleFn": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "FormBooleanField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Link to next",
+                                                "identifier": "boolean-field",
+                                                "mandatory": false,
+                                                "getValueScript": "return item.getLink();",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "flowLayoutItemForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
+                                                "validateValueScript": "",
+                                                "formatElementScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Icon",
+                                                "placeholder": "add value",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "beforeRenderModuleScript": "",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return \"default\"; ",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "flowLayoutItemForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
+                                                "validateValueScript": " return defaultValidationFn() "
                                             }
                                         }
                                     ]

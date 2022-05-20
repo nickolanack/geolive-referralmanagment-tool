@@ -7,7 +7,8 @@
         callback((response.value||[]).map(function(item){
             return new MockDataTypeItem(ObjectAppend_({
                 description:"",
-                icon:"default"
+                icon:"default",
+                link:true
             },item));
         }));
 
