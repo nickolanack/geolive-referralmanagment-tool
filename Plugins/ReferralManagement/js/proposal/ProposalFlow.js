@@ -12,12 +12,9 @@ var ProposalFlow = (function() {
 
 		if(response.subscription){
 			AjaxControlQuery.Subscribe(response.subscription, function(update) {
-				console.log('update');
+				stateConfig=update;
 			});
 		}
-		
-
-
 	}).execute();
 	
 
@@ -150,7 +147,7 @@ var ProposalFlow = (function() {
 	var ProposalFlow = new Class({
 		Implements: [Events],
 
-		initialize: function(stateName, item) {
+		initialize: function(label, stateName, item) {
 
 			this._stateName = stateName;
 			this._item = item;
@@ -202,7 +199,26 @@ var ProposalFlow = (function() {
 			this._stepOptions = [];
 			this.els = [];
 
+
+
+			this.setLabel(label);
+			var me=this;
+	        stateConfig[stateName].forEach(function(item, i){
+
+	        	var opts={
+	        		"class":item["icon"]||"default",
+	        		"link":typeof item.link=="boolean"?item.link:true
+	        	};
+
+	        	me.addStep(item.name, opts);
+	        });
+
+
+
 			FlowGroup.AddFlowItem(this);
+
+
+
 
 
 

@@ -96,27 +96,27 @@ var ItemStatus = (function() {
 		_getFlow:function(label, stateName){
 
 
-			var flow = (new ProposalFlow(stateName,this));
+			var flow = (new ProposalFlow(label, stateName, this));
 
 
-			(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration_field", {
-				'widget': "workflow",
-				'field': stateName
-			})).addEvent('success',function(response){
+			// (new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration_field", {
+			// 	'widget': "workflow",
+			// 	'field': stateName
+			// })).addEvent('success',function(response){
 
-				flow.setLabel(label);
+			// 	flow.setLabel(label);
 
-		        response.value.forEach(function(item, i){
+		 //        response.value.forEach(function(item, i){
 
-		        	var opts={
-		        		"class":item["icon"]||"default",
-		        		"link":typeof item.link=="boolean"?item.link:true
-		        	};
+		 //        	var opts={
+		 //        		"class":item["icon"]||"default",
+		 //        		"link":typeof item.link=="boolean"?item.link:true
+		 //        	};
 
-		        	flow.addStep(item.name, opts);
-		        });
+		 //        	flow.addStep(item.name, opts);
+		 //        });
 
-			}).execute();
+			// }).execute();
 
 			return flow;
 
