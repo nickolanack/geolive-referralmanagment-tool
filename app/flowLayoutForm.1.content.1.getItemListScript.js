@@ -4,12 +4,8 @@
 	})).addEvent('success',function(response){
 
 
-       
-
-        callback([new MockDataTypeItem({
-            name:"Intake",
-            description:'',
-            icon:'mail'
-        })]);
+        callback(response.value.map(function(item){
+            return new MockDataTypeItem(ObjectAppend_({},item));
+        }));
 
 	}).execute();
