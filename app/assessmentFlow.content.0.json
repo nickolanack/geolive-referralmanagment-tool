@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "return item.getAssessmentFlow().getElement();\n",
+        "script": "callback(item.getAssessmentFlow().getElement());\n",
         "description": "Info about my custom script"
     }
 }
