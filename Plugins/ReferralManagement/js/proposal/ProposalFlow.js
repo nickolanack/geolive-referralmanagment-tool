@@ -149,8 +149,15 @@ var ProposalFlow = (function() {
 					'mutable':true
 				};
 				data[stateName]=[];
+				var flowItem=new MockDataTypeItem(data);
+				flowItem.on('save',function(){
+
+					var data=flow.getObject()[stateName];
+					console.log(data);
+
+				});
 				
-				(new UIModalFormButton(this.element.appendChild(new Element('button',{"class":"inline-edit top-right"})), GatherDashboard.getApplication(), new MockDataTypeItem(data), {
+				(new UIModalFormButton(this.element.appendChild(new Element('button',{"class":"inline-edit top-right"})), GatherDashboard.getApplication(),flowItem, {
 					"formName": "flowLayoutForm",
 					"formOptions": {
 						template: "form",
