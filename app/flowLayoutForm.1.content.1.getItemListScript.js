@@ -5,7 +5,10 @@
 
 
         callback(response.value.map(function(item){
-            return new MockDataTypeItem(ObjectAppend_({},item));
+            return new MockDataTypeItem(ObjectAppend_({
+                description:"",
+                icon:"default"
+            },item));
         }));
 
 	}).execute();
