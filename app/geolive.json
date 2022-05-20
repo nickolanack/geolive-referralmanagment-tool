@@ -26853,11 +26853,18 @@
                             "reportLayoutItemForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 128,
-                            "y": 260
+                            "x": 148,
+                            "y": 280
                         },
                         "children": [
-                            "reportLayoutItemForm.metadata.children.1.children.0.json"
+                            "reportLayoutItemForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 108,
+                                    "y": 456
+                                }
+                            }
                         ],
                         "builderMetadata": {
                             "positions": {
@@ -26870,22 +26877,23 @@
                                     "modules": [
                                         "reportLayoutItemForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
-                                            "type": "WizardDescriptionField",
+                                            "type": "FormTextDescriptionField",
                                             "config": {
                                                 "label": "Description",
                                                 "message": "add a description",
-                                                "lines": 3,
+                                                "lines": 2,
                                                 "mandatory": false,
                                                 "showAudios": true,
                                                 "showImages": true,
                                                 "showDocuments": true,
                                                 "showVideos": true,
-                                                "className": "",
+                                                "className": "no-media",
                                                 "maxChars": 0,
                                                 "showExpandInput": true,
                                                 "toolbarPosition": "bottom",
                                                 "textFormatScript": "",
-                                                "mediaIconTint": "rgb(100, 149, 237)"
+                                                "mediaIconTint": "rgb(100, 149, 237)",
+                                                "onRenderModuleFn": ""
                                             }
                                         }
                                     ]
@@ -26904,7 +26912,10 @@
                                 "content",
                                 "footer",
                                 "menu"
-                            ]
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
                         }
                     }
                 ]
