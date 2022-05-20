@@ -261,6 +261,8 @@ GetWidget('flowLayoutItemForm')->display($targetInstance);
 GetWidget('reportLayoutForm')->display($targetInstance);
 GetWidget('reportLayoutItemForm')->display($targetInstance);
 
+GetWidget('reportSelectionView')->display($targetInstance);
+
 
 
 
