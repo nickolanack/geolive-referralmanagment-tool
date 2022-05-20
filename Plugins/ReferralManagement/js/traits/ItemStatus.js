@@ -57,7 +57,12 @@ var ItemStatus = (function() {
 
 			return (new ProposalFlow('proponent',this))
 
-				.setLabel('Proponent submision workflow')
+				.setLabel('Proponent submision workflow');
+
+
+
+
+
 
 			    .addStep("Submission", {"class":"current", "clickable":false})
 			    .addStep("Validation", {"class":"mail"})
@@ -70,15 +75,38 @@ var ItemStatus = (function() {
 		getProcessingFlow:function(){
 
 
-			return (new ProposalFlow('processing',this))
+			var flow= (new ProposalFlow('processing',this))
 
 				.setLabel('Processing workflow')
+
+
+				(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration_field", {
+					'widget': "workflow",
+					'field': 'processing'
+				})).addEvent('success',function(response){
+
+
+			        response.value.forEach(function(item){
+			        	flow.addStep(item, {
+			        		"class":item["icon"]
+			        	});
+			        })
+
+				}).execute();
+
+				return flow;
+
 			    
-			    .addStep("Intake", {"class":"current mail"})
-			    .addStep("Filing", {"class":"user"})
-			    .addStep("Tasking", {"class":"user"})
-			    .addStep("Briefing")
-			    .addStep("Tracking",{completable:false});
+			    // .addStep("Intake", {"class":"current mail"})
+			    // .addStep("Filing", {"class":"user"})
+			    // .addStep("Tasking", {"class":"user"})
+			    // .addStep("Briefing")
+			    // .addStep("Tracking",{completable:false});
+
+
+
+
+
 			    //.getElement();
 
 		},
