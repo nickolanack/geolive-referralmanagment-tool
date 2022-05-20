@@ -57,13 +57,7 @@ var ItemStatus = (function() {
 
 			return (new ProposalFlow('proponent',this))
 
-				.setLabel('Proponent submision workflow');
-
-
-
-
-
-
+				.setLabel('Proponent submision workflow')
 			    .addStep("Submission", {"class":"current", "clickable":false})
 			    .addStep("Validation", {"class":"mail"})
 			    .addStep("Office Review", {"class":"user"})
