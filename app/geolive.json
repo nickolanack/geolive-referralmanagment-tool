@@ -26364,5 +26364,22 @@
             "contentTemplate": "module-html-defaultTasks-text.contentTemplate.html",
             "readAccess": "public"
         }
+    },
+    "widget.474": {
+        "name": "Generic Form",
+        "instance": "WizardBuilder",
+        "parameters": {
+            "widgetTitle": "",
+            "target": "none",
+            "templateName": "",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "formatStepModulesScript": ""
+        }
     }
 }
