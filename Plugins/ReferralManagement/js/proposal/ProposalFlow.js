@@ -243,6 +243,10 @@ var ProposalFlow = (function() {
 				this._addInteraction(el, options);
 			}
 
+			if(options.link===false){
+				el.addClass('no-link');
+			}
+
 
 			this.setCurrent(this._currentIndex);
 
