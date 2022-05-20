@@ -1,6 +1,21 @@
 var ProposalFlow = (function() {
 
 
+	(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration", {
+		'widget': "workflow"
+	})).addEvent('success',function(response){
+
+		if(response.subscription){
+			AjaxControlQuery.Subscribe(response.subscription, function(update) {
+
+			});
+		}
+		
+
+
+	}).execute();
+	
+
 
 	var FlowGroup = new Class({
 
@@ -13,9 +28,7 @@ var ProposalFlow = (function() {
 			this._statesLoaded = false;
 
 
-			/**
-			 * TODO query workflow layout 
-			 */
+			
 
 
 
