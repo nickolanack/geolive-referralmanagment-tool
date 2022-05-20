@@ -12,7 +12,7 @@ var reportBtns=[]
 
 if(ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin()){
     
-    var reportItem=new MockDataTypeItem({templatesData:[],mutable:true})
+    var reportItem=new MockDataTypeItem({templatesData:[], mutable:true});
 		
 	reportBtns.push( 
 		(new ModalFormButtonModule(application, reportItem, {
