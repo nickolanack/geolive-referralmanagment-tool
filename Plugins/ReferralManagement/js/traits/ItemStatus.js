@@ -66,27 +66,29 @@ var ItemStatus = (function() {
 			    //.getElement();
 
 		},
+
 		getProcessingFlow:function(){
 
 
-			var flow = (new ProposalFlow('processing',this)).setLabel('Processing workflow');
+			var flow = (new ProposalFlow('processing',this));
 
 
-				(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration_field", {
-					'widget': "workflow",
-					'field': 'processing'
-				})).addEvent('success',function(response){
+			(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration_field", {
+				'widget': "workflow",
+				'field': 'processing'
+			})).addEvent('success',function(response){
 
+				flow.setLabel('Processing workflow');
 
-			        response.value.forEach(function(item){
-			        	flow.addStep(item.name, {
-			        		"class":item["icon"]
-			        	});
-			        });
+		        response.value.forEach(function(item){
+		        	flow.addStep(item.name, {
+		        		"class":item["icon"]
+		        	});
+		        });
 
-				}).execute();
+			}).execute();
 
-				return flow;
+			return flow;
 
 			    
 			    // .addStep("Intake", {"class":"current mail"})
@@ -104,19 +106,33 @@ var ItemStatus = (function() {
 		},
 		getAssessmentFlow:function(){
 
+			var flow = (new ProposalFlow('assessment',this));
 
-			return (new ProposalFlow('assessment',this))
 
+			(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration_field", {
+				'widget': "workflow",
+				'field': 'assessment'
+			})).addEvent('success',function(response){
 
-				.setLabel('Assessment workflow')
+				flow.setLabel('Assessment workflow');
+
+		        response.value.forEach(function(item){
+		        	flow.addStep(item.name, {
+		        		"class":item["icon"]
+		        	});
+		        });
+
+			}).execute();
+
+			return flow;
 
 			
-			    .addStep("Quality Assessment", {"class":"current user", "completes":{"proponent":"validation"}})
-			    .addStep("Prioritization", {"class":"mail"})
-			    .addStep("Meeting schedules", {"class":"user"})
-			    .addStep("Dispute resolution")
-			    .addStep("Reporting")
-			    .addStep("Monitoring",{"ongoing":true});
+			    // .addStep("Quality Assessment", {"class":"current user", "completes":{"proponent":"validation"}})
+			    // .addStep("Prioritization", {"class":"mail"})
+			    // .addStep("Meeting schedules", {"class":"user"})
+			    // .addStep("Dispute resolution")
+			    // .addStep("Reporting")
+			    // .addStep("Monitoring",{"ongoing":true});
 			   // .getElement();
 
 		}
