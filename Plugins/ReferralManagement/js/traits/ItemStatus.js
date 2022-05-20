@@ -69,9 +69,7 @@ var ItemStatus = (function() {
 		getProcessingFlow:function(){
 
 
-			var flow= (new ProposalFlow('processing',this))
-
-				.setLabel('Processing workflow')
+			var flow = (new ProposalFlow('processing',this)).setLabel('Processing workflow');
 
 
 				(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration_field", {
@@ -84,7 +82,7 @@ var ItemStatus = (function() {
 			        	flow.addStep(item, {
 			        		"class":item["icon"]
 			        	});
-			        })
+			        });
 
 				}).execute();
 
