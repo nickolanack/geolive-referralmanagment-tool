@@ -142,10 +142,15 @@ var ProposalFlow = (function() {
 
 
 			if(ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin()){
+
+
+				var data={
+					'flow':stateName,
+					'mutable':true
+				};
+				data[stateName]=[];
 				
-				(new UIModalFormButton(this.element.appendChild(new Element('button',{"class":"inline-edit top-right"})), GatherDashboard.getApplication(), new MockDataTypeItem({
-					'flow':stateName 
-				}), {
+				(new UIModalFormButton(this.element.appendChild(new Element('button',{"class":"inline-edit top-right"})), GatherDashboard.getApplication(), new MockDataTypeItem(data), {
 					"formName": "flowLayoutForm",
 					"formOptions": {
 						template: "form",
