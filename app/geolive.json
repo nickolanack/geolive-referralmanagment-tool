@@ -26742,16 +26742,16 @@
                             "reportLayoutForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 143,
-                            "y": 164
+                            "x": 153,
+                            "y": 174
                         },
                         "children": [
                             "reportLayoutForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 103,
-                                    "y": 330
+                                    "x": 113,
+                                    "y": 340
                                 }
                             }
                         ],
@@ -26787,7 +26787,7 @@
                                                 "itemButtonsScript": "return [];",
                                                 "insertAtTop": false,
                                                 "targetName": "",
-                                                "getItemListScript": "return item;",
+                                                "getItemListScript": "reportLayoutForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.getItemListScript.js",
                                                 "formatItemListScript": "return list;",
                                                 "formatListItemModuleScript": "return item;",
                                                 "emptyNamedView": "emptyListView",
