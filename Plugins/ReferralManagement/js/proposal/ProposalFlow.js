@@ -143,7 +143,7 @@ var ProposalFlow = (function() {
 
 			if(ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin()){
 				
-				(new UIModalFormButton(this.element.appendChild(new Element('button',{"class":"inline-edit"})), GatherDashboard.getApplication(), new MockDataTypeItem({
+				(new UIModalFormButton(this.element.appendChild(new Element('button',{"class":"inline-edit top-right"})), GatherDashboard.getApplication(), new MockDataTypeItem({
 					'flow':stateName 
 				}), {
 					"formName": "flowLayoutForm",
