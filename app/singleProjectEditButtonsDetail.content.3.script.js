@@ -17,7 +17,7 @@ if(ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin()){
 	reportBtns.push( 
 		(new ModalFormButtonModule(application, AppClient, {
 			label: "Edit reports",
-			formName: "editReportsForm",
+			formName: "reportLayoutForm",
 			formOptions: {
 				template: "form"
 			},
