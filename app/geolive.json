@@ -25220,7 +25220,7 @@
             "formatOutputScript": "return $parameters;",
             "enableUserAjaxWrite": false,
             "authUserAjaxScript": "XXXX-XXXX",
-            "saveParametersAsData": true,
+            "saveParametersAsData": false,
             "enableRevisions": false,
             "broadcastChanges": false,
             "parameters": [
@@ -25241,7 +25241,84 @@
                 }
             ],
             "widgetTitle": "Workflow configuration",
-            "readAccess": "public"
+            "readAccess": "public",
+            "proponent": [
+                "Workflow configuration.proponent.0.json",
+                {
+                    "name": "Validation",
+                    "description": "",
+                    "link": true,
+                    "icon": "default"
+                },
+                {
+                    "name": "Office Review",
+                    "description": "",
+                    "link": false,
+                    "icon": "default"
+                },
+                {
+                    "name": "Assessments",
+                    "description": "",
+                    "link": false,
+                    "icon": "default"
+                },
+                {
+                    "name": "Outcome",
+                    "description": "",
+                    "link": false,
+                    "icon": "default"
+                }
+            ],
+            "processing": [
+                "Workflow configuration.processing.0.json",
+                {
+                    "name": "Filing",
+                    "description": "",
+                    "link": false,
+                    "icon": "user"
+                },
+                {
+                    "name": "Tasking",
+                    "description": "",
+                    "link": false,
+                    "icon": "user"
+                },
+                {
+                    "name": "Briefing",
+                    "description": "",
+                    "link": false,
+                    "icon": "default"
+                },
+                {
+                    "name": "Tracking",
+                    "description": "",
+                    "link": false,
+                    "icon": "default"
+                }
+            ],
+            "assessment": [
+                "Workflow configuration.assessment.0.json",
+                {
+                    "name": "Prioritization",
+                    "description": ""
+                },
+                {
+                    "name": "Meeting schedules",
+                    "description": ""
+                },
+                {
+                    "name": "Dispute resolution",
+                    "description": ""
+                },
+                {
+                    "name": "Reporting",
+                    "description": ""
+                },
+                {
+                    "name": "Monitoring",
+                    "description": ""
+                }
+            ]
         }
     },
     "widget.440": {
