@@ -7198,6 +7198,7 @@
                                     "template": "html.projectStatus",
                                     "templateVariablesScript": "{}",
                                     "formatTextScript": "singleProjectOverviewDetail.metadata.positions.content.modules.1.config.formatTextScript.js",
+                                    "formatVariablesScript": "",
                                     "ajaxRequestTemplate": true,
                                     "identifier": "status-description"
                                 }
@@ -7266,7 +7267,7 @@
                                     "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "singleProjectOverviewDetail.metadata.positions.content.modules.6.config.resolveItemScript.js",
-                                    "filterModulesScript": "return list",
+                                    "filterModulesScript": "singleProjectOverviewDetail.metadata.positions.content.modules.6.config.filterModulesScript.js",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": ""
@@ -7313,6 +7314,7 @@
                                     "template": "html.projectDescription",
                                     "templateVariablesScript": "{}",
                                     "formatTextScript": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.formatTextScript.js",
+                                    "formatVariablesScript": "",
                                     "ajaxRequestTemplate": true,
                                     "identifier": "htmlLabel"
                                 }
@@ -7385,6 +7387,7 @@
                                     "template": "html.projectNotes",
                                     "templateVariablesScript": "{}",
                                     "formatTextScript": "singleProjectOverviewDetail.metadata.positions.content.modules.15.config.formatTextScript.js",
+                                    "formatVariablesScript": "",
                                     "ajaxRequestTemplate": true,
                                     "identifier": "htmlLabel"
                                 }
