@@ -26,8 +26,8 @@ if(ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin()){
 			"style": "float:right;"
 		})).addEvent("show", function() {
     
-            report.on('save', function(){
-                var data=report.toObject().templatesData;
+            reportItem.on('save', function(){
+                var data=reportItem.toObject().templatesData;
                 /*Admin only*/
             	(new AjaxControlQuery(CoreAjaxUrlRoot, "set_configuration_field", {
             		'widget': "reportTemplates",
