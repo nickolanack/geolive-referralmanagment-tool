@@ -26693,7 +26693,28 @@
         "name": "Configuration",
         "instance": "Configuration",
         "parameters": {
-            "target": "none"
+            "target": "none",
+            "contentTemplate": "",
+            "comments": "",
+            "formatParametersScript": "return $parameters;",
+            "formatOutputScript": "return $parameters;",
+            "enableUserAjaxWrite": false,
+            "authUserAjaxScript": "XXXX-XXXX",
+            "saveParametersAsData": false,
+            "enableRevisions": false,
+            "broadcastChanges": false,
+            "parameters": {
+                "hello": {
+                    "type": "text",
+                    "name": "hello",
+                    "placeholder": "example config field",
+                    "default": "World",
+                    "label": "Hello"
+                }
+            },
+            "hello": "reportTemplates",
+            "widgetTitle": "",
+            "readAccess": "public"
         }
     }
 }
