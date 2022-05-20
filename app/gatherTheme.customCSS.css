@@ -824,6 +824,14 @@ button.selectable{
     
 }
 
+
+button.form-btn.inline-edit.report{
+    position: relative;
+    float: right;
+    left: -10px;
+    background-color: $reportColor;
+}
+
 .field-value-module.inline span {
     max-width: 230px;
     text-overflow: ellipsis;
