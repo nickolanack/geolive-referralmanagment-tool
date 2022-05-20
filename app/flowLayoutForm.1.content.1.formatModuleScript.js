@@ -5,4 +5,4 @@
        description:"",
        icon:"default"
     });
-})
+}).setUpdateField(item.getFlow());
