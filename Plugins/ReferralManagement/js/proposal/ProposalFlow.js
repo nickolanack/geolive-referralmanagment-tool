@@ -1,13 +1,18 @@
 var ProposalFlow = (function() {
 
 
+	var stateConfig=null;
+
 	(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration", {
 		'widget': "workflow"
 	})).addEvent('success',function(response){
 
+
+		stateConfig=response.parameters;
+
 		if(response.subscription){
 			AjaxControlQuery.Subscribe(response.subscription, function(update) {
-
+				console.log('update');
 			});
 		}
 		
