@@ -5902,7 +5902,11 @@ button.form-btn.primary-btn.hide {
     }
 }
 
-
+button.inline-edit.top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 
 
     
