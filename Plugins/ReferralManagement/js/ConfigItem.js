@@ -171,10 +171,12 @@ var ConfigItem = (function() {
 
         });
 
-        new UIPopover(btn,{
-            description:item.getEditLabel(),
-            anchor:UIPopover.AnchorAuto()
-        });
+        if(item.getEditLabel){
+            new UIPopover(btn, {
+                description:item.getEditLabel(),
+                anchor:UIPopover.AnchorAuto()
+            });
+        }
 
 
         return btn;
