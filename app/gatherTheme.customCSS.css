@@ -1067,7 +1067,9 @@ span.field-value.alt-tag {
     margin: 1px;
 }
 
-
+div.popover[data-with-view="reportSelectionView"]{
+    max-width:400px;
+}
 [data-view="reportSelectionView"]{
 
     .ui-view {
