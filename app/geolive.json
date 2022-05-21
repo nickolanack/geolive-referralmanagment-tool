@@ -27016,7 +27016,15 @@
                     },
                     "content": {
                         "modules": [
-                            "reportListItem.metadata.positions.content.modules.0.json"
+                            "reportListItem.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "reportListItem.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            }
                         ]
                     },
                     "footer": {
