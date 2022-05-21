@@ -258,6 +258,11 @@ GetWidget('genericLabel')->display($targetInstance);
 GetWidget('flowLayoutForm')->display($targetInstance);
 GetWidget('flowLayoutItemForm')->display($targetInstance);
 
+GetWidget('reportLayoutForm')->display($targetInstance);
+GetWidget('reportLayoutItemForm')->display($targetInstance);
+
+GetWidget('reportSelectionView')->display($targetInstance);
+
 
 
 
