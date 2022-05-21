@@ -27036,5 +27036,19 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.481": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-createReport.text",
+            "target": "module.html-createReport.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Select a report template"
+        }
     }
 }
