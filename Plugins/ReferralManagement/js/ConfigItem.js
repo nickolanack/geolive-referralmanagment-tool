@@ -171,7 +171,7 @@ var ConfigItem = (function() {
 
         });
 
-        if(item.getEditLabel){
+        if(item.getPopover&&item.getPopover()!==false){
             new UIPopover(btn, {
                 description:item.getEditLabel(),
                 anchor:UIPopover.AnchorAuto()
