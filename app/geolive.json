@@ -26854,15 +26854,15 @@
                             "reportLayoutItemForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 148,
-                            "y": 280
+                            "x": 158,
+                            "y": 290
                         },
                         "children": [
                             "reportLayoutItemForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 108,
+                                    "x": 118,
                                     "y": 456
                                 }
                             }
@@ -26895,6 +26895,14 @@
                                                 "textFormatScript": "",
                                                 "mediaIconTint": "rgb(100, 149, 237)",
                                                 "onRenderModuleFn": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "WizardScriptElement",
+                                            "config": {
+                                                "name": "My Custom Script",
+                                                "script": "reportLayoutItemForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.script.js",
+                                                "description": "Info about my custom script"
                                             }
                                         }
                                     ]
