@@ -5,7 +5,7 @@ return new ModalFormButtonModule(application, item, {
 				template: "form"
 			},
 			formName: "templateForm",
-			"class": "inline-edit",
+			"class": "primary-btn report",
             stopPropagation:true
 
 		})
