@@ -4,7 +4,7 @@ return new ModalFormButtonModule(application, item, {
 			formOptions: {
 				template: "form"
 			},
-			formName: "templateForm",
+			formName: 'reportContentForm',
 			"class": "primary-btn report",
             stopPropagation:true
 
