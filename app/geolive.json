@@ -26743,16 +26743,16 @@
                             "reportLayoutForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 193,
-                            "y": 214
+                            "x": 203,
+                            "y": 224
                         },
                         "children": [
                             "reportLayoutForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 153,
-                                    "y": 380
+                                    "x": 163,
+                                    "y": 390
                                 }
                             }
                         ],
@@ -26769,7 +26769,7 @@
                                         {
                                             "type": "UIListView",
                                             "config": {
-                                                "listClassName": "",
+                                                "listClassName": "inline-form-list",
                                                 "className": "",
                                                 "identifier": "",
                                                 "viewType": "form",
