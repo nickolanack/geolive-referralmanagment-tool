@@ -27,7 +27,15 @@ class Report {
 
 		foreach(GetWidget('reportTemplates')->getConfigurationValue('templatesData', array()) as $reportTemplate){
 			if($reportTemplate->name===$templateName){
-				$template=new \core\TemplateRenderer($reportTemplate->content);
+
+
+				$cssToInlineStyles = new TijsVerkoyen\CssToInlineStyles\CssToInlineStyles();
+
+				$content= $cssToInlineStyles->convert(
+				   $reportTemplate->content
+				);
+				
+				$template=new \core\TemplateRenderer($content);
 			}
 		}
 
