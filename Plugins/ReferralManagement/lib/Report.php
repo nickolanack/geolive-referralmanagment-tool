@@ -110,7 +110,7 @@ class Report {
 			$icon = $parser->parseUserIcon($teamMember);
 
 			if (!empty($icon)) {
-				$teamMember['icon'] = $base64($icon);
+				$teamMember->icon = $base64($icon);
 			}
 
 			return $teamMember;
