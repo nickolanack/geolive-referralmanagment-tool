@@ -9,8 +9,8 @@ return [
 			"class": "primary-btn report",
             stopPropagation:true
 
-		}),
-		new ModalFormButtonModule(application, item, {
+	}),
+	new ModalFormButtonModule(application, item, {
 
 			label: "Edit Template Form/Config",
 			formOptions: {
@@ -20,7 +20,5 @@ return [
 			"class": "primary-btn report",
             stopPropagation:true
 
-		})
-		
-		
-		]
+	})
+];
