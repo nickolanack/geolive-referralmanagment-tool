@@ -23,7 +23,7 @@ class Report {
 		$parser = new ComputedData();
 
 
-		var $template=null;
+		$template=null;
 
 		foreach(GetWidget('reportTemplates')->getConfigurationValue('templatesData', array()) as $reportTemplate){
 			if($reportTemplate->name===$templateName){
