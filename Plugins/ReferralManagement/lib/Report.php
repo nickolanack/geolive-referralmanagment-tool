@@ -29,12 +29,12 @@ class Report {
 			if($reportTemplate->name===$templateName){
 
 
-				$cssToInlineStyles = new TijsVerkoyen\CssToInlineStyles\CssToInlineStyles();
+				$cssToInlineStyles = new \TijsVerkoyen\CssToInlineStyles\CssToInlineStyles();
 
 				$content= $cssToInlineStyles->convert(
 				   $reportTemplate->content
 				);
-				
+
 				$template=new \core\TemplateRenderer($content);
 			}
 		}
