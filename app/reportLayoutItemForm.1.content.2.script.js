@@ -1,4 +1,4 @@
-var m = new ModuleArray([
+var modules = new ModuleArray([
     new ModalFormButtonModule(application, item, {
 
 			label: "Edit Content",
@@ -12,7 +12,7 @@ var m = new ModuleArray([
 	}).addEvent('show',function(childWizard){
 	    childWizard.addEvent('complete',function(){
 	        //trigger parent wizard update
-	        m.fireEvent('change');
+	        modules.fireEvent('change');
 	    });
 	}),
 	new ModalFormButtonModule(application, item, {
@@ -27,3 +27,6 @@ var m = new ModuleArray([
 
 	})
 ]);
+
+
+return modules;
