@@ -27,7 +27,7 @@ class Report {
 
 		foreach(GetWidget('reportTemplates')->getConfigurationValue('templatesData', array()) as $reportTemplate){
 			if($reportTemplate->name===$templateName){
-				throw new \Exception('Need to create a quick non-widget renderer');
+				$template=new \core\TemplateRenderer($reportTemplate->content);
 			}
 		}
 
