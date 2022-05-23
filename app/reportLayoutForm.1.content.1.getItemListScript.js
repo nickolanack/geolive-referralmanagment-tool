@@ -11,7 +11,7 @@
                 return new MockDataTypeItem({
                     name:item.name,
                     description:item.description,
-                    content:"",
+                    content:item.content,
                     mutable:true
                 });
                 
