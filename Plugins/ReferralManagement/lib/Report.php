@@ -58,7 +58,7 @@ class Report {
 
 			$filename = tempnam(__DIR__, '-ext-img-');
 			try {
-				file_put_contents($file, file_get_contents($path));
+				file_put_contents($filename, file_get_contents($path));
 				$type = pathinfo($path, PATHINFO_EXTENSION);
 				$str = 'data:image/' . $type . ';base64,' . base64_encode(file_get_contents($path));
 				unlink($filename);
