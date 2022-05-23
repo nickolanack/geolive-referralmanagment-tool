@@ -129,11 +129,7 @@ class Report {
 		$this->text = $template->render($data);
 
 
-		$cssToInlineStyles = new \TijsVerkoyen\CssToInlineStyles\CssToInlineStyles();
-
-		$this->text= $cssToInlineStyles->convert(
-		   $this->text
-		);
+		
 
 
 		include_once GetPath('{widgets}/CustomContent/vendor/autoload.php');
@@ -142,6 +138,12 @@ class Report {
 			->setMarkupEscaped(false)
 			->text($this->text);
 
+
+		$cssToInlineStyles = new \TijsVerkoyen\CssToInlineStyles\CssToInlineStyles();
+
+		$this->text= $cssToInlineStyles->convert(
+		   $this->text
+		);
 
 		return $this;
 	}
