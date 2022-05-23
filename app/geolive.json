@@ -26472,16 +26472,16 @@
                             "flowLayoutForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 295,
-                            "y": 251
+                            "x": 315,
+                            "y": 271
                         },
                         "children": [
                             "flowLayoutForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 255,
-                                    "y": 417
+                                    "x": 275,
+                                    "y": 437
                                 }
                             }
                         ],
@@ -26498,7 +26498,7 @@
                                         {
                                             "type": "UIListView",
                                             "config": {
-                                                "listClassName": "",
+                                                "listClassName": "inline-form-list",
                                                 "className": "",
                                                 "identifier": "",
                                                 "viewType": "form",
@@ -26583,16 +26583,16 @@
                             "flowLayoutItemForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 158,
-                            "y": 290
+                            "x": 168,
+                            "y": 300
                         },
                         "children": [
                             "flowLayoutItemForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 118,
-                                    "y": 466
+                                    "x": 128,
+                                    "y": 488
                                 }
                             }
                         ],
@@ -26629,7 +26629,7 @@
                                         {
                                             "type": "FormBooleanField",
                                             "config": {
-                                                "className": "",
+                                                "className": "width-2",
                                                 "label": "Link to next",
                                                 "identifier": "boolean-field",
                                                 "mandatory": false,
@@ -26643,7 +26643,7 @@
                                         {
                                             "type": "FormTextField",
                                             "config": {
-                                                "className": "",
+                                                "className": "width-2",
                                                 "label": "Icon",
                                                 "placeholder": "add value",
                                                 "lines": 1,
@@ -26743,16 +26743,16 @@
                             "reportLayoutForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 193,
-                            "y": 214
+                            "x": 253,
+                            "y": 274
                         },
                         "children": [
                             "reportLayoutForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 153,
-                                    "y": 380
+                                    "x": 213,
+                                    "y": 440
                                 }
                             }
                         ],
@@ -26769,7 +26769,7 @@
                                         {
                                             "type": "UIListView",
                                             "config": {
-                                                "listClassName": "",
+                                                "listClassName": "inline-form-list",
                                                 "className": "",
                                                 "identifier": "",
                                                 "viewType": "form",
@@ -26854,16 +26854,16 @@
                             "reportLayoutItemForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 148,
-                            "y": 280
+                            "x": 258,
+                            "y": 390
                         },
                         "children": [
                             "reportLayoutItemForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 108,
-                                    "y": 456
+                                    "x": 218,
+                                    "y": 578
                                 }
                             }
                         ],
@@ -26895,6 +26895,22 @@
                                                 "textFormatScript": "",
                                                 "mediaIconTint": "rgb(100, 149, 237)",
                                                 "onRenderModuleFn": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "WizardScriptElement",
+                                            "config": {
+                                                "name": "My Custom Script",
+                                                "script": "reportLayoutItemForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.script.js",
+                                                "description": "Info about my custom script"
+                                            }
+                                        },
+                                        {
+                                            "type": "WizardScriptElement",
+                                            "config": {
+                                                "name": "My Custom Script",
+                                                "script": "reportLayoutItemForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.script.js",
+                                                "description": "Info about my custom script"
                                             }
                                         }
                                     ]
@@ -27016,7 +27032,15 @@
                     },
                     "content": {
                         "modules": [
-                            "reportListItem.metadata.positions.content.modules.0.json"
+                            "reportListItem.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "reportListItem.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            }
                         ]
                     },
                     "footer": {
@@ -27046,9 +27070,112 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
+            "parseMarkdown": true,
             "saveTemplateAsData": false,
-            "contentTemplate": "Select a report template"
+            "contentTemplate": "#Select a report template",
+            "readAccess": "public"
+        }
+    },
+    "widget.482": {
+        "name": "Generic Form",
+        "instance": "WizardBuilder",
+        "parameters": {
+            "widgetTitle": "reportContentForm",
+            "target": "reportContentForm",
+            "templateName": "reportContentForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "formatStepModulesScript": "",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -18,
+                    "y": 171
+                },
+                "children": [
+                    "reportContentForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "reportContentForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 148,
+                            "y": 280
+                        },
+                        "children": [
+                            "reportContentForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 108,
+                                    "y": 446
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "reportContentForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "reportContentForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Template Content",
+                                                "placeholder": "add markdown, and template content",
+                                                "lines": 10,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "beforeRenderModuleScript": "",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return item.getContent()",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "reportContentForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "reportContentForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "readAccess": "public"
         }
     }
 }

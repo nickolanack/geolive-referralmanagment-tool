@@ -2,11 +2,12 @@
 		'widget': "reportTemplates",
 		'field': "templatesData"
 	})).addEvent('success',function(response){
-            callback(response.value.map(function(item){
+            callback(response.value.map(function(template){
                 return new MockDataTypeItem({
-                    name:item.name,
-                    description:item.description,
-                    content:""
+                    name:template.name,
+                    description:template.description,
+                    content:"",
+                    project:item.getId()
                 });
                 
             }))

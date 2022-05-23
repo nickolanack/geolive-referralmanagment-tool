@@ -14,6 +14,21 @@ if(ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin()){
     
     var reportItem=new MockDataTypeItem({templatesData:[], mutable:true});
 		
+    reportItem.on('save', function(){
+                var data=reportItem.toObject().templatesData;
+                /*Admin only*/
+            	(new AjaxControlQuery(CoreAjaxUrlRoot, "set_configuration_field", {
+            		'widget': "reportTemplates",
+            		'field': {
+            			"name":"templatesData",
+            			"value":data
+            		}
+            	})).addEvent('success',function(response){
+            
+            	}).execute();
+            })		
+		
+
 	reportBtns.push( 
 		(new ModalFormButtonModule(application, reportItem, {
 			label: "Edit reports",
@@ -26,19 +41,7 @@ if(ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin()){
 			"style": "float:right;"
 		})).addEvent("show", function() {
     
-            reportItem.on('save', function(){
-                var data=reportItem.toObject().templatesData;
-                /*Admin only*/
-            	(new AjaxControlQuery(CoreAjaxUrlRoot, "set_configuration_field", {
-            		'widget': "reportTemplates",
-            		'field': {
-            			"name":"templatesData",
-            			"value":data
-            		}
-            	})).addEvent('success',function(response){
             
-            	}).execute();
-            })
 		})
 	);
     

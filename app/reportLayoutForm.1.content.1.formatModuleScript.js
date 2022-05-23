@@ -2,6 +2,11 @@
     
     return new MockDataTypeItem({
        name:"",
-       description:""
+       description:"",
+       content:"",
     });
+}).addDataFormatter(function(data, item){
+    
+    return ObjectAppend_({}, item.toObject(), data);
+    
 }).setUpdateField('templatesData');
