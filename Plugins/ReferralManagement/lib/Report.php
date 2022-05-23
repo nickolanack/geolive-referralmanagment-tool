@@ -29,13 +29,9 @@ class Report {
 			if($reportTemplate->name===$templateName){
 
 
-				$cssToInlineStyles = new \TijsVerkoyen\CssToInlineStyles\CssToInlineStyles();
 
-				$content= $cssToInlineStyles->convert(
-				   $reportTemplate->content
-				);
 
-				$template=new \core\TemplateRenderer($content);
+				$template=new \core\TemplateRenderer($reportTemplate->content);
 			}
 		}
 
@@ -131,6 +127,20 @@ class Report {
 
 		$this->title = $data['attributes']['company'] . '-' . $data['attributes']['title'];
 		$this->text = $template->render($data);
+
+
+		$cssToInlineStyles = new \TijsVerkoyen\CssToInlineStyles\CssToInlineStyles();
+
+		$this->text= $cssToInlineStyles->convert(
+		   $this->text
+		);
+
+
+		include_once GetPath('{widgets}/CustomContent/vendor/autoload.php');
+		$this->text = (new Parsedown())
+			->setSafeMode(true)
+			->text($this->text);
+
 
 		return $this;
 	}
