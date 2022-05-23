@@ -137,7 +137,7 @@ class Report {
 
 
 		include_once GetPath('{widgets}/CustomContent/vendor/autoload.php');
-		$this->text = (new Parsedown())
+		$this->text = (new \Parsedown())
 			//->setSafeMode(true)
 			//->setMarkupEscaped(true);
 			->text($this->text);
