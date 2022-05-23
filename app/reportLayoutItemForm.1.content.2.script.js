@@ -1,7 +1,7 @@
 return [
     new ModalFormButtonModule(application, item, {
 
-			label: "Edit Template Content",
+			label: "Edit Content",
 			formOptions: {
 				template: "form"
 			},
@@ -12,7 +12,7 @@ return [
 	}),
 	new ModalFormButtonModule(application, item, {
 
-			label: "Edit Template Form/Config",
+			label: "Edit Form/Config",
 			formOptions: {
 				template: "form"
 			},
