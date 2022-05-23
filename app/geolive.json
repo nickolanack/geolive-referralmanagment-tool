@@ -27098,16 +27098,16 @@
                             "reportContentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 138,
-                            "y": 270
+                            "x": 148,
+                            "y": 280
                         },
                         "children": [
                             "reportContentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 98,
-                                    "y": 436
+                                    "x": 108,
+                                    "y": 446
                                 }
                             }
                         ],
@@ -27120,7 +27120,29 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "reportContentForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                        "reportContentForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Template Content",
+                                                "placeholder": "add markdown, and template content",
+                                                "lines": 10,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "beforeRenderModuleScript": "",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return item.getContent()",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "reportContentForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        }
                                     ]
                                 },
                                 "footer": {

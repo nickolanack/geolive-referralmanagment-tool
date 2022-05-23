@@ -1,22 +1,4 @@
 {
-    "type": "FormTextField",
-    "config": {
-        "className": "",
-        "label": "Template Content",
-        "placeholder": "add markdown, and template content",
-        "lines": 10,
-        "maxChars": 0,
-        "mandatory": false,
-        "multiEntry": false,
-        "muliTemplate": "lines",
-        "multiMessage": "add another value",
-        "formatter": "none",
-        "beforeRenderModuleScript": "",
-        "onRenderTextFieldScript": "",
-        "formatValueScript": "",
-        "getValueScript": " return item.getContent()",
-        "updateValueScript": " object.value=value ",
-        "submitValueScript": "wizardDataSet.content=object.value",
-        "validateValueScript": " return defaultValidationFn() "
-    }
+    "type": "InlineHtml",
+    "config": {}
 }
