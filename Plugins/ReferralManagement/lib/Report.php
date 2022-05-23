@@ -21,7 +21,20 @@ class Report {
 	public function generateReport($templateName, $defaultContent) {
 
 		$parser = new ComputedData();
-		$template = new \core\Template($templateName, $defaultContent);
+
+
+		var $template=null;
+
+		foreach(GetWidget('reportTemplates')->getConfigurationValue('templatesData', array()) as $reportTemplate){
+			if($reportTemplate->name===$templateName){
+				throw new \Exception('Need to create a quick non-widget renderer');
+			}
+		}
+
+
+		if(is_null($template)){
+			$template = new \core\Template($templateName, $defaultContent);
+		}
 
 		$data = $this->getPlugin()->getProposalData($this->proposal);
 

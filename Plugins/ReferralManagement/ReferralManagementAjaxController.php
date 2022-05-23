@@ -663,8 +663,8 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 	protected function generateReport($json) {
 
 		include_once __DIR__ . '/lib/Report.php';
-		(new \ReferralManagement\Report($json->proposal))
-			->generateReport('proposal.report', 'Hello World')
+		(new \ReferralManagement\Report($json->project))
+			->generateReport(isset($json->template)?$json->template:'proposal.report', 'Hello World')
 			->renderPdf();
 		exit();
 
