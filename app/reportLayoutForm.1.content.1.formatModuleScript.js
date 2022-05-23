@@ -2,6 +2,7 @@
     
     return new MockDataTypeItem({
        name:"",
-       description:""
+       description:"",
+       content:"",
     });
 }).setUpdateField('templatesData');
