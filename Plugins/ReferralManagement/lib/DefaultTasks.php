@@ -8,6 +8,8 @@ namespace ReferralManagement;
 
 class DefaultTasks {
 
+	use \core\TemplateRendererTrait;
+
 	private $templates = null;
 
 	public function createTasksForProposal($proposal) {

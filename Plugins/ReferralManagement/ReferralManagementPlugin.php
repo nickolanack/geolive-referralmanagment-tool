@@ -36,7 +36,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	use \core\DatabaseProviderTrait;
 	use \core\DataTypeProviderTrait;
 	use \core\EventListenerTrait;
-	use \core\TemplateRenderer;
+
 
 	public function decodePathSegments($segments) {
 
