@@ -2,7 +2,7 @@ var reportBtn=new ElementModule('button',{"identifier":"button-report", "html":"
     
         var exportQuery=new AjaxControlQuery(CoreAjaxUrlRoot, 'generate_report', {
     		                "plugin": "ReferralManagement",
-    		                "proposal":item.getId(),
+    		                "project":item.getProject(),
     		                "template":item.getName()
     		            });
         				//exportQuery.execute(); //for testing.
