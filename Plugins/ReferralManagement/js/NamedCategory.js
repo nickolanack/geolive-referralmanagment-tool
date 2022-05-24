@@ -362,6 +362,9 @@ var NamedCategory = (function() {
 		el.addClass(prefix+"category-"+item.getName().toLowerCase().replace(' ','-'));
 
 
+		if(item.getMetadata&&item.getMetadata()['background-color']){
+			el.setStyle('background-color',item.getMetadata()['background-color']);
+		}
 
 		if(!item.isRootTag()){
 			var p=item.getParentTagData();
