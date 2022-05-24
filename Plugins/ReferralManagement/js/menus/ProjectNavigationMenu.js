@@ -189,37 +189,9 @@ var ProjectNavigationMenu = (function() {
 			if (me.menu) {
 
 
-				if(menuLayout){
-					var sortOrder=Object.keys(menuLayout);
-					me.menu.Project.sort(function(a, b){
 
-						var aName=(a.name||a.html).toLowerCase();
-						var bName=(b.name||b.html).toLowerCase();
-
-
-						var aIndex=sortOrder.indexOf(aName);
-						var bIndex=sortOrder.indexOf(bName);
-						return aIndex-bIndex;
-
-					})
-
-					me.menu.Project.forEach(function(menuItem){
-
-						var menuName=(menuItem.name||menuItem.html).toLowerCase();
-						if(menuLayout[menuName]){
-
-							var menuConfig=menuLayout[menuName];
-							if(menuConfig["class"]){
-								menuItem.buttonClass=(menuItem.buttonClass?menuItem.buttonClass+" ":"")+menuConfig["class"];
-							}
-
-						}
-
-					});
-
-				}
-
-
+				MenuUtils.applyMenuFormat(me.menu);
+				
 				NavigationMenuModule.prototype.process.call(me);
 
 				if (AppClient.getUserType() == "admin") {
