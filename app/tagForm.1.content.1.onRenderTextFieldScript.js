@@ -1,3 +1,3 @@
 if(!item.isEditable()){
-    inputElement.disabled=true;
+    inputElement.disabled='disabled';
 }
