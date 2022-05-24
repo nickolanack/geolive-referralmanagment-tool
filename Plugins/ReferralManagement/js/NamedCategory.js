@@ -114,6 +114,14 @@ var NamedCategory = (function() {
 			return true;
 		},
 
+		getRootTagData:function(){
+			var tag=this;
+			while(tag.getParentTagData()){
+				tag=tag.getParentTagData();
+			}
+			return tag;
+		},
+
 		getParentTagData:function(){
 
 			var me=this;

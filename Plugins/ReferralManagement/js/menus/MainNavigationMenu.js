@@ -166,8 +166,19 @@ var MainNavigationMenu = new Class({
 								return item.lockFilter==='!collection';
 							}
 
-							if(value&&item.getMetadata&&item.getMetadata().menu){
-								return item.getMetadata().menu==="Datasets";
+							if(value&&item.getMetadata&&item.getMetadata()){
+
+								if(item.getMetadata().menu){
+									return item.getMetadata().menu==="Datasets";
+								}
+
+								if(item.getCategory&&item.getCategory()){
+									var root=item.getCategory().getRootTagData();
+									if(root.getMetadata&&root.getMetadata()&&root.getMetadata().menu){
+										return root.getMetadata().menu==="Datasets";
+									}
+								}
+
 							}
 
 							return value;
@@ -202,8 +213,19 @@ var MainNavigationMenu = new Class({
 								return item.lockFilter==='collection';
 							}
 
-							if(value&&item.getMetadata&&item.getMetadata().menu){
-								return item.getMetadata().menu==="Collections";
+							if(value&&item.getMetadata&&item.getMetadata()){
+
+								if(item.getMetadata().menu){
+									return item.getMetadata().menu==="Collections";
+								}
+
+								if(item.getCategory&&item.getCategory()){
+									var root=item.getCategory().getRootTagData();
+									if(root.getMetadata&&root.getMetadata()&&root.getMetadata().menu){
+										return root.getMetadata().menu==="Collections";
+									}
+								}
+
 							}
 
 							return value;

@@ -800,7 +800,8 @@ var ProjectList = (function() {
 			"createBtns": btns,
 			"filter": null,
 			"lockFilter": [ /*"!collection", */ category.getName()],
-			"metadata":category.getMetadata?category.getMetadata():{}
+			"metadata":category.getMetadata?category.getMetadata():{},
+			'category':category
 		});
 
 
