@@ -18,7 +18,30 @@ var NamedCategoryList = (function() {
 
 	(new TagsListQuery()).addEvent('success', function(response) {
 
-		_tags = response.tags.map(function(itemData) {
+
+		var tagsSorted=response.tags;
+
+
+		tagsSorted.sort(function(a, b){
+
+			var orderA=9999;
+			var orderB=9999;
+
+
+			if(a.metadata.order){
+				orderA=parseInt(a.metadata.order);
+			}
+
+			if(b.metadata.order){
+				orderB=parseInt(b.metadata.order);
+			}
+
+			return orderA-orderB;
+
+		});
+
+
+		_tags = tagsSorted.map(function(itemData) {
 			return new ProjectTag(Object.append({
 				"type": "Project.tag"
 			}, itemData));
