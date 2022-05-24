@@ -89,6 +89,15 @@ var NamedCategory = (function() {
 
 		},
 
+		getLabel:function(){
+
+			if(this.getMetadata&&this.getMetadata().label){
+				return this.getMetadata().label;
+			}
+
+			return this.getName();
+		},
+
 		getCategoryForChildren:function(){
 			return this.getName().toLowerCase();
 		},
@@ -329,6 +338,7 @@ var NamedCategory = (function() {
 
 
 	};
+
 
 
 	NamedCategory.GetShortName = function(category) {
