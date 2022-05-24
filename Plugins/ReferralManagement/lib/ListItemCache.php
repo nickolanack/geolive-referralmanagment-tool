@@ -5,25 +5,15 @@ namespace ReferralManagement;
 class ListItemCache implements \core\EventListener {
 
 	use \core\EventListenerTrait;
+	use \core\MemcacheBehaviorTrait;
 
 	protected $debug=false;
-
-	protected static $memcache=null;
 
 	public function setDebug($bool){
 		$this->debug=!!$bool;
 	}
 
 
-	protected function getMemcache(){
-
-		if(!self::$memcache){
-			self::$memcache=(new \core\MemcacheConnection())->setPrefix(HtmlDocument()->getDomain().'.');
-		}
-
-		return self::$memcache;
-
-	}
 
 	public function needsProjectListUpdate() {
 		(new \core\LongTaskProgress())
@@ -94,11 +84,13 @@ class ListItemCache implements \core\EventListener {
 
 		$cacheName = 'ReferralManagement.projectList.' . $filterHash . '.json';
 		$cacheData = HtmlDocument()->getCachedPage($cacheName);
-
 		$projects = GetPlugin('ReferralManagement')->listProjectsMetadata($filter);
 
 		$newData = json_encode($projects);
 		HtmlDocument()->setCachedPage($cacheName, $newData);
+		if($this->getMemcache()->isEnabled()){
+			$this->getMemcache()->set($cacheName, $projects);
+		}
 		if ($newData != $cacheData) {
 
 			$cachedProjects = json_decode($cacheData);
@@ -195,7 +187,24 @@ class ListItemCache implements \core\EventListener {
 		$filterHash = md5(json_encode($filter));
 
 		$cacheName = 'ReferralManagement.projectList.' . $filterHash . '.json';
-		$cacheData = HtmlDocument()->getCachedPage($cacheName);
+		$usedMemcache=false;
+		$cacheData=null;
+
+
+
+		if($this->getMemcache()->isEnabled()){
+
+			$cacheData = $this->getMemcache()->get($cacheName);
+			if(!empty($cacheData)){
+				$cacheData=json_encode($cacheData);
+				$usedMemcache=true;
+			}
+		}
+
+
+		if(empty($cacheData)){
+			$cacheData = HtmlDocument()->getCachedPage($cacheName);
+		}
 		if (!empty($cacheData)) {
 
 			$projects = json_decode($cacheData);
@@ -222,6 +231,7 @@ class ListItemCache implements \core\EventListener {
 
 		$cacheName = "ReferralManagement.userList.json";
 		$usedMemcache=false;
+		$cacheData=null;
 
 		if($this->getMemcache()->isEnabled()){
 
