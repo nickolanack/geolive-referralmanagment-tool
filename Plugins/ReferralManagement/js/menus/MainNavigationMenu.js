@@ -181,6 +181,8 @@ var MainNavigationMenu = new Class({
 					    invertfilter:false
 					},
 					click:function(){
+						UIInteraction.navigateToNamedCategoryType('Data warehouse');
+						return;
 						me.navigateTo('Datasets', 'Main')
 					},
 					formatEl: function(li) {
@@ -213,6 +215,8 @@ var MainNavigationMenu = new Class({
 					    invertfilter:false
 					},
 					click:function(){
+						UIInteraction.navigateToNamedCategoryType('Projects');
+						return;
 						me.navigateTo('Datasets', 'Main')
 					},
 					formatEl: function(li) {
