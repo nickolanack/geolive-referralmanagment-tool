@@ -91,11 +91,16 @@ var NamedCategory = (function() {
 
 		getLabel:function(){
 
+
+			var label=this.getName();
+
 			if(this.getMetadata&&this.getMetadata().label){
-				return this.getMetadata().label;
+				label =  this.getMetadata().label;
 			}
 
-			return this.getName();
+			label=label.replace(/([A-Z])/g, ' $1').trim().split('/').pop();
+
+			return label;
 		},
 
 		getCategoryForChildren:function(){
@@ -427,9 +432,9 @@ var NamedCategory = (function() {
 		    click:function(){
 		        var controller = application.getNamedValue('navigationController');
 		        controller.navigateTo("Projects", "Main", {
-								filters:ProjectTagList.getProjectTagsData('_root').map(function(item){ return item.getName(); }),
-								//filter:child.getName()
-							});
+					filters:ProjectTagList.getProjectTagsData('_root').map(function(item){ return item.getName(); }),
+					//filter:child.getName()
+				});
 		    }
 		}});
 		if(item instanceof ProjectList){
