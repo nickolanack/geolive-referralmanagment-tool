@@ -19118,16 +19118,16 @@
                             "tagForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 458,
-                            "y": 252
+                            "x": 468,
+                            "y": 262
                         },
                         "children": [
                             "tagForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 418,
-                                    "y": 453
+                                    "x": 428,
+                                    "y": 463
                                 }
                             }
                         ],
@@ -19148,7 +19148,9 @@
                                                 "message": "add a title",
                                                 "className": "",
                                                 "maxChars": 0,
-                                                "textFormatScript": ""
+                                                "textFormatScript": "",
+                                                "beforeRenderModuleScript": "",
+                                                "onRenderTextFieldScript": "tagForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.onRenderTextFieldScript.js"
                                             }
                                         },
                                         {
@@ -19174,7 +19176,7 @@
                                             }
                                         },
                                         {
-                                            "type": "WizardDescriptionField",
+                                            "type": "FormTextDescriptionField",
                                             "config": {
                                                 "label": "Description",
                                                 "message": "add a description",
