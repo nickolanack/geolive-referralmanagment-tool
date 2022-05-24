@@ -3,16 +3,6 @@
 
 var ProjectNavigationMenu = (function() {
 	
-	var menuLayout=null;
-
-	(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration_field", {
-		'widget': "projectMenuLayout",
-		'field': "layout"
-	})).addEvent('success', function(response) {
-		menuLayout=response.value;
-	}).execute();
-
-
 
 	var ProjectNavigationMenu = new Class({
 		Extends: NavigationMenuModule,
@@ -69,9 +59,7 @@ var ProjectNavigationMenu = (function() {
 							html: "Team",
 							name: "Users",
 							formatEl: function(li) {
-
 								Counters.addItemUsersInfo(li, item, application);
-
 							}
 						}, {
 							html: "Files",
@@ -87,14 +75,7 @@ var ProjectNavigationMenu = (function() {
 								projects: function(callback) {
 									callback(item.getProjectObjects());
 								}
-							}),
-							viewOptions: {
-
-							},
-							formatEl: function(li) {
-
-
-							}
+							})
 						}, {
 							html: "Discussion",
 							formatEl: function(li) {
@@ -103,11 +84,7 @@ var ProjectNavigationMenu = (function() {
 								//Counters.addItemDiscussionIndicator(li, item, application);
 
 							}
-						},
-						// {
-						//   html:"Timesheets"
-						// }
-						{
+						}, {
 							html: "Map",
 							formatEl: function(li) {
 
@@ -116,66 +93,31 @@ var ProjectNavigationMenu = (function() {
 
 							}
 						}, {
-							html: "Briefing",
-							formatEl: function(li) {
-
-
-
-							}
+							html: "Briefing"
 						}, {
 							html: "Review",
-							template: "singleProjectReviewDetail",
-							formatEl: function(li) {
-
-
-
-							}
+							template: "singleProjectReviewDetail"
 						}, {
 							html: "History",
 							formatEl: function(li) {
-
-
 								Counters.addItemDiscussionIndicator(li, item, application);
-
 							}
 						}, {
 							html: "Status",
-							template: "proposalOverviewStatus",
-							formatEl: function(li) {
-
-
-
-							}
+							template: "proposalOverviewStatus"
 						}, {
 							html: "Communication", //"Proponent",
 							template: "singleProjectProponentDetail",
-							formatEl: function(li) {
-
-
-
-							}
 						}, {
 							html: "Security", //"Proponent",
-							template: "singleProjectSecurityDetail",
-							formatEl: function(li) {
-
-
-
-							}
+							template: "singleProjectSecurityDetail"
 						}
 					]
 				};
 
 
-				me.menu = DashboardPageLayout.withItem(application.getNamedValue('currentProject')).layoutMenu('projectMenu', me.menu);
+				me.menu = DashboardPageLayout.withItem(item).layoutMenu('projectMenu', me.menu);
 
-				// me.menu.Project = me.menu.Project.filter(function(item) {
-
-				// 	if (item.html == "Tasks" && !config.parameters.enableTasks) {
-				// 		return false;
-				// 	}
-				// 	return true;
-				// });
 			});
 
 
