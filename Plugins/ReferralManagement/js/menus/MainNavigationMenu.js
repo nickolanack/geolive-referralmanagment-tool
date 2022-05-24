@@ -180,10 +180,12 @@ var MainNavigationMenu = new Class({
 					    filter:null,
 					    invertfilter:false
 					},
-					click:function(){
-						UIInteraction.navigateToNamedCategoryType('Data warehouse');
-						return;
-						me.navigateTo('Datasets', 'Main')
+					events:{
+						click:function(){
+							UIInteraction.navigateToNamedCategoryType('Data warehouse');
+							return;
+							me.navigateTo('Datasets', 'Main')
+						}
 					},
 					formatEl: function(li) {
 						Counters.addProjectListCounter(li, function(p){
@@ -214,10 +216,12 @@ var MainNavigationMenu = new Class({
 					    filter:null,
 					    invertfilter:false
 					},
-					click:function(){
-						UIInteraction.navigateToNamedCategoryType('Projects');
-						return;
-						me.navigateTo('Datasets', 'Main')
+					events:{
+						click:function(){
+							UIInteraction.navigateToNamedCategoryType('Projects');
+							return;
+							me.navigateTo('Datasets', 'Main')
+						}
 					},
 					formatEl: function(li) {
 						Counters.addProjectListCounter(li, function(p){
