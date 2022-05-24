@@ -486,7 +486,19 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		$database = $this->getDatabase();
 		$results = $database->getAllProposals($filter);
 
-		return array_map(function ($result) {
+		$withProfiling=$this->getParameter('enableProjectProfiling', false);
+
+		return array_map(function ($result) use($withProfiling){
+
+
+			if(!$withProfiling){
+
+				return (object) (new \ReferralManagement\Project())
+					->fromRecord($result)
+					->toArray();
+
+			}
+
 
 			$project = $this->analyze('formatProjectResult.' . $result->id, function () use ($result) {
 
@@ -494,6 +506,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 					->fromRecord($result)
 					->toArray();
 			});
+
 			$project['profileData'] = $this->getLastAnalysis();
 			//$project['visible'] = $this->shouldShowProjectFilter()($project);
 
