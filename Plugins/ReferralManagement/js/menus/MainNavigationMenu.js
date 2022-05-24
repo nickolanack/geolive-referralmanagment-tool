@@ -165,6 +165,11 @@ var MainNavigationMenu = new Class({
 							if(value&&item&&item.lockFilter){
 								return item.lockFilter==='!collection';
 							}
+
+							if(value&&item.getMetadata&&item.getMetadata().menu){
+								return item.getMetadata().menu==="Datasets";
+							}
+
 							return value;
 						}
 					},
@@ -189,6 +194,11 @@ var MainNavigationMenu = new Class({
 							if(value&&item&&item.lockFilter){
 								return item.lockFilter==='collection';
 							}
+
+							if(value&&item.getMetadata&&item.getMetadata().menu){
+								return item.getMetadata().menu==="Collections";
+							}
+
 							return value;
 						}
 					},
