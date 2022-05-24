@@ -54,17 +54,17 @@ class Report {
 			$path = $localPath($url);
 			if (file_exists($path)) {
 				$type = pathinfo($path, PATHINFO_EXTENSION);
-				return 'data:image/' . $type . ';base64,' . base64_encode(file_get_contents($path));
+				return 'data:image/' . $type . ';base64,' . base64_encode((new \core\File())->read($path));
 			}
 
 			//$type = pathinfo($path, PATHINFO_EXTENSION);
-			// return 'data:image/' . $type . ';base64,' . base64_encode(file_get_contents($path));
+			// return 'data:image/' . $type . ';base64,' . base64_encode((new \core\File())->read($path));
 
 			$filename = tempnam(__DIR__, '-ext-img-');
 			try {
-				file_put_contents($filename, file_get_contents($path));
+				(new \core\File())->write($filename, (new \core\File())->read($path));
 				$type = pathinfo($path, PATHINFO_EXTENSION);
-				$str = 'data:image/' . $type . ';base64,' . base64_encode(file_get_contents($path));
+				$str = 'data:image/' . $type . ';base64,' . base64_encode((new \core\File())->read($path));
 				unlink($filename);
 				return $str;
 			} catch (\Exception $e) {

@@ -713,7 +713,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		$url = $getUrls($str)[0];
 
-		$page = file_get_contents($url);
+		$page = (new \core\File())->read($url);
 		$urls = $getUrls($page);
 
 		$website = '';

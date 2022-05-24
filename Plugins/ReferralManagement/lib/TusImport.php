@@ -134,7 +134,7 @@ class TUSImport {
 
 		$name = $feature->getName();
 		$activityCode = substr($name, 0, 2);
-		$layerMap = get_object_vars(json_decode(file_get_contents(dirname(__DIR__) . '/layerCodes.json')));
+		$layerMap = get_object_vars(json_decode((new \core\File())->read(dirname(__DIR__) . '/layerCodes.json')));
 
 		$layer = 69;
 		if (key_exists($activityCode, $layerMap)) {
@@ -151,7 +151,7 @@ class TUSImport {
 		$name = $feature->getName();
 		$activityCode = substr($name, 0, 2);
 
-		$activityMap = get_object_vars(json_decode(file_get_contents(dirname(__DIR__) . '/attributeCodes.json')));
+		$activityMap = get_object_vars(json_decode((new \core\File())->read(dirname(__DIR__) . '/attributeCodes.json')));
 
 		$attributes = array('activityCode' => $activityCode);
 

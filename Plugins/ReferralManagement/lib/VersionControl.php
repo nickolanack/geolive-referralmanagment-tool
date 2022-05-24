@@ -58,7 +58,7 @@ class VersionControl implements \core\EventListener{
 
 		$data=$this->getPlugin()->getProposalData($id);
 
-		file_put_contents(GetPath('{version}/'.$id.'.json'), json_encode($data, JSON_PRETTY_PRINT));
+		(new \core\File())->write(GetPath('{version}/'.$id.'.json'), json_encode($data, JSON_PRETTY_PRINT));
 		if(!file_exists(GetPath('{version}/'.$id.'-resources'))){
 			mkdir(GetPath('{version}/'.$id.'-resources'));
 		}

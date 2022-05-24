@@ -77,7 +77,7 @@ class FileExport{
 
 
 		$zip->close();
-		$content = file_get_contents($filename);
+		$content = (new \core\File())->read($filename);
 		unlink($filename);
 
 		$title = $data['attributes']['title'];
@@ -104,7 +104,7 @@ class FileExport{
 		}catch(\Exception $e){
 			error_log($e->getMessage());
 		}
-		$this->zip->addFromString($name, file_get_contents($url));
+		$this->zip->addFromString($name, (new \core\File())->read($url));
 	}
 
 }

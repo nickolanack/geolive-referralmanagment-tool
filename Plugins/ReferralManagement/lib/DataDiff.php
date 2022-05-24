@@ -77,7 +77,7 @@ class DataDiff {
 		$fromData = json_decode(json_encode($fromData));
 		$toData = json_decode(json_encode($toData));
 
-		// file_put_contents(__DIR__.'/data_diff.json', json_encode(array(
+		// (new \core\File())->write(__DIR__.'/data_diff.json', json_encode(array(
 		// 	'from'=>$fromData,
 		// 	'to'=>$toData
 		// )));

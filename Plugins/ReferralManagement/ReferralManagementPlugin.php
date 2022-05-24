@@ -267,7 +267,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 			}
 
 			$kmlDoc = substr($path, 0, strrpos($path, '.')) . $type . '.kml';
-			file_put_contents($kmlDoc . '.info.json', json_encode(array(
+			(new \core\File())->write($kmlDoc . '.info.json', json_encode(array(
 				'source' => basename($path),
 			)));
 
