@@ -799,7 +799,8 @@ var ProjectList = (function() {
 			"showCreateBtn": false,
 			"createBtns": btns,
 			"filter": null,
-			"lockFilter": [ /*"!collection", */ category.getName()]
+			"lockFilter": [ /*"!collection", */ category.getName()],
+			"metadata":category.getMetadata?category.getMetadata():{}
 		});
 
 
