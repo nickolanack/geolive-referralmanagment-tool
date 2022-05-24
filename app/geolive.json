@@ -32,19 +32,24 @@
                 ""
             ],
             "pluginPaths": [
+                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/php-core-map\/Plugins",
+                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/core-referralmanagment-tool\/Plugins",
                 ""
             ],
             "widgetPaths": [
+                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/php-core-map\/Widgets",
                 ""
             ],
             "modulePaths": [
+                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/php-core-map\/Modules",
                 ""
             ],
             "sandboxDomains": [
                 "*.z.geolive.ca",
                 "*.s22.ok.ubc.ca",
                 ""
-            ]
+            ],
+            "AjaxProfilingEnabled": false
         }
     },
     "plugin.8": {
@@ -100,7 +105,7 @@
             "googleMapsVersion": "",
             "tileCachePath": "{front}\/..\/tiles",
             "layerDisplayFilterScript": "plugin.Maps.12.layerDisplayFilterScript.js",
-            "layerDisplayFormatScript": "plugin.Maps.12.layerDisplayFormatScript.js",
+            "layerDisplayFormatScript": "",
             "layerDisplayChildLayersScript": "",
             "formatMapitemScript": "plugin.Maps.12.formatMapitemScript.js",
             "featureUrlScript": ""
@@ -160,7 +165,9 @@
         "parameters": {
             "releaseServer": "http:\/\/release.geolive.ca",
             "releasePackage": "master",
-            "autoUpdate": false
+            "autoUpdate": false,
+            "composerPath": "\/usr\/bin\/composer",
+            "bowerPath": ""
         }
     },
     "plugin.24": {
@@ -188,8 +195,8 @@
                     "widget": "proponent"
                 }
             ],
-            "useRemoteServerUI": false,
-            "remoteServerUrl": ""
+            "useRemoteServerUI": true,
+            "remoteServerUrl": "https:\/\/gct3.gather.geoforms.ca\/app\/nickolanack\/php-core-app\/core.php?task=TASK&format=ajax&json=JSON"
         }
     },
     "plugin.28": {
@@ -263,8 +270,8 @@
         "name": "Monolog Plugin",
         "instance": "Monolog",
         "parameters": {
-            "enabled": false,
-            "logPath": "{front}\/..\/logs",
+            "enabled": true,
+            "logPath": "{front}\/..\/logs\/{domain}",
             "logToSentry": false
         }
     },
@@ -330,6 +337,7 @@
             "queueEmailDelay": "5",
             "exportSecret": "XXXX-XXXX",
             "datawarehousePaths": [
+                "\/srv\/gather_gis\/",
                 ""
             ],
             "customFormCss": ""
@@ -366,11 +374,6 @@
             "secret": "XXXX-XXXX",
             "voice": "Nicole"
         }
-    },
-    "plugin.50": {
-        "name": "Read Receipts",
-        "instance": "ReadReceipts",
-        "parameters": {}
     },
     "widget.33": {
         "name": "Attr Search Bar",
