@@ -20,7 +20,7 @@
             "CSSInlineObfuscationEnabled": false,
             "PHPDebugEnabled": true,
             "JSDebugEnabled": false,
-            "CachingEnabled": false,
+            "CachingEnabled": true,
             "PrettyPrintJson": true,
             "JSCacheObfuscationEnabled": false,
             "phase": "production",
@@ -32,24 +32,19 @@
                 ""
             ],
             "pluginPaths": [
-                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/php-core-map\/Plugins",
-                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/core-referralmanagment-tool\/Plugins",
                 ""
             ],
             "widgetPaths": [
-                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/php-core-map\/Widgets",
                 ""
             ],
             "modulePaths": [
-                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/php-core-map\/Modules",
                 ""
             ],
             "sandboxDomains": [
                 "*.z.geolive.ca",
                 "*.s22.ok.ubc.ca",
                 ""
-            ],
-            "AjaxProfilingEnabled": false
+            ]
         }
     },
     "plugin.8": {
@@ -105,7 +100,7 @@
             "googleMapsVersion": "",
             "tileCachePath": "{front}\/..\/tiles",
             "layerDisplayFilterScript": "plugin.Maps.12.layerDisplayFilterScript.js",
-            "layerDisplayFormatScript": "",
+            "layerDisplayFormatScript": "plugin.Maps.12.layerDisplayFormatScript.js",
             "layerDisplayChildLayersScript": "",
             "formatMapitemScript": "plugin.Maps.12.formatMapitemScript.js",
             "featureUrlScript": ""
@@ -165,9 +160,7 @@
         "parameters": {
             "releaseServer": "http:\/\/release.geolive.ca",
             "releasePackage": "master",
-            "autoUpdate": false,
-            "composerPath": "\/usr\/bin\/composer",
-            "bowerPath": ""
+            "autoUpdate": false
         }
     },
     "plugin.24": {
@@ -195,8 +188,8 @@
                     "widget": "proponent"
                 }
             ],
-            "useRemoteServerUI": true,
-            "remoteServerUrl": "https:\/\/gct3.gather.geoforms.ca\/app\/nickolanack\/php-core-app\/core.php?task=TASK&format=ajax&json=JSON"
+            "useRemoteServerUI": false,
+            "remoteServerUrl": ""
         }
     },
     "plugin.28": {
@@ -270,8 +263,8 @@
         "name": "Monolog Plugin",
         "instance": "Monolog",
         "parameters": {
-            "enabled": true,
-            "logPath": "{front}\/..\/logs\/{domain}",
+            "enabled": false,
+            "logPath": "{front}\/..\/logs",
             "logToSentry": false
         }
     },
@@ -337,7 +330,6 @@
             "queueEmailDelay": "5",
             "exportSecret": "XXXX-XXXX",
             "datawarehousePaths": [
-                "\/srv\/gather_gis\/",
                 ""
             ],
             "customFormCss": ""
@@ -374,6 +366,11 @@
             "secret": "XXXX-XXXX",
             "voice": "Nicole"
         }
+    },
+    "plugin.50": {
+        "name": "Read Receipts",
+        "instance": "ReadReceipts",
+        "parameters": {}
     },
     "widget.33": {
         "name": "Attr Search Bar",
@@ -19118,16 +19115,16 @@
                             "tagForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 488,
-                            "y": 282
+                            "x": 468,
+                            "y": 262
                         },
                         "children": [
                             "tagForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 448,
-                                    "y": 483
+                                    "x": 428,
+                                    "y": 463
                                 }
                             }
                         ],
@@ -27187,23 +27184,7 @@
         "name": "Configuration",
         "instance": "Configuration",
         "parameters": {
-            "target": "projectMenuLayout",
-            "contentTemplate": "",
-            "comments": "",
-            "formatParametersScript": "return $parameters;",
-            "formatOutputScript": "return $parameters;",
-            "enableUserAjaxWrite": false,
-            "authUserAjaxScript": "XXXX-XXXX",
-            "saveParametersAsData": false,
-            "enableRevisions": false,
-            "broadcastChanges": false,
-            "parameters": [
-                "projectMenuLayout.parameters.0.json"
-            ],
-            "hello": "World",
-            "widgetTitle": "projectMenuLayout",
-            "readAccess": "public",
-            "layout": []
+            "target": "none"
         }
     }
 }
