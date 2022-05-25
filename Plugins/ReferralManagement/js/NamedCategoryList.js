@@ -228,6 +228,10 @@ var NamedCategoryList = (function() {
 				return cat.getName().toLowerCase()!=category.toLowerCase();
 			});
 		},
+
+		getRootCategoryTagsData:function(){
+			return this.getProjectTagsData('_root');
+		},
 		getProjectTagsData: function(category) {
 
 

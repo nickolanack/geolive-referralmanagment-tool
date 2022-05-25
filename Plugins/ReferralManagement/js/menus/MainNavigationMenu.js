@@ -103,7 +103,7 @@ var MainNavigationMenu = new Class({
 						}
 					},
 					item:{
-						label:"Datasets",
+						label:"Data warehouse",
 					    showCreateBtn:true,
 					    lockFilter:"!collection",
 					    filter:null,
@@ -111,8 +111,12 @@ var MainNavigationMenu = new Class({
 					},
 					events:{
 						click:function(){
-							UIInteraction.navigateToNamedCategoryType('Data warehouse');
-							return;
+
+							if(MenuUtils.navigateCategoryNameWithMenu('Data warehouse')){
+								//UIInteraction.navigateToNamedCategoryType(MenuUtils.getCategoryNameWithMenu('Collections'));
+								return;
+							}
+
 							me.navigateTo('Datasets', 'Main')
 						}
 					},
@@ -157,8 +161,11 @@ var MainNavigationMenu = new Class({
 					},
 					events:{
 						click:function(){
-							UIInteraction.navigateToNamedCategoryType('Data warehouse');
-							return;
+							
+							if(MenuUtils.navigateCategoryNameWithMenu('Datasets')){
+								return;
+							}
+
 							me.navigateTo('Datasets', 'Main')
 						}
 					},
@@ -204,8 +211,11 @@ var MainNavigationMenu = new Class({
 					},
 					events:{
 						click:function(){
-							UIInteraction.navigateToNamedCategoryType('Projects');
-							return;
+							
+							if(MenuUtils.navigateCategoryNameWithMenu('Collections')){
+								return;
+							}
+
 							me.navigateTo('Datasets', 'Main')
 						}
 					},

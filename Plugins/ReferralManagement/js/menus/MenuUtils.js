@@ -111,6 +111,25 @@ var MenuUtils = (function() {
 
 			}
 
+		},
+		navigateCategoryNameWithMenu:function(name){
+
+			var cats=NamedCategoryList.getRootCategoryTagsData().filter(function(item){
+
+				if(item.getMetadata&&item.getMetadata()){
+
+					if(item.getMetadata().menu){
+						return item.getMetadata().menu==="Datasets";
+					}
+				}
+
+				return false;
+			});
+
+			if(cats.length){
+				UIInteraction.navigateToNamedCategoryType(cats[0].getName());
+			}
+
 		}
 
 
