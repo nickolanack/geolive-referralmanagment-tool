@@ -20,7 +20,7 @@
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
         "targetName": "",
-        "getItemListScript": "return ReferralManagementDashboard.getProjectTagsData('_root');",
+        "getItemListScript": "return ReferralManagementDashboard.getProjectTagsData('_root').filter(function(item){\n    if(item.getMetadata&&item.getMetadata().hideTree&&item.getMetadata&&item.getMetadata().hideTree===true){\n        return false;\n    }\n    return true;\n    \n})",
         "formatItemListScript": "return list;",
         "formatListItemModuleScript": "return item;",
         "emptyNamedView": "emptyListView",
