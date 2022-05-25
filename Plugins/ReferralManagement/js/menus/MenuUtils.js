@@ -54,7 +54,10 @@ var MenuUtils = (function() {
 
 
 					var aIndex = sortOrder.indexOf(aName);
+					aIndex = aIndex == -1 ? 9999 : aIndex;
+
 					var bIndex = sortOrder.indexOf(bName);
+					bIndex = bIndex == -1 ? 9999 : bIndex;
 
 					return aIndex - bIndex;
 
