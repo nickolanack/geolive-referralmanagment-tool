@@ -297,7 +297,7 @@ var NamedCategory = (function() {
 		var className=item.isRootTag()?"":"small ";
 
 
-		return [new ModalFormButtonModule(application, item, {
+		btns= [new ModalFormButtonModule(application, item, {
 
 			label: "Edit",
 			formOptions: {
@@ -317,29 +317,36 @@ var NamedCategory = (function() {
 			"class": className+"primary-btn"
 
 
-		}), (new ModalFormButtonModule(application, new MockDataTypeItem({
-			"name": "Are you sure you want to delete this item"
-		}), {
-
-			label: "Delete",
-			"formName": "dialogForm",
-			"formOptions": {
-				"template": "form",
-				"className": "alert-view"
-			},
-			"class": className+"primary-btn error"
-
-
-		})).addEvent('complete', function(){
-
-			if(item.getChildTagsData().length>0){
-				alert("Delete child tags first");
-				return;
-			}
-			item.remove();
-			console.log('delete');
-
 		})];
+
+		if(item.isEditable()){
+			btns.push((new ModalFormButtonModule(application, new MockDataTypeItem({
+					"name": "Are you sure you want to delete this item"
+				}), {
+
+					label: "Delete",
+					"formName": "dialogForm",
+					"formOptions": {
+						"template": "form",
+						"className": "alert-view"
+					},
+					"class": className+"primary-btn error"
+
+
+				})).addEvent('complete', function(){
+
+					if(item.getChildTagsData().length>0){
+						alert("Delete child tags first");
+						return;
+					}
+					item.remove();
+					console.log('delete');
+
+				})
+				);
+		}
+
+		return btns;
 
 
 	};
