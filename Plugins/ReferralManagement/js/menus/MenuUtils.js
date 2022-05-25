@@ -119,7 +119,7 @@ var MenuUtils = (function() {
 				if(item.getMetadata&&item.getMetadata()){
 
 					if(item.getMetadata().menu){
-						return item.getMetadata().menu==="Datasets";
+						return item.getMetadata().menu===name;
 					}
 				}
 
