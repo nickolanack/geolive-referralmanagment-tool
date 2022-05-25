@@ -1,35 +1,47 @@
 var MenuUtils=(function(){
 
 
-	var menuLayout=null;
+	var menuLayouts={};
 
 	(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration_field", {
 		'widget': "projectMenuLayout",
 		'field': "layout"
 	})).addEvent('success', function(response) {
-		menuLayout=response.value;
+		menuLayouts.Project = response.value;
 	}).execute();
 
 
 
-	var MenuUtils=new Class({
+	(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration_field", {
+		'widget': "menuMenuLayout",
+		'field': "layout"
+	})).addEvent('success', function(response) {
+		menuLayouts.Main = response.value;
+	}).execute();
 
+	
+	var MenuUtils=new Class({
 
 
 
 		applyMenuFormat:function(menuObject, menuName){
 
 
-			if(menuName!='projectMenu'){
-				return;
-			}
+			var menuLayout=menuLayouts[menuName];
 
 			if(!menuLayout){
 				return;
 			}
 
-			var sortOrder=Object.keys(menuLayout);
-				menuObject.Project.sort(function(a, b){
+
+
+			Object.keys(menuLayout).forEach(function(section){
+
+				var sectionLayout=menuLayout[section];
+
+				var sortOrder=Object.keys(sectionLayout);
+
+				menuObject[section].sort(function(a, b){
 
 					var aName=(a.name||a.html).toLowerCase();
 					var bName=(b.name||b.html).toLowerCase();
@@ -37,16 +49,17 @@ var MenuUtils=(function(){
 
 					var aIndex=sortOrder.indexOf(aName);
 					var bIndex=sortOrder.indexOf(bName);
+
 					return aIndex-bIndex;
 
-				})
+				});
 
-				menuObject.Project.forEach(function(menuItem){
+				menuObject[section].forEach(function(menuItem){
 
 					var menuName=(menuItem.name||menuItem.html).toLowerCase();
-					if(menuLayout[menuName]){
+					if(sectionLayout[menuName]){
 
-						var menuConfig=menuLayout[menuName];
+						var menuConfig=sectionLayout[menuName];
 						if(menuConfig["class"]){
 							menuItem.buttonClass=(menuItem.buttonClass?menuItem.buttonClass+" ":"")+menuConfig["class"];
 						}
@@ -54,6 +67,8 @@ var MenuUtils=(function(){
 					}
 
 				});
+
+			});
 
 
 		},
