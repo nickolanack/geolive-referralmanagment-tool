@@ -75,7 +75,7 @@ var MenuUtils = (function() {
 
 						if (menuConfig["icon"]) {
 							menuItem.attributes = (menuItem.attributes||{});
-							menuItem.attributes['data-icon']="&#x0"+menuConfig["icon"];
+							menuItem.attributes['data-icon']=String.fromCharCode("0x"+menuConfig["icon"]);
 						}
 
 					}
