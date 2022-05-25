@@ -17,15 +17,19 @@ var MenuUtils=(function(){
 
 
 
-		applyMenuFormat:function(menu){
+		applyMenuFormat:function(menuObject, menuName){
 
+
+			if(menuName!='projectMenu'){
+				return;
+			}
 
 			if(!menuLayout){
 				return;
 			}
 
 			var sortOrder=Object.keys(menuLayout);
-				menu.Project.sort(function(a, b){
+				menuObject.Project.sort(function(a, b){
 
 					var aName=(a.name||a.html).toLowerCase();
 					var bName=(b.name||b.html).toLowerCase();
@@ -37,7 +41,7 @@ var MenuUtils=(function(){
 
 				})
 
-				menu.Project.forEach(function(menuItem){
+				menuObject.Project.forEach(function(menuItem){
 
 					var menuName=(menuItem.name||menuItem.html).toLowerCase();
 					if(menuLayout[menuName]){
@@ -50,6 +54,32 @@ var MenuUtils=(function(){
 					}
 
 				});
+
+
+		},
+
+		addEditBtn:function(menu, menuName){
+
+
+			if(menuName!='projectMenu'){
+				return;
+			}	
+
+
+			if (AppClient.getUserType() == "admin") {
+					(new UIModalFormButton(menu.getElement().insertBefore(new Element('button', {
+						"class": "inline-edit"
+					}), menu.getElement().firstChild), GatherDashboard.getApplication(), new MockDataTypeItem({
+						menu: menu
+					}), {
+						"formName": "menuLayoutForm",
+						"formOptions": {
+							template: "form",
+							closeable: false
+						}
+					}));
+
+				}
 
 
 		}

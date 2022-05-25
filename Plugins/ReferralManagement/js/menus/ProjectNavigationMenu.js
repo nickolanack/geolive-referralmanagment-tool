@@ -132,25 +132,13 @@ var ProjectNavigationMenu = (function() {
 
 
 
-				MenuUtils.applyMenuFormat(me.menu);
+				MenuUtils.applyMenuFormat(me.menu, 'projectMenu');
 				
 				NavigationMenuModule.prototype.process.call(me);
 
-				if (AppClient.getUserType() == "admin") {
-					(new UIModalFormButton(me.getElement().insertBefore(new Element('button', {
-						"class": "inline-edit"
-					}), me.getElement().firstChild), GatherDashboard.getApplication(), new MockDataTypeItem({
-						menu: me
-					}), {
-						"formName": "menuLayoutForm",
-						"formOptions": {
-							template: "form",
-							closeable: false
-						}
-					}));
+				MenuUtils.addEditBtn(me, 'projectMenu');
 
-				}
-
+			
 
 
 				return;
