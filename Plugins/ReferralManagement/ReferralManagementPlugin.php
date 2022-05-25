@@ -348,7 +348,11 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		IncludeJS(__DIR__ . '/js/spatial/LegendHelper.js');
 
 		IncludeJS(__DIR__ . '/js/menus/MenuUtils.js');
+		
+		IncludeJS(__DIR__ . '/js/menus/MainNavigationMenuBase.js');
 		IncludeJS(__DIR__ . '/js/menus/MainNavigationMenu.js');
+		IncludeJS(__DIR__ . '/js/menus/SettingsNavigationMenu.js');
+
 		IncludeJS(__DIR__ . '/js/menus/ProjectsOverviewNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/menus/ProjectNavigationMenu.js');
 		IncludeJS(__DIR__ . '/js/menus/ProfileNavigationMenu.js');
