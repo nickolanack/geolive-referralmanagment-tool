@@ -3,11 +3,17 @@ var MenuUtils=(function(){
 
 	var menuLayouts={};
 
+	var adminForms:{
+		projectMenu:'projectMenuLayout',
+		mainMenu:'mainMenuLayout'
+	};
+
+
 	(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration_field", {
 		'widget': "projectMenuLayout",
 		'field': "layout"
 	})).addEvent('success', function(response) {
-		menuLayouts.Project = response.value;
+		menuLayouts.projectMenu = { Project: response.value };
 	}).execute();
 
 
@@ -16,13 +22,13 @@ var MenuUtils=(function(){
 		'widget': "mainMenuLayout",
 		'field': "layout"
 	})).addEvent('success', function(response) {
-		menuLayouts.Main = response.value;
+		menuLayouts.mainMenu = { Main: response.value };
 	}).execute();
 
 	
 	var MenuUtils=new Class({
 
-		applyMenuFormat:function(menuObject, menuName){
+		applyMenuFormat:function(menuObject, menuName, callback){
 
 
 			var menuLayout=menuLayouts[menuName];
@@ -67,31 +73,36 @@ var MenuUtils=(function(){
 			});
 
 
+			if(callback){
+				callback();
+			}
+
+
 		},
 
 		addEditBtn:function(menu, menuName){
 
 
-			if(menuName!='projectMenu'){
+			if(!adminForms[menuName]){
 				return;
-			}	
+			}
 
 
 			if (AppClient.getUserType() == "admin") {
-					(new UIModalFormButton(menu.getElement().insertBefore(new Element('button', {
-						"class": "inline-edit"
-					}), menu.getElement().firstChild), GatherDashboard.getApplication(), new MockDataTypeItem({
-						menu: menu
-					}), {
-						"formName": "menuLayoutForm",
-						"formOptions": {
-							template: "form",
-							closeable: false
-						}
-					}));
+				(new UIModalFormButton(menu.getElement().insertBefore(new Element('button', {
+					"class": "inline-edit"
+				}), menu.getElement().firstChild), GatherDashboard.getApplication(), new MockDataTypeItem({
+					menu: menu,
+					configName:adminForms[menuName]
+				}), {
+					"formName": "menuLayoutForm",
+					"formOptions": {
+						template: "form",
+						closeable: false
+					}
+				}));
 
-				}
-
+			}
 
 		}
 

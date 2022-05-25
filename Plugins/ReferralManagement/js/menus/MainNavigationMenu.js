@@ -524,8 +524,6 @@ var MainNavigationMenu = new Class({
 			me.menu=DashboardPageLayout.layoutMenu('mainMenu', me.menu);
 			application.setNamedValue('navigationController', me);
 			
-
-
 		});
 
 	},
@@ -536,7 +534,13 @@ var MainNavigationMenu = new Class({
 
 		if (me.menu) {
 		
-			MainNavigationMenuBase.prototype.process.call(this);
+			MenuUtils.applyMenuFormat(me.menu, 'mainMenu', function(){
+
+				MainNavigationMenuBase.prototype.process.call(this);
+				MenuUtils.addEditBtn(me, 'mainMenu');
+
+			});
+			
 		
 			return;
 		}
