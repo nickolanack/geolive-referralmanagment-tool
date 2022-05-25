@@ -135,7 +135,7 @@ var MenuUtils = (function() {
 
 			return;
 
-		}
+		},
 
 		/**
 		 * TODO move this
