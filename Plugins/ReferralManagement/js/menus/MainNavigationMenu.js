@@ -22,19 +22,16 @@ var MainNavigationMenu = new Class({
 
 			me.menu = Object.append({
 				"Main": [{
-					html: "Dashboard",
+					name: "Dashboard",
 				}, {
-					html: "Projects",
+					name: "Projects",
 					template:"mainProjectsDetail",
 					events:{
 						click:function(){
 							DashboardConfig.getValue('showSplitProjectDetail', function(split) {
-
 								if(!split){
 									application.setNamedValue("currentProject", null);
 								}
-
-
 					 			navigationController.navigateTo('Projects','Main');
 							});
 
@@ -86,7 +83,52 @@ var MainNavigationMenu = new Class({
 					}
 				}, 
 				{
-					html: "Datasets",
+					name: "Gather Bot",
+					alias: {"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true,
+						isActive:function(value, options, item){
+							if(value&&item&&item.lockFilter){
+								return item.lockFilter==='!collection';
+							}
+
+							if(value&&item.getMetadata&&item.getMetadata()){
+
+								if(item.getMetadata().menu){
+									return item.getMetadata().menu==="Data warehouse";
+								}
+
+								if(item.getCategory&&item.getCategory()){
+									var root=item.getCategory().getRootTagData();
+									if(root.getMetadata&&root.getMetadata()&&root.getMetadata().menu){
+										return root.getMetadata().menu==="Data warehouse";
+									}
+								}
+
+							}
+
+							return value;
+						}
+					},
+					item:{
+						label:"Datasets",
+					    showCreateBtn:true,
+					    lockFilter:"!collection",
+					    filter:null,
+					    invertfilter:false
+					},
+					events:{
+						click:function(){
+							UIInteraction.navigateToNamedCategoryType('Data warehouse');
+							return;
+							me.navigateTo('Datasets', 'Main')
+						}
+					},
+					formatEl: function(li) {
+						Counters.addProjectListCounter(li, function(p){
+							return p.isDataset();
+						});	
+					}
+				},
+				{
 					name: "Datasets",
 					alias: {"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true,
 						isActive:function(value, options, item){
@@ -133,7 +175,7 @@ var MainNavigationMenu = new Class({
 					}
 				},
 				{
-					html: "Collections",
+					name: "Collections",
 					alias: {
 						"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true,
 						isActive:function(value, options, item){
@@ -417,17 +459,6 @@ var MainNavigationMenu = new Class({
 
 					}
 				}],
-				//   "Accounting":[
-				//     {
-				//       html:"Documents",
-				//     },
-				//     {
-				//       html:"Timesheet",
-				//     },
-				//     {
-				//       html:"Reports"
-				//     }
-				//   ]
 
 				"Community": [{
 						html: "Cultural",
@@ -486,15 +517,12 @@ var MainNavigationMenu = new Class({
 					html: "Export",
 					events: {
 						click: function() {
-
-
 							var exportQuery = new AjaxControlQuery(CoreAjaxUrlRoot, 'export_proposals', {
 								'plugin': "ReferralManagement"
 							});
 							//exportQuery.execute(); //for testing.
 							window.open(exportQuery.getUrl(true), 'Download');
 						}
-
 					}
 				}]
 			} : {}))
