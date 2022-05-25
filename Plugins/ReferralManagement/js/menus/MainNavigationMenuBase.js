@@ -43,10 +43,10 @@ var MainNavigationMenuBase = new Class({
 				return button.template || button.view || (section.toLowerCase() + (button.name || button.html) + "Detail");
 			},
 			buttonClass: function(button, section) {
-				return button["class"] || ("menu-" + section.toLowerCase() + "-" + (button.name || button.html).toLowerCase())
+				return button["class"] || ("menu-" + (section.toLowerCase().split(' ').join('-')) + "-" + ((button.name || button.html).toLowerCase().split(' ').join('-')))
 			},
 			sectionClass: function(section) {
-				return "menu-" + section.toLowerCase()
+				return "menu-" + section.toLowerCase().split(' ').join('-');
 			},
 			// formatSectionLabel:function(section, labelEl){
 			//     if(section==='People'){
