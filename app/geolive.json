@@ -27202,7 +27202,16 @@
             ],
             "hello": "World",
             "widgetTitle": "mainMenuLayout",
-            "readAccess": "public"
+            "readAccess": "public",
+            "layout": {
+                "dashboard": [],
+                "projects": [],
+                "collections": [],
+                "datasets": [],
+                "data warehouse": {
+                    "class": "show"
+                }
+            }
         }
     }
 }
