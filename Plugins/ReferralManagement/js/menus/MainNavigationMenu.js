@@ -83,7 +83,7 @@ var MainNavigationMenu = new Class({
 					}
 				}, 
 				{
-					name: "Gather Bot",
+					name: "Data warehouse",
 					alias: {"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true,
 						isActive:function(value, options, item){
 							if(value&&item&&item.lockFilter){
