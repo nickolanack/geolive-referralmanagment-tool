@@ -73,6 +73,10 @@ var MenuUtils = (function() {
 							menuItem.buttonClass = (menuItem.buttonClass ? menuItem.buttonClass + " " : "") + menuConfig["class"];
 						}
 
+						if (menuConfig["icon"]) {
+							menuItem.attributes = (menuItem.attributes||{})['data-icon']=menuConfig["icon"];
+						}
+
 					}
 
 				});
