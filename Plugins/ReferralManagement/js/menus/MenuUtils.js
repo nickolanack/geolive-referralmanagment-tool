@@ -128,7 +128,10 @@ var MenuUtils = (function() {
 
 			if(cats.length){
 				UIInteraction.navigateToNamedCategoryType(cats[0].getName());
+				return true;
 			}
+
+			return false;
 
 		}
 
