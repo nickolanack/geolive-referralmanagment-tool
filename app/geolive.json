@@ -27187,7 +27187,7 @@
         "name": "Configuration",
         "instance": "Configuration",
         "parameters": {
-            "target": "projectMenuLayout",
+            "target": "mainMenuLayout",
             "contentTemplate": "",
             "comments": "",
             "formatParametersScript": "return $parameters;",
@@ -27198,12 +27198,18 @@
             "enableRevisions": false,
             "broadcastChanges": false,
             "parameters": [
-                "projectMenuLayout.parameters.0.json"
+                "mainMenuLayout.parameters.0.json"
             ],
             "hello": "World",
-            "widgetTitle": "projectMenuLayout",
+            "widgetTitle": "mainMenuLayout",
             "readAccess": "public",
-            "layout": []
+            "layout": {
+                "dashboard": [],
+                "Projects": [],
+                "data warehouse": [],
+                "datasets": [],
+                "collections": []
+            }
         }
     }
 }
