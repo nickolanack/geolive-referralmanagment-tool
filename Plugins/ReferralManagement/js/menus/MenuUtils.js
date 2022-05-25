@@ -117,6 +117,31 @@ var MenuUtils = (function() {
 			}
 
 		},
+
+		isCategoryItemWithMenu:function(item, menuName){
+			
+
+			if(item.getMetadata&&item.getMetadata().menu){
+				return item.getMetadata().menu===menuName;
+			}
+
+			if(item.getCategory&&item.getCategory()){
+				var root=item.getCategory().getRootTagData();
+				if(root.getMetadata&&root.getMetadata()&&root.getMetadata().menu){
+					return root.getMetadata().menu===menuName;
+				}
+			}
+			
+
+			return;
+
+		}
+
+		/**
+		 * TODO move this
+		 * @param  {[type]} name [description]
+		 * @return {[type]}      [description]
+		 */
 		navigateCategoryNameWithMenu:function(name){
 
 			var cats=NamedCategoryList.getRootCategoryTagsData().filter(function(item){

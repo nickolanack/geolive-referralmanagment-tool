@@ -84,17 +84,12 @@ var MainNavigationMenu = new Class({
 								return item.lockFilter==='!collection';
 							}
 
-							if(value&&item.getMetadata&&item.getMetadata()){
 
-								if(item.getMetadata().menu){
-									return item.getMetadata().menu==="Data warehouse";
-								}
+							if(value){
 
-								if(item.getCategory&&item.getCategory()){
-									var root=item.getCategory().getRootTagData();
-									if(root.getMetadata&&root.getMetadata()&&root.getMetadata().menu){
-										return root.getMetadata().menu==="Data warehouse";
-									}
+								var isMenu=MenuUtils.isCategoryItemWithMenu("Data warehouse");
+								if(typeof isMenu=="boolean"){
+									return isMenu;
 								}
 
 							}
@@ -134,17 +129,11 @@ var MainNavigationMenu = new Class({
 								return item.lockFilter==='!collection';
 							}
 
-							if(value&&item.getMetadata&&item.getMetadata()){
+							if(value){
 
-								if(item.getMetadata().menu){
-									return item.getMetadata().menu==="Datasets";
-								}
-
-								if(item.getCategory&&item.getCategory()){
-									var root=item.getCategory().getRootTagData();
-									if(root.getMetadata&&root.getMetadata()&&root.getMetadata().menu){
-										return root.getMetadata().menu==="Datasets";
-									}
+								var isMenu=MenuUtils.isCategoryItemWithMenu("Dataset");
+								if(typeof isMenu=="boolean"){
+									return isMenu;
 								}
 
 							}
@@ -184,17 +173,11 @@ var MainNavigationMenu = new Class({
 								return item.lockFilter==='collection';
 							}
 
-							if(value&&item.getMetadata&&item.getMetadata()){
+							if(value){
 
-								if(item.getMetadata().menu){
-									return item.getMetadata().menu==="Collections";
-								}
-
-								if(item.getCategory&&item.getCategory()){
-									var root=item.getCategory().getRootTagData();
-									if(root.getMetadata&&root.getMetadata()&&root.getMetadata().menu){
-										return root.getMetadata().menu==="Collections";
-									}
+								var isMenu=MenuUtils.isCategoryItemWithMenu("Collections");
+								if(typeof isMenu=="boolean"){
+									return isMenu;
 								}
 
 							}
