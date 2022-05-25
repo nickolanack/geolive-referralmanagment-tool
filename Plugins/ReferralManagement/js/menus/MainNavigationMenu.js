@@ -2,18 +2,12 @@ var MainNavigationMenu = new Class({
 	Extends: MainNavigationMenuBase,
 	initialize: function(application) {
 		MainNavigationMenuBase.prototype.initialize.call(this, null, application);
-	},
 
-	process: function() {
 
-		var me = this;
 		var application = this.application;
 
-		if (me.menu) {
-			MainNavigationMenuBase.prototype.process.call(this);
-			return;
-		}
 
+		var me=this;
 		var navigationController = this;
 
 		DashboardConfig.runOnceOnLoad(function(dashConfig, config) {
@@ -528,14 +522,28 @@ var MainNavigationMenu = new Class({
 			} : {}))
 
 			me.menu=DashboardPageLayout.layoutMenu('mainMenu', me.menu);
-
-			me.process();
 			application.setNamedValue('navigationController', me);
-
+			
 
 
 		});
 
+	},
+
+	process: function() {
+
+		var me = this;
+
+		if (me.menu) {
+		
+			MainNavigationMenuBase.prototype.process.call(this);
+		
+			return;
+		}
+		
+		DashboardConfig.runOnceOnLoad(function(dashConfig, config) {
+			me.process();
+		});
 
 	}
 

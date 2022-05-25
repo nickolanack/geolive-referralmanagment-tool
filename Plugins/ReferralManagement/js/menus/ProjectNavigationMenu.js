@@ -118,25 +118,15 @@ var ProjectNavigationMenu = (function() {
 		process: function() {
 
 			var me = this;
-			var application = this.application;
-			var item = this.item;
 
 			if (me.menu) {
 
-
-
 				MenuUtils.applyMenuFormat(me.menu, 'projectMenu');
-
 				NavigationMenuModule.prototype.process.call(me);
-
 				MenuUtils.addEditBtn(me, 'projectMenu');
-
-
 
 				return;
 			}
-
-			var navigationController = this;
 
 			DashboardConfig.runOnceOnLoad(function(dashConfig, config) {
 				me.process();

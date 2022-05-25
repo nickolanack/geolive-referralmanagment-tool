@@ -22,8 +22,6 @@ var MenuUtils=(function(){
 	
 	var MenuUtils=new Class({
 
-
-
 		applyMenuFormat:function(menuObject, menuName){
 
 
@@ -32,8 +30,6 @@ var MenuUtils=(function(){
 			if(!menuLayout){
 				return;
 			}
-
-
 
 			Object.keys(menuLayout).forEach(function(section){
 
