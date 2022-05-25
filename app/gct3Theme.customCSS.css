@@ -1182,7 +1182,7 @@ button.primary-btn.nav-new-btn.view-selection:before{
     
     &.menu-main-projects {
         display: none;
-        &.menu-main-datasets, &.menu-main-collections{
+        &.menu-main-datasets, &.menu-main-collections, &.show{
             display:list-item;
         }
     }
