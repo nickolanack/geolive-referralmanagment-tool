@@ -37,7 +37,10 @@ button:focus {outline:0;}
 .field-value-module.inline.sortable {cursor: pointer;}
 
 
-
+.tag-width>span.field-value.is-longtext {
+    overflow: hidden;
+    vertical-align: middle;
+}
 
 
 span.notification-indicator:after {
