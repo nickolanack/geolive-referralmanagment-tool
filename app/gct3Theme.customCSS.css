@@ -1267,6 +1267,12 @@ button.primary-btn.nav-new-btn.view-selection:before{
     content: "\f1b3";
 }
 
+.navigation-menu ul li[data-icon]:before, 
+.navigation-menu ul li.menu-main-collections[data-icon]:before,
+.navigation-menu ul li.menu-main-datasets[data-icon]:before {
+    content: attr(data-icon);
+}
+
 
 
 .field-value-module.inline.icon:before {
