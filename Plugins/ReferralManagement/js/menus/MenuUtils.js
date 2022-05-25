@@ -75,7 +75,7 @@ var MenuUtils = (function() {
 
 						if (menuConfig["icon"]) {
 							menuItem.attributes = (menuItem.attributes||{});
-							menuItem.attributes['data-icon']="&#x"+menuConfig["icon"];
+							menuItem.attributes['data-icon']="&#x0"+menuConfig["icon"];
 						}
 
 					}
