@@ -26115,16 +26115,16 @@
                             "menuLayoutForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 544,
-                            "y": 236
+                            "x": 564,
+                            "y": 256
                         },
                         "children": [
                             "menuLayoutForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 504,
-                                    "y": 402
+                                    "x": 524,
+                                    "y": 422
                                 }
                             }
                         ],
@@ -27206,9 +27206,9 @@
             "layout": {
                 "dashboard": [],
                 "projects": [],
-                "data warehouse": [],
+                "collections": [],
                 "datasets": [],
-                "collections": []
+                "data warehouse": []
             }
         }
     }
