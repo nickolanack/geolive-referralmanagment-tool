@@ -122,8 +122,10 @@ var ProjectNavigationMenu = (function() {
 			if (me.menu) {
 
 				MenuUtils.applyMenuFormat(me.menu, 'projectMenu', function(){
+
 					NavigationMenuModule.prototype.process.call(me);
 					MenuUtils.addEditBtn(me, 'projectMenu');
+					
 				});
 				
 

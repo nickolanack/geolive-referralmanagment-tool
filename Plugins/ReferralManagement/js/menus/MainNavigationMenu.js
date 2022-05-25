@@ -536,7 +536,7 @@ var MainNavigationMenu = new Class({
 		
 			MenuUtils.applyMenuFormat(me.menu, 'mainMenu', function(){
 
-				MainNavigationMenuBase.prototype.process.call(this);
+				MainNavigationMenuBase.prototype.process.call(me);
 				MenuUtils.addEditBtn(me, 'mainMenu');
 
 			});
