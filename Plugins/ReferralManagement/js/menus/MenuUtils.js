@@ -119,6 +119,10 @@ var MenuUtils = (function() {
 		},
 
 		isCategoryItemWithMenu:function(item, menuName){
+
+			if(!item){
+				return;
+			}
 			
 
 			if(item.getMetadata&&item.getMetadata().menu){

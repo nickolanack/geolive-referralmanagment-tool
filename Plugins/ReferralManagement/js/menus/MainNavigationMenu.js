@@ -87,7 +87,7 @@ var MainNavigationMenu = new Class({
 
 							if(value){
 
-								var isMenu=MenuUtils.isCategoryItemWithMenu("Data warehouse");
+								var isMenu=MenuUtils.isCategoryItemWithMenu(item, "Data warehouse");
 								if(typeof isMenu=="boolean"){
 									return isMenu;
 								}
@@ -131,7 +131,7 @@ var MainNavigationMenu = new Class({
 
 							if(value){
 
-								var isMenu=MenuUtils.isCategoryItemWithMenu("Dataset");
+								var isMenu=MenuUtils.isCategoryItemWithMenu(item, "Dataset");
 								if(typeof isMenu=="boolean"){
 									return isMenu;
 								}
@@ -175,7 +175,7 @@ var MainNavigationMenu = new Class({
 
 							if(value){
 
-								var isMenu=MenuUtils.isCategoryItemWithMenu("Collections");
+								var isMenu=MenuUtils.isCategoryItemWithMenu(item, "Collections");
 								if(typeof isMenu=="boolean"){
 									return isMenu;
 								}
