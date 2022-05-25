@@ -1,6 +1,7 @@
 {
-    "type": "json",
-    "name": "layout",
-    "default": {},
-    "label": "Project Menu Layout"
+    "type": "text",
+    "name": "hello",
+    "placeholder": "example config field",
+    "default": "World",
+    "label": "Hello"
 }
