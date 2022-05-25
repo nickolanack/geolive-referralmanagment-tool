@@ -1,11 +1,11 @@
-var MenuUtils=(function(){
+var MenuUtils = (function() {
 
 
-	var menuLayouts={};
+	var menuLayouts = {};
 
-	var adminForms:{
-		projectMenu:'projectMenuLayout',
-		mainMenu:'mainMenuLayout'
+	var adminForms = {
+		projectMenu: 'projectMenuLayout',
+		mainMenu: 'mainMenuLayout'
 	};
 
 
@@ -13,7 +13,9 @@ var MenuUtils=(function(){
 		'widget': "projectMenuLayout",
 		'field': "layout"
 	})).addEvent('success', function(response) {
-		menuLayouts.projectMenu = { Project: response.value };
+		menuLayouts.projectMenu = {
+			Project: response.value
+		};
 	}).execute();
 
 
@@ -22,48 +24,50 @@ var MenuUtils=(function(){
 		'widget': "mainMenuLayout",
 		'field': "layout"
 	})).addEvent('success', function(response) {
-		menuLayouts.mainMenu = { Main: response.value };
+		menuLayouts.mainMenu = {
+			Main: response.value
+		};
 	}).execute();
 
-	
-	var MenuUtils=new Class({
 
-		applyMenuFormat:function(menuObject, menuName, callback){
+	var MenuUtils = new Class({
+
+		applyMenuFormat: function(menuObject, menuName, callback) {
 
 
-			var menuLayout=menuLayouts[menuName];
+			var menuLayout = menuLayouts[menuName];
 
-			if(!menuLayout){
+			if (!menuLayout) {
 				return;
 			}
 
-			Object.keys(menuLayout).forEach(function(section){
+			Object.keys(menuLayout).forEach(function(section) {
 
-				var sectionLayout=menuLayout[section];
+				var sectionLayout = menuLayout[section];
 
-				var sortOrder=Object.keys(sectionLayout);
+				var sortOrder = Object.keys(sectionLayout);
 
-				menuObject[section].sort(function(a, b){
+				menuObject[section].sort(function(a, b) {
 
-					var aName=(a.name||a.html).toLowerCase();
-					var bName=(b.name||b.html).toLowerCase();
+					var aName = (a.name || a.html).toLowerCase();
+					var bName = (b.name || b.html).toLowerCase();
 
 
-					var aIndex=sortOrder.indexOf(aName);
-					var bIndex=sortOrder.indexOf(bName);
+					var aIndex = sortOrder.indexOf(aName);
+					var bIndex = sortOrder.indexOf(bName);
 
-					return aIndex-bIndex;
+					return aIndex - bIndex;
 
 				});
 
-				menuObject[section].forEach(function(menuItem){
+				menuObject[section].forEach(function(menuItem) {
 
-					var menuName=(menuItem.name||menuItem.html).toLowerCase();
-					if(sectionLayout[menuName]){
+					var menuName = (menuItem.name || menuItem.html).toLowerCase();
+					if (sectionLayout[menuName]) {
 
-						var menuConfig=sectionLayout[menuName];
-						if(menuConfig["class"]){
-							menuItem.buttonClass=(menuItem.buttonClass?menuItem.buttonClass+" ":"")+menuConfig["class"];
+						var menuConfig = sectionLayout[menuName];
+						if (menuConfig["class"]) {
+							menuItem.buttonClass = (menuItem.buttonClass ? menuItem.buttonClass + " " : "") + menuConfig["class"];
 						}
 
 					}
@@ -73,17 +77,17 @@ var MenuUtils=(function(){
 			});
 
 
-			if(callback){
+			if (callback) {
 				callback();
 			}
 
 
 		},
 
-		addEditBtn:function(menu, menuName){
+		addEditBtn: function(menu, menuName) {
 
 
-			if(!adminForms[menuName]){
+			if (!adminForms[menuName]) {
 				return;
 			}
 
@@ -93,7 +97,7 @@ var MenuUtils=(function(){
 					"class": "inline-edit"
 				}), menu.getElement().firstChild), GatherDashboard.getApplication(), new MockDataTypeItem({
 					menu: menu,
-					configName:adminForms[menuName]
+					configName: adminForms[menuName]
 				}), {
 					"formName": "menuLayoutForm",
 					"formOptions": {
@@ -105,12 +109,6 @@ var MenuUtils=(function(){
 			}
 
 		}
-
-
-
-
-
-
 
 
 
