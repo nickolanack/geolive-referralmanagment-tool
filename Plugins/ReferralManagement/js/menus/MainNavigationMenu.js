@@ -131,7 +131,7 @@ var MainNavigationMenu = new Class({
 
 							if(value){
 
-								var isMenu=MenuUtils.isCategoryItemWithMenu(item, "Dataset");
+								var isMenu=MenuUtils.isCategoryItemWithMenu(item, "Datasets");
 								if(typeof isMenu=="boolean"){
 									return isMenu;
 								}
