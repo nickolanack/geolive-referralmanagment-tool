@@ -13,7 +13,7 @@ var MenuUtils=(function(){
 
 
 	(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration_field", {
-		'widget': "menuMenuLayout",
+		'widget': "mainMenuLayout",
 		'field': "layout"
 	})).addEvent('success', function(response) {
 		menuLayouts.Main = response.value;
