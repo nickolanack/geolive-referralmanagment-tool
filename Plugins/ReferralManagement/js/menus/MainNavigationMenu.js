@@ -21,7 +21,7 @@ var MainNavigationMenu = new Class({
 				}, {
 					name: "Projects",
 					template:"mainProjectsDetail",
-					stub:'projects',
+					stub:'entities',
 					events:{
 						click:function(){
 							DashboardConfig.getValue('showSplitProjectDetail', function(split) {
@@ -36,50 +36,11 @@ var MainNavigationMenu = new Class({
 					},
 					formatEl: function(li) {
 						Counters.addProjectListCounter(li);
-					},
-					urlComponent: function(stub, segments) {
-
-						var current = application.getNamedValue("currentProject");
-
-
-						if (segments && segments.length && segments[0].indexOf('Project-') === 0) {
-
-							if (current) {
-
-								if ('Project-' + current.getId() !== segments[0]) {
-									console.warn('should set current');
-									try {
-										var team = ProjectTeam.CurrentTeam()
-										current = team.getProject(parseInt(segments[0].split('-').pop()));
-										application.setNamedValue("currentProject", current);
-									} catch (e) {
-										console.error(e);
-									}
-								}
-								return 'Projects/' + segments.join('/');
-							}
-
-							ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
-
-								current = team.getProject(parseInt(segments[0].split('-').pop()));
-								application.setNamedValue("currentProject", current);
-								navigationController.navigateTo('Projects', 'Main', {
-									segments: segments
-								});
-
-							});
-
-						}
-
-						if (!current) {
-							return stub;
-						}
-
-						return 'Projects/Project-' + current.getId()
 					}
 				}, 
 				{
 					name: "Data warehouse",
+					stub:'data-warehouse',
 					alias: {"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true,
 						isActive:function(value, options, item){
 							if(value&&item&&item.lockFilter){
@@ -125,6 +86,7 @@ var MainNavigationMenu = new Class({
 				},
 				{
 					name: "Datasets",
+					stub:'datasets',
 					alias: {"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true,
 						isActive:function(value, options, item){
 							if(value&&item&&item.lockFilter){
@@ -168,6 +130,7 @@ var MainNavigationMenu = new Class({
 				},
 				{
 					name: "Collections",
+					stub:'collections',
 					alias: {
 						"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true,
 						isActive:function(value, options, item){
@@ -225,7 +188,8 @@ var MainNavigationMenu = new Class({
 					},
 					stub:'item-detail-#',
 					urlComponent: function(stub, segments) {
-						return 'item-detail-' + current.getId()
+						var current = application.getNamedValue("currentProject");
+						return 'item-detail-' + current.getId();
 					}
 				}, {
 					html: "Messages",
@@ -285,18 +249,7 @@ var MainNavigationMenu = new Class({
 				}, {
 					html: "Calendar",
 					name: "Calendar",
-					stub: "calendar",
-					urlComponent: function() {
-
-						var todayStr = (new Date()).toISOString().split('T')[0];
-
-						if (!application.getNamedValue("selectedDay")) {
-							application.setNamedValue("selectedDay", todayStr);
-						}
-
-						var dayStr = application.getNamedValue("selectedDay");
-						return 'Calendar/' + (dayStr === todayStr ? "Today" : dayStr);
-					},
+					stub: "calendar"
 				}, {
 					html: "Activity",
 				}, {
@@ -390,16 +343,14 @@ var MainNavigationMenu = new Class({
 				{
 					name: "Users",
 					html: "Team",
-					urlComponent: function() {
-						return 'Team';
-					},
 					formatEl: function(li) {
 						Counters.addUserListCounter(li);
 					}
 				}, {
+					name: "Community",
+					html: "Community",
 					template: "communityUsersDetail",
 					"class": "menu-community-users",
-					html: "Community",
 					formatEl: function(li) {
 
 
@@ -410,6 +361,7 @@ var MainNavigationMenu = new Class({
 				}, {
 					template: "communityMobileDetail",
 					"class": "menu-community-mobile",
+					stub:"mobile",
 					html: "Mobile",
 					formatEl: function(li) {
 
@@ -425,19 +377,6 @@ var MainNavigationMenu = new Class({
 					}
 				}],
 
-				"Community": [{
-						html: "Cultural",
-					}, {
-						html: "Transportation",
-					}, {
-						html: "Habitation"
-					}, {
-						html: "Environmental"
-					}, {
-						html: "Subsistence"
-					}
-
-				],
 				"Links": [
 					{
 						html: DashboardConfig.getValue('gatherLabel'),
