@@ -17,9 +17,11 @@ var MainNavigationMenu = new Class({
 			me.menu = Object.append({
 				"Main": [{
 					name: "Dashboard",
+					stub:'dashboard'
 				}, {
 					name: "Projects",
 					template:"mainProjectsDetail",
+					stub:'projects',
 					events:{
 						click:function(){
 							DashboardConfig.getValue('showSplitProjectDetail', function(split) {
@@ -280,12 +282,16 @@ var MainNavigationMenu = new Class({
 					name: "TimeTracking"
 				}, {
 					html: "Users",
+					name: "Users"
+ 					stub: "people",
 					template: "usersCombinedDetail",
 					formatEl: function(li) {
 						Counters.addAllUserListCounter(li);
 					}
 				},{
 					html: "User",
+					name: "User",
+					stub: "person",
 					class:"hidden",
 					template: "userProfileDetail",
 					events:{
@@ -296,18 +302,26 @@ var MainNavigationMenu = new Class({
 					},
 				}, {
 					html: "Department",
+					name: "Department",
+					stub: "dep",
 					template: "departmentsDetail"
+
 				}, {
 					html: "Themes",
-					name:"Tags",
+					name: "Tags",
+					stub:"edit-cats"
 					template: "tagsDetail"
 				}, {
 					html: "Tasks",
+					name: "Tasks",
+					stub: "tasks"
 					formatEl: function(li) {
 						Counters.addTaskListCounter(li);
 					}
 				}, {
 					html: "Calendar",
+					name: "Calendar",
+					stub: "calendar"
 					urlComponent: function() {
 
 						var todayStr = (new Date()).toISOString().split('T')[0];
