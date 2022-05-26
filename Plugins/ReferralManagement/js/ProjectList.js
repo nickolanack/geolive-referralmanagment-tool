@@ -801,7 +801,7 @@ var ProjectList = (function() {
 		 */
 
 		if(root.getRootTagData){
-			root.getRootTagData();
+			root=root.getRootTagData();
 		}
 		if(root.getMetadata&&root.getMetadata().createBtns){
 
