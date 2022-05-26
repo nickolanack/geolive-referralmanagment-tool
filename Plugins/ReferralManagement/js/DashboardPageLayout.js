@@ -655,6 +655,17 @@ var DashboardPageLayout = (function() {
 					}
 				},
 				{
+					html: ['Files', 'Notes', 'Discussion'],
+					condition: function() {
+
+						var application = ReferralManagementDashboard.getApplication();
+						var project = application.getNamedValue("currentProject");
+						return !project.isDataset();
+					}
+
+				},
+
+				{
 					html: "Datasets",
 					config: "showDatasets"
 				},
