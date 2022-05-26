@@ -76,10 +76,18 @@ var ProjectNavigationMenu = (function() {
 									"label":"Link Dataset",
 									"formName": "datasetSelectForm",
 									"item":function(){
-										var mock=new MockDataTypeItem({
-											mutable:true
+
+										var SelectionClass=new Class({
+											Extends:MockDataTypeItem,
+											initialize:function(item){
+												this._item=item;
+											},
+											hasProject:function(p){
+												return this._item.hasProject(p)
+											}
 										});
-										return mock;
+										
+										return new SelectionClass(item);
 									}
 								},
 								{
