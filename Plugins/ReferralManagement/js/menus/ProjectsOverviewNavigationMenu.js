@@ -48,7 +48,7 @@ var ProjectsOverviewNavigationMenu = new Class({
 			me.menu = {
 				"Layout": [{
 						html: "Split",
-						stub:'single',
+						stub:'list',
 						template:"splitProjectDetail",
 					}, {
 						html: "List",
