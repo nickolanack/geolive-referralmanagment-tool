@@ -282,7 +282,7 @@ var MainNavigationMenu = new Class({
 					name: "TimeTracking"
 				}, {
 					html: "Users",
-					name: "Users"
+					name: "Users",
  					stub: "people",
 					template: "usersCombinedDetail",
 					formatEl: function(li) {
@@ -309,7 +309,7 @@ var MainNavigationMenu = new Class({
 				}, {
 					html: "Themes",
 					name: "Tags",
-					stub:"edit-cats"
+					stub:"edit-cats",
 					template: "tagsDetail"
 				}, {
 					html: "Tasks",
@@ -321,7 +321,7 @@ var MainNavigationMenu = new Class({
 				}, {
 					html: "Calendar",
 					name: "Calendar",
-					stub: "calendar"
+					stub: "calendar",
 					urlComponent: function() {
 
 						var todayStr = (new Date()).toISOString().split('T')[0];
