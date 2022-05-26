@@ -309,7 +309,6 @@ var Project = (function() {
 
 		},
 		getCreationDate: function() {
-			var me = this;
 			return this._toLocalDateString(this.data.createdDateTimestamp*1000);
 		},
 
@@ -350,8 +349,7 @@ var Project = (function() {
 		},
 
 		getModificationDate: function() {
-			var me = this;
-			return me.data.modifiedDate;
+			this._toLocalDateString(this.data.modifiedDateTimestamp*1000);
 		},
 
 		getSubmitDate: function() {
