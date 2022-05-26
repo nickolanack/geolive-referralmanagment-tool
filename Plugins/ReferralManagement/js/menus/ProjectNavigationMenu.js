@@ -75,10 +75,23 @@ var ProjectNavigationMenu = (function() {
 								{
 									"label":"Link Dataset",
 									"formName": "datasetSelectForm",
+									"item":function(){
+										var mock=new MockDataTypeItem({
+											mutable:true
+										});
+										return mock;
+									}
 								},
 								{
 									"label":"Create Dataset",
 									"formName": DashboardConfig.getValue('leftPanelPrimaryBtnForm'),
+									"item":function(){
+										var dataset= new Dataset();
+										dataset.on('save:once',function(){
+											item.addProject(dataset);
+										});
+										return dataset;
+									}
 								}
 							],
 							"showCreateBtn": false,
