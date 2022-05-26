@@ -78,7 +78,7 @@ var ProjectNavigationMenu = (function() {
 								},
 								{
 									"label":"Create Dataset",
-									"formName": DashboardConfig.getValue('leftPanelSecondaryBtnForm'),
+									"formName": DashboardConfig.getValue('leftPanelPrimaryBtnForm'),
 								}
 							],
 							"showCreateBtn": false,
