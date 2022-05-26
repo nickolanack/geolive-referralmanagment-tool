@@ -14559,7 +14559,7 @@
                                     "deleteItemScript": "defaultBehaviorFn()",
                                     "initModuleScript": "",
                                     "formatModuleScript": "Projects List Detail.metadata.positions.content.modules.3.config.formatModuleScript.js",
-                                    "resolveItemScript": "return item.getPinList();",
+                                    "resolveItemScript": "Projects List Detail.metadata.positions.content.modules.3.config.resolveItemScript.js",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
