@@ -177,14 +177,30 @@ class Project {
 
 			$this->getPlugin()->notifier()->onCreateProposal($proposalId, $json);
 
+
+			if(isset($json->projects)&&is_array($json->projects)){
+
+				
+				if(!isset($json->attributes)){
+					$json->attributes=(object) array('proposalAttributes'=>(object) array());
+				}
+				if(!isset($json->attributes->proposalAttributes)){
+					$json->attributes=(object) array('proposalAttributes'=>(object) array());
+				}
+
+				$json->attributes->projects=$json->projects;
+
+			}
+
+
 			GetPlugin('Attributes');
-			if (key_exists('attributes', $json)) {
+			if (isset($json->attributes)) {
 				foreach ($json->attributes as $table => $fields) {
 					(new \attributes\Record($table))->setValues($proposalId, 'ReferralManagement.proposal', $fields);
 				}
 			}
 
-			if (key_exists('team', $json)) {
+			if (key_exists($json->team)) {
 
 				foreach ($json->team as $uid) {
 					$this->getPlugin()->addTeamMemberToProject($uid, $proposalId);
