@@ -310,7 +310,7 @@ var Project = (function() {
 		},
 		getCreationDate: function() {
 			var me = this;
-			return this._toLocalDateString(e.data.createdDateTimestamp*1000))
+			return this._toLocalDateString(e.data.createdDateTimestamp*1000);
 		},
 
 		_toLocalDateString:function(timestampSeconds){
@@ -347,7 +347,7 @@ var Project = (function() {
 			return str=y+'-'+m+'-'+d+' '+time
 
 
-		}
+		},
 
 		getModificationDate: function() {
 			var me = this;
