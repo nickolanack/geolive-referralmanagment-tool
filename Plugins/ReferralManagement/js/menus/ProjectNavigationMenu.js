@@ -80,7 +80,7 @@ var ProjectNavigationMenu = (function() {
 									"label":"Create Dataset",
 									"formName": DashboardConfig.getValue('leftPanelSecondaryBtnForm'),
 								}
-							]
+							],
 							"showCreateBtn": false,
 							projects: function(callback) {
 								callback(item.getProjectObjects());
