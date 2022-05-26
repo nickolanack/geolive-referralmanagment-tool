@@ -95,7 +95,7 @@ var ProjectNavigationMenu = (function() {
 												return this._item.removeProject(p);
 											},
 											canAddRemoveProject:function(p){
-												return this._item.canAddRemoveProject(p);
+												return p.isDataset();
 											}
 										});
 
