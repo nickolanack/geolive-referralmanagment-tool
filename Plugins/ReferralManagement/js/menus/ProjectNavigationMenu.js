@@ -60,6 +60,17 @@ var ProjectNavigationMenu = (function() {
 						name: "Users",
 						formatEl: function(li) {
 							Counters.addItemUsersInfo(li, item, application);
+						
+
+							li.setStyle('display', 'none');
+							AppClient.authorize('write', {
+			  					id: item.getId(),
+								type: item.getType()
+							}, function(access) {
+								if(access){
+									li.setStyle('display', null);
+								}
+							});
 						}
 					}, {
 						html: "Files",
@@ -118,7 +129,19 @@ var ProjectNavigationMenu = (function() {
 							projects: function(callback) {
 								callback(item.getProjectObjects());
 							}
-						})
+						}),
+						formatEl: function(li) {
+
+							li.setStyle('display', 'none');
+							AppClient.authorize('write', {
+			  					id: item.getId(),
+								type: item.getType()
+							}, function(access) {
+								if(access){
+									li.setStyle('display', null);
+								}
+							});
+						}
 					}, {
 						html: "Discussion",
 						formatEl: function(li) {
@@ -137,6 +160,17 @@ var ProjectNavigationMenu = (function() {
 					}, {
 						html: "History",
 						formatEl: function(li) {
+
+							li.setStyle('display', 'none');
+							AppClient.authorize('write', {
+			  					id: item.getId(),
+								type: item.getType()
+							}, function(access) {
+								if(access){
+									li.setStyle('display', null);
+								}
+							});
+							
 							Counters.addItemDiscussionIndicator(li, item, application);
 						}
 					}, {
@@ -147,7 +181,18 @@ var ProjectNavigationMenu = (function() {
 						template: "singleProjectProponentDetail",
 					}, {
 						html: "Security", //"Proponent",
-						template: "singleProjectSecurityDetail"
+						template: "singleProjectSecurityDetail",
+						formatEl: function(li) {
+							li.setStyle('display', 'none');
+							AppClient.authorize('write', {
+			  					id: item.getId(),
+								type: item.getType()
+							}, function(access) {
+								if(access){
+									li.setStyle('display', null);
+								}
+							});
+						}
 					}]
 				};
 
