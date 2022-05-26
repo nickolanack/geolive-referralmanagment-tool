@@ -349,7 +349,7 @@ var Project = (function() {
 		},
 
 		getModificationDate: function() {
-			this._toLocalDateString(this.data.modifiedDateTimestamp*1000);
+			return this._toLocalDateString(this.data.modifiedDateTimestamp*1000);
 		},
 
 		getSubmitDate: function() {
