@@ -441,8 +441,8 @@ var ProjectList = (function() {
 		}, options);
 
 
-		if (options.item) {
-
+		if (typeof options.item=='function') {
+			options.item=options.item();
 		}
 
 		var btn = new Element("button", {
