@@ -643,7 +643,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 		$childProjects = $this->getChildProjectsForProject($project);
 
-		$childProjects = array_filter($childProjects, function ($item) use ($child, $project) {
+		$childProjects = array_values(array_filter($childProjects, function ($item) use ($child, $project) {
 
 			if (($item == $child)) {
 
@@ -655,7 +655,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 			}
 
 			return true;
-		});
+		}));
 
 		$this->setChildProjectsForProject($project, $childProjects);
 		//$this->notifier()->onRemoveTeamMemberFromProject($user, $project);
