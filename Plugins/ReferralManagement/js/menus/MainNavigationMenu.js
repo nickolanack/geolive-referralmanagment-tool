@@ -314,7 +314,7 @@ var MainNavigationMenu = new Class({
 				}, {
 					html: "Tasks",
 					name: "Tasks",
-					stub: "tasks"
+					stub: "tasks",
 					formatEl: function(li) {
 						Counters.addTaskListCounter(li);
 					}
