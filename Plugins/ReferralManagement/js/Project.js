@@ -310,8 +310,44 @@ var Project = (function() {
 		},
 		getCreationDate: function() {
 			var me = this;
-			return me.data.createdDate;
+			return this._toLocalDateString(e.data.createdDateTimestamp*1000))
 		},
+
+		_toLocalDateString:function(timestampSeconds){
+
+			var date=new Date(timestampSeconds);
+
+			var y=date.getFullYear();
+			var d=date.getDate();
+			if(d<10){
+				d='0'+d;
+			}
+
+			var m=date.getMonth()+1;
+			if(m<10){
+				m='0'+m;
+			}
+
+			var time=date.toLocaleTimeString().split(' ');
+		
+			var ampm=time.pop();
+			time=time.shift().split(':');
+			
+			time[0]=parseInt(time[0]);
+			if(ampm=='PM'){
+				time[0]+=12;
+			}
+
+			if(time[0]<10){
+				time[0]='0'+time[0];
+			}
+
+			time=time.join(':');
+
+			return str=y+'-'+m+'-'+d+' '+time
+
+
+		}
 
 		getModificationDate: function() {
 			var me = this;
