@@ -81,12 +81,15 @@ var ProjectNavigationMenu = (function() {
 											Extends:MockDataTypeItem,
 											initialize:function(item){
 												this._item=item;
+												MockDataTypeItem.prototype.initialize.call(this,{
+
+												})
 											},
 											hasProject:function(p){
 												return this._item.hasProject(p)
 											}
 										});
-										
+
 										return new SelectionClass(item);
 									}
 								},
