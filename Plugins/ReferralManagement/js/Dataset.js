@@ -1,8 +1,11 @@
 var Dataset=(function(){
-	Extends:Project
 
+
+	var Dataset=new Class({
+		Extends:Project
+	});
 	
-	
+	return Dataset;
 
 	
 })();
