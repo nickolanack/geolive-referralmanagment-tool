@@ -397,7 +397,9 @@ var SpatialProject = (function() {
 					"label": "Collection Datasets",
 					"showCreateBtn": true,
 					projects: function(callback) {
-						callback([item].concat(item.getProjectObjects()));
+						callback(([item].concat(item.getProjectObjects())).filter(function(p){
+							return p.getSpatialDocuments().length>0
+						}));
 					}
 				})).getProjectList(callback);
 
@@ -408,7 +410,9 @@ var SpatialProject = (function() {
 				"label": "Collection Datasets",
 				"showCreateBtn": true,
 				projects: function(callback) {
-					callback(ProjectSelection.getProjects());
+					callback(ProjectSelection.getProjects().filter(function(p){
+							return p.getSpatialDocuments().length>0
+						}));
 				}
 			})).getProjectList(callback);
 
