@@ -806,7 +806,7 @@ var ProjectList = (function() {
 		if(root.getMetadata&&root.getMetadata().createBtns){
 
 			root.getMetadata&&root.getMetadata().createBtns.forEach(function(btn){
-				btns.push()
+				btns.push(btn)
 			});
 		
 		}else{
