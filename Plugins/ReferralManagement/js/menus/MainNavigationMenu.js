@@ -223,45 +223,9 @@ var MainNavigationMenu = new Class({
 							navigationController.setActive('Projects','Main');
 						}
 					},
+					stub:'item-detail-#',
 					urlComponent: function(stub, segments) {
-
-						var current = application.getNamedValue("currentProject");
-
-
-						if (segments && segments.length && segments[0].indexOf('Project-') === 0) {
-
-							if (current) {
-
-								if ('Project-' + current.getId() !== segments[0]) {
-									console.warn('should set current');
-									try {
-										var team = ProjectTeam.CurrentTeam()
-										current = team.getProject(parseInt(segments[0].split('-').pop()));
-										application.setNamedValue("currentProject", current);
-									} catch (e) {
-										console.error(e);
-									}
-								}
-								return 'Project/' + segments.join('/');
-							}
-
-							ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
-
-								current = team.getProject(parseInt(segments[0].split('-').pop()));
-								application.setNamedValue("currentProject", current);
-								navigationController.navigateTo('Project', 'Main', {
-									segments: segments
-								});
-
-							});
-
-						}
-
-						if (!current) {
-							return stub;
-						}
-
-						return 'Projects/Project-' + current.getId()
+						return 'item-detail-' + current.getId()
 					}
 				}, {
 					html: "Messages",
