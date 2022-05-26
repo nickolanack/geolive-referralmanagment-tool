@@ -293,11 +293,15 @@ var ProjectList = (function() {
 
 	ProjectList.ApplyMetaFilter=function(a, filterStr, type){
 		if(filterStr=='+datasets_'){
-			return a.getProjectTypes().length==0&&a.isDataset();
+			 if(a.getProjectTypes().length==0&&a.isDataset()){
+			 	return true;
+			 }
 		}
 
 		if(filterStr=='+collections_'){
-			return a.getProjectTypes().length==0&&a.isCollection();
+			 if(a.getProjectTypes().length==0&&a.isCollection()){
+			 	return true;
+			 }
 		}
 	}
 
