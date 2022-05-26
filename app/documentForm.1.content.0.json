@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "\nif(item.getId()>0){\n    return \"<h2>Edit dataset<\/h2>\";\n    \n    \n}\n\nreturn \"<h2>Create a new dataset<\/h2>\";",
+        "script": "\nif(item.getId()>0){\n    return \"<h2>Edit dataset<\/h2>\";\n    \n    \n}\n\nreturn \"<h2>Add a new dataset<\/h2>\";",
         "description": "Info about my custom script"
     }
 }
