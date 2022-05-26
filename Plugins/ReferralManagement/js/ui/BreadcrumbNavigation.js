@@ -135,7 +135,7 @@ var BreadcrumbNavigation = (function() {
 				var p = me.getApplication().getNamedValue("currentProject");
 				if (p) {
 
-					var projectsName = DashboardConfig.getValue('enableProposals') ? ProjectList.NameForProjects() : "Collections";
+					var projectsName = ProjectList.NameForProjects();
 
 					var type = p.isDataset() ? 'Dataset' : projectsName.substring(0, projectsName.length - 1);
 
