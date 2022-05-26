@@ -745,7 +745,7 @@ var ProjectList = (function() {
 
 		return new ProjectList({
 
-			"label": community +" "+ (DashboardConfig.getValue('showDatasets')?"Datasets & ":"")+(DashboardConfig.getValue('enableProposals')?ProjectList.NameForProjects():"Collections"),
+			"label": community,
 			"showCreateBtn": false,
 
 			projects:function(callback){
@@ -795,7 +795,7 @@ var ProjectList = (function() {
 		return new ProjectList({
 			"icon": category.getIcon(),
 			"color": category.getColor(),
-			"label": name +" "+ (DashboardConfig.getValue('showDatasets')?"Datasets & ":"")+(DashboardConfig.getValue('enableProposals')?ProjectList.NameForProjects():"Collections"),
+			"label": name,
 			"showCreateBtn": false,
 			"createBtns": btns,
 			"filter": null,
@@ -817,7 +817,7 @@ var ProjectList = (function() {
 
 		return new ProjectList({
 
-			"label": status +" "+ (DashboardConfig.getValue('showDatasets')?"Datasets & ":"")+(DashboardConfig.getValue('enableProposals')?ProjectList.NameForProjects():"Collections"),
+			"label": status,
 			"showCreateBtn": false,
 
 			projects:function(callback){
@@ -838,7 +838,7 @@ var ProjectList = (function() {
 
 
 		return new ProjectList({
-		    "label":  (user.getId()==AppClient.getId()?"Your":user.getName()+"'s")+" "+ProjectList.NameForProjects(),
+		    "label":  user.getName(),
 		    projects:function(callback){
 
 		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
@@ -893,7 +893,7 @@ var ProjectList = (function() {
 
 
 		return new ProjectList({
-			"label": client.getName() +" "+ (DashboardConfig.getValue('showDatasets')?"Datasets & ":"")+(DashboardConfig.getValue('enableProposals')?ProjectList.NameForProjects():"Collections"),
+			"label": client.getName(),
 		    projects:function(callback){
 
 		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
@@ -1013,7 +1013,7 @@ var ProjectList = (function() {
 
 		return new ProjectList({
 
-			"label": "Datasets & Collections shared with: " + item.getName(),
+			"label": "Shared with: " + item.getName(),
 			"showCreateBtn": false,
 			"createBtns": [{
 				"label": "Share",
