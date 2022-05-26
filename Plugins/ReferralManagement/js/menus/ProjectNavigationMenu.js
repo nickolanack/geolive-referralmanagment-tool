@@ -103,7 +103,7 @@ var ProjectNavigationMenu = (function() {
 									}
 								},
 								{
-									"label":"Create Dataset",
+									"label":"Add Dataset",
 									"formName": DashboardConfig.getValue('leftPanelPrimaryBtnForm'),
 									"item":function(){
 										var dataset= new Dataset();
