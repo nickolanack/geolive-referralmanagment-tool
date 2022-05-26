@@ -794,18 +794,36 @@ var ProjectList = (function() {
 
 		var btns=[];
 
+		var root=category;
 
-		if(DashboardConfig.getValue('showDatasets')){
-			btns.push({
-				"label": DashboardConfig.getValue('leftPanelSecondaryBtnLabel'),
-				"formName": DashboardConfig.getValue('leftPanelSecondaryBtnForm'),
-			});
+		/**
+		 * allow root to define buttons
+		 */
+
+		if(root.getRootTagData){
+			root.getRootTagData();
 		}
-		btns.push({
-			"label": DashboardConfig.getValue('leftPanelPrimaryBtnLabel'),
-			"formName": DashboardConfig.getValue('leftPanelPrimaryBtnForm'),
-			"className": "add collection"
-		});
+		if(root.getMetadata&&root.getMetadata().createBtns){
+
+			root.getMetadata&&root.getMetadata().createBtns.forEach(function(btn){
+				btns.push()
+			});
+		
+		}else{
+
+			if(DashboardConfig.getValue('showDatasets')){
+				btns.push({
+					"label": DashboardConfig.getValue('leftPanelSecondaryBtnLabel'),
+					"formName": DashboardConfig.getValue('leftPanelSecondaryBtnForm'),
+				});
+			}
+			btns.push({
+				"label": DashboardConfig.getValue('leftPanelPrimaryBtnLabel'),
+				"formName": DashboardConfig.getValue('leftPanelPrimaryBtnForm'),
+				"className": "add collection"
+			});
+
+		}
 
 
 		var name=category.getName();
