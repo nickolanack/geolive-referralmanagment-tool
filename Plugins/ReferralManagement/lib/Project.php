@@ -188,7 +188,7 @@ class Project {
 					$json->attributes=(object) array('proposalAttributes'=>(object) array());
 				}
 
-				$json->attributes->projects=$json->projects;
+				$json->attributes->proposalAttributes->childProjects=$json->projects;
 
 			}
 
