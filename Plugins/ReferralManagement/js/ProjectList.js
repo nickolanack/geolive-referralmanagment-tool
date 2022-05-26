@@ -291,6 +291,16 @@ var ProjectList = (function() {
 	}];
 
 
+	ProjectList.ApplyMetaFilter=function(a, filterStr, type){
+		if(filterStr=='+datasets_'){
+			return a.getProjectTypes().length==0&&a.isDataset();
+		}
+
+		if(filterStr=='+collections_'){
+			return a.getProjectTypes().length==0&&a.isCollection();
+		}
+	}
+
 
 	ProjectList.projectFilters = function() {
 
@@ -301,10 +311,25 @@ var ProjectList = (function() {
 		var filterList = filters;
 		var getFilter = function(type) {
 
+
+			var category=NamedCategoryList.getTag(type);
+			var includeFilter=false;
+			if(category.getMetadata&&category.getMetadata().filter){
+				includeFilter=category.getMetadata().filter
+			}
+
 			return {
 				label: type,
 				name: type,
 				filterFn: function(a) {
+
+					if(includeFilter){
+						var result=ProjectList.ApplyMetaFilter(a, includeFilter, type);
+						if(typeof result=='boolean'){
+							return result;
+						}
+					}
+
 					return NamedCategoryList.listMemberOf(a.getProjectTypes(), type);
 				}
 			};
