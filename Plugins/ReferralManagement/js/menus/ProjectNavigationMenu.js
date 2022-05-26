@@ -71,7 +71,7 @@ var ProjectNavigationMenu = (function() {
 						template: "projectsListDetail",
 						item: new ProjectList({
 							"label": ProjectList.NameForProjects()+" Datasets",
-							"btns":[
+							"createBtns":[
 								{
 									"label":"Link Dataset",
 									"formName": "datasetSelectForm",
