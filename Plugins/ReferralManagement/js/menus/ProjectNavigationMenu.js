@@ -87,6 +87,12 @@ var ProjectNavigationMenu = (function() {
 											},
 											hasProject:function(p){
 												return this._item.hasProject(p)
+											},
+											addProject:function(p){
+												return this._item.addProject(p);
+											},
+											removeProject:function(p){
+												return this._item.removeProject(p);
 											}
 										});
 
