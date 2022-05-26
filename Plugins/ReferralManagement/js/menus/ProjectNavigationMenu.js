@@ -70,8 +70,18 @@ var ProjectNavigationMenu = (function() {
 						html: "Datasets",
 						template: "projectsListDetail",
 						item: new ProjectList({
-							"label": "Collection Datasets",
-							"showCreateBtn": true,
+							"label": ProjectList.NameForProjects()+" Datasets",
+							"btns":[
+								{
+									"label":"Link Dataset",
+									"formName": "datasetSelectForm",
+								},
+								{
+									"label":"Create Dataset",
+									"formName": DashboardConfig.getValue('leftPanelSecondaryBtnForm'),
+								}
+							]
+							"showCreateBtn": false,
 							projects: function(callback) {
 								callback(item.getProjectObjects());
 							}
@@ -125,7 +135,7 @@ var ProjectNavigationMenu = (function() {
 
 					NavigationMenuModule.prototype.process.call(me);
 					MenuUtils.addEditBtn(me, 'projectMenu');
-					
+
 				});
 				
 
