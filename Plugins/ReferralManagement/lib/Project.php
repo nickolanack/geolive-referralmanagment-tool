@@ -185,7 +185,7 @@ class Project {
 					$json->attributes=(object) array('proposalAttributes'=>(object) array());
 				}
 				if(!isset($json->attributes->proposalAttributes)){
-					$json->attributes=(object) array('proposalAttributes'=>(object) array());
+					$json->attributes->proposalAttributes=(object) array();
 				}
 
 				$json->attributes->proposalAttributes->childProjects=$json->projects;
@@ -200,7 +200,7 @@ class Project {
 				}
 			}
 
-			if (key_exists($json->team)) {
+			if (isset($json->team)) {
 
 				foreach ($json->team as $uid) {
 					$this->getPlugin()->addTeamMemberToProject($uid, $proposalId);
