@@ -48,9 +48,11 @@ var ProjectsOverviewNavigationMenu = new Class({
 			me.menu = {
 				"Layout": [{
 						html: "Split",
+						stub:'single',
 						template:"splitProjectDetail",
 					}, {
 						html: "List",
+						stub:'compare',
 						template:"groupListsProjectDetail"
 					}
 					// , {
