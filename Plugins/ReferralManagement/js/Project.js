@@ -333,7 +333,8 @@ var Project = (function() {
 			time=time.shift().split(':');
 			
 			time[0]=parseInt(time[0]);
-			if(ampm=='PM'){
+			if(ampm=='PM'&&time[0]<12){
+				// at 12:01 PM do not add 12...
 				time[0]+=12;
 			}
 
