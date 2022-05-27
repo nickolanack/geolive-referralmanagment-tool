@@ -7963,12 +7963,12 @@
                                 "config": {
                                     "className": "",
                                     "text": "<div class=\"section-title\"><span>Communities:<\/span><\/div>",
-                                    "template": "",
+                                    "template": "html.sharedCommunitiesIntro",
                                     "templateVariablesScript": "",
-                                    "formatTextScript": "",
+                                    "formatTextScript": "singleProjectUsersDetail.metadata.positions.content.modules.3.config.formatTextScript.js",
                                     "formatVariablesScript": "",
-                                    "ajaxRequestTemplate": false,
-                                    "identifier": "htmlLabel"
+                                    "ajaxRequestTemplate": true,
+                                    "identifier": "project-communities-intro"
                                 }
                             },
                             {
@@ -27219,6 +27219,34 @@
             "layout": [],
             "widgetTitle": "mainMenuLayout",
             "readAccess": "public"
+        }
+    },
+    "widget.484": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-sharedUsersIntro.text",
+            "target": "module.html-sharedUsersIntro.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "module-html-sharedUsersIntro-text.contentTemplate.html"
+        }
+    },
+    "widget.485": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-sharedCommunitiesIntro.text",
+            "target": "module.html-sharedCommunitiesIntro.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "module-html-sharedCommunitiesIntro-text.contentTemplate.html"
         }
     }
 }
