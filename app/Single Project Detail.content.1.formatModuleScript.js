@@ -5,6 +5,7 @@ module.addWeakEvent(item, "change",function(){
     }else{
         module.stopSpinner();
     }
+        
 })
 
 module.addWeakEvent(item, "saving",function(){
