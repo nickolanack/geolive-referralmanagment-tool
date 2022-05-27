@@ -25,12 +25,6 @@ button:focus {outline:0;}
 }
 
 
-[data-view="singleProjectEditButtonsDetail"]:after {
-    clear: both;
-    content: "";
-    display: block;
-}
-
 .content.hidden.markdown {
     display: none;
 }
@@ -43,10 +37,7 @@ button:focus {outline:0;}
 .field-value-module.inline.sortable {cursor: pointer;}
 
 
-.tag-width>span.field-value.is-longtext {
-    overflow: hidden;
-    vertical-align: middle;
-}
+
 
 
 span.notification-indicator:after {
@@ -5431,17 +5422,12 @@ span.navigation-menu.settings-menu {
 
 
 .field-value-module.inline.sortable {
-    font-weight:bold;
-    color:#545454;
+    background-color: rgba(0,0,0,0.04);
     margin: 0px;
     display: inline-block;
     padding: 5px;
     box-sizing: border-box;
     border-radius: 6px;
-}
-
-.dark .field-value-module.inline.sortable {
-    color:#e0e0e2;
 }
 
 
@@ -5934,37 +5920,6 @@ button.inline-edit.top-right {
     top: 0;
     right: 0;
 }
-
-
-div.popover[data-with-view="reportSelectionView"]{
-    max-width:400px;
-}
-[data-view="reportSelectionView"]{
-
-    .ui-view {
-        clear: both;
-        display: inline-block;
-        width: 100%;
-        whitespace:nowrap;
-        min-width:350px;
-    }
-    
-    
-    
-    .primary-btn {
-        padding: 5px 12px;font-size: 13px;
-        
-    }
-    
-     .field-value-module {
-        display:inline-block;
-        margin: 10px;
-        padding: 2px;
-        font-size: 17px;
-        
-    }
-}
-
 
 
     
