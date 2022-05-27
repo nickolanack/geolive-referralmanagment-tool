@@ -60,6 +60,31 @@ class FileExport{
 		$this->zip=$zip;
 
 
+		if(isset($data->metadata->file)){
+			$file=$data->metadata->file;
+			if(is_object($file)&&isset($file->file){
+				$file=$file->file;
+			}	
+
+
+
+			if(!file_exists($file){
+				$paths=GetPlugin('ReferralManagement')->getParameter('datawarehousePaths', array());    
+		    	foreach($paths as $dir){
+		    		if((!empty($dir))&&is_dir($dir)){
+		    			$realpath=realpath($dir.'/'.$file);
+				        if(file_exists($realpath)){
+				            $name=basename($file);
+				            $this->zip->addFromString($name, (new \core\File())->read($realpath));
+				        }else{
+				        	
+				        }
+		    		}
+				}
+
+
+		}
+
 		
 
 		foreach (array_map($localPath, $parser->parseProposalFiles($data)) as $url) {
