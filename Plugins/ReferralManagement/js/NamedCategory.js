@@ -445,10 +445,19 @@ var NamedCategory = (function() {
 		    }
 		}});
 		if(item instanceof ProjectList){
-		    
 		    return null;
 		}
-		div.appendChild(new Element('span',{html:"Themes"}));
+
+		var label="Themes";
+		var cats=NamedCategoryList.getRootCategoryTagsData();
+		//let root category define label
+		cats.reverse().forEach(function(c){
+			if(c.getMetadata&&c.getMetadata().dashboardLabel){
+				label=c.getMetadata().dashboardLabel;
+			}
+		});
+
+		div.appendChild(new Element('span',{html:label}));
 		return div;
 
 	};
