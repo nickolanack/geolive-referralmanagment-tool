@@ -27230,9 +27230,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
-            "saveTemplateAsData": false,
-            "contentTemplate": "module-html-sharedUsersIntro-text.contentTemplate.html"
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "module-html-sharedUsersIntro-text.contentTemplate.html",
+            "readAccess": "public"
         }
     },
     "widget.485": {
