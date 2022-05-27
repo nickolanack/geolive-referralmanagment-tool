@@ -436,13 +436,13 @@ var NamedCategory = (function() {
 	NamedCategory.CategoryHeading=function(item, application){
 
 		var div=new Element('div', {"class":"section-title", events:{
-		    click:function(){
-		        var controller = application.getNamedValue('navigationController');
-		        controller.navigateTo("Projects", "Main", {
-					filters:ProjectTagList.getProjectTagsData('_root').map(function(item){ return item.getName(); }),
-					//filter:child.getName()
-				});
-		    }
+		  //   click:function(){
+		  //       var controller = application.getNamedValue('navigationController');
+		  //       controller.navigateTo("Projects", "Main", {
+				// 	filters:ProjectTagList.getProjectTagsData('_root').map(function(item){ return item.getName(); }),
+				// 	//filter:child.getName()
+				// });
+		  //   }
 		}});
 
 
