@@ -537,6 +537,13 @@ var DashboardPageLayout = (function() {
 		
 		return content;
 
+	}).addLayout('singleProjectUsersDetail', function(content){
+
+	
+		content=layout.filterIdentifier(content, ['project-communities-intro','project-communities-list'], UserGroups.GetSubgroups().length>0);
+
+		return content;
+
 	}).addLayout('profileMenu', function(buttons) {
 
 
@@ -840,7 +847,8 @@ var DashboardPageLayout = (function() {
 			'singleProjectOverviewDetail',
 			'singleProjectEditButtonsDetail',
 			'proposalOverviewStatus',
-			'singleProjectListItemDetail'
+			'singleProjectListItemDetail',
+			'singleProjectUsersDetail'
 		];
 
 		app.getDisplayController().addFormViewWizardModuleFormatter(function(item, name, step, list) {

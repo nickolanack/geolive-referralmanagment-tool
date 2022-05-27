@@ -11,7 +11,7 @@ var MainNavigationMenu = new Class({
 		var navigationController = this;
 
 
-		this.on('navigate',function(){
+		this.on('navigate', function(){
 			$$('.dashboard-main')[0].scrollTo({ top: 0, behavior: 'smooth' });
 		});
 
