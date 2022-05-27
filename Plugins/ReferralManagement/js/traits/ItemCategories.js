@@ -36,8 +36,21 @@ var ItemCategories=(function(){
 			}
 
 			return type.filter(function(t){
-				return t&&t!==""&&NamedCategoryList.hasTag(t);
-			});
+				return t&&t!=="";
+			}).map(function(t){
+
+				if(!NamedCategoryList.hasTag(t)){
+					var r=t.replace(/[^a-zA-Z0-9 _-]+/g,"");
+					NamedCategoryList.hasTag(r);
+					return r;
+				}
+
+				return t;
+
+
+			}).filter(function(t){
+				return NamedCategoryList.hasTag(t);
+			})
 		}
 
 
