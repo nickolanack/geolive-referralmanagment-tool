@@ -481,7 +481,12 @@ var TableHeader = (function() {
 
 			var listEl = this._listModule.getElement();
 
-			var header = this._makeHeaderEl();
+			var header=this._header;
+
+			if(!header){
+				var header = this._makeHeaderEl();
+				this._header=header;
+			}
 
 			if (listEl.firstChild) {
 				var child = listEl.firstChild;
