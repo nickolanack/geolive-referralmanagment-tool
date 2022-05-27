@@ -672,7 +672,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function downloadFiles($json) {
 
-		if (!Auth('write', $json->proposal, 'ReferralManagement.proposal')) {
+		if (!Auth('read', $json->proposal, 'ReferralManagement.proposal')) {
 			return $this->setError('No access or does not exist');
 		}
 
