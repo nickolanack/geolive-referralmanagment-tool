@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "if(item.getId()>0){\n    return '<h2>Edit collection: <span>'+item.getName()+'<\/span><h2>';\n}\n\nif(AppClient.getUserType()==\"guest\"){\n    return '<h2>Create new collection: <span>as a proponent<\/span><h2>';\n}\n\n\nreturn '<h2>Create new collection<h2>';",
+        "script": "if(item.getId()>0){\n    return '<h2>Edit '+ProjectList.NameForProject()+': <span>'+item.getName()+'<\/span><h2>';\n}\n\nif(AppClient.getUserType()==\"guest\"){\n    return '<h2>Create new '+ProjectList.NameForProject()+': <span>as a proponent<\/span><h2>';\n}\n\n\nreturn '<h2>Create new '+ProjectList.NameForProject()+'<h2>';",
         "description": "Info about my custom script"
     }
 }
