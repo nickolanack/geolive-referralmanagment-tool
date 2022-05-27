@@ -60,8 +60,8 @@ class FileExport{
 		$this->zip=$zip;
 
 
-		if(isset($data->metadata->file)){
-			$file=$data->metadata->file;
+		if(isset($data['metadata']->file)){
+			$file=$data['metadata']->file;
 			if(is_object($file)&&isset($file->file)){
 				$file=$file->file;
 			}	
