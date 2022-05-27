@@ -32,16 +32,12 @@
                 ""
             ],
             "pluginPaths": [
-                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/php-core-map\/Plugins",
-                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/core-referralmanagment-tool\/Plugins",
                 ""
             ],
             "widgetPaths": [
-                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/php-core-map\/Widgets",
                 ""
             ],
             "modulePaths": [
-                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/php-core-map\/Modules",
                 ""
             ],
             "sandboxDomains": [
@@ -105,7 +101,7 @@
             "googleMapsVersion": "",
             "tileCachePath": "{front}\/..\/tiles",
             "layerDisplayFilterScript": "plugin.Maps.12.layerDisplayFilterScript.js",
-            "layerDisplayFormatScript": "",
+            "layerDisplayFormatScript": "plugin.Maps.12.layerDisplayFormatScript.js",
             "layerDisplayChildLayersScript": "",
             "formatMapitemScript": "plugin.Maps.12.formatMapitemScript.js",
             "featureUrlScript": ""
@@ -165,9 +161,7 @@
         "parameters": {
             "releaseServer": "http:\/\/release.geolive.ca",
             "releasePackage": "master",
-            "autoUpdate": false,
-            "composerPath": "\/usr\/bin\/composer",
-            "bowerPath": ""
+            "autoUpdate": false
         }
     },
     "plugin.24": {
@@ -195,8 +189,8 @@
                     "widget": "proponent"
                 }
             ],
-            "useRemoteServerUI": true,
-            "remoteServerUrl": "https:\/\/gct3.gather.geoforms.ca\/app\/nickolanack\/php-core-app\/core.php?task=TASK&format=ajax&json=JSON"
+            "useRemoteServerUI": false,
+            "remoteServerUrl": ""
         }
     },
     "plugin.28": {
@@ -270,8 +264,8 @@
         "name": "Monolog Plugin",
         "instance": "Monolog",
         "parameters": {
-            "enabled": true,
-            "logPath": "{front}\/..\/logs\/{domain}",
+            "enabled": false,
+            "logPath": "{front}\/..\/logs",
             "logToSentry": false
         }
     },
@@ -337,7 +331,6 @@
             "queueEmailDelay": "5",
             "exportSecret": "XXXX-XXXX",
             "datawarehousePaths": [
-                "\/srv\/gather_gis\/",
                 ""
             ],
             "customFormCss": ""
@@ -374,6 +367,11 @@
             "secret": "XXXX-XXXX",
             "voice": "Nicole"
         }
+    },
+    "plugin.50": {
+        "name": "Read Receipts",
+        "instance": "ReadReceipts",
+        "parameters": {}
     },
     "widget.33": {
         "name": "Attr Search Bar",
@@ -18277,16 +18275,16 @@
                             "documentProjectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 186,
-                            "y": 315
+                            "x": 206,
+                            "y": 335
                         },
                         "children": [
                             "documentProjectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 146,
-                                    "y": 528
+                                    "x": 166,
+                                    "y": 548
                                 }
                             },
                             {
@@ -18296,16 +18294,16 @@
                                     "documentProjectForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 564,
-                                    "y": 266
+                                    "x": 584,
+                                    "y": 286
                                 },
                                 "children": [
                                     "documentProjectForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 524,
-                                            "y": 442
+                                            "x": 544,
+                                            "y": 463
                                         }
                                     },
                                     {
@@ -18315,16 +18313,16 @@
                                             "documentProjectForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1039,
-                                            "y": 301
+                                            "x": 1059,
+                                            "y": 321
                                         },
                                         "children": [
                                             "documentProjectForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 999,
-                                                    "y": 552
+                                                    "x": 1019,
+                                                    "y": 572
                                                 }
                                             }
                                         ],
@@ -18345,7 +18343,10 @@
                                                                 "text": "Who created the datasets contained in this collection?",
                                                                 "template": "",
                                                                 "templateVariablesScript": "",
-                                                                "formatTextScript": ""
+                                                                "formatTextScript": "",
+                                                                "formatVariablesScript": "",
+                                                                "ajaxRequestTemplate": false,
+                                                                "identifier": "htmlLabel"
                                                             }
                                                         },
                                                         {
@@ -18353,6 +18354,7 @@
                                                             "config": {
                                                                 "className": "",
                                                                 "label": "Government",
+                                                                "identifier": "boolean-field",
                                                                 "mandatory": false,
                                                                 "getValueScript": "",
                                                                 "updateValueScript": " object.value=value ",
@@ -18366,6 +18368,7 @@
                                                             "config": {
                                                                 "className": "",
                                                                 "label": "Business",
+                                                                "identifier": "boolean-field",
                                                                 "mandatory": false,
                                                                 "getValueScript": "",
                                                                 "updateValueScript": " object.value=value ",
@@ -18379,6 +18382,7 @@
                                                             "config": {
                                                                 "className": "",
                                                                 "label": "Individual",
+                                                                "identifier": "boolean-field",
                                                                 "mandatory": false,
                                                                 "getValueScript": "",
                                                                 "updateValueScript": " object.value=value ",
@@ -18392,6 +18396,7 @@
                                                             "config": {
                                                                 "className": "",
                                                                 "label": "Community",
+                                                                "identifier": "boolean-field",
                                                                 "mandatory": false,
                                                                 "getValueScript": "",
                                                                 "updateValueScript": " object.value=value ",
@@ -18407,7 +18412,10 @@
                                                                 "text": "Do any of the project documents contain sensitive material?",
                                                                 "template": "",
                                                                 "templateVariablesScript": "",
-                                                                "formatTextScript": ""
+                                                                "formatTextScript": "",
+                                                                "formatVariablesScript": "",
+                                                                "ajaxRequestTemplate": false,
+                                                                "identifier": "htmlLabel"
                                                             }
                                                         },
                                                         {
@@ -18415,6 +18423,7 @@
                                                             "config": {
                                                                 "className": "",
                                                                 "label": "yes, this project contains sensitive data",
+                                                                "identifier": "boolean-field",
                                                                 "mandatory": false,
                                                                 "getValueScript": "",
                                                                 "updateValueScript": " object.value=value ",
@@ -18493,7 +18502,7 @@
                                                         "deleteItemScript": "defaultBehaviorFn()",
                                                         "initModuleScript": "",
                                                         "formatModuleScript": "documentProjectForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.1.config.formatModuleScript.js",
-                                                        "resolveItemScript": "return item",
+                                                        "resolveItemScript": "return item;",
                                                         "filterModulesScript": "return list",
                                                         "itemButtonsScript": "return [];",
                                                         "insertAtTop": false,
@@ -18642,20 +18651,22 @@
                                                 "attributeFields": [
                                                     "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.attributeFields.0.json"
                                                 ],
+                                                "className": "no-media hidden",
                                                 "label": "Collection description",
                                                 "message": "Here you can add a short description of the proposed project for your own reference",
                                                 "lines": 4,
-                                                "mandatory": true,
-                                                "showAudios": true,
-                                                "showImages": true,
-                                                "showDocuments": true,
-                                                "showVideos": true,
-                                                "className": "no-media hidden",
                                                 "maxChars": 0,
+                                                "mandatory": true,
+                                                "showToolbars": true,
+                                                "showAudios": true,
+                                                "showVideos": true,
+                                                "showDocuments": true,
+                                                "showImages": true,
                                                 "showExpandInput": true,
                                                 "toolbarPosition": "bottom",
                                                 "textFormatScript": "",
-                                                "onRenderModuleFn": ""
+                                                "onRenderModuleFn": "",
+                                                "mediaIconTint": "rgb(100, 149, 237)"
                                             }
                                         }
                                     ]
@@ -19118,16 +19129,16 @@
                             "tagForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 488,
-                            "y": 282
+                            "x": 468,
+                            "y": 262
                         },
                         "children": [
                             "tagForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 448,
-                                    "y": 483
+                                    "x": 428,
+                                    "y": 463
                                 }
                             }
                         ],
@@ -26115,16 +26126,16 @@
                             "menuLayoutForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 564,
-                            "y": 256
+                            "x": 554,
+                            "y": 246
                         },
                         "children": [
                             "menuLayoutForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 524,
-                                    "y": 422
+                                    "x": 514,
+                                    "y": 412
                                 }
                             }
                         ],
@@ -27200,23 +27211,9 @@
             "parameters": [
                 "mainMenuLayout.parameters.0.json"
             ],
-            "hello": "World",
+            "layout": [],
             "widgetTitle": "mainMenuLayout",
-            "readAccess": "public",
-            "layout": {
-                "dashboard": [],
-                "projects": [],
-                "collections": {
-                    "icon": "f1c0"
-                },
-                "datasets": {
-                    "icon": "f140"
-                },
-                "data warehouse": {
-                    "icon": "f0ae",
-                    "class": "show"
-                }
-            }
+            "readAccess": "public"
         }
     }
 }
