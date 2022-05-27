@@ -1,8 +1,13 @@
 {
-    "type": "WizardScriptElement",
+    "type": "InlineHtml",
     "config": {
-        "name": "My Custom Script",
-        "script": "return '<div class=\"section-title\"><span>Users:<\/span><\/div>';",
-        "description": "Info about my custom script"
+        "className": "",
+        "text": "<div class=\"section-title\"><span>Users:<\/span><\/div>",
+        "template": "",
+        "templateVariablesScript": "",
+        "formatTextScript": "",
+        "formatVariablesScript": "",
+        "ajaxRequestTemplate": false,
+        "identifier": "htmlLabel"
     }
 }
