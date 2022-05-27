@@ -1,1 +1,0 @@
-return new SelectionProxy(item);
