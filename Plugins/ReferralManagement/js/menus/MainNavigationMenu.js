@@ -10,6 +10,11 @@ var MainNavigationMenu = new Class({
 		var me=this;
 		var navigationController = this;
 
+
+		this.on('navigate',function(){
+			$$('.dashboard-main')[0].scrollTo({ top: 0, behavior: 'smooth' });
+		});
+
 		DashboardConfig.runOnceOnLoad(function(dashConfig, config) {
 
 
