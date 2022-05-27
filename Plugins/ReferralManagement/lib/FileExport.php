@@ -67,6 +67,8 @@ class FileExport{
 			}	
 
 
+			error_log('Download: '.$file);
+
 
 			if(!file_exists($file)){
 				$paths=GetPlugin('ReferralManagement')->getParameter('datawarehousePaths', array());    
@@ -77,7 +79,7 @@ class FileExport{
 				            $name=basename($file);
 				            $this->zip->addFromString($name, (new \core\File())->read($realpath));
 				        }else{
-				        	
+				        	error_log('Error download: '.$realpath);
 				        }
 		    		}
 				}
