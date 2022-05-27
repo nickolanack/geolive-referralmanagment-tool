@@ -338,6 +338,12 @@ var Project = (function() {
 				time[0]+=12;
 			}
 
+
+			if(ampm=='AM'&&time[0]==12){
+				// at 12:01 PM do not add 12...
+				time[0]='00';
+			}
+
 			if(time[0]<10){
 				time[0]='0'+time[0];
 			}
