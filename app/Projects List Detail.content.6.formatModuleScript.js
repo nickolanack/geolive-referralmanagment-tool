@@ -1,2 +1,0 @@
-
-Project.AddListEvents(module, item);
