@@ -544,6 +544,13 @@ var Project = (function() {
 	};
 
 
+	Project.GetInitialView=function(callback){
+		viewControllerApp.getNamedValue('projectMenuController', function(controller){
+		    var view=controller.getTemplateNameForView(controller.getCurrentView());
+		    callback(view);
+		});
+	}
+
 
 	return Project;
 
