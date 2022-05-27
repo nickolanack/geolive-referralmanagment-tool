@@ -444,19 +444,37 @@ var NamedCategory = (function() {
 				});
 		    }
 		}});
+
+
+		var label=null;
+
 		if(item instanceof ProjectList){
-		    return null;
+
+			if(!item.getCategory){
+				return null;
+			}
+
+
+			if(!(item.getCategory().getMetadata&&item.getCategory.getMetadata().sectionLabel)){
+				return null;
+			}
+
+			label=item.getCategory.getMetadata().sectionLabel;
+		   
+		}else{
+
+			label="Themes";
+			var cats=NamedCategoryList.getRootCategoryTagsData();
+			//let root category define label
+			cats.reverse().forEach(function(c){
+				if(c.getMetadata&&c.getMetadata().dashboardLabel){
+					label=c.getMetadata().dashboardLabel;
+				}
+			});
+
 		}
 
-		var label="Themes";
-		var cats=NamedCategoryList.getRootCategoryTagsData();
-		//let root category define label
-		cats.reverse().forEach(function(c){
-			if(c.getMetadata&&c.getMetadata().dashboardLabel){
-				label=c.getMetadata().dashboardLabel;
-			}
-		});
-
+	
 		div.appendChild(new Element('span',{html:label}));
 		return div;
 
