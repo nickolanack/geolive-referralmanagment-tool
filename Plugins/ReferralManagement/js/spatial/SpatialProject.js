@@ -257,6 +257,10 @@ var SpatialProject = (function() {
 			});
 			toggle.appendChild(new Element('span', {"class":'indicator-switch'}))
 
+
+
+
+
 			var editBtn=null;
 			editBtn=new ElementModule('div', {
 					"class": "field-value-module inline btn",
@@ -279,7 +283,14 @@ var SpatialProject = (function() {
 			editBtn.appendChild(new Element('span',{"class":"btn inline-edit"}));
 			
 
-
+			AppClient.authorize('write', {
+				id: listItem.getId(),
+				type: listItem.getType()
+			}, function(access) {
+				if(!access){
+					editBtn.getElement().setStyle('display', 'none');
+				}
+			});
 
 			var removeBtn=null;
 			if(me._item!==listItem){
@@ -319,7 +330,7 @@ var SpatialProject = (function() {
 
 
 
-			return list
+			callback(list);
 
 
 
