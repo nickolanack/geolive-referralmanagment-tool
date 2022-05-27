@@ -455,7 +455,7 @@ var NamedCategory = (function() {
 			}
 
 
-			if(!(item.getCategory().getMetadata&&item.getCategory.getMetadata().sectionLabel)){
+			if(!(item.getCategory().getMetadata&&item.getCategory().getMetadata().sectionLabel)){
 				return null;
 			}
 
