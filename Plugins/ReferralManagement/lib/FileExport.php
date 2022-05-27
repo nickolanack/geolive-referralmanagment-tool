@@ -68,7 +68,7 @@ class FileExport{
 
 
 
-			if(!file_exists($file){
+			if(!file_exists($file)){
 				$paths=GetPlugin('ReferralManagement')->getParameter('datawarehousePaths', array());    
 		    	foreach($paths as $dir){
 		    		if((!empty($dir))&&is_dir($dir)){
