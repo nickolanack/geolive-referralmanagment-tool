@@ -62,7 +62,7 @@ class FileExport{
 
 		if(isset($data->metadata->file)){
 			$file=$data->metadata->file;
-			if(is_object($file)&&isset($file->file){
+			if(is_object($file)&&isset($file->file)){
 				$file=$file->file;
 			}	
 
