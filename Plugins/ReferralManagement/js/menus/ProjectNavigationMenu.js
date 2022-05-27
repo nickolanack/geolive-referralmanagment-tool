@@ -98,6 +98,7 @@ var ProjectNavigationMenu = (function() {
 										"item":function(){
 											var dataset= new Dataset();
 											dataset.on('save:once',function(){
+												ProjectTeam.CurrentTeam().addProject(newItem);
 												item.addProject(dataset);
 											});
 											return dataset;
