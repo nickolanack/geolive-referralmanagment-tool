@@ -80,7 +80,7 @@ var ProjectNavigationMenu = (function() {
 					}, {
 						html: "Datasets",
 						template: "projectsListDetail",
-						item: function(){ 
+						item: (function(){ 
 							var list=new ProjectList({
 								"label": ProjectList.NameForProjects()+" Datasets",
 								"createBtns":[
@@ -114,7 +114,9 @@ var ProjectNavigationMenu = (function() {
 								list.fireEvent('change');
 							});
 
-						},
+							return list;
+
+						})(),
 						formatEl: function(li) {
 
 							li.setStyle('display', 'none');
