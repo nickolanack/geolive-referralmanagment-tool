@@ -526,6 +526,25 @@ var Project = (function() {
 	};
 
 
+
+	Project.AddDetailViewEvents = function(listModule, item) {
+		//console.log([module, item]);
+		listModule.addWeakEvent(item, "change",function(){
+		    if(listModule.options.namedView==='singleProjectOverviewDetail'){
+		        listModule.redraw(); //automatically stops spinning
+		    }else{
+		        listModule.stopSpinner();
+		    }
+		        
+		});
+
+		listModule.addWeakEvent(item, "saving",function(){
+		    listModule.startSpinner();
+		});
+	};
+
+
+
 	return Project;
 
 })();
