@@ -27245,9 +27245,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
-            "saveTemplateAsData": false,
-            "contentTemplate": "module-html-sharedCommunitiesIntro-text.contentTemplate.html"
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "module-html-sharedCommunitiesIntro-text.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }
