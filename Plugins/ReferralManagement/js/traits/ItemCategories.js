@@ -26,7 +26,7 @@ var ItemCategories=(function(){
 				if(me.data.metadata&&me.data.metadata.file){
 					var file=""+((me.data.metadata.file.file||me.data.metadata.file).split('/').slice(0,-1).join('/'))
 					if(file.length==0){
-						return 'data warehouse';
+						return ['data warehouse'];
 					}
 					return ['data warehouse/'+file];
 				}
