@@ -80,34 +80,41 @@ var ProjectNavigationMenu = (function() {
 					}, {
 						html: "Datasets",
 						template: "projectsListDetail",
-						item: new ProjectList({
-							"label": ProjectList.NameForProjects()+" Datasets",
-							"createBtns":[
-								{
-									"label":"Link Dataset",
-									"formName": "datasetSelectForm",
-									"item":function(){
+						item: function(){ 
+							var list=new ProjectList({
+								"label": ProjectList.NameForProjects()+" Datasets",
+								"createBtns":[
+									{
+										"label":"Link Dataset",
+										"formName": "datasetSelectForm",
+										"item":function(){
 
-										return new SelectionProxy(item);
+											return new SelectionProxy(item);
+										}
+									},
+									{
+										"label":"Add Dataset",
+										"formName": DashboardConfig.getValue('leftPanelPrimaryBtnForm'),
+										"item":function(){
+											var dataset= new Dataset();
+											dataset.on('save:once',function(){
+												item.addProject(dataset);
+											});
+											return dataset;
+										}
 									}
-								},
-								{
-									"label":"Add Dataset",
-									"formName": DashboardConfig.getValue('leftPanelPrimaryBtnForm'),
-									"item":function(){
-										var dataset= new Dataset();
-										dataset.on('save:once',function(){
-											item.addProject(dataset);
-										});
-										return dataset;
-									}
+								],
+								"showCreateBtn": false,
+								projects: function(callback) {
+									callback(item.getProjectObjects());
 								}
-							],
-							"showCreateBtn": false,
-							projects: function(callback) {
-								callback(item.getProjectObjects());
-							}
-						}),
+							});
+
+							item.on('change', function(){
+								list.fireEvent('change');
+							});
+
+						},
 						formatEl: function(li) {
 
 							li.setStyle('display', 'none');

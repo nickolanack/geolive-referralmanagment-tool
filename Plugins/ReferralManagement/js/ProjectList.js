@@ -3,7 +3,7 @@ var ProjectList = (function() {
 
 	var ProjectList = new Class({
 		Extends: MockDataTypeItem,
-
+		Implements:[Events],
 		applyFilter: function() {
 
 
@@ -657,6 +657,16 @@ var ProjectList = (function() {
 		listModule.addWeakEvent(target, 'addProject', function(p) {
 			listModule.addItem(p);
 		});
+
+
+		var item=listModule.getListItem();
+
+		if(item&&item.addEvent){
+			listModule.addWeakEvent(item, 'change', function(){
+				listModule.redraw();
+			});
+		}
+
 
 		listModule.addWeakEvent(target, 'removeProject', function(p) {
 			listModule.getModules().forEach(function(m) {
