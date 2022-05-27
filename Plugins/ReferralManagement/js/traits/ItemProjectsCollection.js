@@ -1,4 +1,35 @@
 
+
+
+var SelectionProxy=new Class({
+		Extends:MockDataTypeItem,
+		initialize:function(item){
+			this._item=item;
+			MockDataTypeItem.prototype.initialize.call(this,{
+
+			})
+		},
+		hasProject:function(p){
+			return this._item.hasProject(p)
+		},
+		addProject:function(p){
+			return this._item.addProject(p);
+		},
+		removeProject:function(p){
+			return this._item.removeProject(p);
+		},
+		canAddRemoveProject:function(p){
+
+			if(this._item.canAddRemoveProject){
+				return this._item.canAddRemoveProject(p)
+			}
+
+			return p.isDataset();
+		}
+	});
+
+
+
 var ItemProjectsCollection = (function(){
 
 	/*

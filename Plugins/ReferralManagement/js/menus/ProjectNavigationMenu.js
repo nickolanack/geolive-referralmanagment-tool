@@ -88,29 +88,7 @@ var ProjectNavigationMenu = (function() {
 									"formName": "datasetSelectForm",
 									"item":function(){
 
-										var SelectionClass=new Class({
-											Extends:MockDataTypeItem,
-											initialize:function(item){
-												this._item=item;
-												MockDataTypeItem.prototype.initialize.call(this,{
-
-												})
-											},
-											hasProject:function(p){
-												return this._item.hasProject(p)
-											},
-											addProject:function(p){
-												return this._item.addProject(p);
-											},
-											removeProject:function(p){
-												return this._item.removeProject(p);
-											},
-											canAddRemoveProject:function(p){
-												return p.isDataset();
-											}
-										});
-
-										return new SelectionClass(item);
+										return new SelectionProxy(item);
 									}
 								},
 								{
