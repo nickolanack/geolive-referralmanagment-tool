@@ -459,7 +459,7 @@ var NamedCategory = (function() {
 				return null;
 			}
 
-			label=item.getCategory.getMetadata().sectionLabel;
+			label=item.getCategory().getMetadata().sectionLabel;
 		   
 		}else{
 
