@@ -78,6 +78,9 @@ class FileExport{
 				        if(file_exists($realpath)){
 				            $name=basename($file);
 				            $this->zip->addFromString($name, (new \core\File())->read($realpath));
+
+				    		//TODO: add related files;
+
 				        }else{
 				        	error_log('Error download: '.$realpath);
 				        }
