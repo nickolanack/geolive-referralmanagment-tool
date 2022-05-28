@@ -59,6 +59,9 @@ var MainNavigationMenu = new Class({
 								if(typeof isMenu=="boolean"){
 									return isMenu;
 								}
+								if(MenuUtils.hasTagWithMenu("Data warehouse")){
+									return false;
+								}
 
 							}
 
@@ -113,6 +116,10 @@ var MainNavigationMenu = new Class({
 									return isMenu;
 								}
 
+								if(MenuUtils.hasTagWithMenu("Datasets")){
+									return false;
+								}
+
 							}
 
 							return value;
@@ -164,6 +171,10 @@ var MainNavigationMenu = new Class({
 								var isMenu=MenuUtils.isCategoryItemWithMenu(item, "Collections");
 								if(typeof isMenu=="boolean"){
 									return isMenu;
+								}
+
+								if(MenuUtils.hasTagWithMenu("Collections")){
+									return false;
 								}
 
 							}
