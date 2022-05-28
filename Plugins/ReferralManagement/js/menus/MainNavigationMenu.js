@@ -196,7 +196,7 @@ var MainNavigationMenu = new Class({
 								return;
 							}
 
-							me.navigateTo('Datasets', 'Main')
+							me.navigateTo('Projects', 'Main')
 						}
 					},
 					formatEl: function(li) {
