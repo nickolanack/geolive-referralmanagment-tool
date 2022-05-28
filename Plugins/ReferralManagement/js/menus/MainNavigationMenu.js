@@ -196,7 +196,7 @@ var MainNavigationMenu = new Class({
 								return;
 							}
 
-							me.navigateTo('Projects', 'Main')
+							me.navigateTo('Collections', 'Main')
 						}
 					},
 					formatEl: function(li) {
