@@ -101,9 +101,15 @@ var NamedCategoryList = (function() {
 			});
 
 
-			if(item){
+			if(item instanceof Project){
 				list=list.filter(function(t){
 					return t.appliesToItem(item);
+				});
+			}
+
+			if(typeof item=='string'){
+				list=list.filter(function(t){
+					return t.appliesToType(item);
 				});
 			}
 

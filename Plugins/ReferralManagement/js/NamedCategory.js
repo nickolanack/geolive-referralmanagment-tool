@@ -149,6 +149,23 @@ var NamedCategory = (function() {
 		},
 
 		appliesToType:function(type){
+
+
+			var me=this;
+			var r=this.getRootTagData();
+
+			if(r.getMetadata&&r.getMetadata().appliesTo){
+				var appliestTo=r.getMetadata().appliesTo;
+
+				if(appliestTo[0]=='!'){
+					return appliestTo!=='!'+type;
+				}
+				
+				return appliestTo===type;
+
+			}
+
+
 			return true;
 		},
 
