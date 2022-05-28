@@ -305,9 +305,20 @@ var ProjectList = (function() {
 		}
 	}
 
-	ProjectList.getCategoryFilter=function(type){
+	ProjectList.getCategoryFilter=function(category){
 
-		var category=NamedCategoryList.getTag(type);
+		var type=null;
+
+		if(typeof category=='string'){
+			type=category;
+			category=NamedCategoryList.getTag(type);
+		}
+
+		if(!type){
+			type=category.getName();
+		}
+
+		
 		var includeFilter=false;
 		if(category.getMetadata&&category.getMetadata().filter){
 			includeFilter=category.getMetadata().filter
