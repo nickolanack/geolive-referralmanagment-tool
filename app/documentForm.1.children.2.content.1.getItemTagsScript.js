@@ -1,1 +1,1 @@
-return ReferralManagementDashboard.getProjectTags(item);
+return ReferralManagementDashboard.getProjectTags('dataset');
