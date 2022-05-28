@@ -121,6 +121,23 @@ var NamedCategory = (function() {
 
 
 		appliesToItem:function(item){
+			var me=this;
+			var r=this.getRootTagData();
+			if(r.getMetadata&&r.getMetadata().appliesTo){
+				var appliestTo=r.getMetadata().appliesTo;
+				if(ProjectList.projectFilters()[appliestTo]){
+					return ProjectList.projectFilters()[appliestTo].filterFn(item)
+				}
+
+				if(appliestTo[0]=='!'){
+					appliestTo=appliestTo.substring(1);
+					if(ProjectList.projectFilters()[appliestTo]){
+						return !ProjectList.projectFilters()[appliestTo].filterFn(item);
+					}
+				}
+
+			}
+
 			return true;
 		},
 

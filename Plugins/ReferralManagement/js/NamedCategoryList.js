@@ -84,12 +84,31 @@ var NamedCategoryList = (function() {
 
 			return tags;
 		},
-		getSelectableProjectTags:function(callback){
+
+
+		getSelectableProjectTags:function(item, callback){
+
+			if(typeof callback=='undefined'){
+				if(typeof item=='function'){
+					callback=item;
+					item=null;
+				}
+			}
 
 
 			var list = this.getProjectTagsData().filter(function(t){
 				return t.getMetadata().selectable!==false;
-			}).map(function(t){
+			});
+
+
+			if(item){
+				list=list.filter(function(t){
+					return t.appliesToItem(item);
+				});
+			}
+
+
+			list=list.map(function(t){
 				return t.getName();
 			})
 
@@ -101,12 +120,6 @@ var NamedCategoryList = (function() {
 
 
 		},
-
-
-		getTags:function(){
-			return _tags.slice(0);
-		},
-
 
 		listMemberOf:function(types, category){
 
@@ -237,6 +250,11 @@ var NamedCategoryList = (function() {
 		getRootCategoryTagsData:function(){
 			return this.getProjectTagsData('_root');
 		},
+
+		getTags:function(){
+			return this.getProjectTagsData();
+		},
+
 		getProjectTagsData: function(category) {
 
 
