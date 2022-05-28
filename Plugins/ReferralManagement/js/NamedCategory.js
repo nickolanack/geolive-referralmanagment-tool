@@ -125,7 +125,10 @@ var NamedCategory = (function() {
 			var r=this.getRootTagData();
 
 			var filters=ProjectList.projectFilters();
-			filters = filters.reduce(function(acc,curr){ acc[curr.name]=curr},{});
+			filters = filters.reduce(function(acc, curr){ 
+				acc[curr.name]=curr;
+				return acc;
+			},{});
 
 			if(r.getMetadata&&r.getMetadata().appliesTo){
 				var appliestTo=r.getMetadata().appliesTo;
