@@ -32,16 +32,12 @@
                 ""
             ],
             "pluginPaths": [
-                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/php-core-map\/Plugins",
-                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/core-referralmanagment-tool\/Plugins",
                 ""
             ],
             "widgetPaths": [
-                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/php-core-map\/Widgets",
                 ""
             ],
             "modulePaths": [
-                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/php-core-map\/Modules",
                 ""
             ],
             "sandboxDomains": [
@@ -105,7 +101,7 @@
             "googleMapsVersion": "",
             "tileCachePath": "{front}\/..\/tiles",
             "layerDisplayFilterScript": "plugin.Maps.12.layerDisplayFilterScript.js",
-            "layerDisplayFormatScript": "",
+            "layerDisplayFormatScript": "plugin.Maps.12.layerDisplayFormatScript.js",
             "layerDisplayChildLayersScript": "",
             "formatMapitemScript": "plugin.Maps.12.formatMapitemScript.js",
             "featureUrlScript": ""
@@ -165,9 +161,7 @@
         "parameters": {
             "releaseServer": "http:\/\/release.geolive.ca",
             "releasePackage": "master",
-            "autoUpdate": false,
-            "composerPath": "\/usr\/bin\/composer",
-            "bowerPath": ""
+            "autoUpdate": false
         }
     },
     "plugin.24": {
@@ -195,8 +189,8 @@
                     "widget": "proponent"
                 }
             ],
-            "useRemoteServerUI": true,
-            "remoteServerUrl": "https:\/\/gct3.gather.geoforms.ca\/app\/nickolanack\/php-core-app\/core.php?task=TASK&format=ajax&json=JSON"
+            "useRemoteServerUI": false,
+            "remoteServerUrl": ""
         }
     },
     "plugin.28": {
@@ -271,7 +265,7 @@
         "instance": "Monolog",
         "parameters": {
             "enabled": false,
-            "logPath": "{front}\/..\/logs\/{domain}",
+            "logPath": "{front}\/..\/logs",
             "logToSentry": false
         }
     },
@@ -337,7 +331,6 @@
             "queueEmailDelay": "5",
             "exportSecret": "XXXX-XXXX",
             "datawarehousePaths": [
-                "\/srv\/gather_gis\/",
                 ""
             ],
             "customFormCss": ""
@@ -374,6 +367,11 @@
             "secret": "XXXX-XXXX",
             "voice": "Nicole"
         }
+    },
+    "plugin.50": {
+        "name": "Read Receipts",
+        "instance": "ReadReceipts",
+        "parameters": {}
     },
     "widget.33": {
         "name": "Attr Search Bar",
@@ -7922,14 +7920,6 @@
                         "modules": [
                             "singleProjectUsersDetail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.1.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "",
@@ -7945,7 +7935,7 @@
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "initModuleScript": "",
-                                    "formatModuleScript": "singleProjectUsersDetail.metadata.positions.content.modules.2.config.formatModuleScript.js",
+                                    "formatModuleScript": "singleProjectUsersDetail.metadata.positions.content.modules.1.config.formatModuleScript.js",
                                     "resolveItemScript": "return item;",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
@@ -7953,7 +7943,7 @@
                                     "targetName": "",
                                     "getItemListScript": "return item.getUsers();",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "singleProjectUsersDetail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "singleProjectUsersDetail.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
                                     "sortItemsScript": "",
@@ -7964,7 +7954,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.3.config.script.js",
+                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.2.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             },
@@ -7973,12 +7963,12 @@
                                 "config": {
                                     "className": "",
                                     "text": "<div class=\"section-title\"><span>Communities:<\/span><\/div>",
-                                    "template": "",
-                                    "templateVariablesScript": "",
-                                    "formatTextScript": "",
+                                    "template": "html.sharedCommunitiesIntro",
+                                    "templateVariablesScript": "{}",
+                                    "formatTextScript": "singleProjectUsersDetail.metadata.positions.content.modules.3.config.formatTextScript.js",
                                     "formatVariablesScript": "",
-                                    "ajaxRequestTemplate": false,
-                                    "identifier": "htmlLabel"
+                                    "ajaxRequestTemplate": true,
+                                    "identifier": "project-communities-intro"
                                 }
                             },
                             {
@@ -8003,7 +7993,7 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
-                                    "getItemListScript": "singleProjectUsersDetail.metadata.positions.content.modules.5.config.getItemListScript.js",
+                                    "getItemListScript": "singleProjectUsersDetail.metadata.positions.content.modules.4.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
                                     "formatListItemModuleScript": "return item;",
                                     "emptyNamedView": "emptyListView",
@@ -8016,7 +8006,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.6.config.script.js",
+                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.5.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
@@ -18290,16 +18280,16 @@
                             "documentProjectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 73,
-                            "y": 273
+                            "x": 226,
+                            "y": 355
                         },
                         "children": [
                             "documentProjectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 33,
-                                    "y": 486
+                                    "x": 186,
+                                    "y": 568
                                 }
                             },
                             {
@@ -18309,16 +18299,16 @@
                                     "documentProjectForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 614,
-                                    "y": 316
+                                    "x": 604,
+                                    "y": 306
                                 },
                                 "children": [
                                     "documentProjectForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 574,
-                                            "y": 493
+                                            "x": 564,
+                                            "y": 483
                                         }
                                     },
                                     {
@@ -18328,16 +18318,16 @@
                                             "documentProjectForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1089,
-                                            "y": 351
+                                            "x": 1079,
+                                            "y": 341
                                         },
                                         "children": [
                                             "documentProjectForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1049,
-                                                    "y": 602
+                                                    "x": 1039,
+                                                    "y": 592
                                                 }
                                             }
                                         ],
@@ -19144,16 +19134,16 @@
                             "tagForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 488,
-                            "y": 282
+                            "x": 468,
+                            "y": 262
                         },
                         "children": [
                             "tagForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 448,
-                                    "y": 483
+                                    "x": 428,
+                                    "y": 463
                                 }
                             }
                         ],
@@ -21276,16 +21266,16 @@
                             "documentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 226,
-                            "y": 282
+                            "x": 223,
+                            "y": 252
                         },
                         "children": [
                             "documentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 186,
-                                    "y": 570
+                                    "x": 183,
+                                    "y": 540
                                 }
                             },
                             {
@@ -21295,16 +21285,16 @@
                                     "documentForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 735,
-                                    "y": 316
+                                    "x": 715,
+                                    "y": 302
                                 },
                                 "children": [
                                     "documentForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 695,
-                                            "y": 492
+                                            "x": 675,
+                                            "y": 478
                                         }
                                     },
                                     {
@@ -21314,16 +21304,16 @@
                                             "documentForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1257,
-                                            "y": 347
+                                            "x": 1267,
+                                            "y": 357
                                         },
                                         "children": [
                                             "documentForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1217,
-                                                    "y": 513
+                                                    "x": 1227,
+                                                    "y": 523
                                                 }
                                             }
                                         ],
@@ -26141,16 +26131,16 @@
                             "menuLayoutForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 564,
-                            "y": 256
+                            "x": 554,
+                            "y": 246
                         },
                         "children": [
                             "menuLayoutForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 524,
-                                    "y": 422
+                                    "x": 514,
+                                    "y": 412
                                 }
                             }
                         ],
@@ -27226,23 +27216,9 @@
             "parameters": [
                 "mainMenuLayout.parameters.0.json"
             ],
-            "hello": "World",
+            "layout": [],
             "widgetTitle": "mainMenuLayout",
-            "readAccess": "public",
-            "layout": {
-                "dashboard": [],
-                "projects": [],
-                "collections": {
-                    "icon": "f1c0"
-                },
-                "datasets": {
-                    "icon": "f140"
-                },
-                "data warehouse": {
-                    "icon": "f0ae",
-                    "class": "show"
-                }
-            }
+            "readAccess": "public"
         }
     },
     "widget.484": {
