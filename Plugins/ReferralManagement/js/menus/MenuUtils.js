@@ -144,7 +144,7 @@ var MenuUtils = (function() {
 				return item.getMetadata().menu===menuName;
 			}
 
-			if(item.getCategory&&item.getCategory()){
+			if(item.getCategory&&item.getCategory() instanceof NamedCategory){
 				var root=item.getCategory().getRootTagData();
 				if(root.getMetadata&&root.getMetadata()&&root.getMetadata().menu){
 					return root.getMetadata().menu===menuName;
