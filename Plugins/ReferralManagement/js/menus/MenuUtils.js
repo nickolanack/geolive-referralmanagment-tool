@@ -119,15 +119,17 @@ var MenuUtils = (function() {
 		},
 
 		hasTagWithMenu:function(menuName){
+			var me=this;
 			return NamedCategoryList.getTags().filter(function(tag){
-				return MenuUtils.isCategoryItemWithMenu(tag, menuName);
+				return me.isCategoryItemWithMenu(tag, menuName);
 			}).length>0;
 		},
 
 
 		getTagWithMenu:function(menuName){
+			var me=this;
 			return NamedCategoryList.getTags().filter(function(tag){
-				return MenuUtils.isCategoryItemWithMenu(tag, menuName);
+				return me.isCategoryItemWithMenu(tag, menuName);
 			})[0];
 		},
 
