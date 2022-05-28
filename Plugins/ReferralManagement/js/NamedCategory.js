@@ -123,16 +123,20 @@ var NamedCategory = (function() {
 		appliesToItem:function(item){
 			var me=this;
 			var r=this.getRootTagData();
+
+			var filters=ProjectList.projectFilters();
+			filters = filters.reduce(function(acc,curr){ acc[curr.name]=curr},{});
+
 			if(r.getMetadata&&r.getMetadata().appliesTo){
 				var appliestTo=r.getMetadata().appliesTo;
-				if(ProjectList.projectFilters()[appliestTo]){
-					return ProjectList.projectFilters()[appliestTo].filterFn(item)
+				if(filters[appliestTo]){
+					return filters[appliestTo].filterFn(item)
 				}
 
 				if(appliestTo[0]=='!'){
 					appliestTo=appliestTo.substring(1);
-					if(ProjectList.projectFilters()[appliestTo]){
-						return !ProjectList.projectFilters()[appliestTo].filterFn(item);
+					if(filters[appliestTo]){
+						return !filters[appliestTo].filterFn(item);
 					}
 				}
 
