@@ -5,6 +5,8 @@ AppClient.authorize('write', {
 				//check access, bool.
 				if (access) {
 				    
+				    module.draw();
+				    
 					setTimeout(function(){
                         module.getElement().addClass('has-hidden-content hide');
                         var button=module.getElement().appendChild(new Element('button', {
