@@ -103,6 +103,11 @@ var NamedCategoryList = (function() {
 		},
 
 
+		getTags:function(){
+			return _tags.slice(0);
+		},
+
+
 		listMemberOf:function(types, category){
 
 			types=types.map(function(t){

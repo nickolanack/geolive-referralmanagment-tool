@@ -305,6 +305,34 @@ var ProjectList = (function() {
 		}
 	}
 
+	ProjectList.getCategoryFilter=function(type){
+
+		var category=NamedCategoryList.getTag(type);
+		var includeFilter=false;
+		if(category.getMetadata&&category.getMetadata().filter){
+			includeFilter=category.getMetadata().filter
+		}
+
+		return {
+			label: type,
+			name: type,
+			filterFn: function(a) {
+
+				if(includeFilter){
+					var result=ProjectList.ApplyMetaFilter(a, includeFilter, type);
+					if(typeof result=='boolean'){
+						return result;
+					}
+				}
+
+				return NamedCategoryList.listMemberOf(a.getProjectTypes(), type);
+			}
+		};
+
+
+
+	}
+
 
 	ProjectList.projectFilters = function() {
 
@@ -313,40 +341,13 @@ var ProjectList = (function() {
 		var opts = controller.getNavigationOptions();
 
 		var filterList = filters;
-		var getFilter = function(type) {
-
-
-			var category=NamedCategoryList.getTag(type);
-			var includeFilter=false;
-			if(category.getMetadata&&category.getMetadata().filter){
-				includeFilter=category.getMetadata().filter
-			}
-
-			return {
-				label: type,
-				name: type,
-				filterFn: function(a) {
-
-					if(includeFilter){
-						var result=ProjectList.ApplyMetaFilter(a, includeFilter, type);
-						if(typeof result=='boolean'){
-							return result;
-						}
-					}
-
-					return NamedCategoryList.listMemberOf(a.getProjectTypes(), type);
-				}
-			};
-
-
-		}
 
 		if (opts.filter) {
-			//return ([getFilter(opts.filter)]).concat(filters);
+			//return ([ProjectList.getCategoryFilter(opts.filter)]).concat(filters);
 		}
 
 		if (opts.filters) {
-			return (opts.filters.map(getFilter)).concat(filters);
+			return (opts.filters.map(ProjectList.getCategoryFilter)).concat(filters);
 		}
 
 

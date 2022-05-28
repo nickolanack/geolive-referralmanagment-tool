@@ -84,6 +84,14 @@ var MainNavigationMenu = new Class({
 						}
 					},
 					formatEl: function(li) {
+
+
+						if(MenuUtils.hasTagWithMenu('Data warehouse')){
+							Counters.addProjectListCounter(li, ProjectList.getCategoryFilter(MenuUtils.getTagWithMenu('Data warehouse')).filterFn);
+							return;
+
+						}
+
 						Counters.addProjectListCounter(li, function(p){
 							return p.isDataset();
 						});	
@@ -128,6 +136,14 @@ var MainNavigationMenu = new Class({
 						}
 					},
 					formatEl: function(li) {
+
+
+						if(MenuUtils.hasTagWithMenu('Datasets')){
+							Counters.addProjectListCounter(li, ProjectList.getCategoryFilter(MenuUtils.getTagWithMenu('Datasets')).filterFn);
+							return;
+
+						}
+
 						Counters.addProjectListCounter(li, function(p){
 							return p.isDataset();
 						});	

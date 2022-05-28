@@ -499,10 +499,7 @@ var TableHeader = (function() {
 				}
 			}
 
-
 			listEl.appendChild(header);
-
-
 
 		},
 
