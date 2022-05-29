@@ -27274,5 +27274,20 @@
             "contentTemplate": "module-html-sharedCommunitiesIntro-text.contentTemplate.html",
             "readAccess": "public"
         }
+    },
+    "widget.486": {
+        "name": "Stylesheet",
+        "instance": "CSS",
+        "parameters": {
+            "cacheable": false,
+            "link": false,
+            "sass": false,
+            "widgetTitle": "",
+            "target": "none",
+            "customCSS": "",
+            "sassParamters": [],
+            "formatSassParametersScript": "return $parameters;",
+            "useRemote": ""
+        }
     }
 }
