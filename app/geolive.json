@@ -27258,12 +27258,13 @@
             "cacheable": false,
             "link": false,
             "sass": false,
-            "widgetTitle": "",
-            "target": "none",
+            "widgetTitle": "siteSpecific",
+            "target": "siteSpecific",
             "customCSS": "",
             "sassParamters": [],
             "formatSassParametersScript": "return $parameters;",
-            "useRemote": ""
+            "useRemote": "",
+            "readAccess": "public"
         }
     }
 }
