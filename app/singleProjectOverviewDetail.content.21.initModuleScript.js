@@ -4,9 +4,7 @@ AppClient.authorize('write', {
     	type: item.getType()
 	}, function(access) {
 		//check access, bool.
-		if (access) {
-		    module.draw();
-		}else{
+		if (!access) {
 		    module.getElement().addClass('hidden')
 		}
 	});
