@@ -161,7 +161,7 @@ class Notifications {
 				array(
 					"data" => array('client' => $clientMeta),
 					"parameters" => array('client' => $clientMeta),
-					"text" => $clientMeta['can-create'] ? "Your account has been authorized. You can now add community content" : "You account is not authorized",
+					"text" => $clientMeta['can-create'] ? "Your account has been authorized. You can now add community content" : "Your account is not authorized",
 				)
 			);
 

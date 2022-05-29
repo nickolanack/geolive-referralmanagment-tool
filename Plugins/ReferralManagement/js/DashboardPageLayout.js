@@ -518,13 +518,23 @@ var DashboardPageLayout = (function() {
 				callback(content);
 		});
 
-	}).addLayout('singleProjectEditButtonsDetail', function(content){
+	}).addLayout('singleProjectEditButtonsDetail', function(content, options, callback){
 
 		content=layout.filterIdentifier(content, ['pending-buttons', 'button-report'], !layout.currentItem().isDataset());//'enableTasks');
 
 
+		var item=layout.currentItem();
+		AppClient.authorize('write', {
+				id: item.getId(),
+				type: item.getType()
+			}, function(access) {
 
-		return content;
+				content=layout.filterIdentifier(content, ['pending-buttons', 'button-report', 'button-edit', 'button-archive', 'button-delete'],  access);
+				callback(content);
+		});
+
+
+		
 
 	}).addLayout('proposalOverviewStatus', function(content){
 

@@ -57,46 +57,52 @@ var ItemArchive = (function() {
 		}
 
 
-		return new Element('button',{"html":item.isArchived()?"Unarchive":"Archive", "class":"primary-btn"+(item.isArchived()?" unarchive":" archive warn"), "events":{
-			"click":function(){
+		return new ElementModule('button',{
+
+			"html":item.isArchived()?"Unarchive":"Archive", 
+			"class":"primary-btn"+(item.isArchived()?" unarchive":" archive warn"), 
+			"events":{
+				"click":function(){
 		    
 		 
 
-		        var application=GatherDashboard.getApplication();
+			        var application=GatherDashboard.getApplication();
 
-		        (new UIModalDialog(application, "Do you want to "+(item.isArchived()?"unarchive":"archived")+" this item?", {
-					"formName": "dialogForm",
-					"formOptions": {
-						"template": "form",
-						"className": "alert-view",
-						"showCancel":true,
-						"labelForSubmit":"Yes",
-						"labelForCancel":"No",
-						"closable":true
-					}
-				})).on('complete', function(){
-					
+			        (new UIModalDialog(application, "Do you want to "+(item.isArchived()?"unarchive":"archived")+" this item?", {
+						"formName": "dialogForm",
+						"formOptions": {
+							"template": "form",
+							"className": "alert-view",
+							"showCancel":true,
+							"labelForSubmit":"Yes",
+							"labelForCancel":"No",
+							"closable":true
+						}
+					})).on('complete', function(){
+						
 
-                    var controller=application.getNamedValue('navigationController');
+	                    var controller=application.getNamedValue('navigationController');
 
-                    if(item.isArchived()){
-                        item.unarchive(function(){
-                            controller.navigateTo("Archive","Configuration"); 
-                        });
+	                    if(item.isArchived()){
+	                        item.unarchive(function(){
+	                            controller.navigateTo("Archive","Configuration"); 
+	                        });
 
-                        return;
-                        
-                    }
-                    item.archive(function(){
-                        if(application.getNamedValue("currentProject")===item){
-                            controller.navigateTo("Dashboard","Main");   
-                        }
-                    });
-                   
-				}).show();
+	                        return;
+	                        
+	                    }
+	                    item.archive(function(){
+	                        if(application.getNamedValue("currentProject")===item){
+	                            controller.navigateTo("Dashboard","Main");   
+	                        }
+	                    });
+	                   
+					}).show();
 
-			}
-		}});
+				}
+			},
+			"identifier":"button-archive"
+		});
 
 
 
