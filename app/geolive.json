@@ -2546,6 +2546,7 @@
             "sassParamters": [],
             "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
+            "saveParametersAsData": false,
             "readAccess": "public"
         }
     },
@@ -4339,6 +4340,7 @@
             },
             "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
+            "saveParametersAsData": false,
             "readAccess": "public"
         }
     },
@@ -6513,6 +6515,7 @@
             "sassParamters": [],
             "formatSassParametersScript": "sharedGeneratedStyles.formatSassParametersScript.js",
             "useRemote": "",
+            "saveParametersAsData": false,
             "readAccess": "public"
         }
     },
@@ -20040,6 +20043,7 @@
             },
             "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
+            "saveParametersAsData": false,
             "readAccess": "public"
         }
     },
@@ -20150,6 +20154,7 @@
             "sassParamters": [],
             "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
+            "saveParametersAsData": false,
             "readAccess": "public"
         }
     },
@@ -20290,6 +20295,7 @@
             },
             "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
+            "saveParametersAsData": false,
             "readAccess": "public"
         }
     },
@@ -20306,6 +20312,7 @@
             "sassParamters": [],
             "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
+            "saveParametersAsData": false,
             "readAccess": "public"
         }
     },
@@ -21165,6 +21172,7 @@
             "sassParamters": [],
             "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
+            "saveParametersAsData": false,
             "readAccess": "public"
         }
     },
@@ -22550,6 +22558,7 @@
             },
             "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
+            "saveParametersAsData": false,
             "readAccess": "public"
         }
     },
@@ -23761,6 +23770,7 @@
             "sassParamters": [],
             "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
+            "saveParametersAsData": false,
             "readAccess": "public"
         }
     },
@@ -27288,7 +27298,9 @@
             "sassParamters": [],
             "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
-            "readAccess": "public"
+            "saveParametersAsData": true,
+            "readAccess": "public",
+            "saveTemplateAsData": false
         }
     }
 }
