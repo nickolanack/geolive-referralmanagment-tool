@@ -96,6 +96,11 @@
 }
 
 
+.navigation-menu ul li[data-icon]:before {
+    content: attr(data-icon);
+}
+
+
 .inline-navigation-menu li.menu-user-configuration>button:before {
     content: "\f013";
     font-family: FontAwesome;

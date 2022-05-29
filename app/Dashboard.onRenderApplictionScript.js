@@ -119,8 +119,6 @@ IncludeJSBlock('
         GetWidget('fontAwesomeIcons')->display($targetInstance);   
     }
     
-    GetWidget('siteSpecific')->display($targetInstance);   
-    
     
 GetWidget('mainNotificationsDetail')->display($targetInstance); //proposal wizard from map
     
