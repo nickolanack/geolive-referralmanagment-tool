@@ -10,8 +10,8 @@ return new ModalFormButtonModule(application, item, {
          
             label: "Share",
             formName: "shareLink",
-            "class": "primary-btn share"
-
+            "class": "primary-btn share",
+            identifier:"button-share"
     
 });
 
