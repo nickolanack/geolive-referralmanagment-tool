@@ -3758,6 +3758,15 @@ button.inline-btn.with-no-tasks {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+.inline-form-list {
+    .ui-view.feed-sub-item, .ui-view.feed-sub-item:first-child {
+
+        margin: 10px 0;
+        background-color: rgba(0, 0, 0, 0.1);
+    
+    }
+}
+
 
 
 .feed-sub-item>*>*>div {
