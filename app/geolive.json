@@ -18301,16 +18301,16 @@
                             "documentProjectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 158,
-                            "y": 352
+                            "x": 168,
+                            "y": 308
                         },
                         "children": [
                             "documentProjectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 118,
-                                    "y": 565
+                                    "x": 128,
+                                    "y": 509
                                 }
                             },
                             {
@@ -18320,16 +18320,16 @@
                                     "documentProjectForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 724,
-                                    "y": 426
+                                    "x": 734,
+                                    "y": 436
                                 },
                                 "children": [
                                     "documentProjectForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 684,
-                                            "y": 603
+                                            "x": 694,
+                                            "y": 613
                                         }
                                     },
                                     {
@@ -18339,16 +18339,16 @@
                                             "documentProjectForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1199,
-                                            "y": 461
+                                            "x": 1209,
+                                            "y": 471
                                         },
                                         "children": [
                                             "documentProjectForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1159,
-                                                    "y": 699
+                                                    "x": 1169,
+                                                    "y": 709
                                                 }
                                             }
                                         ],
@@ -18594,29 +18594,6 @@
                                             }
                                         },
                                         {
-                                            "type": "plugin.Attributes.WizardTextAttribute",
-                                            "config": {
-                                                "attributeFields": [
-                                                    "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
-                                                ],
-                                                "className": "",
-                                                "label": "Organization",
-                                                "message": "Add organization name",
-                                                "lines": 1,
-                                                "maxChars": 0,
-                                                "mandatory": false,
-                                                "multiEntry": false,
-                                                "muliTemplate": "lines",
-                                                "multiMessage": "",
-                                                "formatter": "none",
-                                                "iconTint": "rgb(100, 149, 237)",
-                                                "autocomplete": true,
-                                                "inputOptions": "{}",
-                                                "onRenderTextFieldScript": "",
-                                                "formatValueScript": ""
-                                            }
-                                        },
-                                        {
                                             "type": "FormTextField",
                                             "config": {
                                                 "className": "",
@@ -18630,7 +18607,7 @@
                                                 "multiMessage": "add another value",
                                                 "formatter": "none",
                                                 "beforeRenderModuleScript": "",
-                                                "onRenderTextFieldScript": "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.onRenderTextFieldScript.js",
+                                                "onRenderTextFieldScript": "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.onRenderTextFieldScript.js",
                                                 "formatValueScript": "",
                                                 "getValueScript": " return \"\"; ",
                                                 "updateValueScript": " object.value=value ",
@@ -18642,7 +18619,7 @@
                                             "type": "plugin.Attributes.WizardTagCloud",
                                             "config": {
                                                 "attributeFields": [
-                                                    "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
+                                                    "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
                                                 "showLabel": false,
@@ -18654,7 +18631,7 @@
                                                 "selectedColor": "rgb(106, 124, 233)",
                                                 "shuffleTags": false,
                                                 "tags": "[\"Forestry\", \"Mining\", \"Energy\", \"Roads\"]",
-                                                "getItemTagsScript": "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.getItemTagsScript.js",
+                                                "getItemTagsScript": "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.getItemTagsScript.js",
                                                 "formatModule": "ProjectTagList.formatTagCloudModule(module, 'collection');"
                                             }
                                         },
@@ -18662,7 +18639,7 @@
                                             "type": "plugin.Attributes.WizardDescriptionAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.attributeFields.0.json"
+                                                    "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
                                                 ],
                                                 "className": "no-media hidden",
                                                 "label": "Collection description",
