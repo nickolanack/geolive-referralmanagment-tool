@@ -22954,16 +22954,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 354,
-                            "y": 260
+                            "x": 364,
+                            "y": 270
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 314,
-                                    "y": 511
+                                    "x": 324,
+                                    "y": 533
                                 }
                             }
                         ],
@@ -22988,7 +22988,7 @@
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
                                                 "validateValueScript": "return true;",
-                                                "formatElementScript": ""
+                                                "formatElementScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.1.config.formatElementScript.js"
                                             }
                                         },
                                         {
@@ -23140,7 +23140,7 @@
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.9.config.submitValueScript.js",
                                                 "validateValueScript": "",
-                                                "formatElementScript": ""
+                                                "formatElementScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.9.config.formatElementScript.js"
                                             }
                                         }
                                     ]
