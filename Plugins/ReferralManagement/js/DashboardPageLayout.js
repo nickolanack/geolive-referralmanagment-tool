@@ -432,7 +432,7 @@ var DashboardPageLayout = (function() {
 			//content.splice(2, 1);
 		}
 
-		if (!DashboardConfig.getValue('showLeftPanelPrimaryBtn')) {
+		if (!(DashboardConfig.getValue('showLeftPanelPrimaryBtn')&& ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isTeamMember())) {
 			content = content.filter(function(item) {
 				return (!(item && item.getIdentifier)) || item.getIdentifier() !== "primary-btns";
 			});
@@ -750,6 +750,11 @@ var DashboardPageLayout = (function() {
 			"Main": [{
 					html: "Users",
 					config: "enableUserProfiles"
+				},{
+					html: "Users",
+					condition: function() {
+						return ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isTeamMember()||AppClient.getUserType() == "admin";
+					}
 				}, {
 					html: ["Department", "Tags", "Themes", "Trash"],
 					config: "simplifiedMenu"
