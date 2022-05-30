@@ -18291,16 +18291,16 @@
                             "documentProjectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 226,
-                            "y": 355
+                            "x": 61,
+                            "y": 261
                         },
                         "children": [
                             "documentProjectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 186,
-                                    "y": 568
+                                    "x": 21,
+                                    "y": 474
                                 }
                             },
                             {
@@ -18310,16 +18310,16 @@
                                     "documentProjectForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 604,
-                                    "y": 306
+                                    "x": 562,
+                                    "y": 233
                                 },
                                 "children": [
                                     "documentProjectForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 564,
-                                            "y": 483
+                                            "x": 522,
+                                            "y": 410
                                         }
                                     },
                                     {
@@ -18329,16 +18329,16 @@
                                             "documentProjectForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1079,
-                                            "y": 341
+                                            "x": 1089,
+                                            "y": 351
                                         },
                                         "children": [
                                             "documentProjectForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1039,
-                                                    "y": 592
+                                                    "x": 1049,
+                                                    "y": 602
                                                 }
                                             }
                                         ],
@@ -18504,8 +18504,8 @@
                                                 {
                                                     "type": "UIListView",
                                                     "config": {
-                                                        "listClassName": "dataset-select",
-                                                        "className": "",
+                                                        "listClassName": "dataset-select inline-form-list",
+                                                        "className": "feed-sub-item",
                                                         "identifier": "",
                                                         "viewType": "view",
                                                         "namedView": "singleProjectListItemTableDetail",
