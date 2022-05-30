@@ -294,7 +294,11 @@ var NamedCategoryList = (function() {
 	});
 
 
-	NamedCategoryList.FormatTagCloudSelectionModule=function(mod){
+	NamedCategoryList.FormatTagCloudSelectionModule=function(mod, type){
+
+
+		mod.setLabel((type=='dataset'?'Dataset':ProjectList.NameForProjects())+' tags');
+
 
 		var application = ReferralManagementDashboard.getApplication();
 		
