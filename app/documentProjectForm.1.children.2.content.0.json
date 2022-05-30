@@ -3,11 +3,11 @@
     "config": {
         "className": "",
         "text": "<h2>Collection datasets<\/h2>",
-        "template": "",
-        "templateVariablesScript": "",
+        "template": "html.selectDatasetsHeading",
+        "templateVariablesScript": "{}",
         "formatTextScript": "",
         "formatVariablesScript": "",
-        "ajaxRequestTemplate": false,
+        "ajaxRequestTemplate": true,
         "identifier": "htmlLabel"
     }
 }
