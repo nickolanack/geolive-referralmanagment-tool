@@ -493,6 +493,10 @@ var ProjectList = (function() {
 
 		var buttons = [];
 
+		if(!ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isTeamMember()){
+			return buttons;
+		}
+
 
 		if ((!item) || item.getShowCreateBtn && item.getShowCreateBtn() === true) {
 
