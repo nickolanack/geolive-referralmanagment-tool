@@ -3,11 +3,11 @@
     "config": {
         "className": "",
         "text": "<h2>Dataset access<\/h2>",
-        "template": "",
-        "templateVariablesScript": "",
+        "template": "html.datasetAccess",
+        "templateVariablesScript": "{}",
         "formatTextScript": "",
         "formatVariablesScript": "",
-        "ajaxRequestTemplate": false,
+        "ajaxRequestTemplate": true,
         "identifier": "htmlLabel"
     }
 }
