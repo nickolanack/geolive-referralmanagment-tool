@@ -1,1 +1,1 @@
-return ReferralManagementDashboard.getProjectTags('collection');
+return ReferralManagementDashboard.getProjectTags();
