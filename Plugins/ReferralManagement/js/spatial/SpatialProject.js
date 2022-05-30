@@ -203,7 +203,6 @@ var SpatialProject = (function() {
 					}, options);
 
 
-
 				});
 			}
 
