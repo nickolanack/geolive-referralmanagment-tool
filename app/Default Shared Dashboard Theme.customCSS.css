@@ -5884,7 +5884,17 @@ span.navigation-menu.settings-menu {
   line-height: 55px; 
     
 }
-
+.dataset-select{
+    [data-col="name"] {
+        width: 200px;
+    }
+    [data-col="user"] {
+        width: 120px;
+    }
+    [data-col="type"] {
+        width: 120px;
+    }
+}
 
     
 button.form-btn.primary-btn.hide {
