@@ -27406,9 +27406,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
-            "saveTemplateAsData": false,
-            "contentTemplate": "<h2>Dataset access<\/h2>"
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "<h2>Dataset access<\/h2>",
+            "readAccess": "public"
         }
     },
     "widget.492": {
@@ -27420,9 +27421,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
-            "saveTemplateAsData": false,
-            "contentTemplate": "<h2>Dataset sharing<\/h2>"
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "<h2>Dataset sharing<\/h2>",
+            "readAccess": "public"
         }
     }
 }
