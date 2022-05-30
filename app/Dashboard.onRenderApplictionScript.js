@@ -39,6 +39,7 @@ GetWidget('dashboardLoader')->display($targetInstance); //proposal wizard from m
    
    GetWidget('emailVerificationForm')->display($targetInstance);
    GetWidget('userAboutDetail')->display($targetInstance);
+   GetWidget('userPrivacyDetail')->display($targetInstance);
    GetWidget('userForkDetail')->display($targetInstance);
    GetWidget('createDashboardForm')->display($targetInstance);
 
