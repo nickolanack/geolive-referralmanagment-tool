@@ -56,8 +56,15 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
 
 
             if(!$auth){
-                if(intval($item->user)<=0||(isset($item->metadata->iam)&&$item->metadata->iam=='gatherbot')){
+                if(intval($item->user)<=0))){
                     $minAccessLevel = 'lands-department-manager';
+                    $auth=Auth('memberof', $minAccessLevel, 'group');
+                }
+            }
+
+             if(!$auth){
+                if(intval($item->user)<=0||(isset($item->metadata->iam)&&$item->metadata->iam=='gatherbot')){
+                    $minAccessLevel = 'tribal-council';
                     $auth=Auth('memberof', $minAccessLevel, 'group');
                 }
             }
