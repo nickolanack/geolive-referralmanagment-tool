@@ -3,11 +3,11 @@
     "config": {
         "className": "",
         "text": "<h2>Dataset sharing<\/h2>",
-        "template": "",
-        "templateVariablesScript": "",
+        "template": "html.datasetSharing",
+        "templateVariablesScript": "{}",
         "formatTextScript": "",
         "formatVariablesScript": "",
-        "ajaxRequestTemplate": false,
+        "ajaxRequestTemplate": true,
         "identifier": "htmlLabel"
     }
 }
