@@ -133,19 +133,7 @@ var SpatialProject = (function() {
 			window.CurrentMapType = "MainMap";
 			window.GetSpatialFiles = function() {
 
-
-
-				var items = ProjectSelection.getProjects();
-				var list = [];
-
-				items.forEach(function(item) {
-
-					var spatial = me.ItemsSpatial(item);
-					list = list.concat(spatial);
-
-				});
-
-				return list;
+				return me.getSelectionLayers();
 
 			}
 
@@ -158,6 +146,9 @@ var SpatialProject = (function() {
 
 
 
+
+
+
 		InitCurrentProject: function(item) {
 
 
@@ -166,10 +157,19 @@ var SpatialProject = (function() {
 
 			window.CurrentMapType = "ProjectMap";
 			window.CurrentMapItem = item;
+			var me=this;
 			window.GetSpatialFiles = function() {
 
+				return me.getProjectLayers(item).concat(me.getSelectionLayers())
+				
+			}
 
-				var spatial = item.getSpatialDocuments();
+			return null;
+
+		},
+
+		getProjectLayers:function(item){
+			var spatial = item.getSpatialDocuments();
 
 				if (item.getProjectObjects) {
 					item.getProjectObjects().forEach(function(p) {
@@ -204,10 +204,21 @@ var SpatialProject = (function() {
 
 
 				});
-			}
+		},
 
-			return null;
+		getSelectionLayers:function(){
 
+			var items = ProjectSelection.getProjects();
+			var list = [];
+			var me=this;
+			items.forEach(function(item) {
+
+				var spatial = me.ItemsSpatial(item);
+				list = list.concat(spatial);
+
+			});
+
+			return list;
 		},
 
 		FormatListModulesScript:function(module, item){
