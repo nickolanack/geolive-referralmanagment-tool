@@ -2,7 +2,7 @@ if(AppClient.getUserType()==="guest"){
 		return null;
 	}
 
-return new ElementModulet('button',{
+return new ElementModule('button',{
     "html":"Download", 
     "identifier":"button-download",
     "style":"background-color: mediumseagreen;", 
