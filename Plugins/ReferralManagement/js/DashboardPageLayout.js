@@ -529,7 +529,7 @@ var DashboardPageLayout = (function() {
 				type: item.getType()
 			}, function(access) {
 
-				content=layout.filterIdentifier(content, ['pending-buttons', 'button-report', 'button-edit', 'button-archive', 'button-delete'],  access);
+				content=layout.filterIdentifier(content, ['pending-buttons', 'button-report', 'button-edit', 'button-archive', 'button-delete', 'button-share'],  access);
 				callback(content);
 		});
 
