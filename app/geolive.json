@@ -27279,5 +27279,19 @@
             "contentTemplate": "module-html-projectPermissionsHeading-text.contentTemplate.html",
             "readAccess": "public"
         }
+    },
+    "widget.489": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-aboutPage.text",
+            "target": "module.html-aboutPage.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "module-html-aboutPage-text.contentTemplate.html"
+        }
     }
 }
