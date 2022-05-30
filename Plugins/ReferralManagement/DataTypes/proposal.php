@@ -56,7 +56,7 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
 
 
             if(!$auth){
-                if(intval($item->user)<=0){
+                if(intval($item->user)<=0||(isset($item->metadata->iam)&&$item->metadata->iam=='gatherbot')){
                     $minAccessLevel = 'lands-department-manager';
                     $auth=Auth('memberof', $minAccessLevel, 'group');
                 }
