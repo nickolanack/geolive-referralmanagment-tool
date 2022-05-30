@@ -25768,17 +25768,9 @@
             "notifyViewer": false,
             "useRemote": "",
             "metadata": {
-                "positionList": [
-                    "title",
-                    "content",
-                    "footer",
-                    "menu"
-                ],
                 "positions": {
                     "title": {
-                        "modules": [
-                            "userPrivacyDetail.metadata.positions.title.modules.0.json"
-                        ]
+                        "modules": []
                     },
                     "content": {
                         "modules": [
@@ -25786,14 +25778,19 @@
                         ]
                     },
                     "footer": {
-                        "modules": [
-                            "userPrivacyDetail.metadata.positions.footer.modules.0.json"
-                        ]
+                        "modules": []
                     },
                     "menu": {
                         "modules": []
                     }
-                }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
             },
             "readAccess": "public"
         }

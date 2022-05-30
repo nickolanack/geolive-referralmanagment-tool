@@ -1,13 +1,13 @@
 {
-    "type": "DefaultDescription",
+    "type": "InlineHtml",
     "config": {
         "className": "",
-        "imageWidth": 300,
-        "imageHeight": 240,
-        "multiImageWidth": 100,
-        "multiImageHeight": 75,
-        "autoArrange": true,
-        "oneLine": true,
-        "maxChars": 0
+        "text": "",
+        "template": "html.userPrivacy",
+        "templateVariablesScript": "{}",
+        "formatTextScript": "",
+        "formatVariablesScript": "",
+        "ajaxRequestTemplate": true,
+        "identifier": "htmlLabel"
     }
 }
