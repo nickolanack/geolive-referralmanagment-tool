@@ -2,12 +2,12 @@
     "type": "InlineHtml",
     "config": {
         "className": "",
-        "text": "<h2>Dataset access<\/h2>",
-        "template": "html.datasetAccess",
-        "templateVariablesScript": "{}",
+        "text": "<h2>Dataset options<\/h2>",
+        "template": "",
+        "templateVariablesScript": "",
         "formatTextScript": "",
         "formatVariablesScript": "",
-        "ajaxRequestTemplate": true,
+        "ajaxRequestTemplate": false,
         "identifier": "htmlLabel"
     }
 }
