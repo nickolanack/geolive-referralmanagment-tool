@@ -27290,7 +27290,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
-            "saveTemplateAsData": true,
+            "saveTemplateAsData": false,
             "contentTemplate": "module-html-aboutPage-text.contentTemplate.html",
             "readAccess": "public"
         }
