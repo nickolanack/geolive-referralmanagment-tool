@@ -304,7 +304,7 @@ var NamedCategoryList = (function() {
 		
 			mod.runOnceOnLoad(function(){
 
-				if(AppClient.getUserType()=="guest"){
+				if(!ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin()){
 					return;
 				}
 
