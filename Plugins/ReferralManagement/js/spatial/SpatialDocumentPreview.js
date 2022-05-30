@@ -139,40 +139,7 @@ var SpatialDocumentPreview = (function() {
 
 				}).addEvent('click', function() {
 
-					var InlineProjectSelection=new Class_({
-						Extends:MockDataTypeItem,
-						hasProject:function(item){
-
-							return item.isBaseMapLayer()||ProjectSelection.hasProject(item);
-
-						},
-						canAddRemoveProject:function(item){
-							return !item.isBaseMapLayer();
-						},
-						addProject:function(p){
-
-							console.log('add selection');
-							console.log(p);
-
-							spatial=SpatialProject.ItemsSpatial(p);
-
-
-							ProjectSelection.addProject(p);
-
-							var newLayers=spatial.map(function(layerOpts, i) {
-								return createLayer(layerOpts, i+layers.length);
-							});
-
-							layers=layers.concat(newLayers);
-							positionAddLayerTile();
-
-						},
-						removeProject:function(p){
-
-							ProjectSelection.removeProject(p);
-
-						}
-					});
+					
 
 					var selection=new InlineProjectSelection({
 

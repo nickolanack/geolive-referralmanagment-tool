@@ -106,7 +106,7 @@ var ProjectSelection = (function() {
 		if(!DashboardConfig.getValue('enableProposals')){
 
 			module.getElement().appendChild(new Element('button', {
-				"html":"New "+ProjectList.NameForProject, 
+				"html":"New "+ProjectList.NameForProject(), 
 				"class":"primary-btn create", 
 				"events":{"click":function(){
 					var formName = DashboardConfig.getValue("leftPanelSecondaryBtnForm"); //"documentProjectForm";//"ProposalTemplate";

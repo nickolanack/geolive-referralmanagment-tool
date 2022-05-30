@@ -263,22 +263,22 @@ var SpatialProject = (function() {
 
 			var editBtn=null;
 			editBtn=new ElementModule('div', {
-					"class": "field-value-module inline btn",
-					html: '',
-					events: {
-						click: function() {
-							var lids=listItem.getMapLayerIds();
+				"class": "field-value-module inline btn",
+				html: '',
+				events: {
+					click: function() {
+						var lids=listItem.getMapLayerIds();
 
 
-							if(lids.length!=1){
-								return;
-							}
-
-							me.editLayer(me._map, me._map.getLayerManager().getLayer(lids[0]).getOptions());
-									
+						if(lids.length!=1){
+							return;
 						}
+
+						me.editLayer(me._map, me._map.getLayerManager().getLayer(lids[0]).getOptions());
+								
 					}
-				});
+				}
+			});
 
 			editBtn.appendChild(new Element('span',{"class":"btn inline-edit"}));
 			
@@ -299,6 +299,9 @@ var SpatialProject = (function() {
 						html: '',
 						events: {
 							click: function() {
+
+								//TODO list.getItem().removeProject
+
 								ProjectSelection.removeProject(listItem);
 								//uiview.parentUIView.redraw();
 
