@@ -18291,16 +18291,16 @@
                             "documentProjectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 121,
-                            "y": 321
+                            "x": 141,
+                            "y": 341
                         },
                         "children": [
                             "documentProjectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 81,
-                                    "y": 534
+                                    "x": 101,
+                                    "y": 554
                                 }
                             },
                             {
@@ -18310,16 +18310,16 @@
                                     "documentProjectForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 622,
-                                    "y": 293
+                                    "x": 642,
+                                    "y": 313
                                 },
                                 "children": [
                                     "documentProjectForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 582,
-                                            "y": 470
+                                            "x": 602,
+                                            "y": 490
                                         }
                                     },
                                     {
@@ -18329,16 +18329,16 @@
                                             "documentProjectForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1149,
-                                            "y": 411
+                                            "x": 1169,
+                                            "y": 431
                                         },
                                         "children": [
                                             "documentProjectForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1109,
-                                                    "y": 649
+                                                    "x": 1129,
+                                                    "y": 669
                                                 }
                                             }
                                         ],
@@ -18645,7 +18645,7 @@
                                                 "shuffleTags": false,
                                                 "tags": "[\"Forestry\", \"Mining\", \"Energy\", \"Roads\"]",
                                                 "getItemTagsScript": "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.getItemTagsScript.js",
-                                                "formatModule": "ProjectTagList.formatTagCloudModule(module, collection);"
+                                                "formatModule": "ProjectTagList.formatTagCloudModule(module, 'collection');"
                                             }
                                         },
                                         {
@@ -18668,7 +18668,7 @@
                                                 "showExpandInput": true,
                                                 "toolbarPosition": "bottom",
                                                 "textFormatScript": "",
-                                                "onRenderModuleFn": "",
+                                                "onRenderModuleFn": "module.setLabel(ProjectList.NameForProjects()+' description');",
                                                 "mediaIconTint": "rgb(100, 149, 237)"
                                             }
                                         }
