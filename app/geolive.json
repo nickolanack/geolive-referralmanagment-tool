@@ -18301,16 +18301,16 @@
                             "documentProjectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 123,
-                            "y": 323
+                            "x": 133,
+                            "y": 333
                         },
                         "children": [
                             "documentProjectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 83,
-                                    "y": 536
+                                    "x": 93,
+                                    "y": 546
                                 }
                             },
                             {
@@ -18320,16 +18320,16 @@
                                     "documentProjectForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 664,
-                                    "y": 366
+                                    "x": 674,
+                                    "y": 376
                                 },
                                 "children": [
                                     "documentProjectForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 624,
-                                            "y": 543
+                                            "x": 634,
+                                            "y": 553
                                         }
                                     },
                                     {
@@ -18339,16 +18339,16 @@
                                             "documentProjectForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1139,
-                                            "y": 401
+                                            "x": 1149,
+                                            "y": 411
                                         },
                                         "children": [
                                             "documentProjectForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1099,
-                                                    "y": 652
+                                                    "x": 1109,
+                                                    "y": 662
                                                 }
                                             }
                                         ],
@@ -18362,19 +18362,6 @@
                                                 "content": {
                                                     "modules": [
                                                         "documentProjectForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.0.json",
-                                                        {
-                                                            "type": "InlineHtml",
-                                                            "config": {
-                                                                "className": "",
-                                                                "text": "Who created the datasets contained in this collection?",
-                                                                "template": "",
-                                                                "templateVariablesScript": "",
-                                                                "formatTextScript": "",
-                                                                "formatVariablesScript": "",
-                                                                "ajaxRequestTemplate": false,
-                                                                "identifier": "htmlLabel"
-                                                            }
-                                                        },
                                                         {
                                                             "type": "FormBooleanField",
                                                             "config": {
@@ -18462,7 +18449,7 @@
                                                             "type": "plugin.Attributes.WizardTagCloud",
                                                             "config": {
                                                                 "attributeFields": [
-                                                                    "documentProjectForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
+                                                                    "documentProjectForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.7.config.attributeFields.0.json"
                                                                 ],
                                                                 "className": "",
                                                                 "showLabel": false,
@@ -18474,7 +18461,7 @@
                                                                 "selectedColor": "rgb(143, 188, 143)",
                                                                 "shuffleTags": false,
                                                                 "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
-                                                                "getItemTagsScript": "documentProjectForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.8.config.getItemTagsScript.js",
+                                                                "getItemTagsScript": "documentProjectForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.7.config.getItemTagsScript.js",
                                                                 "formatModule": "ProjectTeam.FormatTagCloudLanguageValues(module);\nmodule.runOnceOnLoad(function(){\nvar cats= Proposal.ListTerritories();\nif(cats.length==0){\n    module.getCloud().getElement().parentNode.setStyle(\"display\",\"none\");\n}\n});\n"
                                                             }
                                                         }
