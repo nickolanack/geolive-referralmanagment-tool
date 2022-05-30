@@ -419,14 +419,6 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {
     height: 55px;
     line-height: 55px;
 }
-
-
-.dataset-select .field-value-module.inline.tag-width {
-    display: inline-block;
-    margin-bottom: 18px;
-}
-
-
 a.pb-btn-close {
     background-image:none;
 }
@@ -1190,7 +1182,7 @@ button.primary-btn.nav-new-btn.view-selection:before{
     
     &.menu-main-projects {
         display: none;
-        &.menu-main-datasets, &.menu-main-collections, &.show{
+        &.menu-main-datasets, &.menu-main-collections{
             display:list-item;
         }
     }
@@ -1273,12 +1265,6 @@ button.primary-btn.nav-new-btn.view-selection:before{
 
 .navigation-menu li.menu-main-projects.menu-main-collections:before {
     content: "\f1b3";
-}
-
-.navigation-menu ul li[data-icon]:before, 
-.navigation-menu ul li.menu-main-collections[data-icon]:before,
-.navigation-menu ul li.menu-main-datasets[data-icon]:before {
-    content: attr(data-icon);
 }
 
 
