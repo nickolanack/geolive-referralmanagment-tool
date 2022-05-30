@@ -9779,7 +9779,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "",
-                                    "className": "",
+                                    "className": "user-name",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleUserListItemDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
                                     "formatElementScript": "singleUserListItemDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
@@ -9790,7 +9790,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "",
-                                    "className": "",
+                                    "className": "user-email",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleUserListItemDetail.metadata.positions.content.modules.2.config.fieldValueScript.js",
                                     "formatElementScript": ""
@@ -9801,7 +9801,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "",
-                                    "className": "",
+                                    "className": "user-community",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleUserListItemDetail.metadata.positions.content.modules.3.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-community');"
