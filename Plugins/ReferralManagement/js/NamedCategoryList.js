@@ -297,7 +297,7 @@ var NamedCategoryList = (function() {
 	NamedCategoryList.FormatTagCloudSelectionModule=function(mod, type){
 
 
-		mod.setLabel((type=='dataset'?'Dataset':ProjectList.NameForProjects())+' tags');
+		mod.setLabel((type=='dataset'?'Dataset':ProjectList.NameForProject())+' tags');
 
 
 		var application = ReferralManagementDashboard.getApplication();
