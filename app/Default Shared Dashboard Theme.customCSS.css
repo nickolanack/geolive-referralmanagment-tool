@@ -4,6 +4,12 @@
 
 
 
+.markdown:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
 body.body-overlayed>#viewControllerApp>div>div>.ui-view {
     filter: blur(5px) grayscale(1);
 }
@@ -25,6 +31,12 @@ button:focus {outline:0;}
 }
 
 
+[data-view="singleProjectEditButtonsDetail"]:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
 .content.hidden.markdown {
     display: none;
 }
@@ -37,7 +49,10 @@ button:focus {outline:0;}
 .field-value-module.inline.sortable {cursor: pointer;}
 
 
-
+.tag-width>span.field-value.is-longtext {
+    overflow: hidden;
+    vertical-align: middle;
+}
 
 
 span.notification-indicator:after {
@@ -3076,7 +3091,7 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {}
     }
 }
 
-.uitext-container.no-text, .boolean-field.checkbox-style, .inline-form-list .ui-view {
+.uitext-container.no-text, .boolean-field.checkbox-style, .inline-form-list>.ui-view {
     background: rgba(0,0,0,0.1);
     padding: 10px;
     box-sizing: border-box;
@@ -3099,11 +3114,11 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {}
     margin-top: 25px;    
 }
 
-.inline-form-list .ui-view {
+.inline-form-list>.ui-view {
     margin-right: 15px;
 }
 
-.inline-form-list .ui-view, .inline-form-list .ui-view:first-child {
+.inline-form-list>.ui-view, .inline-form-list>.ui-view:first-child {
     border: none;
 }
 
@@ -5422,12 +5437,17 @@ span.navigation-menu.settings-menu {
 
 
 .field-value-module.inline.sortable {
-    background-color: rgba(0,0,0,0.04);
+    font-weight:bold;
+    color:#545454;
     margin: 0px;
     display: inline-block;
     padding: 5px;
     box-sizing: border-box;
     border-radius: 6px;
+}
+
+.dark .field-value-module.inline.sortable {
+    color:#e0e0e2;
 }
 
 
@@ -5903,7 +5923,7 @@ button.form-btn.primary-btn.hide {
         color: #e0e0e2;
     }
     
-     .uitext-container.no-text, .boolean-field.checkbox-style,  .inline-form-list .ui-view{
+     .uitext-container.no-text, .boolean-field.checkbox-style,  .inline-form-list>.ui-view{
         margin:0;
         padding:0;
     }
@@ -5920,6 +5940,37 @@ button.inline-edit.top-right {
     top: 0;
     right: 0;
 }
+
+
+div.popover[data-with-view="reportSelectionView"]{
+    max-width:400px;
+}
+[data-view="reportSelectionView"]{
+
+    .ui-view {
+        clear: both;
+        display: inline-block;
+        width: 100%;
+        whitespace:nowrap;
+        min-width:350px;
+    }
+    
+    
+    
+    .primary-btn {
+        padding: 5px 12px;font-size: 13px;
+        
+    }
+    
+     .field-value-module {
+        display:inline-block;
+        margin: 10px;
+        padding: 2px;
+        font-size: 17px;
+        
+    }
+}
+
 
 
     
