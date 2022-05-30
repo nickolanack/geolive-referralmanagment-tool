@@ -121,7 +121,6 @@ IncludeJSBlock('
     
     GetWidget('siteSpecific')->display($targetInstance);   
     
-    
 GetWidget('mainNotificationsDetail')->display($targetInstance); //proposal wizard from map
     
 GetWidget('defaultPostDetail')->display($targetInstance);
