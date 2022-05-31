@@ -81,14 +81,20 @@ class FileExport{
 				            $name=preg_replace('/[^A-Za-z0-9_.\-]/', '_', $name);
 				            $this->zip->addFromString($name, (new \core\File())->read($realpath));
 
-				            $prjFile=str_replace('.shp', '.prj',  $realpath);
-				            if(stripos($realpath, '.shp')&&file_exists($prjFile)){
-				            	$prjName=basename($prjFile);
-				            	$prjName=preg_replace('/[^A-Za-z0-9_.\-]/', '_', $prjName);
 
-				            	 $this->zip->addFromString($prjName, (new \core\File())->read($prjFile));
+				            foreach(array('.prj', '.dbf') as $ext){
 
-				            }
+					            $extFile=str_replace('.shp',  $ext,  $realpath);
+					            if(stripos($realpath, '.shp')&&file_exists($extFile)){
+					            	$extName=basename($extFile);
+					            	$extName=preg_replace('/[^A-Za-z0-9_.\-]/', '_', $extName);
+
+					            	 $this->zip->addFromString($extName, (new \core\File())->read($extFile));
+
+					            }
+
+					        }
+				           
 
 				    		//TODO: add related files;
 
