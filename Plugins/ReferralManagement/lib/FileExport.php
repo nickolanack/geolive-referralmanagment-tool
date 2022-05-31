@@ -79,6 +79,12 @@ class FileExport{
 				            $name=basename($file);
 				            $this->zip->addFromString($name, (new \core\File())->read($realpath));
 
+				            $prjFile=str_replace('.shp', '.prj',  $realpath);
+				            if(stripos($realpath, '.shp')&&file_exists($prjFile)){
+				            	 $this->zip->addFromString(basename($prjFile), (new \core\File())->read($prjFile));
+
+				            }
+
 				    		//TODO: add related files;
 
 				        }else{
