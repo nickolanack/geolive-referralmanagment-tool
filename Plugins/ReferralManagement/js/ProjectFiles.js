@@ -476,7 +476,7 @@ var ProjectFiles = (function() {
 
 						me.addDropTarget(module, project, {
 							moduleClass:'documents',
-							fileTypes:["document"],
+							fileTypes:["document", "image", "audio", "video"],
 							targetClass:'drop-documents',
 							method:'addAdditionalDocument'
 						});
