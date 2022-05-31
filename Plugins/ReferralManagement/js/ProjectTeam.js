@@ -232,7 +232,7 @@ var ProjectTeam = (function() {
 
 
 				resp.results.sort(function(a, b){
-					return b.modifiedDateTimestamp-a.modifiedDateTimestamp;
+					return a.modifiedDateTimestamp-b.modifiedDateTimestamp;
 				}).forEach(function(result) {
 					me._addProject(result);
 				});
