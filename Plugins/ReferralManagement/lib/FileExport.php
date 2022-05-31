@@ -77,11 +77,16 @@ class FileExport{
 		    			$realpath=realpath($dir.'/'.$file);
 				        if(file_exists($realpath)){
 				            $name=basename($file);
+
+				            $name=preg_replace('/[^A-Za-z0-9_.\-]/', '_', $name);
 				            $this->zip->addFromString($name, (new \core\File())->read($realpath));
 
 				            $prjFile=str_replace('.shp', '.prj',  $realpath);
 				            if(stripos($realpath, '.shp')&&file_exists($prjFile)){
-				            	 $this->zip->addFromString(basename($prjFile), (new \core\File())->read($prjFile));
+				            	$prjName=basename($prjFile);
+				            	$prjName=preg_replace('/[^A-Za-z0-9_.\-]/', '_', $prjName);
+
+				            	 $this->zip->addFromString($prjName, (new \core\File())->read($prjFile));
 
 				            }
 
