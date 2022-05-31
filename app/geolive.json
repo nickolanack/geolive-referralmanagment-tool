@@ -12507,12 +12507,12 @@
             "metadata": {
                 "title": "proposalAttributes",
                 "_tableDiagramState": {
-                    "x": 298,
-                    "y": 254
+                    "x": 322,
+                    "y": 275
                 },
                 "_diagramState": {
-                    "x": 298,
-                    "y": 254
+                    "x": 322,
+                    "y": 275
                 },
                 "appliesTo": [
                     "proposal"
@@ -13227,8 +13227,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -13931,8 +13931,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -14019,8 +14019,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -14107,8 +14107,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -14166,6 +14166,50 @@
                         "editability": "registered",
                         "searchability": "public",
                         "allowMultiple": true,
+                        "fieldType": "text",
+                        "fieldTextOptions": {
+                            "textType": "input",
+                            "inputOptions": {
+                                "buildAutocomplete": false,
+                                "requireModeration": false,
+                                "limitMaxChars": 0,
+                                "limitMaxWords": 0,
+                                "allowHtml": false,
+                                "allowMedia": true,
+                                "allowLinks": true
+                            },
+                            "listOptions": {
+                                "takeSugesstions": true,
+                                "buildTree": false,
+                                "iconize": false,
+                                "colorize": false
+                            }
+                        },
+                        "fieldNumberOptions": {
+                            "precision": 0,
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
+                        },
+                        "fieldBooleanOptions": {
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
+                        "was": "",
+                        "title": "accessLevel",
+                        "label": "accessLevel",
+                        "description": "",
+                        "icon": [],
+                        "color": "rgb(undefined, undefined, undefined)",
+                        "visibility": "public",
+                        "editability": "registered",
+                        "searchability": "public",
+                        "allowMultiple": false,
                         "fieldType": "text",
                         "fieldTextOptions": {
                             "textType": "input",
@@ -21244,8 +21288,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 5,
-                    "y": 191
+                    "x": -3,
+                    "y": 251
                 },
                 "children": [
                     "documentForm.metadata.children.0.json",
@@ -21256,16 +21300,16 @@
                             "documentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 236,
-                            "y": 292
+                            "x": 133,
+                            "y": 164
                         },
                         "children": [
                             "documentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 196,
-                                    "y": 580
+                                    "x": 93,
+                                    "y": 452
                                 }
                             },
                             {
@@ -21275,16 +21319,16 @@
                                     "documentForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 745,
-                                    "y": 326
+                                    "x": 619,
+                                    "y": 212
                                 },
                                 "children": [
                                     "documentForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 705,
-                                            "y": 502
+                                            "x": 579,
+                                            "y": 400
                                         }
                                     },
                                     {
@@ -21294,16 +21338,16 @@
                                             "documentForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1267,
-                                            "y": 357
+                                            "x": 1317,
+                                            "y": 407
                                         },
                                         "children": [
                                             "documentForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1227,
-                                                    "y": 523
+                                                    "x": 1277,
+                                                    "y": 573
                                                 }
                                             }
                                         ],
@@ -21408,6 +21452,26 @@
                                                         "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
                                                         "getItemTagsScript": "documentForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.2.config.getItemTagsScript.js",
                                                         "formatModule": " var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());\n if (!(user.isSiteAdmin())) {\n    module.getElement().setStyle('display', 'none');\n }"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "plugin.Attributes.WizardTagCloud",
+                                                    "config": {
+                                                        "attributeFields": [
+                                                            "documentForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
+                                                        ],
+                                                        "className": "",
+                                                        "showLabel": true,
+                                                        "showAddWord": false,
+                                                        "label": "Access",
+                                                        "addWordPlaceholder": "add a keyword",
+                                                        "fontColor": "rgb(0, 0, 0)",
+                                                        "hoverColor": "rgb(143, 188, 143)",
+                                                        "selectedColor": "rgb(143, 188, 143)",
+                                                        "shuffleTags": false,
+                                                        "tags": "[\n    \"Public\",\n    \"Private\"\n]",
+                                                        "getItemTagsScript": "return defaultTags;",
+                                                        "formatModule": ""
                                                     }
                                                 }
                                             ]
@@ -21552,7 +21616,7 @@
                                                 "iconTint": "rgb(100, 149, 237)",
                                                 "autocomplete": true,
                                                 "inputOptions": "{}",
-                                                "onRenderTextFieldScript": "",
+                                                "onRenderTextFieldScript": "documentForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.onRenderTextFieldScript.js",
                                                 "formatValueScript": ""
                                             }
                                         },
@@ -21586,7 +21650,7 @@
                                                     "documentForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
-                                                "label": "Originator",
+                                                "label": "Creator",
                                                 "message": "",
                                                 "lines": 1,
                                                 "maxChars": 0,
@@ -21621,7 +21685,7 @@
                                                 "iconTint": "rgb(100, 149, 237)",
                                                 "autocomplete": true,
                                                 "inputOptions": "{}",
-                                                "onRenderTextFieldScript": "",
+                                                "onRenderTextFieldScript": "documentForm.metadata.children.1.builderMetadata.positions.content.modules.9.config.onRenderTextFieldScript.js",
                                                 "formatValueScript": ""
                                             }
                                         },
@@ -21644,7 +21708,7 @@
                                                 "iconTint": "rgb(100, 149, 237)",
                                                 "autocomplete": true,
                                                 "inputOptions": "{}",
-                                                "onRenderTextFieldScript": "",
+                                                "onRenderTextFieldScript": "documentForm.metadata.children.1.builderMetadata.positions.content.modules.10.config.onRenderTextFieldScript.js",
                                                 "formatValueScript": ""
                                             }
                                         },
@@ -27330,6 +27394,36 @@
             "parseMarkdown": true,
             "saveTemplateAsData": true,
             "contentTemplate": "#Privacy",
+            "readAccess": "public"
+        }
+    },
+    "widget.491": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-datasetAccess.text",
+            "target": "module.html-datasetAccess.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "<h2>Dataset access<\/h2>",
+            "readAccess": "public"
+        }
+    },
+    "widget.492": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-datasetSharing.text",
+            "target": "module.html-datasetSharing.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "<h2>Dataset sharing<\/h2>",
             "readAccess": "public"
         }
     }
