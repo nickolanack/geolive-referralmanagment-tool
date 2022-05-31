@@ -232,7 +232,7 @@ var ProjectTeam = (function() {
 
 
 				resp.results.sort(function(a, b){
-					return b.createdDate.localeCompare(a.createdDate);
+					return b.modifiedDateTimestamp-a.modifiedDateTimestamp;
 				}).forEach(function(result) {
 					me._addProject(result);
 				});
