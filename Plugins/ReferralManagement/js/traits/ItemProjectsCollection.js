@@ -147,7 +147,9 @@ var ItemProjectsCollection = (function(){
 
 
 	    getProjects:function(){
-	    	return (this._projects||[]).slice(0)
+	    	return (this._projects||[]).slice(0).filter(function(p){
+	    		return (!p.isActive)||p.isActive();
+	    	});
 	    },
 
 	    getProjectObjects:function(){

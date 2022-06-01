@@ -319,6 +319,12 @@ var NamedCategory = (function() {
 
 
 	NamedCategory.CreateRootCategoryButtons = function(application, item) {
+
+
+		//var canAddRootCats=true;
+		//NamedCategoryList get roots, foreach, if disableNewCategories
+
+
 		return [new ModalFormButtonModule(application, NamedCategory.CreateNewCategory(""), {
 
 			label: "Add New Category",
