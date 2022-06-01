@@ -20,7 +20,7 @@
             "CSSInlineObfuscationEnabled": false,
             "PHPDebugEnabled": true,
             "JSDebugEnabled": false,
-            "CachingEnabled": true,
+            "CachingEnabled": false,
             "PrettyPrintJson": true,
             "JSCacheObfuscationEnabled": false,
             "phase": "production",
@@ -32,12 +32,16 @@
                 ""
             ],
             "pluginPaths": [
+                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/php-core-map\/Plugins",
+                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/core-referralmanagment-tool\/Plugins",
                 ""
             ],
             "widgetPaths": [
+                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/php-core-map\/Widgets",
                 ""
             ],
             "modulePaths": [
+                "\/var\/www\/html\/app\/nickolanack\/php-core-app\/..\/php-core-map\/Modules",
                 ""
             ],
             "sandboxDomains": [
@@ -84,7 +88,7 @@
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/BKb_%5BImAgE%5D_%5BG%5D_SV9_QQI.png"
             ],
             "mime-document-pdf": [
-                "uploads-tla-o-qui-aht.geoforms.ca\/user_files_1\/Uploads\/[G]_kYJ_HiB_[ImAgE]_DAO.png"
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/gather.stsailes.com\/1\/Uploads\/%5BImAgE%5D_mUo_%5BG%5D_1g_qO6.png"
             ],
             "mime-document-doc": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/tla-o-qui-aht.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_TOc_KS7_dxQ_%5BG%5D.png"
@@ -101,7 +105,7 @@
             "googleMapsVersion": "",
             "tileCachePath": "{front}\/..\/tiles",
             "layerDisplayFilterScript": "plugin.Maps.12.layerDisplayFilterScript.js",
-            "layerDisplayFormatScript": "plugin.Maps.12.layerDisplayFormatScript.js",
+            "layerDisplayFormatScript": "",
             "layerDisplayChildLayersScript": "",
             "formatMapitemScript": "plugin.Maps.12.formatMapitemScript.js",
             "featureUrlScript": ""
@@ -161,7 +165,9 @@
         "parameters": {
             "releaseServer": "http:\/\/release.geolive.ca",
             "releasePackage": "master",
-            "autoUpdate": false
+            "autoUpdate": false,
+            "composerPath": "\/usr\/bin\/composer",
+            "bowerPath": ""
         }
     },
     "plugin.24": {
@@ -189,8 +195,8 @@
                     "widget": "proponent"
                 }
             ],
-            "useRemoteServerUI": false,
-            "remoteServerUrl": ""
+            "useRemoteServerUI": true,
+            "remoteServerUrl": "https:\/\/gct3.gather.geoforms.ca\/app\/nickolanack\/php-core-app\/core.php?task=TASK&format=ajax&json=JSON"
         }
     },
     "plugin.28": {
@@ -265,7 +271,7 @@
         "instance": "Monolog",
         "parameters": {
             "enabled": false,
-            "logPath": "{front}\/..\/logs",
+            "logPath": "{front}\/..\/logs\/{domain}",
             "logToSentry": false
         }
     },
@@ -331,6 +337,7 @@
             "queueEmailDelay": "5",
             "exportSecret": "XXXX-XXXX",
             "datawarehousePaths": [
+                "\/srv\/gather_gis\/",
                 ""
             ],
             "customFormCss": ""
@@ -367,11 +374,6 @@
             "secret": "XXXX-XXXX",
             "voice": "Nicole"
         }
-    },
-    "plugin.50": {
-        "name": "Read Receipts",
-        "instance": "ReadReceipts",
-        "parameters": {}
     },
     "widget.33": {
         "name": "Attr Search Bar",
@@ -7923,6 +7925,14 @@
                         "modules": [
                             "singleProjectUsersDetail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "",
@@ -7938,7 +7948,7 @@
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "initModuleScript": "",
-                                    "formatModuleScript": "singleProjectUsersDetail.metadata.positions.content.modules.1.config.formatModuleScript.js",
+                                    "formatModuleScript": "singleProjectUsersDetail.metadata.positions.content.modules.2.config.formatModuleScript.js",
                                     "resolveItemScript": "return item;",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
@@ -7946,7 +7956,7 @@
                                     "targetName": "",
                                     "getItemListScript": "return item.getUsers();",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "singleProjectUsersDetail.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "singleProjectUsersDetail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
                                     "sortItemsScript": "",
@@ -7957,7 +7967,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.2.config.script.js",
+                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.3.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             },
@@ -7966,12 +7976,12 @@
                                 "config": {
                                     "className": "",
                                     "text": "<div class=\"section-title\"><span>Communities:<\/span><\/div>",
-                                    "template": "html.sharedCommunitiesIntro",
-                                    "templateVariablesScript": "{}",
-                                    "formatTextScript": "singleProjectUsersDetail.metadata.positions.content.modules.3.config.formatTextScript.js",
+                                    "template": "",
+                                    "templateVariablesScript": "",
+                                    "formatTextScript": "",
                                     "formatVariablesScript": "",
-                                    "ajaxRequestTemplate": true,
-                                    "identifier": "project-communities-intro"
+                                    "ajaxRequestTemplate": false,
+                                    "identifier": "htmlLabel"
                                 }
                             },
                             {
@@ -7996,7 +8006,7 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
-                                    "getItemListScript": "singleProjectUsersDetail.metadata.positions.content.modules.4.config.getItemListScript.js",
+                                    "getItemListScript": "singleProjectUsersDetail.metadata.positions.content.modules.5.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
                                     "formatListItemModuleScript": "return item;",
                                     "emptyNamedView": "emptyListView",
@@ -8009,7 +8019,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.5.config.script.js",
+                                    "script": "singleProjectUsersDetail.metadata.positions.content.modules.6.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
@@ -9851,8 +9861,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 34,
-                    "y": 172
+                    "x": 199,
+                    "y": 153
                 },
                 "children": [
                     "userSelectionForm.metadata.children.0.json",
@@ -9863,16 +9873,16 @@
                             "userSelectionForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 328,
-                            "y": 460
+                            "x": 573,
+                            "y": 335
                         },
                         "children": [
                             "userSelectionForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 288,
-                                    "y": 626
+                                    "x": 533,
+                                    "y": 501
                                 }
                             }
                         ],
@@ -18323,8 +18333,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -51,
-                    "y": 741
+                    "x": -18,
+                    "y": 877
                 },
                 "children": [
                     "documentProjectForm.metadata.children.0.json",
@@ -18335,16 +18345,16 @@
                             "documentProjectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 171,
-                            "y": 371
+                            "x": 178,
+                            "y": 318
                         },
                         "children": [
                             "documentProjectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 131,
-                                    "y": 572
+                                    "x": 138,
+                                    "y": 519
                                 }
                             },
                             {
@@ -18354,16 +18364,16 @@
                                     "documentProjectForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 642,
-                                    "y": 191
+                                    "x": 744,
+                                    "y": 446
                                 },
                                 "children": [
                                     "documentProjectForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 602,
-                                            "y": 368
+                                            "x": 704,
+                                            "y": 623
                                         }
                                     },
                                     {
@@ -18373,16 +18383,16 @@
                                             "documentProjectForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1124,
-                                            "y": 365
+                                            "x": 1219,
+                                            "y": 481
                                         },
                                         "children": [
                                             "documentProjectForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1084,
-                                                    "y": 603
+                                                    "x": 1179,
+                                                    "y": 719
                                                 }
                                             }
                                         ],
@@ -19153,16 +19163,16 @@
                             "tagForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 468,
-                            "y": 262
+                            "x": 488,
+                            "y": 282
                         },
                         "children": [
                             "tagForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 428,
-                                    "y": 463
+                                    "x": 448,
+                                    "y": 483
                                 }
                             }
                         ],
@@ -21278,8 +21288,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 5,
-                    "y": 191
+                    "x": -3,
+                    "y": 251
                 },
                 "children": [
                     "documentForm.metadata.children.0.json",
@@ -21290,16 +21300,16 @@
                             "documentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 293,
-                            "y": 322
+                            "x": 143,
+                            "y": 174
                         },
                         "children": [
                             "documentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 253,
-                                    "y": 610
+                                    "x": 103,
+                                    "y": 462
                                 }
                             },
                             {
@@ -21309,16 +21319,16 @@
                                     "documentForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 785,
-                                    "y": 372
+                                    "x": 582,
+                                    "y": 131
                                 },
                                 "children": [
                                     "documentForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 745,
-                                            "y": 560
+                                            "x": 542,
+                                            "y": 319
                                         }
                                     },
                                     {
@@ -21328,16 +21338,16 @@
                                             "documentForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1337,
-                                            "y": 427
+                                            "x": 1327,
+                                            "y": 417
                                         },
                                         "children": [
                                             "documentForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1297,
-                                                    "y": 593
+                                                    "x": 1287,
+                                                    "y": 583
                                                 }
                                             }
                                         ],
@@ -21441,7 +21451,7 @@
                                                         "shuffleTags": false,
                                                         "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
                                                         "getItemTagsScript": "documentForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.2.config.getItemTagsScript.js",
-                                                        "formatModule": " var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());\n if (!(user.isSiteAdmin())) {\n    module.getElement().setStyle('display', 'none');\n }\n \n module.getElement().setStyle('display', 'none');"
+                                                        "formatModule": " var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());\n if (!(user.isSiteAdmin())) {\n    module.getElement().setStyle('display', 'none');\n }\n module.getElement().setStyle('display', 'none');"
                                                     }
                                                 },
                                                 {
@@ -21451,7 +21461,7 @@
                                                             "documentForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
                                                         ],
                                                         "className": "",
-                                                        "showLabel": false,
+                                                        "showLabel": true,
                                                         "showAddWord": false,
                                                         "label": "Access",
                                                         "addWordPlaceholder": "add a keyword",
@@ -22996,8 +23006,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 12,
-                    "y": 129
+                    "x": 39,
+                    "y": 140
                 },
                 "children": [
                     "projectLayerSettings.metadata.children.0.json",
@@ -23008,16 +23018,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 354,
-                            "y": 260
+                            "x": 308,
+                            "y": 200
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 314,
-                                    "y": 511
+                                    "x": 268,
+                                    "y": 463
                                 }
                             }
                         ],
@@ -23042,7 +23052,7 @@
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
                                                 "validateValueScript": "return true;",
-                                                "formatElementScript": ""
+                                                "formatElementScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.1.config.formatElementScript.js"
                                             }
                                         },
                                         {
@@ -23194,7 +23204,15 @@
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.9.config.submitValueScript.js",
                                                 "validateValueScript": "",
-                                                "formatElementScript": ""
+                                                "formatElementScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.9.config.formatElementScript.js"
+                                            }
+                                        },
+                                        {
+                                            "type": "WizardScriptElement",
+                                            "config": {
+                                                "name": "My Custom Script",
+                                                "script": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.10.config.script.js",
+                                                "description": "Info about my custom script"
                                             }
                                         }
                                     ]
@@ -26174,16 +26192,16 @@
                             "menuLayoutForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 554,
-                            "y": 246
+                            "x": 564,
+                            "y": 256
                         },
                         "children": [
                             "menuLayoutForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 514,
-                                    "y": 412
+                                    "x": 524,
+                                    "y": 422
                                 }
                             }
                         ],
@@ -27259,9 +27277,23 @@
             "parameters": [
                 "mainMenuLayout.parameters.0.json"
             ],
-            "layout": [],
+            "hello": "World",
             "widgetTitle": "mainMenuLayout",
-            "readAccess": "public"
+            "readAccess": "public",
+            "layout": {
+                "dashboard": [],
+                "projects": [],
+                "collections": {
+                    "icon": "f1c0"
+                },
+                "datasets": {
+                    "icon": "f140"
+                },
+                "data warehouse": {
+                    "icon": "f0ae",
+                    "class": "show"
+                }
+            }
         }
     },
     "widget.484": {
@@ -27303,12 +27335,14 @@
             "sass": true,
             "widgetTitle": "siteSpecific",
             "target": "siteSpecific",
-            "customCSS": "siteSpecific.customCSS.css",
+            "customCSS": ".hello-world{}",
             "sassParamters": [],
             "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
             "saveAsData": true,
-            "readAccess": "public"
+            "saveParametersAsData": true,
+            "readAccess": "public",
+            "saveTemplateAsData": false
         }
     },
     "widget.487": {
@@ -27380,9 +27414,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
-            "saveTemplateAsData": false,
-            "contentTemplate": "<h2>Dataset options<\/h2>"
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "<h2>Dataset access<\/h2>",
+            "readAccess": "public"
         }
     },
     "widget.492": {
@@ -27394,9 +27429,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
-            "saveTemplateAsData": false,
-            "contentTemplate": "<h2>Dataset sharing<\/h2>"
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "<h2>Dataset sharing<\/h2>",
+            "readAccess": "public"
         }
     }
 }
