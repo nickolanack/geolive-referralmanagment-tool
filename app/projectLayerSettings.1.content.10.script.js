@@ -1,5 +1,5 @@
 (new AjaxControlQuery(CoreAjaxUrlRoot, "get_attributes_for_document_item", {
-		'plugin': "Maps",
+		"widget":"kmlDocumentRenderer",
 		'item': 0,
 		'document':item.getUrl()
 	})).addEvent('success',function(response){
@@ -8,7 +8,7 @@
 	
 	
 (new AjaxControlQuery(CoreAjaxUrlRoot, "get_attributes_info_for_document", {
-		'plugin': "Maps",
+		"widget":"kmlDocumentRenderer",
 		'document':item.getUrl()
 	})).addEvent('success',function(response){
 
