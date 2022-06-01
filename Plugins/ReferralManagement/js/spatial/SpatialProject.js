@@ -383,7 +383,12 @@ var SpatialProject = (function() {
                     fillOpacity:0.5,
                     lineWidth:1,
                     description:"",
+
                 };
+
+                if(layerObject.url){
+                	data.url=layerObject.url;
+                }
 
                 if(layerObject.projectAttributes&&layerObject.projectAttributes.metadata){
                     data=ObjectAppend_(data, layerObject.projectAttributes.metadata);
