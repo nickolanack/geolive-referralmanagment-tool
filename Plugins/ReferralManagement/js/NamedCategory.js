@@ -350,7 +350,7 @@ var NamedCategory = (function() {
 
 		}), new ModalFormButtonModule(application, NamedCategory.CreateNewCategory(item.getCategoryForChildren()), {
 
-			label: "Add " + item.getName().capitalize() + " Tag",
+			label: "Add " + item.getName().capitalize() + " Theme",
 			formOptions: {
 				template: "form"
 			},
