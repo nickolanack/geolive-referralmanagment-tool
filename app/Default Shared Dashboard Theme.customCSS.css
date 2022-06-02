@@ -3812,6 +3812,28 @@ button.inline-btn.with-no-tasks {
     background-color: aquamarine;
 }
 
+[data-view="splitProjectDetail"] div.field-value-module.inline[data-col="priority"] {
+    
+    text-align: center;
+    
+    
+    .priority-indicator {
+        float: unset;
+        
+        &.priority-high {
+            color: #dc153c;
+        }
+        &.priority-medium {
+            color: #f0e68c;
+        }
+        &.priority-low {
+            color: #80ffd4;
+        }
+    }
+    
+    
+}
+
 
 span.SearchModule.search-container {
     display: none;
