@@ -28,7 +28,7 @@ var ItemPriority=(function(){
 	ItemPriority.CreatePriorityIndicator=function(item){
 
 
-		 var el=new Element('div', {"class":"priority-indicator "+(item.isPriorityTask()?"priority-"+item.getPriority():""), 
+		 var el=new Element('div', {"class":"priority-indicator "+(item.getPriorityNumber()>=0?"priority-"+item.getPriority():""), 
 		    events:{click:function(e){
 		        e.stop();  
 		    }}
