@@ -89,7 +89,9 @@ var ProjectSelection = (function() {
 		var module= new ElementModule('span',{
 		    "class":"notifications selection",
 		    events:{click:function(){
-		        
+		        if(ProjectSelection.hasSelection()){
+		        	controller.navigateTo("Map", "Main");
+		        }
 		        
 		    }}
 		});
