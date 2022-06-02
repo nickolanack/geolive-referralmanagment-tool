@@ -20,7 +20,7 @@
             "CSSInlineObfuscationEnabled": false,
             "PHPDebugEnabled": true,
             "JSDebugEnabled": false,
-            "CachingEnabled": true,
+            "CachingEnabled": false,
             "PrettyPrintJson": true,
             "JSCacheObfuscationEnabled": false,
             "phase": "production",
@@ -18849,10 +18849,10 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "col-auth",
+                                    "identifier": "col-priority",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return item.getAuthID();",
+                                    "fieldValueScript": "return \"\";",
                                     "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
                                 }
                             },
@@ -18860,10 +18860,10 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "col-name",
+                                    "identifier": "col-auth",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.3.config.fieldValueScript.js",
+                                    "fieldValueScript": "return item.getAuthID();",
                                     "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.3.config.formatElementScript.js"
                                 }
                             },
@@ -18871,7 +18871,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "col-user",
+                                    "identifier": "col-name",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.4.config.fieldValueScript.js",
@@ -18882,7 +18882,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "col-created",
+                                    "identifier": "col-user",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.5.config.fieldValueScript.js",
@@ -18893,7 +18893,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "col-modified",
+                                    "identifier": "col-created",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.6.config.fieldValueScript.js",
@@ -18904,7 +18904,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "col-type",
+                                    "identifier": "col-modified",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.7.config.fieldValueScript.js",
@@ -18915,11 +18915,22 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
+                                    "identifier": "col-type",
+                                    "className": "",
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.8.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.8.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
                                     "identifier": "col-keywords\n",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.8.config.formatElementScript.js"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.9.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -18929,8 +18940,8 @@
                                     "identifier": "col-attachments",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.9.config.fieldValueScript.js",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.9.config.formatElementScript.js"
+                                    "fieldValueScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.10.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.10.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -18941,7 +18952,7 @@
                                     "className": "",
                                     "fieldLabelScript": "return \"Approval\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.10.config.formatElementScript.js"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.11.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -18952,7 +18963,7 @@
                                     "className": "",
                                     "fieldLabelScript": "return \"Ownership\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.11.config.formatElementScript.js"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.12.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -18963,7 +18974,7 @@
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "\nreturn \"\";",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.12.config.formatElementScript.js"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.13.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -18974,7 +18985,7 @@
                                     "className": "tag-width",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.13.config.formatElementScript.js"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.14.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -18985,7 +18996,7 @@
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.14.config.formatElementScript.js"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.15.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -18996,7 +19007,7 @@
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.15.config.formatElementScript.js"
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.16.config.formatElementScript.js"
                                 }
                             }
                         ]

@@ -1030,7 +1030,7 @@ span.field-label.address-click:after {
     box-shadow: 13px -12px 10px rgb(0 0 0 / 50%);
 }
 
-button.inline-edit, .btn.inline-edit, .btn.inline-remove, .section-toggle{
+button.inline-edit, .btn.inline-edit, .btn.inline-remove, .section-toggle, .navigation-menu button.inline-edit{
    
     &:after {
         content: "\f040";
@@ -1047,6 +1047,7 @@ button.inline-edit, .btn.inline-edit, .btn.inline-remove, .section-toggle{
         padding: 0;
         color: mediumseagreen;
         cursor:pointer;
+        text-align:center;
 }
 
 .btn.inline-remove{
@@ -5551,183 +5552,22 @@ span.navigation-menu.settings-menu {
 
 [data-view="splitProjectDetail"]{
     
-     @media screen and (max-width: 2500px) {
+    
     
         div.field-value-module.inline{
              /*max-width:220px;*/
              span{
-                 max-width:220px;
-             }
-        }
-    
-     }
-     
-      @media screen and (max-width: 2300px) {
-    
-        div.field-value-module.inline{
-             /*max-width:200px;*/
-             span{
-                 max-width:200px;
-             }
-             
-             &[data-col="created"], &[data-col="modified"]{
-                 
-                    /*max-width:150px;*/
-                    
-                    span{
-                        max-width:120px;
-                    }
-                    
-                    /*
-                    .field-value{
-                        font-size:0;
-                        &:after{
-                            font-size:16px;
-                            content:attr(data-day);
-                        }
-                    }*/
-                  
-             }
-        }
-    
-     }
-    
-    @media screen and (max-width: 2000px) {
-    
-        div.field-value-module.inline{
-             /*max-width:180px;*/
-             span{
-                 max-width:180px;
-             }
-        }
-    
-     
-    
-        div.field-value-module.inline[data-col="attachments"]{
-             /*max-width:140px;*/
-             span{
-                 max-width:140px;
-             }
-             
-             .field-value{
-                /* display:none;*/
-             }
-        }
-    
-     }
-     
-     
-     
-    
-    
-     @media screen and (max-width: 1850px) {
-         
-        .field-value-module.inline{
-    
-           &[data-col="attachments"]{
-               /*
-                font-size:0;
-                width: 50px;
-                */
-                &.sortable .download-link{
-                    display:none;
-                }
-           }
-        
-           &[data-col="type"]{
-                 /*width:90px;*/
-                 span{
-                     max-width:80px;
-                 }
-        
-           }
-           
-           &[data-col="community"], &[data-col="status"]{
-                 /*width:150px;*/
-                 span{
-                     max-width:70px;
-                 }
-        
-           }
-           
-       }
-       
-     }
-     
-     
-     @media screen and (max-width: 1700px) {
-    
-        div.field-value-module.inline{
-             
-             /*max-width:150px;*/
-             span{
-                 max-width:150px;
-             }
-             
-             &[data-col="created"], &[data-col="modified"]{
-                 
-                    /* max-width:120px;*/
-                    
-                    span{
-                        max-width:110px;
-                    }
-                    
-             }
-        }
-    
-     }
-    
-    
-     @media screen and (max-width: 1500px) {
-         
-        div.field-value-module.inline{
-             /* max-width:180px;*/
-             span{
-                 max-width:170px;
+                 max-width:calc( 100% - 25px );
              }
              
              
-              &[data-col="created"]{
-                  /*display:none;*/
-              }
-        }
-    
-    }
-    
-    
-     @media screen and (max-width: 1400px) {
-         
-    
-        div.field-value-module.inline{
-             /* max-width:140px; */
-             span{
-                 max-width:130px;
+             
+             &[data-col="selection"]{
+                 text-align:center;
              }
         }
     
-    }
-    
-    
-     @media screen and (max-width: 1100px) {
-         
-    
-        div.field-value-module.inline{
-            &[data-col="modified"]{
-                /* display:none; */
-            } 
-        }
-    
-    }
-    @media screen and (max-width: 900px) {
-         
-    
-        div.field-value-module.inline{
-            &[data-col="created"]{
-                /* display:none; */
-            } 
-        }
-    
-    }
+     
 }
 
 
