@@ -5559,6 +5559,12 @@ span.navigation-menu.settings-menu {
              span{
                  max-width:calc( 100% - 25px );
              }
+             
+             
+             
+             &[data-col="selection"]{
+                 text-align:center;
+             }
         }
     
      
