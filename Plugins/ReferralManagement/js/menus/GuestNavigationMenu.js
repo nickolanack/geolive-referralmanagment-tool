@@ -57,7 +57,7 @@ var GuestNavigationMenu = (function() {
 							"viewOptions": {
 								"viewType": "form"
 							},
-							"class": "primary-btn hidden"
+							"class": "primary-btn"
 
 						}, {
 							"name": "Map",
