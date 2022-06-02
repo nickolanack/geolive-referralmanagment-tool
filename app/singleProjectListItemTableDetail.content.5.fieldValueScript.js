@@ -1,1 +1,1 @@
-return  moment(item.getCreationDate()).fromNow();
+return item.getProjectUsername();

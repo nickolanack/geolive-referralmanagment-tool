@@ -1,1 +1,1 @@
-return item.getProjectUsername();
+return (item instanceof MissingProject)?'does not exist you do not have access':item.getName();

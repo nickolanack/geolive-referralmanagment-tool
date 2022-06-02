@@ -1,2 +1,2 @@
-el.addClass("inline auth");
-el.setAttribute("data-col","auth");
+el.addClass("inline priority-");
+el.setAttribute("data-col","priority");

@@ -1,2 +1,2 @@
-el.addClass("inline");
-el.setAttribute("data-col","name");
+el.addClass("inline auth");
+el.setAttribute("data-col","auth");
