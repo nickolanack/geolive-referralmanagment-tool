@@ -100,7 +100,10 @@ var ProjectSelection = (function() {
 		module.getElement().appendChild(new Element('button', {
 			"html":"clear", 
 			"class":"primary-btn", 
-			"events":{"click":function(){
+			"events":{"click":function(e){
+
+				e.stop();
+
 				ProjectSelection.clear();
 			}}
 		}));
@@ -110,7 +113,10 @@ var ProjectSelection = (function() {
 			module.getElement().appendChild(new Element('button', {
 				"html":"New "+ProjectList.NameForProject(), 
 				"class":"primary-btn create", 
-				"events":{"click":function(){
+				"events":{"click":function(e){
+
+					e.stop();
+
 					var formName = DashboardConfig.getValue("leftPanelSecondaryBtnForm"); //"documentProjectForm";//"ProposalTemplate";
 					var newItem = new Proposal();
 
@@ -131,10 +137,14 @@ var ProjectSelection = (function() {
 		}
 
 		module.getElement().appendChild(new Element('button', {
-			"html":"View Selection", "class":"primary-btn view-selection "+(!DashboardConfig.getValue('enableProposals')?'with-collections':'with-props'), "events":{"click":function(){
-				var controller = application.getNamedValue('navigationController');
-				controller.navigateTo("Map", "Main");
-			}}
+			"html":"View Selection", "class":"primary-btn view-selection "+(!DashboardConfig.getValue('enableProposals')?'with-collections':'with-props'), 
+			"events":{
+				"click":function(e){
+					e.stop();
+					var controller = application.getNamedValue('navigationController');
+					controller.navigateTo("Map", "Main");
+				}
+			}
 		}));
 
 		var popoverContent=function(){
