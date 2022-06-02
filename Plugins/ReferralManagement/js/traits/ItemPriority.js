@@ -37,9 +37,9 @@ var ItemPriority=(function(){
 		        
 		        var el=mod.getElement();
 		        if(el.hasClass("priority")){
-		            el.removeClass("priority")
+		            el.removeClass("priority");
 		        }else{
-		            el.addClass("priority")
+		            el.addClass("priority");
 		        }
 		    }}
 		    
@@ -55,4 +55,4 @@ var ItemPriority=(function(){
 
 	return ItemPriority;
 
-}).()
+})();
