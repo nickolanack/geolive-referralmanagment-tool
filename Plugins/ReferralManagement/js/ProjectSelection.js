@@ -90,6 +90,7 @@ var ProjectSelection = (function() {
 		    "class":"notifications selection",
 		    events:{click:function(){
 		        if(ProjectSelection.hasSelection()){
+		        	var controller = application.getNamedValue('navigationController');
 		        	controller.navigateTo("Map", "Main");
 		        }
 		        
