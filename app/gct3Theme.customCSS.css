@@ -233,13 +233,12 @@ button.form-btn.primary-btn.edit.notes {
         top: -40px;
     }
 }
-/*
+
 [data-view="selectableUserListItemDetail"] button.primary-btn {
     position:relative;
     top:-60px
 
 }
-*/
 
 /**/
 
@@ -420,14 +419,6 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {
     height: 55px;
     line-height: 55px;
 }
-
-
-.dataset-select .field-value-module.inline.tag-width {
-    display: inline-block;
-    margin-bottom: 18px;
-}
-
-
 a.pb-btn-close {
     background-image:none;
 }
@@ -575,11 +566,6 @@ a.pb-btn-close:after {
         
     }
     
-    .login-form {
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-    
     
     
     .login-form:after {
@@ -595,6 +581,7 @@ a.pb-btn-close:after {
          }
         .login-form:before {
           background-position: center;
+          background-image: url(https://dyl2vw577xcfk.cloudfront.net/gather.geoforms.ca/1/Uploads/%5BG%5D_Plu_%5BImAgE%5D_Z2G_XQ.jpeg);
           content: "";
           position: fixed;
           top: 0;
@@ -605,14 +592,8 @@ a.pb-btn-close:after {
           background-size: cover;
           pointer-events: none;
           z-index: -1; }
-          
-          .login-form:before {
-            background-image: url(https://dyl2vw577xcfk.cloudfront.net/gather.geoforms.ca/1/Uploads/%5BG%5D_Plu_%5BImAgE%5D_Z2G_XQ.jpeg);
-        }
     
 }
-
-
 
 
 [data-view="tagsDetail"] .section-module {
@@ -1201,7 +1182,7 @@ button.primary-btn.nav-new-btn.view-selection:before{
     
     &.menu-main-projects {
         display: none;
-        &.menu-main-datasets, &.menu-main-collections, &.show{
+        &.menu-main-datasets, &.menu-main-collections{
             display:list-item;
         }
     }
@@ -1286,12 +1267,6 @@ button.primary-btn.nav-new-btn.view-selection:before{
     content: "\f1b3";
 }
 
-.navigation-menu ul li[data-icon]:before, 
-.navigation-menu ul li.menu-main-collections[data-icon]:before,
-.navigation-menu ul li.menu-main-datasets[data-icon]:before {
-    content: attr(data-icon);
-}
-
 
 
 .field-value-module.inline.icon:before {
@@ -1334,32 +1309,6 @@ button.primary-btn.nav-new-btn.view-selection:before{
     font-weight: 100;
     border-radius: 4px;
     margin: 15px 0px;
-}
-
-body.dragover{
-    .spatial-files .droppable {
-        padding: 10px;
-        line-height: 30px;
-        font-size: 14px;
-        margin-top: 15px;
-        padding-top:40px;
-        margin-bottom:15px;
-        border-radius:4px;
-        background-color:rgba(0,0,0,0.3);
-        
-        &:after {
-            left: 15px;
-            font-size: 20px;
-            font-weight: 100;
-            content:"Drop spatial file here";
-            font-weight:400;
-            top:30px;
-           
-        }
-    }
-     .drag-area{
-        display:none;
-    }
 }
 
 
