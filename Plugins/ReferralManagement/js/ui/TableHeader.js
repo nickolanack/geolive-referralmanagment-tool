@@ -649,9 +649,9 @@ var TableHeader = (function() {
 			var column = colEl.getAttribute('data-col');
 
 			
-			colEl.setAttribute('data-label', me.labelForCol(column));
+			colEl.setAttribute('data-label', this.labelForCol(column));
 			this.setTipFor(column, colEl);
-			
+
 			this._addFieldStyle(column);
 
 		},
