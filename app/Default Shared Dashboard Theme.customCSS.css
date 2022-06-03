@@ -5876,7 +5876,8 @@ div.popover[data-with-view="reportSelectionView"]{
         text-align: left;
         margin: 0;
     }
-    ._tableStyle_ .table-header [data-col]{
+    
+    .table-header [data-col]{
         display: inline-block;
     
         &>*{
