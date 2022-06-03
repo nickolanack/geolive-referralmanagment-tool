@@ -649,7 +649,7 @@ var TableHeader = (function() {
 			me._listModule.getSortObject(function(sortModule){
 
 				var firstRow=header.firstChild;
-				if(!firstRow.hasClass('ui-view')){
+				if(!firstRow.tagName!='DIV'){
 					firstRow=firstRow.nextSibling;
 				}
 
@@ -694,8 +694,8 @@ var TableHeader = (function() {
 
 
 							/**
-								* Not going to render this temporary module, but it should still work
-								*/
+							* Not going to render this temporary module, but it should still work
+							*/
 
 							sortModule = (new ListSortModule(function() {
 								return me._listModule;
@@ -706,8 +706,8 @@ var TableHeader = (function() {
 							me._listModule.setSortObject(sortModule);
 
 							/**
-								*
-								*/
+							*
+							*/
 
 						}
 
