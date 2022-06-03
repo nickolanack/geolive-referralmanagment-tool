@@ -44,4 +44,9 @@
             "label": "Due Date"
         }
     
-})).render(listModule);
+    }
+    )).addSort('project', function(a, b){
+        
+    }).addSort('duedate', function(a, b){
+        
+    }).render(listModule)
