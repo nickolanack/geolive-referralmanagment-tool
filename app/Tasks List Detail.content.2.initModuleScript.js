@@ -3,17 +3,20 @@
          "complete": {
             "width": "30px",
             "label": "Complete",
-            "showLabel":false
+            "showLabel":false,
+            "align":"center"
         },
         "stars": {
             "width": "30px",
             "label": "Stars",
-            "showLabel":false
+            "showLabel":false,
+            "align":"center"
         },
          "priority": {
             "width": "30px",
             "label": "Priority",
-            "showLabel":false
+            "showLabel":false,
+            "align":"center"
         },
          "tags": {
             "width": "130px",
@@ -21,7 +24,9 @@
         },
          "assigned": {
             "width": "30px",
-            "label": ""
+            "label": "Assigned",
+            "showLabel":false,
+            "align":"center"
             
         },
         "comments": {
