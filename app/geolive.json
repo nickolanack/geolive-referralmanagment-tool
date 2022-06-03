@@ -14766,6 +14766,7 @@
                                 "config": {
                                     "listClassName": "",
                                     "className": "task-item",
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "singleTaskListItemDetail",
                                     "shouldRender": true,
@@ -14775,7 +14776,7 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
-                                    "initModuleScript": "",
+                                    "initModuleScript": "Tasks List Detail.metadata.positions.content.modules.2.config.initModuleScript.js",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
