@@ -5431,9 +5431,7 @@ span.navigation-menu.settings-menu {
 .table-header .field-value-module>.field-value {
     display: none;
 }
-.table-header .field-value-module:after {
-    content: attr(data-label);
-}
+
 
 .table-header {
     margin: 10px;
@@ -5882,6 +5880,10 @@ div.popover[data-with-view="reportSelectionView"]{
     
         &>*{
             display:none;
+        }
+        
+        &:after, .field-value-module:after {
+            content: attr(data-label);
         }
     }
     
