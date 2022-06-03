@@ -9,6 +9,7 @@ var mod=new ElementModule('div',{
     "class":item.isComplete()?"complete":"not-complete",
    
 })
+var pop;
 var element=mod.getElement();
 var el=element.appendChild(new Element('div', {"class":"completion-indicator", 
     events:{click:function(e){
