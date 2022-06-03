@@ -5881,7 +5881,7 @@ div.popover[data-with-view="reportSelectionView"]{
             content: "\f0dc";
             font-family: 'FontAwesome';
             margin-right: 5px;
-            color:gray;
+            color: rgba(128, 128, 128, 0.3);
             position: absolute;
             left: -15px;
         }
