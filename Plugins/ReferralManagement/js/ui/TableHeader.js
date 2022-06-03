@@ -21,7 +21,7 @@ var TableHeader = (function() {
 
 
 	var TableHeadersClass=new Class({
-
+		Implements:[Events],
 
 		addHeader:function(instance){
 
@@ -59,7 +59,56 @@ var TableHeader = (function() {
 				return item.getLayoutName()==layoutName;
 			}));
 
-		}
+		},
+		updateLayout:function(layoutName, options){
+
+			//TODO: provide namespaced tableLayout using name 'projectTableLayout'
+			var me=this;
+			options.forEach(function(colData){
+				me._layouts[layoutName][colData.col].hidden=colData.hidden;
+			});
+
+		},
+		getLayout:function(layoutName){
+
+			if(!this._layouts){
+				throw 'Not initialized';
+			}
+
+			if(!this._layouts[layoutName]){
+				throw 'Not initialized: '+layoutName;
+			}
+
+			return this._layouts[layoutName];
+		},
+		loadLayout:function(layoutName, cb){
+
+			if(!this._layouts){
+				this._layouts={};
+			}
+
+			if(this._layouts[layoutName]){
+				setTimeout(cb, 50);
+				return;
+			}
+
+			this.once('load.'+layoutName, cb);
+
+
+			var me=this;
+
+			(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration_field", {
+				'widget': layoutName,
+				'field': "layout"
+			})).addEvent('success',function(response){
+				me._layouts[layoutName]=response.value;
+				me.fireEvent('load.'+layoutName);
+			}).execute();
+
+		},
+
+
+
 
 
 
@@ -78,53 +127,72 @@ var TableHeader = (function() {
 			currentHeader=this; //Assumes a single header
 			this._layoutName=layoutName;
 			
-			TableHeaders.addHeader(this)
-			DashboardPageLayout.addLayout("singleProjectListItemTableDetail", function(content) {
+			TableHeaders.addHeader(this);
 
-				//var map = ['name', 'owner', 'date', 'time', 'tag', 'docs', 'approval', 'ownership'];
+			var me=this;
+			DashboardPageLayout.addLayout("singleProjectListItemTableDetail", function(content, options, callback) {
 
-				//var columnIds=['col-name', 'col-user', 'col-created', 'col-modified', 'col-type', 'col-apporval', 'col-ownership']
+				me.runOnceOnLoad(function(){
 
-				var removeCols = ['col-approval', 'col-ownership', ];
+					//var map = ['name', 'owner', 'date', 'time', 'tag', 'docs', 'approval', 'ownership'];
+
+					//var columnIds=['col-name', 'col-user', 'col-created', 'col-modified', 'col-type', 'col-apporval', 'col-ownership']
+
+					var removeCols = ['col-approval', 'col-ownership', ];
 
 
-				if (ProjectTeam.GetAllCommunities().length === 1) {
-					removeCols.push('col-community')
-				}
-
-
-				if (!DashboardConfig.getValue('enableProposals')) {
-					removeCols.push('col-status');
-					removeCols.push('col-auth');
-				}
-
-				content = content.filter(function(m) {
-					return removeCols.indexOf(m.getIdentifier()) < 0;
-				})
-
-				var order = Object.keys(layoutDefault)
-				content.sort(function(a, b) {
-					var aId = a.getIdentifier().split('col-').pop();
-					var bId = b.getIdentifier().split('col-').pop();
-
-					var aOrder = order.indexOf(aId);
-					var bOrder = order.indexOf(bId);
-					if (aOrder == -1) {
-						aOrder = Infinity;
-					}
-					if (bOrder == -1) {
-						bOrder = Infinity;
+					if (ProjectTeam.GetAllCommunities().length === 1) {
+						removeCols.push('col-community')
 					}
 
-					return aOrder - bOrder;
-				});
+
+					if (!DashboardConfig.getValue('enableProposals')) {
+						removeCols.push('col-status');
+						removeCols.push('col-auth');
+					}
+
+					content = content.filter(function(m) {
+						return removeCols.indexOf(m.getIdentifier()) < 0;
+					})
+
+					var order = Object.keys(layoutDefault)
+					content.sort(function(a, b) {
+						var aId = a.getIdentifier().split('col-').pop();
+						var bId = b.getIdentifier().split('col-').pop();
+
+						var aOrder = order.indexOf(aId);
+						var bOrder = order.indexOf(bId);
+						if (aOrder == -1) {
+							aOrder = Infinity;
+						}
+						if (bOrder == -1) {
+							bOrder = Infinity;
+						}
+
+						return aOrder - bOrder;
+					});
 
 
-				return content;
+					 callback(content);
+				 });
+			});
+
+
+			TableHeaders.loadLayout(layoutName, function(){
+				me._isLoaded=true;
+				me.fireEvent('load');
 			});
 
 
 		},
+
+		runOnceOnLoad:function(cb){
+			if(me._isLoaded=true){
+				cb();
+				return;
+			}
+			me.once('load', cb);
+		}
 
 		getLayoutName:function(){
 			return this._layoutName;
@@ -136,13 +204,17 @@ var TableHeader = (function() {
 				return "";
 			}
 
-			if (layoutDefault[col] && layoutDefault[col].label) {
+			var layoutDefault=TableHeaders.getLayout(this.getLayoutName());
+
+			if (layoutDefault[col] && typeof layoutDefault[col].label=='string') {
 				return layoutDefault[col].label;
 			}
 			return col;
 		},
 
 		setTipFor:function(col, el){
+
+			var layoutDefault=TableHeaders.getLayout(this.getLayoutName());
 
 			if(layoutDefault[col]&&layoutDefault[col].tip){
 				new UIPopover(el,{
@@ -199,6 +271,10 @@ var TableHeader = (function() {
 		},
 
 		_getLayout: function(dataCol) {
+
+
+			var layoutDefault=TableHeaders.getLayout(this.getLayoutName());
+
 			return ObjectAppend_({
 				width: 'auto'
 			}, layoutDefault[dataCol]);
@@ -689,17 +765,18 @@ var TableHeader = (function() {
 
 		//TODO: provide namespaced tableLayout using name 'projectTableLayout'
 
-		options.forEach(function(colData){
-			layoutDefault[colData.col].hidden=colData.hidden;
-		});
-
+		// options.forEach(function(colData){
+		// 	layoutDefault[colData.col].hidden=colData.hidden;
+		// });
+		
+		TableHeaders.updateLayout(layoutName, options);
 		TableHeaders.headersWithLayout(layoutName, function(items){
 			items.updateLayout();
 		});
 
-		if(currentHeader){
-			currentHeader.updateLayout();
-		}
+		// if(currentHeader){
+		// 	currentHeader.updateLayout();
+		// }
 	}
 
 
