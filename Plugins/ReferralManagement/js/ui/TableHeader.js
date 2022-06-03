@@ -63,6 +63,14 @@ var TableHeader = (function() {
 
 			return this._layouts[layoutName];
 		},
+		setLayout:function(layoutName, data){
+			if(!this._layouts){
+				this._layouts={};
+			}
+
+			this._layouts[layoutName]=data;
+			this.fireEvent('load.'+layoutName);
+		},
 		loadLayout:function(layoutName, cb){
 
 			if(!this._layouts){
@@ -103,7 +111,7 @@ var TableHeader = (function() {
 
 	var TableHeader = new Class_({
 		Implements:[Events],
-		initialize: function(layoutName) {
+		initialize: function(layoutName, layout) {
 
 
 			this._layoutName=layoutName;
@@ -160,6 +168,17 @@ var TableHeader = (function() {
 				 });
 			});
 
+
+			if(layout){
+
+				TableHeaders.setLayout(layoutName, layout);
+				setTimeout(function(){
+					me._isLoaded=true;
+					me.fireEvent('load');
+				},50);
+
+				return;
+			}
 
 			TableHeaders.loadLayout(layoutName, function(){
 				me._isLoaded=true;
