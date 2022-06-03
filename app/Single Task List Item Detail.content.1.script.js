@@ -3,12 +3,13 @@
 
 
 
-var element;
+
 var mod=new ElementModule('div',{
     identifier:"col-complete",
     "class":item.isComplete()?"complete":"not-complete",
    
 })
+var element=mod.getElement();
 var el=element.appendChild(new Element('div', {"class":"completion-indicator", 
     events:{click:function(e){
         e.stop();
@@ -32,7 +33,7 @@ var el=element.appendChild(new Element('div', {"class":"completion-indicator",
         
         
     }}}));
-element=mod.getElement();
+
 
 pop=new UIPopover(el, {
         description:item.isComplete()?'click to mark incomplete':'click to mark complete',
