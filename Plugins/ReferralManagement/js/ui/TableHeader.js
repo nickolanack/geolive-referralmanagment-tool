@@ -648,8 +648,13 @@ var TableHeader = (function() {
 			
 			var column = colEl.getAttribute('data-col');
 
-			
+			var colData=this._getLayout(dataCol);
 			colEl.setAttribute('data-label', this.labelForCol(column));
+
+			if(colData.showLabel===false){
+				colEl.addClass('hide-label');
+			}
+
 			this.setTipFor(column, colEl);
 
 			this._addFieldStyle(column);
