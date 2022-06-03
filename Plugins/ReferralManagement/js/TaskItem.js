@@ -947,7 +947,11 @@ var TaskItem = (function() {
 			}
 
 			var filterModule = (new ListFilterModule(function() {
-				return viewer.getChildView('content', contentIndex);
+				
+				return viewer.findChildViews(function(v) {
+					return v instanceof UIListViewModule
+				}).pop();
+
 			}, {
 				filters: filters,
 				currentFilter: (initialFilter?'!'+initialFilter:null),
@@ -955,7 +959,7 @@ var TaskItem = (function() {
 			}));
 
 
-			
+
 
 
 
