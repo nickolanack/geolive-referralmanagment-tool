@@ -5911,7 +5911,11 @@ div.popover[data-with-view="reportSelectionView"]{
         }
         
         &.hide-label:before {
-            left: 50%;
+            left: 10px;
+        }
+        
+        &.sortable.show-label {
+            left: 20px;
         }
         
     }
