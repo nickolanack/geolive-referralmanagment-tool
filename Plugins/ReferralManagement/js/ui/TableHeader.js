@@ -187,7 +187,7 @@ var TableHeader = (function() {
 		},
 
 		runOnceOnLoad:function(cb){
-			if(this._isLoaded=true){
+			if(this._isLoaded==true){
 				cb();
 				return;
 			}
@@ -253,7 +253,7 @@ var TableHeader = (function() {
 						listModule.once('loadItem', function(module) {
 							me._createHeaderFromContent(module, function() {
 								me._addHeaderBehavior();
-							});
+							});zush
 
 						});
 						return;
