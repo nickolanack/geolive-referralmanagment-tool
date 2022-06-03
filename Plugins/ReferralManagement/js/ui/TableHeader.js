@@ -646,79 +646,86 @@ var TableHeader = (function() {
 
 			
 			
-			header.firstChild.firstChild.childNodes.forEach(function(colEl) {
+			me._listModule.getSortObject(function(sortModule){
+				header.firstChild.firstChild.childNodes.forEach(function(colEl) {
 
-				colEl.addClass('sortable');
+					colEl.addClass('sortable');
 
-				var column = colEl.getAttribute('data-col');
+					var column = colEl.getAttribute('data-col');
 
-				me._addFieldStyle(column);
+					me._addFieldStyle(column);
 
-				colEl.setAttribute('data-label', me.labelForCol(column));
+					colEl.setAttribute('data-label', me.labelForCol(column));
 
-				if (me._sort == column) {
-					colEl.addClass('active');
-					if (me._sortInv) {
-						colEl.addClass('asc');
-					}
-				}
-
-
-				me.setTipFor(column, colEl);
-
-
-				if (!ProjectList.HasSortFn(column)) {
-					colEl.addClass('disabled');
-					return;
-				}
-
-				colEl.addEvent('click', function() {
-
-
-
-					var sortModule = me._listModule.getSortObject();
-
-					if (!sortModule) {
-
-
-						/**
-							* Not going to render this temporary module, but it should still work
-							*/
-
-						sortModule = (new ListSortModule(function() {
-							return me._listModule;
-						}, {
-							sorters: ProjectList.projectSorters()
-						}));
-
-						me._listModule.setSortObject(sortModule);
-
-						/**
-							*
-							*/
-
-					}
-
-					sortModule.applySort(column);
 					if (me._sort == column) {
-						me._sortInv = !me._sortInv;
-					} else {
-						me._sortInv = false;
+						colEl.addClass('active');
+						if (me._sortInv) {
+							colEl.addClass('asc');
+						}
 					}
-					me._sort = column;
 
 
+					me.setTipFor(column, colEl);
 
-					colEl.addClass('active');
-					if (me._sortInv) {
-						colEl.addClass('asc');
+
+					
+
+					
+
+
+					if (!ProjectList.HasSortFn(column)) {
+						colEl.addClass('disabled');
+						return;
 					}
-					if(me._sortEl&&me._sortEl!=colEl){
-						me._sortEl.removeClass('active');
-						me._sortEl.removeClass('asc');
-					}
-					me._sortCol=colEl;
 
+					colEl.addEvent('click', function() {
+
+
+
+						var sortModule = me._listModule.getSortObject();
+
+						if (!sortModule) {
+
+
+							/**
+								* Not going to render this temporary module, but it should still work
+								*/
+
+							sortModule = (new ListSortModule(function() {
+								return me._listModule;
+							}, {
+								sorters: ProjectList.projectSorters()
+							}));
+
+							me._listModule.setSortObject(sortModule);
+
+							/**
+								*
+								*/
+
+						}
+
+						sortModule.applySort(column);
+						if (me._sort == column) {
+							me._sortInv = !me._sortInv;
+						} else {
+							me._sortInv = false;
+						}
+						me._sort = column;
+
+
+
+						colEl.addClass('active');
+						if (me._sortInv) {
+							colEl.addClass('asc');
+						}
+						if(me._sortEl&&me._sortEl!=colEl){
+							me._sortEl.removeClass('active');
+							me._sortEl.removeClass('asc');
+						}
+						me._sortCol=colEl;
+
+					});
 				});
 			});
 
