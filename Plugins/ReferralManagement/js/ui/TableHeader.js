@@ -661,6 +661,15 @@ var TableHeader = (function() {
 
 		},
 
+		addSort:function(name, fn){
+
+
+
+			
+			
+			return this;
+		},
+
 		_makeHeaderEl: function() {
 
 			var me = this;
@@ -685,6 +694,14 @@ var TableHeader = (function() {
 
 			
 			me._listModule.getSortObject(function(sortModule){
+
+
+				if(!sortModule.hasSort('project')){
+
+				}
+
+
+
 
 				tableCols.forEach(function(colEl) {
 
