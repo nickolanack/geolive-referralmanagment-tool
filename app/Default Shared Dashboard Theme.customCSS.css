@@ -5882,7 +5882,7 @@ div.popover[data-with-view="reportSelectionView"]{
             display:none;
         }
         
-        &:after, .field-value-module:after {
+        &:after, &.field-value-module:after {
             content: attr(data-label);
         }
     }
