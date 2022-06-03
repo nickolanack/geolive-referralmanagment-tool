@@ -1,0 +1,1 @@
+(new TableHeader('tasktTableLayout', {})).render(listModule);
