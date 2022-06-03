@@ -5,7 +5,7 @@
 
 var element;
 var mod=new ElementModule('div',{
-    identifier:"col-complete"
+    identifier:"col-complete",
     "class":item.isComplete()?"complete":"not-complete",
    
 })
