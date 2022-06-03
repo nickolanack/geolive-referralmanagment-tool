@@ -653,6 +653,8 @@ var TableHeader = (function() {
 
 			if(colData.showLabel===false){
 				colEl.addClass('hide-label');
+			}else{
+				colEl.addClass('show-label');
 			}
 
 			this.setTipFor(column, colEl);
