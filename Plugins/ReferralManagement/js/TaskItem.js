@@ -167,7 +167,7 @@ var TaskItem = (function() {
 		},
 
 		getOwnerProject:function(){
-
+			return this.getItem();
 		},
 
 
