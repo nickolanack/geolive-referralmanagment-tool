@@ -5,7 +5,9 @@ if(!item.canStar()){
     return null;
 }
 
-var mod= new ElementModule('div', {"class":"starred-indicator "+(item.isStarred()?"starred ":"")+(item.hasOtherStars()?"other-stars ":""), 
+var mod= new ElementModule('div', {
+    "identifier":"col-stars",
+    "class":"starred-indicator "+(item.isStarred()?"starred ":"")+(item.hasOtherStars()?"other-stars ":""), 
     events:{click:function(e){
         e.stop();
         
@@ -24,6 +26,8 @@ var mod= new ElementModule('div', {"class":"starred-indicator "+(item.isStarred(
     }}
     
 });
+
+mod.getElement().setAttribute('data-col','stars');
 
 if(item.hasOtherStars()){
     var n=item.otherStars().length;
