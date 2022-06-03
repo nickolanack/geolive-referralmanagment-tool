@@ -2,15 +2,18 @@
        
          "complete": {
             "width": "30px",
-            "label": ""
+            "label": "Complete",
+            "showLabel":false
         },
         "stars": {
             "width": "30px",
-            "label": ""
+            "label": "Stars",
+            "showLabel":false
         },
          "priority": {
             "width": "30px",
-            "label": ""
+            "label": "Priority",
+            "showLabel":false
         },
          "tags": {
             "width": "130px",
