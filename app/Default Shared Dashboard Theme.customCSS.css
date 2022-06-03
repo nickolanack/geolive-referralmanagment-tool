@@ -5917,6 +5917,9 @@ div.popover[data-with-view="reportSelectionView"]{
         &.sortable.show-label {
             left: 20px;
         }
+        &.sortable.disabled.show-label {
+            left: 0px;
+        }
         
     }
     
