@@ -663,10 +663,9 @@ var TableHeader = (function() {
 
 		addSort:function(name, fn){
 
-
-
-			
-			
+			if(this._sortModule){
+				this._sortModule.addSort(name, fn);
+			}
 			return this;
 		},
 
@@ -695,6 +694,9 @@ var TableHeader = (function() {
 			
 			me._listModule.getSortObject(function(sortModule){
 
+
+				me.fireEvent('initSort', [sortModule]);
+				me._sortModule=sortModule;
 
 				if(!sortModule.hasSort('project')){
 
@@ -818,6 +820,8 @@ var TableHeader = (function() {
 				this._style.parentNode.removeChild(this._style);
 			}
 			this._style = null;
+			this._sortModule=null;
+
 			TableHeaders.removeHeader(this);
 		}
 
