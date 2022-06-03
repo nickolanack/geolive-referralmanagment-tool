@@ -665,7 +665,11 @@ var ProjectList = (function() {
 
 
 	var lowerLocalCompare=function(a,b){
-	return (a||"").toLowerCase().localeCompare((b||"").toLowerCase());
+
+		if(a&&!b){return 1};
+		if(b&&!a){return -1};
+
+		return (a||"").toLowerCase().localeCompare((b||"").toLowerCase());
 	}
 
 	ProjectList.AddTableHeader = function(listModule) {
