@@ -7053,7 +7053,7 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "inline-icon-list-view",
-                                    "identifier": "",
+                                    "identifier": "col-assigned",
                                     "viewType": "view",
                                     "namedView": "singleUserTeamCollectionIconsInlineDetail",
                                     "shouldRender": true,
@@ -7076,7 +7076,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "task-name",
+                                    "identifier": "col-name",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getName();",
@@ -7087,7 +7087,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "task-comments",
+                                    "identifier": "col-comments",
                                     "className": "",
                                     "fieldLabelScript": "return \"Comments\";",
                                     "fieldValueScript": "return \"\";",
