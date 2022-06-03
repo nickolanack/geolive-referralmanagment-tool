@@ -649,7 +649,7 @@ var TableHeader = (function() {
 			me._listModule.getSortObject(function(sortModule){
 
 				var firstRow=header.firstChild;
-				if(!firstRow.tagName!='DIV'){
+				if(firstRow.tagName!='DIV'){
 					firstRow=firstRow.nextSibling;
 				}
 
