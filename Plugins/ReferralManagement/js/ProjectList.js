@@ -3,7 +3,7 @@ var ProjectList = (function() {
 
 	var ProjectList = new Class({
 		Extends: MockDataTypeItem,
-		Implements:[Events],
+		Implements: [Events],
 		applyFilter: function() {
 
 
@@ -34,7 +34,7 @@ var ProjectList = (function() {
 			}
 
 			return DashboardConfig.getValue('leftPanelPrimaryBtnLabel');
-		
+
 			//return "New project"
 		},
 
@@ -54,7 +54,7 @@ var ProjectList = (function() {
 			return [];
 		},
 
-		hasCategoryLockFilter:function(){
+		hasCategoryLockFilter: function() {
 			if (this.getCategoryLockFilter()) {
 				return true;
 			}
@@ -62,7 +62,7 @@ var ProjectList = (function() {
 
 		},
 
-		getCategoryLockFilter:function(){
+		getCategoryLockFilter: function() {
 			if (this.getLockFilter) {
 				var filter = this.getLockFilter();
 
@@ -71,17 +71,17 @@ var ProjectList = (function() {
 					return null;
 				}
 
-				var filterName=filter;
-				if(isArray_(filterName)){
-					filterName=filterName[0];
+				var filterName = filter;
+				if (isArray_(filterName)) {
+					filterName = filterName[0];
 				}
 
-				if(filterName.length > 0 && filterName[0]=='!'){
-					filterName=filterName.slice(1);
+				if (filterName.length > 0 && filterName[0] == '!') {
+					filterName = filterName.slice(1);
 				}
 
 
-				if(ProjectTagList.hasTag(filterName)){
+				if (ProjectTagList.hasTag(filterName)) {
 					return ProjectTagList.getTag(filterName);
 				}
 			}
@@ -93,8 +93,8 @@ var ProjectList = (function() {
 
 
 			/**
-			 * todo: replace most of this with getCategoryLockFilter method above;
-			 */
+				* todo: replace most of this with getCategoryLockFilter method above;
+				*/
 
 
 			if (this.getLockFilter) {
@@ -105,13 +105,13 @@ var ProjectList = (function() {
 					return null;
 				}
 
-				var filterName=filter;
-				if(isArray_(filterName)){
-					filterName=filterName[0];
+				var filterName = filter;
+				if (isArray_(filterName)) {
+					filterName = filterName[0];
 				}
 
-				if(filterName.length > 0 && filterName[0]=='!'){
-					filterName=filterName.slice(1);
+				if (filterName.length > 0 && filterName[0] == '!') {
+					filterName = filterName.slice(1);
 				}
 
 
@@ -123,7 +123,7 @@ var ProjectList = (function() {
 				}
 
 
-				if(ProjectTagList.hasTag(filterName)){
+				if (ProjectTagList.hasTag(filterName)) {
 
 					var tag = ProjectTagList.getTag(filterName);
 					if ((!tag.isRootTag()) && tag.isLeafTag()) {
@@ -132,7 +132,7 @@ var ProjectList = (function() {
 							return parentLevelTags;
 						}
 					}
-					
+
 				}
 
 
@@ -291,37 +291,37 @@ var ProjectList = (function() {
 	}];
 
 
-	ProjectList.ApplyMetaFilter=function(a, filterStr, type){
-		if(filterStr=='+datasets_'){
-			 if(a.getProjectTypes().length==0&&a.isDataset()){
-			 	return true;
-			 }
+	ProjectList.ApplyMetaFilter = function(a, filterStr, type) {
+		if (filterStr == '+datasets_') {
+			if (a.getProjectTypes().length == 0 && a.isDataset()) {
+				return true;
+			}
 		}
 
-		if(filterStr=='+collections_'){
-			 if(a.getProjectTypes().length==0&&a.isCollection()){
-			 	return true;
-			 }
+		if (filterStr == '+collections_') {
+			if (a.getProjectTypes().length == 0 && a.isCollection()) {
+				return true;
+			}
 		}
 	}
 
-	ProjectList.getCategoryFilter=function(category){
+	ProjectList.getCategoryFilter = function(category) {
 
-		var type=null;
+		var type = null;
 
-		if(typeof category=='string'){
-			type=category;
-			category=NamedCategoryList.getTag(type);
+		if (typeof category == 'string') {
+			type = category;
+			category = NamedCategoryList.getTag(type);
 		}
 
-		if(!type){
-			type=category.getName();
+		if (!type) {
+			type = category.getName();
 		}
 
-		
-		var includeFilter=false;
-		if(category.getMetadata&&category.getMetadata().filter){
-			includeFilter=category.getMetadata().filter
+
+		var includeFilter = false;
+		if (category.getMetadata && category.getMetadata().filter) {
+			includeFilter = category.getMetadata().filter
 		}
 
 		return {
@@ -329,9 +329,9 @@ var ProjectList = (function() {
 			name: type,
 			filterFn: function(a) {
 
-				if(includeFilter){
-					var result=ProjectList.ApplyMetaFilter(a, includeFilter, type);
-					if(typeof result=='boolean'){
+				if (includeFilter) {
+					var result = ProjectList.ApplyMetaFilter(a, includeFilter, type);
+					if (typeof result == 'boolean') {
 						return result;
 					}
 				}
@@ -376,7 +376,7 @@ var ProjectList = (function() {
 
 	ProjectList.GetSortFn = function(name) {
 		return ProjectList.projectSorters().filter(function(s) {
-			return s.label==name;
+			return s.label == name;
 		}).shift();
 	};
 
@@ -384,8 +384,8 @@ var ProjectList = (function() {
 
 
 
-		var lowerLocalCompare=function(a,b){
-			return (a||"").toLowerCase().localeCompare((b||"").toLowerCase());
+		var lowerLocalCompare = function(a, b) {
+			return (a || "").toLowerCase().localeCompare((b || "").toLowerCase());
 		}
 
 
@@ -402,7 +402,7 @@ var ProjectList = (function() {
 		}, {
 			label: "client",
 			sortFn: function(a, b) {
-				return  lowerLocalCompare(a.getCompanyName(), b.getCompanyName());
+				return lowerLocalCompare(a.getCompanyName(), b.getCompanyName());
 			}
 		}, {
 			label: "deadline",
@@ -422,7 +422,7 @@ var ProjectList = (function() {
 		}, {
 			label: "user",
 			sortFn: function(a, b) {
-				return  lowerLocalCompare(a.getProjectUsername(), b.getProjectUsername());
+				return lowerLocalCompare(a.getProjectUsername(), b.getProjectUsername());
 			}
 		}, {
 			label: "date",
@@ -461,12 +461,12 @@ var ProjectList = (function() {
 		}, options);
 
 
-		if (typeof options.item=='function') {
-			options.item=options.item();
+		if (typeof options.item == 'function') {
+			options.item = options.item();
 		}
 
 		var btn = new Element("button", {
-			"class": "inline-btn primary-btn " + options.className+" form-"+options.formName,
+			"class": "inline-btn primary-btn " + options.className + " form-" + options.formName,
 			"events": {
 				"click": function() {
 
@@ -501,7 +501,7 @@ var ProjectList = (function() {
 
 		var buttons = [];
 
-		if(!ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isTeamMember()){
+		if (!ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isTeamMember()) {
 			return buttons;
 		}
 
@@ -570,7 +570,7 @@ var ProjectList = (function() {
 		}
 
 
-		if(item instanceof ProjectList&&item.getShowFilters&&item.getShowFilters()===false){
+		if (item instanceof ProjectList && item.getShowFilters && item.getShowFilters() === false) {
 			return null;
 		}
 
@@ -604,12 +604,12 @@ var ProjectList = (function() {
 
 			parentModule.runOnceOnLoad(function() {
 				/**
-				 * TODO remove this timeout, the need for it. or set sortModule to automatically setSortObject
-				 */
-				
-				 try{
-				 	sortModule.getListModule().setSortObject(sortModule);
-				}catch(e){	
+					* TODO remove this timeout, the need for it. or set sortModule to automatically setSortObject
+					*/
+
+				try {
+					sortModule.getListModule().setSortObject(sortModule);
+				} catch (e) {
 
 					setTimeout(function() {
 						sortModule.getListModule().setSortObject(sortModule);
@@ -627,22 +627,22 @@ var ProjectList = (function() {
 				}).pop();
 			}, {
 				filters: ProjectList.projectFilters(),
-				currentFilter: (invertFilter?'!':'')+filter,
+				currentFilter: (invertFilter ? '!' : '') + filter,
 				//applyfilter:true
 			})).load(null, div, null);
-			
+
 			parentModule.runOnceOnLoad(function() {
 
-				try{
+				try {
 					filterModule.getListModule().setFilterObject(filterModule);
-				}catch(e){
+				} catch (e) {
 					setTimeout(function() {
 						filterModule.getListModule().setFilterObject(filterModule)
 
 					}, 500);
 				}
 
-			
+
 				if (item && item.getLockFilter) {
 					filterModule.lockFilter(item.getLockFilter());
 					filterModule.runOnceOnLoad(function() {
@@ -657,34 +657,35 @@ var ProjectList = (function() {
 
 
 
-
-			
-
 		}
 	}
 
 
-	var lowerLocalCompare=function(a,b){
+	var lowerLocalCompare = function(a, b) {
 
-		if(a&&!b){return 1};
-		if(b&&!a){return -1};
+		if (a && !b) {
+			return 1
+		};
+		if (b && !a) {
+			return -1
+		};
 
-		return (a||"").toLowerCase().localeCompare((b||"").toLowerCase());
+		return (a || "").toLowerCase().localeCompare((b || "").toLowerCase());
 	}
 
 	ProjectList.AddTableHeader = function(listModule) {
 
 		(new TableHeader('projectTableLayout'))
-			.addSort('id', function(a, b){
+		.addSort('id', function(a, b) {
 
-				return parseInt(a.getId())-parseInt(b.getId());
+			return parseInt(a.getId()) - parseInt(b.getId());
 
-			}).addSort('auth', function(a, b){
+		}).addSort('auth', function(a, b) {
 
-				return lowerLocalCompare(a.getAuthID(), b.getAuthID());
+			return lowerLocalCompare(a.getAuthID(), b.getAuthID());
 
-			}).render(listModule);
-	
+		}).render(listModule);
+
 	};
 
 
@@ -699,10 +700,10 @@ var ProjectList = (function() {
 		});
 
 
-		var item=listModule.getListItem();
+		var item = listModule.getListItem();
 
-		if(item&&item.addEvent){
-			listModule.addWeakEvent(item, 'change', function(){
+		if (item && item.addEvent) {
+			listModule.addWeakEvent(item, 'change', function() {
 				listModule.redraw();
 			});
 		}
@@ -746,16 +747,16 @@ var ProjectList = (function() {
 			}
 		}
 
-		if(child.getCommunitiesInvolved().length){
+		if (child.getCommunitiesInvolved().length) {
 			childView.getElement().addClass("is-shared-community");
 		}
 
 
-		if(child.getUsers().length){
+		if (child.getUsers().length) {
 			childView.getElement().addClass("is-shared-team");
 		}
 
-		if(child.isPrivate()){
+		if (child.isPrivate()) {
 			childView.getElement().addClass("is-private");
 		}
 
@@ -764,31 +765,31 @@ var ProjectList = (function() {
 
 
 
-		childView.getElement().addClass("priority-"+child.getPriority());
+		childView.getElement().addClass("priority-" + child.getPriority());
 
-		if(NotificationItems.hasItem(child)){
+		if (NotificationItems.hasItem(child)) {
 			childView.getElement().addClass("has-notification");
 		}
 		childView.addWeakEvent(NotificationItems, "change", function() {
-			if(NotificationItems.hasItem(child)){
+			if (NotificationItems.hasItem(child)) {
 				childView.getElement().addClass("has-notification");
-			}else{
+			} else {
 				childView.getElement().removeClass("has-notification");
 			}
 		});
 
 
-		if(child.getMetadataTags){
-			child.getMetadataTags().forEach(function(tag){
+		if (child.getMetadataTags) {
+			child.getMetadataTags().forEach(function(tag) {
 				childView.getElement().addClass(tag);
 			});
 		}
 
-		if(child.hasGuestSubmitter&&child.hasGuestSubmitter()){
+		if (child.hasGuestSubmitter && child.hasGuestSubmitter()) {
 			childView.getElement().addClass("with-guest-submitter");
 		}
 
-		if(child.isArchived()){
+		if (child.isArchived()) {
 			childView.getElement().addClass("is-archived");
 		}
 
@@ -816,10 +817,8 @@ var ProjectList = (function() {
 
 	};
 
-	ProjectList.NamedCommunityProjectList=function(community){
+	ProjectList.NamedCommunityProjectList = function(community) {
 
-
-	
 
 
 		return new ProjectList({
@@ -827,41 +826,41 @@ var ProjectList = (function() {
 			"label": community,
 			"showCreateBtn": false,
 
-			projects:function(callback){
+			projects: function(callback) {
 
-		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
-     				callback(team.getProjects().filter(function(p){
-     					return ([p.getProjectCommunity()]).concat(p.getCommunitiesInvolved()).indexOf(community)>=0;
-     				}));
-     			});
-            }
+				ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+					callback(team.getProjects().filter(function(p) {
+						return ([p.getProjectCommunity()]).concat(p.getCommunitiesInvolved()).indexOf(community) >= 0;
+					}));
+				});
+			}
 		});
 	};
 
-	ProjectList.NamedCategoryProjectList=function(category){
+	ProjectList.NamedCategoryProjectList = function(category) {
 
 
 
-		var btns=[];
+		var btns = [];
 
-		var root=category;
+		var root = category;
 
 		/**
-		 * allow root to define buttons
-		 */
+			* allow root to define buttons
+			*/
 
-		if(root.getRootTagData){
-			root=root.getRootTagData();
+		if (root.getRootTagData) {
+			root = root.getRootTagData();
 		}
-		if(root.getMetadata&&root.getMetadata().createBtns){
+		if (root.getMetadata && root.getMetadata().createBtns) {
 
-			root.getMetadata&&root.getMetadata().createBtns.forEach(function(btn){
+			root.getMetadata && root.getMetadata().createBtns.forEach(function(btn) {
 				btns.push(btn)
 			});
-		
-		}else{
 
-			if(DashboardConfig.getValue('showDatasets')){
+		} else {
+
+			if (DashboardConfig.getValue('showDatasets')) {
 				btns.push({
 					"label": DashboardConfig.getValue('leftPanelSecondaryBtnLabel'),
 					"formName": DashboardConfig.getValue('leftPanelSecondaryBtnForm'),
@@ -876,14 +875,14 @@ var ProjectList = (function() {
 		}
 
 
-		var name=category.getName();
-		if(name.indexOf('/')>-1){
-			var p=name.split('/');
+		var name = category.getName();
+		if (name.indexOf('/') > -1) {
+			var p = name.split('/');
 			var slug;
-			while(p.length){
-				slug=p.pop();
-				if(slug.length>0){
-					name=slug;
+			while (p.length) {
+				slug = p.pop();
+				if (slug.length > 0) {
+					name = slug;
 					break;
 				}
 			}
@@ -897,22 +896,22 @@ var ProjectList = (function() {
 			"createBtns": btns,
 			"filter": null,
 			"lockFilter": [ /*"!collection", */ category.getName()],
-			"metadata":category.getMetadata?category.getMetadata():{},
-			'category':category
+			"metadata": category.getMetadata ? category.getMetadata() : {},
+			'category': category
 		});
 
 
 	};
 
-	ProjectList.NameForProjects=function(){
-		return DashboardConfig.getValue("nameForProjects")||'Projects';
+	ProjectList.NameForProjects = function() {
+		return DashboardConfig.getValue("nameForProjects") || 'Projects';
 	}
-	ProjectList.NameForProject=function(){
-		var type=(ProjectList.NameForProjects());
-		return type.substring(0, type.length-1);
+	ProjectList.NameForProject = function() {
+		var type = (ProjectList.NameForProjects());
+		return type.substring(0, type.length - 1);
 	}
 
-	ProjectList.NamedStatusProjectList=function(status){
+	ProjectList.NamedStatusProjectList = function(status) {
 
 
 
@@ -921,14 +920,14 @@ var ProjectList = (function() {
 			"label": status,
 			"showCreateBtn": false,
 
-			projects:function(callback){
+			projects: function(callback) {
 
-		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
-     				callback(team.getProjects().filter(function(p){
-     					return p.getProjectStatus().indexOf(status)>=0;
-     				}));
-     			});
-            }
+				ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+					callback(team.getProjects().filter(function(p) {
+						return p.getProjectStatus().indexOf(status) >= 0;
+					}));
+				});
+			}
 		});
 
 
@@ -939,15 +938,15 @@ var ProjectList = (function() {
 
 
 		return new ProjectList({
-		    "label":  user.getName(),
-		    projects:function(callback){
+			"label": user.getName(),
+			projects: function(callback) {
 
-		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
-     				callback(team.getProjects().filter(function(p){
-     					return p.getProjectSubmitterId()+""==user.getId()+"";
-     				}));
-     			});
-            }
+				ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+					callback(team.getProjects().filter(function(p) {
+						return p.getProjectSubmitterId() + "" == user.getId() + "";
+					}));
+				});
+			}
 		});
 
 
@@ -958,34 +957,34 @@ var ProjectList = (function() {
 
 
 		return new ProjectList({
-		    "label":  "Related "+ProjectList.NameForProjects(),
-		    "description":function(callback){
+			"label": "Related " + ProjectList.NameForProjects(),
+			"description": function(callback) {
 
-		    	this.getProjectList(function(list){
-		    		var c = list.length;
-			    	var type=(ProjectList.NameForProjects()).toLowerCase();
+				this.getProjectList(function(list) {
+					var c = list.length;
+					var type = (ProjectList.NameForProjects()).toLowerCase();
 
-			    	//assumes plural ends with s
-			    	type==c==1?type.substring(0, type.length-1):type;
-			    	
-			    	callback( "There "+(c==1?"is ":"are ")+c+" related "+type)
+					//assumes plural ends with s
+					type == c == 1 ? type.substring(0, type.length - 1) : type;
 
-		    	});
-		    	
-		    	
-		    },
-		    "labelClass":"",
-		    "showFilters":false,
-		    "showMinimize":true,
-		    "startMinimized":true,
-		    "projects":function(callback){
+					callback("There " + (c == 1 ? "is " : "are ") + c + " related " + type)
 
-		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
-     				callback(team.getProjects().filter(function(p){
-     					return p.getId()!=project.getId()&&p.getCompanyName()!=""&& p.getCompanyName()==project.getCompanyName();
-     				}));
-     			});
-            }
+				});
+
+
+			},
+			"labelClass": "",
+			"showFilters": false,
+			"showMinimize": true,
+			"startMinimized": true,
+			"projects": function(callback) {
+
+				ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+					callback(team.getProjects().filter(function(p) {
+						return p.getId() != project.getId() && p.getCompanyName() != "" && p.getCompanyName() == project.getCompanyName();
+					}));
+				});
+			}
 		});
 
 	}
@@ -995,74 +994,73 @@ var ProjectList = (function() {
 
 		return new ProjectList({
 			"label": client.getName(),
-		    projects:function(callback){
+			projects: function(callback) {
 
-		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
-     				callback(team.getProjects().filter(function(p){
-     					return p.getCompanyName()!=""&& p.getCompanyName()==client.getName();
-     				}));
-     			});
-            }
+				ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+					callback(team.getProjects().filter(function(p) {
+						return p.getCompanyName() != "" && p.getCompanyName() == client.getName();
+					}));
+				});
+			}
 		});
 
 	}
 
 
-	ProjectList.ResolveSharedLists=function(){
+	ProjectList.ResolveSharedLists = function() {
 
 
 		return ([{
-			name:"Community Vault",
-            description:"These datasets and collections are only visible to your community members. Nobody else has access to them.",
-            filter:function(p){
-            	return p.getProjectCommunity()==ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity()&&p.getCommunitiesInvolved().filter(function(c){
-            		return c&&c!=p.getProjectCommunity();
-            	}).length==0;
-            }
-		},{
-			name:"Shared",
-            description:"These are datasets and collections that your community is sharing with other communities and GCT3. This information will be visible and downloadable to members of these other communities.",
-            filter:function(p){
+			name: "Community Vault",
+			description: "These datasets and collections are only visible to your community members. Nobody else has access to them.",
+			filter: function(p) {
+				return p.getProjectCommunity() == ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity() && p.getCommunitiesInvolved().filter(function(c) {
+					return c && c != p.getProjectCommunity();
+				}).length == 0;
+			}
+		}, {
+			name: "Shared",
+			description: "These are datasets and collections that your community is sharing with other communities and GCT3. This information will be visible and downloadable to members of these other communities.",
+			filter: function(p) {
 
-            	return p.getProjectCommunity()==ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity()&&p.getCommunitiesInvolved().filter(function(c){
-            		return c&&c!=p.getProjectCommunity();
-            	}).length>0;
-            }
+				return p.getProjectCommunity() == ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity() && p.getCommunitiesInvolved().filter(function(c) {
+					return c && c != p.getProjectCommunity();
+				}).length > 0;
+			}
 
-		},{
-			name:"Sharing",
-            description:"These are datasets and collections that have been shared by other communities and GCT3 with your community. You will be able to view and download these files.",    
-            filter:function(p){
-            	return p.getProjectCommunity()!=ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity();
-            }
+		}, {
+			name: "Sharing",
+			description: "These are datasets and collections that have been shared by other communities and GCT3 with your community. You will be able to view and download these files.",
+			filter: function(p) {
+				return p.getProjectCommunity() != ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity();
+			}
 
-		}]).map(function(list){
+		}]).map(function(list) {
 
-			return  new MockDataTypeItem({
-                name:list.name,
-                description:list.description,
-                icon:null,
-                navigationFn:function(){
-                    
-                    var controller=GatherDashboard.getApplication().getNamedValue('navigationController')
-                    controller.navigateTo("Datasets", "Main", {
-        				item: new ProjectList({
-                		    "label": list.name,
-                		    "description":list.description,
-                		    projects:function(callback){
-                
-                		    	ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
-                     				callback(team.getProjects().filter(list.filter));
-                     			});
-                            }
-                		})
-        			});
-                    
-                }
-            })
+			return new MockDataTypeItem({
+				name: list.name,
+				description: list.description,
+				icon: null,
+				navigationFn: function() {
+
+					var controller = GatherDashboard.getApplication().getNamedValue('navigationController')
+					controller.navigateTo("Datasets", "Main", {
+						item: new ProjectList({
+							"label": list.name,
+							"description": list.description,
+							projects: function(callback) {
+
+								ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+									callback(team.getProjects().filter(list.filter));
+								});
+							}
+						})
+					});
+
+				}
+			})
 
 		});
-
 
 
 
@@ -1070,38 +1068,38 @@ var ProjectList = (function() {
 
 
 
-	ProjectList.ResolveSharedByommunityProjectList=function(item){
+	ProjectList.ResolveSharedByommunityProjectList = function(item) {
 
 		return new ProjectList({
-							
-			"label":"Shared by: "+item.getName(),
-			"showCreateBtn":false,
-			"filter":null,
-			"--lockFilter":[/*"!collection", */],
-			"projects":function(cb){
-			    ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
-					 var projects=team.getProjects();
-					 
-					 cb(projects.filter(function(p){
-					     
-					     //return true;
-					    
-					     try {
+
+			"label": "Shared by: " + item.getName(),
+			"showCreateBtn": false,
+			"filter": null,
+			"--lockFilter": [ /*"!collection", */ ],
+			"projects": function(cb) {
+				ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+					var projects = team.getProjects();
+
+					cb(projects.filter(function(p) {
+
+						//return true;
+
+						try {
 							var user = team.getUser(p.getProjectSubmitterId());
-					     }catch(e){
-					         
-					         if(!user){
-					             return false;
-					         }
-					         
-					         return user.getCommunity()==item.getName();
-					         console.error(e);
-					     }
-					     
-					     
-					     return false;
-					 }))
-			    });
+						} catch (e) {
+
+							if (!user) {
+								return false;
+							}
+
+							return user.getCommunity() == item.getName();
+							console.error(e);
+						}
+
+
+						return false;
+					}))
+				});
 			}
 		})
 
@@ -1137,9 +1135,9 @@ var ProjectList = (function() {
 						try {
 							var user = team.getUser(p.getProjectSubmitterId());
 						} catch (e) {
-							 if(!user){
-					             return false;
-					         }
+							if (!user) {
+								return false;
+							}
 							return user.getCommunity() == item.getName();
 							console.error(e);
 						}

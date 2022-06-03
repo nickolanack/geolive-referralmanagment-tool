@@ -138,10 +138,10 @@ var TaskItem = (function() {
 		},
 
 		/**
-		 * All Tasks must belong to a item, this could be a user, a widget (ie tasklist widget)
-		 * or even a parent task
-		 * @return {[type]} [description]
-		 */
+			* All Tasks must belong to a item, this could be a user, a widget (ie tasklist widget)
+			* or even a parent task
+			* @return {[type]} [description]
+			*/
 		getItem: function() {
 			var me = this;
 			return me._item;
@@ -166,7 +166,7 @@ var TaskItem = (function() {
 			var me = this;
 		},
 
-		getOwnerProject:function(){
+		getOwnerProject: function() {
 			return this.getItem();
 		},
 
@@ -183,11 +183,11 @@ var TaskItem = (function() {
 			var me = this;
 			return me.getName();
 		},
-		getDescription:function() {
+		getDescription: function() {
 			var me = this;
 			return me.data.description;
 		},
-		setDescription:function(description) {
+		setDescription: function(description) {
 			var me = this;
 			return me.data.description = description;
 		},
@@ -270,14 +270,14 @@ var TaskItem = (function() {
 
 			if (this.hasDueDate()) {
 
-				var date=this.getDueDate();
+				var date = this.getDueDate();
 				dateString = date;
-				var num=parseInt(date);
-				if(date+""==num+""&&num>0){//&&num<2000){
-					dateString="in "+num+" day"+(num==1?"":"s");
+				var num = parseInt(date);
+				if (date + "" == num + "" && num > 0) { //&&num<2000){
+					dateString = "in " + num + " day" + (num == 1 ? "" : "s");
 				}
 
-				
+
 				if (dateString.indexOf('in ') !== 0) {
 					dateString = moment(this.getDueDate()).fromNow();
 				}
@@ -334,7 +334,7 @@ var TaskItem = (function() {
 		isOverdue: function() {
 			var me = this;
 
-			if(this.getId()<0){
+			if (this.getId() < 0) {
 				return false;
 			}
 
@@ -456,7 +456,7 @@ var TaskItem = (function() {
 					change: function() {
 						console.log(this.value);
 						item.setName(this.value);
-						valueEl.firstChild.textContent=this.value;
+						valueEl.firstChild.textContent = this.value;
 
 					}
 				}
@@ -526,7 +526,7 @@ var TaskItem = (function() {
 			dateString = moment(item.getDueDate()).fromNow()
 		}
 
-		if(!item.hasDueDate()){
+		if (!item.hasDueDate()) {
 			el.addClass('no-date');
 		}
 
@@ -544,13 +544,13 @@ var TaskItem = (function() {
 			events: {
 				change: function() {
 					console.log(this.value);
-					if(item.getId()>0){
+					if (item.getId() > 0) {
 						item.setDueDateDay(this.value);
-					}else{
+					} else {
 						item.setDueDate(this.value);
 					}
-					
-					valueEl.firstChild.textContent=item.getFormattedDueDate();
+
+					valueEl.firstChild.textContent = item.getFormattedDueDate();
 
 				}
 			}
@@ -679,7 +679,7 @@ var TaskItem = (function() {
 	}
 
 
-	
+
 	TaskItem.FormatTaskTemplateModules = function(list, listItem, uiview, listModule) {
 
 		// list.content.unshift(new ElementModule('checkbox', {
@@ -705,8 +705,8 @@ var TaskItem = (function() {
 	}
 
 	/**
-	 * returns a module arrays
-	 */
+		* returns a module arrays
+		*/
 	TaskItem.ProjectTaskMenuButtons = function(item) {
 
 
@@ -725,15 +725,14 @@ var TaskItem = (function() {
 
 
 		//var category = item.getProjectType();
-		var categories=item.getProjectTypes();
+		var categories = item.getProjectTypes();
 
 
-		if (categories.length>0) {
+		if (categories.length > 0) {
 
 
 
-			categories.forEach(function(category, index){
-
+			categories.forEach(function(category, index) {
 
 
 
@@ -764,7 +763,7 @@ var TaskItem = (function() {
 							return task.templateMetadata();
 						});
 
-						data.taskTemplates=taskTemplates;
+						data.taskTemplates = taskTemplates;
 
 
 
@@ -821,7 +820,7 @@ var TaskItem = (function() {
 		} else {
 
 
-			
+
 			modules.push(new ModalFormButtonModule(application, item /*new MockDataTypeItem()*/ , {
 				label: "Set project type",
 				formName: "chooseProjectTypeForm",
@@ -831,11 +830,11 @@ var TaskItem = (function() {
 				hideText: true,
 				"class": "inline-btn add primary-btn"
 			}).addEvent('show', function() {
-				
+
 
 			}));
 			modules.push(TaskItem._missingProjectTypeInfo());
-			
+
 
 		}
 
@@ -915,23 +914,23 @@ var TaskItem = (function() {
 				}).pop();
 
 				//return viewer.getChildView('content', contentIndex);
-			
+
 			}, {
 				sorters: sorters,
 				currentSort: initialSort,
 				currentSortInvert: true,
-				label:"Sort"
+				label: "Sort"
 			}));
 
 
 			parentModule.runOnceOnLoad(function() {
 				/**
-				 * TODO remove this timeout, the need for it. or set sortModule to automatically setSortObject
-				 */
-				
-				try{
-				 	sortModule.getListModule().setSortObject(sortModule);
-				}catch(e){	
+					* TODO remove this timeout, the need for it. or set sortModule to automatically setSortObject
+					*/
+
+				try {
+					sortModule.getListModule().setSortObject(sortModule);
+				} catch (e) {
 
 					setTimeout(function() {
 						sortModule.getListModule().setSortObject(sortModule);
@@ -951,19 +950,16 @@ var TaskItem = (function() {
 			}
 
 			var filterModule = (new ListFilterModule(function() {
-				
+
 				return viewer.findChildViews(function(v) {
 					return v instanceof UIListViewModule
 				}).pop();
 
 			}, {
 				filters: filters,
-				currentFilter: (initialFilter?'!'+initialFilter:null),
-				label:"Filter"
+				currentFilter: (initialFilter ? '!' + initialFilter : null),
+				label: "Filter"
 			}));
-
-
-
 
 
 
@@ -1009,13 +1005,13 @@ var TaskItem = (function() {
 
 
 
-		if(NotificationItems.hasItem(child)){
+		if (NotificationItems.hasItem(child)) {
 			childView.getElement().addClass("has-notification");
 		}
 		childView.addWeakEvent(NotificationItems, "change", function() {
-			if(NotificationItems.hasItem(child)){
+			if (NotificationItems.hasItem(child)) {
 				childView.getElement().addClass("has-notification");
-			}else{
+			} else {
 				childView.getElement().removeClass("has-notification");
 			}
 		});
@@ -1152,16 +1148,16 @@ var TaskItem = (function() {
 			html: "Automatic task creation is " + (DashboardConfig.getValue("autoCreateDefaultTasks") ? "enabled" : "disabled")
 		}));
 
-		categories.forEach(function(category){
-		try{
-			TaskItem.TaskTemplates(category, function(tasks) {
-				if (tasks.length == 0) {
-					label.getElement().innerHTML += '<br/><span style="color:crimson;">There are no default tasks</span>';
-				}
+		categories.forEach(function(category) {
+			try {
+				TaskItem.TaskTemplates(category, function(tasks) {
+					if (tasks.length == 0) {
+						label.getElement().innerHTML += '<br/><span style="color:crimson;">There are no default tasks</span>';
+					}
 
-			});
+				});
 
-			}catch(e){
+			} catch (e) {
 				console.error(e);
 			}
 		})
@@ -1171,6 +1167,64 @@ var TaskItem = (function() {
 		return label;
 	}
 
+
+	TaskItem.AddTableHeader = function(listModule) {
+
+
+		(new TableHeader('tasktTableLayout', {
+
+			"complete": {
+				"width": "30px",
+				"label": "Complete",
+				"showLabel": false,
+				"align": "center"
+			},
+			"stars": {
+				"width": "30px",
+				"label": "Stars",
+				"showLabel": false,
+				"align": "center"
+			},
+			"priority": {
+				"width": "30px",
+				"label": "Priority",
+				"showLabel": false,
+				"align": "center"
+			},
+			"tags": {
+				"width": "130px",
+				"label": "Project"
+			},
+			"assigned": {
+				"width": "30px",
+				"label": "Assigned",
+				"showLabel": false,
+				"align": "center"
+
+			},
+			"comments": {
+				"width": "45px",
+				"tip": "",
+				"label": ""
+			},
+			"name": {
+				"width": "auto",
+				"minWidth": "250px",
+				"label": "Name"
+			},
+			"duedate": {
+				"width": "130px",
+				"label": "Due Date"
+			}
+
+		})).addSort('tags', function(a, b) {
+			return ProjectList.GetSortFn('name').sortFn(a.getOwnerProject(), b.getOwnerProject());
+		}).addSort('duedate', function(a, b) {
+			return (a.getDueDate() > b.getDueDate() ? 1 : -1);
+		}).addSort('stars', function(a, b) {
+			return (a.isStarred() ? 1 : 0) - (b.isStarred() ? 1 : 0);
+		}).render(listModule)
+	}
 
 
 	TaskItem.TaskTemplates = function(category, callback) {
