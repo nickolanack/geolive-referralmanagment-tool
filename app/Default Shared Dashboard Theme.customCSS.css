@@ -4080,6 +4080,8 @@ ul.user-roles{
 }
 
 
+
+
 .ui-view.inline-icon-list-view, .ui-view.inline-icon-list-view .ui-view {
     padding: 0;
     max-height: 20px;
@@ -5837,6 +5839,12 @@ div.popover[data-with-view="reportSelectionView"]{
 
 
 ._tableStyle_{
+    
+    .ui-view.inline-icon-list-view.unassigned, .ui-view.inline-icon-list-view.unassigned:first-child{
+        display:inline-block;
+    }
+    
+    
     &>* {
         display: inline-block;
         width: 100%;
