@@ -645,12 +645,14 @@ var TableHeader = (function() {
 		},
 
 		_addFieldDecorations: function(colEl){
+			
 			var column = colEl.getAttribute('data-col');
 
-			this._addFieldStyle(column);
-			this._addFieldDecorations(colEl);
+			
 			colEl.setAttribute('data-label', me.labelForCol(column));
 			this.setTipFor(column, colEl);
+			
+			this._addFieldStyle(column);
 
 		},
 
@@ -673,7 +675,7 @@ var TableHeader = (function() {
 
 
 			tableCols.forEach(function(colEl) {
-				me._addFieldDecorations();
+				me._addFieldDecorations(colEl);
 			});
 
 			
