@@ -5886,11 +5886,11 @@ div.popover[data-with-view="reportSelectionView"]{
             left: -15px;
         }
         
-        [data-col].active:before {
+        [data-col].active.asc:before {
             content: "\f0dd";
             color:cornflowerblue;
         }
-        [data-col].active.asc:before {
+        [data-col].active.desc:before {
             content: "\f0de";
         }
         
