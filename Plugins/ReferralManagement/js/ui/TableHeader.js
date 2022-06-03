@@ -245,26 +245,27 @@ var TableHeader = (function() {
 				filter.hide();
 			});
 
+			me.runOnceOnLoad(function(){
+				listModule.runOnceOnLoad(function() {
 
-			listModule.runOnceOnLoad(function() {
+					var module = listModule.getDetailViewAt(0);
+					if (!module) {
+						listModule.once('loadItem', function(module) {
+							me._createHeaderFromContent(module, function() {
+								me._addHeaderBehavior();
+							});
 
-				var module = listModule.getDetailViewAt(0);
-				if (!module) {
-					listModule.once('loadItem', function(module) {
-						me._createHeaderFromContent(module, function() {
-							me._addHeaderBehavior();
 						});
+						return;
+					}
 
+					me._createHeaderFromContent(module, function() {
+						me._addHeaderBehavior();
 					});
-					return;
-				}
 
-				me._createHeaderFromContent(module, function() {
-					me._addHeaderBehavior();
+
+
 				});
-
-
-
 			});
 
 
