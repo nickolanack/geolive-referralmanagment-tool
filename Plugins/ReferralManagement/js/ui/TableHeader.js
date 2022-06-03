@@ -569,7 +569,7 @@ var TableHeader = (function() {
 
 					var style="";
 					if(cell.align){
-						style+='[data-col="' + cell.col + '"]{ text-align: '+cell.align+'; } ';
+						style+='._tableStyle_>.ui-view [data-col="' + cell.col + '"]{ text-align: '+cell.align+'; } ';
 					}
 					
 					return style;
