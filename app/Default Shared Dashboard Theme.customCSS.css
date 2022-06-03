@@ -5871,7 +5871,10 @@ div.popover[data-with-view="reportSelectionView"]{
     }
     
      [data-col], &>.ui-view>*>*>*[data-col] {
-        float:none;
+        float: none;
+        display: inline-block;
+        text-align: left;
+        margin: 0;
     }
 }
 
