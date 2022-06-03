@@ -665,7 +665,13 @@ var TableHeader = (function() {
 
 			if(this._sortModule){
 				this._sortModule.addSort(name, fn);
+				return this;
 			}
+
+			this.once('initSort', function(sortModule){
+				sortModule.addSort(name, fn);
+			});
+
 			return this;
 		},
 
