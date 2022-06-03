@@ -5892,6 +5892,7 @@ div.popover[data-with-view="reportSelectionView"]{
         }
         [data-col].active.asc:before {
             content: "\f0de";
+            color:cornflowerblue;
         }
         
         [data-col].sortable.disabled:before{
