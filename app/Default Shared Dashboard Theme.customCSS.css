@@ -5843,7 +5843,7 @@ div.popover[data-with-view="reportSelectionView"]{
         white-space: nowrap;
     }
     
-     [data-col], &>.ui-view [data-col] {
+     [data-col] {
         float: none;
         display: inline-block;
         text-align: left;
