@@ -5843,11 +5843,14 @@ div.popover[data-with-view="reportSelectionView"]{
         white-space: nowrap;
     }
     
-     [data-col], &>.ui-view [data-col] {
+     [data-col] {
         float: none;
         display: inline-block;
         text-align: left;
         margin: 0;
+    }
+    &>.ui-view [data-col] {
+        float: none;
     }
     
     
@@ -5872,7 +5875,7 @@ div.popover[data-with-view="reportSelectionView"]{
             margin-right: 5px;
             color:gray;
             position: absolute;
-            left: -10px;
+            left: -15px;
         }
         
         [data-col].active:before {
@@ -5893,6 +5896,7 @@ div.popover[data-with-view="reportSelectionView"]{
         min-height: 30px;
         vertical-align: top;
         overflow: visible;
+        position: relative;
     
         &>*{
             display:none;
