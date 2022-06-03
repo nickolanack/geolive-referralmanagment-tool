@@ -253,7 +253,7 @@ var TableHeader = (function() {
 						listModule.once('loadItem', function(module) {
 							me._createHeaderFromContent(module, function() {
 								me._addHeaderBehavior();
-							});zush
+							});
 
 						});
 						return;
