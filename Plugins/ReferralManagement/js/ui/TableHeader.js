@@ -20,16 +20,65 @@ var TableHeader = (function() {
 	}).execute();
 
 
+	var TableHeadersClass=new Class({
+
+
+		addHeader:function(instance){
+
+			if(!this._headers){
+				this._headers=[];
+			}
+
+			this._headers.push(instance);
+			return this;
+
+		},
+
+		removeHeader:function(instance){
+
+			if(!this._headers){
+				return this;
+			}
+
+			var i=this._headers.indexOf(instance);
+
+			if(i>=0){
+				this._headers.splice(i, 1);
+			}
+
+			return this;
+
+		},
+		headersWithLayout:function(layoutName, cb){
+			if(!this._headers){
+				cb([]);
+				return;
+			}
+
+			callback(this._headers.filter(function(item){
+				return item.getLayoutName()==layoutName;
+			}));
+
+		}
+
+
+
+	});
+
+
+	var TableHeaders=new TableHeadersClass();
 	
 
 
 	var TableHeader = new Class_({
 		Implements:[Events],
-		initialize: function() {
+		initialize: function(layoutName) {
 
 
 			currentHeader=this; //Assumes a single header
-
+			this._layoutName=layoutName;
+			
+			TableHeaders.addHeader(this)
 			DashboardPageLayout.addLayout("singleProjectListItemTableDetail", function(content) {
 
 				//var map = ['name', 'owner', 'date', 'time', 'tag', 'docs', 'approval', 'ownership'];
@@ -77,6 +126,9 @@ var TableHeader = (function() {
 
 		},
 
+		getLayoutName:function(){
+			return this._layoutName;
+		},
 
 		labelForCol: function(col) {
 
@@ -596,6 +648,9 @@ var TableHeader = (function() {
 
 				new UIPopover(btn, {
 					application:GatherDashboard.getApplication(),
+					item:new MockDataTypeItem({
+						'layout':'projectTableLayout' //TODO: use this to make tableLayoutForm generic and select config name
+					}),
 					detailViewOptions:{
 						"viewType": "form",
                     	"namedFormView": "tableLayoutForm",
@@ -625,17 +680,23 @@ var TableHeader = (function() {
 			}
 			this._style = null;
 			currentHeader=null;
+			TableHeaders.removeHeader(this);
 		}
 
 	});
 
-	TableHeader.UpdateLayout=function(options){
+	TableHeader.UpdateLayout=function(options, layoutName){
 
 		//TODO: provide namespaced tableLayout using name 'projectTableLayout'
 
 		options.forEach(function(colData){
 			layoutDefault[colData.col].hidden=colData.hidden;
-		})
+		});
+
+		TableHeaders.headersWithLayout(layoutName, function(items){
+			items.updateLayout();
+		});
+
 		if(currentHeader){
 			currentHeader.updateLayout();
 		}

@@ -659,7 +659,7 @@ var ProjectList = (function() {
 
 	ProjectList.AddTableHeader = function(listModule) {
 
-		(new TableHeader()).render(listModule);
+		(new TableHeader('projectTableLayout')).render(listModule);
 	
 	};
 
