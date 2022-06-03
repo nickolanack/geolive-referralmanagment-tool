@@ -647,7 +647,13 @@ var TableHeader = (function() {
 			
 			
 			me._listModule.getSortObject(function(sortModule){
-				header.firstChild.firstChild.childNodes.forEach(function(colEl) {
+
+				var firstRow=header.firstChild;
+				if(!firstRow.hasClass('ui-view')){
+					firstRow=firstRow.nextSibling;
+				}
+
+				firstRow.firstChild.childNodes.forEach(function(colEl) {
 
 					colEl.addClass('sortable');
 
