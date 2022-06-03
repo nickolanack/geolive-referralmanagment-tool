@@ -875,9 +875,9 @@ var TaskItem = (function() {
 
 	TaskItem.TaskListSortMenu = function(contentIndex, sorters, filters) {
 
-		if (typeof contentIndex != "number") {
-			contentIndex = 2;
-		}
+		// if (typeof contentIndex != "number") {
+		// 	contentIndex = 2;
+		// }
 
 		if (!sorters) {
 			sorters = ReferralManagementDashboard.taskSorters();
@@ -887,13 +887,10 @@ var TaskItem = (function() {
 			filters = ReferralManagementDashboard.taskFilters();
 		}
 
-		if (typeof contentIndex != "number") {
-			contentIndex = 2;
-		}
 
 		var application = ReferralManagementDashboard.getApplication();
 
-		return function(viewer, element) {
+		return function(viewer, element, parentModule) {
 
 
 
@@ -907,14 +904,36 @@ var TaskItem = (function() {
 			}
 
 
-			var filter = (new ListSortModule(function() {
-				return viewer.getChildView('content', contentIndex);
+			var sortModule = (new ListSortModule(function() {
+
+				return viewer.findChildViews(function(v) {
+					return v instanceof UIListViewModule
+				}).pop();
+
+				//return viewer.getChildView('content', contentIndex);
+			
 			}, {
 				sorters: sorters,
 				currentSort: initialSort,
 				currentSortInvert: true,
 				label:"Sort"
 			}));
+
+
+			parentModule.runOnceOnLoad(function() {
+				/**
+				 * TODO remove this timeout, the need for it. or set sortModule to automatically setSortObject
+				 */
+				
+				 try{
+				 	sortModule.getListModule().setSortObject(sortModule);
+				}catch(e){	
+
+					setTimeout(function() {
+						sortModule.getListModule().setSortObject(sortModule);
+					}, 100);
+				}
+			});
 
 
 
@@ -927,7 +946,7 @@ var TaskItem = (function() {
 				initialFilter = null;
 			}
 
-			var sort = (new ListFilterModule(function() {
+			var filterModule = (new ListFilterModule(function() {
 				return viewer.getChildView('content', contentIndex);
 			}, {
 				filters: filters,
@@ -936,10 +955,13 @@ var TaskItem = (function() {
 			}));
 
 
+			
 
-			application.setNamedValue('taskListFilter', sort);
 
-			return new ModuleArray([filter, sort], {
+
+			application.setNamedValue('taskListFilter', filterModule);
+
+			return new ModuleArray([sortModule, filterModule], {
 				"class": "filter-btns"
 			});
 

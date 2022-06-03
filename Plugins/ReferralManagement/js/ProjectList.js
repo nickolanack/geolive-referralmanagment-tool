@@ -593,6 +593,7 @@ var ProjectList = (function() {
 				currentSortInvert: true,
 				//applyfilter:true
 			})).load(null, div, null);
+			
 			parentModule.runOnceOnLoad(function() {
 				/**
 				 * TODO remove this timeout, the need for it. or set sortModule to automatically setSortObject
