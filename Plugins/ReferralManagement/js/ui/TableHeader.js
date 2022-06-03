@@ -187,11 +187,11 @@ var TableHeader = (function() {
 		},
 
 		runOnceOnLoad:function(cb){
-			if(me._isLoaded=true){
+			if(this._isLoaded=true){
 				cb();
 				return;
 			}
-			me.once('load', cb);
+			this.once('load', cb);
 		},
 
 		getLayoutName:function(){
