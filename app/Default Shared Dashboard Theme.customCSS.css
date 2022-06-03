@@ -5890,6 +5890,7 @@ div.popover[data-with-view="reportSelectionView"]{
     
     .table-header [data-col]{
         display: inline-block;
+        min-height: 20px;
     
         &>*{
             display:none;
@@ -5901,6 +5902,10 @@ div.popover[data-with-view="reportSelectionView"]{
         
         &.hide-label:after {
             display:none
+        }
+        
+        &.hide-label:before {
+            left: 50%;
         }
         
     }
