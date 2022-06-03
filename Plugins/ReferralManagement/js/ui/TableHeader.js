@@ -769,12 +769,14 @@ var TableHeader = (function() {
 						colEl.addClass('active');
 						if (me._sortInv) {
 							colEl.addClass('asc');
+						}else{
+							colEl.removeClass('asc');
 						}
 						if(me._sortEl&&me._sortEl!=colEl){
 							me._sortEl.removeClass('active');
 							me._sortEl.removeClass('asc');
 						}
-						me._sortCol=colEl;
+						me._sortEl=colEl;
 
 					});
 				});
