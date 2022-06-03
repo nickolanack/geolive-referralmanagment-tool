@@ -24,6 +24,9 @@
             "width": "auto",
             "minWidth": "250px",
             "label": "Name"
+        },
+        "duedate": {
+             "width": "130px"
         }
     
 })).render(listModule);
