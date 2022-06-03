@@ -644,24 +644,33 @@ var TableHeader = (function() {
 			});
 
 
-			
-			
-			me._listModule.getSortObject(function(sortModule){
-
-				var firstRow=header.firstChild;
+			var firstRow=header.firstChild;
 				if(firstRow.tagName!='DIV'){
 					firstRow=firstRow.nextSibling;
 				}
 
-				firstRow.firstChild.childNodes.forEach(function(colEl) {
+			var tableCols=firstRow.firstChild.childNodes;
+
+
+			tableCols.forEach(function(colEl) {
+
+				var column = colEl.getAttribute('data-col');
+
+				me._addFieldStyle(column);
+
+				colEl.setAttribute('data-label', me.labelForCol(column));
+				me.setTipFor(column, colEl);
+
+			});
+
+			
+			me._listModule.getSortObject(function(sortModule){
+
+				tableCols.forEach(function(colEl) {
 
 					colEl.addClass('sortable');
-
 					var column = colEl.getAttribute('data-col');
 
-					me._addFieldStyle(column);
-
-					colEl.setAttribute('data-label', me.labelForCol(column));
 
 					if (me._sort == column) {
 						colEl.addClass('active');
@@ -670,16 +679,7 @@ var TableHeader = (function() {
 						}
 					}
 
-
-					me.setTipFor(column, colEl);
-
-
-					
-
-					
-
-
-					if (!ProjectList.HasSortFn(column)) {
+					if (!sortModule.hasSort(column) /*ProjectList.HasSortFn(column)*/) {
 						colEl.addClass('disabled');
 						return;
 					}
@@ -691,7 +691,6 @@ var TableHeader = (function() {
 						var sortModule = me._listModule.getSortObject();
 
 						if (!sortModule) {
-
 
 							/**
 							* Not going to render this temporary module, but it should still work
