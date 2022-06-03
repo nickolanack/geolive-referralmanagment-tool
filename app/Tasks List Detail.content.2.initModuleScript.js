@@ -45,7 +45,7 @@
         }
     
     }
-    )).addSort('project', function(a, b){
+    )).addSort('tags', function(a, b){
         return ProjectList.GetSortFn('name').sortFn(a.getOwnerProject(), b.getOwnerProject());
     }).addSort('duedate', function(a, b){
         return (a.getDueDate() > b.getDueDate() ? 1 : -1);
