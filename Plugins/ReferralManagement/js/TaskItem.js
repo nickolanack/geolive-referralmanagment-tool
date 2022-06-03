@@ -166,6 +166,10 @@ var TaskItem = (function() {
 			var me = this;
 		},
 
+		getOwnerProject(){
+			
+		},
+
 
 		getName: function() {
 			var me = this;

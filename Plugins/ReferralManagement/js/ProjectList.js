@@ -372,6 +372,14 @@ var ProjectList = (function() {
 			return s.label;
 		}).indexOf(name) >= 0;
 	};
+
+
+	ProjectList.GetSortFn = function(name) {
+		return ProjectList.projectSorters().filter(function(s) {
+			return s.label==name;
+		}).shift();
+	};
+
 	ProjectList.projectSorters = function() {
 
 
@@ -593,7 +601,7 @@ var ProjectList = (function() {
 				currentSortInvert: true,
 				//applyfilter:true
 			})).load(null, div, null);
-			
+
 			parentModule.runOnceOnLoad(function() {
 				/**
 				 * TODO remove this timeout, the need for it. or set sortModule to automatically setSortObject
