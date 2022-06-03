@@ -664,12 +664,12 @@ var TableHeader = (function() {
 		addSort:function(name, fn){
 
 			if(this._sortModule){
-				this._sortModule.addSort(name, fn);
+				this._sortModule.addSortFn(name, fn);
 				return this;
 			}
 
 			this.once('initSort', function(sortModule){
-				sortModule.addSort(name, fn);
+				sortModule.addSortFn(name, fn);
 			});
 
 			return this;
