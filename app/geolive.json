@@ -7108,10 +7108,10 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "col-comments",
+                                    "identifier": "col-name",
                                     "className": "",
-                                    "fieldLabelScript": "return \"Comments\";",
-                                    "fieldValueScript": "return \"\";",
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return item.getName();",
                                     "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.6.config.formatElementScript.js"
                                 }
                             },
@@ -7119,10 +7119,10 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "identifier": "col-name",
+                                    "identifier": "col-comments",
                                     "className": "",
-                                    "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return item.getName();",
+                                    "fieldLabelScript": "return \"Comments\";",
+                                    "fieldValueScript": "return \"\";",
                                     "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.7.config.formatElementScript.js"
                                 }
                             },
