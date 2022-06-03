@@ -40,7 +40,7 @@ pop=new UIPopover(el, {
         description:item.isComplete()?'click to mark incomplete':'click to mark complete',
         anchor:UIPopover.AnchorAuto()
     });
-
+element.setAttribute('data-col', 'complete');
 return mod;
 
 /*
