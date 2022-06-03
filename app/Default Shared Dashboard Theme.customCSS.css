@@ -5849,6 +5849,9 @@ div.popover[data-with-view="reportSelectionView"]{
         text-align: left;
         margin: 0;
     }
+    &>.ui-view [data-col] {
+        float: none;
+    }
     
     
     .table-header {
