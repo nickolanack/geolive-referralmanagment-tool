@@ -1,1 +1,0 @@
-return ItemFlags.CreateFlagIndicator(item);

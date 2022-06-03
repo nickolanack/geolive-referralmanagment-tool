@@ -1,1 +1,0 @@
-TaskItem.FormatNameFieldValue(item, el, valueEl);

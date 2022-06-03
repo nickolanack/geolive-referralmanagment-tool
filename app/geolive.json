@@ -7050,6 +7050,14 @@
                         "modules": [
                             "Single Task List Item Detail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "Single Task List Item Detail.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
                                 "type": "UIView",
                                 "config": {
                                     "className": "inline-icon-list-view",
@@ -7064,7 +7072,7 @@
                                     "showDeleteButton": false,
                                     "deleteItemScript": "defaultBehaviorFn()",
                                     "initModuleScript": "",
-                                    "formatModuleScript": "Single Task List Item Detail.metadata.positions.content.modules.1.config.formatModuleScript.js",
+                                    "formatModuleScript": "Single Task List Item Detail.metadata.positions.content.modules.2.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
@@ -7080,7 +7088,7 @@
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getName();",
-                                    "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.2.config.formatElementScript.js"
+                                    "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.3.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -7091,15 +7099,7 @@
                                     "className": "",
                                     "fieldLabelScript": "return \"Comments\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.3.config.formatElementScript.js"
-                                }
-                            },
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "Single Task List Item Detail.metadata.positions.content.modules.4.config.script.js",
-                                    "description": "Info about my custom script"
+                                    "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.4.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -7111,22 +7111,22 @@
                                 }
                             },
                             {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "Single Task List Item Detail.metadata.positions.content.modules.6.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "due-date",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "Single Task List Item Detail.metadata.positions.content.modules.6.config.fieldValueScript.js",
-                                    "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.6.config.formatElementScript.js"
-                                }
-                            },
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "Single Task List Item Detail.metadata.positions.content.modules.7.config.script.js",
-                                    "description": "Info about my custom script"
+                                    "fieldValueScript": "Single Task List Item Detail.metadata.positions.content.modules.7.config.fieldValueScript.js",
+                                    "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.7.config.formatElementScript.js"
                                 }
                             },
                             {

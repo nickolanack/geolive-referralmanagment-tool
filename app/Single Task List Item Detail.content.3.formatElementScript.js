@@ -1,1 +1,1 @@
-el.addClass("task-discussion");
+TaskItem.FormatNameFieldValue(item, el, valueEl);
