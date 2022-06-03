@@ -166,8 +166,8 @@ var TaskItem = (function() {
 			var me = this;
 		},
 
-		getOwnerProject(){
-			
+		getOwnerProject:function(){
+
 		},
 
 
