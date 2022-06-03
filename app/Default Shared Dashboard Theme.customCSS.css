@@ -5890,7 +5890,9 @@ div.popover[data-with-view="reportSelectionView"]{
     
     .table-header [data-col]{
         display: inline-block;
-        min-height: 20px;
+        min-height: 30px;
+        vertical-align: top;
+        overflow: visible;
     
         &>*{
             display:none;
