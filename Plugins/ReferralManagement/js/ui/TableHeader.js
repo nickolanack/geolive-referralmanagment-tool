@@ -192,7 +192,7 @@ var TableHeader = (function() {
 				return;
 			}
 			me.once('load', cb);
-		}
+		},
 
 		getLayoutName:function(){
 			return this._layoutName;
