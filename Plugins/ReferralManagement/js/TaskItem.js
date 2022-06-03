@@ -925,7 +925,7 @@ var TaskItem = (function() {
 				 * TODO remove this timeout, the need for it. or set sortModule to automatically setSortObject
 				 */
 				
-				 try{
+				try{
 				 	sortModule.getListModule().setSortObject(sortModule);
 				}catch(e){	
 

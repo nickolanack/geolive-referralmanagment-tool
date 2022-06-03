@@ -564,7 +564,17 @@ var TableHeader = (function() {
 				}).join("\n") + "\n" +
 				hiddenCells.concat(collapsedCells).map(function(cell) {
 					return 'div.field-value-module.inline[data-col="' + cell.col + '"]{ display:none; }';
-				}).join("\n");
+				}).join("\n")+"\n\n"+(([]).concat(dynamicCells, minnedOutItems, maxedOutItems, staticCells).map(function(cell){
+
+
+					var style="";
+					if(cell.align){
+						style+='[data-col="' + cell.col + '"]{ text-align: '+cel.align+'; } ';
+					}
+					
+					return style;
+
+				}).join("\n"))
 
 		},
 
@@ -634,6 +644,16 @@ var TableHeader = (function() {
 
 		},
 
+		_addFieldDecorations: function(colEl){
+			var column = colEl.getAttribute('data-col');
+
+			this._addFieldStyle(column);
+			this._addFieldDecorations(colEl);
+			colEl.setAttribute('data-label', me.labelForCol(column));
+			this.setTipFor(column, colEl);
+
+		},
+
 		_makeHeaderEl: function() {
 
 			var me = this;
@@ -653,14 +673,7 @@ var TableHeader = (function() {
 
 
 			tableCols.forEach(function(colEl) {
-
-				var column = colEl.getAttribute('data-col');
-
-				me._addFieldStyle(column);
-
-				colEl.setAttribute('data-label', me.labelForCol(column));
-				me.setTipFor(column, colEl);
-
+				me._addFieldDecorations();
 			});
 
 			
@@ -692,6 +705,7 @@ var TableHeader = (function() {
 
 						if (!sortModule) {
 
+							console.error('There was no list sort')
 							/**
 							* Not going to render this temporary module, but it should still work
 							*/
