@@ -5884,7 +5884,14 @@ div.popover[data-with-view="reportSelectionView"]{
         
         &:after, &.field-value-module:after {
             content: attr(data-label);
+            
+            
         }
+        
+        &.hide-label:after {
+            display:none
+        }
+        
     }
     
     
