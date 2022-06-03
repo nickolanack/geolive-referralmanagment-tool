@@ -5893,6 +5893,7 @@ div.popover[data-with-view="reportSelectionView"]{
         min-height: 30px;
         vertical-align: top;
         overflow: visible;
+        position: relative;
     
         &>*{
             display:none;
