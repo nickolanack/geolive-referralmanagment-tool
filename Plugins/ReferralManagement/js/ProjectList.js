@@ -664,11 +664,22 @@ var ProjectList = (function() {
 	}
 
 
-	
+	var lowerLocalCompare=function(a,b){
+	return (a||"").toLowerCase().localeCompare((b||"").toLowerCase());
+	}
 
 	ProjectList.AddTableHeader = function(listModule) {
 
-		(new TableHeader('projectTableLayout')).render(listModule);
+		(new TableHeader('projectTableLayout'))
+			.addSort('id', function(a, b){
+
+				return parseInt(a.getId())-parseInt(b.getId());
+
+			}).addSort('auth', function(a, b){
+
+				return lowerLocalCompare(a.getAuthID(), b.getAuthID());
+
+			}).render(listModule);
 	
 	};
 
