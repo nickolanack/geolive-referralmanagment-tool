@@ -4080,6 +4080,8 @@ ul.user-roles{
 }
 
 
+
+
 .ui-view.inline-icon-list-view, .ui-view.inline-icon-list-view .ui-view {
     padding: 0;
     max-height: 20px;
@@ -5837,9 +5839,15 @@ div.popover[data-with-view="reportSelectionView"]{
 
 
 ._tableStyle_{
+    
+    .ui-view.inline-icon-list-view.unassigned, .ui-view.inline-icon-list-view.unassigned:first-child{
+        display:inline-block;
+    }
+    
+    
     &>* {
         display: inline-block;
-        width: 100%;
+        width: calc(100% - 20px);
         white-space: nowrap;
     }
     
@@ -5916,6 +5924,9 @@ div.popover[data-with-view="reportSelectionView"]{
         
         &.sortable.show-label {
             left: 20px;
+        }
+        &.sortable.disabled.show-label {
+            left: 0px;
         }
         
     }
