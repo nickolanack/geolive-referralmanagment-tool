@@ -150,12 +150,15 @@
 
 }
 
+.starred-indicator, .priority-indicator, .completion-indicator{
+     color: rgba(128, 128, 128, 0.5);
+}
 
 
 .starred-indicator:before {
     content: "\f006";
     font-family: FontAwesome;
-    color: rgba(128, 128, 128, 0.5);
+   
     
 }
 .starred-indicator:hover:before {
@@ -180,8 +183,7 @@
 .priority-indicator:before {
     content: "\f024";
     font-family: FontAwesome;
-    color: rgba(128, 128, 128, 0.5);
-    
+
 }
 .priority.priority-indicator:before {
     content: "\f024";
