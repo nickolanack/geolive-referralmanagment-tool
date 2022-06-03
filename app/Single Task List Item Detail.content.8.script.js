@@ -33,7 +33,7 @@
     }))
    
    var m= new ModuleArray(mods,{
-       "async":true
+       "async":true,
        "identifier":"col-attachments"
    });
    m.getElement().setAttribute('data-col','attachments');
