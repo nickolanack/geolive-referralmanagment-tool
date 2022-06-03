@@ -55,7 +55,7 @@ var TableHeader = (function() {
 				return;
 			}
 
-			callback(this._headers.filter(function(item){
+			cb(this._headers.filter(function(item){
 				return item.getLayoutName()==layoutName;
 			}));
 
