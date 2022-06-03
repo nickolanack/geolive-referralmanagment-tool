@@ -5847,7 +5847,7 @@ div.popover[data-with-view="reportSelectionView"]{
     
     &>* {
         display: inline-block;
-        width: 100%;
+        width: calc(100% - 20px);
         white-space: nowrap;
     }
     
