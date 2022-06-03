@@ -780,7 +780,7 @@ var TableHeader = (function() {
 						if(me._sortEl&&me._sortEl!=colEl){
 							me._sortEl.removeClass('active');
 							me._sortEl.removeClass('desc');
-							colEl.removeClass('asc');
+							me._sortEl.removeClass('asc');
 						}
 						me._sortEl=colEl;
 
