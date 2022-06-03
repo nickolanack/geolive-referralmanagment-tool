@@ -648,7 +648,7 @@ var TableHeader = (function() {
 			
 			var column = colEl.getAttribute('data-col');
 
-			var colData=this._getLayout(dataCol);
+			var colData=this._getLayout(column);
 			colEl.setAttribute('data-label', this.labelForCol(column));
 
 			if(colData.showLabel===false){
