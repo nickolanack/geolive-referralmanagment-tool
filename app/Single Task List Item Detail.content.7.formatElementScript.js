@@ -1,1 +1,1 @@
-TaskItem.FormatDueDateFieldValue(item, el, valueEl);
+el.addClass("task-discussion");

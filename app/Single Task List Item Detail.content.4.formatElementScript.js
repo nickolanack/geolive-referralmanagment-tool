@@ -1,1 +1,0 @@
-el.addClass("task-discussion");
