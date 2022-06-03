@@ -5863,6 +5863,17 @@ div.popover[data-with-view="reportSelectionView"]{
 }
 
 
+._tableStyle_{
+    &>* {
+        display: inline-block;
+        width: 100%;
+        white-space: nowrap;
+    }
+    
+     [data-col], &>.ui-view>*>*>*[data-col] {
+        float:none;
+    }
+}
 
     
     
