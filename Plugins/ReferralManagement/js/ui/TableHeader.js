@@ -769,7 +769,9 @@ var TableHeader = (function() {
 		
 		TableHeaders.updateLayout(layoutName, options);
 		TableHeaders.headersWithLayout(layoutName, function(items){
-			items.updateLayout();
+			items.forEach(function(item){
+				item.updateLayout();
+			});
 		});
 
 	}
