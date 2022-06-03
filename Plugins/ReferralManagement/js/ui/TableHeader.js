@@ -1,24 +1,6 @@
 var TableHeader = (function() {
 
 
-	var currentHeader=null;
-
-	/**
-	 * @deprecated User server config
-	 */
-	 var layoutDefault = {};
-	
-	//TODO namespace table layouts 'projectTableLayout'
-	(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration_field", {
-		'widget': "projectTableLayout",
-		'field': "layout"
-	})).addEvent('success',function(response){
-		layoutDefault=response.value;
-		// DashboardConfig.getValue('enableProposals', function(enabled) {
-		// 	layoutDefault.user.label = enabled ? 'Submitter' : "Created by";
-		// });
-	}).execute();
-
 
 	var TableHeadersClass=new Class({
 		Implements:[Events],
@@ -124,7 +106,6 @@ var TableHeader = (function() {
 		initialize: function(layoutName) {
 
 
-			currentHeader=this; //Assumes a single header
 			this._layoutName=layoutName;
 			
 			TableHeaders.addHeader(this);
@@ -155,6 +136,8 @@ var TableHeader = (function() {
 						return removeCols.indexOf(m.getIdentifier()) < 0;
 					})
 
+
+					var layoutDefault=TableHeaders.getLayout(me.getLayoutName());
 					var order = Object.keys(layoutDefault)
 					content.sort(function(a, b) {
 						var aId = a.getIdentifier().split('col-').pop();
@@ -713,7 +696,7 @@ var TableHeader = (function() {
 			if(AppClient.getUserType()=="admin"){
 				var btn=new Element('button',{"class":"inline-edit"});
 				(new UIModalFormButton(header.insertBefore(btn, header.firstChild), GatherDashboard.getApplication(), new MockDataTypeItem({
-					'layout':'projectTableLayout' //TODO: use this to make tableLayoutForm generic and select config name
+					'layout':me.getLayoutName() //TODO: use this to make tableLayoutForm generic and select config name
 				}), {
 					"formName": "tableLayoutForm",
 					"formOptions": {
@@ -726,7 +709,7 @@ var TableHeader = (function() {
 				new UIPopover(btn, {
 					application:GatherDashboard.getApplication(),
 					item:new MockDataTypeItem({
-						'layout':'projectTableLayout' //TODO: use this to make tableLayoutForm generic and select config name
+						'layout':me.getLayoutName() //TODO: use this to make tableLayoutForm generic and select config name
 					}),
 					detailViewOptions:{
 						"viewType": "form",
@@ -756,7 +739,6 @@ var TableHeader = (function() {
 				this._style.parentNode.removeChild(this._style);
 			}
 			this._style = null;
-			currentHeader=null;
 			TableHeaders.removeHeader(this);
 		}
 
@@ -765,19 +747,12 @@ var TableHeader = (function() {
 	TableHeader.UpdateLayout=function(options, layoutName){
 
 		//TODO: provide namespaced tableLayout using name 'projectTableLayout'
-
-		// options.forEach(function(colData){
-		// 	layoutDefault[colData.col].hidden=colData.hidden;
-		// });
 		
 		TableHeaders.updateLayout(layoutName, options);
 		TableHeaders.headersWithLayout(layoutName, function(items){
 			items.updateLayout();
 		});
 
-		// if(currentHeader){
-		// 	currentHeader.updateLayout();
-		// }
 	}
 
 
