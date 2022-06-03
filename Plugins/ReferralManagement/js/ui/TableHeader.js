@@ -722,7 +722,8 @@ var TableHeader = (function() {
 					if (me._sort == column) {
 						colEl.addClass('active');
 						if (me._sortInv) {
-							colEl.addClass('asc');
+							colEl.removeClass('asc');
+							colEl.addClass('desc');
 						}
 					}
 
@@ -770,13 +771,16 @@ var TableHeader = (function() {
 
 						colEl.addClass('active');
 						if (me._sortInv) {
-							colEl.addClass('asc');
-						}else{
 							colEl.removeClass('asc');
+							colEl.addClass('desc');
+						}else{
+							colEl.addClass('asc');
+							colEl.removeClass('desc');
 						}
 						if(me._sortEl&&me._sortEl!=colEl){
 							me._sortEl.removeClass('active');
-							me._sortEl.removeClass('asc');
+							me._sortEl.removeClass('desc');
+							colEl.removeClass('asc');
 						}
 						me._sortEl=colEl;
 

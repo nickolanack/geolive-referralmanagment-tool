@@ -1222,7 +1222,7 @@ var TaskItem = (function() {
 		}).addSort('duedate', function(a, b) {
 			return (a.getDueDate() > b.getDueDate() ? 1 : -1);
 		}).addSort('stars', function(a, b) {
-			return (a.isStarred() ? 1 : 0) - (b.isStarred() ? 1 : 0);
+			return (b.isStarred() ? 1 : 0) - (a.isStarred() ? 1 : 0);
 		}).render(listModule)
 	}
 
