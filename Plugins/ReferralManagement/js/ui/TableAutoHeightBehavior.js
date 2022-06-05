@@ -57,7 +57,7 @@ var TableAutoHeightBehavior = (function() {
 				var detail=this._listModule.getDetailViewAt(0);
 				var itemSize=detail.getElement().getSize();
 				var numVisible=this._listModule.getNumberOfVisibleItems();
-				var reduceBy=Math.ceil(contentOverflowHeight/itemSize);
+				var reduceBy=Math.ceil(contentOverflowHeight/itemSize.y);
 
 
 
