@@ -50,19 +50,29 @@ var TableAutoHeightBehavior = (function() {
 			var space = scrollEl.getSize();
 			var size = contentEl.getSize();
 
+
+			var detail=this._listModule.getDetailViewAt(0);
+			var itemSize=detail.getElement().getSize();
+			var numVisible=this._listModule.getNumberOfVisibleItems();
+
+
 			if(scroll.y>space.y){
 				var contentOverflowHeight=scroll.y-space.y
 
-				var listSize=this._listModule.getElement().getSize();
-				var detail=this._listModule.getDetailViewAt(0);
-				var itemSize=detail.getElement().getSize();
-				var numVisible=this._listModule.getNumberOfVisibleItems();
+				
 				var reduceBy=Math.ceil(contentOverflowHeight/itemSize.y);
 
 				this._listModule.setMaxItemsPerPage(Math.max(10, numVisible-reduceBy));
 
 				return;
 			}
+
+
+
+			var contentAvailableHeight=space.y-size.y;
+			var increaseBy=Math.floor(contentAvailableHeight/itemSize.y);
+			this._listModule.setMaxItemsPerPage(Math.min(25, numVisible+increaseBy));
+
 
 
 		},
