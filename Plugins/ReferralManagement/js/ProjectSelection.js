@@ -218,8 +218,9 @@ var ProjectSelection = (function() {
 		    
 		})
 
-
-		return btn;
+		var el=new ElementModule('div',{"class":"selection-btn-container"});
+		el.appendChild(btn);
+		return el;
 
 
 	};
