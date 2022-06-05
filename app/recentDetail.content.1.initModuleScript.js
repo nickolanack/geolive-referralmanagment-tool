@@ -1,1 +1,1 @@
-Project.addTableHeader(module);
+ProjectList.AddTableHeader(module);
