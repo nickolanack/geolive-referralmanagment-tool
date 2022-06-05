@@ -95,10 +95,7 @@ var TableHeader = (function() {
 				me.fireEvent('load.'+layoutName);
 			}).execute();
 
-		},
-
-
-
+		}
 
 
 
@@ -769,8 +766,8 @@ var TableHeader = (function() {
 						var colData=me._getLayout(column)
 
 						if(me._sortEl!=colEl&&colData.invertSort===true){
-
 							sortModule.applySortInverted(column);
+							me._sortInv=true;
 
 						}else{
 							sortModule.applySort(column);
