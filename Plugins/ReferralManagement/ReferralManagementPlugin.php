@@ -327,6 +327,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		IncludeJS(__DIR__ . '/js/ui/BreadcrumbNavigation.js');
 		IncludeJS(__DIR__ . '/js/ui/ShareLinks.js');
 		IncludeJS(__DIR__ . '/js/ui/TableHeader.js');
+		IncludeJS(__DIR__ . '/js/ui/TableAutoHeightBehavior.js');
 		IncludeJS(__DIR__ . '/js/ui/SidePanelToggle.js');
 		IncludeJS(__DIR__ . '/js/ui/DisplayTheme.js');
 
