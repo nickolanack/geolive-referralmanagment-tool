@@ -5,3 +5,4 @@ module.setPaginationOptions({
     position:"auto",
     showPages:true
 });
+new TableAutoHeightBehavior(module, {});
