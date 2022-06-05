@@ -766,7 +766,7 @@ var TableHeader = (function() {
 
 						}
 
-						var colData=_getLayout(column)
+						var colData=me._getLayout(column)
 
 						if(me._sortEl!=colEl&&colData.invertSort===true){
 
