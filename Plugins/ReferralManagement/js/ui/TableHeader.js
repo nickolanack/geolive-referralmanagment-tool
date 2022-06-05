@@ -476,14 +476,15 @@ var TableHeader = (function() {
 			return total;
 		},
 
-		_getEstimatedCellWidth:function(){
-			var size = this._listModule.getElement().getSize();
+		_getEstimatedCellWidth:function(totalWidth){
+			
+
 			var padding = 2 * 10;
 			
 			var staticCells = this._getStaticCells();
 			var dynamicCells = this._getDynamicCells()
 			var staticWidthTotal = this._calcCellsWidth(staticCells, 'width');
-			var available = size.x - (staticWidthTotal + padding);
+			var available = totalWidth - (staticWidthTotal + padding);
 
 			var cellWidthEstimate=available/dynamicCells.length;
 			return cellWidthEstimate;
@@ -499,9 +500,15 @@ var TableHeader = (function() {
 			if(size.x==0){
 				return;
 			}
+
+			var coords = this._listModule.getElement().getCoordinates();
+			var win=window.getSize();
+			var sizeX=Math.min(size.x, win.x-coords.left); //this works if table takes all right space but is overflowing off the page
+
+
 			var padding = 2 * 10;
 			
-			var cellWidthEstimate=this._getEstimatedCellWidth();
+			var cellWidthEstimate=this._getEstimatedCellWidth(sizeX);
 
 			var closest50Class='cell-width-est-'+Math.round(cellWidthEstimate/50)*50;
 
@@ -527,7 +534,7 @@ var TableHeader = (function() {
 			var staticWidthTotal = this._calcCellsWidth(staticCells, 'width');
 			
 
-			var available = size.x - (staticWidthTotal + padding);
+			var available = sizeX - (staticWidthTotal + padding);
 
 
 			
