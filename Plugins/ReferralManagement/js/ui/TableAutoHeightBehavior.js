@@ -91,8 +91,8 @@ var TableAutoHeightBehavior = (function() {
 
 		},
 		_remove: function() {
-			window.removeEvent('resize', this.._resizeEventListener);
-			this._listModule=null;ArmDof.ArmDownUp
+			window.removeEvent('resize', this._resizeEventListener);
+			this._listModule=null;
 
 		}
 
