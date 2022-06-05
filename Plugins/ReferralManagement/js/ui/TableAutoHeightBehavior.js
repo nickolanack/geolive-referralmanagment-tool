@@ -49,6 +49,7 @@ var TableAutoHeightBehavior = (function() {
 			var scroll = scrollEl.getScrollSize();
 			var space = scrollEl.getSize();
 			var size = contentEl.getSize();
+			var coords=contentEl.getCoordinates();
 
 
 			var detail=this._listModule.getDetailViewAt(0);
@@ -73,7 +74,7 @@ var TableAutoHeightBehavior = (function() {
 
 
 
-			var contentAvailableHeight=space.y-size.y;
+			var contentAvailableHeight=space.y-(coords.top+size.y);
 			var increaseBy=Math.floor(contentAvailableHeight/itemSize.y);
 			this._listModule.setMaxItemsPerPage(Math.min(25, numVisible+increaseBy));
 
