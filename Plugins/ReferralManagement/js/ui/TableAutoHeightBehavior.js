@@ -50,8 +50,19 @@ var TableAutoHeightBehavior = (function() {
 			var space = scrollEl.getSize();
 			var size = contentEl.getSize();
 
+			if(scroll.y>space.y){
+				var contentOverflowHeight=scroll.y-space.y
 
-			var offset=space.y-size.y;
+				var listSize=this._listModule.getElement().getSize();
+				var detail=this._listModule.getDetailViewAt(0);
+				var itemSize=detail.getElement().getSize();
+				var numVisible=this._listModule.getNumberOfVisibleItems();
+				var reduceBy=Math.ceil(contentOverflowHeight/itemSize);
+
+
+
+				return;
+			}
 
 
 		},
