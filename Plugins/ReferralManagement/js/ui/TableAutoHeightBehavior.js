@@ -56,6 +56,10 @@ var TableAutoHeightBehavior = (function() {
 			var numVisible=this._listModule.getNumberOfVisibleItems();
 
 
+			if(itemSize.y<=0){
+				return;
+			}
+
 			if(scroll.y>space.y){
 				var contentOverflowHeight=scroll.y-space.y
 
