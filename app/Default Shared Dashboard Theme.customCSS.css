@@ -31,6 +31,13 @@ button:focus {outline:0;}
 }
 
 
+.selection-btn-container:after {
+    content: "";
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
 [data-view="singleProjectEditButtonsDetail"]:after {
     clear: both;
     content: "";
