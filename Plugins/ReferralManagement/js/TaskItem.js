@@ -1224,7 +1224,13 @@ var TaskItem = (function() {
 			return (a.getDueDate() > b.getDueDate() ? 1 : -1);
 		}).addSort('stars', function(a, b) {
 			return (b.isStarred() ? 1 : 0) - (a.isStarred() ? 1 : 0);
-		}).render(listModule)
+		}).render(listModule);
+
+
+		listModule.setPaginationOptions({
+		    position:"auto",
+		    showPages:true
+		});
 	}
 
 
