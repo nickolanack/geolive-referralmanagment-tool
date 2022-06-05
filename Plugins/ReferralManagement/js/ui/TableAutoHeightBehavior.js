@@ -59,7 +59,7 @@ var TableAutoHeightBehavior = (function() {
 				var numVisible=this._listModule.getNumberOfVisibleItems();
 				var reduceBy=Math.ceil(contentOverflowHeight/itemSize.y);
 
-
+				this._listModule.setMaxItemsPerPage(Math.max(10, numVisible-reduceBy));
 
 				return;
 			}
