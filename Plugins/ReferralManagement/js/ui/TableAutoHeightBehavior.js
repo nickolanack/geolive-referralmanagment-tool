@@ -18,10 +18,19 @@ var TableAutoHeightBehavior = (function() {
 
 
 				window.addEvent('resize', me._resizeEventListener);
+				listModule.on('redraw', me._resizeEventListener);
 
 				listModule.once('remove', function() {
 					me._remove();
 				});
+
+				setTimeout(function(){
+					me._needsFitContent();
+				}, 100)
+				setTimeout(function(){
+					me._needsFitContent();
+				}, 500)
+
 			});
 
 
@@ -82,7 +91,8 @@ var TableAutoHeightBehavior = (function() {
 
 		},
 		_remove: function() {
-
+			window.removeEvent('resize', this.._resizeEventListener);
+			this._listModule=null;ArmDof.ArmDownUp
 
 		}
 
