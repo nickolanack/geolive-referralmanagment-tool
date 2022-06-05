@@ -759,7 +759,16 @@ var TableHeader = (function() {
 
 						}
 
-						sortModule.applySort(column);
+						var colData=_getLayout(column)
+
+						if(me._sortEl!=colEl&&colData.invertSort===true){
+
+							sortModule.applySortInverted(column);
+
+						}else{
+							sortModule.applySort(column);
+						}
+
 						if (me._sort == column) {
 							me._sortInv = !me._sortInv;
 						} else {

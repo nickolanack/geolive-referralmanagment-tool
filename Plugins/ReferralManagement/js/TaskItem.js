@@ -1189,7 +1189,8 @@ var TaskItem = (function() {
 				"width": "30px",
 				"label": "Priority",
 				"showLabel": false,
-				"align": "center"
+				"align": "center",
+				"sortInvert":true
 			},
 			"tags": {
 				"width": "130px",

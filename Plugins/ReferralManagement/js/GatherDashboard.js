@@ -298,7 +298,7 @@ var GatherDashboard = (function() {
 			}, {
 				label: "priority",
 				sortFn: function(a, b) {
-					return -GatherDashboard.taskSortPriority(a, b);
+					return GatherDashboard.taskSortPriority(a, b);
 				}
 			}, {
 				label: "complete",
