@@ -459,6 +459,11 @@ var NamedCategory = (function() {
 		    el.setStyle('background-color', item.getColor());
 		    
 		    var c=item.getColor();
+
+		    if(!c){
+		    	c="#fefefe";
+		    }
+
 			if(c[0]=="#"){
 				var c = c.substring(1);      // strip #
 				var rgb = parseInt(c, 16);   // convert rrggbb to decimal
