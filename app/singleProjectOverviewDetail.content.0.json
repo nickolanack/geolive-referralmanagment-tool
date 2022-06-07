@@ -6,6 +6,6 @@
         "className": "",
         "fieldLabelScript": "return \"\";",
         "fieldValueScript": "return \"\";",
-        "formatElementScript": "el.addClass(\"inline priority-item\");\n\/\/el.setAttribute(\"data-col\",\"priority\");\n\nvar priorityEl = el.appendChild(ItemPriority.CreatePriorityIndicator(item));\n"
+        "formatElementScript": "el.addClass(\"inline priority-item\");\n\/\/el.setAttribute(\"data-col\",\"priority\");\n\nvar priorityEl = el.appendChild(ItemPriority.CreatePriorityIndicator(item));\n\nthis.addWeakEvent(item, 'change', this.redraw.bind(this));"
     }
 }
