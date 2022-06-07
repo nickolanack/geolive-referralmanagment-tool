@@ -6696,14 +6696,6 @@
                                 }
                             },
                             {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "Tasks Overview List Detail.metadata.positions.content.modules.2.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "",
@@ -6725,12 +6717,12 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
-                                    "getItemListScript": "Tasks Overview List Detail.metadata.positions.content.modules.3.config.getItemListScript.js",
+                                    "getItemListScript": "Tasks Overview List Detail.metadata.positions.content.modules.2.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "Tasks Overview List Detail.metadata.positions.content.modules.3.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "Tasks Overview List Detail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyTasksList",
-                                    "filterItemsScript": "Tasks Overview List Detail.metadata.positions.content.modules.3.config.filterItemsScript.js",
-                                    "sortItemsScript": "Tasks Overview List Detail.metadata.positions.content.modules.3.config.sortItemsScript.js",
+                                    "filterItemsScript": "Tasks Overview List Detail.metadata.positions.content.modules.2.config.filterItemsScript.js",
+                                    "sortItemsScript": "Tasks Overview List Detail.metadata.positions.content.modules.2.config.sortItemsScript.js",
                                     "maxItems": "15"
                                 }
                             },
@@ -6741,7 +6733,8 @@
                                     "text": "Hello",
                                     "template": "html.emptyTasks",
                                     "templateVariablesScript": "{}",
-                                    "formatTextScript": "Tasks Overview List Detail.metadata.positions.content.modules.4.config.formatTextScript.js",
+                                    "formatTextScript": "Tasks Overview List Detail.metadata.positions.content.modules.3.config.formatTextScript.js",
+                                    "formatVariablesScript": "",
                                     "ajaxRequestTemplate": true,
                                     "identifier": "htmlLabel"
                                 }

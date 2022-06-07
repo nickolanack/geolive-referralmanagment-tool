@@ -1,9 +1,8 @@
 {
-    "type": "Search",
+    "type": "WizardScriptElement",
     "config": {
-        "getAggregatorsScript": "var search=new Element('button',{\n         \"class\":\"btn-search-list\",\n         events:{click:function(){\n             \n             if(element.parentNode.hasClass('enable-search')){\n                 element.parentNode.removeClass('enable-search');\n             }else{\n                 element.parentNode.addClass('enable-search');\n             }\n             \n         }}\n     })\n",
-        "searchOptions": {},
-        "formatSearchModuleScript": "",
-        "placeholder": "search items"
+        "name": "My Custom Script",
+        "script": "return TaskItem.OverviewTaskListSortMenu();",
+        "description": "Info about my custom script"
     }
 }
