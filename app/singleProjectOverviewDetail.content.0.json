@@ -2,10 +2,10 @@
     "type": "FieldValue",
     "config": {
         "loadAsync": false,
-        "identifier": "",
+        "identifier": "item-priority",
         "className": "",
         "fieldLabelScript": "return \"\";",
         "fieldValueScript": "return \"\";",
-        "formatElementScript": "el.addClass(\"inline priority-\");\n\/\/el.setAttribute(\"data-col\",\"priority\");\n\nel.appendChild(ItemPriority.CreatePriorityIndicator(item));"
+        "formatElementScript": "el.addClass(\"inline priority-\");\n\/\/el.setAttribute(\"data-col\",\"priority\");\n\nel.appendChild(ItemPriority.CreatePriorityIndicator(item));\n\nif(!application.getDisplayController().hasNamedFormView('prioritySelectForm')){\n    \n    application.getDisplayController().setNamedFormView('prioritySelectForm', function(app, item, options){\n       \n        return (new UIModuleWizard({}).addStep({index:0}, function(step){\n            \n            step.addModule('content', function(position, moduleIndex){\n                return new ElementModule('div');\n            });\n            step.addModule('content', function(position, moduleIndex){\n                return new ElementModule('div');\n            });\n            step.addModule('content', function(position, moduleIndex){\n                return new ElementModule('div');\n            });\n            \n            \n        }));\n        \n    \n    });\n    \n}\n\n\nnew UIPopover(btn, {\n\t\t\t\t\tapplication:application,\n\t\t\t\t\titem:item,\n\t\t\t\t\tdetailViewOptions:{\n\t\t\t\t\t\t\"viewType\": \"form\",\n                    \t\"namedFormView\": \"prioritySelectForm\",\n                    \t\"formOptions\": {\n\t\t\t\t\t\t\ttemplate: \"form\",\n\t\t\t\t\t\t\tcloseable:true\n\t\t\t\t\t\t}\n\t\t\t\t\t},\n\t\t\t\t\tclickable:true,\n\t\t\t\t\tanchor:UIPopover.AnchorAuto()\n\t\t\t\t});"
     }
 }
