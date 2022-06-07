@@ -91,6 +91,14 @@ var ItemPriority = (function() {
 
 		AppClient.authorize('write', item, function(auth) {
 
+			if(!auth){
+
+				
+
+				return;
+			}
+
+
 			var application=GatherDashboard.getApplication();
 
 			if (!application.getDisplayController().hasNamedFormView('prioritySelectForm')) {
