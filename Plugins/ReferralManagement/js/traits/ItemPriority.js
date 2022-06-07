@@ -68,7 +68,7 @@ var ItemPriority = (function() {
 			type: item.getType()
 		}, function(auth) {
 
-
+			var application=GatherDashboard.getApplication();
 
 			if (!application.getDisplayController().hasNamedFormView('prioritySelectForm')) {
 
