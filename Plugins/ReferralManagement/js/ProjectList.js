@@ -1046,6 +1046,7 @@ var ProjectList = (function() {
 				name: list.name,
 				description: list.description,
 				icon: list.icon||null,
+				color:null,
 				navigationFn: function() {
 
 					var controller = GatherDashboard.getApplication().getNamedValue('navigationController')
