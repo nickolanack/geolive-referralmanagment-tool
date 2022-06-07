@@ -63,7 +63,7 @@ var ItemPriority = (function() {
 
 
 
-		AppClient.auth('write', {
+		AppClient.authorize('write', {
 			id: item.getId(),
 			type: item.getType()
 		}, function(auth) {
