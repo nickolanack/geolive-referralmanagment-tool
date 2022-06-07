@@ -3859,7 +3859,7 @@ button.inline-btn.with-no-tasks {
     }
 
 [data-view="singleProjectOverviewDetail"] {
-    .field-value-module.inline.priority-{
+    .field-value-module.inline.priority-item{
         
         .priority-indicator{
             font-size: 35px;
