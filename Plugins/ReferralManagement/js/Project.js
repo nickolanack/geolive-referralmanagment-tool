@@ -106,6 +106,7 @@ var Project = (function() {
 		authorize:function(task, callback){
 			if(task=='write'){
 				callback(this.data.writable);
+				return;
 			}
 
 			callback(null);
