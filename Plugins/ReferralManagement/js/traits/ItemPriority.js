@@ -63,10 +63,7 @@ var ItemPriority = (function() {
 
 
 
-		AppClient.authorize('write', {
-			id: item.getId(),
-			type: item.getType()
-		}, function(auth) {
+		AppClient.authorize('write', item, function(auth) {
 
 			var application=GatherDashboard.getApplication();
 
