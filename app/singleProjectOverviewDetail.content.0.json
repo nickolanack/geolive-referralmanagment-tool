@@ -1,23 +1,11 @@
 {
-    "type": "UIView",
+    "type": "FieldValue",
     "config": {
+        "loadAsync": false,
+        "identifier": "",
         "className": "",
-        "identifier": "project-edit-btns",
-        "viewType": "view",
-        "namedView": "singleProjectEditButtonsDetail",
-        "shouldRender": true,
-        "namedViewScript": "return namedView",
-        "showInlineEdit": false,
-        "namedFormView": "defaultFormView",
-        "formOptions": "{}",
-        "showDeleteButton": false,
-        "deleteItemScript": "",
-        "initModuleScript": "",
-        "formatModuleScript": "",
-        "resolveItemScript": "",
-        "filterModulesScript": "\nreturn list;\n",
-        "itemButtonsScript": "return [];",
-        "insertAtTop": false,
-        "targetName": ""
+        "fieldLabelScript": "return \"\";",
+        "fieldValueScript": "return \"\";",
+        "formatElementScript": "el.addClass(\"inline priority-\");\n\/\/el.setAttribute(\"data-col\",\"priority\");\n\nel.appendChild(ItemPriority.CreatePriorityIndicator(item));"
     }
 }

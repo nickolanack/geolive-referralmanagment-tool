@@ -1,8 +1,1 @@
-var enabled= DashboardConfig.getValue('enableProposals');
-    
-    if(!enabled){
-        return '';
-    }
-
-
-return ReferralManagementDashboard.getDatesString(item);
+return "Requested Response Date: "+item.getDeadlineDate()
