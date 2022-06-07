@@ -1017,7 +1017,7 @@ var ProjectList = (function() {
 				}).length == 0;
 			}
 		}, {
-			name: "You have Shared",
+			name: "Shared",
 			icon:"https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/UJ8_%5BG%5D_Je9_%5BImAgE%5D_Ngx-%3Ethumb%3A%3E200x%3E150.png",
 			description: "These are datasets and collections that your community is sharing with other communities and GCT3. This information will be visible and downloadable to members of these other communities.",
 			filter: function(p) {
@@ -1028,14 +1028,14 @@ var ProjectList = (function() {
 			}
 
 		}, {
-			name: "Others are Sharing",
+			name: "Sharing",
 			icon:"https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/%5BImAgE%5D_mib_%5BG%5D_zR_yF4-%3Ethumb%3A%3E200x%3E150.png",
 			description: "These are datasets and collections that have been shared by other communities and GCT3 with your community. You will be able to view and download these files.",
 			filter: function(p) {
 				return p.getProjectCommunity() != ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity();
 			}
 
-		}]
+		}];
 	}
 	ProjectList.ResolveSharedLists = function() {
 
