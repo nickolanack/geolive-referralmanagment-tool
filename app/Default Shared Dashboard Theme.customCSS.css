@@ -474,9 +474,15 @@ span.pagination-item:before {
   
   @media screen and (max-width: 950px) {
       [data-view="singleProjectOverviewDetail"] [data-view="proposalOverviewStatus"] .ui-view {
-          margin-right:100px;
+          
           &[data-view="assessmentFlow"]{
-              left:-100px;
+             left: -125px;
+          }
+          &:after{
+              display:inline-block;
+              clear:both;
+              width:100%;
+              content:"";
           }
       }
   }
