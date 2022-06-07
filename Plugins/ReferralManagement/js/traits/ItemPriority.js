@@ -69,7 +69,7 @@ var ItemPriority = (function() {
 
 			if (!application.getDisplayController().hasNamedFormView('prioritySelectForm')) {
 
-				application.getDisplayController().setNamedFormView('prioritySelectForm', function(app, item, options) {
+				application.getDisplayController().setNamedFormView('prioritySelectForm', function(item, options) {
 
 					return (new UIModuleWizard({}).setItem(item).addStep({
 						index: 0
