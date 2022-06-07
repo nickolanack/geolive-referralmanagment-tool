@@ -919,6 +919,25 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		return true;
 	}
+
+
+
+	protected function setPriority($json) {
+		if (!Auth('write', $json->project, 'ReferralManagement.proposal')) {
+			return $this->setError('No access or does not exist');
+		}
+
+		GetPlugin('Attributes');
+
+		(new attributes\Record('proposalAttributes'))->setValues($json->project, 'ReferralManagement.proposal', array(
+			'priority' => $json->priority,
+		));
+
+		$this->getPlugin()->notifier()->onUpdateProjectPriority($json);
+
+		return true;
+	}
+
 	protected function setDuedateTask($json) {
 		if (!Auth('write', $json->task, 'Tasks.task')) {
 			return $this->setError('No access or does not exist');

@@ -179,6 +179,14 @@
             ]
         }
     },
+    "set_priority": {
+        "validate": {
+            "checkKeys": [
+                "project",
+                "priority"
+            ]
+        }
+    },
     "set_priority_task": {
         "validate": {
             "checkKeys": [

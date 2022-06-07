@@ -486,11 +486,26 @@ class Notifications {
 			)),
 			$json
 		);
+	}
+
+
+	public function onUpdateProjectPriority($json) {
+		$this->postEventFeeds('update.project.priority', array(
+			"items" => array(
+				array(
+					"type" => "ReferralManagement.proposal",
+					"id" => $json->project,
+				),
+			)),
+			$json
+		);
 
 
 	
 
 	}
+
+
 	public function onCreateTask($taskId, $json) {
 		$this->postEventFeeds('create.task', array(
 			"items" => array(
