@@ -469,6 +469,10 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		return array_values(array_filter(array_map(function ($project) use ($filter) {
 
 			$project->visible = $filter($project);
+			if($project->visible){
+				$project->writeable=Auth('write', $project->id, 'ReferralManagement.proposal');
+			}
+		
 			return $project;
 
 		}, $list), function ($project) {
