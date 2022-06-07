@@ -817,7 +817,7 @@ var TableHeader = (function() {
 				new UIPopover(btn, {
 					application:GatherDashboard.getApplication(),
 					item:new MockDataTypeItem({
-						'layout':me.getLayoutName() //TODO: use this to make tableLayoutForm generic and select config name
+						'layout':me.getLayoutName() 
 					}),
 					detailViewOptions:{
 						"viewType": "form",

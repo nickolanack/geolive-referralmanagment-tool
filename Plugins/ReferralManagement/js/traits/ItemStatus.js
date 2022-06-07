@@ -54,17 +54,7 @@ var ItemStatus = (function() {
 
 		getProponentFlow:function(){
 
-
 			return this._getFlow('Proponent submision workflow', 'proponent');
-
-
-				// .setLabel('Proponent submision workflow')
-			 //    .addStep("Submission", {"class":"current", "clickable":false})
-			 //    .addStep("Validation", {"class":"mail"})
-			 //    .addStep("Office Review", {"class":"user"})
-			 //    .addStep("Assessments")
-			 //    .addStep("Outcome");
-			    //.getElement();
 
 		},
 
@@ -72,51 +62,15 @@ var ItemStatus = (function() {
 
 			return this._getFlow('Processing workflow', 'processing');
 
-			    // .addStep("Intake", {"class":"current mail"})
-			    // .addStep("Filing", {"class":"user"})
-			    // .addStep("Tasking", {"class":"user"})
-			    // .addStep("Briefing")
-			    // .addStep("Tracking",{completable:false});
-			    //.getElement();
-
 		},
 		getAssessmentFlow:function(){
 
 			return this._getFlow('Assessment workflow', 'assessment');
 			
-			    // .addStep("Quality Assessment", {"class":"current user", "completes":{"proponent":"validation"}})
-			    // .addStep("Prioritization", {"class":"mail"})
-			    // .addStep("Meeting schedules", {"class":"user"})
-			    // .addStep("Dispute resolution")
-			    // .addStep("Reporting")
-			    // .addStep("Monitoring",{"ongoing":true});
-			   // .getElement();
-
 		},
 		_getFlow:function(label, stateName){
 
-
 			var flow = (new ProposalFlow(label, stateName, this));
-
-
-			// (new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration_field", {
-			// 	'widget': "workflow",
-			// 	'field': stateName
-			// })).addEvent('success',function(response){
-
-			// 	flow.setLabel(label);
-
-		 //        response.value.forEach(function(item, i){
-
-		 //        	var opts={
-		 //        		"class":item["icon"]||"default",
-		 //        		"link":typeof item.link=="boolean"?item.link:true
-		 //        	};
-
-		 //        	flow.addStep(item.name, opts);
-		 //        });
-
-			// }).execute();
 
 			return flow;
 

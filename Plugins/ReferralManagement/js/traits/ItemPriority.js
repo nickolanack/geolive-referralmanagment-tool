@@ -1,7 +1,7 @@
-var ItemPriority=(function(){
+var ItemPriority = (function() {
 
 
-	var ItemPriority=new Class({
+	var ItemPriority = new Class({
 
 
 		isHighPriority: function() {
@@ -20,21 +20,134 @@ var ItemPriority=(function(){
 		},
 
 
+		isPriority: function() {
+			return this.getPriorityNumber() >= 0;
+		},
+
+
+		setPriority: function(priorityValue, callback) {
+
+			console.error('implement this');
+
+			// var me = this;
+			// me.data.attributes.isPriority = !!priority;
+			// me.fireEvent('change');
+
+			// (new SetPriorityTaskQuery(me.getId(), priority)).addEvent('success', function(r) {
+			// 	if (callback) {
+			// 		callback(r);
+			// 	}
+
+			// }).execute();
+
+		},
+
+
 
 	});
 
 
 
-	ItemPriority.CreatePriorityIndicator=function(item){
+	ItemPriority.CreatePriorityIndicator = function(item) {
 
 
-		 var el=new Element('div', {"class":"priority-indicator "+(item.getPriorityNumber()>=0?"priority-"+item.getPriority():""), 
-		    events:{click:function(e){
-		        e.stop();  
-		    }}
-		    
+		var el = new Element('div', {
+			"class": "priority-indicator " + (item.getPriorityNumber() >= 0 ? "priority-" + item.getPriority() : ""),
+			events: {
+				click: function(e) {
+					e.stop();
+				}
+			}
+
 		});
 
+
+
+		AppClient.auth('write', {
+			id: item.getId(),
+			type: item.getType()
+		}, function(auth) {
+
+
+
+			if (!application.getDisplayController().hasNamedFormView('prioritySelectForm')) {
+
+				application.getDisplayController().setNamedFormView('prioritySelectForm', function(app, item, options) {
+
+					return (new UIModuleWizard({}).setItem(item).addStep({
+						index: 0
+					}, function(step) {
+
+
+						step.addModule('content', function(position, moduleIndex) {
+							return new ElementModule('div', {
+								'class': 'priority-indicator priority-none',
+								events: {
+									click: function() {
+										item.setPriority(false);
+									}
+								}
+							});
+						});
+						step.addModule('content', function(position, moduleIndex) {
+							return new ElementModule('div', {
+								'class': 'priority-indicator priority-low',
+								events: {
+									click: function() {
+										item.setPriority('low');
+									}
+								}
+							});
+						});
+						step.addModule('content', function(position, moduleIndex) {
+							return new ElementModule('div', {
+								'class': 'priority-indicator priority-medium',
+								events: {
+									click: function() {
+										item.setPriority('medium');
+									}
+								}
+							});
+						});
+						step.addModule('content', function(position, moduleIndex) {
+							return new ElementModule('div', {
+								'class': 'priority-indicator priority-high',
+								events: {
+									click: function() {
+										item.setPriority('high');
+									}
+								}
+							});
+						});
+
+
+					}));
+
+
+				});
+
+			}
+
+
+			new UIPopover(el, {
+				application: application,
+				item: item,
+				"--className": "priority-",
+				detailViewOptions: {
+					"viewType": "form",
+					"namedFormView": "prioritySelectForm",
+					"formOptions": {
+						template: "form",
+						closeable: true
+					}
+				},
+				clickable: true,
+				anchor: UIPopover.AnchorAuto()
+			});
+
+
+
+		});
 
 
 		return el;
