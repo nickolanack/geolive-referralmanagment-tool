@@ -78,6 +78,10 @@ var MenuUtils = (function() {
 							menuItem.attributes['data-icon']=String.fromCharCode("0x"+menuConfig["icon"]);
 						}
 
+						if(menuConfig["html"]){
+							menuItem["html"]=menuConfig["html"];
+						}
+
 					}
 
 				});
