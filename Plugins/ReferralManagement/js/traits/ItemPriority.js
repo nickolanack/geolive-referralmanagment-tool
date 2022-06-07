@@ -1,6 +1,20 @@
 var ItemPriority = (function() {
 
 
+	var SetPriorityItemQuery = new Class({
+		Extends: AjaxControlQuery,
+		initialize: function(project, priority) {
+
+			this.parent(CoreAjaxUrlRoot, "set_priority", {
+				plugin: "ReferralManagement",
+				project: project,
+				priority: priority
+			});
+		}
+	});
+
+
+
 	var ItemPriority = new Class({
 
 
@@ -27,18 +41,30 @@ var ItemPriority = (function() {
 
 		setPriority: function(priorityValue, callback) {
 
-			console.error('implement this');
+			var me = this;
 
-			// var me = this;
-			// me.data.attributes.isPriority = !!priority;
-			// me.fireEvent('change');
+			if(!((["low", "medium", "high"]).indexOf(priorityValue)||priorityValue===false)){
+				throw 'Invalid priorityValue: '+priorityValue;
+			}
 
-			// (new SetPriorityTaskQuery(me.getId(), priority)).addEvent('success', function(r) {
-			// 	if (callback) {
-			// 		callback(r);
-			// 	}
+			if(priorityValue&&me.data.attributes.priority===priorityValue){
+				return;
+			}
 
-			// }).execute();
+			if(priorityValue===false&&me.getPriorityNumber()==-1){
+				return;
+			}
+
+			
+			me.data.attributes.priority = priorityValue;
+			me.fireEvent('change');
+
+			(new SetPriorityItemQuery(me.getId(), priorityValue)).addEvent('success', function(r) {
+				if (callback) {
+					callback(r);
+				}
+
+			}).execute();
 
 		},
 
