@@ -470,7 +470,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 			$project->visible = $filter($project);
 			if($project->visible){
-				$project->writeable=Auth('write', $project->id, 'ReferralManagement.proposal');
+				$project->writable=Auth('write', $project->id, 'ReferralManagement.proposal');
 			}
 		
 			return $project;

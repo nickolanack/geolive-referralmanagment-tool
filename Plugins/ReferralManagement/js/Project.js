@@ -103,6 +103,15 @@ var Project = (function() {
 		},
 
 
+		authorize:function(task, callback){
+			if(task=='write'){
+				callback(this.data.writeable);
+			}
+
+			callback(null);
+		},
+
+
 		isPrivate:function(){
 			return this.data.access==="private";
 		},
