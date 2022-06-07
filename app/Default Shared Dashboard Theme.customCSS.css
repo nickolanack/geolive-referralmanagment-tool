@@ -3822,7 +3822,7 @@ button.inline-btn.with-no-tasks {
     background-color: aquamarine;
 }
 
-[data-view="splitProjectDetail"] div.field-value-module.inline[data-col="priority"], .priority- {
+[data-view="splitProjectDetail"] div.field-value-module.inline[data-col="priority"]{
     
     text-align: center;
     
@@ -3843,6 +3843,21 @@ button.inline-btn.with-no-tasks {
     
     
 }
+
+.priority-indicator {
+        float: unset;
+        
+        &.priority-high {
+            color: #dc153c;
+        }
+        &.priority-medium {
+            color: #f0e68c;
+        }
+        &.priority-low {
+            color: #80ffd4;
+        }
+    }
+
 [data-view="singleProjectOverviewDetail"] {
     .field-value-module.inline.priority-{
         
