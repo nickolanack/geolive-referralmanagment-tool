@@ -27382,5 +27382,19 @@
             "saveTemplateAsData": false,
             "contentTemplate": "<h2>Dataset sharing<\/h2>"
         }
+    },
+    "widget.493": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "activityfeed.update.project.priority.text",
+            "target": "activityfeed.update.project.priority.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "event: update.project.priority"
+        }
     }
 }
