@@ -3861,6 +3861,7 @@ button.inline-btn.with-no-tasks {
         height:0;
         width:0;
         overflow: visible;
+        z-index:2;
     }
 
 }
