@@ -43,7 +43,7 @@ var ItemPriority = (function() {
 
 			var me = this;
 
-			if(!((["low", "medium", "high"]).indexOf(priorityValue)||priorityValue===false)){
+			if(!((["low", "medium", "high"]).indexOf(priorityValue)>=0||priorityValue===false)){
 				throw 'Invalid priorityValue: '+priorityValue;
 			}
 
