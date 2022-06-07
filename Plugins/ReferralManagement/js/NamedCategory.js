@@ -427,7 +427,7 @@ var NamedCategory = (function() {
 
 		prefix=prefix||'';
 
-		el.addClass(prefix+"category-"+item.getName().toLowerCase().replace(' ','-'));
+		el.addClass(prefix+"category-"+item.getName().toLowerCase().split(' ').join('-'));
 
 
 		if(item.getMetadata&&item.getMetadata()['background-color']){
