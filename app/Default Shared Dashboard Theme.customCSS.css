@@ -412,7 +412,7 @@ span.pagination-item:before {
     visibility: hidden;
 }
  
- @media screen and (max-width: 1900px) {
+ @media screen and (max-width: 1950px) {
     
     [data-view="singleProjectOverviewDetail"] [data-view="proposalOverviewStatus"] .ui-view {
         transform: scale(0.6);
