@@ -52,7 +52,7 @@ class Project {
 			$proposal['userCommunity']=$userMetameta['community'];
 		}
 
-		$proposal['userdetails'] = GetClient()->userMetadataFor();
+		$proposal['userdetails'] = GetClient()->userMetadataFor($userId);
 		
 
 		if (isset($proposal['userdetails']['roles'])) {
