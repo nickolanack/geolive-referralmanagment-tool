@@ -3,9 +3,11 @@ var mod = new ElementModule('div',{"class":"application-logo alt-logo big", iden
 DashboardConfig.getValue('altLogoLink', function(v){
     
     if(v&&v!=""){
-        mod.getElement().addEvent('click', function(){
+        var el= mod.getElement();
+       el.addEvent('click', function(){
             window.open(v, "_blank")
-        })
+        });
+        el.addStyle('cursor','pointer');
     }
     
 });
