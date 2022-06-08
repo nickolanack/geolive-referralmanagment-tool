@@ -1014,8 +1014,9 @@ var ProjectList = (function() {
 				label: "Community Vault",
 				tip: "Only visible to your community members.",
 				name: "community",
+
 				icon:"https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/%5BG%5D_yqF_6QX_TVS_%5BImAgE%5D-%3Ethumb%3A%3E200x%3E150.png",
-				description: "These datasets and collections are only visible to your community members. Nobody else has access to them.",
+				description: "These datasets and collections are only visible to members of your community <b>"+AppClient.getId()).getCommunity()+"</b>. Nobody else has access to them.",
 				filterFn: function(p) {
 					return p.getProjectCommunity() == ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity() && p.getCommunitiesInvolved().filter(function(c) {
 						return c && c != p.getProjectCommunity();
