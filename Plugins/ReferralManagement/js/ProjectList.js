@@ -1054,7 +1054,7 @@ var ProjectList = (function() {
 		return (ProjectList.SharedListFilters()).map(function(list) {
 
 			return new MockDataTypeItem({
-				name: list.name,
+				name: list.label,
 				description: list.description,
 				icon: list.icon||null,
 				color:null,
