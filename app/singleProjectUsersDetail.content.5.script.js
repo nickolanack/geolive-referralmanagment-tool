@@ -5,7 +5,7 @@ if(UserGroups.GetSubgroups().length==0){
 }
 
 return (new ModalFormButtonModule(application, item,{
-        label:"Add Community",
+        label:"Add/Remove Community",
         formName:"communitySelectionForm",
         formOptions:{
             template:"form"

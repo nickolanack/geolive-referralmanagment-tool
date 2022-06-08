@@ -5350,6 +5350,12 @@
                     "label": "showAltLogo"
                 },
                 {
+                    "type": "text",
+                    "name": "altLogoLink",
+                    "default": "",
+                    "label": "altLogoLink"
+                },
+                {
                     "type": "json",
                     "label": "roleLabels",
                     "name": "roleLabels",
@@ -5472,7 +5478,7 @@
                 "webresources\/config-153\/ed4ac.[G]_m3o_LN2_N63_[ImAgE].png"
             ],
             "applicationLogo": [
-                "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_%5BG%5D_ldi_d9_9Cu-%3Ethumb%3A%3E200x%3E150.png"
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/gct3.gather.geoforms.ca\/1\/Uploads\/%5BG%5D_rab_%5BImAgE%5D_GOK_fhm-%3Ethumb%3A%3E200x%3E150.png"
             ],
             "formatOutputScript": "return $parameters;",
             "main-map": [
@@ -5520,7 +5526,7 @@
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/PZR_XRl_%5BImAgE%5D_%5BG%5D_xBM.png"
             ],
             "gatherLogo": [
-                "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_%5BG%5D_ldi_d9_9Cu-%3Ethumb%3A%3E200x%3E150.png"
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/gct3.gather.geoforms.ca\/1\/Uploads\/%5BG%5D_rab_%5BImAgE%5D_GOK_fhm-%3Ethumb%3A%3E200x%3E150.png"
             ],
             "fileUploadBtnIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_%5BG%5D_yv_Xj5_vwP.png"
@@ -5531,27 +5537,34 @@
             "appleAppIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/Lx7_R7S_3Xr_%5BG%5D_%5BImAgE%5D.png"
             ],
-            "slackUrl": "https:\/\/wabuntc.slack.com",
+            "slackUrl": "https:\/\/gct3portal.slack.com",
             "showUsersRoles": false,
-            "enableTasks": true,
-            "enableProposals": true,
-            "enableCalendar": true,
-            "showRecentProjectsDetail": false,
+            "enableTasks": false,
+            "enableProposals": false,
+            "enableCalendar": false,
+            "showRecentProjectsDetail": true,
             "enableActivity": true,
             "enableMap": true,
-            "simplifiedMenu": false,
-            "gatherLabel": "Gather Referral Tool",
-            "darkMode": true,
-            "loadingLabel": "Loading your Gather Referral Management Portal",
+            "simplifiedMenu": true,
+            "gatherLabel": "GCT3 GIS Document Portal",
+            "darkMode": false,
+            "loadingLabel": "Loading your GCT3 Document Portal",
             "surveyUrl": "https:\/\/docs.google.com\/forms\/d\/e\/1FAIpQLSfq7MQRMB4TDe959R5ER6NKsAf2Q7rTtEOEgfFDJ3JQ3gNxng\/viewform?usp=sf_link",
             "showSearchMenu": true,
-            "roleLabels": [],
-            "disabledRoles": [],
+            "roleLabels": {
+                "tribal-council": "Administrator",
+                "lands-department-manager": "Community Manager",
+                "lands-department": "Staff\/Technician",
+                "chief-council": "Unused\/Error:chief-council"
+            },
+            "disabledRoles": [
+                "chief-council"
+            ],
             "projectListItemView": "singleProjectListItemTableDetail",
-            "pageClassNames": "",
+            "pageClassNames": "gct3",
             "showSplitProjectDetail": false,
-            "showProjecReports": true,
-            "projectForm": "ProposalTemplate",
+            "showProjecReports": false,
+            "projectForm": "documentProjectForm",
             "enableUserProfiles": true,
             "main-departments": [],
             "main-tags": [
@@ -5568,7 +5581,7 @@
             ],
             "showOverviewMetricsDetail": false,
             "showLeftPanelPrimaryBtn": true,
-            "showLeftPanelUser": true,
+            "showLeftPanelUser": false,
             "useFontAwesome": true,
             "saveParametersAsData": false,
             "enableMobile": false,
@@ -5577,43 +5590,80 @@
             "autoApproveMobileCommunityOnce": false,
             "autoApproveMobileCommunity": false,
             "requireValidMobileEmail": true,
-            "enablePending": true,
+            "enablePending": false,
             "useFacebookLogin": false,
             "gatherIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_r7F_lYW_6cm_%5BG%5D-%3Ethumb%3A%3E200x%3E150.png"
             ],
-            "leftPanelPrimaryBtnLabel": "Add Submission",
-            "leftPanelPrimaryBtnForm": "{projectForm}",
-            "showLeftPanelSecondaryBtn": false,
-            "leftPanelSecondaryBtnLabel": "Add Dataset",
-            "leftPanelSecondaryBtnForm": "{projectForm}",
-            "datasetForm": "{projectForm}",
+            "leftPanelPrimaryBtnLabel": "Add Dataset",
+            "leftPanelPrimaryBtnForm": "documentForm",
+            "showLeftPanelSecondaryBtn": true,
+            "leftPanelSecondaryBtnLabel": "Add Collection",
+            "leftPanelSecondaryBtnForm": "documentProjectForm",
+            "datasetForm": "documentForm",
             "menuLabels": {
+                "project": {
+                    "Project.Users": "Access",
+                    "Project.Discussion": "Notes"
+                },
                 "main": {
-                    "Referrals.Projects": "Submissions"
+                    "Main.Department": "Communities"
                 }
             },
-            "menuItems": [],
+            "menuItems": {
+                "main": {
+                    "Main.Projects": {
+                        "label": "Datasets",
+                        "showCreateBtn": true,
+                        "addButtonLabel": "Add Dataset",
+                        "formName": "documentForm",
+                        "lockFilter": "!collection",
+                        "filter": null,
+                        "invertfilter": false
+                    },
+                    "Main.Datasets": {
+                        "label": "The Datasets",
+                        "showCreateBtn": true,
+                        "addButtonLabel": "Add Dataset",
+                        "formName": "documentForm",
+                        "lockFilter": "!collection",
+                        "filter": null,
+                        "invertfilter": false
+                    },
+                    "Main.Collections": {
+                        "label": "Collections",
+                        "showCreateBtn": true,
+                        "addButtonLabel": "Add Collection",
+                        "formName": "documentProjectForm",
+                        "lockFilter": "collection",
+                        "filter": null,
+                        "invertfilter": false
+                    }
+                }
+            },
             "useCommunitiesAsDepartmens": false,
-            "useCommunitiesAsDepartments": false,
-            "departmentKind": "Department",
+            "useCommunitiesAsDepartments": true,
+            "departmentKind": "Community",
             "enableUserAjaxWrite": false,
             "authUserAjaxScript": "XXXX-XXXX",
-            "applicationLogoAlt": [],
-            "showAltLogo": false,
-            "showSlack": true,
+            "applicationLogoAlt": [
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/gct3.gather.geoforms.ca\/1\/Uploads\/%5BG%5D_p7N_y46_%5BImAgE%5D_Xnw-%3Ethumb%3A%3E200x%3E150.png"
+            ],
+            "showAltLogo": true,
+            "showSlack": false,
             "showSurvey": true,
-            "showDatasets": false,
+            "showDatasets": true,
             "gatherUrl": "https:\/\/gather.geoforms.ca\/",
             "showMapAnnotationsMain": true,
             "showMapAnnotationsProject": true,
-            "showProjectActivity": true,
+            "showProjectActivity": false,
             "enableRevisions": false,
-            "nameForProjects": "Submissions",
+            "nameForProjects": "Collections",
             "nameForCollections": "Collections",
             "nameForDatasets": "Datasets",
             "loginLabel": "Login",
-            "broadcastChanges": true
+            "broadcastChanges": true,
+            "altLogoLink": ""
         }
     },
     "widget.154": {

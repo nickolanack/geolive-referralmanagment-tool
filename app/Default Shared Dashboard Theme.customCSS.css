@@ -10,6 +10,19 @@
     clear: both;
 }
 
+.content.markdown {
+    
+    clear:both;
+    
+    h1{
+        padding-left: 10px;
+    }
+    p {
+        padding-left: 25px;
+    }
+}
+
+
 body.body-overlayed>#viewControllerApp>div>div>.ui-view {
     filter: blur(5px) grayscale(1);
 }
