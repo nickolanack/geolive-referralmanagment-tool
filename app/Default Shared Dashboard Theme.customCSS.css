@@ -5916,6 +5916,11 @@ div.popover[data-with-view="reportSelectionView"]{
 
 ._tableStyle_{
     
+    [data-col] .priority-indicator {
+        height: 20px;
+        line-height: 20px;
+    }
+    
     .ui-view.inline-icon-list-view.unassigned, .ui-view.inline-icon-list-view.unassigned:first-child{
         display:inline-block;
     }
