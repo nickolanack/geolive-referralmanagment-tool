@@ -3449,8 +3449,16 @@ span.filter-btns {
 
 
 .calendar .day.active:hover{
-    background-color: #6A7CE9;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
 }
+.dark{
+    .calendar .day.active:hover{
+        background-color: rgb(34 34 34);
+    }
+}
+
+
 .day.today.active:after{
     border:1px solid mediumseagreen;
     background: $themeInset;
