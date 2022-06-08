@@ -1,5 +1,5 @@
 return (new ModalFormButtonModule(application, item,{
-        label:"Add Team Member",
+        label:"Add/Remove Team Member",
         formName:"userSelectionForm",
         formOptions:{
             template:"form"
