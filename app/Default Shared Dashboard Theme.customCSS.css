@@ -5914,6 +5914,10 @@ div.popover[data-with-view="reportSelectionView"]{
     vertical-align: top;
 }
 
+.dark [data-col="sharing"] .field-value {
+    filter: invert(1);
+}
+
 ._tableStyle_{
     
     [data-col] .priority-indicator {
