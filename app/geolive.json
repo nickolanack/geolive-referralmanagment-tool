@@ -5565,7 +5565,7 @@
                 "chief-council"
             ],
             "projectListItemView": "singleProjectListItemTableDetail",
-            "pageClassNames": "gct3",
+            "pageClassNames": "",
             "showSplitProjectDetail": false,
             "showProjecReports": false,
             "projectForm": "documentProjectForm",
@@ -5646,16 +5646,14 @@
             "departmentKind": "Community",
             "enableUserAjaxWrite": false,
             "authUserAjaxScript": "XXXX-XXXX",
-            "applicationLogoAlt": [
-                "https:\/\/dyl2vw577xcfk.cloudfront.net\/gct3.gather.geoforms.ca\/1\/Uploads\/%5BG%5D_p7N_y46_%5BImAgE%5D_Xnw-%3Ethumb%3A%3E200x%3E150.png"
-            ],
+            "applicationLogoAlt": [],
             "showAltLogo": true,
             "showSlack": false,
             "showSurvey": true,
             "showDatasets": true,
             "gatherUrl": "https:\/\/gather.geoforms.ca\/",
-            "showMapAnnotationsMain": true,
-            "showMapAnnotationsProject": true,
+            "showMapAnnotationsMain": "true",
+            "showMapAnnotationsProject": "true",
             "showProjectActivity": false,
             "enableRevisions": false,
             "nameForProjects": "Submissions",
