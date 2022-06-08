@@ -7,7 +7,7 @@ DashboardConfig.getValue('altLogoLink', function(v){
        el.addEvent('click', function(){
             window.open(v, "_blank")
         });
-        el.addStyle('cursor','pointer');
+        el.setStyle('cursor','pointer');
     }
     
 });
