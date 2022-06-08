@@ -1023,7 +1023,7 @@ var ProjectList = (function() {
 				}
 			}, {
 				label: "You have Shared",
-				tip:"Visible and downloadable to members of these other communities.",
+				tip:"Visible and downloadable to members of other communities.",
 				name: "shared-to",
 				icon:"https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/UJ8_%5BG%5D_Je9_%5BImAgE%5D_Ngx-%3Ethumb%3A%3E200x%3E150.png",
 				description: "These are datasets and collections that your community is sharing with other communities and GCT3. This information will be visible and downloadable to members of these other communities.",
@@ -1036,7 +1036,7 @@ var ProjectList = (function() {
 
 			}, {
 				label: "Others are Sharing",
-				tip: "shared to you by another community.",
+				tip: "Shared to you by another community.",
 				name: "shared-from",
 				icon:"https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/%5BImAgE%5D_mib_%5BG%5D_zR_yF4-%3Ethumb%3A%3E200x%3E150.png",
 				description: "These are datasets and collections that have been shared by other communities and GCT3 with your community. You will be able to view and download these files.",
