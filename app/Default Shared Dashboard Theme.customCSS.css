@@ -5925,6 +5925,8 @@ div.popover[data-with-view="reportSelectionView"]{
     height:20px;
     background-size:100%;
     vertical-align: top;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .dark [data-col="sharing"] .field-value {
