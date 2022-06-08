@@ -6,7 +6,7 @@ var sharedIndex=-1;
 
 ProjectList.SharedListFilters().forEach(function(filter, i){
     if(filter.filterFn(item)){
-        el.addClass(filter.name);
+        el.addClass(filter.name.split(' ').join('-'));
         valueEl.setStyle('background-image', 'url('+filter.icon+')');
         sharedLabel=filter.tip||filter.label;
         sharedIndex=i;
