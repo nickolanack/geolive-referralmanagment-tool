@@ -1060,6 +1060,10 @@ button.primary-btn.nav-new-btn.view-selection:before{
     margin-top :50px;
 }
 
+.ui-view.left-panel.closed button.primary-btn.nav-new-btn.btn-index-1 {
+    margin-top:10px;
+}
+
 // .ui-view.left-panel.closed button.primary-btn.nav-new-btn:before{
 //     content:"+";
 //     float:none;
