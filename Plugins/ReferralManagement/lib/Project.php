@@ -44,8 +44,16 @@ class Project {
 
 		$proposal['id'] == intval($proposal['id']);
 
-		$proposal['userdetails'] = GetClient()->userMetadataFor((int) $proposal['user']);
-		$proposal['userCommunity']='...';
+
+		$userId=(int) $proposal['user'];
+		$proposal['userCommunity']='none';
+		if($userId>0){
+			$userMetameta=(new \ReferralManagement\User())->getMetadata($userId);
+			$proposal['userCommunity']=$userMetameta['community'];
+		}
+
+		$proposal['userdetails'] = GetClient()->userMetadataFor();
+		
 
 		if (isset($proposal['userdetails']['roles'])) {
 			unset($proposal['userdetails']['roles']);
@@ -95,7 +103,6 @@ class Project {
 
 				$userId=(int) $proposal['user'];
 				if($userId>0){
-					$userMetameta=(new \ReferralManagement\User())->getMetadata($userId);
 					$community=$userMetameta['community'];
 					(new \attributes\Record('proposalAttributes'))->setValues($proposal['id'], 'ReferralManagement.proposal', array(
 						'community'=>$community
