@@ -366,7 +366,7 @@ var DashboardPageLayout = (function() {
 		}
 
 		var items = content.filter(function(m) {
-			return m.getIdentifier() === 'synopsis' || m.getIdentifier() === 'overview-sections' || m.getIdentifier()=='detail-view';
+			return m.getIdentifier() === 'synopsis' || m.getIdentifier() === 'overview-sections';
 		});
 		if (!DashboardConfig.getValue('showOverviewMetricsDetail')) {
 
