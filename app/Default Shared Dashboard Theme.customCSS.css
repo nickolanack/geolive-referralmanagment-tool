@@ -5898,6 +5898,13 @@ div.popover[data-with-view="reportSelectionView"]{
     }
 }
 
+[data-col="sharing"] .field-value{
+    display: inline-block;
+    width:20px;
+    height:20px;
+    background-size:100%;
+    vertical-align: top;
+}
 
 ._tableStyle_{
     
