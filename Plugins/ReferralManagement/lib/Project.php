@@ -97,6 +97,9 @@ class Project {
 				if($userId>0){
 					$userMetameta=(new \ReferralManagement\User())->getMetadata($userId);
 					$community=$userMetameta['community'];
+					(new \attributes\Record('proposalAttributes'))->setValues($proposal['id'], 'ReferralManagement.proposal', array(
+						'community'=>$community
+					));
 				}
 
 			}
