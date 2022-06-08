@@ -5605,7 +5605,11 @@
             "leftPanelSecondaryBtnLabel": "Add Dataset",
             "leftPanelSecondaryBtnForm": "{projectForm}",
             "datasetForm": "{projectForm}",
-            "menuLabels": [],
+            "menuLabels": {
+                "main": {
+                    "Referrals.Projects": "Submissions"
+                }
+            },
             "menuItems": [],
             "useCommunitiesAsDepartmens": false,
             "useCommunitiesAsDepartments": true,
