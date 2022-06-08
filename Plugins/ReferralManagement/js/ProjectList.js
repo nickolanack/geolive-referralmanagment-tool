@@ -756,8 +756,8 @@ var ProjectList = (function() {
 			childView.getElement().addClass("is-shared-team");
 		}
 
-		if (child.isPrivate()) {
-			childView.getElement().addClass("is-private");
+		if (child.isPrivateWithinCommunity()) {
+			childView.getElement().addClass("is-private-community");
 		}
 
 	}

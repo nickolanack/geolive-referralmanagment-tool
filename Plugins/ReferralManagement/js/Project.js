@@ -112,8 +112,13 @@ var Project = (function() {
 			callback(null);
 		},
 
+		isPublic:function(){
 
-		isPrivate:function(){
+			
+
+		},
+
+		isPrivateWithinCommunity:function(){
 			return this.data.communityAccess==="private";
 		},
 
