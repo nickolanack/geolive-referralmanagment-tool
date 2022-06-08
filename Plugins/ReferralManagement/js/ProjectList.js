@@ -1015,7 +1015,7 @@ var ProjectList = (function() {
 				tip: "Only visible to your community members.",
 				name: "community",
 
-				icon:"https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/%5BG%5D_yqF_6QX_TVS_%5BImAgE%5D-%3Ethumb%3A%3E200x%3E150.png",
+				icon:"https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/ArK_%5BImAgE%5D_gha_%5BG%5D_aK6-%3Ethumb%3A%3E200x%3E150.png",
 				description: "These datasets and collections are only visible to members of your community <b>"+ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity()+"</b>. Nobody else has access to them.",
 				filterFn: function(p) {
 					return p.getProjectCommunity() == ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity() && p.getCommunitiesInvolved().filter(function(c) {
@@ -1026,7 +1026,7 @@ var ProjectList = (function() {
 				label: "You have Shared",
 				tip:"Visible and downloadable to members of other communities.",
 				name: "shared-to",
-				icon:"https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/UJ8_%5BG%5D_Je9_%5BImAgE%5D_Ngx-%3Ethumb%3A%3E200x%3E150.png",
+				icon:"https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/17l_%5BImAgE%5D_xEl_%5BG%5D_KKc-%3Ethumb%3A%3E200x%3E150.png",
 				description: "These are datasets and collections that your community is sharing with other communities and GCT3. This information will be visible and downloadable to members of these other communities.",
 				filterFn: function(p) {
 
