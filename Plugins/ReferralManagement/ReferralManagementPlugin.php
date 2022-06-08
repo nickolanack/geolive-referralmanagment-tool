@@ -1032,16 +1032,16 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 				)) {
 
-					if($item->access=='public'){
+					if($item->communityAccess=='public'){
 
 						//error_log("Your community is involved ".$item['id']);
-						$item->visibleBecuase = "Shared public item";
+						$item->visibleBecuase = "Shared public item within community";
 						$this->lastAuthReason=$item->visibleBecuase;
 						return true;
 					}
 				}
 
-				error_log('no min access:'.$item->access);
+				error_log('no min access:'.$item->communityAccess);
 
 				return false;
 

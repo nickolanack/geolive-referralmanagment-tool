@@ -114,7 +114,7 @@ var Project = (function() {
 
 
 		isPrivate:function(){
-			return this.data.access==="private";
+			return this.data.communityAccess==="private";
 		},
 
 

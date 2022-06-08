@@ -80,7 +80,7 @@ class Project {
 		unset($proposal['discussion']->new);
 
 
-		$proposal['access']='public';
+		$proposal['communityAccess']='public';
 
 		GetPlugin('Attributes');
 
@@ -120,7 +120,7 @@ class Project {
 		if(!isset($attributes['dataset'])){
 			$config = GetWidget('dashboardConfig');
 			if($config->getParameter('enableProposals')){
-				$proposal['access']='private';
+				$proposal['communityAccess']='private';
 			}
 		}
 
