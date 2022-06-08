@@ -71,7 +71,7 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
 
 
             if(!$auth){
-                if($item->userCommunity!=$item->community)){
+                if($item->userCommunity!=$item->community){
 
                     /**
                      * user is no longer in community, give access to managers
