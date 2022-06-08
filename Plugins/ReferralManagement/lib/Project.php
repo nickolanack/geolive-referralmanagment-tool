@@ -90,7 +90,7 @@ class Project {
 		if(isset($attributes['community'])){
 
 			$community=$attributes['community'];
-			if(is_null($community){
+			if(is_null($community)){
 				$community=$this->getPlugin()->communityCollective();
 
 				$userId=(int) $proposal['user'];
