@@ -966,8 +966,14 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 		return function (&$item, $userId=-1) use ($clientId, $clientMetadata, $minAccessLevel, $clientMinAuth, $collectiveIsParent, $itemsFollowCommunity) {
 
-
-
+			if(!empty($item->accessLevel)){
+				$accessLevel=strtolower($item->accessLevel);
+				if($accessLevel==='public'){
+					$item->visibleBecuase = "Item is public";
+					$this->lastAuthReason=$item->visibleBecuase;
+					return true;
+				}
+			}
 
 
 			if($userId==-1||$userId==$clientId){
