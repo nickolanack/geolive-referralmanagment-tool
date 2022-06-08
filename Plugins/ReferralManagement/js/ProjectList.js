@@ -1023,7 +1023,7 @@ var ProjectList = (function() {
 				}
 			}, {
 				label: "Community Vault",
-				tip: "Only visible to your community members.",
+				tip: "Only visible to <b>"+ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity()+"</b> members.",
 				name: "community",
 
 				icon:"https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/ArK_%5BImAgE%5D_gha_%5BG%5D_aK6-%3Ethumb%3A%3E200x%3E150.png",
