@@ -496,11 +496,16 @@ button.primary-btn.nav-new-btn.view-selection:before {
 
 
 .day.today, .day.active, .day.today.active {
-    color: white;
     font-weight: 400;
     &:after {
         background-color: $highlightBtnColor;
         border-color: transparent;
+    }
+}
+
+.dark{
+    .day.today, .day.active, .day.today.active {
+        color: white;
     }
 }
 
