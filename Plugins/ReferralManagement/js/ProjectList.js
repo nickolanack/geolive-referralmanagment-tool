@@ -1067,7 +1067,7 @@ var ProjectList = (function() {
 					var controller = GatherDashboard.getApplication().getNamedValue('navigationController')
 					controller.navigateTo("Datasets", "Main", {
 						item: new ProjectList({
-							"label": list.label+' | '+ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity(),
+							"label": list.label,
 							"icon":list.icon||null,
 							"description": list.description,
 							projects: function(callback) {
