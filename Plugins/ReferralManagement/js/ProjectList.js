@@ -1048,7 +1048,7 @@ var ProjectList = (function() {
 
 			}, {
 				label: "Others are Sharing",
-				tip: "Shared to you by another community.",
+				tip: "Shared to you by <b>{itemCommunity}</b>.",
 				name: "shared-from",
 				icon:"https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/%5BImAgE%5D_mib_%5BG%5D_zR_yF4-%3Ethumb%3A%3E200x%3E150.png",
 				description: "These are datasets and collections that have been shared by other communities and GCT3 with your community. You will be able to view and download these files.",
