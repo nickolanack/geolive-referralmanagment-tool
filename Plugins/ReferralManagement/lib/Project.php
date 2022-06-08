@@ -87,7 +87,7 @@ class Project {
 
 
 
-		if(isset($attributes['community'])){
+		//if(isset($attributes['community'])){
 
 			$community=$attributes['community'];
 			if(empty($community)){
@@ -103,7 +103,7 @@ class Project {
 			unset($attributes['community']);
 			$proposal['community'] = $community;
 
-		}
+		//}
 
 
 
