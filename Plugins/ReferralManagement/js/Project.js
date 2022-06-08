@@ -112,10 +112,9 @@ var Project = (function() {
 			callback(null);
 		},
 
+		
 		isPublic:function(){
-
-			
-
+			return this.data&&this.data.attributes&&(this.data.attributes.accessLevel||"private").toLowerCase()==="public";
 		},
 
 		isPrivateWithinCommunity:function(){
