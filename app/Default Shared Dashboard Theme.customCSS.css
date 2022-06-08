@@ -11,10 +11,13 @@
 }
 
 .content.markdown {
+    
+    clear:both;
+    
     h1{
         padding-left: 10px;
     }
-     p {
+    p {
         padding-left: 25px;
     }
 }
