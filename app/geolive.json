@@ -5605,42 +5605,8 @@
             "leftPanelSecondaryBtnLabel": "Add Dataset",
             "leftPanelSecondaryBtnForm": "{projectForm}",
             "datasetForm": "{projectForm}",
-            "menuLabels": {
-                "main": {
-                    "Referrals.Projects": "Submissions"
-                }
-            },
-            "menuItems": {
-                "main": {
-                    "Main.Projects": {
-                        "label": "Datasets",
-                        "showCreateBtn": true,
-                        "addButtonLabel": "Add Dataset",
-                        "formName": "documentForm",
-                        "lockFilter": "!collection",
-                        "filter": null,
-                        "invertfilter": false
-                    },
-                    "Main.Datasets": {
-                        "label": "The Datasets",
-                        "showCreateBtn": true,
-                        "addButtonLabel": "Add Dataset",
-                        "formName": "documentForm",
-                        "lockFilter": "!collection",
-                        "filter": null,
-                        "invertfilter": false
-                    },
-                    "Main.Collections": {
-                        "label": "Collections",
-                        "showCreateBtn": true,
-                        "addButtonLabel": "Add Collection",
-                        "formName": "documentProjectForm",
-                        "lockFilter": "collection",
-                        "filter": null,
-                        "invertfilter": false
-                    }
-                }
-            },
+            "menuLabels": [],
+            "menuItems": [],
             "useCommunitiesAsDepartmens": false,
             "useCommunitiesAsDepartments": true,
             "departmentKind": "Community",
