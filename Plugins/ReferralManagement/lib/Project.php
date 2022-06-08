@@ -86,6 +86,27 @@ class Project {
 		}
 
 
+
+		if(isset($attributes['community'])){
+
+			$community=$attributes['community'];
+			if(is_null($community){
+				$community=$this->getPlugin()->communityCollective();
+
+				$userId=(int) $proposal['user'];
+				if($userId>0){
+					$userMetameta=(new \ReferralManagement\User())->getMetadata($userId);
+					$community=$userMetameta['community'];
+				}
+
+			}
+			unset($attributes['community']);
+			$proposal['community'] = $community;
+
+		}
+
+
+
 		if(!isset($attributes['dataset'])){
 			$config = GetWidget('dashboardConfig');
 			if($config->getParameter('enableProposals')){
