@@ -760,6 +760,11 @@ var ProjectList = (function() {
 			childView.getElement().addClass("is-private-community");
 		}
 
+
+		if(child.p.hasTasks()){
+			childView.getElement().addClass('has-tasks');
+		}
+
 	}
 	ProjectList.AddListItemEvents = function(child, childView, application, listFilterFn) {
 
