@@ -707,7 +707,7 @@ var TaskItem = (function() {
 	/**
 		* returns a module arrays
 		*/
-	TaskItem.ProjectTaskMenuButtons = function(item) {
+	TaskItem.ProjectTaskMenuButtons = function(item, callback) {
 
 
 		var application = ReferralManagementDashboard.getApplication();
@@ -872,7 +872,7 @@ var TaskItem = (function() {
 		});
 		modules.push(counter);
 
-		return modules;
+		callback(modules);
 
 	};
 
