@@ -665,15 +665,15 @@ var TableHeader = (function() {
 
 		},
 
-		addSort:function(name, fn){
+		addSort:function(name, sort, filter){
 
 			if(this._sortModule){
-				this._sortModule.addSortFn(name, fn);
+				this._sortModule.addSortFn(name, sort, filter);
 				return this;
 			}
 
 			this.once('initSort', function(sortModule){
-				sortModule.addSortFn(name, fn);
+				sortModule.addSortFn(name, sort, filter);
 			});
 
 			return this;

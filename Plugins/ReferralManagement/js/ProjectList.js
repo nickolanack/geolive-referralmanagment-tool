@@ -684,6 +684,10 @@ var ProjectList = (function() {
 
 			return lowerLocalCompare(a.getAuthID(), b.getAuthID());
 
+		}, function(a){
+
+			return a.getAuthID()&&a.getAuthID()!='';
+			
 		}).render(listModule);
 
 	};
