@@ -34,8 +34,14 @@ var TableAutoHeightBehavior = (function() {
 			});
 
 
+			ProjectSelection.on('change', _resizeEventListener);
+
+
 
 		},
+		needsFit:function(){
+			this._needsFitContent();
+		}
 		_needsFitContent: function() {
 
 			if (this._fitContentTrottle) {
@@ -93,6 +99,7 @@ var TableAutoHeightBehavior = (function() {
 		_remove: function() {
 			window.removeEvent('resize', this._resizeEventListener);
 			this._listModule=null;
+			ProjectSelection.removeEvent('change', this._resizeEventListener);
 
 		}
 
