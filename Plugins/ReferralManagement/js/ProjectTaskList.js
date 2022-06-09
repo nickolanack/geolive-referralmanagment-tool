@@ -603,4 +603,4 @@ var ProjectTaskList=(function(){
 	return ProjectTaskList;
 
 
-})():
+})();
