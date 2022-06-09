@@ -14,7 +14,7 @@ var unit=OrganizationalUnit.DefaultList();
     
     callback(item.getCommunitiesInvolved().map(function(community){
         return unit.getItemWithName(community);
-    }))
+    }).filter(function(u){ return !!u; }));
     
 
 //});
