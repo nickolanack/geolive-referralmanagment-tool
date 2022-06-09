@@ -34,7 +34,7 @@ var TableAutoHeightBehavior = (function() {
 			});
 
 
-			ProjectSelection.on('change', _resizeEventListener);
+			ProjectSelection.on('change', me._resizeEventListener);
 
 
 
