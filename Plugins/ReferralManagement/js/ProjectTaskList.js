@@ -1,10 +1,8 @@
-var ProjectTaskList=(function(){
+var ProjectTaskList = (function() {
 
 
 
-
-
-	var ProjectTaskList=new Class({});
+	var ProjectTaskList = new Class({});
 
 
 	ProjectTaskList.AddListItemEvents = function(listModule, childView, child) {
@@ -68,7 +66,6 @@ var ProjectTaskList=(function(){
 
 
 
-
 	var CategoryTaskTemplateGroup = new Class({
 		Extends: MockDataTypeItem,
 		getTitle: function() {
@@ -77,179 +74,192 @@ var ProjectTaskList=(function(){
 
 	});
 
-		/**
+	/**
 		* returns a module arrays
 		*/
 	ProjectTaskList.ProjectTaskMenuButtons = function(item, callback) {
 
 
-		var application = ReferralManagementDashboard.getApplication();
 
-		var task = new TaskItem(item);
-		var modalButton;
-
-
-
-		var modules = [
-
-			ProjectTaskList._newTask(application, item),
-
-		];
+		AppClient.authorize('write', {
+			id: item.getId(),
+			type: item.getType()
+		}, function(access) {
+			//check access, bool.
+			if (!access) {
+				callback(null);
+				return;
+			}
 
 
-		//var category = item.getProjectType();
-		var categories = item.getProjectTypes();
+			var application = ReferralManagementDashboard.getApplication();
 
-
-		if (categories.length > 0) {
+			var task = new TaskItem(item);
+			var modalButton;
 
 
 
-			categories.forEach(function(category, index) {
+			var modules = [
+
+				ProjectTaskList._newTask(application, item),
+
+			];
+
+
+			//var category = item.getProjectType();
+			var categories = item.getProjectTypes();
+
+
+			if (categories.length > 0) {
 
 
 
-				var taskGroup = new CategoryTaskTemplateGroup({
-					category: category,
-					project: item,
-					//mutable:true
+				categories.forEach(function(category, index) {
+
+
+
+					var taskGroup = new CategoryTaskTemplateGroup({
+						category: category,
+						project: item,
+						//mutable:true
+					});
+
+
+					modalButton = new ModalFormButtonModule(application, taskGroup /*new MockDataTypeItem()*/ , {
+						label: "Add default " + category.toLowerCase() + " tasks",
+						formName: "taskDefaultItems",
+						formOptions: {
+							template: "form"
+						},
+						hideText: true,
+						"class": "inline-btn add primary-btn"
+					}).addEvent('show', function() {
+						var wizard = modalButton.getWizard();
+						wizard.addEvent('complete', function() {
+
+							var data = wizard.getData();
+							console.log(data);
+
+
+							var taskTemplates = _currentListModule.getItems().map(function(task) {
+								return task.templateMetadata();
+							});
+
+							data.taskTemplates = taskTemplates;
+
+
+
+							var CreateDefaultTaskQuery = new Class({
+								Extends: AjaxControlQuery,
+								initialize: function(data) {
+									this.parent(CoreAjaxUrlRoot, 'create_default_tasks', Object.append({
+										plugin: 'ReferralManagement',
+										"proposal": item.getId()
+									}, (data || {})));
+								}
+							});
+							new CreateDefaultTaskQuery(data).addEvent("success", function(resp) {
+
+								if (resp.tasksData) {
+									resp.tasksData.forEach(function(data) {
+										item.addTask(new TaskItem(item, data));
+									})
+								}
+							}).execute();
+
+
+						});
+					});
+
+
+					ProjectTaskList.TaskTemplates(category, function(tasks) {
+						if (tasks.length == 0) {
+							modalButton.getElement().addClass('with-no-tasks');
+						}
+
+					});
+
+
+					RecentItems.colorizeEl(modalButton.getElement(), category);
+
+
+					modules.push(modalButton);
+
+
+					var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
+					if (user.isTeamManager()) {
+
+						var editDefaultTasksButton = ProjectTaskList._editDefaultTasks(application, item, category);
+						RecentItems.colorizeEl(editDefaultTasksButton.getElement(), category);
+						modules.push(editDefaultTasksButton);
+
+					}
+
 				});
 
 
-				modalButton = new ModalFormButtonModule(application, taskGroup /*new MockDataTypeItem()*/ , {
-					label: "Add default " + category.toLowerCase() + " tasks",
-					formName: "taskDefaultItems",
+
+			} else {
+
+
+
+				modules.push(new ModalFormButtonModule(application, item /*new MockDataTypeItem()*/ , {
+					label: "Set project type",
+					formName: "chooseProjectTypeForm",
 					formOptions: {
 						template: "form"
 					},
 					hideText: true,
 					"class": "inline-btn add primary-btn"
 				}).addEvent('show', function() {
-					var wizard = modalButton.getWizard();
-					wizard.addEvent('complete', function() {
-
-						var data = wizard.getData();
-						console.log(data);
 
 
-						var taskTemplates = _currentListModule.getItems().map(function(task) {
-							return task.templateMetadata();
-						});
-
-						data.taskTemplates = taskTemplates;
+				}));
+				modules.push(ProjectTaskList._missingProjectTypeInfo());
 
 
-
-						var CreateDefaultTaskQuery = new Class({
-							Extends: AjaxControlQuery,
-							initialize: function(data) {
-								this.parent(CoreAjaxUrlRoot, 'create_default_tasks', Object.append({
-									plugin: 'ReferralManagement',
-									"proposal": item.getId()
-								}, (data || {})));
-							}
-						});
-						new CreateDefaultTaskQuery(data).addEvent("success", function(resp) {
-
-							if (resp.tasksData) {
-								resp.tasksData.forEach(function(data) {
-									item.addTask(new TaskItem(item, data));
-								})
-							}
-						}).execute();
-
-
-					});
-				});
-
-
-				ProjectTaskList.TaskTemplates(category, function(tasks) {
-					if (tasks.length == 0) {
-						modalButton.getElement().addClass('with-no-tasks');
-					}
-
-				});
-
-
-				RecentItems.colorizeEl(modalButton.getElement(), category);
-
-
-				modules.push(modalButton);
-
-
-				var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
-				if (user.isTeamManager()) {
-
-					var editDefaultTasksButton = ProjectTaskList._editDefaultTasks(application, item, category);
-					RecentItems.colorizeEl(editDefaultTasksButton.getElement(), category);
-					modules.push(editDefaultTasksButton);
-
-				}
-
-			});
-
-
-
-		} else {
-
-
-
-			modules.push(new ModalFormButtonModule(application, item /*new MockDataTypeItem()*/ , {
-				label: "Set project type",
-				formName: "chooseProjectTypeForm",
-				formOptions: {
-					template: "form"
-				},
-				hideText: true,
-				"class": "inline-btn add primary-btn"
-			}).addEvent('show', function() {
-
-
-			}));
-			modules.push(ProjectTaskList._missingProjectTypeInfo());
-
-
-		}
-
-
-		modules.push(ProjectTaskList._defaultTasksInfo(categories));
-
-		modules.push(new ElementModule("label", {
-			html: "Incomplete tasks"
-		}));
-
-
-
-		var counterFn = function() {
-
-			var tasks = item.getTasks();
-
-			var onScheduleLabel = 'create some tasks to get started';
-			if (tasks.length > 0) {
-				onScheduleLabel = (item.isOnSchedule() ? 'you\'re on schedule' : '<span class="warn">you\'re behind schedule</span>');
 			}
 
-			return tasks.filter(function(t) {
-				return t.isComplete();
-			}).length + '/' + tasks.length + ' tasks complete, ' + onScheduleLabel
 
-		};
-		var counter = new ElementModule("div", {
-			"class": "task-subtext",
-			html: counterFn()
+			modules.push(ProjectTaskList._defaultTasksInfo(categories));
 
-		})
+			modules.push(new ElementModule("label", {
+				html: "Incomplete tasks"
+			}));
 
-		counter.addWeakEvent(item, 'taskChanged', function() {
-			counter.getElement().innerHtml = counterFn();
+
+
+			var counterFn = function() {
+
+				var tasks = item.getTasks();
+
+				var onScheduleLabel = 'create some tasks to get started';
+				if (tasks.length > 0) {
+					onScheduleLabel = (item.isOnSchedule() ? 'you\'re on schedule' : '<span class="warn">you\'re behind schedule</span>');
+				}
+
+				return tasks.filter(function(t) {
+					return t.isComplete();
+				}).length + '/' + tasks.length + ' tasks complete, ' + onScheduleLabel
+
+			};
+			var counter = new ElementModule("div", {
+				"class": "task-subtext",
+				html: counterFn()
+
+			})
+
+			counter.addWeakEvent(item, 'taskChanged', function() {
+				counter.getElement().innerHtml = counterFn();
+			});
+			modules.push(counter);
+
+			callback(new ModuleArray(modules));
+
 		});
-		modules.push(counter);
 
-		callback(new ModuleArray(modules));
 
 	};
-
-
 
 
 
@@ -445,7 +455,7 @@ var ProjectTaskList=(function(){
 				"label": "Priority",
 				"showLabel": false,
 				"align": "center",
-				"sortInvert":true
+				"sortInvert": true
 			},
 			"tags": {
 				"width": "130px",
@@ -483,8 +493,8 @@ var ProjectTaskList=(function(){
 
 
 		listModule.setPaginationOptions({
-		    position:"auto",
-		    showPages:true
+			position: "auto",
+			showPages: true
 		});
 	}
 
@@ -596,7 +606,6 @@ var ProjectTaskList=(function(){
 				return f.label !== 'complete';
 			}));
 	}
-
 
 
 
