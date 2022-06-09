@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "\n\nreturn TaskItem.ProjectTaskMenuButtons(item);",
+        "script": "\n\nTaskItem.ProjectTaskMenuButtons(item, callback);",
         "description": "Info about my custom script"
     }
 }
