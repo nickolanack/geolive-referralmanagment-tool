@@ -233,7 +233,7 @@ var ProjectTaskList = (function() {
 	};
 
 
-	ProjectTaskList.item=function(item){
+	ProjectTaskList.TaskListHeadingModules=function(item){
 
 		var modules=[];
 		modules.push(new ElementModule("label", {
