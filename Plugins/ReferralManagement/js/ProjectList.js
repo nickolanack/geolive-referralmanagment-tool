@@ -433,6 +433,9 @@ var ProjectList = (function() {
 			label: "type",
 			sortFn: function(a, b) {
 				return lowerLocalCompare(a.getProjectType(), b.getProjectType());
+			},
+			filterFn:function(a){
+				return a.getProjectType()&&a.getProjectType()!=='';
 			}
 		}];
 
@@ -687,7 +690,7 @@ var ProjectList = (function() {
 		}, function(a){
 
 			return a.getAuthID()&&a.getAuthID()!='';
-			
+
 		}).render(listModule);
 
 	};
