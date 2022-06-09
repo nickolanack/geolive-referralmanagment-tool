@@ -87,7 +87,7 @@ var ProjectTaskList = (function() {
 		}, function(access) {
 			//check access, bool.
 			if (!access) {
-				callback(null);
+				callback(new ModuleArray(ProjectTaskList.TaskListHeadingModules(item)));
 				return;
 			}
 
@@ -222,37 +222,8 @@ var ProjectTaskList = (function() {
 
 
 			modules.push(ProjectTaskList._defaultTasksInfo(categories));
-
-			modules.push(new ElementModule("label", {
-				html: "Incomplete tasks"
-			}));
-
-
-
-			var counterFn = function() {
-
-				var tasks = item.getTasks();
-
-				var onScheduleLabel = 'create some tasks to get started';
-				if (tasks.length > 0) {
-					onScheduleLabel = (item.isOnSchedule() ? 'you\'re on schedule' : '<span class="warn">you\'re behind schedule</span>');
-				}
-
-				return tasks.filter(function(t) {
-					return t.isComplete();
-				}).length + '/' + tasks.length + ' tasks complete, ' + onScheduleLabel
-
-			};
-			var counter = new ElementModule("div", {
-				"class": "task-subtext",
-				html: counterFn()
-
-			})
-
-			counter.addWeakEvent(item, 'taskChanged', function() {
-				counter.getElement().innerHtml = counterFn();
-			});
-			modules.push(counter);
+			
+			modules=modules.concat(ProjectTaskList.TaskListHeadingModules(item));
 
 			callback(new ModuleArray(modules));
 
@@ -260,6 +231,44 @@ var ProjectTaskList = (function() {
 
 
 	};
+
+
+	ProjectTaskList.item=function(item){
+
+		var modules=[];
+		modules.push(new ElementModule("label", {
+			html: "Incomplete tasks"
+		}));
+
+
+
+		var counterFn = function() {
+
+			var tasks = item.getTasks();
+
+			var onScheduleLabel = 'create some tasks to get started';
+			if (tasks.length > 0) {
+				onScheduleLabel = (item.isOnSchedule() ? 'you\'re on schedule' : '<span class="warn">you\'re behind schedule</span>');
+			}
+
+			return tasks.filter(function(t) {
+				return t.isComplete();
+			}).length + '/' + tasks.length + ' tasks complete, ' + onScheduleLabel
+
+		};
+		var counter = new ElementModule("div", {
+			"class": "task-subtext",
+			html: counterFn()
+
+		})
+
+		counter.addWeakEvent(item, 'taskChanged', function() {
+			counter.getElement().innerHtml = counterFn();
+		});
+		modules.push(counter);
+		return modules;
+
+	}
 
 
 
