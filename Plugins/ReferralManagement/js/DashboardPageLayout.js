@@ -451,7 +451,8 @@ var DashboardPageLayout = (function() {
 
 
 		if(ProjectTeam.GetAllCommunities().length===1){
-			removeCols.push('col-community')
+			removeCols.push('col-community');
+			removeCols.push('col-sharing');
 		}
    
 
