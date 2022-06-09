@@ -29,13 +29,16 @@ var TableAutoHeightBehavior = (function() {
 				}, 100)
 				setTimeout(function(){
 					me._needsFitContent();
+					ProjectSelection.on('change', me._resizeEventListener);
 				}, 500)
+
+
+
 
 			});
 
 
-			ProjectSelection.on('change', me._resizeEventListener);
-
+			
 
 
 		},
