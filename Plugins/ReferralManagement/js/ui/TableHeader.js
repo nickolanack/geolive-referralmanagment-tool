@@ -126,7 +126,7 @@ var TableHeader = (function() {
 
 					if (ProjectTeam.GetAllCommunities().length === 1) {
 						removeCols.push('col-community');
-						removeCols.push('col-sharing')
+						removeCols.push('col-sharing');
 					}
 
 

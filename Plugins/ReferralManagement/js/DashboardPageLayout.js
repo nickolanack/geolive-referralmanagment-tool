@@ -443,9 +443,7 @@ var DashboardPageLayout = (function() {
 
 	}).addLayout("singleProjectListItemTableDetail", function(content) {
 
-		//var map = ['name', 'owner', 'date', 'time', 'tag', 'docs', 'approval', 'ownership'];
-
-		//var columnIds=['col-name', 'col-user', 'col-created', 'col-modified', 'col-type', 'col-apporval', 'col-ownership']
+		
 
 		var removeCols = ['col-approval', 'col-ownership', ];
 
