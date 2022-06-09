@@ -729,7 +729,7 @@ var TaskItem = (function() {
 
 
 	TaskItem.AddListItemEvents = function(listModule, childView, child) {
-		ProjectTaskList.AddListItemEvents(istModule, childView, child);
+		ProjectTaskList.AddListItemEvents(listModule, childView, child);
 	};
 
 
