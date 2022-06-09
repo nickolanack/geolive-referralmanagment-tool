@@ -71,7 +71,11 @@ var TableAutoHeightBehavior = (function() {
 
 
 			var detail=this._listModule.getDetailViewAt(0);
-			var itemSize=detail.getElement().getSize();
+			var detailEl=detail.getElement();
+			if(!detailEl){
+				return;
+			}
+			var itemSize=detailEl.getSize();
 			var numVisible=this._listModule.getNumberOfVisibleItems();
 
 
