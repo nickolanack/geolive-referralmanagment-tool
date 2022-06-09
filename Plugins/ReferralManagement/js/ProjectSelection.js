@@ -49,6 +49,7 @@ var ProjectSelection = (function() {
 		clear:function(){
 			var sel=selection;
 			selection=[];
+			this.fireEvent('clear');
 			this.fireEvent('unselect',[sel]);
 			this.fireEvent('change',[selection.slice(0)]);
 		},
