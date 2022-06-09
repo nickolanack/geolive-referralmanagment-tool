@@ -572,33 +572,6 @@ var TaskItem = (function() {
 	}
 
 
-	var TaskTemplateItem = new Class({
-		Extends: TaskItem,
-		save: function(cb) {
-			if (cb) {
-				cb(false);
-			}
-		},
-		setStarred: function(v, cb) {
-			if (cb) {
-				cb(false);
-			}
-		},
-		setPriority: function(v, cb) {
-			if (cb) {
-				cb(false);
-			}
-		},
-
-		templateMetadata: function() {
-			return {
-				name: this.getName(),
-				dueDate: this.getDueDate()
-			}
-		}
-	});
-
-
 
 	TaskItem.RemoveTask = function(task) {
 		task.fireEvent('remove');
@@ -705,8 +678,8 @@ var TaskItem = (function() {
 	};
 
 	/**
-	 * @ deprecated
-	 */
+		* @ deprecated
+		*/
 
 	TaskItem.TaskListSortMenu = function(contentIndex, sorters, filters) {
 		return ProjectTaskList.TaskListSortMenu(contentIndex, sorters, filters);
@@ -738,11 +711,37 @@ var TaskItem = (function() {
 	}
 
 
-	
-
 
 	return TaskItem;
 
 
 
 })();
+
+
+
+var TaskTemplateItem = new Class({
+	Extends: TaskItem,
+	save: function(cb) {
+		if (cb) {
+			cb(false);
+		}
+	},
+	setStarred: function(v, cb) {
+		if (cb) {
+			cb(false);
+		}
+	},
+	setPriority: function(v, cb) {
+		if (cb) {
+			cb(false);
+		}
+	},
+
+	templateMetadata: function() {
+		return {
+			name: this.getName(),
+			dueDate: this.getDueDate()
+		}
+	}
+});
