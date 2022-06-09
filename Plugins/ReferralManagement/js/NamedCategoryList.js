@@ -285,8 +285,8 @@ var NamedCategoryList = (function() {
 		},
 
 
-		formatTagCloudModule:function(mod){
-			NamedCategoryList.FormatTagCloudSelectionModule(mod);
+		formatTagCloudModule:function(mod, type){
+			NamedCategoryList.FormatTagCloudSelectionModule(mod, type);
 		}
 
 
