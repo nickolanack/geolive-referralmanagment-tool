@@ -1,8 +1,10 @@
 @charset "utf-8";
 
-/*Login*/
 
-
+[data-view="singleProjectUsersDetail"] .inline-btn.optionlist {
+    /*TODO re-enable*/
+    display: none;
+}
 
 .markdown:after {
     content: "";
