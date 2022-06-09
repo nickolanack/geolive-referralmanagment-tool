@@ -3,7 +3,7 @@
     "config": {
         "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
         "getItemTagsScript": "return NamedCategoryList.getProjectTags();",
-        "formatModuleScript": "NamedCategoryList.FormatTagCloudSelectionModule(module, 'proposal');",
+        "formatModuleScript": "NamedCategoryList.formatTagCloudModule(module, 'proposal');",
         "scaleWords": true
     }
 }
