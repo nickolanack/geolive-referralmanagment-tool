@@ -41,7 +41,7 @@ var TableAutoHeightBehavior = (function() {
 		},
 		needsFit:function(){
 			this._needsFitContent();
-		}
+		},
 		_needsFitContent: function() {
 
 			if (this._fitContentTrottle) {
