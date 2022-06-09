@@ -761,7 +761,7 @@ var ProjectList = (function() {
 		}
 
 
-		if(child.p.hasTasks()){
+		if(child.hasTasks()){
 			childView.getElement().addClass('has-tasks');
 		}
 
