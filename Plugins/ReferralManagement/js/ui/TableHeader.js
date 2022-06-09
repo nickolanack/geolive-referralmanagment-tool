@@ -120,15 +120,13 @@ var TableHeader = (function() {
 
 				me.runOnceOnLoad(function(){
 
-					//var map = ['name', 'owner', 'date', 'time', 'tag', 'docs', 'approval', 'ownership'];
-
-					//var columnIds=['col-name', 'col-user', 'col-created', 'col-modified', 'col-type', 'col-apporval', 'col-ownership']
-
+			
 					var removeCols = ['col-approval', 'col-ownership', ];
 
 
 					if (ProjectTeam.GetAllCommunities().length === 1) {
-						removeCols.push('col-community')
+						removeCols.push('col-community');
+						removeCols.push('col-sharing')
 					}
 
 

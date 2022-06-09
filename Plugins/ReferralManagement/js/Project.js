@@ -193,6 +193,7 @@ var Project = (function() {
 			(new DatasetLayerDataProposalQuery(this.getId(), data)).execute();
 
 			try{
+				this.data.attributes.dataset=this.data.attributes.dataset||{};
 				this.data.attributes.dataset.metadata = data;
 				this.fireEvent('updateDatasetAttributes');
 			}catch(e){
