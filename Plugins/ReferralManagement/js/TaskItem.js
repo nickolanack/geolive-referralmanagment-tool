@@ -872,7 +872,7 @@ var TaskItem = (function() {
 		});
 		modules.push(counter);
 
-		callback(modules);
+		callback(new ModuleArray(modules));
 
 	};
 
