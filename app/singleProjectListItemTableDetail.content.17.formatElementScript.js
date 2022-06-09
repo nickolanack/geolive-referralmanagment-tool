@@ -23,7 +23,12 @@ if(ProjectSelection.hasProject(item)){
     pop.setDescription('click to remove project from selection');
 }
 
-el.appendChild(input)
+el.appendChild(input);
+
+
+this.addWeakEvent(ProjectSelection, 'clear', function(){
+    input.checked=false;
+})
 
 
 
