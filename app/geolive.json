@@ -182,6 +182,12 @@
                     "pluginView": "file"
                 },
                 {
+                    "name": "mappng",
+                    "view": "plugin",
+                    "plugin": "ReferralManagement",
+                    "pluginView": "map"
+                },
+                {
                     "name": "proposal",
                     "view": "plugin",
                     "plugin": "UserInterface",
