@@ -3,13 +3,6 @@ Authorizer();
 
 include_once __DIR__.'/lib/vendor/autoload.php';
 
-// include_once __DIR__ . '/lib/Project.php';
-// include_once __DIR__ . '/lib/Task.php';
-// include_once __DIR__ . '/lib/User.php';
-// include_once __DIR__ . '/lib/UserRoles.php';
-
-// include_once __DIR__ . '/lib/EmailNotifications.php';
-// include_once __DIR__ . '/lib/GuestProject.php';
 
 class ReferralManagementPlugin extends \core\extensions\Plugin implements
 \core\ViewController,
@@ -56,7 +49,6 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 	public function getGeneratedSassParameters($parameters) {
 
-		include_once __DIR__ . '/lib/Sass.php';
 		return (new \ReferralManagement\Sass())->getSassParameters($parameters);
 
 	}
@@ -115,10 +107,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 
 	public function getVersionControl() {
-
-		include_once __DIR__ . '/lib/VersionControl.php';
 		return new \ReferralManagement\VersionControl();
-
 	}
 
 	protected function onFacebookRegister($params) {
@@ -207,7 +196,6 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 		Emit('onImportTusFile', array());
 
-		include_once __DIR__ . '/lib/TusImportTask.php';
 		return (new \ReferralManagement\TusImportTask())->import($params);
 
 	}
@@ -232,7 +220,6 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	 * @return \ReferralManagement\ActivityFeed
 	 */
 	public function notifier() {
-		include_once __DIR__ . '/lib/Notifications.php';
 		return (new \ReferralManagement\Notifications());
 	}
 
@@ -244,7 +231,6 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 			return $this->listItemCache;
 		}
 
-		include_once __DIR__ . '/lib/ListItemCache.php';
 		$this->listItemCache = (new \ReferralManagement\ListItemCache());
 		return $this->listItemCache;
 	}
@@ -273,7 +259,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 				'source' => basename($path),
 			)));
 
-			SpatialFile::Save(SpatialFile::Open($path), $kmlDoc);
+			\SpatialFile::Save(\SpatialFile::Open($path), $kmlDoc);
 
 			Emit('onUploadSpatialFile', array(
 				'path' => $kmlDoc,
@@ -425,7 +411,6 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 	protected function onPost($params) {
 
-		include_once __DIR__ . '/lib/CommentBot.php';
 
 		(new \ReferralManagement\CommentBot())
 			->scanPostForEventTriggers($params);
@@ -576,13 +561,11 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 	public function getTeamMembersForProject($project, $attributes = null) {
 
-		include_once __DIR__ . '/lib/Teams.php';
 		return (new \ReferralManagement\Teams())->listMembersOfProject($project, $attributes);
 	}
 
 	public function getTeamMembersForTask($task, $attributes = null) {
 
-		include_once __DIR__ . '/lib/Teams.php';
 		return (new \ReferralManagement\Teams())->listMembersOfTask($task, $attributes);
 
 	}
@@ -612,7 +595,6 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 	public function getChildProjectsForProject($pid, $attributes = null) {
 
-		include_once __DIR__ . '/lib/Project.php';
 		return (new \ReferralManagement\Project())->fromId($pid)->toArray()['attributes']['childProjects'];
 	}
 
@@ -962,7 +944,6 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 	public function shouldShowProjectFilter() {
 
-		include_once __DIR__ . '/lib/ProjectAuthorizer.php';
 		$this->projectAuthorizer = new \ReferralManagement\ProjectAuthorizer();
 		return $this->projectAuthorizer->getProjectReadAccessFilter();
 
@@ -992,11 +973,9 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	}
 
 	public function getDefaultProposalTaskTemplates($proposal) {
-		include_once __DIR__ . '/lib/DefaultTasks.php';
 		return (new \ReferralManagement\DefaultTasks())->getTemplatesForProposal($proposal);
 	}
 	public function createDefaultProposalTasks($proposal, $templates = null) {
-		include_once __DIR__ . '/lib/DefaultTasks.php';
 
 		$taskTemplate = (new \ReferralManagement\DefaultTasks());
 

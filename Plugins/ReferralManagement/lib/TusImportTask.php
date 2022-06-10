@@ -14,7 +14,6 @@ class TusImportTask{
 
 		include_once GetPath('{plugins}/Maps/lib/KmlDocument.php');
 		include_once GetPath('{plugins}/Maps/lib/SpatialFile.php');
-		include_once __DIR__.'/TusImport.php';
 
 
 		$taskIndentifier=$params->taskIndentifier;
@@ -23,7 +22,7 @@ class TusImportTask{
 		$longTaskProgress->setActivity('Importing TUS From Kml');
 
 		set_time_limit(300);
-		$features=($importer=new \TusImport($longTaskProgress))->fromKml(\SpatialFile::Open(PathFrom($params->data[0])));
+		$features=($importer=new \ReferralManagement\TUSImport($longTaskProgress))->fromKml(\SpatialFile::Open(PathFrom($params->data[0])));
 
 
 

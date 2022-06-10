@@ -1,5 +1,7 @@
 <?php
 
+namespace ReferralManagement;
+
 class TUSImport {
 
 	protected $progressHandler;
@@ -24,7 +26,7 @@ class TUSImport {
 
 		foreach ($polygons as $polyNode) {
 
-			$style = KmlDocument::GetPolygonStyle($polyNode, array(
+			$style = \KmlDocument::GetPolygonStyle($polyNode, array(
 				// default values
 				'lineColor' => 'ff000000',
 				'width' => 1,
@@ -32,13 +34,13 @@ class TUSImport {
 				'outline' => true,
 			));
 			try {
-				$coordinates = KmlDocument::GetPolygonCoordinates($polyNode);
+				$coordinates = \KmlDocument::GetPolygonCoordinates($polyNode);
 			} catch (Exception $e) {
 				continue;
 			}
 
-			$name = KmlDocument::GetNodeName($polyNode, 'Unknown');
-			$description = KmlDocument::GetNodeDescription($polyNode, '');
+			$name = \KmlDocument::GetNodeName($polyNode, 'Unknown');
+			$description = \KmlDocument::GetNodeDescription($polyNode, '');
 
 			//$feature = (new \spatial\FeatureLoader())->fromName($name);
 
@@ -69,14 +71,14 @@ class TUSImport {
 		
 		foreach ($lines as $lineNode) {
 
-			$style = KmlDocument::GetLineStyle($lineNode, array(
+			$style = \KmlDocument::GetLineStyle($lineNode, array(
 				// default values
 				'lineColor' => 'ff000000',
 				'width' => 1,
 			));
-			$coordinates = KmlDocument::GetLineCoordinates($lineNode);
-			$name = KmlDocument::GetNodeName($lineNode, 'Unknown');
-			$description = KmlDocument::GetNodeDescription($lineNode, '');
+			$coordinates = \KmlDocument::GetLineCoordinates($lineNode);
+			$name = \KmlDocument::GetNodeName($lineNode, 'Unknown');
+			$description = \KmlDocument::GetNodeDescription($lineNode, '');
 
 			$feature = new Line();
 			$feature->setName($name);
@@ -103,14 +105,14 @@ class TUSImport {
 
 		foreach ($markers as $markerNode) {
 
-			$coordinates = KmlDocument::GetMarkerCoordinates($markerNode);
-			$icon = KmlDocument::GetMarkerIcon($markerNode, 'DEFAULT');
+			$coordinates = \KmlDocument::GetMarkerCoordinates($markerNode);
+			$icon = \KmlDocument::GetMarkerIcon($markerNode, 'DEFAULT');
 
-			$name = KmlDocument::GetNodeName($markerNode, 'Unknown');
-			$description = KmlDocument::GetNodeDescription($markerNode, '');
-			$coordinates = KMLDocument::GetMarkerCoordinates($markerNode);
+			$name = \KmlDocument::GetNodeName($markerNode, 'Unknown');
+			$description = \KmlDocument::GetNodeDescription($markerNode, '');
+			$coordinates = \KMLDocument::GetMarkerCoordinates($markerNode);
 
-			$feature = new Marker();
+			$feature = new \Marker();
 			$feature->setName($name);
 			$feature->setDescription($description);
 			$feature->setCoordinates($coordinates[0], $coordinates[1]);
