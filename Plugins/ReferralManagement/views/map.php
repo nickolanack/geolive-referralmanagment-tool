@@ -13,6 +13,18 @@ $project=array_shift($segments);
 $token=array_shift($segments);
 
 
-print_r(GetPlugin('Links')->peekDataToken($token));
+$tokenResult=GetPlugin('Links')->peekDataToken($token);
 
 
+if(isset($tokenResult->name)&&$tokenResult->name=='projectAccessToken'){
+
+	if($tokenResult->data->id!==intval($project)){
+		throw new \Exception('Token mismatch');
+	}
+
+
+
+	echo shell_exec('node -v');
+
+
+}
