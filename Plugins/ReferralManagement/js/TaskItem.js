@@ -678,8 +678,8 @@ var TaskItem = (function() {
 	};
 
 	/**
-		* @ deprecated
-		*/
+	* @ deprecated
+	*/
 
 	TaskItem.TaskListSortMenu = function(contentIndex, sorters, filters) {
 		return ProjectTaskList.TaskListSortMenu(contentIndex, sorters, filters);
