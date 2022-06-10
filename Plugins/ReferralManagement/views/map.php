@@ -18,7 +18,7 @@ $tokenResult=GetPlugin('Links')->peekDataToken($token);
 
 if(isset($tokenResult->name)&&$tokenResult->name=='projectAccessToken'){
 
-	if($tokenResult->data->id!==intval($project)){
+	if(intval($tokenResult->data->id)!==intval($project)){
 		throw new \Exception('Token mismatch '.$tokenResult->data->id.'!='.intval($project));
 	}
 
