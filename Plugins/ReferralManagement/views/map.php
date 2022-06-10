@@ -23,8 +23,16 @@ if(isset($tokenResult->name)&&$tokenResult->name=='projectAccessToken'){
 	}
 
 
+	$args=array(
+		"url"=>HTMLDocument()->website().'/proposal/'.$tokenResult->data->id.'/'.$token,
+		"w"=>1024,
+		"h"=>512,
+		"out"=>__DIR__.'/_map.png'
+	);
 
-	echo shell_exec('node -v');
+	$utilPath=dirname(__DIR__).'/lib/node'
+
+	echo shell_exec('/usr/local/bin/node -v');
 
 
 }
