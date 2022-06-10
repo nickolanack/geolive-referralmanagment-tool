@@ -1,13 +1,15 @@
 <?php
 Authorizer();
 
-include_once __DIR__ . '/lib/Project.php';
-include_once __DIR__ . '/lib/Task.php';
-include_once __DIR__ . '/lib/User.php';
-include_once __DIR__ . '/lib/UserRoles.php';
+include_once __DIR__.'/lib/vendor/autoload.php';
 
-include_once __DIR__ . '/lib/EmailNotifications.php';
-include_once __DIR__ . '/lib/GuestProject.php';
+// include_once __DIR__ . '/lib/Project.php';
+// include_once __DIR__ . '/lib/Task.php';
+// include_once __DIR__ . '/lib/User.php';
+// include_once __DIR__ . '/lib/UserRoles.php';
+
+// include_once __DIR__ . '/lib/EmailNotifications.php';
+// include_once __DIR__ . '/lib/GuestProject.php';
 
 class ReferralManagementPlugin extends \core\extensions\Plugin implements
 \core\ViewController,
