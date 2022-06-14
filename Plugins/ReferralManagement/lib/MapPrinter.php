@@ -12,7 +12,7 @@ class MapPrinter{
 
 		if(empty($printToken)){
 
-			$tokens=GetPlugin('Links')->listDataCodesForItem($id, "ReferralManagement.proposal"));
+			$tokens=GetPlugin('Links')->listDataCodesForItem($id, "ReferralManagement.proposal");
 	
 			foreach($tokens as $accessToken){
 				if($accessToken->name=='projectPrintToken'){
