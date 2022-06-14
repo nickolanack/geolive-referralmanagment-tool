@@ -15275,7 +15275,20 @@
                     },
                     "content": {
                         "modules": [
-                            "userAboutDetail.metadata.positions.content.modules.0.json"
+                            "userAboutDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "",
+                                    "text": "",
+                                    "template": "html.aboutPageTeam\n",
+                                    "templateVariablesScript": "{}",
+                                    "formatTextScript": "",
+                                    "formatVariablesScript": "",
+                                    "ajaxRequestTemplate": true,
+                                    "identifier": "htmlLabel"
+                                }
+                            }
                         ]
                     },
                     "footer": {
