@@ -24,7 +24,14 @@ if(isset($tokenResult->name)&&$tokenResult->name=='projectAccessToken'){
 
 
 
-	$data=json_decode(file_get_content('https://jobs.geoforms.ca/php-core-app/core.php?task=user_function&format=ajax&json={"widget":"getScreenShot","project":"'.$tokenResult->data->id.'","token":"'.$token.'"}'));
+	$data=json_decode(file_get_content('https://jobs.geoforms.ca/php-core-app/core.php?task=user_function&format=ajax&json='.
+		json_encode(array(
+			"widget"=>"getScreenShot",
+			"domain"=>HtmlDocument()->getDomain(),
+			"project"=>$tokenResult->data->id,
+			"token"=>$token
+		})
+	));
 	echo print_r($data);
 
 
