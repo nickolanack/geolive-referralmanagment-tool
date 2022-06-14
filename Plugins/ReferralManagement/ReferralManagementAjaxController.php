@@ -660,9 +660,19 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	}
 
+
+	protected function generateReportData($json) {
+		
+		return array(
+			"data"=>(new \ReferralManagement\Report($json->project))->getReportData()
+		);
+
+
+	}
+
+
 	protected function generateReport($json) {
 
-		include_once __DIR__ . '/lib/Report.php';
 		(new \ReferralManagement\Report($json->project))
 			->generateReport(isset($json->template)?$json->template:'proposal.report', 'Hello World')
 			->renderPdf();

@@ -18,27 +18,9 @@ class Report {
 		return GetPlugin('ReferralManagement');
 	}
 
-	public function generateReport($templateName, $defaultContent) {
 
-		$parser = new ComputedData();
+	public function getReportData(){
 
-
-		$template=null;
-
-		foreach(GetWidget('reportTemplates')->getConfigurationValue('templatesData', array()) as $reportTemplate){
-			if($reportTemplate->name===$templateName){
-
-
-
-
-				$template=new \core\TemplateRenderer($reportTemplate->content);
-			}
-		}
-
-
-		if(is_null($template)){
-			$template = new \core\Template($templateName, $defaultContent);
-		}
 
 		$data = $this->getPlugin()->getProposalData($this->proposal);
 
@@ -134,6 +116,33 @@ class Report {
 
 		//die(json_encode($data, JSON_PRETTY_PRINT));
 
+		return $data;
+
+	}
+
+
+	public function generateReport($templateName, $defaultContent) {
+
+		$parser = new ComputedData();
+
+
+		$template=null;
+
+		foreach(GetWidget('reportTemplates')->getConfigurationValue('templatesData', array()) as $reportTemplate){
+			if($reportTemplate->name===$templateName){
+
+				$template=new \core\TemplateRenderer($reportTemplate->content);
+			}
+		}
+
+
+		if(is_null($template)){
+			$template = new \core\Template($templateName, $defaultContent);
+		}
+
+		
+
+		$data=$this->getReportData();
 		$this->title = $data['attributes']['company'] . '-' . $data['attributes']['title'];
 		$this->text = $template->render($data);
 
