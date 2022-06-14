@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ReferralManagement
+namespace ReferralManagement;
 
 class MapPrinter{
 
