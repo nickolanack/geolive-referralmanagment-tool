@@ -37,7 +37,7 @@ class MapPrinter{
 
 
 
-		$data=json_decode(file_get_content('https://jobs.geoforms.ca/php-core-app/core.php?task=user_function&format=ajax&json='.
+		$data=json_decode(file_get_contents('https://jobs.geoforms.ca/php-core-app/core.php?task=user_function&format=ajax&json='.
 			json_encode(array(
 				"widget"=>"getScreenShot",
 				"domain"=>HtmlDocument()->getDomain(),
