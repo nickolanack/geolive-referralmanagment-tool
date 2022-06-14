@@ -15280,7 +15280,7 @@
                                 "type": "InlineHtml",
                                 "config": {
                                     "className": "",
-                                    "text": "",
+                                    "text": "Project Team\n\nJon Corbett\nNick Blackwell\nJeff Hackett\nAshley Churchill",
                                     "template": "html.aboutPageTeam\n",
                                     "templateVariablesScript": "{}",
                                     "formatTextScript": "",
@@ -27547,6 +27547,20 @@
             "parseMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: update.project.priority"
+        }
+    },
+    "widget.494": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-aboutPageTeam-.text",
+            "target": "module.html-aboutPageTeam-.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "module-html-aboutPageTeam--text.contentTemplate.html"
         }
     }
 }
