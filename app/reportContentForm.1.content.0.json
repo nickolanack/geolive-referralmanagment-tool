@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "\n\n    var application = GatherDashboard.getApplication();\n \tvar project = application.getNamedValue(\"currentProject\");\n\n\n    (new AjaxControlQuery(CoreAjaxUrlRoot, 'generate_report_data', {\n\t\t  \"plugin\": \"ReferralManagement\",\n\t\t  \"proposal\":project.getId()\n    })).addEvent('success',function(resp){}).execute();\n    \n    \n    \n    return new ElementModule('div', {\"class\":\"template-data\"});\n",
+        "script": "\n\n    var application = GatherDashboard.getApplication();\n \tvar project = application.getNamedValue(\"currentProject\");\n\n\n    (new AjaxControlQuery(CoreAjaxUrlRoot, 'generate_report_data', {\n\t\t  \"plugin\": \"ReferralManagement\",\n\t\t  \"proposal\":project\n    })).addEvent('success',function(resp){}).execute();\n    \n    \n    \n    return new ElementModule('div', {\"class\":\"template-data\"});\n",
         "description": "Info about my custom script"
     }
 }
