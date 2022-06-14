@@ -87,7 +87,7 @@ class Report {
 
 
 		$data['computed']['maps']=(new \ReferralManagement\MapPrinter())->getImageUrls($data['id']);
-		if(!emtpy($data['computed']['maps'])){
+		if(!empty($data['computed']['maps'])){
 			$data['computed']['maps'] = array_map($base64, $data['computed']['maps']);
 		}
 
