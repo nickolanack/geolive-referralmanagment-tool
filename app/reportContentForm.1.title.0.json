@@ -13,6 +13,6 @@
         "fitContent": true,
         "minWidth": 400,
         "minHeight": 200,
-        "formatStepOptionsScript": "console.log('autoheight');\n\nreturn {\n    width:function(){ \n        return 500;\n        \n    } ,\n    height:function(){ \n        return 400; \n        \n    }\n};"
+        "formatStepOptionsScript": "console.log('autoheight');\n\nreturn {\n    width:function(){ \n        return window.getSize().x-100;\n        \n    },\n    height:function(){ \n        return window.getSize().y-100;\n        \n    }\n};"
     }
 }
