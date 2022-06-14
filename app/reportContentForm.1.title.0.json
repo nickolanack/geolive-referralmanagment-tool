@@ -13,6 +13,6 @@
         "fitContent": true,
         "minWidth": 400,
         "minHeight": 200,
-        "formatStepOptionsScript": ""
+        "formatStepOptionsScript": "return {\n    width:function(){ return 500;} ,\n    height:function(){ return 400; }\n};"
     }
 }
