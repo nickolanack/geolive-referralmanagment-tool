@@ -22,6 +22,9 @@ class Report {
 	public function getReportData(){
 
 
+
+		$parser = new ComputedData();
+
 		$data = $this->getPlugin()->getProposalData($this->proposal);
 
 		$localPath = function ($url) {
@@ -123,7 +126,7 @@ class Report {
 
 	public function generateReport($templateName, $defaultContent) {
 
-		$parser = new ComputedData();
+		
 
 
 		$template=null;
