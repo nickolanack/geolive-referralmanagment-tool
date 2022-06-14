@@ -48,7 +48,7 @@ class MapPrinter{
 
 
 
-		isset($data->job->url){
+		if(isset($data->job->url)){
 			return array( $data->job->url);
 		}
 
