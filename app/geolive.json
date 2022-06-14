@@ -27268,8 +27268,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -18,
-                    "y": 171
+                    "x": 123,
+                    "y": 325
                 },
                 "children": [
                     "reportContentForm.metadata.children.0.json",
@@ -27280,16 +27280,16 @@
                             "reportContentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 148,
-                            "y": 280
+                            "x": 402,
+                            "y": 234
                         },
                         "children": [
                             "reportContentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 108,
-                                    "y": 446
+                                    "x": 362,
+                                    "y": 400
                                 }
                             }
                         ],
@@ -27303,6 +27303,19 @@
                                 "content": {
                                     "modules": [
                                         "reportContentForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "InlineHtml",
+                                            "config": {
+                                                "className": "",
+                                                "text": "",
+                                                "template": "",
+                                                "templateVariablesScript": "",
+                                                "formatTextScript": "",
+                                                "formatVariablesScript": "",
+                                                "ajaxRequestTemplate": false,
+                                                "identifier": "htmlLabel"
+                                            }
+                                        },
                                         {
                                             "type": "FormTextField",
                                             "config": {
@@ -27321,7 +27334,7 @@
                                                 "formatValueScript": "",
                                                 "getValueScript": " return item.getContent()",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "reportContentForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
+                                                "submitValueScript": "reportContentForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         }

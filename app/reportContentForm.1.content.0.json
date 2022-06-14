@@ -1,4 +1,8 @@
 {
-    "type": "InlineHtml",
-    "config": {}
+    "type": "WizardScriptElement",
+    "config": {
+        "name": "My Custom Script",
+        "script": "return new ElementModule('div', {\"class\":\"template-data\"});",
+        "description": "Info about my custom script"
+    }
 }
