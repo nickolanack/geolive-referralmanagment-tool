@@ -23,16 +23,9 @@ if(isset($tokenResult->name)&&$tokenResult->name=='projectAccessToken'){
 	}
 
 
-	$args=array(
-		"url"=>HTMLDocument()->website().'/proposal/'.$tokenResult->data->id.'/'.$token,
-		"w"=>1024,
-		"h"=>512,
-		"out"=>__DIR__.'/_map.png'
-	);
 
-	$utilPath=dirname(__DIR__).'/lib/node'
-
-	echo shell_exec('/usr/local/bin/node -v');
+	$data=json_decode(file_get_content('https://jobs.geoforms.ca/php-core-app/core.php?task=user_function&format=ajax&json={"widget":"getScreenShot","project":"'.$tokenResult->data->id.'","token":"'.$token.'"}'));
+	echo print_r($data);
 
 
 }

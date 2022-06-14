@@ -699,7 +699,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 				$a = explode('href', $l);
 				$a = ltrim(ltrim(ltrim($a[1]), '='));
 
-				$q = $a{0};
+				$q = $a[0];
 				$a = substr($a, 1);
 
 				$a = explode($q, $a);

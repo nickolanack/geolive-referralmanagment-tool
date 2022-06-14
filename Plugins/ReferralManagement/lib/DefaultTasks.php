@@ -132,7 +132,7 @@ class DefaultTasks {
 		GetPlugin('Attributes');
 		$types = (new \attributes\Record('proposalAttributes'))->getValues($proposal, 'ReferralManagement.proposal')['type'];
 
-		if (is_string($types) && $types{0} == "[") {
+		if (is_string($types) && $types[0] == "[") {
 			$types = json_decode($types);
 		}
 
