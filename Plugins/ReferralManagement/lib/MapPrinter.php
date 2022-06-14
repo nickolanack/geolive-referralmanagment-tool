@@ -43,7 +43,7 @@ class MapPrinter{
 				"domain"=>HtmlDocument()->getDomain(),
 				"project"=>$id,
 				"token"=>$printToken
-			})
+			))
 		));
 
 
