@@ -27280,16 +27280,16 @@
                             "reportContentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 482,
-                            "y": 314
+                            "x": 492,
+                            "y": 324
                         },
                         "children": [
                             "reportContentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 442,
-                                    "y": 490
+                                    "x": 452,
+                                    "y": 500
                                 }
                             }
                         ],
@@ -27319,7 +27319,7 @@
                                         {
                                             "type": "FormTextField",
                                             "config": {
-                                                "className": "",
+                                                "className": "width-2",
                                                 "label": "Template Content",
                                                 "placeholder": "add markdown, and template content",
                                                 "lines": 10,
