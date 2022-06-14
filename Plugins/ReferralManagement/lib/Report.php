@@ -95,6 +95,15 @@ class Report {
 		$data['computed']['images'] = $parser->parseProposalImages($data);
 		$data['computed']['spatial'] = $parser->parseProposalSpatial($data);
 
+
+
+		
+	
+
+
+		$data['computed']['map']=(new \ReferralManagement\MapPrinter())->getImageUrl($data['id']);
+
+
 		//$data['computed']['files']=array_map($localPath, $data['computed']['files']);
 		$data['computed']['images'] = array_map($base64, $data['computed']['images']);
 
