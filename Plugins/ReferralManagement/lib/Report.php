@@ -86,7 +86,10 @@ class Report {
 	
 
 
-		$data['computed']['map']=(new \ReferralManagement\MapPrinter())->getImageUrl($data['id']);
+		$data['computed']['maps']=(new \ReferralManagement\MapPrinter())->getImageUrls($data['id']);
+		if(!emtpy($data['computed']['maps']){
+			$data['computed']['maps'] = array_map($base64, $data['computed']['maps']);
+		}
 
 
 		//$data['computed']['files']=array_map($localPath, $data['computed']['files']);

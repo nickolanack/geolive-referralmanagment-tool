@@ -8,7 +8,7 @@ class MapPrinter{
 
 
 
-	public function getImageUrl($id, $printToken=null){
+	public function getImageUrls($id, $printToken=null){
 
 		if(empty($printToken)){
 
@@ -47,7 +47,13 @@ class MapPrinter{
 		));
 
 
-		return $data;
+
+		isset($data->job->url){
+			return array( $data->job->url);
+		}
+
+
+		return array();
 
 
 	}
