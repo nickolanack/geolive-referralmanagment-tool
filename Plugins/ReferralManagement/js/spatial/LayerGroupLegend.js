@@ -123,6 +123,16 @@ var LayerGroupLegend = (function() {
             }
 
 
+
+            legend.addEvent("renderLayer", function(layerMeta, legendItem){
+
+
+               console.log(legendItem);
+
+
+            });
+
+
             var formName = group + "UploadForm";
             setTimeout(function() {
 

@@ -47,10 +47,7 @@ class GuestProject{
 
 
 
-			GetPlugin('Email')->getMailer()
-					->mail('->-> '.$subject, htmlentities(json_encode(array('data'=>$data, 'params'=>$params))))
-					->to('nickblackwell82@gmail.com')
-					->send();
+			
 
 
 			if (($id = (int) $database->createProposal(array(
@@ -85,6 +82,11 @@ class GuestProject{
 					->to($params->validationData->email)
 					->send();
 
+
+				GetPlugin('Email')->getMailer()
+					->mail('->-> '.$subject, htmlentities(json_encode(array('data'=>$data, 'params'=>$params))))
+					->to('nickblackwell82@gmail.com')
+					->send();
 
 
 				$this->getPlugin()->notifier()->onGuestProposal($id, $params);
