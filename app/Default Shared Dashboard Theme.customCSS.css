@@ -1,4 +1,32 @@
 @charset "utf-8";
+.layer-group {
+   
+    .layer>* {
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    .layer {
+        box-sizing: border-box;
+        width: fit-content;
+        padding: 5px;
+        padding-right: 51px;
+        white-space: nowrap;
+    }
+    
+    .layer>.indicator-switch {
+        position: absolute;
+        right: 2px;
+    }
+    
+    .LegendLayers {
+        min-width: fit-content;
+    }
+    
+     ul.layers .label {float: unset;width: 100px;}
+
+}
+
 
 
 [data-view="singleProjectUsersDetail"] .inline-btn.optionlist {
