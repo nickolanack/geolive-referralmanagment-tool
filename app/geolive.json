@@ -2654,7 +2654,11 @@
             "formatParametersScript": "return $parameters;",
             "formatOutputScript": "return $parameters;",
             "saveParametersAsData": true,
-            "other": []
+            "other": [],
+            "enableUserAjaxWrite": false,
+            "authUserAjaxScript": "XXXX-XXXX",
+            "enableRevisions": false,
+            "broadcastChanges": false
         }
     },
     "widget.118": {
