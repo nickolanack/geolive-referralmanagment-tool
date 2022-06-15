@@ -161,7 +161,7 @@ var ProjectLayer = (function() {
 				_getKmlQuery: function() {
 					var me = this;
 
-					console.log((new KMLDocumentQuery(me.options.url)).getUrl(true));
+					console.log(me.options.name+" "+(new KMLDocumentQuery(me.options.url)).getUrl(true));
 
 					return new KMLDocumentQuery(me.options.url);
 				},
