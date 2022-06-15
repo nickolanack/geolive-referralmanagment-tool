@@ -23416,16 +23416,16 @@
                             "baseMapForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 241,
-                            "y": 308
+                            "x": 251,
+                            "y": 318
                         },
                         "children": [
                             "baseMapForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 201,
-                                    "y": 596
+                                    "x": 211,
+                                    "y": 606
                                 }
                             },
                             {
@@ -23435,16 +23435,16 @@
                                     "baseMapForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 787,
-                                    "y": 296
+                                    "x": 797,
+                                    "y": 306
                                 },
                                 "children": [
                                     "baseMapForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 747,
-                                            "y": 462
+                                            "x": 757,
+                                            "y": 472
                                         }
                                     }
                                 ],
@@ -23712,7 +23712,7 @@
                                                 "iconTint": "rgb(100, 149, 237)",
                                                 "autocomplete": true,
                                                 "inputOptions": "{}",
-                                                "onRenderTextFieldScript": "",
+                                                "onRenderTextFieldScript": "baseMapForm.metadata.children.1.builderMetadata.positions.content.modules.10.config.onRenderTextFieldScript.js",
                                                 "formatValueScript": ""
                                             }
                                         },
