@@ -127,8 +127,13 @@ var LayerGroupLegend = (function() {
             legend.addEvent("renderLayer", function(layerMeta, legendItem){
 
 
-               console.log(legendItem);
-
+               //console.log(legendItem);
+               var el=legendItem.getElement()
+               el.insertBefore(new Element('button',{"class":"download-link", events:{
+                   click:function(){    
+                         
+                   }
+               }}))
 
             });
 
