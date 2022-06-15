@@ -245,6 +245,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 				'kmz',
 				'zip',
 				'shp',
+				'gpx'
 			))) && $path != "") {
 
 			include_once MapsPlugin::Path() . DS . 'lib' . DS . 'SpatialFile.php';
