@@ -136,7 +136,7 @@ var LayerGroupLegend = (function() {
                        e.stop(); 
 
                         var layerQuery=new XMLControlQuery(CoreAjaxUrlRoot, 'layer_display', {
-                            layerId: layerMeta._id||.id,
+                            layerId: layerMeta._id||layerMeta.id,
                             format: 'kml',
                             options:{}
                         });
