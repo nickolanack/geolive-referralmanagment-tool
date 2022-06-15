@@ -160,6 +160,9 @@ var ProjectLayer = (function() {
 				},
 				_getKmlQuery: function() {
 					var me = this;
+
+					console.log((new KMLDocumentQuery(me.options.url)).getUrl(true));
+
 					return new KMLDocumentQuery(me.options.url);
 				},
 				_getTileUrl: function(tile, zoom) {
