@@ -107,7 +107,7 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
         if(is_numeric($item)){
             $results=$this->getPlugin()->listProjectsMetadata(array('id' => $item));
             if(empty($results)){
-                throw new \Exception('Project does not exist with id: '+$item);
+                throw new \Exception('Project does not exist with id: '.$item);
             }
             $item=$results[0];
         }
