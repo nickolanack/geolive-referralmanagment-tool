@@ -6037,5 +6037,14 @@ div.popover[data-with-view="reportSelectionView"]{
     
 }
 
+
+.template-data.width-2 {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 600px;
+    background-color: #212930;
+    border-radius: 4px;
+}
+
     
     

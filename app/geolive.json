@@ -15275,7 +15275,20 @@
                     },
                     "content": {
                         "modules": [
-                            "userAboutDetail.metadata.positions.content.modules.0.json"
+                            "userAboutDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "",
+                                    "text": "Project Team\n\nJon Corbett\nNick Blackwell\nJeff Hackett\nAshley Churchill",
+                                    "template": "html.aboutPageTeam\n",
+                                    "templateVariablesScript": "{}",
+                                    "formatTextScript": "",
+                                    "formatVariablesScript": "",
+                                    "ajaxRequestTemplate": true,
+                                    "identifier": "htmlLabel"
+                                }
+                            }
                         ]
                     },
                     "footer": {
@@ -27268,8 +27281,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -18,
-                    "y": 171
+                    "x": 123,
+                    "y": 325
                 },
                 "children": [
                     "reportContentForm.metadata.children.0.json",
@@ -27280,16 +27293,16 @@
                             "reportContentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 148,
-                            "y": 280
+                            "x": 492,
+                            "y": 324
                         },
                         "children": [
                             "reportContentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 108,
-                                    "y": 446
+                                    "x": 452,
+                                    "y": 500
                                 }
                             }
                         ],
@@ -27304,9 +27317,22 @@
                                     "modules": [
                                         "reportContentForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
-                                            "type": "FormTextField",
+                                            "type": "InlineHtml",
                                             "config": {
                                                 "className": "",
+                                                "text": "",
+                                                "template": "",
+                                                "templateVariablesScript": "",
+                                                "formatTextScript": "",
+                                                "formatVariablesScript": "",
+                                                "ajaxRequestTemplate": false,
+                                                "identifier": "htmlLabel"
+                                            }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "width-2",
                                                 "label": "Template Content",
                                                 "placeholder": "add markdown, and template content",
                                                 "lines": 10,
@@ -27321,7 +27347,7 @@
                                                 "formatValueScript": "",
                                                 "getValueScript": " return item.getContent()",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "reportContentForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
+                                                "submitValueScript": "reportContentForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         }
@@ -27521,6 +27547,21 @@
             "parseMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: update.project.priority"
+        }
+    },
+    "widget.494": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-aboutPageTeam-.text",
+            "target": "module.html-aboutPageTeam-.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": true,
+            "saveTemplateAsData": false,
+            "contentTemplate": "module-html-aboutPageTeam--text.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }
