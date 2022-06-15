@@ -56,6 +56,11 @@ class ProjectAuthorizer{
 			}
 
 
+			if($userId<=0){
+				return false;
+			}
+
+
 			if(is_array($item->attributes)){
 					$item->attributes=(object)$item->attributes;
 			}
