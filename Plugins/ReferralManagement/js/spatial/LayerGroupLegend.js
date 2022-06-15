@@ -132,6 +132,14 @@ var LayerGroupLegend = (function() {
                el.insertBefore(new Element('button',{"class":"download-link", events:{
                    click:function(){    
 
+                        var layerQuery=new XMLControlQuery(CoreAjaxUrlRoot, 'layer_display', {
+                            layerId: layerMeta.id,
+                            format: 'kml',
+                            options:options||{}
+                        });
+
+                        window.open(layerQuery.getUrl(true), 'Download'); 
+
                    }
                }}), el.lastChild);
 
