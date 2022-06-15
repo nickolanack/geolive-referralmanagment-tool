@@ -90,9 +90,9 @@ class GuestProject{
 				$this->getPlugin()->notifier()->onGuestProposal($id, $params);
 
 				GetPlugin('Attributes');
-				if (key_exists('attributes', $data->proposalData)) {
+				if (isset($data->proposalData->attributes)) {
 					foreach ($data->proposalData->attributes as $table => $fields) {
-						(new attributes\Record($table))->setValues($id, 'ReferralManagement.proposal', $fields);
+						(new \attributes\Record($table))->setValues($id, 'ReferralManagement.proposal', $fields);
 					}
 				}
 
