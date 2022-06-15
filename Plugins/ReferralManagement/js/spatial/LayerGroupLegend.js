@@ -130,10 +130,13 @@ var LayerGroupLegend = (function() {
                //console.log(legendItem);
                var el=legendItem.getElement()
                el.insertBefore(new Element('button',{"class":"download-link", events:{
-                   click:function(){    
+                   click:function(e){   
+
+
+                       e.stop(); 
 
                         var layerQuery=new XMLControlQuery(CoreAjaxUrlRoot, 'layer_display', {
-                            layerId: layerMeta.id,
+                            layerId: layerMeta._id||.id,
                             format: 'kml',
                             options:{}
                         });
