@@ -125,6 +125,11 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function getStateData($json) {
 
+		if(intval($json->id)<=0){
+			return $this->setError('Not a valid id');
+		}
+
+
 		if (!Auth('read', $json->id, 'ReferralManagement.proposal')) {
 
 
