@@ -131,9 +131,9 @@ var LayerGroupLegend = (function() {
                var el=legendItem.getElement()
                el.insertBefore(new Element('button',{"class":"download-link", events:{
                    click:function(){    
-                         
+
                    }
-               }}))
+               }}), el.lastChild);
 
             });
 
