@@ -1172,7 +1172,7 @@ var ProjectTeam = (function() {
 					module.getCloud().getTags().forEach(function(t){
 
 						if(module.getValues().indexOf(t)<0){
-							module.getCloud().selectWord(t);Editor.RenderStaticPreview(assetPath : string, subAssets : Object[], width : int, height : int)
+							module.getCloud().selectWord(t);
 						}
 
 					});
