@@ -1165,8 +1165,8 @@ var ProjectTeam = (function() {
 
 
 		if(ProjectTeam.GetAllCommunities().length>3){
-			var el=module.getCloud().getElement();
-			var first=el.firstChild;
+			var first=module.getCloud().getElement();
+			var el=first.parentNode;
 			el.insertBefore(new Element('span', {"class":'tag-el', html:"All"}),first);
 			el.insertBefore(new Element('span', {"class":'tag-el', html:"None"}),first);
 
