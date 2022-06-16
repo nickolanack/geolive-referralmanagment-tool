@@ -1172,7 +1172,7 @@ var ProjectTeam = (function() {
 					module.getCloud().getTags().forEach(function(t){
 
 						if(module.getValues().indexOf(t)<0){
-							module.getCloud().selectWord(t);
+							module.getCloud().selectWord(t);Editor.RenderStaticPreview(assetPath : string, subAssets : Object[], width : int, height : int)
 						}
 
 					});
@@ -1180,7 +1180,7 @@ var ProjectTeam = (function() {
 			}),first);
 			el.insertBefore(new Element('button', {"class":'tag-el', html:"None", events:{
 				click:function(){
-					if(module.getValues().forEach(function(t){
+					module.getValues().forEach(function(t){
 						module.getCloud().selectWord(t);
 					});
 				}}
