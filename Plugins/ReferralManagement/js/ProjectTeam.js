@@ -1160,6 +1160,13 @@ var ProjectTeam = (function() {
 		});
 	};
 
+
+	ProjectTeam.FormatTagCloudAddSelect = function(module){
+
+		
+		
+	}
+
 	ProjectTeam.FormatTagCloudLanguageValues = function(module) {
 
 		//modify tag cloud 
