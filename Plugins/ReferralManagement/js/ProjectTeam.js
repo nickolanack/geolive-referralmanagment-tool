@@ -1169,7 +1169,7 @@ var ProjectTeam = (function() {
 			var el=first.parentNode;
 			el.insertBefore(new Element('button', {"class":'tag-el', html:"All", events:{
 				click:function(){
-					module.getCloud().getTags().forEach(function(t){
+					module.getCloud().getWords().forEach(function(t){
 
 						if(module.getValues().indexOf(t)<0){
 							module.getCloud().selectWord(t);
