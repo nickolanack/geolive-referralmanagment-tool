@@ -1232,9 +1232,9 @@ var ProjectTeam = (function() {
 				return words[i];
 			}
 
-
-
 			return v;
+		});
+
 		var cloud = module.getCloud();
 
 		cloud.setWordFormatter(function(word) {
