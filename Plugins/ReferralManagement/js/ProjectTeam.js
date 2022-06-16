@@ -1220,6 +1220,21 @@ var ProjectTeam = (function() {
 		module.setValueFormatter(function(v) {
 			return v.split('|').shift();
 		});
+		module.setValueUnFormatter(function(v) {
+
+			var words=module.getCloud().getWords();
+			var formatted=words.map(function(v){
+				return v.split('|').shift();
+			});
+
+			var i=formatted.indexOf(v);
+			if(i>=0){
+				return words[i];
+			}
+
+
+
+			return v;
 		var cloud = module.getCloud();
 
 		cloud.setWordFormatter(function(word) {
