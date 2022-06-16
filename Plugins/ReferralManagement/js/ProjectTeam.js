@@ -1163,6 +1163,15 @@ var ProjectTeam = (function() {
 
 	ProjectTeam.FormatTagCloudAddSelect = function(module){
 
+
+		if(ProjectTeam.GetAllCommunities().length>3){
+			var el=module.getElement();
+			var first=el.firstChild;
+			el.insertBefore(new Element('span', {"class":'tag-el', html:"All"}),first);
+			el.insertBefore(new Element('span', {"class":'tag-el', html:"None"}),first);
+
+		}
+
 		
 		
 	}
