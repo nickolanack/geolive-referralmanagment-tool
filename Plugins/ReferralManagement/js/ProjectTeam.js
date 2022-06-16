@@ -1169,12 +1169,20 @@ var ProjectTeam = (function() {
 			var el=first.parentNode;
 			el.insertBefore(new Element('button', {"class":'tag-el', html:"All", events:{
 				click:function(){
-					module.setValues(module.getCloud().getTags());
+					module.getCloud().getTags().forEach(function(t){
+
+						if(module.getValues().indexOf(t)<0){
+							module.getCloud().selectWord(t);
+						}
+
+					});
 				}}
 			}),first);
 			el.insertBefore(new Element('button', {"class":'tag-el', html:"None", events:{
 				click:function(){
-					module.setValues([]);
+					if(module.getValues().forEach(function(t){
+						module.getCloud().selectWord(t);
+					});
 				}}
 			}),first);
 
