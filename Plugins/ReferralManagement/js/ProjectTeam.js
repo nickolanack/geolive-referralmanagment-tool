@@ -1169,7 +1169,10 @@ var ProjectTeam = (function() {
 			var el=first.parentNode;
 			el.insertBefore(new Element('button', {"class":'tag-el', html:"All", events:{
 				click:function(){
+
 					module.getCloud().getWords().forEach(function(t){
+
+						t=v.split('|').shift();
 
 						if(module.getValues().indexOf(t)<0){
 							module.getCloud().selectWord(t);
@@ -1180,8 +1183,14 @@ var ProjectTeam = (function() {
 			}),first);
 			el.insertBefore(new Element('button', {"class":'tag-el', html:"None", events:{
 				click:function(){
+
+					var words=module.getCloud().getWords();
+					var displayWords=words.map(function(v){
+						return v.split('|').shift();
+					})
+
 					module.getValues().forEach(function(t){
-						module.getCloud().selectWord(t);
+						module.getCloud().selectWord(words[displayWords.indexOf(t)]);
 					});
 				}}
 			}),first);
