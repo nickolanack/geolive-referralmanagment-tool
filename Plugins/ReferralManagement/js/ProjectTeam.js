@@ -1167,8 +1167,16 @@ var ProjectTeam = (function() {
 		if(ProjectTeam.GetAllCommunities().length>3){
 			var first=module.getCloud().getElement();
 			var el=first.parentNode;
-			el.insertBefore(new Element('span', {"class":'tag-el', html:"All"}),first);
-			el.insertBefore(new Element('span', {"class":'tag-el', html:"None"}),first);
+			el.insertBefore(new Element('button', {"class":'tag-el', html:"All", events:{
+				click:function(){
+					module.setValues(module.getCloud().getTags());
+				}}
+			}),first);
+			el.insertBefore(new Element('button', {"class":'tag-el', html:"None", events:{
+				click:function(){
+					module.setValues([]);
+				}}
+			}),first);
 
 		}
 
