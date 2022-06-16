@@ -1172,7 +1172,7 @@ var ProjectTeam = (function() {
 
 					module.getCloud().getWords().forEach(function(t){
 
-						t=v.split('|').shift();
+						t=t.split('|').shift();
 
 						if(module.getValues().indexOf(t)<0){
 							module.getCloud().selectWord(t);
