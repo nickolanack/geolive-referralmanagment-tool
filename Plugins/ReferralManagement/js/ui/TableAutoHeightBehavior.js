@@ -63,9 +63,20 @@ var TableAutoHeightBehavior = (function() {
 
 			var scrollEl = $$('.dashboard-main')[0];
 			var contentEl = $$('.main-content-area')[0];
+
+			if(!scrollEl){
+				return;
+			}
+
+			if(!contentEl){
+				return;
+			}
 			
 			var scroll = scrollEl.getScrollSize();
 			var space = scrollEl.getSize();
+
+
+
 			var size = contentEl.getSize();
 			var coords=contentEl.getCoordinates();
 
