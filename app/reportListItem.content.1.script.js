@@ -24,7 +24,7 @@ var adminButton=new ElementModule('button',{"identifier":"button-report", "html"
     
     }}});
     
-    return [reportBtn, adminButon];
+    return [reportBtn, adminButton];
     
 }
     
