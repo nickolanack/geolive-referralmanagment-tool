@@ -138,6 +138,7 @@ class Report {
 			if($reportTemplate->name===$templateName){
 
 				$template=new \core\TemplateRenderer($reportTemplate->content);
+				break;
 			}
 		}
 
@@ -152,8 +153,12 @@ class Report {
 		$this->title = $data['attributes']['company'] . '-' . $data['attributes']['title'];
 		$this->text = $template->render($data);
 
+		$useOutline=true;
+		if($useOutline){
+			
+			$this->wrapTemplate($data);
 
-		
+		}		
 
 
 		include_once GetPath('{widgets}/CustomContent/vendor/autoload.php');
@@ -170,6 +175,28 @@ class Report {
 		);
 
 		return $this;
+	}
+
+	protected function wrapTemplate($data){
+
+		$data['content']=$this->text;
+
+
+		foreach(GetWidget('reportTemplates')->getConfigurationValue('templatesData', array()) as $reportTemplate){
+			if($reportTemplate->name==='Report Template'){
+
+				$outline=new \core\TemplateRenderer($reportTemplate->content);
+
+				if(is_null($outline)){
+					throw new \Exception()
+				}
+
+				$this->text = $outline->render($data);
+
+				break;
+			}
+		}
+
 	}
 
 	public function renderPdf() {
