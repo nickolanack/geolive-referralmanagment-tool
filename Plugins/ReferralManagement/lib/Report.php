@@ -154,7 +154,7 @@ class Report {
 		$this->text = $template->render($data);
 
 		$useOutline=true;
-		if($useOutline){
+		if($useOutline&&$templateName!='Report Template'){
 			
 			$this->wrapTemplate($data);
 
@@ -198,6 +198,16 @@ class Report {
 		}
 
 	}
+
+
+
+	public function renderHtml() {
+
+		//die($text);
+		echo $this->text;
+
+	}
+
 
 	public function renderPdf() {
 
