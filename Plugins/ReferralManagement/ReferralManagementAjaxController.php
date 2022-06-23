@@ -681,7 +681,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		$report=(new \ReferralManagement\Report($json->project))
 			->generateReport(isset($json->template)?$json->template:'proposal.report', 'Hello World');
 
-		if(isset($json->format&&$json->format=='html')){
+		if(isset($json->format)&&$json->format=='html'){
 			$report->renderHtml();
 			exit();
 		}
