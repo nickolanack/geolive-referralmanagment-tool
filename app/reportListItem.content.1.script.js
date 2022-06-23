@@ -17,7 +17,7 @@ var adminButton=new ElementModule('button',{"identifier":"button-report", "html"
     		                "plugin": "ReferralManagement",
     		                "project":item.getProject(),
     		                "template":item.getName(),
-    		                'format'=>'html'
+    		                'format':'html'
     		            });
         				//exportQuery.execute(); //for testing.
         				window.open(exportQuery.getUrl(true),'Download'); 
