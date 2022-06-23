@@ -188,7 +188,7 @@ class Report {
 				$outline=new \core\TemplateRenderer($reportTemplate->content);
 
 				if(is_null($outline)){
-					throw new \Exception()
+					throw new \Exception('Invalid');
 				}
 
 				$this->text = $outline->render($data);
