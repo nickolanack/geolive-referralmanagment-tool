@@ -216,6 +216,7 @@ class Report {
 		// instantiate and use the dompdf class
 		$dompdf = new \Dompdf\Dompdf();
 		$dompdf->set_option('defaultFont', 'Helvetica');
+		$dompdf->set_option('isRemoteEnabled', true);
 		$dompdf->loadHtml($this->text);
 		// (Optional) Setup the paper size and orientation
 		$dompdf->setPaper('A4');
