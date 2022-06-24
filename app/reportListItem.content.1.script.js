@@ -1,5 +1,25 @@
 var reportBtn=new ElementModule('button',{"identifier":"button-report", "html":"Create report", "class":"primary-btn report", "events":{"click":function(){
     
+    
+    
+        if(item.getParameters&&item.getParameters().length>0){
+            
+            
+                    (new UIModalDialog(
+                        ReferralManagementDashboard.getApplication(),
+                        configValue, {
+                            "formName": 'reportParametersForm',
+                            "formOptions": {
+                                template: "form"
+                            }
+                        }
+                    )).show();
+            
+            
+        }
+    
+    
+    
         var exportQuery=new AjaxControlQuery(CoreAjaxUrlRoot, 'generate_report', {
     		                "plugin": "ReferralManagement",
     		                "project":item.getProject(),
