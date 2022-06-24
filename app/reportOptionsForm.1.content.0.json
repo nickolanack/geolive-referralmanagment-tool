@@ -1,10 +1,31 @@
 {
-    "type": "WizardTitleField",
+    "type": "UIListView",
     "config": {
-        "label": "Title",
-        "message": "add a title",
+        "listClassName": "",
         "className": "",
-        "maxChars": 0,
-        "textFormatScript": ""
+        "identifier": "",
+        "viewType": "form",
+        "namedView": "defaultView",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
+        "showInlineEdit": false,
+        "namedFormView": "reportFormParameterForm",
+        "formOptions": "\"{}\"",
+        "showDeleteButton": false,
+        "deleteItemScript": "defaultBehaviorFn()",
+        "initModuleScript": "",
+        "formatModuleScript": "",
+        "resolveItemScript": "return item",
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false,
+        "targetName": "",
+        "getItemListScript": "return item;",
+        "formatItemListScript": "return list;",
+        "formatListItemModuleScript": "return item;",
+        "emptyNamedView": "emptyListView",
+        "filterItemsScript": "return true;",
+        "sortItemsScript": "",
+        "maxItems": "-1"
     }
 }
