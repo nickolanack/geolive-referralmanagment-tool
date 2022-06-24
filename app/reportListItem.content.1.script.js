@@ -15,6 +15,7 @@ var reportBtn=new ElementModule('button',{"identifier":"button-report", "html":"
                         }
                     )).show();
             
+                return;
             
         }
     
