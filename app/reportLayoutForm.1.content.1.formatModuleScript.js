@@ -4,6 +4,7 @@
        name:"",
        description:"",
        content:"",
+       parameters:[]
     });
 }).addDataFormatter(function(data, item){
     
