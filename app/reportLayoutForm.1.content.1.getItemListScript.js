@@ -12,7 +12,7 @@
                     name:item.name,
                     description:item.description,
                     content:item.content,
-                    parameters:item.parameters||[]
+                    parameters:item.parameters||[],
                     mutable:true
                 });
                 
