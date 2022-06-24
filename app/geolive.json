@@ -27678,16 +27678,16 @@
                             "reportFormParameterForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 254,
-                            "y": 276
+                            "x": 264,
+                            "y": 286
                         },
                         "children": [
                             "reportFormParameterForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 214,
-                                    "y": 464
+                                    "x": 224,
+                                    "y": 474
                                 }
                             }
                         ],
@@ -27724,7 +27724,7 @@
                                         {
                                             "type": "FormTextField",
                                             "config": {
-                                                "className": "",
+                                                "className": "width-2",
                                                 "label": "Field Type",
                                                 "placeholder": "add value",
                                                 "lines": 1,
@@ -27746,7 +27746,7 @@
                                         {
                                             "type": "FormTextField",
                                             "config": {
-                                                "className": "",
+                                                "className": "width-2",
                                                 "label": "Default Field Value",
                                                 "placeholder": "add value",
                                                 "lines": 1,
