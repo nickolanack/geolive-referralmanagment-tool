@@ -1,10 +1,12 @@
 {
     "type": "WizardTitleField",
     "config": {
-        "label": "Title",
+        "label": "Parameter Name",
         "message": "add a title",
         "className": "",
         "maxChars": 0,
-        "textFormatScript": ""
+        "textFormatScript": "",
+        "beforeRenderModuleScript": "",
+        "onRenderTextFieldScript": ""
     }
 }
