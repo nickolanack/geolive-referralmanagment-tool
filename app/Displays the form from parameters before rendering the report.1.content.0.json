@@ -14,7 +14,7 @@
         "showDeleteButton": false,
         "deleteItemScript": "defaultBehaviorFn()",
         "initModuleScript": "",
-        "formatModuleScript": "(new UIFormListBehavior(module)).disableNewItems().addDataFormatter(function(data, item){\n    \n    return ObjectAppend_({}, item.toObject(), data);\n    \n}).setUpdateField('parameters');",
+        "formatModuleScript": "(new UIFormListBehavior(module)).disableNewItems().disableRemoveEmpty().addDataFormatter(function(data, item){\n    \n    return ObjectAppend_({}, item.toObject(), data);\n    \n}).setUpdateField('parameters');",
         "resolveItemScript": "return item",
         "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",
