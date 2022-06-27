@@ -6074,5 +6074,40 @@ div.popover[data-with-view="reportSelectionView"]{
     border-radius: 4px;
 }
 
+
+
+
+
+
+
+.ui-view.new-empty-item[data-view="reportFormParameterForm"] {
+    &:before {
+        border-top: 1px dashed #b28029;
+        content: "";
+        display: block;
+        position: relative;
+        top: -17px;
+    }
+    
+    .template-content>*{
+            display:none;   
+    }
+    .template-content>*:first-child:before{
+        content:"Add a new parameter";
+        font-size:20px;
+        color:#b28029;
+    }
+    .template-content>*:first-child{
+            display:unset;   
+    }
+}
+
+
+
+
+
+
+
+
     
     

@@ -26934,16 +26934,16 @@
                             "reportLayoutForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 253,
-                            "y": 274
+                            "x": 283,
+                            "y": 304
                         },
                         "children": [
                             "reportLayoutForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 213,
-                                    "y": 440
+                                    "x": 243,
+                                    "y": 470
                                 }
                             }
                         ],
@@ -27045,16 +27045,16 @@
                             "reportLayoutItemForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 258,
-                            "y": 390
+                            "x": 278,
+                            "y": 410
                         },
                         "children": [
                             "reportLayoutItemForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 218,
-                                    "y": 578
+                                    "x": 238,
+                                    "y": 598
                                 }
                             }
                         ],
@@ -27565,6 +27565,390 @@
             "parseMarkdown": true,
             "saveTemplateAsData": false,
             "contentTemplate": "module-html-aboutPageTeam--text.contentTemplate.html",
+            "readAccess": "public"
+        }
+    },
+    "widget.495": {
+        "name": "Generic Form",
+        "instance": "WizardBuilder",
+        "parameters": {
+            "widgetTitle": "reportOptionsForm",
+            "target": "reportOptionsForm",
+            "templateName": "reportOptionsForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "formatStepModulesScript": "",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -9,
+                    "y": 147
+                },
+                "children": [
+                    "reportOptionsForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "reportOptionsForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 247,
+                            "y": 249
+                        },
+                        "children": [
+                            "reportOptionsForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 207,
+                                    "y": 415
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "reportOptionsForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "reportOptionsForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "reportOptionsForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.496": {
+        "name": "Generic Form",
+        "instance": "WizardBuilder",
+        "parameters": {
+            "widgetTitle": "reportFormParameterForm",
+            "target": "reportFormParameterForm",
+            "templateName": "reportFormParameterForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "formatStepModulesScript": "",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -18,
+                    "y": 171
+                },
+                "children": [
+                    "reportFormParameterForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "reportFormParameterForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 264,
+                            "y": 286
+                        },
+                        "children": [
+                            "reportFormParameterForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 224,
+                                    "y": 474
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "reportFormParameterForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "reportFormParameterForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "FormTextDescriptionField",
+                                            "config": {
+                                                "label": "Description",
+                                                "message": "add a description",
+                                                "lines": 2,
+                                                "mandatory": false,
+                                                "showAudios": true,
+                                                "showImages": true,
+                                                "showDocuments": true,
+                                                "showVideos": true,
+                                                "className": "no-media",
+                                                "maxChars": 0,
+                                                "showExpandInput": true,
+                                                "toolbarPosition": "bottom",
+                                                "textFormatScript": "",
+                                                "mediaIconTint": "rgb(100, 149, 237)",
+                                                "onRenderModuleFn": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "width-2",
+                                                "label": "Field Type",
+                                                "placeholder": "add value",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "beforeRenderModuleScript": "",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": "reportFormParameterForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.getValueScript.js",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "reportFormParameterForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "width-2",
+                                                "label": "Default Field Value",
+                                                "placeholder": "add value",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "beforeRenderModuleScript": "",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return item.getDefaultValue();",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "reportFormParameterForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "reportFormParameterForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.497": {
+        "name": "Generic Form",
+        "instance": "WizardBuilder",
+        "parameters": {
+            "widgetTitle": "Displays the form from parameters before rendering the report",
+            "target": "reportParametersForm",
+            "templateName": "reportParametersForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "formatStepModulesScript": "",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -18,
+                    "y": 171
+                },
+                "children": [
+                    "Displays the form from parameters before rendering the report.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "Displays the form from parameters before rendering the report.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 188,
+                            "y": 320
+                        },
+                        "children": [
+                            "Displays the form from parameters before rendering the report.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 148,
+                                    "y": 486
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "Displays the form from parameters before rendering the report.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "Displays the form from parameters before rendering the report.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "Displays the form from parameters before rendering the report.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.498": {
+        "name": "Generic Form",
+        "instance": "WizardBuilder",
+        "parameters": {
+            "widgetTitle": "reportFormParameterField",
+            "target": "reportFormParameterField",
+            "templateName": "reportFormParameterField",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "formatStepModulesScript": "",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -50,
+                    "y": 686
+                },
+                "children": [
+                    "reportFormParameterField.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "reportFormParameterField.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 252,
+                            "y": 264
+                        },
+                        "children": [
+                            "reportFormParameterField.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 212,
+                                    "y": 430
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "reportFormParameterField.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "reportFormParameterField.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "reportFormParameterField.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
             "readAccess": "public"
         }
     }

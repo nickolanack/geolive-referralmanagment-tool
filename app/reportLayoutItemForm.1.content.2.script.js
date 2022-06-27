@@ -21,10 +21,15 @@ var modules = new ModuleArray([
 			formOptions: {
 				template: "form"
 			},
-			formName: 'reportContentForm',
+			formName: 'reportOptionsForm',
 			"class": "primary-btn report",
             stopPropagation:true
 
+	}).addEvent('show',function(childWizard){
+	    childWizard.addEvent('complete',function(){
+	        //trigger parent wizard update
+	        modules.fireEvent('change');
+	    });
 	})
 ]);
 

@@ -7,7 +7,8 @@
                     name:template.name,
                     description:template.description,
                     content:"",
-                    project:item.getId()
+                    project:item.getId(), 
+                    parameters:template.parameters||[]
                 });
                 
             }))

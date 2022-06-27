@@ -266,7 +266,10 @@ GetWidget('reportLayoutItemForm')->display($targetInstance);
 GetWidget('reportSelectionView')->display($targetInstance);
 
 GetWidget('reportContentForm')->display($targetInstance);
-
+GetWidget('reportOptionsForm')->display($targetInstance);
+GetWidget('reportFormParameterForm')->display($targetInstance);
+GetWidget('reportParametersForm')->display($targetInstance);
+GetWidget('reportFormParameterField')->display($targetInstance);
 
 
 
