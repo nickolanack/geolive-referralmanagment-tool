@@ -6080,7 +6080,7 @@ div.popover[data-with-view="reportSelectionView"]{
 
 
 
-.ui-view.new-empty-item[data-view="reportFormParameterForm"] {
+.ui-view.new-empty-item[data-view="reportFormParameterForm"], .ui-view.new-empty-item[data-view="reportLayoutItemForm"] {
     &:before {
         border-top: 1px dashed #b28029;
         content: "";
@@ -6100,6 +6100,11 @@ div.popover[data-with-view="reportSelectionView"]{
     .template-content>*:first-child{
             display:unset;   
     }
+}
+
+
+.ui-view.new-empty-item[data-view="reportLayoutItemForm"] .template-content > *:first-child:before {
+  content: "Add a new report";
 }
 
 
