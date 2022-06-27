@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "\n\n\nif(item.getFieldType()=='boolean'){\n    \n    return new SimpleBooleanModule({\n        type:\"checkbox\",\n        value: (['true', true]).indexOf(item.getDefaultValue())>=0,\n    }).addDataSubmitter(function(object, wizardDataSet){\n        wizardDataSet[item.getFieldName()]=object.value;\n    });\n\n    \n}\n\n\n\nreturn 'field placeholder'",
+        "script": "\n\n\nif(item.getFieldType()=='boolean'){\n    \n    return new SimpleBooleanModule({\n        type:\"checkbox\",\n        value: (['true', true]).indexOf(item.getDefaultValue())>=0,\n    }).addDataSubmitter(function(object, wizardDataSet){\n        wizardDataSet[item.getFieldName()]=object.value;\n    });\n\n    \n}\n\n\nif(item.getFieldType()=='text'){\n    \n    return new TextFieldModule({\n       value:item.getDefaultValue():\"\",\n    }).addDataSubmitter(function(object, wizardDataSet){\n        wizardDataSet[item.getFieldName()]=object.value;\n    });\n\n    \n}\n\n\n\nreturn 'field placeholder'",
         "description": "Info about my custom script"
     }
 }
