@@ -13,7 +13,11 @@ var reportBtn=new ElementModule('button',{"identifier":"button-report", "html":"
                                 template: "form"
                             }
                         }
-                    )).show();
+                    )).show().on('complete',function(){
+                        
+                        console.log('complete')
+                        
+                    })
             
                 return;
             
