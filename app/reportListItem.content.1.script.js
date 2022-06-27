@@ -16,8 +16,21 @@ var reportBtn=new ElementModule('button',{"identifier":"button-report", "html":"
                     )).show().on('complete',function(){
                         
                         console.log('complete')
+                        var data={};
+                        this.getWizard().getData().parameters.map(function(p){
+                            data[p.name]=p[p.name];
+                        });
                         
-                    })
+                        var exportQuery=new AjaxControlQuery(CoreAjaxUrlRoot, 'generate_report', {
+    		                "plugin": "ReferralManagement",
+    		                "project":item.getProject(),
+    		                "template":item.getName(),
+    		                "parameters":data
+    		            });
+        				//exportQuery.execute(); //for testing.
+        				window.open(exportQuery.getUrl(true),'Download'); 
+                        
+                    });
             
                 return;
             
