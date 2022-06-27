@@ -27992,9 +27992,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
-            "saveTemplateAsData": false,
-            "contentTemplate": "Report options"
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "Report options",
+            "readAccess": "public"
         }
     }
 }
