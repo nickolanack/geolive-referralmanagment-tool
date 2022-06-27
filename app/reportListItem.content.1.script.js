@@ -7,7 +7,7 @@ var reportBtn=new ElementModule('button',{"identifier":"button-report", "html":"
             
                     (new UIModalDialog(
                         ReferralManagementDashboard.getApplication(),
-                        configValue, {
+                        item, {
                             "formName": 'reportParametersForm',
                             "formOptions": {
                                 template: "form"
