@@ -1,15 +1,18 @@
 {
     "type": "WizardSteps",
     "config": {
-        "iconValue": [],
         "className": "",
+        "showSteps": false,
         "manualValue": "1",
-        "width": 460,
+        "iconValue": [],
+        "width": 601,
         "height": 250,
         "labelMethod": "auto",
-        "elasticity": false,
-        "minHeight": 200,
+        "closable": false,
+        "elasticity": true,
+        "fitContent": true,
         "minWidth": 400,
-        "showSteps": false
+        "minHeight": 200,
+        "formatStepOptionsScript": ""
     }
 }
