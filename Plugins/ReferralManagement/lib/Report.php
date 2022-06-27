@@ -151,7 +151,7 @@ class Report {
 
 		$data=$this->getReportData();
 
-		if(is_object($parameters){
+		if(is_object($parameters)){
 			$data['parameters']=$parameters;
 		}
 
