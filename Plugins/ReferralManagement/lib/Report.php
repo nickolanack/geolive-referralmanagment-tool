@@ -127,7 +127,7 @@ class Report {
 	}
 
 
-	public function generateReport($templateName, $defaultContent) {
+	public function generateReport($templateName, $defaultContent, $parameters=null) {
 
 		
 
@@ -150,6 +150,11 @@ class Report {
 		
 
 		$data=$this->getReportData();
+
+		if(is_object($parameters){
+			$data['parameters']=$parameters;
+		}
+
 		$this->title = $data['attributes']['company'] . '-' . $data['attributes']['title'];
 		$this->text = $template->render($data);
 
