@@ -1,1 +1,6 @@
-el.addClass('project-dates project-title user-community');
+el.setStyles({
+   "text-align": "right;",
+    "width": "100%;",
+    "box-sizing":" border-box;",
+    "padding-right": "30px;",
+});
