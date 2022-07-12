@@ -6,6 +6,6 @@
         "className": "",
         "fieldLabelScript": "return \"\";",
         "fieldValueScript": "return \"\";",
-        "formatElementScript": "AppClient.authorize('write', item, function(auth) {\n    if(auth){\n        labelEl.innerHTML='you have write access to this item';\n        return;\n    }\n\n});"
+        "formatElementScript": "AppClient.authorize('write', item, function(auth) {\n    if(auth){\n        labelEl.innerHTML='you have write permission';\n        return;\n    }\n\n});"
     }
 }
