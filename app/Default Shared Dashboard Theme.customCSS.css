@@ -1545,6 +1545,10 @@ li.menu-project-discussion.withItemsIndicator:after {
 }
 
 
+[data-view="selectableUserListItemDetail"] .inline-btn.optionlist {
+    display:none;
+}
+
 .funders-logos>div, .communities-logos>div {
     width: 200px;
     height: 130px;
