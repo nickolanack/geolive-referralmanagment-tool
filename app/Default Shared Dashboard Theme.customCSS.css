@@ -1615,11 +1615,17 @@ label.boolean-field p {
 }
 
 
-.field-value-module.project-dates {
+.field-value-module.project-dates, .field-value-module.item-access {
     color: gray;
     font-size: 12px;
     width: calc( 50% - 30px );
     display: inline-block;
+}
+
+.field-value-module.item-access{
+    position: absolute;
+    top: 6px;
+    left: 24px;
 }
 
 .field-value-module.created-by {
