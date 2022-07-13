@@ -1,15 +1,46 @@
 var ProjectCalendar = (function() {
 
 
-	var _holidays;
 
-	(new AjaxControlQuery(CoreAjaxUrlRoot, 'list_cal_events', {
-		"plugin": "ReferralManagement"
-	})).on('success', function(resp){
 
-		_holidays=resp.data;
 
-	}).execute();
+	var Holidays = new (new Class({
+		Implements:[Events],
+		initialize: function(application) {
+
+
+			
+			var me=this;
+			me._holidays=null;
+
+			(new AjaxControlQuery(CoreAjaxUrlRoot, 'list_cal_events', {
+				"plugin": "ReferralManagement"
+			})).on('success', function(resp){
+
+				me._holidays=resp.data;
+				me.fireEvent('load');
+
+			}).execute();
+
+
+		},
+		getHolidays:function(callback){
+
+			if(this._holidays){
+				callback(this._holidays);
+				return;
+			}
+
+			var me=this;
+			this.once('load',function(){
+				callback(me._holidays);
+			})
+
+		}
+	}));
+
+
+	
 
 	
 
@@ -149,6 +180,9 @@ var ProjectCalendar = (function() {
 						});
 
 					});
+
+
+
 
 					callback(events);
 
