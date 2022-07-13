@@ -2,6 +2,10 @@ var ProjectCalendar = (function() {
 
 
 
+	(new AjaxControlQuery(CoreAjaxUrlRoot, 'list_cal_events', {
+		"plugin": "ReferralManagement"
+	})).execute();
+
 	
 
 	var ProjectCalendar = new Class({
