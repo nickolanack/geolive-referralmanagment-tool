@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 class ReferralManagementAjaxController extends \core\AjaxController implements \core\extensions\plugin\PluginMember {
 	use \core\extensions\plugin\PluginMemberTrait;
 
@@ -20,73 +17,71 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	}
 
+	protected function listCalEvents() {
 
-	protected function listCalEvents(){
+		$data = json_decode(file_get_contents(__DIR__ . '/holidays.json'));
+		array_shift($data->holidays);
+		$filtered = array_filter($data->holidays, function ($event) {
+			$provinceMatches = array_filter($event->provinces, function ($p) {
+				return $p->id == "BC";
+			});
 
+			return count($provinceMatches) > 0;
 
-		return array('data'=>json_decode(file_get_contents(__DIR__.'/holidays.json')));
+		});
 
+		return array('data' => $filtered);
 
 	}
 
-
-
-
-	protected function listAccess($json){
+	protected function listAccess($json) {
 
 		if (!Auth('read', $json->project, 'ReferralManagement.proposal')) {
 			return $this->setError('No access');
 		}
 
+		$project = $this->getPlugin()->listProjectsMetadata(array('id' => $json->project))[0];
+		$plugin = $this->getPlugin();
 
-		$project=$this->getPlugin()->listProjectsMetadata(array('id' => $json->project))[0];
-		$plugin=$this->getPlugin();
+		$list = array();
 
-		$list=array();
+		array_walk($this->getPlugin()->getUserList(), function ($u) use ($json, $project, &$list, $plugin) {
 
-		array_walk($this->getPlugin()->getUserList(), function($u) use($json, $project, &$list, $plugin){
-
-
-			$this->info('auth', 'check project read access: '.$u->name, array(
-				'user'=>$u->id,
-				'project'=>$json->project
+			$this->info('auth', 'check project read access: ' . $u->name, array(
+				'user' => $u->id,
+				'project' => $json->project,
 			));
 
+			if (Auth('read', $project, 'ReferralManagement.proposal', $u->id)) {
 
+				if (!isset($list[$plugin->getLastAuthReason()])) {
+					$list[$plugin->getLastAuthReason()] = array();
+				}
 
-			 if(Auth('read', $project, 'ReferralManagement.proposal', $u->id)){
-
-			 	if(!isset($list[$plugin->getLastAuthReason()])){
-			 		$list[$plugin->getLastAuthReason()]=array();
-			 	}
-
-			 	$list[$plugin->getLastAuthReason()][]=$u;
-			 }
+				$list[$plugin->getLastAuthReason()][] = $u;
+			}
 		});
 
-		$display=array(
-			"Item creator"=>"Item Creator",
-			"Proponent"=>"Proponents",
-			"Team member"=>"Team Members",
-			"Community manager"=>"Community Managers"
+		$display = array(
+			"Item creator" => "Item Creator",
+			"Proponent" => "Proponents",
+			"Team member" => "Team Members",
+			"Community manager" => "Community Managers",
 		);
 
-		$groups=array();
-		foreach($display as $key=>$label){
-			if(isset($list[$key])){
-				$groups[$label]=$list[$key];
+		$groups = array();
+		foreach ($display as $key => $label) {
+			if (isset($list[$key])) {
+				$groups[$label] = $list[$key];
 			}
 		}
 
-
-
 		$response = array(
-			'groups'=>$groups
+			'groups' => $groups,
 		);
 
 		return $response;
 
-		
 	}
 
 	protected function getAdminChannels($json) {
@@ -119,7 +114,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 				array(
 					'channel' => 'processEmailQueue',
 					'event' => 'update',
-				)
+				),
 			),
 		);
 	}
@@ -134,26 +129,21 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function getStateData($json) {
 
-		if(intval($json->id)<=0){
+		if (intval($json->id) <= 0) {
 			return $this->setError('Not a valid id');
 		}
 
-
 		if (!Auth('read', $json->id, 'ReferralManagement.proposal')) {
 
-
-			if(!isset($json->accessToken)){
+			if (!isset($json->accessToken)) {
 				return $this->setError('No access or does not exist');
 			}
 
+			$token = GetPlugin('Links')->peekDataToken($json->accessToken);
 
-			$token=GetPlugin('Links')->peekDataToken($json->accessToken);
-
-
-			if(!(isset($token->name)&&isset($token->data)&&in_array($token->name, array('guestProposalData','projectAccessToken'))&&isset($token->data->id)&&intval($token->data->id)==intval($json->id))){
-				return $this->setError('Invalid access token: '.json_encode($token));
+			if (!(isset($token->name) && isset($token->data) && in_array($token->name, array('guestProposalData', 'projectAccessToken')) && isset($token->data->id) && intval($token->data->id) == intval($json->id))) {
+				return $this->setError('Invalid access token: ' . json_encode($token));
 			}
-
 
 		}
 
@@ -169,7 +159,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		return array(
 			'stateData' => (object) $currentState,
 			'subscription' => array(
-				'channel' => 'projectstate.'.$json->id,
+				'channel' => 'projectstate.' . $json->id,
 				'event' => 'update',
 			),
 		);
@@ -201,7 +191,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 				'stateData' => json_encode($newState),
 			));
 
-			Broadcast('projectstate.'.$json->id, 'update', array('state' => $newState));
+			Broadcast('projectstate.' . $json->id, 'update', array('state' => $newState));
 		}
 
 		return array(
@@ -296,34 +286,27 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		GetPlugin('Attributes');
 		return array('results' => (new \attributes\Record('proposalAttributes'))->searchValues($json->search->name, 'title'));
-		
+
 	}
 
 	protected function getProject($json) {
 
-
-
-
 		if (!Auth('read', $json->project, 'ReferralManagement.proposal')) {
 
-			if(!isset($json->accessToken)){
+			if (!isset($json->accessToken)) {
 				return $this->setError('No access or does not exist');
 			}
 
+			$token = GetPlugin('Links')->peekDataToken($json->accessToken);
 
-			$token=GetPlugin('Links')->peekDataToken($json->accessToken);
-
-
-			if(!(isset($token->name)&&isset($token->data)&&in_array($token->name, array('guestProposalData','projectAccessToken', 'projectPrintToken'))&&isset($token->data->id)&&intval($token->data->id)==intval($json->project))){
-				return $this->setError('Invalid access token: '.json_encode($token));
+			if (!(isset($token->name) && isset($token->data) && in_array($token->name, array('guestProposalData', 'projectAccessToken', 'projectPrintToken')) && isset($token->data->id) && intval($token->data->id) == intval($json->project))) {
+				return $this->setError('Invalid access token: ' . json_encode($token));
 			}
 
-			
-		
 		}
 
 		$response = array(
-			'results' => GetPlugin('ReferralManagement')->listProjectsMetadata(array('id' => $json->project))
+			'results' => GetPlugin('ReferralManagement')->listProjectsMetadata(array('id' => $json->project)),
 		);
 
 		return $response;
@@ -467,8 +450,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	}
 
-
-	protected function saveProjectMetadata($json){
+	protected function saveProjectMetadata($json) {
 
 		if (key_exists('id', $json) && (int) $json->id > 0) {
 
@@ -489,10 +471,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		}
 
-		
 		return $this->setError('Invalid project');
-		
-
 
 	}
 
@@ -607,7 +586,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		$response = array(
 			'results' => $this->getPlugin()->getArchivedProjectList(),
-			'debug' => $this->getPlugin()->cache()->getArchivedProjectsListCacheStatus()
+			'debug' => $this->getPlugin()->cache()->getArchivedProjectsListCacheStatus(),
 		);
 		return $response;
 
@@ -632,7 +611,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 			(new \ReferralManagement\Project())->fromId($json->id)->setStatus($json->status);
 
-			return array('id' => (int) $json->id, 'status'=>$json->status);
+			return array('id' => (int) $json->id, 'status' => $json->status);
 
 		}
 
@@ -674,25 +653,20 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	}
 
-
 	protected function generateReportData($json) {
-		
-		return array(
-			"data"=>(new \ReferralManagement\Report($json->project))->getReportData()
-		);
 
+		return array(
+			"data" => (new \ReferralManagement\Report($json->project))->getReportData(),
+		);
 
 	}
 
-
 	protected function generateReport($json) {
 
-		$report=(new \ReferralManagement\Report($json->project))
-			->generateReport(isset($json->template)?$json->template:'proposal.report', 'Hello World', isset($json->parameters)?$json->parameters:null);
+		$report = (new \ReferralManagement\Report($json->project))
+			->generateReport(isset($json->template) ? $json->template : 'proposal.report', 'Hello World', isset($json->parameters) ? $json->parameters : null);
 
-
-
-		if(isset($json->format)&&$json->format=='html'){
+		if (isset($json->format) && $json->format == 'html') {
 			$report->renderHtml();
 			exit();
 		}
@@ -772,8 +746,6 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			return $this->setError('No access or does not exist');
 		}
 
-
-
 		$clientToken = ($links = GetPlugin('Links'))->createDataCodeForItem($json->id, "ReferralManagement.proposal", 'projectAccessToken', array(
 			'id' => $json->id,
 			"creator" => GetClient()->getUserId(),
@@ -792,16 +764,15 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			return $this->setError('No access or does not exist');
 		}
 
-
-		$list=GetPlugin('Links')->listDataCodesForItem($json->id, "ReferralManagement.proposal");
-		foreach($list as $token){
-			if($token->token==$json->token){
+		$list = GetPlugin('Links')->listDataCodesForItem($json->id, "ReferralManagement.proposal");
+		foreach ($list as $token) {
+			if ($token->token == $json->token) {
 				return GetPlugin('Links')->expireToken($json->token);
 			}
 		}
 
 		return $this->setError('Invalid token for id: '+$json->id);
-		
+
 	}
 
 	protected function listShareLinks($json) {
@@ -810,7 +781,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			return $this->setError('No access or does not exist');
 		}
 
-		return array('results'=>GetPlugin('Links')->listDataCodesForItem($json->id, "ReferralManagement.proposal"));
+		return array('results' => GetPlugin('Links')->listDataCodesForItem($json->id, "ReferralManagement.proposal"));
 
 	}
 
@@ -952,8 +923,6 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		return true;
 	}
 
-
-
 	protected function setPriority($json) {
 		if (!Auth('write', $json->project, 'ReferralManagement.proposal')) {
 			return $this->setError('No access or does not exist');
@@ -996,7 +965,6 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function setUserRole($json) {
 
-
 		$yourRoles = (new \ReferralManagement\UserRoles())->getUsersRoles();
 		$usersRoles = (new \ReferralManagement\UserRoles())->getUsersRoles($json->user);
 
@@ -1031,16 +999,16 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		}
 
-		$values['reviewed']=true;
+		$values['reviewed'] = true;
 
 		GetPlugin('Attributes');
 
 		(new attributes\Record('userAttributes'))->setValues($json->user, 'user', $values);
 
-		$update=array(
-			'role'=>(new \ReferralManagement\UserRoles())->clearCache()->getUsersRoles($json->user),
-			'previous'=>$usersRoles,
-			'update'=>$values
+		$update = array(
+			'role' => (new \ReferralManagement\UserRoles())->clearCache()->getUsersRoles($json->user),
+			'previous' => $usersRoles,
+			'update' => $values,
 		);
 
 		$this->getPlugin()->notifier()->onUpdateUserRole((object) array_merge(get_object_vars($json), $update));
@@ -1048,7 +1016,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		$this->getPlugin()->cache()->needsDeviceListUpdate();
 		$this->getPlugin()->cache()->needsUserListUpdate();
 
-		return  $update;
+		return $update;
 
 	}
 
