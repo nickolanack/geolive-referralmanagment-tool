@@ -196,7 +196,8 @@
                 }
             ],
             "useRemoteServerUI": false,
-            "remoteServerUrl": ""
+            "remoteServerUrl": "",
+            "templateEditAuthScript": "XXXX-XXXX"
         }
     },
     "plugin.28": {
@@ -6738,7 +6739,7 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
-                                    "initModuleScript": "",
+                                    "initModuleScript": "Tasks Overview List Detail.metadata.positions.content.modules.2.config.initModuleScript.js",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
@@ -7216,6 +7217,17 @@
                         "modules": [
                             "singleProjectOverviewDetail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "identifier": "item-priority",
+                                    "className": "",
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
+                                }
+                            },
+                            {
                                 "type": "UIView",
                                 "config": {
                                     "className": "",
@@ -7245,7 +7257,7 @@
                                     "text": "Status",
                                     "template": "html.projectStatus",
                                     "templateVariablesScript": "{}",
-                                    "formatTextScript": "singleProjectOverviewDetail.metadata.positions.content.modules.2.config.formatTextScript.js",
+                                    "formatTextScript": "singleProjectOverviewDetail.metadata.positions.content.modules.3.config.formatTextScript.js",
                                     "formatVariablesScript": "",
                                     "ajaxRequestTemplate": true,
                                     "identifier": "status-description"
@@ -7278,14 +7290,6 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.4.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
                                     "script": "singleProjectOverviewDetail.metadata.positions.content.modules.5.config.script.js",
                                     "description": "Info about my custom script"
                                 }
@@ -7295,6 +7299,14 @@
                                 "config": {
                                     "name": "My Custom Script",
                                     "script": "singleProjectOverviewDetail.metadata.positions.content.modules.6.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.7.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             },
@@ -7314,8 +7326,8 @@
                                     "deleteItemScript": "defaultBehaviorFn()",
                                     "initModuleScript": "",
                                     "formatModuleScript": "",
-                                    "resolveItemScript": "singleProjectOverviewDetail.metadata.positions.content.modules.7.config.resolveItemScript.js",
-                                    "filterModulesScript": "singleProjectOverviewDetail.metadata.positions.content.modules.7.config.filterModulesScript.js",
+                                    "resolveItemScript": "singleProjectOverviewDetail.metadata.positions.content.modules.8.config.resolveItemScript.js",
+                                    "filterModulesScript": "singleProjectOverviewDetail.metadata.positions.content.modules.8.config.filterModulesScript.js",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": ""
@@ -7328,8 +7340,8 @@
                                     "identifier": "project-response-date",
                                     "className": "item-title project-title item-response-date",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.8.config.fieldValueScript.js",
-                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.8.config.formatElementScript.js"
+                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.9.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.9.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -7339,8 +7351,8 @@
                                     "identifier": "pros-dates-community",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.9.config.fieldValueScript.js",
-                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.9.config.formatElementScript.js"
+                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -7350,8 +7362,8 @@
                                     "identifier": "proj-author",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.fieldValueScript.js",
-                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.formatElementScript.js"
+                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.11.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.11.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -7361,7 +7373,7 @@
                                     "text": "Description",
                                     "template": "html.projectDescription",
                                     "templateVariablesScript": "{}",
-                                    "formatTextScript": "singleProjectOverviewDetail.metadata.positions.content.modules.11.config.formatTextScript.js",
+                                    "formatTextScript": "singleProjectOverviewDetail.metadata.positions.content.modules.12.config.formatTextScript.js",
                                     "formatVariablesScript": "",
                                     "ajaxRequestTemplate": true,
                                     "identifier": "htmlLabel"
@@ -7375,17 +7387,6 @@
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getName();",
-                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.12.config.formatElementScript.js"
-                                }
-                            },
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "identifier": "",
-                                    "className": "",
-                                    "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return item.getCompanyName();",
                                     "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.13.config.formatElementScript.js"
                                 }
                             },
@@ -7396,14 +7397,25 @@
                                     "identifier": "",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.14.config.fieldValueScript.js",
+                                    "fieldValueScript": "return item.getCompanyName();",
                                     "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.14.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "identifier": "",
+                                    "className": "",
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.15.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.15.config.formatElementScript.js"
                                 }
                             },
                             {
                                 "type": "FormattedText",
                                 "config": {
-                                    "textValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.15.config.textValueScript.js",
+                                    "textValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.16.config.textValueScript.js",
                                     "formatModuleScript": "",
                                     "className": "project-description",
                                     "imageWidth": 300,
@@ -7434,7 +7446,7 @@
                                     "text": "Notes",
                                     "template": "html.projectNotes",
                                     "templateVariablesScript": "{}",
-                                    "formatTextScript": "singleProjectOverviewDetail.metadata.positions.content.modules.16.config.formatTextScript.js",
+                                    "formatTextScript": "singleProjectOverviewDetail.metadata.positions.content.modules.17.config.formatTextScript.js",
                                     "formatVariablesScript": "",
                                     "ajaxRequestTemplate": true,
                                     "identifier": "htmlLabel"
@@ -7444,7 +7456,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.17.config.script.js",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.18.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             },
@@ -7519,7 +7531,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.21.config.script.js",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.22.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             },
@@ -7537,8 +7549,8 @@
                                     "formOptions": "\"{}\"",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "defaultBehaviorFn()",
-                                    "initModuleScript": "singleProjectOverviewDetail.metadata.positions.content.modules.22.config.initModuleScript.js",
-                                    "formatModuleScript": "singleProjectOverviewDetail.metadata.positions.content.modules.22.config.formatModuleScript.js",
+                                    "initModuleScript": "singleProjectOverviewDetail.metadata.positions.content.modules.23.config.initModuleScript.js",
+                                    "formatModuleScript": "singleProjectOverviewDetail.metadata.positions.content.modules.23.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "",
                                     "itemButtonsScript": "return [];",
@@ -7585,7 +7597,7 @@
                                     "deleteItemScript": "defaultBehaviorFn()",
                                     "initModuleScript": "",
                                     "formatModuleScript": "",
-                                    "resolveItemScript": "singleProjectOverviewDetail.metadata.positions.content.modules.24.config.resolveItemScript.js",
+                                    "resolveItemScript": "singleProjectOverviewDetail.metadata.positions.content.modules.25.config.resolveItemScript.js",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
@@ -7725,7 +7737,7 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
-                                    "initModuleScript": "",
+                                    "initModuleScript": "singleProjectTasksDetail.metadata.positions.content.modules.2.config.initModuleScript.js",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
@@ -27810,8 +27822,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -18,
-                    "y": 171
+                    "x": 14,
+                    "y": 196
                 },
                 "children": [
                     "Displays the form from parameters before rendering the report.metadata.children.0.json",
@@ -27822,16 +27834,16 @@
                             "Displays the form from parameters before rendering the report.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 188,
-                            "y": 320
+                            "x": 228,
+                            "y": 330
                         },
                         "children": [
                             "Displays the form from parameters before rendering the report.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 148,
-                                    "y": 486
+                                    "x": 188,
+                                    "y": 496
                                 }
                             }
                         ],
@@ -27844,7 +27856,38 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "Displays the form from parameters before rendering the report.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                        "Displays the form from parameters before rendering the report.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "UIListView",
+                                            "config": {
+                                                "listClassName": "inline-form-list",
+                                                "className": "",
+                                                "identifier": "",
+                                                "viewType": "form",
+                                                "namedView": "defaultView",
+                                                "shouldRender": true,
+                                                "namedViewScript": "return namedView",
+                                                "showInlineEdit": false,
+                                                "namedFormView": "reportFormParameterField",
+                                                "formOptions": "\"{}\"",
+                                                "showDeleteButton": false,
+                                                "deleteItemScript": "defaultBehaviorFn()",
+                                                "initModuleScript": "",
+                                                "formatModuleScript": "Displays the form from parameters before rendering the report.metadata.children.1.builderMetadata.positions.content.modules.1.config.formatModuleScript.js",
+                                                "resolveItemScript": "return item",
+                                                "filterModulesScript": "return list",
+                                                "itemButtonsScript": "return [];",
+                                                "insertAtTop": false,
+                                                "targetName": "",
+                                                "getItemListScript": "Displays the form from parameters before rendering the report.metadata.children.1.builderMetadata.positions.content.modules.1.config.getItemListScript.js",
+                                                "formatItemListScript": "return list;",
+                                                "formatListItemModuleScript": "return item;",
+                                                "emptyNamedView": "emptyListView",
+                                                "filterItemsScript": "return true;",
+                                                "sortItemsScript": "",
+                                                "maxItems": "-1"
+                                            }
+                                        }
                                     ]
                                 },
                                 "footer": {
@@ -27949,6 +27992,21 @@
                     }
                 ]
             },
+            "readAccess": "public"
+        }
+    },
+    "widget.499": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-reportOptionsForm.text",
+            "target": "module.html-reportOptionsForm.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "Report options",
             "readAccess": "public"
         }
     }
