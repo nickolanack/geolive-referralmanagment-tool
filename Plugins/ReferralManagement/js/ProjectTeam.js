@@ -634,39 +634,6 @@ var ProjectTeam = (function() {
 				return !t.isComplete()
 			});
 		},
-		/**
-		 * returns an object indexed by yyyy-mm-dd containing event name, or names ie: string or array<string>
-		 */
-		getEventDates: function(range) {
-
-			var me = this;
-			var events = {};
-
-			me.getProjects().forEach(function(p) {
-				var propEvents = p.getEventDates(range);
-				Object.keys(propEvents).forEach(function(date) {
-					if (!events[date]) {
-						events[date] = [];
-					}
-					events[date] = events[date].concat(propEvents[date])
-				});
-
-			})
-			return events;
-		},
-
-		getEvents: function(range, dateFn) {
-			var me = this;
-			var events = [];
-
-			me.getProjects().forEach(function(p) {
-
-				var propEvents = p.getEvents(range, dateFn);
-				events = events.concat(propEvents);
-
-			});
-			return events;
-		},
 		hasProject: function(id) {
 			var me = this;
 			var prop = me.getAllProjects();
