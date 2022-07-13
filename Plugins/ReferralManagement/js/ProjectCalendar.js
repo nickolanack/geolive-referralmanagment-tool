@@ -46,13 +46,7 @@ var ProjectCalendar = (function() {
 			//application.setNamedValue("calendar", this);
 
 			this.parent({
-				data: function(range, callback) {
-
-					ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
-						var dates = team.getEventDates(range);
-						callback(dates);
-					});
-				},
+				data: me.getEventDates.bind(me),
 				events: {
 					selectDay:function(day, el) {
 						console.log('Select day:' + day);
@@ -122,7 +116,42 @@ var ProjectCalendar = (function() {
 			});
 
 
+		},
+
+		/**
+		 * returns an object indexed by yyyy-mm-dd containing event name, or names ie: string or array<string>
+		 */
+		getEventDates: function(range, callback) {
+
+
+
+
+				var me = this;
+				
+
+				ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+					
+
+					var events = {};		
+
+					team.getProjects().forEach(function(p) {
+						var propEvents = p.getEventDates(range);
+						Object.keys(propEvents).forEach(function(date) {
+							if (!events[date]) {
+								events[date] = [];
+							}
+							events[date] = events[date].concat(propEvents[date])
+						});
+
+					});
+
+					callback(events);
+
+
+			});
+
 		}
+
 	});
 
 	ProjectCalendar.RenderCalendar=function(viewer, element, parentModule) {
