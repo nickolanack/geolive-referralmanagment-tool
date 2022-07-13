@@ -27,14 +27,30 @@ var ProjectCalendar = (function() {
 		getHolidays:function(callback){
 
 			if(this._holidays){
-				callback(this._holidays);
+				callback(this._fmt(this._holidays));
 				return;
 			}
 
 			var me=this;
 			this.once('load',function(){
-				callback(me._holidays);
+				callback(me._fmt(me._holidays));
 			})
+
+		},
+		_fmt:function(list){
+
+			var events={};
+			list.forEach(function(item){
+
+				var date=item.date;
+				if (!events[date]) {
+					events[date] = [];
+				}
+				events[date] = events[date].push({
+					date:date,
+					name:item.nameFr
+				});
+			});
 
 		}
 	}));
@@ -163,6 +179,18 @@ var ProjectCalendar = (function() {
 
 
 				var me = this;
+
+
+				var merge=function(a, b){
+					Object.keys(b).forEach(function(date) {
+						if (!a[date]) {
+							a[date] = [];
+						}
+						a[date] = a[date].concat(b[date])
+					});
+
+					return a;
+				}
 				
 
 				ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
@@ -172,19 +200,15 @@ var ProjectCalendar = (function() {
 
 					team.getProjects().forEach(function(p) {
 						var propEvents = p.getEventDates(range);
-						Object.keys(propEvents).forEach(function(date) {
-							if (!events[date]) {
-								events[date] = [];
-							}
-							events[date] = events[date].concat(propEvents[date])
-						});
-
+						merge(events, propEvents);
 					});
 
 
+					Holidays.getHolidays(function(holidays){
+						callback(merge(events, holidays));
+					});
 
-
-					callback(events);
+					
 
 
 			});
