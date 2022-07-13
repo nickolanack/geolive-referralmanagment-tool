@@ -52,6 +52,8 @@ var ProjectCalendar = (function() {
 				});
 			});
 
+			return events;
+
 		}
 	}));
 
