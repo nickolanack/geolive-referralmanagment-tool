@@ -21,14 +21,14 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		$data = json_decode(file_get_contents(__DIR__ . '/holidays.json'));
 		array_shift($data->holidays);
-		$filtered = array_filter($data->holidays, function ($event) {
+		$filtered = array_values(array_filter($data->holidays, function ($event) {
 			$provinceMatches = array_filter($event->provinces, function ($p) {
 				return $p->id == "BC";
 			});
 
 			return count($provinceMatches) > 0;
 
-		});
+		}));
 
 		return array('data' => $filtered);
 
