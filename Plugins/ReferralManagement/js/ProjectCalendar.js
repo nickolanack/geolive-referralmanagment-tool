@@ -1,10 +1,15 @@
 var ProjectCalendar = (function() {
 
 
+	var _holidays;
 
 	(new AjaxControlQuery(CoreAjaxUrlRoot, 'list_cal_events', {
 		"plugin": "ReferralManagement"
-	})).execute();
+	})).on('success', function(resp){
+
+		_holidays=resp.data;
+
+	}).execute();
 
 	
 
