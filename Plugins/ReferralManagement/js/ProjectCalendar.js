@@ -196,6 +196,12 @@ var ProjectCalendar = (function() {
 		var eventUl=el.appendChild(new Element('div',{"class":"event-list"}));
 		(item.event?[item.event]:item.events).forEach(function(e){
 		    
+
+			if(!(e&&e.item)){
+				console.error('Event missing item');
+				return;
+			}
+
 		    var classNames="task-item task-item-"+e.item.getId();
 		    if(e.item.isComplete()){
 		        classNames+=" complete";
