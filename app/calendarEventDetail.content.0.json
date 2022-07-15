@@ -2,8 +2,10 @@
     "type": "FieldValue",
     "config": {
         "loadAsync": false,
+        "identifier": "event-field",
+        "className": "",
         "fieldLabelScript": "return \"\";",
-        "fieldValueScript": "\nvar date = moment(item.date).calendar().split(' at ')[0];\nif(date.indexOf('\/')>=0){\n    return  moment(item.date).fromNow();\n}\nreturn date;\n",
-        "formatElementScript": "\n\nvar eventUl=el.appendChild(new Element('div',{\"class\":\"event-list\"}));\n(item.event?[item.event]:item.events).forEach(function(e){\n    \n    var classNames=\"task-item task-item-\"+e.item.getId();\n    if(e.item.isComplete()){\n        classNames+=\" complete\";\n    }\n    \n    \/\/var li=eventUl.appendChild(new Element('li',{\"class\":classNames}));\n    \n    (new UIViewModule(application, e.item, {\n        namedView:\"singleTaskListItemDetail\",\n        \"className\":\"task-item compact\"\n    })).load(null,eventUl, null);\n    \n})"
+        "fieldValueScript": "\nreturn ProjectCalendar.EventFieldValue(item);",
+        "formatElementScript": "ProjectCalendar.FormatEventField(item, el, labelEl);\n"
     }
 }
