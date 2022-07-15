@@ -1,7 +1,7 @@
-var team=ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
+
 		var start = new Date(application.getNamedValue("selectedDay"))
 		var range = [start, new Date(start.valueOf() + (1000 * 3600 * 24))];
-		team.getEventDates(range, function(dates){
+		ProjectCalendar.getEventDates(range, function(dates){
 		    
 
 
@@ -18,5 +18,3 @@ var team=ProjectTeam.CurrentTeam().runOnceOnLoad(function(team){
 			callback(dateList);
 		
 		});
-		
-});
