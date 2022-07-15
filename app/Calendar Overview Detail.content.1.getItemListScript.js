@@ -1,7 +1,7 @@
 
 		var start = new Date(application.getNamedValue("selectedDay"))
 		var range = [start, new Date(start.valueOf() + (1000 * 3600 * 24))];
-		ProjectCalendar.getEventDates(range, function(dates){
+		ProjectCalendar.EventDates(range, function(dates){
 		    
 
 
