@@ -208,7 +208,7 @@ var ProjectCalendar = (function() {
 		    }
 		    
 		    //var li=eventUl.appendChild(new Element('li',{"class":classNames}));
-		    
+		    var application=GatherDashboard.getApplication();
 		    (new UIViewModule(application, e.item, {
 		        namedView:"singleTaskListItemDetail",
 		        "className":"task-item compact"
