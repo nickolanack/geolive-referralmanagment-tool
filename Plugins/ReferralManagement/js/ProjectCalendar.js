@@ -46,7 +46,7 @@ var ProjectCalendar = (function() {
 				}
 			 	events[date].push({
 					date: date,
-					name: item.nameFr
+					name: item.nameEn
 				});
 			});
 
