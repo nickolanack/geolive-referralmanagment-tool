@@ -181,6 +181,37 @@ var ProjectCalendar = (function() {
 	});
 
 
+	ProjectCalendar.EventFieldValue = function(item) {
+
+		var date = moment(item.date).calendar().split(' at ')[0];
+		if(date.indexOf('/')>=0){
+		    return  moment(item.date).fromNow();
+		}
+		return date;
+
+	};
+
+	ProjectCalendar.FormatEventField = function(item, el, labelEl) {
+
+		var eventUl=el.appendChild(new Element('div',{"class":"event-list"}));
+		(item.event?[item.event]:item.events).forEach(function(e){
+		    
+		    var classNames="task-item task-item-"+e.item.getId();
+		    if(e.item.isComplete()){
+		        classNames+=" complete";
+		    }
+		    
+		    //var li=eventUl.appendChild(new Element('li',{"class":classNames}));
+		    
+		    (new UIViewModule(application, e.item, {
+		        namedView:"singleTaskListItemDetail",
+		        "className":"task-item compact"
+		    })).load(null,eventUl, null);
+		    
+		});
+
+	};
+
 	ProjectCalendar.EventDates = function(range, callback) {
 		var merge = function(a, b) {
 				Object.keys(b).forEach(function(date) {
