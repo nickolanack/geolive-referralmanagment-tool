@@ -46,7 +46,8 @@ var ProjectCalendar = (function() {
 				}
 			 	events[date].push({
 					date: date,
-					name: item.nameEn
+					name: item.nameEn,
+					holiday:true
 				});
 			});
 
@@ -183,8 +184,17 @@ var ProjectCalendar = (function() {
 
 	ProjectCalendar.EventFieldValue = function(item) {
 
+
+
+
 		var date = moment(item.date).calendar().split(' at ')[0];
 		if(date.indexOf('/')>=0){
+
+
+			if(item.holiday===true){
+				return moment(item.date).format("MMM Do")+' '+item.name;
+			}
+
 		    return  moment(item.date).fromNow();
 		}
 		return date;
