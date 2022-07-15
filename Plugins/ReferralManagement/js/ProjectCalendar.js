@@ -44,7 +44,7 @@ var ProjectCalendar = (function() {
 				if (!events[date]) {
 					events[date] = [];
 				}
-				events[date] = events[date].push({
+			 	events[date].push({
 					date: date,
 					name: item.nameFr
 				});
