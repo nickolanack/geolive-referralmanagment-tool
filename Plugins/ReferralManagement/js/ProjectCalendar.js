@@ -151,7 +151,11 @@ var ProjectCalendar = (function() {
 
 					if (data.length) {
 						data.forEach(function(str) {
-							renderDataItem(str);
+							try{
+								renderDataItem(str);
+							}catch(e){
+								console.error(e);
+							}
 						})
 
 						dayEl.addEvents(ReferralManagementDashboard.taskHighlightMouseEvents(function() {
