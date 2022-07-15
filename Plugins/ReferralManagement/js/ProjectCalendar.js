@@ -2,53 +2,51 @@ var ProjectCalendar = (function() {
 
 
 
-
-
-	var Holidays = new (new Class({
-		Implements:[Events],
+	var Holidays = new(new Class({
+		Implements: [Events],
 		initialize: function(application) {
 
 
-			
-			var me=this;
-			me._holidays=null;
+
+			var me = this;
+			me._holidays = null;
 
 			(new AjaxControlQuery(CoreAjaxUrlRoot, 'list_cal_events', {
 				"plugin": "ReferralManagement"
-			})).on('success', function(resp){
+			})).on('success', function(resp) {
 
-				me._holidays=resp.data;
+				me._holidays = resp.data;
 				me.fireEvent('load');
 
 			}).execute();
 
 
 		},
-		getHolidays:function(callback){
+		getHolidays: function(callback) {
 
-			if(this._holidays){
+			if (this._holidays) {
 				callback(this._fmt(this._holidays));
 				return;
 			}
 
-			var me=this;
-			this.once('load',function(){
+			var me = this;
+			this.once('load', function() {
 				callback(me._fmt(me._holidays));
 			})
 
 		},
-		_fmt:function(list){
+		_fmt: function(list) {
 
-			var events={};
-			list.forEach(function(item){
+			var events = {};
+			list.forEach(function(item) {
 
-				var date=item.date;
+				var date = item.date;
 				if (!events[date]) {
 					events[date] = [];
 				}
 				events[date] = events[date].push({
-					date:date,
-					name:item.nameFr
+					date: date,
+					name: item.nameFr
 				});
 			});
 
@@ -58,15 +56,12 @@ var ProjectCalendar = (function() {
 	}));
 
 
-	
-
-	
 
 	var ProjectCalendar = new Class({
 		Extends: CalendarModule,
 		initialize: function(application) {
 
-			var me=this;
+			var me = this;
 			var activeDayEl = null;
 
 			application.setNamedValue('calendar', me);
@@ -74,10 +69,10 @@ var ProjectCalendar = (function() {
 			var setSelectedDay = function(day, el) {
 
 				application.setNamedValue("selectedDay", day);
-				
+
 			}
 
-			var styleSelectedDay = function(day, el){
+			var styleSelectedDay = function(day, el) {
 				if (activeDayEl) {
 					activeDayEl.removeClass("active");
 				}
@@ -91,7 +86,7 @@ var ProjectCalendar = (function() {
 			}
 
 
-			
+
 			if (!application.getNamedValue("selectedDay")) {
 				application.setNamedValue("selectedDay", day);
 			}
@@ -102,7 +97,7 @@ var ProjectCalendar = (function() {
 			this.parent({
 				data: me.getEventDates.bind(me),
 				events: {
-					selectDay:function(day, el) {
+					selectDay: function(day, el) {
 						console.log('Select day:' + day);
 
 						var controller = application.getNamedValue('navigationController');
@@ -111,8 +106,8 @@ var ProjectCalendar = (function() {
 
 						//var view = controller.getCurrentView()
 						//if (view.view !== "Calendar") {
-							//controller.navigateTo("Calendar", "Main");
-							//return;
+						//controller.navigateTo("Calendar", "Main");
+						//return;
 						//}
 
 					}
@@ -151,9 +146,9 @@ var ProjectCalendar = (function() {
 
 					if (data.length) {
 						data.forEach(function(str) {
-							try{
+							try {
 								renderDataItem(str);
-							}catch(e){
+							} catch (e) {
 								console.error(e);
 							}
 						})
@@ -177,83 +172,74 @@ var ProjectCalendar = (function() {
 		},
 
 		/**
-		 * returns an object indexed by yyyy-mm-dd containing event name, or names ie: string or array<string>
-		 */
+			* returns an object indexed by yyyy-mm-dd containing event name, or names ie: string or array<string>
+			*/
 		getEventDates: function(range, callback) {
-
-
-
-
-				var me = this;
-
-
-				var merge=function(a, b){
-					Object.keys(b).forEach(function(date) {
-						if (!a[date]) {
-							a[date] = [];
-						}
-						a[date] = a[date].concat(b[date])
-					});
-
-					return a;
-				}
-				
-
-				ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
-					
-
-					var events = {};		
-
-					team.getProjects().forEach(function(p) {
-						var propEvents = p.getEventDates(range);
-						merge(events, propEvents);
-					});
-
-
-					Holidays.getHolidays(function(holidays){
-						callback(merge(events, holidays));
-					});
-
-					
-
-
-			});
-
+			ProjectCalendar.EventDates(range, callback);
 		}
 
 	});
 
-	ProjectCalendar.RenderCalendar=function(viewer, element, parentModule) {
 
-			var application = viewer.getApplication();
-			var calendar = new ProjectCalendar(application, viewer);
+	ProjectCalendar.EventDates = function(range, callback) {
+		var merge = function(a, b) {
+				Object.keys(b).forEach(function(date) {
+					if (!a[date]) {
+						a[date] = [];
+					}
+					a[date] = a[date].concat(b[date])
+				});
 
+				return a;
+			}
 
-			var renderList = function() {
-
-				// var listView = viewer.getChildView('content', 1);
-				// if (listView) {
-				// 	listView.redraw();
-				// }
-
-			};
-
-			calendar.addEvent("selectDay", function(day, el) {
-				//renderList();
-			});
 
 			ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
-				calendar.addWeakEvent(team, "tasksChanged", function() {
-					calendar.redraw();
-					renderList();
-				})
-			});
 
-			return calendar;
+
+				var events = {};
+
+				team.getProjects().forEach(function(p) {
+					var propEvents = p.getEventDates(range);
+					merge(events, propEvents);
+				});
+
+
+				Holidays.getHolidays(function(holidays) {
+					callback(merge(events, holidays));
+				});
+			});
+	}
+
+	ProjectCalendar.RenderCalendar = function(viewer, element, parentModule) {
+
+		var application = viewer.getApplication();
+		var calendar = new ProjectCalendar(application, viewer);
+
+
+		var renderList = function() {
+
+			// var listView = viewer.getChildView('content', 1);
+			// if (listView) {
+			// 	listView.redraw();
+			// }
 
 		};
 
-	
+		calendar.addEvent("selectDay", function(day, el) {
+			//renderList();
+		});
+
+		ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+			calendar.addWeakEvent(team, "tasksChanged", function() {
+				calendar.redraw();
+				renderList();
+			})
+		});
+
+		return calendar;
+
+	};
 
 
 
