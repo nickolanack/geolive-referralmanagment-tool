@@ -22,7 +22,7 @@ var ProjectCalendar = (function() {
 
 
 		},
-		getHolidays: function(callback) {
+		getHolidays: function(range, callback) {
 
 			if (this._holidays) {
 				callback(this._fmt(this._holidays));
@@ -31,7 +31,11 @@ var ProjectCalendar = (function() {
 
 			var me = this;
 			this.once('load', function() {
-				callback(me._fmt(me._holidays));
+				callback(me._fmt(me._holidays.filter(function(item){
+
+					return ProjectCalendar.DateInRange(item.date, range);
+
+				})));
 			})
 
 		},
@@ -252,7 +256,7 @@ var ProjectCalendar = (function() {
 				});
 
 
-				Holidays.getHolidays(function(holidays) {
+				Holidays.getHolidays(range, function(holidays) {
 					callback(merge(events, holidays));
 				});
 			});
