@@ -258,6 +258,36 @@ var ProjectCalendar = (function() {
 			});
 	}
 
+	ProjectCalendar.DateInRange=function(date, range){
+
+
+		if(date instanceof Date){
+			 date=date.toISOString().split('T')[0];
+		}
+
+		if (!date) {
+			return false;
+		}
+
+		date = date.split(' ')[0];
+
+		if (range) {
+			// filter range items, but past items that are not complete
+
+			var startDate = range[0].toISOString().split('T')[0];
+			var endDate = range[1].toISOString().split('T')[0];
+
+
+			if (!(date >= startDate && date < endDate)) {
+				return false;
+			}
+
+		}
+
+		return true;
+		
+	};
+
 	ProjectCalendar.RenderCalendar = function(viewer, element, parentModule) {
 
 		var application = viewer.getApplication();

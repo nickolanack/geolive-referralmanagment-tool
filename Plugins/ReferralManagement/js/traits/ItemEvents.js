@@ -48,29 +48,38 @@ var ItemEvents=(function(){
 					date = t.hasDueDate() ? t.getDueDate() : false;
 				}
 
-				if (date) {
-					date = date.split(' ')[0];
 
-					if (range) {
-						// filter range items, but past items that are not complete
-
-						var startDate = range[0].toISOString().split('T')[0];
-						var endDate = range[1].toISOString().split('T')[0];
-
-
-						if (!(date >= startDate && date < endDate)) {
-							return;
-						}
-
-					}
-
-
+				if(ProjectCalendar.DateInRange(date, range)){
 					events.push({
 						name: t.getName(),
 						item: t,
 						date: date
 					});
 				}
+
+				// if (date) {
+				// 	date = date.split(' ')[0];
+
+				// 	if (range) {
+				// 		// filter range items, but past items that are not complete
+
+				// 		var startDate = range[0].toISOString().split('T')[0];
+				// 		var endDate = range[1].toISOString().split('T')[0];
+
+
+				// 		if (!(date >= startDate && date < endDate)) {
+				// 			return;
+				// 		}
+
+				// 	}
+
+
+				// 	events.push({
+				// 		name: t.getName(),
+				// 		item: t,
+				// 		date: date
+				// 	});
+				// }
 
 			})
 
