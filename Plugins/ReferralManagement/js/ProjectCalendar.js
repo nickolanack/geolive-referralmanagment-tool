@@ -136,8 +136,19 @@ var ProjectCalendar = (function() {
 							"class": "event-data"
 						}));
 
+
+						if(d.name){
+							dataEl.setAttribute("data-label", d.name);
+						}
+
+
+						if(!d.item){
+							return;
+						}
+
 						dataEl.setAttribute("data-label", d.item.getName());
 
+					
 
 						if (d.item.isComplete()) {
 							dataEl.addClass("complete");
