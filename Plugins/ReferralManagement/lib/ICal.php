@@ -26,8 +26,8 @@ class ICal{
 
 		
 			$vEvent
-			    ->setDtStart(new \DateTime('2012-12-24'))
-			    ->setDtEnd(new \DateTime('2012-12-24'))
+			    ->setDtStart(new \DateTime($projectData->attributes->commentDeadlineDate))
+			    ->setDtEnd(new \DateTime($projectData->attributes->commentDeadlineDate))
 			    ->setNoTime(true)
 			    ->setSummary($projectData->attributes->title);
 
