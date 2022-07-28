@@ -20,7 +20,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function getICal(){
 
-		echo (new \ReferralManagement\Ical())->getCalendarForUser();
+		echo (new \ReferralManagement\ICal())->getCalendarForUser();
 		exit();
 
 	}
