@@ -24,7 +24,7 @@ class ICal{
 
 			
 
-			if(!empty($projectData->attributes->commentDeadlineDate))){
+			if(!empty($projectData->attributes->commentDeadlineDate)){
 
 				$vEvent = new \Eluceo\iCal\Component\Event();
 				$vEvent
