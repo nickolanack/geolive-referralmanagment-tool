@@ -24,12 +24,14 @@ class ICal{
 
 			$vEvent = new \Eluceo\iCal\Component\Event();
 
-		
+			error_log($projectData->attributes->commentDeadlineDate);
+
+			
 			$vEvent
 			    ->setDtStart(new \DateTime($projectData->attributes->commentDeadlineDate))
 			    ->setDtEnd(new \DateTime($projectData->attributes->commentDeadlineDate))
 			    ->setNoTime(true)
-			    ->setSummary($projectData->attributes->title);
+			    ->setSummary('Requested Response Date: '.$projectData->attributes->title);
 
 			$vCalendar->addComponent($vEvent);
 
