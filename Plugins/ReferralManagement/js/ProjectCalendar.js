@@ -22,12 +22,11 @@ var ProjectCalendar = (function() {
 
 
 
-			(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_ical', {
+			var iCalUrl=(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_ical', {
 				"plugin": "ReferralManagement"
-			})).on('success', function(resp) {
+			})).getUrl(true);
 
-			
-			}).execute();
+			console.error(iCalUrl);
 
 
 		},
