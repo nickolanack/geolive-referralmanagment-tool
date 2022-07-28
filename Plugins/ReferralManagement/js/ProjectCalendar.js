@@ -206,7 +206,7 @@ var ProjectCalendar = (function() {
 
 
 		if(hasEvent){
-			return moment(item.date).format("MMM Do") + ' ' + holidays[0].name;
+			return moment(item.date).format("MMM Do") + ', ' + holidays[0].name;
 		}
 
 		if (date.indexOf('/') >= 0) {
