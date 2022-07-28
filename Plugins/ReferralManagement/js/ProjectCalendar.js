@@ -25,7 +25,7 @@ var ProjectCalendar = (function() {
 		getHolidays: function(range, callback) {
 
 			if (this._holidays) {
-				callback(this._fmt(this._holidays.filter(function(item){
+				callback(this._fmt(this._holidays.filter(function(item) {
 					return ProjectCalendar.DateInRange(item.date, range);
 				})));
 				return;
@@ -33,7 +33,7 @@ var ProjectCalendar = (function() {
 
 			var me = this;
 			this.once('load', function() {
-				callback(me._fmt(me._holidays.filter(function(item){
+				callback(me._fmt(me._holidays.filter(function(item) {
 					return ProjectCalendar.DateInRange(item.date, range);
 				})));
 			})
@@ -48,10 +48,10 @@ var ProjectCalendar = (function() {
 				if (!events[date]) {
 					events[date] = [];
 				}
-			 	events[date].push({
+				events[date].push({
 					date: date,
 					name: item.nameEn,
-					holiday:true
+					holiday: true
 				});
 			});
 
@@ -137,18 +137,18 @@ var ProjectCalendar = (function() {
 						}));
 
 
-						if(d.name){
+						if (d.name) {
 							dataEl.setAttribute("data-label", d.name);
 						}
 
 
-						if(!d.item){
+						if (!d.item) {
 							return;
 						}
 
 						dataEl.setAttribute("data-label", d.item.getName());
 
-					
+
 
 						if (d.item.isComplete()) {
 							dataEl.addClass("complete");
@@ -199,16 +199,15 @@ var ProjectCalendar = (function() {
 
 
 
-
 		var date = moment(item.date).calendar().split(' at ')[0];
-		if(date.indexOf('/')>=0){
+		if (date.indexOf('/') >= 0) {
 
 
-			if(item.holiday===true){
-				return moment(item.date).format("MMM Do")+' '+item.name;
+			if (item.holiday === true) {
+				return moment(item.date).format("MMM Do") + ' ' + item.name;
 			}
 
-		    return  moment(item.date).fromNow();
+			return moment(item.date).fromNow();
 		}
 		return date;
 
@@ -216,66 +215,68 @@ var ProjectCalendar = (function() {
 
 	ProjectCalendar.FormatEventField = function(item, el, labelEl) {
 
-		var eventUl=el.appendChild(new Element('div',{"class":"event-list"}));
-		(item.event?[item.event]:item.events).forEach(function(e){
-		    
+		var eventUl = el.appendChild(new Element('div', {
+			"class": "event-list"
+		}));
+		(item.event ? [item.event] : item.events).forEach(function(e) {
 
-			if(!(e&&e.item)){
+
+			if (!(e && e.item)) {
 				console.error('Event missing item');
 				return;
 			}
 
-		    var classNames="task-item task-item-"+e.item.getId();
-		    if(e.item.isComplete()){
-		        classNames+=" complete";
-		    }
-		    
-		    //var li=eventUl.appendChild(new Element('li',{"class":classNames}));
-		    var application=GatherDashboard.getApplication();
-		    (new UIViewModule(application, e.item, {
-		        namedView:"singleTaskListItemDetail",
-		        "className":"task-item compact"
-		    })).load(null,eventUl, null);
-		    
+			var classNames = "task-item task-item-" + e.item.getId();
+			if (e.item.isComplete()) {
+				classNames += " complete";
+			}
+
+			//var li=eventUl.appendChild(new Element('li',{"class":classNames}));
+			var application = GatherDashboard.getApplication();
+			(new UIViewModule(application, e.item, {
+				namedView: "singleTaskListItemDetail",
+				"className": "task-item compact"
+			})).load(null, eventUl, null);
+
 		});
 
 	};
 
 	ProjectCalendar.EventDates = function(range, callback) {
 		var merge = function(a, b) {
-				Object.keys(b).forEach(function(date) {
-					if (!a[date]) {
-						a[date] = [];
-					}
-					a[date] = a[date].concat(b[date])
-				});
-
-				return a;
-			}
-
-
-			ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
-
-
-				var events = {};
-
-				team.getProjects().forEach(function(p) {
-					var propEvents = p.getEventDates(range);
-					merge(events, propEvents);
-				});
-
-
-				Holidays.getHolidays(range, function(holidays) {
-					callback(merge(events, holidays));
-				});
+			Object.keys(b).forEach(function(date) {
+				if (!a[date]) {
+					a[date] = [];
+				}
+				a[date] = a[date].concat(b[date])
 			});
+
+			return a;
+		}
+
+
+		ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
+
+
+			var events = {};
+
+			team.getProjects().forEach(function(p) {
+				var propEvents = p.getEventDates(range);
+				merge(events, propEvents);
+			});
+
+
+			Holidays.getHolidays(range, function(holidays) {
+				callback(merge(events, holidays));
+			});
+		});
 	}
 
-	ProjectCalendar.DateInRange=function(date, range){
+	ProjectCalendar.DateInRange = function(date, range) {
 
 
-		if(date instanceof Date){
-			 date=date.toISOString().split('T')[0];
+		if (date instanceof Date) {
+			date = date.toISOString().split('T')[0];
 		}
 
 		if (!date) {
@@ -298,7 +299,7 @@ var ProjectCalendar = (function() {
 		}
 
 		return true;
-		
+
 	};
 
 	ProjectCalendar.RenderCalendar = function(viewer, element, parentModule) {
@@ -332,36 +333,36 @@ var ProjectCalendar = (function() {
 	};
 
 
-	ProjectCalendar.AddTaskHighlighter=function(tasks) {
-			return {
-				"mouseover": function() {
-					var items = tasks;
-					if (typeof items == "function") {
-						items = items();
-					}
+	ProjectCalendar.AddTaskHighlighter = function(tasks) {
+		return {
+			"mouseover": function() {
+				var items = tasks;
+				if (typeof items == "function") {
+					items = items();
+				}
 
-					$$(items.map(function(t) {
-						return ".task-item-" + t.getId();
-					}).join(", ")).forEach(function(el) {
-						el.addClass("highlight");
-					})
-				},
-				"mouseout": function() {
+				$$(items.map(function(t) {
+					return ".task-item-" + t.getId();
+				}).join(", ")).forEach(function(el) {
+					el.addClass("highlight");
+				})
+			},
+			"mouseout": function() {
 
-					var items = tasks;
-					if (typeof items == "function") {
-						items = items();
-					}
+				var items = tasks;
+				if (typeof items == "function") {
+					items = items();
+				}
 
-					$$(items.map(function(t) {
-						return ".task-item-" + t.getId();
-					}).join(", ")).forEach(function(el) {
-						el.removeClass("highlight");
-					})
-				},
+				$$(items.map(function(t) {
+					return ".task-item-" + t.getId();
+				}).join(", ")).forEach(function(el) {
+					el.removeClass("highlight");
+				})
+			},
 
-			};
-		},
+		};
+	};
 
 
 
