@@ -20,13 +20,20 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function getICal(){
 
-		$event = new \Eluceo\iCal\Domain\Entity\Event();
-		$calendar = new \Eluceo\iCal\Domain\Entity\Calendar([$event]);
-		$iCalendarComponent = (new \Eluceo\iCal\Presentation\Factory\CalendarFactory())->createCalendar($calendar);
+		$vCalendar = new \Eluceo\iCal\Component\Calendar('www.example.com');
+		$vEvent = new \Eluceo\iCal\Component\Event();
+		$vEvent
+		    ->setDtStart(new \DateTime('2012-12-24'))
+		    ->setDtEnd(new \DateTime('2012-12-24'))
+		    ->setNoTime(true)
+		    ->setSummary('Christmas');
+
+		$vCalendar->addComponent($vEvent);
+
 		header('Content-Type: text/calendar; charset=utf-8');
 		header('Content-Disposition: attachment; filename="cal.ics"');
 
-		echo $iCalendarComponent;
+		echo $vCalendar->render();
 
 		exit();
 
