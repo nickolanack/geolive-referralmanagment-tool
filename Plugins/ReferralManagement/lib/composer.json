@@ -1,7 +1,8 @@
 {
-
-
     "autoload": {
         "psr-4": { "ReferralManagement\\": "" }
+    },
+    "require": {
+        "eluceo/ical": "^0.16.1"
     }
 }
