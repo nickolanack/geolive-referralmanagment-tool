@@ -17,6 +17,22 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	}
 
+
+	protected function getICal(){
+
+		$event = new \Eluceo\iCal\Domain\Entity\Event();
+		$calendar = new \Eluceo\iCal\Domain\Entity\Calendar([$event]);
+		$iCalendarComponent = (new \Eluceo\iCal\Presentation\Factory\CalendarFactory())->createCalendar($calendar);
+		header('Content-Type: text/calendar; charset=utf-8');
+		header('Content-Disposition: attachment; filename="cal.ics"');
+
+		echo $iCalendarComponent;
+
+		exit();
+
+
+	}
+
 	protected function listCalEvents() {
 
 		$data = json_decode(file_get_contents(__DIR__ . '/holidays.json'));
