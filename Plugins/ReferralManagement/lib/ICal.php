@@ -22,18 +22,22 @@ class ICal{
 
 		foreach ($list as $projectData) {
 
-			$vEvent = new \Eluceo\iCal\Component\Event();
+			
 
-			error_log($projectData->attributes->commentDeadlineDate);
+			if(!empty($projectData->attributes->commentDeadlineDate))){
+
+				$vEvent = new \Eluceo\iCal\Component\Event();
+				$vEvent
+				    ->setDtStart(new \DateTime($projectData->attributes->commentDeadlineDate))
+				    ->setDtEnd(new \DateTime($projectData->attributes->commentDeadlineDate))
+				    ->setNoTime(true)
+				    ->setSummary('Requested Response Date: '.$projectData->attributes->title);
+				$vCalendar->addComponent($vEvent);
+
+			}
+
 
 			
-			$vEvent
-			    ->setDtStart(new \DateTime($projectData->attributes->commentDeadlineDate))
-			    ->setDtEnd(new \DateTime($projectData->attributes->commentDeadlineDate))
-			    ->setNoTime(true)
-			    ->setSummary('Requested Response Date: '.$projectData->attributes->title);
-
-			$vCalendar->addComponent($vEvent);
 
 		}
 
