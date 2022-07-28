@@ -316,35 +316,9 @@ var GatherDashboard = (function() {
 		},
 
 		taskHighlightMouseEvents: function(tasks) {
-			return {
-				"mouseover": function() {
-					var items = tasks;
-					if (typeof items == "function") {
-						items = items();
-					}
-
-					$$(items.map(function(t) {
-						return ".task-item-" + t.getId();
-					}).join(", ")).forEach(function(el) {
-						el.addClass("highlight");
-					})
-				},
-				"mouseout": function() {
-
-					var items = tasks;
-					if (typeof items == "function") {
-						items = items();
-					}
-
-					$$(items.map(function(t) {
-						return ".task-item-" + t.getId();
-					}).join(", ")).forEach(function(el) {
-						el.removeClass("highlight");
-					})
-				},
-
-			};
+			return ProjectCalendar.AddTaskHighlighter(tasks);
 		},
+		
 		addChartNavigation: function(chart, initialData, item, application) {
 			var data = initialData;
 			var startDate = initialData[0].day;
