@@ -13,14 +13,11 @@ var ItemEvents=(function(){
 
 			};
 
-			me.getEvents(range, function(date){
-
-				return date.split(' ').shift();
-
-			}).forEach(function(event) {
+			me.getEvents(range).forEach(function(event) {
 
 
 				var date = event.date
+				date=date.split(' ').shift();
 
 
 				if (!events[date]) {
