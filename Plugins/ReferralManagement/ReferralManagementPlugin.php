@@ -417,9 +417,9 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 			->scanPostForEventTriggers($params);
 
 	}
-	public function getActiveProjectList() {
+	public function getActiveProjectList($userid=-1) {
 
-		return $this->getProjectList(array('status' => 'active'));
+		return $this->getProjectList(array('status' => 'active'), $userid);
 
 	}
 	public function getArchivedProjectList() {
@@ -427,7 +427,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		return $this->getProjectList(array('status' => 'archived'));
 
 	}
-	protected function getProjectList($filter = array()) {
+	protected function getProjectList($filter = array(), $userid=-1) {
 
 		// if (!Auth('memberof', 'lands-department', 'group')) {
 		// 	return array();
@@ -455,11 +455,11 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 		$this->filterRemovedProjects = array();
 
-		return array_values(array_filter(array_map(function ($project) use ($filter) {
+		return array_values(array_filter(array_map(function ($project) use ($filter, $userid) {
 
-			$project->visible = $filter($project);
+			$project->visible = $filter($project, $userid));
 			if($project->visible){
-				$project->writable=Auth('write', $project->id, 'ReferralManagement.proposal');
+				$project->writable=Auth('write', $project->id, 'ReferralManagement.proposal',  $userid);
 			}
 		
 			return $project;
