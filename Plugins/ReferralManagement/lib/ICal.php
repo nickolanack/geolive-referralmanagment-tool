@@ -20,7 +20,7 @@ class ICal{
 
 
 		$list=$this->getPlugin()->getActiveProjectList(1);
-		error_log($list);
+		error_log(print_r($list, true));
 
 		$vEvent
 		    ->setDtStart(new \DateTime('2012-12-24'))
