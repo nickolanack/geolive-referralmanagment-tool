@@ -21,6 +21,15 @@ var ProjectCalendar = (function() {
 			}).execute();
 
 
+
+			(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_ical', {
+				"plugin": "ReferralManagement"
+			})).on('success', function(resp) {
+
+			
+			}).execute();
+
+
 		},
 		getHolidays: function(range, callback) {
 
