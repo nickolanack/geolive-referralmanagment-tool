@@ -200,12 +200,16 @@ var ProjectCalendar = (function() {
 
 
 		var date = moment(item.date).calendar().split(' at ')[0];
+
+		var holidays=item.events.filter(function(e){return e.holiday===true});
+		var hasEvent=holidays.length>0;
+
+
+		if(hasEvent){
+			return moment(item.date).format("MMM Do") + ' ' + holidays[0].name;
+		}
+
 		if (date.indexOf('/') >= 0) {
-
-
-			if (item.holiday === true) {
-				return moment(item.date).format("MMM Do") + ' ' + item.name;
-			}
 
 			return moment(item.date).fromNow();
 		}
