@@ -332,7 +332,7 @@ var ProjectCalendar = (function() {
 	};
 
 
-	ProjectCalendar.AddTaskHighlighter: function(tasks) {
+	ProjectCalendar.AddTaskHighlighter=function(tasks) {
 			return {
 				"mouseover": function() {
 					var items = tasks;
