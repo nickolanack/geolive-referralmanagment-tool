@@ -23145,16 +23145,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 354,
-                            "y": 260
+                            "x": 364,
+                            "y": 270
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 314,
-                                    "y": 511
+                                    "x": 324,
+                                    "y": 533
                                 }
                             }
                         ],
@@ -23248,7 +23248,7 @@
                                                 "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": " return item.getFillColor();",
+                                                "getValueScript": " return item.getFillColor()+\"\";",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.5.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
@@ -23270,7 +23270,7 @@
                                                 "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": " return item.getLineOpacity();",
+                                                "getValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.6.config.getValueScript.js",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.6.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
@@ -23292,7 +23292,7 @@
                                                 "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": " return item.getFillOpacity(); ",
+                                                "getValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.7.config.getValueScript.js",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.7.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
@@ -23314,7 +23314,7 @@
                                                 "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": " return item.getLineWidth();",
+                                                "getValueScript": " return item.getLineWidth()+\"\";",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.8.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "

@@ -3488,8 +3488,8 @@ span.filter-btns {
     background-color: rgba(0,0,0,0.1);
 }
 
-.day.today:after {
-    background: $themeInset;
+.day.today:after, .day.active:after {
+    background-color: rgba(0,0,0,0.2);;
     position: absolute;
     content: "";
     width: 50px;
@@ -3498,6 +3498,10 @@ span.filter-btns {
     top: calc( 50% - 25px );
     border-radius: 100%;
     box-sizing: border-box;
+}
+
+.dark .day.active:after {
+     background-color: rgba(255,255,255,0.2);;
 }
 
 
