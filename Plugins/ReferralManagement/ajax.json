@@ -262,7 +262,9 @@
     },
 
     "get_ical":{
-
+        "checkKeys": [
+            "token"
+        ]
     },
 
     "get_ical_link":{
