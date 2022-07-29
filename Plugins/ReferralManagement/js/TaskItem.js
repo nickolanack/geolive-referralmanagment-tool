@@ -649,7 +649,7 @@ var TaskItem = (function() {
 
 
 	TaskItem.AddListItemEvents = function(listModule, childView, child) {
-		ProjectTaskList.AddListItemEvents(listModule, childView, child);Editor.RenderStaticPreview(assetPath : string, subAssets : Object[], width : int, height : int)
+		ProjectTaskList.AddListItemEvents(listModule, childView, child);
 	};
 
 
