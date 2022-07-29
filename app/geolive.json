@@ -7272,6 +7272,14 @@
                                 }
                             },
                             {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.4.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
                                 "type": "UIView",
                                 "config": {
                                     "className": "",
@@ -7298,14 +7306,6 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.5.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
                                     "script": "singleProjectOverviewDetail.metadata.positions.content.modules.6.config.script.js",
                                     "description": "Info about my custom script"
                                 }
@@ -7315,6 +7315,14 @@
                                 "config": {
                                     "name": "My Custom Script",
                                     "script": "singleProjectOverviewDetail.metadata.positions.content.modules.7.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.8.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             },
@@ -7334,8 +7342,8 @@
                                     "deleteItemScript": "defaultBehaviorFn()",
                                     "initModuleScript": "",
                                     "formatModuleScript": "",
-                                    "resolveItemScript": "singleProjectOverviewDetail.metadata.positions.content.modules.8.config.resolveItemScript.js",
-                                    "filterModulesScript": "singleProjectOverviewDetail.metadata.positions.content.modules.8.config.filterModulesScript.js",
+                                    "resolveItemScript": "singleProjectOverviewDetail.metadata.positions.content.modules.9.config.resolveItemScript.js",
+                                    "filterModulesScript": "singleProjectOverviewDetail.metadata.positions.content.modules.9.config.filterModulesScript.js",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": ""
@@ -7348,8 +7356,8 @@
                                     "identifier": "project-response-date",
                                     "className": "item-title project-title item-response-date",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.9.config.fieldValueScript.js",
-                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.9.config.formatElementScript.js"
+                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -7359,8 +7367,8 @@
                                     "identifier": "pros-dates-community",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.fieldValueScript.js",
-                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.10.config.formatElementScript.js"
+                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.11.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.11.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -7370,8 +7378,8 @@
                                     "identifier": "proj-author",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.11.config.fieldValueScript.js",
-                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.11.config.formatElementScript.js"
+                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.12.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.12.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -7381,7 +7389,7 @@
                                     "text": "Description",
                                     "template": "html.projectDescription",
                                     "templateVariablesScript": "{}",
-                                    "formatTextScript": "singleProjectOverviewDetail.metadata.positions.content.modules.12.config.formatTextScript.js",
+                                    "formatTextScript": "singleProjectOverviewDetail.metadata.positions.content.modules.13.config.formatTextScript.js",
                                     "formatVariablesScript": "",
                                     "ajaxRequestTemplate": true,
                                     "identifier": "htmlLabel"
@@ -7395,17 +7403,6 @@
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getName();",
-                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.13.config.formatElementScript.js"
-                                }
-                            },
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "identifier": "",
-                                    "className": "",
-                                    "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return item.getCompanyName();",
                                     "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.14.config.formatElementScript.js"
                                 }
                             },
@@ -7416,14 +7413,25 @@
                                     "identifier": "",
                                     "className": "",
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.15.config.fieldValueScript.js",
+                                    "fieldValueScript": "return item.getCompanyName();",
                                     "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.15.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "identifier": "",
+                                    "className": "",
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.16.config.fieldValueScript.js",
+                                    "formatElementScript": "singleProjectOverviewDetail.metadata.positions.content.modules.16.config.formatElementScript.js"
                                 }
                             },
                             {
                                 "type": "FormattedText",
                                 "config": {
-                                    "textValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.16.config.textValueScript.js",
+                                    "textValueScript": "singleProjectOverviewDetail.metadata.positions.content.modules.17.config.textValueScript.js",
                                     "formatModuleScript": "",
                                     "className": "project-description",
                                     "imageWidth": 300,
@@ -7454,7 +7462,7 @@
                                     "text": "Notes",
                                     "template": "html.projectNotes",
                                     "templateVariablesScript": "{}",
-                                    "formatTextScript": "singleProjectOverviewDetail.metadata.positions.content.modules.17.config.formatTextScript.js",
+                                    "formatTextScript": "singleProjectOverviewDetail.metadata.positions.content.modules.18.config.formatTextScript.js",
                                     "formatVariablesScript": "",
                                     "ajaxRequestTemplate": true,
                                     "identifier": "htmlLabel"
@@ -7464,7 +7472,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.18.config.script.js",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.19.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             },
@@ -7539,7 +7547,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.22.config.script.js",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.23.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             },
@@ -7557,8 +7565,8 @@
                                     "formOptions": "\"{}\"",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "defaultBehaviorFn()",
-                                    "initModuleScript": "singleProjectOverviewDetail.metadata.positions.content.modules.23.config.initModuleScript.js",
-                                    "formatModuleScript": "singleProjectOverviewDetail.metadata.positions.content.modules.23.config.formatModuleScript.js",
+                                    "initModuleScript": "singleProjectOverviewDetail.metadata.positions.content.modules.24.config.initModuleScript.js",
+                                    "formatModuleScript": "singleProjectOverviewDetail.metadata.positions.content.modules.24.config.formatModuleScript.js",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "",
                                     "itemButtonsScript": "return [];",
@@ -7605,7 +7613,7 @@
                                     "deleteItemScript": "defaultBehaviorFn()",
                                     "initModuleScript": "",
                                     "formatModuleScript": "",
-                                    "resolveItemScript": "singleProjectOverviewDetail.metadata.positions.content.modules.25.config.resolveItemScript.js",
+                                    "resolveItemScript": "singleProjectOverviewDetail.metadata.positions.content.modules.26.config.resolveItemScript.js",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
