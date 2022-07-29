@@ -20,23 +20,9 @@ var ProjectCalendar = (function() {
 
 			}).execute();
 
-			(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_ical_link', {
-				"plugin": "ReferralManagement"
-			})).on('success', function(resp){
-
-
-				var iCalUrl=(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_ical', {
-				"plugin": "ReferralManagement",
-				"token":resp.token
-			})).getUrl(true);
-
-			console.error(iCalUrl);
-
-
-
-			}).execute();
-
 			
+
+
 
 		},
 		getHolidays: function(range, callback) {
@@ -218,11 +204,13 @@ var ProjectCalendar = (function() {
 
 		var date = moment(item.date).calendar().split(' at ')[0];
 
-		var holidays=item.events.filter(function(e){return e.holiday===true});
-		var hasEvent=holidays.length>0;
+		var holidays = item.events.filter(function(e) {
+			return e.holiday === true
+		});
+		var hasEvent = holidays.length > 0;
 
 
-		if(hasEvent){
+		if (hasEvent) {
 			return moment(item.date).format("MMM Do") + ', ' + holidays[0].name;
 		}
 
@@ -352,6 +340,24 @@ var ProjectCalendar = (function() {
 		return calendar;
 
 	};
+
+
+	ProjectCalendar.DownloadICal=function(){
+
+		(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_ical_link', {
+				"plugin": "ReferralManagement"
+			})).on('success', function(resp) {
+
+
+				var iCalUrl = (new AjaxControlQuery(CoreAjaxUrlRoot, 'get_ical', {
+					"plugin": "ReferralManagement",
+					"token": resp.token
+				})).getUrl(true);
+
+				window.open(iCalUrl,'Download'); 
+
+			}).execute();
+	}
 
 
 	ProjectCalendar.AddTaskHighlighter = function(tasks) {
