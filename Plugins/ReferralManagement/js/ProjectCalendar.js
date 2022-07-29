@@ -20,14 +20,23 @@ var ProjectCalendar = (function() {
 
 			}).execute();
 
-
-
-			var iCalUrl=(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_ical', {
+			(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_ical_link', {
 				"plugin": "ReferralManagement"
+			})).on('success', function(resp){
+
+
+				var iCalUrl=(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_ical', {
+				"plugin": "ReferralManagement",
+				"token":resp.token
 			})).getUrl(true);
 
 			console.error(iCalUrl);
 
+
+
+			}).execute();
+
+			
 
 		},
 		getHolidays: function(range, callback) {

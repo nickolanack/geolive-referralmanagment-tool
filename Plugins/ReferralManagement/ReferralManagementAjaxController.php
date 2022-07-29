@@ -25,6 +25,23 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	}
 
+
+	protected function getICalLink(){
+
+		$results=($links=GetPlugin('Links'))->listDataCodesForItemName(1, "User", 'userCalendarEventsAccessToken');
+		if(count($results)==0){
+			$clientToken = ($links = GetPlugin('Links'))->createDataCodeForItem(1, "User", 'userCalendarEventsAccessToken', array(
+			
+			));
+
+			return array('token'=>$clientToken);
+		}
+			
+		return array('token'=>$results[0]->token);
+		
+
+	}
+
 	protected function listCalEvents() {
 
 		$data = json_decode(file_get_contents(__DIR__ . '/holidays.json'));
