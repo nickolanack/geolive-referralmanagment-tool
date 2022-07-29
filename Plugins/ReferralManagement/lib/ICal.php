@@ -38,6 +38,7 @@ class ICal{
 				    ->setNoTime(true)
 				    ->setSummary('Requested Response Date: '.$projectData->attributes->title)
 				    ->setDescription($projectData->attributes->description);
+				    ->setCategories(['response dates']);
 				$vCalendar->addComponent($vEvent);
 
 			}
@@ -60,6 +61,8 @@ class ICal{
 					    ->setNoTime(true)
 					    ->setSummary('Project Task Due: '.$taskData->name)
 					    ->setDescription($projectData->attributes->title."\n\n".$taskData->description);
+					    ->setCategories(['task due dates']);
+
 					$vCalendar->addComponent($vEvent);
 
 				}
