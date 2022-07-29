@@ -1,21 +1,20 @@
-   var t=item.getTasks().filter(function(t){
-        return !t.isComplete();
-    });
-    var u=t.filter(function(t){
-        return !t.isOverdue();
-    }).length;
+
+
+
+var d=item.getDaysUntilDeadline();
+
+return new ModuleArray([
+    new ElementModule("label",{html:"Activity Start Date"}),
+    new ElementModule("div",{html:"there is no start date yet", "class":"percent-complete-value"}),
     
-    var o=t.length-u;
-    var uStr=u + " upcoming";
-    var oStr='<span class="overdue">'+o + " overdue</span>";
-    
-    var str=(u>0?uStr:"")+(u>0&&o>0?" and ":"")+(o>0?oStr:"")
-    if(u==0&&o==0){
-        str="0 remaining tasks";
-    }
-    
-    return new ModuleArray([
-        new ElementModule("label",{html:"Remaining tasks"}),
-        new ElementModule("div",{html:str, "class":"percent-complete-value"}),
-        new ProgressBarModule({value:function(){ return 100-item.getPercentComplete(); },"class":"percent-complete"})
-    ],{"class":"progress", identifier:"project-task-remaining"});
+],{"class":"progress", identifier:"project-task-deadline"});
+
+
+
+var d=item.getDaysUntilDeadline();
+
+return new ModuleArray([
+    new ElementModule("label",{html:"Deadline"}),
+    new ElementModule("div",{html:item.hasDeadline()?(moment(item.getDeadlineDate()).format("MMM Do YYYY")+". "+d+" day"+(d==1?"":"s")+" left until deadline"):"There is no deadline set for this project", "class":"percent-complete-value"}),
+    new ProgressBarModule({value:function(){ return item.getPercentTimeComplete(); },"class":"percent-complete reverse-tint"})
+],{"class":"progress", identifier:"project-task-deadline"});

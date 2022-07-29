@@ -7272,14 +7272,6 @@
                                 }
                             },
                             {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.4.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
                                 "type": "UIView",
                                 "config": {
                                     "className": "",
@@ -7300,6 +7292,14 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": ""
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "singleProjectOverviewDetail.metadata.positions.content.modules.5.config.script.js",
+                                    "description": "Info about my custom script"
                                 }
                             },
                             {
