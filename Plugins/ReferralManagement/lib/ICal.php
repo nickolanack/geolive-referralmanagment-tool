@@ -63,6 +63,10 @@ class ICal{
 					    ->setDescription($projectData->attributes->title."\n\n".$taskData->description);
 					    ->setCategories(['task due dates']);
 
+					if($taskData->complete===true){
+						$vEvent->setStatus('COMPLETE');
+					}
+
 					$vCalendar->addComponent($vEvent);
 
 				}
