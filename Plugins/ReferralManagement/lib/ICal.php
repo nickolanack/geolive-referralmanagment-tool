@@ -37,7 +37,7 @@ class ICal{
 				    ->setDtEnd(new \DateTime($projectData->attributes->commentDeadlineDate))
 				    ->setNoTime(true)
 				    ->setSummary('Requested Response Date: '.$projectData->attributes->title)
-				    ->setDescription($projectData->attributes->description);
+				    ->setDescription($projectData->attributes->description)
 				    ->setCategories(['response dates']);
 				$vCalendar->addComponent($vEvent);
 
