@@ -64,7 +64,7 @@ class ICal{
 					    ->setCategories(['task due dates']);
 
 					if($taskData->complete===true){
-						$vEvent->setStatus('COMPLETE');
+						$vEvent->setStatus('CANCELLED');
 					}
 
 					$vCalendar->addComponent($vEvent);
