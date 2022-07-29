@@ -60,7 +60,7 @@ class ICal{
 					    ->setDtEnd(new \DateTime($dueDate))
 					    ->setNoTime(true)
 					    ->setSummary('Project Task Due: '.$taskData->name)
-					    ->setDescription($projectData->attributes->title."\n\n".$taskData->description);
+					    ->setDescription($projectData->attributes->title."\n\n".$taskData->description)
 					    ->setCategories(['task due dates']);
 
 					if($taskData->complete===true){
