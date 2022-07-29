@@ -19,7 +19,7 @@ class ICal{
 
 		$results=($links=GetPlugin('Links'))->listDataCodesForItemName(1, "User", 'userCalendarEventsAccessToken'));
 		if(count($results)==0){
-			$clientToken = ($links = GetPlugin('Links'))->createDataCodeForItem(1, "User", 'userEventsAccessToken', array(
+			$clientToken = ($links = GetPlugin('Links'))->createDataCodeForItem(1, "User", 'userCalendarEventsAccessToken', array(
 			
 			));
 
