@@ -74,6 +74,84 @@ var ProjectTaskList = (function() {
 
 	});
 
+
+
+
+	var _currentListModule;
+
+	ProjectTaskList.InitTemplateList = function(listModule) {
+		_currentListModule = listModule;
+	}
+
+	ProjectTaskList.NewTaskTemplateButton = function(item) {
+
+		var module = new ElementModule('button', {
+			html: "Add Task",
+			"className": "inline-btn primary-btn add",
+			events: {
+				click: function() {
+
+
+
+					var viewControllerApp = ReferralManagementDashboard.getApplication();
+					var name = "Some Task";
+
+					var names = _currentListModule.getItems().map(function(task) {
+						return task.getName();
+					});
+
+					var i = 2;
+
+					while (names.indexOf(name) >= 0) {
+						name = "Some Task " + i;
+						i++;
+					}
+
+					var task = new TaskTemplateItem(viewControllerApp.getNamedValue("currentProject"), {
+						name: name,
+						dueDate: "in 7 days"
+					});
+
+					_currentListModule.addItem(task, function() {
+						//callback on load
+					});
+
+				}
+			}
+		});
+
+		return module;
+
+
+	}
+
+	ProjectTaskList.FormatTaskTemplateModules = function(list, listItem, uiview, listModule) {
+
+		// list.content.unshift(new ElementModule('checkbox', {
+		// 	checked:true
+		// 	className: "inline-btn remove primary-btn error",
+		// 	events: {
+		// 		click: function() {
+		// 			uiview.remove();
+		// 		}
+		// 	}
+		// }))
+
+		list.content.push(new ElementModule('button', {
+			html: "Remove",
+			className: "inline-btn remove primary-btn error",
+			events: {
+				click: function() {
+					uiview.remove();
+				}
+			}
+		}))
+
+	};
+
+
+
+
 	/**
 		* returns a module arrays
 		*/
