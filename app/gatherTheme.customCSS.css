@@ -1091,6 +1091,38 @@ div.popover[data-with-view="reportSelectionView"]{
 
 
 
+.toggle-status:after {
+    content: "\0f009";
+    font-family: 'FontAwesome';
+    position: relative;
+    bottom: 100px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.toggle-status {
+    float:right;
+}
+
+
+[data-view="singleProjectOverviewDetail"] .show-progress span.progress{
+    display: inline-block;
+}
+
+[data-view="singleProjectOverviewDetail"] .show-progress [data-view="proposalOverviewStatus"] {
+    display: none
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

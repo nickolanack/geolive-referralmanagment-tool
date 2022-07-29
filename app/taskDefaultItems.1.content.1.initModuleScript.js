@@ -1,1 +1,1 @@
-TaskItem.InitTemplateList(module);
+ProjectTaskList.InitTemplateList(module);
