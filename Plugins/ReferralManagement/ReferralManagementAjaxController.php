@@ -18,9 +18,17 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 	}
 
 
-	protected function getICal(){
+	protected function getICal($json){
 
-		echo (new \ReferralManagement\ICal())->getCalendarForUser();
+
+		$token = GetPlugin('Links')->peekDataToken($json->token);
+
+		if (!(isset($token->name) && isset($token->data) && in_array($token->name, array('userCalendarEventsAccessToken'))) {
+			return $this->setError('Invalid access token: ' . json_encode($token));
+		}
+
+
+		echo (new \ReferralManagement\ICal())->getCalendarForUser($token->item);
 		exit();
 
 	}

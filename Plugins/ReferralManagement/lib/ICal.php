@@ -10,20 +10,20 @@ class ICal{
 		return GetPlugin('ReferralManagement');
 	}
 
-	public function getCalendarForUser(){
+	public function getCalendarForUser($userid){
 
 
 
 
 		$vCalendar = new \Eluceo\iCal\Component\Calendar('www.example.com');
 
-		
+
 	
 		
 		
 
 
-		$list=$this->getPlugin()->getActiveProjectList(1);
+		$list=$this->getPlugin()->getActiveProjectList($userid);
 
 		foreach ($list as $projectData) {
 
