@@ -17,7 +17,7 @@ class ICal{
 
 		$vCalendar = new \Eluceo\iCal\Component\Calendar('www.example.com');
 
-		$results=($links=GetPlugin('Links'))->listDataCodesForItemName(1, "User", 'userCalendarEventsAccessToken'));
+		$results=($links=GetPlugin('Links'))->listDataCodesForItemName(1, "User", 'userCalendarEventsAccessToken');
 		if(count($results)==0){
 			$clientToken = ($links = GetPlugin('Links'))->createDataCodeForItem(1, "User", 'userCalendarEventsAccessToken', array(
 			
