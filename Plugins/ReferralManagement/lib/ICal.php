@@ -43,6 +43,31 @@ class ICal{
 			}
 
 
+			foreach($projectData->tasks as $taskData){
+
+
+				if(!empty($taskData->dueDate)){
+
+
+					$dueDate=explode(' ', $taskData->dueDate);
+					$dueDate=array_shift($dueDate);
+					
+
+					$vEvent = new \Eluceo\iCal\Component\Event();
+					$vEvent
+					    ->setDtStart(new \DateTime($dueDate))
+					    ->setDtEnd(new \DateTime($dueDate))
+					    ->setNoTime(true)
+					    ->setSummary('Project Task Due: '.$taskData->name)
+					    ->setDescription($projectData->attributes->title."\n\n".$taskData->description);
+					$vCalendar->addComponent($vEvent);
+
+				}
+
+
+			}
+
+
 			
 
 		}
