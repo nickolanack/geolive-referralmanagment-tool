@@ -24,7 +24,7 @@ class QRCode extends \core\extensions\Plugin  {
         //each code square will be 4x4 pixels (4x zoom)
         //code will have 2 code squares white boundary around 
         ob_start();
-        QRcode::png('PHP QR Code :)', 'test.png', 'L', 4, 2);
+        \QRcode::png('PHP QR Code :)', 'test.png', 'L', 4, 2);
         $content=ob_get_contents();
         ob_end_clean();
 
