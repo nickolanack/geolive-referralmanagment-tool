@@ -23,15 +23,24 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 
 		$results=($links=GetPlugin('Links'))->listDataCodesForItemName($json->project, "ReferralManagement.proposal", 'projectMapAccessToken');
+
+		$token=null;
+
 		if(count($results)==0){
 			$clientToken = ($links = GetPlugin('Links'))->createDataCodeForItem($json->project, "ReferralManagement.proposal", 'projectMapAccessToken', array(
 				
 			));
 
-			return array('token'=>$clientToken);
+			$token=$clientToken;
+		}else{
+			$token=$results[0]->token;
 		}
+
+
+		$qrcode=GetPlugin('QRCode')->getQRCode($token);
 			
-		return array('token'=>$results[0]->token);
+		return array('token'=>$token, 'qrcode'=>$qrcode);
+		
 		
 
 
