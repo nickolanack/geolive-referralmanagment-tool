@@ -6146,3 +6146,16 @@ div.popover[data-with-view="reportSelectionView"]{
 
     
     
+li.menu-project-share button {
+    font-size: 0;
+}
+
+li.menu-project-share button:after {
+    content: "\0f029";
+    font-family: 'FontAwesome';
+    font-size: 17px;
+}
+    
+    
+    
+    
