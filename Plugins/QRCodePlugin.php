@@ -10,7 +10,7 @@ namespace Plugin;
  *
  * For logged in users, feed items can be pinned and archived
  */
-class QRCode extends \core\extensions\Plugin  {
+class QRCodeP extends \core\extensions\Plugin  {
 
 
 	public function getQRCode($data){
