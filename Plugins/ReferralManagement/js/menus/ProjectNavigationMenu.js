@@ -189,7 +189,7 @@ var ProjectNavigationMenu = (function() {
 
 								(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_qr_code', {
 		    		                "plugin": "ReferralManagement",
-		    		                "project":item.getProject()
+		    		                "project":item.getId()
 		    		            })).on('success', function(){
 
 
