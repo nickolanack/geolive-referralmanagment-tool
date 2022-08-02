@@ -18,7 +18,7 @@ class QRCode extends \core\extensions\Plugin  {
 
 
         //include only that one, rest required files will be included from it
-        include __DIR__."/lib/qrlib.php";
+        include __DIR__."/lib/phpqrcode/qrlib.php";
 
         //write code into file, Error corection lecer is lowest, L (one form: L,M,Q,H)
         //each code square will be 4x4 pixels (4x zoom)
