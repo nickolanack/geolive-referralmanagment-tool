@@ -18,6 +18,13 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 	}
 
 
+	protected function getQRCode($json){
+		
+
+
+	}
+
+
 	protected function getICal($json){
 
 
