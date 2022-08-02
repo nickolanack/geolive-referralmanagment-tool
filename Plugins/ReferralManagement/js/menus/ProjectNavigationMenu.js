@@ -181,6 +181,13 @@ var ProjectNavigationMenu = (function() {
 								}
 							});
 						}
+					}, {
+						html: "Share", //"Proponent",
+						events: {
+							click: function() {
+								console.error('share code')
+							}
+						}
 					}]
 				};
 

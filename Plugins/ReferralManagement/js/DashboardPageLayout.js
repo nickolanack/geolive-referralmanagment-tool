@@ -725,7 +725,18 @@ var DashboardPageLayout = (function() {
 						}
 						return true;
 					}
-				}
+				},
+				{
+					html: ['Share'],
+					condition: function() {
+
+						if (AppClient.getUserType() == "admin") {
+							return true;
+						}
+						return false;
+					}
+
+				},
 
 
 			]
