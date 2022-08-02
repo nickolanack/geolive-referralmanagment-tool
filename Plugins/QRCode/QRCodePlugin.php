@@ -19,7 +19,7 @@ class QRCode extends \core\extensions\Plugin  {
         include __DIR__."/lib/phpqrcode/qrlib.php";
 
  
-        \QRcode::png('PHP QR Code :)', __DIR__.'/test.png', 'L', 4, 2);
+        \QRcode::png(json_encode($data), __DIR__.'/test.png', 'L', 10, 2);
         $content=file_get_contents( __DIR__.'/test.png');
        
 

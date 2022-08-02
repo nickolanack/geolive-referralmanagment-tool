@@ -37,7 +37,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		}
 
 
-		$qrcode=GetPlugin('QRCode')->getQRCode($token);
+		$qrcode=GetPlugin('QRCode')->getQRCode(array('domain'=>HtmlDocument()->website(), 'token'=>$token));
 			
 		return array('token'=>$token, 'qrcode'=>$qrcode);
 		
