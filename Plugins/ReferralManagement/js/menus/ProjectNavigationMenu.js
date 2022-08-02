@@ -185,7 +185,17 @@ var ProjectNavigationMenu = (function() {
 						html: "Share", //"Proponent",
 						events: {
 							click: function() {
-								console.error('share code')
+								
+
+								(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_qr_code', {
+		    		                "plugin": "ReferralManagement",
+		    		                "project":item.getProject()
+		    		            })).on('success', function(){
+
+
+
+		    		            }).execute();
+
 							}
 						}
 					}]
