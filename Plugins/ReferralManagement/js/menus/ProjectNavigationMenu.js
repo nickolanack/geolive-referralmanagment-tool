@@ -190,8 +190,26 @@ var ProjectNavigationMenu = (function() {
 								(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_qr_code', {
 		    		                "plugin": "ReferralManagement",
 		    		                "project":item.getId()
-		    		            })).on('success', function(){
+		    		            })).on('success', function(resp){
 
+
+
+									(new UIModalDialog(application, new MockDataTypeItem({
+										name:"Scan this code with the field assessment app",
+										image:resp.qrcode
+									}), {
+										"formName": "dialogForm",
+										"formOptions": {
+											"template": "form",
+											"className": "alert-view",
+											"showCancel":false,
+											"labelForSubmit":"Yes",
+											"labelForCancel":"No",
+											"closable":true
+										}
+									})).on('complete', function(){
+										
+									}).show();
 
 
 		    		            }).execute();
