@@ -28,7 +28,8 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		if(count($results)==0){
 			$clientToken = ($links = GetPlugin('Links'))->createDataCodeForItem($json->project, "ReferralManagement.proposal", 'projectMapAccessToken', array(
-				
+				'id' => $json->project,
+				"creator" => GetClient()->getUserId(),
 			));
 
 			$token=$clientToken;
