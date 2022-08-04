@@ -1104,6 +1104,18 @@ div.popover[data-with-view="reportSelectionView"]{
     float:right;
 }
 
+.toggle-status:before {
+    content: "show progress";
+    position: relative;
+    bottom: 100px;
+    right: 36px;
+    cursor: pointer;
+}
+
+.show-progress .toggle-status:before {
+    content: "show status";
+}
+
 
 [data-view="singleProjectOverviewDetail"] .show-progress span.progress{
     display: inline-block;
