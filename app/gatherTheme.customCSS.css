@@ -1092,7 +1092,7 @@ div.popover[data-with-view="reportSelectionView"]{
 
 
 .toggle-status:after {
-    content: "\0f009";
+    content: "\0f021";
     font-family: 'FontAwesome';
     position: relative;
     bottom: 100px;
@@ -1102,6 +1102,18 @@ div.popover[data-with-view="reportSelectionView"]{
 
 .toggle-status {
     float:right;
+}
+
+.toggle-status:before {
+    content: "show progress";
+    position: relative;
+    bottom: 100px;
+    right: 36px;
+    cursor: pointer;
+}
+
+.show-progress .toggle-status:before {
+    content: "show status";
 }
 
 
