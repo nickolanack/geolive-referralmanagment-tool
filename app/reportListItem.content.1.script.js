@@ -49,7 +49,7 @@ var reportBtn=new ElementModule('button',{"identifier":"button-report", "html":"
     }}})
     
 if(AppClient.getUserType()=="admin"){    
-var adminButton=new ElementModule('button',{"identifier":"button-report", "html":"Preview", "class":"primary-btn report", "events":{"click":function(){
+var adminButton=new ElementModule('button',{"identifier":"button-report", "html":"Preview", "class":"primary-btn report admin-btn", "events":{"click":function(){
     
         var exportQuery=new AjaxControlQuery(CoreAjaxUrlRoot, 'generate_report', {
     		                "plugin": "ReferralManagement",
