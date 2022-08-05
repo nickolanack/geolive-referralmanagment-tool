@@ -4,7 +4,8 @@
                     name:item.name,
                     description:item.description,
                     fieldType:item.fieldType,
-                    defaultValue:item.defaultValue
+                    defaultValue:item.defaultValue,
+                    options:item.options
                 });
                 
             }));
