@@ -186,7 +186,8 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		return array('parameters' => array_merge(
 			GetWidget('dashboardConfig')->getConfigurationValues(),
-			GetWidget('dashboardContentConfig')->getConfigurationValues()
+			GetWidget('dashboardContentConfig')->getConfigurationValues(),
+			GetWidget(362)->getParameter('sassParamters')
 		));
 	}
 
