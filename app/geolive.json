@@ -27725,16 +27725,16 @@
                             "reportFormParameterForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 264,
-                            "y": 286
+                            "x": 274,
+                            "y": 296
                         },
                         "children": [
                             "reportFormParameterForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 224,
-                                    "y": 474
+                                    "x": 234,
+                                    "y": 484
                                 }
                             }
                         ],
@@ -27809,6 +27809,28 @@
                                                 "getValueScript": " return item.getDefaultValue();",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "reportFormParameterForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Options",
+                                                "placeholder": "add value",
+                                                "lines": 2,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "beforeRenderModuleScript": "",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": "reportFormParameterForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.getValueScript.js",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "reportFormParameterForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         }
