@@ -184,10 +184,18 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function getDashboardConfig($json) {
 
+		$sass=GetWidget(362)->getParameter('sassParamters');
+		if(is_string($sass)){
+			$sass=json_decode($sass, true);
+		}
+		if(is_object($sass)){
+			$sass=get_object_vars($sass)
+		}
+
 		return array('parameters' => array_merge(
 			GetWidget('dashboardConfig')->getConfigurationValues(),
 			GetWidget('dashboardContentConfig')->getConfigurationValues(),
-			GetWidget(362)->getParameter('sassParamters')
+			$sass
 		));
 	}
 
