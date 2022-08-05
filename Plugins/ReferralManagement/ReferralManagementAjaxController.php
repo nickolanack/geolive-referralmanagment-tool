@@ -189,7 +189,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			$sass=json_decode($sass, true);
 		}
 		if(is_object($sass)){
-			$sass=get_object_vars($sass)
+			$sass=get_object_vars($sass);
 		}
 
 		return array('parameters' => array_merge(
