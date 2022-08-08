@@ -22,7 +22,19 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 
 		$token = GetPlugin('Links')->peekDataToken($json->accessToken);
-		return array('token'=>$token);
+
+		GetPlugin('Maps');
+		$layer = (new \spatial\LayerLoader())->fromName($json->layerName);
+
+
+		// $item = new Marker();
+		// $item->setLayerId($layer->getId());
+		// $item->setName($json->shape->name);
+		// $item->setCoordinates($json->shape->name);
+		// (new \spatial\FeatureLoader())->save($item);
+
+
+		return array('token'=>$token, 'json'=>$json);
 
 	}
 
@@ -30,7 +42,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 	protected function removeMapFeature($json){
 		
 		$token = GetPlugin('Links')->peekDataToken($json->accessToken);
-		return array('token'=>$token);
+		return array('token'=>$token, 'json'=>$json);
 
 
 	}
