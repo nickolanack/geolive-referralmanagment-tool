@@ -6,7 +6,7 @@
         "template": "html.reportOptionsForm",
         "templateVariablesScript": "{}",
         "formatTextScript": "var btn=ConfigItem.CreateEditBtn(new ConfigItem({\n    \"editLabel\":\"Edit form text\",\n    'widget':options.widget,\n    'form':'textFieldForm',\n    'stepOptions':{\n        width:600\n    }\n}));\n\nif(btn){\n    module.getElement().appendChild(btn);\n}",
-        "formatVariablesScript": "",
+        "formatVariablesScript": "console.log('this is where code needs to add submission variables')",
         "ajaxRequestTemplate": true,
         "identifier": "htmlLabel"
     }
