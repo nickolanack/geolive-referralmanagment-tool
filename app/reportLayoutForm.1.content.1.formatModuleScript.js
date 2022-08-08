@@ -11,4 +11,6 @@
     
     return ObjectAppend_({}, item.toObject(), data);
     
-}).setUpdateField('templatesData');
+})
+    .setUpdateField('templatesData').
+    .enableDragOrdering();
