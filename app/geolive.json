@@ -27891,16 +27891,16 @@
                             "Displays the form from parameters before rendering the report.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 258,
-                            "y": 360
+                            "x": 268,
+                            "y": 370
                         },
                         "children": [
                             "Displays the form from parameters before rendering the report.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 218,
-                                    "y": 526
+                                    "x": 228,
+                                    "y": 536
                                 }
                             }
                         ],
@@ -27932,7 +27932,7 @@
                                                 "initModuleScript": "",
                                                 "formatModuleScript": "Displays the form from parameters before rendering the report.metadata.children.1.builderMetadata.positions.content.modules.1.config.formatModuleScript.js",
                                                 "resolveItemScript": "return item",
-                                                "filterModulesScript": "Displays the form from parameters before rendering the report.metadata.children.1.builderMetadata.positions.content.modules.1.config.filterModulesScript.js",
+                                                "filterModulesScript": "\nreturn list",
                                                 "itemButtonsScript": "return [];",
                                                 "insertAtTop": false,
                                                 "targetName": "",
