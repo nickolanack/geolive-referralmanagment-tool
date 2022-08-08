@@ -18,6 +18,24 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 	}
 
 
+	protected function addMapFeature($json){
+
+
+		$token = GetPlugin('Links')->peekDataToken($json->accessToken);
+		return array('token'=>$token);
+
+	}
+
+
+	protected function removeMapFeature($json){
+		
+		$token = GetPlugin('Links')->peekDataToken($json->accessToken);
+		return array('token'=>$token);
+
+
+	}
+
+
 	protected function getQRCode($json){
 
 
