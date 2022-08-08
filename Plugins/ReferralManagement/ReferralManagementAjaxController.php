@@ -23,6 +23,11 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		$token = GetPlugin('Links')->peekDataToken($json->accessToken);
 
+		if(!($token&&$token->name==='projectMapAccessToken'&&isset($token->data->id))){
+			return $this->setError('Invalid token');
+		}
+
+
 		GetPlugin('Maps');
 		$layer = (new \spatial\LayerLoader())->fromName('UserLayer');
 
@@ -41,7 +46,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		(new \spatial\FeatureLoader())->save($item);
 
 
-		return array('token'=>$token, 'json'=>$json);
+		return array('item');
 
 	}
 
