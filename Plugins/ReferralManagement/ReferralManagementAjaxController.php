@@ -27,11 +27,11 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		$layer = (new \spatial\LayerLoader())->fromName($json->layerName);
 
 
-		// $item = new Marker();
-		// $item->setLayerId($layer->getId());
-		// $item->setName($json->shape->name);
-		// $item->setCoordinates($json->shape->name);
-		// (new \spatial\FeatureLoader())->save($item);
+		$item = new Marker();
+		$item->setLayerId($layer->getId());
+		$item->setName('<project:'.$token->data->id.'>'.$json->feature->title);
+		$item->setCoordinates($json->feature->coordinates);
+		(new \spatial\FeatureLoader())->save($item);
 
 
 		return array('token'=>$token, 'json'=>$json);
