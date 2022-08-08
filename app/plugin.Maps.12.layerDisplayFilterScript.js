@@ -8,10 +8,10 @@ if(key_exists('filter', $parseSettings)&&$parseSettings->filter=='user'){
     error_log(print_r($options, true));
    error_log(print_r($feature['info'], true));
    
-   if(isset($options->map)&&strpos($feature['name'], $options->map)===0){
+   //if(isset($options->map)&&strpos($feature['name'], $options->map)===0){
       
        return isset($feature['info']->shared)&&$feature['info']->shared;
-   }
+   //}
    
    return false;
 }
