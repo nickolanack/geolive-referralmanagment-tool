@@ -24,7 +24,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		$token = GetPlugin('Links')->peekDataToken($json->accessToken);
 
 		GetPlugin('Maps');
-		$layer = (new \spatial\LayerLoader())->fromName($json->layerName);
+		$layer = (new \spatial\LayerLoader())->fromName('UserLayer');
 
 
 		$item = new Marker();
