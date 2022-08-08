@@ -30,7 +30,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		$item = new Marker();
 		$item->setLayerId($layer->getId());
 		$item->setName('<project:'.$token->data->id.'>'.$json->feature->title);
-		$item->setCoordinates($json->feature->coordinates);
+		$item->setCoordinates($json->feature->coordinates[0], $json->feature->coordinates[1]);
 		(new \spatial\FeatureLoader())->save($item);
 
 
