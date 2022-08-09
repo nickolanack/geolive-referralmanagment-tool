@@ -7,6 +7,6 @@
         "maxChars": 0,
         "textFormatScript": "",
         "beforeRenderModuleScript": "",
-        "onRenderTextFieldScript": "textField.addEvent('change',function(){\n    var p=module.getElement().parentNode.parentNode;\n    if(textField.getValue()==='Report Template'){\n        p.addClass('is-report-template')\n        return;\n    }\n     p.removeClass('is-report-template');\n    \n})"
+        "onRenderTextFieldScript": "check=function(){\n    var p=module.getElement().parentNode.parentNode.parentNode;\n    if(textField.getValue()==='Report Template'){\n        p.addClass('is-report-template')\n        return;\n    }\n     p.removeClass('is-report-template');\n    \n};\ntextField.addEvent('change',check);\ntextField.runOnceOnLoad(check);"
     }
 }
