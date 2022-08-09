@@ -11,5 +11,5 @@
                     parameters:template.parameters||[]
                 });
                 
-            }))
+            }).filter(function(d){return d.getName()!="Report Template";}))
 	}).execute();
