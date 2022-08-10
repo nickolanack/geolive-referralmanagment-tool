@@ -6,6 +6,10 @@ class Attachments{
 
 	public function add($itemId, $itemType, $document){
 
+		if(!(isset($document->documentType)&&isset($document->documentHtml))){
+			throw new \Exception('Expected ->documentType, and ->documentHtml');
+		}
+
 
 		$table = 'proposalAttributes';
 	
@@ -49,6 +53,10 @@ class Attachments{
 
 
 	public function remove($itemId, $itemType, $document){
+
+		if(!(isset($document->documentType)&&isset($document->documentHtml))){
+			throw new \Exception('Expected ->documentType, and ->documentHtml');
+		}
 
 		$table = 'proposalAttributes';
 		$fields = array(

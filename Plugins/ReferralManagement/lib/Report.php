@@ -250,7 +250,7 @@ class Report {
 
     	$meta = (new \Filesystem\FileMetadata())->getMetadata($targetFile)->metadata;
 
-    	(new \ReferralManagement\Attachments())->add($this->proposal,'ReferralManagement.proposal', array(
+    	(new \ReferralManagement\Attachments())->add($this->proposal,'ReferralManagement.proposal', (object) array(
 			"documentType"=>'documents',
 			"documentHtml"=>$meta->html
 		));
