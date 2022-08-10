@@ -9,5 +9,5 @@ var toggle=el.appendChild(new Element('button', {"class":"section-toggle", event
         return;
     }
     p.addClass('min');
-    toggle.remove('active');
+    toggle.removeChild('active');
 }}}));
