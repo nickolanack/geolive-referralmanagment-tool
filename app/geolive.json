@@ -27726,16 +27726,16 @@
                             "reportFormParameterForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 394,
-                            "y": 416
+                            "x": 404,
+                            "y": 426
                         },
                         "children": [
                             "reportFormParameterForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 354,
-                                    "y": 617
+                                    "x": 364,
+                                    "y": 627
                                 }
                             }
                         ],
@@ -27760,7 +27760,7 @@
                                                 "showImages": true,
                                                 "showDocuments": true,
                                                 "showVideos": true,
-                                                "className": "no-media",
+                                                "className": "field-description no-media",
                                                 "maxChars": 0,
                                                 "showExpandInput": true,
                                                 "toolbarPosition": "bottom",
@@ -27772,7 +27772,7 @@
                                         {
                                             "type": "FormTextField",
                                             "config": {
-                                                "className": "width-2",
+                                                "className": "width-2 field-type",
                                                 "label": "Field Type",
                                                 "placeholder": "add value",
                                                 "lines": 1,
@@ -27794,7 +27794,7 @@
                                         {
                                             "type": "FormTextField",
                                             "config": {
-                                                "className": "width-2",
+                                                "className": "width-2 field-value",
                                                 "label": "Default Field Value",
                                                 "placeholder": "add value",
                                                 "lines": 1,
@@ -27816,7 +27816,7 @@
                                         {
                                             "type": "FormTextField",
                                             "config": {
-                                                "className": "",
+                                                "className": "field-options",
                                                 "label": "Options",
                                                 "placeholder": "add value",
                                                 "lines": 2,
