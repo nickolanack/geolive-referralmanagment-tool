@@ -1,13 +1,13 @@
 var el=module.getElement();
 var p=el.parentNode;
-p.addClass('min');
+p.addClass('minimize');
 
 var toggle=el.appendChild(new Element('button', {"class":"section-toggle", events:{click:function(){
-    if(p.hasClass('min')){
-        p.removeClass('min');
+    if(p.hasClass('minimize')){
+        p.removeClass('minimize');
         toggle.addClass('active');
         return;
     }
-    p.addClass('min');
+    p.addClass('minimize');
     toggle.removeChild('active');
 }}}));
