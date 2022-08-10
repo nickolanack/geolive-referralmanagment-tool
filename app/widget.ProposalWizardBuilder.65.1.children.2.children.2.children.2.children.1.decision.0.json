@@ -1,6 +1,6 @@
 {
     "type": "ScriptDecision",
     "config": {
-        "script": "return AppClient.getUserType()===\"guest\"?children[1]:children[0];"
+        "script": "return AppClient.getUserType()===\"guest\"?children[1]:-1;\/\/children[0];"
     }
 }
