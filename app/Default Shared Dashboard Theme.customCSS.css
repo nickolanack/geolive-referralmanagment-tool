@@ -6224,5 +6224,47 @@ li.menu-project-share button:after {
 }
     
     
+ .dock-left{   
+    
+    &.pb-w{
+        
+        &.shadow.open>* {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 600px;
+        }
+        
+        .template-footer {
+            bottom: 0;
+            z-index: 1;
+            position: fixed;
+            width: 600px;
+            left: 0;
+        }
+        
+        .pb-modules-viewer {
+            padding-bottom: 60px;
+        }
+        
+    }
+    
+    
+    &.pb-o{
+        display: none;
+    }
+    
+} 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
