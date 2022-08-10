@@ -1,3 +1,6 @@
 wizard.on('valueChange', function(){
-   console.log( wizard.getData());
+  var type=wizard.getData().fieldName;
+  if(type=='heading'){
+      textField.setLabel('Heading Text')
+  }
 })
