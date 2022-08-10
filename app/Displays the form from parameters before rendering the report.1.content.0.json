@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "return new Element('button', {\n    \"class\":\"toggle-dock-form\",\n    events:{\n        click:function(){\n            if(document.body.hasClass('body-overlayed')){\n                document.body.removeClass('body-overlayed');\n                wizard.viewer.getElement().addClass('dock-left')\n                \n                return;\n            }\n            document.body.addClass('body-overlayed');\n            wizard.viewer.getElement().removeClass('dock-left')\n            \n            \n        }\n    }\n})",
+        "script": "return new Element('button', {\n    \"class\":\"toggle-dock-form\",\n    events:{\n        click:function(){\n            \n            var el=wizard.viewer.getElement();\n            var p=el.parentNode.parentNode;\n            var o=p.previousSibling;\n            \n            if(document.body.hasClass('body-overlayed')){\n                document.body.removeClass('body-overlayed');\n                el.addClass('dock-left')\n                p.addClass('dock-left')\n                o.addClass('dock-left')\n               \n                console.log('dock left');\n                return;\n            }\n            document.body.addClass('body-overlayed');\n            el.removeClass('dock-left');\n            p.removeClass('dock-left');\n            o.removeClass('dock-left');\n            \n            console.log('un dock left');\n            \n            \n        }\n    }\n})",
         "description": "Info about my custom script"
     }
 }
