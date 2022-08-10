@@ -10,8 +10,17 @@ class Report {
 	private $title;
 	private $text;
 
+	private $reportName='';
+
+	private $shouldLinkDocument=false
+
 	public function __construct($proposal) {
 		$this->proposal = $proposal;
+	}
+
+
+	public setLinkDocument(){
+		$this->shouldLinkDocument=true;
 	}
 
 	protected function getPlugin() {
@@ -137,13 +146,15 @@ class Report {
 	public function generateReport($templateName, $defaultContent, $parameters=null) {
 
 		
-
+		$this->reportName=$templateName;
 
 		$template=null;
 
 		foreach(GetWidget('reportTemplates')->getConfigurationValue('templatesData', array()) as $reportTemplate){
 			if($reportTemplate->name===$templateName){
-
+				/**
+				 * TemplateRenderer renders variables into a string template and does not create a default Template widget
+				 */
 				$template=new \core\TemplateRenderer($reportTemplate->content);
 				break;
 			}
@@ -151,6 +162,14 @@ class Report {
 
 
 		if(is_null($template)){
+			/**
+			 * @deprecated ? 
+			 * This was the original logic, and is replaced by defined templates in the reportTemplates config widget
+			 * which stores site specific config 
+			 * 
+			 * Template class will try to use the named Template widget, or create a new one in the system, 
+			 * this behavior is no longer ideal because it creates global templates
+			 */
 			$template = new \core\Template($templateName, $defaultContent);
 		}
 
@@ -158,11 +177,21 @@ class Report {
 
 		$data=$this->getReportData();
 
+		$this->title = $this->reportName.' '.$data['attributes']['company'] . '-' . $data['attributes']['title'];
+
 		if(is_object($parameters)){
 			$data['parameters']=$parameters;
+
+			if(isset($parameters->fileName)){
+				$this->title=(new \core\TemplateRenderer($parameters->fileName))->render($data);
+			}
 		}
 
-		$this->title = $data['attributes']['company'] . '-' . $data['attributes']['title'];
+		
+
+
+		
+
 		$this->text = $template->render($data);
 
 		$useOutline=true;
@@ -180,11 +209,16 @@ class Report {
 			->text($this->text);
 
 
+		
+		/**
+		 * dompdf does not handle css style sheets very well so convert all css to inline
+		 */
 		$cssToInlineStyles = new \TijsVerkoyen\CssToInlineStyles\CssToInlineStyles();
 
 		$this->text= $cssToInlineStyles->convert(
 		   $this->text
 		);
+
 
 		return $this;
 	}
@@ -234,11 +268,25 @@ class Report {
 		$dompdf->setPaper('A4');
 		// Render the HTML as PDF
 		$dompdf->render();
-		
+
+		$name=$this->title . '-' . date('Y-m-d_H-i-s');
+
+
+		if($this->shouldLinkDocument){
+			$this->linkDocument($name, $dompdf);
+	    }
+
+
+
+		$dompdf->stream($name . '.pdf');
+
+	}
+
+
+	protected function linkDocument($name, $dompdf){
 
 		$usersShare=GetUserFiles()->getFileManager()->getCurrentUserShare();
 		$output = $dompdf->output();
-		$name=$this->title . '-' . date('Y-m-d_H-i-s');
 		$file=__DIR__.'/'.$name . '.pdf';
     	file_put_contents($file, $output);
 
@@ -254,11 +302,6 @@ class Report {
 			"documentType"=>'documents',
 			"documentHtml"=>$meta->html
 		));
-
-    	//throw new \Exception(print_r($meta, true));
-
-
-		$dompdf->stream($this->title . '-' . date('Y-m-d_H-i-s') . '.pdf');
 
 	}
 
