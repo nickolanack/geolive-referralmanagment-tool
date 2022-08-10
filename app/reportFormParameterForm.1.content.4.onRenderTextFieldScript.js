@@ -1,5 +1,5 @@
 var el=module.getElement();
-p=el.parentNode;
+var p=el.parentNode;
 p.addClass('min');
 
 var toggle=el.appendChild(new Element('button', {"class":"section-toggle", events:{click:function(){
