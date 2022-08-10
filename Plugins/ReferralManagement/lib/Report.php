@@ -19,6 +19,10 @@ class Report {
 	}
 
 
+	/**
+	 * compile all report data and computed items into an object to be used by the template
+	 * @return [type] [description]
+	 */
 	public function getReportData(){
 
 
@@ -27,6 +31,10 @@ class Report {
 
 		$data = $this->getPlugin()->getProposalData($this->proposal);
 
+
+		/**
+		 * helper function to convert local urls to paths
+		 */
 		$localPath = function ($url) {
 			if ((new \core\html\Path())->isHostedLocally($url)) {
 				return PathFrom($url);
@@ -34,6 +42,10 @@ class Report {
 
 			return $url;
 		};
+
+		/**
+		 * helper function to convert images to base 64 encoded strings ~simplifies embedding in templates
+		 */
 		$base64 = function ($url) use ($localPath) {
 
 			$path = $localPath($url);
@@ -79,11 +91,6 @@ class Report {
 		$data['computed']['files'] = $parser->parseProposalFiles($data);
 		$data['computed']['images'] = $parser->parseProposalImages($data);
 		$data['computed']['spatial'] = $parser->parseProposalSpatial($data);
-
-
-
-		
-	
 
 
 		$data['computed']['maps']=(new \ReferralManagement\MapPrinter())->getImageUrls($data['id']);
@@ -227,7 +234,25 @@ class Report {
 		$dompdf->setPaper('A4');
 		// Render the HTML as PDF
 		$dompdf->render();
-		// Output the generated PDF to Browser
+		
+
+		$usersShare=GetUserFiles()->getFileManager()->getCurrentUserShare();
+		$output = $dompdf->output();
+		$name=$this->title . '-' . date('Y-m-d_H-i-s');
+		$file=__DIR__.'/'.$name . '.pdf'
+    	file_put_contents($file, $output);
+
+    	$targetFile=$usersShare->storeFile(array(
+    		'ext'=>'pdf',
+    		'tmp_name'=>$file,
+    		'name'=>$name
+    	));
+
+    	$meta = (new \Filesystem\FileMetadata())->getMetadata($targetFile)->metadata;
+
+    	throw new \Exception(print_r($meta));
+
+
 		$dompdf->stream($this->title . '-' . date('Y-m-d_H-i-s') . '.pdf');
 
 	}
