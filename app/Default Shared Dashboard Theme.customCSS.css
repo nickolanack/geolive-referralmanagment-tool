@@ -6194,9 +6194,34 @@ li.menu-project-share button:after {
          
      }
  }
+   
+.type-heading  
+    .field-description, .field-options {
+        display: none;
+    }
+}
+
+
+
+
+.inline-form-list > .ui-view:nth-child(even){
+    background: rgba(0, 0, 0, 0.1);
+}
+.inline-form-list > .ui-view:nth-child(odd){
+    background: rgb(130 164 206 / 10%);
+}
+
+.inline-form-list > .ui-view.type-heading {
+    background-color: rgb(255 255 255 / 10%);
+}
+
+
+.minimize{
     
-    
-    
+    .field-description, .field-options, .field-type, .field-value {
+        display: none;
+    }
+}
     
     
     
