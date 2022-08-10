@@ -239,7 +239,7 @@ class Report {
 		$usersShare=GetUserFiles()->getFileManager()->getCurrentUserShare();
 		$output = $dompdf->output();
 		$name=$this->title . '-' . date('Y-m-d_H-i-s');
-		$file=__DIR__.'/'.$name . '.pdf'
+		$file=__DIR__.'/'.$name . '.pdf';
     	file_put_contents($file, $output);
 
     	$targetFile=$usersShare->storeFile(array(
