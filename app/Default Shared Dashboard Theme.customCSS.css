@@ -6169,19 +6169,19 @@ li.menu-project-share button:after {
     
      .ui-view{   
         
-        .ghost>* {
+        &.ghost>* {
             visibility: hidden;
             cursor:grabbing;
         }
         
-        .dragging>*>* {
+        &.dragging>*>* {
             visibility: hidden;
             cursor:grabbing;
         }
         
      
         
-        .dragging:after {
+        &.dragging:after {
             content: "Drop to sort";
             position: absolute;
             top: calc( 50% - 12px );
