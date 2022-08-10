@@ -250,7 +250,12 @@ class Report {
 
     	$meta = (new \Filesystem\FileMetadata())->getMetadata($targetFile)->metadata;
 
-    	throw new \Exception(print_r($meta));
+    	(new \ReferralManagement\Attachments())->add($this->proposal,'ReferralManagement.proposal', array(
+			"documentType"=>'documents',
+			"documentHtml"=>$meta->html
+		));
+
+    	//throw new \Exception(print_r($meta, true));
 
 
 		$dompdf->stream($this->title . '-' . date('Y-m-d_H-i-s') . '.pdf');
