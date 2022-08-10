@@ -7,6 +7,6 @@
         "maxChars": 0,
         "textFormatScript": "",
         "beforeRenderModuleScript": "",
-        "onRenderTextFieldScript": ""
+        "onRenderTextFieldScript": "\nvar last=null;\nvar updateField=function(){\n  var type=wizard.getData().fieldType;\n  if(['heading'].indexOf(type>=0)){\n      var el=module.getElement().parentNode;\n      if(last){\n          el.removeClass(last);\n      }\n      last='type-'+type;\n      el.addClass(last);\n  }\n};\n\nwizard.on('valueChange', updateField);\nsetTimeout(updateField, 250);"
     }
 }
