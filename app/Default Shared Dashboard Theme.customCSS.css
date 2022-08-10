@@ -6161,7 +6161,39 @@ li.menu-project-share button:after {
  .inline-form-list > .ui-view.is-report-template {
     background-color: #00d4ff38;
 }
+
+.ui-list-view.sorting {
+        
+    cursor: grabbing;
+   
     
+     .ui-view{   
+        
+        .ghost>* {
+            visibility: hidden;
+            cursor:grabbing;
+        }
+        
+        .dragging>*>* {
+            visibility: hidden;
+            cursor:grabbing;
+        }
+        
+     
+        
+        .dragging:after {
+            content: "Drop to sort";
+            position: absolute;
+            top: calc( 50% - 12px );
+            text-align: center;
+            width: 100%;
+            font-size:30px;
+        }
+    
+    
+         
+     }
+ }
     
     
     
