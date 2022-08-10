@@ -27892,16 +27892,16 @@
                             "Displays the form from parameters before rendering the report.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 298,
-                            "y": 400
+                            "x": 308,
+                            "y": 410
                         },
                         "children": [
                             "Displays the form from parameters before rendering the report.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 258,
-                                    "y": 566
+                                    "x": 268,
+                                    "y": 576
                                 }
                             }
                         ],
@@ -27915,6 +27915,19 @@
                                 "content": {
                                     "modules": [
                                         "Displays the form from parameters before rendering the report.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "InlineHtml",
+                                            "config": {
+                                                "className": "",
+                                                "text": "Report options",
+                                                "template": "html.reportOptionsForm",
+                                                "templateVariablesScript": "{}",
+                                                "formatTextScript": "Displays the form from parameters before rendering the report.metadata.children.1.builderMetadata.positions.content.modules.1.config.formatTextScript.js",
+                                                "formatVariablesScript": "Displays the form from parameters before rendering the report.metadata.children.1.builderMetadata.positions.content.modules.1.config.formatVariablesScript.js",
+                                                "ajaxRequestTemplate": true,
+                                                "identifier": "htmlLabel"
+                                            }
+                                        },
                                         {
                                             "type": "UIListView",
                                             "config": {
@@ -27931,15 +27944,15 @@
                                                 "showDeleteButton": false,
                                                 "deleteItemScript": "defaultBehaviorFn()",
                                                 "initModuleScript": "",
-                                                "formatModuleScript": "Displays the form from parameters before rendering the report.metadata.children.1.builderMetadata.positions.content.modules.1.config.formatModuleScript.js",
+                                                "formatModuleScript": "Displays the form from parameters before rendering the report.metadata.children.1.builderMetadata.positions.content.modules.2.config.formatModuleScript.js",
                                                 "resolveItemScript": "return item",
                                                 "filterModulesScript": "\nreturn list",
                                                 "itemButtonsScript": "return [];",
                                                 "insertAtTop": false,
                                                 "targetName": "",
-                                                "getItemListScript": "Displays the form from parameters before rendering the report.metadata.children.1.builderMetadata.positions.content.modules.1.config.getItemListScript.js",
+                                                "getItemListScript": "Displays the form from parameters before rendering the report.metadata.children.1.builderMetadata.positions.content.modules.2.config.getItemListScript.js",
                                                 "formatItemListScript": "return list;",
-                                                "formatListItemModuleScript": "Displays the form from parameters before rendering the report.metadata.children.1.builderMetadata.positions.content.modules.1.config.formatListItemModuleScript.js",
+                                                "formatListItemModuleScript": "Displays the form from parameters before rendering the report.metadata.children.1.builderMetadata.positions.content.modules.2.config.formatListItemModuleScript.js",
                                                 "emptyNamedView": "emptyListView",
                                                 "filterItemsScript": "return true;",
                                                 "sortItemsScript": "",

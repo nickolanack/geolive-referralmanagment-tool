@@ -1,13 +1,8 @@
 {
-    "type": "InlineHtml",
+    "type": "WizardScriptElement",
     "config": {
-        "className": "",
-        "text": "Report options",
-        "template": "html.reportOptionsForm",
-        "templateVariablesScript": "{}",
-        "formatTextScript": "var btn=ConfigItem.CreateEditBtn(new ConfigItem({\n    \"editLabel\":\"Edit form text\",\n    'widget':options.widget,\n    'form':'textFieldForm',\n    'stepOptions':{\n        width:600\n    }\n}));\n\nif(btn){\n    module.getElement().appendChild(btn);\n}",
-        "formatVariablesScript": "return ProjectTeam.getProject(item.getProject()).data;",
-        "ajaxRequestTemplate": true,
-        "identifier": "htmlLabel"
+        "name": "My Custom Script",
+        "script": "return new Element('button', {\n    \"class\":\"toggle-dock-form\",\n    events:{\n        click:function(){\n            console.log('test')\n        }\n    }\n})",
+        "description": "Info about my custom script"
     }
 }
