@@ -84,35 +84,17 @@ var DockWizard = (function() {
 
 		createDockBtns: function(wizard) {
 
-			var wizardEvent = null;
+			var me=this;
+
+			wizard.on('complete', function() {
+				undock();
+			});
 
 			return new Element('button', {
 				"class": "toggle-dock-form",
 				events: {
 					click: function() {
-
-						var el = wizard.viewer.getElement();
-						var p = el.parentNode.parentNode;
-						var o = p.previousSibling;
-						var b = document.body;
-
-						if (!wizardEvent) {
-
-							wizardEvent.on('complete', function() {
-								undock();
-							});
-
-						}
-
-
-						if (document.body.hasClass('body-overlayed')) {
-							me.dock(wizard);
-
-							return;
-						}
-						me.undock(wizard;
-
-
+						me.toggle();
 					}
 				}
 			});
