@@ -37,7 +37,7 @@ var SidePanelToggle = (function() {
 				return n.parentNode;
 			}
 			return this._target(n.parentNode);
-		}
+		},
 
 		collapse: function() {
 			var me = this;
