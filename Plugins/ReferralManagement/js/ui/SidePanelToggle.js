@@ -1,81 +1,104 @@
-var SidePanelToggle=(function(){
+var SidePanelToggle = (function() {
 
 
-	var SidePanelToggle=new Class_({
-		Implements:[Events],
+	var SidePanelToggle = new Class_({
+		Implements: [Events],
 
-		initialize:function(){
+		initialize: function() {
 
-			this._expanded=true;
-			var me=this;
-			var popover;
-			var el = new Element('div',{"class":"panel-toggle", events:{click:function(){
-			    
-			    var node=function(n){
-			        if(!n){
-			            n=el;
-			        }
-			        if(n.parentNode.hasClass('ui-view')){
-			            return n.parentNode;
-			        }
-			        return node(n.parentNode);
-			    }
-			    
-			    var target=node();
-			    if(target.hasClass("closed")){
-			        target.removeClass("closed");
-			        el.removeClass("closed");
-			        popover.setDescription("hide side panel");
-			        me._expanded=true;
-			        me.fireEvent('expand');
-			        return;
-			    }
+			this._expanded = true;
+			var me = this;
+			me.popover;
+			var el = new Element('div', {
+				"class": "panel-toggle",
+				events: {
+					click: function() {
 
-			  
-		        target.addClass("closed");
-		        el.addClass("closed");
-		        popover.setDescription("show side panel");
-			    me._expanded=false;
-			    me.fireEvent('collapse');
+						me.toggle();
 
-
-
-			    
-			    
-			    
-			}}});
-
-			popover=new UIPopover(el, {
-			    description:"hide side panel",
-			    anchor:UIPopover.AnchorAuto()
+					}
+				}
 			});
 
-			this.element=el;
-			
+			me.popover = new UIPopover(el, {
+				description: "hide side panel",
+				anchor: UIPopover.AnchorAuto()
+			});
+
+			this.element = el;
+
 		},
-		getElement:function(){
+
+		_target: function(n) {
+			if (!n) {
+				n = me.element;
+			}
+			if (n.parentNode.hasClass('ui-view')) {
+				return n.parentNode;
+			}
+			return this._target(n.parentNode);
+		}
+
+		collapse: function() {
+
+			if (target.hasClass("closed")) {
+				return;
+			}
+
+			target.addClass("closed");
+			me.element.addClass("closed");
+			me.popover.setDescription("show side panel");
+			me._expanded = false;
+			me.fireEvent('collapse');
+
+		},
+		expand: function() {
+			if (target.hasClass("closed")) {
+				target.removeClass("closed");
+				me.element.removeClass("closed");
+				me.popover.setDescription("hide side panel");
+				me._expanded = true;
+				me.fireEvent('expand');
+				return;
+			}
+
+		},
+		toggle: function() {
+
+			var me = this;
+
+			var target = this._target();
+			if (target.hasClass("closed")) {
+				this.expand();
+				return;
+			}
+
+			this.collapse();
+		},
+
+		getElement: function() {
 			return this.element;
 		},
-		isExpanded:function(){
+		isExpanded: function() {
 			return this._expanded;
 		},
 
-		createPopover:function(el, text){
+		createPopover: function(el, text) {
 
-			var popover=new UIPopover(el, {
-				description:text,
-				anchor:UIPopover.AnchorAuto()
+			var popover = new UIPopover(el, {
+				description: text,
+				anchor: UIPopover.AnchorAuto()
 			});
 
-			this.on('collapse',function(){
+			this.on('collapse', function() {
 				popover.enable();
 			});
 
-			this.on('expand',function(){
+			this.on('expand', function() {
 				popover.disable();
 			});
 
-			if(this.isExpanded()){
+			if (this.isExpanded()) {
 				popover.disable();
 			}
 
@@ -85,11 +108,7 @@ var SidePanelToggle=(function(){
 
 
 
-
 	});
-
-
-	
 
 
 
