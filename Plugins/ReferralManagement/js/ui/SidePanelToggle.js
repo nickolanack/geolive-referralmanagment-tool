@@ -30,6 +30,8 @@ var SidePanelToggle = (function() {
 		},
 
 		_target: function(n) {
+
+			var me = this;
 			if (!n) {
 				n = me.element;
 			}
