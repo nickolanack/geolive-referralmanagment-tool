@@ -6230,7 +6230,16 @@ li.menu-project-share button:after {
         width: calc( 100% - 600px );
     }
     
-    .dock-left{   
+     .dock-left, .dock-right{   
+        
+        &.pb-w{
+            
+            &.shadow.open>* {
+            }
+        }
+     }
+    
+    .dock-left, .dock-right{   
         
         &.pb-w{
             
@@ -6261,8 +6270,29 @@ li.menu-project-share button:after {
         }
         
     } 
+    
+    
+    
 }
     
+    
+button.toggle-dock-form:after {
+    font-family: 'FontAwesome';
+    content: "\0f191";
+    color: white;
+    font-size: 20px;
+}
+
+button.toggle-dock-form {
+    background: none;
+    border: none;
+}
+
+.dock-overlayed button.toggle-dock-form {float: right;}
+
+.dock-overlayed button.toggle-dock-form:after {
+    content: "\0f152";
+}
     
     
     
