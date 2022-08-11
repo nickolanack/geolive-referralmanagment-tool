@@ -9,5 +9,5 @@ var toggle=el.parentNode.appendChild(new Element('button', {"class":"section-tog
         return;
     }
     p.addClass('minimize');
-    toggle.addClass('active');
+    toggle.removeClass('active');
 }}}));
