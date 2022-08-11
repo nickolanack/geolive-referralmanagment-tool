@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "return new Element('button', {\n    \"class\":\"toggle-dock-form\",\n    events:{\n        click:function(){\n            \n            var el=wizard.viewer.getElement();\n            var p=el.parentNode.parentNode;\n            var o=p.previousSibling;\n            \n            var b=document.body;\n            \n            if(document.body.hasClass('body-overlayed')){\n                b.removeClass('body-overlayed');\n                b.addClass('dock-overlayed');\n                el.addClass('dock-left')\n                p.addClass('dock-left')\n                o.addClass('dock-left')\n               \n                SidePanelToggle.collapse();\n               \n                console.log('dock left');\n                \n                return;\n            }\n            b.addClass('body-overlayed');\n            b.removeClass('dock-overlayed');\n            el.removeClass('dock-left');\n            p.removeClass('dock-left');\n            o.removeClass('dock-left');\n            \n            \/\/SidePanelToggle.collapse();\n            \n            console.log('un dock left');\n            \n            \n        }\n    }\n})",
+        "script": "return DockWizard.createDockBtns(wizard);",
         "description": "Info about my custom script"
     }
 }
