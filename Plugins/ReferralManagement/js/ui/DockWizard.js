@@ -89,6 +89,9 @@ var DockWizard = (function() {
 			wizard.on('complete', function() {
 				undock();
 			});
+			wizard.on('cancel', function() {
+				undock();
+			});
 
 			return new Element('button', {
 				"class": "toggle-dock-form",
