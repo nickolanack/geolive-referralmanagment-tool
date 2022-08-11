@@ -87,10 +87,10 @@ var DockWizard = (function() {
 			var me=this;
 
 			wizard.on('complete', function() {
-				undock();
+				me.undock();
 			});
 			wizard.on('cancel', function() {
-				undock();
+				me.undock();
 			});
 
 			return new Element('button', {
