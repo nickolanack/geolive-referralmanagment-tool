@@ -94,7 +94,7 @@ var DockWizard = (function() {
 				"class": "toggle-dock-form",
 				events: {
 					click: function() {
-						me.toggle();
+						me.toggle(wizard);
 					}
 				}
 			});
