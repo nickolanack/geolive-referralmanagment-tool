@@ -40,6 +40,8 @@ var SidePanelToggle = (function() {
 		}
 
 		collapse: function() {
+			var me = this;
+			var target = this._target();
 
 			if (target.hasClass("closed")) {
 				return;
@@ -53,6 +55,9 @@ var SidePanelToggle = (function() {
 
 		},
 		expand: function() {
+			var me = this;
+			var target = this._target();
+
 			if (target.hasClass("closed")) {
 				target.removeClass("closed");
 				me.element.removeClass("closed");
