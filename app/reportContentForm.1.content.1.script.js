@@ -8,6 +8,7 @@
     
     
     mod.getElement().innerHTML='<div class="label top-left"><span class="lbl-txt">Data</span></div>';
+    var content=mod.getElement().appendChild(new Element('div', {"class":"pre-content"}))
 
     (new AjaxControlQuery(CoreAjaxUrlRoot, 'generate_report_data', {
 		  "plugin": "ReferralManagement",
@@ -15,7 +16,7 @@
     })).addEvent('success',function(resp){
         mod.getElement().removeClass('loading');
         
-        mod.getElement().appendChild(new Element('pre', {
+        content.appendChild(new Element('pre', {
             html:JSON.stringify(resp.data, null, '   ')
                  .replace(/&/g, "&amp;")
                  .replace(/</g, "&lt;")
