@@ -8,7 +8,8 @@
     
     
     mod.getElement().innerHTML='<div class="label top-left"><span class="lbl-txt">Data</span></div>';
-    var content=mod.getElement().appendChild(new Element('div', {"class":"pre-content"}))
+    var content=new Element('div', {"class":"pre-content"});
+    mod.getElement().appendChild(content);
 
     (new AjaxControlQuery(CoreAjaxUrlRoot, 'generate_report_data', {
 		  "plugin": "ReferralManagement",
