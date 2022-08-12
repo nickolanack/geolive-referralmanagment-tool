@@ -28159,10 +28159,11 @@
             "target": "module.html-reportTemplateForm.text",
             "comments": "",
             "formatVariablesScript": "return $variables;",
-            "convertStylesToInline": false,
-            "parseMarkdown": false,
+            "convertStylesToInline": true,
+            "parseMarkdown": true,
             "saveTemplateAsData": false,
-            "contentTemplate": "Report Template"
+            "contentTemplate": "Report Template",
+            "readAccess": "public"
         }
     }
 }
