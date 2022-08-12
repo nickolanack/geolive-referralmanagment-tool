@@ -32,7 +32,7 @@ class Report {
 	 * compile all report data and computed items into an object to be used by the template
 	 * @return [type] [description]
 	 */
-	public function getReportData(){
+	public function getReportData($parameters=null){
 
 
 
@@ -135,6 +135,17 @@ class Report {
 		}, $data['attributes']['teamMembers']);
 
 		$data['config'] = GetWidget('dashboardConfig')->getConfigurationValues();
+		$data['currentUser']=>(new \ReferralManagement\User())->getMetadata();
+		$data['paramters']=>(object) array();
+
+
+		if(is_object($parameters)){
+			$data['parameters']=$parameters;
+
+			if(isset($parameters->fileName)){
+				$data['reportTitle']=(new \core\TemplateRenderer($parameters->fileName))->render($data);
+			}
+		}
 
 		//die(json_encode($data, JSON_PRETTY_PRINT));
 
@@ -175,16 +186,14 @@ class Report {
 
 		
 
-		$data=$this->getReportData();
+		$data=$this->getReportData($parameters);
 
 		$this->title = $this->reportName.' '.$data['attributes']['company'] . '-' . $data['attributes']['title'];
 
-		if(is_object($parameters)){
+		if(isset($data['reportTitle'])){
 			$data['parameters']=$parameters;
-
-			if(isset($parameters->fileName)){
-				$this->title=(new \core\TemplateRenderer($parameters->fileName))->render($data);
-			}
+			$this->title=$data['reportTitle'];
+			
 		}
 
 		
