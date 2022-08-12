@@ -6104,6 +6104,10 @@ div.popover[data-with-view="reportSelectionView"]{
     button.toggle-parameters-form:after {
         content: "<";
     }
+    
+    button.toggle-parameters-form:after {
+        content: ">";
+    }
 
 }
 
