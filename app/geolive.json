@@ -27345,16 +27345,16 @@
                             "reportContentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 542,
-                            "y": 374
+                            "x": 552,
+                            "y": 384
                         },
                         "children": [
                             "reportContentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 502,
-                                    "y": 550
+                                    "x": 512,
+                                    "y": 560
                                 }
                             }
                         ],
@@ -27390,7 +27390,7 @@
                                                 "multiMessage": "add another value",
                                                 "formatter": "none",
                                                 "beforeRenderModuleScript": "",
-                                                "onRenderTextFieldScript": "",
+                                                "onRenderTextFieldScript": "reportContentForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.onRenderTextFieldScript.js",
                                                 "formatValueScript": "",
                                                 "getValueScript": " return item.getContent()",
                                                 "updateValueScript": " object.value=value ",
