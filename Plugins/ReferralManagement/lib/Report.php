@@ -135,8 +135,8 @@ class Report {
 		}, $data['attributes']['teamMembers']);
 
 		$data['config'] = GetWidget('dashboardConfig')->getConfigurationValues();
-		$data['currentUser']=>(new \ReferralManagement\User())->getMetadata();
-		$data['paramters']=>(object) array();
+		$data['currentUser']=(new \ReferralManagement\User())->getMetadata();
+		$data['parameters']=(object) array();
 
 
 		if(is_object($parameters)){
