@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "\nreturn FormBuilder.getFormParameter(item);",
+        "script": "\nreturn FormBuilder.getFormParameter(item, wizard);",
         "description": "Info about my custom script"
     }
 }
