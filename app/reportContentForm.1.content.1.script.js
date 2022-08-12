@@ -39,12 +39,12 @@
         if(el.hasClass('collapse')){
             
             el.removeClass('collapse');
-            next.addClass('expand');
+            next.removeClass('expand');
             return;
         }
         
         el.addClass('collapse');
-        next.removeClass('expand');
+        next.addClass('expand');
         
         
     }
