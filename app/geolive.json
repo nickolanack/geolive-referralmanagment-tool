@@ -28130,9 +28130,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
-            "saveTemplateAsData": false,
-            "contentTemplate": "Report List Form"
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "Report List Form",
+            "readAccess": "public"
         }
     },
     "widget.502": {
@@ -28143,10 +28144,11 @@
             "target": "module.html-reportBuilderForm.text",
             "comments": "",
             "formatVariablesScript": "return $variables;",
-            "convertStylesToInline": false,
-            "parseMarkdown": false,
+            "convertStylesToInline": true,
+            "parseMarkdown": true,
             "saveTemplateAsData": false,
-            "contentTemplate": "Report Form"
+            "contentTemplate": "Report Form",
+            "readAccess": "public"
         }
     },
     "widget.503": {
