@@ -26,7 +26,7 @@ var FormBuilder = (function(){
 			setTimeout(updateField, 250);
 
 
-		}
+		},
 
 
 
