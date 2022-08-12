@@ -49,6 +49,11 @@
         
     }
     
+    
+    mod.runOnceOnLoad(function(){
+        setTimeout(toggle, 250);
+    })
+    
     mod.getElement().appendChild(new Element('button', {
 				"class": "toggle-parameters-form",
 				events: {
