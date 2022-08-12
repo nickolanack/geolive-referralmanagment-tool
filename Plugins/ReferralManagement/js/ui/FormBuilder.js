@@ -21,6 +21,14 @@ var FormBuilder = (function(){
 			      last='type-'+type;
 			      el.addClass(last);
 			  }
+
+
+			  if(type=='heading'){
+			  	textField.setLabel('Heading: '+(wizard.getData().defaultValue||wizard.getData().fieldName));
+			  }else{
+			  	textField.setLabel('Parameter: '+wizard.getData().fieldName);
+			  }
+
 			};
 
 			wizard.on('valueChange', updateField);
