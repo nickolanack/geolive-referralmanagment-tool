@@ -28144,9 +28144,9 @@
             "target": "module.html-reportBuilderForm.text",
             "comments": "",
             "formatVariablesScript": "return $variables;",
-            "convertStylesToInline": true,
+            "convertStylesToInline": false,
             "parseMarkdown": true,
-            "saveTemplateAsData": false,
+            "saveTemplateAsData": true,
             "contentTemplate": "Report Form",
             "readAccess": "public"
         }
@@ -28159,9 +28159,9 @@
             "target": "module.html-reportTemplateForm.text",
             "comments": "",
             "formatVariablesScript": "return $variables;",
-            "convertStylesToInline": true,
+            "convertStylesToInline": false,
             "parseMarkdown": true,
-            "saveTemplateAsData": false,
+            "saveTemplateAsData": true,
             "contentTemplate": "Report Template",
             "readAccess": "public"
         }
