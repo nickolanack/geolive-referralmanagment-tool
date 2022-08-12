@@ -27918,16 +27918,16 @@
                             "Displays the form from parameters before rendering the report.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 378,
-                            "y": 480
+                            "x": 388,
+                            "y": 490
                         },
                         "children": [
                             "Displays the form from parameters before rendering the report.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 338,
-                                    "y": 657
+                                    "x": 348,
+                                    "y": 667
                                 }
                             }
                         ],
@@ -27957,7 +27957,7 @@
                                         {
                                             "type": "UIListView",
                                             "config": {
-                                                "listClassName": "inline-form-list",
+                                                "listClassName": "inline-form-list--",
                                                 "className": "",
                                                 "identifier": "",
                                                 "viewType": "form",
