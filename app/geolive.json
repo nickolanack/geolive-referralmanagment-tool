@@ -27345,16 +27345,16 @@
                             "reportContentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 492,
-                            "y": 324
+                            "x": 502,
+                            "y": 334
                         },
                         "children": [
                             "reportContentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 452,
-                                    "y": 500
+                                    "x": 462,
+                                    "y": 510
                                 }
                             }
                         ],
@@ -27372,12 +27372,12 @@
                                             "type": "InlineHtml",
                                             "config": {
                                                 "className": "",
-                                                "text": "",
-                                                "template": "",
+                                                "text": "Report Template",
+                                                "template": "html.reportTemplateForm",
                                                 "templateVariablesScript": "",
                                                 "formatTextScript": "",
                                                 "formatVariablesScript": "",
-                                                "ajaxRequestTemplate": false,
+                                                "ajaxRequestTemplate": true,
                                                 "identifier": "htmlLabel"
                                             }
                                         },
@@ -28152,6 +28152,20 @@
             "parseMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "Report Form"
+        }
+    },
+    "widget.503": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-reportTemplateForm.text",
+            "target": "module.html-reportTemplateForm.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Report Template"
         }
     }
 }
