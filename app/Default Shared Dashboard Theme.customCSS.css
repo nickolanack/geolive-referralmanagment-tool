@@ -6282,7 +6282,7 @@ li.menu-project-share button:after {
         
         &.pb-w{
             
-            &.shadow.open>* {
+            &.shadow.open>.pb-c {
             }
         }
      }
@@ -6291,7 +6291,7 @@ li.menu-project-share button:after {
         
         &.pb-w{
             
-            &.shadow.open>* {
+            &.shadow.open>.pb-c{
                 position: fixed;
                 top: 0;
                 left: 0;
