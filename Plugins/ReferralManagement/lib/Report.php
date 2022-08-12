@@ -12,7 +12,7 @@ class Report {
 
 	private $reportName='';
 
-	private $shouldLinkDocument=false
+	private $shouldLinkDocument=false;
 
 	public function __construct($proposal) {
 		$this->proposal = $proposal;
