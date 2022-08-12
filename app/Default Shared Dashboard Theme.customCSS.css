@@ -6264,6 +6264,15 @@ li.menu-project-share button:after {
     
 .dock-overlayed{
     
+    
+    .pb-w.shadow.open.dock-left {
+        pointer-events: none;
+        &>* {
+            pointer-events:all;
+        }
+    }
+    
+
     .ui-view.dashboard-main {
         margin-left: 600px;
         width: calc( 100% - 600px );
