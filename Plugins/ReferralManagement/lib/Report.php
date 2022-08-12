@@ -19,7 +19,7 @@ class Report {
 	}
 
 
-	public setLinkDocument(){
+	public function setLinkDocument(){
 		$this->shouldLinkDocument=true;
 	}
 
