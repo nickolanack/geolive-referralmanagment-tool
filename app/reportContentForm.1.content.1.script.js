@@ -24,4 +24,21 @@
     
     
     
+    
+    var toggle=function(){
+        
+        console.log('hello world');
+        
+        
+    }
+    
+    mod.getElement().appendChild(new Element('button', {
+				"class": "toggle-parameters-form",
+				events: {
+					click: toggle
+				}
+			}));
+			
+	
+    
     return mod;
