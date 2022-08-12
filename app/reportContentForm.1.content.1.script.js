@@ -33,7 +33,18 @@
     
     var toggle=function(){
         
-        console.log('hello world');
+        var el=mod.getElement();
+        var next=el.nextSibling;
+        
+        if(el.hasClass('collapse')){
+            
+            el.removeClass('collapse');
+            next.addClass('expand');
+            return;
+        }
+        
+        el.addClass('collapse');
+        next.removeClass('expand');
         
         
     }
