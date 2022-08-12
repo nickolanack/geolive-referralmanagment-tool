@@ -8,6 +8,7 @@ var FormBuilder = (function(){
 
 		formatTitleField:function(textField, inputElement, module){
 
+			var wizard=module.getViewer().getWizard();
 
 			var last=null;
 			var updateField=function(){
@@ -29,6 +30,8 @@ var FormBuilder = (function(){
 		},
 
 		formatValueField:function(textField, inputElement, module){
+
+			var wizard=module.getViewer().getWizard();
 
 			var updateField=function(){
 			  var type=wizard.getData().fieldType;
@@ -52,6 +55,9 @@ var FormBuilder = (function(){
 
 
 		formatOptionsField:function(textField, inputElement, module){
+
+			var wizard=module.getViewer().getWizard();
+
 			var el=module.getElement();
 			var p=el.parentNode;
 			p.addClass('minimize');
@@ -68,7 +74,7 @@ var FormBuilder = (function(){
 		},
 
 
-		getFormParameter:function(item){
+		getFormParameter:function(item, wizard){
 
 
 			var label = item.getName().replace(/([A-Z])/g, " $1");
