@@ -26982,16 +26982,16 @@
                             "reportLayoutForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 313,
-                            "y": 334
+                            "x": 323,
+                            "y": 344
                         },
                         "children": [
                             "reportLayoutForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 273,
-                                    "y": 500
+                                    "x": 283,
+                                    "y": 510
                                 }
                             }
                         ],
@@ -28124,6 +28124,34 @@
             "parseMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: add..documents"
+        }
+    },
+    "widget.501": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-reportBuilderList.text",
+            "target": "module.html-reportBuilderList.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Report List Form"
+        }
+    },
+    "widget.502": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-reportBuilderForm.text",
+            "target": "module.html-reportBuilderForm.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Report Form"
         }
     }
 }

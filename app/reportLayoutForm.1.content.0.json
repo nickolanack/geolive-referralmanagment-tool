@@ -2,12 +2,12 @@
     "type": "InlineHtml",
     "config": {
         "className": "",
-        "text": "",
-        "template": "",
+        "text": "Report List Form",
+        "template": "html.reportBuilderList",
         "templateVariablesScript": "",
         "formatTextScript": "",
         "formatVariablesScript": "",
-        "ajaxRequestTemplate": false,
+        "ajaxRequestTemplate": true,
         "identifier": "htmlLabel"
     }
 }
