@@ -6080,12 +6080,31 @@ div.popover[data-with-view="reportSelectionView"]{
 }
 
 
-.template-data.width-2 {
+.template-data {
+    position: relative;
+
+
+.template-data .pre-content {
     overflow-x: hidden;
     overflow-y: auto;
     height: 600px;
     background-color: #212930;
     border-radius: 4px;
+}
+
+
+button.toggle-parameters-form {
+    position: absolute;
+    right: -26px;
+    top: 27px;
+}
+
+
+
+button.toggle-parameters-form:after {
+    content: "<";
+}
+
 }
 
 
