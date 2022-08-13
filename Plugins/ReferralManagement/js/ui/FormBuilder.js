@@ -135,7 +135,7 @@ var FormBuilder = (function(){
 			    			var styleStr=el.style+' --'+k+':'+colors[k]+';';
 			    			el.style=styleStr;
 			    			
-			    			el.setAttribute('style', stypeStr);
+			    			el.setAttribute('style', styleStr);
 
 			    			
 			    			var styleVar={};
