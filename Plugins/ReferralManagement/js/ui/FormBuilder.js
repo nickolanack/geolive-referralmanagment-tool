@@ -6,7 +6,7 @@ var FormBuilder = (function(){
 
 
 
-		formatTitleField:function(textField, inputElement, module, w){
+		formatTitleField:function(textField, inputElement, module){
 
 			var wizard=module.getViewer().getUIView().getChildWizard();
 
@@ -24,9 +24,9 @@ var FormBuilder = (function(){
 			  }
 
 			  if(type=='heading'){
-			  	textField.setLabel('Heading: '+(wizard.getData().defaultValue||wizard.getData().fieldName));
+			  	textField.setLabel('Heading: '+(wizard.getData().defaultValue||wizard.getData().name));
 			  }else{
-			  	textField.setLabel('Parameter: '+wizard.getData().fieldName);
+			  	textField.setLabel('Parameter: '+wizard.getData().name);
 			  }
 			 
 
@@ -66,7 +66,7 @@ var FormBuilder = (function(){
 		formatOptionsField:function(textField, inputElement, module){
 
 			var wizard=module.getViewer().getUIView().getChildWizard();
-			
+
 			var el=module.getElement();
 			var p=el.parentNode;
 			p.addClass('minimize');
