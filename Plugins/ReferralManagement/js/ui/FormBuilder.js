@@ -8,7 +8,7 @@ var FormBuilder = (function(){
 
 		formatTitleField:function(textField, inputElement, module, w){
 
-			var wizard=module.getViewer().getWizard();
+			var wizard=module.getViewer().getUIView().getChildWizard();
 
 			var last=null;
 			var updateField=function(){
@@ -40,7 +40,7 @@ var FormBuilder = (function(){
 
 		formatValueField:function(textField, inputElement, module){
 
-			var wizard=module.getViewer().getWizard();
+			var wizard=module.getViewer().getUIView().getChildWizard();
 
 			var updateField=function(){
 			  var type=wizard.getData().fieldType;
@@ -65,8 +65,8 @@ var FormBuilder = (function(){
 
 		formatOptionsField:function(textField, inputElement, module){
 
-			var wizard=module.getViewer().getWizard();
-
+			var wizard=module.getViewer().getUIView().getChildWizard();
+			
 			var el=module.getElement();
 			var p=el.parentNode;
 			p.addClass('minimize');
