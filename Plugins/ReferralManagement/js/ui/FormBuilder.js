@@ -132,7 +132,7 @@ var FormBuilder = (function(){
 			    		Object.keys(colors).forEach(function(k){
 			    			//var styleVar={};
 			    			//styleVar['--'+k]=colors[k];
-			    			el.style+' --'+k+':'+colors[k]+';';
+			    			el.style+=' --'+k+':'+colors[k]+';';
 			    		});
 			    	}
 			    });
