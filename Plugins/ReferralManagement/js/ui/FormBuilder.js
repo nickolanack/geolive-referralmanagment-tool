@@ -132,20 +132,9 @@ var FormBuilder = (function(){
 			    		Object.keys(colors).forEach(function(k){
 
 
-			    			var styleStr=el.style+' --'+k+':'+colors[k]+';';
-			    			el.style=styleStr;
-			    			
-			    			el.setAttribute('style', styleStr);
-
-			    			
-			    			var styleVar={};
-			    			styleVar['--'+k]=colors[k];
-			    			el.setStyles(styleVar);
-
-
-			    			
-			    			
-
+			    			var styleStr'--'+k+':'+colors[k]+';';
+			    			el.setAttribute('style', (el.getAttribute('style')||"")+' '+styleStr);
+			    	
 			    		});
 			    	}
 			    });
