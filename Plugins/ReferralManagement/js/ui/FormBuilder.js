@@ -89,6 +89,7 @@ var FormBuilder = (function(){
 			var label = item.getName().replace(/([A-Z])/g, " $1");
 			label = label[0].toUpperCase() + label.slice(1);
 
+			var options=item.getOptions();
 
 			if(item.getFieldType()=='heading'){
 			    
@@ -112,14 +113,32 @@ var FormBuilder = (function(){
 
 
 			if(item.getFieldType()=='options'){
+
+				var colorMap=false;
+				if(options.colorMap){
+					colorMap=options.colorMap.slice(0);
+				}
+
 			    
-			    return new SelectableTagCloudModule({
+			    var tagCloudModule= new SelectableTagCloudModule({
 			        label:label,
-			        tags:item.getOptions().values,
-			        maxSelected:item.getOptions().maxSelected||-1
+			        tags:options.values,
+			        maxSelected:options.maxSelected||-1
 			    }).addDataSubmitter(function(object, wizardDataSet){
 			        wizardDataSet[item.getName()]=object.value;
+			    }).on('addWord',function(word, el){
+			    	if(colorMap){
+			    		var colors=colorMap.shift();
+			    		Object.keys(colors).forEach(function(k){
+			    			var styleVar={};
+			    			styleVar['--'+k]=colors[k];
+			    			tagCloudModule.getElement().setStyles(styleVar)
+			    		});
+			    	}
 			    });
+
+
+			    return tagCloudModule;
 			    
 			    
 			}
