@@ -130,9 +130,22 @@ var FormBuilder = (function(){
 			    	if(colorMap){
 			    		var colors=colorMap.shift();
 			    		Object.keys(colors).forEach(function(k){
+
+
+			    			var styleStr=el.style+' --'+k+':'+colors[k]+';';
+			    			el.style=styleStr;
+			    			
+			    			el.setAttribute('style', stypeStr);
+
+			    			
 			    			var styleVar={};
 			    			styleVar['--'+k]=colors[k];
-			    			el.style=el.style+' --'+k+':'+colors[k]+';';
+			    			el.setStyles(styleVar);
+
+
+			    			
+			    			
+
 			    		});
 			    	}
 			    });
