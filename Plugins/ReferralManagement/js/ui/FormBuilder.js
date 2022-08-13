@@ -130,9 +130,9 @@ var FormBuilder = (function(){
 			    	if(colorMap){
 			    		var colors=colorMap.shift();
 			    		Object.keys(colors).forEach(function(k){
-			    			var styleVar={};
-			    			styleVar['--'+k]=colors[k];
-			    			tagCloudModule.getElement().setStyles(styleVar)
+			    			//var styleVar={};
+			    			//styleVar['--'+k]=colors[k];
+			    			el.style+' --'+k+':'+colors[k]+';';
 			    		});
 			    	}
 			    });
