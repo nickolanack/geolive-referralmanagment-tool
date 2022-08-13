@@ -4042,6 +4042,15 @@ button.inline-btn.with-no-tasks {
 }
 
 
+.TagCloudModule .tag-cloud > span.tag-el.selected {
+    background-color: var(--selected, #6A7CE9);
+}
+
+.TagCloudModule .tag-cloud > span.tag-el.selected:hover {
+    background-color: var(--hover, #4b58a7);
+}
+
+
 .tag-cloud.locked {
     border: 1px solid #ceb250;
     border-radius: 2px;
