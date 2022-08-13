@@ -6359,10 +6359,15 @@ button.toggle-dock-form {
 }
     
     
-    
-    
-    
-    
+
+.ui-list-view [data-view="reportFormParameterField"].ui-view {
+    border-width: 0;
+    &.field-type-heading {
+        border-top: 1px solid #2E303A;
+        border-bottom: 0;
+    }
+}
+
     
     
     
