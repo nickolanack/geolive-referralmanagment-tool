@@ -6,13 +6,14 @@ var FormBuilder = (function(){
 
 
 
-		formatTitleField:function(textField, inputElement, module){
+		formatTitleField:function(textField, inputElement, module, w){
 
 			var wizard=module.getViewer().getWizard();
 
 			var last=null;
 			var updateField=function(){
 			  var type=wizard.getData().fieldType;
+			  
 			  if(['heading'].indexOf(type>=0)){
 			      var el=module.getElement().parentNode.parentNode.parentNode;
 			      if(last){
@@ -22,12 +23,12 @@ var FormBuilder = (function(){
 			      el.addClass(last);
 			  }
 
-
 			  if(type=='heading'){
 			  	textField.setLabel('Heading: '+(wizard.getData().defaultValue||wizard.getData().fieldName));
 			  }else{
 			  	textField.setLabel('Parameter: '+wizard.getData().fieldName);
 			  }
+			 
 
 			};
 
