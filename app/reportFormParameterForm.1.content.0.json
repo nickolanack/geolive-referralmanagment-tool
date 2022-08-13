@@ -7,6 +7,6 @@
         "maxChars": 0,
         "textFormatScript": "",
         "beforeRenderModuleScript": "",
-        "onRenderTextFieldScript": "\nFormBuilder.formatTitleField(textField, inputElement, module);"
+        "onRenderTextFieldScript": "\nFormBuilder.formatTitleField(textField, inputElement, module, wizard);"
     }
 }
