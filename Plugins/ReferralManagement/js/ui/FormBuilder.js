@@ -141,7 +141,7 @@ var FormBuilder = (function(){
 
 			    if(options.showRadioBtns){
 			    	tagCloudModule.on('addWord', function(word, el){
-			    		el.appendChild(new Element('input', {"type":"radio"});
+			    		el.appendChild(new Element('input', {"type":"radio"}));
 			    	})
 			    }
 
