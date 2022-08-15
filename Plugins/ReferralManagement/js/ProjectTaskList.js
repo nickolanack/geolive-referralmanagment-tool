@@ -600,6 +600,13 @@ var ProjectTaskList = (function() {
 			var ap=a.getOwnerProject();
 			var bp=b.getOwnerProject();
 			return lowerLocalCompare(ap.getAuthID(), bp.getAuthID());
+		}, function(a){
+
+			var ap=a.getOwnerProject();
+			var bp=b.getOwnerProject();
+
+			return ap.getAuthID()&&ap.getAuthID()!='';
+
 		}).render(listModule);
 
 
