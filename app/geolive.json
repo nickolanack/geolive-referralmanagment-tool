@@ -7188,6 +7188,17 @@
                                     "script": "Single Task List Item Detail.metadata.positions.content.modules.10.config.script.js",
                                     "description": "Info about my custom script"
                                 }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "identifier": "col-projectid",
+                                    "className": "",
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return \"Permit\";",
+                                    "formatElementScript": "Single Task List Item Detail.metadata.positions.content.modules.11.config.formatElementScript.js"
+                                }
                             }
                         ]
                     },
