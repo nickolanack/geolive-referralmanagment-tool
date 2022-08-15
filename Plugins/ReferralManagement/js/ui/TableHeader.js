@@ -598,7 +598,8 @@ var TableHeader = (function() {
 			module.once('load', function() {
 				console.log('loaded: ');
 			})
-			module.once('display', function() {
+
+			module.runOnceOnDisplay(function() {
 				console.log('loaded: ' + module.getElement().innerHTML);
 				me._headerString = module.getElement().innerHTML;
 				then();
