@@ -531,6 +531,10 @@ var ProjectTaskList = (function() {
 				"showLabel": false,
 				"align": "center"
 			},
+			"projectid": {
+				"width": "130px",
+				"label": "Submission"
+			},
 			"stars": {
 				"width": "30px",
 				"label": "Stars",
