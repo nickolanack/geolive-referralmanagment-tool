@@ -4054,6 +4054,10 @@ button.inline-btn.with-no-tasks {
     background-color: var(--hover, #4b58a7);
 }
 
+.TagCloudModule .tag-cloud > span.tag-el input {
+    float: left;
+    margin-right: 10px;
+}
 
 
 
