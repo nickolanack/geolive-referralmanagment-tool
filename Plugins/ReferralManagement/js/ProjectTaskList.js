@@ -534,7 +534,7 @@ var ProjectTaskList = (function() {
 			};
 
 			return (a || "").toLowerCase().localeCompare((b || "").toLowerCase());
-		}
+		};
 
 
 
