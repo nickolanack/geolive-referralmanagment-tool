@@ -4057,6 +4057,7 @@ button.inline-btn.with-no-tasks {
 .TagCloudModule .tag-cloud > span.tag-el input {
     float: left;
     margin-right: 10px;
+        pointer-events: none;
 }
 
 
