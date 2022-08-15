@@ -153,7 +153,7 @@ var FormBuilder = (function(){
 			    				btnMap.word.checked=true;
 			    				return;
 			    			}
-			    			btnMap.word.checked=false;
+			    			btnMap[word].checked=false;
 			    		})
 			    	})
 			    }
