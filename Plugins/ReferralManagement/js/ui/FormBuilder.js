@@ -128,6 +128,9 @@ var FormBuilder = (function(){
 			        wizardDataSet[item.getName()]=object.value;
 			    }).on('addWord',function(word, el){
 			    	if(colorMap){
+
+			    		//this assumes that the colorMap array is the same length as all tags 
+
 			    		var colors=colorMap.shift();
 			    		Object.keys(colors).forEach(function(k){
 
@@ -139,12 +142,18 @@ var FormBuilder = (function(){
 			    	}
 			    });
 
-			    if(options.showRadioBtns){
+			    if(options.showRadioBtns||options.showCheckboxes){
+
+			    	var type='radio';
+			    	if(options.showCheckboxes){
+			    		//showCheckboxes overrides showRadioBtns
+			    		type='checkbox';
+			    	}
 
 			    	var btnMap={};
 
 			    	tagCloudModule.on('addWord', function(word, el){
-			    		btnMap[word]=el.appendChild(new Element('input', {"type":"radio"}));
+			    		btnMap[word]=el.appendChild(new Element('input', {"type":type}));
 			    	});
 
 			    	tagCloudModule.on('onChange', function(words){
