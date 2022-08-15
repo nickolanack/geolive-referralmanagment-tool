@@ -150,7 +150,7 @@ var FormBuilder = (function(){
 			    	tagCloudModule.on('onChange', function(words){
 			    		Object.keys(btnMap).forEach(function(word){
 			    			if(words.indexOf(word)>=0){
-			    				btnMap[word]checked=true;
+			    				btnMap[word].checked=true;
 			    				return;
 			    			}
 			    			btnMap[word].checked=false;
