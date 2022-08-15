@@ -603,8 +603,6 @@ var ProjectTaskList = (function() {
 		}, function(a){
 
 			var ap=a.getOwnerProject();
-			var bp=b.getOwnerProject();
-
 			return ap.getAuthID()&&ap.getAuthID()!='';
 
 		}).render(listModule);
