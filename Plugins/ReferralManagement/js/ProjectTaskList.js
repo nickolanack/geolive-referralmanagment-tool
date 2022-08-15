@@ -523,6 +523,21 @@ var ProjectTaskList = (function() {
 	ProjectTaskList.AddTableHeader = function(listModule) {
 
 
+
+		var lowerLocalCompare = function(a, b) {
+
+			if (a && !b) {
+				return 1
+			};
+			if (b && !a) {
+				return -1
+			};
+
+			return (a || "").toLowerCase().localeCompare((b || "").toLowerCase());
+		}
+
+
+
 		(new TableHeader('tasktTableLayout', {
 
 			"complete": {
@@ -533,7 +548,7 @@ var ProjectTaskList = (function() {
 			},
 			"projectid": {
 				"width": "130px",
-				"label": "Submission"
+				"label": "Refferal ID"
 			},
 			"stars": {
 				"width": "30px",
@@ -580,6 +595,11 @@ var ProjectTaskList = (function() {
 			return (a.getDueDate() > b.getDueDate() ? 1 : -1);
 		}).addSort('stars', function(a, b) {
 			return (b.isStarred() ? 1 : 0) - (a.isStarred() ? 1 : 0);
+		}).addSort('projectid', function(a, b) {
+
+			var ap=a.getOwnerProject();
+			var bp=b.getOwnerProject();
+			return lowerLocalCompare(ap.getAuthID(), bp.getAuthID());
 		}).render(listModule);
 
 
