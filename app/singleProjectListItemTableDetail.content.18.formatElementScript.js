@@ -1,11 +1,11 @@
 
 el.setAttribute("data-col","public");
 
-el.appendChild('div', {
+el.appendChild(new Element('div', {
     "class":"indicator-switch",
     events:{
         click:function(){
             
         }
     }
-})
+}));
