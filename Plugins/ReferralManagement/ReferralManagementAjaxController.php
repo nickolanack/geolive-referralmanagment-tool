@@ -29,7 +29,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			return $this->setError('Invalid access level');
 		} 
 
-		(new attributes\Record('proposalAttributes'))->setValues($json->id, 'ReferralManagement.proposal', array(
+		(new attributes\Record('proposalAttributes'))->setValues($json->project, 'ReferralManagement.proposal', array(
 			'accessLevel' => $json->access,
 		));
 
