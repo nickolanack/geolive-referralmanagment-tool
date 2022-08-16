@@ -25,7 +25,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			return $this->setError('No access or does not exist');
 		}
 
-		if(!in_array($json->access, array('public', 'private')){
+		if(!in_array($json->access, array('public', 'private'))){
 			return $this->setError('Invalid access level');
 		} 
 
