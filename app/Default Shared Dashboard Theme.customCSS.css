@@ -6373,6 +6373,33 @@ button.toggle-dock-form {
     }
 }
 
+
+[data-col="public"]{
+    
+    &.indicator-switch:before {
+        content: "\0f070";
+        font-family: 'FontAwesome';
+        position: absolute;
+        left: -25px;
+        top: -8px;
+        color: #d26450;
+    }
+    
+    &.active>.indicator-switch:before {
+        content: "\0f06e";
+        color: #59d759;
+    }
+
+}
+    
+    
+    
+    
+    
+    
+
+    
+    
     
     
     
