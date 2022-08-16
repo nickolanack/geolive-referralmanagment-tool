@@ -1,19 +1,20 @@
-if(AppClient.getUserType()==="guest"){
-		return null;
-	}
+//share btn
 
-return new ElementModule('button',{
-    "html":"Download", 
-    "identifier":"button-download",
-    "style":"background-color: mediumseagreen;", 
-    "class":"primary-btn", 
-    "events":{"click":function(){
+if(item.isArchived()){
+    return null;
+}
+
+
+
+return new ModalFormButtonModule(application, item, {
+         
+            label: "Share",
+            formName: "shareLink",
+            "class": "primary-btn share",
+            identifier:"button-share"
+
     
-        var downloadQuery=new AjaxControlQuery(CoreAjaxUrlRoot, 'download_files', {
-		                "plugin": "ReferralManagement",
-		                "proposal":item.getId()
-		                });
-    				//downloadQuery.execute(); //for testing.
-    				window.open(downloadQuery.getUrl(true),'Download'); 
+});
 
-    }}})
+
+
