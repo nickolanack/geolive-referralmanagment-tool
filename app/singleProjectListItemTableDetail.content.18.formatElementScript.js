@@ -19,7 +19,7 @@ el.appendChild(new Element('div', {
                     (new AjaxControlQuery(CoreAjaxUrlRoot, 'set_access', {
     		                "plugin": "ReferralManagement",
     		                "project":item.getId(),
-    		                "access":"public"
+    		                "access":"private"
     		        })).addEvent('success', function(resp){
     		            console.log(resp);
     		        }).execute();
@@ -31,7 +31,7 @@ el.appendChild(new Element('div', {
                 (new AjaxControlQuery(CoreAjaxUrlRoot, 'set_access', {
     		                "plugin": "ReferralManagement",
     		                "project":item.getId(),
-    		                "access":"private"
+    		                "access":"public"
     		        })).addEvent('success', function(resp){
     		            console.log(resp);
     		        }).execute();
