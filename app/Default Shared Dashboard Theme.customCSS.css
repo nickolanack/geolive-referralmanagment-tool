@@ -6376,6 +6376,11 @@ button.toggle-dock-form {
 
 [data-col="public"]{
     
+    
+    .active>.indicator-switch {
+        background-color: #59d759;
+    }
+    
     .indicator-switch:before {
         content: "\0f070";
         font-family: 'FontAwesome';
@@ -6387,7 +6392,7 @@ button.toggle-dock-form {
     
     &.active>.indicator-switch:before {
         content: "\0f06e";
-        color: #59d759;
+        color: black;
     }
 
 }
