@@ -10,9 +10,26 @@ el.appendChild(new Element('div', {
             if(item.authorize('write')){
                if(el.hasClass('active')){
                     el.removeClass('active');
+                    
+                    (new AjaxControlQuery(CoreAjaxUrlRoot, 'set_access', {
+    		                "plugin": "ReferralManagement",
+    		                "project":item.getId(),
+    		                "access":"public"
+    		        })).addEvent('success', function(resp){
+    		            console.log(resp);
+    		        }).execute();
+                    
                     return;
                 }
                 el.addClass('active'); 
+                
+                (new AjaxControlQuery(CoreAjaxUrlRoot, 'set_access', {
+    		                "plugin": "ReferralManagement",
+    		                "project":item.getId(),
+    		                "access":"private"
+    		        })).addEvent('success', function(resp){
+    		            console.log(resp);
+    		        }).execute();
             }
         }
     }
