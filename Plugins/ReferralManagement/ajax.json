@@ -46,6 +46,15 @@
         }
     },
 
+    "set_access":{
+        "access": "registered",
+        "validate": {
+            "checkKeys": [
+                "project", "access"
+            ]
+        }
+    },
+
     "save_team_member_permissions": [],
 
     "get_project_layers": [],

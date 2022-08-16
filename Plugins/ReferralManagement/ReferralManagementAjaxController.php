@@ -18,6 +18,28 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 	}
 
 
+	protected function setAccess($json){
+
+
+		if (!Auth('write', $json->project, 'ReferralManagement.proposal')) {
+			return $this->setError('No access or does not exist');
+		}
+
+		if(!in_array($json->access, array('public', 'private')){
+			return $this->setError('Invalid access level');
+		} 
+
+		(new attributes\Record('proposalAttributes'))->setValues($json->id, 'ReferralManagement.proposal', array(
+			'accessLevel' => $json->access,
+		));
+
+
+		return true;
+
+
+	}
+
+
 	protected function addMapFeature($json){
 
 
