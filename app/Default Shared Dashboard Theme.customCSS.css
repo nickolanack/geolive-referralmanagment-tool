@@ -6399,6 +6399,10 @@ button.toggle-dock-form {
         color: black;
     }
 
+
+    &.disabled .indicator-switch:before {
+    color: gray;
+    }
 }
     
     
