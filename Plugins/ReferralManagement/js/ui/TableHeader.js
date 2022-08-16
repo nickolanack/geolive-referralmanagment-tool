@@ -133,6 +133,8 @@ var TableHeader = (function() {
 					if (!DashboardConfig.getValue('enableProposals')) {
 						removeCols.push('col-status');
 						removeCols.push('col-auth');
+						
+					}else{
 						removeCols.push('col-public');
 					}
 
