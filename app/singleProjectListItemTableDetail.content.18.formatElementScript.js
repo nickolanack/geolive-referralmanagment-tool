@@ -7,7 +7,7 @@ el.appendChild(new Element('div', {
         click:function(event){
             event.stop();
             
-            if(item.authorize('write')){
+            item.authorize('write',function(){
                if(el.hasClass('active')){
                     el.removeClass('active');
                     
@@ -30,7 +30,7 @@ el.appendChild(new Element('div', {
     		        })).addEvent('success', function(resp){
     		            console.log(resp);
     		        }).execute();
-            }
+            });
         }
     }
 }));
