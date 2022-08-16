@@ -6376,7 +6376,7 @@ button.toggle-dock-form {
 
 [data-col="public"]{
     
-    &.indicator-switch:before {
+    .indicator-switch:before {
         content: "\0f070";
         font-family: 'FontAwesome';
         position: absolute;
