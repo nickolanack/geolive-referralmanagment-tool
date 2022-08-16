@@ -19179,6 +19179,17 @@
                                     "fieldValueScript": "return \"\";",
                                     "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.17.config.formatElementScript.js"
                                 }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "identifier": "col-public",
+                                    "className": "",
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": "singleProjectListItemTableDetail.metadata.positions.content.modules.18.config.formatElementScript.js"
+                                }
                             }
                         ]
                     },
