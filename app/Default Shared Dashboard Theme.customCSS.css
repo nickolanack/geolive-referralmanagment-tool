@@ -6376,6 +6376,9 @@ button.toggle-dock-form {
 
 [data-col="public"]{
     
+    .indicator-switch {
+        float:none;
+    }
     
     .active>.indicator-switch {
         background-color: #59d759;
