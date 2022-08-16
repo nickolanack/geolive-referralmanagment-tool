@@ -7,8 +7,13 @@ el.appendChild(new Element('div', {
         click:function(event){
             event.stop();
             
-            item.authorize('write',function(){
-               if(el.hasClass('active')){
+            item.authorize('write',function(writeable){
+            
+                if(!writeable){
+                    return;
+                }
+                
+                if(el.hasClass('active')){
                     el.removeClass('active');
                     
                     (new AjaxControlQuery(CoreAjaxUrlRoot, 'set_access', {
@@ -34,6 +39,13 @@ el.appendChild(new Element('div', {
         }
     }
 }));
+
+
+item.authorize('write',function(writeable){
+    if(!writeable){
+        el.addClass('disabled');
+    }
+});
 
 
 if(item.isPublic()){
