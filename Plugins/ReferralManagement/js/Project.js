@@ -82,6 +82,11 @@ var Project = (function() {
 
 			if (me.data) {
 
+				if(typeof me.data.writable !="undefined"&&typeof data.writable=="undefined"){
+					data.writable=me.data.writable;
+				}
+
+
 				if(JSON.stringify(data)==JSON.stringify(me.data)){
 					return;
 				}
