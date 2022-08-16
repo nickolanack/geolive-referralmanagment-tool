@@ -133,6 +133,7 @@ var TableHeader = (function() {
 					if (!DashboardConfig.getValue('enableProposals')) {
 						removeCols.push('col-status');
 						removeCols.push('col-auth');
+						removeCols.push('col-public');
 					}
 
 					content = content.filter(function(m) {
