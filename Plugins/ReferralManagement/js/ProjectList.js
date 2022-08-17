@@ -954,9 +954,12 @@ var ProjectList = (function() {
 			projects: function(callback) {
 
 				ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
-					callback(team.getProjects().filter(function(p) {
+
+					var list=team.getProjects().filter(function(p) {
 						return p.getProjectSubmitterId() + "" == user.getId() + "";
-					}));
+					});
+					
+					callback(list);
 				});
 			}
 		});
