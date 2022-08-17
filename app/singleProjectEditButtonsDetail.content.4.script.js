@@ -13,7 +13,7 @@ var reportBtns=[]
 
 
 
-var reportBtn=new ElementModule('button',{"identifier":"button-report", "html":"Print", "class":"primary-btn report", "events":{"click":function(){
+var reportBtn=new ElementModule('button',{"identifier":"button-printreport", "html":"Print", "class":"primary-btn print-report", "events":{"click":function(){
     
         var exportQuery=new AjaxControlQuery(CoreAjaxUrlRoot, 'generate_report', {
     		                "plugin": "ReferralManagement",
