@@ -1,5 +1,6 @@
 
 el.setAttribute("data-col","public");
+el.addClass("inline");
 
 el.appendChild(new Element('div', {
     "class":"indicator-switch",
