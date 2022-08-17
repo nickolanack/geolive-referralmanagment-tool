@@ -23216,16 +23216,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 231,
-                            "y": 143
+                            "x": 241,
+                            "y": 153
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 191,
-                                    "y": 406
+                                    "x": 201,
+                                    "y": 441
                                 }
                             }
                         ],
@@ -23392,6 +23392,19 @@
                                             }
                                         },
                                         {
+                                            "type": "InlineHtml",
+                                            "config": {
+                                                "className": "",
+                                                "text": "##Advanced options",
+                                                "template": "html.layerFormAdvancedSection",
+                                                "templateVariablesScript": "{}",
+                                                "formatTextScript": "",
+                                                "formatVariablesScript": "",
+                                                "ajaxRequestTemplate": true,
+                                                "identifier": "htmlLabel"
+                                            }
+                                        },
+                                        {
                                             "type": "FormBooleanField",
                                             "config": {
                                                 "className": "",
@@ -23400,7 +23413,7 @@
                                                 "mandatory": false,
                                                 "getValueScript": "return item.getRenderTiles();",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.9.config.submitValueScript.js",
+                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.10.config.submitValueScript.js",
                                                 "validateValueScript": "",
                                                 "formatElementScript": ""
                                             }
@@ -28246,6 +28259,20 @@
             "saveTemplateAsData": true,
             "contentTemplate": "Report Template",
             "readAccess": "public"
+        }
+    },
+    "widget.504": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-layerFormAdvancedSection.text",
+            "target": "module.html-layerFormAdvancedSection.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "##Advanced options"
         }
     }
 }
