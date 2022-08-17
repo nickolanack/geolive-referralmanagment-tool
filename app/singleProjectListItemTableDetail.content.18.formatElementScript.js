@@ -47,12 +47,12 @@ container.appendChild(new Element('div', {
 
 item.authorize('write',function(writeable){
     if(!writeable){
-        el.addClass('disabled');
+        container.addClass('disabled');
     }
 });
 
 
 if(item.isPublic()){
-    el.addClass('active');
+    container.addClass('active');
 }
 
