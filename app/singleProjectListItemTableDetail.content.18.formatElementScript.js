@@ -3,7 +3,7 @@ el.setAttribute("data-col","public");
 el.addClass("inline");
 
 var container=el.appendChild(new Element('div', {
-    "class":"indicator-container"
+    "class":"indicator-container",
     events:{
         click:function(event){
             event.stop();
