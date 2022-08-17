@@ -75,17 +75,16 @@ var Project = (function() {
 
 
 		},
+
+		
 		_setData: function(data) {
 			var me = this;
 
 			var change = false;
 
 			if (me.data) {
-
-				if(typeof me.data.writable !="undefined"&&typeof data.writable=="undefined"){
-					data.writable=me.data.writable;
-				}
-
+				
+				me._mergeUserData(data);
 
 				if(JSON.stringify(data)==JSON.stringify(me.data)){
 					return;
@@ -107,6 +106,26 @@ var Project = (function() {
 
 		},
 
+		/**
+		 * append extra state data to project that may not exist in request to setData
+		 * 
+		 * ie: extra data that is specific to the current user. For now, just `.writable` which is a boolean 
+		 * and removes the need for a server authentication request...
+		 * 
+		 *
+		 * 
+		 * @param  {[type]} data [description]
+		 * @return {[type]}      [description]
+		 */
+		_mergeUserData:function(data){
+
+			var me=this;
+			if(typeof me.data.writable !="undefined"&&typeof data.writable=="undefined"){
+				data.writable=me.data.writable;
+			}
+
+		},
+
 
 		authorize:function(task, callback){
 			if(task=='write'){
@@ -119,7 +138,7 @@ var Project = (function() {
 
 		
 		isPublic:function(){
-			return this.data&&this.data.attributes&&(this.data.attributes.accessLevel||"private").toLowerCase()==="public";
+			return this.data&&(this.data.accessLevel||"private").toLowerCase()==="public";
 		},
 
 		isPrivateWithinCommunity:function(){

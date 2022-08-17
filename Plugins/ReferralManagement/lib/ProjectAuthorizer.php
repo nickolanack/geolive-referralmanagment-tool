@@ -34,7 +34,20 @@ class ProjectAuthorizer{
 		return function (&$item, $userId=-1) use ($clientId, $clientMetadata, $minAccessLevel, $clientMinAuth, $collectiveIsParent, $itemsFollowCommunity) {
 
 			if(isset($item->attributes->accessLevel)&&!empty($item->attributes->accessLevel)){
+				/**
+				 * @deprecated move out of attributes
+				 */
 				$accessLevel=strtolower($item->attributes->accessLevel);
+				if($accessLevel==='public'){
+					$item->visibleBecuase = "Item is public";
+					$this->lastAuthReason=$item->visibleBecuase;
+					return true;
+				}
+			}
+
+
+			if(isset($item->accessLevel)&&!empty($item->accessLevel)){
+				$accessLevel=strtolower($item->accessLevel);
 				if($accessLevel==='public'){
 					$item->visibleBecuase = "Item is public";
 					$this->lastAuthReason=$item->visibleBecuase;

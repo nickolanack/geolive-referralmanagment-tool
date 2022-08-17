@@ -81,6 +81,14 @@ class Project {
 
 
 		$proposal['communityAccess']='public';
+		$proposal['accessLevel']='private';
+
+		if(isset($attributes['accessLevel']){
+			if(in_array($attributes['accessLevel'], array('public', 'private'))){
+				$proposal['accessLevel']=$attributes['accessLevel'];
+				unset($attributes['accessLevel'])
+			}
+		}
 
 		GetPlugin('Attributes');
 
