@@ -2,8 +2,7 @@
 el.setAttribute("data-col","public");
 el.addClass("inline");
 
-el.appendChild(new Element('div', {
-    "class":"indicator-switch",
+var container=el.appendChild(new Element('div', {
     events:{
         click:function(event){
             event.stop();
@@ -14,8 +13,8 @@ el.appendChild(new Element('div', {
                     return;
                 }
                 
-                if(el.hasClass('active')){
-                    el.removeClass('active');
+                if(container.hasClass('active')){
+                    container.removeClass('active');
                     
                     (new AjaxControlQuery(CoreAjaxUrlRoot, 'set_access', {
     		                "plugin": "ReferralManagement",
@@ -27,7 +26,7 @@ el.appendChild(new Element('div', {
                     
                     return;
                 }
-                el.addClass('active'); 
+                container.addClass('active'); 
                 
                 (new AjaxControlQuery(CoreAjaxUrlRoot, 'set_access', {
     		                "plugin": "ReferralManagement",
@@ -39,6 +38,10 @@ el.appendChild(new Element('div', {
             });
         }
     }
+    
+}));
+container.appendChild(new Element('div', {
+    "class":"indicator-switch"
 }));
 
 
