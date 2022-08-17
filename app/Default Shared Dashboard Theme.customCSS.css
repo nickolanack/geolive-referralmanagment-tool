@@ -6422,8 +6422,16 @@ button.toggle-dock-form {
     
     
     
-    
-    
+     
+
+button.primary-btn.print-report {
+    font-size: 0;
+    &:after {
+        content: "\0f02f";
+        font-family: 'FontAwesome';
+        font-size: 18px;
+    }
+}
 
     
     
