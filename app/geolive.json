@@ -28270,9 +28270,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
-            "saveTemplateAsData": false,
-            "contentTemplate": "##Advanced options"
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "##Advanced options",
+            "readAccess": "public"
         }
     }
 }
