@@ -1,4 +1,4 @@
-//report btn
+//print map btn
 
 if(item.isArchived()){
     return null;
@@ -17,7 +17,8 @@ var reportBtn=new ElementModule('button',{"identifier":"button-report", "html":"
     
         var exportQuery=new AjaxControlQuery(CoreAjaxUrlRoot, 'generate_report', {
     		                "plugin": "ReferralManagement",
-    		                "proposal":item.getId()
+    		                "project":item.getId(),
+    		                "template":"Print Map"
     		                });
         				//exportQuery.execute(); //for testing.
         				window.open(exportQuery.getUrl(true),'Download'); 
