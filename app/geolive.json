@@ -18106,6 +18106,14 @@
                         "modules": [
                             "recentDetail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "recentDetail.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "projects-list",
@@ -18120,16 +18128,16 @@
                                     "formOptions": "\"{}\"",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "defaultBehaviorFn()",
-                                    "initModuleScript": "recentDetail.metadata.positions.content.modules.1.config.initModuleScript.js",
+                                    "initModuleScript": "recentDetail.metadata.positions.content.modules.2.config.initModuleScript.js",
                                     "formatModuleScript": "",
-                                    "resolveItemScript": "recentDetail.metadata.positions.content.modules.1.config.resolveItemScript.js",
+                                    "resolveItemScript": "recentDetail.metadata.positions.content.modules.2.config.resolveItemScript.js",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
-                                    "getItemListScript": "recentDetail.metadata.positions.content.modules.1.config.getItemListScript.js",
+                                    "getItemListScript": "recentDetail.metadata.positions.content.modules.2.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "recentDetail.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "recentDetail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
                                     "sortItemsScript": "",
@@ -18140,7 +18148,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "recentDetail.metadata.positions.content.modules.2.config.script.js",
+                                    "script": "recentDetail.metadata.positions.content.modules.3.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
