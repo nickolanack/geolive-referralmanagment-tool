@@ -1,0 +1,1 @@
+wizardDataSet.lineWidth=object.value;
