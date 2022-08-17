@@ -80,15 +80,9 @@ class Project {
 		unset($proposal['discussion']->new);
 
 
-		$proposal['communityAccess']='public';
-		$proposal['accessLevel']='private';
+		
 
-		if(isset($attributes['accessLevel'])){
-			if(in_array($attributes['accessLevel'], array('public', 'private'))){
-				$proposal['accessLevel']=$attributes['accessLevel'];
-			}
-			unset($attributes['accessLevel']);
-		}
+		
 
 		GetPlugin('Attributes');
 
@@ -99,6 +93,18 @@ class Project {
 			$datasetAttributes = (new \attributes\Record('datasetAttributes'))
 				->getValues($proposal['id'], 'ReferralManagement.proposal');
 			$attributes['dataset'] = $datasetAttributes;
+		}
+
+
+
+		$proposal['communityAccess']='public';
+		$proposal['accessLevel']='private';
+
+		if(isset($attributes['accessLevel'])){
+			if(in_array($attributes['accessLevel'], array('public', 'private'))){
+				$proposal['accessLevel']=$attributes['accessLevel'];
+			}
+			unset($attributes['accessLevel']);
 		}
 
 
