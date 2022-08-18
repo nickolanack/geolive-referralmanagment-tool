@@ -1,10 +1,13 @@
 {
-    "type": "WizardTitleField",
+    "type": "InlineHtml",
     "config": {
-        "label": "Title",
-        "message": "add a title",
         "className": "",
-        "maxChars": 0,
-        "textFormatScript": ""
+        "text": "##Layer settings",
+        "template": "html.layerSettings",
+        "templateVariablesScript": "{}",
+        "formatTextScript": "",
+        "formatVariablesScript": "",
+        "ajaxRequestTemplate": false,
+        "identifier": "htmlLabel"
     }
 }
