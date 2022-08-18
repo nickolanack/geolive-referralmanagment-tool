@@ -2,12 +2,12 @@
     "type": "InlineHtml",
     "config": {
         "className": "",
-        "text": "##Layer settings",
-        "template": "html.layerSettings",
+        "text": "##Advanced options",
+        "template": "html.layerFormAdvancedSection",
         "templateVariablesScript": "{}",
         "formatTextScript": "",
         "formatVariablesScript": "",
-        "ajaxRequestTemplate": false,
+        "ajaxRequestTemplate": true,
         "identifier": "htmlLabel"
     }
 }
