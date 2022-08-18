@@ -115,11 +115,11 @@ var UserNotifications = (function() {
 						var el = $$('body')[0];
 						if (el.hasClass('hide-admin')) {
 							el.removeClass('hide-admin');
-							localStorage.getItem('show-admin', true)
+							localStorage.setItem('show-admin', true)
 							return;
 						}
 						el.addClass('hide-admin');
-						localStorage.getItem('show-admin', false)
+						localStorage.setItem('show-admin', false)
 
 					}
 				}
