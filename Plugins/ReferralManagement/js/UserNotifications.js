@@ -98,6 +98,14 @@ var UserNotifications = (function() {
 		];
 
 		if (AppClient.getUserType() === 'admin') {
+
+
+			if(localStorage.getItem('show-admin')===false){
+				var el = $$('body')[0];
+				el.addClass('hide-admin');
+				el.addClass('hide-admin');
+			}
+
 			btns.push((new ElementModule('span', {
 				"class": "admin-toggle",
 				events: {
@@ -107,9 +115,11 @@ var UserNotifications = (function() {
 						var el = $$('body')[0];
 						if (el.hasClass('hide-admin')) {
 							el.removeClass('hide-admin');
+							localStorage.getItem('show-admin', true)
 							return;
 						}
 						el.addClass('hide-admin');
+						localStorage.getItem('show-admin', false)
 
 					}
 				}

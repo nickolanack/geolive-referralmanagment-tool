@@ -951,6 +951,7 @@ var ProjectList = (function() {
 
 		return new ProjectList({
 			"label": user.getName(),
+			"showFilters": true,
 			projects: function(callback) {
 
 				ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
@@ -958,7 +959,7 @@ var ProjectList = (function() {
 					var list=team.getProjects().filter(function(p) {
 						return p.getProjectSubmitterId() + "" == user.getId() + "";
 					});
-					
+
 					callback(list);
 				});
 			}
