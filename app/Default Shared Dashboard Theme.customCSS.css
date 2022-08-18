@@ -1192,6 +1192,13 @@ button.inline-edit, .btn.inline-edit, .btn.inline-remove, .section-toggle, .navi
     
     
     
+    
+    [data-col="priority"], [data-col="sharing"], [data-col="public"]  {
+        display: none;
+    }
+    
+ 
+    
 
 }
 
@@ -6415,8 +6422,16 @@ button.toggle-dock-form {
     
     
     
-    
-    
+     
+
+button.primary-btn.print-report {
+    font-size: 0;
+    &:after {
+        content: "\0f02f";
+        font-family: 'FontAwesome';
+        font-size: 18px;
+    }
+}
 
     
     

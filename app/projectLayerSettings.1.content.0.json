@@ -1,20 +1,13 @@
 {
-    "type": "FormTextDescriptionField",
+    "type": "InlineHtml",
     "config": {
-        "label": "Marker Icon",
-        "message": "",
-        "lines": 3,
-        "mandatory": false,
-        "showAudios": true,
-        "showImages": true,
-        "showDocuments": true,
-        "showVideos": true,
         "className": "",
-        "maxChars": 0,
-        "showExpandInput": true,
-        "toolbarPosition": "bottom",
-        "textFormatScript": "",
-        "mediaIconTint": "rgb(100, 149, 237)",
-        "onRenderModuleFn": "module.runOnceOnLoad(function(){\n    \n    module.getTextField().getInputElement().setStyle('display','none');\n})"
+        "text": "##Layer settings",
+        "template": "html.layerSettings",
+        "templateVariablesScript": "{}",
+        "formatTextScript": "",
+        "formatVariablesScript": "",
+        "ajaxRequestTemplate": false,
+        "identifier": "htmlLabel"
     }
 }

@@ -1,1 +1,1 @@
-wizardDataSet.renderTiles=object.value;
+wizardDataSet.lineWidth=object.value;
