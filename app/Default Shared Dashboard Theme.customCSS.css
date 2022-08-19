@@ -1043,7 +1043,9 @@ span.field-label.address-click:after {
  }
 
 
-
+.section-padding {
+    margin: 30px 40px;
+}
 
 
 [data-view="peopleUsersDetail"], [data-view="communityUsersDetail"] {
