@@ -448,19 +448,34 @@ var DashboardPageLayout = (function() {
 		var removeCols = ['col-approval', 'col-ownership', ];
 
 
-		if(ProjectTeam.GetAllCommunities().length===1){
+		if (ProjectTeam.GetAllCommunities().length === 1) {
 			removeCols.push('col-community');
 			removeCols.push('col-sharing');
 		}
-   
 
-		if(!DashboardConfig.getValue('enableProposals')){
+
+		if (!DashboardConfig.getValue('enableProposals')) {
 			removeCols.push('col-status');
+			removeCols.push('col-auth');
+			
+		}else{
+			removeCols.push('col-public');
 		}
 
 		return content.filter(function(m) {
 			return removeCols.indexOf(m.getIdentifier()) < 0;
-		})
+		});
+
+		//return content;
+	}).addLayout("singleTaskListItemDetail", function(content) {
+
+		
+
+		var removeCols = [];
+
+		return content.filter(function(m) {
+			return removeCols.indexOf(m.getIdentifier()) < 0;
+		});
 
 		//return content;
 	}).addLayout("userProfileDetailOverview", function(content) {
@@ -873,8 +888,9 @@ var DashboardPageLayout = (function() {
 			'singleProjectEditButtonsDetail',
 			'proposalOverviewStatus',
 			'singleProjectListItemDetail',
-			'singleProjectUsersDetail'
-		];
+			'singleProjectUsersDetail',
+			'singleTaskListItemDetail'
+			];
 
 		app.getDisplayController().addFormViewWizardModuleFormatter(function(item, name, step, list) {
 			if(name==='ProposalTemplate'&&step.getIndex(1)){

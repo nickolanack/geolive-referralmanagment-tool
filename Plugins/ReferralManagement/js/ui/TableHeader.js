@@ -167,6 +167,38 @@ var TableHeader = (function() {
 			});
 
 
+			DashboardPageLayout.addLayout("singleTaskListItemDetail", function(content, options, callback) {
+
+				me.runOnceOnLoad(function(){
+
+			
+					
+
+
+					var layoutDefault=TableHeaders.getLayout(me.getLayoutName());
+					var order = Object.keys(layoutDefault)
+					content.sort(function(a, b) {
+						var aId = a.getIdentifier().split('col-').pop();
+						var bId = b.getIdentifier().split('col-').pop();
+
+						var aOrder = order.indexOf(aId);
+						var bOrder = order.indexOf(bId);
+						if (aOrder == -1) {
+							aOrder = Infinity;
+						}
+						if (bOrder == -1) {
+							bOrder = Infinity;
+						}
+
+						return aOrder - bOrder;
+					});
+
+
+					 callback(content);
+				 });
+			});
+
+
 			if(layout){
 
 				TableHeaders.setLayout(layoutName, layout);
