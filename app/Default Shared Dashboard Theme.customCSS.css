@@ -2777,7 +2777,7 @@ img.youtubelogo {
 
 
 .task-title .field-value {
-    max-width: 450px;
+    max-width: calc( 100% - 55px);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
