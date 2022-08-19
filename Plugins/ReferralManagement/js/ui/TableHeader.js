@@ -140,29 +140,9 @@ var TableHeader = (function() {
 
 					content = content.filter(function(m) {
 						return removeCols.indexOf(m.getIdentifier()) < 0;
-					})
-
-
-					var layoutDefault=TableHeaders.getLayout(me.getLayoutName());
-					var order = Object.keys(layoutDefault)
-					content.sort(function(a, b) {
-						var aId = a.getIdentifier().split('col-').pop();
-						var bId = b.getIdentifier().split('col-').pop();
-
-						var aOrder = order.indexOf(aId);
-						var bOrder = order.indexOf(bId);
-						if (aOrder == -1) {
-							aOrder = Infinity;
-						}
-						if (bOrder == -1) {
-							bOrder = Infinity;
-						}
-
-						return aOrder - bOrder;
 					});
 
-
-					 callback(content);
+					me._sortModules(content, options, callback);
 				 });
 			});
 
@@ -170,32 +150,8 @@ var TableHeader = (function() {
 			DashboardPageLayout.addLayout("singleTaskListItemDetail", function(content, options, callback) {
 
 				me.runOnceOnLoad(function(){
-
-			
-					
-
-
-					var layoutDefault=TableHeaders.getLayout(me.getLayoutName());
-					var order = Object.keys(layoutDefault)
-					content.sort(function(a, b) {
-						var aId = a.getIdentifier().split('col-').pop();
-						var bId = b.getIdentifier().split('col-').pop();
-
-						var aOrder = order.indexOf(aId);
-						var bOrder = order.indexOf(bId);
-						if (aOrder == -1) {
-							aOrder = Infinity;
-						}
-						if (bOrder == -1) {
-							bOrder = Infinity;
-						}
-
-						return aOrder - bOrder;
-					});
-
-
-					 callback(content);
-				 });
+					me._sortModules(content, options, callback);
+				});
 			});
 
 
@@ -215,6 +171,39 @@ var TableHeader = (function() {
 				me.fireEvent('load');
 			});
 
+
+		},
+
+
+		_sortModules:function(content, options, callback){
+
+			var me=this;
+			var layoutDefault=TableHeaders.getLayout(me.getLayoutName());
+			var order = Object.keys(layoutDefault)
+
+
+			content=content.filter(function(c){
+				return c&&c.getIdentifier;
+			});
+
+			content.sort(function(a, b) {
+				var aId = a.getIdentifier().split('col-').pop();
+				var bId = b.getIdentifier().split('col-').pop();
+
+				var aOrder = order.indexOf(aId);
+				var bOrder = order.indexOf(bId);
+				if (aOrder == -1) {
+					aOrder = Infinity;
+				}
+				if (bOrder == -1) {
+					bOrder = Infinity;
+				}
+
+				return aOrder - bOrder;
+			});
+
+
+			 callback(content);
 
 		},
 
