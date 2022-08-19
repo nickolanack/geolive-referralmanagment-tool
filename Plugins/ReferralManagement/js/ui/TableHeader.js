@@ -589,7 +589,7 @@ var TableHeader = (function() {
 					return '._tableStyle_ [data-col="' + cell.col + '"]{ width:' + cell.width + '; }';
 				}).join("\n") + "\n" +
 				hiddenCells.concat(collapsedCells).map(function(cell) {
-					return '._tableStyle_ div.field-value-module.inline[data-col="' + cell.col + '"], ._tableStyle_ [data-col="' + cell.col + '"]{ display:none; }';
+					return '._tableStyle_ div.field-value-module.inline[data-col="' + cell.col + '"], ._tableStyle_ [data-col="' + cell.col + '"],  ._tableStyle_ .table-header [data-col="' + cell.col + '"]{ display:none; }';
 				}).join("\n")+"\n\n"+(([]).concat(dynamicCells, minnedOutItems, maxedOutItems, staticCells).map(function(cell){
 
 
