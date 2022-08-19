@@ -5015,8 +5015,9 @@ img.static-map {
 
             label {
 
-                text-transform: uppercase;
-                font-size: 1.1em;
+                text-transform: capitalize;
+                font-weight:bold;
+                font-size: 1.3em;
                 width: 130px;
                 text-align: left;
                 display: inline-block;
