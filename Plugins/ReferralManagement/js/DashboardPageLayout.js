@@ -23,32 +23,35 @@ var DashboardPageLayout = (function() {
 			var options = {};
 			var me = this;
 
-			var layout = function(name) {
 
-				if (typeof name != "string") {
-					throw "Not a string `name`:" + (typeof name);
-				}
+			if (typeof name != "string") {
+				throw "Not a string `name`:" + (typeof name);
+			}
 
-				if (!(me._layouts && me._layouts[name])) {
-					callback(modules);
-					return;
-				}
+			if (!(me._layouts && me._layouts[name])) {
+				callback(modules);
+				return;
+			}
 
-				var result = me._layouts[name](modules.content, options, function(result){
+			var layout = function(name, layoutFn, callbackFn) {
+
+				
+
+				var result = layoutFn(modules.content, options, function(result){
 
 						if(typeof result!='undefined'){
 							modules.content = result;
 						}
-						callback(modules);
-						callback=function(){
+						callbackFn(modules);
+						callbackFn=function(){
 							throw 'Called twice';
 						}
 				});
 
 				if(typeof result!="undefined"){
 					modules.content = result;
-					callback(modules);
-					callback=function(){
+					callbackFn(modules);
+					callbackFn=function(){
 						throw 'Called twice';
 					}
 				}
@@ -56,7 +59,31 @@ var DashboardPageLayout = (function() {
 				
 			}
 
-			layout(name);
+
+
+
+			if(isArray_(me._layouts[name])){
+
+				/**
+				 * This is here to add support for multiple chained layouts. ie: one layout can define permissions, another can handle sorting
+				 */
+
+				var list=me._layouts[name].slice(0);
+				var recurseList=function(result){
+					if(list.length==0){
+						callback(result);
+						return;
+					}
+					layout(name, list.shift(), recurseList);
+				}
+
+				layout(name, list.shift(), recurseList);
+				return;
+			}
+
+
+
+			layout(name, me._layouts[name], callback);
 
 		},
 
