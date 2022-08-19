@@ -973,7 +973,7 @@ var ProjectList = (function() {
 
 
 		return new ProjectList({
-			"label": "Related " + ProjectList.NameForProjects(),
+			"label": "Related " + ProjectList.NameForProjects().toLowerCase(),
 			"description": function(callback) {
 
 				this.getProjectList(function(list) {
