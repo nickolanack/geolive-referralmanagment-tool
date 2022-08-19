@@ -2777,7 +2777,7 @@ img.youtubelogo {
 
 
 .task-title .field-value {
-    max-width: 450px;
+    max-width: calc( 100% - 55px);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -2785,20 +2785,6 @@ img.youtubelogo {
     line-height: 16px;
     vertical-align: middle;
 }
-
-
-@media screen and (max-width: 1450px){
-    .task-title .field-value {
-        max-width: 300px;
-    }
-}
-@media screen and (max-width: 1250px){
-    .task-title .field-value {
-        max-width: 220px;
-    }
-}
-
-
 
 
 .completion-indicator {
