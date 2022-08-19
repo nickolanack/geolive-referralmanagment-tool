@@ -100,7 +100,7 @@ var UserNotifications = (function() {
 		if (AppClient.getUserType() === 'admin') {
 
 
-			if(localStorage.getItem('show-admin')===false){
+			if(localStorage.getItem('show-admin')==="false"){
 				var el = $$('body')[0];
 				el.addClass('hide-admin');
 				el.addClass('hide-admin');
