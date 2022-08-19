@@ -192,6 +192,10 @@ class Report {
 			->send();
 
 
+		if(isset($parameters->{'Link Report To Submission'})&&($parameters->{'Link Report To Submission'}===true){
+			$this->setLinkDocument();
+		}
+
 
 		$data=$this->getReportData($parameters);
 
