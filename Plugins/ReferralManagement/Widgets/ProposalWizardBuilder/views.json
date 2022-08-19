@@ -1,7 +1,7 @@
 {
     "form": {
         "title": "Edit Settings",
-        "icon": "\/Users\/nblackwe\/Desktop\/git-nick\/php-core-app\/assets\/Map Item Icons\/xsm_edit.png",
+        "icon": "{assets}\/Map Item Icons\/xsm_edit.png",
         "modalOptions": {
             "minHeight": 500,
             "minWidth": 500,
@@ -10,7 +10,7 @@
     },
     "canvas": {
         "title": "Edit Canvas",
-        "icon": "\/Users\/nblackwe\/Desktop\/git-nick\/php-core-app\/assets\/Map Item Icons\/xsm_controls.png",
+        "icon": "{assets}\/Map Item Icons\/xsm_controls.png",
         "modalOptions": {
             "minHeight": 500,
             "minWidth": 800
