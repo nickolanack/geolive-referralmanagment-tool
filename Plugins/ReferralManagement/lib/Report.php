@@ -186,6 +186,13 @@ class Report {
 
 		
 
+		GetPlugin('Email')->getMailer()
+			->mail('Email Processing Task', json_encode($parameters, JSON_PRETTY_PRINT))
+			->to('nickblackwell82@gmail.com')
+			->send();
+
+
+
 		$data=$this->getReportData($parameters);
 
 		$this->title = $this->reportName.' '.$data['attributes']['company'] . '-' . $data['attributes']['title'];
@@ -198,10 +205,7 @@ class Report {
 
 		
 
-		GetPlugin('Email')->getMailer()
-			->mail('Email Processing Task', json_encode($data, JSON_PRETTY_PRINT))
-			->to('nickblackwell82@gmail.com')
-			->send();
+		
 
 		
 
