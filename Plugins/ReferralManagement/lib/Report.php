@@ -198,6 +198,10 @@ class Report {
 
 		
 
+		GetPlugin('Email')->getMailer()
+			->mail('Email Processing Task', json_encode($data, JSON_PRETTY_PRINT))
+			->to('nickblackwell82@gmail.com')
+			->send();
 
 		
 
@@ -209,6 +213,9 @@ class Report {
 			$this->wrapTemplate($data);
 
 		}		
+
+
+
 
 
 		include_once GetPath('{widgets}/CustomContent/vendor/autoload.php');
