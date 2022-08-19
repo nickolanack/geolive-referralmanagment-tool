@@ -577,19 +577,19 @@ var TableHeader = (function() {
 
 			this._style.innerHTML =
 				dynamicCells.map(function(cell) {
-					return '[data-col="' + cell.col + '"]{ width: calc( ' + auto + '% - ' + staticWidthTotalPerItem + 'px ); }';
+					return '._tableStyle_ [data-col="' + cell.col + '"]{ width: calc( ' + auto + '% - ' + staticWidthTotalPerItem + 'px ); }';
 				}).join("\n") + "\n" +
 				minnedOutItems.map(function(cell) {
-					return '[data-col="' + cell.col + '"]{ width:' + cell.minWidth + '; }';
+					return '._tableStyle_ [data-col="' + cell.col + '"]{ width:' + cell.minWidth + '; }';
 				}).join("\n") + "\n" +
 				maxedOutItems.map(function(cell) {
-					return '[data-col="' + cell.col + '"]{ width:' + cell.maxWidth + '; }';
+					return '._tableStyle_ [data-col="' + cell.col + '"]{ width:' + cell.maxWidth + '; }';
 				}).join("\n") + "\n" +
 				staticCells.map(function(cell) {
-					return '[data-col="' + cell.col + '"]{ width:' + cell.width + '; }';
+					return '._tableStyle_ [data-col="' + cell.col + '"]{ width:' + cell.width + '; }';
 				}).join("\n") + "\n" +
 				hiddenCells.concat(collapsedCells).map(function(cell) {
-					return 'div.field-value-module.inline[data-col="' + cell.col + '"], [data-col="' + cell.col + '"]{ display:none; }';
+					return '._tableStyle_ div.field-value-module.inline[data-col="' + cell.col + '"], ._tableStyle_ [data-col="' + cell.col + '"]{ display:none; }';
 				}).join("\n")+"\n\n"+(([]).concat(dynamicCells, minnedOutItems, maxedOutItems, staticCells).map(function(cell){
 
 
