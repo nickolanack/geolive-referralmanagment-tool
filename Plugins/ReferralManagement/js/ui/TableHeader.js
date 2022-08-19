@@ -589,7 +589,7 @@ var TableHeader = (function() {
 					return '[data-col="' + cell.col + '"]{ width:' + cell.width + '; }';
 				}).join("\n") + "\n" +
 				hiddenCells.concat(collapsedCells).map(function(cell) {
-					return 'div.field-value-module.inline[data-col="' + cell.col + '"]{ display:none; }';
+					return 'div.field-value-module.inline[data-col="' + cell.col + '"], [data-col="' + cell.col + '"]{ display:none; }';
 				}).join("\n")+"\n\n"+(([]).concat(dynamicCells, minnedOutItems, maxedOutItems, staticCells).map(function(cell){
 
 
