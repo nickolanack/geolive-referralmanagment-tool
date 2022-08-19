@@ -2787,20 +2787,6 @@ img.youtubelogo {
 }
 
 
-@media screen and (max-width: 1450px){
-    .task-title .field-value {
-        max-width: 300px;
-    }
-}
-@media screen and (max-width: 1250px){
-    .task-title .field-value {
-        max-width: 220px;
-    }
-}
-
-
-
-
 .completion-indicator {
     width: 10px;
     height: 10px;
