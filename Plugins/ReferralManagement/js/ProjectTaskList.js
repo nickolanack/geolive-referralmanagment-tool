@@ -554,24 +554,28 @@ var ProjectTaskList = (function() {
 				"width": "30px",
 				"label": "Stars",
 				"showLabel": false,
-				"align": "center"
+				"align": "center",
+				"collapseAt": "55px"
 			},
 			"priority": {
 				"width": "30px",
 				"label": "Priority",
 				"showLabel": false,
 				"align": "center",
-				"sortInvert": true
+				"sortInvert": true,
+				"collapseAt": "55px"
 			},
 			"tags": {
 				"width": "130px",
-				"label": "Project"
+				"label": "Project",
+				"collapseAt": "55px"
 			},
 			"assigned": {
 				"width": "30px",
 				"label": "Assigned",
 				"showLabel": false,
-				"align": "center"
+				"align": "center",
+				
 
 			},
 			"comments": {
