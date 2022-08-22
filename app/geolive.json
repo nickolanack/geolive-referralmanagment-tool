@@ -23216,16 +23216,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 291,
-                            "y": 203
+                            "x": 301,
+                            "y": 213
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 251,
-                                    "y": 516
+                                    "x": 261,
+                                    "y": 526
                                 }
                             }
                         ],
@@ -23474,7 +23474,7 @@
                                                 "multiMessage": "add another value",
                                                 "formatter": "none",
                                                 "beforeRenderModuleScript": "",
-                                                "onRenderTextFieldScript": "",
+                                                "onRenderTextFieldScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.13.config.onRenderTextFieldScript.js",
                                                 "formatValueScript": "",
                                                 "getValueScript": " return \"Hello World\"; ",
                                                 "updateValueScript": " object.value=value ",
