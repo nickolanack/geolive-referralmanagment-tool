@@ -271,6 +271,7 @@ GetWidget('reportFormParameterForm')->display($targetInstance);
 GetWidget('reportParametersForm')->display($targetInstance);
 GetWidget('reportFormParameterField')->display($targetInstance);
 
+GetWidget('projectLayerSettings')->display($targetInstance);
 
 
 
