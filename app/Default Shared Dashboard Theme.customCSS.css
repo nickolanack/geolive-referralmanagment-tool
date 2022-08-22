@@ -6425,7 +6425,15 @@ button.primary-btn.print-report {
     
     
     
-    
+input.text-input[type="color"], input.text-input[type="color"]:focus {
+    width: 45px;
+    background-color: transparent;
+    height: 45px;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    box-shadow: none;
+}
     
     
     
