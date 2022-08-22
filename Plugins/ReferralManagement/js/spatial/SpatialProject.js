@@ -399,7 +399,7 @@ var SpatialProject = (function() {
 
 
 
-                var dialog=(new UIModalDialog(map, layerDataItem, {
+                var dialog=(new UIModalDialog(ReferralManagementDashboard.getApplication(), layerDataItem, {
                         "formName": formName,
                         "formOptions": {
                             template: "form"
