@@ -23216,16 +23216,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 281,
-                            "y": 193
+                            "x": 291,
+                            "y": 203
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 241,
-                                    "y": 506
+                                    "x": 251,
+                                    "y": 516
                                 }
                             }
                         ],
@@ -23262,7 +23262,7 @@
                                         {
                                             "type": "FormBooleanField",
                                             "config": {
-                                                "className": "",
+                                                "className": "width-3",
                                                 "label": "Show Labels",
                                                 "identifier": "boolean-field",
                                                 "mandatory": false,
@@ -23276,7 +23276,7 @@
                                         {
                                             "type": "FormBooleanField",
                                             "config": {
-                                                "className": "",
+                                                "className": "width-3",
                                                 "label": "Show Icons",
                                                 "identifier": "boolean-field",
                                                 "mandatory": false,
@@ -23290,7 +23290,7 @@
                                         {
                                             "type": "FormBooleanField",
                                             "config": {
-                                                "className": "",
+                                                "className": "width-3",
                                                 "label": "Show attributes",
                                                 "identifier": "boolean-field-attributes",
                                                 "mandatory": false,
@@ -23304,7 +23304,7 @@
                                         {
                                             "type": "FormTextField",
                                             "config": {
-                                                "className": "",
+                                                "className": "width-2",
                                                 "label": "Line Color",
                                                 "placeholder": "",
                                                 "lines": 1,
@@ -23326,7 +23326,7 @@
                                         {
                                             "type": "FormTextField",
                                             "config": {
-                                                "className": "",
+                                                "className": "width-2",
                                                 "label": "Polygon Fill Color",
                                                 "placeholder": "",
                                                 "lines": 1,
@@ -23348,7 +23348,7 @@
                                         {
                                             "type": "FormTextField",
                                             "config": {
-                                                "className": "",
+                                                "className": "width-3",
                                                 "label": "Line Opacity",
                                                 "placeholder": "",
                                                 "lines": 1,
@@ -23370,7 +23370,7 @@
                                         {
                                             "type": "FormTextField",
                                             "config": {
-                                                "className": "",
+                                                "className": "width-3",
                                                 "label": "Fill Opacity",
                                                 "placeholder": "add value",
                                                 "lines": 1,
@@ -23392,7 +23392,7 @@
                                         {
                                             "type": "FormTextField",
                                             "config": {
-                                                "className": "",
+                                                "className": "width-3",
                                                 "label": "Line Width",
                                                 "placeholder": "add value",
                                                 "lines": 1,
