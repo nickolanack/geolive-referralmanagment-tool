@@ -6277,6 +6277,10 @@ li.menu-project-share button:after {
     .field-description, .field-options, .field-type, .field-value {
         display: none;
     }
+    
+    .can-minimize{
+        display: none;
+    }
 }
     
 .dock-overlayed{
