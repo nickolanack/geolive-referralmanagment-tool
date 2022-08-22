@@ -1,1 +1,0 @@
-wizardDataSet.showLabels=object.value;
