@@ -65,7 +65,6 @@ var FormBuilder = (function(){
 
 		formatOptionsField:function(textField, inputElement, module){
 
-			var wizard=module.getViewer().getUIView().getChildWizard();
 
 			var el=module.getElement();
 			var p=el.parentNode;
