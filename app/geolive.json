@@ -23216,16 +23216,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 271,
-                            "y": 183
+                            "x": 281,
+                            "y": 193
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 231,
-                                    "y": 496
+                                    "x": 241,
+                                    "y": 506
                                 }
                             }
                         ],
@@ -23444,7 +23444,7 @@
                                                 "className": "",
                                                 "label": "Options",
                                                 "placeholder": "",
-                                                "lines": 1,
+                                                "lines": 2,
                                                 "maxChars": 0,
                                                 "mandatory": false,
                                                 "multiEntry": false,
@@ -23466,7 +23466,7 @@
                                                 "className": "",
                                                 "label": "Script Feature Format",
                                                 "placeholder": "add value",
-                                                "lines": 1,
+                                                "lines": 5,
                                                 "maxChars": 0,
                                                 "mandatory": false,
                                                 "multiEntry": false,
