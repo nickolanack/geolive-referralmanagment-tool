@@ -368,7 +368,7 @@ var SpatialProject = (function() {
                     }
 
                 }
-                var modalFormViewController =  new PushBoxModuleViewer(map, {});
+               
 
 
                 var data={
@@ -395,18 +395,39 @@ var SpatialProject = (function() {
                 }
 
 
-                var newItem= new MockDataTypeItem(data);
-                var wizard = wizardTemplate(newItem, {});
-                wizard.buildAndShow(modalFormViewController, {template:"form"}); 
-                wizard.addEvent('complete', function() {
+                var layerDataItem= new MockDataTypeItem(data);
 
-                    var data = wizard.getData();
+
+
+                var dialog=(new UIModalDialog(map, layerDataItem, {
+                        "formName": formName,
+                        "formOptions": {
+                            template: "form"
+                        }
+                    }
+                )).on('complete',function(){
+
+                	var data=dialog.getWizard().getData();
                     console.log(data);
                     project.setDatasetMetadata(data, layerIndex);
 
-                    //update current map
+                }).show();
 
-                });
+
+                // var modalFormViewController =  new PushBoxModuleViewer(map, {});
+                // var wizard = wizardTemplate(layerDataItem, {});
+                // wizard.buildAndShow(modalFormViewController, 
+                // 	template:"form"
+                // }); 
+                // wizard.addEvent('complete', function() {
+
+                //     var data = wizard.getData();
+                //     console.log(data);
+                //     project.setDatasetMetadata(data, layerIndex);
+
+                //     //update current map
+
+                // });
 
             });
 
