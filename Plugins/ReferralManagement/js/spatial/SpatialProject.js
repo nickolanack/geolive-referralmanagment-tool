@@ -424,6 +424,10 @@ var SpatialProject = (function() {
 
 				}
 
+				if(metadata.script){
+					options.script=(new Function('return function(feature, type, options){ '+options.script+'}')).call(null);
+				}
+
 			}
 
 

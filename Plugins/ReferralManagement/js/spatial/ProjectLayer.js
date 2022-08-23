@@ -74,7 +74,7 @@ var ProjectLayer = (function() {
 
 					if(typeof options.script=='function'){
 
-						var result=(new Function('return function(feature, type, options){ '+options.script+'}')).call(null).call(data, type, options);
+						var result = options.script(data, type, options);
 						if(result){
 							return result;
 						}
