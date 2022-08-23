@@ -70,13 +70,37 @@ var ProjectLayer = (function() {
 
 				},
 
+				_formatFeature:function(data, type, options){
+
+					if(typeof options.script=='function'){
+
+						var result=(new Function('return function(feature, type, options){ '+options.script+'}')).call(null).call(data, type, options);
+						if(result){
+							return result;
+						}
+
+					}
+
+					return data;
+
+				},
+
 				_initMarker: function(data, markerDataArray, i) {
+
+					data=this._formatFeature(data, 'marker', this.options.markerOptions);
+
 					GeoliveLayer.prototype._initMarker.call(this, Object.append(data, this.options.markerOptions), markerDataArray, i);
 				},
 				_initPolygon: function(data, lineDataArray, i) {
+
+					data=this._formatFeature(data, 'polygon', this.options.polygonOptions);
+
 					GeoliveLayer.prototype._initPolygon.call(this, Object.append(data, this.options.polygonOptions), lineDataArray, i);
 				},
 				_initLine: function(data, lineDataArray, i) {
+
+					data=this._formatFeature(data, 'line', this.options.lineOptions);
+
 					GeoliveLayer.prototype._initLine.call(this, Object.append(data, this.options.lineOptions), lineDataArray, i);
 				},
 				_getKmlQuery: function() {

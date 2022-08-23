@@ -488,6 +488,9 @@ var SpatialProject = (function() {
 					console.log(data);
 					project.setDatasetMetadata(data, layerIndex);
 
+					map.getLayerManager().getLayer(layerObject.id)
+
+
 				}).show();
 
 
