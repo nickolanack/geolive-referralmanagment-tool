@@ -40,88 +40,9 @@ var ProjectLayer = (function() {
 				Extends: GeoliveLayer,
 				initialize: function(map, options) {
 
-					var markerOptions = {
-						icon: 'https://storage.googleapis.com/support-kms-prod/SNP_2752125_en_v0',
-						showLabels: false,
-						clickable: false,
-					};
-					var lineOptions = {
-						
-					};
-					var polygonOptions = {};
+					var layerOptions=SpatialProject.getLayerOptions(options);
 
-					if (options.projectAttributes && options.projectAttributes.metadata) {
-
-
-						var metadata = options.projectAttributes.metadata;
-						if (metadata.description) {
-							JSTextUtilities.ParseImages(metadata.description).forEach(function(item) {
-								if (item.type.indexOf("image") >= 0) {
-									options.icon = item.url;
-									markerOptions.icon = item.url;
-								}
-							});
-						}
-
-						if (typeof metadata.showLabels == "boolean") {
-							markerOptions.showLabels = metadata.showLabels;
-						}
-
-						if (typeof metadata.lineColor == "string") {
-							lineOptions.lineColor = metadata.lineColor;
-							polygonOptions.lineColor = metadata.lineColor;
-						}
-
-						if (typeof metadata.lineWidth != "undefined") {
-
-							var lineWidth = parseFloat(metadata.lineWidth);
-							lineWidth = Math.min(Math.max(0, lineWidth), 5);
-
-							lineOptions.lineWidth = lineWidth;
-							polygonOptions.lineWidth = lineWidth;
-						}
-
-
-
-						if (typeof metadata.lineOpacity != "undefined") {
-
-							var lineOpacity = parseFloat(metadata.lineOpacity);
-							lineOpacity = Math.min(Math.max(0, lineOpacity), 1);
-
-							lineOptions.lineOpacity = lineOpacity;
-							polygonOptions.lineOpacity = lineOpacity;
-
-						}
-
-						if (typeof metadata.fillColor == "string") {
-
-							polygonOptions.polyColor = metadata.fillColor;
-						}
-
-						if (typeof metadata.fillOpacity != "undefined") {
-
-							var fillOpacity = parseFloat(metadata.fillOpacity);
-							fillOpacity = Math.min(Math.max(0, fillOpacity), 1);
-							polygonOptions.polyOpacity = fillOpacity;
-
-
-						}
-
-						if (metadata.renderTiles === true) {
-							options.parseBehavior='tile';
-							
-						}
-
-					}
-
-
-
-					GeoliveLayer.prototype.initialize.call(this, map, ObjectAppend_(options, {
-						markerOptions: markerOptions,
-						polygonOptions: polygonOptions,
-						lineOptions: lineOptions
-
-					}));
+					GeoliveLayer.prototype.initialize.call(this, map, layerOptions);
 
 
 

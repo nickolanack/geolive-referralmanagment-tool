@@ -128,7 +128,7 @@ var SpatialProject = (function() {
 
 
 			this._clearCurrentProject();
-			var me=this;
+			var me = this;
 
 			window.CurrentMapType = "MainMap";
 			window.GetSpatialFiles = function() {
@@ -146,9 +146,6 @@ var SpatialProject = (function() {
 
 
 
-
-
-
 		InitCurrentProject: function(item) {
 
 
@@ -157,60 +154,60 @@ var SpatialProject = (function() {
 
 			window.CurrentMapType = "ProjectMap";
 			window.CurrentMapItem = item;
-			var me=this;
+			var me = this;
 			window.GetSpatialFiles = function() {
 
 				return me.getProjectLayers(item).concat(me.getSelectionLayers())
-				
+
 			}
 
 			return null;
 
 		},
 
-		getProjectLayers:function(item){
+		getProjectLayers: function(item) {
 			var spatial = item.getSpatialDocuments();
 
-				if (item.getProjectObjects) {
-					item.getProjectObjects().forEach(function(p) {
-						spatial = spatial.concat(p.getSpatialDocuments().map(function(url, i) {
-							return {
-								url: url,
-								id: "project-" + p.getId() + '-' + i + '',
-								name: p.getName(),
-								projectAttributes: p.getDatasetAttributes(i)
-							}
-						}));
-					});
+			if (item.getProjectObjects) {
+				item.getProjectObjects().forEach(function(p) {
+					spatial = spatial.concat(p.getSpatialDocuments().map(function(url, i) {
+						return {
+							url: url,
+							id: "project-" + p.getId() + '-' + i + '',
+							name: p.getName(),
+							projectAttributes: p.getDatasetAttributes(i)
+						}
+					}));
+				});
+			}
+
+			return spatial.map(function(spatial, i) {
+
+				var url = spatial;
+				var options = {};
+				if (spatial.url) {
+					options = spatial;
 				}
 
-				return spatial.map(function(spatial, i) {
 
-					var url = spatial;
-					var options = {};
-					if (spatial.url) {
-						options = spatial;
-					}
-
-
-					return Object.append({
-						url: url,
-						//project:item,
-						group: "project",
-						id: "project-" + item.getId() + '-' + i + '',
-						name: item.getName(),
-						projectAttributes: item.getDatasetAttributes(i)
-					}, options);
+				return Object.append({
+					url: url,
+					//project:item,
+					group: "project",
+					id: "project-" + item.getId() + '-' + i + '',
+					name: item.getName(),
+					projectAttributes: item.getDatasetAttributes(i)
+				}, options);
 
 
-				});
+			});
 		},
 
-		getSelectionLayers:function(){
+		getSelectionLayers: function() {
 
 			var items = ProjectSelection.getProjects();
 			var list = [];
-			var me=this;
+			var me = this;
 			items.forEach(function(item) {
 
 				var spatial = me.ItemsSpatial(item);
@@ -221,10 +218,10 @@ var SpatialProject = (function() {
 			return list;
 		},
 
-		FormatListModulesScript:function(module, item){
-			 module.addWeakEvent(ProjectSelection, 'change', function(){
-			 	module.redraw();
-			 });
+		FormatListModulesScript: function(module, item) {
+			module.addWeakEvent(ProjectSelection, 'change', function() {
+				module.redraw();
+			});
 		},
 		FormatListItemViewModulesScript: function(list, listItem, uiview, callback) {
 
@@ -265,79 +262,83 @@ var SpatialProject = (function() {
 					}
 				}
 			});
-			toggle.appendChild(new Element('span', {"class":'indicator-switch'}))
+			toggle.appendChild(new Element('span', {
+				"class": 'indicator-switch'
+			}))
 
 
 
-
-
-			var editBtn=null;
-			editBtn=new ElementModule('div', {
+			var editBtn = null;
+			editBtn = new ElementModule('div', {
 				"class": "field-value-module inline btn",
 				html: '',
 				events: {
 					click: function() {
-						var lids=listItem.getMapLayerIds();
+						var lids = listItem.getMapLayerIds();
 
 
-						if(lids.length!=1){
+						if (lids.length != 1) {
 							return;
 						}
 
 						me.editLayer(me._map, me._map.getLayerManager().getLayer(lids[0]).getOptions());
-								
+
 					}
 				}
 			});
 
-			editBtn.appendChild(new Element('span',{"class":"btn inline-edit"}));
-			
+			editBtn.appendChild(new Element('span', {
+				"class": "btn inline-edit"
+			}));
+
 
 			AppClient.authorize('write', {
 				id: listItem.getId(),
 				type: listItem.getType()
 			}, function(access) {
-				if(!access){
+				if (!access) {
 					editBtn.getElement().setStyle('display', 'none');
 				}
 			});
 
-			var removeBtn=null;
-			if(me._item!==listItem){
-				removeBtn=new ElementModule('div', {
-						"class": "field-value-module inline btn",
-						html: '',
-						events: {
-							click: function() {
+			var removeBtn = null;
+			if (me._item !== listItem) {
+				removeBtn = new ElementModule('div', {
+					"class": "field-value-module inline btn",
+					html: '',
+					events: {
+						click: function() {
 
-								//TODO list.getItem().removeProject
+							//TODO list.getItem().removeProject
 
-								ProjectSelection.removeProject(listItem);
-								//uiview.parentUIView.redraw();
+							ProjectSelection.removeProject(listItem);
+							//uiview.parentUIView.redraw();
 
 
-								listItem.getMapLayerIds().forEach(function(lid) {
-									try{
-										me._map.getLayerManager().removeLayer(me._map.getLayerManager().getLayer(lid));
-									}catch(e){
-										console.error(e);
-									}
-								});
-					
-							}
+							listItem.getMapLayerIds().forEach(function(lid) {
+								try {
+									me._map.getLayerManager().removeLayer(me._map.getLayerManager().getLayer(lid));
+								} catch (e) {
+									console.error(e);
+								}
+							});
+
 						}
-					});
-				removeBtn.appendChild(new Element('span',{"class":"btn inline-remove"}))
+					}
+				});
+				removeBtn.appendChild(new Element('span', {
+					"class": "btn inline-remove"
+				}))
 			}
 
 
-			var items=([toggle]).concat(list.content);
+			var items = ([toggle]).concat(list.content);
 
-			if(AppClient.getUserType()!="guest"){
-				items=items.concat([removeBtn, editBtn]);
+			if (AppClient.getUserType() != "guest") {
+				items = items.concat([removeBtn, editBtn]);
 			}
-		
-			items=items.concat(adminBtns);
+
+			items = items.concat(adminBtns);
 
 			list.content = items;
 
@@ -350,86 +351,172 @@ var SpatialProject = (function() {
 		},
 
 
-		editLayer:function(map, layerObject){
-
-
-			var formName="projectLayerSettings";
-
-            var projectIdString=layerObject.id.split("-");
-            var layerIndex=parseInt(projectIdString.pop());
-            var projectId=parseInt(projectIdString.pop());
-
-            ProjectTeam.CurrentTeam().getProject(projectId,function(project){
-                var wizardTemplate = map.getDisplayController().getWizardTemplate(formName);
-                if ((typeof wizardTemplate) != 'function') {
-
-                    if(window.console&&console.warn){
-                        console.warn('Expected named wizardTemplate: '+formName+', to exist');
-                    }
-
-                }
-               
-
-
-                var data={
-                    mutable:true,
-                    showIcons:true,
-                    showLabels:false,
-                    showAttributes:true,
-                    renderTiles:false,
-                    lineColor:"#000000",
-                    fillColor:"#000000",
-                    lineOpacity:1,
-                    fillOpacity:0.5,
-                    lineWidth:1,
-                    description:"",
-
-                };
-
-                if(layerObject.url){
-                	data.url=layerObject.url;
-                }
-
-                if(layerObject.projectAttributes&&layerObject.projectAttributes.metadata){
-                    data=ObjectAppend_(data, layerObject.projectAttributes.metadata);
-                }
-
-
-                var layerDataItem= new MockDataTypeItem(data);
+		getLayerOptions: function(options) {
 
 
 
-                var dialog=(new UIModalDialog(ReferralManagementDashboard.getApplication(), layerDataItem, {
-                        "formName": formName,
-                        "formOptions": {
-                            template: "form"
-                        }
-                    }
-                )).on('complete',function(){
+			var markerOptions = {
+				icon: 'https://storage.googleapis.com/support-kms-prod/SNP_2752125_en_v0',
+				showLabels: false,
+				clickable: false,
+			};
+			var lineOptions = {
 
-                	var data=dialog.getWizard().getData();
-                    console.log(data);
-                    project.setDatasetMetadata(data, layerIndex);
+			};
+			var polygonOptions = {};
 
-                }).show();
+			if (options.projectAttributes && options.projectAttributes.metadata) {
 
 
-                // var modalFormViewController =  new PushBoxModuleViewer(map, {});
-                // var wizard = wizardTemplate(layerDataItem, {});
-                // wizard.buildAndShow(modalFormViewController, 
-                // 	template:"form"
-                // }); 
-                // wizard.addEvent('complete', function() {
+				var metadata = options.projectAttributes.metadata;
+				if (metadata.description) {
+					JSTextUtilities.ParseImages(metadata.description).forEach(function(item) {
+						if (item.type.indexOf("image") >= 0) {
+							options.icon = item.url;
+							markerOptions.icon = item.url;
+						}
+					});
+				}
 
-                //     var data = wizard.getData();
-                //     console.log(data);
-                //     project.setDatasetMetadata(data, layerIndex);
+				if (typeof metadata.showLabels == "boolean") {
+					markerOptions.showLabels = metadata.showLabels;
+				}
 
-                //     //update current map
+				if (typeof metadata.lineColor == "string") {
+					lineOptions.lineColor = metadata.lineColor;
+					polygonOptions.lineColor = metadata.lineColor;
+				}
 
-                // });
+				if (typeof metadata.lineWidth != "undefined") {
 
-            });
+					var lineWidth = parseFloat(metadata.lineWidth);
+					lineWidth = Math.min(Math.max(0, lineWidth), 5);
+
+					lineOptions.lineWidth = lineWidth;
+					polygonOptions.lineWidth = lineWidth;
+				}
+
+				if (typeof metadata.lineOpacity != "undefined") {
+
+					var lineOpacity = parseFloat(metadata.lineOpacity);
+					lineOpacity = Math.min(Math.max(0, lineOpacity), 1);
+
+					lineOptions.lineOpacity = lineOpacity;
+					polygonOptions.lineOpacity = lineOpacity;
+
+				}
+
+				if (typeof metadata.fillColor == "string") {
+
+					polygonOptions.polyColor = metadata.fillColor;
+				}
+
+				if (typeof metadata.fillOpacity != "undefined") {
+
+					var fillOpacity = parseFloat(metadata.fillOpacity);
+					fillOpacity = Math.min(Math.max(0, fillOpacity), 1);
+					polygonOptions.polyOpacity = fillOpacity;
+
+				}
+
+				if (metadata.renderTiles === true) {
+					options.parseBehavior = 'tile';
+
+				}
+
+			}
+
+
+			var layerOptions = ObjectAppend_(options, {
+				markerOptions: markerOptions,
+				polygonOptions: polygonOptions,
+				lineOptions: lineOptions
+			});
+
+			return layerOptions;
+
+		},
+
+
+		editLayer: function(map, layerObject) {
+
+
+			var formName = "projectLayerSettings";
+
+			var projectIdString = layerObject.id.split("-");
+			var layerIndex = parseInt(projectIdString.pop());
+			var projectId = parseInt(projectIdString.pop());
+
+			ProjectTeam.CurrentTeam().getProject(projectId, function(project) {
+				var wizardTemplate = map.getDisplayController().getWizardTemplate(formName);
+				if ((typeof wizardTemplate) != 'function') {
+
+					if (window.console && console.warn) {
+						console.warn('Expected named wizardTemplate: ' + formName + ', to exist');
+					}
+
+				}
+
+
+
+				var data = {
+					mutable: true,
+					showIcons: true,
+					showLabels: false,
+					showAttributes: true,
+					renderTiles: false,
+					lineColor: "#000000",
+					fillColor: "#000000",
+					lineOpacity: 1,
+					fillOpacity: 0.5,
+					lineWidth: 1,
+					description: "",
+
+				};
+
+				if (layerObject.url) {
+					data.url = layerObject.url;
+				}
+
+				if (layerObject.projectAttributes && layerObject.projectAttributes.metadata) {
+					data = ObjectAppend_(data, layerObject.projectAttributes.metadata);
+				}
+
+
+				var layerDataItem = new MockDataTypeItem(data);
+
+
+
+				var dialog = (new UIModalDialog(ReferralManagementDashboard.getApplication(), layerDataItem, {
+					"formName": formName,
+					"formOptions": {
+						template: "form"
+					}
+				})).on('complete', function() {
+
+					var data = dialog.getWizard().getData();
+					console.log(data);
+					project.setDatasetMetadata(data, layerIndex);
+
+				}).show();
+
+
+				// var modalFormViewController =  new PushBoxModuleViewer(map, {});
+				// var wizard = wizardTemplate(layerDataItem, {});
+				// wizard.buildAndShow(modalFormViewController, 
+				// 	template:"form"
+				// }); 
+				// wizard.addEvent('complete', function() {
+
+				//     var data = wizard.getData();
+				//     console.log(data);
+				//     project.setDatasetMetadata(data, layerIndex);
+
+				//     //update current map
+
+				// });
+
+			});
 
 
 		},
@@ -448,10 +535,10 @@ var SpatialProject = (function() {
 					"showCreateBtn": true,
 					projects: function(callback) {
 						callback(
-							([item].concat(item.getProjectObjects())).filter(function(p){
-								return p.getSpatialDocuments().length>0
-							}).concat(ProjectSelection.getProjects().filter(function(p){
-								return p.getSpatialDocuments().length>0
+							([item].concat(item.getProjectObjects())).filter(function(p) {
+								return p.getSpatialDocuments().length > 0
+							}).concat(ProjectSelection.getProjects().filter(function(p) {
+								return p.getSpatialDocuments().length > 0
 							}))
 						);
 					}
@@ -464,9 +551,9 @@ var SpatialProject = (function() {
 				"label": "Collection Datasets",
 				"showCreateBtn": true,
 				projects: function(callback) {
-					callback(ProjectSelection.getProjects().filter(function(p){
-							return p.getSpatialDocuments().length>0
-						}));
+					callback(ProjectSelection.getProjects().filter(function(p) {
+						return p.getSpatialDocuments().length > 0
+					}));
 				}
 			})).getProjectList(callback);
 
@@ -475,14 +562,14 @@ var SpatialProject = (function() {
 		},
 
 		_setMap: function(map) {
-			var me=this;
+			var me = this;
 			me._map = map;
 			me.fireEvent('map', ['map']);
 
-			
-			map.once('remove',function(){
-				if(me._map==map){
-					me._map=null;
+
+			map.once('remove', function() {
+				if (me._map == map) {
+					me._map = null;
 				}
 			});
 		},
