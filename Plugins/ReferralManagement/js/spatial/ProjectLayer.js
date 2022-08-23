@@ -70,11 +70,11 @@ var ProjectLayer = (function() {
 
 				},
 
-				_formatFeature:function(data, type, options, callback){
+				_formatFeature:function(data, type, index, callback){
 
 					if(typeof this.options.script=='function'){
 
-						this.options.script(data, type, options, function(result){
+						this.options.script(data, type, index, function(result){
 
 							if(result){
 								callback(result);
@@ -95,24 +95,24 @@ var ProjectLayer = (function() {
 
 				_initMarker: function(data, markerDataArray, i) {
 					var me=this;
-					this._formatFeature(data, 'marker', this.options.markerOptions, function(data){
-						GeoliveLayer.prototype._initMarker.call(me, Object.append(data, me.options.markerOptions), markerDataArray, i);
+					this._formatFeature(Object.append(data, this.options.markerOptions), 'marker', i, function(data){
+						GeoliveLayer.prototype._initMarker.call(me, data, markerDataArray, i);
 					});
 
 					
 				},
 				_initPolygon: function(data, lineDataArray, i) {
 					var me=this;
-					this._formatFeature(data, 'polygon', this.options.polygonOptions, function(data){
-						GeoliveLayer.prototype._initPolygon.call(me, Object.append(data, me.options.polygonOptions), lineDataArray, i);
+					this._formatFeature(Object.append(data, this.options.polygonOptions), 'polygon', i, function(data){
+						GeoliveLayer.prototype._initPolygon.call(me, data, lineDataArray, i);
 					});
 
 					
 				},
 				_initLine: function(data, lineDataArray, i) {
 					var me=this;
-					this._formatFeature(data, 'line', this.options.lineOptions, function(data){
-						GeoliveLayer.prototype._initLine.call(me, Object.append(data, me.options.lineOptions), lineDataArray, i);
+					this._formatFeature(Object.append(data, this.options.lineOptions), 'line', i, function(data){
+						GeoliveLayer.prototype._initLine.call(me, data, lineDataArray, i);
 					});
 
 					
