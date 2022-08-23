@@ -29,7 +29,7 @@ onmessage = function(e) {
         postMessage(result);
     };
 
-    var result=userFunction(e.data[0], e.data[0], e.data[0], handleResult);
+    var result=userFunction(e.data[0], e.data[2], e.data[3], handleResult);
     if(result){
         handleResult(result);
     }
