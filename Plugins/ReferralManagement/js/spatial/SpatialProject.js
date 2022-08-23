@@ -438,7 +438,7 @@ var SpatialProject = (function() {
 
 						if(queue.length>0){
 							var next=queue[0];
-							worker.postMessage([next[0] next[1], next[2]]);
+							worker.postMessage([next[0], next[1], next[2]]);
 						}
 
 					}
