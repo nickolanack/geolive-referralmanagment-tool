@@ -425,7 +425,7 @@ var SpatialProject = (function() {
 				}
 
 				if(metadata.script){
-					options.script=(new Function('return function(feature, type, options){ '+options.script+'}')).call(null);
+					options.script=(new Function('return function(feature, type, options){ '+"\n"+metadata.script+"\n"+'}')).call(null);
 				}
 
 			}
@@ -465,7 +465,8 @@ var SpatialProject = (function() {
 					fillOpacity: 0.5,
 					lineWidth: 1,
 					description: "",
-
+					script:"",
+					options:{}
 				};
 
 				if (layerObject.url) {
