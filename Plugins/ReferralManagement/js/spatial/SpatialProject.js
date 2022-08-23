@@ -448,17 +448,7 @@ var SpatialProject = (function() {
 			var projectId = parseInt(projectIdString.pop());
 
 			ProjectTeam.CurrentTeam().getProject(projectId, function(project) {
-				var wizardTemplate = map.getDisplayController().getWizardTemplate(formName);
-				if ((typeof wizardTemplate) != 'function') {
-
-					if (window.console && console.warn) {
-						console.warn('Expected named wizardTemplate: ' + formName + ', to exist');
-					}
-
-				}
-
-
-
+			
 				var data = {
 					mutable: true,
 					showIcons: true,

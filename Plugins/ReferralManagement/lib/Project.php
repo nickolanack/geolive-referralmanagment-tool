@@ -135,6 +135,16 @@ class Project {
 			$config = GetWidget('dashboardConfig');
 			if($config->getParameter('enableProposals')){
 				$proposal['communityAccess']='private';
+
+
+				$datasetAttributes = (new \attributes\Record('datasetAttributes'))
+					->getValues($proposal['id'], 'ReferralManagement.proposal');
+				
+				/**
+				 * Proposals can have datasets 
+				 */
+
+				$attributes['dataset']=array('metadata'] => $datasetAttributes['metadata']);
 			}
 		}
 
