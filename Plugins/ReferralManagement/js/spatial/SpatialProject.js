@@ -451,7 +451,7 @@ var SpatialProject = (function() {
 						
 						queue.push(arguments);
 						if(queue.length==1){
-							worker.postMessage([feature, type, options])
+							worker.postMessage([arguments[0], arguments[1], arguments[2]])
 						}
 
 					};
