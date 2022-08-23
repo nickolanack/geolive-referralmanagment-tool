@@ -23216,16 +23216,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 331,
-                            "y": 243
+                            "x": 351,
+                            "y": 263
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 291,
-                                    "y": 569
+                                    "x": 311,
+                                    "y": 589
                                 }
                             }
                         ],
@@ -23467,7 +23467,7 @@
                                                 "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": " return \"Hello World\"; ",
+                                                "getValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.13.config.getValueScript.js",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.13.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
@@ -23489,7 +23489,7 @@
                                                 "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.14.config.onRenderTextFieldScript.js",
                                                 "formatValueScript": "",
-                                                "getValueScript": " return \"\"; ",
+                                                "getValueScript": " return item.getScript(); ",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.14.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
