@@ -1,4 +1,4 @@
-wizardDataSet.options='{}';
+wizardDataSet.options={};
 try{
     
     wizardDataSet.options=JSON.parse(object.value);
