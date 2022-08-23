@@ -72,9 +72,9 @@ var ProjectLayer = (function() {
 
 				_formatFeature:function(data, type, options){
 
-					if(typeof options.script=='function'){
+					if(typeof this.options.script=='function'){
 
-						var result = options.script(data, type, options);
+						var result = this.options.script(data, type, options);
 						if(result){
 							return result;
 						}
