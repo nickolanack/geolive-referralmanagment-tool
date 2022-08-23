@@ -1,6 +1,7 @@
 var SpatialProject = (function() {
 
-
+	var current=document.currentScript;
+	var worker=current.replace('SpatialProject.js', 'SpatialProjectWorker.js');
 
 	var SpatialProject = new Class({
 		Implements: [Events],
