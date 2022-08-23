@@ -352,7 +352,7 @@ var SpatialProject = (function() {
 		},
 
 
-		getLayerOptions: function(options) {
+		getLayerOptions: function(options, map) {
 
 
 
@@ -443,6 +443,13 @@ var SpatialProject = (function() {
 
 					}
 
+
+					map.once('remove',function(){
+						worker.terminate();
+						delete worker.onmessage;
+						delete options.script;
+						worker=null;
+					});
 
 					//=(new Function('return function(feature, type, index, callback){ '+"\n"+metadata.script+"\n"+'}')).call(null);
 

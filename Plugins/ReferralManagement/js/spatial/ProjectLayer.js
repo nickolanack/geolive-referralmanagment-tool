@@ -40,7 +40,7 @@ var ProjectLayer = (function() {
 				Extends: GeoliveLayer,
 				initialize: function(map, options) {
 
-					var layerOptions=SpatialProject.getLayerOptions(options);
+					var layerOptions=SpatialProject.getLayerOptions(options, map);
 
 					GeoliveLayer.prototype.initialize.call(this, map, layerOptions);
 
