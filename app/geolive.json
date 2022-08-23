@@ -23216,16 +23216,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 331,
-                            "y": 243
+                            "x": 341,
+                            "y": 253
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 291,
-                                    "y": 569
+                                    "x": 301,
+                                    "y": 579
                                 }
                             }
                         ],
@@ -23489,7 +23489,7 @@
                                                 "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.14.config.onRenderTextFieldScript.js",
                                                 "formatValueScript": "",
-                                                "getValueScript": " return \"\"; ",
+                                                "getValueScript": " return item.getScript(); ",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.14.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
