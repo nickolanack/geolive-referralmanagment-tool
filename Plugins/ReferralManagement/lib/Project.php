@@ -144,7 +144,7 @@ class Project {
 				 * Proposals can have datasets 
 				 */
 
-				$attributes['dataset']=array('metadata'] => $datasetAttributes['metadata']);
+				$attributes['dataset']=array('metadata' => $datasetAttributes['metadata']);
 			}
 		}
 
