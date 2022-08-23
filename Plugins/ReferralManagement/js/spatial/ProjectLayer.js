@@ -70,38 +70,52 @@ var ProjectLayer = (function() {
 
 				},
 
-				_formatFeature:function(data, type, options){
+				_formatFeature:function(data, type, options, callback){
 
 					if(typeof this.options.script=='function'){
 
-						var result = this.options.script(data, type, options);
-						if(result){
-							return result;
-						}
+						this.options.script(data, type, options, function(result){
 
+							if(result){
+								callback(result);
+								return;
+							}
+
+							callback(data);
+
+						});
+
+						return;
 					}
 
-					return data;
+					callback(data);
+
 
 				},
 
 				_initMarker: function(data, markerDataArray, i) {
+					var me=this;
+					this._formatFeature(data, 'marker', this.options.markerOptions, function(data){
+						GeoliveLayer.prototype._initMarker.call(me, Object.append(data, me.options.markerOptions), markerDataArray, i);
+					});
 
-					data=this._formatFeature(data, 'marker', this.options.markerOptions);
-
-					GeoliveLayer.prototype._initMarker.call(this, Object.append(data, this.options.markerOptions), markerDataArray, i);
+					
 				},
 				_initPolygon: function(data, lineDataArray, i) {
+					var me=this;
+					this._formatFeature(data, 'polygon', this.options.polygonOptions, function(data){
+						GeoliveLayer.prototype._initPolygon.call(me, Object.append(data, me.options.polygonOptions), lineDataArray, i);
+					});
 
-					data=this._formatFeature(data, 'polygon', this.options.polygonOptions);
-
-					GeoliveLayer.prototype._initPolygon.call(this, Object.append(data, this.options.polygonOptions), lineDataArray, i);
+					
 				},
 				_initLine: function(data, lineDataArray, i) {
+					var me=this;
+					this._formatFeature(data, 'line', this.options.lineOptions, function(data){
+						GeoliveLayer.prototype._initLine.call(me, Object.append(data, me.options.lineOptions), lineDataArray, i);
+					});
 
-					data=this._formatFeature(data, 'line', this.options.lineOptions);
-
-					GeoliveLayer.prototype._initLine.call(this, Object.append(data, this.options.lineOptions), lineDataArray, i);
+					
 				},
 				_getKmlQuery: function() {
 					var me = this;

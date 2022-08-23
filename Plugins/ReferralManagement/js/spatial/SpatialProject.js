@@ -1,7 +1,7 @@
 var SpatialProject = (function() {
 
 	var current=document.currentScript.src;
-	var worker=current.replace('SpatialProject.js', 'SpatialProjectWorker.js');
+	var userFunctionWorker=current.replace('SpatialProject.js', 'SpatialProjectWorker.js');
 
 	var SpatialProject = new Class({
 		Implements: [Events],
@@ -426,7 +426,35 @@ var SpatialProject = (function() {
 				}
 
 				if(metadata.script){
-					options.script=(new Function('return function(feature, type, options){ '+"\n"+metadata.script+"\n"+'}')).call(null);
+
+					var worker =new Worker(userFunctionWorker);
+					worker.postMessage(metadata.script);
+					var queue=[];
+
+
+					worker.onmessage=function(e){
+						var args=queue.shift();
+						args[3].apply(null, e.data);
+
+						if(queue.length>0){
+							var next=queue[0];
+							worker.postMessage([next[0] next[1], next[2]]);
+						}
+
+					}
+
+
+					//=(new Function('return function(feature, type, options){ '+"\n"+metadata.script+"\n"+'}')).call(null);
+
+					options.script=function(/*feature, type, options, callback*/){
+
+						
+						queue.push(arguments);
+						if(queue.length==1){
+							worker.postMessage([feature, type, options])
+						}
+
+					};
 				}
 
 			}
