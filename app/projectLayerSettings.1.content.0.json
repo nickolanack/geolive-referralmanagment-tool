@@ -1,13 +1,8 @@
 {
-    "type": "InlineHtml",
+    "type": "WizardScriptElement",
     "config": {
-        "className": "",
-        "text": "##Layer settings",
-        "template": "html.layerSettings",
-        "templateVariablesScript": "{}",
-        "formatTextScript": "",
-        "formatVariablesScript": "",
-        "ajaxRequestTemplate": true,
-        "identifier": "htmlLabel"
+        "name": "My Custom Script",
+        "script": "return DockWizard.createDockBtns(wizard);",
+        "description": "Info about my custom script"
     }
 }

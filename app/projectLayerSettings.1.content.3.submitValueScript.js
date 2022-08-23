@@ -1,1 +1,1 @@
-wizardDataSet.showIcons=object.value;
+wizardDataSet.showLabels=object.value;

@@ -1,1 +1,1 @@
-wizardDataSet.lineColor=object.value;
+wizardDataSet.showAttributes=object.value;
