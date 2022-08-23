@@ -434,7 +434,7 @@ var SpatialProject = (function() {
 
 					worker.onmessage=function(e){
 						var args=queue.shift();
-						args[3].apply(null, e.data);
+						args[3].call(null, e.data);
 
 						if(queue.length>0){
 							var next=queue[0];
