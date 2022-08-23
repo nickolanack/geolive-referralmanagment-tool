@@ -444,7 +444,7 @@ var SpatialProject = (function() {
 					}
 
 
-					//=(new Function('return function(feature, type, options){ '+"\n"+metadata.script+"\n"+'}')).call(null);
+					//=(new Function('return function(feature, type, options, callback){ '+"\n"+metadata.script+"\n"+'}')).call(null);
 
 					options.script=function(/*feature, type, options, callback*/){
 

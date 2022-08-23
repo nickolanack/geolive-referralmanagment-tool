@@ -4,7 +4,7 @@ onmessage = function(e) {
 
 
     if (!userFunction) {
-        userFunction = (new Function('return function(feature, type, options){ ' + "\n" + e.data + "\n" + '}')).call(null);
+        userFunction = (new Function('return function(feature, type, options, callback){ ' + "\n" + e.data + "\n" + '}')).call(null);
         return;
     }
 
