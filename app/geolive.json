@@ -4448,6 +4448,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "user-name",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getName()",
                                     "formatElementScript": "User Detail View.metadata.positions.content.modules.1.config.formatElementScript.js"
@@ -4458,6 +4459,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "user-email",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getEmail()",
                                     "formatElementScript": "el.addClass('user-email');"
@@ -4468,6 +4470,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "user-role",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "User Detail View.metadata.positions.content.modules.3.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-role');"
@@ -4478,9 +4481,21 @@
                                 "config": {
                                     "loadAsync": false,
                                     "identifier": "user-community",
+                                    "className": "",
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "User Detail View.metadata.positions.content.modules.4.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('user-community');"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "identifier": "user-status",
+                                    "className": "user-status",
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": ""
                                 }
                             }
                         ]
