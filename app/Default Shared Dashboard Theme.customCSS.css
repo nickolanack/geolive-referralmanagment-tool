@@ -6438,6 +6438,43 @@ input.text-input[type="color"], input.text-input[type="color"]:focus {
     cursor: pointer;
     box-shadow: none;
 }
+
+
+[data-view="leftPanel"]{
+
+    .field-value-module.user-status {
+        width: 10px;
+        height: 10px;
+        background-color: limegreen;
+        position: absolute;
+        right: 70px;
+        bottom: 70px;
+        border-radius: 100%;
+    }
+    
+    
+    @media screen and (max-height: 1000px){
+    .field-value-module.user-status {
+        right: 90px;
+    }}
+    
+    
+    @media screen and (max-width: 1250px){
+    .field-value-module.user-status {
+        right: 30px;
+    }}
+    
+    
+    @media screen and (max-width: 1000px){
+     .field-value-module.user-status {
+        display:none;
+    }}
+    
+    
+    &.closed .field-value-module.user-status {
+        display:none;
+    }
+}
     
     
     
