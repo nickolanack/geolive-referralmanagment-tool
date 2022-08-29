@@ -84,3 +84,49 @@ PopoverFormDefinition.defineForm('prioritySelectForm', function(item, step) {
 	});
 
 });
+
+
+PopoverFormDefinition.defineForm('userOnlineStatusForm', function(item, step) {
+
+	step.addModule('content', function(position, moduleIndex) {
+		return new ElementModule('div', {
+			'class': 'user-indicator online',
+			events: {
+				click: function() {
+					
+				}
+			}
+		});
+	});
+	step.addModule('content', function(position, moduleIndex) {
+		return new ElementModule('div', {
+			'class': 'user-indicator idle',
+			events: {
+				click: function() {
+					
+				}
+			}
+		});
+	});
+	step.addModule('content', function(position, moduleIndex) {
+		return new ElementModule('div', {
+			'class': 'user-indicator do-not-disturb',
+			events: {
+				click: function() {
+					
+				}
+			}
+		});
+	});
+	step.addModule('content', function(position, moduleIndex) {
+		return new ElementModule('div', {
+			'class': 'user-indicator invisible',
+			events: {
+				click: function() {
+					
+				}
+			}
+		});
+	});
+
+});
