@@ -32,9 +32,9 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 
 		GetPlugin('Attributes');
-		
+
 		(new attributes\Record('userAttributes'))->setValues(GetClient()->getUserId(), 'user', array(
-			'onlineStatus'=>$json->status;
+			'onlineStatus'=>$json->status
 		));
 		
 		return true;
