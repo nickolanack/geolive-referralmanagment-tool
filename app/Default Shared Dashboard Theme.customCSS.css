@@ -6461,7 +6461,7 @@ input.text-input[type="color"], input.text-input[type="color"]:focus {
 }
 
 
-[data-view="leftPanel"]{
+[data-view="leftPanel"], [data-view="userProfileDetailCards"]{
 
     .field-value-module.user-status {
         width: 10px;
@@ -6491,8 +6491,9 @@ input.text-input[type="color"], input.text-input[type="color"]:focus {
         
     }
     
-    
-    
+}
+
+[data-view="leftPanel"]{    
     
     @media screen and (max-height: 1000px){
     .field-value-module.user-status {
