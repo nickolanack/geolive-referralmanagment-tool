@@ -4534,6 +4534,10 @@ img.static-map {
         width: 180px;
         
         
+        .menu-configuration-fixedsettings {
+            width: 180px;
+        }
+        
     }
 
     
@@ -4566,21 +4570,21 @@ img.static-map {
     }
 }
 
-.ui-view.left-panel.closed .application-logo {
-        font-size: 0;
-        background-position: center;
+    .ui-view.left-panel.closed .application-logo {
+            font-size: 0;
+            background-position: center;
+        }
+    
+    
+    .left-panel.closed .application-logo, .left-panel.closed .survey-link {
+        display:none;
     }
-
-
-.left-panel.closed .application-logo, .left-panel.closed .survey-link {
-    display:none;
-}
-
-.left-panel{
-    .user-detail .inline-logout {
-        display: none;
+    
+    .left-panel{
+        .user-detail .inline-logout {
+            display: none;
+        }
     }
-}
 
 @media screen and (max-width: 1000px){
      .left-panel{
@@ -4613,6 +4617,10 @@ img.static-map {
         
         width:100px;
         min-width:100px;
+        
+        .menu-configuration-fixedsettings {
+            width: 100px;
+        }
     
     }
 
@@ -5555,6 +5563,8 @@ img.static-map {
         bottom: 0;
         width: 300px;
         box-sizing: border-box;
+        
+        
     }
     
     
