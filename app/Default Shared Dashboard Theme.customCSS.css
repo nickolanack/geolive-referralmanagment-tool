@@ -6500,6 +6500,10 @@ input.text-input[type="color"], input.text-input[type="color"]:focus {
         display:inline-block;
         right: 30px;
         bottom: 50px;
+        
+         &:after{
+            color:#e9e9e9;
+        }
     
      }
 }
