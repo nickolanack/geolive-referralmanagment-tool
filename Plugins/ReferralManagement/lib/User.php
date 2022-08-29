@@ -295,7 +295,7 @@ class User {
 
 		GetPlugin('Attributes');
 
-		(new attributes\Record('userAttributes'))->setValues(GetClient()->getUserId(), 'user', array(
+		(new \attributes\Record('userAttributes'))->setValues(GetClient()->getUserId(), 'user', array(
 			'onlineStatus'=>$status
 		));
 
@@ -353,7 +353,7 @@ class User {
 
 		GetPlugin('Attributes');
 
-		(new attributes\Record('userAttributes'))->setValues($userId, 'user', $values);
+		(new \attributes\Record('userAttributes'))->setValues($userId, 'user', $values);
 
 		$update = array(
 			'role' => (new \ReferralManagement\UserRoles())->clearCache()->getUsersRoles($userId),
