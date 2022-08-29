@@ -6495,7 +6495,7 @@ input.text-input[type="color"], input.text-input[type="color"]:focus {
 
 [data-view="userProfileDetailCards"]{
      
-     .field-value-module.user-status {
+     .ui-view.card-one .field-value-module.user-status {
          
         display:inline-block;
         right: 30px;
