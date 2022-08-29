@@ -31,7 +31,7 @@ var DashboardUser = (function() {
 				throw 'Invalid visibility';
 			}
 
-			var changed = (this._mode||'auto') !== mode;
+			var changed = this.getOnlineVisibility() !== mode;
 			this._mode=mode;
 
 			if(changed){
@@ -63,14 +63,13 @@ var DashboardUser = (function() {
 			online=!!online; //ensure boolean
 
 			var changed = online !== this._online;
-			this._mode=this._mode||'auto';
 			this._online = online;
 			if (changed) {
-				this.fireEvent('onlineStatusChanged', [this._online, this._mode]);
+				this.fireEvent('onlineStatusChanged', [this._online, this.getOnlineVisibility()]);
 			}
 			return this;
 		},
-		
+
 		isOnline: function() {
 			return !!this._online;
 		},
