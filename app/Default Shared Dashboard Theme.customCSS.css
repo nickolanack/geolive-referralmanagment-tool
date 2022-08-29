@@ -6450,7 +6450,23 @@ input.text-input[type="color"], input.text-input[type="color"]:focus {
         right: 70px;
         bottom: 70px;
         border-radius: 100%;
+        
+        
+        &.with-status-invisible:after {
+            content: "|";
+            color: #222222;
+            position: absolute;
+            top: -6px;
+            font-size: 27px;
+            text-align: center;
+            left: 2px;
+            transform: rotate(45deg);
+        }
+            
+        
     }
+    
+    
     
     
     @media screen and (max-height: 1000px){
