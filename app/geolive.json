@@ -11238,19 +11238,19 @@
             "metadata": {
                 "title": "userAttributes",
                 "_tableDiagramState": {
-                    "x": 444,
-                    "y": 256
+                    "x": 322,
+                    "y": 275
                 },
                 "_diagramState": {
-                    "x": 444,
-                    "y": 256
+                    "x": 322,
+                    "y": 275
                 },
                 "appliesTo": [
                     "user"
                 ],
                 "_typeDiagramState": {
-                    "x": 152,
-                    "y": 292
+                    "x": 100,
+                    "y": 300
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
@@ -12136,6 +12136,50 @@
                             "useFieldIcon": false,
                             "trueIcon": false,
                             "falseIcon": false
+                        }
+                    },
+                    {
+                        "was": "",
+                        "title": "onlineStatus",
+                        "label": "Online Status",
+                        "description": "",
+                        "icon": [],
+                        "color": "rgb(undefined, undefined, undefined)",
+                        "visibility": "public",
+                        "editability": "registered",
+                        "searchability": "public",
+                        "allowMultiple": false,
+                        "fieldType": "text",
+                        "fieldTextOptions": {
+                            "textType": "input",
+                            "inputOptions": {
+                                "buildAutocomplete": false,
+                                "requireModeration": false,
+                                "limitMaxChars": 0,
+                                "limitMaxWords": 0,
+                                "allowHtml": false,
+                                "allowMedia": true,
+                                "allowLinks": true
+                            },
+                            "listOptions": {
+                                "takeSugesstions": true,
+                                "buildTree": false,
+                                "iconize": false,
+                                "colorize": false
+                            }
+                        },
+                        "fieldNumberOptions": {
+                            "precision": 0,
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
+                        },
+                        "fieldBooleanOptions": {
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
                         }
                     }
                 ]
