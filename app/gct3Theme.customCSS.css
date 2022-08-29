@@ -749,6 +749,11 @@ ul.project, ul.user{
 }
 
 
+.dark .ui-view.section-padding[data-view="datasetsView"], .dark .ui-view.section-padding[data-view="userProfileDetailCards"] {
+    border-color: #2e354c;
+}
+
+
 
 .section-indent {
     margin-left: 40px;
