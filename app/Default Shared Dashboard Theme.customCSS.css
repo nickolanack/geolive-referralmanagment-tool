@@ -6472,6 +6472,10 @@ input.text-input[type="color"], input.text-input[type="color"]:focus {
         border-radius: 100%;
         
         
+        &.with-status-invisible {
+            background-color: gray;
+        }
+        
         &.with-status-invisible:after {
             content: "|";
             color: #222222;
