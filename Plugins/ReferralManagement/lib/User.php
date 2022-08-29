@@ -115,16 +115,16 @@ class User {
 
 
 
-				$metadata['online-status']='default';
+				$metadata['online-status']='auto';
 
 				if(isset($attributes['onlineStatus'])){
-					if(in_array($attributes['onlineStatus'], array('default', 'invisible'))){
+					if(in_array($attributes['onlineStatus'], array('auto', 'invisible'))){
 						$metadata['online-status']=$attributes['onlineStatus'];
 					}
 				}
 
 				if($metadata['online-status']=='invisible'){
-					$metadata['online-status']='default';
+					$metadata['online-status']='auto';
 					$metadata['online-status__']='invisible';
 				}
 
@@ -286,7 +286,7 @@ class User {
 
 
 
-		$validModes=array('default', 'invisible');
+		$validModes=array('auto', 'invisible');
 
 		if(!in_array($status, $validModes)){
 			throw new \Exception('Invalid status: '.$status.' Expected one of: '.implode(', ', $validModes));

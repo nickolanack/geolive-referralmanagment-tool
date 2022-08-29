@@ -25,7 +25,7 @@ var DashboardUser = (function() {
 		},
 		setOnlineVisiblity:function(mode){
 
-			var modes=['default', 'do-not-disturb', 'invisible'];
+			var modes=['auto', 'do-not-disturb', 'invisible'];
 
 			if(modes.indexOf(mode)<0){
 				throw 'Invalid visibility';
@@ -70,6 +70,7 @@ var DashboardUser = (function() {
 			}
 			return this;
 		},
+		
 		isOnline: function() {
 			return !!this._online;
 		},

@@ -100,7 +100,7 @@ PopoverFormDefinition.defineForm('userOnlineStatusForm', function(item, step) {
 			'class': 'user-indicator online',
 			events: {
 				click: function() {
-					item.setOnlineVisiblity('default');
+					item.setOnlineVisiblity('auto');
 				}
 			}
 		});
