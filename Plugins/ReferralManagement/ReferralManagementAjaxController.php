@@ -22,23 +22,8 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function setUserStatus($json){
 
-
-
-		$validModes=array('default', 'invisible');
-
-		if(!in_array($json->status, $validModes)){
-			return $this->setError('Invalid status: '.$json->status.' Expected one of: '.implode(', ', $validModes));
-		}
-
-
-		GetPlugin('Attributes');
-
-		(new attributes\Record('userAttributes'))->setValues(GetClient()->getUserId(), 'user', array(
-			'onlineStatus'=>$json->status
-		));
-		
+		(new \ReferralManagement\User())->setUserStatus($json->status);
 		return true;
-
 
 	}
 
@@ -1127,58 +1112,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function setUserRole($json) {
 
-		$yourRoles = (new \ReferralManagement\UserRoles())->getUsersRoles();
-		$usersRoles = (new \ReferralManagement\UserRoles())->getUsersRoles($json->user);
-
-		if (!GetClient()->isAdmin()) {
-
-			$canSetList = $this->getPlugin()->getRolesUserCanEdit();
-
-			if (empty($canSetList)) {
-				return $this->setError('User does not have permission to set any roles');
-			}
-			$canSetList[] = "none";
-
-			if (!in_array($json->role, $canSetList)) {
-				return $this->setError('User cannot apply role: ' . $json->role . ' not in: ' . json_encode($canSetList));
-			}
-
-			if (empty(array_intersect($usersRoles, $canSetList)) && !empty($usersRoles)) {
-				return $this->setError('Target user: ' . json_encode($usersRoles) . ' is not in role that is editable by you: ' . json_encode($canSetList));
-			}
-
-		}
-
-		$values = array();
-		foreach ($this->getPlugin()->getGroupAttributes() as $role => $field) {
-
-			if ($role === $json->role) {
-				$values[$field] = true;
-				continue;
-			}
-
-			$values[$field] = false;
-
-		}
-
-		$values['reviewed'] = true;
-
-		GetPlugin('Attributes');
-
-		(new attributes\Record('userAttributes'))->setValues($json->user, 'user', $values);
-
-		$update = array(
-			'role' => (new \ReferralManagement\UserRoles())->clearCache()->getUsersRoles($json->user),
-			'previous' => $usersRoles,
-			'update' => $values,
-		);
-
-		$this->getPlugin()->notifier()->onUpdateUserRole((object) array_merge(get_object_vars($json), $update));
-
-		$this->getPlugin()->cache()->needsDeviceListUpdate();
-		$this->getPlugin()->cache()->needsUserListUpdate();
-
-		return $update;
+		return (new \ReferralManagement\User())->setUserRole($json->role, $json->user);
 
 	}
 

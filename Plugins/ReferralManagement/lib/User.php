@@ -11,6 +11,11 @@ class User {
 
 
 
+	protected function getPlugin() {
+		return GetPlugin('ReferralManagement');
+	}
+
+
 	public function clearCache(){
 
 		self::$_cachedUserAttribs=array();
@@ -273,6 +278,94 @@ class User {
 		}
 
 		return '';
+
+	}
+
+
+	public function setUserStatus($status){
+
+
+
+		$validModes=array('default', 'invisible');
+
+		if(!in_array($status, $validModes)){
+			throw new \Exception('Invalid status: '.$status.' Expected one of: '.implode(', ', $validModes));
+		}
+
+
+		GetPlugin('Attributes');
+
+		(new attributes\Record('userAttributes'))->setValues(GetClient()->getUserId(), 'user', array(
+			'onlineStatus'=>$status
+		));
+
+		$this->getPlugin()->cache()->needsUserListUpdate();
+		
+		return $this;
+
+
+	}
+
+
+	public function setUserRole($role, $userId=-1) {
+
+
+		if ($userId < 1) {
+			$userId = GetClient()->getUserId();
+		}
+
+
+		$yourRoles = (new \ReferralManagement\UserRoles())->getUsersRoles();
+		$usersRoles = (new \ReferralManagement\UserRoles())->getUsersRoles($userId);
+
+		if (!GetClient()->isAdmin()) {
+
+			$canSetList = $this->getPlugin()->getRolesUserCanEdit();
+
+			if (empty($canSetList)) {
+				throw new \Exception('User does not have permission to set any roles');
+			}
+			$canSetList[] = "none";
+
+			if (!in_array($role, $canSetList)) {
+				throw new \Exception('User cannot apply role: ' . $role . ' not in: ' . json_encode($canSetList));
+			}
+
+			if (empty(array_intersect($usersRoles, $canSetList)) && !empty($usersRoles)) {
+				throw new \Exception('Target user: ' . json_encode($usersRoles) . ' is not in role that is editable by you: ' . json_encode($canSetList));
+			}
+
+		}
+
+		$values = array();
+		foreach ($this->getPlugin()->getGroupAttributes() as $r => $field) {
+
+			if ($r === $role) {
+				$values[$field] = true;
+				continue;
+			}
+
+			$values[$field] = false;
+
+		}
+
+		$values['reviewed'] = true;
+
+		GetPlugin('Attributes');
+
+		(new attributes\Record('userAttributes'))->setValues($userId, 'user', $values);
+
+		$update = array(
+			'role' => (new \ReferralManagement\UserRoles())->clearCache()->getUsersRoles($userId),
+			'previous' => $usersRoles,
+			'update' => $values,
+		);
+
+		$this->getPlugin()->notifier()->onUpdateUserRole((object) array_merge(array('user'=>$userId, 'role'=>$role), $update));
+		$this->getPlugin()->cache()->needsDeviceListUpdate();
+		$this->getPlugin()->cache()->needsUserListUpdate();
+
+		return $update;
 
 	}
 
