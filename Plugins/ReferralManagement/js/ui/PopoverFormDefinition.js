@@ -115,6 +115,7 @@ PopoverFormDefinition.defineForm('userOnlineStatusForm', function(item, step) {
 	// 			click: function() {
 					
 	// 			}
+	// 			
 	// 		}
 	// 	});
 	// });

@@ -35,27 +35,26 @@ var DashboardUser = (function() {
 			this._mode=mode;
 
 			if(changed){
-				me.fireEvent('onlineStatusChanged', [!!this._online, this._mode]);
+				this.fireEvent('onlineStatusChanged', [!!this._online, this._mode]);
 			}
 
 			return this;
 
 		},
 		setOnline: function(online) {
-			var me = this;
-			online=!!online;
 
-			var changed = online !== me._online;
+			online=!!online; //ensure boolean
+
+			var changed = online !== this._online;
 			this._mode=this._mode||'auto';
-			me._online = online;
+			this._online = online;
 			if (changed) {
-				me.fireEvent('onlineStatusChanged', [this._online, this._mode]);
+				this.fireEvent('onlineStatusChanged', [this._online, this._mode]);
 			}
-			return me;
+			return this;
 		},
 		isOnline: function() {
-			var me = this;
-			return !!me._online;
+			return !!this._online;
 		},
 		showsOnline: function() {
 			var me = this;
