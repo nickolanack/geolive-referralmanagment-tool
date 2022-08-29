@@ -35,7 +35,7 @@ var PopoverFormDefinition = (function() {
 
 
 
-	return new SimpleFormDefinition();
+	return new PopoverFormDefinition();
 
 })();
 
