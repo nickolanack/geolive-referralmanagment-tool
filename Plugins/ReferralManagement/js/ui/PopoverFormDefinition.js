@@ -91,7 +91,7 @@ PopoverFormDefinition.defineForm('userOnlineStatusForm', function(item, step) {
 
 	step.addModule('content', function(position, moduleIndex) {
 
-		return 'Other users can see if you are online';
+		return item.getOnlineVisibility()==='auto'?'Other users can see if you are online':'You will appear offline to other users';
 
 	});
 
