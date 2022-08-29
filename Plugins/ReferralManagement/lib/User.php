@@ -118,7 +118,7 @@ class User {
 					}
 				}
 
-				if($metadata['online-status']=='invisible';){
+				if($metadata['online-status']=='invisible'){
 					$metadata['online-status']='default';
 					$metadata['online-status__']='invisible';
 				}
