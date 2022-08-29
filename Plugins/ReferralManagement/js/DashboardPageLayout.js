@@ -527,6 +527,13 @@ var DashboardPageLayout = (function() {
 		content=layout.filterIdentifierUser(content, ['project-files-menu'], 'admin');
 
 		return content;
+	}).addLayout('userDetailView', function(content, options, callback){
+
+
+
+		
+		return content;
+
 	}).addLayout('singleProjectOverviewDetail', function(content, options, callback){
 
 
@@ -916,7 +923,8 @@ var DashboardPageLayout = (function() {
 			'proposalOverviewStatus',
 			'singleProjectListItemDetail',
 			'singleProjectUsersDetail',
-			'singleTaskListItemDetail'
+			'singleTaskListItemDetail',
+			'userDetailView'
 			];
 
 		app.getDisplayController().addFormViewWizardModuleFormatter(function(item, name, step, list) {
