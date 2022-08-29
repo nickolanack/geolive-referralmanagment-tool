@@ -23,12 +23,33 @@ var DashboardUser = (function() {
 		getPhone: function() {
 			return '';
 		},
+		setOnlineVisiblity:function(mode){
+
+			var modes=['default', 'do-not-disturb', 'invisible'];
+
+			if(modes.indexOf(mode)<0){
+				throw 'Invalid visibility';
+			}
+
+			var changed = (this._mode||'auto') !== mode;
+			this._mode=mode;
+
+			if(changed){
+				me.fireEvent('onlineStatusChanged', [!!this._online, this._mode]);
+			}
+
+			return this;
+
+		},
 		setOnline: function(online) {
 			var me = this;
+			online=!!online;
+
 			var changed = online !== me._online;
-			me._online = !!online;
+			this._mode=this._mode||'auto';
+			me._online = online;
 			if (changed) {
-				me.fireEvent('onlineStatusChanged', [online]);
+				me.fireEvent('onlineStatusChanged', [this._online, this._mode]);
 			}
 			return me;
 		},
