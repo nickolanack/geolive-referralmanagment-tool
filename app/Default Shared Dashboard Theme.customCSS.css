@@ -6478,4 +6478,39 @@ input.text-input[type="color"], input.text-input[type="color"]:focus {
     
     
     
+
+
+[data-view="userOnlineStatusForm"] {
+    .user-indicator {
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        margin: 5px;
+        background-color: limegreen;
+        border-radius: 100%;
+        margin-bottom: 0;
+    }
+    
+    .user-indicator.invisible:after {
+        content: "|";
+        color: white;
+        width: 15px;
+        display: inline-block;
+        text-align: center;
+        font-size: 20px;
+        position: absolute;
+        transform: rotate(45deg);
+        top: 4px;
+        font-weight: bold;
+    }
+    
+    .user-indicator.invisible{
+        background-color:gray;
+    }
+}
+    
+    
+    
+    
+    
     
