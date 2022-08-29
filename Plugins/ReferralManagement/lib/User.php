@@ -369,6 +369,18 @@ class User {
 
 	}
 
+	public function getUsersOnline() {
+
+		return GetClient()->isOnlineGroup(array_map(function ($user) {
+				return $user->id;
+			}, $this->getPlugin()->getClientsUserList()));
+		
+	}
+
+	public function listUsers(){
+		$this->getPlugin()->getClientsUserList();
+	}
+
 	protected function getUsersLastName($userId = -1, $default = null) {
 
 		if ($userId < 1) {

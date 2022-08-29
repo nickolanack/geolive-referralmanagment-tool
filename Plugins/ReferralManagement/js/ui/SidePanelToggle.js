@@ -1,6 +1,10 @@
 var SidePanelToggle = (function() {
 
 
+
+
+
+
 	var SidePanelToggle = new Class_({
 		Implements: [Events],
 
@@ -27,6 +31,11 @@ var SidePanelToggle = (function() {
 
 			this.element = el;
 
+
+			if(localStorage.getItem('collapse-sidepanel')==="true"){
+				this.collapse();
+			}
+
 		},
 
 		_target: function(n) {
@@ -49,6 +58,8 @@ var SidePanelToggle = (function() {
 				return;
 			}
 
+			localStorage.setItem('collapse-sidepanel', true);
+
 			target.addClass("closed");
 			me.element.addClass("closed");
 			me.popover.setDescription("show side panel");
@@ -60,14 +71,20 @@ var SidePanelToggle = (function() {
 			var me = this;
 			var target = this._target();
 
-			if (target.hasClass("closed")) {
-				target.removeClass("closed");
-				me.element.removeClass("closed");
-				me.popover.setDescription("hide side panel");
-				me._expanded = true;
-				me.fireEvent('expand');
+			if (!target.hasClass("closed")) {
 				return;
 			}
+
+			localStorage.setItem('collapse-sidepanel', false);
+
+
+			target.removeClass("closed");
+			me.element.removeClass("closed");
+			me.popover.setDescription("hide side panel");
+			me._expanded = true;
+			me.fireEvent('expand');
+			return;
+			
 
 		},
 		toggle: function() {

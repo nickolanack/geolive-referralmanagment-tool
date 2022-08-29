@@ -712,8 +712,8 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 				'channel' => 'userlist',
 				'event' => 'update',
 			),
-			"results" => $this->getPlugin()->getClientsUserList(), //,
-			//"communities"=>$this->getPlugin()->listCommunities()
+			"results" =>(new \ReferralManagement\User())->listUsers()
+			
 		);
 	}
 
@@ -1111,19 +1111,11 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 	}
 
 	protected function setUserRole($json) {
-
 		return (new \ReferralManagement\User())->setUserRole($json->role, $json->user);
-
 	}
 
 	protected function usersOnline() {
-
-		return array(
-			'results' => GetClient()->isOnlineGroup(array_map(function ($user) {
-				return $user->id;
-			}, $this->getPlugin()->getClientsUserList())),
-		);
-
+		return array( 'results' => (new \ReferralManagement\User())->getUsersOnline());
 	}
 
 	protected function devicesOnline() {
