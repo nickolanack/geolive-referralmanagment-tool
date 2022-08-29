@@ -287,7 +287,7 @@ var ProjectTeam = (function() {
 
 
 				if (resp.subscription) {
-					this._subscribeProjects(resp.subscription);
+					me._subscribeProjects(resp.subscription);
 				}
 
 				me._isLoaded = true;
@@ -367,7 +367,7 @@ var ProjectTeam = (function() {
 				});
 
 				if (resp.subscription) {
-					this._subscribeDevices(resp.subscription);
+					me._subscribeDevices(resp.subscription);
 				}
 
 
@@ -479,7 +479,7 @@ var ProjectTeam = (function() {
 
 
 				if (resp.subscription) {
-					this._subscribeUsers(resp.subscription);
+					me._subscribeUsers(resp.subscription);
 				}
 
 
