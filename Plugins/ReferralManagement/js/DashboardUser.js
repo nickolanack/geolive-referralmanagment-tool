@@ -36,11 +36,18 @@ var DashboardUser = (function() {
 
 			if(changed){
 				this.fireEvent('onlineStatusChanged', [!!this._online, this._mode]);
+			
+				(new  AjaxControlQuery(CoreAjaxUrlRoot, "set_user_status", {
+					plugin: "ReferralManagement",
+					status: mode
+				})).execute();
+					
 			}
 
 			return this;
 
 		},
+
 		setOnline: function(online) {
 
 			online=!!online; //ensure boolean
