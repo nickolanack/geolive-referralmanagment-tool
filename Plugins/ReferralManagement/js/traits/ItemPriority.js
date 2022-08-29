@@ -89,76 +89,9 @@ var ItemPriority = (function() {
 
 
 
-		AppClient.authorize('write', item, function(auth) {
-
-			if(!auth){
-
-				
-
-				return;
-			}
-
+		AppClient.ifAuthorize('write', item, function(auth) {
 
 			var application=GatherDashboard.getApplication();
-
-			if (!application.getDisplayController().hasNamedFormView('prioritySelectForm')) {
-
-				application.getDisplayController().setNamedFormView('prioritySelectForm', function(item, options) {
-
-					return (new UIModuleWizard({}).setItem(item).addStep({
-						index: 0
-					}, function(step) {
-
-
-						step.addModule('content', function(position, moduleIndex) {
-							return new ElementModule('div', {
-								'class': 'priority-indicator priority-none',
-								events: {
-									click: function() {
-										item.setPriority(false);
-									}
-								}
-							});
-						});
-						step.addModule('content', function(position, moduleIndex) {
-							return new ElementModule('div', {
-								'class': 'priority-indicator priority-low',
-								events: {
-									click: function() {
-										item.setPriority('low');
-									}
-								}
-							});
-						});
-						step.addModule('content', function(position, moduleIndex) {
-							return new ElementModule('div', {
-								'class': 'priority-indicator priority-medium',
-								events: {
-									click: function() {
-										item.setPriority('medium');
-									}
-								}
-							});
-						});
-						step.addModule('content', function(position, moduleIndex) {
-							return new ElementModule('div', {
-								'class': 'priority-indicator priority-high',
-								events: {
-									click: function() {
-										item.setPriority('high');
-									}
-								}
-							});
-						});
-
-
-					}));
-
-
-				});
-
-			}
-
 
 			new UIPopover(el, {
 				application: application,
