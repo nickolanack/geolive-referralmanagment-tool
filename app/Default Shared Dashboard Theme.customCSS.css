@@ -6422,7 +6422,7 @@ button.toggle-dock-form {
         color: #d26450;
     }
     
-    &.active>.indicator-switch:before {
+    .active .indicator-switch:before {
         content: "\0f06e";
         color: black;
     }
