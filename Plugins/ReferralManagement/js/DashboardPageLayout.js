@@ -530,8 +530,10 @@ var DashboardPageLayout = (function() {
 	}).addLayout('userDetailView', function(content, options, callback){
 
 
-
 		
+		content=layout.filterIdentifierUser(content, ['user-status'], 'admin');
+
+
 		return content;
 
 	}).addLayout('singleProjectOverviewDetail', function(content, options, callback){
