@@ -4844,6 +4844,10 @@ img.static-map {
     .dashboard-main>div>div>.ui-view.left-panel.closed{
         width: 50px;
         min-width: 50px;
+        
+        .menu-configuration-fixedsettings{
+            width: 50px;
+        }
     }
     
     .closed .user-detail .FormattedTextModule{
