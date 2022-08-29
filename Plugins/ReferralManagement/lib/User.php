@@ -9,16 +9,13 @@ class User {
 	private static $_communityConfig = null;
 	private static $_dashboardConfig = null;
 
-
-
 	protected function getPlugin() {
 		return GetPlugin('ReferralManagement');
 	}
 
+	public function clearCache() {
 
-	public function clearCache(){
-
-		self::$_cachedUserAttribs=array();
+		self::$_cachedUserAttribs = array();
 		return $this;
 
 	}
@@ -92,7 +89,6 @@ class User {
 
 				$metadata['reviewed'] = $attributes['reviewed'];
 
-
 				$metadata['communityId'] = array_search($metadata['community'], $this->listCommunities());
 
 				$metadata['role-icon'] = $this->getUserRoleIcon($userId);
@@ -112,14 +108,11 @@ class User {
 				$metadata['roles'] = $this->getUserRoles($userId);
 				$metadata['bio'] = $this->getUsersBio($userId);
 
+				$metadata['online-status'] = 'auto';
 
-
-
-				$metadata['online-status']='auto';
-
-				if(isset($attributes['onlineStatus'])){
-					if(in_array($attributes['onlineStatus'], array('auto', 'invisible'))){
-						$metadata['online-status']=$attributes['onlineStatus'];
+				if (isset($attributes['onlineStatus'])) {
+					if (in_array($attributes['onlineStatus'], array('auto', 'invisible'))) {
+						$metadata['online-status'] = $attributes['onlineStatus'];
 					}
 				}
 
@@ -281,39 +274,31 @@ class User {
 
 	}
 
+	public function setUserStatus($status) {
 
-	public function setUserStatus($status){
+		$validModes = array('auto', 'invisible');
 
-
-
-		$validModes=array('auto', 'invisible');
-
-		if(!in_array($status, $validModes)){
-			throw new \Exception('Invalid status: '.$status.' Expected one of: '.implode(', ', $validModes));
+		if (!in_array($status, $validModes)) {
+			throw new \Exception('Invalid status: ' . $status . ' Expected one of: ' . implode(', ', $validModes));
 		}
-
 
 		GetPlugin('Attributes');
 
 		(new \attributes\Record('userAttributes'))->setValues(GetClient()->getUserId(), 'user', array(
-			'onlineStatus'=>$status
+			'onlineStatus' => $status,
 		));
 
 		$this->getPlugin()->cache()->needsUserListUpdate();
-		
-		return $this;
 
+		return $this;
 
 	}
 
-
-	public function setUserRole($role, $userId=-1) {
-
+	public function setUserRole($role, $userId = -1) {
 
 		if ($userId < 1) {
 			$userId = GetClient()->getUserId();
 		}
-
 
 		$yourRoles = (new \ReferralManagement\UserRoles())->getUsersRoles();
 		$usersRoles = (new \ReferralManagement\UserRoles())->getUsersRoles($userId);
@@ -361,7 +346,7 @@ class User {
 			'update' => $values,
 		);
 
-		$this->getPlugin()->notifier()->onUpdateUserRole((object) array_merge(array('user'=>$userId, 'role'=>$role), $update));
+		$this->getPlugin()->notifier()->onUpdateUserRole((object) array_merge(array('user' => $userId, 'role' => $role), $update));
 		$this->getPlugin()->cache()->needsDeviceListUpdate();
 		$this->getPlugin()->cache()->needsUserListUpdate();
 
@@ -371,13 +356,34 @@ class User {
 
 	public function getUsersOnline() {
 
-		return GetClient()->isOnlineGroup(array_map(function ($user) {
-				return $user->id;
-			}, $this->getPlugin()->getClientsUserList()));
-		
+		$users = $this->getPlugin()->getClientsUserList();
+
+		$results = GetClient()->isOnlineGroup(array_map(function ($user) {
+			return $user->id;
+		}, $users));
+
+
+
+
+		return array_map(function ($onlineResult) use ($users) {
+
+			foreach($users as $user){
+				if($user->id===$onlineResult->id&&$user->{'online-status'==='invisible'}){
+
+					/**
+					 * force online to false for users who are set to invisible 
+					 */
+
+					$onlineResult->online=false;
+				}
+			}
+
+			return $onlineResult;
+		}, $results);
+
 	}
 
-	public function listUsers(){
+	public function listUsers() {
 		return $this->getPlugin()->getClientsUserList();
 	}
 
