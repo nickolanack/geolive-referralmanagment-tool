@@ -107,6 +107,17 @@ class User {
 				$metadata['roles'] = $this->getUserRoles($userId);
 				$metadata['bio'] = $this->getUsersBio($userId);
 
+
+
+
+				$metadata['online-status']='default';
+
+				if(isset($attributes['onlineStatus'])){
+					if(in_array($attributes['onlineStatus'], array('default', 'invisible'))){
+						$metadata['online-status']=$attributes['onlineStatus'];
+					}
+				}
+
 			});
 
 		return $metadata;

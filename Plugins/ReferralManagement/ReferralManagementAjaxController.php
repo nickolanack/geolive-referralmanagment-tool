@@ -18,6 +18,32 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 	}
 
 
+
+
+	protected function setUserStatus($json){
+
+
+
+		$validModes=array('default', 'invisible');
+
+		if(!in_array($json->status, $validModes)){
+			return $this->setError('Invalid status: '.$json->status.' Expected one of: '.implode(', ', $validModes));
+		}
+
+
+		GetPlugin('Attributes');
+		
+		(new attributes\Record('userAttributes'))->setValues(GetClient()->getUserId(), 'user', array(
+			'onlineStatus'=>$json->status;
+		));
+		
+		return true;
+
+
+	}
+
+
+
 	protected function setAccess($json){
 
 
