@@ -48,7 +48,7 @@ var DashboardUser = (function() {
 
 		},
 		getOnlineVisibility:function(){
-			return this._mode||"default";
+			return this._mode||"auto";
 		},
 
 		setOnline: function(online) {
