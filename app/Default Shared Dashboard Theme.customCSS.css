@@ -2193,7 +2193,15 @@ button.inline-logout {
     min-width: 300px;
     width: 20%;
     max-width: 400px;
+    
+    .menu-configuration-fixedsettings {
+        width:300px;
+        
+    }
+    
 }
+
+
 
 .ui-view.main-panel {
     height: 100%;
@@ -5561,12 +5569,8 @@ img.static-map {
     &.menu-configuration-fixedsettings {
         position: fixed;
         bottom: 0;
-        width: 300px;
         box-sizing: border-box;
-        
-        
     }
-    
     
     &.menu-configuration-settings, &.menu-configuration-fixedsettings {
         visibility:hidden;
