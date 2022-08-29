@@ -6516,12 +6516,13 @@ input.text-input[type="color"], input.text-input[type="color"]:focus {
         font-size: 20px;
         position: absolute;
         transform: rotate(45deg);
-        top: 4px;
+        top: -1px;
         font-weight: bold;
     }
     
     .user-indicator.invisible{
         background-color:gray;
+        position:relative;
     }
 }
     
