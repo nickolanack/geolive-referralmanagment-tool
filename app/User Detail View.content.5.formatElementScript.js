@@ -16,5 +16,12 @@
 				anchor: UIPopover.AnchorAuto()
 			});
 			
-			
-    el.addClass('with-status-'+item.getOnlineVisibility());
+	
+	
+	var status=item.getOnlineVisibility();
+    el.addClass('with-status-'+status);
+    this.addWeakEvent(item, 'onlineStatusChanged', function(){
+        el.removeClass('with-status-'+status);
+        status=item.getOnlineVisibility();
+        el.addClass('with-status-'+status)
+    });
