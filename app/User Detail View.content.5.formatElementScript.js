@@ -1,4 +1,4 @@
-var application=GatherDashboard.getApplication();
+    var application=GatherDashboard.getApplication();
 
 			new UIPopover(el, {
 				application: application,
@@ -15,3 +15,6 @@ var application=GatherDashboard.getApplication();
 				clickable: true,
 				anchor: UIPopover.AnchorAuto()
 			});
+			
+			
+    el.addClass('with-status-'+item.getOnlineVisibility());
