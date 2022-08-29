@@ -123,10 +123,10 @@ class User {
 					}
 				}
 
-				if($metadata['online-status']=='invisible'){
-					$metadata['online-status']='auto';
-					$metadata['online-status__']='invisible';
-				}
+				// if($metadata['online-status']=='invisible'){
+				// 	$metadata['online-status']='auto';
+				// 	$metadata['online-status__']='invisible';
+				// }
 
 			});
 
