@@ -39,9 +39,9 @@ var SidePanelToggle = (function() {
 			
 			mod.runOnceOnLoad(function(){
 				if(localStorage.getItem('collapse-sidepanel')==="true"){
-					setTimeout(function(){
-						me.collapse();
-					}, 10);
+						me.module.getViewer().runOnceOnDisplay(function(){
+							me.collapse();
+						});
 				}
 			});
 			
