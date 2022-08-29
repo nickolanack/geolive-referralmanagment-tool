@@ -33,7 +33,7 @@ var SidePanelToggle = (function() {
 
 
 			if(localStorage.getItem('collapse-sidepanel')==="true"){
-				this.collapse();
+				//this.collapse();
 			}
 
 		},
