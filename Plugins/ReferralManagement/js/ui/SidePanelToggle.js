@@ -13,7 +13,7 @@ var SidePanelToggle = (function() {
 			this._expanded = true;
 			var me = this;
 			me.popover;
-			var el = new Element('div', {
+			var mod = new ElementModule('div', {
 				"class": "panel-toggle",
 				events: {
 					click: function() {
@@ -24,6 +24,10 @@ var SidePanelToggle = (function() {
 				}
 			});
 
+			this.module=mod;
+			var el=mod.getElement();
+
+
 			me.popover = new UIPopover(el, {
 				description: "hide side panel",
 				anchor: UIPopover.AnchorAuto()
@@ -32,9 +36,13 @@ var SidePanelToggle = (function() {
 			this.element = el;
 
 
-			if(localStorage.getItem('collapse-sidepanel')==="true"){
-				//this.collapse();
-			}
+			
+			mod.runOnceOnLoad(function(){
+				if(localStorage.getItem('collapse-sidepanel')==="true"){
+					me.collapse();
+				}
+			});
+			
 
 		},
 
@@ -100,6 +108,9 @@ var SidePanelToggle = (function() {
 			this.collapse();
 		},
 
+		getModule: function() {
+			return this.module;
+		},
 		getElement: function() {
 			return this.element;
 		},
