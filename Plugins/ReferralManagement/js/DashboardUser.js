@@ -48,6 +48,13 @@ var DashboardUser = (function() {
 
 		},
 		getOnlineVisibility:function(){
+
+			if(typeof this._mode=='undefined'){
+				if(typeof this.options.metadata['online-status']=='string'){
+					this._mode=this.options.metadata['online-status'];
+				}
+			}
+
 			return this._mode||"auto";
 		},
 
@@ -447,7 +454,7 @@ var TeamMember = new Class({
 
 	setReceiveNotifications: function(bool) {
 		var me = this;
-		me._setPermission("recieves-notifications", bool);
+		me._setPermission("receives-notifications", bool);
 	},
 	_getPermission: function(n) {
 		var me = this;
@@ -486,7 +493,7 @@ var TeamMember = new Class({
 
 	receiveNotifications: function() {
 		var me = this;
-		return me._getPermission("recieves-notifications");
+		return me._getPermission("receives-notifications");
 	},
 	canAddTeamMembers: function() {
 		var me = this;

@@ -400,7 +400,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 			'assigns-tasks',
 			'adds-members',
 			'sets-roles',
-			'recieves-notifications',
+			'receives-notifications',
 		);
 	}
 
@@ -428,7 +428,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 		return array(
 			'adds-tasks',
-			'recieves-notifications',
+			'receives-notifications',
 		);
 
 	}

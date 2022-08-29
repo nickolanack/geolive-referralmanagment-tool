@@ -67,7 +67,7 @@ class EmailNotifications implements \core\EventListener{
 
 		foreach ($teamMembers as $user) {
 
-			$to = $this->emailToAddress($user, "recieves-notifications");
+			$to = $this->emailToAddress($user, "receives-notifications");
 			if (!$to) {
 				continue;
 			}
@@ -110,7 +110,7 @@ class EmailNotifications implements \core\EventListener{
 			return;
 		}
 
-		$to = $this->emailToAddress($user, "recieves-notifications");
+		$to = $this->emailToAddress($user, "receives-notifications");
 		if (!$to) {
 			return;
 		}
@@ -207,7 +207,7 @@ class EmailNotifications implements \core\EventListener{
 
 		foreach ($teamMembers as $user) {
 
-			$to = $this->emailToAddress($user, "recieves-notifications");
+			$to = $this->emailToAddress($user, "receives-notifications");
 			if (!$to) {
 				continue;
 			}

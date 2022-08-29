@@ -88,6 +88,13 @@ PopoverFormDefinition.defineForm('prioritySelectForm', function(item, step) {
 
 PopoverFormDefinition.defineForm('userOnlineStatusForm', function(item, step) {
 
+
+	step.addModule('content', function(position, moduleIndex) {
+
+		return 'Other users can see if you are online';
+
+	});
+
 	step.addModule('content', function(position, moduleIndex) {
 		return new ElementModule('div', {
 			'class': 'user-indicator online',
