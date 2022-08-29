@@ -4189,6 +4189,7 @@ ul.user-roles{
 }
 .user-item .is-offline:after{
     background: crimson;
+    opacity: 0.4;
 }
 .user-item .is-unknown:after {
     background: grey;
