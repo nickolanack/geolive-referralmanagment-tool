@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "var defaultIcon=<?php \n\t\t    echo json_encode(UrlFrom(GetWidget('dashboardConfig')->getParameter('defaultUserImage')[0])); \n\t\t?>;\n\n\n\t\treturn ReferralManagementDashboard.createUserIcon(item, defaultIcon);",
+        "script": "var defaultIcon=<?php \n\t\t    echo json_encode(UrlFrom(GetWidget('dashboardConfig')->getParameter('defaultUserImage')[0])); \n\t\t?>;\n\n\n\t\treturn UserIcon.createUserAvatarModule(item, defaultIcon);",
         "description": "Info about my custom script"
     }
 }
