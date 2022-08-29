@@ -378,7 +378,7 @@ class User {
 	}
 
 	public function listUsers(){
-		$this->getPlugin()->getClientsUserList();
+		return $this->getPlugin()->getClientsUserList();
 	}
 
 	protected function getUsersLastName($userId = -1, $default = null) {
