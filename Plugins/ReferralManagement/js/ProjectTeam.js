@@ -224,6 +224,45 @@ var ProjectTeam = (function() {
 			
 		},
 
+		_subscribeProjects:function(subscription){
+
+			var me=this;
+
+			if(this._projectSubcription){
+				return;
+			}
+
+
+			this._projectSubcription=AjaxControlQuery.Subscribe(subscription, function(update) {
+				console.log('Recieved Update Message');
+				console.log(update);
+
+				if (update.updated) {
+					update.updated.forEach(function(data) {
+						me._updateProject(data);
+					});
+				}
+
+				if (update.created) {
+					update.created.forEach(function(data) {
+						try {
+							var project = me.getProject(data.id);
+							project._setData(data);
+
+							//Created by you!
+						
+						} catch (e) {
+
+						}
+
+					});
+				}
+
+			});
+
+
+		},
+
 		_loadProjects: function(callback) {
 			var me = this;
 			(new ProjectListQuery()).addEvent('success', function(resp) {
@@ -248,34 +287,7 @@ var ProjectTeam = (function() {
 
 
 				if (resp.subscription) {
-					AjaxControlQuery.Subscribe(resp.subscription, function(update) {
-						console.log('Recieved Update Message');
-						console.log(update);
-
-						if (update.updated) {
-							update.updated.forEach(function(data) {
-								me._updateProject(data);
-							});
-						}
-
-						if (update.created) {
-							update.created.forEach(function(data) {
-								try {
-									var project = me.getProject(data.id);
-									project._setData(data);
-
-									//Created by you!
-
-								} catch (e) {
-
-
-
-								}
-
-							})
-						}
-
-					});
+					this._subscribeProjects(resp.subscription);
 				}
 
 				me._isLoaded = true;
@@ -355,9 +367,7 @@ var ProjectTeam = (function() {
 				});
 
 				if (resp.subscription) {
-					AjaxControlQuery.Subscribe(resp.subscription, function(result) {
-						me._updateDeviceList(result);
-					});
+					this._subscribeDevices(resp.subscription);
 				}
 
 
@@ -424,6 +434,35 @@ var ProjectTeam = (function() {
 
 			me._users.push(user);
 		},
+		_subscribeUsers:function(subscription){
+
+			var me=this;
+
+			if(this._userSubcription){
+				return;
+			}
+
+			this._userSubcription=AjaxControlQuery.Subscribe(subscription, function(result) {
+				me._updateUserList(result);
+			});
+
+		},
+
+		_subscribeDevices:function(subscription){
+
+
+			var me=this;
+
+			if(this._deviceSubcription){
+				return;
+			}
+
+			this._deviceSubcription=AjaxControlQuery.Subscribe(subscription, function(result) {
+				me._updateDeviceList(result);
+			});
+
+		},
+
 		_loadUsers: function(callback) {
 
 			var me = this;
@@ -440,9 +479,7 @@ var ProjectTeam = (function() {
 
 
 				if (resp.subscription) {
-					AjaxControlQuery.Subscribe(resp.subscription, function(result) {
-						me._updateUserList(result);
-					});
+					this._subscribeUsers(resp.subscription);
 				}
 
 
