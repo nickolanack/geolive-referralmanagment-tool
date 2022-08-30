@@ -18,10 +18,10 @@ var  DisplayTheme=(function(){
 		},
 
 		getInvertsForms:function(){
-			localStorage.get('invert-forms')==="true";
+			localStorage.getItem('invert-forms')==="true";
 		},
 		setInvertForms:function(bool){
-			localStorage.set('invert-forms', bool);
+			localStorage.setItem('invert-forms', bool);
 
 
 			var classNames=(mode=="dark"?" dark ":"")+DashboardConfig.getValue('pageClassNames');
