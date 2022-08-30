@@ -4189,6 +4189,7 @@ ul.user-roles{
 }
 .user-item .is-offline:after{
     background: crimson;
+    opacity: 0.4;
 }
 .user-item .is-unknown:after {
     background: grey;
@@ -6391,6 +6392,19 @@ button.toggle-dock-form {
         border-top: 1px solid #2E303A;
         border-bottom: 0;
     }
+    
+    
+    
+    &.field-type-boolean .boolean-field.checkbox-style {
+        margin: 0;
+    }
+
+    &.field-type-text .media-bar.tabs-top {
+        display: none;
+    }
+        
+    
+    
 }
 
 
@@ -6421,7 +6435,7 @@ button.toggle-dock-form {
         color: #d26450;
     }
     
-    &.active>.indicator-switch:before {
+    .active .indicator-switch:before {
         content: "\0f06e";
         color: black;
     }
@@ -6460,7 +6474,7 @@ input.text-input[type="color"], input.text-input[type="color"]:focus {
 }
 
 
-[data-view="leftPanel"]{
+[data-view="leftPanel"], [data-view="userProfileDetailCards"]{
 
     .field-value-module.user-status {
         width: 10px;
@@ -6490,8 +6504,24 @@ input.text-input[type="color"], input.text-input[type="color"]:focus {
         
     }
     
+}
+
+[data-view="userProfileDetailCards"]{
+     
+     .ui-view.card-one .field-value-module.user-status {
+         
+        display:inline-block;
+        right: 30px;
+        bottom: 50px;
+        
+         &:after{
+            color:#e9e9e9;
+        }
     
-    
+     }
+}
+
+[data-view="leftPanel"]{    
     
     @media screen and (max-height: 1000px){
     .field-value-module.user-status {
