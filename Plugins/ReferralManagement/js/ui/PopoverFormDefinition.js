@@ -148,3 +148,43 @@ PopoverFormDefinition.defineForm('userOnlineStatusForm', function(item, step) {
 	});
 
 });
+
+
+
+
+PopoverFormDefinition.defineForm('toggleLightDarkForms', function(item, step) {
+
+
+	step.addModule('content', function(position, moduleIndex) {
+
+
+		var mod= new ElementModule('div', {});
+		var update=function(){
+			mod.getElement().innerHTML='Toggle light/dark display';
+		};
+
+		update();
+
+		mod.addWeakEvent(item, 'onlineStatusChanged', update);
+		return mod;
+
+
+	});
+
+
+	step.addModule('content', function(position, moduleIndex) {
+		return new ElementModule('div', {
+            "class": "indicator-switch",
+            "events": {
+                "click": function() {
+                   
+                }
+            }
+        });
+	});
+	
+
+});
+
+
+

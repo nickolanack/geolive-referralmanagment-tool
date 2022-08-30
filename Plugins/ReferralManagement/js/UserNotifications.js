@@ -64,10 +64,32 @@ var UserNotifications = (function() {
 					}
 				}
 			})).runOnceOnLoad(function(button) {
-				new UIPopover(button.getElement(), {
-					description: 'Toggle light/dark display',
+
+
+				// new UIPopover(button.getElement(), {
+				// 	description: 'Toggle light/dark display',
+				// 	anchor: UIPopover.AnchorAuto()
+				// });
+
+
+				new UIPopover(el, {
+					application: application,
+					item: application,
+					"--className": "priority-",
+					detailViewOptions: {
+						"viewType": "form",
+						"namedFormView": "toggleLightDarkForms",
+						"formOptions": {
+							template: "form",
+							closeable: true
+						}
+					},
+					clickable: true,
 					anchor: UIPopover.AnchorAuto()
 				});
+				
+
+
 			}),
 			(new ElementModule('span', {
 				"class": "logout-toggle",
