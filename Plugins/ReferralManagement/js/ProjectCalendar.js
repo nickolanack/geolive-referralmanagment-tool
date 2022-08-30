@@ -341,8 +341,7 @@ var ProjectCalendar = (function() {
 
 	};
 
-
-	ProjectCalendar.DownloadICal=function(){
+	ProjectCalendar.GetICalLink=function(callback){
 
 		(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_ical_link', {
 				"plugin": "ReferralManagement"
@@ -354,9 +353,16 @@ var ProjectCalendar = (function() {
 					"token": resp.token
 				})).getUrl(true);
 
-				window.open(iCalUrl,'Download'); 
+				callback(iCalUrl);
 
 			}).execute();
+
+	}
+	ProjectCalendar.DownloadICal=function(){
+
+		ProjectCalendar.GetICalLink(function(iCalUrl){
+			window.open(iCalUrl,'Download'); 
+		});
 	}
 
 
