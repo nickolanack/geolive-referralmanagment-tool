@@ -1,5 +1,6 @@
 if(window.GuestProposal&&item instanceof GuestProposal){
-    inputElement.disabled=true;
-    textField.getElement().addClass('disabled');
-    textField.setLabel('Submission sent')
+    //textField.getElement().setStyle('display','none');
+    //inputElement.disabled=true;
+    //textField.getElement().addClass('disabled');
+    textField.setLabel('Anticipated start date')
 }

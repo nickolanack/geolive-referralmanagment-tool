@@ -1,6 +1,9 @@
 if(window.GuestProposal&&item instanceof GuestProposal){
-    //textField.getElement().setStyle('display','none');
     //inputElement.disabled=true;
     //textField.getElement().addClass('disabled');
-    textField.setLabel('Anticipated start date')
+    textField.setLabel('Requested response date');
+    module.setMandatory(true, function(object){
+        return !!object.value;
+    });
+
 }
