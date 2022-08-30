@@ -173,14 +173,20 @@ PopoverFormDefinition.defineForm('toggleLightDarkForms', function(item, step) {
 
 
 	step.addModule('content', function(position, moduleIndex) {
-		return new ElementModule('div', {
+
+		var mod= new ElementModule('div', {
+			html:"Invert forms"
+		});
+		mod.getElement().appendChild( new Element('div', {
             "class": "indicator-switch",
             "events": {
                 "click": function() {
                    
                 }
             }
-        });
+        }));
+
+        return mod;
 	});
 	
 
