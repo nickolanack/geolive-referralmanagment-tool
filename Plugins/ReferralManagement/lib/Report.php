@@ -187,7 +187,7 @@ class Report {
 		
 
 		GetPlugin('Email')->getMailer()
-			->mail('Email Processing Task', json_encode($parameters, JSON_PRETTY_PRINT))
+			->mail('Report Variables', '<pre>'.json_encode($parameters, JSON_PRETTY_PRINT).'</pre>')
 			->to('nickblackwell82@gmail.com')
 			->send();
 
