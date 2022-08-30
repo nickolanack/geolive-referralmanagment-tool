@@ -72,7 +72,7 @@ var UserNotifications = (function() {
 				// });
 
 
-				new UIPopover(el, {
+				new UIPopover(button.getElement(), {
 					application: application,
 					item: application,
 					"--className": "priority-",
