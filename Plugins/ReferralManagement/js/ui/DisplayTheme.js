@@ -23,6 +23,25 @@ var  DisplayTheme=(function(){
 
 			localStorage.setItem('mode', mode);
 
+
+			var classNames=(mode=="dark"?" dark ":"")+DashboardConfig.getValue('pageClassNames');
+			var application = GatherDashboard.getApplication();
+			application.getDisplayController().setOptions({
+	            popoverOptions:{
+	                parentClassName:classNames
+	            }
+	        })
+	        
+	        NotificationBubble.SetOptions({
+	            className:classNames
+	        });
+	       
+
+	        UIPopover.SetOptions({
+	             className:classNames
+	        });
+
+
 			if (mode === 'dark') {
 				el.addClass('dark');
 				return;

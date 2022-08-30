@@ -17,7 +17,7 @@ var UserNotifications = (function() {
 	UserNotifications.MakeNotificationBtn = function() {
 
 
-		var application = ReferralManagementDashboard.getApplication();
+		var application = GatherDashboard.getApplication();
 
 		DisplayTheme.start();
 
@@ -48,12 +48,18 @@ var UserNotifications = (function() {
 				events: {
 					click: function() {
 
+					
+
 						var el = $$('.ui-view.dashboard-main')[0];
 						if (el.hasClass('dark')) {
 							DisplayTheme.setMode('light');
 							return;
 						}
 						DisplayTheme.setMode('dark');
+
+
+
+
 
 					}
 				}

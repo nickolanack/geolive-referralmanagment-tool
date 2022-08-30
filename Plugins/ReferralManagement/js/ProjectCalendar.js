@@ -357,7 +357,9 @@ var ProjectCalendar = (function() {
 
 			}).execute();
 
-	}
+	};
+
+
 	ProjectCalendar.DownloadICal=function(){
 
 		ProjectCalendar.GetICalLink(function(iCalUrl){
