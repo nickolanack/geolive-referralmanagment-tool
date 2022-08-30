@@ -230,6 +230,31 @@ var FormBuilder = (function() {
 
 			return 'field placeholder'
 		},
+		formFieldItemList:function(item, callback){
+
+
+			 callback((item.getParameters?item.getParameters():[]).map(function(item){
+                return new MockDataTypeItem({
+                    name:item.name,
+                    description:item.description,
+                    fieldType:item.fieldType,
+                    defaultValue:item.defaultValue,
+                    options:item.options
+                });
+                
+            }));
+
+
+		},
+
+		formFieldItemListUpdater:function(module, item){
+			(new UIFormListBehavior(module)).disableNewItems().disableRemoveEmpty().addDataFormatter(function(data, item){
+    
+			    return ObjectAppend_({}, item.toObject(), data);
+			    
+			}).setUpdateField('parameters');
+		},
+
 		createReportBtn: function(item) {
 
 
