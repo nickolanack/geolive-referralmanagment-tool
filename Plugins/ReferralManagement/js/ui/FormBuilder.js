@@ -84,32 +84,34 @@ var FormBuilder = (function() {
 				}
 			}));
 		},
+		_toParameterName:function(label, options){
 
-		_toCamelCase: function(label, options) {
+			if(options&&typeof options.paremeterName=="string"){
+				return options.parameterName;
+			}
+
 			try {
-
-
-				if(options&&typeof options.paremeterName=="string"){
-					return options.parameterName;
-				}
-
-				var parameterName = label.split(' ').filter(function(str) {
-					return str.length > 0;
-				}).map(function(str, i) {
-
-					if (i == 0) {
-						return str[0].toLowerCase() + (str.length > 1 ? str.slice(1) : '');
-					}
-					return str;
-
-				}).join('');
-
-				return parameterName;
-
+				return this._toCamelCase(label);
 			} catch (e) {
 				return label;
 			}
 
+		},
+		_toCamelCase: function(label, options) {
+			
+			var parameterName = label.split(' ').filter(function(str) {
+				return str.length > 0;
+			}).map(function(str, i) {
+
+				if (i == 0) {
+					return str[0].toLowerCase() + (str.length > 1 ? str.slice(1) : '');
+				}
+				return str;
+
+			}).join('');
+
+			return parameterName;
+			
 		},
 		getFormParameter: function(item, wizard) {
 
@@ -119,7 +121,7 @@ var FormBuilder = (function() {
 
 			var options = item.getOptions();
 
-			var parameterName = this._toCamelCase(label, options);
+			var parameterName = this._toParameterName(label, options);
 
 			
 
@@ -292,7 +294,7 @@ var FormBuilder = (function() {
 								this.getWizard().getData().parameters.map(function(p) {
 
 
-									var parameterName=me._toCamelCase(p.name, p.options);
+									var parameterName=me._toParameterName(p.name, p.options);
 									if(p[parameterName]){
 										data[parameterName] = p[parameterName];
 									}
