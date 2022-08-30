@@ -1,5 +1,8 @@
-(new UIFormListBehavior(module)).disableNewItems().disableRemoveEmpty().addDataFormatter(function(data, item){
+// (new UIFormListBehavior(module)).disableNewItems().disableRemoveEmpty().addDataFormatter(function(data, item){
     
-    return ObjectAppend_({}, item.toObject(), data);
+//     return ObjectAppend_({}, item.toObject(), data);
     
-}).setUpdateField('parameters');
+// }).setUpdateField('parameters');
+
+
+FormBuilder.formFieldItemListUpdater(module, item);
