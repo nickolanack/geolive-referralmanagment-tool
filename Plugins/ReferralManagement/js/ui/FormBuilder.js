@@ -256,7 +256,7 @@ var FormBuilder = (function() {
 		},
 
 		createReportBtn: function(item) {
-
+			var me=this;
 
 			var reportBtn = new ElementModule('button', {
 				"identifier": "button-report",
@@ -283,7 +283,8 @@ var FormBuilder = (function() {
 								console.log('complete')
 								var data = {};
 								this.getWizard().getData().parameters.map(function(p) {
-									data[p.name] = p[p.name];
+									var parameterName=me._toCamelCase(p.name);
+									data[p.parameterName] = p[parameterName];
 								});
 
 								var exportQuery = new AjaxControlQuery(CoreAjaxUrlRoot, 'generate_report', {
