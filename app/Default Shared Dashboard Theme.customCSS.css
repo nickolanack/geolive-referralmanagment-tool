@@ -6392,6 +6392,19 @@ button.toggle-dock-form {
         border-top: 1px solid #2E303A;
         border-bottom: 0;
     }
+    
+    
+    
+    &.field-type-boolean .boolean-field.checkbox-style {
+        margin: 0;
+    }
+
+    &.field-type-text .media-bar.tabs-top {
+        display: none;
+    }
+        
+    
+    
 }
 
 
