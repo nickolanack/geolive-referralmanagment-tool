@@ -81,21 +81,32 @@ var FormBuilder = (function(){
 			}}}));
 		},
 
+		_toCamelCase:function(label){
+			try{
 
+				var parameterName=label.split(' ').map(function(str, i){
+					
+					if(i==0){
+						return str[0].toLowerCase()+(str.length>1?str.slice(1):'');
+					}
+					return str;
+
+				}).join('');
+
+				return parameterName;
+
+			}catch(e){
+				return label;
+			}
+
+		},
 		getFormParameter:function(item, wizard){
 
 
 			var label = item.getName().replace(/([A-Z])/g, " $1");
 			label = label[0].toUpperCase() + label.slice(1);
 
-			var parameterName=label.split(' ').map(function(str, i){
-				
-				if(i==0){
-					return str[0].toLowerCase()+(str.length>1?str.slice(1):'');
-				}
-				return str;
-
-			}).join('');
+			var parameterName=this._toCamelCase(label);
 
 			var options=item.getOptions();
 
