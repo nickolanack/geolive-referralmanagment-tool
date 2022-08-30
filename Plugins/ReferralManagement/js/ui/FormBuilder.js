@@ -88,6 +88,15 @@ var FormBuilder = (function(){
 			var label = item.getName().replace(/([A-Z])/g, " $1");
 			label = label[0].toUpperCase() + label.slice(1);
 
+			var parameterName=label.split(' ').map(function(str, i){
+				
+				if(i==0){
+					return str[0].toLowerCase()+(str.length>1?str.slice(1):'');
+				}
+				return str;
+
+			}).join('');
+
 			var options=item.getOptions();
 
 			if(item.getFieldType()=='heading'){
@@ -104,7 +113,7 @@ var FormBuilder = (function(){
 			        type:"checkbox",
 			        value: (['true', true]).indexOf(item.getDefaultValue())>=0,
 			    }).addDataSubmitter(function(object, wizardDataSet){
-			        wizardDataSet[item.getName()]=object.value;
+			        wizardDataSet[parameterName]=object.value;
 			    });
 
 			    
@@ -124,7 +133,7 @@ var FormBuilder = (function(){
 			        tags:options.values,
 			        maxSelected:options.maxSelected||-1
 			    }).addDataSubmitter(function(object, wizardDataSet){
-			        wizardDataSet[item.getName()]=object.value;
+			        wizardDataSet[parameterName]=object.value;
 			    }).on('addWord',function(word, el){
 			    	if(colorMap){
 
@@ -193,7 +202,7 @@ var FormBuilder = (function(){
 			       wrapElementClassName:"no-media",
 			       value:item.getDefaultValue()||"",
 			    }).addDataSubmitter(function(object, wizardDataSet){
-			        wizardDataSet[item.getName()]=object.value;
+			        wizardDataSet[parameterName]=object.value;
 			    });
 
 			    
