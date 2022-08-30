@@ -4,3 +4,7 @@ if(item.getImage){
         src:image
     }));
 }
+
+if(item.getContent){
+    el.appendChild(item.getContent());
+}
