@@ -85,8 +85,13 @@ var FormBuilder = (function() {
 			}));
 		},
 
-		_toCamelCase: function(label) {
+		_toCamelCase: function(label, options) {
 			try {
+
+
+				if(options&&typeof options.paremeterName=="string"){
+					return options.parameterName;
+				}
 
 				var parameterName = label.split(' ').filter(function(str) {
 					return str.length > 0;
@@ -112,9 +117,11 @@ var FormBuilder = (function() {
 			var label = item.getName().replace(/([A-Z])/g, " $1");
 			label = label[0].toUpperCase() + label.slice(1);
 
-			var parameterName = this._toCamelCase(label);
-
 			var options = item.getOptions();
+
+			var parameterName = this._toCamelCase(label, options);
+
+			
 
 			if (item.getFieldType() == 'heading') {
 
@@ -239,7 +246,7 @@ var FormBuilder = (function() {
                     description:item.description,
                     fieldType:item.fieldType,
                     defaultValue:item.defaultValue,
-                    options:item.options
+                    options:item.options,
                 });
                 
             }));
@@ -283,8 +290,12 @@ var FormBuilder = (function() {
 								console.log('complete')
 								var data = {};
 								this.getWizard().getData().parameters.map(function(p) {
-									var parameterName=me._toCamelCase(p.name);
-									data[p.parameterName] = p[parameterName];
+
+
+									var parameterName=me._toCamelCase(p.name, p.options);
+									if(p[parameterName]){
+										data[parameterName] = p[parameterName];
+									}
 								});
 
 								var exportQuery = new AjaxControlQuery(CoreAjaxUrlRoot, 'generate_report', {
