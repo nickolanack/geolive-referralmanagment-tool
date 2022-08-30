@@ -52,6 +52,10 @@
     }
 }
 
+span.TagCloudModule.tag-cloud-container.padd-top {
+    display: block;
+    margin-top: 10px;
+}
 
 body.body-overlayed>#viewControllerApp>div>div>.ui-view {
     filter: blur(5px) grayscale(1);
