@@ -23,6 +23,8 @@ var  DisplayTheme=(function(){
 		setInvertForms:function(bool){
 			localStorage.setItem('invert-forms', bool);
 
+			var mode=this.getMode();
+
 
 			var classNames=(mode=="dark"?" dark ":"")+DashboardConfig.getValue('pageClassNames');
 			var formClassNames=this.getInvertsForms()?((mode=="dark"?"":" dark ")+DashboardConfig.getValue('pageClassNames')):classNames;
@@ -37,10 +39,10 @@ var  DisplayTheme=(function(){
 
 		setMode:function(mode) {
 
-			var el = $$('.ui-view.dashboard-main')[0];
+			
 
 			if (mode !== 'light' && mode !== 'dark') {
-				mode = el.hasClass('dark') ? 'dark' : 'light'
+				mode = this.getMode();
 			}
 
 			localStorage.setItem('mode', mode);
@@ -65,6 +67,7 @@ var  DisplayTheme=(function(){
 	        });
 
 
+	        var el = $$('.ui-view.dashboard-main')[0];
 			if (mode === 'dark') {
 				el.addClass('dark');
 				return;
