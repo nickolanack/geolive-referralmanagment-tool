@@ -18,7 +18,7 @@ var  DisplayTheme=(function(){
 		},
 
 		getInvertsForms:function(){
-			localStorage.getItem('invert-forms')==="true";
+			return localStorage.getItem('invert-forms')==="true";
 		},
 		setInvertForms:function(bool){
 			localStorage.setItem('invert-forms', bool);
