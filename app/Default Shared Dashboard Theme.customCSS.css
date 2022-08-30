@@ -4055,7 +4055,7 @@ button.inline-btn.with-no-tasks {
 }
 
 .dark .TagCloudModule .tag-cloud > span.tag-el {
-    background-color: var(--color, rgba(0, 0, 0, 0.2));
+    background-color: var(--colorDark, var(--color, rgba(0, 0, 0, 0.2)));
 }
 
 .TagCloudModule .tag-cloud > span.tag-el.selected {
