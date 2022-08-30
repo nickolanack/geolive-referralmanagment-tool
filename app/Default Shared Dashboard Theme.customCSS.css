@@ -6496,7 +6496,7 @@ input.text-input[type="color"], input.text-input[type="color"]:focus {
         
         &.with-status-invisible:after {
             content: "|";
-            color: #222222;
+            color: #e1e1e1;
             position: absolute;
             top: -6px;
             font-size: 27px;
@@ -6509,6 +6509,16 @@ input.text-input[type="color"], input.text-input[type="color"]:focus {
     }
     
 }
+
+.dark [data-view="leftPanel"], [data-view="userProfileDetailCards"]{
+    .field-value-module.user-status {
+         &.with-status-invisible:after {
+             color: #222222;
+         }
+    }
+}
+
+
 
 [data-view="userProfileDetailCards"]{
      
