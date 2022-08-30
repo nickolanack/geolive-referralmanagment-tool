@@ -92,9 +92,9 @@ PopoverFormDefinition.defineForm('userOnlineStatusForm', function(item, step) {
 	step.addModule('content', function(position, moduleIndex) {
 
 
-		var mod= new ElementModule('div', {});
-		var update=function(){
-			mod.getElement().innerHTML=item.getOnlineVisibility()==='auto'?'Other users can see if you are online':'You will appear offline to other users'
+		var mod = new ElementModule('div', {});
+		var update = function() {
+			mod.getElement().innerHTML = item.getOnlineVisibility() === 'auto' ? 'Other users can see if you are online' : 'You will appear offline to other users'
 		};
 
 		update();
@@ -120,7 +120,7 @@ PopoverFormDefinition.defineForm('userOnlineStatusForm', function(item, step) {
 	// 		'class': 'user-indicator idle',
 	// 		events: {
 	// 			click: function() {
-					
+
 	// 			}
 	// 		}
 	// 	});
@@ -130,7 +130,7 @@ PopoverFormDefinition.defineForm('userOnlineStatusForm', function(item, step) {
 	// 		'class': 'user-indicator do-not-disturb',
 	// 		events: {
 	// 			click: function() {
-					
+
 	// 			}
 	// 			
 	// 		}
@@ -151,16 +151,15 @@ PopoverFormDefinition.defineForm('userOnlineStatusForm', function(item, step) {
 
 
 
-
 PopoverFormDefinition.defineForm('toggleLightDarkForms', function(item, step) {
 
 
 	step.addModule('content', function(position, moduleIndex) {
 
 
-		var mod= new ElementModule('div', {});
-		var update=function(){
-			mod.getElement().innerHTML='Toggle light/dark display';
+		var mod = new ElementModule('div', {});
+		var update = function() {
+			mod.getElement().innerHTML = 'Toggle light/dark display';
 		};
 
 		update();
@@ -174,23 +173,32 @@ PopoverFormDefinition.defineForm('toggleLightDarkForms', function(item, step) {
 
 	step.addModule('content', function(position, moduleIndex) {
 
-		var mod= new ElementModule('div', {
-			html:"Invert forms"
+		var mod = new ElementModule('div', {
+			html: "Invert forms"
 		});
-		mod.getElement().appendChild( new Element('div', {
-            "class": "indicator-switch",
-            "events": {
-                "click": function() {
-                   
-                }
-            }
-        }));
 
-        return mod;
+
+		if(DisplayTheme.getInvertForms()){
+			mod.getElement().addClass('active');
+		}
+
+		var switchEl = mod.getElement().appendChild(new Element('div', {
+			"class": "indicator-switch",
+			"events": {
+				"click": function() {
+					if (mod.getElement().hasClass('active')) {
+						mod.getElement().removeClass('active');
+						DisplayTheme.setInvertForms(false);
+						return;
+					}
+					mod.getElement().addClass('active');
+					DisplayTheme.setInvertForms(true);
+				}
+			}
+		}));
+
+		return mod;
 	});
-	
+
 
 });
-
-
-

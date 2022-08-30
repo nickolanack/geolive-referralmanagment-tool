@@ -12,6 +12,28 @@ var  DisplayTheme=(function(){
 			this.setMode(localStorage.getItem('mode'));
 		},
 
+		getMode:function(){
+			var el = $$('.ui-view.dashboard-main')[0];
+			return  el.hasClass('dark') ? 'dark' : 'light';
+		},
+
+		getInvertsForms:function(){
+			localStorage.get('invert-forms')==="true";
+		},
+		setInvertForms:function(bool){
+			localStorage.set('invert-forms', bool);
+
+
+			var classNames=(mode=="dark"?" dark ":"")+DashboardConfig.getValue('pageClassNames');
+			var formClassNames=this.getInvertsForms()?((mode=="dark"?"":" dark ")+DashboardConfig.getValue('pageClassNames')):classNames;
+			var application = GatherDashboard.getApplication();
+			application.getDisplayController().setOptions({
+	            popoverOptions:{
+	                parentClassName:formClassNames
+	            }
+	        });
+
+		},
 
 		setMode:function(mode) {
 
@@ -25,10 +47,11 @@ var  DisplayTheme=(function(){
 
 
 			var classNames=(mode=="dark"?" dark ":"")+DashboardConfig.getValue('pageClassNames');
+			var formClassNames=this.getInvertsForms()?((mode=="dark"?"":" dark ")+DashboardConfig.getValue('pageClassNames')):classNames;
 			var application = GatherDashboard.getApplication();
 			application.getDisplayController().setOptions({
 	            popoverOptions:{
-	                parentClassName:classNames
+	                parentClassName:formClassNames
 	            }
 	        })
 	        
