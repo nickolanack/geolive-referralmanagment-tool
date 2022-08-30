@@ -84,7 +84,9 @@ var FormBuilder = (function(){
 		_toCamelCase:function(label){
 			try{
 
-				var parameterName=label.split(' ').map(function(str, i){
+				var parameterName=label.split(' ').filter(function(str){
+					return str.length>0;
+				}).map(function(str, i){
 					
 					if(i==0){
 						return str[0].toLowerCase()+(str.length>1?str.slice(1):'');
