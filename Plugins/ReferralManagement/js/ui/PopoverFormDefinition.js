@@ -178,7 +178,7 @@ PopoverFormDefinition.defineForm('toggleLightDarkForms', function(item, step) {
 		});
 
 
-		if(DisplayTheme.getInvertForms()){
+		if(DisplayTheme.getInvertsForms()){
 			mod.getElement().addClass('active');
 		}
 
