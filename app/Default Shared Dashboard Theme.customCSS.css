@@ -2886,6 +2886,10 @@ ul.item-tags {
     ul.item-tags, [data-col="priority"], [data-col="projectid"], [data-col="complete"]{
         display: none;
     }
+    
+    .field-value-module.task-title {
+        width: 400px;
+    }
 }
 
 ul.item-tags li.min, .task-item.compact ul.item-tags li{
