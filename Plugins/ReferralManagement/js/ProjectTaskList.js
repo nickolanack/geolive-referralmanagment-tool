@@ -188,7 +188,28 @@ var ProjectTaskList = (function() {
 
 			if (categories.length > 0) {
 
-				modules = modules.concat(ProjectTaskList.TaskTemplateModules(item, categories));
+				if(categories.length>1){
+
+
+
+
+					modules.push(return (new ModalFormButtonModule(application, item, {
+						label: "Create task from template",
+						formName: "projectTaskTemplates",
+						formOptions: {
+							template: "form"
+						},
+						hideText: true,
+						"class": "inline-btn add primary-btn"
+					})).addEvent("show", function() {
+						
+					}));
+
+
+				}else{
+					modules = modules.concat(ProjectTaskList.TaskTemplateModules(item, categories));
+				}
+
 
 			} else {
 
