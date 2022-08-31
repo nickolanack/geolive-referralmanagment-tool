@@ -8,6 +8,8 @@ var NotificationItems=(function(){
 			this._posts=0;
 			this._postData=[];
 
+			this._discussion;
+
 			var me=this;
 
 			if(AppClient.getUserType()=="guest"){
@@ -27,6 +29,7 @@ var NotificationItems=(function(){
 					return;
 				}
 
+				me._discussion=resp.metadata.id;
 
 				(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_posts', ObjectAppend_({
 					'discussion':resp.metadata.id,
@@ -70,13 +73,11 @@ var NotificationItems=(function(){
 
 		removeAllPosts:function(){
 
-
 			
 			if(this._postData.length>0){
 
 				(new AjaxControlQuery(CoreAjaxUrlRoot, 'empty_posts', ObjectAppend_({
-					'item': AppClient.getId(),
-					'itemType': AppClient.getType(),
+					"discussion":this._discussion,
 					'channel': 'notifications'
 				}, {
 					"plugin": "Discussions"
