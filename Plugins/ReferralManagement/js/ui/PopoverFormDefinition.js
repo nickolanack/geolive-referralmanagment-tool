@@ -151,6 +151,15 @@ PopoverFormDefinition.defineForm('userOnlineStatusForm', function(item, step) {
 
 
 
+PopoverFormDefinition.defineForm('projectTaskTemplates', function(item, step) {
+
+	step.addModule('content', function(position, moduleIndex) {
+		return new ModuleArray(ProjectTaskList.TaskTemplateModules(item, item.getProjectTypes()));
+	});
+
+});
+
+
 PopoverFormDefinition.defineForm('toggleLightDarkForms', function(item, step) {
 
 

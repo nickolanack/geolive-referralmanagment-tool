@@ -190,92 +190,7 @@ var ProjectTaskList = (function() {
 
 			if (categories.length > 0) {
 
-
-
-				categories.forEach(function(category, index) {
-
-
-
-					var taskGroup = new CategoryTaskTemplateGroup({
-						category: category,
-						project: item,
-						//mutable:true
-					});
-
-
-					modalButton = new ModalFormButtonModule(application, taskGroup /*new MockDataTypeItem()*/ , {
-						label: "Add default " + category.toLowerCase() + " tasks",
-						formName: "taskDefaultItems",
-						formOptions: {
-							template: "form"
-						},
-						hideText: true,
-						"class": "inline-btn add primary-btn"
-					}).addEvent('show', function() {
-						var wizard = modalButton.getWizard();
-						wizard.addEvent('complete', function() {
-
-							var data = wizard.getData();
-							console.log(data);
-
-
-							var taskTemplates = _currentListModule.getItems().map(function(task) {
-								return task.templateMetadata();
-							});
-
-							data.taskTemplates = taskTemplates;
-
-
-
-							var CreateDefaultTaskQuery = new Class({
-								Extends: AjaxControlQuery,
-								initialize: function(data) {
-									this.parent(CoreAjaxUrlRoot, 'create_default_tasks', Object.append({
-										plugin: 'ReferralManagement',
-										"proposal": item.getId()
-									}, (data || {})));
-								}
-							});
-							new CreateDefaultTaskQuery(data).addEvent("success", function(resp) {
-
-								if (resp.tasksData) {
-									resp.tasksData.forEach(function(data) {
-										item.addTask(new TaskItem(item, data));
-									})
-								}
-							}).execute();
-
-
-						});
-					});
-
-
-					ProjectTaskList.TaskTemplates(category, function(tasks) {
-						if (tasks.length == 0) {
-							modalButton.getElement().addClass('with-no-tasks');
-						}
-
-					});
-
-
-					RecentItems.colorizeEl(modalButton.getElement(), category);
-
-
-					modules.push(modalButton);
-
-
-					var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
-					if (user.isTeamManager()) {
-
-						var editDefaultTasksButton = ProjectTaskList._editDefaultTasks(application, item, category);
-						RecentItems.colorizeEl(editDefaultTasksButton.getElement(), category);
-						modules.push(editDefaultTasksButton);
-
-					}
-
-				});
-
-
+				modules=modules.concat(ProjectTaskList.TaskTemplateModules(item, categories));
 
 			} else {
 
@@ -306,6 +221,101 @@ var ProjectTaskList = (function() {
 			callback(new ModuleArray(modules));
 
 		});
+
+
+	};
+
+
+
+	ProjectTaskList.TaskTemplateModules=function(item, categories){
+
+
+		var modules=[];
+
+
+
+		categories.forEach(function(category, index) {
+
+
+
+				var taskGroup = new CategoryTaskTemplateGroup({
+					category: category,
+					project: item,
+					//mutable:true
+				});
+
+
+				modalButton = new ModalFormButtonModule(application, taskGroup /*new MockDataTypeItem()*/ , {
+					label: "Add default " + category.toLowerCase() + " tasks",
+					formName: "taskDefaultItems",
+					formOptions: {
+						template: "form"
+					},
+					hideText: true,
+					"class": "inline-btn add primary-btn"
+				}).addEvent('show', function() {
+					var wizard = modalButton.getWizard();
+					wizard.addEvent('complete', function() {
+
+						var data = wizard.getData();
+						console.log(data);
+
+
+						var taskTemplates = _currentListModule.getItems().map(function(task) {
+							return task.templateMetadata();
+						});
+
+						data.taskTemplates = taskTemplates;
+
+
+
+						var CreateDefaultTaskQuery = new Class({
+							Extends: AjaxControlQuery,
+							initialize: function(data) {
+								this.parent(CoreAjaxUrlRoot, 'create_default_tasks', Object.append({
+									plugin: 'ReferralManagement',
+									"proposal": item.getId()
+								}, (data || {})));
+							}
+						});
+						new CreateDefaultTaskQuery(data).addEvent("success", function(resp) {
+
+							if (resp.tasksData) {
+								resp.tasksData.forEach(function(data) {
+									item.addTask(new TaskItem(item, data));
+								})
+							}
+						}).execute();
+
+
+					});
+				});
+
+
+				ProjectTaskList.TaskTemplates(category, function(tasks) {
+					if (tasks.length == 0) {
+						modalButton.getElement().addClass('with-no-tasks');
+					}
+
+				});
+
+
+				RecentItems.colorizeEl(modalButton.getElement(), category);
+
+
+				modules.push(modalButton);
+
+
+				var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
+				if (user.isTeamManager()) {
+
+					var editDefaultTasksButton = ProjectTaskList._editDefaultTasks(application, item, category);
+					RecentItems.colorizeEl(editDefaultTasksButton.getElement(), category);
+					modules.push(editDefaultTasksButton);
+
+				}
+
+			});
 
 
 	};
