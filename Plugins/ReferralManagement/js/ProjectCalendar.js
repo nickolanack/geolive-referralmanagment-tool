@@ -475,7 +475,7 @@ var ProjectCalendar = (function() {
 									}
 								}
 							})),
-							'copy iCal link to clipboard'
+							'download iCal file'
 						);
 
 					});
