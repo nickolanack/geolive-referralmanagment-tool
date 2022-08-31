@@ -4051,7 +4051,11 @@ button.inline-btn.with-no-tasks {
 
 
 .TagCloudModule .tag-cloud > span.tag-el {
-    background-color: var(--color, rgba(0, 0, 0, 0.2));
+    background-color: var(--color, rgba(0, 0, 0, 0.4));
+}
+
+.dark .TagCloudModule .tag-cloud > span.tag-el {
+    background-color: var(--colorDark, var(--color, rgba(0, 0, 0, 0.2)));
 }
 
 .TagCloudModule .tag-cloud > span.tag-el.selected {
@@ -6496,7 +6500,7 @@ input.text-input[type="color"], input.text-input[type="color"]:focus {
         
         &.with-status-invisible:after {
             content: "|";
-            color: #222222;
+            color: #e1e1e1;
             position: absolute;
             top: -6px;
             font-size: 27px;
@@ -6509,6 +6513,16 @@ input.text-input[type="color"], input.text-input[type="color"]:focus {
     }
     
 }
+
+.dark [data-view="leftPanel"], [data-view="userProfileDetailCards"]{
+    .field-value-module.user-status {
+         &.with-status-invisible:after {
+             color: #222222;
+         }
+    }
+}
+
+
 
 [data-view="userProfileDetailCards"]{
      
