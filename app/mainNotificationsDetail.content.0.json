@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "\n\n\nvar content=new ElementModule('span',{\n    html:'<div  class=\"section-title section-padding\" data-identifier=\"htmlLabel\"><span>Notifications<\/span><\/div>'\n});\n\ncontent.getElement().appendChild(new Element('button',{\n    \"html\":\"Clear all\",\n    \"class\":\"error remove\",\n    events:{\n        click:function(){\n            \n            \n            \n        }\n    }\n}));\n\n\nreturn content;",
+        "script": "\n\n\nvar content=new ElementModule('span',{\n    html:'<div  class=\"section-title section-padding\" data-identifier=\"htmlLabel\"><span>Notifications<\/span><\/div>'\n});\n\ncontent.getElement().appendChild(new Element('button',{\n    \"html\":\"Clear all\",\n    \"class\":\"primary-btn error remove\",\n    styles:{\n        \"float\": \"unset\",\n        \"position\": \"absolute\",\n        \"top\": \"0\",\n        \"right\": \"40px\"\n    },\n    events:{\n        click:function(){\n            \n            \n            \n        }\n    }\n}));\n\n\nreturn content;",
         "description": "Info about my custom script"
     }
 }
