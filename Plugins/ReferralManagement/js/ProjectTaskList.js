@@ -191,19 +191,22 @@ var ProjectTaskList = (function() {
 				if(categories.length>1){
 
 
+					
 
-
-					modules.push((new ModalFormButtonModule(application, item, {
-						label: "Create task from template",
-						formName: "projectTaskTemplates",
-						formOptions: {
-							template: "form"
+					var btn=new ElementModule('button',{"identifier":"button-report", "html":"Create report", "class":"inline-btn add primary-btn", "events":{"click":function(){}}})
+    				modules.push(btn);
+					new UIPopover(reportBtn.getElement(), {
+						application:application,
+						item:item,
+						detailViewOptions:{
+							"viewType": "view",
+	                    	"namedView": "projectTaskTemplates"
 						},
-						hideText: true,
-						"class": "inline-btn add primary-btn"
-					})).addEvent("show", function() {
-						
-					}));
+						clickable:true,
+						anchor:UIPopover.AnchorAuto()
+					});
+
+
 
 
 				}else{
