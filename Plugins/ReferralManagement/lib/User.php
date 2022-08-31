@@ -368,13 +368,17 @@ class User {
 		return array_map(function ($onlineResult) use ($users) {
 
 			foreach($users as $user){
-				if($user->id===$onlineResult->id&&$user->{'online-status'==='invisible'}){
+				$onlineResult->found=false;
+				if($user->id===$onlineResult->id){
+					$onlineResult->found=true;
+					if($user->{'online-status'==='invisible'}){
+						
+						/**
+						 * force online to false for users who are set to invisible 
+						 */
 
-					/**
-					 * force online to false for users who are set to invisible 
-					 */
-
-					$onlineResult->online=false;
+						$onlineResult->online=false;
+					}
 				}
 			}
 
