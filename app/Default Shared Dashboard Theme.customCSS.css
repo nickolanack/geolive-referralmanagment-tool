@@ -2882,8 +2882,14 @@ ul.item-tags {
     vertical-align: top;
     height: 22px;
 }
-.project-tasks ul.item-tags {
-    display: none;
+.project-tasks {
+    ul.item-tags, [data-col="priority"], [data-col="projectid"], [data-col="complete"]{
+        display: none;
+    }
+    
+    .field-value-module.task-title {
+        width: 400px;
+    }
 }
 
 ul.item-tags li.min, .task-item.compact ul.item-tags li{
@@ -5992,8 +5998,15 @@ button.inline-edit.top-right {
 }
 
 
+div.popover.with-view {
+    max-width: min-content;
+}
+
 div.popover[data-with-view="reportSelectionView"]{
     max-width:400px;
+}
+[data-view="projectTaskTemplates"] button.inline-btn{
+    float: unset;
 }
 [data-view="reportSelectionView"]{
 
