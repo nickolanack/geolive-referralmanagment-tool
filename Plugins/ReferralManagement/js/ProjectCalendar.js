@@ -400,6 +400,63 @@ var ProjectCalendar = (function() {
 	};
 
 
+	ProjectCalendar.GetICalDownloadModule=function(){
+
+		var mod = new ElementModule('div', {
+		    "class":"ical",
+		    styles:{position:"relative"},
+		    events:{
+		        click:function(){
+		            
+		            
+		            var el=new Element('span',{
+		                html:"<h2>Download your calendar</h2>"
+		            });
+		            
+		            ProjectCalendar.GetICalLink(function(link){
+
+
+		            	var website=document.location.origin
+
+		                el.innerHTML="<h2>Download your calendar</h2>"+
+		                '<a href="'website+'/'+link+'">'+link+'</a>';
+
+		                
+		                
+		            });
+		                
+		                (new UIModalDialog(application, el, {
+								"formName": "dialogForm",
+								"formOptions": {
+									"template": "form",
+									"className": "alert-view",
+									"showCancel":true,
+									"labelForSubmit":"Yes",
+									"labelForCancel":"No",
+									"closable":true
+								}
+							})).on('complete', function(){
+								
+								
+			                   
+							}).show();     
+							
+							
+							
+							//ProjectCalendar.DownloadICal();
+		                
+		                
+		         
+		                
+		            
+		        }
+		    }
+		});
+
+		return mod;
+	};
+
+
 
 	return ProjectCalendar;
 
