@@ -198,10 +198,11 @@ var ProjectTaskList = (function() {
 					new UIPopover(btn.getElement(), {
 						application:application,
 						item:item,
-						detailViewOptions:{
-							"viewType": "view",
-	                    	"namedView": "projectTaskTemplates"
-						},
+						"namedFormView": "projectTaskTemplates",
+						"formOptions": {
+							template: "form",
+							closeable: true
+						}
 						clickable:true,
 						anchor:UIPopover.AnchorAuto()
 					});
