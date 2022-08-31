@@ -422,6 +422,7 @@ var ProjectCalendar = (function() {
 
 
 					var el = new Element('span', {
+						class:"share-links",
 						html: "<h2>Download your calendar</h2>"
 					});
 
