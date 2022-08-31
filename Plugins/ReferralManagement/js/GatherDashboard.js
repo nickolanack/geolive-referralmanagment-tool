@@ -463,6 +463,29 @@ var GatherDashboard = (function() {
 						}
 					})
 				);
+
+				items.push(
+					new Element('button', {
+						"class": "primary-btn report",
+						"html": "Impersonate",
+						events: {
+							"click": function() {
+								if (confirm("Are you sure you want to impersonate this user")) {
+
+									(new AjaxControlQuery(CoreAjaxUrlRoot, "impersonate", {
+										'plugin': "Users",
+										'user': item.getId()
+									})).addEvent('success', function() {
+										 window.location.reload();
+									}).execute();
+
+								};
+							}
+						}
+					})
+				);
+
+
 			}
 
 
