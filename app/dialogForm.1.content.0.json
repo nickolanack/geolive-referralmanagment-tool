@@ -6,6 +6,6 @@
         "className": "",
         "fieldLabelScript": "return \"\";",
         "fieldValueScript": "return \"\";",
-        "formatElementScript": "valueEl.innerHTML=item.getName();"
+        "formatElementScript": "\nif(item.getName){\n    valueEl.innerHTML=item.getName();\n}"
     }
 }
