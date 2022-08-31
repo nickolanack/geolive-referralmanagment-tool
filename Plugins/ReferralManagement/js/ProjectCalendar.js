@@ -435,7 +435,12 @@ var ProjectCalendar = (function() {
 						el.appendChild(new Element('a', {
 							html:url,
 							href: url,
-							target: "_blank"
+							target: "_blank",
+							styles:{
+								"word-break": "break-all",
+								"margin-bottom":"20px",
+								"display":"inline-block"
+							}
 						}));
 
 
