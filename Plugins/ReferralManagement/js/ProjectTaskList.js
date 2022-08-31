@@ -195,7 +195,7 @@ var ProjectTaskList = (function() {
 
 					var btn=new ElementModule('button',{"identifier":"button-report", "html":"Create report", "class":"inline-btn add primary-btn", "events":{"click":function(){}}})
     				modules.push(btn);
-					new UIPopover(reportBtn.getElement(), {
+					new UIPopover(btn.getElement(), {
 						application:application,
 						item:item,
 						detailViewOptions:{
