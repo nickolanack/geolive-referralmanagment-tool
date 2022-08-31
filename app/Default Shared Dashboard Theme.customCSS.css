@@ -5999,6 +5999,9 @@ div.popover.with-view {
 div.popover[data-with-view="reportSelectionView"]{
     max-width:400px;
 }
+[data-view="projectTaskTemplates"] button.inline-btn{
+    float: unset;
+}
 [data-view="reportSelectionView"]{
 
     .ui-view {
