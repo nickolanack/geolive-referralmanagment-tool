@@ -432,7 +432,7 @@ var ProjectCalendar = (function() {
 						var url = website + '/' + link;
 
 						el.appendChild(new Element('a', {
-							html:url
+							html:url,
 							href: url,
 							target: "_blank"
 						}));
