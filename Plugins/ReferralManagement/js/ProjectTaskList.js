@@ -202,7 +202,7 @@ var ProjectTaskList = (function() {
 						"formOptions": {
 							template: "form",
 							closeable: true
-						}
+						},
 						clickable:true,
 						anchor:UIPopover.AnchorAuto()
 					});
