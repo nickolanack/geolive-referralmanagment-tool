@@ -400,6 +400,18 @@ var ProjectCalendar = (function() {
 
 	ProjectCalendar.GetICalDownloadModule = function() {
 
+
+
+		var _addPopover=function(el, description){
+
+			new UIPopover(el, {
+	           description:description,
+	           anchor:UIPopover.AnchorAuto()
+	       });
+
+		};
+
+
 		var mod = new ElementModule('div', {
 			"class": "ical",
 			styles: {
