@@ -5999,7 +5999,7 @@ button.inline-edit.top-right {
 
 
 div.popover.with-view {
-    max-width: min-content;
+    max-width: fit-content;
 }
 
 div.popover[data-with-view="reportSelectionView"]{
