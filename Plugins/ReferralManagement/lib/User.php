@@ -370,24 +370,23 @@ class User {
 
 		return array_map(function ($onlineResult) use ($users) {
 
-			$onlineResult->found=false;
 
 			foreach($users as $user){
-				
 				if(intval($user->id)==intval($onlineResult->id))
 				{
-					$onlineResult->found=true;
 					if($user->{'online-status'}==='invisible'){
 						
 						/**
 						 * force online to false for users who are set to invisible 
 						 */
-
 						$onlineResult->online=false;
 					}
+
+					break;
 				}
 			}
 
+			unset($onlineResult->_channel);
 			return $onlineResult;
 
 		}, $results);
