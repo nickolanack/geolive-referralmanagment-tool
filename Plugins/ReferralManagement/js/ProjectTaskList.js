@@ -198,6 +198,7 @@ var ProjectTaskList = (function() {
 					new UIPopover(btn.getElement(), {
 						application:application,
 						item:item,
+						"viewType": "form",
 						"namedFormView": "projectTaskTemplates",
 						"formOptions": {
 							template: "form",
