@@ -364,12 +364,18 @@ class User {
 
 
 
+		error_log(print_r($users[0], true);
+		error_log(print_r($results[0], true);
+
 
 		return array_map(function ($onlineResult) use ($users) {
 
+
+
 			foreach($users as $user){
 				$onlineResult->found=false;
-				if(intval($user->id)==intval($onlineResult->id)){
+				if(intval($user->id)==intval($onlineResult->id))
+				{
 					$onlineResult->found=true;
 					if($user->{'online-status'==='invisible'}){
 						
