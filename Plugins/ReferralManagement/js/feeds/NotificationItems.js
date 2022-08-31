@@ -68,6 +68,29 @@ var NotificationItems=(function(){
 
 		},
 
+		removeAllPosts:function(){
+
+
+			
+			if(this._postData.length>0){
+
+				(new AjaxControlQuery(CoreAjaxUrlRoot, 'empty_posts', ObjectAppend_({
+					'item': AppClient.getId(),
+					'itemType': AppClient.getType(),
+					'channel': 'notifications'
+				}, {
+					"plugin": "Discussions"
+				}))).execute();
+
+
+
+				this._postData=[];
+				this._posts=0;
+				this.fireEvent('change',[this.getInfo()]);
+			}
+			
+		},
+
 		removePost:function(postId){
 
 			

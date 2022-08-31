@@ -173,10 +173,13 @@ class EmailNotifications implements \core\EventListener{
 
 		$queuedEmails=$this->getPlugin()->getDatabase()->getAllQueuedEmails();
 
-		GetPlugin('Email')->getMailer()
-			->mail('Email Processing Task', '<h2>'.count($queuedEmails).' queued emails remaining:</h2><pre>'.json_encode($queuedEmails, JSON_PRETTY_PRINT).'</pre>')
-			->to('nickblackwell82@gmail.com')
-			->send();
+		if(count($queuedEmails)>0){
+
+			GetPlugin('Email')->getMailer()
+				->mail('Email Processing Task', '<h2>'.count($queuedEmails).' queued emails remaining:</h2><pre>'.json_encode($queuedEmails, JSON_PRETTY_PRINT).'</pre>')
+				->to('nickblackwell82@gmail.com')
+				->send();
+		}
 
 	}
 
