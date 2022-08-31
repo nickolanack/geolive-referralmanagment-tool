@@ -448,7 +448,7 @@ var ProjectCalendar = (function() {
 										var btn = this;
 										navigator.clipboard.writeText(url).then(function() {
 											btn.addClass('copied');
-											NotificationBubble.Make("", "Copied iCal link", {
+											NotificationBubble.Make("", "Copied iCal link to clipboard", {
 												className: "info"
 											});
 										}, function() {

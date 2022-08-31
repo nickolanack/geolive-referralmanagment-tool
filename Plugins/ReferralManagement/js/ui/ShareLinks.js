@@ -125,7 +125,7 @@ var ShareLinks = (function() {
 												var btn = this;
 												navigator.clipboard.writeText(resp.link).then(function() {
 													btn.addClass('copied');
-													NotificationBubble.Make("", "Copied share link", {className:"info"});
+													NotificationBubble.Make("", "Copied share link to clipboard", {className:"info"});
 												}, function() {
 													btn.addClass('failed');
 												});
