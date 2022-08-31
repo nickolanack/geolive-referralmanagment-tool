@@ -720,7 +720,6 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 				if(intval($user->id)!=$clientId){
 					if($user->{'online-status'}=='invisible'){
 						//Don't reveal invisible status of other users 
-						$user->{'_online-status'}='invisible';
 						$user->{'online-status'}='auto';
 					}
 				}
