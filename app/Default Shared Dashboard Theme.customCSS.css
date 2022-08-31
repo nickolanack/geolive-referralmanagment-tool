@@ -280,12 +280,24 @@ span.notification-indicator.empty:after {
             content: '\0f0e0';
         }
         
-        button.inline-edit.mail, button.inline-edit.copy {
-            background-color:mediumseagreen;
+        button.inline-edit.download:after {
+            content: '\0f019';
         }
-        button.inline-edit.mail:after, button.inline-edit.copy:after {
-            color:white;
+        
+        
+        
+        button.inline-edit{
+            
+        
+            &.mail, &.copy, &.download {
+                background-color:mediumseagreen;
+                &:after{
+                     color:white;
+                }
+                
+            }
         }
+       
             
     
 }
