@@ -168,7 +168,7 @@ var ProjectTaskList = (function() {
 			}
 
 
-			var application = ReferralManagementDashboard.getApplication();
+			var application = GatherDashboard.getApplication();
 
 			var task = new TaskItem(item);
 			var modalButton;
@@ -230,7 +230,7 @@ var ProjectTaskList = (function() {
 
 		var modules = [];
 
-
+		var application = GatherDashboard.getApplication();
 
 		categories.forEach(function(category, index) {
 
