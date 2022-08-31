@@ -154,7 +154,15 @@ PopoverFormDefinition.defineForm('userOnlineStatusForm', function(item, step) {
 PopoverFormDefinition.defineForm('projectTaskTemplates', function(item, step) {
 
 	step.addModule('content', function(position, moduleIndex) {
-		return new ModuleArray(ProjectTaskList.TaskTemplateModules(item, item.getProjectTypes()));
+		return new ModuleArray(ProjectTaskList.TaskTemplateModules(item, item.getProjectTypes()), {
+			tagName:'div',
+			tagAttributes:{
+				styles:{
+					display:"inline-block",
+					width:"400px"
+				}
+			}
+		});
 	});
 
 });
