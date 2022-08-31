@@ -419,7 +419,7 @@ var ProjectCalendar = (function() {
 		            	var website=document.location.origin
 
 		                el.innerHTML="<h2>Download your calendar</h2>"+
-		                '<a href="'website+'/'+link+'">'+link+'</a>';
+		                '<a href="'+website+'/'+link+'">'+link+'</a>';
 
 		                
 		                
