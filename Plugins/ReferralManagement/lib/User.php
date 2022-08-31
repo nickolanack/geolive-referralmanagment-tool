@@ -369,7 +369,7 @@ class User {
 
 			foreach($users as $user){
 				$onlineResult->found=false;
-				if($user->id===$onlineResult->id){
+				if(intval($user->id)==intval($onlineResult->id)){
 					$onlineResult->found=true;
 					if($user->{'online-status'==='invisible'}){
 						
