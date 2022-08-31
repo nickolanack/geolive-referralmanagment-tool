@@ -193,7 +193,7 @@ var ProjectTaskList = (function() {
 
 
 
-					modules.push(return (new ModalFormButtonModule(application, item, {
+					modules.push((new ModalFormButtonModule(application, item, {
 						label: "Create task from template",
 						formName: "projectTaskTemplates",
 						formOptions: {
