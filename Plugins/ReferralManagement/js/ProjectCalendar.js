@@ -20,8 +20,6 @@ var ProjectCalendar = (function() {
 
 			}).execute();
 
-			
-
 
 
 		},
@@ -341,29 +339,29 @@ var ProjectCalendar = (function() {
 
 	};
 
-	ProjectCalendar.GetICalLink=function(callback){
+	ProjectCalendar.GetICalLink = function(callback) {
 
 		(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_ical_link', {
-				"plugin": "ReferralManagement"
-			})).on('success', function(resp) {
+			"plugin": "ReferralManagement"
+		})).on('success', function(resp) {
 
 
-				var iCalUrl = (new AjaxControlQuery(CoreAjaxUrlRoot, 'get_ical', {
-					"plugin": "ReferralManagement",
-					"token": resp.token
-				})).getUrl(true);
+			var iCalUrl = (new AjaxControlQuery(CoreAjaxUrlRoot, 'get_ical', {
+				"plugin": "ReferralManagement",
+				"token": resp.token
+			})).getUrl(true);
 
-				callback(iCalUrl);
+			callback(iCalUrl);
 
-			}).execute();
+		}).execute();
 
 	};
 
 
-	ProjectCalendar.DownloadICal=function(){
+	ProjectCalendar.DownloadICal = function() {
 
-		ProjectCalendar.GetICalLink(function(iCalUrl){
-			window.open(iCalUrl,'Download'); 
+		ProjectCalendar.GetICalLink(function(iCalUrl) {
+			window.open(iCalUrl, 'Download');
 		});
 	}
 
@@ -400,57 +398,59 @@ var ProjectCalendar = (function() {
 	};
 
 
-	ProjectCalendar.GetICalDownloadModule=function(){
+	ProjectCalendar.GetICalDownloadModule = function() {
 
 		var mod = new ElementModule('div', {
-		    "class":"ical",
-		    styles:{position:"relative"},
-		    events:{
-		        click:function(){
-		            
-		            
-		            var el=new Element('span',{
-		                html:"<h2>Download your calendar</h2>"
-		            });
-		            
-		            ProjectCalendar.GetICalLink(function(link){
+			"class": "ical",
+			styles: {
+				position: "relative"
+			},
+			events: {
+				click: function() {
 
 
-		            	var website=document.location.origin
+					var el = new Element('span', {
+						html: "<h2>Download your calendar</h2>"
+					});
 
-		                el.innerHTML="<h2>Download your calendar</h2>"+
-		                '<a href="'+website+'/'+link+'">'+link+'</a>';
+					ProjectCalendar.GetICalLink(function(link) {
 
-		                
-		                
-		            });
-		                
-		                (new UIModalDialog(application, el, {
-								"formName": "dialogForm",
-								"formOptions": {
-									"template": "form",
-									"className": "alert-view",
-									"showCancel":true,
-									"labelForSubmit":"Yes",
-									"labelForCancel":"No",
-									"closable":true
-								}
-							})).on('complete', function(){
-								
-								
-			                   
-							}).show();     
-							
-							
-							
-							//ProjectCalendar.DownloadICal();
-		                
-		                
-		         
-		                
-		            
-		        }
-		    }
+
+						var website = document.location.origin
+
+						el.innerHTML = "<h2>Download your calendar</h2>" +
+							'<a href="' + website + '/' + link + '">' + link + '</a>';
+
+
+
+					});
+
+					var application = GatherDashboard.getApplication();
+
+					(new UIModalDialog(application, el, {
+						"formName": "dialogForm",
+						"formOptions": {
+							"template": "form",
+							"className": "alert-view",
+							"showCancel": true,
+							"labelForSubmit": "Yes",
+							"labelForCancel": "No",
+							"closable": true
+						}
+					})).on('complete', function() {
+
+
+
+					}).show();
+
+
+
+					//ProjectCalendar.DownloadICal();
+
+
+
+				}
+			}
 		});
 
 		return mod;
