@@ -707,12 +707,25 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function listUsers($json) {
 
+
+		$clientId=intval(GetClient()->getUserId());
+
 		return array(
 			'subscription' => array(
 				'channel' => 'userlist',
 				'event' => 'update',
 			),
-			"results" =>(new \ReferralManagement\User())->listUsers()
+			"results" =>array_map(function($user)use($clientId){
+
+				if(intval($user->id)!=$clientId){
+					if($user->{'online-status'}=='invisible'){
+						//Don't reveal invisible status of other users 
+						$user->{'online-status'}='auto';
+					}
+				}
+
+				return $user;
+			}, (new \ReferralManagement\User())->listUsers())
 			
 		);
 	}
