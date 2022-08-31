@@ -2882,8 +2882,10 @@ ul.item-tags {
     vertical-align: top;
     height: 22px;
 }
-.project-tasks ul.item-tags {
-    display: none;
+.project-tasks {
+    ul.item-tags, [data-col="priority"], [data-col="projectid"], [data-col="complete"]{
+        display: none;
+    }
 }
 
 ul.item-tags li.min, .task-item.compact ul.item-tags li{
