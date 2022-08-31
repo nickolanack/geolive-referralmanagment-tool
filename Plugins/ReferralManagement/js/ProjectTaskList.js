@@ -193,7 +193,7 @@ var ProjectTaskList = (function() {
 
 					
 
-					var btn=new ElementModule('button',{"identifier":"button-report", "html":"Add tasks from template", "class":"inline-btn add primary-btn", "events":{"click":function(){}}})
+					var btn=new ElementModule('button',{"identifier":"button-report", "html":"Add tasks from template", "class":"inline-btn archive primary-btn", "events":{"click":function(){}}})
     				modules.push(btn);
 					new UIPopover(btn.getElement(), {
 						application:application,
