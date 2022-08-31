@@ -417,11 +417,54 @@ var ProjectCalendar = (function() {
 
 
 						var website = document.location.origin
+						var url = website + '/' + link;
 
-						el.innerHTML = "<h2>Download your calendar</h2>" +
-							'<a href="' + website + '/' + link + '">' + link + '</a>';
+						el.appendChild(new Element('a', {
+							href: url,
+							target: "_blank"
+						}));
 
 
+						_addPopover(
+							el.appendChild(new Element('button', {
+								"class": "copy inline-edit",
+								style: "margin-left:10px;",
+								html: "copy",
+								events: {
+									click: function() {
+
+										var btn = this;
+										navigator.clipboard.writeText(url).then(function() {
+											btn.addClass('copied');
+											NotificationBubble.Make("", "Copied iCal link", {
+												className: "info"
+											});
+										}, function() {
+											btn.addClass('failed');
+										});
+
+									}
+								}
+							})),
+							'copy iCal link to clipboard'
+						);
+
+
+						_addPopover(
+							el.appendChild(new Element('button', {
+								"class": "download inline-edit",
+								style: "margin-left:10px;",
+								html: "download",
+								events: {
+									click: function() {
+
+										ProjectCalendar.DownloadICal(link);
+
+									}
+								}
+							})),
+							'copy iCal link to clipboard'
+						);
 
 					});
 
@@ -442,10 +485,6 @@ var ProjectCalendar = (function() {
 
 
 					}).show();
-
-
-
-					//ProjectCalendar.DownloadICal();
 
 
 
