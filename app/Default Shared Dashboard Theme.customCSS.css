@@ -1407,6 +1407,25 @@ div#g-recaptcha {
         font-weight: 100;
         font-size: 50px;
     }
+    
+    .intro-section{
+        position:relative;
+    }
+    
+    .intro-section:after {
+        content: "";
+        background-image: url(https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/%5BImAgE%5D_7hP_q5_%5BG%5D_0ta.png);
+        position: absolute;
+        width: 800px;
+        height: 400px;
+        background-size: cover;
+        box-shadow: 0 0 20px #ffffff5e;
+        border-radius: 10px;
+        margin-top: 150px;
+        border: 2px solid mediumseagreen;
+        top: 0;
+        left: calc( 100% + 50px );
+    }
 
     
     
