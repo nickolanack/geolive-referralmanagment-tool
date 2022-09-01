@@ -1,2 +1,2 @@
-GetWidget('firelightDashboardTheme')->display($targetInstance);
-GetWidget('firelightGeneratedStyles')->display($targetInstance);
+GetWidget('sharedDashboardTheme')->display($targetInstance);
+GetWidget('sharedGeneratedStyles')->display($targetInstance);
