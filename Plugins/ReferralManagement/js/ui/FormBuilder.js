@@ -217,7 +217,6 @@ var FormBuilder = (function() {
 
 
 			if (item.getFieldType() == 'parameters') {
-
 				wizard.appendData(JSON.parse(item.getDefaultValue()));
 				return null;
 			}
@@ -295,7 +294,7 @@ var FormBuilder = (function() {
 
 
 									var parameterName=me._toParameterName(p.name, p.options);
-									if(p[parameterName]){
+									if(typeof p[parameterName]!='undefined'){
 										data[parameterName] = p[parameterName];
 									}
 								});
