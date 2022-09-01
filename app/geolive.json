@@ -28623,5 +28623,21 @@
             "contentTemplate": "module-html-install3-text.contentTemplate.html",
             "readAccess": "public"
         }
+    },
+    "widget.510": {
+        "name": "Stylesheet",
+        "instance": "CSS",
+        "parameters": {
+            "cacheable": false,
+            "link": false,
+            "sass": false,
+            "widgetTitle": "",
+            "target": "none",
+            "customCSS": "",
+            "sassParamters": [],
+            "formatSassParametersScript": "return $parameters;",
+            "useRemote": "",
+            "saveAsData": false
+        }
     }
 }
