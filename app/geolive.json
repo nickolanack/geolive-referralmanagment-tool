@@ -28633,7 +28633,7 @@
             "sass": true,
             "widgetTitle": "installStyle",
             "target": "installStyle",
-            "customCSS": "",
+            "customCSS": "installStyle.customCSS.css",
             "sassParamters": [],
             "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
