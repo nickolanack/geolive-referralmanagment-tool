@@ -28628,16 +28628,17 @@
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
-            "cacheable": false,
-            "link": false,
-            "sass": false,
-            "widgetTitle": "",
-            "target": "none",
+            "cacheable": true,
+            "link": true,
+            "sass": true,
+            "widgetTitle": "installStyle",
+            "target": "installStyle",
             "customCSS": "",
             "sassParamters": [],
             "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
-            "saveAsData": false
+            "saveAsData": false,
+            "readAccess": "public"
         }
     }
 }
