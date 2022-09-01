@@ -15492,8 +15492,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 28,
-                    "y": 550
+                    "x": 34,
+                    "y": 539
                 },
                 "children": [
                     "createDashboardForm.metadata.children.0.json",
@@ -15504,16 +15504,16 @@
                             "createDashboardForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 213,
-                            "y": 158
+                            "x": 229,
+                            "y": 160
                         },
                         "children": [
                             "createDashboardForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 173,
-                                    "y": 324
+                                    "x": 189,
+                                    "y": 326
                                 }
                             },
                             {
@@ -15523,16 +15523,16 @@
                                     "createDashboardForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 672,
-                                    "y": 148
+                                    "x": 682,
+                                    "y": 158
                                 },
                                 "children": [
                                     "createDashboardForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 632,
-                                            "y": 336
+                                            "x": 642,
+                                            "y": 346
                                         }
                                     }
                                 ],
@@ -15632,7 +15632,33 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "createDashboardForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                        "createDashboardForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "InlineHtml",
+                                            "config": {
+                                                "className": "intro-section-2\n",
+                                                "text": "",
+                                                "template": "html.install2",
+                                                "templateVariablesScript": "{}",
+                                                "formatTextScript": "",
+                                                "formatVariablesScript": "",
+                                                "ajaxRequestTemplate": true,
+                                                "identifier": "htmlLabel"
+                                            }
+                                        },
+                                        {
+                                            "type": "InlineHtml",
+                                            "config": {
+                                                "className": "intro-section-3",
+                                                "text": "",
+                                                "template": "html.install3",
+                                                "templateVariablesScript": "{}",
+                                                "formatTextScript": "",
+                                                "formatVariablesScript": "",
+                                                "ajaxRequestTemplate": true,
+                                                "identifier": "htmlLabel"
+                                            }
+                                        }
                                     ]
                                 },
                                 "footer": {
