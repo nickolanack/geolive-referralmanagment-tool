@@ -2,8 +2,12 @@
     "type": "InlineHtml",
     "config": {
         "className": "",
-        "text": "<p>\nCreate your own private dashboard for managing referrals for your Community and Lands Department members. \n<\/p>\n\n<p>\nCreate and organize your teams roles and responsibilites. <br\/>\nInvite community members to share spatial knowlege and values securly with decisions makers.<br\/>\nManage the entire referral process from start to finish\n<\/p>",
-        "template": "",
-        "templateVariablesScript": ""
+        "text": "\n#Create your own private dashboard for managing referrals for your Community and Lands Department members. \n\n\nCreate and organize your teams roles and responsibilites. \nInvite community members to share spatial knowlege and values securly with decisions makers.\nManage the entire referral process from start to finish\n",
+        "template": "html.install",
+        "templateVariablesScript": "{}",
+        "formatTextScript": "",
+        "formatVariablesScript": "",
+        "ajaxRequestTemplate": true,
+        "identifier": "htmlLabel"
     }
 }

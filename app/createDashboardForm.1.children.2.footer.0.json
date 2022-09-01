@@ -4,11 +4,13 @@
         "className": "WizardFooter form-nav",
         "reduceOpacity": false,
         "onCompleteScript": "defaultBehaviorFn();",
+        "showFinish": true,
+        "showCancel": false,
+        "showBack": false,
         "labelForCancel": "cancel",
         "labelForSubmit": "Create",
         "labelForNext": "next",
         "labelForPrevious": "previous",
-        "showCancel": false,
-        "showBack": false
+        "formatButton": "return button;"
     }
 }

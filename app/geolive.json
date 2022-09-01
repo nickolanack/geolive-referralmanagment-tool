@@ -15504,16 +15504,16 @@
                             "createDashboardForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 193,
-                            "y": 138
+                            "x": 203,
+                            "y": 148
                         },
                         "children": [
                             "createDashboardForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 153,
-                                    "y": 304
+                                    "x": 163,
+                                    "y": 314
                                 }
                             },
                             {
@@ -15523,16 +15523,16 @@
                                     "createDashboardForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 652,
-                                    "y": 128
+                                    "x": 662,
+                                    "y": 138
                                 },
                                 "children": [
                                     "createDashboardForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 612,
-                                            "y": 304
+                                            "x": 622,
+                                            "y": 326
                                         }
                                     }
                                 ],
@@ -15557,6 +15557,7 @@
                                                         "muliTemplate": "lines",
                                                         "multiMessage": "add another value",
                                                         "formatter": "none",
+                                                        "beforeRenderModuleScript": "",
                                                         "onRenderTextFieldScript": "",
                                                         "formatValueScript": "",
                                                         "getValueScript": " return \"\"; ",
@@ -15578,6 +15579,7 @@
                                                         "muliTemplate": "lines",
                                                         "multiMessage": "add another value",
                                                         "formatter": "none",
+                                                        "beforeRenderModuleScript": "",
                                                         "onRenderTextFieldScript": "",
                                                         "formatValueScript": "",
                                                         "getValueScript": " return \"\"; ",
@@ -15591,11 +15593,13 @@
                                                     "config": {
                                                         "className": "",
                                                         "label": "Manage multiple communities or groups",
+                                                        "identifier": "boolean-field",
                                                         "mandatory": false,
                                                         "getValueScript": "",
                                                         "updateValueScript": "",
                                                         "submitValueScript": "createDashboardForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
-                                                        "validateValueScript": ""
+                                                        "validateValueScript": "",
+                                                        "formatElementScript": ""
                                                     }
                                                 }
                                             ]
@@ -28547,6 +28551,20 @@
                 ]
             },
             "readAccess": "public"
+        }
+    },
+    "widget.507": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-install.text",
+            "target": "module.html-install.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "module-html-install-text.contentTemplate.html"
         }
     }
 }
