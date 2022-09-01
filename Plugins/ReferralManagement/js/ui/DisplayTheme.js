@@ -63,7 +63,9 @@ var  DisplayTheme=(function(){
 	       
 
 	        UIPopover.SetOptions({
-	             className:classNames
+	             className:function(){
+	             	return classNames;
+	             }
 	        });
 
 
