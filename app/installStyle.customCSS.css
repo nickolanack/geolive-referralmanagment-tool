@@ -94,17 +94,16 @@
         .intro-section>span:after {
             
             content: "";
-            background-image: url(https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/%5BImAgE%5D_7hP_q5_%5BG%5D_0ta.png);
-            position: absolute;
-            width: 800px;
-            height: 400px;
-            background-size: cover;
-            box-shadow: 0 0 20px #ffffff5e;
-            border-radius: 10px;
-            margin-top: 150px;
-            border: 2px solid mediumseagreen;
-            left: calc( 100% + 50px );
-            top:50px;
+    background-image: url(https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/%5BImAgE%5D_7hP_q5_%5BG%5D_0ta.png);
+    position: absolute;
+    width: 800px;
+    height: 400px;
+    background-size: cover;
+    box-shadow: 0 0 20px #00000099;
+    border-radius: 10px;
+    margin-top: 150px;
+    left: calc(100% + 50px);
+    top: 50px;
         }
     
      }
