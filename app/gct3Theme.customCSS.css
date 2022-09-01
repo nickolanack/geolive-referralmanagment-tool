@@ -530,6 +530,12 @@ a.pb-btn-close:after {
     .pb-modules-viewer {
         padding-bottom: 30px;
     }
+    
+    
+    .text-input[type="color"] {
+        padding: 0;
+        border-radius: 0;
+    }
 
 }
 
