@@ -1394,11 +1394,45 @@ div#g-recaptcha {
 
 .ui-view.install-form {
     max-width: 800px;
+    
+    h1 {
+        line-height: 40px;
+    }
+
+    
+    
+    textarea.text-input.one.with-1-line {
+        height: 40px;
+        text-indent: 10px;
+        line-height: 40px;
+         font-size: 16px; 
+        overflow-y: hidden;
+    }
+    
+    .label.top-left {
+        font-size: 20px;
+        line-height: 45px;
+    }
+    
+    .boolean-field.checkbox-style {
+        font-size: 20px;
+        text-align: revert;
+        width: 100%;
+        display: inline-block;
+    }
+    
+    .boolean-field.checkbox-style:after {
+        clear: both;
+        content: "";
+        display: inline-block;
+        width: 100%;
+    }
+    
+    button.WizardButton.btn.submit {
+        background-color: mediumseagreen;
+    }
 }
 
-.ui-view.install-form h1 {
-    line-height: 40px;
-}
 
 
 
