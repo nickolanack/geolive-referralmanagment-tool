@@ -28603,9 +28603,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
+            "parseMarkdown": true,
             "saveTemplateAsData": false,
-            "contentTemplate": "module-html-install2-text.contentTemplate.html"
+            "contentTemplate": "module-html-install2-text.contentTemplate.html",
+            "readAccess": "public"
         }
     },
     "widget.509": {
@@ -28617,9 +28618,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
+            "parseMarkdown": true,
             "saveTemplateAsData": false,
-            "contentTemplate": "#Make data driven decisions"
+            "contentTemplate": "#Make data driven decisions",
+            "readAccess": "public"
         }
     }
 }
