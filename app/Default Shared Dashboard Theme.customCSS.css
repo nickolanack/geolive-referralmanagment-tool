@@ -1397,6 +1397,7 @@ div#g-recaptcha {
     
     h1 {
         line-height: 40px;
+        font-weight:100;
     }
 
     
@@ -1428,8 +1429,10 @@ div#g-recaptcha {
         width: 100%;
     }
     
-    button.WizardButton.btn {
+   button.WizardButton.btn {
         background-color: mediumseagreen;
+        padding: 15px 30px;
+        min-width: 220px;
     }
     
     
