@@ -1392,6 +1392,16 @@ div#g-recaptcha {
 
 }
 
+.ui-view.install-form {
+    max-width: 800px;
+}
+
+.ui-view.install-form h1 {
+    line-height: 40px;
+}
+
+
+
 .public-menu ul {
     display: inline-block;
     white-space: nowrap;
