@@ -193,6 +193,13 @@
                     "plugin": "UserInterface",
                     "pluginView": "widget",
                     "widget": "proponent"
+                },
+                {
+                    "name": "install",
+                    "view": "plugin",
+                    "plugin": "UserInterface",
+                    "pluginView": "widget",
+                    "widget": "install"
                 }
             ],
             "useRemoteServerUI": false,
