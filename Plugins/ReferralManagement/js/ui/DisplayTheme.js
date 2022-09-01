@@ -62,8 +62,20 @@ var  DisplayTheme=(function(){
 	        });
 	       
 
+	        var me=this;
 	        UIPopover.SetOptions({
 	             className:function(){
+
+	             	if(me.getInvertsForms()){
+	             		var el=this.element;
+	             		while(el.parentNode!==document.body){
+	             			el=el.parentNode;
+	             		}
+	             		if(el.hasClass('b-w')){
+	             			return formClassNames;
+	             		}
+	             	}
+
 	             	return classNames;
 	             }
 	        });
