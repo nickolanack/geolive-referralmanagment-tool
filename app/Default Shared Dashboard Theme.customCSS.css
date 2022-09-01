@@ -1412,7 +1412,7 @@ div#g-recaptcha {
         position:relative;
     }
     
-    .intro-section:after {
+    .intro-section>span:after {
         content: "";
         background-image: url(https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/%5BImAgE%5D_7hP_q5_%5BG%5D_0ta.png);
         position: absolute;
@@ -1462,7 +1462,25 @@ div#g-recaptcha {
         min-width: 220px;
     }
     
+     @media screen and (min-width: 1750px) {
     
+        max-width:1700px;
+    
+    
+    
+      .intro-section.markdown>span {
+         max-width:800px;
+         display:inline-block;
+         position:relative;
+        }
+        
+        .intro-section>span:after {
+            top:50px;
+        }
+    
+     }
+
+
  
 
 }
