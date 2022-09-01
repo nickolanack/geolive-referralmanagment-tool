@@ -71,7 +71,7 @@ var  DisplayTheme=(function(){
 	             		while(el.parentNode!==document.body){
 	             			el=el.parentNode;
 	             		}
-	             		if(el.hasClass('b-w')){
+	             		if(el.hasClass('pb-w')){
 	             			return formClassNames;
 	             		}
 	             	}
