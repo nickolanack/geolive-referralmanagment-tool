@@ -3,7 +3,7 @@
     "config": {
         "className": "WizardFooter form-nav",
         "reduceOpacity": false,
-        "onCompleteScript": "defaultBehaviorFn();",
+        "onCompleteScript": "defaultBehaviorFn();\n\n\nconsole.log('hello world');",
         "showFinish": true,
         "showCancel": false,
         "showBack": false,
