@@ -15492,8 +15492,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 42,
-                    "y": 535
+                    "x": 59,
+                    "y": 494
                 },
                 "children": [
                     "createDashboardForm.metadata.children.0.json",
@@ -15504,16 +15504,16 @@
                             "createDashboardForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 279,
-                            "y": 210
+                            "x": 289,
+                            "y": 220
                         },
                         "children": [
                             "createDashboardForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 239,
-                                    "y": 386
+                                    "x": 249,
+                                    "y": 396
                                 }
                             },
                             {
@@ -15523,16 +15523,16 @@
                                     "createDashboardForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 732,
-                                    "y": 208
+                                    "x": 742,
+                                    "y": 218
                                 },
                                 "children": [
                                     "createDashboardForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 692,
-                                            "y": 409
+                                            "x": 702,
+                                            "y": 419
                                         }
                                     }
                                 ],
@@ -15655,6 +15655,22 @@
                                 "content": {
                                     "modules": [
                                         "createDashboardForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "WizardButtons",
+                                            "config": {
+                                                "className": "WizardFooter",
+                                                "reduceOpacity": false,
+                                                "onCompleteScript": "defaultBehaviorFn();",
+                                                "showFinish": true,
+                                                "showCancel": false,
+                                                "showBack": false,
+                                                "labelForCancel": "cancel",
+                                                "labelForSubmit": "submit",
+                                                "labelForNext": "Get Started",
+                                                "labelForPrevious": "previous",
+                                                "formatButton": "return button;"
+                                            }
+                                        },
                                         {
                                             "type": "InlineHtml",
                                             "config": {
