@@ -21480,16 +21480,16 @@
                             "importProjectsForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 188,
-                            "y": 320
+                            "x": 198,
+                            "y": 330
                         },
                         "children": [
                             "importProjectsForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 148,
-                                    "y": 486
+                                    "x": 158,
+                                    "y": 496
                                 }
                             }
                         ],
@@ -21500,7 +21500,27 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "importProjectsForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                        "importProjectsForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "FormTextDescriptionField",
+                                            "config": {
+                                                "label": "Upload Projects CSV File",
+                                                "message": "add a description",
+                                                "lines": 3,
+                                                "mandatory": false,
+                                                "showAudios": true,
+                                                "showImages": true,
+                                                "showDocuments": true,
+                                                "showVideos": true,
+                                                "className": "only-docs no-text",
+                                                "maxChars": 0,
+                                                "showExpandInput": true,
+                                                "toolbarPosition": "bottom",
+                                                "textFormatScript": "",
+                                                "mediaIconTint": "rgb(100, 149, 237)",
+                                                "onRenderModuleFn": ""
+                                            }
+                                        }
                                     ]
                                 },
                                 "footer": {
@@ -28722,6 +28742,20 @@
             "saveTemplateAsData": false,
             "contentTemplate": "email-dashboard-request-reply-content.contentTemplate.html",
             "readAccess": "public"
+        }
+    },
+    "widget.514": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-importData.text",
+            "target": "module.html-importData.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "#Import Data"
         }
     }
 }
