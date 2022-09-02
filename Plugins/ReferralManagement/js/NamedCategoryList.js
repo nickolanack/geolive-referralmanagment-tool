@@ -323,7 +323,11 @@ var NamedCategoryList = (function() {
 								});
 
 								(new UIModalDialog(application, newTag, {
-		                		"formName":"tagForm", "formOptions":{template:"form"}})).show();
+		                		"formName":"tagForm", "formOptions":{
+		                			template:"form",
+		                			"labelForSubmit":"Save",
+									"labelForCancel":"Cancel",
+		                		}})).show();
 
 							}
 						}

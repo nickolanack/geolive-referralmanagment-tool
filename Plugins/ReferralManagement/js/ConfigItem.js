@@ -161,7 +161,9 @@ var ConfigItem = (function() {
                         configValue, {
                             "formName": item.getForm(),
                             "formOptions": {
-                                template: "form"
+                                template: "form",
+                                "labelForSubmit":"Update Field",
+                                "labelForCancel":"Cancel",
                             }
                         }
                     )).show();

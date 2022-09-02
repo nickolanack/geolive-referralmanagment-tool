@@ -125,7 +125,9 @@ var GatherDashboard = (function() {
 						"template": "form",
 						"className": "alert-view",
 						"showCancel":false,
-						"closable":true
+						"closable":true,
+						"labelForSubmit":"Update profile",
+						"labelForCancel":"Cancel",
 					}
 				})).show();
 			}
