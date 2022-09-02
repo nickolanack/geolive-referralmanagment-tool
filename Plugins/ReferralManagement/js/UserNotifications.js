@@ -97,14 +97,14 @@ var UserNotifications = (function() {
 					click: function() {
 
 
-						(new UIModalDialog(application, "Are you sure you want to log out?", {
+						(new UIModalDialog(application, "<h2>Are you sure you want to log out?</h2>", {
 							"formName": "dialogForm",
 							"formOptions": {
 								"template": "form",
 								"className": "alert-view",
 								"showCancel":true,
-								"labelForSubmit":"Yes",
-								"labelForCancel":"No",
+								"labelForSubmit":"Yes, log me out",
+								"labelForCancel":"Cancel",
 								"closable":true
 							}
 						})).on('complete', function(){
