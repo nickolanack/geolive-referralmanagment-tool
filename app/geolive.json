@@ -28693,5 +28693,33 @@
             "contentTemplate": "module-html-install0-text.contentTemplate.html",
             "readAccess": "public"
         }
+    },
+    "widget.512": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.dashboard.request.reply.subject",
+            "target": "email.dashboard.request.reply.subject",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Subject"
+        }
+    },
+    "widget.513": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.dashboard.request.reply.content",
+            "target": "email.dashboard.request.reply.content",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Message Content"
+        }
     }
 }
