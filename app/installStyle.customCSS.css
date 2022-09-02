@@ -104,7 +104,7 @@
     
     
     
-      .intro-section.markdown>span {
+      .intro-section.markdown>span, .intro-section-2.markdown>span, .intro-section-3.markdown>span {
          max-width:800px;
          display:inline-block;
          position:relative;
