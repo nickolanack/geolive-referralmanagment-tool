@@ -53,6 +53,13 @@
         font-size: 50px;
     }
     
+    .ui-view.login-form span.WizardFooter.section-btn{
+
+        height: 0;
+        position: relative;
+        z-index: 1;
+        top: -250px;
+    }
     
     
     .intro-section>span:after, .intro-section-2>span:after, .intro-section-3>span:after {
