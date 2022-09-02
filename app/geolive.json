@@ -28720,7 +28720,8 @@
             "convertStylesToInline": false,
             "parseMarkdown": false,
             "saveTemplateAsData": false,
-            "contentTemplate": "Message Content"
+            "contentTemplate": "email-dashboard-request-reply-content.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }
