@@ -1,22 +1,13 @@
 {
-    "type": "FormTextField",
+    "type": "InlineHtml",
     "config": {
         "className": "",
-        "label": "Your Name",
-        "placeholder": "add value",
-        "lines": 1,
-        "maxChars": 0,
-        "mandatory": false,
-        "multiEntry": false,
-        "muliTemplate": "lines",
-        "multiMessage": "add another value",
-        "formatter": "none",
-        "beforeRenderModuleScript": "",
-        "onRenderTextFieldScript": "",
-        "formatValueScript": "",
-        "getValueScript": " return \"\"; ",
-        "updateValueScript": " object.value=value ",
-        "submitValueScript": "wizardDataSet.name=object.value",
-        "validateValueScript": " return defaultValidationFn() "
+        "text": "#Create your own private dashboard for managing referrals for your Community and Lands Department members. \n",
+        "template": "html.install0",
+        "templateVariablesScript": "{}",
+        "formatTextScript": "",
+        "formatVariablesScript": "",
+        "ajaxRequestTemplate": true,
+        "identifier": "htmlLabel"
     }
 }

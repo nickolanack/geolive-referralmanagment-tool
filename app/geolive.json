@@ -15492,8 +15492,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 34,
-                    "y": 539
+                    "x": 42,
+                    "y": 535
                 },
                 "children": [
                     "createDashboardForm.metadata.children.0.json",
@@ -15504,16 +15504,16 @@
                             "createDashboardForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 259,
-                            "y": 190
+                            "x": 269,
+                            "y": 200
                         },
                         "children": [
                             "createDashboardForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 219,
-                                    "y": 366
+                                    "x": 229,
+                                    "y": 376
                                 }
                             },
                             {
@@ -15523,16 +15523,16 @@
                                     "createDashboardForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 712,
-                                    "y": 188
+                                    "x": 722,
+                                    "y": 198
                                 },
                                 "children": [
                                     "createDashboardForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 672,
-                                            "y": 376
+                                            "x": 682,
+                                            "y": 386
                                         }
                                     }
                                 ],
@@ -15548,7 +15548,7 @@
                                                     "type": "FormTextField",
                                                     "config": {
                                                         "className": "",
-                                                        "label": "Your Contact Email",
+                                                        "label": "Your Name",
                                                         "placeholder": "add value",
                                                         "lines": 1,
                                                         "maxChars": 0,
@@ -15570,7 +15570,7 @@
                                                     "type": "FormTextField",
                                                     "config": {
                                                         "className": "",
-                                                        "label": "Community or Group Name",
+                                                        "label": "Your Contact Email",
                                                         "placeholder": "add value",
                                                         "lines": 1,
                                                         "maxChars": 0,
@@ -15589,6 +15589,28 @@
                                                     }
                                                 },
                                                 {
+                                                    "type": "FormTextField",
+                                                    "config": {
+                                                        "className": "",
+                                                        "label": "Community or Group Name",
+                                                        "placeholder": "add value",
+                                                        "lines": 1,
+                                                        "maxChars": 0,
+                                                        "mandatory": false,
+                                                        "multiEntry": false,
+                                                        "muliTemplate": "lines",
+                                                        "multiMessage": "add another value",
+                                                        "formatter": "none",
+                                                        "beforeRenderModuleScript": "",
+                                                        "onRenderTextFieldScript": "",
+                                                        "formatValueScript": "",
+                                                        "getValueScript": " return \"\"; ",
+                                                        "updateValueScript": " object.value=value ",
+                                                        "submitValueScript": "createDashboardForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
+                                                        "validateValueScript": " return defaultValidationFn() "
+                                                    }
+                                                },
+                                                {
                                                     "type": "FormBooleanField",
                                                     "config": {
                                                         "className": "",
@@ -15597,7 +15619,7 @@
                                                         "mandatory": false,
                                                         "getValueScript": "",
                                                         "updateValueScript": "",
-                                                        "submitValueScript": "createDashboardForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
+                                                        "submitValueScript": "createDashboardForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.4.config.submitValueScript.js",
                                                         "validateValueScript": "",
                                                         "formatElementScript": ""
                                                     }
@@ -28639,6 +28661,20 @@
             "useRemote": "",
             "saveAsData": false,
             "readAccess": "public"
+        }
+    },
+    "widget.511": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-install0.text",
+            "target": "module.html-install0.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "module-html-install0-text.contentTemplate.html"
         }
     }
 }

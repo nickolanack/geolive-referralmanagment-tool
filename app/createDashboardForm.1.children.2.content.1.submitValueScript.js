@@ -1,1 +1,1 @@
-wizardDataSet.email=object.value
+wizardDataSet.name=object.value

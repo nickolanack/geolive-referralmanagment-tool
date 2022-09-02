@@ -1,1 +1,1 @@
-wizardDataSet.dashboard=object.value
+wizardDataSet.email=object.value

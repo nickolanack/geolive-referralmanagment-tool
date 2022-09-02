@@ -1,1 +1,1 @@
-wizardDataSet.isMulti=object.value
+wizardDataSet.dashboard=object.value
