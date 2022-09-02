@@ -12,15 +12,34 @@
         z-index: 0;
     }
     
+    
+    
     .ui-view.dashboard-main.dark {
         z-index: 1;
     }
 
+.intro-section, .intro-section-2{
+        position: relative;
+        margin-bottom: 150px;
+        padding-bottom: 200px;
+        border-bottom: 2px solid #0000004a;
+}
+
+
+.dark .intro-section, .intro-section-2{
+        border-bottom: 2px solid #ffffff4a;
+}
+    
+ .intro-section-3{
+        position: relative;
+        padding-bottom: 200px;
+}   
 
 
 .ui-view.install-form {
     max-width: 800px;
     
+    margin-bottom: 400px;
     
     h1{
         line-height: 23px;
@@ -34,12 +53,7 @@
         font-size: 50px;
     }
     
-    .intro-section, .intro-section-2, .intro-section-3{
-        position: relative;
-        margin-bottom: 150px;
-        padding-bottom: 200px;
-        border-bottom: 2px solid #ffffff4a;
-    }
+    
     
     .intro-section>span:after, .intro-section-2>span:after, .intro-section-3>span:after {
             
