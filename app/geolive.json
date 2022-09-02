@@ -28753,9 +28753,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
+            "parseMarkdown": true,
             "saveTemplateAsData": false,
-            "contentTemplate": "#Import Data"
+            "contentTemplate": "#Import Data",
+            "readAccess": "public"
         }
     }
 }
