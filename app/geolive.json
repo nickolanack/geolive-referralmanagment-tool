@@ -15504,16 +15504,16 @@
                             "createDashboardForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 339,
-                            "y": 270
+                            "x": 349,
+                            "y": 280
                         },
                         "children": [
                             "createDashboardForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 299,
-                                    "y": 458
+                                    "x": 309,
+                                    "y": 468
                                 }
                             },
                             {
@@ -15523,16 +15523,16 @@
                                     "createDashboardForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 792,
-                                    "y": 268
+                                    "x": 802,
+                                    "y": 278
                                 },
                                 "children": [
                                     "createDashboardForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 752,
-                                            "y": 469
+                                            "x": 762,
+                                            "y": 479
                                         }
                                     }
                                 ],
@@ -15549,7 +15549,7 @@
                                                     "config": {
                                                         "className": "",
                                                         "label": "Your Name",
-                                                        "placeholder": "add value",
+                                                        "placeholder": "add your name",
                                                         "lines": 1,
                                                         "maxChars": 0,
                                                         "mandatory": false,
@@ -15571,7 +15571,7 @@
                                                     "config": {
                                                         "className": "",
                                                         "label": "Your Contact Email",
-                                                        "placeholder": "add value",
+                                                        "placeholder": "add a valid email address (will be verified)",
                                                         "lines": 1,
                                                         "maxChars": 0,
                                                         "mandatory": false,
@@ -15593,7 +15593,7 @@
                                                     "config": {
                                                         "className": "",
                                                         "label": "Community or Group Name",
-                                                        "placeholder": "add value",
+                                                        "placeholder": "used to generate a domain name (use an acronym)",
                                                         "lines": 1,
                                                         "maxChars": 0,
                                                         "mandatory": false,
