@@ -105,9 +105,10 @@
     
     
       .intro-section.markdown>span, .intro-section-2.markdown>span, .intro-section-3.markdown>span {
-         max-width:800px;
+         width:800px;
          display:inline-block;
          position:relative;
+         min-height: 400px;
         }
         
         .intro-section>span:after, .intro-section-2>span:after, .intro-section-3>span:after {
