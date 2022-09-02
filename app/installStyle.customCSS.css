@@ -117,6 +117,15 @@
             left: calc(100% + 150px);
             top: 40px;
         }
+        
+        intro-section-2.markdown>span{
+            margin-left: 950px;
+        }
+        .intro-section-2>span:after{
+            left:unset;
+            right: calc(100% + 150px);
+        }
+        
     
      }
 
