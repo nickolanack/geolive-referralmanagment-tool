@@ -28672,9 +28672,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
+            "parseMarkdown": true,
             "saveTemplateAsData": false,
-            "contentTemplate": "module-html-install0-text.contentTemplate.html"
+            "contentTemplate": "module-html-install0-text.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }
