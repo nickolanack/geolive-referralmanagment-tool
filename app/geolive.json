@@ -28718,7 +28718,7 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
+            "parseMarkdown": true,
             "saveTemplateAsData": false,
             "contentTemplate": "email-dashboard-request-reply-content.contentTemplate.html",
             "readAccess": "public"
