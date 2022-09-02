@@ -24,3 +24,4 @@ GetWidget('adminStyles')->display($targetInstance);
 GetWidget('darkTheme')->display($targetInstance);   
 GetWidget('installStyle')->display($targetInstance);
 
+GetWidget('dialogForm')->display($targetInstance);
