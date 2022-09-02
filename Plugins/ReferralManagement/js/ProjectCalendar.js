@@ -495,8 +495,8 @@ var ProjectCalendar = (function() {
 							"template": "form",
 							"className": "alert-view",
 							"showCancel": true,
-							"labelForSubmit": "Yes",
-							"labelForCancel": "No",
+							"showFinish": false,
+							"labelForCancel": "Close",
 							"closable": true
 						}
 					})).on('complete', function() {
