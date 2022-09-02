@@ -3,7 +3,7 @@
     "config": {
         "className": "WizardFooter form-nav",
         "reduceOpacity": false,
-        "onCompleteScript": "defaultBehaviorFn();\n\n\n(new AjaxControlQuery(CoreAjaxUrlRoot, 'create_dashboard', {\n                            \"plugin\": 'ReferralManagement',\n                            \"data\":wizardDataSet,\n                        })).execute();\n",
+        "onCompleteScript": "\/\/defaultBehaviorFn();\n\n\n(new AjaxControlQuery(CoreAjaxUrlRoot, 'create_dashboard', {\n                            \"plugin\": 'ReferralManagement',\n                            \"data\":wizardDataSet,\n                        })).on('success',function(){\n                            \n                            \n                            (new UIModalDialog(application, 'Your request has been sent, please check your email continue', {\n        \t\t\t\t\t\t\"formName\": \"dialogForm\",\n        \t\t\t\t\t\t\"formOptions\": {\n        \t\t\t\t\t\t\t\"template\": \"form\",\n        \t\t\t\t\t\t\t\"className\": \"alert-view\",\n        \t\t\t\t\t\t\t\"showCancel\": true,\n        \t\t\t\t\t\t\t\"labelForSubmit\": \"Yes\",\n        \t\t\t\t\t\t\t\"labelForCancel\": \"No\",\n        \t\t\t\t\t\t\t\"closable\": true\n        \t\t\t\t\t\t}\n        \t\t\t\t\t})).on('complete', function() {\n        \n        \t\t\t\t\t}).show();\n                                \n                            \n                        }).execute();\n",
         "showFinish": true,
         "showCancel": false,
         "showBack": false,
