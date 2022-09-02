@@ -1,6 +1,6 @@
 
 
-    .ui-view.dashboard-main.dark:before {
+    .ui-view.dashboard-main:before {
         background-image: url("https://gather.geoforms.ca/assets/images/tim-johnson-bmljdpdeigw-unsplash.jpg");
         content:
         "";
@@ -35,9 +35,10 @@
     }
     
     .intro-section, .intro-section-2, .intro-section-3{
-        position:relative;
-        margin-bottom: 50px;
-        padding-bottom: 100px;
+        position: relative;
+        margin-bottom: 150px;
+        padding-bottom: 200px;
+        border-bottom: 2px solid #ffffff4a;
     }
     
     .intro-section>span:after, .intro-section-2>span:after, .intro-section-3>span:after {
