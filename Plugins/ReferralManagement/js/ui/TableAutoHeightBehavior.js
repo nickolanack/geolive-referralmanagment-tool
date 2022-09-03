@@ -97,11 +97,6 @@ var TableAutoHeightBehavior = (function() {
 				return;
 			}
 			
-			var scroll = scrollEl.getScrollSize();
-			var space = scrollEl.getSize();
-
-
-
 			var size = contentEl.getSize();
 			var coords=contentEl.getCoordinates();
 
