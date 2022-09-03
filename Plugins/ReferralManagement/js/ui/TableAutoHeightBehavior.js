@@ -62,16 +62,17 @@ var TableAutoHeightBehavior = (function() {
 
 		_getConstraints:function(){
 
+			try{
+				var wizard=this._listModule.getWizard();
+				if(wizard&&wizard.getViewer().pushbox){
 
-			var wizard=this._listModule.getWizard();
-			if(wizard&&wizard.getViewer().pushbox){
-
-				var maxY=wizard.getViewer().pushbox.getMaxY();
-				return {
-					space:maxY,
-					scroll:maxY
-				};
-			}
+					var maxY=wizard.getViewer().pushbox.getMaxY();
+					return {
+						space:maxY,
+						scroll:maxY
+					};
+				}
+			}catch(e){}
 
 			var scrollEl = $$('.dashboard-main')[0];
 			var contentEl = $$('.main-content-area')[0];
