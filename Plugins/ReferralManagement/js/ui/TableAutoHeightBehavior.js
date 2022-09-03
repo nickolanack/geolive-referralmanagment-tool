@@ -59,7 +59,8 @@ var TableAutoHeightBehavior = (function() {
 
 
 		},
-		_fitContent: function() {
+
+		_getConstraints:function(){
 
 			var scrollEl = $$('.dashboard-main')[0];
 			var contentEl = $$('.main-content-area')[0];
@@ -67,6 +68,30 @@ var TableAutoHeightBehavior = (function() {
 			if(!scrollEl){
 				return;
 			}
+
+			if(!contentEl){
+				return;
+			}
+			
+			var scroll = scrollEl.getScrollSize();
+			var space = scrollEl.getSize();
+
+
+			return {
+				scroll:scroll.y,
+				space:space.y
+			};
+
+		},
+
+		_fitContent: function() {
+
+			var frame=this._getConstraints();
+			if(!frame){
+				return;
+			}
+
+			var contentEl = $$('.main-content-area')[0];
 
 			if(!contentEl){
 				return;
@@ -94,8 +119,8 @@ var TableAutoHeightBehavior = (function() {
 				return;
 			}
 
-			if(scroll.y>space.y){
-				var contentOverflowHeight=scroll.y-space.y
+			if(frame.scroll>frame.space){
+				var contentOverflowHeight=frame.scroll-frame.space
 
 				
 				var reduceBy=Math.ceil(contentOverflowHeight/itemSize.y);
@@ -107,7 +132,7 @@ var TableAutoHeightBehavior = (function() {
 
 
 
-			var contentAvailableHeight=space.y-(coords.top+size.y);
+			var contentAvailableHeight=frame.space-(coords.top+size.y);
 			var increaseBy=Math.floor(contentAvailableHeight/itemSize.y);
 			this._listModule.setMaxItemsPerPage(Math.min(25, numVisible+increaseBy));
 
