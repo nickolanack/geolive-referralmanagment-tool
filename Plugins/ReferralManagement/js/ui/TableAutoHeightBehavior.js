@@ -143,7 +143,7 @@ var TableAutoHeightBehavior = (function() {
 			var contentAvailableHeight=frame.space-(coords.top+size.y);
 
 			if(this._wizard){
-				contentAvailableHeight=frame.space-size.y;
+				contentAvailableHeight=frame.space-size.y-100;
 			}
 
 			var increaseBy=Math.floor(contentAvailableHeight/itemSize.y);
