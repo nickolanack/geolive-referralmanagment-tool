@@ -64,6 +64,7 @@ var TableAutoHeightBehavior = (function() {
 
 			try{
 				var wizard=this._listModule.getWizard();
+				this._wizard=wizard;
 				if(wizard&&wizard.getViewer().pushbox){
 
 					var maxY=wizard.getViewer().pushbox.getMaxY();
@@ -140,8 +141,13 @@ var TableAutoHeightBehavior = (function() {
 
 
 			var contentAvailableHeight=frame.space-(coords.top+size.y);
+
+			if(this._wizard){
+				contentAvailableHeight=frame.space-size.y;
+			}
+
 			var increaseBy=Math.floor(contentAvailableHeight/itemSize.y);
-			this._listModule.setMaxItemsPerPage(Math.min(25, numVisible+increaseBy));
+			this._listModule.setMaxItemsPerPage(Math.max(10, Math.min(25, numVisible+increaseBy)));
 
 
 
