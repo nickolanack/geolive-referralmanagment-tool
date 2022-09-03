@@ -13,7 +13,7 @@
         "formOptions": "\"{}\"",
         "showDeleteButton": false,
         "deleteItemScript": "defaultBehaviorFn()",
-        "initModuleScript": "",
+        "initModuleScript": "new TableAutoHeightBehavior(module, {});",
         "formatModuleScript": "",
         "resolveItemScript": "return item",
         "filterModulesScript": "return Project.FormatProjectSelectionListModules(list, item, listItem);\n",

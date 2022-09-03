@@ -408,7 +408,7 @@ button.primary-btn, .WizardButton, .WizardTitle li, .t-btn {
 }
 
 
-.dataset-select .field-value-module.inline.tag-width {
+.dataset-select [data-col="type"].field-value-module.inline.tag-width {
     display: inline-block;
     margin-bottom: 18px;
 }

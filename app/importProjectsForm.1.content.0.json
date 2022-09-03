@@ -1,20 +1,13 @@
 {
-    "type": "WizardDescriptionField",
+    "type": "InlineHtml",
     "config": {
-        "label": "Upload Projects CSV File",
-        "message": "add a description",
-        "lines": 3,
-        "mandatory": false,
-        "showAudios": true,
-        "showImages": true,
-        "showDocuments": true,
-        "showVideos": true,
-        "className": "only-docs no-text",
-        "maxChars": 0,
-        "showExpandInput": true,
-        "toolbarPosition": "bottom",
-        "textFormatScript": "",
-        "mediaIconTint": "rgb(100, 149, 237)",
-        "onRenderModuleFn": ""
+        "className": "",
+        "text": "#Import Data",
+        "template": "html.importData",
+        "templateVariablesScript": "{}",
+        "formatTextScript": "",
+        "formatVariablesScript": "",
+        "ajaxRequestTemplate": true,
+        "identifier": "htmlLabel"
     }
 }
