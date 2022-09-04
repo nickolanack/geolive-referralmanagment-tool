@@ -106,7 +106,7 @@ var TableAutoHeightBehavior = (function() {
 
 					return {
 						size:this._listModule.getElement().getSize().y,
-						offset:100
+						offset:150
 					};
 				}
 			}catch(e){}
