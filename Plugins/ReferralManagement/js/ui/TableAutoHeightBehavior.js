@@ -97,12 +97,20 @@ var TableAutoHeightBehavior = (function() {
 
 		},
 
-		_fitContent: function() {
+		_getContentSize:function(){
 
-			var frame=this._getConstraints();
-			if(!frame){
-				return;
-			}
+			try{
+				var wizard=this._listModule.getWizard();
+				this._wizard=wizard;
+				if(wizard&&wizard.getViewer().pushbox){
+
+					return {
+						size:this._listModule.getElement().getSize().y,
+						offset:100
+					};
+				}
+			}catch(e){}
+
 
 			var contentEl = $$('.main-content-area')[0];
 
@@ -113,7 +121,26 @@ var TableAutoHeightBehavior = (function() {
 			var size = contentEl.getSize();
 			var coords=contentEl.getCoordinates();
 
+			return {
+				size:size.y,
+				offset:coords.top
+			}
 
+		},
+
+		_fitContent: function() {
+
+			var frame=this._getConstraints();
+			if(!frame){
+				return;
+			}
+
+
+			var content=this._getContentSize();
+			if(!content){
+				return;
+			}			
+		
 			var detail=this._listModule.getDetailViewAt(0);
 			var detailEl=detail.getElement();
 			if(!detailEl){
@@ -140,11 +167,7 @@ var TableAutoHeightBehavior = (function() {
 
 
 
-			var contentAvailableHeight=frame.space-(coords.top+size.y);
-
-			if(this._wizard){
-				contentAvailableHeight=frame.space-size.y-100;
-			}
+			var contentAvailableHeight=frame.space-(content.offset+content.size);
 
 			var increaseBy=Math.floor(contentAvailableHeight/itemSize.y);
 			this._listModule.setMaxItemsPerPage(Math.max(10, Math.min(25, numVisible+increaseBy)));
