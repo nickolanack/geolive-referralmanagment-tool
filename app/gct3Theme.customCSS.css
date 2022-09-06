@@ -1447,3 +1447,54 @@ button.download-link {
     border-color: #3d414e;
     background-color: #272931;
 }
+
+
+
+
+
+
+
+
+
+.dark.pb-c{
+    
+    &.pb-c-append {
+        background-color: white;
+        color: black;
+    }
+    
+    &.gct3:after {
+        background-color: white;
+    }
+    
+    &.gct3 .template-footer {
+        background-color: white;
+    }
+    
+    .label.top-left,  .checkbox-style {
+        color: black;
+    }
+    
+    &.gct3 .text-input {
+        background-color: white;
+        box-shadow: 0 0 4px black inset;
+        color: black;
+    }
+    
+    &.gct3 h2 {
+        color: black;
+    }
+    
+    &.gct3 .WizardTitle li.after, &.gct3 .WizardTitle li.before {
+        color: gray;
+    }
+
+}
+
+
+
+
+
+
+
+
