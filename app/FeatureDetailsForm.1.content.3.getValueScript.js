@@ -1,1 +1,1 @@
-return item.getShowAttributes();
+ return item.getLineOpacity()+"";

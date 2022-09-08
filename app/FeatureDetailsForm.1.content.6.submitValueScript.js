@@ -1,1 +1,0 @@
-wizardDataSet.lineOpacity=object.value;
