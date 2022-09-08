@@ -2,6 +2,7 @@
 console.log('pass feature type as featureType')
 
 return new MockDataTypeItem({
+    featureType:item.getType(),
     lineColor: "#000000",
 					fillColor: "#000000",
 					lineOpacity: 1,
