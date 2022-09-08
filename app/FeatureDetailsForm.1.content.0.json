@@ -15,6 +15,6 @@
         "toolbarPosition": "bottom",
         "textFormatScript": "",
         "mediaIconTint": "rgb(100, 149, 237)",
-        "onRenderModuleFn": "module.runOnceOnLoad(function(){\n    \n    module.getTextField().getInputElement().setStyle('display','none');\n    \n    if(item.getFeatureType&&(['polygn', 'line']).indexOf(item.getFeatureType())>=0){\n        module.getElement().setStyle('display', 'none');\n    }\n    \n})"
+        "onRenderModuleFn": "module.runOnceOnLoad(function(){\n    \n    module.getTextField().getInputElement().setStyle('display','none');\n    \n    if(item.getFeatureType&&(['polygon', 'line']).indexOf(item.getFeatureType())>=0){\n        module.getElement().setStyle('display', 'none');\n    }\n    \n})"
     }
 }
