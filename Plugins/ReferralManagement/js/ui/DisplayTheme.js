@@ -35,6 +35,15 @@ var  DisplayTheme=(function(){
 	            }
 	        });
 
+
+	        // theGooglemapMapLoader.on('showMap', function(map){
+	        // 	map.getDisplayController().setOptions({
+		       //      popoverOptions:{
+		       //          parentClassName:formClassNames
+		       //      }
+		       //  });
+	        // });
+
 		},
 
 		setMode:function(mode) {

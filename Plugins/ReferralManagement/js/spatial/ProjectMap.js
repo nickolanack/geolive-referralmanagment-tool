@@ -159,6 +159,17 @@ var ProjectMap=(function(){
 					if(item.getType()=="marker"&&images.length>0){
 					    parentWizard.setDataValue('icon', {url:images[0], scaledSize:new google.maps.Size(40,40)});
 					}
+
+					if(item.getType()=="line"||item.getType()=="polygon"){
+						parentWizard.setDataValue('lineColor', d.lineColor);
+						parentWizard.setDataValue('lineWidth', d.lineWidth);
+						parentWizard.setDataValue('lineOpacity', d.lineOpacity);
+					}
+					if(item.getType()=="polygon"){
+						parentWizard.setDataValue('fillColor', d.fillColor);
+						parentWizard.setDataValue('fillOpacity', d.fillOpacity);
+					}
+
 				    
 				});
 			});
