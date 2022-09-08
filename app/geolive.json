@@ -28777,8 +28777,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -18,
-                    "y": 171
+                    "x": 64,
+                    "y": 294
                 },
                 "children": [
                     "FeatureDetailsForm.metadata.children.0.json",
@@ -28789,16 +28789,16 @@
                             "FeatureDetailsForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 158,
-                            "y": 290
+                            "x": 215,
+                            "y": 207
                         },
                         "children": [
                             "FeatureDetailsForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 118,
-                                    "y": 616
+                                    "x": 175,
+                                    "y": 483
                                 }
                             }
                         ],
@@ -28994,77 +28994,6 @@
                                                 "getValueScript": " return item.getLineWidth()+\"\";",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.10.config.submitValueScript.js",
-                                                "validateValueScript": " return defaultValidationFn() "
-                                            }
-                                        },
-                                        {
-                                            "type": "InlineHtml",
-                                            "config": {
-                                                "className": "",
-                                                "text": "##Advanced options",
-                                                "template": "html.layerFormAdvancedSection",
-                                                "templateVariablesScript": "{}",
-                                                "formatTextScript": "",
-                                                "formatVariablesScript": "",
-                                                "ajaxRequestTemplate": true,
-                                                "identifier": "htmlLabel"
-                                            }
-                                        },
-                                        {
-                                            "type": "FormBooleanField",
-                                            "config": {
-                                                "className": "can-minimize",
-                                                "label": "Render as tile images",
-                                                "identifier": "boolean-field",
-                                                "mandatory": false,
-                                                "getValueScript": "return item.getRenderTiles();",
-                                                "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.12.config.submitValueScript.js",
-                                                "validateValueScript": "",
-                                                "formatElementScript": ""
-                                            }
-                                        },
-                                        {
-                                            "type": "FormTextField",
-                                            "config": {
-                                                "className": "can-minimize",
-                                                "label": "Options",
-                                                "placeholder": "",
-                                                "lines": 2,
-                                                "maxChars": 0,
-                                                "mandatory": false,
-                                                "multiEntry": false,
-                                                "muliTemplate": "lines",
-                                                "multiMessage": "add another value",
-                                                "formatter": "none",
-                                                "beforeRenderModuleScript": "",
-                                                "onRenderTextFieldScript": "",
-                                                "formatValueScript": "",
-                                                "getValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.13.config.getValueScript.js",
-                                                "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.13.config.submitValueScript.js",
-                                                "validateValueScript": " return defaultValidationFn() "
-                                            }
-                                        },
-                                        {
-                                            "type": "FormTextField",
-                                            "config": {
-                                                "className": "can-minimize",
-                                                "label": "Script Feature Format",
-                                                "placeholder": "add value",
-                                                "lines": 5,
-                                                "maxChars": 0,
-                                                "mandatory": false,
-                                                "multiEntry": false,
-                                                "muliTemplate": "lines",
-                                                "multiMessage": "add another value",
-                                                "formatter": "none",
-                                                "beforeRenderModuleScript": "",
-                                                "onRenderTextFieldScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.14.config.onRenderTextFieldScript.js",
-                                                "formatValueScript": "",
-                                                "getValueScript": " return item.getScript(); ",
-                                                "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.14.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         }

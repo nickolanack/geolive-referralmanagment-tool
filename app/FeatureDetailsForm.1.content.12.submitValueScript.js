@@ -1,1 +1,0 @@
-wizardDataSet.renderTiles=object.value;
