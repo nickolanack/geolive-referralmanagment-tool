@@ -124,7 +124,7 @@ var ProjectMap=(function(){
 				description: description,
 			})
 		},
-		dropMarkerSubformHelper:function(uivew){
+		dropMarkerSubformHelper:function(uivew, item){
 
 
 			uivew.getChildWizard(function(wizard) {
