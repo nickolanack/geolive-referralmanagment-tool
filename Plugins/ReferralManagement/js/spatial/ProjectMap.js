@@ -157,7 +157,7 @@ var ProjectMap=(function(){
 					});
 					
 					if(item.getType()=="marker"&&images.length>0){
-					    parentWizard.setDataValue('icon', images[0]);
+					    parentWizard.setDataValue('icon', {url:images[0], scaledSize:new google.maps.Size(40,40)});
 					}
 				    
 				});
