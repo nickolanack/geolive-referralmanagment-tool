@@ -5,5 +5,14 @@ module.getChildWizard(function(wizard) {
 	    var parentWizard=module.getWizard();
 	    var p=parentWizard.getData();
 	    console.log(d);
+	    
+	    var images = JSTextUtilities.ParseImages(d.description).map(function(o) {
+			return o.url;
+		});
+		
+		if(images.length>0){
+		    parentWizard.setDataValue('icon', images[0]);
+		}
+	    
 	});
 });
