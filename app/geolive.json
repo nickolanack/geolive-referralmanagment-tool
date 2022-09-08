@@ -23247,16 +23247,16 @@
                             "Simple Marker Form.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 278,
-                            "y": 203
+                            "x": 288,
+                            "y": 213
                         },
                         "children": [
                             "Simple Marker Form.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 238,
-                                    "y": 393
+                                    "x": 248,
+                                    "y": 403
                                 }
                             }
                         ],
@@ -23320,7 +23320,7 @@
                                                 "deleteItemScript": "defaultBehaviorFn()",
                                                 "initModuleScript": "",
                                                 "formatModuleScript": "",
-                                                "resolveItemScript": "return item",
+                                                "resolveItemScript": "Simple Marker Form.metadata.children.1.builderMetadata.positions.content.modules.3.config.resolveItemScript.js",
                                                 "filterModulesScript": "return list",
                                                 "itemButtonsScript": "return [];",
                                                 "insertAtTop": false,
