@@ -28789,16 +28789,16 @@
                             "FeatureDetailsForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 138,
-                            "y": 270
+                            "x": 148,
+                            "y": 280
                         },
                         "children": [
                             "FeatureDetailsForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 98,
-                                    "y": 436
+                                    "x": 108,
+                                    "y": 446
                                 }
                             }
                         ],
@@ -28813,24 +28813,124 @@
                                     "modules": [
                                         "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
+                                            "type": "InlineHtml",
+                                            "config": []
+                                        },
+                                        {
                                             "type": "FormTextDescriptionField",
+                                            "config": []
+                                        },
+                                        {
+                                            "type": "FormBooleanField",
+                                            "config": []
+                                        },
+                                        {
+                                            "type": "FormBooleanField",
+                                            "config": []
+                                        },
+                                        {
+                                            "type": "FormBooleanField",
                                             "config": {
-                                                "label": "Description",
-                                                "message": "add a description",
-                                                "lines": 3,
+                                                "className": "width-3",
+                                                "label": "Show Labels",
+                                                "identifier": "boolean-field",
                                                 "mandatory": false,
-                                                "showAudios": true,
-                                                "showImages": true,
-                                                "showDocuments": true,
-                                                "showVideos": true,
-                                                "className": "",
-                                                "maxChars": 0,
-                                                "showExpandInput": true,
-                                                "toolbarPosition": "bottom",
-                                                "textFormatScript": "",
-                                                "mediaIconTint": "rgb(100, 149, 237)",
-                                                "onRenderModuleFn": ""
+                                                "getValueScript": "return item.getShowLabels();",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.submitValueScript.js",
+                                                "validateValueScript": "return true;",
+                                                "formatElementScript": ""
                                             }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": []
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": []
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "width-2",
+                                                "label": "Line Color",
+                                                "placeholder": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "color",
+                                                "beforeRenderModuleScript": "",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": "return item.getLineColor();",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.submitValueScript.js",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "width-2",
+                                                "label": "Polygon Fill Color",
+                                                "placeholder": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "color",
+                                                "beforeRenderModuleScript": "",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return item.getFillColor()+\"\";",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.9.config.submitValueScript.js",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "width-3",
+                                                "label": "Line Opacity",
+                                                "placeholder": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "numeric",
+                                                "beforeRenderModuleScript": "",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.10.config.getValueScript.js",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.10.config.submitValueScript.js",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
+                                        {
+                                            "type": "InlineHtml",
+                                            "config": []
+                                        },
+                                        {
+                                            "type": "FormBooleanField",
+                                            "config": []
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": []
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": []
                                         }
                                     ]
                                 },
