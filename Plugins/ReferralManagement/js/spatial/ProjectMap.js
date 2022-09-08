@@ -11,7 +11,7 @@ var ProjectMap=(function(){
 		}
 
 		if(window.CurrentMapItem){
-			return layerOptions.map='<project:'+window.CurrentMapItem.getId()+'>';
+			layerOptions.map='<project:'+window.CurrentMapItem.getId()+'>';
 		}
 
 		layer.setKmlOptions(layerOptions);
