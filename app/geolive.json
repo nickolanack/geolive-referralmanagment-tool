@@ -28789,16 +28789,16 @@
                             "FeatureDetailsForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 215,
-                            "y": 207
+                            "x": 225,
+                            "y": 217
                         },
                         "children": [
                             "FeatureDetailsForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 175,
-                                    "y": 483
+                                    "x": 185,
+                                    "y": 493
                                 }
                             }
                         ],
@@ -28813,39 +28813,6 @@
                                     "modules": [
                                         "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
-                                            "type": "InlineHtml",
-                                            "config": {
-                                                "className": "",
-                                                "text": "##Layer settings",
-                                                "template": "html.layerSettings",
-                                                "templateVariablesScript": "{}",
-                                                "formatTextScript": "",
-                                                "formatVariablesScript": "",
-                                                "ajaxRequestTemplate": true,
-                                                "identifier": "htmlLabel"
-                                            }
-                                        },
-                                        {
-                                            "type": "FormTextDescriptionField",
-                                            "config": {
-                                                "label": "Marker Icon",
-                                                "message": "",
-                                                "lines": 3,
-                                                "mandatory": false,
-                                                "showAudios": true,
-                                                "showImages": true,
-                                                "showDocuments": true,
-                                                "showVideos": true,
-                                                "className": "",
-                                                "maxChars": 0,
-                                                "showExpandInput": true,
-                                                "toolbarPosition": "bottom",
-                                                "textFormatScript": "",
-                                                "mediaIconTint": "rgb(100, 149, 237)",
-                                                "onRenderModuleFn": "module.runOnceOnLoad(function(){\n    \n    module.getTextField().getInputElement().setStyle('display','none');\n})"
-                                            }
-                                        },
-                                        {
                                             "type": "FormBooleanField",
                                             "config": {
                                                 "className": "width-3",
@@ -28854,7 +28821,7 @@
                                                 "mandatory": false,
                                                 "getValueScript": "return item.getShowLabels();",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
+                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
                                                 "validateValueScript": "return true;",
                                                 "formatElementScript": ""
                                             }
@@ -28868,7 +28835,7 @@
                                                 "mandatory": false,
                                                 "getValueScript": "return item.getShowIcons();",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.submitValueScript.js",
+                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
                                                 "validateValueScript": "return true;",
                                                 "formatElementScript": ""
                                             }
@@ -28880,9 +28847,9 @@
                                                 "label": "Show attributes",
                                                 "identifier": "boolean-field-attributes",
                                                 "mandatory": false,
-                                                "getValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.getValueScript.js",
+                                                "getValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.getValueScript.js",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.submitValueScript.js",
+                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
                                                 "validateValueScript": "",
                                                 "formatElementScript": ""
                                             }
@@ -28905,7 +28872,7 @@
                                                 "formatValueScript": "",
                                                 "getValueScript": "return item.getLineColor();",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.submitValueScript.js",
+                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         },
@@ -28927,7 +28894,7 @@
                                                 "formatValueScript": "",
                                                 "getValueScript": " return item.getFillColor()+\"\";",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.7.config.submitValueScript.js",
+                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         },
@@ -28947,9 +28914,9 @@
                                                 "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.getValueScript.js",
+                                                "getValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.getValueScript.js",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.submitValueScript.js",
+                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         },
@@ -28969,9 +28936,9 @@
                                                 "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.9.config.getValueScript.js",
+                                                "getValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.7.config.getValueScript.js",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.9.config.submitValueScript.js",
+                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.7.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         },
@@ -28993,7 +28960,7 @@
                                                 "formatValueScript": "",
                                                 "getValueScript": " return item.getLineWidth()+\"\";",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.10.config.submitValueScript.js",
+                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         }

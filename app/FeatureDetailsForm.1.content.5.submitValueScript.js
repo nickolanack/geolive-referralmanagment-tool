@@ -1,1 +1,1 @@
-wizardDataSet.showAttributes=object.value;
+wizardDataSet.fillColor=object.value;
