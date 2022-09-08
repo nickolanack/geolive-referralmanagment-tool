@@ -28812,16 +28812,16 @@
                             "FeatureDetailsForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 245,
-                            "y": 237
+                            "x": 255,
+                            "y": 247
                         },
                         "children": [
                             "FeatureDetailsForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 205,
-                                    "y": 450
+                                    "x": 215,
+                                    "y": 460
                                 }
                             }
                         ],
@@ -28848,7 +28848,7 @@
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "add another value",
                                                 "formatter": "color",
-                                                "beforeRenderModuleScript": "",
+                                                "beforeRenderModuleScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.beforeRenderModuleScript.js",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
                                                 "getValueScript": "return item.getLineColor();",
@@ -28870,7 +28870,7 @@
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "add another value",
                                                 "formatter": "color",
-                                                "beforeRenderModuleScript": "",
+                                                "beforeRenderModuleScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.beforeRenderModuleScript.js",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
                                                 "getValueScript": " return item.getFillColor()+\"\";",
@@ -28892,7 +28892,7 @@
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "add another value",
                                                 "formatter": "numeric",
-                                                "beforeRenderModuleScript": "",
+                                                "beforeRenderModuleScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.beforeRenderModuleScript.js",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
                                                 "getValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.getValueScript.js",
@@ -28914,7 +28914,7 @@
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "add another value",
                                                 "formatter": "none",
-                                                "beforeRenderModuleScript": "",
+                                                "beforeRenderModuleScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.beforeRenderModuleScript.js",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
                                                 "getValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.getValueScript.js",
@@ -28936,7 +28936,7 @@
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "add another value",
                                                 "formatter": "none",
-                                                "beforeRenderModuleScript": "",
+                                                "beforeRenderModuleScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.beforeRenderModuleScript.js",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
                                                 "getValueScript": " return item.getLineWidth()+\"\";",
