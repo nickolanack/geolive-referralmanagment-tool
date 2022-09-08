@@ -29,7 +29,20 @@ var ProjectMap=(function(){
 		};
 
 		layer.addParserFilter('point', function(data, i){
-			return checkMapFilter(data);
+			if(checkMapFilter(data)){
+
+
+				//force icon scale
+
+				data.icon={
+					url:data.icon,
+					scaledSize:new google.maps.Size(40,40)
+				}
+
+				return true;
+			}
+
+			return false;
 		});
 
 		layer.addParserFilter('line', function(data, i){
