@@ -1,0 +1,1 @@
+wizardDataSet.lineColor=object.value;

@@ -28789,16 +28789,16 @@
                             "FeatureDetailsForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 148,
-                            "y": 280
+                            "x": 158,
+                            "y": 290
                         },
                         "children": [
                             "FeatureDetailsForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 108,
-                                    "y": 446
+                                    "x": 118,
+                                    "y": 616
                                 }
                             }
                         ],
@@ -28814,19 +28814,36 @@
                                         "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
                                             "type": "InlineHtml",
-                                            "config": []
+                                            "config": {
+                                                "className": "",
+                                                "text": "##Layer settings",
+                                                "template": "html.layerSettings",
+                                                "templateVariablesScript": "{}",
+                                                "formatTextScript": "",
+                                                "formatVariablesScript": "",
+                                                "ajaxRequestTemplate": true,
+                                                "identifier": "htmlLabel"
+                                            }
                                         },
                                         {
                                             "type": "FormTextDescriptionField",
-                                            "config": []
-                                        },
-                                        {
-                                            "type": "FormBooleanField",
-                                            "config": []
-                                        },
-                                        {
-                                            "type": "FormBooleanField",
-                                            "config": []
+                                            "config": {
+                                                "label": "Marker Icon",
+                                                "message": "",
+                                                "lines": 3,
+                                                "mandatory": false,
+                                                "showAudios": true,
+                                                "showImages": true,
+                                                "showDocuments": true,
+                                                "showVideos": true,
+                                                "className": "",
+                                                "maxChars": 0,
+                                                "showExpandInput": true,
+                                                "toolbarPosition": "bottom",
+                                                "textFormatScript": "",
+                                                "mediaIconTint": "rgb(100, 149, 237)",
+                                                "onRenderModuleFn": "module.runOnceOnLoad(function(){\n    \n    module.getTextField().getInputElement().setStyle('display','none');\n})"
+                                            }
                                         },
                                         {
                                             "type": "FormBooleanField",
@@ -28837,18 +28854,38 @@
                                                 "mandatory": false,
                                                 "getValueScript": "return item.getShowLabels();",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.submitValueScript.js",
+                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
                                                 "validateValueScript": "return true;",
                                                 "formatElementScript": ""
                                             }
                                         },
                                         {
-                                            "type": "FormTextField",
-                                            "config": []
+                                            "type": "FormBooleanField",
+                                            "config": {
+                                                "className": "width-3",
+                                                "label": "Show Icons",
+                                                "identifier": "boolean-field",
+                                                "mandatory": false,
+                                                "getValueScript": "return item.getShowIcons();",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.submitValueScript.js",
+                                                "validateValueScript": "return true;",
+                                                "formatElementScript": ""
+                                            }
                                         },
                                         {
-                                            "type": "FormTextField",
-                                            "config": []
+                                            "type": "FormBooleanField",
+                                            "config": {
+                                                "className": "width-3",
+                                                "label": "Show attributes",
+                                                "identifier": "boolean-field-attributes",
+                                                "mandatory": false,
+                                                "getValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.getValueScript.js",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.submitValueScript.js",
+                                                "validateValueScript": "",
+                                                "formatElementScript": ""
+                                            }
                                         },
                                         {
                                             "type": "FormTextField",
@@ -28868,7 +28905,7 @@
                                                 "formatValueScript": "",
                                                 "getValueScript": "return item.getLineColor();",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.submitValueScript.js",
+                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         },
@@ -28890,7 +28927,7 @@
                                                 "formatValueScript": "",
                                                 "getValueScript": " return item.getFillColor()+\"\";",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.9.config.submitValueScript.js",
+                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.7.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         },
@@ -28910,7 +28947,51 @@
                                                 "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.10.config.getValueScript.js",
+                                                "getValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.getValueScript.js",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.submitValueScript.js",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "width-3",
+                                                "label": "Fill Opacity",
+                                                "placeholder": "add value",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "beforeRenderModuleScript": "",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.9.config.getValueScript.js",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.9.config.submitValueScript.js",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "width-3",
+                                                "label": "Line Width",
+                                                "placeholder": "add value",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "beforeRenderModuleScript": "",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return item.getLineWidth()+\"\";",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.10.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
@@ -28918,19 +28999,74 @@
                                         },
                                         {
                                             "type": "InlineHtml",
-                                            "config": []
+                                            "config": {
+                                                "className": "",
+                                                "text": "##Advanced options",
+                                                "template": "html.layerFormAdvancedSection",
+                                                "templateVariablesScript": "{}",
+                                                "formatTextScript": "",
+                                                "formatVariablesScript": "",
+                                                "ajaxRequestTemplate": true,
+                                                "identifier": "htmlLabel"
+                                            }
                                         },
                                         {
                                             "type": "FormBooleanField",
-                                            "config": []
+                                            "config": {
+                                                "className": "can-minimize",
+                                                "label": "Render as tile images",
+                                                "identifier": "boolean-field",
+                                                "mandatory": false,
+                                                "getValueScript": "return item.getRenderTiles();",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.12.config.submitValueScript.js",
+                                                "validateValueScript": "",
+                                                "formatElementScript": ""
+                                            }
                                         },
                                         {
                                             "type": "FormTextField",
-                                            "config": []
+                                            "config": {
+                                                "className": "can-minimize",
+                                                "label": "Options",
+                                                "placeholder": "",
+                                                "lines": 2,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "beforeRenderModuleScript": "",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.13.config.getValueScript.js",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.13.config.submitValueScript.js",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
                                         },
                                         {
                                             "type": "FormTextField",
-                                            "config": []
+                                            "config": {
+                                                "className": "can-minimize",
+                                                "label": "Script Feature Format",
+                                                "placeholder": "add value",
+                                                "lines": 5,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "beforeRenderModuleScript": "",
+                                                "onRenderTextFieldScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.14.config.onRenderTextFieldScript.js",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return item.getScript(); ",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.14.config.submitValueScript.js",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
                                         }
                                     ]
                                 },
