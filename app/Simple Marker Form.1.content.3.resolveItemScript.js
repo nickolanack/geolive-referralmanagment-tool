@@ -1,3 +1,6 @@
+
+console.log('pass feature type as featureType')
+
 return new MockDataTypeItem({
     lineColor: "#000000",
 					fillColor: "#000000",
