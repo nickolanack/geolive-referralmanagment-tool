@@ -105,6 +105,44 @@ var ProjectMap=(function(){
 			});
 
 		},
+
+		dropMarkerSubformItem:function(item){
+			console.log('pass feature type as featureType')
+
+			return new MockDataTypeItem({
+			    featureType:item.getType(),
+			    lineColor: "#000000",
+				fillColor: "#000000",
+				lineOpacity: 1,
+				fillOpacity: 0.5,
+				lineWidth: 1,
+				description: 
+				'<img src="https://dyl2vw577xcfk.cloudfront.net/wabun.geoforms.ca/1/Uploads/LGb_[ImAgE]_FkE_[G]_aQl.png" />',
+			})
+		},
+		dropMarkerSubformHelper:function(uivew){
+
+
+			uivew.getChildWizard(function(wizard) {
+				wizard.addEvent('valueChange', function() {
+				    wizard.update();
+				    var d= wizard.getData();
+				    var parentWizard=uivew.getWizard();
+				    var p=parentWizard.getData();
+				    console.log(d);
+				    
+				    var images = JSTextUtilities.ParseImages(d.description).map(function(o) {
+						return o.url;
+					});
+					
+					if(images.length>0){
+					    parentWizard.setDataValue('icon', images[0]);
+					}
+				    
+				});
+			});
+
+		},
 		
 		formatMarkerTile:function(dragTile, index){
 
