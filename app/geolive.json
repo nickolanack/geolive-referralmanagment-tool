@@ -11129,7 +11129,7 @@
             "loadMapId": "{default}",
             "target": "googlemap",
             "templateName": "googlemap",
-            "loadWidgetsWithTarget": "forTheMap",
+            "loadWidgetsWithTarget": "forTheMap, FeatureDetailsForm",
             "mapOptions": {
                 "userHistory": true
             },
