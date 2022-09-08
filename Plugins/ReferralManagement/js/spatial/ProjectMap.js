@@ -143,7 +143,7 @@ var ProjectMap=(function(){
 						return o.url;
 					});
 					
-					if(item.getFeatureType()=="marker"&&images.length>0){
+					if(item.getType()=="marker"&&images.length>0){
 					    parentWizard.setDataValue('icon', images[0]);
 					}
 				    
