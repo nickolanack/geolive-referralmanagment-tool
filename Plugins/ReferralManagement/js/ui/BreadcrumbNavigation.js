@@ -48,13 +48,18 @@ var BreadcrumbNavigation = (function() {
 			
 
 			var label=part;
+
+			if(btn.view==label){
+				label=btn.html||label;
+			}
+
 			var click=null;
 			if(isArray_(part)){
 				label=part[0];
 				click=part[1];
 			}
 
-			el.innerHTML = btn.html||label;
+			el.innerHTML = label;
 
 			if(click){
 				var fn=click;
