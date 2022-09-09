@@ -82,7 +82,9 @@ var BreadcrumbNavigation = (function() {
 
 
 		},
-		setPath: function(view) {
+		setPath: function(state) {
+
+			view=state.view||state;
 
 			var me=this;
 
@@ -217,7 +219,7 @@ var BreadcrumbNavigation = (function() {
 							return;
 						}
 
-						me.setPath(state.view);
+						me.setPath(state);
 						me.showPath();
 
 
@@ -226,7 +228,7 @@ var BreadcrumbNavigation = (function() {
 
 					controller.addEvent('childNavigation', function(menu, state, options, item) {
 
-						me.setPath(me._rootState.view);
+						me.setPath(me._rootState);
 						me.showPath();
 						valueEl.appendChild(new Element('span', {
 							"class": "field-value",
