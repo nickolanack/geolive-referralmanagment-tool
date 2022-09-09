@@ -205,8 +205,7 @@ var ProjectMap = (function() {
 		},
 
 		multipointToolOnSaveFeature:function(feature, type){
-
-
+			this._map.editItem(feature);
 		},
 
 		formatMarkerTile: function(dragTile, index) {
