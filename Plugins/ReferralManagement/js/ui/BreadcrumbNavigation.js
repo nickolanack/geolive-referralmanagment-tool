@@ -49,7 +49,7 @@ var BreadcrumbNavigation = (function() {
 
 			var label=part;
 
-			if(btn.view==label){
+			if(btn.name==label){
 				label=btn.html||label;
 			}
 
