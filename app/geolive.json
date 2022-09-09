@@ -23298,10 +23298,12 @@
             "formatDistance": "",
             "formatHeading": "",
             "onRenderTileScript": "",
+            "initializeMultipointToolScript": "widget.MultipointTool.399.initializeMultipointToolScript.js",
             "getInitialFeatureScript": "",
             "onFeatureStartScript": "",
             "onFeatureChangeScript": "",
             "onFeatureEndScript": "",
+            "onFeatureSaveScript": "widget.MultipointTool.399.onFeatureSaveScript.js",
             "readAccess": "public",
             "position": ""
         }
