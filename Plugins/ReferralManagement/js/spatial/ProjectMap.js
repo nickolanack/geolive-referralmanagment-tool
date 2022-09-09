@@ -198,6 +198,17 @@ var ProjectMap = (function() {
 
 		},
 
+		multipointToolInit:function(multipointTool){
+
+
+			
+		},
+
+		multipointToolOnSaveFeature:function(feature, type){
+
+
+		},
+
 		formatMarkerTile: function(dragTile, index) {
 
 			this._setMap(dragTile.getMap());
