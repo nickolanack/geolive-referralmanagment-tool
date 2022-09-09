@@ -33,7 +33,7 @@ var  DisplayTheme=(function(){
 	            }
 	        };
 
-		}
+		},
 
 		getMode:function(){
 			var el = $$('.ui-view.dashboard-main')[0];
