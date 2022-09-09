@@ -205,7 +205,11 @@ var ProjectMap = (function() {
 		},
 
 		multipointToolOnSaveFeature:function(feature, type){
-			this._map.editItem(feature, {});
+			
+			this._map.editItem(feature, {}).on('cancel',function(){
+				feature.destroy();
+			});
+
 		},
 
 		formatMarkerTile: function(dragTile, index) {
