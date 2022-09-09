@@ -23,6 +23,10 @@ $purple:#2e344b; /*#0f1c4b;*/
      color:$purple;
 }
 
+.dark .field-value-module.inline.icon:before {
+    color: #e1e1e1;
+}
+
 button.primary-btn.nav-new-btn.btn-index-1 {
     background-color: cornflowerblue;
 }
