@@ -10,7 +10,30 @@ var  DisplayTheme=(function(){
 
 		start:function(){
 			this.setMode(localStorage.getItem('mode'));
+
+			var me=this;
+			theGooglemapMapLoader.on('displayMap', function(map){
+	        	map.getDisplayController().setOptions(me._getFormOptions());
+	        });
+
 		},
+
+		_getFormOptions:function(){
+
+
+			var mode=this.getMode();
+
+
+			var classNames=(mode=="dark"?" dark ":"")+DashboardConfig.getValue('pageClassNames');
+			var formClassNames=this.getInvertsForms()?((mode=="dark"?"":" dark ")+DashboardConfig.getValue('pageClassNames')):classNames;
+			var application = GatherDashboard.getApplication();
+			return {
+	            popoverOptions:{
+	                parentClassName:formClassNames
+	            }
+	        };
+
+		}
 
 		getMode:function(){
 			var el = $$('.ui-view.dashboard-main')[0];
@@ -23,26 +46,8 @@ var  DisplayTheme=(function(){
 		setInvertForms:function(bool){
 			localStorage.setItem('invert-forms', bool);
 
-			var mode=this.getMode();
-
-
-			var classNames=(mode=="dark"?" dark ":"")+DashboardConfig.getValue('pageClassNames');
-			var formClassNames=this.getInvertsForms()?((mode=="dark"?"":" dark ")+DashboardConfig.getValue('pageClassNames')):classNames;
 			var application = GatherDashboard.getApplication();
-			application.getDisplayController().setOptions({
-	            popoverOptions:{
-	                parentClassName:formClassNames
-	            }
-	        });
-
-
-	        // theGooglemapMapLoader.on('showMap', function(map){
-	        // 	map.getDisplayController().setOptions({
-		       //      popoverOptions:{
-		       //          parentClassName:formClassNames
-		       //      }
-		       //  });
-	        // });
+			application.getDisplayController().setOptions(this._getFormOptions());
 
 		},
 
@@ -60,12 +65,16 @@ var  DisplayTheme=(function(){
 			var classNames=(mode=="dark"?" dark ":"")+DashboardConfig.getValue('pageClassNames');
 			var formClassNames=this.getInvertsForms()?((mode=="dark"?"":" dark ")+DashboardConfig.getValue('pageClassNames')):classNames;
 			var application = GatherDashboard.getApplication();
-			application.getDisplayController().setOptions({
-	            popoverOptions:{
-	                parentClassName:formClassNames
-	            }
-	        })
+
+
+			var formOptions=this._getFormOptions();
+			application.getDisplayController().setOptions(formOptions);
 	        
+			theGooglemapMapLoader.getMaps().forEach(function(map){
+				map.getDisplayController().setOptions(formOptions);
+			});
+
+
 	        NotificationBubble.SetOptions({
 	            className:classNames
 	        });
