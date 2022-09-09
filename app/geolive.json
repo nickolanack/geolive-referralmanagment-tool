@@ -3309,26 +3309,6 @@
             "readAccess": "public"
         }
     },
-    "widget.140": {
-        "name": "Search Bar Tab",
-        "instance": "SearchBarTab",
-        "parameters": {
-            "tabColor": "rgb(134, 187, 0)",
-            "fontColor": "rgba(0,0,0)",
-            "showIcon": true,
-            "icon": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[G]_xVL_sLr_Tgq_[ImAgE].png"
-            ],
-            "iconActive": [],
-            "tabName": "SearchBarTab",
-            "widgetTitle": "Add Proposal",
-            "target": "",
-            "readAccess": "lands-department",
-            "position": "RIGHT_CENTER",
-            "onClickEventScript": "Add Proposal.onClickEventScript.js",
-            "showOverlay": false
-        }
-    },
     "widget.142": {
         "name": "Custom Tile Control Script",
         "instance": "CustomTileControlScript",
