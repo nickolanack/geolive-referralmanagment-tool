@@ -2950,35 +2950,6 @@
             "enableRevisions": false
         }
     },
-    "widget.129": {
-        "name": "Search Bar Tab View",
-        "instance": "SearchBarTabOverlayView",
-        "parameters": {
-            "tabColor": "rgb(0, 177, 230)",
-            "fontColor": "rgb(0,0,0)",
-            "tabName": "SearchBarTab",
-            "showIcon": true,
-            "icon": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/[ImAgE]_SiH_MOM_DjE_[G].png"
-            ],
-            "iconActive": [],
-            "customScript": "",
-            "className": "",
-            "viewType": "view",
-            "namedView": "ShareView",
-            "showInlineEdit": false,
-            "namedFormView": "defaultView",
-            "showDeleteButton": false,
-            "deleteItemScript": "defaultBehaviorFn()",
-            "formatModuleScript": "",
-            "resolveItemScript": "",
-            "itemButtonsScript": "return [];",
-            "widgetTitle": "Share",
-            "target": "",
-            "readAccess": "lands-department",
-            "position": "RIGHT_CENTER"
-        }
-    },
     "widget.131": {
         "name": "Template",
         "instance": "Template",
@@ -3263,35 +3234,6 @@
             "authUserAjaxScript": "XXXX-XXXX",
             "saveParametersAsData": false,
             "enableRevisions": false
-        }
-    },
-    "widget.135": {
-        "name": "Search Bar Tab View",
-        "instance": "SearchBarTabOverlayView",
-        "parameters": {
-            "tabColor": "rgb(159, 151, 151)",
-            "fontColor": "rgb(5, 5, 5)",
-            "showIcon": true,
-            "icon": [
-                "components\/com_geolive\/users_files\/user_files_681\/Uploads\/7YB_wHp_[ImAgE]_BVE_[G].png"
-            ],
-            "iconActive": [],
-            "customScript": "",
-            "className": "",
-            "viewType": "view",
-            "namedView": "ProposalsListView",
-            "showInlineEdit": false,
-            "namedFormView": "defaultView",
-            "showDeleteButton": false,
-            "deleteItemScript": "defaultBehaviorFn()",
-            "formatModuleScript": "",
-            "resolveItemScript": "",
-            "itemButtonsScript": "return [];",
-            "widgetTitle": "Proposals Overlay",
-            "target": "",
-            "readAccess": "lands-department",
-            "position": "RIGHT_CENTER",
-            "tabName": "Proposals"
         }
     },
     "widget.137": {
