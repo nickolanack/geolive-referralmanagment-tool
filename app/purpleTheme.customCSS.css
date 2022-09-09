@@ -27,6 +27,9 @@ $purple:#2e344b; /*#0f1c4b;*/
     color: #e1e1e1;
 }
 
+.dark [data-col="public"] .indicator-switch:before{
+    color: #ffaa9b;
+}
 .dark [data-col="public"] .active .indicator-switch:before{
     color: #e1e1e1;
 }
