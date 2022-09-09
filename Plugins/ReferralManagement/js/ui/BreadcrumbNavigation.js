@@ -44,7 +44,7 @@ var BreadcrumbNavigation = (function() {
 			return this;
 		},
 
-		setValue:function(part, el){
+		setValue:function(part, el, btn){
 			
 
 			var label=part;
@@ -54,7 +54,7 @@ var BreadcrumbNavigation = (function() {
 				click=part[1];
 			}
 
-			el.innerHTML = label;
+			el.innerHTML = btn.html||label;
 
 			if(click){
 				var fn=click;
@@ -107,7 +107,6 @@ var BreadcrumbNavigation = (function() {
 			}
 
 			var parts=view.slice(0);
-				//this.setValue(view[0], this._valueEl);
 
 
 			parts.forEach(function(part){
@@ -116,7 +115,7 @@ var BreadcrumbNavigation = (function() {
 					"class": "field-value",
 				}));
 
-				me.setValue(part, link);
+				me.setValue(part, link, btn);
 
 			});
 
