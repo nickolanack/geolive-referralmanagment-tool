@@ -28900,7 +28900,7 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "",
+            "widgetTitle": "gatherWelcome",
             "target": "none",
             "templateName": "{target}",
             "requireTarget": true,
@@ -28908,7 +28908,36 @@
             "onRenderApplictionScript": "",
             "formatModulesScript": "",
             "notifyViewer": false,
-            "useRemote": ""
+            "useRemote": "",
+            "metadata": {
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "positions": {
+                    "title": {
+                        "modules": [
+                            "gatherWelcome.metadata.positions.title.modules.0.json"
+                        ]
+                    },
+                    "content": {
+                        "modules": [
+                            "gatherWelcome.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": [
+                            "gatherWelcome.metadata.positions.footer.modules.0.json"
+                        ]
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                }
+            },
+            "readAccess": "public"
         }
     }
 }
