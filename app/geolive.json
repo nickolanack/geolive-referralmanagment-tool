@@ -28995,13 +28995,14 @@
             "cacheable": false,
             "link": false,
             "sass": false,
-            "widgetTitle": "",
-            "target": "none",
+            "widgetTitle": "welcomeStyle",
+            "target": "welcomeStyle",
             "customCSS": "",
             "sassParamters": [],
             "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
-            "saveAsData": false
+            "saveAsData": false,
+            "readAccess": "public"
         }
     }
 }
