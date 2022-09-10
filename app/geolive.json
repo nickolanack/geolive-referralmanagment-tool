@@ -28958,32 +28958,27 @@
             "notifyViewer": false,
             "useRemote": "",
             "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": []
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
                 "positionList": [
                     "title",
                     "content",
                     "footer",
                     "menu"
                 ],
-                "positions": {
-                    "title": {
-                        "modules": [
-                            "gatherWelcomeContent.metadata.positions.title.modules.0.json"
-                        ]
-                    },
-                    "content": {
-                        "modules": [
-                            "gatherWelcomeContent.metadata.positions.content.modules.0.json"
-                        ]
-                    },
-                    "footer": {
-                        "modules": [
-                            "gatherWelcomeContent.metadata.positions.footer.modules.0.json"
-                        ]
-                    },
-                    "menu": {
-                        "modules": []
-                    }
-                }
+                "_diagramState": []
             },
             "readAccess": "public"
         }
