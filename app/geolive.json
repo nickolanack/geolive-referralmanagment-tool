@@ -28901,8 +28901,8 @@
         "instance": "DetailView",
         "parameters": {
             "widgetTitle": "gatherWelcome",
-            "target": "none",
-            "templateName": "{target}",
+            "target": "gatherWelcome",
+            "templateName": "gatherWelcome",
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "gatherWelcome.onRenderApplictionScript.js",
