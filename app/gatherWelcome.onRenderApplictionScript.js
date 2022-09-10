@@ -23,5 +23,6 @@ GetWidget('createDashboardForm')->display($targetInstance);
 GetWidget('adminStyles')->display($targetInstance);   
 GetWidget('darkTheme')->display($targetInstance);   
 GetWidget('installStyle')->display($targetInstance);
+GetWidget('welcomeStyle')->display($targetInstance);
 
 GetWidget('dialogForm')->display($targetInstance);
