@@ -28992,9 +28992,9 @@
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
-            "cacheable": false,
-            "link": false,
-            "sass": false,
+            "cacheable": true,
+            "link": true,
+            "sass": true,
             "widgetTitle": "welcomeStyle",
             "target": "welcomeStyle",
             "customCSS": "",
