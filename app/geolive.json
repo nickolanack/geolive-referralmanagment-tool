@@ -28905,7 +28905,7 @@
             "templateName": "{target}",
             "requireTarget": true,
             "resolveItemScript": "return item",
-            "onRenderApplictionScript": "",
+            "onRenderApplictionScript": "gatherWelcome.onRenderApplictionScript.js",
             "formatModulesScript": "",
             "notifyViewer": false,
             "useRemote": "",
