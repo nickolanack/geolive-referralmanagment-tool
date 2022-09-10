@@ -200,6 +200,13 @@
                     "plugin": "UserInterface",
                     "pluginView": "widget",
                     "widget": "install"
+                },
+                {
+                    "name": "welcome",
+                    "view": "plugin",
+                    "plugin": "UserInterface",
+                    "pluginView": "widget",
+                    "widget": "gatherWelcome"
                 }
             ],
             "useRemoteServerUI": false,
