@@ -29101,9 +29101,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
+            "parseMarkdown": true,
             "saveTemplateAsData": false,
-            "contentTemplate": "#Item One\n\nContent description"
+            "contentTemplate": "#Item One\n\nContent description",
+            "readAccess": "public"
         }
     },
     "widget.521": {
@@ -29115,9 +29116,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
+            "parseMarkdown": true,
             "saveTemplateAsData": false,
-            "contentTemplate": "#Item Two\n\nContent description"
+            "contentTemplate": "#Item Two\n\nContent description",
+            "readAccess": "public"
         }
     },
     "widget.522": {
