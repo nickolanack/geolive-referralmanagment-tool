@@ -29131,9 +29131,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
+            "parseMarkdown": true,
             "saveTemplateAsData": false,
-            "contentTemplate": "#Item One\n\nContent description"
+            "contentTemplate": "#Item One\n\nContent description",
+            "readAccess": "public"
         }
     }
 }
