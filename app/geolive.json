@@ -15433,16 +15433,16 @@
                             "createDashboardForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 379,
-                            "y": 310
+                            "x": 389,
+                            "y": 320
                         },
                         "children": [
                             "createDashboardForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 339,
-                                    "y": 498
+                                    "x": 349,
+                                    "y": 508
                                 }
                             },
                             {
@@ -15452,16 +15452,16 @@
                                     "createDashboardForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 832,
-                                    "y": 308
+                                    "x": 842,
+                                    "y": 318
                                 },
                                 "children": [
                                     "createDashboardForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 792,
-                                            "y": 509
+                                            "x": 802,
+                                            "y": 519
                                         }
                                     }
                                 ],
@@ -15603,7 +15603,7 @@
                                         {
                                             "type": "InlineHtml",
                                             "config": {
-                                                "className": "intro-section-2",
+                                                "className": "intro-section-2 referral-site",
                                                 "text": "#Collaborate on referral submission from anywhere",
                                                 "template": "html.install2",
                                                 "templateVariablesScript": "{}",
@@ -15616,7 +15616,7 @@
                                         {
                                             "type": "InlineHtml",
                                             "config": {
-                                                "className": "intro-section-3",
+                                                "className": "intro-section-3 referral-site",
                                                 "text": "#Make data driven decisions",
                                                 "template": "html.install3",
                                                 "templateVariablesScript": "{}",
