@@ -29159,9 +29159,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
+            "parseMarkdown": true,
             "saveTemplateAsData": false,
-            "contentTemplate": "module-html-geoforms-text.contentTemplate.html"
+            "contentTemplate": "module-html-geoforms-text.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }
