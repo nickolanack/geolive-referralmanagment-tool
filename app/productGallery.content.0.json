@@ -3,11 +3,11 @@
     "config": {
         "className": "",
         "text": "#Item One\n\nContent description",
-        "template": "",
-        "templateVariablesScript": "",
+        "template": "html.product",
+        "templateVariablesScript": "{}",
         "formatTextScript": "",
         "formatVariablesScript": "",
-        "ajaxRequestTemplate": false,
+        "ajaxRequestTemplate": true,
         "identifier": "htmlLabel"
     }
 }
