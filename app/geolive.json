@@ -29049,6 +29049,19 @@
                             {
                                 "type": "InlineHtml",
                                 "config": {
+                                    "className": "intro-section",
+                                    "text": "#Item One\n\nContent description",
+                                    "template": "html.product",
+                                    "templateVariablesScript": "{}",
+                                    "formatTextScript": "",
+                                    "formatVariablesScript": "",
+                                    "ajaxRequestTemplate": true,
+                                    "identifier": "htmlLabel"
+                                }
+                            },
+                            {
+                                "type": "InlineHtml",
+                                "config": {
                                     "className": "intro-section-2",
                                     "text": "#Item Two\n\nContent description",
                                     "template": "html.product1",
@@ -29135,6 +29148,20 @@
             "saveTemplateAsData": false,
             "contentTemplate": "#Item One\n\nContent description",
             "readAccess": "public"
+        }
+    },
+    "widget.523": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-geoforms.text",
+            "target": "module.html-geoforms.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "module-html-geoforms-text.contentTemplate.html"
         }
     }
 }

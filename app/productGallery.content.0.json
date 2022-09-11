@@ -2,12 +2,12 @@
     "type": "InlineHtml",
     "config": {
         "className": "intro-section",
-        "text": "#Item One\n\nContent description",
-        "template": "html.product",
+        "text": "#Geoforms - web based mapping software",
+        "template": "html.geoforms",
         "templateVariablesScript": "{}",
         "formatTextScript": "",
         "formatVariablesScript": "",
-        "ajaxRequestTemplate": true,
+        "ajaxRequestTemplate": false,
         "identifier": "htmlLabel"
     }
 }
