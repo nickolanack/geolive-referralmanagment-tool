@@ -28968,14 +28968,14 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "ui-view login-form install-form",
+                                    "className": "",
                                     "identifier": "",
-                                    "viewType": "form",
-                                    "namedView": "defaultView",
+                                    "viewType": "view",
+                                    "namedView": "productGallery",
                                     "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
-                                    "namedFormView": "createDashboardForm",
+                                    "namedFormView": "defaultView",
                                     "formOptions": "\"{}\"",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "defaultBehaviorFn()",
