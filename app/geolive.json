@@ -29045,7 +29045,33 @@
                     },
                     "content": {
                         "modules": [
-                            "productGallery.metadata.positions.content.modules.0.json"
+                            "productGallery.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "",
+                                    "text": "#Item Two\n\nContent description",
+                                    "template": "html.product1",
+                                    "templateVariablesScript": "{}",
+                                    "formatTextScript": "",
+                                    "formatVariablesScript": "",
+                                    "ajaxRequestTemplate": true,
+                                    "identifier": "htmlLabel"
+                                }
+                            },
+                            {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "",
+                                    "text": "#Item One\n\nContent description",
+                                    "template": "html.product2",
+                                    "templateVariablesScript": "{}",
+                                    "formatTextScript": "",
+                                    "formatVariablesScript": "",
+                                    "ajaxRequestTemplate": true,
+                                    "identifier": "htmlLabel"
+                                }
+                            }
                         ]
                     },
                     "footer": {
@@ -29064,6 +29090,48 @@
                 "_diagramState": []
             },
             "readAccess": "public"
+        }
+    },
+    "widget.520": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-product.text",
+            "target": "module.html-product.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "#Item One\n\nContent description"
+        }
+    },
+    "widget.521": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-product1.text",
+            "target": "module.html-product1.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "#Item Two\n\nContent description"
+        }
+    },
+    "widget.522": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-product2.text",
+            "target": "module.html-product2.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "#Item One\n\nContent description"
         }
     }
 }
