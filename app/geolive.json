@@ -28963,7 +28963,32 @@
                         "modules": []
                     },
                     "content": {
-                        "modules": []
+                        "modules": [
+                            "gatherWelcomeContent.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "ui-view login-form install-form",
+                                    "identifier": "",
+                                    "viewType": "form",
+                                    "namedView": "defaultView",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "createDashboardForm",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            }
+                        ]
                     },
                     "footer": {
                         "modules": []
