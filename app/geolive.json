@@ -21602,16 +21602,16 @@
                             "documentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 303,
-                            "y": 332
+                            "x": 313,
+                            "y": 342
                         },
                         "children": [
                             "documentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 263,
-                                    "y": 621
+                                    "x": 273,
+                                    "y": 631
                                 }
                             },
                             {
@@ -21621,16 +21621,16 @@
                                     "documentForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 795,
-                                    "y": 382
+                                    "x": 805,
+                                    "y": 392
                                 },
                                 "children": [
                                     "documentForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 755,
-                                            "y": 571
+                                            "x": 765,
+                                            "y": 581
                                         }
                                     },
                                     {
@@ -21640,16 +21640,16 @@
                                             "documentForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1347,
-                                            "y": 437
+                                            "x": 1357,
+                                            "y": 447
                                         },
                                         "children": [
                                             "documentForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1307,
-                                                    "y": 603
+                                                    "x": 1317,
+                                                    "y": 613
                                                 }
                                             }
                                         ],
@@ -21753,7 +21753,7 @@
                                                         "shuffleTags": false,
                                                         "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
                                                         "getItemTagsScript": "documentForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.2.config.getItemTagsScript.js",
-                                                        "formatModule": " var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());\n if (!(user.isTeamManager())) {\n    module.getElement().setStyle('display', 'none');\n }\n \n module.getElement().setStyle('display', 'none');"
+                                                        "formatModule": " var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());\n if (!(user.isTeamManager())) {\n    module.getElement().setStyle('display', 'none');\n    return;\n }\n \n \/\/module.getElement().setStyle('display', 'none');"
                                                     }
                                                 },
                                                 {
