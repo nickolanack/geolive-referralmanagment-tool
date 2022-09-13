@@ -583,6 +583,12 @@ var ProjectList = (function() {
 
 		return function(viewer, element, parentModule) {
 
+			var module=null;
+			if(!element){
+				module=new ElementModule('div');
+				element=module.getElement();
+			}
+
 			var div = element.appendChild(new Element('div', {
 
 				"class": "project-list-filters section-indent",
@@ -659,7 +665,9 @@ var ProjectList = (function() {
 			});
 
 
-
+			if(module){
+				return module;
+			}
 		}
 	}
 
