@@ -231,7 +231,10 @@ var Project = (function() {
 		isBaseMapLayerForCurrentUser:function(){
 			if(this.isBaseMapLayer()){
 				var u=ProjectTeam.CurrentTeam().getUser(AppClient.getId());
-				return this.getProjectCommunity()==u.getCommunity();
+
+				//root group can create base layers for all communities otherwise community can only set their own
+
+				return this.getProjectCommunity()==u.getCommunity()||this.getProjectCommunity()==UserGroups.GetCollective();
 			}
 
 			return false;
