@@ -6055,6 +6055,28 @@ div.popover[data-with-view="reportSelectionView"]{
     filter: invert(1);
 }
 
+
+
+._tableStyle_{
+    
+    button.injected-btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 4px 15px;
+        font-size: 13px;
+    }
+    
+    .table-header button.injected-btn {
+        display: none;
+    }
+
+    
+}
+
+
+
+
 ._tableStyle_{
     
     [data-col] .priority-indicator {
