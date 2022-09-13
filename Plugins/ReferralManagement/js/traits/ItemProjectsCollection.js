@@ -36,11 +36,11 @@ var InlineProjectSelection=new Class_({
 		Extends:MockDataTypeItem,
 		hasProject:function(item){
 
-			return item.isBaseMapLayer()||ProjectSelection.hasProject(item);
+			return item.isBaseMapLayerForCurrentUser()||ProjectSelection.hasProject(item);
 
 		},
 		canAddRemoveProject:function(item){
-			return !item.isBaseMapLayer();
+			return !item.isBaseMapLayerForCurrentUser();
 		},
 		addProject:function(p){
 

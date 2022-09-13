@@ -13,7 +13,7 @@ var SpatialProject = (function() {
 			ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
 
 				var projects = team.getProjects().filter(function(p) {
-					return p.isDataset() && p.isBaseMapLayer();
+					return p.isDataset() && p.isBaseMapLayerForCurrentUser();
 				});
 
 				projects.map(function(project) {
