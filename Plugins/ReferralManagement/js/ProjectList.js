@@ -678,7 +678,7 @@ var ProjectList = (function() {
 
 	ProjectList.AddTableHeader = function(listModule) {
 
-		(new TableHeader('projectTableLayout'))
+		return (new TableHeader('projectTableLayout'))
 		.addSort('id', function(a, b) {
 
 			return parseInt(a.getId()) - parseInt(b.getId());

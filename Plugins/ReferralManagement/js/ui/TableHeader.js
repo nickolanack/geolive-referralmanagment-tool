@@ -161,7 +161,7 @@ var TableHeader = (function() {
 				setTimeout(function(){
 					me._isLoaded=true;
 					me.fireEvent('load');
-				},50);
+				}, 50);
 
 				return;
 			}
