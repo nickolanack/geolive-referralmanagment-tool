@@ -601,18 +601,20 @@ var ProjectList = (function() {
 			}));
 
 
-			var sortModule = (new ListSortModule(function() {
-				return viewer.findChildViews(function(v) {
-					return v instanceof UIListViewModule
-				}).pop();
-			}, {
-				sorters: ProjectList.projectSorters(),
-				currentSort: "priority",
-				currentSortInvert: true,
-				//applyfilter:true
-			})).load(null, div, null);
-
 			parentModule.runOnceOnLoad(function() {
+
+				var sortModule = (new ListSortModule(function() {
+					return viewer.findChildViews(function(v) {
+						return v instanceof UIListViewModule
+					}).pop();
+				}, {
+					sorters: ProjectList.projectSorters(),
+					currentSort: "priority",
+					currentSortInvert: true,
+					//applyfilter:true
+				})).load(null, div, null);
+
+			
 				/**
 					* TODO remove this timeout, the need for it. or set sortModule to automatically setSortObject
 					*/
@@ -628,20 +630,22 @@ var ProjectList = (function() {
 			});
 
 
-			var filter = (item && item.getFilter) ? item.getFilter() : "complete";
-			var invertFilter = (item && item.getInvertFilter) ? item.getInvertFilter() : (filter == "complete" ? true : false);
-
-			var filterModule = (new ListFilterModule(function() {
-				return viewer.findChildViews(function(v) {
-					return v instanceof UIListViewModule
-				}).pop();
-			}, {
-				filters: ProjectList.projectFilters(),
-				currentFilter: (invertFilter ? '!' : '') + filter,
-				//applyfilter:true
-			})).load(null, div, null);
-
 			parentModule.runOnceOnLoad(function() {
+
+				var filter = (item && item.getFilter) ? item.getFilter() : "complete";
+				var invertFilter = (item && item.getInvertFilter) ? item.getInvertFilter() : (filter == "complete" ? true : false);
+
+				var filterModule = (new ListFilterModule(function() {
+					return viewer.findChildViews(function(v) {
+						return v instanceof UIListViewModule
+					}).pop();
+				}, {
+					filters: ProjectList.projectFilters(),
+					currentFilter: (invertFilter ? '!' : '') + filter,
+					//applyfilter:true
+				})).load(null, div, null);
+
+			
 
 				try {
 					filterModule.getListModule().setFilterObject(filterModule);
