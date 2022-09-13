@@ -24,7 +24,7 @@ var ItemCollection=new Class({});
 
 		}
 		var button = new ElementModule('button', {
-			"class": "primary-btn",
+			"class": "primary-btn injected-btn",
 			html: "Add",
 			events: {
 				click: function() {
