@@ -22566,16 +22566,16 @@
                             "datasetSelectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 175,
-                            "y": 125
+                            "x": 185,
+                            "y": 135
                         },
                         "children": [
                             "datasetSelectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 135,
-                                    "y": 291
+                                    "x": 145,
+                                    "y": 301
                                 }
                             }
                         ],
@@ -22588,15 +22588,7 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
-                                        {
-                                            "type": "WizardScriptElement",
-                                            "config": {
-                                                "name": "My Custom Script",
-                                                "script": "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.script.js",
-                                                "description": "Info about my custom script"
-                                            }
-                                        }
+                                        "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
                                     ]
                                 },
                                 "footer": {
