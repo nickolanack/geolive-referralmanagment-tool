@@ -1,8 +1,8 @@
 {
     "type": "UIListView",
     "config": {
-        "listClassName": "dataset-select inline-form-list",
-        "className": "feed-sub-item",
+        "listClassName": "--dataset-select --inline-form-list projects-list",
+        "className": "--feed-sub-item section-module",
         "identifier": "",
         "viewType": "view",
         "namedView": "singleProjectListItemTableDetail",
@@ -13,7 +13,7 @@
         "formOptions": "\"{}\"",
         "showDeleteButton": false,
         "deleteItemScript": "defaultBehaviorFn()",
-        "initModuleScript": "new TableAutoHeightBehavior(module, {});",
+        "initModuleScript": "ProjectList.AddTableHeader(module)\nmodule.setPaginationOptions({\n    position:\"auto\",\n    showPages:true\n});\nnew TableAutoHeightBehavior(module, {});",
         "formatModuleScript": "",
         "resolveItemScript": "return item",
         "filterModulesScript": "return Project.FormatProjectSelectionListModules(list, item, listItem);\n",
