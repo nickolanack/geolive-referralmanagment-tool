@@ -228,6 +228,16 @@ var Project = (function() {
 
 		},
 
+		isBaseMapLayerForCurrentUser:function(){
+			if(this.isBaseMapLayer()){
+				var u=ProjectTeam.CurrentTeam().getUser(AppClient.getId());
+				return this.getProjectCommunity()==u.getCommunity();
+			}
+
+			return false;
+
+		},	
+		
 		isBaseMapLayer: function() {
 			if(!this.isDataset()){
 				return false;
@@ -236,8 +246,12 @@ var Project = (function() {
 
 			var layer=this.data.attributes.dataset.baseMapLayer;
 			if(layer&&layer!==""){
+
+			
 				return true;
 			}
+
+			return false;
 		},
 		getBaseMapLayerType:function(){
 			if(!this.isBaseMapLayer()){
