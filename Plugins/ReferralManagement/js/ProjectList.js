@@ -587,6 +587,7 @@ var ProjectList = (function() {
 			if(!element){
 				module=new ElementModule('div');
 				element=module.getElement();
+				parentModule=module;
 			}
 
 			var div = element.appendChild(new Element('div', {
