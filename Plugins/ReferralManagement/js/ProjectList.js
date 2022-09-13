@@ -749,8 +749,11 @@ var ProjectList = (function() {
 			childView.getElement().addClass("is-dataset");
 			if (child.isBaseMapLayer()) {
 				childView.getElement().addClass("is-basemap-layer");
-
 				childView.getElement().addClass("basemap-layer-" + child.getBaseMapLayerType());
+
+				if(!child.isBaseMapLayerForCurrentUser()){
+					childView.getElement().addClass("not-basemap-for-user");
+				}
 			}
 		}
 
