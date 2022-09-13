@@ -23345,16 +23345,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 101,
-                            "y": 158
+                            "x": 111,
+                            "y": 168
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 61,
-                                    "y": 484
+                                    "x": 71,
+                                    "y": 494
                                 }
                             }
                         ],
@@ -23398,7 +23398,7 @@
                                                 "toolbarPosition": "bottom",
                                                 "textFormatScript": "",
                                                 "mediaIconTint": "rgb(100, 149, 237)",
-                                                "onRenderModuleFn": "module.runOnceOnLoad(function(){\n    console.log('set file label')\n    module.getTextField().getInputElement().setStyle('display','none');\n})"
+                                                "onRenderModuleFn": " module.options.textFieldOptions=module.options.textFieldOptions||{}\n module.options.textFieldOptions.combinedTip=\"Select marker icon\"\n\nmodule.runOnceOnLoad(function(){\n    console.log('set file label')\n   \n    module.getTextField().getInputElement().setStyle('display','none');\n})"
                                             }
                                         },
                                         {
