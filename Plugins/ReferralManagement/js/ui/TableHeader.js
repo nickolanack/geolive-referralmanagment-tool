@@ -254,6 +254,12 @@ var TableHeader = (function() {
 				me._remove();
 			});
 
+			listModule.getWizard(function(w) {
+				w.once('close', function(){
+					me._remove();
+				})
+			});
+
 
 			//this._addStyle();
 
