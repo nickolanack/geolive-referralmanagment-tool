@@ -602,6 +602,8 @@ var ProjectList = (function() {
 
 
 			parentModule.runOnceOnLoad(function() {
+				
+				var viewer=parentModule.getViewer();
 
 				var sortModule = (new ListSortModule(function() {
 					return viewer.findChildViews(function(v) {
