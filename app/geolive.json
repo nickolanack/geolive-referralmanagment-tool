@@ -23345,16 +23345,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 351,
-                            "y": 263
+                            "x": 101,
+                            "y": 158
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 311,
-                                    "y": 589
+                                    "x": 61,
+                                    "y": 484
                                 }
                             }
                         ],
@@ -23398,7 +23398,7 @@
                                                 "toolbarPosition": "bottom",
                                                 "textFormatScript": "",
                                                 "mediaIconTint": "rgb(100, 149, 237)",
-                                                "onRenderModuleFn": "module.runOnceOnLoad(function(){\n    \n    module.getTextField().getInputElement().setStyle('display','none');\n})"
+                                                "onRenderModuleFn": "module.runOnceOnLoad(function(){\n    console.log('set file label')\n    module.getTextField().getInputElement().setStyle('display','none');\n})"
                                             }
                                         },
                                         {
