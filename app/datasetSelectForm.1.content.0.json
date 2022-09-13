@@ -1,31 +1,4 @@
 {
-    "type": "UIListView",
-    "config": {
-        "listClassName": "--dataset-select --inline-form-list projects-list",
-        "className": "--feed-sub-item --section-module",
-        "identifier": "",
-        "viewType": "view",
-        "namedView": "singleProjectListItemTableDetail",
-        "shouldRender": true,
-        "namedViewScript": "return namedView",
-        "showInlineEdit": false,
-        "namedFormView": "defaultView",
-        "formOptions": "\"{}\"",
-        "showDeleteButton": false,
-        "deleteItemScript": "defaultBehaviorFn()",
-        "initModuleScript": "ProjectList.AddTableHeader(module)\nmodule.setPaginationOptions({\n    position:\"auto\",\n    showPages:true\n});\nnew TableAutoHeightBehavior(module, {});",
-        "formatModuleScript": "",
-        "resolveItemScript": "return item",
-        "filterModulesScript": "return ItemProjectsCollection.FormatProjectSelectionListModules(list, item, listItem);\n",
-        "itemButtonsScript": "return [];",
-        "insertAtTop": false,
-        "targetName": "",
-        "getItemListScript": "ItemProjectsCollection.GetSelectableProjectsList(item, callback)",
-        "formatItemListScript": "return list;",
-        "formatListItemModuleScript": "return item;",
-        "emptyNamedView": "emptyListView",
-        "filterItemsScript": "return true;",
-        "sortItemsScript": "",
-        "maxItems": "-1"
-    }
+    "type": "WizardScriptElement",
+    "config": {}
 }

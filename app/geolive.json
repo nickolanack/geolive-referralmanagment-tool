@@ -22566,16 +22566,16 @@
                             "datasetSelectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 195,
-                            "y": 145
+                            "x": 205,
+                            "y": 155
                         },
                         "children": [
                             "datasetSelectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 155,
-                                    "y": 311
+                                    "x": 165,
+                                    "y": 321
                                 }
                             }
                         ],
@@ -22588,7 +22588,38 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                        "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "UIListView",
+                                            "config": {
+                                                "listClassName": "--dataset-select --inline-form-list projects-list",
+                                                "className": "--feed-sub-item --section-module",
+                                                "identifier": "",
+                                                "viewType": "view",
+                                                "namedView": "singleProjectListItemTableDetail",
+                                                "shouldRender": true,
+                                                "namedViewScript": "return namedView",
+                                                "showInlineEdit": false,
+                                                "namedFormView": "defaultView",
+                                                "formOptions": "\"{}\"",
+                                                "showDeleteButton": false,
+                                                "deleteItemScript": "defaultBehaviorFn()",
+                                                "initModuleScript": "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.initModuleScript.js",
+                                                "formatModuleScript": "",
+                                                "resolveItemScript": "return item",
+                                                "filterModulesScript": "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.filterModulesScript.js",
+                                                "itemButtonsScript": "return [];",
+                                                "insertAtTop": false,
+                                                "targetName": "",
+                                                "getItemListScript": "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.getItemListScript.js",
+                                                "formatItemListScript": "return list;",
+                                                "formatListItemModuleScript": "return item;",
+                                                "emptyNamedView": "emptyListView",
+                                                "filterItemsScript": "return true;",
+                                                "sortItemsScript": "",
+                                                "maxItems": "-1"
+                                            }
+                                        }
                                     ]
                                 },
                                 "footer": {
