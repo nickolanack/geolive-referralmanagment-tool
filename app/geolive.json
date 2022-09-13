@@ -23345,16 +23345,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 151,
-                            "y": 208
+                            "x": 161,
+                            "y": 218
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 111,
-                                    "y": 534
+                                    "x": 121,
+                                    "y": 544
                                 }
                             }
                         ],
@@ -23398,7 +23398,7 @@
                                                 "toolbarPosition": "bottom",
                                                 "textFormatScript": "",
                                                 "mediaIconTint": "rgb(100, 149, 237)",
-                                                "onRenderModuleFn": " \/\/module.options.textFieldOptions=module.options.textFieldOptions||{}\n module.options.combinedTip=\"Select marker icon\"\n  module.options.toolbarOptions= module.options.toolbarOptions||{};\n module.options.toolbarOptions.showAudio=false;\n module.options.toolbarOptions.showVideo=false;\n module.options.toolbarOptions.showDocument=false;\nmodule.runOnceOnLoad(function(){\n    console.log('set file label')\n   \n    module.getTextField().getInputElement().setStyle('display','none');\n})"
+                                                "onRenderModuleFn": " \/\/module.options.textFieldOptions=module.options.textFieldOptions||{}\n module.options.combinedTip=\"Add marker icon\"\n  module.options.toolbarOptions= module.options.toolbarOptions||{};\n module.options.toolbarOptions.showAudio=false;\n module.options.toolbarOptions.showVideo=false;\n module.options.toolbarOptions.showDocument=false;\nmodule.runOnceOnLoad(function(){\n    console.log('set file label')\n   \n    module.getTextField().getInputElement().setStyle('display','none');\n})"
                                             }
                                         },
                                         {
