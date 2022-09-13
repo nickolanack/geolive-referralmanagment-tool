@@ -16,7 +16,7 @@
         "initModuleScript": "ProjectList.AddTableHeader(module)\nmodule.setPaginationOptions({\n    position:\"auto\",\n    showPages:true\n});\nnew TableAutoHeightBehavior(module, {});",
         "formatModuleScript": "",
         "resolveItemScript": "return item",
-        "filterModulesScript": "return Project.FormatProjectSelectionListModules(list, item, listItem);\n",
+        "filterModulesScript": "return ItemProjectsCollection.FormatProjectSelectionListModules(list, item, listItem);\n",
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
         "targetName": "",
