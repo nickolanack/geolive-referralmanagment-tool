@@ -632,6 +632,8 @@ var ProjectList = (function() {
 
 			parentModule.runOnceOnLoad(function() {
 
+				var viewer=parentModule.getViewer();
+
 				var filter = (item && item.getFilter) ? item.getFilter() : "complete";
 				var invertFilter = (item && item.getInvertFilter) ? item.getInvertFilter() : (filter == "complete" ? true : false);
 
