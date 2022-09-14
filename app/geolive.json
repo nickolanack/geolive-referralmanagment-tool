@@ -21528,8 +21528,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 5,
-                    "y": 191
+                    "x": -3,
+                    "y": 234
                 },
                 "children": [
                     "documentForm.metadata.children.0.json",
@@ -21540,16 +21540,16 @@
                             "documentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 175,
-                            "y": 313
+                            "x": 143,
+                            "y": 193
                         },
                         "children": [
                             "documentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 135,
-                                    "y": 601
+                                    "x": 103,
+                                    "y": 481
                                 }
                             },
                             {
@@ -21559,16 +21559,16 @@
                                     "documentForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 636,
-                                    "y": 359
+                                    "x": 623,
+                                    "y": 277
                                 },
                                 "children": [
                                     "documentForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 596,
-                                            "y": 535
+                                            "x": 583,
+                                            "y": 453
                                         }
                                     },
                                     {
@@ -21578,16 +21578,16 @@
                                             "documentForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1069,
-                                            "y": 544
+                                            "x": 1079,
+                                            "y": 554
                                         },
                                         "children": [
                                             "documentForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1029,
-                                                    "y": 720
+                                                    "x": 1039,
+                                                    "y": 730
                                                 }
                                             }
                                         ],
@@ -21691,7 +21691,7 @@
                                                         "shuffleTags": false,
                                                         "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
                                                         "getItemTagsScript": "documentForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.1.config.getItemTagsScript.js",
-                                                        "formatModule": "if(ReferralManagementDashboard.getProjectTags('dataset').length==0){\n    module.getElement().setStyle('display','none')\n}"
+                                                        "formatModule": "if(ReferralManagementDashboard.getProjectTags('dataset').length==0){\n    module.getElement().setStyle('display','none')\n}\n\n\nProjectTagList.formatTagCloudModule(module, 'dataset');"
                                                     }
                                                 },
                                                 {
