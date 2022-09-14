@@ -18595,16 +18595,16 @@
                             "documentProjectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 171,
-                            "y": 371
+                            "x": 181,
+                            "y": 381
                         },
                         "children": [
                             "documentProjectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 131,
-                                    "y": 572
+                                    "x": 141,
+                                    "y": 582
                                 }
                             },
                             {
@@ -18614,16 +18614,16 @@
                                     "documentProjectForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 642,
-                                    "y": 191
+                                    "x": 652,
+                                    "y": 201
                                 },
                                 "children": [
                                     "documentProjectForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 602,
-                                            "y": 368
+                                            "x": 612,
+                                            "y": 378
                                         }
                                     },
                                     {
@@ -18633,16 +18633,16 @@
                                             "documentProjectForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1124,
-                                            "y": 365
+                                            "x": 1134,
+                                            "y": 375
                                         },
                                         "children": [
                                             "documentProjectForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1084,
-                                                    "y": 603
+                                                    "x": 1094,
+                                                    "y": 613
                                                 }
                                             }
                                         ],
@@ -18657,93 +18657,10 @@
                                                     "modules": [
                                                         "documentProjectForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.0.json",
                                                         {
-                                                            "type": "FormBooleanField",
-                                                            "config": {
-                                                                "className": "",
-                                                                "label": "Government",
-                                                                "identifier": "boolean-field",
-                                                                "mandatory": false,
-                                                                "getValueScript": "",
-                                                                "updateValueScript": " object.value=value ",
-                                                                "submitValueScript": "",
-                                                                "validateValueScript": "",
-                                                                "formatElementScript": ""
-                                                            }
-                                                        },
-                                                        {
-                                                            "type": "FormBooleanField",
-                                                            "config": {
-                                                                "className": "",
-                                                                "label": "Business",
-                                                                "identifier": "boolean-field",
-                                                                "mandatory": false,
-                                                                "getValueScript": "",
-                                                                "updateValueScript": " object.value=value ",
-                                                                "submitValueScript": "",
-                                                                "validateValueScript": "",
-                                                                "formatElementScript": ""
-                                                            }
-                                                        },
-                                                        {
-                                                            "type": "FormBooleanField",
-                                                            "config": {
-                                                                "className": "",
-                                                                "label": "Individual",
-                                                                "identifier": "boolean-field",
-                                                                "mandatory": false,
-                                                                "getValueScript": "",
-                                                                "updateValueScript": " object.value=value ",
-                                                                "submitValueScript": "",
-                                                                "validateValueScript": "",
-                                                                "formatElementScript": ""
-                                                            }
-                                                        },
-                                                        {
-                                                            "type": "FormBooleanField",
-                                                            "config": {
-                                                                "className": "",
-                                                                "label": "Community",
-                                                                "identifier": "boolean-field",
-                                                                "mandatory": false,
-                                                                "getValueScript": "",
-                                                                "updateValueScript": " object.value=value ",
-                                                                "submitValueScript": "",
-                                                                "validateValueScript": "",
-                                                                "formatElementScript": ""
-                                                            }
-                                                        },
-                                                        {
-                                                            "type": "InlineHtml",
-                                                            "config": {
-                                                                "className": "",
-                                                                "text": "Do any of the project documents contain sensitive material?",
-                                                                "template": "",
-                                                                "templateVariablesScript": "",
-                                                                "formatTextScript": "",
-                                                                "formatVariablesScript": "",
-                                                                "ajaxRequestTemplate": false,
-                                                                "identifier": "htmlLabel"
-                                                            }
-                                                        },
-                                                        {
-                                                            "type": "FormBooleanField",
-                                                            "config": {
-                                                                "className": "",
-                                                                "label": "yes, this project contains sensitive data",
-                                                                "identifier": "boolean-field",
-                                                                "mandatory": false,
-                                                                "getValueScript": "",
-                                                                "updateValueScript": " object.value=value ",
-                                                                "submitValueScript": "",
-                                                                "validateValueScript": "",
-                                                                "formatElementScript": ""
-                                                            }
-                                                        },
-                                                        {
                                                             "type": "plugin.Attributes.WizardTagCloud",
                                                             "config": {
                                                                 "attributeFields": [
-                                                                    "documentProjectForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.7.config.attributeFields.0.json"
+                                                                    "documentProjectForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.1.config.attributeFields.0.json"
                                                                 ],
                                                                 "className": "",
                                                                 "showLabel": false,
@@ -18755,7 +18672,7 @@
                                                                 "selectedColor": "rgb(143, 188, 143)",
                                                                 "shuffleTags": false,
                                                                 "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
-                                                                "getItemTagsScript": "documentProjectForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.7.config.getItemTagsScript.js",
+                                                                "getItemTagsScript": "documentProjectForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.1.config.getItemTagsScript.js",
                                                                 "formatModule": "ProjectTeam.FormatTagCloudLanguageValues(module);\nmodule.runOnceOnLoad(function(){\nvar cats= Proposal.ListTerritories();\nif(cats.length==0){\n    module.getCloud().getElement().parentNode.setStyle(\"display\",\"none\");\n}\n});\n"
                                                             }
                                                         }
