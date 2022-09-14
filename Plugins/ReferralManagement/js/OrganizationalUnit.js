@@ -91,7 +91,7 @@ var OrganizationalUnit = (function() {
 			label:label,
 			kind:kind,
 			editable:function(){
-				return !DashboardConfig.getValue('useCommunitiesAsDepartments');
+				return ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin(); //!DashboardConfig.getValue('useCommunitiesAsDepartments');
 			},
 			items:function(callback){
 				var me=this;
@@ -163,7 +163,7 @@ var OrganizationalUnitList=(function(){
 			});
 		},
 		getForm:function(){
-			return "departmentForm";
+			return DashboardConfig.getValue('useCommunitiesAsDepartments')?"communityListForm":"departmentForm";
 		},
 		isEditable:function(){
 			if(this._getEditable){
