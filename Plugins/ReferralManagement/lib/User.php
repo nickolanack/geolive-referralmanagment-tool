@@ -210,7 +210,7 @@ class User {
 	public function listTerritories() {
 
 
-		return GetWidget('organizationalUnits')->getConfigurationParameter('groups');
+		return GetWidget('organizationalUnits')->getConfigurationValue('groups');
 
 		// $communities = $this->getCommunityConfig()->getParameter("communities");
 		// return array_map(function ($community) {
