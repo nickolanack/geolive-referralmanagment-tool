@@ -88,6 +88,10 @@ var NotificationItems=(function(){
 				this._postData=[];
 				this._posts=0;
 				this.fireEvent('change',[this.getInfo()]);
+
+
+				var controller = application.getNamedValue('navigationController');
+				controller.navigateTo("Notifications", "Main");
 			}
 			
 		},
