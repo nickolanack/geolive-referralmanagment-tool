@@ -14,7 +14,7 @@
         "showDeleteButton": false,
         "deleteItemScript": "defaultBehaviorFn()",
         "initModuleScript": "",
-        "formatModuleScript": "",
+        "formatModuleScript": "(new UIFormListBehavior(module)).setNewItemFn(function(){\n    \n                return new MockDataTypeItem({\n                    name:\"\",\n                    mutable:true\n                });\n}).addDataFormatter(function(data, item){\n    \n    return ObjectAppend_({}, item.toObject(), data);\n    \n})\n    .setUpdateField('parameters')\n    .enableDragOrdering();",
         "resolveItemScript": "return item",
         "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",
