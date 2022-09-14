@@ -1,4 +1,4 @@
-ProjectList.AddTableHeader(module).addLayout({
+ProjectList.AddTableHeader(module).addLayoutOptions({
     "icon": {
         "hidden": true
     },
