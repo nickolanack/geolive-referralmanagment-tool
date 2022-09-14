@@ -21528,8 +21528,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -3,
-                    "y": 234
+                    "x": -9,
+                    "y": 250
                 },
                 "children": [
                     "documentForm.metadata.children.0.json",
@@ -21540,16 +21540,16 @@
                             "documentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 143,
-                            "y": 193
+                            "x": 83,
+                            "y": 127
                         },
                         "children": [
                             "documentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 103,
-                                    "y": 481
+                                    "x": 43,
+                                    "y": 415
                                 }
                             },
                             {
@@ -21559,16 +21559,16 @@
                                     "documentForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 623,
-                                    "y": 277
+                                    "x": 521,
+                                    "y": 154
                                 },
                                 "children": [
                                     "documentForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 583,
-                                            "y": 453
+                                            "x": 481,
+                                            "y": 330
                                         }
                                     },
                                     {
@@ -21578,16 +21578,16 @@
                                             "documentForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1079,
-                                            "y": 554
+                                            "x": 520,
+                                            "y": 661
                                         },
                                         "children": [
                                             "documentForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1039,
-                                                    "y": 730
+                                                    "x": 480,
+                                                    "y": 837
                                                 }
                                             }
                                         ],
@@ -21618,7 +21618,7 @@
                                                                 "shuffleTags": false,
                                                                 "tags": "[\n    \"Public\",\n    \"Private\"\n]",
                                                                 "getItemTagsScript": "return defaultTags;",
-                                                                "formatModule": ""
+                                                                "formatModule": "module.on('change', function(v){\n    console.log(v);\n    var viewer=module.getViewer();\n})"
                                                             }
                                                         },
                                                         {
