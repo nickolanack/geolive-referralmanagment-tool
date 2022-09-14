@@ -213,6 +213,15 @@ class User {
 			return $community;
 		}, $communities);
 	}
+
+	public function listDefaultTerritories() {
+		$communities = $this->getCommunityConfig()->getParameter("communities");
+		return array_map(function ($community) {
+			return $community;
+		}, $communities);
+	}
+
+
 	public function communityCollective() {
 
 		$collective = $this->getCommunityConfig()->getParameter("collective");
