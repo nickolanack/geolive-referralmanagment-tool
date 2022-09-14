@@ -765,7 +765,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		if (key_exists('id', $json) && (int) $json->id > 0) {
 
-			if (!Auth('write', $json->id, 'ReferralManagement.proposal')) {
+			if (!Auth('write-status', $json->id, 'ReferralManagement.proposal')) {
 				return $this->setError('No access or does not exist');
 			}
 

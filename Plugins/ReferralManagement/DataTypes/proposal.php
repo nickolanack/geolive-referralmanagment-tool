@@ -30,8 +30,9 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
        
 
         $auth=$this->isVisible($item, $userId);
+        $visible=$auth;
         
-        if($task=='write'&&$auth){
+        if(($task=='write'||$task=='write-status')&&$visible){
 
 
             $auth=false;
@@ -84,7 +85,15 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
 
 
 
-        }        
+        }      
+
+
+        if($visible&&$task=="write-status"&&!$auth) {
+
+
+            //$minAccessLevel = 'tribal-council';
+           //$auth=Auth('memberof', $minAccessLevel, 'group');
+        }
 
 
         self::$Auth[$cacheKey]=$auth;
