@@ -175,10 +175,24 @@ var TableHeader = (function() {
 		},
 
 
+		addLayoutOptions:function(layoutOptions){
+
+
+			if(this._layoutOptions){
+				Object.keys(layoutOptions).forEach(function(key){
+					this._layoutOptions[key]=ObjectAppend_({}, this._layoutOptions[key]||{}, layoutOptions[key]);
+				});
+				return;
+			}
+
+			this._layoutOptions=layoutOptions;
+
+		},
+
 		_sortModules:function(content, options, callback){
 
 			var me=this;
-			var layoutDefault=TableHeaders.getLayout(me.getLayoutName());
+			var layoutDefault=this._getLayout();
 			var order = Object.keys(layoutDefault)
 
 
@@ -219,13 +233,14 @@ var TableHeader = (function() {
 			return this._layoutName;
 		},
 
+
 		labelForCol: function(col) {
 
 			if (!col) {
 				return "";
 			}
 
-			var layoutDefault=TableHeaders.getLayout(this.getLayoutName());
+			var layoutDefault=this._getLayout();
 
 			if (layoutDefault[col] && typeof layoutDefault[col].label=='string') {
 				return layoutDefault[col].label;
@@ -235,7 +250,7 @@ var TableHeader = (function() {
 
 		setTipFor:function(col, el){
 
-			var layoutDefault=TableHeaders.getLayout(this.getLayoutName());
+			var layoutDefault=this._getLayout();
 
 			if(layoutDefault[col]&&layoutDefault[col].tip){
 				new UIPopover(el,{
@@ -298,10 +313,22 @@ var TableHeader = (function() {
 
 		},
 
-		_getLayout: function(dataCol) {
+		_getLayout:function(){
+
+			var layoutDefault=ObjectAppend_({}, TableHeaders.getLayout(this.getLayoutName()));
+
+			if(this._layoutOptions){
+				Object.keys(this._layoutOptions).forEach(function(key){
+					layoutDefault[key]=ObjectAppend_({}, layoutDefault[key]||{}, this._layoutOptions[key]);
+				});
+			}
+
+			return layoutDefault;
+		},
+		_getLayoutCol: function(dataCol) {
 
 
-			var layoutDefault=TableHeaders.getLayout(this.getLayoutName());
+			var layoutDefault=this._getLayout();
 
 			return ObjectAppend_({
 				width: 'auto'
@@ -321,7 +348,7 @@ var TableHeader = (function() {
 			if (this._dataCols.filter(function(data) {
 					return data.col == dataCol;
 				}).length == 0) {
-				this._dataCols.push(ObjectAppend_(this._getLayout(dataCol), {
+				this._dataCols.push(ObjectAppend_(this._getLayoutCol(dataCol), {
 					col: dataCol
 				}));
 			}
@@ -335,7 +362,7 @@ var TableHeader = (function() {
 
 			var me=this;
 			this._dataCols.forEach(function(data){
-				ObjectAppend_(data, me._getLayout(data.col), {
+				ObjectAppend_(data, me._getLayoutCol(data.col), {
 					col: data.col
 				});
 			});
@@ -681,7 +708,7 @@ var TableHeader = (function() {
 			
 			var column = colEl.getAttribute('data-col');
 
-			var colData=this._getLayout(column);
+			var colData=this._getLayoutCol(column);
 			colEl.setAttribute('data-label', this.labelForCol(column));
 
 			if(colData.showLabel===false){
@@ -792,7 +819,7 @@ var TableHeader = (function() {
 
 						}
 
-						var colData=me._getLayout(column)
+						var colData=me._getLayoutCol(column)
 
 						if(me._sortEl!=colEl&&colData.invertSort===true){
 							sortModule.applySortInverted(column);
