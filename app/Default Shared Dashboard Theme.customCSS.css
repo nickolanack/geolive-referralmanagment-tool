@@ -4919,6 +4919,11 @@ img.static-map {
             color: gray;
             margin: 5px;
         }
+        
+        
+    .inline-navigation-menu li.hidden {
+        display: none;
+    }
 
 
     .inline-navigation-menu button {
