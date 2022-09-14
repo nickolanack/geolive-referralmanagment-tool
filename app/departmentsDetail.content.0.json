@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "return '<div class=\"section-title\"><span>'+\n    (item instanceof OrganizationalUnitList?item.getLabel():OrganizationalUnit.DefaultList().getLabel())+':<\/span><\/div>';",
+        "script": "return '<div class=\"section-title\"><span>'+\n    (item instanceof OrganizationalUnitList?item.getLabel():OrganizationalUnit.DefaultList().getLabel())+'<\/span><\/div>';",
         "description": "Info about my custom script"
     }
 }
