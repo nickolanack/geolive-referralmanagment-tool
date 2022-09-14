@@ -177,7 +177,20 @@ var OrganizationalUnitList=(function(){
 		    
 				})).addEvent('show',function(childWizard){
 				    childWizard.addEvent('complete',function(){
-				        console.log(item.getParameters());
+				        var groups=item.getParameters().map(function(item){
+				        	return item.name;
+				        })
+
+
+				        (new AjaxControlQuery(CoreAjaxUrlRoot, "set_configuration_field", {
+							'widget': "organizationalUnits",
+							'field': {
+								"name":"groups",
+								"value":groups
+							}
+						})).addEvent('success',function(response){
+
+						}).execute();
 				    });
 				})
 
