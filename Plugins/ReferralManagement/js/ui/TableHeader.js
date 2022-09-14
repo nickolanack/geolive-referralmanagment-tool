@@ -112,6 +112,8 @@ var TableHeader = (function() {
 
 
 			this._layoutName=layoutName;
+
+			this._padding=0;
 			
 			TableHeaders.addHeader(this);
 
@@ -325,6 +327,10 @@ var TableHeader = (function() {
 			}
 
 			return layoutDefault;
+		},
+		addPadding:function(x){
+
+			this._padding+=x;
 		},
 		_getLayoutCol: function(dataCol) {
 
@@ -559,7 +565,7 @@ var TableHeader = (function() {
 			var sizeX=Math.min(size.x, win.x-coords.left); //this works if table takes all right space but is overflowing off the page
 
 
-			var padding = 2 * 10;
+			var padding = (2 * 10) + this._padding;
 			
 			var cellWidthEstimate=this._getEstimatedCellWidth(sizeX);
 
