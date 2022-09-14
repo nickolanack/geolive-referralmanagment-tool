@@ -1,6 +1,6 @@
 
 if(empty($paramters['groups'])){
-    GetPlugin('ReferralManagement')
+    GetPlugin('ReferralManagement');
     $user = new \ReferralManagement\User();
     $paramters['groups']=$user->listTerritories();
 }
