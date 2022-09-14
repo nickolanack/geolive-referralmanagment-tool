@@ -310,7 +310,7 @@ var TableHeader = (function() {
 				});
 			});
 
-
+			return this;
 		},
 
 		_getLayout:function(){
