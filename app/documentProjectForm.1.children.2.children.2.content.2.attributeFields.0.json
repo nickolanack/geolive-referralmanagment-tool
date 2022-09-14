@@ -3,11 +3,11 @@
     "tableId": "5",
     "tableName": "proposalAttributes",
     "tableSuffix": "_3497",
-    "title": "accessLevel",
-    "label": "accessLevel",
+    "title": "firstNationsInvolved",
+    "label": "First Nations Involved",
     "description": "",
     "fieldType": "text",
-    "color": "rgb(undefined, undefined, undefined)",
+    "color": "rgb(NaN, NaN, NaN)",
     "searchability": "public",
     "editability": "registered",
     "fieldTextOptions": {
@@ -28,5 +28,5 @@
             "colorize": false
         }
     },
-    "allowMultiple": false
+    "allowMultiple": true
 }

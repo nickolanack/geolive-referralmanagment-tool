@@ -18595,16 +18595,16 @@
                             "documentProjectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 181,
-                            "y": 381
+                            "x": 201,
+                            "y": 401
                         },
                         "children": [
                             "documentProjectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 141,
-                                    "y": 582
+                                    "x": 161,
+                                    "y": 602
                                 }
                             },
                             {
@@ -18614,16 +18614,16 @@
                                     "documentProjectForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 652,
-                                    "y": 201
+                                    "x": 672,
+                                    "y": 221
                                 },
                                 "children": [
                                     "documentProjectForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 612,
-                                            "y": 378
+                                            "x": 632,
+                                            "y": 398
                                         }
                                     },
                                     {
@@ -18633,16 +18633,16 @@
                                             "documentProjectForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1134,
-                                            "y": 375
+                                            "x": 1154,
+                                            "y": 395
                                         },
                                         "children": [
                                             "documentProjectForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1094,
-                                                    "y": 613
+                                                    "x": 1114,
+                                                    "y": 571
                                                 }
                                             }
                                         ],
@@ -18665,6 +18665,26 @@
                                                                 "className": "",
                                                                 "showLabel": false,
                                                                 "showAddWord": false,
+                                                                "label": "Access",
+                                                                "addWordPlaceholder": "add a keyword",
+                                                                "fontColor": "rgb(0, 0, 0)",
+                                                                "hoverColor": "rgb(143, 188, 143)",
+                                                                "selectedColor": "rgb(143, 188, 143)",
+                                                                "shuffleTags": false,
+                                                                "tags": "[\n    \"Public\",\n    \"Private\"\n]",
+                                                                "getItemTagsScript": "return defaultTags;",
+                                                                "formatModule": ""
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "plugin.Attributes.WizardTagCloud",
+                                                            "config": {
+                                                                "attributeFields": [
+                                                                    "documentProjectForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
+                                                                ],
+                                                                "className": "",
+                                                                "showLabel": false,
+                                                                "showAddWord": false,
                                                                 "label": "Nations impacted by this collection",
                                                                 "addWordPlaceholder": "add a keyword",
                                                                 "fontColor": "rgb(0, 0, 0)",
@@ -18672,7 +18692,7 @@
                                                                 "selectedColor": "rgb(143, 188, 143)",
                                                                 "shuffleTags": false,
                                                                 "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
-                                                                "getItemTagsScript": "documentProjectForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.1.config.getItemTagsScript.js",
+                                                                "getItemTagsScript": "documentProjectForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.2.config.getItemTagsScript.js",
                                                                 "formatModule": "ProjectTeam.FormatTagCloudLanguageValues(module);\nmodule.runOnceOnLoad(function(){\nvar cats= Proposal.ListTerritories();\nif(cats.length==0){\n    module.getCloud().getElement().parentNode.setStyle(\"display\",\"none\");\n}\n});\n"
                                                             }
                                                         }
