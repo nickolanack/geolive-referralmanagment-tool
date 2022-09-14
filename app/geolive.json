@@ -29207,7 +29207,7 @@
             "contentTemplate": "",
             "comments": "",
             "formatParametersScript": "return $parameters;",
-            "formatOutputScript": "return $parameters;",
+            "formatOutputScript": "organizationalUnits.formatOutputScript.js",
             "enableUserAjaxWrite": false,
             "authUserAjaxScript": "XXXX-XXXX",
             "saveParametersAsData": false,
