@@ -829,7 +829,7 @@ var DashboardPageLayout = (function() {
 					condition: function() {
 						return !(DashboardConfig.getValue('useCommunitiesAsDepartments')&&ProjectTeam.GetAllCommunities().length<=1);
 					},
-					addClass:"admin-only"
+					addClass:"admin-only menu-main-department"
 				}, {
 					html: "Archive",
 					config: "simplifiedMenu",
@@ -861,7 +861,7 @@ var DashboardPageLayout = (function() {
 					condition: function() {
 						return AppClient.getUserType() == "admin";
 					},
-					addClass:"admin-only"
+					addClass:"admin-only menu-main-messages"
 				}
 			],
 			"Referrals": [{
@@ -869,7 +869,7 @@ var DashboardPageLayout = (function() {
 				condition: function() {
 					return AppClient.getUserType() == "admin";
 				},
-				addClass:"admin-only"
+				addClass:"admin-only menu-main-messages"
 			}],
 			"People": [{
 					html: "Clients",
