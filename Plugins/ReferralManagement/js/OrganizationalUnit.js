@@ -166,7 +166,7 @@ var OrganizationalUnitList=(function(){
 
 				var item=new MockDataTypeItem({
 					parameters:[],
-					mutable:true;
+					mutable:true
 				});
 				return (new ModalFormButtonModule(ReferralManagementDashboard.getApplication(), item, {
 	     
