@@ -21603,16 +21603,16 @@
                             "documentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 350,
-                            "y": 382
+                            "x": 155,
+                            "y": 293
                         },
                         "children": [
                             "documentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 310,
-                                    "y": 670
+                                    "x": 115,
+                                    "y": 581
                                 }
                             },
                             {
@@ -21622,16 +21622,16 @@
                                     "documentForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 843,
-                                    "y": 432
+                                    "x": 616,
+                                    "y": 339
                                 },
                                 "children": [
                                     "documentForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 803,
-                                            "y": 620
+                                            "x": 576,
+                                            "y": 527
                                         }
                                     },
                                     {
@@ -21641,16 +21641,16 @@
                                             "documentForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1394,
-                                            "y": 487
+                                            "x": 1049,
+                                            "y": 524
                                         },
                                         "children": [
                                             "documentForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1354,
-                                                    "y": 653
+                                                    "x": 1009,
+                                                    "y": 690
                                                 }
                                             }
                                         ],
@@ -21682,6 +21682,26 @@
                                                                 "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
                                                                 "getItemTagsScript": "documentForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.1.config.getItemTagsScript.js",
                                                                 "formatModule": "ProjectTeam.FormatTagCloudLanguageValues(module);\nmodule.runOnceOnLoad(function(){\nvar cats= Proposal.ListTerritories();\nif(cats.length==0){\n    module.getCloud().getElement().parentNode.setStyle(\"display\",\"none\");\n}\n});\n"
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "plugin.Attributes.WizardTagCloud",
+                                                            "config": {
+                                                                "attributeFields": [
+                                                                    "documentForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
+                                                                ],
+                                                                "className": "",
+                                                                "showLabel": false,
+                                                                "showAddWord": false,
+                                                                "label": "Access",
+                                                                "addWordPlaceholder": "add a keyword",
+                                                                "fontColor": "rgb(0, 0, 0)",
+                                                                "hoverColor": "rgb(143, 188, 143)",
+                                                                "selectedColor": "rgb(143, 188, 143)",
+                                                                "shuffleTags": false,
+                                                                "tags": "[\n    \"Public\",\n    \"Private\"\n]",
+                                                                "getItemTagsScript": "return defaultTags;",
+                                                                "formatModule": ""
                                                             }
                                                         }
                                                     ]
