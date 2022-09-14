@@ -208,10 +208,14 @@ class User {
 	}
 
 	public function listTerritories() {
-		$communities = $this->getCommunityConfig()->getParameter("communities");
-		return array_map(function ($community) {
-			return $community;
-		}, $communities);
+
+
+		return GetWidget('dashboardConfig')->getConfigurationParameter('groups');
+
+		// $communities = $this->getCommunityConfig()->getParameter("communities");
+		// return array_map(function ($community) {
+		// 	return $community;
+		// }, $communities);
 	}
 
 	public function listDefaultTerritories() {
