@@ -829,7 +829,7 @@ var DashboardPageLayout = (function() {
 					condition: function() {
 						return !(DashboardConfig.getValue('useCommunitiesAsDepartments')&&ProjectTeam.GetAllCommunities().length<=1);
 					},
-					addClass:"admin-only menu-main-department"
+					__addClass:"admin-only menu-main-department"
 				}, {
 					html: "Archive",
 					config: "simplifiedMenu",
