@@ -161,6 +161,7 @@
    
     
 }
+
 .starred-indicator:hover:before {
     content: "\f005";
     font-family: FontAwesome;
@@ -185,6 +186,20 @@
     font-family: FontAwesome;
 
 }
+
+
+
+.priority-indicator:after {
+    content: "";
+    font-family: FontAwesome;
+    color: #0000008a;
+    filter: blur(4px);
+    position: absolute;
+    left: 19px;
+    z-index: -1;
+}
+
+
 .priority.priority-indicator:before {
     content: "\f024";
     font-family: FontAwesome;
@@ -194,7 +209,7 @@
 
 
 .completion-indicator:before{
-    content: "\f10c";
+    content: "\f024";
     font-family: FontAwesome;
     position: absolute;
     left: -3px;
