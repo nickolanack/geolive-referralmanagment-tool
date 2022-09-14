@@ -331,6 +331,7 @@ var TableHeader = (function() {
 		addPadding:function(x){
 
 			this._padding+=x;
+			return this;
 		},
 		_getLayoutCol: function(dataCol) {
 
