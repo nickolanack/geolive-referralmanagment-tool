@@ -90,6 +90,7 @@ var NotificationItems=(function(){
 				this.fireEvent('change',[this.getInfo()]);
 
 
+				var application = GatherDashboard.getApplication();
 				var controller = application.getNamedValue('navigationController');
 				controller.navigateTo("Notifications", "Main");
 			}
