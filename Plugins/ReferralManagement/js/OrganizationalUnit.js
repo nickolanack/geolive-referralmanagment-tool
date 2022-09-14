@@ -177,9 +177,9 @@ var OrganizationalUnitList=(function(){
 		    
 				})).addEvent('show',function(childWizard){
 				    childWizard.addEvent('complete',function(){
-				        var groups=item.getParameters().map(function(item){
-				        	return item.name;
-				        })
+				        var groups=item.getParameters().map(function(community){
+				        	return community.name;
+				        });
 
 
 				        (new AjaxControlQuery(CoreAjaxUrlRoot, "set_configuration_field", {
