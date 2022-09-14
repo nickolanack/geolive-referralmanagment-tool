@@ -10,6 +10,16 @@ var OrganizationalUnit = (function() {
 		}
 	});
 
+
+	var SaveCommunitiesQuery = new Class({
+		Extends: AjaxControlQuery,
+		initialize: function(options) {
+			this.parent(CoreAjaxUrlRoot, 'save_department', Object.append({
+				plugin: 'ReferralManagement'
+			}, options));
+		}
+	});
+
 	var OrganizationalUnit = new Class({
 		Extends: MockDataTypeItem,
 		initialize: function(options) {
@@ -151,6 +161,28 @@ var OrganizationalUnitList=(function(){
 			if(!this.isEditable()){
 				return null;
 			}
+
+			if(DashboardConfig.getValue('useCommunitiesAsDepartments')){
+
+				var item=new MockDataTypeItem({
+					parameters:[],
+					mutable:true;
+				});
+				return (new ModalFormButtonModule(ReferralManagementDashboard.getApplication(), item, {
+	     
+		            label: "Edit Communities List",
+		            formOptions: {template:"form"},
+		            formName: this.getForm(),
+		            "class": "primary-btn"
+		    
+				})).addEvent('show',function(childWizard){
+				    childWizard.addEvent('complete',function(){
+				        console.log(item.getParameters());
+				    });
+				})
+
+			}
+
 
 			return new ModalFormButtonModule(ReferralManagementDashboard.getApplication(), ProjectDepartmentList.getNewDepartment(), {
 	     
