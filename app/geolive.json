@@ -29203,7 +29203,22 @@
         "name": "Configuration",
         "instance": "Configuration",
         "parameters": {
-            "target": "none"
+            "target": "organizationalUnits",
+            "contentTemplate": "",
+            "comments": "",
+            "formatParametersScript": "return $parameters;",
+            "formatOutputScript": "return $parameters;",
+            "enableUserAjaxWrite": false,
+            "authUserAjaxScript": "XXXX-XXXX",
+            "saveParametersAsData": false,
+            "enableRevisions": false,
+            "broadcastChanges": false,
+            "parameters": [
+                "organizationalUnits.parameters.0.json"
+            ],
+            "groups": [],
+            "widgetTitle": "organizationalUnits",
+            "readAccess": "public"
         }
     }
 }
