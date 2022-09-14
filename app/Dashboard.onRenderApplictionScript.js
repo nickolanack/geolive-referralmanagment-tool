@@ -273,6 +273,9 @@ GetWidget('reportFormParameterField')->display($targetInstance);
 
 GetWidget('projectLayerSettings')->display($targetInstance);
 
+GetWidget('communityListForm')->display($targetInstance);
+GetWidget('communityForm')->display($targetInstance);
+
 
 
 
