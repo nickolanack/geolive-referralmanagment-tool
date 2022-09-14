@@ -20,7 +20,7 @@
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
         "targetName": "",
-        "getItemListScript": "(new AjaxControlQuery(CoreAjaxUrlRoot, \"get_configuration_field\", {\n\t\t'widget': \"organizationalUnits\",\n\t\t'field': \"groups\"\n\t})).addEvent('success',function(response){\n\n        callback(response.values.map(function(community){\n            \n            return new MockDataTypeItem({\n                'name':community,\n                'mutable':true\n            })\n            \n        }))\n\n\t}).execute();",
+        "getItemListScript": "(new AjaxControlQuery(CoreAjaxUrlRoot, \"get_configuration_field\", {\n\t\t'widget': \"organizationalUnits\",\n\t\t'field': \"groups\"\n\t})).addEvent('success',function(response){\n\n        callback(response.value.map(function(community){\n            \n            return new MockDataTypeItem({\n                'name':community,\n                'mutable':true\n            })\n            \n        }))\n\n\t}).execute();",
         "formatItemListScript": "return list;",
         "formatListItemModuleScript": "return item;",
         "emptyNamedView": "emptyListView",
