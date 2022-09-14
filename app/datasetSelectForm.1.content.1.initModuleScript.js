@@ -1,4 +1,6 @@
-ProjectList.AddTableHeader(module).addLayoutOptions({
+ProjectList.AddTableHeader(module)
+    .addPadding(80)
+    .addLayoutOptions({
     "icon": {
         "hidden": true
     },
