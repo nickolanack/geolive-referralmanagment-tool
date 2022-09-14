@@ -318,8 +318,9 @@ var TableHeader = (function() {
 			var layoutDefault=ObjectAppend_({}, TableHeaders.getLayout(this.getLayoutName()));
 
 			if(this._layoutOptions){
-				Object.keys(this._layoutOptions).forEach(function(key){
-					layoutDefault[key]=ObjectAppend_({}, layoutDefault[key]||{}, this._layoutOptions[key]);
+				var me=this;
+				Object.keys(layoutDefault).forEach(function(key){
+					layoutDefault[key]=ObjectAppend_({}, layoutDefault[key]||{}, me._layoutOptions[key]||{});
 				});
 			}
 
