@@ -36,7 +36,7 @@ var DashboardLoader = (function() {
 				var currentView = 'dashboardLoader';
 
 
-				$$('.dashboard-main')[0].removeClass('loading');
+				
 				var loadView = function(view, item) {
 
 					if (currentView == view) {
@@ -53,7 +53,11 @@ var DashboardLoader = (function() {
 
 					application.getChildView('content', 0).redraw({
 						"namedView": view
-					},item||null);
+					}, item||null, function(){
+
+						$$('.dashboard-main')[0].removeClass('loading');
+
+					});
 
 
 				}
