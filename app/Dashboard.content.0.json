@@ -1,7 +1,8 @@
 {
     "type": "UIView",
     "config": {
-        "className": "dashboard-main",
+        "className": "dashboard-main loading",
+        "identifier": "",
         "viewType": "view",
         "namedView": "dashboardContent",
         "shouldRender": true,
