@@ -4112,6 +4112,90 @@ button.inline-btn.with-no-tasks {
 
 
 
+/*
+{
+   "maxSelected": 1,
+   "values": [
+      "Low",
+      "Medium",
+      "High"
+   ],
+   "colorMap": [
+      {
+         "hover": "#2e8755",
+         "selected": "mediumseagreen",
+         "colorDark": "#3cb37113",
+         "color": "#3cb3715a"
+      },
+      {
+         "hover": "#978b28",
+         "selected": "#c2bd2d",
+         "colorDark": "#c2bd2d13",
+         "color": "#c2bd2d5a"
+      },
+      {
+         "hover": "#972828",
+         "selected": "#c22d2d",
+         "colorDark": "#c22d2d13",
+         "color": "#c22d2d5a"
+      }
+   ]
+}
+*/
+
+.TagCloudModule.priority-color{
+  .word-low {
+      background-color: #3cb3715a;
+  } 
+  .word-medium {
+      background-color: #c2bd2d5a;
+  }  
+  .word-high {
+      background-color: #c22d2d5a;
+  }  
+} 
+
+.dark .TagCloudModule.priority-color{
+  .word-low {
+      background-color: #3cb37113;
+  } 
+  .word-medium {
+      background-color: #c2bd2d13;
+  }  
+  .word-high {
+      background-color: #c22d2d13;
+  }  
+} 
+
+.TagCloudModule.priority-color{
+  .word-low {
+      &.selected{
+          background-color: mediumseagreen;
+          &.hover{
+              background-color: #2e8755;
+          }
+      }
+  } 
+  .word-medium {
+      &.selected{
+          background-color: #c2bd2d;
+          &.hover{
+              background-color: #978b28;
+          }
+      }
+  }  
+  .word-high {
+      &.selected{
+          background-color: #972828;
+          &.hover{
+              background-color: #c22d2d;
+          }
+      }
+  }  
+} 
+
+
+
 
 .tag-cloud.locked {
     border: 1px solid #ceb250;
