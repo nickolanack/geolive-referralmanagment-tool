@@ -4155,7 +4155,7 @@ button.inline-btn.with-no-tasks {
   }  
 } 
 
-.dark .TagCloudModule.priority-color .tag-cloud > span.tag-e{
+.dark .TagCloudModule.priority-color .tag-cloud > span.tag-el{
    &.word-low {
       background-color: #3cb37113;
   } 
@@ -4167,7 +4167,7 @@ button.inline-btn.with-no-tasks {
   }  
 } 
 
-.TagCloudModule.priority-color .tag-cloud > span.tag-e{
+.TagCloudModule.priority-color .tag-cloud > span.tag-el{
    &.word-low {
       &.selected{
           background-color: mediumseagreen;
