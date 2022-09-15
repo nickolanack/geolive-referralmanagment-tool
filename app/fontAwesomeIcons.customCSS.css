@@ -238,7 +238,7 @@
 }
 
  .completion-indicator:hover:after {
-    content: "";
+    content: "\f058";
     font-family: FontAwesome;
     color: #596f63;
     position: absolute;
