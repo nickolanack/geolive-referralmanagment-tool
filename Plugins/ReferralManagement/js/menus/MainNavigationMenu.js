@@ -411,6 +411,15 @@ var MainNavigationMenu = new Class({
 
 				"Links": [
 					{
+						html:"Wiki",
+						name:"wiki",
+						events: {
+							click: function() {
+								
+							}
+						}
+					},
+					{
 						html: DashboardConfig.getValue('gatherLabel'),
 						name:"Gather",
 						"_class":"application-logo gather-logo gather-icon",
@@ -426,6 +435,13 @@ var MainNavigationMenu = new Class({
 							click: function() {
 								window.open(DashboardConfig.getValue('surveyUrl'), "_blank");
 
+							}
+						}
+					},{	
+						html: "Manual",
+						name: "manual",
+						events: {
+							click: function() {
 							}
 						}
 					}, {
