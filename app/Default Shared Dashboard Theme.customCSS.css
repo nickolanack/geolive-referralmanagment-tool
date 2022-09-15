@@ -4089,22 +4089,27 @@ button.inline-btn.with-no-tasks {
 
 
 .TagCloudModule .tag-cloud > span.tag-el {
+    color:black;
     background-color: var(--color, rgba(0, 0, 0, 0.4));
 }
 
 .dark .TagCloudModule .tag-cloud > span.tag-el {
+    color:white;
     background-color: var(--colorDark, var(--color, rgba(0, 0, 0, 0.2)));
 }
 
 .TagCloudModule .tag-cloud > span.tag-el.selected {
+    color:white;
     background-color: var(--selected, #6A7CE9);
 }
 
 .TagCloudModule .tag-cloud > span.tag-el.selected:hover {
+    color:white;
     background-color: var(--hover, #4b58a7);
 }
 
 .TagCloudModule .tag-cloud > span.tag-el input {
+ 
     float: left;
     margin-right: 10px;
         pointer-events: none;
