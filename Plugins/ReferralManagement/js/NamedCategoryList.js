@@ -28,11 +28,11 @@ var NamedCategoryList = (function() {
 			var orderB=9999;
 
 
-			if(typeof a.metadata.order!="undefined"){
+			if(a.metadata&&typeof a.metadata.order!="undefined"){
 				orderA=parseInt(a.metadata.order);
 			}
 
-			if(typeof b.metadata.order!="undefined"){
+			if(b.metadata&&typeof b.metadata.order!="undefined"){
 				orderB=parseInt(b.metadata.order);
 			}
 
