@@ -277,7 +277,7 @@ GetWidget('communityListForm')->display($targetInstance);
 GetWidget('communityForm')->display($targetInstance);
 
 
-
+GetWidget('wikiDetail')->display($targetInstance);
 
 
 GetWidget('defaultPostDetail')->display($targetInstance);
