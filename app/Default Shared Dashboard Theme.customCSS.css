@@ -4144,6 +4144,7 @@ button.inline-btn.with-no-tasks {
 */
 
 .TagCloudModule.priority-color .tag-cloud > span.tag-el{
+  color:black;
   &.word-low{
       background-color: #3cb3715a;
   } 
@@ -4156,6 +4157,7 @@ button.inline-btn.with-no-tasks {
 } 
 
 .dark .TagCloudModule.priority-color .tag-cloud > span.tag-el{
+   color:white;
    &.word-low {
       background-color: #3cb37113;
   } 
@@ -4170,6 +4172,7 @@ button.inline-btn.with-no-tasks {
 .TagCloudModule.priority-color .tag-cloud > span.tag-el{
    &.word-low {
       &.selected{
+          color:white;
           background-color: mediumseagreen;
           &.hover{
               background-color: #2e8755;
@@ -4178,6 +4181,7 @@ button.inline-btn.with-no-tasks {
   } 
    &.word-medium {
       &.selected{
+          color:white;
           background-color: #c2bd2d;
           &.hover{
               background-color: #978b28;
@@ -4186,6 +4190,7 @@ button.inline-btn.with-no-tasks {
   }  
    &.word-high {
       &.selected{
+          color:white;
           background-color: #972828;
           &.hover{
               background-color: #c22d2d;
