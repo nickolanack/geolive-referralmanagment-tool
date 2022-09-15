@@ -29412,9 +29412,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
-            "saveTemplateAsData": false,
-            "contentTemplate": "#Wiki Content"
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "#Wiki Content",
+            "readAccess": "public"
         }
     }
 }
