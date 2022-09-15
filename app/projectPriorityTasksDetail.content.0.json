@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "\n\nProjectTaskList.ProjectTaskMenuButtons(item, callback);",
+        "script": "\nconsole.log('should have same position');\nProjectTaskList.ProjectTaskMenuButtons(item, callback);",
         "description": "Info about my custom script"
     }
 }
