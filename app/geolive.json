@@ -26363,7 +26363,7 @@
             "formatOutputScript": "return $parameters;",
             "enableUserAjaxWrite": false,
             "authUserAjaxScript": "XXXX-XXXX",
-            "saveParametersAsData": true,
+            "saveParametersAsData": false,
             "enableRevisions": false,
             "broadcastChanges": false,
             "parameters": [
@@ -26373,24 +26373,39 @@
             "readAccess": "public",
             "layout": {
                 "icon": {
-                    "width": "30px"
+                    "width": "30px",
+                    "align": "center",
+                    "hidden": true
+                },
+                "selection": {
+                    "width": "35px",
+                    "align": "center",
+                    "tip": "Selected items can be viewed together on the map",
+                    "label": "Map"
+                },
+                "priority": {
+                    "width": "30px",
+                    "align": "center",
+                    "tip": "",
+                    "label": "Priority",
+                    "showLabel": false
                 },
                 "id": {
-                    "width": "60px",
-                    "label": "ID #",
+                    "width": "50px",
+                    "label": "ID",
+                    "align": "center",
                     "tip": "These IDs are automatically assigned"
                 },
                 "auth": {
                     "maxWidth": "150px",
-                    "label": "Auth #",
+                    "label": "Referral ID",
                     "@": [],
                     "collapseAt": "80px",
-                    "tip": "The should be included in the referral letter"
+                    "tip": "This is the ID number in the subject line of a referralr"
                 },
                 "created": {
                     "width": "auto",
-                    "maxWidth": "250px",
-                    "--hidden": true,
+                    "maxWidth": "180px",
                     "label": "Submitted",
                     "collapseAt": "55px"
                 },
@@ -26424,12 +26439,16 @@
                     "label": "Last Edit",
                     "collapseAt": "70px"
                 },
+                "security": {
+                    "width": "120px",
+                    "collapseAt": "100px",
+                    "label": "Security"
+                },
                 "attachments": {
                     "width": "auto",
                     "maxWidth": "250px",
                     "label": "Attachments",
-                    "collapseAt": "150px",
-                    "--hidden": true
+                    "collapseAt": "150px"
                 },
                 "community": {
                     "width": "auto",
@@ -26443,10 +26462,6 @@
                     "maxWidth": "250px",
                     "hidden": true,
                     "collapseAt": "150px"
-                },
-                "selection": {
-                    "width": "30px",
-                    "tip": "Selected items can be viewed together on the map"
                 }
             }
         }
