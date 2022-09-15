@@ -6191,7 +6191,9 @@ div.popover[data-with-view="reportSelectionView"]{
     
 }
 
-
+._tableStyle_>.ui-view [data-col="stars"] {
+    height: 30px;
+}
 
 
 ._tableStyle_{
