@@ -2889,9 +2889,12 @@ img.youtubelogo {
     content: attr(data-other-stars);
     position: relative;
     bottom: -2px;
-    right: -14px;
+    right: -2px;
     font-size: 8px;
-    color: #60ceae;
+    color:black;
+}
+.dark .starred-indicator.other-stars:after {
+     color: white;
 }
 
 
