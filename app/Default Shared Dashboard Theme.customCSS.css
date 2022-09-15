@@ -900,6 +900,19 @@ div.field-value-module.inline.ids{
     font-size: 30px;
 }
 
+.markdown>span:after {
+    content: "";
+    display: inline-block;
+    clear: both;
+    width: 100%;
+}
+
+.markdown>span {
+    display: inline-block;
+    margin-bottom:20px;
+    width: 100%;
+}
+
 .markdown button.inline-edit {
     float: right;
     margin-right: 18px;
@@ -4076,26 +4089,120 @@ button.inline-btn.with-no-tasks {
 
 
 .TagCloudModule .tag-cloud > span.tag-el {
+    color:black;
     background-color: var(--color, rgba(0, 0, 0, 0.4));
 }
 
 .dark .TagCloudModule .tag-cloud > span.tag-el {
+    color:white;
     background-color: var(--colorDark, var(--color, rgba(0, 0, 0, 0.2)));
 }
 
 .TagCloudModule .tag-cloud > span.tag-el.selected {
+    color:white;
     background-color: var(--selected, #6A7CE9);
 }
 
 .TagCloudModule .tag-cloud > span.tag-el.selected:hover {
+    color:white;
     background-color: var(--hover, #4b58a7);
 }
 
 .TagCloudModule .tag-cloud > span.tag-el input {
+ 
     float: left;
     margin-right: 10px;
         pointer-events: none;
 }
+
+
+
+/*
+{
+   "maxSelected": 1,
+   "values": [
+      "Low",
+      "Medium",
+      "High"
+   ],
+   "colorMap": [
+      {
+         "hover": "#2e8755",
+         "selected": "mediumseagreen",
+         "colorDark": "#3cb37113",
+         "color": "#3cb3715a"
+      },
+      {
+         "hover": "#978b28",
+         "selected": "#c2bd2d",
+         "colorDark": "#c2bd2d13",
+         "color": "#c2bd2d5a"
+      },
+      {
+         "hover": "#972828",
+         "selected": "#c22d2d",
+         "colorDark": "#c22d2d13",
+         "color": "#c22d2d5a"
+      }
+   ]
+}
+*/
+
+.TagCloudModule.priority-color .tag-cloud > span.tag-el{
+  color:black;
+  &.word-low{
+      background-color: #3cb3715a;
+  } 
+  &.word-medium{
+      background-color: #c2bd2d5a;
+  }  
+  &.word-high{
+      background-color: #c22d2d5a;
+  }  
+} 
+
+.dark .TagCloudModule.priority-color .tag-cloud > span.tag-el{
+   color:white;
+   &.word-low {
+      background-color: #3cb37113;
+  } 
+   &.word-medium {
+      background-color: #c2bd2d13;
+  }  
+   &.word-high {
+      background-color: #c22d2d13;
+  }  
+} 
+
+.TagCloudModule.priority-color .tag-cloud > span.tag-el{
+   &.word-low {
+      &.selected{
+          color:white;
+          background-color: mediumseagreen;
+          &.hover{
+              background-color: #2e8755;
+          }
+      }
+  } 
+   &.word-medium {
+      &.selected{
+          color:white;
+          background-color: #c2bd2d;
+          &.hover{
+              background-color: #978b28;
+          }
+      }
+  }  
+   &.word-high {
+      &.selected{
+          color:white;
+          background-color: #972828;
+          &.hover{
+              background-color: #c22d2d;
+          }
+      }
+  }  
+} 
 
 
 

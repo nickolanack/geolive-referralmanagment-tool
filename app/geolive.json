@@ -865,8 +865,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 1,
-                    "y": 401
+                    "x": 8,
+                    "y": 414
                 },
                 "children": [
                     "widget.ProposalWizardBuilder.65.metadata.children.0.json",
@@ -877,16 +877,16 @@
                             "widget.ProposalWizardBuilder.65.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 146,
-                            "y": 316
+                            "x": 250,
+                            "y": 307
                         },
                         "children": [
                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 106,
-                                    "y": 629
+                                    "x": 210,
+                                    "y": 633
                                 }
                             },
                             {
@@ -896,16 +896,16 @@
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 694,
-                                    "y": 135
+                                    "x": 769,
+                                    "y": 203
                                 },
                                 "children": [
                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 654,
-                                            "y": 350
+                                            "x": 729,
+                                            "y": 418
                                         }
                                     },
                                     {
@@ -915,31 +915,31 @@
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1508,
-                                            "y": 466
+                                            "x": 1524,
+                                            "y": 406
                                         },
                                         "children": [
                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1468,
-                                                    "y": 692
+                                                    "x": 1484,
+                                                    "y": 632
                                                 }
                                             },
                                             {
                                                 "class": "DecisionNode",
                                                 "_diagramState": {
-                                                    "x": 1508,
-                                                    "y": 466
+                                                    "x": 1524,
+                                                    "y": 406
                                                 },
                                                 "children": [
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.0.json",
                                                     {
                                                         "class": "DecisionStemNode",
                                                         "_diagramState": {
-                                                            "x": 1498,
-                                                            "y": 506
+                                                            "x": 1524,
+                                                            "y": 456
                                                         },
                                                         "builderMetadata": {
                                                             "positions": {
@@ -962,16 +962,16 @@
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.2.fields.0.json"
                                                         ],
                                                         "_diagramState": {
-                                                            "x": 1881,
-                                                            "y": 771
+                                                            "x": 1746,
+                                                            "y": 203
                                                         },
                                                         "children": [
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.2.children.0.json",
                                                             {
                                                                 "class": "InsertNode",
                                                                 "_diagramState": {
-                                                                    "x": 1841,
-                                                                    "y": 984
+                                                                    "x": 1706,
+                                                                    "y": 416
                                                                 }
                                                             }
                                                         ],
@@ -1120,16 +1120,16 @@
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.3.fields.0.json"
                                                         ],
                                                         "_diagramState": {
-                                                            "x": 1775,
-                                                            "y": 120
+                                                            "x": 1748,
+                                                            "y": 973
                                                         },
                                                         "children": [
                                                             "widget.ProposalWizardBuilder.65.metadata.children.1.children.2.children.2.children.2.children.3.children.0.json",
                                                             {
                                                                 "class": "InsertNode",
                                                                 "_diagramState": {
-                                                                    "x": 1735,
-                                                                    "y": 310
+                                                                    "x": 1708,
+                                                                    "y": 1163
                                                                 }
                                                             }
                                                         ],
@@ -1701,10 +1701,33 @@
                                             }
                                         },
                                         {
-                                            "type": "plugin.Attributes.WizardTagCloud",
+                                            "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
                                                 "attributeFields": [
                                                     "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "label": "Address or location",
+                                                "message": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add more values",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": "{}",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTagCloud",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.9.config.attributeFields.0.json"
                                                 ],
                                                 "className": "padd-top",
                                                 "showLabel": false,
@@ -1716,7 +1739,7 @@
                                                 "selectedColor": "rgb(106, 124, 233)",
                                                 "shuffleTags": false,
                                                 "tags": "[\"Forestry\", \"Mining\", \"Energy\", \"Roads\"]",
-                                                "getItemTagsScript": "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.8.config.getItemTagsScript.js",
+                                                "getItemTagsScript": "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.9.config.getItemTagsScript.js",
                                                 "formatModule": "ProjectTagList.formatTagCloudModule(module);\nmodule.setInfoTip('<h3>Activity Types<\/h3><ul>'+\n    ProjectTagList.getProjectTagsData().map(\n        function(t){return '<li>'+t.getName()+': '+t.getDescription()+'<\/li>'}).join('')+\n'<\/ul>');"
                                             }
                                         },
@@ -1724,7 +1747,7 @@
                                             "type": "plugin.Attributes.WizardDescriptionAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.9.config.attributeFields.0.json"
+                                                    "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.10.config.attributeFields.0.json"
                                                 ],
                                                 "className": "no-media hidden",
                                                 "label": "Project Description",
@@ -1748,7 +1771,7 @@
                                             "type": "plugin.Attributes.WizardDescriptionAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.10.config.attributeFields.0.json"
+                                                    "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.11.config.attributeFields.0.json"
                                                 ],
                                                 "className": "no-text add-letters --width-2 only-docs",
                                                 "label": "Referral letter",
@@ -1772,9 +1795,9 @@
                                             "type": "plugin.Attributes.WizardTagCloud",
                                             "config": {
                                                 "attributeFields": [
-                                                    "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.11.config.attributeFields.0.json"
+                                                    "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.12.config.attributeFields.0.json"
                                                 ],
-                                                "className": false,
+                                                "className": "priority-color",
                                                 "showLabel": false,
                                                 "showAddWord": false,
                                                 "label": "{field.label}",
@@ -1792,7 +1815,7 @@
                                             "type": "plugin.Attributes.WizardTagCloud",
                                             "config": {
                                                 "attributeFields": [
-                                                    "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.12.config.attributeFields.0.json"
+                                                    "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.13.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
                                                 "showLabel": false,
@@ -1804,7 +1827,7 @@
                                                 "selectedColor": "rgb(143, 188, 143)",
                                                 "shuffleTags": false,
                                                 "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
-                                                "getItemTagsScript": "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.12.config.getItemTagsScript.js",
+                                                "getItemTagsScript": "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.13.config.getItemTagsScript.js",
                                                 "formatModule": "module.runOnceOnLoad(function(){\nvar cats= Proposal.ListTerritories();\nif(cats.length==0){\n    module.getCloud().getElement().parentNode.setStyle(\"display\",\"none\");\n}\n});\n\n\nif(window.GuestProposal&&item instanceof GuestProposal){\n    module.getElement().setStyle('display','none')\n}"
                                             }
                                         },
@@ -1822,7 +1845,7 @@
                                                 "multiMessage": "add another value",
                                                 "formatter": "none",
                                                 "beforeRenderModuleScript": "",
-                                                "onRenderTextFieldScript": "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.13.config.onRenderTextFieldScript.js",
+                                                "onRenderTextFieldScript": "widget.ProposalWizardBuilder.65.metadata.children.1.builderMetadata.positions.content.modules.14.config.onRenderTextFieldScript.js",
                                                 "formatValueScript": "",
                                                 "getValueScript": " return \"\"; ",
                                                 "updateValueScript": " object.value=value ",
@@ -9083,14 +9106,6 @@
                         "modules": [
                             "projectPriorityTasksDetail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "projectPriorityTasksDetail.metadata.positions.content.modules.1.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "project-tasks hidden",
@@ -9114,11 +9129,19 @@
                                     "targetName": "",
                                     "getItemListScript": "return item.getTasks();",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "projectPriorityTasksDetail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "projectPriorityTasksDetail.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
-                                    "filterItemsScript": "projectPriorityTasksDetail.metadata.positions.content.modules.2.config.filterItemsScript.js",
-                                    "sortItemsScript": "projectPriorityTasksDetail.metadata.positions.content.modules.2.config.sortItemsScript.js",
+                                    "filterItemsScript": "projectPriorityTasksDetail.metadata.positions.content.modules.1.config.filterItemsScript.js",
+                                    "sortItemsScript": "projectPriorityTasksDetail.metadata.positions.content.modules.1.config.sortItemsScript.js",
                                     "maxItems": "-1"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "projectPriorityTasksDetail.metadata.positions.content.modules.2.config.script.js",
+                                    "description": "Info about my custom script"
                                 }
                             }
                         ]
@@ -12612,12 +12635,12 @@
             "metadata": {
                 "title": "proposalAttributes",
                 "_tableDiagramState": {
-                    "x": 309,
-                    "y": 255
+                    "x": 358,
+                    "y": 273
                 },
                 "_diagramState": {
-                    "x": 309,
-                    "y": 255
+                    "x": 358,
+                    "y": 273
                 },
                 "appliesTo": [
                     "proposal"
@@ -14352,6 +14375,50 @@
                         "was": "",
                         "title": "community",
                         "label": "Community",
+                        "description": "",
+                        "icon": [],
+                        "color": "rgb(undefined, undefined, undefined)",
+                        "visibility": "public",
+                        "editability": "registered",
+                        "searchability": "public",
+                        "allowMultiple": false,
+                        "fieldType": "text",
+                        "fieldTextOptions": {
+                            "textType": "input",
+                            "inputOptions": {
+                                "buildAutocomplete": false,
+                                "requireModeration": false,
+                                "limitMaxChars": 0,
+                                "limitMaxWords": 0,
+                                "allowHtml": false,
+                                "allowMedia": true,
+                                "allowLinks": true
+                            },
+                            "listOptions": {
+                                "takeSugesstions": true,
+                                "buildTree": false,
+                                "iconize": false,
+                                "colorize": false
+                            }
+                        },
+                        "fieldNumberOptions": {
+                            "precision": 0,
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
+                        },
+                        "fieldBooleanOptions": {
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
+                        "was": "",
+                        "title": "location",
+                        "label": "location",
                         "description": "",
                         "icon": [],
                         "color": "rgb(undefined, undefined, undefined)",
@@ -29357,9 +29424,66 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
-            "saveTemplateAsData": false,
-            "contentTemplate": "#Select datasets"
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "#Select datasets",
+            "readAccess": "public"
+        }
+    },
+    "widget.528": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "wikiDetail",
+            "target": "wikiDetail",
+            "templateName": "wikiDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "useRemote": "",
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "wikiDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.529": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-wiki.text",
+            "target": "module.html-wiki.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "#Wiki Content",
+            "readAccess": "public"
         }
     }
 }
