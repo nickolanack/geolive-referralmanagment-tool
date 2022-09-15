@@ -1,8 +1,13 @@
 {
-    "type": "WizardScriptElement",
+    "type": "InlineHtml",
     "config": {
-        "name": "My Custom Script",
-        "script": "return ProjectList.SortMenuContent(item);",
-        "description": "Info about my custom script"
+        "className": "",
+        "text": "#Select datasets",
+        "template": "html.datasetSelect",
+        "templateVariablesScript": "{}",
+        "formatTextScript": "",
+        "formatVariablesScript": "",
+        "ajaxRequestTemplate": true,
+        "identifier": "htmlLabel"
     }
 }
