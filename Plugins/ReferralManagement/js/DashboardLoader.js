@@ -36,7 +36,7 @@ var DashboardLoader = (function() {
 				var currentView = 'dashboardLoader';
 
 
-				$$('.dashboard-main')[0].remoceClass('loading');
+				$$('.dashboard-main')[0].removeClass('loading');
 				var loadView = function(view, item) {
 
 					if (currentView == view) {
