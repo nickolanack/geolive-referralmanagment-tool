@@ -413,11 +413,7 @@ var MainNavigationMenu = new Class({
 					{
 						html:"Wiki",
 						name:"wiki",
-						events: {
-							click: function() {
-								
-							}
-						}
+						template: "wikiDetail"
 					},
 					{
 						html: DashboardConfig.getValue('gatherLabel'),
