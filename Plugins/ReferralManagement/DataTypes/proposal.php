@@ -83,17 +83,33 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
                 }
             }
 
+            if(!$auth){
 
+                /**
+                 * write-status is a special case of write that allows site administrators and community 
+                 * administrators to archive to archive projects that they do not have write access to
+                 */
+
+
+                 if($task=="write-status" {
+
+                     $user=(new \ReferralManagement\User());
+                     $meta=$user->getMetadata($userId);
+
+                     if($meta['community']==$item->community||$meta['community']==$user->communityCollective()){
+                        $minAccessLevel = 'tribal-council';
+                        $auth=Auth('memberof', $minAccessLevel, 'group');
+                     }
+
+                    //$minAccessLevel = 'tribal-council';
+                   //$auth=Auth('memberof', $minAccessLevel, 'group');
+                }
+            }
 
         }      
 
 
-        if($visible&&$task=="write-status"&&!$auth) {
-
-
-            //$minAccessLevel = 'tribal-council';
-           //$auth=Auth('memberof', $minAccessLevel, 'group');
-        }
+       
 
 
         self::$Auth[$cacheKey]=$auth;
