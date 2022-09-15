@@ -2246,6 +2246,8 @@ button.inline-logout {
     display: table-cell;
     padding: 0;
     vertical-align: top;
+    z-index: 1;
+    position: relative;
 }
 
 
