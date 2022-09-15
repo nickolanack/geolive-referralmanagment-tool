@@ -771,6 +771,9 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 			(new \ReferralManagement\Project())->fromId($json->id)->setStatus($json->status);
 
+
+			$this->getPlugin()->cache()->needsProjectListUpdate();
+
 			return array('id' => (int) $json->id, 'status' => $json->status);
 
 		}
