@@ -891,6 +891,14 @@ var DashboardPageLayout = (function() {
 				{
 					html: "Survey",
 					config: "showSurvey"
+				},
+				{
+					html: "Manual",
+					config: "showManual"
+				},
+				{
+					html: "Wiki",
+					config: "showWiki"
 				}
 			]
 

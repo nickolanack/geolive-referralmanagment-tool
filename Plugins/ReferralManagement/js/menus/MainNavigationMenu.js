@@ -442,6 +442,7 @@ var MainNavigationMenu = new Class({
 						name: "manual",
 						events: {
 							click: function() {
+								window.open(DashboardConfig.getValue('manualUrl'), "_blank");
 							}
 						}
 					}, {
