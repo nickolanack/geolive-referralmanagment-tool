@@ -35,6 +35,8 @@ var DashboardLoader = (function() {
 
 				var currentView = 'dashboardLoader';
 
+
+				$$('.dashboard-main')[0].remoceClass('loading');
 				var loadView = function(view, item) {
 
 					if (currentView == view) {
