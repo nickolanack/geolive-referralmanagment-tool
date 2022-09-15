@@ -171,7 +171,7 @@ var DashboardPageLayout = (function() {
 
 
 
-					if (shouldFilter && !me._evalFilterObj(filterObj)) {
+					if (shouldFilter && !me._evalFilterObj(filterObj, item)) {
 
 						if (buttons[item]) {
 							delete buttons[item];
@@ -188,12 +188,12 @@ var DashboardPageLayout = (function() {
 			});
 
 		},
-		_evalFilterObj:function(filterObj) {
+		_evalFilterObj:function(filterObj, filterItem) {
 
 			if (filterObj.condition) {
 				var condition = filterObj.condition;
 				if (typeof condition == "function") {
-					condition = condition();
+					condition = condition(filterItem);
 				}
 				return !!condition;
 			}
@@ -271,7 +271,7 @@ var DashboardPageLayout = (function() {
 						if (shouldFilter) {
 
 
-							var filterValue = me._evalFilterObj(filterObj);
+							var filterValue = me._evalFilterObj(filterObj, item);
 
 							if (filterValue === false && filterObj.hide === true) {
 
@@ -310,7 +310,7 @@ var DashboardPageLayout = (function() {
 					if (item.readAccess) {
 						filterObj = item.readAccess;
 
-						var filterValue = me._evalFilterObj(filterObj);
+						var filterValue = me._evalFilterObj(filterOb, item);
 
 						if (filterValue === false && filterObj.hide === true) {
 
@@ -717,7 +717,7 @@ var DashboardPageLayout = (function() {
 					}
 				}, {
 					html: ['Datasets', 'Access', 'Team', 'Users', 'Discussion', 'Map', 'Files', 'Notes', 'History', 'Status', 'Proponent', 'Communication', 'Briefing', 'Review'],
-					condition: function() {
+					condition: function(item) {
 
 						var application = ReferralManagementDashboard.getApplication();
 						var project = application.getNamedValue("currentProject");
@@ -726,7 +726,7 @@ var DashboardPageLayout = (function() {
 				},
 				{
 					html: ['Files', 'Notes', 'Discussion'],
-					condition: function() {
+					condition: function(item) {
 
 						var application = ReferralManagementDashboard.getApplication();
 						var project = application.getNamedValue("currentProject");
