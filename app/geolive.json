@@ -5106,6 +5106,24 @@
                     "limit": 1
                 },
                 {
+                    "type": "boolean",
+                    "name": "showManual",
+                    "default": false,
+                    "label": "showManual"
+                },
+                {
+                    "type": "text",
+                    "name": "manualUrl",
+                    "default": "",
+                    "label": "manualUrl"
+                },
+                {
+                    "type": "boolean",
+                    "name": "showWiki",
+                    "default": false,
+                    "label": "showWiki"
+                },
+                {
                     "type": "images",
                     "name": "googleAppIcon",
                     "default": [],
@@ -5563,7 +5581,7 @@
             "autoApproveMobileCommunityOnce": false,
             "autoApproveMobileCommunity": false,
             "requireValidMobileEmail": true,
-            "enablePending": true,
+            "enablePending": false,
             "useFacebookLogin": false,
             "gatherIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_r7F_lYW_6cm_%5BG%5D-%3Ethumb%3A%3E200x%3E150.png"
@@ -5600,7 +5618,10 @@
             "nameForDatasets": "Datasets",
             "loginLabel": "Login",
             "broadcastChanges": true,
-            "altLogoLink": ""
+            "altLogoLink": "",
+            "showManual": false,
+            "manualUrl": "",
+            "showWiki": false
         }
     },
     "widget.154": {

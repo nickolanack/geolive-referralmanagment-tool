@@ -91,6 +91,15 @@
     content: "\f10b";
 }
 
+
+.navigation-menu li.menu-links-wiki:before {
+    content: "\0f02e";
+}
+
+.navigation-menu li.menu-links-manual:before{
+    content: "\0f02d";
+}
+
 .menu-configuration li:before{
     content: "\f013";
 }
