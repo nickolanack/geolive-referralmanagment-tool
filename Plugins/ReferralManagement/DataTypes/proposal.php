@@ -91,7 +91,7 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
                  */
 
 
-                 if($task=="write-status" {
+                 if($task=="write-status"){
 
                      $user=(new \ReferralManagement\User());
                      $meta=$user->getMetadata($userId);
