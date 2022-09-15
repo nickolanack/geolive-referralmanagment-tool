@@ -1,4 +1,4 @@
-error_log(print_r($parameters,true));
+//error_log(print_r($parameters,true));
 if(empty($parameters['groups'])){
     GetPlugin('ReferralManagement');
     $user = new \ReferralManagement\User();
