@@ -22504,16 +22504,16 @@
                             "datasetSelectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 245,
-                            "y": 195
+                            "x": 255,
+                            "y": 205
                         },
                         "children": [
                             "datasetSelectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 205,
-                                    "y": 361
+                                    "x": 215,
+                                    "y": 371
                                 }
                             }
                         ],
@@ -22527,6 +22527,14 @@
                                 "content": {
                                     "modules": [
                                         "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "WizardScriptElement",
+                                            "config": {
+                                                "name": "My Custom Script",
+                                                "script": "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.script.js",
+                                                "description": "Info about my custom script"
+                                            }
+                                        },
                                         {
                                             "type": "UIListView",
                                             "config": {
@@ -22542,14 +22550,14 @@
                                                 "formOptions": "\"{}\"",
                                                 "showDeleteButton": false,
                                                 "deleteItemScript": "defaultBehaviorFn()",
-                                                "initModuleScript": "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.initModuleScript.js",
+                                                "initModuleScript": "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.initModuleScript.js",
                                                 "formatModuleScript": "",
                                                 "resolveItemScript": "return item",
-                                                "filterModulesScript": "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.filterModulesScript.js",
+                                                "filterModulesScript": "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.filterModulesScript.js",
                                                 "itemButtonsScript": "return [];",
                                                 "insertAtTop": false,
                                                 "targetName": "",
-                                                "getItemListScript": "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.getItemListScript.js",
+                                                "getItemListScript": "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.getItemListScript.js",
                                                 "formatItemListScript": "return list;",
                                                 "formatListItemModuleScript": "return item;",
                                                 "emptyNamedView": "emptyListView",
@@ -29317,6 +29325,20 @@
                 ]
             },
             "readAccess": "public"
+        }
+    },
+    "widget.527": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.html-datasetSelect.text",
+            "target": "module.html-datasetSelect.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "#Select datasets"
         }
     }
 }

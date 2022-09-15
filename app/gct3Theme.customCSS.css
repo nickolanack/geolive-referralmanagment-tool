@@ -1493,8 +1493,18 @@ button.download-link {
 
 
 
+.pb-c.gct3 .field-value-module.inline.sortable {
+    color: white;
+}
 
+.pb-c.gct3.dark .field-value-module.inline.sortable {
+   color: #545454
+}
 
+.pb-c.gct3.dark .uilist-pagination button {
+    border: none;
+    background-color: #04a049;
+}
 
 
 
