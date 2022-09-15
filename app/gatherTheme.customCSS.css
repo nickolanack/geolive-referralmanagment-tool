@@ -109,13 +109,16 @@ ul.item-tags li {
     position: relative;
 }
 
+.layout-list .file-list .file-item .file-container {
 
-.dark .layout-list .file-list .file-item .file-container {
     overflow: hidden;
     border-radius: 3px;
-    background: #030310;
+    background: white;
     padding: 0;
     border-width: 0;
+}
+.dark .layout-list .file-list .file-item .file-container {
+    background: #030310;
 }
 
 .pb-c [data-view="singleTaskOverviewDetail"] [data-view="singleUserTeamCollectionIconsInlineDetail"] {
