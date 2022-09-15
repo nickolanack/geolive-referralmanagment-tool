@@ -310,7 +310,7 @@ var DashboardPageLayout = (function() {
 					if (item.readAccess) {
 						filterObj = item.readAccess;
 
-						var filterValue = me._evalFilterObj(filterOb, item);
+						var filterValue = me._evalFilterObj(filterObj, item);
 
 						if (filterValue === false && filterObj.hide === true) {
 
