@@ -900,6 +900,19 @@ div.field-value-module.inline.ids{
     font-size: 30px;
 }
 
+.markdown>span:after {
+    content: "";
+    display: inline-block;
+    clear: both;
+    width: 100%;
+}
+
+.markdown>span {
+    display: inline-block;
+    margin-bottom:20px;
+    width: 100%;
+}
+
 .markdown button.inline-edit {
     float: right;
     margin-right: 18px;
