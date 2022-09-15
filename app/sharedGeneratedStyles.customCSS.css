@@ -347,7 +347,7 @@ button.btn-search-list {
                 opacity: 0.2;
                 pointer-events: none;
                 background-size: cover;
-                filter: blur(10px); opacity:0.7;
+                filter: blur(10px) opacity(0.7);
             }
             .ui-view.dashboard-main.loading:after {
                  filter: blur(10px);
