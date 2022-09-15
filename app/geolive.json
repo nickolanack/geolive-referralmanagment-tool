@@ -2579,7 +2579,8 @@
             "otherMouseover": "<span style=\"font-size:20px\">Other Data<\/span><\/br>These map layers display additional useful features.",
             "otherTint": "rgb(0,0,0)",
             "otherColor": "rgb(232, 232, 232)",
-            "enableRevisions": false
+            "enableRevisions": false,
+            "broadcastChanges": false
         }
     },
     "widget.115": {
@@ -2977,7 +2978,8 @@
             "saveParametersAsData": false,
             "enableUserAjaxWrite": false,
             "authUserAjaxScript": "XXXX-XXXX",
-            "enableRevisions": false
+            "enableRevisions": false,
+            "broadcastChanges": false
         }
     },
     "widget.131": {
@@ -3263,7 +3265,8 @@
             "enableUserAjaxWrite": false,
             "authUserAjaxScript": "XXXX-XXXX",
             "saveParametersAsData": false,
-            "enableRevisions": false
+            "enableRevisions": false,
+            "broadcastChanges": false
         }
     },
     "widget.137": {
@@ -4016,7 +4019,8 @@
             "create-marker-intro": "",
             "enableUserAjaxWrite": false,
             "authUserAjaxScript": "XXXX-XXXX",
-            "enableRevisions": false
+            "enableRevisions": false,
+            "broadcastChanges": false
         }
     },
     "widget.145": {
@@ -5488,14 +5492,15 @@
                 "webresources\/config-153\/ed4ac.[G]_m3o_LN2_N63_[ImAgE].png"
             ],
             "applicationLogo": [
-                "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_ewq_tsE_%5BG%5D_nV-%3Ethumb%3A%3E200x%3E150.png",
-                "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_%5BG%5D_ldi_d9_9Cu-%3Ethumb%3A%3E200x%3E150.png"
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/tla-o-qui-aht.geoforms.ca\/1\/Uploads\/cx9_%5BImAgE%5D_YG9_hMA_%5BG%5D-%3Ethumb%3A%3E200x%3E150.png"
             ],
             "formatOutputScript": "return $parameters;",
             "main-map": [
                 "webresources\/config-153\/7a1c5.[ImAgE]_HcO_[G]_sSm_8ws.png"
             ],
-            "backgroundImage": [],
+            "backgroundImage": [
+                "https:\/\/images.squarespace-cdn.com\/content\/v1\/559af7c4e4b06c1fb86fd8f5\/1436891415105-O9SGR9X6PRTAIQ7FCME0\/Tla-o-qui-aht+34.jpg?format=2500w"
+            ],
             "configuration-export": [
                 "webresources\/config-153\/ebb6f.[G]_rAx_yYH_U0p_[ImAgE].png"
             ],
@@ -5537,8 +5542,7 @@
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/PZR_XRl_%5BImAgE%5D_%5BG%5D_xBM.png"
             ],
             "gatherLogo": [
-                "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_ewq_tsE_%5BG%5D_nV-%3Ethumb%3A%3E200x%3E150.png",
-                "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_%5BG%5D_ldi_d9_9Cu-%3Ethumb%3A%3E200x%3E150.png"
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/tla-o-qui-aht.geoforms.ca\/1\/Uploads\/%5BG%5D_%5BImAgE%5D_s_TK6_XUw-%3Ethumb%3A%3E200x%3E150.png"
             ],
             "fileUploadBtnIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_%5BG%5D_yv_Xj5_vwP.png"
@@ -5549,7 +5553,7 @@
             "appleAppIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/Lx7_R7S_3Xr_%5BG%5D_%5BImAgE%5D.png"
             ],
-            "slackUrl": "https:\/\/gather.geoforms.slack.com",
+            "slackUrl": "https:\/\/wabuntc.slack.com",
             "showUsersRoles": false,
             "enableTasks": true,
             "enableProposals": true,
@@ -5558,9 +5562,9 @@
             "enableActivity": true,
             "enableMap": true,
             "simplifiedMenu": false,
-            "gatherLabel": "Gather Referral Tool",
+            "gatherLabel": "Tla-o-qui-aht Referral Tool",
             "darkMode": true,
-            "loadingLabel": "Loading your Gather Referral Management Portal",
+            "loadingLabel": "Loading your Tla-o-qui-aht Referral Management Portal",
             "surveyUrl": "https:\/\/docs.google.com\/forms\/d\/e\/1FAIpQLSfq7MQRMB4TDe959R5ER6NKsAf2Q7rTtEOEgfFDJ3JQ3gNxng\/viewform?usp=sf_link",
             "showSearchMenu": true,
             "roleLabels": {
@@ -5628,13 +5632,13 @@
             "authUserAjaxScript": "XXXX-XXXX",
             "applicationLogoAlt": [],
             "showAltLogo": true,
-            "showSlack": true,
-            "showSurvey": true,
+            "showSlack": false,
+            "showSurvey": false,
             "showDatasets": false,
             "gatherUrl": "https:\/\/gather.geoforms.ca\/",
-            "showMapAnnotationsMain": "true",
+            "showMapAnnotationsMain": false,
             "showMapAnnotationsProject": "true",
-            "showProjectActivity": true,
+            "showProjectActivity": false,
             "enableRevisions": false,
             "nameForProjects": "Submissions",
             "nameForCollections": "Collections",
