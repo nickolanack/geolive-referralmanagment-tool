@@ -201,7 +201,15 @@
     padding-bottom: 300px;
 }
 
+.intro-section-3 .sub-2:after {
+    transform: scale(1);
+    transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+}
 
+.intro-section-3:hover .sub-2:after {
+    transform:scale(1.05);
+    filter: drop-shadow(2px 4px 10px #00000099);
+}
 
 
 
