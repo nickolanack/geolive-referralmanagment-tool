@@ -113,3 +113,35 @@
 
     
 }
+
+
+
+
+
+.intro-section .sub-1:after {
+    content: "";
+    background-image: url("https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/MAT_%5BG%5D_kYB_RBu_%5BImAgE%5D.png");
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    background-size: cover;
+    z-index: -1;
+    position: relative;
+    left: -165px;
+    transform: rotate(-20deg);
+    transition: left 0.2s ease-in-out, top 0.2s ease-in-out , transform 0.2s ease-in-out;
+    top: 0;
+}
+
+
+.intro-section:hover .sub-1:after {
+    left: -145px;
+    transform: rotate(-25deg);
+    top: 25px;
+}
+
+
+
+
+
+
