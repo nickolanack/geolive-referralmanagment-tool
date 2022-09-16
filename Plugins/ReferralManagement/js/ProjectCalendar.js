@@ -423,7 +423,7 @@ var ProjectCalendar = (function() {
 
 					var el = new Element('span', {
 						class:"share-links",
-						html: "<h2>Download your calendar</h2>"
+						html: "<h2>Download your calendar</h2><p>Your iCal link is associated with this account, and can be used to synchronize events with many external calendars. You should not share your iCal link with anyone else.</p>"
 					});
 
 					ProjectCalendar.GetICalLink(function(link) {
