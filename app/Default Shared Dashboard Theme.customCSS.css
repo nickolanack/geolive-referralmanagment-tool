@@ -2325,7 +2325,7 @@ button.inline-logout {
     padding: 4px;
 }
 .ui-view.inset-shading>div {
-    background-color: $themeInset;
+    /*background-color: $themeInset;*/
     display: inline-block;
     width: 100%;
     height: 100%;
@@ -2342,7 +2342,7 @@ button.inline-logout {
 }
 
 .ui-view.inset-menu-shading>div {
-    background-color: $themeInset;
+   /*background-color: $themeInset;*/
     display: inline-block;
     width: 100%;
     height: 100%;
