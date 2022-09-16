@@ -18,6 +18,12 @@ var  DisplayTheme=(function(){
 
 		},
 
+		setDefaults:function(values, mainView){
+
+
+
+		},
+
 		_getFormOptions:function(){
 
 
