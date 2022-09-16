@@ -721,7 +721,7 @@ div.field-value-module.inline.ids{
         white-space: nowrap;
         width: 100px;
         height: 100px;
-        border: 3px solid white;
+        border: 3px solid black;
         border-radius: 100%;
         margin: 30px 30px 0 0;
         position: relative;
@@ -787,6 +787,12 @@ div.field-value-module.inline.ids{
         visibility: hidden;
     }
     
+}
+
+.dark .flow {
+    li {
+        border-color:white;
+    }
 }
 
 .with-project-detail-click, .with-projects-click, .with-user-profile-click {
