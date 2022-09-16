@@ -20,7 +20,7 @@
     width: 300px;
     height: 150px;
     position: absolute;
-    bottom: 100px;
+    bottom: 50px;
     left: 450px;
    
     background-size: cover;
@@ -139,6 +139,11 @@
     transform: rotate(-25deg);
     top: 25px;
 }
+
+.intro-section, .intro-section-2 {
+    padding-bottom: 300px;
+}
+
 
 
 
