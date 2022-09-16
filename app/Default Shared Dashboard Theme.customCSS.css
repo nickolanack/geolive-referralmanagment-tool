@@ -613,6 +613,11 @@ span.field-value.clickable .field-value {
 }
 
 
+.loading .application-logo {
+    line-height: 500px;
+    font-weight: 400;
+}
+
 .application-logo.info-warn {
     color: crimson;
     font-size: 20px;
