@@ -47,6 +47,34 @@ var DashboardConfig=(function(){
 			
 		},
 
+		getValues:function(list, callback){
+
+			
+			var me=this;
+			var result={};
+			list.forEach(function(key){
+				me.getValue(key, function(value){
+					result[key]=value;
+					if(callback&&Object.keys(result).length==list.length){
+						callback(result);
+					}
+				});
+			})
+
+
+			if(callback){
+				return;
+			}
+
+
+			if(Object.keys(result).length==list.length){
+				return result;
+			}
+
+			throw 'Config not ready'; 
+
+		},
+
 
 		runOnceOnLoad: function(fn) {
 			var me = this;
