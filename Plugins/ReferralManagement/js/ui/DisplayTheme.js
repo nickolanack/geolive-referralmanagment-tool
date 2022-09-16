@@ -20,9 +20,9 @@ var  DisplayTheme=(function(){
 
 		setDefaults:function(values, mainView){
 
-			list.content[0].options.className+=" "+values.pageClassNames;
+			mainView.options.className+=" "+values.pageClassNames;
 			if(values.darkMode){
-				list.content[0].options.className+=" dark";
+				mainView.options.className+=" dark";
 			}
 
 		},
