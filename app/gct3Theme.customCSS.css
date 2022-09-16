@@ -675,7 +675,7 @@ a.pb-btn-close:after {
 }
 
 
-.ui-view.left-panel {
+[data-view="leftPanel"].ui-view.left-panel {
     background-color: #525252;
 }
 

@@ -10,7 +10,7 @@ $purple:#2e344b; /*#0f1c4b;*/
     }
 }
 
-.ui-view.left-panel {
+[data-view="leftPanel"].ui-view.left-panel {
     background-color: $purple;
     .navigation-menu ul{
         li,  button {
