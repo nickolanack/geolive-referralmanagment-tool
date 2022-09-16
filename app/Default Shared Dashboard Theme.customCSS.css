@@ -6799,6 +6799,14 @@ input.text-input[type="color"], input.text-input[type="color"]:focus {
     }
 }
     
+
+.popover.dark [data-view="userOnlineStatusForm"] .user-indicator.invisible:after {
+    color:white;
+}
+.popover [data-view="userOnlineStatusForm"] .user-indicator.invisible:after {
+    color: black;
+}
+
     
     
     
