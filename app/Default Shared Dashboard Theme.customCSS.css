@@ -631,6 +631,8 @@ span.field-value.clickable .field-value {
     
     line-height: 500px;
     font-weight: 400;
+    
+    filter: drop-shadow(2px 4px 11px #00000099);
 }
 
 .application-logo.info-warn {
