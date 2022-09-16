@@ -118,7 +118,7 @@
 
 
 
-.intro-section .sub-1:after {
+.intro-section .sub-1:after, .intro-section-2 .sub-2:after {
     content: "";
     background-image: url("https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/MAT_%5BG%5D_kYB_RBu_%5BImAgE%5D.png");
     width: 200px;
@@ -131,6 +131,23 @@
     transform: rotate(-20deg);
     transition: left 0.2s ease-in-out, top 0.2s ease-in-out , transform 0.2s ease-in-out;
     top: 0;
+}
+
+
+
+.intro-section-2 .sub-2:after {
+
+    background-image:url("https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/%5BG%5D_RoF_%5BImAgE%5D_uJ7_lg.png");
+    left: 200px;
+    width: 270px;
+    transform: rotate(20deg);
+}
+
+.intro-section-2:hover .sub-2:after {
+    
+    transform: rotate(30deg);
+    top:20px;
+    left:180px;
 }
 
 
