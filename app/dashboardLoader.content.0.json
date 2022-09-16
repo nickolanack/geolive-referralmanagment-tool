@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "\n\n\nvar div= new Element('div',{\"class\":\"application-logo\", style:`\n\n`});\n\nDashboardConfig.getValue('loadingLabel', function(value){\n    div.innerHTML=value;\n});\n\nreturn div;",
+        "script": "\n\n\nvar div= new Element('div',{\"class\":\"splash application-logo\", style:`\n\n`});\n\nDashboardConfig.getValue('loadingLabel', function(value){\n    div.innerHTML=value;\n});\n\nreturn div;",
         "description": "Info about my custom script"
     }
 }
