@@ -1,4 +1,5 @@
 
+console.log('quick dark mode');
 
 list.content[0].options.className+="<?php 
 
