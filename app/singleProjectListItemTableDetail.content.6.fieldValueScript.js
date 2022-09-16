@@ -1,1 +1,1 @@
-return  moment(item.getCreationDate()).fromNow();
+return  '<span>'+moment(item.getCreationDate()).fromNow()+'</span>';
