@@ -90,10 +90,28 @@
     }
 }
 
+
+.intro-section-3 .sub-2:after{
+
+    content:"";
+    background-image:url("https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/%5BImAgE%5D_ewq_tsE_%5BG%5D_nV-%3Ethumb%3A%3E200x%3E150.png?thumb=>200x>200");
+
+    width: 255px;
+    height: 100px;
+    display: inline-block;
+    background-size: cover;
+    position: absolute;
+    bottom: -10px;
+    right: -350px;
+    filter: drop-shadow(2px 4px 6px #00000077);
+    z-index: 2;
+}
+
 @media screen and (max-width: 1750px)
 {
 
-        
+   .intro-section-3 .sub-2:after{
+   }     
 
     .sub-1{
         left: 200px;
