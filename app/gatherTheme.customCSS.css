@@ -26,8 +26,8 @@ $addColorHover:$highlightBtnHoverColor;
 
 
 $buttonTextColor:black;
-$leftPanelColorLight:rgb(200 200 200 / 60%);
-$leftPanelColorDark:rgb(50 50 50 / 70%);
+$leftPanelColorLight: rgba(200, 200, 200, 0.6);
+$leftPanelColorDark: rgba(50, 50, 50, 0.7);
 $leftPanelColor=$leftPanelColorDark;
 
 .markdown:after {
@@ -202,7 +202,7 @@ button.form-btn.inline-edit.is-light {
 }
 
 .dark [data-view="leftPanel"] {
-    background-color: $leftPanelColor;
+    background-color: $leftPanelColorDark;
 }
 
 [data-view="mainProjectsDetail"] .project-list-filters {
