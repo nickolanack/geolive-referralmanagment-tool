@@ -22,7 +22,10 @@ var  DisplayTheme=(function(){
 
 			mainView.options.className+=" "+values.pageClassNames;
 			if(values.darkMode){
-				mainView.options.className+=" dark";
+				if(localStorage.getItem('mode')!='light'){
+					mainView.options.className+=" dark";
+					localStorage.setItem('mode','dark');
+				}
 			}
 
 		},
