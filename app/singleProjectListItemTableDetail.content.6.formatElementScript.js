@@ -1,3 +1,5 @@
+valueEl.innerHTML='<span>'+moment(item.getCreationDate()).fromNow()+'</span>';
+
 el.addClass("inline");
 el.setAttribute("data-col","created");
 
