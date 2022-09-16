@@ -721,7 +721,7 @@ div.field-value-module.inline.ids{
         white-space: nowrap;
         width: 100px;
         height: 100px;
-        border: 3px solid white;
+        border: 3px solid black;
         border-radius: 100%;
         margin: 30px 30px 0 0;
         position: relative;
@@ -787,6 +787,12 @@ div.field-value-module.inline.ids{
         visibility: hidden;
     }
     
+}
+
+.dark .flow {
+    li {
+        border-color:white;
+    }
 }
 
 .with-project-detail-click, .with-projects-click, .with-user-profile-click {
@@ -1581,7 +1587,7 @@ li.menu-project-discussion.withItemsIndicator:after {
 
 .dark{
     .ui-post-view>div {
-        background-color: #222222;
+        background-color: rgb(34 34 34 / 51%);
     }
 }
 
@@ -2246,6 +2252,8 @@ button.inline-logout {
     display: table-cell;
     padding: 0;
     vertical-align: top;
+    z-index: 1;
+    position: relative;
 }
 
 
@@ -2317,7 +2325,7 @@ button.inline-logout {
     padding: 4px;
 }
 .ui-view.inset-shading>div {
-    background-color: $themeInset;
+    /*background-color: $themeInset;*/
     display: inline-block;
     width: 100%;
     height: 100%;
@@ -2334,7 +2342,7 @@ button.inline-logout {
 }
 
 .ui-view.inset-menu-shading>div {
-    background-color: $themeInset;
+   /*background-color: $themeInset;*/
     display: inline-block;
     width: 100%;
     height: 100%;
@@ -2887,9 +2895,12 @@ img.youtubelogo {
     content: attr(data-other-stars);
     position: relative;
     bottom: -2px;
-    right: -14px;
+    right: -2px;
     font-size: 8px;
-    color: #60ceae;
+    color:black;
+}
+.dark .starred-indicator.other-stars:after {
+     color: white;
 }
 
 
@@ -6186,7 +6197,9 @@ div.popover[data-with-view="reportSelectionView"]{
     
 }
 
-
+._tableStyle_>.ui-view [data-col="stars"] {
+    height: 30px;
+}
 
 
 ._tableStyle_{

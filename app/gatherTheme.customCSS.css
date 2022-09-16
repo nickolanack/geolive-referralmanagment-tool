@@ -26,9 +26,9 @@ $addColorHover:$highlightBtnHoverColor;
 
 
 $buttonTextColor:black;
-$leftPanelColor:#222222;
-
-
+$leftPanelColorLight: rgba(200, 200, 200, 0.6);
+$leftPanelColorDark: rgba(50, 50, 50, 0.7);
+$leftPanelColor: $leftPanelColorDark;
 
 .markdown:after {
     content: "";
@@ -109,13 +109,16 @@ ul.item-tags li {
     position: relative;
 }
 
+.layout-list .file-list .file-item .file-container {
 
-.dark .layout-list .file-list .file-item .file-container {
     overflow: hidden;
     border-radius: 3px;
-    background: #030310;
+    background: white;
     padding: 0;
     border-width: 0;
+}
+.dark .layout-list .file-list .file-item .file-container {
+    background: #030310;
 }
 
 .pb-c [data-view="singleTaskOverviewDetail"] [data-view="singleUserTeamCollectionIconsInlineDetail"] {
@@ -195,11 +198,11 @@ button.form-btn.inline-edit.is-light {
 
 
 [data-view="leftPanel"] {
-    background-color: #e1e1e1;
+    background-color: $leftPanelColorLight;
 }
 
 .dark [data-view="leftPanel"] {
-    background-color: $leftPanelColor;
+    background-color: $leftPanelColorDark;
 }
 
 [data-view="mainProjectsDetail"] .project-list-filters {
@@ -1038,9 +1041,8 @@ h2 {
  }
 
 
-.field-value-module.inline[data-identifier="col-created"] .field-value:after {content: attr(data-day);font-size: 16px;}
-
-.field-value-module.inline[data-identifier="col-created"] .field-value {font-size: 0;}
+.field-value-module.inline[data-identifier="col-created"] .field-value:after {content: attr(data-day);}
+.field-value-module.inline[data-identifier="col-created"] .field-value>span {font-size: 0;}
 
 .inline-navigation-menu li.split-right:after {border-right: 1px solid;content: "";position: relative;left: 20px;}
 

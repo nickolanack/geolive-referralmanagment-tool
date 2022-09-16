@@ -198,7 +198,7 @@
 
 
 
-.priority-indicator:after {
+.inline.priority-item .priority-indicator:after {
     content: "";
     font-family: FontAwesome;
     color: #0000008a;
