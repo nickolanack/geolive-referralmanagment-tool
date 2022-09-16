@@ -102,6 +102,15 @@
     .sub-3{
         
     }
+    
+    
+    .ui-view.install-form .intro-section-2 .sub-1 {
+        left: -50px;
+    }
+    
+    .ui-view.install-form .intro-section-2 .sub-2 {
+        left: 300px;
+    }
 
 
     .ui-view.install-form .intro-section-3{
@@ -110,6 +119,9 @@
             left: 350px;
         }
     }
+    
+    
+    
 
     
 }
