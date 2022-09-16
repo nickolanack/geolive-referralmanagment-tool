@@ -2,7 +2,7 @@
 console.log('quick dark mode');
 
 DashboardConfig.getValues(['darkMode', 'pageClassNames'],function(values){
-    console.log(value)
+    console.log(values)
 });
 
 
