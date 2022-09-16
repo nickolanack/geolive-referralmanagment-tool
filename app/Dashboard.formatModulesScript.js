@@ -4,7 +4,7 @@ console.log('quick dark mode');
 if(window.DashboardConfig){
     DashboardConfig.getValues(['darkMode', 'pageClassNames'],function(values){
         if(window.DisplayTheme){
-            DisplayTheme.SetDefaults(values);
+            DisplayTheme.SetDefaults(values, list.content[0]);
         }
     });
 }
