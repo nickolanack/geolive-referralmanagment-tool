@@ -28,7 +28,7 @@ $addColorHover:$highlightBtnHoverColor;
 $buttonTextColor:black;
 $leftPanelColorLight: rgba(200, 200, 200, 0.6);
 $leftPanelColorDark: rgba(50, 50, 50, 0.7);
-$leftPanelColor=$leftPanelColorDark;
+$leftPanelColor: $leftPanelColorDark;
 
 .markdown:after {
     content: "";
