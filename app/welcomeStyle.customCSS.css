@@ -10,3 +10,45 @@
 .ui-view.install-form .intro-section-3 > span:after {
     background-image: url(https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/62L_%5BImAgE%5D_74h_%5BG%5D_NXC.png);
 }
+
+
+
+
+
+
+.sub-1, .sub-2, .sub-3 {
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    bottom: 100px;
+    left: 450px;
+   
+    background-size: cover;
+
+}
+
+.sub-2 {
+        left: 800px;
+    }
+    .sub-3 {
+        left:1150px;
+    }
+    
+.ui-view.install-form .intro-section-2
+
+    .sub-1, .sub-2 /*, .sub-3*/ {
+        
+        border-radius: 5px;
+        border: 3px solid white;
+        box-shadow: 0 0 20px #00000099;
+    }
+    .sub-1 {
+         background-image: url("https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/B7v_%5BImAgE%5D_%5BG%5D_UwW_9gN.png");
+    }
+    .sub-2 {
+        background-image:url("https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/%5BImAgE%5D_J0v_Uzj_Oh2_%5BG%5D.png");
+    }
+    .sub-3 {
+        left:1150px;
+    }
+}
