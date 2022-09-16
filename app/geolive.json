@@ -29160,7 +29160,7 @@
                                     "text": "#Item One\n\nContent description",
                                     "template": "html.product2",
                                     "templateVariablesScript": "{}",
-                                    "formatTextScript": "",
+                                    "formatTextScript": "productGallery.metadata.positions.content.modules.3.config.formatTextScript.js",
                                     "formatVariablesScript": "",
                                     "ajaxRequestTemplate": true,
                                     "identifier": "htmlLabel"
