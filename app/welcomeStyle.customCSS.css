@@ -231,6 +231,10 @@
     
 }
 
+.sub-1, .sub-2, .sub-3, .markdown>span:after{
+    
+    transition:left 1s, top 1s, right 1s;
+}
 
 
 
