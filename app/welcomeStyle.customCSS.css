@@ -212,6 +212,25 @@
 }
 
 
+.ui-view.install-form .intro-section-3 .sub-1 {
+    background-image:
+    url("https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/%5BImAgE%5D_vzV_ch1_%5BG%5D_pYc.png");
+    width: 150px;
+    height: 320px;
+    top: 120px;
+    left: 750px;
+}
+
+.ui-view.install-form .intro-section-3 .sub-1 {
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00000099;
+}
+
+@media screen and (max-width: 1750px) {
+    .ui-view.install-form .intro-section-3 .sub-1 {top: 540px;}
+    
+}
+
 
 
 
