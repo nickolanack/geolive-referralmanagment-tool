@@ -237,4 +237,38 @@
 }
 
 
+.ui-view.install-form .intro-section-3:hover .sub-1 {
+    animation: hint;
+    animation-duration:.4s;
+}
+
+
+
+@keyframes hint {
+  from {
+    transform: rotate(0deg);
+    left: 750px;
+  }
+
+  25% {
+    transform: rotate(-5deg);
+    left: 740px;
+  }
+
+  50% {
+    transform: rotate(0deg);
+    left: 750px;
+  }
+  75% {
+    transform: rotate(-5deg);
+    left: 740px;
+  }
+
+  to {
+    transform: rotate(0deg);
+    left: 750px;
+  }
+}
+
+
 
