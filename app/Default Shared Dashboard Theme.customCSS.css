@@ -33,6 +33,12 @@
 }
 
 
+[data-identifier="dialog-content"]>img {
+    width: 100%;
+    display: inline-block;
+    margin-top: 50px;
+}
+
 [data-view="singleProjectUsersDetail"] .inline-btn.optionlist {
     /*TODO re-enable*/
     display: none;
