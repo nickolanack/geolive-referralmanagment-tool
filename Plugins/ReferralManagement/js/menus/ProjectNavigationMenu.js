@@ -195,7 +195,7 @@ var ProjectNavigationMenu = (function() {
 
 
 									(new UIModalDialog(application, new MockDataTypeItem({
-										name:"Scan this code with the field assessment app",
+										name:"<h2>Scan this code with the field assessment app</h2>",
 										image:resp.qrcode
 									}), {
 										"formName": "dialogForm",
@@ -203,8 +203,7 @@ var ProjectNavigationMenu = (function() {
 											"template": "form",
 											"className": "alert-view",
 											"showCancel":false,
-											"labelForSubmit":"Yes",
-											"labelForCancel":"No",
+											"labelForSubmit":"Ok",
 											"closable":true
 										}
 									})).on('complete', function(){
