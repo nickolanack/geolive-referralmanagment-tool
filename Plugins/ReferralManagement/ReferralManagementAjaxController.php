@@ -79,7 +79,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		(new \spatial\FeatureLoader())->save($item);
 
 
-		return array('item');
+		return array('item'=>$item->getMetadata(), 'json'=>$json);
 
 	}
 
