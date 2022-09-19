@@ -75,6 +75,17 @@ var ItemAccess = (function() {
 
 		if (item instanceof TagCloudModule) {
 			var tagCloud = item;
+
+			var getCommunitiesModule=function(){
+				var modules=tagCloud.getViewer().findChildViews(function(t){return t instanceof TagCloudModule});
+				if(modules.length==2){
+					return modules.pop()
+				}
+				return null;
+			}
+
+			
+
 			item = {
 				isPublic: function() {
 					if(tagCloud.getValues().indexOf('Public')>=0){
@@ -86,11 +97,21 @@ var ItemAccess = (function() {
 					return 'gct3';
 				},
 				getCommunitiesInvolved: function() {
+
+					var mod=getCommunitiesModule();
+					if(mod){
+						return mod.getValues();
+					}
+
 					return [];
 				},
 			}
 
 			tagCloud.on('change', updateEls);
+			var mod=getCommunitiesModule();
+			if(mod){
+				mod.on('change', updateEls);
+			}
 		}
 
 		
