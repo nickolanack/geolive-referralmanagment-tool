@@ -107,6 +107,8 @@ class JavascriptLoader {
 		IncludeJS($dir . '/js/traits/ItemReadReceipts.js');
 		IncludeJS($dir . '/js/traits/ItemShareLinks.js');
 		IncludeJS($dir . '/js/traits/ItemPriority.js');
+		IncludeJS($dir . '/js/traits/ItemSecurity.js');
+		IncludeJS($dir . '/js/traits/ItemAccess.js');
 
 		IncludeJS($dir . '/js/Project.js');
 

@@ -2,6 +2,11 @@ var ProjectMap = (function() {
 
 
 
+	/**
+	 *  window.InitUserLayer should automatically be called by the layer named 'UserLayer' because it should 
+	 *  have been set up with layer settings (`parseSettings`) = { "initialize": "window.InitUserLayer", "filter": "user"}
+	 */
+
 	window.InitUserLayer = function(layer) {
 
 		var layerOptions = {};
