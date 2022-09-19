@@ -11,13 +11,13 @@ var ItemAccess = (function() {
 
 		var sharedLabel = '';
 		var sharedIndex = -1;
-		var sharedImage = null;
+		var sharedIcon = null;
 		var className = '';
 
 		ProjectList.SharedListFilters().forEach(function(filter, i) {
 			if (filter.filterFn(item)) {
 				className=filter.name.split(' ').join('-');
-				sharedImage = filter.icon;
+				sharedIcon = filter.icon;
 				sharedLabel = filter.tip || filter.label;
 				sharedIndex = i;
 			}
