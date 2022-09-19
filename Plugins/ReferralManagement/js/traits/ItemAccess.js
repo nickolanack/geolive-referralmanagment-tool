@@ -108,10 +108,12 @@ var ItemAccess = (function() {
 			}
 
 			tagCloud.on('change', updateEls);
+			tagCloud.runOnceOnLoad(function(){
 			var mod=getCommunitiesModule();
-			if(mod){
-				mod.on('change', updateEls);
-			}
+				if(mod){
+					mod.on('change', updateEls);
+				}
+			});
 		}
 
 		
