@@ -27,7 +27,7 @@ var ItemAccess = (function() {
 				});
 
 				return communities.filter(function(a){
-					return allCommunities.indexOf(a)>-0;
+					return allCommunities.indexOf(a.toLowerCase())>-0;
 				});
 
 			}
