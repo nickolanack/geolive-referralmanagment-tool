@@ -27915,9 +27915,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
-            "saveTemplateAsData": false,
-            "contentTemplate": "#Dataset sharing"
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "#Dataset sharing",
+            "readAccess": "public"
         }
     },
     "widget.493": {
