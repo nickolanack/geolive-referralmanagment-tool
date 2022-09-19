@@ -18681,16 +18681,16 @@
                             "documentProjectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 201,
-                            "y": 401
+                            "x": 211,
+                            "y": 411
                         },
                         "children": [
                             "documentProjectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 161,
-                                    "y": 602
+                                    "x": 171,
+                                    "y": 612
                                 }
                             },
                             {
@@ -18700,16 +18700,16 @@
                                     "documentProjectForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 672,
-                                    "y": 221
+                                    "x": 682,
+                                    "y": 231
                                 },
                                 "children": [
                                     "documentProjectForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 632,
-                                            "y": 398
+                                            "x": 642,
+                                            "y": 408
                                         }
                                     },
                                     {
@@ -18719,16 +18719,16 @@
                                             "documentProjectForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1154,
-                                            "y": 395
+                                            "x": 1164,
+                                            "y": 405
                                         },
                                         "children": [
                                             "documentProjectForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1114,
-                                                    "y": 571
+                                                    "x": 1124,
+                                                    "y": 581
                                                 }
                                             }
                                         ],
@@ -18759,7 +18759,7 @@
                                                                 "shuffleTags": false,
                                                                 "tags": "[\n    \"Public\",\n    \"Private\"\n]",
                                                                 "getItemTagsScript": "return defaultTags;",
-                                                                "formatModule": ""
+                                                                "formatModule": "var el=module.getElement();\nvar valueEl=el.appendChild(new Element('field-value'));\n\nItemAccess.AddInlineAccessIndicator(module, el, valueEl);\n\nmodule.on('change', function(v){\n    console.log(v);\n    var viewer=module.getViewer();\n});"
                                                             }
                                                         },
                                                         {
