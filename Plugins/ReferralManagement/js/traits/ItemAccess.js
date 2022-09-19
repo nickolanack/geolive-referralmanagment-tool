@@ -42,9 +42,39 @@ var ItemAccess = (function() {
 
 		// el.addClass("inline sharing");
 		// el.setAttribute("data-col","sharing");
+		// 
+	
+		var lastClass=null;
+		var popover=null;
+
+
+		var updateEls=updateEls=function(){
+
+			var sharedInfo = ItemAccess.GetSharingInfo(item);
+
+			if(lastClass){
+				el.addClass(lastClass);
+			}
+
+			el.addClass(sharedInfo.className);
+			lastClass=sharedInfo.className;
+
+			valueEl.setAttribute('data-sharedLabel', sharedInfo.label);
+			valueEl.setStyle('background-image', 'url(' + sharedInfo.icon + ')');
+
+			if(!popover){
+				popover=new UIPopover(valueEl, {
+					description: sharedInfo.label,
+					anchor: UIPopover.AnchorAuto()
+				});
+			}else{
+				popover.setDescription(sharedInfo.label);
+			}
+
+		};
 
 		if (item instanceof TagCloudModule) {
-			var tagClount = item;
+			var tagCloud = item;
 			item = {
 				isPublic: function() {
 					return false;
@@ -56,21 +86,14 @@ var ItemAccess = (function() {
 					return [];
 				},
 			}
+
+			tagCloud.on('change', updateEls);
 		}
-
-		var sharedInfo = ItemAccess.GetSharingInfo(item);
-
-		el.addClass(sharedInfo.className);
-		valueEl.setAttribute('data-sharedLabel', sharedInfo.label);
-		valueEl.setStyle('background-image', 'url(' + sharedInfo.icon + ')');
 
 		
 
+		updateEls();
 
-		new UIPopover(valueEl, {
-			description: sharedInfo.label,
-			anchor: UIPopover.AnchorAuto()
-		});
 
 
 	};
