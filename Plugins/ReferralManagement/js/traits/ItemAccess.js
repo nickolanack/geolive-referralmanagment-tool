@@ -117,6 +117,8 @@ var ItemAccess = (function() {
 				if(mod){
 					mod.on('change', updateEls);
 				}
+
+				updateEls();
 			});
 		}
 
