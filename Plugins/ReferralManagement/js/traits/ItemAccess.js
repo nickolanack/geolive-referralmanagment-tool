@@ -8,6 +8,22 @@ var ItemAccess=(function(){
 
 		// el.addClass("inline sharing");
 		// el.setAttribute("data-col","sharing");
+		
+		if(item instanceof TagCloudModule){
+			var tagClount=item;
+			item={
+				isPublic:function(){
+					return false;
+				},
+				getProjectCommunity:function(){
+					return 'gct3';
+				},
+				getCommunitiesInvolved:function(){
+					return [];
+				},
+			}
+		}
+
 
 		var sharedLabel='';
 		var sharedIndex=-1;

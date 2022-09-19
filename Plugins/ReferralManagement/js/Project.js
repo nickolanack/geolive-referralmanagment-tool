@@ -25,7 +25,9 @@ var Project = (function() {
 			ItemStatus,
 			ItemReadReceipts,
 			ItemShareLinks,
-			ItemPriority
+			ItemPriority,
+			ItemAccess,
+			ItemSecurity
 		],
 		initialize: function(id, data) {
 			var me = this;
