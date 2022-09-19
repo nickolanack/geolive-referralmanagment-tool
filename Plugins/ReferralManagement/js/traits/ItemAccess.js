@@ -21,7 +21,15 @@ var ItemAccess = (function() {
 
 				}
 
-				return communities;
+
+				var allCommunities=ProjectTeam.GetAllCommunities().map(function(a){
+					return a.toLowerCase();
+				});
+
+				return communities.filter(function(a){
+					return allCommunities.indexOf(a)>-0;
+				});
+
 			}
 
 			return [];
@@ -30,9 +38,13 @@ var ItemAccess = (function() {
 
 		getCommunitiesSelectedString: function() {
 
-			if(ProjectTeam.GetAllCommunities().length==1){
+			var allCommunities=ProjectTeam.GetAllCommunities();
+
+			if(allCommunities.length==1){
 				return '';
 			}
+
+			
 
 
 			var communities = this.getCommunitiesInvolved();
