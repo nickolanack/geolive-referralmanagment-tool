@@ -25,7 +25,7 @@ var ItemAccess = (function() {
 			}
 
 			return [];
-		}
+		},
 
 
 		getCommunitiesSelectedString: function() {
