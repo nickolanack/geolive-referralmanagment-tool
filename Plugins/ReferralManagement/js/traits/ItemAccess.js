@@ -77,6 +77,10 @@ var ItemAccess = (function() {
 			var tagCloud = item;
 
 			var getCommunitiesModule=function(){
+				var viewer=tagCloud.getViewer();
+				if(!viewer){
+					return null;
+				}
 				var modules=tagCloud.getViewer().findChildViews(function(t){return t instanceof TagCloudModule});
 				if(modules.length==2){
 					return modules.pop()
@@ -109,7 +113,7 @@ var ItemAccess = (function() {
 
 			tagCloud.on('change', updateEls);
 			tagCloud.runOnceOnLoad(function(){
-			var mod=getCommunitiesModule();
+				var mod=getCommunitiesModule();
 				if(mod){
 					mod.on('change', updateEls);
 				}
