@@ -27,6 +27,26 @@ var ItemAccess = (function() {
 			return [];
 		}
 
+
+		getCommunitiesSelectedString: function() {
+
+			if(ProjectTeam.GetAllCommunities().length==1){
+				return '';
+			}
+
+
+			var communities = this.getCommunitiesInvolved();
+
+
+
+			if (communities.length == 0) {
+				return 'no communities have been selected';
+			}
+
+			return communities.join(', ');
+
+		},
+
 	});
 
 

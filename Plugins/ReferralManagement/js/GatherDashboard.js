@@ -74,25 +74,15 @@ var GatherDashboard = (function() {
 
 		},
 
+		/**
+		 * @deprecated
+
+		 */
 		getCommunitiesString: function(item) {
 
-			if(ProjectTeam.GetAllCommunities().length==1){
-				return '';
-			}
 
+			return item.getCommunitiesSelectedString();
 
-			var communities = item.getCommunitiesInvolved();
-
-
-
-			if (communities.length == 0) {
-
-
-
-				return 'no communities have been selected';
-			}
-
-			return communities.join(', ');
 
 		},
 
