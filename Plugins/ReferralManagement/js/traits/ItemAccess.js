@@ -77,6 +77,9 @@ var ItemAccess = (function() {
 			var tagCloud = item;
 			item = {
 				isPublic: function() {
+					if(tagCloud.getValues().indexOf('Public')>=0){
+						return true;
+					}
 					return false;
 				},
 				getProjectCommunity: function() {
