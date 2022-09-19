@@ -1,1 +1,1 @@
-return ReferralManagementDashboard.getCommunitiesString(item);
+return item.getCommunitiesSelectedString();
