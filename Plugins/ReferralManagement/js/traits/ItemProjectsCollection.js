@@ -40,7 +40,13 @@ var InlineProjectSelection=new Class_({
 
 		},
 		canAddRemoveProject:function(item){
-			return !item.isBaseMapLayerForCurrentUser();
+
+
+			/**
+			 * TODO: should collections be selectable?
+			 */
+
+			return item.isDataset()&&!item.isBaseMapLayerForCurrentUser();
 		},
 		addProject:function(p){
 
