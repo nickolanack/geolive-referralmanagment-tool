@@ -2,7 +2,30 @@ var ItemAccess = (function() {
 
 
 	var ItemAccess = new Class_({
+		getProjectCommunity:function(){
+			return this.data.community;
+		},
 
+		getCommunitiesInvolved: function() {
+
+			var me = this;
+
+			if (me.data && me.data.attributes.firstNationsInvolved) {
+				var communities= me.data.attributes.firstNationsInvolved;
+
+				if(typeof communities=='string'){
+
+					if(communities.length>0&&communities[0]=='['){
+						communities=JSON.parse(communities);
+					}
+
+				}
+
+				return communities;
+			}
+
+			return [];
+		}
 
 	});
 
