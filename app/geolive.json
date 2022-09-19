@@ -21626,16 +21626,16 @@
                             "documentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 93,
-                            "y": 137
+                            "x": 103,
+                            "y": 147
                         },
                         "children": [
                             "documentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 53,
-                                    "y": 425
+                                    "x": 63,
+                                    "y": 435
                                 }
                             },
                             {
@@ -21645,16 +21645,16 @@
                                     "documentForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 531,
-                                    "y": 164
+                                    "x": 541,
+                                    "y": 174
                                 },
                                 "children": [
                                     "documentForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 491,
-                                            "y": 340
+                                            "x": 501,
+                                            "y": 350
                                         }
                                     },
                                     {
@@ -21664,16 +21664,16 @@
                                             "documentForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 711,
-                                            "y": 733
+                                            "x": 721,
+                                            "y": 743
                                         },
                                         "children": [
                                             "documentForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 671,
-                                                    "y": 909
+                                                    "x": 681,
+                                                    "y": 919
                                                 }
                                             }
                                         ],
@@ -27915,9 +27915,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
-            "saveTemplateAsData": false,
-            "contentTemplate": "<h2>Dataset sharing<\/h2>"
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "#Dataset sharing",
+            "readAccess": "public"
         }
     },
     "widget.493": {
