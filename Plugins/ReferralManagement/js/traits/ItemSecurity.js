@@ -5,10 +5,10 @@ var ItemSecurity = (function() {
 
 
 
-	ItemSecurity.AddInlineSecurityIndicator = function(item, el) {
+	ItemSecurity.AddInlineSecurityIndicator = function(item, el, valueEl) {
 
-		el.addClass("inline security");
-		el.setAttribute("data-col", "security");
+		// el.addClass("inline security");
+		// el.setAttribute("data-col", "security");
 
 
 		var users = item.getUsers();

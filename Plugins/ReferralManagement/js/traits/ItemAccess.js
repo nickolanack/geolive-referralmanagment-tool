@@ -6,8 +6,8 @@ var ItemAccess=(function(){
 
 	ItemAccess.AddInlineAccessIndicator = function(item, el, valueEl) {
 
-		el.addClass("inline sharing");
-		el.setAttribute("data-col","sharing");
+		// el.addClass("inline sharing");
+		// el.setAttribute("data-col","sharing");
 
 		var sharedLabel='';
 		var sharedIndex=-1;
