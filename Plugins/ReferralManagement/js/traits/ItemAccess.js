@@ -194,7 +194,9 @@ var ItemAccess = (function() {
 			var mod = getCommunitiesModule();
 			if (mod) {
 				mod.getElement().setStyle('display', item.isPublic()?'none':null);
-				//wizard needs resize;
+				if(mod.getViewer()&&mod.getViewer().shouldCheckResize){
+					mod.getViewer().shouldCheckResize();
+				}
 			}
 			
 		}
