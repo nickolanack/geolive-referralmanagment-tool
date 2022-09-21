@@ -185,6 +185,9 @@ var ItemAccess = (function() {
 
 				return [];
 			},
+			getProjectSubmitterId:function(){
+				return AppClient.getId();
+			}
 		}
 
 
