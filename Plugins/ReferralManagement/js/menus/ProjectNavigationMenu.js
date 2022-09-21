@@ -91,7 +91,7 @@ var ProjectNavigationMenu = (function() {
 
 											return new SelectionProxy(item);
 										}
-									},
+									}/*,
 									{
 										"label":"Add Dataset",
 										"formName": DashboardConfig.getValue('leftPanelPrimaryBtnForm'),
@@ -103,7 +103,7 @@ var ProjectNavigationMenu = (function() {
 											});
 											return dataset;
 										}
-									}
+									} */
 								],
 								"showCreateBtn": false,
 								projects: function(callback) {
