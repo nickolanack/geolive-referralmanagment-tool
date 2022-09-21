@@ -78,14 +78,14 @@ var Project = (function() {
 
 		},
 
-		
+
 		_setData: function(data) {
 			var me = this;
 
 			var change = false;
 
 			if (me.data) {
-				
+
 				me._mergeUserData(data);
 
 				if(JSON.stringify(data)==JSON.stringify(me.data)){
@@ -94,7 +94,7 @@ var Project = (function() {
 
 				change = true;
 			}
-			
+
 			me.data = data;
 
 
@@ -130,7 +130,7 @@ var Project = (function() {
 
 
 		authorize:function(task, callback){
-			if(task=='write'){
+			if(task=='write'&&typeof this.data.writable=='boolean'){
 				callback(this.data.writable);
 				return;
 			}
