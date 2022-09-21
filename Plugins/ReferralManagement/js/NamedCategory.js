@@ -501,17 +501,22 @@ var NamedCategory = (function() {
 
 		if(item instanceof ProjectList){
 
-			if(!item.getCategory){
-				return null;
+			if(item.getSectionLabel){
+				label=item.getSectionLabel()
+			}else{
+
+				if(!item.getCategory){
+					return null;
+				}
+
+
+				if(!(item.getCategory().getMetadata&&item.getCategory().getMetadata().sectionLabel)){
+					return null;
+				}
+
+				label=item.getCategory().getMetadata().sectionLabel;
+
 			}
-
-
-			if(!(item.getCategory().getMetadata&&item.getCategory().getMetadata().sectionLabel)){
-				return null;
-			}
-
-			label=item.getCategory().getMetadata().sectionLabel;
-		   
 		}else{
 
 			label="Themes";
@@ -525,7 +530,6 @@ var NamedCategory = (function() {
 
 		}
 
-	
 		div.appendChild(new Element('span',{html:label}));
 		return div;
 
