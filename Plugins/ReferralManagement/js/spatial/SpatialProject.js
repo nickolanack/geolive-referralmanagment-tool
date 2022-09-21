@@ -374,7 +374,12 @@ var SpatialProject = (function() {
 					JSTextUtilities.ParseImages(metadata.description).forEach(function(item) {
 						if (item.type.indexOf("image") >= 0) {
 							options.icon = item.url;
-							markerOptions.icon = item.url;
+							markerOptions.icon = {
+								url: item.url,
+								scaledSize: new google.maps.Size(40, 40)
+							}
+
+
 						}
 					});
 				}

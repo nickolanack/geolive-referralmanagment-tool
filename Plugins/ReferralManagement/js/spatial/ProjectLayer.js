@@ -44,18 +44,18 @@ var ProjectLayer = (function() {
 
 					GeoliveLayer.prototype.initialize.call(this, map, layerOptions);
 
-					this.addParserFilter('point', function(data, i) {
+					// this.addParserFilter('point', function(data, i) {
 						
-							//force icon scale
+					// 		//force icon scale
 
-							data.icon = {
-								url: data.icon,
-								scaledSize: new google.maps.Size(40, 40)
-							}
+					// 		data.icon = {
+					// 			url: data.icon,
+					// 			scaledSize: new google.maps.Size(40, 40)
+					// 		}
 
-							return true;
+					// 		return true;
 						
-					});
+					// });
 
 					if ((options.id + "").indexOf("project-") === 0) {
 						var pid = options.id.split('-')[1];
