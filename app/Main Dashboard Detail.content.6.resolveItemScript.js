@@ -1,5 +1,5 @@
 return new ProjectList({
-		"label":"Security",
+		"label":"Vaults",
 	    "showCreateBtn":false,
 	    "tags":ProjectList.ResolveSharedLists()
 	})
