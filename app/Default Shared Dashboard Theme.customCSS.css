@@ -6813,6 +6813,9 @@ input.text-input[type="color"], input.text-input[type="color"]:focus {
     color: black;
 }
 
+.dark .default-icon.user-profile-icon > span {
+    filter: invert(1);
+}
     
     
     
