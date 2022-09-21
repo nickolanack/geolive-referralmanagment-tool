@@ -138,7 +138,7 @@ var Project = (function() {
 			callback(null);
 		},
 
-		
+
 		isPublic:function(){
 			return this.data&&(this.data.accessLevel||"private").toLowerCase()==="public";
 		},
@@ -188,9 +188,7 @@ var Project = (function() {
 				if(isObject_(metadata)){
 					return { metadata:metadata };
 				}
-				
 			}
-			
 
 			return {metadata:{}};
 
@@ -249,8 +247,7 @@ var Project = (function() {
 
 			return false;
 
-		},	
-		
+		},
 		isBaseMapLayer: function() {
 			if(!this.isDataset()){
 				return false;
@@ -260,7 +257,7 @@ var Project = (function() {
 			var layer=this.data.attributes.dataset.baseMapLayer;
 			if(layer&&layer!==""){
 
-			
+
 				return true;
 			}
 
@@ -278,7 +275,6 @@ var Project = (function() {
 		},
 		getMapLayerIds:function(){
 
-	
 			return this.getSpatialDocuments().map(function(d, i){
 				return "project-" + this.getId() + '-' + i + '';
 			}, this);
@@ -354,7 +350,7 @@ var Project = (function() {
 				id: me._id,
 				metadata: {},
 				attributes: me._attributes || {},
-				
+
 			};
 
 			this._addUsersCollectionFormData(data);
@@ -365,6 +361,9 @@ var Project = (function() {
 				if (result.success && result.id) {
 					me._id = result.id;
 					if (result.data) {
+						if(!result.data.writable){
+							result.data.writable=true;
+						}
 						me._setData(result.data);
 					}
 					callback(true);
