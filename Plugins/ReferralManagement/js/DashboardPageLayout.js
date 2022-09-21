@@ -581,7 +581,7 @@ var DashboardPageLayout = (function() {
 
 				content=layout.filterIdentifier(content, ['pending-buttons', 'button-report', 'button-edit', 'button-delete', 'button-share'],  access);
 
-				content=layout.filterIdentifier(content, ['button-archive'],  ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin());
+				content=layout.filterIdentifier(content, ['button-archive'],  access||ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin());
 
 				callback(content);
 		});
