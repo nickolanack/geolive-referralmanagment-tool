@@ -18670,7 +18670,7 @@
                 "class": "DecisionNode",
                 "_diagramState": {
                     "x": -51,
-                    "y": 741
+                    "y": 740
                 },
                 "children": [
                     "documentProjectForm.metadata.children.0.json",
@@ -18681,16 +18681,16 @@
                             "documentProjectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 211,
-                            "y": 411
+                            "x": 221,
+                            "y": 420
                         },
                         "children": [
                             "documentProjectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 171,
-                                    "y": 612
+                                    "x": 181,
+                                    "y": 620
                                 }
                             },
                             {
@@ -18700,16 +18700,16 @@
                                     "documentProjectForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 682,
-                                    "y": 231
+                                    "x": 692,
+                                    "y": 241
                                 },
                                 "children": [
                                     "documentProjectForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 642,
-                                            "y": 408
+                                            "x": 652,
+                                            "y": 418
                                         }
                                     },
                                     {
@@ -18719,16 +18719,16 @@
                                             "documentProjectForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1164,
-                                            "y": 405
+                                            "x": 1174,
+                                            "y": 414
                                         },
                                         "children": [
                                             "documentProjectForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1124,
-                                                    "y": 581
+                                                    "x": 1134,
+                                                    "y": 589
                                                 }
                                             }
                                         ],
@@ -18911,32 +18911,10 @@
                                             }
                                         },
                                         {
-                                            "type": "FormTextField",
-                                            "config": {
-                                                "className": "",
-                                                "label": "Department",
-                                                "placeholder": "add value",
-                                                "lines": 1,
-                                                "maxChars": 0,
-                                                "mandatory": false,
-                                                "multiEntry": false,
-                                                "muliTemplate": "lines",
-                                                "multiMessage": "add another value",
-                                                "formatter": "none",
-                                                "beforeRenderModuleScript": "",
-                                                "onRenderTextFieldScript": "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.onRenderTextFieldScript.js",
-                                                "formatValueScript": "",
-                                                "getValueScript": " return \"\"; ",
-                                                "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "",
-                                                "validateValueScript": " return defaultValidationFn() "
-                                            }
-                                        },
-                                        {
                                             "type": "plugin.Attributes.WizardTagCloud",
                                             "config": {
                                                 "attributeFields": [
-                                                    "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
+                                                    "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
                                                 "showLabel": false,
@@ -18948,7 +18926,7 @@
                                                 "selectedColor": "rgb(106, 124, 233)",
                                                 "shuffleTags": false,
                                                 "tags": "[\"Forestry\", \"Mining\", \"Energy\", \"Roads\"]",
-                                                "getItemTagsScript": "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.getItemTagsScript.js",
+                                                "getItemTagsScript": "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.getItemTagsScript.js",
                                                 "formatModule": "ProjectTagList.formatTagCloudModule(module, 'collection');"
                                             }
                                         },
@@ -18956,7 +18934,7 @@
                                             "type": "plugin.Attributes.WizardDescriptionAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
+                                                    "documentProjectForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
                                                 ],
                                                 "className": "no-media hidden",
                                                 "label": "Collection description",
