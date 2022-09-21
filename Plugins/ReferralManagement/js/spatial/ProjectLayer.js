@@ -44,7 +44,7 @@ var ProjectLayer = (function() {
 
 					GeoliveLayer.prototype.initialize.call(this, map, layerOptions);
 
-					layer.addParserFilter('point', function(data, i) {
+					this.addParserFilter('point', function(data, i) {
 						
 							//force icon scale
 
