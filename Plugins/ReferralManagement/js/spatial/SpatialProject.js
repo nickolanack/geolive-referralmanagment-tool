@@ -502,6 +502,7 @@ var SpatialProject = (function() {
 					lineWidth: 1,
 					description: "",
 					script:"",
+					proj:"",
 					options:{}
 				};
 
