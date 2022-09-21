@@ -281,6 +281,13 @@ var Project = (function() {
 
 		},
 
+		isReferral: function() {
+			/**
+			 * referral is-a collection but a collection might not be a referral!
+			 */
+			return this.isCollection()&&DashboardConfig.getValue('enableProposals');
+		},
+
 		isCollection: function() {
 			return !this.isDataset();
 		},

@@ -82,7 +82,6 @@ var UserIcon=(function(){
 
 
 				UIInteraction.addUserProfileClick(div.getElement(), item);
-	
 
 				var icon = ProjectTeam.CurrentTeam().getUser((item.getUserId || item.getId).bind(item)()).getProfileIcon();
 
@@ -116,7 +115,6 @@ var UserIcon=(function(){
 
 			}).execute();
 
-			
 
 			return div;
 
