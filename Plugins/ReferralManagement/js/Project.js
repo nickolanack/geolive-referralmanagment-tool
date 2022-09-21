@@ -128,9 +128,9 @@ var Project = (function() {
 
 		},
 
-
 		authorize:function(task, callback){
 			if(task=='write'&&typeof this.data.writable=='boolean'){
+				//TODO: ^ this check causes callback null, and triggers auth query... but query result fails?
 				callback(this.data.writable);
 				return;
 			}
