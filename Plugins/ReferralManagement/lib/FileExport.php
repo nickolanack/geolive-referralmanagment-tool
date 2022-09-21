@@ -64,51 +64,34 @@ class FileExport{
 			$file=$data['metadata']->file;
 			if(is_object($file)&&isset($file->file)){
 				$file=$file->file;
-			}	
+
 
 
 			error_log('Download: '.$file);
 
 
 			if(!file_exists($file)){
-				$paths=GetPlugin('ReferralManagement')->getParameter('datawarehousePaths', array());    
+				$paths=GetPlugin('ReferralManagement')->getParameter('datawarehousePaths', array());
 		    	foreach($paths as $dir){
 		    		if((!empty($dir))&&is_dir($dir)){
 		    			$realpath=realpath($dir.'/'.$file);
 				        if(file_exists($realpath)){
-				            $name=basename($file);
 
-				            $name=preg_replace('/[^A-Za-z0-9_.\-]/', '_', $name);
-				            $this->zip->addFromString($name, (new \core\File())->read($realpath));
-
-
-				            foreach(array('.prj', '.dbf') as $ext){
-
-					            $extFile=str_replace('.shp',  $ext,  $realpath);
-					            if(stripos($realpath, '.shp')&&file_exists($extFile)){
-					            	$extName=basename($extFile);
-					            	$extName=preg_replace('/[^A-Za-z0-9_.\-]/', '_', $extName);
-
-					            	 $this->zip->addFromString($extName, (new \core\File())->read($extFile));
-
-					            }
-
-					        }
-				           
-
-				    		//TODO: add related files;
+				            $this->addSpatialFile($realpath);
 
 				        }else{
 				        	error_log('Error download: '.$realpath);
 				        }
 		    		}
 				}
+
+
 			}
 
 
 		}
 
-		
+
 
 		foreach (array_map($localPath, $parser->parseProposalFiles($data)) as $url) {
 			$this->addFile($url);
@@ -139,6 +122,56 @@ class FileExport{
 
 	}
 
+	private function addSpatialFile($file){
+
+		if(file_exists($file)){
+			$this->_addSpatialFile($realpath);
+			return;
+		}
+
+		$paths=GetPlugin('ReferralManagement')->getParameter('datawarehousePaths', array());
+    	foreach($paths as $dir){
+    		if((!empty($dir))&&is_dir($dir)){
+    			$realpath=realpath($dir.'/'.$file);
+		        if(file_exists($realpath)){
+
+		            $this->_addSpatialFile($realpath);
+
+		        }else{
+		        	error_log('Error download: '.$realpath);
+		        }ß
+    		}
+		}
+
+
+
+
+	}
+
+	private function _addSpatialFile($file){
+
+		$realpath=realpath($file);
+		$name=basename($file);
+
+        $name=preg_replace('/[^A-Za-z0-9_.\-]/', '_', $name);
+        $this->zip->addFromString($name, (new \core\File())->read($realpath));
+
+
+        foreach(array('.prj', '.dbf') as $ext){
+
+            $extFile=str_replace('.shp',  $ext,  $realpath);
+            if(stripos($realpath, '.shp')&&file_exists($extFile)){
+            	$extName=basename($extFile);
+            	$extName=preg_replace('/[^A-Za-z0-9_.\-]/', '_', $extName);
+
+            	 $this->zip->addFromString($extName, (new \core\File())->read($extFile));
+
+            }
+
+        }
+
+
+	}
 
 	private function addFile($url){
 
