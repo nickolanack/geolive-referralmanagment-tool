@@ -91,6 +91,7 @@ var UserIcon=(function(){
 						icon = icon + "?thumb=>170x>170";
 					}
 
+					div.getElement().removeClass('default-icon');
 					span.setStyle("background-image", "url(" + icon + ")");
 				}
 				return div;

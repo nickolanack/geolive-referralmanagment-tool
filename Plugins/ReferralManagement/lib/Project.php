@@ -53,7 +53,7 @@ class Project {
 		}
 
 		$proposal['userdetails'] = GetClient()->userMetadataFor($userId);
-		
+
 
 		if (isset($proposal['userdetails']['roles'])) {
 			unset($proposal['userdetails']['roles']);
