@@ -574,13 +574,15 @@ var DashboardPageLayout = (function() {
 
 
 		var item=layout.currentItem();
+
+		content=layout.filterIdentifier(content, ['button-download'], !item.isCollection());
+
 		AppClient.authorize('write', {
 				id: item.getId(),
 				type: item.getType()
 			}, function(access) {
 
 				content=layout.filterIdentifier(content, ['pending-buttons', 'button-report', 'button-edit', 'button-delete', 'button-share'],  access);
-
 				content=layout.filterIdentifier(content, ['button-archive'],  access||ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin());
 
 				callback(content);
