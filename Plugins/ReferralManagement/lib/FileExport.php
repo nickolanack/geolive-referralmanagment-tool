@@ -67,25 +67,8 @@ class FileExport{
 
 
 
-			error_log('Download: '.$file);
-
-
-			if(!file_exists($file)){
-				$paths=GetPlugin('ReferralManagement')->getParameter('datawarehousePaths', array());
-		    	foreach($paths as $dir){
-		    		if((!empty($dir))&&is_dir($dir)){
-		    			$realpath=realpath($dir.'/'.$file);
-				        if(file_exists($realpath)){
-
-				            $this->addSpatialFile($realpath);
-
-				        }else{
-				        	error_log('Error download: '.$realpath);
-				        }
-		    		}
-				}
-
-
+				error_log('Download: '.$file);
+				$this->addSpatialFile($file);
 			}
 
 
@@ -139,7 +122,7 @@ class FileExport{
 
 		        }else{
 		        	error_log('Error download: '.$realpath);
-		        }ß
+		        }
     		}
 		}
 
