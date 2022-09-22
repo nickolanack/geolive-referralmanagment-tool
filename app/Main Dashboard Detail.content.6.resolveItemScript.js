@@ -4,6 +4,17 @@ return new ProjectList({
 	    "showCreateBtn":false,
 	    "tags":ProjectList.ResolveSharedLists(),
 	    "formatSectionLabel":function(sectionEl){
-	        console.log("format")
+	        var el=sectionEl.appendChild(new Element('div',{"class":"info-btn", html:" privacy policy"}));
+	        
+	        new UIPopover(el, {
+					application:GatherDashboard.getApplication(),
+					item:item,
+					detailViewOptions:{
+						"viewType": "view",
+                    	"namedView": "userPrivacyDetail"
+					},
+					clickable:true,
+					anchor:UIPopover.AnchorAuto()
+				});
 	    }
 	})
