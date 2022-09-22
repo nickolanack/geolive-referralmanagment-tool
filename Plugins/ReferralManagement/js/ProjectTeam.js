@@ -1199,6 +1199,8 @@ var ProjectTeam = (function() {
 				}}
 			}),first);
 
+			el.insertBefore(new Element('div', {style:"width:100%; height 20px;"}), first);
+
 		}
 
 	}
