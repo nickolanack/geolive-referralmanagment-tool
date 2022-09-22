@@ -1537,5 +1537,14 @@ button.download-link {
 }
 
 
+.ui-view.files-spatial {
+    display: none;
+}
+body.dragover {
+    .ui-view.files-letters, .ui-view.files-permits, .ui-view.files-agreements,  .ui-view.files-other {
+        display: none;
+    }
+}
+
 
 
