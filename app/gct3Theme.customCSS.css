@@ -1572,5 +1572,53 @@ body.dragover {
     }
 }
 
+ .file-list .droppable.drop-documents{
+
+
+    height: 40px;
+    line-height: 30px;
+    background: cornflowerblue;
+    border-radius: 20px;
+    width: 126px;
+
+
+span.add-btn {
+    position: unset;
+}
+
+&:after {
+    content: "Add files";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 118px;
+    height: 34px;
+    display: inline-block;
+    line-height: 40px;
+    font-weight: 500;
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+    pointer-events: none;
+}
+
+span.add-btn {
+    display: none;
+}
+&:before {
+     display:none;
+ }
+
+
+}
+
+
+
+
+
+
+
+
+
 
 
