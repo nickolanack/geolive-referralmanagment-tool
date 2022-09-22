@@ -45,7 +45,7 @@ $config=new core\Configuration('iconset');
     background-position: center;
     background-repeat: no-repeat;
 }
-<?php foreach(['community', 'townships', 'mining', 'forestry', 'boundary', 'crowdsource', 'project', 'selection', 'other'] as $group){?>
+<?php foreach(['basemaps','community', 'townships', 'mining', 'forestry', 'boundary', 'crowdsource', 'project', 'selection', 'other'] as $group){?>
 .layer-group.<?php echo $group; ?>:before,
 .basemap-layer-<?php echo $group; ?> .inline-icon:before {
    
