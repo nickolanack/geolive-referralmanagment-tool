@@ -24,7 +24,7 @@ var SpatialDocumentPreview = (function() {
 			var bounds = null;
 			var extendBounds = function(b) {
 				if (!bounds) {
-					bounds = b;
+					bounds = ObjectAppend_({}, b);
 				} else {
 
 					bounds.north = Math.max(bounds.north, b.north);
