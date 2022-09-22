@@ -6659,6 +6659,26 @@ button.toggle-dock-form {
     &.disabled .indicator-switch:before {
     color: gray;
     }
+    
+    
+    
+    
+    .disabled>.indicator-switch:after {
+        display:none;
+    }
+    .disabled>.indicator-switch {
+        background-color: transparent !important;
+        border-color: transparent;
+    }
+    
+    .disabled>.indicator-switch:before{
+        left: -10px;
+    }
+    
+    
+    
+    
+    
 }
     
     
