@@ -2607,47 +2607,11 @@
             "contentTemplate": "",
             "comments": "should be arrays of layer ids indexed by group name",
             "parameters": {
-                "townships": {
+                "basemap": {
                     "type": "json",
-                    "name": "townships",
+                    "name": "basemap",
                     "default": [],
-                    "label": "Township Layers"
-                },
-                "community": {
-                    "type": "json",
-                    "name": "community",
-                    "default": [],
-                    "label": "Community Layers"
-                },
-                "boundary": {
-                    "type": "json",
-                    "name": "boundary",
-                    "default": [],
-                    "label": "Boundary Layers"
-                },
-                "forestry": {
-                    "type": "json",
-                    "name": "forestry",
-                    "default": [],
-                    "label": "Forestry Layers"
-                },
-                "mining": {
-                    "type": "json",
-                    "name": "mining",
-                    "default": [],
-                    "label": "Mining Layers"
-                },
-                "crowdsource": {
-                    "type": "json",
-                    "name": "crowdsource",
-                    "default": [],
-                    "label": "Crowdsource Layers"
-                },
-                "other": {
-                    "type": "json",
-                    "name": "other",
-                    "default": [],
-                    "label": "Other Layers"
+                    "label": "Basemap Layers"
                 }
             },
             "layerGroups": {
