@@ -4,7 +4,7 @@ return new ProjectList({
 	    "showCreateBtn":false,
 	    "tags":ProjectList.ResolveSharedLists(),
 	    "formatSectionLabel":function(sectionEl){
-	        var el=sectionEl.appendChild(new Element('div',{"class":"info-btn", html:" privacy policy"}));
+	        var el=sectionEl.appendChild(new Element('div',{"class":"info-button", html:" privacy policy"}));
 	        
 	        new UIPopover(el, {
 					application:GatherDashboard.getApplication(),
