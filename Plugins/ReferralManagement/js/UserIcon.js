@@ -85,7 +85,7 @@ var UserIcon=(function(){
 
 				var icon = ProjectTeam.CurrentTeam().getUser((item.getUserId || item.getId).bind(item)()).getProfileIcon();
 
-				if(icon){
+				if(icon&&icon!=defaultIcon){
 					if (icon.indexOf('Uploads') > 0) {
 						icon = icon + "?thumb=>170x>170";
 					}
