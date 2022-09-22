@@ -1,7 +1,7 @@
 <?php
  
 
- $layerGroups=array('project', 'selection', 'community', 'townships', 'mining', 'forestry', 'boundary', 'crowdsource', 'other', 'user');
+ $layerGroups=array('basemaps','project', 'selection', 'community', 'townships', 'mining', 'forestry', 'boundary', 'crowdsource', 'other', 'user');
     foreach($layerGroups as $i=>$groupName){
         
         GetWidget('plugin.Maps.Legend')->setScriptName('widget_'.$groupName)->setParameters(array(
