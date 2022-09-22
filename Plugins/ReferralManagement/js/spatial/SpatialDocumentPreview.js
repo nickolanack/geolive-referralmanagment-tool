@@ -86,8 +86,8 @@ var SpatialDocumentPreview = (function() {
 
 						var imageUrl='';
 						try{
-						imageUrl='/php-core-app/core.php?iam=administrator&format=raw&controller=plugins&view=plugin&plugin=Maps&pluginView=kml.tile&kml='+
-							response.metadata.path+'&size=250&pad=10'; //&type=street&prj=GOOGLE
+						//imageUrl='/php-core-app/core.php?iam=administrator&format=raw&controller=plugins&view=plugin&plugin=Maps&pluginView=kml.tile&kml='+
+						//	response.metadata.path+'&size=250&pad=10'; //&type=street&prj=GOOGLE
 						}catch(e){
 							console.error(e);
 						}
