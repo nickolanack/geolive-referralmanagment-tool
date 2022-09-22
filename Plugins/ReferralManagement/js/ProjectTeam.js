@@ -1171,7 +1171,7 @@ var ProjectTeam = (function() {
 		if(ProjectTeam.GetAllCommunities().length>3){
 			var first=module.getCloud().getElement();
 			var el=first.parentNode;
-			el.insertBefore(new Element('button', {"class":'tag-el', html:"All", events:{
+			el.insertBefore(new Element('button', {"class":'tag-el primary-btn', html:"All", events:{
 				click:function(){
 
 					module.getCloud().getWords().forEach(function(t){
@@ -1185,7 +1185,7 @@ var ProjectTeam = (function() {
 					});
 				}}
 			}),first);
-			el.insertBefore(new Element('button', {"class":'tag-el', html:"None", events:{
+			el.insertBefore(new Element('button', {"class":'tag-el primry-btn', html:"None", events:{
 				click:function(){
 
 					var words=module.getCloud().getWords();
@@ -1201,8 +1201,6 @@ var ProjectTeam = (function() {
 
 		}
 
-		
-		
 	}
 
 	ProjectTeam.FormatTagCloudLanguageValues = function(module) {
