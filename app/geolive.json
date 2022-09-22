@@ -2634,9 +2634,9 @@
             "contentTemplate": "",
             "comments": "should be arrays of layer ids indexed by group name",
             "parameters": {
-                "basemap": {
+                "basemaps": {
                     "type": "json",
-                    "name": "basemap",
+                    "name": "basemaps",
                     "default": [],
                     "label": "Basemap Layers"
                 }
