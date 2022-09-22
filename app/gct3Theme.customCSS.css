@@ -12,6 +12,19 @@ span.field-value.is-dark {
 }
 
 
+[data-identifier="sharing-datasets"]{
+    
+    .info-button {
+        font-weight: 100;
+        font-size: 14px;
+        width: 200px;
+        vertical-align: baseline;
+        font-style: italic;
+    }
+    .info-button:before{
+        font-style:normal;
+    }
+}
 .navigation-menu ul li:after{
     background-color: #2E303A;
 }
