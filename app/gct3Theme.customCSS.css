@@ -11,6 +11,9 @@ span.field-value.is-dark {
     filter: invert(1);
 }
 
+.popover [data-view="userPrivacyDetail"] {
+    max-width: 450px;
+}
 
 [data-identifier="sharing-datasets"]{
     
