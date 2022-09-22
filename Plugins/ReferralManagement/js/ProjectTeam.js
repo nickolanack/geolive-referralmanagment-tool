@@ -1185,7 +1185,7 @@ var ProjectTeam = (function() {
 					});
 				}}
 			}),first);
-			el.insertBefore(new Element('button', {"class":'tag-el primry-btn', html:"None", events:{
+			el.insertBefore(new Element('button', {"class":'tag-el primary-btn', html:"None", events:{
 				click:function(){
 
 					var words=module.getCloud().getWords();
