@@ -18669,8 +18669,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -51,
-                    "y": 740
+                    "x": -23,
+                    "y": 733
                 },
                 "children": [
                     "documentProjectForm.metadata.children.0.json",
@@ -18681,16 +18681,16 @@
                             "documentProjectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 221,
-                            "y": 420
+                            "x": 231,
+                            "y": 430
                         },
                         "children": [
                             "documentProjectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 181,
-                                    "y": 620
+                                    "x": 191,
+                                    "y": 618
                                 }
                             },
                             {
@@ -18700,16 +18700,16 @@
                                     "documentProjectForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 692,
-                                    "y": 241
+                                    "x": 702,
+                                    "y": 251
                                 },
                                 "children": [
                                     "documentProjectForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 652,
-                                            "y": 418
+                                            "x": 662,
+                                            "y": 429
                                         }
                                     },
                                     {
@@ -18719,16 +18719,16 @@
                                             "documentProjectForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1174,
-                                            "y": 414
+                                            "x": 1184,
+                                            "y": 424
                                         },
                                         "children": [
                                             "documentProjectForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1134,
-                                                    "y": 589
+                                                    "x": 1144,
+                                                    "y": 600
                                                 }
                                             }
                                         ],
@@ -18851,6 +18851,14 @@
                                                     "config": {
                                                         "name": "My Custom Script",
                                                         "script": "documentProjectForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.2.config.script.js",
+                                                        "description": "Info about my custom script"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "WizardScriptElement",
+                                                    "config": {
+                                                        "name": "My Custom Script",
+                                                        "script": "documentProjectForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.3.config.script.js",
                                                         "description": "Info about my custom script"
                                                     }
                                                 }
