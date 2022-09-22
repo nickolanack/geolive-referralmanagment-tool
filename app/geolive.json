@@ -21603,16 +21603,16 @@
                             "documentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 103,
-                            "y": 147
+                            "x": 113,
+                            "y": 157
                         },
                         "children": [
                             "documentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 63,
-                                    "y": 435
+                                    "x": 73,
+                                    "y": 445
                                 }
                             },
                             {
@@ -21622,16 +21622,16 @@
                                     "documentForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 541,
-                                    "y": 174
+                                    "x": 551,
+                                    "y": 184
                                 },
                                 "children": [
                                     "documentForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 501,
-                                            "y": 350
+                                            "x": 511,
+                                            "y": 360
                                         }
                                     },
                                     {
@@ -21641,16 +21641,16 @@
                                             "documentForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 721,
-                                            "y": 743
+                                            "x": 731,
+                                            "y": 752
                                         },
                                         "children": [
                                             "documentForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 681,
-                                                    "y": 919
+                                                    "x": 691,
+                                                    "y": 928
                                                 }
                                             }
                                         ],
@@ -21701,7 +21701,7 @@
                                                                 "shuffleTags": false,
                                                                 "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
                                                                 "getItemTagsScript": "documentForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.2.config.getItemTagsScript.js",
-                                                                "formatModule": "ProjectTeam.FormatTagCloudLanguageValues(module);\nmodule.runOnceOnLoad(function(){\nvar cats= Proposal.ListTerritories();\nif(cats.length==0){\n    module.getCloud().getElement().parentNode.setStyle(\"display\",\"none\");\n}\n});\n"
+                                                                "formatModule": "ProjectTeam.FormatTagCloudAddSelect(module);\nProjectTeam.FormatTagCloudLanguageValues(module);\nmodule.runOnceOnLoad(function(){\nvar cats= Proposal.ListTerritories();\nif(cats.length==0){\n    module.getCloud().getElement().parentNode.setStyle(\"display\",\"none\");\n}\n});\n"
                                                             }
                                                         }
                                                     ]
