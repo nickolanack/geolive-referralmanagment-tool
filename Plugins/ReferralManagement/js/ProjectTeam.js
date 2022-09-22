@@ -1171,6 +1171,23 @@ var ProjectTeam = (function() {
 		if(ProjectTeam.GetAllCommunities().length>3){
 			var first=module.getCloud().getElement();
 			var el=first.parentNode;
+
+
+			el.insertBefore(new Element('button', {"class":'tag-el primary-btn small', html:"Select none", events:{
+				click:function(){
+
+					var words=module.getCloud().getWords();
+					var displayWords=words.map(function(v){
+						return v.split('|').shift();
+					})
+
+					module.getValues().forEach(function(t){
+						module.getCloud().selectWord(words[displayWords.indexOf(t)]);
+					});
+				}}
+			}),first);
+
+
 			el.insertBefore(new Element('button', {"class":'tag-el primary-btn small', html:"Select all", events:{
 				click:function(){
 
@@ -1185,19 +1202,7 @@ var ProjectTeam = (function() {
 					});
 				}}
 			}),first);
-			el.insertBefore(new Element('button', {"class":'tag-el primary-btn small', html:"Select none", events:{
-				click:function(){
-
-					var words=module.getCloud().getWords();
-					var displayWords=words.map(function(v){
-						return v.split('|').shift();
-					})
-
-					module.getValues().forEach(function(t){
-						module.getCloud().selectWord(words[displayWords.indexOf(t)]);
-					});
-				}}
-			}),first);
+			
 
 			el.insertBefore(new Element('div', {style:"width: 100%;height: 1px;display: inline-block;"}), first);
 
