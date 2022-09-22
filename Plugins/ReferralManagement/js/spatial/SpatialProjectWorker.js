@@ -33,5 +33,5 @@ onmessage = function(e) {
     if(result){
         handleResult(result);
     }
-    
+
 }
