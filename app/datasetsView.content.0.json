@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "return NamedCategory.CategoryHeading(item, application);",
+        "script": "var heading = NamedCategory.CategoryHeading(item, application);\n\nif(heading&&item.getFormatSectionLabel){\n    var format.item.getFormatSectionLabel();\n    format(heading);\n}\n\nreturn heading;",
         "description": "Info about my custom script"
     }
 }
