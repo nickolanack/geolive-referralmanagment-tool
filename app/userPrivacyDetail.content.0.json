@@ -5,7 +5,7 @@
         "text": "#Privacy",
         "template": "html.userPrivacy",
         "templateVariablesScript": "{}",
-        "formatTextScript": "",
+        "formatTextScript": "var btn=ConfigItem.CreateEditBtn(new ConfigItem({\n    \"editLabel\":\"Edit content\",\n    'widget':options.widget,\n    'form':'textFieldForm',\n    'stepOptions':{\n        width:600\n    }\n}));\n\nif(btn){\n    module.getElement().appendChild(btn);\n}",
         "formatVariablesScript": "",
         "ajaxRequestTemplate": true,
         "identifier": "htmlLabel"
