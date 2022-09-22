@@ -15,6 +15,16 @@ span.field-value.is-dark {
     max-width: 450px;
 }
 
+.popover h2{
+    color:white;
+}
+
+.popover.dark h2{
+    color: #333333;
+}
+
+
+
 [data-identifier="sharing-datasets"]{
     
     .info-button {
