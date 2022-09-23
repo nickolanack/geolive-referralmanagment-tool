@@ -35,7 +35,7 @@ var SpatialDocumentPreview = (function() {
 				}
 
 
-				if(bounds.east>-Infinitiy&&bounds.west<Infinitiy&&bounds.north>-Infinity&&bounds.south<Infinity){
+				if(bounds.east>-Infinity&&bounds.west<Infinity&&bounds.north>-Infinity&&bounds.south<Infinity){
 					map.fitBounds(bounds);
 				}
 
