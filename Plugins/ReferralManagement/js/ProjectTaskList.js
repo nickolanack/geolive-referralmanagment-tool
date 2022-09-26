@@ -587,6 +587,7 @@ var ProjectTaskList = (function() {
 			},
 			"projectid": {
 				"width": "130px",
+				"minWidth":"70px",
 				"label": "Referral ID"
 			},
 			"stars": {
