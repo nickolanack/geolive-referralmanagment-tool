@@ -1,1 +1,0 @@
-return GetPlugin('ReferralManagement')->isUserInGroup($group);

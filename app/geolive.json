@@ -111,25 +111,64 @@
         "name": "Users",
         "instance": "Users",
         "parameters": {
-            "customUserGroups": [
-                "community-member",
-                "lands-department",
-                "proponent",
-                "no-role",
-                "lands-department-manager",
-                "tribal-council",
-                "chief-council",
-                ""
-            ],
-            "customUserScript": "plugin.Users.13.customUserScript.js",
-            "customGroupMemberOfGroupScript": "plugin.Users.13.customGroupMemberOfGroupScript.js",
+            "customUserGroups": [],
+            "customUserScript": "",
+            "customGroupMemberOfGroupScript": "",
             "defaultImage": [],
             "userProfileImageScript": "return $defaultImage;",
             "validateEmail": true,
-            "magicLinkUrl": "magic-link",
+            "magicLinkUrl": "",
             "useRecaptcha": false,
-            "recaptchaKey": "XXXX-XXXX",
-            "recaptchaSecret": "XXXX-XXXX"
+            "recaptchaKey": false,
+            "recaptchaSecret": false,
+            "defaultRoute": {
+                "view": "plugin",
+                "plugin": "UserInterface",
+                "pluginView": "widget",
+                "widget": "main"
+            },
+            "routes": [
+                "plugin.Users.13.routes.0.json",
+                {
+                    "name": "disclaimer",
+                    "view": "plugin",
+                    "plugin": "UserInterface",
+                    "pluginView": "widget",
+                    "widget": "disclaimer"
+                },
+                {
+                    "name": "faq",
+                    "view": "plugin",
+                    "plugin": "UserInterface",
+                    "pluginView": "widget",
+                    "widget": "faq"
+                },
+                {
+                    "name": "support",
+                    "view": "plugin",
+                    "plugin": "UserInterface",
+                    "pluginView": "widget",
+                    "widget": "support"
+                },
+                {
+                    "name": "install",
+                    "view": "plugin",
+                    "plugin": "UserInterface",
+                    "pluginView": "widget",
+                    "widget": "install"
+                },
+                {
+                    "name": "welcome",
+                    "view": "plugin",
+                    "plugin": "UserInterface",
+                    "pluginView": "widget",
+                    "widget": "welcome"
+                }
+            ],
+            "useRemoteServerUI": false,
+            "remoteServerUrl": "",
+            "templateEditAuthScript": "XXXX-XXXX",
+            "configurationFieldEditAuthScript": "XXXX-XXXX"
         }
     },
     "plugin.15": {
