@@ -217,5 +217,34 @@ PopoverFormDefinition.defineForm('toggleLightDarkForms', function(item, step) {
 		return mod;
 	});
 
+	step.addModule('content', function(position, moduleIndex) {
+
+		var mod = new ElementModule('div', {
+			html: "Show Background Image"
+		});
+
+
+		// if(DisplayTheme.getInvertsForms()){
+		// 	mod.getElement().addClass('active');
+		// }
+
+		// var switchEl = mod.getElement().appendChild(new Element('div', {
+		// 	"class": "indicator-switch",
+		// 	"events": {
+		// 		"click": function() {
+		// 			if (mod.getElement().hasClass('active')) {
+		// 				mod.getElement().removeClass('active');
+		// 				DisplayTheme.setInvertForms(false);
+		// 				return;
+		// 			}
+		// 			mod.getElement().addClass('active');
+		// 			DisplayTheme.setInvertForms(true);
+		// 		}
+		// 	}
+		// }));
+
+		return mod;
+	});
+
 
 });

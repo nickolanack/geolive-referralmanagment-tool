@@ -140,6 +140,10 @@ var PostContent = (function() {
 
 				var type = i.type;
 
+				if(!type){
+					return null;
+				}
+
 				if (type == 'ReferralManagement.team') {
 					return team;
 				}
