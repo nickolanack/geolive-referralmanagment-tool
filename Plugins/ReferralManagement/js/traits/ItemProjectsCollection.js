@@ -300,9 +300,9 @@ var ItemProjectsCollection = (function(){
 
 	ItemProjectsCollection.FormatProjectSelectionListModules = function(list, item, listItem) {
 
-		if(DashboardConfig.getValue('enableProposals')){
-			return list;
-		}
+		// if(DashboardConfig.getValue('enableProposals')){
+		// 	return list;
+		// }
 
 		list.content.push(ItemCollection.AddSelectionButtonBehavior(
 			function(){
