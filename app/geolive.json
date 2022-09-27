@@ -6924,7 +6924,7 @@
                                 "config": {
                                     "identifier": "",
                                     "targetElementScript": "Activity Feed Detail.metadata.positions.content.modules.1.config.targetElementScript.js",
-                                    "offset": "0",
+                                    "offset": "20",
                                     "offsetScript": ""
                                 }
                             }
@@ -7641,20 +7641,20 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "inline-list-item",
+                                    "className": "",
                                     "identifier": "project-related-projects",
                                     "viewType": "view",
-                                    "namedView": "projectsListDetail",
+                                    "namedView": "projectRelatedProjectsView",
                                     "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultView",
-                                    "formOptions": "\"{}\"",
+                                    "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "defaultBehaviorFn()",
                                     "initModuleScript": "",
                                     "formatModuleScript": "",
-                                    "resolveItemScript": "singleProjectOverviewDetail.metadata.positions.content.modules.26.config.resolveItemScript.js",
+                                    "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
@@ -18711,16 +18711,16 @@
                             "documentProjectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 251,
-                            "y": 450
+                            "x": 261,
+                            "y": 460
                         },
                         "children": [
                             "documentProjectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 211,
-                                    "y": 638
+                                    "x": 221,
+                                    "y": 648
                                 }
                             },
                             {
@@ -18730,16 +18730,16 @@
                                     "documentProjectForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 722,
-                                    "y": 271
+                                    "x": 679,
+                                    "y": 214
                                 },
                                 "children": [
                                     "documentProjectForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 682,
-                                            "y": 461
+                                            "x": 639,
+                                            "y": 404
                                         }
                                     },
                                     {
@@ -18749,16 +18749,16 @@
                                             "documentProjectForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 1204,
-                                            "y": 444
+                                            "x": 1260,
+                                            "y": 372
                                         },
                                         "children": [
                                             "documentProjectForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 1164,
-                                                    "y": 620
+                                                    "x": 1220,
+                                                    "y": 548
                                                 }
                                             }
                                         ],
@@ -22606,16 +22606,16 @@
                             "datasetSelectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 255,
-                            "y": 205
+                            "x": 265,
+                            "y": 215
                         },
                         "children": [
                             "datasetSelectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 215,
-                                    "y": 371
+                                    "x": 225,
+                                    "y": 392
                                 }
                             }
                         ],
@@ -27469,16 +27469,16 @@
                             "reportLayoutItemForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 348,
-                            "y": 480
+                            "x": 428,
+                            "y": 560
                         },
                         "children": [
                             "reportLayoutItemForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 308,
-                                    "y": 668
+                                    "x": 388,
+                                    "y": 748
                                 }
                             }
                         ],
@@ -29535,6 +29535,47 @@
             "parseMarkdown": true,
             "saveTemplateAsData": true,
             "contentTemplate": "#Wiki Content",
+            "readAccess": "public"
+        }
+    },
+    "widget.530": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "projectRelatedProjectsView",
+            "target": "projectRelatedProjectsView",
+            "templateName": "projectRelatedProjectsView",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "useRemote": "",
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "projectRelatedProjectsView.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
             "readAccess": "public"
         }
     }

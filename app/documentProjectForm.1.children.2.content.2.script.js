@@ -3,7 +3,7 @@ return new Element('button',{html:"Add dataset(s)", "class":"primary-btn", event
     
     
     
-    (new UIModalDialog(application, new SelectionProxy(item), {
+    (new UIModalDialog(application, new SubProjectSelectionProxy(item), {
     
         formName:"datasetSelectForm",
         formOptions:{
