@@ -156,6 +156,15 @@
             ]
         }
     },
+    "remove_item_user": {
+        "validate": {
+            "checkKeys": [
+                "user",
+                "item",
+                "type"
+            ]
+        }
+    },
     "add_item_project": {
         "validate": {
             "checkKeys": [
@@ -174,10 +183,19 @@
             ]
         }
     },
-    "remove_item_user": {
+    "add_item_related_project": {
         "validate": {
             "checkKeys": [
-                "user",
+                "project",
+                "item",
+                "type"
+            ]
+        }
+    },
+    "remove_item_related_project": {
+        "validate": {
+            "checkKeys": [
+                "project",
                 "item",
                 "type"
             ]

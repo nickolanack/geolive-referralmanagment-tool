@@ -471,67 +471,26 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		return new \ReferralManagement\EmailNotifications();
 	}
 
-	public function getChildProjectsForProject($pid, $attributes = null) {
-
-		return (new \ReferralManagement\Project())->fromId($pid)->toArray()['attributes']['childProjects'];
-	}
-
-	public function setChildProjectsForProject($pid, $childProjects) {
-
-		GetPlugin('Attributes');
-		(new attributes\Record('proposalAttributes'))->setValues($pid, 'ReferralManagement.proposal', array(
-			'childProjects' => json_encode($childProjects),
-		));
-
-		Emit('onSetChildProjectsForProject', array(
-			'project' => $pid,
-			'childProjects' => $childProjects,
-		));
-
-	}
-
 	public function addProjectToProject($child, $project) {
-
-		$childProjects = $this->getChildProjectsForProject($project);
-
-		$childProjects[] = $child;
-		$childProjects = array_unique($childProjects);
-
-		Emit('onAddProjectToProject', array(
-			'project' => $project,
-			'child' => $child,
-		));
-
-		$this->setChildProjectsForProject($project, $childProjects);
-
-		return $childProjects;
-
+		return (new \ReferralManagement\SubProjects())->addProjectToProject($child, $project);
 	}
 
 	public function removeProjectFromProject($child, $project) {
-
-		$childProjects = $this->getChildProjectsForProject($project);
-
-		$childProjects = array_values(array_filter($childProjects, function ($item) use ($child, $project) {
-
-			if (($item == $child)) {
-
-				Emit('onRemoveTeamMemberFromProject', array(
-					'project' => $project,
-					'member' => $item,
-				));
-				return false;
-			}
-
-			return true;
-		}));
-
-		$this->setChildProjectsForProject($project, $childProjects);
-		//$this->notifier()->onRemoveTeamMemberFromProject($user, $project);
-
-		return $childProjects;
-
+		return (new \ReferralManagement\SubProjects())->removeProjectFromProject($child, $project);
 	}
+
+
+
+
+	public function addRelatedProjectToProject($child, $project) {
+		return (new \ReferralManagement\SubProjects())->addRelatedProjectToProject($child, $project);
+	}
+
+	public function removeRelatedProjectFromProject($child, $project) {
+		return (new \ReferralManagement\SubProjects())->removeRelatedProjectFromProject($child, $project);
+	}
+
+
 
 	public function addTeamMemberToProject($user, $project) {
 

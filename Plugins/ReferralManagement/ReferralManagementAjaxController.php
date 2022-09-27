@@ -1,6 +1,7 @@
 <?php
 
 class ReferralManagementAjaxController extends \core\AjaxController implements \core\extensions\plugin\PluginMember {
+	
 	use \core\extensions\plugin\PluginMemberTrait;
 
 	protected function uploadTus($json) {
@@ -995,6 +996,39 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		throw new Exception('Invalid type');
 	}
+
+
+
+	protected function addItemRelatedProject($json) {
+		if (!Auth('write', $json->item, $json->type)) {
+			return $this->setError('No access or does not exist');
+		}
+
+		if ($json->type == "ReferralManagement.proposal") {
+			return array(
+				'relatedProjects' => $this->getPlugin()->addRelatedProjectToProject($json->project, $json->item),
+			);
+		}
+
+		throw new Exception('Invalid type');
+	}
+
+	protected function removeItemRelatedProject($json) {
+		if (!Auth('write', $json->item, $json->type)) {
+			return $this->setError('No access or does not exist');
+		}
+
+		if ($json->type == "ReferralManagement.proposal") {
+			return array(
+				'relatedProjects' => $this->getPlugin()->removeRelatedProjectFromProject($json->project, $json->item),
+			);
+		}
+
+		throw new Exception('Invalid type');
+	}
+
+
+
 
 	protected function addItemUser($json) {
 
