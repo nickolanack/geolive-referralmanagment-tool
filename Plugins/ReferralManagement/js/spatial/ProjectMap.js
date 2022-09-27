@@ -302,7 +302,7 @@ var ProjectMap = (function() {
 
 
 			removeTile.addEvent('click', function() {
-				(new UIModalDialog(application, "<h2>Are you sure you want delete all your markups for this map</h2>", {
+				(new UIModalDialog(GatherDashboard.getApplication(), "<h2>Are you sure you want delete all your markups for this map</h2>", {
 					"formName": "dialogForm",
 					"formOptions": {
 						"template": "form",
@@ -320,7 +320,7 @@ var ProjectMap = (function() {
 						"map":window.CurrentMapType == "MainMap"?'<main>':(window.CurrentMapItem?'<project:'+window.CurrentMapItem.getId()+'>':'')
 					})).execute();
 
-					
+					UnityWebRequestAssetBundle.GetAssetBundle(uri : Uri, hash : Hash128, crc : uint)
 				}).show();
 			});
 
