@@ -236,19 +236,6 @@ var ProjectMap = (function() {
 					"format": "kml"
 				})).addEvent('success', function(kmlString) {
 
-
-					/**
-						* <?xml version="1.0" encoding="UTF-8"?>
-						* <kml xmlns="http://www.opengis.net/kml/2.2">
-						* <Document id="8"><Style id="featureStyle0"><LineStyle><color>ff000000</color><width>1</width></LineStyle><PolyStyle><color>7f000000</color></PolyStyle></Style>
-						*
-						* 	<Placemark id="86"><name><![CDATA[<main>Teggau Lake]]></name><styleUrl>#featureStyle0</styleUrl><Polygon><outerBoundaryIs><LinearRing><coordinates>-93.619383450329,49.716733298276,0 -93.631399746715,49.719064044602,0 -93.63843786317,49.721061738129,0 -93.638952847301,49.724723962797,0 -93.648595243931,49.730513157982,0 -93.647221952915,49.724077104344,0 -93.650826841831,49.714754410345,0 -93.657006651401,49.712090454725,0 -93.661126524448,49.703875671699,0 -93.66435873109,49.698860526391,0 -93.665388699352,49.69552946939,0 -93.666247006237,49.690532455756,0 -93.669680233776,49.68542386635,0 -93.6739717682,49.678537526817,0 -93.675173397838,49.670761455101,0 -93.669508572399,49.667872883223,0 -93.669336911022,49.663650815768,0 -93.66607534486,49.664539702524,0 -93.663328762829,49.662873026534,0 -93.656633969127,49.661539644633,0 -93.650969143688,49.66087293998,0 -93.64633428651,49.663428591541,0 -93.648565884411,49.665650788133,0 -93.650625820934,49.668317290062,0 -93.650110836803,49.670872550594,0 -93.645475979625,49.674205297388,0 -93.642729397594,49.677204574252,0 -93.636549588024,49.676649166566,0 -93.624533291637,49.680536887158,0 -93.623331661999,49.685201741588,0 -93.616636868297,49.69075455616,0 -93.613546963512,49.692753414132,0 -93.619726773083,49.695085311204,0 -93.624189968883,49.693863855263,0 -93.632601376354,49.693641769067,0 -93.633631344616,49.697306061539,0 -93.638266201793,49.700081856748,0 -93.631399746715,49.704966871201,0 -93.627451535045,49.701636232805,0 -93.621615048229,49.70196930692,0 -93.616636868297,49.702857493395,0 -93.618525143444,49.706299062629,0 -93.623503323375,49.707631217525,0 -93.619383450329,49.712404472583,0 -93.617323513805,49.714735426671,0</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
-						* 	<Placemark id="87"><name><![CDATA[Nice spot]]></name><styleUrl>https://dyl2vw577xcfk.cloudfront.net/wabun.geoforms.ca/1/Uploads/LGb_[ImAgE]_FkE_[G]_aQl.png</styleUrl><Point><coordinates>-93.61818182069,49.696417773583,0</coordinates></Point></Placemark>
-						* 	<Placemark id="88"><name><![CDATA[Another spot]]></name><styleUrl>https://dyl2vw577xcfk.cloudfront.net/wabun.geoforms.ca/1/Uploads/LGb_[ImAgE]_FkE_[G]_aQl.png</styleUrl><Point><coordinates>-93.628138180553,49.720173884486,0</coordinates></Point></Placemark></Document></kml>
-						*/
-
-
-
 					var parts = kmlString.split('<Placemark');
 					var start = parts.shift();
 
@@ -300,13 +287,22 @@ var ProjectMap = (function() {
 						element.setAttribute('download', filename);
 						element.click();
 
-
 					})('MyMarkups.kml', kmlString);
-
 
 
 				}).execute();
 
+			});
+
+
+			var removeTile = new UIMapSubTileButton(dragTile.getElement(), {
+				containerClassName: 'remove',
+				toolTip: ['', 'click to delete your markups']
+			});
+
+
+			removeTile.addEvent('click', function() {
+				
 			});
 
 			this._map.setDefaultView(function(item) {
