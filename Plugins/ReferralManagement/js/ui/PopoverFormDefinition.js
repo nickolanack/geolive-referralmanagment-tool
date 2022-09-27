@@ -227,7 +227,7 @@ PopoverFormDefinition.defineForm('toggleLightDarkForms', function(item, step) {
 
 
 			if(DisplayTheme.showsBackgroundImage()){
-				
+				mod.getElement().addClass('active');
 			}
 
 			var switchEl = mod.getElement().appendChild(new Element('div', {
