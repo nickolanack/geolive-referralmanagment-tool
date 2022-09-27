@@ -96,6 +96,8 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function deleteMarkups($json){
 		
+		GetPlugin('Maps');
+
 		return array('matches'=> (new \spatial\Features())
  			->listLayerFeatures("UserLayer")
 			->withOwner()
