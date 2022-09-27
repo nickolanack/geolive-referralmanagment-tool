@@ -320,7 +320,6 @@ var ProjectMap = (function() {
 						"map":window.CurrentMapType == "MainMap"?'<main>':(window.CurrentMapItem?'<project:'+window.CurrentMapItem.getId()+'>':'')
 					})).execute();
 
-					UnityWebRequestAssetBundle.GetAssetBundle(uri : Uri, hash : Hash128, crc : uint)
 				}).show();
 			});
 
