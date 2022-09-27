@@ -94,6 +94,17 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 	}
 
 
+	protected function deleteMarkups($json){
+		
+		return array('matches'=> (new \spatial\Features())
+ 			->listLayerFeatures("UserLayer")
+			->withOwner()
+			->withNamePrefix($json->map)
+			->get()
+		);
+	}
+
+
 	protected function getQRCode($json){
 
 
