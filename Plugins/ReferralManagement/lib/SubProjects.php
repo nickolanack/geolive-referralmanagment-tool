@@ -18,7 +18,7 @@ class SubProjects{
 	public function setChildProjectsForProject($pid, $childProjects) {
 
 		GetPlugin('Attributes');
-		(new attributes\Record('proposalAttributes'))->setValues($pid, 'ReferralManagement.proposal', array(
+		(new \attributes\Record('proposalAttributes'))->setValues($pid, 'ReferralManagement.proposal', array(
 			'childProjects' => json_encode($childProjects),
 		));
 
@@ -97,7 +97,7 @@ class SubProjects{
 	public function setRelatedProjectsForProject($pid, $childProjects) {
 
 		GetPlugin('Attributes');
-		(new attributes\Record('proposalAttributes'))->setValues($pid, 'ReferralManagement.proposal', array(
+		(new \attributes\Record('proposalAttributes'))->setValues($pid, 'ReferralManagement.proposal', array(
 			'relatedProjects' => json_encode($childProjects),
 		));
 
