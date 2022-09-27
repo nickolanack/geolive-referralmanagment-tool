@@ -302,7 +302,26 @@ var ProjectMap = (function() {
 
 
 			removeTile.addEvent('click', function() {
-				
+				(new UIModalDialog(application, "<h2>Are you sure you want delete all your markups for this map</h2>", {
+					"formName": "dialogForm",
+					"formOptions": {
+						"template": "form",
+						"className": "alert-view",
+						"showCancel":true,
+						"labelForSubmit":"Yes, log me out",
+						"labelForCancel":"Cancel",
+						"closable":true
+					}
+				})).on('complete', function(){
+
+
+					(new AjaxControlQuery(CoreAjaxUrlRoot, 'delete_markups', {
+						"plugin": "ReferralManagement",
+						"map":window.CurrentMapType == "MainMap"?'<main>':(window.CurrentMapItem?'<project:'+window.CurrentMapItem.getId()+'>':'')
+					})).execute();
+
+					
+				}).show();
 			});
 
 			this._map.setDefaultView(function(item) {
