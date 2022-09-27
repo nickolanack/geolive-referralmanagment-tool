@@ -61,7 +61,7 @@ var ItemRelatedProjectsCollection = (function() {
 
 
 	var getProjectId=function(project){
-		if(project instanceof Project||project instanceof ChildProject){
+		if(project instanceof Project){
 			return project.getId()
 		}
 		return project;
