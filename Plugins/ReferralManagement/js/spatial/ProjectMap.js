@@ -308,7 +308,7 @@ var ProjectMap = (function() {
 						"template": "form",
 						"className": "alert-view",
 						"showCancel":true,
-						"labelForSubmit":"Yes, log me out",
+						"labelForSubmit":"Yes, delete all markups",
 						"labelForCancel":"Cancel",
 						"closable":true
 					}
