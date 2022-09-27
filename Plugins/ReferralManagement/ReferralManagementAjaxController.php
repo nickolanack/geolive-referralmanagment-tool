@@ -98,7 +98,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		
 		GetPlugin('Maps');
 
-		foreach(new \spatial\Features())
+		foreach((new \spatial\Features())
  			->listLayerFeatures("UserLayer")
 			->withOwner()
 			->withNamePrefix($json->map)
