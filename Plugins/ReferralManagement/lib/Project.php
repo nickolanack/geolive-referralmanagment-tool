@@ -174,6 +174,12 @@ class Project {
 			$attributes['childProjects'] = array();
 		}
 
+		if (key_exists('relatedProjects', $attributes) && (!empty($attributes['relatedProjects'])) && $attributes['relatedProjects'][0] == '[') {
+			$attributes['relatedProjects'] = json_decode($attributes['relatedProjects']);
+		} else {
+			$attributes['relatedProjects'] = array();
+		}
+
 		$proposal['attributes'] = $attributes;
 		$time = strtotime($attributes['commentDeadlineDate']);
 		$days = ($time - time()) / (3600 * 24);
