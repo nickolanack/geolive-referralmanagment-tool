@@ -108,7 +108,7 @@ class SubProjects{
 
 	}
 
-	public function addProjectToProject($child, $project) {
+	public function addRelatedProjectToProject($child, $project) {
 
 		$childProjects = $this->getRelatedProjectsForProject($project);
 
@@ -126,7 +126,7 @@ class SubProjects{
 
 	}
 
-	public function removeProjectFromProject($child, $project) {
+	public function removeRelatedProjectFromProject($child, $project) {
 
 		$childProjects = $this->getRelatedProjectsForProject($project);
 
