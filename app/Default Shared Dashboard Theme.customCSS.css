@@ -301,6 +301,7 @@ span.notification-indicator.empty:after {
         
             &.mail, &.copy, &.download {
                 background-color:mediumseagreen;
+                vertical-align: top;
                 &:after{
                      color:white;
                 }
