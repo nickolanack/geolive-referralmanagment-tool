@@ -1024,6 +1024,11 @@ var ProjectList = (function() {
 
 				ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
 					callback(team.getProjects().filter(function(p) {
+
+						if(project.getRelatedProjects().indexOf(p.getId())>=0){
+							return true;
+						}
+
 						return p.getId() != project.getId() && p.getCompanyName() != "" && p.getCompanyName() == project.getCompanyName();
 					}));
 				});
