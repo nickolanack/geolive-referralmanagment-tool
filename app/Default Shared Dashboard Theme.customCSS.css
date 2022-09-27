@@ -3051,13 +3051,21 @@ ul.item-tags li {
 }
 
 .project-detail span.progress {
+    
+    
     display: inline-block;
-    width: 33%;
-    width: 33.33%; /*calc( 100% / 3);*/
+    width: 31%;
+    width: calc( 33.33% - 30px );
     padding: 10px;
     box-sizing: border-box;
-    background-color: white;
-    margin: 20px 0;
+    background-color: rgba(255,255,255,0.3);
+    margin: 20px 10px;
+    min-height: 100px;
+    vertical-align: top;
+}
+
+.dark .project-detail span.progress {
+    background-color: rgba(0,0,0,0.3);
 }
 
 
