@@ -104,8 +104,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			->withNamePrefix($json->map)
 			->get() as $feature){
 
-
-			(new \spatial\FeatureLoader())->delete($feature);
+			(new \spatial\FeatureLoader())->delete((new FeatureLoader())->fromMetadata($feature));
 		}
 		
 
