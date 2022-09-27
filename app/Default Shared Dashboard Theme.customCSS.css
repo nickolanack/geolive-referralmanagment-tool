@@ -2079,6 +2079,7 @@ body.dragover .file-item.droppable-hide {
         background-color: transparent;
         width: 400px;
         font-size: 1.1em;
+        width: calc( 100% - 300px );
     }
 }
 
