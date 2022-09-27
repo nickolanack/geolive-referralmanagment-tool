@@ -40,6 +40,7 @@ var Project = (function() {
 
 			this._initUsersCollection();
 			this._initProjectsCollection();
+			this._initRelatedProjectsCollection();
 			this._initTasksCollection();
 
 
@@ -101,6 +102,7 @@ var Project = (function() {
 
 			me._updateUsersCollection(data)
 			me._updateProjectsCollection(data);
+			me._updateRelatedProjectsCollection(data);
 			me._updateTasksCollection(data);
 
 			if (change) {
@@ -363,6 +365,7 @@ var Project = (function() {
 
 			this._addUsersCollectionFormData(data);
 			this._addProjectsCollectionFormData(data);
+			this._addRelatedProjectsCollectionFormData(data);
 
 			(new SaveProposalQuery(data)).addEvent('success', function(result) {
 

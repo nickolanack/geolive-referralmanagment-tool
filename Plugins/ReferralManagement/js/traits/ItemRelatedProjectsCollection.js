@@ -27,7 +27,7 @@ var RelatedProjectSelectionProxy = new Class({
 
 
 
-var ItemRelatedProjectsCollection = (function() {
+var   = (function() {
 
 
 
