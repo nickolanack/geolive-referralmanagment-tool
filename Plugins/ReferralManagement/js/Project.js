@@ -10,6 +10,7 @@ var Project = (function() {
 			Events,
 			ItemUsersCollection,
 			ItemProjectsCollection,
+			ItemRelatedProjectsCollection,
 			ItemTasksCollection,
 			ItemPending,
 			ItemArchive,
