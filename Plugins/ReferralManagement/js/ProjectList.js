@@ -434,8 +434,8 @@ var ProjectList = (function() {
 			sortFn: function(a, b) {
 				return lowerLocalCompare(a.getProjectType(), b.getProjectType());
 			},
-			filterFn:function(a){
-				return a.getProjectType()&&a.getProjectType()!=='';
+			filterFn: function(a) {
+				return a.getProjectType() && a.getProjectType() !== '';
 			}
 		}];
 
@@ -583,11 +583,11 @@ var ProjectList = (function() {
 
 		return function(viewer, element, parentModule) {
 
-			var module=null;
-			if(!element){
-				module=new ElementModule('div');
-				element=module.getElement();
-				parentModule=module;
+			var module = null;
+			if (!element) {
+				module = new ElementModule('div');
+				element = module.getElement();
+				parentModule = module;
 			}
 
 			var div = element.appendChild(new Element('div', {
@@ -602,8 +602,8 @@ var ProjectList = (function() {
 
 
 			parentModule.runOnceOnLoad(function() {
-				
-				var viewer=parentModule.getViewer();
+
+				var viewer = parentModule.getViewer();
 
 				var sortModule = (new ListSortModule(function() {
 					return viewer.findChildViews(function(v) {
@@ -616,7 +616,7 @@ var ProjectList = (function() {
 					//applyfilter:true
 				})).load(null, div, null);
 
-			
+
 				/**
 					* TODO remove this timeout, the need for it. or set sortModule to automatically setSortObject
 					*/
@@ -634,7 +634,7 @@ var ProjectList = (function() {
 
 			parentModule.runOnceOnLoad(function() {
 
-				var viewer=parentModule.getViewer();
+				var viewer = parentModule.getViewer();
 
 				var filter = (item && item.getFilter) ? item.getFilter() : "complete";
 				var invertFilter = (item && item.getInvertFilter) ? item.getInvertFilter() : (filter == "complete" ? true : false);
@@ -649,7 +649,7 @@ var ProjectList = (function() {
 					//applyfilter:true
 				})).load(null, div, null);
 
-			
+
 
 				try {
 					filterModule.getListModule().setFilterObject(filterModule);
@@ -674,7 +674,7 @@ var ProjectList = (function() {
 			});
 
 
-			if(module){
+			if (module) {
 				return module;
 			}
 		}
@@ -696,19 +696,19 @@ var ProjectList = (function() {
 	ProjectList.AddTableHeader = function(listModule) {
 
 		return (new TableHeader('projectTableLayout'))
-		.addSort('id', function(a, b) {
+			.addSort('id', function(a, b) {
 
-			return parseInt(a.getId()) - parseInt(b.getId());
+				return parseInt(a.getId()) - parseInt(b.getId());
 
-		}).addSort('auth', function(a, b) {
+			}).addSort('auth', function(a, b) {
 
-			return lowerLocalCompare(a.getAuthID(), b.getAuthID());
+				return lowerLocalCompare(a.getAuthID(), b.getAuthID());
 
-		}, function(a){
+			}, function(a) {
 
-			return a.getAuthID()&&a.getAuthID()!='';
+				return a.getAuthID() && a.getAuthID() != '';
 
-		}).render(listModule);
+			}).render(listModule);
 
 	};
 
@@ -768,7 +768,7 @@ var ProjectList = (function() {
 				childView.getElement().addClass("is-basemap-layer");
 				childView.getElement().addClass("basemap-layer-" + child.getBaseMapLayerType());
 
-				if(!child.isBaseMapLayerForCurrentUser()){
+				if (!child.isBaseMapLayerForCurrentUser()) {
 					childView.getElement().addClass("not-basemap-for-user");
 				}
 			}
@@ -788,7 +788,7 @@ var ProjectList = (function() {
 		}
 
 
-		if(child.hasTasks()){
+		if (child.hasTasks()) {
 			childView.getElement().addClass('has-tasks');
 		}
 
@@ -976,7 +976,7 @@ var ProjectList = (function() {
 
 				ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
 
-					var list=team.getProjects().filter(function(p) {
+					var list = team.getProjects().filter(function(p) {
 						return p.getProjectSubmitterId() + "" == user.getId() + "";
 					});
 
@@ -1009,14 +1009,13 @@ var ProjectList = (function() {
 
 
 			},
-			"createBtns":[
-				{
-					"label":"Add Related",
-					"formName": "datasetSelectForm",
-					"item":function(){
-						return new RelatedProjectSelectionProxy(item);
-					}
-				}]
+			"createBtns": [{
+				"label": "Add Related",
+				"formName": "datasetSelectForm",
+				"item": function() {
+					return new RelatedProjectSelectionProxy(item);
+				}
+			}],
 			"labelClass": "",
 			"showFilters": false,
 			"showMinimize": true,
@@ -1052,40 +1051,39 @@ var ProjectList = (function() {
 
 	ProjectList.SharedListFilters = function() {
 
-		if(!ProjectList._sharedListFilters){
+		if (!ProjectList._sharedListFilters) {
 
-			ProjectList._sharedListFilters= [
-			{
+			ProjectList._sharedListFilters = [{
 				label: "Public",
 				tip: "Visible to anyone",
 				name: "public",
 
-				icon:"https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/RLF_9wh_%5BG%5D_wRj_%5BImAgE%5D-%3Ethumb%3A%3E200x%3E150.png",
+				icon: "https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/RLF_9wh_%5BG%5D_wRj_%5BImAgE%5D-%3Ethumb%3A%3E200x%3E150.png",
 				description: "These datasets and collections are available to anyone and do not contain sensitive data",
 				filterFn: function(p) {
 					return p.isPublic();
 				}
 			}, {
 				label: "Community Vault",
-				tip: "Only visible to <b>"+ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity()+"</b> members.",
+				tip: "Only visible to <b>" + ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity() + "</b> members.",
 				name: "community",
 
-				icon:"https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/x5n_%5BG%5D_YqS_%5BImAgE%5D_h82-%3Ethumb%3A%3E200x%3E150.png",
-				description: "These datasets and collections are only visible to members of your community <b>"+ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity()+"</b>. Nobody else has access to them.",
+				icon: "https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/x5n_%5BG%5D_YqS_%5BImAgE%5D_h82-%3Ethumb%3A%3E200x%3E150.png",
+				description: "These datasets and collections are only visible to members of your community <b>" + ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity() + "</b>. Nobody else has access to them.",
 				filterFn: function(p) {
-					return (!p.isPublic())&&p.getProjectCommunity() == ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity() && p.getCommunitiesInvolved().filter(function(c) {
+					return (!p.isPublic()) && p.getProjectCommunity() == ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity() && p.getCommunitiesInvolved().filter(function(c) {
 						return c && c != p.getProjectCommunity();
 					}).length == 0;
 				}
 			}, {
 				label: "You have Shared",
-				tip:"Visible and downloadable to members of other communities.",
+				tip: "Visible and downloadable to members of other communities.",
 				name: "shared-to",
-				icon:"https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/17l_%5BImAgE%5D_xEl_%5BG%5D_KKc-%3Ethumb%3A%3E200x%3E150.png",
+				icon: "https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/17l_%5BImAgE%5D_xEl_%5BG%5D_KKc-%3Ethumb%3A%3E200x%3E150.png",
 				description: "These are datasets and collections that your community is sharing with other communities and GCT3. This information will be visible and downloadable to members of these other communities.",
 				filterFn: function(p) {
 
-					return (!p.isPublic())&&p.getProjectCommunity() == ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity() && p.getCommunitiesInvolved().filter(function(c) {
+					return (!p.isPublic()) && p.getProjectCommunity() == ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity() && p.getCommunitiesInvolved().filter(function(c) {
 						return c && c != p.getProjectCommunity();
 					}).length > 0;
 				}
@@ -1094,10 +1092,10 @@ var ProjectList = (function() {
 				label: "Others are Sharing",
 				tip: "Shared to you by <b>{itemCommunity}</b>.",
 				name: "shared-from",
-				icon:"https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/%5BImAgE%5D_mib_%5BG%5D_zR_yF4-%3Ethumb%3A%3E200x%3E150.png",
+				icon: "https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/%5BImAgE%5D_mib_%5BG%5D_zR_yF4-%3Ethumb%3A%3E200x%3E150.png",
 				description: "These are datasets and collections that have been shared by other communities and GCT3 with your community. You will be able to view and download these files.",
 				filterFn: function(p) {
-					return (!p.isPublic())&&p.getProjectCommunity() != ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity();
+					return (!p.isPublic()) && p.getProjectCommunity() != ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity();
 				}
 
 			}];
@@ -1115,15 +1113,15 @@ var ProjectList = (function() {
 			return new MockDataTypeItem({
 				name: list.label,
 				description: list.description,
-				icon: list.icon||null,
-				color:null,
+				icon: list.icon || null,
+				color: null,
 				navigationFn: function() {
 
 					var controller = GatherDashboard.getApplication().getNamedValue('navigationController')
 					controller.navigateTo("Datasets", "Main", {
 						item: new ProjectList({
 							"label": list.label,
-							"icon":list.icon||null,
+							"icon": list.icon || null,
 							"description": list.description,
 							projects: function(callback) {
 
