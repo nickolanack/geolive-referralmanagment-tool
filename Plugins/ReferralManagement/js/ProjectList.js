@@ -1013,7 +1013,7 @@ var ProjectList = (function() {
 				"label": "Add Related",
 				"formName": "datasetSelectForm",
 				"item": function() {
-					return new RelatedProjectSelectionProxy(item);
+					return new RelatedProjectSelectionProxy(project);
 				}
 			}],
 			"labelClass": "",
