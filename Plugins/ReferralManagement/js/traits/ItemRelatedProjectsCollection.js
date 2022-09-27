@@ -17,11 +17,11 @@ var RelatedProjectSelectionProxy = new Class({
 	},
 	canAddRemoveProject: function(p) {
 
-		if (this._item.canAddRemoveProject) {
-			return this._item.canAddRemoveRelatedProject(p)
-		}
+		// if (this._item.canAddRemoveProject) {
+		// 	return this._item.canAddRemoveRelatedProject(p)
+		// }
 
-		return p.isDataset();
+		return p.isReferral();
 	}
 });
 
