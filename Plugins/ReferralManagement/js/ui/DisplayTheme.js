@@ -18,6 +18,8 @@ var  DisplayTheme=(function(){
 
 		},
 
+
+
 		setDefaults:function(values, mainView){
 
 			mainView.options.className+=" "+values.pageClassNames;
@@ -62,6 +64,28 @@ var  DisplayTheme=(function(){
 			application.getDisplayController().setOptions(this._getFormOptions());
 
 		},
+
+
+		hasBackgroundImage:function(){
+			return DashboardConfig.getValue('backgroundImage').length>0;
+		},
+
+		showsBackgroundImage:function(){
+			return this.hasBackgroundImage()&&localStorage.getItem('show-background')!=="false";
+		},
+
+		setShowsBackgroundImage:function(bool){
+			localStorage.setItem('show-background', bool);
+
+			var el = $$('.ui-view.dashboard-main')[0];
+			if(bool){
+				el.removeClass('no-bg');
+			}else{
+				el.addClass('no-bg');
+			}
+		},
+
+
 
 		setMode:function(mode) {
 
