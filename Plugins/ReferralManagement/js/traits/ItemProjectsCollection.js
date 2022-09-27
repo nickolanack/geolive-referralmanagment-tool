@@ -1,7 +1,7 @@
 
 
 
-var SelectionProxy=new Class({
+var SubProjectSelectionProxy=new Class({
 		Extends:MockDataTypeItem,
 		initialize:function(item){
 			this._item=item;
@@ -22,6 +22,35 @@ var SelectionProxy=new Class({
 
 			if(this._item.canAddRemoveProject){
 				return this._item.canAddRemoveProject(p)
+			}
+
+			return p.isDataset();
+		}
+	});
+
+
+
+var RelatedProjectSelectionProxy=new Class({
+		Extends:MockDataTypeItem,
+		initialize:function(item){
+			this._item=item;
+			MockDataTypeItem.prototype.initialize.call(this,{
+
+			})
+		},
+		hasProject:function(p){
+			return this._item.hasRelatedProject(p)
+		},
+		addProject:function(p){
+			return this._item.addRelatedProject(p);
+		},
+		removeProject:function(p){
+			return this._item.removeRelatedProject(p);
+		},
+		canAddRemoveProject:function(p){
+
+			if(this._item.canAddRemoveProject){
+				return this._item.canAddRemoveRelatedProject(p)
 			}
 
 			return p.isDataset();

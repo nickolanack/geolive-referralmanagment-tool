@@ -1009,6 +1009,14 @@ var ProjectList = (function() {
 
 
 			},
+			"createBtns":[
+				{
+					"label":"Add Related",
+					"formName": "datasetSelectForm",
+					"item":function(){
+						return new RelatedProjectSelectionProxy(item);
+					}
+				}]
 			"labelClass": "",
 			"showFilters": false,
 			"showMinimize": true,

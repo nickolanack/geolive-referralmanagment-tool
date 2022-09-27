@@ -89,7 +89,7 @@ var ProjectNavigationMenu = (function() {
 										"formName": "datasetSelectForm",
 										"item":function(){
 
-											return new SelectionProxy(item);
+											return new SubProjectSelectionProxy(item);
 										}
 									}/*,
 									{
