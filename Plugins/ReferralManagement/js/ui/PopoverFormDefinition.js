@@ -234,7 +234,13 @@ PopoverFormDefinition.defineForm('toggleLightDarkForms', function(item, step) {
 				"class": "indicator-switch",
 				"events": {
 					"click": function() {
-						
+						if (mod.getElement().hasClass('active')) {
+							mod.getElement().removeClass('active');
+							DisplayTheme.setShowsBackgroundImage(false);
+							return;
+						}
+						mod.getElement().addClass('active');
+						DisplayTheme.setShowsBackgroundImage(true);
 					}
 				}
 			}));
