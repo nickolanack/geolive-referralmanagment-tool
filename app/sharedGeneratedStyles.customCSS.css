@@ -352,6 +352,10 @@ button.btn-search-list {
             .ui-view.dashboard-main.loading:after {
                  filter: blur(10px);
             }
+            
+            .ui-view.dashboard-main.no-bg:after {
+                background: none;
+            }
                 
         }
         
