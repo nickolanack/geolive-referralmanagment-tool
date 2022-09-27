@@ -90,6 +90,7 @@ class JavascriptLoader {
 		IncludeJS($dir . '/js/traits/ItemCollection.js');
 		IncludeJS($dir . '/js/traits/ItemUsersCollection.js');
 		IncludeJS($dir . '/js/traits/ItemProjectsCollection.js');
+		IncludeJS($dir . '/js/traits/ItemRelatedProjectsCollection.js');
 		IncludeJS($dir . '/js/traits/ItemTasksCollection.js');
 		IncludeJS($dir . '/js/traits/ItemPending.js');
 		IncludeJS($dir . '/js/traits/ItemArchive.js');

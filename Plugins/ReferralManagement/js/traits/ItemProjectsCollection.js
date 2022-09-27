@@ -30,32 +30,6 @@ var SubProjectSelectionProxy=new Class({
 
 
 
-var RelatedProjectSelectionProxy=new Class({
-		Extends:MockDataTypeItem,
-		initialize:function(item){
-			this._item=item;
-			MockDataTypeItem.prototype.initialize.call(this,{
-
-			})
-		},
-		hasProject:function(p){
-			return this._item.hasRelatedProject(p)
-		},
-		addProject:function(p){
-			return this._item.addRelatedProject(p);
-		},
-		removeProject:function(p){
-			return this._item.removeRelatedProject(p);
-		},
-		canAddRemoveProject:function(p){
-
-			if(this._item.canAddRemoveProject){
-				return this._item.canAddRemoveRelatedProject(p)
-			}
-
-			return p.isDataset();
-		}
-	});
 
 
 /**
@@ -118,7 +92,6 @@ var ItemProjectsCollection = (function(){
 		if(project instanceof Project||project instanceof ChildProject){
 			return project.getId()
 		}
-
 		return project;
 	};
 
@@ -243,7 +216,7 @@ var ItemProjectsCollection = (function(){
 	    removeProject:function(project){
 	    	var me=this;
 	    	if(me.hasProject(project)){
-	    		me._projects.splice(me._indexOfUser(project),1);
+	    		me._projects.splice(me._indexOfProject(project),1);
 	    		if(me.getId()>0){
 	    			(new RemoveItemProjectQuery(me.getId(), me.getType(), project)).execute();
 	    		}
