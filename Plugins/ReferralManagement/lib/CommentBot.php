@@ -30,11 +30,17 @@ class CommentBot{
 		$plugin=GetPlugin('Discussions');
 		$info=$plugin->getDiscussionMetadata($postData->discussion);
 
-		GetPlugin('Email')->getMailer()
+		
+
+
+		if($info->name==='proponent'){
+
+			GetPlugin('Email')->getMailer()
 			->mail('Post', '<pre>' . json_encode($info, JSON_PRETTY_PRINT) . '</pre>')
 			->to('nickblackwell82@gmail.com')
 			->send();
-
+			
+		}
 
 	}
 

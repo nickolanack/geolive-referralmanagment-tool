@@ -29,9 +29,9 @@ var UserIcon=(function(){
 
 
 			if (defaultIcon) {
-				span.setStyles({
-					"background-image": "url(" + defaultIcon + ")"
-				});
+				// span.setStyles({
+				// 	"background-image": "url(" + defaultIcon + ")"
+				// });
 				div.getElement().addClass('default-icon');
 			}
 
