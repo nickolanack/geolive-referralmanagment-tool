@@ -3,7 +3,7 @@ if (ProjectTeam.CurrentTeam().hasUser(item.getUserId())) {
 }else{
    
    try{
-       
+       console.log("check proponent");
        if(!!item.getMetadata().accessToken){
            if(item._discussion.options.channel=="proponent"){
                return new ElementModule('span',{'class':"post-user", 'htm':"Proponent"});
@@ -11,7 +11,9 @@ if (ProjectTeam.CurrentTeam().hasUser(item.getUserId())) {
        }
 
        
-   }catch(e){}
+   }catch(e){
+       console.error(e);
+   }
    
    
 }
