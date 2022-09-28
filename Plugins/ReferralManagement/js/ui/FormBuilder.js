@@ -226,10 +226,11 @@ var FormBuilder = (function() {
 
 				var textField = new TextFieldModule({
 					label: label,
+					createList:options&&options.createList===true,
 					wrapElementClassName: "no-media",
 					value: item.getDefaultValue() || "",
 				}).addDataSubmitter(function(object, wizardDataSet) {
-					wizardDataSet[parameterName] = object.value;
+					wizardDataSet[parameterName] = (options&&options.createList===true)?object.values:object.value;
 				}).runOnceOnLoad(function(){
 
 					console.log('on-load');
