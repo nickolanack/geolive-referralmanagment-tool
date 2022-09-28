@@ -35,7 +35,7 @@ class CommentBot{
 
 		if($info->name==='proponent'){
 
-			$list=GetPlugin('ReferralManagement')->listProjectsMetadata(array('id' => $info->itemId)),
+			$list=GetPlugin('ReferralManagement')->listProjectsMetadata(array('id' => $info->itemId));
 			$projectMetadata=$list[0];
 
 			
