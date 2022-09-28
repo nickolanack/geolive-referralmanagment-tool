@@ -6,7 +6,7 @@ if (ProjectTeam.CurrentTeam().hasUser(item.getUserId())) {
        console.log("check proponent");
        if(!!item.getMetadata().accessToken){
            if(item._discussion.options.channel=="proponent"){
-               return new ElementModule('span',{'class':"post-user", 'htm':"Proponent"});
+               return new ElementModule('span',{'class':"post-user", 'html':"Proponent"});
            }
        }
 
