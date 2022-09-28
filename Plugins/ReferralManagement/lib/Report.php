@@ -28,11 +28,14 @@ class Report {
 	}
 
 
+	
+
+
 	/**
 	 * compile all report data and computed items into an object to be used by the template
 	 * @return [type] [description]
 	 */
-	public function getReportData($parameters=null){
+	public function getReportData($parameters=null, $templateString=null){
 
 
 
@@ -41,48 +44,12 @@ class Report {
 		$data = $this->getPlugin()->getProposalData($this->proposal);
 
 
-		/**
-		 * helper function to convert local urls to paths
-		 */
-		$localPath = function ($url) {
-			if ((new \core\html\Path())->isHostedLocally($url)) {
-				return PathFrom($url);
-			}
-
-			return $url;
-		};
 
 		/**
 		 * helper function to convert images to base 64 encoded strings ~simplifies embedding in templates
 		 */
-		$base64 = function ($url) use ($localPath) {
-
-			$path = $localPath($url);
-			if (file_exists($path)) {
-				$type = pathinfo($path, PATHINFO_EXTENSION);
-				return 'data:image/' . $type . ';base64,' . base64_encode((new \core\File())->read($path));
-			}
-
-			//$type = pathinfo($path, PATHINFO_EXTENSION);
-			// return 'data:image/' . $type . ';base64,' . base64_encode((new \core\File())->read($path));
-
-			$filename = tempnam(__DIR__, '-ext-img-');
-			try {
-				(new \core\File())->write($filename, (new \core\File())->read($path));
-				$type = pathinfo($path, PATHINFO_EXTENSION);
-				$str = 'data:image/' . $type . ';base64,' . base64_encode((new \core\File())->read($path));
-				unlink($filename);
-				return $str;
-			} catch (\Exception $e) {
-
-				if (file_exists($filename)) {
-					unlink($filename);
-				}
-				throw $e;
-			}
-
-			throw new \Exception('support remote?: ' . $path);
-
+		$base64 = function ($url) {
+			return $this->base64($url);
 		};
 
 		$data['timezone'] = ini_get('date.timezone');
@@ -97,30 +64,16 @@ class Report {
 			$data['userdetails']['email'] = '{email}';
 		}
 
-		$data['computed']['files'] = $parser->parseProposalFiles($data);
-		$data['computed']['images'] = $parser->parseProposalImages($data);
-		$data['computed']['spatial'] = $parser->parseProposalSpatial($data);
 
+		if(is_null($templateString)||strpos($templateString, '.computed')!==false){
 
-		$data['computed']['maps']=(new \ReferralManagement\MapPrinter())->getImageUrls($data['id']);
-		if(!empty($data['computed']['maps'])){
-			$data['computed']['maps'] = array_map($base64, $data['computed']['maps']);
+			/**
+			 * skip this section if no template request for .computed data 
+			 * $templateString is optional, so if it is null then compute all fields just in case
+			 */
+
+			$this->parseComputed($data);
 		}
-
-
-		//$data['computed']['files']=array_map($localPath, $data['computed']['files']);
-		$data['computed']['images'] = array_map($base64, $data['computed']['images']);
-
-		$data['tasks'] = array_map(function ($task) use ($localPath, $base64, $parser) {
-
-			$task['computed']['files'] = $parser->parseTaskFiles($task);
-			$task['computed']['images'] = $parser->parseTaskImages($task);
-
-			//$task['computed']['files']=array_map($localPath, $task['computed']['files']);
-			$task['computed']['images'] = array_map($base64, $task['computed']['images']);
-			return $task;
-
-		}, $data['tasks']);
 
 		$data['attributes']['teamMembers'] = array_map(function ($teamMember) use ($base64, $parser) {
 
@@ -150,6 +103,86 @@ class Report {
 		//die(json_encode($data, JSON_PRETTY_PRINT));
 
 		return $data;
+
+	}
+
+	protected function localPath ($url) {
+		if ((new \core\html\Path())->isHostedLocally($url)) {
+			return PathFrom($url);
+		}
+
+		return $url;
+	}
+
+	protected function base64($url) {
+
+			$path = $this->localPath($url);
+			if (file_exists($path)) {
+				$type = pathinfo($path, PATHINFO_EXTENSION);
+				return 'data:image/' . $type . ';base64,' . base64_encode((new \core\File())->read($path));
+			}
+
+			//$type = pathinfo($path, PATHINFO_EXTENSION);
+			// return 'data:image/' . $type . ';base64,' . base64_encode((new \core\File())->read($path));
+
+			$filename = tempnam(__DIR__, '-ext-img-');
+			try {
+				(new \core\File())->write($filename, (new \core\File())->read($path));
+				$type = pathinfo($path, PATHINFO_EXTENSION);
+				$str = 'data:image/' . $type . ';base64,' . base64_encode((new \core\File())->read($path));
+				unlink($filename);
+				return $str;
+			} catch (\Exception $e) {
+
+				if (file_exists($filename)) {
+					unlink($filename);
+				}
+				throw $e;
+			}
+
+			throw new \Exception('support remote?: ' . $path);
+
+		};
+
+	protected function parseComputed(&$data){
+
+
+		$parser = new ComputedData();
+
+		$data['computed']['files'] = $parser->parseProposalFiles($data);
+		$data['computed']['images'] = $parser->parseProposalImages($data);
+		$data['computed']['spatial'] = $parser->parseProposalSpatial($data);
+
+
+		$data['computed']['maps']=(new \ReferralManagement\MapPrinter())->getImageUrls($data['id']);
+		if(!empty($data['computed']['maps'])){
+			$data['computed']['maps'] = array_map(array($this, 'base64'), $data['computed']['maps']);
+		}
+
+
+		//$data['computed']['files']=array_map($localPath, $data['computed']['files']);
+		$data['computed']['images'] = array_map(array($this, 'base64'), $data['computed']['images']);
+
+		$data['tasks'] = array_map(function ($task) use ($parser) {
+
+			$task['computed']['files'] = $parser->parseTaskFiles($task);
+			$task['computed']['images'] = $parser->parseTaskImages($task);
+
+			$task['computed']['images'] = array_map(array($this, 'base64'), $task['computed']['images']);
+			return $task;
+
+		}, $data['tasks']);
+
+
+	}
+
+
+	public function generateReportField($templateString, $parameters=null){
+
+		$template=new \core\TemplateRenderer($templateString);
+		$data=$this->getReportData($parameters, $templateString);
+
+		return $template->render($data);
 
 	}
 
