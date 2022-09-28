@@ -241,7 +241,7 @@ var FormBuilder = (function() {
 							"template": item.getDefaultValue()
 						})).on('success',function(resp){
 
-							console.log(resp);
+							textField.setValue(resp.value);
 
 						}).execute();
 
