@@ -267,6 +267,7 @@ var FormBuilder = (function() {
                     fieldType:item.fieldType,
                     defaultValue:item.defaultValue,
                     options:item.options,
+                    project:item:getProject()
                 });
                 
             }));
@@ -277,7 +278,14 @@ var FormBuilder = (function() {
 		formFieldItemListUpdater:function(module, item){
 			(new UIFormListBehavior(module)).disableNewItems().disableRemoveEmpty().addDataFormatter(function(data, item){
     
-			    return ObjectAppend_({}, item.toObject(), data);
+				
+
+			    var value= ObjectAppend_({}, item.toObject(), data);
+			    
+			    if(value.project){
+			    	delete value.project;
+				}
+			    return value;
 			    
 			}).setUpdateField('parameters');
 		},
