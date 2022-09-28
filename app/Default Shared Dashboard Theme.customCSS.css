@@ -6883,6 +6883,13 @@ input.text-input[type="color"], input.text-input[type="color"]:focus {
 .dark .default-icon.user-profile-icon > span {
     filter: invert(1);
 }
+
+.user-profile-icon.default-icon.access-token > span {
+    filter: invert(1) sepia(1) saturate(10) hue-rotate(65deg);
+}
+.dark .user-profile-icon.default-icon.access-token > span {
+    filter: invert(0) sepia(1) saturate(10) hue-rotate(65deg);
+}
     
     
     
