@@ -230,7 +230,7 @@ var FormBuilder = (function() {
 					wrapElementClassName: "no-media",
 					value: item.getDefaultValue() || "",
 				}).addDataSubmitter(function(object, wizardDataSet) {
-					wizardDataSet[parameterName] = (options&&options.createList===true)?object.values:object.value;
+					wizardDataSet[parameterName] = object.value;
 				}).runOnceOnLoad(function(){
 
 					console.log('on-load');
