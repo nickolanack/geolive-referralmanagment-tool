@@ -28907,16 +28907,16 @@
                             "FeatureDetailsForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 449,
-                            "y": 163
+                            "x": 459,
+                            "y": 173
                         },
                         "children": [
                             "FeatureDetailsForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 409,
-                                    "y": 376
+                                    "x": 419,
+                                    "y": 399
                                 }
                             }
                         ],
@@ -29038,20 +29038,6 @@
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
-                                            }
-                                        },
-                                        {
-                                            "type": "FormBooleanField",
-                                            "config": {
-                                                "className": "",
-                                                "label": "Marks project bounds",
-                                                "identifier": "boolean-field",
-                                                "mandatory": false,
-                                                "getValueScript": "",
-                                                "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "",
-                                                "validateValueScript": "",
-                                                "formatElementScript": ""
                                             }
                                         }
                                     ]
