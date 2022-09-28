@@ -293,7 +293,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		(new \ReferralManagement\CommentBot())
 			->scanPostForEventTriggers($params);
 
-		
+
 
 	}
 	public function getActiveProjectList($userid=-1) {
