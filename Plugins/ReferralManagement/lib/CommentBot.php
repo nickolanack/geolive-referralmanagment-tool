@@ -27,7 +27,7 @@ class CommentBot{
 		}
 
 
-		$plugin=GetPlugin('Discussion');
+		$plugin=GetPlugin('Discussions');
 		$info=$plugin->getDiscussionMetadata($postData->discussion);
 
 		GetPlugin('Email')->getMailer()
