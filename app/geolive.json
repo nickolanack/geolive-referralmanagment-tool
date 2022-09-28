@@ -28895,8 +28895,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 64,
-                    "y": 294
+                    "x": 77,
+                    "y": 289
                 },
                 "children": [
                     "FeatureDetailsForm.metadata.children.0.json",
@@ -28907,16 +28907,16 @@
                             "FeatureDetailsForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 206,
-                            "y": 226
+                            "x": 449,
+                            "y": 163
                         },
                         "children": [
                             "FeatureDetailsForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 166,
-                                    "y": 439
+                                    "x": 409,
+                                    "y": 376
                                 }
                             }
                         ],
@@ -29038,6 +29038,20 @@
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "FeatureDetailsForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
+                                        {
+                                            "type": "FormBooleanField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Marks project bounds",
+                                                "identifier": "boolean-field",
+                                                "mandatory": false,
+                                                "getValueScript": "",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": "",
+                                                "formatElementScript": ""
                                             }
                                         }
                                     ]
