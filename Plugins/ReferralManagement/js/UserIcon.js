@@ -36,6 +36,15 @@ var UserIcon=(function(){
 			}
 
 
+			if(item.getMetadata){
+				var meta=item.getMetadata();
+				if(meta.accessToken){
+					div.getElement().addClass('access-token');
+				}
+			}
+
+
+
 
 			var setItemOnlineStatus = function() {
 				var el = div.getElement().parentNode;
