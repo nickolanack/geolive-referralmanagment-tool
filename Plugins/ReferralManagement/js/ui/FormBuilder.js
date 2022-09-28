@@ -233,7 +233,7 @@ var FormBuilder = (function() {
 				}).runOnceOnLoad(function(){
 
 					console.log('on-load');
-					if(options.preprocessTemplateValue===true){
+					if(options&&options.preprocessTemplateValue===true){
 
 						(new AjaxControlQuery(CoreAjaxUrlRoot, 'generate_report_field', {
 							"plugin": "ReferralManagement",

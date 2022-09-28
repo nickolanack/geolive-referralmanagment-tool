@@ -129,8 +129,27 @@
     },
     "create_default_tasks": [],
     "default_task_templates": [],
-    "generate_report": [],
-    "generate_report_data": [],
+    "generate_report": {
+        "validate": {
+            "checkKeys": [
+                "project"
+            ]
+        }
+    },
+    "generate_report_data": {
+        "validate": {
+            "checkKeys": [
+                "project"
+            ]
+        }
+    },
+    "generate_report_field":  {
+        "validate": {
+            "checkKeys": [
+                "project", "template"
+            ]
+        }
+    },
     "download_files": [],
 
 
