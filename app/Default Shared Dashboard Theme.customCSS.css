@@ -6880,6 +6880,11 @@ input.text-input[type="color"], input.text-input[type="color"]:focus {
     color: black;
 }
 
+
+.user-profile-icon.default-icon > span {
+   background-image:url("https://rmt.geoforms.ca/webresources/config-153/75cbe.EPG_[G]_[ImAgE]_w98_Phj.png");
+}
+
 .dark .default-icon.user-profile-icon > span {
     filter: invert(1);
 }
