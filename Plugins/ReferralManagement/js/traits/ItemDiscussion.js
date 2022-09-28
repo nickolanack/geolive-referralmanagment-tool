@@ -63,6 +63,11 @@ var ItemDiscussion = (function() {
 			uitext.getInputElement().addClass('discussion-textbox');
 
 
+			var metadata={};
+			var token=application.getNamedValue('accessToken');
+			if(token){
+				metadata.accessToken=token;
+			}
 
 			(new UITextFieldMediaSelection(uitext)).addToolbarBtn({
 				"hoverTip":"send",
@@ -77,7 +82,7 @@ var ItemDiscussion = (function() {
 
 							//console.log("send "+value);
 							var discussion = getDiscussion();
-							discussion.getDiscussion().post(value, function(success) {
+							discussion.getDiscussion().post(value, metadata, function(success) {
 								//console.log('success: '+(success?'true':'false'));  
 								if (!success) {
 									alert('Something went wrong');
@@ -102,7 +107,7 @@ var ItemDiscussion = (function() {
 
 						//console.log("send "+value);
 						var discussion = getDiscussion();
-						discussion.getDiscussion().post(value, function(success) {
+						discussion.getDiscussion().post(value, metadata, function(success) {
 							//console.log('success: '+(success?'true':'false'));  
 							if (!success) {
 								alert('Something went wrong');
@@ -129,7 +134,7 @@ var ItemDiscussion = (function() {
 						})).addEvent('save', function() {
 
 							var discussion = getDiscussion();
-							discussion.getDiscussion().post(value, function(success) {
+							discussion.getDiscussion().post(value, metadata, function(success) {
 								//console.log('success: '+(success?'true':'false'));  
 								if (!success) {
 									alert('Something went wrong');
