@@ -257,17 +257,17 @@ var FormBuilder = (function() {
 
 			return 'field placeholder'
 		},
-		formFieldItemList:function(item, callback){
+		formFieldItemList:function(reportFormItem, callback){
 
 
-			 callback((item.getParameters?item.getParameters():[]).map(function(item){
+			 callback((reportFormItem.getParameters?reportFormItem.getParameters():[]).map(function(item){
                 return new MockDataTypeItem({
                     name:item.name,
                     description:item.description,
                     fieldType:item.fieldType,
                     defaultValue:item.defaultValue,
                     options:item.options,
-                    project:item:getProject()
+                    project:reportFormItem.getProject()
                 });
                 
             }));
@@ -280,7 +280,7 @@ var FormBuilder = (function() {
     
 				
 
-			    var value= ObjectAppend_({}, item.toObject(), data);
+			    var value = ObjectAppend_({}, item.toObject(), data);
 			    
 			    if(value.project){
 			    	delete value.project;
