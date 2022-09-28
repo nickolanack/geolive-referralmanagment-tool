@@ -233,6 +233,19 @@ var FormBuilder = (function() {
 				}).runOnceOnLoad(function(){
 
 					console.log('on-load');
+					if(options.preprocessTemplateValue===true){
+
+						(new AjaxControlQuery(CoreAjaxUrlRoot, 'generate_report_field', {
+							"plugin": "ReferralManagement",
+							"project": item.getProject(),
+							"template": item.getDefaultValue()
+						})).on('success',function(resp){
+
+							console.log(resp);
+
+						}).execute();
+
+					}
 
 				});
 
