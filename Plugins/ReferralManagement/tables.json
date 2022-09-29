@@ -84,7 +84,13 @@
 		}, {
 			"name": "metadata",
 			"type": "json",
-			"comment": "any aditional json encoded parameters"
+			"comment": "any additional json encoded parameters"
+		},
+		{
+			"name":"namespace",
+			"type": "label",
+			"comment": "groups types of emails",
+			"default":"dailyDigest"
 		}
 	
 	]

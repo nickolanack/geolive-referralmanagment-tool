@@ -6,6 +6,9 @@ class EmailNotifications implements \core\EventListener {
 
 	use \core\EventListenerTrait;
 
+
+
+
 	protected function onTriggerTaskUpdateEmailNotification($args) {
 		$this->sendEmailTaskUpdate($args);
 	}
@@ -146,6 +149,7 @@ class EmailNotifications implements \core\EventListener {
 				"eventDate" => date('Y-m-d H:i:s'),
 				"parameters" => json_encode($arguments),
 				"metadata" => json_encode((object) array()),
+				"namespace" => 'dailyDigest'
 			));
 
 			Emit('onQueueEmail', array(
@@ -177,39 +181,45 @@ class EmailNotifications implements \core\EventListener {
 
 		array_walk($recipients, function ($recipient) use ($db) {
 
-			$synopsisData = array(
-				'items' => array(),
-				'types' => array(),
-			);
+			$namespaces = $db->distinctEmailQueueFieldValues('namespace', array('recipient'=>$recipient));
 
-			foreach ($db->getAllQueuedEmails(array('recipient' => $recipient)) as $record) {
+			array_walk($namespaces , function ($namespace) use ($db, $recipient) {
 
-				$type = $record->name;
-				if (!isset($synopsisData['types'][$type])) {
-					$synopsisData['types'][$type] = 0;
+				$synopsisData = array(
+					'items' => array(),
+					'types' => array(),
+				);
+
+				foreach ($db->getAllQueuedEmails(array('recipient' => $recipient, 'namespace'=>$namespace)) as $record) {
+
+					$type = $record->name;
+					if (!isset($synopsisData['types'][$type])) {
+						$synopsisData['types'][$type] = 0;
+					}
+					$synopsisData['types'][$type] += 1;
+
+					$content = (new \core\Template('email.' . $type . '.synopsis', 'Message Content - ' . $type))
+						->render(json_decode($record->parameters));
+
+					$synopsisData['items'][] = array_merge(get_object_vars($record), array(
+						'content' => $content,
+						'parameters' => json_decode($record->parameters),
+					));
+
 				}
-				$synopsisData['types'][$type] += 1;
 
-				$content = (new \core\Template('email.' . $type . '.synopsis', 'Message Content - ' . $type))
-					->render(json_decode($record->parameters));
+				$templateName = $namespace; //'dailyDigest';
+				$arguments = $synopsisData;
 
-				$synopsisData['items'][] = array_merge(get_object_vars($record), array(
-					'content' => $content,
-					'parameters' => json_decode($record->parameters),
-				));
+				$to = $this->emailToAddress($recipient);
+				if (!$to) {
+					throw new \Exception('Failed to resolve email');
+				}
 
-			}
+				GetPlugin('Email')->getMailerWithTemplate($templateName, $arguments)->to($to)->send();
+				$db->deleteRecipientsQueuedEmails($recipient);
 
-			$templateName = 'dailyDigest';
-			$arguments = $synopsisData;
-
-			$to = $this->emailToAddress($recipient);
-			if (!$to) {
-				throw new \Exception('Failed to resolve email');
-			}
-
-			GetPlugin('Email')->getMailerWithTemplate($templateName, $arguments)->to($to)->send();
-			$db->deleteRecipientsQueuedEmails($recipient);
+			});
 
 		});
 
@@ -270,8 +280,8 @@ class EmailNotifications implements \core\EventListener {
 					'project' => $project,
 					'teamMembers' => $teamMembers,
 					'assignedMembers' => $assignedMembers,
-					'editor' => $this->getPlugin()->getUsersMetadata(),
-					'user' => $this->getPlugin()->getUsersMetadata($user->id),
+					'caller' => $this->getPlugin()->getUsersMetadata(),
+					'receiver' => $this->getPlugin()->getUsersMetadata($user->id),
 				));
 
 			$this->send($templateName, $arguments, $user);
@@ -312,8 +322,8 @@ class EmailNotifications implements \core\EventListener {
 			array(
 				'task' => $task,
 				'project' => $project,
-				'editor' => $this->getPlugin()->getUsersMetadata(),
-				'user' => $this->getPlugin()->getUsersMetadata($args->member->id),
+				'caller' => $this->getPlugin()->getUsersMetadata(),
+				'receiver' => $this->getPlugin()->getUsersMetadata($args->member->id),
 			)
 		);
 		$this->send($templateName, $arguments, $args->member);
@@ -331,8 +341,8 @@ class EmailNotifications implements \core\EventListener {
 			array(
 				'task' => $task,
 				'project' => $project,
-				'editor' => $this->getPlugin()->getUsersMetadata(),
-				'user' => $this->getPlugin()->getUsersMetadata($args->member->id),
+				'caller' => $this->getPlugin()->getUsersMetadata(),
+				'receiver' => $this->getPlugin()->getUsersMetadata($args->member->id),
 			)
 		);
 		$this->send($templateName, $arguments, $args->member);
@@ -345,8 +355,8 @@ class EmailNotifications implements \core\EventListener {
 		$arguments = array_merge(
 			get_object_vars($args),
 			array(
-				'editor' => $this->getPlugin()->getUsersMetadata(),
-				'user' => $this->getPlugin()->getUsersMetadata($args->member->id),
+				'caller' => $this->getPlugin()->getUsersMetadata(),
+				'receiver' => $this->getPlugin()->getUsersMetadata($args->member->id),
 				'project' => $this->getPlugin()->getProposalData($args->project),
 			)
 		);
@@ -360,8 +370,8 @@ class EmailNotifications implements \core\EventListener {
 		$arguments = array_merge(
 			get_object_vars($args),
 			array(
-				'editor' => $this->getPlugin()->getUsersMetadata(),
-				'user' => $this->getPlugin()->getUsersMetadata($args->member->id),
+				'caller' => $this->getPlugin()->getUsersMetadata(),
+				'receiver' => $this->getPlugin()->getUsersMetadata($args->member->id),
 				'project' => $this->getPlugin()->getProposalData($args->project),
 			)
 		);

@@ -42,7 +42,8 @@ class CommentBot{
 
 				(new \ReferralManagement\EmailNotifications())->queueEmailProjectToProjectMembers($info['itemId'], 'onProponentDiscussionPostByMember', array(
 					'post'=>$postData,
-					'discussion'=>$info
+					'discussion'=>$info,
+					'user'=>$postData->user
 				));
 
 
