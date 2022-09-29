@@ -95,7 +95,7 @@ class EmailNotifications implements \core\EventListener {
 					'receiver' => $this->getPlugin()->getUsersMetadata($user->id),
 				));
 
-			$this->send($templateName, $arguments, $user);
+			$this->send($args['template'], $arguments, $user);
 
 		}
 
