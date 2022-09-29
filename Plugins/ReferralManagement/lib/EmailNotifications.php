@@ -93,6 +93,11 @@ class EmailNotifications implements \core\EventListener {
 		$alreadySent=array();
 		foreach ($teamMembers as $user) {
 
+
+			if(intval($user->id)<=0){
+				throw new \Exception('Expected valid user id: '.$user->id);
+			}
+
 			if(in_array(intval($user->id), $alreadySent)){
 				/**
 				 * prevent owner/team member from receiving duplicate emails
@@ -137,7 +142,7 @@ class EmailNotifications implements \core\EventListener {
 
 			$this->getPlugin()->getDatabase()->queueEmail(array(
 				"name" => $templateName,
-				"recipient" => $user->id,
+				"recipient" => is_string($user)?$user:$user->id,
 				"eventDate" => date('Y-m-d H:i:s'),
 				"parameters" => json_encode($arguments),
 				"metadata" => json_encode((object) array()),
