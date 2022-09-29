@@ -39,12 +39,36 @@ class CommentBot{
 			$projectMetadata=$list[0];
 
 			
+			if(intval($postData->user)>0){
 
+
+				(new \ReferralManagement\EmailNotifications())->queueEmailProjectToProjectMembers($info['itemId'], 'onProponentDiscussionPostByMember', array(
+					'post'=>$postData,
+					'discussion'=>$info
+				));
+
+
+				GetPlugin('Email')->getMailer()
+				->mail('Post', '<pre>' . json_encode($info, JSON_PRETTY_PRINT) . json_encode($postData, JSON_PRETTY_PRINT). json_encode($projectMetadata, JSON_PRETTY_PRINT)  . '</pre>')
+				->to('nickblackwell82@gmail.com')
+				->send();
+
+
+				return;
+
+			}
+
+			
+			(new \ReferralManagement\EmailNotifications())->queueEmailProjectToProjectMembers($info['itemId'], 'onProponentDiscussionPostByGuest', array(
+				'post'=>$postData,
+				'discussion'=>$info
+			));
 
 			GetPlugin('Email')->getMailer()
-			->mail('Post', '<pre>' . json_encode($info, JSON_PRETTY_PRINT) . json_encode($postData, JSON_PRETTY_PRINT). json_encode($projectMetadata, JSON_PRETTY_PRINT)  . '</pre>')
-			->to('nickblackwell82@gmail.com')
-			->send();
+				->mail('Post', '<pre>' . json_encode($info, JSON_PRETTY_PRINT) . json_encode($postData, JSON_PRETTY_PRINT). json_encode($projectMetadata, JSON_PRETTY_PRINT)  . '</pre>')
+				->to('nickblackwell82@gmail.com')
+				->send();
+
 
 		}
 

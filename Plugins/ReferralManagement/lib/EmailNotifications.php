@@ -18,7 +18,7 @@ class EmailNotifications implements \core\EventListener{
 	}
 
 	protected function onTriggerProjectUpdateEmailNotification($args) {
-		$this->sendEmailProjectUpdate($args);
+		$this->sendEmailToProjectMembers($args);
 	}
 	protected function onTriggerEmailQueueProcessor($args) {
 		$this->processEmailQueue($args);
@@ -42,27 +42,52 @@ class EmailNotifications implements \core\EventListener{
 
 
 
-
-
-
+	/**
+	 * [queueEmailProjectUpdate description]
+	 * @param  [type] $projectId [description]
+	 * @param  array  $data      [description]
+	 * @return [type]            [description]
+	 */
 	public function queueEmailProjectUpdate($projectId, $data = array()) {
+		$this->queueEmailProjectToProjectMembers($projectId, 'onProjectUpdate', $data);
+	}
+
+	public function queueEmailProjectToProjectMembers($projectId, $template, $data = array()) {
 
 		ScheduleEvent('onTriggerProjectUpdateEmailNotification', array(
 
 			'user' => GetClient()->getUserId(),
 			'project' => (new \ReferralManagement\Project())->fromId($projectId)->toArray(),
 			'info' => $data,
+			'template'=>$template
 
 		), intval(GetPlugin('ReferralManagement')->getParameter("queueEmailDelay")));
 
 	}
 
-	public function sendEmailProjectUpdate($args) {
 
-		$teamMembers = $this->getPlugin()->getTeamMembersForProject($args->project->id);
+
+	
+
+	public function sendEmailToProjectMembers($templateName, $args){
+
+		if(is_object($args)){
+			$args=get_object_vars($args);
+		}
+
+
+		if(!isset($args['project']->id)){
+			throw new \Exception('Expected args[`project`] to contain project metadata')
+		}
+
+		if(!isset($args['template'])){
+			throw new \Exception('Expected args[`template`] to contain project email template')
+		}
+
+		$teamMembers = $this->getPlugin()->getTeamMembersForProject($args['project']->id);
 
 		if (empty($teamMembers)) {
-			Emit('onEmptyTeamMembersTask', $args);
+			Emit('onEmptyTeamMembersProject', $args);
 		}
 
 		foreach ($teamMembers as $user) {
@@ -72,19 +97,22 @@ class EmailNotifications implements \core\EventListener{
 				continue;
 			}
 
-			$templateName = 'onProjectUpdate';
 			$arguments = array_merge(
-				get_object_vars($args),
+				$args,
 				array(
 					'teamMembers' => $teamMembers,
-					'editor' => $this->getPlugin()->getUsersMetadata(),
-					'user' => $this->getPlugin()->getUsersMetadata($user->id),
+					'caller' => $this->getPlugin()->getUsersMetadata(),
+					'receiver' => $this->getPlugin()->getUsersMetadata($user->id),
 				));
 
 			$this->send($templateName, $arguments, $user);
 
 		}
+
+
 	}
+
+
 
 	protected function send($templateName, $arguments, $user) {
 
