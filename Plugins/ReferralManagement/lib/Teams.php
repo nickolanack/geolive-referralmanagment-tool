@@ -14,7 +14,7 @@ class Teams {
 		
 
 		$owner=intval($project->user);
-		if($owner<0){
+		if($owner<=0){
 			return null;
 		}
 
