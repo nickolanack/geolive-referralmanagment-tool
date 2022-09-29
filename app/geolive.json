@@ -29651,5 +29651,33 @@
             "contentTemplate": "email-onProponentDiscussionPostByGuest-synopsis.contentTemplate.html",
             "readAccess": "public"
         }
+    },
+    "widget.534": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.communicationUpdates.subject",
+            "target": "email.communicationUpdates.subject",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Subject"
+        }
+    },
+    "widget.535": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.communicationUpdates.content",
+            "target": "email.communicationUpdates.content",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Message Content"
+        }
     }
 }
