@@ -27,11 +27,21 @@ class ReferralManagementDatabase extends \core\DataStorage {
 			throw new \Exception('deleteRecord requires a valid userid: null given');
 		}
 
-		$userid = intval($userid);
 
-		if ($userid <= 0) {
-			throw new \Exception('deleteRecord requires a valid userid > 0: ' . $userid . ' given');
+		if(!is_numeric($userid)){
+
+			if((!is_string($userid))||strpos($userid, '@')===false){
+				throw new \Exception('deleteRecord requires a valid email: ' . $userid . ' given');
+			}
+
+		}else{
+			$userid = intval($userid);
+
+			if ($userid <= 0) {
+				throw new \Exception('deleteRecord requires a valid userid > 0: ' . $userid . ' given');
+			}
 		}
+
 
 		return $this->deleteEntry('emailQueue', array(
 			'recipient' => $userid,
