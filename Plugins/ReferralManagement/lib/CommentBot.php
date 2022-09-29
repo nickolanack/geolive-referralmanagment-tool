@@ -58,15 +58,12 @@ class CommentBot{
 			}
 
 			
-			(new \ReferralManagement\EmailNotifications())->queueEmailProjectToProjectMembers($info['itemId'], 'onProponentDiscussionPostByGuest', array(
+			(new \ReferralManagement\EmailNotifications())
+				->withNamespace('communicationUpdates')
+				->queueEmailProjectToProjectMembers($info['itemId'], 'onProponentDiscussionPostByGuest', array(
 				'post'=>$postData,
 				'discussion'=>$info
 			));
-
-			GetPlugin('Email')->getMailer()
-				->mail('Post', '<pre>' . json_encode($info, JSON_PRETTY_PRINT) . json_encode($postData, JSON_PRETTY_PRINT). json_encode($projectMetadata, JSON_PRETTY_PRINT)  . '</pre>')
-				->to('nickblackwell82@gmail.com')
-				->send();
 
 
 		}

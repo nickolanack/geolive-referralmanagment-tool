@@ -6,7 +6,12 @@ class EmailNotifications implements \core\EventListener {
 
 	use \core\EventListenerTrait;
 
+	protected $namespace='dailyDigest';
 
+	public function withNamespace($ns){
+		$this->namespace=$ns;
+		return $this;
+	}
 
 
 	protected function onTriggerTaskUpdateEmailNotification($args) {
@@ -58,6 +63,7 @@ class EmailNotifications implements \core\EventListener {
 			'project' => (new \ReferralManagement\Project())->fromId($projectId)->toArray(),
 			'info' => $data,
 			'template' => $template,
+			'namespace'=>$this->namespace
 
 		), intval(GetPlugin('ReferralManagement')->getParameter("queueEmailDelay")));
 
@@ -90,6 +96,12 @@ class EmailNotifications implements \core\EventListener {
 			->ownerOfProject($args['project']->id);
 		if($owner){
 			$teamMembers[]=$owner;
+		}
+
+
+		$namespace=$this->namespace;
+		if(isset($args['namespace'])){
+			$namespace=$args['namespace'];
 		}
 
 
@@ -129,7 +141,7 @@ class EmailNotifications implements \core\EventListener {
 					'receiver' => $this->getPlugin()->getUsersMetadata($user->id),
 				));
 
-			$this->send($args['template'], $arguments, $user);
+			$this->send($args['template'], $namespace, $arguments, $user);
 
 			
 
@@ -137,7 +149,7 @@ class EmailNotifications implements \core\EventListener {
 
 	}
 
-	protected function send($templateName, $arguments, $user) {
+	protected function send($templateName, $namespace, $arguments, $user) {
 
 		$digestEnabled = true;
 
@@ -284,7 +296,7 @@ class EmailNotifications implements \core\EventListener {
 					'receiver' => $this->getPlugin()->getUsersMetadata($user->id),
 				));
 
-			$this->send($templateName, $arguments, $user);
+			$this->send($templateName, 'dailyDigest', $arguments, $user);
 
 		}
 
@@ -326,7 +338,7 @@ class EmailNotifications implements \core\EventListener {
 				'receiver' => $this->getPlugin()->getUsersMetadata($args->member->id),
 			)
 		);
-		$this->send($templateName, $arguments, $args->member);
+		$this->send($templateName, 'dailyDigest', $arguments, $args->member);
 
 	}
 
@@ -345,7 +357,7 @@ class EmailNotifications implements \core\EventListener {
 				'receiver' => $this->getPlugin()->getUsersMetadata($args->member->id),
 			)
 		);
-		$this->send($templateName, $arguments, $args->member);
+		$this->send($templateName, 'dailyDigest', $arguments, $args->member);
 
 	}
 
@@ -360,7 +372,7 @@ class EmailNotifications implements \core\EventListener {
 				'project' => $this->getPlugin()->getProposalData($args->project),
 			)
 		);
-		$this->send($templateName, $arguments, $args->member);
+		$this->send($templateName, 'dailyDigest', $arguments, $args->member);
 
 	}
 
@@ -375,7 +387,7 @@ class EmailNotifications implements \core\EventListener {
 				'project' => $this->getPlugin()->getProposalData($args->project),
 			)
 		);
-		$this->send($templateName, $arguments, $args->member);
+		$this->send($templateName, 'dailyDigest', $arguments, $args->member);
 
 	}
 
