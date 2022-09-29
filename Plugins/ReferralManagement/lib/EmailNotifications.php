@@ -60,7 +60,7 @@ class EmailNotifications implements \core\EventListener {
 
 	}
 
-	public function sendEmailToProjectMembers($templateName, $args) {
+	public function sendEmailToProjectMembers($args) {
 
 		if (is_object($args)) {
 			$args = get_object_vars($args);
