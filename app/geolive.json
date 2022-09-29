@@ -29634,7 +29634,8 @@
             "convertStylesToInline": false,
             "parseMarkdown": false,
             "saveTemplateAsData": false,
-            "contentTemplate": "email-onProponentDiscussionPostByMember-synopsis.contentTemplate.html"
+            "contentTemplate": "email-onProponentDiscussionPostByMember-synopsis.contentTemplate.html",
+            "readAccess": "public"
         }
     },
     "widget.533": {
@@ -29649,6 +29650,36 @@
             "parseMarkdown": true,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onProponentDiscussionPostByGuest-synopsis.contentTemplate.html",
+            "readAccess": "public"
+        }
+    },
+    "widget.534": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.communicationUpdates.subject",
+            "target": "email.communicationUpdates.subject",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "email-communicationUpdates-subject.contentTemplate.html",
+            "readAccess": "public"
+        }
+    },
+    "widget.535": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.communicationUpdates.content",
+            "target": "email.communicationUpdates.content",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "email-communicationUpdates-content.contentTemplate.html",
             "readAccess": "public"
         }
     }
