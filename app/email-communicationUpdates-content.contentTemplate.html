@@ -1,0 +1,14 @@
+{% for item in items %}
+        
+        {{item.content|raw}}
+        
+{% endfor %}
+
+
+<p>
+This messages has been sent to {{items[0].parameters.receiver.name}} ({{items[0].parameters.receiver.email}}) by the Refferal Management Tool for {{items[0].parameters.user.community}}
+</p> <br/> 
+<p>
+
+You can unsubscribe from these message by changing your notification preferences in the project settings
+</p> <br/>

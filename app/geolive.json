@@ -29678,7 +29678,8 @@
             "convertStylesToInline": false,
             "parseMarkdown": false,
             "saveTemplateAsData": false,
-            "contentTemplate": "Message Content"
+            "contentTemplate": "email-communicationUpdates-content.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }
