@@ -41,7 +41,7 @@ class CommentBot{
 
 
 				(new \ReferralManagement\EmailNotifications())
-					->withNamespace('communicationUpdates')
+					->withNamespace('communicationUpdates.pid.'.$info['itemId'])
 					->queueEmailProjectToGuestSubmitter($info['itemId'], 'onProponentDiscussionPostByMember', array(
 						'post'=>$postData,
 						'discussion'=>$info,
@@ -60,7 +60,7 @@ class CommentBot{
 			}
 			
 			(new \ReferralManagement\EmailNotifications())
-				->withNamespace('communicationUpdates')
+				->withNamespace('communicationUpdates.pid.'.$info['itemId'])
 				->queueEmailProjectToProjectMembers($info['itemId'], 'onProponentDiscussionPostByGuest', array(
 					'post'=>$postData,
 					'discussion'=>$info

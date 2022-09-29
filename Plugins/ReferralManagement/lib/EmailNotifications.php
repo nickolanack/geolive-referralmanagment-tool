@@ -277,7 +277,11 @@ class EmailNotifications implements \core\EventListener {
 
 				}
 
-				$templateName = $namespace; //'dailyDigest';
+				$templateName = $namespace; //'dailyDigest.xy.z';
+				$templateName=explode('.', $templateName);
+				$templateName=array_shift($templateName);
+
+
 				$arguments = $synopsisData;
 
 				$to = $this->emailToAddress($recipient);
