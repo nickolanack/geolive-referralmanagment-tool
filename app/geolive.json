@@ -29622,5 +29622,33 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.531": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.onProponentDiscussionPostByMember.synopsis",
+            "target": "email.onProponentDiscussionPostByMember.synopsis",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "email-onProponentDiscussionPostByMember-synopsis.contentTemplate.html"
+        }
+    },
+    "widget.532": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.onProponentDiscussionPostByMember.synopsis",
+            "target": "email.onProponentDiscussionPostByMember.synopsis",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "email-onProponentDiscussionPostByMember-synopsis.contentTemplate.html"
+        }
     }
 }
