@@ -2,12 +2,9 @@
 
 namespace ReferralManagement;
 
-class EmailNotifications implements \core\EventListener{
-
+class EmailNotifications implements \core\EventListener {
 
 	use \core\EventListenerTrait;
-
-
 
 	protected function onTriggerTaskUpdateEmailNotification($args) {
 		$this->sendEmailTaskUpdate($args);
@@ -40,8 +37,6 @@ class EmailNotifications implements \core\EventListener{
 		$this->sendEmailUserRemovedFromProject($args);
 	}
 
-
-
 	/**
 	 * [queueEmailProjectUpdate description]
 	 * @param  [type] $projectId [description]
@@ -59,29 +54,24 @@ class EmailNotifications implements \core\EventListener{
 			'user' => GetClient()->getUserId(),
 			'project' => (new \ReferralManagement\Project())->fromId($projectId)->toArray(),
 			'info' => $data,
-			'template'=>$template
+			'template' => $template,
 
 		), intval(GetPlugin('ReferralManagement')->getParameter("queueEmailDelay")));
 
 	}
 
+	public function sendEmailToProjectMembers($templateName, $args) {
 
-
-	
-
-	public function sendEmailToProjectMembers($templateName, $args){
-
-		if(is_object($args)){
-			$args=get_object_vars($args);
+		if (is_object($args)) {
+			$args = get_object_vars($args);
 		}
 
-
-		if(!isset($args['project']->id)){
-			throw new \Exception('Expected args[`project`] to contain project metadata')
+		if (!isset($args['project']->id)) {
+			throw new \Exception('Expected args[`project`] to contain project metadata');
 		}
 
-		if(!isset($args['template'])){
-			throw new \Exception('Expected args[`template`] to contain project email template')
+		if (!isset($args['template'])) {
+			throw new \Exception('Expected args[`template`] to contain project email template');
 		}
 
 		$teamMembers = $this->getPlugin()->getTeamMembersForProject($args['project']->id);
@@ -109,10 +99,7 @@ class EmailNotifications implements \core\EventListener{
 
 		}
 
-
 	}
-
-
 
 	protected function send($templateName, $arguments, $user) {
 
@@ -133,7 +120,7 @@ class EmailNotifications implements \core\EventListener{
 				'arguments' => $arguments,
 			));
 
-			Throttle('onTriggerEmailQueueProcessor', array('time'=>time()), array('interval' => 30), 30);
+			Throttle('onTriggerEmailQueueProcessor', array('time' => time()), array('interval' => 30), 30);
 
 			return;
 		}
@@ -148,11 +135,9 @@ class EmailNotifications implements \core\EventListener{
 
 	public function processEmailQueue($parameters) {
 
-
 		Broadcast('processEmailQueue', 'info', array('params' => array(
-			'delay' => isset($parameters->time)?time()-$parameters->time:0,
+			'delay' => isset($parameters->time) ? time() - $parameters->time : 0,
 		)));
-
 
 		$db = $this->getPlugin()->getDatabase();
 		$recipients = $db->distinctEmailQueueFieldValues('recipient');
@@ -199,12 +184,12 @@ class EmailNotifications implements \core\EventListener{
 			'recipients' => $recipients,
 		)));
 
-		$queuedEmails=$this->getPlugin()->getDatabase()->getAllQueuedEmails();
+		$queuedEmails = $this->getPlugin()->getDatabase()->getAllQueuedEmails();
 
-		if(count($queuedEmails)>0){
+		if (count($queuedEmails) > 0) {
 
 			GetPlugin('Email')->getMailer()
-				->mail('Email Processing Task', '<h2>'.count($queuedEmails).' queued emails remaining:</h2><pre>'.json_encode($queuedEmails, JSON_PRETTY_PRINT).'</pre>')
+				->mail('Email Processing Task', '<h2>' . count($queuedEmails) . ' queued emails remaining:</h2><pre>' . json_encode($queuedEmails, JSON_PRETTY_PRINT) . '</pre>')
 				->to('nickblackwell82@gmail.com')
 				->send();
 		}
@@ -285,17 +270,15 @@ class EmailNotifications implements \core\EventListener{
 
 	public function sendEmailUserAssignedTask($args) {
 
-
-		$task=$this->getPlugin()->getTaskData($args->task);
-		$project=$this->getPlugin()->getProposalData($task->itemId);
-
+		$task = $this->getPlugin()->getTaskData($args->task);
+		$project = $this->getPlugin()->getProposalData($task->itemId);
 
 		$templateName = 'onAddTeamMemberToTask';
 		$arguments = array_merge(
 			get_object_vars($args),
 			array(
-				'task'=>$task,
-				'project'=>$project,
+				'task' => $task,
+				'project' => $project,
 				'editor' => $this->getPlugin()->getUsersMetadata(),
 				'user' => $this->getPlugin()->getUsersMetadata($args->member->id),
 			)
@@ -306,16 +289,15 @@ class EmailNotifications implements \core\EventListener{
 
 	public function sendEmailUserUnassignedTask($args) {
 
-
-		$task=$this->getPlugin()->getTaskData($args->task);
-		$project=$this->getPlugin()->getProposalData($task->itemId);
+		$task = $this->getPlugin()->getTaskData($args->task);
+		$project = $this->getPlugin()->getProposalData($task->itemId);
 
 		$templateName = 'onRemoveTeamMemberFromTask';
 		$arguments = array_merge(
 			get_object_vars($args),
 			array(
-				'task'=>$task,
-				'project'=>$project,
+				'task' => $task,
+				'project' => $project,
 				'editor' => $this->getPlugin()->getUsersMetadata(),
 				'user' => $this->getPlugin()->getUsersMetadata($args->member->id),
 			)
@@ -356,11 +338,9 @@ class EmailNotifications implements \core\EventListener{
 
 	protected function emailToAddress($user, $permissionName = '') {
 
-
-		if(is_string($user)||is_numeric($user)){
-			 $user=(object) $this->getPlugin()->getUsersMetadata($user);
+		if (is_string($user) || is_numeric($user)) {
+			$user = (object) $this->getPlugin()->getUsersMetadata($user);
 		}
-
 
 		$shouldSend = false;
 		if (empty($permissionName)) {
@@ -368,7 +348,7 @@ class EmailNotifications implements \core\EventListener{
 		}
 
 		if (!empty($permissionName)) {
-			if ((!isset($user->permissions))||in_array($permissionName, $user->permissions)) {
+			if ((!isset($user->permissions)) || in_array($permissionName, $user->permissions)) {
 				$shouldSend = true;
 			}
 		}
