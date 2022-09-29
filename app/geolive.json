@@ -29646,9 +29646,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
+            "parseMarkdown": true,
             "saveTemplateAsData": false,
-            "contentTemplate": "email-onProponentDiscussionPostByGuest-synopsis.contentTemplate.html"
+            "contentTemplate": "email-onProponentDiscussionPostByGuest-synopsis.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }
