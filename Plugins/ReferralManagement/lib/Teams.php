@@ -120,7 +120,13 @@ class Teams {
 
 	public function defaultProjectPermissionsForUser($user, $project) {
 
+
 		if (is_numeric($user)) {
+
+			if(intval($user)<=0){
+				throw new \Exception('Requires valid user id: '.$user);
+			}
+
 			$user = (new \ReferralManagement\User())->getMetadata($user);
 		}
 
