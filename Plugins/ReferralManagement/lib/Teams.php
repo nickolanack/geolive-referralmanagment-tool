@@ -9,7 +9,7 @@ class Teams {
 	public function ownerOfProject($project){
 
 		if(is_numeric($project)){
-			$project=(new \ReferralManagement\Project())->fromId($project)->toArray(),
+			$project=(new \ReferralManagement\Project())->fromId($project)->toArray();
 		}
 		
 
