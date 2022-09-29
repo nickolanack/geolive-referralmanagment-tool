@@ -29636,5 +29636,19 @@
             "saveTemplateAsData": false,
             "contentTemplate": "email-onProponentDiscussionPostByMember-synopsis.contentTemplate.html"
         }
+    },
+    "widget.533": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.onProponentDiscussionPostByGuest.synopsis",
+            "target": "email.onProponentDiscussionPostByGuest.synopsis",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "email-onProponentDiscussionPostByGuest-synopsis.contentTemplate.html"
+        }
     }
 }
