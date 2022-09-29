@@ -40,11 +40,13 @@ class CommentBot{
 			if(intval($postData->user)>0){
 
 
-				(new \ReferralManagement\EmailNotifications())->queueEmailProjectToProjectMembers($info['itemId'], 'onProponentDiscussionPostByMember', array(
-					'post'=>$postData,
-					'discussion'=>$info,
-					'user'=>$postData->user
-				));
+				(new \ReferralManagement\EmailNotifications())
+					->withNamespace('communicationUpdates')
+					->queueEmailProjectToGuestSubmitter($info['itemId'], 'onProponentDiscussionPostByMember', array(
+						'post'=>$postData,
+						'discussion'=>$info,
+						'user'=>$postData->user
+					));
 
 
 				GetPlugin('Email')->getMailer()
@@ -56,14 +58,13 @@ class CommentBot{
 				return;
 
 			}
-
 			
 			(new \ReferralManagement\EmailNotifications())
 				->withNamespace('communicationUpdates')
 				->queueEmailProjectToProjectMembers($info['itemId'], 'onProponentDiscussionPostByGuest', array(
-				'post'=>$postData,
-				'discussion'=>$info
-			));
+					'post'=>$postData,
+					'discussion'=>$info
+				));
 
 
 		}

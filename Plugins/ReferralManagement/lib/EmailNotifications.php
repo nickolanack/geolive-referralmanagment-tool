@@ -25,6 +25,12 @@ class EmailNotifications implements \core\EventListener {
 	protected function onTriggerProjectUpdateEmailNotification($args) {
 		$this->sendEmailToProjectMembers($args);
 	}
+
+	protected function onTriggerProjectGuestEmailNotification($args){
+		$this->sendEmailToProjectGuest($args);
+	}
+
+
 	protected function onTriggerEmailQueueProcessor($args) {
 		$this->processEmailQueue($args);
 	}
@@ -45,14 +51,25 @@ class EmailNotifications implements \core\EventListener {
 		$this->sendEmailUserRemovedFromProject($args);
 	}
 
-	/**
-	 * [queueEmailProjectUpdate description]
-	 * @param  [type] $projectId [description]
-	 * @param  array  $data      [description]
-	 * @return [type]            [description]
-	 */
+
 	public function queueEmailProjectUpdate($projectId, $data = array()) {
 		$this->queueEmailProjectToProjectMembers($projectId, 'onProjectUpdate', $data);
+	}
+
+
+	public function queueEmailProjectToGuestSubmitter($projectId, $template, $data = array()) {
+
+		ScheduleEvent('onTriggerProjectGuestEmailNotification', array(
+
+			'user' => GetClient()->getUserId(),
+			'project' => (new \ReferralManagement\Project())->fromId($projectId)->toArray(),
+			'info' => $data,
+			'template' => $template,
+			'namespace'=>$this->namespace
+
+		), intval(GetPlugin('ReferralManagement')->getParameter("queueEmailDelay")));
+
+
 	}
 
 	public function queueEmailProjectToProjectMembers($projectId, $template, $data = array()) {
@@ -66,6 +83,44 @@ class EmailNotifications implements \core\EventListener {
 			'namespace'=>$this->namespace
 
 		), intval(GetPlugin('ReferralManagement')->getParameter("queueEmailDelay")));
+
+	}
+
+
+	public function sendEmailToProjectGuest($args){
+
+		if (is_object($args)) {
+			$args = get_object_vars($args);
+		}
+
+		if (!isset($args['project']->id)) {
+			throw new \Exception('Expected args[`project`] to contain project metadata');
+		}
+
+		if (!isset($args['template'])) {
+			throw new \Exception('Expected args[`template`] to contain project email template');
+		}
+
+		if(isset($args['namespace'])){
+			$this->withNamespace($args['namespace']);
+		}
+
+		if(!isset($args['project']->metadata->email)){
+			Emit('onEmptyGuestSubmitterProject', $args);
+			return;
+		}
+
+		$guest=$args['project']->metadata->email;
+
+		$arguments = array_merge(
+			$args,
+			array(
+				'teamMembers' => $teamMembers,
+				'caller' => $this->getPlugin()->getUsersMetadata(),
+				'receiver' => $this->getPlugin()->getUsersMetadata(0),
+			));
+
+		$this->send($args['template'], $arguments, $guest);
 
 	}
 
@@ -83,14 +138,17 @@ class EmailNotifications implements \core\EventListener {
 			throw new \Exception('Expected args[`template`] to contain project email template');
 		}
 
+		if(isset($args['namespace'])){
+			$this->withNamespace($args['namespace']);
+		}
+
+
 		$teamMembers = (new \ReferralManagement\Teams())
 			->listMembersOfProject($args['project']->id);
 
 		if (empty($teamMembers)) {
 			Emit('onEmptyTeamMembersProject', $args);
 		}
-
-
 
 		$owner = (new \ReferralManagement\Teams())
 			->ownerOfProject($args['project']->id);
@@ -99,12 +157,7 @@ class EmailNotifications implements \core\EventListener {
 		}
 
 
-		$namespace=$this->namespace;
-		if(isset($args['namespace'])){
-			$namespace=$args['namespace'];
-		}
-
-
+	
 		$alreadySent=array();
 		foreach ($teamMembers as $user) {
 
@@ -141,7 +194,7 @@ class EmailNotifications implements \core\EventListener {
 					'receiver' => $this->getPlugin()->getUsersMetadata($user->id),
 				));
 
-			$this->send($args['template'], $namespace, $arguments, $user);
+			$this->send($args['template'], $arguments, $user);
 
 			
 
@@ -149,7 +202,7 @@ class EmailNotifications implements \core\EventListener {
 
 	}
 
-	protected function send($templateName, $namespace, $arguments, $user) {
+	protected function send($templateName, $arguments, $user) {
 
 		$digestEnabled = true;
 
@@ -161,7 +214,7 @@ class EmailNotifications implements \core\EventListener {
 				"eventDate" => date('Y-m-d H:i:s'),
 				"parameters" => json_encode($arguments),
 				"metadata" => json_encode((object) array()),
-				"namespace" => 'dailyDigest'
+				"namespace" => $this->namespace
 			));
 
 			Emit('onQueueEmail', array(
@@ -296,7 +349,7 @@ class EmailNotifications implements \core\EventListener {
 					'receiver' => $this->getPlugin()->getUsersMetadata($user->id),
 				));
 
-			$this->send($templateName, 'dailyDigest', $arguments, $user);
+			$this->send($templateName, $arguments, $user);
 
 		}
 
@@ -338,7 +391,7 @@ class EmailNotifications implements \core\EventListener {
 				'receiver' => $this->getPlugin()->getUsersMetadata($args->member->id),
 			)
 		);
-		$this->send($templateName, 'dailyDigest', $arguments, $args->member);
+		$this->send($templateName, $arguments, $args->member);
 
 	}
 
@@ -357,7 +410,7 @@ class EmailNotifications implements \core\EventListener {
 				'receiver' => $this->getPlugin()->getUsersMetadata($args->member->id),
 			)
 		);
-		$this->send($templateName, 'dailyDigest', $arguments, $args->member);
+		$this->send($templateName, $arguments, $args->member);
 
 	}
 
@@ -372,7 +425,7 @@ class EmailNotifications implements \core\EventListener {
 				'project' => $this->getPlugin()->getProposalData($args->project),
 			)
 		);
-		$this->send($templateName, 'dailyDigest', $arguments, $args->member);
+		$this->send($templateName, $arguments, $args->member);
 
 	}
 
@@ -387,7 +440,7 @@ class EmailNotifications implements \core\EventListener {
 				'project' => $this->getPlugin()->getProposalData($args->project),
 			)
 		);
-		$this->send($templateName, 'dailyDigest', $arguments, $args->member);
+		$this->send($templateName, $arguments, $args->member);
 
 	}
 
