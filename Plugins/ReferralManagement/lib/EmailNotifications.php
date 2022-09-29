@@ -7,6 +7,10 @@ class EmailNotifications implements \core\EventListener {
 	use \core\EventListenerTrait;
 
 	protected $namespace='dailyDigest';
+	protected $publishedNamespaces=array(
+		//'dailyDigest',
+		'communicationUpdates'
+	);
 
 	public function withNamespace($ns){
 		$this->namespace=$ns;
@@ -117,7 +121,7 @@ class EmailNotifications implements \core\EventListener {
 			array(
 				'teamMembers' => $teamMembers,
 				'caller' => $this->getPlugin()->getUsersMetadata(),
-				'receiver' => $this->getPlugin()->getUsersMetadata(0),
+				'receiver' => $guest,
 			));
 
 		$this->send($args['template'], $arguments, $guest);
