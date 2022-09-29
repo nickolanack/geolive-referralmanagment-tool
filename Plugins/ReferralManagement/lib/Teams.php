@@ -4,6 +4,29 @@ namespace ReferralManagement;
 
 class Teams {
 
+
+
+	public function ownerOfProject($project, $attributes = null)){
+
+		if(is_numeric($project)){
+			$project=(new \ReferralManagement\Project())->fromId($project)->toArray(),
+		}
+		
+
+		$owner=intval($project->user);
+		if($owner<0){
+			return null;
+		}
+
+		return array(
+			'id' => $owner,
+			'permissions' =>$this->defaultProjectPermissionsForUser($owner, $project)
+		);
+	
+		
+
+	}
+
 	public function listMembersOfProject($project, $attributes = null) {
 
 		$pid = $project;
@@ -40,7 +63,7 @@ class Teams {
 				$migrated = true;
 				return (object) array(
 					'id' => $item,
-					'permissions' => GetPlugin('ReferralManagement')->defaultProjectPermissionsForUser($item, $project));
+					'permissions' => $this->defaultProjectPermissionsForUser($item, $project));
 			}
 			return json_decode($item);
 
@@ -92,6 +115,49 @@ class Teams {
 
 		return $teamMembers;
 
+	}
+
+
+	public function defaultProjectPermissionsForUser($user, $project) {
+
+		if (is_numeric($user)) {
+			$user = (new \ReferralManagement\User())->getMetadata($user);
+		}
+
+		if (is_numeric($project)) {
+			$project = (new \ReferralManagement\Project())
+				->fromId($project)
+				->toArray();
+		}
+
+		if (is_object($project)) {
+			$project = get_object_vars($project);
+		}
+
+		if ($user['id'] == $project['user']) {
+			return $this->availableProjectPermissions();
+		}
+
+		if (in_array('lands-department', $roles = (new \ReferralManagement\UserRoles())->getRolesUserCanEdit($user['id']))) {
+			return array_merge($this->availableProjectPermissions());
+		}
+
+		return array(
+			'adds-tasks',
+			'receives-notifications',
+		);
+
+	}
+
+	protected function availableProjectPermissions() {
+
+		return array(
+			'adds-tasks',
+			'assigns-tasks',
+			'adds-members',
+			'sets-roles',
+			'receives-notifications',
+		);
 	}
 
 }

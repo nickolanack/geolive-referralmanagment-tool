@@ -74,18 +74,44 @@ class EmailNotifications implements \core\EventListener {
 			throw new \Exception('Expected args[`template`] to contain project email template');
 		}
 
-		$teamMembers = $this->getPlugin()->getTeamMembersForProject($args['project']->id);
+		$teamMembers = (new \ReferralManagement\Teams())
+			->listMembersOfProject($args['project']->id);
 
 		if (empty($teamMembers)) {
 			Emit('onEmptyTeamMembersProject', $args);
 		}
 
+
+
+		$owner = (new \ReferralManagement\Teams())
+			->ownerOfProject($args['project']->id);
+		if($owner){
+			$teamMembers[]=$owner;
+		}
+
+
+		$alreadySent=array();
 		foreach ($teamMembers as $user) {
+
+			if(in_array(intval($user->id), $alreadySent)){
+				/**
+				 * prevent owner/team member from receiving duplicate emails
+				 * process team member first since it has permissions, owner
+				 * has default limited permissions
+				 */
+				continue;
+			}
+			$alreadySent[]=intval($user->id);
+
+
 
 			$to = $this->emailToAddress($user, "receives-notifications");
 			if (!$to) {
 				continue;
 			}
+
+
+
 
 			$arguments = array_merge(
 				$args,
@@ -96,6 +122,8 @@ class EmailNotifications implements \core\EventListener {
 				));
 
 			$this->send($args['template'], $arguments, $user);
+
+			
 
 		}
 

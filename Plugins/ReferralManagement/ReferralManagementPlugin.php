@@ -395,50 +395,6 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 	}
 
-	protected function availableProjectPermissions() {
-
-		return array(
-			'adds-tasks',
-			'assigns-tasks',
-			'adds-members',
-			'sets-roles',
-			'receives-notifications',
-		);
-	}
-
-	public function defaultProjectPermissionsForUser($user, $project) {
-
-		if (is_numeric($user)) {
-			$user = $this->getUsersMetadata(GetClient()->userMetadataFor($user));
-		}
-
-		if (is_numeric($project)) {
-			$project = $this->getProposalData($project);
-		}
-
-		if (is_object($project)) {
-			$project = get_object_vars($project);
-		}
-
-		if ($user['id'] == $project['user']) {
-			return $this->availableProjectPermissions();
-		}
-
-		if (in_array('lands-department', $roles = $this->getRolesUserCanEdit($user['id']))) {
-			return array_merge($this->availableProjectPermissions());
-		}
-
-		return array(
-			'adds-tasks',
-			'receives-notifications',
-		);
-
-	}
-
-	protected function usersProjectPermissions() {
-		return $this->availableProjectPermissions();
-	}
-
 	public function getTeamMembersForProject($project, $attributes = null) {
 
 		return (new \ReferralManagement\Teams())->listMembersOfProject($project, $attributes);
@@ -498,7 +454,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 
 		$teamMembers = $this->getTeamMembersForProject($project);
 
-		$member = (object) array('id' => $user, 'permissions' => $this->defaultProjectPermissionsForUser($user, $project));
+		$member = (object) array('id' => $user, 'permissions' => (new \ReferralManagement\Teams())->defaultProjectPermissionsForUser($user, $project));
 		$teamMembers[] = $member;
 		$teamMembers = $this->_uniqueIds($teamMembers);
 
