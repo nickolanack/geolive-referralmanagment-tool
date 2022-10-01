@@ -32,7 +32,6 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function setAccess($json){
 
-
 		if (!Auth('write', $json->project, 'ReferralManagement.proposal')) {
 			return $this->setError('No access or does not exist');
 		}
@@ -45,10 +44,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			'accessLevel' => $json->access,
 		));
 
-
 		return true;
-
-
 	}
 
 
@@ -69,6 +65,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		$item = new Marker();
 		$item->setLayerId($layer->getId());
 		$item->setName('<project:'.$token->data->id.'>'.$json->feature->title);
+		$item->setDescription($json->feature->description);
 		//$item->setUserId($token->data->creator);
 		$item->setCoordinates($json->feature->coordinates[0], $json->feature->coordinates[1]);
 		$item->setIcon('https://dyl2vw577xcfk.cloudfront.net/wabun.geoforms.ca/1/Uploads/LGb_[ImAgE]_FkE_[G]_aQl.png');

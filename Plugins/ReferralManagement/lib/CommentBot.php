@@ -45,14 +45,9 @@ class CommentBot{
 					->queueEmailProjectToGuestSubmitter($info['itemId'], 'onProponentDiscussionPostByMember', array(
 						'post'=>$postData,
 						'discussion'=>$info,
-						'user'=>$postData->user
+						'user'=>$postData->user,
+						'accessToken'=>'TODO add access token'
 					));
-
-
-				GetPlugin('Email')->getMailer()
-				->mail('Post', '<pre>' . json_encode($info, JSON_PRETTY_PRINT) . json_encode($postData, JSON_PRETTY_PRINT). json_encode($projectMetadata, JSON_PRETTY_PRINT)  . '</pre>')
-				->to('nickblackwell82@gmail.com')
-				->send();
 
 
 				return;
