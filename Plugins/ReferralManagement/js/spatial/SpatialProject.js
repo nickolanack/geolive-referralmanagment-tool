@@ -499,6 +499,7 @@ var SpatialProject = (function() {
 					showIcons: true,
 					showLabels: false,
 					showAttributes: true,
+					initialVisibility:true,
 					renderTiles: false,
 					lineColor: "#000000",
 					fillColor: "#000000",

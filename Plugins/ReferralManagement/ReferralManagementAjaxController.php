@@ -75,9 +75,12 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		$item->setLayerId($layer->getId());
 		$item->setName('<project:'.$token->data->id.'>'.$json->feature->title);
 		$item->setDescription($json->feature->description);
+		
 		//$item->setUserId($token->data->creator);
 		$item->setCoordinates($json->feature->coordinates[0], $json->feature->coordinates[1]);
 		$item->setIcon('https://dyl2vw577xcfk.cloudfront.net/wabun.geoforms.ca/1/Uploads/LGb_[ImAgE]_FkE_[G]_aQl.png');
+
+
 		$item->setInfo((object)array(
 			'shared'=>true,
 			'_id'=>$json->feature->_id,
