@@ -1,0 +1,2 @@
+
+    wizardDataSet.script=object.value

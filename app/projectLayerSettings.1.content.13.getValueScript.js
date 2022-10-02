@@ -1,1 +1,1 @@
- return JSON.stringify(item.getOptions(), null, '   ');
+return item.getInitialVisibility();
