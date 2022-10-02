@@ -64,7 +64,11 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		$item = new Marker();
 		if(isset($json->feature->_serverId)){
+			try{
 			$item = (new \spatial\FeatureLoader())->fromId($json->feature->_serverId);
+			}catch(\Exception $e){
+				//want to recreate a new item 
+			}
 		}
 
 		
