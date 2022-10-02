@@ -23468,16 +23468,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 171,
-                            "y": 227
+                            "x": 181,
+                            "y": 237
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 131,
-                                    "y": 553
+                                    "x": 141,
+                                    "y": 575
                                 }
                             }
                         ],
@@ -23729,7 +23729,7 @@
                                             "type": "FormTextField",
                                             "config": {
                                                 "className": "can-minimize",
-                                                "label": "Script Feature Format",
+                                                "label": "formatFeature(feature:object, type:string, index:number, callback){",
                                                 "placeholder": "add value",
                                                 "lines": 5,
                                                 "maxChars": 0,
