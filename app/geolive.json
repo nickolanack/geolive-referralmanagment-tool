@@ -23456,7 +23456,7 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 27,
+                    "x": 41,
                     "y": 291
                 },
                 "children": [
@@ -23468,16 +23468,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 171,
-                            "y": 227
+                            "x": 191,
+                            "y": 247
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 131,
-                                    "y": 553
+                                    "x": 151,
+                                    "y": 585
                                 }
                             }
                         ],
@@ -23704,6 +23704,20 @@
                                             }
                                         },
                                         {
+                                            "type": "FormBooleanField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Start with this layer visible",
+                                                "identifier": "boolean-field",
+                                                "mandatory": false,
+                                                "getValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.13.config.getValueScript.js",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.13.config.submitValueScript.js",
+                                                "validateValueScript": "",
+                                                "formatElementScript": ""
+                                            }
+                                        },
+                                        {
                                             "type": "FormTextField",
                                             "config": {
                                                 "className": "can-minimize",
@@ -23719,29 +23733,7 @@
                                                 "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.13.config.getValueScript.js",
-                                                "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.13.config.submitValueScript.js",
-                                                "validateValueScript": " return defaultValidationFn() "
-                                            }
-                                        },
-                                        {
-                                            "type": "FormTextField",
-                                            "config": {
-                                                "className": "can-minimize",
-                                                "label": "Script Feature Format",
-                                                "placeholder": "add value",
-                                                "lines": 5,
-                                                "maxChars": 0,
-                                                "mandatory": false,
-                                                "multiEntry": false,
-                                                "muliTemplate": "lines",
-                                                "multiMessage": "add another value",
-                                                "formatter": "none",
-                                                "beforeRenderModuleScript": "",
-                                                "onRenderTextFieldScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.14.config.onRenderTextFieldScript.js",
-                                                "formatValueScript": "",
-                                                "getValueScript": " return item.getScript(); ",
+                                                "getValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.14.config.getValueScript.js",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.14.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
@@ -23766,6 +23758,28 @@
                                                 "getValueScript": " return item.getProj(); ",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.15.config.submitValueScript.js",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "can-minimize",
+                                                "label": "formatFeature(feature:object, type:string, index:number, callback){",
+                                                "placeholder": "add value",
+                                                "lines": 5,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "beforeRenderModuleScript": "",
+                                                "onRenderTextFieldScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.16.config.onRenderTextFieldScript.js",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return item.getScript(); ",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.16.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         }
