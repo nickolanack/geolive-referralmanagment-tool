@@ -215,7 +215,7 @@ var ItemAttachments = (function() {
 		_getFiles: function(string) {
 			var me = this;
 			if (string) {
-				return (new HTMLTagParser()).mediaUrls(string);
+				return (new HTMLTagParser()).parseMedia(string);
 			}
 
 			return [];
@@ -266,7 +266,7 @@ var ItemAttachments = (function() {
 			return [];
 		}
 
-		return (new HTMLTagParser()).parseMedia(text);
+		return (new HTMLTagParser()).mediaUrls(text);
 	}
 
 	return ItemAttachments;
