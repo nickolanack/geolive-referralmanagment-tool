@@ -4,7 +4,7 @@ var ProjectLayer = (function() {
 	var current=document.currentScript.src;
 	var userFunctionWorker=current.replace('ProjectLayer.js', 'SpatialProjectWorker.js');
 
-	var getLayerOption=function(options, map) {
+	var getLayerOptions=function(options, map) {
 
 
 
