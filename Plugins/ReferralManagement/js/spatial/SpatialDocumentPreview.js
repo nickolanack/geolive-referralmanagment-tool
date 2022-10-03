@@ -47,12 +47,12 @@ var SpatialDocumentPreview = (function() {
 			var addMapLayerIndicators=function(layer, i){
 
 
-				var layerOpts=layer._options;
-
-				
+				var layerOpts=layer.options;
+				var name=layer.getName();
+					
 
 				var div=new Element('div');
-				div.innerHTML="Loading: "+layerOpts.name;
+				div.innerHTML="Loading: "+name;
 				var spinner = new Spinner(div, {
                             width: 20,
                             height: 20,
@@ -71,7 +71,7 @@ var SpatialDocumentPreview = (function() {
 
 				layer.addEvent('error',function(){
 
-					notification.setDescription("Error loading layer: "+layerOpts.name);
+					notification.setDescription("Error loading layer: "+name);
 					setTimeout(function(){
 						notification.fadeout();
 					}, 3000);
@@ -100,7 +100,7 @@ var SpatialDocumentPreview = (function() {
 							image: imageUrl,
 							//(response.metadata.image || response.metadata.mimeIcon || response.metadata.mediaTypeIcon),
 							toolTip:{
-								description:"Zoom to bounds: "+layerOpts.name
+								description:"Zoom to bounds: "+name
 							}
 
 						}).addEvent('click', function() {
