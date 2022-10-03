@@ -176,9 +176,7 @@ var ProjectMap = (function() {
 
 
 
-					var images = JSTextUtilities.ParseImages(d.description).map(function(o) {
-						return o.url;
-					});
+					var images = (new HTMLTagParser()).imagesUrls(d.description);
 
 					if (item.getType() == "marker" && images.length > 0) {
 						parentWizard.setDataValue('icon', {

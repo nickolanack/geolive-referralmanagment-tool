@@ -215,13 +215,7 @@ var ItemAttachments = (function() {
 		_getFiles: function(string) {
 			var me = this;
 			if (string) {
-
-				var images = JSTextUtilities.ParseImages(string);
-				var videos = JSTextUtilities.ParseVideos(string);
-				var audios = JSTextUtilities.ParseAudios(string);
-				var links = JSTextUtilities.ParseLinks(string);
-
-				return images.concat(videos).concat(audios).concat(links);
+				return (new HTMLTagParser()).parseMedia(string);
 			}
 
 			return [];
@@ -272,13 +266,7 @@ var ItemAttachments = (function() {
 			return [];
 		}
 
-		return ([]).concat(JSTextUtilities.ParseVideos(text))
-			.concat(JSTextUtilities.ParseImages(text))
-			.concat(JSTextUtilities.ParseAudios(text))
-			.concat(JSTextUtilities.ParseLinks(text))
-			.map(function(o) {
-				return o.url;
-			});
+		return (new HTMLTagParser()).parseMedia(text);
 	}
 
 	return ItemAttachments;

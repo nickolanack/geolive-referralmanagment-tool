@@ -51,7 +51,11 @@ var UITextFieldLayerList = function() {
     })
 
 
-    mediaSelection.addParser(JSTextUtilities.ParseLinks, function(container, link, callback) {
+    mediaSelection.addParser(function(text){ 
+        
+        return (new HTMLTagParser()).linkUrls(text); 
+
+    }, function(container, linkUrl, callback) {
 
 
 

@@ -218,16 +218,15 @@ var NamedCategory = (function() {
 
 		getDescriptionPlain: function() {
 
-			var images = JSTextUtilities.ParseImages(this.getDescription())
-			return JSTextUtilities.StripParseResults(this.getDescription(), images);
+			return (new HTMLTagParser()).stripSafeMedia(this.getDescription());
 		},
 
 		getIcon: function() {
 
-			var images = JSTextUtilities.ParseImages(this.getDescription()).map(function(o) {
-				return o.url;
-			});
 
+
+			var images=(new HTMLTagParser()).imagesUrls(this.getDescription());
+		
 			if (images.length > 0) {
 				return images[0];
 			}

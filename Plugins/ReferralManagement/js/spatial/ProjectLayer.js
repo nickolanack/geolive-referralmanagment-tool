@@ -24,21 +24,23 @@ var ProjectLayer = (function() {
 
 			var metadata = options.projectAttributes.metadata;
 			if (metadata.description) {
-				JSTextUtilities.ParseImages(metadata.description).forEach(function(item) {
-					if (item.type.indexOf("image") >= 0) {
-						options.icon = item.url;
+
+
+				(new HTMLTagParser()).imagesUrls(metadata.description).forEach(function(url) {
+					
+						options.icon = url;
 						markerOptions.icon = {
-							url: item.url,
+							url: url,
 							scaledSize: new google.maps.Size(40, 40)
 						}
 
 						markerOptions.icons.push({
-							url: item.url,
+							url: url,
 							scaledSize: new google.maps.Size(40, 40)
 						});
 
 
-					}
+					
 				});
 			}
 

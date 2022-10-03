@@ -350,12 +350,7 @@ var TaskItem = (function() {
 			var me = this;
 			if (me.data.attributes && me.data.attributes.attachements) {
 
-				var images = JSTextUtilities.ParseImages(me.data.attributes.attachements);
-				var videos = JSTextUtilities.ParseVideos(me.data.attributes.attachements);
-				var audios = JSTextUtilities.ParseAudios(me.data.attributes.attachements);
-				var links = JSTextUtilities.ParseLinks(me.data.attributes.attachements);
-
-				return images.concat(videos).concat(audios).concat(links);
+				return (new HTMLTagParser()).parseMedia(me.data.attributes.attachements);
 			}
 
 			return [];
