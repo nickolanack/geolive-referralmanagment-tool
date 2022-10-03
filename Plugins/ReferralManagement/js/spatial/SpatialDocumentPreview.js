@@ -11,14 +11,13 @@ var SpatialDocumentPreview = (function() {
 
 
 
-		show: function(urls) {
+		show: function(layers) {
 
 			var me = this;
 			var map = me._map;
 
 			var clear;
-			var layers = [];
-
+			
 
 
 			var bounds = null;
@@ -45,9 +44,10 @@ var SpatialDocumentPreview = (function() {
 
 			var offset = 40;
 
-			var createLayer=function(layerOpts, i){
+			var addMapLayerIndicators=function(layer, i){
 
 
+				var layerOpts=layer._options;
 
 				
 
@@ -69,7 +69,6 @@ var SpatialDocumentPreview = (function() {
 
 				});
 
-				var layer = new ProjectLayer(map, layerOpts);
 				layer.addEvent('error',function(){
 
 					notification.setDescription("Error loading layer: "+layerOpts.name);
@@ -118,8 +117,8 @@ var SpatialDocumentPreview = (function() {
 
 			}
 
-			layers = urls.map(function(layerOpts, i) {
-				return createLayer(layerOpts, i);
+			layers.forEach(function(layer, i) {
+				return addMapLayerIndicators(layer, i);
 			});
 
 			if(AppClient.getUserType()!=="guest"){

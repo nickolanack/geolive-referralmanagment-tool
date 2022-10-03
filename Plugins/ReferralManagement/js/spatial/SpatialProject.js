@@ -10,6 +10,40 @@ var SpatialProject = (function() {
 
 			this._setMap(map);
 
+			this.getBaseMapLayers(function(layers){
+				layers.forEach(function(layer){
+					map.getLayerManager().addLayer(layer);
+				});
+			});
+
+
+		},
+
+
+		getCurrentLayers:function(callback){
+
+			/**
+			 * this returns any project map layers, or selection layers 
+			 */
+
+			var getLayerOptList = window.GetSpatialFiles || window.parent.GetSpatialFiles;
+			var me=this;
+			if (getLayerOptList) {
+				var layerOptsList = getLayerOptList()||[];
+
+				callback(layerOptsList.map(function(layerOpts){
+					return new ProjectLayer(me._map, layerOpts);
+				}));
+
+			}
+
+
+		},
+
+		getBaseMapLayers:function(callback){
+
+			var me=this;
+
 			ProjectTeam.CurrentTeam().runOnceOnLoad(function(team) {
 
 				var projects = team.getProjects().filter(function(p) {
@@ -20,7 +54,7 @@ var SpatialProject = (function() {
 
 					var spatial = project.getSpatialDocuments();
 
-					spatial.forEach(function(url, i) {
+					callback(spatial.map(function(url, i) {
 
 
 						if (window.GetSpatialFiles().map(function(opt) {
@@ -29,7 +63,7 @@ var SpatialProject = (function() {
 							return;
 						}
 
-						var layer = new ProjectLayer(map, {
+						return new ProjectLayer(me._map, {
 							url: url,
 							name: project.getName(),
 							group: project.getBaseMapLayerType(),
@@ -39,9 +73,7 @@ var SpatialProject = (function() {
 							projectAttributes: project.getDatasetAttributes(i)
 						});
 
-						map.getLayerManager().addLayer(layer);
-
-					});
+					}));
 
 
 
@@ -60,15 +92,19 @@ var SpatialProject = (function() {
 			SpatialDocumentPreview.setMap(map);
 
 
-			var getFiles = window.GetSpatialFiles || window.parent.GetSpatialFiles
-			if (getFiles) {
-				var files = getFiles();
-				if (files.length) {
-					SpatialDocumentPreview.show(files);
-				} else {
-					SpatialDocumentPreview.show([]);
-				}
-			}
+			this.getCurrentLayers(function(layers){
+				SpatialDocumentPreview.show(layers);
+			});
+
+			// var getFiles = window.GetSpatialFiles || window.parent.GetSpatialFiles
+			// if (getFiles) {
+			// 	var files = getFiles();
+			// 	if (files.length) {
+			// 		SpatialDocumentPreview.show(files);
+			// 	} else {
+			// 		SpatialDocumentPreview.show([]);
+			// 	}
+			// }
 
 		},
 
