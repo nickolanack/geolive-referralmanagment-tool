@@ -396,6 +396,7 @@ var SpatialProject = (function() {
 				icon: 'https://storage.googleapis.com/support-kms-prod/SNP_2752125_en_v0',
 				showLabels: false,
 				clickable: false,
+				icons:[]
 			};
 			var lineOptions = {
 
@@ -414,6 +415,11 @@ var SpatialProject = (function() {
 								url: item.url,
 								scaledSize: new google.maps.Size(40, 40)
 							}
+
+							markerOptions.icons.push({
+								url: item.url,
+								scaledSize: new google.maps.Size(40, 40)
+							});
 
 
 						}

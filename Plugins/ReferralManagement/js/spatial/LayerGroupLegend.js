@@ -210,9 +210,9 @@ var LayerGroupLegend = (function() {
 
         EditLayerScript: function(map, name, layerObject, defaultBehaviorFn) {
 
-            if (name == "project") {
+            //if (name == "project") {
                 SpatialProject.editLayer(map, layerObject);
-            }
+           // }
 
 
         },
