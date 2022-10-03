@@ -48,7 +48,7 @@ var ProjectLayer = (function() {
 			}
 
 			if(options.group=="project"||options.group=="selection"){
-				initialVisibility = "show";
+				initialVisibility = "now";
 			}
 
 			if (typeof metadata.showLabels == "boolean") {
