@@ -1,6 +1,150 @@
 var ProjectLayer = (function() {
 
 
+	var current=document.currentScript.src;
+	var userFunctionWorker=current.replace('ProjectLayer.js', 'SpatialProjectWorker.js');
+
+	var getLayerOption=function(options, map) {
+
+
+
+		var markerOptions = {
+			icon: 'https://storage.googleapis.com/support-kms-prod/SNP_2752125_en_v0',
+			showLabels: false,
+			clickable: false,
+			icons:[]
+		};
+		var lineOptions = {
+
+		};
+		var polygonOptions = {};
+
+		if (options.projectAttributes && options.projectAttributes.metadata) {
+
+
+			var metadata = options.projectAttributes.metadata;
+			if (metadata.description) {
+				JSTextUtilities.ParseImages(metadata.description).forEach(function(item) {
+					if (item.type.indexOf("image") >= 0) {
+						options.icon = item.url;
+						markerOptions.icon = {
+							url: item.url,
+							scaledSize: new google.maps.Size(40, 40)
+						}
+
+						markerOptions.icons.push({
+							url: item.url,
+							scaledSize: new google.maps.Size(40, 40)
+						});
+
+
+					}
+				});
+			}
+
+			var initialVisibility="now";
+			if (typeof metadata.initialVisibility == "boolean") {
+				initialVisibility= metadata.initialVisibility?"now":"later";
+			}
+
+			if (typeof metadata.showLabels == "boolean") {
+				markerOptions.showLabels = metadata.showLabels;
+			}
+
+			if (typeof metadata.lineColor == "string") {
+				lineOptions.lineColor = metadata.lineColor;
+				polygonOptions.lineColor = metadata.lineColor;
+			}
+
+			if (typeof metadata.lineWidth != "undefined") {
+
+				var lineWidth = parseFloat(metadata.lineWidth);
+				lineWidth = Math.min(Math.max(0, lineWidth), 5);
+
+				lineOptions.lineWidth = lineWidth;
+				polygonOptions.lineWidth = lineWidth;
+			}
+
+			if (typeof metadata.lineOpacity != "undefined") {
+
+				var lineOpacity = parseFloat(metadata.lineOpacity);
+				lineOpacity = Math.min(Math.max(0, lineOpacity), 1);
+
+				lineOptions.lineOpacity = lineOpacity;
+				polygonOptions.lineOpacity = lineOpacity;
+
+			}
+
+			if (typeof metadata.fillColor == "string") {
+
+				polygonOptions.polyColor = metadata.fillColor;
+			}
+
+			if (typeof metadata.fillOpacity != "undefined") {
+
+				var fillOpacity = parseFloat(metadata.fillOpacity);
+				fillOpacity = Math.min(Math.max(0, fillOpacity), 1);
+				polygonOptions.polyOpacity = fillOpacity;
+
+			}
+
+			if (metadata.renderTiles === true) {
+				options.parseBehavior = 'tile';
+
+			}
+
+			if(metadata.script){
+
+				var worker =new Worker(userFunctionWorker);
+				worker.postMessage(metadata.script);
+				var queue=[];
+
+
+				worker.onmessage=function(e){
+					var args=queue.shift();
+					args[3].call(null, e.data);
+
+					if(queue.length>0){
+						var next=queue[0];
+						worker.postMessage([next[0], next[1], next[2]]);
+					}
+
+				}
+
+
+				map.once('remove',function(){
+					worker.terminate();
+					delete worker.onmessage;
+					delete options.script;
+					worker=null;
+				});
+
+				//=(new Function('return function(feature, type, index, callback){ '+"\n"+metadata.script+"\n"+'}')).call(null);
+
+				options.script=function(/*feature, type, index, callback*/){
+
+					
+					queue.push(arguments);
+					if(queue.length==1){
+						worker.postMessage([arguments[0], arguments[1], arguments[2]])
+					}
+
+				};
+			}
+
+		}
+
+
+		var layerOptions = ObjectAppend_(options, {
+			markerOptions: markerOptions,
+			polygonOptions: polygonOptions,
+			lineOptions: lineOptions,
+			initialVisibility:initialVisibility
+		});
+
+		return layerOptions;
+
+	};
 
 	var ProjectLayer = new Class({
 
@@ -40,7 +184,7 @@ var ProjectLayer = (function() {
 				Extends: GeoliveLayer,
 				initialize: function(map, options) {
 
-					var layerOptions=SpatialProject.getLayerOptions(options, map);
+					var layerOptions=s(options, map);
 
 					GeoliveLayer.prototype.initialize.call(this, map, layerOptions);
 
