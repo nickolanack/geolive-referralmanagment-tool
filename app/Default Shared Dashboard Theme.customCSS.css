@@ -6917,6 +6917,25 @@ input.text-input[type="color"], input.text-input[type="color"]:focus {
     }
 }
     
+span.AudioModule.audio.hasAudio {
+    position: relative;
+    
+    &:after {
+        content: "\0f04b";
+        font-family: 'FontAwesome';
+        position: absolute;
+        top: calc( 50% - 15px );
+        left: calc( 50% - 6px );
+        color:  $highlightBtnColor;
+        font-size: 20px;
+    }
+}
+
+
+
+
+
+
     
     
     
