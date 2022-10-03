@@ -44,7 +44,11 @@ var ProjectLayer = (function() {
 
 			var initialVisibility="now";
 			if (typeof metadata.initialVisibility == "boolean") {
-				initialVisibility= metadata.initialVisibility?"now":"later";
+				initialVisibility = metadata.initialVisibility?"now":"later";
+			}
+
+			if(options.group=="project"||options.group=="selection"){
+				initialVisibility = "show";
 			}
 
 			if (typeof metadata.showLabels == "boolean") {
