@@ -1197,6 +1197,15 @@ span.field-label.address-click:after {
     
     z-index: 1;
     position: relative;
+    
+    
+    .uitext-container, .activity-feed.discussion{
+        margin:0 !important;
+        padding: 0 !important;
+    }
+
+    
+    
 }
 .dark .ui-view.reply-box {
     border-top: 4px solid #2E303A;
