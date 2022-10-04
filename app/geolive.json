@@ -16529,7 +16529,7 @@
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "",
-                                    "className": "",
+                                    "className": "icon-list-view",
                                     "identifier": "",
                                     "viewType": "view",
                                     "namedView": "singleUserSmallIconDetail",
@@ -16543,7 +16543,7 @@
                                     "initModuleScript": "",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "return item",
-                                    "filterModulesScript": "return list",
+                                    "filterModulesScript": "singleUserTeamCollectionIconsInlineDetail.metadata.positions.content.modules.1.config.filterModulesScript.js",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
