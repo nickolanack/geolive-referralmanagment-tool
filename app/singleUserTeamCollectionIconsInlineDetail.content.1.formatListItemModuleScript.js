@@ -1,6 +1,6 @@
-module.runOnceOnLoad(function(){
+childView.runOnceOnLoad(function(){
                             setTimeout(function(){
-                          new UIPopover(module.getElement(),
+                          new UIPopover(childView.getElement(),
                               {
                                   //title:child.getName(),
                                   description:"Task is assigned to "+child.getName(),
