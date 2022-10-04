@@ -1199,14 +1199,16 @@ span.field-label.address-click:after {
     position: relative;
     
     
-    .uitext-container, .activity-feed.discussion{
-        margin:0 !important;
-        padding: 0 !important;
-    }
+ 
 
     
     
 }
+
+.ui-view.reply-box .uitext-container, .activity-feed.discussion{
+        margin:0 !important;
+        padding: 0 !important;
+    }
 .dark .ui-view.reply-box {
     border-top: 4px solid #2E303A;
     box-shadow: 13px -12px 10px rgb(0 0 0 / 50%);
