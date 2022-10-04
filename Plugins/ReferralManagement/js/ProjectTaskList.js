@@ -614,7 +614,7 @@ var ProjectTaskList = (function() {
 				"width": "70px",
 				"label": "Assigned",
 				"showLabel": false,
-				"align": "center",
+				"align": "left",
 
 
 			},
