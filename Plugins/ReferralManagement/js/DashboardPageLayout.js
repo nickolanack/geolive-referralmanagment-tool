@@ -501,7 +501,7 @@ var DashboardPageLayout = (function() {
 		var removeCols = [];
 
 		return content.filter(function(m) {
-			return removeCols.indexOf(m.getIdentifier()) < 0;
+			return m&&removeCols.indexOf(m.getIdentifier()) < 0;
 		});
 
 		//return content;
