@@ -4475,11 +4475,12 @@ ul.user-roles{
 .ui-view.inline-icon-list-view {
     height: 40px;
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
     
     .ui-view.icon-list-view {
         display: inline-block;
         overflow: visible !important;
+        vertical-align:top;
     }
 }
 
