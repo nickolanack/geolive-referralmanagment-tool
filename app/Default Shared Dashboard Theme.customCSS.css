@@ -4470,6 +4470,21 @@ ul.user-roles{
     vertical-align: middle;
     border:none;
 }
+
+
+.ui-view.inline-icon-list-view {
+    height: 40px;
+    display: inline-block;
+    vertical-align: top;
+    
+    .ui-view.icon-list-view {
+        display: inline-block;
+        overflow: visible !important;
+    }
+}
+
+
+
 .ui-view.inline-icon-list-view:first-child{
     border:none;
 }
