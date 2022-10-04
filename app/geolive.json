@@ -7859,14 +7859,16 @@
                                     "template": "",
                                     "templateVariablesScript": "",
                                     "formatTextScript": "",
-                                    "ajaxRequestTemplate": false
+                                    "formatVariablesScript": "",
+                                    "ajaxRequestTemplate": false,
+                                    "identifier": "htmlLabel"
                                 }
                             },
                             {
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "layout-list",
-                                    "className": "",
+                                    "className": "empty",
                                     "identifier": "",
                                     "viewType": "view",
                                     "namedView": "singleFilesSectionDetail",
