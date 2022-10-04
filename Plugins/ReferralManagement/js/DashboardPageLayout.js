@@ -500,9 +500,12 @@ var DashboardPageLayout = (function() {
 
 		var removeCols = [];
 
-		return content.filter(function(m) {
-			return m&&removeCols.indexOf(m.getIdentifier()) < 0;
-		});
+
+		layout.filterIdentifier(content, removeCols, false);
+
+		// return content.filter(function(m) {
+		// 	return m&&((!m.getIdentifier)||removeCols.indexOf(m.getIdentifier()) < 0);
+		// });
 
 		//return content;
 	}).addLayout("userProfileDetailOverview", function(content) {
