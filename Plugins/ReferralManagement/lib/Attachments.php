@@ -88,7 +88,7 @@ class Attachments{
 		}
 
 		if (strpos($current[$document->documentType], $document->documentHtml) === false) {
-			throw new \Exception('Does not contain html: ' . $document->documentHtml);
+			throw new \Exception('Does not contain html: ' . $document->documentHtml . ' - ' . $current[$document->documentType]);
 		}
 
 		(new \attributes\Record($table))->setValues($itemId, $itemType, array(
