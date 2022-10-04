@@ -611,7 +611,7 @@ var ProjectTaskList = (function() {
 				"collapseAt": "150px"
 			},
 			"assigned": {
-				"width": "30px",
+				"width": "70px",
 				"label": "Assigned",
 				"showLabel": false,
 				"align": "center",
