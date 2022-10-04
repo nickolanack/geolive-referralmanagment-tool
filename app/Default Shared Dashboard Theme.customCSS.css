@@ -6917,7 +6917,7 @@ input.text-input[type="color"], input.text-input[type="color"]:focus {
     }
 }
     
-span.AudioModule.audio.hasAudio {
+span.AudioModule.audio.hasAudio, span.videoModule.video.hasVideo {
     position: relative;
     
     &:after {
