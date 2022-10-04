@@ -233,11 +233,14 @@ var ItemAttachments = (function() {
 					});
 
 					if (filtered.length && filtered[0].html) {
+
+						var fileInfo=filtered.shift();
+
 						(new RemoveDocumentQuery({
 							"id": me.getId(),
 							"type": me.getType(),
 							"documentType": type,
-							"documentHtml": filtered[0].html,
+							"documentHtml": fileInfo.original||fileInfo.html,
 						})).execute();
 					}
 				}
