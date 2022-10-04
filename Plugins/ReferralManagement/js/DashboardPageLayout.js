@@ -503,6 +503,8 @@ var DashboardPageLayout = (function() {
 
 		layout.filterIdentifier(content, removeCols, false);
 
+		return content;
+
 		// return content.filter(function(m) {
 		// 	return m&&((!m.getIdentifier)||removeCols.indexOf(m.getIdentifier()) < 0);
 		// });
