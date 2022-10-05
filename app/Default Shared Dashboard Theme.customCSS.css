@@ -4810,8 +4810,13 @@ img.static-map {
         }
     }
     
+    .ui-post-view {
+        margin-left: 45px;
+        &:after{
+            display:none;
+        }
+    }
     
- 
     .ui-view.dashboard-main {
         font-size: 12px;
     }
