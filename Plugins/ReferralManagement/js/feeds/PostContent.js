@@ -114,7 +114,7 @@ var PostContent = (function() {
 				})
 
 				if (itemsText.length > 0) {
-					text += '<span class="items-label">' + itemsText + '<span>';
+					text += '<span class="items-label">' + itemsText + '</span>';
 				}
 			}
 
