@@ -323,6 +323,7 @@
     },
 
     "get_ical":{
+        "csfr":false,
         "checkKeys": [
             "token"
         ]
