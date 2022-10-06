@@ -422,8 +422,10 @@ button.inline-edit{
     
     
     .template-content>span.user-function-placeholder {
-        display: inline;
-        text-align:right;
+        display: inline-block;
+        float: right;
+        position: relative;
+        top: -4px;
     }
 }
 
