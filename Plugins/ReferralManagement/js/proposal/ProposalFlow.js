@@ -245,7 +245,7 @@ var ProposalFlow = (function() {
 		_setCurrent:function(index){
 
 
-			this._currentIndexes[this._stepOptions(index).groupIndex]=index;
+			this._currentIndexes[this._stepOptions[index].groupIndex]=index;
 
 			me.fireEvent("current", [this._currentIndexes]);
 
