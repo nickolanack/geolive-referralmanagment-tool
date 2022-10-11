@@ -244,12 +244,9 @@ var ProposalFlow = (function() {
 
 		_setCurrent:function(index){
 
-
 			this._currentIndexes[this._stepOptions[index].groupIndex]=index;
+			this.fireEvent("current", [this._currentIndexes]);
 
-			me.fireEvent("current", [this._currentIndexes]);
-
-			
 		},
 
 		appendStep: function(name, options) {
