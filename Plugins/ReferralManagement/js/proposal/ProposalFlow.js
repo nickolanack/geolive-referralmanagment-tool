@@ -246,6 +246,13 @@ var ProposalFlow = (function() {
 
 		},
 
+		_setComplete: function(index) {
+
+			this._currentIndexes[this._stepOptions[index].groupIndex] = index+":complete"+;
+			this.fireEvent("current", [this._currentIndexes]);
+
+		},
+
 		appendStep: function(name, options) {
 
 			options = options || {};
@@ -315,28 +322,54 @@ var ProposalFlow = (function() {
 			var options = this._stepOptions[index];
 
 			if (el.hasClass('current') && options.completable !== false) {
-				//me.setActive(index + 1);
-				//return;
+
+				if (this._isNextInGroup(index)) {
+					me.setActive(index + 1);
+					return;
+				}
+
+
+				me.setActive(index + 1);
+				return;
+
 			}
 			this.setActive(index);
 
 		},
 
+		_isNextInGroup: function(index) {
+			return this.els.length > index + 1 && this._stepOptions[index].groupIndex == this._stepOptions[index + 1].groupIndex;
+		},
 
 
 		setActive: function(index) {
 
-			var me = this;
+
+			this._setBeforeAfter(index);
 
 
+			var currentEl = this.els[index];
+			currentEl.addClass('current');
+			currentEl.removeClass('complete');
+
+
+			this._setCurrent(index);
+
+
+
+		},
+
+		_setBeforeAfter: function(index) {
 
 			if (this.els.length <= index) {
 				throw 'index out of range: ' + i;
 			}
 
 
+			var me = this;
+
 			this.itemsBefore(index).forEach(function(i) {
-				me.setComplete(i);
+				me.markComplete(i);
 			});
 
 			this.itemsAfter(index).forEach(function(i) {
@@ -345,13 +378,19 @@ var ProposalFlow = (function() {
 
 
 
+		},
+
+		setComplete: function(index) {
+
+			this._setBeforeAfter(index);
+
 			var currentEl = this.els[index];
 
-			currentEl.addClass('current');
-			currentEl.removeClass('complete');
+			currentEl.addClass('complete');
+			currentEl.removeClass('current');
 
 
-			this._setCurrent(index);
+			this._setComplete(index);
 
 
 
@@ -402,7 +441,7 @@ var ProposalFlow = (function() {
 		},
 
 
-		setComplete: function(i) {
+		markComplete: function(i) {
 
 			var els = this.els;
 			var e = els[i];
