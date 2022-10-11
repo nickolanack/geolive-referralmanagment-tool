@@ -218,7 +218,7 @@ var ProposalFlow = (function() {
 					j++;
 				}
 
-				opts.groupIndex - j;
+				opts.groupIndex = j;
 
 				me.addStep(item.name, opts);
 			});
