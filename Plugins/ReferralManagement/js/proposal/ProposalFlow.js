@@ -237,7 +237,7 @@ var ProposalFlow = (function() {
 			
 			this._currentIndexes=this._stepOptions.filter(function(opt){
 	        	return opt.first;
-	        }).map(functino(opt){
+	        }).map(function(opt){
 	        	return [opt.index]
 	        });
 		},
