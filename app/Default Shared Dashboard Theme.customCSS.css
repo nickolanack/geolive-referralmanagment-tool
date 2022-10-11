@@ -857,6 +857,12 @@ div.field-value-module.inline.ids{
     li {
         border-color:white;
     }
+    li.complete {
+        border-color: mediumseagreen;
+    }
+     li.current {
+        border-color: cornflowerblue;
+    }
 }
 
 .with-project-detail-click, .with-projects-click, .with-user-profile-click {
