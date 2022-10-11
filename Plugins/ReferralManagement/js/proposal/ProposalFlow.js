@@ -318,11 +318,11 @@ var ProposalFlow = (function() {
 
 
 			var el=this.els[index];
-			var options=this._stepOptions[clickIndex];
+			var options=this._stepOptions[index];
 
 			if (el.hasClass('current') && options.completable !== false) {
-				me.setActive(index + 1);
-				return;
+				//me.setActive(index + 1);
+				//return;
 			}
 			me.setActive(index);
 
