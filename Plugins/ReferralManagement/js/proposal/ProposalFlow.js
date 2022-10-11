@@ -203,15 +203,22 @@ var ProposalFlow = (function() {
 			this.setLabel(label);
 			var me=this;
 			var isFirstStep=true;
+			var j=-1;
 	        stateConfig[stateName].forEach(function(item, i){
 
 	        	var opts = {
 
 	        		"class":item["icon"]||"default",
-	        		"link":typeof item.link=="boolean"?item.link:true
-	        		"first":i==0||me._stepOptions[],
+	        		"link":typeof item.link=="boolean"?item.link:true,
+	        		"first":i==0||me._stepOptions[i-1].link===false,
 	        		"index":i
 	        	};
+
+	        	if(opts.first&&opts.index>0){
+	        		j++;
+	        	}
+
+	        	opts.groupIndex-j;
 	        	
 	        	me.addStep(item.name, opts);
 	        });
@@ -238,6 +245,7 @@ var ProposalFlow = (function() {
 		_setCurrent:function(index){
 
 
+			this._currentIndexes[this._stepOptions(index).groupIndex]=index;
 
 			me.fireEvent("current", [this._currentIndexes]);
 
