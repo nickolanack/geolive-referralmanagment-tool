@@ -305,23 +305,92 @@ var ProposalFlow = (function() {
 
 
 
-			els.forEach(function(e, i) {
+			this.itemsBefore(index).forEach(function(i) {
+
+				me.setComplete(i);
+
+			});
+
+			this.itemsAfter(index).forEach(function(i) {
+				me.setClear(i);
+			});
 
 
-				e.removeClass('current');
-				e.removeClass('complete');
 
-				if (i < index) {
-					e.addClass('complete');
-					me.fireEvent("complete", [i]);
-				}
 
-			})
 			if (currentEl) {
 				me.fireEvent("current", [index]);
 				currentEl.addClass('current');
 				currentEl.removeClass('complete');
 			}
+
+		},
+
+
+		itemsBefore(i){
+
+			var opt;
+
+			var indexes=[];
+			for(var j=i-1;j>=0;j--){
+
+				opt=this._stepOptions[j];
+				if(opt.link===false){
+					break;
+				}
+
+				indexes.push(j);
+			}
+
+			return indexes.reverse();
+
+		},
+
+		itemsAfter(i){
+
+			var opt;
+
+			var indexes=[];
+			for(var j=i;j<this.els.length;j++){
+
+
+				indexes.push(j);
+
+				opt=this._stepOptions[j];
+				if(opt.link===false){
+					break;
+				}
+
+				
+			}
+
+			//included current index in list so remove in result
+
+			return indexes.slice(1);
+
+		},
+
+
+		setComplete:function(i){
+
+			var els = this.els;
+			var e=els[i];
+
+			e.removeClass('current');
+			e.addClass('complete');
+			me.fireEvent("complete", [i]);
+
+
+		},
+
+		setClear:function(i){
+
+			var els = this.els;
+			var e=els[i];
+
+			e.removeClass('current');
+			e.removeClass('complete');
+
 
 		},
 
