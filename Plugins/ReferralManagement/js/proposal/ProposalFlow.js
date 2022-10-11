@@ -98,7 +98,7 @@ var ProposalFlow = (function() {
 				var setStateQuery = new AjaxControlQuery(CoreAjaxUrlRoot, 'set_state_data', {
 					"plugin": "ReferralManagement",
 					"id": flow.getItem().getId(),
-					"data": data
+					"data": JSON.stringify(data)
 				});
 
 				setStateQuery.addEvent('success', function(resp) {
@@ -172,7 +172,7 @@ var ProposalFlow = (function() {
 						'widget': "workflow",
 						'field': {
 							"name":stateName,
-							"value":JSON.stringify(data)
+							"value":data
 						}
 					})).addEvent('success',function(response){
 
