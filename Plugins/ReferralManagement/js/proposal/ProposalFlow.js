@@ -324,12 +324,12 @@ var ProposalFlow = (function() {
 			if (el.hasClass('current') && options.completable !== false) {
 
 				if (this._isNextInGroup(index)) {
-					me.setActive(index + 1);
+					this.setActive(index + 1);
 					return;
 				}
 
 
-				me.setActive(index + 1);
+				this.setComplete(index);
 				return;
 
 			}
