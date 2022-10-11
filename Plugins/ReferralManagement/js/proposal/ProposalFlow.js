@@ -1,22 +1,22 @@
 var ProposalFlow = (function() {
 
 
-	var stateConfig=null;
+	var stateConfig = null;
 
 	(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration", {
 		'widget': "workflow"
-	})).addEvent('success',function(response){
+	})).addEvent('success', function(response) {
 
 
-		stateConfig=response.parameters;
+		stateConfig = response.parameters;
 
-		if(response.subscription){
+		if (response.subscription) {
 			AjaxControlQuery.Subscribe(response.subscription, function(update) {
-				stateConfig=update;
+				stateConfig = update;
 			});
 		}
 	}).execute();
-	
+
 
 
 	var FlowGroup = new Class({
@@ -28,9 +28,6 @@ var ProposalFlow = (function() {
 			this._stateFlows = {};
 			this._stateData = {};
 			this._statesLoaded = false;
-
-
-			
 
 
 
@@ -45,12 +42,11 @@ var ProposalFlow = (function() {
 
 
 
-
 				Object.keys(resp.stateData).forEach(function(n) {
 					if (me._stateFlows[n]) {
 						me._stateFlows[n].setActive(resp.stateData[n]);
 					}
-					
+
 
 				});
 
@@ -79,7 +75,7 @@ var ProposalFlow = (function() {
 
 			this._stateFlows[stateName] = flow;
 
-			var me=this;
+			var me = this;
 
 			flow.addEvent('current', function(index) {
 
@@ -152,39 +148,43 @@ var ProposalFlow = (function() {
 			this._stateName = stateName;
 			this._item = item;
 
-			this.element = new Element('div', {"class":"flow-item"});
+			this.element = new Element('div', {
+				"class": "flow-item"
+			});
 
 
-			if(ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin()){
+			if (ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin()) {
 
 
-				var data={
-					'flow':stateName,
-					'mutable':true
+				var data = {
+					'flow': stateName,
+					'mutable': true
 				};
-				data[stateName]=[];
-				var flowItem=new MockDataTypeItem(data);
-				flowItem.on('save',function(){
+				data[stateName] = [];
+				var flowItem = new MockDataTypeItem(data);
+				flowItem.on('save', function() {
 
-					var data=flowItem.toObject()[stateName];
+					var data = flowItem.toObject()[stateName];
 					/*Admin only*/
 					(new AjaxControlQuery(CoreAjaxUrlRoot, "set_configuration_field", {
 						'widget': "workflow",
 						'field': {
-							"name":stateName,
-							"value":data
+							"name": stateName,
+							"value": data
 						}
-					})).addEvent('success',function(response){
+					})).addEvent('success', function(response) {
 
 					}).execute();
 
 				});
-				
-				(new UIModalFormButton(this.element.appendChild(new Element('button',{"class":"inline-edit top-right"})), GatherDashboard.getApplication(),flowItem, {
+
+				(new UIModalFormButton(this.element.appendChild(new Element('button', {
+					"class": "inline-edit top-right"
+				})), GatherDashboard.getApplication(), flowItem, {
 					"formName": "flowLayoutForm",
 					"formOptions": {
 						template: "form",
-						closeable:true
+						closeable: true
 					}
 				}));
 			}
@@ -201,50 +201,47 @@ var ProposalFlow = (function() {
 
 
 			this.setLabel(label);
-			var me=this;
-			var isFirstStep=true;
-			var j=-1;
-	        stateConfig[stateName].forEach(function(item, i){
+			var me = this;
+			var isFirstStep = true;
+			var j = -1;
+			stateConfig[stateName].forEach(function(item, i) {
 
-	        	var opts = {
+				var opts = {
 
-	        		"class":item["icon"]||"default",
-	        		"link":typeof item.link=="boolean"?item.link:true,
-	        		"first":i==0||me._stepOptions[i-1].link===false,
-	        		"index":i
-	        	};
+					"class": item["icon"] || "default",
+					"link": typeof item.link == "boolean" ? item.link : true,
+					"first": i == 0 || me._stepOptions[i - 1].link === false,
+					"index": i
+				};
 
-	        	if(opts.first&&opts.index>0){
-	        		j++;
-	        	}
+				if (opts.first && opts.index > 0) {
+					j++;
+				}
 
-	        	opts.groupIndex-j;
-	        	
-	        	me.addStep(item.name, opts);
-	        });
+				opts.groupIndex - j;
 
-	      	this._initCurrent();
+				me.addStep(item.name, opts);
+			});
+
+			this._initCurrent();
 
 			FlowGroup.AddFlowItem(this);
 
 
 
-
-
-
 		},
-		_initCurrent:function(){
-			
-			this._currentIndexes=this._stepOptions.filter(function(opt){
-	        	return opt.first;
-	        }).map(function(opt){
-	        	return [opt.index]
-	        });
+		_initCurrent: function() {
+
+			this._currentIndexes = this._stepOptions.filter(function(opt) {
+				return opt.first;
+			}).map(function(opt) {
+				return [opt.index]
+			});
 		},
 
-		_setCurrent:function(index){
+		_setCurrent: function(index) {
 
-			this._currentIndexes[this._stepOptions[index].groupIndex]=index;
+			this._currentIndexes[this._stepOptions[index].groupIndex] = index;
 			this.fireEvent("current", [this._currentIndexes]);
 
 		},
@@ -264,11 +261,11 @@ var ProposalFlow = (function() {
 			this._stepOptions.push(options);
 			this._last = el;
 
-			if (options.clickable !== false&&AppClient.getUserType()!=="guest") {
+			if (options.clickable !== false && AppClient.getUserType() !== "guest") {
 				this._addInteraction(el);
 			}
 
-			if(options.link===false){
+			if (options.link === false) {
 				el.addClass('no-link');
 			}
 
@@ -292,7 +289,7 @@ var ProposalFlow = (function() {
 			var clickIndex = els.indexOf(el);
 
 
-			var options=this._stepOptions[clickIndex];
+			var options = this._stepOptions[clickIndex];
 
 			if (options.completable === false) {
 				el.addClass('ongoing');
@@ -310,12 +307,12 @@ var ProposalFlow = (function() {
 			});
 		},
 
-		toggle:function(index){
+		toggle: function(index) {
 
 
 
-			var el=this.els[index];
-			var options=this._stepOptions[index];
+			var el = this.els[index];
+			var options = this._stepOptions[index];
 
 			if (el.hasClass('current') && options.completable !== false) {
 				//me.setActive(index + 1);
@@ -325,17 +322,16 @@ var ProposalFlow = (function() {
 
 		},
 
-		
 
 
 		setActive: function(index) {
 
 			var me = this;
 
-			
+
 
 			if (this.els.length <= index) {
-				throw 'index out of range: '+i;
+				throw 'index out of range: ' + i;
 			}
 
 
@@ -349,28 +345,28 @@ var ProposalFlow = (function() {
 
 
 
-			var currentEl =this.els[index];
-			
+			var currentEl = this.els[index];
+
 			currentEl.addClass('current');
 			currentEl.removeClass('complete');
-			
+
 
 			this._setCurrent(index);
 
-			
+
 
 		},
 
 
-		itemsBefore(i){
+		itemsBefore(i) {
 
 			var opt;
 
-			var indexes=[];
-			for(var j=i-1;j>=0;j--){
+			var indexes = [];
+			for (var j = i - 1; j >= 0; j--) {
 
-				opt=this._stepOptions[j];
-				if(opt.link===false){
+				opt = this._stepOptions[j];
+				if (opt.link === false) {
 					break;
 				}
 
@@ -381,22 +377,22 @@ var ProposalFlow = (function() {
 
 		},
 
-		itemsAfter(i){
+		itemsAfter(i) {
 
 			var opt;
 
-			var indexes=[];
-			for(var j=i;j<this.els.length;j++){
+			var indexes = [];
+			for (var j = i; j < this.els.length; j++) {
 
 
 				indexes.push(j);
 
-				opt=this._stepOptions[j];
-				if(opt.link===false){
+				opt = this._stepOptions[j];
+				if (opt.link === false) {
 					break;
 				}
 
-				
+
 			}
 
 			//included current index in list so remove in result
@@ -406,10 +402,10 @@ var ProposalFlow = (function() {
 		},
 
 
-		setComplete:function(i){
+		setComplete: function(i) {
 
 			var els = this.els;
-			var e=els[i];
+			var e = els[i];
 
 			e.removeClass('current');
 			e.addClass('complete');
@@ -418,10 +414,10 @@ var ProposalFlow = (function() {
 
 		},
 
-		setClear:function(i){
+		setClear: function(i) {
 
 			var els = this.els;
-			var e=els[i];
+			var e = els[i];
 
 			e.removeClass('current');
 			e.removeClass('complete');
@@ -443,9 +439,9 @@ var ProposalFlow = (function() {
 		},
 
 
-		setLabel:function(l){
+		setLabel: function(l) {
 
-			
+
 			this.element.setAttribute('data-label', l);
 
 			return this;
