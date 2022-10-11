@@ -79,7 +79,7 @@ var ProposalFlow = (function() {
 
 			flow.addEvent('current', function(index) {
 
-				if (me._stateData[stateName] === index) {
+				if (JSON.stringify(me._stateData[stateName]) === JSON.stringify(index)) {
 					return;
 				}
 
@@ -214,7 +214,7 @@ var ProposalFlow = (function() {
 					"index": i
 				};
 
-				if (opts.first && opts.index > 0) {
+				if (opts.first) {
 					j++;
 				}
 
