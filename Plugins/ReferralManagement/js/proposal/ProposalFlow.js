@@ -337,7 +337,7 @@ var ProposalFlow = (function() {
 
 			
 
-			if (els.length <= index) {
+			if (this.els.length <= index) {
 				throw 'index out of range: '+i;
 			}
 
