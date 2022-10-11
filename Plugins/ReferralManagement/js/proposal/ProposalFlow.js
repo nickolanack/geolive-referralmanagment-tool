@@ -44,7 +44,7 @@ var ProposalFlow = (function() {
 
 				Object.keys(resp.stateData).forEach(function(n) {
 					if (me._stateFlows[n]) {
-						me._stateFlows[n].setActive(resp.stateData[n]);
+						me._stateFlows[n].setCurrentIndexes(resp.stateData[n]);
 					}
 
 
