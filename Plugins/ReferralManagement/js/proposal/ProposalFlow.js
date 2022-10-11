@@ -252,7 +252,7 @@ var ProposalFlow = (function() {
 		setCurrentIndexes:function(data){
 
 			var me=this;
-			this._currentIndexes=data;
+			this._currentIndexes=JSON.parse(JSON.stringify(data));
 			this._currentIndexes.forEach(function(index){
 				if(typeof index=="string"&&index.indexOf(':')>0){
 					me._markComplete(parseInt(index.split(':').shift()));
