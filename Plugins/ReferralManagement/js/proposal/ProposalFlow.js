@@ -48,7 +48,7 @@ var ProposalFlow = (function() {
 
 				Object.keys(resp.stateData).forEach(function(n) {
 					if (me._stateFlows[n]) {
-						me._stateFlows[n].setCurrent(resp.stateData[n]);
+						me._stateFlows[n].setActive(resp.stateData[n]);
 					}
 					
 
@@ -110,7 +110,7 @@ var ProposalFlow = (function() {
 			});
 
 			if (this._stateData[stateName]) {
-				flow.setCurrent(this._stateData[stateName]);
+				flow.setActive(this._stateData[stateName]);
 			}
 
 
@@ -151,7 +151,6 @@ var ProposalFlow = (function() {
 
 			this._stateName = stateName;
 			this._item = item;
-			this._currentIndex = 0;
 
 			this.element = new Element('div', {"class":"flow-item"});
 
@@ -173,7 +172,7 @@ var ProposalFlow = (function() {
 						'widget': "workflow",
 						'field': {
 							"name":stateName,
-							"value":data
+							"value":JSON.stringify(data)
 						}
 					})).addEvent('success',function(response){
 
@@ -203,17 +202,21 @@ var ProposalFlow = (function() {
 
 			this.setLabel(label);
 			var me=this;
+			var isFirstStep=true;
 	        stateConfig[stateName].forEach(function(item, i){
 
-	        	var opts={
+	        	var opts = {
+
 	        		"class":item["icon"]||"default",
 	        		"link":typeof item.link=="boolean"?item.link:true
+	        		"first":i==0||me._stepOptions[],
+	        		"index":i
 	        	};
-
+	        	
 	        	me.addStep(item.name, opts);
 	        });
 
-
+	      	this._initCurrent();
 
 			FlowGroup.AddFlowItem(this);
 
@@ -222,6 +225,23 @@ var ProposalFlow = (function() {
 
 
 
+		},
+		_initCurrent:function(){
+			
+			this._currentIndexes=this._stepOptions.filter(function(opt){
+	        	return opt.first;
+	        }).map(functino(opt){
+	        	return [opt.index]
+	        });
+		},
+
+		_setCurrent:function(index){
+
+
+
+			me.fireEvent("current", [this._currentIndexes]);
+
+			
 		},
 
 		appendStep: function(name, options) {
@@ -240,16 +260,12 @@ var ProposalFlow = (function() {
 			this._last = el;
 
 			if (options.clickable !== false&&AppClient.getUserType()!=="guest") {
-				this._addInteraction(el, options);
+				this._addInteraction(el);
 			}
 
 			if(options.link===false){
 				el.addClass('no-link');
 			}
-
-
-			this.setCurrent(this._currentIndex);
-
 
 			return el;
 		},
@@ -260,7 +276,7 @@ var ProposalFlow = (function() {
 		getItem: function() {
 			return this._item;
 		},
-		_addInteraction: function(el, options) {
+		_addInteraction: function(el) {
 
 			var me = this;
 			var els = this.els;
@@ -268,11 +284,15 @@ var ProposalFlow = (function() {
 
 
 
+			var clickIndex = els.indexOf(el);
+
+
+			var options=this._stepOptions[clickIndex];
+
 			if (options.completable === false) {
 				el.addClass('ongoing');
 			}
 
-			var clickIndex = els.indexOf(el);
 
 			el.addEvent('click', function() {
 
@@ -281,34 +301,41 @@ var ProposalFlow = (function() {
 					el.removeEvents('click');
 				}
 
-				if (el.hasClass('current') && options.completable !== false) {
-					me.setCurrent(clickIndex + 1);
-					return;
-				}
-				me.setCurrent(clickIndex);
+				me.toggle(clickIndex);
 			});
 		},
 
-		setCurrent: function(index) {
+		toggle:function(index){
+
+
+
+			var el=this.els[index];
+			var options=this._stepOptions[clickIndex];
+
+			if (el.hasClass('current') && options.completable !== false) {
+				me.setActive(index + 1);
+				return;
+			}
+			me.setActive(index);
+
+		},
+
+		
+
+
+		setActive: function(index) {
 
 			var me = this;
 
-			me._currentIndex = index;
+			
 
-			var els = this.els;
-
-
-			var currentEl = null;
-			if (els.length > index) {
-				currentEl = els[index];
+			if (els.length <= index) {
+				throw 'index out of range: '+i;
 			}
 
 
-
 			this.itemsBefore(index).forEach(function(i) {
-
 				me.setComplete(i);
-
 			});
 
 			this.itemsAfter(index).forEach(function(i) {
@@ -317,12 +344,15 @@ var ProposalFlow = (function() {
 
 
 
+			var currentEl =this.els[index];
+			
+			currentEl.addClass('current');
+			currentEl.removeClass('complete');
+			
 
-			if (currentEl) {
-				me.fireEvent("current", [index]);
-				currentEl.addClass('current');
-				currentEl.removeClass('complete');
-			}
+			this._setCurrent(index);
+
+			
 
 		},
 
