@@ -248,7 +248,7 @@ var ProposalFlow = (function() {
 
 		_setComplete: function(index) {
 
-			this._currentIndexes[this._stepOptions[index].groupIndex] = index+":complete"+;
+			this._currentIndexes[this._stepOptions[index].groupIndex] = index+":complete";
 			this.fireEvent("current", [this._currentIndexes]);
 
 		},
