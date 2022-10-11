@@ -106,7 +106,7 @@ var ProposalFlow = (function() {
 			});
 
 			if (this._stateData[stateName]) {
-				flow.setActive(this._stateData[stateName]);
+				flow.setCurrentIndexes(this._stateData[stateName]);
 			}
 
 
@@ -237,6 +237,28 @@ var ProposalFlow = (function() {
 			}).map(function(opt) {
 				return [opt.index]
 			});
+
+			var me=this;
+
+			this._currentIndexes.forEach(function(index){
+				if(typeof index=="string"&&index.indexOf(':')>0){
+					me._markComplete(parseInt(index.split(':').shift()));
+					return;
+				}
+				me._markActive(index);
+			});
+		},
+
+		setCurrentIndexes:function(data){
+			
+			this._currentIndexes=data;
+			this._currentIndexes.forEach(function(index){
+				if(typeof index=="string"&&index.indexOf(':')>0){
+					me._markComplete(parseInt(index.split(':').shift()));
+					return;
+				}
+				me._markActive(index);
+			});
 		},
 
 		_setCurrent: function(index) {
@@ -344,20 +366,52 @@ var ProposalFlow = (function() {
 
 		setActive: function(index) {
 
+			this._markActive(index);
+			this._setCurrent(index);
+		},
+
+		setComplete: function(index) {
+
+			this._markComplete(index);
+			this._setComplete(index);
+		},
+
+
+
+
+
+		_markActive:function(index){
 
 			this._setBeforeAfter(index);
-
-
 			var currentEl = this.els[index];
 			currentEl.addClass('current');
 			currentEl.removeClass('complete');
 
+		},
+		_markComplete:function(index){
+			this._setBeforeAfter(index);
+			var currentEl = this.els[index];
+			currentEl.addClass('complete');
+			currentEl.removeClass('current');
+		},
 
-			this._setCurrent(index);
+		setComplete: function(index) {
+
+			this._setBeforeAfter(index);
+
+			var currentEl = this.els[index];
+
+			currentEl.addClass('complete');
+			currentEl.removeClass('current');
+
+
+			this._setComplete(index);
 
 
 
 		},
+
+
 
 		_setBeforeAfter: function(index) {
 
@@ -380,21 +434,7 @@ var ProposalFlow = (function() {
 
 		},
 
-		setComplete: function(index) {
-
-			this._setBeforeAfter(index);
-
-			var currentEl = this.els[index];
-
-			currentEl.addClass('complete');
-			currentEl.removeClass('current');
-
-
-			this._setComplete(index);
-
-
-
-		},
+		
 
 
 		itemsBefore(i) {
