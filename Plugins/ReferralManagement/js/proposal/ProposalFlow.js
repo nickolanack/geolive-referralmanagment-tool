@@ -324,7 +324,7 @@ var ProposalFlow = (function() {
 				//me.setActive(index + 1);
 				//return;
 			}
-			me.setActive(index);
+			this.setActive(index);
 
 		},
 
