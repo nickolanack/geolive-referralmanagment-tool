@@ -857,6 +857,12 @@ div.field-value-module.inline.ids{
     li {
         border-color:white;
     }
+    li.complete {
+        border-color: mediumseagreen;
+    }
+     li.current {
+        border-color: cornflowerblue;
+    }
 }
 
 .with-project-detail-click, .with-projects-click, .with-user-profile-click {
@@ -4941,6 +4947,22 @@ img.static-map {
             margin: 5px;
             font-size: 0.75em;
     }
+    
+ 
+
+    button.form-btn.inline-edit{
+        width: 20px !important;
+        height: 20px !important;
+        top: -5px;
+        
+         &:after{
+            font-size: 11px;
+        }
+    }
+    
+   
+
+
     
     .primary-btn.small {
         padding: 3px 8px;
