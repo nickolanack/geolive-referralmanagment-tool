@@ -4948,6 +4948,22 @@ img.static-map {
             font-size: 0.75em;
     }
     
+ 
+
+    button.form-btn.inline-edit{
+        width: 20px;
+        height: 20px;
+        top: -5px;
+        
+         &:after{
+            font-size: 11px;
+        }
+    }
+    
+   
+
+
+    
     .primary-btn.small {
         padding: 3px 8px;
         font-size: .6em;
