@@ -19,6 +19,7 @@ var ConfigItem = (function() {
             'heading': '<div class="section-title"> <span class="thin">Welcome Back,</span> ' + user.getName() + ' </div>',
             'param': 'welcomeText',
             'editLabel': 'Edit welcome text',
+            'popover':true,
             'widget': "dashboardContentConfig",
             'form': 'textFieldForm'
         }),{
