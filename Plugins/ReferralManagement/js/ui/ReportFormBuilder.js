@@ -2,7 +2,6 @@ var ReportFormBuilder = (function() {
 
 
 	return new Class({
-		Extends:FormBuilder,
 		createReportBtn: function(item) {
 			var me=this;
 
@@ -33,7 +32,7 @@ var ReportFormBuilder = (function() {
 								this.getWizard().getData().parameters.map(function(p) {
 
 
-									var parameterName=me._toParameterName(p.name, p.options);
+									var parameterName=FormBuilder.createParameterName(p.name, p.options);
 									if(typeof p[parameterName]!='undefined'){
 										data[parameterName] = p[parameterName];
 									}
@@ -98,5 +97,8 @@ var ReportFormBuilder = (function() {
 
 		}
 	});
+
+
+	return new ReportFormBuilder();
 
 })();
