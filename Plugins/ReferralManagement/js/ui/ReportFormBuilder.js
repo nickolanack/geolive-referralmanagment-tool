@@ -1,7 +1,7 @@
 var ReportFormBuilder = (function() {
 
 
-	return new Class({
+	var ReportFormBuilder = new Class({
 		createReportBtn: function(item) {
 			var me=this;
 
