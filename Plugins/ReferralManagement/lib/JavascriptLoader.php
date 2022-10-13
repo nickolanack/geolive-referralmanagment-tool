@@ -52,7 +52,9 @@ class JavascriptLoader {
 		IncludeJS($dir . '/js/ui/SidePanelToggle.js');
 		IncludeJS($dir . '/js/ui/DisplayTheme.js');
 		IncludeJS($dir . '/js/ui/DockWizard.js');
-		IncludeJS($dir . '/js/ui/FormBuilder.js');
+
+		IncludeJS('{widgets}/WizardBuilder/js/FormBuilder.js');
+		IncludeJS($dir . '/js/ui/ReportFormBuilder.js');
 		IncludeJS($dir . '/js/ui/PopoverFormDefinition.js');
 
 		IncludeJS($dir . '/js/menus/GuestNavigationMenu.js');
