@@ -122,6 +122,8 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			return $this->setError('Invalid token');
 		}
 
+		GetPlugin('Maps');
+
 		$item = null;
 		if(isset($json->feature->id)&&intval($json->feature->id)>0){
 			try{
