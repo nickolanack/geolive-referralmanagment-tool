@@ -71,6 +71,25 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			}
 		}
 
+		if(isset($json->feature->_serverId)&&intval($json->feature->_serverId)>0){
+			try{
+				$item = (new \spatial\FeatureLoader())->fromId($json->feature->_serverId);
+			}catch(\Exception $e){
+				//want to recreate a new item 
+			}
+		}
+
+
+		if($item->getId()>0){
+			/*
+			 * Validate project token matches item project
+			 */
+			
+			if(strpos($item->getName(), '<project:'.$token->data->id.'>')!==0){
+				return $this->setError('Invalid project token for item');
+			}
+		}
+
 		
 		$item->setLayerId($layer->getId());
 		$item->setName('<project:'.$token->data->id.'>'.$json->feature->title);
@@ -98,7 +117,45 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 	protected function removeMapFeature($json){
 		
 		$token = GetPlugin('Links')->peekDataToken($json->accessToken);
-		return array('token'=>$token, 'json'=>$json);
+
+		if(!($token&&$token->name==='projectMapAccessToken'&&isset($token->data->id))){
+			return $this->setError('Invalid token');
+		}
+
+		$item = null;
+		if(isset($json->feature->id)&&intval($json->feature->id)>0){
+			try{
+				$item = (new \spatial\FeatureLoader())->fromId($json->feature->id);
+			}catch(\Exception $e){
+				//want to recreate a new item 
+			}
+		}
+
+		if(isset($json->feature->_serverId)&&intval($json->feature->_serverId)>0){
+			try{
+				$item = (new \spatial\FeatureLoader())->fromId($json->feature->_serverId);
+			}catch(\Exception $e){
+				//want to recreate a new item 
+			}
+		}
+
+		if(!$item){
+			return $this->setError('Item does not exist');
+		}
+
+		if(strpos($item->getName(), '<project:'.$token->data->id.'>')!==0){
+			return $this->setError('Invalid project token for item');
+		}
+
+		try {
+			if ((new \spatial\FeatureLoader())->delete($item)) {
+				return true;
+			}
+		} catch (Exception $e) {
+			return $this->setError('Failed to delete map Item: ' . $e->getMessage());
+		}
+
+
 
 
 	}
