@@ -118,7 +118,10 @@ var UserIcon=(function(){
 
 				if (result.value) {
 					var urls = Proposal.ParseHtmlUrls(result.value);
-					span.setStyle("background-image", "url(" + urls[0] + ")");
+
+					var icon=urls[0];
+					div.getElement().removeClass('default-icon');
+					span.setStyle("background-image", "url(" + icon + ")");
 				}
 
 
