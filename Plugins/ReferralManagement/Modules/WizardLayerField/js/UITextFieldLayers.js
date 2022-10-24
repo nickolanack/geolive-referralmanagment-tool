@@ -61,7 +61,7 @@ var UITextFieldLayerList = function() {
 
         (new DocumentModule({
             textQuery: function(callback) {
-                callback(link.url);
+                callback(linkUrl);
             },
             download: false,
             setBackgroundImage: true
