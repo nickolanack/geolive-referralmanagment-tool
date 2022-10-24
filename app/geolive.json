@@ -344,6 +344,7 @@
         "name": "Events",
         "instance": "Events",
         "parameters": {
+            "logEvents": true,
             "logPath": "{front}\/..\/logs"
         }
     },
@@ -14846,6 +14847,7 @@
             "widgetTitle": "saveProfile",
             "target": "saveProfile",
             "customScript": "saveProfile.customScript.js",
+            "requireCSRF": true,
             "readAccess": "public"
         }
     },
