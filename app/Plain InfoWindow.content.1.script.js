@@ -19,7 +19,7 @@ var schemaData=item.getNamedValue('SchemaData');
 if(schemaData){
     return schemaData.split("\n\t\t").filter(function(line){
         return line.trim().length>0;
-    }).join("\n");
+    }).join("<br/>");
 }
 
 return null;
