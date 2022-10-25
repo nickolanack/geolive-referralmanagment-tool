@@ -24666,7 +24666,7 @@
             "target": "kmlDocumentRenderer",
             "cacheable": true,
             "allowExternalFilePaths": false,
-            "allowExternalUrls": false,
+            "allowExternalUrls": true,
             "resolveSpatialFilePathScript": "Kml renderer.resolveSpatialFilePathScript.js",
             "formatSpatialFileRendererScript": "Kml renderer.formatSpatialFileRendererScript.js",
             "allowDelete": false,
