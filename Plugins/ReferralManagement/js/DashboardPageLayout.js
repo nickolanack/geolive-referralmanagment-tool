@@ -555,7 +555,7 @@ var DashboardPageLayout = (function() {
 		content=layout.filterIdentifierConfig(content, ['project-state-progress','project-related-projects', 'project-response-date','proponent-edit-btns', 'proposal-status', 'status-assessment', 'status-processing', 'status-description', 'project-letters'], 'enableProposals');
 
 
-		content=layout.filterIdentifier(content, ['proponent-edit-btns', 'activity-chart', 'project-task-progress', 'project-task-remaining', 'project-task-deadline', 'project-tasks-overview'], !layout.currentItem().isDataset());
+		content=layout.filterIdentifier(content, ['proponent-edit-btns', 'project-related-projects', 'activity-chart','project-state-progress', 'project-task-progress', 'project-task-remaining', 'project-task-deadline', 'project-tasks-overview', 'project-letters'], !layout.currentItem().isDataset());
 
 
 		content=layout.filterIdentifier(content, ['project-edit-btns','activity-chart', 'project-task-progress', 'project-task-remaining', 'project-task-deadline', 'project-tasks-overview', 'discussion-reply','project-team','project-related-projects'],  AppClient.getUserType() != "guest");//'enableTasks');
@@ -732,7 +732,7 @@ var DashboardPageLayout = (function() {
 					}
 				},
 				{
-					html: ['Files', 'Notes', 'Discussion'],
+					html: ['Files', 'Notes', 'Discussion', 'Status'],
 					condition: function(item) {
 
 						var application = ReferralManagementDashboard.getApplication();
@@ -750,6 +750,7 @@ var DashboardPageLayout = (function() {
 					html: "Status",
 					config: "enableProposals"
 				},
+				
 				{
 					html: ["Proponent","Communication"],
 					config: "enableProposals"
