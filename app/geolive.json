@@ -344,6 +344,7 @@
         "name": "Events",
         "instance": "Events",
         "parameters": {
+            "logEvents": true,
             "logPath": "{front}\/..\/logs"
         }
     },
@@ -14846,6 +14847,7 @@
             "widgetTitle": "saveProfile",
             "target": "saveProfile",
             "customScript": "saveProfile.customScript.js",
+            "requireCSRF": true,
             "readAccess": "public"
         }
     },
@@ -24664,7 +24666,7 @@
             "target": "kmlDocumentRenderer",
             "cacheable": true,
             "allowExternalFilePaths": false,
-            "allowExternalUrls": false,
+            "allowExternalUrls": true,
             "resolveSpatialFilePathScript": "Kml renderer.resolveSpatialFilePathScript.js",
             "formatSpatialFileRendererScript": "Kml renderer.formatSpatialFileRendererScript.js",
             "allowDelete": false,
