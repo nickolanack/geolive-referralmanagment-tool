@@ -24,6 +24,19 @@
     }
     
      ul.layers .label {float: unset;width: 100px;}
+     
+     
+     li.layer.loading {
+        animation-name: loading;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+    
+    @keyframes loading {
+      0%   {background-color: transparent;}
+      70%  {background-color: #00000029;}
+      100% {background-color: transparent;}
+    }
 
 }
 
