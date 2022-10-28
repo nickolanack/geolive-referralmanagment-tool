@@ -198,7 +198,7 @@ var LayerGroupLegend = (function() {
                 })).addEvent('success', function(response) {
                     iconset = response.parameters;
                     popoverQueue.forEach(function(args) {
-                        LayerGroupLegend.prototype._makeMouseover.apply(null, args);
+                       me._makeMouseover.apply(me, args);
                     });
                     popoverQueue = null;
                 }).execute();
