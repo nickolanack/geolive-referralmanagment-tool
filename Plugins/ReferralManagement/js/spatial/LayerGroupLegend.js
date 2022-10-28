@@ -174,7 +174,7 @@ var LayerGroupLegend = (function() {
 
                 me._stateTimeout = null;
 
-                if (me.legend.countVisibleLayers() == 0) {
+                if ((me.legend.countVisibleLayers()+me.legend.countLoadingLayers()) == 0) {
                     me.element.removeClass("active");
                 } else {
                    me.element.addClass("active");
