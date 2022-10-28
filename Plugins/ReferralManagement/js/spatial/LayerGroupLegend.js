@@ -20,7 +20,7 @@ var LayerGroupLegend = (function() {
 
 
             this.element=element;
-            this.legent=legend;
+            this.legend=legend;
             this.group=group;
 
 
