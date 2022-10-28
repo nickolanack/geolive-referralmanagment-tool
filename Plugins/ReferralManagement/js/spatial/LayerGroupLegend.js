@@ -19,6 +19,11 @@ var LayerGroupLegend = (function() {
             var element = legend.getElement();
 
 
+            this.element=element;
+            this.legent=legend;
+            this.group=group;
+
+
             element.addClass(group /*"'.$groupName.($i>3?' bottom-align':'').'"*/ );
             LegendHelper.addLegend(legend);
             element.addEvent("click", function(e) {
@@ -31,39 +36,16 @@ var LayerGroupLegend = (function() {
                 anchor: UIPopover.AnchorTo(["right"])
             });
 
-            me._makeMouseover(group, p);
+            this._makeMouseover(group, p);
 
             legend.addEvent("toggle", function() {
                 p.hide();
             });
-            var checkState = function() {
+            
+            this._checkState();
 
-                if (me._stateTimeout) {
-                    clearTimeout(me._stateTimeout);
-                }
-
-                me._stateTimeout = setTimeout(function() {
-
-                    me._stateTimeout = null;
-
-                    if (legend.countVisibleLayers() == 0) {
-                        element.removeClass("active");
-                    } else {
-                        element.addClass("active");
-                    }
-
-                    if (legend.countVisibleLayers() == legend.countLayers()) {
-                        element.addClass("all");
-                    } else {
-                        element.removeClass("all")
-                    }
-
-                }, 200);
-
-            };
-            checkState();
-            legend.addEvent("renderLayer", checkState);
-            legend.addEvent("change", checkState);
+            legend.addEvent("renderLayer", this._checkState.bind(this));
+            legend.addEvent("change", this._checkState.bind(this));
 
             element.appendChild(new Element("span", {
                 "class": "indicator-switch",
@@ -77,7 +59,7 @@ var LayerGroupLegend = (function() {
                                 layer.hide();
                             });
 
-                            checkState();
+                            me._checkState();
                             return;
                         }
 
@@ -85,7 +67,7 @@ var LayerGroupLegend = (function() {
                         layers.forEach(function(layer) {
                             layer.show();
                         });
-                        checkState();
+                        me._checkState();
 
                     }
                 }
@@ -180,6 +162,33 @@ var LayerGroupLegend = (function() {
             }, 1000);
 
         },
+        _checkState:function() {
+
+            var me=this;
+
+            if (this._stateTimeout) {
+                clearTimeout(this._stateTimeout);
+            }
+
+            this._stateTimeout = setTimeout(function() {
+
+                me._stateTimeout = null;
+
+                if (me.legend.countVisibleLayers() == 0) {
+                    me.element.removeClass("active");
+                } else {
+                   me.element.addClass("active");
+                }
+
+                if (me.legend.countVisibleLayers() == me.legend.countLayers()) {
+                    me.element.addClass("all");
+                } else {
+                    me.element.removeClass("all")
+                }
+
+            }, 200);
+
+        },
         _makeMouseover: function(group, popover) {
 
             var me = this;
@@ -241,7 +250,6 @@ var LayerGroupLegend = (function() {
         },
 
         _remove: function() {
-
 
             this._map = null;
             popoverQueue = null;
