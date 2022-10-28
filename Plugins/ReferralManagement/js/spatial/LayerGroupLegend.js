@@ -1,181 +1,5 @@
 'use strict';
 
-var LayerGroup = new Class_({
-
-
-    initialize: function(group, legend) {
-
-        var me = this;
-       
-        var element = legend.getElement();
-
-
-        element.addClass(group /*"'.$groupName.($i>3?' bottom-align':'').'"*/ );
-        LegendHelper.addLegend(legend);
-        element.addEvent("click", function(e) {
-            if (e.target == element) {
-                legend.toggle();
-            }
-        });
-        var p = new UIPopover(element, {
-            description: '',
-            anchor: UIPopover.AnchorTo(["right"])
-        });
-
-        me._makeMouseover(group, p);
-
-        legend.addEvent("toggle", function() {
-            p.hide();
-        });
-        var checkState = function() {
-
-            if (me._stateTimeout) {
-                clearTimeout(me._stateTimeout);
-            }
-
-            me._stateTimeout = setTimeout(function() {
-
-                me._stateTimeout = null;
-
-                if (legend.countVisibleLayers() == 0) {
-                    element.removeClass("active");
-                } else {
-                    element.addClass("active");
-                }
-
-                if (legend.countVisibleLayers() == legend.countLayers()) {
-                    element.addClass("all");
-                } else {
-                    element.removeClass("all")
-                }
-
-            }, 200);
-
-        };
-        checkState();
-        legend.addEvent("renderLayer", checkState);
-        legend.addEvent("change", checkState);
-
-        element.appendChild(new Element("span", {
-            "class": "indicator-switch",
-            "events": {
-                "click": function() {
-                    var layers = legend.getLayers();
-
-                    if (legend.countVisibleLayers() > 0) {
-
-                        layers.forEach(function(layer) {
-                            layer.hide();
-                        });
-
-                        checkState();
-                        return;
-                    }
-
-
-                    layers.forEach(function(layer) {
-                        layer.show();
-                    });
-                    checkState();
-
-                }
-            }
-        }));
-
-        if (!(AppClient.getUserType() == "admin" || ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isTeamManager())) {
-            return;
-        }
-
-
-
-        legend.addEvent("renderLayer", function(layerMeta, legendItem) {
-
-
-            //console.log(legendItem);
-            var el = legendItem.getElement()
-            el.insertBefore(new Element('button', {
-                "class": "download-link",
-                events: {
-                    click: function(e) {
-
-
-                        e.stop();
-
-                        var layerQuery = new StringControlQuery(CoreAjaxUrlRoot, 'layer_display', {
-                            layerId: layerMeta._id || layerMeta.id,
-                            format: 'kml',
-                            options: {}
-                        });
-
-                        window.open(layerQuery.getUrl(true), 'Download');
-
-                    }
-                }
-            }), el.lastChild);
-
-        });
-
-
-        var formName = group + "UploadForm";
-        setTimeout(function() {
-
-
-            var application = ReferralManagementDashboard.getApplication()
-            if (application.getDisplayController().hasNamedFormView(formName)) {
-
-
-                var GroupUpload = new Class({
-                    Extends: DataTypeObject,
-                    Implements: [Events],
-                    getDescription: function() {
-                        return "";
-                    },
-                    setDescription: function(d) {
-                        console.log(d);
-                        this.file = Proposal.ParseHtmlUrls(d);
-                    },
-                    save: function(cb) {
-
-                        var me = this;
-                        var AddDocumentQuery = new Class({
-                            Extends: AjaxControlQuery,
-                            initialize: function() {
-                                this.parent(CoreAjaxUrlRoot, "upload_tus", Object.append({
-                                    plugin: "ReferralManagement"
-                                }, {
-                                    data: me.file || null
-                                }));
-                            }
-                        });
-                        (new AddDocumentQuery).addEvent("success", function() {
-                            cb(true)
-                        }).execute();
-                    }
-                });
-
-                var button = legend.element.appendChild(new Element("button", {
-                    "class": "grp-layer-upload"
-                }));
-                new UIModalFormButton(
-                    button,
-                    application, new GroupUpload(), {
-                        formName: formName,
-                        formOptions: {
-                            template: "form"
-                        }
-
-                    }
-                )
-            }
-
-        }, 1000);
-
-    }
-
-
-});
-
-
 
 var LayerGroupLegend = (function() {
 
@@ -184,6 +8,209 @@ var LayerGroupLegend = (function() {
     var iconset = null;
     var iconsetQuery = null;
     var popoverQueue = [];
+
+    var LayerGroup = new Class_({
+
+
+        initialize: function(group, legend) {
+
+            var me = this;
+
+            var element = legend.getElement();
+
+
+            element.addClass(group /*"'.$groupName.($i>3?' bottom-align':'').'"*/ );
+            LegendHelper.addLegend(legend);
+            element.addEvent("click", function(e) {
+                if (e.target == element) {
+                    legend.toggle();
+                }
+            });
+            var p = new UIPopover(element, {
+                description: '',
+                anchor: UIPopover.AnchorTo(["right"])
+            });
+
+            me._makeMouseover(group, p);
+
+            legend.addEvent("toggle", function() {
+                p.hide();
+            });
+            var checkState = function() {
+
+                if (me._stateTimeout) {
+                    clearTimeout(me._stateTimeout);
+                }
+
+                me._stateTimeout = setTimeout(function() {
+
+                    me._stateTimeout = null;
+
+                    if (legend.countVisibleLayers() == 0) {
+                        element.removeClass("active");
+                    } else {
+                        element.addClass("active");
+                    }
+
+                    if (legend.countVisibleLayers() == legend.countLayers()) {
+                        element.addClass("all");
+                    } else {
+                        element.removeClass("all")
+                    }
+
+                }, 200);
+
+            };
+            checkState();
+            legend.addEvent("renderLayer", checkState);
+            legend.addEvent("change", checkState);
+
+            element.appendChild(new Element("span", {
+                "class": "indicator-switch",
+                "events": {
+                    "click": function() {
+                        var layers = legend.getLayers();
+
+                        if (legend.countVisibleLayers() > 0) {
+
+                            layers.forEach(function(layer) {
+                                layer.hide();
+                            });
+
+                            checkState();
+                            return;
+                        }
+
+
+                        layers.forEach(function(layer) {
+                            layer.show();
+                        });
+                        checkState();
+
+                    }
+                }
+            }));
+
+            if (!(AppClient.getUserType() == "admin" || ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isTeamManager())) {
+                return;
+            }
+
+
+
+            legend.addEvent("renderLayer", function(layerMeta, legendItem) {
+
+
+                //console.log(legendItem);
+                var el = legendItem.getElement()
+                el.insertBefore(new Element('button', {
+                    "class": "download-link",
+                    events: {
+                        click: function(e) {
+
+
+                            e.stop();
+
+                            var layerQuery = new StringControlQuery(CoreAjaxUrlRoot, 'layer_display', {
+                                layerId: layerMeta._id || layerMeta.id,
+                                format: 'kml',
+                                options: {}
+                            });
+
+                            window.open(layerQuery.getUrl(true), 'Download');
+
+                        }
+                    }
+                }), el.lastChild);
+
+            });
+
+
+            var formName = group + "UploadForm";
+            setTimeout(function() {
+
+
+                var application = ReferralManagementDashboard.getApplication()
+                if (application.getDisplayController().hasNamedFormView(formName)) {
+
+
+                    var GroupUpload = new Class({
+                        Extends: DataTypeObject,
+                        Implements: [Events],
+                        getDescription: function() {
+                            return "";
+                        },
+                        setDescription: function(d) {
+                            console.log(d);
+                            this.file = Proposal.ParseHtmlUrls(d);
+                        },
+                        save: function(cb) {
+
+                            var me = this;
+                            var AddDocumentQuery = new Class({
+                                Extends: AjaxControlQuery,
+                                initialize: function() {
+                                    this.parent(CoreAjaxUrlRoot, "upload_tus", Object.append({
+                                        plugin: "ReferralManagement"
+                                    }, {
+                                        data: me.file || null
+                                    }));
+                                }
+                            });
+                            (new AddDocumentQuery).addEvent("success", function() {
+                                cb(true)
+                            }).execute();
+                        }
+                    });
+
+                    var button = legend.element.appendChild(new Element("button", {
+                        "class": "grp-layer-upload"
+                    }));
+                    new UIModalFormButton(
+                        button,
+                        application, new GroupUpload(), {
+                            formName: formName,
+                            formOptions: {
+                                template: "form"
+                            }
+
+                        }
+                    )
+                }
+
+            }, 1000);
+
+        },
+        _makeMouseover: function(group, popover) {
+
+            var me = this;
+            if (!iconsetQuery) {
+                iconsetQuery = (new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration", {
+                    'widget': "iconset"
+                })).addEvent('success', function(response) {
+                    iconset = response.parameters;
+                    popoverQueue.forEach(function(args) {
+                        LayerGroupLegend.prototype._makeMouseover.apply(null, args);
+                    });
+                    popoverQueue = null;
+                }).execute();
+            }
+
+            if (!iconset) {
+                if (!popoverQueue) {
+                    popoverQueue = [];
+                }
+                popoverQueue.push([group, popover]);
+                return;
+            }
+
+            popover.setText(iconset[group + "Mouseover"]);
+
+
+        },
+
+
+    });
+
 
 
     var LayerGroupLegend = new Class({
@@ -225,7 +252,7 @@ var LayerGroupLegend = (function() {
         FormatLegend: function(group, legend) {
 
             this.setMap(legend.getMap());
-            
+
             new LayerGroup(group, legend);
 
 
@@ -252,36 +279,7 @@ var LayerGroupLegend = (function() {
             }
 
             return layer.options.group === group;
-        },
-
-
-        _makeMouseover: function(group, popover) {
-
-            var me = this;
-            if (!iconsetQuery) {
-                iconsetQuery = (new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration", {
-                    'widget': "iconset"
-                })).addEvent('success', function(response) {
-                    iconset = response.parameters;
-                    popoverQueue.forEach(function(args) {
-                        LayerGroupLegend.prototype._makeMouseover.apply(null, args);
-                    });
-                    popoverQueue = null;
-                }).execute();
-            }
-
-            if (!iconset) {
-                if (!popoverQueue) {
-                    popoverQueue = [];
-                }
-                popoverQueue.push([group, popover]);
-                return;
-            }
-
-            popover.setText(iconset[group + "Mouseover"]);
-
-
-        },
+        }
 
 
 
