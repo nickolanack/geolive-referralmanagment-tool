@@ -278,6 +278,16 @@ var ProjectLayer = (function() {
 
 					
 				},
+
+				_initNetworkLink: function(data, linkDataArray, i) {
+					var me=this;
+					this._formatFeature(Object.append(data, {}), 'link', i, function(data){
+						GeoliveLayer.prototype._initNetworkLink.call(me, data, lineDataArray, i);
+					});
+
+					
+				},
+
 				_getKmlQuery: function() {
 					var me = this;
 
