@@ -219,13 +219,15 @@ var ProjectLayer = (function() {
 			var me = this;
 
 
+			var options=me.options
+
 			var KMLDocumentQuery = new Class({
 				Extends: StringControlQuery,
 				initialize: function(url) {
 					var me = this;
 					StringControlQuery.prototype.initialize.call(this, CoreAjaxUrlRoot, 'get_kml_for_document', {
 						"document": url,
-						"options": (options.projectAttributes && me.options.projectAttributes.metadata) ? me.options.projectAttributes.metadata : {},
+						"options": (options.projectAttributes && options.projectAttributes.metadata) ? options.projectAttributes.metadata : {},
 						'widget': "kmlDocumentRenderer"
 					});
 
