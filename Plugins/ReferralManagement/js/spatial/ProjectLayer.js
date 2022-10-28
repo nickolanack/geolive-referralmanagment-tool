@@ -156,34 +156,7 @@ var ProjectLayer = (function() {
 
 	var ProjectLayerFeatures = new Class_({
 
-		initialize: function(map, options) {
-
-			var layerOptions = getLayerOptions(options, map);
-
-			GeoliveLayer.prototype.initialize.call(this, map, layerOptions);
-
-
-			if ((options.id + "").indexOf("project-") === 0) {
-				var pid = options.id.split('-')[1];
-				var layerIndex = options.id.split('-').pop()
-				var project = ProjectTeam.CurrentTeam().getProject(pid);
-
-				var layer = this;
-
-				var attributeEventHandler = function(data) {
-
-					layer.options.projectAttributes = project.getDatasetAttributes(layerIndex);
-					layer.reload();
-				}
-
-				project.addEvent('updateDatasetAttributes', attributeEventHandler);
-				map.once('remove', function() {
-					project.removeEvent('updateDatasetAttributes', attributeEventHandler);
-				});
-
-			}
-
-		},
+		
 
 		_formatFeature: function(data, type, index, callback) {
 
@@ -304,6 +277,34 @@ var ProjectLayer = (function() {
 			var _baseClass = new Class({
 				Extends: GeoliveLayer,
 				Implements:[ProjectLayerFeatures],
+				initialize: function(map, options) {
+
+					var layerOptions = getLayerOptions(options, map);
+
+					GeoliveLayer.prototype.initialize.call(this, map, layerOptions);
+
+
+					if ((options.id + "").indexOf("project-") === 0) {
+						var pid = options.id.split('-')[1];
+						var layerIndex = options.id.split('-').pop()
+						var project = ProjectTeam.CurrentTeam().getProject(pid);
+
+						var layer = this;
+
+						var attributeEventHandler = function(data) {
+
+							layer.options.projectAttributes = project.getDatasetAttributes(layerIndex);
+							layer.reload();
+						}
+
+						project.addEvent('updateDatasetAttributes', attributeEventHandler);
+						map.once('remove', function() {
+							project.removeEvent('updateDatasetAttributes', attributeEventHandler);
+						});
+
+					}
+
+				}
 			});
 
 			//redefine for future instantiations;
