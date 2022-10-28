@@ -47,6 +47,9 @@ var LayerGroupLegend = (function() {
             legend.addEvent("renderLayer", this._checkState.bind(this));
             legend.addEvent("change", this._checkState.bind(this));
 
+
+            
+
             element.appendChild(new Element("span", {
                 "class": "indicator-switch",
                 "events": {

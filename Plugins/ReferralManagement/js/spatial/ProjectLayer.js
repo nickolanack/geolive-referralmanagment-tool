@@ -209,50 +209,70 @@ var ProjectLayer = (function() {
 		_initNetworkLink: function(data, linkDataArray, i) {
 			var me = this;
 			this._formatFeature(Object.append(data, {}), 'link', i, function(data) {
-				GeoliveLayer.prototype._initNetworkLink.call(me, data, linkDataArray, i);
+				
+
+
+
+
+	            data = me._applyFeatureStyles(data, 'networklink');
+
+	            var item = new ProjectLinkLayer(me, ObjectAppend_(me.options, data));
+	            item.setLayer(me);
+	            if (!me._hidden) {
+	                item.show();
+	            }
+
+	            me._networkLinks.push(item);
+
+
+	           
 			});
 
 
 		},
 
-		_getKmlQuery: function() {
-			var me = this;
+		
 
 
-			var options=me.options
+	})
 
-			var KMLDocumentQuery = new Class({
-				Extends: StringControlQuery,
-				initialize: function(url) {
-					var me = this;
-					StringControlQuery.prototype.initialize.call(this, CoreAjaxUrlRoot, 'get_kml_for_document', {
-						"document": url,
-						"options": (options.projectAttributes && options.projectAttributes.metadata) ? options.projectAttributes.metadata : {},
-						'widget': "kmlDocumentRenderer"
-					});
 
-					me._cacheable = true;
+	var ProjectLinkLayer = new Class({
+
+		initialize: function(map, options) {
+
+
+			if (!window.GeoliveLayer) {
+				if (window.console && console.warn) {
+					console.warn('GeoliveLayer is not defined');
+				}
+				return null;
+			}
+
+			
+
+			var _baseClass = new Class({
+				Extends: LinkLayer,
+				Implements:[ProjectLayerFeatures],
+				initialize: function(map, options) {
+
+					var layerOptions = getLayerOptions(options, map);
+
+					GeoliveLayer.prototype.initialize.call(this, map, layerOptions);
 
 				}
 			});
 
-			console.log(me.options.name + " " + (new KMLDocumentQuery(me.options.url)).getUrl(true));
-
-			return new KMLDocumentQuery(me.options.url);
-		},
-		_getTileUrl: function(tile, zoom) {
-			var me = this;
-			return CoreAjaxUrlRoot + '&task=get_tile_for_document&json=' + JSON.stringify({
-				"widget": "kmlDocumentTileRenderer",
-				"document": me.options.url,
-				"z": zoom,
-				"x": tile.x,
-				"y": tile.y
-			});
-		},
+			//redefine for future instantiations;
+			ProjectLinkLayer = _baseClass;
+			return new _baseClass(map, options);
 
 
-	})
+		}
+
+
+
+	});
 
 
 	var ProjectLayer = new Class({
@@ -306,6 +326,41 @@ var ProjectLayer = (function() {
 
 					}
 
+				},
+				_getKmlQuery: function() {
+					var me = this;
+
+
+					var options=me.options
+
+					var KMLDocumentQuery = new Class({
+						Extends: StringControlQuery,
+						initialize: function(url) {
+							var me = this;
+							StringControlQuery.prototype.initialize.call(this, CoreAjaxUrlRoot, 'get_kml_for_document', {
+								"document": url,
+								"options": (options.projectAttributes && options.projectAttributes.metadata) ? options.projectAttributes.metadata : {},
+								'widget': "kmlDocumentRenderer"
+							});
+
+							me._cacheable = true;
+
+						}
+					});
+
+					console.log(me.options.name + " " + (new KMLDocumentQuery(me.options.url)).getUrl(true));
+
+					return new KMLDocumentQuery(me.options.url);
+				},
+				_getTileUrl: function(tile, zoom) {
+					var me = this;
+					return CoreAjaxUrlRoot + '&task=get_tile_for_document&json=' + JSON.stringify({
+						"widget": "kmlDocumentTileRenderer",
+						"document": me.options.url,
+						"z": zoom,
+						"x": tile.x,
+						"y": tile.y
+					});
 				}
 			});
 
