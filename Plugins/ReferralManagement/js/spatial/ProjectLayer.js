@@ -216,7 +216,7 @@ var ProjectLayer = (function() {
 
 	            data = me._applyFeatureStyles(data, 'networklink');
 
-	            var item = new ProjectLinkLayer(me, ObjectAppend_(me.options, data));
+	            var item = new ProjectLinkLayer(me, ObjectAppend_({}, me.options, data));
 	            item.setLayer(me);
 	            if (!me._hidden) {
 	                item.show();
