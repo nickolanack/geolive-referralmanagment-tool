@@ -60,6 +60,19 @@ var SpatialDocumentPreview = (function() {
                             start: true
                         });
 
+				var bytes=function(b){
+
+					var p='B';
+					var i=0;
+					while(b>1024){
+						b=b/1024;
+						i++;
+					}
+
+					return Math.floor(b)+(["B","KB","MB","GB"])[i];
+
+				}
+
 
 				var notification=NotificationBubble.Make('', div, {
 					autoClose:false,
@@ -68,6 +81,14 @@ var SpatialDocumentPreview = (function() {
 					className:"layer-loading"
 
 				});
+
+				layer.on('progress',function(data){
+
+					if(data.loaded){
+						div.innerHTML="Loading: "+name+' '+bytes(data.loaded)
+					}
+
+				})
 
 				layer.addEvent('error',function(){
 
