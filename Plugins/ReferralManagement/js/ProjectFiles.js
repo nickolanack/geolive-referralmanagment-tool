@@ -670,6 +670,11 @@ var ProjectFiles = (function() {
 						})).load(null, container, null);
 					}
 					if (type == 'document') {
+
+						if(file.indexOf('{datawarehose}')>=0){
+							throw 'datawarehose';	
+						}
+
 						(new DocumentModule({
 							textQuery: function(callback) {
 								callback(file);
