@@ -489,7 +489,7 @@ var ProposalFlow = (function() {
 
 			e.removeClass('current');
 			e.addClass('complete');
-			me.fireEvent("complete", [i]);
+			this.fireEvent("complete", [i]);
 
 
 		},
