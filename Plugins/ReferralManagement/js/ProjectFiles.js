@@ -206,6 +206,10 @@ var ProjectFiles = (function() {
 			}
 
 			if(callback){
+
+				if(file.indexOf('{datawarehouse}')>=0){
+					throw 'datawarehose';	
+				}
 				(new AjaxControlQuery(CoreAjaxUrlRoot, 'file_metadata', {
 								'file': file,
 								'show': ['iconsetDetails']
