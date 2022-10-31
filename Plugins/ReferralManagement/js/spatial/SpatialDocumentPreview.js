@@ -94,8 +94,12 @@ var SpatialDocumentPreview = (function() {
 						return;
 					}
 
-					if(data.loaded){
+					if(typeof data.loaded=='number'){
 						div.innerHTML="Loading: "+name+' '+bytes(data.loaded)
+					}
+
+					if(typeof data.loaded=='string'){
+						div.innerHTML="Loading: "+name+' '+data.loaded;
 					}
 
 				})
