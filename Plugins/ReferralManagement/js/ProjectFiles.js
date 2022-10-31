@@ -208,7 +208,8 @@ var ProjectFiles = (function() {
 			if(callback){
 
 				if(file.indexOf('{datawarehouse}')>=0){
-					throw 'datawarehose';	
+					callback(file.split('/').pop());
+					return;
 				}
 				(new AjaxControlQuery(CoreAjaxUrlRoot, 'file_metadata', {
 								'file': file,
