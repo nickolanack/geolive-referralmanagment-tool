@@ -671,7 +671,7 @@ var ProjectFiles = (function() {
 					}
 					if (type == 'document') {
 
-						if(file.indexOf('{datawarehose}')>=0){
+						if(file.indexOf('{datawarehouse}')>=0){
 							throw 'datawarehose';	
 						}
 
