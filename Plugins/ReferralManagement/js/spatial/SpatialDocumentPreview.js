@@ -84,6 +84,16 @@ var SpatialDocumentPreview = (function() {
 
 				layer.on('progress',function(data){
 
+					if(data.loading){
+						div.innerHTML="Loading: "+name+' '+data.loading;
+
+						if(data.loaded){
+							div.innerHTML+=' '+data.loaded+'/'+data.total;
+						}
+
+						return;
+					}
+
 					if(data.loaded){
 						div.innerHTML="Loading: "+name+' '+bytes(data.loaded)
 					}
