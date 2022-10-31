@@ -681,6 +681,12 @@ var TableHeader = (function() {
 
 			});
 
+			this._listModule.on('redraw', function() {
+
+				me._renderHeader();
+
+			});
+
 			this._renderHeader();
 
 
