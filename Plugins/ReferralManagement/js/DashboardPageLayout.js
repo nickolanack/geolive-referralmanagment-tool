@@ -792,7 +792,10 @@ var DashboardPageLayout = (function() {
 					html: ['Share'],
 					condition: function() {
 
-						if (AppClient.getUserType() == "admin") {
+						var application = ReferralManagementDashboard.getApplication();
+						var project = application.getNamedValue("currentProject");
+
+						if (AppClient.getUserType() == "admin"||project.data.writable===true) {
 							return true;
 						}
 						return false;
