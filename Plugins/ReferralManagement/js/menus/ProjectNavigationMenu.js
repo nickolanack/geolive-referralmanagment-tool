@@ -195,7 +195,8 @@ var ProjectNavigationMenu = (function() {
 
 
 									(new UIModalDialog(application, new MockDataTypeItem({
-										name:`<h2>Scan this code with the field assessment app</h2>IOS: <a href='https://testflight.apple.com/join/rPVA9ODg'>Become an open beta tester<a>`,
+										name:`<h2>Scan this code with the field assessment app</h2>IOS: <a href='https://testflight.apple.com/join/rPVA9ODg'>Become an open beta tester for IOS<a>
+										Android: <a href=''>Become an open beta tester for Android<a>`,
 										image:resp.qrcode
 									}), {
 										"formName": "dialogForm",

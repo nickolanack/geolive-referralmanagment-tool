@@ -56,7 +56,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	public function formatMobileConfig($parameters) {
 
 		$parameters['client'] = GetPlugin('ReferralManagement')->getUsersMetadata();
-		$parameters['communities'] = GetPlugin('ReferralManagement')->listCommunities();
+		$parameters['communities'] = GetPlugin('ReferralManagement')->listTerritories();
 
 		return $parameters;
 
