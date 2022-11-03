@@ -48,6 +48,17 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 	}
 
 
+	protected function getCommunityAccessToken(){
+
+		return array(
+			'token'=>'308f1d76d7ac680b65eb4f158edc6794' //TODO expire this test token
+		);
+
+
+
+	}
+
+
 	protected function addMapFeature($json){
 
 
