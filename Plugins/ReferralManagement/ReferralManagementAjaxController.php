@@ -54,7 +54,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		$token = GetPlugin('Links')->peekDataToken($json->accessToken);
 
 		if(!($token&&$token->name==='projectMapAccessToken'&&isset($token->data->id))){
-			return $this->setError('Invalid token');
+			return $this->setError('Invalid token'.(isset($token->name)?': '.$token->name:''));
 		}
 
 
