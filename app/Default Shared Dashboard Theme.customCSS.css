@@ -6555,9 +6555,11 @@ li.menu-project-share button {
 }
 
 li.menu-project-share button:after {
-    content: "\0f029";
+    content: "\0f10b";
     font-family: 'FontAwesome';
-    font-size: 17px;
+    font-size: 25px;
+    line-height: 16px;
+    color: mediumseagreen;
 }
     
     
