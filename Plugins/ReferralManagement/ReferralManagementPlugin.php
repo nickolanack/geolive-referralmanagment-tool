@@ -371,8 +371,8 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		$token=null;
 
 		if(count($results)==0){
-			$clientToken = ($links = GetPlugin('Links'))->createDataCodeForItem($json->project, "ReferralManagement.proposal", 'projectMapAccessToken', array(
-				'id' => $json->project,
+			$clientToken = ($links = GetPlugin('Links'))->createDataCodeForItem($pid, "ReferralManagement.proposal", 'projectMapAccessToken', array(
+				'id' => $pid,
 				"creator" => GetClient()->getUserId(),
 			));
 
