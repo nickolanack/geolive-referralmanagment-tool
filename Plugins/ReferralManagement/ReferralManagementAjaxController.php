@@ -75,7 +75,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 
 		return array(
-			'token'=>count($tokens)>0?$tokens[0]->token:null, //TODO expire this test token
+			'token'=>count($tokens)>0?$tokens[0]:null, //TODO expire this test token
 			'user'=>$user,
 			'projects'=>$this->getPlugin()->getActiveProjectList()
 		);
