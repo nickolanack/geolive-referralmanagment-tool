@@ -382,7 +382,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		}
 
 
-		return $token
+		return $token;
 
 	}
 
