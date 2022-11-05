@@ -53,10 +53,21 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		$user = $this->getPlugin()->getUsersMetadata();
 
+		$community=$user['community'];
+
+		$layer=ucwords($community).' Community Content';
+
+
+		// array_filter($this->getPlugin()->getActiveProjectList(), function($p){
+		// 	return $p
+		// })
+
+
 
 		return array(
 			'token'=>'308f1d76d7ac680b65eb4f158edc6794', //TODO expire this test token
-			'user'=>$user
+			'user'=>$user,
+			'projects'=>$this->getPlugin()->getActiveProjectList()
 		);
 
 
