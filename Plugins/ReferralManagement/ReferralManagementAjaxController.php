@@ -56,7 +56,17 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		$community=$user['community'];
 
 		$layer=ucwords($community).' Community Content';
+		$projects=$this->getPlugin()->getActiveProjectList();
 
+		$tokens=array();
+
+		foreach($projects as $project){
+			if($project->attributes['title']===$layer){
+
+				$token[]=$this->getPlugin()->getProjectMapAccessToken($json->project, GetClient()->getUserId());
+
+			}
+		}
 
 		// array_filter($this->getPlugin()->getActiveProjectList(), function($p){
 		// 	return $p
@@ -65,7 +75,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 
 		return array(
-			'token'=>'308f1d76d7ac680b65eb4f158edc6794', //TODO expire this test token
+			'token'=>count($tokens)>0?$tokens[0]:null, //TODO expire this test token
 			'user'=>$user,
 			'projects'=>$this->getPlugin()->getActiveProjectList()
 		);
@@ -212,21 +222,11 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 
 
-		$results=($links=GetPlugin('Links'))->listDataCodesForItemName($json->project, "ReferralManagement.proposal", 'projectMapAccessToken');
-
-		$token=null;
-
-		if(count($results)==0){
-			$clientToken = ($links = GetPlugin('Links'))->createDataCodeForItem($json->project, "ReferralManagement.proposal", 'projectMapAccessToken', array(
-				'id' => $json->project,
-				"creator" => GetClient()->getUserId(),
-			));
-
-			$token=$clientToken;
-		}else{
-			$token=$results[0]->token;
+		if (!Auth('read', $json->project, 'ReferralManagement.proposal')) {
+			return $this->setError('No read access');
 		}
 
+		$token=$this->getPlugin()->getProjectMapAccessToken($json->project, GetClient()->getUserId());
 
 		$qrcode=GetPlugin('QRCode')->getQRCode(array('domain'=>HtmlDocument()->website(), 'token'=>$token, 'project'=>$json->project));
 			

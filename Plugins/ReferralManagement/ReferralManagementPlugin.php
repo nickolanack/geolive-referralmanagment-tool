@@ -357,6 +357,36 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		return $this->filterRemovedProjects;
 	}
 
+
+	public function getProjectMapAccessToken($pid, $uid=-1){
+
+
+		$results=($links=GetPlugin('Links'))->listDataCodesForItemName($json->project, "ReferralManagement.proposal", 'projectMapAccessToken');
+
+		$results=array_values(array_filter($results, function($result)use($uid){
+			return isset($result->data->creator)&&intval($result->data->creator)===intval($uid);
+		}));
+
+
+		$token=null;
+
+		if(count($results)==0){
+			$clientToken = ($links = GetPlugin('Links'))->createDataCodeForItem($json->project, "ReferralManagement.proposal", 'projectMapAccessToken', array(
+				'id' => $json->project,
+				"creator" => GetClient()->getUserId(),
+			));
+
+			$token=$clientToken;
+		}else{
+			$token=$results[0]->token;
+		}
+
+
+		return $token
+
+	}
+
+
 	/**
 	 * does not use cached list. use getProjectList for faster results
 	 */
