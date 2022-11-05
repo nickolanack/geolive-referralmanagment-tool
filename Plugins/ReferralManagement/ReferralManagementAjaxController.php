@@ -123,6 +123,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			 */
 			
 			if(strpos($item->getName(), '<project:'.$token->data->id.'>')!==0){
+				error_log('Invalid project token for item: '.$json->accessToken);
 				return $this->setError('Invalid project token for item');
 			}
 		}
@@ -183,6 +184,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		}
 
 		if(strpos($item->getName(), '<project:'.$token->data->id.'>')!==0){
+			error_log('Invalid project token for item: '.$json->accessToken);
 			return $this->setError('Invalid project token for item');
 		}
 
