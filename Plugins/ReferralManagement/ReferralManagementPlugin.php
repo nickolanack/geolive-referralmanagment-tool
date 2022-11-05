@@ -361,7 +361,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	public function getProjectMapAccessToken($pid, $uid=-1){
 
 
-		$results=($links=GetPlugin('Links'))->listDataCodesForItemName($json->project, "ReferralManagement.proposal", 'projectMapAccessToken');
+		$results=($links=GetPlugin('Links'))->listDataCodesForItemName($pid, "ReferralManagement.proposal", 'projectMapAccessToken');
 
 		$results=array_values(array_filter($results, function($result)use($uid){
 			return isset($result->data->creator)&&intval($result->data->creator)===intval($uid);
