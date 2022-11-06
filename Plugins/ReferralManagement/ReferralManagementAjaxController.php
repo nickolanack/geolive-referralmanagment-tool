@@ -101,7 +101,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		$item = new Marker();
 		$item->setUserId(GetClient()->getUserId());
-		
+
 		if(isset($json->feature->id)&&intval($json->feature->id)>0){
 			try{
 				$item = (new \spatial\FeatureLoader())->fromId($json->feature->id);
@@ -137,8 +137,14 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		
 		//$item->setUserId($token->data->creator);
 		$item->setCoordinates($json->feature->coordinates[0], $json->feature->coordinates[1]);
-		$item->setIcon('https://dyl2vw577xcfk.cloudfront.net/wabun.geoforms.ca/1/Uploads/LGb_[ImAgE]_FkE_[G]_aQl.png');
 
+		if(isset($json->feature->icon)&&strpos($json->feature->icon, 'https://')===0){
+			$item->setIcon($json->feature->icon);
+		}else{
+			$item->setIcon('https://dyl2vw577xcfk.cloudfront.net/wabun.geoforms.ca/1/Uploads/LGb_[ImAgE]_FkE_[G]_aQl.png');
+		}
+
+		
 
 		$item->setInfo((object)array(
 			'shared'=>true,
