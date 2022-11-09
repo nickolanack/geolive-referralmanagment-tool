@@ -29736,13 +29736,14 @@
         "name": "Content",
         "instance": "CustomContent",
         "parameters": {
-            "widgetTitle": "",
-            "target": "none",
+            "widgetTitle": "mobile-privacy",
+            "target": "mobile-privacy",
             "customScript": "",
             "language": "html\/text",
             "returnsValue": false,
             "cacheable": false,
-            "parseMarkdown": false
+            "parseMarkdown": false,
+            "readAccess": "public"
         }
     }
 }
