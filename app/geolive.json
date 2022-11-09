@@ -29731,5 +29731,18 @@
             "contentTemplate": "email-communicationUpdates-content.contentTemplate.html",
             "readAccess": "public"
         }
+    },
+    "widget.536": {
+        "name": "Content",
+        "instance": "CustomContent",
+        "parameters": {
+            "widgetTitle": "",
+            "target": "none",
+            "customScript": "",
+            "language": "html\/text",
+            "returnsValue": false,
+            "cacheable": false,
+            "parseMarkdown": false
+        }
     }
 }
