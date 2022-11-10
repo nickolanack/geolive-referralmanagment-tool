@@ -246,6 +246,13 @@
                     "plugin": "UserInterface",
                     "pluginView": "widget",
                     "widget": "gatherWelcome"
+                },
+                {
+                    "name": "mobile-privacy",
+                    "view": "plugin",
+                    "plugin": "UserInterface",
+                    "pluginView": "widget",
+                    "widget": "mobile-privacy"
                 }
             ],
             "useRemoteServerUI": false,
