@@ -29745,7 +29745,7 @@
         "parameters": {
             "widgetTitle": "mobile-privacy",
             "target": "mobile-privacy",
-            "customScript": "#mobile privacy policy",
+            "customScript": "mobile-privacy.customScript.js",
             "language": "html\/text",
             "returnsValue": false,
             "cacheable": false,
