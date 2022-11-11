@@ -15,7 +15,7 @@ Your privacy is important to us, and so is being transparent about how we collec
 
 **This Privacy Policy covers the information we collect about you when you use our products or services, or otherwise interact with The Gather App and Website (for example, submitting a Story), unless a different privacy policy is displayed. This policy also explains your choices about how we use information about you. Your choices include how you can object to certain uses of information about you and how you can access and update certain information about you. If you do not agree with this policy, do not access or use our Services or interact with any other aspect of our business.**
 
-**When we refer to "Gather App," "we," or "us" in this policy, we mean The Gather Application , which controls the information The Gather App collects when you use the Services. ACC offers collaborative tools, including our web, and mobile products, which help you create Stories about your Gather App experiences and view stories posted by other users.**
+**When we refer to "Gather App," "we," or "us" in this policy, we mean The Gather Application , which controls the information The Gather App collects when you use the Services. Gather offers collaborative tools, including our web, and mobile products, which help you create spatial content and view content posted by other users.**
 
 ##Information you provide to us
 We collect information about you when you use the Services or otherwise provide it directly to us.
