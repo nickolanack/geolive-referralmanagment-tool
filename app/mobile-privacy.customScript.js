@@ -87,7 +87,7 @@ We may change this privacy policy from time to time. We will post any privacy po
 
 **If you disagree with any changes to this privacy policy, you will need to stop using the Services and deactivate your account(s), as outlined above.**
 
-Contact Us
+##Contact Us
 Your information is controlled by The Gather App . If you have questions or concerns about how your information is handled, please direct your inquiry to The Gather App .
 
 
