@@ -18,15 +18,15 @@ Your privacy is important to us, and so is being transparent about how we collec
 
 **When we refer to "Gather App," "we," or "us" in this policy, we mean The Gather Application , which controls the information The Gather App collects when you use the Services. ACC offers collaborative tools, including our web, and mobile products, which help you create Stories about your Gather App experiences and view stories posted by other users.**
 
-Information you provide to us
+##Information you provide to us
 We collect information about you when you use the Services or otherwise provide it directly to us.
 
-Contact Information: We collect information about you when you authenticate yourself within the App and add your personal contact information. Your contact information is then sent to our servers.
+**Contact Information:** We collect information about you when you authenticate yourself within the App and add your personal contact information. Your contact information is then sent to our servers.
 Content you provide through our products: Content includes images and videos that you upload through the Service. Examples of content we collect and store include: images, sound, and videos you attach to a story, the title, description, and other details including locational data about the story that is submitted
 Information we collect automatically when you use the Services
 We collect information about your location when you use our Services to submit content.
 
-Device and Connection Information: We collect information about your computer, phone, tablet, or other devices you use to access the Services. This device information includes your connection type, when you install, access, update, or use our Services. We also collect information through your device about your operating system, browser type, IP address, URLs of referring/exit pages, device identifiers, and crash data. How much of this information we collect depends on the type and settings of the device you use to access the Services.
+**Device and Connection Information:** We collect information about your computer, phone, tablet, or other devices you use to access the Services. This device information includes your connection type, when you install, access, update, or use our Services. We also collect information through your device about your operating system, browser type, IP address, URLs of referring/exit pages, device identifiers, and crash data. How much of this information we collect depends on the type and settings of the device you use to access the Services.
 How we use information we collect
 How we use the information we collect depends in part on which Services you use, how you use them, and any preferences you have communicated to us. Below are the specific purposes for which we use the information we collect about you.
 
