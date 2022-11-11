@@ -1,4 +1,4 @@
-#mobile privacy policy
+#Mobile App Privacy Policy
 
 
 
