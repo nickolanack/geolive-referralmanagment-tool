@@ -21,7 +21,7 @@ searchModule.getSearch(function(search){
         
             list.filter(function(item){
                 console.log(item)
-                return item.getName().toLowerCase().indexOf(value);
+                return item.getName().toLowerCase().indexOf(value)>=0;
                 
             })
         
