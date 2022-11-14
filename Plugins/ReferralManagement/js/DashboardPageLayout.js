@@ -795,7 +795,7 @@ var DashboardPageLayout = (function() {
 						var application = ReferralManagementDashboard.getApplication();
 						var project = application.getNamedValue("currentProject");
 
-						if (AppClient.getUserType() == "admin"/*||project.data.writable===true*/) {
+						if (AppClient.getUserType() == "admin"||project.data.writable===true) {
 							return true;
 						}
 						return false;
