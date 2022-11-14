@@ -1,0 +1,1 @@
+searchModule.getElement().addClass('inline-filter-search')
