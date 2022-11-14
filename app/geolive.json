@@ -22692,16 +22692,16 @@
                             "datasetSelectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 275,
-                            "y": 225
+                            "x": 285,
+                            "y": 235
                         },
                         "children": [
                             "datasetSelectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 235,
-                                    "y": 402
+                                    "x": 245,
+                                    "y": 425
                                 }
                             }
                         ],
@@ -22720,8 +22720,9 @@
                                             "config": {
                                                 "getAggregatorsScript": "",
                                                 "searchOptions": "{}",
-                                                "formatSearchModuleScript": "",
-                                                "placeholder": "search items"
+                                                "formatSearchModuleScript": "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.formatSearchModuleScript.js",
+                                                "placeholder": "search items",
+                                                "identifier": "searchBar"
                                             }
                                         },
                                         {
