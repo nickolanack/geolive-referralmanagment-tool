@@ -255,12 +255,22 @@ var ProposalFlow = (function() {
 
 
 			if(typeof data=='string'){
-				this._currentIndexes=JSON.parse(JSON.stringify(data));
+				return this.setCurrentIndexes(JSON.parse(JSON.stringify(data)));
 			}
 
 			if(typeof data=='number'){
-				this._currentIndexes=[data];
+				return this.setCurrentIndexes([data]);
 			}
+
+			if(!isArray_(data)){
+
+				throw 'expects array';
+
+			}
+			
+			this._currentIndexes=data;
+			
+
 
 			this._currentIndexes.forEach(function(index){
 				if(typeof index=="string"&&index.indexOf(':')>0){
