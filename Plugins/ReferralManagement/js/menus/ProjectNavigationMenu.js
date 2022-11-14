@@ -195,7 +195,7 @@ var ProjectNavigationMenu = (function() {
 
 
 									(new UIModalDialog(application, new MockDataTypeItem({
-										name:`<div class="mobile-qr"><h2>Scan this code with the field assessment app</h2><span>IOS:</span> <a href='https://testflight.apple.com/join/rPVA9ODg'>Become an open beta tester for IOS<a><br/>
+										name:`<div class="mobile-qr"><h2>Scan this code with the field assessment app</h2><span class="ios">IOS:</span> <a href='https://testflight.apple.com/join/rPVA9ODg'>Become an open beta tester for IOS<a><br/>
 										<span>Android:</span> <a href='https://play.google.com/apps/testing/org.nickolanack.gatherapp'>Become an open beta tester for Android<a></div>`,
 										image:resp.qrcode
 									}), {
