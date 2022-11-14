@@ -1,8 +1,8 @@
 searchModule.getElement().addClass('inline-filter-search');
 searchModule.getSearch(function(search){
-   search.on('keyPress',function(text){
+   search.on('keyPress',function(key, value){
         
-        console.log(text);
+        console.log(value);
       
    });
 });
