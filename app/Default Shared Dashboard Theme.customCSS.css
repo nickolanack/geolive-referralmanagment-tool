@@ -7005,7 +7005,17 @@ span.AudioModule.audio.hasAudio, span.videoModule.video.hasVideo {
 
 
 
+.mobile-qr span:before {
+    content: "\0f17b";
+    font-family: 'FontAwesome';
+    margin-right: 10px;
+    font-size: 20px;
+    vertical-align: bottom;
+}
 
+.mobile-qr span.ios:before {
+    content: "\0f179";
+}
 
     
     
