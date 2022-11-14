@@ -293,7 +293,7 @@ span.notification-indicator.empty:after {
     position: absolute;
     content: "\0f002";
     left: 18px;
-    top: 19px;
+    top: 16px;
     z-index: 1;
     font-family: FontAwesome;
     color: #c0c0c0;
