@@ -246,6 +246,13 @@
                     "plugin": "UserInterface",
                     "pluginView": "widget",
                     "widget": "gatherWelcome"
+                },
+                {
+                    "name": "mobile-privacy",
+                    "view": "plugin",
+                    "plugin": "UserInterface",
+                    "pluginView": "widget",
+                    "widget": "mobile-privacy"
                 }
             ],
             "useRemoteServerUI": false,
@@ -29729,6 +29736,20 @@
             "parseMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-communicationUpdates-content.contentTemplate.html",
+            "readAccess": "public"
+        }
+    },
+    "widget.536": {
+        "name": "Content",
+        "instance": "CustomContent",
+        "parameters": {
+            "widgetTitle": "mobile-privacy",
+            "target": "mobile-privacy",
+            "customScript": "mobile-privacy.customScript.js",
+            "language": "html\/text",
+            "returnsValue": false,
+            "cacheable": false,
+            "parseMarkdown": true,
             "readAccess": "public"
         }
     }
