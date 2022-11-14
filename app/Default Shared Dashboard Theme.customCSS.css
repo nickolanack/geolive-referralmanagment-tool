@@ -7028,3 +7028,39 @@ span.AudioModule.audio.hasAudio, span.videoModule.video.hasVideo {
     
     
     
+    
+    
+    
+.search-container.inline-filter-search {
+    
+    .search-bar-content {
+        width:100%;
+    }
+    
+    
+    .search-bar-btn.left{
+        display:none;
+        
+    }
+    
+    .search-bar-content:after {
+        left: 30px;
+        font-size: 18px;
+        top: 21px;
+    }
+    
+    input.search-input.text-input.with-1-line {
+        font-size: 18px;
+        text-indent: 30px;
+    }
+
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
