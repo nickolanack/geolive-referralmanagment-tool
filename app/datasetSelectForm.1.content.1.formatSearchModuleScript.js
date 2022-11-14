@@ -1,7 +1,7 @@
 searchModule.getElement().addClass('inline-filter-search');
 searchModule.getSearch(function(search){
     
-    
+    var viewer=searchModule.getViewer();
     var list=viewer.findChildViews(function(v) {
         return v instanceof UIListViewModule;  				
     }).pop();
