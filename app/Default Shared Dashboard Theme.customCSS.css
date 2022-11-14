@@ -7016,8 +7016,13 @@ span.AudioModule.audio.hasAudio, span.videoModule.video.hasVideo {
 .mobile-qr span.ios:before {
     content: "\0f179";
 }
+
 .mobile-qr a {
     color: #a4bdea;
+}
+
+.mobile-qr h2 {
+    line-height: 30px;
 }
 
     
