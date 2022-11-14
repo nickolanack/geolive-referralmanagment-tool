@@ -7016,6 +7016,9 @@ span.AudioModule.audio.hasAudio, span.videoModule.video.hasVideo {
 .mobile-qr span.ios:before {
     content: "\0f179";
 }
+.mobile-qr a {
+    color: #a4bdea;
+}
 
     
     
