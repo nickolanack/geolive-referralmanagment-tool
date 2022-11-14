@@ -22692,16 +22692,16 @@
                             "datasetSelectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 265,
-                            "y": 215
+                            "x": 275,
+                            "y": 225
                         },
                         "children": [
                             "datasetSelectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 225,
-                                    "y": 392
+                                    "x": 235,
+                                    "y": 402
                                 }
                             }
                         ],
@@ -22716,10 +22716,19 @@
                                     "modules": [
                                         "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
+                                            "type": "Search",
+                                            "config": {
+                                                "getAggregatorsScript": "",
+                                                "searchOptions": "{}",
+                                                "formatSearchModuleScript": "",
+                                                "placeholder": "search items"
+                                            }
+                                        },
+                                        {
                                             "type": "WizardScriptElement",
                                             "config": {
                                                 "name": "My Custom Script",
-                                                "script": "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.script.js",
+                                                "script": "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.script.js",
                                                 "description": "Info about my custom script"
                                             }
                                         },
@@ -22728,6 +22737,8 @@
                                             "config": {
                                                 "listClassName": "--dataset-select --inline-form-list projects-list",
                                                 "className": "--feed-sub-item --section-module",
+                                                "elementType": "div",
+                                                "elementOptions": [],
                                                 "identifier": "",
                                                 "viewType": "view",
                                                 "namedView": "singleProjectListItemTableDetail",
@@ -22738,14 +22749,14 @@
                                                 "formOptions": "\"{}\"",
                                                 "showDeleteButton": false,
                                                 "deleteItemScript": "defaultBehaviorFn()",
-                                                "initModuleScript": "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.initModuleScript.js",
+                                                "initModuleScript": "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.initModuleScript.js",
                                                 "formatModuleScript": "",
                                                 "resolveItemScript": "return item",
-                                                "filterModulesScript": "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.filterModulesScript.js",
+                                                "filterModulesScript": "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.filterModulesScript.js",
                                                 "itemButtonsScript": "return [];",
                                                 "insertAtTop": false,
                                                 "targetName": "",
-                                                "getItemListScript": "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.getItemListScript.js",
+                                                "getItemListScript": "datasetSelectForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.getItemListScript.js",
                                                 "formatItemListScript": "return list;",
                                                 "formatListItemModuleScript": "return item;",
                                                 "emptyNamedView": "emptyListView",
