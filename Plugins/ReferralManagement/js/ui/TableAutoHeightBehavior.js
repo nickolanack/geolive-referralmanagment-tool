@@ -141,6 +141,15 @@ var TableAutoHeightBehavior = (function() {
 				return;
 			}			
 		
+
+			/**
+			 * TODO: this breaks when list is empty;
+			 */
+			
+			if(this._listModule.getNumberOfVisibleItems()==0){
+				return;
+			}
+
 			var detail=this._listModule.getDetailViewAt(0);
 			var detailEl=detail.getElement();
 			if(!detailEl){
