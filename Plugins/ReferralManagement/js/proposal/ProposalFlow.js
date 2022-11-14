@@ -268,7 +268,7 @@ var ProposalFlow = (function() {
 
 			}
 			
-			this._currentIndexes=data;
+			this._currentIndexes=JSON.parse(JSON.stringify(data)); //ensure object is not passed by reference
 			
 
 
