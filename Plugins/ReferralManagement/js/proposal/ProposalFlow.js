@@ -77,7 +77,7 @@ var ProposalFlow = (function() {
 
 			var me = this;
 
-			flow.addEvent('current', function(index) {
+			flow.on('current', function(index) {
 
 				if (JSON.stringify(me._stateData[stateName]) === JSON.stringify(index)) {
 					return;
@@ -105,9 +105,23 @@ var ProposalFlow = (function() {
 
 			});
 
+
+			flow.on('activateIndex',function(index){
+				console.log('activateIndex:'+index);
+			});
+
+
+			flow.on('completeIndex',function(index){
+				console.log('completeIndex:'+index);
+			});
+
+
 			if (this._stateData[stateName]) {
 				flow.setCurrentIndexes(this._stateData[stateName]);
 			}
+
+
+
 
 
 		}
@@ -367,14 +381,17 @@ var ProposalFlow = (function() {
 
 				if (this._isNextInGroup(index)) {
 					this.setActive(index + 1);
+					this.fireEvent('activateIndex', [index + 1]);
 					return;
 				}
 
 
 				this.setComplete(index);
+				this.fireEvent('completeIndex', [index]);
 				return;
 
 			}
+			this.fireEvent('activateIndex', [index]);
 			this.setActive(index);
 
 		},
