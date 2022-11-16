@@ -28,15 +28,22 @@ var ProjectLayer = (function() {
 
 				(new HTMLTagParser()).imagesUrls(metadata.description).forEach(function(url) {
 
+
+					var size=parseInt(metadata.markerSize||40);
+					if(isNaN(size)){
+						size=40;
+					}
+					size=Math.min(Math.max(10, size), 75)
+
 					options.icon = url;
 					markerOptions.icon = {
 						url: url,
-						scaledSize: new google.maps.Size(40, 40)
+						scaledSize: new google.maps.Size(size, size)
 					}
 
 					markerOptions.icons.push({
 						url: url,
-						scaledSize: new google.maps.Size(40, 40)
+						scaledSize: new google.maps.Size(size, size)
 					});
 
 
