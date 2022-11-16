@@ -1,1 +1,1 @@
-wizardDataSet.showLabels=object.value;
+wizardDataSet.markerSize=object.value;

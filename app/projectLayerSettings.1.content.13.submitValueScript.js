@@ -1,1 +1,1 @@
-wizardDataSet.initialVisibility=object.value;
+wizardDataSet.renderTiles=object.value;
