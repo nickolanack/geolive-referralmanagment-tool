@@ -6724,6 +6724,10 @@ button.toggle-dock-form {
 .dock-overlayed button.toggle-dock-form:after {
     content: "\0f152";
 }
+
+.dock-overlayed button.toggle-dock-form:before {
+    content: "Unpin Form";
+}
     
     
 
