@@ -130,7 +130,10 @@ var ProjectMap = (function() {
 			var description = '';
 			if (item.getType() == "marker") {
 				description = '<img src="' + item.getIcon() + '" />';
+
 			}
+
+			var markerSize = 40;
 
 
 			var lineColor = "#000000";
@@ -161,6 +164,7 @@ var ProjectMap = (function() {
 				fillOpacity: fillOpacity,
 				lineWidth: lineWidth,
 				description: description,
+				markerSize:markerSize
 			})
 		},
 		dropMarkerSubformHelper: function(uivew, item) {

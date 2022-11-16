@@ -413,6 +413,7 @@ var SpatialProject = (function() {
 					fillOpacity: 0.5,
 					lineWidth: 1,
 					description: "",
+					markerSize: 40,
 					script:"",
 					proj:"",
 					options:{}

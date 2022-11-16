@@ -107,7 +107,10 @@ var ProposalFlow = (function() {
 
 
 			flow.on('activateIndex',function(index){
-				console.log('activateIndex:'+index);
+				
+				var itemsInGroup=flow.itemsGroup(index);
+
+
 			});
 
 
@@ -471,7 +474,9 @@ var ProposalFlow = (function() {
 
 		},
 
-		
+		itemsGroup:function(index){
+			return this.itemsBefore(index).concat([index]).concat(this.itemsAfter(index));
+		},
 
 
 		itemsBefore(i) {
