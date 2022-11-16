@@ -1,2 +1,1 @@
-
-    wizardDataSet.script=object.value
+    wizardDataSet.proj=object.value

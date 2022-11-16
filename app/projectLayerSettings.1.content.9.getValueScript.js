@@ -1,1 +1,1 @@
- return item.getFillOpacity()+""; 
+ return item.getLineOpacity()+"";
