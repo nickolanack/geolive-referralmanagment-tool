@@ -6702,8 +6702,16 @@ li.menu-project-share button:after {
 button.toggle-dock-form:after {
     font-family: 'FontAwesome';
     content: "\0f191";
-    color: white;
     font-size: 20px;
+}
+
+button.toggle-dock-form:before {
+    content: "Pin Form";
+    margin-right: 10px;
+}
+
+.dark button.toggle-dock-form {
+    color: white;
 }
 
 button.toggle-dock-form {
@@ -6715,6 +6723,10 @@ button.toggle-dock-form {
 
 .dock-overlayed button.toggle-dock-form:after {
     content: "\0f152";
+}
+
+.dock-overlayed button.toggle-dock-form:before {
+    content: "Unpin Form";
 }
     
     
