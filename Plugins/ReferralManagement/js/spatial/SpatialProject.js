@@ -497,7 +497,7 @@ var SpatialProject = (function() {
 
 						callback(projects.filter(function(p,i){
 							return projects.indexOf(p)===i;
-						});
+						}));
 					}
 				})).getProjectList(callback);
 
