@@ -38,6 +38,7 @@ var ProjectMap = (function() {
 
 
 				//force icon scale
+				
 
 				data.icon = {
 					url: data.icon,

@@ -355,9 +355,9 @@ var ProjectLayer = (function() {
 						}
 					});
 
-					console.log(me.options.name + " " + (new KMLDocumentQuery(me.options.url)).getUrl(true));
+					console.log(me.options.name + " " + (new KMLDocumentQuery(me.options.url)).noCSRF().getUrl(true));
 
-					return new KMLDocumentQuery(me.options.url);
+					return new KMLDocumentQuery(me.options.url).noCSRF();
 				},
 				_getTileUrl: function(tile, zoom) {
 					var me = this;
