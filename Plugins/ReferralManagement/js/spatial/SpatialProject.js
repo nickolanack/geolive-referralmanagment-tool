@@ -488,13 +488,16 @@ var SpatialProject = (function() {
 					"label": "Collection Datasets",
 					"showCreateBtn": true,
 					projects: function(callback) {
-						callback(
-							([item].concat(item.getProjectObjects())).filter(function(p) {
+
+						var projects=([item].concat(item.getProjectObjects())).filter(function(p) {
 								return p.getSpatialDocuments().length > 0
 							}).concat(ProjectSelection.getProjects().filter(function(p) {
 								return p.getSpatialDocuments().length > 0
-							}))
-						);
+							}));
+
+						callback(projects.filter(function(p,i){
+							return projects.indexOf(p)===i;
+						});
 					}
 				})).getProjectList(callback);
 
