@@ -192,7 +192,13 @@ var SpatialProject = (function() {
 			var me = this;
 			window.GetSpatialFiles = function() {
 
-				return me.getProjectLayers(item).concat(me.getSelectionLayers())
+				layers = me.getProjectLayers(item).concat(me.getSelectionLayers());
+				ids=layers.map(function(l){ return l.id ; })
+
+				//filter unique
+				return layers.filter(function(l, i){
+					return ids.indexOf(l.id)===i;
+				});
 
 			}
 
