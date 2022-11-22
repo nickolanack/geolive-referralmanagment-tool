@@ -95,17 +95,7 @@ var ProposalFlow = (function() {
 				 */
 				
 
-				newState.forEach(function(groupState, groupIndex){
-
-					var index=parseInt((groupState+"").split(":").shift());
-
-					var prevGroupState=previousState[groupIndex];
-					if(groupState!==prevGroupState){
-						var options = flow.getOptionsForStep(index);
-						console.log(options);
-					}
-
-				});
+				me._checkStepsCompleted(newState, previousState);
 
 
 
@@ -147,6 +137,66 @@ var ProposalFlow = (function() {
 
 
 
+
+		},
+		_checkStepsCompleted:function(newState, prevState){
+
+			var me=this;
+			newState.forEach(function(groupState, groupIndex){
+
+
+				var prevGroupState=prevState[groupIndex];
+
+				var index=parseInt((groupState+"").split(":").shift());
+				var prevIndex=parseInt((prevGroupState+"").split(":").shift());
+
+				if(prevIndex<index){
+
+					var completedIndexes=[];
+
+					for(var i=prevIndex;i<index;i++){
+						completedIndexes.push(i);
+					}
+
+					if((groupState+"").indexOf(":complete")>0){
+						completedIndexes.push(index;
+					}
+
+					me.fireEvent('completed', [completedIndexes]);
+
+				}
+
+				if(prevIndex===index&&groupState!==prevGroupState){
+
+					if((groupState+"").indexOf(":complete")>0){
+						me.fireEvent('completed', [[index]]);
+					}else{
+						me.fireEvent('reverted', [[index]]);
+					}
+
+				}
+
+
+				if(prevIndex>index){
+
+					var revertedIndexes=[];
+
+					for(var i=index;i<prevIndex;i++){
+						revertedIndexes.push(i);
+					}
+
+					if((groupState+"").indexOf(":complete")>0){
+						revertedIndexes.shift();
+					}
+
+					me.fireEvent('reverted', [revertedIndexes]);
+
+				}
+
+
+				
+
+			});
 
 		}
 
