@@ -28438,16 +28438,16 @@
                             "Displays the form from parameters before rendering the report.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 408,
-                            "y": 510
+                            "x": 428,
+                            "y": 530
                         },
                         "children": [
                             "Displays the form from parameters before rendering the report.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 368,
-                                    "y": 687
+                                    "x": 388,
+                                    "y": 707
                                 }
                             }
                         ],
@@ -28462,15 +28462,20 @@
                                     "modules": [
                                         "Displays the form from parameters before rendering the report.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
-                                            "type": "InlineHtml",
+                                            "type": "Template",
                                             "config": {
                                                 "className": "",
+                                                "elementType": "span",
+                                                "elementOptions": [],
                                                 "text": "Report options",
                                                 "template": "html.reportOptionsForm",
                                                 "templateVariablesScript": "{}",
                                                 "formatTextScript": "Displays the form from parameters before rendering the report.metadata.children.1.builderMetadata.positions.content.modules.1.config.formatTextScript.js",
                                                 "formatVariablesScript": "Displays the form from parameters before rendering the report.metadata.children.1.builderMetadata.positions.content.modules.1.config.formatVariablesScript.js",
+                                                "requestTemplateScript": "defaultBehaviour();",
                                                 "ajaxRequestTemplate": true,
+                                                "namedFormView": "",
+                                                "formOptions": [],
                                                 "identifier": "htmlLabel"
                                             }
                                         },
@@ -28479,6 +28484,8 @@
                                             "config": {
                                                 "listClassName": "inline-form-list--",
                                                 "className": "",
+                                                "elementType": "div",
+                                                "elementOptions": "{}",
                                                 "identifier": "",
                                                 "viewType": "form",
                                                 "namedView": "defaultView",
