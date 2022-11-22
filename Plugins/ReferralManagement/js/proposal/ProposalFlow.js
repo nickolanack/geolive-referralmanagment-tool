@@ -71,15 +71,17 @@ var ProposalFlow = (function() {
 		addFlow: function(flow) {
 
 
-			var stateName = flow.getStateName();
+			var workflowName = flow.getWorkflowName();
 
-			this._stateFlows[stateName] = flow;
+			this._stateFlows[workflowName] = flow;
 
 			var me = this;
 
-			flow.on('current', function(index) {
+			flow.on('current', function(newState) {
 
-				if (JSON.stringify(me._stateData[stateName]) === JSON.stringify(index)) {
+				var previousState=me._stateData[workflowName];
+
+				if (JSON.stringify(previousState) === JSON.stringify(newState)) {
 					return;
 				}
 
@@ -88,8 +90,25 @@ var ProposalFlow = (function() {
 					return;
 				}
 
+				/**
+				 * state changed by user interaction
+				 */
+				
+
+				newState.forEach(function(stepState, i){
+
+					var prevStepState=previousState[i];
+					if(stepState!==prevStepState){
+						var options = flow.getOptionsForStep(i);
+						console.log(options);
+					}
+
+				});
+
+
+
 				var data = {};
-				data[stateName] = index;
+				data[workflowName] = newState;
 
 				var setStateQuery = new AjaxControlQuery(CoreAjaxUrlRoot, 'set_state_data', {
 					"plugin": "ReferralManagement",
@@ -99,7 +118,7 @@ var ProposalFlow = (function() {
 
 				setStateQuery.addEvent('success', function(resp) {
 
-					me._stateData[stateName] = resp.stateData[stateName];
+					me._stateData[workflowName] = resp.stateData[workflowName];
 
 				}).execute();
 
@@ -119,8 +138,8 @@ var ProposalFlow = (function() {
 			});
 
 
-			if (this._stateData[stateName]) {
-				flow.setCurrentIndexes(this._stateData[stateName]);
+			if (this._stateData[workflowName]) {
+				flow.setCurrentIndexes(this._stateData[workflowName]);
 			}
 
 
@@ -162,7 +181,7 @@ var ProposalFlow = (function() {
 
 		initialize: function(label, stateName, item) {
 
-			this._stateName = stateName;
+			this._workflowName = stateName;
 			this._item = item;
 
 			this.element = new Element('div', {
@@ -246,6 +265,9 @@ var ProposalFlow = (function() {
 
 
 
+		},
+		getOptionsForStep:function(i){
+			return me._stepOptions[i];
 		},
 		_initCurrent: function() {
 
@@ -338,8 +360,8 @@ var ProposalFlow = (function() {
 			return el;
 		},
 
-		getStateName: function() {
-			return this._stateName;
+		getWorkflowName: function() {
+			return this._workflowName;
 		},
 		getItem: function() {
 			return this._item;
@@ -372,6 +394,8 @@ var ProposalFlow = (function() {
 				me.toggle(clickIndex);
 			});
 		},
+
+
 
 		toggle: function(index) {
 
