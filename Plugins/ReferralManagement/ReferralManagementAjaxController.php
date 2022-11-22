@@ -967,12 +967,18 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function generateReportField($json) {
 
-		$value = (new \ReferralManagement\Report($json->project))
-			->generateReportField($json->template , isset($json->parameters) ? $json->parameters : null);
+		if(isset($json->markdown)&&$json->markdown===true){
+
+			return array(
+				'value'=>(new \ReferralManagement\Report($json->project))
+				->generateReportFieldMarkdown($json->template , isset($json->parameters) ? $json->parameters : null)
+			);
+
+		}
 
 		return array(
-			'value'=>$value
-		);
+			'value'=>(new \ReferralManagement\Report($json->project))
+			->generateReportField($json->template , isset($json->parameters) ? $json->parameters : null)
 
 	}
 
