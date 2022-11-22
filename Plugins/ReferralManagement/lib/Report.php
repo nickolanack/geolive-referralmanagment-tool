@@ -163,7 +163,7 @@ class Report {
 
 	public function generateReportField($templateString, $parameters = null) {
 
-		$template = new \core\TemplateRenderer($templateString);
+		$template = new \core\TemplateRenderer($templateString)->sandbox();
 		$data = $this->getReportData($parameters, $templateString);
 
 		return $template->render($data);
