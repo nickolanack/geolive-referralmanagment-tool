@@ -4,7 +4,7 @@ FormBuilder.addPreprocessor('TemplateValue', function(item, cb){
 				"plugin": "ReferralManagement",
 				"project": listModule.getListItem().getProject(),
 				"template": item.getDefaultValue(),
-				'markdown': true
+				'markdown': item.getFieldType()==='template'
 			})).on('success',function(resp){
 
 				cb(resp.value);
