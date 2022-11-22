@@ -173,6 +173,8 @@ class Report {
 
 	public function generateReportFieldMarkdown($templateString, $parameters = null) {
 
+		include_once GetPath('{widgets}/CustomContent/vendor/autoload.php');
+
 		return (new \Parsedown())
 			->setSafeMode(true)
 			->text($this->generateReportField($templateString, $parameters));
