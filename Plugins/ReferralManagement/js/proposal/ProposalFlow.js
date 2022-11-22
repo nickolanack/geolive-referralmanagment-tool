@@ -55,9 +55,48 @@ var ProposalFlow = (function() {
 
 
 
-			}).execute()
+			}).execute();
 
 
+
+			var me=this;
+
+			this.on('completed', function(flow, steps){
+
+				
+				steps.forEach(function(step){
+
+					var camel=me._toCamelCase('completed '+getWorkflowName.getWorkflowName()+' '+flow.getOptionsForStep(step).name);
+					me.fireEvent(camel,[flow, step]);
+
+				});
+
+
+			});
+
+			this.on('reverted', function(flow, steps){
+				
+			});
+
+
+		},
+
+
+		_toCamelCase: function(label) {
+			
+			var parameterName = label.split(' ').filter(function(str) {
+				return str.length > 0;
+			}).map(function(str, i) {
+
+				if (i == 0) {
+					return str[0].toLowerCase() + (str.length > 1 ? str.slice(1) : '');
+				}
+				return str;
+
+			}).join('');
+
+			return parameterName;
+			
 		},
 
 
@@ -95,7 +134,7 @@ var ProposalFlow = (function() {
 				 */
 				
 
-				me._checkStepsCompleted(newState, previousState);
+				me._checkStepsCompleted(flow, newState, previousState);
 
 
 
@@ -139,7 +178,7 @@ var ProposalFlow = (function() {
 
 
 		},
-		_checkStepsCompleted:function(newState, prevState){
+		_checkStepsCompleted:function(flow, newState, prevState){
 
 			var me=this;
 			newState.forEach(function(groupState, groupIndex){
@@ -162,16 +201,16 @@ var ProposalFlow = (function() {
 						completedIndexes.push(index);
 					}
 
-					me.fireEvent('completed', [completedIndexes]);
+					me.fireEvent('completed', [flow, completedIndexes]);
 
 				}
 
 				if(prevIndex===index&&groupState!==prevGroupState){
 
 					if((groupState+"").indexOf(":complete")>0){
-						me.fireEvent('completed', [[index]]);
+						me.fireEvent('completed', [flow, [index]]);
 					}else{
-						me.fireEvent('reverted', [[index]]);
+						me.fireEvent('reverted', [flow, [index]]);
 					}
 
 				}
@@ -189,7 +228,7 @@ var ProposalFlow = (function() {
 						revertedIndexes.shift();
 					}
 
-					me.fireEvent('reverted', [revertedIndexes]);
+					me.fireEvent('reverted', [flow, revertedIndexes]);
 
 				}
 
