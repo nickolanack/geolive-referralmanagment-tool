@@ -88,10 +88,10 @@ var ProposalFlow = (function() {
 				return str.length > 0;
 			}).map(function(str, i) {
 
-				if (i == 0) {
-					return str[0].toLowerCase() + (str.length > 1 ? str.slice(1) : '');
+				if (i > 0) {
+					return str[0].toUpperCase() + (str.length > 1 ? str.slice(1).toLowerCase() : '');
 				}
-				return str;
+				return str.toLowerCase();
 
 			}).join('');
 
