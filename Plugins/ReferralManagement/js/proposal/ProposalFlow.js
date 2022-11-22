@@ -159,7 +159,7 @@ var ProposalFlow = (function() {
 					}
 
 					if((groupState+"").indexOf(":complete")>0){
-						completedIndexes.push(index;
+						completedIndexes.push(index);
 					}
 
 					me.fireEvent('completed', [completedIndexes]);
