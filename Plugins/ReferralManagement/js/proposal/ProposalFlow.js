@@ -267,7 +267,7 @@ var ProposalFlow = (function() {
 
 		},
 		getOptionsForStep:function(i){
-			return me._stepOptions[i];
+			return this._stepOptions[i];
 		},
 		_initCurrent: function() {
 
