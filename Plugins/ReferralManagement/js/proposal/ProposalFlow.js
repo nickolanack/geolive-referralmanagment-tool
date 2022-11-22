@@ -20,7 +20,7 @@ var ProposalFlow = (function() {
 
 
 	var FlowGroup = new Class({
-
+		Implements:[Events],
 		initialize: function(item) {
 			this._item = item;
 
