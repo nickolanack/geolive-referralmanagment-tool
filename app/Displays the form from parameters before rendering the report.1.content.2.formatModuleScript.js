@@ -1,4 +1,4 @@
-FormBuilder.addPreprocessor('TemplateValue', function(item, textField){
+FormBuilder.addPreprocessor('TemplateValue', function(item, cb){
     
     (new AjaxControlQuery(CoreAjaxUrlRoot, 'generate_report_field', {
 				"plugin": "ReferralManagement",
@@ -6,7 +6,7 @@ FormBuilder.addPreprocessor('TemplateValue', function(item, textField){
 				"template": item.getDefaultValue()
 			})).on('success',function(resp){
 
-				textField.setValue(resp.value);
+				cb(resp.value);
 
 			}).execute();
     
