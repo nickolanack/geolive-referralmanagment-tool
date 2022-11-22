@@ -338,7 +338,7 @@ var ProposalFlow = (function() {
 
 		appendStep: function(name, options) {
 
-			options = options || {};
+			options = ObjectAppend_({name:name}, options || {});
 
 			var el = this.flowEl.appendChild(new Element('li', options || {}));
 			el.setAttribute('data-label', name);
