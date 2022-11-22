@@ -66,7 +66,7 @@ var ProposalFlow = (function() {
 				
 				steps.forEach(function(step){
 
-					var camel=me._toCamelCase('completed '+getWorkflowName.getWorkflowName()+' '+flow.getOptionsForStep(step).name);
+					var camel=me._toCamelCase('completed '+flow.getWorkflowName()+' '+flow.getOptionsForStep(step).name);
 					me.fireEvent(camel,[flow, step]);
 
 				});
