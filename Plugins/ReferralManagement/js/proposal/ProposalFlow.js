@@ -95,11 +95,13 @@ var ProposalFlow = (function() {
 				 */
 				
 
-				newState.forEach(function(stepState, i){
+				newState.forEach(function(groupState, groupIndex){
 
-					var prevStepState=previousState[i];
-					if(stepState!==prevStepState){
-						var options = flow.getOptionsForStep(i);
+					var index=parseInt((groupState+"").split(":").shift());
+
+					var prevGroupState=previousState[groupIndex];
+					if(groupState!==prevGroupState){
+						var options = flow.getOptionsForStep(index);
 						console.log(options);
 					}
 
