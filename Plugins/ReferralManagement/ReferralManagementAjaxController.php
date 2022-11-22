@@ -979,6 +979,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		return array(
 			'value'=>(new \ReferralManagement\Report($json->project))
 			->generateReportField($json->template , isset($json->parameters) ? $json->parameters : null)
+		);
 
 	}
 
