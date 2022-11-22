@@ -170,6 +170,15 @@ class Report {
 
 	}
 
+
+	public function generateReportFieldMarkdown($templateString, $parameters = null) {
+
+		return (new \Parsedown())
+			->setSafeMode(true)
+			->text($this->generateReportField($templateString, $parameters));
+
+	}
+
 	public function generateReport($templateName, $defaultContent, $parameters = null) {
 
 		$this->reportName = $templateName;
