@@ -407,7 +407,7 @@ var TeamMember = new Class({
 	setUser: function(u) {
 		var me = this;
 		me._u = u;
-		me.options.metadata = Object.append(me.options.metadata, u.options.metadata);
+		me.options.metadata = Object.append({}, me.options.metadata, u.options.metadata);
 	},
 	setMissingUser: function() {
 		var me = this;

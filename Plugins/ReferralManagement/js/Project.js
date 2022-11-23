@@ -88,6 +88,8 @@ var Project = (function() {
 			delete data.modifiedDateTimestamp;
 			delete data.computed;
 
+			delete data.attributes.teamMembers; //this gets merged
+
 
 			data.tasks=data.tasks.map(function(task){
 
