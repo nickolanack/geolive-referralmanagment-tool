@@ -86,6 +86,7 @@ var Project = (function() {
 
 			delete data.modifiedDate;
 			delete data.modifiedDateTimestamp;
+			delete data.computed;
 
 
 			data.tasks=data.tasks.map(function(task){
