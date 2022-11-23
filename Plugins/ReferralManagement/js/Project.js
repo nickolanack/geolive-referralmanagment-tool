@@ -100,7 +100,7 @@ var Project = (function() {
 			return data;
 
 
-		}
+		},
 
 
 		_setData: function(data) {
