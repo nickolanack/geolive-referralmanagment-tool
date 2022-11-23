@@ -116,7 +116,7 @@ var TaskItem = (function() {
 				return {};
 			}
 
-			if(typeof this.data.metadata==='string'&&this.metadata[0]==='{'){
+			if(typeof this.data.metadata==='string'&&this.data.metadata[0]==='{'){
 				return JSON.parse(this.data.metadata);
 			}
 
