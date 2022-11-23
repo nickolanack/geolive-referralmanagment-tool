@@ -111,6 +111,24 @@ var TaskItem = (function() {
 
 		},
 
+		getMetadata:function(){
+			if(!(this.data&&this.data.metadata)){
+				return {};
+			}
+
+			if(typeof this.data.metadata==='string'&&this.metadata[0]==='{'){
+				return JSON.parse(this.data.metadata);
+			}
+
+			if(isObject_(this.data.metadata)){
+				return JSON.parse(JSON.stringify(this.data.metadata));
+			}
+
+			return {};
+
+
+		},
+
 		setAttributes: function(attributes) {
 			var me = this;
 			me._attributes = attributes;
