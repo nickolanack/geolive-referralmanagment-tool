@@ -138,8 +138,8 @@ var Project = (function() {
 
 		_throttleChangeEvent:function(){
 
-			if(me._lockChangeTimeout===true){
-				me._scheduleChange=true;
+			if(this._lockChangeTimeout===true){
+				this._scheduleChange=true;
 				return;
 			}
 
