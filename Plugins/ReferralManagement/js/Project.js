@@ -131,8 +131,24 @@ var Project = (function() {
 			me._updateTasksCollection(data);
 
 			if (change) {
-				me.fireEvent('change');
+				me._throttleChangeEvent();
 			}
+
+		},
+
+		_throttleChangeEvent:function(){
+
+
+			if(this._throttleChangeTimeout){
+				clearTimeout(this._throttleChangeTimeout);
+			}
+
+			var me=this;
+			this._throttleChangeTimeout=setTimeout(function(){
+				me._throttleChangeTimeout=null;
+				me.fireEvent('change');
+			}, 250)
+			
 
 		},
 
