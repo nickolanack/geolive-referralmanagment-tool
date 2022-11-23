@@ -72,7 +72,7 @@ var ProposalFlow = (function() {
 					 */
 					
 
-					var target=(flow.getWorkflowName()+'.'+flow.getOptionsForStep(step).name).split(' ').join('_');
+					var target=(flow.getWorkflowName()+'.'+flow.getOptionsForStep(step).name).split(' ').join('_').toLowerCase()
 
 					me._item.getTasks().forEach(function(t){
 						var meta=t.getMetadata();
@@ -108,7 +108,7 @@ var ProposalFlow = (function() {
 					 * Extract this behavior out
 					 */
 
-					var target=(flow.getWorkflowName()+'.'+flow.getOptionsForStep(step).name).split(' ').join('_');
+					var target=(flow.getWorkflowName()+'.'+flow.getOptionsForStep(step).name).split(' ').join('_').toLowerCase()
 
 					me._item.getTasks().forEach(function(t){
 						var meta=t.getMetadata();
