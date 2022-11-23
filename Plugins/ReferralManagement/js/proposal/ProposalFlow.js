@@ -73,10 +73,10 @@ var ProposalFlow = (function() {
 
 					var target=(flow.getWorkflowName()+'.'+flow.getOptionsForStep(step).name).split(' ').join('_');
 
-					me._item.getTasks().filter(function(t){
+					me._item.getTasks().forEach(function(t){
 						var meta=t.getMetadata();
 						if(meta.triggers&&isArray_(meta.triggers)&&meta.triggers.indexOf(target)&&(!t.isComplete())){
-							t.setComplete(!item.isComplete());
+							t.setComplete(true);
        						t.save();
 						}
 					});
@@ -97,6 +97,35 @@ var ProposalFlow = (function() {
 
 			this.on('reverted', function(flow, steps){
 				
+
+				steps.forEach(function(step){
+
+
+					/**
+					 * Extract this behavior out
+					 */
+
+					var target=(flow.getWorkflowName()+'.'+flow.getOptionsForStep(step).name).split(' ').join('_');
+
+					me._item.getTasks().forEach(function(t){
+						var meta=t.getMetadata();
+						if(meta.triggers&&isArray_(meta.triggers)&&meta.triggers.indexOf(target)&&(t.isComplete())){
+							t.setComplete(false);
+       						t.save();
+						}
+					});
+
+
+					/**
+					 * ...
+					 */
+
+
+					var camel=me._toCamelCase('reverted '+flow.getWorkflowName()+' '+flow.getOptionsForStep(step).name);
+					me.fireEvent(camel,[flow, step]);
+
+				});
+
 			});
 
 
