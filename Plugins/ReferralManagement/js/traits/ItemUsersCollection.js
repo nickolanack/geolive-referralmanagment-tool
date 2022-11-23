@@ -129,7 +129,7 @@ var ItemUsersCollection = (function(){
 				
 					        userType:"user",
 					        id:user.id,
-					        metadata:ObjectAppend({}, user) //unlink object ref
+					        metadata:ObjectAppend_({}, user) //unlink object ref
 					       
 					    });
 					    
