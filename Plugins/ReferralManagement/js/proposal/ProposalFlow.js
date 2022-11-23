@@ -70,14 +70,17 @@ var ProposalFlow = (function() {
 					/**
 					 * Extract this behavior out
 					 */
+					
 
 					var target=(flow.getWorkflowName()+'.'+flow.getOptionsForStep(step).name).split(' ').join('_');
 
 					me._item.getTasks().forEach(function(t){
 						var meta=t.getMetadata();
-						if(meta.triggers&&isArray_(meta.triggers)&&meta.triggers.indexOf(target)&&(!t.isComplete())){
-							t.setComplete(true);
-       						t.save();
+						if(meta.triggers&&isArray_(meta.triggers)&&meta.triggers.indexOf(target)>=0){
+							if(!t.isComplete()){
+								t.setComplete(true);
+       							t.save();
+       						}
 						}
 					});
 
@@ -109,9 +112,11 @@ var ProposalFlow = (function() {
 
 					me._item.getTasks().forEach(function(t){
 						var meta=t.getMetadata();
-						if(meta.triggers&&isArray_(meta.triggers)&&meta.triggers.indexOf(target)&&(t.isComplete())){
-							t.setComplete(false);
-       						t.save();
+						if(meta.triggers&&isArray_(meta.triggers)&&meta.triggers.indexOf(target)>=0){
+							if(t.isComplete()){
+								t.setComplete(false);
+	       						t.save();
+	       					}
 						}
 					});
 
