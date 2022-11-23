@@ -80,6 +80,28 @@ var Project = (function() {
 
 		},
 
+		_comparisonData:function(data){
+
+			data=JSON.parse(JSON.stringify(data));
+
+			delete data.modifiedDate;
+			delete data.modifiedDateTimestamp;
+
+
+			data.tasks=data.tasks.map(function(task){
+
+				delete task.modifiedDate;
+				delete task.modifiedDateTimestamp;
+
+				return task;
+			})
+
+
+			return data;
+
+
+		}
+
 
 		_setData: function(data) {
 			var me = this;
@@ -90,7 +112,7 @@ var Project = (function() {
 
 				me._mergeUserData(data);
 
-				if(JSON.stringify(data)==JSON.stringify(me.data)){
+				if(JSON.stringify(this._comparisonData(data))==JSON.stringify(this._comparisonData(me.data))){
 					return;
 				}
 
