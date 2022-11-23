@@ -6265,6 +6265,12 @@ button.form-btn.primary-btn.hide {
     }
 }
 
+
+.top-left>.lbl-txt {
+    display: inline-block;
+    max-width: calc( 100% - 20px );
+}
+
 button.inline-edit.top-right {
     position: absolute;
     top: 0;
