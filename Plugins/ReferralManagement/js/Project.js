@@ -138,6 +138,11 @@ var Project = (function() {
 
 		_throttleChangeEvent:function(){
 
+			if(me._lockChangeTimeout===true){
+				me._scheduleChange=true;
+				return;
+			}
+
 
 			if(this._throttleChangeTimeout){
 				clearTimeout(this._throttleChangeTimeout);
@@ -147,6 +152,14 @@ var Project = (function() {
 			this._throttleChangeTimeout=setTimeout(function(){
 				me._throttleChangeTimeout=null;
 				me.fireEvent('change');
+				me._lockChangeTimeout=true;
+				setTimeout(function(){
+					me._lockChangeTimeout=false;
+					if(me._scheduleChange){
+						me.fireEvent('change');
+					}
+					me._scheduleChange=false;
+				});
 			}, 250)
 			
 
