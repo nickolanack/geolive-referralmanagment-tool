@@ -254,6 +254,13 @@
                     "plugin": "UserInterface",
                     "pluginView": "widget",
                     "widget": "mobile-privacy"
+                },
+                {
+                    "name": "marketing",
+                    "view": "plugin",
+                    "plugin": "UserInterface",
+                    "pluginView": "widget",
+                    "widget": "marketing"
                 }
             ],
             "useRemoteServerUI": false,
@@ -29842,6 +29849,20 @@
                 "_diagramState": []
             },
             "readAccess": "public"
+        }
+    },
+    "widget.539": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.marketingTemplate-html.text",
+            "target": "module.marketingTemplate-html.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "#Marketing content"
         }
     }
 }
