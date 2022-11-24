@@ -29860,9 +29860,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
-            "saveTemplateAsData": false,
-            "contentTemplate": "#Marketing content"
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "#Marketing content",
+            "readAccess": "public"
         }
     }
 }
