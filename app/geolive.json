@@ -29819,7 +29819,7 @@
             "templateName": "marketing",
             "requireTarget": false,
             "resolveItemScript": "return item",
-            "onRenderApplictionScript": "",
+            "onRenderApplictionScript": "marketing.onRenderApplictionScript.js",
             "formatModulesScript": "",
             "notifyViewer": false,
             "useRemote": "",
