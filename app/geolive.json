@@ -29870,16 +29870,17 @@
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
-            "cacheable": false,
-            "link": false,
-            "sass": false,
-            "widgetTitle": "",
-            "target": "none",
+            "cacheable": true,
+            "link": true,
+            "sass": true,
+            "widgetTitle": "marketingStyle",
+            "target": "marketingStyle",
             "customCSS": "",
             "sassParamters": [],
             "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
-            "saveAsData": false
+            "saveAsData": true,
+            "readAccess": "public"
         }
     }
 }
