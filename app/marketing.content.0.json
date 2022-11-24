@@ -6,11 +6,11 @@
         "elementOptions": "{}",
         "text": "#Marketing content",
         "template": "marketingTemplate.html",
-        "templateVariablesScript": "",
+        "templateVariablesScript": "{}",
         "formatTextScript": "",
         "formatVariablesScript": "",
         "requestTemplateScript": "defaultBehaviour();",
-        "ajaxRequestTemplate": false,
+        "ajaxRequestTemplate": true,
         "namedFormView": "",
         "formOptions": "{}",
         "identifier": "htmlLabel"
