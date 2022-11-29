@@ -525,22 +525,47 @@ var ProposalFlow = (function() {
 			el.setAttribute('data-targetName',this.getTargetNameForStep(i));
 			var targets=this.getTargetTasks(i);
 
-			if(targets.length>0){
-				el.addClass('has-targets')
-				var linkedTasks=el.appendChild(new Element('span',{"class":"task-dec"}));
-
-					new UIPopover(linkedTasks, {
-				        description:'This step is linked to ' + (targets.length==1?'a task':'some tasks') + 
-				        	" and will automatically complete "+(targets.length==1?'it':'them'),
-				        anchor:UIPopover.AnchorAuto()
-				    });
-
-
-			}
+			this._addTargetDecorators(el, i)
 
 
 			return el;
 		},
+
+
+		_addTargetDecorators:function(el, i){
+
+			el.setAttribute('data-targetName',this.getTargetNameForStep(i));
+			var targets=this.getTargetTasks(i);
+
+			if(targets.length>0){
+				el.addClass('has-targets')
+				var linkedTasks=el.appendChild(new Element('span',{"class":"task-dec"}));
+
+				new UIPopover(linkedTasks, {
+			        description:'This step is linked to ' + (targets.length==1?'a task':'some tasks') + 
+			        	" and will automatically complete "+(targets.length==1?'it':'them'),
+			        anchor:UIPopover.AnchorAuto()
+			    });
+
+
+			    var completed=targets.filter(function(t){
+			    	return t.isComplete();
+			    });
+			    if(completed.length==0){
+			    	linkedTasks.addClass('none-complete');
+			    }
+
+			    if(completed.length>0&&completed.length<targets.length){
+			    	linkedTasks.addClass('some-complete');
+			    }
+
+			    if(completed.length==targets.length){
+			    	linkedTasks.addClass('all-complete');
+			    }
+
+
+			}
+		}
 
 		getWorkflowName: function() {
 			return this._workflowName;
