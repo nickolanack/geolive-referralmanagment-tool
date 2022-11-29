@@ -22,7 +22,7 @@ var ItemTriggers=(function(){
 
 			var str=this.getTriggers().join(', ');
 
-			return str.substring(1, str.length-1);
+			return str;
 		},
 
 		canTrigger:function(){
