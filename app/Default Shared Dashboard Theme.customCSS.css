@@ -833,6 +833,18 @@ div.field-value-module.inline.ids{
         
     }
     
+    
+    li>span.task-dec {
+        position: absolute;
+        bottom: 4px;
+        right: 4px;
+        width: 20px;
+        height: 20px;
+        background: limegreen;
+        border-radius: 100%;
+        box-shadow: 0 0 3px black;
+    }
+    
     li.no-link > span.link-dec:after {
         content: ".";
         right: -24px;
