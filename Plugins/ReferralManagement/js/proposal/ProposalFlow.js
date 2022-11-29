@@ -1,6 +1,25 @@
 var ProposalFlow = (function() {
 
 
+	var _toCamelCase=function(label) {
+			
+		var parameterName = label.split(' ').filter(function(str) {
+			return str.length > 0;
+		}).map(function(str, i) {
+
+			if (i > 0) {
+				return str[0].toUpperCase() + (str.length > 1 ? str.slice(1).toLowerCase() : '');
+			}
+			return str.toLowerCase();
+
+		}).join('');
+
+		return parameterName;
+		
+	};
+
+
+
 	var stateConfig = null;
 
 	(new AjaxControlQuery(CoreAjaxUrlRoot, "get_configuration", {
@@ -71,17 +90,13 @@ var ProposalFlow = (function() {
 					 * Extract this behavior out
 					 */
 					
-
-					var target=(flow.getWorkflowName()+'.'+flow.getOptionsForStep(step).name).split(' ').join('_').toLowerCase()
-
-					me._item.getTasks().forEach(function(t){
-						var meta=t.getMetadata();
-						if(meta.triggers&&isArray_(meta.triggers)&&meta.triggers.indexOf(target)>=0){
-							if(!t.isComplete()){
-								t.setComplete(true);
-       							t.save();
-       						}
-						}
+					flow.getTargetTasks(step).forEach(function(t){
+					
+						if(!t.isComplete()){
+							t.setComplete(true);
+   							t.save();
+   						}
+					
 					});
 
 
@@ -90,7 +105,7 @@ var ProposalFlow = (function() {
 					 */
 
 
-					var camel=me._toCamelCase('completed '+flow.getWorkflowName()+' '+flow.getOptionsForStep(step).name);
+					var camel=_toCamelCase('completed '+flow.getWorkflowName()+' '+flow.getOptionsForStep(step).name);
 					me.fireEvent(camel,[flow, step]);
 
 				});
@@ -108,16 +123,13 @@ var ProposalFlow = (function() {
 					 * Extract this behavior out
 					 */
 
-					var target=(flow.getWorkflowName()+'.'+flow.getOptionsForStep(step).name).split(' ').join('_').toLowerCase()
-
-					me._item.getTasks().forEach(function(t){
-						var meta=t.getMetadata();
-						if(meta.triggers&&isArray_(meta.triggers)&&meta.triggers.indexOf(target)>=0){
-							if(t.isComplete()){
-								t.setComplete(false);
-	       						t.save();
-	       					}
-						}
+					flow.getTargetTasks(step).forEach(function(t){
+					
+						if(t.isComplete()){
+							t.setComplete(false);
+       						t.save();
+       					}
+						
 					});
 
 
@@ -126,7 +138,7 @@ var ProposalFlow = (function() {
 					 */
 
 
-					var camel=me._toCamelCase('reverted '+flow.getWorkflowName()+' '+flow.getOptionsForStep(step).name);
+					var camel=_toCamelCase('reverted '+flow.getWorkflowName()+' '+flow.getOptionsForStep(step).name);
 					me.fireEvent(camel,[flow, step]);
 
 				});
@@ -134,24 +146,6 @@ var ProposalFlow = (function() {
 			});
 
 
-		},
-
-
-		_toCamelCase: function(label) {
-			
-			var parameterName = label.split(' ').filter(function(str) {
-				return str.length > 0;
-			}).map(function(str, i) {
-
-				if (i > 0) {
-					return str[0].toUpperCase() + (str.length > 1 ? str.slice(1).toLowerCase() : '');
-				}
-				return str.toLowerCase();
-
-			}).join('');
-
-			return parameterName;
-			
 		},
 
 
@@ -412,6 +406,28 @@ var ProposalFlow = (function() {
 
 
 		},
+
+		/**
+		 * used with tasks and other events
+		 */
+		getTargetNameForStep:function(i){
+			var target=(this.getWorkflowName()+'.'+this.getOptionsForStep(i).name).split(' ').join('_').toLowerCase()
+		},
+
+		getTargetTasks:function(i){
+
+			var target=this.getTargetNameForStep(i);
+
+			return this._item.getTasks().filter(function(t){
+				var meta=t.getMetadata();
+				return meta.triggers&&isArray_(meta.triggers)&&meta.triggers.indexOf(target)>=0;
+			});
+
+
+		},
+
+		
+
 		getOptionsForStep:function(i){
 			return this._stepOptions[i];
 		},
@@ -487,8 +503,9 @@ var ProposalFlow = (function() {
 			var el = this.flowEl.appendChild(new Element('li', options || {}));
 			el.setAttribute('data-label', name);
 			if (this._last) {
-				this._last.appendChild(new Element('span'));
+				this._last.appendChild(new Element('span',{"class":"link-dec"}));
 			}
+
 
 
 			this.els.push(el);
@@ -502,6 +519,17 @@ var ProposalFlow = (function() {
 			if (options.link === false) {
 				el.addClass('no-link');
 			}
+
+			var i=this.els.indexOf(el);
+
+			el.setAttribute('data-targetName',this.getTargetNameForStep(i));
+			var targets=this.getTargetTasks(i);
+
+			if(targets.length>0){
+				el.addClass('has-targets')
+				el.appendChild(new Element('span',{"class":"task-dec"}));
+			}
+
 
 			return el;
 		},

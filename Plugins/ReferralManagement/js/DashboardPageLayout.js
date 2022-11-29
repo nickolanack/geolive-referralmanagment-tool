@@ -125,8 +125,8 @@ var DashboardPageLayout = (function() {
 				}
 			});
 
-
 			//item.removeClass('w-30');
+			
 		},
 
 		mainCol: function(items) {
