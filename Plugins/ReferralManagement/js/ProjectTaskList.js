@@ -271,7 +271,7 @@ var ProjectTaskList = (function() {
 			});
 
 
-			modalButton = new ModalFormButtonModule(application, taskGroup /*new MockDataTypeItem()*/ , {
+			var modalButton = new ModalFormButtonModule(application, taskGroup /*new MockDataTypeItem()*/ , {
 				label: "Add default " + category.toLowerCase() + " tasks",
 				formName: "taskDefaultItems",
 				formOptions: {
