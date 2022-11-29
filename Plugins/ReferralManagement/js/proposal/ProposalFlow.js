@@ -91,7 +91,7 @@ var ProposalFlow = (function() {
 					
 					flow.getTargetTasks(step).forEach(function(t){
 					
-						if(!t.isComplete()){
+						if((!t.isComplete())&&t.canTrigger()){
 							t.setComplete(true);
    							t.save();
    						}

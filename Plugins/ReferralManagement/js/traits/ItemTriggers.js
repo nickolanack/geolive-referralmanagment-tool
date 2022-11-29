@@ -25,6 +25,10 @@ var ItemTriggers=(function(){
 			return str.substring(1, str.length-1);
 		},
 
+		canTrigger:function(){
+			return true;
+		},
+
 		hasTrigger:function(name){
 
 			var meta=this.getMetadata();
