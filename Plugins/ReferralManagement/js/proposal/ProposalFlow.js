@@ -411,7 +411,7 @@ var ProposalFlow = (function() {
 		 * used with tasks and other events
 		 */
 		getTargetNameForStep:function(i){
-			var target=(this.getWorkflowName()+'.'+this.getOptionsForStep(i).name).split(' ').join('_').toLowerCase()
+			return (this.getWorkflowName()+'.'+this.getOptionsForStep(i).name).split(' ').join('_').toLowerCase()
 		},
 
 		getTargetTasks:function(i){
