@@ -846,15 +846,15 @@ div.field-value-module.inline.ids{
         border: 4px solid limegreen;
     }
     
-    li>span.task-dec.some-complete
+    li>span.task-dec.some-complete{
         border-color: mediumturquoise;
     }
     
-    li>span.task-dec.none-complete
+    li>span.task-dec.none-complete{
         border-color: cornflowerblue;
     }
     
-    li>span.task-dec.some-complete
+    li>span.task-dec.some-complete{
         border-color: limegreen;
     }
     
