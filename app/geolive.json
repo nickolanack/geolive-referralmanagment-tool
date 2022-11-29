@@ -8271,16 +8271,16 @@
                             "taskForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 250,
-                            "y": 96
+                            "x": 260,
+                            "y": 106
                         },
                         "children": [
                             "taskForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 210,
-                                    "y": 386
+                                    "x": 220,
+                                    "y": 396
                                 }
                             }
                         ],
@@ -8496,7 +8496,7 @@
                                             "type": "FormTextField",
                                             "config": {
                                                 "className": "",
-                                                "label": "Triggers",
+                                                "label": "Triggers Items With",
                                                 "placeholder": "add value",
                                                 "lines": 1,
                                                 "maxChars": 0,
