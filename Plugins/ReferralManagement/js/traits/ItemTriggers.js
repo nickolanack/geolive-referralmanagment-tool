@@ -36,13 +36,6 @@ var ItemTriggers=(function(){
 			return meta.triggers&&isArray_(meta.triggers)&&meta.triggers.indexOf(name)>=0;	
 		}
 
-
-
-
-
 	});
-
-
-
 
 })();
