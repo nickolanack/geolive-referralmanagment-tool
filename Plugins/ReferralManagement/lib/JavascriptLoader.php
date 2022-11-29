@@ -112,6 +112,8 @@ class JavascriptLoader {
 		IncludeJS($dir . '/js/traits/ItemPriority.js');
 		IncludeJS($dir . '/js/traits/ItemSecurity.js');
 		IncludeJS($dir . '/js/traits/ItemAccess.js');
+		IncludeJS($dir . '/js/traits/ItemTriggers.js');
+
 
 		IncludeJS($dir . '/js/Project.js');
 
