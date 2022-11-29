@@ -828,12 +828,24 @@ div.field-value-module.inline.ids{
         border-color: mediumseagreen;
     }
     
-    li>span:after {
+    li>span.link-dec:after {
         content: "\0f061";position: absolute;right: -27px;top: 37px;font-family: 'FontAwesome';
         
     }
     
-    li.no-link > span:after {
+    
+    li>span.task-dec {
+        position: absolute;
+        bottom: 4px;
+        right: 4px;
+        width: 20px;
+        height: 20px;
+        background: limegreen;
+        border-radius: 100%;
+        box-shadow: 0 0 3px black;
+    }
+    
+    li.no-link > span.link-dec:after {
         content: ".";
         right: -24px;
         font-size: 45px;
