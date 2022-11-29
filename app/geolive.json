@@ -8271,16 +8271,16 @@
                             "taskForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 220,
-                            "y": 66
+                            "x": 230,
+                            "y": 76
                         },
                         "children": [
                             "taskForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 180,
-                                    "y": 356
+                                    "x": 190,
+                                    "y": 366
                                 }
                             }
                         ],
@@ -8483,7 +8483,7 @@
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "add another value",
                                                 "formatter": "none",
-                                                "beforeRenderModuleScript": "",
+                                                "beforeRenderModuleScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.10.config.beforeRenderModuleScript.js",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
                                                 "getValueScript": " return \"\"; ",
@@ -8505,7 +8505,7 @@
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "add another value",
                                                 "formatter": "none",
-                                                "beforeRenderModuleScript": "",
+                                                "beforeRenderModuleScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.11.config.beforeRenderModuleScript.js",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
                                                 "getValueScript": " return \"\"; ",
