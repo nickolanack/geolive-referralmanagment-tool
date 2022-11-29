@@ -8259,8 +8259,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 61,
-                    "y": 286
+                    "x": 69,
+                    "y": 201
                 },
                 "children": [
                     "taskForm.metadata.children.0.json",
@@ -8271,16 +8271,16 @@
                             "taskForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 260,
-                            "y": 106
+                            "x": 270,
+                            "y": 116
                         },
                         "children": [
                             "taskForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 220,
-                                    "y": 396
+                                    "x": 230,
+                                    "y": 406
                                 }
                             }
                         ],
@@ -8506,6 +8506,28 @@
                                                 "multiMessage": "add another value",
                                                 "formatter": "none",
                                                 "beforeRenderModuleScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.11.config.beforeRenderModuleScript.js",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return \"\"; ",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Requires Others With",
+                                                "placeholder": "add value",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "beforeRenderModuleScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.12.config.beforeRenderModuleScript.js",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
                                                 "getValueScript": " return \"\"; ",
