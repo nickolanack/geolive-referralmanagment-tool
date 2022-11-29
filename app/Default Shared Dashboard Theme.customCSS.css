@@ -868,6 +868,10 @@ div.field-value-module.inline.ids{
         
     }
     
+    li.clickable {
+        cursor:pointer;
+    }
+    
     li.current {
         border-color: cornflowerblue;
         color:cornflowerblue;
