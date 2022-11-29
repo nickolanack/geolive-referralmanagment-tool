@@ -8259,8 +8259,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 113,
-                    "y": 412
+                    "x": 61,
+                    "y": 286
                 },
                 "children": [
                     "taskForm.metadata.children.0.json",
@@ -8271,16 +8271,16 @@
                             "taskForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 336,
-                            "y": 264
+                            "x": 240,
+                            "y": 86
                         },
                         "children": [
                             "taskForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 296,
-                                    "y": 529
+                                    "x": 200,
+                                    "y": 376
                                 }
                             }
                         ],
@@ -8306,6 +8306,8 @@
                                             "type": "UIView",
                                             "config": {
                                                 "className": "",
+                                                "elementType": "div",
+                                                "elementOptions": [],
                                                 "identifier": "",
                                                 "viewType": "view",
                                                 "namedView": "singleUserTeamCollectionIconsDetail",
@@ -8420,13 +8422,14 @@
                                                     "taskForm.metadata.children.1.builderMetadata.positions.content.modules.7.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
-                                                "label": "Make this task a priority",
                                                 "showLabel": false,
+                                                "label": "Make this task a priority",
                                                 "presentationStyle": "checkbox",
                                                 "presentationRadioTrueLabel": "Yes",
                                                 "presentationRadioFalseLabel": "No",
                                                 "presentationImagesTrueImage": [],
-                                                "presentationImagesFalseImage": []
+                                                "presentationImagesFalseImage": [],
+                                                "onRenderModuleFn": ""
                                             }
                                         },
                                         {
@@ -8465,6 +8468,50 @@
                                                 "textFormatScript": "",
                                                 "onRenderModuleFn": "",
                                                 "mediaIconTint": "rgb(100, 149, 237)"
+                                            }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Auto Complete",
+                                                "placeholder": "add value",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "beforeRenderModuleScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.10.config.beforeRenderModuleScript.js",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return \"\"; ",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Triggers",
+                                                "placeholder": "add value",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "beforeRenderModuleScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.11.config.beforeRenderModuleScript.js",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return \"\"; ",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": " return defaultValidationFn() "
                                             }
                                         }
                                     ]
