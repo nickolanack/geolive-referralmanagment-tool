@@ -8271,16 +8271,16 @@
                             "taskForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 280,
-                            "y": 126
+                            "x": 290,
+                            "y": 136
                         },
                         "children": [
                             "taskForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 240,
-                                    "y": 428
+                                    "x": 250,
+                                    "y": 438
                                 }
                             }
                         ],
@@ -8510,7 +8510,7 @@
                                                 "formatValueScript": "",
                                                 "getValueScript": " return \"\"; ",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "",
+                                                "submitValueScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.11.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         },
@@ -8532,7 +8532,7 @@
                                                 "formatValueScript": "",
                                                 "getValueScript": " return \"\"; ",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "",
+                                                "submitValueScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.12.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         }
