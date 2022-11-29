@@ -565,7 +565,7 @@ var ProposalFlow = (function() {
 
 
 			}
-		}
+		},
 
 		getWorkflowName: function() {
 			return this._workflowName;
