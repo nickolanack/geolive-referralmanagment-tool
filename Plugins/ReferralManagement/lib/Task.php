@@ -73,7 +73,7 @@ class Task{
 			"description" => $json->description,
 			"dueDate" => $json->dueDate,
 			"complete" => $json->complete,
-		))) {
+		), $json->metadata)) {
 
 			GetPlugin('ReferralManagement')->notifier()->onCreateTask($taskId, $json);
 
@@ -114,7 +114,7 @@ class Task{
 			"description" => $json->description,
 			"dueDate" => $json->dueDate,
 			"complete" => $json->complete,
-		)); 
+		),  $json->metadata); 
 
 
 		GetPlugin('ReferralManagement')->notifier()->onUpdateTask($json);
