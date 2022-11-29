@@ -34,7 +34,7 @@ var ItemTriggers=(function(){
 			var meta=this.getMetadata();
 
 			return meta.triggers&&isArray_(meta.triggers)&&meta.triggers.indexOf(name)>=0;	
-		}
+		},
 
 		setTriggers:function(list){
 
