@@ -20,7 +20,7 @@ var ItemTriggers=(function(){
 
 		getTriggersString:function(){
 
-			var str=JSON.stringify(this.getTriggers());
+			var str=this.getTriggers().join(', ');
 
 			return str.substring(1, str.length-1);
 		},
