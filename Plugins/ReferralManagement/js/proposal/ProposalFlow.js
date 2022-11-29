@@ -531,7 +531,7 @@ var ProposalFlow = (function() {
 
 					new UIPopover(linkedTasks, {
 				        description:'This step is linked to ' + (targets.length==1?'a task':'some tasks') + 
-				        	" and will automatically complete them",
+				        	" and will automatically complete "+(targets.length==1?'it':'them'),
 				        anchor:UIPopover.AnchorAuto()
 				    });
 
