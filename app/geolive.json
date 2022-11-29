@@ -254,6 +254,13 @@
                     "plugin": "UserInterface",
                     "pluginView": "widget",
                     "widget": "mobile-privacy"
+                },
+                {
+                    "name": "marketing",
+                    "view": "plugin",
+                    "plugin": "UserInterface",
+                    "pluginView": "widget",
+                    "widget": "marketing"
                 }
             ],
             "useRemoteServerUI": false,
@@ -29800,6 +29807,79 @@
             "returnsValue": false,
             "cacheable": false,
             "parseMarkdown": true,
+            "readAccess": "public"
+        }
+    },
+    "widget.538": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "marketing",
+            "target": "marketing",
+            "templateName": "marketing",
+            "requireTarget": false,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "marketing.onRenderApplictionScript.js",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "useRemote": "",
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "marketing.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.539": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.marketingTemplate-html.text",
+            "target": "module.marketingTemplate-html.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "#Marketing content",
+            "readAccess": "public"
+        }
+    },
+    "widget.540": {
+        "name": "Stylesheet",
+        "instance": "CSS",
+        "parameters": {
+            "cacheable": true,
+            "link": true,
+            "sass": true,
+            "widgetTitle": "marketingStyle",
+            "target": "marketingStyle",
+            "customCSS": "",
+            "sassParamters": [],
+            "formatSassParametersScript": "return $parameters;",
+            "useRemote": "",
+            "saveAsData": true,
             "readAccess": "public"
         }
     }
