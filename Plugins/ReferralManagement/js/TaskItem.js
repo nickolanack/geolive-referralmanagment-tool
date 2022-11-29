@@ -249,7 +249,8 @@ var TaskItem = (function() {
 				team: (me._team || []).map(function(t) {
 					return t.getId()
 				}),
-				metadata:this.getMetadata()
+				m:this.getMetadata(),
+				metadata:JSON.stringify(this.getMetadata())
 			};
 
 			this._addUsersCollectionFormData(data);
