@@ -60,7 +60,8 @@ var TaskItem = (function() {
 			Events,
 			ItemUsersCollection,
 			ItemStars,
-			ItemDiscussion
+			ItemDiscussion,
+			ItemTriggers
 		],
 		initialize: function(item, data) {
 			var me = this;
