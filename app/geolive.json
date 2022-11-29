@@ -8271,16 +8271,16 @@
                             "taskForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 240,
-                            "y": 86
+                            "x": 250,
+                            "y": 96
                         },
                         "children": [
                             "taskForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 200,
-                                    "y": 376
+                                    "x": 210,
+                                    "y": 386
                                 }
                             }
                         ],
@@ -8474,7 +8474,7 @@
                                             "type": "FormTextField",
                                             "config": {
                                                 "className": "",
-                                                "label": "Auto Complete",
+                                                "label": "Auto Completes With Trigger",
                                                 "placeholder": "add value",
                                                 "lines": 1,
                                                 "maxChars": 0,
@@ -8486,7 +8486,7 @@
                                                 "beforeRenderModuleScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.10.config.beforeRenderModuleScript.js",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": " return \"\"; ",
+                                                "getValueScript": "taskForm.metadata.children.1.builderMetadata.positions.content.modules.10.config.getValueScript.js",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "",
                                                 "validateValueScript": " return defaultValidationFn() "
