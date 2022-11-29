@@ -38,7 +38,7 @@ var ItemTriggers=(function(){
 
 		setTriggers:function(list){
 
-			this.data.metadata=ObjectAppend_({}, this.data.metadata, {
+			this.data.metadata=ObjectAppend_({}, this.getMetadata(), {
 				triggers:list
 			});
 
@@ -48,7 +48,7 @@ var ItemTriggers=(function(){
 
 		setEmitters:function(list){
 
-			this.data.metadata=ObjectAppend_({}, this.data.metadata, {
+			this.data.metadata=ObjectAppend_({}, this.getMetadata(), {
 				emitters:list
 			});
 
@@ -58,7 +58,7 @@ var ItemTriggers=(function(){
 
 		setRequisites:function(list){
 
-			this.data.metadata=ObjectAppend_({}, this.data.metadata, {
+			this.data.metadata=ObjectAppend_({}, this.getMetadata(), {
 				requisites:list
 			});
 
