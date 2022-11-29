@@ -26,7 +26,6 @@ var ProposalFlow = (function() {
 		'widget': "workflow"
 	})).addEvent('success', function(response) {
 
-
 		stateConfig = response.parameters;
 
 		if (response.subscription) {
@@ -419,8 +418,7 @@ var ProposalFlow = (function() {
 			var target=this.getTargetNameForStep(i);
 
 			return this._item.getTasks().filter(function(t){
-				var meta=t.getMetadata();
-				return meta.triggers&&isArray_(meta.triggers)&&meta.triggers.indexOf(target)>=0;
+				return t.hasTrigger(target);
 			});
 
 
