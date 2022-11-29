@@ -527,7 +527,14 @@ var ProposalFlow = (function() {
 
 			if(targets.length>0){
 				el.addClass('has-targets')
-				el.appendChild(new Element('span',{"class":"task-dec"}));
+				var linkedTasks=el.appendChild(new Element('span',{"class":"task-dec"}));
+
+					new UIPopover(linkedTasks, {
+				        description:'This step is linked to '+(targets.length==1'a task':'some tasks')+" and will automatically complete them",
+				        anchor:UIPopover.AnchorAuto()
+				    });
+
+
 			}
 
 
