@@ -36,6 +36,37 @@ var ItemTriggers=(function(){
 			return meta.triggers&&isArray_(meta.triggers)&&meta.triggers.indexOf(name)>=0;	
 		}
 
+		setTriggers:function(list){
+
+			this.data.metadata=ObjectAppend({}, this.data.metadata, {
+				triggers:list
+			});
+
+			return this;
+
+		},
+
+		setEmitters:function(list){
+
+			this.data.metadata=ObjectAppend({}, this.data.metadata, {
+				emitters:list
+			});
+
+			return this;
+
+		},
+
+		setRequisites:function(list){
+
+			this.data.metadata=ObjectAppend({}, this.data.metadata, {
+				requisites:list
+			});
+
+			return this;
+
+		}
+
+
 	});
 
 })();

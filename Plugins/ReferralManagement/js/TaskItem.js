@@ -248,7 +248,8 @@ var TaskItem = (function() {
 				attributes: me._attributes || {},
 				team: (me._team || []).map(function(t) {
 					return t.getId()
-				})
+				}),
+				metadata:this.getMetadata()
 			};
 
 			this._addUsersCollectionFormData(data);
