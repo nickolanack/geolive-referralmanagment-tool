@@ -30066,5 +30066,19 @@
             "saveAsData": true,
             "readAccess": "public"
         }
+    },
+    "widget.541": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.mobileDevicesHeading-html.text",
+            "target": "module.mobileDevicesHeading-html.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Mobile App Devices\n"
+        }
     }
 }
