@@ -1,4 +1,4 @@
-textField.addAutoCompleteDropdown(function(value, cb){
+textField.addAutocompleteDropdown(function(value, cb){
    
    cb(['a', 'b', 'c']);
    
