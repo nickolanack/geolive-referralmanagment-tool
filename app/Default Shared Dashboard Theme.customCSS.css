@@ -7112,7 +7112,10 @@ span.AudioModule.audio.hasAudio, span.videoModule.video.hasVideo {
 .hide-admin .inline-edit {
     display: none;
 }
-    
+
+.drop-options-overlay.autocomplete {
+    z-index: 3;
+}
     
     
     
