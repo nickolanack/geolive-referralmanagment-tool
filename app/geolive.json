@@ -30076,9 +30076,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
+            "parseMarkdown": true,
             "saveTemplateAsData": false,
-            "contentTemplate": "module-mobileDevicesHeading-html-text.contentTemplate.html"
+            "contentTemplate": "module-mobileDevicesHeading-html-text.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }
