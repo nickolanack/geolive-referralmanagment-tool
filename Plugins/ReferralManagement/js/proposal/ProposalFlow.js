@@ -806,7 +806,13 @@ var ProposalFlow = (function() {
 
 		console.log(stateConfig);
 
-		cb(['a', 'b', 'c']);
+		var names= Array.prototype.concat.apply([], Object.keys(stateConfig).map(function(key){
+			return stateConfig[key].map(function(item){
+				return key+'.'+item.name.split(' ').join('_').toLowerCase();
+			})
+		}));
+
+		cb(names);
 	}
 
 
