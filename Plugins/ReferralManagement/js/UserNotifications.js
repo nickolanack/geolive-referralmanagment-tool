@@ -125,7 +125,9 @@ var UserNotifications = (function() {
 			})
 		];
 
-		if (AppClient.getUserType() === 'admin') {
+
+		if(ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin()){
+		//if (AppClient.getUserType() === 'admin') {
 
 
 			if(localStorage.getItem('show-admin')==="false"){
