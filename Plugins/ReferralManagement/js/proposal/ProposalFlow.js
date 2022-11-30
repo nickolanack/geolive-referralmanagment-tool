@@ -801,6 +801,13 @@ var ProposalFlow = (function() {
 
 	});
 
+
+	ProposalFlow.GetTargetList=function(cb){
+
+		cb(['a', 'b', 'c']);
+	}
+
+
 	return ProposalFlow;
 
 
