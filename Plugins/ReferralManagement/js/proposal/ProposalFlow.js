@@ -804,6 +804,8 @@ var ProposalFlow = (function() {
 
 	ProposalFlow.GetTargetList=function(cb){
 
+		console.log(stateConfig);
+
 		cb(['a', 'b', 'c']);
 	}
 
