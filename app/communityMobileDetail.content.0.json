@@ -1,10 +1,19 @@
 {
-    "type": "InlineHtml",
+    "type": "Template",
     "config": {
         "className": "section-title",
+        "elementType": "span",
+        "elementOptions": "{}",
         "text": "Mobile App Devices\n",
         "template": "",
+        "templateNamespace": "",
         "templateVariablesScript": "",
-        "formatTextScript": ""
+        "formatTextScript": "",
+        "formatVariablesScript": "",
+        "requestTemplateScript": "defaultBehaviour();",
+        "ajaxRequestTemplate": false,
+        "namedFormView": "",
+        "formOptions": "{}",
+        "identifier": "htmlLabel"
     }
 }
