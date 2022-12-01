@@ -7068,9 +7068,15 @@ span.AudioModule.audio.hasAudio, span.videoModule.video.hasVideo {
     content: "\0f179";
 }
 
-.mobile-qr a {
+.mobile-qr a, .ui-view.dashboard-main .markdown a {
     color: #a4bdea;
 }
+
+.dark .mobile-qr a, .dark.ui-view.dashboard-main .markdown a {
+    color: #a4bdea;
+}
+
+
 
 .mobile-qr h2 {
     line-height: 30px;
