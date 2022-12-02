@@ -1583,6 +1583,13 @@ div#g-recaptcha {
        
     }
     
+    a.geoforms {
+        position: fixed;
+        right: 10px;
+        bottom: 0;
+        opacity: 0.5;
+    }
+    
 }
 
 
