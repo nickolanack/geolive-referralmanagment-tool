@@ -1,17 +1,17 @@
-return ModuleArray([
-        new ElementModule('a',{
+return new ModuleArray([
+        new Element('a',{
             href:"/install",
             html:"Install Gather"
         }),
-        new ElementModule('a',{
+        new Element('a',{
             href:"/welcome",
             html:"Geoforms"
         }),
-        new ElementModule('a',{
+        new Element('a',{
             href:"https://play.google.com/store/apps/details?id=org.nickolanack.gatherapp",
             html:"Gather App"
         }),
-        new ElementModule('a',{
+        new Element('a',{
             href:"https://play.google.com/store/apps/details?id=org.wabun.com",
             html:"Gather Community App"
         })
