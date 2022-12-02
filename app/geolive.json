@@ -10862,6 +10862,9 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "login-form",
+                                    "elementType": "div",
+                                    "elementOptions": [],
+                                    "identifier": "",
                                     "viewType": "form",
                                     "namedView": "loginForm",
                                     "shouldRender": true,
@@ -10884,6 +10887,9 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "public-map",
+                                    "elementType": "div",
+                                    "elementOptions": [],
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "googlemap",
                                     "shouldRender": true,
@@ -10900,6 +10906,14 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": ""
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "return \"Hello world\"",
+                                    "description": "Info about my custom script"
                                 }
                             }
                         ]
