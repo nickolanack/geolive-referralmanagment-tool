@@ -1565,6 +1565,24 @@ div#g-recaptcha {
         box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%)
     }
     
+    a.gather-app.android:after, a.gather-app.ios:after {
+        content: "\0f17b";
+        font-family: 'FontAwesome';
+        font-size: 25px;
+        float: left;
+        line-height: 40px;
+        margin-left: 40px;
+        margin-right: 10px;
+        color: mediumseagreen;
+        filter: drop-shadow(0 0  5px #0000009e);
+    }
+    
+    a.gather-app.ios:after {
+        content: "\0f179";
+        color: white;
+       
+    }
+    
 }
 
 
