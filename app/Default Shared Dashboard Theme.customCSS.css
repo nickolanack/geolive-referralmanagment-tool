@@ -1529,6 +1529,43 @@ div#g-recaptcha {
         margin: 5px 10px;
     }
     
+    
+    a.install:before, a.geoforms:before, a.gather-app:before, a.gather-community-app:before  {
+        background-image: url("https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/%5BImAgE%5D_ewq_tsE_%5BG%5D_nV-%3Ethumb%3A%3E200x%3E150.png?thumb=>200x>200");
+        content: "";
+        width: 100px;
+        height: 40px;
+        display: inline-block;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    a.install, a.geoforms, a.gather-app, a.gather-community-app {
+        font-size: 0;
+    }
+    
+    a.geoforms:before {
+        
+        background-image: url(https://nickolanackbucket.s3.us-west-2.amazonaws.com/sixties-scoop.geoforms.ca/1/Uploads/VcB_trP_spq_%5BImAgE%5D_%5BG%5D-%3Ethumb%3A%3E200x%3E150.png);
+    }
+    
+    a.gather-app:before  {
+        background-image: url(https://play-lh.googleusercontent.com/ms1wJ-R-SFCVcjt48L54bmiJ3rsSSyjYHorwF3k2MLrEeprMEc1NpPLNvFVHkVQn4aE=w240-h480-rw);
+    }
+    
+    a.gather-community-app:before  {
+        background-image: url(https://play-lh.googleusercontent.com/B5CSFArRhzPne9v7HrkXz-UcD9dCGgFkGfXiKEceimdA_clxM6Bz8iL4E7g_AzRwTQ=w240-h480-rw);
+    
+    }
+    
+    a.gather-app:before, a.gather-community-app:before{
+        width:60px;
+        height:60px;
+        border-radius:20%;
+        box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%)
+    }
+    
 }
 
 
