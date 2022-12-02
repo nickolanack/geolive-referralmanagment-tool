@@ -4,7 +4,7 @@ return new ModuleArray([
             href:"/install",
             html:"Install Gather"
         }),
-        new Element('a',{
+        new ElementModule('a',{
             "class":"geoforms",
             href:"/welcome",
             html:"Geoforms"
