@@ -1560,8 +1560,7 @@ div#g-recaptcha {
     }
     
     a.gather-app:before, a.gather-community-app:before{
-        width:60px;
-        height:60px;
+        width:40px;
         border-radius:20%;
         box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%)
     }
