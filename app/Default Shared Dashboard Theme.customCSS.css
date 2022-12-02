@@ -1512,6 +1512,26 @@ div#g-recaptcha {
 }
 
 
+[data-view="guestDashboard]{
+    
+    span.array-module.credit-links {
+        color: white;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    
+    span.array-module.credit-links>div {
+        display: inline-block;
+        margin: 5px 10px;
+    }
+    
+}
+
+
 .ui-view.login-form {
     max-width: 450px;
     margin: auto;
