@@ -322,6 +322,7 @@ class User {
 			$canSetList = $this->getPlugin()->getRolesUserCanEdit();
 
 			if (empty($canSetList)) {
+				error_log('empty can setList:');
 				return false;
 			}
 			
@@ -330,6 +331,9 @@ class User {
 			
 
 			if (empty(array_intersect($usersRoles, $canSetList)) && !empty($usersRoles)) {
+
+				error_log('empty roles intersection');
+
 				return false;
 			}
 
