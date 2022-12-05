@@ -46,6 +46,10 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
             $auth=$auth||intval($item->user)==$userId;
             if(!$auth){
 
+                if(is_array($item->attributes)){
+                    $item->attributes=(object)$item->attributes
+                }
+
                if(isset($item->attributes->teamMembers)){
                 
                    $teamMembers=$item->attributes->teamMembers;
@@ -57,8 +61,9 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
 
                    });
                }else{
-                error_log('teamMembers is not set');
-                error_log(print_r($item, true));
+
+                    error_log('teamMembers is not set');
+                    error_log(print_r($item, true));
                }
             }
 
