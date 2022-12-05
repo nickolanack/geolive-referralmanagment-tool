@@ -45,14 +45,21 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
 
             $auth=$auth||intval($item->user)==$userId;
             if(!$auth){
-               $teamMembers=$item->attributes->teamMembers;
-               array_walk($teamMembers, function($teamMember)use(&$auth, $userId){
 
-                    if(intval($teamMember->id)==$userId){
-                        $auth=true;
-                    }
+               if(isset($item->attributes->teamMembers)){
+                
+                   $teamMembers=$item->attributes->teamMembers;
+                   array_walk($teamMembers, function($teamMember)use(&$auth, $userId){
 
-               });
+                        if(intval($teamMember->id)==$userId){
+                            $auth=true;
+                        }
+
+                   });
+               }else{
+                error_log('teamMembers is not set');
+                error_log(print_r($item, true));
+               }
             }
 
 
