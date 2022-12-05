@@ -327,9 +327,7 @@ class User {
 			
 			$canSetList[] = "none";
 
-			if (!in_array($role, $canSetList)) {
-				return false;
-			}
+			
 
 			if (empty(array_intersect($usersRoles, $canSetList)) && !empty($usersRoles)) {
 				return false;
