@@ -331,7 +331,7 @@ class User {
 			
 			$canSetList[] = "none";
 
-			$intersection=array_intersect($usersRoles, $canSetList)
+			$intersection=array_intersect($usersRoles, $canSetList);
 
 			if (empty($intersection) && !empty($usersRoles)) {
 
