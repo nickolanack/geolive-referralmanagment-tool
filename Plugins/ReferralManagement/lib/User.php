@@ -307,6 +307,40 @@ class User {
 
 	}
 
+
+	public function canEditUsersRole($userId){
+
+
+		if ($userId < 1) {
+			$userId = GetClient()->getUserId();
+		}
+
+		$usersRoles = (new \ReferralManagement\UserRoles())->getUsersRoles($userId);
+
+		if (!GetClient()->isAdmin()) {
+
+			$canSetList = $this->getPlugin()->getRolesUserCanEdit();
+
+			if (empty($canSetList)) {
+				return false;
+			}
+			
+			$canSetList[] = "none";
+
+			if (!in_array($role, $canSetList)) {
+				return false;
+			}
+
+			if (empty(array_intersect($usersRoles, $canSetList)) && !empty($usersRoles)) {
+				return false;
+			}
+
+		}
+
+		return true;
+
+	}
+
 	public function setUserRole($role, $userId = -1) {
 
 		if ($userId < 1) {
