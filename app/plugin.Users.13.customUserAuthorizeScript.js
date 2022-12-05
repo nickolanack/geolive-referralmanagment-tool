@@ -1,2 +1,4 @@
-error_log($itemtype.'.'.$task.' '.$userId);
-return null;
+
+    error_log(print_r(array($itemtype, $task, $userId), true));
+
+    return null;
