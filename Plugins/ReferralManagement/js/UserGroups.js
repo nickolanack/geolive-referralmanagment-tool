@@ -287,6 +287,31 @@ var UserGroups = (function() {
 	};
 
 
+	UserGroups.ClientCanEditUsersRoles=function(user){
+
+
+		if ((user.isProjectMember && user.isProjectMember())) {
+
+			console.error('remove this guard clause, why is this invalid???')
+
+			return null;
+		}
+
+		var rolesEditList = ProjectTeam.GetRolesUserCanAssign();
+		var allRoles = ProjectTeam.GetAllRoles();
+
+		var itemsMinRoleIndex = Math.min.apply(null, user.getRoles().map(function(r) {
+			return allRoles.indexOf(r)
+		}));
+		var clientsMinEditRoleIndex = Math.min.apply(null, rolesEditList.map(function(r) {
+			return allRoles.indexOf(r)
+		}));
+			
+		return clientsMinEditRoleIndex <= itemsMinRoleIndex && rolesEditList.length>0;
+			
+	}
+
+
 	UserGroups.PendingCommunityInformation = function() {
 
 		var p=new Element('p',{
