@@ -1143,8 +1143,12 @@ var ProjectTeam = (function() {
 
 		//modify tag cloud 
 
-		var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());
-		if (user.isUnassigned() || AppClient.getUserType() == "admin") {
+		var user = item; //ProjectTeam.CurrentTeam().getUser(AppClient.getId());
+
+		var isAdmin=AppClient.getUserType()=="admin";
+		var isSiteAdmin=ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin();
+
+		if(isAdmin||(isSiteAdmin&&UserGroups.ClientCanEditUsersRoles(item))){
 			return;
 		}
 
