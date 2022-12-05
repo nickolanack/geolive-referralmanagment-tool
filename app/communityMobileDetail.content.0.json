@@ -1,10 +1,19 @@
 {
-    "type": "InlineHtml",
+    "type": "Template",
     "config": {
-        "className": "section-title",
+        "className": "",
+        "elementType": "span",
+        "elementOptions": "{}",
         "text": "Mobile App Devices\n",
-        "template": "",
-        "templateVariablesScript": "",
-        "formatTextScript": ""
+        "template": "mobileDevicesHeading.html",
+        "templateNamespace": "",
+        "templateVariablesScript": "{}",
+        "formatTextScript": "var btn=ConfigItem.CreateEditBtn(new ConfigItem({\n    \"editLabel\":\"Edit mobile devices introduction\",\n    'widget':options.widget,\n    'form':'textFieldForm',\n    'stepOptions':{\n        width:600\n    }\n}));\n\nif(btn){\n    module.getElement().appendChild(btn);\n}",
+        "formatVariablesScript": "",
+        "requestTemplateScript": "defaultBehaviour();",
+        "ajaxRequestTemplate": true,
+        "namedFormView": "",
+        "formOptions": "{}",
+        "identifier": "htmlLabel"
     }
 }

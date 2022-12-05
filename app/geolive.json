@@ -10862,6 +10862,9 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "login-form",
+                                    "elementType": "div",
+                                    "elementOptions": [],
+                                    "identifier": "",
                                     "viewType": "form",
                                     "namedView": "loginForm",
                                     "shouldRender": true,
@@ -10884,6 +10887,9 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "public-map",
+                                    "elementType": "div",
+                                    "elementOptions": [],
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "googlemap",
                                     "shouldRender": true,
@@ -10900,6 +10906,14 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": ""
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "",
+                                    "script": "guestDashboard.metadata.positions.content.modules.3.config.script.js",
+                                    "description": "Info about my custom script"
                                 }
                             }
                         ]
@@ -15530,37 +15544,10 @@
                         "modules": [
                             "communityMobileDetail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "FormattedText",
-                                "config": {
-                                    "textValueScript": "communityMobileDetail.metadata.positions.content.modules.1.config.textValueScript.js",
-                                    "formatModuleScript": "",
-                                    "className": "section-help",
-                                    "imageWidth": 300,
-                                    "imageHeight": 240,
-                                    "multiImageWidth": 100,
-                                    "multiImageHeight": 75,
-                                    "portraitImageWidth": 75,
-                                    "portraitImageHeight": 100,
-                                    "autoArrange": true,
-                                    "oneLine": true,
-                                    "maxChars": 0,
-                                    "maxWidth": 0,
-                                    "showAudios": true,
-                                    "showVideos": true,
-                                    "showDocuments": true,
-                                    "showImages": true,
-                                    "showLinks": true,
-                                    "showExternalContent": true,
-                                    "embedPortrait": true,
-                                    "preferLocalContent": true,
-                                    "portraitClip": true
-                                }
-                            },
-                            {
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "communityMobileDetail.metadata.positions.content.modules.2.config.script.js",
+                                    "script": "communityMobileDetail.metadata.positions.content.modules.1.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             },
@@ -15569,6 +15556,9 @@
                                 "config": {
                                     "listClassName": "",
                                     "className": "user-item",
+                                    "elementType": "div",
+                                    "elementOptions": [],
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "singleUserListItemDetail",
                                     "shouldRender": true,
@@ -15585,9 +15575,9 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
-                                    "getItemListScript": "communityMobileDetail.metadata.positions.content.modules.3.config.getItemListScript.js",
+                                    "getItemListScript": "communityMobileDetail.metadata.positions.content.modules.2.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "communityMobileDetail.metadata.positions.content.modules.3.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "communityMobileDetail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
                                     "sortItemsScript": "return b.getId()-a.getId();",
@@ -15598,7 +15588,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "communityMobileDetail.metadata.positions.content.modules.4.config.script.js",
+                                    "script": "communityMobileDetail.metadata.positions.content.modules.3.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
@@ -30088,6 +30078,21 @@
             "formatSassParametersScript": "return $parameters;",
             "useRemote": "",
             "saveAsData": true,
+            "readAccess": "public"
+        }
+    },
+    "widget.541": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.mobileDevicesHeading-html.text",
+            "target": "module.mobileDevicesHeading-html.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "module-mobileDevicesHeading-html-text.contentTemplate.html",
             "readAccess": "public"
         }
     }
