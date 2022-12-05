@@ -61,7 +61,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		$tokens=array();
 
 		foreach($projects as $project){
-			if($project->attributes->title===$layer){
+			if(strtolower($project->attributes->title)===strtolower($layer)){
 
 				$tokens[]=$this->getPlugin()->getProjectMapAccessToken($project->id, GetClient()->getUserId());
 
