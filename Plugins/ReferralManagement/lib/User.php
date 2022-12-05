@@ -311,6 +311,9 @@ class User {
 	public function canEditUsersRole($userId){
 
 
+		error_log('can set user roles?');
+
+
 		if ($userId < 1) {
 			$userId = GetClient()->getUserId();
 		}
