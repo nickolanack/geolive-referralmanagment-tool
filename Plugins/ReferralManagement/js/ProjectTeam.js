@@ -1139,7 +1139,7 @@ var ProjectTeam = (function() {
 
 
 
-	ProjectTeam.LimitUserCommunityTagCloudValues = function(module) {
+	ProjectTeam.LimitUserCommunityTagCloudValues = function(module, item) {
 
 		//modify tag cloud 
 
@@ -1254,13 +1254,13 @@ var ProjectTeam = (function() {
 		//});
 	};
 
-	ProjectTeam.FormatUserCommunityTagCloud = function(module) {
+	ProjectTeam.FormatUserCommunityTagCloud = function(module, item) {
 
 		if(ProjectTeam.GetAllCommunities().length==1){
 			module.getElement().setStyle('display', 'none');
 		}
 
-		ProjectTeam.LimitUserCommunityTagCloudValues(module);
+		ProjectTeam.LimitUserCommunityTagCloudValues(module, item);
 		ProjectTeam.FormatTagCloudLanguageValues(module);
 	};
 
