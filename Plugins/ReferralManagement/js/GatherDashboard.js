@@ -436,7 +436,7 @@ var GatherDashboard = (function() {
 
 			var isSiteAdmin=ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin();
 
-			if ((!itemIsCurrentClient) && (AppClient.getUserType() === "admin" || (isSiteAdmin&&UserGroups.ClientCanEditUsersRoles(item) )) {
+			if ((!itemIsCurrentClient) && (AppClient.getUserType() === "admin" || (isSiteAdmin&&UserGroups.ClientCanEditUsersRoles(item) ))) {
 				items.push(
 					new Element('button', {
 						"class": "primary-btn error",
