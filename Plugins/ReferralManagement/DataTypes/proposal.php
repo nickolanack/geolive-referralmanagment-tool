@@ -47,7 +47,7 @@ class ProposalDataType extends \core\extensions\plugin\PluginDataType {
             if(!$auth){
 
                 if(is_array($item->attributes)){
-                    $item->attributes=(object)$item->attributes
+                    $item->attributes=(object)$item->attributes;
                 }
 
                if(isset($item->attributes->teamMembers)){
