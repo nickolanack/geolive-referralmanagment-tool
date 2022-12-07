@@ -379,6 +379,8 @@ var ProjectTaskList = (function() {
 			counter.getElement().setAttribute('data-status', onScheduleLabel)
 
 		};
+
+		counterFn();
 		
 
 		counter.addWeakEvent(item, 'taskChanged', function() {
