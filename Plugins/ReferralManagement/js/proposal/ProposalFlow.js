@@ -40,6 +40,9 @@ var ProposalFlow = (function() {
 	var FlowGroup = new Class({
 		Implements:[Events],
 		initialize: function(item) {
+
+			var me = this;
+
 			this._item = item;
 
 
@@ -49,35 +52,39 @@ var ProposalFlow = (function() {
 
 
 
-			var getStateQuery = new AjaxControlQuery(CoreAjaxUrlRoot, 'get_state_data', ObjectAppend_({
-				"plugin": "ReferralManagement",
-				"id": item.getId()
-			}, DashboardLoader.getAccessTokenObject()));
-
-			var me = this;
-
-			getStateQuery.addEvent('success', function(resp) {
+			var itemId=item.getId();
 
 
+			if(parseInt(itemId)>0){
 
-				Object.keys(resp.stateData).forEach(function(n) {
-					if (me._stateFlows[n]) {
-						me._stateFlows[n].setCurrentIndexes(resp.stateData[n]);
-					}
+				var getStateQuery = new AjaxControlQuery(CoreAjaxUrlRoot, 'get_state_data', ObjectAppend_({
+					"plugin": "ReferralManagement",
+					"id": itemId
+				}, DashboardLoader.getAccessTokenObject()));
 
+			
 
-				});
-
-				me._statesLoaded = true;
-				me._stateData = resp.stateData;
+				getStateQuery.addEvent('success', function(resp) {
 
 
 
-			}).execute();
+					Object.keys(resp.stateData).forEach(function(n) {
+						if (me._stateFlows[n]) {
+							me._stateFlows[n].setCurrentIndexes(resp.stateData[n]);
+						}
+
+
+					});
+
+					me._statesLoaded = true;
+					me._stateData = resp.stateData;
 
 
 
-			var me=this;
+				}).execute();
+
+			}
+
 
 			this.on('completed', function(flow, steps){
 
