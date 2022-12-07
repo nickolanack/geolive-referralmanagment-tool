@@ -9267,6 +9267,8 @@
                                 "config": {
                                     "listClassName": "project-tasks hidden",
                                     "className": "task-item",
+                                    "elementType": "div",
+                                    "elementOptions": "{}",
                                     "identifier": "priority-task-list",
                                     "viewType": "view",
                                     "namedView": "singleTaskListItemDetail",
@@ -9277,7 +9279,7 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
-                                    "initModuleScript": "",
+                                    "initModuleScript": "projectPriorityTasksDetail.metadata.positions.content.modules.1.config.initModuleScript.js",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
