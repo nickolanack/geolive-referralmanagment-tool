@@ -356,6 +356,10 @@ var ProjectTaskList = (function() {
 		}));
 
 
+		var counter = new ElementModule("div", {
+			"class": "task-subtext"
+		})
+
 
 		var counterFn = function() {
 
@@ -363,22 +367,22 @@ var ProjectTaskList = (function() {
 
 			var onScheduleLabel = 'create some tasks to get started';
 			if (tasks.length > 0) {
-				onScheduleLabel = (item.isOnSchedule() ? 'you\'re on schedule' : '<span class="warn">you\'re behind schedule</span>');
+				onScheduleLabel = (item.isOnSchedule() ? 'on-schedule' : 'behind-schedule');
 			}
 
-			return tasks.filter(function(t) {
+			var str= tasks.filter(function(t) {
 				return t.isComplete();
-			}).length + '/' + tasks.length + ' tasks complete, ' + onScheduleLabel
+			}).length + '/' + tasks.length + ' tasks complete';
+
+
+			counter.getElement().innerHtml = str
+			counter.getElement().setAttribute('data-status', onScheduleLabel)
 
 		};
-		var counter = new ElementModule("div", {
-			"class": "task-subtext",
-			html: counterFn()
-
-		})
+		
 
 		counter.addWeakEvent(item, 'taskChanged', function() {
-			counter.getElement().innerHtml = counterFn();
+			counterFn();
 		});
 		modules.push(counter);
 		return modules;
