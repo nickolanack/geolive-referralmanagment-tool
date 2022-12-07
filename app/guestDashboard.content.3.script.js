@@ -21,12 +21,12 @@ return new ModuleArray([
         }),
         new Element('a',{
             "class":"gather-app ios",
-            href:"https://play.google.com/store/apps/details?id=org.nickolanack.gatherapp",
+            href:"https://testflight.apple.com/join/rPVA9ODg",
             html:"Gather App"
         }),
         new Element('a',{
             "class":"gather-community-app ios",
-            href:"https://play.google.com/store/apps/details?id=org.wabun.com",
+            href:"https://testflight.apple.com/join/dGJFXTKB",
             html:"Gather Community App"
         })
     ],{"className":"credit-links"});

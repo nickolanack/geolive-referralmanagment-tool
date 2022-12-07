@@ -9263,10 +9263,20 @@
                         "modules": [
                             "projectPriorityTasksDetail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "projectPriorityTasksDetail.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "project-tasks hidden",
                                     "className": "task-item",
+                                    "elementType": "div",
+                                    "elementOptions": "{}",
                                     "identifier": "priority-task-list",
                                     "viewType": "view",
                                     "namedView": "singleTaskListItemDetail",
@@ -9277,7 +9287,7 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
-                                    "initModuleScript": "",
+                                    "initModuleScript": "projectPriorityTasksDetail.metadata.positions.content.modules.2.config.initModuleScript.js",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
@@ -9286,10 +9296,10 @@
                                     "targetName": "",
                                     "getItemListScript": "return item.getTasks();",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "projectPriorityTasksDetail.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "projectPriorityTasksDetail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
-                                    "filterItemsScript": "projectPriorityTasksDetail.metadata.positions.content.modules.1.config.filterItemsScript.js",
-                                    "sortItemsScript": "projectPriorityTasksDetail.metadata.positions.content.modules.1.config.sortItemsScript.js",
+                                    "filterItemsScript": "projectPriorityTasksDetail.metadata.positions.content.modules.2.config.filterItemsScript.js",
+                                    "sortItemsScript": "projectPriorityTasksDetail.metadata.positions.content.modules.2.config.sortItemsScript.js",
                                     "maxItems": "-1"
                                 }
                             },
@@ -9297,7 +9307,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "projectPriorityTasksDetail.metadata.positions.content.modules.2.config.script.js",
+                                    "script": "projectPriorityTasksDetail.metadata.positions.content.modules.3.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
@@ -15233,6 +15243,8 @@
                                 "config": {
                                     "listClassName": "",
                                     "className": "task-item",
+                                    "elementType": "div",
+                                    "elementOptions": "{}",
                                     "identifier": "",
                                     "viewType": "view",
                                     "namedView": "singleTaskListItemDetail",
