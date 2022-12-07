@@ -4,9 +4,9 @@ var toggle= UIInteraction.createSectionToggle(function(v) {
   	 });
   	 
 toggle.on('collapse', function(){
-    toggle.getElement().parentNode.addClass('hide');
+    toggle.getViewer().getElement().addClass('hide');
 }).on('expand', function(){
-    toggle.getElement().parentNode.removeClass('hide');
+    toggle.getViewer().getElement().removeClass('hide');
 });
   	 
 return toggle;
