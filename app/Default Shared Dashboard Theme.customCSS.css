@@ -6128,7 +6128,7 @@ span.navigation-menu.settings-menu {
     
             &>label {
                visibility:visible;
-                font-size:0;
+               font-size:0;
             }
             &>label:before {
                content:"More";
@@ -6140,6 +6140,7 @@ span.navigation-menu.settings-menu {
             }
             &:hover>label {
                visibility:hidden;
+               display:none;
             } 
                  
              
