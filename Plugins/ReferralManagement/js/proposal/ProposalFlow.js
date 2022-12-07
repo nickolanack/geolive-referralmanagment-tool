@@ -523,6 +523,13 @@ var ProposalFlow = (function() {
 			el.setAttribute('data-targetName',this.getTargetNameForStep(i));
 			var targets=this.getTargetTasks(i);
 
+			if(typeof options.hoverText=="string"&&options.hoverText!==""){
+				new UIPopover(el, {
+			        description:options.hoverText,
+			        anchor:UIPopover.AnchorAuto()
+			    });
+			}
+
 			this._addTargetDecorators(el, i)
 
 
