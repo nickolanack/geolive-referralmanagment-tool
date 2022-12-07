@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "\n    var mod = new ElementModule('div',{\"class\":\"section-title\"});\n    mod.getElement().appendChild(new Element(\"span\",{\"html\":\"Tasks\"}));\n    return mod;",
+        "script": "return ProjectTaskList.TaskListHeadingModules(item);",
         "description": "Info about my custom script"
     }
 }

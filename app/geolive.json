@@ -15231,10 +15231,20 @@
                                 }
                             },
                             {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "Tasks List Detail.metadata.positions.content.modules.2.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
                                 "type": "UIListView",
                                 "config": {
                                     "listClassName": "",
                                     "className": "task-item",
+                                    "elementType": "div",
+                                    "elementOptions": "{}",
                                     "identifier": "",
                                     "viewType": "view",
                                     "namedView": "singleTaskListItemDetail",
@@ -15245,19 +15255,19 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
-                                    "initModuleScript": "Tasks List Detail.metadata.positions.content.modules.2.config.initModuleScript.js",
+                                    "initModuleScript": "Tasks List Detail.metadata.positions.content.modules.3.config.initModuleScript.js",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": "",
-                                    "getItemListScript": "Tasks List Detail.metadata.positions.content.modules.2.config.getItemListScript.js",
+                                    "getItemListScript": "Tasks List Detail.metadata.positions.content.modules.3.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "Tasks List Detail.metadata.positions.content.modules.2.config.formatListItemModuleScript.js",
+                                    "formatListItemModuleScript": "Tasks List Detail.metadata.positions.content.modules.3.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
-                                    "filterItemsScript": "Tasks List Detail.metadata.positions.content.modules.2.config.filterItemsScript.js",
-                                    "sortItemsScript": "Tasks List Detail.metadata.positions.content.modules.2.config.sortItemsScript.js",
+                                    "filterItemsScript": "Tasks List Detail.metadata.positions.content.modules.3.config.filterItemsScript.js",
+                                    "sortItemsScript": "Tasks List Detail.metadata.positions.content.modules.3.config.sortItemsScript.js",
                                     "maxItems": "35"
                                 }
                             }
