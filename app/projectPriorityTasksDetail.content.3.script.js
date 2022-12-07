@@ -8,5 +8,9 @@ toggle.on('collapse', function(){
 }).on('expand', function(){
     toggle.getViewer().getElement().removeClass('hide');
 });
+
+toggle.runOnceOnLoad(function(){
+    toggle.getViewer().getElement().addClass('hide');
+});
   	 
 return toggle;
