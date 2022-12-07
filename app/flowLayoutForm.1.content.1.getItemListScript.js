@@ -8,6 +8,7 @@
             return new MockDataTypeItem(ObjectAppend_({
                 description:"",
                 icon:"default",
+                hoverText:"",
                 link:true
             },item));
         }));

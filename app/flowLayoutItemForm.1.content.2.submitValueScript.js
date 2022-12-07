@@ -1,1 +1,1 @@
-wizardDataSet.link=object.value;
+wizardDataSet.hoverText=object.value||"";

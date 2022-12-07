@@ -1268,6 +1268,12 @@ span.field-label.address-click:after {
     box-shadow: 13px -12px 10px rgb(0 0 0 / 50%);
 }
 
+
+.hide.ui-view.reply-box {
+    border-top: none;
+    box-shadow: none;
+}
+
 button.inline-edit, .btn.inline-edit, .btn.inline-remove, .section-toggle, .navigation-menu button.inline-edit{
    
     &:after {
@@ -1513,6 +1519,13 @@ div#g-recaptcha {
 
 
 [data-view="guestDashboard"]{
+    
+    
+    span.array-module.credit-links img {
+        width: 40px;
+        height: auto;
+    }
+    
     
     span.array-module.credit-links {
         color: white;
@@ -6101,9 +6114,44 @@ span.navigation-menu.settings-menu {
             padding: 7px 10px;
             margin: 3px 0;
         }
+        
         &.menu-links{
-            display:none;
+            
+            
+            &>li{
+                display:none;
+            }
+            
+            
+            
+           
+    
+            &>label {
+               visibility:visible;
+               font-size:0;
+            }
+            &>label:before {
+               content:"More";
+                font-size:21px;
+            }
+            
+            &:hover>li {
+               display:inline-block;
+            }
+            &:hover>label {
+               visibility:hidden;
+               display:none;
+            } 
+                 
+             
+             
         }
+        
+        
+        
+        
+        
+        
     }
 }
 

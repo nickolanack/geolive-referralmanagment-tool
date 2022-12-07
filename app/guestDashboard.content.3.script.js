@@ -28,5 +28,8 @@ return new ModuleArray([
             "class":"gather-community-app ios",
             href:"https://testflight.apple.com/join/dGJFXTKB",
             html:"Gather Community App"
+        }),
+        new Element('img', {
+            src:"<?php echo GetPlugin('QRCode')->getQRCode(array('domain'=>HtmlDocument()->website()));?>"
         })
     ],{"className":"credit-links"});
