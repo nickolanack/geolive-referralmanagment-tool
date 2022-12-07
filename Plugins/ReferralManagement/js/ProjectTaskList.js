@@ -163,7 +163,7 @@ var ProjectTaskList = (function() {
 		}, function(access) {
 			//check access, bool.
 			if (!access) {
-				callback(new ModuleArray(ProjectTaskList.TaskListHeadingModules(item)));
+				callback([]);
 				return;
 			}
 
@@ -241,8 +241,6 @@ var ProjectTaskList = (function() {
 
 
 			modules.push(ProjectTaskList._defaultTasksInfo(categories));
-
-			modules = modules.concat(ProjectTaskList.TaskListHeadingModules(item));
 
 			callback(new ModuleArray(modules));
 
