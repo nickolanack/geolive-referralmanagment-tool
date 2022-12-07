@@ -27553,16 +27553,16 @@
                             "flowLayoutItemForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 178,
-                            "y": 310
+                            "x": 188,
+                            "y": 320
                         },
                         "children": [
                             "flowLayoutItemForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 138,
-                                    "y": 498
+                                    "x": 148,
+                                    "y": 521
                                 }
                             }
                         ],
@@ -27612,9 +27612,9 @@
                                                 "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": " return \"Hello World\"; ",
+                                                "getValueScript": "flowLayoutItemForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.getValueScript.js",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "",
+                                                "submitValueScript": "flowLayoutItemForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         },
