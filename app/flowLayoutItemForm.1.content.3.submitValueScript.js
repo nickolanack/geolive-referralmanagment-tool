@@ -1,1 +1,1 @@
-wizardDataSet.icon=object.value||"default"
+wizardDataSet.link=object.value;
