@@ -1520,6 +1520,13 @@ div#g-recaptcha {
 
 [data-view="guestDashboard"]{
     
+    
+    span.array-module.credit-links img {
+        width: 40px;
+        height: auto;
+    }
+    
+    
     span.array-module.credit-links {
         color: white;
         position: absolute;
