@@ -385,6 +385,7 @@ var ProposalFlow = (function() {
 
 					"class": item["icon"] || "default",
 					"link": typeof item.link == "boolean" ? item.link : true,
+					"hoverText":typeof item.hoverText=="string"?item.hoverText:"",
 					"first": i == 0 || me._stepOptions[i - 1].link === false,
 					"index": i
 				};
