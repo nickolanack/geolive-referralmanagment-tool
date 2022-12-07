@@ -4,6 +4,7 @@
        name:"",
        description:"",
        icon:"default",
+       hoverText:"",
        link:true
     });
 }).setUpdateField(item.getFlow());

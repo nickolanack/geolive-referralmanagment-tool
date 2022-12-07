@@ -27442,16 +27442,16 @@
                             "flowLayoutForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 315,
-                            "y": 271
+                            "x": 325,
+                            "y": 281
                         },
                         "children": [
                             "flowLayoutForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 275,
-                                    "y": 437
+                                    "x": 285,
+                                    "y": 447
                                 }
                             }
                         ],
@@ -27470,6 +27470,8 @@
                                             "config": {
                                                 "listClassName": "inline-form-list",
                                                 "className": "",
+                                                "elementType": "div",
+                                                "elementOptions": "{}",
                                                 "identifier": "",
                                                 "viewType": "form",
                                                 "namedView": "defaultView",
