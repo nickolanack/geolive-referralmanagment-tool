@@ -26,6 +26,11 @@ var  DisplayTheme=(function(){
 			if(values.darkMode){
 				if(localStorage.getItem('mode')!='light'){
 					mainView.options.className+=" dark";
+
+					if(mainView.runOnceOnLoad(function(){
+						mainView.getElement().addClass('dark');
+					}));
+
 					localStorage.setItem('mode','dark');
 				}
 			}
