@@ -14,6 +14,11 @@ var AdminMonitor=(function(){
 
 		initialize:function(channels){
 
+
+			if(AppClient.getUserType()!=='admin'){
+				return;
+			}
+
 			channels.forEach(function(channel){
 				AjaxControlQuery.Subscribe(channel, function(event){
 
@@ -53,13 +58,18 @@ var AdminMonitor=(function(){
 
 	});
 
-	(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_admin_channels', {
-		'plugin': "ReferralManagement"
-	}))
-	.addEvent('success', function(result) {
-			new AdminMonitor(result.channels);
-	})
-	.execute();
+	if(AppClient.getUserType()==='admin'){
+				
+		(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_admin_channels', {
+			'plugin': "ReferralManagement"
+		}))
+		.addEvent('success', function(result) {
+				new AdminMonitor(result.channels);
+		})
+		.execute();
+
+	}
+
 
 
 	return AdminMonitor;
