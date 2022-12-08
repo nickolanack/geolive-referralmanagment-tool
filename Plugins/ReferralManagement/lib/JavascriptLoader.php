@@ -69,6 +69,24 @@ class JavascriptLoader {
 		IncludeJS($dir . '/js/spatial/SpatialProject.js');
 		IncludeJS($dir . '/js/spatial/SpatialDocumentPreview.js');
 		IncludeJS($dir . '/js/spatial/ProjectLayer.js');
+
+
+
+		/**
+		 * this file must not be merged by system, so load using js
+		 */
+
+		IncludeJSBlock('
+
+			document.head.appendChild(new Element("script", {
+					"src":'.json_encode(UrlFrom($dir . '/js/spatial/ProjectLayerWorkerLoader.js')).', 
+					"type":"text/javascript",
+					"async":"async",
+					"defer":"defer"
+				}));
+
+		');
+
 		IncludeJS($dir . '/js/spatial/ProjectMap.js');
 		IncludeJS($dir . '/js/spatial/LayerGroup.js');
 		IncludeJS($dir . '/js/spatial/LayerGroupLegend.js');

@@ -108,7 +108,10 @@ var ProjectLayer = (function() {
 
 			if (metadata.script) {
 
-				var worker = new Worker(userFunctionWorker);
+				//new Worker(userFunctionWorker);
+				
+				var worker = ProjectLayerWorkerLoader.getWorker();
+
 				worker.postMessage(metadata.script);
 				var queue = [];
 
