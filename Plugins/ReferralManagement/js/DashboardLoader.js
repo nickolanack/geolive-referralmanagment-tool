@@ -179,7 +179,7 @@ var DashboardLoader = (function() {
 				})
 
 
-			}, 1000);
+			}, 0);
 		},
 		clearTheme:function(){
 
