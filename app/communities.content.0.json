@@ -1,14 +1,13 @@
 {
-    "type": "UIListView",
+    "type": "UIView",
     "config": {
-        "listClassName": "ui-view dashboard-main dark",
-        "className": "",
+        "className": "dashboard-main dark",
         "elementType": "div",
         "elementOptions": "{}",
         "identifier": "",
         "viewType": "view",
-        "namedView": "defaultView",
-        "shouldRender": false,
+        "namedView": "communitiesContent",
+        "shouldRender": true,
         "namedViewScript": "return namedView",
         "showInlineEdit": false,
         "namedFormView": "defaultView",
@@ -21,13 +20,6 @@
         "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
-        "targetName": "",
-        "getItemListScript": "return [];",
-        "formatItemListScript": "return list;",
-        "formatListItemModuleScript": "return item;",
-        "emptyNamedView": "emptyListView",
-        "filterItemsScript": "return true;",
-        "sortItemsScript": "",
-        "maxItems": "-1"
+        "targetName": ""
     }
 }
