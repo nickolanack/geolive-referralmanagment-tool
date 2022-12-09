@@ -20,7 +20,6 @@ IncludeCSSBlock('
     a.ui-view[data-view="communityItem"] {
         display: inline-block;
         width: 100%;
-        min-height: 250px;
         margin: 30px;
         margin-top: 100px;
         box-sizing: border-box;
@@ -33,6 +32,9 @@ IncludeCSSBlock('
         cursor:pointer;
         transition:filter 0.8s, opacity 0.8s;
          opacity:0.8;
+         
+             height: calc( (100vw - 300px)/5 );
+            background-size: cover;
     }
     a.ui-view[data-view="communityItem"]:hover {
         filter: drop-shadow(0 0 10px #000000A0);
