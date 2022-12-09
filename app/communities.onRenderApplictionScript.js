@@ -15,7 +15,7 @@ IncludeJSBlock('
 ');
 
 
-IncludeJSBlock('
+IncludeCSSBlock('
 
     a.ui-view[data-view="communityItem"] {
         display: inline-block;
