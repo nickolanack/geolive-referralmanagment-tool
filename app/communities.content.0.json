@@ -1,14 +1,14 @@
 {
     "type": "UIListView",
     "config": {
-        "listClassName": "dashboard-main dark",
+        "listClassName": "ui-view dashboard-main dark",
         "className": "",
         "elementType": "div",
         "elementOptions": "{}",
         "identifier": "",
         "viewType": "view",
         "namedView": "defaultView",
-        "shouldRender": true,
+        "shouldRender": false,
         "namedViewScript": "return namedView",
         "showInlineEdit": false,
         "namedFormView": "defaultView",
