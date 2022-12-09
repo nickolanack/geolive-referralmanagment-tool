@@ -30,6 +30,12 @@ IncludeCSSBlock('
         padding: 30px;
         border-radius: 9px;
         filter: drop-shadow(0 0 6px #00000080);
+        cursor:pointer;
+        transition:filter 8s;
+    }
+    a.ui-view[data-view="communityItem"] {
+        filter: drop-shadow(0 0 10px #000000A0);
+         transition:filter 2s;
     }
     
     span.array-module.ui-list-view {
@@ -40,7 +46,7 @@ IncludeCSSBlock('
     span.field-value {
         text-transform: capitalize;
         position: absolute;
-        top: -40px;
+        top: -50px;
         font-size: 40px;
         filter: drop-shadow(0 0 6px black);
     }
