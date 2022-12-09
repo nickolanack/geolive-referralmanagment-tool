@@ -276,6 +276,19 @@
                     "plugin": "UserInterface",
                     "pluginView": "widget",
                     "widget": "marketing"
+                },
+                {
+                    "name": "communities",
+                    "view": "plugin",
+                    "plugin": "UserInterface",
+                    "pluginView": "widget",
+                    "widget": "communities",
+                    "metadata": {
+                        "lang": "en",
+                        "title": "Gather Mapping | Communities",
+                        "description": "Links to community dashboards",
+                        "keywords": "XXXX-XXXX"
+                    }
                 }
             ],
             "useRemoteServerUI": false,
