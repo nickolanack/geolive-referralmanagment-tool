@@ -31,11 +31,13 @@ IncludeCSSBlock('
         border-radius: 9px;
         filter: drop-shadow(0 0 5px #00000080);
         cursor:pointer;
-        transition:filter 8s;
+        transition:filter 0.8s, opacity 0.8s;
+         opacity:0.8;
     }
     a.ui-view[data-view="communityItem"]:hover {
         filter: drop-shadow(0 0 10px #000000A0);
-         transition:filter 2s;
+         opacity:1;
+         transition:filter 0.2s, opacity 0.8s;
     }
     
     span.array-module.ui-list-view {
@@ -48,6 +50,7 @@ IncludeCSSBlock('
         position: absolute;
         top: -50px;
         font-size: 40px;
+       
         filter: drop-shadow(0 0 6px black);
     }
 
