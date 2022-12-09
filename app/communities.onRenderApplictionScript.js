@@ -29,11 +29,11 @@ IncludeCSSBlock('
         position: relative;
         padding: 30px;
         border-radius: 9px;
-        filter: drop-shadow(0 0 6px #00000080);
+        filter: drop-shadow(0 0 5px #00000080);
         cursor:pointer;
         transition:filter 8s;
     }
-    a.ui-view[data-view="communityItem"] {
+    a.ui-view[data-view="communityItem"]:hover {
         filter: drop-shadow(0 0 10px #000000A0);
          transition:filter 2s;
     }
