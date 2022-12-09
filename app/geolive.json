@@ -242,14 +242,24 @@
                     "view": "plugin",
                     "plugin": "UserInterface",
                     "pluginView": "widget",
-                    "widget": "install"
+                    "widget": "install",
+                    "metadata": {
+                        "title": "Gather. Referral Management, Data warehouse",
+                        "description": "plugin.UserInterface.24.routes.4.metadata.description.js",
+                        "keywords": "XXXX-XXXX"
+                    }
                 },
                 {
                     "name": "welcome",
                     "view": "plugin",
                     "plugin": "UserInterface",
                     "pluginView": "widget",
-                    "widget": "gatherWelcome"
+                    "widget": "gatherWelcome",
+                    "metadata": {
+                        "title": "Geoforms. Cloud mapping software",
+                        "description": "plugin.UserInterface.24.routes.5.metadata.description.js",
+                        "keywords": "XXXX-XXXX"
+                    }
                 },
                 {
                     "name": "mobile-privacy",
