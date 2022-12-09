@@ -22,6 +22,7 @@ IncludeCSSBlock('
         width: 100%;
         min-height: 250px;
         margin: 30px;
+        margin-top: 100px;
         box-sizing: border-box;
         backdrop-filter: blur(10px);
         background-color: rgba(0,0,0,0.3);
@@ -34,6 +35,14 @@ IncludeCSSBlock('
     span.array-module.ui-list-view {
         margin: auto;
         max-width: 1000px;
+    }
+    
+    span.field-value {
+        text-transform: capitalize;
+        position: absolute;
+        top: -40px;
+        font-size: 40px;
+        filter: drop-shadow(0 0 6px black);
     }
 
 
