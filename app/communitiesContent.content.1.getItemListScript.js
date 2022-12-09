@@ -1,4 +1,4 @@
-return (
+callback((
     [{
         name:"Gather Demo Site",
         url:"https://rmt.geoforms.ca",
@@ -6,4 +6,4 @@ return (
     }]
     ).map(function(data){
         return new MockDataTypeItem(data);
-    });
+    }))
