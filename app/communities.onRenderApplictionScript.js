@@ -43,6 +43,8 @@ IncludeCSSBlock('
     span.array-module.ui-list-view {
         margin: auto;
         max-width: 1000px;
+        position: relative;
+        width: calc( 100% - 300px );
     }
     
     span.field-value {
