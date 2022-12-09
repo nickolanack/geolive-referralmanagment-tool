@@ -1,0 +1,1 @@
+childView.getElement().href=child.getUrl();

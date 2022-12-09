@@ -30250,7 +30250,7 @@
                                     "targetName": "",
                                     "getItemListScript": "communitiesContent.metadata.positions.content.modules.1.config.getItemListScript.js",
                                     "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "return item;",
+                                    "formatListItemModuleScript": "communitiesContent.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
                                     "emptyNamedView": "emptyListView",
                                     "filterItemsScript": "return true;",
                                     "sortItemsScript": "",
