@@ -33,7 +33,8 @@ IncludeCSSBlock('
         transition:filter 0.8s, opacity 0.8s;
          opacity:0.8;
          
-             height: calc( (100vw - 300px)/5 );
+            height: calc( (100vw - 300px)/5 );
+            max-height:220px;
             background-size: cover;
     }
     a.ui-view[data-view="communityItem"]:hover {
