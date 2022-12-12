@@ -11,14 +11,16 @@ var ProjectCalendar = (function() {
 			var me = this;
 			me._holidays = null;
 
-			(new AjaxControlQuery(CoreAjaxUrlRoot, 'list_cal_events', {
-				"plugin": "ReferralManagement"
-			})).on('success', function(resp) {
+			AppClient.runOnceOnLoad(function(){
+				(new AjaxControlQuery(CoreAjaxUrlRoot, 'list_cal_events', {
+					"plugin": "ReferralManagement"
+				})).on('success', function(resp) {
 
-				me._holidays = resp.data;
-				me.fireEvent('load');
+					me._holidays = resp.data;
+					me.fireEvent('load');
 
-			}).execute();
+				}).execute();
+			});
 
 
 
