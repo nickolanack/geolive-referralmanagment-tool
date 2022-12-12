@@ -20,7 +20,7 @@
             "CSSInlineObfuscationEnabled": false,
             "PHPDebugEnabled": true,
             "JSDebugEnabled": false,
-            "CachingEnabled": true,
+            "CachingEnabled": false,
             "PrettyPrintJson": true,
             "JSCacheObfuscationEnabled": false,
             "phase": "production",
@@ -242,14 +242,26 @@
                     "view": "plugin",
                     "plugin": "UserInterface",
                     "pluginView": "widget",
-                    "widget": "install"
+                    "widget": "install",
+                    "metadata": {
+                        "lang": "en",
+                        "title": "Gather. Referral Management, Data warehouse",
+                        "description": "plugin.UserInterface.24.routes.4.metadata.description.js",
+                        "keywords": "XXXX-XXXX"
+                    }
                 },
                 {
                     "name": "welcome",
                     "view": "plugin",
                     "plugin": "UserInterface",
                     "pluginView": "widget",
-                    "widget": "gatherWelcome"
+                    "widget": "gatherWelcome",
+                    "metadata": {
+                        "lang": "en",
+                        "title": "Geoforms. Cloud mapping software",
+                        "description": "plugin.UserInterface.24.routes.5.metadata.description.js",
+                        "keywords": "XXXX-XXXX"
+                    }
                 },
                 {
                     "name": "mobile-privacy",
@@ -264,6 +276,19 @@
                     "plugin": "UserInterface",
                     "pluginView": "widget",
                     "widget": "marketing"
+                },
+                {
+                    "name": "communities",
+                    "view": "plugin",
+                    "plugin": "UserInterface",
+                    "pluginView": "widget",
+                    "widget": "communities",
+                    "metadata": {
+                        "lang": "en",
+                        "title": "Gather Mapping | Communities",
+                        "description": "Links to community dashboards",
+                        "keywords": "XXXX-XXXX"
+                    }
                 }
             ],
             "useRemoteServerUI": false,
@@ -30132,6 +30157,165 @@
             "parseMarkdown": true,
             "saveTemplateAsData": true,
             "contentTemplate": "module-mobileDevicesHeading-html-text.contentTemplate.html",
+            "readAccess": "public"
+        }
+    },
+    "widget.542": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "communities",
+            "target": "communities",
+            "templateName": "communities",
+            "requireTarget": false,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "communities.onRenderApplictionScript.js",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "useRemote": "",
+            "saveViewAsData": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "communities.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.543": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "communitiesContent",
+            "target": "communitiesContent",
+            "templateName": "communitiesContent",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "useRemote": "",
+            "saveViewAsData": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "communitiesContent.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIListView",
+                                "config": {
+                                    "listClassName": "",
+                                    "className": "",
+                                    "elementType": "a",
+                                    "elementOptions": "{}",
+                                    "identifier": "",
+                                    "viewType": "view",
+                                    "namedView": "communityItem",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": "",
+                                    "getItemListScript": "communitiesContent.metadata.positions.content.modules.1.config.getItemListScript.js",
+                                    "formatItemListScript": "return list;",
+                                    "formatListItemModuleScript": "communitiesContent.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
+                                    "emptyNamedView": "emptyListView",
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.544": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "communityItem",
+            "target": "communityItem",
+            "templateName": "communityItem",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "formatModulesScript": "",
+            "notifyViewer": false,
+            "useRemote": "",
+            "saveViewAsData": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "communityItem.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
             "readAccess": "public"
         }
     }
