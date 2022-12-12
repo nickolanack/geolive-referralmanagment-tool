@@ -126,9 +126,16 @@ var ProjectSelection = (function() {
 						newItem.addProject(item);
 					});
 
-					application.getDisplayController().displayPopoverForm(formName, newItem, application, {
-						template: "form"
-					});
+					(new UIModalDialog(application, newItem, {
+						formName:formName,
+						formOptions:{
+							template: "form"
+						}
+					})).show();
+
+					// application.getDisplayController().displayPopoverForm(formName, newItem, application, {
+					// 	template: "form"
+					// });
 
 					newItem.addEvent("save:once", function() {
 						ProjectTeam.CurrentTeam().addProject(newItem);

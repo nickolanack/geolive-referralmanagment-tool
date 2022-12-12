@@ -598,6 +598,7 @@ var GatherDashboard = (function() {
 				},
 			}).addEvent('complete', function() {
 
+
 				application.getDisplayController().displayPopoverForm(
 					'emailVerificationForm',
 					proposalObj,
