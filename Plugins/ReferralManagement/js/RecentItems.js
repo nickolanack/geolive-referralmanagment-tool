@@ -292,19 +292,20 @@ var RecentItems = (function() {
 		label: "Recent user activity"
 	});
 
+	AppClient.runOnceOnLoad(function(){
+		(new AjaxControlQuery(CoreAjaxUrlRoot, 'recent_activity', {
+			plugin: 'ReferralManagement'
+		})).addEvent("success", function(result) {
 
-	(new AjaxControlQuery(CoreAjaxUrlRoot, 'recent_activity', {
-		plugin: 'ReferralManagement'
-	})).addEvent("success", function(result) {
+			var recent=result.activity.reverse();
 
-		var recent=result.activity.reverse();
+			
+			RecentItems.RecentUserActivity.setListData(recent,'.user');
+			RecentItems.RecentActivity.setListData(recent,'.proposal');
 
-		
-		RecentItems.RecentUserActivity.setListData(recent,'.user');
-		RecentItems.RecentActivity.setListData(recent,'.proposal');
-
-		
-	}).execute();
+			
+		}).execute();
+	});
 
 	RecentItems.FormatPost=function(p){
 

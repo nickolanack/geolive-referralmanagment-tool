@@ -16,57 +16,60 @@ var NotificationItems=(function(){
 				return;
 			}
 
-			(new AjaxControlQuery(CoreAjaxUrlRoot, 'discussion_metadata', ObjectAppend_({
-				'item': AppClient.getId(),
-				'itemType': AppClient.getType(),
-				'channel': 'notifications'
-			}, {
-				"plugin": "Discussions"
-			}))).on('success', function(resp) {
 
-				if(!resp.success){
-					//guest dashboard
-					return;
-				}
-
-				me._discussion=resp.metadata.id;
-
-				(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_posts', ObjectAppend_({
-					'discussion':resp.metadata.id,
-					'peek':true
+			AppClient.runOnceOnLoad(function(){
+				(new AjaxControlQuery(CoreAjaxUrlRoot, 'discussion_metadata', ObjectAppend_({
+					'item': AppClient.getId(),
+					'itemType': AppClient.getType(),
+					'channel': 'notifications'
 				}, {
 					"plugin": "Discussions"
 				}))).on('success', function(resp) {
-					me._postData=resp.posts;
-					me.fireEvent('change',[me.getInfo()]);
-				}).execute();
 
+					if(!resp.success){
+						//guest dashboard
+						return;
+					}
 
-				
-				var change=me._new!=parseInt(resp.metadata.new)||me._posts!=parseInt(resp.metadata.posts);
+					me._discussion=resp.metadata.id;
 
-				me._new=parseInt(resp.metadata.new);
-				me._posts=parseInt(resp.metadata.posts);
-
-				if(change){
-					me.fireEvent('change',[me.getInfo()]);
-				}
-
-
-
-				if (resp.subscription) {
-					AjaxControlQuery.Subscribe(resp.subscription, function(result) {
-						me._new=me._new+1;
-						me._posts=me._posts+1;
-						me._postData.push(result);
-						
+					(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_posts', ObjectAppend_({
+						'discussion':resp.metadata.id,
+						'peek':true
+					}, {
+						"plugin": "Discussions"
+					}))).on('success', function(resp) {
+						me._postData=resp.posts;
 						me.fireEvent('change',[me.getInfo()]);
-						NotificationBubble.Make("", NotificationContent.formatEventText(result.text, result), {className:"info"});
-					});
-				}
+					}).execute();
 
 
-			}).execute();
+					
+					var change=me._new!=parseInt(resp.metadata.new)||me._posts!=parseInt(resp.metadata.posts);
+
+					me._new=parseInt(resp.metadata.new);
+					me._posts=parseInt(resp.metadata.posts);
+
+					if(change){
+						me.fireEvent('change',[me.getInfo()]);
+					}
+
+
+
+					if (resp.subscription) {
+						AjaxControlQuery.Subscribe(resp.subscription, function(result) {
+							me._new=me._new+1;
+							me._posts=me._posts+1;
+							me._postData.push(result);
+							
+							me.fireEvent('change',[me.getInfo()]);
+							NotificationBubble.Make("", NotificationContent.formatEventText(result.text, result), {className:"info"});
+						});
+					}
+
+
+				}).execute();
+			});
 
 
 		},
