@@ -605,14 +605,6 @@ var GatherDashboard = (function() {
 					}
 				})).show();
 
-				// application.getDisplayController().displayPopoverForm(
-				// 	'emailVerificationForm',
-				// 	proposalObj,
-				// 	application, {
-				// 		template: "form"
-				// 	}
-				// );
-
 			});
 
 
@@ -701,14 +693,6 @@ var GatherDashboard = (function() {
 							template: "form"
 						}
 					})).show();
-
-					// application.getDisplayController().displayPopoverForm(
-					// 	'emailVerificationForm',
-					// 	proposalObj,
-					// 	application, {
-					// 		template: "form"
-					// 	}
-					// );
 
 				});
 

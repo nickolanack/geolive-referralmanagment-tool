@@ -144,20 +144,11 @@ var ItemDiscussion = (function() {
 
 
 					(new UIModalDialog(application, item, {
-							formName:'discussionMediaPostForm',
-							formOptions:{
-								template: "form"
-							}
-						})).show();
-
-					// application.getDisplayController().displayPopoverForm(
-					// 	'discussionMediaPostForm',
-					// 	item, 
-					// 	{
-					// 		template: "form"
-					// 	}
-					// );
-
+						formName:'discussionMediaPostForm',
+						formOptions:{
+							template: "form"
+						}
+					})).show();
 
 				}
 

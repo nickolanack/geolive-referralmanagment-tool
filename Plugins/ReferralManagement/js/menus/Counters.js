@@ -385,12 +385,6 @@ var Counters = (function() {
 							}
 						})).show();
 
-
-						// application.getDisplayController().displayPopoverForm(
-						// 	"taskDetailPopover",
-						// 	item,
-						// 	application, {}
-						// );
 					});
 				}
 			}

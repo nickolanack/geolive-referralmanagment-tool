@@ -133,10 +133,6 @@ var ProjectSelection = (function() {
 						}
 					})).show();
 
-					// application.getDisplayController().displayPopoverForm(formName, newItem, application, {
-					// 	template: "form"
-					// });
-
 					newItem.addEvent("save:once", function() {
 						ProjectTeam.CurrentTeam().addProject(newItem);
 						UIInteraction.navigateToProjectOverview(newItem);

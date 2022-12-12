@@ -507,14 +507,7 @@ var TaskItem = (function() {
 				}
 			})).show();
 
-			// application.getDisplayController().displayPopoverForm(
-			// 	formName,
-			// 	item, {
-			// 		template: "form"
-			// 	}
-			// );
-
-		})
+		});
 
 		valueEl.addClass('clickable-task');
 		valueEl.addEvent('click', function() {
@@ -527,12 +520,7 @@ var TaskItem = (function() {
 				}
 			})).show();
 
-			// application.getDisplayController().displayPopoverForm(
-			// 	"taskDetailPopover",
-			// 	item,
-			// 	application, {}
-			// );
-		})
+		});
 
 	}
 
