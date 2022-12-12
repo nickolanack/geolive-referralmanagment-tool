@@ -282,17 +282,18 @@ var ProjectDepartmentList = (function() {
 	});
 
 
+	AppClient.runOnceOnLoad(function(){
+		(new DepartmentListQuery()).addEvent('success', function(response) {
 
-	(new DepartmentListQuery()).addEvent('success', function(response) {
+			_departments=response.departments.map(function(itemData){
+				return new ProjectDepartment(Object.append({
+					"type": "Project.department",
+					"kind":"Department"
+				}, itemData));
+			});
 
-		_departments=response.departments.map(function(itemData){
-			return new ProjectDepartment(Object.append({
-				"type": "Project.department",
-				"kind":"Department"
-			}, itemData));
-		});
-
-	}).execute();
+		}).execute();
+	});
 
 
 	return {

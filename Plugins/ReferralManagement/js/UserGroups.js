@@ -10,17 +10,18 @@ var UserGroups = (function() {
 
 			var me=this;
 
-
-			(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_user_roles', {
-				'plugin': "ReferralManagement"
-			}))
-			.addEvent('success', function(result) {
-				console.log(result);
-				MainRoles = result.roles;
-				me.fireEvent('load');
-				me._isLoaded=true;
-			})
-			.execute();
+			AppClient.runOnceOnLoad(function(){
+				(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_user_roles', {
+					'plugin': "ReferralManagement"
+				}))
+				.addEvent('success', function(result) {
+					console.log(result);
+					MainRoles = result.roles;
+					me.fireEvent('load');
+					me._isLoaded=true;
+				})
+				.execute();
+			});
 
 		},
 		runOnceOnLoad:function(then){

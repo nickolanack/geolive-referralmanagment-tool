@@ -15,40 +15,41 @@ var NamedCategoryList = (function() {
 	});
 
 
-
-	(new TagsListQuery()).addEvent('success', function(response) {
-
-
-		var tagsSorted=response.tags;
+	AppClient.runOnceOnLoad(function(){
+		(new TagsListQuery()).addEvent('success', function(response) {
 
 
-		tagsSorted.sort(function(a, b){
-
-			var orderA=9999;
-			var orderB=9999;
+			var tagsSorted=response.tags;
 
 
-			if(a.metadata&&typeof a.metadata.order!="undefined"){
-				orderA=parseInt(a.metadata.order);
-			}
+			tagsSorted.sort(function(a, b){
 
-			if(b.metadata&&typeof b.metadata.order!="undefined"){
-				orderB=parseInt(b.metadata.order);
-			}
-
-			return orderA-orderB;
-
-		});
+				var orderA=9999;
+				var orderB=9999;
 
 
-		_tags = tagsSorted.map(function(itemData) {
-			return new ProjectTag(Object.append({
-				"type": "Project.tag"
-			}, itemData));
-		});
+				if(a.metadata&&typeof a.metadata.order!="undefined"){
+					orderA=parseInt(a.metadata.order);
+				}
+
+				if(b.metadata&&typeof b.metadata.order!="undefined"){
+					orderB=parseInt(b.metadata.order);
+				}
+
+				return orderA-orderB;
+
+			});
 
 
-	}).execute();
+			_tags = tagsSorted.map(function(itemData) {
+				return new ProjectTag(Object.append({
+					"type": "Project.tag"
+				}, itemData));
+			});
+
+
+		}).execute();
+	});
 
 
 	var NamedCategoryList = new Class({
