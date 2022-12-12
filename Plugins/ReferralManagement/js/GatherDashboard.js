@@ -598,14 +598,20 @@ var GatherDashboard = (function() {
 				},
 			}).addEvent('complete', function() {
 
-
-				application.getDisplayController().displayPopoverForm(
-					'emailVerificationForm',
-					proposalObj,
-					application, {
+				(new UIModalDialog(application, proposalObj, {
+					formName:'emailVerificationForm',
+					formOptions:{
 						template: "form"
 					}
-				);
+				})).show();
+
+				// application.getDisplayController().displayPopoverForm(
+				// 	'emailVerificationForm',
+				// 	proposalObj,
+				// 	application, {
+				// 		template: "form"
+				// 	}
+				// );
 
 			});
 
@@ -688,13 +694,21 @@ var GatherDashboard = (function() {
 
 				})).addEvent('complete', function() {
 
-					application.getDisplayController().displayPopoverForm(
-						'emailVerificationForm',
-						proposalObj,
-						application, {
+
+					(new UIModalDialog(application, proposalObj, {
+						formName:'emailVerificationForm',
+						formOptions:{
 							template: "form"
 						}
-					);
+					})).show();
+
+					// application.getDisplayController().displayPopoverForm(
+					// 	'emailVerificationForm',
+					// 	proposalObj,
+					// 	application, {
+					// 		template: "form"
+					// 	}
+					// );
 
 				});
 

@@ -40,7 +40,7 @@ var UILeftPanel = (function() {
 									template: "form"
 								}
 							})).show();
-			
+
 							// application.getDisplayController().displayPopoverForm(formName, newItem, application, {
 							// 	template: "form"
 							// });
@@ -82,9 +82,18 @@ var UILeftPanel = (function() {
 								var formName = DashboardConfig.getValue("leftPanelSecondaryBtnForm"); //"documentProjectForm";//"ProposalTemplate";
 								var newItem = new Proposal();
 				
-								application.getDisplayController().displayPopoverForm(formName, newItem, application, {
-									template: "form"
-								});
+
+								(new UIModalDialog(application, newItem, {
+									formName:formName,
+									formOptions:{
+										template: "form"
+									}
+								})).show();
+
+				
+								// application.getDisplayController().displayPopoverForm(formName, newItem, application, {
+								// 	template: "form"
+								// });
 
 								newItem.addEvent("save:once", function() {
 									ProjectTeam.CurrentTeam().addProject(newItem);

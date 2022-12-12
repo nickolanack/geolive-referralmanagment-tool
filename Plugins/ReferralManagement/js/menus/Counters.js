@@ -376,12 +376,22 @@ var Counters = (function() {
 
 				if (item instanceof TaskItem) {
 					postCounter.addEvent('click', function() {
-						application.getDisplayController().displayPopoverForm(
-							"taskDetailPopover",
-							item,
-							application, {}
-						);
-					})
+
+
+						(new UIModalDialog(application, item, {
+							formName:'taskDetailPopover',
+							formOptions:{
+								template: "form"
+							}
+						})).show();
+
+
+						// application.getDisplayController().displayPopoverForm(
+						// 	"taskDetailPopover",
+						// 	item,
+						// 	application, {}
+						// );
+					});
 				}
 			}
 

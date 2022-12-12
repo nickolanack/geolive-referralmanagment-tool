@@ -126,25 +126,37 @@ var ItemDiscussion = (function() {
 				value = value.trim();
 				if (value && value !== "") {
 
-					application.getDisplayController().displayPopoverForm(
-						'discussionMediaPostForm',
-						(new MockDataTypeItem({
-							name: fileInfo.name,
-							fileInfo:fileInfo
-						})).addEvent('save', function() {
 
-							var discussion = getDiscussion();
-							discussion.getDiscussion().post(value, metadata, function(success) {
-								//console.log('success: '+(success?'true':'false'));  
-								if (!success) {
-									alert('Something went wrong');
-								}
-							});
+					var item=(new MockDataTypeItem({
+						name: fileInfo.name,
+						fileInfo:fileInfo
+					})).addEvent('save', function() {
 
-						}), {
-							template: "form"
-						}
-					);
+						var discussion = getDiscussion();
+						discussion.getDiscussion().post(value, metadata, function(success) {
+							//console.log('success: '+(success?'true':'false'));  
+							if (!success) {
+								alert('Something went wrong');
+							}
+						});
+
+					});
+
+
+					(new UIModalDialog(application, item, {
+							formName:'discussionMediaPostForm',
+							formOptions:{
+								template: "form"
+							}
+						})).show();
+
+					// application.getDisplayController().displayPopoverForm(
+					// 	'discussionMediaPostForm',
+					// 	item, 
+					// 	{
+					// 		template: "form"
+					// 	}
+					// );
 
 
 				}

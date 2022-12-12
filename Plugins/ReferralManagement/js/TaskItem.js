@@ -500,12 +500,19 @@ var TaskItem = (function() {
 
 
 
-			application.getDisplayController().displayPopoverForm(
-				formName,
-				item, {
+			(new UIModalDialog(application, item, {
+				formName:formName,
+				formOptions:{
 					template: "form"
 				}
-			);
+			})).show();
+
+			// application.getDisplayController().displayPopoverForm(
+			// 	formName,
+			// 	item, {
+			// 		template: "form"
+			// 	}
+			// );
 
 		})
 
@@ -513,11 +520,18 @@ var TaskItem = (function() {
 		valueEl.addEvent('click', function() {
 
 
-			application.getDisplayController().displayPopoverForm(
-				"taskDetailPopover",
-				item,
-				application, {}
-			);
+			(new UIModalDialog(application, item, {
+				formName:'taskDetailPopover',
+				formOptions:{
+					template: "form"
+				}
+			})).show();
+
+			// application.getDisplayController().displayPopoverForm(
+			// 	"taskDetailPopover",
+			// 	item,
+			// 	application, {}
+			// );
 		})
 
 	}
