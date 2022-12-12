@@ -94,14 +94,15 @@ var DashboardConfig=(function(){
 
 	var configuration =new DashboardConfig();
 
-
-	(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_dashboard_config', {
-		'plugin': "ReferralManagement"
-	}))
+	AppClient.runOnceOnLoad(function(){
+		(new AjaxControlQuery(CoreAjaxUrlRoot, 'get_dashboard_config', {
+			'plugin': "ReferralManagement"
+		}))
 		.addEvent('success', function(config) {
 			configuration.setConfig(config);
 		})
 		.execute();
+	});
 
 
 	return configuration;
