@@ -80,36 +80,37 @@ var LayerGroupItemList = (function() {
 	});
 
 
+	AppClient.runOnceOnLoad(function(){
+		(new LayerGroupItemListQuery()).addEvent('success', function(response) {
+			_layerItems=[];
+			_layerNames=[];
 
-	(new LayerGroupItemListQuery()).addEvent('success', function(response) {
-		_layerItems=[];
-		_layerNames=[];
+			if(!response.parameters){
+				return;
+			}
 
-		if(!response.parameters){
-			return;
-		}
-
-		_layerNames=Object.keys(response.parameters);
-		Object.keys(response.parameters).map(function(group){
+			_layerNames=Object.keys(response.parameters);
+			Object.keys(response.parameters).map(function(group){
 
 
 
-			response.parameters[group].forEach(function(layer){
-				_layerItems.push(
-					new LayerGroupItem(Object.append({
-						name: "",
-						description: "",
-						type: "Project.layer",
-						group:group,
-					}, {
-						id:layer
-					}))
-				);
+				response.parameters[group].forEach(function(layer){
+					_layerItems.push(
+						new LayerGroupItem(Object.append({
+							name: "",
+							description: "",
+							type: "Project.layer",
+							group:group,
+						}, {
+							id:layer
+						}))
+					);
+				});
+				
 			});
-			
-		});
 
-	}).execute();
+		}).execute();
+	});
 
 
 	return {

@@ -358,26 +358,29 @@ var ProjectTeam = (function() {
 		},
 		_loadDevices: function() {
 			var me = this;
-			(new DeviceListQuery()).addEvent('success', function(resp) {
+
+			AppClient.runOnceOnLoad(function(){
+				(new DeviceListQuery()).addEvent('success', function(resp) {
 
 
-				me._devices = [];
-				resp.results.forEach(function(user) {
-					me._addDevice(user);
-				});
+					me._devices = [];
+					resp.results.forEach(function(user) {
+						me._addDevice(user);
+					});
 
-				if (resp.subscription) {
-					me._subscribeDevices(resp.subscription);
-				}
-
-
-				setInterval(me._updateDevicesOnlineAsync.bind(me), 60000);
-				me._updateDevicesOnlineAsync();
+					if (resp.subscription) {
+						me._subscribeDevices(resp.subscription);
+					}
 
 
-				me.fireEvent('loadDevices');
+					setInterval(me._updateDevicesOnlineAsync.bind(me), 60000);
+					me._updateDevicesOnlineAsync();
 
-			}).execute();
+
+					me.fireEvent('loadDevices');
+
+				}).execute();
+			});
 
 		},
 		_updateDevicesOnlineAsync: function() {
@@ -484,6 +487,9 @@ var ProjectTeam = (function() {
 
 
 				if (!me._currentClient) {
+
+
+
 					var ClientUserQuery = new Class({
 						Extends: AjaxControlQuery,
 						initialize: function() {
@@ -495,20 +501,22 @@ var ProjectTeam = (function() {
 						}
 					});
 
-					(new ClientUserQuery()).addEvent('success', function(resp) {
+					AppClient.runOnceOnLoad(function(){
+						(new ClientUserQuery()).addEvent('success', function(resp) {
 
-						me._addUser(resp.result);
+							me._addUser(resp.result);
 
-						UserGroups.runOnceOnLoad(function(){
-							me.fireEvent('loadUsers');
-							callback();
-						});
+							UserGroups.runOnceOnLoad(function(){
+								me.fireEvent('loadUsers');
+								callback();
+							});
 
-						setInterval(me._updateUsersOnlineAsync.bind(me), 60000);
-						me._updateUsersOnlineAsync();
+							setInterval(me._updateUsersOnlineAsync.bind(me), 60000);
+							me._updateUsersOnlineAsync();
 
 
-					}).execute()
+						}).execute();
+					});
 
 
 					return;
