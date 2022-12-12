@@ -1,3 +1,3 @@
 return new Element('img',{
-    src:"<?php GetPlugin('QRCode')->getQRCode(HtmlDocument()->website()); ?>"
+    src:"<?php echo GetPlugin('QRCode')->getQRCode(HtmlDocument()->website()); ?>"
 })
