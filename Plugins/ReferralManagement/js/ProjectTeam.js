@@ -470,38 +470,38 @@ var ProjectTeam = (function() {
 
 			var me = this;
 
+			AppClient.runOnceOnLoad(function(){
+				(new UserListQuery(me.getId())).addEvent('success', function(resp) {
 
-			(new UserListQuery(me.getId())).addEvent('success', function(resp) {
-
-				me._users = [];
-				var currentUser;
-				resp.results.forEach(function(data) {
-					me._addUser(data);
-				});
-
-
-
-				if (resp.subscription) {
-					me._subscribeUsers(resp.subscription);
-				}
-
-
-				if (!me._currentClient) {
-
-
-
-					var ClientUserQuery = new Class({
-						Extends: AjaxControlQuery,
-						initialize: function() {
-
-							this.parent(CoreAjaxUrlRoot, "get_user", {
-								plugin: "ReferralManagement",
-								id: AppClient.getId(),
-							});
-						}
+					me._users = [];
+					var currentUser;
+					resp.results.forEach(function(data) {
+						me._addUser(data);
 					});
 
-					AppClient.runOnceOnLoad(function(){
+
+
+					if (resp.subscription) {
+						me._subscribeUsers(resp.subscription);
+					}
+
+
+					if (!me._currentClient) {
+
+
+
+						var ClientUserQuery = new Class({
+							Extends: AjaxControlQuery,
+							initialize: function() {
+
+								this.parent(CoreAjaxUrlRoot, "get_user", {
+									plugin: "ReferralManagement",
+									id: AppClient.getId(),
+								});
+							}
+						});
+
+						
 						(new ClientUserQuery()).addEvent('success', function(resp) {
 
 							me._addUser(resp.result);
@@ -516,21 +516,22 @@ var ProjectTeam = (function() {
 
 
 						}).execute();
+						
+
+
+						return;
+					}
+
+					UserGroups.runOnceOnLoad(function(){
+						me.fireEvent('loadUsers');
+						callback();
 					});
 
+					setInterval(me._updateUsersOnlineAsync.bind(me), 60000);
+					me._updateUsersOnlineAsync();
 
-					return;
-				}
-
-				UserGroups.runOnceOnLoad(function(){
-					me.fireEvent('loadUsers');
-					callback();
-				});
-
-				setInterval(me._updateUsersOnlineAsync.bind(me), 60000);
-				me._updateUsersOnlineAsync();
-
-			}).execute();
+				}).execute();
+			});
 
 		},
 
