@@ -26,7 +26,10 @@ var GuestProject = (function() {
 				})).addEvent('success', function(result) {
 
 					if (result.success && result.token) {
+						
 						me.data.token = result.token;
+						me.data.email=me._attributes.proposalAttributes.contactEmail;
+
 						callback(true);
 						me.fireEvent("save");
 
