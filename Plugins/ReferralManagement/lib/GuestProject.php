@@ -132,7 +132,7 @@ class GuestProject{
 
 					$moderators=array('nickblackwell82@gmail.com');
 
-					foreach($moderators as $moderatorEamil){
+					foreach($moderators as $moderatorEmail){
 
 
 
@@ -151,7 +151,7 @@ class GuestProject{
 
 						GetPlugin('Email')->getMailer()
 							->mail($subject, $body)
-							->to(moderatorEamil)
+							->to($moderatorEmail)
 							->send();
 
 					}
