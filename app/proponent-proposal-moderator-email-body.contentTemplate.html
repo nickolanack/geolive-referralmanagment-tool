@@ -1,12 +1,17 @@
 
 
-#{{data.proposalData.attributes.proposalAttributes.title}}
-##{{data.proposalData.attributes.proposalAttributes.permitNumber | join(', ')}}
+#Project title:{{data.proposalData.attributes.proposalAttributes.title}}
+##Permits: {{data.proposalData.attributes.proposalAttributes.permitNumber | join(', ')}}
 
+##Description
 {{data.proposalData.attributes.proposalAttributes.description}}
 
- - {{data.proposalData.attributes.proposalAttributes.contactName}}
- - {{data.proposalData.attributes.proposalAttributes.contactEmail}}
- - {{data.proposalData.attributes.proposalAttributes.contactAddress}}
- - {{data.proposalData.attributes.proposalAttributes.contactPhone}}
+##Contact
+
+ - Proponent: {{data.proposalData.attributes.proposalAttributes.company}}
+
+ - Name: {{data.proposalData.attributes.proposalAttributes.contactName}}
+ - Email: {{data.proposalData.attributes.proposalAttributes.contactEmail}}
+ - Address: {{data.proposalData.attributes.proposalAttributes.contactAddress}}
+ - Phone: {{data.proposalData.attributes.proposalAttributes.contactPhone}}
    
