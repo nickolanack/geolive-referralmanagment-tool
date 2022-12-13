@@ -25783,7 +25783,7 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
+            "parseMarkdown": true,
             "saveTemplateAsData": false,
             "contentTemplate": "proponent-proposal-link-email-body.contentTemplate.html",
             "readAccess": "public"
