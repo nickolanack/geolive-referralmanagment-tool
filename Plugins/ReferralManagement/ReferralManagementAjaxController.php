@@ -660,9 +660,10 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 			if (filter_var($json->email, FILTER_VALIDATE_EMAIL)) {
 
-				(new \ReferralManagement\GuestProject())->createProjectActivation($json);
-				return true;
-
+				return array(
+					'subscription'=>(new \ReferralManagement\GuestProject())->createProjectActivation($json)
+				);
+				
 			}
 
 			return false;
