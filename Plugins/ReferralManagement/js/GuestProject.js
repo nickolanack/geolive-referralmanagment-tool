@@ -62,7 +62,10 @@ var GuestProject = (function() {
 		hasEmail: function() {
 			var me = this;
 			return (me.data && me.data.email);
-		}
+		},
+		getEmail:function(){
+			return this.data?(this.data.email||""):"";
+		},
 
 
 	});
@@ -209,7 +212,7 @@ var GuestProjectAmendment = (function() {
 			me.data.email = e;
 		},
 		getEmail:function(){
-			return this.data.email||"";
+			return this.data?(this.data.email||""):"";
 		},
 		hasEmail: function() {
 			var me = this;
