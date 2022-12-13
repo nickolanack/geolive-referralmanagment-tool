@@ -111,7 +111,7 @@ var GuestProject = (function() {
 			},
 			formName: "ProposalTemplate",
 
-		})).on('complete', function() {
+		})).on('success', function() {
 
 			var modalButton=this;
 			var firstWizard=modalButton.getWizard();
