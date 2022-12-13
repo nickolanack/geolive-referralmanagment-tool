@@ -51,12 +51,12 @@ p.author {
 }
 
 .article-content:before {
-    content: "\0f05d";
+    content: "\0f071";
     font-family: FontAwesome;
-    float: left;
-    color: mediumseagreen;
+    color: crimson;
     font-size: 50px;
     margin-right: 20px;
     position: relative;
-    top: -10px;
+    top: -95px;
+    left: -65px;
 }
