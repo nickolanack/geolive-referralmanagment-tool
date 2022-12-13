@@ -30344,5 +30344,33 @@
             "contentTemplate": "module-emailVerificationForm-intro-text.contentTemplate.html",
             "readAccess": "public"
         }
+    },
+    "widget.546": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "proponent.proposal.moderator.email.subject",
+            "target": "proponent.proposal.moderator.email.subject",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "proponent-proposal-moderator-email-subject.contentTemplate.html"
+        }
+    },
+    "widget.547": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "proponent.proposal.moderator.email.body",
+            "target": "proponent.proposal.moderator.email.body",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Add information"
+        }
     }
 }
