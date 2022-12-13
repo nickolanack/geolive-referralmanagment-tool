@@ -30339,7 +30339,8 @@
             "convertStylesToInline": false,
             "parseMarkdown": false,
             "saveTemplateAsData": false,
-            "contentTemplate": "module-emailVerificationForm-intro-text.contentTemplate.html"
+            "contentTemplate": "module-emailVerificationForm-intro-text.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }
