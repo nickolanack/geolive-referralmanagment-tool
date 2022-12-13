@@ -15436,16 +15436,16 @@
                             "emailVerificationForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 213,
-                            "y": 216
+                            "x": 223,
+                            "y": 226
                         },
                         "children": [
                             "emailVerificationForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 173,
-                                    "y": 382
+                                    "x": 183,
+                                    "y": 392
                                 }
                             }
                         ],
@@ -15470,9 +15470,10 @@
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "add another value",
                                                 "formatter": "none",
+                                                "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": " return \"\"; ",
+                                                "getValueScript": " return item.getEmail(); ",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "emailVerificationForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
