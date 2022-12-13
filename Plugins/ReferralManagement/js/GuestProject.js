@@ -208,6 +208,9 @@ var GuestProjectAmendment = (function() {
 			var me = this;
 			me.data.email = e;
 		},
+		getEmail:function(){
+			return this.data.email||"";
+		},
 		hasEmail: function() {
 			var me = this;
 			return (me.data && me.data.email);
