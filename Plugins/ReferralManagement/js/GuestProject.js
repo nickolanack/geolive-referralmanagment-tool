@@ -136,7 +136,7 @@ var GuestProject = (function() {
 
 			}).on('success', function(){
 
-				(new UIModalDialog(application, "<h2>An activation email has been sent. Please click the link in the email to complete your submission.</h2>You can close this dialog", {
+				(new UIModalDialog(application, "<h2>Validation email sent</h2> Please click the link in the email to complete your submission.<br/>You can close this dialog.", {
 					"formName": "dialogForm",
 					"formOptions": {
 						"template": "form",
