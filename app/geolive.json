@@ -30369,9 +30369,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
+            "parseMarkdown": true,
             "saveTemplateAsData": false,
-            "contentTemplate": "Add information"
+            "contentTemplate": "proponent-proposal-moderator-email-body.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }
