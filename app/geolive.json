@@ -30337,7 +30337,7 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
+            "parseMarkdown": true,
             "saveTemplateAsData": false,
             "contentTemplate": "module-emailVerificationForm-intro-text.contentTemplate.html",
             "readAccess": "public"
