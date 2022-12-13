@@ -3,17 +3,17 @@
     "config": {
         "className": "",
         "elementType": "span",
-        "elementOptions": {},
+        "elementOptions": "{}",
         "text": "<p>Before we can process your proposal we need to verify your email address. Please enter your email address below and press submit.<\/p>",
-        "template": "",
+        "template": "emailVerificationForm.intro",
         "templateNamespace": "",
-        "templateVariablesScript": "",
+        "templateVariablesScript": "{}",
         "formatTextScript": "",
         "formatVariablesScript": "",
         "requestTemplateScript": "defaultBehaviour();",
-        "ajaxRequestTemplate": false,
+        "ajaxRequestTemplate": true,
         "namedFormView": "",
-        "formOptions": {},
+        "formOptions": "{}",
         "identifier": "htmlLabel"
     }
 }
