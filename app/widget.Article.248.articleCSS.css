@@ -1,3 +1,6 @@
+
+@import url("/webresources/font-awesome-4.7.0/css/font-awesome.min.css");
+
 article:after {
     content: "";
     background-color: rgba(232, 137, 36, 0.5);
@@ -46,4 +49,9 @@ p.author {
     font-size: 28px;
     font-weight: 100;
     text-shadow: 0 0 10px black, 0 0 3px black;
+}
+
+.article-content:before {
+    content: "\0f05d";
+    font-family: FontAwesome;
 }
