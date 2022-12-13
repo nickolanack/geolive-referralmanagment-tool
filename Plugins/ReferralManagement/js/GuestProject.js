@@ -105,7 +105,12 @@ var GuestProject = (function() {
 			},
 			formName: "ProposalTemplate",
 
-		})).addEvent('complete', function() {
+		})).on('complete', function() {
+
+			var modalButton=this;
+			var firstWizard=modalButton.getWizard();
+
+			var wizardData=firstWizard.getData();
 
 
 			(new UIModalDialog(application, proposalObj, {
