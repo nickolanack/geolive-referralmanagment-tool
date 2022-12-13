@@ -118,7 +118,13 @@ var GuestProject = (function() {
 				formOptions: {
 					template: "form"
 				}
-			})).show();
+			})).on('show',function(){
+
+				var dialog=this;
+				var wizard=dialog.getWizard();
+				wizard.setDataValue('lineColor', d.lineColor);
+
+			}).show();
 
 		});
 
@@ -166,7 +172,10 @@ var GuestProjectAmendment = (function() {
 				})).addEvent('success', function(result) {
 
 					if (result.success && result.token) {
+							
 						me.data.token = result.token;
+						me.data.email=me._attributes.proposalAttributes.contactEmail;
+
 						callback(true);
 						me.fireEvent("save");
 
