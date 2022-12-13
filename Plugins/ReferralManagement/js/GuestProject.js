@@ -126,9 +126,7 @@ var GuestProject = (function() {
 				}
 			})).on('show',function(){
 
-				var dialog=this;
-				var wizard=dialog.getWizard();
-				wizard.setDataValue('lineColor', d.lineColor);
+				
 
 			}).show().on('close', function(){
 
