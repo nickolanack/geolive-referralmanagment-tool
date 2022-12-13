@@ -642,65 +642,25 @@ var GatherDashboard = (function() {
 
 			}));
 
-			var proposal = new Element('div', {
-				"style": "margin-top: 20px; height: 50px;"
-			})
+		
 
-
+			var buttons=[registration];
 
 			DashboardConfig.getValue('enableProposals', function(enabled) {
 				if (!enabled) {
 					return;
 				}
 
-				/**
-				 * TODO make this variables
-				 */
+	
+				var proposal = GuestProject.CreateGuestProjectButton();
 
-				var loginProposal = proposal.appendChild(new Element('label', {
-					html: 'Submit a referral',
-					'class': 'login-button-text',
-					style: "text-align:left; color: #6A7CE9; line-height: 55px;",
-					events: {
-
-					}
-				}));
-
-				//login.appendChild(new Element('br'));
-				var proposalButton = loginProposal.appendChild(new Element('button', {
-
-					html: 'Add submission',
-					style: "background-color:#EDC84C;",
-					"class": "primary-btn"
-
-				}));
-
-
-				var proposalObj = new GuestProposal(-1, {});
-				(new UIModalFormButton(proposalButton, application, proposalObj, {
-
-					formOptions: {
-						template: "form"
-					},
-					formName: "ProposalTemplate",
-
-				})).addEvent('complete', function() {
-
-
-					(new UIModalDialog(application, proposalObj, {
-						formName:'emailVerificationForm',
-						formOptions:{
-							template: "form"
-						}
-					})).show();
-
-				});
+				buttons.push(proposal);
 
 			});
 
 
 
-			return [registration, proposal];
+			return buttons;
 
 		},
 

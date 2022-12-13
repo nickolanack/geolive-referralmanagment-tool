@@ -68,12 +68,68 @@ var GuestProject = (function() {
 	});
 
 
+
+	GuestProject.CreateGuestProjectButton = function() {
+
+
+		var application=GatherDashboard.getApplication();
+
+		var proposal = new Element('div', {
+			"style": "margin-top: 20px; height: 50px;"
+		});
+
+		var loginProposal = proposal.appendChild(new Element('label', {
+			html: 'Submit a referral',
+			'class': 'login-button-text',
+			style: "text-align:left; color: #6A7CE9; line-height: 55px;",
+			events: {
+
+			}
+		}));
+
+		//login.appendChild(new Element('br'));
+		var proposalButton = loginProposal.appendChild(new Element('button', {
+
+			html: 'Add submission',
+			style: "background-color:#EDC84C;",
+			"class": "primary-btn"
+
+		}));
+
+
+		var proposalObj = new GuestProposal(-1, {});
+		(new UIModalFormButton(proposalButton, application, proposalObj, {
+
+			formOptions: {
+				template: "form"
+			},
+			formName: "ProposalTemplate",
+
+		})).addEvent('complete', function() {
+
+
+			(new UIModalDialog(application, proposalObj, {
+				formName: 'emailVerificationForm',
+				formOptions: {
+					template: "form"
+				}
+			})).show();
+
+		});
+
+
+		return proposal;
+
+
+	};
+
+
 	return GuestProject;
 
 
 })();
 
-var GuestProposal=GuestProject;
+var GuestProposal = GuestProject;
 
 
 
@@ -152,4 +208,4 @@ var GuestProjectAmendment = (function() {
 
 })();
 
-var GuestProposalAmendment=GuestProjectAmendment;
+var GuestProposalAmendment = GuestProjectAmendment;
