@@ -107,7 +107,9 @@ var GuestProject = (function() {
 		(new UIModalFormButton(proposalButton, application, proposalObj, {
 
 			formOptions: {
-				template: "form"
+				template: "form",
+				 "labelForSubmit":"Validate Email",
+ 	             "labelForCancel":"Cancel",
 			},
 			formName: "ProposalTemplate",
 
@@ -126,11 +128,27 @@ var GuestProject = (function() {
 				}
 			})).on('show',function(){
 
-				
+
 
 			}).show().on('close', function(){
 
 				proposalObj = new GuestProposal(-1, {});
+
+			}).on('success', function(){
+
+				(new UIModalDialog(application, "<h2>An activation email has been sent. Please click the link in the email to complete your submission.</h2>You can close this dialog", {
+					"formName": "dialogForm",
+					"formOptions": {
+						"template": "form",
+						"className": "alert-view",
+						"showCancel":false,
+						"labelForSubmit":"Close",
+						"labelForCancel":"Cancel",
+						"closable":true
+					}
+				})).on('complete', function(){
+
+				}).show();
 
 			});
 
