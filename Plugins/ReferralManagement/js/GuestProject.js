@@ -130,7 +130,11 @@ var GuestProject = (function() {
 				var wizard=dialog.getWizard();
 				wizard.setDataValue('lineColor', d.lineColor);
 
-			}).show();
+			}).show().on('close', function(){
+
+				proposalObj = new GuestProposal(-1, {});
+
+			});
 
 		});
 
@@ -153,7 +157,7 @@ var GuestProposal = GuestProject;
 var GuestProjectAmendment = (function() {
 
 
-	var SaveGuestProjectQuery = new Class({
+	var SaveGuestAmmendmentQuery = new Class({
 		Extends: AjaxControlQuery,
 		initialize: function(data) {
 			this.parent(CoreAjaxUrlRoot, 'guest_ammend_project', Object.append({
@@ -163,7 +167,7 @@ var GuestProjectAmendment = (function() {
 	});
 
 
-	var GuestProject = new Class({
+	var GuestProjectAmendment = new Class({
 		Extends: Project,
 		save: function(callback) {
 
@@ -171,7 +175,7 @@ var GuestProjectAmendment = (function() {
 			me.fireEvent("saving");
 
 			if (!me.hasEmail()) {
-				(new SaveGuestProjectQuery({
+				(new SaveGuestAmmendmentQuery({
 					id: me._id,
 					metadata: {},
 					attributes: me._attributes || {}
@@ -193,7 +197,7 @@ var GuestProjectAmendment = (function() {
 				return;
 			}
 
-			(new SaveGuestProjectQuery({
+			(new SaveGuestAmmendmentQuery({
 				id: me._id,
 				email: me.data.email,
 				token: me.data.token
@@ -226,7 +230,7 @@ var GuestProjectAmendment = (function() {
 	});
 
 
-	return GuestProject;
+	return GuestProjectAmendment;
 
 
 })();
