@@ -108,7 +108,7 @@ var GuestProject = (function() {
 
 			formOptions: {
 				template: "form",
-				 "labelForSubmit":"Validate Email",
+				 "labelForSubmit":"Submit",
  	             "labelForCancel":"Cancel",
 			},
 			formName: "ProposalTemplate",

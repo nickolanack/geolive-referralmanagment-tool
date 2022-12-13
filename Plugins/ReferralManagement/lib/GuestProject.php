@@ -21,6 +21,15 @@ class GuestProject{
 					'subscription'=>$longTaskProgress->getSubscription()
 				));
 
+				ScheduleEvent('onTriggerEmailForGuestProposalReminder', array(
+					'clientToken' =>$clientToken,
+					'validationData' => $json,
+					'subscription'=>$longTaskProgress->getSubscription()
+
+				), 60 );
+
+
+
 				$clientLink = HtmlDocument()->website() . '/' . $links->actionUrlForToken($clientToken);
 
 				$subject = (new \core\Template(
@@ -39,6 +48,40 @@ class GuestProject{
 
 		})->getSubscription();
 
+
+	}
+
+
+
+	public function checkProjectActivation($params){
+
+
+
+		$subject = (new \core\Template(
+				'activate.proposal.email.reminder.moderator.subject', "Pending referral"))
+				->render(array());
+			$body = (new \core\Template(
+				'activate.proposal.email.reminder.moderator.body', "Still waiting for proponent validation"))
+				->render(array());
+
+			GetPlugin('Email')->getMailer()
+				->mail($subject, $body)
+				->to('nickblackwell82@gmail.com')
+				->send();
+
+
+
+			$subject = (new \core\Template(
+				'activate.proposal.email.reminder.subject', "Reminder to verify your email"))
+				->render(array());
+			$body = (new \core\Template(
+				'activate.proposal.email.reminder.body', "So close..."))
+				->render(array());
+
+			GetPlugin('Email')->getMailer()
+				->mail($subject, $body)
+				->to('nickblackwell82@gmail.com')
+				->send();
 
 	}
 
