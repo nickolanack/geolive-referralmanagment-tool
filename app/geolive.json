@@ -15552,16 +15552,32 @@
         "parameters": {
             "articleTitle": "That link is expired or invalid",
             "articleHtml": "",
-            "target": "Links.action-view.Article.error"
+            "target": "Links.action-view.Article.error",
+            "className": "",
+            "articleCSS": "widget.Article.247.articleCSS.css",
+            "articleScript": "",
+            "templateVariablesScript": "",
+            "afterHeader": "",
+            "images": [],
+            "widgetTitle": "",
+            "readAccess": "public"
         }
     },
     "widget.248": {
         "name": "Article",
         "instance": "Article",
         "parameters": {
-            "articleTitle": "You did it! Thanks.",
-            "articleHtml": "",
-            "target": "Links.action-view.Article.onActivateEmailForGuestProposal"
+            "articleTitle": "Your submission has been successfully sent!",
+            "articleHtml": "You can close this page",
+            "target": "Links.action-view.Article.onActivateEmailForGuestProposal",
+            "className": "",
+            "articleCSS": "widget.Article.248.articleCSS.css",
+            "articleScript": "",
+            "templateVariablesScript": "",
+            "afterHeader": "",
+            "images": [],
+            "widgetTitle": "",
+            "readAccess": "public"
         }
     },
     "widget.249": {
@@ -25767,7 +25783,7 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
+            "parseMarkdown": true,
             "saveTemplateAsData": false,
             "contentTemplate": "proponent-proposal-link-email-body.contentTemplate.html",
             "readAccess": "public"
