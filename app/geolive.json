@@ -15559,9 +15559,17 @@
         "name": "Article",
         "instance": "Article",
         "parameters": {
-            "articleTitle": "You did it! Thanks.",
-            "articleHtml": "",
-            "target": "Links.action-view.Article.onActivateEmailForGuestProposal"
+            "articleTitle": "Your submission has been successfully sent!",
+            "articleHtml": "You can close this page",
+            "target": "Links.action-view.Article.onActivateEmailForGuestProposal",
+            "className": "",
+            "articleCSS": "",
+            "articleScript": "",
+            "templateVariablesScript": "",
+            "afterHeader": "<hr\/>",
+            "images": [],
+            "widgetTitle": "",
+            "readAccess": "public"
         }
     },
     "widget.249": {
