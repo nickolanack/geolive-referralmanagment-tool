@@ -18,6 +18,11 @@ var NotificationItems=(function(){
 
 
 			AppClient.runOnceOnLoad(function(){
+
+				if(AppClient.getUserType()=="guest"){
+					return;
+				}
+
 				(new AjaxControlQuery(CoreAjaxUrlRoot, 'discussion_metadata', ObjectAppend_({
 					'item': AppClient.getId(),
 					'itemType': AppClient.getType(),
