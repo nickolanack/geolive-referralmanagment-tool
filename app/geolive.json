@@ -26000,9 +26000,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
-            "saveTemplateAsData": false,
-            "contentTemplate": "module-loginText-text.contentTemplate.html"
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "module-loginText-text.contentTemplate.html",
+            "readAccess": "public"
         }
     },
     "widget.434": {
