@@ -1152,10 +1152,18 @@ var ProjectTeam = (function() {
 
 		//modify tag cloud 
 
-		var user = item; //ProjectTeam.CurrentTeam().getUser(AppClient.getId());
+		//var user = item; //ProjectTeam.CurrentTeam().getUser(AppClient.getId());
+
+
 
 		var isAdmin=AppClient.getUserType()=="admin";
 		var isSiteAdmin=ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin();
+
+
+		var user = ProjectTeam.CurrentTeam().getUser(item.getId());
+		if (user.isUnassigned() && user.getId()===AppClient.getId()) {
+			return;
+		}
 
 		if(isAdmin||(isSiteAdmin&&UserGroups.ClientCanEditUsersRoles(item))){
 			return;
