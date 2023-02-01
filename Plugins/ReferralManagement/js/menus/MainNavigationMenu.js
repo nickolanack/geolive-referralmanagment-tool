@@ -421,7 +421,7 @@ var MainNavigationMenu = new Class({
 						"_class":"application-logo gather-logo gather-icon",
 						events: {
 							click: function() {
-								window.open("https://gather.geoforms.ca", "_blank");
+								window.open(DashboardConfig.getValue('gatherUrl'), "_blank");
 							}
 						}
 					},
