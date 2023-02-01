@@ -6128,6 +6128,7 @@ span.navigation-menu.settings-menu {
     
             &>label {
                visibility:visible;
+               display:inline-block;
                font-size:0;
             }
             &>label:before {
