@@ -2155,16 +2155,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 449,
-                            "y": 352
+                            "x": 459,
+                            "y": 362
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 409,
-                                    "y": 565
+                                    "x": 419,
+                                    "y": 575
                                 }
                             },
                             {
@@ -2174,16 +2174,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 1026,
-                                    "y": 611
+                                    "x": 1036,
+                                    "y": 621
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 986,
-                                            "y": 777
+                                            "x": 996,
+                                            "y": 787
                                         }
                                     }
                                 ],
@@ -2246,14 +2246,22 @@
                                     "modules": [
                                         "loginForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
-                                            "type": "InlineHtml",
+                                            "type": "Template",
                                             "config": {
                                                 "className": "",
+                                                "elementType": "span",
+                                                "elementOptions": "{}",
                                                 "text": "<div class=\"application-logo\"><\/div>",
                                                 "template": "loginText",
+                                                "templateNamespace": "",
                                                 "templateVariablesScript": "",
                                                 "formatTextScript": "",
-                                                "ajaxRequestTemplate": false
+                                                "formatVariablesScript": "",
+                                                "requestTemplateScript": "defaultBehaviour();",
+                                                "ajaxRequestTemplate": true,
+                                                "namedFormView": "",
+                                                "formOptions": "{}",
+                                                "identifier": "htmlLabel"
                                             }
                                         },
                                         {
@@ -2281,14 +2289,22 @@
                                             }
                                         },
                                         {
-                                            "type": "InlineHtml",
+                                            "type": "Template",
                                             "config": {
                                                 "className": "",
+                                                "elementType": "span",
+                                                "elementOptions": [],
                                                 "text": "<br\/><br\/><span style=\"text-align: left; font-weight: 100; display: block;    margin-top: 75px;\"><span style=\"font-size:20px; white-space:nowrap;\">\nDon't have an account?<\/span>\n<br\/><br\/><\/span>",
                                                 "template": "",
+                                                "templateNamespace": "",
                                                 "templateVariablesScript": "",
                                                 "formatTextScript": "",
-                                                "ajaxRequestTemplate": false
+                                                "formatVariablesScript": "",
+                                                "requestTemplateScript": "defaultBehaviour();",
+                                                "ajaxRequestTemplate": false,
+                                                "namedFormView": "",
+                                                "formOptions": [],
+                                                "identifier": "htmlLabel"
                                             }
                                         },
                                         {
