@@ -2155,16 +2155,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 459,
-                            "y": 362
+                            "x": 469,
+                            "y": 372
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 419,
-                                    "y": 575
+                                    "x": 429,
+                                    "y": 585
                                 }
                             },
                             {
@@ -2174,16 +2174,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 1036,
-                                    "y": 621
+                                    "x": 1046,
+                                    "y": 631
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 996,
-                                            "y": 787
+                                            "x": 1006,
+                                            "y": 797
                                         }
                                     }
                                 ],
@@ -2248,7 +2248,7 @@
                                         {
                                             "type": "Template",
                                             "config": {
-                                                "className": "",
+                                                "className": "login-text",
                                                 "elementType": "span",
                                                 "elementOptions": "{}",
                                                 "text": "<div class=\"application-logo\"><\/div>",
