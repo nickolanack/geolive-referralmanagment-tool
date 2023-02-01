@@ -46,6 +46,10 @@ span.field-value.is-dark {
     background-color: #2E303A;
 }
 
+.navigation-menu ul.menu-links > label:before {
+    font-size: 17px;
+}
+
 
 button.inline-btn.primary-btn.add.form-documentForm {
      background-color: $highlightBtnColor;
