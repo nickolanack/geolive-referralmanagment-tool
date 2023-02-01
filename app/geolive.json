@@ -26000,7 +26000,7 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": true,
+            "parseMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "module-loginText-text.contentTemplate.html",
             "readAccess": "public"
