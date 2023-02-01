@@ -2155,16 +2155,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 469,
-                            "y": 372
+                            "x": 479,
+                            "y": 382
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 429,
-                                    "y": 585
+                                    "x": 439,
+                                    "y": 595
                                 }
                             },
                             {
@@ -2174,16 +2174,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 1046,
-                                    "y": 631
+                                    "x": 1056,
+                                    "y": 641
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 1006,
-                                            "y": 797
+                                            "x": 1016,
+                                            "y": 807
                                         }
                                     }
                                 ],
@@ -2254,7 +2254,7 @@
                                                 "text": "<div class=\"application-logo\"><\/div>",
                                                 "template": "loginText",
                                                 "templateNamespace": "",
-                                                "templateVariablesScript": "",
+                                                "templateVariablesScript": "{}",
                                                 "formatTextScript": "",
                                                 "formatVariablesScript": "",
                                                 "requestTemplateScript": "defaultBehaviour();",
