@@ -40,9 +40,9 @@ var DashboardLoader = (function() {
 				var loadView = function(view, item) {
 
 
-					localStorage.setItem("acceptedTerms", JSON.stringify({
-						date: (new Date()).getTime()
-					}));
+					// localStorage.setItem("acceptedTerms", JSON.stringify({
+					// 	date: (new Date()).getTime()
+					// }));
 
 
 					if(view==='dashboardContent'){
