@@ -30473,5 +30473,19 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.549": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "module.termsOfUse.text",
+            "target": "module.termsOfUse.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": null
+        }
     }
 }
