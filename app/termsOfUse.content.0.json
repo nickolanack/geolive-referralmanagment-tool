@@ -1,13 +1,19 @@
 {
-    "type": "DefaultDescription",
+    "type": "Template",
     "config": {
         "className": "",
-        "imageWidth": 300,
-        "imageHeight": 240,
-        "multiImageWidth": 100,
-        "multiImageHeight": 75,
-        "autoArrange": true,
-        "oneLine": true,
-        "maxChars": 0
+        "elementType": "span",
+        "elementOptions": "{}",
+        "text": "Terms of use",
+        "template": "termsOfUse",
+        "templateNamespace": "",
+        "templateVariablesScript": "{}",
+        "formatTextScript": "",
+        "formatVariablesScript": "",
+        "requestTemplateScript": "defaultBehaviour();",
+        "ajaxRequestTemplate": true,
+        "namedFormView": "",
+        "formOptions": "{}",
+        "identifier": "htmlLabel"
     }
 }
