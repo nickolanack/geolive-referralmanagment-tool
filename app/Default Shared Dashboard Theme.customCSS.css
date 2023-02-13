@@ -2512,6 +2512,13 @@ button.inline-logout {
     border-radius: 100%;
 }
 
+.user-detail .single_ImageContainer .resizedImage {
+    width: 170px;
+    height: 170px;
+    background-size: cover;
+    background-position: center;
+}
+
 .ImageModule {
     display: inline-block;
 }

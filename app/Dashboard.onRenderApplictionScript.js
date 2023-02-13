@@ -276,7 +276,7 @@ GetWidget('projectLayerSettings')->display($targetInstance);
 GetWidget('communityListForm')->display($targetInstance);
 GetWidget('communityForm')->display($targetInstance);
 
-
+GetWidget('termsOfUse')->display($targetInstance);
 GetWidget('wikiDetail')->display($targetInstance);
 
 
