@@ -11,14 +11,14 @@ $purple:#2e344b; /*#0f1c4b;*/
 }
 
 .ui-view.test.dashboard-main.gct3[data-view="termsOfUse"] {
-    .template-content.content.markdown {
+    ..markdown {
         margin: auto;
         max-width: 800px;
         color: white;
         margin-top: 100px;
     }
     
-    .template-content.content.markdown + div {
+    .markdown + div {
         margin: auto;
         max-width: 800px;
         color: white;
@@ -27,8 +27,14 @@ $purple:#2e344b; /*#0f1c4b;*/
         margin-bottom: 100px;
         
         button.hidden {
-            display: none;
+            display: none !important;
         }
+    }
+    
+    
+    .markdown h2 {
+        color: white;
+        font-size: 30px;
     }
 }
 
