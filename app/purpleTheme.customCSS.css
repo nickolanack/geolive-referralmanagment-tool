@@ -10,6 +10,15 @@ $purple:#2e344b; /*#0f1c4b;*/
     }
 }
 
+.ui-view.test.dashboard-main.gct3[data-view="termsOfUse"] {
+    .template-content.content.markdown {
+        margin: auto;
+        max-width: 800px;
+        color: white;
+        margin-top: 100px;
+    }
+}
+
 [data-view="leftPanel"].ui-view.left-panel {
     background-color: $purple;
     .navigation-menu ul{
