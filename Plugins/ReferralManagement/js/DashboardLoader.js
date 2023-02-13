@@ -39,6 +39,18 @@ var DashboardLoader = (function() {
 				
 				var loadView = function(view, item) {
 
+
+					localStorage.setItem("acceptedTerms", {
+						date: (new Date()).getTime()
+					});
+
+
+					var acceptedTerms=localStorage.getItem("acceptedTerms");
+					if(acceptedTerms&&JSON.parse(acceptedTerms)){
+						console.log(acceptedTerms);
+					}
+
+
 					if (currentView == view) {
 						return;
 					}
