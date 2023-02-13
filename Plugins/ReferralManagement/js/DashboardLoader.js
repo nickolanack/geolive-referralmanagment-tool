@@ -45,9 +45,17 @@ var DashboardLoader = (function() {
 					}));
 
 
-					var acceptedTerms=localStorage.getItem("acceptedTerms");
-					if(acceptedTerms&&JSON.parse(acceptedTerms)){
-						console.log(acceptedTerms);
+					if(view==='dashboardContent'){
+
+						var acceptedTerms=localStorage.getItem("acceptedTerms");
+						if(acceptedTerms&&JSON.parse(acceptedTerms)){
+							console.log(acceptedTerms);
+						}else{
+							if (AppClient.getUserType() == "admin") {
+								loadView("termsOfUse");
+								return;
+							}
+						}
 					}
 
 
