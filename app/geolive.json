@@ -30453,7 +30453,15 @@
                     },
                     "content": {
                         "modules": [
-                            "termsOfUse.metadata.positions.content.modules.0.json"
+                            "termsOfUse.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "termsOfUse.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            }
                         ]
                     },
                     "footer": {
