@@ -17,7 +17,20 @@ $purple:#2e344b; /*#0f1c4b;*/
         color: white;
         margin-top: 100px;
     }
+    
+    .template-content.content.markdown + div {
+        margin: auto;
+        max-width: 800px;
+        color: white;
+        margin-top: 10px;
+        text-align: right;
+        margin-bottom: 100px;
+    }
 }
+
+
+
+
 
 [data-view="leftPanel"].ui-view.left-panel {
     background-color: $purple;
