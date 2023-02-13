@@ -30483,9 +30483,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
+            "parseMarkdown": true,
             "saveTemplateAsData": false,
-            "contentTemplate": null
+            "contentTemplate": "module-termsOfUse-text.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }
