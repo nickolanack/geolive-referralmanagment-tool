@@ -25,6 +25,10 @@ $purple:#2e344b; /*#0f1c4b;*/
         margin-top: 10px;
         text-align: right;
         margin-bottom: 100px;
+        
+        button.hidden {
+            display: none;
+        }
     }
 }
 
