@@ -1,6 +1,6 @@
-return new Element('button',{
+var btn = new Element('button',{
     html:"I Accept",
-    "class":"primary-btn nav-new-btn btn-index-1",
+    "class":"primary-btn nav-new-btn btn-index-1 hidden",
     events:{
         click:function(){
             localStorage.setItem("acceptedTerms", JSON.stringify({
@@ -11,3 +11,11 @@ return new Element('button',{
     }
     
 })
+
+setTimeout(function(){
+    
+    btn.removeClass('hidden');
+    
+}, 1000)
+
+return btn;
