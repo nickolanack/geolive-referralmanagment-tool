@@ -5679,7 +5679,7 @@
             "showRecentProjectsDetail": true,
             "enableActivity": true,
             "enableMap": true,
-            "simplifiedMenu": true,
+            "simplifiedMenu": false,
             "gatherLabel": "Gather Project Management",
             "darkMode": true,
             "loadingLabel": "Loading your Gather Project Management Portal",
@@ -5700,7 +5700,7 @@
             "pageClassNames": "",
             "showSplitProjectDetail": false,
             "showProjecReports": false,
-            "projectForm": "documentProjectForm",
+            "projectForm": "ProposalTemplate",
             "enableUserProfiles": true,
             "main-departments": [],
             "main-tags": [
@@ -5732,11 +5732,11 @@
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_r7F_lYW_6cm_%5BG%5D-%3Ethumb%3A%3E200x%3E150.png"
             ],
             "leftPanelPrimaryBtnLabel": "Add Project",
-            "leftPanelPrimaryBtnForm": "documentForm",
-            "showLeftPanelSecondaryBtn": true,
-            "leftPanelSecondaryBtnLabel": "Add Collection",
-            "leftPanelSecondaryBtnForm": "documentProjectForm",
-            "datasetForm": "documentForm",
+            "leftPanelPrimaryBtnForm": "{projectForm}",
+            "showLeftPanelSecondaryBtn": false,
+            "leftPanelSecondaryBtnLabel": "Add Dataset",
+            "leftPanelSecondaryBtnForm": "{projectForm}",
+            "datasetForm": "baseMapForm",
             "menuLabels": {
                 "main": {
                     "Referrals.Projects": "Projects"
