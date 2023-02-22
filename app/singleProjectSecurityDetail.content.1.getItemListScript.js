@@ -31,16 +31,16 @@
     		   }));
 		   })
 		   
+		   if(item.isDataset()){
 		   
 		   
-		   
-		    list.push(new MockDataTypeItem({
+		       list.push(new MockDataTypeItem({
     		       label:"Included in Collections"
     		   }));
     		   
-    	   list=list.concat();
+    	       list=list.concat();
 		   
-		   
+		   }
 		   
 		   if(item.getShareLinks().length>0){
 		   
