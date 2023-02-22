@@ -153,6 +153,10 @@
     button.download-btn:after{
         content: "\f019";
     }
+    
+    button.data-btn:after{
+        content: "\f019";
+    }
     button.edit-btn:after{
         content: "\f044";
     }
