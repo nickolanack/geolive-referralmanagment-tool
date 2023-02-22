@@ -38,6 +38,11 @@
     		       label:"Included in Collections"
     		   }));
     		   
+    		   
+    		   var collections=ProjectTeam.CurrentTeam().runOnceOnLoad.getProjects().filter(function(p){
+    		      return (!p.isDataset())&&p.getProjectObjects().indexOf(item)>=0; 
+    		   });
+    		   
     	       list=list.concat();
 		   
 		   }
