@@ -43,7 +43,7 @@
     		      return (!p.isDataset())&&p.getProjectObjects().indexOf(item)>=0; 
     		   });
     		   
-    	       list=list.concat();
+    	       list=list.concat(collections);
 		   
 		   }
 		   
