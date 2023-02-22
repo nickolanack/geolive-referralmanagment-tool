@@ -229,7 +229,7 @@ var UIInteraction = (function() {
 				userId = parseInt((user.getUserId || user.getId).bind(user)());
 			}
 
-			if (AppClient.getUserType() == "admin" || AppClient.getId() === userId) {
+			if (AppClient.getUserType() == "admin" || parseInt(AppClient.getId()) === userId) {
 
 				var application = this._getApplication();
 
