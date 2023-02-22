@@ -43,7 +43,20 @@ class ListItemCache implements \core\EventListener {
 	}
 
 	protected function onCreateUser($params) {
+		
 		$this->needsUserListUpdate();
+
+
+		$config = GetWidget('dashboardConfig');
+		$moderators=$config->getParameter("emailModerators", '');
+		$moderators=explode(',', $moderators);
+		$moderators=array_filter(array_map(function($m){ return trim($m); }, $moderators), function($m){return !empty($m); });
+
+		if(count($moderators)>0){
+
+			GetPlugin('Email')->getMailerWithTemplate('onUserCreated', $params)->to($moderators)->send();
+
+		}
 
 		GetPlugin('Email')->getMailer()
 			->mail('New User', '<pre>' . json_encode($params, JSON_PRETTY_PRINT) . '</pre>')

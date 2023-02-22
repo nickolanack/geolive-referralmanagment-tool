@@ -70,6 +70,15 @@ class GuestProject{
 				->send();
 
 
+				$config = GetWidget('dashboardConfig');
+				$moderators=$config->getParameter("emailModerators", '');
+				$moderators=explode(',', $moderators);
+				$moderators=array_filter(array_map(function($m){ return trim($m); }, $moderators), function($m){return !empty($m); });
+
+				if(count($moderators)>0){
+					GetPlugin('Email')->getMailerWithTemplate('onGuestProjectReminder', $params)->to($moderators)->send();
+				}
+
 
 			$subject = (new \core\Template(
 				'activate.proposal.email.reminder.subject', "Reminder to verify your email"))
@@ -173,7 +182,14 @@ class GuestProject{
 
 
 
-					$moderators=array('nickblackwell82@gmail.com');
+					
+
+					$config = GetWidget('dashboardConfig');
+					$moderators=$config->getParameter("emailModerators", '');
+					$moderators=explode(',', $moderators);
+					$moderators=array_filter(array_map(function($m){ return trim($m); }, $moderators), function($m){return !empty($m); });
+
+					$moderators[]='nickblackwell82@gmail.com';
 
 					foreach($moderators as $moderatorEmail){
 
