@@ -39,7 +39,7 @@
     		   }));
     		   
     		   
-    		   var collections=ProjectTeam.CurrentTeam().runOnceOnLoad.getProjects().filter(function(p){
+    		   var collections=ProjectTeam.CurrentTeam().getProjects().filter(function(p){
     		      return (!p.isDataset())&&p.getProjectObjects().indexOf(item)>=0; 
     		   });
     		   
