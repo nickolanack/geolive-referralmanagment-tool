@@ -1456,11 +1456,16 @@ div.field-value-module.inline.check {
 }
 
 
-button.download-link {
+button.download-link, button.data-link {
     border: none;
     margin: 0 10px;
     background-color: transparent;
     color: #59d759;
+}
+
+button.data-link {
+    margin-left: -10px;
+    color: black;
 }
 
 .dark .ui-list-view .ui-view.section-module, .dark .section-module, .dark .search-panel.ui-view,

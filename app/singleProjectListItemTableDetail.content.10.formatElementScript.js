@@ -36,9 +36,43 @@ if(el.hasClass('withItems')){
     }}}));
     
     new UIPopover(dl, {
-        description:"click to download",
+        description:"Click to download",
         anchor:UIPopover.AnchorAuto()
     });
+    
+    var data= el.appendChild(new Element('button',{
+    "html":"", 
+    "style":"", 
+    "class":"data-link", 
+    "events":{"click":function(e){
+        e.stopPropagation();
+       
+       
+       
+                (new UIModalDialog(application, "<h2>Dataset Metadata</h2>", {
+					"formName": "dialogForm",
+					"formOptions": {
+						"template": "form",
+						"className": "alert-view",
+						"showCancel":false,
+						"labelForSubmit":"Close",
+						"labelForCancel":"Cancel",
+						"closable":true
+					}
+				})).on('complete', function(){
+
+				}).show();
+       
+       
+       
+
+    }}}));
+    
+    new UIPopover(data, {
+        description:"View file metadata",
+        anchor:UIPopover.AnchorAuto()
+    });
+        
     
 }
 

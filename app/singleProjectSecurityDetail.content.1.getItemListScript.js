@@ -7,6 +7,9 @@
 		   var list=[];
 		   
 		   var labels=Object.keys(resp.groups);
+		   
+		   
+		   
 		   labels.forEach(function(label){
 		       list.push(new MockDataTypeItem({
 		           label:label
@@ -27,6 +30,22 @@
     		       }
     		   }));
 		   })
+		   
+		   if(item.isDataset()){
+		   
+		   
+		       list.push(new MockDataTypeItem({
+    		       label:"Included in Collections"
+    		   }));
+    		   
+    		   
+    		   var collections=ProjectTeam.CurrentTeam().getProjects().filter(function(p){
+    		      return (!p.isDataset())&&p.getProjectObjects().indexOf(item)>=0; 
+    		   });
+    		   
+    	       list=list.concat(collections);
+		   
+		   }
 		   
 		   if(item.getShareLinks().length>0){
 		   
