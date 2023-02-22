@@ -40,5 +40,21 @@ if(el.hasClass('withItems')){
         anchor:UIPopover.AnchorAuto()
     });
     
+    var data= el.appendChild(new Element('button',{
+    "html":"", 
+    "style":"", 
+    "class":"data-link", 
+    "events":{"click":function(e){
+    
+       
+
+    }}}));
+    
+    new UIPopover(data, {
+        description:"view file metadata",
+        anchor:UIPopover.AnchorAuto()
+    });
+        
+    
 }
 
