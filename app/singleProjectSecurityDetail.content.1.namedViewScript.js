@@ -11,5 +11,9 @@ if(item instanceof MockDataTypeItem){
 }
 
 
+if(item instanceof Project){
+    return 'singleProjectListItemTableDetail'
+}
+
 
 return namedView
