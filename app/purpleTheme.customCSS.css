@@ -2,13 +2,45 @@
 
 $purple:#2e344b; /*#0f1c4b;*/
 
-.ui-view.test.dashboard-main.gct3[data-view="dashboardLoader"] {
+.ui-view.test.dashboard-main.gct3[data-view="dashboardLoader"], .ui-view.test.dashboard-main.gct3[data-view="termsOfUse"] {
     background: $purple;
     .application-logo {
         color: white;
         font-weight: 500;
     }
 }
+
+.ui-view.test.dashboard-main.gct3[data-view="termsOfUse"] {
+    .markdown {
+        margin: auto;
+        max-width: 800px;
+        color: white;
+        margin-top: 100px;
+    }
+    
+    .markdown + div {
+        margin: auto;
+        max-width: 800px;
+        color: white;
+        margin-top: 10px;
+        text-align: right;
+        margin-bottom: 100px;
+        
+        button.hidden {
+            display: none !important;
+        }
+    }
+    
+    
+    .markdown h2 {
+        color: white;
+        font-size: 30px;
+    }
+}
+
+
+
+
 
 [data-view="leftPanel"].ui-view.left-panel {
     background-color: $purple;

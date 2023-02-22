@@ -5549,6 +5549,12 @@
                 },
                 {
                     "type": "text",
+                    "label": "emailModerators",
+                    "name": "emailModerators",
+                    "default": ""
+                },
+                {
+                    "type": "text",
                     "label": "datasetForm",
                     "name": "datasetForm",
                     "default": "{projectForm}"
@@ -5665,7 +5671,7 @@
             "appleAppIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/Lx7_R7S_3Xr_%5BG%5D_%5BImAgE%5D.png"
             ],
-            "slackUrl": "https:\/\/wabuntc.slack.com",
+            "slackUrl": "https:\/\/gct3portal.slack.com",
             "showUsersRoles": false,
             "enableTasks": true,
             "enableProposals": true,
@@ -5736,18 +5742,48 @@
                     "Referrals.Projects": "Projects"
                 }
             },
-            "menuItems": [],
+            "menuItems": {
+                "main": {
+                    "Main.Projects": {
+                        "label": "Datasets",
+                        "showCreateBtn": true,
+                        "addButtonLabel": "Add Dataset",
+                        "formName": "documentForm",
+                        "lockFilter": "!collection",
+                        "filter": null,
+                        "invertfilter": false
+                    },
+                    "Main.Datasets": {
+                        "label": "The Datasets",
+                        "showCreateBtn": true,
+                        "addButtonLabel": "Add Dataset",
+                        "formName": "documentForm",
+                        "lockFilter": "!collection",
+                        "filter": null,
+                        "invertfilter": false
+                    },
+                    "Main.Collections": {
+                        "label": "Collections",
+                        "showCreateBtn": true,
+                        "addButtonLabel": "Add Collection",
+                        "formName": "documentProjectForm",
+                        "lockFilter": "collection",
+                        "filter": null,
+                        "invertfilter": false
+                    }
+                }
+            },
             "useCommunitiesAsDepartmens": false,
-            "useCommunitiesAsDepartments": false,
-            "departmentKind": "Department",
+            "useCommunitiesAsDepartments": true,
+            "departmentKind": "Community",
             "enableUserAjaxWrite": false,
             "authUserAjaxScript": "XXXX-XXXX",
             "applicationLogoAlt": [],
-            "showAltLogo": true,
+            "showAltLogo": false,
             "showSlack": false,
             "showSurvey": false,
             "showDatasets": false,
-            "gatherUrl": "https:\/\/gather.geoforms.ca\/",
+            "gatherUrl": "https:\/\/gct3.ca\/#block5",
             "showMapAnnotationsMain": "",
             "showMapAnnotationsProject": "true",
             "showProjectActivity": false,
@@ -5757,12 +5793,13 @@
             "nameForDatasets": "Datasets",
             "loginLabel": "Login",
             "broadcastChanges": true,
-            "altLogoLink": "",
-            "showManual": false,
-            "manualUrl": "",
+            "altLogoLink": "http:\/\/gct3.ca",
+            "showManual": true,
+            "manualUrl": "https:\/\/docs.google.com\/document\/d\/1D8sipuXRwxMoAL19BPL4JMqljeafSe4j\/edit?usp=sharing&ouid=108597871436649698217&rtpof=true&sd=true",
             "showWiki": false,
             "requireCSRF": true,
-            "showTerms": true
+            "showTerms": true,
+            "emailModerators": ""
         }
     },
     "widget.154": {
@@ -30453,7 +30490,15 @@
                     },
                     "content": {
                         "modules": [
-                            "termsOfUse.metadata.positions.content.modules.0.json"
+                            "termsOfUse.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "termsOfUse.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            }
                         ]
                     },
                     "footer": {
@@ -30483,9 +30528,10 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
-            "saveTemplateAsData": false,
-            "contentTemplate": null
+            "parseMarkdown": true,
+            "saveTemplateAsData": true,
+            "contentTemplate": "module-termsOfUse-text.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }
