@@ -45,7 +45,7 @@ if(el.hasClass('withItems')){
     "style":"", 
     "class":"data-link", 
     "events":{"click":function(e){
-    
+        e.stopPropagation();
        
 
     }}}));
