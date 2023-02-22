@@ -154,9 +154,6 @@
         content: "\f019";
     }
     
-    button.data-btn:after{
-        content: "\f019";
-    }
     button.edit-btn:after{
         content: "\f044";
     }
@@ -253,7 +250,7 @@
 }
 
 button.download-link:before {content: "\f019";font-family: 'FontAwesome';}
-
+button.data-link:before {content: "\f05a";font-family: 'FontAwesome';}
 
 
 
