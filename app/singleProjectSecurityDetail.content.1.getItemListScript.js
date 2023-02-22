@@ -7,6 +7,9 @@
 		   var list=[];
 		   
 		   var labels=Object.keys(resp.groups);
+		   
+		   
+		   
 		   labels.forEach(function(label){
 		       list.push(new MockDataTypeItem({
 		           label:label
@@ -27,6 +30,17 @@
     		       }
     		   }));
 		   })
+		   
+		   
+		   
+		   
+		    list.push(new MockDataTypeItem({
+    		       label:"Included in Collections"
+    		   }));
+    		   
+    	   list=list.concat();
+		   
+		   
 		   
 		   if(item.getShareLinks().length>0){
 		   
