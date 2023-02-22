@@ -47,6 +47,24 @@ if(el.hasClass('withItems')){
     "events":{"click":function(e){
         e.stopPropagation();
        
+       
+       
+                (new UIModalDialog(application, "<h2>Dataset Metadata</h2>", {
+					"formName": "dialogForm",
+					"formOptions": {
+						"template": "form",
+						"className": "alert-view",
+						"showCancel":false,
+						"labelForSubmit":"Close",
+						"labelForCancel":"Cancel",
+						"closable":true
+					}
+				})).on('complete', function(){
+
+				}).show();
+       
+       
+       
 
     }}}));
     
