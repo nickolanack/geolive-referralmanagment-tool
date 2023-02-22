@@ -36,7 +36,7 @@ if(el.hasClass('withItems')){
     }}}));
     
     new UIPopover(dl, {
-        description:"click to download",
+        description:"Click to download",
         anchor:UIPopover.AnchorAuto()
     });
     
@@ -51,7 +51,7 @@ if(el.hasClass('withItems')){
     }}}));
     
     new UIPopover(data, {
-        description:"view file metadata",
+        description:"View file metadata",
         anchor:UIPopover.AnchorAuto()
     });
         
