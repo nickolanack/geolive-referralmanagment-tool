@@ -30561,7 +30561,8 @@
             "convertStylesToInline": false,
             "parseMarkdown": false,
             "saveTemplateAsData": false,
-            "contentTemplate": null
+            "contentTemplate": "email-onUserCreated-content.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }
