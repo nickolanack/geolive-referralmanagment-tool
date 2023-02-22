@@ -2466,6 +2466,10 @@ button.inline-logout {
     width:300px;
 }
 
+.ui-view.left-panel.sticky>div {
+    position: fixed;
+}
+
 
 
 .ui-view.main-panel {
