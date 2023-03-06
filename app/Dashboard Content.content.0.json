@@ -1,7 +1,10 @@
 {
     "type": "UIView",
     "config": {
-        "className": "left-panel",
+        "className": "left-panel sticky",
+        "elementType": "div",
+        "elementOptions": "{}",
+        "identifier": "",
         "viewType": "view",
         "namedView": "leftPanel",
         "shouldRender": true,
