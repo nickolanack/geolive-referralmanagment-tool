@@ -4965,7 +4965,7 @@ img.static-map {
     }
 
     
-    .ui-view.left-panel[data-view="leftPanel"] {
+    .ui-view.left-panel[data-view="leftPanel"], .ui-view.left-panel.sticky[data-view="leftPanel"]>div {
 
         min-width: 180px;
         width: 180px;
@@ -5053,7 +5053,7 @@ img.static-map {
     
     }
 
-    .ui-view.left-panel[data-view="leftPanel"]{
+    .ui-view.left-panel[data-view="leftPanel"], .ui-view.left-panel.sticky[data-view="leftPanel"]>div{
         width:100px;
         min-width:100px;
     }
