@@ -5281,7 +5281,7 @@ img.static-map {
 
 
 
-    .dashboard-main>div>div>.ui-view.left-panel.closed{
+    .dashboard-main>div>div>.ui-view.left-panel.closed, .dashboard-main>div>div>.ui-view.left-panel.closed.sticky>div{
         width: 50px;
         min-width: 50px;
         
