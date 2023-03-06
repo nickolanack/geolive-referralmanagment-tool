@@ -2457,7 +2457,7 @@ button.inline-logout {
     width:100%;
 }
 
-.ui-view.left-panel{
+.ui-view.left-panel, .ui-view.left-panel.sticky>div{
     display: inline-block;
     height: 100%;
     min-width: 300px;
