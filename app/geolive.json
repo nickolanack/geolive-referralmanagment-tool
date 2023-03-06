@@ -15161,6 +15161,8 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "section-padding",
+                                    "elementType": "div",
+                                    "elementOptions": [],
                                     "identifier": "project-subcategories-list",
                                     "viewType": "view",
                                     "namedView": "datasetsView",
@@ -15184,6 +15186,8 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "section-padding",
+                                    "elementType": "div",
+                                    "elementOptions": [],
                                     "identifier": "project-pin-list",
                                     "viewType": "view",
                                     "namedView": "datasetsView",
@@ -15224,6 +15228,8 @@
                                 "config": {
                                     "listClassName": "projects-list",
                                     "className": "section-module",
+                                    "elementType": "div",
+                                    "elementOptions": [],
                                     "identifier": "",
                                     "viewType": "view",
                                     "namedView": "singleProjectListItemDetail",
