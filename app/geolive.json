@@ -5742,37 +5742,7 @@
                     "Referrals.Projects": "Projects"
                 }
             },
-            "menuItems": {
-                "main": {
-                    "Main.Projects": {
-                        "label": "Datasets",
-                        "showCreateBtn": true,
-                        "addButtonLabel": "Add Dataset",
-                        "formName": "documentForm",
-                        "lockFilter": "!collection",
-                        "filter": null,
-                        "invertfilter": false
-                    },
-                    "Main.Datasets": {
-                        "label": "The Datasets",
-                        "showCreateBtn": true,
-                        "addButtonLabel": "Add Dataset",
-                        "formName": "documentForm",
-                        "lockFilter": "!collection",
-                        "filter": null,
-                        "invertfilter": false
-                    },
-                    "Main.Collections": {
-                        "label": "Collections",
-                        "showCreateBtn": true,
-                        "addButtonLabel": "Add Collection",
-                        "formName": "documentProjectForm",
-                        "lockFilter": "collection",
-                        "filter": null,
-                        "invertfilter": false
-                    }
-                }
-            },
+            "menuItems": [],
             "useCommunitiesAsDepartmens": false,
             "useCommunitiesAsDepartments": true,
             "departmentKind": "Community",
@@ -5788,7 +5758,7 @@
             "showMapAnnotationsProject": "true",
             "showProjectActivity": false,
             "enableRevisions": false,
-            "nameForProjects": "Projects",
+            "nameForProjects": "Submissions",
             "nameForCollections": "Collections",
             "nameForDatasets": "Datasets",
             "loginLabel": "Login",
