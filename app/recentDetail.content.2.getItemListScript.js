@@ -1,1 +1,0 @@
-return item.getList(application, callback)

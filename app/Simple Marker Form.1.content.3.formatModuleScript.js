@@ -1,2 +1,0 @@
-
-ProjectMap.dropMarkerSubformHelper(module, item);

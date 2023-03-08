@@ -1,1 +1,0 @@
-return ProjectSearch.getAggregators(search);

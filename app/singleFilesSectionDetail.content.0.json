@@ -1,8 +1,0 @@
-{
-    "type": "WizardScriptElement",
-    "config": {
-        "name": "My Custom Script",
-        "script": "return new Element('span',{\"class\":\"section-title\", html:item.label});",
-        "description": "Info about my custom script"
-    }
-}

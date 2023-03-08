@@ -1,1 +1,0 @@
-el.addClass('project-communities project-title user-community');

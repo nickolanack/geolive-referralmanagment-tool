@@ -1,8 +1,0 @@
-{
-    "type": "WizardScriptElement",
-    "config": {
-        "name": "My Custom Script",
-        "script": "\nvar defaultIcon=<?php \n    echo json_encode(UrlFrom(GetWidget('dashboardConfig')->getParameter('defaultUserImage')[0])); \n?>;\n\n\nreturn ReferralManagementDashboard.createUserIcon(item, defaultIcon);\n\n",
-        "description": "Info about my custom script"
-    }
-}

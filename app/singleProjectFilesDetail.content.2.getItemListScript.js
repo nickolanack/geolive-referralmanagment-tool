@@ -1,1 +1,0 @@
-return ProjectFiles.getProjectFileSections(item);

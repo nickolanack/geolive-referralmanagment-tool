@@ -1,1 +1,0 @@
-return TaskItem.NewTaskTemplateButton(item);

@@ -1,8 +1,0 @@
-{
-    "type": "WizardScriptElement",
-    "config": {
-        "name": "My Custom Script",
-        "script": "\/*Project Menu*\/\n\nvar projectMenuController=new ProjectNavigationMenu(item, application);\napplication.setNamedValue('projectMenuController', projectMenuController);\n\nitem.notifyRead();\n\nreturn projectMenuController;",
-        "description": "Info about my custom script"
-    }
-}

@@ -1,1 +1,0 @@
-wizardDataSet.name=object.value;

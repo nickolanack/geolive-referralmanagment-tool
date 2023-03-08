@@ -1,1 +1,0 @@
-module.setLabel(item.getLabel());

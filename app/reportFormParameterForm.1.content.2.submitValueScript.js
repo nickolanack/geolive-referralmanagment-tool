@@ -1,1 +1,0 @@
-wizardDataSet.fieldType=object.value;

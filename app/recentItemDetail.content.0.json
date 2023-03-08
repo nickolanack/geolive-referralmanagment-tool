@@ -1,9 +1,0 @@
-{
-    "type": "FieldValue",
-    "config": {
-        "loadAsync": false,
-        "fieldLabelScript": "return \"\";",
-        "fieldValueScript": "return \"\";",
-        "formatElementScript": "el.addClass('item-icon')\nRecentItems.setIconForItemEl(item, el);"
-    }
-}

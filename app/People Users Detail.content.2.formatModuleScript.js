@@ -1,1 +1,0 @@
-ProjectTeam.AddListEvents(module, function(u){ return u.isTeamMember(); })

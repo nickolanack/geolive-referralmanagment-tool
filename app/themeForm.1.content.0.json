@@ -1,8 +1,0 @@
-{
-    "type": "WizardScriptElement",
-    "config": {
-        "name": "My Custom Script",
-        "script": "return '<h2>Edit Theme: '+DashboardLoader.getThemeName()+'<\/h2>'",
-        "description": "Info about my custom script"
-    }
-}

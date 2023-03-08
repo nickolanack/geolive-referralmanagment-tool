@@ -1,1 +1,0 @@
-RecentItems.colorizeItemEl(item, valueEl);

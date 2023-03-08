@@ -1,1 +1,0 @@
-return NamedCategory.CreateRootCategoryButtons(application, item);

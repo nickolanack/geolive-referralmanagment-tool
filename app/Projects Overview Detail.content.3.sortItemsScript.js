@@ -1,1 +1,0 @@
-return ProjectList.currentProjectSortFn.apply(null, arguments);

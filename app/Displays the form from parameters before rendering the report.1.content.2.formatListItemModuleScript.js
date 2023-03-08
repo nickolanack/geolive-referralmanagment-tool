@@ -1,1 +1,0 @@
-childView.getElement().addClass('field-type-'+child.getFieldType());

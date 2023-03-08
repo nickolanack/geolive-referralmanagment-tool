@@ -1,1 +1,0 @@
-return ProjectTagList.getProjectTags();

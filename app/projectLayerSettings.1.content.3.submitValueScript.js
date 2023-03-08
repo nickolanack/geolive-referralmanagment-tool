@@ -1,1 +1,0 @@
-wizardDataSet.markerSize=object.value;

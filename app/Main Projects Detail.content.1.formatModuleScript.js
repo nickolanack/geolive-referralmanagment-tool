@@ -1,1 +1,0 @@
-console.log(["projects menu list", module, item]);
