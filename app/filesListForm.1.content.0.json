@@ -1,0 +1,10 @@
+{
+    "type": "FieldValue",
+    "config": {
+        "loadAsync": false,
+        "identifier": "",
+        "fieldLabelScript": "return \"Attachments For: \";",
+        "fieldValueScript": "return item.getType().split('.').pop().capitalize()+' `'+item.getName()+\"`\";",
+        "formatElementScript": ""
+    }
+}

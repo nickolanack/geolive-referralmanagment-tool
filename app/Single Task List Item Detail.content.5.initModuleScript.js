@@ -1,0 +1,1 @@
+module.getElement().setAttribute('data-col','assigned');

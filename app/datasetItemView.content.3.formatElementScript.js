@@ -1,0 +1,1 @@
+NamedCategory.AddItemIcons(item, el);

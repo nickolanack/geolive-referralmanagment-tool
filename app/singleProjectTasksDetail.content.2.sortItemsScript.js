@@ -1,0 +1,1 @@
+return ReferralManagementDashboard.taskSortPriority.apply(null, arguments);

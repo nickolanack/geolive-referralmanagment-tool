@@ -1,0 +1,8 @@
+{
+    "type": "WizardScriptElement",
+    "config": {
+        "name": "My Custom Script",
+        "script": "return new ElementModule('h2',{\n    html:item.getHeading?item.getHeading():\"Invite user\"\n});",
+        "description": "Info about my custom script"
+    }
+}

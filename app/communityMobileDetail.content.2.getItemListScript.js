@@ -1,0 +1,1 @@
+ProjectTeam.CurrentTeam().getActivatedDevices(callback)

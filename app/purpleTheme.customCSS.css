@@ -1,0 +1,112 @@
+
+
+$purple:#2e344b; /*#0f1c4b;*/
+
+.ui-view.test.dashboard-main.gct3[data-view="dashboardLoader"], .ui-view.test.dashboard-main.gct3[data-view="termsOfUse"] {
+    background: $purple;
+    .application-logo {
+        color: white;
+        font-weight: 500;
+    }
+}
+
+.ui-view.test.dashboard-main.gct3[data-view="termsOfUse"] {
+    .markdown {
+        margin: auto;
+        max-width: 800px;
+        color: white;
+        margin-top: 100px;
+    }
+    
+    .markdown + div {
+        margin: auto;
+        max-width: 800px;
+        color: white;
+        margin-top: 10px;
+        text-align: right;
+        margin-bottom: 100px;
+        
+        button.hidden {
+            display: none !important;
+        }
+    }
+    
+    
+    .markdown h2 {
+        color: white;
+        font-size: 30px;
+    }
+}
+
+
+
+
+
+[data-view="leftPanel"].ui-view.left-panel {
+    background-color: $purple;
+    .navigation-menu ul{
+        li,  button {
+            color: #aeaeae;
+        }
+    }
+}
+
+.field-value-module.inline.icon:before {
+     color:$purple;
+}
+
+.dark .field-value-module.inline.icon:before {
+    color: #e1e1e1;
+}
+
+.dark [data-col="public"] .indicator-switch:before{
+    color: #ffaa9b;
+}
+.dark [data-col="public"] .active .indicator-switch:before{
+    color: #e1e1e1;
+}
+
+button.primary-btn.nav-new-btn.btn-index-1 {
+    background-color: cornflowerblue;
+}
+button.inline-btn.primary-btn.add.form-documentProjectForm {
+     background-color: cornflowerblue;
+}
+
+
+button.primary-btn.nav-new-btn {
+    color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.tag-width span.field-value {
+    width: 120px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+span.field-value.alt-tag {
+    vertical-align: bottom;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+}
+
+
+.pb-c.gct3 {
+    background-color: $purple;
+    
+    .template-footer {
+        background-color: $purple;
+    }
+    
+    &:after {
+        background-color: $purple;
+    }
+
+}

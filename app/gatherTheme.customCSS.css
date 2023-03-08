@@ -1,0 +1,1144 @@
+@charset "utf-8";
+
+
+$highlightBtnColor:#efa82c;
+$highlightBtnHoverColor:#f56e13;
+$defaultBtnColor:$highlightBtnColor;
+$primaryBtnColor:mediumseagreen;
+$pendingColor:gray; /*crimson;*/
+$implementedColor:$primaryBtnColor;
+
+$shareColor:#6A7CE9;
+$shareColorHover:darken($shareColor, 10%);
+
+$reportColor:$primaryBtnColor;
+$reportColorHover:darken($reportColor, 10%);
+
+$editColor:$defaultBtnColor;
+$editColorHover:darken($editColor, 10%);
+
+$archiveColor:#EDC84C;
+$archiveColorHover:darken($archiveColor, 10%);
+
+
+$addColor:$highlightBtnColor;
+$addColorHover:$highlightBtnHoverColor;
+
+
+$buttonTextColor:black;
+$leftPanelColorLight: rgba(200, 200, 200, 0.6);
+$leftPanelColorDark: rgba(50, 50, 50, 0.7);
+$leftPanelColor: $leftPanelColorDark;
+
+.markdown:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.field-value-module.item-title.item-response-date {
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 30px;
+    text-align: right;
+}
+
+
+.form-list [data-view="singleTaskListItemDetail"] {
+    display: inline-block;
+    width: calc( 100% - 75px );
+    position: relative;
+    width: 70%;
+    
+    
+    .inline-btn.remove {
+        position: absolute;
+        right: -120px;
+        top: -5px;
+        padding: 5px 10px;
+        font-size: 15px;
+    }
+}
+
+
+.calendar-list.ui-list-view .task-item{
+    border-top: 1px solid #e1e1e1;
+    border-bottom: none;
+    
+}
+.dark .calendar-list.ui-list-view .task-item{
+    border-top-color: #2E303A;
+    
+}
+.calendar-list.ui-list-view .task-item:first-child {
+    border: none;
+    
+}
+
+ul.item-tags li {
+    font-weight: 500;
+    width: 150px;
+}
+
+.dark ul.item-tags li {
+    background-color: #2E303A;
+    color: white;
+}
+
+[data-view="singleTaskListItemDetail"] ul.item-tags {
+    float: left;
+}
+
+
+.dark [data-view="projectsListDetail"] button.inline-edit {
+    margin-left: 20px;
+    background: #222222;
+}
+
+
+.search-panel span.logout-toggle {
+    background-color: #efa82c;
+    margin-right: 25px;
+
+}
+
+.discussion-header{
+    border-bottom: 4px solid #2E303A;
+    box-shadow: 13px 12px 10px rgb(0 0 0 / 50%);;
+    z-index: 1;
+    position: relative;
+}
+
+.layout-list .file-list .file-item .file-container {
+
+    overflow: hidden;
+    border-radius: 3px;
+    background: white;
+    padding: 0;
+    border-width: 0;
+}
+.dark .layout-list .file-list .file-item .file-container {
+    background: #030310;
+}
+
+.pb-c [data-view="singleTaskOverviewDetail"] [data-view="singleUserTeamCollectionIconsInlineDetail"] {
+    display:none;
+}
+
+.pb-c [data-view="singleUserTeamCollectionIconsDetail"] .pro-tip-hint {
+    float: unset;
+    padding: 0;
+}
+.pb-c .field-value-module.item-title {
+    
+    /*mimic h2 form headings*/
+    width: unset;
+    margin: 10px 0;
+    font-size: 18px;
+    overflow: visible;
+    white-space: normal;
+    line-height: 26px;
+    font-weight: 100;
+}
+
+.referral-letter .droppable.drop-letters {
+    display:none;
+}
+
+
+button.primary-btn.nav-new-btn, .inline-navigation-menu li.basemap button, .inline-navigation-menu li.focus button{
+    background-color:$highlightBtnColor;
+}
+
+.inline-navigation-menu li.basemap button, .inline-navigation-menu li.focus button {
+    padding: 5px 10px;
+    border-radius: 100px;
+    color: #2d2d2d;
+    float: unset;
+    vertical-align: bottom;
+    margin: 0;
+    font-size: 1em;
+    position: relative;
+    top: 2px;
+}
+
+
+.inline-navigation-menu li.basemap button:before {
+    content: "+ ";
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+
+button.form-btn.inline-edit {
+    float: right;
+    background-color: rgb(238, 238, 238);
+    padding: 0;
+    height: 36px;
+    width: 36px;
+    margin: 10px;
+    margin-right: 0;
+    color:white;
+}
+
+button.form-btn.inline-edit.is-light {
+    color: black;
+}
+
+
+ button.primary-btn.nav-new-btn:hover, .inline-navigation-menu li.menu-map-add.basemap button:hover {
+    background-color: $highlightBtnHoverColor; /* */
+ }
+ 
+ .left-panel .user-detail .single_ImageContainer:hover:after {
+    box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    border-color: #efa82c;
+    cursor:pointer
+}
+
+
+[data-view="leftPanel"] {
+    background-color: $leftPanelColorLight;
+}
+
+.dark [data-view="leftPanel"] {
+    background-color: $leftPanelColorDark;
+}
+
+[data-view="mainProjectsDetail"] .project-list-filters {
+    display: none;
+}
+
+.media-item {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+}
+
+.media-item>.image,  .media-item>.document,  .media-item>.audio,  .media-item>.video{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    
+}
+
+.tabs.droppable-hide {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+.text-input {
+    padding-left: 10px;
+    border-radius: 5px;
+    
+    &.with-1-line {
+   
+        overflow: hidden;
+        padding: 0px;
+        height: 35px;
+        line-height: 35px;
+        padding-left: 10px;
+    }
+    
+}
+
+
+
+
+
+.project-list-btns {
+    display: inline-block;
+    width: 100%;
+}
+
+
+
+.field-value-module.inline.sortable {
+  
+    margin: 0px;
+    display: inline-block;
+    padding: 5px;
+    box-sizing: border-box;
+   
+}
+
+button.download-link {
+    border: none;
+    margin: 0 10px;
+    background-color: transparent;
+    color: #59d759;
+}
+
+button.primary-btn.nav-new-btn.view-selection.inline {
+  display: none;
+  background-color: #efa82c;
+  color:white;
+  float: right; }
+
+button.primary-btn.nav-new-btn.view-selection.inline.with-selection {
+  display: inline-block; }
+
+button.primary-btn.nav-new-btn.view-selection:before {
+  content: "";
+  font-family: 'FontAwesome';
+  font-size: 15px;
+  margin-right: 5px; }
+
+.tag-width span.field-value {
+    width: 120px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+    
+    &.is-light {
+        color: black;
+    }
+    &.is-dark {
+        color: white;
+    }
+    
+}
+
+
+.field-value-module.inline.icon:before {
+    content: "\f1b2";
+    font-family: 'FontAwesome';
+    color: #efa82c;
+    vertical-align: super;
+}
+
+.with-guest-submitter .field-value-module.inline.icon:before {
+    content: "\0f007";
+}
+
+
+.is-dataset .field-value-module.inline.icon:before {
+    content: "\0f278";
+}
+
+.is-archived .field-value-module.inline.icon:before {
+    content: "\0f187";
+}
+
+
+.table-header .field-value-module.icon:before {
+    visibility: hidden;
+}
+
+.table-header button.download-link {
+   display:none;
+}
+.table-header span.guest-submitter:after{
+    display:none;
+}
+
+.table-header .field-value-module.has-ids .id-items:after{
+    display:none;
+}
+
+
+.table-header .field-value-module:before {
+    content: "";
+    font-family: 'FontAwesome';
+    margin-right: 5px;
+    color: gray;
+    position:absolute;
+    left:-10px
+}
+.table-header .field-value-module{
+    position:relative;
+}
+
+.ui-view.login-form{
+
+    &:before {
+        content: "";
+        background: white;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
+
+
+    &:after {
+        content: "";
+        background-color: $loginImageTint;
+        position: fixed;
+        width: 50%;
+        height: 100%;
+        right: 0;
+        top: 0;
+        z-index: -1;
+        background-image: url($loginImage);
+        background-size: cover;
+        background-blend-mode: luminosity;
+        background-position: center;
+    }
+
+    
+    width: 50%;
+    text-align: left;
+    margin: 0;
+    margin-left: calc( 32% - 400px );
+    margin-top: 50px;
+    
+    
+    input.text-input {
+        color: black;
+        background-color: white;
+        border-radius: 100px;
+        margin-bottom: 10px;
+    }
+    
+    
+    .uitext-container.mandatory-field:before {
+        display:none;
+    }
+    
+    input.text-input.with-1-line {
+        line-height: 38px;
+        height: 38px;
+        font-family: sans-serif;
+        text-indent: 15px;
+        font-size: 14px;
+        background-color: #f9f9f9;
+        border-color: rgba(0,0,0,0.4);
+        box-shadow: 0 0 3px #b3b3b3 inset;
+    }
+        
+    
+    color: black;
+    .top-left>.lbl-txt {
+        color: black;
+    }
+
+}
+
+
+
+.dark .pagination-item:before {
+    color: $highlightBtnColor;
+}
+
+
+.dark .uilist-pagination button.disabled {
+    background-color: #2e303a;
+    color: gray;
+}
+
+.dark .uilist-pagination button {
+    background-color: #efa82c;
+    color: black;
+    border: none;
+}
+
+.section-title, .markdown h2 {
+    font-weight: 400;
+    font-size: 25px;
+}
+
+[data-view="tasksListDetail"] .section-title, span.filter-btns {
+    height: 40px;
+}
+
+
+
+.project-list-btns.header-hieght {
+    height: 60px;
+}
+
+[data-view="groupListsProjectDetail"].ui-view.left-panel, [data-view="projectsListDetail"].ui-view.left-panel{
+    max-width: unset;
+}
+
+[data-view="singleTaskListItemDetail"]{
+    line-height: 30px;
+    height: 30px;
+    
+    
+    
+    
+    
+    .ui-view.inline-icon-list-view {
+        margin-right: 7px;
+        
+        
+        .user-profile-icon {
+            &> span {
+                width: 20px;
+                height: 20px;
+            }
+            
+        }
+    }
+    
+    ul.item-tags {
+        margin-right: 10px;
+    }
+    
+    
+}
+
+.ui-view.inset-shading > div, .calendar .month {
+    background: transparent;
+}
+
+
+.day.today, .day.active, .day.today.active {
+    font-weight: 400;
+    &:after {
+        background-color: $highlightBtnColor;
+        border-color: transparent;
+    }
+}
+
+.dark{
+    .day.today, .day.active, .day.today.active {
+        color: white;
+    }
+}
+
+[data-view="singleProjectListItemDetail"]{
+    .inline-btn.optionlist {
+        display:none;
+    }
+}
+
+
+.progress-bar.percent-complete>div {
+    min-width: 4px;
+}
+
+
+.inline-navigation-menu li.active {
+    border-bottom: 4px solid $highlightBtnColor;
+    button {
+        color: darken($highlightBtnColor, 20%);
+    }
+}
+
+.field-value-module.breadcrumbs{
+    text-indent: 5px;
+}
+span.field-label.clickable, span.field-value.clickable {
+  color: darken($highlightBtnColor, 20%);
+}
+
+.dark span.field-label.clickable, span.field-value.clickable {
+  color: $highlightBtnColor;
+}
+
+.dark .inline-navigation-menu li.active {
+   
+    button {
+        color: white;
+    }
+}
+
+.inline-navigation-menu li{
+    padding-bottom: 10px;
+}
+
+.inline-navigation-menu {
+    li.menu-user-configuration, li.menu-user-edit, li.menu-user-log, li.menu-user-log-out {
+       /*
+        float: right;
+        margin-right:10px;
+        */
+        
+    }
+    li.menu-user-configuration, li.menu-layout-split, li.menu-layout-list, li.menu-layout-fancy, li.menu-layout-thumbs {
+        button {
+            font-size: 0;
+        }
+    }
+}
+
+
+
+.user-profile-icon {
+    
+    &.default-icon>span{
+        background-color:white;
+    }
+}
+
+.navigation-menu ul li.active {
+    background-color: adjust-color($highlightBtnColor, $alpha:-0.3);
+    border-right: 4px solid $highlightBtnColor;
+}
+
+
+.left-panel .user-detail{ 
+    .editable{
+        &:after {
+            display: none;
+        }
+        .inline-logout {
+            display: none;
+        }
+    }
+    
+    .single_ImageContainer {
+        margin-bottom: 10px;
+    }
+    
+}
+
+.user-name {
+    font-weight: 400;
+}
+
+.user-detail .user-role {
+    display: block;
+    color: gray;
+}
+
+
+
+.navigation-menu .menu-main li{
+    &.menu-main-users, 
+    &.menu-main-projects, 
+    &.menu-main-tasks, 
+    &.menu-main-timetracking, 
+    &.menu-main-documents, 
+    &.menu-main-reports {
+        display: none;
+    }
+}
+
+.navigation-menu .menu-people li{
+    &.menu-people-projectmembers{
+         display: none;
+    }
+    &.menu-people-users{
+         display: none;
+    }
+    &.menu-community-users{
+         display: none;
+    }
+}
+
+.navigation-menu ul.menu-community, .navigation-menu ul.menu-configuration {
+    display: none;
+}
+.settings-menu ul.menu-configuration {
+    display: block;
+    label{
+        display:none;
+    }
+}
+
+.navigation-menu ul button:focus {
+    outline: none;
+}
+
+
+button.inline-btn, button.primary-btn {
+    background-color: $defaultBtnColor;
+    transition: background-color 2s;
+    color:$buttonTextColor;
+    border-radius: 100px;
+    
+    &:hover{
+        transition: background-color 0.3s;
+    }
+    
+    &.add{
+        background-color: $addColor;
+        &:hover{
+            background-color: $addColorHover;
+        }
+    }
+}
+
+
+.inline-btn.sort,  .inline-btn.filter{
+    border-radius: 100px;
+    margin-right: 12px;
+}
+
+
+.search-panel .ui-view.user-detail {
+    display: none;
+}
+
+
+[data-view="projectsOverviewDetail"]{
+    display:block;
+    margin-bottom:50px;
+    
+    .inline-btn.sort{
+        display:none;
+    }
+    
+    button.inline-btn.add.primary-btn {
+        margin-top:0;
+    }
+}
+
+
+[data-view="tasksOverviewListDetail"]{
+    display:block;
+    margin-bottom:50px;
+    .inline-btn.sort.filter {
+        display: none;
+    }
+    
+    
+    .inline-btn.sort.hasOrder {
+        background-color: $highlightBtnColor;
+        color: white;
+        border-radius: 100px;
+        padding: 10px 30px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    
+    span.filter-btns {
+        float: right;
+    }
+}
+
+
+[data-view="singleProjectEditButtonsDetail"] {
+    height: 58px;
+    display: block;
+    padding: 24px;
+}
+
+@media screen and (max-width: 1330px){
+
+
+    [data-view="singleProjectEditButtonsDetail"]{
+        height:unset;
+        
+    }
+
+   [data-view="singleProjectEditButtonsDetail"]::after, span.pending-status:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    
+    span.pending-status{
+        display: inline-block;
+        float: right;
+       
+    }
+}
+
+
+button.selectable{
+    &.primary-btn {
+        border: 1px dashed $primaryBtnColor;
+        background-color: transparent;
+        float: left;
+        
+        &.selected {
+            background-color: $primaryBtnColor;
+        }
+    
+        
+        
+        
+        
+    }
+}
+
+
+.primary-btn, .primary-btn.selectable {
+    &.pending{
+        
+        border: 1px dashed $pendingColor;
+        color:$pendingColor;
+        &:hover{
+            background-color:adjust-color($pendingColor, $alpha: -0.7);
+        }
+        &.selected{
+            background-color:$pendingColor;
+            border-color: transparent;
+            color:$buttonTextColor;
+            &:hover{
+                 background-color:darken($pendingColor, 10%);
+            }
+        }
+        
+    }
+    &.implemented{
+        
+        border: 1px dashed $implementedColor;
+        color:$implementedColor;
+        &:hover{
+            background-color:adjust-color($implementedColor, $alpha: -0.7);
+        }
+        &.selected{
+            background-color:$implementedColor;
+            border-color: transparent;
+            color:$buttonTextColor;
+            &:hover{
+                 background-color:darken($implementedColor, 10%);
+            }
+        }
+        
+        
+    }
+    &.share{
+        background-color:$shareColor;
+        &:hover{
+             background-color:$shareColorHover;
+        }
+    }
+    &.remove{}
+    &.report{
+        background-color:$reportColor;
+        &:hover{
+             background-color:$reportColorHover;
+        }
+        
+    }
+    &.edit{
+        background-color:$editColor;
+        &:hover{
+             background-color:$editColorHover;
+        }
+        
+    }
+    &.archive{
+        
+        background-color:$archiveColor;
+        &:hover{
+             background-color:$archiveColorHover;
+        }
+        
+    }
+    &.unarchive{}
+    
+}
+
+
+button.form-btn.inline-edit.report{
+    position: relative;
+    float: right;
+    left: -10px;
+    background-color: $reportColor;
+}
+
+
+
+
+[data-view="groupListsProjectDetail"].ui-view.left-panel .w-50 .dark-only-shading.inset-menu-shading {
+   
+    border-radius: 5px;
+    padding: 15px;
+    width: calc(100% - 15px);
+    box-sizing: border-box;
+    margin-left: 15px;
+}
+.dark [data-view="groupListsProjectDetail"].ui-view.left-panel .w-50 .dark-only-shading.inset-menu-shading {
+     background-color: $leftPanelColor;
+}
+
+
+
+.WizardTitle li:after {
+    content: "info";
+    position: absolute;
+    bottom: -25px;
+    left: -25px;
+    width: 100px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.WizardTitle li {
+    position: relative;
+}
+
+
+.WizardTitle li._one:after {
+    content: "Info";
+   
+}
+
+.WizardTitle li._two:after {
+    content: "Files";
+   
+}
+
+.WizardTitle li._three:after {
+    content: "Contact";
+   
+}
+
+.WizardTitle li._four:after {
+    content: "Status";
+   
+}
+
+h2 {
+    font-size: 24px;
+}
+
+.WizardTitle li{
+    /* border-radius: 100%; */
+    padding: 10px 20px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.edl-btn-add {
+    display:none;
+    
+}
+
+.uitext-container.width-2.no-margin {
+    margin-right: 0;
+    width: 50%;
+}
+
+
+[data-template-name="form"] {
+    .flow {
+        transform: scale(.8);
+        width: 133%;
+        position: relative;
+        left: -100px;
+    }
+    
+    .flow li:after {
+        font-size: 16px;
+    }
+}
+
+
+.ui-navigation-menu .hidden {
+    display: none;
+}
+
+
+ .ui-view.login-form .WizardButton {
+    border-radius: 20px;
+    margin-right: 0;
+}
+
+.ui-view.login-form .primary-btn {
+    margin-right: 0;
+}
+
+ [data-view="singleProjectOverviewDetail"]{
+        span.progress{
+            display:none;
+        }
+        [data-view="proposalOverviewStatus"]{
+            display:unset;
+            
+            [data-view="proponentFlow"]{
+                display:none;
+            }
+            
+            
+            .flow-item:before {
+                position: relative;
+                content: attr(data-label);
+                left: 40px;
+                font-size: 20px;
+            }
+                
+        }
+ }
+
+
+
+
+.dataset-select .ui-view [data-identifier="col-selection"] {
+  display: inline-block;
+  min-width: 150px;
+  height: 55px;
+  line-height: 55px; 
+  float:right;
+}
+
+   
+    
+
+.dark .ui-view.login-form:before {
+    background-color:#222222;
+}
+.dark .ui-view.login-form {
+    color:white;
+}
+.dark .ui-view.login-form .top-left > .lbl-txt {
+    color: white;
+}
+
+[data-view="communityMemberDashboard"]{
+    .user-form {z-index: 2;position: relative;font-size: 2em;line-height: 1.3em;display: inline-block;margin: 60px;}
+    .user-form h2 {font-size: 2.1em;}
+    
+    button.form-btn.primary-btn.edit {
+        position: relative;
+        bottom: 10px;
+        z-index: 2;
+        display: inline-block;
+        float: unset;
+        left: calc( 25% - 100px );
+    }
+    
+     @media screen and (min-width: 2000px) {
+         button.form-btn.primary-btn.edit {
+            left: 400px;
+         }
+     }
+     
+     @media screen and (max-width: 700px) {
+         button.form-btn.primary-btn.edit {
+            left: 75px;
+         }
+     }
+    
+}
+
+ @media screen and (max-width: 1150px) {
+
+    .ui-view.login-form:before {
+         width:650px;
+       
+    }
+     
+
+    .ui-view.login-form {
+        width:500px;
+        margin-left:0;
+        margin-right:0;
+        color: black;
+        position: relative;}
+
+   .ui-view.login-form:after{
+      width: calc( 100% - 550px );
+      left:unset;
+      right:0;
+   }
+ }
+
+ @media screen and (max-width: 900px) {
+  .ui-view.login-form:before {
+    width:100%;
+  }
+   .ui-view.login-form{
+        width:100%;
+        margin:auto;
+   }
+   .ui-view.login-form:after{
+     display:none;
+   }
+ }
+
+
+.field-value-module.inline[data-identifier="col-created"] .field-value:after {content: attr(data-day);}
+.field-value-module.inline[data-identifier="col-created"] .field-value>span {display:none;}
+
+.inline-navigation-menu li.split-right:after {border-right: 1px solid;content: "";position: relative;left: 20px;}
+
+.inline-navigation-menu li.split-right {margin-right: 30px;}
+
+
+span.field-value.alt-tag {
+    vertical-align: bottom; 
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+}
+
+div.popover[data-with-view="reportSelectionView"]{
+    max-width:400px;
+}
+[data-view="reportSelectionView"]{
+
+    .ui-view {
+        clear: both;
+        display: inline-block;
+        width: 100%;
+        whitespace:nowrap;
+        min-width:350px;
+    }
+    
+    
+    
+    .primary-btn {
+        padding: 5px 12px;font-size: 13px;
+        
+    }
+    
+     .field-value-module {
+        display:inline-block;
+        margin: 10px;
+        padding: 2px;
+        font-size: 17px;
+        
+    }
+}
+
+
+
+
+
+
+
+
+.toggle-status:after {
+    content: "\0f021";
+    font-family: 'FontAwesome';
+    position: relative;
+    bottom: 100px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.toggle-status {
+    float:right;
+}
+
+.toggle-status:before {
+    content: "show progress";
+    position: relative;
+    bottom: 100px;
+    right: 36px;
+    cursor: pointer;
+}
+
+.show-progress .toggle-status:before {
+    content: "show status";
+}
+
+
+[data-view="singleProjectOverviewDetail"] .show-progress span.progress{
+    display: inline-block;
+}
+
+[data-view="singleProjectOverviewDetail"] .show-progress [data-view="proposalOverviewStatus"] {
+    display: none
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

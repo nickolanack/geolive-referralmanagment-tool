@@ -1,0 +1,1 @@
+ProjectTeam.AddListEvents(module, function(c){return c.isCommunityMember()||c.isUnassigned();});

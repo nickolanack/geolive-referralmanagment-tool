@@ -1,0 +1,9 @@
+{
+    "type": "TagCloud",
+    "config": {
+        "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
+        "getItemTagsScript": "return NamedCategoryList.getProjectTags();",
+        "formatModuleScript": "NamedCategoryList.formatTagCloudModule(module, 'proposal');",
+        "scaleWords": true
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "type": "UIListView",
+    "config": {
+        "listClassName": "projects-list",
+        "className": "",
+        "identifier": "",
+        "viewType": "view",
+        "namedView": "singleProjectListItemDetail",
+        "shouldRender": true,
+        "namedViewScript": "\nvar view=DashboardConfig.getValue(\"projectListItemView\");\nif(view){\n    return view;\n}\n\n\nreturn \"singleProjectListItemDetail\"",
+        "showInlineEdit": false,
+        "namedFormView": "defaultView",
+        "formOptions": "\"{}\"",
+        "showDeleteButton": false,
+        "deleteItemScript": "defaultBehaviorFn()",
+        "initModuleScript": "",
+        "formatModuleScript": "return SpatialProject.FormatListModulesScript(module, item);",
+        "resolveItemScript": "return item;",
+        "filterModulesScript": "return SpatialProject.FormatListItemViewModulesScript(list, listItem, uiview, callback);",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false,
+        "targetName": "",
+        "getItemListScript": "  \n return SpatialProject.GetProjectList(item, callback);",
+        "formatItemListScript": "return list;",
+        "formatListItemModuleScript": "ProjectList.AddListItemClassNames(child, childView, application);",
+        "emptyNamedView": "emptyListView",
+        "filterItemsScript": "return true;",
+        "sortItemsScript": "",
+        "maxItems": "-1"
+    }
+}

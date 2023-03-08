@@ -1,0 +1,1 @@
+TaskItem.AddListItemEvents(listModule, childView, child);

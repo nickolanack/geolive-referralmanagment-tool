@@ -1,0 +1,2 @@
+
+application.setNamedValue('ProjectMap', ProjectMap);

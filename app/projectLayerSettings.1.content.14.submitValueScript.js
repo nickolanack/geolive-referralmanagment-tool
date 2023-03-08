@@ -1,0 +1,1 @@
+wizardDataSet.initialVisibility=object.value;

@@ -1,0 +1,274 @@
+.ui-view.install-form .intro-section > span:after {
+    background-image: url(https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/%5BImAgE%5D_%5BG%5D_i6Q_UNN_doj.png);
+}
+
+
+.ui-view.install-form .intro-section-2 > span:after {
+    background-image: url(https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/r6c_%5BG%5D_My3_rhN_%5BImAgE%5D.png);
+}
+
+.ui-view.install-form .intro-section-3 > span:after {
+    background-image: url(https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/62L_%5BImAgE%5D_74h_%5BG%5D_NXC.png);
+}
+
+
+
+
+
+
+.sub-1, .sub-2, .sub-3 {
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    bottom: 150px;
+    left: 450px;
+   
+    background-size: cover;
+
+}
+
+.intro-section-3 .sub-2 {
+        bottom: 50px;
+    }
+
+.sub-2 {
+        left: 800px;
+    }
+    .sub-3 {
+        left:1150px;
+    }
+  
+  
+.ui-view.install-form .intro-section{  
+    
+   
+
+    .sub-1, .sub-2  /*, .sub-3*/{
+        
+        border-radius: 5px;
+        border: 3px solid white;
+        box-shadow: 0 0 20px #00000099;
+    }
+    .sub-1 {
+         background-image: url("https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/%5BImAgE%5D_aoV_fh0_%5BG%5D_8nt.png");
+    }
+    .sub-2 {
+        background-image:url("https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/%5BImAgE%5D_%5BG%5D_xNQ_HUJ_ZhM.png");
+    }
+    
+    
+}
+    
+.ui-view.install-form .intro-section-2{
+
+    .sub-1, .sub-2  /*, .sub-3*/{
+        
+        border-radius: 5px;
+        border: 3px solid white;
+        box-shadow: 0 0 20px #00000099;
+    }
+    .sub-1 {
+         background-image: url("https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/B7v_%5BImAgE%5D_%5BG%5D_UwW_9gN.png");
+    }
+    .sub-2 {
+        background-image:url("https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/%5BImAgE%5D_J0v_Uzj_Oh2_%5BG%5D.png");
+    }
+    
+}
+
+.ui-view.install-form .intro-section-3{
+    
+    .sub-2 {
+        
+        border-radius: 5px;
+        border: 3px solid white;
+        box-shadow: 0 0 20px #00000099;
+    }
+    
+    .sub-2 {
+        background-image: url(https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/%5BImAgE%5D_%5BG%5D_i6Q_UNN_doj.png);
+    }
+}
+
+
+.intro-section-3 .sub-2:after{
+
+    content:"";
+    background-image:url("https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/%5BImAgE%5D_ewq_tsE_%5BG%5D_nV-%3Ethumb%3A%3E200x%3E150.png?thumb=>200x>200");
+
+    width: 255px;
+    height: 100px;
+    display: inline-block;
+    background-size: cover;
+    position: absolute;
+    bottom: -10px;
+    right: -350px;
+    filter: drop-shadow(2px 4px 6px #00000077);
+    z-index: 2;
+}
+
+@media screen and (max-width: 1750px)
+{
+
+   .intro-section-3 .sub-2:after{
+       bottom: 20px;
+        right: 350px;
+   }     
+
+    .sub-1{
+        left: 200px;
+        bottom: 140px;
+    } 
+    .sub-2{
+        left: 550px;
+        bottom: 140px;
+    } 
+    .sub-3{
+        
+    }
+    
+    .intro-section-3 .sub-2 {
+        bottom: 40px;
+    }
+    
+    
+    .ui-view.install-form .intro-section-2 .sub-1 {
+        left: -50px;
+    }
+    
+    .ui-view.install-form .intro-section-2 .sub-2 {
+        left: 300px;
+    }
+
+
+    .ui-view.install-form .intro-section-3{
+    
+       .sub-2 {
+            left: 350px;
+        }
+    }
+    
+    
+    
+
+    
+}
+
+
+
+
+
+.intro-section .sub-1:after, .intro-section-2 .sub-2:after {
+    content: "";
+    background-image: url("https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/MAT_%5BG%5D_kYB_RBu_%5BImAgE%5D.png");
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    background-size: cover;
+    z-index: -1;
+    position: relative;
+    left: -165px;
+    transform: rotate(-20deg);
+    transition: left 0.2s ease-in-out, top 0.2s ease-in-out , transform 0.2s ease-in-out;
+    top: 0;
+}
+
+
+
+.intro-section-2 .sub-2:after {
+
+    background-image:url("https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/%5BG%5D_RoF_%5BImAgE%5D_uJ7_lg.png");
+    left: 200px;
+    width: 270px;
+    transform: rotate(20deg);
+}
+
+.intro-section-2:hover .sub-2:after {
+    
+    transform: rotate(30deg);
+    top:20px;
+    left:180px;
+}
+
+
+.intro-section:hover .sub-1:after {
+    left: -145px;
+    transform: rotate(-25deg);
+    top: 25px;
+}
+
+.intro-section, .intro-section-2 {
+    padding-bottom: 300px;
+}
+
+.intro-section-3 .sub-2:after {
+    transform: scale(1);
+    transition: transform 0.1s ease-in-out, filter 0.1s ease-in-out;
+}
+
+.intro-section-3:hover .sub-2:after {
+    transform:scale(1.05);
+    filter: drop-shadow(2px 4px 10px #00000099);
+}
+
+
+.ui-view.install-form .intro-section-3 .sub-1 {
+    background-image:
+    url("https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/%5BImAgE%5D_vzV_ch1_%5BG%5D_pYc.png");
+    width: 150px;
+    height: 320px;
+    top: 120px;
+    left: 750px;
+}
+
+.ui-view.install-form .intro-section-3 .sub-1 {
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00000099;
+}
+
+@media screen and (max-width: 1750px) {
+    .ui-view.install-form .intro-section-3 .sub-1 {top: 540px;}
+    
+}
+
+.sub-1, .sub-2, .sub-3, .markdown>span:after{
+    
+    transition:left 1s, top 1s, right 1s;
+}
+
+
+.ui-view.install-form .intro-section-3:hover .sub-1 {
+    animation: hint;
+    animation-duration:.4s;
+}
+
+
+
+@keyframes hint {
+  from {
+    transform: rotate(0deg);
+    left: 750px;
+  }
+
+  25% {
+    transform: rotate(-5deg);
+    left: 740px;
+  }
+
+  50% {
+    transform: rotate(0deg);
+    left: 750px;
+  }
+  75% {
+    transform: rotate(-5deg);
+    left: 740px;
+  }
+
+  to {
+    transform: rotate(0deg);
+    left: 750px;
+  }
+}
+
+
+

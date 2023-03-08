@@ -1,0 +1,1 @@
+element.innerHTML=word.split('-')[0];

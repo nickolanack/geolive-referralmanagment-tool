@@ -1,0 +1,1 @@
+wizardDataSet.canAddTasks=object.value

@@ -1,0 +1,1 @@
+return $$(".ui-view.dashboard-main")[0].hasClass('dark');

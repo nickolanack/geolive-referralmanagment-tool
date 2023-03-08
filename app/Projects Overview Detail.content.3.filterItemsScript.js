@@ -1,0 +1,1 @@
+return ProjectList.currentProjectFilterFn.apply(null, arguments);

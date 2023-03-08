@@ -1,0 +1,8 @@
+{
+    "type": "WizardScriptElement",
+    "config": {
+        "name": "My Custom Script",
+        "script": "\n\nreturn item.getProponentFlow().getElement();\n\n",
+        "description": "Info about my custom script"
+    }
+}
