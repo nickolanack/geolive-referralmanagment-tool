@@ -1,5 +1,5 @@
 return (new ModalFormButtonModule(application, AppClient,{
-        label:"Invite App User",
+        label:"Invite app user",
         formName:"userInviteForm",
         formOptions:{
             template:"form"

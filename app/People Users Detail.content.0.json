@@ -1,12 +1,19 @@
 {
-    "type": "InlineHtml",
+    "type": "Template",
     "config": {
         "className": "",
+        "elementType": "span",
+        "elementOptions": "{}",
         "text": "edit template",
         "template": "html.peopleUsersDetail",
+        "templateNamespace": "",
         "templateVariablesScript": "{}",
-        "formatTextScript": "var btn=ConfigItem.CreateEditBtn(new ConfigItem({\n    \"editLabel\":\"Edit user introduction\",\n    'widget':options.widget,\n    'form':'textFieldForm',\n    'stepOptions':{\n        width:600\n    }\n}));\n\nif(btn){\n    module.getElement().appendChild(btn);\n}",
+        "formatTextScript": "var btn=ConfigItem.CreateEditBtn(new ConfigItem({\n    \"editLabel\":\"Edit user introduction\",\n    'widget':options.widget,\n    'form':'textFieldForm',\n    'stepOptions':{\n        width:600\n    }\n}));\n\nif(btn){\n    module.getElement().appendChild(btn);\n}\n\nmodule.getElement().addEvent('click', function(){\n   module.getElement().addClass('activated');\n});",
+        "formatVariablesScript": "",
+        "requestTemplateScript": "defaultBehaviour();",
         "ajaxRequestTemplate": true,
+        "namedFormView": "",
+        "formOptions": "{}",
         "identifier": "htmlLabel"
     }
 }

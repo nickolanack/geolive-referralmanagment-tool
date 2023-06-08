@@ -4453,6 +4453,9 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "main-panel",
+                                    "elementType": "div",
+                                    "elementOptions": [],
+                                    "identifier": "",
                                     "viewType": "view",
                                     "namedView": "mainPanel",
                                     "shouldRender": true,
@@ -5731,7 +5734,7 @@
             "gatherIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_r7F_lYW_6cm_%5BG%5D-%3Ethumb%3A%3E200x%3E150.png"
             ],
-            "leftPanelPrimaryBtnLabel": "Add Project",
+            "leftPanelPrimaryBtnLabel": "Add Submission",
             "leftPanelPrimaryBtnForm": "{projectForm}",
             "showLeftPanelSecondaryBtn": false,
             "leftPanelSecondaryBtnLabel": "Add Dataset",
@@ -5739,40 +5742,10 @@
             "datasetForm": "baseMapForm",
             "menuLabels": {
                 "main": {
-                    "Referrals.Projects": "Projects"
+                    "Referrals.Projects": "Submissions"
                 }
             },
-            "menuItems": {
-                "main": {
-                    "Main.Projects": {
-                        "label": "Datasets",
-                        "showCreateBtn": true,
-                        "addButtonLabel": "Add Dataset",
-                        "formName": "documentForm",
-                        "lockFilter": "!collection",
-                        "filter": null,
-                        "invertfilter": false
-                    },
-                    "Main.Datasets": {
-                        "label": "The Datasets",
-                        "showCreateBtn": true,
-                        "addButtonLabel": "Add Dataset",
-                        "formName": "documentForm",
-                        "lockFilter": "!collection",
-                        "filter": null,
-                        "invertfilter": false
-                    },
-                    "Main.Collections": {
-                        "label": "Collections",
-                        "showCreateBtn": true,
-                        "addButtonLabel": "Add Collection",
-                        "formName": "documentProjectForm",
-                        "lockFilter": "collection",
-                        "filter": null,
-                        "invertfilter": false
-                    }
-                }
-            },
+            "menuItems": [],
             "useCommunitiesAsDepartmens": false,
             "useCommunitiesAsDepartments": true,
             "departmentKind": "Community",
@@ -5788,7 +5761,7 @@
             "showMapAnnotationsProject": "true",
             "showProjectActivity": false,
             "enableRevisions": false,
-            "nameForProjects": "Projects",
+            "nameForProjects": "Submissions",
             "nameForCollections": "Collections",
             "nameForDatasets": "Datasets",
             "loginLabel": "Login",
@@ -6518,6 +6491,8 @@
                                 "config": {
                                     "listClassName": "",
                                     "className": "user-item section-module",
+                                    "elementType": "div",
+                                    "elementOptions": [],
                                     "identifier": "",
                                     "viewType": "view",
                                     "namedView": "singleUserListItemDetail",
@@ -15159,6 +15134,8 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "section-padding",
+                                    "elementType": "div",
+                                    "elementOptions": [],
                                     "identifier": "project-subcategories-list",
                                     "viewType": "view",
                                     "namedView": "datasetsView",
@@ -15182,6 +15159,8 @@
                                 "type": "UIView",
                                 "config": {
                                     "className": "section-padding",
+                                    "elementType": "div",
+                                    "elementOptions": [],
                                     "identifier": "project-pin-list",
                                     "viewType": "view",
                                     "namedView": "datasetsView",
@@ -15222,6 +15201,8 @@
                                 "config": {
                                     "listClassName": "projects-list",
                                     "className": "section-module",
+                                    "elementType": "div",
+                                    "elementOptions": [],
                                     "identifier": "",
                                     "viewType": "view",
                                     "namedView": "singleProjectListItemDetail",
@@ -30533,6 +30514,35 @@
             "parseMarkdown": true,
             "saveTemplateAsData": true,
             "contentTemplate": "module-termsOfUse-text.contentTemplate.html",
+            "readAccess": "public"
+        }
+    },
+    "widget.550": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.onUserCreated.subject",
+            "target": "email.onUserCreated.subject",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": null
+        }
+    },
+    "widget.551": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "email.onUserCreated.content",
+            "target": "email.onUserCreated.content",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "email-onUserCreated-content.contentTemplate.html",
             "readAccess": "public"
         }
     }
