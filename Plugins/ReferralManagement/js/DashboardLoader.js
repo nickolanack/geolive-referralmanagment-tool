@@ -171,6 +171,19 @@ var DashboardLoader = (function() {
 						return;
 					}
 
+
+					
+
+					if (AppClient.getUserType() == "guest"){
+
+						if (DashboardConfig.getValue('enablePublicDashboard')) {
+							loadView("dashboardContent");
+							return;
+						}
+						loadView("guestDashboard"); //just login page
+						return;
+					}
+
 					try {
 						var user = team.getUser(AppClient.getId());
 						if (user.isTeamMember()||(user.isCommunityMember()&&!DashboardConfig.getValue('enableProposals'))) {
