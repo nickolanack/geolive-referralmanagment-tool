@@ -1070,6 +1070,20 @@ var ProjectList = (function() {
 				}
 			}];
 
+			if(AppClient.getUserType()=="guest"){
+				ProjectList._sharedListFilters=ProjectList._sharedListFilters.concat([{
+					label: "Private",
+					tip: "Only visible to members.",
+					name: "private",
+
+					icon: "https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/x5n_%5BG%5D_YqS_%5BImAgE%5D_h82-%3Ethumb%3A%3E200x%3E150.png",
+					description: "Log in to view your private and community datasets",
+					filterFn: function(p) {
+						return false;
+					}
+				}])
+			}
+
 			if(AppClient.getUserType()!="guest"){
 			
 				ProjectList._sharedListFilters=ProjectList._sharedListFilters.concat([{
