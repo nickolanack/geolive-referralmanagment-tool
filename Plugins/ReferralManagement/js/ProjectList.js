@@ -1070,46 +1070,46 @@ var ProjectList = (function() {
 				}
 			}];
 
-			if(AppClient.getUserType()=="guest"){
-				return;
+			if(AppClient.getUserType()!="guest"){\
+			
+				ProjectList._sharedListFilters=ProjectList._sharedListFilters.concat([{
+					label: "Community Vault",
+					tip: "Only visible to <b>" + ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity() + "</b> members.",
+					name: "community",
+
+					icon: "https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/x5n_%5BG%5D_YqS_%5BImAgE%5D_h82-%3Ethumb%3A%3E200x%3E150.png",
+					description: "These datasets and collections are only visible to members of your community <b> " + ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity() + "</b>. Nobody else has access to them.",
+					filterFn: function(p) {
+						return (!p.isPublic()) && p.getProjectCommunity() == ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity() && p.getCommunitiesInvolved().filter(function(c) {
+							return c && c != p.getProjectCommunity();
+						}).length == 0;
+					}
+				}, {
+					label: "You have Shared",
+					tip: "Visible and downloadable to members of other communities.",
+					name: "shared-to",
+					icon: "https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/17l_%5BImAgE%5D_xEl_%5BG%5D_KKc-%3Ethumb%3A%3E200x%3E150.png",
+					description: "These are datasets and collections that your community is sharing with other communities and GCT3. This information will be visible and downloadable to members of these other communities.",
+					filterFn: function(p) {
+
+						return (!p.isPublic()) && p.getProjectCommunity() == ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity() && p.getCommunitiesInvolved().filter(function(c) {
+							return c && c != p.getProjectCommunity();
+						}).length > 0;
+					}
+
+				}, {
+					label: "Others are Sharing",
+					tip: "Shared to you by <b>{itemCommunity}</b>.",
+					name: "shared-from",
+					icon: "https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/%5BImAgE%5D_mib_%5BG%5D_zR_yF4-%3Ethumb%3A%3E200x%3E150.png",
+					description: "These are datasets and collections that have been shared by other communities and GCT3 with your community. You will be able to view and download these files.",
+					filterFn: function(p) {
+						return (!p.isPublic()) && p.getProjectCommunity() != ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity();
+					}
+
+				}]);
 			}
 
-			ProjectList._sharedListFilters=ProjectList._sharedListFilters.concat([{
-				label: "Community Vault",
-				tip: "Only visible to <b>" + ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity() + "</b> members.",
-				name: "community",
-
-				icon: "https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/x5n_%5BG%5D_YqS_%5BImAgE%5D_h82-%3Ethumb%3A%3E200x%3E150.png",
-				description: "These datasets and collections are only visible to members of your community <b> " + ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity() + "</b>. Nobody else has access to them.",
-				filterFn: function(p) {
-					return (!p.isPublic()) && p.getProjectCommunity() == ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity() && p.getCommunitiesInvolved().filter(function(c) {
-						return c && c != p.getProjectCommunity();
-					}).length == 0;
-				}
-			}, {
-				label: "You have Shared",
-				tip: "Visible and downloadable to members of other communities.",
-				name: "shared-to",
-				icon: "https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/17l_%5BImAgE%5D_xEl_%5BG%5D_KKc-%3Ethumb%3A%3E200x%3E150.png",
-				description: "These are datasets and collections that your community is sharing with other communities and GCT3. This information will be visible and downloadable to members of these other communities.",
-				filterFn: function(p) {
-
-					return (!p.isPublic()) && p.getProjectCommunity() == ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity() && p.getCommunitiesInvolved().filter(function(c) {
-						return c && c != p.getProjectCommunity();
-					}).length > 0;
-				}
-
-			}, {
-				label: "Others are Sharing",
-				tip: "Shared to you by <b>{itemCommunity}</b>.",
-				name: "shared-from",
-				icon: "https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/%5BImAgE%5D_mib_%5BG%5D_zR_yF4-%3Ethumb%3A%3E200x%3E150.png",
-				description: "These are datasets and collections that have been shared by other communities and GCT3 with your community. You will be able to view and download these files.",
-				filterFn: function(p) {
-					return (!p.isPublic()) && p.getProjectCommunity() != ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity();
-				}
-
-			}]);
 
 		}
 
