@@ -92,9 +92,28 @@ var UserNotifications = (function() {
 
 			}),
 			(new ElementModule('span', {
-				"class": "logout-toggle",
+				"class": "logout-toggle "+(AppClient.getUserType()==="guest"?"login":""),
 				events: {
 					click: function() {
+
+
+						if(AppClient.getUserType()==="guest"){
+
+							(new UIModalDialog(application, "", {
+								"formName": "login",
+								"formOptions": {
+									"template": "form",
+									"className": "alert-view",
+									"showCancel":false,
+									"showSubmit":false,
+									"closable":true
+								}
+							})).show();
+
+							return;
+
+						}
+
 
 
 						(new UIModalDialog(application, "<h2>Are you sure you want to log out?</h2>", {
@@ -119,7 +138,7 @@ var UserNotifications = (function() {
 				}
 			})).runOnceOnLoad(function(button) {
 				new UIPopover(button.getElement(), {
-					description: 'Log out',
+					description: (AppClient.getUserType()==="guest"?"Log in":"Log out"),
 					anchor: UIPopover.AnchorAuto()
 				});
 			})
