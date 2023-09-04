@@ -5898,6 +5898,11 @@ img.static-map {
         content:"\0f08b";
     }
     
+    span.logout-toggle.login:after {
+        content: "\0f090";
+        left: 10px;
+    }
+    
     span.dark-toggle, span.admin-toggle, span.logout-toggle {
       display: inline-block;
       width: 35px;
