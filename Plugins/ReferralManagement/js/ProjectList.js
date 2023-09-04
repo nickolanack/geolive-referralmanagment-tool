@@ -1070,7 +1070,7 @@ var ProjectList = (function() {
 				}
 			}];
 
-			if(AppClient.getUserType()!="guest"){\
+			if(AppClient.getUserType()!="guest"){
 			
 				ProjectList._sharedListFilters=ProjectList._sharedListFilters.concat([{
 					label: "Community Vault",
