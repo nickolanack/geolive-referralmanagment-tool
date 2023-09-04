@@ -100,7 +100,7 @@ var UserNotifications = (function() {
 						if(AppClient.getUserType()==="guest"){
 
 							(new UIModalDialog(application, "", {
-								"formName": "login",
+								"formName": "loginForm",
 								"formOptions": {
 									"template": "form",
 									"className": "alert-view",

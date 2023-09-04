@@ -454,22 +454,6 @@ var SpatialProject = (function() {
 
 				}).show();
 
-
-				// var modalFormViewController =  new PushBoxModuleViewer(map, {});
-				// var wizard = wizardTemplate(layerDataItem, {});
-				// wizard.buildAndShow(modalFormViewController, 
-				// 	template:"form"
-				// }); 
-				// wizard.addEvent('complete', function() {
-
-				//     var data = wizard.getData();
-				//     console.log(data);
-				//     project.setDatasetMetadata(data, layerIndex);
-
-				//     //update current map
-
-				// });
-
 			});
 
 
