@@ -1068,7 +1068,13 @@ var ProjectList = (function() {
 				filterFn: function(p) {
 					return p.isPublic();
 				}
-			}, {
+			}];
+
+			if(AppClient.getUserType()=="guest"){
+				return;
+			}
+
+			ProjectList._sharedListFilters=ProjectList._sharedListFilters.concat([{
 				label: "Community Vault",
 				tip: "Only visible to <b>" + ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity() + "</b> members.",
 				name: "community",
@@ -1103,7 +1109,7 @@ var ProjectList = (function() {
 					return (!p.isPublic()) && p.getProjectCommunity() != ProjectTeam.CurrentTeam().getUser(AppClient.getId()).getCommunity();
 				}
 
-			}];
+			}]);
 
 		}
 
