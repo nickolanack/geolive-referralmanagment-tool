@@ -27,15 +27,20 @@ var container=el.appendChild(new Element('div', {
                     
                     return;
                 }
-                container.addClass('active'); 
                 
-                (new AjaxControlQuery(CoreAjaxUrlRoot, 'set_access', {
-    		                "plugin": "ReferralManagement",
-    		                "project":item.getId(),
-    		                "access":"public"
-    		        })).addEvent('success', function(resp){
-    		            console.log(resp);
-    		        }).execute();
+                if(confirm('Are you sure you want to make this fully public')){
+                
+                    container.addClass('active'); 
+                    
+                    (new AjaxControlQuery(CoreAjaxUrlRoot, 'set_access', {
+        		                "plugin": "ReferralManagement",
+        		                "project":item.getId(),
+        		                "access":"public"
+        		        })).addEvent('success', function(resp){
+        		            console.log(resp);
+        		        }).execute();
+    		        
+                }
             });
         }
     }
