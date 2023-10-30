@@ -1075,7 +1075,21 @@ var ProjectList = (function() {
 					label: "Private",
 					tip: "Only visible to members.",
 					name: "private",
+					click:function(){
 
+
+						(new UIModalDialog(GatherDashboard.getApplication(), "", {
+								"formName": "loginForm",
+								"formOptions": {
+									"template": "form",
+									"className": "alert-view",
+									"showCancel":false,
+									"showSubmit":false,
+									"closable":true
+								}
+							})).show();
+
+					},
 					icon: "https://dyl2vw577xcfk.cloudfront.net/gct3.gather.geoforms.ca/1/Uploads/x5n_%5BG%5D_YqS_%5BImAgE%5D_h82-%3Ethumb%3A%3E200x%3E150.png",
 					description: "Log in to view your private and community datasets",
 					filterFn: function(p) {
@@ -1141,6 +1155,10 @@ var ProjectList = (function() {
 				icon: list.icon || null,
 				color: null,
 				navigationFn: function() {
+
+					if(typeof list.click=='function'){
+						return list.click();
+					}
 
 					var controller = GatherDashboard.getApplication().getNamedValue('navigationController')
 					controller.navigateTo("Datasets", "Main", {
