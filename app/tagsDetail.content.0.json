@@ -24,7 +24,7 @@
         "targetName": "",
         "getItemListScript": "return ReferralManagementDashboard.getProjectTagsData('_root').filter(function(item){\n    if(item.getMetadata&&item.getMetadata().hideTree&&item.getMetadata&&item.getMetadata().hideTree===true){\n        return false;\n    }\n    return true;\n    \n});",
         "formatItemListScript": "return list;",
-        "formatListItemModuleScript": "\nconsole.log('add color')\nreturn item;",
+        "formatListItemModuleScript": "\nif(child.getColor){\n    childView.getElement().style.setProperty('--theme-color', child.getColor());\n}\nreturn item;",
         "emptyNamedView": "emptyListView",
         "filterItemsScript": "return true;",
         "sortItemsScript": "",
