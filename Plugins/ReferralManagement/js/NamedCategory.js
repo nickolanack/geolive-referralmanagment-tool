@@ -453,10 +453,12 @@ var NamedCategory = (function() {
 		//RecentItems.setIconForItemEl(item, el);
 
 		var url=item.getIcon();
+
+
 		if(url){
 		    labelEl.setStyle('background-image', 'url('+url+')');
+		}
 		    el.setStyle('background-color', item.getColor());
-		    
 		    var c=item.getColor();
 
 		    if(!c){
