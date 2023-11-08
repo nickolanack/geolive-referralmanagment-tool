@@ -3,6 +3,8 @@
     "config": {
         "listClassName": "",
         "className": "no-line section-module",
+        "elementType": "div",
+        "elementOptions": "{}",
         "identifier": "",
         "viewType": "view",
         "namedView": "tagsDetailItem",
@@ -22,7 +24,7 @@
         "targetName": "",
         "getItemListScript": "return ReferralManagementDashboard.getProjectTagsData('_root').filter(function(item){\n    if(item.getMetadata&&item.getMetadata().hideTree&&item.getMetadata&&item.getMetadata().hideTree===true){\n        return false;\n    }\n    return true;\n    \n});",
         "formatItemListScript": "return list;",
-        "formatListItemModuleScript": "return item;",
+        "formatListItemModuleScript": "\nconsole.log('add color')\nreturn item;",
         "emptyNamedView": "emptyListView",
         "filterItemsScript": "return true;",
         "sortItemsScript": "",
