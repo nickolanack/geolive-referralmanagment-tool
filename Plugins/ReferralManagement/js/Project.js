@@ -312,7 +312,8 @@ var Project = (function() {
 
 
 			var layer=this.data.attributes.dataset.baseMapLayer;
-			if(layer&&layer!==""){
+			if(LayerGroupItemList.getGroupNames().indexOf(layer)>=0)
+			//if(layer&&layer!==""&&){
 
 
 				return true;
