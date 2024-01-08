@@ -847,6 +847,13 @@ var DashboardPageLayout = (function() {
 				}, {
 					html: "Archive",
 					config: "simplifiedMenu",
+					condition: function() {
+
+						if (AppClient.getUserType() == "guest") {
+							return false;
+						}
+						return true;
+					},
 					hide: true //menu is still available just hidden
 				}, {
 					html: "Tasks",
