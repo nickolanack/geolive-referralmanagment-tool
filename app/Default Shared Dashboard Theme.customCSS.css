@@ -4781,7 +4781,7 @@ span.remove-btn:after {
 .no-media .file-browse-btn, .only-image .file-browse-btn, .only-doc .file-browse-btn {
     display: none;
 }
-.only-doc .document.file-browse-btn, .only-image .image.file-browse-btn {
+.only-doc .document.file-browse-btn, .only-image .image.file-browse-btn, .only-image .file-browse-btn.combined-browser {
     display: inline-block;
 }
 
