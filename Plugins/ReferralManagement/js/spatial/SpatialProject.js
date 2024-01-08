@@ -318,10 +318,11 @@ var SpatialProject = (function() {
 						var lids = listItem.getMapLayerIds();
 
 
-						if (lids.length != 1) {
-							return;
-						}
-
+						// if (lids.length != 1) {
+						// 	return;
+						// }
+						
+						//Edit only the first item
 						me.editLayer(me._map, me._map.getLayerManager().getLayer(lids[0]).getOptions());
 
 					}
