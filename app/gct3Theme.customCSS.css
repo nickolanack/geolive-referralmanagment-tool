@@ -244,6 +244,13 @@ button.form-btn.primary-btn.edit.notes {
           border-radius: 0 0 10px 10px;
         
     }
+    
+    &hover:before {
+        overflow:visible;
+        min-width:fit-content;
+        background-color:black;
+        z-index:1;
+    }
 }
 
     
