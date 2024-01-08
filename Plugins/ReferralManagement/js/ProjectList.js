@@ -1144,10 +1144,23 @@ var ProjectList = (function() {
 		return ProjectList._sharedListFilters;
 	};
 
+
+	/**
+	 * @deprecated use GetSharedPrimaryThemes
+	 */
 	ProjectList.ResolveSharedLists = function() {
+		return ProjectList.GetSharedPrimaryThemes();
+	}
+	
+	ProjectList.GetSharedPrimaryThemes = function() {
 
 
-		return (ProjectList.SharedListFilters()).map(function(list) {
+		return (ProjectList.SharedListFilters()).filter(function(){
+
+			//could remove empty lists here - or add some other filter
+			return true;
+
+		}).map(function(list) {
 
 			return new MockDataTypeItem({
 				name: list.label,
