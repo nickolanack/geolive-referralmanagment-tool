@@ -229,7 +229,7 @@ button.form-btn.primary-btn.edit.notes {
     }
     
     &:before{
-          before {
+          
           content: attr(data-name);
           position:absolute;
           width: calc( 100% + 12px );
@@ -242,7 +242,7 @@ button.form-btn.primary-btn.edit.notes {
           padding: 5px;
           box-sizing: border-box;
           border-radius: 0 0 10px 10px;
-        }
+        
     }
 }
 
