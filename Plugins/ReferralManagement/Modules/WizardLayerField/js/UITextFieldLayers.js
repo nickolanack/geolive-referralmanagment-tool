@@ -53,7 +53,7 @@ var UITextFieldLayerList = function() {
 
     mediaSelection.addParser(function(text){ 
         
-        return (new HTMLTagParser()).linkUrls(text); 
+        return (new HTMLTagParser()).parseLinks(text); 
 
     }, function(container, linkUrl, callback) {
 
@@ -75,3 +75,4 @@ var UITextFieldLayerList = function() {
 
 
 };
+
