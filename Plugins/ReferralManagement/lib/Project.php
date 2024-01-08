@@ -101,8 +101,8 @@ class Project {
 		$proposal['accessLevel']='private';
 
 		if(isset($attributes['accessLevel'])){
-			if(in_array($attributes['accessLevel'], array('public', 'private'))){
-				$proposal['accessLevel']=$attributes['accessLevel'];
+			if(in_array(strtolower($attributes['accessLevel']), array('public', 'private'))){
+				$proposal['accessLevel']=strtolower($attributes['accessLevel']);
 			}
 			unset($attributes['accessLevel']);
 		}

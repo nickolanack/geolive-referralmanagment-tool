@@ -41,7 +41,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		} 
 
 		(new attributes\Record('proposalAttributes'))->setValues($json->project, 'ReferralManagement.proposal', array(
-			'accessLevel' => $json->access,
+			'accessLevel' => strtolower($json->access),
 		));
 
 		return true;
