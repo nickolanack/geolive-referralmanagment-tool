@@ -245,7 +245,7 @@ button.form-btn.primary-btn.edit.notes {
         
     }
     
-    &hover:before {
+    &:hover:before {
         overflow:visible;
         min-width:fit-content;
         background-color:black;
