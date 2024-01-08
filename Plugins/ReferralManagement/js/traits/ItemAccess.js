@@ -40,6 +40,10 @@ var ItemAccess = (function() {
 
 			var allCommunities = ProjectTeam.GetAllCommunities();
 
+			if(this.isPublic&&this.isPublic()===true){
+				return 'public';
+			}
+
 			if (allCommunities.length == 1) {
 				return '';
 			}
