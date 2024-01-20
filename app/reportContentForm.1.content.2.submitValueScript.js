@@ -1,1 +1,0 @@
-wizardDataSet.content=object.value

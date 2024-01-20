@@ -1,1 +1,0 @@
-return PostContent.viewForItem(item);

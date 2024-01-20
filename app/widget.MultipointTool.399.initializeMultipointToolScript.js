@@ -1,1 +1,0 @@
-ProjectMap.multipointToolInit(multipointTool);

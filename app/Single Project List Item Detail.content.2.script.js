@@ -1,1 +1,0 @@
-return new ProgressBarModule({value:function(){ return item.getPercentComplete(); },"class":"percent-complete"});

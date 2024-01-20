@@ -1,1 +1,0 @@
-GetWidget('marketingStyle')->display($targetInstance);

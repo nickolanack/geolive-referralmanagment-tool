@@ -1,1 +1,0 @@
-return Proposal.ListOutcomes();

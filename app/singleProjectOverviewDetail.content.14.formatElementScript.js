@@ -1,1 +1,0 @@
-el.addClass('item-title project-title label-main-projects')

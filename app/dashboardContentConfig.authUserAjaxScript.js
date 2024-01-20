@@ -1,1 +1,0 @@
-return Auth('memberof', 'lands-department-manager', 'group');

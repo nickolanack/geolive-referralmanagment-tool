@@ -1,1 +1,0 @@
-return "Requested response date: "+item.getDeadlineDate()

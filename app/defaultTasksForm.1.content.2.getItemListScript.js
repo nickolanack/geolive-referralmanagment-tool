@@ -1,1 +1,0 @@
-ProjectTaskList.TaskTemplates(item, callback);

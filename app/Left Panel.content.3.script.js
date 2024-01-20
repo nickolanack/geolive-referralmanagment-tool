@@ -1,5 +1,0 @@
-
-
-
-
-return UILeftPanel.getPrimaryBtns(application);

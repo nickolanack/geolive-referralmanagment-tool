@@ -1,1 +1,0 @@
-ProjectTeam.CurrentTeam().getUser(AppClient.getId(), callback);

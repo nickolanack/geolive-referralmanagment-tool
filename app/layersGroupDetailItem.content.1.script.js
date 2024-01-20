@@ -1,1 +1,0 @@
-return '<div class="section-title"><span>'+item.getName().capitalize()+':</span></div>';

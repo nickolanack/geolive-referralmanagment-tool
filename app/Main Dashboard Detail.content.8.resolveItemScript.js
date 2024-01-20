@@ -1,1 +1,0 @@
-return RecentItems.RecentProjectActivity;

@@ -1,1 +1,0 @@
-return NamedCategory.GetShortName(item.getProjectType());

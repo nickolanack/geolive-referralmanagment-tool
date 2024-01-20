@@ -1,1 +1,0 @@
-wizardDataSet.color=object.value

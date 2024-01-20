@@ -1,1 +1,0 @@
-return ReferralManagementDashboard.currentTaskFilterFn.apply(null, arguments);

@@ -1,1 +1,0 @@
-wizardDataSet.showAttributes=object.value;

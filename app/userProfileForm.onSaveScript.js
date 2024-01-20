@@ -1,1 +1,0 @@
-ReferralManagementDashboard.onSaveProfile(item, application);

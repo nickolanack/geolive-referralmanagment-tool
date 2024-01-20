@@ -1,1 +1,0 @@
-wizardDataSet.receiveNotifications=object.value;

@@ -1,1 +1,0 @@
-wizardDataSet.fillColor=object.value;

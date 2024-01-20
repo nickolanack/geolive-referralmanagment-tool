@@ -1,8 +1,0 @@
-{
-    "type": "WizardScriptElement",
-    "config": {
-        "name": "My Custom Script",
-        "script": "return '<div class=\"section-title\"><span>'+item.getLabel()+'<\/span><\/div>'",
-        "description": "Info about my custom script"
-    }
-}

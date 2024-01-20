@@ -1,1 +1,0 @@
-el.addClass('item-title project-title company-title label-people-clients')

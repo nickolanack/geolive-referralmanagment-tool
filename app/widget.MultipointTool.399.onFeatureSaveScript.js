@@ -1,1 +1,0 @@
-ProjectMap.multipointToolOnSaveFeature(feature, type);

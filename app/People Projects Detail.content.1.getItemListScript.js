@@ -1,1 +1,0 @@
-ProjectTeam.CurrentTeam().getProjects(callback);

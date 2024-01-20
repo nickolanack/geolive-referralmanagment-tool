@@ -1,1 +1,0 @@
-wizardDataSet.defaultValue=object.value;

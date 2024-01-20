@@ -1,1 +1,0 @@
-ProjectTeam.CurrentTeam().getUsers(callback);

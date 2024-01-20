@@ -1,1 +1,0 @@
- return object.value.indexOf('@')>0&&object.value.split('@').length==2&&object.value.split('@')[1].split('.').length>1

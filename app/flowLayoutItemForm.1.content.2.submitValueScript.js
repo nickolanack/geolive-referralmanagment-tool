@@ -1,1 +1,0 @@
-wizardDataSet.hoverText=object.value||"";

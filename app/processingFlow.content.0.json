@@ -1,8 +1,0 @@
-{
-    "type": "WizardScriptElement",
-    "config": {
-        "name": "My Custom Script",
-        "script": "return item.getProcessingFlow().getElement();\n\n\n",
-        "description": "Info about my custom script"
-    }
-}

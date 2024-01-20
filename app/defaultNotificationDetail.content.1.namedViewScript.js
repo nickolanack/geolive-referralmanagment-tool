@@ -1,1 +1,0 @@
-return NotificationContent.viewForItem(item);

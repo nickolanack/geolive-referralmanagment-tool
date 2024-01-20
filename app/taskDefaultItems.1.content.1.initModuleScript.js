@@ -1,1 +1,0 @@
-ProjectTaskList.InitTemplateList(module);

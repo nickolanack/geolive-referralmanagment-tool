@@ -1,1 +1,0 @@
-wizardDataSet.canAddTeamMembers=object.value;
