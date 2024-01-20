@@ -1,0 +1,1 @@
+wizardDataSet.icon=object.value||"default"

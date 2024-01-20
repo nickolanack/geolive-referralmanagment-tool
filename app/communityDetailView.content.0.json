@@ -1,0 +1,23 @@
+{
+    "type": "UIView",
+    "config": {
+        "className": "dark-only-shading inset-menu-shading left-panel",
+        "identifier": "",
+        "viewType": "view",
+        "namedView": "splitProjectDetail",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
+        "showInlineEdit": false,
+        "namedFormView": "defaultView",
+        "formOptions": "\"{}\"",
+        "showDeleteButton": false,
+        "deleteItemScript": "defaultBehaviorFn()",
+        "initModuleScript": "",
+        "formatModuleScript": "",
+        "resolveItemScript": "return ProjectList.ResolveSharedCommunityProjectList(item);",
+        "filterModulesScript": "return list;",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false,
+        "targetName": ""
+    }
+}

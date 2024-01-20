@@ -1,0 +1,1 @@
+BreadcrumbNavigation.render(el, labelEl, valueEl);

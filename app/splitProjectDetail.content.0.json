@@ -1,0 +1,23 @@
+{
+    "type": "UIView",
+    "config": {
+        "className": "dark-only-shading inset-menu-shading left-panel",
+        "identifier": "",
+        "viewType": "view",
+        "namedView": "projectsListDetail",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
+        "showInlineEdit": false,
+        "namedFormView": "defaultFormView",
+        "formOptions": "{}",
+        "showDeleteButton": false,
+        "deleteItemScript": "",
+        "initModuleScript": "",
+        "formatModuleScript": "console.log([\"projects menu list\", module, item]);",
+        "resolveItemScript": "\nreturn ProjectList.ResolveProjectList(item);",
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false,
+        "targetName": ""
+    }
+}

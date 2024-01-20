@@ -1,0 +1,20 @@
+{
+    "type": "UIView",
+    "config": {
+        "className": "",
+        "viewType": "view",
+        "namedView": "singleProjectListItemDetail",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
+        "showInlineEdit": false,
+        "namedFormView": "defaultFormView",
+        "formOptions": "{}",
+        "showDeleteButton": false,
+        "deleteItemScript": "",
+        "formatModuleScript": "",
+        "resolveItemScript": "",
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false
+    }
+}

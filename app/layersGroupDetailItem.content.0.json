@@ -1,0 +1,8 @@
+{
+    "type": "WizardScriptElement",
+    "config": {
+        "name": "My Custom Script",
+        "script": "\n\n\n\n\nreturn [new ModalFormButtonModule(application, item, {\n         \n            label: \"Edit\",\n            formOptions: {template:\"form\"},\n            formName: \"tagForm\",\n            \"class\": \"primary-btn\"\n\n    \n}),new ModalFormButtonModule(application, LayerGroupItemList.getNewLayerGroupItem(item.getName()), {\n         \n            label: \"Add \"+item.getName().capitalize()+\" \",\n            formOptions: {template:\"form\"},\n            formName: \"tagForm\",\n            \"class\": \"primary-btn\"\n\n    \n})];\n",
+        "description": "Info about my custom script"
+    }
+}

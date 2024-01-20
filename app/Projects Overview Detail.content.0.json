@@ -1,0 +1,8 @@
+{
+    "type": "WizardScriptElement",
+    "config": {
+        "name": "My Custom Script",
+        "script": "return ProjectList.SortMenuContent(3)",
+        "description": "Info about my custom script"
+    }
+}

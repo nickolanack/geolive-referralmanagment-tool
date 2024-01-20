@@ -1,0 +1,1 @@
+FormBuilder.formatOptionsField(textField, inputElement, module);

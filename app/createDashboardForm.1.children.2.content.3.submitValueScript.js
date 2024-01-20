@@ -1,0 +1,1 @@
+wizardDataSet.dashboard=object.value

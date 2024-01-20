@@ -1,0 +1,8 @@
+{
+    "type": "WizardScriptElement",
+    "config": {
+        "name": "My Custom Script",
+        "script": "return '<h2>'+item.getTitle()+'<\/h2>';",
+        "description": "Info about my custom script"
+    }
+}

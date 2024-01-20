@@ -1,0 +1,8 @@
+{
+    "type": "WizardScriptElement",
+    "config": {
+        "name": "My Custom Script",
+        "script": "\/*Activity Chart*\/\n\n\n\n\n\nreturn ProjectActivityChart.GetActivityChartModules(item);",
+        "description": "Info about my custom script"
+    }
+}

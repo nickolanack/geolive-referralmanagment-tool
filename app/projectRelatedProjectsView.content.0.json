@@ -1,0 +1,23 @@
+{
+    "type": "UIView",
+    "config": {
+        "className": "inline-list-item",
+        "identifier": "project-related-projects",
+        "viewType": "view",
+        "namedView": "projectsListDetail",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
+        "showInlineEdit": false,
+        "namedFormView": "defaultView",
+        "formOptions": "\"{}\"",
+        "showDeleteButton": false,
+        "deleteItemScript": "defaultBehaviorFn()",
+        "initModuleScript": "",
+        "formatModuleScript": "",
+        "resolveItemScript": "return ProjectList.ProjectRelatedProjectsList(item);",
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false,
+        "targetName": ""
+    }
+}

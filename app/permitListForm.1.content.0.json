@@ -1,0 +1,22 @@
+{
+    "type": "FormTextField",
+    "config": {
+        "className": "width-3",
+        "label": "Permit Number",
+        "placeholder": "add permit number",
+        "lines": 1,
+        "maxChars": 0,
+        "mandatory": false,
+        "multiEntry": false,
+        "muliTemplate": "lines",
+        "multiMessage": "add another value",
+        "formatter": "none",
+        "beforeRenderModuleScript": "",
+        "onRenderTextFieldScript": "",
+        "formatValueScript": "",
+        "getValueScript": " return item.getNumber(); ",
+        "updateValueScript": " object.value=value ",
+        "submitValueScript": "wizardDataSet.number=object.value;",
+        "validateValueScript": " return defaultValidationFn() "
+    }
+}

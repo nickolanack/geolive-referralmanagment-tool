@@ -1,0 +1,1 @@
+Project.AddDetailViewEvents(module, item);

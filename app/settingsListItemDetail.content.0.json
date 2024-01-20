@@ -1,0 +1,9 @@
+{
+    "type": "FieldValue",
+    "config": {
+        "loadAsync": false,
+        "fieldLabelScript": "return \"\";",
+        "fieldValueScript": "return \"\";",
+        "formatElementScript": "el.appendChild(new Element('a',{href:item.link, target:\"_blank\", html:item.label}))"
+    }
+}

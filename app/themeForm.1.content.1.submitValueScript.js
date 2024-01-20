@@ -1,0 +1,1 @@
+wizardDataSet.content=object.value

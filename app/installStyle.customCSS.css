@@ -1,0 +1,160 @@
+
+
+    .ui-view.dashboard-main:before {
+        background-image: url("https://gather.geoforms.ca/assets/images/tim-johnson-bmljdpdeigw-unsplash.jpg");
+        content:
+        "";
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background-size: cover;
+        opacity: 0.2;
+        z-index: 0;
+    }
+    
+    
+    
+    .ui-view.dashboard-main.dark {
+        z-index: 1;
+    }
+
+.intro-section, .intro-section-2{
+        position: relative;
+        margin-bottom: 150px;
+        padding-bottom: 200px;
+        border-bottom: 2px solid #0000004a;
+}
+
+
+.dark .intro-section, .dark .intro-section-2{
+        border-bottom: 2px solid #ffffff4a;
+}
+    
+ .intro-section-3{
+        position: relative;
+        padding-bottom: 200px;
+}   
+
+
+.ui-view.install-form {
+    max-width: 800px;
+    
+    margin-bottom: 400px;
+    
+    h1{
+        line-height: 30px;
+        font-weight: 100;
+        font-size: 30px;
+    }
+    
+   .intro-section h1, .intro-section-0 h1 {
+        line-height: 75px;
+        font-weight: 100;
+        font-size: 50px;
+    }
+    
+    span.WizardFooter.section-btn{
+
+        height: 0;
+        position: relative;
+        z-index: 1;
+        top: -250px;
+    }
+    
+    
+    .intro-section>span:after, .intro-section-2>span:after, .intro-section-3>span:after {
+            
+            content: "";
+            background-image: url(https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/%5BG%5D_JU8_%5BImAgE%5D_S7J_6pB.png);
+            width: 800px;
+            height: 400px;
+            background-size: cover;
+            box-shadow: 0 0 20px #00000099;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 100px;
+            position:relative;
+            top:0;
+            left:0;
+            
+        }
+    
+    .intro-section-2>span:after {
+        background-image: url(https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/62L_%5BImAgE%5D_74h_%5BG%5D_NXC.png);
+            
+    }
+    
+    .intro-section-3>span:after {
+         background-image: url(https://dyl2vw577xcfk.cloudfront.net/rmt.geoforms.ca/1/Uploads/%5BImAgE%5D_%5BG%5D_i6Q_UNN_doj.png);
+    }
+
+    
+    
+    textarea.text-input.one.with-1-line {
+        height: 40px;
+        text-indent: 10px;
+        line-height: 40px;
+         font-size: 16px; 
+        overflow-y: hidden;
+    }
+    
+    .label.top-left {
+        font-size: 20px;
+        line-height: 45px;
+    }
+    
+    .boolean-field.checkbox-style {
+        font-size: 20px;
+        text-align: revert;
+        width: 100%;
+        display: inline-block;
+    }
+    
+    .boolean-field.checkbox-style:after {
+        clear: both;
+        content: "";
+        display: inline-block;
+        width: 100%;
+    }
+    
+   button.WizardButton.btn {
+        background-color: mediumseagreen;
+        padding: 15px 30px;
+        min-width: 220px;
+    }
+    
+     @media screen and (min-width: 1750px) {
+    
+        max-width:1700px;
+    
+    
+    
+      .intro-section.markdown>span, .intro-section-2.markdown>span, .intro-section-3.markdown>span {
+         width:800px;
+         display:inline-block;
+         position:relative;
+         min-height: 400px;
+        }
+        
+        .intro-section>span:after, .intro-section-2>span:after, .intro-section-3>span:after {
+            margin-top:0;
+            position: absolute;
+            left: calc(100% + 150px);
+            top: 40px;
+        }
+        
+        .intro-section-2.markdown>span{
+            margin-left: 950px;
+        }
+        .intro-section-2>span:after{
+            left:unset;
+            right: calc(100% + 150px);
+        }
+        
+    
+     }
+
+
+ 
+
+}

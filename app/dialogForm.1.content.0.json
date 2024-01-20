@@ -1,0 +1,11 @@
+{
+    "type": "FieldValue",
+    "config": {
+        "loadAsync": false,
+        "identifier": "dialog-heading\n",
+        "className": "",
+        "fieldLabelScript": "return \"\";",
+        "fieldValueScript": "return \"\";",
+        "formatElementScript": "\nif(item.getName){\n    valueEl.innerHTML=item.getName();\n}"
+    }
+}

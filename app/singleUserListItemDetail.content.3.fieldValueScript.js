@@ -1,0 +1,1 @@
+return item.getCommunity?item.getCommunity():'';

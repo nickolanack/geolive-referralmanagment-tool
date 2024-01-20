@@ -1,0 +1,11 @@
+{
+    "type": "InlineHtml",
+    "config": {
+        "className": "",
+        "text": "Archive",
+        "template": "html.archiveText",
+        "templateVariablesScript": "{}",
+        "formatTextScript": "var btn=ConfigItem.CreateEditBtn(new ConfigItem({\n    \"editLabel\":\"Edit proponent info\",\n    'widget':options.widget,\n    'form':'textFieldForm',\n    'stepOptions':{\n        width:600\n    }\n}));\n\nif(btn){\n    module.getElement().appendChild(btn);\n}",
+        "ajaxRequestTemplate": true
+    }
+}

@@ -1,0 +1,1 @@
+ProjectSearch.formatSearchModule(searchModule);
