@@ -505,12 +505,12 @@
             "searchTintColor": "rgb(0,0,0)",
             "clearColor": "#3a6ccf",
             "clearTintColor": "rgb(0,0,0)",
-            "placeholderText": "Search Location, Items, Attributes...",
+            "placeholderText": "Search Location",
             "searchUsers": false,
             "widgetTitle": "search bar",
             "readAccess": "public",
             "alwaysShowClear": true,
-            "target": "forTheMap"
+            "target": "_forTheMap"
         }
     },
     "widget.34": {
