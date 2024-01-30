@@ -9436,7 +9436,7 @@
                 "class": "DecisionNode",
                 "_diagramState": {
                     "x": 200,
-                    "y": 316
+                    "y": 315
                 },
                 "children": [
                     "userProfileForm.metadata.children.0.json",
@@ -9447,16 +9447,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 410,
-                            "y": 177
+                            "x": 420,
+                            "y": 186
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 370,
-                                    "y": 477
+                                    "x": 380,
+                                    "y": 499
                                 }
                             }
                         ],
@@ -9574,9 +9574,9 @@
                                                 "attributeFields": [
                                                     "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
                                                 ],
-                                                "className": "",
-                                                "label": "Description",
-                                                "message": "add a description",
+                                                "className": "no-text only-doc",
+                                                "label": "Community Letters",
+                                                "message": "",
                                                 "lines": 3,
                                                 "maxChars": 0,
                                                 "mandatory": false,
