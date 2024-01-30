@@ -510,7 +510,9 @@
             "widgetTitle": "search bar",
             "readAccess": "public",
             "alwaysShowClear": true,
-            "target": "forTheMap"
+            "target": "forTheMap",
+            "showMapitems": false,
+            "showAttributes": false
         }
     },
     "widget.34": {
