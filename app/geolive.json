@@ -9435,8 +9435,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 202,
-                    "y": 318
+                    "x": 201,
+                    "y": 317
                 },
                 "children": [
                     "userProfileForm.metadata.children.0.json",
@@ -9447,16 +9447,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 518,
-                            "y": 225
+                            "x": 401,
+                            "y": 168
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 478,
-                                    "y": 526
+                                    "x": 360,
+                                    "y": 468
                                 }
                             }
                         ],
@@ -9513,7 +9513,7 @@
                                                 "message": "",
                                                 "lines": 1,
                                                 "maxChars": 0,
-                                                "mandatory": false,
+                                                "mandatory": true,
                                                 "multiEntry": false,
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "",
@@ -9536,14 +9536,14 @@
                                                 "message": "",
                                                 "lines": 1,
                                                 "maxChars": 0,
-                                                "mandatory": false,
+                                                "mandatory": true,
                                                 "multiEntry": false,
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "",
                                                 "formatter": "none",
                                                 "iconTint": "rgb(100, 149, 237)",
                                                 "autocomplete": true,
-                                                "inputOptions": [],
+                                                "inputOptions": "{}",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": ""
                                             }
