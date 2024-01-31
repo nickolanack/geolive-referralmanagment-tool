@@ -153,7 +153,7 @@ var SpatialDocumentPreview = (function() {
 		_positionAddLayerTile:function(){
 
 			if(this._addLayerTile){
-				this._addLayerTile.getElement().setStyle('right', this._layers.length * me._offset + 40);
+				this._addLayerTile.getElement().setStyle('right', this._layers.length * this._offset + 40);
 			}
 		},
 
