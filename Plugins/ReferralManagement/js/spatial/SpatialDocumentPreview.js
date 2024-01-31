@@ -34,7 +34,7 @@ var SpatialDocumentPreview = (function() {
 
 
 			var map = this._map;
-	
+			var me=this;
 
 			var layerOpts=layer.options;
 			var name=layer.getName();
@@ -176,6 +176,7 @@ var SpatialDocumentPreview = (function() {
 					}
 
 				}).addEvent('click', function() {
+					
 
 					
 
