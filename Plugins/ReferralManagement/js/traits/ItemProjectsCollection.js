@@ -61,12 +61,10 @@ var InlineProjectSelection=new Class_({
 
 			ProjectSelection.addProject(p);
 
-			var newLayers=spatial.map(function(layerOpts, i) {
-				return createLayer(layerOpts, i+layers.length);
+			spatial.map(function(layerOpts, i) {
+				return SpatialDocumentPreview.addLayer(layerOpts);
 			});
 
-			layers=layers.concat(newLayers);
-			positionAddLayerTile();
 
 		},
 		removeProject:function(p){

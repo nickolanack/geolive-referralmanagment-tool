@@ -30,7 +30,7 @@ var SpatialDocumentPreview = (function() {
 
 		},
 
-		_addMapLayerIndicators:function(layer, i){
+		_addMapLayer:function(layer, i){
 
 
 			var map = this._map;
@@ -141,6 +141,22 @@ var SpatialDocumentPreview = (function() {
 
 		},
 
+		addLayer:function(layerOpts){
+
+			var layer = new ProjectLayer(this._map, layerOpts);
+			this._addMapLayer(layer, this._layers.length)
+
+			this._layers=this._layers.concat(layer);
+			this._positionAddLayerTile();
+		},
+
+		_positionAddLayerTile:function(){
+
+			if(this._addLayerTile){
+				this._addLayerTile.getElement().setStyle('right', this._layers.length * me._offset + 40);
+			}
+		},
+
 		show: function(layers) {
 
 			var me = this;
@@ -151,21 +167,16 @@ var SpatialDocumentPreview = (function() {
 
 			me._offset = 40;
 
-			
+			this._layers=layers;
 
 			layers.forEach(function(layer, i) {
-				return me._addMapLayerIndicators(layer, i);
+				return me._addMapLayer(layer, i);
 			});
 
 			if(AppClient.getUserType()!=="guest"){
 				
-				var addLayerTile=null;
-				var positionAddLayerTile=function(){
-
-					if(addLayerTile){
-						addLayerTile.getElement().setStyle('right', layers.length * me._offset + 40);
-					}
-				}
+				this._addLayerTile=null;
+				
 			
 				addLayerTile=new UIMapSubTileButton(me._mapTile, {
 					containerClassName: 'spatial-file-tile add always-show',
@@ -197,7 +208,7 @@ var SpatialDocumentPreview = (function() {
 
 				});
 
-				positionAddLayerTile();
+				this._positionAddLayerTile();
 
 			}
 		},
@@ -223,6 +234,7 @@ var SpatialDocumentPreview = (function() {
 				if(me._map==map){
 					me._map=null;
 					me._bounds=null;
+					this._layers=null;
 				}
 			});
 
