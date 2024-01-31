@@ -1,4 +1,4 @@
-if(AppClient.getUserType()!="admin"){
+if(AppClient.getUserType()!="admin"&&parseInt(AppClient.getId())!=parseInt(item.getUser())){
     
     return;
 }
