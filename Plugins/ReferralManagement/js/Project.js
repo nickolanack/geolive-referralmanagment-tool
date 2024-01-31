@@ -546,6 +546,11 @@ var Project = (function() {
 
 		getProjectUsername: function() {
 			var me = this;
+			try{
+				return ProjectTeam.CurrentTeam().getUser(""+me.data.userdetails.id).getName()
+			}catch(e){
+
+			}
 			return me.data.userdetails.name||(this.hasGuestSubmitter()?this.getProjectSubmitter():"");
 		},
 
