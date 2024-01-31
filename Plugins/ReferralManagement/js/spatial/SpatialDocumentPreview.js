@@ -33,7 +33,7 @@ var SpatialDocumentPreview = (function() {
 		_addMapLayerIndicators:function(layer, i){
 
 
-			var map = me._map;
+			var map = this._map;
 	
 
 			var layerOpts=layer.options;
