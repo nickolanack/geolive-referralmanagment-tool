@@ -1,7 +1,8 @@
 if(AppClient.getUserType()!="admin"){
+    
     return;
 }
-
+console.log('user hello')
 return new ModuleArray([
         new ElementModule('button', {
             html:"Delete",
