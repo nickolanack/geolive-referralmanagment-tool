@@ -14,7 +14,7 @@
         "formOptions": "{}",
         "showDeleteButton": false,
         "deleteItemScript": "",
-        "initModuleScript": "module.getElement().addClass('test')",
+        "initModuleScript": "module.getElement().addClass('test')\nmodule.getElement().addClass(AppClient.getUserType())",
         "formatModuleScript": "",
         "resolveItemScript": "",
         "filterModulesScript": "return list",

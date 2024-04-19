@@ -3095,6 +3095,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "module-wizard-step-one-text.contentTemplate.html",
             "readAccess": "public"
@@ -3110,6 +3111,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "module-wizard-step-two-text.contentTemplate.html",
             "readAccess": "public"
@@ -3125,6 +3127,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "module-wizard-step-three-text.contentTemplate.html",
             "readAccess": "public"
@@ -3382,6 +3385,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "module-proposals-list-text.contentTemplate.html",
             "readAccess": "public"
@@ -4165,6 +4169,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "module--text.contentTemplate.html"
         }
@@ -11403,6 +11408,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "proposal-report.contentTemplate.html",
             "readAccess": "public"
@@ -15655,6 +15661,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "activate-proposal-email-subject.contentTemplate.html"
         }
@@ -15669,6 +15676,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "activate-proposal-email-body.contentTemplate.html",
             "readAccess": "public"
@@ -16560,6 +16568,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onRemoveTeamMemberFromTask-subject.contentTemplate.html",
             "readAccess": "public"
@@ -16575,6 +16584,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "Message Content"
         }
@@ -16589,6 +16599,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onAddTeamMemberToTask-subject.contentTemplate.html",
             "readAccess": "public"
@@ -16604,6 +16615,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onAddTeamMemberToTask-content.contentTemplate.html",
             "readAccess": "public"
@@ -16619,6 +16631,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onRemoveTeamMemberFromProject-subject.contentTemplate.html",
             "readAccess": "public"
@@ -16634,6 +16647,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onRemoveTeamMemberFromProject-content.contentTemplate.html",
             "readAccess": "public"
@@ -16649,6 +16663,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onAddTeamMemberToProject-subject.contentTemplate.html",
             "readAccess": "public"
@@ -16664,6 +16679,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onAddTeamMemberToProject-content.contentTemplate.html",
             "readAccess": "public"
@@ -16679,6 +16695,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onProjectUpdate-subject.contentTemplate.html",
             "readAccess": "public"
@@ -16694,6 +16711,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onProjectUpdate-content.contentTemplate.html",
             "readAccess": "public"
@@ -16787,6 +16805,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onTaskUpdate-subject.contentTemplate.html",
             "readAccess": "public"
@@ -16802,6 +16821,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onTaskUpdate-content.contentTemplate.html",
             "readAccess": "public"
@@ -17567,6 +17587,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-MagicLoginLink-subject.contentTemplate.html",
             "readAccess": "public"
@@ -17582,6 +17603,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-MagicLoginLink-content.contentTemplate.html",
             "readAccess": "public"
@@ -17641,6 +17663,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "site-error-html.contentTemplate.html",
             "readAccess": "public"
@@ -17656,6 +17679,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: update.task"
         }
@@ -17670,6 +17694,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: create.proposal"
         }
@@ -17684,6 +17709,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: update.proposal"
         }
@@ -17698,6 +17724,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: create.task"
         }
@@ -17712,6 +17739,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: delete.task"
         }
@@ -17726,6 +17754,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: update.proposal.status"
         }
@@ -17740,6 +17769,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: update.task.priority"
         }
@@ -17754,6 +17784,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: update.task.star"
         }
@@ -17768,6 +17799,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: update.task.date"
         }
@@ -17782,6 +17814,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: add.task.attachements"
         }
@@ -17796,6 +17829,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-remove-task-attachements-text.contentTemplate.html"
         }
@@ -17810,6 +17844,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-add-proposal-description-text.contentTemplate.html"
         }
@@ -17841,6 +17876,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: update.user.role"
         }
@@ -17855,6 +17891,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: create.default.tasks"
         }
@@ -17869,6 +17906,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-add-proposal-projectLetters-text.contentTemplate.html"
         }
@@ -17883,6 +17921,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-remove-proposal-projectLetters-text.contentTemplate.html"
         }
@@ -17897,6 +17936,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-remove-proposal-description-text.contentTemplate.html"
         }
@@ -17911,6 +17951,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-add-proposal-spatialFeatures-text.contentTemplate.html"
         }
@@ -17925,6 +17966,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-remove-proposal-spatialFeatures-text.contentTemplate.html"
         }
@@ -18098,6 +18140,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-VerifyEmailLink-subject.contentTemplate.html",
             "readAccess": "public"
@@ -18113,6 +18156,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-VerifyEmailLink-content.contentTemplate.html",
             "readAccess": "public"
@@ -18128,6 +18172,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "email-DefaultMailerTemplate-subject.contentTemplate.html",
             "readAccess": "public"
@@ -18234,6 +18279,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: remove.proposal.permits"
         }
@@ -18248,6 +18294,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: add.proposal.permits"
         }
@@ -18335,6 +18382,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: add.proposal.agreements"
         }
@@ -18349,6 +18397,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: add.proposal.documents"
         }
@@ -18557,6 +18606,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: guest.proposal"
         }
@@ -18571,6 +18621,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: delete.proposal"
         }
@@ -18585,6 +18636,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-update-proposal-permissions-text.contentTemplate.html"
         }
@@ -18619,6 +18671,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-remove-proposal-documents-text.contentTemplate.html"
         }
@@ -18977,6 +19030,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "module-html-communityDashboardPending-text.contentTemplate.html",
             "readAccess": "public"
@@ -19525,6 +19579,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "module-html-peopleUsersDetail-text.contentTemplate.html",
             "readAccess": "public"
@@ -19540,6 +19595,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "module-html-communityUsersDetail-text.contentTemplate.html",
             "readAccess": "public"
@@ -25109,6 +25165,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-InvitationVerifyEmailLink-subject.contentTemplate.html",
             "readAccess": "public"
@@ -25124,6 +25181,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-InvitationVerifyEmailLink-content.contentTemplate.html",
             "readAccess": "public"
@@ -25139,6 +25197,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "#Clients and proponents",
             "readAccess": "public"
@@ -25154,6 +25213,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "Archive",
             "readAccess": "public"
@@ -25351,6 +25411,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-update-proposal-team-remove-text.contentTemplate.html"
         }
@@ -25365,6 +25426,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-update-proposal-team-add-text.contentTemplate.html"
         }
@@ -25379,6 +25441,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-guest-proposal-validating-text.contentTemplate.html"
         }
@@ -25393,6 +25456,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "activityfeed-guest-proposal-validated-text.contentTemplate.html"
         }
@@ -25908,6 +25972,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "proponent-proposal-link-email-subject.contentTemplate.html",
             "readAccess": "public"
@@ -25923,6 +25988,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "proponent-proposal-link-email-body.contentTemplate.html",
             "readAccess": "public"
@@ -26130,6 +26196,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "module-loginText-text.contentTemplate.html",
             "readAccess": "public"
@@ -26145,6 +26212,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "Your account has been approved",
             "readAccess": "public"
@@ -26160,6 +26228,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onUserRoleChanged-content.contentTemplate.html",
             "readAccess": "public"
@@ -26484,6 +26553,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "Status",
             "readAccess": "public"
@@ -26499,6 +26569,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "Description",
             "readAccess": "public"
@@ -26514,6 +26585,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "Notes",
             "readAccess": "public"
@@ -26529,6 +26601,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onProjectUpdate-synopsis.contentTemplate.html",
             "readAccess": "public"
@@ -26544,6 +26617,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-dailyDigest-subject.contentTemplate.html",
             "readAccess": "public"
@@ -26559,6 +26633,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-dailyDigest-content.contentTemplate.html",
             "readAccess": "public"
@@ -26574,6 +26649,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "Message Content - "
         }
@@ -26588,6 +26664,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onTaskUpdate-synopsis.contentTemplate.html",
             "readAccess": "public"
@@ -26603,6 +26680,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onAddTeamMemberToTask-synopsis.contentTemplate.html",
             "readAccess": "public"
@@ -26618,6 +26696,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onRemoveTeamMemberFromTask-synopsis.contentTemplate.html"
         }
@@ -26632,6 +26711,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onAddTeamMemberToProject-synopsis.contentTemplate.html"
         }
@@ -26646,6 +26726,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onRemoveTeamMemberFromProject-synopsis.contentTemplate.html"
         }
@@ -26811,6 +26892,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: update.task.team.remove"
         }
@@ -26825,6 +26907,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: update.task.team.add"
         }
@@ -26839,6 +26922,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: user.account.activation"
         }
@@ -27207,6 +27291,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "module-html-emptyTasks-text.contentTemplate.html",
             "readAccess": "public"
@@ -27222,6 +27307,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "module-html-emptyProjects-text.contentTemplate.html",
             "readAccess": "public"
@@ -27521,6 +27607,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "module-html-SecurityContent-text.contentTemplate.html",
             "readAccess": "public"
@@ -27578,6 +27665,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "module-html-submissionDisclaimer-text.contentTemplate.html",
             "readAccess": "public"
@@ -27593,6 +27681,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "module-html-defaultTasks-text.contentTemplate.html",
             "readAccess": "public"
@@ -28253,6 +28342,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "module-html-createReport-text.contentTemplate.html",
             "readAccess": "public"
@@ -28400,6 +28490,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "module-html-sharedUsersIntro-text.contentTemplate.html",
             "readAccess": "public"
@@ -28415,6 +28506,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "module-html-sharedCommunitiesIntro-text.contentTemplate.html",
             "readAccess": "public"
@@ -28447,6 +28539,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "<h2>Collection datasets<\/h2>",
             "readAccess": "public"
@@ -28462,6 +28555,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "module-html-projectPermissionsHeading-text.contentTemplate.html",
             "readAccess": "public"
@@ -28477,6 +28571,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "module-html-aboutPage-text.contentTemplate.html",
             "readAccess": "public"
@@ -28492,6 +28587,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "#Privacy",
             "readAccess": "public"
@@ -28507,6 +28603,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "<h2>Dataset options<\/h2>"
         }
@@ -28521,6 +28618,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "#Dataset sharing",
             "readAccess": "public"
@@ -28536,6 +28634,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: update.project.priority"
         }
@@ -28550,6 +28649,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "module-html-aboutPageTeam--text.contentTemplate.html",
             "readAccess": "public"
@@ -29053,6 +29153,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "Report options",
             "readAccess": "public"
@@ -29068,6 +29169,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "event: add..documents"
         }
@@ -29082,6 +29184,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "Report List Form",
             "readAccess": "public"
@@ -29097,6 +29200,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "Report Form",
             "readAccess": "public"
@@ -29112,6 +29216,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "Report Template",
             "readAccess": "public"
@@ -29127,6 +29232,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "##Advanced options",
             "readAccess": "public"
@@ -29142,6 +29248,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "##Layer settings",
             "readAccess": "public"
@@ -29295,6 +29402,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "module-html-install-text.contentTemplate.html",
             "readAccess": "public"
@@ -29310,6 +29418,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "module-html-install2-text.contentTemplate.html",
             "readAccess": "public"
@@ -29325,6 +29434,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "module-html-install3-text.contentTemplate.html",
             "readAccess": "public"
@@ -29357,6 +29467,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "module-html-install0-text.contentTemplate.html",
             "readAccess": "public"
@@ -29372,6 +29483,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "Your Gather dashboard request",
             "readAccess": "public"
@@ -29387,6 +29499,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-dashboard-request-reply-content.contentTemplate.html",
             "readAccess": "public"
@@ -29402,6 +29515,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "#Import Data",
             "readAccess": "public"
@@ -29812,6 +29926,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "module-html-product-text.contentTemplate.html",
             "readAccess": "public"
@@ -29827,6 +29942,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "module-html-product1-text.contentTemplate.html",
             "readAccess": "public"
@@ -29842,6 +29958,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "module-html-product2-text.contentTemplate.html",
             "readAccess": "public"
@@ -29857,6 +29974,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "module-html-geoforms-text.contentTemplate.html",
             "readAccess": "public"
@@ -30054,6 +30172,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "#Select datasets",
             "readAccess": "public"
@@ -30111,6 +30230,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "#Wiki Content",
             "readAccess": "public"
@@ -30168,6 +30288,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onProponentDiscussionPostByMember-synopsis.contentTemplate.html",
             "readAccess": "public"
@@ -30183,6 +30304,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onProponentDiscussionPostByGuest-synopsis.contentTemplate.html",
             "readAccess": "public"
@@ -30198,6 +30320,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-communicationUpdates-subject.contentTemplate.html",
             "readAccess": "public"
@@ -30213,6 +30336,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-communicationUpdates-content.contentTemplate.html",
             "readAccess": "public"
@@ -30292,6 +30416,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "#Marketing content",
             "readAccess": "public"
@@ -30324,6 +30449,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "module-mobileDevicesHeading-html-text.contentTemplate.html",
             "readAccess": "public"
@@ -30498,6 +30624,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "module-emailVerificationForm-intro-text.contentTemplate.html",
             "readAccess": "public"
@@ -30513,6 +30640,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "proponent-proposal-moderator-email-subject.contentTemplate.html",
             "readAccess": "public"
@@ -30528,6 +30656,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "proponent-proposal-moderator-email-body.contentTemplate.html",
             "readAccess": "public"
@@ -30593,6 +30722,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": true,
             "contentTemplate": "module-termsOfUse-text.contentTemplate.html",
             "readAccess": "public"
@@ -30608,6 +30738,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": null
         }
@@ -30622,6 +30753,7 @@
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
             "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "email-onUserCreated-content.contentTemplate.html",
             "readAccess": "public"
