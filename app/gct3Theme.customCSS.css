@@ -1675,3 +1675,10 @@ span.result-clickable.next.multiple {
     color: black;
 }
 
+
+
+.register-text, .register-text + .array-module {
+    display: none;
+}
+
+
