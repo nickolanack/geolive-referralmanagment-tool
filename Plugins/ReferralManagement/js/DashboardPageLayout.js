@@ -384,7 +384,7 @@ var DashboardPageLayout = (function() {
 
 
 
-			content=layout.filterIdentifier(content, 'sharing-datasets', UserGroups.AllGroups().length>1);
+			content=layout.filterIdentifier(content, 'sharing-datasets', UserGroups.AllGroups().length>1&&AppClient.getUserType()!='guest');
 			
 
 
