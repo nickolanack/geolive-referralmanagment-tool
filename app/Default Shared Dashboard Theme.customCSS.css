@@ -6129,7 +6129,7 @@ span.navigation-menu.settings-menu {
 }
 
 
-@media screen and (max-height: 1200px) {
+dashboard-main:not(.guest) @media screen and (max-height: 1200px), .guest.dashboard-main @media screen and (max-height: 600px) {
    .navigation-menu ul{
        
         li{
