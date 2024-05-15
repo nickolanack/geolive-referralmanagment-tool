@@ -11540,12 +11540,12 @@
             "metadata": {
                 "title": "userAttributes",
                 "_tableDiagramState": {
-                    "x": 321,
-                    "y": 274
+                    "x": 322,
+                    "y": 275
                 },
                 "_diagramState": {
-                    "x": 321,
-                    "y": 274
+                    "x": 322,
+                    "y": 275
                 },
                 "appliesTo": [
                     "user"
@@ -11875,50 +11875,6 @@
                         "description": "",
                         "icon": [],
                         "color": "rgb(NaN, NaN, NaN)",
-                        "visibility": "public",
-                        "editability": "registered",
-                        "searchability": "public",
-                        "allowMultiple": false,
-                        "fieldType": "text",
-                        "fieldTextOptions": {
-                            "textType": "input",
-                            "inputOptions": {
-                                "buildAutocomplete": false,
-                                "requireModeration": false,
-                                "limitMaxChars": 0,
-                                "limitMaxWords": 0,
-                                "allowHtml": false,
-                                "allowMedia": true,
-                                "allowLinks": true
-                            },
-                            "listOptions": {
-                                "takeSugesstions": true,
-                                "buildTree": false,
-                                "iconize": false,
-                                "colorize": false
-                            }
-                        },
-                        "fieldNumberOptions": {
-                            "precision": 0,
-                            "limitMinValue": "",
-                            "limitMaxValue": ""
-                        },
-                        "fieldBooleanOptions": {
-                            "hideFalse": true,
-                            "trueLabel": "",
-                            "falseLabel": "",
-                            "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
-                        }
-                    },
-                    {
-                        "was": "",
-                        "title": "communityLetters",
-                        "label": "Community Letters",
-                        "description": "",
-                        "icon": [],
-                        "color": "rgb(undefined, undefined, undefined)",
                         "visibility": "public",
                         "editability": "registered",
                         "searchability": "public",
@@ -12444,7 +12400,7 @@
                         "was": "",
                         "title": "reviewed",
                         "label": "Reviewed",
-                        "description": "userAttributes.metadata.fields.21.description.js",
+                        "description": "userAttributes.metadata.fields.20.description.js",
                         "icon": [],
                         "color": "rgb(NaN, NaN, NaN)",
                         "visibility": "public",
