@@ -433,7 +433,7 @@ var NamedCategory = (function() {
 			el.setStyle('background-color',item.getMetadata()['background-color']);
 		}
 
-		if(!item.isRootTag()){
+		if(item.isRootTag&&!item.isRootTag()){
 			var p=item.getParentTagData();
 			if(item){
 				NamedCategory.AddClass(p, el, 'parent-')
