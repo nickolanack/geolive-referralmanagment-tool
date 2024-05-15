@@ -94,7 +94,7 @@ var LayerGroupItemList = (function() {
 
 
 
-				response.parameters[group].forEach(function(layer){
+				(response.parameters[group]||[]).forEach(function(layer){
 					_layerItems.push(
 						new LayerGroupItem(Object.append({
 							name: "",
