@@ -11830,7 +11830,7 @@
                         "label": "Approved",
                         "description": "",
                         "icon": [],
-                        "color": "rgb(undefined, undefined, undefined)",
+                        "color": "rgb(NaN, NaN, NaN)",
                         "visibility": "public",
                         "editability": "registered",
                         "searchability": "public",
@@ -11864,8 +11864,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": false,
-                            "falseIcon": false
+                            "trueIcon": [],
+                            "falseIcon": []
                         }
                     },
                     {
