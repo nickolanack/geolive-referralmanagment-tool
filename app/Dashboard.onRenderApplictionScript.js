@@ -126,8 +126,11 @@ GetWidget('mainNotificationsDetail')->display($targetInstance); //proposal wizar
     
 GetWidget('defaultPostDetail')->display($targetInstance);
     
+try{
 GetWidget('communityMemberDashboard')->display($targetInstance); 
-
+}catch(\Exception $e){
+    error_log($e->getMessage());
+}
 GetWidget('nonMemberDashboard')->display($targetInstance); 
 
 GetWidget('datasetSelectForm')->display($targetInstance); 
