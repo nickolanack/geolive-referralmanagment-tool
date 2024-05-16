@@ -126,11 +126,8 @@ GetWidget('mainNotificationsDetail')->display($targetInstance); //proposal wizar
     
 GetWidget('defaultPostDetail')->display($targetInstance);
     
-try{
-    GetWidget('communityMemberDashboard')->display($targetInstance); 
-}catch(\Exception $e){
-    error_log($e->getMessage());
-}
+GetWidget('communityMemberDashboard')->display($targetInstance); 
+
 GetWidget('nonMemberDashboard')->display($targetInstance); 
 
 GetWidget('datasetSelectForm')->display($targetInstance); 
@@ -203,11 +200,7 @@ GetWidget('singleFilesSectionDetail')->display($targetInstance);
 
 GetWidget('taskForm')->display($targetInstance); //proposal wizard
 GetWidget('taskDefaultItems')->display($targetInstance);
-try{
-    GetWidget('userProfileForm')->display($targetInstance);
-}catch(\Exception $e){
-    error_log($e->getMessage());
-}
+GetWidget('userProfileForm')->display($targetInstance);
 GetWidget('changePassword')->display($targetInstance);
 
 GetWidget('userSelectionForm')->display($targetInstance);
