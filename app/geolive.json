@@ -25122,7 +25122,7 @@
             "convertStylesToInline": false,
             "parseMarkdown": false,
             "allowHtmlInMarkdown": false,
-            "saveTemplateAsData": false,
+            "saveTemplateAsData": true,
             "contentTemplate": "email-InvitationVerifyEmailLink-subject.contentTemplate.html",
             "readAccess": "public"
         }
