@@ -5,4 +5,4 @@
 
 $this->cache()->needsProjectListUpdate();
 $this->cache()->needsDeviceListUpdate();
-$this->cache()->needsUserListUpdate();
+$this->cache()->needsUserListUpdate('view:queueUpdateCacheData');

@@ -144,7 +144,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	protected function onUpdateAttributeRecord($params) {
 
 		if ($params->itemType === "user") {
-			$this->cache()->needsUserListUpdate();
+			$this->cache()->needsUserListUpdate('onUpdateAttributeRecord');
 			$this->cache()->needsDeviceListUpdate();
 			return;
 		}

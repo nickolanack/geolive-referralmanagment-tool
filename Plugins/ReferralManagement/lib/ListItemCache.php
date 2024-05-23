@@ -23,11 +23,12 @@ class ListItemCache implements \core\EventListener {
 		(new \core\LongTaskProgress())
 			->throttle('onTriggerUpdateDevicesList', array('team' => 1), array('interval' => 5));
 	}
-	public function needsUserListUpdate() {
+	public function needsUserListUpdate($reason="interval") {
 
 		$stack=debug_backtrace();
 
 		Broadcast('cacheusers', 'update', array(
+				'reason' =>$reason,
 				'client' => GetClient()->getUserName(),
 				'domain' => HtmlDocument()->getDomain(),
 				'caller' => get_class() . ' -> ' . __METHOD__,
@@ -44,7 +45,7 @@ class ListItemCache implements \core\EventListener {
 
 	protected function onCreateUser($params) {
 		
-		$this->needsUserListUpdate();
+		$this->needsUserListUpdate('onCreateUser');
 
 
 		$config = GetWidget('dashboardConfig');
@@ -67,7 +68,7 @@ class ListItemCache implements \core\EventListener {
 	}
 
 	protected function onDeleteUser($params) {
-		$this->needsUserListUpdate();
+		$this->needsUserListUpdate('onDeleteUser');
 	}
 
 	protected function onTriggerUpdateUserList($params) {
@@ -352,7 +353,7 @@ class ListItemCache implements \core\EventListener {
 			}
 		}
 
-		$this->needsUserListUpdate();
+		$this->needsUserListUpdate('onListedUsers');
 
 		return $users;
 
