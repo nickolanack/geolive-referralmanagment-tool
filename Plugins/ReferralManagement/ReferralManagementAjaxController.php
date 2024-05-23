@@ -566,13 +566,13 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		if (!Auth('read', $json->project, 'ReferralManagement.proposal')) {
 
 			if (!isset($json->accessToken)) {
-				return $this->setError('No access or does not exist');
+				return $this->setNonCriticalError('No access or does not exist');
 			}
 
 			$token = GetPlugin('Links')->peekDataToken($json->accessToken);
 
 			if (!(isset($token->name) && isset($token->data) && in_array($token->name, array('guestProposalData', 'projectAccessToken', 'projectPrintToken','projectMapAccessToken')) && isset($token->data->id) && intval($token->data->id) == intval($json->project))) {
-				return $this->setError('Invalid access token: ' . json_encode($token));
+				return $this->setNonCriticalError('Invalid access token: ' . json_encode($token));
 			}
 
 		}
