@@ -274,15 +274,15 @@ class ListItemCache implements \core\EventListener {
 
 		$start = microtime(true);
 
-		Broadcast('cacheusers', 'update', array(
-			'params' => $params,
-			'client' => GetClient()->getUserName(),
-			'domain' => HtmlDocument()->getDomain(),
-			'caller' => get_class() . ' -> ' . __METHOD__,
-			'time' => $start,
-			'cache' =>  $this->getMemcache()->isEnabled()?'memcache':array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
-			'status' => 'check',
-		));
+		// Broadcast('cacheusers', 'update', array(
+		// 	'params' => $params,
+		// 	'client' => GetClient()->getUserName(),
+		// 	'domain' => HtmlDocument()->getDomain(),
+		// 	'caller' => get_class() . ' -> ' . __METHOD__,
+		// 	'time' => $start,
+		// 	'cache' =>  $this->getMemcache()->isEnabled()?'memcache':array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
+		// 	'status' => 'check',
+		// ));
 
 		$users = GetPlugin('ReferralManagement')->listAllUsersMetadata();
 
@@ -315,16 +315,16 @@ class ListItemCache implements \core\EventListener {
 			return;
 		}
 
-		Broadcast('cacheusers', 'update', array(
-			'params' => $params,
-			'client' => GetClient()->getUserName(),
-			'domain' => HtmlDocument()->getDomain(),
-			'caller' => get_class() . ' -> ' . __METHOD__,
-			'time' => microtime(true),
-			'interval' => (microtime(true) - $start),
-			'cache' =>  $this->getMemcache()->isEnabled()?'memcache':array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
-			'status' => 'skip',
-		));
+		// Broadcast('cacheusers', 'update', array(
+		// 	'params' => $params,
+		// 	'client' => GetClient()->getUserName(),
+		// 	'domain' => HtmlDocument()->getDomain(),
+		// 	'caller' => get_class() . ' -> ' . __METHOD__,
+		// 	'time' => microtime(true),
+		// 	'interval' => (microtime(true) - $start),
+		// 	'cache' =>  $this->getMemcache()->isEnabled()?'memcache':array('name' => $cacheName, 'age' => (time() - filemtime($cacheFile))),
+		// 	'status' => 'skip',
+		// ));
 
 	}
 
