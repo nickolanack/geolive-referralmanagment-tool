@@ -27,20 +27,20 @@ class ListItemCache implements \core\EventListener {
 
 		$stack=debug_backtrace();
 
-		Broadcast('cacheusers', 'update', array(
-				'reason' =>$reason,
-				'client' => GetClient()->getUserName(),
-				'domain' => HtmlDocument()->getDomain(),
-				'caller' => get_class() . ' -> ' . __METHOD__,
-				'stack'=>array_map(function($item){
-					return (isset($item['file'])?$item['file']:'').(isset($item['line'])?' ::'.$item['line']:'');
-				}, array_slice($stack, 0, 7)),
-				'time' => microtime(true),
-				'status' => 'start',
-			));
+		// Broadcast('cacheusers', 'update', array(
+		// 		'reason' =>$reason,
+		// 		'client' => GetClient()->getUserName(),
+		// 		'domain' => HtmlDocument()->getDomain(),
+		// 		'caller' => get_class() . ' -> ' . __METHOD__,
+		// 		'stack'=>array_map(function($item){
+		// 			return (isset($item['file'])?$item['file']:'').(isset($item['line'])?' ::'.$item['line']:'');
+		// 		}, array_slice($stack, 0, 7)),
+		// 		'time' => microtime(true),
+		// 		'status' => 'start',
+		// 	));
 
 		(new \core\LongTaskProgress())
-			->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval' => 3));
+			->throttle('onTriggerUpdateUserList', array('team' => 1), array('interval' => 10));
 	}
 
 	protected function onCreateUser($params) {
