@@ -200,7 +200,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 			if ((new \spatial\FeatureLoader())->delete($item)) {
 				return true;
 			}
-		} catch (Exception $e) {
+		} catch (\Exception $e) {
 			return $this->setError('Failed to delete map Item: ' . $e->getMessage());
 		}
 
@@ -620,7 +620,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 				'new' => (new \ReferralManagement\Attachments())->add($json->id, $json->type, $json),
 			);
 
-		} catch (Exception $e) {
+		} catch (\Exception $e) {
 			return $this->setError($e->getMessage());
 		}
 
@@ -645,7 +645,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 				'new' => (new \ReferralManagement\Attachments())->remove($json->id, $json->type, $json),
 			);
 
-		} catch (Exception $e) {
+		} catch (\Exception $e) {
 			return $this->setError($e->getMessage());
 		}
 
@@ -703,7 +703,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 					'data' => (new \ReferralManagement\Project())->updateFromJson($json)->toArray(),
 				);
 
-			} catch (Exception $e) {
+			} catch (\Exception $e) {
 				return $this->setError($e->getMessage());
 			}
 
@@ -717,7 +717,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 				'data' => $data,
 			);
 
-		} catch (Exception $e) {
+		} catch (\Exception $e) {
 			return $this->setError($e->getMessage());
 		}
 
@@ -738,7 +738,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 					'data' => (new \ReferralManagement\Project())->fromId($json->id)->updateMetadata($json->metadata)->toArray(),
 				);
 
-			} catch (Exception $e) {
+			} catch (\Exception $e) {
 				return $this->setError($e->getMessage());
 			}
 
@@ -783,7 +783,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 					'data' => (new \ReferralManagement\Task())->updateFromJson($json)->toArray(),
 				);
 
-			} catch (Exception $e) {
+			} catch (\Exception $e) {
 				return $this->setError($e->getMessage());
 			}
 
@@ -801,7 +801,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 				'data' => $data,
 			);
 
-		} catch (Exception $e) {
+		} catch (\Exception $e) {
 			return $this->setError($e->getMessage());
 		}
 

@@ -493,7 +493,7 @@
                 
                 QRimage::png($tab, $outfile, min(max(1, $this->size), $maxSize), $this->margin,$saveandprint);
             
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
             
                 QRtools::log($outfile, $e->getMessage());
             

@@ -35,7 +35,7 @@ class TUSImport {
 			));
 			try {
 				$coordinates = \KmlDocument::GetPolygonCoordinates($polyNode);
-			} catch (Exception $e) {
+			} catch (\Exception $e) {
 				continue;
 			}
 
