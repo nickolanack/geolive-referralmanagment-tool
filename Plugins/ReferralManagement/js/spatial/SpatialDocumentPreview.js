@@ -95,7 +95,9 @@ var SpatialDocumentPreview = (function() {
 
 			layer.addEvent('error',function(){
 
-				notification.setDescription("Error loading layer: "+name);
+				setTimeout(function(){
+					notification.setDescription("Error loading layer: "+name);
+				}, 1000);
 				setTimeout(function(){
 					notification.fadeout();
 				}, 3000);
