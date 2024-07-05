@@ -3,7 +3,7 @@
     "config": {
         "className": "",
         "elementType": "span",
-        "elementOptions": {},
+        "elementOptions": "{}",
         "text": "<h2>Dataset options<\/h2>",
         "template": "html.datasetAccess",
         "templateNamespace": "",
@@ -13,7 +13,7 @@
         "requestTemplateScript": "defaultBehaviour();",
         "ajaxRequestTemplate": true,
         "namedFormView": "",
-        "formOptions": {},
+        "formOptions": "{}",
         "identifier": "htmlLabel"
     }
 }
