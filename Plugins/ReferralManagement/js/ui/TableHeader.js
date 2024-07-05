@@ -91,12 +91,13 @@ var TableHeader = (function() {
 				'widget': layoutName,
 				'field': "layout"
 			})).addEvent('success',function(response){
-				me._layouts[layoutName]=response.value;
 				Object.keys(response.value).forEach(function(key){
 					if(layoutName=='projectTableLayout'&&key=='user'&&AppClient.getUserType()=='guest'){
 						response.value[key].hidden=true
 					}
 				})
+				me._layouts[layoutName]=response.value;
+				
 				me.fireEvent('load.'+layoutName);
 			}).execute();
 
