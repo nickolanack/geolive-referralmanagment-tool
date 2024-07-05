@@ -94,7 +94,7 @@ var TableHeader = (function() {
 				me._layouts[layoutName]=response.value;
 				Object.keys(response.value).forEach(function(key){
 					if(layoutName=='projectTableLayout'&&key=='user'&&AppClient.getUserType()=='guest'){
-						delete response.value[key]
+						response.value[key].hidden=true
 					}
 				})
 				me.fireEvent('load.'+layoutName);
