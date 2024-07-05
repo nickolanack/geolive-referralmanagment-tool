@@ -181,41 +181,42 @@ PopoverFormDefinition.defineForm('toggleLightDarkForms', function(item, step) {
 
 		update();
 
-		mod.addWeakEvent(item, 'onlineStatusChanged', update);
+		// mod.addWeakEvent(item, 'onlineStatusChanged', update);
 		return mod;
 
 
 	});
 
+	if(AppClient.getUserType()!='guest'){
+		step.addModule('content', function(position, moduleIndex) {
 
-	step.addModule('content', function(position, moduleIndex) {
-
-		var mod = new ElementModule('div', {
-			html: "Invert forms"
-		});
+			var mod = new ElementModule('div', {
+				html: "Invert forms"
+			});
 
 
-		if(DisplayTheme.getInvertsForms()){
-			mod.getElement().addClass('active');
-		}
-
-		var switchEl = mod.getElement().appendChild(new Element('div', {
-			"class": "indicator-switch",
-			"events": {
-				"click": function() {
-					if (mod.getElement().hasClass('active')) {
-						mod.getElement().removeClass('active');
-						DisplayTheme.setInvertForms(false);
-						return;
-					}
-					mod.getElement().addClass('active');
-					DisplayTheme.setInvertForms(true);
-				}
+			if(DisplayTheme.getInvertsForms()){
+				mod.getElement().addClass('active');
 			}
-		}));
 
-		return mod;
-	});
+			var switchEl = mod.getElement().appendChild(new Element('div', {
+				"class": "indicator-switch",
+				"events": {
+					"click": function() {
+						if (mod.getElement().hasClass('active')) {
+							mod.getElement().removeClass('active');
+							DisplayTheme.setInvertForms(false);
+							return;
+						}
+						mod.getElement().addClass('active');
+						DisplayTheme.setInvertForms(true);
+					}
+				}
+			}));
+
+			return mod;
+		});
+	}
 
 	if(DisplayTheme.hasBackgroundImage()){
 

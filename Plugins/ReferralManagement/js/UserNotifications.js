@@ -71,7 +71,6 @@ var UserNotifications = (function() {
 				// 	anchor: UIPopover.AnchorAuto()
 				// });
 
-
 				new UIPopover(button.getElement(), {
 					application: application,
 					item: application,
@@ -84,7 +83,7 @@ var UserNotifications = (function() {
 							closeable: true
 						}
 					},
-					clickable: true,
+					clickable: AppClient.getUserType!="guest",
 					anchor: UIPopover.AnchorAuto()
 				});
 				
