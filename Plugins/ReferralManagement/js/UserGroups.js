@@ -88,6 +88,10 @@ var UserGroups = (function() {
 		return Community.teams;
 	}
 
+	UserGroups.GetAccessGroups = function(){
+		// if collective must be added to access!
+		return ([UserGroups.GetCollective()]).concat(UserGroups.GetSubgroups())
+	}
 
 	UserGroups.GetSubgroups = function() {
 		return Community.territories.map(function(name) {
