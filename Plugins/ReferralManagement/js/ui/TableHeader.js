@@ -92,6 +92,11 @@ var TableHeader = (function() {
 				'field': "layout"
 			})).addEvent('success',function(response){
 				me._layouts[layoutName]=response.value;
+				Object.keys(response.value).forEach(function(key){
+					if(layoutName=='projectTableLayout'&&key=='user'&&AppClient.getUserType()=='guest'){
+						delete response.value[key]
+					}
+				})
 				me.fireEvent('load.'+layoutName);
 			}).execute();
 
