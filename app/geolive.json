@@ -22112,16 +22112,16 @@
                             "documentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 133,
-                            "y": 176
+                            "x": 163,
+                            "y": 206
                         },
                         "children": [
                             "documentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 93,
-                                    "y": 464
+                                    "x": 123,
+                                    "y": 494
                                 }
                             },
                             {
@@ -22131,16 +22131,16 @@
                                     "documentForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 571,
-                                    "y": 203
+                                    "x": 601,
+                                    "y": 233
                                 },
                                 "children": [
                                     "documentForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 531,
-                                            "y": 379
+                                            "x": 561,
+                                            "y": 409
                                         }
                                     },
                                     {
@@ -22150,16 +22150,16 @@
                                             "documentForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 662,
-                                            "y": 692
+                                            "x": 692,
+                                            "y": 722
                                         },
                                         "children": [
                                             "documentForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 622,
-                                                    "y": 868
+                                                    "x": 652,
+                                                    "y": 898
                                                 }
                                             }
                                         ],
@@ -22255,7 +22255,7 @@
                                                         "className": "",
                                                         "showLabel": false,
                                                         "showAddWord": false,
-                                                        "label": "Dataset tags",
+                                                        "label": "Theme tags",
                                                         "addWordPlaceholder": "add a keyword",
                                                         "fontColor": "rgb(0, 0, 0)",
                                                         "hoverColor": "rgb(143, 188, 143)",
@@ -22283,7 +22283,7 @@
                                                         "shuffleTags": false,
                                                         "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
                                                         "getItemTagsScript": "documentForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.2.config.getItemTagsScript.js",
-                                                        "formatModule": " var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());\n if (!(user.isTeamManager())) {\n    module.getElement().setStyle('display', 'none');\n    return;\n }\n \n \/\/module.getElement().setStyle('display', 'none');"
+                                                        "formatModule": " module.getElement().setStyle('display', 'none');\n \n var user = ProjectTeam.CurrentTeam().getUser(AppClient.getId());\n if (!(user.isTeamManager())) {\n    module.getElement().setStyle('display', 'none');\n    return;\n }\n \n \/\/module.getElement().setStyle('display', 'none');"
                                                     }
                                                 }
                                             ]
