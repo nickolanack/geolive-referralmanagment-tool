@@ -1,3 +1,3 @@
-var cats= UserGroups.GetSubgroups();
-console.log(cats);
+var cats= UserGroups.GetAccessGroups();
+// console.log(cats);
 return cats;
