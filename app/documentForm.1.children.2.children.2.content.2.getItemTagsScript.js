@@ -1,3 +1,3 @@
-var cats= Proposal.ListTerritories();
+var cats= UserGroups.GetSubgroups();
 console.log(cats);
 return cats;
