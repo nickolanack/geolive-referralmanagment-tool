@@ -83,7 +83,7 @@ var UserNotifications = (function() {
 							closeable: true
 						}
 					},
-					clickable: AppClient.getUserType!="guest",
+					clickable: AppClient.getUserType()!="guest",
 					anchor: UIPopover.AnchorAuto()
 				});
 				
