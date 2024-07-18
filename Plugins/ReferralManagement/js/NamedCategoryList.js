@@ -322,6 +322,12 @@ var NamedCategoryList = (function() {
 						}
 
 					})
+					mod.getCloud().on('selectWord', function(name){
+						if(tags.indexOf(name)==-1){
+							mod.getCloud().getWordElement(name).addClass('invalid-tag')
+						}
+					})
+
 
 					mod.getCloud().getElement().appendChild(new Element('span', {
 						html:"+",
