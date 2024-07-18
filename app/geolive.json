@@ -369,7 +369,7 @@
         "instance": "Monolog",
         "parameters": {
             "enabled": true,
-            "logPath": "{front}\/..\/logs",
+            "logPath": "{front}\/..\/logs\/{domain}",
             "logToSentry": false
         }
     },
@@ -388,7 +388,7 @@
         "instance": "Events",
         "parameters": {
             "logEvents": true,
-            "logPath": "{front}\/..\/logs"
+            "logPath": "{front}\/..\/logs\/{domain}"
         }
     },
     "plugin.41": {
