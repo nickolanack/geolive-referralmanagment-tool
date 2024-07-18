@@ -134,6 +134,11 @@ class ListItemCache implements \core\EventListener {
 
 							$updated[] = $project->id;
 
+							Broadcast('proposals', 'update-diff', array(
+								'a' => $cachedProject,
+								'b' => $project
+							));
+
 							if (empty($updatedFirst)) {
 								$updatedFirst = array($project, $cachedProject);
 							}
