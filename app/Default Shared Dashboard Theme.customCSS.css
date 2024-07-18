@@ -4373,6 +4373,17 @@ button.inline-btn.with-no-tasks {
         pointer-events: none;
 }
 
+.TagCloudModule .tag-cloud > span.tag-el.selected.invalid-tag {
+    text-decoration: line-through;
+}
+
+.TagCloudModule .tag-cloud > span.tag-el.selected.invalid-tag:after {
+    content: "\0f071";
+    font-family: 'FontAwesome';
+    margin-left: 7px;
+    text-decoration: none;
+}
+
 
 
 /*
