@@ -148,6 +148,7 @@ class ListItemCache implements \core\EventListener {
 
 				Broadcast('proposals', 'update', array(
 					'updated' => $updated,
+					'domain' => HtmlDocument()->getDomain()
 				));
 
 				foreach ($updated as $projectId) {

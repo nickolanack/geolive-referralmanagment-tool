@@ -109,20 +109,6 @@ var ItemProjectsCollection = (function(){
 
 
 
-	
-
-
-	// var ProjectQuery = new Class({
-	// 	Extends: AjaxControlQuery,
-	// 	initialize: function(id) {
-
-	// 		this.parent(CoreAjaxUrlRoot, "get_project", {
-	// 			plugin: "ReferralManagement",
-	// 			id: id,
-	// 		});
-	// 	}
-	// });
-
 	var RemoveItemProjectQuery = new Class({
 		Extends: AjaxControlQuery,
 		initialize: function(item, type, project) {
