@@ -123,21 +123,27 @@ class ListItemCache implements \core\EventListener {
 				foreach ($cachedProjects as $cachedProject) {
 					if ($project->id === $cachedProject->id) {
 
+						// time until overdue etc
 						unset($project->computed);
 						unset($cachedProject->computed);
 
+						// profile may contain user logged in status
 						unset($project->profileData);
 						unset($cachedProject->profileData);
+
+						// link may contain variable domain 
+						unset($project->link);
+						unset($cachedProject->link);
 
 						if (json_encode($cachedProject) != json_encode($project)) {
 							//$this->notifier()->broadcastProjectUpdate($project->id);
 
 							$updated[] = $project->id;
 
-							Broadcast('proposals', 'update-diff', array(
-								'a' => $cachedProject,
-								'b' => $project
-							));
+							// Broadcast('proposals', 'update-diff', array(
+							// 	'a' => $cachedProject,
+							// 	'b' => $project
+							// ));
 
 							if (empty($updatedFirst)) {
 								$updatedFirst = array($project, $cachedProject);
