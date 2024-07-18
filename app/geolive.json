@@ -23739,16 +23739,16 @@
                             "Simple Marker Form.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 368,
-                            "y": 293
+                            "x": 398,
+                            "y": 323
                         },
                         "children": [
                             "Simple Marker Form.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 328,
-                                    "y": 483
+                                    "x": 358,
+                                    "y": 526
                                 }
                             }
                         ],
@@ -23783,15 +23783,34 @@
                                             }
                                         },
                                         {
+                                            "type": "Template",
+                                            "config": {
+                                                "className": "",
+                                                "elementType": "span",
+                                                "elementOptions": "{}",
+                                                "text": "Shared items are only visible to people who have permission to view this map ",
+                                                "template": "",
+                                                "templateNamespace": "",
+                                                "templateVariablesScript": "",
+                                                "formatTextScript": "",
+                                                "formatVariablesScript": "",
+                                                "requestTemplateScript": "defaultBehaviour();",
+                                                "ajaxRequestTemplate": false,
+                                                "namedFormView": "",
+                                                "formOptions": "{}",
+                                                "identifier": "htmlLabel"
+                                            }
+                                        },
+                                        {
                                             "type": "FormBooleanField",
                                             "config": {
                                                 "className": "",
                                                 "label": "Share this marker",
                                                 "identifier": "boolean-field",
                                                 "mandatory": false,
-                                                "getValueScript": "Simple Marker Form.metadata.children.1.builderMetadata.positions.content.modules.2.config.getValueScript.js",
+                                                "getValueScript": "Simple Marker Form.metadata.children.1.builderMetadata.positions.content.modules.3.config.getValueScript.js",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "Simple Marker Form.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
+                                                "submitValueScript": "Simple Marker Form.metadata.children.1.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
                                                 "validateValueScript": "",
                                                 "formatElementScript": ""
                                             }
@@ -23800,6 +23819,8 @@
                                             "type": "UIView",
                                             "config": {
                                                 "className": "",
+                                                "elementType": "div",
+                                                "elementOptions": [],
                                                 "identifier": "",
                                                 "viewType": "form",
                                                 "namedView": "defaultView",
@@ -23811,8 +23832,8 @@
                                                 "showDeleteButton": false,
                                                 "deleteItemScript": "defaultBehaviorFn()",
                                                 "initModuleScript": "",
-                                                "formatModuleScript": "Simple Marker Form.metadata.children.1.builderMetadata.positions.content.modules.3.config.formatModuleScript.js",
-                                                "resolveItemScript": "Simple Marker Form.metadata.children.1.builderMetadata.positions.content.modules.3.config.resolveItemScript.js",
+                                                "formatModuleScript": "Simple Marker Form.metadata.children.1.builderMetadata.positions.content.modules.4.config.formatModuleScript.js",
+                                                "resolveItemScript": "Simple Marker Form.metadata.children.1.builderMetadata.positions.content.modules.4.config.resolveItemScript.js",
                                                 "filterModulesScript": "return list",
                                                 "itemButtonsScript": "return [];",
                                                 "insertAtTop": false,

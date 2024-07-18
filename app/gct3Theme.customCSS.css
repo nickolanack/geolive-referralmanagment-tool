@@ -1686,3 +1686,27 @@ li.menu-links-manual {
 }
 
 
+
+
+.left-panel .alt-logo.big {
+    position: absolute;
+    bottom: 0;
+}
+
+.left-panel .alt-logo.big {
+    height: 100px;
+}
+
+
+.navigation-menu ul label{
+    border-top: none !important;
+    @media screen and (max-width: 1000px) {
+        text-align:center;
+    }
+}
+
+
+
+
+
+

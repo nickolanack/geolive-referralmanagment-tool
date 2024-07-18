@@ -1,8 +1,11 @@
-if(AppClient.getUserType()!="admin"&&parseInt(AppClient.getId())!=parseInt(item.getUserId())){
-    
-    return;
+if (!(
+    AppClient.getUserType()=="admin" ||
+    ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isSiteAdmin() ||
+    parseInt(AppClient.getId())==parseInt(item.getUserId())
+    )) {
+        
+        return;
 }
-console.log('user hello')
 return new ModuleArray([
         new ElementModule('button', {
             html:"Delete",
@@ -10,15 +13,5 @@ return new ModuleArray([
             events:{click:function(){
                 item.remove();
             }}
-        })/*,
-         new ElementModule('button', {
-            html:"Edit",
-            "class":"inline-btn edit",
-            events:{click:function(){
-                
-                
-                
-                
-            }}
-        })*/
+        })
     ], {identifier:"post-buttons"});
