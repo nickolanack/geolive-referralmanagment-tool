@@ -311,6 +311,18 @@ var NamedCategoryList = (function() {
 
 				var appendPlusBtn=function(){
 
+					var tags=ReferralManagementDashboard.getProjectTags(type);
+					mod.getCloud().getTags().forEach(function(item){
+						var weight=item[0];
+						var name=item[1];
+						var el=item[2]
+
+						if(tags.indexOf(name)==-1){
+							el.addClass('invalid-tag')
+						}
+
+					})
+
 					mod.getCloud().getElement().appendChild(new Element('span', {
 						html:"+",
 						"class":"tag-el add-tag",
