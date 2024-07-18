@@ -23739,16 +23739,16 @@
                             "Simple Marker Form.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 378,
-                            "y": 303
+                            "x": 398,
+                            "y": 323
                         },
                         "children": [
                             "Simple Marker Form.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 338,
-                                    "y": 493
+                                    "x": 358,
+                                    "y": 526
                                 }
                             }
                         ],
@@ -23783,26 +23783,12 @@
                                             }
                                         },
                                         {
-                                            "type": "FormBooleanField",
-                                            "config": {
-                                                "className": "",
-                                                "label": "Share this marker",
-                                                "identifier": "boolean-field",
-                                                "mandatory": false,
-                                                "getValueScript": "Simple Marker Form.metadata.children.1.builderMetadata.positions.content.modules.2.config.getValueScript.js",
-                                                "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "Simple Marker Form.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
-                                                "validateValueScript": "",
-                                                "formatElementScript": ""
-                                            }
-                                        },
-                                        {
                                             "type": "Template",
                                             "config": {
                                                 "className": "",
                                                 "elementType": "span",
                                                 "elementOptions": "{}",
-                                                "text": "Shared items are visible only to people who have permission to view this map ",
+                                                "text": "Shared items are only visible to people who have permission to view this map ",
                                                 "template": "",
                                                 "templateNamespace": "",
                                                 "templateVariablesScript": "",
@@ -23813,6 +23799,20 @@
                                                 "namedFormView": "",
                                                 "formOptions": "{}",
                                                 "identifier": "htmlLabel"
+                                            }
+                                        },
+                                        {
+                                            "type": "FormBooleanField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Share this marker",
+                                                "identifier": "boolean-field",
+                                                "mandatory": false,
+                                                "getValueScript": "Simple Marker Form.metadata.children.1.builderMetadata.positions.content.modules.3.config.getValueScript.js",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "Simple Marker Form.metadata.children.1.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
+                                                "validateValueScript": "",
+                                                "formatElementScript": ""
                                             }
                                         },
                                         {
