@@ -154,6 +154,7 @@ class ListItemCache implements \core\EventListener {
 				foreach ($updated as $projectId) {
 					Broadcast('proposal.' . $projectId, 'update', array(
 						'user' => GetClient()->getUserId(),
+						'source'=>'ListItemCache.php',
 						'updated' => array((new \ReferralManagement\Project())->fromId($projectId)->toArray()),
 					));
 				}

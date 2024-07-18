@@ -609,6 +609,7 @@ class Notifications {
 
 		Broadcast('proposal.' . $projectId, 'update', array(
 			'user' => GetClient()->getUserId(),
+			'source'=>'Notifications.php',
 			'updated' => array((new \ReferralManagement\Project())->fromId($projectId)->toArray()),
 		));
 
