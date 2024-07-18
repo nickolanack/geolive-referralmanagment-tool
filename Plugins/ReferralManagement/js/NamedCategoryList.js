@@ -319,12 +319,22 @@ var NamedCategoryList = (function() {
 
 						if(tags.indexOf(name)==-1){
 							el.addClass('invalid-tag')
+							new UIPopover(el, {
+								description:"No longer exists",
+								anchor:UIPopover.AnchorAuto()
+							});
+
 						}
 
 					})
 					mod.getCloud().on('selectWord', function(name){
 						if(tags.indexOf(name)==-1){
-							mod.getCloud().getWordElement(name).addClass('invalid-tag')
+							var el=mod.getCloud().getWordElement(name)
+							el.addClass('invalid-tag')
+							new UIPopover(el, {
+								description:"No longer exists",
+								anchor:UIPopover.AnchorAuto()
+							});
 						}
 					})
 
