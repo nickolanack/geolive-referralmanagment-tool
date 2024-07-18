@@ -23739,16 +23739,16 @@
                             "Simple Marker Form.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 368,
-                            "y": 293
+                            "x": 378,
+                            "y": 303
                         },
                         "children": [
                             "Simple Marker Form.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 328,
-                                    "y": 483
+                                    "x": 338,
+                                    "y": 493
                                 }
                             }
                         ],
@@ -23797,9 +23797,30 @@
                                             }
                                         },
                                         {
+                                            "type": "Template",
+                                            "config": {
+                                                "className": "",
+                                                "elementType": "span",
+                                                "elementOptions": "{}",
+                                                "text": "Shared items are visible only to people who have permission to view this map ",
+                                                "template": "",
+                                                "templateNamespace": "",
+                                                "templateVariablesScript": "",
+                                                "formatTextScript": "",
+                                                "formatVariablesScript": "",
+                                                "requestTemplateScript": "defaultBehaviour();",
+                                                "ajaxRequestTemplate": false,
+                                                "namedFormView": "",
+                                                "formOptions": "{}",
+                                                "identifier": "htmlLabel"
+                                            }
+                                        },
+                                        {
                                             "type": "UIView",
                                             "config": {
                                                 "className": "",
+                                                "elementType": "div",
+                                                "elementOptions": [],
                                                 "identifier": "",
                                                 "viewType": "form",
                                                 "namedView": "defaultView",
@@ -23811,8 +23832,8 @@
                                                 "showDeleteButton": false,
                                                 "deleteItemScript": "defaultBehaviorFn()",
                                                 "initModuleScript": "",
-                                                "formatModuleScript": "Simple Marker Form.metadata.children.1.builderMetadata.positions.content.modules.3.config.formatModuleScript.js",
-                                                "resolveItemScript": "Simple Marker Form.metadata.children.1.builderMetadata.positions.content.modules.3.config.resolveItemScript.js",
+                                                "formatModuleScript": "Simple Marker Form.metadata.children.1.builderMetadata.positions.content.modules.4.config.formatModuleScript.js",
+                                                "resolveItemScript": "Simple Marker Form.metadata.children.1.builderMetadata.positions.content.modules.4.config.resolveItemScript.js",
                                                 "filterModulesScript": "return list",
                                                 "itemButtonsScript": "return [];",
                                                 "insertAtTop": false,
