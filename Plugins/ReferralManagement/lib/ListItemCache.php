@@ -177,12 +177,21 @@ class ListItemCache implements \core\EventListener {
 								'extra'=>$extra,
 								'a' => $project,
 								'b' => $cachedProject
-								
 							));
 
 							if (empty($updatedFirst)) {
 								$updatedFirst = array($project, $cachedProject);
 							}
+						}else{
+
+							if(count($extra['a'])>0){
+
+								Broadcast('proposals', 'update-diff', array(
+									'extra'=>$extra
+								));
+
+							}
+
 						}
 					}
 				}
