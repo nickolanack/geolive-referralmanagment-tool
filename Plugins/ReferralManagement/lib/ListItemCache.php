@@ -121,6 +121,10 @@ class ListItemCache implements \core\EventListener {
 
 			foreach ($projects as $project) {
 				foreach ($cachedProjects as $cachedProject) {
+
+					// ensure that project components are encoded as objects not arrays
+					$project=json_decode(json_encode($project));
+
 					if ($project->id === $cachedProject->id) {
 
 						// time until overdue etc
@@ -135,22 +139,10 @@ class ListItemCache implements \core\EventListener {
 						unset($project->link);
 						unset($cachedProject->link);
 
-						$extra=[
-							'info'=>'a=project, b=cachedProject',
-							'a'=>[],
-							'b'=>[]
-						];
-						
 						if(isset($project->tasks)){
-							$project->tasks=array_map(function($task)use(&$extra){
+							$project->tasks=array_map(function($task){
 								if(isset($task->link)){
-									$extra['a'][]=$task->link;
 									unset($task->link);
-									
-								}
-								if(isset($task['link'])){
-									$extra['a'][]=$task['link'];
-									unset($task['link']);
 									
 								}
 								return $task;
@@ -158,9 +150,8 @@ class ListItemCache implements \core\EventListener {
 						}
 
 						if(isset($cachedProject->tasks)){
-							$cachedProject->tasks=array_map(function($task)use(&$extra){
+							$cachedProject->tasks=array_map(function($task){
 								if(isset($task->link)){
-									$extra['b'][]=$task->link;
 									unset($task->link);
 								}
 								return $task;
@@ -173,25 +164,14 @@ class ListItemCache implements \core\EventListener {
 
 							$updated[] = $project->id;
 
-							Broadcast('proposals', 'update-diff', array(
-								'extra'=>$extra,
-								'a' => $project,
-								'b' => $cachedProject
-							));
+							// Broadcast('proposals', 'update-diff', array(
+							// 	'a' => $project,
+							// 	'b' => $cachedProject
+							// ));
 
 							if (empty($updatedFirst)) {
 								$updatedFirst = array($project, $cachedProject);
 							}
-						}else{
-
-							if(count($extra['a'])>0){
-
-								Broadcast('proposals', 'update-diff', array(
-									'extra'=>$extra
-								));
-
-							}
-
 						}
 					}
 				}
