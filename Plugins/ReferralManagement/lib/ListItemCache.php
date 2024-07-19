@@ -142,7 +142,7 @@ class ListItemCache implements \core\EventListener {
 						];
 						
 						if(isset($project->tasks)){
-							$project->tasks=array_map(function($task){
+							$project->tasks=array_map(function($task)use(&$extra){
 								if(isset($task->link)){
 									$extra['a'][]=$task->link;
 									unset($task->link);
@@ -153,7 +153,7 @@ class ListItemCache implements \core\EventListener {
 						}
 
 						if(isset($cachedProject->tasks)){
-							$cachedProject->tasks=array_map(function($task){
+							$cachedProject->tasks=array_map(function($task)use(&$extra){
 								if(isset($task->link)){
 									$extra['b'][]=$task->link;
 									unset($task->link);
