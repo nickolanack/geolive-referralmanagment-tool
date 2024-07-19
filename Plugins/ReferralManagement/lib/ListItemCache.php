@@ -135,6 +135,22 @@ class ListItemCache implements \core\EventListener {
 						unset($project->link);
 						unset($cachedProject->link);
 
+					
+						if(isset($project->tasks)){
+							$project->tasks=array_map(function($task){
+								unset($task->link);
+								return $task;
+							}, $project->tasks );
+						}
+
+						if(isset($cachedProject->tasks)){
+							$cachedProject->tasks=array_map(function($task){
+								unset($task->link);
+								return $task;
+							}, $cachedProject->tasks );
+						}
+
+
 						if (json_encode($cachedProject) != json_encode($project)) {
 							//$this->notifier()->broadcastProjectUpdate($project->id);
 
