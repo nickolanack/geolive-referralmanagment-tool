@@ -135,12 +135,18 @@ class ListItemCache implements \core\EventListener {
 						unset($project->link);
 						unset($cachedProject->link);
 
-
+						$extra=[
+							'info'=>'a=project, b=cachedProject',
+							'a'=>[],
+							'b'=>[]
+						];
 						
 						if(isset($project->tasks)){
 							$project->tasks=array_map(function($task){
 								if(isset($task->link)){
+									$extra['a'][]=$task->link;
 									unset($task->link);
+									
 								}
 								return $task;
 							}, $project->tasks );
@@ -149,6 +155,7 @@ class ListItemCache implements \core\EventListener {
 						if(isset($cachedProject->tasks)){
 							$cachedProject->tasks=array_map(function($task){
 								if(isset($task->link)){
+									$extra['b'][]=$task->link;
 									unset($task->link);
 								}
 								return $task;
@@ -162,8 +169,10 @@ class ListItemCache implements \core\EventListener {
 							$updated[] = $project->id;
 
 							Broadcast('proposals', 'update-diff', array(
-								'a' => $cachedProject,
-								'b' => $project
+								'extra'=>$extra,
+								'a' => $project,
+								'b' => $cachedProject
+								
 							));
 
 							if (empty($updatedFirst)) {
