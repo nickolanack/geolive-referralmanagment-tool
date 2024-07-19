@@ -148,6 +148,11 @@ class ListItemCache implements \core\EventListener {
 									unset($task->link);
 									
 								}
+								if(isset($task['link'])){
+									$extra['a'][]=$task['link'];
+									unset($task['link']);
+									
+								}
 								return $task;
 							}, $project->tasks );
 						}
