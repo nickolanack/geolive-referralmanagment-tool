@@ -59,6 +59,12 @@ var MapNavigationMenu = new Class({
 					}
 				}, {
 					html: "Add Basemap",
+					readAccess: {
+						condition: function() {
+							return AppClient.getUserType() == "admin";
+						},
+						addClass: "admin-only"
+					},
 					events: {
 						click: function() {
 							var options = {
