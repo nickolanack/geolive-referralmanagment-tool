@@ -110,7 +110,11 @@ var ProjectSelection = (function() {
 			}}
 		}));
 
-		if(!(DashboardConfig.getValue('enableProposals')||ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isCommunityMember())){
+		if(!(
+			DashboardConfig.getValue('enableProposals')||
+			ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isCommunityMember()||
+			AppClient.getUserType()=="guest"
+		)){
 
 			module.getElement().appendChild(new Element('button', {
 				"html":"New "+ProjectList.NameForProject(), 
