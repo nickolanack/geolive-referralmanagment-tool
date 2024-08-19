@@ -7316,6 +7316,10 @@ span.AudioModule.audio.hasAudio, span.videoModule.video.hasVideo {
 .drop-options-overlay.autocomplete {
     z-index: 3;
 }
+
+.disable-sort .field-value-module.inline.show-label.sortable {
+    opacity: 0.65;
+}
     
     
     
