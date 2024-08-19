@@ -549,7 +549,7 @@
             "fullscreen": true,
             "home": true,
             "iconset": true,
-            "login": true,
+            "login": false,
             "logout": false,
             "controlColor": "rgb(232, 133, 36)",
             "subControlColor": "rgb(100, 149, 237)",
@@ -564,8 +564,7 @@
                 "layerMap": {
                     "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/LGb_[ImAgE]_FkE_[G]_aQl.png": null
                 },
-                "renderSettings": [],
-                "layerMapMetadata": []
+                "renderSettings": []
             },
             "groupIcon": [],
             "showToolTips": true,
