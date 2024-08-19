@@ -197,6 +197,19 @@ var TableHeader = (function() {
 
 		},
 
+		disableSort:function(){
+			this._disableSort=true;
+			if(this._header){
+				this._header.addClass('disable-sort');
+			}
+		},
+		enableSort:function(){
+			delete this._disableSort;
+			if(this._header){
+				this._header.removeClass('disable-sort');
+			}
+		},
+
 		_sortModules:function(content, options, callback){
 
 			var me=this;
@@ -699,8 +712,12 @@ var TableHeader = (function() {
 			var header=this._header;
 
 			if(!header){
-				var header = this._makeHeaderEl();
+				header = this._makeHeaderEl();
 				this._header=header;
+			}
+
+			if(this._disableSort){
+				header.addClass('disable-sort')
 			}
 
 			if (listEl.firstChild) {
@@ -808,7 +825,9 @@ var TableHeader = (function() {
 
 					colEl.addEvent('click', function() {
 
-
+						if(me._disableSort===true){
+							return;
+						}
 
 						var sortModule = me._listModule.getSortObject();
 
