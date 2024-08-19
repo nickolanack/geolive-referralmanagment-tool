@@ -1706,6 +1706,11 @@ li.menu-links-manual {
 }
 
 
+[data-view="recentDetail"] .uilist-pagination.bottom {
+    display: none;
+}
+
+
 
 
 
