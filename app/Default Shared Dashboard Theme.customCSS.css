@@ -7320,7 +7320,10 @@ span.AudioModule.audio.hasAudio, span.videoModule.video.hasVideo {
 .disable-sort .field-value-module.inline.show-label.sortable {
     opacity: 0.65;
 }
-    
+
+._tableStyle_ .table-header.disable-sort [data-col]:before {
+    display:none;
+}
     
     
     
