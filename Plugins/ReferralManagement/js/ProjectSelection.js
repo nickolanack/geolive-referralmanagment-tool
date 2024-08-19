@@ -83,6 +83,16 @@ var ProjectSelection = (function() {
 	var ProjectSelection = new ProjectSelectionClass();
 
 
+	var showCollectionBtn=function(){
+
+		return (!(
+			DashboardConfig.getValue('enableProposals')||
+			ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isCommunityMember()||
+			AppClient.getUserType()=="guest"
+		));
+	}
+
+
 	ProjectSelection.MakeSelectionIndicator=function(){
 
 		var application =ReferralManagementDashboard.getApplication();
@@ -110,11 +120,7 @@ var ProjectSelection = (function() {
 			}}
 		}));
 
-		if(!(
-			DashboardConfig.getValue('enableProposals')||
-			ProjectTeam.CurrentTeam().getUser(AppClient.getId()).isCommunityMember()||
-			AppClient.getUserType()=="guest"
-		)){
+		if(showCollectionBtn()){
 
 			module.getElement().appendChild(new Element('button', {
 				"html":"New "+ProjectList.NameForProject(), 
@@ -146,7 +152,7 @@ var ProjectSelection = (function() {
 		}
 
 		module.getElement().appendChild(new Element('button', {
-			"html":"View Selection", "class":"primary-btn view-selection "+(!DashboardConfig.getValue('enableProposals')?'with-collections':'with-props'), 
+			"html":"View Selection", "class":"primary-btn view-selection "+(showCollectionBtn()?'with-collections':'with-props'), 
 			"events":{
 				"click":function(e){
 					e.stop();
