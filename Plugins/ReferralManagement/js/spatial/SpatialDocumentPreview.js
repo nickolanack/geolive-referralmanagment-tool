@@ -175,14 +175,14 @@ var SpatialDocumentPreview = (function() {
 				return me._addMapLayer(layer, i);
 			});
 
-			if(AppClient.getUserType()!=="guest"){
+			// if(AppClient.getUserType()!=="guest"){
 				
 				this._addLayerTile=new UIMapSubTileButton(me._mapTile, {
 					containerClassName: 'spatial-file-tile add always-show',
 					buttonClassName: '',
 					//image: response.metadata.image||response.metadata.mimeIcon||response.metadata.mediaTypeIcon,
 					toolTip:{
-						description:"Overlay other projects"
+						description:"Overlay other layers"
 					}
 
 				}).addEvent('click', function() {
@@ -209,7 +209,7 @@ var SpatialDocumentPreview = (function() {
 
 				this._positionAddLayerTile();
 
-			}
+			// }
 		},
 		
 		_remove:function(){
