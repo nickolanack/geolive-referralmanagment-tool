@@ -367,6 +367,7 @@ var ProjectTeam = (function() {
 				DashboardConfig.getValue("enableMobile", function(enabled){
 
 					if(!enabled){
+						me._devices = [];
 						me.fireEvent('loadDevices');
 						return;
 					}
