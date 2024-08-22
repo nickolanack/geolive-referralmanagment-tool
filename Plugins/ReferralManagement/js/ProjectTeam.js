@@ -359,27 +359,37 @@ var ProjectTeam = (function() {
 		_loadDevices: function() {
 			var me = this;
 
+
+			
+
 			AppClient.runOnceOnLoad(function(){
-				(new DeviceListQuery()).addEvent('success', function(resp) {
 
+				DashboardConfig.getValue("enableMobile", function(enabled){
 
-					me._devices = [];
-					resp.results.forEach(function(user) {
-						me._addDevice(user);
-					});
-
-					if (resp.subscription) {
-						me._subscribeDevices(resp.subscription);
+					if(!enabled){
+						me.fireEvent('loadDevices');
+						return;
 					}
 
-
-					setInterval(me._updateDevicesOnlineAsync.bind(me), 60000);
-					me._updateDevicesOnlineAsync();
+					(new DeviceListQuery()).addEvent('success', function(resp) {
 
 
-					me.fireEvent('loadDevices');
+						me._devices = [];
+						resp.results.forEach(function(user) {
+							me._addDevice(user);
+						});
 
-				}).execute();
+						if (resp.subscription) {
+							me._subscribeDevices(resp.subscription);
+						}
+
+						setInterval(me._updateDevicesOnlineAsync.bind(me), 60000);
+						me._updateDevicesOnlineAsync();
+
+						me.fireEvent('loadDevices');
+
+					}).execute();
+				})
 			});
 
 		},
