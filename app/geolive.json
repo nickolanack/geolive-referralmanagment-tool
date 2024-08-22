@@ -297,28 +297,6 @@
             "configurationFieldEditAuthScript": "XXXX-XXXX"
         }
     },
-    "plugin.28": {
-        "name": "Email Ownership",
-        "instance": "EmailOwnership",
-        "parameters": {
-            "emailNotificationTemplate": "plugin.EmailOwnership.28.emailNotificationTemplate.html",
-            "fromEmailName": "admin@geolive.ca",
-            "fromEmail": "Geolive",
-            "helpEmail": "help@geolive.ca",
-            "siteUrl": "http:\/\/firelight.geolive.ca",
-            "siteName": "Firelight",
-            "emailAttribute": [
-                "plugin.EmailOwnership.28.emailAttribute.0.json"
-            ],
-            "nameAttribute": [
-                "plugin.EmailOwnership.28.nameAttribute.0.json"
-            ],
-            "enableEmailer": false,
-            "createAccount": false,
-            "debugEmailAddresses": "nickblackwell82@gmail.com, jon.corbett@gmail.com",
-            "moderatorEmailAddresses": "nickblackwell82@gmail.com, jon.corbett@gmail.com"
-        }
-    },
     "plugin.31": {
         "name": "Custom Events",
         "instance": "CustomEvents",
