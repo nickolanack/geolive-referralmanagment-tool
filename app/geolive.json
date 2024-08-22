@@ -22091,16 +22091,16 @@
                             "documentForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 163,
-                            "y": 206
+                            "x": 183,
+                            "y": 226
                         },
                         "children": [
                             "documentForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 123,
-                                    "y": 494
+                                    "x": 143,
+                                    "y": 514
                                 }
                             },
                             {
@@ -22110,16 +22110,16 @@
                                     "documentForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 601,
-                                    "y": 233
+                                    "x": 621,
+                                    "y": 253
                                 },
                                 "children": [
                                     "documentForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 561,
-                                            "y": 409
+                                            "x": 581,
+                                            "y": 429
                                         }
                                     },
                                     {
@@ -22129,16 +22129,16 @@
                                             "documentForm.metadata.children.1.children.2.children.2.fields.0.json"
                                         ],
                                         "_diagramState": {
-                                            "x": 692,
-                                            "y": 722
+                                            "x": 712,
+                                            "y": 742
                                         },
                                         "children": [
                                             "documentForm.metadata.children.1.children.2.children.2.children.0.json",
                                             {
                                                 "class": "InsertNode",
                                                 "_diagramState": {
-                                                    "x": 652,
-                                                    "y": 898
+                                                    "x": 672,
+                                                    "y": 918
                                                 }
                                             }
                                         ],
@@ -22371,7 +22371,7 @@
                                                 "attributeFields": [
                                                     "documentForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.attributeFields.0.json"
                                                 ],
-                                                "className": "",
+                                                "className": "document-type",
                                                 "label": "Type",
                                                 "message": "",
                                                 "lines": 1,
@@ -22441,7 +22441,7 @@
                                                     "documentForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
-                                                "label": "Creator",
+                                                "label": "Data Source",
                                                 "message": "",
                                                 "lines": 1,
                                                 "maxChars": 0,
@@ -26185,7 +26185,7 @@
             "convertStylesToInline": false,
             "parseMarkdown": false,
             "allowHtmlInMarkdown": false,
-            "saveTemplateAsData": false,
+            "saveTemplateAsData": true,
             "contentTemplate": "email-onUserRoleChanged-content.contentTemplate.html",
             "readAccess": "public"
         }
