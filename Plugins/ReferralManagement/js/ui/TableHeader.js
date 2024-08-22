@@ -146,9 +146,16 @@ var TableHeader = (function() {
 						removeCols.push('col-public');
 					}
 
+					if(AppClient.getUserType()=='guest'){
+						removeCols.push('col-security');
+						removeCols.push('col-sharing');
+					}
+
 					content = content.filter(function(m) {
 						return removeCols.indexOf(m.getIdentifier()) < 0;
 					});
+
+					
 
 					me._sortModules(content, options, callback);
 				 });
