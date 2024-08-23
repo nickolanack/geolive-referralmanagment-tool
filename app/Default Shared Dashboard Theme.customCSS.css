@@ -7329,5 +7329,9 @@ span.AudioModule.audio.hasAudio, span.videoModule.video.hasVideo {
     display:none;
 }
     
+.tileButtonContainer>.tileOptionContainer.hidden {
+    display: none !important;
+}    
+    
     
     
