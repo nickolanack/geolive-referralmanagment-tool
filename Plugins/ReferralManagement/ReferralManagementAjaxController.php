@@ -831,6 +831,17 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	}
 
+	protected function getUsers($json) {
+
+	
+		return array(
+			"results" => array_map(function($id){
+				return $this->getPlugin()->getUsersMetadata($id);
+			}, $json->ids),
+		);
+
+	}
+
 	protected function listUsers($json) {
 
 

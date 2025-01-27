@@ -193,7 +193,7 @@ var ItemUsersCollection = (function(){
 
 				this.parent(CoreAjaxUrlRoot, "get_users", {
 					plugin: "ReferralManagement",
-					id: users,
+					ids: users,
 				});
 			}
 		});

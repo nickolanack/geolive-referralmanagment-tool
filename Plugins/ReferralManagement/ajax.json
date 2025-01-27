@@ -171,6 +171,13 @@
             ]
         }
     },
+    "get_users": {
+        "validate": {
+            "checkKeys": [
+                "ids"
+            ]
+        }
+    },
     "list_devices": {
         "profile": true
     },
