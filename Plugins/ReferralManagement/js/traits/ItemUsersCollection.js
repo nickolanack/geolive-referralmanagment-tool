@@ -215,7 +215,7 @@ var ItemUsersCollection = (function(){
 					this._batch=[];
 				}
 				var request=new UserRequest(id);
-				this._batch.push(req);
+				this._batch.push(request);
 				this._timeout=setTimeout(function(){
 					delete me._timeout
 					var batch=me._batch;
