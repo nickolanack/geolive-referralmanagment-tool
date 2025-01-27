@@ -138,7 +138,7 @@ var ItemUsersCollection = (function(){
 						}else{
 
 							member.setMissingUser();
-							(new TeamUserQuery(user.id)).addEvent('success',function(resp){
+							(GroupTeamUserRequest.requestUser(user.id)).addEvent('success',function(resp){
 
 								if(resp.result){
 									member.setUser({options:{metadata:resp.result}});
@@ -146,7 +146,6 @@ var ItemUsersCollection = (function(){
 								//console.log(resp);
 
 							}).execute();
-
 							
 						}
 
@@ -161,6 +160,109 @@ var ItemUsersCollection = (function(){
 		},
 
 	});
+
+	var GroupTeamUserRequest=(function(){
+
+		var UserRequest=new Class({
+			Implements: [Events],
+			initialize: function(id) {
+				this._id=id;
+			},
+			getId:function(){
+				return this._id;
+			},
+			set:function(value){
+				this._value=value;
+				this.fireEvent('success', [{success:true, result:this._value}])
+			},
+			execute:function(){
+				var me=this;
+				if(this._value){
+					setTimeout(function(){
+						me.fireEvent('success', [{success:true, result:me._value}])
+					}, 1)
+				}
+			}
+		});
+
+
+
+		var BatchUserQuery = new Class({
+			Extends: AjaxControlQuery,
+			initialize: function(users) {
+
+				this.parent(CoreAjaxUrlRoot, "get_users", {
+					plugin: "ReferralManagement",
+					id: users,
+				});
+			}
+		});
+
+
+		
+
+		var GroupTeamUserRequest=new Class({
+			Implements: [Events],
+			requestUser:function(id){
+
+				var me=this;
+
+				// return (new TeamUserQuery(user.id));
+				if(this._timeout){
+					clearTimeout(this._timeout);
+				}
+				if(typeof this._batch=='undefined'){
+					this._batch=[];
+				}
+				var request=new UserRequest(id);
+				this._batch.push(req);
+				this._timeout=setTimeout(function(){
+					delete me._timeout
+					var batch=me._batch;
+					delete me._batch;
+
+					var ids=batch.map(function(u){return u.getId(); });
+					ids=ids.filter(function(id, idx){
+						return ids.indexOf(id)==idx;
+					});
+
+
+					if(ids.length==1){
+
+						(new TeamUserQuery(user.id)).on('success', function(response){
+							batch.forEach(function(u){
+								u.set(response.result);
+							});
+						}).execute();
+
+						return;
+					}
+
+
+					(new BatchUserQuery(ids)).on('success', function(response){
+
+						response.results.forEach(function(result){
+							batch.forEach(function(u){
+								if(result.id+"" == u.getId()+""){
+									u.set(result);
+								}
+							});
+						});
+
+
+					}).execute();
+
+				}, 200);
+
+				return request;
+
+
+			}
+		});
+
+		return new GroupTeamUserRequest();
+
+	})();
 
 
 	ItemUsersCollection.FormatUserSelectionListModules = function(list, item, listItem) {
