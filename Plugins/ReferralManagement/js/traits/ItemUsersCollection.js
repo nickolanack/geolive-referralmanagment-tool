@@ -229,7 +229,7 @@ var ItemUsersCollection = (function(){
 
 					if(ids.length==1){
 
-						(new TeamUserQuery(user.id)).on('success', function(response){
+						(new TeamUserQuery(ids[0])).on('success', function(response){
 							batch.forEach(function(u){
 								u.set(response.result);
 							});
