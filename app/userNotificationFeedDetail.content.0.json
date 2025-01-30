@@ -11,7 +11,7 @@
         "emptyMessage": "There are no events to display",
         "channel": "notifications",
         "resolveChannelScript": "if(AppClient.getUserType()==\"guest\"){\n    return 'gettingstarted';\n}\n\nreturn defaultChannel;",
-        "resolveItemScript": "if(AppClient.getUserType()==\"guest\"){\n    return new MockDataTypeItem({\n        type:\"widget\",\n        id:\"userNotificationFeedDetail\"\n        });\n}\n\nreturn AppClient;",
+        "resolveItemScript": "if(AppClient.getUserType()==\"guest\"){\n    return new MockDataTypeItem({\n        type:\"widget\",\n        id:454 \/\/ this widget\n        });\n}\n\nreturn AppClient;",
         "initialPostsScript": "",
         "formatPostScript": "return NotificationContent.formatEventText(post.text, post);",
         "namedView": "defaultNotificationDetail",
