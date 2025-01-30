@@ -59,6 +59,13 @@ var NotificationContent = (function() {
 
 		formatEventText: function(text, data) {
 
+			if (text == 'rand: tip') {
+				var items=data.metadata.items;
+				data.metadata.items=[];
+				var item=items[Math.floor(Math.random()*items.length)]
+				text = item.tip;
+				
+			}
 			
 
 			if (text == 'calc: items.updated') {
