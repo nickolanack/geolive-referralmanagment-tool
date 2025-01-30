@@ -7,16 +7,18 @@ var NotificationContent = (function() {
 			return PostContent.viewForItem(item);
 		},
 
-		countUpdated:function(){
-			var list=ProjectTeam.CurrentTeam().getProjects()
+		getUpdated:function(){
+			return ProjectTeam.CurrentTeam().getProjects()
 			.sort(function(a, b){ return b.getModificationDate().localeCompare(a.getModificationDate())})
 			.filter(function(a){
 				return  (new Date()).getTime()/1000 - a.data.modifiedDateTimestamp < 86400*100;
 			});
-
-			var l=list.length;
-			return l;
 		},
+		
+		countUpdated:function(){
+			return this.getUpdated().length;
+		},
+
 
 		lastUpdated:function(){
 			var list=ProjectTeam.CurrentTeam().getProjects()
