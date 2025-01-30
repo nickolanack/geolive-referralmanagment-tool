@@ -63,7 +63,7 @@ var NotificationContent = (function() {
 
 			if (text == 'calc: items.updated') {
 
-				var l=data.items.length;
+				var l=data.metadata.items.length;
 				
 				text = 'There '+(l==1?'is':'are')+' '+(l)+' updated item'+(l==1?'':'s');
 				data.text = text;
@@ -72,7 +72,7 @@ var NotificationContent = (function() {
 
 			if (text == 'calc: items.created') {
 
-				var l=data.items.length;
+				var l=data.metadata.items.length;
 
 				text = 'There '+(l==1?'is':'are')+' '+(l)+' new item'+(l==1?'':'s');
 				data.text = text;
