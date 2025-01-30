@@ -43,11 +43,6 @@ var NotificationContent = (function() {
 			
 		},
 
-		countUpdated:function(){
-			return this.getUpdated().length;
-		},
-
-
 		lastUpdated:function(){
 			var list=ProjectTeam.CurrentTeam().getProjects()
 			.sort(function(a, b){ return b.getModificationDate().localeCompare(a.getModificationDate())});
@@ -64,10 +59,11 @@ var NotificationContent = (function() {
 
 		formatEventText: function(text, data) {
 
-			var l=this.countUpdated();
+			
 
 			if (text == 'calc: items.updated') {
 
+				var l=data.items.length;
 				
 				text = 'There '+(l==1?'is':'are')+' '+(l)+' updated item'+(l==1?'':'s');
 				data.text = text;
@@ -75,7 +71,10 @@ var NotificationContent = (function() {
 			}
 
 			if (text == 'calc: items.created') {
-				text = 'There is 1 new dataset'
+
+				var l=data.items.length;
+
+				text = 'There '+(l==1?'is':'are')+' '+(l)+' new item'+(l==1?'':'s');
 				data.text = text;
 				return text;
 			}
