@@ -8,13 +8,41 @@ var NotificationContent = (function() {
 		},
 
 		getUpdated:function(){
-			return ProjectTeam.CurrentTeam().getProjects()
+			var updated= ProjectTeam.CurrentTeam().getProjects()
 			.sort(function(a, b){ return b.getModificationDate().localeCompare(a.getModificationDate())})
 			.filter(function(a){
-				return  (new Date()).getTime()/1000 - a.data.modifiedDateTimestamp < 86400*100;
+				// within the last 100 days, and modified at least 1 day after creation
+				return  (new Date()).getTime()/1000 - a.data.modifiedDateTimestamp < 86400*100 && a.data.modifiedDateTimestamp - a.data.createdDateTimestamp > 86400
 			});
+
+			return updated.slice(0,5);
 		},
-		
+
+
+		getCreated:function(){
+
+			var updated=this.getUpdated();
+
+			created= ProjectTeam.CurrentTeam().getProjects()
+			.sort(function(a, b){ return b.getCreationDate().localeCompare(a.getCreationDate())})
+			.filter(function(a){
+				return updated.indexOf(a)==-1;
+			});
+
+
+			var filtered=created.filter(function(a){
+				// within the last 100 days
+				return  (new Date()).getTime()/1000 - a.data.modifiedDateTimestamp < 86400*100 
+			});
+
+			if(filtered.length==0){
+				return created.slice(0,2);
+			}
+			return filtered.slice(0,5);
+
+			
+		},
+
 		countUpdated:function(){
 			return this.getUpdated().length;
 		},
