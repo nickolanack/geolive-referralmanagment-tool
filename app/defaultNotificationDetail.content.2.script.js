@@ -1,3 +1,6 @@
+if(parseInt(item.getId())<1){
+    return null;
+}
 
 
 var moduleArray = new ModuleArray([
