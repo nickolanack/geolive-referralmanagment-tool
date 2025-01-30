@@ -36,7 +36,7 @@ var NotificationContent = (function() {
 
 			var l=this.countUpdated();
 
-			if (text == 'calc: items updated') {
+			if (text == 'calc: items.updated') {
 
 				
 				text = 'There '+(l==1?'is':'are')+' '+(l)+' updated item'+(l==1?'':'s');
@@ -44,7 +44,7 @@ var NotificationContent = (function() {
 				return text;
 			}
 
-			if (text == 'calc: items created') {
+			if (text == 'calc: items.created') {
 				text = 'There is 1 new dataset'
 				data.text = text;
 				return text;
