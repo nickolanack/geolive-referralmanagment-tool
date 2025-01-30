@@ -63,7 +63,7 @@ var NotificationContent = (function() {
 				var items=data.metadata.items;
 				data.metadata.items=[];
 				var item=items[Math.floor(Math.random()*items.length)]
-				text = item.tip;
+				text = item.text;
 				
 			}
 			
