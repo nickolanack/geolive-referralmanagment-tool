@@ -1,1 +1,0 @@
-wizardDataSet.disableClickEvents=object.value;
