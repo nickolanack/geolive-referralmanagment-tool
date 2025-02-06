@@ -1,1 +1,1 @@
-return item.isInteractionDisabled();
+return item.getInteractionDisabled();
