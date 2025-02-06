@@ -23899,7 +23899,7 @@
                 "class": "DecisionNode",
                 "_diagramState": {
                     "x": 47,
-                    "y": 273
+                    "y": 272
                 },
                 "children": [
                     "projectLayerSettings.metadata.children.0.json",
@@ -23910,16 +23910,16 @@
                             "projectLayerSettings.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 221,
-                            "y": 277
+                            "x": 231,
+                            "y": 286
                         },
                         "children": [
                             "projectLayerSettings.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 181,
-                                    "y": 640
+                                    "x": 191,
+                                    "y": 650
                                 }
                             }
                         ],
@@ -23941,9 +23941,11 @@
                                                 "elementOptions": [],
                                                 "text": "##Layer settings",
                                                 "template": "html.layerSettings",
+                                                "templateNamespace": "",
                                                 "templateVariablesScript": "{}",
                                                 "formatTextScript": "",
                                                 "formatVariablesScript": "",
+                                                "requestTemplateScript": "defaultBehaviour();",
                                                 "ajaxRequestTemplate": true,
                                                 "namedFormView": "",
                                                 "formOptions": [],
@@ -24152,9 +24154,11 @@
                                                 "elementOptions": [],
                                                 "text": "##Advanced options",
                                                 "template": "html.layerFormAdvancedSection",
+                                                "templateNamespace": "",
                                                 "templateVariablesScript": "{}",
                                                 "formatTextScript": "",
                                                 "formatVariablesScript": "",
+                                                "requestTemplateScript": "defaultBehaviour();",
                                                 "ajaxRequestTemplate": true,
                                                 "namedFormView": "",
                                                 "formOptions": [],
@@ -24178,13 +24182,27 @@
                                         {
                                             "type": "FormBooleanField",
                                             "config": {
-                                                "className": "",
+                                                "className": "can-minimize",
                                                 "label": "Start with this layer visible",
                                                 "identifier": "boolean-field",
                                                 "mandatory": false,
                                                 "getValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.14.config.getValueScript.js",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.14.config.submitValueScript.js",
+                                                "validateValueScript": "",
+                                                "formatElementScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "FormBooleanField",
+                                            "config": {
+                                                "className": "can-minimize",
+                                                "label": "Disable Click Events",
+                                                "identifier": "boolean-field",
+                                                "mandatory": false,
+                                                "getValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.15.config.getValueScript.js",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.15.config.submitValueScript.js",
                                                 "validateValueScript": "",
                                                 "formatElementScript": ""
                                             }
@@ -24205,9 +24223,9 @@
                                                 "beforeRenderModuleScript": "",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.15.config.getValueScript.js",
+                                                "getValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.16.config.getValueScript.js",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.15.config.submitValueScript.js",
+                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.16.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         },
@@ -24229,7 +24247,7 @@
                                                 "formatValueScript": "",
                                                 "getValueScript": " return item.getProj(); ",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.16.config.submitValueScript.js",
+                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.17.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         },
@@ -24247,11 +24265,11 @@
                                                 "multiMessage": "add another value",
                                                 "formatter": "none",
                                                 "beforeRenderModuleScript": "",
-                                                "onRenderTextFieldScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.17.config.onRenderTextFieldScript.js",
+                                                "onRenderTextFieldScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.18.config.onRenderTextFieldScript.js",
                                                 "formatValueScript": "",
                                                 "getValueScript": " return item.getScript(); ",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.17.config.submitValueScript.js",
+                                                "submitValueScript": "projectLayerSettings.metadata.children.1.builderMetadata.positions.content.modules.18.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         }
