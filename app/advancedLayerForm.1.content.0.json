@@ -1,13 +1,19 @@
 {
-    "type": "InlineHtml",
+    "type": "Template",
     "config": {
         "className": "",
+        "elementType": "span",
+        "elementOptions": {},
         "text": "##Advanced options",
         "template": "html.layerFormAdvancedSection",
+        "templateNamespace": "",
         "templateVariablesScript": "{}",
         "formatTextScript": "",
         "formatVariablesScript": "",
+        "requestTemplateScript": "defaultBehaviour();",
         "ajaxRequestTemplate": true,
+        "namedFormView": "",
+        "formOptions": {},
         "identifier": "htmlLabel"
     }
 }
