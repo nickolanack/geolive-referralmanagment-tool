@@ -151,7 +151,6 @@ var UserNotifications = (function() {
 			if(localStorage.getItem('show-admin')==="false"){
 				var el = $$('body')[0];
 				el.addClass('hide-admin');
-				el.addClass('hide-admin');
 			}
 
 			btns.push((new ElementModule('span', {
