@@ -11,7 +11,7 @@ var ProjectLayer = (function() {
 		var markerOptions = {
 			icon: 'https://storage.googleapis.com/support-kms-prod/SNP_2752125_en_v0',
 			showLabels: false,
-			clickable: false,
+			clickable: true,
 			icons: []
 		};
 		var lineOptions = {
@@ -23,6 +23,8 @@ var ProjectLayer = (function() {
 
 
 			var metadata = options.projectAttributes.metadata;
+
+			//marker images are parsed out from the description (html) which includes embedded images if set
 			if (metadata.description) {
 
 
@@ -45,8 +47,6 @@ var ProjectLayer = (function() {
 						url: url,
 						scaledSize: new google.maps.Size(size, size)
 					});
-
-
 
 				});
 			}
@@ -99,6 +99,12 @@ var ProjectLayer = (function() {
 				fillOpacity = Math.min(Math.max(0, fillOpacity), 1);
 				polygonOptions.polyOpacity = fillOpacity;
 
+			}
+
+			if (metadata.interactionDisabled === true) {
+				markerOptions.clickable=false;
+				lineOptions.clickable=false;
+				polygonOptions.clickable=false;
 			}
 
 			if (metadata.renderTiles === true) {
