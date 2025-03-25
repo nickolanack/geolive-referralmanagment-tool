@@ -31,7 +31,7 @@ var ProjectLayer = (function() {
 				(new HTMLTagParser()).imagesUrls(metadata.description).forEach(function(url) {
 
 
-					var size=parseInt(metadata.markerSize||40);
+					var size=parseInt(metadata.markerSize||30);
 					if(isNaN(size)){
 						size=40;
 					}
