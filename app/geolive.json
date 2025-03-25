@@ -366,7 +366,8 @@
         "instance": "Events",
         "parameters": {
             "logEvents": true,
-            "logPath": "{front}\/..\/logs\/{domain}"
+            "logPath": "{front}\/..\/logs\/{domain}",
+            "useMemcachedScheduler": true
         }
     },
     "plugin.41": {
