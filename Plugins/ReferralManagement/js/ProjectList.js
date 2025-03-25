@@ -613,7 +613,7 @@ var ProjectList = (function() {
 					sorters: ProjectList.projectSorters(),
 					currentSort: "modified",
 					currentSortInvert: true,
-					//applyfilter:true
+					applySort: "modified"
 				})).load(null, div, null);
 
 
