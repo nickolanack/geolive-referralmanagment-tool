@@ -445,11 +445,11 @@ var ProjectList = (function() {
 
 
 	ProjectList.currentProjectFilterFn = function(a) {
-		return !a.isComplete();
+		return true;
 	};
 
 	ProjectList.currentProjectSortFn = function(a, b) {
-		return -(a.getPriorityNumber() > b.getPriorityNumber() ? 1 : -1);
+		return ProjectList.GetSortFn("modified").sortFn(a, b);
 	};
 
 
