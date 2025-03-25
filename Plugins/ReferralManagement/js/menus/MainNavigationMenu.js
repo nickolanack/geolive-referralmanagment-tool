@@ -497,6 +497,8 @@ var MainNavigationMenu = new Class({
 			});
 			
 		
+			me.getSectionEl('Links').addClass('hover');
+		
 			return;
 		}
 		
