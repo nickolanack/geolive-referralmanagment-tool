@@ -449,7 +449,7 @@ var ProjectList = (function() {
 	};
 
 	ProjectList.currentProjectSortFn = function(a, b) {
-		return ProjectList.GetSortFn("modified").sortFn(a, b);
+		return ProjectList.GetSortFn("modified").sortFn(b, a);
 	};
 
 
