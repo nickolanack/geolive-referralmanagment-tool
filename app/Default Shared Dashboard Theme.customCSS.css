@@ -6176,10 +6176,10 @@ span.navigation-menu.settings-menu {
                 font-size:21px;
             }
             
-            &:hover>li {
+            &:hover>li, &.hover>li {
                display:inline-block;
             }
-            &:hover>label {
+            &:hover>label, &.hover>label {
                visibility:hidden;
                display:none;
             } 
@@ -6216,10 +6216,10 @@ span.navigation-menu.settings-menu {
                 font-size:21px;
             }
             
-            &:hover>li {
+            &:hover>li, &.hover>li {
                display:inline-block;
             }
-            &:hover>label {
+            &:hover>label, &.hover>label {
                visibility:hidden;
                display:none;
             } 
