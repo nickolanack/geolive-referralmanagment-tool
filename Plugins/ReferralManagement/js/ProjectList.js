@@ -611,7 +611,7 @@ var ProjectList = (function() {
 					}).pop();
 				}, {
 					sorters: ProjectList.projectSorters(),
-					currentSort: "priority",
+					currentSort: "modified",
 					currentSortInvert: true,
 					//applyfilter:true
 				})).load(null, div, null);
