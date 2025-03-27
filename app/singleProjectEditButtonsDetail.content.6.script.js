@@ -1,6 +1,6 @@
-if(AppClient.getUserType()==="guest"){
-		return null;
-	}
+// if(AppClient.getUserType()==="guest"){
+// 		return null;
+// 	}
 
 return new ElementModule('button',{
     "html":"Download", 
