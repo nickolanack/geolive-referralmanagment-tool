@@ -558,7 +558,7 @@ var DashboardPageLayout = (function() {
 		content=layout.filterIdentifier(content, ['proponent-edit-btns', 'project-related-projects', 'activity-chart','project-state-progress', 'project-response-date', 'project-task-progress', 'project-task-remaining', 'project-task-deadline', 'project-tasks-overview', 'project-letters'], !layout.currentItem().isDataset());
 
 
-		content=layout.filterIdentifier(content, ['project-edit-btns','activity-chart', 'project-task-progress', 'project-task-remaining', 'project-task-deadline', 'project-tasks-overview', 'discussion-reply','project-team','project-related-projects'],  AppClient.getUserType() != "guest");//'enableTasks');
+		content=layout.filterIdentifier(content, [/*'project-edit-btns', */'activity-chart', 'project-task-progress', 'project-task-remaining', 'project-task-deadline', 'project-tasks-overview', 'discussion-reply','project-team','project-related-projects'],  AppClient.getUserType() != "guest");//'enableTasks');
 		
 
 		content=layout.filterIdentifier(content, ['proponent-edit-btns'],  AppClient.getUserType() === "guest");//'enableTasks');
