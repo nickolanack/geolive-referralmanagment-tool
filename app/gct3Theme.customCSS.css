@@ -857,8 +857,11 @@ ul.project, ul.user{
         color: $highlightBtnColor;
     }
     
-    .search-panel span.notifications:has(.empty):after {
+    span.notifications:has(.empty):after {
         color: #525252;
+    }
+    &:has(.login) span.notifications:has(.empty):after {
+        color: $highlightBtnColor;
     }
 
 
