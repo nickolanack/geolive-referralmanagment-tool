@@ -856,6 +856,10 @@ ul.project, ul.user{
     span.notifications:after {
         color: $highlightBtnColor;
     }
+    
+    .search-panel span.notifications:has(.empty):after {
+        color: #525252;
+    }
 
 
     &.ui-view{
