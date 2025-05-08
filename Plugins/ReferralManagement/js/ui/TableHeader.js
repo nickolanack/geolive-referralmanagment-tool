@@ -84,6 +84,14 @@ var TableHeader = (function() {
 
 			this.once('load.'+layoutName, cb);
 
+			if(!this._loading){
+				this._loading={};
+			}
+
+			if(this._loading[layoutName]){
+				return;
+			}
+			this._loading[layoutName]=true;
 
 			var me=this;
 
@@ -97,7 +105,7 @@ var TableHeader = (function() {
 					}
 				})
 				me._layouts[layoutName]=response.value;
-				
+				delete me._loading[layoutName]
 				me.fireEvent('load.'+layoutName);
 			}).execute();
 
