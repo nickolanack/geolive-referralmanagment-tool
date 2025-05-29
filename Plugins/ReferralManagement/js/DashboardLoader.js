@@ -48,7 +48,7 @@ var DashboardLoader = (function() {
 					if(view==='dashboardContent'){
 
 						var acceptedTerms=localStorage.getItem("acceptedTerms");
-						if(acceptedTerms&&JSON.parse(acceptedTerms)){
+						if(acceptedTerms&&JSON.parse(acceptedTerms)&&AppClient.getUserType() != "guest"){
 							console.log(acceptedTerms);
 						}else{
 							if (AppClient.getUserType() != "admin") {
