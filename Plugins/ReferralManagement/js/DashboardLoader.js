@@ -51,7 +51,7 @@ var DashboardLoader = (function() {
 						if(acceptedTerms&&JSON.parse(acceptedTerms)){
 							console.log(acceptedTerms);
 						}else{
-							if (AppClient.getUserType() == "admin") {
+							if (AppClient.getUserType() != "admin") {
 								loadView("termsOfUse");
 								return;
 							}
