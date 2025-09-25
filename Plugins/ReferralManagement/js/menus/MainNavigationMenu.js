@@ -103,7 +103,8 @@ var MainNavigationMenu = new Class({
 				{
 					name: "Datasets",
 					stub:'datasets',
-					alias: {"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true,
+					template:"mainProjectsDetail",
+					_alias: {"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true,
 						isActive:function(value, options, item){
 							if(value&&item&&item.lockFilter){
 								return item.lockFilter==='!collection';
