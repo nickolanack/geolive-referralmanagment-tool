@@ -99,7 +99,7 @@ var DashboardUser = (function() {
 		
 		getCommunity: function() {
 			var me = this;
-			if (!me.options.metadata.name) {
+			if (typeof me.options.metadata.name !="string") {
 				throw 'user does not have name metadata'
 			}
 			return me.options.metadata.community;
