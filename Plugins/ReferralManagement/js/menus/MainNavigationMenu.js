@@ -103,6 +103,7 @@ var MainNavigationMenu = new Class({
 				{
 					name: "Datasets",
 					stub:'datasets',
+					"class":"menu-main-datasets menu-main-projects",
 					template:"mainProjectsDetail",
 					_alias: {"section":"Main", "button":"Projects", "useClassNames":true, "mirrorActive":true,
 						isActive:function(value, options, item){
