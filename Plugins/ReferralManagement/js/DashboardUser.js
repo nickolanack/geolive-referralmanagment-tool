@@ -14,7 +14,7 @@ var DashboardUser = (function() {
 		},
 		getName: function() {
 			var me = this;
-			if (typeof me.options.metadata.name !="string") {
+			if (!me.options.metadata.name) {
 				throw 'user does not have name metadata'
 			}
 			return me.options.metadata.name;
@@ -99,7 +99,7 @@ var DashboardUser = (function() {
 		
 		getCommunity: function() {
 			var me = this;
-			if (typeof me.options.metadata.name !="string") {
+			if (!me.options.metadata.name) {
 				throw 'user does not have name metadata'
 			}
 			return me.options.metadata.community;

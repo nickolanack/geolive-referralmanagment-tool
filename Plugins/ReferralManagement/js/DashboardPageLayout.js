@@ -421,9 +421,9 @@ var DashboardPageLayout = (function() {
 	}).addLayout('mainProjectsDetail', function(content) {
 
 
-		if (AppClient.getUserType() != "admin") {
-			content.shift();
-		}
+		// if (AppClient.getUserType() != "admin") {
+		// 	content.shift();
+		// }
 		return content;
 
 	}).addLayout('splitProjectDetail', function(content, options, callback) {
