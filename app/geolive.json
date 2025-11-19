@@ -6471,23 +6471,11 @@
                         "modules": [
                             "People Users Detail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "Template",
+                                "type": "WizardScriptElement",
                                 "config": {
-                                    "className": "",
-                                    "elementType": "span",
-                                    "elementOptions": "{}",
-                                    "text": "edit template",
-                                    "template": "html.peopleUsersDetail",
-                                    "templateNamespace": "",
-                                    "templateVariablesScript": "{}",
-                                    "formatTextScript": "People Users Detail.metadata.positions.content.modules.1.config.formatTextScript.js",
-                                    "formatVariablesScript": "",
-                                    "requestTemplateScript": "defaultBehaviour();",
-                                    "ajaxRequestTemplate": true,
-                                    "prefetchRequestTemplate": false,
-                                    "namedFormView": "",
-                                    "formOptions": "{}",
-                                    "identifier": "htmlLabel"
+                                    "name": "My Custom Script",
+                                    "script": "People Users Detail.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
                                 }
                             },
                             {
