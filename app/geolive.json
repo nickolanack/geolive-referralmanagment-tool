@@ -9463,8 +9463,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 210,
-                    "y": 295
+                    "x": 220,
+                    "y": 270
                 },
                 "children": [
                     "userProfileForm.metadata.children.0.json",
@@ -9475,16 +9475,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 530,
-                            "y": 295
+                            "x": 550,
+                            "y": 315
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 490,
-                                    "y": 583
+                                    "x": 510,
+                                    "y": 615
                                 }
                             }
                         ],
@@ -9644,10 +9644,33 @@
                                             }
                                         },
                                         {
-                                            "type": "plugin.Attributes.WizardBooleanAttribute",
+                                            "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
                                                 "attributeFields": [
                                                     "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "label": "",
+                                                "message": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": true,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add more values",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": "{}",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardBooleanAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.9.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
                                                 "showLabel": true,
@@ -9664,7 +9687,7 @@
                                             "type": "WizardScriptElement",
                                             "config": {
                                                 "name": "My Custom Script",
-                                                "script": "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.9.config.script.js",
+                                                "script": "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.10.config.script.js",
                                                 "description": "Info about my custom script"
                                             }
                                         },
@@ -9672,7 +9695,7 @@
                                             "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.10.config.attributeFields.0.json"
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.11.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
                                                 "label": "Position \/ Department",
@@ -9695,7 +9718,7 @@
                                             "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.11.config.attributeFields.0.json"
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.12.config.attributeFields.0.json"
                                                 ],
                                                 "className": "optional",
                                                 "label": "Phone ",
