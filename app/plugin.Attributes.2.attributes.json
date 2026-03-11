@@ -188,7 +188,7 @@
                     "label": "Approved",
                     "description": "",
                     "fieldType": "boolean",
-                    "color": "rgb(undefined, undefined, undefined)",
+                    "color": "rgb(NaN, NaN, NaN)",
                     "searchability": "public",
                     "editability": "registered",
                     "fieldBooleanOptions": {
@@ -211,38 +211,6 @@
                     "description": "",
                     "fieldType": "text",
                     "color": "rgb(NaN, NaN, NaN)",
-                    "searchability": "public",
-                    "editability": "registered",
-                    "fieldTextOptions": {
-                        "textType": "input",
-                        "inputOptions": {
-                            "buildAutocomplete": false,
-                            "requireModeration": false,
-                            "limitMaxChars": 0,
-                            "limitMaxWords": 0,
-                            "allowHtml": false,
-                            "allowMedia": true,
-                            "allowLinks": true
-                        },
-                        "listOptions": {
-                            "takeSugesstions": true,
-                            "buildTree": false,
-                            "iconize": false,
-                            "colorize": false
-                        }
-                    },
-                    "allowMultiple": false
-                },
-                {
-                    "visibility": "public",
-                    "tableId": "1",
-                    "tableName": "userAttributes",
-                    "tableSuffix": "_3215",
-                    "title": "communityLetters",
-                    "label": "Community Letters",
-                    "description": "",
-                    "fieldType": "text",
-                    "color": "rgb(undefined, undefined, undefined)",
                     "searchability": "public",
                     "editability": "registered",
                     "fieldTextOptions": {
@@ -636,6 +604,38 @@
                     "tableSuffix": "_3215",
                     "title": "onlineStatus",
                     "label": "Online Status",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                },
+                {
+                    "visibility": "public",
+                    "tableId": "1",
+                    "tableName": "userAttributes",
+                    "tableSuffix": "_3215",
+                    "title": "otherCommunity",
+                    "label": "Other Community",
                     "description": "",
                     "fieldType": "text",
                     "color": "rgb(undefined, undefined, undefined)",
