@@ -9483,16 +9483,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 620,
-                            "y": 385
+                            "x": 630,
+                            "y": 395
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 580,
-                                    "y": 685
+                                    "x": 590,
+                                    "y": 695
                                 }
                             }
                         ],
@@ -9648,7 +9648,7 @@
                                                 "shuffleTags": false,
                                                 "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
                                                 "getItemTagsScript": "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.7.config.getItemTagsScript.js",
-                                                "formatModule": "ProjectTeam.FormatUserCommunityTagCloud(module, item);\nvar select = module.getElement().appendChild(new Element('select', {\n  \"events\":{\n      \"change\":function(){\n         console.log('select value')\n         module.getCloud().selectWord(select.value)\n      } \n   }\n}))\nProjectTeam.GetAllCommunities().forEach(function(c){\n  select.appendChild(new Element('option', {html:c, value:c}))\n})\n\n         console.log('add drop down')\n\n\n"
+                                                "formatModule": "ProjectTeam.FormatUserCommunityTagCloud(module, item);\nvar select = module.getElement().appendChild(new Element('select', {\n  \"events\":{\n      \"change\":function(){\n         console.log('select value')\n         module.getCloud().selectWord(select.value)\n      } \n   }\n}))\nselect.appendChild(new Element('option', {html:'choose community', value:''}))\nProjectTeam.GetAllCommunities().forEach(function(c){\n  select.appendChild(new Element('option', {html:c, value:c}))\n})\n\n         console.log('add drop down')\n\n\n"
                                             }
                                         },
                                         {
