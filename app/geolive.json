@@ -2135,16 +2135,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 325,
-                            "y": 232
+                            "x": 335,
+                            "y": 241
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 285,
-                                    "y": 445
+                                    "x": 295,
+                                    "y": 454
                                 }
                             },
                             {
@@ -2154,16 +2154,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 785,
-                                    "y": 240
+                                    "x": 795,
+                                    "y": 250
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 745,
-                                            "y": 417
+                                            "x": 755,
+                                            "y": 427
                                         }
                                     }
                                 ],
@@ -2206,7 +2206,7 @@
                                                         "shouldRender": true,
                                                         "namedViewScript": "return namedView",
                                                         "showInlineEdit": false,
-                                                        "namedFormView": "defaultView",
+                                                        "namedFormView": "userProfileForm",
                                                         "formOptions": "\"{}\"",
                                                         "showDeleteButton": false,
                                                         "deleteItemScript": "defaultBehaviorFn()",
@@ -3087,7 +3087,8 @@
             "enableUserAjaxWrite": false,
             "authUserAjaxScript": "XXXX-XXXX",
             "enableRevisions": false,
-            "broadcastChanges": false
+            "broadcastChanges": false,
+            "requireCSRF": true
         }
     },
     "widget.131": {
@@ -3377,7 +3378,8 @@
             "authUserAjaxScript": "XXXX-XXXX",
             "saveParametersAsData": false,
             "enableRevisions": false,
-            "broadcastChanges": false
+            "broadcastChanges": false,
+            "requireCSRF": true
         }
     },
     "widget.137": {
@@ -5631,8 +5633,7 @@
                 "webresources\/config-153\/ed4ac.[G]_m3o_LN2_N63_[ImAgE].png"
             ],
             "applicationLogo": [
-                "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_ewq_tsE_%5BG%5D_nV-%3Ethumb%3A%3E200x%3E150.png",
-                "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_%5BG%5D_ldi_d9_9Cu-%3Ethumb%3A%3E200x%3E150.png"
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/gct3.gather.geoforms.ca\/1\/Uploads\/szc_1rh_%5BImAgE%5D_Fnz_%5BG%5D-%3Ethumb%3A%3E200x%3E150.png"
             ],
             "formatOutputScript": "return $parameters;",
             "main-map": [
@@ -5680,8 +5681,7 @@
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/PZR_XRl_%5BImAgE%5D_%5BG%5D_xBM.png"
             ],
             "gatherLogo": [
-                "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_ewq_tsE_%5BG%5D_nV-%3Ethumb%3A%3E200x%3E150.png",
-                "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_%5BG%5D_ldi_d9_9Cu-%3Ethumb%3A%3E200x%3E150.png"
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/gct3.gather.geoforms.ca\/1\/Uploads\/%5BG%5D_Cli_Cjn_N9T_%5BImAgE%5D-%3Ethumb%3A%3E200x%3E150.png"
             ],
             "fileUploadBtnIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/wabun.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_%5BG%5D_yv_Xj5_vwP.png"
@@ -5694,34 +5694,33 @@
             ],
             "slackUrl": "https:\/\/gct3portal.slack.com",
             "showUsersRoles": false,
-            "enableTasks": true,
-            "enableProposals": true,
-            "enableCalendar": true,
-            "showRecentProjectsDetail": false,
+            "enableTasks": false,
+            "enableProposals": false,
+            "enableCalendar": false,
+            "showRecentProjectsDetail": true,
             "enableActivity": true,
             "enableMap": true,
-            "simplifiedMenu": false,
-            "gatherLabel": "Gather Project Management",
-            "darkMode": true,
-            "loadingLabel": "Loading your Gather Project Management Portal",
+            "simplifiedMenu": true,
+            "gatherLabel": "Treaty #3 Geoportal",
+            "darkMode": false,
+            "loadingLabel": "Loading your Treaty #3 Geoportal",
             "surveyUrl": "https:\/\/docs.google.com\/forms\/d\/e\/1FAIpQLSfq7MQRMB4TDe959R5ER6NKsAf2Q7rTtEOEgfFDJ3JQ3gNxng\/viewform?usp=sf_link",
             "showSearchMenu": true,
             "roleLabels": {
-                "tribal-council": "Admin",
-                "lands-department-manager": "Manager",
-                "lands-department": "Editor",
-                "chief-council": "Unused\/Error:chief-council",
-                "community-member": "User",
-                "none": "Pending"
+                "tribal-council": "Administrator",
+                "lands-department-manager": "Tier 3",
+                "lands-department": "Tier 2",
+                "community-member": "Tier 1",
+                "chief-council": "Unused\/Error:chief-council"
             },
             "disabledRoles": [
                 "chief-council"
             ],
             "projectListItemView": "singleProjectListItemTableDetail",
-            "pageClassNames": "",
+            "pageClassNames": "gct3",
             "showSplitProjectDetail": false,
-            "showProjecReports": true,
-            "projectForm": "ProposalTemplate",
+            "showProjecReports": false,
+            "projectForm": "documentProjectForm",
             "enableUserProfiles": true,
             "main-departments": [],
             "main-tags": [
@@ -5738,10 +5737,10 @@
             ],
             "showOverviewMetricsDetail": false,
             "showLeftPanelPrimaryBtn": true,
-            "showLeftPanelUser": true,
+            "showLeftPanelUser": false,
             "useFontAwesome": true,
             "saveParametersAsData": false,
-            "enableMobile": true,
+            "enableMobile": false,
             "autoCreateDefaultTasks": false,
             "allowUnappovedMobileSubmissions": false,
             "autoApproveMobileCommunityOnce": false,
@@ -5752,34 +5751,70 @@
             "gatherIcon": [
                 "https:\/\/dyl2vw577xcfk.cloudfront.net\/rmt.geoforms.ca\/1\/Uploads\/%5BImAgE%5D_r7F_lYW_6cm_%5BG%5D-%3Ethumb%3A%3E200x%3E150.png"
             ],
-            "leftPanelPrimaryBtnLabel": "Add Project",
-            "leftPanelPrimaryBtnForm": "{projectForm}",
-            "showLeftPanelSecondaryBtn": false,
-            "leftPanelSecondaryBtnLabel": "Add Dataset",
-            "leftPanelSecondaryBtnForm": "{projectForm}",
-            "datasetForm": "baseMapForm",
+            "leftPanelPrimaryBtnLabel": "Add Dataset",
+            "leftPanelPrimaryBtnForm": "documentForm",
+            "showLeftPanelSecondaryBtn": true,
+            "leftPanelSecondaryBtnLabel": "Add Collection",
+            "leftPanelSecondaryBtnForm": "documentProjectForm",
+            "datasetForm": "documentForm",
             "menuLabels": {
+                "project": {
+                    "Project.Users": "Access",
+                    "Project.Discussion": "Notes"
+                },
                 "main": {
-                    "Referrals.Projects": "Projects"
+                    "Main.Department": "Communities"
                 }
             },
-            "menuItems": [],
+            "menuItems": {
+                "main": {
+                    "Main.Projects": {
+                        "label": "Datasets",
+                        "showCreateBtn": true,
+                        "addButtonLabel": "Add Dataset",
+                        "formName": "documentForm",
+                        "lockFilter": "!collection",
+                        "filter": null,
+                        "invertfilter": false
+                    },
+                    "Main.Datasets": {
+                        "label": "The Datasets",
+                        "showCreateBtn": true,
+                        "addButtonLabel": "Add Dataset",
+                        "formName": "documentForm",
+                        "lockFilter": "!collection",
+                        "filter": null,
+                        "invertfilter": false
+                    },
+                    "Main.Collections": {
+                        "label": "Collections",
+                        "showCreateBtn": true,
+                        "addButtonLabel": "Add Collection",
+                        "formName": "documentProjectForm",
+                        "lockFilter": "collection",
+                        "filter": null,
+                        "invertfilter": false
+                    }
+                }
+            },
             "useCommunitiesAsDepartmens": false,
             "useCommunitiesAsDepartments": true,
             "departmentKind": "Community",
             "enableUserAjaxWrite": false,
             "authUserAjaxScript": "XXXX-XXXX",
-            "applicationLogoAlt": [],
-            "showAltLogo": false,
+            "applicationLogoAlt": [
+                "https:\/\/dyl2vw577xcfk.cloudfront.net\/gct3.gather.geoforms.ca\/1\/Uploads\/%5BG%5D_p7N_y46_%5BImAgE%5D_Xnw-%3Ethumb%3A%3E200x%3E150.png"
+            ],
+            "showAltLogo": true,
             "showSlack": false,
             "showSurvey": false,
-            "showDatasets": false,
-            "gatherUrl": "https:\/\/gct3.ca\/#block5",
+            "showDatasets": true,
+            "gatherUrl": "https:\/\/docs.google.com\/document\/d\/1D8sipuXRwxMoAL19BPL4JMqljeafSe4j\/edit?usp=sharing&ouid=108597871436649698217&rtpof=true&sd=true",
             "showMapAnnotationsMain": "",
             "showMapAnnotationsProject": "true",
             "showProjectActivity": false,
             "enableRevisions": false,
-            "nameForProjects": "Projects",
+            "nameForProjects": "Collections",
             "nameForCollections": "Collections",
             "nameForDatasets": "Datasets",
             "loginLabel": "Login",
@@ -5790,8 +5825,8 @@
             "showWiki": false,
             "requireCSRF": true,
             "showTerms": true,
-            "emailModerators": "",
-            "enablePublicDashboard": false
+            "emailModerators": "geoportal.admin@treaty3.ca, rjptreaty3@gmail.com, nickblackwell82@gmail.com",
+            "enablePublicDashboard": true
         }
     },
     "widget.154": {
