@@ -1732,3 +1732,23 @@ a.pb-btn-close {
 }
 
 
+
+.pb-c.gct3  button.btn.forgot-pwd.WizardButton {
+    color: white;
+    background-color: #cd01014a;
+}
+
+
+.register-profile-form h2.profile-form-heading {
+    display: none;
+}
+
+.register-profile-form .community-letter {
+    display: none;
+}
+
+.register-profile-form .update-pwd , .register-profile-form .profile-change-password {
+    display: none;
+}
+
+
