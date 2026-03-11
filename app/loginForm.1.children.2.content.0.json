@@ -3,8 +3,8 @@
     "config": {
         "className": "",
         "elementType": "span",
-        "elementOptions": {},
-        "text": "<div class=\"application-logo\"><\/div><span style=\"text-align: left; font-weight: 100; display: block;\"><span style=\"font-size:20px\">\nCreate a new user account<\/span>\n<p><\/p><br><\/span>",
+        "elementOptions": "{}",
+        "text": "<div class=\"application-logo\"><\/div><span style=\"text-align: left; font-weight: 100; display: block;\"><span style=\"font-size:20px\">\nCreate a new community member account<\/span>\n<p><\/p><br><\/span>",
         "template": "",
         "templateNamespace": "",
         "templateVariablesScript": "",
@@ -14,7 +14,7 @@
         "ajaxRequestTemplate": false,
         "prefetchRequestTemplate": false,
         "namedFormView": "",
-        "formOptions": {},
+        "formOptions": "{}",
         "identifier": "htmlLabel"
     }
 }
