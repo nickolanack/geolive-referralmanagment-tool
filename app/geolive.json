@@ -9475,16 +9475,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 460,
-                            "y": 225
+                            "x": 480,
+                            "y": 245
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 420,
-                                    "y": 550
+                                    "x": 440,
+                                    "y": 545
                                 }
                             }
                         ],
@@ -9631,7 +9631,7 @@
                                                 "message": "",
                                                 "lines": 1,
                                                 "maxChars": 0,
-                                                "mandatory": false,
+                                                "mandatory": true,
                                                 "multiEntry": false,
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "add more values",
@@ -9644,33 +9644,10 @@
                                             }
                                         },
                                         {
-                                            "type": "plugin.Attributes.WizardTextAttribute",
-                                            "config": {
-                                                "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
-                                                ],
-                                                "className": "optional",
-                                                "label": "Phone ",
-                                                "message": "555 555-5555",
-                                                "lines": 1,
-                                                "maxChars": 0,
-                                                "mandatory": false,
-                                                "multiEntry": false,
-                                                "muliTemplate": "lines",
-                                                "multiMessage": "",
-                                                "formatter": "none",
-                                                "iconTint": "rgb(100, 149, 237)",
-                                                "autocomplete": true,
-                                                "inputOptions": [],
-                                                "onRenderTextFieldScript": "",
-                                                "formatValueScript": ""
-                                            }
-                                        },
-                                        {
                                             "type": "plugin.Attributes.WizardBooleanAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.9.config.attributeFields.0.json"
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
                                                 "showLabel": true,
@@ -9687,7 +9664,7 @@
                                             "type": "WizardScriptElement",
                                             "config": {
                                                 "name": "My Custom Script",
-                                                "script": "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.10.config.script.js",
+                                                "script": "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.9.config.script.js",
                                                 "description": "Info about my custom script"
                                             }
                                         },
@@ -9695,7 +9672,7 @@
                                             "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.11.config.attributeFields.0.json"
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.10.config.attributeFields.0.json"
                                                 ],
                                                 "className": "width-2",
                                                 "label": "Position",
@@ -9718,7 +9695,7 @@
                                             "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.12.config.attributeFields.0.json"
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.11.config.attributeFields.0.json"
                                                 ],
                                                 "className": "width-2",
                                                 "label": "Department",
@@ -9741,17 +9718,17 @@
                                             "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.13.config.attributeFields.0.json"
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.12.config.attributeFields.0.json"
                                                 ],
-                                                "className": "",
-                                                "label": "Address",
-                                                "message": "",
+                                                "className": "optional",
+                                                "label": "Phone ",
+                                                "message": "optional",
                                                 "lines": 1,
                                                 "maxChars": 0,
                                                 "mandatory": false,
                                                 "multiEntry": false,
                                                 "muliTemplate": "lines",
-                                                "multiMessage": "add more values",
+                                                "multiMessage": "",
                                                 "formatter": "none",
                                                 "iconTint": "rgb(100, 149, 237)",
                                                 "autocomplete": true,
