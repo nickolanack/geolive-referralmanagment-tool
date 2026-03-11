@@ -7,4 +7,4 @@ var name="your";
 if (AppClient.getId() !== userId) {
     name="users";
 }
-return new ElementModule('h2',{html:"Edit "+name+" profile"});
+return new ElementModule('h2',{html:"Edit "+name+" profile", className:"profile-form-heading"});
