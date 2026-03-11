@@ -4,7 +4,7 @@ return new Element('button', {
 				"class": "primary-btn",
 				"events"{
 				   "click":function(){
-				     console.log('hello world')
+				     console.log('hello world');
 				   
 				   }
 				}
