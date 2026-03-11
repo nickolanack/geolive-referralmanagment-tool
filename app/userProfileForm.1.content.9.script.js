@@ -5,4 +5,4 @@ return [new ModalFormButtonModule(application, item, {
             "class": "primary-btn update-pwd"
 
     
-}), new Element('div',{style:"height:60px;"})];
+}), new Element('div',{style:"height:60px;" ,className:"profile-change-password"})];
