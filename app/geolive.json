@@ -9475,16 +9475,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 480,
-                            "y": 245
+                            "x": 490,
+                            "y": 255
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 440,
-                                    "y": 545
+                                    "x": 450,
+                                    "y": 555
                                 }
                             }
                         ],
@@ -9601,30 +9601,10 @@
                                             }
                                         },
                                         {
-                                            "type": "plugin.Attributes.WizardTagCloud",
-                                            "config": {
-                                                "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
-                                                ],
-                                                "className": "",
-                                                "showLabel": false,
-                                                "showAddWord": false,
-                                                "label": "{field.label}",
-                                                "addWordPlaceholder": "add a keyword",
-                                                "fontColor": "rgb(0, 0, 0)",
-                                                "hoverColor": "rgb(143, 188, 143)",
-                                                "selectedColor": "rgb(143, 188, 143)",
-                                                "shuffleTags": false,
-                                                "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
-                                                "getItemTagsScript": "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.getItemTagsScript.js",
-                                                "formatModule": "ProjectTeam.FormatUserCommunityTagCloud(module, item);\n"
-                                            }
-                                        },
-                                        {
                                             "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.7.config.attributeFields.0.json"
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
                                                 "label": "Email",
@@ -9641,6 +9621,26 @@
                                                 "inputOptions": "{}",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTagCloud",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.7.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "showLabel": false,
+                                                "showAddWord": false,
+                                                "label": "{field.label}",
+                                                "addWordPlaceholder": "add a keyword",
+                                                "fontColor": "rgb(0, 0, 0)",
+                                                "hoverColor": "rgb(143, 188, 143)",
+                                                "selectedColor": "rgb(143, 188, 143)",
+                                                "shuffleTags": false,
+                                                "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
+                                                "getItemTagsScript": "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.7.config.getItemTagsScript.js",
+                                                "formatModule": "ProjectTeam.FormatUserCommunityTagCloud(module, item);\n"
                                             }
                                         },
                                         {
@@ -9675,8 +9675,8 @@
                                                     "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.10.config.attributeFields.0.json"
                                                 ],
                                                 "className": "width-2",
-                                                "label": "Position",
-                                                "message": "",
+                                                "label": "Position \/ Department",
+                                                "message": "optional",
                                                 "lines": 1,
                                                 "maxChars": 0,
                                                 "mandatory": false,
