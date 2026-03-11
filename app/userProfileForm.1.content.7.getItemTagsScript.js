@@ -1,1 +1,1 @@
-return ProjectTeam.GetAllCommunities();
+return []; //ProjectTeam.GetAllCommunities();
