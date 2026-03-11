@@ -2135,16 +2135,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 510,
-                            "y": 410
+                            "x": 316,
+                            "y": 223
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 470,
-                                    "y": 623
+                                    "x": 275,
+                                    "y": 436
                                 }
                             },
                             {
@@ -2154,16 +2154,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 1100,
-                                    "y": 650
+                                    "x": 775,
+                                    "y": 230
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 1060,
-                                            "y": 815
+                                            "x": 735,
+                                            "y": 395
                                         }
                                     }
                                 ],
@@ -2192,6 +2192,31 @@
                                                         "validateRegistrationFieldsScript": "return defaultValidationFn();",
                                                         "onSuccessfulRegistrationScript": "loginForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.1.config.onSuccessfulRegistrationScript.js",
                                                         "formatRegistrationFieldsScript": "return fields;"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "UIView",
+                                                    "config": {
+                                                        "className": "",
+                                                        "elementType": "div",
+                                                        "elementOptions": "{}",
+                                                        "identifier": "",
+                                                        "viewType": "view",
+                                                        "namedView": "userProfileForm",
+                                                        "shouldRender": true,
+                                                        "namedViewScript": "return namedView",
+                                                        "showInlineEdit": false,
+                                                        "namedFormView": "defaultView",
+                                                        "formOptions": "\"{}\"",
+                                                        "showDeleteButton": false,
+                                                        "deleteItemScript": "defaultBehaviorFn()",
+                                                        "initModuleScript": "",
+                                                        "formatModuleScript": "",
+                                                        "resolveItemScript": "return item",
+                                                        "filterModulesScript": "return list",
+                                                        "itemButtonsScript": "return [];",
+                                                        "insertAtTop": false,
+                                                        "targetName": ""
                                                     }
                                                 }
                                             ]
@@ -2239,6 +2264,7 @@
                                                 "formatVariablesScript": "",
                                                 "requestTemplateScript": "defaultBehaviour();",
                                                 "ajaxRequestTemplate": true,
+                                                "prefetchRequestTemplate": false,
                                                 "namedFormView": "",
                                                 "formOptions": "{}",
                                                 "identifier": "htmlLabel"
@@ -2282,6 +2308,7 @@
                                                 "formatVariablesScript": "",
                                                 "requestTemplateScript": "defaultBehaviour();",
                                                 "ajaxRequestTemplate": false,
+                                                "prefetchRequestTemplate": false,
                                                 "namedFormView": "",
                                                 "formOptions": "{}",
                                                 "identifier": "htmlLabel"
