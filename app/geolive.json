@@ -9464,7 +9464,7 @@
                 "class": "DecisionNode",
                 "_diagramState": {
                     "x": 210,
-                    "y": 296
+                    "y": 295
                 },
                 "children": [
                     "userProfileForm.metadata.children.0.json",
@@ -9475,16 +9475,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 450,
-                            "y": 215
+                            "x": 460,
+                            "y": 225
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 410,
-                                    "y": 540
+                                    "x": 420,
+                                    "y": 550
                                 }
                             }
                         ],
@@ -9667,34 +9667,10 @@
                                             }
                                         },
                                         {
-                                            "type": "plugin.Attributes.WizardDescriptionAttribute",
-                                            "config": {
-                                                "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.9.config.attributeFields.0.json"
-                                                ],
-                                                "className": "no-media optional",
-                                                "label": "Bio",
-                                                "message": "add a short bio",
-                                                "lines": 3,
-                                                "maxChars": 0,
-                                                "mandatory": false,
-                                                "showToolbars": true,
-                                                "showAudios": true,
-                                                "showVideos": true,
-                                                "showDocuments": true,
-                                                "showImages": true,
-                                                "showExpandInput": true,
-                                                "toolbarPosition": "bottom",
-                                                "textFormatScript": "",
-                                                "onRenderModuleFn": "",
-                                                "mediaIconTint": "rgb(100, 149, 237)"
-                                            }
-                                        },
-                                        {
                                             "type": "plugin.Attributes.WizardBooleanAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.10.config.attributeFields.0.json"
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.9.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
                                                 "showLabel": true,
@@ -9711,7 +9687,7 @@
                                             "type": "WizardScriptElement",
                                             "config": {
                                                 "name": "My Custom Script",
-                                                "script": "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.11.config.script.js",
+                                                "script": "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.10.config.script.js",
                                                 "description": "Info about my custom script"
                                             }
                                         },
@@ -9719,7 +9695,7 @@
                                             "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.12.config.attributeFields.0.json"
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.11.config.attributeFields.0.json"
                                                 ],
                                                 "className": "width-2",
                                                 "label": "Position",
@@ -9742,7 +9718,7 @@
                                             "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.13.config.attributeFields.0.json"
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.12.config.attributeFields.0.json"
                                                 ],
                                                 "className": "width-2",
                                                 "label": "Department",
@@ -9765,7 +9741,7 @@
                                             "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.14.config.attributeFields.0.json"
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.13.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
                                                 "label": "Address",
