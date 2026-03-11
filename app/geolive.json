@@ -2135,16 +2135,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 240,
-                            "y": 190
+                            "x": 250,
+                            "y": 200
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 200,
-                                    "y": 403
+                                    "x": 210,
+                                    "y": 413
                                 }
                             },
                             {
@@ -2154,16 +2154,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 680,
-                                    "y": 210
+                                    "x": 690,
+                                    "y": 220
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 640,
-                                            "y": 375
+                                            "x": 650,
+                                            "y": 385
                                         }
                                     }
                                 ],
@@ -2180,7 +2180,7 @@
                                                 {
                                                     "type": "UIView",
                                                     "config": {
-                                                        "className": "",
+                                                        "className": "register-profile-form",
                                                         "elementType": "div",
                                                         "elementOptions": "{}",
                                                         "identifier": "",
