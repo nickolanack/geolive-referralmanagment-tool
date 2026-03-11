@@ -9475,16 +9475,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 490,
-                            "y": 255
+                            "x": 510,
+                            "y": 275
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 450,
-                                    "y": 555
+                                    "x": 470,
+                                    "y": 575
                                 }
                             }
                         ],
@@ -9674,10 +9674,10 @@
                                                 "attributeFields": [
                                                     "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.10.config.attributeFields.0.json"
                                                 ],
-                                                "className": "width-2",
+                                                "className": "",
                                                 "label": "Position \/ Department",
                                                 "message": "optional",
-                                                "lines": 1,
+                                                "lines": 2,
                                                 "maxChars": 0,
                                                 "mandatory": false,
                                                 "multiEntry": false,
@@ -9696,29 +9696,6 @@
                                             "config": {
                                                 "attributeFields": [
                                                     "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.11.config.attributeFields.0.json"
-                                                ],
-                                                "className": "width-2",
-                                                "label": "Department",
-                                                "message": "",
-                                                "lines": 1,
-                                                "maxChars": 0,
-                                                "mandatory": false,
-                                                "multiEntry": false,
-                                                "muliTemplate": "lines",
-                                                "multiMessage": "add more values",
-                                                "formatter": "none",
-                                                "iconTint": "rgb(100, 149, 237)",
-                                                "autocomplete": true,
-                                                "inputOptions": "{}",
-                                                "onRenderTextFieldScript": "",
-                                                "formatValueScript": ""
-                                            }
-                                        },
-                                        {
-                                            "type": "plugin.Attributes.WizardTextAttribute",
-                                            "config": {
-                                                "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.12.config.attributeFields.0.json"
                                                 ],
                                                 "className": "optional",
                                                 "label": "Phone ",
