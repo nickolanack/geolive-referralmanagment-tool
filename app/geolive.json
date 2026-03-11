@@ -2135,16 +2135,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 250,
-                            "y": 200
+                            "x": 260,
+                            "y": 210
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 210,
-                                    "y": 413
+                                    "x": 220,
+                                    "y": 423
                                 }
                             },
                             {
@@ -2154,16 +2154,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 690,
-                                    "y": 220
+                                    "x": 700,
+                                    "y": 230
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 650,
-                                            "y": 385
+                                            "x": 660,
+                                            "y": 395
                                         }
                                     }
                                 ],
@@ -2200,6 +2200,14 @@
                                                         "itemButtonsScript": "return [];",
                                                         "insertAtTop": false,
                                                         "targetName": ""
+                                                    }
+                                                },
+                                                {
+                                                    "type": "WizardScriptElement",
+                                                    "config": {
+                                                        "name": "My Custom Script",
+                                                        "script": "loginForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.2.config.script.js",
+                                                        "description": "Info about my custom script"
                                                     }
                                                 }
                                             ]
