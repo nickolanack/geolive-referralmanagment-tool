@@ -9475,16 +9475,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 520,
-                            "y": 285
+                            "x": 530,
+                            "y": 295
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 480,
-                                    "y": 573
+                                    "x": 490,
+                                    "y": 583
                                 }
                             }
                         ],
@@ -9512,7 +9512,7 @@
                                                 "attributeFields": [
                                                     "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
                                                 ],
-                                                "className": "no-text only-image",
+                                                "className": "no-text only-image profile-picture",
                                                 "label": "Profile picture",
                                                 "message": "add a description",
                                                 "lines": 3,
@@ -9536,7 +9536,7 @@
                                                 "attributeFields": [
                                                     "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
                                                 ],
-                                                "className": "no-text only-doc",
+                                                "className": "no-text only-doc community-letter",
                                                 "label": "Community Letters",
                                                 "message": "",
                                                 "lines": 3,
