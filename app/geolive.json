@@ -2135,16 +2135,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 316,
-                            "y": 223
+                            "x": 325,
+                            "y": 232
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 275,
-                                    "y": 436
+                                    "x": 285,
+                                    "y": 445
                                 }
                             },
                             {
@@ -2154,16 +2154,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 775,
-                                    "y": 230
+                                    "x": 785,
+                                    "y": 240
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 735,
-                                            "y": 395
+                                            "x": 745,
+                                            "y": 417
                                         }
                                     }
                                 ],
@@ -2201,7 +2201,7 @@
                                                         "elementType": "div",
                                                         "elementOptions": "{}",
                                                         "identifier": "",
-                                                        "viewType": "view",
+                                                        "viewType": "form",
                                                         "namedView": "userProfileForm",
                                                         "shouldRender": true,
                                                         "namedViewScript": "return namedView",
