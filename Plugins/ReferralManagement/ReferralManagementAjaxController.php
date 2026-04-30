@@ -694,7 +694,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 		$json=$json->profile;
 
 
-		if (key_exists('email', $json) && key_exists('token', $json)) {
+		if (key_exists('email', $json)) {
 
 			if (filter_var($json->email, FILTER_VALIDATE_EMAIL)) {
 
