@@ -30857,5 +30857,14 @@
             "saveTemplateAsData": false,
             "contentTemplate": null
         }
+    },
+    "widget.555": {
+        "name": "Article",
+        "instance": "Article",
+        "parameters": {
+            "articleTitle": "You did it! Thanks.",
+            "articleHtml": "",
+            "target": "Links.action-view.Article.onActivateEmailForProfileRegistration"
+        }
     }
 }
