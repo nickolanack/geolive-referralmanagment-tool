@@ -6,7 +6,7 @@ return new Element('button', {
 				   "click":function(){
 				     console.log('hello world');
 				     
-				     profile=wizard.getData()["profileData"];
+				     var profile=wizard.getData()["profileData"];
 				     
 				     
 				     
