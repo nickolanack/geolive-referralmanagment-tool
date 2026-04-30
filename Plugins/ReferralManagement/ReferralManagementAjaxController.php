@@ -687,6 +687,12 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	protected function registerUser($json) {
 
+		if(!isset($json->profile)){
+			return false;
+		}
+
+		$json=$json->profile;
+
 
 		if (key_exists('email', $json) && key_exists('token', $json)) {
 
