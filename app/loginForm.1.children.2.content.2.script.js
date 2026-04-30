@@ -5,6 +5,20 @@ return new Element('button', {
 				"events":{
 				   "click":function(){
 				     console.log('hello world');
+				     
+				     profile=wizard.getData()["profile"]
+				     
+				     
+				     
+				     
+				     (new AjaxControlQuery(CoreAjaxUrlRoot, "register_user", {
+										'plugin': "ReferralManagement",
+										'profile': profile
+									})).addEvent('success', function() {
+										 wizard.close()
+									}).execute();
+									
+					  
 				   
 				   }
 				}
