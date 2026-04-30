@@ -30810,5 +30810,50 @@
             "contentTemplate": "email-onUserCreated-content.contentTemplate.html",
             "readAccess": "public"
         }
+    },
+    "widget.552": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "activate.profile.email.subject",
+            "target": "activate.profile.email.subject",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": null
+        }
+    },
+    "widget.553": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "activate.profile.email.body",
+            "target": "activate.profile.email.body",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": null
+        }
+    },
+    "widget.554": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "activityfeed.guest.profile.validating.text",
+            "target": "activityfeed.guest.profile.validating.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": null
+        }
     }
 }
