@@ -2135,16 +2135,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 240,
-                            "y": 190
+                            "x": 340,
+                            "y": 290
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 200,
-                                    "y": 403
+                                    "x": 300,
+                                    "y": 503
                                 }
                             },
                             {
@@ -2154,16 +2154,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 680,
-                                    "y": 210
+                                    "x": 780,
+                                    "y": 310
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 640,
-                                            "y": 375
+                                            "x": 740,
+                                            "y": 488
                                         }
                                     }
                                 ],
@@ -2180,7 +2180,7 @@
                                                 {
                                                     "type": "UIView",
                                                     "config": {
-                                                        "className": "",
+                                                        "className": "register-profile-form",
                                                         "elementType": "div",
                                                         "elementOptions": "{}",
                                                         "identifier": "",
@@ -2194,12 +2194,20 @@
                                                         "showDeleteButton": false,
                                                         "deleteItemScript": "defaultBehaviorFn()",
                                                         "initModuleScript": "",
-                                                        "formatModuleScript": "",
+                                                        "formatModuleScript": "loginForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.1.config.formatModuleScript.js",
                                                         "resolveItemScript": "return AppClient",
                                                         "filterModulesScript": "return list",
                                                         "itemButtonsScript": "return [];",
                                                         "insertAtTop": false,
                                                         "targetName": ""
+                                                    }
+                                                },
+                                                {
+                                                    "type": "WizardScriptElement",
+                                                    "config": {
+                                                        "name": "My Custom Script",
+                                                        "script": "loginForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.2.config.script.js",
+                                                        "description": "Info about my custom script"
                                                     }
                                                 }
                                             ]
@@ -2283,7 +2291,7 @@
                                                 "className": "register-text",
                                                 "elementType": "span",
                                                 "elementOptions": "{}",
-                                                "text": "<br\/><br\/><span style=\"text-align: left; font-weight: 100; display: block;    margin-top: 75px;\"><span style=\"font-size:20px; white-space:nowrap;\">\nMember of GCT3?<\/span>\n<br\/><br\/><\/span>",
+                                                "text": "<br\/><br\/><span style=\"text-align: left; font-weight: 100; display: block;    margin-top: 75px;\"><span style=\"font-size:20px; white-space:nowrap;\">\nMember of Treaty #3?<\/span>\n<br\/><br\/><\/span>",
                                                 "template": "",
                                                 "templateNamespace": "",
                                                 "templateVariablesScript": "",
@@ -9463,8 +9471,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": 200,
-                    "y": 315
+                    "x": 220,
+                    "y": 270
                 },
                 "children": [
                     "userProfileForm.metadata.children.0.json",
@@ -9475,16 +9483,16 @@
                             "userProfileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 420,
-                            "y": 186
+                            "x": 680,
+                            "y": 445
                         },
                         "children": [
                             "userProfileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 380,
-                                    "y": 499
+                                    "x": 640,
+                                    "y": 745
                                 }
                             }
                         ],
@@ -9512,7 +9520,7 @@
                                                 "attributeFields": [
                                                     "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
                                                 ],
-                                                "className": "no-text only-image",
+                                                "className": "no-text only-image profile-picture",
                                                 "label": "Profile picture",
                                                 "message": "add a description",
                                                 "lines": 3,
@@ -9531,10 +9539,34 @@
                                             }
                                         },
                                         {
-                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "type": "plugin.Attributes.WizardDescriptionAttribute",
                                             "config": {
                                                 "attributeFields": [
                                                     "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
+                                                ],
+                                                "className": "no-text only-doc community-letter",
+                                                "label": "Community Letters",
+                                                "message": "",
+                                                "lines": 3,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "showToolbars": true,
+                                                "showAudios": true,
+                                                "showVideos": true,
+                                                "showDocuments": true,
+                                                "showImages": true,
+                                                "showExpandInput": false,
+                                                "toolbarPosition": "bottom",
+                                                "textFormatScript": "",
+                                                "onRenderModuleFn": "",
+                                                "mediaIconTint": "rgb(100, 149, 237)"
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
                                                 ],
                                                 "className": "width-2",
                                                 "label": "First name",
@@ -9557,7 +9589,7 @@
                                             "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.attributeFields.0.json"
                                                 ],
                                                 "className": "width-2",
                                                 "label": "Last name",
@@ -9577,10 +9609,33 @@
                                             }
                                         },
                                         {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "label": "Email",
+                                                "message": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": true,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add more values",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "autocomplete": true,
+                                                "inputOptions": "{}",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": ""
+                                            }
+                                        },
+                                        {
                                             "type": "plugin.Attributes.WizardTagCloud",
                                             "config": {
                                                 "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.attributeFields.0.json"
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.7.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
                                                 "showLabel": false,
@@ -9592,79 +9647,31 @@
                                                 "selectedColor": "rgb(143, 188, 143)",
                                                 "shuffleTags": false,
                                                 "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
-                                                "getItemTagsScript": "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.getItemTagsScript.js",
-                                                "formatModule": "ProjectTeam.FormatUserCommunityTagCloud(module, item);\n"
-                                            }
-                                        },
-                                        {
-                                            "type": "plugin.Attributes.WizardDescriptionAttribute",
-                                            "config": {
-                                                "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
-                                                ],
-                                                "className": "no-text only-doc",
-                                                "label": "Community Letters",
-                                                "message": "",
-                                                "lines": 3,
-                                                "maxChars": 0,
-                                                "mandatory": false,
-                                                "showToolbars": true,
-                                                "showAudios": true,
-                                                "showVideos": true,
-                                                "showDocuments": true,
-                                                "showImages": true,
-                                                "showExpandInput": false,
-                                                "toolbarPosition": "bottom",
-                                                "textFormatScript": "",
-                                                "onRenderModuleFn": "",
-                                                "mediaIconTint": "rgb(100, 149, 237)"
+                                                "getItemTagsScript": "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.7.config.getItemTagsScript.js",
+                                                "formatModule": "ProjectTeam.FormatUserCommunityTagCloud(module, item);\nvar select = module.getElement().appendChild(new Element('select', {\n  \"className\":\"tag-cloud-dropdown\",\n  \"events\":{\n      \"change\":function(){\n         console.log('select value')\n         if(select.value && select.value!=''){\n            module.getCloud().incrementWord(select.value)\n            module.getCloud().selectWord(select.value)\n            select.value=''\n            select.options[0].innerHTML = \"change community\";\n         }\n      } \n   }\n}))\nselect.appendChild(new Element('option', {html:'choose community', value:''}))\nProjectTeam.GetAllCommunities().forEach(function(c){\n  select.appendChild(new Element('option', {html:c, value:c}))\n})\n\n         console.log('add drop down')\n\n\n"
                                             }
                                         },
                                         {
                                             "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.7.config.attributeFields.0.json"
+                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
                                                 ],
-                                                "className": "optional",
-                                                "label": "Phone ",
-                                                "message": "555 555-5555",
+                                                "className": "",
+                                                "label": "Other Community or Group",
+                                                "message": "ie organization or company",
                                                 "lines": 1,
                                                 "maxChars": 0,
-                                                "mandatory": false,
+                                                "mandatory": true,
                                                 "multiEntry": false,
                                                 "muliTemplate": "lines",
-                                                "multiMessage": "",
+                                                "multiMessage": "add more values",
                                                 "formatter": "none",
                                                 "iconTint": "rgb(100, 149, 237)",
                                                 "autocomplete": true,
-                                                "inputOptions": [],
+                                                "inputOptions": "{}",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": ""
-                                            }
-                                        },
-                                        {
-                                            "type": "plugin.Attributes.WizardDescriptionAttribute",
-                                            "config": {
-                                                "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.8.config.attributeFields.0.json"
-                                                ],
-                                                "className": "no-media optional",
-                                                "label": "Bio",
-                                                "message": "add a short bio",
-                                                "lines": 3,
-                                                "maxChars": 0,
-                                                "mandatory": false,
-                                                "showToolbars": true,
-                                                "showAudios": true,
-                                                "showVideos": true,
-                                                "showDocuments": true,
-                                                "showImages": true,
-                                                "showExpandInput": true,
-                                                "toolbarPosition": "bottom",
-                                                "textFormatScript": "",
-                                                "onRenderModuleFn": "",
-                                                "mediaIconTint": "rgb(100, 149, 237)"
                                             }
                                         },
                                         {
@@ -9698,10 +9705,10 @@
                                                 "attributeFields": [
                                                     "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.11.config.attributeFields.0.json"
                                                 ],
-                                                "className": "width-2",
-                                                "label": "Position",
-                                                "message": "",
-                                                "lines": 1,
+                                                "className": "",
+                                                "label": "Position \/ Department",
+                                                "message": "optional",
+                                                "lines": 2,
                                                 "maxChars": 0,
                                                 "mandatory": false,
                                                 "multiEntry": false,
@@ -9721,38 +9728,15 @@
                                                 "attributeFields": [
                                                     "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.12.config.attributeFields.0.json"
                                                 ],
-                                                "className": "width-2",
-                                                "label": "Department",
-                                                "message": "",
+                                                "className": "optional",
+                                                "label": "Phone ",
+                                                "message": "optional",
                                                 "lines": 1,
                                                 "maxChars": 0,
                                                 "mandatory": false,
                                                 "multiEntry": false,
                                                 "muliTemplate": "lines",
-                                                "multiMessage": "add more values",
-                                                "formatter": "none",
-                                                "iconTint": "rgb(100, 149, 237)",
-                                                "autocomplete": true,
-                                                "inputOptions": "{}",
-                                                "onRenderTextFieldScript": "",
-                                                "formatValueScript": ""
-                                            }
-                                        },
-                                        {
-                                            "type": "plugin.Attributes.WizardTextAttribute",
-                                            "config": {
-                                                "attributeFields": [
-                                                    "userProfileForm.metadata.children.1.builderMetadata.positions.content.modules.13.config.attributeFields.0.json"
-                                                ],
-                                                "className": "",
-                                                "label": "Address",
-                                                "message": "",
-                                                "lines": 1,
-                                                "maxChars": 0,
-                                                "mandatory": false,
-                                                "multiEntry": false,
-                                                "muliTemplate": "lines",
-                                                "multiMessage": "add more values",
+                                                "multiMessage": "",
                                                 "formatter": "none",
                                                 "iconTint": "rgb(100, 149, 237)",
                                                 "autocomplete": true,
@@ -11563,12 +11547,12 @@
             "metadata": {
                 "title": "userAttributes",
                 "_tableDiagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 321,
+                    "y": 274
                 },
                 "_diagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 321,
+                    "y": 274
                 },
                 "appliesTo": [
                     "user"
@@ -11887,8 +11871,8 @@
                             "trueLabel": "",
                             "falseLabel": "",
                             "useFieldIcon": false,
-                            "trueIcon": [],
-                            "falseIcon": []
+                            "trueIcon": false,
+                            "falseIcon": false
                         }
                     },
                     {
@@ -12467,6 +12451,50 @@
                         "was": "",
                         "title": "onlineStatus",
                         "label": "Online Status",
+                        "description": "",
+                        "icon": [],
+                        "color": "rgb(undefined, undefined, undefined)",
+                        "visibility": "public",
+                        "editability": "registered",
+                        "searchability": "public",
+                        "allowMultiple": false,
+                        "fieldType": "text",
+                        "fieldTextOptions": {
+                            "textType": "input",
+                            "inputOptions": {
+                                "buildAutocomplete": false,
+                                "requireModeration": false,
+                                "limitMaxChars": 0,
+                                "limitMaxWords": 0,
+                                "allowHtml": false,
+                                "allowMedia": true,
+                                "allowLinks": true
+                            },
+                            "listOptions": {
+                                "takeSugesstions": true,
+                                "buildTree": false,
+                                "iconize": false,
+                                "colorize": false
+                            }
+                        },
+                        "fieldNumberOptions": {
+                            "precision": 0,
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
+                        },
+                        "fieldBooleanOptions": {
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
+                        "was": "",
+                        "title": "otherCommunity",
+                        "label": "Other Community",
                         "description": "",
                         "icon": [],
                         "color": "rgb(undefined, undefined, undefined)",
