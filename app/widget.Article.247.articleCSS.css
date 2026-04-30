@@ -34,7 +34,7 @@ article>* {
 
 h2 {
     font-size: 50px;
-    color: white;
+    color: white !important;
     text-shadow: 0 0 20px black, 0 0 10px black, 0 0 3px black;
     font-weight: 400;
 }
