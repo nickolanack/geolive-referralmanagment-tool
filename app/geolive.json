@@ -2135,16 +2135,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 310,
-                            "y": 260
+                            "x": 320,
+                            "y": 270
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 270,
-                                    "y": 473
+                                    "x": 280,
+                                    "y": 483
                                 }
                             },
                             {
@@ -2154,16 +2154,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 750,
-                                    "y": 280
+                                    "x": 760,
+                                    "y": 290
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 710,
-                                            "y": 458
+                                            "x": 720,
+                                            "y": 468
                                         }
                                     }
                                 ],
@@ -2194,7 +2194,7 @@
                                                         "showDeleteButton": false,
                                                         "deleteItemScript": "defaultBehaviorFn()",
                                                         "initModuleScript": "",
-                                                        "formatModuleScript": "",
+                                                        "formatModuleScript": "loginForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.1.config.formatModuleScript.js",
                                                         "resolveItemScript": "return AppClient",
                                                         "filterModulesScript": "return list",
                                                         "itemButtonsScript": "return [];",
