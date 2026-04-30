@@ -685,6 +685,44 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 	}
 
+	protected function registerUser($json) {
+
+
+		if (key_exists('email', $json) && key_exists('token', $json)) {
+
+			if (filter_var($json->email, FILTER_VALIDATE_EMAIL)) {
+
+				return array(
+					'subscription'=>(new \ReferralManagement\User())->createProfileActivation($json)
+				);
+				
+			}
+
+			return false;
+
+		}
+
+
+		$clientToken = (GetPlugin('Links'))->createDataCode('registerProfileData', array(
+			'profileData' => $json,
+		));
+
+		Emit('onQueueProfileActivation', array(
+			'profileData' => $json,
+			'token' => $clientToken,
+		));
+
+		return array(
+			'token' => $clientToken,
+		);
+
+
+
+
+	}
+
+
+
 	protected function saveProposal($json) {
 		return $this->saveProject($json);
 	}
