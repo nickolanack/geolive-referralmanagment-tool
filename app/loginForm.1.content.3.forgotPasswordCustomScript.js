@@ -34,8 +34,8 @@ var LoginItem=new Class({
 application.getDisplayController().displayPopoverForm(
 				'forgotPasswordForm', 
 				new LoginItem(), 
-				application,
 				{
 				    template:"form"
-				}
+				},
+				function(wizard){}
 			);
