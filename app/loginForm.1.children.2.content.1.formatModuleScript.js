@@ -1,7 +1,7 @@
 var uiview=module
 
 
-uivew.getChildWizard(function(wizard) {
+uiview.getChildWizard(function(wizard) {
 				wizard.addEvent('valueChange', function() {
 					wizard.update();
 					var d = wizard.getData();
