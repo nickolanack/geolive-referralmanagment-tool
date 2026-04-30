@@ -1766,6 +1766,27 @@ select.tag-cloud-dropdown {
 
 
 
+.search-panel span.logout-toggle.login:before {
+    content: "Log in";
+    float: right;
+    padding-right: 60.5px;
+    line-height: 34px;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+.search-panel span.logout-toggle.login {
+ margin-left: 85px;
+}
+
+.search-panel span.logout-toggle.login:after{
+ content:"\0f2bd";
+ left: 9.5px;
+ top: 6.5px;
+}
+
+
+
 
 
 
