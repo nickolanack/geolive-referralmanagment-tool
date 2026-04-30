@@ -287,7 +287,12 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		(new \ReferralManagement\GuestProject())->activateProject($params);
 	}
 
-	protected function onTriggerEmailForGuestProposalReminder(){
+	protected function onActivateEmailForProfileRegistration($params){
+		(new \ReferralManagement\User())->requestProfile($params);
+	}
+
+
+	protected function onTriggerEmailForGuestProposalReminder($params){
 		(new \ReferralManagement\GuestProject())->checkProjectActivation($params);
 	}
 

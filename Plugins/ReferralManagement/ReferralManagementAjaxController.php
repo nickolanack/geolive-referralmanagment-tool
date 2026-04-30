@@ -708,21 +708,7 @@ class ReferralManagementAjaxController extends \core\AjaxController implements \
 
 		}
 
-
-		$clientToken = (GetPlugin('Links'))->createDataCode('registerProfileData', array(
-			'profileData' => $json,
-		));
-
-		Emit('onQueueProfileActivation', array(
-			'profileData' => $json,
-			'token' => $clientToken,
-		));
-
-		return array(
-			'token' => $clientToken,
-		);
-
-
+		return false;
 
 
 	}

@@ -531,7 +531,7 @@ class User {
 
 
 		return (new \core\LongTaskProgress())->executeActivity(
-			'Sending Email Validation',
+			'Sending Account Email Validation',
 			function ($longTaskProgress) use ($json) {
 
 
@@ -569,5 +569,53 @@ class User {
 
 
 	}
+
+
+
+
+	public function requestProfile($params){
+
+	return (new \core\LongTaskProgress())->executeActivity(
+			'Requesting Moderator Approval',
+			function ($longTaskProgress) use ($params) {
+
+		$clientToken = ($links = GetPlugin('Links'))->createLinkEventCode('onActivateEmailForProfileRegistration', array(
+					'validationData' => $params,
+					'subscription'=>$longTaskProgress->getSubscription()
+				));
+
+		
+			ScheduleEvent('onTriggerEmailForProfileRegistration', array(
+				'clientToken' =>$clientToken,
+				'validationData' => $params,
+				'subscription'=>$longTaskProgress->getSubscription()
+
+			), 5 );
+
+			// $clientLink = HtmlDocument()->website() . '/' . $links->actionUrlForToken($clientToken);
+
+			// 	$subject = (new \core\Template(
+			// 		'activate.profile.email.subject', "Verify your email address to create your profile"))
+			// 		->render(GetClient()->getUserMetadata());
+			// 	$body = (new \core\Template(
+			// 		'activate.profile.email.body', "Its almost done, just click the link to continue: <a href=\"{{link}}\" >Click Here</a>"))
+			// 		->render(array_merge(GetClient()->getUserMetadata(), array("link" => $clientLink)));
+
+			// 	GetPlugin('Email')->getMailer()
+			// 		->mail($subject, $body)
+			// 		->to($json->email)
+			// 		->send();
+
+			// $this->getPlugin()->notifier()->onProfilePendingValidation($params);
+
+		})->getSubscription();
+
+
+		
+
+
+	}
+
+
 
 }
