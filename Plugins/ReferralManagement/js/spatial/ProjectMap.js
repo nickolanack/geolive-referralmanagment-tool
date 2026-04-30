@@ -168,14 +168,14 @@ var ProjectMap = (function() {
 				markerSize:markerSize
 			})
 		},
-		dropMarkerSubformHelper: function(uivew, item) {
+		dropMarkerSubformHelper: function(uiview, item) {
 
 
-			uivew.getChildWizard(function(wizard) {
+			uiview.getChildWizard(function(wizard) {
 				wizard.addEvent('valueChange', function() {
 					wizard.update();
 					var d = wizard.getData();
-					var parentWizard = uivew.getWizard();
+					var parentWizard = uiview.getWizard();
 					var p = parentWizard.getData();
 					console.log(d);
 
