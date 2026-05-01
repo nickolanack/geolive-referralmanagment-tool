@@ -132,7 +132,7 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 		if ($config->getParameter('autoApproveMobileCommunity') || $config->getParameter('autoApproveMobileCommunityOnce')) {
 
 			GetPlugin('Attributes');
-			(new attributes\Record('userAttributes'))->setValues($user, 'user', array(
+			(new \attributes\Record('userAttributes'))->setValues($user, 'user', array(
 				"community-member" => true,
 				"community" => (new \ReferralManagement\User())->communityCollective(),
 			));

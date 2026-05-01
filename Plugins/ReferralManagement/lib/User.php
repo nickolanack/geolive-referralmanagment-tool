@@ -670,6 +670,16 @@ class User
 
 		$userId=GetClient()->createAccount($userDetails->firstName, $userDetails->email, $userDetails->email, md5(time().rand(10000, 99999)));
 
+		GetPlugin('Attributes');
+		(new \attributes\Record('userAttributes'))->setValues($userId, 'user', array(
+			"community-member" => true,
+			"firstName" => $userDetails->firstName,
+			"lastName" => $userDetails->lastName,
+			"profileIcon" => $userDetails->profileIcon,
+			"role"=> $userDetails->profileIcon,
+			"community"=> $userDetails->community
+		));
+
 
 		$clientToken = $links->createLinkEventCode('onActivateMagicEmailLink', $userId);
 		$linkUrl = HtmlDocument()->website() . '/' . GetClient()->urlForView("magiclink", array("token" => $clientToken));
