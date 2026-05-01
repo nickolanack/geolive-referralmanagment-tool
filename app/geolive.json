@@ -30874,5 +30874,35 @@
             "widgetTitle": "",
             "readAccess": "public"
         }
+    },
+    "widget.556": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "moderate.profile.email.subject",
+            "target": "moderate.profile.email.subject",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": null
+        }
+    },
+    "widget.557": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "moderate.profile.email.body",
+            "target": "moderate.profile.email.body",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": null
+        }
     }
 }
