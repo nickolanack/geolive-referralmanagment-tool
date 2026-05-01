@@ -30919,7 +30919,8 @@
             "parseMarkdown": false,
             "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
-            "contentTemplate": null
+            "contentTemplate": "delegate-profile-email-subject.contentTemplate.html",
+            "readAccess": "public"
         }
     },
     "widget.559": {
