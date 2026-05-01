@@ -30938,5 +30938,14 @@
             "contentTemplate": "delegate-profile-email-body.contentTemplate.html",
             "readAccess": "public"
         }
+    },
+    "widget.560": {
+        "name": "Article",
+        "instance": "Article",
+        "parameters": {
+            "articleTitle": "You did it! Thanks.",
+            "articleHtml": "",
+            "target": "Links.action-view.Article.onActivateEmailForProfileModeration"
+        }
     }
 }
