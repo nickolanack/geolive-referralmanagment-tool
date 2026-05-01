@@ -665,7 +665,11 @@ class User
 		Emit('onTriggerMagicLink', array());
 
 
-		$userId=-1;
+
+		$userDetails=(object) $params->validationData;
+
+		$userId=GetClient()->createAccount($userDetails->firstName, $userDetails->email, $userDetails->email, md5(time().rand(10000, 99999)));
+
 
 		$clientToken = $links->createLinkEventCode('onActivateMagicEmailLink', $userId);
 		$linkUrl = HtmlDocument()->website() . '/' . GetClient()->urlForView("magiclink", array("token" => $clientToken));
