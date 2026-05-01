@@ -594,18 +594,20 @@ class User
 
 		
 
-			$clientToken = ($links = GetPlugin('Links'))->createLinkEventCode('onActivateEmailForProfileModeration', array(
-				'validationData' => $params
-			));
-
-
-			$clientLink = HtmlDocument()->website() . '/' . $links->actionUrlForToken($clientToken);	
+			
 			
 			
 			$moderators=['nickblackwell82+delegate@gmail.com'];
 			foreach ($moderators as $moderatorEmail) {
 				
 			
+				$clientToken = ($links = GetPlugin('Links'))->createLinkEventCode('onActivateEmailForProfileModeration', array(
+					'validationData' => $params->validationData,
+					'moderatorEmail'=>$moderatorEmail
+				));
+
+
+				$clientLink = HtmlDocument()->website() . '/' . $links->actionUrlForToken($clientToken);	
 
 
 				$profileRequestData=array_merge(GetClient()->getUserMetadata(), array('params'=>$params));
