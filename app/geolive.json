@@ -30944,7 +30944,7 @@
         "instance": "Article",
         "parameters": {
             "articleTitle": "Account Created!",
-            "articleHtml": "",
+            "articleHtml": "widget.Article.560.articleHtml.html",
             "target": "Links.action-view.Article.onActivateEmailForProfileModeration",
             "className": "",
             "articleCSS": "widget.Article.560.articleCSS.css",
@@ -31016,6 +31016,38 @@
             "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": null
+        }
+    },
+    "widget.565": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "created.profile.email.subject",
+            "target": "created.profile.email.subject",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "created-profile-email-subject.contentTemplate.html",
+            "readAccess": "public"
+        }
+    },
+    "widget.566": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "created.profile.email.body",
+            "target": "created.profile.email.body",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "created-profile-email-body.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }
