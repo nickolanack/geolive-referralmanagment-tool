@@ -592,24 +592,22 @@ class User
 	public function requestProfile($params)
 	{
 
-		return (new \core\LongTaskProgress())->executeActivity(
-			'Requesting Moderator Approval',
-			function ($longTaskProgress) use ($params) {
+		
 
-				$clientToken = ($links = GetPlugin('Links'))->createLinkEventCode('onActivateEmailForProfileModeration', array(
-					'validationData' => $params,
-					'subscription' => $longTaskProgress->getSubscription()
-				));
+			$clientToken = ($links = GetPlugin('Links'))->createLinkEventCode('onActivateEmailForProfileModeration', array(
+				'validationData' => $params
+			));
 
 
-				ScheduleEvent('onTriggerEmailForProfileModeration', array(
-					'clientToken' => $clientToken,
-					'validationData' => $params,
-					'subscription' => $longTaskProgress->getSubscription()
+			$clientLink = HtmlDocument()->website() . '/' . $links->actionUrlForToken($clientToken);	
+			
+			
+			$moderators=['nickblackwell82+delegate@gmail.com'];
+			foreach ($moderators as $moderatorEmail) {
+				
+			
 
-				), 5);
 
-				$clientLink = HtmlDocument()->website() . '/' . $links->actionUrlForToken($clientToken);				
 				$profileRequestData=array_merge(GetClient()->getUserMetadata(), array('params'=>$params));
 
 				$subject = (new \core\Template(
@@ -625,7 +623,7 @@ class User
 
 				GetPlugin('Email')->getMailer()
 					->mail($subject, $body)
-					->to('nickblackwell82+delegate@gmail.com')
+					->to($moderatorEmail)
 					->send();
 
 
@@ -643,11 +641,50 @@ class User
 
 				GetPlugin('Email')->getMailer()
 					->mail($subject, $body)
-					->to('nickblackwell82+moderator@gmail.com')
+					->to($moderatorEmail)
 					->send();
 
-				$this->getPlugin()->notifier()->onProfilePendingValidation($params);
 			}
-		)->getSubscription();
+
+			$this->getPlugin()->notifier()->onProfilePendingModeration($params->validationData);
+		
+	}
+
+
+
+
+	public function activateProfile($params)
+	{
+
+		
+
+		
+		$moderators=['nickblackwell82+delegate@gmail.com'];
+		foreach ($moderators as $moderatorEmail) {
+
+			
+			$profileRequestData=array_merge(GetClient()->getUserMetadata(), array('params'=>$params));
+
+			$subject = (new \core\Template(
+				'approved.profile.email.subject',
+				"Approved New User Account"
+			))
+				->render($profileRequestData);
+			$body = (new \core\Template(
+				'approved.profile.email.body',
+				"Its almost done, just click the link to continue: <a href=\"{{link}}\" >Click Here</a>"
+			))
+				->render($profileRequestData);
+
+			GetPlugin('Email')->getMailer()
+				->mail($subject, $body)
+				->to($moderatorEmail)
+				->send();
+
+		}
+
+		$this->getPlugin()->notifier()->onProfileApproval($params->validationData);
+	
+		
 	}
 }
