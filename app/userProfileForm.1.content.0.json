@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "return ReferralManagementDashboard.createProfileButtons(item);",
+        "script": "return ReferralManagementDashboard.createProfileButtons(item, wizard);",
         "description": "Info about my custom script"
     }
 }
