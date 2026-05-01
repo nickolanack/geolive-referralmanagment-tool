@@ -30903,7 +30903,8 @@
             "parseMarkdown": false,
             "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
-            "contentTemplate": null
+            "contentTemplate": "moderate-profile-email-body.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }
