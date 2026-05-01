@@ -660,12 +660,48 @@ class User
 
 		
 
+		$links = GetPlugin('Links');
+
+		Emit('onTriggerMagicLink', array());
+
+
+		$userId=-1;
+
+		$clientToken = $links->createLinkEventCode('onActivateMagicEmailLink', $userId);
+		$linkUrl = HtmlDocument()->website() . '/' . GetClient()->urlForView("magiclink", array("token" => $clientToken));
+
+		if (($magicLinkUrl = GetClient()->getParameter("magicLinkUrl", "")) && (!empty($magicLinkUrl))) {
+			$linkUrl = HtmlDocument()->website() . '/' . $magicLinkUrl . "?token=" . $clientToken;
+		}
+
 		
+		
+		$profileRequestData=array_merge(GetClient()->getUserMetadata(), array('params'=>$params, 'link'=>$linkUrl));
+
+
+		$subject = (new \core\Template(
+				'created.profile.email.subject',
+				"Your Account Is Ready"
+			))
+				->render($profileRequestData);
+			$body = (new \core\Template(
+				'created.profile.email.body',
+				"Your new account has been created: <a href=\"{{link}}\" >Click Here To Log In</a>"
+			))
+				->render($profileRequestData);
+
+			GetPlugin('Email')->getMailer()
+				->mail($subject, $body)
+				->to($params->validatationData->email)
+				->send();
+
+
+
 		$moderators=['nickblackwell82+delegate@gmail.com'];
 		foreach ($moderators as $moderatorEmail) {
 
 			
-			$profileRequestData=array_merge(GetClient()->getUserMetadata(), array('params'=>$params));
+			
 
 			$subject = (new \core\Template(
 				'approved.profile.email.subject',
