@@ -680,20 +680,20 @@ class User
 
 
 		$subject = (new \core\Template(
-				'created.profile.email.subject',
-				"Your Account Is Ready"
-			))
-				->render($profileRequestData);
-			$body = (new \core\Template(
-				'created.profile.email.body',
-				"Your new account has been created: <a href=\"{{link}}\" >Click Here To Log In</a>"
-			))
-				->render($profileRequestData);
+			'created.profile.email.subject',
+			"Your Account Is Ready"
+		))
+			->render($profileRequestData);
+		$body = (new \core\Template(
+			'created.profile.email.body',
+			"Your new account has been created: <a href=\"{{link}}\" >Click Here To Log In</a>"
+		))
+			->render($profileRequestData);
 
-			GetPlugin('Email')->getMailer()
-				->mail($subject, $body)
-				->to($params->validatationData->email)
-				->send();
+		GetPlugin('Email')->getMailer()
+			->mail($subject, $body)
+			->to('nickblackwell82@gmail.com')#->to($moderatorEmail$params->validatationData->email)
+			->send();
 
 
 
