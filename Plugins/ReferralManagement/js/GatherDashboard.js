@@ -417,7 +417,7 @@ var GatherDashboard = (function() {
 				}
 			});
 		},
-		createProfileButtons: function(item) {
+		createProfileButtons: function(item, uiwizard) {
 			var me = this;
 
 			var items = [];
@@ -449,7 +449,9 @@ var GatherDashboard = (function() {
 										'plugin': "Users",
 										'user': item.getId()
 									})).addEvent('success', function() {
-
+										if(uiwizard){
+											uiwizard.close()
+										}
 									}).execute();
 
 								};

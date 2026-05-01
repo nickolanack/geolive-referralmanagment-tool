@@ -676,7 +676,7 @@ class User
 			"firstName" => $userDetails->firstName,
 			"lastName" => $userDetails->lastName,
 			"profileIcon" => $userDetails->profileIcon,
-			"role"=> $userDetails->profileIcon,
+			"role"=> $userDetails->role,
 			"community"=> $userDetails->community
 		));
 
