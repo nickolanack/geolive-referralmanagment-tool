@@ -592,21 +592,21 @@ class User {
 
 			), 5 );
 
-			// $clientLink = HtmlDocument()->website() . '/' . $links->actionUrlForToken($clientToken);
+			$clientLink = HtmlDocument()->website() . '/' . $links->actionUrlForToken($clientToken);
 
-			// 	$subject = (new \core\Template(
-			// 		'activate.profile.email.subject', "Verify your email address to create your profile"))
-			// 		->render(GetClient()->getUserMetadata());
-			// 	$body = (new \core\Template(
-			// 		'activate.profile.email.body', "Its almost done, just click the link to continue: <a href=\"{{link}}\" >Click Here</a>"))
-			// 		->render(array_merge(GetClient()->getUserMetadata(), array("link" => $clientLink)));
+				$subject = (new \core\Template(
+					'moderate.profile.email.subject', "Approve New User Account"))
+					->render(GetClient()->getUserMetadata());
+				$body = (new \core\Template(
+					'moderate.profile.email.body', "Its almost done, just click the link to continue: <a href=\"{{link}}\" >Click Here</a>"))
+					->render(array_merge(GetClient()->getUserMetadata(), array("link" => $clientLink)));
 
-			// 	GetPlugin('Email')->getMailer()
-			// 		->mail($subject, $body)
-			// 		->to($json->email)
-			// 		->send();
+				GetPlugin('Email')->getMailer()
+					->mail($subject, $body)
+					->to('nickblackwell82+moderator@gmail.com')
+					->send();
 
-			// $this->getPlugin()->notifier()->onProfilePendingValidation($params);
+			$this->getPlugin()->notifier()->onProfilePendingValidation($params);
 
 		})->getSubscription();
 

@@ -140,6 +140,26 @@ class Notifications {
 	}
 
 
+	public function onProfilePendingModeration($json){
+
+		$this->postEventFeeds('guest.profile.moderating', array(
+			"items" => array(
+				array(
+					"type" => "guest",
+					"id" => 0,
+					"email"=>$json->email
+				),
+				array(
+					'type'=>'token',
+					'id'=>$json->token
+				)
+
+			),$json)
+		);
+
+	}
+
+
 	public function onGuestProposal($projectId, $params) {
 
 		$this->postEventFeeds('guest.proposal.validated', array(
