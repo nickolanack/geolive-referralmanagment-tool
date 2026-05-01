@@ -30900,7 +30900,7 @@
             "comments": "",
             "formatVariablesScript": "return $variables;",
             "convertStylesToInline": false,
-            "parseMarkdown": false,
+            "parseMarkdown": true,
             "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
             "contentTemplate": "moderate-profile-email-body.contentTemplate.html",
