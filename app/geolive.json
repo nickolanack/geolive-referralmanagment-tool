@@ -31017,5 +31017,35 @@
             "saveTemplateAsData": false,
             "contentTemplate": null
         }
+    },
+    "widget.565": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "created.profile.email.subject",
+            "target": "created.profile.email.subject",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": null
+        }
+    },
+    "widget.566": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "created.profile.email.body",
+            "target": "created.profile.email.body",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": null
+        }
     }
 }
