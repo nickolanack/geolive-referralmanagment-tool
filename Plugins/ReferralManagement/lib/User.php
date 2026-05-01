@@ -609,19 +609,19 @@ class User
 
 				), 5);
 
-				$clientLink = HtmlDocument()->website() . '/' . $links->actionUrlForToken($clientToken);
-
+				$clientLink = HtmlDocument()->website() . '/' . $links->actionUrlForToken($clientToken);				
+				$profileRequestData=array_merge(GetClient()->getUserMetadata(), array('params'=>$params));
 
 				$subject = (new \core\Template(
 					'delegate.profile.email.subject',
 					"Please review and approve the following member for geoportal access"
 				))
-					->render(GetClient()->getUserMetadata());
+					->render($profileRequestData);
 				$body = (new \core\Template(
 					'delegate.profile.email.body',
 					"Its almost done, just click the link to continue: <a href=\"{{link}}\" >Click Here</a>"
 				))
-					->render(array_merge(GetClient()->getUserMetadata(), array("link" => $clientLink)));
+					->render(array_merge($profileRequestData, array("link" => $clientLink)));
 
 				GetPlugin('Email')->getMailer()
 					->mail($subject, $body)
@@ -634,12 +634,12 @@ class User
 					'moderate.profile.email.subject',
 					"Approve New User Account"
 				))
-					->render(GetClient()->getUserMetadata());
+					->render($profileRequestData);
 				$body = (new \core\Template(
 					'moderate.profile.email.body',
 					"Its almost done, just click the link to continue: <a href=\"{{link}}\" >Click Here</a>"
 				))
-					->render(array_merge(GetClient()->getUserMetadata(), array("link" => $clientLink)));
+					->render(array_merge($profileRequestData, array("link" => $clientLink)));
 
 				GetPlugin('Email')->getMailer()
 					->mail($subject, $body)
