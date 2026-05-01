@@ -1,6 +1,12 @@
-You can approve or deny user: 
+ # Approve or deny user account request: 
+ 
+ ## {{params.validationData.firstName}} {{params.validationData.lastName}}
+ 
+  - Email: ***{{params.validationData.email}}***
+  - Community: ***{{params.validationData.community}}***
+  
 
-    <a href="{{link}}&approve=1" >Click Here To Approve</a>
+
+    [Click Here To Approve]({{link|raw}}&approve=1)
     
-    
-    <a href="{{link}}&reject=1" >Click Here To Reject</a>
+    [Click Here To Reject]({{link|raw}}&reject=1)
