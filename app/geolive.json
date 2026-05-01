@@ -30887,7 +30887,8 @@
             "parseMarkdown": false,
             "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
-            "contentTemplate": null
+            "contentTemplate": "moderate-profile-email-subject.contentTemplate.html",
+            "readAccess": "public"
         }
     },
     "widget.557": {
@@ -30902,7 +30903,40 @@
             "parseMarkdown": false,
             "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
-            "contentTemplate": null
+            "contentTemplate": "moderate-profile-email-body.contentTemplate.html",
+            "readAccess": "public"
+        }
+    },
+    "widget.558": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "delegate.profile.email.subject",
+            "target": "delegate.profile.email.subject",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "delegate-profile-email-subject.contentTemplate.html",
+            "readAccess": "public"
+        }
+    },
+    "widget.559": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "delegate.profile.email.body",
+            "target": "delegate.profile.email.body",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "delegate-profile-email-body.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }
