@@ -31046,7 +31046,8 @@
             "parseMarkdown": false,
             "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
-            "contentTemplate": null
+            "contentTemplate": "created-profile-email-body.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }
