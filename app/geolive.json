@@ -30855,7 +30855,8 @@
             "parseMarkdown": false,
             "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
-            "contentTemplate": null
+            "contentTemplate": "activityfeed-guest-profile-validating-text.contentTemplate.html",
+            "readAccess": "public"
         }
     },
     "widget.555": {
@@ -30968,7 +30969,8 @@
             "parseMarkdown": false,
             "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
-            "contentTemplate": null
+            "contentTemplate": "activityfeed-guest-profile-moderating-text.contentTemplate.html",
+            "readAccess": "public"
         }
     },
     "widget.562": {
@@ -31015,7 +31017,8 @@
             "parseMarkdown": false,
             "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
-            "contentTemplate": null
+            "contentTemplate": "User account has been approved",
+            "readAccess": "public"
         }
     },
     "widget.565": {
