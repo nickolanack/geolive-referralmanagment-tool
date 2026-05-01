@@ -2,25 +2,28 @@
 
 namespace ReferralManagement;
 
-class User {
+class User
+{
 
 	private static $_cachedUserAttribs = array();
 
 	private static $_communityConfig = null;
 	private static $_dashboardConfig = null;
 
-	protected function getPlugin() {
+	protected function getPlugin()
+	{
 		return GetPlugin('ReferralManagement');
 	}
 
-	public function clearCache() {
+	public function clearCache()
+	{
 
 		self::$_cachedUserAttribs = array();
 		return $this;
-
 	}
 
-	public function getMetadata($userId = -1) {
+	public function getMetadata($userId = -1)
+	{
 
 		$metadata = null;
 
@@ -45,7 +48,8 @@ class User {
 		}
 
 		GetPlugin('Attributes');
-		$this->_withUserAttributes($userId,
+		$this->_withUserAttributes(
+			$userId,
 			function ($attributes) use (&$metadata, $userId) {
 
 				$communities = $this->listCommunities();
@@ -54,7 +58,6 @@ class User {
 					$c = strtolower($c);
 					$c = explode('|', $c);
 					return array_shift($c);
-
 				}, $communities);
 
 				$metadata['community'] = 'none';
@@ -66,7 +69,6 @@ class User {
 				if (in_array($uc, $communitiesComparison)) {
 					$i = array_search($uc, $communitiesComparison);
 					$metadata['community'] = $communities[$i];;
-
 				} else {
 					if (is_string($attributes['community'])) {
 						$metadata['_community'] = $attributes['community'];
@@ -121,21 +123,24 @@ class User {
 				// 	$metadata['online-status__']='invisible';
 				// }
 
-			});
+			}
+		);
 
 		return $metadata;
-
 	}
 
-	protected function getRolesUserCanEdit($userId = -1) {
+	protected function getRolesUserCanEdit($userId = -1)
+	{
 		return (new \ReferralManagement\UserRoles())->getRolesUserCanEdit($userId);
 	}
 
-	protected function getUserRoles($userId = -1) {
+	protected function getUserRoles($userId = -1)
+	{
 		return (new \ReferralManagement\UserRoles())->getUsersRoles($userId);
 	}
 
-	public function getUsersAvatar($userId = -1, $default = null) {
+	public function getUsersAvatar($userId = -1, $default = null)
+	{
 
 		if ($userId < 1) {
 			$userId = GetClient()->getUserId();
@@ -150,14 +155,15 @@ class User {
 			return $default;
 		}
 		return UrlFrom($this->getDashboardConfig()->getParameter('defaultUserImage')[0]);
-
 	}
 
-	public function getTeams($userId = -1) {
+	public function getTeams($userId = -1)
+	{
 		return $this->getCommunities($userId);
 	}
 
-	public function getCommunities($userId = -1) {
+	public function getCommunities($userId = -1)
+	{
 
 		if ($userId < 1) {
 			$userId = GetClient()->getUserId();
@@ -172,12 +178,14 @@ class User {
 		return $communities;
 	}
 
-	protected function canCreateCommunityContent($userId = -1) {
+	protected function canCreateCommunityContent($userId = -1)
+	{
 
 		return $this->getUserRoleLabel($userId) !== 'none';
 	}
 
-	protected function getUserRoleLabel($userId = -1) {
+	protected function getUserRoleLabel($userId = -1)
+	{
 
 		if ($this->getDashboardConfig()->getParameter('allowUnappovedMobileSubmissions') === true) {
 			return true;
@@ -186,28 +194,33 @@ class User {
 		return (new \ReferralManagement\UserRoles())->getUsersRoleLabel($userId);
 	}
 
-	public function listTeams() {
+	public function listTeams()
+	{
 		return $this->listCommunities();
 	}
-	public function listCommunities() {
+	public function listCommunities()
+	{
 		return array_merge(array($this->communityCollective()), $this->listTerritories());
 	}
 
-	protected function getCommunityConfig() {
+	protected function getCommunityConfig()
+	{
 		if (!self::$_communityConfig) {
 			self::$_communityConfig = GetWidget('communityConfiguration');
 		}
 		return self::$_communityConfig;
 	}
 
-	protected function getDashboardConfig() {
+	protected function getDashboardConfig()
+	{
 		if (!self::$_dashboardConfig) {
 			self::$_dashboardConfig = GetWidget('dashboardConfig');
 		}
 		return self::$_dashboardConfig;
 	}
 
-	public function listTerritories() {
+	public function listTerritories()
+	{
 
 
 		return GetWidget('organizationalUnits')->getConfigurationValue('groups');
@@ -218,7 +231,8 @@ class User {
 		// }, $communities);
 	}
 
-	public function listDefaultTerritories() {
+	public function listDefaultTerritories()
+	{
 		$communities = $this->getCommunityConfig()->getParameter("communities");
 		return array_map(function ($community) {
 			return $community;
@@ -226,7 +240,8 @@ class User {
 	}
 
 
-	public function communityCollective() {
+	public function communityCollective()
+	{
 
 		$collective = $this->getCommunityConfig()->getParameter("collective");
 
@@ -238,16 +253,19 @@ class User {
 		return $collective;
 	}
 
-	protected function _withUserAttributes($userId, $callbackFn) {
+	protected function _withUserAttributes($userId, $callbackFn)
+	{
 		$callbackFn($this->_getUserAttributes($userId));
 		//$this->cachedUserAttribs = null;
 	}
 
-	protected function getUserRoleIcon($userId = -1) {
+	protected function getUserRoleIcon($userId = -1)
+	{
 		return (new \ReferralManagement\UserRoles())->getUserRoleIcon($userId);
 	}
 
-	protected function getUsersName($userId = -1, $default = null) {
+	protected function getUsersName($userId = -1, $default = null)
+	{
 
 		if ($userId < 1) {
 			$userId = GetClient()->getUserId();
@@ -264,10 +282,10 @@ class User {
 		}
 
 		return GetClient()->getRealName();
-
 	}
 
-	protected function getUsersBio($userId = -1, $default = null) {
+	protected function getUsersBio($userId = -1, $default = null)
+	{
 
 		if ($userId < 1) {
 			$userId = GetClient()->getUserId();
@@ -284,10 +302,10 @@ class User {
 		}
 
 		return '';
-
 	}
 
-	public function setUserStatus($status) {
+	public function setUserStatus($status)
+	{
 
 		$validModes = array('auto', 'invisible');
 
@@ -304,11 +322,11 @@ class User {
 		$this->getPlugin()->cache()->needsUserListUpdate();
 
 		return $this;
-
 	}
 
 
-	public function canEditUsersRole($userId){
+	public function canEditUsersRole($userId)
+	{
 
 
 
@@ -325,27 +343,25 @@ class User {
 			if (empty($canSetList)) {
 				return false;
 			}
-			
+
 			$canSetList[] = "none";
 
-			$intersection=array_intersect($usersRoles, $canSetList);
+			$intersection = array_intersect($usersRoles, $canSetList);
 
 			if (empty($intersection) && !empty($usersRoles)) {
 
 				return false;
 			}
-
-			
 		}
 
 
 
 
 		return true;
-
 	}
 
-	public function setUserRole($role, $userId = -1) {
+	public function setUserRole($role, $userId = -1)
+	{
 
 		if ($userId < 1) {
 			$userId = GetClient()->getUserId();
@@ -370,7 +386,6 @@ class User {
 			if (empty(array_intersect($usersRoles, $canSetList)) && !empty($usersRoles)) {
 				throw new \Exception('Target user: ' . json_encode($usersRoles) . ' is not in role that is editable by you: ' . json_encode($canSetList));
 			}
-
 		}
 
 		$values = array();
@@ -382,7 +397,6 @@ class User {
 			}
 
 			$values[$field] = false;
-
 		}
 
 		$values['reviewed'] = true;
@@ -402,10 +416,10 @@ class User {
 		$this->getPlugin()->cache()->needsUserListUpdate();
 
 		return $update;
-
 	}
 
-	public function getUsersOnline() {
+	public function getUsersOnline()
+	{
 
 		$users = $this->getPlugin()->getClientsUserList();
 
@@ -422,15 +436,14 @@ class User {
 		return array_map(function ($onlineResult) use ($users) {
 
 
-			foreach($users as $user){
-				if(intval($user->id)==intval($onlineResult->id))
-				{
-					if($user->{'online-status'}==='invisible'){
-						
+			foreach ($users as $user) {
+				if (intval($user->id) == intval($onlineResult->id)) {
+					if ($user->{'online-status'} === 'invisible') {
+
 						/**
 						 * force online to false for users who are set to invisible 
 						 */
-						$onlineResult->online=false;
+						$onlineResult->online = false;
 					}
 
 					break;
@@ -439,16 +452,16 @@ class User {
 
 			unset($onlineResult->_channel);
 			return $onlineResult;
-
 		}, $results);
-
 	}
 
-	public function listUsers() {
+	public function listUsers()
+	{
 		return $this->getPlugin()->getClientsUserList();
 	}
 
-	protected function getUsersLastName($userId = -1, $default = null) {
+	protected function getUsersLastName($userId = -1, $default = null)
+	{
 
 		if ($userId < 1) {
 			$userId = GetClient()->getUserId();
@@ -465,10 +478,10 @@ class User {
 		}
 
 		return '';
-
 	}
 
-	protected function getUsersNumber($userId = -1, $default = null) {
+	protected function getUsersNumber($userId = -1, $default = null)
+	{
 
 		if ($userId < 1) {
 			$userId = GetClient()->getUserId();
@@ -484,10 +497,10 @@ class User {
 		}
 
 		return '';
-
 	}
 
-	public function getEmail($userId = -1, $default = null) {
+	public function getEmail($userId = -1, $default = null)
+	{
 
 		if ($userId < 1) {
 			$userId = GetClient()->getUserId();
@@ -505,11 +518,13 @@ class User {
 		return GetClient()->userMetadataFor($userId)['email'];
 	}
 
-	public function getAttributes($userId) {
+	public function getAttributes($userId)
+	{
 		return $this->_getUserAttributes($userId);
 	}
 
-	protected function _getUserAttributes($userId) {
+	protected function _getUserAttributes($userId)
+	{
 
 		if (!isset(self::$_cachedUserAttribs[$userId])) {
 
@@ -517,16 +532,15 @@ class User {
 
 			GetPlugin('Attributes');
 			self::$_cachedUserAttribs[$userId] = (new \attributes\Record('userAttributes'))->getValues($userId, 'user');
-
 		}
 
 		return self::$_cachedUserAttribs[$userId];
-
 	}
 
 
 
-	public function createProfileActivation($json){
+	public function createProfileActivation($json)
+	{
 
 
 
@@ -537,25 +551,29 @@ class User {
 
 				$clientToken = ($links = GetPlugin('Links'))->createLinkEventCode('onActivateEmailForProfileRegistration', array(
 					'validationData' => $json,
-					'subscription'=>$longTaskProgress->getSubscription()
+					'subscription' => $longTaskProgress->getSubscription()
 				));
 
 				ScheduleEvent('onTriggerEmailForProfileRegistration', array(
-					'clientToken' =>$clientToken,
+					'clientToken' => $clientToken,
 					'validationData' => $json,
-					'subscription'=>$longTaskProgress->getSubscription()
+					'subscription' => $longTaskProgress->getSubscription()
 
-				), 60 );
+				), 60);
 
 
 
 				$clientLink = HtmlDocument()->website() . '/' . $links->actionUrlForToken($clientToken);
 
 				$subject = (new \core\Template(
-					'activate.profile.email.subject', "Verify your email address to create your profile"))
+					'activate.profile.email.subject',
+					"Verify your email address to create your profile"
+				))
 					->render(GetClient()->getUserMetadata());
 				$body = (new \core\Template(
-					'activate.profile.email.body', "Its almost done, just click the link to continue: <a href=\"{{link}}\" >Click Here</a>"))
+					'activate.profile.email.body',
+					"Its almost done, just click the link to continue: <a href=\"{{link}}\" >Click Here</a>"
+				))
 					->render(array_merge(GetClient()->getUserMetadata(), array("link" => $clientLink)));
 
 				GetPlugin('Email')->getMailer()
@@ -563,42 +581,64 @@ class User {
 					->to($json->email)
 					->send();
 
-			$this->getPlugin()->notifier()->onProfilePendingValidation($json);
-
-		})->getSubscription();
-
-
+				$this->getPlugin()->notifier()->onProfilePendingValidation($json);
+			}
+		)->getSubscription();
 	}
 
 
 
 
-	public function requestProfile($params){
+	public function requestProfile($params)
+	{
 
-	return (new \core\LongTaskProgress())->executeActivity(
+		return (new \core\LongTaskProgress())->executeActivity(
 			'Requesting Moderator Approval',
 			function ($longTaskProgress) use ($params) {
 
-		$clientToken = ($links = GetPlugin('Links'))->createLinkEventCode('onActivateEmailForProfileRegistration', array(
+				$clientToken = ($links = GetPlugin('Links'))->createLinkEventCode('onActivateEmailForProfileModeration', array(
 					'validationData' => $params,
-					'subscription'=>$longTaskProgress->getSubscription()
+					'subscription' => $longTaskProgress->getSubscription()
 				));
 
-		
-			ScheduleEvent('onTriggerEmailForProfileRegistration', array(
-				'clientToken' =>$clientToken,
-				'validationData' => $params,
-				'subscription'=>$longTaskProgress->getSubscription()
 
-			), 5 );
+				ScheduleEvent('onTriggerEmailForProfileModeration', array(
+					'clientToken' => $clientToken,
+					'validationData' => $params,
+					'subscription' => $longTaskProgress->getSubscription()
 
-			$clientLink = HtmlDocument()->website() . '/' . $links->actionUrlForToken($clientToken);
+				), 5);
+
+				$clientLink = HtmlDocument()->website() . '/' . $links->actionUrlForToken($clientToken);
+
 
 				$subject = (new \core\Template(
-					'moderate.profile.email.subject', "Approve New User Account"))
+					'delegate.profile.email.subject',
+					"Please review and approve the following member for geoportal access"
+				))
 					->render(GetClient()->getUserMetadata());
 				$body = (new \core\Template(
-					'moderate.profile.email.body', "Its almost done, just click the link to continue: <a href=\"{{link}}\" >Click Here</a>"))
+					'delegate.profile.email.body',
+					"Its almost done, just click the link to continue: <a href=\"{{link}}\" >Click Here</a>"
+				))
+					->render(array_merge(GetClient()->getUserMetadata(), array("link" => $clientLink)));
+
+				GetPlugin('Email')->getMailer()
+					->mail($subject, $body)
+					->to('nickblackwell82+delegate@gmail.com')
+					->send();
+
+
+
+				$subject = (new \core\Template(
+					'moderate.profile.email.subject',
+					"Approve New User Account"
+				))
+					->render(GetClient()->getUserMetadata());
+				$body = (new \core\Template(
+					'moderate.profile.email.body',
+					"Its almost done, just click the link to continue: <a href=\"{{link}}\" >Click Here</a>"
+				))
 					->render(array_merge(GetClient()->getUserMetadata(), array("link" => $clientLink)));
 
 				GetPlugin('Email')->getMailer()
@@ -606,16 +646,8 @@ class User {
 					->to('nickblackwell82+moderator@gmail.com')
 					->send();
 
-			$this->getPlugin()->notifier()->onProfilePendingValidation($params);
-
-		})->getSubscription();
-
-
-		
-
-
+				$this->getPlugin()->notifier()->onProfilePendingValidation($params);
+			}
+		)->getSubscription();
 	}
-
-
-
 }
