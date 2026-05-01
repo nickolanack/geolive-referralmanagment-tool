@@ -30943,7 +30943,7 @@
         "name": "Article",
         "instance": "Article",
         "parameters": {
-            "articleTitle": "You did it! Thanks.",
+            "articleTitle": "Account Created!",
             "articleHtml": "",
             "target": "Links.action-view.Article.onActivateEmailForProfileModeration",
             "className": "",
@@ -30954,6 +30954,68 @@
             "images": [],
             "widgetTitle": "",
             "readAccess": "public"
+        }
+    },
+    "widget.561": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "activityfeed.guest.profile.moderating.text",
+            "target": "activityfeed.guest.profile.moderating.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": null
+        }
+    },
+    "widget.562": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "approved.profile.email.subject",
+            "target": "approved.profile.email.subject",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "approved-profile-email-subject.contentTemplate.html",
+            "readAccess": "public"
+        }
+    },
+    "widget.563": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "approved.profile.email.body",
+            "target": "approved.profile.email.body",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": true,
+            "allowHtmlInMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "Approved by ***email***",
+            "readAccess": "public"
+        }
+    },
+    "widget.564": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "activityfeed.guest.profile.approval.text",
+            "target": "activityfeed.guest.profile.approval.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": null
         }
     }
 }
