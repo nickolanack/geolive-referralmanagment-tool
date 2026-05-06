@@ -30792,7 +30792,8 @@
             "parseMarkdown": false,
             "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
-            "contentTemplate": null
+            "contentTemplate": "email-onUserCreated-subject.contentTemplate.html",
+            "readAccess": "public"
         }
     },
     "widget.551": {
