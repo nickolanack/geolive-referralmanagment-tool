@@ -5816,7 +5816,7 @@
             "showWiki": false,
             "requireCSRF": true,
             "showTerms": true,
-            "emailModerators": "geoportal.admin@treaty3.ca, rjptreaty3@gmail.com, nickblackwell82@gmail.com",
+            "emailModerators": "nickblackwell82@gmail.com",
             "enablePublicDashboard": true
         }
     },
@@ -30792,7 +30792,8 @@
             "parseMarkdown": false,
             "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
-            "contentTemplate": null
+            "contentTemplate": "email-onUserCreated-subject.contentTemplate.html",
+            "readAccess": "public"
         }
     },
     "widget.551": {
