@@ -672,7 +672,7 @@ class User
 
 		GetPlugin('Attributes');
 		(new \attributes\Record('userAttributes'))->setValues($userId, 'user', array(
-			"community-member" => true,
+			"lands-department" => true,
 			"firstName" => $userDetails->firstName,
 			"lastName" => $userDetails->lastName,
 			"profileIcon" => $userDetails->profileIcon,
@@ -680,8 +680,10 @@ class User
 			"community"=> $userDetails->community
 		));
 
+		$user=GetClient()->userMetadataFor($userId);
 
-		$clientToken = $links->createLinkEventCode('onActivateMagicEmailLink', $userId);
+
+		$clientToken = $links->createLinkEventCode('onActivateMagicEmailLink', $user);
 		$linkUrl = HtmlDocument()->website() . '/' . GetClient()->urlForView("magiclink", array("token" => $clientToken));
 
 		if (($magicLinkUrl = GetClient()->getParameter("magicLinkUrl", "")) && (!empty($magicLinkUrl))) {
