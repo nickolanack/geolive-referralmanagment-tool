@@ -698,7 +698,7 @@ class User
 
 		}
 
-		$this->getPlugin()->notifier()->onProfileApproval($params->validationData);
+		$this->getPlugin()->notifier()->onProfileRejection($params->validationData);
 	}
 
 
