@@ -671,6 +671,36 @@ class User
 
 
 
+	
+	public function rejectProfile($params)
+	{
+		$moderators=['nickblackwell82+delegate@gmail.com'];
+		foreach ($moderators as $moderatorEmail) {
+
+			
+			$profileRequestData=array('params'=>$params);
+
+			$subject = (new \core\Template(
+				'rejected.profile.email.subject',
+				"Rejected New User Account"
+			))
+				->render($profileRequestData);
+			$body = (new \core\Template(
+				'rejected.profile.email.body',
+				"It's Done"
+			))
+				->render($profileRequestData);
+
+			GetPlugin('Email')->getMailer()
+				->mail($subject, $body)
+				->to($moderatorEmail)
+				->send();
+
+		}
+
+		$this->getPlugin()->notifier()->onProfileApproval($params->validationData);
+	}
+
 
 	public function activateProfile($params)
 	{

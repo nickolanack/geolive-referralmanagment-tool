@@ -297,6 +297,13 @@ class ReferralManagementPlugin extends \core\extensions\Plugin implements
 	}
 
 
+	protected function onRejectEmailForProfileModeration($params){
+		(new \ReferralManagement\User())->rejectProfile($params);
+	}
+
+	
+
+
 	protected function onTriggerEmailForGuestProposalReminder($params){
 		(new \ReferralManagement\GuestProject())->checkProjectActivation($params);
 	}
