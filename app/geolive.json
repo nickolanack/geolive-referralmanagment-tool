@@ -31102,5 +31102,20 @@
             "contentTemplate": "rejected-profile-email-body.contentTemplate.html",
             "readAccess": "public"
         }
+    },
+    "widget.570": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "activityfeed.guest.profile.rejection.text",
+            "target": "activityfeed.guest.profile.rejection.text",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": null
+        }
     }
 }
