@@ -31058,9 +31058,17 @@
         "name": "Article",
         "instance": "Article",
         "parameters": {
-            "articleTitle": "You did it! Thanks.",
-            "articleHtml": "",
-            "target": "Links.action-view.Article.onRejectEmailForProfileModeration"
+            "articleTitle": "Account Rejected",
+            "articleHtml": "widget.Article.567.articleHtml.html",
+            "target": "Links.action-view.Article.onRejectEmailForProfileModeration",
+            "className": "",
+            "articleCSS": "",
+            "articleScript": "",
+            "templateVariablesScript": "",
+            "afterHeader": "<hr\/>",
+            "images": [],
+            "widgetTitle": "",
+            "readAccess": "public"
         }
     },
     "widget.568": {
