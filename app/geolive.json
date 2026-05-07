@@ -31053,5 +31053,44 @@
             "contentTemplate": "created-profile-email-body.contentTemplate.html",
             "readAccess": "public"
         }
+    },
+    "widget.567": {
+        "name": "Article",
+        "instance": "Article",
+        "parameters": {
+            "articleTitle": "You did it! Thanks.",
+            "articleHtml": "",
+            "target": "Links.action-view.Article.onRejectEmailForProfileModeration"
+        }
+    },
+    "widget.568": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "rejected.profile.email.subject",
+            "target": "rejected.profile.email.subject",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": null
+        }
+    },
+    "widget.569": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "rejected.profile.email.body",
+            "target": "rejected.profile.email.body",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": null
+        }
     }
 }
