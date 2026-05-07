@@ -594,20 +594,35 @@ class User
 
 		
 
-			
+			// $sharedToken = ($links = GetPlugin('Links'))->createLinkEventCode('onActivateEmailForProfileModeration', array(
+			// 	'validationData' => $params->validationData
+			// ));
 			
 			
 			$moderators=['nickblackwell82+delegate@gmail.com'];
+
+			$relatedTokens=array();
+
 			foreach ($moderators as $moderatorEmail) {
 				
 			
-				$clientToken = ($links = GetPlugin('Links'))->createLinkEventCode('onActivateEmailForProfileModeration', array(
+				$moderatorApprovalToken = ($links = GetPlugin('Links'))->createLinkEventCode('onActivateEmailForProfileModeration', array(
 					'validationData' => $params->validationData,
 					'moderatorEmail'=>$moderatorEmail
 				));
+				$relatedTokens[]=$moderatorApprovalToken;
+
+				$approvalLink = HtmlDocument()->website() . '/' . $links->actionUrlForToken($moderatorApprovalToken);	
+				
+
+				$moderatorRejectionToken = ($links = GetPlugin('Links'))->createLinkEventCode('onRejectEmailForProfileModeration', array(
+					'validationData' => $params->validationData,
+					'moderatorEmail'=>$moderatorEmail
+				));
+				$relatedTokens[]=$moderatorRejectionToken;
 
 
-				$clientLink = HtmlDocument()->website() . '/' . $links->actionUrlForToken($clientToken);	
+				$rejectionLink = HtmlDocument()->website() . '/' . $links->actionUrlForToken($moderatorRejectionToken);	
 
 
 				$profileRequestData=array_merge(GetClient()->getUserMetadata(), array('params'=>$params));
@@ -621,7 +636,7 @@ class User
 					'delegate.profile.email.body',
 					"Its almost done, just click the link to continue: <a href=\"{{link}}\" >Click Here</a>"
 				))
-					->render(array_merge($profileRequestData, array("link" => $clientLink)));
+					->render(array_merge($profileRequestData, array("link" => $approvalLink, "reject" => $rejectionLink)));
 
 				GetPlugin('Email')->getMailer()
 					->mail($subject, $body)
@@ -639,7 +654,7 @@ class User
 					'moderate.profile.email.body',
 					"Its almost done, just click the link to continue: <a href=\"{{link}}\" >Click Here</a>"
 				))
-					->render(array_merge($profileRequestData, array("link" => $clientLink)));
+					->render(array_merge($profileRequestData, array("link" => $approvalLink, "reject" => $rejectionLink)));
 
 				GetPlugin('Email')->getMailer()
 					->mail($subject, $body)
@@ -647,6 +662,8 @@ class User
 					->send();
 
 			}
+
+			GetPlugin('Links')->associateTokens($relatedTokens);
 
 			$this->getPlugin()->notifier()->onProfilePendingModeration($params->validationData);
 		
