@@ -31090,7 +31090,8 @@
             "parseMarkdown": false,
             "allowHtmlInMarkdown": false,
             "saveTemplateAsData": false,
-            "contentTemplate": null
+            "contentTemplate": "rejected-profile-email-body.contentTemplate.html",
+            "readAccess": "public"
         }
     }
 }
