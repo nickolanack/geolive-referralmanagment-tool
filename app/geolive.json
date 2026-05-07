@@ -31053,5 +31053,54 @@
             "contentTemplate": "created-profile-email-body.contentTemplate.html",
             "readAccess": "public"
         }
+    },
+    "widget.567": {
+        "name": "Article",
+        "instance": "Article",
+        "parameters": {
+            "articleTitle": "Account Rejected",
+            "articleHtml": "widget.Article.567.articleHtml.html",
+            "target": "Links.action-view.Article.onRejectEmailForProfileModeration",
+            "className": "",
+            "articleCSS": "widget.Article.567.articleCSS.css",
+            "articleScript": "",
+            "templateVariablesScript": "",
+            "afterHeader": "<hr\/>",
+            "images": [],
+            "widgetTitle": "",
+            "readAccess": "public"
+        }
+    },
+    "widget.568": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "rejected.profile.email.subject",
+            "target": "rejected.profile.email.subject",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "rejected-profile-email-subject.contentTemplate.html",
+            "readAccess": "public"
+        }
+    },
+    "widget.569": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "widgetTitle": "rejected.profile.email.body",
+            "target": "rejected.profile.email.body",
+            "comments": "",
+            "formatVariablesScript": "return $variables;",
+            "convertStylesToInline": false,
+            "parseMarkdown": false,
+            "allowHtmlInMarkdown": false,
+            "saveTemplateAsData": false,
+            "contentTemplate": "rejected-profile-email-body.contentTemplate.html",
+            "readAccess": "public"
+        }
     }
 }
