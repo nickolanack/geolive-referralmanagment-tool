@@ -672,7 +672,7 @@ class User
 
 		GetPlugin('Attributes');
 		(new \attributes\Record('userAttributes'))->setValues($userId, 'user', array(
-			"lands-department" => true,
+			"isCommunityMember" => true,
 			"firstName" => $userDetails->firstName,
 			"lastName" => $userDetails->lastName,
 			"profileIcon" => $userDetails->profileIcon,
