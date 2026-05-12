@@ -1788,5 +1788,14 @@ select.tag-cloud-dropdown {
 
 
 
+.register-profile-form .tag-cloud-container:has(.word-other) + [data-identifier="otherCommunity"] {
+    display: none;
+}
+
+.register-profile-form .tag-cloud-container:has(.word-other.selected) + [data-identifier="otherCommunity"] {
+    display: block;
+}
+
+
 
 
