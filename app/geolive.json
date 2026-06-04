@@ -5569,6 +5569,12 @@
                 },
                 {
                     "type": "text",
+                    "label": "councilEmailModerators",
+                    "name": "councilEmailModerators",
+                    "default": ""
+                },
+                {
+                    "type": "text",
                     "label": "datasetForm",
                     "name": "datasetForm",
                     "default": "{projectForm}"
@@ -5817,7 +5823,8 @@
             "requireCSRF": true,
             "showTerms": true,
             "emailModerators": "nickblackwell82@gmail.com",
-            "enablePublicDashboard": true
+            "enablePublicDashboard": true,
+            "councilEmailModerators": ""
         }
     },
     "widget.154": {
