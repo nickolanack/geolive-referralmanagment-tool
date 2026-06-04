@@ -599,7 +599,7 @@ class User
 			// ));
 			
 			
-			$moderators=['nickblackwell82+delegate@gmail.com'];
+			$moderators=$this->getModerators(); //['nickblackwell82+delegate@gmail.com'];
 
 			$relatedTokens=array();
 
@@ -674,7 +674,7 @@ class User
 	
 	public function rejectProfile($params)
 	{
-		$moderators=['nickblackwell82+delegate@gmail.com'];
+		$moderators=$this->getModerators(); //['nickblackwell82+delegate@gmail.com'];
 		foreach ($moderators as $moderatorEmail) {
 
 			
@@ -755,12 +755,12 @@ class User
 
 		GetPlugin('Email')->getMailer()
 			->mail($subject, $body)
-			->to('nickblackwell82@gmail.com')#->to($moderatorEmail$params->validatationData->email)
+			->to($userDetails->email)#->to($moderatorEmail$params->validatationData->email)
 			->send();
 
 
 
-		$moderators=['nickblackwell82+delegate@gmail.com'];
+		$moderators=$this->getModerators(); //['nickblackwell82+delegate@gmail.com'];
 		foreach ($moderators as $moderatorEmail) {
 
 			
@@ -788,4 +788,17 @@ class User
 	
 		
 	}
+
+
+	public function getModerators(){
+
+		$config = GetWidget('dashboardConfig');
+		$moderators=$config->getParameter("emailModerators", '');
+		$moderators=explode(',', $moderators);
+		$moderators=array_filter(array_map(function($m){ return trim($m); }, $moderators), function($m){return !empty($m); });
+		return $moderators;
+
+	}
+
+
 }
