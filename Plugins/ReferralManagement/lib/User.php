@@ -800,5 +800,17 @@ class User
 
 	}
 
+	public function getCouncilModerators(){
+
+		// TODO: Not used yet
+
+		$config = GetWidget('dashboardConfig');
+		$moderators=$config->getParameter("councilEmailModerators", '');
+		$moderators=explode(',', $moderators);
+		$moderators=array_filter(array_map(function($m){ return trim($m); }, $moderators), function($m){return !empty($m); });
+		return $moderators;
+
+	}
+
 
 }
