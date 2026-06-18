@@ -1797,5 +1797,9 @@ select.tag-cloud-dropdown {
 }
 
 
+.community.locked + select.tag-cloud-dropdown {
+    display: none;
+}
+
 
 
